@@ -1,307 +1,116 @@
 # Metis
 
-[English](#metis) | [中文](#中文说明)
+**把 AI 动态、研究与开源资源，整理成有来源、可用于下一步工作的材料。**
+
+[English](README.en.md) · [文档](docs/README.md) · [更新记录](CHANGELOG.md) · [路线图](ROADMAP.md)
 
 [![CI](https://github.com/Kevinxnova/metis/actions/workflows/ci.yml/badge.svg)](https://github.com/Kevinxnova/metis/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/Kevinxnova/metis)](https://github.com/Kevinxnova/metis/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-![Metis homepage](docs/assets/metis-homepage.png)
+Metis 面向研究者、工程师、研究生和学生：人可以浏览重点、比较资源、核对依据；AI 可以通过 API / MCP 查询事实、按需读取原文、获取任务资料。两种入口共用来源、版本与验证记录。
 
-Metis is a bilingual AI-tool discovery desk. It gathers fresh projects and
-technology news, removes duplicates, enriches the results with AI, and gives a
-human curator a focused workflow for publishing recommendations and newsletters.
+![Metis 信息工作台](docs/assets/workspace-information.png)
 
-Version 1.0.0 is the first stable open-source release. The data model and UI
-will continue to evolve without changing the project's core workflow.
+*当前开发界面，截图使用六条显式导入的本地样本；来源状态和内容数量不代表全网覆盖。*
 
-## What it does
+## 当前状态
 
-- Collects GitHub Trending, Hacker News, Product Hunt, and selected AI RSS feeds.
-- Normalizes URLs and merges discoveries that appear in more than one source.
-- Uses AI models such as GPT, Claude, MiniMax, GLM, or DeepSeek for
-  classification, trend scoring, summaries, recommendations, and AI
-  introductions. The included reference integration currently defaults to
-  MiniMax.
-- Publishes a bilingual discovery page and AI daily briefing.
-- Provides a password-protected curation dashboard.
-- Stores data in local SQLite or a hosted Turso database.
-- Can send curated issues through Buttondown.
+当前源码为 **v1.1.0-beta.1 开发候选版**，仍在开发分支，尚未作为正式版本发布。v1.0.0 是此前的开源基线。
 
-## Architecture
+- 信息、资源、任务工作台、管理页面和只读 MCP 已有可用基础，具体缺口见 [42 项 REQ](docs/product/requirements.md)。
+- 自动检查与更新周期统一为 **1 天**；失败、积压、过期和未知条件分别保留。
+- 公开账户、注册与同步暂不开放，页面标注“待开放”；本地收藏和关注可用。
+- **产品主案例 pending**。已有技术样例用于回归检查，不作为已经解决真实需求的证明。
 
-```text
-GitHub / HN / Product Hunt / RSS
-                  │
-                  ▼
-          scraper + deduplication
-                  │
-                  ▼
-       SQLite locally / Turso in production
-                  │
-          ┌───────┴────────┐
-          ▼                ▼
-   Flask JSON API    scheduled AI pipeline
-          │
-          ▼
-     React + Vite UI ──────► Buttondown
-```
+## 能做什么
 
-The Flask app is served from `backend/api/main.py`. Vercel function entry
-points live under `api/`; the React application lives under `frontend/`.
+| 入口 | 当前能力 |
+| --- | --- |
+| 信息 | 浏览事件和论文，按主题、来源、时间筛选，查看分层解读、简报及原始依据 |
+| 应用与资源 | 查阅模型、工具、库、数据等档案，比较采用条件、版本和缺失事实 |
+| 任务工作台 | 输入目标、背景和条件，组织候选、版本材料、采用路径及待核实项，导出 Markdown |
+| AI 接入 | 9 项只读 MCP 工具，支持 HTTP / stdio；与网页共用资料和证据 |
+| 运行管理 | 维护来源、事实、分类、关系、处理队列和需求反馈 |
 
-## Quick start
+资料完整与实际运行通过分别标识。热度帮助发现内容，不能替代任务适配或研究质量判断。
 
-Prerequisites:
+<details>
+<summary>查看资源与任务工作台</summary>
 
-- Python 3.12 or 3.13
-- Node.js 20+
+![Metis 应用与资源](docs/assets/workspace-resources.png)
+
+![Metis 任务工作台](docs/assets/workspace-tasks.png)
+
+</details>
+
+## 最近更新
+
+| 版本 | 状态 / 日期 | 更新重点 |
+| --- | --- | --- |
+| [v1.1.0-beta.1](docs/releases/v1.1.0-beta.1.md) | 开发候选 · 2026-09-07 | 信息与资源工作台、事实和版本材料、只读 MCP；本次整理新旧代码、中文/英文文档、REQ 和版本导航 |
+| v1.0.0 | 历史基线 · 2026-08-30 | 首个正式开源版本，工具发现、人工策展与 Newsletter 流程 |
+
+完整变更见 [CHANGELOG](CHANGELOG.md)。每版说明保留升级影响、验证结果和未完成事项；尚未实施的重点放在 [ROADMAP](ROADMAP.md)。
+
+## 快速开始
+
+需要 Python 3.12/3.13 和 Node.js 20+。以下取得当前开发候选分支；使用 v1.0.0 标签会看到旧版工作流。
 
 ```bash
-git clone https://github.com/Kevinxnova/metis.git
+git clone --branch codex/metis-knowledge-workspace https://github.com/Kevinxnova/metis.git
 cd metis
-
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-dev.txt
-
 cp .env.example .env
-# Add strong ADMIN_PASSWORD and CRON_SECRET values, plus any optional API keys.
-
 cd frontend
 npm ci
 cd ..
 ```
 
-Start the API:
+按需在 `.env` 设置管理员和定时任务凭证。已有 `.env` 请保留原文件。默认本地 SQLite；浏览与基础检索无需模型密钥。
+
+分别在两个终端启动：
 
 ```bash
+# 仓库根目录：后端
 ./scripts/start-backend.sh
 ```
 
-Verify the API in another terminal:
-
 ```bash
-curl http://127.0.0.1:8000/api/health
-```
-
-In a second terminal, start the frontend:
-
-```bash
+# 仓库根目录：前端
 cd frontend
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173). The curator dashboard is
-available at `/admin`.
-
-To collect data manually:
+打开 [http://localhost:5173](http://localhost:5173)。新数据库没有资料时，可在已激活环境的根目录显式导入六条短引用与整理样本：
 
 ```bash
-source .venv/bin/activate
-python -m backend.scheduler
+python -m examples.editorial.load
 ```
 
-## Configuration
+首次浏览建议从“应用与资源”进入档案，核对来源、版本和未知项，再使用任务工作台。完整配置、隔离数据和检查办法见 [本地指南](docs/guides/local-development.md)。
 
-Copy `.env.example` to `.env`. Never commit the resulting `.env` file.
+## MCP 与 API
 
-| Variable | Purpose | Required |
-| --- | --- | --- |
-| `ADMIN_PASSWORD` | Protects curator data and every privileged API route | For admin access |
-| `CRON_SECRET` | Bearer token required by all scheduled-task routes | For scheduled tasks |
-| `MINIMAX_API_KEY` | AI recommendations, summaries, scoring, and daily news | For AI features |
-| `TURSO_DATABASE_URL` | Hosted Turso database URL | No; local SQLite is the default |
-| `TURSO_AUTH_TOKEN` | Turso authentication token | With a Turso URL |
-| `TRANSLATION_API_URL` | Opt-in LibreTranslate-compatible `/translate` endpoint | No |
-| `TRANSLATION_API_KEY` | Authentication for the configured translation endpoint | No |
-| `PRODUCTHUNT_API_TOKEN` | Product Hunt GraphQL access | No |
-| `BUTTONDOWN_API_KEY` | Newsletter delivery | No |
-| `ALLOWED_ORIGINS` | Comma-separated browser origins allowed by CORS | In production |
-| `VITE_API_URL` | Build-time frontend API origin | Only when API and UI use different origins |
+后端 MCP 地址：`http://127.0.0.1:8000/api/mcp`。网页“AI 接入”可检查连接。支持的工具包含检索、档案、原文分段、候选比较、任务资料、增量变化、来源、简报和研究材料。
 
-Use long, unique values for `ADMIN_PASSWORD` and `CRON_SECRET`. Only expose the
-admin UI over HTTPS. Translation is disabled unless `TRANSLATION_API_URL` is
-explicitly configured; text sent there is governed by that provider's privacy
-policy.
-
-## Tests
+stdio 桥接也可连接已运行的后端：
 
 ```bash
-source .venv/bin/activate
-pytest
-
-cd frontend
-npm run build
+.venv/bin/python -m backend.mcp_stdio
 ```
 
-The live Turso/MiniMax integration suite is disabled by default. Run it only
-against an environment you control:
+客户端需把工作目录设为仓库根目录；可通过 `METIS_MCP_URL` 和 `METIS_READ_TOKEN` 配置服务地址与可选读取权限。HTTP API 位于 `/api/v1`。配置和参数示意见 [接入指南](docs/guides/ai-access.md)。
 
-```bash
-METIS_RUN_INTEGRATION_TESTS=1 pytest -m integration -s
-```
+## 验证与下一步
 
-## Community privacy
+后端、前端构建、协议调用和受控技术样例已有检查记录，见 [验证索引](docs/validation/README.md)。深度资料覆盖、研究比较、完整学习路径、部分运营功能、容器/生产数据库和真实用户收益仍需建设与验收。
 
-Messages submitted on the Community page are public. A submitted nickname,
-message, and submission date can be read by anyone who visits the page. Do not
-submit email addresses, phone numbers, credentials, or other personal or
-sensitive information.
+当前更新重点：内容与来源运营、任务检索、研究材料、维护与部署。新主案例暂缓，恢复前会先重新对齐目标和验收标准。
 
-## Deployment
+## 文档与参与
 
-See [DEPLOY.md](DEPLOY.md) for Vercel, Turso, cron security, and self-hosting
-instructions.
+[部署](DEPLOY.md) · [管理后台](docs/guides/management.md) · [架构](docs/architecture/README.md) · [贡献](CONTRIBUTING.md) · [安全报告](SECURITY.md)
 
-## Contributing
-
-Bug reports and focused pull requests are welcome. Read
-[CONTRIBUTING.md](CONTRIBUTING.md) before opening a change. For vulnerabilities,
-follow [SECURITY.md](SECURITY.md) and do not create a public issue.
-
-## License
-
-Metis is available under the [MIT License](LICENSE).
-
----
-
-## 中文说明
-
-Metis 是一个中英双语的 AI 工具发现与策展平台。它持续收集新项目和科技
-资讯，自动去重并通过 AI 进行分类、评分、摘要和推荐，再交给人工完成精选
-与发布。
-
-v1.0.0 是 Metis 的首个正式开源版本。后续数据模型和界面仍会持续演进，
-但项目的核心工作流将保持稳定。
-
-### 主要功能
-
-- 采集 GitHub Trending、Hacker News、Product Hunt 和精选 AI 新闻 RSS。
-- 规范化链接并合并来自多个数据源的重复项目。
-- 可使用 GPT、Claude、MiniMax、GLM、DeepSeek 等 AI 模型完成分类、趋势评分、
-  摘要、推荐和 AI 简介；当前仓库中的参考实现默认接入 MiniMax。
-- 提供中英双语的发现页与 AI 每日简报。
-- 提供受密码保护的策展后台。
-- 支持本地 SQLite 或云端 Turso 数据库。
-- 可通过 Buttondown 发送人工精选 Newsletter。
-
-### 项目结构
-
-- `backend/`：Flask API、数据库、爬虫、去重、AI 管线、翻译和邮件发送。
-- `frontend/`：React + TypeScript + Vite 前端。
-- `api/`：Vercel Serverless Function 和定时任务入口。
-- `scripts/`：本地启动、初始化、补数据和批处理脚本。
-- `tests/`：后端安全、翻译、邮件和每日新闻测试。
-- `docs/`：产品设计、版本更新和实现记录。
-
-### 快速开始
-
-环境要求：
-
-- Python 3.12 或 3.13
-- Node.js 20+
-
-```bash
-git clone https://github.com/Kevinxnova/metis.git
-cd metis
-
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements-dev.txt
-
-cp .env.example .env
-# 请为 ADMIN_PASSWORD 和 CRON_SECRET 设置不同的强随机值。
-
-cd frontend
-npm ci
-cd ..
-```
-
-启动后端：
-
-```bash
-./scripts/start-backend.sh
-```
-
-在另一个终端验证 API：
-
-```bash
-curl http://127.0.0.1:8000/api/health
-```
-
-再启动前端：
-
-```bash
-cd frontend
-npm run dev
-```
-
-打开 [http://localhost:5173](http://localhost:5173)。策展后台位于
-`/admin`。
-
-手动执行一次数据采集：
-
-```bash
-source .venv/bin/activate
-python -m backend.scheduler
-```
-
-### 配置项
-
-复制 `.env.example` 为 `.env`，不要把生成的 `.env` 提交到 Git。
-
-| 变量 | 用途 | 是否必需 |
-| --- | --- | --- |
-| `ADMIN_PASSWORD` | 保护策展后台和所有管理接口 | 使用后台时必需 |
-| `CRON_SECRET` | 保护所有定时任务接口 | 使用定时任务时必需 |
-| `MINIMAX_API_KEY` | AI 推荐、摘要、评分和每日新闻 | 使用 AI 功能时必需 |
-| `TURSO_DATABASE_URL` | Turso 云数据库地址 | 否，默认使用本地 SQLite |
-| `TURSO_AUTH_TOKEN` | Turso 认证令牌 | 配置 Turso 时必需 |
-| `TRANSLATION_API_URL` | 可选的 LibreTranslate 兼容接口 | 否 |
-| `TRANSLATION_API_KEY` | 翻译接口认证 | 否 |
-| `PRODUCTHUNT_API_TOKEN` | Product Hunt GraphQL API | 否 |
-| `BUTTONDOWN_API_KEY` | 发送 Newsletter | 否 |
-| `ALLOWED_ORIGINS` | CORS 允许的前端域名 | 生产环境需要配置 |
-| `VITE_API_URL` | 前后端分离部署时的 API 地址 | 按部署方式决定 |
-
-`ADMIN_PASSWORD` 与 `CRON_SECRET` 应使用不同的长随机值。管理后台只应通过
-HTTPS 暴露。只有显式配置 `TRANSLATION_API_URL` 后，翻译内容才会发送到外部
-服务。
-
-### 测试
-
-```bash
-source .venv/bin/activate
-pytest
-
-cd frontend
-npm run build
-```
-
-实时 Turso/MiniMax 集成测试默认关闭，只应在你控制的测试环境中运行：
-
-```bash
-METIS_RUN_INTEGRATION_TESTS=1 pytest -m integration -s
-```
-
-### 社区留言隐私
-
-Community 页面上的留言是公开内容。提交后的昵称、留言内容和日期会展示给
-所有访问者。请勿提交邮箱、电话号码、账号密码、API Key 或其他个人与敏感
-信息。
-
-### 部署、贡献与许可证
-
-- 部署说明见 [DEPLOY.md](DEPLOY.md)。
-- 提交 Issue 或 Pull Request 前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
-- 安全问题请按 [SECURITY.md](SECURITY.md) 私下报告，不要创建公开 Issue。
-- Metis 使用 [MIT License](LICENSE) 开源。
-# 工作界面重构开发版
-
-新增信息与应用工作界面、来源证据档案、条件对比、收藏关注及只读 MCP。所有来源的检查周期统一为 **1 天**。本地运行、接口和实际验证情况见 [开发记录](docs/product/2026-09-07-workspace-development.md)；完整目标与尚待完成的资料建设见 [需求清单](docs/product/2026-09-06-goals-and-requirements.md)。
-
-本轮增加了每日处理队列、原文/PDF 分段、双语解读与历史简报、任务工作台、实验条件比较、本地关注变化、审核表单、可替换生成接口，以及 9 项只读 MCP 工具。
-
-逐项结果与尚未完成的验收见 [42 项 REQ 交付表](docs/product/2026-09-07-delivery.md)。当前注册、登录和跨设备同步暂不开放；导航显示“待开放”。
-
-从根目录运行 `python -m examples.editorial.load` 可显式导入本次 GPT 整理的 6 份有来源样本，无需生成模型 API。它只包含短引用与整理内容，不将整篇原文或运行数据库加入仓库。`python -m examples.validation.run_suite` 可执行首批 8 项最小实践检查，需要先安装 `examples/validation/requirements.txt`；实际结果和范围见 [验证资料](docs/validation/2026-09-07-runtime-results.json)。
+旧策展与 Newsletter 仍通过 `/admin/curation` 保留，代码已独立归类。Metis 使用 [MIT License](LICENSE)。欢迎反馈实际任务、缺失资料和失败原因。

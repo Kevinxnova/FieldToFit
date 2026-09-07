@@ -84,7 +84,8 @@ def admin_verify():
 
 @app.route("/api/health")
 def health():
-    return jsonify({"status": "ok", "version": "v1.0.0"})
+    from backend import __version__
+    return jsonify({"status": "ok", "version": "v" + __version__})
 
 
 @app.route("/api/health/scrapes")

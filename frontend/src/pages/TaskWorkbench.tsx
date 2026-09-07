@@ -187,7 +187,7 @@ export default function TaskWorkbench() {
       <form className="task-form" onSubmit={build}>
         <div className="task-example-prompt">
           <span>
-            {pick("从一个完整案例开始", "Start with a worked example")}
+            {pick("查看既有技术样例", "Explore a technical sample")}
           </span>
           <button
             className="button"
@@ -211,7 +211,7 @@ export default function TaskWorkbench() {
               setReading(null);
             }}
           >
-            {pick("填入 PDF 金额案例", "Load PDF amount example")}
+            {pick("填入 PDF 技术样例", "Load PDF technical sample")}
           </button>
         </div>
         <div className="persona-row">

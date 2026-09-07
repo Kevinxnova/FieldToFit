@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import Explore from "./pages/Explore";
 import Dossier from "./pages/Dossier";
-import Admin from "./pages/Admin";
+import Admin from "./legacy/pages/Admin";
 import {
   Account,
   Cases,

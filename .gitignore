@@ -26,6 +26,10 @@ frontend/tsconfig.tsbuildinfo
 .coverage
 htmlcov/
 .ruff_cache/
+.pytest_cache/
+*.db-wal
+*.db-shm
+data/*.err
 
 # IDE
 .vscode/

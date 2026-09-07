@@ -20,6 +20,7 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: pytest
       - run: python -m compileall -q backend api scripts tests
+      - run: python scripts/maintenance/check_repository.py
 
   frontend:
     runs-on: ubuntu-latest
