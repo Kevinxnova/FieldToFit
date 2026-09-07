@@ -9,8 +9,8 @@ INPUT_KINDS = {'unknown', 'searchable_pdf', 'scanned_pdf', 'page_text'}
 RECIPE_VERSION = '1'
 PDF_VERSION = '6.17.0'
 PDF_SOURCE = 'https://github.com/py-pdf/pypdf'
-GUIDE = 'https://github.com/Kevinxnova/metis/blob/codex/metis-knowledge-workspace/examples/task_packets/pdf_amount.md'
-CODE = 'https://github.com/Kevinxnova/metis/blob/codex/metis-knowledge-workspace/examples/task_packets/pdf_amount.py'
+GUIDE = 'https://github.com/Kevinxnova/metis/blob/af97af6bd4edde6acbf59f7eac10759da46818e2/examples/task_packets/pdf_amount.md'
+CODE = 'https://github.com/Kevinxnova/metis/blob/af97af6bd4edde6acbf59f7eac10759da46818e2/examples/task_packets/pdf_amount.py'
 
 
 def brief(goal, background, spec=None):

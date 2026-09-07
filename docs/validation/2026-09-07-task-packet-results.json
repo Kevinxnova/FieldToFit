@@ -19,8 +19,8 @@
       "只接受有文本层、未加密的 PDF。",
       "金额行须为“发票金额：128.50 元”格式，仅 CNY；其他版式需另外验证。"
     ],
-    "guide_url": "https://github.com/Kevinxnova/metis/blob/codex/metis-knowledge-workspace/examples/task_packets/pdf_amount.md",
-    "code_url": "https://github.com/Kevinxnova/metis/blob/codex/metis-knowledge-workspace/examples/task_packets/pdf_amount.py",
+    "guide_url": "https://github.com/Kevinxnova/metis/blob/af97af6bd4edde6acbf59f7eac10759da46818e2/examples/task_packets/pdf_amount.md",
+    "code_url": "https://github.com/Kevinxnova/metis/blob/af97af6bd4edde6acbf59f7eac10759da46818e2/examples/task_packets/pdf_amount.py",
     "recommendation": "混合采用：复用 PDF 解析，自行实现页码包装和金额规则。",
     "success_criteria": [
       "两页样本输出 amount=128.50、currency=CNY、source_page=1，并附原文。",
