@@ -2,8 +2,11 @@ import os
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
+DATA_DIR = Path(os.getenv("METIS_DATA_DIR", str(PROJECT_ROOT / "data")))
 DB_PATH = DATA_DIR / "metis.db"
+
+# Every source and dossier is checked once per day.
+UPDATE_INTERVAL_DAYS = 1
 
 # API Keys (from environment)
 BUTTONDOWN_API_KEY = os.getenv("BUTTONDOWN_API_KEY", "")

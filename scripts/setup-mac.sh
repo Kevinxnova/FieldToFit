@@ -60,7 +60,7 @@ PLIST
 
 echo "Backend service created: $PLIST_PATH"
 
-# Create launchd plist for scraper (every 12 hours)
+# Create launchd plist for scraper (every 1 day)
 SCRAPE_PLIST="$HOME/Library/LaunchAgents/com.metis.scraper.plist"
 cat > "$SCRAPE_PLIST" << PLIST
 <?xml version="1.0" encoding="UTF-8"?>
@@ -83,7 +83,7 @@ cat > "$SCRAPE_PLIST" << PLIST
         <string>${PROJECT_DIR}/.venv/bin:/usr/bin:/bin</string>
     </dict>
     <key>StartInterval</key>
-    <integer>43200</integer>
+    <integer>86400</integer>
     <key>StandardOutPath</key>
     <string>${PROJECT_DIR}/data/scrape.log</string>
     <key>StandardErrorPath</key>
@@ -92,7 +92,7 @@ cat > "$SCRAPE_PLIST" << PLIST
 </plist>
 PLIST
 
-echo "Scraper cron created: $SCRAPE_PLIST (every 12h)"
+echo "Scraper cron created: $SCRAPE_PLIST (every 1 day)"
 
 echo ""
 echo "=== Next steps ==="

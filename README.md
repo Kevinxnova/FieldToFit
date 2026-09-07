@@ -296,3 +296,12 @@ Community 页面上的留言是公开内容。提交后的昵称、留言内容�
 - 提交 Issue 或 Pull Request 前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 - 安全问题请按 [SECURITY.md](SECURITY.md) 私下报告，不要创建公开 Issue。
 - Metis 使用 [MIT License](LICENSE) 开源。
+# 工作界面重构开发版
+
+新增信息与应用工作界面、来源证据档案、条件对比、收藏关注及只读 MCP。所有来源的检查周期统一为 **1 天**。本地运行、接口和实际验证情况见 [开发记录](docs/product/2026-09-07-workspace-development.md)；完整目标与尚待完成的资料建设见 [需求清单](docs/product/2026-09-06-goals-and-requirements.md)。
+
+本轮增加了每日处理队列、原文/PDF 分段、双语解读与历史简报、任务工作台、实验条件比较、本地关注变化、审核表单、可替换生成接口，以及 9 项只读 MCP 工具。
+
+逐项结果与尚未完成的验收见 [42 项 REQ 交付表](docs/product/2026-09-07-delivery.md)。当前注册、登录和跨设备同步暂不开放；导航显示“待开放”。
+
+从根目录运行 `python -m examples.editorial.load` 可显式导入本次 GPT 整理的 6 份有来源样本，无需生成模型 API。它只包含短引用与整理内容，不将整篇原文或运行数据库加入仓库。`python -m examples.validation.run_suite` 可执行首批 8 项最小实践检查，需要先安装 `examples/validation/requirements.txt`；实际结果和范围见 [验证资料](docs/validation/2026-09-07-runtime-results.json)。

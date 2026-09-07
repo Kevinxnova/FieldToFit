@@ -1,0 +1,107 @@
+{
+  "checked_at": "2026-09-07T09:03:12.484774Z",
+  "scope": "8 scoped runtime checks. This does not establish product demand, whole-project quality, paper reproduction or superiority over ordinary search.",
+  "dependencies": {
+    "pypdf": "6.17.0",
+    "reportlab": "4.5.1",
+    "scikit-learn": "1.9.0"
+  },
+  "items": [
+    {
+      "id": "aff2b0e6aaa37a0d0d0efceb",
+      "check_id": "engineer-pdf",
+      "result": "passed",
+      "output": "{\n  \"case\": \"engineer-pdf\",\n  \"pypdf_version\": \"6.17.0\",\n  \"input\": \"Generated two-page searchable Chinese PDF; not a scanned document\",\n  \"page_count\": 2,\n  \"extracted_text\": \"项目：中文文档处理\\n发票金额：128.50 元\\n\\n第二页：处理完成\\n\"\n}\n\n",
+      "seconds": 3.168,
+      "persona": "engineer",
+      "title": "本地中文 PDF 文本提取",
+      "source_url": "https://github.com/py-pdf/pypdf",
+      "expected": "Two-page Chinese searchable PDF is read correctly; specified extension/field assertions pass",
+      "limitations": "Synthetic searchable PDF, two pages; no OCR, handwriting, arbitrary invoice layout or full application deployment"
+    },
+    {
+      "id": "044957a07de39d91f4fb5d14",
+      "check_id": "engineer-extension",
+      "result": "passed",
+      "output": "{\n  \"case\": \"engineer-extension\",\n  \"pypdf_version\": \"6.17.0\",\n  \"input\": \"Generated two-page searchable Chinese PDF; not a scanned document\",\n  \"page_count\": 2,\n  \"extension_output\": [\n    {\n      \"page\": 1,\n      \"text\": \"项目：中文文档处理\\n发票金额：128.50 元\\n\"\n    },\n    {\n      \"page\": 2,\n      \"text\": \"第二页：处理完成\\n\"\n    }\n  ]\n}\n\n",
+      "seconds": 0.102,
+      "persona": "engineer",
+      "title": "基于 PDF 库增加按页材料接口",
+      "source_url": "https://github.com/py-pdf/pypdf",
+      "expected": "Two-page Chinese searchable PDF is read correctly; specified extension/field assertions pass",
+      "limitations": "Synthetic searchable PDF, two pages; no OCR, handwriting, arbitrary invoice layout or full application deployment"
+    },
+    {
+      "id": "27ef932ff76ed18b3fd2418b",
+      "check_id": "engineer-mixed",
+      "result": "passed",
+      "output": "{\n  \"case\": \"engineer-mixed\",\n  \"pypdf_version\": \"6.17.0\",\n  \"input\": \"Generated two-page searchable Chinese PDF; not a scanned document\",\n  \"page_count\": 2,\n  \"fields\": {\n    \"amount\": \"128.50\",\n    \"currency\": \"CNY\",\n    \"source_page\": 1\n  }\n}\n\n",
+      "seconds": 0.099,
+      "persona": "engineer",
+      "title": "复用 PDF 解析并实现指定字段提取",
+      "source_url": "https://github.com/py-pdf/pypdf",
+      "expected": "Two-page Chinese searchable PDF is read correctly; specified extension/field assertions pass",
+      "limitations": "Synthetic searchable PDF, two pages; no OCR, handwriting, arbitrary invoice layout or full application deployment"
+    },
+    {
+      "id": "ef209d8d6fd0c4fdb6a20eb8",
+      "check_id": "researcher-model-data",
+      "result": "passed",
+      "output": "{\n  \"case\": \"researcher-model-data\",\n  \"library\": \"scikit-learn\",\n  \"version\": \"1.9.0\",\n  \"dataset\": \"Bundled digits: 1797 8×8 images\",\n  \"split\": \"stratified 75/25, random_state=42\",\n  \"train_rows\": 1347,\n  \"test_rows\": 450,\n  \"model\": \"Pipeline(steps=[('standardscaler', StandardScaler()),\\n                ('logisticregression',\\n                 LogisticRegression(max_iter=1000, random_state=42))])\",\n  \"accuracy\": 0.9777777777777777,\n  \"expected_minimum\": 0.9,\n  \"device\": \"CPU; this example requests no GPU\",\n  \"scope\": \"Small official-library example; not a complete reproduction of a paper or a general benchmark ranking\"\n}\n\n",
+      "seconds": 17.352,
+      "persona": "researcher",
+      "title": "模型、数据与评测设置的最小实验",
+      "source_url": "https://github.com/scikit-learn/scikit-learn",
+      "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+      "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+    },
+    {
+      "id": "40bf9c95c27e8d11134aa318",
+      "check_id": "graduate-baseline",
+      "result": "passed",
+      "output": "{\n  \"case\": \"graduate-baseline\",\n  \"library\": \"scikit-learn\",\n  \"version\": \"1.9.0\",\n  \"dataset\": \"Bundled digits: 1797 8×8 images\",\n  \"split\": \"stratified 75/25, random_state=42\",\n  \"train_rows\": 1347,\n  \"test_rows\": 450,\n  \"model\": \"SVC(gamma=0.001)\",\n  \"accuracy\": 0.9888888888888889,\n  \"expected_minimum\": 0.9,\n  \"device\": \"CPU; this example requests no GPU\",\n  \"scope\": \"Small official-library example; not a complete reproduction of a paper or a general benchmark ranking\"\n}\n\n",
+      "seconds": 0.68,
+      "persona": "graduate",
+      "title": "官方机器学习库的手写数字基线",
+      "source_url": "https://github.com/scikit-learn/scikit-learn",
+      "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+      "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+    },
+    {
+      "id": "7cb8517424b50ff6839e29df",
+      "check_id": "graduate-budget",
+      "result": "passed",
+      "output": "{\n  \"case\": \"graduate-budget\",\n  \"library\": \"scikit-learn\",\n  \"version\": \"1.9.0\",\n  \"dataset\": \"Bundled digits: 1797 8×8 images\",\n  \"split\": \"stratified 75/25, random_state=42\",\n  \"train_rows\": 1347,\n  \"test_rows\": 450,\n  \"model\": \"Pipeline(steps=[('standardscaler', StandardScaler()),\\n                ('sgdclassifier',\\n                 SGDClassifier(max_iter=2000, random_state=42, tol=0.0001))])\",\n  \"accuracy\": 0.9488888888888889,\n  \"expected_minimum\": 0.85,\n  \"device\": \"CPU; this example requests no GPU\",\n  \"scope\": \"Small official-library example; not a complete reproduction of a paper or a general benchmark ranking\"\n}\n\n",
+      "seconds": 0.764,
+      "persona": "graduate",
+      "title": "无 GPU 条件下的缩小基线实验",
+      "source_url": "https://github.com/scikit-learn/scikit-learn",
+      "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+      "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+    },
+    {
+      "id": "f44df2861bbc25c10a719d0a",
+      "check_id": "student-minimal",
+      "result": "passed",
+      "output": "{\n  \"case\": \"student-minimal\",\n  \"library\": \"scikit-learn\",\n  \"version\": \"1.9.0\",\n  \"dataset\": \"Bundled digits: 1797 8×8 images\",\n  \"split\": \"stratified 75/25, random_state=42\",\n  \"train_rows\": 1347,\n  \"test_rows\": 450,\n  \"model\": \"DecisionTreeClassifier(max_depth=12, random_state=42)\",\n  \"accuracy\": 0.82,\n  \"expected_minimum\": 0.75,\n  \"device\": \"CPU; this example requests no GPU\",\n  \"scope\": \"Small official-library example; not a complete reproduction of a paper or a general benchmark ranking\"\n}\n\n",
+      "seconds": 0.662,
+      "persona": "student",
+      "title": "普通电脑上的最小分类实践",
+      "source_url": "https://github.com/scikit-learn/scikit-learn",
+      "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+      "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+    },
+    {
+      "id": "165794bd3bf4c8246314b16b",
+      "check_id": "student-course",
+      "result": "passed",
+      "output": "{\n  \"case\": \"student-course\",\n  \"library\": \"scikit-learn\",\n  \"version\": \"1.9.0\",\n  \"dataset\": \"Bundled digits: 1797 8×8 images\",\n  \"split\": \"stratified 75/25, random_state=42\",\n  \"train_rows\": 1347,\n  \"test_rows\": 450,\n  \"model\": \"Pipeline(steps=[('standardscaler', StandardScaler()),\\n                ('logisticregression',\\n                 LogisticRegression(max_iter=1000, random_state=42))])\",\n  \"accuracy\": 0.9777777777777777,\n  \"expected_minimum\": 0.9,\n  \"device\": \"CPU; this example requests no GPU\",\n  \"scope\": \"Small official-library example; not a complete reproduction of a paper or a general benchmark ranking\",\n  \"confusion_matrix\": [\n    [\n      45,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0\n    ],\n    [\n      0,\n      43,\n      0,\n      0,\n      1,\n      0,\n      0,\n      0,\n      2,\n      0\n    ],\n    [\n      0,\n      0,\n      44,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0\n    ],\n    [\n      0,\n      0,\n      0,\n      46,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0\n    ],\n    [\n      0,\n      0,\n      0,\n      0,\n      45,\n      0,\n      0,\n      0,\n      0,\n      0\n    ],\n    [\n      0,\n      0,\n      0,\n      0,\n      0,\n      45,\n      0,\n      0,\n      0,\n      1\n    ],\n    [\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      44,\n      0,\n      1,\n      0\n    ],\n    [\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      45,\n      0,\n      0\n    ],\n    [\n      0,\n      3,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      40,\n      0\n    ],\n    [\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      1,\n      1,\n      43\n    ]\n  ],\n  \"first_predictions\": [\n    {\n      \"expected\": 1,\n      \"predicted\": 8\n    },\n    {\n      \"expected\": 0,\n      \"predicted\": 0\n    },\n    {\n      \"expected\": 9,\n      \"predicted\": 9\n    },\n    {\n      \"expected\": 1,\n      \"predicted\": 1\n    },\n    {\n      \"expected\": 5,\n      \"predicted\": 5\n    },\n    {\n      \"expected\": 6,\n      \"predicted\": 6\n    },\n    {\n      \"expected\": 7,\n      \"predicted\": 7\n    },\n    {\n      \"expected\": 9,\n      \"predicted\": 9\n    },\n    {\n      \"expected\": 1,\n      \"predicted\": 1\n    },\n    {\n      \"expected\": 5,\n      \"predicted\": 5\n    }\n  ]\n}\n\n",
+      "seconds": 0.648,
+      "persona": "student",
+      "title": "课程项目的分类结果与错误分析",
+      "source_url": "https://github.com/scikit-learn/scikit-learn",
+      "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+      "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+    }
+  ]
+}

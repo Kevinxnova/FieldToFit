@@ -1,0 +1,74 @@
+[
+  {
+    "id": "engineer-pdf",
+    "title": "本地中文 PDF 文本提取",
+    "persona": "engineer",
+    "script": "pdf_workflows.py",
+    "source_url": "https://github.com/py-pdf/pypdf",
+    "expected": "Two-page Chinese searchable PDF is read correctly; specified extension/field assertions pass",
+    "limitations": "Synthetic searchable PDF, two pages; no OCR, handwriting, arbitrary invoice layout or full application deployment"
+  },
+  {
+    "id": "engineer-extension",
+    "title": "基于 PDF 库增加按页材料接口",
+    "persona": "engineer",
+    "script": "pdf_workflows.py",
+    "source_url": "https://github.com/py-pdf/pypdf",
+    "expected": "Two-page Chinese searchable PDF is read correctly; specified extension/field assertions pass",
+    "limitations": "Synthetic searchable PDF, two pages; no OCR, handwriting, arbitrary invoice layout or full application deployment"
+  },
+  {
+    "id": "engineer-mixed",
+    "title": "复用 PDF 解析并实现指定字段提取",
+    "persona": "engineer",
+    "script": "pdf_workflows.py",
+    "source_url": "https://github.com/py-pdf/pypdf",
+    "expected": "Two-page Chinese searchable PDF is read correctly; specified extension/field assertions pass",
+    "limitations": "Synthetic searchable PDF, two pages; no OCR, handwriting, arbitrary invoice layout or full application deployment"
+  },
+  {
+    "id": "researcher-model-data",
+    "title": "模型、数据与评测设置的最小实验",
+    "persona": "researcher",
+    "script": "ml_workflows.py",
+    "source_url": "https://github.com/scikit-learn/scikit-learn",
+    "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+    "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+  },
+  {
+    "id": "graduate-baseline",
+    "title": "官方机器学习库的手写数字基线",
+    "persona": "graduate",
+    "script": "ml_workflows.py",
+    "source_url": "https://github.com/scikit-learn/scikit-learn",
+    "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+    "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+  },
+  {
+    "id": "graduate-budget",
+    "title": "无 GPU 条件下的缩小基线实验",
+    "persona": "graduate",
+    "script": "ml_workflows.py",
+    "source_url": "https://github.com/scikit-learn/scikit-learn",
+    "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+    "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+  },
+  {
+    "id": "student-minimal",
+    "title": "普通电脑上的最小分类实践",
+    "persona": "student",
+    "script": "ml_workflows.py",
+    "source_url": "https://github.com/scikit-learn/scikit-learn",
+    "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+    "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+  },
+  {
+    "id": "student-course",
+    "title": "课程项目的分类结果与错误分析",
+    "persona": "student",
+    "script": "ml_workflows.py",
+    "source_url": "https://github.com/scikit-learn/scikit-learn",
+    "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
+    "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+  }
+]

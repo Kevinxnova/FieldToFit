@@ -1,0 +1,4 @@
+# Optional dependencies for the reviewed local example suite.
+pypdf>=6.0,<7
+reportlab>=4,<5
+scikit-learn>=1.6,<2

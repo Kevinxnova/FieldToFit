@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      METIS_DATA_DIR: /data
+      FRONTEND_URL: http://localhost:8000
+      ALLOWED_ORIGINS: http://localhost:8000,http://127.0.0.1:8000
+    volumes:
+      - metis-data:/data
+    restart: unless-stopped
+  collector:
+    build: .
+    command: ["python", "-m", "backend.scheduler", "--daemon"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      METIS_DATA_DIR: /data
+    volumes:
+      - metis-data:/data
+    depends_on:
+      - web
+    restart: unless-stopped
+volumes:
+  metis-data:

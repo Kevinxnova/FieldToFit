@@ -4,6 +4,20 @@ from __future__ import annotations
 
 import hmac
 import os
+from urllib.parse import urlsplit, urlunsplit
+
+
+def allowed_origins() -> set[str]:
+    """Explicit origins only. Never trust the incoming Host header as an allowlist."""
+    origins = {x.strip().rstrip('/') for x in os.getenv('ALLOWED_ORIGINS', os.getenv('FRONTEND_URL', 'http://localhost:5173')).split(',') if x.strip()}
+    for origin in list(origins):
+        parsed = urlsplit(origin)
+        if parsed.hostname in {'localhost', '127.0.0.1'}:
+            alternate = '127.0.0.1' if parsed.hostname == 'localhost' else 'localhost'
+            if parsed.port:
+                alternate += ':' + str(parsed.port)
+            origins.add(urlunsplit((parsed.scheme, alternate, '', '', '')))
+    return origins
 
 
 def secret_is_configured(name: str) -> bool:

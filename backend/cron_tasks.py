@@ -17,52 +17,18 @@ logger = logging.getLogger(__name__)
 
 
 def task_scrape() -> dict:
-    """Run all scrapers. Returns status dict."""
+    """Collect registered sources once per day and report partial failures honestly."""
     init_db()
-    today = date.today().isoformat()
+    from backend.knowledge.sources import run_daily
     start = time.time()
-    steps = {}
-
-    try:
-        from backend.scrapers.github import GitHubScraper
-        from backend.scrapers.hackernews import HNScraper
-        from backend.scrapers.producthunt import ProductHuntScraper
-        from backend.scrapers.rss_news import RSSNewsScraper
-
-        total_new = 0
-        total_found = 0
-        for scraper in [GitHubScraper(), HNScraper(), ProductHuntScraper(), RSSNewsScraper()]:
-            s_start = time.time()
-            try:
-                result = scraper.run()
-                steps[scraper.source_name] = {
-                    "status": result["status"],
-                    "found": result["tools_found"],
-                    "new": result["tools_new"],
-                    "deduped": result["tools_deduped"],
-                    "duration_s": round(time.time() - s_start, 1),
-                    "error": result.get("error"),
-                }
-                total_new += result["tools_new"]
-                total_found += result["tools_found"]
-            except Exception as e:
-                steps[scraper.source_name] = {
-                    "status": "error",
-                    "error": str(e),
-                    "duration_s": round(time.time() - s_start, 1),
-                }
-
-        elapsed = time.time() - start
-        log_cron_run(today, "scrape", "success", steps=steps,
-                     duration_seconds=elapsed,
-                     metadata={"total_found": total_found, "total_new": total_new})
-        return {"status": "success", "total_found": total_found, "total_new": total_new, "steps": steps}
-
-    except Exception as e:
-        elapsed = time.time() - start
-        log_cron_run(today, "scrape", "error", steps=steps,
-                     error_message=str(e), duration_seconds=elapsed)
-        return {"status": "error", "error": str(e)}
+    result = run_daily()
+    total_found = sum(item.get("found", 0) for item in result["results"])
+    total_new = sum(item.get("changed", 0) for item in result["results"])
+    steps = {item["source"]: item for item in result["results"]}
+    log_cron_run(date.today().isoformat(), "scrape", result["status"], steps=steps,
+                 duration_seconds=time.time() - start,
+                 metadata={"total_found": total_found, "total_new": total_new, "interval_days": 1})
+    return {**result, "total_found": total_found, "total_new": total_new, "steps": steps}
 
 
 def task_daily_news() -> dict:

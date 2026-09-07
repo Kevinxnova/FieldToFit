@@ -5,7 +5,7 @@ from functools import wraps
 from dotenv import load_dotenv
 load_dotenv()
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory, Response, abort
 
 from backend.config import FRONTEND_URL
 from backend.db import init_db
@@ -22,15 +22,16 @@ from backend.db.queries import (
 from backend.translate import translate_tool
 from backend.email.sender import compose_email, send_via_buttondown
 from backend.ai_recommend import generate_recommendations, get_cached_recommendations
-from backend.security import secret_is_configured, secret_matches
+from backend.security import secret_is_configured, secret_matches, allowed_origins
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 2_500_000
+from backend.knowledge.api import bp as knowledge_bp
+from backend.knowledge.mcp import bp as mcp_bp
+app.register_blueprint(knowledge_bp)
+app.register_blueprint(mcp_bp)
 
-ALLOWED_ORIGINS = [
-    origin.strip()
-    for origin in os.getenv("ALLOWED_ORIGINS", FRONTEND_URL).split(",")
-    if origin.strip()
-]
+ALLOWED_ORIGINS = allowed_origins()
 
 
 @app.after_request
@@ -41,8 +42,10 @@ def cors(response):
         response.headers["Vary"] = "Origin"
     elif "*" in ALLOWED_ORIGINS:
         response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PATCH, OPTIONS"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type, X-Admin-Password"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PATCH, DELETE, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, X-Admin-Password, Authorization, MCP-Protocol-Version"
+    if origin and origin in ALLOWED_ORIGINS:
+        response.headers['Access-Control-Allow-Credentials'] = 'true'
     return response
 
 
@@ -358,6 +361,45 @@ def cron_logs():
     task = request.args.get("task")
     limit = int(request.args.get("limit", 50))
     return jsonify(get_cron_logs(limit=limit, task_name=task))
+
+
+# Serve the built client for source and container deployments.
+from pathlib import Path
+import html
+import re
+
+CLIENT_DIST = Path(__file__).resolve().parents[2] / 'frontend' / 'dist'
+
+
+@app.get('/assets/<path:filename>')
+def frontend_asset(filename):
+    return send_from_directory(CLIENT_DIST / 'assets', filename)
+
+
+@app.get('/favicon.svg')
+def favicon():
+    return send_from_directory(CLIENT_DIST, 'favicon.svg')
+
+
+@app.get('/')
+@app.get('/<path:path>')
+def frontend(path=''):
+    if path.startswith('api/') or path == 'api' or not (CLIENT_DIST / 'index.html').exists():
+        abort(404)
+    content = (CLIENT_DIST / 'index.html').read_text()
+    status = 200
+    if path.startswith('records/'):
+        from backend.knowledge.store import get_record
+        record = get_record(path.removeprefix('records/'))
+        if record:
+            title = html.escape(record['title_zh'] or record['title'])
+            description = html.escape((record['summary_zh'] or record['summary'])[:300], quote=True)
+            content = re.sub(r'<title>.*?</title>', lambda _: f'<title>{title} · Metis</title>', content)
+            content = re.sub(r'<meta name="description"[^>]*>', lambda _: f'<meta name="description" content="{description}" />', content)
+            content = content.replace('</head>', f'<meta property="og:title" content="{title}" /><meta property="og:description" content="{description}" /></head>')
+        else:
+            status = 404
+    return Response(content, status=status, content_type='text/html; charset=utf-8')
 
 
 # Init DB on import

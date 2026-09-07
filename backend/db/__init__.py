@@ -153,13 +153,12 @@ def init_db():
         conn = sqlite3.connect(str(DB_PATH))
 
     schema_path = Path(__file__).parent / "schema.sql"
-    for statement in schema_path.read_text().split(";"):
+    import re
+    schema = re.sub(r"(?m)^\s*--.*$", "", schema_path.read_text())
+    for statement in schema.split(";"):
         statement = statement.strip()
         if statement and not statement.startswith("--") and not statement.startswith("PRAGMA"):
-            try:
-                conn.execute(statement)
-            except:
-                pass
+            conn.execute(statement)
 
     try:
         cols = [row[1] for row in conn.execute("PRAGMA table_info(tools)").fetchall()]
@@ -182,6 +181,8 @@ def init_db():
 
     conn.commit()
     conn.close()
+    from backend.knowledge.store import init_knowledge
+    init_knowledge()
 
 
 @contextmanager

@@ -1,0 +1,562 @@
+{
+  "generator": "GPT-6 Astra · Codex source-grounded batch",
+  "scope": "Assistant-organized examples; not independently reviewed. Quotes locate the supplied material but do not certify every inference.",
+  "items": [
+    {
+      "record_id": "9a27912c2633e97ec074846d",
+      "record": {
+        "kind": "resource",
+        "canonical_url": "https://github.com/py-pdf/pypdf",
+        "title": "pypdf",
+        "version": "6.17.0",
+        "object_type": "library",
+        "topics": [
+          "engineering",
+          "learning"
+        ],
+        "source_id": "manual",
+        "published_at": null,
+        "summary": "Extract PDF text in Python; image-only scans require separate OCR.",
+        "metadata": {
+          "document_url": "https://pypdf.readthedocs.io/en/6.17.0/user/extract-text.html"
+        }
+      },
+      "source_excerpt": {
+        "url": "https://pypdf.readthedocs.io/en/6.17.0/user/extract-text.html",
+        "title": "pypdf",
+        "body": "pypdf is not OCR software.",
+        "locator": "OCR vs. Text Extraction",
+        "version": "6.17.0",
+        "coverage": "excerpt"
+      },
+      "output": {
+        "title_zh": "pypdf：先区分文本 PDF 与扫描件",
+        "summary_zh": "可用 Python 提取 PDF 中的文字；扫描图像需要另外接入 OCR。",
+        "summary_en": "Extract PDF text in Python; image-only scans require separate OCR.",
+        "human": {
+          "zh": {
+            "what": "PDF 文字读取库。",
+            "changes": "这是一份工具采用说明，不是新版本发布。",
+            "why": "先判断文件是否有文本层，能减少选错处理路径。",
+            "audience": "处理本地文档的工程师与学习者。",
+            "limitations": "pypdf 自身不提供 OCR；这里使用 6.17.0 版本文档，本次仅验证可搜索的中文 PDF。",
+            "next_step": "先用两页中文可搜索 PDF 跑本仓库最小例子，再测试自己的文件。"
+          },
+          "en": {
+            "what": "A PDF text-reading library.",
+            "changes": "An adoption note, not a release announcement.",
+            "why": "Checking the text layer helps choose a processing path.",
+            "audience": "Engineers and learners handling local documents.",
+            "limitations": "pypdf does not provide OCR. Documentation is pinned to 6.17.0; our checks cover searchable Chinese PDFs only.",
+            "next_step": "Run the two-page Chinese searchable-PDF example, then test your own files."
+          }
+        },
+        "citations": [
+          {
+            "source_url": "https://pypdf.readthedocs.io/en/6.17.0/user/extract-text.html",
+            "quote": "pypdf is not OCR software."
+          },
+          {
+            "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+            "quote": "text = page.extract_text()"
+          },
+          {
+            "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+            "quote": "pip install pypdf"
+          },
+          {
+            "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+            "quote": "from pypdf import PdfReader\n\nreader = PdfReader(\"example.pdf\")"
+          },
+          {
+            "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/LICENSE",
+            "quote": "Redistribution and use in source and binary forms"
+          }
+        ],
+        "facts": [
+          {
+            "key": "limitations",
+            "value": "pypdf 自身不是 OCR 软件，扫描图像需要独立 OCR。",
+            "version": "6.17.0",
+            "source_url": "https://pypdf.readthedocs.io/en/6.17.0/user/extract-text.html",
+            "quote": "pypdf is not OCR software."
+          },
+          {
+            "key": "capabilities",
+            "value": [
+              "PDF text extraction"
+            ],
+            "version": "6.17.0",
+            "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+            "quote": "text = page.extract_text()"
+          },
+          {
+            "key": "deployment",
+            "value": "local",
+            "version": "6.17.0",
+            "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+            "quote": "pip install pypdf"
+          },
+          {
+            "key": "usage",
+            "value": "在本地 Python 环境安装 pypdf==6.17.0；用 PdfReader(\"example.pdf\") 读取文件，再遍历 reader.pages 调用 page.extract_text()。",
+            "version": "6.17.0",
+            "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+            "quote": "from pypdf import PdfReader\n\nreader = PdfReader(\"example.pdf\")"
+          },
+          {
+            "key": "license",
+            "value": "BSD-3-Clause",
+            "version": "6.17.0",
+            "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/LICENSE",
+            "quote": "Redistribution and use in source and binary forms"
+          }
+        ],
+        "research": {},
+        "importance": {
+          "score": 3,
+          "reason_zh": "先判断文件是否有文本层，能减少选错处理路径。",
+          "reason_en": "Checking the text layer helps choose a processing path."
+        },
+        "capability_tags": [
+          "PDF",
+          "中文 PDF",
+          "文本提取",
+          "Python",
+          "document processing"
+        ],
+        "topics": [
+          "engineering",
+          "learning"
+        ],
+        "object_type": "library"
+      },
+      "extra_excerpts": [
+        {
+          "url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+          "title": "README.md",
+          "body": "text = page.extract_text()",
+          "locator": "README.md",
+          "version": "6.17.0",
+          "coverage": "excerpt"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+          "title": "README.md",
+          "body": "pip install pypdf",
+          "locator": "README.md",
+          "version": "6.17.0",
+          "coverage": "excerpt"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+          "title": "README.md",
+          "body": "from pypdf import PdfReader\n\nreader = PdfReader(\"example.pdf\")",
+          "locator": "README.md",
+          "version": "6.17.0",
+          "coverage": "excerpt"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/LICENSE",
+          "title": "LICENSE",
+          "body": "Redistribution and use in source and binary forms",
+          "locator": "LICENSE",
+          "version": "6.17.0",
+          "coverage": "excerpt"
+        }
+      ]
+    },
+    {
+      "record_id": "f0698b56845d67decbe698fb",
+      "record": {
+        "kind": "resource",
+        "canonical_url": "https://github.com/scikit-learn/scikit-learn",
+        "title": "scikit-learn",
+        "version": "1.9.0",
+        "object_type": "library",
+        "topics": [
+          "engineering",
+          "learning"
+        ],
+        "source_id": "manual",
+        "published_at": null,
+        "summary": "The official SVC digits tutorial provides a starting point; this repository documents its own separate evaluation split.",
+        "metadata": {}
+      },
+      "source_excerpt": {
+        "url": "https://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html",
+        "title": "scikit-learn",
+        "body": "clf = svm.SVC(gamma=0.001)",
+        "locator": "Classification#",
+        "version": "1.9.0",
+        "coverage": "excerpt"
+      },
+      "output": {
+        "title_zh": "scikit-learn：从手写数字分类开始",
+        "summary_zh": "官方示例提供 SVC 分类的入门路径；本仓库的缩小实践采用独立说明的数据划分。",
+        "summary_en": "The official SVC digits tutorial provides a starting point; this repository documents its own separate evaluation split.",
+        "human": {
+          "zh": {
+            "what": "一个可跟随运行的手写数字分类示例。",
+            "changes": "示例展示读取数据、划分数据、训练与预测。",
+            "why": "适合把模型选择与实验条件一起记录。",
+            "audience": "学生、研究生与验证基线的研究者。",
+            "limitations": "本次实践的划分与官方页面不同，不能直接比较两处准确率；stable 文档未固定版本。",
+            "next_step": "先运行 graduate-baseline，再记录数据划分和随机种子。"
+          },
+          "en": {
+            "what": "A runnable handwritten-digit classification tutorial.",
+            "changes": "It walks through data loading, splitting, fitting and prediction.",
+            "why": "It encourages recording evaluation conditions alongside model choices.",
+            "audience": "Students, graduates and baseline researchers.",
+            "limitations": "Our split differs from the official example: accuracy values are not directly comparable. The stable URL is not version-pinned.",
+            "next_step": "Run graduate-baseline and record the split and random seed."
+          }
+        },
+        "citations": [
+          {
+            "source_url": "https://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html",
+            "quote": "clf = svm.SVC(gamma=0.001)"
+          }
+        ],
+        "facts": [
+          {
+            "key": "method",
+            "value": "示例使用 svm.SVC(gamma=0.001)。",
+            "version": "1.9.0",
+            "source_url": "https://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html",
+            "quote": "clf = svm.SVC(gamma=0.001)"
+          }
+        ],
+        "research": {},
+        "importance": {
+          "score": 3,
+          "reason_zh": "适合把模型选择与实验条件一起记录。",
+          "reason_en": "It encourages recording evaluation conditions alongside model choices."
+        },
+        "capability_tags": [
+          "machine learning",
+          "手写数字",
+          "classification",
+          "CPU",
+          "入门",
+          "scikit-learn"
+        ],
+        "topics": [
+          "engineering",
+          "learning"
+        ],
+        "object_type": "library"
+      }
+    },
+    {
+      "record_id": "80bada030a39c91e2923059a",
+      "record": {
+        "kind": "paper",
+        "canonical_url": "https://jmlr.org/papers/v12/pedregosa11a.html",
+        "title": "Scikit-learn: Machine Learning in Python",
+        "version": "JMLR 12 (2011)",
+        "object_type": "paper",
+        "topics": [
+          "research",
+          "learning"
+        ],
+        "source_id": "manual",
+        "published_at": null,
+        "summary": "The 2011 paper describes scikit-learn’s design and implementation, providing historical design context rather than current performance claims.",
+        "metadata": {
+          "publication_year": 2011
+        }
+      },
+      "source_excerpt": {
+        "url": "https://jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf",
+        "title": "Scikit-learn: Machine Learning in Python",
+        "body": "Emphasis is\nput on ease of use, performance, documentation, and API cons istency.",
+        "locator": "Page 2",
+        "version": "JMLR 12 (2011)",
+        "coverage": "excerpt"
+      },
+      "output": {
+        "title_zh": "Scikit-learn 论文：理解一致接口的工程价值",
+        "summary_zh": "2011 年论文介绍 scikit-learn 的设计与实现；可用于理解接口设计，不能作为当前性能结论。",
+        "summary_en": "The 2011 paper describes scikit-learn’s design and implementation, providing historical design context rather than current performance claims.",
+        "human": {
+          "zh": {
+            "what": "一篇介绍机器学习软件库的论文。",
+            "changes": "本条是历史论文阅读材料，不是近期新算法。",
+            "why": "论文把易用性、性能、文档和接口一致性列为设计重点。",
+            "audience": "研究者、研究生与学习库设计的学生。",
+            "limitations": "历史实验不代表当前版本；本次没有完成论文全部实验复现。",
+            "next_step": "先读摘要和设计部分，再用当前官方教程做最小实践。"
+          },
+          "en": {
+            "what": "A paper describing a machine-learning library.",
+            "changes": "Historical reading, not a newly released algorithm.",
+            "why": "The abstract emphasizes usability, performance, documentation and API consistency.",
+            "audience": "Researchers, graduates and students studying library design.",
+            "limitations": "Historical benchmarks do not describe current releases; we have not reproduced the full paper.",
+            "next_step": "Read the abstract and design sections, then try a current official tutorial."
+          }
+        },
+        "citations": [
+          {
+            "source_url": "https://jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf",
+            "quote": "Emphasis is\nput on ease of use, performance, documentation, and API cons istency."
+          }
+        ],
+        "facts": [],
+        "research": {
+          "question": "如何把机器学习算法组织成易用且一致的软件接口？",
+          "method": "软件工程设计与算法实现；不将本文描述为一个新学习算法。",
+          "contribution": "作者强调易用性、性能、文档和 API 一致性。",
+          "experiments": "论文含历史实验讨论；本次不提取可用于当前版本排名的数值。",
+          "limitations": "2011 年资料；完整复现未执行。",
+          "prerequisites": "来源未给出正式先修课程清单。",
+          "reading_steps": []
+        },
+        "importance": {
+          "score": 3,
+          "reason_zh": "论文把易用性、性能、文档和接口一致性列为设计重点。",
+          "reason_en": "The abstract emphasizes usability, performance, documentation and API consistency."
+        },
+        "capability_tags": [
+          "scikit-learn",
+          "接口设计",
+          "研究阅读",
+          "machine learning"
+        ],
+        "topics": [
+          "research",
+          "learning"
+        ],
+        "object_type": "paper"
+      }
+    },
+    {
+      "record_id": "d01cfbdd9e90d4c3228d9cff",
+      "record": {
+        "kind": "paper",
+        "canonical_url": "https://arxiv.org/abs/2609.05395",
+        "title": "Multi-Step Tool-Calling over Korean Open Public APIs: A Benchmark and a Data-Synthesis Recipe",
+        "version": "v1",
+        "object_type": "paper",
+        "topics": [
+          "research",
+          "models",
+          "agents",
+          "data"
+        ],
+        "source_id": "arxiv",
+        "published_at": "2026-09-04T17:44:52Z",
+        "summary": "The abstract introduces a 145-task Korean public-API benchmark and an execution-grounded trajectory-synthesis method.",
+        "metadata": {}
+      },
+      "source_excerpt": {
+        "url": "https://arxiv.org/abs/2609.05395v1",
+        "title": "Multi-Step Tool-Calling over Korean Open Public APIs: A Benchmark and a Data-Synthesis Recipe",
+        "body": "We introduce the Korean Open Public API Benchmark (KOPA-Bench), comprising 145 real-world tasks.",
+        "locator": "Abstract",
+        "version": "v1",
+        "coverage": "excerpt"
+      },
+      "output": {
+        "title_zh": "KOPA-Bench：观察多步公共 API 调用的差距",
+        "summary_zh": "论文摘要介绍包含 145 项任务的韩语公共 API 基准，以及基于真实执行结果构造调用轨迹的方法。",
+        "summary_en": "The abstract introduces a 145-task Korean public-API benchmark and an execution-grounded trajectory-synthesis method.",
+        "human": {
+          "zh": {
+            "what": "研究多步公共 API 调用的基准与数据合成。",
+            "changes": "作者提出 KOPA-Bench 和 EDGE。",
+            "why": "它把工具能否顺利衔接放进真实执行环节。",
+            "audience": "研究 Agent 工具调用的研究者和研究生。",
+            "limitations": "当前只核对摘要；作者报告的模型提升尚未经 Metis 独立复现。",
+            "next_step": "继续获取论文正文、实现和数据，核对训练与评测设置。"
+          },
+          "en": {
+            "what": "A benchmark and data-synthesis approach for multi-step public-API calls.",
+            "changes": "The authors introduce KOPA-Bench and EDGE.",
+            "why": "It grounds tool chaining in actual API execution.",
+            "audience": "Researchers and graduates studying tool-using agents.",
+            "limitations": "Only the abstract has been checked; reported gains have not been independently reproduced by Metis.",
+            "next_step": "Read the full paper, implementation and data before assessing training and evaluation conditions."
+          }
+        },
+        "citations": [
+          {
+            "source_url": "https://arxiv.org/abs/2609.05395v1",
+            "quote": "We introduce the Korean Open Public API Benchmark (KOPA-Bench), comprising 145 real-world tasks."
+          }
+        ],
+        "facts": [],
+        "research": {
+          "question": "如何评估并改进多步公共 API 调用？",
+          "method": "EDGE 利用执行成功的工具连接构造调用轨迹；当前依据仅为摘要。",
+          "contribution": "KOPA-Bench 包含 145 项真实任务，为作者报告。",
+          "experiments": "摘要报告在 KOPA-Bench 和 BFCL 上改善，完整设置待查。",
+          "limitations": "缺少全文、数据划分、运行环境与独立复现。",
+          "prerequisites": "正式先修要求未知。",
+          "reading_steps": []
+        },
+        "importance": {
+          "score": 3,
+          "reason_zh": "它把工具能否顺利衔接放进真实执行环节。",
+          "reason_en": "It grounds tool chaining in actual API execution."
+        },
+        "capability_tags": [
+          "Agent",
+          "tool calling",
+          "API",
+          "多步调用",
+          "benchmark"
+        ],
+        "topics": [
+          "research",
+          "models",
+          "agents",
+          "data"
+        ],
+        "object_type": "paper"
+      }
+    },
+    {
+      "record_id": "1378b5618cc155a9851ca573",
+      "record": {
+        "kind": "event",
+        "canonical_url": "https://openai.com/index/an-alien-mind",
+        "title": "An Alien Mind",
+        "version": "",
+        "object_type": "news",
+        "topics": [],
+        "source_id": "rss-8e5d65f13d",
+        "published_at": "2026-09-06T09:00:00Z",
+        "summary": "The official summary discusses alignment challenges, safeguards and international coordination.",
+        "metadata": {}
+      },
+      "source_excerpt": {
+        "url": "https://openai.com/index/an-alien-mind",
+        "title": "An Alien Mind",
+        "body": "He calls for stronger safeguards and international coordination.",
+        "locator": "Publisher feed entry",
+        "version": "",
+        "coverage": "excerpt"
+      },
+      "output": {
+        "title_zh": "An Alien Mind：关于 AI 对齐与协作的观点",
+        "summary_zh": "官方摘要讨论更强 AI 的对齐挑战，以及安全措施和国际协作。",
+        "summary_en": "The official summary discusses alignment challenges, safeguards and international coordination.",
+        "human": {
+          "zh": {
+            "what": "关于 AI 对齐的观点文章。",
+            "changes": "当前索引的是官方摘要。",
+            "why": "可用于追踪对齐议题，不能据此断言新增产品能力。",
+            "audience": "关注 AI 治理与安全研究的人。",
+            "limitations": "尚未核对全文；这不是模型发布或能力评测。",
+            "next_step": "打开原文，区分作者观点与实证结果。"
+          },
+          "en": {
+            "what": "An opinion piece on AI alignment.",
+            "changes": "The indexed material is the official summary.",
+            "why": "It helps track alignment discussion, not establish new product capabilities.",
+            "audience": "Readers following AI governance and safety research.",
+            "limitations": "The full article has not been checked; this is not a model release or evaluation.",
+            "next_step": "Read the original and separate opinion from empirical results."
+          }
+        },
+        "citations": [
+          {
+            "source_url": "https://openai.com/index/an-alien-mind",
+            "quote": "He calls for stronger safeguards and international coordination."
+          }
+        ],
+        "facts": [],
+        "research": {},
+        "importance": {
+          "score": 3,
+          "reason_zh": "可用于追踪对齐议题，不能据此断言新增产品能力。",
+          "reason_en": "It helps track alignment discussion, not establish new product capabilities."
+        },
+        "capability_tags": [
+          "AI alignment",
+          "对齐",
+          "治理"
+        ],
+        "topics": [],
+        "object_type": "news"
+      }
+    },
+    {
+      "record_id": "be7207e22efd3f7351b311d5",
+      "record": {
+        "kind": "event",
+        "canonical_url": "https://openai.com/index/research-acceleration-view-inside-openai",
+        "title": "Research acceleration: The view inside OpenAI",
+        "version": "",
+        "object_type": "news",
+        "topics": [
+          "agents",
+          "research",
+          "engineering"
+        ],
+        "source_id": "rss-8e5d65f13d",
+        "published_at": "2026-09-06T08:00:00Z",
+        "summary": "The official summary describes coding-agent use and research workflows; methods and numbers require checking the full article.",
+        "metadata": {}
+      },
+      "source_excerpt": {
+        "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+        "title": "Research acceleration: The view inside OpenAI",
+        "body": "Inside OpenAI, coding agents are reshaping AI research.",
+        "locator": "Publisher feed entry",
+        "version": "",
+        "coverage": "excerpt"
+      },
+      "output": {
+        "title_zh": "OpenAI 内部观察：编码 Agent 如何参与研究",
+        "summary_zh": "官方摘要介绍编码 Agent 的使用与研究流程变化；具体方法和数字需要回到全文核对。",
+        "summary_en": "The official summary describes coding-agent use and research workflows; methods and numbers require checking the full article.",
+        "human": {
+          "zh": {
+            "what": "关于研究中使用编码 Agent 的内部观察。",
+            "changes": "涉及使用情况、实验节奏与任务复杂度。",
+            "why": "可作为观察研究工作流变化的线索。",
+            "audience": "研究者与开发 Agent 工作流的工程师。",
+            "limitations": "当前只有摘要，没有足够依据判断因果或量化效率收益。",
+            "next_step": "读取原文中的样本范围和统计口径，再考虑用于自身流程。"
+          },
+          "en": {
+            "what": "An internal observation of coding agents in research.",
+            "changes": "It covers usage, experiment velocity and task complexity.",
+            "why": "It offers leads for examining changing research workflows.",
+            "audience": "Researchers and engineers building agent workflows.",
+            "limitations": "The summary alone cannot establish causality or quantify productivity gains.",
+            "next_step": "Check the original sample scope and measurement method before applying it."
+          }
+        },
+        "citations": [
+          {
+            "source_url": "https://openai.com/index/research-acceleration-view-inside-openai",
+            "quote": "Inside OpenAI, coding agents are reshaping AI research."
+          }
+        ],
+        "facts": [],
+        "research": {},
+        "importance": {
+          "score": 3,
+          "reason_zh": "可作为观察研究工作流变化的线索。",
+          "reason_en": "It offers leads for examining changing research workflows."
+        },
+        "capability_tags": [
+          "coding agents",
+          "研究流程",
+          "AI engineering"
+        ],
+        "topics": [
+          "agents",
+          "research",
+          "engineering"
+        ],
+        "object_type": "news"
+      }
+    }
+  ]
+}
