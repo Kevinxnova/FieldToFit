@@ -283,3 +283,9 @@ def test_new_provider_does_not_reuse_legacy_provider_secret(client,monkeypatch):
     monkeypatch.setenv('METIS_MODEL_BASE_URL','https://api.openai.com/v1')
     cfg=models.configuration()
     assert cfg['key_env']=='METIS_MODEL_API_KEY' and not cfg['credential_configured'] and not cfg['enabled']
+
+
+def test_explicit_document_subject_excludes_generic_extraction(client):
+    wanted=seed('PDF text extraction',suffix='pdf')
+    seed('网页数据提取',suffix='web',summary='TypeScript HTML extractor',summary_zh='从网页提取数据')
+    assert [r['id'] for r in tasks.pack('本地中文 PDF 提取')['candidates']]==[wanted]

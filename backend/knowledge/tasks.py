@@ -117,12 +117,15 @@ def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='
     interpretation=interpreted or interpret(goal,constraints,enhanced)
     # Query every candidate page; report the scope and do not silently return a top-N list.
     candidates={}
+    explicit_subjects=[term for term in ('pdf','ocr','rag') if re.search(r'(?<![a-z])'+term+r'(?![a-z])',goal,re.I)]
     for query in interpretation['queries']:
         pos=0
         while True:
             result=store.search_records(q=query,kind='resource' if persona=='engineer' else '',limit=100,offset=pos)
             for item in result['items']:
                 if item['kind']=='event': continue
+                content=' '.join(str(item.get(k,'')) for k in ('title','title_zh','summary','summary_zh')).casefold()+' '+store.encode(item.get('metadata',{}).get('capability_tags',[])).casefold()
+                if explicit_subjects and not all(term in content for term in explicit_subjects): continue
                 old=candidates.get(item['id'])
                 if not old or item.get('match_score',0)>old.get('match_score',0): candidates[item['id']]=item
             if result['next_offset'] is None or result['next_offset']>100000: break

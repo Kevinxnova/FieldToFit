@@ -417,7 +417,9 @@ export default function TaskWorkbench() {
                   )}
                 </div>
               ))}
-              <div className="task-materials">
+              <details>
+                <summary>{pick("展开原文与章节材料", "Read source documents and sections")}</summary>
+                <div className="task-materials">
                 {pack.material_packets[i]?.materials.map((m) => (
                   <SourceLink key={m.id} url={m.url}>
                     <Icon name="book" size={15} />
@@ -425,7 +427,8 @@ export default function TaskWorkbench() {
                     <small>{m.coverage}</small>
                   </SourceLink>
                 ))}
-              </div>
+                </div>
+              </details>
               {!!pack.material_packets[i]?.missing_materials.length && (
                 <p className="missing-materials">
                   {pick("还缺少：", "Still missing: ")}
