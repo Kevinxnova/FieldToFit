@@ -70,5 +70,14 @@
     "source_url": "https://github.com/scikit-learn/scikit-learn",
     "expected": "Fit specified CPU model on reproducible digits split and meet the case-specific accuracy threshold",
     "limitations": "Bundled educational dataset and fixed small split; not large-model/GPU validation or a complete paper reproduction"
+  },
+  {
+    "id": "engineer-pdf-amount",
+    "title": "中文 PDF 金额任务：文件输入、页码证据与拒绝猜测",
+    "persona": "engineer",
+    "script": "pdf_amount_workflow.py",
+    "source_url": "https://github.com/py-pdf/pypdf",
+    "expected": "Five synthetic PDF files; seven assertions cover amount, currency, page, quote, wrapper, missing, ambiguous, unavailable text and negative amount behavior",
+    "limitations": "Recipe v1; fixed CNY line format, synthetic searchable PDFs and a blank page. No OCR, arbitrary invoice formats or full application deployment"
   }
 ]

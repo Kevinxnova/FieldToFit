@@ -273,4 +273,4 @@ def test_all_personas_can_retrieve_task_context(client, kind):
     result = client.post('/api/v1/task', json={'goal': 'PDF processing', 'persona': kind}).json
     assert result['persona'] == kind and len(result['candidates']) == 1
     assert result['ai_generated'] is False
-    assert len(result['paths']) == 3
+    assert {p['path'] for p in result['paths']} == {'use', 'extend', 'build', 'mixed'}

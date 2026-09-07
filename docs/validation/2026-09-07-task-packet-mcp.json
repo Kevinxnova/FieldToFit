@@ -1,0 +1,149 @@
+{
+  "client": "Official Python MCP SDK",
+  "client_version": "2.1.1",
+  "http": {
+    "protocol": "2025-11-25",
+    "tool_count": 9,
+    "tasks": [
+      {
+        "persona": "engineer",
+        "goal": "PDF",
+        "candidate_count": 1,
+        "record_id": "9a27912c2633e97ec074846d",
+        "evidence_id": "0e3076e1969fb1c7837db49b",
+        "deliverables": [
+          "候选比较与采用依据",
+          "版本对应的运行或扩展步骤",
+          "最小功能产物与成功判据"
+        ],
+        "conclusion": "requires_evidence_review"
+      },
+      {
+        "persona": "researcher",
+        "goal": "scikit-learn",
+        "candidate_count": 2,
+        "record_id": "80bada030a39c91e2923059a",
+        "evidence_id": "d8a504e61b74a4bf60407e06",
+        "deliverables": [
+          "带来源的研究清单",
+          "方法与实验设置比较",
+          "尚未解决的问题和证据缺口"
+        ],
+        "conclusion": "requires_evidence_review"
+      },
+      {
+        "persona": "graduate",
+        "goal": "scikit-learn",
+        "candidate_count": 2,
+        "record_id": "80bada030a39c91e2923059a",
+        "evidence_id": "d8a504e61b74a4bf60407e06",
+        "deliverables": [
+          "论文、实现、数据对应关系",
+          "缩小实验的环境与步骤",
+          "结果和原论文实验的差距"
+        ],
+        "conclusion": "requires_evidence_review"
+      },
+      {
+        "persona": "student",
+        "goal": "scikit-learn",
+        "candidate_count": 2,
+        "record_id": "80bada030a39c91e2923059a",
+        "evidence_id": "d8a504e61b74a4bf60407e06",
+        "deliverables": [
+          "概念解释与前置知识",
+          "有依据的阅读顺序",
+          "最小实践及结果检查"
+        ],
+        "conclusion": "requires_evidence_review"
+      }
+    ],
+    "research_export": true,
+    "daily_briefs": true,
+    "complete_task_packet": {
+      "recipe_id": "pdf-amount",
+      "recipe_version": "1",
+      "paths": [
+        "use",
+        "extend",
+        "build",
+        "mixed"
+      ],
+      "observed_example_status": "passed",
+      "same_packet_markdown": true
+    }
+  },
+  "stdio": {
+    "protocol": "2025-11-25",
+    "tool_count": 9,
+    "tasks": [
+      {
+        "persona": "engineer",
+        "goal": "PDF",
+        "candidate_count": 1,
+        "record_id": "9a27912c2633e97ec074846d",
+        "evidence_id": "0e3076e1969fb1c7837db49b",
+        "deliverables": [
+          "候选比较与采用依据",
+          "版本对应的运行或扩展步骤",
+          "最小功能产物与成功判据"
+        ],
+        "conclusion": "requires_evidence_review"
+      },
+      {
+        "persona": "researcher",
+        "goal": "scikit-learn",
+        "candidate_count": 2,
+        "record_id": "80bada030a39c91e2923059a",
+        "evidence_id": "d8a504e61b74a4bf60407e06",
+        "deliverables": [
+          "带来源的研究清单",
+          "方法与实验设置比较",
+          "尚未解决的问题和证据缺口"
+        ],
+        "conclusion": "requires_evidence_review"
+      },
+      {
+        "persona": "graduate",
+        "goal": "scikit-learn",
+        "candidate_count": 2,
+        "record_id": "80bada030a39c91e2923059a",
+        "evidence_id": "d8a504e61b74a4bf60407e06",
+        "deliverables": [
+          "论文、实现、数据对应关系",
+          "缩小实验的环境与步骤",
+          "结果和原论文实验的差距"
+        ],
+        "conclusion": "requires_evidence_review"
+      },
+      {
+        "persona": "student",
+        "goal": "scikit-learn",
+        "candidate_count": 2,
+        "record_id": "80bada030a39c91e2923059a",
+        "evidence_id": "d8a504e61b74a4bf60407e06",
+        "deliverables": [
+          "概念解释与前置知识",
+          "有依据的阅读顺序",
+          "最小实践及结果检查"
+        ],
+        "conclusion": "requires_evidence_review"
+      }
+    ],
+    "research_export": true,
+    "daily_briefs": true,
+    "complete_task_packet": {
+      "recipe_id": "pdf-amount",
+      "recipe_version": "1",
+      "paths": [
+        "use",
+        "extend",
+        "build",
+        "mixed"
+      ],
+      "observed_example_status": "passed",
+      "same_packet_markdown": true
+    }
+  },
+  "scope": "Protocol client acceptance; no end-user desktop client or autonomous agent outcome is asserted."
+}

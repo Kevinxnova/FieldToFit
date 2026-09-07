@@ -1,6 +1,7 @@
 import ResearchComparison, {
   type ResearchComparisonData,
 } from "../components/workspace/ResearchComparison";
+import TaskPlan, { type TaskPlanData } from "../components/workspace/TaskPlan";
 import { useState, type FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
@@ -33,6 +34,8 @@ type Packet = {
   missing_materials: string[];
 };
 type DetailedPack = TaskPack & {
+  task_plan: TaskPlanData;
+  markdown: string;
   research_comparison?: ResearchComparisonData;
   constraints: Record<string, unknown>;
   interpretation: { retrieval_mode: string; warning: string };
@@ -88,37 +91,16 @@ export function saveText(name: string, text: string, type = "text/markdown") {
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-function printable(pack: DetailedPack) {
-  return (
-    `# ${pack.goal}\n\n${pack.scope}\n\n${JSON.stringify(pack.constraints)}\n\n背景：${pack.background}\n\n${pack.deliverables.map((d) => "- " + d).join("\n")}\n` +
-    pack.material_packets
-      .map(
-        (p) =>
-          `\n## ${p.title}\n版本：${p.version || "未知"}\n` +
-          p.steps
-            .map(
-              (s) =>
-                `- ${labels[s.type] || s.type}：${formatValue(s.instruction)}\n  来源：${s.source_url}`,
-            )
-            .join("\n") +
-          "\n" +
-          p.materials
-            .map(
-              (m) => `- [${m.title}](${m.url}) · ${m.locator} · ${m.coverage}`,
-            )
-            .join("\n") +
-          `\n缺失材料：${p.missing_materials.join("、")}\n`,
-      )
-      .join("\n")
-  );
-}
-
 export default function TaskWorkbench() {
   const { pick, notify } = useWorkspace();
   const [params] = useSearchParams();
   const [goal, setGoal] = useState(params.get("q") || "");
   const [persona, setPersona] = useState("engineer");
   const [background, setBackground] = useState("");
+  const [inputs, setInputs] = useState("");
+  const [outputs, setOutputs] = useState("");
+  const [criteria, setCriteria] = useState("");
+  const [inputKind, setInputKind] = useState("unknown");
   const [deployment, setDeployment] = useState("");
   const [language, setLanguage] = useState("");
   const [platform, setPlatform] = useState("");
@@ -150,6 +132,12 @@ export default function TaskWorkbench() {
           goal,
           persona,
           background,
+          task_spec: {
+            inputs,
+            outputs,
+            success_criteria: criteria,
+            input_kind: inputKind,
+          },
           constraints,
           enhanced,
           offset,
@@ -197,6 +185,35 @@ export default function TaskWorkbench() {
         )}
       />
       <form className="task-form" onSubmit={build}>
+        <div className="task-example-prompt">
+          <span>
+            {pick("从一个完整案例开始", "Start with a worked example")}
+          </span>
+          <button
+            className="button"
+            type="button"
+            onClick={() => {
+              setGoal("本地中文 PDF 提取金额并保留页码来源");
+              setPersona("engineer");
+              setBackground("熟悉 Python，使用本地环境处理文件");
+              setInputs("有文本层的两页中文 PDF，包含“发票金额：128.50 元”");
+              setOutputs("JSON：金额、币种、原文、页码、文件哈希和版本");
+              setCriteria(
+                "金额为 128.50 CNY，来源为第 1 页；缺失、歧义和无文本输入不猜测结果",
+              );
+              setInputKind("searchable_pdf");
+              setDeployment("local");
+              setLanguage("chinese");
+              setPlatform("");
+              setVram("");
+              setCost("");
+              setPack(null);
+              setReading(null);
+            }}
+          >
+            {pick("填入 PDF 金额案例", "Load PDF amount example")}
+          </button>
+        </div>
         <div className="persona-row">
           {[
             ["engineer", "工程开发", "Engineering"],
@@ -239,6 +256,70 @@ export default function TaskWorkbench() {
             )}
           />
         </label>
+        <div className="task-spec-fields">
+          <label>
+            {pick("输入材料", "Input materials")}
+            <textarea
+              value={inputs}
+              onChange={(e) => setInputs(e.target.value)}
+              maxLength={2000}
+              rows={2}
+              placeholder={pick(
+                "具体有什么文件、数据或现有产物",
+                "Files, data, or existing artifacts",
+              )}
+            />
+          </label>
+          <label>
+            {pick("期望输出", "Expected output")}
+            <textarea
+              value={outputs}
+              onChange={(e) => setOutputs(e.target.value)}
+              maxLength={2000}
+              rows={2}
+              placeholder={pick(
+                "最终要拿到什么",
+                "What should the task produce?",
+              )}
+            />
+          </label>
+          <label>
+            {pick("怎样判断成功", "How to judge success")}
+            <textarea
+              value={criteria}
+              onChange={(e) => setCriteria(e.target.value)}
+              maxLength={2000}
+              rows={2}
+              placeholder={pick(
+                "写出可核对的字段、数值、行为或边界",
+                "Checkable fields, values, behavior, or boundaries",
+              )}
+            />
+          </label>
+          <label>
+            {pick("PDF / 文本输入类型", "PDF / text input type")}
+            <select
+              value={inputKind}
+              onChange={(e) => setInputKind(e.target.value)}
+            >
+              <option value="unknown">
+                {pick(
+                  "自动识别 / 尚不明确 / 不适用",
+                  "Detect / unknown / not applicable",
+                )}
+              </option>
+              <option value="searchable_pdf">
+                {pick("有文本层的 PDF", "Searchable PDF")}
+              </option>
+              <option value="scanned_pdf">
+                {pick("扫描 PDF", "Scanned PDF")}
+              </option>
+              <option value="page_text">
+                {pick("已有逐页文本", "Existing page text")}
+              </option>
+            </select>
+          </label>
+        </div>
         <div className="constraint-grid">
           <label>
             {pick("部署", "Deployment")}
@@ -335,7 +416,7 @@ export default function TaskWorkbench() {
             </div>
             <button
               className="button"
-              onClick={() => saveText("metis-task.md", printable(pack))}
+              onClick={() => saveText("metis-task.md", pack.markdown)}
             >
               <Icon name="download" size={17} />
               {pick("导出资料包", "Export context")}
@@ -361,6 +442,7 @@ export default function TaskWorkbench() {
               <p>{pack.interpretation.warning}</p>
             </div>
           </div>
+          <TaskPlan data={pack.task_plan} />
           <ResearchComparison data={pack.research_comparison} />
           <div className="deliverable-list">
             {pack.deliverables.map((d, i) => (
@@ -418,15 +500,20 @@ export default function TaskWorkbench() {
                 </div>
               ))}
               <details>
-                <summary>{pick("展开原文与章节材料", "Read source documents and sections")}</summary>
+                <summary>
+                  {pick(
+                    "展开原文与章节材料",
+                    "Read source documents and sections",
+                  )}
+                </summary>
                 <div className="task-materials">
-                {pack.material_packets[i]?.materials.map((m) => (
-                  <SourceLink key={m.id} url={m.url}>
-                    <Icon name="book" size={15} />
-                    {m.locator || m.title}
-                    <small>{m.coverage}</small>
-                  </SourceLink>
-                ))}
+                  {pack.material_packets[i]?.materials.map((m) => (
+                    <SourceLink key={m.id} url={m.url}>
+                      <Icon name="book" size={15} />
+                      {m.locator || m.title}
+                      <small>{m.coverage}</small>
+                    </SourceLink>
+                  ))}
                 </div>
               </details>
               {!!pack.material_packets[i]?.missing_materials.length && (

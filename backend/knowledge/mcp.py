@@ -30,7 +30,7 @@ TOOLS = [
     definition('compare', 'Compare 2–4 dossiers. Unknown conditions must not be treated as satisfied; experimental settings may be incomparable.',
                {'ids': {'type': 'array', 'items': TEXT, 'minItems': 2, 'maxItems': 4}, 'constraints': {'type': 'object'}}, ['ids']),
     definition('task_context', 'Find evidence for a research, learning or development task. Returns candidates, unknown constraints and adoption checks, not a certified solution.',
-               {'goal': TEXT, 'background': TEXT, 'persona': {'type': 'string', 'enum': ['researcher', 'engineer', 'graduate', 'student']}, 'constraints': {'type': 'object'}, 'limit': {'type':'integer','minimum':1,'maximum':50}, 'offset': {'type':'integer','minimum':0}}, ['goal']),
+               {'goal': TEXT, 'background': TEXT, 'task_spec': {'type':'object','additionalProperties':False,'properties':{'inputs':TEXT,'outputs':TEXT,'success_criteria':TEXT,'input_kind':{'type':'string','enum':['unknown','searchable_pdf','scanned_pdf','page_text']}}}, 'persona': {'type': 'string', 'enum': ['researcher', 'engineer', 'graduate', 'student']}, 'constraints': {'type': 'object'}, 'limit': {'type':'integer','minimum':1,'maximum':50}, 'offset': {'type':'integer','minimum':0}}, ['goal']),
     definition('changes', 'Read incremental changes using a monotonic cursor. Retain next_cursor and continue while has_more is true.',
                {'after': {'type': 'integer', 'minimum': 0}, 'limit': {'type': 'integer', 'minimum': 1, 'maximum': 100}, 'since': TEXT, 'record_id': TEXT,
                 'record_ids': {'type':'array','items':TEXT}, 'topics': {'type':'array','items':TEXT}, 'until_cursor': {'type':'integer','minimum':0}}),

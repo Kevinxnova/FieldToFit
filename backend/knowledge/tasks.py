@@ -61,18 +61,22 @@ def match_conditions(record,constraints):
     return matches
 
 
-def interpret(goal,constraints=None,enhanced=False):
+def interpret(goal,constraints=None,enhanced=False,background=''):
     constraints=constraints or {}
     if not isinstance(goal,str) or not 1<=len(goal.strip())<=2000:
         raise ValueError('Describe a task in 1–2000 characters')
     if not isinstance(constraints,dict) or len(constraints)>12 or set(constraints)-store.FACT_KEYS:
         raise ValueError('Unsupported constraint')
     detected={}
-    if re.search(r'本地|离线|\blocal\b|\boffline\b',goal,re.I): detected['deployment']='local'
-    if re.search(r'中文|\bchinese\b',goal,re.I): detected['language']='chinese'
+    context = background + '\n' + goal
+    # Avoid interpreting explicitly negated preferences as hard requirements.
+    context = re.sub(r'(?:不要求|不需要|无需|不限于|不是|非)\s*(?:本地部署|本地|离线|中文|Windows|Linux|macOS)', '', context, flags=re.I)
+    if re.search(r'本地|离线|\blocal\b|\boffline\b',context,re.I): detected['deployment']='local'
+    if re.search(r'中文|\bchinese\b',context,re.I): detected['language']='chinese'
     for platform in ('Windows','Linux','macOS'):
-        if platform.lower() in goal.lower(): detected['platform']=platform.lower()
-    match=re.search(r'(\d+(?:\.\d+)?)\s*(?:GB|G)\s*(?:显存|VRAM)|(?:显存|VRAM)\D{0,8}(\d+(?:\.\d+)?)\s*(?:GB|G)',goal,re.I)
+        if platform.lower() in context.lower(): detected['platform']=platform.lower()
+    if re.search(r'\bMac\b',context,re.I) and 'platform' not in detected: detected['platform']='macos'
+    match=re.search(r'(\d+(?:\.\d+)?)\s*(?:GB|G)\s*(?:显存|VRAM)|(?:显存|VRAM)\D{0,8}(\d+(?:\.\d+)?)\s*(?:GB|G)',context,re.I)
     if match: detected['hardware_vram_gb']={'max':float(match.group(1) or match.group(2)),'unit':'GB'}
     detected.update(constraints)
     if not isinstance(enhanced,bool): raise ValueError('enhanced must be boolean')
@@ -81,6 +85,8 @@ def interpret(goal,constraints=None,enhanced=False):
     # Deployment and language are constraints, not alternative subjects for candidate recall.
     subject=re.sub(r'本地部署|本地|离线|中文|英文|云端|\b(?:local|offline|chinese|english|windows|linux|macos)\b',' ',goal,flags=re.I).strip()
     queries=[subject or goal]; mode='keywords_and_capability_tags'; warning=''
+    if re.search(r'\bPDF\b',background,re.I) and not re.search(r'\bPDF\b',goal,re.I):
+        queries.insert(0,'PDF '+subject)
     if enhanced:
         try:
             result,_=models.generate_json('Rewrite the task into 2–4 concise search queries using Chinese and English technical equivalents. Return {queries:[]}. Do not suggest project names that are absent from the task. Preserve the task meaning. This only expands retrieval; never claim conditions are satisfied.',{'goal':goal},max_tokens=1200)
@@ -108,16 +114,22 @@ def research_compare(items):
             'note':'Matching metadata permits closer inspection; it does not establish a universal winner'}
 
 
-def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='',enhanced=False,interpreted=None):
+def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='',enhanced=False,interpreted=None,task_spec=None):
     if persona not in {'engineer','researcher','graduate','student'}:
         raise ValueError('Invalid persona')
     limit,offset=int(limit),int(offset)
     if not 1<=limit<=50 or not 0<=offset<=100000 or not isinstance(background,str) or len(background)>3000:
         raise ValueError('Invalid task page or background')
-    interpretation=interpreted or interpret(goal,constraints,enhanced)
+    if not isinstance(goal,str) or not 1<=len(goal.strip())<=2000:
+        raise ValueError('Describe a task in 1–2000 characters')
+    from backend.knowledge import task_plans
+    brief=task_plans.brief(goal,background,task_spec)
+    interpretation=interpreted or interpret(goal,constraints,enhanced,background+'\n'+brief['inputs'])
     # Query every candidate page; report the scope and do not silently return a top-N list.
     candidates={}
     explicit_subjects=[term for term in ('pdf','ocr','rag') if re.search(r'(?<![a-z])'+term+r'(?![a-z])',goal,re.I)]
+    if not explicit_subjects and re.search(r'\bPDF\b',background+'\n'+brief['inputs'],re.I):
+        explicit_subjects=['pdf']
     for query in interpretation['queries']:
         pos=0
         while True:
@@ -161,22 +173,52 @@ def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='
                   'researcher':['带来源的研究清单','方法与实验设置比较','尚未解决的问题和证据缺口'],
                   'graduate':['论文、实现、数据对应关系','缩小实验的环境与步骤','结果和原论文实验的差距'],
                   'student':['概念解释与前置知识','有依据的阅读顺序','最小实践及结果检查']}
-    return {'goal':goal,'persona':persona,'background':background,'constraints':interpretation['constraints'], 'interpretation':interpretation,
+    task_plan=task_plans.plan(brief,dossiers,selected)
+    result={'goal':goal,'persona':persona,'background':background,'constraints':interpretation['constraints'], 'interpretation':interpretation,
             'candidates':selected,'total_candidates':len(ranked),'offset':offset,'next_offset':offset+limit if offset+limit<len(ranked) else None,
             'scope':'Metis indexed published records; not an exhaustive web search','conclusion':conclusion,'material_packets':material,
             'deliverables':deliverables[persona],
-            'paths':[{'path':'use','record_ids':[d['record_id'] for d in material if any(s['type']=='usage' for s in d['steps'])],'check':'Use version-matched usage materials and confirm the expected outcome'},
-                     {'path':'extend','record_ids':[d['record_id'] for d in material if any(s['type']=='extension' for s in d['steps'])],'check':'Inspect cited extension points and validate the smallest change'},
-                     {'path':'build','record_ids':[],'check':'Specify unmet requirements and reusable components before implementing; absence from search does not establish absence everywhere'}],
+            'paths':task_plan['paths'], 'task_plan':task_plan,
             'research_comparison':research_compare(dossiers) if persona in {'researcher','graduate'} and len(dossiers)>1 else None,
-            'next_steps':['Read source-linked materials for the selected task','Resolve missing hard conditions','Produce the persona-specific artifact','Record expected outcome, environment and observed result'],
+            'next_steps':task_plan['next_steps'],
             'generated_at':store.now(),'ai_generated':False}
+    result['markdown']=task_markdown(result)
+    return result
 
 
 def task_markdown(data):
     lines=['# '+data['goal'],'',f"Persona: {data['persona']}",f"Scope: {data['scope']}",f"Generated: {data['generated_at']}",
            f"Conclusion: {data['conclusion']}",'','## Conditions',store.encode(data['constraints']),'','## Deliverables']
     lines += ['- '+x for x in data['deliverables']]
+    plan=data.get('task_plan')
+    if plan:
+        brief=plan['brief']
+        lines += ['', '## 任务定义', '已有基础与环境：'+brief['background'], '输入：'+(brief['inputs'] or '待补充'),
+                  '输出：'+(brief['outputs'] or '待补充'), '成功判据：'+(brief['success_criteria'] or '待补充'),
+                  '输入类型：'+brief['input_kind']]
+        lines += ['- '+hint['reason'] for hint in brief['applied_context']]
+        lines += ['', '## 必需条件待核实项']
+        lines += [f"- {m['record_id']} · {m['condition']}={store.encode(m['requested'])} · {m['state']}" for m in plan['unresolved_conditions']]
+        for path in plan['paths']:
+            lines += ['', '## '+path['title'], '状态：'+path['status'], path['instruction'], '成功判据：'+path['check']]
+            lines += [f"- 依据：{store.encode(r['value'])} · {r['source_url']} · {r['version']} · {r['status']}" for r in path['references']]
+            lines += ['- 待补齐：'+gap for gap in path['gaps']]
+        recipe=plan['recipe']
+        if recipe:
+            lines += ['', '## '+recipe['title'], '配方版本：'+recipe['version'], '适用状态：'+recipe['applicability'],
+                      '[复现说明]('+recipe['guide_url']+') · [完整代码]('+recipe['code_url']+')']
+            lines += ['- 适用条件：'+x for x in recipe['requirements']]
+            lines += ['- 阻塞：'+x for x in recipe['blockers']]
+            lines += ['- 成功判据：'+x for x in recipe['success_criteria']]
+            for step in recipe['steps']:
+                lines += ['', '### '+step['title'], step['instruction'], '依据类型：'+step['basis'],
+                          '```bash',step['command'],'```', '预期：'+step['expected']]
+            verification=recipe['verification']; observation=verification['observation']
+            lines += ['', '### 真实样本结果', '状态：'+verification['status'], verification['scope']]
+            if observation:
+                lines += ['检查日期：'+observation['checked_at'], '环境：'+observation['environment'],
+                          '实际版本：'+observation['version'], '预期：'+observation['expected'],
+                          '局限：'+observation['limitations'], '```json',observation['output'],'```']
     for packet in data['material_packets']:
         lines += ['', '## '+packet['title'], 'Version: '+(packet['version'] or 'Unknown')]
         for step in packet['steps']:
@@ -184,6 +226,7 @@ def task_markdown(data):
         for e in packet['materials']:
             lines += [f"- [{e['title']}]({e['url']}) · {e['locator']} · {e['coverage']}"]
         if packet['missing_materials']: lines += ['Missing task materials: '+', '.join(packet['missing_materials'])]
+    lines += ['', '## 下一步', *['- '+x for x in data['next_steps']]]
     return '\n'.join(lines)+'\n'
 
 

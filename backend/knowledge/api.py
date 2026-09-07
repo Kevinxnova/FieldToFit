@@ -172,7 +172,7 @@ def compare():
 @bp.post('/task')
 def task():
     data = body()
-    return jsonify(store.task_pack(required_text(data, 'goal', 2000), data.get('constraints'), data.get('persona', 'engineer'), limit=data.get('limit',12), offset=data.get('offset',0), background=data.get('background',''), enhanced=data.get('enhanced',False)))
+    return jsonify(store.task_pack(required_text(data, 'goal', 2000), data.get('constraints'), data.get('persona', 'engineer'), limit=data.get('limit',12), offset=data.get('offset',0), background=data.get('background',''), enhanced=data.get('enhanced',False), task_spec=data.get('task_spec')))
 
 
 @bp.get('/changes')
@@ -380,7 +380,7 @@ def brief_list():
 def export_task():
     from backend.knowledge.tasks import pack,task_markdown
     data=body()
-    packet=pack(required_text(data,'goal'),data.get('constraints'),data.get('persona','engineer'),limit=50,background=data.get('background',''))
+    packet=pack(required_text(data,'goal'),data.get('constraints'),data.get('persona','engineer'),limit=data.get('limit',50),offset=data.get('offset',0),background=data.get('background',''),task_spec=data.get('task_spec'),enhanced=data.get('enhanced',False))
     return Response(task_markdown(packet),content_type='text/markdown; charset=utf-8')
 
 

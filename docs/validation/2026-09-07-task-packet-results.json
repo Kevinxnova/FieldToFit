@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-09-07T10:58:19.591362Z",
+  "case": {
+    "id": "066cae91056253b9162b232a",
+    "check_id": "engineer-pdf-amount",
+    "result": "passed",
+    "output": "{\n  \"case\": \"engineer-pdf-amount\",\n  \"recipe_version\": \"1\",\n  \"pypdf_version\": \"6.17.0\",\n  \"reportlab_version\": \"4.5.1\",\n  \"checks\": {\n    \"amount_currency_page_quote\": true,\n    \"page_adapter\": true,\n    \"missing_is_not_zero\": true,\n    \"multiple_is_not_first\": true,\n    \"empty_text_requires_review\": true,\n    \"negative_is_not_positive\": true,\n    \"custom_rule_without_pdf_library\": true\n  },\n  \"artifacts\": {\n    \"searchable\": {\n      \"input_sha256\": \"fc0873a946967238847799a694ff007fe61b6986ca0b811c0d63fdf7ff7dbbd2\",\n      \"page_count\": 2,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"项目：中文文档处理\\n发票金额：128.50 元\\n\"\n        },\n        {\n          \"page\": 2,\n          \"text\": \"第二页：处理完成\\n\"\n        }\n      ],\n      \"status\": \"extracted\",\n      \"field\": {\n        \"amount\": \"128.50\",\n        \"currency\": \"CNY\",\n        \"source_page\": 1,\n        \"quote\": \"发票金额：128.50 元\"\n      },\n      \"matches\": [\n        {\n          \"amount\": \"128.50\",\n          \"currency\": \"CNY\",\n          \"source_page\": 1,\n          \"quote\": \"发票金额：128.50 元\"\n        }\n      ]\n    },\n    \"missing\": {\n      \"input_sha256\": \"76388d5d4efdea62e65d9a8faad91342bbf3323c087b7bea7c37f2ce10a3fb72\",\n      \"page_count\": 1,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"项目：没有金额字段\\n\"\n        }\n      ],\n      \"status\": \"not_found\",\n      \"field\": null,\n      \"matches\": []\n    },\n    \"ambiguous\": {\n      \"input_sha256\": \"4ba4e210e551cbe98ffd67f1b9a207996e53ebc5698b9081addda91059198bae\",\n      \"page_count\": 2,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"发票金额：128.50 元\\n\"\n        },\n        {\n          \"page\": 2,\n          \"text\": \"发票金额：256.00 元\\n\"\n        }\n      ],\n      \"status\": \"ambiguous\",\n      \"field\": null,\n      \"matches\": [\n        {\n          \"amount\": \"128.50\",\n          \"currency\": \"CNY\",\n          \"source_page\": 1,\n          \"quote\": \"发票金额：128.50 元\"\n        },\n        {\n          \"amount\": \"256.00\",\n          \"currency\": \"CNY\",\n          \"source_page\": 2,\n          \"quote\": \"发票金额：256.00 元\"\n        }\n      ]\n    },\n    \"no_text\": {\n      \"input_sha256\": \"2e992933d8c78bc0982e7a6a6d4e18990fc28900c5948c26a54baa1e59cb83bf\",\n      \"page_count\": 1,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"\"\n        }\n      ],\n      \"status\": \"needs_ocr_or_text_review\",\n      \"field\": null,\n      \"matches\": []\n    },\n    \"negative\": {\n      \"input_sha256\": \"791ba394655b66d0bfef0e35648f0cc50519041daa25a53a221639876f5ab571\",\n      \"page_count\": 1,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"发票金额：-128.50 元\\n\"\n        }\n      ],\n      \"status\": \"not_found\",\n      \"field\": null,\n      \"matches\": []\n    }\n  },\n  \"scope\": \"Five synthetic PDFs; blank page models unavailable text, not an OCR test. Fixed CNY line format only.\"\n}\n\n",
+    "seconds": 0.156
+  },
+  "recipe": {
+    "id": "pdf-amount",
+    "version": "1",
+    "title": "本地中文 PDF：提取金额并保留页码来源",
+    "record_id": "9a27912c2633e97ec074846d",
+    "resource_version": "6.17.0",
+    "applicability": "review_input_format",
+    "blockers": [],
+    "requirements": [
+      "只接受有文本层、未加密的 PDF。",
+      "金额行须为“发票金额：128.50 元”格式，仅 CNY；其他版式需另外验证。"
+    ],
+    "guide_url": "https://github.com/Kevinxnova/metis/blob/codex/metis-knowledge-workspace/examples/task_packets/pdf_amount.md",
+    "code_url": "https://github.com/Kevinxnova/metis/blob/codex/metis-knowledge-workspace/examples/task_packets/pdf_amount.py",
+    "recommendation": "混合采用：复用 PDF 解析，自行实现页码包装和金额规则。",
+    "success_criteria": [
+      "两页样本输出 amount=128.50、currency=CNY、source_page=1，并附原文。",
+      "缺失字段不填 0，多处金额不自动取第一项，无文本时要求 OCR 或检查。",
+      "保留文件 SHA-256、逐页文本及 pypdf 版本，可回到输入核对。"
+    ],
+    "steps": [
+      {
+        "title": "准备独立环境",
+        "instruction": "使用 Python 3.12/3.13，安装固定版本依赖。",
+        "basis": "example_design",
+        "command": "python3 -m venv /tmp/metis-pdf-env\n/tmp/metis-pdf-env/bin/pip install pypdf==6.17.0 reportlab==4.5.1",
+        "expected": "独立环境中依赖版本与案例一致。"
+      },
+      {
+        "title": "建立正例与边界基线",
+        "instruction": "在 Metis 仓库根目录执行随附代码，生成五组 PDF/JSON 文件。",
+        "basis": "example_design",
+        "command": "/tmp/metis-pdf-env/bin/python examples/task_packets/pdf_amount.py --demo-dir /tmp/metis-pdf-demo --output /tmp/metis-pdf-demo-result.json",
+        "expected": "七项 checks 为 true；正例金额和页码符合成功判据。"
+      },
+      {
+        "title": "替换自己的输入",
+        "instruction": "先核对文本层与金额行格式，再将命令中的样本路径替换为自己的 PDF。",
+        "basis": "example_design",
+        "command": "/tmp/metis-pdf-env/bin/python examples/task_packets/pdf_amount.py --input /tmp/metis-pdf-demo/searchable.pdf --output /tmp/metis-pdf-amount.json",
+        "expected": "检查 status、原文、页码和金额；自己的输入结果需要单独验收。"
+      }
+    ],
+    "facts": [
+      {
+        "record_id": "9a27912c2633e97ec074846d",
+        "field": "usage",
+        "value": "在本地 Python 环境安装 pypdf==6.17.0；用 PdfReader(\"example.pdf\") 读取文件，再遍历 reader.pages 调用 page.extract_text()。",
+        "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/README.md",
+        "version": "6.17.0",
+        "status": "documented",
+        "evidence_id": "15eb9a80808ae9a722852113"
+      },
+      {
+        "record_id": "9a27912c2633e97ec074846d",
+        "field": "license",
+        "value": "BSD-3-Clause",
+        "source_url": "https://raw.githubusercontent.com/py-pdf/pypdf/6.17.0/LICENSE",
+        "version": "6.17.0",
+        "status": "documented",
+        "evidence_id": "ea741d83b8b5d74ec5d876f0"
+      },
+      {
+        "record_id": "9a27912c2633e97ec074846d",
+        "field": "limitations",
+        "value": "pypdf 自身不是 OCR 软件，扫描图像需要独立 OCR。",
+        "source_url": "https://pypdf.readthedocs.io/en/6.17.0/user/extract-text.html",
+        "version": "6.17.0",
+        "status": "documented",
+        "evidence_id": "a1b45448feb5d4931242bdb2"
+      }
+    ],
+    "verification": {
+      "status": "passed",
+      "observation": {
+        "id": "066cae91056253b9162b232a",
+        "record_id": "9a27912c2633e97ec074846d",
+        "title": "中文 PDF 金额任务：文件输入、页码证据与拒绝猜测",
+        "method": "Reviewed example execution",
+        "version": "6.17.0",
+        "environment": "Python 3.13.9 · Darwin arm64 · temporary working directory · timeout 45s",
+        "steps": "Run pdf_amount_workflow.py engineer-pdf-amount; source https://github.com/py-pdf/pypdf",
+        "expected": "Five synthetic PDF files; seven assertions cover amount, currency, page, quote, wrapper, missing, ambiguous, unavailable text and negative amount behavior",
+        "result": "passed",
+        "output": "{\n  \"case\": \"engineer-pdf-amount\",\n  \"recipe_version\": \"1\",\n  \"pypdf_version\": \"6.17.0\",\n  \"reportlab_version\": \"4.5.1\",\n  \"checks\": {\n    \"amount_currency_page_quote\": true,\n    \"page_adapter\": true,\n    \"missing_is_not_zero\": true,\n    \"multiple_is_not_first\": true,\n    \"empty_text_requires_review\": true,\n    \"negative_is_not_positive\": true,\n    \"custom_rule_without_pdf_library\": true\n  },\n  \"artifacts\": {\n    \"searchable\": {\n      \"input_sha256\": \"fc0873a946967238847799a694ff007fe61b6986ca0b811c0d63fdf7ff7dbbd2\",\n      \"page_count\": 2,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"项目：中文文档处理\\n发票金额：128.50 元\\n\"\n        },\n        {\n          \"page\": 2,\n          \"text\": \"第二页：处理完成\\n\"\n        }\n      ],\n      \"status\": \"extracted\",\n      \"field\": {\n        \"amount\": \"128.50\",\n        \"currency\": \"CNY\",\n        \"source_page\": 1,\n        \"quote\": \"发票金额：128.50 元\"\n      },\n      \"matches\": [\n        {\n          \"amount\": \"128.50\",\n          \"currency\": \"CNY\",\n          \"source_page\": 1,\n          \"quote\": \"发票金额：128.50 元\"\n        }\n      ]\n    },\n    \"missing\": {\n      \"input_sha256\": \"76388d5d4efdea62e65d9a8faad91342bbf3323c087b7bea7c37f2ce10a3fb72\",\n      \"page_count\": 1,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"项目：没有金额字段\\n\"\n        }\n      ],\n      \"status\": \"not_found\",\n      \"field\": null,\n      \"matches\": []\n    },\n    \"ambiguous\": {\n      \"input_sha256\": \"4ba4e210e551cbe98ffd67f1b9a207996e53ebc5698b9081addda91059198bae\",\n      \"page_count\": 2,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"发票金额：128.50 元\\n\"\n        },\n        {\n          \"page\": 2,\n          \"text\": \"发票金额：256.00 元\\n\"\n        }\n      ],\n      \"status\": \"ambiguous\",\n      \"field\": null,\n      \"matches\": [\n        {\n          \"amount\": \"128.50\",\n          \"currency\": \"CNY\",\n          \"source_page\": 1,\n          \"quote\": \"发票金额：128.50 元\"\n        },\n        {\n          \"amount\": \"256.00\",\n          \"currency\": \"CNY\",\n          \"source_page\": 2,\n          \"quote\": \"发票金额：256.00 元\"\n        }\n      ]\n    },\n    \"no_text\": {\n      \"input_sha256\": \"2e992933d8c78bc0982e7a6a6d4e18990fc28900c5948c26a54baa1e59cb83bf\",\n      \"page_count\": 1,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"\"\n        }\n      ],\n      \"status\": \"needs_ocr_or_text_review\",\n      \"field\": null,\n      \"matches\": []\n    },\n    \"negative\": {\n      \"input_sha256\": \"791ba394655b66d0bfef0e35648f0cc50519041daa25a53a221639876f5ab571\",\n      \"page_count\": 1,\n      \"pypdf_version\": \"6.17.0\",\n      \"pages\": [\n        {\n          \"page\": 1,\n          \"text\": \"发票金额：-128.50 元\\n\"\n        }\n      ],\n      \"status\": \"not_found\",\n      \"field\": null,\n      \"matches\": []\n    }\n  },\n  \"scope\": \"Five synthetic PDFs; blank page models unavailable text, not an OCR test. Fixed CNY line format only.\"\n}\n\n",
+        "limitations": "Recipe v1; fixed CNY line format, synthetic searchable PDFs and a blank page. No OCR, arbitrary invoice formats or full application deployment; not an OS/network-isolated sandbox and not a full-project certification",
+        "checked_at": "2026-09-07T10:58:19.585718Z"
+      },
+      "scope": "维护者运行的固定样本结果，不代表用户文件已运行，也不证明任意中文 PDF 或 OCR 支持。"
+    }
+  },
+  "scope": "Local reviewed synthetic fixtures; not user-file or OCR validation"
+}

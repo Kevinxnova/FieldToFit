@@ -1,4 +1,4 @@
-"""Run the eight reviewed examples against the configured local database.
+"""Run the reviewed examples against the configured local database.
 
 Install requirements.txt and examples/validation/requirements.txt, then load the
 explicit examples with `python -m examples.editorial.load` before running this.
@@ -21,7 +21,7 @@ def run():
         result=verification.run_check(check['id'],row['id'])
         result.update(persona=check['persona'],title=check['title'],source_url=check['source_url'],expected=check['expected'],limitations=check['limitations'])
         results.append(result)
-    return {'checked_at':store.now(),'scope':'8 scoped runtime checks. This does not establish product demand, whole-project quality, paper reproduction or superiority over ordinary search.',
+    return {'checked_at':store.now(),'scope':f'{len(results)} scoped runtime checks. This does not establish product demand, whole-project quality, paper reproduction or superiority over ordinary search.',
             'dependencies':{p:version(p) for p in ('pypdf','reportlab','scikit-learn')},'items':results}
 
 

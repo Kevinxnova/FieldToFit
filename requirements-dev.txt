@@ -1,2 +1,4 @@
 -r requirements.txt
 pytest>=8.0.0
+# Generate deterministic PDF fixtures for the task-packet acceptance checks.
+reportlab==4.5.1

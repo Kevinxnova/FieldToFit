@@ -25,7 +25,15 @@ async def check(transport):
    assert not reading.is_error and '@misc' in reading.structured_content['bibtex']
    briefs=await session.call_tool('daily_briefs',{})
    assert not briefs.is_error
-   return {'protocol':init.protocol_version,'tool_count':len(tools.tools),'tasks':outcomes,'research_export':True,'daily_briefs':True}
+   detailed=await session.call_tool('task_context',{'goal':'本地中文 PDF 提取金额并保留页码来源','persona':'engineer',
+      'background':'熟悉 Python，使用本地环境处理文件','task_spec':{'inputs':'有文本层的两页中文 PDF','outputs':'金额、币种、原文、页码与文件哈希 JSON','success_criteria':'128.50 CNY，第 1 页；缺失和歧义不猜测','input_kind':'searchable_pdf'}})
+   assert not detailed.is_error
+   packet=detailed.structured_content; recipe=packet['task_plan']['recipe']
+   assert recipe and len(packet['paths'])==4 and 'source_page=1' in packet['markdown']
+   assert packet['task_plan']['brief']['outputs']=='金额、币种、原文、页码与文件哈希 JSON'
+   return {'protocol':init.protocol_version,'tool_count':len(tools.tools),'tasks':outcomes,'research_export':True,'daily_briefs':True,
+      'complete_task_packet':{'recipe_id':recipe['id'],'recipe_version':recipe['version'],'paths':[p['path'] for p in packet['paths']],
+       'observed_example_status':recipe['verification']['status'],'same_packet_markdown':True}}
 async def main():
  http=await check(streamable_http_client(os.getenv('METIS_MCP_URL','http://127.0.0.1:8000/api/mcp')))
  stdio=await check(stdio_client(StdioServerParameters(command=sys.executable,args=['-m','backend.mcp_stdio'],env={'METIS_MCP_URL':os.getenv('METIS_MCP_URL','http://127.0.0.1:8000/api/mcp')},cwd=str(Path(__file__).resolve().parents[2]))))
