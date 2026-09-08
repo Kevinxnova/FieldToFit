@@ -140,6 +140,8 @@ export const TOPICS: Record<string, [string, string]> = {
 };
 export const TYPES: Record<string, [string, string]> = {
   project: ["开源项目", "Open source"],
+  agent: ["Agent", "Agent"],
+  skill: ["Skill", "Skill"],
   event: ["动态", "News"],
   paper: ["论文", "Paper"],
   resource: ["资源", "Resource"],

@@ -6,3 +6,4 @@ certifi
 feedparser>=6.0.0
 gunicorn>=23.0.0
 pypdf>=6.0,<7
+PyYAML>=6.0,<7

@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-08",
+  "resource_filter": true,
+  "pinned_skill_material": true,
+  "mobile_width": 390,
+  "mobile_overflow": false,
+  "review_filters_and_pagination": true,
+  "operations_overview": true,
+  "duplicate_select_merge_undo": true,
+  "logout": true,
+  "page_errors": [],
+  "scope": "Local isolated preview; real collected Skill and two explicitly labeled synthetic review records. No generation or production data changes."
+}

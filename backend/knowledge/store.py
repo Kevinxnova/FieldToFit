@@ -4,6 +4,7 @@ import hashlib
 import html
 import json
 import re
+from contextlib import nullcontext
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
@@ -16,7 +17,8 @@ TOPICS = {"models": "模型", "agents": "Agent", "research": "研究", "engineer
 FACT_KEYS = {"capabilities", "limitations", "language", "deployment", "hardware", "license", "cost",
              "inputs", "outputs", "dependencies", "usage", "extension", "prerequisites", "method",
              "experiments", "publication", "authors", "doi", "dataset", "metric", "protocol",
-             "platform", "hardware_vram_gb", "cost_monthly_usd", "dataset_version", "split", "model_version"}
+             "platform", "hardware_vram_gb", "cost_monthly_usd", "dataset_version", "split", "model_version",
+             "compatibility", "allowed_tools"}
 
 
 def now():
@@ -95,14 +97,14 @@ def plain_text(value):
     return html.unescape(re.sub(r'<[^>]+>', ' ', value or '')).strip()
 
 
-def save_record(data, reason="Source update", record_id=None):
+def save_record(data, reason="Source update", record_id=None, connection=None):
     kind = data.get("kind", "resource")
     if kind not in KINDS:
         raise ValueError("Unknown record kind")
     url = canonical_url(data["canonical_url"])
     rid = record_id or stable_id(kind, url)
     stamp = now()
-    with get_db() as db:
+    with (nullcontext(connection) if connection is not None else get_db(atomic=True)) as db:
         identity = db.execute('SELECT id FROM knowledge_records WHERE kind=? AND canonical_url=?', (kind, url)).fetchone()
         if identity and (record_id is None or record_id.startswith('legacy-')):
             rid = identity['id']
@@ -159,7 +161,7 @@ def add_evidence(record_id, url, title, body="", locator="", version="", evidenc
         raise ValueError("Material exceeds 2 MB; split it into sections")
     digest = hashlib.sha256(body.encode()).hexdigest()
     eid = stable_id(record_id, url, version, locator, digest)
-    with get_db() as db:
+    with get_db(atomic=True) as db:
         inserted = db.execute("INSERT OR IGNORE INTO knowledge_evidence VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                    (eid, record_id, url, title, body, locator, version, evidence_type, coverage, now(), digest))
         if inserted.rowcount:
@@ -269,6 +271,7 @@ SEARCH_SYNONYMS = {
     "学习": ["learn", "tutorial", "course"], "数据": ["data", "dataset"], "评测": ["benchmark", "evaluation"],
     "本地": ["local", "self-host", "offline"], "文档": ["document", "pdf"], "中文": ["chinese", "multilingual"],
     "视频": ["video"], "语音": ["audio", "speech"], "搜索": ["search", "retrieval"], "复现": ["reproduction", "implementation"],
+    "技能": ["skill", "skills"],
 }
 
 
@@ -285,10 +288,12 @@ def query_terms(q):
     return list(dict.fromkeys(t for t in terms if t not in {"a", "the", "for", "to", "with", "and", "i", "want"}))[:32]
 
 
-def search_records(q="", kind="", topic="", source="", since="", until="", object_type="", limit=24, offset=0, sort="recent", ids=None):
+def search_records(q="", kind="", topic="", source="", since="", until="", object_type="", limit=24, offset=0, sort="recent", ids=None, capability=""):
     limit, offset = int(limit), int(offset)
     if limit < 1 or limit > 100 or offset < 0 or offset > 100000:
         raise ValueError("limit must be 1–100 and offset 0–100000")
+    if not isinstance(object_type,str) or len(object_type)>80:
+        raise ValueError('Object type must be a string of at most 80 characters')
     where, params = ["status='published'", "metadata NOT LIKE '%\"merged_into\"%'"], []
     if kind == 'information':
         where.append("kind IN ('event','paper')")
@@ -298,6 +303,11 @@ def search_records(q="", kind="", topic="", source="", since="", until="", objec
     for key, value in [("kind", kind), ("source_id", source), ("object_type", object_type)]:
         if value:
             where.append(f"{key}=?"); params.append(value)
+    if not isinstance(capability, str) or len(capability) > 80:
+        raise ValueError('Capability must be a string of at most 80 characters')
+    if capability.strip():
+        where.append("EXISTS (SELECT 1 FROM json_each(knowledge_records.metadata,'$.capability_tags') tag WHERE tag.type='text' AND lower(trim(tag.value))=lower(?))")
+        params.append(capability.strip())
     if topic:
         if topic not in TOPICS:
             raise ValueError('Invalid topic')
@@ -339,6 +349,22 @@ def search_records(q="", kind="", topic="", source="", since="", until="", objec
 def constraint_match(record, constraints):
     from backend.knowledge.tasks import match_conditions
     return match_conditions(record, constraints)
+
+
+def catalog():
+    """Observed filter values, including only visible, ungrouped resource records."""
+    from collections import Counter
+    with get_db() as db:
+        rows = db.execute("SELECT object_type,metadata FROM knowledge_records WHERE kind='resource' AND status='published' AND metadata NOT LIKE '%\"merged_into\"%'").fetchall()
+    types, capabilities = Counter(), Counter()
+    for row in rows:
+        types[row['object_type']] += 1
+        tags = decode(row['metadata'], {}).get('capability_tags', [])
+        if isinstance(tags, list):
+            capabilities.update({tag.strip().lower() for tag in tags if isinstance(tag, str) and 0 < len(tag.strip()) <= 80})
+    return {'types': [{'value': value, 'count': count} for value, count in sorted(types.items())],
+            'capabilities': [{'value': value, 'count': count} for value, count in sorted(capabilities.items())],
+            'scope': 'Observed labels in published resources; labels are discovery aids, not verified capabilities'}
 
 
 def task_pack(goal, constraints=None, persona="engineer", limit=12, **kwargs):

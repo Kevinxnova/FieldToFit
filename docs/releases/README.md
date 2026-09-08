@@ -4,6 +4,7 @@
 
 ## 当前版本
 
+- [v1.1.0-beta.2](v1.1.0-beta.2.md)：开发候选版，Skill / Agent、筛选、每日运营、编辑事务和研究导出。
 - [v1.1.0-beta.1](v1.1.0-beta.1.md)：开发候选版，目录与展示整理；主案例 pending。
 - v1.0.0 及更早历史：见 CHANGELOG 和 [历史归档](../archive/README.md)。
 

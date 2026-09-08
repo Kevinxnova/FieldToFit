@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { StructuredReading } from "./KnowledgeReading";
 import { Link, useParams } from "react-router-dom";
+import SkillDetails from "../components/workspace/SkillDetails";
 import {
   downloadRecord,
   formatValue,
@@ -24,6 +25,8 @@ import {
 } from "../components/workspace/UI";
 
 const FACT_NAMES: Record<string, [string, string]> = {
+  compatibility: ["适用环境", "Compatibility"],
+  allowed_tools: ["来源声明的工具权限", "Declared tool permissions"],
   capabilities: ["能做什么", "Capabilities"],
   limitations: ["限制与边界", "Limitations"],
   language: ["语言", "Languages"],
@@ -292,6 +295,7 @@ export default function Dossier() {
           </div>
           <div className="dossier-layout">
             <main>
+              <SkillDetails value={data.metadata.skill} />
               <div
                 className="detail-tabs"
                 role="tablist"

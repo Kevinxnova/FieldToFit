@@ -89,10 +89,15 @@ def overview():
 
 @bp.get('/records')
 def records():
-    args = {k: request.args[k] for k in ('q', 'kind', 'topic', 'source', 'since', 'until', 'object_type', 'limit', 'offset', 'sort') if k in request.args}
+    args = {k: request.args[k] for k in ('q', 'kind', 'topic', 'source', 'since', 'until', 'object_type', 'limit', 'offset', 'sort', 'capability') if k in request.args}
     if 'ids' in request.args:
         args['ids'] = request.args['ids'].split(',')
     return jsonify(store.search_records(**args))
+
+
+@bp.get('/catalog')
+def catalog():
+    return jsonify(store.catalog())
 
 
 @bp.get('/records/<rid>')
@@ -172,7 +177,7 @@ def compare():
 @bp.post('/task')
 def task():
     data = body()
-    return jsonify(store.task_pack(required_text(data, 'goal', 2000), data.get('constraints'), data.get('persona', 'engineer'), limit=data.get('limit',12), offset=data.get('offset',0), background=data.get('background',''), enhanced=data.get('enhanced',False), task_spec=data.get('task_spec')))
+    return jsonify(store.task_pack(required_text(data, 'goal', 2000), data.get('constraints'), data.get('persona', 'engineer'), limit=data.get('limit',12), offset=data.get('offset',0), background=data.get('background',''), enhanced=data.get('enhanced',False), task_spec=data.get('task_spec'),object_type=data.get('object_type',''),capability=data.get('capability','')))
 
 
 @bp.get('/changes')
@@ -380,7 +385,7 @@ def brief_list():
 def export_task():
     from backend.knowledge.tasks import pack,task_markdown
     data=body()
-    packet=pack(required_text(data,'goal'),data.get('constraints'),data.get('persona','engineer'),limit=data.get('limit',50),offset=data.get('offset',0),background=data.get('background',''),task_spec=data.get('task_spec'),enhanced=data.get('enhanced',False))
+    packet=pack(required_text(data,'goal'),data.get('constraints'),data.get('persona','engineer'),limit=data.get('limit',50),offset=data.get('offset',0),background=data.get('background',''),task_spec=data.get('task_spec'),enhanced=data.get('enhanced',False),object_type=data.get('object_type',''),capability=data.get('capability',''))
     return Response(task_markdown(packet),content_type='text/markdown; charset=utf-8')
 
 
@@ -439,7 +444,7 @@ def model_settings():
 @admin_required
 def review_records():
     from backend.knowledge.editorial import review_queue
-    return jsonify(review_queue(request.args.get('status',''),request.args.get('q','')))
+    return jsonify(review_queue(request.args.get('status',''),request.args.get('q',''),request.args.get('need',''),request.args.get('limit',30),request.args.get('offset',0)))
 
 
 @bp.get('/admin/records/<rid>')
@@ -530,3 +535,10 @@ def check_run(check_id):
 def import_organization():
     from backend.knowledge.processing import import_batch
     return jsonify(import_batch(body()))
+
+
+@bp.get('/admin/operations')
+@admin_required
+def operations_status():
+    from backend.knowledge.operations import snapshot
+    return jsonify(snapshot())

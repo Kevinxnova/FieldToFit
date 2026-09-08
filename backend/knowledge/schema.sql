@@ -185,3 +185,11 @@ CREATE TABLE IF NOT EXISTS knowledge_task_materials (
  status TEXT NOT NULL DEFAULT 'draft',
  updated_at TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS knowledge_workflow_runs (
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ kind TEXT NOT NULL,
+ started_at TEXT NOT NULL,
+ finished_at TEXT,
+ status TEXT NOT NULL DEFAULT 'running',
+ summary TEXT NOT NULL DEFAULT '{}'
+);

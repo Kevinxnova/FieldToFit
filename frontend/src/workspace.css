@@ -3529,3 +3529,12 @@ h1 {
     padding: 16px;
   }
 }
+/* Version-pinned skill materials use the same dossier surface. */
+.skill-details { background: var(--surface, #fff); border: 1px solid var(--border, #dfe4da); border-radius: 14px; padding: 24px; margin-bottom: 24px; overflow-wrap: anywhere; }
+.skill-conditions { display: grid; gap: 14px; }
+.skill-conditions div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; }
+.skill-conditions dt { color: var(--muted, #748078); }
+.skill-conditions dd { margin: 0; }
+.skill-details details { margin-top: 16px; }
+.skill-details li { margin: 8px 0; }
+@media (max-width: 600px) { .skill-conditions div { grid-template-columns: 1fr; gap: 4px; } }

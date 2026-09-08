@@ -114,7 +114,7 @@ def research_compare(items):
             'note':'Matching metadata permits closer inspection; it does not establish a universal winner'}
 
 
-def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='',enhanced=False,interpreted=None,task_spec=None):
+def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='',enhanced=False,interpreted=None,task_spec=None,object_type='',capability=''):
     if persona not in {'engineer','researcher','graduate','student'}:
         raise ValueError('Invalid persona')
     limit,offset=int(limit),int(offset)
@@ -133,7 +133,7 @@ def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='
     for query in interpretation['queries']:
         pos=0
         while True:
-            result=store.search_records(q=query,kind='resource' if persona=='engineer' else '',limit=100,offset=pos)
+            result=store.search_records(q=query,kind='resource' if persona=='engineer' else '',limit=100,offset=pos,object_type=object_type,capability=capability)
             for item in result['items']:
                 if item['kind']=='event': continue
                 content=' '.join(str(item.get(k,'')) for k in ('title','title_zh','summary','summary_zh')).casefold()+' '+store.encode(item.get('metadata',{}).get('capability_tags',[])).casefold()
@@ -175,6 +175,7 @@ def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='
                   'student':['概念解释与前置知识','有依据的阅读顺序','最小实践及结果检查']}
     task_plan=task_plans.plan(brief,dossiers,selected)
     result={'goal':goal,'persona':persona,'background':background,'constraints':interpretation['constraints'], 'interpretation':interpretation,
+            'filters':{'object_type':object_type,'capability':capability},
             'candidates':selected,'total_candidates':len(ranked),'offset':offset,'next_offset':offset+limit if offset+limit<len(ranked) else None,
             'scope':'Metis indexed published records; not an exhaustive web search','conclusion':conclusion,'material_packets':material,
             'deliverables':deliverables[persona],
@@ -190,6 +191,7 @@ def task_markdown(data):
     lines=['# '+data['goal'],'',f"Persona: {data['persona']}",f"Scope: {data['scope']}",f"Generated: {data['generated_at']}",
            f"Conclusion: {data['conclusion']}",'','## Conditions',store.encode(data['constraints']),'','## Deliverables']
     lines += ['- '+x for x in data['deliverables']]
+    lines += ['', 'Filters: '+store.encode(data.get('filters',{}))]
     plan=data.get('task_plan')
     if plan:
         brief=plan['brief']
@@ -255,5 +257,43 @@ def reading_list(goal,ids=None,background='',enhanced=False):
                     points.append({'text':str(point.get('text',''))[:3000],'record_id':point['record_id'],**citation})
             if points: sections.append({'title':str(section.get('title',''))[:200],'points':points})
         outline={'sections':sections,'reading_order':[i for i in raw.get('reading_order',[]) if i in valid_ids],**generation}
-    return {'goal':goal,'background':background,'items':notes,'outline':outline,'scope':data['scope'],'generated_at':store.now(),
+    order=list(dict.fromkeys((outline or {}).get('reading_order',[])+[n['id'] for n in notes]))
+    result={'goal':goal,'background':background,'items':notes,'outline':outline,'scope':data['scope'],'generated_at':store.now(),
+            'reading_order':order,'reading_order_basis':'ai_proposed_review_evidence' if outline and outline.get('reading_order') else 'retrieval_order_not_prerequisite',
             'bibtex':'\n'.join(n['bibtex'] for n in notes),'comparison':research_compare(records) if len(records)>1 else None}
+    result['markdown']=reading_markdown(result)
+    return result
+
+
+def reading_markdown(data):
+    lines=['# '+data['goal'],'','范围：'+data['scope'],'整理时间：'+data['generated_at'],'已有基础：'+data['background'],
+           '', '## 阅读顺序', '排序依据：'+data['reading_order_basis']]
+    records={n['id']:n for n in data['items']}
+    lines += [f"{i+1}. [{records[rid]['title_zh'] or records[rid]['title']}]({records[rid]['source_url']})" for i,rid in enumerate(data['reading_order'])]
+    outline=data.get('outline')
+    if outline:
+        lines += ['', '## 提纲（AI 整理，需核对引文含义）']
+        for section in outline['sections']:
+            lines += ['', '### '+section['title']]
+            for point in section['points']:
+                lines += ['- '+point['text'], f"  来源：{point['source_url']} · {point['locator']} · 版本：{point['version']}", '  引文：'+point['quote']]
+    for rid in data['reading_order']:
+        note=records[rid]
+        lines += ['', '## '+(note['title_zh'] or note['title']), '来源：'+note['source_url'], '发表时间：'+(note['published_at'] or '未知')]
+        lines += [f'- {k}: {v}' for k,v in note['research'].items() if isinstance(v,str) and v]
+        for e in note['evidence']:
+            lines += [f"- 材料：[{e['title']}]({e['url']}) · {e['locator']} · 版本：{e['version']} · 覆盖：{e['coverage']}"]
+    comparison=data.get('comparison')
+    if comparison:
+        lines += ['', '## 方法与实验条件比较', comparison['note'], '结论：'+comparison['conclusion'],
+                  '缺失条件：'+', '.join(comparison['missing_settings']), '不同条件：'+', '.join(comparison['different_settings'])]
+        for item in comparison['items']:
+            lines += ['', '### '+item['title'],item['evidence_status']]
+            for key,value in item['settings'].items():
+                fact=records[item['id']]['facts'].get(key,{})
+                lines += [f'- {key}: '+(store.encode(value) if value is not None else '未知或版本/证据冲突'),
+                          f"  来源：{fact.get('source_url','未知')} · 版本：{fact.get('version','未知')} · {fact.get('status','unknown')}"]
+            if item.get('experiments'):
+                lines += ['实验报告（保留事实状态和来源）：'+store.encode(item['experiments'])]
+    lines += ['', '## BibTeX', '```bibtex',data['bibtex'],'```']
+    return '\n'.join(lines)+'\n'

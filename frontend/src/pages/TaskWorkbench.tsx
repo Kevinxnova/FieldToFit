@@ -45,6 +45,9 @@ type DetailedPack = TaskPack & {
   background: string;
 };
 type Reading = {
+  markdown: string;
+  reading_order: string[];
+  reading_order_basis: string;
   comparison?: ResearchComparisonData;
   goal: string;
   items: {
@@ -566,25 +569,16 @@ export default function TaskWorkbench() {
               onClick={() =>
                 saveText(
                   "metis-research.md",
-                  `# ${reading.goal}\n\n${reading.scope}\n` +
-                    reading.items
-                      .map(
-                        (r) =>
-                          `\n## ${r.title_zh || r.title}\n来源：${r.source_url}\n` +
-                          Object.entries(r.research || {})
-                            .filter(([, v]) => typeof v === "string")
-                            .map(
-                              ([k, v]) => `- ${labels[k] || k}: ${String(v)}`,
-                            )
-                            .join("\n"),
-                      )
-                      .join("\n"),
+                  reading.markdown,
                 )
               }
             >
               {pick("导出阅读材料", "Export reading notes")}
             </button>
           </div>
+          <h3>{pick("阅读顺序", "Reading order")}</h3>
+          <p className="muted">{reading.reading_order_basis === "ai_proposed_review_evidence" ? pick("AI 建议顺序，请核对材料和引文。", "AI-proposed order; check materials and citations.") : pick("沿用资料检索顺序，尚未验证知识依赖关系。", "Uses retrieval order; prerequisite relationships are not verified.")}</p>
+          <ol>{reading.reading_order.map(id => { const item = reading.items.find(r => r.id === id); return item ? <li key={id}><Link to={`/records/${id}`}>{item.title_zh || item.title}</Link></li> : null; })}</ol>
           <ResearchComparison data={reading.comparison} />
           {reading.outline?.sections.map((s, i) => (
             <article key={i}>

@@ -1,3 +1,5 @@
+import OperationsOverview, { type Operations } from "../components/workspace/OperationsOverview";
+import DuplicateReview, { type DuplicatePair } from "../components/workspace/DuplicateReview";
 import RelationshipEditor from "../components/workspace/RelationshipEditor";
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
@@ -49,6 +51,8 @@ type Feedback = {
 };
 type Queue = {
   records: Dossier[];
+  total: number;
+  next_offset: number | null;
   conflicts: Conflict[];
   actions: { id: string; reason: string; status: string }[];
   feedback: Feedback[];
@@ -95,8 +99,13 @@ export default function KnowledgeOps() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState("");
   const [query, setQuery] = useState("");
+  const [reviewNeed, setReviewNeed] = useState("");
+  const [reviewStatus, setReviewStatus] = useState("");
+  const [offset, setOffset] = useState(0);
+  const operations = useRemote<Operations>(authed ? "/v1/admin/operations" : null, true);
+  const duplicates = useRemote<{items: DuplicatePair[]}>(authed && tab === "relations" ? "/v1/admin/duplicates" : null, true);
   const queue = useRemote<Queue>(
-    authed ? "/v1/admin/records?q=" + encodeURIComponent(query) : null,
+    authed ? "/v1/admin/records?" + new URLSearchParams({q: query, need: reviewNeed, status: reviewStatus, offset: String(offset)}) : null,
     true,
   );
   const sources = useRemote<{
@@ -133,11 +142,14 @@ export default function KnowledgeOps() {
     setBusy(name);
     setError("");
     try {
-      await fn();
-      notify(pick("操作已完成", "Done"));
+      const result = await fn();
+      const partial = result && typeof result === "object" && "status" in result && result.status === "partial";
+      notify(partial ? pick("本批处理结束，仍有待处理或失败项", "Batch finished; unfinished or failed work remains") : pick("操作已完成", "Done"));
       queue.reload();
       sources.reload();
       processing.reload();
+      operations.reload();
+      duplicates.reload();
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -274,13 +286,26 @@ export default function KnowledgeOps() {
             <>
               <input
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => { setQuery(e.target.value); setOffset(0); }}
                 placeholder={pick(
                   "查找资料，包括待整理和已下架内容",
                   "Search all records, including pending and withdrawn",
                 )}
                 aria-label={pick("查找资料", "Find records")}
               />
+              <div className="button-row">
+                <select aria-label={pick("审核状态", "Review status")} value={reviewStatus} onChange={e => {setReviewStatus(e.target.value);setOffset(0);}}>
+                  <option value="">{pick("所有状态", "All states")}</option>
+                  {[["published","已展示"],["pending","待发布"],["withdrawn","已下架"],["basic","基础资料"],["full","完整资料"]].map(([v,label]) => <option key={v} value={v}>{pick(label,v)}</option>)}
+                </select>
+                <select aria-label={pick("审核事项", "Review need")} value={reviewNeed} onChange={e => {setReviewNeed(e.target.value);setOffset(0);}}>
+                  <option value="">{pick("所有审核事项", "All review needs")}</option>
+                  {[["unorganized","未整理"],["missing_evidence","缺少原文"],["conflict","事实分歧"],["failed","处理失败"]].map(([v,label]) => <option key={v} value={v}>{pick(label,v)}</option>)}
+                </select>
+                <span>{pick("符合条件", "Matching")}: {queue.data?.total ?? "…"}</span>
+                <button className="button" disabled={!offset || queue.loading} onClick={() => setOffset(Math.max(0,offset-30))}>{pick("上一页", "Previous")}</button>
+                <button className="button" disabled={queue.data?.next_offset == null || queue.loading} onClick={() => setOffset(queue.data?.next_offset ?? 0)}>{pick("下一页", "Next")}</button>
+              </div>
               <div className="ops-grid">
                 <State
                   loading={queue.loading}
@@ -649,6 +674,8 @@ export default function KnowledgeOps() {
                       "huggingface",
                       "openreview",
                       "github_releases",
+                      "github_skills",
+                      "github_projects",
                     ].map((v) => (
                       <option key={v}>{v}</option>
                     ))}
@@ -742,6 +769,8 @@ export default function KnowledgeOps() {
             </div>
           )}
           {tab === "processing" && (
+            <>
+            <State loading={operations.loading} error={operations.error} retry={operations.reload}>{operations.data && <OperationsOverview data={operations.data} />}</State>
             <State
               loading={processing.loading}
               error={processing.error}
@@ -799,6 +828,7 @@ export default function KnowledgeOps() {
                 </tbody>
               </table>
             </State>
+            </>
           )}
           {tab === "model" && currentModel && (
             <section className="ops-form">
@@ -895,6 +925,9 @@ export default function KnowledgeOps() {
           {tab === "relations" && (
             <>
               <RelationshipEditor />
+              <State loading={duplicates.loading} error={duplicates.error} retry={duplicates.reload}>
+                {duplicates.data && <DuplicateReview items={duplicates.data.items} choose={(primary,other) => {setTarget(primary);setMergeIds(other);setMergeReason("");notify(pick("已选择，请在下方填写判断依据后归并", "Selected. Add a reason in the form below before grouping."));}} />}
+              </State>
               <section className="ops-form">
                 <h2>
                   {pick(

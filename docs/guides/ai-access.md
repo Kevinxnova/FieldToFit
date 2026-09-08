@@ -57,3 +57,11 @@ METIS_MCP_URL=http://127.0.0.1:8000/api/mcp .venv/bin/python -m backend.mcp_stdi
 - `GET /api/v1/sources`、`GET /api/v1/briefs`：覆盖情况和简报。
 
 请求体使用 JSON。所有查询仅覆盖已收录的资料；缺失候选不代表全网没有方案。官方 Python MCP SDK 的 HTTP / stdio 技术验收见 [验证索引](../validation/README.md)，尚无所有桌面客户端或自主 Agent 效果保证。
+
+## Skill / Agent 与独立能力筛选
+
+`GET /api/v1/catalog` 返回已发布资源的类型和能力标签及数量；`GET /api/v1/records?object_type=skill&capability=document-processing` 按类型和标签筛选。MCP `search` 支持同名参数，分页方式不变。
+
+`task_context`、`POST /api/v1/task` 和 `/api/v1/task/export` 接受 `object_type`、`capability`，返回的 `filters` 保留同一范围。Skill 档案的 `metadata.skill` 提供固定提交的 SKILL.md 和附属文件 URL；读取材料不会安装或执行 Skill。标签只用于发现候选，需核对事实条件和证据。
+
+`research_materials` 和 `POST /api/v1/research` 的 `markdown` 是包含提纲、顺序、条件比较和引用的完整导出。`reading_order_basis` 区分模型建议与检索顺序；后者没有声称知识依赖已经验证。

@@ -20,3 +20,7 @@ python -m examples.validation.mcp_client /tmp/metis-mcp-results.json
 MCP 脚本要求本地后端已启动，通过 `METIS_MCP_URL` 可选择地址。运行清单会核对实际安装的资源版本；版本不匹配会失败，不会继承旧结果。
 
 测试脚本包含合成数据和小规模教学实验，不代表任意真实文件、完整论文复现或所有模型能力。结果以 [验证索引](../docs/validation/README.md) 中记录的环境、版本和范围为准。
+
+## Skill / Agent 读取验收
+
+公开来源收录后，运行 `python examples/validation/resource_client.py`，使用官方 MCP SDK 经 HTTP / stdio 验证 Skill 筛选、固定版本原文和带来源任务导出。可通过 `METIS_MCP_URL` 指定已运行的服务；不安装或执行仓库中的 Skill。

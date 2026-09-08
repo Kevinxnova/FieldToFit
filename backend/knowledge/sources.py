@@ -27,6 +27,9 @@ def seed_sources():
     from backend.scrapers.rss_news import RSS_FEEDS
     seeds = [
         ("github", "GitHub Trending", "engineering", "https://github.com/trending", "legacy", {"name": "github"}),
+        ("github-skills", "Agent Skills · author repositories", "engineering", "https://github.com/anthropics/skills", "github_skills", {"repos": ["anthropics/skills"], "limit": 30}),
+        ("github-projects", "Agent frameworks · maintained repositories", "engineering", "https://github.com/", "github_projects",
+         {"projects": [{"repo": "langchain-ai/langgraph", "type": "agent"}, {"repo": "microsoft/autogen", "type": "agent"}, {"repo": "huggingface/smolagents", "type": "agent"}]}),
         ("hackernews", "Hacker News", "community", "https://news.ycombinator.com/", "legacy", {"name": "hackernews"}),
         ("producthunt", "Product Hunt", "community", "https://www.producthunt.com/", "legacy", {"name": "producthunt"}),
         ("arxiv", "arXiv · AI research", "research", "https://export.arxiv.org/api/query", "arxiv", {"limit": 100}),
@@ -287,6 +290,12 @@ class PartialSourceError(Exception):
 
 def collect_source(source):
     adapter = source["adapter"]
+    if adapter == "github_skills":
+        from backend.knowledge.skills import collect
+        return collect(source)
+    if adapter == "github_projects":
+        from backend.knowledge.repositories import collect
+        return collect(source)
     if adapter == "pages":
         found=changed=0
         for item in source['config'].get('pages',[]):

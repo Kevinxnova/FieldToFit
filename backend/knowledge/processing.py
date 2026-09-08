@@ -21,15 +21,14 @@ def evidence_fingerprint(record):
 
 
 def queue_records():
-    stamp = store.now()
     with get_db() as db:
-        rows = db.execute("SELECT id FROM knowledge_records WHERE status='published'").fetchall()
-        for row in rows:
-            for stage in ('material','organize'):
-                db.execute('INSERT OR IGNORE INTO knowledge_jobs(record_id,stage) VALUES(?,?)',(row['id'],stage))
+        visible = "status='published' AND json_extract(metadata,'$.merged_into') IS NULL"
+        count = db.execute('SELECT COUNT(*) AS n FROM knowledge_records WHERE '+visible).fetchone()['n']
+        for stage in ('material','organize'):
+            db.execute('INSERT OR IGNORE INTO knowledge_jobs(record_id,stage) SELECT id,? FROM knowledge_records WHERE '+visible,(stage,))
         # A stopped process must not leave work permanently locked.
         db.execute("UPDATE knowledge_jobs SET status='pending',error='Previous worker stopped; retry available' WHERE status='running' AND datetime(started_at)<datetime('now','-1 day')")
-    return len(rows)
+    return count
 
 
 def normalized(text):
@@ -90,7 +89,7 @@ def apply_organization(record_id, output, generation):
         topics = output.get('topics',[])
         if isinstance(topics,list) and topics and all(t in store.TOPICS for t in topics):
             record['topics'] = topics
-        if output.get('object_type') in {'project','tool','library','model','api','application','dataset','benchmark','paper','release','news'}:
+        if not record['metadata'].get('skill') and not record['metadata'].get('resource_type_basis') and output.get('object_type') in {'project','agent','skill','tool','library','model','api','application','dataset','benchmark','paper','release','news'}:
             record['object_type'] = output['object_type']
     for candidate in output.get('facts',[]):
         if not isinstance(candidate,dict) or candidate.get('key') not in store.FACT_KEYS or 'value' not in candidate:
@@ -125,7 +124,9 @@ def apply_organization(record_id, output, generation):
         **generation,'material_ids':[m['id'] for m in materials],'input_truncated':bool(generation.get('input_truncated',False)),
         'review_status':'ai_organized','processing_version':'2'}
     tags = output.get('capability_tags',[])
-    record['metadata']['capability_tags'] = [t[:80] for t in tags if isinstance(t,str)][:20] if isinstance(tags,list) else []
+    if isinstance(tags,list) and any(isinstance(t,str) and t.strip() for t in tags):
+        record['metadata']['capability_tags'] = list(dict.fromkeys(t.strip()[:80] for t in tags if isinstance(t,str) and t.strip()))[:20]
+        record['metadata']['capability_tag_basis'] = 'ai_organized_discovery_labels_not_verification'
     required = {'capabilities','limitations','deployment','license','usage'} if record['kind']=='resource' else {'method','experiments','limitations'} if record['kind']=='paper' else set()
     # A full dossier needs every required item, complete material and no open contradictory fact.
     with get_db() as db:
@@ -138,9 +139,19 @@ def apply_organization(record_id, output, generation):
 
 
 def run_processing(limit=20,budget_seconds=240,record_id=None,force=False):
+    limit,budget_seconds=int(limit),int(budget_seconds)
+    if not 1<=limit<=1000 or not 1<=budget_seconds<=86400:
+        raise ValueError('Invalid processing limit or budget')
+    from backend.knowledge.operations import track_run
+    with track_run('processing') as result:
+        result.update(_process(limit,budget_seconds,record_id,force))
+    return result
+
+
+def _process(limit,budget_seconds,record_id,force):
     queue_records(); start=time.monotonic(); results=[]
     with get_db() as db:
-        rows=db.execute("SELECT r.id FROM knowledge_records r LEFT JOIN knowledge_jobs j ON j.record_id=r.id AND j.stage='organize' WHERE r.status='published'"+(' AND r.id=?' if record_id else '')+" ORDER BY CASE WHEN j.status='pending' THEN 0 WHEN j.status IN ('error','unavailable') THEN 1 ELSE 2 END,COALESCE(j.finished_at,''),COALESCE(r.published_at,r.collected_at) DESC",(record_id,) if record_id else ()).fetchall()
+        rows=db.execute("SELECT r.id FROM knowledge_records r LEFT JOIN knowledge_jobs j ON j.record_id=r.id AND j.stage='organize' WHERE r.status='published' AND json_extract(r.metadata,'$.merged_into') IS NULL"+(' AND r.id=?' if record_id else '')+" ORDER BY CASE WHEN j.status='pending' THEN 0 WHEN j.status IN ('error','unavailable') THEN 1 ELSE 2 END,COALESCE(j.finished_at,''),COALESCE(r.published_at,r.collected_at) DESC",(record_id,) if record_id else ()).fetchall()
     for row in rows:
         if time.monotonic()-start>budget_seconds or len({r['record_id'] for r in results})>=limit:
             break
@@ -176,7 +187,11 @@ def run_processing(limit=20,budget_seconds=240,record_id=None,force=False):
                 db.execute('UPDATE knowledge_jobs SET status=?,input_hash=?,finished_at=?,error=? WHERE record_id=? AND stage=?',(status,fingerprint,store.now(),error,row['id'],stage))
             results.append({'record_id':row['id'],'stage':stage,'status':status,'error':error})
             record=store.get_record(row['id'],include_body=True)
-    return {'items':results,'status':'partial' if any(r['status']!='success' for r in results) else 'success','interval_days':1}
+    with get_db() as db:
+        remaining=db.execute("SELECT COUNT(*) AS n FROM knowledge_records r WHERE r.status='published' AND json_extract(r.metadata,'$.merged_into') IS NULL AND (json_extract(r.metadata,'$.organized_at') IS NULL OR EXISTS (SELECT 1 FROM knowledge_jobs j WHERE j.record_id=r.id AND j.status!='success'))"+(' AND r.id=?' if record_id else ''),(record_id,) if record_id else ()).fetchone()['n']
+    return {'items':results,'processed_records':len({r['record_id'] for r in results}),
+            'remaining_records':remaining,'budget_reached':time.monotonic()-start>=budget_seconds,
+            'status':'partial' if remaining or any(r['status']!='success' for r in results) else 'success','interval_days':1}
 
 
 def processing_status():

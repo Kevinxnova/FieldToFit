@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-08",
+  "version": "v1.1.0-beta.2",
+  "environment": "Local Flask serving production assets, isolated copy of preview data plus 21 freshly collected public resources",
+  "public_routes": [
+    {
+      "path": "/information",
+      "title": "看清变化，找到下一步。"
+    },
+    {
+      "path": "/apps",
+      "title": "从一个问题，找到可用的资源。"
+    },
+    {
+      "path": "/tasks",
+      "title": "把问题，变成有依据的下一步。"
+    },
+    {
+      "path": "/briefs",
+      "title": "每天，读懂值得关注的变化。"
+    },
+    {
+      "path": "/collection",
+      "title": "留住值得继续探索的事。"
+    },
+    {
+      "path": "/compare?ids=75eda3b2577e0efb11732cf0,12a211a2abc3883f797bc2f0",
+      "title": "看清差异，再做选择。"
+    },
+    {
+      "path": "/sources",
+      "title": "每一条资料，都有来处。"
+    },
+    {
+      "path": "/connect",
+      "title": "把 Metis，带进你的 AI 工作流。"
+    },
+    {
+      "path": "/cases",
+      "title": "每一次验证，都写清条件。"
+    },
+    {
+      "path": "/account",
+      "title": "我的账户"
+    },
+    {
+      "path": "/feedback",
+      "title": "你遇到的问题，值得被解决。"
+    }
+  ],
+  "redirects": [
+    {
+      "from": "/discover",
+      "to": "/apps"
+    },
+    {
+      "from": "/daily-news",
+      "to": "/information?kind=event"
+    },
+    {
+      "from": "/community",
+      "to": "/feedback"
+    }
+  ],
+  "account": {
+    "disabled": true,
+    "coming_soon": true,
+    "no_registration_inputs": true
+  },
+  "management": {
+    "login": true,
+    "read_only_tabs": [
+      "资料审核",
+      "来源配置",
+      "处理进度",
+      "生成模型",
+      "归并与分歧",
+      "需求反馈"
+    ],
+    "logout": true
+  },
+  "legacy_curation": {
+    "login": true,
+    "render": true,
+    "logout": true
+  },
+  "technical_sample_label": true,
+  "page_errors": [],
+  "failed_api_responses": [],
+  "scope": "Route and compatibility acceptance only; no production data, model calls, collection jobs or Newsletter sends."
+}

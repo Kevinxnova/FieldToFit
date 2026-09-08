@@ -49,6 +49,7 @@ export default function Explore({
   const results = useRemote<SearchResult>("/v1/records?" + args);
   const overview = useRemote<Overview>("/v1/overview");
   const sources = useRemote<{ items: Source[] }>("/v1/sources");
+  const catalog = useRemote<{ capabilities: { value: string; count: number }[] }>(mode === "resource" ? "/v1/catalog" : null);
   const information = mode === "information";
   const topic = params.get("topic") || "";
   const offset = Number(params.get("offset") || "0");
@@ -72,6 +73,8 @@ export default function Explore({
           goal: query,
           persona,
           constraints: deployment ? { deployment } : {},
+          object_type: params.get("object_type") || "",
+          capability: params.get("capability") || "",
         }),
       );
     } catch (error) {
@@ -107,8 +110,8 @@ export default function Explore({
                 "Connect AI news, research and practice. Updated daily, grounded in sources.",
               )
             : pick(
-                "模型、工具、数据与开源项目。看清能力、条件与依据，再做选择。",
-                "Models, tools, datasets and open-source projects. Explore capabilities and conditions before choosing.",
+                "模型、Agent、Skill、工具与数据。看清能力、条件与依据，再做选择。",
+                "Models, agents, skills, tools and datasets. Explore capabilities and conditions before choosing.",
               )
         }
       >
@@ -380,6 +383,8 @@ export default function Explore({
               {[
                 ["project", "开源项目", "Open source"],
                 ["model", "模型", "Models"],
+                ["agent", "Agent", "Agents"],
+                ["skill", "Skill", "Skills"],
                 ["tool", "工具", "Tools"],
                 ["library", "开发库", "Libraries"],
                 ["dataset", "数据集", "Datasets"],
@@ -389,6 +394,13 @@ export default function Explore({
                   {pick(cn, en)}
                 </option>
               ))}
+            </select>
+          )}
+          {!information && (
+            <select aria-label={pick("任务能力", "Task capability")} value={params.get("capability") || ""} onChange={(e) => setFilter("capability", e.target.value)}>
+              <option value="">{pick("所有任务能力", "All task capabilities")}</option>
+              {params.get("capability") && !catalog.data?.capabilities.some(c => c.value === params.get("capability")) && <option value={params.get("capability")!}>{params.get("capability")}</option>}
+              {catalog.data?.capabilities.map(c => <option key={c.value} value={c.value}>{c.value} ({c.count})</option>)}
             </select>
           )}
         </div>

@@ -1,0 +1,28 @@
+{
+  "client": "Official Python MCP SDK",
+  "client_version": "2.1.1",
+  "http": {
+    "protocol": "2025-11-25",
+    "skills_found": 18,
+    "selected_id": "b0fd3578c82a70f5a1054e0c",
+    "version": "41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f",
+    "capability": "document-processing",
+    "source_url": "https://github.com/anthropics/skills/blob/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f/skills/xlsx/SKILL.md",
+    "read_evidence": true,
+    "same_task_filters": true,
+    "cited_markdown": true,
+    "scope": "Official SDK protocol flow; no Skill execution or autonomous desktop-client outcome is asserted."
+  },
+  "stdio": {
+    "protocol": "2025-11-25",
+    "skills_found": 18,
+    "selected_id": "b0fd3578c82a70f5a1054e0c",
+    "version": "41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f",
+    "capability": "document-processing",
+    "source_url": "https://github.com/anthropics/skills/blob/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f/skills/xlsx/SKILL.md",
+    "read_evidence": true,
+    "same_task_filters": true,
+    "cited_markdown": true,
+    "scope": "Official SDK protocol flow; no Skill execution or autonomous desktop-client outcome is asserted."
+  }
+}

@@ -40,7 +40,8 @@ def test_initialization_and_daily_sources(client):
     assert overview['counts'] == {'event': 0, 'paper': 0, 'resource': 0}
     assert overview['verified'] == 0
     sources = client.get('/api/v1/sources').json['items']
-    assert len(sources) == 17 and all(s['interval_days'] == 1 for s in sources)
+    assert len(sources) == 19 and all(s['interval_days'] == 1 for s in sources)
+    assert any(s['id'] == 'github-skills' for s in sources)
     assert all(s['last_success_at'] is None for s in sources)
 
 

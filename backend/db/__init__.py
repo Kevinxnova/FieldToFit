@@ -6,6 +6,7 @@ import sqlite3
 import json
 import urllib.request
 import urllib.error
+from urllib.parse import urlsplit
 import certifi
 from pathlib import Path
 from contextlib import contextmanager
@@ -46,9 +47,12 @@ class TursoConnection:
     """sqlite3-compatible connection using Turso HTTP API via urllib."""
 
     def __init__(self):
-        self._base = _turso_http_url()
+        self._base = _turso_http_url().rstrip('/')
         self._token = TURSO_TOKEN
         self.row_factory = None
+        self._transaction = False
+        self._baton = None
+        self._broken = False
 
     def _post(self, payload: dict) -> dict:
         data = json.dumps(payload).encode("utf-8")
@@ -64,7 +68,8 @@ class TursoConnection:
         with urllib.request.urlopen(req, timeout=30, context=_SSL_CTX) as resp:
             return json.loads(resp.read().decode("utf-8"))
 
-    def execute(self, sql: str, params: tuple | list = ()) -> 'TursoCursor':
+    @staticmethod
+    def _statement(sql, params):
         args = []
         for p in params:
             if p is None:
@@ -76,17 +81,52 @@ class TursoConnection:
             else:
                 args.append({"type": "text", "value": str(p)})
 
-        data = self._post({
-            "requests": [
-                {"type": "execute", "stmt": {"sql": sql, "args": args}},
-                {"type": "close"},
-            ]
-        })
+        return {"type":"execute","stmt":{"sql":sql,"args":args}}
 
-        result = data.get("results", [{}])[0]
-        if result.get("type") == "error":
-            raise Exception(result.get("error", {}).get("message", "Turso error"))
+    def _pipeline(self, requests):
+        expected=len(requests)
+        if self._broken:
+            raise RuntimeError('Database connection failed; retry the whole transaction')
+        if not self._transaction:
+            requests.append({"type": "close"})
+        payload = {"requests": requests}
+        if self._baton:
+            payload['baton'] = self._baton
+        try:
+            data = self._post(payload)
+        except Exception:
+            self._broken = True
+            raise
+        if self._transaction:
+            self._baton = data.get('baton')
+            if not self._baton:
+                self._broken = True
+                raise RuntimeError('Database transaction expired; retry the whole operation')
+            if data.get('base_url'):
+                original, candidate = urlsplit(_turso_http_url()), urlsplit(data['base_url'])
+                same_host = candidate.hostname == original.hostname and candidate.port == original.port
+                turso_host = (original.hostname or '').endswith('.turso.io') and (candidate.hostname or '').endswith('.turso.io')
+                if candidate.scheme != 'https' or candidate.username or candidate.password or candidate.query or candidate.fragment or not (same_host or turso_host):
+                    self._broken = True
+                    raise RuntimeError('Untrusted database stream address')
+                self._base = data['base_url'].rstrip('/')
 
+        results=data.get('results',[])
+        if len(results)!=len(requests):
+            self._broken=True
+            raise RuntimeError('Incomplete database response')
+        for result in results[:expected]:
+            if result.get('type')!='ok' or 'result' not in result.get('response',{}):
+                self._broken=True
+                raise RuntimeError(result.get('error',{}).get('message','Invalid database response'))
+        return results[:expected]
+
+    def execute_batch(self, statements):
+        if not self._transaction: raise RuntimeError('Batch writes require an explicit transaction')
+        if statements: self._pipeline([self._statement(sql,params) for sql,params in statements])
+
+    def execute(self, sql: str, params: tuple | list = ()) -> 'TursoCursor':
+        result=self._pipeline([self._statement(sql,params)])[0]
         response = result.get("response", {}).get("result", {})
         cols = [c["name"] for c in response.get("cols", [])]
         rows_raw = response.get("rows", [])
@@ -120,14 +160,39 @@ class TursoConnection:
                 except:
                     pass
 
+    def begin(self):
+        if self._transaction:
+            raise RuntimeError('Transaction already open')
+        self._transaction = True
+        self.execute('BEGIN IMMEDIATE')
+
     def commit(self):
-        pass
+        if self._transaction:
+            self.execute('COMMIT')
+            self._transaction = False
 
     def rollback(self):
-        pass
+        # Closing an uncommitted stream rolls back. Never reopen a lost stream
+        # or replay statements after a timeout / ambiguous network response.
+        self.close()
 
     def close(self):
-        pass
+        baton, self._baton = self._baton, None
+        self._transaction = False
+        if baton:
+            try:
+                self._post({'baton':baton,'requests':[{'type':'close'}]})
+            except Exception:
+                # The server also expires idle streams; preserve the original error.
+                pass
+
+
+def execute_statements(conn, statements):
+    if isinstance(conn,TursoConnection):
+        conn.execute_batch(statements)
+    else:
+        for sql,params in statements:
+            conn.execute(sql,params)
 
 
 class TursoCursor:
@@ -186,7 +251,7 @@ def init_db():
 
 
 @contextmanager
-def get_db():
+def get_db(atomic=False):
     """Get a database connection with row factory."""
     if _use_turso():
         conn = TursoConnection()
@@ -200,6 +265,11 @@ def get_db():
         conn.execute("PRAGMA journal_mode=WAL")
         conn.execute("PRAGMA foreign_keys=ON")
     try:
+        if atomic:
+            if isinstance(conn, TursoConnection):
+                conn.begin()
+            else:
+                conn.execute('BEGIN IMMEDIATE')
         yield conn
         conn.commit()
     except Exception:

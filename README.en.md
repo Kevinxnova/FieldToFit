@@ -15,7 +15,7 @@ Metis is for researchers, engineers, graduate students and students. People can 
 
 ## Status
 
-This branch contains **v1.1.0-beta.1, a development candidate**, not a published stable release. v1.0.0 is the earlier open-source baseline.
+This branch contains **v1.1.0-beta.2, a development candidate**, not a published stable release. v1.0.0 is the earlier open-source baseline.
 
 - Information, resources, task context, management and read-only MCP have working foundations. Remaining gaps are recorded in the [42 requirements](docs/product/requirements.md).
 - Automatic source checks run every **1 day**. Failures, backlog, stale material and unknown conditions remain visible.
@@ -27,7 +27,7 @@ This branch contains **v1.1.0-beta.1, a development candidate**, not a published
 | Area | Current capability |
 | --- | --- |
 | Information | Filter events and papers; inspect explanations, briefs and original sources |
-| Resources | Read model, tool, library and dataset dossiers; compare versions, adoption conditions and missing facts |
+| Resources | Read model, Agent, Skill, tool, library and dataset dossiers; filter by capability and compare versions and adoption conditions |
 | Task workbench | Provide a goal, background and conditions; retrieve candidates, source material, adoption paths and Markdown |
 | AI access | Use 9 read-only MCP tools over HTTP or stdio, sharing the same data as the web UI |
 | Management | Maintain sources, facts, classifications, relationships, processing and feedback |
@@ -39,6 +39,8 @@ Documentation completeness and scoped execution results are separate. Popularity
 
 ![Resources](docs/assets/workspace-resources.png)
 
+*The resource screenshot shows real Skill collection and filtering in beta.2; other images illustrate the existing workspace.*
+
 ![Task workbench](docs/assets/workspace-tasks.png)
 
 </details>
@@ -47,6 +49,7 @@ Documentation completeness and scoped execution results are separate. Popularity
 
 | Version | Status / date | Highlights |
 | --- | --- | --- |
+| [v1.1.0-beta.2](docs/releases/v1.1.0-beta.2.md) | Development candidate · 2026-09-08 | Versioned Skill / Agent materials, capability filters, paginated review and duplicate candidates, daily backlog metrics, transactional edits and complete research exports |
 | [v1.1.0-beta.1](docs/releases/v1.1.0-beta.1.md) | Development candidate · 2026-09-07 | Knowledge workspace, versioned evidence and MCP; reorganized current/legacy code, bilingual docs, requirements and release navigation |
 | v1.0.0 | Historical baseline · 2026-08-30 | First open-source release with discovery, curation and Newsletter workflows |
 

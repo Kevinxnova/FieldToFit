@@ -5,6 +5,8 @@
 | test_knowledge.py | 知识库、查询、权限、账户关闭、MCP 与基本任务 |
 | test_workspace_completion.py | 采集进度、材料、整理、约束、编辑与任务检索 |
 | test_task_packets.py | 既有任务结构、证据边界、PDF 技术回归和导出 |
+| test_release_resources.py | Skill / Agent 元数据、稳定版本、续采、下架保护、能力筛选 |
+| test_release_operations.py | 队列过滤分页、积压和运行记录、完整导出、远程事务失败回滚 |
 | test_security.py | 旧 API 管理与定时权限、输入和跨域 |
 | test_translate.py、test_email_sender.py | 翻译边界与邮件内容/发送保护 |
 | test_daily_news_debug.py | 显式启用的 Turso / MiniMax 集成检查，默认跳过 |

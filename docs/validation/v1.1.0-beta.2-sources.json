@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "status": "partial",
+      "interval_days": 1,
+      "results": [
+        {
+          "source": "github-skills",
+          "status": "partial",
+          "found": 18,
+          "changed": 18,
+          "error": "anthropics/skills/skills/claude-api/SKILL.md: Skill description is required; anthropics/skills/template/SKILL.md: Skill name does not match its directory"
+        }
+      ]
+    },
+    {
+      "status": "success",
+      "interval_days": 1,
+      "results": [
+        {
+          "source": "github-projects",
+          "status": "success",
+          "found": 3,
+          "changed": 3,
+          "error": ""
+        }
+      ]
+    }
+  ],
+  "overview": {
+    "counts": {
+      "event": 0,
+      "paper": 0,
+      "resource": 21
+    },
+    "complete": 0,
+    "verified": 0,
+    "sources": 19,
+    "last_update": "2026-09-08T07:21:13.457432Z",
+    "interval_days": 1,
+    "topics": {
+      "models": "模型",
+      "agents": "Agent",
+      "research": "研究",
+      "engineering": "开发",
+      "business": "商业",
+      "vertical": "垂直应用",
+      "learning": "学习",
+      "data": "数据"
+    },
+    "api_version": "1"
+  }
+}
