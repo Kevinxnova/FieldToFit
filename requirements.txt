@@ -1,6 +1,6 @@
 flask>=3.0.0
 httpx==0.28.1
-openai>=1.66,<4
+openai>=3.8.0,<4
 python-dotenv>=1.0.0
 certifi
 feedparser>=6.0.0
