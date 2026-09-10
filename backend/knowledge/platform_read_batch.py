@@ -27,6 +27,15 @@ class PreparedReads:
         return self.db.execute(sql, params)
 
 
+PUBLICATION_SQL = "SELECT * FROM knowledge_publications WHERE record_id=? AND seq=? AND state='published'"
+
+
+def _publication_query(ref):
+    if ref['revision'] is None:
+        return ("SELECT * FROM knowledge_publications WHERE record_id=? AND seq=(SELECT revision FROM knowledge_selections WHERE record_id=?) AND state='published'", (ref['id'], ref['id']))
+    return PUBLICATION_SQL, (ref['id'], ref['revision'])
+
+
 def prepare_publications(db, refs):
     if not isinstance(db, TursoConnection):
         return db
@@ -37,15 +46,15 @@ def prepare_publications(db, refs):
         statements.extend([
             ('SELECT * FROM knowledge_records WHERE id=?', (rid,)),
             ('SELECT * FROM knowledge_selections WHERE record_id=?', (rid,)),
-            ("SELECT * FROM knowledge_publications WHERE record_id=? AND seq=? AND state='published'", (rid, revision)),
+            _publication_query(ref),
             ("SELECT MAX(seq) FROM knowledge_publications WHERE record_id=? AND state='withdrawn'", (rid,)),
         ])
     cached.prepare(statements)
     objects = []
     for ref in refs:
-        row = cached.execute("SELECT * FROM knowledge_publications WHERE record_id=? AND seq=? AND state='published'",
-                             (ref['id'], ref['revision'])).fetchone()
+        row = cached.execute(*_publication_query(ref)).fetchone()
         if row:
+            cached.rows[(PUBLICATION_SQL, (ref['id'], row['seq']))] = [row]
             objects.append(store.decode(row['snapshot'], {}))
     cached.prepare([('SELECT snapshot FROM knowledge_changes WHERE record_id=? AND seq<=? ORDER BY seq DESC LIMIT 1',
                      (obj['id'], obj.get('source_revision', 0))) for obj in objects if 'source_id' not in obj])

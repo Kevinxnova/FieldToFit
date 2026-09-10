@@ -25,7 +25,7 @@ class RemoteReads(TursoConnection):
 
 def test_batch_matches_public_results_and_next_request_observes_withdrawal(client):
     pubs = [selected(str(i))[0] for i in range(8)]
-    refs = [{'id': x['object']['id'], 'revision': x['revision']} for x in pubs]
+    refs = [{'id': x['object']['id'], 'revision': x['revision'] if i % 2 else None} for i, x in enumerate(pubs)]
     with get_db() as db:
         remote = RemoteReads(db)
         prepared = prepare_publications(remote, refs)

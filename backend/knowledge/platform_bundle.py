@@ -70,8 +70,10 @@ def build(objects, max_characters=200000, format='json'):
               'registered_materials':0, 'readable_materials':0, 'link_only_materials':0,
               'unavailable_materials':0, 'deferred_materials':0, 'stored_characters':0, 'included_characters':0}
     resolved = set()
-    with get_db(atomic=True) as db:
-        # All object revisions and access checks are resolved in the same transaction.
+    with get_db() as db:
+        # Resolve publication bodies and permissions in one bounded remote read batch.
+        from backend.knowledge.platform_read_batch import prepare_publications
+        db = prepare_publications(db, refs)
         for ref in refs:
             rid = ref['id']
             try:
