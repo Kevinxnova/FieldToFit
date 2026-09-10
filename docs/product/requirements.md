@@ -32,7 +32,7 @@
 | [REQ-AB-01](requirements/about.md#req-ab-01) | 关于 FieldToFit 页面 | .01–.04 | 部分实现；范围与缺口见子项 | S2–S3 |
 | [REQ-O-01](requirements/operations.md#req-o-01) | 维护后台与发布审核 | .01–.04 | 部分实现；范围与缺口见子项 | S1–S4 |
 | [REQ-O-02](requirements/operations.md#req-o-02) | 运行监控与整理服务 | .01–.04 | 既有运行基础；在线整理与连续运营待验 | S1–S4 |
-| [REQ-O-03](requirements/operations.md#req-o-03) | 访问边界与可部署运行 | .01–.04 | 本地读管分离已验；正式部署/恢复待验 | S1–S4 |
+| [REQ-O-03](requirements/operations.md#req-o-03) | 访问边界与可部署运行 | .01–.04 | 公网品牌与读取已验；生产维护写入/恢复待验 | S1–S4 |
 | [REQ-O-04](requirements/operations.md#req-o-04) | 小范围运营与需求反馈 | .01–.04 | 反馈入口已有；真实用户与运营待验 | S1–S4 |
 | [REQ-X-01](requirements/migration.md#req-x-01) | 旧功能与新入口迁移 | .01–.04 | 文档/导航/增量表已适配；生产迁移待验 | S0–S4 |
 
