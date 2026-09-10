@@ -16,3 +16,6 @@ frontend/dist/
 
 FieldToFit-A-brand-kit/
 FieldToFit-A-brand-kit.zip
+
+# Test configuration only; runtime dependencies use requirements.txt.
+pyproject.toml
