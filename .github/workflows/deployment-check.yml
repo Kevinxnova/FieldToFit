@@ -39,3 +39,16 @@ jobs:
           assert len(tools)==10 and all(t['name'].startswith('curated_') for t in tools)
           print('Read-only MCP tools:',len(tools))
           PY
+          init=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':2,'method':'initialize','params':{'protocolVersion':'2025-03-26','capabilities':{},'clientInfo':{'name':'FieldToFit-release-check','version':'1.0.0'}}}))['result']
+          assert init['serverInfo']=={'name':'fieldtofit','version':'1.0.0'}
+          def call(name,args):
+              result=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':3,'method':'tools/call','params':{'name':name,'arguments':args}}))['result']
+              assert not result.get('isError'),result
+              return result['structuredContent']
+          page=call('curated_search',{'limit':1})
+          item=page['items'][0];obj=item['object'];material=obj['materials'][0]
+          text=call('curated_material',{'id':obj['id'],'revision':item['revision'],'material_id':material['id'],'limit':500})
+          assert text['body'] and text['revision']==item['revision']
+          assert call('curated_sources',{})['items']
+          assert len(call('curated_editions',{'limit':10})['items'])>=2
+          print('MCP initialization, search, original text, sources and editions passed')
