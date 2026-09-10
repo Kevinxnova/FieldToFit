@@ -11,6 +11,16 @@
 | 旧日报生成 | maintenance/legacy/gen_daily_news.py | gen_daily_news.py |
 | 目录与版本检查 | maintenance/check_repository.py | 新增维护入口 |
 
-所有原入口转交到分组实现并保留参数。当前知识库日流程也可直接使用 `python -m backend.scheduler`；旧 maintenance/legacy 脚本可能读写实际数据库并调用模型，整理时没有执行这些生产维护任务。
+所有原入口转交到分组实现并保留参数。当前精选日流程也可直接使用 `python -m backend.scheduler`；旧 maintenance/legacy 脚本可能读写实际数据库并调用模型，整理时没有执行这些生产维护任务。
 
 启动和采集脚本在 `PYTHON_DOTENV_DISABLED=1` 时不载入 `.env`，方便隔离验证。macOS 安装脚本会写入本机 launchd 服务配置，普通开发无需运行它。
+
+## 当前精选维护入口
+
+- `python -m backend.scheduler`：调用 platform_maintenance，每 1 天采集已登记来源。
+- `maintenance/prepare_editorial.py`：把中文整理笔记绑定到导出的真实材料，生成待审草稿文件。
+- `maintenance/seed_platform.py`：首批来源/候选准备，写入前明确目标环境。
+- `maintenance/platform_inventory.py`：本地 SQLite 盘点与一致备份。
+- `maintenance/remote_snapshot.py`：远程快照工具，按[运行指南](../docs/guides/operating-model.md)使用。
+
+这些工具不是普通打开网页的前置步骤；本轮整理未运行采集、种子写入或生产维护。

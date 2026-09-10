@@ -1,19 +1,15 @@
-# 历史文档
+# 附录：Metis 历史资料
 
-这些文件保留原设计、计划、路径和当时的交付表，仅作历史背景。**当前状态以 [REQ](../product/requirements.md) 为准**，主案例已转为 pending。
+本目录只保存 Metis 及改名前的过渡设计、版本和记录，不作为当前运行说明。现行内容从 [FieldToFit 文档首页](../README.md)进入。
 
-| 目录 | 内容 |
+| 位置 | 历史用途 |
 | --- | --- |
-| 2026-09 | 工作台重构的需求基线、阶段计划、交付、目录方案和整理前盘点 |
-| 2026-04/plans | 旧日报、定时任务与发现模块开发计划 |
-| releases | 早期发现模块版本说明 |
-| design | v0.1.0 设计 |
-| assets | v1.0.0 旧首页截图 |
+| `metis/releases/` | 早期版本说明及 beta.1、beta.2 |
+| `metis/2026-09/` | 旧需求、交付、目录盘点、平台调整前快照 |
+| `metis/2026-04/plans/` | 旧日报、发现和定时任务规划 |
+| `metis/design/` | 旧设计 |
+| `metis/assets/` | 旧首页截图 |
 
-旧计划中对工具、路径或实施步骤的要求不是本版操作指令。历史文档中的技术通过记录也不会覆盖用户后来对主案例的调整。
+[旧目标](metis/2026-09/2026-09-08-before-platform-goals.md) · [旧 REQ](metis/2026-09/2026-09-08-before-platform-requirements.md) · [旧路线图](metis/2026-09/2026-09-08-before-platform-roadmap.md) · [历史更新附录](../../CHANGELOG.md#附录metis-历史更新记录)。
 
-## 平台定位调整前快照 · 2026-09-08
-
-[原目标](2026-09/2026-09-08-before-platform-goals.md) · [原 42 项 REQ 与当时状态](2026-09/2026-09-08-before-platform-requirements.md) · [原路线图](2026-09/2026-09-08-before-platform-roadmap.md) · [原案例验收](2026-09/2026-09-08-before-platform-acceptance.md)
-
-以上用于追溯职责和验收变化；现行工作按两主页面加 About 的平台方案执行。旧数量配额和任务规划目标已被替代。
+历史日期和验收边界保留；旧文档中的工具或部署步骤不构成本版实施指令。当前案例 pending，账户待开放。

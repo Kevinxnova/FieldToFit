@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-label="FieldToFit"><style>.mark{fill:#151917}@media(prefers-color-scheme:dark){.mark{fill:#FAFBF8}}</style><g class="mark">
-  <g id="source-field">
-    <path d="M1 6H3V8H1ZM4 6H6V8H4ZM1 9H3V11H1ZM4 9H6V11H4Z"/>
-  </g>
-  <path id="focus-frame" d="M7 3H15V5H9V13H7Z"/>
-  <path id="fitted-materials" d="M10 7H15V9H10Z"/>
-</g></svg>

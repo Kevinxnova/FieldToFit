@@ -1,32 +1,32 @@
-# API 与 MCP 接入（当前 beta.2）
+# API 与 MCP 接入（FieldToFit v1.0.0）
 
-本文是现有接口使用说明。新的 For your AI 页面、完整材料契约和中性资料包仍是[待实现方案](../product/requirements/for-ai.md)，不要按规划字段调用当前服务。新主线是检索与取材，个人 AI 自行比较和设计。
+本文是现有接口使用说明。For your AI、原文续读及中性资料包已经实现；新增组织/产品/事件关系等 P2 目标仍见[需求状态](../product/requirements/for-ai.md)，不要按草案字段调用当前服务。
 
 先启动 FieldToFit 后端。默认资料可公开读取；如服务配置了 `FIELDTOFIT_READ_TOKEN`，HTTP 请求需携带 `Authorization: Bearer <read-token>`。管理员密码不用于 AI 读取。
 
 ## HTTP MCP
 
-地址为 `http://127.0.0.1:8000/api/mcp`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
+公开地址为 `https://fieldtofit.top/api/mcp/curated`，只暴露 10 项精选工具；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
 
 ```json
 {
   "mcpServers": {
     "fieldtofit": {
       "type": "http",
-      "url": "http://127.0.0.1:8000/api/mcp"
+      "url": "https://fieldtofit.top/api/mcp/curated"
     }
   }
 }
 ```
 
-网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。当前共 19 项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
+网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 共 19 项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
 
 ## stdio 桥接
 
 桥接程序向已运行的 HTTP 服务发送请求，不直接读数据库。启动客户端时将工作目录设为仓库根目录：
 
 ```bash
-FIELDTOFIT_MCP_URL=http://127.0.0.1:8000/api/mcp .venv/bin/python -m backend.mcp_stdio
+FIELDTOFIT_MCP_URL=https://fieldtofit.top/api/mcp/curated .venv/bin/python -m backend.mcp_stdio
 ```
 
 客户端配置时，command 使用该 Python 的绝对路径，args 使用 `-m backend.mcp_stdio`，工作目录填写仓库路径；有读令牌时通过客户端环境配置 `FIELDTOFIT_READ_TOKEN`。stdout 只输出 JSON-RPC。

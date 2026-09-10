@@ -6,10 +6,10 @@
 
 ## 安装
 
-从当前开发分支取得本版源码；已有项目请先保存自己的改动。此命令不会选择 v1.0.0 的旧界面。
+从 main 取得当前源码；已有项目请先保存自己的改动。旧 v1.0.0 标签属于 Metis，新品牌标签采用 fieldtofit-vX.Y.Z。
 
 ```bash
-git clone --branch codex/fieldtofit-knowledge-workspace https://github.com/Kevinxnova/fieldtofit.git
+git clone https://github.com/Kevinxnova/FieldToFit.git fieldtofit
 cd fieldtofit
 python3 -m venv .venv
 source .venv/bin/activate

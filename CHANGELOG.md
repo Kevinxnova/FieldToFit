@@ -1,8 +1,10 @@
-# Changelog
+# FieldToFit 更新记录
 
-格式参考 [Keep a Changelog](https://keepachangelog.com/)，语义化版本。
+## Unreleased · 待发布
 
----
+- 2026-09-11：整理当前文档、归档 Metis 历史，公开品牌图片收敛为网站实际使用的 5 份。
+- 确认两条内容线：重点动态、精选资源；For you 展示本期重点、重点动态、精选资源。新增首发具体名单待用户确认；本轮不发布内容、不改页面功能。
+- FieldToFit 标签采用 `fieldtofit-vX.Y.Z`；旧 Metis 标签保留。
 
 ## v1.0.0 · FieldToFit · 2026-09-10
 
@@ -15,7 +17,12 @@
 
 这是品牌版本的新起点；以下旧版本编号保留历史顺序，不代表从 v1.1 降级数据。
 
-## Unreleased
+
+## 附录：Metis 历史更新记录
+
+以下保留当时日期、版本和名称，仅用于追溯。早期 beta 编号不代表 FieldToFit 当前版本；历史 Unreleased 阶段已结束，不继续作为当前待发布清单。旧 `v1.0.0` 标签指向 Metis 2026-08-30，不能用来下载当前 FieldToFit。
+
+## Metis 转型开发记录 · 2026-09-08～10
 
 ### 公开修订历史与网页补验 · 2026-09-10
 
@@ -68,7 +75,7 @@
 ### 文档与产品规划 · P1 · 2026-09-08
 
 - 重新明确平台立意：给人提供结构化精选内容，给个人 AI 提供详细、有来源的材料；网站代做比较、场景和任务方案退出新主线。
-- 写明 For you、For your AI 与辅助“关于 FieldToFit”页面方案、拟用文案及共用资料契约（REQ-Y-01～Y-03、AI-01～AI-04、AB-01）。
+- 写明 For you、For your AI 与辅助“关于 Metis”页面方案、拟用文案及共用资料契约（REQ-Y-01～Y-03、AI-01～AI-04、AB-01）。
 - 将现行需求展开为 18 个 REQ / 72 个子 REQ，逐项记录用途、方案、验收、依赖及状态；保留旧 42 项映射和调整前快照（REQ-X-01.04）。
 - 同步中英文 README、导航、路线图、运营和版本维护说明；验收改为精选质量、人读理解、AI 取材及持续维护。
 - 案例继续 pending，账户待开放，自动检查保持每 1 天。旧数量目标取消。
@@ -87,11 +94,11 @@
 - 阅读导出包含提纲、顺序、条件比较、实验事实状态、原文入口和 BibTeX；无模型时保留基础整理。
 - 公开账户和产品主案例继续暂缓。真实日周期、生产 Turso / 容器、在线模型与真实用户效果仍待验收。
 
-详细范围、真实采集和检查结果：[本版说明](docs/releases/v1.1.0-beta.2.md)。
+详细范围、真实采集和检查结果：[本版说明](docs/archive/metis/releases/v1.1.0-beta.2.md)。
 
 ## [v1.1.0-beta.1] — 2026-09-07 · 开发候选，尚未发布
 
-本版将 FieldToFit 从旧工具发现/策展流程扩展为有来源的 AI 知识工作台，并整理代码、文档与版本展示。版本号对应当前源码候选，不代表已创建公开 Release 或完成生产验收。
+本版将 Metis 从旧工具发现/策展流程扩展为有来源的 AI 知识工作台，并整理代码、文档与版本展示。版本号对应当前源码候选，不代表已创建公开 Release 或完成生产验收。
 
 ### Added
 
@@ -115,13 +122,13 @@
 - 公开注册、登录和同步保持关闭（H-03）。资料建设、研究/学习流程、部分管理功能及任务条件订阅仍不完整。
 - 容器、生产 Turso、连续日周期、真实在线模型服务切换和用户效果待验收；远程多步事务与完整运行隔离仍有缺口。
 
-详细重点、升级影响与验证：[本版说明](docs/releases/v1.1.0-beta.1.md)。
+详细重点、升级影响与验证：[本版说明](docs/archive/metis/releases/v1.1.0-beta.1.md)。
 
 ---
 
 ## [v1.0.0] — 2026-08-30
 
-FieldToFit 首个正式开源版本。此版本将完整的数据发现、AI 增强、人工策展、
+Metis 首个正式开源版本。此版本将完整的数据发现、AI 增强、人工策展、
 双语展示和 Newsletter 工作流作为稳定基线发布。
 
 ### Added
@@ -234,10 +241,10 @@ FieldToFit 首个正式开源版本。此版本将完整的数据发现、AI 增
 | URL 去重 | 两级 `dedup_key` 策略：GitHub URL → `github:{owner}/{repo}`，其他 → `url:{normalized}`（去 query/fragment/www/尾部斜杠） |
 | 规则分类器 | 零 API 开销，正则关键词匹配评分：`content_type`（tool/library/model/api/article/other）× `domain`（ai/web/devops/data/security/design/general） |
 | 中英翻译 | `deep-translator` 调用 Google Translate，标题+描述 → 中文；Take → 英文反向翻译 |
-| Discover 页 | `/discover` 四板块：优选榜（`is_featured`）、FieldToFit 推荐（`is_metis_pick`）、AI 推荐（`ai_recommendations`）、今日发现 |
+| Discover 页 | `/discover` 四板块：优选榜（`is_featured`）、Metis 推荐（`is_metis_pick`）、AI 推荐（`ai_recommendations`）、今日发现 |
 | Admin 后台 | 密码保护，工具审核（approve/skip/defer/archive/unapprove）、设置 featured/fieldtofit-pick、编辑 Take、合并重复项，操作记录到 `curation_log` 表 |
 | Newsletter 发送 | `issues` 表管理期刊（draft → sent），HTML 模板 + Buttondown API 分发，防重复发送 |
-| Landing page | `/` 品牌主页，介绍 FieldToFit 定位 |
+| Landing page | `/` 品牌主页，介绍 Metis 定位 |
 | 中英文切换 | 前端 i18n，localStorage 持久化语言偏好 |
 | 爬虫健康监控 | `scrape_runs` 表记录每次运行的 source、status、found/new/deduped 计数、耗时 |
 | 部署架构 | Vercel（前端 + Serverless Functions）+ SQLite/Turso + Cloudflare Tunnel（Mac mini）+ MiniMax + Buttondown + Google Translate |

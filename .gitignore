@@ -43,3 +43,6 @@ data/*.err
 # Private runtime output and source archive
 output/
 FieldToFit-A-brand-kit.zip
+
+# Full promotional brand kit is kept in the owner backup only.
+/FieldToFit-A-brand-kit/

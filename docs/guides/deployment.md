@@ -1,6 +1,6 @@
 # 部署与升级
 
-当前运行代码为 v1.0.0，P1 平台文档不改变部署或数据。已完成本地运行检查；容器实际构建、生产 Turso 和连续日周期的验收仍未完成，状态见 [REQ-O-03](../product/requirements/operations.md#req-o-03)。
+当前运行代码为 FieldToFit v1.0.0，已部署到 https://fieldtofit.top，Vercel/Turso 公网读取和 10 项精选 MCP 工具已验；容器实际构建、生产维护写入/恢复和连续日周期的验收仍未完成，状态见 [REQ-O-03](../product/requirements/operations.md#req-o-03)。
 
 ## 本地 SQLite 与单服务部署
 
@@ -40,7 +40,7 @@ macOS 的 `scripts/setup-mac.sh` 会安装依赖、初始化配置指定的数�
 
 保留仓库根目录为部署入口。`vercel.json` 构建前端并映射 Python API，远程数据库和管理凭证放在平台环境变量中。前后端同源时留空 `VITE_API_URL`；分开时填写 API origin，不附加 `/api`，并允许对应的前端 origin。
 
-`/api/cron/knowledge` 是现行知识库的每日任务；旧 scrape、daily-news、classify、digest 路由和调度仍在，服务于兼容流程。本版没有替用户取消生产中的旧任务。部署前按 [兼容边界](../architecture/README.md) 核对需要的流程，再检查平台当前支持的时长和调度限制。
+当前 `vercel.json` 只登记 `/api/cron/platform` 一个每日定时任务，每天 UTC 02:00（北京时间 10:00）运行。旧 knowledge、scrape、daily-news、classify、digest 路由保留兼容，但没有登记为当前 Vercel 自动调度。部署前按 [兼容边界](../architecture/README.md) 核对需要的流程，再检查平台当前支持的时长和调度限制。
 
 所有定时 API 都检查 `CRON_SECRET`；检查 `GET /api/health`、资料直达页面、来源状态和管理登录。新表会在初始化时创建。beta.2 已增加显式事务及失败回滚，并通过模拟远程传输的检查；生产 Turso 的真实事务、超时和恢复仍需验收，不能以模拟结果替代。详见 [beta.2 验证](../validation/v1.1.0-beta.2-acceptance.md)。
 
@@ -51,10 +51,12 @@ macOS 的 `scripts/setup-mac.sh` 会安装依赖、初始化配置指定的数�
 3. 保留 `.env`、数据、日志和平台配置。不要用示例配置覆盖实际配置，也不要把根目录数据库直接覆盖到 data/。
 4. 验证新工作台、`/admin/curation`、MCP 和原脚本入口；检查是否出现新字段或配置需求。
 
-回滚时使用对应提交和相容的数据备份；本次整理没有做用户数据迁移，历史目录变化见 [beta.1 整理说明](../releases/v1.1.0-beta.1.md)，当前升级变化见 [beta.2 说明](../releases/v1.1.0-beta.2.md)。
+回滚时使用对应提交和相容的数据备份；本次整理没有做用户数据迁移，历史目录变化见 [beta.1 整理说明](../archive/metis/releases/v1.1.0-beta.1.md)，当前升级变化见 [FieldToFit v1.0.0 说明](../releases/v1.0.0.md)。
 
 ## 每日运行监控
 
-在 `/admin` 的处理进度中查看积压、最长等待、近 1 天整理量和延迟样本。持久工作进程执行 `python -m backend.knowledge.daily` 时记录完整流程；Vercel 分开的采集与处理任务各自保留来源/处理记录，不能直接当作已完成的完整日流程验收。完整流程只有启用来源均成功且新鲜、处理无积压、适用技术检查通过时才记录成功；同日重试按 UTC 日期去重。
+本地 `python -m backend.scheduler` 与 Vercel `/api/cron/platform` 均调用 `backend.knowledge.platform_maintenance.run_daily`，负责已登记来源的更新与候选采集；不把待审内容自动发布。查看精选来源状态、采集日志及后台待审变化。具体操作与本地 AI 整理交接见[运行方案](operating-model.md)。
 
-`FIELDTOFIT_CRON_RECORD_LIMIT=30` 控制无服务器单次日批次上限；可配置 1–100。处理时间预算为 180 秒，预算用于停止启动下一步，正在执行的网络调用仍受自身超时限制。来源或模型调用较慢、积压持续增长时，用持久工作进程运行每日处理并检查部署日志。
+公开版本需保持 `FIELDTOFIT_PUBLIC_ACCOUNTS=0`。生产是否执行初始化由真实配置决定，不能为文档演示修改数据库；发布前确认已完成所需迁移。`CRON_SECRET`、数据库和管理凭据仅保存在部署环境。
+
+每 1 天检查不代表每源均成功；连续 3 个真实日周期、故障恢复与至少一次每周复核须记录实际证据。本轮文档整理不执行维护、写库或重新部署。

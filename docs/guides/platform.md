@@ -1,6 +1,6 @@
 # 精选平台：当前实现与使用
 
-2026-09-10 · Unreleased。当前应用版本为 `1.0.0`。这里描述实际接口；[产品契约](../product/data-contract.md)包含仍待实现的目标。
+2026-09-11 · FieldToFit v1.0.0，已公开部署。这里描述实际接口；[产品契约](../product/data-contract.md)包含仍待实现的目标。
 
 ## 打开页面
 
@@ -167,6 +167,6 @@ python scripts/maintenance/platform_inventory.py --database /absolute/path/field
   --backup /absolute/path/new-backup.sqlite
 ```
 
-脚本拒绝覆盖既有备份。停止服务后回退到相容代码和备份数据库；恢复操作先在隔离目录验证。本次只盘点了本地 SQLite，不能据此推断已运行服务或远程 Turso 的存量。生产迁移、正式备份恢复和容器部署仍待验。
+脚本拒绝覆盖既有备份。停止服务后回退到相容代码和备份数据库；恢复操作先在隔离目录验证。本次只盘点了本地 SQLite，不能据此推断已运行服务或远程 Turso 的存量。生产公开读取已验；生产维护写入、正式备份恢复和容器部署仍待验。
 
-已验证的真实范围见[基础检查](../validation/2026-09-09-platform-foundation.md)与[本轮期次/增量检查](../validation/2026-09-09-platform-updates.md)。每日 1 天调度基础保留，连续 3 个真实日周期与首批维护名单扩充仍未完成；注册关闭，案例 pending。
+已验证的真实范围见[基础检查](../validation/2026-09-09-platform-foundation.md)与[本轮期次/增量检查](../validation/2026-09-09-platform-updates.md)。每日 1 天调度基础保留，已发布 27 项对象；连续 3 个真实日周期与 P2 首发内容更新仍未完成；注册关闭，案例 pending。
