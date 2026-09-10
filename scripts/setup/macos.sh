@@ -1,10 +1,10 @@
 #!/bin/bash
-# Metis Mac mini setup — run once after git clone
+# FieldToFit Mac mini setup — run once after git clone
 set -e
 cd "$(dirname "$0")/../.."
 PROJECT_DIR=$(pwd)
 
-echo "=== Metis Setup ==="
+echo "=== FieldToFit Setup ==="
 
 # Python venv
 if [ ! -d .venv ]; then
@@ -24,14 +24,14 @@ if [ ! -f .env ]; then
 fi
 
 # Create launchd plist for backend
-PLIST_PATH="$HOME/Library/LaunchAgents/com.metis.backend.plist"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.fieldtofit.backend.plist"
 cat > "$PLIST_PATH" << PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.metis.backend</string>
+    <string>com.fieldtofit.backend</string>
     <key>ProgramArguments</key>
     <array>
         <string>${PROJECT_DIR}/.venv/bin/gunicorn</string>
@@ -61,14 +61,14 @@ PLIST
 echo "Backend service created: $PLIST_PATH"
 
 # Create launchd plist for scraper (every 1 day)
-SCRAPE_PLIST="$HOME/Library/LaunchAgents/com.metis.scraper.plist"
+SCRAPE_PLIST="$HOME/Library/LaunchAgents/com.fieldtofit.scraper.plist"
 cat > "$SCRAPE_PLIST" << PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.metis.scraper</string>
+    <string>com.fieldtofit.scraper</string>
     <key>ProgramArguments</key>
     <array>
         <string>${PROJECT_DIR}/.venv/bin/python</string>
@@ -97,8 +97,8 @@ echo "Scraper cron created: $SCRAPE_PLIST (every 1 day)"
 echo ""
 echo "=== Next steps ==="
 echo "1. Edit .env with your API keys"
-echo "2. Start backend:  launchctl load ~/Library/LaunchAgents/com.metis.backend.plist"
-echo "3. Start scraper:  launchctl load ~/Library/LaunchAgents/com.metis.scraper.plist"
+echo "2. Start backend:  launchctl load ~/Library/LaunchAgents/com.fieldtofit.backend.plist"
+echo "3. Start scraper:  launchctl load ~/Library/LaunchAgents/com.fieldtofit.scraper.plist"
 echo "4. Test: curl http://localhost:8000/api/health"
 echo "5. Install cloudflared: brew install cloudflared"
 echo "6. Run: cloudflared tunnel --url http://localhost:8000"

@@ -4,7 +4,7 @@ async function request<T>(path: string, options?: RequestInit, admin = false): P
   const headers = new Headers(options?.headers)
   headers.set('Content-Type', 'application/json')
   if (admin) {
-    const password = sessionStorage.getItem('metis-admin-password')
+    const password = sessionStorage.getItem('fieldtofit-admin-password')
     if (password) headers.set('X-Admin-Password', password)
   }
 
@@ -127,12 +127,12 @@ export const api = {
   setFeatured: (id: number, on: boolean) =>
     request<{ ok: boolean }>(`/tools/${id}/featured?on=${on}`, { method: 'POST' }, true),
 
-  setMetisPick: (id: number, on: boolean) =>
-    request<{ ok: boolean }>(`/tools/${id}/metis-pick?on=${on}`, { method: 'POST' }, true),
+  setFieldToFitPick: (id: number, on: boolean) =>
+    request<{ ok: boolean }>(`/tools/${id}/fieldtofit-pick?on=${on}`, { method: 'POST' }, true),
 
   // Discover page
   getFeatured: () => request<Tool[]>('/discover/featured'),
-  getMetisPicks: () => request<Tool[]>('/discover/metis-picks'),
+  getFieldToFitPicks: () => request<Tool[]>('/discover/fieldtofit-picks'),
   getAiPicks: () => request<AiPick[]>('/discover/ai-picks'),
   generateAiPicks: () =>
     request<{ count: number; picks: AiPick[] }>('/discover/ai-picks/generate', { method: 'POST' }, true),

@@ -2,7 +2,7 @@ export type Lang = 'zh' | 'en'
 
 const messages = {
   zh: {
-    title: 'Metis — 每日审阅',
+    title: 'FieldToFit — 每日审阅',
     allTools: '全部',
     pending: '待审',
     approved: '已选',
@@ -67,7 +67,7 @@ const messages = {
     tag_tool: '工具',
   },
   en: {
-    title: 'Metis — Daily Review',
+    title: 'FieldToFit — Daily Review',
     allTools: 'All',
     pending: 'Pending',
     approved: 'Approved',
@@ -146,9 +146,9 @@ export function td(lang: Lang, key: string): string {
 }
 
 export function getSavedLang(): Lang {
-  return (localStorage.getItem('metis-lang') as Lang) || 'zh'
+  return (localStorage.getItem('fieldtofit-lang') as Lang) || 'zh'
 }
 
 export function saveLang(lang: Lang) {
-  localStorage.setItem('metis-lang', lang)
+  localStorage.setItem('fieldtofit-lang', lang)
 }

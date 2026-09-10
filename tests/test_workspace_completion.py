@@ -169,7 +169,7 @@ def test_brief_removes_withdrawn_sources(client,monkeypatch):
 
 def test_model_configuration_and_admin_access(client,monkeypatch):
     assert client.get('/api/v1/admin/model').status_code==401
-    for name in ('METIS_FIRST_API_KEY','METIS_SECOND_API_KEY'):
+    for name in ('FIELDTOFIT_FIRST_API_KEY','FIELDTOFIT_SECOND_API_KEY'):
         monkeypatch.setenv(name,'private-test-credential')
         response=client.patch('/api/v1/admin/model',json={'model':name,'key_env':name,'base_url':'https://example.org/v1','enabled':True},headers=ADMIN)
         assert response.status_code==200 and response.json['credential_configured']
@@ -247,9 +247,9 @@ def test_two_generation_protocols_and_incomplete_response(client,monkeypatch):
         def __enter__(self):return self
         def __exit__(self,*args):self.http.close()
     monkeypatch.setattr(openai,'OpenAI',Fake)
-    monkeypatch.setenv('METIS_TEST_API_KEY','not-a-real-secret')
+    monkeypatch.setenv('FIELDTOFIT_TEST_API_KEY','not-a-real-secret')
     for style in ['responses','chat_completions']:
-        models.configure({'enabled':True,'key_env':'METIS_TEST_API_KEY','model':'gpt-6-astra','base_url':'https://example.org/v1','api_style':style})
+        models.configure({'enabled':True,'key_env':'FIELDTOFIT_TEST_API_KEY','model':'gpt-6-astra','base_url':'https://example.org/v1','api_style':style})
         assert models.generate_json('Return JSON',{'task':'test'})[0]=={'ok':True}
     assert calls[0]['store'] is False and 'max_output_tokens' in calls[0] and 'temperature' not in calls[0]
     assert 'messages' in calls[1]
@@ -279,10 +279,10 @@ def test_task_subject_excludes_incidental_pdf_urls_and_locality(client):
 
 def test_new_provider_does_not_reuse_legacy_provider_secret(client,monkeypatch):
     monkeypatch.setenv('MINIMAX_API_KEY','legacy-credential')
-    monkeypatch.delenv('METIS_MODEL_API_KEY',raising=False)
-    monkeypatch.setenv('METIS_MODEL_BASE_URL','https://api.openai.com/v1')
+    monkeypatch.delenv('FIELDTOFIT_MODEL_API_KEY',raising=False)
+    monkeypatch.setenv('FIELDTOFIT_MODEL_BASE_URL','https://api.openai.com/v1')
     cfg=models.configuration()
-    assert cfg['key_env']=='METIS_MODEL_API_KEY' and not cfg['credential_configured'] and not cfg['enabled']
+    assert cfg['key_env']=='FIELDTOFIT_MODEL_API_KEY' and not cfg['credential_configured'] and not cfg['enabled']
 
 
 def test_explicit_document_subject_excludes_generic_extraction(client):

@@ -2,6 +2,10 @@
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
   "functions": {
+    "api/cron_platform.py": {
+      "maxDuration": 300,
+      "regions": ["hkg1"]
+    },
     "api/cron.py": {
       "maxDuration": 300,
       "regions": [
@@ -30,6 +34,7 @@
       ]
     },
     "api/index.py": {
+      "maxDuration": 300,
       "regions": [
         "hkg1"
       ]
@@ -42,6 +47,10 @@
     }
   },
   "rewrites": [
+    {
+      "source": "/api/cron/platform",
+      "destination": "/api/cron_platform.py"
+    },
     {
       "source": "/api/cron/knowledge",
       "destination": "/api/cron_knowledge.py"
@@ -77,23 +86,7 @@
   ],
   "crons": [
     {
-      "path": "/api/cron/scrape",
-      "schedule": "0 0 * * *"
-    },
-    {
-      "path": "/api/cron/daily-news",
-      "schedule": "30 0 * * *"
-    },
-    {
-      "path": "/api/cron/classify",
-      "schedule": "0 1 * * *"
-    },
-    {
-      "path": "/api/cron/digest",
-      "schedule": "30 1 * * *"
-    },
-    {
-      "path": "/api/cron/knowledge",
+      "path": "/api/cron/platform",
       "schedule": "0 2 * * *"
     }
   ]

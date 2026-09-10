@@ -1,0 +1,175 @@
+{
+  "client": "Official Python MCP SDK",
+  "client_version": "2.1.1",
+  "http": {
+    "source_check": {
+      "enabled": null,
+      "freshness": "unknown",
+      "id": "manual",
+      "interval_days": 1,
+      "last_attempt_at": null,
+      "last_run_status": "unknown",
+      "last_success_at": null,
+      "name": "manual",
+      "registered": false,
+      "scope": "Collection adapter only; not a successful check of every object or original document",
+      "state": "unregistered"
+    },
+    "source_and_date_filter_matches": true,
+    "source_package": {
+      "coverage": {
+        "all_stored_text_included": true,
+        "available_objects": 1,
+        "deferred_materials": 0,
+        "included_characters": 7991,
+        "link_only_materials": 1,
+        "max_characters": 200000,
+        "readable_materials": 2,
+        "registered_materials": 3,
+        "requested_objects": 1,
+        "scope": "Only the declared materials in the requested reviewed publications; not all upstream documentation",
+        "stored_characters": 7991,
+        "unavailable_materials": 0,
+        "unavailable_objects": 0
+      },
+      "all_body_hashes_match": true,
+      "limited_package_restored": [
+        "a6e07f6927b2b4411dbe2849",
+        "0780751488ece1b4aab02691",
+        "868d29431028242bc96c0239"
+      ],
+      "markdown_has_source_text": true
+    },
+    "change_window_event_ids": [
+      3,
+      4,
+      6
+    ],
+    "checkpoint_caught_up": true,
+    "editions": [
+      {
+        "id": "224768104b094cf5828a0219828d5966",
+        "revision": 1,
+        "entries": 1
+      }
+    ],
+    "tool_count": 18,
+    "object_id": "42c1189a057172b719ea250a",
+    "revision": 6,
+    "upstream_version": null,
+    "materials": [
+      {
+        "material_id": "a6e07f6927b2b4411dbe2849",
+        "source_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/README.md",
+        "coverage": "full_text",
+        "characters": 6924,
+        "chunks": 9,
+        "hash_matches": true
+      },
+      {
+        "material_id": "0780751488ece1b4aab02691",
+        "source_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/LICENSE",
+        "coverage": "full_text",
+        "characters": 1067,
+        "chunks": 2,
+        "hash_matches": true
+      },
+      {
+        "material_id": "868d29431028242bc96c0239",
+        "source_url": "https://docs.langchain.com/oss/python/deepagents/overview",
+        "coverage": "link_only",
+        "characters": 0,
+        "chunks": 1,
+        "hash_matches": true
+      }
+    ],
+    "same_object_and_export": true,
+    "no_task_plan_generated": true
+  },
+  "stdio": {
+    "source_check": {
+      "enabled": null,
+      "freshness": "unknown",
+      "id": "manual",
+      "interval_days": 1,
+      "last_attempt_at": null,
+      "last_run_status": "unknown",
+      "last_success_at": null,
+      "name": "manual",
+      "registered": false,
+      "scope": "Collection adapter only; not a successful check of every object or original document",
+      "state": "unregistered"
+    },
+    "source_and_date_filter_matches": true,
+    "source_package": {
+      "coverage": {
+        "all_stored_text_included": true,
+        "available_objects": 1,
+        "deferred_materials": 0,
+        "included_characters": 7991,
+        "link_only_materials": 1,
+        "max_characters": 200000,
+        "readable_materials": 2,
+        "registered_materials": 3,
+        "requested_objects": 1,
+        "scope": "Only the declared materials in the requested reviewed publications; not all upstream documentation",
+        "stored_characters": 7991,
+        "unavailable_materials": 0,
+        "unavailable_objects": 0
+      },
+      "all_body_hashes_match": true,
+      "limited_package_restored": [
+        "a6e07f6927b2b4411dbe2849",
+        "0780751488ece1b4aab02691",
+        "868d29431028242bc96c0239"
+      ],
+      "markdown_has_source_text": true
+    },
+    "change_window_event_ids": [
+      3,
+      4,
+      6
+    ],
+    "checkpoint_caught_up": true,
+    "editions": [
+      {
+        "id": "224768104b094cf5828a0219828d5966",
+        "revision": 1,
+        "entries": 1
+      }
+    ],
+    "tool_count": 18,
+    "object_id": "42c1189a057172b719ea250a",
+    "revision": 6,
+    "upstream_version": null,
+    "materials": [
+      {
+        "material_id": "a6e07f6927b2b4411dbe2849",
+        "source_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/README.md",
+        "coverage": "full_text",
+        "characters": 6924,
+        "chunks": 9,
+        "hash_matches": true
+      },
+      {
+        "material_id": "0780751488ece1b4aab02691",
+        "source_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/LICENSE",
+        "coverage": "full_text",
+        "characters": 1067,
+        "chunks": 2,
+        "hash_matches": true
+      },
+      {
+        "material_id": "868d29431028242bc96c0239",
+        "source_url": "https://docs.langchain.com/oss/python/deepagents/overview",
+        "coverage": "link_only",
+        "characters": 0,
+        "chunks": 1,
+        "hash_matches": true
+      }
+    ],
+    "same_object_and_export": true,
+    "no_task_plan_generated": true
+  },
+  "scope": "Source reading and protocol acceptance only; not a desktop agent outcome or product showcase."
+}

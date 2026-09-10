@@ -1,4 +1,4 @@
-# Metis 目录、版本记录与 GitHub 展示方案（待对齐）
+# FieldToFit 目录、版本记录与 GitHub 展示方案（待对齐）
 
 > 历史快照，不作为当前需求状态或操作说明。现行入口：[需求清单](../../product/requirements.md)、[文档导航](../../README.md)。主案例现为 pending，旧样例通过不代表产品价值已经验证。
 
@@ -6,14 +6,14 @@
 
 ## 目标与当前问题
 
-让首次访问 GitHub 的人看懂 Metis 能帮助他完成什么；让维护者能找到当前需求、代码入口、部署办法、验证证据与版本变化。
+让首次访问 GitHub 的人看懂 FieldToFit 能帮助他完成什么；让维护者能找到当前需求、代码入口、部署办法、验证证据与版本变化。
 
 现有目录不大，不需要重新搭建工程结构。主要问题是新旧功能并存、需求和交付分散在按日文档中，以及 README 开头仍描述 v1.0.0 的工具发现与 Newsletter，新的任务工作台和 MCP 介绍放在末尾。根目录已有 CHANGELOG.md，应继续维护这个版本记录入口。
 
 ## 建议的目录
 
 ```text
-metis/
+fieldtofit/
 ├── README.md                    中文项目首页：价值、演示、最新变化、快速开始
 ├── README.en.md                 对应英文版
 ├── CHANGELOG.md                 唯一完整版本变更记录，保留旧版本
@@ -76,11 +76,11 @@ metis/
 | docs/product 的多份按日需求/计划/交付 | 当前状态合并到 goals.md、requirements.md；按日快照归档 | requirements.md 以原 REQ ID 为锚点，保留未完成项和证据链接；归档文件标明被谁取代 |
 | docs/superpowers/plans、docs/metis_design-v0.1.0、docs/updates | 移到 docs/archive/ 对应旧版本/日期目录 | 旧设计有历史价值，但不再作为当前操作说明 |
 | docs/validation/* | 原位保留，增加结果索引 | 运行记录需要日期、环境、版本、范围；后续结果追加，不覆盖历史结果 |
-| docs/assets/metis-homepage.png | 移到历史截图目录，首页换当前真实截图 | README 不展示已经下线的页面作为当前效果 |
+| docs/assets/fieldtofit-homepage.png | 移到历史截图目录，首页换当前真实截图 | README 不展示已经下线的页面作为当前效果 |
 
 ## 本机文件：保留配置与数据，清理可再生物
 
-实际发现根目录和 data/ 下各有一个 metis.db，还有日志、SQLite 辅助文件、.venv、frontend/node_modules、dist、Python/pytest 缓存、.vercel、.gstack、.DS_Store 和空 work/。
+实际发现根目录和 data/ 下各有一个 fieldtofit.db，还有日志、SQLite 辅助文件、.venv、frontend/node_modules、dist、Python/pytest 缓存、.vercel、.gstack、.DS_Store 和空 work/。
 
 - `.git`、`.env`、`.vercel`、`.gstack` 保留；不打印凭证，不提交个人配置，也不把它们和旧源码一起清理。
 - 两处数据库先核对配置指向、进程使用和备份恢复办法。确定唯一运行目录后再安排迁移；此轮方案不授权直接删除或覆盖数据库。
@@ -107,7 +107,7 @@ metis/
 
 建议中文优先、英文单独文件，入口互相链接。首页按下面顺序展开：
 
-1. **一句话定位**：Metis 把 AI 动态、研究和开源资源整理成有来源、可比较、能用于下一步工作的材料，供人阅读，也供 AI 通过 API / MCP 使用。
+1. **一句话定位**：FieldToFit 把 AI 动态、研究和开源资源整理成有来源、可比较、能用于下一步工作的材料，供人阅读，也供 AI 通过 API / MCP 使用。
 2. **当前状态**：稳定发布版 / Unreleased 分开；当前哪些功能可用、哪些待补、账户待开放。
 3. **完整案例**：用“中文 PDF → 金额与页码来源”展示目标、资料包与真实输出；链接完整脚本和运行边界。
 4. **产品截图**：当前信息、应用资源和任务资料包，使用实际页面截图。

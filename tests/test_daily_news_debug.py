@@ -14,9 +14,9 @@ load_dotenv()
 import pytest
 
 pytestmark = pytest.mark.integration
-if os.getenv("METIS_RUN_INTEGRATION_TESTS") != "1":
+if os.getenv("FIELDTOFIT_RUN_INTEGRATION_TESTS") != "1":
     pytest.skip(
-        "Set METIS_RUN_INTEGRATION_TESTS=1 to run live Turso/MiniMax tests",
+        "Set FIELDTOFIT_RUN_INTEGRATION_TESTS=1 to run live Turso/MiniMax tests",
         allow_module_level=True,
     )
 

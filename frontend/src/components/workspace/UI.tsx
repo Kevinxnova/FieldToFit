@@ -186,23 +186,23 @@ function local<T>(key: string, fallback: T): T {
   }
 }
 export function WorkspaceProvider({ children }: { children: ReactNode }) {
-  const [zh, setZh] = useState(() => local("metis-workspace-zh", true));
-  const [dark, setDark] = useState(() => local("metis-workspace-dark", false));
+  const [zh, setZh] = useState(() => local("fieldtofit-workspace-zh", true));
+  const [dark, setDark] = useState(() => local("fieldtofit-workspace-dark", false));
   const [collection, setCollection] = useState<CollectionItem[]>(() =>
-    local("metis-collection", []),
+    local("fieldtofit-collection", []),
   );
-  const [collectionKey, setCollectionKey] = useState("metis-collection");
+  const [collectionKey, setCollectionKey] = useState("fieldtofit-collection");
   const [compare, setCompare] = useState<string[]>([]);
   const [toast, setToast] = useState("");
   const [signedIn, setSignedIn] = useState(false);
   const pick = (cn: string, en: string) => (zh ? cn : en);
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
-    localStorage.setItem("metis-workspace-dark", JSON.stringify(dark));
+    localStorage.setItem("fieldtofit-workspace-dark", JSON.stringify(dark));
   }, [dark]);
   useEffect(() => {
     document.documentElement.lang = zh ? "zh-CN" : "en";
-    localStorage.setItem("metis-workspace-zh", JSON.stringify(zh));
+    localStorage.setItem("fieldtofit-workspace-zh", JSON.stringify(zh));
   }, [zh]);
   useEffect(() => {
     localStorage.setItem(collectionKey, JSON.stringify(collection));
@@ -220,7 +220,7 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
         const saved = await request<{ items: CollectionItem[] }>(
           "/v1/collection",
         );
-        setCollectionKey("metis-collection:" + r.user.id);
+        setCollectionKey("fieldtofit-collection:" + r.user.id);
         setCollection(saved.items);
       })
       .catch(() => {});

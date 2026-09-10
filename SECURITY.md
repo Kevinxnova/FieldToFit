@@ -6,7 +6,7 @@ Please do not open a public issue for a suspected vulnerability.
 
 Use GitHub's private vulnerability reporting for this repository:
 
-https://github.com/Kevinxnova/metis/security/advisories/new
+https://github.com/Kevinxnova/fieldtofit/security/advisories/new
 
 Include the affected route or component, reproduction steps, impact, and any
 suggested mitigation. Avoid including real credentials or production data.

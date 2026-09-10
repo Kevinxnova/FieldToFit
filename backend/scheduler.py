@@ -7,8 +7,10 @@ load_dotenv()
 
 
 def run_all():
-    from backend.knowledge.daily import run
-    return run()
+    from backend.knowledge.platform_maintenance import run_daily
+    from backend.db import init_db
+    init_db()
+    return run_daily(budget_seconds=3600)
 
 
 if __name__ == "__main__":

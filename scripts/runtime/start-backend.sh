@@ -1,5 +1,5 @@
 #!/bin/bash
-# Metis backend startup script
+# FieldToFit backend startup script
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"

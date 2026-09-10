@@ -1,0 +1,17 @@
+{
+  "objects": 27,
+  "materials": 62,
+  "characters": 501355,
+  "objects_with_captured_stars": 19,
+  "pagination_no_duplicates": true,
+  "all_material_hashes_match": true,
+  "daily_run": {
+    "status": "success",
+    "interval_days": 1,
+    "results": [],
+    "pending_editorial": 2,
+    "unhealthy_sources": [],
+    "maintained_sources": 27,
+    "scope": "Previously published maintained repositories only; discovery sources and unpublished candidates are separate. Collection success does not mean AI organization or publication completed"
+  }
+}

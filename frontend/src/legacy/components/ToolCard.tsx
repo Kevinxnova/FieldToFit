@@ -88,7 +88,7 @@ export default function ToolCard({ tool, onAction, lang }: Props) {
           )}
         </div>
       </div>
-      {/* Admin: featured & metis pick toggles */}
+      {/* Admin: featured & fieldtofit pick toggles */}
       <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
         <button
           onClick={async () => { await api.setFeatured(tool.id, !tool.is_featured); onAction(tool.id, tool.status, undefined) }}
@@ -102,7 +102,7 @@ export default function ToolCard({ tool, onAction, lang }: Props) {
           {tool.is_featured ? '⭐ 优选' : '☆ 设为优选'}
         </button>
         <button
-          onClick={async () => { await api.setMetisPick(tool.id, !tool.is_metis_pick); onAction(tool.id, tool.status, undefined) }}
+          onClick={async () => { await api.setFieldToFitPick(tool.id, !tool.is_metis_pick); onAction(tool.id, tool.status, undefined) }}
           style={{
             fontSize: 11, padding: '2px 8px', borderRadius: 4, cursor: 'pointer',
             border: `1px solid ${tool.is_metis_pick ? '#8b5cf6' : '#e0e0e0'}`,
@@ -110,7 +110,7 @@ export default function ToolCard({ tool, onAction, lang }: Props) {
             color: tool.is_metis_pick ? '#6d28d9' : '#999',
           }}
         >
-          {tool.is_metis_pick ? '💎 Metis推荐' : '◇ 设为Metis推荐'}
+          {tool.is_metis_pick ? '💎 FieldToFit推荐' : '◇ 设为FieldToFit推荐'}
         </button>
       </div>
       {desc && (

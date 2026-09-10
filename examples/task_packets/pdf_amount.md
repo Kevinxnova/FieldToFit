@@ -25,10 +25,10 @@
 在仓库根目录，使用独立的 Python 环境：
 
 ```bash
-python3 -m venv /tmp/metis-pdf-env
-/tmp/metis-pdf-env/bin/pip install pypdf==6.17.0 reportlab==4.5.1
-/tmp/metis-pdf-env/bin/python examples/task_packets/pdf_amount.py --demo-dir /tmp/metis-pdf-demo --output /tmp/metis-pdf-demo-result.json
-/tmp/metis-pdf-env/bin/python examples/task_packets/pdf_amount.py --input /tmp/metis-pdf-demo/searchable.pdf --output /tmp/metis-pdf-amount.json
+python3 -m venv /tmp/fieldtofit-pdf-env
+/tmp/fieldtofit-pdf-env/bin/pip install pypdf==6.17.0 reportlab==4.5.1
+/tmp/fieldtofit-pdf-env/bin/python examples/task_packets/pdf_amount.py --demo-dir /tmp/fieldtofit-pdf-demo --output /tmp/fieldtofit-pdf-demo-result.json
+/tmp/fieldtofit-pdf-env/bin/python examples/task_packets/pdf_amount.py --input /tmp/fieldtofit-pdf-demo/searchable.pdf --output /tmp/fieldtofit-pdf-amount.json
 ```
 
 将 `--input` 替换成自己的文件，再检查输出状态、原文和页码。脚本在本地执行，不调用模型或上传文件。JSON 包含文档原文，请自行选择保存位置。

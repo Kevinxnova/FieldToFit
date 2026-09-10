@@ -1,3 +1,6 @@
+import EditionReview from "../components/workspace/EditionReview";
+import IntakeReview from "../components/workspace/IntakeReview";
+import CuratedReview from "../components/workspace/CuratedReview";
 import OperationsOverview, { type Operations } from "../components/workspace/OperationsOverview";
 import DuplicateReview, { type DuplicatePair } from "../components/workspace/DuplicateReview";
 import RelationshipEditor from "../components/workspace/RelationshipEditor";
@@ -93,7 +96,7 @@ export default function KnowledgeOps() {
   const { pick, notify } = useWorkspace();
   const [password, setPassword] = useState("");
   const [authed, setAuthed] = useState(
-    !!sessionStorage.getItem("metis-admin-password"),
+    !!sessionStorage.getItem("fieldtofit-admin-password"),
   );
   const [tab, setTab] = useState("records");
   const [error, setError] = useState("");
@@ -123,6 +126,7 @@ export default function KnowledgeOps() {
   const [factSource, setFactSource] = useState("");
   const [factStatus, setFactStatus] = useState("documented");
   const [factVersion, setFactVersion] = useState("");
+  const [factQuote, setFactQuote] = useState("");
   const [factConditions, setFactConditions] = useState("");
   const [source, setSource] = useState({
     id: "",
@@ -162,7 +166,7 @@ export default function KnowledgeOps() {
     try {
       const r = await send<{ ok: boolean }>("/admin/verify", { password });
       if (!r.ok) throw Error("登录失败");
-      sessionStorage.setItem("metis-admin-password", password);
+      sessionStorage.setItem("fieldtofit-admin-password", password);
       setAuthed(true);
     } catch (e) {
       setError((e as Error).message);
@@ -195,7 +199,7 @@ export default function KnowledgeOps() {
     );
   };
   const addFact = () => {
-    if (!record || !factValue || !factSource) return;
+    if (!record || !factValue || (factStatus !== "unknown" && !factSource)) return;
     setRecord({
       ...record,
       facts: {
@@ -205,6 +209,7 @@ export default function KnowledgeOps() {
           source_url: factSource,
           status: factStatus,
           version: factVersion,
+          quote: factQuote,
           checked_at: new Date().toISOString(),
           ...(factKey === "hardware_vram_gb"
             ? { unit: "GB", conditions: factConditions }
@@ -253,6 +258,8 @@ export default function KnowledgeOps() {
           <div className="ops-tabs">
             {[
               ["records", "资料审核", "Records"],
+              ["editions", "概览期次", "Editions"],
+              ["intake", "AI 整理稿", "AI editorial drafts"],
               ["sources", "来源配置", "Sources"],
               ["processing", "处理进度", "Processing"],
               ["model", "生成模型", "Model"],
@@ -270,7 +277,7 @@ export default function KnowledgeOps() {
             <button
               className="text-button"
               onClick={() => {
-                sessionStorage.removeItem("metis-admin-password");
+                sessionStorage.removeItem("fieldtofit-admin-password");
                 setAuthed(false);
               }}
             >
@@ -282,6 +289,8 @@ export default function KnowledgeOps() {
               {pick("正在处理，请稍候…", "Working…")}
             </p>
           )}
+          {tab === "editions" && <EditionReview />}
+          {tab === "intake" && <IntakeReview />}
           {tab === "records" && (
             <>
               <input
@@ -383,6 +392,9 @@ export default function KnowledgeOps() {
                         }
                       >
                         {[
+                          "agent",
+                          "skill",
+                          "harness",
                           "project",
                           "tool",
                           "library",
@@ -433,6 +445,7 @@ export default function KnowledgeOps() {
                               setFactSource(f.source_url || "");
                               setFactStatus(f.status);
                               setFactVersion(f.version || "");
+                              setFactQuote(f.quote || "");
                             }}
                           >
                             {pick("编辑", "Edit")}
@@ -477,6 +490,10 @@ export default function KnowledgeOps() {
                       />
                     </label>
                     <label>
+                      {pick("原文引用（精选发布需要）", "Original quote (required for selection)")}
+                      <textarea value={factQuote} onChange={e => setFactQuote(e.target.value)} />
+                    </label>
+                    <label>
                       {pick("适用版本", "Applicable version")}
                       <input
                         value={factVersion}
@@ -514,7 +531,7 @@ export default function KnowledgeOps() {
                     <button
                       className="button"
                       onClick={addFact}
-                      disabled={!factValue || !factSource}
+                      disabled={!factValue || (factStatus !== "unknown" && !factSource)}
                     >
                       {pick("加入当前编辑", "Add to this edit")}
                     </button>
@@ -550,6 +567,7 @@ export default function KnowledgeOps() {
                         {pick("重新获取与整理", "Retrieve and organize")}
                       </button>
                     </div>
+                    <CuratedReview key={record.id} record={record} />
                   </section>
                 )}
               </div>

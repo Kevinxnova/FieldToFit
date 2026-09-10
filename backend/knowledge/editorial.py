@@ -19,7 +19,7 @@ def sources_save(data,source_id=None):
         if not isinstance(merged.get(key),str) or not 1<=len(merged[key])<=500:
             raise ValueError('A source needs name, category, URL and adapter')
     url=store.canonical_url(merged['url'])
-    if merged['adapter'] not in {'rss','arxiv','huggingface','openreview','github_releases','github_skills','github_projects','legacy','pages'}:
+    if merged['adapter'] not in {'rss','arxiv','huggingface','openreview','github_releases','github_skills','github_projects','platform_repository','legacy','pages'}:
         raise ValueError('Unsupported source adapter')
     config=merged.get('config',{})
     if not isinstance(config,dict) or len(store.encode(config))>50000:
@@ -70,6 +70,9 @@ def merge(target_id,record_ids,reason):
             statements.append(('UPDATE knowledge_records SET metadata=?,updated_at=? WHERE id=?',(store.encode(r['metadata']),store.now(),r['id'])))
             statements.append(('INSERT INTO knowledge_changes(record_id,action,snapshot,reason,changed_at) VALUES(?,?,?,?,?)',(r['id'],'grouped',store.encode(r),reason,store.now())))
         execute_statements(db,statements)
+        from backend.knowledge.platform import invalidate
+        for record in records:
+            invalidate(db, record['id'], 'Object grouped into another record')
     return {'action_id':action_id,'target_id':target_id,'grouped':len(records)}
 
 

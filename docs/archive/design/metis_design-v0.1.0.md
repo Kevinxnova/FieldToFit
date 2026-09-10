@@ -1,4 +1,4 @@
-# Metis 产品设计文档 v0.1.0
+# FieldToFit 产品设计文档 v0.1.0
 
 > 历史快照，不作为当前需求状态或操作说明。现行入口：[需求清单](../../product/requirements.md)、[文档导航](../../README.md)。主案例现为 pending，旧样例通过不代表产品价值已经验证。
 
@@ -9,7 +9,7 @@
 
 ## 一、产品定位
 
-**Metis** 是一个 AI 驱动的工具与科技资讯发现平台，帮助开发者和技术从业者从海量信息中高效发现最有价值的工具、项目和趋势。
+**FieldToFit** 是一个 AI 驱动的工具与科技资讯发现平台，帮助开发者和技术从业者从海量信息中高效发现最有价值的工具、项目和趋势。
 
 **核心价值**: 多源聚合 → AI 筛选 → 结构化呈现，让用户花更少时间搜索、更多时间构建。
 
@@ -53,7 +53,7 @@ scrape → dedup(dedup_key) → insert(status=pending)
 - 管理员手动标记 `is_featured` 的工具
 - 横向轮播展示
 
-#### 3.1.2 Metis Picks（Metis 精选）
+#### 3.1.2 FieldToFit Picks（FieldToFit 精选）
 - 管理员标记 `is_metis_pick` + 撰写 take（个人点评）
 - 网格展示，含 AI 评分
 
@@ -86,7 +86,7 @@ scrape → dedup(dedup_key) → insert(status=pending)
 - 工具审核: pending → approved / skipped
 - 内容筛选: content_type / domain / status
 - 撰写 take（自动翻译英文）
-- 标记 featured / metis-pick
+- 标记 featured / fieldtofit-pick
 - Newsletter 草稿预览 + 发送（Buttondown）
 - 爬虫健康监控
 
@@ -94,12 +94,12 @@ scrape → dedup(dedup_key) → insert(status=pending)
 - 完整元数据: 标签、标题（双语）、描述
 - 指标栏: stars / points / comments / votes / first_seen
 - AI 推荐信息（如有）: 理由 + 评分 + 适用场景
-- Metis 点评（如有）: 管理员 take
+- FieldToFit 点评（如有）: 管理员 take
 - 外链: Visit Project / View Source
 
 ### 3.6 Landing 页 (`/`)
 - Hero 区: 标语 + 价值主张
-- Why Metis: 三点叙事
+- Why FieldToFit: 三点叙事
 - What You Get: 四大功能亮点
 - 覆盖领域徽章
 
@@ -125,7 +125,7 @@ scrape → dedup(dedup_key) → insert(status=pending)
 | discovery_category | TEXT | news/ai_tool/other |
 | short_summary / short_summary_zh | TEXT | AI 生成的一行摘要 |
 | is_featured | INTEGER | 编辑精选标记 |
-| is_metis_pick | INTEGER | Metis 精选标记 |
+| is_metis_pick | INTEGER | FieldToFit 精选标记 |
 | take / take_en | TEXT | 管理员点评（中/英） |
 | first_seen | DATETIME | 首次发现时间 |
 
@@ -164,7 +164,7 @@ scrape → dedup(dedup_key) → insert(status=pending)
 | GET | /api/tools | 工具列表（筛选: status, content_type, domain） |
 | GET | /api/tools/categories | 各类型/领域计数 |
 | GET | /api/discover/featured | 编辑精选 |
-| GET | /api/discover/metis-picks | Metis 精选 |
+| GET | /api/discover/fieldtofit-picks | FieldToFit 精选 |
 | GET | /api/discover/ai-picks | AI 推荐 |
 | GET | /api/discover/today | 今日发现 |
 | GET | /api/discover/week | 本周发现 |
@@ -181,7 +181,7 @@ scrape → dedup(dedup_key) → insert(status=pending)
 | POST | /api/admin/verify | 登录验证 |
 | PATCH | /api/tools/:id | 更新状态/take |
 | POST | /api/tools/:id/featured | 切换精选 |
-| POST | /api/tools/:id/metis-pick | 切换 Metis Pick |
+| POST | /api/tools/:id/fieldtofit-pick | 切换 FieldToFit Pick |
 | POST | /api/discover/ai-picks/generate | 触发 AI 推荐 |
 | POST | /api/daily-news/generate | 触发日报生成 |
 | POST | /api/issues | 创建期刊 |
@@ -298,7 +298,7 @@ tools 表新增字段:
 
 ### 7.2 不变的部分
 - 爬虫逻辑、数据源、去重机制
-- Editor's Picks、Metis Picks、AI Recommended 保持不变
+- Editor's Picks、FieldToFit Picks、AI Recommended 保持不变
 - Daily News 页保持不变
 - Community 页保持不变
 - Admin 页保持不变

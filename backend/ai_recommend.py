@@ -324,7 +324,7 @@ def generate_recommendations() -> list[dict]:
                 "votes": metrics.get("votes"),
             })
 
-        prompt = f"""你是 Metis，一个AI工具发现助手。从今天新发现的 {len(tool_summaries)} 个工具中，挑选最有价值的 TOP 5 推荐给开发者和技术从业者。
+        prompt = f"""你是 FieldToFit，一个AI工具发现助手。从今天新发现的 {len(tool_summaries)} 个工具中，挑选最有价值的 TOP 5 推荐给开发者和技术从业者。
 
 对每个推荐，同时提供中文和英文版本：
 1. id：工具的 id（来自列表）

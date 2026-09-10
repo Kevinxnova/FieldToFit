@@ -22,7 +22,7 @@ def compose_email(issue: dict) -> tuple[str, str]:
     Returns (subject, html_body).
     """
     tools = issue.get("tools", [])
-    title = issue.get("title", f"Metis Weekly #{issue['issue_number']}")
+    title = issue.get("title", f"FieldToFit Weekly #{issue['issue_number']}")
 
     items_html = ""
     for tool in tools:
@@ -53,7 +53,7 @@ def compose_email(issue: dict) -> tuple[str, str]:
         </div>
         <div style="text-align: center; padding: 16px 0; border-top: 1px solid #eee; font-size: 12px; color: #999;">
             You're getting this because you want to find tools before everyone else.<br>
-            Curated by Metis
+            Curated by FieldToFit
         </div>
     </div>
     """

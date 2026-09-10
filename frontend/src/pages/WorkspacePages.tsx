@@ -240,7 +240,7 @@ export function Compare() {
   ];
   const copy = async () => {
     const text = [
-      "# Metis · " + pick("资源对比", "Resource comparison"),
+      "# FieldToFit · " + pick("资源对比", "Resource comparison"),
       "",
       ...items.flatMap((item) => [
         "## " + titleOf(item, zh),
@@ -476,7 +476,7 @@ export function Connect() {
   const [connection, setConnection] = useState("");
   const endpoint = new URL(BASE + "/mcp", window.location.origin).href;
   const config = JSON.stringify(
-    { mcpServers: { metis: { type: "http", url: endpoint } } },
+    { mcpServers: { fieldtofit: { type: "http", url: endpoint } } },
     null,
     2,
   );
@@ -509,7 +509,7 @@ export function Connect() {
         "Content-Type": "application/json",
         Accept: "application/json, text/event-stream",
       };
-      const saved = sessionStorage.getItem("metis-read-token");
+      const saved = sessionStorage.getItem("fieldtofit-read-token");
       if (saved) headers.Authorization = "Bearer " + saved;
       const response = await fetch(endpoint, {
         method: "POST",
@@ -521,7 +521,7 @@ export function Connect() {
           params: {
             protocolVersion: "2025-11-25",
             capabilities: {},
-            clientInfo: { name: "metis-web-check", version: "1.0" },
+            clientInfo: { name: "fieldtofit-web-check", version: "1.0" },
           },
         }),
       });
@@ -545,8 +545,8 @@ export function Connect() {
       <PageHeading
         eyebrow="BUILT FOR PEOPLE. READY FOR AI."
         title={pick(
-          "把 Metis，带进你的 AI 工作流。",
-          "Bring Metis to your AI workflow.",
+          "把 FieldToFit，带进你的 AI 工作流。",
+          "Bring FieldToFit to your AI workflow.",
         )}
         description={pick(
           "通过 MCP 或查询接口，让 AI 读取同一套资料、来源与条件。",
@@ -627,8 +627,8 @@ export function Connect() {
             className="token-form"
             onSubmit={(e) => {
               e.preventDefault();
-              if (token) sessionStorage.setItem("metis-read-token", token);
-              else sessionStorage.removeItem("metis-read-token");
+              if (token) sessionStorage.setItem("fieldtofit-read-token", token);
+              else sessionStorage.removeItem("fieldtofit-read-token");
               notify(
                 pick(
                   "设置已保存，请重新打开资料页",
@@ -819,7 +819,7 @@ export function Account() {
 export function Manage() {
   const { pick, notify } = useWorkspace();
   const [authed, setAuthed] = useState(
-    !!sessionStorage.getItem("metis-admin-password"),
+    !!sessionStorage.getItem("fieldtofit-admin-password"),
   );
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -836,7 +836,7 @@ export function Manage() {
     setError("");
     try {
       await send("/admin/verify", { password });
-      sessionStorage.setItem("metis-admin-password", password);
+      sessionStorage.setItem("fieldtofit-admin-password", password);
       setAuthed(true);
       setPassword("");
     } catch (e) {
@@ -943,7 +943,7 @@ export function Manage() {
             <button
               className="text-button"
               onClick={() => {
-                sessionStorage.removeItem("metis-admin-password");
+                sessionStorage.removeItem("fieldtofit-admin-password");
                 setAuthed(false);
               }}
             >

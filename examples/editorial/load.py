@@ -1,7 +1,7 @@
 """Import the explicitly curated GPT batch, without a model service or network call.
 
 Run: python -m examples.editorial.load
-Uses the configured database; set METIS_DATA_DIR to choose an isolated preview.
+Uses the configured database; set FIELDTOFIT_DATA_DIR to choose an isolated preview.
 Only creates missing records. Existing source documents and corrections are retained.
 """
 import json

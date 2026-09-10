@@ -1,5 +1,7 @@
 # 架构与兼容边界
 
+当前基于 **v1.1.0-beta.2** 增加 Unreleased 平台实现：`backend/knowledge/platform.py` 复用对象/证据，新增配置、精选状态、发布快照三张表；本轮再加读快照、期次草稿和期次发布三表，见 `platform_updates.py`；API/MCP/网页共用已审快照。前端 `Platform.tsx` 承载 For you / For your AI / About，`CuratedReview.tsx` 承载对象审核，`EditionReview.tsx` 承载期次审核，`PlatformHistory.tsx` 展示期次与变化。目标与实际子集见[契约](../product/data-contract.md)和[平台指南](../guides/platform.md)。
+
 ```text
 来源与官方材料
     ↓ 每日发现 / 原文读取 / 整理队列
@@ -19,7 +21,7 @@ backend/knowledge → 事实、证据、版本、关系、历史与验证
 | backend/knowledge/store.py、schema.sql | 当前资料、证据、关系和历史存储 |
 | backend/knowledge/sources.py、paging.py、materials.py | 来源发现、分页进度和原文获取 |
 | backend/knowledge/processing.py、models.py、daily.py | 整理队列、生成适配、每日处理 |
-| backend/knowledge/tasks.py、task_plans.py、export.py | 任务资料与导出；技术样例保留，主案例 pending |
+| backend/knowledge/tasks.py、task_plans.py、export.py | 原任务资料与导出；退出新主线，代码兼容保留，案例 pending |
 | backend/knowledge/editorial.py、verification.py | 审核及受维护者审核的运行检查 |
 | backend/db、scrapers、dedup、config.py、security.py | 共享数据库、采集、身份归并、配置与权限辅助 |
 | backend/scheduler.py、mcp_stdio.py | 本地日调度入口与 stdio 桥接 |
@@ -40,14 +42,16 @@ backend/knowledge → 事实、证据、版本、关系、历史与验证
 
 ## 数据与权限
 
-新旧表在同一配置指定的 SQLite/Turso 数据库中。`METIS_DATA_DIR` 决定本地路径，默认 `data/metis.db`；根目录同名文件不会被自动合并。本次整理保留用户数据、配置、日志、`.git`、`.vercel` 与本机依赖。
+新旧表在同一配置指定的 SQLite/Turso 数据库中。`FIELDTOFIT_DATA_DIR` 决定本地路径，默认 `data/fieldtofit.db`；根目录同名文件不会被自动合并。本次整理保留用户数据、配置、日志、`.git`、`.vercel` 与本机依赖。
 
-公开读取可选 `METIS_READ_TOKEN`；维护接口使用独立管理员凭证；定时接口使用 `CRON_SECRET`；公开账户当前关闭。模型服务凭证只保存在服务器。
+公开读取可选 `FIELDTOFIT_READ_TOKEN`；维护接口使用独立管理员凭证；定时接口使用 `CRON_SECRET`；公开账户当前关闭。模型服务凭证只保存在服务器。
 
-已知技术缺口：Turso 连接缺少多步事务/失败回滚；运行脚本控制清单、临时目录和超时，但没有完整 CPU/内存/网络隔离。相关工作仍列在 [REQ](../product/requirements.md)。
+beta.2 已加入显式事务与失败回滚，并有模拟远程传输检查；生产 Turso 仍待实测。运行脚本有清单、临时目录和超时控制，没有完整 CPU/内存/网络隔离；通用运行沙箱不在新平台范围。原技术记录保留，新的部署边界见 [REQ-O-03](../product/requirements/operations.md#req-o-03)。
 
 ## 版本与更新
 
-应用版本由 `backend/__init__.py` 与 frontend package/package-lock 保持一致；健康接口从后端版本读取。本版是 `1.1.0-beta.1` 开发候选，API 路径仍为 `/api/v1`，二者不是同一种版本号。协议版本单独由 MCP 实现定义。
+应用版本由 `backend/__init__.py` 与 frontend package/package-lock 保持一致；健康接口从后端版本读取。本版是 `1.1.0-beta.2` 开发候选，API 路径仍为 `/api/v1`，二者不是同一种版本号。协议版本单独由 MCP 实现定义。
 
 运行 `python scripts/maintenance/check_repository.py` 检查版本一致性、文档链接和前端相对导入。每次发布按 [版本维护说明](../releases/README.md) 执行。
+
+仓库检查器已分别校验 18 个父 REQ、72 个子 REQ 和 42 个历史锚点，检查编号归属及链接；旧 42 项不计入新需求完成率。

@@ -150,10 +150,12 @@ def save_record(data, reason="Source update", record_id=None, connection=None):
                    f"ON CONFLICT(id) DO UPDATE SET {','.join(k+'=excluded.'+k for k in columns if k != 'id')}", values)
         db.execute("INSERT INTO knowledge_changes(record_id,action,snapshot,reason,changed_at) VALUES(?,?,?,?,?)",
                    (rid, "created" if previous is None else "updated", encode(record), reason, stamp))
+        from backend.knowledge.platform import invalidate
+        invalidate(db, rid)
     return rid, True
 
 
-def add_evidence(record_id, url, title, body="", locator="", version="", evidence_type="source", coverage="excerpt"):
+def add_evidence(record_id, url, title, body="", locator="", version="", evidence_type="source", coverage="excerpt", connection=None):
     url = canonical_url(url)
     if coverage not in {"full_text", "excerpt", "abstract", "link_only"}:
         raise ValueError("Invalid material coverage")
@@ -161,7 +163,7 @@ def add_evidence(record_id, url, title, body="", locator="", version="", evidenc
         raise ValueError("Material exceeds 2 MB; split it into sections")
     digest = hashlib.sha256(body.encode()).hexdigest()
     eid = stable_id(record_id, url, version, locator, digest)
-    with get_db(atomic=True) as db:
+    with (nullcontext(connection) if connection is not None else get_db(atomic=True)) as db:
         inserted = db.execute("INSERT OR IGNORE INTO knowledge_evidence VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                    (eid, record_id, url, title, body, locator, version, evidence_type, coverage, now(), digest))
         if inserted.rowcount:
@@ -172,6 +174,8 @@ def add_evidence(record_id, url, title, body="", locator="", version="", evidenc
             db.execute('UPDATE knowledge_records SET updated_at=? WHERE id=?', (stamp, record_id))
             db.execute('INSERT INTO knowledge_changes(record_id,action,snapshot,reason,changed_at) VALUES(?,?,?,?,?)',
                        (record_id, 'evidence_added', encode(snapshot), 'New source material or material revision indexed', stamp))
+            from backend.knowledge.platform import invalidate
+            invalidate(db, record_id)
     return eid
 
 
@@ -227,7 +231,7 @@ def sync_legacy():
         if imported.get(rid, {}).get("editorial_override"):
             continue
         try:
-            saved_id, _ = save_record(data, "Imported from existing Metis data; not independently verified", rid)
+            saved_id, _ = save_record(data, "Imported from existing FieldToFit data; not independently verified", rid)
             add_evidence(saved_id, row.get("source_url") or row["url"], row["title"], plain_text(row.get("description")),
                          evidence_type="discovery", coverage="excerpt" if row.get("description") else "link_only")
         except ValueError:
@@ -342,7 +346,7 @@ def search_records(q="", kind="", topic="", source="", since="", until="", objec
                           [*rank_params, *params, limit, offset]).fetchall()
     return {"items": [row_record(r) for r in rows], "total": total, "limit": limit, "offset": offset,
             "next_offset": offset + limit if offset + limit < total else None,
-            "query": q, "expanded_terms": terms, "scope": "Metis indexed published records; not an exhaustive web search",
+            "query": q, "expanded_terms": terms, "scope": "FieldToFit indexed published records; not an exhaustive web search",
             "date_basis": "publication date for date filters; unknown dates are excluded", "api_version": "1"}
 
 

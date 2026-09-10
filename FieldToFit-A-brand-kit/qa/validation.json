@@ -1,0 +1,15 @@
+{
+  "vectorFiles": 21,
+  "wordmark": {
+    "font": "Rubik Bold",
+    "outlined": true,
+    "width": 487.3995361328125,
+    "height": 74
+  },
+  "checks": [
+    "All production SVG files are self-contained vector paths/rectangles; no raster embedding or live text.",
+    "Both 1024px app icons are fully opaque. Both 16px favicons have no partially covered edge pixels.",
+    "App mark bounding box fits inside the central 80-percent-diameter circle for mask-safe presentation.",
+    "All local HTML preview images and download links resolve within the delivery folder."
+  ]
+}

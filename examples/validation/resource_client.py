@@ -1,6 +1,6 @@
 """Read a collected Skill through the official MCP SDK over HTTP and stdio.
 
-Requires examples/validation/requirements.txt and a running Metis with Skill data.
+Requires examples/validation/requirements.txt and a running FieldToFit with Skill data.
 No source code is executed and no generation/admin endpoint is called.
 """
 import asyncio
@@ -46,12 +46,12 @@ async def check(transport):
 
 
 async def main():
-    url = os.getenv('METIS_MCP_URL','http://127.0.0.1:8000/api/mcp')
-    headers = {'Authorization':'Bearer '+os.environ['METIS_READ_TOKEN']} if os.getenv('METIS_READ_TOKEN') else None
+    url = os.getenv('FIELDTOFIT_MCP_URL','http://127.0.0.1:8000/api/mcp')
+    headers = {'Authorization':'Bearer '+os.environ['FIELDTOFIT_READ_TOKEN']} if os.getenv('FIELDTOFIT_READ_TOKEN') else None
     async with create_mcp_http_client(headers=headers) as http_client:
         http = await check(streamable_http_client(url, http_client=http_client))
-    env = {'METIS_MCP_URL':url}
-    if os.getenv('METIS_READ_TOKEN'): env['METIS_READ_TOKEN']=os.environ['METIS_READ_TOKEN']
+    env = {'FIELDTOFIT_MCP_URL':url}
+    if os.getenv('FIELDTOFIT_READ_TOKEN'): env['FIELDTOFIT_READ_TOKEN']=os.environ['FIELDTOFIT_READ_TOKEN']
     stdio = await check(stdio_client(StdioServerParameters(command=sys.executable,args=['-m','backend.mcp_stdio'],
         env=env,cwd=str(Path(__file__).resolve().parents[2]))))
     report = {'client':'Official Python MCP SDK','client_version':version('mcp'),'http':http,'stdio':stdio}

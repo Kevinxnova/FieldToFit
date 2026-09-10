@@ -4,7 +4,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add an AI Daily News page to metis that scrapes high-quality AI news sources (The Verge, TechCrunch, Ars Technica, MIT Tech Review, VentureBeat, Wired AI, OpenAI Blog, Google AI Blog), combines them with existing HN/GitHub/PH data, uses MiniMax to generate a structured daily AI briefing, and displays it on a new `/daily-news` frontend page with date navigation and bilingual support.
+**Goal:** Add an AI Daily News page to fieldtofit that scrapes high-quality AI news sources (The Verge, TechCrunch, Ars Technica, MIT Tech Review, VentureBeat, Wired AI, OpenAI Blog, Google AI Blog), combines them with existing HN/GitHub/PH data, uses MiniMax to generate a structured daily AI briefing, and displays it on a new `/daily-news` frontend page with date navigation and bilingual support.
 
 **Architecture:** New RSS scraper feeds into the existing `tools` table via `BaseScraper`. A new `daily_news.py` module queries all AI-related tools for the day, sends them to MiniMax for structured summarization, and caches results in an `ai_daily_news` table. A health-check cron verifies daily generation succeeded. Frontend adds a `DailyNews.tsx` page with headline cards, quick bites, and editor's take.
 
@@ -66,7 +66,7 @@ feedparser>=6.0.0
 
 - [ ] **Step 2: Install the dependency**
 
-Run: `cd metis && pip install feedparser>=6.0.0`
+Run: `cd fieldtofit && pip install feedparser>=6.0.0`
 Expected: Successfully installed feedparser
 
 - [ ] **Step 3: Commit**
@@ -174,7 +174,7 @@ class RSSNewsScraper(BaseScraper):
         resp = httpx.get(
             feed_conf["url"],
             timeout=SCRAPE_TIMEOUT_SECONDS,
-            headers={"User-Agent": "Metis/1.0 (AI news aggregator)"},
+            headers={"User-Agent": "FieldToFit/1.0 (AI news aggregator)"},
             follow_redirects=True,
         )
         resp.raise_for_status()
@@ -256,7 +256,7 @@ SCRAPERS = [
 
 - [ ] **Step 3: Verify scraper runs locally**
 
-Run: `cd metis && python -c "from backend.scrapers.rss_news import RSSNewsScraper; s = RSSNewsScraper(); print(len(s.fetch_raw()), 'items fetched')"`
+Run: `cd fieldtofit && python -c "from backend.scrapers.rss_news import RSSNewsScraper; s = RSSNewsScraper(); print(len(s.fetch_raw()), 'items fetched')"`
 
 Expected: A number > 0 items fetched (likely 30-100+)
 
@@ -920,7 +920,7 @@ export default function DailyNews({ lang }: { lang: Lang }) {
               fontSize: 20, fontWeight: 700,
               background: 'linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>Metis</span>
+            }}>FieldToFit</span>
           </a>
         </div>
 
@@ -1171,12 +1171,12 @@ git commit -m "fix: ensure ai_daily_news table is created before first use"
 
 - [ ] **Step 1: Start backend**
 
-Run: `cd metis && python -m backend.api.main`
+Run: `cd fieldtofit && python -m backend.api.main`
 Expected: Flask server starts on port 8000
 
 - [ ] **Step 2: Verify RSS scraper works**
 
-Run: `cd metis && python -c "from backend.db import init_db; init_db(); from backend.scrapers.rss_news import RSSNewsScraper; r = RSSNewsScraper().run(); print(r)"`
+Run: `cd fieldtofit && python -c "from backend.db import init_db; init_db(); from backend.scrapers.rss_news import RSSNewsScraper; r = RSSNewsScraper().run(); print(r)"`
 Expected: `{'source': 'rss_news', 'status': 'success', 'tools_found': N, 'tools_new': N, ...}`
 
 - [ ] **Step 3: Verify daily news generation**
@@ -1191,7 +1191,7 @@ Expected: Same daily news JSON
 
 - [ ] **Step 5: Verify frontend**
 
-Run: `cd metis/frontend && npm run dev`
+Run: `cd fieldtofit/frontend && npm run dev`
 Visit: `http://localhost:5173/daily-news`
 Expected: Daily news page renders with headlines, quick bites, and editor's take
 

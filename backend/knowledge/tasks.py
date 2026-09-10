@@ -105,7 +105,7 @@ def research_compare(items):
     for item in items:
         values={key:item['facts'].get(key,{}).get('value') if not item['facts'].get(key,{}).get('conflict') and (not item['version'] or item['facts'].get(key,{}).get('version')==item['version']) else None for key in fields}
         settings.append({'id':item['id'],'title':item['title'],'settings':values,
-                         'experiments':item['facts'].get('experiments'), 'evidence_status':'Author/source reports; Metis checks listed separately'})
+                         'experiments':item['facts'].get('experiments'), 'evidence_status':'Author/source reports; FieldToFit checks listed separately'})
     missing=[k for k in fields if any(s['settings'][k] is None for s in settings)]
     differing=[k for k in fields if k not in missing and len({store.encode(s['settings'][k]) for s in settings})>1]
     return {'items':settings,'missing_settings':missing,'different_settings':differing,
@@ -177,7 +177,7 @@ def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='
     result={'goal':goal,'persona':persona,'background':background,'constraints':interpretation['constraints'], 'interpretation':interpretation,
             'filters':{'object_type':object_type,'capability':capability},
             'candidates':selected,'total_candidates':len(ranked),'offset':offset,'next_offset':offset+limit if offset+limit<len(ranked) else None,
-            'scope':'Metis indexed published records; not an exhaustive web search','conclusion':conclusion,'material_packets':material,
+            'scope':'FieldToFit indexed published records; not an exhaustive web search','conclusion':conclusion,'material_packets':material,
             'deliverables':deliverables[persona],
             'paths':task_plan['paths'], 'task_plan':task_plan,
             'research_comparison':research_compare(dossiers) if persona in {'researcher','graduate'} and len(dossiers)>1 else None,

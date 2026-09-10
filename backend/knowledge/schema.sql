@@ -193,3 +193,68 @@ CREATE TABLE IF NOT EXISTS knowledge_workflow_runs (
  status TEXT NOT NULL DEFAULT 'running',
  summary TEXT NOT NULL DEFAULT '{}'
 );
+CREATE TABLE IF NOT EXISTS knowledge_platform_profiles (
+ record_id TEXT PRIMARY KEY REFERENCES knowledge_records(id),
+ revision INTEGER NOT NULL,
+ data TEXT NOT NULL,
+ updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS knowledge_selections (
+ record_id TEXT PRIMARY KEY REFERENCES knowledge_records(id),
+ state TEXT NOT NULL CHECK(state IN ('candidate','review','published','needs_review','withdrawn')),
+ revision INTEGER,
+ updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS knowledge_publications (
+ seq INTEGER PRIMARY KEY AUTOINCREMENT,
+ record_id TEXT NOT NULL REFERENCES knowledge_records(id),
+ state TEXT NOT NULL,
+ snapshot TEXT NOT NULL,
+ reason TEXT NOT NULL,
+ created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS knowledge_publications_record ON knowledge_publications(record_id,seq);
+CREATE TABLE IF NOT EXISTS knowledge_read_snapshots (
+ id TEXT PRIMARY KEY,
+ kind TEXT NOT NULL,
+ query TEXT NOT NULL,
+ data TEXT NOT NULL,
+ created_at TEXT NOT NULL,
+ expires_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS knowledge_editions (
+ id TEXT PRIMARY KEY,
+ revision INTEGER NOT NULL,
+ data TEXT NOT NULL,
+ published_revision INTEGER,
+ updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS knowledge_edition_publications (
+ seq INTEGER PRIMARY KEY AUTOINCREMENT,
+ edition_id TEXT NOT NULL REFERENCES knowledge_editions(id),
+ state TEXT NOT NULL,
+ data TEXT NOT NULL,
+ reason TEXT NOT NULL,
+ created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS knowledge_edition_history ON knowledge_edition_publications(edition_id,seq);
+CREATE TABLE IF NOT EXISTS knowledge_platform_intake (
+ id TEXT PRIMARY KEY,
+ source_id TEXT NOT NULL REFERENCES knowledge_sources(id),
+ record_id TEXT NOT NULL,
+ fingerprint TEXT NOT NULL,
+ data TEXT NOT NULL,
+ state TEXT NOT NULL CHECK(state IN ('pending','superseded','applied')),
+ created_at TEXT NOT NULL,
+ reviewed_at TEXT,
+ editor TEXT
+);
+CREATE INDEX IF NOT EXISTS platform_intake_pending ON knowledge_platform_intake(state,created_at);
+CREATE TABLE IF NOT EXISTS knowledge_platform_material_checks (
+ source_id TEXT NOT NULL REFERENCES knowledge_sources(id),
+ material_key TEXT NOT NULL,
+ url TEXT NOT NULL,
+ content_hash TEXT NOT NULL,
+ checked_at TEXT NOT NULL,
+ PRIMARY KEY(source_id,material_key)
+);

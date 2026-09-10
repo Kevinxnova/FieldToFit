@@ -1,0 +1,239 @@
+{
+  "client": "Official Python MCP SDK",
+  "client_version": "2.1.1",
+  "http": {
+    "public_history_event_ids": [
+      91,
+      89,
+      40,
+      37,
+      6,
+      4,
+      3
+    ],
+    "bundle_history_matches": true,
+    "source_check": {
+      "enabled": true,
+      "freshness": "current",
+      "id": "maintained-c013f5845616ad9dc5b4867f",
+      "interval_days": 1,
+      "last_attempt_at": "2026-09-10T09:11:39.183285Z",
+      "last_run_status": "success",
+      "last_success_at": "2026-09-10T09:11:44.703843Z",
+      "material_checks": [
+        {
+          "checked_at": "2026-09-10T09:11:44.701868Z",
+          "matches_publication": true,
+          "material_id": "66451dd37660f45b0f0b8088"
+        },
+        {
+          "checked_at": "2026-09-10T09:11:44.701868Z",
+          "matches_publication": true,
+          "material_id": "44edc899048084d76a9c9615"
+        }
+      ],
+      "name": "Deep Agents · official repository",
+      "pending_review": false,
+      "registered": true,
+      "scope": "Collection adapter only; not a successful check of every object or original document",
+      "state": "current"
+    },
+    "source_and_date_filter_matches": true,
+    "source_package": {
+      "coverage": {
+        "all_stored_text_included": true,
+        "available_objects": 1,
+        "deferred_materials": 0,
+        "included_characters": 8143,
+        "link_only_materials": 0,
+        "max_characters": 200000,
+        "readable_materials": 3,
+        "registered_materials": 3,
+        "requested_objects": 1,
+        "scope": "Only the declared materials in the requested reviewed publications; not all upstream documentation",
+        "stored_characters": 8143,
+        "unavailable_materials": 0,
+        "unavailable_objects": 0
+      },
+      "all_body_hashes_match": true,
+      "limited_package_restored": [
+        "66451dd37660f45b0f0b8088",
+        "44edc899048084d76a9c9615",
+        "9276a12781f3b33e1af37eab"
+      ],
+      "markdown_has_source_text": true
+    },
+    "change_window_event_ids": [
+      3,
+      4,
+      6,
+      37,
+      40,
+      89,
+      91
+    ],
+    "checkpoint_caught_up": true,
+    "editions": [
+      {
+        "id": "c97e05504dee42dca1383cfe80c93317",
+        "revision": 2,
+        "entries": 3
+      },
+      {
+        "id": "224768104b094cf5828a0219828d5966",
+        "revision": 1,
+        "entries": 1
+      }
+    ],
+    "tool_count": 10,
+    "object_id": "42c1189a057172b719ea250a",
+    "revision": 91,
+    "upstream_version": null,
+    "materials": [
+      {
+        "material_id": "66451dd37660f45b0f0b8088",
+        "source_url": "https://github.com/langchain-ai/deepagents/blob/main/README.md",
+        "coverage": "full_text",
+        "characters": 6924,
+        "chunks": 9,
+        "hash_matches": true
+      },
+      {
+        "material_id": "44edc899048084d76a9c9615",
+        "source_url": "https://github.com/langchain-ai/deepagents/blob/main/LICENSE",
+        "coverage": "full_text",
+        "characters": 1067,
+        "chunks": 2,
+        "hash_matches": true
+      },
+      {
+        "material_id": "9276a12781f3b33e1af37eab",
+        "source_url": "https://github.com/langchain-ai/deepagents",
+        "coverage": "partial",
+        "characters": 152,
+        "chunks": 1,
+        "hash_matches": true
+      }
+    ],
+    "same_object_and_export": true,
+    "no_task_plan_generated": true
+  },
+  "stdio": {
+    "public_history_event_ids": [
+      91,
+      89,
+      40,
+      37,
+      6,
+      4,
+      3
+    ],
+    "bundle_history_matches": true,
+    "source_check": {
+      "enabled": true,
+      "freshness": "current",
+      "id": "maintained-c013f5845616ad9dc5b4867f",
+      "interval_days": 1,
+      "last_attempt_at": "2026-09-10T09:11:39.183285Z",
+      "last_run_status": "success",
+      "last_success_at": "2026-09-10T09:11:44.703843Z",
+      "material_checks": [
+        {
+          "checked_at": "2026-09-10T09:11:44.701868Z",
+          "matches_publication": true,
+          "material_id": "66451dd37660f45b0f0b8088"
+        },
+        {
+          "checked_at": "2026-09-10T09:11:44.701868Z",
+          "matches_publication": true,
+          "material_id": "44edc899048084d76a9c9615"
+        }
+      ],
+      "name": "Deep Agents · official repository",
+      "pending_review": false,
+      "registered": true,
+      "scope": "Collection adapter only; not a successful check of every object or original document",
+      "state": "current"
+    },
+    "source_and_date_filter_matches": true,
+    "source_package": {
+      "coverage": {
+        "all_stored_text_included": true,
+        "available_objects": 1,
+        "deferred_materials": 0,
+        "included_characters": 8143,
+        "link_only_materials": 0,
+        "max_characters": 200000,
+        "readable_materials": 3,
+        "registered_materials": 3,
+        "requested_objects": 1,
+        "scope": "Only the declared materials in the requested reviewed publications; not all upstream documentation",
+        "stored_characters": 8143,
+        "unavailable_materials": 0,
+        "unavailable_objects": 0
+      },
+      "all_body_hashes_match": true,
+      "limited_package_restored": [
+        "66451dd37660f45b0f0b8088",
+        "44edc899048084d76a9c9615",
+        "9276a12781f3b33e1af37eab"
+      ],
+      "markdown_has_source_text": true
+    },
+    "change_window_event_ids": [
+      3,
+      4,
+      6,
+      37,
+      40,
+      89,
+      91
+    ],
+    "checkpoint_caught_up": true,
+    "editions": [
+      {
+        "id": "c97e05504dee42dca1383cfe80c93317",
+        "revision": 2,
+        "entries": 3
+      },
+      {
+        "id": "224768104b094cf5828a0219828d5966",
+        "revision": 1,
+        "entries": 1
+      }
+    ],
+    "tool_count": 10,
+    "object_id": "42c1189a057172b719ea250a",
+    "revision": 91,
+    "upstream_version": null,
+    "materials": [
+      {
+        "material_id": "66451dd37660f45b0f0b8088",
+        "source_url": "https://github.com/langchain-ai/deepagents/blob/main/README.md",
+        "coverage": "full_text",
+        "characters": 6924,
+        "chunks": 9,
+        "hash_matches": true
+      },
+      {
+        "material_id": "44edc899048084d76a9c9615",
+        "source_url": "https://github.com/langchain-ai/deepagents/blob/main/LICENSE",
+        "coverage": "full_text",
+        "characters": 1067,
+        "chunks": 2,
+        "hash_matches": true
+      },
+      {
+        "material_id": "9276a12781f3b33e1af37eab",
+        "source_url": "https://github.com/langchain-ai/deepagents",
+        "coverage": "partial",
+        "characters": 152,
+        "chunks": 1,
+        "hash_matches": true
+      }
+    ],
+    "same_object_and_export": true,
+    "no_task_plan_generated": true
+  },
+  "scope": "Source reading and protocol acceptance only; not a desktop agent outcome or product showcase."
+}

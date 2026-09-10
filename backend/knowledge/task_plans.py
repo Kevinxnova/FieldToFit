@@ -9,8 +9,8 @@ INPUT_KINDS = {'unknown', 'searchable_pdf', 'scanned_pdf', 'page_text'}
 RECIPE_VERSION = '1'
 PDF_VERSION = '6.17.0'
 PDF_SOURCE = 'https://github.com/py-pdf/pypdf'
-GUIDE = 'https://github.com/Kevinxnova/metis/blob/af97af6bd4edde6acbf59f7eac10759da46818e2/examples/task_packets/pdf_amount.md'
-CODE = 'https://github.com/Kevinxnova/metis/blob/af97af6bd4edde6acbf59f7eac10759da46818e2/examples/task_packets/pdf_amount.py'
+GUIDE = 'https://github.com/Kevinxnova/fieldtofit/blob/af97af6bd4edde6acbf59f7eac10759da46818e2/examples/task_packets/pdf_amount.md'
+CODE = 'https://github.com/Kevinxnova/fieldtofit/blob/af97af6bd4edde6acbf59f7eac10759da46818e2/examples/task_packets/pdf_amount.py'
 
 
 def brief(goal, background, spec=None):
@@ -105,11 +105,11 @@ def pdf_recipe(task, records):
         ],
         'steps': [
             {'title': '准备独立环境', 'instruction': '使用 Python 3.12/3.13，安装固定版本依赖。', 'basis': 'example_design',
-             'command': 'python3 -m venv /tmp/metis-pdf-env\n/tmp/metis-pdf-env/bin/pip install pypdf==6.17.0 reportlab==4.5.1', 'expected': '独立环境中依赖版本与案例一致。'},
-            {'title': '先验证样本' if task['novice'] else '建立正例与边界基线', 'instruction': '在 Metis 仓库根目录执行随附代码，生成五组 PDF/JSON 文件。', 'basis': 'example_design',
-             'command': '/tmp/metis-pdf-env/bin/python examples/task_packets/pdf_amount.py --demo-dir /tmp/metis-pdf-demo --output /tmp/metis-pdf-demo-result.json', 'expected': '七项 checks 为 true；正例金额和页码符合成功判据。'},
+             'command': 'python3 -m venv /tmp/fieldtofit-pdf-env\n/tmp/fieldtofit-pdf-env/bin/pip install pypdf==6.17.0 reportlab==4.5.1', 'expected': '独立环境中依赖版本与案例一致。'},
+            {'title': '先验证样本' if task['novice'] else '建立正例与边界基线', 'instruction': '在 FieldToFit 仓库根目录执行随附代码，生成五组 PDF/JSON 文件。', 'basis': 'example_design',
+             'command': '/tmp/fieldtofit-pdf-env/bin/python examples/task_packets/pdf_amount.py --demo-dir /tmp/fieldtofit-pdf-demo --output /tmp/fieldtofit-pdf-demo-result.json', 'expected': '七项 checks 为 true；正例金额和页码符合成功判据。'},
             {'title': '替换自己的输入', 'instruction': '先核对文本层与金额行格式，再将命令中的样本路径替换为自己的 PDF。', 'basis': 'example_design',
-             'command': '/tmp/metis-pdf-env/bin/python examples/task_packets/pdf_amount.py --input /tmp/metis-pdf-demo/searchable.pdf --output /tmp/metis-pdf-amount.json', 'expected': '检查 status、原文、页码和金额；自己的输入结果需要单独验收。'},
+             'command': '/tmp/fieldtofit-pdf-env/bin/python examples/task_packets/pdf_amount.py --input /tmp/fieldtofit-pdf-demo/searchable.pdf --output /tmp/fieldtofit-pdf-amount.json', 'expected': '检查 status、原文、页码和金额；自己的输入结果需要单独验收。'},
         ],
         'facts': [reference(record, key) for key in ('usage', 'license', 'limitations') if supported_fact(record, key)],
         'verification': {'status': status, 'observation': observation,

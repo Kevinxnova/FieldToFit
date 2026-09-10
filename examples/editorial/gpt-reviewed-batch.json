@@ -369,7 +369,7 @@
             "changes": "作者提出 KOPA-Bench 和 EDGE。",
             "why": "它把工具能否顺利衔接放进真实执行环节。",
             "audience": "研究 Agent 工具调用的研究者和研究生。",
-            "limitations": "当前只核对摘要；作者报告的模型提升尚未经 Metis 独立复现。",
+            "limitations": "当前只核对摘要；作者报告的模型提升尚未经 FieldToFit 独立复现。",
             "next_step": "继续获取论文正文、实现和数据，核对训练与评测设置。"
           },
           "en": {
@@ -377,7 +377,7 @@
             "changes": "The authors introduce KOPA-Bench and EDGE.",
             "why": "It grounds tool chaining in actual API execution.",
             "audience": "Researchers and graduates studying tool-using agents.",
-            "limitations": "Only the abstract has been checked; reported gains have not been independently reproduced by Metis.",
+            "limitations": "Only the abstract has been checked; reported gains have not been independently reproduced by FieldToFit.",
             "next_step": "Read the full paper, implementation and data before assessing training and evaluation conditions."
           }
         },

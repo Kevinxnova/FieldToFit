@@ -179,7 +179,7 @@ def toggle_featured(tool_id):
     return jsonify({"ok": True, "is_featured": on})
 
 
-@app.route("/api/tools/<int:tool_id>/metis-pick", methods=["POST"])
+@app.route("/api/tools/<int:tool_id>/fieldtofit-pick", methods=["POST"])
 @admin_required
 def toggle_metis_pick(tool_id):
     tool = get_tool(tool_id)
@@ -261,7 +261,7 @@ def featured():
     return jsonify(get_featured_tools())
 
 
-@app.route("/api/discover/metis-picks")
+@app.route("/api/discover/fieldtofit-picks")
 def metis_picks():
     return jsonify(get_metis_picks())
 
@@ -377,6 +377,16 @@ def frontend_asset(filename):
     return send_from_directory(CLIENT_DIST / 'assets', filename)
 
 
+@app.get('/brand/<path:filename>')
+def brand_asset(filename):
+    return send_from_directory(CLIENT_DIST / 'brand', filename)
+
+
+@app.get('/apple-touch-icon.png')
+def touch_icon():
+    return send_from_directory(CLIENT_DIST, 'apple-touch-icon.png')
+
+
 @app.get('/favicon.svg')
 def favicon():
     return send_from_directory(CLIENT_DIST, 'favicon.svg')
@@ -395,7 +405,7 @@ def frontend(path=''):
         if record:
             title = html.escape(record['title_zh'] or record['title'])
             description = html.escape((record['summary_zh'] or record['summary'])[:300], quote=True)
-            content = re.sub(r'<title>.*?</title>', lambda _: f'<title>{title} · Metis</title>', content)
+            content = re.sub(r'<title>.*?</title>', lambda _: f'<title>{title} · FieldToFit</title>', content)
             content = re.sub(r'<meta name="description"[^>]*>', lambda _: f'<meta name="description" content="{description}" />', content)
             content = content.replace('</head>', f'<meta property="og:title" content="{title}" /><meta property="og:description" content="{description}" /></head>')
         else:
@@ -404,4 +414,5 @@ def frontend(path=''):
 
 
 # Init DB on import
-init_db()
+if os.getenv('FIELDTOFIT_AUTO_INIT_DB', '1') != '0':
+    init_db()

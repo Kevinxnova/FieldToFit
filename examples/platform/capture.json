@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/langchain-ai/deepagents",
+  "readme_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/README.md",
+  "license_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/LICENSE",
+  "captured_at": "2026-09-08T14:14:17.362608+00:00",
+  "upstream_version": null,
+  "version_note": "Anonymous commit API returned HTTP 403. These are content-hashed snapshots, not a claimed commit or release. README and LICENSE were fetched separately.",
+  "sha256": "c404867a799a46fc6b26ac0d3824eb61135007b0e93793b07819621b9405fda1",
+  "license_sha256": "4ec67e4ca6e6721dba849b2ca82261597c86a61ee214bbf21416006b7b2d0478"
+}

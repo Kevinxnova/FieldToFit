@@ -1,3 +1,4 @@
+import { ForYou, ForAI, AboutFieldToFit, LegacyPlatformEntry } from "./pages/Platform";
 import { useEffect } from "react";
 import {
   BrowserRouter,
@@ -16,7 +17,6 @@ import {
   Cases,
   Collection,
   Compare,
-  Connect,
   Feedback,
   NotFound,
   Sources,
@@ -36,24 +36,23 @@ function Shell() {
     useWorkspace();
   const location = useLocation();
   const links = [
-    ["/information", "news", "每日信息", "Information"],
-    ["/apps", "grid", "应用与资源", "Applications"],
-    ["/collection", "bookmark", "我的收藏", "My collection"],
-    ["/cases", "check", "验证案例", "Case records"],
-    ["/connect", "code", "AI 接入", "Connect AI"],
+    ["/for-you", "news", "For you", "For you"],
+    ["/for-your-ai", "code", "For your AI", "For your AI"],
   ];
   const active = [
     ...links,
+    ["/about", "info", "关于 FieldToFit", "About FieldToFit"],
+    ["/collection", "bookmark", "我的收藏", "My collection"],
     ["/tasks", "book", "任务工作台", "Task workbench"],
     ["/briefs", "news", "每日简报", "Daily briefs"],
     ["/sources", "source", "数据来源", "Sources"],
     ["/admin", "settings", "运行管理", "Management"],
     ["/account", "user", "我的账户", "Account"],
     ["/feedback", "flag", "反馈需求", "Feedback"],
-  ].find((x) => location.pathname.startsWith(x[0]));
+  ].find((x) => location.pathname === x[0] || location.pathname.startsWith(x[0] + "/"));
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Metis · ${active ? pick(active[2], active[3]) : pick("资料详情", "Dossier")}`;
+    document.title = `FieldToFit · ${active ? pick(active[2], active[3]) : pick("资料详情", "Dossier")}`;
   }, [location.pathname, zh]);
   return (
     <div className="workspace">
@@ -61,20 +60,14 @@ function Shell() {
         {pick("跳到主要内容", "Skip to content")}
       </a>
       <aside className="sidebar">
-        <Link to="/information" className="brand" aria-label="Metis">
-          <span className="brand-emblem">
-            <i />
-            <i />
-            <i />
-          </span>
-          <span>
-            metis<span className="brand-period">.</span>
-          </span>
+        <Link to="/for-you" className="brand" aria-label="FieldToFit">
+          <img className="brand-logo brand-light" src="/brand/logo-horizontal-ink.svg" alt="FieldToFit" />
+          <img className="brand-logo brand-dark" src="/brand/logo-horizontal-paper.svg" alt="FieldToFit" />
         </Link>
         <div className="brand-caption">
-          {pick("连接变化与行动", "Knowledge into practice")}
+          {pick("给你看，也给你的 AI 用", "For you. For your AI.")}
         </div>
-        <div className="nav-label">WORKSPACE</div>
+        <div className="nav-label">READ & CONNECT</div>
         <nav
           className="primary-nav"
           aria-label={pick("主导航", "Main navigation")}
@@ -83,7 +76,7 @@ function Shell() {
             <NavLink key={url} to={url}>
               <Icon name={icon} size={19} />
               <span>{pick(cn, en)}</span>
-              {url === "/connect" && <small>MCP</small>}
+              <small>{url === "/for-you" ? pick("给你看", "READ") : pick("给 AI 用", "MCP")}</small>
             </NavLink>
           ))}
         </nav>
@@ -91,8 +84,8 @@ function Shell() {
           <span className="note-star">✳</span>
           <p>
             {pick(
-              "从值得关注，\n到值得使用。",
-              "From worth knowing\nto worth using.",
+              "读懂重点，\n保留依据。",
+              "Read the essentials.\nKeep the sources.",
             )}
           </p>
           <Link to="/feedback">
@@ -104,6 +97,8 @@ function Shell() {
           className="secondary-nav"
           aria-label={pick("辅助导航", "More navigation")}
         >
+          <NavLink to="/about"><Icon name="info" size={18} />{pick("关于 FieldToFit", "About FieldToFit")}</NavLink>
+          <NavLink to="/collection"><Icon name="bookmark" size={18} />{pick("本地收藏", "Local bookmarks")}</NavLink>
           <NavLink to="/sources">
             <Icon name="source" size={18} />
             {pick("数据来源", "Sources")}
@@ -128,7 +123,7 @@ function Shell() {
       <div className="workspace-main">
         <header className="topbar">
           <div className="breadcrumb">
-            <span>Metis</span>
+            <span>FieldToFit</span>
             <span>/</span>
             <strong>
               {active
@@ -139,7 +134,7 @@ function Shell() {
           <div className="topbar-actions">
             <span className="update-badge">
               <Icon name="clock" size={14} />
-              {pick("每 1 天更新", "Updated daily")}
+              {pick("每 1 天检查", "Checked daily")}
             </span>
             <button
               className="icon-button"
@@ -164,20 +159,26 @@ function Shell() {
           </div>
         </header>
         <main id="main-content" className="page-content">
+          {[/^\/legacy\//, /^\/(tasks|compare|cases|briefs|records)(\/|$)/].some(pattern => pattern.test(location.pathname)) && <p className="platform-notice">{pick("这是保留的兼容页面。新主入口是 For you 与 For your AI；案例仍暂缓。", "This is a compatibility page. Use For you and For your AI for the new platform; cases remain pending.")} <Link to="/for-you">For you →</Link></p>}
           <Routes>
-            <Route path="/" element={<Navigate to="/information" replace />} />
+            <Route path="/" element={<Navigate to="/for-you" replace />} />
+            <Route path="/for-you" element={<ForYou />} />
+            <Route path="/for-your-ai" element={<ForAI />} />
+            <Route path="/about" element={<AboutFieldToFit />} />
             <Route path="/tasks" element={<TaskWorkbench />} />
             <Route path="/briefs" element={<DailyBriefs />} />
             <Route
               path="/information"
-              element={<Explore mode="information" />}
+              element={<LegacyPlatformEntry />}
             />
-            <Route path="/apps" element={<Explore mode="resource" />} />
+            <Route path="/apps" element={<LegacyPlatformEntry />} />
+            <Route path="/legacy/information" element={<Explore mode="information" />} />
+            <Route path="/legacy/apps" element={<Explore mode="resource" />} />
             <Route path="/records/:id" element={<Dossier />} />
             <Route path="/collection" element={<Collection />} />
             <Route path="/compare" element={<Compare />} />
             <Route path="/sources" element={<Sources />} />
-            <Route path="/connect" element={<Connect />} />
+            <Route path="/connect" element={<Navigate to="/for-your-ai" replace />} />
             <Route path="/cases" element={<Cases />} />
             <Route path="/account" element={<Account />} />
             <Route path="/feedback" element={<Feedback />} />
@@ -198,7 +199,7 @@ function Shell() {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <footer className="page-footer">
-            <span>metis.</span>
+            <Link to="/about">{pick("关于 FieldToFit", "About FieldToFit")}</Link>
             <p>
               {pick(
                 "让知识有来处，让行动有依据。",
@@ -212,7 +213,7 @@ function Shell() {
           </footer>
         </main>
       </div>
-      {compare.length > 0 && (
+      {compare.length > 0 && !["/for-you", "/for-your-ai", "/about"].includes(location.pathname) && (
         <div className="compare-tray">
           <Icon name="compare" />
           <span>

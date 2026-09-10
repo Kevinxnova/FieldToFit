@@ -35,8 +35,8 @@ async def check(transport):
       'complete_task_packet':{'recipe_id':recipe['id'],'recipe_version':recipe['version'],'paths':[p['path'] for p in packet['paths']],
        'observed_example_status':recipe['verification']['status'],'same_packet_markdown':True}}
 async def main():
- http=await check(streamable_http_client(os.getenv('METIS_MCP_URL','http://127.0.0.1:8000/api/mcp')))
- stdio=await check(stdio_client(StdioServerParameters(command=sys.executable,args=['-m','backend.mcp_stdio'],env={'METIS_MCP_URL':os.getenv('METIS_MCP_URL','http://127.0.0.1:8000/api/mcp')},cwd=str(Path(__file__).resolve().parents[2]))))
+ http=await check(streamable_http_client(os.getenv('FIELDTOFIT_MCP_URL','http://127.0.0.1:8000/api/mcp')))
+ stdio=await check(stdio_client(StdioServerParameters(command=sys.executable,args=['-m','backend.mcp_stdio'],env={'FIELDTOFIT_MCP_URL':os.getenv('FIELDTOFIT_MCP_URL','http://127.0.0.1:8000/api/mcp')},cwd=str(Path(__file__).resolve().parents[2]))))
  report={'client':'Official Python MCP SDK','client_version':version('mcp'),'http':http,'stdio':stdio,'scope':'Protocol client acceptance; no end-user desktop client or autonomous agent outcome is asserted.'}
  if len(sys.argv)>1: Path(sys.argv[1]).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps({'http':'passed','stdio':'passed','client_version':version('mcp')}))

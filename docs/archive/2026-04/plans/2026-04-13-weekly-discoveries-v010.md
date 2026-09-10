@@ -55,7 +55,7 @@ In `backend/db/__init__.py`, inside the `init_db()` function, add three new entr
 
 Run:
 ```bash
-cd metis && python -c "from backend.db import init_db; init_db(); print('OK')"
+cd fieldtofit && python -c "from backend.db import init_db; init_db(); print('OK')"
 ```
 Expected: `OK` with no errors.
 
@@ -63,7 +63,7 @@ Expected: `OK` with no errors.
 
 Run:
 ```bash
-cd metis && python -c "
+cd fieldtofit && python -c "
 from backend.db import get_db, init_db
 init_db()
 with get_db() as db:
@@ -162,7 +162,7 @@ def get_week_tools() -> list[dict]:
 
 Run:
 ```bash
-cd metis && python -c "
+cd fieldtofit && python -c "
 from backend.db import init_db
 init_db()
 from backend.db.queries import get_unscored_tool_ids, get_tools_without_intro, get_week_tools
@@ -335,7 +335,7 @@ def score_tools(tool_ids: list[int]) -> tuple[int, list[str]]:
 
 Run:
 ```bash
-cd metis && python -c "
+cd fieldtofit && python -c "
 from backend.db import init_db
 init_db()
 from backend.db.queries import get_unscored_tool_ids
@@ -521,7 +521,7 @@ After the new steps, update the remaining checks section (around line 194-198) t
 
 Run:
 ```bash
-cd metis && python -c "
+cd fieldtofit && python -c "
 import inspect
 from backend.cron_tasks import task_classify
 src = inspect.getsource(task_classify)
@@ -772,7 +772,7 @@ git commit -m "feat: show AI intro in tool detail view"
 
 Run:
 ```bash
-cd metis && python -c "
+cd fieldtofit && python -c "
 from backend.db import init_db
 init_db()
 from backend.cron_tasks import task_classify, task_scrape, task_digest
@@ -791,7 +791,7 @@ Expected: No import errors, counts printed.
 
 Run:
 ```bash
-cd metis/frontend && npm run build
+cd fieldtofit/frontend && npm run build
 ```
 Expected: Build succeeds with no TypeScript errors.
 
@@ -799,7 +799,7 @@ Expected: Build succeeds with no TypeScript errors.
 
 Run:
 ```bash
-cd metis/frontend && npm run dev &
+cd fieldtofit/frontend && npm run dev &
 ```
 Open browser to `http://localhost:5173/discover`. Verify:
 - Three category modules (AI News, AI Tools, Others) all have the same blue-tinted styling

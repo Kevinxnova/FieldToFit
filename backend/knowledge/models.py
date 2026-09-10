@@ -14,12 +14,12 @@ class ModelUnavailable(RuntimeError):
 
 def configuration():
     # An explicitly selected provider must not silently receive a legacy provider's key.
-    key_env='METIS_MODEL_API_KEY' if os.getenv('METIS_MODEL_API_KEY') or os.getenv('METIS_MODEL_BASE_URL') else 'MINIMAX_API_KEY'
+    key_env='FIELDTOFIT_MODEL_API_KEY' if os.getenv('FIELDTOFIT_MODEL_API_KEY') or os.getenv('FIELDTOFIT_MODEL_BASE_URL') else 'MINIMAX_API_KEY'
     default = {'enabled': bool(os.getenv(key_env)),
-               'base_url': os.getenv('METIS_MODEL_BASE_URL', 'https://api.minimax.chat/v1'),
-               'model': os.getenv('METIS_MODEL_NAME', 'MiniMax-M2.7-highspeed'),
+               'base_url': os.getenv('FIELDTOFIT_MODEL_BASE_URL', 'https://api.minimax.chat/v1'),
+               'model': os.getenv('FIELDTOFIT_MODEL_NAME', 'MiniMax-M2.7-highspeed'),
                'key_env': key_env,
-               'api_style': os.getenv('METIS_MODEL_API_STYLE', 'chat_completions'),
+               'api_style': os.getenv('FIELDTOFIT_MODEL_API_STYLE', 'chat_completions'),
                'timeout_seconds': 90}
     with get_db() as db:
         row = db.execute("SELECT value FROM knowledge_settings WHERE key='generation'").fetchone()
@@ -42,8 +42,8 @@ def configure(data):
         raise ValueError('Invalid model service URL')
     if not isinstance(cfg['enabled'], bool) or not isinstance(cfg['model'], str) or not 1 <= len(cfg['model']) <= 120:
         raise ValueError('Invalid model configuration')
-    if not re.fullmatch(r'(METIS_[A-Z0-9_]*API_KEY|MINIMAX_API_KEY)', cfg['key_env']):
-        raise ValueError('Use a METIS_*API_KEY environment variable or MINIMAX_API_KEY')
+    if not re.fullmatch(r'(FIELDTOFIT_[A-Z0-9_]*API_KEY|MINIMAX_API_KEY)', cfg['key_env']):
+        raise ValueError('Use a FIELDTOFIT_*API_KEY environment variable or MINIMAX_API_KEY')
     if not isinstance(cfg['timeout_seconds'], int) or not 10 <= cfg['timeout_seconds'] <= 180:
         raise ValueError('Model timeout must be 10–180 seconds')
     with get_db() as db:

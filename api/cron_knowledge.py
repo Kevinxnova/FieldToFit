@@ -16,4 +16,4 @@ def knowledge():
     from backend.knowledge.processing import run_processing,build_brief
     init_db()
     # Retain unfinished work for the next daily run; never report a whole backlog as processed.
-    return jsonify(processing=run_processing(limit=max(1,min(100,int(os.getenv('METIS_CRON_RECORD_LIMIT','30')))),budget_seconds=180),brief=build_brief(),interval_days=1)
+    return jsonify(processing=run_processing(limit=max(1,min(100,int(os.getenv('FIELDTOFIT_CRON_RECORD_LIMIT','30')))),budget_seconds=180),brief=build_brief(),interval_days=1)

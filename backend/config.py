@@ -2,8 +2,10 @@ import os
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
-DATA_DIR = Path(os.getenv("METIS_DATA_DIR", str(PROJECT_ROOT / "data")))
-DB_PATH = DATA_DIR / "metis.db"
+DATA_DIR = Path(os.getenv("FIELDTOFIT_DATA_DIR", str(PROJECT_ROOT / "data")))
+DB_PATH = DATA_DIR / "fieldtofit.db"
+if not DB_PATH.exists() and (DATA_DIR / "metis.db").exists():
+    DB_PATH = DATA_DIR / "metis.db"  # Read existing installations without creating an empty database.
 
 # Every source and dossier is checked once per day.
 UPDATE_INTERVAL_DAYS = 1

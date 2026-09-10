@@ -7,11 +7,11 @@ services:
       - path: .env
         required: false
     environment:
-      METIS_DATA_DIR: /data
+      FIELDTOFIT_DATA_DIR: /data
       FRONTEND_URL: http://localhost:8000
       ALLOWED_ORIGINS: http://localhost:8000,http://127.0.0.1:8000
     volumes:
-      - metis-data:/data
+      - fieldtofit-data:/data
     restart: unless-stopped
   collector:
     build: .
@@ -20,11 +20,11 @@ services:
       - path: .env
         required: false
     environment:
-      METIS_DATA_DIR: /data
+      FIELDTOFIT_DATA_DIR: /data
     volumes:
-      - metis-data:/data
+      - fieldtofit-data:/data
     depends_on:
       - web
     restart: unless-stopped
 volumes:
-  metis-data:
+  fieldtofit-data:

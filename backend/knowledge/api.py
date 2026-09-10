@@ -20,7 +20,7 @@ bp = Blueprint('knowledge', __name__, url_prefix='/api/v1')
 
 
 def read_allowed():
-    token = os.getenv('METIS_READ_TOKEN', '')
+    token = os.getenv('FIELDTOFIT_READ_TOKEN', '')
     if not token:
         return True
     supplied = request.headers.get('Authorization', '').removeprefix('Bearer ')
@@ -153,7 +153,7 @@ def export(rid):
         raise ValueError('Supported formats: markdown, bibtex, json')
     content = bibtex(data) if fmt == 'bibtex' else markdown(data)
     return Response(content, content_type='text/plain; charset=utf-8', headers={
-        'Content-Disposition': f'attachment; filename="metis-{rid}.{ "bib" if fmt == "bibtex" else "md"}"'})
+        'Content-Disposition': f'attachment; filename="fieldtofit-{rid}.{ "bib" if fmt == "bibtex" else "md"}"'})
 
 
 def compare_data(ids, constraints=None):
@@ -318,7 +318,7 @@ def current_user():
 
 @bp.get('/account')
 def account():
-    return jsonify(user=current_user(), registration_enabled=os.getenv('METIS_PUBLIC_ACCOUNTS') == '1')
+    return jsonify(user=current_user(), registration_enabled=os.getenv('FIELDTOFIT_PUBLIC_ACCOUNTS') == '1')
 
 
 @bp.post('/account/<action>')
@@ -335,7 +335,7 @@ def account_action(action):
     password = required_text(data, 'password', 200)
     with get_db() as db:
         if action == 'register':
-            if os.getenv('METIS_PUBLIC_ACCOUNTS') != '1':
+            if os.getenv('FIELDTOFIT_PUBLIC_ACCOUNTS') != '1':
                 return jsonify(detail='Account registration is disabled; local collections remain available'), 403
             if len(password) < 10:
                 raise ValueError('Use a password with at least 10 characters')
@@ -542,3 +542,158 @@ def import_organization():
 def operations_status():
     from backend.knowledge.operations import snapshot
     return jsonify(snapshot())
+
+
+# The curated platform is additive: legacy workspaces and /records remain compatible.
+from backend.knowledge import platform, platform_updates
+
+
+@bp.errorhandler(platform.PlatformError)
+def platform_error(error):
+    return jsonify(detail=str(error), code=error.code, schema_version=platform.SCHEMA_VERSION), error.status
+
+
+@bp.get('/platform/objects')
+def platform_objects():
+    return jsonify(platform.search(**{k: request.args[k] for k in ('q', 'object_type', 'limit', 'offset', 'cursor', 'source', 'since', 'until') if k in request.args}))
+
+
+@bp.get('/platform/objects/<rid>')
+def platform_object(rid):
+    return jsonify(platform.get_object(rid, request.args.get('revision')))
+
+
+@bp.get('/platform/objects/<rid>/materials/<mid>')
+def platform_material(rid, mid):
+    return jsonify(platform.read_material(rid, mid, **{k: request.args[k] for k in ('revision', 'offset', 'limit') if k in request.args}))
+
+
+@bp.get('/platform/objects/<rid>/export')
+def platform_export(rid):
+    result = platform.export(rid, request.args.get('revision'))
+    fmt = request.args.get('format', 'markdown')
+    if fmt == 'json':
+        return jsonify(result)
+    if fmt != 'markdown':
+        raise platform.PlatformError('Choose markdown or json')
+    return Response(result['markdown'], content_type='text/markdown; charset=utf-8',
+                    headers={'Content-Disposition': f'attachment; filename="fieldtofit-publication-{result["revision"]}.md"'})
+
+
+@bp.get('/admin/platform/objects/<rid>')
+@admin_required
+def platform_preview(rid):
+    return jsonify(platform.preview(rid))
+
+
+@bp.patch('/admin/platform/objects/<rid>')
+@admin_required
+def platform_profile(rid):
+    data = body()
+    return jsonify(platform.save_profile(rid, data.get('profile'), data.get('expected_revision'), required_text(data, 'reason')))
+
+
+@bp.post('/admin/platform/objects/<rid>/transition')
+@admin_required
+def platform_transition(rid):
+    data = body()
+    return jsonify(platform.transition(rid, required_text(data, 'state'), required_text(data, 'review_token'), required_text(data, 'reason')))
+
+
+@bp.get('/platform/changes')
+def platform_changes():
+    args = {k: request.args[k] for k in ('after', 'limit', 'cursor') if k in request.args}
+    if 'object_id' in request.args:
+        args['object_ids'] = request.args.getlist('object_id')
+    return jsonify(platform_updates.changes(**args))
+
+
+@bp.get('/platform/editions')
+def platform_editions():
+    return jsonify(platform_updates.editions(**{k: request.args[k] for k in ('limit', 'cursor') if k in request.args}))
+
+
+@bp.get('/platform/editions/<eid>')
+def platform_edition(eid):
+    return jsonify(platform_updates.edition(eid, request.args.get('revision')))
+
+
+@bp.get('/admin/platform/editions')
+@admin_required
+def platform_edition_drafts():
+    return jsonify(platform_updates.edition_drafts())
+
+
+@bp.post('/admin/platform/editions')
+@admin_required
+def platform_edition_create():
+    return jsonify(platform_updates.save_edition(body().get('draft')))
+
+
+@bp.get('/admin/platform/editions/<eid>')
+@admin_required
+def platform_edition_preview(eid):
+    return jsonify(platform_updates.edition_preview(eid))
+
+
+@bp.patch('/admin/platform/editions/<eid>')
+@admin_required
+def platform_edition_save(eid):
+    data = body()
+    return jsonify(platform_updates.save_edition(data.get('draft'), eid, data.get('expected_revision')))
+
+
+@bp.post('/admin/platform/editions/<eid>/transition')
+@admin_required
+def platform_edition_publish(eid):
+    data = body()
+    return jsonify(platform_updates.publish_edition(eid, required_text(data, 'review_token'), required_text(data, 'reason'), required_text(data, 'state')))
+
+
+@bp.get('/admin/platform/selections')
+@admin_required
+def platform_admin_selections():
+    return jsonify(platform.search(**{k: request.args[k] for k in ('q', 'object_type', 'limit', 'cursor', 'source', 'since', 'until') if k in request.args}))
+
+
+@bp.post('/platform/bundle')
+def platform_bundle():
+    from backend.knowledge.platform_bundle import build
+    data = body()
+    if set(data) - {'objects', 'max_characters', 'format'}:
+        raise platform.PlatformError('Unsupported package fields')
+    return jsonify(build(data.get('objects'), data.get('max_characters', 200000), data.get('format', 'json')))
+
+
+@bp.get('/platform/sources')
+def platform_sources():
+    from backend.knowledge.platform_sources import sources
+    return jsonify(sources())
+
+
+@bp.get('/platform/objects/<rid>/history')
+def platform_history(rid):
+    return jsonify(platform_updates.history(rid, **{k:request.args[k] for k in ('revision','limit','cursor') if k in request.args}))
+
+
+@bp.get('/admin/platform/intake')
+@admin_required
+def platform_intake():
+    from backend.knowledge.platform_maintenance import jobs
+    response = jsonify(jobs(request.args.get('limit', 30)))
+    response.headers['Cache-Control'] = 'no-store'
+    return response
+
+
+@bp.post('/admin/platform/intake/review')
+@admin_required
+def platform_intake_review():
+    from backend.knowledge.platform_maintenance import apply
+    return jsonify(apply(body(), publish=False))
+
+
+@bp.post('/admin/platform/intake/publish')
+@admin_required
+def platform_intake_publish():
+    from backend.knowledge.platform_maintenance import apply
+    return jsonify(apply(body(), publish=True))

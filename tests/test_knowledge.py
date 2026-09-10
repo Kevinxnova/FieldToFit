@@ -13,9 +13,9 @@ def client(tmp_path, monkeypatch):
     import backend.db as database
     monkeypatch.setenv('PYTHON_DOTENV_DISABLED', '1')
     monkeypatch.setenv('ADMIN_PASSWORD', 'test-admin-password')
-    monkeypatch.delenv('METIS_READ_TOKEN', raising=False)
-    monkeypatch.delenv('METIS_PUBLIC_ACCOUNTS', raising=False)
-    monkeypatch.setattr(config, 'DB_PATH', tmp_path / 'metis.db')
+    monkeypatch.delenv('FIELDTOFIT_READ_TOKEN', raising=False)
+    monkeypatch.delenv('FIELDTOFIT_PUBLIC_ACCOUNTS', raising=False)
+    monkeypatch.setattr(config, 'DB_PATH', tmp_path / 'fieldtofit.db')
     monkeypatch.setattr(config, 'DATA_DIR', tmp_path)
     monkeypatch.setattr(database, 'DATA_DIR', tmp_path)
     monkeypatch.setattr(database, 'TURSO_URL', '')
@@ -48,7 +48,7 @@ def test_initialization_and_daily_sources(client):
 def test_production_frontend_links_and_metadata(client, tmp_path, monkeypatch):
     import backend.api.main as main
     dist = tmp_path / 'dist'; dist.mkdir()
-    (dist / 'index.html').write_text('<html><head><title>Metis</title><meta name="description" content="Metis" /></head><body></body></html>')
+    (dist / 'index.html').write_text('<html><head><title>FieldToFit</title><meta name="description" content="FieldToFit" /></head><body></body></html>')
     monkeypatch.setattr(main, 'CLIENT_DIST', dist)
     rid = seed(title=r'Paper <unsafe> \LaTeX', summary='A "quoted" description')
     page = client.get('/records/' + rid)
@@ -201,7 +201,7 @@ def test_daily_source_claim_and_error_status(client, monkeypatch):
 
 
 def test_read_token_cannot_mutate_or_administer(client, monkeypatch):
-    monkeypatch.setenv('METIS_READ_TOKEN', 'private-read-token')
+    monkeypatch.setenv('FIELDTOFIT_READ_TOKEN', 'private-read-token')
     assert client.get('/api/v1/records').status_code == 401
     headers = {'Authorization': 'Bearer private-read-token'}
     assert client.get('/api/v1/records', headers=headers).status_code == 200
@@ -239,7 +239,7 @@ def test_verification_has_scoped_version(client):
 
 
 def test_accounts_isolate_collections(client, monkeypatch):
-    monkeypatch.setenv('METIS_PUBLIC_ACCOUNTS', '1')
+    monkeypatch.setenv('FIELDTOFIT_PUBLIC_ACCOUNTS', '1')
     rid = seed()
     first = client.post('/api/v1/account/register', json={'username': 'alice', 'password': 'long-test-password'})
     assert first.status_code == 200 and 'HttpOnly' in first.headers['Set-Cookie']

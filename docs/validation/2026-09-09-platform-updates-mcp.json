@@ -1,0 +1,99 @@
+{
+  "client": "Official Python MCP SDK",
+  "client_version": "2.1.1",
+  "http": {
+    "change_window_event_ids": [
+      3,
+      4,
+      6
+    ],
+    "checkpoint_caught_up": true,
+    "editions": [
+      {
+        "id": "224768104b094cf5828a0219828d5966",
+        "revision": 1,
+        "entries": 1
+      }
+    ],
+    "tool_count": 16,
+    "object_id": "42c1189a057172b719ea250a",
+    "revision": 6,
+    "upstream_version": null,
+    "materials": [
+      {
+        "material_id": "a6e07f6927b2b4411dbe2849",
+        "source_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/README.md",
+        "coverage": "full_text",
+        "characters": 6924,
+        "chunks": 9,
+        "hash_matches": true
+      },
+      {
+        "material_id": "0780751488ece1b4aab02691",
+        "source_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/LICENSE",
+        "coverage": "full_text",
+        "characters": 1067,
+        "chunks": 2,
+        "hash_matches": true
+      },
+      {
+        "material_id": "868d29431028242bc96c0239",
+        "source_url": "https://docs.langchain.com/oss/python/deepagents/overview",
+        "coverage": "link_only",
+        "characters": 0,
+        "chunks": 1,
+        "hash_matches": true
+      }
+    ],
+    "same_object_and_export": true,
+    "no_task_plan_generated": true
+  },
+  "stdio": {
+    "change_window_event_ids": [
+      3,
+      4,
+      6
+    ],
+    "checkpoint_caught_up": true,
+    "editions": [
+      {
+        "id": "224768104b094cf5828a0219828d5966",
+        "revision": 1,
+        "entries": 1
+      }
+    ],
+    "tool_count": 16,
+    "object_id": "42c1189a057172b719ea250a",
+    "revision": 6,
+    "upstream_version": null,
+    "materials": [
+      {
+        "material_id": "a6e07f6927b2b4411dbe2849",
+        "source_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/README.md",
+        "coverage": "full_text",
+        "characters": 6924,
+        "chunks": 9,
+        "hash_matches": true
+      },
+      {
+        "material_id": "0780751488ece1b4aab02691",
+        "source_url": "https://raw.githubusercontent.com/langchain-ai/deepagents/main/LICENSE",
+        "coverage": "full_text",
+        "characters": 1067,
+        "chunks": 2,
+        "hash_matches": true
+      },
+      {
+        "material_id": "868d29431028242bc96c0239",
+        "source_url": "https://docs.langchain.com/oss/python/deepagents/overview",
+        "coverage": "link_only",
+        "characters": 0,
+        "chunks": 1,
+        "hash_matches": true
+      }
+    ],
+    "same_object_and_export": true,
+    "no_task_plan_generated": true
+  },
+  "scope": "Source reading and protocol acceptance only; not a desktop agent outcome or product showcase."
+}

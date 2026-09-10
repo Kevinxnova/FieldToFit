@@ -31,7 +31,7 @@ def run_check(check_id,record_id):
     if script.parent!=CHECK_ROOT or script.suffix!='.py': raise ValueError('Check path is outside the reviewed directory')
     # Controlled interpreter, working directory, timeout and output; not a general OS/network sandbox.
     env={'PATH':str(Path(sys.executable).parent)+':/usr/bin:/bin','PYTHONIOENCODING':'utf-8','LANG':'en_US.UTF-8'}
-    with tempfile.TemporaryDirectory(prefix='metis-check-') as folder:
+    with tempfile.TemporaryDirectory(prefix='fieldtofit-check-') as folder:
         start=time.monotonic()
         observed_version=''
         try:

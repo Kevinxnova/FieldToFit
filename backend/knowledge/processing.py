@@ -13,7 +13,7 @@ Return {title_zh, summary_zh, summary_en, topics:[], object_type, capability_tag
  facts:[{key,value,evidence_id,quote,version,exhaustive:false}],
  research:{question,method,contribution,experiments,limitations,prerequisites,reading_steps:[{text,evidence_id,quote}]},
  citations:[{evidence_id,quote}], importance:{score:0..5,reason_zh,reason_en}}.
-Human fields are plain text, summaries <=400 characters, technical names stay accurate. Explain only supported changes; interpretation must be labeled as such. Each factual statement must be supported by citations. Do not infer support/absence/license/cost/hardware from silence. A quoted experiment is an author report, not an independent test. For facts use only allowed_fact_keys; version must match supplied material. Numeric hardware_vram_gb and cost_monthly_usd require explicit comparable units and conditions. Research fields are strings. Do not invent reading prerequisites. If evidence is insufficient, state that clearly. Never say Metis ran a project.'''
+Human fields are plain text, summaries <=400 characters, technical names stay accurate. Explain only supported changes; interpretation must be labeled as such. Each factual statement must be supported by citations. Do not infer support/absence/license/cost/hardware from silence. A quoted experiment is an author report, not an independent test. For facts use only allowed_fact_keys; version must match supplied material. Numeric hardware_vram_gb and cost_monthly_usd require explicit comparable units and conditions. Research fields are strings. Do not invent reading prerequisites. If evidence is insufficient, state that clearly. Never say FieldToFit ran a project.'''
 
 
 def evidence_fingerprint(record):
@@ -89,7 +89,7 @@ def apply_organization(record_id, output, generation):
         topics = output.get('topics',[])
         if isinstance(topics,list) and topics and all(t in store.TOPICS for t in topics):
             record['topics'] = topics
-        if not record['metadata'].get('skill') and not record['metadata'].get('resource_type_basis') and output.get('object_type') in {'project','agent','skill','tool','library','model','api','application','dataset','benchmark','paper','release','news'}:
+        if not record['metadata'].get('skill') and not record['metadata'].get('resource_type_basis') and output.get('object_type') in {'project','agent','skill','harness','tool','library','model','api','application','dataset','benchmark','paper','release','news'}:
             record['object_type'] = output['object_type']
     for candidate in output.get('facts',[]):
         if not isinstance(candidate,dict) or candidate.get('key') not in store.FACT_KEYS or 'value' not in candidate:
@@ -112,6 +112,8 @@ def apply_organization(record_id, output, generation):
             cid = store.stable_id(record_id,key,store.encode([old,new]))
             with get_db() as db:
                 db.execute('INSERT OR IGNORE INTO knowledge_conflicts(id,record_id,field,alternatives,created_at) VALUES(?,?,?,?,?)',(cid,record_id,key,store.encode([old,new]),store.now()))
+                from backend.knowledge.platform import invalidate
+                invalidate(db, record_id, 'Source fact conflict requires review')
             continue
         if not record['metadata'].get('editorial_override'):
             record['facts'][key] = new

@@ -58,13 +58,31 @@ def run():
             imports += 1
             if not any(p.is_file() for p in possibilities):
                 errors.append(f'{path.relative_to(ROOT)}: unresolved import {match[1]}')
-    reqs = re.findall(r'<a id="([a-z]+-\d{2})"', (ROOT / 'docs/product/requirements.md').read_text())
-    if len(reqs) != 42 or len(set(reqs)) != 42:
-        errors.append('Current requirements must retain exactly 42 distinct REQ IDs')
+    index = (ROOT / 'docs/product/requirements.md').read_text()
+    legacy = re.findall(r'<a id="([a-z]+-\d{2})"', index)
+    if len(legacy) != 42 or len(set(legacy)) != 42:
+        errors.append('Historical requirements must retain 42 distinct compatibility anchors')
+    reqs, subreqs = [], []
+    for path in (ROOT / 'docs/product/requirements').glob('*.md'):
+        content = path.read_text()
+        parents = re.findall(r'^## (REQ-[A-Z]+-\d{2}) ·', content, re.M)
+        children = re.findall(r'<a id="(req-[a-z]+-\d{2}\.\d{2})"', content)
+        reqs.extend(parents); subreqs.extend(children)
+        for parent in parents:
+            link = f'requirements/{path.name}#{parent.lower()}'
+            if link not in index:
+                errors.append('Requirement missing from index: ' + parent)
+            if not any(child.startswith(parent.lower() + '.') for child in children):
+                errors.append('Requirement has no subrequirements: ' + parent)
+        for child in children:
+            if child.rsplit('.', 1)[0].upper() not in parents:
+                errors.append('Orphan subrequirement: ' + child)
+    if len(reqs) != 18 or len(set(reqs)) != 18 or len(subreqs) != 72 or len(set(subreqs)) != 72:
+        errors.append('P1 baseline requires 18 distinct requirements and 72 distinct subrequirements')
     for error in errors:
         print(error, file=sys.stderr)
     print(json.dumps({'version': version, 'documents': len(documents), 'local_links': link_count,
-                      'relative_imports': imports, 'requirements': len(reqs), 'errors': len(errors)}))
+                      'relative_imports': imports, 'requirements': len(reqs), 'subrequirements': len(subreqs), 'legacy_anchors': len(legacy), 'errors': len(errors)}))
     return bool(errors)
 
 

@@ -494,8 +494,8 @@ export default function Dossier() {
                     <div className="notice">
                       <Icon name="info" />
                       {pick(
-                        "目前没有 Metis 实测记录。收录和资料完整不代表已通过运行验证。",
-                        "No Metis verification is recorded. Indexing and complete documentation do not imply a passed runtime check.",
+                        "目前没有 FieldToFit 实测记录。收录和资料完整不代表已通过运行验证。",
+                        "No FieldToFit verification is recorded. Indexing and complete documentation do not imply a passed runtime check.",
                       )}
                     </div>
                   )}

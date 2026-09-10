@@ -104,7 +104,7 @@ def get_cron_logs(limit: int = 50, task_name: str | None = None) -> list[dict]:
 - [ ] **Step 3: Run init_db locally to verify table creation**
 
 ```bash
-cd metis && source .env && export $(grep -v '^#' .env | xargs) && python3 -c "
+cd fieldtofit && source .env && export $(grep -v '^#' .env | xargs) && python3 -c "
 from backend.db import init_db
 init_db()
 print('Schema OK')
@@ -809,7 +809,7 @@ git commit -m "refactor: simplify api/cron.py to use shared task functions"
 - [ ] **Step 1: Verify all imports work**
 
 ```bash
-cd metis && export $(grep -v '^#' .env | xargs) && python3 -c "
+cd fieldtofit && export $(grep -v '^#' .env | xargs) && python3 -c "
 from backend.cron_tasks import task_scrape, task_daily_news, task_classify, task_digest
 from backend.db.queries import log_cron_run, get_cron_logs
 print('All imports OK')
@@ -821,7 +821,7 @@ Expected: `All imports OK`
 - [ ] **Step 2: Test cron logs write/read**
 
 ```bash
-cd metis && export $(grep -v '^#' .env | xargs) && python3 -c "
+cd fieldtofit && export $(grep -v '^#' .env | xargs) && python3 -c "
 from backend.db import init_db
 init_db()
 from backend.db.queries import log_cron_run, get_cron_logs
@@ -840,8 +840,8 @@ git push origin main
 ```
 
 Vercel auto-deploys on push. After deploy completes, verify:
-- `https://www.novametis.top/api/cron-logs` returns empty list or test entry
-- `https://www.novametis.top/api/cron/scrape` triggers scrape (if tools already exist, returns skipped)
+- `https://fieldtofit.top/api/cron-logs` returns empty list or test entry
+- `https://fieldtofit.top/api/cron/scrape` triggers scrape (if tools already exist, returns skipped)
 
 - [ ] **Step 4: Final commit tag**
 

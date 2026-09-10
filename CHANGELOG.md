@@ -4,9 +4,75 @@
 
 ---
 
+## v1.0.0 · FieldToFit · 2026-09-10
+
+- 项目品牌更名为 **FieldToFit**，视觉表达为 **FIELD → FIT**；以人与 AI 共享的动态 AI 地图说明项目立意。
+- 接入提供的深浅色 Logo、浏览器图标、触屏图标和分享图；关于页先展示 Field / To / Fit，再保留双端使用方式、来源与维护说明。
+- 统一网页、MCP 身份、README、开发与部署文档中的项目名称；前后端运行版本均为 1.0.0。
+- 兼容读取旧环境变量、浏览器收藏和 SQLite 数据；旧协议标识与历史证据保留用于升级兼容。
+- 首批内容已扩展为 27 项、62 份材料；本地整理稿导出/导入、引文预览与审核发布已实现。公网部署及连续日运行仍单独验收。
+
+这是品牌版本的新起点；以下旧版本编号保留历史顺序，不代表从 v1.1 降级数据。
+
 ## Unreleased
 
-后续已合入、尚未归入版本的变化记在这里。主案例及产品价值验证保持 pending，下一步重点见 [ROADMAP](ROADMAP.md)。
+### 公开修订历史与网页补验 · 2026-09-10
+
+- 详情和 AI 页面增加截至所选修订的公开历史，展示首次发布、修订字段、待复核和撤回；可打开旧修订，管理员审核备注不公开（REQ-Y-03.01、AI-02.03）。
+- 新增 `curated_history` 和对象历史接口，固定快照分页；JSON/Markdown 原文包包含历史，超过 20 条给出继续读取参数，当前共 19 项 MCP 工具（REQ-AI-03.01）。
+- 修复从筛选列表进入详情或旧修订后丢失筛选条件的问题；补验来源、UTC 日期区间、清除、刷新恢复、AI 页面选对象及 390px 手机布局（REQ-Y-02.03/.04、Y-03.01、AI-01.03）。
+- 完整测试 154 项通过、1 项跳过，官方 SDK HTTP/stdio 及真实修订 6/3 对应历史验证通过。没有新增数据表、生产部署或正式版本标签。
+
+证据：[公开历史与网页补验](docs/validation/2026-09-10-platform-history.md)。逐材料检查、有依据的对象关系、真实日运营和用户验收仍待完成。
+
+### 精选来源检查与日期筛选 · 2026-09-10
+
+- 精选索引支持采集来源 ID、UTC 精选发布日期首尾筛选，筛选条件绑定稳定游标；旧无筛选游标保留兼容（REQ-Y-02.03、AI-01.03）。
+- 当前精选来源提供最后尝试、最后成功、失败/部分成功/停用/逾期/未登记状态；不把记录整理时间或采集源运行冒充逐份文档复核，不公开源配置和私有错误（REQ-F-04.01/.03、AI-04.03）。
+- 新发布保存来源身份；历史发布缺失字段时从对应历史记录读取，不跟随当前来源改动。原文包携带同一来源检查说明。
+- 新增 `curated_sources`，共 18 项 MCP 工具。17 项新测试通过，完整测试 148 项通过、1 项跳过；官方 SDK 双传输通过。页面已接通，完整筛选交互因工具额度拦截尚待补验。
+
+证据：[来源与筛选验收](docs/validation/2026-09-10-platform-sources.md)。不新增表，不改生产库或自动发布旧资料。应用版本仍为 beta.2，尚未正式发布。
+
+### 多对象含原文资料包 · 2026-09-10
+
+- For you 可手选最多 10 个对象，跨搜索/分页保留所选发布修订；详情与 For your AI 可预览、下载 JSON/Markdown 原文包（REQ-Y-03.03、AI-01.04）。
+- 新增 `curated_bundle` 与 HTTP POST `/api/v1/platform/bundle`；把档案、实际所存正文、来源、许可证、未知项和缺口一起交接。默认 20 万、最大 50 万正文字符，超限保留准确续读参数（REQ-AI-02.03）。
+- 撤回/缺失对象不静默丢弃，历史修订不自动替换；同一事务读取，逐份核对哈希，外部正文保持字面引用数据（REQ-AI-02.02～.04）。
+- MCP 现为 17 项；官方 SDK HTTP/stdio 的完整包、限长续读和 Markdown 检查通过。本轮不新增数据表、不改生产库或自动精选旧记录。
+
+证据与边界见[原文包验收](docs/validation/2026-09-10-platform-bundles.md)。关系/历史材料、真实日常 AI 客户端与正式运营仍待验；应用版本未递增。
+
+### 概览期次与可靠续读 · 2026-09-09
+
+- For you 增加人工审核的独立期次、固定修订直达与往期归档；草稿修改不覆盖公开版本，来源变化/不可用逐项提示（REQ-Y-01.02～.04、F-03.04）。
+- 精选索引与归档使用固定快照，新增内容留到下一批，撤回位置脱敏保留；游标绑定查询、页大小并设 7 天期限（REQ-AI-01.03、AI-04.02）。
+- 提供精选新增、修订、待复核、撤回事件及跨窗口检查点；源下架和归并进入变化记录，私有草稿及审核备注不公开（REQ-AI-04、O-01）。
+- 新增 `curated_changes`、`curated_editions`、`curated_edition`，共 16 项 MCP 工具；后台增加概览草稿、原句核查、排序、并发发布及撤回（REQ-AI-03、O-01）。
+- 增加三个增量表，保留已有数据；新版盘点脚本覆盖平台六张表。生产部署、连续日运营及真实用户验收仍未完成。
+
+证据与实际边界见[期次及增量检查](docs/validation/2026-09-09-platform-updates.md)。应用版本暂不递增，仍为本地 Unreleased 工作。
+
+
+### 精选平台基础与三页 · 2026-09-09
+
+- 新增 For you、For your AI、About；主导航收敛为两项，旧入口兼容跳转（REQ-Y-01～Y-03、AI-01、AB-01、X-01.01）。
+- 增加精选角色/别名/关注依据、来源引文门槛、材料清单和固定发布修订；审核与发布有并发校验和事务保护，资料变化进入复核（REQ-F-01～F-03、F-05、O-01）。
+- 增加 4 项只读 curated MCP 工具和同源 HTTP 接口；原文按修订续读，中性清单可复制/下载，旧 9 项工具保留（REQ-AI-01～AI-03、X-01.03）。
+- 增量三张表、只读 SQLite 盘点/一致备份；检查器覆盖 18/72 新编号及 42 历史锚点（REQ-X-01、O-03）。
+- 真实 Deep Agents 官方材料仅用于隔离预览，不自动发布存量。独立概览期次、精选变化流、更多资料及正式运行验收仍待完成。
+
+验证与升级边界见[平台检查](docs/validation/2026-09-09-platform-foundation.md)及[使用指南](docs/guides/platform.md)。应用版本未递增，未部署生产。
+
+### 文档与产品规划 · P1 · 2026-09-08
+
+- 重新明确平台立意：给人提供结构化精选内容，给个人 AI 提供详细、有来源的材料；网站代做比较、场景和任务方案退出新主线。
+- 写明 For you、For your AI 与辅助“关于 FieldToFit”页面方案、拟用文案及共用资料契约（REQ-Y-01～Y-03、AI-01～AI-04、AB-01）。
+- 将现行需求展开为 18 个 REQ / 72 个子 REQ，逐项记录用途、方案、验收、依赖及状态；保留旧 42 项映射和调整前快照（REQ-X-01.04）。
+- 同步中英文 README、导航、路线图、运营和版本维护说明；验收改为精选质量、人读理解、AI 取材及持续维护。
+- 案例继续 pending，账户待开放，自动检查保持每 1 天。旧数量目标取消。
+
+**此条仅记录 2026-09-08 的文档阶段：当时未修改功能代码或应用版本。** 后续实现见上方 2026-09-09 条目。 后续开发见 [ROADMAP](ROADMAP.md)。
 
 ---
 
@@ -24,7 +90,7 @@
 
 ## [v1.1.0-beta.1] — 2026-09-07 · 开发候选，尚未发布
 
-本版将 Metis 从旧工具发现/策展流程扩展为有来源的 AI 知识工作台，并整理代码、文档与版本展示。版本号对应当前源码候选，不代表已创建公开 Release 或完成生产验收。
+本版将 FieldToFit 从旧工具发现/策展流程扩展为有来源的 AI 知识工作台，并整理代码、文档与版本展示。版本号对应当前源码候选，不代表已创建公开 Release 或完成生产验收。
 
 ### Added
 
@@ -54,7 +120,7 @@
 
 ## [v1.0.0] — 2026-08-30
 
-Metis 首个正式开源版本。此版本将完整的数据发现、AI 增强、人工策展、
+FieldToFit 首个正式开源版本。此版本将完整的数据发现、AI 增强、人工策展、
 双语展示和 Newsletter 工作流作为稳定基线发布。
 
 ### Added
@@ -167,10 +233,10 @@ Metis 首个正式开源版本。此版本将完整的数据发现、AI 增强�
 | URL 去重 | 两级 `dedup_key` 策略：GitHub URL → `github:{owner}/{repo}`，其他 → `url:{normalized}`（去 query/fragment/www/尾部斜杠） |
 | 规则分类器 | 零 API 开销，正则关键词匹配评分：`content_type`（tool/library/model/api/article/other）× `domain`（ai/web/devops/data/security/design/general） |
 | 中英翻译 | `deep-translator` 调用 Google Translate，标题+描述 → 中文；Take → 英文反向翻译 |
-| Discover 页 | `/discover` 四板块：优选榜（`is_featured`）、Metis 推荐（`is_metis_pick`）、AI 推荐（`ai_recommendations`）、今日发现 |
-| Admin 后台 | 密码保护，工具审核（approve/skip/defer/archive/unapprove）、设置 featured/metis-pick、编辑 Take、合并重复项，操作记录到 `curation_log` 表 |
+| Discover 页 | `/discover` 四板块：优选榜（`is_featured`）、FieldToFit 推荐（`is_metis_pick`）、AI 推荐（`ai_recommendations`）、今日发现 |
+| Admin 后台 | 密码保护，工具审核（approve/skip/defer/archive/unapprove）、设置 featured/fieldtofit-pick、编辑 Take、合并重复项，操作记录到 `curation_log` 表 |
 | Newsletter 发送 | `issues` 表管理期刊（draft → sent），HTML 模板 + Buttondown API 分发，防重复发送 |
-| Landing page | `/` 品牌主页，介绍 Metis 定位 |
+| Landing page | `/` 品牌主页，介绍 FieldToFit 定位 |
 | 中英文切换 | 前端 i18n，localStorage 持久化语言偏好 |
 | 爬虫健康监控 | `scrape_runs` 表记录每次运行的 source、status、found/new/deduped 计数、耗时 |
 | 部署架构 | Vercel（前端 + Serverless Functions）+ SQLite/Turso + Cloudflare Tunnel（Mac mini）+ MiniMax + Buttondown + Google Translate |

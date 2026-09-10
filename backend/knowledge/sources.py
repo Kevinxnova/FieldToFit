@@ -69,7 +69,7 @@ def public_url(url):
 
 def fetch(url, headers=None, max_bytes=2_000_000, with_headers=False):
     """Validate redirects, limit response size and never use environment proxy credentials."""
-    request_headers = {"User-Agent": "Metis/2.0 (+https://github.com/Kevinxnova/metis)", **(headers or {})}
+    request_headers = {"User-Agent": "FieldToFit/2.0 (+https://github.com/Kevinxnova/fieldtofit)", **(headers or {})}
     with httpx.Client(timeout=15, follow_redirects=False, trust_env=False) as client:
         for _ in range(5):
             public_url(url)
@@ -290,6 +290,9 @@ class PartialSourceError(Exception):
 
 def collect_source(source):
     adapter = source["adapter"]
+    if adapter == 'platform_repository':
+        from backend.knowledge.platform_maintenance import collect
+        return collect(source)
     if adapter == "github_skills":
         from backend.knowledge.skills import collect
         return collect(source)

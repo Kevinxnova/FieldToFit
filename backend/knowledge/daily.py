@@ -19,7 +19,7 @@ def _workflow(limit,collect,record_id,force):
     from backend.knowledge.operations import timestamp
     from backend.knowledge.processing import run_processing,build_brief
     collection=run_daily() if collect else {'status':'skipped'}
-    organized=run_processing(limit=limit if limit is not None else int(os.getenv("METIS_DAILY_RECORD_LIMIT","300")),budget_seconds=int(os.getenv("METIS_DAILY_PROCESS_SECONDS","3600")),record_id=record_id,force=force)
+    organized=run_processing(limit=limit if limit is not None else int(os.getenv("FIELDTOFIT_DAILY_RECORD_LIMIT","300")),budget_seconds=int(os.getenv("FIELDTOFIT_DAILY_PROCESS_SECONDS","3600")),record_id=record_id,force=force)
     brief=build_brief()
     from backend.knowledge.verification import run_due_checks
     checks=run_due_checks()

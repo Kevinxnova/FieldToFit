@@ -2,7 +2,7 @@
 
 > 历史快照，不作为当前需求状态或操作说明。现行入口：[需求清单](../../product/requirements.md)、[文档导航](../../README.md)。主案例现为 pending，旧样例通过不代表产品价值已经验证。
 
-# Metis 工作界面重构：运行与验证记录
+# FieldToFit 工作界面重构：运行与验证记录
 
 日期：2026-09-07。
 
@@ -10,7 +10,7 @@
 
 当前版本不开放账户注册与登录。侧栏“我的账户”和收藏页“账户与同步”置灰、不可点击，并标注“待开放”；直接访问 `/account` 显示准备中说明，不展示登录或注册表单。浏览、检索、本地收藏及关注照常使用。
 
-注册接口已有默认关闭保护，当前环境未启用 `METIS_PUBLIC_ACCOUNTS`，配置示例保持 `0`。现有账户数据和后台同步能力保留，账户开放与依赖账户的个性化订阅不属于当前开放范围。需求基线已同步到 v0.4。
+注册接口已有默认关闭保护，当前环境未启用 `FIELDTOFIT_PUBLIC_ACCOUNTS`，配置示例保持 `0`。现有账户数据和后台同步能力保留，账户开放与依赖账户的个性化订阅不属于当前开放范围。需求基线已同步到 v0.4。
 
 ## 当前成果
 
@@ -37,7 +37,7 @@ cd frontend
 npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
-访问 `http://127.0.0.1:5173`。普通资料查询不需要生成模型凭证。复制 `.env.example` 配置管理密码；私有部署可设置 `METIS_READ_TOKEN`，在网页 AI 接入页填入浏览器读取令牌，并在 MCP 客户端设置相同的 Bearer 令牌。
+访问 `http://127.0.0.1:5173`。普通资料查询不需要生成模型凭证。复制 `.env.example` 配置管理密码；私有部署可设置 `FIELDTOFIT_READ_TOKEN`，在网页 AI 接入页填入浏览器读取令牌，并在 MCP 客户端设置相同的 Bearer 令牌。
 
 如果使用单一服务部署，先运行 `frontend` 下的 `npm run build`，然后由后端直接提供构建后的页面和 API。容器配置提供 `web` 与每日 `collector` 两个服务，数据库通过命名卷保存：
 
@@ -75,7 +75,7 @@ MCP 地址为 `/api/mcp`，使用 Streamable HTTP 的 JSON 响应，支持协议
 需要 stdio 的客户端可启动：
 
 ```bash
-METIS_MCP_URL=http://127.0.0.1:8000/api/mcp .venv/bin/python -m backend.mcp_stdio
+FIELDTOFIT_MCP_URL=http://127.0.0.1:8000/api/mcp .venv/bin/python -m backend.mcp_stdio
 ```
 
 stdout 仅输出 JSON-RPC；诊断信息写入 stderr。HTTP 客户端请求需要 `Accept: application/json, text/event-stream`。协议依据：[MCP 传输说明](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports)。

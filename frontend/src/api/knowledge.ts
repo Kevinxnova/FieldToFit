@@ -9,6 +9,7 @@ export interface Fact {
   version?: string;
   checked_at?: string;
   exhaustive?: boolean;
+  quote?: string;
 }
 export interface Evidence {
   id: string;
@@ -132,7 +133,7 @@ export interface TaskPack {
 
 export function readToken() {
   try {
-    return sessionStorage.getItem("metis-read-token") || "";
+    return sessionStorage.getItem("fieldtofit-read-token") || "";
   } catch {
     return "";
   }
@@ -149,7 +150,7 @@ export async function request<T>(
   if (admin)
     headers.set(
       "X-Admin-Password",
-      sessionStorage.getItem("metis-admin-password") || "",
+      sessionStorage.getItem("fieldtofit-admin-password") || "",
     );
   const response = await fetch(BASE + path, {
     ...options,
@@ -184,7 +185,7 @@ export function useRemote<T>(path: string | null, admin = false) {
     setLoading(!!path);
     if (path)
       request<T>(path, { signal: controller.signal }, admin)
-        .then(setData)
+        .then(value => { if (!controller.signal.aborted) setData(value); })
         .catch((e) => {
           if (!controller.signal.aborted) setError(e.message);
         })
@@ -209,7 +210,7 @@ export async function downloadRecord(
   const url = URL.createObjectURL(await response.blob());
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `metis-${id}.${format === "markdown" ? "md" : format === "bibtex" ? "bib" : "json"}`;
+  anchor.download = `fieldtofit-${id}.${format === "markdown" ? "md" : format === "bibtex" ? "bib" : "json"}`;
   anchor.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

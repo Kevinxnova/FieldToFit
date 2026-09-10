@@ -125,9 +125,41 @@ class TursoConnection:
         if not self._transaction: raise RuntimeError('Batch writes require an explicit transaction')
         if statements: self._pipeline([self._statement(sql,params) for sql,params in statements])
 
+    def atomic_statements(self, statements, read_only=False):
+        """One server-side transaction, with conditional rollback after any error.
+
+        Hrana interactive transactions have a five-second lifetime. Prebuilt
+        migrations and backups must not spend that window on network roundtrips.
+        Never automatically retry a response with an uncertain commit outcome.
+        """
+        if self._transaction or self._broken:
+            raise RuntimeError('Atomic batch requires a fresh connection')
+        sqls=[('BEGIN' if read_only else 'BEGIN IMMEDIATE', ())] + list(statements)
+        sqls.append(('COMMIT', ()))
+        steps=[]
+        for index,(sql,params) in enumerate(sqls):
+            step={'stmt':self._statement(sql,params)['stmt']}
+            if index: step['condition']={'type':'ok','step':index-1}
+            steps.append(step)
+        steps.append({'condition':{'type':'not','cond':{'type':'ok','step':len(sqls)-1}},
+                      'stmt':self._statement('ROLLBACK',())['stmt']})
+        data=self._post({'requests':[{'type':'batch','batch':{'steps':steps}},{'type':'close'}]})
+        result=data.get('results',[{}])[0]
+        if result.get('type')!='ok':
+            raise RuntimeError(result.get('error',{}).get('message','Atomic database batch failed'))
+        batch=result['response']['result']
+        errors=[e for e in batch.get('step_errors',[]) if e]
+        rows=batch.get('step_results',[])
+        if errors or len(rows)!=len(steps) or rows[len(sqls)-1] is None:
+            raise RuntimeError(errors[0].get('message','Atomic database batch failed') if errors else 'Incomplete atomic database response')
+        return [self._cursor(r) for r in rows[1:len(sqls)-1]]
+
     def execute(self, sql: str, params: tuple | list = ()) -> 'TursoCursor':
         result=self._pipeline([self._statement(sql,params)])[0]
         response = result.get("response", {}).get("result", {})
+        return self._cursor(response)
+
+    def _cursor(self, response):
         cols = [c["name"] for c in response.get("cols", [])]
         rows_raw = response.get("rows", [])
         affected = response.get("affected_row_count", 0)

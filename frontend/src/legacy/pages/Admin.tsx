@@ -16,7 +16,7 @@ function AdminLogin({ onAuth, lang }: { onAuth: () => void; lang: Lang }) {
     setError('')
     try {
       await api.verifyAdmin(password)
-      sessionStorage.setItem('metis-admin-password', password)
+      sessionStorage.setItem('fieldtofit-admin-password', password)
       onAuth()
     } catch {
       setError(isZh ? '密码错误' : 'Wrong password')
@@ -33,7 +33,7 @@ function AdminLogin({ onAuth, lang }: { onAuth: () => void; lang: Lang }) {
         background: 'white', padding: 32, borderRadius: 12,
         border: '1px solid #e0e0e0', width: 320, textAlign: 'center',
       }}>
-        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 4 }}>Metis Admin</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 4 }}>FieldToFit Admin</h2>
         <p style={{ fontSize: 13, color: '#999', marginBottom: 20 }}>
           {isZh ? '请输入管理密码' : 'Enter admin password'}
         </p>
@@ -66,14 +66,14 @@ export default function Admin({ lang }: { lang: Lang }) {
   const [filters, setFilters] = useState<ToolFilters>({})
 
   useEffect(() => {
-    const password = sessionStorage.getItem('metis-admin-password')
+    const password = sessionStorage.getItem('fieldtofit-admin-password')
     if (!password) {
       setChecking(false)
       return
     }
     api.verifyAdmin(password)
       .then(() => setAuthed(true))
-      .catch(() => sessionStorage.removeItem('metis-admin-password'))
+      .catch(() => sessionStorage.removeItem('fieldtofit-admin-password'))
       .finally(() => setChecking(false))
   }, [])
 
@@ -106,7 +106,7 @@ export default function Admin({ lang }: { lang: Lang }) {
         <div style={{ display: 'flex', gap: 8 }}>
           <button
             onClick={() => {
-              sessionStorage.removeItem('metis-admin-password')
+              sessionStorage.removeItem('fieldtofit-admin-password')
               setAuthed(false)
             }}
             style={{

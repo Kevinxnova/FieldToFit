@@ -419,7 +419,7 @@ export default function TaskWorkbench() {
             </div>
             <button
               className="button"
-              onClick={() => saveText("metis-task.md", pack.markdown)}
+              onClick={() => saveText("fieldtofit-task.md", pack.markdown)}
             >
               <Icon name="download" size={17} />
               {pick("导出资料包", "Export context")}
@@ -558,7 +558,7 @@ export default function TaskWorkbench() {
             <button
               className="button"
               onClick={() => {
-                saveText("metis-references.bib", reading.bibtex, "text/plain");
+                saveText("fieldtofit-references.bib", reading.bibtex, "text/plain");
                 notify(pick("引用已导出", "References exported"));
               }}
             >
@@ -568,7 +568,7 @@ export default function TaskWorkbench() {
               className="button"
               onClick={() =>
                 saveText(
-                  "metis-research.md",
+                  "fieldtofit-research.md",
                   reading.markdown,
                 )
               }

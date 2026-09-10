@@ -39,3 +39,7 @@ data/*.err
 .DS_Store
 .gstack/
 .vercel
+
+# Private runtime output and source archive
+output/
+FieldToFit-A-brand-kit.zip

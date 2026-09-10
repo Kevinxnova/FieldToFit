@@ -3538,3 +3538,159 @@ h1 {
 .skill-details details { margin-top: 16px; }
 .skill-details li { margin: 8px 0; }
 @media (max-width: 600px) { .skill-conditions div { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Selection review shares the existing operations shell, including narrow columns. */
+.curated-review {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.curated-review > .button-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.curated-review > .button-row > button {
+  flex: 0 1 auto;
+  min-height: 40px;
+  max-width: 100%;
+}
+.curated-review select {
+  width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+@media (max-width: 700px) {
+  .curated-review {
+    padding: 14px;
+  }
+}
+
+.platform-page { max-width: 1100px; margin: 0 auto; }
+.platform-hero { padding: 30px 0 46px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
+.platform-eyebrow { color: var(--green); font-size: 11px; letter-spacing: 1.8px; font-weight: 650; margin: 0 0 20px; }
+.platform-hero h1 { font-size: clamp(34px, 5vw, 64px); line-height: 1.16; letter-spacing: -2px; white-space: pre-line; margin: 0 0 24px; font-weight: 550; }
+.platform-lead { color: var(--muted); font-size: 16px; line-height: 1.9; max-width: 760px; }
+.platform-hero-meta, .platform-section-heading { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; }
+.platform-hero-meta { margin-top: 30px; font-size: 12px; color: var(--muted); }
+.platform-section-heading { margin-bottom: 12px; }
+.platform-section-heading h2, .platform-section-heading h3 { margin: 0; }
+.platform-section-heading > span { color: var(--muted); font-size: 11px; }
+.platform-overview { background: var(--surface-soft); border: 1px solid var(--line); border-radius: 12px; padding: 28px; margin-bottom: 44px; }
+.platform-overview ol { list-style: none; padding: 0; margin: 24px 0 0; }
+.platform-overview li { display: flex; align-items: flex-start; gap: 22px; border-top: 1px solid var(--line); padding: 20px 0 8px; }
+.platform-overview li > span { font-size: 12px; color: var(--green); padding-top: 4px; }
+.platform-overview li a { font-weight: 600; }
+.platform-overview li p { font-size: 13px; color: var(--muted); line-height: 1.85; }
+.platform-overview li div > a:last-child { font-size: 11px; }
+.platform-search { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 20px 0 24px; }
+.platform-search > input { flex: 1; min-width: 160px; }
+.platform-search details { font-size: 12px; padding: 10px; }
+.platform-search summary, .platform-page details summary { cursor: pointer; }
+.platform-search select { margin-top: 10px; }
+.platform-feed { display: grid; gap: 22px; margin-bottom: 24px; }
+.platform-card { padding: 30px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; min-width: 0; }
+.platform-card > h2 { font-size: 29px; margin: 20px 0 10px; }
+.platform-badges { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0; }
+.platform-badges span { font-size: 10px; background: var(--green-soft); color: var(--green); border: 1px solid var(--line); padding: 5px 9px; border-radius: 5px; letter-spacing: .7px; }
+.platform-reason { border-left: 2px solid var(--green); padding-left: 16px; margin: 22px 0; }
+.platform-reason small, .platform-reason a { font-size: 11px; color: var(--muted); }
+.platform-reason a { display: inline-block; margin-left: 12px; }
+.platform-reason p { font-size: 13px; line-height: 1.85; }
+.platform-card dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 28px 0; }
+.platform-card dt { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+.platform-card dd { margin: 0; font-size: 13px; line-height: 1.8; }
+.platform-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 18px 0; }
+.platform-actions > a:not(.button) { font-size: 12px; }
+.platform-handoff { margin: 18px 0; min-width: 0; }
+.platform-handoff textarea { width: 100%; min-height: 220px; font-family: monospace; font-size: 12px; }
+.platform-handoff details { font-size: 12px; }
+.platform-notice { padding: 16px 20px; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 8px; font-size: 12px; line-height: 1.85; }
+.platform-notice a { margin-left: 12px; }
+.platform-detail { max-width: 1000px; margin: 0 auto; }
+.platform-detail h1 { font-size: clamp(28px, 4vw, 46px); margin: 18px 0; }
+.platform-detail > h2 { margin-top: 38px; }
+.platform-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 22px 0; }
+.platform-facts article { border: 1px solid var(--line); border-radius: 9px; padding: 20px; min-width: 0; }
+.platform-facts h3 { font-size: 14px; margin-top: 0; }
+.platform-facts p, .platform-facts small, .platform-facts a { font-size: 12px; line-height: 1.85; }
+.platform-facts a { margin-left: 12px; }
+.platform-facts details { font-size: 12px; margin-top: 14px; }
+.platform-facts blockquote { margin: 12px 0 0; color: var(--muted); overflow-wrap: anywhere; }
+.platform-material { border-top: 1px solid var(--line); padding: 24px 0; }
+.platform-material h3 { font-size: 16px; }
+.platform-material > p, .platform-material > a { font-size: 12px; line-height: 1.8; }
+.platform-original { background: var(--surface-soft); border: 1px solid var(--line); border-radius: 8px; padding: 20px; white-space: pre-wrap; overflow-wrap: anywhere; font-family: ui-monospace, monospace; font-size: 12px; line-height: 1.8; max-height: 460px; overflow-y: auto; }
+.platform-panel { border-bottom: 1px solid var(--line); padding: 24px 0 36px; margin-bottom: 24px; }
+.platform-panel > p, .platform-panel details > p { font-size: 14px; line-height: 1.95; }
+.platform-panel > label { display: grid; gap: 12px; font-size: 12px; margin: 24px 0; }
+.platform-panel select { width: 100%; }
+.platform-panel code { overflow-wrap: anywhere; font-size: 12px; }
+.platform-reading-steps { padding-left: 24px; }
+.platform-reading-steps li { padding: 10px 0; }
+.platform-reading-steps p { font-size: 13px; color: var(--muted); }
+.platform-about { max-width: 900px; }
+@media (max-width: 700px) {
+  .platform-hero { padding: 18px 0 28px; }
+  .platform-hero h1 { letter-spacing: -1px; }
+  .platform-lead { font-size: 14px; }
+  .platform-card, .platform-overview { padding: 20px; }
+  .platform-card dl, .platform-facts { grid-template-columns: 1fr; gap: 16px; }
+  .platform-original { padding: 14px; }
+  .platform-hero-meta { align-items: flex-start; }
+}
+
+
+/* Reviewed edition history and selection change reading. */
+.platform-archive { margin-top: 1.5rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+.platform-archive ul, .edition-draft-list { list-style: none; padding: 0; }
+.platform-archive li, .edition-draft-list li { margin: .8rem 0; }
+.platform-overview blockquote { margin: .8rem 0; padding-left: 1rem; border-left: 2px solid var(--line); overflow-wrap: anywhere; }
+.platform-change-list { list-style: none; padding: 0; }
+.platform-change-list li { border-bottom: 1px solid var(--line); padding: 1rem 0; overflow-wrap: anywhere; }
+.edition-review { min-width: 0; }
+.edition-review .ops-form { display: grid; gap: 1rem; }
+.edition-review label { display: grid; gap: .5rem; min-width: 0; }
+.edition-review input, .edition-review textarea, .edition-review select { min-width: 0; width: 100%; }
+.edition-review fieldset { border: 0; padding: 0; }
+.edition-review .platform-material { min-width: 0; }
+.edition-review .text-button { white-space: normal; text-align: left; }
+
+/* Source packages share the two reading modes, without adding a primary page. */
+.platform-package { margin: 1.5rem 0; padding: 1.25rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); min-width: 0; }
+.platform-package textarea { display: block; width: 100%; box-sizing: border-box; margin-top: .8rem; font-family: monospace; font-size: .8rem; resize: vertical; }
+.platform-package-coverage { margin: 1rem 0; }
+.platform-selection ul { list-style: none; padding: 0; }
+.platform-selection li { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem 0; }
+.platform-selection li span { overflow-wrap: anywhere; }
+.platform-package-choice { display: flex; align-items: center; gap: .6rem; margin-top: 1rem; cursor: pointer; }
+.platform-package-choice input { width: auto; margin: 0; }
+@media (max-width: 600px) { .platform-package { padding: 1rem; } .platform-package .platform-actions { align-items: stretch; } .platform-package .button { white-space: normal; } }
+
+.platform-source-context { margin: 1.3rem 0; padding: 1rem 0; border-block: 1px solid var(--line); }
+.platform-source-context > details + details { margin-top: 1rem; }
+.platform-source-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
+.platform-source-filters label { min-width: 0; }
+.platform-source-filters input, .platform-source-filters select { width: 100%; min-width: 0; box-sizing: border-box; }
+.platform-source-context li { overflow-wrap: anywhere; }
+@media (max-width: 600px) { .platform-source-filters { grid-template-columns: 1fr; } }
+
+/* FieldToFit supplied brand kit: preserve aspect ratio and theme contrast. */
+.brand-logo { width: 100%; height: auto; display: block; }
+.brand { max-width: 100%; letter-spacing: 0; }
+.brand-dark { display: none; }
+[data-theme="dark"] .brand-light { display: none; }
+[data-theme="dark"] .brand-dark { display: block; }
+.about-brand { width: min(400px, 100%); height: auto; margin: 0 0 34px; }
+.platform-hero .field-to-fit { font-family: var(--font-sans, Arial, sans-serif); font-size: clamp(40px, 7vw, 82px); letter-spacing: -.065em; white-space: nowrap; }
+.field-to-fit span { color: var(--green); padding: 0 .09em; }
+.brand-logic { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 38px; border-top: 1px solid var(--line); }
+.brand-logic article { padding: 24px 24px 10px 0; }
+.brand-logic article + article { padding-left: 24px; border-left: 1px solid var(--line); }
+.brand-step { color: var(--muted); font-size: 12px; }
+.brand-logic h2 { margin: 12px 0; font-size: 28px; }
+.brand-logic p { font-size: 15px; line-height: 1.8; }
+@media (max-width: 700px) {
+  .brand-logic { grid-template-columns: 1fr; }
+  .brand-logic article, .brand-logic article + article { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .about-brand { max-width: 290px; }
+}

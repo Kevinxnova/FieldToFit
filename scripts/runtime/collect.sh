@@ -1,5 +1,5 @@
 #!/bin/bash
-# Metis scraper - run via cron
+# FieldToFit scraper - run via cron
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"

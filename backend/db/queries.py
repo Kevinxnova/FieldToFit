@@ -422,7 +422,7 @@ def create_issue(title: str | None = None) -> int:
 
         db.execute(
             "INSERT INTO issues (issue_number, title, tool_ids) VALUES (?, ?, ?)",
-            (next_num, title or f"Metis Weekly #{next_num}", json.dumps(tool_ids))
+            (next_num, title or f"FieldToFit Weekly #{next_num}", json.dumps(tool_ids))
         )
         return next_num
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="208" height="160" viewBox="0 0 208 160" role="img" aria-label="FieldToFit"><g fill="#151917" transform="translate(24 24) scale(1)">
+  
+  
+  <g id="source-field">
+    <rect x="0" y="32" width="24" height="24"/>
+    <rect x="32" y="32" width="24" height="24"/>
+    <rect x="0" y="64" width="24" height="24"/>
+    <rect x="32" y="64" width="24" height="24"/>
+  </g>
+  <path id="focus-frame" d="M64 0H160V24H104V32H88V80H104V112H64Z"/>
+  <g id="fitted-materials">
+    <rect x="96" y="40" width="24" height="24"/>
+    <rect x="128" y="40" width="24" height="24"/>
+  </g>
+</g></svg>

@@ -114,7 +114,7 @@
 
 ## docs/assets
 
-- `metis-homepage.png`
+- `fieldtofit-homepage.png`
 
 ## docs/product
 

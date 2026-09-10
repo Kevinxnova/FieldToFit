@@ -33,7 +33,7 @@ def markdown(record):
     for v in record.get('verifications', []):
         lines += [f"- {v['title']}: {v['result']} ({v['checked_at']})", f"  Environment: {v['environment']}", f"  Limitations: {v['limitations']}"]
     if not record.get('verifications'):
-        lines += ["No Metis runtime verification has been recorded."]
+        lines += ["No FieldToFit runtime verification has been recorded."]
     return '\n'.join(lines) + '\n'
 
 
@@ -51,6 +51,6 @@ def bibtex(record):
     doi = record.get('facts', {}).get('doi', {}).get('value')
     if doi:
         fields['doi'] = doi
-    fields['note'] = 'Metis source record; publication and review status must be checked in the source'
+    fields['note'] = 'FieldToFit source record; publication and review status must be checked in the source'
     key = re.sub(r'[^a-zA-Z0-9]', '', record['id'])
-    return '@misc{metis' + key + ',\n' + ',\n'.join(f'  {k} = {{{clean(v)}}}' for k, v in fields.items()) + '\n}\n'
+    return '@misc{fieldtofit' + key + ',\n' + ',\n'.join(f'  {k} = {{{clean(v)}}}' for k, v in fields.items()) + '\n}\n'

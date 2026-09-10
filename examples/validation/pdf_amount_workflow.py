@@ -5,5 +5,5 @@ import runpy
 import tempfile
 
 workflow = runpy.run_path(str(Path(__file__).resolve().parents[1] / 'task_packets' / 'pdf_amount.py'))
-with tempfile.TemporaryDirectory(prefix='metis-pdf-amount-') as folder:
+with tempfile.TemporaryDirectory(prefix='fieldtofit-pdf-amount-') as folder:
     print(json.dumps(workflow['demo'](Path(folder)), ensure_ascii=False, indent=2))

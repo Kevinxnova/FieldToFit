@@ -161,8 +161,8 @@ export function DailyBriefs() {
                 className="button"
                 onClick={() =>
                   saveText(
-                    `metis-${brief.date}.md`,
-                    `# Metis ${brief.date}\n\nAI 整理 · ${brief.scope}\n` +
+                    `fieldtofit-${brief.date}.md`,
+                    `# FieldToFit ${brief.date}\n\nAI 整理 · ${brief.scope}\n` +
                       brief.items
                         .map(
                           (i) =>
@@ -267,7 +267,7 @@ type Changes = {
 export function FollowingUpdates() {
   const { pick, collection } = useWorkspace();
   const [read, setRead] = useState(() =>
-    Number(localStorage.getItem("metis-follow-read-cursor") || 0),
+    Number(localStorage.getItem("fieldtofit-follow-read-cursor") || 0),
   );
   const [offset, setOffset] = useState(read);
   const [all, setAll] = useState(false);
@@ -290,7 +290,7 @@ export function FollowingUpdates() {
   );
   const mark = () => {
     const value = result.data?.latest_cursor || read;
-    localStorage.setItem("metis-follow-read-cursor", String(value));
+    localStorage.setItem("fieldtofit-follow-read-cursor", String(value));
     setRead(value);
     setOffset(value);
     setPrevious([]);
