@@ -3,7 +3,7 @@ httpx==0.28.1
 openai>=1.66,<4
 python-dotenv>=1.0.0
 certifi
-feedparser>=6.0.0
+feedparser>=6.0.14
 gunicorn>=23.0.0
 pypdf>=6.0,<7
 PyYAML>=6.0,<7
