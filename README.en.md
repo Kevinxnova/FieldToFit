@@ -1,5 +1,10 @@
 # FieldToFit
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="frontend/public/brand/logo-on-dark.svg">
+  <img src="frontend/public/brand/logo-on-light.svg" alt="FieldToFit" width="600">
+</picture>
+
 **FIELD → FIT**
 
 FieldToFit is a living AI map shared by people and AI: understand existing solutions, judge their fit, and choose the right path to adopt or build.
@@ -48,19 +53,6 @@ The current application version is **v1.0.0**, the first FieldToFit-branded vers
 The [18 requirements and 72 subrequirements](docs/product/requirements.md) specify purpose, implementation approach, existing foundations and acceptance. All 42 legacy IDs retain historical mappings; previous checks do not establish completion of the new design.
 
 Public registration, sign-in and sync remain closed. The AI application showcase is **pending**. Existing PDF samples remain technical regressions. Website-generated comparisons, task plans and learning paths leave the new core scope; existing code and interfaces remain for compatibility.
-
-<details>
-<summary>Historical beta.2 UI, not the current redesigned pages</summary>
-
-![beta.2 Information](docs/assets/workspace-information.png)
-
-*Six explicitly imported local samples; not a claim of comprehensive coverage or curated quality.*
-
-![beta.2 Resources](docs/assets/workspace-resources.png)
-
-*Existing Skill collection and filtering. The new pages have since been implemented; these historical screenshots are retained for reference.*
-
-</details>
 
 ## Updates and next steps
 

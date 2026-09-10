@@ -53,19 +53,6 @@ FieldToFit 面向研究者、工程师、研究生、学生，以及他们使用
 
 公开注册、登录和同步暂不开放，账户标注“待开放”。AI 应用案例继续 **pending**；旧 PDF 技术样例仅用于回归。网站代做任务比较/方案/学习路线退出新主线，已有代码和接口暂保留兼容。
 
-<details>
-<summary>查看历史 beta.2 界面（不代表当前新页面）</summary>
-
-![beta.2 信息工作台](docs/assets/workspace-information.png)
-
-*信息截图使用六条显式导入的本地样本；不代表全网覆盖或当前精选质量。*
-
-![beta.2 应用与资源](docs/assets/workspace-resources.png)
-
-*资源截图展示 beta.2 的 Skill 收录与筛选。新三页基础已实现，以下历史截图未更新。*
-
-</details>
-
 ## 最近更新与下一步
 
 | 记录 | 状态 / 日期 | 重点 |
