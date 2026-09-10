@@ -11,6 +11,8 @@ from datetime import date as calendar_date, datetime, timedelta, timezone
 from backend.db import get_db
 from backend.knowledge import platform as p, store, platform_sources
 
+from backend.knowledge.platform_read_batch import prepare_publications
+
 SNAPSHOT_DAYS = 7
 
 
@@ -74,7 +76,9 @@ def search(q='', object_type='', limit=20, offset=0, cursor=None, source='', sin
     query.update({k: v for k, v in {'source': source, 'since': since, 'until': until}.items() if v})
     if cursor and offset:
         raise p.PlatformError('Use cursor without offset', 'invalid_cursor')
-    with get_db(atomic=True) as db:
+    # Membership comes from one SELECT; publication bodies are immutable and
+    # permissions are checked on every read. Cursor storage needs no long write lock.
+    with get_db() as db:
         if cursor:
             snapshot, offset = _resume(db, cursor, 'objects', query)
         else:
@@ -93,10 +97,12 @@ def search(q='', object_type='', limit=20, offset=0, cursor=None, source='', sin
                 refs.append({'id': row['record_id'], 'revision': row['seq']})
             # Offset is retained for old clients; only continuation cursors preserve this snapshot.
             snapshot = _snapshot(db, 'objects', query, {'items': refs})
+        refs = snapshot['data']['items'][offset:offset+limit]
+        read_db = prepare_publications(db, refs)
         result = _page(snapshot, offset, limit)
         result.update(scope='curated publications at snapshot creation', sort='published_revision_desc', filters=query, date_basis='FieldToFit publication date in UTC, inclusive; not upstream release date',
                       pagination='snapshot cursor; unavailable publications retain redacted positions',
-                      items=[_readable(db, ref['id'], ref['revision']) for ref in snapshot['data']['items'][offset:offset+limit]])
+                      items=[_readable(read_db, ref['id'], ref['revision']) for ref in refs])
         return result
 
 
@@ -110,7 +116,9 @@ def _events(db, after, ids, through=None):
     # Scan the immutable selection log so private draft edits cannot become public changes.
     previous, events = {}, []
     upper = db.execute('SELECT COALESCE(MAX(seq),0) FROM knowledge_publications').fetchone()[0]
-    clauses, args = [], []
+    # Freeze the upper boundary before scanning immutable log rows. A concurrent
+    # publication belongs to the next window, never beyond this checkpoint.
+    clauses, args = ['seq<=?'], [upper]
     if ids:
         clauses.append('record_id IN (' + ','.join('?' for _ in ids) + ')')
         args.extend(ids)
@@ -191,7 +199,7 @@ def history(rid, revision=None, limit=20, cursor=None):
     revision = p.integer(revision, 'revision', 1) if revision is not None else None
     if cursor and revision is None:
         raise p.PlatformError('Continue history with its returned publication revision', 'cursor_scope_mismatch')
-    with get_db(atomic=True) as db:
+    with get_db() as db:
         pub = p._get_object(db, rid, revision)
         if cursor:
             snapshot, position = _resume(db, cursor, 'history', {'id':rid, 'revision':pub['revision'], 'limit':limit})
@@ -205,7 +213,7 @@ def changes(after=0, object_ids=None, limit=20, cursor=None):
     if cursor and after:
         raise p.PlatformError('Use cursor without after', 'invalid_cursor')
     query = {'object_ids': ids, 'limit': limit}
-    with get_db(atomic=True) as db:
+    with get_db() as db:
         position = 0
         if cursor:
             snapshot, position = _resume(db, cursor, 'changes', query)
@@ -218,7 +226,9 @@ def changes(after=0, object_ids=None, limit=20, cursor=None):
             snapshot = _snapshot(db, 'changes', query, {'items': events, 'after': after, 'until': upper})
             position = 0
         result = _page(snapshot, position, limit)
-        items = [_public_event(db, event) for event in snapshot['data']['items'][position:position+limit]]
+        events = snapshot['data']['items'][position:position+limit]
+        read_db = prepare_publications(db, [{'id': e['object_id'], 'revision': e['to_revision'] or e['from_revision']} for e in events])
+        items = [_public_event(read_db, event) for event in events]
         result.update(items=items, after=snapshot['data']['after'], until=snapshot['data']['until'],
                       scope='published selections and their review/withdrawal changes',
                       resume_cursor=f"{snapshot['id']}:{min(position+limit, result['total'])}",
@@ -347,6 +357,7 @@ def _edition(db, eid, revision=None):
         raise p.PlatformError('Edition revision not found', 'not_found', 404)
     data = store.decode(row['data'], {})
     entries, needs_review = [], False
+    db = prepare_publications(db, [{'id': e['object_id'], 'revision': e['revision']} for e in data['entries']])
     for entry in data['entries']:
         pub = _readable(db, entry['object_id'], entry['revision'])
         evidence = db.execute('SELECT body FROM knowledge_evidence WHERE id=? AND record_id=?', (entry['material_id'], entry['object_id'])).fetchone()
@@ -372,7 +383,7 @@ def edition(eid, revision=None):
 
 def editions(limit=10, cursor=None):
     limit = p.integer(limit, 'limit', 1, 100)
-    with get_db(atomic=True) as db:
+    with get_db() as db:
         if cursor:
             snapshot, position = _resume(db, cursor, 'editions', {'limit': limit})
         else:

@@ -298,3 +298,35 @@ def test_explicit_reopening_of_published_review_is_visible_as_selection_exit(cli
     events = u.changes(cursor=checkpoint)['items']
     assert len(events) == 1 and events[0]['kind'] == 'needs_review'
     assert events[0]['from_revision'] == pub['revision']
+
+
+def test_change_checkpoint_excludes_publication_between_queries(client, monkeypatch):
+    selected('before-checkpoint')
+    inserted = []
+
+    class InterleavedRead:
+        def __init__(self, db):
+            self.db = db
+
+        def execute(self, sql, params=()):
+            cursor = self.db.execute(sql, params)
+            if sql == 'SELECT COALESCE(MAX(seq),0) FROM knowledge_publications' and not inserted:
+                upper = cursor.fetchone()
+                inserted.append(selected('after-checkpoint')[0])
+                class FrozenMaximum:
+                    def fetchone(self):
+                        return upper
+                return FrozenMaximum()
+            return cursor
+
+    @contextmanager
+    def interleaved_db(*args, **kwargs):
+        with get_db(*args, **kwargs) as db:
+            yield InterleavedRead(db)
+
+    monkeypatch.setattr(u, 'get_db', interleaved_db)
+    first = u.changes()
+    assert all(item['id'] <= first['until'] for item in first['items'])
+    assert inserted[0]['object']['id'] not in {item['object_id'] for item in first['items']}
+    following = u.changes(after=first['until'])
+    assert inserted[0]['object']['id'] in {item['object_id'] for item in following['items']}

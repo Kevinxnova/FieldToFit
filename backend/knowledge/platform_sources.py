@@ -50,12 +50,14 @@ def current_sources(db):
     for row in rows:
         sid = source_id(db, store.decode(row['snapshot'], {}))
         counts[sid] = counts.get(sid, 0) + 1
+    from backend.knowledge.platform_read_batch import prepare_sources
+    db = prepare_sources(db, counts)
     return [{**status(db, sid), 'objects': count} for sid, count in sorted(counts.items(), key=lambda item: item[0] or '')]
 
 
 def sources():
     from backend.knowledge.platform import SCHEMA_VERSION
-    with get_db(atomic=True) as db:
+    with get_db() as db:
         items = current_sources(db)
     return {'schema_version': SCHEMA_VERSION, 'items': items, 'observed_at': store.now(), 'interval_days': 1,
             'scope': 'Sources attached to currently published selections; not the entire source registry'}

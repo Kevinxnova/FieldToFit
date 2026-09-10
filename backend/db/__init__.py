@@ -4,8 +4,7 @@ import os
 import ssl
 import sqlite3
 import json
-import urllib.request
-import urllib.error
+import httpx
 from urllib.parse import urlsplit
 import certifi
 from pathlib import Path
@@ -53,20 +52,18 @@ class TursoConnection:
         self._transaction = False
         self._baton = None
         self._broken = False
+        self._http = None
 
     def _post(self, payload: dict) -> dict:
-        data = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(
-            f"{self._base}/v2/pipeline",
-            data=data,
-            headers={
-                "Authorization": f"Bearer {self._token}",
-                "Content-Type": "application/json",
-            },
-            method="POST",
+        # Reuse TLS connections throughout a request; never retry an ambiguous write.
+        if self._http is None:
+            self._http = httpx.Client(verify=_SSL_CTX, timeout=30, follow_redirects=False)
+        response = self._http.post(
+            f"{self._base}/v2/pipeline", json=payload,
+            headers={"Authorization": f"Bearer {self._token}", "Content-Type": "application/json"},
         )
-        with urllib.request.urlopen(req, timeout=30, context=_SSL_CTX) as resp:
-            return json.loads(resp.read().decode("utf-8"))
+        response.raise_for_status()
+        return response.json()
 
     @staticmethod
     def _statement(sql, params):
@@ -217,6 +214,9 @@ class TursoConnection:
             except Exception:
                 # The server also expires idle streams; preserve the original error.
                 pass
+        if self._http is not None:
+            self._http.close()
+            self._http = None
 
 
 def execute_statements(conn, statements):
