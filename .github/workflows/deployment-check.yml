@@ -38,7 +38,6 @@ jobs:
           tools=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':1,'method':'tools/list'}))['result']['tools']
           assert len(tools)==10 and all(t['name'].startswith('curated_') for t in tools)
           print('Read-only MCP tools:',len(tools))
-          PY
           init=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':2,'method':'initialize','params':{'protocolVersion':'2025-03-26','capabilities':{},'clientInfo':{'name':'FieldToFit-release-check','version':'1.0.0'}}}))['result']
           assert init['serverInfo']=={'name':'fieldtofit','version':'1.0.0'}
           def call(name,args):
@@ -52,3 +51,13 @@ jobs:
           assert call('curated_sources',{})['items']
           assert len(call('curated_editions',{'limit':10})['items'])>=2
           print('MCP initialization, search, original text, sources and editions passed')
+          assert call('curated_object',{'id':obj['id'],'revision':item['revision']})['revision']==item['revision']
+          assert call('curated_export',{'id':obj['id'],'revision':item['revision']})
+          assert call('curated_history',{'id':obj['id'],'revision':item['revision'],'limit':2})['items']
+          assert call('curated_changes',{'limit':2})['items']
+          edition=call('curated_editions',{'limit':1})['items'][0]
+          assert call('curated_edition',{'id':edition['id'],'revision':edition['revision']})['entries']
+          bundle=call('curated_bundle',{'objects':[{'id':obj['id'],'revision':item['revision']}],'max_characters':500})
+          assert bundle['coverage']['included_characters']>0
+          print('All 10 public MCP tools returned usable content')
+          PY
