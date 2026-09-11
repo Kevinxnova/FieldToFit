@@ -1,3 +1,4 @@
+// Historical P3 acceptance for commit 68ea7d2. Current CW1 acceptance: continuous-watch.cjs.
 // Run against an isolated server with 25 published QA dossiers; never writes data.
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const assert = require('node:assert/strict');

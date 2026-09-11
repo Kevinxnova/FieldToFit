@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "base": "https://fieldtofit.top",
+  "revision": "0cd8226818734d2c40fa7f84654ad0519167ad6e9c15a9821a935ef695b5bd2a",
+  "groups": [
+    {
+      "count": 9,
+      "id": "model",
+      "name": "模型"
+    },
+    {
+      "count": 4,
+      "id": "tool",
+      "name": "工具"
+    },
+    {
+      "count": 7,
+      "id": "agent",
+      "name": "Agent"
+    },
+    {
+      "count": 3,
+      "id": "skill",
+      "name": "Skill"
+    },
+    {
+      "count": 4,
+      "id": "harness",
+      "name": "Harness"
+    }
+  ],
+  "checks": [
+    "27 profiles / 5 groups / 10 news",
+    "12 MCP tools / identical HTTP data",
+    "deep links / reload / focus",
+    "search / empty / reset / type",
+    "mobile directory / Escape / no overflow",
+    "AI preview and download",
+    "failure state"
+  ],
+  "screenshots": [
+    "desktop-kimi.png",
+    "mobile-harness.png"
+  ],
+  "deployment_id": "dpl_6JxddixiwfqcfNEnT7uw8ussrkaT",
+  "implementation_commit": "1d65611",
+  "checked_at": "2026-09-11T06:42:22.158002+00:00"
+}
