@@ -1,0 +1,1092 @@
+{
+  "claude-fable-5-text": {
+    "release_date": "2026-06-09",
+    "date_url": "https://artificialanalysis.ai/models/claude-fable-5",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-6-thinking": {
+    "release_date": "2026-02-05",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-4-6",
+    "date_basis": "matched_model_release"
+  },
+  "claude-fable-5.1-max-text": {
+    "release_date": "2026-09-01",
+    "date_url": "https://artificialanalysis.ai/models/claude-fable-5-1-low",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-7-thinking": {
+    "release_date": "2026-04-16",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-4-7-non-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "muse-spark-1.2-xhigh-text": {
+    "release_date": "2026-08-05",
+    "date_url": "https://artificialanalysis.ai/models/muse-spark-1-2",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-6": {
+    "release_date": "2026-02-05",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-4-6",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-7": {
+    "release_date": "2026-04-16",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-4-7",
+    "date_basis": "matched_model_release"
+  },
+  "skimaki-kwc6": {
+    "release_date": "2026-09-02",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-8-flash-medium",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-5-high-text": {
+    "release_date": "2026-07-24",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-5-high",
+    "date_basis": "matched_model_release"
+  },
+  "super-nova-ext-3tam-text": {
+    "release_date": "2026-07-09",
+    "date_url": "https://artificialanalysis.ai/models/muse-spark-1-1",
+    "date_basis": "matched_model_release"
+  },
+  "andwise-evfd": {
+    "release_date": "2026-08-13",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-7-flash",
+    "date_basis": "matched_model_release"
+  },
+  "kimi-k3-v3-text": {
+    "release_date": "2026-07-16",
+    "date_url": "https://artificialanalysis.ai/models/kimi-k3-low",
+    "date_basis": "matched_model_release"
+  },
+  "eureka": {
+    "release_date": "2026-04-08",
+    "date_url": "https://artificialanalysis.ai/models/muse-spark",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-5-max-text": {
+    "release_date": "2026-07-24",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-5-xhigh",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-3.1-pro-preview": {
+    "release_date": "2026-02-19",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-3-pro": {
+    "release_date": "2025-11-18",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-pro",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.6-sol-xhigh-text": {
+    "release_date": "2026-07-09",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-low",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-8-thinking-text": {
+    "release_date": "2026-05-28",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-4-8",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.5-high-text": {
+    "release_date": "2026-04-23",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-5",
+    "date_basis": "matched_model_release"
+  },
+  "glm-5.3": {
+    "release_date": "2026-08-18",
+    "date_url": "https://artificialanalysis.ai/models/glm-5-3",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-3.6-flash": {
+    "release_date": "2026-07-21",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-6-flash",
+    "date_basis": "matched_model_release"
+  },
+  "kinsley-mrp8": {
+    "release_date": "2026-08-03",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-8-max",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-3.5-flash-high-public": {
+    "release_date": "2026-05-19",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-5-flash",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.5-text": {
+    "release_date": "2026-04-23",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-5",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.4-high-no-system-prompt": {
+    "release_date": "2026-03-05",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-4-non-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.2-chat-latest": {
+    "release_date": "2026-02-10",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gemini-3.5-flash-medium": {
+    "release_date": "2026-05-19",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-5-flash",
+    "date_basis": "matched_model_release"
+  },
+  "glm-5.3-flash-text": {
+    "release_date": "2026-08-26",
+    "date_url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-3-flash": {
+    "release_date": "2025-12-17",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-flash",
+    "date_basis": "matched_model_release"
+  },
+  "melyora-9qr6": {
+    "release_date": "2026-05-19",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-7-max",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-8-text": {
+    "release_date": "2026-05-28",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-4-8",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-5-20251101-thinking-32k": {
+    "release_date": "2025-11-01",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "claude-sonnet-4-6": {
+    "release_date": "2026-02-17",
+    "date_url": "https://artificialanalysis.ai/models/claude-sonnet-4-6",
+    "date_basis": "matched_model_release"
+  },
+  "grok-4.20-beta-0309-reasoning": {
+    "release_date": "2026-03-10",
+    "date_url": "https://artificialanalysis.ai/models/grok-4-20-0309",
+    "date_basis": "matched_model_release"
+  },
+  "glm-5.2-text": {
+    "release_date": "2026-06-16",
+    "date_url": "https://artificialanalysis.ai/models/glm-5-2-non-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "grok-4.5-text": {
+    "release_date": "2026-07-08",
+    "date_url": "https://artificialanalysis.ai/models/grok-4-5",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-5-20251101": {
+    "release_date": "2025-11-01",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "mimo-v2.5-pro-text": {
+    "release_date": "2026-04-22",
+    "date_url": "https://artificialanalysis.ai/models/mimo-v2-5-pro",
+    "date_basis": "matched_model_release"
+  },
+  "zero-prism": {
+    "release_date": "2026-05-09",
+    "date_url": "https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/",
+    "date_basis": "official_release"
+  },
+  "gpt-5.6-terra-xhigh-text": {
+    "release_date": "2026-07-09",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-medium",
+    "date_basis": "matched_model_release"
+  },
+  "glm-5.1-text": {
+    "release_date": "2026-04-07",
+    "date_url": "https://artificialanalysis.ai/models/glm-5-1",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.4-no-system-prompt": {
+    "release_date": "2026-03-05",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-4-non-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "claude-sonnet-5-text": {
+    "release_date": "2026-06-30",
+    "date_url": "https://artificialanalysis.ai/models/claude-sonnet-5-high",
+    "date_basis": "matched_model_release"
+  },
+  "grok-4.6-high-text": {
+    "release_date": "2026-08-12",
+    "date_url": "https://artificialanalysis.ai/models/grok-4-6-medium",
+    "date_basis": "matched_model_release"
+  },
+  "kimi-k2.6-text": {
+    "release_date": "2026-04-20",
+    "date_url": "https://artificialanalysis.ai/models/kimi-k2-6",
+    "date_basis": "matched_model_release"
+  },
+  "kizen-beta": {
+    "release_date": "2026-04-20",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-6-max",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v4-pro-high-20260813-text": {
+    "release_date": "2026-08-13",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gemini-3-flash-thinking-minimal": {
+    "release_date": "2025-12-17",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-flash",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v4-pro-ch1-text": {
+    "release_date": "2026-04-24",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v4-pro-0424",
+    "date_basis": "matched_model_release"
+  },
+  "glm-5": {
+    "release_date": "2026-02-11",
+    "date_url": "https://artificialanalysis.ai/models/glm-5",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-3.5-flash-lite": {
+    "release_date": "2026-07-21",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-5-flash-lite",
+    "date_basis": "matched_model_release"
+  },
+  "claude-sonnet-4-5-20250929-thinking-32k": {
+    "release_date": "2025-09-29",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "hy3-tencent-cloud-text": {
+    "release_date": "2026-07-06",
+    "date_url": "https://artificialanalysis.ai/models/hy3",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3.7-plus": {
+    "release_date": "2026-06-01",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-7-plus",
+    "date_basis": "matched_model_release"
+  },
+  "claude-sonnet-4-5-20250929": {
+    "release_date": "2025-09-29",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "deepseek-v4-pro-ch1-thinking-text": {
+    "release_date": "2026-04-24",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v4-pro-0424-high",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.1-high": {
+    "release_date": "2025-11-13",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-1",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.6-luna-xhigh-text": {
+    "release_date": "2026-07-09",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-low",
+    "date_basis": "matched_model_release"
+  },
+  "pteronura-text": {
+    "release_date": "2026-04-02",
+    "date_url": "https://artificialanalysis.ai/models/gemma-4-31b",
+    "date_basis": "matched_model_release"
+  },
+  "kimi-k2.5-text": {
+    "release_date": "2026-01-27",
+    "date_url": "https://artificialanalysis.ai/models/kimi-k2-5",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-1-20250805-thinking-16k": {
+    "release_date": "2025-08-05",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gpt-5.3-chat-latest": {
+    "release_date": "2026-03-03",
+    "date_url": "https://openai.com/index/gpt-5-3-instant/",
+    "date_basis": "official_release"
+  },
+  "mimo-v2-pro": {
+    "release_date": "2026-03-18",
+    "date_url": "https://artificialanalysis.ai/models/mimo-v2-pro",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.4-mini-high": {
+    "release_date": "2026-03-17",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-4-mini-medium",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-1-20250805": {
+    "release_date": "2025-08-05",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gemini-2.5-pro": {
+    "release_date": "2025-06-05",
+    "date_url": "https://artificialanalysis.ai/models/gemini-2-5-pro",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-4.5-preview-2025-02-27": {
+    "release_date": "2025-02-27",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "qwen3.6-plus-text": {
+    "release_date": "2026-04-02",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-6-plus",
+    "date_basis": "matched_model_release"
+  },
+  "chatgpt-4o-latest-20250326": {
+    "release_date": "2025-03-26",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "grok-4.3-text": {
+    "release_date": "2026-04-30",
+    "date_url": "https://artificialanalysis.ai/models/grok-4-3-medium",
+    "date_basis": "matched_model_release"
+  },
+  "minimax-m3": {
+    "release_date": "2026-06-01",
+    "date_url": "https://artificialanalysis.ai/models/minimax-m3",
+    "date_basis": "matched_model_release"
+  },
+  "glm-4.7": {
+    "release_date": "2025-12-22",
+    "date_url": "https://artificialanalysis.ai/models/glm-4-7",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3.5-397b-a17b-text": {
+    "release_date": "2026-02-16",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-5-397b-a17b",
+    "date_basis": "matched_model_release"
+  },
+  "inkling-text": {
+    "release_date": "2026-07-15",
+    "date_url": "https://artificialanalysis.ai/models/inkling",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.1": {
+    "release_date": "2025-11-13",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-1",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v4-ch3-thinking-text": {
+    "release_date": "2026-04-24",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v4-flash-0420-high",
+    "date_basis": "matched_model_release"
+  },
+  "significant-otter-text": {
+    "release_date": "2026-04-02",
+    "date_url": "https://artificialanalysis.ai/models/gemma-4-26b-a4b",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.2-high": {
+    "release_date": "2025-12-11",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-2",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.2": {
+    "release_date": "2025-12-11",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-2",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3.8-27b": {
+    "release_date": "2026-08-14",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-8-27b-non-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v4-ch3-text": {
+    "release_date": "2026-04-24",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v4-flash-0420",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3-max-preview": {
+    "release_date": "2025-09-05",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-max-preview",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5-high": {
+    "release_date": "2025-08-07",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5",
+    "date_basis": "matched_model_release"
+  },
+  "mimo-v2.5-text": {
+    "release_date": "2026-04-22",
+    "date_url": "https://artificialanalysis.ai/models/mimo-v2-5-0424",
+    "date_basis": "matched_model_release"
+  },
+  "glm-5v-turbo": {
+    "release_date": "2026-04-01",
+    "date_url": "https://artificialanalysis.ai/models/glm-5v-turbo",
+    "date_basis": "matched_model_release"
+  },
+  "o3-2025-04-16": {
+    "release_date": "2025-04-16",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "kimi-k2.5-instant": {
+    "release_date": "2026-01-27",
+    "date_url": "https://artificialanalysis.ai/models/kimi-k2-5",
+    "date_basis": "matched_model_release"
+  },
+  "grok-4-1-fast-reasoning": {
+    "release_date": "2025-11-19",
+    "date_url": "https://artificialanalysis.ai/models/grok-4-1-fast-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "mimo-v2-omni": {
+    "release_date": "2026-03-19",
+    "date_url": "https://artificialanalysis.ai/models/mimo-v2-omni",
+    "date_basis": "matched_model_release"
+  },
+  "onyx-v1-4-33s7": {
+    "release_date": "2026-08-10",
+    "date_url": "https://artificialanalysis.ai/models/muse-glimmer",
+    "date_basis": "matched_model_release"
+  },
+  "mistral-medium-3.5-text": {
+    "release_date": "2026-04-29",
+    "date_url": "https://artificialanalysis.ai/models/mistral-medium-3-5",
+    "date_basis": "matched_model_release"
+  },
+  "may26-chatbot4-3x57": {
+    "release_date": "2026-06-04",
+    "date_url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-20250514-thinking-16k": {
+    "release_date": "2025-05-14",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "deepseek-v3.2": {
+    "release_date": "2025-12-01",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-2",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3.2-exp-thinking": {
+    "release_date": "2025-09-29",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-2-0925",
+    "date_basis": "matched_model_release"
+  },
+  "glm-4.6": {
+    "release_date": "2025-09-30",
+    "date_url": "https://artificialanalysis.ai/models/glm-4-6-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3-max-2025-09-23": {
+    "release_date": "2025-09-23",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "qwen3-235b-a22b-instruct-2507": {
+    "release_date": "2025-07-21",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3.2-thinking": {
+    "release_date": "2025-12-01",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-2",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3.2-exp": {
+    "release_date": "2025-09-29",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-2-0925",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-r1-0528": {
+    "release_date": "2025-05-28",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-r1",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3.1-terminus-thinking": {
+    "release_date": "2025-09-22",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-1-terminus-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3.1": {
+    "release_date": "2025-08-21",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-1-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3.5-122b-a10b": {
+    "release_date": "2026-02-24",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-5-122b-a10b-non-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3.1-thinking": {
+    "release_date": "2025-08-21",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-1-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "deep-octo": {
+    "release_date": "2026-03-18",
+    "date_url": "https://artificialanalysis.ai/models/minimax-m2-7",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3.1-terminus": {
+    "release_date": "2025-09-22",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-1-terminus-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-4.1-2025-04-14": {
+    "release_date": "2025-04-14",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "qwen3-vl-235b-a22b-instruct": {
+    "release_date": "2025-09-23",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "claude-opus-4-20250514": {
+    "release_date": "2025-05-14",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "mistral-large-3": {
+    "release_date": "2025-12-02",
+    "date_url": "https://artificialanalysis.ai/models/mistral-large-3",
+    "date_basis": "matched_model_release"
+  },
+  "claude-haiku-4-5-20251001": {
+    "release_date": "2025-10-01",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "hunyuan-hy3-preview-text": {
+    "release_date": "2026-04-23",
+    "date_url": "https://artificialanalysis.ai/models/hy3-preview",
+    "date_basis": "matched_model_release"
+  },
+  "glm-4.5": {
+    "release_date": "2025-07-28",
+    "date_url": "https://artificialanalysis.ai/models/glm-4.5",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-2.5-flash": {
+    "release_date": "2025-05-20",
+    "date_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3.5-27b": {
+    "release_date": "2026-02-24",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-5-27b",
+    "date_basis": "matched_model_release"
+  },
+  "inkling-small": {
+    "release_date": "2026-07-30",
+    "date_url": "https://artificialanalysis.ai/models/inkling-small",
+    "date_basis": "matched_model_release"
+  },
+  "grok-4-fast-reasoning": {
+    "release_date": "2025-09-19",
+    "date_url": "https://artificialanalysis.ai/models/grok-4-fast-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-2.5-flash-preview-09-2025": {
+    "release_date": "2025-09-25",
+    "date_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-preview-09-2025",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3-235b-a22b-no-thinking": {
+    "release_date": "2025-04-28",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.4-nano-high": {
+    "release_date": "2026-03-17",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-4-nano-medium",
+    "date_basis": "matched_model_release"
+  },
+  "o1-2024-12-17": {
+    "release_date": "2024-12-17",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "claude-sonnet-4-20250514-thinking-32k": {
+    "release_date": "2025-05-14",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "qwen3-next-80b-a3b-instruct": {
+    "release_date": "2025-09-11",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-next-80b-a3b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-r1": {
+    "release_date": "2025-05-28",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-r1",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3-0324": {
+    "release_date": "2025-03-25",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3-0324",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3.5-35b-a3b": {
+    "release_date": "2026-02-24",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-5-35b-a3b",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3-vl-235b-a22b-thinking": {
+    "release_date": "2025-09-23",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "step-3.5-flash": {
+    "release_date": "2026-02-02",
+    "date_url": "https://artificialanalysis.ai/models/step-3-5-flash-0202",
+    "date_basis": "matched_model_release"
+  },
+  "mimo-v2-flash": {
+    "release_date": "2025-12-16",
+    "date_url": "https://artificialanalysis.ai/models/mimo-v2-flash",
+    "date_basis": "matched_model_release"
+  },
+  "o4-mini-2025-04-16": {
+    "release_date": "2025-04-16",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "minimax-m2.5": {
+    "release_date": "2026-02-12",
+    "date_url": "https://artificialanalysis.ai/models/minimax-m2-5",
+    "date_basis": "matched_model_release"
+  },
+  "claude-sonnet-4-20250514": {
+    "release_date": "2025-05-14",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gpt-5-mini-high": {
+    "release_date": "2025-08-07",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-mini",
+    "date_basis": "matched_model_release"
+  },
+  "o1-preview": {
+    "release_date": "2024-09-12",
+    "date_url": "https://artificialanalysis.ai/models/o1-preview",
+    "date_basis": "matched_model_release"
+  },
+  "claude-3-7-sonnet-20250219-thinking-32k": {
+    "release_date": "2025-02-19",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "hunyuan-t1-20250711": {
+    "release_date": "2025-07-11",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "qwen3-coder-480b-a35b-instruct": {
+    "release_date": "2025-07-22",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-coder-480b-a35b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "mimo-v2-flash-thinking-v2": {
+    "release_date": "2025-12-16",
+    "date_url": "https://artificialanalysis.ai/models/mimo-v2-flash",
+    "date_basis": "matched_model_release"
+  },
+  "hunyuan-turbos-20250416": {
+    "release_date": "2025-04-16",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gpt-4.1-mini-2025-04-14": {
+    "release_date": "2025-04-14",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "glm-4.6v": {
+    "release_date": "2025-12-08",
+    "date_url": "https://artificialanalysis.ai/models/glm-4-6v",
+    "date_basis": "matched_model_release"
+  },
+  "solar-pro4-20260805": {
+    "release_date": "2026-08-06",
+    "date_url": "https://artificialanalysis.ai/models/solar-pro4",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3-235b-a22b": {
+    "release_date": "2025-04-28",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "qwen2.5-max": {
+    "release_date": "2025-01-28",
+    "date_url": "https://artificialanalysis.ai/models/qwen-2-5-max",
+    "date_basis": "matched_model_release"
+  },
+  "claude-3-5-sonnet-20241022": {
+    "release_date": "2024-10-22",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "glm-4.5-air": {
+    "release_date": "2025-07-28",
+    "date_url": "https://artificialanalysis.ai/models/glm-4-5-air",
+    "date_basis": "matched_model_release"
+  },
+  "claude-3-7-sonnet-20250219": {
+    "release_date": "2025-02-19",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "trinity-large-thinking": {
+    "release_date": "2026-04-01",
+    "date_url": "https://artificialanalysis.ai/models/trinity-large-thinking",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3-next-80b-a3b-thinking": {
+    "release_date": "2025-09-11",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-next-80b-a3b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "glm-4.7-flash-fireworks": {
+    "release_date": "2026-01-19",
+    "date_url": "https://artificialanalysis.ai/models/glm-4-7-flash",
+    "date_basis": "matched_model_release"
+  },
+  "grok-3-mini-high": {
+    "release_date": "2025-02-19",
+    "date_url": "https://artificialanalysis.ai/models/grok-3-mini-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "o3-mini-high": {
+    "release_date": "2025-01-31",
+    "date_url": "https://artificialanalysis.ai/models/o3-mini-high",
+    "date_basis": "matched_model_release"
+  },
+  "march26-chatbot1": {
+    "release_date": "2026-03-11",
+    "date_url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-v3": {
+    "release_date": "2024-12-26",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v3",
+    "date_basis": "matched_model_release"
+  },
+  "intellect-3": {
+    "release_date": "2025-11-27",
+    "date_url": "https://artificialanalysis.ai/models/intellect-3",
+    "date_basis": "matched_model_release"
+  },
+  "august26-chatbot1-fmme": {
+    "release_date": "2026-08-11",
+    "date_url": "https://artificialanalysis.ai/models/nemotron-3-5-lightning",
+    "date_basis": "matched_model_release"
+  },
+  "glm-4.5v": {
+    "release_date": "2025-08-11",
+    "date_url": "https://artificialanalysis.ai/models/glm-4-5v",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-oss-120b": {
+    "release_date": "2025-08-05",
+    "date_url": "https://artificialanalysis.ai/models/gpt-oss-120b",
+    "date_basis": "matched_model_release"
+  },
+  "hunyuan-turbos-20250226": {
+    "release_date": "2025-02-26",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "o3-mini": {
+    "release_date": "2025-01-31",
+    "date_url": "https://artificialanalysis.ai/models/o3-mini",
+    "date_basis": "matched_model_release"
+  },
+  "llama-3.1-nemotron-ultra-253b-v1": {
+    "release_date": "2025-04-07",
+    "date_url": "https://artificialanalysis.ai/models/llama-3-1-nemotron-ultra-253b-v1-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3-32b": {
+    "release_date": "2025-04-28",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-32b-instruct-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "mercury-2": {
+    "release_date": "2026-02-20",
+    "date_url": "https://artificialanalysis.ai/models/mercury-2",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-4o-2024-05-13": {
+    "release_date": "2024-05-13",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "minimax-m2": {
+    "release_date": "2025-10-26",
+    "date_url": "https://artificialanalysis.ai/models/minimax-m2",
+    "date_basis": "matched_model_release"
+  },
+  "ling-flash-2.0": {
+    "release_date": "2025-09-17",
+    "date_url": "https://artificialanalysis.ai/models/ling-flash-2-0",
+    "date_basis": "matched_model_release"
+  },
+  "claude-3-5-sonnet-20240620": {
+    "release_date": "2024-06-20",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "vantage": {
+    "release_date": "2026-08-25",
+    "date_url": "https://artificialanalysis.ai/models/granite-4-2-30b",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5-nano-high": {
+    "release_date": "2025-08-07",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-nano-minimal",
+    "date_basis": "matched_model_release"
+  },
+  "o1-mini": {
+    "release_date": "2024-09-12",
+    "date_url": "https://artificialanalysis.ai/models/o1-mini",
+    "date_basis": "matched_model_release"
+  },
+  "qwq-32b": {
+    "release_date": "2025-03-05",
+    "date_url": "https://artificialanalysis.ai/models/qwq-32b",
+    "date_basis": "matched_model_release"
+  },
+  "grok-2-2024-08-13": {
+    "release_date": "2024-08-13",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gpt-4o-2024-08-06": {
+    "release_date": "2024-08-06",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "olmo-3.1-32b-instruct": {
+    "release_date": "2026-01-13",
+    "date_url": "https://artificialanalysis.ai/models/olmo-3-1-32b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "molmo-2-8b": {
+    "release_date": "2025-12-11",
+    "date_url": "https://artificialanalysis.ai/models/molmo2-8b",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3-30b-a3b": {
+    "release_date": "2025-04-28",
+    "date_url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct-reasoning",
+    "date_basis": "matched_model_release"
+  },
+  "hunyuan-large-2025-02-10": {
+    "release_date": "2025-02-10",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gpt-4-turbo-2024-04-09": {
+    "release_date": "2024-04-09",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "claude-3-5-haiku-20241022": {
+    "release_date": "2024-10-22",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gpt-4.1-nano-2025-04-14": {
+    "release_date": "2025-04-14",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "claude-3-opus-20240229": {
+    "release_date": "2024-02-29",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "ring-flash-2.0": {
+    "release_date": "2025-09-19",
+    "date_url": "https://artificialanalysis.ai/models/ring-flash-2-0",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-4o-mini-2024-07-18": {
+    "release_date": "2024-07-18",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "gpt-oss-20b": {
+    "release_date": "2025-08-05",
+    "date_url": "https://artificialanalysis.ai/models/gpt-oss-20b",
+    "date_basis": "matched_model_release"
+  },
+  "mistral-large-2407": {
+    "release_date": "2024-07-24",
+    "date_url": "https://artificialanalysis.ai/models/mistral-large-2407",
+    "date_basis": "matched_model_release"
+  },
+  "hunyuan-standard-2025-02-10": {
+    "release_date": "2025-02-10",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "grok-2-mini-2024-08-13": {
+    "release_date": "2024-08-13",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "olmo-3-32b-think": {
+    "release_date": "2025-11-20",
+    "date_url": "https://artificialanalysis.ai/models/olmo-3-32b-think",
+    "date_basis": "matched_model_release"
+  },
+  "granite-4.1-8b": {
+    "release_date": "2026-04-29",
+    "date_url": "https://artificialanalysis.ai/models/granite-4-1-8b",
+    "date_basis": "matched_model_release"
+  },
+  "qwen2.5-72b-instruct": {
+    "release_date": "2024-09-19",
+    "date_url": "https://artificialanalysis.ai/models/qwen2-5-72b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "nimbus": {
+    "release_date": "2026-08-25",
+    "date_url": "https://artificialanalysis.ai/models/granite-4-2-3b",
+    "date_basis": "matched_model_release"
+  },
+  "jamba-1.5-large": {
+    "release_date": "2024-08-22",
+    "date_url": "https://artificialanalysis.ai/models/jamba-1-5-large",
+    "date_basis": "matched_model_release"
+  },
+  "solace": {
+    "release_date": "2026-08-25",
+    "date_url": "https://artificialanalysis.ai/models/granite-4-2-8b",
+    "date_basis": "matched_model_release"
+  },
+  "reka-core-20240904": {
+    "release_date": "2024-09-04",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "olmo-3.1-32b-think": {
+    "release_date": "2025-12-12",
+    "date_url": "https://artificialanalysis.ai/models/olmo-3-1-32b-think",
+    "date_basis": "matched_model_release"
+  },
+  "claude-3-sonnet-20240229": {
+    "release_date": "2024-02-29",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "reka-flash-20240904": {
+    "release_date": "2024-09-04",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "qwen2.5-coder-32b-instruct": {
+    "release_date": "2024-11-11",
+    "date_url": "https://artificialanalysis.ai/models/qwen2-5-coder-32b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-coder-v2": {
+    "release_date": "2024-06-17",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-coder-v2",
+    "date_basis": "matched_model_release"
+  },
+  "qwen2-72b-instruct": {
+    "release_date": "2024-06-07",
+    "date_url": "https://artificialanalysis.ai/models/qwen2-72b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "claude-3-haiku-20240307": {
+    "release_date": "2024-03-07",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "phi-4": {
+    "release_date": "2024-12-12",
+    "date_url": "https://artificialanalysis.ai/models/phi-4",
+    "date_basis": "matched_model_release"
+  },
+  "jamba-1.5-mini": {
+    "release_date": "2024-08-22",
+    "date_url": "https://artificialanalysis.ai/models/jamba-1-5-mini",
+    "date_basis": "matched_model_release"
+  },
+  "qwen1.5-110b-chat": {
+    "release_date": "2024-04-25",
+    "date_url": "https://artificialanalysis.ai/models/qwen1.5-110b-chat",
+    "date_basis": "matched_model_release"
+  },
+  "reka-flash-21b-20240226-online": {
+    "release_date": "2024-02-26",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "reka-flash-21b-20240226": {
+    "release_date": "2024-02-26",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "mistral-medium": {
+    "release_date": "2023-12-11",
+    "date_url": "https://artificialanalysis.ai/models/mistral-medium",
+    "date_basis": "matched_model_release"
+  },
+  "deepseek-llm-67b-chat": {
+    "release_date": "2023-11-29",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-llm-67b-chat",
+    "date_basis": "matched_model_release"
+  },
+  "openchat-3.5": {
+    "release_date": "2023-12-18",
+    "date_url": "https://artificialanalysis.ai/models/openchat-35",
+    "date_basis": "matched_model_release"
+  },
+  "qwq-32b-preview": {
+    "release_date": "2024-11-27",
+    "date_url": "https://artificialanalysis.ai/models/QwQ-32B-Preview",
+    "date_basis": "matched_model_release"
+  },
+  "palm-2": {
+    "release_date": "2023-05-10",
+    "date_url": "https://artificialanalysis.ai/models/palm-2",
+    "date_basis": "matched_model_release"
+  },
+  "mistral-7b-instruct": {
+    "release_date": "2023-09-27",
+    "date_url": "https://artificialanalysis.ai/models/mistral-7b-instruct",
+    "date_basis": "matched_model_release"
+  },
+  "gemini-3.1-flash-lite-preview": {
+    "release_date": "2026-03-03",
+    "date_url": "https://artificialanalysis.ai/models/gemini-3-1-flash-lite-preview",
+    "date_basis": "matched_model_release"
+  },
+  "gpt-5.5-instant": {
+    "release_date": "2026-05-05",
+    "date_url": "https://artificialanalysis.ai/models/gpt-5-5-instant-05-26",
+    "date_basis": "matched_model_release"
+  },
+  "qwen3.5-flash": {
+    "release_date": "2026-02-23",
+    "date_url": "https://help.aliyun.com/en/model-studio/qwen3-5-flash",
+    "date_basis": "source_version_date"
+  },
+  "beluga-0304-1": {
+    "release_date": "2026-02-10",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  },
+  "beluga-0213-1": {
+    "release_date": "2026-01-10",
+    "date_url": "https://arena.ai/leaderboard/text",
+    "date_basis": "source_version_date"
+  }
+}

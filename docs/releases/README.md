@@ -1,8 +1,10 @@
 # FieldToFit 版本导航
 
-当前网站运行 **FieldToFit v1.0.1**，地址为 [fieldtofit.top](https://fieldtofit.top)。公开读取已验收，生产维护写入与连续真实日周期仍待验；运行版本不等同全部 REQ 完成。
+当前网站运行 **FieldToFit v1.0.2**，地址为 [fieldtofit.top](https://fieldtofit.top)。公开读取已验收，生产维护写入与连续真实日周期仍待验；运行版本不等同全部 REQ 完成。
 
 ## 当前版本
+
+- [FieldToFit v1.0.2](v1.0.2.md)：2026 年 AA / Arena 图表、统一公司配色、直接名称与覆盖清单；移除 Epoch。
 
 - [FieldToFit v1.0.1](v1.0.1.md)：三来源图表、双页导读、解读默认可见、MCP 接入、移除旧展示入口；状态见版本验收。
 

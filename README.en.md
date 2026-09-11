@@ -21,7 +21,7 @@ The platform maintains sourced materials for researchers, engineers and students
 
 Ongoing-watch CW1 adds 27 profiles across model families, tools, agents, Skill collections and harnesses. Version tables, editorial notes and sources are shared with `curated_watch`; 12 curated MCP tools are available. [Validation and deployment status](docs/validation/2026-09-11-continuous-watch.md).
 
-**Current version: v1.0.1.** [Release and deployment status](docs/releases/v1.0.1.md): three-source charts, page introductions, visible editorial notes, MCP handoff and version rules.
+**Current version: v1.0.2.** [Release and deployment status](docs/releases/v1.0.2.md): 2026 AA / Arena scatterplots with 190 points, 12 consistent company colors, original model-name labels, filtering, zoom and explicit coverage gaps. Epoch has been removed. Of 359 entries dated to 2026, 169 lack usable coordinates; another 182 Arena entries have unconfirmed dates and are not assumed to be from 2026.
 
 The initial **v1.0.0** was verified on the public deployment on September 10, 2026: 27 published curated objects and 10 curated MCP tools. [Deployment evidence](docs/validation/2026-09-10-fieldtofit-brand.md).
 

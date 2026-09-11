@@ -3813,3 +3813,33 @@ h1 {
 #ai-materials { scroll-margin-top:110px; }
 .platform-hero textarea { width:100%; }
 @media(max-width:600px){.model-landscape{padding:1rem}.model-landscape h2{font-size:1.45rem}.landscape-tabs button{font-size:.73rem;padding:10px 4px}.landscape-models{grid-template-columns:1fr}.landscape-dialog{padding:.8rem}.landscape-plot svg{min-width:0}.landscape-explanation ul{padding-left:1.2rem}}
+
+/* v1.0.2: direct source labels, stable company colors and dense chart reading. */
+.landscape-chart-heading h3 span { color:var(--muted);font-size:.8em;margin-left:.4em; }
+.chart-company-legend { display:flex;flex-wrap:wrap;gap:6px;padding:12px 0; }
+.chart-company-legend button { display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:6px;padding:7px 9px;background:var(--surface);color:var(--text);font:inherit;font-size:.76rem;cursor:pointer; }
+.chart-company-legend button[aria-pressed="true"] { border-color:var(--green);background:var(--surface-soft);box-shadow:inset 0 0 0 1px var(--green); }
+.chart-company-legend i { height:9px;width:9px;border-radius:50%;flex-shrink:0; }
+.chart-company-legend small { color:var(--muted); }
+.chart-search { display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:.5rem 0; }
+.chart-search label { display:flex;align-items:center;flex:1;gap:10px;font-size:.8rem;min-width:0; }
+.chart-search input { flex:1;min-width:80px;width:100%;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:6px;padding:9px;font:inherit; }
+.chart-search button { padding:9px 0; }
+.chart-coverage,.landscape-hint { font-size:.76rem;color:var(--muted);line-height:1.7; }
+.landscape-plot { border:1px solid var(--line);border-radius:10px;background:#fff;margin:14px 0; }
+.landscape-plot svg,.landscape-dialog svg { background:#fff;color:#242b35; }
+.chart-model-name { font:500 14px Arial,sans-serif;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round; }
+.chart-point.selected .chart-model-name,.chart-point:focus-visible .chart-model-name { font-weight:700; }
+.chart-point.selected circle,.chart-point:focus-visible circle { stroke:#111;stroke-width:3; }
+.chart-interval { stroke-width:1.4;opacity:.45; }
+.chart-leader { stroke-width:.7;opacity:.38; }
+.model-landscape .chart-tick { font-size:16px;fill:#657077; }
+.model-landscape .chart-axis-title { font-size:19px;fill:#26333a; }
+.model-landscape .chart-credit { font-size:14px;fill:#657077; }
+.chart-table-org { display:block;font-weight:400;color:var(--muted);font-size:.75rem;margin-top:5px; }
+.landscape-empty { padding:3rem 1rem;text-align:center;line-height:1.8;background:var(--surface-soft);border-radius:8px; }
+.landscape-dialog { width:96vw;max-width:1500px;padding:1rem; }
+.landscape-dialog select { padding:6px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--text); }
+.landscape-zoom-scroll { max-height:62dvh;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);background:white; }
+.landscape-dialog .landscape-point-detail { margin:.5rem 0; }
+@media(max-width:600px){.chart-search label{flex-basis:100%}.chart-company-legend{gap:5px}.chart-company-legend button{font-size:.7rem;padding:7px}.landscape-dialog .landscape-chart-heading{flex-wrap:wrap}.landscape-dialog .landscape-chart-heading h3{font-size:1rem}.landscape-zoom-scroll{max-height:55dvh}.chart-coverage{font-size:.73rem}}

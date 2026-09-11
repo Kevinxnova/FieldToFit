@@ -30,7 +30,7 @@ jobs:
               with urllib.request.urlopen(req,timeout=45) as response:return response.read()
           assert b'FieldToFit' in read('/about')
           assert b'<svg' in read('/brand/logo-horizontal-ink.svg')
-          health=json.loads(read('/api/health')); assert health['version']=='v1.0.1'
+          health=json.loads(read('/api/health')); assert health['version']=='v1.0.2'
           print('Health and brand assets passed',flush=True)
           objects=json.loads(read('/api/v1/platform/objects?limit=20'))
           assert objects['total']>=27
@@ -38,8 +38,8 @@ jobs:
           tools=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':1,'method':'tools/list'}))['result']['tools']
           assert len(tools)==12 and all(t['name'].startswith('curated_') for t in tools)
           print('Read-only MCP tools:',len(tools))
-          init=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':2,'method':'initialize','params':{'protocolVersion':'2025-03-26','capabilities':{},'clientInfo':{'name':'FieldToFit-release-check','version':'1.0.1'}}}))['result']
-          assert init['serverInfo']=={'name':'fieldtofit','version':'1.0.1'}
+          init=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':2,'method':'initialize','params':{'protocolVersion':'2025-03-26','capabilities':{},'clientInfo':{'name':'FieldToFit-release-check','version':'1.0.2'}}}))['result']
+          assert init['serverInfo']=={'name':'fieldtofit','version':'1.0.2'}
           def call(name,args):
               result=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':3,'method':'tools/call','params':{'name':name,'arguments':args}}))['result']
               assert not result.get('isError'),result
@@ -61,6 +61,6 @@ jobs:
           assert bundle['coverage']['included_characters']>0
           assert call('curated_news',{})['total']==10
           assert call('curated_watch',{})['total']==27
-          charts=json.loads(read('/api/v1/platform/model-landscape')); assert len(charts['sources'])==3
-          print('All 12 public MCP tools and 3 chart sources returned usable content')
+          charts=json.loads(read('/api/v1/platform/model-landscape')); assert [s['id'] for s in charts['sources']]==['artificial-analysis','arena']
+          print('All 12 public MCP tools and 2 chart sources returned usable content')
           PY

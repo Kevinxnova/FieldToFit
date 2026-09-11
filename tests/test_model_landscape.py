@@ -10,14 +10,19 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     response = client.get('/api/v1/platform/model-landscape')
     assert response.status_code == 200
     body = response.json
-    assert [len(s['points']) for s in body['sources']] == [8, 8, 6]
-    aa, arena, epoch = body['sources']
+    assert [len(s['points']) for s in body['sources']] == [107, 83]
+    aa, arena = body['sources']
     assert aa['price_unit'] == 'usd_per_task'
     assert arena['source_updated_at'] == '2026-09-02'
-    assert aa['source_updated_at'] is None and epoch['source_updated_at'] is None
-    assert all(p['score_url'] == p['price_url'] for p in epoch['points'])
+    assert aa['source_updated_at'] is None
     assert arena['points'][0]['score_low'] < arena['points'][0]['score'] < arena['points'][0]['score_high']
     assert 'v4.3' in aa['score_label']
+    assert 'Style Control' in arena['score_label']
+    assert aa['coverage']['released_2026'] == 263 and arena['coverage']['released_2026'] == 96
+    assert len(aa['not_plotted']) == 156 and len(arena['not_plotted']) == 13
+    assert len(arena['undated']) == 182
+    assert all(p['release_date'].startswith('2026-') for s in body['sources'] for p in s['points'])
+    assert set(p['organization'] for p in aa['points']) == set(body['companies'])
 
 
 @pytest.mark.parametrize('mutate', [
@@ -26,6 +31,12 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     lambda d: d['sources'][0]['points'][0].update(score_url='https://127.0.0.1/private'),
     lambda d: d['sources'][0].update(source_updated_at='2099-01-01'),
     lambda d: d['sources'][1]['points'][0].update(score_low=2000),
+    lambda d: d['sources'][0]['points'][0].update(release_date='2025-12-31'),
+    lambda d: d['sources'][0]['points'][0].update(release_date=None),
+    lambda d: d['sources'][0]['points'][0].update(organization='Unknown'),
+    lambda d: d['sources'][0]['coverage'].update(released_2026=999),
+    lambda d: d['sources'][0]['not_plotted'][0].update(missing=[]),
+    lambda d: d['sources'][1]['undated'][0].update(release_date='2026-01-01'),
 ])
 def test_invalid_data_not_published(tmp_path, monkeypatch, mutate):
     data=copy.deepcopy(charts.snapshot());mutate(data)
@@ -40,7 +51,7 @@ def test_source_checks_do_not_publish_or_refresh_dates(monkeypatch):
         def __init__(self,url): self.status_code=403 if 'arena.ai' in url else 200
         def __enter__(self): return self
         def __exit__(self,*args): pass
-        def iter_bytes(self): yield b'<html>intelligence epoch capabilities index</html>'
+        def iter_bytes(self): yield b'<html>intelligence</html>'
     seen=[]
     def fetch(method,url,**kwargs):
         seen.append(url);assert kwargs['follow_redirects'] is False;assert 'Authorization' not in kwargs['headers'];return Response(url)
@@ -49,5 +60,26 @@ def test_source_checks_do_not_publish_or_refresh_dates(monkeypatch):
     assert result['status']=='partial'
     assert any(r.get('http_status')==403 for r in result['results'])
     assert any(r['status']=='available_review_required' for r in result['results'])
-    assert len(seen)==9
+    assert len(seen)==2
     assert charts.CONTENT_PATH.read_bytes()==original
+
+
+def test_source_names_and_missing_coordinates_remain_explicit():
+    aa, arena = charts.snapshot()['sources']
+    assert any(p['name'] == 'DeepSeek V4.1 Flash (max)' for p in aa['points'])
+    assert any(p['name'] == 'gpt-5.5-instant' and p['release_date'] == '2026-05-05' for p in arena['points'])
+    assert any(p['organization'] == 'Kimi' and p['source_organization'] == 'Moonshot' for p in arena['points'])
+    for source in (aa, arena):
+        for point in source['not_plotted']:
+            assert point['score'] is None or point['price'] is None or point['price'] <= 0
+        assert all(p['release_date'] is None for p in source['undated'])
+
+
+def test_candidate_parser_and_company_aliases_do_not_invent_numbers():
+    from scripts.maintenance.prepare_model_landscape import objects, number, company
+    stream = '1:' + json.dumps({'name':'original-name', 'price':'$undefined'}) + '\n'
+    html = '<script>self.__next_f.push(' + json.dumps([1, stream]) + ')</script>'
+    assert objects(html) == [{'name':'original-name', 'price':'$undefined'}]
+    assert number('$undefined') is None and number(float('nan')) is None and number(True) is None
+    assert number(0) == 0  # kept as missing log coordinate, never changed to a tiny fake cost
+    assert [company(x) for x in ['Moonshot', 'SpaceXAI', 'Z AI', 'Alibaba', 'Xiaomi', 'NVIDIA']] == ['Kimi', 'xAI', 'GLM', 'Qwen', 'MIMO', '其他']

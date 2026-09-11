@@ -1,0 +1,137 @@
+{
+  "checked_at": "2026-09-11T09:55:56.524111+00:00",
+  "base": "https://fieldtofit.top",
+  "version": "v1.0.2",
+  "chart_revision": "2026-09-11.2",
+  "coverage": {
+    "artificial-analysis": {
+      "missing_coordinates": 156,
+      "outside_year": 383,
+      "plotted": 107,
+      "released_2026": 263,
+      "source_models": 646,
+      "unconfirmed_date": 0
+    },
+    "arena": {
+      "missing_coordinates": 13,
+      "outside_year": 122,
+      "plotted": 83,
+      "released_2026": 96,
+      "source_models": 400,
+      "unconfirmed_date": 182
+    }
+  },
+  "snapshot_equals_local": true,
+  "assets": {
+    "/assets/index-BUUGxWGY.js": "04e703ef33ac0fbfb3468d4bb7b577fb101b9c1babe73d416a74a1527e087153",
+    "/assets/index-D6-I8UBg.css": "dd58654a501052e6f35b0e698b3cc4138b4b8e0b4bb5af68950092778097741e"
+  },
+  "mcp_server": {
+    "name": "fieldtofit",
+    "version": "1.0.2"
+  },
+  "mcp_tools": 12,
+  "deployment": {
+    "id": "dpl_3H692SKQ1Mz2UH8xhmDhXN1h3fou",
+    "readyState": "READY",
+    "url": "https://fieldtofit-gm8lsihga-kevinnova-projects.vercel.app"
+  },
+  "local_browser": {
+    "passed": true,
+    "base": "http://127.0.0.1:18004",
+    "version": "v1.0.2",
+    "checks": [
+      "two sources / Epoch URL fallback",
+      "190 exact source model labels / no overlaps",
+      "12 consistent company colors",
+      "fixed coordinates during filters / search / empty / reset",
+      "keyboard tabs / URL reload / point evidence",
+      "coverage lists / genuine dates",
+      "zoom / Escape focus / mobile pan / no page overflow",
+      "about and health version",
+      "chart failure preserves news and watch"
+    ],
+    "coverage": [
+      {
+        "source": "artificial-analysis",
+        "missing_coordinates": 156,
+        "outside_year": 383,
+        "plotted": 107,
+        "released_2026": 263,
+        "source_models": 646,
+        "unconfirmed_date": 0
+      },
+      {
+        "source": "arena",
+        "missing_coordinates": 13,
+        "outside_year": 122,
+        "plotted": 83,
+        "released_2026": 96,
+        "source_models": 400,
+        "unconfirmed_date": 182
+      }
+    ]
+  },
+  "public_browser": {
+    "passed": true,
+    "base": "https://fieldtofit.top",
+    "version": "v1.0.2",
+    "checks": [
+      "two sources / Epoch URL fallback",
+      "190 exact source model labels / no overlaps",
+      "12 consistent company colors",
+      "fixed coordinates during filters / search / empty / reset",
+      "keyboard tabs / URL reload / point evidence",
+      "coverage lists / genuine dates",
+      "zoom / Escape focus / mobile pan / no page overflow",
+      "about and health version",
+      "chart failure preserves news and watch"
+    ],
+    "coverage": [
+      {
+        "source": "artificial-analysis",
+        "missing_coordinates": 156,
+        "outside_year": 383,
+        "plotted": 107,
+        "released_2026": 263,
+        "source_models": 646,
+        "unconfirmed_date": 0
+      },
+      {
+        "source": "arena",
+        "missing_coordinates": 13,
+        "outside_year": 122,
+        "plotted": 83,
+        "released_2026": 96,
+        "source_models": 400,
+        "unconfirmed_date": 182
+      }
+    ]
+  },
+  "source_check": {
+    "status": "success",
+    "interval_days": 1,
+    "snapshot_revision": "2026-09-11.2",
+    "results": [
+      {
+        "source": "artificial-analysis",
+        "url": "https://artificialanalysis.ai/leaderboards/models",
+        "checked_at": "2026-09-11T09:53:06.190123Z",
+        "status": "available_review_required",
+        "page_sha256": "99d4ae9f3ca963d23d61251d350dc20801b0e86f3e8ef0f03a6eb8ead30f69af"
+      },
+      {
+        "source": "arena",
+        "url": "https://arena.ai/leaderboard/text",
+        "checked_at": "2026-09-11T09:53:06.190398Z",
+        "status": "available_review_required",
+        "page_sha256": "8b02492c875222bbda19065644e6c20865e3fd9018c24555f3edf6be38c27433"
+      }
+    ],
+    "scope": "Public source availability only. Review scores, configuration, price and source dates before publishing a new version; snapshot unchanged."
+  },
+  "pytest": {
+    "passed": 203,
+    "skipped": 1
+  }
+}

@@ -1,6 +1,6 @@
 # FieldToFit 后续规划
 
-2026-09-11 · P3 文档基线 · 当前运行 v1.0.1。[项目目标](docs/product/goals.md)与[REQ list](docs/product/requirements.md)是现行依据。
+2026-09-11 · P3 文档基线 · 当前运行 v1.0.2。[项目目标](docs/product/goals.md)与[REQ list](docs/product/requirements.md)是现行依据。
 
 ## 当前状态
 
@@ -27,6 +27,6 @@
 
 公开账户待开放；AI 应用案例 pending。类型用于辅助搜索；个人任务的比较、适配和执行由用户自己的 AI 完成。旧接口及仍被调用的脚本列入[兼容清单](docs/architecture/repository.md)，不因旧名称而删除。
 
-[当前版本](docs/releases/v1.0.1.md) · [验收证据](docs/validation/2026-09-11-v1.0.1.md) · [Metis 历史](docs/archive/README.md)。
+[当前版本](docs/releases/v1.0.2.md) · [验收证据](docs/validation/2026-09-11-v1.0.2.md) · [Metis 历史](docs/archive/README.md)。
 
-本次 v1.0.1：三来源图表、双页导读、默认解读与 MCP 交接已实现；后续重点包括图表来源逐点维护和覆盖扩充，日检查可用性不等于自动更新评分。
+本次 v1.0.2：移除 Epoch AI，AA / Arena 按公司配色、直接模型名称标注和筛选已实现；2026 年已确认 359 个来源条目，190 个可绘制，169 个缺少坐标。Arena 另有 182 个日期待确认条目（不等于 182 个今年模型）。后续继续补日期依据与来源缺项；日检查可用性不等于自动更新评分。

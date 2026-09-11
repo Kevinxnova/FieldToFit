@@ -1,6 +1,6 @@
 # FieldToFit REQ list · 平台基线 P3
 
-更新日期：2026-09-11。**现行需求与状态唯一入口。** 当前应用版本 v1.0.1。P3 + CW1 已实现 10 条近期动态、五类 27 个持续关注主体、结构化版本/技能表、分点解读、页内目录及同源 curated_watch；精选 MCP 共 12 项。原有数据库及兼容 API 保留，页面删除旧归档/资料库入口。新增三来源模型图表与双页导读；见[本版验收](../validation/2026-09-11-v1.0.1.md)。[本轮验收与部署状态](../validation/2026-09-11-continuous-watch.md)。来源跟踪表、完整原文采集、统一对象关系及持续运营仍未完成。
+更新日期：2026-09-11。**现行需求与状态唯一入口。** 当前应用版本 v1.0.2。P3 + CW1 已实现 10 条近期动态、五类 27 个持续关注主体、结构化版本/技能表、分点解读、页内目录及同源 curated_watch；精选 MCP 共 12 项。原有数据库及兼容 API 保留，页面删除旧归档/资料库入口。两来源 2026 年模型图表、公司配色与直接名称标注已实现；保留双页导读；见[本版验收](../validation/2026-09-11-v1.0.2.md)。[本轮验收与部署状态](../validation/2026-09-11-continuous-watch.md)。来源跟踪表、完整原文采集、统一对象关系及持续运营仍未完成。
 
 [项目立意](goals.md) · [三页方案与文案](pages.md) · [资料与读取契约](data-contract.md) · [验收](acceptance.md) · [路线图](../../ROADMAP.md)
 
@@ -25,7 +25,7 @@
 | [REQ-Y-01](requirements/for-you.md#req-y-01) | For you 本期速览 | .01–.04 | 部分实现；范围与缺口见子项 | S2 |
 | [REQ-Y-02](requirements/for-you.md#req-y-02) | For you 动态与持续关注 | .01–.04 | 部分实现；范围与缺口见子项 | S2 |
 | [REQ-Y-04](requirements/for-you.md#req-y-04) | For you 页内目录与阅读定位 | .01–.04 | 已实现并通过本地及公网页面验收 | S2 |
-| [REQ-Y-05](requirements/for-you.md#req-y-05) | 模型能力与价格三来源图表 | .01–.04 | 已实现；连续真实日维护待验 | S2 |
+| [REQ-Y-05](requirements/for-you.md#req-y-05) | 模型能力与价格两来源图表 | .01–.04 | 已实现；连续真实日维护待验 | S2 |
 | [REQ-Y-03](requirements/for-you.md#req-y-03) | 档案详情与交给我的 AI | .01–.04 | 部分实现；范围与缺口见子项 | S2–S3 |
 | [REQ-AI-01](requirements/for-ai.md#req-ai-01) | For your AI 入口与资料索引 | .01–.04 | 部分实现；范围与缺口见子项 | S3 |
 | [REQ-AI-02](requirements/for-ai.md#req-ai-02) | 分层读取与中性资料包 | .01–.04 | 部分实现；范围与缺口见子项 | S3 |
