@@ -19,6 +19,8 @@ The platform maintains sourced materials for researchers, engineers and students
 
 ## Current release
 
+Ongoing-watch CW1 adds 27 profiles across model families, tools, agents, Skill collections and harnesses. Version tables, editorial notes and sources are shared with `curated_watch`; 12 curated MCP tools are available. [Validation and deployment status](docs/validation/2026-09-11-continuous-watch.md).
+
 **v1.0.0**, verified on the public deployment on September 10, 2026: 27 published curated objects and 10 curated MCP tools. [Deployment evidence](docs/validation/2026-09-10-fieldtofit-brand.md).
 
 | Entry | Available now | Next work |

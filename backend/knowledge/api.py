@@ -703,3 +703,9 @@ def platform_intake_publish():
 def platform_news():
     from backend.knowledge.platform_news import news
     return jsonify(news(**{k: request.args[k] for k in ("q", "id", "revision") if k in request.args}))
+
+
+@bp.get("/platform/watch")
+def platform_watch():
+    from backend.knowledge.platform_watch import watch
+    return jsonify(watch(**{k: request.args[k] for k in ("q", "id", "type", "revision") if k in request.args}))

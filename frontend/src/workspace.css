@@ -3746,3 +3746,33 @@ h1 {
   .news-card h4 { font-size: 19px; }
   .dossier-section .platform-card details dl { grid-template-columns: 1fr; }
 }
+
+/* Ongoing-watch profiles: readable tables contained within the reading column. */
+.watch-section,.watch-group,.watch-card { min-width:0; }
+.watch-section { margin-top:3rem; }
+.watch-group { margin:2.5rem 0; }
+.watch-group h3 { font-size:1.55rem; }
+.watch-list { display:grid;gap:1rem; }
+.watch-card { padding:1.4rem;border:1px solid var(--line, #ddd);border-radius:14px;scroll-margin-top:110px; }
+.watch-card h4 { font-size:1.4rem;margin:.3rem 0 .7rem; }
+.watch-card details { margin:1rem 0; }
+.watch-card summary { cursor:pointer;line-height:1.7; }
+.watch-intro { line-height:1.8; }
+.watch-notes { margin:1.2rem 0;padding:1rem;background:var(--surface-2,rgba(128,128,128,.07));border-radius:10px; }
+.watch-notes h5 { font-size:1rem;margin:0 0 .8rem; }
+.watch-notes li+li { margin-top:1rem; }
+.watch-notes p { margin:.35rem 0; }
+.watch-table-scroll { max-width:100%;overflow:auto;margin:1.3rem 0;border:1px solid var(--line,#ddd);border-radius:8px; }
+.watch-table { width:100%;min-width:660px;border-collapse:collapse;font-size:.9rem;line-height:1.7; }
+.watch-table th,.watch-table td { padding:.8rem;vertical-align:top;text-align:left;border-bottom:1px solid var(--line,#ddd);min-width:115px;overflow-wrap:anywhere; }
+.watch-table th { font-weight:600;background:rgba(128,128,128,.08); }
+.watch-table td:first-child { font-weight:600; }
+.watch-card p,.watch-card li { overflow-wrap:anywhere; }
+.watch-attention { font-size:.85rem; }
+.watch-toc-group { margin:.5rem 0; }
+.watch-toc-group summary { cursor:pointer;font-size:.78rem;padding:.2rem .7rem; }
+.watch-toc-group details { margin:0; }
+.watch-ai select { display:block;width:100%;margin:.6rem 0 1rem; }
+.watch-group h3 { scroll-margin-top:110px; }
+.sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+@media(max-width:700px){.watch-card{padding:1rem}.watch-table{font-size:.82rem}.watch-card h4{font-size:1.2rem}.watch-notes{padding:.8rem}.watch-notes ul{padding-left:1.1rem}.watch-section .platform-search{flex-wrap:wrap}.watch-section .platform-search select{max-width:100%}}

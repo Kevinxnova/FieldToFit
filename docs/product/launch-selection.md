@@ -2,7 +2,11 @@
 
 2026-09-11 · 用户确认 P3 方案后实现。当前首发动态为 **10 条**，原 D-01～D-09 加入 D-10 DeepSeek-V4.1-Flash；完整发布内容见[新闻文件](../../backend/knowledge/content/news.json)。资源档案沿用数据库内已审核集合，新闻不是数据库草稿。
 
-## 已实现的阅读结构
+## CW1 持续关注内容更新
+
+用户随后确认按模型、工具、Agent、Skill、Harness 展开“持续关注”。[CW1 具体内容稿](continuous-watch/README.md)已准备 27 个主体的简介、版本 / 技能表、分点解读和来源，**已获用户确认并接入网页 / MCP**，替代原先平铺资源档案作为主展示。原数据库 27 项移至折叠原文库，与本批主体不是同一集合。[本轮验收及部署状态](../validation/2026-09-11-continuous-watch.md)。
+
+## P3 首次实现记录（CW1 前）
 
 - 近期动态：本期速览最多 5 条一句话提要，发布与更新展示全部动态。
 - 完整 FieldToFit 解读仅在对应动态中逐点展开，每点有标题、具体解释、原文位置及来源。
@@ -26,3 +30,7 @@ DeepSeek-V4.1-Flash 官方模型卡已在本轮读到；解读围绕编码/解�
 5. 当前日采集仍运行既有来源流程；将新动态接入后台 AI 整理、自动原文入库与独立新闻发布，是后续 REQ-F-04 / O-01 工作。不能把文件里的核验日期冒充每日自动核验成功。
 
 [本轮验收](../validation/2026-09-11-reading.md) · [REQ](requirements.md)
+
+## 持续关注维护
+
+审核后维护 backend/knowledge/content/watch.json，保留稳定 CW-ID、表格、解读、来源及核验口径。state 为 draft / published / withdrawn；只返回 published。网页与 curated_watch / GET /api/v1/platform/watch 同源，支持 q、id、type、revision。修订变化返回 409，撤回对象返回 404，失效站内关联转为不可用说明。更新后运行相关测试、前端构建及浏览器验收再部署；不是后台自动发表。

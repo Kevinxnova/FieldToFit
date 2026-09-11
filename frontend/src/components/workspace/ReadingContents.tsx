@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useWorkspace } from './UI';
 
 export type ReadingAnchor = { id: string; title: string };
-export function ReadingContents({ news, newsTotal, resources, resourceTotal, loading, filtered }: {
-  news: ReadingAnchor[]; newsTotal: number | null; resources: ReadingAnchor[]; resourceTotal: number | null; loading: boolean; filtered: boolean;
+export function ReadingContents({ news, newsTotal, resources, resourceTotal, loading, filtered, groups }: {
+  groups?: {id:string;title:string;items:ReadingAnchor[]}[]; news: ReadingAnchor[]; newsTotal: number | null; resources: ReadingAnchor[]; resourceTotal: number | null; loading: boolean; filtered: boolean;
 }) {
   const { pick } = useWorkspace();
   const location = useLocation();
@@ -13,7 +13,7 @@ export function ReadingContents({ news, newsTotal, resources, resourceTotal, loa
   const [allNews, setAllNews] = useState(false);
   const [allResources, setAllResources] = useState(false);
   const mobileButton = useRef<HTMLButtonElement>(null);
-  const ids = ['recent-news', 'news-overview', 'news-releases', ...news.map(n => n.id), 'resource-dossiers', ...resources.map(r => r.id)];
+  const ids = ['recent-news', 'news-overview', 'news-releases', ...news.map(n => n.id), 'resource-dossiers', ...(groups||[]).map(g=>g.id), ...resources.map(r => r.id)];
   const signature = ids.join('|');
   useEffect(() => {
     let frame = 0;
@@ -67,12 +67,9 @@ export function ReadingContents({ news, newsTotal, resources, resourceTotal, loa
       {link({ id: 'news-releases', title: pick('发布与更新', 'Releases & updates') + ` · ${newsTotal ?? '—'}` })}
       <div className="reading-toc-items">{(allNews ? news : news.slice(0, 4)).map(n => link(n))}</div>
       {news.length > 4 && <button type="button" className="text-button" aria-expanded={allNews} onClick={() => setAllNews(v => !v)}>{pick(allNews ? '收起动态目录' : '展开其他动态', allNews ? 'Fewer entries' : 'All developments')}</button>}
-      {link({ id: 'resource-dossiers', title: pick('资源档案', 'Resource dossiers') + ` · ${loading ? '…' : resourceTotal ?? '—'}` }, true)}
-      <p className="muted">{loading ? pick('正在读取目录…', 'Loading…') : pick(filtered ? '当前筛选结果 · 本页' : '本页已加载档案', filtered ? 'Filtered results · this page' : 'Dossiers on this page')}</p>
-      <div className="reading-toc-items">{(allResources ? resources : resources.slice(0, 6)).map(r => link(r))}</div>
-      {resources.length > 6 && <button type="button" className="text-button" aria-expanded={allResources} onClick={() => setAllResources(v => !v)}>{pick(allResources ? '收起档案目录' : '展开本页全部档案', allResources ? 'Fewer dossiers' : 'All dossiers on this page')}</button>}
-      {!loading && resourceTotal === 0 && <p>{pick('没有匹配档案', 'No matching dossiers')}</p>}
-      {resourceTotal !== null && resourceTotal > resources.length && <p className="muted">{pick('其余档案可在正文翻页查看。', 'Use the dossier pagination to see more.')}</p>}
+      {link({ id: 'resource-dossiers', title: pick('持续关注', 'Ongoing watch') + ` · ${loading ? '…' : resourceTotal ?? '—'}` }, true)}
+      {groups ? <>{loading&&<p role="status">{pick('正在读取目录…','Loading…')}</p>}{filtered&&<p className="muted">{pick('当前筛选结果','Filtered results')}</p>}{groups.map(g=><div className="watch-toc-group" key={g.id}>{link(g)}<details><summary>{pick('查看对象','Show profiles')}</summary><div className="reading-toc-items">{g.items.map(i=>link(i))}</div></details></div>)}{!loading&&resourceTotal===0&&<p>{pick('没有匹配资料','No matching profiles')}</p>}</> : <><div className="reading-toc-items">{(allResources ? resources : resources.slice(0,6)).map(r=>link(r))}</div>{resources.length>6&&<button className="text-button" onClick={()=>setAllResources(v=>!v)}>{pick('展开 / 收起','Expand / collapse')}</button>}</>}
+
     </nav>
   </aside>;
 }

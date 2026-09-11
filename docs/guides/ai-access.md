@@ -75,3 +75,7 @@ FIELDTOFIT_MCP_URL=https://fieldtofit.top/api/mcp/curated .venv/bin/python -m ba
 ## 产品发布动态
 
 `curated_news` / `GET /api/v1/platform/news` 支持 q、id、revision，提供分点 FieldToFit 解读、出处与关联。新闻与数据库资源档案分别读取，原始新闻覆盖为 link_only；不将解读视为上游原文。版本不符返回 409 / news_revision_changed。维护见[首发说明](../product/launch-selection.md)。
+
+## 持续关注 CW1
+
+使用 curated_watch 读取与 For you 同源的五类 27 个主体。可传 q、id（如 CW-M04）、type（model / tool / agent / skill / harness）、revision。对应 GET /api/v1/platform/watch。每项含版本/技能表、中文整理、单独解读、来源和核验日；coverage 为 link_only。修订变化返回 409，重新读取；撤回返回 404。curated_search 继续读取独立原文库，不会把 CW-ID 当成旧数据库 ID。精选工具共 12 项，原 HTTP MCP 配置不变。

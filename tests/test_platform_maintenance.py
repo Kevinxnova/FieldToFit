@@ -86,7 +86,7 @@ def test_private_intake_and_public_mcp_scope(client):
     assert client.get('/api/v1/admin/platform/intake', headers=ADMIN).json['items']
     message = {'jsonrpc': '2.0', 'id': 1, 'method': 'tools/list'}
     listing = client.post('/api/mcp/curated', json=message, headers=MCP).json['result']['tools']
-    assert len(listing) == 11 and all(t['name'].startswith('curated_') for t in listing)
+    assert len(listing) == 12 and all(t['name'].startswith('curated_') for t in listing)
     assert client.post('/api/mcp', json=message, headers=MCP).json['result']['tools'] != listing
     message.update(method='tools/call', params={'name': 'task_context', 'arguments': {'goal': 'Run code'}})
     assert client.post('/api/mcp/curated', json=message, headers=MCP).json['result']['isError']

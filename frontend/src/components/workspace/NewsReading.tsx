@@ -41,7 +41,7 @@ export function NewsReading({ data, loading, error, reload }: { data: NewsCollec
         <ul className="news-points">{item.interpretation.map((point, i) => <li key={i}><h5>{point.title}</h5><p>{point.text}</p><p className="news-locator">{pick('原文位置：', 'Read in: ')}{point.locator}</p>{point.source_ids.map(id => { const source = item.sources.find(s => s.id === id); return source && <SourceLink key={id} url={source.url}>{pick('阅读原始材料', 'Read source')}</SourceLink>; })}</li>)}</ul>
         {item.note && <p className="muted">{item.note}</p>}
         <p className="news-meta">{pick('整理与解读：FieldToFit · 资料核验 ', 'Editorial: FieldToFit · Checked ')}{item.checked_at}</p>
-        <div className="news-related"><span>{pick('关联资料', 'Related materials')}</span>{item.related.map(r => <SourceLink key={r.id} url={r.url}>{r.id} · {r.name}</SourceLink>)}<Link to={'/for-you?q=' + encodeURIComponent(item.name) + '#resource-dossiers'}>{pick('查找站内档案', 'Find a dossier')}</Link></div>
+        <div className="news-related"><span>{pick('关联资料', 'Related materials')}</span>{item.related.map(r => <SourceLink key={r.id} url={r.url}>{r.id} · {r.name}</SourceLink>)}<Link to={'/for-you?q=' + encodeURIComponent(item.name) + '#resource-dossiers'}>{pick('查找持续关注', 'Find an ongoing profile')}</Link></div>
       </details>
       <div className="platform-actions"><button className="text-button" onClick={() => handoff(item)}>{pick('交给我的 AI', 'Give to my AI')}</button><button className="text-button" onClick={() => share(item)}>{pick('分享动态', 'Share')}</button><SourceLink url={item.sources[0]?.url}>{pick('官方来源', 'Official source')}</SourceLink></div>
     </article>)}</div>
