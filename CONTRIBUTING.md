@@ -8,7 +8,7 @@ Thanks for helping improve FieldToFit.
 2. Keep the change focused; separate unrelated fixes.
 3. Never add credentials, local databases, scraped production data, or logs.
 4. For a security issue, follow [SECURITY.md](SECURITY.md) instead of filing a public issue.
-5. Use the [current requirements](docs/product/requirements.md) and [roadmap](ROADMAP.md). Archived plans describe history, not current implementation instructions. The current P1 scope is For you, For your AI and About. The 18 requirements have 72 subrequirements; all legacy IDs retain mappings. The product showcase case is pending, and website-generated task comparisons/plans are outside the new core scope.
+5. Use the [current requirements](docs/product/requirements.md) and [roadmap](ROADMAP.md). Archived plans describe history, not current implementation instructions. The current scope is For you, For your AI and About. The 20 requirements have 80 subrequirements; all legacy IDs retain mappings. The product showcase case is pending, and website-generated task comparisons/plans are outside the new core scope.
 
 ## Development setup
 
@@ -51,3 +51,7 @@ and include screenshots for UI changes. By contributing, you agree that your
 work may be distributed under the repository's license.
 
 Keep supported compatibility routes and script entry points working when moving files. Put changes in the root CHANGELOG Unreleased section and follow the [release guide](docs/releases/README.md); do not mark unverified product requirements complete based only on technical sample output.
+
+## Versioning
+
+Every change-bearing delivery commit increments z and updates the changelog, release notes and current version references, including documentation or content changes. Minor (y) and major (x) increments require prior owner confirmation and an explanation of scope and impact. Follow the [version policy](docs/releases/versioning.md).

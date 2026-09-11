@@ -126,6 +126,8 @@ def run_daily(budget_seconds=180):
     from backend.knowledge.operations import track_run
     started = time.monotonic()
     with track_run('platform_daily') as report:
+        from backend.knowledge.model_landscape import check_sources
+        charts = check_sources()
         with get_db() as db:
             maintained = {r[0] for r in db.execute("SELECT DISTINCT r.source_id FROM knowledge_records r JOIN knowledge_selections s ON s.record_id=r.id "
                 "WHERE s.state!='withdrawn' AND EXISTS(SELECT 1 FROM knowledge_publications p WHERE p.record_id=r.id AND p.state='published')").fetchall()}
@@ -142,8 +144,8 @@ def run_daily(budget_seconds=180):
             pending = db.execute("SELECT count(*) FROM knowledge_platform_intake WHERE state='pending'").fetchone()[0]
             unhealthy = [s['id'] for s in sources if db.execute("SELECT 1 FROM knowledge_sources WHERE id=? AND status='success' "
                 "AND datetime(last_success_at)>=datetime('now','-1 day')", (s['id'],)).fetchone() is None]
-        report.update(status='success' if sources and not unhealthy and not any(r['status']=='deferred' for r in results) else 'partial',
-                      interval_days=1, results=results, pending_editorial=pending, unhealthy_sources=unhealthy,
+        report.update(status='success' if sources and charts['status'] == 'success' and not unhealthy and not any(r['status']=='deferred' for r in results) else 'partial',
+                      interval_days=1, model_landscape=charts, results=results, pending_editorial=pending, unhealthy_sources=unhealthy,
                       maintained_sources=len(sources), scope='Previously published maintained repositories only; discovery sources and unpublished candidates are separate. Collection success does not mean AI organization or publication completed')
     return report
 

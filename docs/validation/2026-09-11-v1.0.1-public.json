@@ -1,0 +1,191 @@
+{
+  "version": "1.0.1",
+  "date": "2026-09-11",
+  "deployment": {
+    "id": "dpl_6GnCGjUNdKBTUfCYTrfs9xYLotTE",
+    "url": "https://fieldtofit-ctb4zx8jq-kevinnova-projects.vercel.app",
+    "alias": "https://fieldtofit.top",
+    "status": "READY"
+  },
+  "pytest": {
+    "passed": 195,
+    "skipped": 1
+  },
+  "local_browser": {
+    "passed": true,
+    "base": "http://127.0.0.1:18003",
+    "version": "v1.0.1",
+    "checks": [
+      "3 sources / independent units / accurate dates",
+      "URL and keyboard tabs",
+      "point selection / enlargement / Escape focus",
+      "desktop and mobile / no page overflow",
+      "visible editorial points",
+      "removed legacy UI",
+      "MCP handoff / real service test / copy fallback",
+      "about and health version",
+      "chart failure preserves news"
+    ],
+    "screenshots": [
+      "desktop-aa.png",
+      "desktop-arena.png",
+      "mobile-epoch.png",
+      "mobile-ai.png"
+    ]
+  },
+  "public_browser": {
+    "passed": true,
+    "base": "https://fieldtofit.top",
+    "version": "v1.0.1",
+    "checks": [
+      "3 sources / independent units / accurate dates",
+      "URL and keyboard tabs",
+      "point selection / enlargement / Escape focus",
+      "desktop and mobile / no page overflow",
+      "visible editorial points",
+      "removed legacy UI",
+      "MCP handoff / real service test / copy fallback",
+      "about and health version",
+      "chart failure preserves news"
+    ],
+    "screenshots": [
+      "desktop-aa.png",
+      "desktop-arena.png",
+      "mobile-epoch.png",
+      "mobile-ai.png"
+    ]
+  },
+  "watch_regression": {
+    "passed": true,
+    "base": "https://fieldtofit.top",
+    "revision": "0cd8226818734d2c40fa7f84654ad0519167ad6e9c15a9821a935ef695b5bd2a",
+    "groups": [
+      {
+        "count": 9,
+        "id": "model",
+        "name": "模型"
+      },
+      {
+        "count": 4,
+        "id": "tool",
+        "name": "工具"
+      },
+      {
+        "count": 7,
+        "id": "agent",
+        "name": "Agent"
+      },
+      {
+        "count": 3,
+        "id": "skill",
+        "name": "Skill"
+      },
+      {
+        "count": 4,
+        "id": "harness",
+        "name": "Harness"
+      }
+    ],
+    "checks": [
+      "27 profiles / 5 groups / 10 news",
+      "12 MCP tools / identical HTTP data",
+      "deep links / reload / focus",
+      "search / empty / reset / type",
+      "mobile directory / Escape / no overflow",
+      "AI preview and download",
+      "failure state"
+    ],
+    "screenshots": [
+      "desktop-kimi.png",
+      "mobile-harness.png"
+    ]
+  },
+  "public_build": {
+    "passed": true,
+    "base": "https://fieldtofit.top",
+    "snapshot_revision": "2026-09-11.1",
+    "all_22_points_match": true,
+    "assets": [
+      {
+        "path": "/assets/index-5GDml0NG.js",
+        "sha256": "e02486d8d3338b097320c89befd55f7491725ccb89948d493edcac6ebf80c360"
+      },
+      {
+        "path": "/assets/index-B4HfC7G4.css",
+        "sha256": "5d5db12cab41320ed30a4d83a39830dd84cdd5c6ef0d6070976f2105fc4cc028"
+      }
+    ]
+  },
+  "source_check": {
+    "status": "success",
+    "interval_days": 1,
+    "snapshot_revision": "2026-09-11.1",
+    "results": [
+      {
+        "source": "artificial-analysis",
+        "url": "https://artificialanalysis.ai/leaderboards/models",
+        "checked_at": "2026-09-11T07:43:38.292029Z",
+        "status": "available_review_required",
+        "page_sha256": "22ad17c5418cf7f46dda90efa487fe54532e18e814c88abbef488a1fe83d11e9"
+      },
+      {
+        "source": "arena",
+        "url": "https://arena.ai/leaderboard/text",
+        "checked_at": "2026-09-11T07:43:38.292309Z",
+        "status": "available_review_required",
+        "page_sha256": "92204cf346ccce582c92d9cda5e38a3eac1291e0a9f421de301539ffcd23d0d5"
+      },
+      {
+        "source": "epoch",
+        "url": "https://epoch.ai/eci",
+        "checked_at": "2026-09-11T07:43:38.292384Z",
+        "status": "available_review_required",
+        "page_sha256": "b3f9f37cc689089ccacd0b6dfccd2e3b3c335309c86da1e5af698570825ecd72"
+      },
+      {
+        "source": "epoch",
+        "url": "https://epoch.ai/models/claude-opus-4-6",
+        "checked_at": "2026-09-11T07:43:38.292437Z",
+        "status": "available_review_required",
+        "page_sha256": "71fe2d55eff3be9c6b08945f35248137b37f255fb43da38da19887a00958206c"
+      },
+      {
+        "source": "epoch",
+        "url": "https://epoch.ai/models/claude-sonnet-4",
+        "checked_at": "2026-09-11T07:43:39.669298Z",
+        "status": "available_review_required",
+        "page_sha256": "f13857201f703fadff3265361aafb80554c1ddc5ba103f2133426e4d1dd70e57"
+      },
+      {
+        "source": "epoch",
+        "url": "https://epoch.ai/models/deepseek-v3-2",
+        "checked_at": "2026-09-11T07:43:40.028536Z",
+        "status": "available_review_required",
+        "page_sha256": "4dfd454ba6eb6da81f9234b00fbd4cfa8f113b2522b1786c8f11f3437292d482"
+      },
+      {
+        "source": "epoch",
+        "url": "https://epoch.ai/models/gemini-2-5-pro-jun-2025",
+        "checked_at": "2026-09-11T07:43:40.920310Z",
+        "status": "available_review_required",
+        "page_sha256": "482fe1fe0bdf6fc3c4eea9055e02eccb60b6f7197146b9e79141041261bbefe7"
+      },
+      {
+        "source": "epoch",
+        "url": "https://epoch.ai/models/gpt-5-4",
+        "checked_at": "2026-09-11T07:43:40.973089Z",
+        "status": "available_review_required",
+        "page_sha256": "3b0ab5592f69adce2c24636c316f858a547878fe5b31f47841c1c080b6a37ce4"
+      },
+      {
+        "source": "epoch",
+        "url": "https://epoch.ai/models/qwen-3-6-flash",
+        "checked_at": "2026-09-11T07:43:40.995053Z",
+        "status": "available_review_required",
+        "page_sha256": "fa5a58f71a914c2591e7df8ade76afb82fbd9ab93fd913dcb542fb026871076c"
+      }
+    ],
+    "scope": "Public source availability only. Review scores, configuration, price and source dates before publishing a new version; snapshot unchanged."
+  },
+  "scope": "Source check executed read-only without database writes. Daily production cycles, source-value automation and daily AI-client acceptance remain separate."
+}

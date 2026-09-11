@@ -1,0 +1,294 @@
+{
+  "schema_version": "fieldtofit.model-landscape.v1",
+  "revision": "2026-09-11.1",
+  "interval_days": 1,
+  "sources": [
+    {
+      "id": "artificial-analysis",
+      "name": "Artificial Analysis",
+      "source_url": "https://artificialanalysis.ai/leaderboards/models",
+      "source_updated_at": null,
+      "checked_at": "2026-09-11",
+      "score_label": "Artificial Analysis Intelligence Index v4.3",
+      "price_label": "每项评测任务成本（美元）",
+      "price_label_en": "Cost per benchmark task (USD)",
+      "price_unit": "usd_per_task",
+      "note": "从公开榜单选取 8 个不同价格与配置的模型点，非完整榜单。成本按 AA 各评测权重计算，包含输入、缓存、推理与答案；不能当作 API 每百万 token 单价。",
+      "note_en": "Eight selected models across costs and configurations, not the full leaderboard. AA task cost is weighted across benchmarks and includes input, caching, reasoning and answers; it is not token pricing.",
+      "rendering": "FieldToFit 绘制 · 来源公开数据摘录",
+      "rendering_en": "Drawn by FieldToFit · Selected public data",
+      "points": [
+        {
+          "name": "Claude Fable 5.1 (max with fallback)",
+          "organization": "Anthropic",
+          "score": 53.0,
+          "price": 7.63,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models",
+          "price_url": "https://artificialanalysis.ai/leaderboards/models",
+          "configuration": "保留模型名中的推理档位与 fallback；价格为 AA 加权评测任务成本。",
+          "configuration_en": "Reasoning effort and fallback are retained in the name. Price is the AA weighted cost per benchmark task."
+        },
+        {
+          "name": "GPT-6 Astra (max)",
+          "organization": "OpenAI",
+          "score": 53.0,
+          "price": 3.26,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models",
+          "price_url": "https://artificialanalysis.ai/leaderboards/models",
+          "configuration": "保留模型名中的推理档位与 fallback；价格为 AA 加权评测任务成本。",
+          "configuration_en": "Reasoning effort and fallback are retained in the name. Price is the AA weighted cost per benchmark task."
+        },
+        {
+          "name": "GPT-6 Astra (low)",
+          "organization": "OpenAI",
+          "score": 46.0,
+          "price": 0.82,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models",
+          "price_url": "https://artificialanalysis.ai/leaderboards/models",
+          "configuration": "保留模型名中的推理档位与 fallback；价格为 AA 加权评测任务成本。",
+          "configuration_en": "Reasoning effort and fallback are retained in the name. Price is the AA weighted cost per benchmark task."
+        },
+        {
+          "name": "GLM-5.3 (max)",
+          "organization": "Z AI",
+          "score": 45.0,
+          "price": 2.01,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models",
+          "price_url": "https://artificialanalysis.ai/leaderboards/models",
+          "configuration": "保留模型名中的推理档位与 fallback；价格为 AA 加权评测任务成本。",
+          "configuration_en": "Reasoning effort and fallback are retained in the name. Price is the AA weighted cost per benchmark task."
+        },
+        {
+          "name": "Kimi K3 (max)",
+          "organization": "Kimi",
+          "score": 44.0,
+          "price": 2.0,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models",
+          "price_url": "https://artificialanalysis.ai/leaderboards/models",
+          "configuration": "保留模型名中的推理档位与 fallback；价格为 AA 加权评测任务成本。",
+          "configuration_en": "Reasoning effort and fallback are retained in the name. Price is the AA weighted cost per benchmark task."
+        },
+        {
+          "name": "GLM-5.3-Flash",
+          "organization": "Z AI",
+          "score": 42.0,
+          "price": 0.25,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models",
+          "price_url": "https://artificialanalysis.ai/leaderboards/models",
+          "configuration": "保留模型名中的推理档位与 fallback；价格为 AA 加权评测任务成本。",
+          "configuration_en": "Reasoning effort and fallback are retained in the name. Price is the AA weighted cost per benchmark task."
+        },
+        {
+          "name": "Gemini 3.8 Flash (high)",
+          "organization": "Google",
+          "score": 41.0,
+          "price": 1.24,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models",
+          "price_url": "https://artificialanalysis.ai/leaderboards/models",
+          "configuration": "保留模型名中的推理档位与 fallback；价格为 AA 加权评测任务成本。",
+          "configuration_en": "Reasoning effort and fallback are retained in the name. Price is the AA weighted cost per benchmark task."
+        },
+        {
+          "name": "Qwen3.8-Flash-Next",
+          "organization": "Alibaba",
+          "score": 40.0,
+          "price": 0.37,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models",
+          "price_url": "https://artificialanalysis.ai/leaderboards/models",
+          "configuration": "保留模型名中的推理档位与 fallback；价格为 AA 加权评测任务成本。",
+          "configuration_en": "Reasoning effort and fallback are retained in the name. Price is the AA weighted cost per benchmark task."
+        }
+      ]
+    },
+    {
+      "id": "arena",
+      "name": "Arena",
+      "source_url": "https://arena.ai/leaderboard/text",
+      "source_updated_at": "2026-09-02",
+      "checked_at": "2026-09-11",
+      "score_label": "Text Arena · Overall",
+      "price_label": "输出单价（美元 / 百万 token）",
+      "price_label_en": "Output price (USD / 1M tokens)",
+      "price_unit": "usd_per_million_output_tokens",
+      "note": "选取 8 个模型展示公开页面中的用户偏好评分与输出单价；竖线保留来源 ± 区间，不把小分差解释为显著领先。不是完整排名或任务成本。",
+      "note_en": "Eight selected models from the public preference leaderboard. Vertical lines retain the source’s ± intervals; small differences do not establish a significant lead. This is not the full ranking or measured task cost.",
+      "rendering": "FieldToFit 绘制 · 来源公开数据摘录",
+      "rendering_en": "Drawn by FieldToFit · Selected public data",
+      "points": [
+        {
+          "name": "claude-fable-5",
+          "organization": "Anthropic",
+          "score": 1507,
+          "score_low": 1502,
+          "score_high": 1512,
+          "price": 50,
+          "score_url": "https://arena.ai/leaderboard/text",
+          "price_url": "https://arena.ai/leaderboard/text",
+          "configuration": "Text Arena · Overall；按来源页面显示的评分及 ± 区间，模型配置保留原名。",
+          "configuration_en": "Text Arena Overall, with the score and ± interval shown by the source; original model configuration retained."
+        },
+        {
+          "name": "claude-opus-4-6-high",
+          "organization": "Anthropic",
+          "score": 1505,
+          "score_low": 1501,
+          "score_high": 1509,
+          "price": 25,
+          "score_url": "https://arena.ai/leaderboard/text",
+          "price_url": "https://arena.ai/leaderboard/text",
+          "configuration": "Text Arena · Overall；按来源页面显示的评分及 ± 区间，模型配置保留原名。",
+          "configuration_en": "Text Arena Overall, with the score and ± interval shown by the source; original model configuration retained."
+        },
+        {
+          "name": "muse-spark-1.2 (xHigh)",
+          "organization": "Meta",
+          "score": 1499,
+          "score_low": 1489,
+          "score_high": 1509,
+          "price": 4.25,
+          "score_url": "https://arena.ai/leaderboard/text",
+          "price_url": "https://arena.ai/leaderboard/text",
+          "configuration": "Text Arena · Overall；按来源页面显示的评分及 ± 区间，模型配置保留原名。",
+          "configuration_en": "Text Arena Overall, with the score and ± interval shown by the source; original model configuration retained."
+        },
+        {
+          "name": "gemini-3.8-flash-high",
+          "organization": "Google",
+          "score": 1494,
+          "score_low": 1485,
+          "score_high": 1503,
+          "price": 3.75,
+          "score_url": "https://arena.ai/leaderboard/text",
+          "price_url": "https://arena.ai/leaderboard/text",
+          "configuration": "Text Arena · Overall；按来源页面显示的评分及 ± 区间，模型配置保留原名。 来源标注 Preliminary。",
+          "configuration_en": "Text Arena Overall, with the score and ± interval shown by the source; original model configuration retained. Marked preliminary by Arena."
+        },
+        {
+          "name": "gpt-5.6-sol-xhigh",
+          "organization": "OpenAI",
+          "score": 1483,
+          "score_low": 1478,
+          "score_high": 1488,
+          "price": 20,
+          "score_url": "https://arena.ai/leaderboard/text",
+          "price_url": "https://arena.ai/leaderboard/text",
+          "configuration": "Text Arena · Overall；按来源页面显示的评分及 ± 区间，模型配置保留原名。",
+          "configuration_en": "Text Arena Overall, with the score and ± interval shown by the source; original model configuration retained."
+        },
+        {
+          "name": "glm-5.3-max",
+          "organization": "Z AI",
+          "score": 1482,
+          "score_low": 1475,
+          "score_high": 1489,
+          "price": 4.4,
+          "score_url": "https://arena.ai/leaderboard/text",
+          "price_url": "https://arena.ai/leaderboard/text",
+          "configuration": "Text Arena · Overall；按来源页面显示的评分及 ± 区间，模型配置保留原名。",
+          "configuration_en": "Text Arena Overall, with the score and ± interval shown by the source; original model configuration retained."
+        },
+        {
+          "name": "qwen3.8-max",
+          "organization": "Alibaba",
+          "score": 1480,
+          "score_low": 1474,
+          "score_high": 1486,
+          "price": 6,
+          "score_url": "https://arena.ai/leaderboard/text",
+          "price_url": "https://arena.ai/leaderboard/text",
+          "configuration": "Text Arena · Overall；按来源页面显示的评分及 ± 区间，模型配置保留原名。",
+          "configuration_en": "Text Arena Overall, with the score and ± interval shown by the source; original model configuration retained."
+        },
+        {
+          "name": "glm-5.3-flash",
+          "organization": "Z AI",
+          "score": 1474,
+          "score_low": 1465,
+          "score_high": 1483,
+          "price": 0.25,
+          "score_url": "https://arena.ai/leaderboard/text",
+          "price_url": "https://arena.ai/leaderboard/text",
+          "configuration": "Text Arena · Overall；按来源页面显示的评分及 ± 区间，模型配置保留原名。",
+          "configuration_en": "Text Arena Overall, with the score and ± interval shown by the source; original model configuration retained."
+        }
+      ]
+    },
+    {
+      "id": "epoch",
+      "name": "Epoch AI",
+      "source_url": "https://epoch.ai/eci",
+      "source_updated_at": null,
+      "checked_at": "2026-09-11",
+      "score_label": "Epoch Capabilities Index (ECI)",
+      "price_label": "输出单价（美元 / 百万 token）",
+      "price_label_en": "Output price (USD / 1M tokens)",
+      "price_unit": "usd_per_million_output_tokens",
+      "note": "选取 6 个评分与价格可从同一模型页核对的模型，非最新模型全榜。ECI 为跨设置最佳成绩汇总，价格为 Epoch 所列模型价格；不是同一配置的性价比实测。",
+      "note_en": "Six models with scores and prices verified on the same model page, not a complete latest-model ranking. ECI combines best results across settings; prices are those listed by Epoch, not measured cost effectiveness for one configuration.",
+      "rendering": "FieldToFit 绘制 · 来源公开数据摘录",
+      "rendering_en": "Drawn by FieldToFit · Selected public data",
+      "points": [
+        {
+          "name": "Claude Sonnet 4",
+          "organization": "Anthropic",
+          "score": 142.0,
+          "price": 15.0,
+          "score_url": "https://epoch.ai/models/claude-sonnet-4",
+          "price_url": "https://epoch.ai/models/claude-sonnet-4",
+          "configuration": "ECI 为跨设置最佳分数汇总；输出单价取同一模型页，不代表以此价格完成某项测试的实际成本。",
+          "configuration_en": "ECI aggregates the best scores across settings. The same model page supplies the output price; this is not measured cost per task."
+        },
+        {
+          "name": "GPT-5.4",
+          "organization": "OpenAI",
+          "score": 157.0,
+          "price": 15.0,
+          "score_url": "https://epoch.ai/models/gpt-5-4",
+          "price_url": "https://epoch.ai/models/gpt-5-4",
+          "configuration": "ECI 为跨设置最佳分数汇总；输出单价取同一模型页，不代表以此价格完成某项测试的实际成本。",
+          "configuration_en": "ECI aggregates the best scores across settings. The same model page supplies the output price; this is not measured cost per task."
+        },
+        {
+          "name": "Gemini 2.5 Pro (Jun 2025)",
+          "organization": "Google",
+          "score": 145.0,
+          "price": 18.0,
+          "score_url": "https://epoch.ai/models/gemini-2-5-pro-jun-2025",
+          "price_url": "https://epoch.ai/models/gemini-2-5-pro-jun-2025",
+          "configuration": "ECI 为跨设置最佳分数汇总；输出单价取同一模型页，不代表以此价格完成某项测试的实际成本。",
+          "configuration_en": "ECI aggregates the best scores across settings. The same model page supplies the output price; this is not measured cost per task."
+        },
+        {
+          "name": "Claude Opus 4.6",
+          "organization": "Anthropic",
+          "score": 155.0,
+          "price": 25.0,
+          "score_url": "https://epoch.ai/models/claude-opus-4-6",
+          "price_url": "https://epoch.ai/models/claude-opus-4-6",
+          "configuration": "ECI 为跨设置最佳分数汇总；输出单价取同一模型页，不代表以此价格完成某项测试的实际成本。",
+          "configuration_en": "ECI aggregates the best scores across settings. The same model page supplies the output price; this is not measured cost per task."
+        },
+        {
+          "name": "DeepSeek-V3.2",
+          "organization": "DeepSeek",
+          "score": 146.0,
+          "price": 1.029,
+          "score_url": "https://epoch.ai/models/deepseek-v3-2",
+          "price_url": "https://epoch.ai/models/deepseek-v3-2",
+          "configuration": "ECI 为跨设置最佳分数汇总；输出单价取同一模型页，不代表以此价格完成某项测试的实际成本。",
+          "configuration_en": "ECI aggregates the best scores across settings. The same model page supplies the output price; this is not measured cost per task."
+        },
+        {
+          "name": "Qwen 3.6 Flash",
+          "organization": "Alibaba",
+          "score": 143.0,
+          "price": 1.125,
+          "score_url": "https://epoch.ai/models/qwen-3-6-flash",
+          "price_url": "https://epoch.ai/models/qwen-3-6-flash",
+          "configuration": "ECI 为跨设置最佳分数汇总；输出单价取同一模型页，不代表以此价格完成某项测试的实际成本。",
+          "configuration_en": "ECI aggregates the best scores across settings. The same model page supplies the output price; this is not measured cost per task."
+        }
+      ]
+    }
+  ]
+}

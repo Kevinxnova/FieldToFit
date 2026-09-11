@@ -77,8 +77,8 @@ def run():
         for child in children:
             if child.rsplit('.', 1)[0].upper() not in parents:
                 errors.append('Orphan subrequirement: ' + child)
-    if len(reqs) != 19 or len(set(reqs)) != 19 or len(subreqs) != 76 or len(set(subreqs)) != 76:
-        errors.append('P3 baseline requires 19 distinct requirements and 76 distinct subrequirements')
+    if len(reqs) != 20 or len(set(reqs)) != 20 or len(subreqs) != 80 or len(set(subreqs)) != 80:
+        errors.append('Current baseline requires 20 distinct requirements and 80 distinct subrequirements')
     for error in errors:
         print(error, file=sys.stderr)
     print(json.dumps({'version': version, 'documents': len(documents), 'local_links': link_count,

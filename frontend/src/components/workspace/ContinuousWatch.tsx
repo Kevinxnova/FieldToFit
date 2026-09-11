@@ -45,8 +45,9 @@ export function ContinuousWatch({result}:{result:{data:WatchCollection|null;load
       <div className="watch-list">{data.items.filter(i=>i.type===g.id).map(item=><article className="watch-card" id={watchAnchor(item.id)} tabIndex={-1} key={item.id}>
         <p className="news-meta">{item.id} · {pick('资料核验','Reviewed')} {item.checked_at}</p><h4>{item.name}</h4><p className="watch-intro">{item.introduction}</p>
         {item.attention&&<p className="watch-attention"><a href={item.attention.source_url} target="_blank" rel="noopener noreferrer">GitHub ★ {item.attention.display_value}</a> · {item.attention.observed_at} · {pick('仓库近似值','Approximate repository count')}</p>}
-        <details data-auto-expand><summary>{pick('查看具体内容与 FieldToFit 解读','Read details and FieldToFit notes')}</summary>
-          <div className="watch-notes"><h5>FieldToFit {pick('解读','notes')}</h5><ul>{item.interpretation.map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>
+        <div className="watch-notes"><h5>FieldToFit {pick('解读','notes')}</h5><ul>{item.interpretation.slice(0,2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>
+          <details data-auto-expand><summary>{pick('版本与更多资料','Versions and further reading')}</summary>
+          {item.interpretation.length>2&&<div className="watch-notes"><ul>{item.interpretation.slice(2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>}
           {item.blocks.map((b,i)=><Block key={i} block={b} name={item.name}/>)}
           <p className="muted">{pick('以上为官方材料整理与编辑解读，未进行运行实测；原始材料通过链接继续读取。','Based on reviewed official materials, not runtime tests. Follow links to read upstream sources.')}</p>
         </details>
@@ -65,6 +66,6 @@ export function WatchAI(){
     {result.data&&<><p>{result.data.total} {pick('个跟踪主体','profiles')} · {result.data.groups.map(g=>g.name+' '+g.count).join(' / ')}</p><label>{pick('查看持续关注资料','Inspect ongoing-watch profile')}<select aria-label={pick('查看持续关注资料','Inspect ongoing-watch profile')} value={selected} onChange={e=>setSelected(e.target.value)}>{result.data.groups.map(g=><optgroup key={g.id} label={g.name}>{result.data!.items.filter(i=>i.type===g.id).map(i=><option key={i.id} value={i.id}>{i.name}</option>)}</optgroup>)}</select></label>
     {item&&<><p>{item.introduction}</p><Link to={'/for-you#'+watchAnchor(item.id)}>{pick('打开人读内容','Read on For you')}</Link><WatchHandoff data={result.data} item={item}/><details><summary>{pick('查看机器可读资料','Preview machine-readable profile')}</summary><pre className="platform-original">{packageText(result.data,item)}</pre></details></>}
     <details><summary>{pick('下载全部持续关注资料','Download the complete watch collection')}</summary><WatchHandoff data={result.data}/></details></>}
-    <p className="muted">{pick('这些来源仅保留链接，中文整理与解读不冒充原文。现有原文库继续在下方读取；本集合随审核发布更新，核验日期不代表每日采集已成功。','Sources here are link-only. Editorial text is not upstream text. The stored-source library remains below. This reviewed collection updates on publication; review dates do not certify daily collection.')}</p>
+    <p className="muted">{pick('这些来源仅保留链接，中文整理与解读不冒充原文。本集合随审核发布更新，核验日期不代表每日采集已成功。','Sources here are link-only. Editorial text is not upstream text. This reviewed collection updates on publication; review dates do not certify daily collection.')}</p>
   </section>;
 }

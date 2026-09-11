@@ -21,7 +21,9 @@ The platform maintains sourced materials for researchers, engineers and students
 
 Ongoing-watch CW1 adds 27 profiles across model families, tools, agents, Skill collections and harnesses. Version tables, editorial notes and sources are shared with `curated_watch`; 12 curated MCP tools are available. [Validation and deployment status](docs/validation/2026-09-11-continuous-watch.md).
 
-**v1.0.0**, verified on the public deployment on September 10, 2026: 27 published curated objects and 10 curated MCP tools. [Deployment evidence](docs/validation/2026-09-10-fieldtofit-brand.md).
+**Current version: v1.0.1.** [Release and deployment status](docs/releases/v1.0.1.md): three-source charts, page introductions, visible editorial notes, MCP handoff and version rules.
+
+The initial **v1.0.0** was verified on the public deployment on September 10, 2026: 27 published curated objects and 10 curated MCP tools. [Deployment evidence](docs/validation/2026-09-10-fieldtofit-brand.md).
 
 | Entry | Available now | Next work |
 | --- | --- | --- |
@@ -44,7 +46,7 @@ Use a client supporting remote HTTP MCP. See [connection instructions](docs/guid
 
 Track [19 requirements and 76 subrequirements](docs/product/requirements.md), the [roadmap](ROADMAP.md) and [changelog](CHANGELOG.md). Historical Metis records are in the changelog appendix and archive.
 
-Future release tags use the `fieldtofit-v1.0.0` convention while the application displays v1.0.0. The existing `v1.0.0` tag belongs to Metis and keeps its original target. This cleanup does not create a new tag. Content editions are tracked separately from software releases.
+Future release tags use the `fieldtofit-v1.0.0` convention while the application displays its current version. The existing `v1.0.0` tag belongs to Metis and keeps its original target. Content revision IDs remain available for traceability; every delivery commit also increments the application patch version.
 
 ## Run locally
 
@@ -80,3 +82,5 @@ Open [localhost:5173/for-you](http://localhost:5173/for-you). A new database sta
 [Documentation](docs/README.md) · [Deployment](docs/guides/deployment.md) · [Content maintenance](docs/guides/content.md) · [Repository structure](docs/architecture/repository.md) · [Public brand assets](docs/guides/brand-assets.md) · [Contributing](CONTRIBUTING.md)
 
 Source code is [MIT licensed](LICENSE). Third-party materials retain their own terms. See the brand guide for the public asset inventory. Report factual errors, missing materials and AI retrieval issues through the repository.
+
+Every change-bearing delivery commit increments the patch version, including content and documentation. Minor and major changes require the owner’s prior confirmation. See [version policy](docs/releases/versioning.md).

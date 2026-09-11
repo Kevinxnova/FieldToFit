@@ -1,6 +1,6 @@
 # 架构与兼容边界
 
-当前为 **FieldToFit v1.0.0**，公开读取已部署验证。目录整理与仍在运行的兼容模块见[目录清单](repository.md)。精选实现：`backend/knowledge/platform.py` 复用对象/证据，新增配置、精选状态、发布快照三张表；本轮再加读快照、期次草稿和期次发布三表，见 `platform_updates.py`；API/MCP/网页共用已审快照。前端 `Platform.tsx` 承载 For you / For your AI / About，`CuratedReview.tsx` 承载对象审核，`EditionReview.tsx` 承载期次审核，`PlatformHistory.tsx` 展示期次与变化。目标与实际子集见[契约](../product/data-contract.md)和[平台指南](../guides/platform.md)。
+当前为 **FieldToFit v1.0.1**，公开读取已部署验证。目录整理与仍在运行的兼容模块见[目录清单](repository.md)。精选实现：`backend/knowledge/platform.py` 复用对象/证据，新增配置、精选状态、发布快照三张表；本轮再加读快照、期次草稿和期次发布三表，见 `platform_updates.py`；API/MCP/网页共用已审快照。前端 `Platform.tsx` 承载 For you / For your AI / About，`CuratedReview.tsx` 承载对象审核，`EditionReview.tsx` 承载期次审核，`PlatformHistory.tsx` 展示期次与变化。目标与实际子集见[契约](../product/data-contract.md)和[平台指南](../guides/platform.md)。
 
 ```text
 来源与官方材料
@@ -50,7 +50,7 @@ beta.2 已加入显式事务与失败回滚，并有模拟远程传输检查；�
 
 ## 版本与更新
 
-应用版本由 `backend/__init__.py` 与 frontend package/package-lock 保持一致；健康接口从后端版本读取。本版应用版本是 `1.0.0`，API 路径仍为 `/api/v1`，二者不是同一种版本号。协议版本单独由 MCP 实现定义。
+应用版本由 `backend/__init__.py` 与 frontend package/package-lock 保持一致；健康接口从后端版本读取。本版应用版本是 `1.0.1`，API 路径仍为 `/api/v1`，二者不是同一种版本号。协议版本单独由 MCP 实现定义。
 
 运行 `python scripts/maintenance/check_repository.py` 检查版本一致性、文档链接和前端相对导入。每次发布按 [版本维护说明](../releases/README.md) 执行。
 

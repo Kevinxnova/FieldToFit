@@ -37,13 +37,21 @@ export function NewsReading({ data, loading, error, reload }: { data: NewsCollec
     <div className="news-list">{data?.items.map(item => <article className="news-card" id={newsAnchor(item.id)} tabIndex={-1} key={item.id}>
       <p className="news-meta">{item.id} · {item.organization} · {item.source_published_at ? pick('来源发布 ', 'Source date ') + item.source_published_at : pick('首次发布日期待核实', 'First release date unconfirmed')}</p>
       <h4>{item.title}</h4><p>{item.summary}</p>
-      <details data-auto-expand><summary>{pick('阅读 FieldToFit 解读', 'Read FieldToFit notes')} · {item.interpretation.length} {pick('点', 'points')}</summary>
-        <ul className="news-points">{item.interpretation.map((point, i) => <li key={i}><h5>{point.title}</h5><p>{point.text}</p><p className="news-locator">{pick('原文位置：', 'Read in: ')}{point.locator}</p>{point.source_ids.map(id => { const source = item.sources.find(s => s.id === id); return source && <SourceLink key={id} url={source.url}>{pick('阅读原始材料', 'Read source')}</SourceLink>; })}</li>)}</ul>
-        {item.note && <p className="muted">{item.note}</p>}
-        <p className="news-meta">{pick('整理与解读：FieldToFit · 资料核验 ', 'Editorial: FieldToFit · Checked ')}{item.checked_at}</p>
-        <div className="news-related"><span>{pick('关联资料', 'Related materials')}</span>{item.related.map(r => <SourceLink key={r.id} url={r.url}>{r.id} · {r.name}</SourceLink>)}<Link to={'/for-you?q=' + encodeURIComponent(item.name) + '#resource-dossiers'}>{pick('查找持续关注', 'Find an ongoing profile')}</Link></div>
-      </details>
+      <div className="news-editorial"><h5>{pick('FieldToFit 解读','FieldToFit notes')}</h5>
+        <ul className="news-points">{item.interpretation.slice(0,2).map((point,i)=><NewsPoint key={i} point={point} sources={item.sources}/>)}</ul>
+        <details data-auto-expand><summary>{pick('更多解读与关联资料','More notes and related materials')}</summary>
+          {item.interpretation.length>2&&<ul className="news-points">{item.interpretation.slice(2).map((point,i)=><NewsPoint key={i} point={point} sources={item.sources}/>)}</ul>}
+          {item.note&&<p className="muted">{item.note}</p>}
+          <p className="news-meta">{pick('整理与解读：FieldToFit · 资料核验 ','Editorial: FieldToFit · Checked ')}{item.checked_at}</p>
+          <div className="news-related"><span>{pick('关联资料','Related materials')}</span>{item.related.map(r=><SourceLink key={r.id} url={r.url}>{r.id} · {r.name}</SourceLink>)}<Link to={'/for-you?q='+encodeURIComponent(item.name)+'#resource-dossiers'}>{pick('查找持续关注','Find an ongoing profile')}</Link></div>
+        </details>
+      </div>
       <div className="platform-actions"><button className="text-button" onClick={() => handoff(item)}>{pick('交给我的 AI', 'Give to my AI')}</button><button className="text-button" onClick={() => share(item)}>{pick('分享动态', 'Share')}</button><SourceLink url={item.sources[0]?.url}>{pick('官方来源', 'Official source')}</SourceLink></div>
     </article>)}</div>
   </section>;
+}
+
+function NewsPoint({point,sources}:{point:NewsItem['interpretation'][number];sources:NewsItem['sources']}) {
+  const {pick}=useWorkspace();
+  return <li><h5>{point.title}</h5><p>{point.text}</p><p className="news-locator">{pick('原文位置：','Read in: ')}{point.locator}</p>{point.source_ids.map(id=>{const source=sources.find(s=>s.id===id);return source&&<SourceLink key={id} url={source.url}>{pick('阅读原始材料','Read source')}</SourceLink>;})}</li>;
 }

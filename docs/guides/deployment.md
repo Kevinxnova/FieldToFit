@@ -1,6 +1,6 @@
 # 部署与升级
 
-当前运行代码为 FieldToFit v1.0.0，已部署到 https://fieldtofit.top，Vercel/Turso 公网读取和 10 项精选 MCP 工具已验；容器实际构建、生产维护写入/恢复和连续日周期的验收仍未完成，状态见 [REQ-O-03](../product/requirements/operations.md#req-o-03)。
+当前运行代码为 FieldToFit v1.0.1，已部署到 https://fieldtofit.top，Vercel/Turso 公网读取和 10 项精选 MCP 工具已验；容器实际构建、生产维护写入/恢复和连续日周期的验收仍未完成，状态见 [REQ-O-03](../product/requirements/operations.md#req-o-03)。
 
 ## 本地 SQLite 与单服务部署
 
@@ -51,7 +51,7 @@ macOS 的 `scripts/setup-mac.sh` 会安装依赖、初始化配置指定的数�
 3. 保留 `.env`、数据、日志和平台配置。不要用示例配置覆盖实际配置，也不要把根目录数据库直接覆盖到 data/。
 4. 验证新工作台、`/admin/curation`、MCP 和原脚本入口；检查是否出现新字段或配置需求。
 
-回滚时使用对应提交和相容的数据备份；本次整理没有做用户数据迁移，历史目录变化见 [beta.1 整理说明](../archive/metis/releases/v1.1.0-beta.1.md)，当前升级变化见 [FieldToFit v1.0.0 说明](../releases/v1.0.0.md)。
+回滚时使用对应提交和相容的数据备份；本次整理没有做用户数据迁移，历史目录变化见 [beta.1 整理说明](../archive/metis/releases/v1.1.0-beta.1.md)，当前升级变化见 [FieldToFit v1.0.1 说明](../releases/v1.0.1.md)。
 
 ## 每日运行监控
 

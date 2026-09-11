@@ -6,7 +6,8 @@
       "maxDuration": 300,
       "regions": [
         "hkg1"
-      ]
+      ],
+      "includeFiles": "backend/knowledge/content/**"
     },
     "api/cron.py": {
       "maxDuration": 300,

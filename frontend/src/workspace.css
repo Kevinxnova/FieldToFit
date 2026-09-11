@@ -3776,3 +3776,40 @@ h1 {
 .watch-group h3 { scroll-margin-top:110px; }
 .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
 @media(max-width:700px){.watch-card{padding:1rem}.watch-table{font-size:.82rem}.watch-card h4{font-size:1.2rem}.watch-notes{padding:.8rem}.watch-notes ul{padding-left:1.1rem}.watch-section .platform-search{flex-wrap:wrap}.watch-section .platform-search select{max-width:100%}}
+
+/* Model landscape: three independent scales with a shared reading interaction. */
+.model-landscape { margin-bottom:3rem;padding:1.5rem;border:1px solid var(--line);border-radius:16px;background:var(--surface);min-width:0; }
+.model-landscape h2 { font-size:1.8rem;margin:.4rem 0 1rem; }
+.model-landscape > p { line-height:1.8; }
+.landscape-tabs { display:flex;gap:4px;padding:5px;border-radius:10px;background:var(--surface-soft);margin:1.4rem 0; }
+.landscape-tabs button { flex:1;border:0;background:none;font:inherit;font-size:.85rem;padding:12px 8px;border-radius:7px;color:var(--muted);cursor:pointer; }
+.landscape-tabs button[aria-selected="true"] { background:var(--surface);color:var(--green);box-shadow:0 1px 5px #0001;font-weight:650; }
+.landscape-panel:focus-visible,.landscape-tabs button:focus-visible,.landscape-models button:focus-visible { outline:2px solid var(--green);outline-offset:3px; }
+.landscape-chart-heading { display:flex;justify-content:space-between;align-items:center;gap:1rem; }
+.landscape-chart-heading h3 { margin:0;font-size:1.2rem; }
+.landscape-scope { font-size:.83rem;color:var(--muted);line-height:1.8; }
+.landscape-plot { width:100%;overflow:hidden; }
+.landscape-plot svg,.landscape-dialog svg { display:block;width:100%;height:auto; }
+.chart-grid { stroke:var(--line);stroke-dasharray:3 5; }
+.chart-tick,.chart-credit { fill:var(--muted);font-size:12px; }
+.chart-axis-title { fill:var(--text);font-size:13px; }
+.chart-point { cursor:pointer;outline:none; }
+.chart-point.selected circle,.chart-point:focus-visible circle { stroke:var(--text);stroke-width:2; }
+.chart-point-number { fill:white;font-size:11px;font-weight:700;pointer-events:none; }
+.landscape-models { display:grid;grid-template-columns:1fr 1fr;gap:6px; }
+.landscape-models button { display:flex;gap:9px;align-items:center;text-align:left;min-width:0;border:1px solid transparent;border-radius:6px;padding:8px;background:transparent;color:var(--text);font:inherit;font-size:.78rem;cursor:pointer;overflow-wrap:anywhere; }
+.landscape-models button[aria-pressed="true"] { border-color:var(--green);background:var(--surface-soft); }
+.landscape-models span { display:grid;place-items:center;flex-shrink:0;width:21px;height:21px;border-radius:50%;color:white;font-size:11px; }
+.landscape-point-detail { margin:1rem 0;padding:1rem;background:var(--surface-soft);border-radius:8px;font-size:.85rem;line-height:1.7;overflow-wrap:anywhere; }
+.landscape-point-detail p { margin:.6rem 0; }
+.landscape-attribution { font-size:.75rem;line-height:1.7;color:var(--muted); }
+.landscape-attribution p { margin:.4rem 0; }
+.landscape-data,.landscape-explanation { margin-top:1.1rem;border-top:1px solid var(--line);padding-top:1rem;font-size:.85rem;line-height:1.8; }
+.landscape-data summary,.landscape-explanation summary { cursor:pointer;color:var(--green); }
+.landscape-explanation li+li { margin-top:.9rem; }
+.landscape-dialog { border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);width:min(1100px,94vw);max-width:94vw;max-height:90dvh;padding:1.5rem; }
+.landscape-dialog::backdrop { background:#0009; }
+.news-editorial > h5 { color:var(--green);font-size:.85rem;letter-spacing:.02em; }
+#ai-materials { scroll-margin-top:110px; }
+.platform-hero textarea { width:100%; }
+@media(max-width:600px){.model-landscape{padding:1rem}.model-landscape h2{font-size:1.45rem}.landscape-tabs button{font-size:.73rem;padding:10px 4px}.landscape-models{grid-template-columns:1fr}.landscape-dialog{padding:.8rem}.landscape-plot svg{min-width:0}.landscape-explanation ul{padding-left:1.2rem}}

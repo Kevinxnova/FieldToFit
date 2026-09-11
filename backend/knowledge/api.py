@@ -709,3 +709,9 @@ def platform_news():
 def platform_watch():
     from backend.knowledge.platform_watch import watch
     return jsonify(watch(**{k: request.args[k] for k in ("q", "id", "type", "revision") if k in request.args}))
+
+
+@bp.get('/platform/model-landscape')
+def platform_model_landscape():
+    from backend.knowledge.model_landscape import snapshot
+    return jsonify(snapshot())

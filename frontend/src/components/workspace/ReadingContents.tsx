@@ -8,19 +8,19 @@ export function ReadingContents({ news, newsTotal, resources, resourceTotal, loa
 }) {
   const { pick } = useWorkspace();
   const location = useLocation();
-  const [active, setActive] = useState('recent-news');
+  const [active, setActive] = useState('model-landscape');
   const [open, setOpen] = useState(false);
   const [allNews, setAllNews] = useState(false);
   const [allResources, setAllResources] = useState(false);
   const mobileButton = useRef<HTMLButtonElement>(null);
-  const ids = ['recent-news', 'news-overview', 'news-releases', ...news.map(n => n.id), 'resource-dossiers', ...(groups||[]).map(g=>g.id), ...resources.map(r => r.id)];
+  const ids = ['model-landscape', 'recent-news', 'news-overview', 'news-releases', ...news.map(n => n.id), 'resource-dossiers', ...(groups||[]).map(g=>g.id), ...resources.map(r => r.id)];
   const signature = ids.join('|');
   useEffect(() => {
     let frame = 0;
     const update = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        let current = 'recent-news';
+        let current = 'model-landscape';
         for (const id of signature.split('|')) {
           const node = document.getElementById(id);
           if (node && node.getBoundingClientRect().top <= 155) current = id;
@@ -62,6 +62,7 @@ export function ReadingContents({ news, newsTotal, resources, resourceTotal, loa
     <button ref={mobileButton} type="button" className="reading-toc-toggle" aria-expanded={open} aria-controls="reading-toc-links" onClick={() => setOpen(v => !v)}>{pick('本页目录', 'On this page')} <span>{open ? '−' : '+'}</span></button>
     <nav id="reading-toc-links" aria-label={pick('本页目录', 'On this page')} onKeyDown={e => { if (e.key === 'Escape') { setOpen(false); mobileButton.current?.focus(); } }}>
       <p className="reading-toc-label">{pick('本页内容', 'ON THIS PAGE')}</p>
+      {link({ id: 'model-landscape', title: pick('模型能力与价格', 'Model capability & pricing') }, true)}
       {link({ id: 'recent-news', title: pick('近期动态', 'Recent developments') }, true)}
       {link({ id: 'news-overview', title: pick('本期速览', 'At a glance') })}
       {link({ id: 'news-releases', title: pick('发布与更新', 'Releases & updates') + ` · ${newsTotal ?? '—'}` })}
