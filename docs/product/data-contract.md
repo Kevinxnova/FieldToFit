@@ -1,15 +1,15 @@
 # 资料模型与 AI 读取契约草案
 
-P2 · 2026-09-11。对应 [共享基础](requirements/foundation.md) 与 [AI 需求](requirements/for-ai.md)。**这是完整目标语义契约，不是当前接口声明。** 当前已实现 `metis.platform.v1` 子集（修订与字符偏移读取、固定快照索引、审核期次及精选变化），差异见[实际接口](../guides/platform.md)；Edition、稳定快照和精选变化基础已实现；章节级游标、独立材料失效等仍按 REQ 补齐。 开发时先映射已有表/字段，优先复用，避免另建一套重复知识库；现有 API 见[使用指南](../guides/ai-access.md)。
+P3 · 2026-09-11。对应 [共享基础](requirements/foundation.md) 与 [AI 需求](requirements/for-ai.md)。**这是完整目标语义契约，不是当前接口声明。** 当前已实现 `metis.platform.v1` 子集（修订与字符偏移读取、固定快照索引、审核期次及精选变化），差异见[实际接口](../guides/platform.md)；Edition、稳定快照和精选变化基础已实现；章节级游标、独立材料失效等仍按 REQ 补齐。 开发时先映射已有表/字段，优先复用，避免另建一套重复知识库；现有 API 见[使用指南](../guides/ai-access.md)。
 
-## P2 增量设计（尚未实现）
+## P3 增量设计与已实现子集
 
 优先复用现有 Object/Change/Edition，建立 Organization → Product → Version 的有证据关系；Event 关联产品/版本/资源，Resource 是可持续维护的档案。一个资源可被多条动态引用，不按栏目复制。
 
 - 动态补充事件日期、来源发布日期、平台发布日期、检查日期及日期可信度；不能用其中一个代替另一个。
-- 期次要点分为带引用的来源观点数组与 FieldToFit 编辑评价，保留作者、适用范围、未确认项和所引修订。
+- 当前 news 独立文件实现分点 interpretation、source_ids、locator、related、来源/核验日期，原文 link_only；GET /platform/news 与 curated_news 共用。原数据库期次保持兼容。
 - 来源表分跟踪主体和发现渠道；状态来自实际配置与成功检查，关注信号保留平台、观察窗口、数值口径与证据。
-- 人读与 AI 读同步以上字段；首发名单见[候选清单](launch-selection.md)。旧协议名 `metis.platform.v1` 是兼容标识，品牌更名不擅自改协议。
+- 人读与 AI 读同步以上字段；具体内容见[发布说明](launch-selection.md)。旧协议名 `metis.platform.v1` 是兼容标识，品牌更名不擅自改协议。
 
 ## 共用资料结构
 

@@ -21,10 +21,10 @@ The platform maintains sourced materials for researchers, engineers and students
 
 **v1.0.0**, verified on the public deployment on September 10, 2026: 27 published curated objects and 10 curated MCP tools. [Deployment evidence](docs/validation/2026-09-10-fieldtofit-brand.md).
 
-| Entry | Available now | Agreed next direction, not yet implemented |
+| Entry | Available now | Next work |
 | --- | --- | --- |
-| For you | Editorial editions, curated profiles, facts, source materials and exports | Edition highlights, significant company/product developments, selected resources |
-| For your AI | The same published collection through MCP/API, paged source text, revisions and bundles | Linked organizations, product families, versions and events; clearly attributed source claims and editorial comments |
+| For you | 10 developments, five highlights, resource dossiers and a responsive table of contents | Additional source materials and linked news/dossier identities |
+| For your AI | The same published news and dossiers through MCP/API, paged source text, revisions and bundles | Linked organizations, product families, versions and events; clearly attributed source claims and editorial comments |
 | About | Purpose, reading methods, maintenance principles and project status | Updated content scope and a supporting watchlist/source table |
 
 Checks run every **1 day**; publication depends on meaningful, reviewed changes. Accounts remain unavailable; application cases are pending. Production maintenance writes/recovery, three real daily cycles, everyday AI-client use and target-user acceptance remain open.
@@ -33,14 +33,14 @@ Checks run every **1 day**; publication depends on meaningful, reviewed changes.
 
 Public read-only MCP: [https://fieldtofit.top/api/mcp/curated](https://fieldtofit.top/api/mcp/curated).
 
-Use a client supporting remote HTTP MCP. See [connection instructions](docs/guides/ai-access.md). The curated endpoint exposes 10 tools; the older `/api/mcp` retains 19 tools for compatibility. Successful protocol checks do not establish compatibility with every client.
+Use a client supporting remote HTTP MCP. See [connection instructions](docs/guides/ai-access.md). The updated curated endpoint exposes 11 tools including curated_news; the older `/api/mcp` retains 20 tools for compatibility. Successful protocol checks do not establish compatibility with every client.
 
 ## Latest changes and planning
 
-- September 11: current documentation reorganized around FieldToFit; Metis history archived; only five public website brand images retained; P2 requirements documented. The [specific launch content proposal](docs/product/launch-selection.md) awaits owner approval.
+- September 11: current documentation reorganized around FieldToFit; Metis history archived; only five public website brand images retained; P3 requirements documented. The deployed and publicly verified reading update adds 10 developments, point-by-point notes, two content sections and a responsive table of contents. See [validation](docs/validation/2026-09-11-reading.md).
 - September 10: [FieldToFit v1.0.0](docs/releases/v1.0.0.md), branding, domain and public read validation.
 
-Track [18 requirements and 72 subrequirements](docs/product/requirements.md), the [roadmap](ROADMAP.md) and [changelog](CHANGELOG.md). Historical Metis records are in the changelog appendix and archive.
+Track [19 requirements and 76 subrequirements](docs/product/requirements.md), the [roadmap](ROADMAP.md) and [changelog](CHANGELOG.md). Historical Metis records are in the changelog appendix and archive.
 
 Future release tags use the `fieldtofit-v1.0.0` convention while the application displays v1.0.0. The existing `v1.0.0` tag belongs to Metis and keeps its original target. This cleanup does not create a new tag. Content editions are tracked separately from software releases.
 

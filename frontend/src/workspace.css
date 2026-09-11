@@ -3694,3 +3694,55 @@ h1 {
   .brand-logic article, .brand-logic article + article { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
   .about-brand { max-width: 290px; }
 }
+
+/* Reading map: developments and enduring dossiers share one page. */
+.reading-layout { display: grid; grid-template-columns: 205px minmax(0, 1fr); gap: 34px; align-items: start; }
+.reading-body { min-width: 0; }
+.reading-page-summary { font-size: 13px; color: var(--muted); margin: 24px 0; line-height: 1.8; }
+.reading-toc { position: sticky; top: 90px; max-height: calc(100dvh - 110px); overflow: auto; padding: 0 16px 16px 0; font-size: 12px; border-right: 1px solid var(--line); }
+.reading-toc nav { display: grid; gap: 7px; }
+.reading-toc a { display: block; padding: 5px 9px; border-left: 2px solid transparent; line-height: 1.5; overflow-wrap: anywhere; }
+.reading-toc a[aria-current] { color: var(--green); background: var(--green-soft); border-left-color: var(--green); }
+.reading-toc-section { font-size: 14px; font-weight: 650; margin-top: 15px; }
+.reading-toc-items { display: grid; gap: 3px; padding-left: 8px; }
+.reading-toc .muted { font-size: 11px; margin: 4px 9px; }
+.reading-toc-label { color: var(--muted); font-size: 10px; letter-spacing: 1.8px; }
+.reading-toc-toggle { display: none; }
+.reading-body [id], .reading-body article[id] { scroll-margin-top: 110px; }
+.reading-body [tabindex="-1"]:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
+.news-section { margin-bottom: 36px; }
+.news-glance { background: var(--surface-soft); border: 1px solid var(--line); border-radius: 12px; padding: 22px; margin: 24px 0 32px; }
+.news-glance h3 { margin: 0 0 14px; }
+.news-glance ul { list-style: none; padding: 0; margin: 0; }
+.news-glance li + li { border-top: 1px solid var(--line); }
+.news-glance a { display: grid; grid-template-columns: 1fr auto; gap: 5px 14px; padding: 13px 0; font-size: 13px; }
+.news-glance strong { grid-column: 1 / -1; }
+.news-glance a span { color: var(--muted); line-height: 1.7; }
+.news-list { display: grid; gap: 16px; }
+.news-card { border: 1px solid var(--line); border-radius: 12px; padding: 25px; background: var(--surface); }
+.news-card h4 { font-size: 21px; line-height: 1.5; margin: 10px 0 12px; }
+.news-card > p { font-size: 14px; line-height: 1.85; }
+.news-card .news-meta { font-size: 11px; color: var(--muted); }
+.news-card summary { font-size: 13px; padding: 10px 0; color: var(--green); }
+.news-points { list-style: none; padding: 0; }
+.news-points li { border-left: 2px solid var(--green); padding: 0 0 0 17px; margin: 24px 0; }
+.news-points h5 { margin: 0 0 8px; font-size: 15px; }
+.news-points p { font-size: 13px; line-height: 1.9; margin: 8px 0; }
+.news-points a, .news-points .news-locator { font-size: 11px; color: var(--muted); }
+.news-related { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; padding-top: 14px; border-top: 1px solid var(--line); }
+.previous-editions { margin: 18px 0 36px; font-size: 12px; }
+.previous-editions > summary { padding: 12px 0; color: var(--muted); }
+.dossier-section { border-top: 1px solid var(--line); padding-top: 32px; }
+.dossier-section .platform-card > h2 { font-size: 25px; }
+.dossier-section .platform-card > details > summary { font-size: 12px; padding: 10px 0; color: var(--green); }
+.dossier-section .platform-card details dl { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 900px) {
+  .reading-layout { display: block; }
+  .reading-toc { top: 65px; z-index: 20; max-height: none; padding: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; margin-bottom: 24px; overflow: visible; }
+  .reading-toc-toggle { display: flex; justify-content: space-between; width: 100%; padding: 13px 16px; background: none; border: 0; color: var(--text); font: inherit; text-align: left; }
+  .reading-toc nav { display: none; padding: 0 14px 18px; max-height: 65dvh; overflow: auto; }
+  .reading-toc.is-open nav { display: grid; }
+  .news-card { padding: 20px; }
+  .news-card h4 { font-size: 19px; }
+  .dossier-section .platform-card details dl { grid-template-columns: 1fr; }
+}

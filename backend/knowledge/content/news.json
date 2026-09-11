@@ -1,0 +1,422 @@
+{
+  "schema_version": "fieldtofit.news.v1",
+  "edition": "2026-09-11-launch",
+  "title": "首发回顾",
+  "reviewed_at": "2026-09-11",
+  "items": [
+    {
+      "id": "D-10",
+      "state": "published",
+      "name": "DeepSeek-V4.1-Flash",
+      "organization": "DeepSeek",
+      "source_published_at": null,
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "DeepSeek-V4.1-Flash：长上下文与 KV 缓存的新设计",
+      "summary": "官方模型卡介绍了图文输入、长上下文及缓存压缩设计。",
+      "highlight": true,
+      "interpretation": [
+        {
+          "title": "读长输入与生成输出采用不同计算路径",
+          "text": "模型卡介绍 Causal Encoder-Decoder，将读取输入和生成输出分成编码、解码阶段。值得看 Introduction 中两阶段的职责，以及这种设计为何针对输入较长的 Agent 工作。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Introduction / Architecture"
+        },
+        {
+          "title": "缓存共享是值得展开的技术点",
+          "text": "CSA2 在层间共享缓存与检索结果，减少长上下文需要保留的信息。阅读时可对照原文的缓存设计与比较图，理解它省的是哪部分存储。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Introduction / Compressed Sparse Attention 2"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "title": "DeepSeek-V4.1-Flash model card",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [
+        {
+          "id": "R-03",
+          "name": "DeepSeek-V4.1-Flash 模型卡",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+        }
+      ],
+      "note": "首次发布日期未确认；这里显示资料核验日。模型卡公开不等于 API 已上线。",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-01",
+      "state": "published",
+      "name": "GLM-5.3-Flash",
+      "organization": "智谱 / Z.ai",
+      "source_published_at": "2026-09-11",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "GLM-5.3-Flash：视觉反馈如何参与文档制作",
+      "summary": "官方说明把视觉反馈用于查看文档和界面结果，再继续修改。",
+      "highlight": true,
+      "interpretation": [
+        {
+          "title": "关注生成后的检查过程",
+          "text": "原文描述查看渲染页面、识别文字溢出与布局问题，再继续修改。Bringing Visual Feedback into the Workflow 展示了视觉能力如何参与产物检查。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Bringing Visual Feedback into the Workflow"
+        },
+        {
+          "title": "长上下文同时需要记忆和检索",
+          "text": "线性注意力处理局部信息，稀疏注意力查找重要上下文，IndexPool 进一步压缩缓存。架构章节值得看这些机制如何共同分担计算与存储。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Architecture for Efficient Inference"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://autoclaw.z.ai/blog/model/glm-5.3-flash/",
+          "title": "GLM-5.3-Flash: More Intelligence with Less Compute",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [
+        {
+          "id": "R-01",
+          "name": "GLM-5.3-Flash 模型卡",
+          "url": "https://huggingface.co/zai-org/GLM-5.3-Flash"
+        }
+      ],
+      "note": "日期为技术文章当前标注，非模型首次发布日期；上述能力为官方说明。",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-02",
+      "state": "published",
+      "name": "GPT-6 Astra",
+      "organization": "OpenAI",
+      "source_published_at": "2026-09-03",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "GPT-6 Astra：面向复杂多步工作",
+      "summary": "官方更新涵盖编程、研究、电脑使用和文档工作。",
+      "highlight": true,
+      "interpretation": [
+        {
+          "title": "关注工作进行中如何补充要求",
+          "text": "更新记录介绍异步工具调用和执行中追加指令。值得读的是长任务如何接收中途变化、继续利用已有上下文，而不只看最终输出示例。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "API / Introducing GPT-6 Astra"
+        },
+        {
+          "title": "模型更新也涉及调用方式",
+          "text": "工具调用与部分参数支持有变化。开发者可沿原文迁移说明核对现有客户端需要调整的接口。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Key changes to consider when migrating"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://openai.com/products/release-notes/",
+          "title": "OpenAI release notes",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [],
+      "note": "来源的 GA 标识与有限组织逐步开放正文存在差异，实际开放范围待核对。",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-03",
+      "state": "published",
+      "name": "Codex",
+      "organization": "OpenAI",
+      "source_published_at": "2026-09-03",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "Codex：浏览器和电脑使用新增企业控制项",
+      "summary": "企业管理员可更细地设置网站和原生应用访问策略。",
+      "highlight": false,
+      "interpretation": [
+        {
+          "title": "网站和原生应用分别配置",
+          "text": "更新涉及网站默认规则、例外和原生应用控制。值得看的是一个 Agent 跨网页与应用工作时，产品如何定义实际允许的操作范围。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Codex / More control over browser and computer use"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://openai.com/products/release-notes/",
+          "title": "OpenAI release notes",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [
+        {
+          "id": "R-04",
+          "name": "Codex CLI",
+          "url": "https://github.com/openai/codex"
+        }
+      ],
+      "note": "控制项适用于支持的企业客户端；Codex CLI 仓库与桌面功能范围分别说明。",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-04",
+      "state": "published",
+      "name": "Gemini 3.8 Flash",
+      "organization": "Google",
+      "source_published_at": "2026-09-02",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "Gemini 3.8 Flash 与 Flash Cyber：两种开放方式",
+      "summary": "Google 分别介绍通用 Flash 和通过 Fairwind 项目开放的 Cyber 版本。",
+      "highlight": true,
+      "interpretation": [
+        {
+          "title": "更长的推理过程会影响实际使用量",
+          "text": "Google 说明复杂任务可能使用更多推理步骤和工具调用，也可能消耗更多 token。值得关注原文对 effort 的解释：单价与完成一次任务的用量是两个变量。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Gemini 3.8 Flash: built for long-horizon coding and autonomous agents"
+        },
+        {
+          "title": "同次发布的两个型号需要分别读",
+          "text": "Flash 面向通用使用，Cyber 通过专门项目向受信任防御者开放。接入章节能帮助读者辨认正在看的评测和功能属于哪个版本。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Gemini 3.8 Flash and Cyber: get started today"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+          "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [],
+      "note": "",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-05",
+      "state": "published",
+      "name": "Claude Fable 5.1 / Mythos 5.1",
+      "organization": "Anthropic",
+      "source_published_at": "2026-09-01",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "Claude 5.1：新型号与缓存读取计费变化",
+      "summary": "Anthropic 发布 Fable 5.1 / Mythos 5.1，并调整 Fable 的缓存读取价格。",
+      "highlight": false,
+      "interpretation": [
+        {
+          "title": "重复利用已有上下文的成本发生变化",
+          "text": "原文将计费调整明确限定在缓存读取。值得看 Cost and availability：反复复用长上下文的工作，与每次输入全新材料的工作，受这项调整影响不同。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Cost and availability"
+        },
+        {
+          "title": "评测中的不同运行条件值得保留",
+          "text": "同页区分工具使用、推理强度与不同模型设置。科研和工程读者可沿评测说明查看具体设置，而不是只比较一个分数。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Evaluation / benchmark notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [
+        {
+          "id": "R-05",
+          "name": "Claude Code",
+          "url": "https://github.com/anthropics/claude-code"
+        }
+      ],
+      "note": "具体发布日期由 Anthropic 官方新闻索引标注；不同型号开放范围分别核对。",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-06",
+      "state": "published",
+      "name": "Qwen3.8-Flash-Next",
+      "organization": "阿里 / Qwen",
+      "source_published_at": "2026-08-26",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "Qwen3.8-Flash-Next：计算之外的模型容量设计",
+      "summary": "Qwen 开放权重，并解释注意力、残差、嵌入与优化方面的改动。",
+      "highlight": true,
+      "interpretation": [
+        {
+          "title": "部分模型容量通过查表获得",
+          "text": "N-gram Embedding 按局部上下文查询，并可放入主机内存，通过异步预取与计算重叠。值得读这段如何把容量、计算量和内存位置分开设计。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Model Architecture / Embedding"
+        },
+        {
+          "title": "稀疏检索也需要控制自身开销",
+          "text": "Qwen Sparse Attention 将上下文组织成小块，再选择重要内容。架构章节解释了索引过程本身如何变得更省，适合继续追踪长序列推理设计。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Attention: GDN + QSA"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
+          "title": "Qwen3.8-Flash-Next: A New Architecture",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [
+        {
+          "id": "R-02",
+          "name": "Qwen3.8-Flash-Next 模型卡",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+        }
+      ],
+      "note": "权重模型与托管 Qwen3.8-Flash 的上下文、工具和计费分别核对。",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-07",
+      "state": "published",
+      "name": "DeepSeek-V4-Flash-Vision-Exp",
+      "organization": "DeepSeek",
+      "source_published_at": "2026-08-21",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "DeepSeek 视觉实验模型：图像进入 API 输入",
+      "summary": "DeepSeek API 更新记录增加实验性视觉型号。",
+      "highlight": false,
+      "interpretation": [
+        {
+          "title": "模型身份和输入类型一起发生变化",
+          "text": "这条更新值得保留为版本事件：调用方需要区分实验型号及其图像输入支持。阅读官方 API 更新记录和参数说明，可确定具体调用对象。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "2026-08-21 update"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://api-docs.deepseek.com/zh-cn/updates/",
+          "title": "DeepSeek API 更新日志",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [
+        {
+          "id": "R-03",
+          "name": "DeepSeek 模型目录",
+          "url": "https://huggingface.co/deepseek-ai"
+        }
+      ],
+      "note": "8 月发布回顾；保留 Exp 标签，视觉理解不等于图像生成。",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-08",
+      "state": "published",
+      "name": "MiniMax Music 3.0",
+      "organization": "MiniMax",
+      "source_published_at": "2026-08-13",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "MiniMax Music 3.0：从创作描述到歌曲",
+      "summary": "官方发布材料介绍输入创作描述和可选歌词，生成完整歌曲。",
+      "highlight": false,
+      "interpretation": [
+        {
+          "title": "关注一首歌如何保持整体结构",
+          "text": "原文分别讨论长程结构与音频细节，说明全局、局部建模的分工。值得沿架构章节和音频示例观察编曲、情绪与人声如何贯穿一首作品。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Music 3.0: Technical Architecture"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://www.minimax.io/blog/minimax-music-3-0-next-generation-open-weights-production-ready-versatile-music-model",
+          "title": "MiniMax Music 3.0",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [],
+      "note": "8 月发布回顾；官方演示与模型效果未经本站实测。",
+      "editor": "FieldToFit"
+    },
+    {
+      "id": "D-09",
+      "state": "published",
+      "name": "SeedRealtime",
+      "organization": "字节 Seed",
+      "source_published_at": "2026-08-05",
+      "event_date": null,
+      "checked_at": "2026-09-11",
+      "title": "SeedRealtime：边听、边看、边交互",
+      "summary": "字节 Seed 发布音视频全双工模型的技术与演示材料。",
+      "highlight": false,
+      "interpretation": [
+        {
+          "title": "实时交互需要判断何时说话",
+          "text": "发布材料讨论打断、停顿和背景声音对对话节奏的影响。值得看演示中的轮次衔接，理解全双工与等待一句话结束再回答的交互差别。",
+          "source_ids": [
+            "primary"
+          ],
+          "locator": "Audio-visual conversational pacing"
+        }
+      ],
+      "sources": [
+        {
+          "id": "primary",
+          "url": "https://seed.bytedance.com/en/blog/seedrealtime-audio-visual-full-duplex-llm-released-toward-omni-modal-natural-interaction",
+          "title": "SeedRealtime audio-visual full-duplex LLM",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [],
+      "note": "8 月发布回顾；模型能力与豆包产品的具体开放范围分别记录。",
+      "editor": "FieldToFit"
+    }
+  ]
+}

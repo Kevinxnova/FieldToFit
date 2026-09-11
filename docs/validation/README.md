@@ -2,6 +2,8 @@
 
 当前软件：FieldToFit v1.0.0；产品规划：P2。最新证据：
 
+- [2026-09-11 阅读结构、目录与首发动态](2026-09-11-reading.md)
+
 - [2026-09-11 文件与文档整理](2026-09-11-repository-cleanup.md)（文档/素材检查，不是新内容上线验收）
 
 - [FieldToFit v1.0.0 品牌验收](2026-09-10-fieldtofit-brand.md)

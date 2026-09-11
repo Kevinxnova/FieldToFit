@@ -1,12 +1,12 @@
 # API 与 MCP 接入（FieldToFit v1.0.0）
 
-本文是现有接口使用说明。For your AI、原文续读及中性资料包已经实现；新增组织/产品/事件关系等 P2 目标仍见[需求状态](../product/requirements/for-ai.md)，不要按草案字段调用当前服务。
+本文是现有接口使用说明。For your AI、原文续读及中性资料包已经实现；新增组织/产品/事件关系等 P3 目标仍见[需求状态](../product/requirements/for-ai.md)，不要按草案字段调用当前服务。
 
 先启动 FieldToFit 后端。默认资料可公开读取；如服务配置了 `FIELDTOFIT_READ_TOKEN`，HTTP 请求需携带 `Authorization: Bearer <read-token>`。管理员密码不用于 AI 读取。
 
 ## HTTP MCP
 
-公开地址为 `https://fieldtofit.top/api/mcp/curated`，只暴露 10 项精选工具；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
+公开地址为 `https://fieldtofit.top/api/mcp/curated`，提供 11 项精选工具；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
 
 ```json
 {
@@ -19,7 +19,7 @@
 }
 ```
 
-网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 共 19 项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
+网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 共 20 项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
 
 ## stdio 桥接
 
@@ -71,3 +71,7 @@ FIELDTOFIT_MCP_URL=https://fieldtofit.top/api/mcp/curated .venv/bin/python -m ba
 ## 后续迁移
 
 `compare`、`task_context` 和研究生成相关能力本轮没有删除，但不再作为新平台默认使用路径。后续先盘点兼容性，再明确新字段/工具和迁移窗口，见 [REQ-X-01.03](../product/requirements/migration.md#req-x-01.03)。新接入示例将聚焦“检索对象 → 查看材料 → 读取原文 → 引用与更新”，不要求网站代做任务方案。
+
+## 产品发布动态
+
+`curated_news` / `GET /api/v1/platform/news` 支持 q、id、revision，提供分点 FieldToFit 解读、出处与关联。新闻与数据库资源档案分别读取，原始新闻覆盖为 link_only；不将解读视为上游原文。版本不符返回 409 / news_revision_changed。维护见[首发说明](../product/launch-selection.md)。

@@ -4,7 +4,9 @@
   "functions": {
     "api/cron_platform.py": {
       "maxDuration": 300,
-      "regions": ["hkg1"]
+      "regions": [
+        "hkg1"
+      ]
     },
     "api/cron.py": {
       "maxDuration": 300,
@@ -37,7 +39,8 @@
       "maxDuration": 300,
       "regions": [
         "hkg1"
-      ]
+      ],
+      "includeFiles": "backend/knowledge/content/**"
     },
     "api/cron_knowledge.py": {
       "maxDuration": 300,

@@ -1,15 +1,15 @@
 # FieldToFit 文档导航
 
-当前运行版本 **v1.0.0**，正式网站 [fieldtofit.top](https://fieldtofit.top)。27 项既有资料、品牌页面与 10 项公开 MCP 工具已通过指定公网检查。首发新名单、两条内容线的展示及长期维护尚未完成，详见 REQ。
+当前运行版本 **v1.0.0**，正式网站 [fieldtofit.top](https://fieldtofit.top)。27 项既有资料、品牌页面与 10 项公开 MCP 工具已通过指定公网检查。本轮新增 10 条动态、两区展示、目录与第 11 项精选 MCP 工具；长期维护仍待验，详见 REQ。
 
-2026-09-11 文档基线 **P2**：两条内容线、三个阅读区、两种阅读方式。P2 是需求修订，不是软件发版。
+2026-09-11 文档基线 **P3**：近期动态与资源档案、页内目录、两种阅读方式。P3 是需求修订，不是软件发版。
 
 | 需要了解什么 | 入口 |
 | --- | --- |
 | 项目与实际能力 | [README](../README.md) · [English](../README.en.md) |
 | 立意和职责 | [项目目标](product/goals.md) |
 | 已确认的页面组织 | [页面方案](product/pages.md) |
-| 当前究竟准备放哪些内容 | [首发内容待确认单](product/launch-selection.md) |
+| 当前究竟准备放哪些内容 | [首发内容与维护记录](product/launch-selection.md) |
 | 完整需求与当前状态 | [REQ list](product/requirements.md) |
 | 资料如何提供给人和 AI | [资料契约](product/data-contract.md) |
 | 如何判定完成 | [验收标准](product/acceptance.md) |

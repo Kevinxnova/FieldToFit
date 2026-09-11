@@ -6,7 +6,7 @@ output/
 tests/
 docs/
 examples/
-content/
+/content/
 scripts/
 frontend/node_modules/
 frontend/dist/

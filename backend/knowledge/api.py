@@ -697,3 +697,9 @@ def platform_intake_review():
 def platform_intake_publish():
     from backend.knowledge.platform_maintenance import apply
     return jsonify(apply(body(), publish=True))
+
+
+@bp.get("/platform/news")
+def platform_news():
+    from backend.knowledge.platform_news import news
+    return jsonify(news(**{k: request.args[k] for k in ("q", "id", "revision") if k in request.args}))
