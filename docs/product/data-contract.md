@@ -58,3 +58,7 @@ P3 · 2026-09-11。对应 [共享基础](requirements/foundation.md) 与 [AI 需
 先盘点当前 records、evidence、materials、relations、changes、editorial 等数据与接口的映射。对缺失字段提出最小增量迁移、回填和回滚方案；先验证一个对象的人读与 AI 读结果，再扩展精选集合。现有 API 路径不因本草案自动换版；需要新公开契约时由实现 PR 明确路径/版本及兼容期。
 
 旧任务包使用 `task_context` 等能力，和这里的中性材料包不同。旧接口暂存，后续按 [REQ-X-01.03](requirements/migration.md#req-x-01.03) 明确兼容，不能直接换返回值导致旧客户端误读。
+
+## v1.0.4 投稿资料增量
+
+持续关注 `fieldtofit.watch.v1` 增加可选 `origin=developer_submission` 与 `submission` 的 entry_url / usage / openness / relationship。项目名、介绍、来源、日期、结构化正文和解读复用原字段。只有已发布且 submission_review.confirmed=true 的记录可读；内部审核字段和非公开投稿字段不输出。HTTP 与 curated_watch 接受同名 origin 过滤，过滤结果和下载交接保留 origin 与修订；工具数量仍为 12。见[维护指南](../guides/project-submissions.md)。

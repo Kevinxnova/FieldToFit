@@ -1,6 +1,6 @@
 # FieldToFit 后续规划
 
-2026-09-11 · P3 文档基线 · 当前运行 v1.0.3。[项目目标](docs/product/goals.md)与[REQ list](docs/product/requirements.md)是现行依据。
+2026-09-11 · P3 文档基线 · 当前运行 v1.0.4。[项目目标](docs/product/goals.md)与[REQ list](docs/product/requirements.md)是现行依据。
 
 ## 当前状态
 
@@ -27,8 +27,10 @@
 
 公开账户待开放；AI 应用案例 pending。类型用于辅助搜索；个人任务的比较、适配和执行由用户自己的 AI 完成。旧接口及仍被调用的脚本列入[兼容清单](docs/architecture/repository.md)，不因旧名称而删除。
 
-[当前版本](docs/releases/v1.0.3.md) · [验收证据](docs/validation/2026-09-11-v1.0.3.md) · [Metis 历史](docs/archive/README.md)。
+[当前版本](docs/releases/v1.0.4.md) · [验收证据](docs/validation/2026-09-11-v1.0.4.md) · [Metis 历史](docs/archive/README.md)。
 
 既有图表基线：移除 Epoch AI，AA / Arena 按公司配色、直接模型名称标注和筛选已实现；2026 年已确认 359 个来源条目，190 个可绘制，169 个缺少坐标。Arena 另有 182 个日期待确认条目（不等于 182 个今年模型）。后续继续补日期依据与来源缺项；日检查可用性不等于自动更新评分。
 
-新增 v1.0.3：REQ-Y-05.05 旗舰筛选已实现，AA 11 / Arena 8 点。当前共 20 项 REQ / 81 子 REQ；旗舰名单持续审核，来源缺项保留。
+前版 v1.0.3：REQ-Y-05.05 旗舰筛选已实现，AA 11 / Arena 8 点。当前共 21 项 REQ / 85 子 REQ；旗舰名单持续审核，来源缺项保留。
+
+本版 v1.0.4：新增 REQ-C-01 社区与开发者投稿四项子需求；目录精简、关于页后半段重组、移除账户菜单。投稿通道及读取已实现，下一步是处理首批真实投稿、执行每周审核并记录实际收录与更新；不把空态验收当成社区运营完成。

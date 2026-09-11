@@ -1,0 +1,282 @@
+{
+  "checked_at": "2026-09-11T13:11:57.911844+00:00",
+  "base": "https://fieldtofit.top",
+  "version": "v1.0.4",
+  "chart_revision": "2026-09-11.2",
+  "coverage": {
+    "artificial-analysis": {
+      "missing_coordinates": 156,
+      "outside_year": 383,
+      "plotted": 107,
+      "released_2026": 263,
+      "source_models": 646,
+      "unconfirmed_date": 0
+    },
+    "arena": {
+      "missing_coordinates": 13,
+      "outside_year": 122,
+      "plotted": 83,
+      "released_2026": 96,
+      "source_models": 400,
+      "unconfirmed_date": 182
+    }
+  },
+  "snapshot_equals_local": true,
+  "assets": {
+    "/assets/index-BFRnGJde.js": "2f31b7ac09d91512571c8ebd9fcd0ea2ea192763cda322300e5145947062bde0",
+    "/assets/index-4f0HtwUu.css": "27863d69fdd87cf26fb5a9b79106cc69f7a3c35ebebb59229a68eb7f8c487076"
+  },
+  "submissions_total": 0,
+  "submission_http_mcp_equal": true,
+  "community_route": true,
+  "mcp_server": {
+    "name": "fieldtofit",
+    "version": "1.0.4"
+  },
+  "mcp_tools": 12,
+  "flagship": {
+    "artificial-analysis": {
+      "models": [
+        {
+          "company": "OpenAI",
+          "evidence_url": "https://artificialanalysis.ai/models/gpt-6-astra",
+          "family": "GPT-6 Astra",
+          "id": "gpt-6-astra",
+          "status": "plotted"
+        },
+        {
+          "company": "Anthropic",
+          "evidence_url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+          "family": "Claude Fable 5.1",
+          "id": "claude-fable-5-1",
+          "status": "plotted"
+        },
+        {
+          "company": "Google",
+          "evidence_url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
+          "family": "Gemini 3.1 Pro",
+          "id": "gemini-3-1-pro-preview",
+          "status": "plotted"
+        },
+        {
+          "company": "xAI",
+          "evidence_url": "https://artificialanalysis.ai/models/grok-4-6",
+          "family": "Grok 4.6",
+          "id": "grok-4-6",
+          "status": "plotted"
+        },
+        {
+          "company": "Meta",
+          "evidence_url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+          "family": "Muse Spark 1.3",
+          "id": "muse-spark-1-3",
+          "status": "plotted"
+        },
+        {
+          "company": "Kimi",
+          "evidence_url": "https://artificialanalysis.ai/models/kimi-k3",
+          "family": "Kimi K3",
+          "id": "kimi-k3",
+          "status": "plotted"
+        },
+        {
+          "company": "GLM",
+          "evidence_url": "https://artificialanalysis.ai/models/glm-5-3",
+          "family": "GLM-5.3",
+          "id": "glm-5-3",
+          "status": "plotted"
+        },
+        {
+          "company": "Qwen",
+          "evidence_url": "https://artificialanalysis.ai/models/qwen3-8-max",
+          "family": "Qwen3.8 Max",
+          "id": "qwen3-8-max",
+          "status": "plotted"
+        },
+        {
+          "company": "MIMO",
+          "evidence_url": "https://artificialanalysis.ai/models/mimo-v2-5-pro",
+          "family": "MiMo-V2.5-Pro",
+          "id": "mimo-v2-5-pro",
+          "status": "plotted"
+        },
+        {
+          "company": "MiniMax",
+          "evidence_url": "https://artificialanalysis.ai/models/minimax-m3",
+          "family": "MiniMax-M3",
+          "id": "minimax-m3",
+          "status": "plotted"
+        },
+        {
+          "company": "DeepSeek",
+          "evidence_url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
+          "family": "DeepSeek V4 Pro 0813",
+          "id": "deepseek-v4-pro",
+          "status": "plotted"
+        }
+      ],
+      "policy": "FieldToFit 编辑维护的本期旗舰系列名单；每系列每来源一个代表配置，保留来源名称。缺项不替换为旧系列，不代表来源官方旗舰分类。",
+      "policy_en": "FieldToFit’s reviewed flagship-series selection, with one representative configuration per source. Original names are retained. Missing entries are not replaced with older series. This is not an official source classification.",
+      "reviewed_at": "2026-09-11"
+    },
+    "arena": {
+      "models": [
+        {
+          "company": "OpenAI",
+          "evidence_url": "https://artificialanalysis.ai/models/gpt-6-astra",
+          "family": "GPT-6 Astra",
+          "id": null,
+          "status": "not_listed"
+        },
+        {
+          "company": "Anthropic",
+          "evidence_url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+          "family": "Claude Fable 5.1",
+          "id": "claude-fable-5.1-max-text",
+          "status": "plotted"
+        },
+        {
+          "company": "Google",
+          "evidence_url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
+          "family": "Gemini 3.1 Pro",
+          "id": "gemini-3.1-pro-preview",
+          "status": "plotted"
+        },
+        {
+          "company": "xAI",
+          "evidence_url": "https://artificialanalysis.ai/models/grok-4-6",
+          "family": "Grok 4.6",
+          "id": "grok-4.6-high-text",
+          "status": "plotted"
+        },
+        {
+          "company": "Meta",
+          "evidence_url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+          "family": "Muse Spark 1.3",
+          "id": null,
+          "status": "not_listed"
+        },
+        {
+          "company": "Kimi",
+          "evidence_url": "https://artificialanalysis.ai/models/kimi-k3",
+          "family": "Kimi K3",
+          "id": "kimi-k3-v3-text",
+          "status": "missing_coordinates"
+        },
+        {
+          "company": "GLM",
+          "evidence_url": "https://artificialanalysis.ai/models/glm-5-3",
+          "family": "GLM-5.3",
+          "id": "glm-5.3",
+          "status": "plotted"
+        },
+        {
+          "company": "Qwen",
+          "evidence_url": "https://artificialanalysis.ai/models/qwen3-8-max",
+          "family": "Qwen3.8 Max",
+          "id": "kinsley-mrp8",
+          "status": "plotted"
+        },
+        {
+          "company": "MIMO",
+          "evidence_url": "https://artificialanalysis.ai/models/mimo-v2-5-pro",
+          "family": "MiMo-V2.5-Pro",
+          "id": "mimo-v2.5-pro-text",
+          "status": "plotted"
+        },
+        {
+          "company": "MiniMax",
+          "evidence_url": "https://artificialanalysis.ai/models/minimax-m3",
+          "family": "MiniMax-M3",
+          "id": "minimax-m3",
+          "status": "plotted"
+        },
+        {
+          "company": "DeepSeek",
+          "evidence_url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
+          "family": "DeepSeek V4 Pro 0813",
+          "id": "deepseek-v4-pro-high-20260813-text",
+          "status": "plotted"
+        }
+      ],
+      "policy": "FieldToFit 编辑维护的本期旗舰系列名单；每系列每来源一个代表配置，保留来源名称。缺项不替换为旧系列，不代表来源官方旗舰分类。",
+      "policy_en": "FieldToFit’s reviewed flagship-series selection, with one representative configuration per source. Original names are retained. Missing entries are not replaced with older series. This is not an official source classification.",
+      "reviewed_at": "2026-09-11"
+    }
+  },
+  "deployment_id": "dpl_29xa7m3A49enRk8ofq9Sf1z4tjM9",
+  "deployment_url": "https://fieldtofit-emfc14g87-kevinnova-projects.vercel.app",
+  "browser": {
+    "passed": true,
+    "base": "https://fieldtofit.top",
+    "version": "v1.0.4",
+    "checks": [
+      "community route and navigation order; account entry removed",
+      "six-field validation, encoded GitHub/email drafts, edits invalidate draft",
+      "clipboard fallback; no submission sent",
+      "about preserved opening and updated sections",
+      "compact directory, one expanded list, query-preserving links",
+      "mobile drawer focus, scroll lock, Escape and heading navigation",
+      "empty reviewed projects on all three pages; MCP filter guidance",
+      "390px no horizontal overflow"
+    ],
+    "errors": []
+  },
+  "local_browser": {
+    "passed": true,
+    "base": "http://127.0.0.1:18006",
+    "version": "v1.0.4",
+    "checks": [
+      "community route and navigation order; account entry removed",
+      "six-field validation, encoded GitHub/email drafts, edits invalidate draft",
+      "clipboard fallback; no submission sent",
+      "about preserved opening and updated sections",
+      "compact directory, one expanded list, query-preserving links",
+      "mobile drawer focus, scroll lock, Escape and heading navigation",
+      "empty reviewed projects on all three pages; MCP filter guidance",
+      "390px no horizontal overflow"
+    ],
+    "errors": []
+  },
+  "chart_regression": {
+    "passed": true,
+    "base": "http://127.0.0.1:18006",
+    "version": "v1.0.4",
+    "checks": [
+      "flagship 11/8 points / explicit 3 gaps / source switch / URL refresh / search / reset",
+      "two sources / Epoch URL fallback",
+      "190 exact source model labels / no overlaps",
+      "12 consistent company colors",
+      "fixed coordinates during filters / search / empty / reset",
+      "keyboard tabs / URL reload / point evidence",
+      "coverage lists / genuine dates",
+      "zoom / Escape focus / mobile pan / no page overflow",
+      "about and health version",
+      "chart failure preserves news and watch"
+    ],
+    "coverage": [
+      {
+        "source": "artificial-analysis",
+        "missing_coordinates": 156,
+        "outside_year": 383,
+        "plotted": 107,
+        "released_2026": 263,
+        "source_models": 646,
+        "unconfirmed_date": 0
+      },
+      {
+        "source": "arena",
+        "missing_coordinates": 13,
+        "outside_year": 122,
+        "plotted": 83,
+        "released_2026": 96,
+        "source_models": 400,
+        "unconfirmed_date": 182
+      }
+    ]
+  },
+  "backend_tests": {
+    "passed": 208,
+    "skipped": 1
+  }
+}

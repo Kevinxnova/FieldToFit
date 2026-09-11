@@ -1,76 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useWorkspace } from './UI';
-
-export type ReadingAnchor = { id: string; title: string };
-export function ReadingContents({ news, newsTotal, resources, resourceTotal, loading, filtered, groups }: {
-  groups?: {id:string;title:string;items:ReadingAnchor[]}[]; news: ReadingAnchor[]; newsTotal: number | null; resources: ReadingAnchor[]; resourceTotal: number | null; loading: boolean; filtered: boolean;
-}) {
-  const { pick } = useWorkspace();
-  const location = useLocation();
-  const [active, setActive] = useState('model-landscape');
-  const [open, setOpen] = useState(false);
-  const [allNews, setAllNews] = useState(false);
-  const [allResources, setAllResources] = useState(false);
-  const mobileButton = useRef<HTMLButtonElement>(null);
-  const ids = ['model-landscape', 'recent-news', 'news-overview', 'news-releases', ...news.map(n => n.id), 'resource-dossiers', ...(groups||[]).map(g=>g.id), ...resources.map(r => r.id)];
-  const signature = ids.join('|');
-  useEffect(() => {
-    let frame = 0;
-    const update = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        let current = 'model-landscape';
-        for (const id of signature.split('|')) {
-          const node = document.getElementById(id);
-          if (node && node.getBoundingClientRect().top <= 155) current = id;
-        }
-        setActive(current);
-      });
-    };
-    update(); window.addEventListener('scroll', update, { passive: true });
-    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', update); };
-  }, [signature]);
-  useEffect(() => {
-    let id: string;
-    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
-    if (!id || !signature.split('|').includes(id)) return;
-    const frame = requestAnimationFrame(() => {
-      const node = document.getElementById(id);
-      if (!node) return;
-      // Details may hide a shared target; expand before measuring and focusing.
-      node.querySelectorAll('details[data-auto-expand]').forEach(d => { (d as HTMLDetailsElement).open = true; });
-      node.focus({ preventScroll: true });
-      node.scrollIntoView({ block: 'start', behavior: 'auto' });
-      setActive(id);
-    });
-    return () => cancelAnimationFrame(frame);
-  }, [location.hash, signature]);
-  const link = (item: ReadingAnchor, main = false) => <Link
-    key={item.id} className={main ? 'reading-toc-section' : ''}
-    to={{ pathname: location.pathname, search: location.search, hash: '#' + item.id }}
-    aria-current={active === item.id ? 'location' : undefined}
-    onClick={() => {
-      setOpen(false);
-      if (location.hash === '#' + item.id) {
-        const target = document.getElementById(item.id);
-        target?.querySelectorAll('details[data-auto-expand]').forEach(d => { (d as HTMLDetailsElement).open = true; });
-        target?.focus({ preventScroll: true }); target?.scrollIntoView({ block: 'start' });
-      }
-    }}>{item.title}</Link>;
-  return <aside className={'reading-toc' + (open ? ' is-open' : '')}>
-    <button ref={mobileButton} type="button" className="reading-toc-toggle" aria-expanded={open} aria-controls="reading-toc-links" onClick={() => setOpen(v => !v)}>{pick('本页目录', 'On this page')} <span>{open ? '−' : '+'}</span></button>
-    <nav id="reading-toc-links" aria-label={pick('本页目录', 'On this page')} onKeyDown={e => { if (e.key === 'Escape') { setOpen(false); mobileButton.current?.focus(); } }}>
-      <p className="reading-toc-label">{pick('本页内容', 'ON THIS PAGE')}</p>
-      {link({ id: 'model-landscape', title: pick('模型能力与价格', 'Model capability & pricing') }, true)}
-      {link({ id: 'recent-news', title: pick('近期动态', 'Recent developments') }, true)}
-      {link({ id: 'news-overview', title: pick('本期速览', 'At a glance') })}
-      {link({ id: 'news-releases', title: pick('发布与更新', 'Releases & updates') + ` · ${newsTotal ?? '—'}` })}
-      <div className="reading-toc-items">{(allNews ? news : news.slice(0, 4)).map(n => link(n))}</div>
-      {news.length > 4 && <button type="button" className="text-button" aria-expanded={allNews} onClick={() => setAllNews(v => !v)}>{pick(allNews ? '收起动态目录' : '展开其他动态', allNews ? 'Fewer entries' : 'All developments')}</button>}
-      {link({ id: 'resource-dossiers', title: pick('持续关注', 'Ongoing watch') + ` · ${loading ? '…' : resourceTotal ?? '—'}` }, true)}
-      {groups ? <>{loading&&<p role="status">{pick('正在读取目录…','Loading…')}</p>}{filtered&&<p className="muted">{pick('当前筛选结果','Filtered results')}</p>}{groups.map(g=><div className="watch-toc-group" key={g.id}>{link(g)}<details><summary>{pick('查看对象','Show profiles')}</summary><div className="reading-toc-items">{g.items.map(i=>link(i))}</div></details></div>)}{!loading&&resourceTotal===0&&<p>{pick('没有匹配资料','No matching profiles')}</p>}</> : <><div className="reading-toc-items">{(allResources ? resources : resources.slice(0,6)).map(r=>link(r))}</div>{resources.length>6&&<button className="text-button" onClick={()=>setAllResources(v=>!v)}>{pick('展开 / 收起','Expand / collapse')}</button>}</>}
-
-    </nav>
-  </aside>;
+export type ReadingAnchor = { id:string;title:string };
+export function ReadingContents({news,newsTotal,resources,resourceTotal,loading,filtered,groups=[]}:{groups?:{id:string;title:string;items:ReadingAnchor[]}[];news:ReadingAnchor[];newsTotal:number|null;resources:ReadingAnchor[];resourceTotal:number|null;loading:boolean;filtered:boolean}){
+ const {pick}=useWorkspace(),location=useLocation();const [active,setActive]=useState('model-landscape'),[expanded,setExpanded]=useState<string|null>(null),[open,setOpen]=useState(false);
+ const navigating=useRef(false);
+ const button=useRef<HTMLButtonElement>(null),dialog=useRef<HTMLDialogElement>(null);
+ const main=[{id:'model-landscape',title:pick('模型能力与价格','Model capability & pricing')},{id:'recent-news',title:pick('近期动态','Recent developments')},{id:'news-overview',title:pick('本期速览','At a glance')},{id:'news-releases',title:pick('发布与更新','Releases & updates')},{id:'resource-dossiers',title:pick('持续关注','Ongoing watch')},{id:'developer-projects',title:pick('开发者投稿项目','Developer-submitted projects')}];
+ const anchors=[...main,...news,...groups,...resources];const signature=anchors.map(x=>x.id).join('|');
+ const group=groups.find(g=>g.id===active||g.items.some(i=>i.id===active));
+ const newsActive=['recent-news','news-overview','news-releases',...news.map(n=>n.id)].includes(active);
+ const chapter=group?group.title.replace(/\s*·\s*\d+$/,''):newsActive?main[1].title:main.find(x=>x.id===active)?.title||main[0].title;
+ useEffect(()=>{let frame=0;const update=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{let best=-Infinity,current='model-landscape';for(const id of signature.split('|')){const node=document.getElementById(id);if(node){const top=node.getBoundingClientRect().top;if(top<=155&&top>=best){best=top;current=id;}}}setActive(current);});};update();window.addEventListener('scroll',update,{passive:true});return()=>{cancelAnimationFrame(frame);window.removeEventListener('scroll',update);};},[signature]);
+ useEffect(()=>{let id='';try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}if(!signature.split('|').includes(id))return;const frame=requestAnimationFrame(()=>{const node=document.getElementById(id);node?.querySelectorAll('details[data-auto-expand]').forEach(d=>(d as HTMLDetailsElement).open=true);node?.focus({preventScroll:true});node?.scrollIntoView({block:'start'});setActive(id);});return()=>cancelAnimationFrame(frame);},[location.hash,signature]);
+ useEffect(()=>{if(!open)return;const old=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=old;};},[open]);
+ useEffect(()=>{const media=window.matchMedia('(max-width:900px)');const change=()=>{if(!media.matches)dialog.current?.close();};media.addEventListener('change',change);return()=>media.removeEventListener('change',change);},[]);
+ const close=()=>{dialog.current?.close();setOpen(false);};
+ const link=(item:ReadingAnchor,top=false,count?:number|null,parent=false)=><Link key={item.id} className={(top?'reading-toc-section ':'')+(parent?'toc-parent-active':'')} to={{pathname:location.pathname,search:location.search,hash:'#'+item.id}} aria-current={active===item.id?'location':undefined} onClick={()=>{navigating.current=true;close();const target=document.getElementById(item.id);target?.querySelectorAll('details[data-auto-expand]').forEach(d=>(d as HTMLDetailsElement).open=true);target?.focus({preventScroll:true});target?.scrollIntoView({block:'start'});}}><span>{item.title}</span>{count!==undefined&&<small>{count??'—'}</small>}</Link>;
+ const list=(id:string,title:string,items:ReadingAnchor[],prefix:string)=><><button className="toc-expand" aria-label={pick('展开或收起','Expand or collapse ')+title} aria-expanded={expanded===id} aria-controls={prefix+id} onClick={()=>setExpanded(v=>v===id?null:id)}>{expanded===id?'⌄':'›'}</button>{expanded===id&&<div className="reading-toc-items" id={prefix+id}>{items.map(i=>link(i))}</div>}</>;
+ const nav=(prefix:string)=><nav aria-label={pick('本页目录','On this page')}><p className="reading-toc-label">{pick('本页导航','ON THIS PAGE')}</p>{link(main[0],true)}{link(main[1],true,undefined,newsActive)}{link(main[2])}<div className="toc-row">{link(main[3],false,newsTotal,news.some(n=>n.id===active))}{list('news',main[3].title,news,prefix)}</div>{link(main[4],true,loading?null:resourceTotal,!!group)}{filtered&&<p className="muted">{pick('当前筛选结果','Filtered results')}</p>}{groups.map(g=><div className="toc-row" key={g.id}>{link({...g,title:g.title.replace(/\s*·\s*\d+$/,'')},false,g.items.length,group?.id===g.id)}{list(g.id,g.title,g.items,prefix)}</div>)}{loading&&<p role="status">{pick('正在读取目录…','Loading…')}</p>}{!loading&&resourceTotal===0&&<p className="muted">{pick('没有匹配资料','No matching profiles')}</p>}{link(main[5],true)}</nav>;
+ return <aside className="reading-toc"><button ref={button} className="reading-toc-toggle" aria-expanded={open} aria-controls="reading-toc-drawer" onClick={()=>{navigating.current=false;setOpen(true);dialog.current?.showModal();}}><span>{pick('目录','Contents')} · {chapter}</span><span>☰</span></button><div className="toc-desktop">{nav('desktop-')}</div><dialog ref={dialog} id="reading-toc-drawer" className="toc-drawer" aria-label={pick('本页目录','On this page')} onClose={()=>{setOpen(false);if(!navigating.current)button.current?.focus();navigating.current=false;}}><div className="toc-drawer-heading"><strong>{pick('本页导航','On this page')}</strong><button className="text-button" onClick={close}>{pick('关闭目录','Close contents')}</button></div>{nav('mobile-')}</dialog></aside>;
 }

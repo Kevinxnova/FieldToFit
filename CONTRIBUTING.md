@@ -8,7 +8,7 @@ Thanks for helping improve FieldToFit.
 2. Keep the change focused; separate unrelated fixes.
 3. Never add credentials, local databases, scraped production data, or logs.
 4. For a security issue, follow [SECURITY.md](SECURITY.md) instead of filing a public issue.
-5. Use the [current requirements](docs/product/requirements.md) and [roadmap](ROADMAP.md). Archived plans describe history, not current implementation instructions. The current scope is For you, For your AI and About. The 20 requirements have 80 subrequirements; all legacy IDs retain mappings. The product showcase case is pending, and website-generated task comparisons/plans are outside the new core scope.
+5. Use the [current requirements](docs/product/requirements.md) and [roadmap](ROADMAP.md). Archived plans describe history, not current implementation instructions. The current scope is For you, For your AI, About and Community. The 21 requirements have 85 subrequirements; all legacy IDs retain mappings. The product showcase case is pending, and website-generated task comparisons/plans are outside the new core scope.
 
 ## Development setup
 
@@ -39,7 +39,7 @@ cd ..
 python scripts/maintenance/check_repository.py
 ```
 
-For documentation-only changes, check local links, requirement/subrequirement coverage, version wording and the diff; there is no need to rerun unrelated runtime tests. The current repository checker reports 42 legacy anchors, not the 18 current requirements. Use full `REQ-` IDs in new work and retain old links for history.
+For documentation-only changes, check local links, requirement/subrequirement coverage, version wording and the diff; there is no need to rerun unrelated runtime tests. The current repository checker reports 21 current requirements, 85 subrequirements and 42 legacy anchors. Use full `REQ-` IDs in new work and retain old links for history.
 
 Live integration tests are opt-in because they can modify Turso data and spend
 MiniMax credits.
@@ -55,3 +55,7 @@ Keep supported compatibility routes and script entry points working when moving 
 ## Versioning
 
 Every change-bearing delivery commit increments z and updates the changelog, release notes and current version references, including documentation or content changes. Minor (y) and major (x) increments require prior owner confirmation and an explanation of scope and impact. Follow the [version policy](docs/releases/versioning.md).
+
+## Community contributions
+
+Submit a project using the [community form](https://fieldtofit.top/community#submit-project), or email fieldtofit@163.com with the six fields described in the [submission workflow](docs/guides/project-submissions.md). Recommend resources through [feedback](https://fieldtofit.top/feedback?category=missing). For development, pick an open item in the current REQ list, describe the intended change in an issue, then open a focused pull request with relevant validation. Documentation improvements, source corrections and browser checks are useful starting points.

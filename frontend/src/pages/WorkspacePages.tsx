@@ -1088,7 +1088,8 @@ export function Manage() {
 export function Feedback() {
   const { pick, notify } = useWorkspace();
   const [content, setContent] = useState("");
-  const [category, setCategory] = useState("use_case");
+  const [params] = useSearchParams();
+  const [category, setCategory] = useState(["missing","correction"].includes(params.get("category")||"")?params.get("category")!:"use_case");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const submit = async (e: FormEvent) => {
@@ -1132,7 +1133,7 @@ export function Feedback() {
           >
             {[
               ["use_case", "实际需求", "A real need"],
-              ["missing", "缺失资料", "Missing resource"],
+              ["missing", "推荐资源 / 缺失资料", "Recommend / missing resource"],
               ["correction", "事实错误", "Correction"],
               ["success", "成功使用", "Successful use"],
               ["failure", "遇到问题", "Something failed"],

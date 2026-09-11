@@ -74,3 +74,42 @@ def test_read_access_and_revision(client,monkeypatch,tmp_path):
     assert client.get('/api/v1/platform/watch').status_code==401
     assert client.get('/api/v1/platform/watch',headers={'Authorization':'Bearer watch-token'}).status_code==200
     assert client.post('/api/v1/platform/watch',json={}).status_code==405
+
+
+def test_submission_filter_and_mcp(client, tmp_path, monkeypatch):
+    assert client.get('/api/v1/platform/watch?origin=developer_submission').json['total'] == 0
+    assert client.get('/api/v1/platform/watch?origin=unknown').status_code == 400
+    data, path = replace_data(tmp_path, monkeypatch)
+    item = copy.deepcopy(data['items'][0])
+    item.update(id='CW-M99', origin='developer_submission', submission_review={'confirmed': True, 'email': 'private@example.com'},
+                submission={'entry_url':'https://example.com/project', 'usage':'Read the README', 'openness':'开源', 'relationship':'第三方推荐', 'private_note':'SECRET'})
+    data['items'].append(item)
+    path.write_text(json.dumps(data))
+    body = client.get('/api/v1/platform/watch?origin=developer_submission').json
+    assert body['total'] == 1 and body['collection_total'] == 28
+    assert body['origin'] == 'developer_submission'
+    assert body['items'][0]['submission']['relationship'] == '第三方推荐'
+    assert 'SECRET' not in json.dumps(body) and 'private@example.com' not in json.dumps(body)
+    rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call',
+        'params':{'name':'curated_watch','arguments':{'origin':'developer_submission'}}}).json['result']
+    assert not rpc.get('isError') and rpc['structuredContent'] == body
+    for state in ('draft','withdrawn'):
+        item['state'] = state
+        path.write_text(json.dumps(data))
+        assert client.get('/api/v1/platform/watch?origin=developer_submission').json['total'] == 0
+    item['state'] = 'published'; item['submission_review']['confirmed'] = False
+    path.write_text(json.dumps(data))
+    assert client.get('/api/v1/platform/watch?origin=developer_submission').status_code == 503
+
+
+@pytest.mark.parametrize('broken', ['origin', 'entry', 'missing'])
+def test_submission_material_validation(client, tmp_path, monkeypatch, broken):
+    data, path = replace_data(tmp_path, monkeypatch)
+    item = data['items'][0]
+    item.update(origin='developer_submission', submission_review={'confirmed':True},
+                submission={'entry_url':'https://example.com/project', 'usage':'Run the demo', 'openness':'开源', 'relationship':'本人开发'})
+    if broken == 'origin': item['origin'] = 'typo'
+    if broken == 'entry': item['submission']['entry_url'] = 'javascript:alert(1)'
+    if broken == 'missing': del item['submission']['usage']
+    path.write_text(json.dumps(data))
+    assert client.get('/api/v1/platform/watch').status_code == 503

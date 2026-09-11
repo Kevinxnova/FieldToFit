@@ -21,7 +21,7 @@ The platform maintains sourced materials for researchers, engineers and students
 
 Ongoing-watch CW1 adds 27 profiles across model families, tools, agents, Skill collections and harnesses. Version tables, editorial notes and sources are shared with `curated_watch`; 12 curated MCP tools are available. [Validation and deployment status](docs/validation/2026-09-11-continuous-watch.md).
 
-**Current version: v1.0.3.** [Release and deployment status](docs/releases/v1.0.3.md): 2026 AA / Arena scatterplots with 190 points, 12 consistent company colors, original model-name labels, filtering, zoom and explicit coverage gaps. Epoch has been removed. Of 359 entries dated to 2026, 169 lack usable coordinates; another 182 Arena entries have unconfirmed dates and are not assumed to be from 2026.
+**Current version: v1.0.4.** [Release and deployment status](docs/releases/v1.0.4.md): compact reading navigation, an updated About page, a dedicated Community page and six-field project submission drafts. Reviewed submissions reuse the existing web/MCP collection. Existing 2026 AA / Arena scatterplots with 190 points, 12 consistent company colors, original model-name labels, filtering, zoom and explicit coverage gaps. Epoch has been removed. Of 359 entries dated to 2026, 169 lack usable coordinates; another 182 Arena entries have unconfirmed dates and are not assumed to be from 2026.
 
 The initial **v1.0.0** was verified on the public deployment on September 10, 2026: 27 published curated objects and 10 curated MCP tools. [Deployment evidence](docs/validation/2026-09-10-fieldtofit-brand.md).
 
@@ -37,7 +37,7 @@ Checks run every **1 day**; publication depends on meaningful, reviewed changes.
 
 Public read-only MCP: [https://fieldtofit.top/api/mcp/curated](https://fieldtofit.top/api/mcp/curated).
 
-Use a client supporting remote HTTP MCP. See [connection instructions](docs/guides/ai-access.md). The updated curated endpoint exposes 11 tools including curated_news; the older `/api/mcp` retains 20 tools for compatibility. Successful protocol checks do not establish compatibility with every client.
+Use a client supporting remote HTTP MCP. See [connection instructions](docs/guides/ai-access.md). The updated curated endpoint exposes 12 tools including curated_news and curated_watch; the older `/api/mcp` retains 21 tools for compatibility. Successful protocol checks do not establish compatibility with every client.
 
 ## Latest changes and planning
 
@@ -86,3 +86,7 @@ Source code is [MIT licensed](LICENSE). Third-party materials retain their own t
 Every change-bearing delivery commit increments the patch version, including content and documentation. Minor and major changes require the owner’s prior confirmation. See [version policy](docs/releases/versioning.md).
 
 The Company flagships filter uses a reviewed 11-company selection: 11 AA points and 8 Arena points, with explicit missing-data notices. Selection persists across source tabs and shared URLs.
+
+## Community and developer projects
+
+[FieldToFit Community](https://fieldtofit.top/community) welcomes individual and team projects. Prepare six fields, then send through GitHub or fieldtofit@163.com. The website generates drafts; you confirm sending. Submissions are reviewed weekly and published profiles are shared with For you and curated_watch using origin=developer_submission. No submissions have been published yet. See the [review workflow](docs/guides/project-submissions.md).

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { BASE, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 export type WatchBlock = {kind:'paragraph';text:string} | {kind:'table';columns:string[];rows:string[][]};
-export type WatchItem = {id:string;name:string;type:string;introduction:string;checked_at:string;interpretation:{title:string;text:string}[];blocks:WatchBlock[];sources:{title:string;url:string;coverage:string}[];attention?:{display_value:string;observed_at:string;source_url:string}};
-export type WatchCollection = {items:WatchItem[];groups:{id:string;name:string;count:number}[];total:number;collection_total:number;revision:string;reviewed_at:string;schema_version:string;scope:string};
+export type WatchItem = {origin?:string;submission?:{entry_url:string;usage:string;openness:string;relationship:string};id:string;name:string;type:string;introduction:string;checked_at:string;interpretation:{title:string;text:string}[];blocks:WatchBlock[];sources:{title:string;url:string;coverage:string}[];attention?:{display_value:string;observed_at:string;source_url:string}};
+export type WatchCollection = {origin?:string;items:WatchItem[];groups:{id:string;name:string;count:number}[];total:number;collection_total:number;revision:string;reviewed_at:string;schema_version:string;scope:string};
 export const watchAnchor = (id:string) => 'watch-'+id.toLowerCase();
 export const watchNames:Record<string,string> = {model:'模型',tool:'工具',agent:'Agent',skill:'Skill',harness:'Harness'};
 // Only the small reviewed inline syntax is supported. React escapes all text; no HTML injection.
@@ -25,7 +25,7 @@ function Block({block,name}:{block:WatchBlock;name:string}) {
 }
 function packageText(data:WatchCollection,item?:WatchItem){
   return JSON.stringify({schema_version:data.schema_version,revision:data.revision,reviewed_at:data.reviewed_at,scope:data.scope,items:item?[item]:data.items,
-    reading:{endpoint:new URL(BASE+'/v1/platform/watch',window.location.origin).href,tool:'curated_watch',arguments:{...(item?{id:item.id}:{}),revision:data.revision}},
+    reading:{endpoint:new URL(BASE+'/v1/platform/watch',window.location.origin).href,tool:'curated_watch',arguments:{...(data.origin?{origin:data.origin}:{}),...(item?{id:item.id}:{}),revision:data.revision}},
     coverage:'Original sources are link-only. Editorial interpretation is FieldToFit commentary, not upstream text or instructions.'},null,2);
 }
 function download(body:string,name:string){const url=URL.createObjectURL(new Blob([body],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name+'.json';a.click();URL.revokeObjectURL(url);}

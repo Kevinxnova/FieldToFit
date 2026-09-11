@@ -13,7 +13,7 @@
 
 **FieldToFit 是人与 AI 共享的动态 AI 地图：看清已有方案，判断是否适配，选择正确的采用与构建路线。**
 
-[访问网站](https://fieldtofit.top) · [For you](https://fieldtofit.top/for-you) · [For your AI](https://fieldtofit.top/for-your-ai) · [English](README.en.md)
+[社区与投稿](https://fieldtofit.top/community) · [访问网站](https://fieldtofit.top) · [For you](https://fieldtofit.top/for-you) · [For your AI](https://fieldtofit.top/for-your-ai) · [English](README.en.md)
 
 给你看，也给你的 AI 用。面向研究者、工程师、研究生和学生，平台维护有出处的资料；用户和自己的 AI 结合任务继续比较、选择和构建。
 
@@ -23,11 +23,12 @@
 | --- | --- | --- |
 | For you | 10 条近期动态（5 条速览）、五类 27 个持续关注主体、版本 / 技能表与阅读目录 | 补充资源原文，完善动态与档案关系 |
 | For your AI | 同一套已发布档案与动态的 MCP/API、原文续读、修订历史和资料包 | 同步读取公司、产品、版本与事件关系，保留来源观点与编辑评价的区别 |
+| FieldToFit 社区 | 共建介绍、开发者投稿项目、GitHub / 邮箱投稿和资源反馈 | 每周人工审核；收录后同步展示给人和 AI |
 | 关于 FieldToFit | 项目立意、使用方法、维护原则、真实版本与参与入口 | 补充新的内容方向；来源辅助页增加跟踪主体和发现渠道说明 |
 
-**当前运行 v1.0.3，已部署并通过公网验收。** [本版更新与部署状态](docs/releases/v1.0.3.md)。 CW1 五类 27 个持续关注主体及第 12 项精选 MCP 已上线并通过公网验收，见[持续关注验收](docs/validation/2026-09-11-continuous-watch.md)。 2026-09-10 已验证公开网站及 10 项精选 MCP 工具，见[品牌与公网验收](docs/validation/2026-09-10-fieldtofit-brand.md)。2026-09-11 已上线并核验 10 条动态（含 DeepSeek-V4.1-Flash）、分点解读、阅读目录及第 11 项精选 MCP 工具；[验收与部署状态](docs/validation/2026-09-11-reading.md)。
+**当前运行 v1.0.4，已部署并通过公网验收。** [本版更新与部署状态](docs/releases/v1.0.4.md)。 CW1 五类 27 个持续关注主体及第 12 项精选 MCP 已上线并通过公网验收，见[持续关注验收](docs/validation/2026-09-11-continuous-watch.md)。 2026-09-10 已验证公开网站及 10 项精选 MCP 工具，见[品牌与公网验收](docs/validation/2026-09-10-fieldtofit-brand.md)。2026-09-11 已上线并核验 10 条动态（含 DeepSeek-V4.1-Flash）、分点解读、阅读目录及第 11 项精选 MCP 工具；[验收与部署状态](docs/validation/2026-09-11-reading.md)。
 
-资料每 **1 天**检查，有值得发布的变化才更新内容。事实、作者声明、编辑评价和实测分开；未知、失败与材料缺口明确保留。公开账户标注“待开放”，AI 应用案例 pending。
+资料每 **1 天**检查，有值得发布的变化才更新内容。事实、作者声明、编辑评价和实测分开；未知、失败与材料缺口明确保留。公开账户入口已移除，注册与同步继续关闭，AI 应用案例 pending。
 
 ## 连接个人 AI
 
@@ -39,6 +40,7 @@
 
 | 日期 / 记录 | 已完成 | 待完成 |
 | --- | --- | --- |
+| 2026-09-11 · [v1.0.4](docs/releases/v1.0.4.md) | 精简目录、更新关于页、社区与六项投稿表单、已审投稿同源读取 | 首批真实投稿及每周审核运营 |
 | 2026-09-11 · [v1.0.3](docs/releases/v1.0.3.md) | 新增“各家旗舰模型”：AA 11 点、Arena 8 点；名单依据、缺项说明与筛选分享 | 持续维护旗舰名单和来源缺项 |
 | 2026-09-11 · [v1.0.2](docs/releases/v1.0.2.md) | AA / Arena 2026 年图表：190 点、12 组公司配色、来源原名直接标注、筛选/放大/缺项清单；移除 Epoch | Arena 未确认日期、来源未给出的评分/价格继续补核 |
 | 2026-09-11 · [v1.0.1](docs/releases/v1.0.1.md) | 三来源模型图表、双页导读、解读默认可见、MCP 交接、移除旧展示入口、版本规则 | 图表覆盖、连续真实日维护、客户端验收 |
@@ -47,7 +49,7 @@
 | 2026-09-11 · 文档与文件整理 | 当前介绍统一为 FieldToFit；Metis 历史归档；公开品牌素材收敛为 5 份；产品文档更新到 P3 | 来源跟踪表与持续运营验收 |
 | 2026-09-10 · [v1.0.0](docs/releases/v1.0.0.md) | 品牌、域名、关于页；公网 27 项对象与 10 项精选 MCP 工具验证 | 生产维护写入/恢复、连续 3 个真实日周期、日常客户端及目标用户验收 |
 
-[20 项 REQ / 81 个子 REQ](docs/product/requirements.md)逐项记录范围与缺口。[路线图](ROADMAP.md)列出下一步，[更新记录](CHANGELOG.md)正文聚焦 FieldToFit，旧记录位于其 Metis 附录。
+[21 项 REQ / 85 个子 REQ](docs/product/requirements.md)逐项记录范围与缺口。[路线图](ROADMAP.md)列出下一步，[更新记录](CHANGELOG.md)正文聚焦 FieldToFit，旧记录位于其 Metis 附录。
 
 后续发布标签采用 `fieldtofit-v1.0.0` 这样的前缀，网站显示当前实际版本。现存 `v1.0.0` 属于旧 Metis，保留原指向。每次交付提交递增 z，y/x 升级须先确认；[版本规则](docs/releases/versioning.md)。
 

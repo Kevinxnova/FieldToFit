@@ -1,3 +1,4 @@
+import { Community } from "./pages/Community";
 import { ForYou, ForAI, AboutFieldToFit, LegacyPlatformEntry } from "./pages/Platform";
 import { useEffect } from "react";
 import {
@@ -42,6 +43,7 @@ function Shell() {
   const active = [
     ...links,
     ["/about", "info", "关于 FieldToFit", "About FieldToFit"],
+    ["/community", "source", "FieldToFit 社区", "FieldToFit Community"],
     ["/collection", "bookmark", "我的收藏", "My collection"],
     ["/tasks", "book", "任务工作台", "Task workbench"],
     ["/briefs", "news", "每日简报", "Daily briefs"],
@@ -98,6 +100,7 @@ function Shell() {
           aria-label={pick("辅助导航", "More navigation")}
         >
           <NavLink to="/about"><Icon name="info" size={18} />{pick("关于 FieldToFit", "About FieldToFit")}</NavLink>
+          <NavLink to="/community"><Icon name="source" size={18} />{pick("FieldToFit 社区", "FieldToFit Community")}</NavLink>
           <NavLink to="/collection"><Icon name="bookmark" size={18} />{pick("本地收藏", "Local bookmarks")}</NavLink>
           <NavLink to="/sources">
             <Icon name="source" size={18} />
@@ -107,13 +110,7 @@ function Shell() {
             <Icon name="settings" size={18} />
             {pick("运行管理", "Management")}
           </NavLink>
-          <button className="nav-unavailable" type="button" disabled>
-            <Icon name="user" size={18} />
-            <span>{pick("我的账户", "Account")}</span>
-            <small className="coming-soon-badge">
-              {pick("待开放", "Coming soon")}
-            </small>
-          </button>
+
         </nav>
         <div className="sidebar-footer">
           <span className="status-dot" />
@@ -194,12 +191,13 @@ function Shell() {
             />
             <Route
               path="/community"
-              element={<Navigate to="/feedback" replace />}
+              element={<Community />}
             />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <footer className="page-footer">
             <Link to="/about">{pick("关于 FieldToFit", "About FieldToFit")}</Link>
+            <Link to="/community">{pick("FieldToFit 社区", "Community")}</Link>
             <p>
               {pick(
                 "让知识有来处，让行动有依据。",
@@ -213,7 +211,7 @@ function Shell() {
           </footer>
         </main>
       </div>
-      {compare.length > 0 && !["/for-you", "/for-your-ai", "/about"].includes(location.pathname) && (
+      {compare.length > 0 && !["/for-you", "/for-your-ai", "/about", "/community"].includes(location.pathname) && (
         <div className="compare-tray">
           <Icon name="compare" />
           <span>
