@@ -1,6 +1,6 @@
 # 模型图表与来源维护
 
-v1.0.2 · 2026-09-11。仅 Artificial Analysis / Arena，移除 Epoch。保留各自坐标定义，不统一评分。快照：`backend/knowledge/content/model-landscape.json`；HTTP：`/api/v1/platform/model-landscape`。当前 12 项精选 MCP 工具保持原有范围。
+v1.0.3 · 2026-09-11。仅 Artificial Analysis / Arena，移除 Epoch。保留各自坐标定义，不统一评分。快照：`backend/knowledge/content/model-landscape.json`；HTTP：`/api/v1/platform/model-landscape`。当前 12 项精选 MCP 工具保持原有范围。
 
 | 来源 | 坐标 | 已读取 / 2026 条目 / 可绘制 / 缺坐标 / 日期待确认 |
 | --- | --- | --- |
@@ -35,3 +35,13 @@ v1.0.2 · 2026-09-11。仅 Artificial Analysis / Arena，移除 Epoch。保留�
 现有 Vercel `/api/cron/platform` 每 1 天调用 `model_landscape.check_sources`，现在只检查上述两个榜单，不随数百个模型扩展请求。GET 不带凭据、不跟随重定向，限制大小/超时；结果与指纹写入现有 `knowledge_workflow_runs`（model_landscape_daily）。可用不等于值已更新，也不等于已经核对了每个日期链接。失败保留既有快照。
 
 [本版验收](../validation/2026-09-11-v1.0.2.md)。继续补日期依据与来源缺项；连续真实日维护和自动发布完整榜单尚未验收。
+
+## 各家旗舰模型 · REQ-Y-05.05
+
+独立文件 `model-landscape-flagships.json` 维护本期旗舰名单、核验日期、系列依据及两个来源的精确 ID。每家选一个代表配置，不以最高分/最高价格算法自动贴旗舰标签。OpenAI GPT-6 Astra、Anthropic Claude Fable 5.1、Google Gemini 3.1 Pro、xAI Grok 4.6、Meta Muse Spark 1.3、Kimi K3、GLM-5.3、Qwen3.8 Max、MiMo-V2.5-Pro、MiniMax-M3、DeepSeek V4 Pro 0813。这是 FieldToFit 编辑维护的系列选择，来源负责数值与模型名称，不能称为来源官方旗舰分类。
+
+AA 11 家均可绘制。Arena 的 GPT-6 Astra、Muse Spark 1.3 未进入当前快照，Kimi K3 缺价格，故绘制 8 家，面板逐项显示原因，不改用旧系列凑齐。旗名单不修改原快照的 107 / 83 点或测量日期；JSON API 附加与网页一致的 flagship 字段。新增名单维护不改变日采集的两个固定请求。
+
+URL `company=flagship` 保存选择，切换 AA / Arena 保留；选择具体公司转为查看该公司的完整模型，重置恢复全部。图中点、数值和缺项表同时筛选，坐标不变。名单来源用链接核查，更新时间与评分快照时间分开。
+
+维护时先审核系列与精确来源 ID。来源下架或改名导致 ID 不再存在时，校验拒绝旧映射；需一并更新名单，确认来源未收录时显式设为 null。候选生成工具仍只生成测量快照，不能自动替换旗舰系列。

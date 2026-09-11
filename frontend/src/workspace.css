@@ -3843,3 +3843,8 @@ h1 {
 .landscape-zoom-scroll { max-height:62dvh;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);background:white; }
 .landscape-dialog .landscape-point-detail { margin:.5rem 0; }
 @media(max-width:600px){.chart-search label{flex-basis:100%}.chart-company-legend{gap:5px}.chart-company-legend button{font-size:.7rem;padding:7px}.landscape-dialog .landscape-chart-heading{flex-wrap:wrap}.landscape-dialog .landscape-chart-heading h3{font-size:1rem}.landscape-zoom-scroll{max-height:55dvh}.chart-coverage{font-size:.73rem}}
+
+.chart-flagship-note { margin:12px 0;padding:12px 16px;border-radius:8px;background:var(--surface-soft);font-size:.8rem;line-height:1.8; }
+.chart-flagship-note p { margin:0 0 .5rem; }
+.chart-flagship-note summary { cursor:pointer;color:var(--green); }
+.chart-flagship-note li { margin-top:.4rem; }

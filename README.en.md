@@ -21,7 +21,7 @@ The platform maintains sourced materials for researchers, engineers and students
 
 Ongoing-watch CW1 adds 27 profiles across model families, tools, agents, Skill collections and harnesses. Version tables, editorial notes and sources are shared with `curated_watch`; 12 curated MCP tools are available. [Validation and deployment status](docs/validation/2026-09-11-continuous-watch.md).
 
-**Current version: v1.0.2.** [Release and deployment status](docs/releases/v1.0.2.md): 2026 AA / Arena scatterplots with 190 points, 12 consistent company colors, original model-name labels, filtering, zoom and explicit coverage gaps. Epoch has been removed. Of 359 entries dated to 2026, 169 lack usable coordinates; another 182 Arena entries have unconfirmed dates and are not assumed to be from 2026.
+**Current version: v1.0.3.** [Release and deployment status](docs/releases/v1.0.3.md): 2026 AA / Arena scatterplots with 190 points, 12 consistent company colors, original model-name labels, filtering, zoom and explicit coverage gaps. Epoch has been removed. Of 359 entries dated to 2026, 169 lack usable coordinates; another 182 Arena entries have unconfirmed dates and are not assumed to be from 2026.
 
 The initial **v1.0.0** was verified on the public deployment on September 10, 2026: 27 published curated objects and 10 curated MCP tools. [Deployment evidence](docs/validation/2026-09-10-fieldtofit-brand.md).
 
@@ -84,3 +84,5 @@ Open [localhost:5173/for-you](http://localhost:5173/for-you). A new database sta
 Source code is [MIT licensed](LICENSE). Third-party materials retain their own terms. See the brand guide for the public asset inventory. Report factual errors, missing materials and AI retrieval issues through the repository.
 
 Every change-bearing delivery commit increments the patch version, including content and documentation. Minor and major changes require the owner’s prior confirmation. See [version policy](docs/releases/versioning.md).
+
+The Company flagships filter uses a reviewed 11-company selection: 11 AA points and 8 Arena points, with explicit missing-data notices. Selection persists across source tabs and shared URLs.

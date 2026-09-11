@@ -83,3 +83,18 @@ def test_candidate_parser_and_company_aliases_do_not_invent_numbers():
     assert number('$undefined') is None and number(float('nan')) is None and number(True) is None
     assert number(0) == 0  # kept as missing log coordinate, never changed to a tiny fake cost
     assert [company(x) for x in ['Moonshot', 'SpaceXAI', 'Z AI', 'Alibaba', 'Xiaomi', 'NVIDIA']] == ['Kimi', 'xAI', 'GLM', 'Qwen', 'MIMO', '其他']
+
+
+def test_flagships_are_reviewed_series_not_per_company_score_winners():
+    aa, arena = charts.snapshot()['sources']
+    assert len(aa['points']) == 107 and len(arena['points']) == 83
+    assert sum(m['status']=='plotted' for m in aa['flagship']['models']) == 11
+    assert sum(m['status']=='plotted' for m in arena['flagship']['models']) == 8
+    chosen = {m['company']:m for m in arena['flagship']['models']}
+    assert chosen['OpenAI']['status']=='not_listed' and chosen['OpenAI']['id'] is None
+    assert chosen['Meta']['status']=='not_listed'
+    assert chosen['Kimi']['status']=='missing_coordinates'
+    # New selected flagship series remains selected even when an older model scored higher.
+    assert chosen['Anthropic']['id']=='claude-fable-5.1-max-text'
+    assert chosen['xAI']['id']=='grok-4.6-high-text'
+    assert len({m['company'] for m in aa['flagship']['models']}) == 11

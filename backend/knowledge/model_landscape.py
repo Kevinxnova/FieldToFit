@@ -60,6 +60,23 @@ def snapshot():
         for url in [source['source_url']] + [p[k] for p in rows for k in ('score_url', 'price_url')]:
             parsed = urlsplit(url)
             assert parsed.scheme == 'https' and parsed.hostname in HOSTS and not parsed.username and not parsed.password and parsed.port in (None, 443)
+    catalog = json.loads((CONTENT_PATH.parent / 'model-landscape-flagships.json').read_text())
+    assert date.fromisoformat(catalog['reviewed_at']) <= date.today()
+    assert [m['company'] for m in catalog['models']] == companies[:-1]
+    for source in data['sources']:
+        rows = {p['id']:p for p in source['points'] + source['not_plotted'] + source['undated']}
+        plotted = {p['id'] for p in source['points']}
+        selections = []
+        for model in catalog['models']:
+            ident = model['ids'][source['id']]
+            if ident is not None:
+                assert ident in rows and rows[ident]['organization'] == model['company']
+            url = urlsplit(model['evidence_url'])
+            assert url.scheme == 'https' and url.hostname in HOSTS and not url.username and not url.password and url.port in (None, 443)
+            selections.append({'company':model['company'], 'family':model['family'], 'id':ident,
+                               'evidence_url':model['evidence_url'],
+                               'status':'plotted' if ident in plotted else 'missing_coordinates' if ident in rows and rows[ident]['release_date'] else 'unconfirmed_date' if ident in rows else 'not_listed'})
+        source['flagship'] = {'reviewed_at':catalog['reviewed_at'], 'policy':catalog['policy'], 'policy_en':catalog['policy_en'], 'models':selections}
     return data
 
 

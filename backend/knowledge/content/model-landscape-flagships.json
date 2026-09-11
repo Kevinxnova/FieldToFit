@@ -1,0 +1,106 @@
+{
+  "reviewed_at": "2026-09-11",
+  "policy": "FieldToFit 编辑维护的本期旗舰系列名单；每系列每来源一个代表配置，保留来源名称。缺项不替换为旧系列，不代表来源官方旗舰分类。",
+  "policy_en": "FieldToFit’s reviewed flagship-series selection, with one representative configuration per source. Original names are retained. Missing entries are not replaced with older series. This is not an official source classification.",
+  "models": [
+    {
+      "company": "OpenAI",
+      "family": "GPT-6 Astra",
+      "evidence_url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "ids": {
+        "artificial-analysis": "gpt-6-astra",
+        "arena": null
+      }
+    },
+    {
+      "company": "Anthropic",
+      "family": "Claude Fable 5.1",
+      "evidence_url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "ids": {
+        "artificial-analysis": "claude-fable-5-1",
+        "arena": "claude-fable-5.1-max-text"
+      }
+    },
+    {
+      "company": "Google",
+      "family": "Gemini 3.1 Pro",
+      "evidence_url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
+      "ids": {
+        "artificial-analysis": "gemini-3-1-pro-preview",
+        "arena": "gemini-3.1-pro-preview"
+      }
+    },
+    {
+      "company": "xAI",
+      "family": "Grok 4.6",
+      "evidence_url": "https://artificialanalysis.ai/models/grok-4-6",
+      "ids": {
+        "artificial-analysis": "grok-4-6",
+        "arena": "grok-4.6-high-text"
+      }
+    },
+    {
+      "company": "Meta",
+      "family": "Muse Spark 1.3",
+      "evidence_url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "ids": {
+        "artificial-analysis": "muse-spark-1-3",
+        "arena": null
+      }
+    },
+    {
+      "company": "Kimi",
+      "family": "Kimi K3",
+      "evidence_url": "https://artificialanalysis.ai/models/kimi-k3",
+      "ids": {
+        "artificial-analysis": "kimi-k3",
+        "arena": "kimi-k3-v3-text"
+      }
+    },
+    {
+      "company": "GLM",
+      "family": "GLM-5.3",
+      "evidence_url": "https://artificialanalysis.ai/models/glm-5-3",
+      "ids": {
+        "artificial-analysis": "glm-5-3",
+        "arena": "glm-5.3"
+      }
+    },
+    {
+      "company": "Qwen",
+      "family": "Qwen3.8 Max",
+      "evidence_url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "ids": {
+        "artificial-analysis": "qwen3-8-max",
+        "arena": "kinsley-mrp8"
+      }
+    },
+    {
+      "company": "MIMO",
+      "family": "MiMo-V2.5-Pro",
+      "evidence_url": "https://artificialanalysis.ai/models/mimo-v2-5-pro",
+      "ids": {
+        "artificial-analysis": "mimo-v2-5-pro",
+        "arena": "mimo-v2.5-pro-text"
+      }
+    },
+    {
+      "company": "MiniMax",
+      "family": "MiniMax-M3",
+      "evidence_url": "https://artificialanalysis.ai/models/minimax-m3",
+      "ids": {
+        "artificial-analysis": "minimax-m3",
+        "arena": "minimax-m3"
+      }
+    },
+    {
+      "company": "DeepSeek",
+      "family": "DeepSeek V4 Pro 0813",
+      "evidence_url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
+      "ids": {
+        "artificial-analysis": "deepseek-v4-pro",
+        "arena": "deepseek-v4-pro-high-20260813-text"
+      }
+    }
+  ]
+}

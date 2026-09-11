@@ -6,7 +6,7 @@ import { placeLabels } from './chartLabels';
 
 type Model = { id:string; name:string; organization:string; source_organization:string; score:number|null; score_low?:number; score_high?:number; price:number|null; score_url:string; price_url:string; configuration:string; configuration_en:string; release_date:string|null; date_url:string|null; date_basis:string|null; missing?:string[]; estimated?:boolean; deprecated?:boolean };
 type Point = Model & {score:number;price:number};
-type ChartSource = { id:string; name:string; source_url:string; source_updated_at:string|null; checked_at:string; score_label:string; price_label:string; price_label_en:string; note:string; note_en:string; points:Point[]; not_plotted:Model[]; undated:Model[]; coverage:{source_models:number;released_2026:number;outside_year:number;plotted:number;missing_coordinates:number;unconfirmed_date:number} };
+type ChartSource = { id:string; name:string; source_url:string; source_updated_at:string|null; checked_at:string; score_label:string; price_label:string; price_label_en:string; note:string; note_en:string; flagship:{reviewed_at:string;policy:string;policy_en:string;models:{company:string;family:string;id:string|null;evidence_url:string;status:string}[]}; points:Point[]; not_plotted:Model[]; undated:Model[]; coverage:{source_models:number;released_2026:number;outside_year:number;plotted:number;missing_coordinates:number;unconfirmed_date:number} };
 type Landscape = { revision:string; interval_days:number; sources:ChartSource[] };
 const choices = [{id:'artificial-analysis',name:'Artificial Analysis'},{id:'arena',name:'Arena'}];
 export const companyColors:Record<string,string> = {OpenAI:'#242b35',Anthropic:'#a4542a',Google:'#238340',xAI:'#8051ad',Meta:'#157ab9',Kimi:'#168f9d',GLM:'#9b445f',Qwen:'#bd6714',MIMO:'#907900',MiniMax:'#d33981',DeepSeek:'#3456d1','其他':'#69757a'};
@@ -44,9 +44,14 @@ export function ModelLandscape() {
 
 function Scatter({source}:{source:ChartSource}) {
   const {pick,zh}=useWorkspace();
-  const [company,setCompany]=useState('all'),[query,setQuery]=useState(''),[selected,setSelected]=useState<string|null>(null),[scale,setScale]=useState(1);
+  const [filterParams,setFilterParams]=useSearchParams();
+  const requested=filterParams.get('company');
+  const company=requested==='flagship'||(requested&&Object.prototype.hasOwnProperty.call(companyColors,requested))?requested:'all';
+  const setCompany=(value:string)=>setFilterParams(p=>{if(value==='all')p.delete('company');else p.set('company',value);return p;},{replace:true,preventScrollReset:true});
+  const flagshipIds=new Set(source.flagship.models.map(m=>m.id));
+  const [query,setQuery]=useState(''),[selected,setSelected]=useState<string|null>(null),[scale,setScale]=useState(1);
   const dialog=useRef<HTMLDialogElement>(null),zoom=useRef<HTMLButtonElement>(null);
-  const matches=(p:Model)=>(company==='all'||p.organization===company)&&p.name.toLowerCase().includes(query.trim().toLowerCase());
+  const matches=(p:Model)=>(company==='all'||(company==='flagship'?flagshipIds.has(p.id):p.organization===company))&&p.name.toLowerCase().includes(query.trim().toLowerCase());
   const points=source.points.filter(matches),missing=source.not_plotted.filter(matches),undated=source.undated.filter(matches);
   const point=points.find(p=>p.id===selected);
   const width=1400,height=1200,left=78,right=1310,top=86,bottom=1080;
@@ -81,7 +86,8 @@ function Scatter({source}:{source:ChartSource}) {
   return <>
     <div className="landscape-chart-heading"><h3>{source.name} <span>2026</span></h3><button ref={zoom} className="text-button" onClick={()=>{setScale(1);dialog.current?.showModal();}}>{pick('放大查看','Enlarge chart')}</button></div>
     <p className="landscape-scope">{zh?source.note:source.note_en}</p>
-    <div className="chart-company-legend" aria-label={pick('按公司筛选','Filter by company')}><button aria-pressed={company==='all'} onClick={()=>setCompany('all')}>{pick('全部公司','All companies')}</button>{Object.entries(companyColors).map(([name,color])=><button key={name} aria-pressed={company===name} onClick={()=>setCompany(company===name?'all':name)}><i style={{background:color}}/>{name==='其他'?pick('其他','Other'):name}<small>{source.points.filter(p=>p.organization===name).length}</small></button>)}</div>
+    <div className="chart-company-legend" aria-label={pick('按公司筛选','Filter by company')}><button aria-pressed={company==='all'} onClick={()=>setCompany('all')}>{pick('全部公司','All companies')}</button><button aria-pressed={company==='flagship'} onClick={()=>{setCompany('flagship');setQuery('');setSelected(null);}}>{pick('各家旗舰模型','Company flagships')}<small>{source.flagship.models.filter(m=>m.status==='plotted').length}</small></button>{Object.entries(companyColors).map(([name,color])=><button key={name} aria-pressed={company===name} onClick={()=>setCompany(company===name?'all':name)}><i style={{background:color}}/>{name==='其他'?pick('其他','Other'):name}<small>{source.points.filter(p=>p.organization===name).length}</small></button>)}</div>
+    {company==='flagship'&&<div className="chart-flagship-note"><p>{pick('本期旗舰系列，每家一个代表配置；名单由 FieldToFit 维护。','One representative configuration per company’s selected flagship series; curated by FieldToFit.')} {pick('名单核验：','Selection reviewed: ')}{source.flagship.reviewed_at}</p><details><summary>{pick('查看旗舰名单与缺项','View flagship selection and gaps')}</summary><p>{zh?source.flagship.policy:source.flagship.policy_en}</p><ul>{source.flagship.models.map(m=><li key={m.company}><strong>{m.company}</strong> · <SourceLink url={m.evidence_url}>{m.family}</SourceLink> · {m.status==='plotted'?pick('已绘制','Plotted'):m.status==='missing_coordinates'?pick('来源缺少坐标数据，暂未绘制','Missing coordinates; not plotted'):m.status==='unconfirmed_date'?pick('来源日期待确认，暂未绘制','Date unconfirmed; not plotted'):pick('当前来源快照未收录，暂未绘制','Not listed in this source snapshot')}</li>)}</ul></details></div>}
     <div className="chart-search"><label>{pick('查找模型','Find a model')}<input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder={pick('输入来源中的模型名称','Search original model names')}/></label><button className="text-button" onClick={()=>{setCompany('all');setQuery('');setSelected(null);}}>{pick('重置筛选','Reset filters')}</button></div>
     <p className="chart-coverage" role="status">{pick(`图中 ${points.length} / ${source.points.length} 个模型配置 · 已核对 ${source.coverage.released_2026} 个 2026 年条目 · ${source.not_plotted.length} 个缺少可用坐标`,`${points.length} / ${source.points.length} configurations plotted · ${source.coverage.released_2026} dated to 2026 · ${source.not_plotted.length} without usable coordinates`)}</p>
     {points.length?<div className="landscape-plot">{plot()}</div>:<p className="landscape-empty">{pick('当前筛选没有可绘制的模型。可查看下方缺项清单，或重置筛选。','No plottable models match. Check the coverage list below or reset filters.')}</p>}
