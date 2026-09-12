@@ -3875,7 +3875,24 @@ h1 {
 .community-draft { padding:20px;background:var(--surface-soft);border-radius:10px;margin:24px 0; }
 .community-draft pre { white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:.85rem;line-height:1.9; }
 .community-process li { padding:7px 0;line-height:1.7; }
-.community-invitation { background:var(--surface-soft); }
+/* Give the community invitation its own inset card rather than a full-width color strip. */
+.platform-panel.community-invitation {
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-left:3px solid var(--green);
+  border-radius:12px;
+  padding:28px 32px;
+  margin:12px 0 36px;
+}
+.community-invitation h2 { margin:0; }
+.community-invitation > p { max-width:65ch;margin:12px 0 20px; }
+.community-invitation .button { min-height:44px;white-space:normal; }
+.submission-methods { margin:20px 0 24px;padding:18px 20px;border:1px solid var(--line);border-radius:10px;background:var(--surface); }
+.submission-methods h3 { margin:0 0 10px; }
+.submission-methods ul { margin:0;padding-left:20px; }
+.submission-methods li { margin:8px 0;line-height:1.85;overflow-wrap:anywhere; }
+.submission-methods p { margin:12px 0 0;font-size:13px;color:var(--muted); }
+@media(max-width:600px){.platform-panel.community-invitation{padding:22px 20px}.submission-methods{padding:16px}.community-invitation .button{max-width:100%;box-sizing:border-box}}
 .developer-project-card { border-top:1px solid var(--line);padding:20px 0; }
 .developer-projects h2,.community-page #submit-project { scroll-margin-top:95px; }
 @media(max-width:900px){.toc-desktop{display:none}.reading-toc{padding:0;max-height:none}.reading-toc-toggle{font-size:12px}.toc-drawer nav{display:grid}.toc-drawer a{padding:10px}.community-grid{grid-template-columns:1fr}.community-form-grid{grid-template-columns:1fr}.toc-expand{min-height:38px}.page-footer{flex-wrap:wrap;gap:14px}}

@@ -1160,8 +1160,8 @@ export function Feedback() {
         </label>
         <p className="fine-print">
           {pick(
-            "无需提供私人项目内容或任何凭证。",
-            "No private project content or credentials are needed.",
+            "提交后会保存到 FieldToFit 的反馈后台，由维护者查看处理，不会自动发送到邮箱或 GitHub。此表单不收集联系方式；如需往返沟通，请发邮件至 fieldtofit@163.com。无需提供私人项目内容或凭证。",
+            "Submissions are saved to FieldToFit for maintainer review, not automatically sent to email or GitHub. This form does not collect contact details; email fieldtofit@163.com for a conversation. No private project content or credentials are needed.",
           )}
         </p>
         {error && (

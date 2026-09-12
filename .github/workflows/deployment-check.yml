@@ -30,7 +30,7 @@ jobs:
               with urllib.request.urlopen(req,timeout=45) as response:return response.read()
           assert b'FieldToFit' in read('/about')
           assert b'<svg' in read('/brand/logo-horizontal-ink.svg')
-          health=json.loads(read('/api/health')); assert health['version']=='v1.0.4'
+          health=json.loads(read('/api/health')); assert health['version']=='v1.0.5'
           print('Health and brand assets passed',flush=True)
           objects=json.loads(read('/api/v1/platform/objects?limit=20'))
           assert objects['total']>=27
@@ -38,8 +38,8 @@ jobs:
           tools=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':1,'method':'tools/list'}))['result']['tools']
           assert len(tools)==12 and all(t['name'].startswith('curated_') for t in tools)
           print('Read-only MCP tools:',len(tools))
-          init=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':2,'method':'initialize','params':{'protocolVersion':'2025-03-26','capabilities':{},'clientInfo':{'name':'FieldToFit-release-check','version':'1.0.4'}}}))['result']
-          assert init['serverInfo']=={'name':'fieldtofit','version':'1.0.4'}
+          init=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':2,'method':'initialize','params':{'protocolVersion':'2025-03-26','capabilities':{},'clientInfo':{'name':'FieldToFit-release-check','version':'1.0.5'}}}))['result']
+          assert init['serverInfo']=={'name':'fieldtofit','version':'1.0.5'}
           def call(name,args):
               result=json.loads(read('/api/mcp/curated',{'jsonrpc':'2.0','id':3,'method':'tools/call','params':{'name':name,'arguments':args}}))['result']
               assert not result.get('isError'),result

@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-09-12T02:51:14.596150+00:00",
+  "base": "https://fieldtofit.top",
+  "assets": {
+    "/assets/index-_AF90iQ8.js": "2b7b7de05a00c5b5bbdeea6099d2faa38388a40f9bad6c71a805b8009d8fe61d",
+    "/assets/index-DIRvpQB9.css": "e2fb1824e5f7e22c62a6d8e82f0749f009df1f2b158a7497de01233891616eab"
+  },
+  "version": "v1.0.5",
+  "mcp_server": {
+    "name": "fieldtofit",
+    "version": "1.0.5"
+  },
+  "deployment_id": "dpl_8VPuKkJVVvxynj5y4skFHo8ruta3",
+  "deployment_url": "https://fieldtofit-ilms1kvwm-kevinnova-projects.vercel.app",
+  "browser": {
+    "passed": true,
+    "base": "https://fieldtofit.top",
+    "version": "v1.0.5",
+    "checks": [
+      "community card padding, border and radius in 1440/390 light/dark",
+      "no horizontal overflow",
+      "direct GitHub/email links contain matching six-field templates",
+      "six-field form retained",
+      "feedback destination explanation; no feedback sent"
+    ],
+    "errors": []
+  },
+  "local_browser": {
+    "passed": true,
+    "base": "http://127.0.0.1:18007",
+    "version": "v1.0.5",
+    "checks": [
+      "community card padding, border and radius in 1440/390 light/dark",
+      "no horizontal overflow",
+      "direct GitHub/email links contain matching six-field templates",
+      "six-field form retained",
+      "feedback destination explanation; no feedback sent"
+    ],
+    "errors": []
+  },
+  "existing_feedback_tests": {
+    "passed": 2,
+    "scope": "isolated database: save, invalid input and admin handling status"
+  }
+}

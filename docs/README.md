@@ -1,6 +1,6 @@
 # FieldToFit 文档导航
 
-当前运行版本 **v1.0.4**，正式网站 [fieldtofit.top](https://fieldtofit.top)。27 项既有资料、品牌页面与 10 项公开 MCP 工具已通过指定公网检查。现有 10 条动态；新增五类 27 个持续关注主体与 curated_watch，精选 MCP 共 12 项；长期维护仍待验，详见 REQ。
+当前运行版本 **v1.0.5**，正式网站 [fieldtofit.top](https://fieldtofit.top)。27 项既有资料、品牌页面与 10 项公开 MCP 工具已通过指定公网检查。现有 10 条动态；新增五类 27 个持续关注主体与 curated_watch，精选 MCP 共 12 项；长期维护仍待验，详见 REQ。
 
 2026-09-11 文档基线 **P3**：近期动态与资源档案、页内目录、两种阅读方式。P3 是需求修订，不是软件发版。
 
@@ -18,6 +18,7 @@
 | 社区、项目投稿与审核 | [投稿维护指南](guides/project-submissions.md) · [REQ-C-01](product/requirements/community.md) |
 | 实际平台使用 | [平台指南](guides/platform.md) · [MCP](guides/ai-access.md) |
 | 本地与部署 | [本地启动](guides/local-development.md) · [部署](guides/deployment.md) |
+| 网站反馈保存到哪里、如何处理 | [反馈流程](guides/feedback.md) |
 | 内容与运行 | [内容维护](guides/content.md) · [运行方案](guides/operating-model.md) · [管理](guides/management.md) |
 | 目录、兼容与素材 | [架构](architecture/README.md) · [目录说明](architecture/repository.md) · [品牌图片](guides/brand-assets.md) |
 | 版本与证据 | [版本导航](releases/README.md) · [验证索引](validation/README.md) |
