@@ -50,11 +50,11 @@ Describe the user-visible behavior, note any configuration or schema changes,
 and include screenshots for UI changes. By contributing, you agree that your
 work may be distributed under the repository's license.
 
-Keep supported compatibility routes and script entry points working when moving files. Put changes in the root CHANGELOG Unreleased section and follow the [release guide](docs/releases/README.md); do not mark unverified product requirements complete based only on technical sample output.
+Keep supported compatibility routes and script entry points working when moving files. Put changes in the root CHANGELOG Unreleased section and follow the [release guide](CHANGELOG.md); do not mark unverified product requirements complete based only on technical sample output.
 
 ## Versioning
 
-Every change-bearing delivery commit increments z and updates the changelog, release notes and current version references, including documentation or content changes. Minor (y) and major (x) increments require prior owner confirmation and an explanation of scope and impact. Follow the [version policy](docs/releases/versioning.md).
+Every change-bearing delivery commit increments z and updates the single CHANGELOG, both READMEs and current version references, including documentation or content changes. Minor (y) and major (x) increments require prior owner confirmation and an explanation of scope and impact. Follow the [version policy](docs/guides/releasing.md).
 
 ## Community contributions
 

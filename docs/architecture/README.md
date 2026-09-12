@@ -53,6 +53,6 @@ beta.2 已加入显式事务与失败回滚，并有模拟远程传输检查；�
 
 应用版本由 `backend/__init__.py` 与 frontend package/package-lock 保持一致；健康接口从后端版本读取。本版应用版本是 `1.0.1`，API 路径仍为 `/api/v1`，二者不是同一种版本号。协议版本单独由 MCP 实现定义。
 
-运行 `python scripts/maintenance/check_repository.py` 检查版本一致性、文档链接和前端相对导入。每次发布按 [版本维护说明](../releases/README.md) 执行。
+运行 `python scripts/maintenance/check_repository.py` 检查版本一致性、文档链接和前端相对导入。每次发布按 [版本维护说明](../../CHANGELOG.md) 执行。
 
 仓库检查器已分别校验 18 个父 REQ、72 个子 REQ 和 42 个历史锚点，检查编号归属及链接；旧 42 项不计入新需求完成率。

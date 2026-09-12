@@ -9,7 +9,8 @@
 | `api/` | Vercel 入口；当前每日 cron 是 `/api/cron/platform` |
 | `content/` | 既有导入名单与整理稿；新首发建议在文档中，未写入这些数据文件 |
 | `docs/product/` | P3 + CW1 目标、REQ、内容与社区投稿方案 |
-| `docs/releases/` | FieldToFit 逐版说明 |
+| `CHANGELOG.md` | 唯一更新历史，逐版说明已合并；Metis 更新位于末尾附录 |
+| `docs/guides/releasing.md` | 唯一发布指南；版本同步工具与双语 README 规则 |
 | `docs/archive/metis/` | Metis 旧版本、规划、设计与截图 |
 | `docs/validation/` | 真实证据，索引区分现版与历史 |
 | `examples/`、`tests/` | 技术样例与回归，旧案例不作为新产品成果 |
@@ -19,7 +20,7 @@
 
 ## 仍在使用的旧模块
 
-- `frontend/src/legacy/`：`/admin/curation` 仍引用的旧策展界面。
+- `frontend/src/legacy/`：旧页面兼容组件；`/admin/curation` 已跳转统一内容管理，按实际引用保留组件。
 - `TaskWorkbench`、`KnowledgeReading`、旧资源与比较页面：App 的兼容路由仍有引用，不以退出主线等同死代码。
 - `/api/mcp`：保留 21 项兼容工具；公开入口 `/api/mcp/curated` 提供 12 项精选工具。
 - `scripts/start-backend.sh`、`scrape.sh` 等包装：转交 runtime 或 maintenance 实现，仍供已有启动方式使用。

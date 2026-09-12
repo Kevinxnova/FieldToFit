@@ -28,7 +28,7 @@ S0 文档基线已整理；S1 的单对象精选审核/发布与材料读取链�
 
 材料来自 [官方 README](https://raw.githubusercontent.com/langchain-ai/deepagents/main/README.md) 与 [MIT LICENSE](https://raw.githubusercontent.com/langchain-ai/deepagents/main/LICENSE)，原文件、采集时间及哈希保存在 [examples/platform](../../examples/platform/capture.json)。GitHub 提交 API 匿名请求返回 403，因此上游版本为空；未使用本机 GitHub 令牌。官方站点文档只保存链接，未声称已获取正文。
 
-使用官方 Python MCP SDK **2.1.1** 在 2026-09-09 对最新服务复验 HTTP/stdio。结果见[机器记录](2026-09-08-platform-mcp.json)；文件名保留初次创建日期，内容为本次复验结果。
+使用官方 Python MCP SDK **2.1.1** 在 2026-09-09 对最新服务复验 HTTP/stdio。结果见[机器记录](../archive/metis/validation/2026-09-08-platform-mcp.json)；文件名保留初次创建日期，内容为本次复验结果。
 
 | 材料 | 所存文字 | 分段数（777 字符/段） | 结果 |
 | --- | --- | --- | --- |

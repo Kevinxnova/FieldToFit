@@ -24,8 +24,8 @@
 
 - 自动回归：**65 通过、1 跳过**。新增七项行为检查覆盖环境影响、事实冲突、四种路径、扫描件/版本/必需条件阻塞、文件产物、最新验证记录与 MCP 输入校验。跳过项仍为显式启用的外部 Turso / MiniMax 集成检查。
 - 前端：TypeScript 与生产构建通过。浏览器实测案例填入、资料生成、自行实现/混合采用切换、扫描件阻塞提示、实际结果展示。窄屏布局检查通过。
-- [新案例真实运行记录](../../../validation/2026-09-07-task-packet-results.json)：Python 3.13.9 / Darwin arm64，pypdf 6.17.0、reportlab 4.5.1。五组实际 PDF/JSON 文件在临时目录，不加入版本库；短运行输出加入 Git。
-- [MCP 实际调用结果](../../../validation/2026-09-07-task-packet-mcp.json)：官方 Python MCP SDK 2.1.1，HTTP 与 stdio 均完成四类既有任务及新增完整资料包输入/输出检查。
+- [新案例真实运行记录](../validation/2026-09-07-task-packet-results.json)：Python 3.13.9 / Darwin arm64，pypdf 6.17.0、reportlab 4.5.1。五组实际 PDF/JSON 文件在临时目录，不加入版本库；短运行输出加入 Git。
+- [MCP 实际调用结果](../validation/2026-09-07-task-packet-mcp.json)：官方 Python MCP SDK 2.1.1，HTTP 与 stdio 均完成四类既有任务及新增完整资料包输入/输出检查。
 - [用户可运行代码](../../../../examples/task_packets/pdf_amount.py)与[复现说明](../../../../examples/task_packets/pdf_amount.md)。完整案例已加入维护者审核的验证清单；清单现有九项，先前八项历史结果不被覆盖。
 
 ## 仍未完成的范围

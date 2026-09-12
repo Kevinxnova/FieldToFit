@@ -1,5 +1,7 @@
 # FieldToFit
 
+[中文](README.md) | [English](README.en.md)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="frontend/public/brand/logo-horizontal-paper.svg">
   <img src="frontend/public/brand/logo-horizontal-ink.svg" alt="FieldToFit" width="600">
@@ -7,50 +9,82 @@
 
 **FIELD → FIT**
 
+**FieldToFit is a living AI map shared by people and their AI: understand existing approaches, assess fit, and choose how to adopt and build.**
+
 - **Field:** the AI landscape of developments, papers, models, tools, open-source projects and developer materials.
 - **To:** continuous tracking, organization, comparison, verification and selection.
 - **Fit:** understanding what fits a user's task, conditions and constraints.
 
-**FieldToFit is a living AI map shared by people and their AI: understand existing approaches, assess fit, and choose how to adopt and build.**
+[Website](https://fieldtofit.top) · [For you](https://fieldtofit.top/for-you) · [For your AI](https://fieldtofit.top/for-your-ai) · [FieldToFit Community](https://fieldtofit.top/community)
 
-[Website](https://fieldtofit.top) · [For you](https://fieldtofit.top/for-you) · [For your AI](https://fieldtofit.top/for-your-ai) · [中文](README.md)
+<!-- section:overview -->
+## What FieldToFit offers
 
-The platform maintains sourced materials for researchers, engineers and students. People and their own AI use those materials to make task-specific decisions.
+For researchers, engineers, graduate students, students and AI application developers. The platform maintains sourced materials; you and your own AI use them to decide what to adopt and build.
 
-## Current release
-
-Ongoing-watch CW1 adds 27 profiles across model families, tools, agents, Skill collections and harnesses. Version tables, editorial notes and sources are shared with `curated_watch`; 12 curated MCP tools are available. [Validation and deployment status](docs/validation/2026-09-11-continuous-watch.md).
-
-**Current version: v1.1.0.** [Release and deployment status](docs/releases/v1.1.0.md). A unified management workspace connects daily discovery, private drafts, human/AI previews and explicit publication. News, ongoing resources and AA/Arena charts share database-backed releases. Existing content and public MCP contracts are preserved. [Management guide](docs/guides/management.md).
-
-The initial **v1.0.0** was verified on the public deployment on September 10, 2026: 27 published curated objects and 10 curated MCP tools. [Deployment evidence](docs/validation/2026-09-10-fieldtofit-brand.md).
-
-| Entry | Available now | Next work |
+| Entry | What it provides | Where to start |
 | --- | --- | --- |
-| For you | 10 developments, five highlights, resource dossiers and a responsive table of contents | Additional source materials and linked news/dossier identities |
-| For your AI | The same published news and dossiers through MCP/API, paged source text, revisions and bundles | Linked organizations, product families, versions and events; clearly attributed source claims and editorial comments |
-| About | Purpose, reading methods, maintenance principles and project status | Updated content scope and a supporting watchlist/source table |
+| For you | AA / Arena capability-and-price charts, recent developments, and ongoing coverage of models, tools, Agents, Skills and Harnesses | Read recent changes, then follow the contents to projects, version tables, editorial notes and sources |
+| For your AI | The same published materials through MCP / API, source-text continuation, revision history and bundles | Connect your AI using the MCP address, or download materials to give it |
+| FieldToFit Community | Community purpose, developer submissions and ways to contribute | Submit a project, recommend or correct resources, or help with development |
 
-Checks run every **1 day**; publication depends on meaningful, reviewed changes. Accounts remain unavailable; application cases are pending. Production maintenance writes/recovery, three real daily cycles, everyday AI-client use and target-user acceptance remain open.
+Sources are checked every **1 day**. Meaningful changes are prepared, reviewed and published for people and AI. Facts, source claims, editorial opinions and tested results stay distinct, with unknowns stated. Registration and synchronization remain unavailable; application cases are on hold.
 
+<!-- section:release -->
+## Current version and release highlights
+
+<!-- current-version:start -->
+**Current source version: [v1.1.1](CHANGELOG.md#v1.1.1)** · [fieldtofit-v1.1.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.1.1)
+<!-- current-version:end -->
+
+Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
+
+<!-- latest-summary:start -->
+- Consolidate version history in CHANGELOG and merge seven release-note files; archive Metis evidence with its original dates and scope.
+- Align Chinese and English READMEs, including the community, developer submissions, contribution channels and MCP access.
+- Synchronize version metadata and bilingual highlights, with checks for both READMEs, the latest changelog entry and application versions.
+<!-- latest-summary:end -->
+
+[Full changelog](CHANGELOG.md) · [Requirements and status](docs/product/requirements.md) · [Roadmap](ROADMAP.md)
+
+<!-- section:ai -->
 ## Connect your AI
 
-Public read-only MCP: [https://fieldtofit.top/api/mcp/curated](https://fieldtofit.top/api/mcp/curated).
+Public read-only MCP address:
 
-Use a client supporting remote HTTP MCP. See [connection instructions](docs/guides/ai-access.md). The updated curated endpoint exposes 12 tools including curated_news and curated_watch; the older `/api/mcp` retains 21 tools for compatibility. Successful protocol checks do not establish compatibility with every client.
+```text
+https://fieldtofit.top/api/mcp/curated
+```
 
-## Latest changes and planning
+Add this address to an AI client that supports remote HTTP MCP. Ask your AI to retrieve relevant materials, sources, versions and known limitations, then continue with your task.
 
-- September 11: current documentation reorganized around FieldToFit; Metis history archived; only five public website brand images retained; P3 requirements documented. The deployed and publicly verified reading update adds 10 developments, point-by-point notes, two content sections and a responsive table of contents. See [validation](docs/validation/2026-09-11-reading.md).
-- September 10: [FieldToFit v1.0.0](docs/releases/v1.0.0.md), branding, domain and public read validation.
+No website account is required. For client support and configuration, see [For your AI](https://fieldtofit.top/for-your-ai) and the [connection guide](docs/guides/ai-access.md). Protocol checks do not establish that every client has been tested in daily use.
 
-Track [19 requirements and 76 subrequirements](docs/product/requirements.md), the [roadmap](ROADMAP.md) and [changelog](CHANGELOG.md). Historical Metis records are in the changelog appendix and archive.
+<!-- section:community -->
+## FieldToFit Community
 
-Future release tags use the `fieldtofit-v1.0.0` convention while the application displays its current version. The existing `v1.0.0` tag belongs to Metis and keeps its original target. Content revision IDs remain available for traceability; every delivery commit also increments the application patch version.
+FieldToFit is gradually building a community around AI applications and a continuously maintained, traceable **AI Application Database** that both people and AI can use.
 
+We organize noteworthy models, tools, development experience and developer-submitted projects so existing work is easier to discover, understand and adopt. Submit projects, recommend resources, contribute materials, or help with testing, documentation and development. Build something meaningful together.
+
+### Developer-submitted projects
+
+**Let more people discover your project.** Individuals and teams can submit AI applications, tools and open-source projects with a viewable prototype, demo or code and a clear explanation of the problem they solve. Include any need for testers, development partners or documentation contributors.
+
+Submit through a [GitHub Issue](https://github.com/Kevinxnova/FieldToFit/issues/new) or [fieldtofit@163.com](mailto:fieldtofit@163.com) with six fields: **project name, introduction (problem and audience), project URL, how to use, openness, and your relationship to the author**.
+
+Maintainers plan to review submissions weekly; submission does not mean automatic inclusion. GitHub issues are public; emails are not directly published. Confirmed project materials are reviewed and shared with For you and For your AI. The [community page](https://fieldtofit.top/community#submit-project) can prepare your submission draft.
+
+### Take part
+
+- [Submit a developer project](https://fieldtofit.top/community#submit-project): share your work and find users and collaborators.
+- [Recommend resources or report errors](https://fieldtofit.top/feedback): contribute materials and improve accuracy.
+- [Contribute to FieldToFit](CONTRIBUTING.md): start with curation, tests, documentation or features.
+
+<!-- section:local -->
 ## Run locally
 
-Python 3.12/3.13 and Node.js 20+:
+Requirements: Python 3.12 / 3.13 and Node.js 20+.
 
 ```bash
 git clone https://github.com/Kevinxnova/FieldToFit.git fieldtofit
@@ -64,7 +98,7 @@ npm ci
 cd ..
 ```
 
-Preserve an existing `.env`. SQLite is the local default; basic reading needs no model credentials. Start the backend and frontend in separate terminals:
+Preserve an existing `.env`. SQLite is the default; basic browsing needs no model-service credentials. Start the backend and frontend in separate terminals:
 
 ```bash
 ./scripts/start-backend.sh
@@ -75,18 +109,11 @@ cd frontend
 npm run dev
 ```
 
-Open [localhost:5173/for-you](http://localhost:5173/for-you). A new database starts empty; see the [platform guide](docs/guides/platform.md) for isolated previews and publication. Opening an HTML file directly is insufficient.
+Open [localhost:5173/for-you](http://localhost:5173/for-you). A new database starts empty; see the [platform guide](docs/guides/platform.md) for import and review. Full functionality requires the backend; opening an HTML file directly is insufficient.
 
-## Documentation and contributions
+<!-- section:docs -->
+## Documentation, contributions and license
 
-[Documentation](docs/README.md) · [Deployment](docs/guides/deployment.md) · [Content maintenance](docs/guides/content.md) · [Repository structure](docs/architecture/repository.md) · [Public brand assets](docs/guides/brand-assets.md) · [Contributing](CONTRIBUTING.md)
+[Documentation](docs/README.md) · [Requirements](docs/product/requirements.md) · [Content management](docs/guides/management.md) · [Deployment](docs/guides/deployment.md) · [Release policy](docs/guides/releasing.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
-Source code is [MIT licensed](LICENSE). Third-party materials retain their own terms. See the brand guide for the public asset inventory. Report factual errors, missing materials and AI retrieval issues through the repository.
-
-Every change-bearing delivery commit increments the patch version, including content and documentation. Minor and major changes require the owner’s prior confirmation. See [version policy](docs/releases/versioning.md).
-
-The Company flagships filter uses a reviewed 11-company selection: 11 AA points and 8 Arena points, with explicit missing-data notices. Selection persists across source tabs and shared URLs.
-
-## Community and developer projects
-
-[FieldToFit Community](https://fieldtofit.top/community) welcomes individual and team projects. Prepare six fields, then send through GitHub or fieldtofit@163.com. The website generates drafts; you confirm sending. Submissions are reviewed weekly and published profiles are shared with For you and curated_watch using origin=developer_submission. No submissions have been published yet. See the [review workflow](docs/guides/project-submissions.md).
+Source code is [MIT licensed](LICENSE). Third-party materials retain their original terms. The [brand guide](docs/guides/brand-assets.md) lists the public image inventory. Historical Metis materials are kept in the [changelog appendix](CHANGELOG.md#附录metis-历史更新记录) and [archive](docs/archive/README.md).

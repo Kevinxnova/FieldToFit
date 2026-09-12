@@ -1,27 +1,19 @@
 """Check repository versions, Markdown links and frontend imports without network access."""
-import ast
 import json
 from pathlib import Path
 import re
 import sys
 from urllib.parse import unquote
 
+import release_metadata
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
 def run():
     errors = []
-    tree = ast.parse((ROOT / 'backend/__init__.py').read_text())
-    version = next(ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
-                   and any(isinstance(t, ast.Name) and t.id == '__version__' for t in n.targets))
-    manifest = json.loads((ROOT / 'frontend/package.json').read_text())
-    lock = json.loads((ROOT / 'frontend/package-lock.json').read_text())
-    if {version, manifest['version'], lock['version'], lock['packages']['']['version']} != {version}:
-        errors.append('Backend and frontend versions differ')
-    for file in ['CHANGELOG.md', 'README.md', 'README.en.md', f'docs/releases/v{version}.md']:
-        path = ROOT / file
-        if not path.exists() or version not in path.read_text():
-            errors.append('Version missing in ' + file)
+    version = release_metadata.read_version(ROOT)
+    errors.extend(release_metadata.check(ROOT))
     if (ROOT / 'backend/requirements.txt').read_text().splitlines()[-1] != '-r ../requirements.txt':
         errors.append('Backend compatibility requirements must reference the root requirements')
 

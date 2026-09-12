@@ -1,6 +1,6 @@
 # 开发者投稿项目：提交、审核与更新
 
-v1.1.0 · 2026-09-12。网站入口：[FieldToFit 社区](https://fieldtofit.top/community#submit-project)。个人与团队都可提交已有原型、演示或代码；第三方也可以推荐。不设 Star 门槛。
+网站入口：[FieldToFit 社区](https://fieldtofit.top/community#submit-project)。个人与团队都可提交已有原型、演示或代码；第三方也可以推荐。不设 Star 门槛。
 
 ## 六项投稿信息
 
@@ -55,7 +55,7 @@ PYTHON_DOTENV_DISABLED=1 .venv/bin/python -m pytest tests/test_platform_watch.py
 .venv/bin/python scripts/maintenance/check_repository.py
 ```
 
-管理页先保存草稿、核对双端预览，再明确发布；无需重新部署前端。正式交付提交按[版本规则](../releases/versioning.md)递增版本并记录。禁止将私密邮件、内部备份或凭据加入公开数据；操作见[内容管理](management.md)。
+管理页先保存草稿、核对双端预览，再明确发布；无需重新部署前端。正式交付提交按[版本规则](releasing.md)递增版本并记录。禁止将私密邮件、内部备份或凭据加入公开数据；操作见[内容管理](management.md)。
 
 ## 同源展示与更新
 

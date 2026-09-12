@@ -24,3 +24,7 @@
 - `maintenance/remote_snapshot.py`：远程快照工具，按[运行指南](../docs/guides/operating-model.md)使用。
 
 这些工具不是普通打开网页的前置步骤；本轮整理未运行采集、种子写入或生产维护。
+
+## 版本维护
+
+`python scripts/maintenance/release_metadata.py --write` 从后端版本与 CHANGELOG 双语摘要同步前端版本、中英文 README；不带参数只检查。完整规则见[发布指南](../docs/guides/releasing.md)。

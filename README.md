@@ -1,5 +1,7 @@
 # FieldToFit
 
+[中文](README.md) | [English](README.en.md)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="frontend/public/brand/logo-horizontal-paper.svg">
   <img src="frontend/public/brand/logo-horizontal-ink.svg" alt="FieldToFit" width="600">
@@ -7,57 +9,82 @@
 
 **FIELD → FIT**
 
+**FieldToFit 是人与 AI 共享的动态 AI 地图：看清已有方案，判断是否适配，选择正确的采用与构建路线。**
+
 - **Field**：动态、论文、模型、工具、开源项目和开发资料组成的 AI 全景。
 - **To**：持续跟踪、整理、比较、验证和筛选。
 - **Fit**：结合用户的任务、条件与限制，判断什么真正适用。
 
-**FieldToFit 是人与 AI 共享的动态 AI 地图：看清已有方案，判断是否适配，选择正确的采用与构建路线。**
+[访问网站](https://fieldtofit.top) · [For you](https://fieldtofit.top/for-you) · [For your AI](https://fieldtofit.top/for-your-ai) · [FieldToFit 社区](https://fieldtofit.top/community)
 
-[社区与投稿](https://fieldtofit.top/community) · [访问网站](https://fieldtofit.top) · [For you](https://fieldtofit.top/for-you) · [For your AI](https://fieldtofit.top/for-your-ai) · [English](README.en.md)
+<!-- section:overview -->
+## FieldToFit 提供什么
 
-给你看，也给你的 AI 用。面向研究者、工程师、研究生和学生，平台维护有出处的资料；用户和自己的 AI 结合任务继续比较、选择和构建。
+面向研究者、工程师、研究生、学生及 AI 应用开发者。平台维护有出处的资料；你和自己的 AI 结合任务继续判断、采用与构建。
 
-## 两种阅读方式
-
-| 入口 | 当前作用 | 本轮实现与后续方向 |
+| 入口 | 提供什么 | 如何开始 |
 | --- | --- | --- |
-| For you | 10 条近期动态（5 条速览）、五类 27 个持续关注主体、版本 / 技能表与阅读目录 | 补充资源原文，完善动态与档案关系 |
-| For your AI | 同一套已发布档案与动态的 MCP/API、原文续读、修订历史和资料包 | 同步读取公司、产品、版本与事件关系，保留来源观点与编辑评价的区别 |
-| FieldToFit 社区 | 共建介绍、开发者投稿项目、GitHub / 邮箱投稿和资源反馈 | 每周人工审核；收录后同步展示给人和 AI |
-| 关于 FieldToFit | 项目立意、使用方法、维护原则、真实版本与参与入口 | 补充新的内容方向；来源辅助页增加跟踪主体和发现渠道说明 |
+| For you | AA / Arena 模型能力与价格图、近期动态，以及模型、工具、Agent、Skill、Harness 的持续关注资料 | 先看近期变化，再沿目录阅读具体项目、版本表、逐点解读和出处 |
+| For your AI | 同一套已发布资料的 MCP / API、原文续读、修订历史和资料包 | 复制 MCP 地址接入个人 AI，或下载资料交给它继续使用 |
+| FieldToFit 社区 | 共建介绍、开发者投稿及参与入口 | 提交项目、推荐资源、纠错，或参与开发 |
 
-**当前运行 v1.1.0：统一内容管理，已部署并通过本版验收。** 四模块串联每日审阅、草稿、双端预览和明确发布；同一数据库同时供网页与 MCP 读取。现有公开内容保留。[本版更新与部署状态](docs/releases/v1.1.0.md) · [内容管理指南](docs/guides/management.md)。
+资料每 **1 天**检查，发现值得发布的变化后整理、审核，再同步给人和 AI。事实、来源观点、编辑评价与实测结果分开，未知项明确保留。注册与同步尚未开放，AI 应用案例暂缓。
 
-资料每 **1 天**检查，有值得发布的变化才更新内容。事实、作者声明、编辑评价和实测分开；未知、失败与材料缺口明确保留。公开账户入口已移除，注册与同步继续关闭，AI 应用案例 pending。
+<!-- section:release -->
+## 当前版本与本版更新
 
-## 连接个人 AI
+<!-- current-version:start -->
+**当前源码版本：[v1.1.1](CHANGELOG.md#v1.1.1)** · [fieldtofit-v1.1.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.1.1)
+<!-- current-version:end -->
 
-公开只读 MCP：[https://fieldtofit.top/api/mcp/curated](https://fieldtofit.top/api/mcp/curated)。将此地址填入支持远程 HTTP MCP 的客户端；配置说明见 [For your AI](https://fieldtofit.top/for-your-ai) 和[接入指南](docs/guides/ai-access.md)。
+源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
-当前提供 12 项精选读取工具（包括 curated_news、curated_watch），支持检索、档案、原文、导出、资料包、来源、期次、变化和修订历史。旧 `/api/mcp` 的 21 项工具保留兼容。协议调用通过不等同于所有日常 AI 客户端都已验收。
+<!-- latest-summary:start -->
+- 版本历史统一到 CHANGELOG，合并七份逐版说明；Metis 验收证据归入历史目录，保留日期和适用范围。
+- 中英文 README 采用对应结构，补全社区愿景、开发者投稿、参与入口与 MCP 接入方式。
+- 版本号和双语更新摘要统一同步；发布检查验证两版 README、最新记录及前后端版本一致。
+<!-- latest-summary:end -->
 
-## 当前进展与最近更新
+[完整更新记录](CHANGELOG.md) · [需求与完成状态](docs/product/requirements.md) · [后续计划](ROADMAP.md)
 
-| 日期 / 记录 | 已完成 | 待完成 |
-| --- | --- | --- |
-| 2026-09-12 · [v1.1.0](docs/releases/v1.1.0.md) | 统一内容管理、每日候选、私密草稿、双端发布、图表与反馈管理、原样迁移 | 连续真实日运营、全文补齐、多编辑者实名审计 |
-| 2026-09-12 · [v1.0.5](docs/releases/v1.0.5.md) | 关于页邀请卡片留白与主题适配；直接说明 GitHub / 邮箱投稿；解释反馈保存去向 | 真实投稿与反馈的持续处理；自动通知尚未实现 |
-| 2026-09-11 · [v1.0.4](docs/releases/v1.0.4.md) | 精简目录、更新关于页、社区与六项投稿表单、已审投稿同源读取 | 首批真实投稿及每周审核运营 |
-| 2026-09-11 · [v1.0.3](docs/releases/v1.0.3.md) | 新增“各家旗舰模型”：AA 11 点、Arena 8 点；名单依据、缺项说明与筛选分享 | 持续维护旗舰名单和来源缺项 |
-| 2026-09-11 · [v1.0.2](docs/releases/v1.0.2.md) | AA / Arena 2026 年图表：190 点、12 组公司配色、来源原名直接标注、筛选/放大/缺项清单；移除 Epoch | Arena 未确认日期、来源未给出的评分/价格继续补核 |
-| 2026-09-11 · [v1.0.1](docs/releases/v1.0.1.md) | 三来源模型图表、双页导读、解读默认可见、MCP 交接、移除旧展示入口、版本规则 | 图表覆盖、连续真实日维护、客户端验收 |
-| 2026-09-11 · [持续关注 CW1](docs/validation/2026-09-11-continuous-watch.md) | 五类 27 主体、具体表格与解读、同源 MCP、复制 / 下载 | 原文补齐、自动维护及统一对象关系 |
-| 2026-09-11 · 阅读结构更新 | 近期动态与资源档案、10 条动态分点解读、桌面/手机目录、第 11 项 MCP 工具 | 新闻自动采集与全文、来源跟踪表 |
-| 2026-09-11 · 文档与文件整理 | 当前介绍统一为 FieldToFit；Metis 历史归档；公开品牌素材收敛为 5 份；产品文档更新到 P3 | 来源跟踪表与持续运营验收 |
-| 2026-09-10 · [v1.0.0](docs/releases/v1.0.0.md) | 品牌、域名、关于页；公网 27 项对象与 10 项精选 MCP 工具验证 | 生产维护写入/恢复、连续 3 个真实日周期、日常客户端及目标用户验收 |
+<!-- section:ai -->
+## 给你的 AI 使用
 
-[22 项 REQ / 91 个子 REQ](docs/product/requirements.md)逐项记录范围与缺口。[路线图](ROADMAP.md)列出下一步，[更新记录](CHANGELOG.md)正文聚焦 FieldToFit，旧记录位于其 Metis 附录。
+公开只读 MCP 地址：
 
-后续发布标签采用 `fieldtofit-v1.0.0` 这样的前缀，网站显示当前实际版本。现存 `v1.0.0` 属于旧 Metis，保留原指向。每次交付提交递增 z，y/x 升级须先确认；[版本规则](docs/releases/versioning.md)。
+```text
+https://fieldtofit.top/api/mcp/curated
+```
 
-## 本地启动
+将地址添加到支持远程 HTTP MCP 的 AI 客户端。连接后，让 AI 检索相关资料、读取出处、版本和已知限制，并结合你的任务继续工作。
 
-环境：Python 3.12/3.13、Node.js 20+。
+无需网站账户。客户端是否支持远程 MCP、如何填写配置，请参阅 [For your AI](https://fieldtofit.top/for-your-ai) 和[接入指南](docs/guides/ai-access.md)。协议验证不代表所有客户端均已完成实际验收。
+
+<!-- section:community -->
+## FieldToFit 社区
+
+FieldToFit 正在逐步建设围绕 AI 应用的共建社区，维护持续更新、可追溯、人与 AI 都能使用的 **AI 应用资料库（AI Application Database）**。
+
+我们整理值得关注的模型、工具、开发经验和开发者投稿项目，让已有成果更容易被发现、理解和采用。欢迎提交项目、推荐资源、补充资料，或参与测试、文档与功能开发，一起做出有意义的事情。
+
+### 开发者投稿项目
+
+**让你的项目，被更多人看见。** 个人和团队的 AI 应用、工具与开源项目，只要有可查看的原型、演示或代码，并能说明解决的问题，就可以投稿。也欢迎说明你需要的测试者、开发伙伴或文档协作。
+
+通过 [GitHub Issue](https://github.com/Kevinxnova/FieldToFit/issues/new) 或 [fieldtofit@163.com](mailto:fieldtofit@163.com) 提交六项信息：**项目名称、项目介绍（解决的问题及面向的人）、项目入口、如何使用、开放情况、作者与提交者关系**。
+
+维护者计划每周集中审核；提交不等于自动收录。GitHub Issue 公开，邮件本身不会直接公开；确认后的项目材料经审核同步至 For you 和 For your AI。也可用[社区页面](https://fieldtofit.top/community#submit-project)准备投稿草稿。
+
+### 参与共建
+
+- [提交开发者项目](https://fieldtofit.top/community#submit-project)：介绍成果，寻找使用者和开发伙伴。
+- [推荐资源或纠错](https://fieldtofit.top/feedback)：补充资料，帮助内容保持准确。
+- [参与 FieldToFit 开发](CONTRIBUTING.md)：从资料整理、测试、文档或功能开发开始。
+
+<!-- section:local -->
+## 本地运行
+
+环境：Python 3.12 / 3.13、Node.js 20+。
 
 ```bash
 git clone https://github.com/Kevinxnova/FieldToFit.git fieldtofit
@@ -71,9 +98,7 @@ npm ci
 cd ..
 ```
 
-已有 `.env` 请保留。默认 SQLite；浏览和基础读取无需模型密钥。生产数据库、管理员及维护凭据按[部署说明](docs/guides/deployment.md)独立配置。
-
-两个终端分别启动：
+已有 `.env` 请保留。默认使用 SQLite；基础浏览不需要模型服务密钥。在两个终端分别启动：
 
 ```bash
 ./scripts/start-backend.sh
@@ -84,10 +109,11 @@ cd frontend
 npm run dev
 ```
 
-打开 [本地前端](http://localhost:5173/for-you)。新数据库为空；真实材料隔离预览与审核发布见[平台指南](docs/guides/platform.md)。网页依赖服务，不能双击 HTML 获得完整功能。
+打开 [localhost:5173/for-you](http://localhost:5173/for-you)。新数据库为空，内容导入及审核见[平台指南](docs/guides/platform.md)。完整功能依赖后端服务，不能直接双击 HTML 使用。
 
-## 维护与参与
+<!-- section:docs -->
+## 文档、贡献与许可
 
-[文档首页](docs/README.md) · [目标](docs/product/goals.md) · [需求](docs/product/requirements.md) · [内容维护](docs/guides/content.md) · [目录与兼容清单](docs/architecture/repository.md) · [品牌素材范围](docs/guides/brand-assets.md) · [贡献](CONTRIBUTING.md) · [安全报告](SECURITY.md)
+[文档导航](docs/README.md) · [REQ list](docs/product/requirements.md) · [内容管理](docs/guides/management.md) · [部署](docs/guides/deployment.md) · [发布规则](docs/guides/releasing.md) · [贡献指南](CONTRIBUTING.md) · [安全报告](SECURITY.md)
 
-欢迎提出值得跟踪的对象、资料纠错和 AI 取材反馈。源码采用 [MIT](LICENSE)；第三方材料遵循各自原始许可，品牌文件的公开范围见上述说明。
+源码采用 [MIT](LICENSE)；第三方资料遵循各自原始许可。[品牌素材说明](docs/guides/brand-assets.md)列出公开图片的范围。历史 Metis 资料位于[更新记录附录](CHANGELOG.md#附录metis-历史更新记录)和[历史目录](docs/archive/README.md)。
