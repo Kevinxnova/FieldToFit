@@ -1,12 +1,12 @@
 # FieldToFit REQ list · 平台基线 P3
 
-更新日期：2026-09-12。**现行需求与状态唯一入口。** 当前应用版本 v1.0.5。P3 + CW1 已实现 10 条近期动态、五类 27 个持续关注主体、结构化版本/技能表、分点解读、页内目录及同源 curated_watch；精选 MCP 共 12 项。原有数据库及兼容 API 保留，页面删除旧归档/资料库入口。两来源 2026 年模型图表、公司配色、直接名称标注与各家旗舰筛选已实现；保留双页导读；图表证据见[v1.0.3 验收](../validation/2026-09-11-v1.0.3.md)，本次卡片与说明调整见[本版验收](../validation/2026-09-12-v1.0.5.md)。[本轮验收与部署状态](../validation/2026-09-11-continuous-watch.md)。来源跟踪表、完整原文采集、统一对象关系及持续运营仍未完成。
+更新日期：2026-09-12。**现行需求与状态唯一入口。** 当前应用版本 v1.1.0。P3 + CW1 已实现 10 条近期动态、五类 27 个持续关注主体、结构化版本/技能表、分点解读、页内目录及同源 curated_watch；精选 MCP 共 12 项。原有数据库及兼容 API 保留，页面删除旧归档/资料库入口。两来源 2026 年模型图表、公司配色、直接名称标注与各家旗舰筛选已实现；保留双页导读；图表证据见[v1.0.3 验收](../validation/2026-09-11-v1.0.3.md)，前版卡片与说明调整见[v1.0.5 验收](../validation/2026-09-12-v1.0.5.md)。[本轮验收与部署状态](../validation/2026-09-11-continuous-watch.md)。v1.1.0 新增统一内容管理、每日审阅→草稿→双端预览→发布及原样迁移，见[本版验收](../validation/2026-09-12-v1.1.0.md)。来源跟踪表、完整原文采集、统一对象关系及持续运营仍未完成。
 
 [项目立意](goals.md) · [页面方案与文案](pages.md) · [资料与读取契约](data-contract.md) · [验收](acceptance.md) · [路线图](../../ROADMAP.md)
 
 ## 范围与状态规则
 
-- 当前范围为 **21 个 REQ、85 个子 REQ**。使用 `REQ-` 前缀区别于历史编号；子项以 `.01` 等后缀标识。下面链接逐项给出用途、方案、验收、依赖和状态。
+- 当前范围为 **22 个 REQ、91 个子 REQ**。使用 `REQ-` 前缀区别于历史编号；子项以 `.01` 等后缀标识。下面链接逐项给出用途、方案、验收、依赖和状态。
 - 全部属于本轮平台目标；按路线图分阶段完成。现有功能可复用，父项仅在全部子项通过各自标准后关闭。各子项按本次实现更新；证据见[基础检查](../validation/2026-09-09-platform-foundation.md)及[期次与增量检查](../validation/2026-09-09-platform-updates.md)。
 - “待开发”需新增能力；“待适配”有代码基础但仍需调整/验证；“待实测”需真实环境或用户记录；“待执行”为运营动作。后续新增“开发中 / 已验收 / 受阻”，附日期、原因与证据。
 - 对外内容精选、中文结构化表达与原文并存；不保证全网覆盖、所有类型各有固定数量或全量双语。每个自动检查/更新周期 **1 天**。
@@ -35,7 +35,8 @@
 | [REQ-C-01](requirements/community.md#req-c-01) | 社区与开发者投稿 | .01–.04 | 页面/通道/读取已实现；真实投稿运营待执行 | S2–S4 |
 | [REQ-O-01](requirements/operations.md#req-o-01) | 维护后台与发布审核 | .01–.04 | 部分实现；范围与缺口见子项 | S1–S4 |
 | [REQ-O-02](requirements/operations.md#req-o-02) | 运行监控与整理服务 | .01–.04 | 既有运行基础；在线整理与连续运营待验 | S1–S4 |
-| [REQ-O-03](requirements/operations.md#req-o-03) | 访问边界与可部署运行 | .01–.04 | 公网品牌与读取已验；生产维护写入/恢复待验 | S1–S4 |
+| [REQ-O-03](requirements/operations.md#req-o-03) | 访问边界与可部署运行 | .01–.04 | 公网读取与本版管理写入已验；全库灾难恢复待验 | S1–S4 |
+| [REQ-O-05](requirements/operations.md#req-o-05) | 统一内容管理工作台 | .01–.06 | 已实现；范围与验收见 v1.1.0 | S4 |
 | [REQ-O-04](requirements/operations.md#req-o-04) | 小范围运营与需求反馈 | .01–.04 | 反馈入口已有；真实用户与运营待验 | S1–S4 |
 | [REQ-X-01](requirements/migration.md#req-x-01) | 旧功能与新入口迁移 | .01–.04 | 文档/导航/增量表已适配；生产迁移待验 | S0–S4 |
 
@@ -78,7 +79,8 @@
 | <a id="o-02"></a>O-02 | [REQ-O-02](requirements/operations.md#req-o-02) / [REQ-F-04](requirements/foundation.md#req-f-04) | 保留监控、预算、恢复与日记录 |
 | <a id="o-03"></a>O-03 | [REQ-O-03](requirements/operations.md#req-o-03) | 保留部署验证、备份和恢复 |
 | <a id="o-04"></a>O-04 | [REQ-O-03](requirements/operations.md#req-o-03) / [REQ-AI-03](requirements/for-ai.md#req-ai-03) | 保留读写权限边界 |
-| <a id="o-05"></a>O-05 | [REQ-O-04](requirements/operations.md#req-o-04) / [REQ-O-01](requirements/operations.md#req-o-01) | 转为理解、取材、复访和纠错验证 |
+| <a id="o-05"></a>O-05 | [REQ-O-05](requirements/operations.md#req-o-05) | 统一内容管理工作台 | .01–.06 | 已实现；范围与验收见 v1.1.0 | S4 |
+| [REQ-O-04](requirements/operations.md#req-o-04) / [REQ-O-01](requirements/operations.md#req-o-01) | 转为理解、取材、复访和纠错验证 |
 | <a id="o-06"></a>O-06 | [REQ-O-02](requirements/operations.md#req-o-02) | 生成仅用于资料整理，不做用户任务规划 |
 | <a id="m-01"></a>M-01 | [REQ-AI-03](requirements/for-ai.md#req-ai-03) | 保留只读 MCP；改验收为真实客户端取材引用 |
 | <a id="m-02"></a>M-02 | [REQ-AI-01](requirements/for-ai.md#req-ai-01) / [REQ-AI-03](requirements/for-ai.md#req-ai-03) | 接入示例围绕读取，取消四类任务方案要求 |
@@ -95,4 +97,4 @@
 1. 开发前选定父 REQ 和子项；执行时引用完整新编号，不能沿用旧标题推断范围。
 2. 开发后只更新实际完成子项，附验证记录；父项全部验收才能关闭。不能以文档、接口自测或内容数量替代真实验收。
 3. 需求范围变化同时更新目标、方案、验收和路线图；实现变化进入 CHANGELOG 和对应版本说明。
-4. 仓库检查器已同时校验 21 个父项、85 个子项及 42 个历史锚点，输出三类独立计数；见 REQ-X-01.04。
+4. 仓库检查器已同时校验 22 个父项、91 个子项及 42 个历史锚点，输出三类独立计数；见 REQ-X-01.04。

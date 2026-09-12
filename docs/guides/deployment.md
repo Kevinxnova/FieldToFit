@@ -1,6 +1,6 @@
 # 部署与升级
 
-当前运行代码为 FieldToFit v1.0.5，已部署到 https://fieldtofit.top，Vercel/Turso 公网读取和 10 项精选 MCP 工具已验；容器实际构建、生产维护写入/恢复和连续日周期的验收仍未完成，状态见 [REQ-O-03](../product/requirements/operations.md#req-o-03)。
+当前运行代码为 FieldToFit v1.1.0，已部署到 https://fieldtofit.top，Vercel/Turso 公网读取和 12 项精选 MCP 工具已验；v1.1.0 生产迁移、草稿保存及原样发布已验；容器实际构建、全库灾难恢复和连续日周期仍待验，状态见 [REQ-O-03](../product/requirements/operations.md#req-o-03)。
 
 ## 本地 SQLite 与单服务部署
 
@@ -42,7 +42,7 @@ macOS 的 `scripts/setup-mac.sh` 会安装依赖、初始化配置指定的数�
 
 当前 `vercel.json` 只登记 `/api/cron/platform` 一个每日定时任务，每天 UTC 02:00（北京时间 10:00）运行。旧 knowledge、scrape、daily-news、classify、digest 路由保留兼容，但没有登记为当前 Vercel 自动调度。部署前按 [兼容边界](../architecture/README.md) 核对需要的流程，再检查平台当前支持的时长和调度限制。
 
-所有定时 API 都检查 `CRON_SECRET`；检查 `GET /api/health`、资料直达页面、来源状态和管理登录。新表会在初始化时创建。beta.2 已增加显式事务及失败回滚，并通过模拟远程传输的检查；生产 Turso 的真实事务、超时和恢复仍需验收，不能以模拟结果替代。详见 [beta.2 验证](../validation/v1.1.0-beta.2-acceptance.md)。
+所有定时 API 都检查 `CRON_SECRET`；检查 `GET /api/health`、资料直达页面、来源状态和管理登录。新表会在初始化时创建。beta.2 已增加显式事务及失败回滚，并通过模拟远程传输的检查；v1.1.0 管理写入使用单次服务端原子事务并核对读集，已完成真实 Turso 草稿保存和原样图表发布；完整灾难恢复仍需独立演练。详见 [beta.2 验证](../validation/v1.1.0-beta.2-acceptance.md)。
 
 ## 从旧版本升级
 
@@ -51,7 +51,7 @@ macOS 的 `scripts/setup-mac.sh` 会安装依赖、初始化配置指定的数�
 3. 保留 `.env`、数据、日志和平台配置。不要用示例配置覆盖实际配置，也不要把根目录数据库直接覆盖到 data/。
 4. 验证新工作台、`/admin/curation`、MCP 和原脚本入口；检查是否出现新字段或配置需求。
 
-回滚时使用对应提交和相容的数据备份；本次整理没有做用户数据迁移，历史目录变化见 [beta.1 整理说明](../archive/metis/releases/v1.1.0-beta.1.md)，当前升级变化见 [FieldToFit v1.0.5 说明](../releases/v1.0.5.md)。
+回滚时使用对应提交和相容的数据备份；v1.1.0 将动态、持续关注和图表原样迁入数据库，必须保留迁移后的发布数据，历史目录变化见 [beta.1 整理说明](../archive/metis/releases/v1.1.0-beta.1.md)，当前升级变化见 [FieldToFit v1.1.0 说明](../releases/v1.1.0.md)及[内容管理迁移指南](management.md)。
 
 ## 每日运行监控
 

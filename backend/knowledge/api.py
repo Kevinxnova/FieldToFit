@@ -38,6 +38,13 @@ def admin_required(fn):
     return wrapped
 
 
+@bp.after_request
+def private_admin_response(response):
+    if request.path.startswith('/api/v1/admin/'):
+        response.headers['Cache-Control']='private, no-store'
+    return response
+
+
 @bp.before_request
 def protect():
     if request.method == 'OPTIONS':
@@ -715,3 +722,80 @@ def platform_watch():
 def platform_model_landscape():
     from backend.knowledge.model_landscape import snapshot
     return jsonify(snapshot())
+
+# Unified management uses the same administrator guard and origin boundary.
+@bp.get('/admin/workspace/status')
+@admin_required
+def workspace_status():
+    from backend.knowledge.content_workspace import collection_status
+    return jsonify(collection_status())
+
+@bp.post('/admin/workspace/migrate')
+@admin_required
+def workspace_migrate():
+    from backend.knowledge.content_workspace import migrate
+    return jsonify(migrate())
+
+@bp.get('/admin/workspace/inbox')
+@admin_required
+def workspace_inbox():
+    from backend.knowledge.content_workspace import inbox
+    return jsonify(inbox(**{k:request.args[k] for k in ('q','since','until','source','status','item_type','offset') if k in request.args}))
+
+@bp.post('/admin/workspace/inbox')
+@admin_required
+def workspace_candidate_add():
+    from backend.knowledge.content_workspace import add_candidate
+    return jsonify(add_candidate(body())),201
+
+@bp.post('/admin/workspace/select')
+@admin_required
+def workspace_select():
+    from backend.knowledge.content_workspace import select
+    return jsonify(select(body()))
+
+@bp.get('/admin/workspace/library')
+@admin_required
+def workspace_library():
+    from backend.knowledge.content_workspace import library
+    return jsonify(library(**{k:request.args[k] for k in ('kind','q','status','origin','offset') if k in request.args}))
+
+@bp.get('/admin/workspace/content/<kind>/<ident>')
+@admin_required
+def workspace_detail(kind,ident):
+    from backend.knowledge.content_workspace import detail
+    return jsonify(detail(kind,ident))
+
+@bp.patch('/admin/workspace/content/<kind>/<ident>')
+@admin_required
+def workspace_save(kind,ident):
+    from backend.knowledge.content_workspace import save
+    return jsonify(save(kind,ident,body()))
+
+@bp.post('/admin/workspace/content/<kind>/<ident>/<action>')
+@admin_required
+def workspace_action(kind,ident,action):
+    from backend.knowledge.content_workspace import preview,publish,restore
+    if action=='preview':return jsonify(preview(kind,ident))
+    if action=='publish':return jsonify(publish(kind,ident,body()))
+    if action=='withdraw':return jsonify(publish(kind,ident,body(),True))
+    if action=='restore':return jsonify(restore(kind,ident,body()))
+    return jsonify(detail='Unknown management action'),404
+
+@bp.get('/admin/workspace/content/<kind>/<ident>/export')
+@admin_required
+def workspace_export(kind,ident):
+    from backend.knowledge.content_workspace import export_draft
+    return jsonify(export_draft(kind,ident))
+
+@bp.get('/admin/workspace/feedback')
+@admin_required
+def workspace_feedback():
+    from backend.knowledge.content_workspace import feedback_list
+    return jsonify(feedback_list(**{k:request.args[k] for k in ('q','status','offset') if k in request.args}))
+
+@bp.get('/admin/workspace/backup')
+@admin_required
+def workspace_backup():
+    from backend.knowledge.content_workspace import backup
+    return jsonify(backup())

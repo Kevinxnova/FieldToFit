@@ -14,7 +14,26 @@ HOSTS = {'artificialanalysis.ai', 'arena.ai'}
 
 
 def snapshot():
-    data = json.loads(CONTENT_PATH.read_text())
+    from backend.knowledge.content_workspace import load_published
+    raw = load_published('charts', None)
+    if raw is None:
+        raw = {'landscape':json.loads(CONTENT_PATH.read_text()), 'flagships':None}
+    return build_snapshot(raw['landscape'], raw['flagships'])
+
+
+def build_snapshot(data, catalog):
+    # Editable private drafts must not expand the public field contract.
+    data = json.loads(json.dumps(data))
+    top=('schema_version','revision','year','interval_days','companies','sources')
+    source_fields=('checked_at','coverage','id','name','not_plotted','note','note_en','points','price_label','price_label_en','price_unit','score_label','source_sha256','source_updated_at','source_url','undated')
+    point_fields=('configuration','configuration_en','date_basis','date_url','deprecated','estimated','id','missing','model_url','name','organization','price','price_url','release_date','score','score_high','score_low','score_url','source_organization','votes')
+    coverage_fields=('missing_coordinates','outside_year','plotted','released_2026','source_models','unconfirmed_date')
+    data={k:v for k,v in data.items() if k in top}
+    data['sources']=[{k:v for k,v in s.items() if k in source_fields} for s in data['sources']]
+    for source in data['sources']:
+        source['coverage']={k:v for k,v in source['coverage'].items() if k in coverage_fields}
+        for group in ('points','not_plotted','undated'):
+            source[group]=[{k:v for k,v in p.items() if k in point_fields} for p in source[group]]
     assert data['schema_version'] == 'fieldtofit.model-landscape.v1'
     assert [s['id'] for s in data['sources']] == ['artificial-analysis', 'arena']
     assert data['year'] == 2026
@@ -60,7 +79,7 @@ def snapshot():
         for url in [source['source_url']] + [p[k] for p in rows for k in ('score_url', 'price_url')]:
             parsed = urlsplit(url)
             assert parsed.scheme == 'https' and parsed.hostname in HOSTS and not parsed.username and not parsed.password and parsed.port in (None, 443)
-    catalog = json.loads((CONTENT_PATH.parent / 'model-landscape-flagships.json').read_text())
+    if catalog is None:catalog=json.loads((CONTENT_PATH.parent / 'model-landscape-flagships.json').read_text())
     assert date.fromisoformat(catalog['reviewed_at']) <= date.today()
     assert [m['company'] for m in catalog['models']] == companies[:-1]
     for source in data['sources']:

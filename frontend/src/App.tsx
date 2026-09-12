@@ -1,6 +1,6 @@
 import { Community } from "./pages/Community";
 import { ForYou, ForAI, AboutFieldToFit, LegacyPlatformEntry } from "./pages/Platform";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import {
   BrowserRouter,
   Link,
@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import Explore from "./pages/Explore";
 import Dossier from "./pages/Dossier";
-import Admin from "./legacy/pages/Admin";
+
 import {
   Account,
   Cases,
@@ -27,7 +27,7 @@ import {
   WorkspaceProvider,
   useWorkspace,
 } from "./components/workspace/UI";
-import Manage from "./pages/KnowledgeOps";
+const Manage = lazy(() => import("./pages/ContentManagement"));
 import TaskWorkbench from "./pages/TaskWorkbench";
 import { DailyBriefs } from "./pages/KnowledgeReading";
 import "./workspace.css";
@@ -48,7 +48,7 @@ function Shell() {
     ["/tasks", "book", "任务工作台", "Task workbench"],
     ["/briefs", "news", "每日简报", "Daily briefs"],
     ["/sources", "source", "数据来源", "Sources"],
-    ["/admin", "settings", "运行管理", "Management"],
+    ["/admin", "settings", "内容管理", "Content management"],
     ["/account", "user", "我的账户", "Account"],
     ["/feedback", "flag", "反馈需求", "Feedback"],
   ].find((x) => location.pathname === x[0] || location.pathname.startsWith(x[0] + "/"));
@@ -108,7 +108,7 @@ function Shell() {
           </NavLink>
           <NavLink to="/admin">
             <Icon name="settings" size={18} />
-            {pick("运行管理", "Management")}
+            {pick("内容管理", "Content management")}
           </NavLink>
 
         </nav>
@@ -179,10 +179,10 @@ function Shell() {
             <Route path="/cases" element={<Cases />} />
             <Route path="/account" element={<Account />} />
             <Route path="/feedback" element={<Feedback />} />
-            <Route path="/admin" element={<Manage />} />
+            <Route path="/admin" element={<Suspense fallback={<p role="status">正在载入内容管理…</p>}><Manage /></Suspense>} />
             <Route
               path="/admin/curation"
-              element={<Admin lang={zh ? "zh" : "en"} />}
+              element={<Navigate to="/admin?section=daily" replace />}
             />
             <Route path="/discover" element={<Navigate to="/apps" replace />} />
             <Route

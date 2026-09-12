@@ -1,9 +1,10 @@
 # FieldToFit 版本导航
 
-当前网站运行 **FieldToFit v1.0.5**，地址为 [fieldtofit.top](https://fieldtofit.top)。公开读取已验收，生产维护写入与连续真实日周期仍待验；运行版本不等同全部 REQ 完成。
+当前网站运行 **FieldToFit v1.1.0**，地址为 [fieldtofit.top](https://fieldtofit.top)。公开读取、原样迁移、草稿写入与发布已通过本版验收，连续真实日周期及全库灾难恢复仍待验；运行版本不等同全部 REQ 完成。
 
 ## 当前版本
 
+- [FieldToFit v1.1.0](v1.1.0.md)：统一内容管理、每日审阅、草稿与双端发布、数据库迁移。
 - [FieldToFit v1.0.5](v1.0.5.md)：社区邀请卡片、投稿方式与反馈去向说明。
 
 - [FieldToFit v1.0.4](v1.0.4.md)：社区、开发者投稿、精简目录与关于页。

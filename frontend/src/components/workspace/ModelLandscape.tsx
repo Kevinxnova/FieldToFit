@@ -7,14 +7,15 @@ import { placeLabels } from './chartLabels';
 type Model = { id:string; name:string; organization:string; source_organization:string; score:number|null; score_low?:number; score_high?:number; price:number|null; score_url:string; price_url:string; configuration:string; configuration_en:string; release_date:string|null; date_url:string|null; date_basis:string|null; missing?:string[]; estimated?:boolean; deprecated?:boolean };
 type Point = Model & {score:number;price:number};
 type ChartSource = { id:string; name:string; source_url:string; source_updated_at:string|null; checked_at:string; score_label:string; price_label:string; price_label_en:string; note:string; note_en:string; flagship:{reviewed_at:string;policy:string;policy_en:string;models:{company:string;family:string;id:string|null;evidence_url:string;status:string}[]}; points:Point[]; not_plotted:Model[]; undated:Model[]; coverage:{source_models:number;released_2026:number;outside_year:number;plotted:number;missing_coordinates:number;unconfirmed_date:number} };
-type Landscape = { revision:string; interval_days:number; sources:ChartSource[] };
+export type Landscape = { revision:string; interval_days:number; sources:ChartSource[] };
 const choices = [{id:'artificial-analysis',name:'Artificial Analysis'},{id:'arena',name:'Arena'}];
 export const companyColors:Record<string,string> = {OpenAI:'#242b35',Anthropic:'#a4542a',Google:'#238340',xAI:'#8051ad',Meta:'#157ab9',Kimi:'#168f9d',GLM:'#9b445f',Qwen:'#bd6714',MIMO:'#907900',MiniMax:'#d33981',DeepSeek:'#3456d1','其他':'#69757a'};
 const fmt=(n:number)=>n.toLocaleString('en-US',{maximumFractionDigits:4});
 
-export function ModelLandscape() {
+export function ModelLandscape({previewData}:{previewData?:Landscape}={}) {
   const {pick}=useWorkspace();
-  const result=useRemote<Landscape>('/v1/platform/model-landscape');
+  const remote=useRemote<Landscape>(previewData?null:'/v1/platform/model-landscape');
+  const result=previewData?{data:previewData,loading:false,error:'',reload:()=>{}}:remote;
   const [params,setParams]=useSearchParams();
   const selected=params.get('chart');
   const current=choices.some(c=>c.id===selected)?selected!:'artificial-analysis';

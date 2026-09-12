@@ -1,8 +1,4 @@
-"""Reviewed release-file news, shared by web and MCP; separate from database drafts.
-
-Editors review this small, versioned collection through Git. Only published entries
-are exposed. Sources are link-only: editorial summaries never pretend to be full text.
-"""
+"""Reviewed news shared by web and MCP; workspace publications override released seed files."""
 import hashlib
 import json
 import re
@@ -61,10 +57,11 @@ def validate(data):
     return data
 
 
-def news(q='', id='', revision=''):
+def news(q='', id='', revision='', _data=None):
     q, id = text(q, 'q', 200, False).casefold(), text(id, 'id', 100, False)
     try:
-        data = validate(json.loads(CONTENT_PATH.read_text()))
+        from backend.knowledge.content_workspace import load_published
+        data = validate(_data if _data is not None else load_published('news', CONTENT_PATH))
     except (OSError, ValueError, KeyError, TypeError) as exc:
         raise PlatformError('News collection is temporarily unavailable', 'news_unavailable', 503) from exc
     fields = ('id', 'name', 'organization', 'title', 'summary', 'source_published_at', 'event_date',

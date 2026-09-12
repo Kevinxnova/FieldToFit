@@ -7,7 +7,7 @@ P3 · 2026-09-11。对应 [共享基础](requirements/foundation.md) 与 [AI 需
 优先复用现有 Object/Change/Edition，建立 Organization → Product → Version 的有证据关系；Event 关联产品/版本/资源，Resource 是可持续维护的档案。一个资源可被多条动态引用，不按栏目复制。
 
 - 动态补充事件日期、来源发布日期、平台发布日期、检查日期及日期可信度；不能用其中一个代替另一个。
-- 当前 news 独立文件实现分点 interpretation、source_ids、locator、related、来源/核验日期，原文 link_only；GET /platform/news 与 curated_news 共用。原数据库期次保持兼容。
+- 当前 news 共享发布集合实现分点 interpretation、source_ids、locator、related、来源/核验日期，原文 link_only；GET /platform/news 与 curated_news 共用。原数据库期次保持兼容。
 - 来源表分跟踪主体和发现渠道；状态来自实际配置与成功检查，关注信号保留平台、观察窗口、数值口径与证据。
 - 人读与 AI 读同步以上字段；具体内容见[发布说明](launch-selection.md)。旧协议名 `metis.platform.v1` 是兼容标识，品牌更名不擅自改协议。
 
@@ -62,3 +62,9 @@ P3 · 2026-09-11。对应 [共享基础](requirements/foundation.md) 与 [AI 需
 ## v1.0.4 投稿资料增量
 
 持续关注 `fieldtofit.watch.v1` 增加可选 `origin=developer_submission` 与 `submission` 的 entry_url / usage / openness / relationship。项目名、介绍、来源、日期、结构化正文和解读复用原字段。只有已发布且 submission_review.confirmed=true 的记录可读；内部审核字段和非公开投稿字段不输出。HTTP 与 curated_watch 接受同名 origin 过滤，过滤结果和下载交接保留 origin 与修订；工具数量仍为 12。见[维护指南](../guides/project-submissions.md)。
+
+## v1.1.0 内容权威与审核边界
+
+`fieldtofit_content_sets` 保存动态、持续关注和图表的公开版本；`fieldtofit_content_items` 独立保存草稿及最近发布项，历史、候选和来源关联为私密管理数据。迁移前使用已审文件，迁移后公开读数据库发布版。既有字段白名单与公开修订语义保留；图表也过滤任意私密附加字段。旧对象/原文/期次契约兼容保留。
+
+选中、保存、导入与预览不发布。发布须确认当前草稿版本、集合修订、材料指纹及原因；内部处理记录不进入 Web/MCP。详见[管理与迁移](../guides/management.md)。

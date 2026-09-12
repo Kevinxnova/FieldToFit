@@ -1,7 +1,7 @@
 """FieldToFit application version and legacy deployment configuration bridge."""
 import os
 
-__version__ = "1.0.5"
+__version__ = "1.1.0"
 
 # Older deployments keep working while new documentation uses FIELDTOFIT_*.
 for _key, _value in list(os.environ.items()):

@@ -103,7 +103,7 @@ def public_collection(data):
     return {**meta, 'groups': groups, 'items': entries}
 
 
-def watch(q='', id='', type='', revision='', origin=''):
+def watch(q='', id='', type='', revision='', origin='', _data=None):
     origin = text(origin, 'origin', 200, False)
     if origin not in ('', 'developer_submission'):
         raise PlatformError('Unknown watch origin', 'invalid_origin', 400)
@@ -111,7 +111,8 @@ def watch(q='', id='', type='', revision='', origin=''):
     if type and type not in TYPES:
         raise PlatformError('Unknown watch type', 'invalid_type', 400)
     try:
-        public = public_collection(json.loads(CONTENT_PATH.read_text()))
+        from backend.knowledge.content_workspace import load_published
+        public = public_collection(_data if _data is not None else load_published('watch', CONTENT_PATH))
     except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
         raise PlatformError('Watch collection is temporarily unavailable', 'watch_unavailable', 503) from exc
     fingerprint = hashlib.sha256(json.dumps(public, ensure_ascii=False, sort_keys=True).encode()).hexdigest()

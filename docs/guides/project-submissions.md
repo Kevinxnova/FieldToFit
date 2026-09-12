@@ -1,6 +1,6 @@
 # 开发者投稿项目：提交、审核与更新
 
-v1.0.5 · 2026-09-12。网站入口：[FieldToFit 社区](https://fieldtofit.top/community#submit-project)。个人与团队都可提交已有原型、演示或代码；第三方也可以推荐。不设 Star 门槛。
+v1.1.0 · 2026-09-12。网站入口：[FieldToFit 社区](https://fieldtofit.top/community#submit-project)。个人与团队都可提交已有原型、演示或代码；第三方也可以推荐。不设 Star 门槛。
 
 ## 六项投稿信息
 
@@ -29,7 +29,7 @@ GitHub Issue 内容公开，邮件不公开。不要在公开项目介绍中放�
 
 ## 复用现有资料发布
 
-维护文件：`backend/knowledge/content/watch.json`。不建立第二套项目数据库。新投稿选已有五类中最合适的一类，分配唯一 `CW-M/T/A/S/H` 编号，复用 name、introduction、checked_at、sources、interpretation、blocks。保持集合 reviewed_at、edition 和条目日期符合实际审核时间。
+v1.1.0 维护入口：内容库的持续关注/开发者投稿项目。数据库共享集合为发布权威，`backend/knowledge/content/watch.json` 保留为首次迁移基线。不建立第二套投稿数据库。新投稿选已有五类中最合适的一类，分配唯一 `CW-M/T/A/S/H` 编号，复用 name、introduction、checked_at、sources、interpretation、blocks。保持集合 reviewed_at、edition 和条目日期符合实际审核时间。
 
 增加字段：
 
@@ -55,7 +55,7 @@ PYTHON_DOTENV_DISABLED=1 .venv/bin/python -m pytest tests/test_platform_watch.py
 .venv/bin/python scripts/maintenance/check_repository.py
 ```
 
-同时按[版本规则](../releases/versioning.md)更新补丁版本、CHANGELOG 和发布记录；本地查看条目、下载 JSON，再按现有部署流程发布。数据文件在仓库中，禁止加入邮件、私密沟通记录或凭据；代码的字段白名单只是额外保护。
+管理页先保存草稿、核对双端预览，再明确发布；无需重新部署前端。正式交付提交按[版本规则](../releases/versioning.md)递增版本并记录。禁止将私密邮件、内部备份或凭据加入公开数据；操作见[内容管理](management.md)。
 
 ## 同源展示与更新
 

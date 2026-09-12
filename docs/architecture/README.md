@@ -1,6 +1,6 @@
 # 架构与兼容边界
 
-当前为 **FieldToFit v1.0.5**，公开读取已部署验证。目录整理与仍在运行的兼容模块见[目录清单](repository.md)。精选实现：`backend/knowledge/platform.py` 复用对象/证据，新增配置、精选状态、发布快照三张表；本轮再加读快照、期次草稿和期次发布三表，见 `platform_updates.py`；API/MCP/网页共用已审快照。前端 `Platform.tsx` 承载 For you / For your AI / About，`Community.tsx` 承载社区、六字段投稿草稿和已审投稿列表，`CuratedReview.tsx` 承载对象审核，`EditionReview.tsx` 承载期次审核，`PlatformHistory.tsx` 展示期次与变化。目标与实际子集见[契约](../product/data-contract.md)和[平台指南](../guides/platform.md)。
+当前为 **FieldToFit v1.1.0**，公开读取已部署验证。目录整理与仍在运行的兼容模块见[目录清单](repository.md)。精选实现：`backend/knowledge/platform.py` 复用对象/证据，新增配置、精选状态、发布快照三张表；本轮再加读快照、期次草稿和期次发布三表，见 `platform_updates.py`；API/MCP/网页共用已审快照。前端 `Platform.tsx` 承载 For you / For your AI / About，`Community.tsx` 承载社区、六字段投稿草稿和已审投稿列表，`CuratedReview.tsx` 承载对象审核，`EditionReview.tsx` 承载期次审核，`PlatformHistory.tsx` 展示期次与变化。目标与实际子集见[契约](../product/data-contract.md)和[平台指南](../guides/platform.md)。
 
 ```text
 来源与官方材料
@@ -9,7 +9,7 @@ backend/knowledge → 事实、证据、版本、关系、历史与验证
     ├── /api/v1 → React 工作台
     └── /api/mcp → HTTP 客户端 / stdio 桥接
 
-旧 tools / issues 数据 → 旧 API → /admin/curation
+旧 tools / 新资料 / 日维护原文 → /admin 每日审阅 → 私密草稿 → 共享已发布集合
 ```
 
 ## 代码导航
@@ -18,6 +18,7 @@ backend/knowledge → 事实、证据、版本、关系、历史与验证
 | --- | --- |
 | backend/api/main.py | Flask 入口、静态页面、健康检查，以及仍保留的旧 API |
 | backend/knowledge/api.py、mcp.py | 当前知识库 API、管理权限与只读 MCP |
+| backend/knowledge/content_workspace.py、workspace_transactions.py、frontend/src/pages/ContentManagement.tsx | v1.1.0 私密草稿、日审、同源发布、图表与反馈管理、迁移和备份 |
 | backend/knowledge/store.py、schema.sql | 当前资料、证据、关系和历史存储 |
 | backend/knowledge/sources.py、paging.py、materials.py | 来源发现、分页进度和原文获取 |
 | backend/knowledge/processing.py、models.py、daily.py | 整理队列、生成适配、每日处理 |
@@ -34,7 +35,7 @@ backend/knowledge → 事实、证据、版本、关系、历史与验证
 
 ## 新旧边界
 
-旧策展后台仍依赖 `tools`、`issues`、人工推荐和 Newsletter。`backend/api/main.py`、`backend/db/queries.py`、classifier、translate、ai_recommend、daily_news、email 和 cron_tasks 等模块仍承担这条流程；本版只明确归属，没有重写这些业务。
+旧策展后台仍依赖 `tools`、`issues`、人工推荐和 Newsletter。`backend/api/main.py`、`backend/db/queries.py`、classifier、translate、ai_recommend、daily_news、email 和 cron_tasks 等模块仍承担这条流程；本版把日常审阅迁入 /admin；旧发送和兼容 API 保留，旧 /admin/curation 前端跳转新工作台。
 
 新知识库与旧流程共用部分采集和数据库设施。来源配置中也包含旧采集器适配。`api/cron*.py` 及对应 Vercel 定时项不能仅凭名称判定无用；本轮保留它们，后续取消或迁移需验证生产用途。
 

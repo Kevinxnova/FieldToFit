@@ -258,3 +258,54 @@ CREATE TABLE IF NOT EXISTS knowledge_platform_material_checks (
  checked_at TEXT NOT NULL,
  PRIMARY KEY(source_id,material_key)
 );
+
+-- Unified management: publication snapshots are separate from editable drafts.
+CREATE TABLE IF NOT EXISTS fieldtofit_content_sets (
+ kind TEXT PRIMARY KEY,
+ published_json TEXT NOT NULL,
+ revision INTEGER NOT NULL DEFAULT 1,
+ updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_content_items (
+ kind TEXT NOT NULL,
+ id TEXT NOT NULL,
+ draft_json TEXT NOT NULL,
+ draft_version INTEGER NOT NULL DEFAULT 1,
+ published_json TEXT,
+ source_ref TEXT NOT NULL DEFAULT '',
+ updated_at TEXT NOT NULL,
+ PRIMARY KEY(kind,id)
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_content_history (
+ seq INTEGER PRIMARY KEY AUTOINCREMENT,
+ kind TEXT NOT NULL,
+ item_id TEXT NOT NULL,
+ action TEXT NOT NULL,
+ reason TEXT NOT NULL,
+ snapshot TEXT NOT NULL,
+ created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_inbox (
+ ref TEXT PRIMARY KEY,
+ status TEXT NOT NULL CHECK(status IN ('pending','selected','deferred','ignored','completed')),
+ kind TEXT NOT NULL DEFAULT '',
+ item_id TEXT NOT NULL DEFAULT '',
+ note TEXT NOT NULL DEFAULT '',
+ updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_manual_candidates (
+ ref TEXT PRIMARY KEY,
+ title TEXT NOT NULL,
+ summary TEXT NOT NULL,
+ url TEXT NOT NULL,
+ source TEXT NOT NULL,
+ item_type TEXT NOT NULL,
+ created_at TEXT NOT NULL,
+ feedback_id INTEGER
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_item_sources (
+ kind TEXT NOT NULL,
+ item_id TEXT NOT NULL,
+ ref TEXT NOT NULL,
+ PRIMARY KEY(kind,item_id,ref)
+);

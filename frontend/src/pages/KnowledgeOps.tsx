@@ -92,13 +92,13 @@ function values(text: string) {
   }
 }
 
-export default function KnowledgeOps() {
+export default function KnowledgeOps({embedded=false,mode='settings'}:{embedded?:boolean;mode?:'settings'|'legacy'}={}) {
   const { pick, notify } = useWorkspace();
   const [password, setPassword] = useState("");
   const [authed, setAuthed] = useState(
     !!sessionStorage.getItem("fieldtofit-admin-password"),
   );
-  const [tab, setTab] = useState("records");
+  const [tab, setTab] = useState(embedded&&mode==='settings'?"sources":"records");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState("");
   const [query, setQuery] = useState("");
@@ -224,7 +224,7 @@ export default function KnowledgeOps() {
   const currentModel = model || processing.data?.model;
   return (
     <>
-      <PageHeading
+      {!embedded&&<PageHeading
         eyebrow="KNOWLEDGE OPERATIONS"
         title={pick("让资料持续可靠。", "Keep the knowledge reliable.")}
         description={pick(
@@ -235,7 +235,7 @@ export default function KnowledgeOps() {
         <Link className="button" to="/admin/curation">
           {pick("原策展后台", "Curation")}
         </Link>
-      </PageHeading>
+      </PageHeading>}
       {!authed ? (
         <form className="account-card" onSubmit={login}>
           <h2>{pick("管理员登录", "Administrator sign in")}</h2>
@@ -265,7 +265,7 @@ export default function KnowledgeOps() {
               ["model", "生成模型", "Model"],
               ["relations", "归并与分歧", "Grouping"],
               ["feedback", "需求反馈", "Feedback"],
-            ].map(([v, cn, en]) => (
+            ].filter(([v])=>!embedded||(mode==='settings'?['sources','processing','model'].includes(v):['records','intake','relations','editions'].includes(v))).map(([v, cn, en]) => (
               <button
                 key={v}
                 className={"button " + (tab === v ? "primary" : "subtle")}
@@ -274,7 +274,7 @@ export default function KnowledgeOps() {
                 {pick(cn, en)}
               </button>
             ))}
-            <button
+            {!embedded&&<button
               className="text-button"
               onClick={() => {
                 sessionStorage.removeItem("fieldtofit-admin-password");
@@ -282,7 +282,7 @@ export default function KnowledgeOps() {
               }}
             >
               {pick("退出", "Sign out")}
-            </button>
+            </button>}
           </div>
           {busy && (
             <p className="notice" role="status">
