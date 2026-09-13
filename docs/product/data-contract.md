@@ -1,6 +1,6 @@
 # 资料模型与 AI 读取契约草案
 
-P3 · 2026-09-11。对应 [共享基础](requirements/foundation.md) 与 [AI 需求](requirements/for-ai.md)。**这是完整目标语义契约，不是当前接口声明。** 当前已实现 `metis.platform.v1` 子集（修订与字符偏移读取、固定快照索引、审核期次及精选变化），差异见[实际接口](../guides/platform.md)；Edition、稳定快照和精选变化基础已实现；章节级游标、独立材料失效等仍按 REQ 补齐。 开发时先映射已有表/字段，优先复用，避免另建一套重复知识库；现有 API 见[使用指南](../guides/ai-access.md)。
+P3 · 2026-09-11。对应 [共享基础](../../FieldToFit-PM.md) 与 [AI 需求](../../FieldToFit-PM.md)。**这是完整目标语义契约，不是当前接口声明。** 当前已实现 `metis.platform.v1` 子集（修订与字符偏移读取、固定快照索引、审核期次及精选变化），差异见[实际接口](../guides/platform.md)；Edition、稳定快照和精选变化基础已实现；章节级游标、独立材料失效等仍按 REQ 补齐。 开发时先映射已有表/字段，优先复用，避免另建一套重复知识库；现有 API 见[使用指南](../guides/ai-access.md)。
 
 ## P3 增量设计与已实现子集
 
@@ -57,7 +57,7 @@ P3 · 2026-09-11。对应 [共享基础](requirements/foundation.md) 与 [AI 需
 
 先盘点当前 records、evidence、materials、relations、changes、editorial 等数据与接口的映射。对缺失字段提出最小增量迁移、回填和回滚方案；先验证一个对象的人读与 AI 读结果，再扩展精选集合。现有 API 路径不因本草案自动换版；需要新公开契约时由实现 PR 明确路径/版本及兼容期。
 
-旧任务包使用 `task_context` 等能力，和这里的中性材料包不同。旧接口暂存，后续按 [REQ-X-01.03](requirements/migration.md#req-x-01.03) 明确兼容，不能直接换返回值导致旧客户端误读。
+旧任务包使用 `task_context` 等能力，和这里的中性材料包不同。旧接口暂存，后续按 [REQ-X-01.03](../../FieldToFit-PM.md#req-16-3) 明确兼容，不能直接换返回值导致旧客户端误读。
 
 ## v1.0.4 投稿资料增量
 

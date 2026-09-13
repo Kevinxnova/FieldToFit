@@ -8,7 +8,8 @@
 | `backend/knowledge/platform*` | 现行精选、原文、来源、期次、维护与资料包 |
 | `api/` | Vercel 入口；当前每日 cron 是 `/api/cron/platform` |
 | `content/` | 既有导入名单与整理稿；新首发建议在文档中，未写入这些数据文件 |
-| `docs/product/` | P3 + CW1 目标、REQ、内容与社区投稿方案 |
+| `FieldToFit-PM.md` | 唯一项目管理总览：范围、编号、方案、开发、验证、网站状态与下一步 |
+| `docs/product/` | 页面、资料契约、具体内容及图表设计；不再维护独立 REQ/目标/验收状态表 |
 | `CHANGELOG.md` | 唯一更新历史，逐版说明已合并；Metis 更新位于末尾附录 |
 | `docs/guides/releasing.md` | 唯一发布指南；版本同步工具与双语 README 规则 |
 | `docs/archive/metis/` | Metis 旧版本、规划、设计与截图 |

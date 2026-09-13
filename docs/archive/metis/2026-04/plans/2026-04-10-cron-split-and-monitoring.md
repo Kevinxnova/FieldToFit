@@ -2,7 +2,7 @@
 
 # Cron Split & Monitoring Implementation Plan
 
-> 历史快照，不作为当前需求状态或操作说明。现行入口：[需求清单](../../../../product/requirements.md)、[文档导航](../../../../README.md)。主案例现为 pending，旧样例通过不代表产品价值已经验证。
+> 历史快照，不作为当前需求状态或操作说明。现行入口：[需求清单](../../../../../FieldToFit-PM.md)、[文档导航](../../../../README.md)。主案例现为 pending，旧样例通过不代表产品价值已经验证。
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 

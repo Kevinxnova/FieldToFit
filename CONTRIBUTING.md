@@ -8,7 +8,7 @@ Thanks for helping improve FieldToFit.
 2. Keep the change focused; separate unrelated fixes.
 3. Never add credentials, local databases, scraped production data, or logs.
 4. For a security issue, follow [SECURITY.md](SECURITY.md) instead of filing a public issue.
-5. Use the [current requirements](docs/product/requirements.md) and [roadmap](ROADMAP.md). Archived plans describe history, not current implementation instructions. The current scope is For you, For your AI, About and Community. The 21 requirements have 85 subrequirements; all legacy IDs retain mappings. The product showcase case is pending, and website-generated task comparisons/plans are outside the new core scope.
+5. Use the [current requirements](FieldToFit-PM.md) and [roadmap](FieldToFit-PM.md#项目管理规则与下一步). Archived plans describe history, not current implementation instructions. The current scope is For you, For your AI, About and Community. Use the numbered requirements and explicit development, verification and website states in FieldToFit-PM.md; historical IDs retain mappings. The product showcase case is pending, and website-generated task comparisons/plans are outside the new core scope.
 
 ## Development setup
 
@@ -39,7 +39,7 @@ cd ..
 python scripts/maintenance/check_repository.py
 ```
 
-For documentation-only changes, check local links, requirement/subrequirement coverage, version wording and the diff; there is no need to rerun unrelated runtime tests. The current repository checker reports 21 current requirements, 85 subrequirements and 42 legacy anchors. Use full `REQ-` IDs in new work and retain old links for history.
+For documentation-only changes, check local links, requirement/subrequirement coverage, version wording and the diff; there is no need to rerun unrelated runtime tests. The repository checker validates the counts declared in FieldToFit-PM.md, all 91 earlier child mappings and 42 Metis anchors. Use full `REQ-` IDs in new work and retain old links for history.
 
 Live integration tests are opt-in because they can modify Turso data and spend
 MiniMax credits.

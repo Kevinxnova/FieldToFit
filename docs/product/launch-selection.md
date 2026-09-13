@@ -29,7 +29,7 @@ DeepSeek-V4.1-Flash 官方模型卡已在本轮读到；解读围绕编码/解�
 4. API `/api/v1/platform/news` 与 MCP `curated_news` 同源，支持 q/id/revision；指定旧修订遇到变化返回 409，重新读当前集合。当前不提供新闻历史正文快照。
 5. 当前日采集仍运行既有来源流程；将新动态接入后台 AI 整理、自动原文入库与独立新闻发布，是后续 REQ-F-04 / O-01 工作。不能把文件里的核验日期冒充每日自动核验成功。
 
-[本轮验收](../validation/2026-09-11-reading.md) · [REQ](requirements.md)
+[本轮验收](../validation/2026-09-11-reading.md) · [REQ](../../FieldToFit-PM.md)
 
 ## 持续关注维护
 

@@ -51,3 +51,20 @@ def test_bilingual_section_drift_rejected(release_tree):
     path = release_tree / 'README.en.md'
     path.write_text(path.read_text().replace('<!-- section:community -->', '', 1))
     assert 'bilingual README sections' in metadata.check(release_tree)[0]
+
+
+def test_unpublished_batch_does_not_advertise_a_remote_tag(release_tree):
+    path = release_tree / 'CHANGELOG.md'
+    text = path.read_text()
+    heading = f'## v{metadata.read_version(release_tree)} ·'
+    if '<!-- release-tag:unpublished -->' not in metadata.latest_entry(release_tree):
+        title_end = text.index('\n', text.index(heading))
+        text = text[:title_end] + '\n<!-- release-tag:unpublished -->' + text[title_end:]
+        path.write_text(text)
+    updates = metadata.expected_updates(release_tree)
+    for filename in ['README.md', 'README.en.md']:
+        block = metadata.block(updates[release_tree / filename], 'current-version')[1]
+        assert '/tree/fieldtofit-v' not in block
+    path.write_text(path.read_text().replace('<!-- release-tag:unpublished -->', '', 1))
+    updates = metadata.expected_updates(release_tree)
+    assert '/tree/fieldtofit-v' in metadata.block(updates[release_tree / 'README.md'], 'current-version')[1]

@@ -34,18 +34,18 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.1.1](CHANGELOG.md#v1.1.1)** · [fieldtofit-v1.1.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.1.1)
+**当前源码版本：[v1.1.2](CHANGELOG.md#v1.1.2)** · [fieldtofit-v1.1.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.1.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 版本历史统一到 CHANGELOG，合并七份逐版说明；Metis 验收证据归入历史目录，保留日期和适用范围。
-- 中英文 README 采用对应结构，补全社区愿景、开发者投稿、参与入口与 MCP 接入方式。
-- 版本号和双语更新摘要统一同步；发布检查验证两版 README、最新记录及前后端版本一致。
+- 项目管理统一到根目录 FieldToFit-PM.md，使用 REQ-1 / REQ-1-1 编号，逐项列出开发、验证、已上线和未上线能力。
+- 合并旧需求、目标、验收总表及路线图，保留 91 个旧子项和历史编号的映射，当前为 16 项主需求、99 个子项。
+- 明确本地主动搜索和网站候选接续两种流程、质量与关注度排序、每日 08:00 提案格式及先与用户对齐的发布边界。
 <!-- latest-summary:end -->
 
-[完整更新记录](CHANGELOG.md) · [需求与完成状态](docs/product/requirements.md) · [后续计划](ROADMAP.md)
+[完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
 
 <!-- section:ai -->
 ## 给你的 AI 使用
@@ -114,6 +114,6 @@ npm run dev
 <!-- section:docs -->
 ## 文档、贡献与许可
 
-[文档导航](docs/README.md) · [REQ list](docs/product/requirements.md) · [内容管理](docs/guides/management.md) · [部署](docs/guides/deployment.md) · [发布规则](docs/guides/releasing.md) · [贡献指南](CONTRIBUTING.md) · [安全报告](SECURITY.md)
+[文档导航](docs/README.md) · [REQ list](FieldToFit-PM.md) · [内容管理](docs/guides/management.md) · [部署](docs/guides/deployment.md) · [发布规则](docs/guides/releasing.md) · [贡献指南](CONTRIBUTING.md) · [安全报告](SECURITY.md)
 
 源码采用 [MIT](LICENSE)；第三方资料遵循各自原始许可。[品牌素材说明](docs/guides/brand-assets.md)列出公开图片的范围。历史 Metis 资料位于[更新记录附录](CHANGELOG.md#附录metis-历史更新记录)和[历史目录](docs/archive/README.md)。

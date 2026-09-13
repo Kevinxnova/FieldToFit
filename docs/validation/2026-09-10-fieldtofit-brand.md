@@ -14,7 +14,7 @@
 | 兼容 | 旧环境变量、SQLite 文件和浏览器收藏仍可读取；旧协议标识与历史材料保留 |
 | 部署 | 新建 Vercel 项目已更名 fieldtofit，配置指向 fieldtofit.top；DNS 与生产绑定已生效，公网健康、品牌资源、27 项对象与 MCP 工具列表通过 |
 
-品牌版本号不替代完整运行验收。关于更新机制、首批内容和 MCP 的未完成项仍保留于 [REQ list](../product/requirements.md)。
+品牌版本号不替代完整运行验收。关于更新机制、首批内容和 MCP 的未完成项仍保留于 [REQ list](../../FieldToFit-PM.md)。
 
 ## 生产读取修复
 

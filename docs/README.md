@@ -5,15 +5,12 @@
 | 需要了解什么 | 入口 |
 | --- | --- |
 | 项目与实际能力 | [README](../README.md) · [English](../README.en.md) |
-| 立意和职责 | [项目目标](product/goals.md) |
+| 项目立意、REQ、方案、开发、验证及网站状态 | [项目管理总览](../FieldToFit-PM.md) |
 | 已确认的页面组织 | [页面方案](product/pages.md) |
 | 当前究竟准备放哪些内容 | [首发内容与维护记录](product/launch-selection.md) |
 | 持续关注具体内容（已确认并实现） | [CW1：五类 27 个主体、版本与文案](product/continuous-watch/README.md) |
-| 完整需求与当前状态 | [REQ list](product/requirements.md) |
 | 资料如何提供给人和 AI | [资料契约](product/data-contract.md) |
-| 如何判定完成 | [验收标准](product/acceptance.md) |
-| 后续开发次序 | [ROADMAP](../ROADMAP.md) |
-| 社区、项目投稿与审核 | [投稿维护指南](guides/project-submissions.md) · [REQ-C-01](product/requirements/community.md) |
+| 社区、项目投稿与审核 | [投稿维护指南](guides/project-submissions.md) · [REQ-13](../FieldToFit-PM.md#req-13) |
 | 实际平台使用 | [平台指南](guides/platform.md) · [MCP](guides/ai-access.md) |
 | 本地与部署 | [本地启动](guides/local-development.md) · [部署](guides/deployment.md) |
 | 网站反馈保存到哪里、如何处理 | [反馈流程](guides/feedback.md) |

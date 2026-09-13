@@ -1,10 +1,10 @@
 > Metis 历史材料：仅说明文件标注日期的版本与目标，不代表当前 FieldToFit 的完成状态。品牌名称曾被统一替换，本轮恢复历史正文名称；出处与验证结果保留。
 
-> 历史快照：2026-09-08 平台定位调整前的文档。以下状态和目标仅代表当时；现行要求见[当前 REQ](../../../product/requirements.md)。除相对链接外保留原文。
+> 历史快照：2026-09-08 平台定位调整前的文档。以下状态和目标仅代表当时；现行要求见[当前 REQ](../../../../FieldToFit-PM.md)。除相对链接外保留原文。
 
 # 任务验收与需求验证
 
-现行规则，对应 [AI-03](../../../product/requirements.md#ai-03)、[A-05](../../../product/requirements.md#a-05)、[V-01](../../../product/requirements.md#v-01) 和 [V-02](../../../product/requirements.md#v-02)。
+现行规则，对应 [AI-03](../../../../FieldToFit-PM.md#legacy-ai-03)、[A-05](../../../../FieldToFit-PM.md#legacy-a-05)、[V-01](../../../../FieldToFit-PM.md#legacy-v-01) 和 [V-02](../../../../FieldToFit-PM.md#legacy-v-02)。
 
 ## 当前状态
 

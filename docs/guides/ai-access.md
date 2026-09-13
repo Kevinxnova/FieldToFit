@@ -1,6 +1,6 @@
 # API 与 MCP 接入（FieldToFit v1.0.0）
 
-本文是现有接口使用说明。For your AI、原文续读及中性资料包已经实现；新增组织/产品/事件关系等 P3 目标仍见[需求状态](../product/requirements/for-ai.md)，不要按草案字段调用当前服务。
+本文是现有接口使用说明。For your AI、原文续读及中性资料包已经实现；新增组织/产品/事件关系等 P3 目标仍见[需求状态](../../FieldToFit-PM.md)，不要按草案字段调用当前服务。
 
 先启动 FieldToFit 后端。默认资料可公开读取；如服务配置了 `FIELDTOFIT_READ_TOKEN`，HTTP 请求需携带 `Authorization: Bearer <read-token>`。管理员密码不用于 AI 读取。
 
@@ -70,7 +70,7 @@ FIELDTOFIT_MCP_URL=https://fieldtofit.top/api/mcp/curated .venv/bin/python -m ba
 
 ## 后续迁移
 
-`compare`、`task_context` 和研究生成相关能力本轮没有删除，但不再作为新平台默认使用路径。后续先盘点兼容性，再明确新字段/工具和迁移窗口，见 [REQ-X-01.03](../product/requirements/migration.md#req-x-01.03)。新接入示例将聚焦“检索对象 → 查看材料 → 读取原文 → 引用与更新”，不要求网站代做任务方案。
+`compare`、`task_context` 和研究生成相关能力本轮没有删除，但不再作为新平台默认使用路径。后续先盘点兼容性，再明确新字段/工具和迁移窗口，见 [REQ-X-01.03](../../FieldToFit-PM.md#req-16-3)。新接入示例将聚焦“检索对象 → 查看材料 → 读取原文 → 引用与更新”，不要求网站代做任务方案。
 
 ## 产品发布动态
 

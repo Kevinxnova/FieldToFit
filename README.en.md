@@ -34,18 +34,18 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.1.1](CHANGELOG.md#v1.1.1)** · [fieldtofit-v1.1.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.1.1)
+**Current source version: [v1.1.2](CHANGELOG.md#v1.1.2)** · [fieldtofit-v1.1.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.1.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Consolidate version history in CHANGELOG and merge seven release-note files; archive Metis evidence with its original dates and scope.
-- Align Chinese and English READMEs, including the community, developer submissions, contribution channels and MCP access.
-- Synchronize version metadata and bilingual highlights, with checks for both READMEs, the latest changelog entry and application versions.
+- Consolidate project management in root-level FieldToFit-PM.md, using REQ-1 / REQ-1-1 IDs and explicit development, verification and shipped-feature states.
+- Merge the old requirements, goals, acceptance overview and roadmap, retaining mappings for 91 previous subrequirements; the current plan has 16 requirements and 99 subrequirements.
+- Define proactive local research, selected-candidate handoff, quality and attention ranking, the daily 08:00 proposal format and owner alignment before website changes.
 <!-- latest-summary:end -->
 
-[Full changelog](CHANGELOG.md) · [Requirements and status](docs/product/requirements.md) · [Roadmap](ROADMAP.md)
+[Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 
 <!-- section:ai -->
 ## Connect your AI
@@ -114,6 +114,6 @@ Open [localhost:5173/for-you](http://localhost:5173/for-you). A new database sta
 <!-- section:docs -->
 ## Documentation, contributions and license
 
-[Documentation](docs/README.md) · [Requirements](docs/product/requirements.md) · [Content management](docs/guides/management.md) · [Deployment](docs/guides/deployment.md) · [Release policy](docs/guides/releasing.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
+[Documentation](docs/README.md) · [Requirements](FieldToFit-PM.md) · [Content management](docs/guides/management.md) · [Deployment](docs/guides/deployment.md) · [Release policy](docs/guides/releasing.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
 Source code is [MIT licensed](LICENSE). Third-party materials retain their original terms. The [brand guide](docs/guides/brand-assets.md) lists the public image inventory. Historical Metis materials are kept in the [changelog appendix](CHANGELOG.md#附录metis-历史更新记录) and [archive](docs/archive/README.md).

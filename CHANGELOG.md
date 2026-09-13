@@ -2,7 +2,28 @@
 
 ## Unreleased · 待发布
 
-后续计划见 [REQ list](docs/product/requirements.md)，尚未完成的计划不记为已发布变化。
+后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
+
+<a id="v1.1.2"></a>
+## v1.1.2 · 项目管理总览与每日选题方案 · 2026-09-13
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 项目管理统一到根目录 FieldToFit-PM.md，使用 REQ-1 / REQ-1-1 编号，逐项列出开发、验证、已上线和未上线能力。
+- 合并旧需求、目标、验收总表及路线图，保留 91 个旧子项和历史编号的映射，当前为 16 项主需求、99 个子项。
+- 明确本地主动搜索和网站候选接续两种流程、质量与关注度排序、每日 08:00 提案格式及先与用户对齐的发布边界。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Consolidate project management in root-level FieldToFit-PM.md, using REQ-1 / REQ-1-1 IDs and explicit development, verification and shipped-feature states.
+- Merge the old requirements, goals, acceptance overview and roadmap, retaining mappings for 91 previous subrequirements; the current plan has 16 requirements and 99 subrequirements.
+- Define proactive local research, selected-candidate handoff, quality and attention ranking, the daily 08:00 proposal format and owner alignment before website changes.
+<!-- release-summary:en:end -->
+
+本批交付项目管理文档、引用与校验更新；本机对话安排已单独配置，不属于网站部署功能。网站来源双表、优先级与提醒账本仍未实现。2026-09-14 按用户确认发布此前完成的 v1.1.2，不因推送与部署额外递增版本；公开资料与网站业务不变。见[项目管理总览](FieldToFit-PM.md)及[整理验收](docs/validation/2026-09-13-pm.md)。
 
 <a id="v1.1.1"></a>
 ## v1.1.1 · 文档统一与双语项目首页 · 2026-09-12
@@ -195,7 +216,7 @@
 - 同步中英文 README、导航、路线图、运营和版本维护说明；验收改为精选质量、人读理解、AI 取材及持续维护。
 - 案例继续 pending，账户待开放，自动检查保持每 1 天。旧数量目标取消。
 
-**此条仅记录 2026-09-08 的文档阶段：当时未修改功能代码或应用版本。** 后续实现见上方 2026-09-09 条目。 后续开发见 [ROADMAP](ROADMAP.md)。
+**此条仅记录 2026-09-08 的文档阶段：当时未修改功能代码或应用版本。** 后续实现见上方 2026-09-09 条目。 后续开发见 [ROADMAP](FieldToFit-PM.md#项目管理规则与下一步)。
 
 ---
 

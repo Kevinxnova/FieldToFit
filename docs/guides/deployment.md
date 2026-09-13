@@ -1,6 +1,6 @@
 # 部署与升级
 
-正式站点为 https://fieldtofit.top，实际版本以 `/api/health` 为准；Vercel/Turso 公网读取和 12 项精选 MCP 工具已验；v1.1.0 生产迁移、草稿保存及原样发布已验；容器实际构建、全库灾难恢复和连续日周期仍待验，状态见 [REQ-O-03](../product/requirements/operations.md#req-o-03)。
+正式站点为 https://fieldtofit.top，实际版本以 `/api/health` 为准；Vercel/Turso 公网读取和 12 项精选 MCP 工具已验；v1.1.0 生产迁移、草稿保存及原样发布已验；容器实际构建、全库灾难恢复和连续日周期仍待验，状态见 [REQ-O-03](../../FieldToFit-PM.md#req-15)。
 
 ## 本地 SQLite 与单服务部署
 

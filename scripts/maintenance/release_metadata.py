@@ -70,6 +70,9 @@ def expected_updates(root=ROOT):
         label = '当前源码版本' if locale == 'zh' else 'Current source version'
         tag = f'https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v{version}'
         current = f'**{label}：[v{version}](CHANGELOG.md#v{version})** · [fieldtofit-v{version}]({tag})' if locale == 'zh' else f'**{label}: [v{version}](CHANGELOG.md#v{version})** · [fieldtofit-v{version}]({tag})'
+        if '<!-- release-tag:unpublished -->' in entry:
+            note = '尚未推送发布标签' if locale == 'zh' else 'Release tag not yet published'
+            current = current.split(' · ', 1)[0] + ' · ' + note
         text = replace_block(text, 'current-version', current)
         text = replace_block(text, 'latest-summary', summary)
         updates[path] = text
