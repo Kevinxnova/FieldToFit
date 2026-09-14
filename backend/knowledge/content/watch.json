@@ -1,7 +1,7 @@
 {
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注",
-  "reviewed_at": "2026-09-11",
+  "reviewed_at": "2026-09-14",
   "edition": "cw1-2026-09-11",
   "groups": [
     {
@@ -414,7 +414,7 @@
       "type": "model",
       "state": "published",
       "introduction": "DeepSeek 的模型系列；本页资料重点跟踪 V4 Flash 分支的推理结构与多模态变化。",
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-09-14",
       "interpretation": [
         {
           "title": "读入材料与逐步生成采用不同分工。",
@@ -423,6 +423,10 @@
         {
           "title": "缓存复用细节比一句“节省显存”更有信息。",
           "text": "Full、Reindex、Reuse 区分不同层的工作；材料还区分全局缓存与滑动窗口回放，值得沿这两部分继续读。"
+        },
+        {
+          "text": "V4.1 Flash 已有正式 API 入口；V4 Pro 继续提供服务。版本表补充调用名称，避免把兼容别名理解成旧模型仍在服务。",
+          "title": "模型族、调用别名与服务状态分别记录。"
         }
       ],
       "blocks": [
@@ -439,11 +443,19 @@
           "rows": [
             [
               "DeepSeek-V4.1-Flash",
-              "首发日待核；官方模型卡可见",
+              "2026-09-10 官方 API 发布；2026-09-14 核对",
               "V4 Flash 分支演进",
               "图像与文本输入、文本输出，1M 上下文；编码器/解码器分工，共享全局 KV；CSA2 设置 Full / Reindex / Reuse",
-              "官方模型卡与权重材料；本次整理未核实对应 API 上架状态",
-              "[V4.1-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash)"
+              "API：deepseek-flash；旧 Flash / Flash Vision Exp 名称暂时路由到 V4.1 Flash",
+              "[V4.1-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash)；[API 更新日志](https://api-docs.deepseek.com/updates/)"
+            ],
+            [
+              "DeepSeek-V4-Pro",
+              "2026-09-14 核对：继续提供 API",
+              "与 V4.1 Flash 并行的 Pro 服务",
+              "官方说明保留服务，计费方式不变",
+              "deepseek-v4-pro；实际账户调用未实测",
+              "[API 更新日志](https://api-docs.deepseek.com/updates/)"
             ],
             [
               "DeepSeek-V4-Flash-0731",
@@ -458,6 +470,10 @@
         {
           "kind": "paragraph",
           "text": "关联：D-10 DeepSeek-V4.1-Flash；[CW-H01 DeepSeek Harness](/for-you#watch-cw-h01)。Harness 是独立软件项目，不是该模型的版本号。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "API 状态以 2026-09-14 读取的官方正文为准；保留 Pro 说明的精确修订时间未知。本次没有核实具体价格数值。"
         }
       ],
       "sources": [
@@ -470,6 +486,11 @@
           "title": "V4-Flash-0731",
           "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
           "coverage": "link_only"
+        },
+        {
+          "coverage": "link_only",
+          "title": "DeepSeek 官方 API 更新日志",
+          "url": "https://api-docs.deepseek.com/updates/"
         }
       ],
       "evidence_status": "official_materials_reviewed_not_runtime_tested"
@@ -974,6 +995,80 @@
         }
       ],
       "evidence_status": "official_materials_reviewed_not_runtime_tested"
+    },
+    {
+      "blocks": [
+        {
+          "columns": [
+            "使用入口 / 模式",
+            "用途与产物",
+            "条件或边界",
+            "材料"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "MCP",
+              "AI 客户端操作设备，读取诊断资料",
+              "Android 设备或模拟器；按文档准备工具链",
+              "[MCP 文档](https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/mcp_server/README.md)"
+            ],
+            [
+              "Flash / Pro",
+              "快速逐步执行 / 有计划和验证的流程",
+              "不是模型名称；作者报告的成绩未由本站复现",
+              "[执行模式](https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/README.md#execution-profiles-flash-vs-pro)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "版本快照：371aa6df56880643da57b30da936e9812fb0ec66；提交日期 2026-09-12，核对日期 2026-09-14。此为补录项目，不标作今日发布。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "接入参考：[CW-A01 Codex](/for-you#watch-cw-a01)、[CW-A02 Claude Code](/for-you#watch-cw-a02)。[规则文件](https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/mcp_server/rules.md)与工具接口应配套阅读。"
+        }
+      ],
+      "checked_at": "2026-09-14",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-T05",
+      "interpretation": [
+        {
+          "text": "README 展示截图、Logcat 与执行回放；这些入口能帮助读者核查 AI 实际做了什么。",
+          "title": "测试结果有可查看的材料。"
+        },
+        {
+          "text": "需要 Android 设备或模拟器；iOS 仍在路线图中。Flash 偏逐步观察执行，Pro 加入计划与验证。本次未进行实机验收。",
+          "title": "设备条件与运行模式需要一起看。"
+        }
+      ],
+      "introduction": "通过 MCP 让 AI 操作 Android 真机或模拟器，并获取截图、日志和执行回放的测试工具。",
+      "name": "Google Artemis",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "项目入口",
+          "url": "https://github.com/google/artemis"
+        },
+        {
+          "coverage": "link_only",
+          "title": "固定版本 README",
+          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "固定版本 MCP 文档",
+          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/mcp_server/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "固定版本运行规则",
+          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/mcp_server/rules.md"
+        }
+      ],
+      "type": "tool",
+      "state": "published"
     },
     {
       "id": "CW-A01",
@@ -1670,6 +1765,87 @@
         "source_url": "https://github.com/vercel-labs/agent-skills",
         "growth_7d": null
       }
+    },
+    {
+      "blocks": [
+        {
+          "columns": [
+            "代表技能",
+            "用途",
+            "读取入口"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "interview-me",
+              "逐步澄清需求",
+              "[技能文件](https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/interview-me/SKILL.md)"
+            ],
+            [
+              "test-driven-development",
+              "先测试、后实现的开发流程",
+              "[技能文件](https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/test-driven-development/SKILL.md)"
+            ],
+            [
+              "code-review-and-quality",
+              "代码质量与合并前审阅",
+              "[技能文件](https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/code-review-and-quality/SKILL.md)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "安装：可选择整仓库集成或单技能安装；单项安装时同时检查[共享参考目录](https://github.com/addyosmani/agent-skills/tree/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/references)。具体方式见[固定 README](https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/README.md)。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "版本快照：be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39；提交日期 2026-09-12，核对日期 2026-09-14。作为补录，不当作今天新发布。相关集合：[Superpowers](/for-you#watch-cw-s01)、[Anthropic Skills](/for-you#watch-cw-s02)、[Vercel Agent Skills](/for-you#watch-cw-s03)。"
+        }
+      ],
+      "checked_at": "2026-09-14",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-S04",
+      "interpretation": [
+        {
+          "text": "需求澄清、测试驱动开发和代码审阅各有独立材料，便于读者挑选并交给自己的 AI。",
+          "title": "先看具体技能解决哪个环节。"
+        },
+        {
+          "text": "README 提示单技能安装可能缺少仓库级 references。使用前核对补充材料是否齐全；本次未做开发效果对照实验，也没有近期 Star 增量数据。",
+          "title": "单独安装不一定包含共享参考资料。"
+        }
+      ],
+      "introduction": "把需求澄清、测试、代码审阅等开发流程整理成 AI 编程助手可读取的技能；仓库作为技能来源集合。",
+      "name": "Addy Osmani Agent Skills",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "项目入口",
+          "url": "https://github.com/addyosmani/agent-skills"
+        },
+        {
+          "coverage": "link_only",
+          "title": "固定版本 README",
+          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "interview-me",
+          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/interview-me/SKILL.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "test-driven-development",
+          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/test-driven-development/SKILL.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "code-review-and-quality",
+          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/code-review-and-quality/SKILL.md"
+        }
+      ],
+      "type": "skill",
+      "state": "published"
     },
     {
       "id": "CW-H01",

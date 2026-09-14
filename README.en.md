@@ -34,16 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.2.0](CHANGELOG.md#v1.2.0)** · [fieldtofit-v1.2.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.2.0)
+**Current source version: [v1.2.1](CHANGELOG.md#v1.2.1)** · [fieldtofit-v1.2.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.2.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add source coverage tables for 12 organizations, showing actual channels, connection and check states, and linked published content; administrators can enable, pause and check sources.
-- Add 19 daily source configurations for official feeds, article indexes, model cards, repository discovery, discussions and papers, with private materials, dates, pagination and failure records.
-- Add priority, follow-up and verification groups with material-backed reasons, dated attention signals, manual overrides and a cross-day selected queue; selection never publishes.
-- Schedule daily checks at 06:30 Beijing time with calendar-day claims and bounded parallel collection; existing public content and read-only MCP remain unchanged.
+- Update DeepSeek news and its model profile with the V4.1 Flash API release date, aliases and the current notice retaining V4 Pro service.
+- Add OpenAI’s Perplexity/Astra end-to-end testing case, distinguishing customer statements from independent verification.
+- Add Google Artemis and Addy Osmani Agent Skills with usage requirements, specific skills and source links pinned to commit revisions.
+- Expand to 11 news items and 29 ongoing-watch profiles, published through the shared editorial workflow for For you, For your AI and MCP; synchronize bilingual READMEs and briefing-delivery status.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

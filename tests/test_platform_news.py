@@ -10,8 +10,8 @@ def test_web_and_mcp_read_identical_news_with_deepseek(client):
     response = client.get('/api/v1/platform/news')
     assert response.status_code == 200
     body = response.json
-    assert body['items'][0]['id'] == 'D-10' and body['items'][0]['source_published_at'] is None
-    assert body['total'] == 10
+    assert body['items'][0]['id'] == 'D-10' and body['items'][0]['source_published_at'] == '2026-09-10'
+    assert body['total'] == 11
     rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call',
         'params':{'name':'curated_news','arguments':{}}}).json['result']
     assert not rpc.get('isError') and rpc['structuredContent'] == body
@@ -32,7 +32,7 @@ def test_revision_detects_correction_and_withdrawal_without_leaking_drafts(clien
     data['items'][0]['state'] = 'withdrawn'; path.write_text(json.dumps(data))
     assert client.get('/api/v1/platform/news?id=D-10').status_code == 404
     assert client.get('/api/v1/platform/news?revision='+first['revision']).status_code == 409
-    assert news.news()['total'] == 9
+    assert news.news()['total'] == 10
 
 
 @pytest.mark.parametrize('broken', ['missing_source', 'bad_url', 'missing_date', 'duplicate_id', 'false_fulltext', 'missing_public_field', 'missing_metadata'])

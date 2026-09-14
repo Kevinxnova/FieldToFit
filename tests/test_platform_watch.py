@@ -18,18 +18,18 @@ def test_shared_content_complete_and_searchable(client):
     response = client.get('/api/v1/platform/watch')
     assert response.status_code == 200
     body = response.json
-    assert body['total'] == 27
-    assert [g['count'] for g in body['groups']] == [9, 4, 7, 3, 4]
+    assert body['total'] == 29
+    assert [g['count'] for g in body['groups']] == [9, 5, 7, 4, 4]
     rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call',
         'params':{'name':'curated_watch','arguments':{}}}).json['result']
     assert not rpc.get('isError') and rpc['structuredContent'] == body
     assert client.get('/api/v1/platform/watch?q=VideoCrop').json['items'][0]['name'] == 'ComfyUI'
-    assert client.get('/api/v1/platform/watch?type=skill').json['total'] == 3
+    assert client.get('/api/v1/platform/watch?type=skill').json['total'] == 4
     assert client.get('/api/v1/platform/watch?q=not-a-known-profile').json['total'] == 0
     assert client.get('/api/v1/platform/watch?type=invalid').status_code == 400
     assert client.get('/api/v1/platform/watch?id=missing').status_code == 404
     for item in body['items']:
-        assert len(item['interpretation']) == 2 and item['sources']
+        assert len(item['interpretation']) >= 2 and item['sources']
         assert all(s['coverage'] == 'link_only' for s in item['sources'])
 
 
@@ -86,7 +86,7 @@ def test_submission_filter_and_mcp(client, tmp_path, monkeypatch):
     data['items'].append(item)
     path.write_text(json.dumps(data))
     body = client.get('/api/v1/platform/watch?origin=developer_submission').json
-    assert body['total'] == 1 and body['collection_total'] == 28
+    assert body['total'] == 1 and body['collection_total'] == 30
     assert body['origin'] == 'developer_submission'
     assert body['items'][0]['submission']['relationship'] == '第三方推荐'
     assert 'SECRET' not in json.dumps(body) and 'private@example.com' not in json.dumps(body)

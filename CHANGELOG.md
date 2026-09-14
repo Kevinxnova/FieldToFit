@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.2.1"></a>
+## v1.2.1 · 日报内容发布与资料补全 · 2026-09-14
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 更新 DeepSeek 动态与模型族资料：补充 V4.1 Flash 官方 API 发布日期、调用别名，以及 V4 Pro 继续提供服务的最新说明。
+- 新增 Perplexity 使用 GPT-6 Astra 生成端到端测试的官方案例动态，区分客户自述与独立验证。
+- 持续关注新增 Google Artemis 和 Addy Osmani Agent Skills，提供用途、使用条件、具体技能与固定提交版本的材料链接。
+- 近期动态增至 11 条、持续关注增至 29 项；通过统一后台审核发布，For you、For your AI 与 MCP 读取同一公开修订。同步中英文 README 与晨报交付状态。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Update DeepSeek news and its model profile with the V4.1 Flash API release date, aliases and the current notice retaining V4 Pro service.
+- Add OpenAI’s Perplexity/Astra end-to-end testing case, distinguishing customer statements from independent verification.
+- Add Google Artemis and Addy Osmani Agent Skills with usage requirements, specific skills and source links pinned to commit revisions.
+- Expand to 11 news items and 29 ongoing-watch profiles, published through the shared editorial workflow for For you, For your AI and MCP; synchronize bilingual READMEs and briefing-delivery status.
+<!-- release-summary:en:end -->
+
+对应 REQ-5、REQ-6、REQ-8、REQ-10 与 REQ-11。用户确认四项选题后，更新两条已有记录、新增三条记录；保留旧版本、图表和其他已发布资料。公开出处保持 `link_only`：可读取结构化解读及原始材料链接，不冒充已托管全文或完成实机验证。应用案例专题继续 pending。部署检查同步移除旧的“10 条动态”常量，按当前快照数量与 Web/MCP 一致性验证。
+
+9 月 14 日晨报实际收到触发但未及时交付，后经补发、用户确认进入本批发布；已强化现有每日安排的交付检查，不能将补发记为准时运行通过。跨入口批次决定账本与连续定时交付仍待完成。[内容与发布验收](docs/validation/2026-09-14-editorial.md)。
+
 <a id="v1.2.0"></a>
 ## v1.2.0 · 来源覆盖与每日优先审阅 · 2026-09-14
 

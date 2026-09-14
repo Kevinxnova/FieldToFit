@@ -62,8 +62,12 @@ jobs:
           assert call('curated_edition',{'id':edition['id'],'revision':edition['revision']})['entries']
           bundle=call('curated_bundle',{'objects':[{'id':obj['id'],'revision':item['revision']}],'max_characters':500})
           assert bundle['coverage']['included_characters']>0
-          assert call('curated_news',{})['total']==10
-          assert call('curated_watch',{})['total']>=27
+          for kind in ('news','watch'):
+              public=json.loads(read('/api/v1/platform/'+kind))
+              assert call('curated_'+kind,{})==public
+              seed=json.loads(pathlib.Path('backend/knowledge/content/'+kind+'.json').read_text())
+              expected=sum(i['state']=='published' for i in seed['items'])
+              assert public['total']>=expected,(kind,public['total'],expected)
           assert b'FieldToFit' in read('/community')
           projects=json.loads(read('/api/v1/platform/watch?origin=developer_submission'))
           assert projects['origin']=='developer_submission' and all(i['origin']=='developer_submission' for i in projects['items'])

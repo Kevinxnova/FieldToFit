@@ -2,35 +2,51 @@
   "schema_version": "fieldtofit.news.v1",
   "edition": "2026-09-11-launch",
   "title": "首发回顾",
-  "reviewed_at": "2026-09-11",
+  "reviewed_at": "2026-09-14",
   "items": [
     {
       "id": "D-10",
       "state": "published",
       "name": "DeepSeek-V4.1-Flash",
       "organization": "DeepSeek",
-      "source_published_at": null,
-      "event_date": null,
-      "checked_at": "2026-09-11",
-      "title": "DeepSeek-V4.1-Flash：长上下文与 KV 缓存的新设计",
-      "summary": "官方模型卡介绍了图文输入、长上下文及缓存压缩设计。",
+      "source_published_at": "2026-09-10",
+      "event_date": "2026-09-10",
+      "checked_at": "2026-09-14",
+      "title": "DeepSeek：V4.1 Flash 调用方式明确，V4 Pro 继续提供 API",
+      "summary": "V4.1 Flash 已在 9 月 10 日正式发布；当前官方日志确认，9 月 14 日之后继续提供 V4 Pro API，计费方式不变。",
       "highlight": true,
       "interpretation": [
         {
-          "title": "读长输入与生成输出采用不同计算路径",
-          "text": "模型卡介绍 Causal Encoder-Decoder，将读取输入和生成输出分成编码、解码阶段。值得看 Introduction 中两阶段的职责，以及这种设计为何针对输入较长的 Agent 工作。",
+          "title": "旧名称仍可调用，背后模型可能已改变",
+          "text": "deepseek-flash 对应 V4.1 Flash；旧 deepseek-v4-flash 和 deepseek-v4-flash-vision-exp 暂时路由到该模型。接入时应同时记录调用名称和实际模型。",
           "source_ids": [
-            "primary"
+            "api"
           ],
-          "locator": "Introduction / Architecture"
+          "locator": "API changes"
         },
         {
-          "title": "缓存共享是值得展开的技术点",
-          "text": "CSA2 在层间共享缓存与检索结果，减少长上下文需要保留的信息。阅读时可对照原文的缓存设计与比较图，理解它省的是哪部分存储。",
+          "title": "V4 Pro 继续服务，不能沿用旧切换消息",
+          "text": "当前正文明确保留 V4 Pro API，计费方式不变。对已有 Pro 接入，应以这条更新后的官方说明为依据。",
+          "source_ids": [
+            "api"
+          ],
+          "locator": "API changes"
+        },
+        {
+          "locator": "Introduction / Architecture",
           "source_ids": [
             "primary"
           ],
-          "locator": "Introduction / Compressed Sparse Attention 2"
+          "text": "模型卡介绍 Causal Encoder-Decoder，将读取输入和生成输出分成编码、解码阶段。值得看 Introduction 中两阶段的职责，以及这种设计为何针对输入较长的 Agent 工作。",
+          "title": "读长输入与生成输出采用不同计算路径"
+        },
+        {
+          "locator": "Introduction / Compressed Sparse Attention 2",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "CSA2 在层间共享缓存与检索结果，减少长上下文需要保留的信息。阅读时可对照原文的缓存设计与比较图，理解它省的是哪部分存储。",
+          "title": "缓存共享是值得展开的技术点"
         }
       ],
       "sources": [
@@ -39,6 +55,12 @@
           "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
           "title": "DeepSeek-V4.1-Flash model card",
           "coverage": "link_only"
+        },
+        {
+          "coverage": "link_only",
+          "id": "api",
+          "title": "DeepSeek 官方更新日志",
+          "url": "https://api-docs.deepseek.com/updates/"
         }
       ],
       "related": [
@@ -48,8 +70,68 @@
           "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
         }
       ],
-      "note": "首次发布日期未确认；这里显示资料核验日。模型卡公开不等于 API 已上线。",
+      "note": "API 发布日期来自官方更新日志。保留 Pro 的说明核对于 2026-09-14，精确修订时间未知；未实测账户调用，不据旧传播内容推断 Pro 已切换到 Flash。",
       "editor": "FieldToFit"
+    },
+    {
+      "checked_at": "2026-09-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-14",
+      "highlight": false,
+      "id": "D-11",
+      "interpretation": [
+        {
+          "locator": "Letting the model do the testing",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "文章举例包括语言模型 API 和连接器：生成类似外部服务的响应，检查应用如何处理它们。",
+          "title": "先模拟依赖服务，再检查完整流程"
+        },
+        {
+          "locator": "Letting the model do the testing",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "值得继续核查模拟了哪些响应、覆盖哪些路径。这些细节决定测试能发现什么问题。",
+          "title": "关注测试如何构造，而非笼统的能力提升"
+        },
+        {
+          "locator": "Letting the model do the testing",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "案例称相比早期模型可以减少人工检查，但未提供可复现材料；不能写成本站已验证的可靠性提升。",
+          "title": "降低人工检查频率属于客户自述"
+        }
+      ],
+      "name": "Perplexity / GPT-6 Astra",
+      "note": "官方客户案例，非独立评测；未公开测试代码、对照数据或失败样例。",
+      "organization": "OpenAI / Perplexity",
+      "related": [
+        {
+          "id": "D-02",
+          "name": "GPT-6 Astra 已有动态",
+          "url": "https://fieldtofit.top/for-you#news-d-02"
+        },
+        {
+          "id": "CW-M01",
+          "name": "GPT 模型族",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m01"
+        }
+      ],
+      "source_published_at": "2026-09-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "OpenAI：Perplexity 使用 Astra 的案例",
+          "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra/"
+        }
+      ],
+      "summary": "OpenAI 发布 Perplexity 的使用案例：让 Astra 生成测试程序，模拟外部服务响应，检查完整工作流。",
+      "title": "Perplexity 如何用 GPT-6 Astra 补齐端到端测试",
+      "state": "published"
     },
     {
       "id": "D-01",
