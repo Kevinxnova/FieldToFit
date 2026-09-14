@@ -309,3 +309,49 @@ CREATE TABLE IF NOT EXISTS fieldtofit_item_sources (
  ref TEXT NOT NULL,
  PRIMARY KEY(kind,item_id,ref)
 );
+
+-- Private daily discovery and review priority never form a public publication.
+CREATE TABLE IF NOT EXISTS fieldtofit_discoveries (
+ id TEXT PRIMARY KEY,
+ source_id TEXT NOT NULL,
+ title TEXT NOT NULL,
+ summary TEXT NOT NULL,
+ url TEXT NOT NULL,
+ item_type TEXT NOT NULL,
+ published_at TEXT,
+ discovered_at TEXT NOT NULL,
+ updated_at TEXT NOT NULL,
+ version TEXT NOT NULL DEFAULT '',
+ materials TEXT NOT NULL DEFAULT '[]',
+ metrics TEXT NOT NULL DEFAULT '{}',
+ metadata TEXT NOT NULL DEFAULT '{}',
+ fingerprint TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS fieldtofit_discovery_date ON fieldtofit_discoveries(discovered_at,id);
+CREATE TABLE IF NOT EXISTS fieldtofit_discovery_origins (
+ discovery_id TEXT NOT NULL,
+ source_id TEXT NOT NULL,
+ url TEXT NOT NULL,
+ observed_at TEXT NOT NULL,
+ PRIMARY KEY(discovery_id,source_id,url)
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_attention_observations (
+ url TEXT NOT NULL,
+ source_id TEXT NOT NULL,
+ day TEXT NOT NULL,
+ observed_at TEXT NOT NULL,
+ metrics TEXT NOT NULL,
+ PRIMARY KEY(url,source_id,day)
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_candidate_priority (
+ ref TEXT PRIMARY KEY,
+ group_name TEXT NOT NULL DEFAULT 'verify',
+ sort_rank INTEGER NOT NULL DEFAULT 0,
+ reasons TEXT NOT NULL DEFAULT '[]',
+ unknowns TEXT NOT NULL DEFAULT '[]',
+ signals TEXT NOT NULL DEFAULT '[]',
+ fingerprint TEXT NOT NULL,
+ manual_group TEXT,
+ manual_reason TEXT NOT NULL DEFAULT '',
+ updated_at TEXT NOT NULL
+);

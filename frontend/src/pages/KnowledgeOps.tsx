@@ -693,6 +693,7 @@ export default function KnowledgeOps({embedded=false,mode='settings'}:{embedded?
                       "openreview",
                       "github_releases",
                       "github_skills",
+                      "daily_discovery",
                       "github_projects",
                     ].map((v) => (
                       <option key={v}>{v}</option>

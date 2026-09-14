@@ -1,3 +1,4 @@
+import { SourceCatalog } from "../components/workspace/SourceCatalog";
 import ResearchComparison, {
   type ResearchComparisonData,
 } from "../components/workspace/ResearchComparison";
@@ -378,96 +379,7 @@ export function Compare() {
   );
 }
 
-export function Sources() {
-  const { zh, pick } = useWorkspace();
-  const result = useRemote<{ items: Source[] }>("/v1/sources");
-  const statusName = (s: string) =>
-    s === "success"
-      ? pick("最近采集成功", "Last run succeeded")
-      : s === "running"
-        ? pick("采集中", "Running")
-        : s === "pending"
-          ? pick("等待首次采集", "Awaiting first run")
-          : s === "partial"
-            ? pick("部分完成", "Partially completed")
-            : pick("需要重试", "Needs attention");
-  return (
-    <>
-      <PageHeading
-        eyebrow="TRACEABLE BY DESIGN"
-        title={pick("每一条资料，都有来处。", "Every record has a source.")}
-        description={pick(
-          "来源检查与更新周期统一为 1 天。这里展示实际接入状态和最近成功时间。",
-          "Every source is checked once per day. See actual collection status and last successful updates.",
-        )}
-      />
-      <div className="source-principles">
-        {[
-          [
-            "01",
-            "回到原始材料",
-            "Go to the original",
-            "官方公告、论文和项目文档支撑事实。",
-            "Official announcements, papers and documentation support claims.",
-          ],
-          [
-            "02",
-            "保留未知与分歧",
-            "Keep uncertainty visible",
-            "采集失败、资料缺失和未经实测会明确标识。",
-            "Failures, missing material and untested claims stay visible.",
-          ],
-          [
-            "03",
-            "每天继续更新",
-            "Keep checking daily",
-            "跟踪变化，并保留版本和历史依据。",
-            "Track changes and retain versions and evidence.",
-          ],
-        ].map(([n, cn, en, dcn, den]) => (
-          <div key={n}>
-            <span>{n}</span>
-            <h3>{pick(cn, en)}</h3>
-            <p>{pick(dcn, den)}</p>
-          </div>
-        ))}
-      </div>
-      <State
-        loading={result.loading}
-        error={result.error}
-        retry={result.reload}
-      >
-        <div className="source-list">
-          {result.data?.items.map((s) => (
-            <article className="source-row" key={s.id}>
-              <span
-                className={`record-symbol ${s.category === "research" ? "paper" : ""}`}
-              >
-                <Icon name="source" />
-              </span>
-              <div className="source-name">
-                <SourceLink url={s.url}>
-                  {s.name}
-                  <Icon name="up" size={15} />
-                </SourceLink>
-                <span>
-                  {s.category} · {pick("每 1 天", "Every 1 day")}
-                </span>
-              </div>
-              <span className={`tag ${s.enabled ? s.status : "disabled"}`}>
-                {s.enabled ? statusName(s.status) : pick("已停用", "Disabled")}
-              </span>
-              <div className="source-time">
-                <small>{pick("最近成功", "Last success")}</small>
-                <span>{dateText(s.last_success_at, zh)}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </State>
-    </>
-  );
-}
+export function Sources() { return <SourceCatalog/>; }
 
 export function Connect() {
   const { pick, notify } = useWorkspace();

@@ -34,15 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.1.2](CHANGELOG.md#v1.1.2)** · [fieldtofit-v1.1.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.1.2)
+**Current source version: [v1.2.0](CHANGELOG.md#v1.2.0)** · [fieldtofit-v1.2.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.2.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Consolidate project management in root-level FieldToFit-PM.md, using REQ-1 / REQ-1-1 IDs and explicit development, verification and shipped-feature states.
-- Merge the old requirements, goals, acceptance overview and roadmap, retaining mappings for 91 previous subrequirements; the current plan has 16 requirements and 99 subrequirements.
-- Define proactive local research, selected-candidate handoff, quality and attention ranking, the daily 08:00 proposal format and owner alignment before website changes.
+- Add source coverage tables for 12 organizations, showing actual channels, connection and check states, and linked published content; administrators can enable, pause and check sources.
+- Add 19 daily source configurations for official feeds, article indexes, model cards, repository discovery, discussions and papers, with private materials, dates, pagination and failure records.
+- Add priority, follow-up and verification groups with material-backed reasons, dated attention signals, manual overrides and a cross-day selected queue; selection never publishes.
+- Schedule daily checks at 06:30 Beijing time with calendar-day claims and bounded parallel collection; existing public content and read-only MCP remain unchanged.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

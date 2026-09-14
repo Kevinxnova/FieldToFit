@@ -9,6 +9,7 @@ import re
 
 from backend.db import get_db
 from backend.knowledge import store, platform
+from backend.knowledge.workspace_transactions import editorial_transaction
 
 SCHEMA = 'metis.editorial.v1'
 
@@ -88,7 +89,7 @@ def stage(source, materials, metrics=None, gaps=None):
     config = source['config']
     url = source['url']
     rid = store.stable_id('resource', store.canonical_url(url))
-    with get_db(atomic=True) as db:
+    with editorial_transaction() as db:
         prior = db.execute('SELECT id,fingerprint,data FROM knowledge_platform_intake WHERE source_id=? ORDER BY created_at DESC,id DESC LIMIT 1',
                            (source['id'],)).fetchone()
         for m in materials:
@@ -131,22 +132,27 @@ def run_daily(budget_seconds=180):
         with get_db() as db:
             maintained = {r[0] for r in db.execute("SELECT DISTINCT r.source_id FROM knowledge_records r JOIN knowledge_selections s ON s.record_id=r.id "
                 "WHERE s.state!='withdrawn' AND EXISTS(SELECT 1 FROM knowledge_publications p WHERE p.record_id=r.id AND p.state='published')").fetchall()}
-        sources = sorted([s for s in list_sources() if s['enabled'] and s['adapter'] == 'platform_repository' and s['id'] in maintained],
+        sources = sorted([s for s in list_sources() if s['enabled'] and ((s['adapter'] == 'platform_repository' and s['id'] in maintained) or (s['adapter']=='daily_discovery' and s['config'].get('daily_enabled') is True))],
                          key=lambda s: s['last_attempt_at'] or '')
-        results = []
-        for source in sources:
+        from concurrent.futures import ThreadPoolExecutor
+        def check(source):
             remaining = budget_seconds - (time.monotonic() - started)
             if remaining <= 0:
-                results.append({'source': source['id'], 'status': 'deferred'})
-                continue
-            results.extend(check_source(source['id'], budget_seconds=remaining)['results'])
+                return [{'source':source['id'],'status':'deferred','error':'Daily run time budget reached'}]
+            return check_source(source['id'],budget_seconds=min(30,remaining))['results']
+        # Bounded workers share the cycle deadline; each source also has its own budget.
+        # SQL claims still protect against overlapping scheduled runs.
+        with ThreadPoolExecutor(max_workers=3) as workers:
+            results=[r for group in workers.map(check,sources) for r in group]
         with get_db() as db:
             pending = db.execute("SELECT count(*) FROM knowledge_platform_intake WHERE state='pending'").fetchone()[0]
             unhealthy = [s['id'] for s in sources if db.execute("SELECT 1 FROM knowledge_sources WHERE id=? AND status='success' "
                 "AND datetime(last_success_at)>=datetime('now','-1 day')", (s['id'],)).fetchone() is None]
         report.update(status='success' if sources and charts['status'] == 'success' and not unhealthy and not any(r['status']=='deferred' for r in results) else 'partial',
                       interval_days=1, model_landscape=charts, results=results, pending_editorial=pending, unhealthy_sources=unhealthy,
-                      maintained_sources=len(sources), scope='Previously published maintained repositories only; discovery sources and unpublished candidates are separate. Collection success does not mean AI organization or publication completed')
+                      maintained_sources=len(sources), scope='Enabled daily discovery sources and previously published maintained repositories; collection never publishes or replaces editorial content')
+    from backend.knowledge.candidate_priority import refresh
+    report['priority_assessment']=refresh(limit=100)
     return report
 
 

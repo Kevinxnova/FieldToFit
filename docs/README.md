@@ -15,6 +15,7 @@
 | 本地与部署 | [本地启动](guides/local-development.md) · [部署](guides/deployment.md) |
 | 网站反馈保存到哪里、如何处理 | [反馈流程](guides/feedback.md) |
 | 统一内容管理 | [四模块、选中到发布、迁移与回退](guides/management.md) · [v1.1.0 验收](validation/2026-09-12-v1.1.0.md) |
+| 来源覆盖与每日审阅 | [来源双表、日采集、候选排序与操作边界](guides/discovery.md) |
 | 内容与运行 | [内容维护](guides/content.md) · [运行方案](guides/operating-model.md) · [管理](guides/management.md) |
 | 目录、兼容与素材 | [架构](architecture/README.md) · [目录说明](architecture/repository.md) · [品牌图片](guides/brand-assets.md) |
 | 版本与证据 | [更新记录](../CHANGELOG.md) · [发布指南](guides/releasing.md) · [验证索引](validation/README.md) |

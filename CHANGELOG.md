@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.2.0"></a>
+## v1.2.0 · 来源覆盖与每日优先审阅 · 2026-09-14
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增来源双表：12 个重点公司／团队、实际渠道、接入与检查状态，以及关联的已发布内容；管理端可启停与检查。
+- 新增 19 项正式日采集配置，覆盖官方订阅、文章列表、模型卡、仓库发现、社区线索与论文；私密材料保留原文、日期、分页和失败信息。
+- 每日审阅新增优先查看、值得关注、待核实分组，展示材料依据与观测信号，支持手动调整和跨日待整理队列；选中不发布。
+- 日调度配置改为北京时间 06:30，使用自然日去重与受预算限制的并行检查；现有公开资料和只读 MCP 保持不变。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add source coverage tables for 12 organizations, showing actual channels, connection and check states, and linked published content; administrators can enable, pause and check sources.
+- Add 19 daily source configurations for official feeds, article indexes, model cards, repository discovery, discussions and papers, with private materials, dates, pagination and failure records.
+- Add priority, follow-up and verification groups with material-backed reasons, dated attention signals, manual overrides and a cross-day selected queue; selection never publishes.
+- Schedule daily checks at 06:30 Beijing time with calendar-day claims and bounded parallel collection; existing public content and read-only MCP remain unchanged.
+<!-- release-summary:en:end -->
+
+经用户确认使用 minor 版本 v1.2.0。对应 REQ-1-1、REQ-1-2、REQ-2-1、REQ-2-3、REQ-2-4；兼顾 REQ-2-2 的失败保留。本批不实现 REQ-2-5 跨日提醒账本或 REQ-11 的批次决定记录。
+
+2026-09-14 按用户授权部署 v1.2.0 并完成逐源生产验收：19 项新增来源中 13 项本轮成功、5 项有已取材料及待续项、arXiv 未通过；27 个已发布仓库维护检查全部成功。发布验收修复远程事务时限和连接复用问题，并验证同日去重。剩余真实访问失败及未完成分页见[验收记录](docs/validation/2026-09-14-discovery.md)。完整范围与缺口以[项目管理总览](FieldToFit-PM.md)为准。公开动态、持续关注、图表没有新增或替换内容。连续三个真实日周期尚未通过，已纳入 9 月 15–17 日的本地 08:00 晨报复查；复查不代替服务器调度。
+
 <a id="v1.1.2"></a>
 ## v1.1.2 · 项目管理总览与每日选题方案 · 2026-09-13
 

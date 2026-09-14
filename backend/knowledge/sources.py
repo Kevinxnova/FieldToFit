@@ -9,6 +9,9 @@ import os
 import re
 import socket
 import time
+from contextvars import ContextVar
+
+COLLECTION_DEADLINE = ContextVar("collection_deadline", default=None)
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit, quote
@@ -47,6 +50,9 @@ def seed_sources():
             db.execute("INSERT OR IGNORE INTO knowledge_sources(id,name,category,url,adapter,config) VALUES(?,?,?,?,?,?)",
                        (sid, name, category, url, adapter, encode(config)))
 
+    from backend.knowledge.source_catalog import seed
+    seed()
+
 
 def list_sources():
     with get_db() as db:
@@ -70,7 +76,10 @@ def public_url(url):
 def fetch(url, headers=None, max_bytes=2_000_000, with_headers=False):
     """Validate redirects, limit response size and never use environment proxy credentials."""
     request_headers = {"User-Agent": "FieldToFit/2.0 (+https://github.com/Kevinxnova/fieldtofit)", **(headers or {})}
-    with httpx.Client(timeout=15, follow_redirects=False, trust_env=False) as client:
+    deadline=COLLECTION_DEADLINE.get()
+    remaining=deadline-time.monotonic() if deadline else 15
+    if remaining<=0:raise TimeoutError("Daily source budget reached")
+    with httpx.Client(timeout=min(15,remaining), follow_redirects=False, trust_env=False) as client:
         for _ in range(5):
             public_url(url)
             with client.stream("GET", url, headers=request_headers) as response:
@@ -83,6 +92,7 @@ def fetch(url, headers=None, max_bytes=2_000_000, with_headers=False):
                 response.raise_for_status()
                 chunks, size = [], 0
                 for chunk in response.iter_bytes():
+                    if deadline and time.monotonic()>=deadline:raise TimeoutError("Daily source budget reached")
                     size += len(chunk)
                     if size > max_bytes:
                         raise ValueError("Source document exceeds the configured size limit")
@@ -290,6 +300,9 @@ class PartialSourceError(Exception):
 
 def collect_source(source):
     adapter = source["adapter"]
+    if adapter == "daily_discovery":
+        from backend.knowledge.discovery import collect
+        return collect(source)
     if adapter == 'platform_repository':
         from backend.knowledge.platform_maintenance import collect
         return collect(source)
@@ -347,7 +360,7 @@ def run_daily(source_id=None, force=False, budget_seconds=240):
         stamp = now()
         with get_db() as db:
             # A single SQL claim prevents overlapping scheduled runs from fetching the same source.
-            extra = "" if force else " AND (last_attempt_at IS NULL OR datetime(last_attempt_at)<=datetime('now','-1 day'))"
+            extra = "" if force else " AND (last_attempt_at IS NULL OR date(last_attempt_at,'+8 hours')<date('now','+8 hours'))"
             claim = db.execute("UPDATE knowledge_sources SET status='running',last_attempt_at=? WHERE id=? "
                                "AND (status!='running' OR datetime(last_attempt_at)<datetime('now','-1 day'))" + extra, (stamp, source["id"]))
             if not claim.rowcount:
@@ -355,6 +368,7 @@ def run_daily(source_id=None, force=False, budget_seconds=240):
             run_id = db.execute("INSERT INTO knowledge_runs(source_id,started_at,status) VALUES(?,?,'running')", (source["id"], stamp)).lastrowid
         found = changed = 0
         status, error = "success", ""
+        token = COLLECTION_DEADLINE.set(start + budget_seconds)
         try:
             found, changed = collect_source(source)
         except PartialSourceError as exc:
@@ -362,6 +376,7 @@ def run_daily(source_id=None, force=False, budget_seconds=240):
         except Exception as exc:
             logger.warning("Source %s failed: %s", source["id"], type(exc).__name__)
             status, error = "error", str(exc)[:500]
+        COLLECTION_DEADLINE.reset(token)
         with get_db() as db:
             db.execute("UPDATE knowledge_runs SET finished_at=?,status=?,found=?,changed=?,error=? WHERE id=?", (now(), status, found, changed, error, run_id))
             db.execute("UPDATE knowledge_sources SET status=?,error=?,last_success_at=CASE WHEN ?='success' THEN ? ELSE last_success_at END WHERE id=?",

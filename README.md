@@ -34,15 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.1.2](CHANGELOG.md#v1.1.2)** · [fieldtofit-v1.1.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.1.2)
+**当前源码版本：[v1.2.0](CHANGELOG.md#v1.2.0)** · [fieldtofit-v1.2.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.2.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 项目管理统一到根目录 FieldToFit-PM.md，使用 REQ-1 / REQ-1-1 编号，逐项列出开发、验证、已上线和未上线能力。
-- 合并旧需求、目标、验收总表及路线图，保留 91 个旧子项和历史编号的映射，当前为 16 项主需求、99 个子项。
-- 明确本地主动搜索和网站候选接续两种流程、质量与关注度排序、每日 08:00 提案格式及先与用户对齐的发布边界。
+- 新增来源双表：12 个重点公司／团队、实际渠道、接入与检查状态，以及关联的已发布内容；管理端可启停与检查。
+- 新增 19 项正式日采集配置，覆盖官方订阅、文章列表、模型卡、仓库发现、社区线索与论文；私密材料保留原文、日期、分页和失败信息。
+- 每日审阅新增优先查看、值得关注、待核实分组，展示材料依据与观测信号，支持手动调整和跨日待整理队列；选中不发布。
+- 日调度配置改为北京时间 06:30，使用自然日去重与受预算限制的并行检查；现有公开资料和只读 MCP 保持不变。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

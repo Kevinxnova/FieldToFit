@@ -124,6 +124,9 @@ def detail(kind, ident, db=None):
     return result
 
 def materials(ref, db):
+    if ref.startswith('discovery:'):
+        row=db.execute('SELECT materials FROM fieldtofit_discoveries WHERE id=?',(ref[10:],)).fetchone()
+        return json.loads(row['materials']) if row else []
     if ref.startswith('intake:'):
         row=db.execute('SELECT data,state FROM knowledge_platform_intake WHERE id=?',(ref[7:],)).fetchone()
         if not row:return []
@@ -272,6 +275,7 @@ CANDIDATES = """WITH candidates AS (
  url,source,content_type item_type,first_seen discovered_at,NULL published_at,metrics FROM tools
  UNION ALL SELECT 'record:'||id,COALESCE(NULLIF(title_zh,''),title),COALESCE(NULLIF(summary_zh,''),summary),canonical_url,source_id,object_type,collected_at,published_at,'{}' FROM knowledge_records
  UNION ALL SELECT 'intake:'||id,json_extract(data,'$.name'),substr(COALESCE(json_extract(data,'$.materials[0].body'),''),1,1800),json_extract(data,'$.official_url'),source_id,json_extract(data,'$.object_type'),created_at,NULL,COALESCE(json_extract(data,'$.metrics'),'{}') FROM knowledge_platform_intake WHERE state!='superseded' OR EXISTS(SELECT 1 FROM fieldtofit_inbox i WHERE i.ref='intake:'||knowledge_platform_intake.id)
+ UNION ALL SELECT 'discovery:'||id,title,summary,url,source_id,item_type,discovered_at,published_at,metrics FROM fieldtofit_discoveries
  UNION ALL SELECT ref,title,summary,url,source,item_type,created_at,NULL,'{}' FROM fieldtofit_manual_candidates
 ) """
 
@@ -279,8 +283,11 @@ def candidate(ref, db):
     row=db.execute(CANDIDATES+'SELECT * FROM candidates WHERE ref=?',(ref,)).fetchone()
     return dict(row) if row else None
 
-def inbox(q='', since='', until='', source='', status='', item_type='', offset=0):
+def inbox(q='', since='', until='', source='', status='', item_type='', offset=0, group='', order='priority'):
     offset=max(0,int(offset));where=['1=1'];args=[]
+    if group not in ('','priority','follow','verify') or order not in ('priority','date'):fail('Unknown review ordering')
+    group_sql="COALESCE(p.manual_group,p.group_name,'verify')"
+    if group:where.append(group_sql+'=?');args.append(group)
     if status and status not in ('pending','selected','deferred','ignored','completed'):fail('Unknown inbox status')
     if since or until:
         start=date.fromisoformat(since or until);end=date.fromisoformat(until or since)
@@ -292,10 +299,11 @@ def inbox(q='', since='', until='', source='', status='', item_type='', offset=0
     for value,expr in [(source,'c.source'),(item_type,'c.item_type'),(status,"COALESCE(i.status,'pending')")]:
         if value:where.append(expr+'=?');args.append(value)
     if q:where.append('(c.title LIKE ? OR c.summary LIKE ?)');args.extend(['%'+q+'%']*2)
-    clause=' AND '.join(where);join=' FROM candidates c LEFT JOIN fieldtofit_inbox i ON i.ref=c.ref WHERE '+clause
+    clause=' AND '.join(where);join=' FROM candidates c LEFT JOIN fieldtofit_inbox i ON i.ref=c.ref LEFT JOIN fieldtofit_candidate_priority p ON p.ref=c.ref WHERE '+clause
     with get_db() as db:
         total=db.execute(CANDIDATES+'SELECT COUNT(*) n'+join,args).fetchone()['n']
-        rows=[dict(r) for r in db.execute(CANDIDATES+"SELECT c.*,COALESCE(i.status,'pending') status,i.kind,i.item_id,i.note"+join+' ORDER BY datetime(c.discovered_at) DESC,c.ref LIMIT 30 OFFSET ?',[*args,offset]).fetchall()]
+        rows=[dict(r) for r in db.execute(CANDIDATES+"SELECT c.*,COALESCE(i.status,'pending') status,i.kind,i.item_id,i.note,p.group_name,p.manual_group,p.manual_reason,p.reasons,p.unknowns,p.signals"+join+(' ORDER BY CASE '+group_sql+" WHEN 'priority' THEN 3 WHEN 'follow' THEN 2 ELSE 1 END DESC," if order=='priority' else ' ORDER BY ')+ 'datetime(c.discovered_at) DESC,c.ref LIMIT 30 OFFSET ?',[*args,offset]).fetchall()]
+        source_names={r['id']:r['name'] for r in db.execute('SELECT id,name FROM knowledge_sources').fetchall()}
         sources=[r['source'] for r in db.execute(CANDIDATES+'SELECT DISTINCT source FROM candidates ORDER BY source').fetchall()]
         counts=[dict(r) for r in db.execute(CANDIDATES+"SELECT COALESCE(i.status,'pending') status,COUNT(*) count"+join+" GROUP BY COALESCE(i.status,'pending')",args).fetchall()]
         published=[json.loads(r['published_json']) for r in db.execute("SELECT published_json FROM fieldtofit_content_items WHERE kind!='charts' AND published_json IS NOT NULL").fetchall()]
@@ -305,10 +313,18 @@ def inbox(q='', since='', until='', source='', status='', item_type='', offset=0
         try:return store.canonical_url(url).removesuffix('.git')
         except ValueError:return ''
     for r in rows:
+        r['source_name']=source_names.get(r['source'],r['source'])
+        r['priority']={'group':r.pop('manual_group') or r.get('group_name') or 'verify','automatic_group':r.pop('group_name') or 'verify','manual_reason':r.pop('manual_reason') or '', 'reasons':store.decode(r.pop('reasons'),[]), 'unknowns':store.decode(r.pop('unknowns'),['尚未完成材料评估']), 'signals':store.decode(r.pop('signals'),[])}
         r['matches']=[{'id':p['id'],'name':p.get('name') or p.get('title'),'kind':'news' if p['id'].startswith('D-') else 'watch'} for p in published if p.get('state')!='withdrawn' and any(canonical(s['url'])==canonical(r['url']) for s in p.get('sources',[]))]
         try:r['metrics']=json.loads(r['metrics'])
         except (ValueError,TypeError):r['metrics']={}
-    return {'items':rows,'total':total,'counts':counts,'sources':sources,'runs':sorted(recent+legacy,key=lambda x:x['started_at'],reverse=True)[:20], 'offset':offset,'next_offset':offset+30 if offset+30<total else None,'date_basis':'Asia/Shanghai discovery date; upstream publication date remains separate'}
+    with get_db() as db:
+        overview={'today_new':db.execute(CANDIDATES+"SELECT COUNT(*) FROM candidates WHERE date(discovered_at,'+8 hours')=date('now','+8 hours')").fetchone()[0],
+          'priority':db.execute(CANDIDATES+"SELECT COUNT(*) FROM candidates c JOIN fieldtofit_candidate_priority p ON p.ref=c.ref LEFT JOIN fieldtofit_inbox i ON i.ref=c.ref WHERE COALESCE(i.status,'pending')='pending' AND COALESCE(p.manual_group,p.group_name)='priority'").fetchone()[0],
+          'source_errors':db.execute("SELECT COUNT(*) FROM knowledge_sources WHERE enabled=1 AND status IN ('error','partial','failed')").fetchone()[0],
+          'existing_updates':db.execute("SELECT COUNT(*) FROM fieldtofit_discoveries d WHERE EXISTS(SELECT 1 FROM fieldtofit_content_items i,json_each(i.published_json,'$.sources') s WHERE i.published_json IS NOT NULL AND json_extract(s.value,'$.url')=d.url)").fetchone()[0],
+          'selected':db.execute("SELECT COUNT(*) FROM fieldtofit_inbox WHERE status='selected'").fetchone()[0]}
+    return {'overview':overview,'items':rows,'total':total,'counts':counts,'sources':sources,'source_names':source_names,'runs':sorted(recent+legacy,key=lambda x:x['started_at'],reverse=True)[:20], 'offset':offset,'next_offset':offset+30 if offset+30<total else None,'date_basis':'Asia/Shanghai discovery date; upstream publication date remains separate'}
 
 def template(kind, ident, c, item_type='tool', submission=False):
     url=c['url'];name=c['title'];day=today()
@@ -378,7 +394,7 @@ def export_draft(kind, ident):
 def backup():
     """A coherent private snapshot; concurrent publication cannot split its tables."""
     from backend.db import TursoConnection
-    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources')
+    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority')
     statements=[('SELECT * FROM '+name,()) for name in names]
     with get_db() as db:
         if isinstance(db,TursoConnection):cursors=db.atomic_statements(statements,read_only=True)

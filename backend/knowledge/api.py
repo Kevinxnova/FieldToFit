@@ -740,7 +740,7 @@ def workspace_migrate():
 @admin_required
 def workspace_inbox():
     from backend.knowledge.content_workspace import inbox
-    return jsonify(inbox(**{k:request.args[k] for k in ('q','since','until','source','status','item_type','offset') if k in request.args}))
+    return jsonify(inbox(**{k:request.args[k] for k in ('q','since','until','source','status','item_type','offset','group','order') if k in request.args}))
 
 @bp.post('/admin/workspace/inbox')
 @admin_required
@@ -799,3 +799,39 @@ def workspace_feedback():
 def workspace_backup():
     from backend.knowledge.content_workspace import backup
     return jsonify(backup())
+
+
+@bp.get('/platform/source-catalog')
+def source_catalog():
+    from backend.knowledge.source_catalog import registry
+    return jsonify(registry())
+
+@bp.get('/admin/workspace/source-catalog')
+@admin_required
+def admin_source_catalog():
+    from backend.knowledge.source_catalog import registry
+    return jsonify(registry(admin=True))
+
+@bp.post('/admin/workspace/priority')
+@admin_required
+def workspace_priority():
+    from backend.knowledge.candidate_priority import override
+    return jsonify(override(body()))
+
+@bp.post('/admin/workspace/priority/rebuild')
+@admin_required
+def workspace_priority_rebuild():
+    from backend.knowledge.candidate_priority import refresh
+    return jsonify(refresh(limit=100))
+
+
+@bp.get('/admin/workspace/candidate')
+@admin_required
+def workspace_candidate_detail():
+    from backend.knowledge.content_workspace import candidate, materials
+    ref=request.args.get('ref','')
+    with get_db() as db:
+        item=candidate(ref,db)
+        if not item:raise ValueError('Candidate not found')
+        origins=[dict(r) for r in db.execute('SELECT source_id,url,observed_at FROM fieldtofit_discovery_origins WHERE discovery_id=?',(ref[10:],)).fetchall()] if ref.startswith('discovery:') else []
+        return jsonify(item=item,materials=materials(ref,db),origins=origins)

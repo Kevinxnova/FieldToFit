@@ -40,7 +40,7 @@ macOS 的 `scripts/setup-mac.sh` 会安装依赖、初始化配置指定的数�
 
 保留仓库根目录为部署入口。`vercel.json` 构建前端并映射 Python API，远程数据库和管理凭证放在平台环境变量中。前后端同源时留空 `VITE_API_URL`；分开时填写 API origin，不附加 `/api`，并允许对应的前端 origin。
 
-当前 `vercel.json` 只登记 `/api/cron/platform` 一个每日定时任务，每天 UTC 02:00（北京时间 10:00）运行。旧 knowledge、scrape、daily-news、classify、digest 路由保留兼容，但没有登记为当前 Vercel 自动调度。部署前按 [兼容边界](../architecture/README.md) 核对需要的流程，再检查平台当前支持的时长和调度限制。
+v1.2.0 的 `vercel.json` 只登记 `/api/cron/platform` 一个每日定时任务，按新部署配置每天 UTC 22:30（北京时间次日 06:30）运行。旧 knowledge、scrape、daily-news、classify、digest 路由保留兼容，但没有登记为当前 Vercel 自动调度。部署前按 [兼容边界](../architecture/README.md) 核对需要的流程，再检查平台当前支持的时长和调度限制。
 
 所有定时 API 都检查 `CRON_SECRET`；检查 `GET /api/health`、资料直达页面、来源状态和管理登录。新表会在初始化时创建。beta.2 已增加显式事务及失败回滚，并通过模拟远程传输的检查；v1.1.0 管理写入使用单次服务端原子事务并核对读集，已完成真实 Turso 草稿保存和原样图表发布；完整灾难恢复仍需独立演练。详见 [beta.2 验证](../archive/metis/validation/v1.1.0-beta.2-acceptance.md)。
 
@@ -59,4 +59,6 @@ macOS 的 `scripts/setup-mac.sh` 会安装依赖、初始化配置指定的数�
 
 公开版本需保持 `FIELDTOFIT_PUBLIC_ACCOUNTS=0`。生产是否执行初始化由真实配置决定，不能为文档演示修改数据库；发布前确认已完成所需迁移。`CRON_SECRET`、数据库和管理凭据仅保存在部署环境。
 
-每 1 天检查不代表每源均成功；连续 3 个真实日周期、故障恢复与至少一次每周复核须记录实际证据。本轮文档整理不执行维护、写库或重新部署。
+每 1 天检查不代表每源均成功；连续 3 个真实日周期、故障恢复与至少一次每周复核须记录实际证据。实际已执行的维护和部署范围见[生产验收](../validation/2026-09-14-discovery.md)。
+
+扩展采集采用三个有预算的工作单元，按北京时间自然日领取检查任务；超时与分页未完保留待处理状态。上线前后状态见[项目管理总览](../../FieldToFit-PM.md)，具体渠道与边界见[每日发现指南](discovery.md)。

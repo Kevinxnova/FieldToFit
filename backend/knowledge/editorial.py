@@ -19,7 +19,7 @@ def sources_save(data,source_id=None):
         if not isinstance(merged.get(key),str) or not 1<=len(merged[key])<=500:
             raise ValueError('A source needs name, category, URL and adapter')
     url=store.canonical_url(merged['url'])
-    if merged['adapter'] not in {'rss','arxiv','huggingface','openreview','github_releases','github_skills','github_projects','platform_repository','legacy','pages'}:
+    if merged['adapter'] not in {'daily_discovery','rss','arxiv','huggingface','openreview','github_releases','github_skills','github_projects','platform_repository','legacy','pages'}:
         raise ValueError('Unsupported source adapter')
     config=merged.get('config',{})
     if not isinstance(config,dict) or len(store.encode(config))>50000:

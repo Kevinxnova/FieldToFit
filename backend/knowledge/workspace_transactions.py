@@ -30,7 +30,9 @@ class GuardedWrites:
     def commit(self):
         if not self.writes:
             return
-        statements = [('CREATE TEMP TABLE workspace_guard (n INTEGER CONSTRAINT workspace_snapshot_unchanged CHECK(n=0))', ())]
+        # Remote servers may reuse the underlying SQLite session after closing a stream.
+        statements = [('DROP TABLE IF EXISTS temp.workspace_guard', ()),
+                      ('CREATE TEMP TABLE workspace_guard (n INTEGER CONSTRAINT workspace_snapshot_unchanged CHECK(n=0))', ())]
         for sql, params, rows in self.reads:
             # Compare typed row values, not JSON string formatting. The observed
             # queries include unique identities (or a single aggregate row).
@@ -47,6 +49,7 @@ class GuardedWrites:
                      ' FROM json_each(?)) THEN 0 ELSE 1 END')
             statements.append((guard, (*params, len(rows), *params, expected)))
         statements.extend(self.writes)
+        statements.append(('DROP TABLE temp.workspace_guard', ()))
         try:
             self.db.atomic_statements(statements)
         except Exception as exc:
