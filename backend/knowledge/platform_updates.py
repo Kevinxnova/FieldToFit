@@ -207,7 +207,11 @@ def history(rid, revision=None, limit=20, cursor=None):
         return _history(db, rid, pub['revision'], limit)
 
 
-def changes(after=0, object_ids=None, limit=20, cursor=None):
+def changes(after=0, object_ids=None, limit=20, cursor=None, scope='legacy'):
+    if scope=='workspace':
+        from backend.knowledge.stewardship import changes as current_changes
+        return current_changes(after,object_ids,limit,cursor)
+    if scope!='legacy':raise p.PlatformError('Use scope legacy or workspace; keep separate checkpoints')
     ids, limit = _ids([] if object_ids is None else object_ids), p.integer(limit, 'limit', 1, 100)
     after = p.integer(after, 'after')
     if cursor and after:

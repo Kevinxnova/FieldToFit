@@ -392,3 +392,28 @@ CREATE TABLE IF NOT EXISTS fieldtofit_operation_issues (
  review_on TEXT, note TEXT NOT NULL, first_seen_at TEXT NOT NULL, last_seen_at TEXT NOT NULL,
  resolved_at TEXT, version INTEGER NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS fieldtofit_steward_actions (
+ id TEXT PRIMARY KEY, action TEXT NOT NULL, source_id TEXT NOT NULL, target_id TEXT NOT NULL,
+ payload TEXT NOT NULL, before_json TEXT NOT NULL, after_json TEXT NOT NULL,
+ reason TEXT NOT NULL, created_at TEXT NOT NULL, undone_at TEXT
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_steward_aliases (
+ source_id TEXT PRIMARY KEY, target_id TEXT NOT NULL, action_id TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_steward_links (
+ id TEXT PRIMARY KEY, source_id TEXT NOT NULL, target_id TEXT NOT NULL, data TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_steward_checks (
+ object_id TEXT NOT NULL, material_id TEXT NOT NULL, url TEXT NOT NULL, data TEXT NOT NULL,
+ PRIMARY KEY(object_id,material_id)
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_steward_events (
+ seq INTEGER PRIMARY KEY AUTOINCREMENT, object_id TEXT NOT NULL, kind TEXT NOT NULL,
+ data TEXT NOT NULL, created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS fieldtofit_steward_events_object ON fieldtofit_steward_events(object_id,seq);
+CREATE TABLE IF NOT EXISTS fieldtofit_steward_decisions (
+ source_id TEXT NOT NULL, target_id TEXT NOT NULL, data TEXT NOT NULL,
+ PRIMARY KEY(source_id,target_id)
+);

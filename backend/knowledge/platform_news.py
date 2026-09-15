@@ -58,6 +58,10 @@ def validate(data):
 
 
 def news(q='', id='', revision='', _data=None):
+    requested_id=id
+    if id and _data is None:
+        from backend.knowledge.stewardship import resolve
+        id=resolve(id)
     q, id = text(q, 'q', 200, False).casefold(), text(id, 'id', 100, False)
     try:
         from backend.knowledge.content_workspace import load_published
@@ -84,7 +88,9 @@ def news(q='', id='', revision='', _data=None):
                (not q or q in ' '.join([item['title'], item['name'], item['organization'], item['summary']]).casefold())]
     if id and not entries:
         raise PlatformError('News item not found or withdrawn', 'not_found', 404)
+    from backend.knowledge.stewardship import decorate
     return {'schema_version': data['schema_version'], 'edition': data['edition'], 'title': data['title'],
             'reviewed_at': data['reviewed_at'], 'revision': fingerprint, 'total': len(entries),
             'scope': 'reviewed release news; source links and optional reviewed materials have explicit coverage; interpretation is FieldToFit editorial',
-            'items': entries}
+            'items': entries if _data is not None else decorate(entries),
+            **({'resolved_from':requested_id,'canonical_id':id} if requested_id and requested_id!=id else {})}

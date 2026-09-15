@@ -609,7 +609,7 @@ def platform_transition(rid):
 
 @bp.get('/platform/changes')
 def platform_changes():
-    args = {k: request.args[k] for k in ('after', 'limit', 'cursor') if k in request.args}
+    args = {k: request.args[k] for k in ('after', 'limit', 'cursor', 'scope') if k in request.args}
     if 'object_id' in request.args:
         args['object_ids'] = request.args.getlist('object_id')
     return jsonify(platform_updates.changes(**args))
@@ -906,3 +906,35 @@ def workspace_operation_action(action):
 def workspace_issue_defer(ident):
     from backend.knowledge.operation_board import defer
     return jsonify(defer(ident,body()))
+
+
+@bp.get('/admin/workspace/stewardship')
+@admin_required
+def stewardship_dashboard():
+    from backend.knowledge.stewardship import dashboard
+    return jsonify(dashboard())
+
+@bp.post('/admin/workspace/stewardship/<action>')
+@admin_required
+def stewardship_action(action):
+    from backend.knowledge import stewardship as s
+    data=body()
+    if action=='upgrade':return jsonify(s.upgrade())
+    if action=='preview':return jsonify(s.preview(data))
+    if action=='apply':return jsonify(s.apply(data))
+    if action=='check':return jsonify(s.check_materials(25,data.get('id')))
+    if action=='decide-material':return jsonify(s.decide_material(data))
+    return jsonify(detail='Unknown stewardship action'),404
+
+@bp.get('/platform/content/<ident>/status')
+def stewardship_status(ident):
+    from backend.knowledge.stewardship import public_status,kind
+    kind(ident)
+    return jsonify(public_status(ident))
+
+@bp.get('/platform/content-changes')
+def stewardship_changes():
+    from backend.knowledge.stewardship import changes
+    args={k:request.args[k] for k in ('after','limit','cursor') if k in request.args}
+    if 'object_id' in request.args:args['object_ids']=request.args.getlist('object_id')
+    return jsonify(changes(**args))

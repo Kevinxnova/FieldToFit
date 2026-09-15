@@ -1,0 +1,70 @@
+// Mutating acceptance must run against an isolated local fixture database.
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const assert=require('node:assert/strict'),fs=require('node:fs');
+(async()=>{
+ const base=process.env.READING_BASE_URL||'http://127.0.0.1:18050';
+ assert(['localhost','127.0.0.1'].includes(new URL(base).hostname),'Local fixture server required');
+ assert(process.env.READING_ADMIN_PASSWORD,'Isolated test password required');
+ const out=process.env.READING_OUTPUT||'/tmp/fieldtofit-stewardship';fs.mkdirSync(out,{recursive:true});
+ const browser=await chromium.launch({headless:true,executablePath:process.env.READING_CHROMIUM});
+ try{
+  const context=await browser.newContext({viewport:{width:1440,height:1000}}),page=await context.newPage(),errors=[];
+  page.on('pageerror',e=>{errors.push(e.message);console.error('PAGE ERROR',e.message)});
+  await page.goto(base+'/admin');await page.locator('.management-login input').fill(process.env.READING_ADMIN_PASSWORD);
+  await page.locator('.management-login button').last().click();
+  const area=page.locator('.stewardship');await area.waitFor();
+  await area.getByText('连续 7 个自然日无法访问',{exact:false}).first().waitFor();
+  await page.screenshot({path:out+'/admin-desktop.png'});
+  await area.getByLabel('待归并对象',{exact:true}).selectOption('CW-T99');await area.getByLabel('保留对象',{exact:true}).selectOption('CW-T01');
+  await area.getByLabel('本次操作说明',{exact:true}).fill('Browser isolation: verified duplicate');
+  const preview=area.getByRole('button',{name:'预览影响与冲突',exact:true});await preview.click();
+  await area.locator('.steward-conflict').first().waitFor();
+  assert(await area.getByRole('button',{name:'确认应用到网站与 AI 输出',exact:true}).isDisabled());
+  for(const select of await area.locator('.steward-conflict select').all())await select.selectOption('target');
+  await preview.click();
+  const confirm=area.getByLabel('已核对冲突、关系依据和公开影响',{exact:true});await confirm.check();
+  await area.getByRole('button',{name:'确认应用到网站与 AI 输出',exact:true}).click();await area.getByRole('status').waitFor();
+  let response=await context.request.get(base+'/api/v1/platform/watch?id=CW-T99');let data=await response.json();assert.equal(data.canonical_id,'CW-T01');
+  await page.goto(base+'/for-you#watch-cw-t99');await page.getByRole('link',{name:'查看当前资料 · CW-T01',exact:true}).click();await page.waitForURL(base+'/for-you#watch-cw-t01');
+  await page.screenshot({path:out+'/public-alias.png'});
+  await page.goto(base+'/admin');await area.waitFor();await area.getByText('归并与维护历史',{exact:true}).click();
+  await area.getByRole('button',{name:'预览撤销此归并',exact:true}).first().click();
+  await area.getByLabel('本次操作说明',{exact:true}).fill('Browser isolation: reverse merge');await preview.click();await confirm.check();
+  await area.getByRole('button',{name:'确认应用到网站与 AI 输出',exact:true}).click();await area.getByRole('status').waitFor();
+  response=await context.request.get(base+'/api/v1/platform/content/CW-T99/status');assert.equal((await response.json()).canonical_id,'CW-T99');
+  await area.locator('.steward-grid').first().locator('select').first().selectOption('relation');
+  await area.getByLabel('待归并对象',{exact:true}).selectOption('D-01');await area.getByLabel('保留对象',{exact:true}).selectOption('CW-T01');
+  await area.getByLabel('关系依据（官方公开链接）',{exact:true}).fill('https://example.org/evidence');
+  await page.screenshot({path:out+'/relation-form.png'});
+  await area.getByLabel('本次操作说明',{exact:true}).fill('Browser isolation: documented relationship');
+  await preview.click();await confirm.check();await area.getByRole('button',{name:'确认应用到网站与 AI 输出',exact:true}).click();await area.getByRole('status').waitFor();
+  response=await context.request.get(base+'/api/v1/platform/content/D-01/status');assert((await response.json()).relationships.some(r=>r.target_id==='CW-T01'));
+  await page.goto(base+'/for-you#news-d-01');
+  const relations=page.locator('#news-d-01 .public-maintenance');await relations.getByText('相关对象与动态 · 1',{exact:true}).click();
+  await relations.getByRole('link',{name:'隔离演示工具',exact:true}).waitFor();
+  await page.screenshot({path:out+'/public-relations.png'});
+  await page.goto(base+'/admin');await area.waitFor();
+  await area.getByText('已确认的关系 · 1',{exact:true}).click();await area.getByRole('button',{name:'预览移除此关联',exact:true}).click();
+  await area.getByLabel('本次操作说明',{exact:true}).fill('Browser isolation: remove relationship');await preview.click();await confirm.check();
+  await area.getByRole('button',{name:'确认应用到网站与 AI 输出',exact:true}).click();await area.getByRole('status').waitFor();
+  response=await context.request.get(base+'/api/v1/platform/content/D-01/status');assert.equal((await response.json()).relationships.length,0);
+  for(const width of [390,320]){
+   await page.setViewportSize({width,height:844});await area.scrollIntoViewIfNeeded();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   await page.screenshot({path:out+'/admin-'+width+'.png'});
+  }
+  const issue=area.locator('.steward-issue').first();await issue.getByLabel('处理说明（保留 / 复核时公开）',{exact:true}).fill('Reviewed fixture: access failure is separate from facts');
+  await issue.getByRole('button',{name:'已核对当前材料',exact:true}).click();await area.getByText('当前没有到期的材料复核事项；不代表所有材料都已检查。',{exact:true}).waitFor();
+  response=await context.request.get(base+'/api/v1/platform/content/CW-T01/status');data=await response.json();assert.equal(data.materials[0].needs_review,false);assert.equal(data.materials[0].availability,'check_failed');
+  response=await context.request.get(base+'/api/v1/platform/watch');const beforeGroup=await response.json();
+  await area.locator('.steward-grid').first().locator('select').first().selectOption('group');
+  await area.getByLabel('待归并对象',{exact:true}).selectOption('CW-T98');await area.getByLabel('保留对象',{exact:true}).selectOption('CW-T99');
+  await area.getByLabel('本次操作说明',{exact:true}).fill('Browser isolation: unreviewed private grouping');await preview.click();
+  await area.locator('.steward-conflict').first().waitFor();
+  for(const select of await area.locator('.steward-conflict select').all())await select.selectOption('target');
+  await preview.click();
+  await area.getByText('待整理稿尚未满足公开展示要求，请在内容库补全解读与逐份材料审核。',{exact:true}).waitFor();
+  await confirm.check();await area.getByRole('button',{name:'确认归入待整理稿（不发布）',exact:true}).click();await area.getByRole('status').waitFor();
+  response=await context.request.get(base+'/api/v1/platform/watch');assert.deepEqual(await response.json(),beforeGroup);
+  assert.deepEqual(errors,[]);fs.writeFileSync(out+'/result.json',JSON.stringify({passed:true,base,merge:true,undo:true,relations:true,removeRelation:true,materialReview:true,privateUnapprovedGroup:true,widths:[1440,390,320],errors},null,2));console.log('PASS '+out+'/result.json');
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exit(1)});

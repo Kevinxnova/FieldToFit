@@ -3976,3 +3976,5 @@ body:has(.mobile-more-dialog[open]), body:has(.toc-drawer[open]) { overflow: hid
   .mobile-more-panel a.active, .mobile-more-panel a:hover { background: var(--green-soft); }
   .mobile-navigation :focus-visible { outline: 2px solid var(--green); outline-offset: -3px; }
 }
+
+.public-maintenance{margin:14px 0;padding:12px;border-left:3px solid var(--green);background:var(--surface-soft);font-size:13px;overflow-wrap:anywhere}.public-maintenance details+details{margin-top:10px}.public-maintenance li{margin:10px 0}.public-maintenance p{font-size:12px}

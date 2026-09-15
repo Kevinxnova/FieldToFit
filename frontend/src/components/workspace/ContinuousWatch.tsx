@@ -1,10 +1,11 @@
+import { PublicMaintenance, type Maintenance } from './PublicMaintenance';
 import { ContentMaterials, type ReadingMaterial, type PreviewBodies } from './ContentMaterials';
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { BASE, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 export type WatchBlock = {kind:'paragraph';text:string} | {kind:'table';columns:string[];rows:string[][]};
-export type WatchItem = {materials?:ReadingMaterial[];materials_revision?:string;origin?:string;submission?:{entry_url:string;usage:string;openness:string;relationship:string};id:string;name:string;type:string;introduction:string;checked_at:string;interpretation:{title:string;text:string}[];blocks:WatchBlock[];sources:{title:string;url:string;coverage:string}[];attention?:{display_value:string;observed_at:string;source_url:string}};
+export type WatchItem = {maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;origin?:string;submission?:{entry_url:string;usage:string;openness:string;relationship:string};id:string;name:string;type:string;introduction:string;checked_at:string;interpretation:{title:string;text:string}[];blocks:WatchBlock[];sources:{title:string;url:string;coverage:string}[];attention?:{display_value:string;observed_at:string;source_url:string}};
 export type WatchCollection = {origin?:string;items:WatchItem[];groups:{id:string;name:string;count:number}[];total:number;collection_total:number;revision:string;reviewed_at:string;schema_version:string;scope:string};
 export const watchAnchor = (id:string) => 'watch-'+id.toLowerCase();
 export const watchNames:Record<string,string> = {model:'模型',tool:'工具',agent:'Agent',skill:'Skill',harness:'Harness'};
@@ -52,7 +53,7 @@ export function ContinuousWatch({result,previewBodies}:{previewBodies?:PreviewBo
           {item.blocks.map((b,i)=><Block key={i} block={b} name={item.name}/>)}
           <p className="muted">{pick('以上为官方材料整理与编辑解读，未进行运行实测；原始材料按清单标注可读范围，缺失部分通过出处链接核对。','Based on reviewed official materials, not runtime tests. Follow links to read upstream sources.')}</p>
         </details>
-        <ContentMaterials item={item} previewBodies={previewBodies}/><WatchHandoff data={data} item={item}/><button className="text-button" onClick={async()=>{const url=new URL('/for-you#'+watchAnchor(item.id),window.location.origin).href;try{await navigator.clipboard.writeText(url);notify(pick('资料链接已复制','Link copied'));}catch{notify(url);}}}>{pick('分享此项','Share profile')}</button>
+        <PublicMaintenance value={item.maintenance}/><ContentMaterials item={item} previewBodies={previewBodies}/><WatchHandoff data={data} item={item}/><button className="text-button" onClick={async()=>{const url=new URL('/for-you#'+watchAnchor(item.id),window.location.origin).href;try{await navigator.clipboard.writeText(url);notify(pick('资料链接已复制','Link copied'));}catch{notify(url);}}}>{pick('分享此项','Share profile')}</button>
       </article>)}</div>
     </section>)}
   </>;
@@ -65,7 +66,7 @@ export function WatchAI(){
     <p><code>curated_watch</code> · <code>{BASE}/v1/platform/watch</code></p>
     {result.loading&&<p role="status">{pick('正在读取…','Loading…')}</p>}{result.error&&<div role="alert"><p>{pick('持续关注暂时无法读取。','Ongoing watch is unavailable.')}</p><button className="button" onClick={result.reload}>{pick('重试','Retry')}</button></div>}
     {result.data&&<><p>{result.data.total} {pick('个跟踪主体','profiles')} · {result.data.groups.map(g=>g.name+' '+g.count).join(' / ')}</p><label>{pick('查看持续关注资料','Inspect ongoing-watch profile')}<select aria-label={pick('查看持续关注资料','Inspect ongoing-watch profile')} value={selected} onChange={e=>setSelected(e.target.value)}>{result.data.groups.map(g=><optgroup key={g.id} label={g.name}>{result.data!.items.filter(i=>i.type===g.id).map(i=><option key={i.id} value={i.id}>{i.name}</option>)}</optgroup>)}</select></label>
-    {item&&<><p>{item.introduction}</p><Link to={'/for-you#'+watchAnchor(item.id)}>{pick('打开人读内容','Read on For you')}</Link><ContentMaterials item={item}/><WatchHandoff data={result.data} item={item}/><details><summary>{pick('查看机器可读资料','Preview machine-readable profile')}</summary><pre className="platform-original">{packageText(result.data,item)}</pre></details></>}
+    {item&&<><p>{item.introduction}</p><Link to={'/for-you#'+watchAnchor(item.id)}>{pick('打开人读内容','Read on For you')}</Link><PublicMaintenance value={item.maintenance}/><ContentMaterials item={item}/><WatchHandoff data={result.data} item={item}/><details><summary>{pick('查看机器可读资料','Preview machine-readable profile')}</summary><pre className="platform-original">{packageText(result.data,item)}</pre></details></>}
     <details><summary>{pick('下载全部持续关注资料','Download the complete watch collection')}</summary><WatchHandoff data={result.data}/></details></>}
     <p className="muted">{pick('材料清单区分已审核原文、节选和仅链接；中文解读不冒充原文。本集合随审核发布更新，核验日期不代表每日采集已成功。','Material manifests distinguish reviewed text, excerpts and links. Editorial text is not upstream text. This reviewed collection updates on publication; review dates do not certify daily collection.')}</p>
   </section>;

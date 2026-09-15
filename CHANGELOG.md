@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.4.0"></a>
+## v1.4.0 · 对象归并与材料持续维护 · 2026-09-15
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 内容管理新增私密候选归组、对象／事件归并预览、冲突字段确认和撤销记录；保留旧编号与原始材料，后续编辑不会被撤销操作覆盖。
+- 新增带来源和适用版本的双向关系，网页、MCP 与资料包读取同一维护状态；旧链接显示归并去向。
+- 每日检查材料访问，连续三个自然日失败进入复核、七天提升优先级；记录变化、恢复、延期及公开复核说明，不自动发布或删除正文。
+- MCP 的 curated_changes 新增 scope=workspace，读取当前动态、持续关注及材料变化，保持旧 scope=legacy 和各自游标兼容。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add private candidate grouping, reviewed object/event merge previews, explicit conflict choices and reversible merge records; retain identities and source materials without overwriting later edits.
+- Publish source-backed, version-scoped bidirectional relationships and shared maintenance metadata across web, MCP and packages, with old-ID guidance.
+- Check material access daily; three consecutive failed calendar days trigger review and seven raise priority. Track changes, recovery, deferral and reviewed notes without automatically publishing or deleting text.
+- Add scope=workspace to curated_changes for current news, watch profiles and material events while preserving legacy scope and separate continuation cursors.
+<!-- release-summary:en:end -->
+
+用户已确认使用 v1.4.0。对应 REQ-3-1/3/4、REQ-10-3、REQ-5-8、REQ-9-5/7，关联 REQ-8。当前为本地开发批次，未部署；生产仍为 v1.3.3。新增维护表需升级，原有公开资料未作实际归并或发布；真实对象操作仍须逐项确认。验收：292 项回归通过、1 项默认跳过，前端构建与隔离桌面／手机流程通过；见[本批验收](docs/validation/2026-09-15-stewardship.md)与[项目管理总览](FieldToFit-PM.md)。
+
 <a id="v1.3.3"></a>
 ## v1.3.3 · 手机「更多」导航 · 2026-09-15
 

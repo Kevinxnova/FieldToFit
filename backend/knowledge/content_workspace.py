@@ -247,6 +247,8 @@ def publish(kind, ident, data, withdraw=False):
     reason=text(data.get('reason'),'reason',2000)
     with editorial_transaction() as db:
         item=detail(kind,ident,db)
+        from backend.knowledge.stewardship import resolve
+        if kind!='charts' and resolve(ident,db)!=ident:fail('请先撤销归并，再单独发布原条目','merged_object',409)
         if item['draft_version']!=data.get('draft_version'):fail('Draft changed; preview again','draft_conflict',409)
         content=item['published'] if withdraw else item['draft']
         if withdraw and not content:fail('Unpublished draft cannot be withdrawn')
@@ -266,6 +268,8 @@ def publish(kind, ident, data, withdraw=False):
         origin=content_source(db,kind,ident)
         published(db,kind,ident,new,withdraw)
         event(db,origin,kind+':'+ident,'withdrawn' if withdraw else 'published_update' if item['published'] else 'published_new',str(item['draft_version']))
+        from backend.knowledge.stewardship import publication_event
+        publication_event(db,kind,ident,item['published'],new)
         execute_statements(db,writes)
     return detail(kind,ident)
 
@@ -410,7 +414,7 @@ def export_draft(kind, ident):
 def backup():
     """A coherent private snapshot; concurrent publication cannot split its tables."""
     from backend.db import TursoConnection
-    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority','fieldtofit_editorial_batches','fieldtofit_editorial_topics','fieldtofit_editorial_members','fieldtofit_editorial_events','fieldtofit_discovery_versions','fieldtofit_operation_events','fieldtofit_operation_issues')
+    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority','fieldtofit_editorial_batches','fieldtofit_editorial_topics','fieldtofit_editorial_members','fieldtofit_editorial_events','fieldtofit_discovery_versions','fieldtofit_operation_events','fieldtofit_operation_issues','fieldtofit_steward_actions','fieldtofit_steward_aliases','fieldtofit_steward_links','fieldtofit_steward_checks','fieldtofit_steward_events','fieldtofit_steward_decisions')
     statements=[('SELECT * FROM '+name,()) for name in names]
     with get_db() as db:
         if isinstance(db,TursoConnection):cursors=db.atomic_statements(statements,read_only=True)

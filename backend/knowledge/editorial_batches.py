@@ -160,8 +160,9 @@ def delivery(ident,data):
     return detail(ident)
 
 
-def published(db,kind,ident,content,withdraw):
-    for row in db.execute("SELECT id FROM fieldtofit_editorial_topics WHERE kind=? AND item_id=? AND (decision='continue' OR ?=1)",(kind,ident,int(withdraw))).fetchall():
+def published(db,kind,ident,content,withdraw,topics=None):
+    if topics is None:topics=db.execute("SELECT id FROM fieldtofit_editorial_topics WHERE kind=? AND item_id=? AND (decision='continue' OR ?=1)",(kind,ident,int(withdraw))).fetchall()
+    for row in topics:
         state='withdrawn' if withdraw else 'published'
         db.execute('UPDATE fieldtofit_editorial_topics SET decision=?,version=version+1,updated_at=? WHERE id=?',(state,stamp(),row['id']))
         _audit(db,row['id'],state,{'kind':kind,'id':ident,'content_hash':hashlib.sha256(dump(content).encode()).hexdigest(),'url':'/for-you#'+('news-' if kind=='news' else 'watch-')+ident.lower()})
