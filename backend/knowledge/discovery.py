@@ -85,6 +85,8 @@ def capture(source,entry):
                 fp=old['fingerprint']
         replace=not old or primary or not old_primary
         changed=not old or (replace and old['fingerprint']!=fp)
+        if changed and old and replace:
+            db.execute('INSERT OR IGNORE INTO fieldtofit_discovery_versions VALUES(?,?,?,?)',(ident,old['fingerprint'],old['materials'],old['updated_at']))
         if replace:
             db.execute('INSERT INTO fieldtofit_discoveries VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET '
                 'source_id=excluded.source_id,title=excluded.title,summary=excluded.summary,published_at=excluded.published_at,'
@@ -117,7 +119,7 @@ def _collect(source,counters):
     from backend.knowledge import sources
     from backend.knowledge.paging import progress,save_progress
     cfg=source['config'];mode=cfg['mode'];limit=min(max(int(cfg.get('limit',8)),1),20)
-    state=progress(source['id']);boundary=state.get('watermark') or (datetime.now(timezone.utc)-timedelta(days=int(cfg.get('history_days',7)))).isoformat()
+    state=progress(source['id']);boundary=(None if cfg.get('recheck_body') else state.get('watermark')) or (datetime.now(timezone.utc)-timedelta(days=int(cfg.get('history_days',7)))).isoformat()
     earliest=datetime.fromisoformat(boundary.replace('Z','+00:00'))-timedelta(days=1)
     class Captured(list):
         def append(self,entry):
@@ -159,6 +161,31 @@ def _collect(source,counters):
                     'type':'model','version':version,'published_at':item.get('createdAt'),'materials':mats,
                     'metrics':{k:item[k] for k in ('likes','downloads') if isinstance(item.get(k),int)},
                     'metadata':{'primary':True,'gaps':gaps,'upstream_updated_at':item.get('lastModified'),'change':'model_revision'}})
+    elif mode=='qwen':
+        # This public endpoint is used by qwen.ai/research itself. Ignore internal metadata URLs.
+        raw,_,_=sources.fetch('https://qwen.ai/api/v2/article/retrieval?type=qwen_ai&language=zh-CN',max_bytes=8000000)
+        payload=json.loads(raw)
+        articles=payload.get('data',{}).get('articles')
+        if payload.get('success') is not True or not isinstance(articles,list) or not articles:raise ValueError('Qwen public article list unavailable')
+        articles=sorted([a for a in articles if recent(a.get('extra',{}).get('date'))],key=lambda a:a.get('extra',{}).get('date',''),reverse=True)
+        visited=set(state.get('rechecked',[]));by_id={a['id']:a for a in articles}
+        queue=list(dict.fromkeys([a['id'] for a in articles[:max(1,limit//2)]]+[i for i in state.get('pending_ids',[]) if i in by_id]+[a['id'] for a in articles if a['id'] not in visited]))
+        for ident in queue[:limit]:
+            a=by_id[ident];doc=Article();doc.feed(a.get('content',''));body=doc.body
+            if len(body)<100:raise ValueError('Qwen article body missing')
+            url='https://qwen.ai/blog?id='+quote(a['path'],safe='-')
+            entries.append({'url':url,'title':a['title'],'summary':a.get('extra',{}).get('introduction','')[:1200],
+                'type':'news','published_at':a.get('extra',{}).get('date'),'materials':[material(url,body)],
+                'metadata':{'primary':True,'change':'official_article','gaps':[],'upstream_article_id':ident}})
+            visited.add(ident)
+        more=queue[limit:];qwen_visited=list(visited) if more else []
+    elif mode=='document':
+        raw,final,_=sources.fetch(source['url']);doc=Article();doc.feed(raw.decode('utf-8'))
+        body=doc.body
+        if len(body)<200:raise ValueError('Official page has no readable primary content')
+        entries.append({'url':final,'title':''.join(doc.title).strip() or source['name'],'summary':body[:1200],'type':'news',
+            'published_at':None,'materials':[material(final,body)],
+            'metadata':{'primary':True,'change':'official_page_revision','gaps':['页面核对日期不是事件发布日期；需逐条核对正文中的事件。']}})
     elif mode in ('feed','index'):
         raw,final,_=sources.fetch(source['url']);pending=[]
         if mode=='feed':
@@ -174,11 +201,29 @@ def _collect(source,counters):
                 date=displayed_date(label)
                 if u not in urls or date:urls[u]={'url':u,'published_at':date}
             pending=sorted([x for x in urls.values() if recent(x['published_at'])],key=lambda x:x['published_at'] or '',reverse=True)
+        if mode=='index' and cfg.get('company')=='bytedance' and not pending:
+            # Public server-rendered router data, parsed as JSON only (never JavaScript).
+            match=re.search(r'window\._ROUTER_DATA\s*=\s*(\{.*?\})\s*</script>',raw.decode('utf-8'),re.S)
+            if match:
+                loader=json.loads(match[1]).get('loaderData',{})
+                for page in loader.values():
+                    if not isinstance(page,dict):continue
+                    for article in page.get('article_list',[]):
+                        content=article.get('ArticleSubContentEn',{});meta=article.get('ArticleMeta',{})
+                        slug=content.get('TitleKey');published=meta.get('PublishDate')
+                        if not slug or not isinstance(published,(int,float)):continue
+                        pending.append({'url':urljoin(final,'/en/blog/'+quote(slug,safe='-')),'title':content.get('Title',''),
+                            'excerpt':content.get('Abstract',''),'published_at':iso(datetime.fromtimestamp(published/1000,timezone.utc).isoformat()),
+                            'modified_at':meta.get('UpdateTime')})
+                pending=sorted([x for x in pending if recent(x['published_at'])],key=lambda x:x['published_at'] or '',reverse=True)
         seen_entries=state.get('seen_entries',{})
         def signature(x):return hashlib.sha256(store.encode(x).encode()).hexdigest()
-        pending=[x for x in pending if seen_entries.get(x['url'])!=signature(x)]
+        if mode=='index' and not pending:raise ValueError('Official index has no readable article links')
+        pending=[x for x in pending if cfg.get('recheck_body') or seen_entries.get(x['url'])!=signature(x)]
         previous=state.get('pending',[])
         head=pending[:max(1,limit//2)]
+        rechecked=set(state.get('rechecked',[]))
+        if cfg.get('recheck_body'):pending=[x for x in pending if x['url'] not in rechecked]
         pending=list({x['url']:x for x in head+previous+pending}.values())
         rest=pending[limit:]
         for item in pending[:limit]:
@@ -199,7 +244,7 @@ def _collect(source,counters):
                 entries.append({'url':final,'title':''.join(doc.title).strip() or item.get('title') or urlsplit(final).path.rsplit('/',1)[-1],
                     'summary':body[:1200],'type':'news','published_at':date,'materials':[material(final,body)],
                     'metadata':{'primary':urlsplit(final).hostname==urlsplit(source['url']).hostname,'change':'official_article','gaps':[] if date else ['原文发布日期未知']}})
-                seen_entries[item['url']]=signature(item)
+                seen_entries[item['url']]=signature(item);rechecked.add(item['url'])
             except Exception as exc:
                 errors.append(type(exc).__name__);rest.append(item)
                 if item.get('title'):
@@ -256,6 +301,8 @@ def _collect(source,counters):
     if mode in ('feed','index'):
         saved['pending']=more
         saved['seen_entries']=dict(list(seen_entries.items())[-500:])
+        if cfg.get('recheck_body'):saved['rechecked']=list(rechecked) if more else []
+    if mode=='qwen':saved.update(pending_ids=more,rechecked=qwen_visited)
     if mode=='github':saved['page']=more or 1
     if mode=='arxiv':saved['offset']=more or 0
     if not more and not errors:saved['watermark']=started

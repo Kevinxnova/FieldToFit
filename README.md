@@ -34,16 +34,17 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.2.1](CHANGELOG.md#v1.2.1)** · [fieldtofit-v1.2.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.2.1)
+**当前源码版本：[v1.3.0](CHANGELOG.md#v1.3.0)** · [fieldtofit-v1.3.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 更新 DeepSeek 动态与模型族资料：补充 V4.1 Flash 官方 API 发布日期、调用别名，以及 V4 Pro 继续提供服务的最新说明。
-- 新增 Perplexity 使用 GPT-6 Astra 生成端到端测试的官方案例动态，区分客户自述与独立验证。
-- 持续关注新增 Google Artemis 和 Addy Osmani Agent Skills，提供用途、使用条件、具体技能与固定提交版本的材料链接。
-- 近期动态增至 11 条、持续关注增至 29 项；通过统一后台审核发布，For you、For your AI 与 MCP 读取同一公开修订。同步中英文 README 与晨报交付状态。
+- 运行管理新增更新批次：汇总本地推荐与网站选中项，记录继续／稍后／不采用、证据变化、草稿去向及发布记录；无新证据不重复推荐。
+- 日报分开记录整理中、正文已准备、交付已核实和失败，保留交付凭据；本地 08:00 安排接入记录流程，准时交付仍须真实观察。
+- 新闻与持续关注新增已审核材料清单、许可、缺失原因和正文阅读；MCP 沿用十二项工具，支持固定材料修订续读和有大小限制的资料包。
+- 为已确认选题补齐材料：Artemis 与 Agent Skills 的七份开源文件保留固定提交和许可；DeepSeek、Perplexity/Astra 标明仅链接范围。
+- 扩展九家公司官方发布入口，保留同网址变化前的材料；采集周期仍为 1 天，失败、待续与真正取得正文分别登记。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

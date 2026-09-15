@@ -355,3 +355,29 @@ CREATE TABLE IF NOT EXISTS fieldtofit_candidate_priority (
  manual_reason TEXT NOT NULL DEFAULT '',
  updated_at TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS fieldtofit_editorial_batches (
+ id TEXT PRIMARY KEY, day TEXT NOT NULL UNIQUE, title TEXT NOT NULL,
+ delivery_state TEXT NOT NULL DEFAULT 'pending', receipt TEXT NOT NULL DEFAULT '',
+ body_hash TEXT NOT NULL DEFAULT '', version INTEGER NOT NULL DEFAULT 1,
+ created_at TEXT NOT NULL, updated_at TEXT
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_editorial_topics (
+ id TEXT PRIMARY KEY, event_key TEXT NOT NULL UNIQUE, event_url TEXT NOT NULL,
+ fingerprint TEXT NOT NULL, proposal TEXT NOT NULL, source_ref TEXT NOT NULL DEFAULT '',
+ decision TEXT NOT NULL DEFAULT 'pending', review_on TEXT,
+ kind TEXT NOT NULL DEFAULT '', item_id TEXT NOT NULL DEFAULT '',
+ version INTEGER NOT NULL DEFAULT 1, updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_editorial_members (
+ batch_id TEXT NOT NULL, topic_id TEXT NOT NULL, created_at TEXT NOT NULL,
+ PRIMARY KEY(batch_id,topic_id)
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_editorial_events (
+ seq INTEGER PRIMARY KEY AUTOINCREMENT, topic_id TEXT NOT NULL, action TEXT NOT NULL,
+ payload TEXT NOT NULL, created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_discovery_versions (
+ discovery_id TEXT NOT NULL, fingerprint TEXT NOT NULL, materials TEXT NOT NULL, observed_at TEXT NOT NULL,
+ PRIMARY KEY(discovery_id,fingerprint)
+);

@@ -3934,3 +3934,15 @@ h1 {
 @media(max-width:760px){.management-page{padding:24px 16px 70px;}.management-heading,.management-section-title{flex-direction:column;gap:12px;}.management-heading h1{font-size:27px;}.management-nav{display:grid;grid-template-columns:1fr 1fr;}.management-review-layout,.management-editor{grid-template-columns:minmax(0,1fr);}.management-review-side,.management-editor-side{position:static;max-height:none;}.management-library{grid-template-columns:minmax(0,1fr);}.management-preview{padding:14px;}.management-filters>label{flex:1;}.management-savebar{bottom:8px;}.management-page .platform-actions{flex-wrap:wrap;}}
 
 .management-page label input,.management-page label textarea,.management-page label select{margin-bottom:0}.management-page summary{margin-top:0}.management-page .management-check input{margin:0}
+
+/* Editorial recommendations and reviewed originals share the site's reading rhythm. */
+.editorial-batches { margin-bottom: 2rem; padding: 1.25rem; border: 1px solid var(--border, #d7ddd5); border-radius: 12px; }
+.editorial-batches label, .management-edit-fields fieldset label { display: grid; gap: .4rem; margin: .7rem 0; }
+.editorial-batches .management-candidate { margin-top: 1rem; padding: 1rem; }
+.editorial-batches input, .editorial-batches select, .management-edit-fields fieldset input:not([type=checkbox]), .management-edit-fields fieldset textarea { width: 100%; min-width: 0; box-sizing: border-box; }
+.content-materials { margin: 1rem 0; padding: .8rem 1rem; border: 1px solid var(--border, #d7ddd5); border-radius: 8px; }
+.content-materials summary { cursor: pointer; font-weight: 600; }
+.content-materials li { margin: 1rem 0; overflow-wrap: anywhere; }
+.content-materials .platform-original { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 32rem; overflow-y: auto; }
+
+.content-materials a + .text-button { margin-left: .75rem; }

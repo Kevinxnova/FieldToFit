@@ -15,14 +15,18 @@ def _refs(objects):
         raise p.PlatformError(f'Choose 1–{MAX_OBJECTS} object references')
     refs, seen = [], set()
     for item in objects:
-        if not isinstance(item, dict) or set(item) - {'id', 'revision'} or 'id' not in item:
+        if not isinstance(item, dict) or set(item) - {'id', 'revision', 'content_revision'} or 'id' not in item:
             raise p.PlatformError('An object reference contains id and optional publication revision only')
         rid = p.text(item['id'], 'object ID', 100)
+        from backend.knowledge.content_materials import is_content
+        content_revision=p.text(item['content_revision'],'content_revision',128) if 'content_revision' in item else None
+        if is_content(rid) and 'revision' in item:raise p.PlatformError('Use content_revision for D-/CW- materials')
+        if not is_content(rid) and content_revision:raise p.PlatformError('content_revision is for D-/CW- materials only')
         revision = p.integer(item['revision'], 'publication revision', 1) if 'revision' in item else None
-        if (rid, revision) in seen:
+        if (rid, revision, content_revision) in seen:
             raise p.PlatformError('Duplicate object references')
-        refs.append({'id': rid, 'revision': revision})
-        seen.add((rid, revision))
+        refs.append({'id': rid, 'revision': revision, 'content_revision':content_revision})
+        seen.add((rid, revision, content_revision))
     return refs
 
 
@@ -64,6 +68,8 @@ def build(objects, max_characters=200000, format='json'):
     budget = p.integer(max_characters, 'max_characters', 1, MAX_CHARACTERS)
     if format not in ('json', 'markdown'):
         raise p.PlatformError('Choose json or markdown')
+    from backend.knowledge import content_materials as cm
+    if any(cm.is_content(x['id']) for x in refs):return cm.bundle(refs,budget,format)
     remaining = budget
     entries = []
     counts = {'requested_objects':len(refs), 'available_objects':0, 'unavailable_objects':0,

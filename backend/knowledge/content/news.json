@@ -2,7 +2,7 @@
   "schema_version": "fieldtofit.news.v1",
   "edition": "2026-09-11-launch",
   "title": "首发回顾",
-  "reviewed_at": "2026-09-14",
+  "reviewed_at": "2026-09-15",
   "items": [
     {
       "id": "D-10",
@@ -71,7 +71,37 @@
         }
       ],
       "note": "API 发布日期来自官方更新日志。保留 Pro 的说明核对于 2026-09-14，精确修订时间未知；未实测账户调用，不据旧传播内容推断 Pro 已切换到 Flash。",
-      "editor": "FieldToFit"
+      "editor": "FieldToFit",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-14",
+          "coverage": "link_only",
+          "id": "source-1",
+          "locator": "DeepSeek-V4.1-Flash model card",
+          "reason": "已保留核对过的官方出处；尚未取得在本站公开分发正文的依据，因此只提供外部链接，不宣称可离线阅读全文。",
+          "retrieved_at": "",
+          "rights": {},
+          "title": "DeepSeek-V4.1-Flash model card",
+          "upstream_revision": "",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-14",
+          "coverage": "link_only",
+          "id": "source-2",
+          "locator": "DeepSeek 官方更新日志",
+          "reason": "已保留核对过的官方出处；尚未取得在本站公开分发正文的依据，因此只提供外部链接，不宣称可离线阅读全文。",
+          "retrieved_at": "",
+          "rights": {},
+          "title": "DeepSeek 官方更新日志",
+          "upstream_revision": "",
+          "url": "https://api-docs.deepseek.com/updates/"
+        }
+      ]
     },
     {
       "checked_at": "2026-09-14",
@@ -131,7 +161,23 @@
       ],
       "summary": "OpenAI 发布 Perplexity 的使用案例：让 Astra 生成测试程序，模拟外部服务响应，检查完整工作流。",
       "title": "Perplexity 如何用 GPT-6 Astra 补齐端到端测试",
-      "state": "published"
+      "state": "published",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-14",
+          "coverage": "link_only",
+          "id": "source-1",
+          "locator": "OpenAI：Perplexity 使用 Astra 的案例",
+          "reason": "已保留核对过的官方出处；尚未取得在本站公开分发正文的依据，因此只提供外部链接，不宣称可离线阅读全文。",
+          "retrieved_at": "",
+          "rights": {},
+          "title": "OpenAI：Perplexity 使用 Astra 的案例",
+          "upstream_revision": "",
+          "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra/"
+        }
+      ]
     },
     {
       "id": "D-01",

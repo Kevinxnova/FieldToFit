@@ -25,7 +25,7 @@ def test_catalog_distinguishes_registered_collected_and_published(client):
     data=client.get('/api/v1/platform/source-catalog').json
     assert len(data['tracked'])==12
     company=next(x for x in data['tracked'] if x['id']=='deepseek')
-    assert company['registered_count']==1 and company['successful_count']==0 and company['planned']
+    assert company['registered_count']==2 and company['successful_count']==0 and not company['planned']
     sid=source()['id']
     with get_db() as db:
         db.execute("UPDATE knowledge_sources SET enabled=0,error='PRIVATE_FAILURE' WHERE id=?",(sid,))

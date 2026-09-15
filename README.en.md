@@ -34,16 +34,17 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.2.1](CHANGELOG.md#v1.2.1)** · [fieldtofit-v1.2.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.2.1)
+**Current source version: [v1.3.0](CHANGELOG.md#v1.3.0)** · [fieldtofit-v1.3.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Update DeepSeek news and its model profile with the V4.1 Flash API release date, aliases and the current notice retaining V4 Pro service.
-- Add OpenAI’s Perplexity/Astra end-to-end testing case, distinguishing customer statements from independent verification.
-- Add Google Artemis and Addy Osmani Agent Skills with usage requirements, specific skills and source links pinned to commit revisions.
-- Expand to 11 news items and 29 ongoing-watch profiles, published through the shared editorial workflow for For you, For your AI and MCP; synchronize bilingual READMEs and briefing-delivery status.
+- Add private editorial batches for local recommendations and website selections, with continue/later/decline decisions, evidence changes, draft links and publication records.
+- Distinguish preparing, prepared, verified delivery and failure for briefings; preserve delivery receipts and connect the existing 08:00 local routine. On-time delivery still requires observation.
+- Add reviewed material manifests, licenses, missing-coverage reasons and source reading to news and watch profiles; retain twelve MCP tools with frozen material revisions and bounded bundles.
+- Include seven version-pinned open-source files for the approved Artemis and Agent Skills topics. DeepSeek and Perplexity/Astra retain explicit link-only coverage.
+- Extend official discovery to nine additional companies, preserving earlier material when a URL changes. Keep daily checks and distinguish failed, queued and retrieved sources.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

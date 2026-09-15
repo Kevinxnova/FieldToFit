@@ -214,6 +214,8 @@ def gate(kind, ident, item, data):
         return render(kind,data)
     if item.get('checked_at','')>today():fail('Review date cannot be in the future')
     if kind=='watch' and item.get('origin')=='developer_submission' and item.get('submission_review',{}).get('confirmed') is not True:fail('投稿公开描述尚未确认')
+    from backend.knowledge.content_materials import normalize
+    normalize(item)
     # Existing validators preserve the published wire contract; add specific draft feedback.
     if kind=='news':
         from backend.knowledge.platform_news import validate
@@ -256,6 +258,8 @@ def publish(kind, ident, data, withdraw=False):
                 ('UPDATE fieldtofit_content_items SET published_json=?,draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',(dump(new),dump(item['draft'] if withdraw else new),stamp(),kind,ident)),
                 ('INSERT INTO fieldtofit_content_history(kind,item_id,action,reason,snapshot,created_at) VALUES(?,?,?,?,?,?)',(kind,ident,'withdraw' if withdraw else 'publish',reason,dump(new),stamp()))]
         if not withdraw:writes.append(("UPDATE fieldtofit_inbox SET status='completed',updated_at=? WHERE kind=? AND item_id=? AND status='selected'",(stamp(),kind,ident)))
+        from backend.knowledge.editorial_batches import published
+        published(db,kind,ident,new,withdraw)
         execute_statements(db,writes)
     return detail(kind,ident)
 
@@ -333,10 +337,11 @@ def template(kind, ident, c, item_type='tool', submission=False):
     if submission:d.update(origin='developer_submission',submission={'entry_url':url,'usage':'','openness':'','relationship':''},submission_review={'confirmed':False})
     return d
 
-def select(data):
+def select(data, db=None):
     ref=text(data.get('ref'),'ref',200);action=data.get('action')
     if action not in ('select','pending','deferred','ignored'):fail('Invalid review action')
-    with editorial_transaction() as db:
+    from contextlib import nullcontext
+    with (nullcontext(db) if db is not None else editorial_transaction()) as db:
         if db.execute('SELECT COUNT(*) n FROM fieldtofit_content_sets').fetchone()['n']!=3:fail('Import the released content first','migration_required',409)
         c=candidate(ref,db)
         if not c:fail('Candidate not found','not_found',404)
@@ -394,7 +399,7 @@ def export_draft(kind, ident):
 def backup():
     """A coherent private snapshot; concurrent publication cannot split its tables."""
     from backend.db import TursoConnection
-    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority')
+    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority','fieldtofit_editorial_batches','fieldtofit_editorial_topics','fieldtofit_editorial_members','fieldtofit_editorial_events','fieldtofit_discovery_versions')
     statements=[('SELECT * FROM '+name,()) for name in names]
     with get_db() as db:
         if isinstance(db,TursoConnection):cursors=db.atomic_statements(statements,read_only=True)

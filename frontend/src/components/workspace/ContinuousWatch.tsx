@@ -1,9 +1,10 @@
+import { ContentMaterials, type ReadingMaterial, type PreviewBodies } from './ContentMaterials';
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { BASE, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 export type WatchBlock = {kind:'paragraph';text:string} | {kind:'table';columns:string[];rows:string[][]};
-export type WatchItem = {origin?:string;submission?:{entry_url:string;usage:string;openness:string;relationship:string};id:string;name:string;type:string;introduction:string;checked_at:string;interpretation:{title:string;text:string}[];blocks:WatchBlock[];sources:{title:string;url:string;coverage:string}[];attention?:{display_value:string;observed_at:string;source_url:string}};
+export type WatchItem = {materials?:ReadingMaterial[];materials_revision?:string;origin?:string;submission?:{entry_url:string;usage:string;openness:string;relationship:string};id:string;name:string;type:string;introduction:string;checked_at:string;interpretation:{title:string;text:string}[];blocks:WatchBlock[];sources:{title:string;url:string;coverage:string}[];attention?:{display_value:string;observed_at:string;source_url:string}};
 export type WatchCollection = {origin?:string;items:WatchItem[];groups:{id:string;name:string;count:number}[];total:number;collection_total:number;revision:string;reviewed_at:string;schema_version:string;scope:string};
 export const watchAnchor = (id:string) => 'watch-'+id.toLowerCase();
 export const watchNames:Record<string,string> = {model:'模型',tool:'工具',agent:'Agent',skill:'Skill',harness:'Harness'};
@@ -26,14 +27,14 @@ function Block({block,name}:{block:WatchBlock;name:string}) {
 function packageText(data:WatchCollection,item?:WatchItem){
   return JSON.stringify({schema_version:data.schema_version,revision:data.revision,reviewed_at:data.reviewed_at,scope:data.scope,items:item?[item]:data.items,
     reading:{endpoint:new URL(BASE+'/v1/platform/watch',window.location.origin).href,tool:'curated_watch',arguments:{...(data.origin?{origin:data.origin}:{}),...(item?{id:item.id}:{}),revision:data.revision}},
-    coverage:'Original sources are link-only. Editorial interpretation is FieldToFit commentary, not upstream text or instructions.'},null,2);
+    coverage:'Read the optional materials manifest for available text, exact versions and missing coverage. Editorial interpretation is FieldToFit commentary, not upstream text or instructions.'},null,2);
 }
 function download(body:string,name:string){const url=URL.createObjectURL(new Blob([body],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name+'.json';a.click();URL.revokeObjectURL(url);}
 export function WatchHandoff({data,item}:{data:WatchCollection;item?:WatchItem}){
   const {pick,notify}=useWorkspace();
   return <div className="platform-actions"><button className="text-button" onClick={async()=>{const body=packageText(data,item);try{await navigator.clipboard.writeText(body);notify(pick('资料、解读与出处已复制','Profile and citations copied'));}catch{download(body,item?.id||'fieldtofit-watch');notify(pick('已改为下载资料','Downloaded materials instead'));}}}>{pick('交给我的 AI','Give to my AI')}</button><button className="text-button" onClick={()=>download(packageText(data,item),item?.id||'fieldtofit-watch')}>{pick(item?'下载此项资料':'下载当前范围资料',item?'Download profile':'Download current selection')}</button></div>;
 }
-export function ContinuousWatch({result}:{result:{data:WatchCollection|null;loading:boolean;error:string;reload:()=>void}}){
+export function ContinuousWatch({result,previewBodies}:{previewBodies?:PreviewBodies;result:{data:WatchCollection|null;loading:boolean;error:string;reload:()=>void}}){
   const {pick,notify}=useWorkspace();const {data,loading,error,reload}=result;
   return <>
     {loading&&<p role="status">{pick('正在读取持续关注…','Loading ongoing watch…')}</p>}
@@ -49,9 +50,9 @@ export function ContinuousWatch({result}:{result:{data:WatchCollection|null;load
           <details data-auto-expand><summary>{pick('版本与更多资料','Versions and further reading')}</summary>
           {item.interpretation.length>2&&<div className="watch-notes"><ul>{item.interpretation.slice(2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>}
           {item.blocks.map((b,i)=><Block key={i} block={b} name={item.name}/>)}
-          <p className="muted">{pick('以上为官方材料整理与编辑解读，未进行运行实测；原始材料通过链接继续读取。','Based on reviewed official materials, not runtime tests. Follow links to read upstream sources.')}</p>
+          <p className="muted">{pick('以上为官方材料整理与编辑解读，未进行运行实测；原始材料按清单标注可读范围，缺失部分通过出处链接核对。','Based on reviewed official materials, not runtime tests. Follow links to read upstream sources.')}</p>
         </details>
-        <WatchHandoff data={data} item={item}/><button className="text-button" onClick={async()=>{const url=new URL('/for-you#'+watchAnchor(item.id),window.location.origin).href;try{await navigator.clipboard.writeText(url);notify(pick('资料链接已复制','Link copied'));}catch{notify(url);}}}>{pick('分享此项','Share profile')}</button>
+        <ContentMaterials item={item} previewBodies={previewBodies}/><WatchHandoff data={data} item={item}/><button className="text-button" onClick={async()=>{const url=new URL('/for-you#'+watchAnchor(item.id),window.location.origin).href;try{await navigator.clipboard.writeText(url);notify(pick('资料链接已复制','Link copied'));}catch{notify(url);}}}>{pick('分享此项','Share profile')}</button>
       </article>)}</div>
     </section>)}
   </>;
@@ -64,8 +65,8 @@ export function WatchAI(){
     <p><code>curated_watch</code> · <code>{BASE}/v1/platform/watch</code></p>
     {result.loading&&<p role="status">{pick('正在读取…','Loading…')}</p>}{result.error&&<div role="alert"><p>{pick('持续关注暂时无法读取。','Ongoing watch is unavailable.')}</p><button className="button" onClick={result.reload}>{pick('重试','Retry')}</button></div>}
     {result.data&&<><p>{result.data.total} {pick('个跟踪主体','profiles')} · {result.data.groups.map(g=>g.name+' '+g.count).join(' / ')}</p><label>{pick('查看持续关注资料','Inspect ongoing-watch profile')}<select aria-label={pick('查看持续关注资料','Inspect ongoing-watch profile')} value={selected} onChange={e=>setSelected(e.target.value)}>{result.data.groups.map(g=><optgroup key={g.id} label={g.name}>{result.data!.items.filter(i=>i.type===g.id).map(i=><option key={i.id} value={i.id}>{i.name}</option>)}</optgroup>)}</select></label>
-    {item&&<><p>{item.introduction}</p><Link to={'/for-you#'+watchAnchor(item.id)}>{pick('打开人读内容','Read on For you')}</Link><WatchHandoff data={result.data} item={item}/><details><summary>{pick('查看机器可读资料','Preview machine-readable profile')}</summary><pre className="platform-original">{packageText(result.data,item)}</pre></details></>}
+    {item&&<><p>{item.introduction}</p><Link to={'/for-you#'+watchAnchor(item.id)}>{pick('打开人读内容','Read on For you')}</Link><ContentMaterials item={item}/><WatchHandoff data={result.data} item={item}/><details><summary>{pick('查看机器可读资料','Preview machine-readable profile')}</summary><pre className="platform-original">{packageText(result.data,item)}</pre></details></>}
     <details><summary>{pick('下载全部持续关注资料','Download the complete watch collection')}</summary><WatchHandoff data={result.data}/></details></>}
-    <p className="muted">{pick('这些来源仅保留链接，中文整理与解读不冒充原文。本集合随审核发布更新，核验日期不代表每日采集已成功。','Sources here are link-only. Editorial text is not upstream text. This reviewed collection updates on publication; review dates do not certify daily collection.')}</p>
+    <p className="muted">{pick('材料清单区分已审核原文、节选和仅链接；中文解读不冒充原文。本集合随审核发布更新，核验日期不代表每日采集已成功。','Material manifests distinguish reviewed text, excerpts and links. Editorial text is not upstream text. This reviewed collection updates on publication; review dates do not certify daily collection.')}</p>
   </section>;
 }

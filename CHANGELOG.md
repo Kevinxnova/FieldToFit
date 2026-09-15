@@ -4,6 +4,33 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.3.0"></a>
+## v1.3.0 · 推荐批次、可读材料与官方变化采集 · 2026-09-15
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 运行管理新增更新批次：汇总本地推荐与网站选中项，记录继续／稍后／不采用、证据变化、草稿去向及发布记录；无新证据不重复推荐。
+- 日报分开记录整理中、正文已准备、交付已核实和失败，保留交付凭据；本地 08:00 安排接入记录流程，准时交付仍须真实观察。
+- 新闻与持续关注新增已审核材料清单、许可、缺失原因和正文阅读；MCP 沿用十二项工具，支持固定材料修订续读和有大小限制的资料包。
+- 为已确认选题补齐材料：Artemis 与 Agent Skills 的七份开源文件保留固定提交和许可；DeepSeek、Perplexity/Astra 标明仅链接范围。
+- 扩展九家公司官方发布入口，保留同网址变化前的材料；采集周期仍为 1 天，失败、待续与真正取得正文分别登记。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add private editorial batches for local recommendations and website selections, with continue/later/decline decisions, evidence changes, draft links and publication records.
+- Distinguish preparing, prepared, verified delivery and failure for briefings; preserve delivery receipts and connect the existing 08:00 local routine. On-time delivery still requires observation.
+- Add reviewed material manifests, licenses, missing-coverage reasons and source reading to news and watch profiles; retain twelve MCP tools with frozen material revisions and bounded bundles.
+- Include seven version-pinned open-source files for the approved Artemis and Agent Skills topics. DeepSeek and Perplexity/Astra retain explicit link-only coverage.
+- Extend official discovery to nine additional companies, preserving earlier material when a URL changes. Keep daily checks and distinguish failed, queued and retrieved sources.
+<!-- release-summary:en:end -->
+
+用户已确认本次中等版本升级。对应 REQ-1-1、REQ-2-1/5、REQ-4-1/4、REQ-5-6、REQ-8-5、REQ-11-1/3/5。新增私密表使用显式增量迁移；保留已有数据、旧整数修订接口和历史标签。公开全文只来自逐份确认的材料，不自动将采集正文转为公开内容。`content_revision` 用于 D-/CW- 材料，旧资源继续用整数 `revision`；两者可在同一资料包读取。网页新增材料阅读不代表执行过上游工具。
+
+实际测试、逐源结果、发布环境及未通过事项见[本次验收](docs/validation/2026-09-14-v1.3.0.md)。连续自然日、日常 AI 客户端自主回答和全部资料的全文覆盖均不能由本轮接口测试代替。
+
 <a id="v1.2.1"></a>
 ## v1.2.1 · 日报内容发布与资料补全 · 2026-09-14
 

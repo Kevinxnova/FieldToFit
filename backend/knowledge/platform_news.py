@@ -74,6 +74,8 @@ def news(q='', id='', revision='', _data=None):
         obj['interpretation'] = [{k: point[k] for k in ('title', 'text', 'source_ids', 'locator')} for point in item['interpretation']]
         obj['sources'] = [{k: source[k] for k in ('id', 'title', 'url', 'coverage')} for source in item['sources']]
         obj['related'] = [{k: ref[k] for k in ('id', 'name', 'url')} for ref in item['related']]
+        from backend.knowledge.content_materials import manifest
+        obj.update(manifest(item))
         published.append(obj)
     fingerprint = hashlib.sha256(json.dumps({'items': published, **{k: data[k] for k in ('schema_version', 'edition', 'title', 'reviewed_at')}}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     if revision and revision != fingerprint:
@@ -84,5 +86,5 @@ def news(q='', id='', revision='', _data=None):
         raise PlatformError('News item not found or withdrawn', 'not_found', 404)
     return {'schema_version': data['schema_version'], 'edition': data['edition'], 'title': data['title'],
             'reviewed_at': data['reviewed_at'], 'revision': fingerprint, 'total': len(entries),
-            'scope': 'reviewed release news; sources are link-only, interpretation is FieldToFit editorial',
-            'items': [{k: item[k] for k in fields} for item in entries]}
+            'scope': 'reviewed release news; source links and optional reviewed materials have explicit coverage; interpretation is FieldToFit editorial',
+            'items': entries}

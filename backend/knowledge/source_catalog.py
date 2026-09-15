@@ -32,6 +32,19 @@ def definitions():
     add('openai-news','OpenAI · 官方公告','https://openai.com/news/rss.xml','feed','openai',scope='官方新闻订阅，原文逐条核对')
     add('google-news','Google · AI 官方动态','https://blog.google/technology/ai/rss/','feed','google',scope='Google AI 官方订阅')
     add('anthropic-news','Anthropic · 官方公告','https://www.anthropic.com/news','index','anthropic',path_prefix='/news/',scope='官方新闻列表和文章正文')
+    for ident,name,url,mode,prefix,scope in [
+      ('deepseek','DeepSeek','https://api-docs.deepseek.com/updates/','document','','官方 API 更新日志；同网址正文更正也复查'),
+      ('kimi','Kimi','https://www.kimi.com/en/blog/','index','/en/blog/','Kimi 官方研究与模型发布；不代表全部开放平台服务及客户端动态'),
+      ('glm','GLM','https://docs.z.ai/release-notes/new-released','document','','Z.AI 模型与服务更新；不代表全部国内平台公告'),
+      ('minimax','MiniMax','https://platform.minimax.io/docs/release-notes/models','document','','官方模型发布记录；客户端变化另行核对'),
+      ('xai','xAI','https://x.ai/news','index','/news/','官方公告及产品发布'),
+      ('meta','Meta','https://ai.meta.com/blog/','index','/blog/','Meta AI 官方博客；不含其他 Meta 产品全部动态'),
+      ('qwen','Qwen','https://qwen.ai/research','qwen','/blog','Qwen 官方研究发布；百炼服务公告不混作模型公告'),
+      ('mimo','MiMo','https://mimo.xiaomi.com/','document','','官方产品页面变化；不代表已接入独立 API 更新日志'),
+      ('bytedance','字节 Seed','https://seed.bytedance.com/en/blog','index','/en/blog/','Seed 技术博客；豆包客户端及火山平台另行核对'),
+    ]:
+        add(ident+'-announcements',name+' · 官方发布与变化',url,mode,ident,path_prefix=prefix,
+            scope=scope,channel_role='announcements',recheck_body=True,history_days=365)
     add('github-agents','GitHub · Agent / Harness 项目','https://github.com/topics/ai-agents','github',query='topic:ai-agents archived:false',scope='公开 ai-agents 主题项目，按近期更新及累计关注发现；不代表能力排名')
     add('github-skills','GitHub · Skill 项目','https://github.com/topics/agent-skills','github',query='topic:agent-skills archived:false',scope='公开 agent-skills 主题仓库；核对 README 和使用入口')
     add('hub-discovery','Hugging Face · 新模型发现','https://huggingface.co/models','hub',scope='公开模型最近变化，非全部模型评测')
@@ -83,7 +96,10 @@ def registry(admin=False):
             urls=[x.get('url','') for x in p.get('sources',[])]
             if any(urlsplit(u).hostname in domains or (author and u.lower().startswith(('https://huggingface.co/'+author+'/').lower())) for u in urls):
                 matches.append({'id':p['id'],'name':p.get('name') or p.get('title'),'kind':kind})
-        planned=[] if ident in ('openai','anthropic','google') else ['官方公告及闭源产品变化入口待接入']
+        planned=[] if ident in ('openai','anthropic','google') or any(c['id']=='daily-'+ident+'-announcements' for c in linked) else ['官方公告及闭源产品变化入口待接入']
+        if ident=='mimo':planned.append('独立 API 更新日志待确认；当前监测官方产品页')
+        if ident=='bytedance':planned.append('豆包客户端、火山服务公告尚未接入')
+        if ident=='qwen':planned.append('百炼服务公告尚未接入；官方研究入口与服务入口分开')
         tracked.append({'id':ident,'name':name,'products':products,'official_url':url,
             'tracking':['新发布与版本变化','使用材料与开放情况'],'channels':linked,'planned':planned,
             'registered_count':len(linked),'successful_count':len(collected),'published':matches})

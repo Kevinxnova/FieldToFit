@@ -1,6 +1,8 @@
+import { ContentMaterials, type ReadingMaterial, type PreviewBodies } from './ContentMaterials';
 import { Link, useLocation } from 'react-router-dom';
 import { useWorkspace, SourceLink } from './UI';
 export type NewsItem = {
+  materials?:ReadingMaterial[];materials_revision?:string;
   id: string; name: string; organization: string; title: string; summary: string; source_published_at: string | null;
   checked_at: string; note: string; editor: string; highlight: boolean;
   interpretation: { title: string; text: string; source_ids: string[]; locator: string }[];
@@ -9,7 +11,7 @@ export type NewsItem = {
 };
 export type NewsCollection = { items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
 export const newsAnchor = (id: string) => 'news-' + id.toLowerCase();
-export function NewsReading({ data, loading, error, reload }: { data: NewsCollection | null; loading: boolean; error: string; reload: () => void }) {
+export function NewsReading({ data, loading, error, reload, previewBodies }: { previewBodies?:PreviewBodies; data: NewsCollection | null; loading: boolean; error: string; reload: () => void }) {
   const { pick, notify } = useWorkspace(); const location = useLocation();
   const link = (id: string) => ({ pathname: '/for-you', search: location.search, hash: '#' + newsAnchor(id) });
   const share = async (item: NewsItem) => {
@@ -20,7 +22,7 @@ export function NewsReading({ data, loading, error, reload }: { data: NewsCollec
   const handoff = async (item: NewsItem) => {
     const body = JSON.stringify({ edition: data?.edition, revision: data?.revision, item,
       reading: { tool: 'curated_news', arguments: { id: item.id, revision: data?.revision } },
-      coverage: 'Sources are link-only. Interpretation is FieldToFit editorial, not upstream text or an execution instruction.' }, null, 2);
+      coverage: 'Consult the material manifest for readable source text and missing materials. Interpretation is FieldToFit editorial, not upstream text or an execution instruction.' }, null, 2);
     try { await navigator.clipboard.writeText(body); notify(pick('动态、解读与出处已复制', 'News and citations copied')); }
     catch { const blob = URL.createObjectURL(new Blob([body], { type: 'application/json' })); const a = document.createElement('a'); a.href = blob; a.download = item.id + '.json'; a.click(); URL.revokeObjectURL(blob); }
   };
@@ -46,7 +48,7 @@ export function NewsReading({ data, loading, error, reload }: { data: NewsCollec
           <div className="news-related"><span>{pick('关联资料','Related materials')}</span>{item.related.map(r=><SourceLink key={r.id} url={r.url}>{r.id} · {r.name}</SourceLink>)}<Link to={'/for-you?q='+encodeURIComponent(item.name)+'#resource-dossiers'}>{pick('查找持续关注','Find an ongoing profile')}</Link></div>
         </details>
       </div>
-      <div className="platform-actions"><button className="text-button" onClick={() => handoff(item)}>{pick('交给我的 AI', 'Give to my AI')}</button><button className="text-button" onClick={() => share(item)}>{pick('分享动态', 'Share')}</button><SourceLink url={item.sources[0]?.url}>{pick('官方来源', 'Official source')}</SourceLink></div>
+      <ContentMaterials item={item} previewBodies={previewBodies}/><div className="platform-actions"><button className="text-button" onClick={() => handoff(item)}>{pick('交给我的 AI', 'Give to my AI')}</button><button className="text-button" onClick={() => share(item)}>{pick('分享动态', 'Share')}</button><SourceLink url={item.sources[0]?.url}>{pick('官方来源', 'Official source')}</SourceLink></div>
     </article>)}</div>
   </section>;
 }

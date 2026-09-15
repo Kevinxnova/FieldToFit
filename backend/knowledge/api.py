@@ -834,4 +834,51 @@ def workspace_candidate_detail():
         item=candidate(ref,db)
         if not item:raise ValueError('Candidate not found')
         origins=[dict(r) for r in db.execute('SELECT source_id,url,observed_at FROM fieldtofit_discovery_origins WHERE discovery_id=?',(ref[10:],)).fetchall()] if ref.startswith('discovery:') else []
-        return jsonify(item=item,materials=materials(ref,db),origins=origins)
+        import json
+        history=[{**dict(r),'materials':json.loads(r['materials'])} for r in db.execute('SELECT fingerprint,materials,observed_at FROM fieldtofit_discovery_versions WHERE discovery_id=? ORDER BY observed_at DESC LIMIT 10',(ref[10:],)).fetchall()] if ref.startswith('discovery:') else []
+        return jsonify(item=item,materials=materials(ref,db),origins=origins,history=history)
+
+@bp.route('/admin/workspace/batches', methods=['GET','POST'])
+@admin_required
+def editorial_batches():
+    from backend.knowledge import editorial_batches as batches
+    return jsonify(batches.create(body()) if request.method=='POST' else batches.overview())
+
+@bp.get('/admin/workspace/batches/<ident>')
+@admin_required
+def editorial_batch(ident):
+    from backend.knowledge.editorial_batches import detail
+    return jsonify(detail(ident))
+
+@bp.post('/admin/workspace/batches/<ident>/<action>')
+@admin_required
+def editorial_batch_action(ident,action):
+    from backend.knowledge import editorial_batches as b
+    if action=='propose':return jsonify(b.propose(ident,body()))
+    if action=='intake':return jsonify(b.intake(ident))
+    if action=='delivery':return jsonify(b.delivery(ident,body()))
+    return jsonify(error='Unknown action'),404
+
+@bp.post('/admin/workspace/topics/<ident>/<action>')
+@admin_required
+def editorial_topic_action(ident,action):
+    from backend.knowledge import editorial_batches as b
+    if action=='decide':return jsonify(b.decide(ident,body()))
+    if action=='attach':return jsonify(b.attach(ident,body()))
+    return jsonify(error='Unknown action'),404
+
+@bp.get('/platform/content/<ident>/materials')
+def content_material_manifest(ident):
+    from backend.knowledge.content_materials import object_data
+    return jsonify(object_data(ident,request.args.get('content_revision','')))
+
+@bp.get('/platform/content/<ident>/materials/<mid>')
+def content_material_read(ident,mid):
+    from backend.knowledge.content_materials import read
+    return jsonify(read(ident,mid,request.args.get('content_revision',''),request.args.get('offset',0),request.args.get('limit',12000)))
+
+@bp.post('/admin/workspace/upgrade')
+@admin_required
+def editorial_upgrade():
+    from backend.knowledge.editorial_batches import upgrade
+    return jsonify(upgrade())

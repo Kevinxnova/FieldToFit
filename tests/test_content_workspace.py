@@ -264,3 +264,19 @@ def test_remote_server_batch_lifecycle_and_race_rollbacks(client,monkeypatch):
     assert call(client,f'/content/watch/{ident}/withdraw',{'draft_version':d['draft_version'],'reason':'Remote withdrawal'}).status_code==200
     d=call(client,f'/content/watch/{ident}',method='get').json
     assert call(client,f'/content/watch/{ident}/restore',{'draft_version':d['draft_version'],'seq':d['history'][-1]['seq']}).status_code==200
+    from backend.knowledge import editorial_batches as batches
+    from test_editorial_v130 import proposal,topic,with_material
+    batch=batches.create({})['id'];tid=batches.propose(batch,proposal(ref=ref))['id']
+    batches.decide(tid,{'version':topic(batch,tid)['version'],'decision':'continue'})
+    batches.attach(tid,{'version':topic(batch,tid)['version'],'kind':'watch','target_id':ident})
+    with_material(client,ident);publish(client,'watch',ident)
+    assert topic(batch,tid)['decision']=='published'
+    # A concurrent decision must roll back new draft creation and the association.
+    newref=call(client,'/inbox',{'title':'Atomic example','url':'https://example.org/atomic'}).json['ref']
+    tid=batches.propose(batch,proposal(ref=newref,event_url='https://example.org/atomic'))['id']
+    batches.decide(tid,{'version':topic(batch,tid)['version'],'decision':'continue'})
+    with get_db() as db:before_count=db.execute('SELECT count(*) FROM fieldtofit_content_items').fetchone()[0]
+    race[0]=lambda db:db.execute("UPDATE fieldtofit_editorial_topics SET version=version+1,decision='declined' WHERE id=?",(tid,))
+    with pytest.raises(Exception) as exc:batches.attach(tid,{'version':topic(batch,tid)['version'],'kind':'watch'})
+    assert getattr(exc.value,'status',None)==409
+    with get_db() as db:assert db.execute('SELECT count(*) FROM fieldtofit_content_items').fetchone()[0]==before_count
