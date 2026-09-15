@@ -1,3 +1,4 @@
+import { MobileNavigation } from "./components/workspace/MobileNavigation";
 import { Community } from "./pages/Community";
 import { ForYou, ForAI, AboutFieldToFit, LegacyPlatformEntry } from "./pages/Platform";
 import { useEffect, lazy, Suspense } from "react";
@@ -155,7 +156,7 @@ function Shell() {
             </Link>
           </div>
         </header>
-        <main id="main-content" className="page-content">
+        <main tabIndex={-1} id="main-content" className="page-content">
           {[/^\/legacy\//, /^\/(tasks|compare|cases|briefs|records)(\/|$)/].some(pattern => pattern.test(location.pathname)) && <p className="platform-notice">{pick("这是保留的兼容页面。新主入口是 For you 与 For your AI；案例仍暂缓。", "This is a compatibility page. Use For you and For your AI for the new platform; cases remain pending.")} <Link to="/for-you">For you →</Link></p>}
           <Routes>
             <Route path="/" element={<Navigate to="/for-you" replace />} />
@@ -211,6 +212,7 @@ function Shell() {
           </footer>
         </main>
       </div>
+      <MobileNavigation />
       {compare.length > 0 && !["/for-you", "/for-your-ai", "/about", "/community"].includes(location.pathname) && (
         <div className="compare-tray">
           <Icon name="compare" />

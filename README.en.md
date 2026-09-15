@@ -34,16 +34,15 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.3.2](CHANGELOG.md#v1.3.2)** · [fieldtofit-v1.3.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.2)
+**Current source version: [v1.3.3](CHANGELOG.md#v1.3.3)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add per-source daily checks, discoveries, material coverage, review submissions and publication counts, separately showing current backlog, longest waits and unrecorded historical timestamps with drilldowns.
-- Add actionable editorial issues for failed or unfinished sources, missing fields/materials, review queues and changed evidence. Open drafts, retry sources or defer with a review date; deferral never means resolved.
-- Separate Meta directory pagination from articles and drain saved articles before expanding further pages, including single-slot runs. When arXiv search fails, try the official cs.AI abstract feed while preserving the failure and search cursor.
-- Prepare local briefings at 07:30 and deliver at 08:00. A real Codex client passed live retrieval, five-chunk reading and cited answers, plus isolated failure recovery; natural-day and weekly checks remain pending.
+- Add More beside For you and For your AI in mobile navigation, opening links to About FieldToFit, Community, Sources, and Content management.
+- Show descriptions and current-page indicators. Dismiss with the backdrop, close button, repeated tap, or Escape; More and the page contents drawer cannot remain open together.
+- Support narrow and landscape layouts, bottom safe areas, both languages and themes while retaining existing admin authentication. Update REQ-6-17, project management, and bilingual READMEs.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

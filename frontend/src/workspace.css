@@ -3946,3 +3946,33 @@ h1 {
 .content-materials .platform-original { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 32rem; overflow-y: auto; }
 
 .content-materials a + .text-button { margin-left: .75rem; }
+
+/* Full-site mobile navigation; native dialogs keep focus and background isolated. */
+.mobile-navigation { display: none; }
+body:has(.mobile-more-dialog[open]), body:has(.toc-drawer[open]) { overflow: hidden; }
+@media (max-width: 700px) {
+  .sidebar { display: none; }
+  .mobile-navigation { display: block; --mobile-nav-height: calc(67px + env(safe-area-inset-bottom, 0px)); }
+  .page-content { padding-bottom: calc(91px + env(safe-area-inset-bottom, 0px)); }
+  .mobile-bottom-nav { position: fixed; inset: auto 0 0; z-index: 60; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); height: var(--mobile-nav-height); padding: 0 max(7px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(7px, env(safe-area-inset-left, 0px)); background: var(--surface); border-top: 1px solid var(--line); }
+  .mobile-bottom-nav a, .mobile-bottom-nav button { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; min-height: 44px; margin: 0; padding: 8px 2px; border: 0; border-radius: 0; background: transparent; color: var(--muted); font: inherit; font-size: 11px; text-decoration: none; cursor: pointer; }
+  .mobile-bottom-nav .active, .mobile-bottom-nav button[aria-expanded="true"] { color: var(--green); background: var(--surface-soft); }
+  .mobile-bottom-nav .active::after { content: ''; position: absolute; top: 0; width: 22px; height: 2px; background: var(--green); }
+  .mobile-more-dialog { position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--ink); overflow: hidden; }
+  .mobile-more-dialog[open] { display: flex; flex-direction: column; justify-content: flex-end; }
+  .mobile-more-dialog::backdrop { background: #0007; }
+  .mobile-more-dialog .mobile-bottom-nav { position: static; flex: 0 0 var(--mobile-nav-height); }
+  .mobile-more-panel { flex: 0 1 auto; overflow-y: auto; overscroll-behavior: contain; max-height: calc(100dvh - var(--mobile-nav-height) - 24px - env(safe-area-inset-top, 0px)); padding: 12px max(16px, env(safe-area-inset-right, 0px)) 14px max(16px, env(safe-area-inset-left, 0px)); background: var(--surface); border: 1px solid var(--line); border-bottom: 0; border-radius: 18px 18px 0 0; }
+  .mobile-more-panel header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .mobile-more-panel h2 { margin: 0; font-size: 18px; }
+  .mobile-more-panel header button { min-width: 44px; min-height: 44px; }
+  .mobile-more-panel nav { display: grid; gap: 4px; }
+  .mobile-more-panel nav a { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 12px 10px; border-radius: 10px; color: var(--ink); text-decoration: none; }
+  .mobile-more-panel nav a > svg { flex-shrink: 0; color: var(--green); }
+  .mobile-more-panel nav a > span { flex: 1; min-width: 0; }
+  .mobile-more-panel strong, .mobile-more-panel small { display: block; overflow-wrap: anywhere; }
+  .mobile-more-panel strong { font-size: 14px; }
+  .mobile-more-panel small { margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+  .mobile-more-panel a.active, .mobile-more-panel a:hover { background: var(--green-soft); }
+  .mobile-navigation :focus-visible { outline: 2px solid var(--green); outline-offset: -3px; }
+}

@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.3.3"></a>
+## v1.3.3 · 手机「更多」导航 · 2026-09-15
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 手机底部新增「更多」，与 For you、For your AI 并列；展开后可进入关于 FieldToFit、社区、数据来源和内容管理。
+- 四行导航展示简短说明与当前页面标识，支持点击背景、关闭按钮、再次点击及 Escape 收起；页内目录与更多面板互斥。
+- 适配窄屏、横屏、底部安全区域、中英文和深浅色；继续使用现有管理登录。同步 REQ-6-17、项目管理总览与双语 README。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add More beside For you and For your AI in mobile navigation, opening links to About FieldToFit, Community, Sources, and Content management.
+- Show descriptions and current-page indicators. Dismiss with the backdrop, close button, repeated tap, or Escape; More and the page contents drawer cannot remain open together.
+- Support narrow and landscape layouts, bottom safe areas, both languages and themes while retaining existing admin authentication. Update REQ-6-17, project management, and bilingual READMEs.
+<!-- release-summary:en:end -->
+
+对应 REQ-6-17，关联 REQ-6-14。当前为本地开发批次，尚未推送或部署；正式站仍为 v1.3.2。不涉及数据库迁移、资料发布或权限规则修改。验收结果见[手机导航验收](docs/validation/2026-09-15-mobile-navigation.md)。
+
 <a id="v1.3.2"></a>
 ## v1.3.2 · 来源阶段统计、问题待办与运行验收 · 2026-09-15
 
