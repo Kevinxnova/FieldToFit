@@ -155,6 +155,8 @@ def draft_shape(kind, content):
                     if any(point.get(k) is not None and (isinstance(point[k],bool) or not isinstance(point[k],(int,float))) for k in ('price','score')):fail('价格与能力分为数值或 null')
         if any(not isinstance(m.get('ids'),dict) or not isinstance(m.get('company'),str) for m in catalog['models']):fail('旗舰配置缺少公司或来源对应关系')
         return
+    from backend.knowledge.platform_lookup import aliases
+    aliases(content.get('aliases', []))
     for key in ('sources','interpretation'):
         objects(content.get(key),key)
     for key in ('name','title','organization','summary','introduction','checked_at','note','editor'):

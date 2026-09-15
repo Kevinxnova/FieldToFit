@@ -68,3 +68,11 @@ P3 · 2026-09-11。对应 [共享基础](../../FieldToFit-PM.md) 与 [AI 需求]
 `fieldtofit_content_sets` 保存动态、持续关注和图表的公开版本；`fieldtofit_content_items` 独立保存草稿及最近发布项，历史、候选和来源关联为私密管理数据。迁移前使用已审文件，迁移后公开读数据库发布版。既有字段白名单与公开修订语义保留；图表也过滤任意私密附加字段。旧对象/原文/期次契约兼容保留。
 
 选中、保存、导入与预览不发布。发布须确认当前草稿版本、集合修订、材料指纹及原因；内部处理记录不进入 Web/MCP。详见[管理与迁移](../guides/management.md)。
+
+## REQ-8-9 统一发现增量
+
+当前源码新增 `curated_lookup` 及 `GET /api/v1/platform/lookup`；上线状态只见项目管理总览。动态和持续关注公开结构增加可选 `aliases`，未设置时不输出空字段，不改变既有公共修订。别名通过现有草稿审核与发布生效。
+
+检索结果返回对象／事件，而不是把同一对象的多个材料拆成多个命中。每项包括 `scope/id/name/types/aliases/introduction/publication_revision/sources/coverage`、`match_reasons/snippets`、`reading/object_reading/bundle_ref` 和当前公开关系／维护状态（当前 D-/CW- 内容）。原文片段包含源 URL、材料 ID、哈希、已有定位与原始字符 `offset/end_offset`。片段是精确引用，未保存的正文不返回。
+
+`publication_revision` 是检索结果的变更标识；继续读取应使用返回的精确工具参数，不自行拼修订。当前材料使用 `content_revision`，旧原文库使用数字 `revision`。固定游标只保证成员与顺序；正文权限和公开数据逐页重查，更新返回 `changed_since_search`，不再公开／匹配则返回只含 ID、不可用标记与说明的占位。来源故障和游标错误不能冒充零结果。详细参数见[接入指南](../guides/ai-access.md)。

@@ -52,6 +52,7 @@ FIELDTOFIT_DATA_DIR=/tmp/fieldtofit-platform-preview ./scripts/start-backend.sh
 
 | HTTP GET | MCP 工具 | 语义 |
 | --- | --- | --- |
+| `/lookup?q=&scope=all&object_type=&limit=10` | `curated_lookup` | 本轮新增，跨内容检索、实际命中片段和读取参数；固定分页成员、实时检查权限，详见接入指南 |
 | `/objects?q=&object_type=&limit=20&offset=0` | `curated_search` | 最新发布优先；首次建立固定快照，按 `next_cursor` / `previous_cursor` 续读，保持相同查询和 limit；旧 offset 只保留兼容 |
 | `/objects/{id}?revision={publication_revision}` | `curated_object` | 固定发布修订的对象、事实、关注依据、材料清单、当前状态 |
 | `/objects/{id}/materials/{material_id}?revision={revision}&offset=0&limit=12000` | `curated_material` | 字符偏移续读，单次最多 50000 字符；返回 `body`、`next_offset`、`has_more`、覆盖、哈希和来源 |
@@ -61,7 +62,7 @@ FIELDTOFIT_DATA_DIR=/tmp/fieldtofit-platform-preview ./scripts/start-backend.sh
 
 原有 `curated_export` 是带事实、引用、版本和读取链接的**资料清单**，正文需继续读取。新增 `curated_bundle` 可直接包含所存正文，两者均不生成任务步骤。网页清单使用实际 API 地址，本机地址会标明云端 AI 无法直接访问。私有部署应另外配置读令牌，不把密钥写进清单。
 
-现有 10 个精选工具，旧 9 个保留，共 19 个。旧 `search` / `changes` 等仍面向旧知识库，不等价于精选索引/变化流。新接入从 `curated_search` 开始，变化使用 `curated_changes`，概览使用 `curated_editions` / `curated_edition`。HTTP/stdio 连接见[接入指南](ai-access.md)。
+当前源码为 13 个精选工具，旧 9 个保留，共 22 个；统一检索自 v1.5.0 提供，实际服务能力可核对 tools/list。旧 `search` / `changes` 等仍面向旧知识库，不等价于精选索引/变化流。本轮统一入口为 `curated_lookup`，跨动态／持续关注／已审原文库检索，详见[接入指南](ai-access.md)；旧原文库仍可从 `curated_search` 开始，变化使用 `curated_changes`，概览使用 `curated_editions` / `curated_edition`。HTTP/stdio 连接见[接入指南](ai-access.md)。
 
 ## 来源检查与日期筛选
 

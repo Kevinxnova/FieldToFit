@@ -25,6 +25,8 @@ def validate(data):
             raise ValueError('Invalid news publication state')
         if item['state'] != 'published':
             continue
+        from backend.knowledge.platform_lookup import aliases
+        aliases(item.get('aliases', []))
         if not isinstance(item['highlight'], bool) or not isinstance(item['note'], str) or not isinstance(item['related'], list):
             raise ValueError('Invalid public news fields')
         for source in item['sources']:
@@ -75,6 +77,9 @@ def news(q='', id='', revision='', _data=None):
         if item['state'] != 'published':
             continue
         obj = {k: item[k] for k in fields}
+        if item.get('aliases'):
+            from backend.knowledge.platform_lookup import aliases
+            obj['aliases'] = aliases(item['aliases'])
         obj['interpretation'] = [{k: point[k] for k in ('title', 'text', 'source_ids', 'locator')} for point in item['interpretation']]
         obj['sources'] = [{k: source[k] for k in ('id', 'title', 'url', 'coverage')} for source in item['sources']]
         obj['related'] = [{k: ref[k] for k in ('id', 'name', 'url')} for ref in item['related']]

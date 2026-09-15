@@ -49,6 +49,9 @@ def public_collection(data):
         if raw['type'] not in TYPES or raw['evidence_status'] != 'official_materials_reviewed_not_runtime_tested':
             raise ValueError('Invalid published type or evidence status')
         item = {k: checked_text(raw[k]) for k in ('id', 'name', 'type', 'introduction', 'checked_at', 'evidence_status')}
+        from backend.knowledge.platform_lookup import aliases
+        reviewed_aliases = aliases(raw.get('aliases', []))
+        if reviewed_aliases: item['aliases'] = reviewed_aliases
         date.fromisoformat(item['checked_at'])
         item['sources'] = []
         for s in raw['sources']:

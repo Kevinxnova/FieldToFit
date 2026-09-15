@@ -3978,3 +3978,8 @@ body:has(.mobile-more-dialog[open]), body:has(.toc-drawer[open]) { overflow: hid
 }
 
 .public-maintenance{margin:14px 0;padding:12px;border-left:3px solid var(--green);background:var(--surface-soft);font-size:13px;overflow-wrap:anywhere}.public-maintenance details+details{margin-top:10px}.public-maintenance li{margin:10px 0}.public-maintenance p{font-size:12px}
+
+/* Unified public discovery: readable reasons and excerpts, shared with MCP. */
+.lookup-filters{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0}.lookup-filters label{display:flex;gap:.6rem;align-items:center}.lookup-filters select{max-width:100%;padding:.5rem}
+.lookup-summary small{display:block;margin-top:.4rem;opacity:.7}.lookup-results{display:grid;gap:1rem}.lookup-result{padding:1.25rem 0;border-top:1px solid var(--line);min-width:0;overflow-wrap:anywhere}.lookup-result h3{margin:.35rem 0}.lookup-reasons{display:flex;flex-wrap:wrap;gap:.45rem}.lookup-reasons span{font-size:.8rem;border:1px solid var(--line);border-radius:4px;padding:.2rem .5rem}.lookup-snippet{margin:1rem 0;padding:.8rem 1rem;border-left:3px solid var(--green);background:var(--surface-soft)}.lookup-snippet p{white-space:pre-wrap}.lookup-snippet small{opacity:.7}.lookup-selected{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:1rem}.lookup-selected li{display:flex;justify-content:space-between;gap:1rem}.unified-lookup textarea{width:100%;box-sizing:border-box}.unified-lookup .platform-actions{flex-wrap:wrap}
+@media(max-width:600px){.lookup-filters{display:grid;grid-template-columns:1fr}.lookup-filters label{justify-content:space-between}.lookup-filters select{max-width:65%}.lookup-snippet{padding:.6rem}.lookup-result{padding:1rem 0}}

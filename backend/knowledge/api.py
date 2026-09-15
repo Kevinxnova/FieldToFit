@@ -560,6 +560,13 @@ def platform_error(error):
     return jsonify(detail=str(error), code=error.code, schema_version=platform.SCHEMA_VERSION), error.status
 
 
+@bp.get('/platform/lookup')
+def platform_lookup():
+    from backend.knowledge.platform_lookup import lookup
+    return jsonify(lookup(request.args.get('q', ''), request.args.get('scope', 'all'),
+                          request.args.get('object_type', ''), request.args.get('limit', 10), request.args.get('cursor')))
+
+
 @bp.get('/platform/objects')
 def platform_objects():
     return jsonify(platform.search(**{k: request.args[k] for k in ('q', 'object_type', 'limit', 'offset', 'cursor', 'source', 'since', 'until') if k in request.args}))

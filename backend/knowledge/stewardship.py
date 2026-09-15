@@ -164,6 +164,12 @@ def combine(source,target,choices):
             conflicts.append({'field':key,'source':source[key],'target':target[key]})
             if choices.get(key) not in ('source','target'):continue
             merged[key]=copy.deepcopy(source[key] if choices[key]=='source' else target[key])
+    if source.get('aliases') or target.get('aliases'):
+        from backend.knowledge.platform_lookup import aliases as reviewed_aliases, normalized
+        names = {}
+        for alias in target.get('aliases', []) + source.get('aliases', []):
+            names.setdefault(normalized(alias), alias)
+        merged['aliases'] = reviewed_aliases(list(names.values()))
     prefix=source['id'].lower()+'-';mapping={}
     for s in source.get('sources',[]):
         match=next((v for v in merged['sources'] if v['url']==s['url']),None)

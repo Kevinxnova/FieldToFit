@@ -1,12 +1,12 @@
 # API 与 MCP 接入
 
-本文是现有接口使用说明。For your AI、原文续读及中性资料包已经实现；新增组织/产品/事件关系等 P3 目标仍见[需求状态](../../FieldToFit-PM.md)，不要按草案字段调用当前服务。
+本文按当前源码说明接口。部署状态以[项目管理总览](../../FieldToFit-PM.md)和服务的 `tools/list` 为准；v1.5.0 新增统一检索，发布状态见对应验收记录。既有原文续读、资料包、对象关系和材料维护继续兼容。
 
 先启动 FieldToFit 后端。默认资料可公开读取；如服务配置了 `FIELDTOFIT_READ_TOKEN`，HTTP 请求需携带 `Authorization: Bearer <read-token>`。管理员密码不用于 AI 读取。
 
 ## HTTP MCP
 
-公开地址为 `https://fieldtofit.top/api/mcp/curated`，提供 12 项精选工具；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
+公开地址为 `https://fieldtofit.top/api/mcp/curated`，v1.5.0 提供 13 项精选工具，包含 `curated_lookup`；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
 
 ```json
 {
@@ -19,7 +19,27 @@
 }
 ```
 
-网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 共 21 项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
+网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` v1.5.0 共 22 项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
+
+## 统一发现，再按结果读取（REQ-8-9）
+
+用户在现有地址连接后，可以直接说：“从 FieldToFit 查找 Claude 的发布动态、持续关注资料和已存原文，列出变化与出处；材料不全请明确说明。”AI 先调用：
+
+```json
+{"name":"curated_lookup","arguments":{"q":"Claude","scope":"all","limit":10}}
+```
+
+- `q` 必填，1–200 字符，最多 12 个空白分隔词；按字面匹配，不做任务语义扩写。可用名称、审核别名或 ID，例如 `CW-M01`。
+- `scope` 为 `all`、`news`、`watch`、`library`；`object_type` 可筛 `model/tool/agent/skill/harness/event` 等登记类型。`limit` 为 1–50。
+- 每项 `reading` 是完整整理内容的工具和参数，`object_reading` 为材料清单入口；材料和原文片段各自的 `reading` 给出精确 `curated_material` 参数。不要把集合修订当作正文修订：D-/CW- 用 `content_revision`，旧原文库用数字 `revision`。
+- 选择结果的 `bundle_ref` 放入 `curated_bundle.objects` 即可打包，最多 10 项；正文缺失、仅链接或超过字数预算会明确保留缺项和续读位置。
+- 页面预览位于 For your AI 连接方式后，与 MCP 使用同一个检索函数；复制单项包含出处、版本和读取指引，不会自动配置客户端。选择结果可直接使用原有资料包预览／下载。
+
+分页保持原 `q/scope/object_type/limit`，使用 `next_cursor`。成员和顺序固定 7 天，正文及权限每页重新核对：有变化的内容返回当前版本并标记；撤下、归并或不再匹配的项隐藏正文、保留位置。新内容通过重新搜索发现。游标失效返回 `snapshot_expired`（410），改用原查询重新开始，不能把错误当成没有资料。
+
+服务只搜索已发布材料，未命中不表示全网没有。链接资料不会冒充全文，整理内容不冒充原文。图表、私密候选、草稿、反馈和历史全文不在本轮搜索范围。日后继续用 `curated_changes` 分别读取 `scope=workspace` 和 `scope=legacy`，两个范围保留独立游标。旧 `curated_search/news/watch` 保留兼容。
+
+HTTP 等价入口：`GET /api/v1/platform/lookup?q=Claude&scope=all&limit=10`。无新读令牌或新 MCP 地址；已有读令牌部署仍遵守相同权限。
 
 ## stdio 桥接
 
@@ -78,7 +98,7 @@ FIELDTOFIT_MCP_URL=https://fieldtofit.top/api/mcp/curated .venv/bin/python -m ba
 
 ## 持续关注 CW1
 
-使用 curated_watch 读取与 For you 同源的五类主体（数量以当前接口为准）。可传 q、id（如 CW-M04）、type（model / tool / agent / skill / harness）、revision。对应 GET /api/v1/platform/watch。每项含版本/技能表、中文整理、单独解读、来源和核验日；出处 coverage 为 link_only，可选材料清单分别说明正文范围。修订变化返回 409，重新读取；撤回返回 404。curated_search 继续读取独立原文库，不会把 CW-ID 当成旧数据库 ID。精选工具共 12 项，原 HTTP MCP 配置不变。
+使用 curated_watch 读取与 For you 同源的五类主体（数量以当前接口为准）。可传 q、id（如 CW-M04）、type（model / tool / agent / skill / harness）、revision。对应 GET /api/v1/platform/watch。每项含版本/技能表、中文整理、单独解读、来源和核验日；出处 coverage 为 link_only，可选材料清单分别说明正文范围。修订变化返回 409，重新读取；撤回返回 404。curated_search 继续读取独立原文库，不会把 CW-ID 当成旧数据库 ID。v1.5.0 精选工具共 13 项，原 HTTP MCP 配置不变。
 
 
 ## 新动态与持续关注的正文读取

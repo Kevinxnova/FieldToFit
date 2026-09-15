@@ -34,15 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.4.1](CHANGELOG.md#v1.4.1)** · Release tag not yet published
+**Current source version: [v1.5.0](CHANGELOG.md#v1.5.0)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Fix incremental maintenance-table upgrades on Turso with a single atomic server-side transaction; use an explicit SQLite transaction and preserve existing data on repeat upgrades.
-- Include v1.4.0 identity review, relationships and material maintenance. The production backup was verified before upgrading; published content retains its revisions.
-- Add regression coverage for atomic remote upgrades and repeat execution; synchronize both READMEs and the single project-management overview.
+- Add `curated_lookup` and a shared HTTP endpoint to discover published developments, ongoing-watch profiles and public stored text, with match reasons, excerpts, sources, versions, coverage and exact reading arguments.
+- Add reviewed aliases to current content: drafts remain private until publication; merges retain old IDs and aliases with undo support, preserving the existing MCP URL and tools.
+- Add search previews, scope/type filters, copy handoff and mixed-source packages to For your AI; cursor pages preserve order and recheck live permissions without exposing withdrawn text.
+- Validate 311 local regression tests, desktop/mobile browsers and HTTP MCP source reconstruction by hash; synchronize the single project-management overview, bilingual READMEs and connection guides.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
@@ -57,6 +58,8 @@ https://fieldtofit.top/api/mcp/curated
 ```
 
 Add this address to an AI client that supports remote HTTP MCP. Ask your AI to retrieve relevant materials, sources, versions and known limitations, then continue with your task.
+
+This source update adds `curated_lookup` to discover developments, ongoing-watch profiles and permitted stored text within the same MCP service, with exact reading arguments and shared search previews on For your AI. It is not deployed yet; check `tools/list` for live capabilities.
 
 No website account is required. For client support and configuration, see [For your AI](https://fieldtofit.top/for-your-ai) and the [connection guide](docs/guides/ai-access.md). Protocol checks do not establish that every client has been tested in daily use.
 

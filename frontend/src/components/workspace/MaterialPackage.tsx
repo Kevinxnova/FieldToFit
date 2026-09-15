@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BASE, send } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 
-export type PackageRef = { id: string; revision: number; name: string };
+export type PackageRef = { id: string; revision?: number; content_revision?: string; name: string };
 type Coverage = { requested_objects: number; available_objects: number; unavailable_objects: number; registered_materials: number; included_characters: number; link_only_materials: number; unavailable_materials: number; deferred_materials: number; all_stored_text_included: boolean };
 type Package = { generated_at: string; coverage: Coverage; markdown?: string; objects?: unknown[] };
 
@@ -25,7 +25,7 @@ export function MaterialPackage({ references }: { references: PackageRef[] }) {
     setBusy(true); setError(''); setResult(null); setPreview(''); setCopyMessage('');
     try {
       const data = await send<Package>('/v1/platform/bundle', {
-        objects: references.map(({ id, revision }) => ({ id, revision })), max_characters: 200000, format,
+        objects: references.map(({ id, revision, content_revision }) => ({ id, ...(revision ? {revision} : {}), ...(content_revision ? {content_revision} : {}) })), max_characters: 200000, format,
       });
       // Add service context outside original text. Never rewrite source bodies or their hashes.
       const service = new URL(BASE, window.location.origin).href.replace(/\/$/, '');

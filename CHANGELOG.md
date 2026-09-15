@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.0"></a>
+## v1.5.0 · 统一取材入口 · 2026-09-15
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增 `curated_lookup` 与同源 HTTP 入口，一次检索已发布动态、持续关注和公开原文，返回命中原因、片段、出处、版本、覆盖与精确续读参数。
+- 动态和持续关注支持审核别名，保存不公开、发布后可检索；归并保留旧编号、合并别名并支持撤销，现有 MCP 地址与工具继续兼容。
+- For your AI 新增搜索预览、范围与类型筛选、复制交接及新旧材料混合资料包；游标固定顺序，逐页重新核对权限，撤回正文不从旧结果泄露。
+- 完成 311 项本地回归、桌面／手机浏览器及 HTTP MCP 分段原文哈希验证；同步唯一项目管理总览、中英文 README 和接入指南。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add `curated_lookup` and a shared HTTP endpoint to discover published developments, ongoing-watch profiles and public stored text, with match reasons, excerpts, sources, versions, coverage and exact reading arguments.
+- Add reviewed aliases to current content: drafts remain private until publication; merges retain old IDs and aliases with undo support, preserving the existing MCP URL and tools.
+- Add search previews, scope/type filters, copy handoff and mixed-source packages to For your AI; cursor pages preserve order and recheck live permissions without exposing withdrawn text.
+- Validate 311 local regression tests, desktop/mobile browsers and HTTP MCP source reconstruction by hash; synchronize the single project-management overview, bilingual READMEs and connection guides.
+<!-- release-summary:en:end -->
+
+用户确认 v1.5.0 并授权提交、推送与部署。对应 REQ-8-9，关联别名审核、MCP 兼容及资料包；无新增数据库表或索引迁移，无线上内容发布。本地开发及验证完成，本批发布正在执行，生产验收结果追加于[验收记录](docs/validation/2026-09-15-unified-lookup.md)，需求状态见[项目管理总览](FieldToFit-PM.md#req-8-9)。
+
 <a id="v1.4.1"></a>
 ## v1.4.1 · 生产迁移兼容修复 · 2026-09-15
 
