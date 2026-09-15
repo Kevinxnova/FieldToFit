@@ -34,17 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.3.0](CHANGELOG.md#v1.3.0)** · [fieldtofit-v1.3.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.0)
+**当前源码版本：[v1.3.1](CHANGELOG.md#v1.3.1)** · [fieldtofit-v1.3.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.1)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 运行管理新增更新批次：汇总本地推荐与网站选中项，记录继续／稍后／不采用、证据变化、草稿去向及发布记录；无新证据不重复推荐。
-- 日报分开记录整理中、正文已准备、交付已核实和失败，保留交付凭据；本地 08:00 安排接入记录流程，准时交付仍须真实观察。
-- 新闻与持续关注新增已审核材料清单、许可、缺失原因和正文阅读；MCP 沿用十二项工具，支持固定材料修订续读和有大小限制的资料包。
-- 为已确认选题补齐材料：Artemis 与 Agent Skills 的七份开源文件保留固定提交和许可；DeepSeek、Perplexity/Astra 标明仅链接范围。
-- 扩展九家公司官方发布入口，保留同网址变化前的材料；采集周期仍为 1 天，失败、待续与真正取得正文分别登记。
+- 发布经用户确认的两项日报内容：OpenAI Agents API 与 GPT-Live-1；各保留三点解读、官方发布页及开发文档入口。
+- 明确两项来源发布日期均为 2026-09-10，本站于 9 月 15 日核对补录；分别关联 Codex、GPT 模型族。
+- 近期动态由 11 条增至 13 条，持续关注保持 29 项；For you、For your AI 与 MCP 共用公开修订，官方原文标明仅链接。
+- 推荐批次记录用户确认、草稿关联与真实发布结果；同步项目管理总览、中英文 README 和版本记录。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

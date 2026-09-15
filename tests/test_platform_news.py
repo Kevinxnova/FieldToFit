@@ -10,8 +10,11 @@ def test_web_and_mcp_read_identical_news_with_deepseek(client):
     response = client.get('/api/v1/platform/news')
     assert response.status_code == 200
     body = response.json
-    assert body['items'][0]['id'] == 'D-10' and body['items'][0]['source_published_at'] == '2026-09-10'
-    assert body['total'] == 11
+    by_id = {item['id']: item for item in body['items']}
+    assert {'D-10', 'D-12', 'D-13'} <= by_id.keys()
+    assert all(by_id[ident]['source_published_at'] == '2026-09-10' for ident in ('D-10', 'D-12', 'D-13'))
+    expected = [item for item in json.loads(news.CONTENT_PATH.read_text())['items'] if item['state'] == 'published']
+    assert body['total'] == len(expected)
     rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call',
         'params':{'name':'curated_news','arguments':{}}}).json['result']
     assert not rpc.get('isError') and rpc['structuredContent'] == body
@@ -30,9 +33,9 @@ def test_revision_detects_correction_and_withdrawal_without_leaking_drafts(clien
     assert news.news()['revision'] == first['revision']
     assert 'private' not in json.dumps(news.news()).lower()
     data['items'][0]['state'] = 'withdrawn'; path.write_text(json.dumps(data))
-    assert client.get('/api/v1/platform/news?id=D-10').status_code == 404
+    assert client.get('/api/v1/platform/news?id='+data['items'][0]['id']).status_code == 404
     assert client.get('/api/v1/platform/news?revision='+first['revision']).status_code == 409
-    assert news.news()['total'] == 10
+    assert news.news()['total'] == first['total'] - 1
 
 
 @pytest.mark.parametrize('broken', ['missing_source', 'bad_url', 'missing_date', 'duplicate_id', 'false_fulltext', 'missing_public_field', 'missing_metadata'])

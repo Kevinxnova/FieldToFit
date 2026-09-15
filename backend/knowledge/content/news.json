@@ -5,6 +5,204 @@
   "reviewed_at": "2026-09-15",
   "items": [
     {
+      "id": "D-12",
+      "state": "published",
+      "name": "OpenAI Agents API",
+      "organization": "OpenAI",
+      "source_published_at": "2026-09-10",
+      "event_date": "2026-09-10",
+      "checked_at": "2026-09-15",
+      "title": "OpenAI 发布 Agents API，托管 Codex harness 与长任务运行",
+      "summary": "Agents API 将 Codex 使用的 harness 和运行基础设施提供给开发者，当前为公开 beta。开发者配置任务、模型、工具与运行环境，即可创建云端 Agent。",
+      "highlight": false,
+      "interpretation": [
+        {
+          "locator": "Choose your agent environment",
+          "source_ids": [
+            "primary"
+          ],
+          "text": " 官方材料将 harness 与执行环境分开，列出 OpenAI 托管、自有基础设施和合作方环境。准备接入现有系统时，先看环境、文件和工具如何连接。",
+          "title": "值得看运行环境如何选择"
+        },
+        {
+          "locator": "Build with an evolving Codex harness",
+          "source_ids": [
+            "primary"
+          ],
+          "text": " 材料介绍上下文压缩、工具搜索和子 Agent 协作，可以据此定位原本需要自己实现的运行能力。",
+          "title": "值得看长会话与工具管理"
+        },
+        {
+          "locator": "What our customers are saying about Agents API / Start building",
+          "source_ids": [
+            "primary"
+          ],
+          "text": " 客户改善数字属于官方收录的客户陈述；FieldToFit 未实测接入、费用和稳定性，不直接套用于其他项目。",
+          "title": "保留 beta 与核验边界"
+        }
+      ],
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "Introducing the Agents API",
+          "url": "https://openai.com/index/introducing-the-agents-api/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "docs",
+          "title": "Agents API overview",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/overview"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/for-you#watch-cw-a01"
+        }
+      ],
+      "note": "2026-09-10 发布，2026-09-15 经用户确认补录。FieldToFit 未实测接入、费用或端到端表现；官方客户结果保留自述口径。",
+      "editor": "FieldToFit",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-15",
+          "coverage": "link_only",
+          "id": "primary",
+          "locator": "Choose your agent environment；Build with an evolving Codex harness；What our customers are saying about Agents API / Start building",
+          "reason": "提供官方入口；尚未确认正文再分发许可，不托管全文。",
+          "retrieved_at": "",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Introducing the Agents API",
+          "upstream_revision": "发布页日期 2026-09-10",
+          "url": "https://openai.com/index/introducing-the-agents-api/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-15",
+          "coverage": "link_only",
+          "id": "docs",
+          "locator": "Agents API overview",
+          "reason": "提供官方入口；尚未确认正文再分发许可，不托管全文。",
+          "retrieved_at": "",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Agents API overview",
+          "upstream_revision": "滚动文档，2026-09-15 核对入口",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/overview"
+        }
+      ]
+    },
+    {
+      "id": "D-13",
+      "state": "published",
+      "name": "GPT-Live-1",
+      "organization": "OpenAI",
+      "source_published_at": "2026-09-10",
+      "event_date": "2026-09-10",
+      "checked_at": "2026-09-15",
+      "title": "GPT-Live-1 开放 API，语音交互与后端推理可以分工",
+      "summary": "GPT-Live-1 支持在同一语音交互中同时听与说，并将更深入的推理或工具调用交给后端模型。",
+      "highlight": false,
+      "interpretation": [
+        {
+          "locator": "Key strengths of GPT-Live-1 in the API",
+          "source_ids": [
+            "primary"
+          ],
+          "text": " 这份材料关注实时对话行为；如果已有语音应用，可据此列出需要实际验证的交互环节。",
+          "title": "重点看插话、停顿和背景噪声"
+        },
+        {
+          "locator": "Simplify your voice-agent architecture and reduce voice latency",
+          "source_ids": [
+            "primary"
+          ],
+          "text": " 开发者可选择配套的后端模型、工具和 harness。语音模型负责对话，不意味着业务执行链已自动完成。",
+          "title": "重点看前后端分工"
+        },
+        {
+          "locator": "What customers are saying / Connecting GPT-Live-1 to Codex",
+          "source_ids": [
+            "primary"
+          ],
+          "text": " 官方示例没有包含完整连接与委派处理，客户案例也不是 FieldToFit 的独立测试；接入完整度、端到端表现和总成本仍待核查。",
+          "title": "演示与客户结果需保留出处"
+        }
+      ],
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "Build more natural voice experiences with GPT-Live-1 in the API",
+          "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "docs",
+          "title": "Getting started with GPT-Live",
+          "url": "https://developers.openai.com/api/docs/guides/live"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m01"
+        }
+      ],
+      "note": "2026-09-10 发布，2026-09-15 经用户确认补录。FieldToFit 未实测接入、费用或端到端表现；官方客户结果保留自述口径。",
+      "editor": "FieldToFit",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-15",
+          "coverage": "link_only",
+          "id": "primary",
+          "locator": "Key strengths of GPT-Live-1 in the API；Simplify your voice-agent architecture and reduce voice latency；What customers are saying / Connecting GPT-Live-1 to Codex",
+          "reason": "提供官方入口；尚未确认正文再分发许可，不托管全文。",
+          "retrieved_at": "",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Build more natural voice experiences with GPT-Live-1 in the API",
+          "upstream_revision": "发布页日期 2026-09-10",
+          "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-15",
+          "coverage": "link_only",
+          "id": "docs",
+          "locator": "Getting started with GPT-Live",
+          "reason": "提供官方入口；尚未确认正文再分发许可，不托管全文。",
+          "retrieved_at": "",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Getting started with GPT-Live",
+          "upstream_revision": "滚动文档，2026-09-15 核对入口",
+          "url": "https://developers.openai.com/api/docs/guides/live"
+        }
+      ]
+    },
+    {
       "id": "D-10",
       "state": "published",
       "name": "DeepSeek-V4.1-Flash",

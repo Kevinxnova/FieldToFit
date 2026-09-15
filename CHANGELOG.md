@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.3.1"></a>
+## v1.3.1 · Agents API 与 GPT-Live-1 日报补录 · 2026-09-15
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布经用户确认的两项日报内容：OpenAI Agents API 与 GPT-Live-1；各保留三点解读、官方发布页及开发文档入口。
+- 明确两项来源发布日期均为 2026-09-10，本站于 9 月 15 日核对补录；分别关联 Codex、GPT 模型族。
+- 近期动态由 11 条增至 13 条，持续关注保持 29 项；For you、For your AI 与 MCP 共用公开修订，官方原文标明仅链接。
+- 推荐批次记录用户确认、草稿关联与真实发布结果；同步项目管理总览、中英文 README 和版本记录。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the two owner-approved briefing topics: OpenAI Agents API and GPT-Live-1, each with three editorial points and links to the official announcement and developer guide.
+- Preserve the September 10, 2026 source dates and mark September 15 as the review and backfill date; link to the existing Codex and GPT profiles.
+- Increase news from 11 to 13 items while retaining 29 ongoing-watch profiles. Web and MCP share the published revision; official originals remain explicitly link-only.
+- Record approval, draft linkage and actual publication in the editorial batch; synchronize project management, bilingual READMEs and release history.
+<!-- release-summary:en:end -->
+
+对应 REQ-5、REQ-6、REQ-8、REQ-10、REQ-11。沿用已确认的每日提案文案，不新增重复的持续关注对象；没有把官方客户陈述当成本项目实测，也未调整图表数值或原有五条速览。发布与双端读取证据见[本批验收](docs/validation/2026-09-15-v1.3.1.md)。准时日报、连续自然日运行与日常 AI 客户端自主回答仍待验。
+
 <a id="v1.3.0"></a>
 ## v1.3.0 · 推荐批次、可读材料与官方变化采集 · 2026-09-15
 
