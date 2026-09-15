@@ -34,7 +34,7 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.0](CHANGELOG.md#v1.5.0)** · Release tag not yet published
+**Current source version: [v1.5.0](CHANGELOG.md#v1.5.0)** · [fieldtofit-v1.5.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
@@ -59,7 +59,7 @@ https://fieldtofit.top/api/mcp/curated
 
 Add this address to an AI client that supports remote HTTP MCP. Ask your AI to retrieve relevant materials, sources, versions and known limitations, then continue with your task.
 
-This source update adds `curated_lookup` to discover developments, ongoing-watch profiles and permitted stored text within the same MCP service, with exact reading arguments and shared search previews on For your AI. It is not deployed yet; check `tools/list` for live capabilities.
+This source update adds `curated_lookup` to discover developments, ongoing-watch profiles and permitted stored text within the same MCP service, with exact reading arguments and shared search previews on For your AI. Deployed in v1.5.0; check `tools/list` for live capabilities.
 
 No website account is required. For client support and configuration, see [For your AI](https://fieldtofit.top/for-your-ai) and the [connection guide](docs/guides/ai-access.md). Protocol checks do not establish that every client has been tested in daily use.
 

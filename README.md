@@ -34,7 +34,7 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.0](CHANGELOG.md#v1.5.0)** · 尚未推送发布标签
+**当前源码版本：[v1.5.0](CHANGELOG.md#v1.5.0)** · [fieldtofit-v1.5.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
@@ -59,7 +59,7 @@ https://fieldtofit.top/api/mcp/curated
 
 将地址添加到支持远程 HTTP MCP 的 AI 客户端。连接后，让 AI 检索相关资料、读取出处、版本和已知限制，并结合你的任务继续工作。
 
-本轮源码新增 `curated_lookup`：在同一 MCP 内检索近期动态、持续关注和可公开原文，按结果继续读取或打包；For your AI 提供同源搜索预览。该入口尚未部署，正式服务能力以 `tools/list` 为准。
+本轮源码新增 `curated_lookup`：在同一 MCP 内检索近期动态、持续关注和可公开原文，按结果继续读取或打包；For your AI 提供同源搜索预览。v1.5.0 已部署；正式服务能力可通过 `tools/list` 核对。
 
 无需网站账户。客户端是否支持远程 MCP、如何填写配置，请参阅 [For your AI](https://fieldtofit.top/for-your-ai) 和[接入指南](docs/guides/ai-access.md)。协议验证不代表所有客户端均已完成实际验收。
 

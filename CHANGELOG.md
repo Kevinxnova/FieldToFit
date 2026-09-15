@@ -7,8 +7,6 @@
 <a id="v1.5.0"></a>
 ## v1.5.0 · 统一取材入口 · 2026-09-15
 
-<!-- release-tag:unpublished -->
-
 ### 更新重点
 
 <!-- release-summary:zh:start -->
@@ -27,7 +25,7 @@
 - Validate 311 local regression tests, desktop/mobile browsers and HTTP MCP source reconstruction by hash; synchronize the single project-management overview, bilingual READMEs and connection guides.
 <!-- release-summary:en:end -->
 
-用户确认 v1.5.0 并授权提交、推送与部署。对应 REQ-8-9，关联别名审核、MCP 兼容及资料包；无新增数据库表或索引迁移，无线上内容发布。本地开发及验证完成，本批发布正在执行，生产验收结果追加于[验收记录](docs/validation/2026-09-15-unified-lookup.md)，需求状态见[项目管理总览](FieldToFit-PM.md#req-8-9)。
+对应 REQ-8-9，关联别名审核、MCP 兼容及资料包。已部署至 fieldtofit.top：13 项精选工具、跨内容检索和桌面／手机取材通过；13 条动态与 29 项持续关注的内容修订保持不变。无新增数据库表、索引迁移或内容发布。生产原文按 5 段重建哈希通过；实际验收见[验收记录](docs/validation/2026-09-15-unified-lookup.md)，需求状态见[项目管理总览](FieldToFit-PM.md#req-8-9)。
 
 <a id="v1.4.1"></a>
 ## v1.4.1 · 生产迁移兼容修复 · 2026-09-15
