@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.4.1"></a>
+## v1.4.1 · 生产迁移兼容修复 · 2026-09-15
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 修复六张维护表在 Turso 上的增量升级：使用单次服务端原子事务；本地 SQLite 同样显式开启事务，重复执行不改写既有数据。
+- 包含 v1.4.0 的对象归并、关系和材料维护功能；部署前已验证生产备份，公开内容继续保留原修订。
+- 新增远程增量升级的原子调用和重复执行回归测试，同步中英文 README 与唯一项目管理总览。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Fix incremental maintenance-table upgrades on Turso with a single atomic server-side transaction; use an explicit SQLite transaction and preserve existing data on repeat upgrades.
+- Include v1.4.0 identity review, relationships and material maintenance. The production backup was verified before upgrading; published content retains its revisions.
+- Add regression coverage for atomic remote upgrades and repeat execution; synchronize both READMEs and the single project-management overview.
+<!-- release-summary:en:end -->
+
+部署检查发现 v1.4.0 的远程增量升级未开启事务，未完成切站；本补丁按既定 z 递增规则修复后发布。对应 REQ-15 及 REQ-3/5/9/10，验证与部署状态见[同批验收](docs/validation/2026-09-15-stewardship.md)。
+
 <a id="v1.4.0"></a>
 ## v1.4.0 · 对象归并与材料持续维护 · 2026-09-15
 

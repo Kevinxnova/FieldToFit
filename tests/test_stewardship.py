@@ -289,3 +289,25 @@ def test_undo_restores_editorial_topic_state(client,published):
     data={'action':'undo','source':source,'target':target,'merge_id':merged['id'],'reason':'Restore original topic'}
     p=s.preview(data);s.apply({**data,'review_token':p['review_token'],'confirmed':True})
     with get_db() as db:assert db.execute('SELECT decision FROM fieldtofit_editorial_topics WHERE id=?',('fixture-topic',)).fetchone()[0]==previous
+
+
+def test_remote_upgrade_uses_atomic_batch_and_is_idempotent(client,monkeypatch):
+    from contextlib import contextmanager
+    from backend.db import TursoConnection
+    calls=[]
+    class AtomicOnly(TursoConnection):
+        def __init__(self,db):self.db=db
+        def execute_batch(self,*args):raise AssertionError('Interactive transaction must not be used')
+        def atomic_statements(self,statements):
+            calls.append(len(statements));self.db.execute('BEGIN IMMEDIATE')
+            for sql,args in statements:self.db.execute(sql,args)
+            self.db.commit()
+    @contextmanager
+    def remote():
+        with get_db() as db:yield AtomicOnly(db)
+    with get_db() as db:
+        for name in ('actions','aliases','links','checks','events','decisions'):db.execute('DROP TABLE fieldtofit_steward_'+name)
+    monkeypatch.setattr(s,'get_db',remote)
+    s.upgrade();s.upgrade()
+    assert calls==[7,7]
+    with get_db() as db:assert db.execute("SELECT count(*) FROM sqlite_master WHERE type='table' AND name LIKE 'fieldtofit_steward_%'").fetchone()[0]==6

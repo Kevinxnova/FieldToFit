@@ -33,7 +33,12 @@ def rows(db,table):
 
 def upgrade():
     sql=(Path(__file__).parent/'schema.sql').read_text().split('CREATE TABLE IF NOT EXISTS fieldtofit_steward_actions',1)[1]
-    with get_db() as db:execute_statements(db,[(s.strip(),()) for s in ('CREATE TABLE IF NOT EXISTS fieldtofit_steward_actions'+sql).split(';') if s.strip()])
+    statements=[(s.strip(),()) for s in ('CREATE TABLE IF NOT EXISTS fieldtofit_steward_actions'+sql).split(';') if s.strip()]
+    with get_db() as db:
+        from backend.db import TursoConnection
+        if isinstance(db,TursoConnection):db.atomic_statements(statements)
+        else:
+            db.execute('BEGIN IMMEDIATE');execute_statements(db,statements)
     return {'ok':True}
 
 def event(db,ident,action,data=None):

@@ -34,16 +34,15 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.4.0](CHANGELOG.md#v1.4.0)** · Release tag not yet published
+**Current source version: [v1.4.1](CHANGELOG.md#v1.4.1)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add private candidate grouping, reviewed object/event merge previews, explicit conflict choices and reversible merge records; retain identities and source materials without overwriting later edits.
-- Publish source-backed, version-scoped bidirectional relationships and shared maintenance metadata across web, MCP and packages, with old-ID guidance.
-- Check material access daily; three consecutive failed calendar days trigger review and seven raise priority. Track changes, recovery, deferral and reviewed notes without automatically publishing or deleting text.
-- Add scope=workspace to curated_changes for current news, watch profiles and material events while preserving legacy scope and separate continuation cursors.
+- Fix incremental maintenance-table upgrades on Turso with a single atomic server-side transaction; use an explicit SQLite transaction and preserve existing data on repeat upgrades.
+- Include v1.4.0 identity review, relationships and material maintenance. The production backup was verified before upgrading; published content retains its revisions.
+- Add regression coverage for atomic remote upgrades and repeat execution; synchronize both READMEs and the single project-management overview.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
