@@ -381,3 +381,14 @@ CREATE TABLE IF NOT EXISTS fieldtofit_discovery_versions (
  discovery_id TEXT NOT NULL, fingerprint TEXT NOT NULL, materials TEXT NOT NULL, observed_at TEXT NOT NULL,
  PRIMARY KEY(discovery_id,fingerprint)
 );
+
+CREATE TABLE IF NOT EXISTS fieldtofit_operation_events (
+ id TEXT PRIMARY KEY, source_id TEXT NOT NULL, ref TEXT NOT NULL, action TEXT NOT NULL,
+ payload TEXT NOT NULL, created_at TEXT NOT NULL, event_key TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS fieldtofit_operation_event_date ON fieldtofit_operation_events(created_at,source_id);
+CREATE TABLE IF NOT EXISTS fieldtofit_operation_issues (
+ id TEXT PRIMARY KEY, fingerprint TEXT NOT NULL, data TEXT NOT NULL, status TEXT NOT NULL,
+ review_on TEXT, note TEXT NOT NULL, first_seen_at TEXT NOT NULL, last_seen_at TEXT NOT NULL,
+ resolved_at TEXT, version INTEGER NOT NULL
+);

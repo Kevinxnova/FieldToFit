@@ -245,7 +245,10 @@ def test_remote_server_batch_lifecycle_and_race_rollbacks(client,monkeypatch):
     def remote():
         with get_db() as db:yield RemoteSQL(db)
     monkeypatch.setattr(tx,'get_db',remote)
-    ident,ref=make(client);d=valid(client,'watch',ident);published=publish(client,'watch',ident)
+    ident,ref=make(client);d=valid(client,'watch',ident)
+    preview=call(client,f'/content/watch/{ident}/preview').json
+    assert call(client,f'/content/watch/{ident}/submit-review',preview).status_code==200
+    published=publish(client,'watch',ident)
     assert counts and all(n>=2 for n in counts)
     before=client.get('/api/v1/platform/watch').json
     preview=call(client,f'/content/watch/{ident}/preview').json

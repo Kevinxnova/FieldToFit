@@ -34,16 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.3.1](CHANGELOG.md#v1.3.1)** · [fieldtofit-v1.3.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.1)
+**Current source version: [v1.3.2](CHANGELOG.md#v1.3.2)** · [fieldtofit-v1.3.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the two owner-approved briefing topics: OpenAI Agents API and GPT-Live-1, each with three editorial points and links to the official announcement and developer guide.
-- Preserve the September 10, 2026 source dates and mark September 15 as the review and backfill date; link to the existing Codex and GPT profiles.
-- Increase news from 11 to 13 items while retaining 29 ongoing-watch profiles. Web and MCP share the published revision; official originals remain explicitly link-only.
-- Record approval, draft linkage and actual publication in the editorial batch; synchronize project management, bilingual READMEs and release history.
+- Add per-source daily checks, discoveries, material coverage, review submissions and publication counts, separately showing current backlog, longest waits and unrecorded historical timestamps with drilldowns.
+- Add actionable editorial issues for failed or unfinished sources, missing fields/materials, review queues and changed evidence. Open drafts, retry sources or defer with a review date; deferral never means resolved.
+- Separate Meta directory pagination from articles and drain saved articles before expanding further pages, including single-slot runs. When arXiv search fails, try the official cs.AI abstract feed while preserving the failure and search cursor.
+- Prepare local briefings at 07:30 and deliver at 08:00. A real Codex client passed live retrieval, five-chunk reading and cited answers, plus isolated failure recovery; natural-day and weekly checks remain pending.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

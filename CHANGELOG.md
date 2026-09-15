@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.3.2"></a>
+## v1.3.2 · 来源阶段统计、问题待办与运行验收 · 2026-09-15
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 内容管理新增按来源的当日检查、发现、获取、提交复核及发布统计，分开当前积压、最长等待和历史未记录时间，点击数量可查看对应事项。
+- 每日审阅新增自动问题清单：来源失败/待续、缺必要字段、缺材料、待复核和来源变化；可打开对应草稿、重试来源或登记复查日期，延期不算解决。
+- 修复 Meta 目录分页混入文章队列与小预算下积压不推进，先处理已存文章再扩页；arXiv 检索失败时尝试官方 cs.AI 摘要补充，保留失败及原分页，不冒充检索恢复。
+- 本地日报调整为 07:30 准备、08:00 交付；真实 Codex 客户端已完成线上检索、五段全文读取、带出处回答及隔离故障恢复，连续自然日和周维护仍待实际观察。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add per-source daily checks, discoveries, material coverage, review submissions and publication counts, separately showing current backlog, longest waits and unrecorded historical timestamps with drilldowns.
+- Add actionable editorial issues for failed or unfinished sources, missing fields/materials, review queues and changed evidence. Open drafts, retry sources or defer with a review date; deferral never means resolved.
+- Separate Meta directory pagination from articles and drain saved articles before expanding further pages, including single-slot runs. When arXiv search fails, try the official cs.AI abstract feed while preserving the failure and search cursor.
+- Prepare local briefings at 07:30 and deliver at 08:00. A real Codex client passed live retrieval, five-chunk reading and cited answers, plus isolated failure recovery; natural-day and weekly checks remain pending.
+<!-- release-summary:en:end -->
+
+对应 REQ-15-2、REQ-10-1、REQ-2-1/2、REQ-11-4、REQ-9-2/3。新增两张私密表，保留现有数据库和公开内容；阶段动作从启用日起记录，旧动作不倒推。完整连续三日、跨日实际客户端续读、每周维护不由本日测试替代。当前实采、部署与限制见[验收记录](docs/validation/2026-09-15-operations.md)。
+
 <a id="v1.3.1"></a>
 ## v1.3.1 · Agents API 与 GPT-Live-1 日报补录 · 2026-09-15
 

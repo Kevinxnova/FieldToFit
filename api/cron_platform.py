@@ -21,4 +21,4 @@ def platform_daily():
     from backend.knowledge.platform_maintenance import run_daily
     if os.getenv('FIELDTOFIT_AUTO_INIT_DB', '1') != '0':
         init_db()
-    return jsonify(run_daily(budget_seconds=180))
+    return jsonify(run_daily(budget_seconds=180,trigger='scheduler_header' if request.headers.get('User-Agent','').startswith('vercel-cron/') else 'manual_request'))

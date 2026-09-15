@@ -183,7 +183,10 @@ def save(kind, ident, data):
         current=detail(kind,ident,db)
         if data.get('materials_fingerprint') and data['materials_fingerprint']!=current['materials_fingerprint']:fail('Source materials changed; export again','source_conflict',409)
         if current['draft_version']!=version:fail('Draft changed; reload before saving','draft_conflict',409)
+        from backend.knowledge.operation_board import event,content_source
+        origin=content_source(db,kind,ident)
         db.execute('UPDATE fieldtofit_content_items SET draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',(dump(content),stamp(),kind,ident))
+        event(db,origin,kind+':'+ident,'edited',str(version+1))
     return detail(kind,ident)
 
 def composed(kind, ident, content, db, withdraw=False):
@@ -259,7 +262,10 @@ def publish(kind, ident, data, withdraw=False):
                 ('INSERT INTO fieldtofit_content_history(kind,item_id,action,reason,snapshot,created_at) VALUES(?,?,?,?,?,?)',(kind,ident,'withdraw' if withdraw else 'publish',reason,dump(new),stamp()))]
         if not withdraw:writes.append(("UPDATE fieldtofit_inbox SET status='completed',updated_at=? WHERE kind=? AND item_id=? AND status='selected'",(stamp(),kind,ident)))
         from backend.knowledge.editorial_batches import published
+        from backend.knowledge.operation_board import event,content_source
+        origin=content_source(db,kind,ident)
         published(db,kind,ident,new,withdraw)
+        event(db,origin,kind+':'+ident,'withdrawn' if withdraw else 'published_update' if item['published'] else 'published_new',str(item['draft_version']))
         execute_statements(db,writes)
     return detail(kind,ident)
 
@@ -269,6 +275,8 @@ def restore(kind, ident, data):
         if current['draft_version']!=data.get('draft_version'):fail('Draft changed','draft_conflict',409)
         row=db.execute('SELECT snapshot FROM fieldtofit_content_history WHERE seq=? AND kind=? AND item_id=?',(data.get('seq'),kind,ident)).fetchone()
         if not row:fail('Revision not found','not_found',404)
+        from backend.knowledge.operation_board import event,content_source
+        event(db,content_source(db,kind,ident),kind+':'+ident,'edited',str(current['draft_version']+1))
         draft=json.loads(row['snapshot'])
         if kind!='charts':draft['state']='published'
         db.execute('UPDATE fieldtofit_content_items SET draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',(dump(draft),stamp(),kind,ident))
@@ -302,7 +310,7 @@ def inbox(q='', since='', until='', source='', status='', item_type='', offset=0
             where.append('datetime(c.discovered_at) '+op+' datetime(?)');args.append(bound)
     for value,expr in [(source,'c.source'),(item_type,'c.item_type'),(status,"COALESCE(i.status,'pending')")]:
         if value:where.append(expr+'=?');args.append(value)
-    if q:where.append('(c.title LIKE ? OR c.summary LIKE ?)');args.extend(['%'+q+'%']*2)
+    if q:where.append('(c.title LIKE ? OR c.summary LIKE ? OR c.ref=?)');args.extend(['%'+q+'%']*2+[q])
     clause=' AND '.join(where);join=' FROM candidates c LEFT JOIN fieldtofit_inbox i ON i.ref=c.ref LEFT JOIN fieldtofit_candidate_priority p ON p.ref=c.ref WHERE '+clause
     with get_db() as db:
         total=db.execute(CANDIDATES+'SELECT COUNT(*) n'+join,args).fetchone()['n']
@@ -367,6 +375,9 @@ def select(data, db=None):
             status='selected'
         else:kind=previous['kind'] if previous else '';ident=previous['item_id'] if previous else '';status=action
         db.execute('INSERT INTO fieldtofit_inbox VALUES(?,?,?,?,?,?) ON CONFLICT(ref) DO UPDATE SET status=excluded.status,kind=excluded.kind,item_id=excluded.item_id,note=excluded.note,updated_at=excluded.updated_at',(ref,status,kind,ident,str(data.get('note',''))[:2000],stamp()))
+        if action=='select':
+            from backend.knowledge.operation_board import event,content_source
+            event(db,c.get('source') or 'local-editorial',kind+':'+ident,'selected',ref)
     return {'kind':kind,'id':ident,'status':status}
 
 def add_candidate(data):
@@ -399,7 +410,7 @@ def export_draft(kind, ident):
 def backup():
     """A coherent private snapshot; concurrent publication cannot split its tables."""
     from backend.db import TursoConnection
-    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority','fieldtofit_editorial_batches','fieldtofit_editorial_topics','fieldtofit_editorial_members','fieldtofit_editorial_events','fieldtofit_discovery_versions')
+    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority','fieldtofit_editorial_batches','fieldtofit_editorial_topics','fieldtofit_editorial_members','fieldtofit_editorial_events','fieldtofit_discovery_versions','fieldtofit_operation_events','fieldtofit_operation_issues')
     statements=[('SELECT * FROM '+name,()) for name in names]
     with get_db() as db:
         if isinstance(db,TursoConnection):cursors=db.atomic_statements(statements,read_only=True)

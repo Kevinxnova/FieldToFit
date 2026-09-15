@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.3.1](CHANGELOG.md#v1.3.1)** · [fieldtofit-v1.3.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.1)
+**当前源码版本：[v1.3.2](CHANGELOG.md#v1.3.2)** · [fieldtofit-v1.3.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.3.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布经用户确认的两项日报内容：OpenAI Agents API 与 GPT-Live-1；各保留三点解读、官方发布页及开发文档入口。
-- 明确两项来源发布日期均为 2026-09-10，本站于 9 月 15 日核对补录；分别关联 Codex、GPT 模型族。
-- 近期动态由 11 条增至 13 条，持续关注保持 29 项；For you、For your AI 与 MCP 共用公开修订，官方原文标明仅链接。
-- 推荐批次记录用户确认、草稿关联与真实发布结果；同步项目管理总览、中英文 README 和版本记录。
+- 内容管理新增按来源的当日检查、发现、获取、提交复核及发布统计，分开当前积压、最长等待和历史未记录时间，点击数量可查看对应事项。
+- 每日审阅新增自动问题清单：来源失败/待续、缺必要字段、缺材料、待复核和来源变化；可打开对应草稿、重试来源或登记复查日期，延期不算解决。
+- 修复 Meta 目录分页混入文章队列与小预算下积压不推进，先处理已存文章再扩页；arXiv 检索失败时尝试官方 cs.AI 摘要补充，保留失败及原分页，不冒充检索恢复。
+- 本地日报调整为 07:30 准备、08:00 交付；真实 Codex 客户端已完成线上检索、五段全文读取、带出处回答及隔离故障恢复，连续自然日和周维护仍待实际观察。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

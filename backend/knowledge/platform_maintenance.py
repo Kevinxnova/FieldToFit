@@ -111,7 +111,13 @@ def stage(source, materials, metrics=None, gaps=None):
         data = {'source_id': source['id'], 'record_id': rid, 'name': config['name'],
                 'official_url': url, 'object_type': config['object_type'], 'materials': materials,
                 'metrics': metrics or {}, 'gaps': gaps or [], 'observed_at': stamp}
-        if prior and prior_fingerprint == fingerprint:
+        unchanged=bool(prior and prior_fingerprint==fingerprint)
+        iid=prior['id'] if unchanged else store.stable_id(source['id'],fingerprint,stamp)
+        from backend.knowledge.operation_board import event
+        for m in materials:
+            if m['body'] and m['coverage'] in ('full_text','excerpt','abstract'):event(db,source['id'],'intake:'+iid,m['coverage'],m['hash'])
+        if not unchanged:event(db,source['id'],'intake:'+iid,'changed' if prior else 'discovered',fingerprint)
+        if unchanged:
             # Recurring identical materials are observations, not new publications.
             return 1, 0
         iid = store.stable_id(source['id'], fingerprint, stamp)
@@ -121,12 +127,13 @@ def stage(source, materials, metrics=None, gaps=None):
     return 1, 1
 
 
-def run_daily(budget_seconds=180):
+def run_daily(budget_seconds=180, trigger="manual"):
     import time
     from backend.knowledge.sources import list_sources, run_daily as check_source
     from backend.knowledge.operations import track_run
     started = time.monotonic()
     with track_run('platform_daily') as report:
+        report.update(trigger=trigger,timezone='Asia/Shanghai')
         from backend.knowledge.model_landscape import check_sources
         charts = check_sources()
         with get_db() as db:
@@ -151,6 +158,10 @@ def run_daily(budget_seconds=180):
         report.update(status='success' if sources and charts['status'] == 'success' and not unhealthy and not any(r['status']=='deferred' for r in results) else 'partial',
                       interval_days=1, model_landscape=charts, results=results, pending_editorial=pending, unhealthy_sources=unhealthy,
                       maintained_sources=len(sources), scope='Enabled daily discovery sources and previously published maintained repositories; collection never publishes or replaces editorial content')
+        from backend.knowledge.operation_board import refresh as refresh_issues
+        try:report['editorial_issues']=refresh_issues()
+        except Exception as exc:
+            report.update(status='partial',issue_refresh_error=type(exc).__name__)
     from backend.knowledge.candidate_priority import refresh
     report['priority_assessment']=refresh(limit=100)
     return report

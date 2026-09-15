@@ -776,6 +776,9 @@ def workspace_save(kind,ident):
 @admin_required
 def workspace_action(kind,ident,action):
     from backend.knowledge.content_workspace import preview,publish,restore
+    if action=='submit-review':
+        from backend.knowledge.operation_board import submit
+        return jsonify(submit(kind,ident,body()))
     if action=='preview':return jsonify(preview(kind,ident))
     if action=='publish':return jsonify(publish(kind,ident,body()))
     if action=='withdraw':return jsonify(publish(kind,ident,body(),True))
@@ -882,3 +885,24 @@ def content_material_read(ident,mid):
 def editorial_upgrade():
     from backend.knowledge.editorial_batches import upgrade
     return jsonify(upgrade())
+
+
+@bp.get('/admin/workspace/operations')
+@admin_required
+def workspace_operation_board():
+    from backend.knowledge.operation_board import snapshot
+    return jsonify(snapshot(**{k:request.args[k] for k in ('day','source','metric') if k in request.args}))
+
+@bp.post('/admin/workspace/operations/<action>')
+@admin_required
+def workspace_operation_action(action):
+    from backend.knowledge.operation_board import upgrade,refresh
+    if action=='upgrade':return jsonify(upgrade())
+    if action=='refresh':return jsonify(refresh())
+    return jsonify(detail='Unknown operation'),404
+
+@bp.post('/admin/workspace/operations/issues/<ident>')
+@admin_required
+def workspace_issue_defer(ident):
+    from backend.knowledge.operation_board import defer
+    return jsonify(defer(ident,body()))

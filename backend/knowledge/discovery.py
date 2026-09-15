@@ -2,9 +2,10 @@
 import hashlib
 import json
 import re
+import time
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
-from urllib.parse import urljoin, urlsplit, urlencode, quote
+from urllib.parse import urljoin, urlsplit, urlencode, quote, parse_qs, urlunsplit
 import feedparser
 from backend.db import get_db
 from backend.knowledge import store
@@ -68,7 +69,7 @@ def material(url,body,coverage='full_text',title='原始材料'):
 def capture(source,entry):
     url=store.canonical_url(entry['url']);stamp=store.now();version=str(entry.get('version') or '')
     ident=store.stable_id('daily',url,version)
-    materials=entry.get('materials',[]);metadata={**entry.get('metadata',{}),'company':source['config'].get('company','')}
+    materials=list(entry.get('materials',[]));fresh_materials=list(materials);metadata={**entry.get('metadata',{}),'company':source['config'].get('company','')}
     metrics=entry.get('metrics',{})
     hashes=[(m['url'],m['content_hash']) for m in materials if m.get('title')!='Hub metadata']
     fp=hashlib.sha256(store.encode([entry['title'],entry.get('summary',''),version,hashes]).encode()).hexdigest()
@@ -97,6 +98,12 @@ def capture(source,entry):
                    (ident,source['id'],entry.get('origin_url') or url,stamp))
         if changed and old:
             db.execute("UPDATE fieldtofit_inbox SET status='pending',updated_at=? WHERE ref=? AND status='completed'",(stamp,'discovery:'+ident))
+        from backend.knowledge.operation_board import event
+        ref='discovery:'+ident
+        if changed:event(db,source['id'],ref,'changed' if old else 'discovered',fp)
+        for m in fresh_materials:
+            if m.get('body') and m.get('coverage') in ('full_text','excerpt','abstract'):
+                event(db,source['id'],ref,m['coverage'],m.get('content_hash',''))
         if metrics:
             db.execute('INSERT INTO fieldtofit_attention_observations VALUES(?,?,?,?,?) ON CONFLICT(url,source_id,day) DO UPDATE SET observed_at=excluded.observed_at,metrics=excluded.metrics',
                        (url,source['id'],stamp[:10],stamp,store.encode(metrics)))
@@ -126,6 +133,9 @@ def _collect(source,counters):
             counters[1]+=capture(source,entry);counters[0]+=1
             super().append(entry)
     entries=Captured();more=None;errors=[];found=changed=0;started=store.now()
+    def error_kind(exc):
+        status=getattr(getattr(exc,'response',None),'status_code',None)
+        return ('HTTP '+str(status)) if status else ('读取超时' if isinstance(exc,TimeoutError) or 'Timeout' in type(exc).__name__ else str(exc)[:160] if isinstance(exc,ValueError) else type(exc).__name__)
     def recent(value):
         value=iso(value)
         return not value or datetime.fromisoformat(value.replace('Z','+00:00')).replace(tzinfo=timezone.utc)>=earliest
@@ -156,7 +166,7 @@ def _collect(source,counters):
                     card_url=original+'/raw/'+quote(version or 'main',safe='')+'/README.md'
                     body,final,_=sources.fetch(card_url);mats.append(material(final,body.decode('utf-8'),'full_text','Model card'))
                 except Exception as exc:
-                    gaps.append('模型卡读取失败：'+type(exc).__name__);errors.append(gaps[-1])
+                    gaps.append('模型卡读取失败：'+error_kind(exc));errors.append(card_url+' · '+gaps[-1])
                 entries.append({'url':original,'title':name,'summary':(item.get('cardData') or {}).get('description') or item.get('pipeline_tag') or '',
                     'type':'model','version':version,'published_at':item.get('createdAt'),'materials':mats,
                     'metrics':{k:item[k] for k in ('likes','downloads') if isinstance(item.get(k),int)},
@@ -193,13 +203,36 @@ def _collect(source,counters):
             if not feed.entries:raise ValueError('No readable feed entries')
             pending=[{'url':e.link,'title':e.title,'published_at':sources.entry_date(e),'modified_at':sources.entry_date(e,'updated'),'excerpt':sources.plain_html(e.get('summary',''))} for e in feed.entries if e.get('link') and e.get('title') and recent(sources.entry_date(e))]
         else:
-            index=Article();index.feed(raw.decode('utf-8'));prefix=cfg.get('path_prefix','/')
-            urls={}
-            for href,label in index.link_labels:
-                u=urljoin(final,href)
-                if urlsplit(u).hostname!=urlsplit(final).hostname or not urlsplit(u).path.startswith(prefix) or u.rstrip('/')==final.rstrip('/'):continue
-                date=displayed_date(label)
-                if u not in urls or date:urls[u]={'url':u,'published_at':date}
+            prefix=cfg.get('path_prefix','/');urls={}
+            index_pending=list(state.get('index_pending',[]));index_seen=set(state.get('index_seen',[]))
+            base=urlsplit(final)
+            def index_page(url):
+                p=urlsplit(url)
+                return p.hostname==base.hostname and p.path.rstrip('/')==base.path.rstrip('/')
+            def parse_index(body,location):
+                index=Article();index.feed(body.decode('utf-8'))
+                for href,label in index.link_labels:
+                    u=urljoin(location,href);parts=urlsplit(u);u=urlunsplit(parts._replace(fragment=''))
+                    if parts.hostname!=base.hostname or not parts.path.startswith(prefix):continue
+                    if index_page(u):
+                        q=parse_qs(parts.query)
+                        if len(q)==1 and q.get('page',[''])[0].isdigit() and int(q['page'][0])>1 and u not in index_seen and u not in index_pending:index_pending.append(u)
+                        continue
+                    date=displayed_date(label)
+                    if u not in urls or date:urls[u]={'url':u,'published_at':date}
+            # Older versions accidentally stored directory pages in the article queue.
+            for x in state.get('pending',[]):
+                if index_page(x['url']) and x['url'] not in index_seen and x['url'] not in index_pending:index_pending.append(x['url'])
+            parse_index(raw,final)
+            if index_pending and not any(not index_page(x['url']) for x in state.get('pending',[])):
+                next_index=index_pending[0]
+                parts=urlsplit(next_index);q=parse_qs(parts.query)
+                if not index_page(next_index) or len(q)!=1 or not q.get('page',[''])[0].isdigit():raise ValueError('Invalid index continuation')
+                try:
+                    page_raw,page_final,_=sources.fetch(next_index)
+                    if not index_page(page_final):raise ValueError('Index continuation redirected outside directory')
+                    index_pending.pop(0);index_seen.add(next_index);parse_index(page_raw,page_final)
+                except Exception as exc:errors.append(next_index+' · '+error_kind(exc))
             pending=sorted([x for x in urls.values() if recent(x['published_at'])],key=lambda x:x['published_at'] or '',reverse=True)
         if mode=='index' and cfg.get('company')=='bytedance' and not pending:
             # Public server-rendered router data, parsed as JSON only (never JavaScript).
@@ -220,13 +253,17 @@ def _collect(source,counters):
         def signature(x):return hashlib.sha256(store.encode(x).encode()).hexdigest()
         if mode=='index' and not pending:raise ValueError('Official index has no readable article links')
         pending=[x for x in pending if cfg.get('recheck_body') or seen_entries.get(x['url'])!=signature(x)]
-        previous=state.get('pending',[])
-        head=pending[:max(1,limit//2)]
+        previous=[x for x in state.get('pending',[]) if mode!='index' or not index_page(x['url'])]
+        # One-slot runs must drain the previous queue instead of re-reading the head forever.
+        head=pending[:max(1,limit//2)] if limit>1 or not previous else []
         rechecked=set(state.get('rechecked',[]))
         if cfg.get('recheck_body'):pending=[x for x in pending if x['url'] not in rechecked]
         pending=list({x['url']:x for x in head+previous+pending}.values())
         rest=pending[limit:]
-        for item in pending[:limit]:
+        for pos,item in enumerate(pending[:limit]):
+            deadline=sources.COLLECTION_DEADLINE.get()
+            if deadline and deadline-time.monotonic()<2:
+                rest.extend(pending[pos:limit]);errors.append('本次预算已用完，未开始的文章留待下次');break
             try:
                 raw,final,_=sources.fetch(item['url']);doc=Article();doc.feed(raw.decode('utf-8'))
                 body=doc.body
@@ -246,7 +283,7 @@ def _collect(source,counters):
                     'metadata':{'primary':urlsplit(final).hostname==urlsplit(source['url']).hostname,'change':'official_article','gaps':[] if date else ['原文发布日期未知']}})
                 seen_entries[item['url']]=signature(item);rechecked.add(item['url'])
             except Exception as exc:
-                errors.append(type(exc).__name__);rest.append(item)
+                errors.append(item['url']+' · '+error_kind(exc));rest.append(item)
                 if item.get('title'):
                     excerpt=item.get('excerpt','')
                     entries.append({'url':item['url'],'title':item['title'],'summary':excerpt,'type':'news','published_at':item.get('published_at'),
@@ -283,29 +320,50 @@ def _collect(source,counters):
                 'metrics':{k:x[k] for k in ('points','num_comments') if isinstance(x.get(k),int)},
                 'metadata':{'primary':False,'change':'discussion','discussion_at':x.get('created_at'),'gaps':['讨论线索，原始材料待核对']}})
     elif mode=='arxiv':
-        query=' OR '.join('ti:'+x for x in ('DeepSeek','Qwen','Kimi','GLM','Gemini','Claude','agent','harness'))
-        page=int(state.get('offset',0));raw,_,_=sources.fetch(source['url']+'?'+urlencode({'search_query':query,'sortBy':'lastUpdatedDate','sortOrder':'descending','max_results':limit,'start':page}))
-        feed=feedparser.parse(raw)
-        if not feed.entries:raise ValueError('No readable research entries')
-        more=page+limit if len(feed.entries)==limit and all(recent(e.get('updated')) for e in feed.entries) else None
-        for e in feed.entries:
+        terms=('DeepSeek','Qwen','Kimi','GLM','Gemini','Claude','agent','harness')
+        query=' OR '.join('ti:'+x for x in terms)
+        page=int(state.get('offset',0));fallback=False
+        try:
+            raw,_,_=sources.fetch(source['url']+'?'+urlencode({'search_query':query,'sortBy':'lastUpdatedDate','sortOrder':'descending','max_results':limit,'start':page}))
+            feed=feedparser.parse(raw)
+            if feed.bozo or not feed.version or (not feed.entries and str(feed.feed.get('opensearch_totalresults'))!='0'):raise ValueError('Invalid arXiv API feed')
+            if any('/api/errors' in e.get('id','') for e in feed.entries):raise ValueError('arXiv returned an API error entry')
+            more=page+limit if len(feed.entries)==limit and all(recent(e.get('updated')) for e in feed.entries) else None
+            selected=feed.entries
+        except Exception as exc:
+            # Official daily feed is narrower than search; preserve the API failure and cursor.
+            errors.append('arXiv API · '+error_kind(exc));fallback=True;more=page
+            try:
+                raw,_,_=sources.fetch('https://rss.arxiv.org/atom/cs.AI')
+                feed=feedparser.parse(raw)
+                if feed.bozo or not feed.version:raise ValueError('Invalid arXiv fallback feed')
+            except Exception as fallback_error:
+                errors.append('cs.AI 摘要补充 · '+error_kind(fallback_error))
+                save_progress(source['id'],{**state,'offset':page,'status':'backlog','errors':errors,'last_page_at':store.now()})
+                raise sources.PartialSourceError(counters[0],counters[1],'本次未取得论文材料；'+'；'.join(errors)) from fallback_error
+            selected=[e for e in feed.entries if any(re.search(r'\b'+re.escape(t)+r'\w*',e.get('title',''),re.I) for t in terms)][:limit]
+        for e in selected:
             if not recent(e.get('updated')):continue
-            url=e.id.replace('http://','https://');version=re.search(r'v\d+$',url)
-            entries.append({'url':url,'title':' '.join(e.title.split()),'summary':' '.join(e.summary.split()),'type':'paper','version':version[0] if version else '',
-                'published_at':e.get('published'),'materials':[material(url,e.summary,'abstract','论文摘要')],
-                'metadata':{'primary':True,'change':'paper','gaps':['当前只有摘要，论文全文与同行评审状态未核实']}})
+            url=e.get('link') if fallback else e.get('id')
+            if not url or urlsplit(url).hostname not in ('arxiv.org','export.arxiv.org') or not urlsplit(url).path.startswith('/abs/'):raise ValueError('Invalid arXiv article identity')
+            url=url.replace('http://','https://');version=re.search(r'v\d+$',url)
+            entries.append({'url':url,'title':' '.join(e.title.split()),'summary':' '.join(sources.plain_html(e.summary).split()),'type':'paper','version':version[0] if version else '',
+                'published_at':None if fallback else e.get('published'),'materials':[material(url,sources.plain_html(e.summary),'abstract','论文摘要')],
+                'metadata':{'primary':True,'change':'paper','gaps':['当前只有摘要，论文全文与同行评审状态未核实']+(['API 失败；仅补充 cs.AI 当日订阅中的相关标题，不代表检索与历史分页已恢复；订阅日期不作为论文发布日期'] if fallback else []),'acquisition':'official_cs_ai_feed' if fallback else 'arxiv_api'}})
     else:raise ValueError('Unsupported daily discovery mode')
     found,changed=counters
-    saved={'watermark':state.get('watermark') or boundary,'last_page_at':store.now(),'status':'backlog' if more or errors else 'complete'}
+    saved={'watermark':state.get('watermark') or boundary,'last_page_at':store.now(),'status':'backlog' if more or errors or (mode=='index' and index_pending) else 'complete','errors':errors}
     if mode=='hub':saved['next_url']=more
     if mode in ('feed','index'):
         saved['pending']=more
         saved['seen_entries']=dict(list(seen_entries.items())[-500:])
-        if cfg.get('recheck_body'):saved['rechecked']=list(rechecked) if more else []
+        if mode=='index':saved.update(index_pending=index_pending,index_seen=list(index_seen) if more or index_pending else [])
+        if cfg.get('recheck_body'):saved['rechecked']=list(rechecked) if more or (mode=='index' and index_pending) else []
     if mode=='qwen':saved.update(pending_ids=more,rechecked=qwen_visited)
     if mode=='github':saved['page']=more or 1
     if mode=='arxiv':saved['offset']=more or 0
-    if not more and not errors:saved['watermark']=started
+    unfinished=bool(more or errors or (mode=='index' and index_pending))
+    if not unfinished:saved['watermark']=started
     save_progress(source['id'],saved)
-    if more or errors:raise sources.PartialSourceError(found,changed,'已保存材料；还有分页或失败待续跑。'+','.join(errors[:3]))
+    if unfinished:raise sources.PartialSourceError(found,changed,'已保存材料；还有分页或失败待续跑。'+','.join(errors[:3]))
     return found,changed

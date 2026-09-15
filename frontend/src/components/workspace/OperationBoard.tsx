@@ -1,0 +1,33 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { request, send, useRemote } from '../../api/knowledge';
+import './operation-board.css';
+type Obj=Record<string,any>;
+const api='/v1/admin/workspace/operations';
+const metrics:Record<string,string>={checks:'已检查来源',discovered:'新发现',changed:'原始材料变化',full_text:'获取全文',excerpt:'获取节选',abstract:'获取摘要',organized:'提交复核',published_new:'首次发布',published_update:'发布更新',organize_pending:'当前待整理',review_pending:'当前待复核'};
+const date=(s:string)=>s?new Date(s).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai'}):'未记录';
+export function OperationBoard({open,issuesOnly=false,onCandidate}:{open:(kind:string,id:string)=>void;issuesOnly?:boolean;onCandidate?:(ref:string)=>void}){
+ const [day,setDay]=useState(new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'}));
+ const result=useRemote<Obj>(api+'?day='+day,true);
+ const [error,setError]=useState(''),[busy,setBusy]=useState(false),[drill,setDrill]=useState<Obj|null>(null),[deferred,setDeferred]=useState(false),[source,setSource]=useState('');
+ const [later,setLater]=useState<Obj|null>(null),[note,setNote]=useState(''),[review,setReview]=useState('');
+ async function act(path:string,body:Obj={}){setError('');setBusy(true);try{await send(path,body,'POST',true);result.reload();setLater(null);}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
+ async function details(metric:string,sid=''){setError('');setBusy(true);try{setDrill({...await request<Obj>(api+'?'+new URLSearchParams({day,metric,source:sid}),{},true),metric,sid});}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
+ function target(t:Obj){return t.kind?<button className="button" onClick={()=>open(t.kind,t.id)}>打开整理稿</button>:t.ref?(onCandidate?<button className="button" onClick={()=>onCandidate(t.ref)}>查看候选</button>:<Link to={'/admin?section=daily&candidate='+encodeURIComponent(t.ref)}>查看候选 →</Link>):t.source?<button className="button" disabled={busy} onClick={()=>act('/v1/admin/sources/'+encodeURIComponent(t.source)+'/run')}>重试此来源</button>:null;}
+ const data=result.data;const issues=(data?.issues||[]).filter((i:Obj)=>(deferred||i.status!=='later')&&(!source||i.source===source));
+ return <section className="operation-board" aria-label={issuesOnly?'需要先处理':'每日运行与内容进度'}>
+ <div className="management-section-title"><div><h2>{issuesOnly?'需要先处理':'每日运行与内容进度'}</h2><p>{issuesOnly?'检查采集异常、缺材料和待复核项；处理后重新汇总。':'按北京时间统计真实动作，当前积压单独展示。点击数量查看对应条目。'}</p></div><button className="button" disabled={busy} onClick={()=>act(api+'/refresh')}>{busy?'处理中…':'刷新并汇总问题'}</button></div>
+ {(error||result.error)&&<p className="error-text" role="alert">{error||result.error}</p>}{result.loading&&<p role="status">正在读取进度…</p>}
+ {data&&!issuesOnly&&<><label className="operation-date">查看日期<input type="date" value={day} max={new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'})} onChange={e=>{setDay(e.target.value);setDrill(null);}}/></label><p className="muted">阶段动作开始记录：{date(data.tracking_since)}。{!data.tracking_complete_day?'所选日期不是完整记录日，不能据此判断全天完成。':''}</p>
+ <div className="operation-metrics">{Object.entries(metrics).map(([m,label])=><button key={m} disabled={busy||data.totals[m]===null} onClick={()=>details(m)}><span>{label}</span><strong>{data.totals[m]??'未记录'}</strong></button>)}</div>
+ <p>当天已检查 {data.totals.checks} 个来源，共 {data.totals.attempts} 次尝试；当前启用 {data.totals.planned_sources} 个来源。检查次数不代表全部材料已获取。</p>
+ <div className="operation-table" tabIndex={0} role="region" aria-label="来源阶段统计，可横向滚动"><table><thead><tr><th>来源 / 最近成功</th>{Object.entries(metrics).map(([m,label])=><th key={m}>{label}</th>)}<th>最长等待 / 失败原因</th></tr></thead><tbody>{data.sources.map((s:Obj)=><tr key={s.id}><th>{s.name}<small>{s.id==='local-editorial'?'本地推荐与人工资料':date(s.last_success_at)}</small>{!s.enabled&&<small>当前已暂停</small>}</th>{Object.keys(metrics).map(m=><td key={m}><button className="text-button" disabled={busy||s[m]===null} onClick={()=>details(m,s.id)}>{s[m]??'未记录'}</button></td>)}<td>{s.oldest_wait_days===null?'等待时间未记录':s.oldest_wait_days+' 天'}{s.unknown_wait_count>0&&<small>{s.unknown_wait_count} 项历史时间未知</small>}{s.backlog_count>0&&<small>待续 {s.backlog_count} 项</small>}{s.error&&<small className="error-text">{s.error}</small>}</td></tr>)}</tbody></table></div><p className="muted">{data.scope}“待整理 / 待复核”始终表示现在，不随历史日期回溯。</p>
+ {drill&&<section className="operation-drill"><div className="management-section-title"><h3>{metrics[drill.metric]} · {drill.details.length} 条记录</h3><button className="text-button" onClick={()=>setDrill(null)}>收起明细</button></div>{!drill.details.length&&<p>此范围没有已记录动作。</p>}{drill.details.map((d:Obj,i:number)=><article key={i}><div><strong>{d.title}</strong><small>{date(d.at)} · {d.source}{d.wait_days!=null?' · 已等待 '+d.wait_days+' 天':''}</small></div>{target(d.target)}</article>)}</section>}
+ </>}
+ {data&&<><div className="operation-issue-filters"><label>问题来源<select value={source} onChange={e=>setSource(e.target.value)}><option value="">全部来源</option>{data.sources.map((s:Obj)=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label><label><input type="checkbox" checked={deferred} onChange={e=>setDeferred(e.target.checked)}/>显示稍后处理项</label><span>当前 {issues.length} 项</span></div>
+ <div className="operation-issues">{!issues.length&&<p>当前筛选下没有问题；这不等于全部来源和运营验收通过。</p>}{issues.map((i:Obj)=><article key={i.id}><div><span className={'operation-priority p'+i.priority}>{i.status==='later'?'稍后处理':i.priority===0?'优先处理':i.priority===1?'需要核对':'待补充'}</span><h3>{i.title}</h3><p>{i.reason}</p><small>首次记录：{date(i.first_seen_at)}{i.review_on?' · 复查日期：'+i.review_on:''}</small>{i.note&&<p>处理备注：{i.note}</p>}</div><div className="platform-actions">{target(i.target)}<button className="text-button" onClick={()=>{setLater(i);setNote(i.note||'');setReview(i.review_on||day);}}>稍后处理</button></div></article>)}</div>
+ {later&&<form className="operation-later" onSubmit={e=>{e.preventDefault();act(api+'/issues/'+later.id,{fingerprint:later.fingerprint,review_on:review,note});}}><h3>稍后处理：{later.title}</h3><label>原因<textarea required value={note} onChange={e=>setNote(e.target.value)}/></label><label>复查日期<input type="date" required value={review} min={new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'})} onChange={e=>setReview(e.target.value)}/></label><button className="button" disabled={busy}>保存处理记录</button><button type="button" className="text-button" onClick={()=>setLater(null)}>取消</button><p>到期或原始问题发生变化会重新提醒；稍后处理不会被计为解决。</p></form>}
+ {!!data.resolved?.length&&<details><summary>已解决记录 · {data.resolved.length}</summary>{data.resolved.map((i:Obj)=><p key={i.id}>{i.title} · {date(i.resolved_at)}{i.note?' · '+i.note:''}</p>)}</details>}
+ </>}
+ </section>;
+}
