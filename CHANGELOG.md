@@ -25,7 +25,7 @@
 - Support narrow and landscape layouts, bottom safe areas, both languages and themes while retaining existing admin authentication. Update REQ-6-17, project management, and bilingual READMEs.
 <!-- release-summary:en:end -->
 
-对应 REQ-6-17，关联 REQ-6-14。当前为本地开发批次，尚未推送或部署；正式站仍为 v1.3.2。不涉及数据库迁移、资料发布或权限规则修改。验收结果见[手机导航验收](docs/validation/2026-09-15-mobile-navigation.md)。
+对应 REQ-6-17，关联 REQ-6-14。本批源码已同步至开发分支和 main，v1.3.3 已部署到 https://fieldtofit.top；正式站手机导航、管理登录、API 与 MCP 版本复验通过。不涉及数据库迁移、资料发布或权限规则修改。验收结果见[手机导航验收](docs/validation/2026-09-15-mobile-navigation.md)。
 
 <a id="v1.3.2"></a>
 ## v1.3.2 · 来源阶段统计、问题待办与运行验收 · 2026-09-15
