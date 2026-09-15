@@ -25,7 +25,7 @@
 - Add regression coverage for atomic remote upgrades and repeat execution; synchronize both READMEs and the single project-management overview.
 <!-- release-summary:en:end -->
 
-部署检查发现 v1.4.0 的远程增量升级未开启事务，未完成切站；本补丁按既定 z 递增规则修复后发布。对应 REQ-15 及 REQ-3/5/9/10，验证与部署状态见[同批验收](docs/validation/2026-09-15-stewardship.md)。
+部署检查发现 v1.4.0 的远程增量升级未开启事务，未完成切站；本补丁按既定 z 递增规则修复后发布。对应 REQ-15 及 REQ-3/5/9/10，已部署至 fieldtofit.top，健康接口和 MCP 均为 v1.4.1；管理只读、桌面／手机和新旧变化读取通过，公开 13 条动态／29 项持续关注修订不变。验证与部署状态见[同批验收](docs/validation/2026-09-15-stewardship.md)。
 
 <a id="v1.4.0"></a>
 ## v1.4.0 · 对象归并与材料持续维护 · 2026-09-15
@@ -50,7 +50,7 @@
 - Add scope=workspace to curated_changes for current news, watch profiles and material events while preserving legacy scope and separate continuation cursors.
 <!-- release-summary:en:end -->
 
-用户已确认使用 v1.4.0。对应 REQ-3-1/3/4、REQ-10-3、REQ-5-8、REQ-9-5/7，关联 REQ-8。当前为本地开发批次，未部署；生产仍为 v1.3.3。新增维护表需升级，原有公开资料未作实际归并或发布；真实对象操作仍须逐项确认。验收：292 项回归通过、1 项默认跳过，前端构建与隔离桌面／手机流程通过；见[本批验收](docs/validation/2026-09-15-stewardship.md)与[项目管理总览](FieldToFit-PM.md)。
+用户已确认使用 v1.4.0。对应 REQ-3-1/3/4、REQ-10-3、REQ-5-8、REQ-9-5/7，关联 REQ-8。首轮为本地开发验收；部署时补充远程升级兼容修复，全部功能随 v1.4.1 上线。新增维护表需升级，原有公开资料未作实际归并或发布；真实对象操作仍须逐项确认。验收：292 项回归通过、1 项默认跳过，前端构建与隔离桌面／手机流程通过；见[本批验收](docs/validation/2026-09-15-stewardship.md)与[项目管理总览](FieldToFit-PM.md)。
 
 <a id="v1.3.3"></a>
 ## v1.3.3 · 手机「更多」导航 · 2026-09-15
