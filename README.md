@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.0](CHANGELOG.md#v1.5.0)** · [fieldtofit-v1.5.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.0)
+**当前源码版本：[v1.5.1](CHANGELOG.md#v1.5.1)** · [fieldtofit-v1.5.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.1)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 新增 `curated_lookup` 与同源 HTTP 入口，一次检索已发布动态、持续关注和公开原文，返回命中原因、片段、出处、版本、覆盖与精确续读参数。
-- 动态和持续关注支持审核别名，保存不公开、发布后可检索；归并保留旧编号、合并别名并支持撤销，现有 MCP 地址与工具继续兼容。
-- For your AI 新增搜索预览、范围与类型筛选、复制交接及新旧材料混合资料包；游标固定顺序，逐页重新核对权限，撤回正文不从旧结果泄露。
-- 完成 311 项本地回归、桌面／手机浏览器及 HTTP MCP 分段原文哈希验证；同步唯一项目管理总览、中英文 README 和接入指南。
+- 发布用户确认的 Salesforce in Claude 与 Agent 开发／CI 工程实践两条动态，保留原文日期、逐点解读与关联资料。
+- 持续关注新增 Hermes Agent，提供 v0.21.3 固定版本、运行方式与稳定性修复表；原文覆盖明确标为仅链接，不冒充运行实测。
+- 同步 For you、For your AI 与统一 MCP 检索，记录私密提案确认、双端预览和发布过程；中英文 README、项目管理总览及版本记录同步更新。
+- 补录真实 Codex 客户端的 8 次 MCP 跨日读取证据；无变化修订与固定原文末段续读通过，连续三日和准时日报仍未验收通过。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
@@ -59,7 +59,7 @@ https://fieldtofit.top/api/mcp/curated
 
 将地址添加到支持远程 HTTP MCP 的 AI 客户端。连接后，让 AI 检索相关资料、读取出处、版本和已知限制，并结合你的任务继续工作。
 
-本轮源码新增 `curated_lookup`：在同一 MCP 内检索近期动态、持续关注和可公开原文，按结果继续读取或打包；For your AI 提供同源搜索预览。v1.5.0 已部署；正式服务能力可通过 `tools/list` 核对。
+`curated_lookup` 已上线：在同一 MCP 内检索近期动态、持续关注和可公开原文，按结果继续读取或打包；For your AI 提供同源搜索预览。本版继续提供同一 MCP 地址；正式服务能力可通过 `tools/list` 核对。
 
 无需网站账户。客户端是否支持远程 MCP、如何填写配置，请参阅 [For your AI](https://fieldtofit.top/for-your-ai) 和[接入指南](docs/guides/ai-access.md)。协议验证不代表所有客户端均已完成实际验收。
 

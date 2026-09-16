@@ -1,7 +1,7 @@
 {
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注",
-  "reviewed_at": "2026-09-15",
+  "reviewed_at": "2026-09-16",
   "edition": "cw1-2026-09-11",
   "groups": [
     {
@@ -2327,6 +2327,181 @@
         }
       ],
       "evidence_status": "official_materials_reviewed_not_runtime_tested"
+    },
+    {
+      "aliases": [
+        "Nous Hermes",
+        "Hermes"
+      ],
+      "blocks": [
+        {
+          "columns": [
+            "版本 / 标签",
+            "发布日期",
+            "定位与主要变化",
+            "采用入口",
+            "核验边界",
+            "依据"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v0.21.3 / v2026.9.14",
+              "2026-09-14",
+              "修复并发刷新引发的远程登录失效；修复长期进程重复 state.db 写入句柄",
+              "已有 Git 安装可按官方说明更新；Docker / Cloud 使用对应标签",
+              "发布说明已核对；未安装或长时间运行实测",
+              "[版本说明](https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.14)"
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "资料项",
+            "已核对内容",
+            "使用入口 / 限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "项目与开放情况",
+              "Nous Research 开发；该标签 LICENSE 为 MIT",
+              "[固定版本 LICENSE](https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/LICENSE)；所接模型服务的账户和费用另查"
+            ],
+            [
+              "记忆与技能",
+              "README 列出技能积累、对话检索及记忆管理",
+              "[固定版本 README](https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/README.md)；未验证自动改进效果"
+            ],
+            [
+              "交互与运行",
+              "README 列出 CLI、消息渠道与定时任务；可配置模型服务",
+              "[官方文档](https://hermes-agent.nousresearch.com/docs/)；当前文档可能超出该标签版本，接入需按版本核对"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "关注依据是可核对的项目材料与具体维护记录。没有近期 Star 增长序列，不标注近期暴涨。本站未验证资源占用、渠道接入及稳定性；当前向 AI 提供结构化介绍和来源链接，未托管仓库全文。"
+        }
+      ],
+      "checked_at": "2026-09-16",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A08",
+      "interpretation": [
+        {
+          "text": "固定版本 README 描述从任务经验形成技能、检索过去对话，以及从不同消息渠道继续工作。这说明项目的运行方式，学习效果与长期表现尚未实测。",
+          "title": "关注跨会话记忆与技能积累"
+        },
+        {
+          "text": "最新已核对标签重点修复运行问题：并发刷新引发的远程登录会话失效，以及长时间运行时重复数据库写入句柄的问题。",
+          "title": "v0.21.3 先看常驻运行的修复"
+        },
+        {
+          "text": "对准备部署常驻 Agent 的读者，登录恢复和状态存储是具体的采用依据。可先从对应版本的修复记录与运行文档了解这些环节；本站尚未验证长期运行效果。",
+          "title": "采用依据落到会话与状态管理"
+        }
+      ],
+      "introduction": "Nous Research 的开源 Agent 项目，将跨会话记忆、技能积累、模型接入和多渠道使用放在一个运行系统里。",
+      "name": "Hermes Agent",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-16",
+          "coverage": "link_only",
+          "id": "source-1",
+          "locator": "官方发布或固定版本材料",
+          "reason": "本批发布结构化整理与官方入口，未收录原文正文。",
+          "retrieved_at": "2026-09-16",
+          "rights": {
+            "basis": "链接至原始材料；本批不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Hermes Agent · 固定版本 README",
+          "upstream_revision": "v0.21.3 / v2026.9.14",
+          "url": "https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/README.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-16",
+          "coverage": "link_only",
+          "id": "source-2",
+          "locator": "官方发布或固定版本材料",
+          "reason": "本批发布结构化整理与官方入口，未收录原文正文。",
+          "retrieved_at": "2026-09-16",
+          "rights": {
+            "basis": "链接至原始材料；本批不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Hermes Agent v0.21.3 · v2026.9.14",
+          "upstream_revision": "v0.21.3 / v2026.9.14",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.14"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-16",
+          "coverage": "link_only",
+          "id": "source-3",
+          "locator": "官方发布或固定版本材料",
+          "reason": "本批发布结构化整理与官方入口，未收录原文正文。",
+          "retrieved_at": "2026-09-16",
+          "rights": {
+            "basis": "链接至原始材料；本批不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MIT License · 固定版本",
+          "upstream_revision": "v0.21.3 / v2026.9.14",
+          "url": "https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/LICENSE"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-16",
+          "coverage": "link_only",
+          "id": "source-4",
+          "locator": "官方发布或固定版本材料",
+          "reason": "本批发布结构化整理与官方入口，未收录原文正文。",
+          "retrieved_at": "2026-09-16",
+          "rights": {
+            "basis": "链接至原始材料；本批不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Hermes 官方文档入口",
+          "upstream_revision": "v0.21.3 / v2026.9.14",
+          "url": "https://hermes-agent.nousresearch.com/docs/"
+        }
+      ],
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "Hermes Agent · 固定版本 README",
+          "url": "https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Hermes Agent v0.21.3 · v2026.9.14",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.14"
+        },
+        {
+          "coverage": "link_only",
+          "title": "MIT License · 固定版本",
+          "url": "https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/LICENSE"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Hermes 官方文档入口",
+          "url": "https://hermes-agent.nousresearch.com/docs/"
+        }
+      ],
+      "state": "published",
+      "type": "agent"
     }
   ]
 }

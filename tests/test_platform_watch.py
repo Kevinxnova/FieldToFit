@@ -18,8 +18,8 @@ def test_shared_content_complete_and_searchable(client):
     response = client.get('/api/v1/platform/watch')
     assert response.status_code == 200
     body = response.json
-    assert body['total'] == 29
-    assert [g['count'] for g in body['groups']] == [9, 5, 7, 4, 4]
+    assert body['total'] == 30
+    assert [g['count'] for g in body['groups']] == [9, 5, 8, 4, 4]
     rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call',
         'params':{'name':'curated_watch','arguments':{}}}).json['result']
     assert not rpc.get('isError') and rpc['structuredContent'] == body
@@ -86,7 +86,7 @@ def test_submission_filter_and_mcp(client, tmp_path, monkeypatch):
     data['items'].append(item)
     path.write_text(json.dumps(data))
     body = client.get('/api/v1/platform/watch?origin=developer_submission').json
-    assert body['total'] == 1 and body['collection_total'] == 30
+    assert body['total'] == 1 and body['collection_total'] == 31
     assert body['origin'] == 'developer_submission'
     assert body['items'][0]['submission']['relationship'] == '第三方推荐'
     assert 'SECRET' not in json.dumps(body) and 'private@example.com' not in json.dumps(body)

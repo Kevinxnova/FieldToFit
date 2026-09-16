@@ -2,8 +2,194 @@
   "schema_version": "fieldtofit.news.v1",
   "edition": "2026-09-11-launch",
   "title": "首发回顾",
-  "reviewed_at": "2026-09-15",
+  "reviewed_at": "2026-09-16",
   "items": [
+    {
+      "aliases": [
+        "Salesforce Claude 插件"
+      ],
+      "checked_at": "2026-09-16",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-15",
+      "highlight": false,
+      "id": "D-14",
+      "interpretation": [
+        {
+          "locator": "Introduction / How sellers can use Salesforce in Claude today",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "值得看三个组成部分：技能规定工作步骤，连接器访问业务数据，权限约束可执行动作；这比单独列出“支持销售”更能说明应用如何落地。",
+          "title": "技能、连接器和权限怎样配合"
+        },
+        {
+          "locator": "How sellers can use Salesforce in Claude today",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "会议准备、商机复核、会后更新可以连起来；官方描述的 CRM 写入包含用户审核环节，不能概括成无须人参与的全自动销售。",
+          "title": "CRM 写入保留人工确认"
+        },
+        {
+          "locator": "Getting started / Release notes: September 15",
+          "source_ids": [
+            "release-notes"
+          ],
+          "text": "当前为 beta，付费 Claude 方案还需组织获得接入批准；FieldToFit 未实测账号接入、成功率与费用。",
+          "title": "beta 的接入条件与待验项"
+        }
+      ],
+      "name": "Salesforce in Claude",
+      "note": "版本：Salesforce in Claude beta。官方材料已核对；未做独立接入或性能测试。原文仅链接，不代表本站托管全文。",
+      "organization": "Anthropic / Salesforce",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-16",
+          "coverage": "link_only",
+          "id": "primary",
+          "locator": "官方发布或固定版本材料",
+          "reason": "本批发布结构化整理与官方入口，未收录原文正文。",
+          "retrieved_at": "2026-09-16",
+          "rights": {
+            "basis": "链接至原始材料；本批不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Bringing Salesforce into Claude",
+          "upstream_revision": "Salesforce in Claude beta",
+          "url": "https://claude.com/blog/salesforce-in-claude"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-16",
+          "coverage": "link_only",
+          "id": "release-notes",
+          "locator": "官方发布或固定版本材料",
+          "reason": "本批发布结构化整理与官方入口，未收录原文正文。",
+          "retrieved_at": "2026-09-16",
+          "rights": {
+            "basis": "链接至原始材料；本批不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Claude 官方更新记录 · 2026-09-15",
+          "upstream_revision": "Salesforce in Claude beta",
+          "url": "https://support.claude.com/en/articles/12138966-release-notes"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m02"
+        }
+      ],
+      "source_published_at": "2026-09-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "Bringing Salesforce into Claude",
+          "url": "https://claude.com/blog/salesforce-in-claude"
+        },
+        {
+          "coverage": "link_only",
+          "id": "release-notes",
+          "title": "Claude 官方更新记录 · 2026-09-15",
+          "url": "https://support.claude.com/en/articles/12138966-release-notes"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic 与 Salesforce 推出测试版插件，在既有 Salesforce 权限下，将客户、商机和销售管道接入 Claude，并提供 37 项预设销售技能。",
+      "title": "Salesforce 进入 Claude：37 项销售技能连接业务数据与人工确认"
+    },
+    {
+      "aliases": [
+        "测试影响分析",
+        "test impact analysis"
+      ],
+      "checked_at": "2026-09-16",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-14",
+      "highlight": false,
+      "id": "D-15",
+      "interpretation": [
+        {
+          "locator": "The test impact analysis architecture / Patch 3: Daily restarts",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "核心问题是测试结果处理积压：新测试、已修复测试和不稳定测试的状态没能及时进入选测依据；不能把它误读成“代码没有经过测试就上线”。",
+          "title": "积压的是测试结果处理"
+        },
+        {
+          "locator": "The redesign",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "值得看状态如何拆开：监听 worker 写入日志，由独立消费者汇总每项测试的历史，让 worker 可以横向扩展。",
+          "title": "把结果日志与历史汇总拆开"
+        },
+        {
+          "locator": "The redesign / What I would do differently；采用建议为 FieldToFit 评价",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "FieldToFit 判断：这份材料适合已有 CI 积压的团队参考；分布式方案运行更贵，不建议小项目只因用了 Agent 就照搬。官方产能与规模数字不是本站实测。",
+          "title": "什么时候值得采用这种架构"
+        }
+      ],
+      "name": "Agentic coding / CI test selection",
+      "note": "版本：工程文章 2026-09-14。官方材料已核对；未做独立接入或性能测试。原文仅链接，不代表本站托管全文。",
+      "organization": "Anthropic",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-16",
+          "coverage": "link_only",
+          "id": "primary",
+          "locator": "官方发布或固定版本材料",
+          "reason": "本批发布结构化整理与官方入口，未收录原文正文。",
+          "retrieved_at": "2026-09-16",
+          "rights": {
+            "basis": "链接至原始材料；本批不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Agentic coding is straining CI",
+          "upstream_revision": "工程文章 2026-09-14",
+          "url": "https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/for-you#watch-cw-a02"
+        },
+        {
+          "id": "D-11",
+          "name": "Perplexity / GPT-6 Astra · 同为测试实践，不是同一事件",
+          "url": "https://fieldtofit.top/for-you#news-d-11"
+        }
+      ],
+      "source_published_at": "2026-09-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "Agentic coding is straining CI",
+          "url": "https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic 分享测试选择服务的扩容过程：代码与测试增长后，收集测试结果的服务落后，选测系统会使用过时信息。",
+      "title": "Agent 写代码更快之后，测试系统为什么成为瓶颈？"
+    },
     {
       "id": "D-12",
       "state": "published",

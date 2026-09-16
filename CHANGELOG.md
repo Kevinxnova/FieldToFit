@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.1"></a>
+## v1.5.1 · 日报三项内容发布 · 2026-09-16
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布用户确认的 Salesforce in Claude 与 Agent 开发／CI 工程实践两条动态，保留原文日期、逐点解读与关联资料。
+- 持续关注新增 Hermes Agent，提供 v0.21.3 固定版本、运行方式与稳定性修复表；原文覆盖明确标为仅链接，不冒充运行实测。
+- 同步 For you、For your AI 与统一 MCP 检索，记录私密提案确认、双端预览和发布过程；中英文 README、项目管理总览及版本记录同步更新。
+- 补录真实 Codex 客户端的 8 次 MCP 跨日读取证据；无变化修订与固定原文末段续读通过，连续三日和准时日报仍未验收通过。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the approved Salesforce in Claude and agentic-coding/CI developments, preserving source dates, specific editorial notes and related profiles.
+- Add Hermes Agent to ongoing watch with the fixed v0.21.3 release, operating details and stability fixes; explicitly label source links and untested runtime claims.
+- Share the reviewed content across For you, For your AI and unified MCP lookup; record proposal approval, dual previews and publication, and synchronize both READMEs and the project overview.
+- Record eight real Codex MCP calls for next-day revision checks and fixed-revision continuation; three-day operation and punctual briefing delivery remain unverified.
+<!-- release-summary:en:end -->
+
+对应 REQ-6、REQ-8-9、REQ-9-3/6、REQ-10、REQ-11。已发布 D-14、D-15、CW-A08，正式站运行 v1.5.1，共 15 条动态、30 项持续关注。311 项回归、前端构建、桌面／手机双端预览和生产 MCP/API 同源取材通过；结果见[内容与跨日取材验收](docs/validation/2026-09-16-editorial.md)。无数据库迁移，不改变采集周期、账户或模型图表。
+
 <a id="v1.5.0"></a>
 ## v1.5.0 · 统一取材入口 · 2026-09-15
 

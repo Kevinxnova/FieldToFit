@@ -166,7 +166,7 @@ def test_admin_auth_origin_and_missing_migration(client):
     assert client.post(BASE+'/migrate',headers={**ADMIN,'Origin':'https://hostile.example'},json={}).status_code==403
     ref=call(client,'/inbox',{'title':'Candidate','url':'https://example.org/candidate'}).json['ref']
     assert call(client,'/select',{'ref':ref,'action':'select'}).status_code==409
-    assert client.get('/api/v1/platform/watch').json['total']==29
+    assert client.get('/api/v1/platform/watch').json['total']==30
     migrate(client)
     assert client.get(BASE+'/backup').status_code==401
     assert call(client,'/content/watch/CW-M01/publish',{'draft_version':1,'reason':'Missing preview','confirmed':True}).status_code==409
@@ -186,7 +186,7 @@ def test_daily_intake_original_materials_reach_editor_without_publishing(client)
     selected=call(client,'/select',{'ref':pending[0]['ref'],'action':'select','kind':'watch'}).json
     exported=call(client,f"/content/watch/{selected['id']}/export",method='get').json
     assert exported['materials'][0]['body']==body and exported['materials'][0]['coverage']=='full_text'
-    assert client.get('/api/v1/platform/watch').json['total']==29
+    assert client.get('/api/v1/platform/watch').json['total']==30
 
 
 def test_malformed_drafts_cannot_break_editor_and_chart_private_fields_stay_private(client):
