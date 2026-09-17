@@ -2,8 +2,219 @@
   "schema_version": "fieldtofit.news.v1",
   "edition": "2026-09-11-launch",
   "title": "首发回顾",
-  "reviewed_at": "2026-09-16",
+  "reviewed_at": "2026-09-17",
   "items": [
+    {
+      "_position": 1,
+      "aliases": [
+        "Gemini 3.8 Live Extended Thinking",
+        "Gemini Live"
+      ],
+      "checked_at": "2026-09-17",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-15",
+      "highlight": false,
+      "id": "D-16",
+      "interpretation": [
+        {
+          "locator": "Developer announcement · Asynchronous function calling",
+          "source_ids": [
+            "developer"
+          ],
+          "text": "对话与工具执行可以同时进行。官方开发者说明支持异步函数调用，后台等待工具结果时仍可输出音频；值得关注等待期间的回应和任务进度，而不只看声音是否自然。本站未实测延迟。",
+          "title": "对话继续，工具在后台处理"
+        },
+        {
+          "locator": "Model card · Limitations；公告两型号定位",
+          "source_ids": [
+            "primary",
+            "model-card"
+          ],
+          "text": "Live 与 Extended Thinking 分开标注。前者侧重实时交互与规模化使用；后者增加多步推理并可播报进度。模型卡仍列有幻觉、偶发变慢和超时，不能把官方展示当成长任务成功率保证。",
+          "title": "两种型号的推理与等待取舍"
+        },
+        {
+          "locator": "Live API overview / Develop with agents（页面更新 2026-09-01，早于本次发布）",
+          "source_ids": [
+            "live-api",
+            "coding-agents",
+            "examples"
+          ],
+          "text": "把采用入口一起收录：Live API 概览、官方示例和 gemini-live-api-dev Skill；Gemini Docs MCP 可供用户的 AI 进一步读取官方文档。这些入口已有资料，不将 9 月 1 日更新的 Skill 说明冒充本次新发布。",
+          "title": "把 API、Skill 和官方文档入口一起交给 AI"
+        }
+      ],
+      "name": "Gemini 3.8 Live",
+      "note": "9 月 15 日官方发布，9 月 17 日补录。未调用模型或验证账户／地区开放、延迟及成功率。公告与 API 概览的语言数量表述不同，不给出统一数字；两份文档正文已按许可收录，其余材料仅提供来源链接。",
+      "organization": "Google",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "# Live API overview\n\nThe Live API enables low-latency, real-time voice and vision interactions with Gemini. It processes continuous streams of audio, images, and text to deliver immediate, human-like spoken responses, creating a natural conversational experience for your users.\n\n[Try the Live API in Google AI Studio](https://aistudio.google.com/live) [Clone example apps from GitHub](https://github.com/google-gemini/gemini-live-api-examples) [Use coding agent skills](https://ai.google.dev/gemini-api/docs/coding-agents)\n\n## Use cases\n\nLive API can be used to build real-time voice agents for a variety of industries, including:\n\n- E-commerce and retail: Shopping assistants that offer personalized recommendations and support agents that resolve customer issues.\n\n- Gaming: Interactive non-player characters (NPCs), in-game help assistants, and real-time translation of in-game content.\n\n- Next-gen interfaces: Voice- and video-enabled experiences in robotics, smart glasses, and vehicles.\n\n- Healthcare: Health companions for patient support and education.\n\n- Financial services: AI advisors for wealth management and investment guidance.\n\n- Education: AI mentors and learner companions that provide personalized instruction and feedback.\n\n- Translation and localization: Real-time, low-latency translation of spoken conversations, enabling seamless multilingual communication.\n\n- Live transcription and captioning: Real-time speech-to-text streaming for live subtitles, meeting transcription, voice dictation, and customer call logging.\n\n## Key features\n\nLive API offers a comprehensive set of features for building robust voice agents:\n\n- [Multilingual support](https://ai.google.dev/gemini-api/docs/live-guide#supported-languages): Converse in 70 supported languages.\n\n- [Barge-in](https://ai.google.dev/gemini-api/docs/live-guide#interruptions): Users can interrupt the model at any time for responsive interactions.\n\n- [Tool use](https://ai.google.dev/gemini-api/docs/live-tools): Integrates tools like function calling and Google Search for dynamic interactions.\n\n- [Audio transcriptions](https://ai.google.dev/gemini-api/docs/live-guide#audio-transcription): Provides text transcripts of both user input and model output.\n\n- [Proactive audio](https://ai.google.dev/gemini-api/docs/live-guide#proactive-audio): Lets you control when the model responds and in what contexts.\n\n- [Affective dialog](https://ai.google.dev/gemini-api/docs/live-guide#affective-dialog): Adapts response style and tone to match the user's input expression.\n\n- [Live Transcription](https://ai.google.dev/gemini-api/docs/live-api/live-transcribe): Real-time, continuous speech-to-text streaming with automatic language detection and custom vocabulary.\n\n- [Live Translation](https://ai.google.dev/gemini-api/docs/live-api/live-translate): Real-time voice-to-voice translation in 70+ languages.\n\n## Technical specifications\n\nThe following table outlines the technical specifications for the Live API:\n\nCategory |  Details |\n\nInput modalities |  Audio (raw 16-bit PCM audio, 16kHz, little-endian), images (JPEG <= 1FPS), text |\n\nOutput modalities |  Audio (raw 16-bit PCM audio, 24kHz, little-endian) |\n\nProtocol |  Stateful WebSocket connection (WSS) |\n\n## Choose an implementation approach\n\nWhen integrating with Live API, you'll need to choose one of the following implementation approaches:\n\n- Server-to-server: Your backend connects to the Live API using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). Typically, your client sends stream data (audio, video, text) to your server, which then forwards it to the Live API.\n\n- Client-to-server: Your frontend code connects directly to the Live API using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to stream data, bypassing your backend.\n\n Note: Client-to-server generally offers better performance for streaming audio and video, since it bypasses the need to send the stream to your backend first. It's also easier to set up since you don't need to implement a proxy that sends data from your client to your server and then your server to the API. However, for production environments, in order to mitigate security risks, we recommend using [ephemeral tokens](https://ai.google.dev/gemini-api/docs/ephemeral-tokens) instead of standard API keys. \n\n## Get started\n\nSelect the guide that matches your development environment:\n\nServer-to-server  \n\n### [GenAI SDK tutorial](https://ai.google.dev/gemini-api/docs/live-api/get-started-sdk)\n\nConnect to the Gemini Live API using the GenAI SDK to build a real-time multimodal application with a Python backend.\n\nClient-to-server  \n\n### [WebSocket tutorial](https://ai.google.dev/gemini-api/docs/live-api/get-started-websocket)\n\nConnect to the Gemini Live API using WebSockets to build a real-time multimodal application with a JavaScript frontend and ephemeral tokens.\n\nAgent development kit  \n\n### [ADK tutorial](https://google.github.io/adk-docs/streaming/)\n\nCreate an agent and use the Agent Development Kit (ADK) Streaming to enable voice and video communication.\n\n## Partner integrations\n\nTo streamline the development of real-time audio and video apps, you can use a third-party integration that supports the Gemini Live API over WebRTC or WebSockets.\n\n[LiveKit\n\nUse the Gemini Live API with LiveKit Agents.](https://docs.livekit.io/agents/models/realtime/plugins/gemini/) [Pipecat by Daily\n\nCreate a real-time AI chatbot using Gemini Live and Pipecat.](https://docs.pipecat.ai/guides/features/gemini-live) [Fishjam by Software Mansion\n\nCreate live video and audio streaming applications with Fishjam.](https://docs.fishjam.io/tutorials/gemini-live-integration) [Vision Agents by Stream\n\nBuild real-time voice and video AI applications with Vision Agents.](https://visionagents.ai/integrations/gemini) [Voximplant\n\nConnect inbound and outbound calls to Live API with Voximplant.](https://voximplant.com/products/gemini-client) [Agora\n\nBuild real-time conversational AI applications with Agora.](https://docs.agora.io/en/conversational-ai/models/mllm/gemini) [Firebase AI SDK\n\nGet started with the Gemini Live API using Firebase AI Logic.](https://firebase.google.com/docs/ai-logic/live-api?api=dev)\n",
+          "checked_at": "2026-09-17",
+          "coverage": "full_text",
+          "id": "live-api",
+          "locator": "完整 devsite-article-body 正文，转为 Markdown；保留文本、代码及链接，不含站点导航和图片二进制。",
+          "retrieved_at": "2026-09-17T03:27:55.409264+00:00",
+          "rights": {
+            "basis": "CC BY 4.0（文档正文）；Apache 2.0（代码示例）",
+            "notice": "© Google。原文：https://ai.google.dev/gemini-api/docs/live-api。根据 CC BY 4.0 整理为 Markdown，省略导航及交互控件；代码示例另遵循 Apache 2.0：https://www.apache.org/licenses/LICENSE-2.0 。这是固定抓取快照，不代表页面此后没有变化。",
+            "url": "https://creativecommons.org/licenses/by/4.0/"
+          },
+          "title": "Live API overview · Google 官方文档快照",
+          "upstream_revision": "页面更新 2026-09-15；抓取 2026-09-17T03:27:55.409264+00:00",
+          "url": "https://ai.google.dev/gemini-api/docs/live-api"
+        },
+        {
+          "approved": true,
+          "body": "# Develop with agents\n\nAI coding assistants are powerful but have limitations—training data cuts off at a specific date, missing new API features and changes. Without access to Gemini-specific documentation, agents may suggest generic patterns instead of optimized approaches.\n\nTo keep your coding assistant current with the evolving Gemini API and its recommended usage, we recommend setting up the Gemini Docs MCP and enhancing your environment with Gemini API Skills. While these tools are usable independently, they are designed to work together to provide complete coverage.\n\n## Connect the Gemini Docs MCP\n\nGemini hosts a public Model Context Protocol (MCP) server at `https://gemini-api-docs-mcp.dev`. Connecting your coding agent to this server ensures that all queries have access to the latest APIs, code updates, and optimal configuration examples.\n\nRun the following command in your agent's terminal or project root to install the server:\n\n```\nnpx add-mcp \"https://gemini-api-docs-mcp.dev\"\n```\n\nThis server adds a `search_documentation` function that your agent can use to retrieve real-time API definitions and integration patterns from the official Gemini documentation files.\n\n## Add API Development Skills\n\nThe skills provide baked-in rules and best practices (such as enforcing the correct SDK and current model versions) directly in your assistant's context. The skill works together with the Gemini Docs MCP service: If you have both installed, the skill uses the MCP service for documentation, but even without the MCP installed, it will fetch `llms.txt` from `ai.google.dev` as a fallback.\n\nTo install these skills, you can use one of the following supported tools. Installation instructions for both are provided below each skill module:\n\n- [skills.sh](https://skills.sh): Recommended. The open standard for portable agent behaviors.\n\n- [Context7](https://context7.com): Supported for users already utilizing the Context7 ecosystem.\n\n### gemini-api-dev\n\nSkill for building apps with the [Gemini API](https://ai.google.dev/gemini-api/docs/interactions-overview) (Interactions API). The Interactions API is our simplest and best way to build with Gemini models and agents. This skill covers:\n\n- Text generation, multi-turn chat, and streaming\n\n- Function calling, structured output, and image generation\n\n- Background execution and Deep Research agents\n\n- Server-side conversation state management\n\n- Prompt routing to current models and avoiding deprecated models\n\n- Python and TypeScript SDK patterns\n\n#### Install with skills.sh\n\n```\nnpx skills add google-gemini/gemini-skills --skill gemini-api-dev --global\n```\n\n#### Install with Context7\n\n```\nnpx ctx7 skills install /google-gemini/gemini-skills gemini-api-dev\n```\n\n### gemini-live-api-dev\n\nSkill for building real-time conversational AI applications with Gemini Live API. This skill provides documentation and best practices for:\n\n- WebSocket connections for low-latency streaming\n\n- Streaming audio, video, and text\n\n- Voice activity detection and barge-in support\n\n#### Install with skills.sh\n\n```\nnpx skills add google-gemini/gemini-skills --skill gemini-live-api-dev --global\n```\n\n#### Install with Context7\n\n```\nnpx ctx7 skills install /google-gemini/gemini-skills gemini-live-api-dev\n```\n\n## Verify installation\n\nAfter installing, confirm that your coding assistant can connect to the Gemini Docs MCP server and use your installed skills.\n\n### 1. Verify agent behavior\n\nThe most reliable way to verify is to ask your agent a technical question about Gemini API.\n\nPrompt: \"How do I use context caching with the Gemini API?\"\n\nA successful setup will:\n\n- Provide accurate code: Reference specific Gemini methods like `cacheContent` or `cachedContents.create` from the latest endpoints.\n\n- Use the MCP Tool: Show that it is connected to the Gemini Docs MCP Server or utilizing the `search_documentation` tool to fetch data.\n\n- Invoke loaded skills: Show an indicator that it is \"Using skill: gemini-api-dev\" (if relying on a secondary wrapper).\n\n### 2. Verify manifestations & tools\n\nIf the agent gives a general or generic answer, use the specific Discovery or Status commands for your environment to verify that the Docs MCP or skill is loaded into memory.\n\nEnvironment |  MCP Verification |  Skills Verification |\n\nClaude Code |  Type `/mcp` in the terminal to view active servers and `search_documentation` tools. |  Type `/skills` in the terminal to list all active manifests. |\n\nCursor |  Navigate to Settings > Features > MCP. Ensure server is \"Connected\". |  Open Settings > Rules. Verify the skill appears under \"Agent Decides.\" |\n\nAntigravity |  Check the Customizations > Connections sidebar for MCP status. |  Type `/skills list` or check the Customizations > Rules sidebar. |\n\nGemini CLI |  Run `gemini mcp list` or use `/mcp list`. |  Run `gemini skills list` or use the `/skills` slash command in-session. |\n\nCopilot |  Type `@gemini /mcp` to list active data connectors. |  Type `@gemini /skills` (or `/skills`) to view active extensions. |\n\n## Troubleshooting\n\nIf your agent provides only general information or fails to recognize Gemini-specific methods, check the following:\n\n### Agent didn't discover the skill\n\nMost agents index skills only on startup.\n\nFix: Completely restart your IDE (Cursor/VS Code) or exit and re-open your terminal-based agent (Claude Code).\n\n### Global vs. local conflict\n\nIf you installed with the `--global` flag, your agent might be ignoring it in favor of project-specific rules.\n\nFix: Try installing the skill directly into your project root without the global flag:\n\n```\nnpx skills add google-gemini/gemini-skills --skill gemini-api-dev\n```\n\n## Resources\n\n- [Gemini API skills on GitHub](https://github.com/google-gemini/gemini-skills)\n\n- [Interactions API](https://ai.google.dev/gemini-api/docs/interactions-overview)\n\n- [Get started](https://ai.google.dev/gemini-api/docs/get-started)\n\n- [Libraries](https://ai.google.dev/gemini-api/docs/libraries)\n",
+          "checked_at": "2026-09-17",
+          "coverage": "full_text",
+          "id": "coding-agents",
+          "locator": "完整 devsite-article-body 正文，转为 Markdown；保留文本、代码及链接，不含站点导航和图片二进制。",
+          "retrieved_at": "2026-09-17T03:27:55.409264+00:00",
+          "rights": {
+            "basis": "CC BY 4.0（文档正文）；Apache 2.0（代码示例）",
+            "notice": "© Google。原文：https://ai.google.dev/gemini-api/docs/coding-agents。根据 CC BY 4.0 整理为 Markdown，省略导航及交互控件；代码示例另遵循 Apache 2.0：https://www.apache.org/licenses/LICENSE-2.0 。这是固定抓取快照，不代表页面此后没有变化。",
+            "url": "https://creativecommons.org/licenses/by/4.0/"
+          },
+          "title": "Develop with agents · Google 官方文档快照",
+          "upstream_revision": "页面更新 2026-09-01；抓取 2026-09-17T03:27:55.409264+00:00",
+          "url": "https://ai.google.dev/gemini-api/docs/coding-agents"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-17",
+          "coverage": "link_only",
+          "id": "primary",
+          "locator": "官方原始材料入口",
+          "reason": "本批未收录这项原文正文；公告／模型卡与代码仓库许可需按具体材料分别核对。",
+          "retrieved_at": "2026-09-17T03:27:55.409264+00:00",
+          "rights": {
+            "basis": "链接至官方来源；不转载正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Google · Gemini 3.8 Live 发布公告",
+          "upstream_revision": "2026-09-15 发布",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-17",
+          "coverage": "link_only",
+          "id": "developer",
+          "locator": "官方原始材料入口",
+          "reason": "本批未收录这项原文正文；公告／模型卡与代码仓库许可需按具体材料分别核对。",
+          "retrieved_at": "2026-09-17T03:27:55.409264+00:00",
+          "rights": {
+            "basis": "链接至官方来源；不转载正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Google · 实时语音应用与异步工具调用",
+          "upstream_revision": "2026-09-15 发布",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-17",
+          "coverage": "link_only",
+          "id": "model-card",
+          "locator": "官方原始材料入口",
+          "reason": "本批未收录这项原文正文；公告／模型卡与代码仓库许可需按具体材料分别核对。",
+          "retrieved_at": "2026-09-17T03:27:55.409264+00:00",
+          "rights": {
+            "basis": "链接至官方来源；不转载正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Google DeepMind · Gemini 3.8 Audio 模型卡",
+          "upstream_revision": "2026-09-15 发布",
+          "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-17",
+          "coverage": "link_only",
+          "id": "examples",
+          "locator": "官方原始材料入口",
+          "reason": "本批未收录这项原文正文；公告／模型卡与代码仓库许可需按具体材料分别核对。",
+          "retrieved_at": "2026-09-17T03:27:55.409264+00:00",
+          "rights": {
+            "basis": "链接至官方来源；不转载正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Google · Gemini Live API examples",
+          "upstream_revision": "2026-09-17 入口核对",
+          "url": "https://github.com/google-gemini/gemini-live-api-examples"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini · 同系列模型",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m03"
+        },
+        {
+          "id": "D-04",
+          "name": "Gemini 3.8 Flash · 另一分支",
+          "url": "https://fieldtofit.top/for-you#news-d-04"
+        },
+        {
+          "id": "D-13",
+          "name": "GPT-Live-1 · 相关语音主题，不同发布事件",
+          "url": "https://fieldtofit.top/for-you#news-d-13"
+        }
+      ],
+      "source_published_at": "2026-09-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "Google · Gemini 3.8 Live 发布公告",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "developer",
+          "title": "Google · 实时语音应用与异步工具调用",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "model-card",
+          "title": "Google DeepMind · Gemini 3.8 Audio 模型卡",
+          "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "live-api",
+          "title": "Live API overview",
+          "url": "https://ai.google.dev/gemini-api/docs/live-api"
+        },
+        {
+          "coverage": "link_only",
+          "id": "coding-agents",
+          "title": "Develop with agents · Docs MCP / Live API Skill",
+          "url": "https://ai.google.dev/gemini-api/docs/coding-agents"
+        },
+        {
+          "coverage": "link_only",
+          "id": "examples",
+          "title": "Google · Gemini Live API examples",
+          "url": "https://github.com/google-gemini/gemini-live-api-examples"
+        }
+      ],
+      "state": "published",
+      "summary": "Google 发布 Gemini 3.8 Live 与 Live Extended Thinking，开发者可通过 Gemini API 和 Google AI Studio 接入。两款模型把实时语音、视觉上下文与后台工具任务结合起来；Extended Thinking 面向需要更多推理的多步请求。",
+      "title": "Gemini 3.8 Live：语音对话继续，工具任务在后台执行"
+    },
     {
       "aliases": [
         "Salesforce Claude 插件"
@@ -104,7 +315,8 @@
       ],
       "state": "published",
       "summary": "Anthropic 与 Salesforce 推出测试版插件，在既有 Salesforce 权限下，将客户、商机和销售管道接入 Claude，并提供 37 项预设销售技能。",
-      "title": "Salesforce 进入 Claude：37 项销售技能连接业务数据与人工确认"
+      "title": "Salesforce 进入 Claude：37 项销售技能连接业务数据与人工确认",
+      "_position": 1
     },
     {
       "aliases": [
@@ -188,7 +400,8 @@
       ],
       "state": "published",
       "summary": "Anthropic 分享测试选择服务的扩容过程：代码与测试增长后，收集测试结果的服务落后，选测系统会使用过时信息。",
-      "title": "Agent 写代码更快之后，测试系统为什么成为瓶颈？"
+      "title": "Agent 写代码更快之后，测试系统为什么成为瓶颈？",
+      "_position": 2
     },
     {
       "id": "D-12",
@@ -287,7 +500,8 @@
           "upstream_revision": "滚动文档，2026-09-15 核对入口",
           "url": "https://developers.openai.com/api/docs/guides/agents-api/overview"
         }
-      ]
+      ],
+      "_position": 1
     },
     {
       "id": "D-13",
@@ -386,7 +600,8 @@
           "upstream_revision": "滚动文档，2026-09-15 核对入口",
           "url": "https://developers.openai.com/api/docs/guides/live"
         }
-      ]
+      ],
+      "_position": 2
     },
     {
       "id": "D-10",
@@ -561,7 +776,8 @@
           "upstream_revision": "",
           "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra/"
         }
-      ]
+      ],
+      "_position": 2
     },
     {
       "id": "D-01",

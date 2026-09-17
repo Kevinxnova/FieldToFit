@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.2"></a>
+## v1.5.2 · Gemini Live 动态与原文取材 · 2026-09-17
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增 Gemini 3.8 Live 动态，分别说明异步工具调用、Extended Thinking 和接入材料；保留 9 月 15 日发布日期与 9 月 17 日核验日期。
+- Gemini 持续关注表补充两款 Live 分支，保留 Flash 版本；两份 Google 官方文档按许可保存正文、链接、代码及固定快照，网页与 MCP 同源读取。
+- 记录 Hermes 原文取材对照实验与无账号关注更新方案；Hermes 候选正文尚未发布，关注功能尚未开发，不把计划写成已上线。
+- 同步中英文 README、唯一项目管理总览与发布验收记录，继续使用既有审核、资料包和 MCP 接口。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add the Gemini 3.8 Live development with source-backed notes on asynchronous tools, Extended Thinking and adoption materials; distinguish the September 15 announcement from the September 17 review.
+- Extend the Gemini watch table with both Live variants while retaining Flash; preserve two licensed Google documentation snapshots with text, code and links, shared by the website and MCP.
+- Record the Hermes source-reading comparison and the approved account-free following plan; the Hermes candidate remains unpublished and following remains unimplemented.
+- Synchronize both READMEs, the single project-management overview and publication evidence while retaining the existing review, bundle and MCP interfaces.
+<!-- release-summary:en:end -->
+
+对应 REQ-4、REQ-6、REQ-8-9、REQ-9、REQ-10/11。D-16 与 CW-M03 已发布，正式站与 MCP 均为 v1.5.2；当前 16 条动态、30 项持续关注。81 项相关回归、前端构建、桌面／手机及公开 MCP 分段原文校验通过。无数据库迁移，无新 MCP 工具。部署和真实验证结果见[内容验收](docs/validation/2026-09-17-editorial.md)；[Hermes 实验](docs/validation/2026-09-17-hermes-materials.md)不代表候选已上站。
+
 <a id="v1.5.1"></a>
 ## v1.5.1 · 日报三项内容发布 · 2026-09-16
 

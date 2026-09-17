@@ -34,16 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.1](CHANGELOG.md#v1.5.1)** · [fieldtofit-v1.5.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.1)
+**Current source version: [v1.5.2](CHANGELOG.md#v1.5.2)** · [fieldtofit-v1.5.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the approved Salesforce in Claude and agentic-coding/CI developments, preserving source dates, specific editorial notes and related profiles.
-- Add Hermes Agent to ongoing watch with the fixed v0.21.3 release, operating details and stability fixes; explicitly label source links and untested runtime claims.
-- Share the reviewed content across For you, For your AI and unified MCP lookup; record proposal approval, dual previews and publication, and synchronize both READMEs and the project overview.
-- Record eight real Codex MCP calls for next-day revision checks and fixed-revision continuation; three-day operation and punctual briefing delivery remain unverified.
+- Add the Gemini 3.8 Live development with source-backed notes on asynchronous tools, Extended Thinking and adoption materials; distinguish the September 15 announcement from the September 17 review.
+- Extend the Gemini watch table with both Live variants while retaining Flash; preserve two licensed Google documentation snapshots with text, code and links, shared by the website and MCP.
+- Record the Hermes source-reading comparison and the approved account-free following plan; the Hermes candidate remains unpublished and following remains unimplemented.
+- Synchronize both READMEs, the single project-management overview and publication evidence while retaining the existing review, bundle and MCP interfaces.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.1](CHANGELOG.md#v1.5.1)** · [fieldtofit-v1.5.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.1)
+**当前源码版本：[v1.5.2](CHANGELOG.md#v1.5.2)** · [fieldtofit-v1.5.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布用户确认的 Salesforce in Claude 与 Agent 开发／CI 工程实践两条动态，保留原文日期、逐点解读与关联资料。
-- 持续关注新增 Hermes Agent，提供 v0.21.3 固定版本、运行方式与稳定性修复表；原文覆盖明确标为仅链接，不冒充运行实测。
-- 同步 For you、For your AI 与统一 MCP 检索，记录私密提案确认、双端预览和发布过程；中英文 README、项目管理总览及版本记录同步更新。
-- 补录真实 Codex 客户端的 8 次 MCP 跨日读取证据；无变化修订与固定原文末段续读通过，连续三日和准时日报仍未验收通过。
+- 新增 Gemini 3.8 Live 动态，分别说明异步工具调用、Extended Thinking 和接入材料；保留 9 月 15 日发布日期与 9 月 17 日核验日期。
+- Gemini 持续关注表补充两款 Live 分支，保留 Flash 版本；两份 Google 官方文档按许可保存正文、链接、代码及固定快照，网页与 MCP 同源读取。
+- 记录 Hermes 原文取材对照实验与无账号关注更新方案；Hermes 候选正文尚未发布，关注功能尚未开发，不把计划写成已上线。
+- 同步中英文 README、唯一项目管理总览与发布验收记录，继续使用既有审核、资料包和 MCP 接口。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
