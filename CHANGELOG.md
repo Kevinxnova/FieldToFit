@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.3"></a>
+## v1.5.3 · Diagram Design Skill 与固定原文 · 2026-09-17
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 持续关注 → Skill 新增 Diagram Design，说明技术解释图的选型、可编辑 HTML／SVG、导出方式及使用边界。
+- 同一固定提交收录 README、核心 Skill、导出说明、MIT 许可、第三方许可及插件清单六份完整文件，供 MCP 检索、分段读取与资料包下载。
+- 保留插件版本与 Skill 元数据的区别，说明 README 与核心图形目录计数差异；未安装、执行或宣称生成效果实测。
+- 同步 v1.5.3 中英文 README、版本记录、唯一项目管理总览和实际验收结果；沿用现有发布流程及 MCP 接口。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add Diagram Design under ongoing-watch Skills, explaining diagram selection, editable HTML/SVG, export behavior and adoption boundaries.
+- Publish six complete files from one pinned commit: README, core Skill, export guide, MIT license, third-party notices and plugin manifest, available through MCP search, segmented reading and bundles.
+- Distinguish plugin and Skill metadata versions and disclose the README/type-directory count mismatch; no installation, execution or diagram-generation result is claimed.
+- Synchronize the v1.5.3 bilingual READMEs, changelog, single project-management overview and validation evidence using the existing publication and MCP interfaces.
+<!-- release-summary:en:end -->
+
+对应 REQ-4、REQ-6、REQ-8-9、REQ-9、REQ-10。CW-S05 已发布；正式站与 MCP 均为 v1.5.3，共 16 条动态、31 项持续关注。81 项相关回归、构建、桌面／手机和六份原文逐字重建验证通过。实际网页、MCP 原文和应用部署结果见[Skill 内容验收](docs/validation/2026-09-17-diagram-design.md)。无数据库迁移，不安装项目或执行其脚本。
+
 <a id="v1.5.2"></a>
 ## v1.5.2 · Gemini Live 动态与原文取材 · 2026-09-17
 

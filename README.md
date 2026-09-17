@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.2](CHANGELOG.md#v1.5.2)** · [fieldtofit-v1.5.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.2)
+**当前源码版本：[v1.5.3](CHANGELOG.md#v1.5.3)** · [fieldtofit-v1.5.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.3)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 新增 Gemini 3.8 Live 动态，分别说明异步工具调用、Extended Thinking 和接入材料；保留 9 月 15 日发布日期与 9 月 17 日核验日期。
-- Gemini 持续关注表补充两款 Live 分支，保留 Flash 版本；两份 Google 官方文档按许可保存正文、链接、代码及固定快照，网页与 MCP 同源读取。
-- 记录 Hermes 原文取材对照实验与无账号关注更新方案；Hermes 候选正文尚未发布，关注功能尚未开发，不把计划写成已上线。
-- 同步中英文 README、唯一项目管理总览与发布验收记录，继续使用既有审核、资料包和 MCP 接口。
+- 持续关注 → Skill 新增 Diagram Design，说明技术解释图的选型、可编辑 HTML／SVG、导出方式及使用边界。
+- 同一固定提交收录 README、核心 Skill、导出说明、MIT 许可、第三方许可及插件清单六份完整文件，供 MCP 检索、分段读取与资料包下载。
+- 保留插件版本与 Skill 元数据的区别，说明 README 与核心图形目录计数差异；未安装、执行或宣称生成效果实测。
+- 同步 v1.5.3 中英文 README、版本记录、唯一项目管理总览和实际验收结果；沿用现有发布流程及 MCP 接口。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
