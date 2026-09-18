@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.3](CHANGELOG.md#v1.5.3)** · [fieldtofit-v1.5.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.3)
+**当前源码版本：[v1.5.4](CHANGELOG.md#v1.5.4)** · [fieldtofit-v1.5.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.4)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 持续关注 → Skill 新增 Diagram Design，说明技术解释图的选型、可编辑 HTML／SVG、导出方式及使用边界。
-- 同一固定提交收录 README、核心 Skill、导出说明、MIT 许可、第三方许可及插件清单六份完整文件，供 MCP 检索、分段读取与资料包下载。
-- 保留插件版本与 Skill 元数据的区别，说明 README 与核心图形目录计数差异；未安装、执行或宣称生成效果实测。
-- 同步 v1.5.3 中英文 README、版本记录、唯一项目管理总览和实际验收结果；沿用现有发布流程及 MCP 接口。
+- 发布用户确认的 ChatGPT for Word 与 Speakeasy 接口生成工具两条动态，分别说明文档内编辑、SDK／CLI 与两类 MCP 的用途及使用边界。
+- 本期速览与两条动态同步，保留 9 月 17 日原文日期、9 月 18 日核对日期、具体解读和既有对象关联；持续关注不重复新增对象。
+- 区分官方页面链接与获准收录的固定版本原文；Speakeasy 公告和仓库的生成产物许可描述差异逐项保留，不宣称安装或生成实测。
+- 同步版本与项目管理记录：三日采集记录已齐，连续成功和 08:00 准时日报未通过；9 次真实 MCP 调用有证据，客户端最终回答未完成。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

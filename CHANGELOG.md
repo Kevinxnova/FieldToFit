@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.4"></a>
+## v1.5.4 · Word 与接口生成工具动态 · 2026-09-18
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布用户确认的 ChatGPT for Word 与 Speakeasy 接口生成工具两条动态，分别说明文档内编辑、SDK／CLI 与两类 MCP 的用途及使用边界。
+- 本期速览与两条动态同步，保留 9 月 17 日原文日期、9 月 18 日核对日期、具体解读和既有对象关联；持续关注不重复新增对象。
+- 区分官方页面链接与获准收录的固定版本原文；Speakeasy 公告和仓库的生成产物许可描述差异逐项保留，不宣称安装或生成实测。
+- 同步版本与项目管理记录：三日采集记录已齐，连续成功和 08:00 准时日报未通过；9 次真实 MCP 调用有证据，客户端最终回答未完成。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the approved ChatGPT for Word and Speakeasy API-generation developments, explaining in-document editing, SDK/CLI output, two MCP uses and adoption boundaries.
+- Update the quick overview with both developments, retaining September 17 source dates, September 18 review dates, specific notes and existing-object links without duplicating watch profiles.
+- Distinguish official source links from licensed, pinned source text; preserve the difference between Speakeasy announcement and repository descriptions of generated-code licensing, without claiming installation or generation tests.
+- Synchronize release and project records: three days of collection records are complete, continuous success and 08:00 briefing punctuality did not pass, and nine real MCP calls are evidenced without a completed final client answer.
+<!-- release-summary:en:end -->
+
+对应 REQ-4、REQ-6-2、REQ-8-9、REQ-9-3/6、REQ-11、REQ-15-1/5。D-17 ChatGPT for Word 与 D-18 Speakeasy 已发布，本期速览同步；当前 18 条动态、31 项持续关注。Speakeasy 三份固定原文共 47,095 字符，原文重建、资料包、桌面／手机、81 项相关回归和构建通过；正式站与 MCP 均为 v1.5.4。见[本批内容与运行验收](docs/validation/2026-09-18-editorial.md)。不新增 MCP 工具，不涉及数据库迁移或采集配置修改。
+
 <a id="v1.5.3"></a>
 ## v1.5.3 · Diagram Design Skill 与固定原文 · 2026-09-17
 
