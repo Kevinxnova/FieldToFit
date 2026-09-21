@@ -1,7 +1,7 @@
 {
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注",
-  "reviewed_at": "2026-09-20",
+  "reviewed_at": "2026-09-21",
   "edition": "cw1-2026-09-11",
   "groups": [
     {
@@ -1889,7 +1889,7 @@
       "type": "agent",
       "state": "published",
       "introduction": "连接消息入口、模型、工具与技能的个人 AI 助手项目，支持持续维护个人 Agent 的工作环境。",
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-09-21",
       "interpretation": [
         {
           "title": "技能积累可以跨越单个工作区。",
@@ -1898,6 +1898,14 @@
         {
           "title": "持续运行需要可控更新。",
           "text": "激活前预演和缓存复用分别处理更新稳定性与重复启动开销，能看出项目在补哪些运行环节。"
+        },
+        {
+          "text": "v2026.9.5让支持的插件在Gateway运行中安装、重载，并更新活动会话工具；同时修复会话历史保留、升级恢复、完成回执与后续答复问题。适用范围以该版本记录为准。",
+          "title": "常驻Agent的插件和会话可以继续维护"
+        },
+        {
+          "text": "官方发布说明披露部分长时间运行／端到端验证未完成，以及Android APK未随本次更新。本站未执行安装或升级；旧版本行仍保留原有核对日期。",
+          "title": "发布验证范围需要一起读"
         }
       ],
       "blocks": [
@@ -1927,6 +1935,11 @@
           ],
           "rows": [
             [
+              "v2026.9.5",
+              "官方发布 2026-09-19；本行核对 2026-09-21",
+              "支持的插件安装／重载无需重启Gateway；区分执行与结果交付；保留会话历史并修复服务升级。本站未升级实测。"
+            ],
+            [
               "v2026.9.3",
               "2026-09-08",
               "Skill Workshop 保留跨工作区的 Agent 技能集合；在激活前隔离预演核心与插件更新；复用已有缓存和工作进程"
@@ -1948,9 +1961,57 @@
           "title": "发布记录",
           "url": "https://github.com/openclaw/openclaw/releases",
           "coverage": "link_only"
+        },
+        {
+          "coverage": "link_only",
+          "title": "v2026.9.5发布及验证说明",
+          "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.5"
+        },
+        {
+          "coverage": "link_only",
+          "title": "v2026.9.5固定变更记录",
+          "url": "https://raw.githubusercontent.com/openclaw/openclaw/ec9c1a13db8938e5a3eaa51fca2e981cde2395a9/CHANGELOG/2026.9.5.md"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "release-20260905",
+          "locator": "官方发布、文档与对应限制章节",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "v2026.9.5发布及验证说明",
+          "upstream_revision": "v2026.9.5 / ec9c1a13db8938e5a3eaa51fca2e981cde2395a9",
+          "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.5"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "changelog-20260905",
+          "locator": "官方发布、文档与对应限制章节",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "v2026.9.5固定变更记录",
+          "upstream_revision": "v2026.9.5 / ec9c1a13db8938e5a3eaa51fca2e981cde2395a9",
+          "url": "https://raw.githubusercontent.com/openclaw/openclaw/ec9c1a13db8938e5a3eaa51fca2e981cde2395a9/CHANGELOG/2026.9.5.md"
+        }
+      ]
     },
     {
       "id": "CW-A07",

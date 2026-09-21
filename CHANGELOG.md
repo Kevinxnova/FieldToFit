@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.6"></a>
+## v1.5.6 · 图像、同传与 Jev 决策模型 · 2026-09-21
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布确认的 Qwen-Image-2.1、Qwen3.8-LiveTranslate 与 Jev 三条动态，同步本期速览；OpenClaw 表补充 v2026.9.5 并保留旧版本。
+- 图像模型单列研究许可；同传区分语音与文字覆盖、API与博客日期；Jev区分结构化输出与判断正确性，保留Vercel采用数据的统计范围。
+- 网页与 MCP 共用公开介绍、逐点解读和来源清单；本批新增官方材料仅链接，不声称取得全文许可或运行模型。
+- 排查 Jev 漏报：9月16日官方发布已入候选，但优先级未跟随指标刷新，社区线索未追溯至官方；改进方案列入项目管理总览，尚未开发。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the approved Qwen-Image-2.1, Qwen3.8-LiveTranslate and Jev developments, refresh the quick overview, and add OpenClaw v2026.9.5 while retaining earlier versions.
+- Highlight the image model's research license, distinguish translation modalities and source dates, and separate Jev's typed output from decision correctness and Vercel-specific adoption figures.
+- Share introductions, editorial notes and source inventories through the website and MCP; new official materials remain links, without claims of full-text redistribution rights or execution tests.
+- Audit the missed Jev recommendation: its official announcement entered the inbox on September 16, but priority data went stale and related community leads were not followed; proposed improvements are recorded, not implemented.
+<!-- release-summary:en:end -->
+
+对应 REQ-2-3/4/5、REQ-5、REQ-6-2、REQ-8-9、REQ-9、REQ-10/11、REQ-15。D-23／D-24／D-25 与 CW-A06 已发布，当前 25 条动态、31 项持续关注。81 项相关回归、构建、双端页面和公开 MCP 同源检查通过。正式站和 MCP 已核对 v1.5.6；源码发布回执见[本批验收](docs/validation/2026-09-21-editorial.md)。无应用功能、数据库迁移或采集配置变更；采集连续成功和日报准时交付仍未通过。
+
 <a id="v1.5.5"></a>
 ## v1.5.5 · 多模态模型、开发客户端与 Harness 研究 · 2026-09-20
 
