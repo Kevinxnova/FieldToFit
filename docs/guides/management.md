@@ -104,3 +104,22 @@
 部署前先保存私密全库备份并验证，使用当前代码执行幂等 `backend.knowledge.stewardship.upgrade()`，再切换应用版本。若部署时尚未升级，可在本模块点“初始化维护记录并重试”；但不应在表未就绪时执行内容发布。新增六表：`fieldtofit_steward_actions`、`fieldtofit_steward_aliases`、`fieldtofit_steward_links`、`fieldtofit_steward_checks`、`fieldtofit_steward_events`、`fieldtofit_steward_decisions`。内容库备份纳入六表，含私密审核记录，不能提交 GitHub。回退应用须保留表和已发布数据。
 
 管理接口位于 `/api/v1/admin/workspace/stewardship`：GET 返回核对建议、材料问题及历史；POST 子路径 `upgrade`、`preview`、`apply`、`check`、`decide-material` 分别初始化、预览、确认、访问检查和处理复核。所有写操作沿用管理员权限。日任务分配不超过总预算 15% 且最多 30 秒给材料检查，未检查项保留待续，避免占用全部发现采集时间。
+
+
+## 热门线索与日报选题检查（v1.5.7）
+
+“优先核验”判断调查紧迫性，与材料可信度分组独立。近期讨论达到100 points或50 comments可触发，单次指标明确为累计快照；未核验正文不能因为热度高就发布。旧候选指标或材料变化会进入重评，默认每批最多100项，并保留人工分组和用户决定。后台按钮会显示剩余待评估数。
+
+“更新批次与日报 → 日报选题检查”展示已选、高讨论、相同入口重复及有讨论的积压线索。已选项全部处理，另取讨论最强20项、重复或积压10项作为当日必查；完整列表分页可读，未纳入当日清单的数量明确标为积压，不宣称已核验。相同入口只提示核对，不自动归并；新名称语义归组仍待开发。
+
+编辑者逐项记录 recommend（推荐用户确认）、investigate（继续核验并在日报说明缺口）、not_recommended（暂不推荐及原因）、already_covered（已报道或重复依据）。recommend至少填写一个实际核对的来源链接。记录绑定证据指纹，正文或指标变化后旧记录失效，只有时间改变不算新证据；14天内无变化记录可复用，用户决定另行保存。先保存全部记录，才能将日报标记prepared。真实消息已经发出后的delivered回执不会因为随后出现新线索而丢失。
+
+本地流程：
+
+1. 创建或读取当天私密批次，先接续已选候选。
+2. 运行 `python scripts/maintenance/briefing_selection.py --day YYYY-MM-DD --output output/briefings/YYYY-MM-DD-selection.json`。脚本只向FieldToFit正式域名使用本地管理凭据，读完全部分页；不写推荐决定、不创建草稿、不发布。
+3. 本地GPT先读required清单，再检查近期线索中的反复名称，主动搜索官方原始材料、核对本站和既有批次。3–5项是推荐数量，不是检索上限。没有完成核验的强线索在日报单列，不能用通用“未核验”理由批量盖章。
+4. 将实际判断写成私密JSON数组，每项含 `ref`、`evidence_fingerprint`、`outcome`、`reason`、`sources`。运行同一脚本并追加 `--reviews output/briefings/YYYY-MM-DD-selection-reviews.json`；每批最多50项，全批校验证据后保存，只写编辑记录。
+5. 核对返回unreviewed=0及剩余backlog，正文分开说明推荐、重要待核验、积压与失败；prepared仅表示正文和选题记录准备完成，delivered仍需实际可见消息回执。
+
+对应管理接口：GET `/api/v1/admin/workspace/batches/<id>/selection?offset=0&limit=100`；POST同路径的`selection-review`（单条，或`items`数组）。均需管理身份，不对公开MCP开放。接口无法读取时仍交付如实日报，明确检查失败，不能假装已通过或把网络失败写成没有新闻。

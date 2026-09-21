@@ -34,16 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.6](CHANGELOG.md#v1.5.6)** · [fieldtofit-v1.5.6](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.6)
+**Current source version: [v1.5.7](CHANGELOG.md#v1.5.7)** · [fieldtofit-v1.5.7](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.7)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the approved Qwen-Image-2.1, Qwen3.8-LiveTranslate and Jev developments, refresh the quick overview, and add OpenClaw v2026.9.5 while retaining earlier versions.
-- Highlight the image model's research license, distinguish translation modalities and source dates, and separate Jev's typed output from decision correctness and Vercel-specific adoption figures.
-- Share introductions, editorial notes and source inventories through the website and MCP; new official materials remain links, without claims of full-text redistribution rights or execution tests.
-- Audit the missed Jev recommendation: its official announcement entered the inbox on September 16, but priority data went stale and related community leads were not followed; proposed improvements are recorded, not implemented.
+- Reassess existing candidates when metrics or source material change, retain actual observation times, and preserve manual groups and owner decisions.
+- Add a separate investigation-priority view with reasons; discussion signals do not establish factual quality, and cumulative stars are not growth.
+- Add briefing selection checks, individual or bulk editorial records, and a preparation gate, with explicit daily capacity, backlog and unchanged-evidence reuse.
+- Connect the existing local briefing workflow to these checks and replay the missed Jev lead from a prepublication snapshot without changing public content or publication permissions.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

@@ -860,6 +860,12 @@ def editorial_batch(ident):
     from backend.knowledge.editorial_batches import detail
     return jsonify(detail(ident))
 
+@bp.get('/admin/workspace/batches/<ident>/selection')
+@admin_required
+def editorial_selection(ident):
+    from backend.knowledge.briefing_review import preflight
+    return jsonify(preflight(ident,request.args.get('offset',0),request.args.get('limit',30)))
+
 @bp.post('/admin/workspace/batches/<ident>/<action>')
 @admin_required
 def editorial_batch_action(ident,action):
@@ -867,6 +873,9 @@ def editorial_batch_action(ident,action):
     if action=='propose':return jsonify(b.propose(ident,body()))
     if action=='intake':return jsonify(b.intake(ident))
     if action=='delivery':return jsonify(b.delivery(ident,body()))
+    if action=='selection-review':
+        from backend.knowledge.briefing_review import review
+        return jsonify(review(ident,body()))
     return jsonify(error='Unknown action'),404
 
 @bp.post('/admin/workspace/topics/<ident>/<action>')

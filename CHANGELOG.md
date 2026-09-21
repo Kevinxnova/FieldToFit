@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.7"></a>
+## v1.5.7 · 热门线索核验与日报漏项检查 · 2026-09-21
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 修复旧候选指标或材料变化后未重评的问题，保存真实来源观测时间，保留人工分组与用户处理决定。
+- 每日审阅增加独立“优先核验”入口与理由；高讨论不自动变成可信材料，累计 Star 不冒充增长。
+- 日报增加选题检查、逐项或批量编辑记录及准备前漏项检查；明确当天处理容量、剩余积压和无变化记录复用。
+- 本地安排接入同一检查与记录流程；用 Jev 发布前真实快照验证漏报修复，公开资料与发布权限不变。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Reassess existing candidates when metrics or source material change, retain actual observation times, and preserve manual groups and owner decisions.
+- Add a separate investigation-priority view with reasons; discussion signals do not establish factual quality, and cumulative stars are not growth.
+- Add briefing selection checks, individual or bulk editorial records, and a preparation gate, with explicit daily capacity, backlog and unchanged-evidence reuse.
+- Connect the existing local briefing workflow to these checks and replay the missed Jev lead from a prepublication snapshot without changing public content or publication permissions.
+<!-- release-summary:en:end -->
+
+对应 REQ-2-1/3/4/5、REQ-11-1。沿用既有私密表和公开接口，无数据库迁移。327项回归通过、1项跳过；最终50项针对性回归、桌面／手机、生产版本和公开内容不变已核对；既有每日安排已更新。状态与真实验收见[本批记录](docs/validation/2026-09-21-selection.md)；未来自然日的主动选题质量与准时日报需继续观察。
+
 <a id="v1.5.6"></a>
 ## v1.5.6 · 图像、同传与 Jev 决策模型 · 2026-09-21
 

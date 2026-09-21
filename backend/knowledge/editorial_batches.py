@@ -148,6 +148,10 @@ def intake(ident):
 def delivery(ident,data):
     state=data.get('state')
     if state not in ('running','prepared','delivered','failed'):fail('Invalid delivery state')
+    # An actual delivery receipt must still be recorded if new leads arrive later.
+    if state=='prepared':
+        from backend.knowledge.briefing_review import gate
+        gate(ident)
     with editorial_transaction() as db:
         b=_batch(db,ident)
         if data.get('version')!=b['version']:fail('Briefing changed','batch_conflict',409)

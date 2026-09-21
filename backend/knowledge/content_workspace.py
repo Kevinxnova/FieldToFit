@@ -303,9 +303,11 @@ def candidate(ref, db):
 
 def inbox(q='', since='', until='', source='', status='', item_type='', offset=0, group='', order='priority'):
     offset=max(0,int(offset));where=['1=1'];args=[]
-    if group not in ('','priority','follow','verify') or order not in ('priority','date'):fail('Unknown review ordering')
+    if group not in ('','priority','follow','verify','urgent') or order not in ('priority','date'):fail('Unknown review ordering')
     group_sql="COALESCE(p.manual_group,p.group_name,'verify')"
-    if group:where.append(group_sql+'=?');args.append(group)
+    from backend.knowledge.candidate_priority import URGENT_SQL
+    if group=='urgent':where.append(URGENT_SQL)
+    elif group:where.append(group_sql+'=?');args.append(group)
     if status and status not in ('pending','selected','deferred','ignored','completed'):fail('Unknown inbox status')
     if since or until:
         start=date.fromisoformat(since or until);end=date.fromisoformat(until or since)
@@ -318,9 +320,12 @@ def inbox(q='', since='', until='', source='', status='', item_type='', offset=0
         if value:where.append(expr+'=?');args.append(value)
     if q:where.append('(c.title LIKE ? OR c.summary LIKE ? OR c.ref=?)');args.extend(['%'+q+'%']*2+[q])
     clause=' AND '.join(where);join=' FROM candidates c LEFT JOIN fieldtofit_inbox i ON i.ref=c.ref LEFT JOIN fieldtofit_candidate_priority p ON p.ref=c.ref WHERE '+clause
+    points="COALESCE((SELECT CAST(json_extract(sig.value,'$.value') AS REAL) FROM json_each(COALESCE(p.signals,'[]')) sig WHERE json_extract(sig.value,'$.kind')='points' LIMIT 1),0)"
+    comments=points.replace("='points'", "='comments'")
+    priority_order='CASE WHEN '+URGENT_SQL+" THEN 3 WHEN "+group_sql+"='priority' THEN 3 WHEN "+group_sql+"='follow' THEN 2 ELSE 1 END DESC,"+points+' DESC,'+comments+' DESC,'
     with get_db() as db:
         total=db.execute(CANDIDATES+'SELECT COUNT(*) n'+join,args).fetchone()['n']
-        rows=[dict(r) for r in db.execute(CANDIDATES+"SELECT c.*,COALESCE(i.status,'pending') status,i.kind,i.item_id,i.note,p.group_name,p.manual_group,p.manual_reason,p.reasons,p.unknowns,p.signals"+join+(' ORDER BY CASE '+group_sql+" WHEN 'priority' THEN 3 WHEN 'follow' THEN 2 ELSE 1 END DESC," if order=='priority' else ' ORDER BY ')+ 'datetime(c.discovered_at) DESC,c.ref LIMIT 30 OFFSET ?',[*args,offset]).fetchall()]
+        rows=[dict(r) for r in db.execute(CANDIDATES+"SELECT c.*,COALESCE(i.status,'pending') status,i.kind,i.item_id,i.note,p.group_name,p.manual_group,p.manual_reason,p.reasons,p.unknowns,p.signals"+join+(' ORDER BY '+priority_order if order=='priority' else ' ORDER BY ')+ 'datetime(c.discovered_at) DESC,c.ref LIMIT 30 OFFSET ?',[*args,offset]).fetchall()]
         source_names={r['id']:r['name'] for r in db.execute('SELECT id,name FROM knowledge_sources').fetchall()}
         sources=[r['source'] for r in db.execute(CANDIDATES+'SELECT DISTINCT source FROM candidates ORDER BY source').fetchall()]
         counts=[dict(r) for r in db.execute(CANDIDATES+"SELECT COALESCE(i.status,'pending') status,COUNT(*) count"+join+" GROUP BY COALESCE(i.status,'pending')",args).fetchall()]
@@ -332,12 +337,17 @@ def inbox(q='', since='', until='', source='', status='', item_type='', offset=0
         except ValueError:return ''
     for r in rows:
         r['source_name']=source_names.get(r['source'],r['source'])
-        r['priority']={'group':r.pop('manual_group') or r.get('group_name') or 'verify','automatic_group':r.pop('group_name') or 'verify','manual_reason':r.pop('manual_reason') or '', 'reasons':store.decode(r.pop('reasons'),[]), 'unknowns':store.decode(r.pop('unknowns'),['尚未完成材料评估']), 'signals':store.decode(r.pop('signals'),[])}
+        r['priority']={'group':r.pop('manual_group') or r.get('group_name') or 'verify','automatic_group':r.pop('group_name') or 'verify','manual_reason':r.pop('manual_reason') or '', 'reasons':(store.decode(r.pop('reasons'),[]) or []), 'unknowns':(store.decode(r.pop('unknowns'),[]) or ['尚未完成材料评估']), 'signals':(store.decode(r.pop('signals'),[]) or [])}
+        u=next((x for x in r['priority']['signals'] if x.get('kind')=='review_urgency'),{})
+        r['priority']['investigation']={'urgent':u.get('value')=='urgent','reasons':u.get('reasons',[])}
+        r['priority']['signals']=[x for x in r['priority']['signals'] if x.get('kind')!='review_urgency']
         r['matches']=[{'id':p['id'],'name':p.get('name') or p.get('title'),'kind':'news' if p['id'].startswith('D-') else 'watch'} for p in published if p.get('state')!='withdrawn' and any(canonical(s['url'])==canonical(r['url']) for s in p.get('sources',[]))]
         try:r['metrics']=json.loads(r['metrics'])
         except (ValueError,TypeError):r['metrics']={}
+        r['metrics']=r['metrics'].get('source_observations',{}).get(r['source'],r['metrics'])
     with get_db() as db:
-        overview={'today_new':db.execute(CANDIDATES+"SELECT COUNT(*) FROM candidates WHERE date(discovered_at,'+8 hours')=date('now','+8 hours')").fetchone()[0],
+        urgent_count=db.execute(CANDIDATES+"SELECT COUNT(*) FROM candidates c JOIN fieldtofit_candidate_priority p ON p.ref=c.ref LEFT JOIN fieldtofit_inbox i ON i.ref=c.ref WHERE COALESCE(i.status,'pending')='pending' AND "+URGENT_SQL).fetchone()[0]
+        overview={'urgent':urgent_count,'today_new':db.execute(CANDIDATES+"SELECT COUNT(*) FROM candidates WHERE date(discovered_at,'+8 hours')=date('now','+8 hours')").fetchone()[0],
           'priority':db.execute(CANDIDATES+"SELECT COUNT(*) FROM candidates c JOIN fieldtofit_candidate_priority p ON p.ref=c.ref LEFT JOIN fieldtofit_inbox i ON i.ref=c.ref WHERE COALESCE(i.status,'pending')='pending' AND COALESCE(p.manual_group,p.group_name)='priority'").fetchone()[0],
           'source_errors':db.execute("SELECT COUNT(*) FROM knowledge_sources WHERE enabled=1 AND status IN ('error','partial','failed')").fetchone()[0],
           'existing_updates':db.execute("SELECT COUNT(*) FROM fieldtofit_discoveries d WHERE EXISTS(SELECT 1 FROM fieldtofit_content_items i,json_each(i.published_json,'$.sources') s WHERE i.published_json IS NOT NULL AND json_extract(s.value,'$.url')=d.url)").fetchone()[0],

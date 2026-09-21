@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.6](CHANGELOG.md#v1.5.6)** · [fieldtofit-v1.5.6](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.6)
+**当前源码版本：[v1.5.7](CHANGELOG.md#v1.5.7)** · [fieldtofit-v1.5.7](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.7)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布确认的 Qwen-Image-2.1、Qwen3.8-LiveTranslate 与 Jev 三条动态，同步本期速览；OpenClaw 表补充 v2026.9.5 并保留旧版本。
-- 图像模型单列研究许可；同传区分语音与文字覆盖、API与博客日期；Jev区分结构化输出与判断正确性，保留Vercel采用数据的统计范围。
-- 网页与 MCP 共用公开介绍、逐点解读和来源清单；本批新增官方材料仅链接，不声称取得全文许可或运行模型。
-- 排查 Jev 漏报：9月16日官方发布已入候选，但优先级未跟随指标刷新，社区线索未追溯至官方；改进方案列入项目管理总览，尚未开发。
+- 修复旧候选指标或材料变化后未重评的问题，保存真实来源观测时间，保留人工分组与用户处理决定。
+- 每日审阅增加独立“优先核验”入口与理由；高讨论不自动变成可信材料，累计 Star 不冒充增长。
+- 日报增加选题检查、逐项或批量编辑记录及准备前漏项检查；明确当天处理容量、剩余积压和无变化记录复用。
+- 本地安排接入同一检查与记录流程；用 Jev 发布前真实快照验证漏报修复，公开资料与发布权限不变。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

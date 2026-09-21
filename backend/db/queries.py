@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from backend.db import get_db
 
 
@@ -8,7 +8,15 @@ from backend.db import get_db
 def insert_tool(url: str, dedup_key: str, title: str, description: str,
                 source: str, source_url: str, metrics: dict) -> int | None:
     """Insert a tool. Returns tool ID or None if dedup_key exists."""
+    observation={**metrics,'observed_at':datetime.now(timezone.utc).isoformat()}
+    metrics={**metrics,'source_observations':{source:observation}}
     with get_db() as db:
+        # Preserve dated per-source observations separately from legacy merged maxima.
+        if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='fieldtofit_attention_observations'").fetchone():
+            from backend.knowledge.store import canonical_url
+            stamp=observation['observed_at']
+            db.execute('INSERT INTO fieldtofit_attention_observations VALUES(?,?,?,?,?) ON CONFLICT(url,source_id,day) DO UPDATE SET observed_at=excluded.observed_at,metrics=excluded.metrics',
+                       (canonical_url(url),source,stamp[:10],stamp,json.dumps(observation)))
         try:
             cursor = db.execute(
                 """INSERT INTO tools (url, dedup_key, title, description, source, source_url, metrics, sources)
@@ -27,7 +35,11 @@ def insert_tool(url: str, dedup_key: str, title: str, description: str,
 
                 # Merge metrics: keep higher values
                 old_metrics = json.loads(existing["metrics"])
+                observations=old_metrics.get('source_observations',{})
+                observations[source]=observation
+                old_metrics['source_observations']=observations
                 for k, v in metrics.items():
+                    if k=='source_observations':continue
                     if v and (not old_metrics.get(k) or (isinstance(v, (int, float)) and v > old_metrics.get(k, 0))):
                         old_metrics[k] = v
 
