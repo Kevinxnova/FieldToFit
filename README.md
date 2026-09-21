@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.4](CHANGELOG.md#v1.5.4)** · [fieldtofit-v1.5.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.4)
+**当前源码版本：[v1.5.5](CHANGELOG.md#v1.5.5)** · [fieldtofit-v1.5.5](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.5)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布用户确认的 ChatGPT for Word 与 Speakeasy 接口生成工具两条动态，分别说明文档内编辑、SDK／CLI 与两类 MCP 的用途及使用边界。
-- 本期速览与两条动态同步，保留 9 月 17 日原文日期、9 月 18 日核对日期、具体解读和既有对象关联；持续关注不重复新增对象。
-- 区分官方页面链接与获准收录的固定版本原文；Speakeasy 公告和仓库的生成产物许可描述差异逐项保留，不宣称安装或生成实测。
-- 同步版本与项目管理记录：三日采集记录已齐，连续成功和 08:00 准时日报未通过；9 次真实 MCP 调用有证据，客户端最终回答未完成。
+- 发布用户确认的四项日报内容：Qwen3.8-Omni-Flash、Kimi Code Desktop、Copilot 开发流程更新，以及 Harness 计划与验收研究。
+- 本期速览同步四条动态；Qwen 模型表补充 Omni-Flash 分支，保留旧版本、原文日期、采用条件和未实测边界。
+- 在动态和 Qwen 资料中提供同一固定提交的 README、安装说明和 Apache-2.0 许可证；其余官方材料明确为来源链接，网页与 MCP 同源读取。
+- 记录真实日报补发、内容发布与读取验收；每日采集仍有延期或获取问题，不将本批内容发布写成连续运行验收通过。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

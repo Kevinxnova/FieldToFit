@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.5"></a>
+## v1.5.5 · 多模态模型、开发客户端与 Harness 研究 · 2026-09-20
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布用户确认的四项日报内容：Qwen3.8-Omni-Flash、Kimi Code Desktop、Copilot 开发流程更新，以及 Harness 计划与验收研究。
+- 本期速览同步四条动态；Qwen 模型表补充 Omni-Flash 分支，保留旧版本、原文日期、采用条件和未实测边界。
+- 在动态和 Qwen 资料中提供同一固定提交的 README、安装说明和 Apache-2.0 许可证；其余官方材料明确为来源链接，网页与 MCP 同源读取。
+- 记录真实日报补发、内容发布与读取验收；每日采集仍有延期或获取问题，不将本批内容发布写成连续运行验收通过。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish four approved briefing items: Qwen3.8-Omni-Flash, Kimi Code Desktop, Copilot workflow updates, and research on harness planning and verification.
+- Refresh the quick overview and add the Omni-Flash branch to the Qwen table, retaining earlier versions, original source dates, adoption requirements and untested boundaries.
+- Provide the README, installation guide and Apache-2.0 license from one pinned commit in both the development and Qwen profile; identify other official materials as links, shared by the website and MCP.
+- Record actual late briefing delivery, publication and reading checks; outstanding collection failures and deferred sources remain separate from this content release.
+<!-- release-summary:en:end -->
+
+对应 REQ-4、REQ-6-2、REQ-8-9、REQ-9、REQ-10/11、REQ-15。D-19／D-20／D-21／D-22 及 CW-M07 已发布，当前 22 条动态、31 项持续关注；三份独立原文共 25,982 字符。81 项回归、构建、双端网页、原文重建与资料包通过；正式站及 MCP 已核对 v1.5.5。实际结果见[本批验收](docs/validation/2026-09-20-editorial.md)。本批沿用既有发布接口，无新增功能、数据库迁移或采集配置变化；不安装或运行所介绍的工具。
+
 <a id="v1.5.4"></a>
 ## v1.5.4 · Word 与接口生成工具动态 · 2026-09-18
 

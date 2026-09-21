@@ -4,6 +4,620 @@
     {
       "_position": 1,
       "aliases": [
+        "Qwen Omni Flash",
+        "Qwen3.8 Omni Flash"
+      ],
+      "checked_at": "2026-09-20",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-18",
+      "highlight": true,
+      "id": "D-19",
+      "interpretation": [
+        {
+          "locator": "引言 / Agentic长音视频理解 / Video2Note / Omni Skill Creator",
+          "source_ids": [
+            "blog",
+            "api"
+          ],
+          "text": "普通 qwen3.8-omni-flash 的 HTTP 接口接收多模态输入、返回文本；发布页里的配音、剪辑与视频制作依赖工具和其他生成服务。不要把演示成片直接理解成这个模型单独输出视频。实时交互另有 Qwen3.8-Omni-Flash-Realtime。",
+          "title": "先分清“理解音视频”和“生成音视频”"
+        },
+        {
+          "locator": "Capabilities / Qwen Omni series model / License",
+          "source_ids": [
+            "plugins",
+            "install"
+          ],
+          "text": "固定版本 Qwen-MM-Plugins README 已列出 omni-video2note（教程视频转图文 PDF）与 omni-skill-creator（演示视频转 Agent Skill）。前者给学习资料一个可复习的产物，后者把“观看操作”转成可复用流程；需要模型服务和 ffmpeg，本站尚未实际安装或运行。",
+          "title": "最具体的采用入口是视频转笔记和视频转 Skill"
+        },
+        {
+          "locator": "引言 / Agentic长音视频理解 / Video2Note / Omni Skill Creator",
+          "source_ids": [
+            "blog"
+          ],
+          "text": "发布页展示先定位相关时段、再继续查看的多轮方法。它在官方 OmniVideoBench 实验中提高了准确率并减少 token；这说明值得查看按需取材机制，不能据此保证所有长视频都同样省钱。官方成本比较按指定素材、分辨率和抽帧设置估算。",
+          "title": "长视频可以按问题取证，效果数字要连同实验条件看"
+        },
+        {
+          "locator": "Capabilities / Qwen Omni series model / License",
+          "source_ids": [
+            "plugins",
+            "install"
+          ],
+          "text": "Qwen-MM-Plugins 已存在；本次新增和扩展了围绕 Omni 的能力。插件以 Skill 加可选 MCP 工具提供，部分客户端暂不能把音频原生送进主模型，需要通过 API。接入 FieldToFit MCP 只读取资料，不会替你安装这些插件。",
+          "title": "扩展的是既有插件仓库，不是今天第一次出现"
+        }
+      ],
+      "name": "Qwen3.8-Omni-Flash",
+      "note": "原文 2026-09-18，本站核对 2026-09-20。qwen3.8-omni-flash；配套 Qwen-MM-Plugins 固定提交 fac5c9e307737afadd15bacda0314870e886864c。未实际调用模型、运行插件、验证真实视频转PDF或Skill结果；官方性能与成本对比未作独立复现；不以社媒早期缓存数字代替当前原文；模型发布页未确认开放权重，不能把 Apache-2.0 插件许可延伸到模型权重；Qwen-Live Harness 发布页现给出入口，但仓库、许可证及可运行状态尚未独立核对，本提案不单独收录。三份固定插件文档及许可可通过 MCP 读取；核心 Skill 未收录，未安装或执行。",
+      "organization": "Qwen / Alibaba",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "blog",
+          "locator": "引言 / Agentic长音视频理解 / Video2Note / Omni Skill Creator",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Qwen · Qwen3.8-Omni-Flash 官方发布",
+          "upstream_revision": "qwen3.8-omni-flash；配套 Qwen-MM-Plugins 固定提交 fac5c9e307737afadd15bacda0314870e886864c",
+          "url": "https://qwen.ai/blog?id=qwen3.8-omni-flash"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "release",
+          "locator": "September 18, 2026 / qwen3.8-omni-flash",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "QwenCloud · Model releases",
+          "upstream_revision": "qwen3.8-omni-flash；配套 Qwen-MM-Plugins 固定提交 fac5c9e307737afadd15bacda0314870e886864c",
+          "url": "https://docs.qwencloud.com/changelog/models"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "api",
+          "locator": "Getting started / Text output / Input limits / Function calling",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Alibaba Cloud · Qwen-Omni API 文档",
+          "upstream_revision": "qwen3.8-omni-flash；配套 Qwen-MM-Plugins 固定提交 fac5c9e307737afadd15bacda0314870e886864c",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-omni"
+        },
+        {
+          "approved": true,
+          "body": "# Qwen-MM-Plugins\n\n**English** · [中文](README.zh.md)\n\nNative multimodal plugins for Qwen models. Make any agent harness multimodal-native.\n\n[Explore the Hub](https://qwenlm.github.io/qwen-mm-plugins-hub/) ·\n[Installation](https://qwenlm.github.io/qwen-mm-plugins-hub/docs/) ·\n[Add a plugin](https://qwenlm.github.io/qwen-mm-plugins-hub/docs/how-to-add-new-capability/)\n\nBrowse plugins by capability, preview their Skills and tool definitions, and try the cookbook\nexamples with embedded videos and interactive cases. The Hub also hosts the English documentation.\n\n## Architecture\n\n![Qwen-MM-Plugins architecture](docs/assets/architecture.svg)\n\n## Install\n\nThe guided installer supports Claude Code, CodeBuddy, Codex, Qoder, OpenClaw, Qwen Code, and Gemini\nCLI. Shared configuration lives in `~/.qwen-mm-plugins/config`.\n\nIn-app setup for WorkBuddy, QoderWork, and QwenWork, plus manual setup for DeepSeek Harness, Hermes\nAgent, opencode, pi, and QwenPaw, is documented in the\n[other harness guide](docs/en/manual_harnesses.md).\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/QwenLM/Qwen-MM-Plugins/main/install.sh | bash\n```\n\nUpdate the capabilities already installed in one harness:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/QwenLM/Qwen-MM-Plugins/main/install.sh | bash -s -- update\n```\n\nReleased capabilities use independent, immutable tags. For local checkout installs, rollback,\nmanual skill + MCP setup, dependencies, and Windows/WSL2, see the\n[installation guide](docs/en/installation.md).\n\n## Capabilities\n\nEach capability is installed independently as a **Skill** plus an optional **MCP server**, named\n`qwen-mm-plugins-<capability>`. Pick by your agent's main model. We strongly recommend the `core`\nplugin for multimodal models: it lets the main model read images, video and files natively, rather\nthan routing them through a separate API or ad-hoc shell commands.\n\n**General**:\n\n| Capability | Use case | Cookbook |\n|---|---|---|\n| `core` | Reads local images and video frames, and visualizes documents, code, data, 3D models and NIfTI volumes for the agent to inspect. Includes media metadata, cropping, bounding-box annotation and page/frame export. No API key in the default native mode. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/core/cookbook/) |\n| `api` | Calls model services to understand images, video and audio: VL vision chat/OCR/grounding, Omni transcription/diarization/captioning/event analysis, dedicated ASR and SAM3 segmentation. Uses DashScope or compatible self-hosted services, configured per model family. With DashScope, oversized local audio and video can use model-bound temporary OSS automatically. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/api/cookbook/) |\n| `search` | For any model. Web search and page extraction with Serper, Exa, Tavily or Serply; reverse-image search uses Serper. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/search/cookbook/) |\n\n**Qwen VL series model** (e.g. **Qwen3.8-Max**, **Qwen3.7-Plus**):\n\n| Capability | Use case | Cookbook |\n|---|---|---|\n| `video-memory` | Builds a hierarchical memory of a long video, so questions about it are answered from the memory instead of re-watching. Needs a DashScope key and ffmpeg. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/video-memory/cookbook/) |\n| `video-edit` | Generates images, video and audio, and runs editing workflows over them. Needs a DashScope key, ffmpeg and Node. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/video-edit/cookbook/) |\n| `blender` | Drives a running Blender: modelling, materials, lighting and rendering. Needs Blender installed. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/blender/cookbook/) |\n| `freecad` | Drives a running FreeCAD: parametric CAD, STEP/STL and FEM. Needs FreeCAD installed. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/freecad/cookbook/) |\n| `edu-agent` | Creates Chinese math and science explainer videos and interactive pages. Skill-only; needs Node and ffmpeg. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/edu-agent/cookbook/) |\n\n**Qwen Omni series model** (e.g. **qwen3.8-omni-flash**):\n\n> Most harnesses cannot yet feed audio to the main model natively. For now, audio is handled through\n> the API instead.\n\n| Capability | Use case | Cookbook |\n|---|---|---|\n| `omni-chatcut` | Video-creation Skill collection for Music-to-MV, movie commentary, and speaker-preserving video translation. Needs the relevant generation/Omni services, ffmpeg/ffprobe, and an optional external dubbing service for translated voice output. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/omni-chatcut/cookbook/) |\n| `omni-video2note` | Converts a local tutorial video into an illustrated PDF using Omni audio-video understanding, with review feedback. Needs a DashScope key and ffmpeg. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/omni-video2note/cookbook/) |\n| `omni-skill-creator` | Turns a demonstration video into a reusable Agent Skill. Needs a DashScope key and ffmpeg. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/omni-skill-creator/cookbook/) |\n| `omni-memory` | Builds an audio-visual memory of a long video: who is present, who said what, how they said it, and what it sounded like. The Omni model reads the video together with its audio track. Needs a DashScope key and ffmpeg. | [Cookbook](https://qwenlm.github.io/qwen-mm-plugins-hub/plugins/omni-memory/cookbook/) |\n\nExact versions and optional extras are in the\n[installation guide](docs/en/installation.md#dependencies).\n\n## Try it\n\nAfter installing a capability, reference a file and ask naturally; the Skill selects the relevant\nMCP tool.\n\n```text\n@report.pdf          Summarize page 3 and extract its table.\n@meeting.mp4         Transcribe this with speaker labels and timestamps.\n@place.jpg           Identify where this photo was taken and verify it on the web.\n@lecture-2h.mp4      List the main points with timestamps.\n@tutorial.mp4        Create an illustrated PDF note at /absolute/path/tutorial-notes.pdf.\n@brain.nii.gz        Inspect metadata and show orthogonal center slices.\n```\n\n`core` reads media at dynamic resolution, so manual resizing is normally unnecessary.\nNIfTI files stay local and are opened read-only; this visualization is not for clinical diagnosis.\n\n## Requirements and configuration\n\n- [`uv`](https://docs.astral.sh/uv/) provides `uvx`, which installs Python dependencies on demand.\n- Local `core` tools need no API key in the default native-image mode. Text-only caption fallback,\n  cloud, and search capabilities need their provider credentials.\n- Video, document, browser, Blender, and FreeCAD workflows may need system applications.\n\nRun the installer's **Configure** and **Verify** actions to set credentials and check dependencies.\nSee [Installation](docs/en/installation.md#dependencies) for prerequisites and the\n[configuration reference](docs/en/configuration.md) for every setting.\n\n## Documentation\n\n- [Installation](docs/en/installation.md)\n- [Configuration](docs/en/configuration.md)\n- [Contributing](CONTRIBUTING.md) · [Local development](docs/en/local_development.md)\n- [Add a new plugin](docs/en/how_to_add_new_capability.md) · [Hub authoring](docs/en/hub.md) · [Testing](docs/en/testing.md)\n\n## License\n\nApache-2.0 — see [LICENSE](LICENSE). Third-party attribution for the Blender and FreeCAD integrations\nis recorded in their respective [Blender](src/capabilities/blender/NOTICE.md) and\n[FreeCAD](src/capabilities/freecad/NOTICE.md) notices.\n",
+          "checked_at": "2026-09-20",
+          "coverage": "full_text",
+          "id": "plugins",
+          "locator": "README.md；固定版本原样全文，未执行其中命令。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "Apache-2.0；原样转载固定仓库文件，保留项目署名及完整许可证。",
+            "notice": "来源：QwenLM / Qwen-MM-Plugins；固定提交 fac5c9e307737afadd15bacda0314870e886864c。内容未修改；Apache-2.0 许可证作为同一对象的 license 材料完整保留。本许可不代表模型权重或其他服务也采用同一许可。",
+            "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/LICENSE"
+          },
+          "title": "Qwen-MM-Plugins · 固定 README",
+          "upstream_revision": "fac5c9e307737afadd15bacda0314870e886864c",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/README.md"
+        },
+        {
+          "approved": true,
+          "body": "# Installation\n\n**English** · [中文](../zh/installation.md)\n\n## Choose a source\n\n| Goal | Command | Source |\n|---|---|---|\n| Install a release | `bash install.sh install` | Latest released tag for each capability |\n| Update an existing install | `bash install.sh update` | Current release catalog |\n| Test unpublished code | `bash install.sh local` | Current checkout, including uncommitted changes |\n| Roll back one capability | See [Roll back](#roll-back) | Exact immutable tag |\n\nReleased installs never follow `main`. To test a branch, check it out and use `local`.\n\n## Guided installer\n\nThe installer supports Claude Code, CodeBuddy, Codex, Qoder, OpenClaw, Qwen Code, and Gemini CLI. It\ninvokes each harness's native installation mechanism and stores shared configuration in\n`~/.qwen-mm-plugins/config`.\n\n`Qoder` and `Qwen Code` here do not include the separate QoderWork and QwenWork desktop apps. Use\ntheir [in-app setup](manual_harnesses.md#qoderwork-and-qwenwork-in-app-task) instead.\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/QwenLM/Qwen-MM-Plugins/main/install.sh | bash\n```\n\nThe menu provides **Install**, **Update**, **Configure**, **Verify**, and **Uninstall**. Each\ncapability is installed separately as a Skill plus an optional MCP server.\n\n### Update\n\nUse a current copy of the script so it contains the latest release catalog:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/QwenLM/Qwen-MM-Plugins/main/install.sh | bash -s -- update\n```\n\nFor managed installs, the selected capability's Skill and MCP configuration are updated together.\nThe installer then starts the tagged MCP package with `--check-system`. An already-open harness may\nstill need a reload:\n\n| Harness | Activate the update |\n|---|---|\n| Claude Code | `/reload-plugins`, or restart |\n| CodeBuddy | `/reload-plugins`, or restart |\n| Codex | Start a new task, or restart |\n| Qoder | `/plugins reload`, or restart |\n| OpenClaw | Managed Gateways normally restart automatically; otherwise `openclaw gateway restart` |\n| Qwen Code | Restart |\n| Gemini CLI | `/skills reload` and `/mcp reload`, or restart |\n\n### Roll back\n\nFor guided harnesses that accept a remote tag, select only the capability named by the tag:\n\n```bash\nQMP_REF=qwen-mm-plugins-search-v1.0.1 bash install.sh install\n```\n\n## Local checkout\n\nUse a dedicated clone whose path will remain stable:\n\n```bash\ngit clone https://github.com/QwenLM/Qwen-MM-Plugins.git\ncd Qwen-MM-Plugins\ngit switch <development-branch>   # optional\nbash install.sh local\n```\n\nLocal mode points the selected plugin manifests and MCP package specs at this checkout and adds\n`uvx --refresh`. It intentionally leaves absolute local paths in tracked manifests while the clone\nis used for development. Restore release sources when leaving local mode:\n\n```bash\nbash install.sh local --restore\n```\n\nSee [Local development](local_development.md) for direct source execution and targeted debugging.\n\n## Manual Skill + MCP installation\n\nUse this path for DeepSeek Harness, Hermes Agent, opencode, pi, QwenPaw, or another harness without\na compatible marketplace. For an MCP capability, keep these three values aligned:\n\n- Skill: `src/capabilities/<cap>/skill`\n- package extra: `qwen-mm-plugins[<cap>]`\n- entry: `qwen-mm-plugins-<cap>`\n\nFor example, `video-memory` uses `[video-memory]`, not `[memory]`. `edu-agent` is Skill-only.\n\n```bash\n# Install/copy/link the Skill directory where your harness discovers Skills, then register:\nuvx --from \\\n  \"qwen-mm-plugins[<cap>] @ git+https://github.com/QwenLM/Qwen-MM-Plugins.git@qwen-mm-plugins-<cap>-v<version>\" \\\n  qwen-mm-plugins-<cap>\n```\n\nManual Skill and MCP registrations have no shared install receipt, so the harness usually cannot\ndetect or notify you about a mismatched update. Run the current installer, choose\n**Update → other (manual / another harness)**, and update both registrations to the tag it prints.\nFor a linked Skill, use a dedicated checkout per capability/tag because independent tags may point\nto different commits.\n\nIn-app steps and exact configuration examples for the other harnesses are in\n[Other harness setup](manual_harnesses.md).\n\n## Windows (WSL2)\n\nWindows is currently supported through Ubuntu WSL2 only. Clone into the WSL home directory (for\nexample `~/code`), not a mounted Windows path such as `/mnt/c`, and run the Linux commands there.\n\n```powershell\nwsl --install -d Ubuntu\n```\n\nFor Codex, select a WSL2 agent environment and install the plugin inside that same environment.\nNative Windows has not been validated.\n\n## Dependencies\n\n`uvx` installs each capability's Python dependencies into an isolated cache. The remaining inputs\nare service settings and system applications.\n\n### Common service settings\n\nThese are the settings most users need for cloud capabilities. The\n[configuration reference](configuration.md) covers every setting available through **Configure**.\n\n| Variable | Used by |\n|---|---|\n| `DASHSCOPE_API_KEY` | Cloud media APIs, text-only image captions, generation, and memory builds (video-memory, omni-memory) |\n| `SERPER_API_KEY` | Serper web search/extraction and all reverse-image search |\n| `TAVILY_API_KEY` | Tavily web search and extraction |\n| `EXA_API_KEY` | Exa web search and extraction |\n| `SERPLY_API_KEY` | Serply web search and extraction |\n\nNative `core` file reading needs no API key. Set values through the installer's **Configure** action,\nthe shell environment, or `~/.qwen-mm-plugins/config`; environment variables take precedence.\nWith the official DashScope endpoint, oversized local media used by Omni is uploaded to temporary OSS\nwhen possible, without requiring user-managed OSS credentials. Existing fallback behavior remains\navailable when temporary upload cannot be used.\n\nWith `QWEN_MM_SEARCH_BACKEND` unset or set to `auto`, text search uses the first configured key in\nthis fixed order: Serper, Tavily, Exa, Serply. Setting it to `serper`, `tavily`, `exa`, or `serply` pins\nthat provider;\na missing key then raises an error instead of falling back.\n`image_search` always uses Serper Lens, independently of `QWEN_MM_SEARCH_BACKEND`, and raises an\nerror when `SERPER_API_KEY` is unavailable.\n\n### Common system tools\n\n| Tool | Used by |\n|---|---|\n| `ffmpeg` | Video/audio reading, memory, editing, and rendering |\n| LibreOffice | Office and DrawIO visualization |\n| TeX | LaTeX visualization |\n| Chromium | Web-page screenshots and edu-agent rendering |\n| `tesseract` | On-screen text OCR when extracting a skill from a video (optional) |\n| Blender / FreeCAD | Their respective live application integrations |\n\nRun `bash install.sh verify` or `<entry> --check-system` to see what the selected capability needs.\nCapability-specific prerequisites are documented in its Skill and cookbook.\n\n### Complete configuration\n\nSee the [configuration reference](configuration.md) for provider endpoints, search routing,\ntimeouts, cache paths, video-memory files, OSS, application hosts, and advanced compatibility\nswitches.\n",
+          "checked_at": "2026-09-20",
+          "coverage": "full_text",
+          "id": "install",
+          "locator": "docs/en/installation.md；固定版本原样全文，未执行其中命令。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "Apache-2.0；原样转载固定仓库文件，保留项目署名及完整许可证。",
+            "notice": "来源：QwenLM / Qwen-MM-Plugins；固定提交 fac5c9e307737afadd15bacda0314870e886864c。内容未修改；Apache-2.0 许可证作为同一对象的 license 材料完整保留。本许可不代表模型权重或其他服务也采用同一许可。",
+            "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/LICENSE"
+          },
+          "title": "Qwen-MM-Plugins · 固定安装说明",
+          "upstream_revision": "fac5c9e307737afadd15bacda0314870e886864c",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/docs/en/installation.md"
+        },
+        {
+          "approved": true,
+          "body": "\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+          "checked_at": "2026-09-20",
+          "coverage": "full_text",
+          "id": "license",
+          "locator": "LICENSE；固定版本原样全文，未执行其中命令。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "Apache-2.0；原样转载固定仓库文件，保留项目署名及完整许可证。",
+            "notice": "来源：QwenLM / Qwen-MM-Plugins；固定提交 fac5c9e307737afadd15bacda0314870e886864c。内容未修改；Apache-2.0 许可证作为同一对象的 license 材料完整保留。本许可不代表模型权重或其他服务也采用同一许可。",
+            "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/LICENSE"
+          },
+          "title": "Qwen-MM-Plugins · Apache-2.0 LICENSE",
+          "upstream_revision": "fac5c9e307737afadd15bacda0314870e886864c",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/LICENSE"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M07",
+          "name": "Qwen",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m07"
+        },
+        {
+          "id": "D-06",
+          "name": "Qwen3.8-Flash-Next",
+          "url": "https://fieldtofit.top/for-you#news-d-06"
+        }
+      ],
+      "source_published_at": "2026-09-18",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "blog",
+          "title": "Qwen · Qwen3.8-Omni-Flash 官方发布",
+          "url": "https://qwen.ai/blog?id=qwen3.8-omni-flash"
+        },
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "QwenCloud · Model releases",
+          "url": "https://docs.qwencloud.com/changelog/models"
+        },
+        {
+          "coverage": "link_only",
+          "id": "api",
+          "title": "Alibaba Cloud · Qwen-Omni API 文档",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-omni"
+        },
+        {
+          "coverage": "link_only",
+          "id": "plugins",
+          "title": "Qwen-MM-Plugins · 固定 README",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "install",
+          "title": "Qwen-MM-Plugins · 固定安装说明",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/docs/en/installation.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "license",
+          "title": "Qwen-MM-Plugins · Apache-2.0 LICENSE",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/LICENSE"
+        }
+      ],
+      "state": "published",
+      "summary": "Qwen 发布 Qwen3.8-Omni-Flash，把文本、图片、音频和视频放进最长 1M 上下文，并通过工具调用完成后续工作。值得一起看的是配套插件：将教程视频整理成图文 PDF，或把演示过程提炼为 Agent Skill。",
+      "title": "Qwen3.8-Omni-Flash：从看懂视频，到调用工具整理和创作"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "Kimi Desktop",
+        "Kimi Code 桌面端"
+      ],
+      "checked_at": "2026-09-20",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-17",
+      "highlight": true,
+      "id": "D-20",
+      "interpretation": [
+        {
+          "locator": "Kimi Code Desktop 正式发布",
+          "source_ids": [
+            "launch",
+            "start"
+          ],
+          "text": "官方把它定义为 Kimi Code 的桌面客户端：先选择本地项目，再让 Agent 阅读和修改代码。可用模型取决于账号权限，也可配置第三方模型供应商；桌面端与 CLI 共享部分配置，但不能据此认定所有会话与能力完全互通。",
+          "title": "这次新增的是开发客户端，不是另一个 Kimi 模型"
+        },
+        {
+          "locator": "选择任务模式 / 审查改动 / 验证修改",
+          "source_ids": [
+            "use"
+          ],
+          "text": "改动面板按文件查看差异，终端可以运行项目测试，内置浏览器查看网页结果；还能把页面元素、截图和评论交回同一个任务。对于需要反复修改界面的项目，这比只看最终聊天答复多了一组具体核查入口。",
+          "title": "值得看的是修改与验证如何连在一起"
+        },
+        {
+          "locator": "连接模型 / 新建会话并选择工作区 / 查看改动并验证",
+          "source_ids": [
+            "start",
+            "use"
+          ],
+          "text": "计划模式先展示方案供确认；目标模式继续多轮任务并支持暂停、恢复；Swarm 把可分开的子任务并行处理。本站尚未实测这些流程的稳定性、额度消耗或第三方模型兼容范围，介绍能力不等于完成验收。",
+          "title": "计划、长任务和并行任务各有入口"
+        }
+      ],
+      "name": "Kimi Code Desktop",
+      "note": "原文 2026-09-17，本站核对 2026-09-20。Kimi Code Desktop 2026-09-17 正式发布；桌面独立版本号未确认。CLI同日2.0.0不能直接当成桌面版本号。。未安装桌面客户端，也未登录或验证会员权益；未确认桌面发布包的独立版本号、开源范围和文档再分发许可；未实测 Windows/macOS 插件能力一致性，官方 Computer Use 描述限定 macOS；CLI安装桌面子命令两处文档写法不一致，本提案只给官方下载入口，不复制冲突命令。官方材料目前仅提供链接，MCP 可读本站介绍与解读，不提供这些来源的全文。",
+      "organization": "Moonshot AI / Kimi",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "launch",
+          "locator": "Kimi Code Desktop 正式发布",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Kimi Code · 最新动态",
+          "upstream_revision": "Kimi Code Desktop 2026-09-17 正式发布；桌面独立版本号未确认。CLI同日2.0.0不能直接当成桌面版本号。",
+          "url": "https://www.kimi.com/code/docs/kimi-code/whats-new.html",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "start",
+          "locator": "连接模型 / 新建会话并选择工作区 / 查看改动并验证",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Kimi Code Desktop · 快速开始",
+          "upstream_revision": "Kimi Code Desktop 2026-09-17 正式发布；桌面独立版本号未确认。CLI同日2.0.0不能直接当成桌面版本号。",
+          "url": "https://www.kimi.com/code/docs/kimi-code-desktop/getting-started.html",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "use",
+          "locator": "选择任务模式 / 审查改动 / 验证修改",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Kimi Code Desktop · 使用桌面端",
+          "upstream_revision": "Kimi Code Desktop 2026-09-17 正式发布；桌面独立版本号未确认。CLI同日2.0.0不能直接当成桌面版本号。",
+          "url": "https://www.kimi.com/code/docs/kimi-code-desktop/using-desktop.html",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "models",
+          "locator": "模型总览 / 会员限制",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Kimi Code · 模型配置",
+          "upstream_revision": "Kimi Code Desktop 2026-09-17 正式发布；桌面独立版本号未确认。CLI同日2.0.0不能直接当成桌面版本号。",
+          "url": "https://www.kimi.com/code/docs/kimi-code/models.html"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M04",
+          "name": "Kimi",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m04"
+        }
+      ],
+      "source_published_at": "2026-09-17",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "launch",
+          "title": "Kimi Code · 最新动态",
+          "url": "https://www.kimi.com/code/docs/kimi-code/whats-new.html"
+        },
+        {
+          "coverage": "link_only",
+          "id": "start",
+          "title": "Kimi Code Desktop · 快速开始",
+          "url": "https://www.kimi.com/code/docs/kimi-code-desktop/getting-started.html"
+        },
+        {
+          "coverage": "link_only",
+          "id": "use",
+          "title": "Kimi Code Desktop · 使用桌面端",
+          "url": "https://www.kimi.com/code/docs/kimi-code-desktop/using-desktop.html"
+        },
+        {
+          "coverage": "link_only",
+          "id": "models",
+          "title": "Kimi Code · 模型配置",
+          "url": "https://www.kimi.com/code/docs/kimi-code/models.html"
+        }
+      ],
+      "state": "published",
+      "summary": "Kimi Code 桌面端把本地项目、Agent 对话、文件改动、终端和内置浏览器放进同一界面，支持 macOS 和 Windows。它延续 CLI 的 Agent 能力，让读者可以直接看到改了什么，再运行检查和反馈页面问题。",
+      "title": "Kimi Code 桌面端：在同一窗口里改代码、看差异和验证网页"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "Copilot",
+        "GitHub Copilot Sentry"
+      ],
+      "checked_at": "2026-09-20",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-18",
+      "highlight": true,
+      "id": "D-21",
+      "interpretation": [
+        {
+          "locator": "GitHub Copilot; GitHub Copilot app; VS Code 1.138 release updates",
+          "source_ids": [
+            "github-weekly"
+          ],
+          "text": "Sentry canvas 将错误、堆栈和相关上下文带入 Copilot app，帮助排查、验证修复并准备拉取请求。它提供了已有故障的具体工作入口；目前只核对官方说明，未连接实际项目验证修复效果。",
+          "title": "从报错材料开始处理问题"
+        },
+        {
+          "locator": "GitHub Copilot; GitHub Copilot app; VS Code 1.138 release updates",
+          "source_ids": [
+            "github-weekly"
+          ],
+          "text": "后续审阅会处理已解决评论、保留未解决项，且审阅可使用 shell 工具验证改动。值得看的是评论与真实修改是否闭环，而不是只看生成了多少建议；官方说明没有给出本项目上的误报率或成功率。",
+          "title": "审阅可以继续核查修改"
+        },
+        {
+          "locator": "Run agent sessions in local Dev Containers",
+          "source_ids": [
+            "vscode-1138"
+          ],
+          "text": "VS Code 1.138 的 Agents 窗口可在本地 Dev Container 中运行会话，使用项目配置的工具与依赖。该功能分批开放，要求 Docker 与受支持的 Dev Container 配置；不能把它写成所有用户已默认可用。",
+          "title": "让 Agent 使用项目自己的依赖环境"
+        }
+      ],
+      "name": "GitHub Copilot · 2026-09-18",
+      "note": "原文 2026-09-18，本站核对 2026-09-20。GitHub Copilot 2026-09-14 周发布汇总；关联 VS Code 1.138。未安装或连接 Sentry，未运行 Copilot 审阅或 Dev Container 验收；周报发布日期为9月18日，标题中的9月14日是周次；VS Code 1.138 的独立发布日期为9月16日；具体账户、套餐、项目权限和分批开放状态需实际核对；VS Code 版本说明注明由 Copilot 辅助生成，可能有错误；本文只交叉核对 GitHub 周报也提到的容器功能。官方材料目前仅提供链接，MCP 可读本站介绍与解读，不提供这些来源的全文。",
+      "organization": "GitHub / Microsoft",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "github-weekly",
+          "locator": "GitHub Copilot; GitHub Copilot app; VS Code 1.138 release updates",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "代码审阅、Sentry入口与分批开放",
+          "upstream_revision": "GitHub Copilot 2026-09-14 周发布汇总；关联 VS Code 1.138",
+          "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14/",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "vscode-1138",
+          "locator": "Run agent sessions in local Dev Containers",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "本地容器要求、设置和启用范围",
+          "upstream_revision": "GitHub Copilot 2026-09-14 周发布汇总；关联 VS Code 1.138",
+          "url": "https://code.visualstudio.com/updates/v1_138",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-15",
+          "name": "Agentic coding / CI test selection · 同主题资料，非兼容或实现关系",
+          "url": "https://fieldtofit.top/for-you#news-d-15"
+        }
+      ],
+      "source_published_at": "2026-09-18",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "github-weekly",
+          "title": "代码审阅、Sentry入口与分批开放",
+          "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "vscode-1138",
+          "title": "本地容器要求、设置和启用范围",
+          "url": "https://code.visualstudio.com/updates/v1_138"
+        }
+      ],
+      "state": "published",
+      "summary": "GitHub 在 9 月 18 日发布本周 Copilot 更新：Copilot app 新增 Sentry 入口，代码审阅可使用 shell 工具核查变更，VS Code 的 Agent 会话开始支持本地 Dev Container。值得关注的是如何把报错材料、修改与验证放进同一工作流程。",
+      "title": "Copilot 把线上报错、代码审阅与项目运行环境接到开发流程中"
+    },
+    {
+      "_position": 4,
+      "aliases": [
+        "Harness 计划与验收",
+        "2609.20474"
+      ],
+      "checked_at": "2026-09-20",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-17",
+      "highlight": true,
+      "id": "D-22",
+      "interpretation": [
+        {
+          "locator": "https://arxiv.org/html/2609.20474v1#S5.SS1",
+          "source_ids": [
+            "full-paper"
+          ],
+          "text": "主分析比较预写计划与等字数打乱文本：4 个模型、23 个任务、265 个配对单元，成功率差 7.17 个百分点（90% 区间 1.15–13.36）。计划由人工预写，不能据此宣称让 Agent 自己先写计划也有同样效果。",
+          "title": "先看计划提供了什么信息"
+        },
+        {
+          "locator": "https://arxiv.org/html/2609.20474v1#S6.SS1",
+          "source_ids": [
+            "full-paper"
+          ],
+          "text": "零售实验拦住 83/137 个错误结果，也拦住 16/92 个正确结果。检查发生在执行后，不能撤销已产生的退款等状态变化。采用类似机制时，应同时记录漏检和误拒。",
+          "title": "结束检查能拦错，也会误拦"
+        },
+        {
+          "locator": "https://arxiv.org/html/2609.20474v1#S7.SS3",
+          "source_ids": [
+            "full-paper"
+          ],
+          "text": "论文的一组配对比较报告，单独验收的增量推理成本约为每回合 0.0079 美元；价格记录和模型端点版本不完整，代码仓库也尚未公开。它适合作为对照实验思路，不能当成现成框架的性能或实际部署成本结论。",
+          "title": "值得借鉴测法，暂不能照搬结论"
+        }
+      ],
+      "name": "How Do Agent Harnesses Create Value?",
+      "note": "原文 2026-09-17，本站核对 2026-09-20。arXiv:2609.20474v1。尚未确认同行评审状态；按预印本呈现；无公开研究代码链接；未独立复现；手工计划撰写者当时能看到的全部信息未记录，影响对计划收益的解释；非完整随机化对照：配对执行顺序和随机抽样并未证明完全一致；主样本依据基线成功率与任务写操作进行筛选；缺失托管模型端点精确版本、完整历史价格及部分请求设置；实验在 6 月执行，9 月 17 日为预印本提交日期，不代表测试了 9 月模型版本。官方材料目前仅提供链接，MCP 可读本站介绍与解读，不提供这些来源的全文。",
+      "organization": "Yukun Zhang 等 · arXiv 预印本",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "paper",
+          "locator": "官方来源入口",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "元数据、提交时间、版本、许可入口",
+          "upstream_revision": "arXiv:2609.20474v1",
+          "url": "https://arxiv.org/abs/2609.20474v1"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "full-paper",
+          "locator": "官方来源入口",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "方法、结果、限制与代码可用性",
+          "upstream_revision": "arXiv:2609.20474v1",
+          "url": "https://arxiv.org/html/2609.20474v1"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-20",
+          "coverage": "link_only",
+          "id": "paper-license",
+          "locator": "官方来源入口",
+          "reason": "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。",
+          "retrieved_at": "2026-09-20T14:55:16.106761+00:00",
+          "rights": {
+            "basis": "官方来源链接；不复制全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "确认仅 arXiv 分发许可",
+          "upstream_revision": "arXiv:2609.20474v1",
+          "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-H01",
+          "name": "DeepSeek Harness · 同主题资料，非兼容或实现关系",
+          "url": "https://fieldtofit.top/for-you#watch-cw-h01"
+        },
+        {
+          "id": "CW-H02",
+          "name": "Deep Agents · 同主题资料，非兼容或实现关系",
+          "url": "https://fieldtofit.top/for-you#watch-cw-h02"
+        },
+        {
+          "id": "CW-H03",
+          "name": "Claude Agent SDK · 同主题资料，非兼容或实现关系",
+          "url": "https://fieldtofit.top/for-you#watch-cw-h03"
+        },
+        {
+          "id": "CW-H04",
+          "name": "OpenHands Software Agent SDK · 同主题资料，非兼容或实现关系",
+          "url": "https://fieldtofit.top/for-you#watch-cw-h04"
+        }
+      ],
+      "source_published_at": "2026-09-17",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "paper",
+          "title": "元数据、提交时间、版本、许可入口",
+          "url": "https://arxiv.org/abs/2609.20474v1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "full-paper",
+          "title": "方法、结果、限制与代码可用性",
+          "url": "https://arxiv.org/html/2609.20474v1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "paper-license",
+          "title": "确认仅 arXiv 分发许可",
+          "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html"
+        }
+      ],
+      "state": "published",
+      "summary": "这篇新预印本在 τ²-bench 的零售和航空模拟任务中，分开测试执行前的计划与结束后的检查。值得关注的是评估方法：任务是否做成、错误结果是否被放行、额外成本，应分别衡量。",
+      "title": "Agent 说完成了，真的完成了吗？一项 Harness 研究拆开比较计划与验收"
+    },
+    {
+      "_position": 1,
+      "aliases": [
         "ChatGPT Word",
         "Word 中的 ChatGPT"
       ],
@@ -146,7 +760,7 @@
       "checked_at": "2026-09-18",
       "editor": "FieldToFit",
       "event_date": "2026-09-17",
-      "highlight": true,
+      "highlight": false,
       "id": "D-18",
       "interpretation": [
         {
@@ -922,7 +1536,7 @@
       "checked_at": "2026-09-14",
       "editor": "FieldToFit",
       "event_date": "2026-09-10",
-      "highlight": true,
+      "highlight": false,
       "id": "D-10",
       "interpretation": [
         {
@@ -1015,7 +1629,8 @@
       ],
       "state": "published",
       "summary": "V4.1 Flash 已在 9 月 10 日正式发布；当前官方日志确认，9 月 14 日之后继续提供 V4 Pro API，计费方式不变。",
-      "title": "DeepSeek：V4.1 Flash 调用方式明确，V4 Pro 继续提供 API"
+      "title": "DeepSeek：V4.1 Flash 调用方式明确，V4 Pro 继续提供 API",
+      "_position": 8
     },
     {
       "_position": 2,
@@ -1098,7 +1713,7 @@
       "checked_at": "2026-09-11",
       "editor": "FieldToFit",
       "event_date": null,
-      "highlight": true,
+      "highlight": false,
       "id": "D-01",
       "interpretation": [
         {
@@ -1139,13 +1754,14 @@
       ],
       "state": "published",
       "summary": "官方说明把视觉反馈用于查看文档和界面结果，再继续修改。",
-      "title": "GLM-5.3-Flash：视觉反馈如何参与文档制作"
+      "title": "GLM-5.3-Flash：视觉反馈如何参与文档制作",
+      "_position": 10
     },
     {
       "checked_at": "2026-09-11",
       "editor": "FieldToFit",
       "event_date": null,
-      "highlight": true,
+      "highlight": false,
       "id": "D-02",
       "interpretation": [
         {
@@ -1180,7 +1796,8 @@
       ],
       "state": "published",
       "summary": "官方更新涵盖编程、研究、电脑使用和文档工作。",
-      "title": "GPT-6 Astra：面向复杂多步工作"
+      "title": "GPT-6 Astra：面向复杂多步工作",
+      "_position": 11
     },
     {
       "checked_at": "2026-09-11",
@@ -1464,7 +2081,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-09-18",
+  "reviewed_at": "2026-09-20",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }
