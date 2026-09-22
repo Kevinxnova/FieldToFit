@@ -34,16 +34,15 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.7](CHANGELOG.md#v1.5.7)** · [fieldtofit-v1.5.7](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.7)
+**Current source version: [v1.5.8](CHANGELOG.md#v1.5.8)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Reassess existing candidates when metrics or source material change, retain actual observation times, and preserve manual groups and owner decisions.
-- Add a separate investigation-priority view with reasons; discussion signals do not establish factual quality, and cumulative stars are not growth.
-- Add briefing selection checks, individual or bulk editorial records, and a preparation gate, with explicit daily capacity, backlog and unchanged-evidence reuse.
-- Connect the existing local briefing workflow to these checks and replay the missed Jev lead from a prepublication snapshot without changing public content or publication permissions.
+- Add REQ-17 with definitions for unique visitors, page views, sessions, visible content, acquisition and return visits, plus first-party collection and a private dashboard design.
+- Add REQ-18 covering stable content URLs, crawlable HTML, per-page metadata, sitemaps, and verification and submission for Google, Bing and Baidu.
+- Record phases, privacy controls, compatibility, acceptance criteria and observed baselines; this batch delivers requirements only, without feature implementation, deployment or search-engine submission.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

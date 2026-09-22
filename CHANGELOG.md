@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.8"></a>
+## v1.5.8 · 访问统计与搜索发现需求方案 · 2026-09-22
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增 REQ-17：明确独立访客、浏览量、会话、内容曝光、来源与复访口径，设计站内采集和私有流量后台。
+- 新增 REQ-18：规划独立内容网址、可抓取正文、逐页元数据、站点地图，以及 Google、Bing、百度验证与提交。
+- 记录分期、隐私控制、兼容方案、验收条件及真实现状；本批仅交付需求文档，功能未开发、未部署，未提交搜索引擎。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add REQ-17 with definitions for unique visitors, page views, sessions, visible content, acquisition and return visits, plus first-party collection and a private dashboard design.
+- Add REQ-18 covering stable content URLs, crawlable HTML, per-page metadata, sitemaps, and verification and submission for Google, Bing and Baidu.
+- Record phases, privacy controls, compatibility, acceptance criteria and observed baselines; this batch delivers requirements only, without feature implementation, deployment or search-engine submission.
+<!-- release-summary:en:end -->
+
+对应 REQ-17-1 至 REQ-17-6、REQ-18-1 至 REQ-18-6，并关联 REQ-14-3/4。无功能、API 或数据库迁移变化；公开账号继续关闭，应用案例仍暂缓。源码文档批次 v1.5.8 与正式站版本分开记录；仓库检查及只读核对的实际结果见[本批证据](docs/validation/2026-09-22-traffic-search.md)。
+
 <a id="v1.5.7"></a>
 ## v1.5.7 · 热门线索核验与日报漏项检查 · 2026-09-21
 
