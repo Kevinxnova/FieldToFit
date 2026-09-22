@@ -1,11 +1,11 @@
 {
   "name": "fieldtofit-frontend",
   "private": true,
-  "version": "1.5.11",
+  "version": "1.5.12",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/copy-search-shell.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

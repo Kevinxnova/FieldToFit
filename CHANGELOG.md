@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.12"></a>
+## v1.5.12 · 搜索可读页面与已发布内容独立页 · 2026-09-22
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 保留现有主入口标题、介绍和正文；抽取同一份既有介绍供初始 HTML 与网页读取，没有改写宣传文案。
+- 已发布动态与持续关注拥有独立网址，复用原有阅读、资料交接和访问计数组件；新分享和目录使用独立页，旧长页锚点继续可用。
+- 增加同源公开 HTML、逐页搜索信息、robots 和自动 sitemap；草稿不公开，下架立即移除，归并仅跳转到公开目标，错误页返回真实状态。
+- 本批开发与隔离验收记录见下方；正式站仍为 v1.5.11，尚未部署搜索功能，也未执行搜索平台验证或提交。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Preserve existing main-page titles, introductions and body copy; share the same existing introductions between initial HTML and the client without rewriting promotional text.
+- Add stable URLs for published news and ongoing-watch profiles, reusing reading, handoff and visit counting; new shares and directory links open details while old long-page anchors remain valid.
+- Add public HTML, page-specific metadata, robots and an automatic sitemap; exclude drafts, remove withdrawn content immediately, redirect merged identities only to public targets and return real error statuses.
+- Development and isolated verification are recorded below. Production remains v1.5.11; search features have not been deployed and webmaster verification/submission has not been performed.
+<!-- release-summary:en:end -->
+
+对应 REQ-18-1 至 4；按用户补充约束保留既有文案，REQ-18-5/6 的平台提交和效果观察仍待执行。API/MCP 内容契约与生产数据库不变；详情页不缓存，站点地图仅从公开集合生成，更新日期仅取实际发布内容变化，种子／静态页面无可靠修改日时省略。详情路由纳入现有 30 分钟访问会话。实际验收、部署准备与未验范围见[搜索页面验收](docs/validation/2026-09-22-search.md)。
+
 <a id="v1.5.11"></a>
 ## v1.5.11 · 公共页脚全站累计访问次数 · 2026-09-22
 

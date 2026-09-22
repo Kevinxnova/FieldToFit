@@ -32,6 +32,8 @@ app.register_blueprint(knowledge_bp)
 app.register_blueprint(mcp_bp)
 from backend.analytics import bp as analytics_bp
 app.register_blueprint(analytics_bp)
+from backend.seo import bp as search_bp
+app.register_blueprint(search_bp)
 
 ALLOWED_ORIGINS = allowed_origins()
 
@@ -397,9 +399,15 @@ def favicon():
 @app.get('/')
 @app.get('/<path:path>')
 def frontend(path=''):
-    if path.startswith('api/') or path == 'api' or not (CLIENT_DIST / 'index.html').exists():
+    if path.startswith('api/') or path == 'api':
         abort(404)
-    content = (CLIENT_DIST / 'index.html').read_text()
+    from backend.seo import page, document, shell_path, LEGACY
+    rendered = page('/' + path, CLIENT_DIST)
+    if rendered is not None:
+        return rendered
+    if not shell_path(CLIENT_DIST).exists():
+        abort(503)
+    content = shell_path(CLIENT_DIST).read_text()
     status = 200
     if path.startswith('records/'):
         from backend.knowledge.store import get_record
@@ -412,7 +420,13 @@ def frontend(path=''):
             content = content.replace('</head>', f'<meta property="og:title" content="{title}" /><meta property="og:description" content="{description}" /></head>')
         else:
             status = 404
-    return Response(content, status=status, content_type='text/html; charset=utf-8')
+    if path.startswith('records/'):
+        response = Response(content, status=status, content_type='text/html; charset=utf-8')
+        response.headers['Cache-Control'] = 'no-store'
+        return response
+    if '/' + path not in LEGACY:
+        return document(CLIENT_DIST, 'FieldToFit · 页面不存在', '', '/' + path, '<main><h1>页面不存在</h1><a href="/for-you">For you</a></main>', 404, False)
+    return document(CLIENT_DIST, 'FieldToFit', '', '/' + path, index=False)
 
 
 # Init DB on import

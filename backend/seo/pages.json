@@ -1,0 +1,72 @@
+{
+  "/for-you": {
+    "title": [
+      "FieldToFit · For you",
+      "FieldToFit · For you"
+    ],
+    "heading": [
+      "了解 AI 新变化，\n持续关注重要模型与项目。",
+      "Follow AI developments.\nUnderstand the models and projects."
+    ],
+    "description": [
+      "这里提供模型能力与价格图、公司与产品近期动态，以及模型、工具、Agent、Skill、Harness 五类持续关注资料。先用图表了解模型位置，再读动态中的变化与解读；想深入某个项目，就看版本表与原始出处，或把资料交给你的 AI。",
+      "Explore model capability and pricing, recent company and product developments, and five groups of ongoing-watch profiles. Start with the charts, read the developments, then explore versions and sources or hand the materials to your AI."
+    ]
+  },
+  "/for-your-ai": {
+    "title": [
+      "FieldToFit · For your AI",
+      "FieldToFit · For your AI"
+    ],
+    "heading": [
+      "把 FieldToFit，\n接入你的 AI。",
+      "Connect FieldToFit.\nGive your AI the sources."
+    ],
+    "description": [
+      "这里提供与 For you 同源的近期动态、持续关注资料、版本和出处。复制 MCP 接入说明给你的 AI，或在支持远程 MCP 的客户端中添加服务；接入后，让它按你的问题检索和读取。暂时无法接入，也可以下载下方资料直接交给 AI。",
+      "Access the same developments, profiles, versions and sources as For you. Copy the MCP setup instructions for your AI or add the service in a remote-MCP client, then ask it to read the materials relevant to your question. You can also download profiles below."
+    ]
+  },
+  "/about": {
+    "title": [
+      "FieldToFit · 关于 FieldToFit",
+      "FieldToFit · About FieldToFit"
+    ],
+    "heading": [
+      "FIELD → FIT",
+      "FIELD → FIT"
+    ],
+    "description": [
+      "FieldToFit 是人与 AI 共享的动态 AI 地图：看清已有方案，判断是否适配，选择正确的采用与构建路线。",
+      "FieldToFit is a living AI map shared by people and AI: understand existing solutions, judge their fit, and choose the right path to adopt or build."
+    ]
+  },
+  "/community": {
+    "title": [
+      "FieldToFit · FieldToFit 社区",
+      "FieldToFit · FieldToFit Community"
+    ],
+    "heading": [
+      "FieldToFit 社区",
+      "FieldToFit Community"
+    ],
+    "description": [
+      "FieldToFit 计划逐步建立一个围绕 AI 应用的共建社区，建设持续更新、可追溯、人与 AI 都能使用的 AI 应用资料库（AI Application Database）。",
+      "FieldToFit plans to build a community around AI applications: a continuously maintained, traceable AI Application Database for people and AI."
+    ]
+  },
+  "/sources": {
+    "title": [
+      "FieldToFit · 数据来源",
+      "FieldToFit · Sources"
+    ],
+    "heading": [
+      "关注谁，从哪里发现。",
+      "Who we follow. Where we discover."
+    ],
+    "description": [
+      "重点对象和发现渠道共用真实来源配置。已接入、已采集和已发布分别展示；每 1 天检查，有值得发布的内容再整理审核。",
+      "Tracked organizations and discovery channels share actual configuration. Connection, collection and publication are separate; sources are checked daily and content is reviewed before publication."
+    ]
+  }
+}

@@ -1,8 +1,9 @@
 FROM node:22-alpine AS frontend
-WORKDIR /build
+WORKDIR /build/frontend
 COPY frontend/package*.json ./
 RUN npm ci
 COPY frontend/ ./
+COPY backend/seo/pages.json /build/backend/seo/pages.json
 RUN npm run build
 
 FROM python:3.13-slim
@@ -12,7 +13,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/ ./backend/
 COPY examples/ ./examples/
-COPY --from=frontend /build/dist ./frontend/dist
+COPY --from=frontend /build/frontend/dist ./frontend/dist
 RUN useradd --create-home metis && mkdir /data && chown metis:metis /data
 USER metis
 EXPOSE 8000

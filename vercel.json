@@ -41,7 +41,7 @@
       "regions": [
         "hkg1"
       ],
-      "includeFiles": "backend/{knowledge/content/**,db/*.sql}"
+      "includeFiles": "backend/{knowledge/content/**,db/*.sql,seo/**}"
     },
     "api/cron_knowledge.py": {
       "maxDuration": 300,
@@ -85,7 +85,7 @@
     },
     {
       "source": "/((?!api/).*)",
-      "destination": "/index.html"
+      "destination": "/api/index.py"
     }
   ],
   "crons": [

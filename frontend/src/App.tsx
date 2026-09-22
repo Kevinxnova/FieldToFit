@@ -1,3 +1,5 @@
+import { PageMetadata, searchPages } from './search';
+import { PublishedDetail } from './pages/PublishedDetail';
 import { SiteVisits } from "./components/workspace/SiteVisits";
 import { MobileNavigation } from "./components/workspace/MobileNavigation";
 import { Community } from "./pages/Community";
@@ -56,10 +58,15 @@ function Shell() {
   ].find((x) => location.pathname === x[0] || location.pathname.startsWith(x[0] + "/"));
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `FieldToFit · ${active ? pick(active[2], active[3]) : pick("资料详情", "Dossier")}`;
+
   }, [location.pathname, zh]);
   return (
     <div className="workspace">
+      {!/^\/(news|watch)\//.test(location.pathname) && <PageMetadata
+        title={searchPages[location.pathname] ? pick(...searchPages[location.pathname].title) : `FieldToFit · ${active ? pick(active[2],active[3]) : pick('资料详情','Dossier')}`}
+        description={searchPages[location.pathname] ? pick(...searchPages[location.pathname].description) : ''}
+        path={location.pathname} index={!!searchPages[location.pathname] && !(location.pathname === "/for-you" && new URLSearchParams(location.search).has("object"))}/>}
+
       <a className="skip-link" href="#main-content">
         {pick("跳到主要内容", "Skip to content")}
       </a>
@@ -161,6 +168,8 @@ function Shell() {
           {[/^\/legacy\//, /^\/(tasks|compare|cases|briefs|records)(\/|$)/].some(pattern => pattern.test(location.pathname)) && <p className="platform-notice">{pick("这是保留的兼容页面。新主入口是 For you 与 For your AI；案例仍暂缓。", "This is a compatibility page. Use For you and For your AI for the new platform; cases remain pending.")} <Link to="/for-you">For you →</Link></p>}
           <Routes>
             <Route path="/" element={<Navigate to="/for-you" replace />} />
+            <Route path="/news/:id" element={<PublishedDetail kind="news" />} />
+            <Route path="/watch/:id" element={<PublishedDetail kind="watch" />} />
             <Route path="/for-you" element={<ForYou />} />
             <Route path="/for-your-ai" element={<ForAI />} />
             <Route path="/about" element={<AboutFieldToFit />} />

@@ -1,0 +1,22 @@
+<div class="search-document platform-page">
+  <nav aria-label="主导航">{% for url, info in pages.items() %}<a href="{{ url }}">{{ info.title[0].replace('FieldToFit · ', '') }}</a> {% endfor %}</nav>
+  <main id="main-content"{% if revision %} data-public-revision="{{ revision }}"{% endif %}>
+    <header class="platform-hero"><h1>{{ heading }}</h1><p class="platform-lead">{{ description }}</p></header>
+    {% if item %}
+    <article>
+      <p>{{ item.id }} · 资料核验 {{ item.checked_at }}{% if item.source_published_at %} · 来源发布 {{ item.source_published_at }}{% endif %}</p>
+      {% if item.attention %}<p><a href="{{ item.attention.source_url }}">GitHub ★ {{ item.attention.display_value }}</a> · {{ item.attention.observed_at }} · 仓库近似值</p>{% endif %}
+      <section><h2>FieldToFit 解读</h2>{% for point in item.interpretation %}<h3>{{ point.title }}</h3><p>{{ point.text|search_inline }}</p>{% if point.locator %}<p>原文位置：{{ point.locator }}</p>{% endif %}{% endfor %}</section>
+      {% for block in item.blocks %}{% if block.kind == 'paragraph' %}<p>{{ block.text|search_inline }}</p>{% else %}<div class="watch-table-scroll"><table class="watch-table"><thead><tr>{% for cell in block.columns %}<th>{{ cell|search_inline }}</th>{% endfor %}</tr></thead><tbody>{% for row in block.rows %}<tr>{% for cell in row %}<td>{{ cell|search_inline }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% endif %}{% endfor %}
+      {% if item.note %}<p>{{ item.note }}</p>{% endif %}
+      {% if item.submission %}<dl>{% for key, label in [('usage','如何使用'),('openness','开放情况'),('relationship','作者与提交者关系')] %}<dt>{{ label }}</dt><dd>{{ item.submission[key] }}</dd>{% endfor %}</dl>{% endif %}
+      <section><h2>原始出处</h2><ul>{% for source in item.sources %}<li><a href="{{ source.url }}">{{ source.title }}</a></li>{% endfor %}</ul></section>
+      {% if item.related %}<section><h2>关联资料</h2><ul>{% for ref in item.related %}<li><a href="{{ ref.url|search_link }}">{{ ref.id }} · {{ ref.name }}</a></li>{% endfor %}</ul></section>{% endif %}
+      {% if item.maintenance %}<section>{% for ref in item.maintenance.relationships %}<p><a href="{{ ref.url|search_link }}">{{ ref.name }}</a> · <a href="{{ ref.evidence }}">关系依据</a></p>{% endfor %}{% for material in item.maintenance.materials %}{% if material.public_note %}<p>{{ material.id }} · {{ material.public_note }}</p>{% endif %}{% endfor %}</section>{% endif %}
+      <p><a href="/for-you#{{ 'news-' if item.id.startswith('D-') else 'watch-' }}{{ item.id|lower }}">For you</a> · <a href="/for-your-ai">For your AI</a></p>
+    </article>
+    {% endif %}
+    {% for kind, collection in collections.items() %}<section><h2>{{ '近期动态' if kind == 'news' else '持续关注' }}</h2>{% for entry in collection['items'] %}<article><h3><a href="/{{ kind }}/{{ entry.id }}">{{ entry.title if kind == 'news' else entry.name }}</a></h3><p>{{ entry.summary if kind == 'news' else entry.introduction }}</p></article>{% endfor %}</section>{% endfor %}
+    {% if catalog %}<section><h2>重点跟踪对象</h2>{% for org in catalog.tracked %}<article><h3><a href="{{ org.official_url }}">{{ org.name }}</a></h3><p>{{ org.products|join(' · ') }}</p><ul>{% for channel in org.channels %}<li><a href="{{ channel.url }}">{{ channel.name }}</a> · {{ channel.scope }}</li>{% endfor %}</ul></article>{% endfor %}</section>{% endif %}
+  </main>
+</div>

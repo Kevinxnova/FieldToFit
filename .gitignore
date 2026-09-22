@@ -46,3 +46,6 @@ FieldToFit-A-brand-kit.zip
 
 # Full promotional brand kit is kept in the owner backup only.
 /FieldToFit-A-brand-kit/
+
+# Built search HTML shell; regenerated with the frontend assets.
+/backend/seo/client.html

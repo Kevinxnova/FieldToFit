@@ -149,13 +149,23 @@ def visit():
     if not isinstance(path, str) or len(path) > 200:
         return jsonify({'detail': 'Invalid page'}), 400
     if path not in PUBLIC_PATHS:
-        # Existing record details must actually exist; new SEO routes are not yet public.
-        if not re.fullmatch(r'/records/[A-Za-z0-9_-]+', path):
+        # Only successfully loaded, currently public details are eligible.
+        if not re.fullmatch(r'/(?:records/[A-Za-z0-9_-]+|news/D-\d{2,}|watch/CW-[MATSH]\d{2,})', path):
             return jsonify({'detail': 'Invalid page'}), 400
         try:
-            from backend.knowledge.store import get_record
-            if not get_record(path.removeprefix('/records/')):
+            if path.startswith('/records/'):
+                from backend.knowledge.store import get_record
+                exists = get_record(path.removeprefix('/records/'))
+            else:
+                from backend.seo import news, watch
+                kind, ident = path.strip('/').split('/')
+                exists = (news if kind == 'news' else watch)(id=ident)['items']
+            if not exists:
                 return jsonify({'detail': 'Invalid page'}), 400
+        except ValueError as exc:
+            if getattr(exc, 'status', None) == 404:
+                return jsonify({'detail': 'Invalid page'}), 400
+            return jsonify({'status': 'unavailable'}), 503
         except Exception:
             return jsonify({'status': 'unavailable'}), 503
     try:

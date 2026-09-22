@@ -1,3 +1,4 @@
+import { publicContentLink } from '../../search';
 import { Link, useLocation } from 'react-router-dom';
 import { useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
@@ -8,7 +9,7 @@ export function PublicMaintenance({value}:{value?:Maintenance}){
  const issues=value.materials.filter(m=>m.availability==='check_failed'||m.needs_review||m.public_note);
  if(!value.relationships.length&&!issues.length)return null;
  return <section className="public-maintenance">
- {value.relationships.length>0&&<details><summary>{pick('相关对象与动态','Related objects and developments')} · {value.relationships.length}</summary><ul>{value.relationships.map(r=><li key={r.id}><a href={r.url}>{r.name}</a> · {pick(relations[r.relation]||r.relation,r.relation)}{r.direction==='incoming'?pick('（由关联对象指向本项）',' (incoming)'):''}{r.version?' · '+r.version:''} · <a href={r.evidence} target="_blank" rel="noreferrer">{pick('关系依据','Evidence')}</a></li>)}</ul></details>}
+ {value.relationships.length>0&&<details><summary>{pick('相关对象与动态','Related objects and developments')} · {value.relationships.length}</summary><ul>{value.relationships.map(r=><li key={r.id}><a href={publicContentLink(r.url)}>{r.name}</a> · {pick(relations[r.relation]||r.relation,r.relation)}{r.direction==='incoming'?pick('（由关联对象指向本项）',' (incoming)'):''}{r.version?' · '+r.version:''} · <a href={r.evidence} target="_blank" rel="noreferrer">{pick('关系依据','Evidence')}</a></li>)}</ul></details>}
  {issues.length>0&&<details><summary>{pick('材料访问与复核状态','Material access and review')} · {issues.length}</summary><p>{pick('访问检查与内容核验分开记录；旧材料保留原有日期。','Access checks are separate from factual review. Stored materials retain their original dates.')}</p><ul>{issues.map(m=><li key={m.id}><strong>{m.id}</strong> · {m.availability==='check_failed'?pick('本次未能访问来源','Source access failed'):pick('来源可访问','Source reachable')}{m.needs_review?pick(' · 待复核',' · Review pending'):''}<p>{pick('最后检查：','Last check: ')}{m.last_checked_at} · {pick('最后成功：','Last success: ')}{m.last_success_at||pick('尚无成功记录','Not recorded')}{m.failure_days>0?pick(` · 连续 ${m.failure_days} 个自然日失败`,` · ${m.failure_days} consecutive failed days`):''}</p>{m.error&&<p>{m.error}</p>}{m.public_note&&<p>{m.public_note}</p>}</li>)}</ul></details>}
  </section>;
 }

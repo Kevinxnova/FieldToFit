@@ -108,7 +108,7 @@ def test_privacy_admin_and_bots_do_not_count(counter, headers):
     assert total(counter)['total'] == 0
 
 
-@pytest.mark.parametrize('path', ['/admin', '/api/health', '/for-you?q=private', '/for-you#secret', '/records/missing', '/account', '/news/D-01'])
+@pytest.mark.parametrize('path', ['/admin', '/api/health', '/for-you?q=private', '/for-you#secret', '/records/missing', '/account', '/news/D-9999'])
 def test_invalid_private_and_unimplemented_pages(counter, path):
     assert post(counter, path=path).status_code == 400
     assert total(counter)['total'] == 0
@@ -183,4 +183,14 @@ def test_existing_database_additive_migration(counter):
         assert db.execute('SELECT value FROM preserved_fixture').fetchone()[0] == 'keep'
     assert total(counter)['total'] == 0
     assert post(counter).status_code == 204
+    assert total(counter)['total'] == 1
+
+
+def test_published_search_details_share_session(counter):
+    browser = ident()
+    assert post(counter, browser=browser, path='/news/D-01').status_code == 204
+    assert post(counter, browser=browser, path='/watch/CW-M01').status_code == 204
+    assert total(counter)['total'] == 1
+    assert post(counter, path='/news/D-9999').status_code == 400
+    assert post(counter, path='/watch/CW-M9999').status_code == 400
     assert total(counter)['total'] == 1
