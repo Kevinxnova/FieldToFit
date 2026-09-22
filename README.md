@@ -34,15 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.9](CHANGELOG.md#v1.5.9)** · 尚未推送发布标签
+**当前源码版本：[v1.5.10](CHANGELOG.md#v1.5.10)** · [fieldtofit-v1.5.10](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.10)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 将 REQ-17 首期对齐为在公共页脚展示全站累计访问次数，新增 REQ-17-7 的位置、文案及双端验收要求。
-- 明确按访问会话累计、30 分钟内刷新和换页不重复计数，保留真实起始日、持久累计及故障提示。
-- 详细访客、内容、来源、复访和私有后台调整为后续范围；本批仅更新需求，功能尚未开发或部署。
+- 发布获确认的 MiMo V2.6、Grok 4.7、Tokenizers v1 候选版三条动态，并新增 Laya 持续关注模型；MiMo 与 Grok 同步本期速览，较早动态保留。
+- For your AI 新增八份可分段读取的固定材料：MiMo Pro/Flash 模型卡、Tokenizers README/发布记录/许可、Laya README/模型卡/许可；保留原文、出处、版本与再分发说明。
+- 明确 MiMo 9B 的许可缺口、Grok 官方材料仅链接、Tokenizers 候选版及基准范围、Laya 任务微调与判断错误边界；未运行模型或更改图表快照。
+- 更新真实日报、MCP 跨日读取及周维护证据；来源延后、失败、积压和 Jev 官方正文缺失仍明确保留。访问统计与搜索发现需求文档继续保留，功能未开发。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

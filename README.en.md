@@ -34,15 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.9](CHANGELOG.md#v1.5.9)** · Release tag not yet published
+**Current source version: [v1.5.10](CHANGELOG.md#v1.5.10)** · [fieldtofit-v1.5.10](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.10)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Align the first phase of REQ-17 with a public footer showing cumulative site visits, adding REQ-17-7 for placement, wording and desktop/mobile acceptance.
-- Define session-based counting without duplicate visits from refreshes or navigation within 30 minutes, with a genuine start date, persistent totals and failure states.
-- Defer detailed visitor, content, acquisition, return-visit and private dashboard analytics; this batch updates requirements only, without implementation or deployment.
+- Publish the approved MiMo V2.6, Grok 4.7 and Tokenizers v1 release-candidate developments, add the Laya model profile, and feature MiMo and Grok in the quick overview while retaining earlier news.
+- Add eight pinned readable materials for personal AI: MiMo Pro/Flash model cards, Tokenizers README/release notes/license, and Laya README/model card/license, preserving original text, sources, revisions and redistribution notices.
+- State the MiMo 9B license gap, link-only Grok sources, Tokenizers prerelease and benchmark scope, and Laya fine-tuning and decision-error limitations; no model execution or chart-snapshot updates.
+- Record actual briefing delivery, cross-day MCP reading and the weekly maintenance review, retaining unresolved collection failures, deferrals, backlog and missing Jev source bodies. Traffic and search-discovery requirements remain documented, without implementation.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
