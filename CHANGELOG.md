@@ -7,15 +7,13 @@
 <a id="v1.5.11"></a>
 ## v1.5.11 · 公共页脚全站累计访问次数 · 2026-09-22
 
-<!-- release-tag:unpublished -->
-
 ### 更新重点
 
 <!-- release-summary:zh:start -->
 - 在公共页脚显示全站累计访问次数与真实统计起始日，支持手机、英文、深色主题及不可用提示。
 - 按 30 分钟浏览器访问会话计数，刷新、换页、多标签页和重试不重复累加；数据库事务保证并发一致，累计值跨重启、迁移和明细清理保留。
 - 提供统计说明与退出，排除隐私信号、管理、测试和已知机器人；只存短期摘要标识，不存浏览历史或完整 IP。
-- 增加增量建表、启停配置和过期清理；已在隔离环境验证，正式部署、真实 Turso 及连续三日观察待验，搜索发现仍待开发。
+- 增加增量建表、启停配置和过期清理；正式站 v1.5.11、真实 Turso 迁移／事务及双端页脚已验，连续三日观察待验，搜索发现仍待开发。
 <!-- release-summary:zh:end -->
 
 ### Release highlights
@@ -24,7 +22,7 @@
 - Show cumulative site visits and the genuine start date in the public footer, including mobile, English, dark mode and unavailable states.
 - Count 30-minute browser sessions without duplicate visits from refreshes, navigation, tabs or retries; atomic writes preserve totals through concurrency, restarts, migrations and identifier cleanup.
 - Add an explanation and opt-out, respecting privacy signals and excluding administration, tests and known bots; retain only short-lived hashed identifiers, without browsing histories or full IP addresses.
-- Add additive migration, collection controls and expiry cleanup; isolated validation is complete, while production deployment, live Turso and three-day observation remain pending. Search discovery is still unimplemented.
+- Add additive migration, collection controls and expiry cleanup; production v1.5.11, live Turso migration/transactions and desktop/mobile footers are verified. Three-day observation remains pending; search discovery is still unimplemented.
 <!-- release-summary:en:end -->
 
 对应 REQ-17-7 与 REQ-17-1/2/5/6 的首期范围。新增独立统计表及 `/api/analytics/total`、`/api/analytics/visit`；现有业务接口不变。默认停采，迁移与正式启用按[部署指南](docs/guides/deployment.md#全站访问次数)进行；不修改既有内容数据或公开账户策略。部署前合入 v1.5.10 内容提交，保留两批历史和最新公开内容。用户已对齐 REQ-18 首期为主入口与已发布内容独立页，本轮仅登记该范围，不执行 SEO 开发或提交。实际验证与未验边界见[访问次数验收](docs/validation/2026-09-22-visits.md)。

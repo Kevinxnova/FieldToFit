@@ -34,7 +34,7 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.11](CHANGELOG.md#v1.5.11)** · Release tag not yet published
+**Current source version: [v1.5.11](CHANGELOG.md#v1.5.11)** · [fieldtofit-v1.5.11](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.11)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
@@ -43,7 +43,7 @@ Source and deployed versions are verified separately; see this release's [valida
 - Show cumulative site visits and the genuine start date in the public footer, including mobile, English, dark mode and unavailable states.
 - Count 30-minute browser sessions without duplicate visits from refreshes, navigation, tabs or retries; atomic writes preserve totals through concurrency, restarts, migrations and identifier cleanup.
 - Add an explanation and opt-out, respecting privacy signals and excluding administration, tests and known bots; retain only short-lived hashed identifiers, without browsing histories or full IP addresses.
-- Add additive migration, collection controls and expiry cleanup; isolated validation is complete, while production deployment, live Turso and three-day observation remain pending. Search discovery is still unimplemented.
+- Add additive migration, collection controls and expiry cleanup; production v1.5.11, live Turso migration/transactions and desktop/mobile footers are verified. Three-day observation remains pending; search discovery is still unimplemented.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

@@ -66,7 +66,7 @@ v1.2.0 的 `vercel.json` 只登记 `/api/cron/platform` 一个每日定时任务
 
 ## 全站访问次数
 
-v1.5.11 的 REQ-17 首期提供公共页脚和两个新接口；当前仅有隔离验收，生产迁移和真实 Turso 待验。配置默认 `FIELDTOFIT_ANALYTICS_ENABLED=0`，不会因发布代码自动开始统计。
+v1.5.11 的 REQ-17 首期提供公共页脚和两个新接口；2026-09-22 已完成正式迁移、真实 Turso 临时表原子事务及正式接口／双端页脚验收，连续三日待验，见[证据](../validation/2026-09-22-visits.md)。配置默认 `FIELDTOFIT_ANALYTICS_ENABLED=0`，不会因发布代码自动开始统计。
 
 1. 先备份实际部署数据库；Turso 可使用既有 `remote_snapshot.py` 全库快照，四张 `fieldtofit_visit_*` 表须包含在备份中。凭据使用已有部署环境，不把本机临时验收数据库复制到生产。
 2. 在注入正确数据库环境变量的部署环境运行 `python -m backend.analytics migrate`。它只增量创建四张统计表和索引，单次原子事务，不重置已有累计值；普通 `init_db()` 也包含这些表。该命令不自行加载 `.env`，必须先核对环境，避免误建空的本地库。
