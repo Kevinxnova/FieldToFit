@@ -1,3 +1,4 @@
+import { excludeAdminVisits } from '../components/workspace/SiteVisits';
 import { Stewardship } from '../components/workspace/Stewardship';
 import { OperationBoard } from '../components/workspace/OperationBoard';
 import { EditorialBatches } from '../components/workspace/EditorialBatches';
@@ -37,6 +38,7 @@ function ReviewedAliases({value,onChange}:{value:string[];onChange:(v:string[])=
 export default function ContentManagement(){
  const {pick}=useWorkspace();const [params,setParams]=useSearchParams();const sections=['daily','library','feedback','settings'];const section=sections.includes(params.get('section')||'')?params.get('section')!:'daily';
  const [authed,setAuthed]=useState(!!sessionStorage.getItem('fieldtofit-admin-password')),[password,setPassword]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false),[editor,setEditor]=useState<{kind:string;id:string}|null>(null),[editorDirty,setEditorDirty]=useState(false),[candidateRef,setCandidateRef]=useState(params.get('candidate')||'');
+ useEffect(()=>{if(authed)excludeAdminVisits();},[authed]);
  const status=useRemote<{migrated:boolean;collections:Obj[]}>(authed?api+'/status':null,true);
  const navigate=(s:string)=>{if(editorDirty&&!window.confirm('有未保存的编辑，确定离开当前内容？'))return;setEditorDirty(false);setEditor(null);setParams({section:s});setError('');};
  const open=(kind:string,id:string)=>{setEditor({kind,id});setParams({section:'library'});};

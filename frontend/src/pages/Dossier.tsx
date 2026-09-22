@@ -1,3 +1,4 @@
+import { VisitReady } from '../components/workspace/SiteVisits';
 import { useState } from "react";
 import { StructuredReading } from "./KnowledgeReading";
 import { Link, useParams } from "react-router-dom";
@@ -193,6 +194,7 @@ export default function Dossier() {
   };
   return (
     <State loading={loading} error={error} retry={reload}>
+      <VisitReady ready={!!data && !loading && !error}/>
       {data && (
         <>
           <Link

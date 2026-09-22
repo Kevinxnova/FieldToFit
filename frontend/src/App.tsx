@@ -1,3 +1,4 @@
+import { SiteVisits } from "./components/workspace/SiteVisits";
 import { MobileNavigation } from "./components/workspace/MobileNavigation";
 import { Community } from "./pages/Community";
 import { ForYou, ForAI, AboutFieldToFit, LegacyPlatformEntry } from "./pages/Platform";
@@ -209,6 +210,7 @@ function Shell() {
               {pick("反馈与建议", "Feedback")}
               <Icon name="up" size={13} />
             </Link>
+            <SiteVisits />
           </footer>
         </main>
       </div>

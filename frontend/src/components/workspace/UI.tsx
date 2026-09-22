@@ -186,6 +186,10 @@ function local<T>(key: string, fallback: T): T {
     return fallback;
   }
 }
+function saveLocal(key: string, value: unknown) {
+  try { localStorage.setItem(key, JSON.stringify(value)); }
+  catch { /* Reading still works when browser storage is unavailable. */ }
+}
 export function WorkspaceProvider({ children }: { children: ReactNode }) {
   const [zh, setZh] = useState(() => local("fieldtofit-workspace-zh", true));
   const [dark, setDark] = useState(() => local("fieldtofit-workspace-dark", false));
@@ -199,14 +203,14 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   const pick = (cn: string, en: string) => (zh ? cn : en);
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
-    localStorage.setItem("fieldtofit-workspace-dark", JSON.stringify(dark));
+    saveLocal("fieldtofit-workspace-dark", dark);
   }, [dark]);
   useEffect(() => {
     document.documentElement.lang = zh ? "zh-CN" : "en";
-    localStorage.setItem("fieldtofit-workspace-zh", JSON.stringify(zh));
+    saveLocal("fieldtofit-workspace-zh", zh);
   }, [zh]);
   useEffect(() => {
-    localStorage.setItem(collectionKey, JSON.stringify(collection));
+    saveLocal(collectionKey, collection);
   }, [collection, collectionKey]);
   useEffect(() => {
     if (!toast) return;

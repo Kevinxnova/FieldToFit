@@ -134,6 +134,13 @@ def run_daily(budget_seconds=180, trigger="manual"):
     started = time.monotonic()
     with track_run('platform_daily') as report:
         report.update(trigger=trigger,timezone='Asia/Shanghai')
+        from backend.analytics import clean_expired
+        try:
+            clean_expired()
+            report['visit_identifier_cleanup'] = 'completed'
+        except Exception as exc:
+            report['visit_identifier_cleanup'] = {'error': type(exc).__name__}
+
         from backend.knowledge.model_landscape import check_sources
         charts = check_sources()
         from backend.knowledge.stewardship import check_materials

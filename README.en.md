@@ -34,15 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.9](CHANGELOG.md#v1.5.9)** · Release tag not yet published
+**Current source version: [v1.5.11](CHANGELOG.md#v1.5.11)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Align the first phase of REQ-17 with a public footer showing cumulative site visits, adding REQ-17-7 for placement, wording and desktop/mobile acceptance.
-- Define session-based counting without duplicate visits from refreshes or navigation within 30 minutes, with a genuine start date, persistent totals and failure states.
-- Defer detailed visitor, content, acquisition, return-visit and private dashboard analytics; this batch updates requirements only, without implementation or deployment.
+- Show cumulative site visits and the genuine start date in the public footer, including mobile, English, dark mode and unavailable states.
+- Count 30-minute browser sessions without duplicate visits from refreshes, navigation, tabs or retries; atomic writes preserve totals through concurrency, restarts, migrations and identifier cleanup.
+- Add an explanation and opt-out, respecting privacy signals and excluding administration, tests and known bots; retain only short-lived hashed identifiers, without browsing histories or full IP addresses.
+- Add additive migration, collection controls and expiry cleanup; isolated validation is complete, while production deployment, live Turso and three-day observation remain pending. Search discovery is still unimplemented.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

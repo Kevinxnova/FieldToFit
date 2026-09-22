@@ -251,7 +251,7 @@ def init_db():
 
     schema_path = Path(__file__).parent / "schema.sql"
     import re
-    schema = re.sub(r"(?m)^\s*--.*$", "", schema_path.read_text())
+    schema = re.sub(r"(?m)^\s*--.*$", "", schema_path.read_text() + "\n" + schema_path.with_name("analytics.sql").read_text())
     for statement in schema.split(";"):
         statement = statement.strip()
         if statement and not statement.startswith("--") and not statement.startswith("PRAGMA"):

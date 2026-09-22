@@ -1,0 +1,51 @@
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+(async () => {
+ const browser = await chromium.launch({headless:true, executablePath:process.env.READING_CHROMIUM || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
+ const base = process.env.READING_BASE_URL || 'http://127.0.0.1:18053';
+ const out = process.env.READING_OUTPUT || '/tmp/fieldtofit-visits-evidence'; fs.mkdirSync(out,{recursive:true});
+ const humanUA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36';
+ const errors=[]; let checks=0;
+ const human = async (options={}) => {const ctx=await browser.newContext({userAgent:humanUA,...options});await ctx.addInitScript(()=>Object.defineProperty(navigator,'webdriver',{get:()=>false}));return ctx;};
+ const pageFor = async ctx => { const p=await ctx.newPage(); p.on('pageerror',e=>errors.push(e.message));return p; };
+ const getTotal = async ctx => (await (await ctx.request.get(base+'/api/analytics/total')).json()).total;
+ const shows = async (p,n) => { await p.waitForFunction(n=>document.querySelector('.site-visits-count')?.textContent.includes(String(n)),n); assert.match(await p.locator('.site-visits-count').innerText(),new RegExp(`：${n} 次`)); checks++; };
+ const visit = async (p,path) => {const done=p.waitForResponse(r=>r.url().endsWith('/analytics/visit') && r.request().method()==='POST');await p.goto(base+path);assert.equal((await done).status(),204);checks++;};
+ try {
+  const a=await human({viewport:{width:1440,height:1000}});const p=await pageFor(a);const baseline=await getTotal(a);
+  await visit(p,'/about');await shows(p,baseline+1);
+  await visit(p,'/for-your-ai');assert.equal(await getTotal(a),baseline+1);checks++;
+  await visit(p,'/for-you');assert.equal(await getTotal(a),baseline+1);checks++;
+  await visit(p,'/about');await shows(p,baseline+1);
+  const tab=await pageFor(a);await visit(tab,'/community');assert.equal(await getTotal(a),baseline+1);checks++;
+  await p.bringToFront();await p.locator('.page-footer').scrollIntoViewIfNeeded();await p.screenshot({path:out+'/desktop.png'});
+  const b=await human();const b1=await pageFor(b),b2=await pageFor(b);
+  await Promise.all([visit(b1,'/about'),visit(b2,'/community')]);assert.equal(await getTotal(a),baseline+2);checks++;
+  await p.locator('.site-visits-details summary').click();await p.getByRole('button',{name:'此浏览器不参与统计',exact:true}).click();
+  assert.match(await p.locator('.site-visits-details').innerText(),/当前不参与统计/);assert.equal(await p.evaluate(()=>localStorage.getItem('fieldtofit-visit-session')),null);checks++;
+  let optPosts=0;tab.on('request',r=>{if(r.url().endsWith('/analytics/visit'))optPosts++;});await tab.goto(base+'/about');await tab.locator('.site-visits-count').waitFor();await tab.waitForTimeout(500);assert.equal(optPosts,0);assert.equal(await getTotal(a),baseline+2);checks++;
+  const privacy=await human({extraHTTPHeaders:{DNT:'1'}});await privacy.addInitScript(()=>Object.defineProperty(navigator,'doNotTrack',{get:()=> '1'}));const pp=await pageFor(privacy);let privacyPosts=0;pp.on('request',r=>{if(r.url().endsWith('/analytics/visit'))privacyPosts++;});await pp.goto(base+'/about');await shows(pp,baseline+2);await pp.waitForTimeout(300);assert.equal(privacyPosts,0);checks++;
+  const admin=await human();await admin.addInitScript(()=>sessionStorage.setItem('fieldtofit-admin-password','visits-test-only'));const ap=await pageFor(admin);await ap.goto(base+'/admin');await ap.getByRole('button',{name:'退出管理',exact:true}).waitFor();assert.equal(await ap.locator('.site-visits').count(),0);checks++;
+  await ap.goto(base+'/about');await shows(ap,baseline+2);assert.equal(await getTotal(a),baseline+2);checks++;
+  const blocked=await human();await blocked.addInitScript(()=>{Storage.prototype.setItem=function(){throw new Error('blocked');};Storage.prototype.getItem=function(){throw new Error('blocked');};});const sp=await pageFor(blocked);let storagePosts=0;sp.on('request',r=>{if(r.url().endsWith('/analytics/visit'))storagePosts++;});await sp.goto(base+'/about');await shows(sp,baseline+2);await sp.waitForTimeout(300);assert.equal(storagePosts,0);checks++;
+  const gpc=await human();await gpc.addInitScript(()=>Object.defineProperty(navigator,'globalPrivacyControl',{get:()=>true}));const gp=await pageFor(gpc);let gpcPosts=0;gp.on('request',r=>{if(r.url().endsWith('/analytics/visit'))gpcPosts++;});await gp.goto(base+'/about');await shows(gp,baseline+2);await gp.waitForTimeout(300);assert.equal(gpcPosts,0);checks++;
+  const bot=await browser.newContext();const bp=await pageFor(bot);let botPosts=0;bp.on('request',r=>{if(r.url().endsWith('/analytics/visit'))botPosts++;});await bp.goto(base+'/about');await shows(bp,baseline+2);await bp.waitForTimeout(300);assert.equal(botPosts,0);checks++;
+  const failure=await human();const fp=await pageFor(failure);await fp.route('**/api/analytics/total',r=>r.fulfill({status:503,contentType:'application/json',body:'{"status":"unavailable"}'}));await fp.goto(base+'/about');await fp.getByText('访问统计暂不可用',{exact:true}).waitFor();assert.ok(await fp.locator('h1').isVisible());checks++;
+  const readFailure=await human();const rp=await pageFor(readFailure);let readPosts=0;rp.on('request',r=>{if(r.url().endsWith('/analytics/visit'))readPosts++;});await rp.route('**/api/v1/platform/watch*',r=>r.fulfill({status:503,contentType:'application/json',body:'{"detail":"test unavailable"}'}));await rp.goto(base+'/for-you');await rp.locator('[role="alert"]').first().waitFor();await rp.waitForTimeout(500);assert.equal(readPosts,0);checks++;
+  const retries=await human();const retry=await pageFor(retries);const ids=[];await retry.route('**/api/analytics/visit',async r=>{ids.push(r.request().postDataJSON().event_id);await r.fulfill({status:503,contentType:'application/json',body:'{}'});});await retry.goto(base+'/about');await retry.waitForTimeout(2500);assert.equal(ids.length,3);assert.equal(new Set(ids).size,1);checks++;
+  const mobile=await human({viewport:{width:390,height:844},isMobile:true,deviceScaleFactor:1});const mp=await pageFor(mobile);await visit(mp,'/about');await shows(mp,baseline+3);await mp.locator('.site-visits').scrollIntoViewIfNeeded();await mp.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));
+  assert.equal(await mp.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true);
+  const box=await mp.locator('.site-visits-count').boundingBox();const nav=await mp.locator('.mobile-navigation > .mobile-bottom-nav').boundingBox();assert.ok(box && nav && box.y+box.height<=nav.y);checks++;
+  await mp.screenshot({path:out+'/mobile.png'});
+  // Check English and dark rendering using the existing workspace preferences.
+  await mp.evaluate(()=>{localStorage.setItem('fieldtofit-workspace-zh','false');localStorage.setItem('fieldtofit-workspace-dark','true');});
+  await mp.goto(base+'/about');await mp.locator('.site-visits-count').waitFor();
+  await mp.locator('.site-visits').scrollIntoViewIfNeeded();assert.match(await mp.locator('.site-visits-count').innerText(),/Total site visits:/);assert.equal(await mp.locator('html').getAttribute('data-theme'),'dark');checks++;await mp.screenshot({path:out+'/mobile-theme.png'});
+  const hidden=await human();await hidden.addInitScript(()=>{window.testVisible=false;Object.defineProperty(document,'visibilityState',{get:()=>window.testVisible?'visible':'hidden'});});const hp=await pageFor(hidden);let hiddenPosts=0;hp.on('request',r=>{if(r.url().endsWith('/analytics/visit'))hiddenPosts++;});await hp.goto(base+'/about');await shows(hp,baseline+3);await hp.waitForTimeout(300);assert.equal(hiddenPosts,0);checks++;
+  const awake=hp.waitForResponse(r=>r.url().endsWith('/analytics/visit'));await hp.evaluate(()=>{window.testVisible=true;document.dispatchEvent(new Event('visibilitychange'));});assert.equal((await awake).status(),204);assert.equal(await getTotal(a),baseline+4);checks++;
+  assert.equal(errors.length,0,errors.join('\n'));checks++;
+  fs.writeFileSync(out+'/result.json',JSON.stringify({checks,baseline,total:await getTotal(a),pageErrors:errors,scope:'isolated SQLite and simulated browser visits'},null,2));
+  console.log(JSON.stringify({checks,baseline,total:await getTotal(a),pageErrors:errors,out}));
+ } finally {await browser.close();}
+})().catch(e=>{console.error(e);process.exit(1);});

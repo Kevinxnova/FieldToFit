@@ -1,0 +1,10 @@
+.page-footer { flex-wrap: wrap; }
+.site-visits { flex: 0 0 100%; order: 2; display: grid; gap: 5px; font-size: 12px; line-height: 1.6; }
+.page-footer .site-visits p { font-size: 12px; margin: 0; }
+.page-footer .site-visits-count { color: var(--ink); font-variant-numeric: tabular-nums; }
+.site-visits small { font-size: 11px; }
+.site-visits-details { max-width: 680px; }
+.site-visits-details summary { cursor: pointer; width: fit-content; padding: 5px 0; }
+.site-visits-details p + p { margin-top: 8px; }
+.site-visits-details .text-button { min-height: 44px; display: block; }
+@media (max-width: 900px) { .site-visits { padding-bottom: 12px; } }

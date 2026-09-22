@@ -30,6 +30,8 @@ from backend.knowledge.api import bp as knowledge_bp
 from backend.knowledge.mcp import bp as mcp_bp
 app.register_blueprint(knowledge_bp)
 app.register_blueprint(mcp_bp)
+from backend.analytics import bp as analytics_bp
+app.register_blueprint(analytics_bp)
 
 ALLOWED_ORIGINS = allowed_origins()
 
