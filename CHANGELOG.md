@@ -27,7 +27,30 @@
 - Add additive migration, collection controls and expiry cleanup; isolated validation is complete, while production deployment, live Turso and three-day observation remain pending. Search discovery is still unimplemented.
 <!-- release-summary:en:end -->
 
-对应 REQ-17-7 与 REQ-17-1/2/5/6 的首期范围。新增独立统计表及 `/api/analytics/total`、`/api/analytics/visit`；现有业务接口不变。默认停采，迁移与正式启用按[部署指南](docs/guides/deployment.md#全站访问次数)进行；不修改既有内容数据或公开账户策略。本批在隔离工作目录交付，v1.5.10 由并行内容批次使用，未将其尚未提交的内容修改带入本分支。实际验证与未验边界见[访问次数验收](docs/validation/2026-09-22-visits.md)。
+对应 REQ-17-7 与 REQ-17-1/2/5/6 的首期范围。新增独立统计表及 `/api/analytics/total`、`/api/analytics/visit`；现有业务接口不变。默认停采，迁移与正式启用按[部署指南](docs/guides/deployment.md#全站访问次数)进行；不修改既有内容数据或公开账户策略。部署前合入 v1.5.10 内容提交，保留两批历史和最新公开内容。用户已对齐 REQ-18 首期为主入口与已发布内容独立页，本轮仅登记该范围，不执行 SEO 开发或提交。实际验证与未验边界见[访问次数验收](docs/validation/2026-09-22-visits.md)。
+
+<a id="v1.5.10"></a>
+## v1.5.10 · MiMo、Grok、Tokenizers 与 Laya · 2026-09-22
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布获确认的 MiMo V2.6、Grok 4.7、Tokenizers v1 候选版三条动态，并新增 Laya 持续关注模型；MiMo 与 Grok 同步本期速览，较早动态保留。
+- For your AI 新增八份可分段读取的固定材料：MiMo Pro/Flash 模型卡、Tokenizers README/发布记录/许可、Laya README/模型卡/许可；保留原文、出处、版本与再分发说明。
+- 明确 MiMo 9B 的许可缺口、Grok 官方材料仅链接、Tokenizers 候选版及基准范围、Laya 任务微调与判断错误边界；未运行模型或更改图表快照。
+- 更新真实日报、MCP 跨日读取及周维护证据；来源延后、失败、积压和 Jev 官方正文缺失仍明确保留。访问统计与搜索发现需求文档继续保留，功能未开发。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the approved MiMo V2.6, Grok 4.7 and Tokenizers v1 release-candidate developments, add the Laya model profile, and feature MiMo and Grok in the quick overview while retaining earlier news.
+- Add eight pinned readable materials for personal AI: MiMo Pro/Flash model cards, Tokenizers README/release notes/license, and Laya README/model card/license, preserving original text, sources, revisions and redistribution notices.
+- State the MiMo 9B license gap, link-only Grok sources, Tokenizers prerelease and benchmark scope, and Laya fine-tuning and decision-error limitations; no model execution or chart-snapshot updates.
+- Record actual briefing delivery, cross-day MCP reading and the weekly maintenance review, retaining unresolved collection failures, deferrals, backlog and missing Jev source bodies. Traffic and search-discovery requirements remain documented, without implementation.
+<!-- release-summary:en:end -->
+
+对应 REQ-4、REQ-5、REQ-6-2、REQ-8-9、REQ-9-6、REQ-11、REQ-15-5。当前内容与正式部署以[本批验收](docs/validation/2026-09-22-editorial.md)为准；无应用功能或数据库迁移变化。此前 v1.5.8/v1.5.9 文档提交保留，不覆盖其版本记录。
 
 <a id="v1.5.9"></a>
 ## v1.5.9 · 全站累计访问次数需求对齐 · 2026-09-22

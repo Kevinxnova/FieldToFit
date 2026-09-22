@@ -4,6 +4,378 @@
     {
       "_position": 1,
       "aliases": [
+        "MiMo V2.6"
+      ],
+      "checked_at": "2026-09-22",
+      "editor": "FieldToFit",
+      "event_date": "",
+      "highlight": true,
+      "id": "D-26",
+      "interpretation": [
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "pro",
+            "flash"
+          ],
+          "text": "模型卡将代码、通用 Agent、视觉和安全任务放进混合强化学习，并比较同组轨迹、区分多个已通过测试的解法。值得读的是任务与验收信号如何共同参与训练。",
+          "title": "看模型如何学习把任务做完"
+        },
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "pro",
+            "flash",
+            "distill"
+          ],
+          "text": "Pro 为1.02T总参数／42B激活，Flash为309B／15B，两者标注1M上下文；9B是基于Qwen3.5-9B的蒸馏SFT研究起点，不能当作Pro的等能力小版本。官方评测含不同口径与内部测试集，本站未复测。",
+          "title": "三个版本的体量与训练阶段不同"
+        },
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "pro",
+            "flash",
+            "distill"
+          ],
+          "text": "Pro/Flash提供SGLang、vLLM及托管入口，模型卡标注MIT；9B提供SGLang示例，但本轮未查到许可声明。多卡示例不能支持普通电脑即可运行的推断，本站未执行部署。",
+          "title": "采用先读部署示例和许可差异"
+        }
+      ],
+      "name": "MiMo V2.6",
+      "note": "三个Hub仓库创建于2026-09-21 UTC，官网确切发布日期未核实；本站核对2026-09-22。Pro/Flash固定模型卡正文可通过MCP读取，9B因许可缺失仅链接。官网动态页未取得正文，技术报告全文未评审；未进行运行或性能验证。",
+      "organization": "Xiaomi / MiMo",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "---\nlicense: mit\nlanguage:\n- en\n- zh\ntags:\n- text-generation\n- multimodal\n- vision-language\n- audio\n- agent\n- video-understanding\n- long-context\n- mimo_v2\n- transformers\nlibrary_name: transformers\n---\n\n<br/><br/>\n\n<div align=\"center\">\n  <picture>\n    <source srcset=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true\" media=\"(prefers-color-scheme: dark)\">\n    <img src=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo.png?raw=true\" width=\"60%\" alt=\"Xiaomi-MiMo\" />\n  </picture>\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1;\">\n  |\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL\" target=\"_blank\">🤗 HuggingFace</a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomi.com/mimo-v2-6\" target=\"_blank\">📰 Blog </a>\n  &nbsp;|\n  <a href=\"https://platform.xiaomimimo.com\" target=\"_blank\">🎨 Xiaomi MiMo API Platform </a>\n  &nbsp;|\n  <a href=\"https://aistudio.xiaomimimo.com\" target=\"_blank\">🗨️ Xiaomi MiMo Studio </a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomimimo.com/desktop/\" target=\"_blank\">💻 Xiaomi MiMo Desktop </a>\n  &nbsp;|\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1.2;\">\n  <strong>Community</strong><br/>\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/blob/main/assets/wechat.jpg\" target=\"_blank\">WeChat Group</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/kKC2kNnQEX\" target=\"_blank\">Discord</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://t.me/+3T-I0pekOVIyNDBl\" target=\"_blank\">Telegram</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://www.reddit.com/r/XiaomiMiMo_Official/\" target=\"_blank\">Reddit</a>\n</div>\n\n<br/>\n\n# MiMo-V2.6-Pro-RL\n\n**Scaling Reinforcement Learning Toward Self-Improvement**\n\n<p align=\"center\">\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf\"><b>Technical Report</b></a>\n</p>\n\n## 1. Introduction\n\nMiMo-V2.6-Pro-RL is the flagship checkpoint of the MiMo-V2.6 series. The series is built to **scale reinforcement learning toward self-improvement** — scaling RL compute, environment diversity, and grader compute together, so the model keeps expanding its capability frontier through exploration and feedback. Key features include:\n\n- **Native Omnimodal + Long Horizon**: Text, image, video, and audio in one model; 1M tokens for long repositories, tool traces, and multi-session agent runs.\n- **You Only RL Once**: One mixed RL run across coding, general agents, visual, and cybersecurity — not separate per-domain runs. Tasks and multiple harnesses are mixed in the same batch so capabilities reinforce each other and strategies transfer to harnesses never seen in training.\n- **Scaling RL Compute**: Fully asynchronous Group Relative Policy Optimization (GRPO) on very large batches — 1,568 prompts × 16 rollouts per step, billions of tokens per update.\n- **Groupwise Agentic Grading (Self-Improvement Loop)**: Binary pass/fail cannot rank passing solutions, so the reward signal itself is scaled. An agentic grader compares rollouts *within each group*: **Groupwise Reward Synthesis (GRS)** builds task-specific rubrics offline from contrasting rollouts and fuses rubric quality with test outcomes; **Groupwise Advantage Redistribution (GAR)** ranks passing trajectories online and moves advantage toward higher-quality solutions. Judged against the policy’s own samples, this closes a self-improvement loop and steers toward shorter paths and fewer tokens per task.\n- **Aligned RL**: Cold start from self-correction — the model reflects on and rewrites its own misaligned turns into grounded next steps. Throughout RL, environment hardening, adversarial screening, and verifier cross-checks keep the loop honest against reward hacking.\n- **Multi-Prefix Multi-Teacher On-Policy Distillation (MOPD2)**: After mixed RL, MOPD2 combines autonomous student rollouts with prefix-conditioned single-turn rollouts (Teacher-Prefix and SFT-Prefix), reusing histories from teacher trajectories and SFT demonstrations so decision points train without regenerating preceding turns — extending capabilities to hard-to-verify tasks.\n\n## Model Summary\n\n- **Architecture**: Sparse MoE (Mixture of Experts), 1.02T total / 42B activated parameters\n- **Context Length**: 1M tokens\n- **Modalities**: Text, Image, Video, Audio\n- **Vision Encoder**: 681M-param MiMo ViT (28 layers: 24 SWA + 4 Full)\n- **Audio Encoder**: 308M AudioTokenizer + 127M audio patch encoder\n- **Multi-Token Prediction (MTP)**: 5-layer speculative decoder\n\n![Figure 1: MiMo-V2.6 architecture — omni encoders, hybrid SWA backbone, and MTP blocks](assets/architecture.png)\n\n*Figure 1. MiMo-V2.6 architecture.*\n\n## 2. Downloads\n\n| Model | Download |\n| --- | --- |\n| **MiMo-V2.6-Pro-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL) · 🤖 ModelScope *(at release)* |\n| **MiMo-V2.6-Flash-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) · 🤖 ModelScope *(at release)* |\n\n## 3. Evaluation Results\n\n| Benchmark | MiMo-V2.6 Pro | MiMo-V2.6 Flash | MiMo-V2.5 Pro | Claude Opus 5 | GPT-5.6 Sol | Claude Fable 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| **Code Agent** | | | | | | |\n| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |\n| ProgramBench | 26.5 | 26.0 | 12.5 | 37.0 | 25.0 | 33.0 |\n| MiMo Code Bench | 63.2 | 61.2 | 40.4 | 68.6 | 59.3 | - |\n| **General Agent** | | | | | | |\n| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |\n| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |\n| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |\n| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |\n| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |\n| Terminal Bench 2.1 | 89.9 | 87.6 | 65.2 | 89.1 | 88.8 | 84.3 |\n| OSWorld-Verified | 82.0 | 80.8 | - | 83.4 | 83.0 | 86.0 |\n| JobBench | 62.0 | 61.2 | 25.0 | 65.7 | 45.4 | 57.4 |\n| **Cybersecurity** | | | | | | |\n| CyberGym | 94.0 | 95.1 | 40.0 | - | - | - |\n| MiMo Cyber Bench | 80.2 | 77.2 | 0.0 | - | - | - |\n| ExploitGym | 17.8 | 6.0 | 0.2 | 22.1 | 30.3 | 28.4 |\n| ExploitBench | 47.9 | 25.3 | 16.6 | 70.0 | 78.5 | 78.0 |\n| SEC Bench Pro | 66.3 | 47.5 | 17.7 | - | 79.1 | - |\n| **Visual Agent** | | | | | | |\n| MiMo VisualCoding | 72.3 | 71.5 | - | 70.0 | 73.4 | 69.1 |\n\n## 4. Model Architecture\n\n### LLM Backbone\n\n| Component | MiMo-V2.6-Pro-RL |\n| --- | --- |\n| Layers (Total / SWA / GA) | 70 / 60 / 10 |\n| Hidden Size | 6144 |\n| SWA Heads (Q/KV) | 128 / 8 |\n| GA Heads (Q/KV) | 128 / 8 |\n| Head Dimensions (QK / V) | 192 / 128 |\n| Sliding Window Size | 128 |\n| Routed Experts (Total / Activated) | 384 / 8 |\n| Max Context Length | 1M |\n| MTP / Speculative Decoder | 5 SWA layers, window 1024 |\n\nThe first Transformer block uses global attention with a dense FFN. Remaining blocks interleave local SWA and GA; both use sparse MoE FFNs without shared experts.\n\n### Vision Encoder (MiMo ViT)\n\n| Configuration | Value |\n| --- | --- |\n| Layers (Total / SWA / GA) | 28 / 24 / 4 |\n| Hidden Size | 1280 |\n| Attention Heads (Q / KV) | 32 / 8 |\n| Head Dimension | 64 |\n| Patch Size (T × H × W) | 2 × 16 × 16 |\n| Sliding Window (Left / Right) | 64 / 64 |\n| Spatial Merge Size | 2 × 2 |\n| Parameters | 681M |\n\n### Audio Encoders\n\nAudioTokenizer encoder: 24 layers (12 SWA / 12 GA), hidden 1024, 20 RVQ codebooks, 308M parameters. Audio patch encoder: 6 layers, 127M parameters; four frames per patch (25 Hz → 6.25 Hz).\n\n### Speculative Decoder\n\n5-layer SWA MTP drafter (DFlash-style). Predicts 7 subsequent tokens per forward pass for parallel verification.\n\n## 5. Deployment\n\nFor best performance, follow the [SGLang MiMo cookbook](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.5). Docker image: `lmsysorg/sglang:latest`.\n\n### SGLang\n\n```bash\nsglang serve \\\n  --trust-remote-code \\\n  --model-path XiaomiMiMo/MiMo-V2.6-Pro-RL \\\n  --tp 16 \\\n  --dp 2 \\\n  --enable-dp-attention \\\n  --mm-enable-dp-encoder \\\n  --ep 16 \\\n  --moe-a2a-backend deepep \\\n  --moe-dense-tp-size 1 \\\n  --mem-fraction-static 0.7 \\\n  --max-running-requests 128 \\\n  --chunked-prefill-size 32768 \\\n  --page-size 64 \\\n  --swa-full-tokens-ratio 0.3 \\\n  --speculative-algorithm EAGLE \\\n  --speculative-num-steps 3 \\\n  --speculative-eagle-topk 1 \\\n  --speculative-num-draft-tokens 4 \\\n  --enable-multi-layer-eagle \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --host 0.0.0.0 \\\n  --port 30000 \\\n  --nnodes 2 \\\n  --node-rank <node-rank> \\\n  --dist-init-addr <node0-ip>:20000\n```\n\n### vLLM\n\nFollow the [vLLM MiMo-V2.5 recipe](https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5). Pre-built image: `docker pull vllm/vllm-openai:mimov25-cu129`.\n\n```bash\nvllm serve XiaomiMiMo/MiMo-V2.6-Pro-RL \\\n  --tensor-parallel-size 8 \\\n  --trust-remote-code \\\n  --gpu-memory-utilization 0.95 \\\n  --max-model-len auto \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --enable-auto-tool-choice \\\n  --generation-config vllm\n```\n\nRecommended sampling: `temperature=1.0`, `top_p=0.95`.\n\nAlso available in AI Studio, MiMo Code, Xiaomi MiMo Desktop, Xiaomi MiMo Open Platform API, and OpenRouter.\n\n## Citation\n\n```bibtex\n@misc{mimo2026v26pro,\n  title={MiMo-V2.6-Pro-RL},\n  author={{Xiaomi MiMo Team}},\n  year={2026},\n  howpublished={\\url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL}},\n}\n```\n\n## Contact\n\nFor questions or feedback, reach us at [mimo@xiaomi.com](mailto:mimo@xiaomi.com) or join our community:\n\n- [WeChat Group](https://work.weixin.qq.com/apph5/external_room/join/group_mng?plg_id=c417f99bd9014b5dd894daa8bfe19790&)\n- [Discord](https://discord.gg/WX2R2uNp)\n- [Telegram](https://t.me/+3T-I0pekOVIyNDBl)\n- [Reddit](https://www.reddit.com/r/XiaomiMiMo_Official/)\n",
+          "checked_at": "2026-09-22",
+          "coverage": "full_text",
+          "id": "pro",
+          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "MIT；依据该固定模型卡 license: mit 声明；保留原文及许可通知。",
+            "notice": "来源：XiaomiMiMo / MiMo-V2.6-Pro-RL，修订 54b10491b1811c76aa9681a9d0ff872396a4064c。上游模型卡的声明和署名原样保留；仓库未另附 LICENSE 文件，不虚构版权年份。\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+            "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
+          },
+          "title": "MiMo-V2.6-Pro-RL 固定模型卡",
+          "upstream_revision": "54b10491b1811c76aa9681a9d0ff872396a4064c",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
+        },
+        {
+          "approved": true,
+          "body": "---\nlicense: mit\nlanguage:\n- en\n- zh\ntags:\n- text-generation\n- multimodal\n- vision-language\n- audio\n- agent\n- video-understanding\n- long-context\n- mimo_v2\n- transformers\nlibrary_name: transformers\n---\n\n<br/><br/>\n\n<div align=\"center\">\n  <picture>\n    <source srcset=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true\" media=\"(prefers-color-scheme: dark)\">\n    <img src=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo.png?raw=true\" width=\"60%\" alt=\"Xiaomi-MiMo\" />\n  </picture>\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1;\">\n  |\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL\" target=\"_blank\">🤗 HuggingFace</a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomi.com/mimo-v2-6\" target=\"_blank\">📰 Blog </a>\n  &nbsp;|\n  <a href=\"https://platform.xiaomimimo.com\" target=\"_blank\">🎨 Xiaomi MiMo API Platform </a>\n  &nbsp;|\n  <a href=\"https://aistudio.xiaomimimo.com\" target=\"_blank\">🗨️ Xiaomi MiMo Studio </a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomimimo.com/desktop/\" target=\"_blank\">💻 Xiaomi MiMo Desktop </a>\n  &nbsp;|\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1.2;\">\n  <strong>Community</strong><br/>\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/blob/main/assets/wechat.jpg\" target=\"_blank\">WeChat Group</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/kKC2kNnQEX\" target=\"_blank\">Discord</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://t.me/+3T-I0pekOVIyNDBl\" target=\"_blank\">Telegram</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://www.reddit.com/r/XiaomiMiMo_Official/\" target=\"_blank\">Reddit</a>\n</div>\n\n<br/>\n\n# MiMo-V2.6-Flash-RL\n\n**Scaling Reinforcement Learning Toward Self-Improvement**\n\n<p align=\"center\">\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/blob/main/MiMo_V2_6_technical_report.pdf\"><b>Technical Report</b></a>\n</p>\n\n## 1. Introduction\n\nMiMo-V2.6-Flash-RL is the efficiency-balanced checkpoint of the MiMo-V2.6 series. The series is built to **scale reinforcement learning toward self-improvement** — scaling RL compute, environment diversity, and grader compute together, so the model keeps expanding its capability frontier through exploration and feedback. Key features include:\n\n- **Native Omnimodal + Long Horizon**: Text, image, video, and audio in one model; 1M tokens for long repositories, tool traces, and multi-session agent runs.\n- **You Only RL Once**: One mixed RL run across coding, general agents, visual, and cybersecurity — not separate per-domain runs. Tasks and multiple harnesses are mixed in the same batch so capabilities reinforce each other and strategies transfer to harnesses never seen in training.\n- **Scaling RL Compute**: Fully asynchronous Group Relative Policy Optimization (GRPO) on very large batches — 1,568 prompts × 16 rollouts per step, billions of tokens per update.\n- **Groupwise Agentic Grading (Self-Improvement Loop)**: Binary pass/fail cannot rank passing solutions, so the reward signal itself is scaled. An agentic grader compares rollouts *within each group*: **Groupwise Reward Synthesis (GRS)** builds task-specific rubrics offline from contrasting rollouts and fuses rubric quality with test outcomes; **Groupwise Advantage Redistribution (GAR)** ranks passing trajectories online and moves advantage toward higher-quality solutions. Judged against the policy’s own samples, this closes a self-improvement loop and steers toward shorter paths and fewer tokens per task.\n- **Aligned RL**: Cold start from self-correction — the model reflects on and rewrites its own misaligned turns into grounded next steps. Throughout RL, environment hardening, adversarial screening, and verifier cross-checks keep the loop honest against reward hacking.\n- **Multi-Prefix Multi-Teacher On-Policy Distillation (MOPD2)**: After mixed RL, MOPD2 combines autonomous student rollouts with prefix-conditioned single-turn rollouts (Teacher-Prefix and SFT-Prefix), reusing histories from teacher trajectories and SFT demonstrations so decision points train without regenerating preceding turns — extending capabilities to hard-to-verify tasks.\n\n## Model Summary\n\n- **Architecture**: Sparse MoE (Mixture of Experts), 309B total / 15B activated parameters\n- **Context Length**: 1M tokens\n- **Modalities**: Text, Image, Video, Audio\n- **Vision Encoder**: 681M-param MiMo ViT (28 layers: 24 SWA + 4 Full)\n- **Audio Encoder**: 308M AudioTokenizer + 127M audio patch encoder\n- **Multi-Token Prediction (MTP)**: 5-layer speculative decoder\n\n![Figure 1: MiMo-V2.6 architecture — omni encoders, hybrid SWA backbone, and MTP blocks](assets/architecture.png)\n\n*Figure 1. MiMo-V2.6 architecture.*\n\n## 2. Downloads\n\n| Model | Download |\n| --- | --- |\n| **MiMo-V2.6-Pro-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL) · 🤖 ModelScope *(at release)* |\n| **MiMo-V2.6-Flash-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) · 🤖 ModelScope *(at release)* |\n\n## 3. Evaluation Results\n\n| Benchmark | MiMo-V2.6 Pro | MiMo-V2.6 Flash | MiMo-V2.5 Pro | Claude Opus 5 | GPT-5.6 Sol | Claude Fable 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| **Code Agent** | | | | | | |\n| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |\n| ProgramBench | 26.5 | 26.0 | 12.5 | 37.0 | 25.0 | 33.0 |\n| MiMo Code Bench | 63.2 | 61.2 | 40.4 | 68.6 | 59.3 | - |\n| **General Agent** | | | | | | |\n| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |\n| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |\n| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |\n| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |\n| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |\n| Terminal Bench 2.1 | 89.9 | 87.6 | 65.2 | 89.1 | 88.8 | 84.3 |\n| OSWorld-Verified | 82.0 | 80.8 | - | 83.4 | 83.0 | 86.0 |\n| JobBench | 62.0 | 61.2 | 25.0 | 65.7 | 45.4 | 57.4 |\n| **Cybersecurity** | | | | | | |\n| CyberGym | 94.0 | 95.1 | 40.0 | - | - | - |\n| MiMo Cyber Bench | 80.2 | 77.2 | 0.0 | - | - | - |\n| ExploitGym | 17.8 | 6.0 | 0.2 | 22.1 | 30.3 | 28.4 |\n| ExploitBench | 47.9 | 25.3 | 16.6 | 70.0 | 78.5 | 78.0 |\n| SEC Bench Pro | 66.3 | 47.5 | 17.7 | - | 79.1 | - |\n| **Visual Agent** | | | | | | |\n| MiMo VisualCoding | 72.3 | 71.5 | - | 70.0 | 73.4 | 69.1 |\n\n## 4. Model Architecture\n\n### LLM Backbone\n\n| Component | MiMo-V2.6-Flash-RL |\n| --- | --- |\n| Layers (Total / SWA / GA) | 48 / 39 / 9 |\n| Hidden Size | 4096 |\n| SWA Heads (Q/KV) | 64 / 8 |\n| GA Heads (Q/KV) | 64 / 4 |\n| Head Dimensions (QK / V) | 192 / 128 |\n| Sliding Window Size | 128 |\n| Routed Experts (Total / Activated) | 256 / 8 |\n| Max Context Length | 1M |\n| MTP / Speculative Decoder | 5 SWA layers, window 1024 |\n\nThe first Transformer block uses global attention with a dense FFN. Remaining blocks interleave local SWA and GA; both use sparse MoE FFNs without shared experts.\n\n### Vision Encoder (MiMo ViT)\n\n| Configuration | Value |\n| --- | --- |\n| Layers (Total / SWA / GA) | 28 / 24 / 4 |\n| Hidden Size | 1280 |\n| Attention Heads (Q / KV) | 32 / 8 |\n| Head Dimension | 64 |\n| Patch Size (T × H × W) | 2 × 16 × 16 |\n| Sliding Window (Left / Right) | 64 / 64 |\n| Spatial Merge Size | 2 × 2 |\n| Parameters | 681M |\n\n### Audio Encoders\n\nAudioTokenizer encoder: 24 layers (12 SWA / 12 GA), hidden 1024, 20 RVQ codebooks, 308M parameters. Audio patch encoder: 6 layers, 127M parameters; four frames per patch (25 Hz → 6.25 Hz).\n\n### Speculative Decoder\n\n5-layer SWA MTP drafter (DFlash-style). Predicts 7 subsequent tokens per forward pass for parallel verification.\n\n## 5. Deployment\n\nFor best performance, follow the [SGLang MiMo cookbook](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.5). Docker image: `lmsysorg/sglang:latest`.\n\n### SGLang\n\n```bash\nsglang serve \\\n  --trust-remote-code \\\n  --model-path XiaomiMiMo/MiMo-V2.6-Flash-RL \\\n  --tp 8 \\\n  --dp 2 \\\n  --enable-dp-attention \\\n  --enable-dp-lm-head \\\n  --mm-enable-dp-encoder \\\n  --mem-fraction-static 0.65 \\\n  --chunked-prefill-size 16384 \\\n  --speculative-algorithm EAGLE \\\n  --speculative-num-steps 3 \\\n  --speculative-eagle-topk 1 \\\n  --speculative-num-draft-tokens 4 \\\n  --enable-multi-layer-eagle \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --host 0.0.0.0 \\\n  --port 30000\n```\n\n### vLLM\n\nFollow the [vLLM MiMo-V2.5 recipe](https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5). Stable vLLM may lag; pre-built image: `docker pull vllm/vllm-openai:mimov25-cu129`.\n\n```bash\nvllm serve XiaomiMiMo/MiMo-V2.6-Flash-RL \\\n  --tensor-parallel-size 4 \\\n  --trust-remote-code \\\n  --gpu-memory-utilization 0.95 \\\n  --max-model-len auto \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --enable-auto-tool-choice \\\n  --generation-config vllm\n```\n\nRecommended sampling: `temperature=1.0`, `top_p=0.95`.\n\nAlso available in AI Studio, MiMo Code, Xiaomi MiMo Desktop, Xiaomi MiMo Open Platform API, and OpenRouter.\n\n## Citation\n\n```bibtex\n@misc{mimo2026v26flash,\n  title={MiMo-V2.6-Flash-RL},\n  author={{Xiaomi MiMo Team}},\n  year={2026},\n  howpublished={\\url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL}},\n}\n```\n\n## Contact\n\nFor questions or feedback, reach us at [mimo@xiaomi.com](mailto:mimo@xiaomi.com) or join our community:\n\n- [WeChat Group](https://work.weixin.qq.com/apph5/external_room/join/group_mng?plg_id=c417f99bd9014b5dd894daa8bfe19790&)\n- [Discord](https://discord.gg/WX2R2uNp)\n- [Telegram](https://t.me/+3T-I0pekOVIyNDBl)\n- [Reddit](https://www.reddit.com/r/XiaomiMiMo_Official/)\n",
+          "checked_at": "2026-09-22",
+          "coverage": "full_text",
+          "id": "flash",
+          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "MIT；依据该固定模型卡 license: mit 声明；保留原文及许可通知。",
+            "notice": "来源：XiaomiMiMo / MiMo-V2.6-Flash-RL，修订 3b38d063180c3e4aed9691fdc735f3d10b266ee4。上游模型卡的声明和署名原样保留；仓库未另附 LICENSE 文件，不虚构版权年份。\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+            "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/blob/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
+          },
+          "title": "MiMo-V2.6-Flash-RL 固定模型卡",
+          "upstream_revision": "3b38d063180c3e4aed9691fdc735f3d10b266ee4",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/raw/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-22",
+          "coverage": "link_only",
+          "id": "distill",
+          "locator": "官方来源及对应采用说明",
+          "reason": "该固定模型卡未声明许可，仓库未列 LICENSE；不将 Pro/Flash 的 MIT 许可套用到9B。",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MiMo-V2.6-Distill-Qwen-9B 固定模型卡",
+          "upstream_revision": "f2773fb482ac3dd047a4af4003b86e56b7225d0d",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B/raw/f2773fb482ac3dd047a4af4003b86e56b7225d0d/README.md"
+        }
+      ],
+      "related": [],
+      "source_published_at": "",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "pro",
+          "title": "MiMo-V2.6-Pro-RL 固定模型卡",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "flash",
+          "title": "MiMo-V2.6-Flash-RL 固定模型卡",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/raw/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "distill",
+          "title": "MiMo-V2.6-Distill-Qwen-9B 固定模型卡",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B/raw/f2773fb482ac3dd047a4af4003b86e56b7225d0d/README.md"
+        }
+      ],
+      "state": "published",
+      "summary": "小米 MiMo 提供 Pro-RL、Flash-RL 与基于 Qwen3.5-9B 的蒸馏 SFT 检查点。模型卡介绍如何把多类 Agent 任务放进同一轮强化学习，并给出部署入口；三者的体量、训练阶段与许可需分别看。",
+      "title": "MiMo V2.6：开放 Pro、Flash 与 9B 检查点，展示 Agent 混合训练路线"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "Grok 4.7"
+      ],
+      "checked_at": "2026-09-22",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-21",
+      "highlight": true,
+      "id": "D-27",
+      "interpretation": [
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "launch"
+          ],
+          "text": "官方说明使用更大的基础模型和更长的强化学习训练，针对多小时任务、工作结果检查与Grok Bot harness做训练。这些材料说明了更新方向，采用时仍需验证自己的工具与验收流程。",
+          "title": "长任务需要检查结果、管理上下文"
+        },
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "launch",
+            "model"
+          ],
+          "text": "基础价格起点为每百万输入token 2美元、输出6美元；另有速度更快、价格更高的版本。完成任务所需token量及工具调用次数仍影响总成本，本站未调用计费API或测速。",
+          "title": "基础单价不等于每次任务的成本"
+        },
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "launch"
+          ],
+          "text": "官方比较包含不同推理档位，DeepSWE还单列high effort；不能直接当作本站在相同条件下的实测。新发布也不自动改变AA/Arena图表中的评分或价格快照。",
+          "title": "阅读榜单时同时核对推理档位"
+        }
+      ],
+      "name": "Grok 4.7",
+      "note": "官方发布日期2026-09-21，本站核对2026-09-22；具体型号grok-4.7。官方文章和文档未确认全文转载依据，仅提供链接；MCP可读本站介绍、解读和材料清单。未测试账户权限、速度、任务成本或完成率。",
+      "organization": "xAI",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-22",
+          "coverage": "link_only",
+          "id": "launch",
+          "locator": "官方来源及对应采用说明",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Grok 4.7 官方发布",
+          "upstream_revision": "Grok 4.7 / 2026-09-21",
+          "url": "https://x.ai/news/grok-4-7",
+          "reason": "尚未确认该页面全文再分发依据；本站提供出处与独立整理，不将链接标为全文。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-22",
+          "coverage": "link_only",
+          "id": "model",
+          "locator": "官方来源及对应采用说明",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Grok 4.7 型号、价格与接入",
+          "upstream_revision": "Grok 4.7 / 2026-09-21",
+          "url": "https://docs.x.ai/developers/models/grok-4.7",
+          "reason": "尚未确认该页面全文再分发依据；本站提供出处与独立整理，不将链接标为全文。"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-09-21",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "launch",
+          "title": "Grok 4.7 官方发布",
+          "url": "https://x.ai/news/grok-4-7"
+        },
+        {
+          "coverage": "link_only",
+          "id": "model",
+          "title": "Grok 4.7 型号、价格与接入",
+          "url": "https://docs.x.ai/developers/models/grok-4.7"
+        }
+      ],
+      "state": "published",
+      "summary": "xAI于9月21日发布Grok 4.7，提供Cursor、Grok Build与API入口。官方列出grok-4.7、500k上下文和可配置推理，重点面向多小时编程任务与知识工作。",
+      "title": "Grok 4.7：面向长任务编程与知识工作，沿用 4.6 的基础价格"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "Tokenizers v1.0.0-rc.2"
+      ],
+      "checked_at": "2026-09-22",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-21",
+      "highlight": false,
+      "id": "D-28",
+      "interpretation": [
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "article",
+            "readme"
+          ],
+          "text": "官方目标是保持API、词表及输出ID，优化分词、合并、缓存和多线程执行。采用前可用现有文本逐项对照输出，避免只看到速度数字而漏掉输入变化。",
+          "title": "处理速度与输出兼容性一起看"
+        },
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "article"
+          ],
+          "text": "官方在Apple M4 Max、十类模型上测得单线程编码相对v0.23提升约3–30倍。这个数字不含Python调用开销，也不是完整模型推理的吞吐提升；本站未复测。",
+          "title": "3–30倍指特定Rust编码测试"
+        },
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "article",
+            "release"
+          ],
+          "text": "当前版本为v1.0.0-rc.2，尚非稳定v1；更广模型支持及部分Python绑定工作仍在路线图中。长文本或并发场景可先在隔离环境复现tokbench和自己的数据。",
+          "title": "候选版还需要结合自己的负载验证"
+        }
+      ],
+      "name": "Tokenizers v1.0.0-rc.2",
+      "note": "官方文章和预发布日期2026-09-21，本站核对2026-09-22。固定README、发布记录与Apache-2.0许可证可经MCP读取；博客仅链接。关联CW-T03 vLLM是推理预处理背景，不代表已验证集成。未安装或复测。",
+      "organization": "Hugging Face",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-22",
+          "coverage": "link_only",
+          "id": "article",
+          "locator": "官方来源及对应采用说明",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Tokenizers v1 官方重构说明",
+          "upstream_revision": "2026-09-21 官方文章",
+          "url": "https://huggingface.co/blog/tokenizers-v1",
+          "reason": "尚未确认该页面全文再分发依据；本站提供出处与独立整理，不将链接标为全文。"
+        },
+        {
+          "approved": true,
+          "body": "# Making `tokenizers` the sota tokenization library, same API, same token IDs, same standards\n\nWe are happy to finally bring `tokenizers` up to speed :zap: !\n`tokenizers` was released 7 years ago, in a time where running the model was always the bottleneck. The ecosystem has evolved so much that `tokenizers` became a the bottleneck. \n\nAs we saw many different libraries and project pop out, improving the tokenizer, we realized that our library's entire stack was too outdated for external contributors to contribute. This pushed us to refactor the codebase, and make sure the next developers come here to push the performances of tokenization.\n\nThe TLDR; is that we're a lot faster than before, crate size 6x smaller, peak memory is reduced. \nWe worked a lot to reduce the UTF-8 tax, and make sure the improvements span across all languages. \n\n\nFor more details on the release, read [this](https://huggingface-tokenizers-v1.static.hf.space/index.html).\n\nBig Kudos to @SBrandeis and @McPatate for this sprint. Special thanks to @sebpop for his involvement as well. ",
+          "checked_at": "2026-09-22",
+          "coverage": "full_text",
+          "id": "release",
+          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "Apache-2.0；保留原始文件、发布记录、署名和完整许可证。",
+            "notice": "来源：Hugging Face / tokenizers，v1.0.0-rc.2，固定提交 7616272a1b0b580fb43e3a06701fd11db9a2706a。原文未修改；完整 Apache-2.0 许可在同对象 license 材料中，导出应一并保留。",
+            "url": "https://github.com/huggingface/tokenizers/blob/7616272a1b0b580fb43e3a06701fd11db9a2706a/LICENSE"
+          },
+          "title": "v1.0.0-rc.2 预发布记录",
+          "upstream_revision": "7616272a1b0b580fb43e3a06701fd11db9a2706a",
+          "url": "https://github.com/huggingface/tokenizers/releases/tag/v1.0.0-rc.2"
+        },
+        {
+          "approved": true,
+          "body": "<p align=\"center\">\n    <br>\n    <img src=\"https://huggingface.co/landing/assets/tokenizers/tokenizers-logo.png\" width=\"600\"/>\n    <br>\n<p>\n<p align=\"center\">\n    <a href=\"https://github.com/huggingface/tokenizers/actions\"><img alt=\"Build\" src=\"https://github.com/huggingface/tokenizers/workflows/Rust/badge.svg\"></a>\n    <a href=\"https://crates.io/crates/tokenizers\"><img alt=\"Crates.io\" src=\"https://img.shields.io/crates/v/tokenizers.svg\"></a>\n    <a href=\"https://docs.rs/tokenizers/\"><img alt=\"Docs\" src=\"https://docs.rs/tokenizers/badge.svg\"></a>\n    <a href=\"#footprint\"><img alt=\"Size\" src=\"https://img.shields.io/badge/gzipped-325%20KB-brightgreen\"></a>\n    <a href=\"https://github.com/huggingface/tokenizers/blob/main/LICENSE\"><img alt=\"License\" src=\"https://img.shields.io/github/license/huggingface/tokenizers.svg?color=blue&cachedrop\"></a>\n</p>\n\nThe SOTA tokenization library on all languages, all models, all hardwares. \n\nOur goal with `tokenizers` is to develop and maintain the industry's standard tokenization engine, making it the defacto place for everyone to contribute to the whole ecosystem.\n\n### Release candidate: v1.0.0.rc.0\n\nAs we are switching from 0.23 to v1.0.0, the current library does not ship all features. If you are worried, check the [v1 features](#v1-features) section for more details of what we are bringing back.\nWe will publish a blog about what breaking changes we introduced. We strived to keep them as small as possible.\n\n# Installation\n\n```bash\npip install --pre tokenizers\n```\n\n# Usage\n\n```python\n>>> from tokenizers import Tokenizer\n>>> tokenizer = Tokenizer.from_pretrained(\"meta-llama/Llama-3.1-8B\")   # or .from_file(path)\n>>> tokenizer.encode(\"Hello, y'all! How are you 😁 ?\")\nEncoding(ids=[128000, 9906, 11, 379, 65948, 0, 2650, 527, 499, 27623, 223, 949], type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])\n>>> tokenizer.tokenize(\"Hello\")\n['<|begin_of_text|>', 'Hello']\n>>> tokenizer.decode([15339, 1917])\n'hello world'\n>>> tokenizer.decode_tokens(tokenizer.encode(\"Hello\"))\n['<|begin_of_text|>', 'Hello']\n```\n\n# Performances\n\n\n<img width=\"1238\" height=\"677\" alt=\"image\" src=\"https://github.com/user-attachments/assets/49c672aa-f7c3-4eb5-a89c-99703f8ee38f\" />\nFor more details, checkout https://huggingface-tokenizers-v1.static.hf.space/index.html.\n\n# Bindings\n\n| | status |\n|---|---|\n| [Rust](tokenizers) | ✅ reference implementation |\n| [Python](bindings/python) | ✅ |\n| [Node.js](bindings/node) | ✅ |\n| C / C++ / Java / Go/ etc | 🚧 planned |\n| [Ruby](https://github.com/ankane/tokenizers-ruby) | community, external repo |\n\n\n# v1.0.0 roadmap:\n\nAs we work toward v1, we are gonna bring back the entire python API that allows `transformers`' style of interacting with a tokenizer object:\n\n## TODOS:\n\n### Python Bindings\n\n- Bring training back: this should be easy, but we want the perfs gains to come as well.\n- Batch encoding API with zero-copy views on encoded ids\n- dlpack API for torch / JAX / numpy interop.\n- Composition: edit components of the pipeline (`tokenizer.normalizer = [...]`).\n- `tokenizer.save` to persist a modified or trained tokenizer on disk.\n- `role_to_token` override.\n- Accept pair input for `encode` / `encode_batch`.\n- Bring back offset output: this should be useful for people training.\n- Windowing / stride in encode.\n- `decode_stream`.\n\n### Rust core\n\n- `bitnorm`: more performance from optimized normalization, as this will bring breaking changes we want to make sure it gets to v1.\n- Windowing (truncation with stride).\n- Improve training performance\n- Improve decode performance\n- Offset tracking\n- Padding: 2D flat buffer\n- Wordcache: `shrn` vs emulated movemask\n- Fix ModernBERT / OLMo load failure (\"64-bit hash collision\").\n- Unroll more regex: we need to cover the most used ones, we might have missed one or two.\n\n### Other\n\n- C & C++ bindings for loading, encode and decode APIs\n\n\n## After 1.0.0\n\n- Improve / rewrite the `bitcannon` crate\n- Java, Go, Swift... bindings, supported by the C bindings\n- `tk-devices` — exploratory GPU encoding and batch decoding that keeps text and ids on the\n  device: upload the vocabulary once, compute output positions in parallel, gather the bytes on the\n  GPU. An optional component aimed at large batches, subject to prototyping and measurement.\n\n<a name=\"footprint\"></a>\n\n# Crate details\n\n## Crate size\n\n<img width=\"784\" height=\"945\" alt=\"image\" src=\"https://github.com/user-attachments/assets/3cd1d537-2a39-4f1c-8863-c79c28c880a7\" />\n\n## Sub-crates\n\n<details>\n<summary><b><code>tk-encode</code></b> — the inference engine</summary>\n\nThe models (BPE, Unigram, WordPiece, WordLevel) and the full pipeline: `Normalizer`,\n`PreTokenizer`, `Model`, `PostProcessor`, `Decoder`.\n\n**Why separate:** you don't need all features to serve a model in production settings. Splitting it from training\nmeans a serving binary never links a trainer, a corpus reader, legacy converters, etc.\n</details>\n\n<details>\n<summary><b><code>bitcannon</code></b> — bitstream pre-tokenization</summary>\n\nUnicode tag classification plus pre-tokenization as a **bitstream program**. Follows *Interleaved Bitstream Execution for Multi-Pattern Regex Matching on GPUs*\n(MICRO'25, [10.1145/3725843.3756052](https://doi.org/10.1145/3725843.3756052)) but we added our own algorithm to make sure we don't need a parabix engine. \nCharacters are first classified into \"tags\", which use a sparse table generated when compiling `bitcannon`. This means there are 0 depencencies to the heavy unicode tables.\n\nShips byte-exact grammars for gpt2 / ByteLevel, cl100k, o200k, tekken, deepseek and kimi-k2.\nThe classes or tags each have a high and low nibble (encoded on a u8), and carry refinement when needed. Using u8 tags allows us to leverage less bitsream, meaning have a simpler / faster pre tokenization.\n\n**Why separate:** we just thought it might be useful to some people someday. As far as we know, this implementation is the fastest for every single pretokenizer regex on CPU.\n</details>\n\n<details>\n<summary><b><code>tk-serialize</code></b> — the reader</summary>\n\n`from_json_file` turns a canonical `tokenizer.json` into a `PipelineTokenizer`.\n\n**Why separate:** this just makes it optional for some usecases!\n</details>\n\n<details>\n<summary><b><code>tk-convert</code></b> — the upgrade pass</summary>\n\n`canonicalize_file` rewrites legacy a `tokenizer.json` written by any older version of this library into\nthe canonical form the reader accepts. A pure JSON→JSON rewrite; it depends on nothing but\n`std::path` and `serde_json`.\n\n**Why separate:** every config ever published stays readable without the runtime carrying a decade\nof compatibility branches. But, the legacy code amounted to quite a lot of the final crate size. Disabling it allows on device builds to be smaller.\n</details>\n\n<details>\n<summary><b><code>tk-train</code></b> — the training half</summary>\n\nThe `Trainer` trait, every concrete `*Trainer`, `TrainerWrapper` and the `Trainable` extension.\n\n**Why separate:** training is a batch job on a workstation; inference is a hot loop in a server.\nThey have opposite constraints, so they get opposite dependency budgets.\n</details>\n\n<details>\n<summary><b><code>bitmap_gen</code></b> — dev-only table generator</summary>\n\n`cargo run -p bitmap_gen` regenerates `bitcannon`'s committed classify tables from `unicode-properties`, emitting one `Atom` tag per codepoint.\n\n**Why separate — this is what buys the zero Unicode dependency.** `unicode-properties` is a\ndependency of *this* crate and of nothing else: the tables it produces are checked into\n`bitcannon/src/classify/atom_tables.rs` as ordinary source, so the Unicode data is resolved once, at\ndevelopment time, by a crate that is never linked into anything that ships and is never published.\nNo build script either — `bitcannon` compiles with no code generation step, and a release binary\ncontains the tags without containing a Unicode crate to derive them. The release workflow re-runs\nthe generator and fails if the committed table differs, so \"baked\" cannot silently mean \"stale\".\n</details>\n\n<details>\n<summary><b><code>tokenizers</code></b> — umbrella</summary>\n\nA thin re-export so existing `tokenizers::…` paths keep working. Depend on this one unless you know\nyou want less.\n</details>\n\n## Hardware\n\n**No SIMD is required.** Every kernel has a portable path that is always compiled and is the\nbyte-exact test oracle for its vectorised siblings, so correctness never depends on a kernel being\npresent — only throughput does.\n\n<details>\n<summary>Which ops are hardware-adapted</summary>\n\n| op | aarch64 | x86_64 | wasm32 | portable fallback |\n|---|---|---|---|---|\n| Unicode atom classify | NEON (baseline) | AVX-512 VBMI → SSE4.1/SSSE3, runtime-detected | SIMD128 | `classify_scalar` |\n| bitstream block build | NEON | SSE/AVX | — | `build_block_scalar` |\n| literal & added-token scan | NEON | x86_64 | — | scalar |\n| vocab bucket nibble match | NEON | — | — | scalar |\n\naarch64 selects at compile time (NEON is baseline). x86_64 dispatches at runtime via\n`is_x86_feature_detected!`, so one binary covers every x86_64 CPU since 2008. wasm32 needs the\n`simd128` target feature; without it, the scalar walk.\n</details>\n\n# Acknowledgements\n\nThis work stands on the shoulders of a lot of open source projects. Thanks to all of them for their great work.\n\n[gigatoken](https://github.com/marcelroed/gigatoken),\n[tiktoken](https://crates.io/crates/tiktoken-rs), [kitoken](https://crates.io/crates/kitoken),\n[tokie](https://crates.io/crates/tokie), [fastokens](https://crates.io/crates/fastokens),\n[wordchipper](https://crates.io/crates/wordchipper) and\n[ai-tokenizer](https://www.npmjs.com/package/ai-tokenizer) each pushed on what a fast tokenizer can\nbe; we read that work, and several of the ideas above reached us because another project showed\nthey were worth trying.\n\nDocs: [guide](https://huggingface.co/docs/tokenizers/index) ·\n[quicktour](https://huggingface.co/docs/tokenizers/quicktour) ·\n[docs.rs](https://docs.rs/tokenizers/)\n",
+          "checked_at": "2026-09-22",
+          "coverage": "full_text",
+          "id": "readme",
+          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "Apache-2.0；保留原始文件、发布记录、署名和完整许可证。",
+            "notice": "来源：Hugging Face / tokenizers，v1.0.0-rc.2，固定提交 7616272a1b0b580fb43e3a06701fd11db9a2706a。原文未修改；完整 Apache-2.0 许可在同对象 license 材料中，导出应一并保留。",
+            "url": "https://github.com/huggingface/tokenizers/blob/7616272a1b0b580fb43e3a06701fd11db9a2706a/LICENSE"
+          },
+          "title": "固定版本 Tokenizers README",
+          "upstream_revision": "7616272a1b0b580fb43e3a06701fd11db9a2706a",
+          "url": "https://github.com/huggingface/tokenizers/blob/7616272a1b0b580fb43e3a06701fd11db9a2706a/README.md"
+        },
+        {
+          "approved": true,
+          "body": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+          "checked_at": "2026-09-22",
+          "coverage": "full_text",
+          "id": "license",
+          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "Apache-2.0；保留原始文件、发布记录、署名和完整许可证。",
+            "notice": "来源：Hugging Face / tokenizers，v1.0.0-rc.2，固定提交 7616272a1b0b580fb43e3a06701fd11db9a2706a。原文未修改；完整 Apache-2.0 许可在同对象 license 材料中，导出应一并保留。",
+            "url": "https://github.com/huggingface/tokenizers/blob/7616272a1b0b580fb43e3a06701fd11db9a2706a/LICENSE"
+          },
+          "title": "固定版本 Apache-2.0 许可",
+          "upstream_revision": "7616272a1b0b580fb43e3a06701fd11db9a2706a",
+          "url": "https://github.com/huggingface/tokenizers/blob/7616272a1b0b580fb43e3a06701fd11db9a2706a/LICENSE"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T03",
+          "name": "vLLM · 推理预处理背景，未验证集成",
+          "url": "https://fieldtofit.top/for-you#watch-cw-t03"
+        }
+      ],
+      "source_published_at": "2026-09-21",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "article",
+          "title": "Tokenizers v1 官方重构说明",
+          "url": "https://huggingface.co/blog/tokenizers-v1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "v1.0.0-rc.2 预发布记录",
+          "url": "https://github.com/huggingface/tokenizers/releases/tag/v1.0.0-rc.2"
+        },
+        {
+          "coverage": "link_only",
+          "id": "readme",
+          "title": "固定版本 Tokenizers README",
+          "url": "https://github.com/huggingface/tokenizers/blob/7616272a1b0b580fb43e3a06701fd11db9a2706a/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "license",
+          "title": "固定版本 Apache-2.0 许可",
+          "url": "https://github.com/huggingface/tokenizers/blob/7616272a1b0b580fb43e3a06701fd11db9a2706a/LICENSE"
+        }
+      ],
+      "state": "published",
+      "summary": "Tokenizers把文本转换为模型输入的token ID。Hugging Face公布v1重构说明和v1.0.0-rc.2候选版，在保持输出兼容的同时优化分词、缓存和并行执行，减少长文本与并发处理中的预处理等待。",
+      "title": "Tokenizers v1 候选版：保持 token ID，降低文本预处理开销"
+    },
+    {
+      "_position": 1,
+      "aliases": [
         "Qwen-Image-2.1",
         "Qwen / Alibaba"
       ],
@@ -502,7 +874,7 @@
       "title": "Jev：让模型直接返回可供程序使用的判断"
     },
     {
-      "_position": 1,
+      "_position": 4,
       "aliases": [
         "Qwen Omni Flash",
         "Qwen3.8 Omni Flash"
@@ -510,7 +882,7 @@
       "checked_at": "2026-09-20",
       "editor": "FieldToFit",
       "event_date": "2026-09-18",
-      "highlight": true,
+      "highlight": false,
       "id": "D-19",
       "interpretation": [
         {
@@ -715,7 +1087,7 @@
       "title": "Qwen3.8-Omni-Flash：从看懂视频，到调用工具整理和创作"
     },
     {
-      "_position": 2,
+      "_position": 5,
       "aliases": [
         "Kimi Desktop",
         "Kimi Code 桌面端"
@@ -723,7 +1095,7 @@
       "checked_at": "2026-09-20",
       "editor": "FieldToFit",
       "event_date": "2026-09-17",
-      "highlight": true,
+      "highlight": false,
       "id": "D-20",
       "interpretation": [
         {
@@ -2581,7 +2953,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-09-21",
+  "reviewed_at": "2026-09-22",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

@@ -162,11 +162,12 @@ def test_chart_snapshot_validation_and_no_implicit_publish(client):
 
 
 def test_admin_auth_origin_and_missing_migration(client):
+    before = client.get('/api/v1/platform/watch').json
     assert client.get(BASE+'/status').status_code==401
     assert client.post(BASE+'/migrate',headers={**ADMIN,'Origin':'https://hostile.example'},json={}).status_code==403
     ref=call(client,'/inbox',{'title':'Candidate','url':'https://example.org/candidate'}).json['ref']
     assert call(client,'/select',{'ref':ref,'action':'select'}).status_code==409
-    assert client.get('/api/v1/platform/watch').json['total']==31
+    assert client.get('/api/v1/platform/watch').json==before
     migrate(client)
     assert client.get(BASE+'/backup').status_code==401
     assert call(client,'/content/watch/CW-M01/publish',{'draft_version':1,'reason':'Missing preview','confirmed':True}).status_code==409
@@ -177,6 +178,7 @@ def test_daily_intake_original_materials_reach_editor_without_publishing(client)
     import hashlib
     from backend.knowledge.platform_maintenance import stage
     migrate(client)
+    before = client.get('/api/v1/platform/watch').json
     source={'id':'github-skills','url':'https://example.org/intake','config':{'name':'Maintained source','object_type':'tool'}}
     body='Actual captured README, with enough detail for editorial review.'
     material={'key':'readme','kind':'readme','primary':True,'url':'https://example.org/readme','locator':'README.md','body':body,'coverage':'full_text','hash':hashlib.sha256(body.encode()).hexdigest()}
@@ -186,7 +188,7 @@ def test_daily_intake_original_materials_reach_editor_without_publishing(client)
     selected=call(client,'/select',{'ref':pending[0]['ref'],'action':'select','kind':'watch'}).json
     exported=call(client,f"/content/watch/{selected['id']}/export",method='get').json
     assert exported['materials'][0]['body']==body and exported['materials'][0]['coverage']=='full_text'
-    assert client.get('/api/v1/platform/watch').json['total']==31
+    assert client.get('/api/v1/platform/watch').json==before
 
 
 def test_malformed_drafts_cannot_break_editor_and_chart_private_fields_stay_private(client):

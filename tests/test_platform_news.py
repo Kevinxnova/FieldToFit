@@ -42,7 +42,7 @@ def test_revision_detects_correction_and_withdrawal_without_leaking_drafts(clien
 def test_invalid_publication_is_not_partially_served(client,tmp_path,monkeypatch,broken):
     data = json.loads(news.CONTENT_PATH.read_text()); item=data['items'][0]
     if broken=='missing_source': item['interpretation'][0]['source_ids']=['absent']
-    if broken=='bad_url': item['related'][0]['url']='javascript:alert(1)'
+    if broken=='bad_url': item['related']=[{'id':'CW-M01','name':'Unsafe link','url':'javascript:alert(1)'}]
     if broken=='missing_date': item['checked_at']=''
     if broken=='duplicate_id': data['items'].append(copy.deepcopy(item))
     if broken=='missing_public_field': del item['note']

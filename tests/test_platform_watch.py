@@ -18,13 +18,14 @@ def test_shared_content_complete_and_searchable(client):
     response = client.get('/api/v1/platform/watch')
     assert response.status_code == 200
     body = response.json
-    assert body['total'] == 31
-    assert [g['count'] for g in body['groups']] == [9, 5, 8, 5, 4]
+    published = [i for i in json.loads(watch.CONTENT_PATH.read_text())['items'] if i['state']=='published']
+    assert body['total'] == len(published)
+    assert {g['id']:g['count'] for g in body['groups']} == {g:sum(i['type']==g for i in published) for g in watch.TYPES}
     rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call',
         'params':{'name':'curated_watch','arguments':{}}}).json['result']
     assert not rpc.get('isError') and rpc['structuredContent'] == body
     assert client.get('/api/v1/platform/watch?q=VideoCrop').json['items'][0]['name'] == 'ComfyUI'
-    assert client.get('/api/v1/platform/watch?type=skill').json['total'] == 5
+    assert client.get('/api/v1/platform/watch?type=skill').json['total'] == sum(i['type']=='skill' for i in published)
     assert client.get('/api/v1/platform/watch?q=not-a-known-profile').json['total'] == 0
     assert client.get('/api/v1/platform/watch?type=invalid').status_code == 400
     assert client.get('/api/v1/platform/watch?id=missing').status_code == 404
@@ -36,7 +37,7 @@ def test_shared_content_complete_and_searchable(client):
 def test_private_fields_drafts_and_withdrawal(client, tmp_path, monkeypatch):
     data,path = replace_data(tmp_path,monkeypatch)
     first = watch.watch()
-    item = data['items'][0]
+    item = next(i for i in data['items'] if i['id']=='CW-M01')
     item['private_note'] = 'SECRET'
     item['interpretation'][0]['private_note'] = 'SECRET'
     item['blocks'][0]['private_note'] = 'SECRET'
@@ -86,7 +87,7 @@ def test_submission_filter_and_mcp(client, tmp_path, monkeypatch):
     data['items'].append(item)
     path.write_text(json.dumps(data))
     body = client.get('/api/v1/platform/watch?origin=developer_submission').json
-    assert body['total'] == 1 and body['collection_total'] == 32
+    assert body['total'] == 1 and body['collection_total'] == len([i for i in data['items'] if i['state']=='published'])
     assert body['origin'] == 'developer_submission'
     assert body['items'][0]['submission']['relationship'] == '第三方推荐'
     assert 'SECRET' not in json.dumps(body) and 'private@example.com' not in json.dumps(body)
