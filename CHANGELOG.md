@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.9"></a>
+## v1.5.9 · 全站累计访问次数需求对齐 · 2026-09-22
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 将 REQ-17 首期对齐为在公共页脚展示全站累计访问次数，新增 REQ-17-7 的位置、文案及双端验收要求。
+- 明确按访问会话累计、30 分钟内刷新和换页不重复计数，保留真实起始日、持久累计及故障提示。
+- 详细访客、内容、来源、复访和私有后台调整为后续范围；本批仅更新需求，功能尚未开发或部署。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Align the first phase of REQ-17 with a public footer showing cumulative site visits, adding REQ-17-7 for placement, wording and desktop/mobile acceptance.
+- Define session-based counting without duplicate visits from refreshes or navigation within 30 minutes, with a genuine start date, persistent totals and failure states.
+- Defer detailed visitor, content, acquisition, return-visit and private dashboard analytics; this batch updates requirements only, without implementation or deployment.
+<!-- release-summary:en:end -->
+
+对应 REQ-17-7、REQ-17 首期范围与相关分期；REQ-18 搜索发现方案保留。无功能、公开 API 或数据库迁移变化。文档与版本核对见[当日需求核对记录](docs/validation/2026-09-22-traffic-search.md)。
+
 <a id="v1.5.8"></a>
 ## v1.5.8 · 访问统计与搜索发现需求方案 · 2026-09-22
 
