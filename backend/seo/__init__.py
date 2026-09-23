@@ -80,35 +80,59 @@ def robots():
     return Response(body, content_type='text/plain; charset=utf-8', headers={'Cache-Control': 'no-store'})
 
 
-def published_dates():
+def published_dates_query():
     # Never use mutable draft timestamps, migration dates or reachability checks.
-    # Seed-only pages have no reliable publication modification date: omit it.
-    from backend.db import get_db
+    # Compare only public fields; unchanged publications don't manufacture freshness.
+    fields = ('state','name','organization','title','summary','introduction','type',
+              'source_published_at','event_date','checked_at','interpretation','blocks',
+              'sources','related','note','editor','highlight','attention','origin',
+              'submission','reading_materials','aliases')
+    projection = 'json_array(' + ','.join("json_extract(snapshot,'$."+key+"')" for key in fields) + ')'
+    return f"""WITH revisions AS (
+        SELECT kind,item_id,action,created_at,{projection} body,
+          LAG({projection}) OVER (PARTITION BY kind,item_id ORDER BY seq) previous
+        FROM fieldtofit_content_history
+        WHERE kind IN ('news','watch') AND item_id!='*'
+          AND action IN ('import','publish','withdraw','merge_source','restore_draft'))
+        SELECT kind,item_id,MAX(created_at) changed FROM revisions
+        WHERE action='publish' AND (previous IS NULL OR body!=previous)
+        GROUP BY kind,item_id"""
+
+
+def sitemap_entries():
+    """One fresh public snapshot; omit unrelated material-health/relationship reads."""
+    from backend.db import get_db, TursoConnection
+    from backend.knowledge import content_workspace as workspace
+    from backend.knowledge.stewardship import resolve
+
+    queries = [("SELECT kind,published_json FROM fieldtofit_content_sets WHERE kind IN ('news','watch')", ()),
+               ('SELECT source_id,target_id FROM fieldtofit_steward_aliases', ()),
+               (published_dates_query(), ())]
     with get_db() as db:
-        # Compare only public content fields inside SQLite/Turso. Draft saves,
-        # private annotations, no-op publications and import dates don't count.
-        fields = ('state','name','organization','title','summary','introduction','type',
-                  'source_published_at','event_date','checked_at','interpretation','blocks',
-                  'sources','related','note','editor','highlight','attention','origin',
-                  'submission','reading_materials','aliases')
-        projection = 'json_array(' + ','.join("json_extract(snapshot,'$."+key+"')" for key in fields) + ')'
-        rows = db.execute(f"""WITH revisions AS (
-            SELECT kind,item_id,action,created_at,{projection} body,
-              LAG({projection}) OVER (PARTITION BY kind,item_id ORDER BY seq) previous
-            FROM fieldtofit_content_history
-            WHERE kind IN ('news','watch') AND item_id!='*'
-              AND action IN ('import','publish','withdraw','merge_source','restore_draft'))
-            SELECT kind,item_id,MAX(created_at) changed FROM revisions
-            WHERE action='publish' AND (previous IS NULL OR body!=previous)
-            GROUP BY kind,item_id""").fetchall()
-    return {(r['kind'], r['item_id']): r['changed'] for r in rows}
+        if isinstance(db, TursoConnection):
+            rows = [cursor.fetchall() for cursor in db.atomic_statements(queries, read_only=True)]
+        else:
+            db.execute('BEGIN')
+            rows = [db.execute(sql, params).fetchall() for sql, params in queries]
+        raw = {row['kind']: json.loads(row['published_json']) for row in rows[0]}
+        dates = {(row['kind'], row['item_id']): row['changed'] for row in rows[2]}
+        entries = []
+        for kind in ('news', 'watch'):
+            data = raw.get(kind)
+            if data is None:
+                data = json.loads((workspace.CONTENT / (kind + '.json')).read_text())
+            # Reuse the public validator/projection, without fetching maintenance
+            # decorations. Reviewed aliases come from the same database snapshot.
+            for item in workspace.render(kind, data)['items']:
+                if resolve(item['id'], db, rows[1]) == item['id']:
+                    entries.append((detail_url(item['id']), dates.get((kind, item['id']))))
+        return entries
 
 
 @bp.get('/sitemap.xml')
 def sitemap():
     try:
-        collections = {'news': news(), 'watch': watch()}
-        dates = published_dates()
+        entries = sitemap_entries()
         namespace = 'http://www.sitemaps.org/schemas/sitemap/0.9'
         ET.register_namespace('', namespace)
         root = ET.Element('{'+namespace+'}urlset')
@@ -119,11 +143,8 @@ def sitemap():
                 ET.SubElement(node, 'lastmod').text = changed
         for path in PAGES:
             add(path)
-        for kind, collection in collections.items():
-            for item in collection['items']:
-                if item.get('maintenance', {}).get('canonical_id', item['id']) != item['id']:
-                    continue
-                add(detail_url(item['id']), dates.get((kind, item['id'])))
+        for path, changed in entries:
+            add(path, changed)
         return Response(ET.tostring(root, encoding='utf-8', xml_declaration=True),
                         content_type='application/xml; charset=utf-8', headers={'Cache-Control': 'no-store'})
     except Exception:

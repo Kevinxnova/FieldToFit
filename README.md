@@ -34,16 +34,15 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.14](CHANGELOG.md#v1.5.14)** · [fieldtofit-v1.5.14](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.14)
+**当前源码版本：[v1.5.15](CHANGELOG.md#v1.5.15)** · [fieldtofit-v1.5.15](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.15)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布 Opus 5.5、GPT-6 Sol/Luna、Step 5 Preview、阿里云 AI 路线图及 rabbitOS 3 五项确认内容；速览加入前两项，保留原有动态，当前 33 条动态、32 项持续关注。
-- 更新 AA / Arena 两张能力与价格图至本站 9 月 23 日核对快照，分别绘制 133 / 84 个配置；保留各自单位、评分区间及缺项，Arena 来源截止日为 9 月 13 日。
-- 旗舰名单更新 Opus 5.5、Grok 4.7 和 MiMo V2.6 Pro；未进入 Arena 或缺价格的系列明确说明，不拿旧系列代替。兼容 AA 新数值成本字段，避免误用 token 单价。
-- 网页与 AI 同源资料保留原始出处、日期和限制；新增五项的官网正文均仅链接，不声称已提供原文全文。实际验收与部署状态见本批证据。
+- 站点地图改为一次只读事务获取公开集合、归并关系和真实更新时间，省去重复的远程维护状态查询；正式响应从约 8.7–9.1 秒降至 2.11–2.67 秒。
+- 保留同源公开校验、草稿与下架排除、归并排除和无缓存规则；现有介绍及正文不改写。
+- Google 域名 DNS 验证已完成，地图已提交且实际网址测试通过；地图报告仍显示无法抓取，尚未确认成功读取或收录。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

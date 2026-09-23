@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.15"></a>
+## v1.5.15 · 站点地图读取提速 · 2026-09-23
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 站点地图改为一次只读事务获取公开集合、归并关系和真实更新时间，省去重复的远程维护状态查询；正式响应从约 8.7–9.1 秒降至 2.11–2.67 秒。
+- 保留同源公开校验、草稿与下架排除、归并排除和无缓存规则；现有介绍及正文不改写。
+- Google 域名 DNS 验证已完成，地图已提交且实际网址测试通过；地图报告仍显示无法抓取，尚未确认成功读取或收录。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Read published collections, reviewed merges and genuine modification dates in one read-only transaction for the sitemap, removing repeated remote maintenance lookups; production responses improved from about 8.7–9.1 seconds to 2.11–2.67 seconds.
+- Preserve shared public validation, draft/withdrawal/merge exclusions and no-cache behavior without rewriting existing introductions or content.
+- Google domain DNS verification is complete, and the submitted sitemap passed a live URL test; its report still shows a fetch failure, with successful processing and indexing unconfirmed.
+<!-- release-summary:en:end -->
+
+对应 REQ-18-4/5/6。合入 v1.5.14 最新内容，保留全部 70 个地图网址和日期。34 项相关测试、远端构建、正式单次 Turso 读取及健康／MCP 版本通过。实测原地图响应约 8.7 秒；本批解决已确认的读取开销，不将其推断为 Google 失败的确定原因。不新增数据库或缓存，不变更公开 API/MCP。实际验证与上线结果见[搜索验收记录](docs/validation/2026-09-22-search.md)。
+
 <a id="v1.5.14"></a>
 ## v1.5.14 · 五项动态与模型图表更新 · 2026-09-23
 

@@ -158,6 +158,7 @@ def test_redirects_query_canonical_and_failure(site, monkeypatch):
     def broken(*args, **kwargs):
         raise RuntimeError('SECRET database credentials')
     monkeypatch.setattr(seo, 'news', broken)
+    monkeypatch.setattr(seo, 'sitemap_entries', broken)
     for path in ('/for-you', '/news/D-01', '/sitemap.xml'):
         response = get(site, path)
         assert response.status_code == 503 and 'SECRET' not in response.text
@@ -173,3 +174,47 @@ def test_escaped_markup_and_metadata(site, monkeypatch):
     assert '&lt;script&gt;alert(1)' in response.text
     assert '<a' not in str(seo.inline('[bad](javascript:alert)'))
     assert '<img' not in str(seo.inline('<img src=x> **<script>**'))
+
+
+def test_sitemap_uses_public_snapshot_without_maintenance_reads(site, monkeypatch):
+    from backend.knowledge import stewardship
+    expected = urls(site)
+    migrate(site)
+    def unavailable(*args, **kwargs):
+        raise RuntimeError('Material health unavailable')
+    monkeypatch.setattr(stewardship, 'decorate', unavailable)
+    assert urls(site) == expected
+    with get_db() as db:
+        db.execute('INSERT INTO fieldtofit_steward_aliases VALUES(?,?,?)', ('D-01','D-02','test'))
+        db.execute('INSERT INTO fieldtofit_steward_aliases VALUES(?,?,?)', ('D-02','D-03','test'))
+    actual = urls(site)
+    assert seo.ORIGIN+'/news/D-01' not in actual
+    assert seo.ORIGIN+'/news/D-02' not in actual
+    assert seo.ORIGIN+'/news/D-03' in actual
+    assert set(actual) == set(expected) - {seo.ORIGIN+'/news/D-01', seo.ORIGIN+'/news/D-02'}
+
+
+def test_remote_sitemap_reads_one_atomic_snapshot(site, monkeypatch):
+    from contextlib import contextmanager
+    import backend.db as database
+    migrate(site)
+    expected = urls(site)
+    batches = []
+    original_get_db = database.get_db
+    class Remote(database.TursoConnection):
+        def __init__(self, local):
+            self.local = local
+        def atomic_statements(self, statements, read_only=False):
+            assert read_only
+            batches.append(statements)
+            return [self.local.execute(sql, args) for sql, args in statements]
+        def execute(self, *args):
+            raise AssertionError('Sitemap must not perform extra remote reads')
+    @contextmanager
+    def remote_db():
+        with original_get_db() as local:
+            yield Remote(local)
+    monkeypatch.setattr(database, 'get_db', remote_db)
+    assert urls(site) == expected
+    assert len(batches) == 1
+    assert len(batches[0]) == 3

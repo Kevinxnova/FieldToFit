@@ -34,16 +34,15 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.14](CHANGELOG.md#v1.5.14)** · [fieldtofit-v1.5.14](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.14)
+**Current source version: [v1.5.15](CHANGELOG.md#v1.5.15)** · [fieldtofit-v1.5.15](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.15)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the five approved developments on Opus 5.5, GPT-6 Sol/Luna, Step 5 Preview, Alibaba’s AI roadmap and rabbitOS 3; feature the first two while retaining earlier news, for 33 developments and 32 profiles.
-- Refresh AA and Arena snapshots reviewed on September 23, plotting 133 and 84 configurations with independent units, score intervals and explicit gaps. Arena’s source cutoff is September 13.
-- Select Opus 5.5, Grok 4.7 and MiMo V2.6 Pro as current flagship representatives; show missing Arena listings or prices without substituting older series. Support AA’s numeric task-cost field without substituting token prices.
-- Preserve source links, original dates and limitations in shared web and AI content. The five new developments provide links to official materials, not licensed full-text copies. Verification and deployment status are recorded below.
+- Read published collections, reviewed merges and genuine modification dates in one read-only transaction for the sitemap, removing repeated remote maintenance lookups; production responses improved from about 8.7–9.1 seconds to 2.11–2.67 seconds.
+- Preserve shared public validation, draft/withdrawal/merge exclusions and no-cache behavior without rewriting existing introductions or content.
+- Google domain DNS verification is complete, and the submitted sitemap passed a live URL test; its report still shows a fetch failure, with successful processing and indexing unconfirmed.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
