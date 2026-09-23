@@ -7,7 +7,7 @@ tests/
 docs/
 examples/
 /content/
-scripts/
+/scripts/
 frontend/node_modules/
 frontend/dist/
 *.sqlite

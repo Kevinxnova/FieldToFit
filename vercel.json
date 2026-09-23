@@ -1,6 +1,18 @@
 {
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/for-you",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/for-you",
+      "permanent": true
+    }
+  ],
   "functions": {
     "api/cron_platform.py": {
       "maxDuration": 300,

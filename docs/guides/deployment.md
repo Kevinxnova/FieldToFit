@@ -81,11 +81,22 @@ v1.5.11 的 REQ-17 首期提供公共页脚和两个新接口；2026-09-22 已�
 
 ## 搜索可读页面与独立详情
 
-v1.5.12 源码实现 REQ-18-1 至 4；截至本批本地验收尚未部署，线上状态以[验收记录](../validation/2026-09-22-search.md)为准。没有新增数据库表、第三方脚本或付费服务；继续读取既有审核发布集合。现有标题、介绍与正文保持原样。
+v1.5.12 源码实现 REQ-18-1 至 4，v1.5.13 修复发布配置并于 2026-09-23 完成正式验收，线上结果见[验收记录](../validation/2026-09-22-search.md)。没有新增数据库表、第三方脚本或付费服务；继续读取既有审核发布集合。现有标题、介绍与正文保持原样。
 
 - 前端构建完成后，`frontend/scripts/copy-search-shell.mjs` 把包含当前资源哈希的 HTML 外壳复制到 `backend/seo/client.html`。这是忽略的构建产物，必须随每次前端构建重新生成；不可手工保留旧外壳。Vercel 的 Python 函数包含 `backend/seo/**`，非 API 页面转发至 Flask，静态资源仍由部署输出提供；Docker 使用相同共享文案及前端 dist。
+- `.vercelignore` 的维护脚本排除项必须写成 `/scripts/`，只作用于仓库根目录。写成 `scripts/` 会同时排除上述前端构建脚本，导致远端构建失败。根路径和 `/index.html` 另由 Vercel 配置永久跳转到 `/for-you`，避免静态首页优先于 Flask 路由返回空壳。
 - Flask 对主入口和 `/news/D-…`、`/watch/CW-…` 返回同源核心 HTML，浏览器继续使用原阅读组件。详情、站点地图及归并跳转均 `no-store`，不需要额外清缓存；新请求重新检查当前公开状态。旧 hash 不发给服务端，继续在原长页定位。
 - 主入口保留标题，描述取现有介绍；详情标题及描述取已发布内容。正式 canonical 始终使用 `https://fieldtofit.top`。预览环境／非正式 Host 返回 noindex，预览 robots 禁止抓取；管理、个人页面、非搜索 API 与错误页不索引，私密接口仍须认证。
 - sitemap 从当前公开集合实时生成。`lastmod` 仅用公开内容变化对应的发布历史时间，不使用来源探活、迁移或草稿更新时间；静态入口及没有可靠发布历史的内容省略此项。仅核验种子日期不能当作真实修改日期。
 - 正式部署验收须检查匿名 HTML、MCP/API 同源、全部 sitemap URL 的 200／canonical、404／归并／下架、生产与预览 robots、静态资源可用及访问计数连续性。不要为验收改写线上内容或制造访问量。生产回滚可用先前应用版本，保留全部内容与累计访问数据。
 - 技术上线后再使用所有者账号办理 Google Search Console、Bing Webmaster Tools 和百度搜索资源平台验证。优先利用平台支持的 DNS 验证；以各平台实际开放权限提交 sitemap，分别记录回执、抓取及索引状态。此代码批次没有自动提交功能或监控任务，不把技术验收写成已收录。
+
+### 向搜索平台提交
+
+统一站点地图地址为 `https://fieldtofit.top/sitemap.xml`。其中只列出当前公开页面，之后发布或下架内容会自动更新，无需逐条维护地图。
+
+1. **Google**：在 [Search Console](https://search.google.com/search-console) 添加「网域」资源 `fieldtofit.top`，按页面生成的记录在域名 DNS 服务商处新增 TXT，再回平台验证。验证通过后进入「站点地图」，提交上述完整地址，并保留验证记录。[所有权验证说明](https://support.google.com/webmasters/answer/9008080?hl=en)；[站点地图报告](https://support.google.com/webmasters/answer/7451001?hl=en)。
+2. **Bing**：在 [Bing Webmaster Tools](https://www.bing.com/webmasters) 选择从 Google Search Console 导入，授权后只选择 FieldToFit；也可以手动添加并验证站点。在 Sitemaps 页面检查或提交同一地图，确认实际处理状态。[添加与验证说明](https://www2.bing.com/webmasters/help/add-and-verify-site-12184f8b)；[站点地图说明](https://www2.bing.com/webmasters/help/sitemaps-3b5cf6ed)。
+3. **百度**：在[百度搜索资源平台](https://ziyuan.baidu.com/)单独添加并验证 `https://fieldtofit.top`，进入「普通收录」，按账号可用方式提交公开网址。若后台开放 sitemap，再提交同一地图；普通站点不能假定拥有 sitemap 权限，参见[官方权限表](https://ziyuan.baidu.com/viptools)。
+
+分别保存验证状态、提交时间、地图处理结果和索引报告；账号登录和 DNS 验证依赖所有者实际账号。2026-09-23 本轮只完成网站部署与操作说明，尚未执行上述平台验证或提交。提交后由各平台决定抓取和收录，不能将「已提交」写成「已收录」。

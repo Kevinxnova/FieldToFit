@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.13"></a>
+## v1.5.13 · 搜索页面发布配置修正 · 2026-09-23
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 纳入 v1.5.12 的搜索可读主入口、已发布内容独立页、逐页信息及自动站点地图；既有标题、介绍和正文保持原样。
+- 修正 Vercel 上传排除规则，只排除根目录维护脚本，保留生成搜索页面外壳所必需的前端构建脚本；首页及 index.html 永久跳转到 For you，避免静态空壳抢先响应。
+- 保留旧长页链接、公开 API/MCP 和累计访问数据；正式 65 个页面、双端 40 项检查及健康／MCP 版本通过，站长账号验证及搜索提交仍待执行。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Include v1.5.12's crawlable main pages, published detail URLs, page metadata and automatic sitemap while preserving existing titles, introductions and body copy.
+- Fix the Vercel upload exclusion to omit only root maintenance scripts and retain the frontend script required to generate the search HTML shell; permanently redirect the root and index.html to For you before static-file handling.
+- Preserve long-page links, public API/MCP and cumulative visits. Production verification passed for all 65 pages, 40 browser checks and health/MCP versions; webmaster verification and search submission remain pending.
+<!-- release-summary:en:end -->
+
+v1.5.12 首次远端构建因 `scripts/` 规则同时排除 `frontend/scripts/` 而失败，未替换当时的 v1.5.11 正式站。本批将规则限定为 `/scripts/`，新增修复交付按项目规则递增补丁版本；不改数据库或发布内容。初次 v1.5.13 验收另发现静态根页面抢先响应，本批追加 Vercel 根入口永久跳转并于 2026-09-23 完成线上复验。实际远端构建、正式接口与网页结果见[搜索页面验收](docs/validation/2026-09-22-search.md)。
+
 <a id="v1.5.12"></a>
 ## v1.5.12 · 搜索可读页面与已发布内容独立页 · 2026-09-22
 
@@ -27,7 +48,7 @@
 - Development and isolated verification are recorded below. Production remains v1.5.11; search features have not been deployed and webmaster verification/submission has not been performed.
 <!-- release-summary:en:end -->
 
-对应 REQ-18-1 至 4；按用户补充约束保留既有文案，REQ-18-5/6 的平台提交和效果观察仍待执行。API/MCP 内容契约与生产数据库不变；详情页不缓存，站点地图仅从公开集合生成，更新日期仅取实际发布内容变化，种子／静态页面无可靠修改日时省略。详情路由纳入现有 30 分钟访问会话。实际验收、部署准备与未验范围见[搜索页面验收](docs/validation/2026-09-22-search.md)。
+该源码批次随后纳入 v1.5.13 正式发布，未单独创建 v1.5.12 发布标签。对应 REQ-18-1 至 4；按用户补充约束保留既有文案，REQ-18-5/6 的平台提交和效果观察仍待执行。API/MCP 内容契约与生产数据库不变；详情页不缓存，站点地图仅从公开集合生成，更新日期仅取实际发布内容变化，种子／静态页面无可靠修改日时省略。详情路由纳入现有 30 分钟访问会话。实际验收、部署准备与未验范围见[搜索页面验收](docs/validation/2026-09-22-search.md)。
 
 <a id="v1.5.11"></a>
 ## v1.5.11 · 公共页脚全站累计访问次数 · 2026-09-22

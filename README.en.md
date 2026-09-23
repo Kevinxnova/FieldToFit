@@ -34,16 +34,15 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.12](CHANGELOG.md#v1.5.12)** · Release tag not yet published
+**Current source version: [v1.5.13](CHANGELOG.md#v1.5.13)** · [fieldtofit-v1.5.13](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.13)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Preserve existing main-page titles, introductions and body copy; share the same existing introductions between initial HTML and the client without rewriting promotional text.
-- Add stable URLs for published news and ongoing-watch profiles, reusing reading, handoff and visit counting; new shares and directory links open details while old long-page anchors remain valid.
-- Add public HTML, page-specific metadata, robots and an automatic sitemap; exclude drafts, remove withdrawn content immediately, redirect merged identities only to public targets and return real error statuses.
-- Development and isolated verification are recorded below. Production remains v1.5.11; search features have not been deployed and webmaster verification/submission has not been performed.
+- Include v1.5.12's crawlable main pages, published detail URLs, page metadata and automatic sitemap while preserving existing titles, introductions and body copy.
+- Fix the Vercel upload exclusion to omit only root maintenance scripts and retain the frontend script required to generate the search HTML shell; permanently redirect the root and index.html to For you before static-file handling.
+- Preserve long-page links, public API/MCP and cumulative visits. Production verification passed for all 65 pages, 40 browser checks and health/MCP versions; webmaster verification and search submission remain pending.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
