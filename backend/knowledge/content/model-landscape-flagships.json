@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-09-11",
+  "reviewed_at": "2026-09-23",
   "policy": "FieldToFit 编辑维护的本期旗舰系列名单；每系列每来源一个代表配置，保留来源名称。缺项不替换为旧系列，不代表来源官方旗舰分类。",
   "policy_en": "FieldToFit’s reviewed flagship-series selection, with one representative configuration per source. Original names are retained. Missing entries are not replaced with older series. This is not an official source classification.",
   "models": [
@@ -9,16 +9,16 @@
       "evidence_url": "https://artificialanalysis.ai/models/gpt-6-astra",
       "ids": {
         "artificial-analysis": "gpt-6-astra",
-        "arena": null
+        "arena": "gpt-6-astra-max-text"
       }
     },
     {
       "company": "Anthropic",
-      "family": "Claude Fable 5.1",
-      "evidence_url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "family": "Claude Opus 5.5",
+      "evidence_url": "https://artificialanalysis.ai/models/claude-opus-5-5",
       "ids": {
-        "artificial-analysis": "claude-fable-5-1",
-        "arena": "claude-fable-5.1-max-text"
+        "artificial-analysis": "claude-opus-5-5",
+        "arena": null
       }
     },
     {
@@ -32,11 +32,11 @@
     },
     {
       "company": "xAI",
-      "family": "Grok 4.6",
-      "evidence_url": "https://artificialanalysis.ai/models/grok-4-6",
+      "family": "Grok 4.7",
+      "evidence_url": "https://artificialanalysis.ai/models/grok-4-7",
       "ids": {
-        "artificial-analysis": "grok-4-6",
-        "arena": "grok-4.6-high-text"
+        "artificial-analysis": "grok-4-7",
+        "arena": null
       }
     },
     {
@@ -45,7 +45,7 @@
       "evidence_url": "https://artificialanalysis.ai/models/muse-spark-1-3",
       "ids": {
         "artificial-analysis": "muse-spark-1-3",
-        "arena": null
+        "arena": "muse-spark-1-3-max-bhma-text"
       }
     },
     {
@@ -77,11 +77,11 @@
     },
     {
       "company": "MIMO",
-      "family": "MiMo-V2.5-Pro",
-      "evidence_url": "https://artificialanalysis.ai/models/mimo-v2-5-pro",
+      "family": "MiMo-V2.6-Pro",
+      "evidence_url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
       "ids": {
-        "artificial-analysis": "mimo-v2-5-pro",
-        "arena": "mimo-v2.5-pro-text"
+        "artificial-analysis": "mimo-v2-6-pro",
+        "arena": null
       }
     },
     {

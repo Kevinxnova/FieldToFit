@@ -34,15 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.13](CHANGELOG.md#v1.5.13)** · [fieldtofit-v1.5.13](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.13)
+**当前源码版本：[v1.5.14](CHANGELOG.md#v1.5.14)** · [fieldtofit-v1.5.14](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.14)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 纳入 v1.5.12 的搜索可读主入口、已发布内容独立页、逐页信息及自动站点地图；既有标题、介绍和正文保持原样。
-- 修正 Vercel 上传排除规则，只排除根目录维护脚本，保留生成搜索页面外壳所必需的前端构建脚本；首页及 index.html 永久跳转到 For you，避免静态空壳抢先响应。
-- 保留旧长页链接、公开 API/MCP 和累计访问数据；正式 65 个页面、双端 40 项检查及健康／MCP 版本通过，站长账号验证及搜索提交仍待执行。
+- 发布 Opus 5.5、GPT-6 Sol/Luna、Step 5 Preview、阿里云 AI 路线图及 rabbitOS 3 五项确认内容；速览加入前两项，保留原有动态，当前 33 条动态、32 项持续关注。
+- 更新 AA / Arena 两张能力与价格图至本站 9 月 23 日核对快照，分别绘制 133 / 84 个配置；保留各自单位、评分区间及缺项，Arena 来源截止日为 9 月 13 日。
+- 旗舰名单更新 Opus 5.5、Grok 4.7 和 MiMo V2.6 Pro；未进入 Arena 或缺价格的系列明确说明，不拿旧系列代替。兼容 AA 新数值成本字段，避免误用 token 单价。
+- 网页与 AI 同源资料保留原始出处、日期和限制；新增五项的官网正文均仅链接，不声称已提供原文全文。实际验收与部署状态见本批证据。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

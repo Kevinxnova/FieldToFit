@@ -59,6 +59,14 @@ def number(value):
     return value if isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) else None
 
 
+def task_cost(value):
+    """AA has shipped both an object and a numeric per-task cost field."""
+    if isinstance(value, dict):
+        cost = value.get('cost')
+        return number(cost.get('total')) if isinstance(cost, dict) else None
+    return number(value)
+
+
 def build(aa_html, arena_html, ledger, checked_at):
     checked = date.fromisoformat(checked_at)
     aa_objects = objects(aa_html); arena_objects = objects(arena_html)
@@ -94,7 +102,7 @@ def build(aa_html, arena_html, ledger, checked_at):
         else: source['points'].append(p)
     for slug, r in models.items():
         d = dates[slug]; cost = r.get('intelligenceIndexCostPerTask')
-        price = number(cost.get('cost', {}).get('total')) if isinstance(cost, dict) else None
+        price = task_cost(cost)
         estimated = r.get('intelligenceIndexIsEstimated') is True
         add(aa, dict(id=slug, name=r['shortName'], organization=company(r['modelCreatorName']), source_organization=r['modelCreatorName'],
                      score=number(r['intelligenceIndex']), price=price, score_url=AA, price_url=AA,

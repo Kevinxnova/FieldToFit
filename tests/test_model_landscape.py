@@ -10,16 +10,16 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     response = client.get('/api/v1/platform/model-landscape')
     assert response.status_code == 200
     body = response.json
-    assert [len(s['points']) for s in body['sources']] == [107, 83]
+    assert [len(s['points']) for s in body['sources']] == [133, 84]
     aa, arena = body['sources']
     assert aa['price_unit'] == 'usd_per_task'
-    assert arena['source_updated_at'] == '2026-09-02'
+    assert arena['source_updated_at'] == '2026-09-13'
     assert aa['source_updated_at'] is None
     assert arena['points'][0]['score_low'] < arena['points'][0]['score'] < arena['points'][0]['score_high']
     assert 'v4.3' in aa['score_label']
     assert 'Style Control' in arena['score_label']
-    assert aa['coverage']['released_2026'] == 263 and arena['coverage']['released_2026'] == 96
-    assert len(aa['not_plotted']) == 156 and len(arena['not_plotted']) == 13
+    assert aa['coverage']['released_2026'] == 290 and arena['coverage']['released_2026'] == 98
+    assert len(aa['not_plotted']) == 157 and len(arena['not_plotted']) == 14
     assert len(arena['undated']) == 182
     assert all(p['release_date'].startswith('2026-') for s in body['sources'] for p in s['points'])
     assert set(p['organization'] for p in aa['points']) == set(body['companies'])
@@ -87,14 +87,25 @@ def test_candidate_parser_and_company_aliases_do_not_invent_numbers():
 
 def test_flagships_are_reviewed_series_not_per_company_score_winners():
     aa, arena = charts.snapshot()['sources']
-    assert len(aa['points']) == 107 and len(arena['points']) == 83
+    assert len(aa['points']) == 133 and len(arena['points']) == 84
     assert sum(m['status']=='plotted' for m in aa['flagship']['models']) == 11
-    assert sum(m['status']=='plotted' for m in arena['flagship']['models']) == 8
+    assert sum(m['status']=='plotted' for m in arena['flagship']['models']) == 5
     chosen = {m['company']:m for m in arena['flagship']['models']}
-    assert chosen['OpenAI']['status']=='not_listed' and chosen['OpenAI']['id'] is None
-    assert chosen['Meta']['status']=='not_listed'
+    assert chosen['OpenAI']['status']=='missing_coordinates' and chosen['OpenAI']['id']=='gpt-6-astra-max-text'
+    assert chosen['Meta']['status']=='missing_coordinates'
     assert chosen['Kimi']['status']=='missing_coordinates'
     # New selected flagship series remains selected even when an older model scored higher.
-    assert chosen['Anthropic']['id']=='claude-fable-5.1-max-text'
-    assert chosen['xAI']['id']=='grok-4.6-high-text'
+    assert chosen['Anthropic']['status']=='not_listed' and chosen['Anthropic']['family']=='Claude Opus 5.5'
+    assert chosen['xAI']['status']=='not_listed' and chosen['xAI']['family']=='Grok 4.7'
     assert len({m['company'] for m in aa['flagship']['models']}) == 11
+
+
+@pytest.mark.parametrize('value,expected', [
+    (1.0564, 1.0564), ({'cost': {'total': .071}}, .071),
+    (0, 0), (None, None), (True, None), (float('nan'), None),
+    ('$undefined', None), ({'cost': None}, None), ({'cost': {}}, None),
+    ({'price1mInputTokens': 2}, None),
+])
+def test_task_cost_handles_both_source_formats_without_token_price_substitution(value, expected):
+    from scripts.maintenance.prepare_model_landscape import task_cost
+    assert task_cost(value) == expected

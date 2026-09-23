@@ -4,6 +4,530 @@
     {
       "_position": 1,
       "aliases": [
+        "Claude Opus5.5",
+        "claude-opus-5-5"
+      ],
+      "checked_at": "2026-09-23",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-22",
+      "highlight": true,
+      "id": "D-29",
+      "interpretation": [
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "每百万输入／输出 token 为 4／20 美元，缓存读取为 0.20 美元；官方所说“典型任务成本降低40%”包含单价和用量变化，并非所有单价都降40%。",
+          "title": "看价格结构"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "API、Claude Code 等入口已提供；快档为8／40美元，属于另一种价格选择。部分新API账户适用 preserved thinking，维护对话历史的应用需要核对兼容说明。",
+          "title": "看采用条件"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "官方报告强调长任务完成表现；本站未复测，不把官方比较写成用户所有项目都能达到的结果。",
+          "title": "看证据边界"
+        }
+      ],
+      "name": "Claude Opus 5.5",
+      "note": "本站未做任务/成本复测；preserved thinking适用账户需按官方说明确认。官方文章与文档尚未确认全文再分发许可，仅链接；MCP可读取本站介绍、逐点解读、版本与出处清单。",
+      "organization": "Anthropic",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:03:14.833206+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Claude Opus 5.5 官方发布",
+          "upstream_revision": "Claude Opus 5.5 / 2026-09-22",
+          "url": "https://www.anthropic.com/claude-opus-5-5"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m02"
+        },
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/for-you#watch-cw-a02"
+        },
+        {
+          "id": "D-05",
+          "name": "Claude Fable 5.1 / Mythos 5.1",
+          "url": "https://fieldtofit.top/for-you#news-d-05"
+        }
+      ],
+      "source_published_at": "2026-09-22",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Claude Opus 5.5 官方发布",
+          "url": "https://www.anthropic.com/claude-opus-5-5"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic 发布 Claude 5.5 系列首款模型，重点是跨代码库修改、审计等长任务。",
+      "title": "Claude Opus 5.5：长任务升级，同时降低基础与缓存价格"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "GPT-6 Sol",
+        "GPT-6 Luna",
+        "gpt-6-sol",
+        "gpt-6-luna"
+      ],
+      "checked_at": "2026-09-23",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-22",
+      "highlight": true,
+      "id": "D-30",
+      "interpretation": [
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "Sol 每百万输入／输出 token 为 2／10美元；Luna为 0.10／0.50美元。采用时仍需计算推理及输出用量，不能只比较输入价。",
+          "title": "看准确单价"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "官方列出 API、ChatGPT Work 与 Codex 的开放安排，并明确普通 Chat 尚未开放；账户和逐步推出范围以官方说明为准。",
+          "title": "看能在哪里用"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "同日缓存更新提供命中诊断、显式断点等控制；符合条件的共享前缀可在30分钟窗口复用。缓存输入折扣不代表整次任务账单同幅下降。",
+          "title": "看长会话如何省成本"
+        }
+      ],
+      "name": "GPT-6 Sol / Luna",
+      "note": "本站未做任务基准测试；灰度范围和账户权限以服务商为准。官方文章与文档尚未确认全文再分发许可，仅链接；MCP可读取本站介绍、逐点解读、版本与出处清单。",
+      "organization": "OpenAI",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:03:14.833595+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "GPT-6 Sol/Luna 官方发布",
+          "upstream_revision": "GPT-6 Sol / Luna / 2026-09-22",
+          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:03:20.995286+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "GPT-6 提示缓存说明",
+          "upstream_revision": "GPT-6 Sol / Luna / 2026-09-22",
+          "url": "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m01"
+        },
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/for-you#watch-cw-a01"
+        },
+        {
+          "id": "D-02",
+          "name": "GPT-6 Astra",
+          "url": "https://fieldtofit.top/for-you#news-d-02"
+        }
+      ],
+      "source_published_at": "2026-09-22",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "GPT-6 Sol/Luna 官方发布",
+          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "GPT-6 提示缓存说明",
+          "url": "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 发布 `gpt-6-sol` 与 `gpt-6-luna`，将 GPT-6 系列扩展到价格更低的型号。",
+      "title": "GPT-6 Sol/Luna：补齐日常工作档位，缓存也有具体改进"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "step-5-preview"
+      ],
+      "checked_at": "2026-09-23",
+      "editor": "FieldToFit",
+      "event_date": "",
+      "highlight": false,
+      "id": "D-31",
+      "interpretation": [
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "`step-5-preview` 支持文本、图像和视频输入，文本输出；官方列出 1M上下文、64k最大输出，二者不能混写。",
+          "title": "它提供什么"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "官方API文档给出工具调用和结构化输出说明，并提供Claude Code接入指南。价格为每百万未缓存输入1美元、缓存输入0.05美元、输出2.70美元；输出计费包括推理过程。",
+          "title": "怎么接入"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "搜索与代码执行工具由应用提供；本轮未做实际调用，未核实最初发布日期和开放权重，不写成“今日开源”。",
+          "title": "还不能声称什么"
+        }
+      ],
+      "name": "Step 5 Preview",
+      "note": "原始发布日期未核实；开放权重未核实；未实际调用模型。官方文章与文档尚未确认全文再分发许可，仅链接；MCP可读取本站介绍、逐点解读、版本与出处清单。",
+      "organization": "StepFun",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:05:25.958297+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Step 5 Preview 型号文档",
+          "upstream_revision": "Step 5 Preview / official docs checked 2026-09-23",
+          "url": "https://platform.stepfun.ai/docs/en/guides/models/step-5-preview"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:05:25.958551+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "StepFun 价格与限额",
+          "upstream_revision": "Step 5 Preview / official docs checked 2026-09-23",
+          "url": "https://platform.stepfun.ai/docs/en/guides/pricing/details"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source3",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:05:25.958637+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "StepFun Claude Code 接入指南",
+          "upstream_revision": "Step 5 Preview / official docs checked 2026-09-23",
+          "url": "https://platform.stepfun.ai/docs/en/step-plan/integrations/claude-code"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/for-you#watch-cw-a02"
+        }
+      ],
+      "source_published_at": "",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Step 5 Preview 型号文档",
+          "url": "https://platform.stepfun.ai/docs/en/guides/models/step-5-preview"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "StepFun 价格与限额",
+          "url": "https://platform.stepfun.ai/docs/en/guides/pricing/details"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source3",
+          "title": "StepFun Claude Code 接入指南",
+          "url": "https://platform.stepfun.ai/docs/en/step-plan/integrations/claude-code"
+        }
+      ],
+      "state": "published",
+      "summary": "昨日未取得完整材料，今天已核到 StepFun 官方文档，建议作为近期补录。",
+      "title": "Step 5 Preview：补齐型号、价格与接入材料"
+    },
+    {
+      "_position": 4,
+      "aliases": [
+        "Alibaba AgentCore",
+        "AgentContext",
+        "Qwen4"
+      ],
+      "checked_at": "2026-09-23",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-22",
+      "highlight": false,
+      "id": "D-32",
+      "interpretation": [
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "Qwen4仍在训练，Qwen4.5／5属于后续规划，不能当成已经可用的新模型。",
+          "title": "模型进展有明确状态"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "公告介绍 Qwen-Audio-3.1-TTS-Next，可将脚本中的对白和环境音一并生成；具体API开放范围与完整型号文档仍需补核。",
+          "title": "音频值得继续关注"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "Alibaba AgentCore、AgentContext分别指向Agent运行管理、上下文与记忆。先记录官方用途与入口，具体接入条件待补；这里的AgentCore不是AWS同名产品。",
+          "title": "Agent基础设施看什么"
+        }
+      ],
+      "name": "阿里云 AI 路线图",
+      "note": "TTS-Next具体API和计费入口待补；AgentCore/Context具体开放条件待补；Qwen4仍在训练。官方文章与文档尚未确认全文再分发许可，仅链接；MCP可读取本站介绍、逐点解读、版本与出处清单。",
+      "organization": "Alibaba / Qwen",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:03:21.281640+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "阿里云全栈AI路线图公告",
+          "upstream_revision": "Alibaba full-stack AI roadmap / 2026-09-22",
+          "url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-roadmap-on-full-stack-ai-strategy?_p_lc=1"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M07",
+          "name": "Qwen",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m07"
+        }
+      ],
+      "source_published_at": "2026-09-22",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "阿里云全栈AI路线图公告",
+          "url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-roadmap-on-full-stack-ai-strategy?_p_lc=1"
+        }
+      ],
+      "state": "published",
+      "summary": "阿里云在9月22日公告中介绍模型、音频与Agent基础设施的后续方向。",
+      "title": "阿里云 AI 路线图：分清新产品介绍与未来计划"
+    },
+    {
+      "_position": 5,
+      "aliases": [
+        "OS3",
+        "rabbit agent"
+      ],
+      "checked_at": "2026-09-23",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-22",
+      "highlight": false,
+      "id": "D-33",
+      "interpretation": [
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "一个结合记忆、Skill与电脑执行的Agent环境；rabbit agent作为本机执行端，可连接多台设备。",
+          "title": "它是什么"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "更换受支持模型时，可以继续保留记忆、技能和已连接电脑；用户带自己的模型密钥，OS3平台免费，模型调用按所选服务商计费。",
+          "title": "为什么值得看"
+        },
+        {
+          "locator": "官方来源的能力、价格、采用方式或状态说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "这是本机执行与云服务共同组成的系统，并非所有处理都离线；第三方Skill兼容性须逐项核对。本站未安装、测试其设备控制能力，也未核实可公开全文的许可。",
+          "title": "采用前看清边界"
+        }
+      ],
+      "name": "rabbit OS3",
+      "note": "本站未安装或实测；完整Skill兼容范围未验证；源码与全文再分发许可未核实。官方文章与文档尚未确认全文再分发许可，仅链接；MCP可读取本站介绍、逐点解读、版本与出处清单。",
+      "organization": "rabbit",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:05:25.958773+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "rabbit 官方版本记录",
+          "upstream_revision": "rabbit OS3 general availability / 2026-09-22",
+          "url": "https://www.rabbit.tech/updates"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-23",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方原始材料；具体事实以来源相应章节为准",
+          "reason": "尚未确认全文再分发许可，不能将链接标为可读全文。",
+          "retrieved_at": "2026-09-23T02:05:25.958715+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "rabbit OS3 使用说明",
+          "upstream_revision": "rabbit OS3 general availability / 2026-09-22",
+          "url": "https://www.rabbit.tech/support/article/rabbitos-3"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-09-22",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "rabbit 官方版本记录",
+          "url": "https://www.rabbit.tech/updates"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "rabbit OS3 使用说明",
+          "url": "https://www.rabbit.tech/support/article/rabbitos-3"
+        }
+      ],
+      "state": "published",
+      "summary": "Rabbit于9月22日宣布OS3结束邀请测试，开放使用；网页也是使用入口。",
+      "title": "rabbit OS3：不需要r1，也能连接自己的模型和电脑"
+    },
+    {
+      "_position": 1,
+      "aliases": [
         "MiMo V2.6"
       ],
       "checked_at": "2026-09-22",
@@ -124,6 +648,339 @@
       "state": "published",
       "summary": "小米 MiMo 提供 Pro-RL、Flash-RL 与基于 Qwen3.5-9B 的蒸馏 SFT 检查点。模型卡介绍如何把多类 Agent 任务放进同一轮强化学习，并给出部署入口；三者的体量、训练阶段与许可需分别看。",
       "title": "MiMo V2.6：开放 Pro、Flash 与 9B 检查点，展示 Agent 混合训练路线"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "Qwen3.8-LiveTranslate",
+        "Qwen / Alibaba"
+      ],
+      "checked_at": "2026-09-21",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-18",
+      "highlight": false,
+      "id": "D-24",
+      "interpretation": [
+        {
+          "locator": "对应官方材料的能力、使用方式或限制章节",
+          "source_ids": [
+            "launch"
+          ],
+          "text": "说话人标识和双语文本便于核对谁说了什么。会议、访谈开发者可以重点看这部分；这是基于材料的用途判断，本站未实测多人重叠说话。",
+          "title": "多人对话的重点是对应关系"
+        },
+        {
+          "locator": "对应官方材料的能力、使用方式或限制章节",
+          "source_ids": [
+            "api"
+          ],
+          "text": "具体型号为 qwen3.8-livetranslate-flash-realtime，官方提供 WebSocket 接入和示例。文档仍混有3.5示例，应核对3.8参数章节；语言覆盖需区分文字与语音输出。",
+          "title": "接入时区分3.8与旧版示例"
+        },
+        {
+          "locator": "对应官方材料的能力、使用方式或限制章节",
+          "source_ids": [
+            "release",
+            "api"
+          ],
+          "text": "约2.3秒是官方报告的延迟，不是任意网络下的保证。API更新记录为9月17日，博客为9月18日；本站核对为9月21日。账户开通、费用、特定语种和端到端效果仍待验证。",
+          "title": "延迟与日期不能混写"
+        }
+      ],
+      "name": "Qwen3.8-LiveTranslate",
+      "note": "原文 2026-09-18；本站核对 2026-09-21；qwen3.8-livetranslate-flash-realtime；API更新2026-09-17，博客2026-09-18。官方材料仅链接，MCP可读取本站介绍、逐点解读及材料清单，不提供这些来源的全文。未安装或执行。",
+      "organization": "Qwen / Alibaba",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "launch",
+          "locator": "官方发布、文档与对应限制章节",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Qwen 官方发布",
+          "upstream_revision": "qwen3.8-livetranslate-flash-realtime；API更新2026-09-17，博客2026-09-18",
+          "url": "https://qwen.ai/blog?id=qwen3.8-livetranslate",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "api",
+          "locator": "官方发布、文档与对应限制章节",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "实时音视频翻译接入文档",
+          "upstream_revision": "qwen3.8-livetranslate-flash-realtime；API更新2026-09-17，博客2026-09-18",
+          "url": "https://docs.qwencloud.com/developer-guides/speech/realtime-translation",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "release",
+          "locator": "官方发布、文档与对应限制章节",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "模型更新记录",
+          "upstream_revision": "qwen3.8-livetranslate-flash-realtime；API更新2026-09-17，博客2026-09-18",
+          "url": "https://docs.qwencloud.com/changelog/models",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M07",
+          "name": "Qwen",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m07"
+        }
+      ],
+      "source_published_at": "2026-09-18",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "launch",
+          "title": "Qwen 官方发布",
+          "url": "https://qwen.ai/blog?id=qwen3.8-livetranslate"
+        },
+        {
+          "coverage": "link_only",
+          "id": "api",
+          "title": "实时音视频翻译接入文档",
+          "url": "https://docs.qwencloud.com/developer-guides/speech/realtime-translation"
+        },
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "模型更新记录",
+          "url": "https://docs.qwencloud.com/changelog/models"
+        }
+      ],
+      "state": "published",
+      "summary": "Qwen3.8-LiveTranslate 面向流式音视频翻译，支持说话人区分和原文、译文同步输出。输入及文字覆盖60种语言，语音输出覆盖29种；已有明确的 WebSocket 接入型号。",
+      "title": "Qwen 实时同传：分清谁在说话，同时保留原文和译文"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "Jev",
+        "TypeSafe AI"
+      ],
+      "checked_at": "2026-09-21",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-15",
+      "highlight": false,
+      "id": "D-25",
+      "interpretation": [
+        {
+          "locator": "对应官方材料的能力、使用方式或限制章节",
+          "source_ids": [
+            "questions",
+            "launch"
+          ],
+          "text": "例如先判断工单类别和紧急程度，再由程序选择队列、重试或交给人工。Choice从给定选项选择，Score按描述等级评分，Noul返回是非概率；这套接口适合可拆分的小判断，不承担开放式文本创作。",
+          "title": "把小判断交给模型，流程保留在代码里"
+        },
+        {
+          "locator": "对应官方材料的能力、使用方式或限制章节",
+          "source_ids": [
+            "adoption"
+          ],
+          "text": "Vercel于9月18日称，Jev上线AI Gateway首24小时触达近13%的付费团队，超过此前模型上线首日的采用表现。这个数字只代表Vercel该产品及统计窗口，不能当作全行业份额、长期留存或效果排名。",
+          "title": "这次关注有具体采用信号"
+        },
+        {
+          "locator": "对应官方材料的能力、使用方式或限制章节",
+          "source_ids": [
+            "limits"
+          ],
+          "text": "官方限制说明列出字面理解、计数与日期比较、无关长上下文、对抗内容等失败情况。数据格式符合约定仍可能判断错误；精确算术和日期比较留给代码，并在真实数据上验证阈值。",
+          "title": "类型正确不等于判断正确"
+        },
+        {
+          "locator": "对应官方材料的能力、使用方式或限制章节",
+          "source_ids": [
+            "models",
+            "quickstart"
+          ],
+          "text": "当前模型文档列出jev-1.13.0；jev-latest等别名会随发布移动，阈值调优应记录实际版本。官方提供API和SDK入口；本站未申请账号或调用计费API，不承诺所有账户均可访问。",
+          "title": "采用时固定具体型号"
+        }
+      ],
+      "name": "Jev",
+      "note": "原文 2026-09-15；本站核对 2026-09-21；jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17。官方材料仅链接，MCP可读取本站介绍、逐点解读及材料清单，不提供这些来源的全文。未安装或执行。",
+      "organization": "TypeSafe AI",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "launch",
+          "locator": "官方发布、文档与对应限制章节",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "TypeSafe 官方发布",
+          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "models",
+          "locator": "官方发布、文档与对应限制章节",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "官方型号与使用条件",
+          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
+          "url": "https://docs.typesafe.ai/models",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "questions",
+          "locator": "官方发布、文档与对应限制章节",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Choice、Score、Noul问题类型",
+          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
+          "url": "https://docs.typesafe.ai/primitives"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "limits",
+          "locator": "官方发布、文档与对应限制章节",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Jev 1.13 已知限制",
+          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
+          "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "quickstart",
+          "locator": "官方发布、文档与对应限制章节",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "官方快速开始",
+          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
+          "url": "https://docs.typesafe.ai/introduction/quickstart"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-21",
+          "coverage": "link_only",
+          "id": "adoption",
+          "locator": "官方发布、文档与对应限制章节",
+          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
+          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
+          "rights": {
+            "basis": "链接原始出处；不复制正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Vercel 上线首日采用数据",
+          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
+          "url": "https://vercel.com/blog/ai-gateway-jev-model-launch"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-09-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "launch",
+          "title": "TypeSafe 官方发布",
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+        },
+        {
+          "coverage": "link_only",
+          "id": "models",
+          "title": "官方型号与使用条件",
+          "url": "https://docs.typesafe.ai/models"
+        },
+        {
+          "coverage": "link_only",
+          "id": "questions",
+          "title": "Choice、Score、Noul问题类型",
+          "url": "https://docs.typesafe.ai/primitives"
+        },
+        {
+          "coverage": "link_only",
+          "id": "limits",
+          "title": "Jev 1.13 已知限制",
+          "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13"
+        },
+        {
+          "coverage": "link_only",
+          "id": "quickstart",
+          "title": "官方快速开始",
+          "url": "https://docs.typesafe.ai/introduction/quickstart"
+        },
+        {
+          "coverage": "link_only",
+          "id": "adoption",
+          "title": "Vercel 上线首日采用数据",
+          "url": "https://vercel.com/blog/ai-gateway-jev-model-launch"
+        }
+      ],
+      "state": "published",
+      "summary": "TypeSafe 发布面向软件内部分类、路由与评分的 Jev。应用提交状态与预设类型的问题，取得选择、评分或是非概率，再由代码决定后续动作；它不生成文章或解释文本。",
+      "title": "Jev：让模型直接返回可供程序使用的判断"
     },
     {
       "_position": 2,
@@ -539,339 +1396,6 @@
       "state": "published",
       "summary": "Qwen 发布统一图像生成与编辑模型，支持透明图和最多10张参考图；官方提供 Diffusers 示例及 ComfyUI 工作流入口。当前采用研究许可，商业使用需另行取得授权。",
       "title": "Qwen-Image-2.1：直接生成透明素材，也能继续编辑"
-    },
-    {
-      "_position": 2,
-      "aliases": [
-        "Qwen3.8-LiveTranslate",
-        "Qwen / Alibaba"
-      ],
-      "checked_at": "2026-09-21",
-      "editor": "FieldToFit",
-      "event_date": "2026-09-18",
-      "highlight": true,
-      "id": "D-24",
-      "interpretation": [
-        {
-          "locator": "对应官方材料的能力、使用方式或限制章节",
-          "source_ids": [
-            "launch"
-          ],
-          "text": "说话人标识和双语文本便于核对谁说了什么。会议、访谈开发者可以重点看这部分；这是基于材料的用途判断，本站未实测多人重叠说话。",
-          "title": "多人对话的重点是对应关系"
-        },
-        {
-          "locator": "对应官方材料的能力、使用方式或限制章节",
-          "source_ids": [
-            "api"
-          ],
-          "text": "具体型号为 qwen3.8-livetranslate-flash-realtime，官方提供 WebSocket 接入和示例。文档仍混有3.5示例，应核对3.8参数章节；语言覆盖需区分文字与语音输出。",
-          "title": "接入时区分3.8与旧版示例"
-        },
-        {
-          "locator": "对应官方材料的能力、使用方式或限制章节",
-          "source_ids": [
-            "release",
-            "api"
-          ],
-          "text": "约2.3秒是官方报告的延迟，不是任意网络下的保证。API更新记录为9月17日，博客为9月18日；本站核对为9月21日。账户开通、费用、特定语种和端到端效果仍待验证。",
-          "title": "延迟与日期不能混写"
-        }
-      ],
-      "name": "Qwen3.8-LiveTranslate",
-      "note": "原文 2026-09-18；本站核对 2026-09-21；qwen3.8-livetranslate-flash-realtime；API更新2026-09-17，博客2026-09-18。官方材料仅链接，MCP可读取本站介绍、逐点解读及材料清单，不提供这些来源的全文。未安装或执行。",
-      "organization": "Qwen / Alibaba",
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "launch",
-          "locator": "官方发布、文档与对应限制章节",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Qwen 官方发布",
-          "upstream_revision": "qwen3.8-livetranslate-flash-realtime；API更新2026-09-17，博客2026-09-18",
-          "url": "https://qwen.ai/blog?id=qwen3.8-livetranslate",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "api",
-          "locator": "官方发布、文档与对应限制章节",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "实时音视频翻译接入文档",
-          "upstream_revision": "qwen3.8-livetranslate-flash-realtime；API更新2026-09-17，博客2026-09-18",
-          "url": "https://docs.qwencloud.com/developer-guides/speech/realtime-translation",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "release",
-          "locator": "官方发布、文档与对应限制章节",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "模型更新记录",
-          "upstream_revision": "qwen3.8-livetranslate-flash-realtime；API更新2026-09-17，博客2026-09-18",
-          "url": "https://docs.qwencloud.com/changelog/models",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M07",
-          "name": "Qwen",
-          "url": "https://fieldtofit.top/for-you#watch-cw-m07"
-        }
-      ],
-      "source_published_at": "2026-09-18",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "launch",
-          "title": "Qwen 官方发布",
-          "url": "https://qwen.ai/blog?id=qwen3.8-livetranslate"
-        },
-        {
-          "coverage": "link_only",
-          "id": "api",
-          "title": "实时音视频翻译接入文档",
-          "url": "https://docs.qwencloud.com/developer-guides/speech/realtime-translation"
-        },
-        {
-          "coverage": "link_only",
-          "id": "release",
-          "title": "模型更新记录",
-          "url": "https://docs.qwencloud.com/changelog/models"
-        }
-      ],
-      "state": "published",
-      "summary": "Qwen3.8-LiveTranslate 面向流式音视频翻译，支持说话人区分和原文、译文同步输出。输入及文字覆盖60种语言，语音输出覆盖29种；已有明确的 WebSocket 接入型号。",
-      "title": "Qwen 实时同传：分清谁在说话，同时保留原文和译文"
-    },
-    {
-      "_position": 3,
-      "aliases": [
-        "Jev",
-        "TypeSafe AI"
-      ],
-      "checked_at": "2026-09-21",
-      "editor": "FieldToFit",
-      "event_date": "2026-09-15",
-      "highlight": true,
-      "id": "D-25",
-      "interpretation": [
-        {
-          "locator": "对应官方材料的能力、使用方式或限制章节",
-          "source_ids": [
-            "questions",
-            "launch"
-          ],
-          "text": "例如先判断工单类别和紧急程度，再由程序选择队列、重试或交给人工。Choice从给定选项选择，Score按描述等级评分，Noul返回是非概率；这套接口适合可拆分的小判断，不承担开放式文本创作。",
-          "title": "把小判断交给模型，流程保留在代码里"
-        },
-        {
-          "locator": "对应官方材料的能力、使用方式或限制章节",
-          "source_ids": [
-            "adoption"
-          ],
-          "text": "Vercel于9月18日称，Jev上线AI Gateway首24小时触达近13%的付费团队，超过此前模型上线首日的采用表现。这个数字只代表Vercel该产品及统计窗口，不能当作全行业份额、长期留存或效果排名。",
-          "title": "这次关注有具体采用信号"
-        },
-        {
-          "locator": "对应官方材料的能力、使用方式或限制章节",
-          "source_ids": [
-            "limits"
-          ],
-          "text": "官方限制说明列出字面理解、计数与日期比较、无关长上下文、对抗内容等失败情况。数据格式符合约定仍可能判断错误；精确算术和日期比较留给代码，并在真实数据上验证阈值。",
-          "title": "类型正确不等于判断正确"
-        },
-        {
-          "locator": "对应官方材料的能力、使用方式或限制章节",
-          "source_ids": [
-            "models",
-            "quickstart"
-          ],
-          "text": "当前模型文档列出jev-1.13.0；jev-latest等别名会随发布移动，阈值调优应记录实际版本。官方提供API和SDK入口；本站未申请账号或调用计费API，不承诺所有账户均可访问。",
-          "title": "采用时固定具体型号"
-        }
-      ],
-      "name": "Jev",
-      "note": "原文 2026-09-15；本站核对 2026-09-21；jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17。官方材料仅链接，MCP可读取本站介绍、逐点解读及材料清单，不提供这些来源的全文。未安装或执行。",
-      "organization": "TypeSafe AI",
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "launch",
-          "locator": "官方发布、文档与对应限制章节",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "TypeSafe 官方发布",
-          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
-          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "models",
-          "locator": "官方发布、文档与对应限制章节",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "官方型号与使用条件",
-          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
-          "url": "https://docs.typesafe.ai/models",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "questions",
-          "locator": "官方发布、文档与对应限制章节",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Choice、Score、Noul问题类型",
-          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
-          "url": "https://docs.typesafe.ai/primitives"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "limits",
-          "locator": "官方发布、文档与对应限制章节",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Jev 1.13 已知限制",
-          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
-          "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "quickstart",
-          "locator": "官方发布、文档与对应限制章节",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "官方快速开始",
-          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
-          "url": "https://docs.typesafe.ai/introduction/quickstart"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-21",
-          "coverage": "link_only",
-          "id": "adoption",
-          "locator": "官方发布、文档与对应限制章节",
-          "reason": "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。",
-          "retrieved_at": "2026-09-21T05:52:05.351322+00:00",
-          "rights": {
-            "basis": "链接原始出处；不复制正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Vercel 上线首日采用数据",
-          "upstream_revision": "jev-1.13.0；限制说明适用jev-1.13，官方核对2026-09-17",
-          "url": "https://vercel.com/blog/ai-gateway-jev-model-launch"
-        }
-      ],
-      "related": [],
-      "source_published_at": "2026-09-15",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "launch",
-          "title": "TypeSafe 官方发布",
-          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
-        },
-        {
-          "coverage": "link_only",
-          "id": "models",
-          "title": "官方型号与使用条件",
-          "url": "https://docs.typesafe.ai/models"
-        },
-        {
-          "coverage": "link_only",
-          "id": "questions",
-          "title": "Choice、Score、Noul问题类型",
-          "url": "https://docs.typesafe.ai/primitives"
-        },
-        {
-          "coverage": "link_only",
-          "id": "limits",
-          "title": "Jev 1.13 已知限制",
-          "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13"
-        },
-        {
-          "coverage": "link_only",
-          "id": "quickstart",
-          "title": "官方快速开始",
-          "url": "https://docs.typesafe.ai/introduction/quickstart"
-        },
-        {
-          "coverage": "link_only",
-          "id": "adoption",
-          "title": "Vercel 上线首日采用数据",
-          "url": "https://vercel.com/blog/ai-gateway-jev-model-launch"
-        }
-      ],
-      "state": "published",
-      "summary": "TypeSafe 发布面向软件内部分类、路由与评分的 Jev。应用提交状态与预设类型的问题，取得选择、评分或是非概率，再由代码决定后续动作；它不生成文章或解释文本。",
-      "title": "Jev：让模型直接返回可供程序使用的判断"
     },
     {
       "_position": 4,
@@ -2953,7 +3477,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-09-22",
+  "reviewed_at": "2026-09-23",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

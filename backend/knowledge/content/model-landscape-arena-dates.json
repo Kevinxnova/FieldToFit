@@ -1088,5 +1088,20 @@
     "release_date": "2026-01-10",
     "date_url": "https://arena.ai/leaderboard/text",
     "date_basis": "source_version_date"
+  },
+  "grok-4.6-high-public-text": {
+    "release_date": "2026-08-12",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/grok-4-6"
+  },
+  "gpt-6-astra-max-text": {
+    "release_date": "2026-09-03",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/gpt-6-astra"
+  },
+  "muse-spark-1-3-max-bhma-text": {
+    "release_date": "2026-09-02",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/muse-spark-1-3"
   }
 }

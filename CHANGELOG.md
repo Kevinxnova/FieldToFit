@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.14"></a>
+## v1.5.14 · 五项动态与模型图表更新 · 2026-09-23
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布 Opus 5.5、GPT-6 Sol/Luna、Step 5 Preview、阿里云 AI 路线图及 rabbitOS 3 五项确认内容；速览加入前两项，保留原有动态，当前 33 条动态、32 项持续关注。
+- 更新 AA / Arena 两张能力与价格图至本站 9 月 23 日核对快照，分别绘制 133 / 84 个配置；保留各自单位、评分区间及缺项，Arena 来源截止日为 9 月 13 日。
+- 旗舰名单更新 Opus 5.5、Grok 4.7 和 MiMo V2.6 Pro；未进入 Arena 或缺价格的系列明确说明，不拿旧系列代替。兼容 AA 新数值成本字段，避免误用 token 单价。
+- 网页与 AI 同源资料保留原始出处、日期和限制；新增五项的官网正文均仅链接，不声称已提供原文全文。实际验收与部署状态见本批证据。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the five approved developments on Opus 5.5, GPT-6 Sol/Luna, Step 5 Preview, Alibaba’s AI roadmap and rabbitOS 3; feature the first two while retaining earlier news, for 33 developments and 32 profiles.
+- Refresh AA and Arena snapshots reviewed on September 23, plotting 133 and 84 configurations with independent units, score intervals and explicit gaps. Arena’s source cutoff is September 13.
+- Select Opus 5.5, Grok 4.7 and MiMo V2.6 Pro as current flagship representatives; show missing Arena listings or prices without substituting older series. Support AA’s numeric task-cost field without substituting token prices.
+- Preserve source links, original dates and limitations in shared web and AI content. The five new developments provide links to official materials, not licensed full-text copies. Verification and deployment status are recorded below.
+<!-- release-summary:en:end -->
+
+对应 REQ-6-2、REQ-7-2/3/4/5、REQ-8-9、REQ-11。公开接口和数据库结构不变；每日来源检查仍不自动发布图表。实际数据、双端预览、回归及正式部署以[本批验收](docs/validation/2026-09-23-editorial.md)为准。
+
 <a id="v1.5.13"></a>
 ## v1.5.13 · 搜索页面发布配置修正 · 2026-09-23
 
