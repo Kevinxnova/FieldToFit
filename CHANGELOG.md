@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.16"></a>
+## v1.5.16 · 六项动态与 Strands Harness 材料更新 · 2026-09-25
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布用户确认的 A–F：Gemini 3.8 TTS、Antigravity SDK 本地模型、Meta Muse、Strands Harness、FLUX 3 Action 与 Gemini Live Avatar；当前 39 条动态、33 项持续关注。
+- 本期速览同步五项新动态；Strands 同时加入持续关注的 Harness 分类，以表格说明默认机制、采用入口及限制。既有动态仍保留。
+- Antigravity、Strands 与 FLUX 提供 10 份去重后的固定版本原文，包括 README、采用说明、许可证及 NOTICE；网页和 MCP 共享材料，未取得再分发许可的公告仍仅链接。
+- 保留真实原文日期、本站核对日及使用边界；FLUX 代码文档的 Apache-2.0 不替代模型权重的自定义许可。两张模型图表保持此前已审核快照。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the approved A–F topics: Gemini 3.8 TTS, local models in Antigravity SDK, Meta Muse, Strands Harness, FLUX 3 Action and Gemini Live Avatar, reaching 39 developments and 33 watch profiles.
+- Refresh the five-item overview and add Strands to the Harness watch category, documenting default mechanisms, adoption paths and limitations while retaining earlier developments.
+- Provide 10 distinct fixed-revision originals from Antigravity, Strands and FLUX, including READMEs, adoption guides, licenses and NOTICE files. Web and MCP share these materials; unlicensed announcements remain link-only.
+- Preserve original dates, review dates and availability boundaries. Apache-2.0 for FLUX repository code and documentation does not replace the model weights’ custom license. Existing reviewed model chart snapshots are retained.
+<!-- release-summary:en:end -->
+
+对应 REQ-4、REQ-6-2、REQ-8-9、REQ-9、REQ-11。未变更数据库结构、接口、注册或执行权限；MCP读取材料不安装或执行外部工具。各项真实验证与部署状态见[本批验收](docs/validation/2026-09-25-editorial.md)。
+
 <a id="v1.5.15"></a>
 ## v1.5.15 · 站点地图读取提速 · 2026-09-23
 

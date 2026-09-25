@@ -34,15 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.15](CHANGELOG.md#v1.5.15)** · [fieldtofit-v1.5.15](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.15)
+**Current source version: [v1.5.16](CHANGELOG.md#v1.5.16)** · [fieldtofit-v1.5.16](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.16)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Read published collections, reviewed merges and genuine modification dates in one read-only transaction for the sitemap, removing repeated remote maintenance lookups; production responses improved from about 8.7–9.1 seconds to 2.11–2.67 seconds.
-- Preserve shared public validation, draft/withdrawal/merge exclusions and no-cache behavior without rewriting existing introductions or content.
-- Google domain DNS verification is complete, and the submitted sitemap passed a live URL test; its report still shows a fetch failure, with successful processing and indexing unconfirmed.
+- Publish the approved A–F topics: Gemini 3.8 TTS, local models in Antigravity SDK, Meta Muse, Strands Harness, FLUX 3 Action and Gemini Live Avatar, reaching 39 developments and 33 watch profiles.
+- Refresh the five-item overview and add Strands to the Harness watch category, documenting default mechanisms, adoption paths and limitations while retaining earlier developments.
+- Provide 10 distinct fixed-revision originals from Antigravity, Strands and FLUX, including READMEs, adoption guides, licenses and NOTICE files. Web and MCP share these materials; unlicensed announcements remain link-only.
+- Preserve original dates, review dates and availability boundaries. Apache-2.0 for FLUX repository code and documentation does not replace the model weights’ custom license. Existing reviewed model chart snapshots are retained.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

@@ -1,7 +1,4 @@
 {
-  "schema_version": "fieldtofit.watch.v1",
-  "title": "持续关注",
-  "reviewed_at": "2026-09-22",
   "edition": "cw1-2026-09-11",
   "groups": [
     {
@@ -27,35 +24,264 @@
   ],
   "items": [
     {
-      "id": "CW-M10",
-      "name": "Laya",
-      "type": "model",
-      "state": "published",
-      "introduction": "提供开放权重和Python SDK的结构化决策模型：输入状态和问题定义，返回选项、评分或是非概率。适合研究分类、路由等固定输出工作流；它是与Jev功能相近的独立项目，尚未经本站验证为等价替代品。",
-      "checked_at": "2026-09-22",
-      "interpretation": [
-        {
-          "title": "把固定的小判断接到程序",
-          "text": "choice、score、noul对应选择、评分与是非概率；SDK的Router按语言选择检查点。工单分流等应用可围绕这些结果继续执行代码，而不是解析一篇模型生成的文章。"
-        },
-        {
-          "title": "检查点与训练条件决定能否迁移",
-          "text": "作者区分英语、多语言与typed-decisions检查点，披露选项过多时退化；部分较高成绩来自在对应任务数据上微调，不能当作任意任务的零样本表现。"
-        },
-        {
-          "text": "原始材料显示某些语言上高置信却答错的情况，实际采用需要域内数据和校准。自托管仍有硬件与运行成本，本站未复现作者的准确率、速度或比较实验。",
-          "title": "数值和置信度不保证判断正确"
-        }
+      "aliases": [
+        "strands-harness",
+        "Strands Harness SDK"
       ],
       "blocks": [
         {
+          "columns": [
+            "模块",
+            "提供什么",
+            "采用入口",
+            "条件与限制"
+          ],
           "kind": "table",
+          "rows": [
+            [
+              "组装好的 Harness",
+              "默认工具与运行配置，返回 Strands Agent",
+              "Python strands-harness；TypeScript 与 CLI 入口见仓库",
+              "默认模型提供方 Bedrock，需要服务访问权限"
+            ],
+            [
+              "Harness SDK",
+              "按需组合运行机制",
+              "harness-sdk 仓库及两种语言实现",
+              "与直接采用已组装 Harness 区分"
+            ],
+            [
+              "上下文与缓存",
+              "工具输出处理、上下文压缩与提示缓存",
+              "固定版本 Harness README",
+              "缓存收益取决于模型提供方与调用方式"
+            ],
+            [
+              "会话与记忆",
+              "会话落盘、恢复及 Markdown 记忆",
+              "README 的 session / memory 示例",
+              "存储目录与保留策略需自行配置"
+            ],
+            [
+              "工具与接入",
+              "内置工具、可选 MCP、多家模型及 Ollama",
+              "README 的 provider / tools / MCP 示例",
+              "MCP读取材料不会安装工具或授予执行权限"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "9月21日发布材料所称28%成本降低来自作者六项基准配置，本站未复现，不代表所有任务。固定提交的README、Python Harness采用说明、LICENSE.APACHE和NOTICE可通过For your AI读取。"
+        }
+      ],
+      "checked_at": "2026-09-25",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-H05",
+      "interpretation": [
+        {
+          "text": "文档说明工具输出处理、上下文压缩、提示缓存、持久会话和长期记忆，适合关注“模型之外还要搭什么”的开发者。",
+          "title": "看默认机制"
+        },
+        {
+          "text": "提供库与CLI，可选择多家云模型或本地Ollama；默认提供方是Bedrock，需要相应模型访问权限。Harness与从头搭建的Harness SDK分别列出。",
+          "title": "看采用入口"
+        },
+        {
+          "text": "官方所称28%降低来自其六项基准配置，不是所有任务都会省28%；本站未复现。开源许可与所接模型服务条款分别核对。",
+          "title": "看成本结论的范围"
+        }
+      ],
+      "introduction": "基于 Strands Agents 组装的通用 Agent Harness，提供工具、上下文、会话和记忆的默认配置；可直接采用，也可用 SDK 重新组合。",
+      "name": "Strands Harness",
+      "note": "发布材料日期2026-09-21；固定代码提交7ae759d3ad43916d373cf0f3251ac7f57e95339c。原文许可Apache-2.0，保留Amazon版权及NOTICE；外部模型服务另有条款和费用。本站未运行或复测。",
+      "organization": "AWS / Strands Agents",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-25",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布或文档入口",
+          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
+          "retrieved_at": "2026-09-24",
+          "rights": {
+            "basis": "仅链接，不复制未确认再分发许可的正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Strands Harness · 官方发布",
+          "upstream_revision": "Strands harness launch 2026-09-21",
+          "url": "https://strandsagents.com/blog/introducing-strands-harness/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-25",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布或文档入口",
+          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
+          "retrieved_at": "2026-09-24",
+          "rights": {
+            "basis": "仅链接，不复制未确认再分发许可的正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Strands Harness · 官方材料 2",
+          "upstream_revision": "Strands harness launch 2026-09-21",
+          "url": "https://strandsagents.com/docs/user-guide/harness/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-25",
+          "coverage": "link_only",
+          "id": "source3",
+          "locator": "官方发布或文档入口",
+          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
+          "retrieved_at": "2026-09-24",
+          "rights": {
+            "basis": "仅链接，不复制未确认再分发许可的正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Strands Harness · 官方材料 3",
+          "upstream_revision": "Strands harness launch 2026-09-21",
+          "url": "https://strandsagents.com/docs/user-guide/harness/quickstart/"
+        },
+        {
+          "approved": true,
+          "body": "<div align=\"center\">\n  <div>\n    <a href=\"https://strandsagents.com\">\n      <picture>\n        <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://strandsagents.com/latest/assets/wordmark-github-dark.svg\">\n        <img src=\"https://strandsagents.com/latest/assets/wordmark-github-light.svg\" alt=\"Strands\" width=\"320\">\n      </picture>\n    </a>\n  </div>\n\n  <h1>\n    Strands Agents\n  </h1>\n\n  <h2>\n    A model-driven approach to building AI agents in just a few lines of code.\n  </h2>\n\n  <div align=\"center\">\n    <a href=\"https://github.com/strands-agents/harness-sdk/graphs/commit-activity\"><img alt=\"GitHub commit activity\" src=\"https://img.shields.io/github/commit-activity/m/strands-agents/harness-sdk\"/></a>\n    <a href=\"https://github.com/strands-agents/harness-sdk/issues\"><img alt=\"GitHub open issues\" src=\"https://img.shields.io/github/issues/strands-agents/harness-sdk\"/></a>\n    <a href=\"https://github.com/strands-agents/harness-sdk/pulls\"><img alt=\"GitHub open pull requests\" src=\"https://img.shields.io/github/issues-pr/strands-agents/harness-sdk\"/></a>\n    <a href=\"https://github.com/strands-agents/harness-sdk/blob/main/LICENSE.APACHE\"><img alt=\"License\" src=\"https://img.shields.io/github/license/strands-agents/harness-sdk\"/></a>\n    <a href=\"https://pypi.org/project/strands-harness/\"><img alt=\"Python harness version\" src=\"https://img.shields.io/pypi/v/strands-harness?label=Python%20harness\"/></a>\n    <a href=\"https://www.npmjs.com/package/@strands-agents/harness\"><img alt=\"TypeScript harness version\" src=\"https://img.shields.io/npm/v/%40strands-agents%2Fharness?label=TypeScript%20harness\"/></a>\n    <a href=\"https://www.npmjs.com/package/@strands-agents/cli\"><img alt=\"CLI version\" src=\"https://img.shields.io/npm/v/%40strands-agents%2Fcli?label=CLI\"/></a>\n    <a href=\"https://pypi.org/project/strands-agents/\"><img alt=\"Python SDK version\" src=\"https://img.shields.io/pypi/v/strands-agents?label=Python%20SDK\"/></a>\n    <a href=\"https://www.npmjs.com/package/@strands-agents/sdk\"><img alt=\"TypeScript SDK version\" src=\"https://img.shields.io/npm/v/%40strands-agents%2Fsdk?label=TypeScript%20SDK\"/></a>\n  </div>\n  \n  <p>\n    <a href=\"https://strandsagents.com/\">Documentation</a>\n    ◆ <a href=\"https://github.com/strands-agents/samples\">Samples</a>\n    ◆ <a href=\"https://github.com/strands-agents/harness-sdk/tree/main/strands-mcp\">MCP Server</a>\n    ◆ <a href=\"https://discord.gg/strands\">Discord</a>\n  </p>\n</div>\n\nStrands Agents is an open-source SDK for building and running AI agents in Python and TypeScript. Choose Strands when you would otherwise write your own agent loop: it runs in your process with no hosted control plane, and it covers the jobs a hand-rolled loop grows into. In one SDK you get [lifecycle controls](https://strandsagents.com/docs/user-guide/concepts/agents/agent-loop/) (turn limits, token budgets, cancellation, stop reasons), [tools](https://strandsagents.com/docs/user-guide/concepts/tools/) and [structured output](https://strandsagents.com/docs/user-guide/concepts/agents/structured-output/), [MCP](https://strandsagents.com/docs/user-guide/concepts/tools/mcp-tools/), [multi-agent patterns](https://strandsagents.com/docs/user-guide/concepts/multi-agent/multi-agent-patterns/), [memory](https://strandsagents.com/docs/user-guide/concepts/memory/overview/) and [sessions](https://strandsagents.com/docs/user-guide/concepts/agents/session-management/), [model portability](https://strandsagents.com/docs/user-guide/concepts/model-providers/), [streaming](https://strandsagents.com/docs/user-guide/concepts/streaming/), [guardrails](https://strandsagents.com/docs/user-guide/safety-security/guardrails/), [tracing](https://strandsagents.com/docs/user-guide/observability-evaluation/observability/), and [evals](https://strandsagents.com/docs/user-guide/evals-sdk/quickstart/).\n\nThis monorepo contains Strands harness, the Python and TypeScript SDKs, the documentation site, and supporting packages:\n\n| Directory | Description |\n|-----------|-------------|\n| [`harness-py/`](harness-py/) | Python Strands harness: fully assembled agent via `create_harness()` ([PyPI](https://pypi.org/project/strands-harness/) · [docs](https://strandsagents.com/docs/user-guide/harness/)) |\n| [`harness-ts/`](harness-ts/) | TypeScript Strands harness: fully assembled agent via `createHarness()` ([npm](https://www.npmjs.com/package/@strands-agents/harness) · [docs](https://strandsagents.com/docs/user-guide/harness/)) |\n| [`strands-cli/`](strands-cli/) | `strands` CLI: prototype and chat with a harness agent from the terminal ([npm](https://www.npmjs.com/package/@strands-agents/cli)) |\n| `strands-py/` | Python SDK: agent loop, model providers, tools ([PyPI](https://pypi.org/project/strands-agents/) · [releases](https://github.com/strands-agents/harness-sdk/releases?q=python%2F&expanded=false)) |\n| `strands-ts/` | TypeScript SDK: agent loop, model providers, tools ([npm](https://www.npmjs.com/package/@strands-agents/sdk) · [releases](https://github.com/strands-agents/harness-sdk/releases?q=typescript%2F&expanded=false)) |\n| `site/` | Source for the [strandsagents.com](https://strandsagents.com) documentation site (Astro/Starlight) |\n| `team/` | Governance and cross-SDK process docs (tenets, decisions, PR & compatibility guidelines, and `designs/` proposals) |\n\n## Why Strands\n\nBuild an agent harness. Control it end-to-end.\n\n- **Build your way.** Any model, any cloud. Context management, execution limits, and observability built in before you write a line of config. Swap backends when you scale; your code stays the same.\n- **Model agnostic.** First-class support for Amazon Bedrock, Anthropic, OpenAI, and Gemini, plus [many more providers](https://strandsagents.com/docs/user-guide/concepts/model-providers/) and custom ones.\n- **Stay in control.** The agent loop traces every decision by default. Hooks let you intercept any step to log it, validate it, or redirect it.\n- **Deliver outcomes that work.** Guardrails catch mistakes before they run. Steering handlers let agents correct themselves instead of failing silently.\n\nMCP, streaming, multi-agent patterns, and structured output are all built in.\n\n## Quick Start\n\nThe easiest way to get started is with **[Strands harness](https://strandsagents.com/docs/user-guide/harness/)**, a fully assembled, state-of-the-art agent. A single `create_harness()` (Python) or `createHarness()` (TypeScript) call gives you an optimized agent with benchmarked defaults for the model, tools, memory, sessions, and context management — ready to take from idea to production. Follow the [harness quickstart](https://strandsagents.com/docs/user-guide/harness/quickstart/), or see the [Python Strands harness](harness-py/) and [TypeScript Strands harness](harness-ts/) packages to get started.\n\n### Python\n\n```bash\npip install strands-harness\n```\n\n```python\nfrom strands_harness import create_harness\n\nagent = create_harness()\nagent(\"Find the slowest test in this repo and explain why it's slow\")\n```\n\n### TypeScript\n\n```bash\nnpm install @strands-agents/harness\n```\n\n```typescript\nimport { createHarness } from '@strands-agents/harness'\n\nconst agent = await createHarness()\nawait agent.invoke(\"Find the slowest test in this repo and explain why it's slow\")\n```\n\nStart here to get a batteries-included agent, then drop down to the SDKs below when you want to own the agent loop and wire up tools, model providers, and memory yourself. The [harness configuration reference](https://strandsagents.com/docs/user-guide/harness/reference/configuration/) documents every default you can override.\n\nThe [Quickstart Guide](https://strandsagents.com/docs/user-guide/quickstart/overview/) covers configuring providers (Amazon Bedrock, Anthropic, OpenAI, Gemini, Ollama, and more).\n\n## Working with the SDK\n\nThe Strands Harness SDK lets you go deeper and control every part of the agent: the loop, tools, model providers, memory, sessions, and hooks. You can dive into the SDK after working with Strands harness or if you prefer building your own harness from the ground up when the assembled defaults aren't enough.\n\n### Python\n\nRequires Python 3.10+:\n\n```bash\npip install strands-agents strands-agents-tools\n```\n\n```python\nfrom strands import Agent\nfrom strands_tools import calculator\n\nagent = Agent(tools=[calculator])\nagent(\"What is the square root of 1764\")\n```\n\nThe [Python SDK README](strands-py/) covers tools, model providers, MCP, and bidirectional streaming.\n\n### TypeScript\n\nRequires Node.js 22+:\n\n```bash\nnpm install @strands-agents/sdk\n```\n\n```typescript\nimport { Agent } from '@strands-agents/sdk'\n\nconst agent = new Agent()\nconst result = await agent.invoke('What is the square root of 1764?')\nconsole.log(result)\n```\n\nMore in the [TypeScript SDK README](strands-ts/), including Zod-typed tools, structured output, and multi-agent patterns.\n\n## Documentation\n\nFor detailed guidance & examples, explore our documentation:\n\n- [User Guide](https://strandsagents.com/)\n- [Strands Harness Guide](https://strandsagents.com/docs/user-guide/harness/) ([quickstart](https://strandsagents.com/docs/user-guide/harness/quickstart/) · [configuration reference](https://strandsagents.com/docs/user-guide/harness/reference/configuration/))\n- [Quick Start Guide](https://strandsagents.com/docs/user-guide/quickstart/overview/)\n- [Agent Loop](https://strandsagents.com/docs/user-guide/concepts/agents/agent-loop/)\n- [Examples](https://strandsagents.com/docs/examples/)\n- API Reference: [Python](https://strandsagents.com/docs/api/python/strands.agent.agent/) · [TypeScript](https://strandsagents.com/docs/api/typescript/)\n- [Production & Deployment Guide](https://strandsagents.com/docs/user-guide/deploy/operating-agents-in-production/)\n\nThe docs themselves live in this monorepo under [`site/`](site/), and doc PRs are welcome alongside code changes.\n\n## Development\n\nGit operations (commits, branches, PRs) are done from the repo root. Each package has its own toolchain:\n\n**Python SDK** (`strands-py/`):\n```bash\ncd strands-py\npip install hatch\nhatch test        # run unit tests\nhatch fmt         # format & lint\n```\n\n**TypeScript SDK** (`strands-ts/`):\n```bash\nnpm ci            # install from repo root\nnpm run build     # build\nnpm test          # run unit tests\n```\n\n**Documentation site** (`site/`):\n```bash\ncd site\nnpm install\nnpm run dev       # local dev server at http://localhost:4321/\n```\n\n## Contributing ❤️\n\nWe welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for details on:\n- Reporting bugs & features\n- Development setup\n- Contributing via Pull Requests\n- Code of Conduct\n- Reporting of security issues\n\n## Stay in touch with the team\nCome meet the Strands team and other users on [**Discord**](https://discord.com/invite/strands)\n\n## License\n\nThis project is licensed under the Apache License 2.0 - see the [LICENSE.APACHE](LICENSE.APACHE) file for details.\n\n## Security\n\nSee [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.\n\n",
+          "checked_at": "2026-09-25",
+          "coverage": "full_text",
+          "id": "strands-1",
+          "locator": "README.md；固定提交完整原文；相对引用以来源文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-25T01:28:56.926659+00:00",
+          "rights": {
+            "basis": "Apache-2.0，仅此仓库代码与文档；模型权重、数据及外部资产单独适用各自条款。",
+            "notice": "Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\n原文未修改；许可证全文随材料提供，不包含外链图片。",
+            "url": "https://github.com/strands-agents/harness-sdk/blob/7ae759d3ad43916d373cf0f3251ac7f57e95339c/LICENSE.APACHE"
+          },
+          "title": "strands · README.md",
+          "upstream_revision": "7ae759d3ad43916d373cf0f3251ac7f57e95339c",
+          "url": "https://github.com/strands-agents/harness-sdk/blob/7ae759d3ad43916d373cf0f3251ac7f57e95339c/README.md"
+        },
+        {
+          "approved": true,
+          "body": "\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n",
+          "checked_at": "2026-09-25",
+          "coverage": "full_text",
+          "id": "strands-2",
+          "locator": "LICENSE.APACHE；固定提交完整原文；相对引用以来源文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-25T01:28:56.926659+00:00",
+          "rights": {
+            "basis": "Apache-2.0，仅此仓库代码与文档；模型权重、数据及外部资产单独适用各自条款。",
+            "notice": "Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\n原文未修改；许可证全文随材料提供，不包含外链图片。",
+            "url": "https://github.com/strands-agents/harness-sdk/blob/7ae759d3ad43916d373cf0f3251ac7f57e95339c/LICENSE.APACHE"
+          },
+          "title": "strands · LICENSE.APACHE",
+          "upstream_revision": "7ae759d3ad43916d373cf0f3251ac7f57e95339c",
+          "url": "https://github.com/strands-agents/harness-sdk/blob/7ae759d3ad43916d373cf0f3251ac7f57e95339c/LICENSE.APACHE"
+        },
+        {
+          "approved": true,
+          "body": "Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.",
+          "checked_at": "2026-09-25",
+          "coverage": "full_text",
+          "id": "strands-3",
+          "locator": "NOTICE；固定提交完整原文；相对引用以来源文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-25T01:28:56.926659+00:00",
+          "rights": {
+            "basis": "Apache-2.0，仅此仓库代码与文档；模型权重、数据及外部资产单独适用各自条款。",
+            "notice": "Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\n原文未修改；许可证全文随材料提供，不包含外链图片。",
+            "url": "https://github.com/strands-agents/harness-sdk/blob/7ae759d3ad43916d373cf0f3251ac7f57e95339c/LICENSE.APACHE"
+          },
+          "title": "strands · NOTICE",
+          "upstream_revision": "7ae759d3ad43916d373cf0f3251ac7f57e95339c",
+          "url": "https://github.com/strands-agents/harness-sdk/blob/7ae759d3ad43916d373cf0f3251ac7f57e95339c/NOTICE"
+        },
+        {
+          "approved": true,
+          "body": "<div align=\"center\">\n  <div>\n    <a href=\"https://strandsagents.com\">\n      <picture>\n        <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://strandsagents.com/latest/assets/wordmark-github-dark.svg\">\n        <img src=\"https://strandsagents.com/latest/assets/wordmark-github-light.svg\" alt=\"Strands\" width=\"320\">\n      </picture>\n    </a>\n  </div>\n\n  <h1>\n    Strands harness\n  </h1>\n\n  <h2>\n    A batteries-included agent, built on the Strands Harness SDK.\n  </h2>\n\n  <div align=\"center\">\n    <a href=\"https://github.com/strands-agents/harness-sdk/graphs/commit-activity\"><img alt=\"GitHub commit activity\" src=\"https://img.shields.io/github/commit-activity/m/strands-agents/harness-sdk\"/></a>\n    <a href=\"https://github.com/strands-agents/harness-sdk/issues\"><img alt=\"GitHub open issues\" src=\"https://img.shields.io/github/issues/strands-agents/harness-sdk\"/></a>\n    <a href=\"https://github.com/strands-agents/harness-sdk/pulls\"><img alt=\"GitHub open pull requests\" src=\"https://img.shields.io/github/issues-pr/strands-agents/harness-sdk\"/></a>\n    <a href=\"https://github.com/strands-agents/harness-sdk/blob/main/LICENSE.APACHE\"><img alt=\"License\" src=\"https://img.shields.io/github/license/strands-agents/harness-sdk\"/></a>\n    <a href=\"https://pypi.org/project/strands-harness/\"><img alt=\"PyPI version\" src=\"https://img.shields.io/pypi/v/strands-harness\"/></a>\n    <a href=\"https://python.org\"><img alt=\"Python versions\" src=\"https://img.shields.io/pypi/pyversions/strands-harness\"/></a>\n    <a href=\"https://discord.gg/strands\"><img alt=\"Strands Discord\" src=\"https://img.shields.io/badge/Discord-Strands-5865F2?logo=discord&logoColor=white\"/></a>\n  </div>\n\n  <p>\n    <a href=\"https://github.com/strands-agents/harness-sdk\">Strands Harness SDK</a>\n    ◆ <a href=\"https://strandsagents.com/\">Documentation</a>\n    ◆ <a href=\"https://github.com/strands-agents/samples\">Samples</a>\n    ◆ <a href=\"https://discord.gg/strands\">Discord</a>\n  </p>\n</div>\n\nThe Strands harness gets you a capable, ready-to-work agent in one\ncall. It's built on the [Strands Harness SDK](https://github.com/strands-agents/harness-sdk) by\nthe Strands team at Amazon Web Services (AWS). It composes the SDK's building blocks (a model\nloop, tools, just-in-time context assembly, sessions, hooks, and more) into one agent with\nsensible, tested defaults and a tuned system prompt. Every default is overridable, and what you\nget back is a plain `strands.Agent`, so everything stays open: anything the harness sets up, you\ncan change, extend, or replace.\n\n```python\nfrom strands_harness import create_harness\n\nagent = create_harness()\nagent(\"Find the slowest test in this repo and explain why it's slow\")\n```\n\n> **Also available in TypeScript** as [`@strands-agents/harness`](https://www.npmjs.com/package/@strands-agents/harness),\n> with the same interface.\n\n## The interface\n\n`create_harness()` builds a ready `strands.Agent`. Every argument is optional:\n\n```python\ncreate_harness(\n    model=\"bedrock/global.anthropic.claude-opus-5\",  # \"provider/name\", a bare Bedrock id, or a Model instance\n    effort=\"auto\",                          # \"auto\" | \"off\" | \"minimal\" | \"low\" | \"medium\" | \"high\" | \"xhigh\" | \"max\"\n    instructions=None,                      # domain text appended to the system prompt\n    tools=None,                             # your tools, added alongside the built-ins\n    mcp_servers=None,                       # MCP servers: a mcpServers JSON path or the mapping itself\n    plugins=None,                           # your Strands plugins, added alongside the built-in ones\n    builtin_tools=None,                     # None = the harness's defaults; a list pins names; a mapping edits (see below)\n    background_tasks=None,                  # SDK Background Tasks policy; False to disable\n    builtin_plugins=[\"todos\", \"environment\"],  # built-in feature plugins by name; [] for none\n    caching=\"auto\",                         # cache system prompt, tools & history where supported; False off\n    context_manager=\"auto\",                 # \"auto\" | \"agentic\" | a ContextManager config/instance | False\n    session=True,                           # True | {\"id\": ..., \"dir\": ...} | a SessionManager | False\n    skills=True,                            # True (./.agent/skills) | path(s) or git URLs | an AgentSkills | False\n    memory=True,                            # True (./.agent/memory) | {\"dir\": ..., \"stores\": [...]} | a MemoryManager | False\n    interventions=None,                     # gate tool calls: \"ask\" | \"smart\" | a policy string | a .cedar file\n    **agent_kwargs,                         # anything else goes straight to strands.Agent\n)\n```\n\nThe sections below walk through each of these in turn.\n\nFor a JSON-compatible definition, use `define_harness_agent_config()` and pass the result through\n`harness_agent_kwargs_from_config()`. Executable values such as custom tools, models, intervention\nhandlers, sandboxes, and other live `Agent` fields are represented by module references; malformed\nor wrong-language references fail instead of being ignored.\n\n> **Want a terminal command instead of code?** The [`strands` CLI](https://github.com/strands-agents/harness-sdk/tree/main/strands-cli)\n> wraps this same agent. Install it with `npm install -g @strands-agents/cli` for a `strands` command.\n\n## Installation\n\n```bash\npip install strands-harness\n```\n\nThe default agent runs on Amazon Bedrock. To use another provider, grab the matching extra:\n\n```bash\npip install \"strands-harness[openai]\"      # or [anthropic], [gemini] (the `google` provider), [ollama], [litellm]\n```\n\n## What you get by default\n\nOut of the box, `create_harness()` gives you an agent that:\n\n- **Runs on frontier models with reasoning on**, across Amazon Bedrock, Anthropic, OpenAI, and\n  Google. The default is Claude Opus 4.8 on Amazon Bedrock, behind a tuned system prompt: explore\n  before changing things, confirm before anything irreversible, verify before calling a task done.\n- **Comes with working tools**: a shell, file tools (`read`, `write`, `edit`), web access, and\n  `programmatic_tool_caller`, a sandbox where it writes code that chains, loops over, and\n  parallelizes its other tools for more complex orchestration.\n- **Manages its own context** so long tasks stay coherent and affordable. It summarizes older\n  turns and moves bulky tool results out to storage, leaving a short reference to pull them back.\n  The reused parts of each request are cached wherever the provider supports it.\n- **Remembers.** Every conversation is saved to disk and resumable by session id, and long-term\n  memory distills facts across conversations into markdown files it folds back into context.\n- **Is just a `strands.Agent`.** Every default is overridable, and because the return value is a\n  plain `Agent`, the full SDK is yours: interventions, hooks, MCP tools, and custom session\n  backends all plug in.\n\nEverything above is a default, not a constraint. Here's how to adjust each piece.\n\n## Choosing a model\n\nPass a `provider/model` string, a bare model id, or a ready-made `Model` instance:\n\n```python\ncreate_harness(model=\"anthropic/claude-opus-5\")  # Anthropic's API directly\ncreate_harness(model=\"openai/gpt-5.6-sol\")         # OpenAI\ncreate_harness(model=\"google/gemini-3.5-flash\")    # Google\ncreate_harness(model=\"bedrock/global.anthropic.claude-opus-5\")  # the default, spelled out\ncreate_harness(model=\"bedrock-mantle/openai.gpt-5.6-sol\")  # Bedrock's OpenAI-compatible endpoint\n\nfrom strands.models.openai import OpenAIModel\ncreate_harness(model=OpenAIModel(model_id=\"gpt-5.6-sol\"))   # full control\n```\n\nThe `provider/model` string is a shorthand with aliases for `bedrock`, `bedrock-mantle`, `anthropic`,\n`openai`, `google`, `ollama`, and `litellm`. For any other provider, pass a `Model` instance (as above)\nand it's used as-is. Reasoning effort is mapped to whatever each provider expects, so you set it once\nfor every provider:\n\n```python\ncreate_harness(effort=\"high\")     # minimal | low | medium | high | xhigh | max, as the provider offers them\ncreate_harness(effort=\"auto\")     # the provider's recommended level (high where supported), the default\ncreate_harness(effort=\"off\")      # no reasoning\n```\n\nA level the provider doesn't offer raises, so a typo or an unsupported request never passes\nsilently. When you pass a `Model` instance, `effort` (like `caching`) is ignored with a logged\nwarning: configure reasoning on the instance itself.\n\n## Giving it your own instructions and tools\n\n`instructions` adds a domain block after the built-in contract. Use it to give the agent its\nidentity, scope, and any rules you want it to follow. `tools` adds your own tools alongside\nthe built-in ones:\n\n```python\nfrom strands import tool\n\n@tool\ndef get_ticket(ticket_id: str) -> str:\n    \"\"\"Fetch a support ticket by id.\"\"\"\n    return db.tickets.get(ticket_id)\n\nagent = create_harness(\n    instructions=\"You are a support assistant. Always link the ticket you're working on.\",\n    tools=[get_ticket],\n)\n```\n\nPrefer a leaner or different tool set? `builtin_tools` takes two shapes. A **list pins** exactly\nthe tools named (`[]` turns them all off); a **mapping edits** the harness's default set, where `False`\nremoves a tool, `True` adds one, and a config dict enables *and* configures it. Four tools take a\nconfig (each key is a keyword argument of the tool's factory): `shell` (`description`), `web_fetch`\n(`model`, `transport`), `programmatic_tool_caller` (`allowed_tools`, `timeout`) and `subagent` (`max_depth`);\nthe rest are bool-only. `\"*\"` in a mapping is the base set (default `True`); write `\"*\": False` to\nstart from nothing and name what you want:\n\n```python\ncreate_harness(builtin_tools=[\"read\"])                                   # just read\ncreate_harness(builtin_tools=[])                                         # bring your own via `tools`\ncreate_harness(builtin_tools={\"subagent\": False})                        # the defaults minus one\ncreate_harness(builtin_tools={\"web_fetch\": {\"model\": \"openai/gpt-5-mini\"}})  # defaults, web_fetch configured\ncreate_harness(builtin_tools={\"subagent\": {\"max_depth\": 1}, \"programmatic_tool_caller\": {\"timeout\": 60}})\ncreate_harness(builtin_tools={\"*\": False, \"read\": True, \"web_fetch\": {}})   # pinned and configured in one literal\n```\n\n`BUILTIN_TOOL_NAMES` (exported from the package root) is the full list. Prefer the mapping form\nfor \"the defaults minus X\" (`{\"subagent\": False}`); a list pins every name it contains, so listing\n`web_search` on a model without native search raises instead of quietly staying off (opt into the\nExa fallback with `{\"web_search\": \"exa\"}`).\n\n`subagent` always runs in the background. By default, the model may also select background\nexecution for any other compatible tool. The harness waits for the work to finish and continues the\nparent model with its result. Pass `background_tasks=False` to disable this behavior, or provide\nan SDK `BackgroundTasksConfig` to control policy, concurrency, completion, and timeouts. Set\n`wait_for_completion=False` only when the application will reinvoke the agent after a result is\nready.\n\n## Delegating work to subagents\n\nThe agent can hand a subtask to another agent, exposed to it as a tool. Every call runs in its own\nfresh conversation and returns only its final answer, so work that would otherwise flood the main\ncontext (searching many files, a multi-step change, open-ended exploration) is kept out of the way.\n\nThere are two kinds of delegation, and they coexist. The built-in `subagent` tool is enabled by\ndefault (via `builtin_tools`): the model delegates a task to a child built through this same\nfactory, so the child is a full harness member: it inherits the model, built-in tools and plugins,\nskills, interventions, and the `plugins` and `hooks` you passed, so your approval gate and policy\nplugins/hooks reach the delegate too, and your consumer `tools` are forwarded so the delegate can\nbe granted them (narrowable: it may use a subset, never more than you hold). A\npropagated plugin/hook that keeps per-agent state should keep it in `agent.state`, not on `self`,\nsince the instance is shared with the child. By default the model picks the `generalist` role, may\nwrite an ad-hoc role prompt, and may narrow the tool set (never widen it). Delegation depth is\nbounded, so a child eventually can't delegate further. Drop it from `builtin_tools` to turn it off,\nlike any other built-in:\n\n```python\ncreate_harness(builtin_tools=[\"shell\", \"read\", \"write\", \"edit\"])   # no subagent\n```\n\nThe tool's model-facing parameters are derived from configuration. For a fully configured tool\n(custom roles, model tiers, fixed prompts), build one with `make_subagent` and pass it via `tools`\nwith `subagent` dropped from `builtin_tools`. You supply the `builder`, a function that turns a\nresolved `AgentSpec` into the child agent (typically calling `create_harness`); this is the seam\nthat makes the child a harness member. Delegation depth is bounded at two levels by default; pass\n`max_depth` to change it. Each axis (`instructions`, `tools`, `mcp_servers`, `model`, `context`)\nbecomes a parameter, or not, depending on whether it is `Fixed`, `Inherit`, `Open`, or `Choice`:\n\n```python\nfrom strands_harness import create_harness\nfrom strands_harness.tools import make_subagent, AgentSpec, Preset, Fixed, Inherit\n\nNO_SUBAGENT = {\"subagent\": False}  # the defaults minus delegation; web_search stays provider-dependent\n\ndef build_reviewer(spec: AgentSpec):\n    return create_harness(instructions=spec.instructions, builtin_tools=NO_SUBAGENT)\n\nreviewer = make_subagent(\n    builder=build_reviewer,\n    presets={\"reviewer\": Preset(instructions=\"You review diffs.\", description=\"reviews diffs\")},\n    instructions=Fixed(None),                     # the role owns the prompt; parameter removed\n    model=Inherit(),\n)\n\nagent = create_harness(tools=[reviewer], builtin_tools=NO_SUBAGENT)\n```\n\nFor focused expertise, wrap your own `Agent` instances with `Agent.as_tool()` and pass them in\n`tools`; each becomes a tool the main agent can call, named after the agent's `name`. Every call\nruns the specialist from a fresh conversation, so it's a clean, focused delegate rather than a\nshared session. Give each a clear `name` and `description` so the model knows when to reach for it:\n\n```python\nfrom strands import Agent\n\nresearcher = Agent(\n    name=\"researcher\",\n    description=\"Researches a topic and summarizes findings.\",\n    system_prompt=\"You research a topic and return a concise, sourced summary of what you found.\",\n)\nreviewer = Agent(\n    name=\"reviewer\",\n    description=\"Reviews code for correctness and style.\",\n    system_prompt=\"You review a diff for correctness and style, and list concrete issues with fixes.\",\n)\n\nagent = create_harness(tools=[researcher.as_tool(), reviewer.as_tool()])\n```\n\nEach specialist is a full `Agent`, so it carries its own model, prompt, and tools. Build them\nwith `create_harness` too if you want them to share the harness's defaults.\n\n## Connecting MCP servers\n\nPoint `mcp_servers` at a standard `mcpServers` config (a JSON file path, or the mapping inline)\nand the harness connects each server, discovers its tools, and adds them to the tool list:\n\n```python\ncreate_harness(mcp_servers=\".mcp.json\")\n\ncreate_harness(mcp_servers={\n    \"filesystem\": {\"command\": \"npx\", \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\", \"/data\"]},\n})\n```\n\nA server that fails to start contributes no tools rather than taking the agent down; set\n`\"continue_on_error\": false` on a server to make its failure fatal. Each server's tools are namespaced\nas `<server>_<tool>` (characters outside `[A-Za-z0-9_-]` in the server name become `_`) so two servers\nexposing the same tool don't clash; set a server's `\"prefix\"` to choose the namespace, or\n`\"prefix\": \"\"` to opt out.\n\n## Reaching the web\n\nTwo of the built-ins put the web in reach. `web_fetch` is always on: it fetches a URL,\nreduces it to text, and asks a small fast model to answer your prompt over the content, returning\nthe answer rather than the raw page so a long article never floods the conversation. The\nsummarizer runs on the small model for your main provider by default (so credentials line up);\noverride it through the tool's config in `builtin_tools`:\n\n```python\ncreate_harness(builtin_tools={\"web_fetch\": {\"model\": \"anthropic/claude-haiku-4-5-20251001\"}})\n```\n\n`web_search` is the other one: it lets the agent look things up on the web mid-answer. Where the\nmodel provider has its own search (OpenAI, Google, GPT-5/GPT-6 models on `bedrock-mantle` via\nBedrock Web Search, and Anthropic in Python; TypeScript Anthropic support follows in a coming\n`@strands-agents/sdk` release) the harness turns that on and there is no extra service involved. Elsewhere (Amazon Bedrock\nConverse, other Mantle models, a `Model` instance) `web_search` is off by default with a logged\nwarning, and naming it explicitly raises. To search there anyway, opt into Exa with\n`{\"web_search\": \"exa\"}`: the model gets a `web_search` tool backed by Exa's hosted search. It is\nkeyless to start; `EXA_API_KEY` in the environment lifts the rate limit. `\"exa\"` is honoured on\nevery model, so it also replaces the provider's own search where there is one. Bedrock Web Search\nalso needs the `bedrock-websearch` IAM actions (in `AmazonBedrockFullAccess`); without them the\nrequest succeeds but each search fails.\n\n> [!WARNING]\n> Web search through Exa sends every search query the model writes to Exa (exa.ai), a third-party\n> service. Queries leave your environment and are subject to\n> [Exa's privacy policy](https://exa.ai/privacy-policy).\n\n```python\ncreate_harness(model=\"openai/gpt-5.6-sol\")                 # native search on, it's in the defaults\ncreate_harness(builtin_tools={\"web_search\": \"exa\"})  # Bedrock: search through Exa (third party)\n```\n\n## Caching reused context\n\n`caching` is on by default. The stable parts of a conversation (system prompt, tool definitions,\nearlier turns) are cached where the provider supports it, so you're not billed to reprocess them\non every turn. The harness configures Amazon Bedrock and Anthropic direct with automatic cache points and cached\ntool definitions; OpenAI, Gemini, Bedrock Mantle, and LiteLLM cache server-side on their own, so\nthere's nothing to configure or turn off. The only targets that can't cache are `ollama` and a\npre-built `Model` instance (its provider is unknown): there the default is a no-op with a warning\nlogged through Python's `logging`, but asking for caching explicitly (`caching=True`) raises for\nan unsupported provider, so a deliberate request never passes silently (a `Model` instance only\nwarns). Turn off what the harness configures with `caching=False`:\n\n```python\ncreate_harness(caching=False)            # don't configure caching\n```\n\n## Remembering conversations\n\nBy default the harness persists every conversation to disk under `./.agent/sessions`. It does not\nauto-resume, though: with no id it mints a fresh one each run, so a new run starts a new session.\nTo continue a conversation, read the minted id off the returned agent (`agent.session_id`) and\npass it back as `session={\"id\": ...}`, or supply your own stable id up front. Build a fresh agent\nper request, keyed on the id:\n\n```python\nagent = create_harness(session={\"id\": \"user-42\"})\nagent(\"Where did we leave off?\")\n```\n\nSet `session={\"dir\": ...}` to choose where state lives (default `./.agent/sessions`). For\nmulti-host setups, pass your own `SessionManager` instance (for example `S3SessionManager`) as `session`\nand it takes over. Turn persistence off with `session=False` for a throwaway run.\n\nThe default manager saves after each completed message, including tool results, so an interrupted\nturn retains its saved progress. Text still streaming and unfinished tool calls are not yet saved.\n\n## Long-term memory\n\nSeparate from sessions, the harness builds up long-term memory. It remembers facts that it learns about your\npreferences and the project, saved in markdown files under `./.agent/memory` and folded back into context on\nlater turns. The agent also has a `search_memory` tool for on-demand recall. Long-term memory works across\nconversations and sessions. Fact extraction from your conversation history runs every few turns on a small,\ncheap model. The `generalist` subagent shares this memory read-only, so a delegate recalls what you've told\nthe agent but its subtasks never write back into your store.\n\nSet `memory={\"dir\": ...}` to choose where the files live, or turn memory off with `memory=False`. To swap the\nbackend while keeping the harness's behavior, pass `memory={\"stores\": [...]}` (one or more SDK `MemoryStore`s); the harness\nmanages them under the same policy, and the `generalist` still shares them read-only. To replace the policy\nitself, pass your own `MemoryManager` instance as `memory`.\n\nExtraction runs in the background between turns, so a short run can end before the latest turns are saved.\nIf you own the agent's lifecycle, flush at shutdown to persist what's pending (the harness's CLI does this for you):\n\n```python\nif agent.memory_manager:\n    await agent.memory_manager.flush()\n```\n\n```python\ncreate_harness(memory=False)                    # no memory\ncreate_harness(memory={\"dir\": \"./my-memory\"})   # custom location\ncreate_harness(memory={\"stores\": [my_store]})   # swap the backend, keep the harness's policy\ncreate_harness(memory=my_memory_manager)        # your own policy, used verbatim\n```\n\n## Teaching it skills\n\nDrop [Agent Skills](https://agentskills.io) into `./.agent/skills` and the harness\nloads them automatically. Each skill is a subdirectory with a `SKILL.md` (YAML frontmatter with\n`name` and `description`, then markdown instructions); the model sees the metadata up front and\nloads the full instructions on demand via a `skills` tool. A skill can bundle supporting files\nalongside `SKILL.md` (scripts, templates, references) that its instructions tell the agent to\nrun or read:\n\n```\n./.agent/skills/\n├── release-notes/\n│   └── SKILL.md\n└── changelog/\n    ├── SKILL.md\n    └── scripts/\n        └── collect_commits.py\n```\n\nPoint elsewhere with `skills=` (a path, a git URL, or a list of them: the SDK's `SkillSources`), pass\na configured `AgentSkills` plugin to take over entirely, or pass `skills=False` to disable. Missing\ndirectories are skipped.\n\n## Built-in plugins\n\nThe harness ships two built-in feature plugins, both on by default:\n\n- **`todos`** lets the agent keep a structured task list and re-surfaces it before each step so it\n  stays on plan through longer tasks. The list lives in agent state, never in durable history.\n- **`environment`** injects a short context block before each turn: the platform, current date,\n  working directory, the project's `AGENTS.md` contents, and links to other `AGENTS.md`/`README.md`\n  files a couple of levels down (links, not contents, so the block stays small). Everything is read\n  through the agent's sandbox, so it works whether the agent runs locally, in Docker, or over SSH.\n\n`builtin_plugins` selects these by name, the same way `builtin_tools` does: pass a subset, or\n`[]` to turn them off:\n\n```python\ncreate_harness(builtin_plugins=[])              # no built-in plugins\n```\n\n## Tracing\n\nThe SDK instruments the agent: the model loop, tool calls, and subagent delegation all emit\nOpenTelemetry spans. The harness wires up the exporter for you when you turn tracing on with the standard\n`OTEL_TRACES_EXPORTER`; there's nothing to pass in code:\n\n```bash\nexport OTEL_TRACES_EXPORTER=otlp                          # or \"console\" for span JSON to stdout\nexport OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318  # where your collector is listening\n```\n\nSet headers, protocol, and the rest through the other `OTEL_EXPORTER_OTLP_*` variables. With\n`OTEL_TRACES_EXPORTER` unset, the harness touches telemetry not at all: no exporter, no cost. If your\nprocess already configures a tracer, the harness uses it. Disable with `OTEL_SDK_DISABLED=true`.\n\n## Requiring approval for tool calls\n\nBy default the agent runs every tool call without asking. Pass `interventions` to gate them with a\npreset, a policy, an SDK handler, or a list of these:\n\n```python\ncreate_harness(interventions=\"ask\")     # approve every tool call\ncreate_harness(interventions=\"smart\")   # an LLM risk classifier flags risky calls for approval\n\n# a natural-language policy becomes the classifier's rubric\ncreate_harness(interventions=\"Read-only, but writes under ./out are fine\")\n\n# a Cedar policy file (needs `pip install 'strands-agents[cedar]'`)\ncreate_harness(interventions=\"./agent.cedar\")\n\n# full control: your own handler (Slack approval, custom trust, a Cedar principal resolver)\nfrom strands.vended_interventions.hitl import HumanInTheLoop\ncreate_harness(interventions=HumanInTheLoop(ask=my_slack_ask, enable_trust=True))\n\n# layer a policy engine under a human gate\ncreate_harness(interventions=[\"./agent.cedar\", \"ask\"])\n```\n\nPresets pause via the SDK's interrupt/resume, so a service can collect approval asynchronously; with\na `session_id` the pending approval survives a process restart. A `subagent` child inherits the\npolicy, so a delegate can't be used to bypass it, and the tool calls `programmatic_tool_caller` makes\nfrom inside its sandbox run through the same executor, so they are gated too (a denied call raises in\nthe code; one that needs interactive approval is refused). This is sugar over the SDK's `HumanInTheLoop` and\n`CedarAuthorization`; pass those directly for anything the presets don't cover. (The `strands` CLI\nexposes the same via `--interventions`, prompting inline in the terminal.)\n\n## It's just a Strands Agent\n\nThe return value is a regular `strands.Agent`, so the full SDK is available to you. Any\nkeyword the harness doesn't name is passed straight through to `Agent`, and your explicit\nvalue always wins over the harness default. That's the seam for SDK-native features: pass your\nown `plugins`, `interventions`, or any other `Agent` keyword alongside the harness's, and they compose.\n\n```python\nfrom strands.vended_interventions.hitl import HumanInTheLoop\n\nagent = create_harness(\n    checkpointing=True,\n    plugins=[MyMetricsPlugin()],            # your Strands plugin, added to the harness's built-ins\n    interventions=[HumanInTheLoop()],       # an SDK feature, wired straight through\n    context_manager=\"agentic\",              # model-driven context instead of \"auto\"\n)\n\n# And you can keep customizing after construction:\nagent.system_prompt += \"\\n\\nAlways cite file paths as file:line.\"\n```\n\n## Chat from the terminal\n\nPrefer a terminal command to writing code? The **`strands` CLI** wraps this same agent, with a\nflag for every option above. It streams the reply as it arrives, shows the agent's reasoning\nand tool calls, and pipes cleanly in scripts:\n\n```bash\nnpm install -g @strands-agents/cli   # gives you the `strands` command\nstrands \"summarize what this repo does\"\ngit diff | strands -p \"write a commit message\"\n```\n\nThe CLI is a separate npm package. See\n[strands-cli](https://github.com/strands-agents/harness-sdk/tree/main/strands-cli) for the full command\nreference. For anything beyond its flags (custom plugins, interventions, a bring-your-own model\ninstance), reach for the Python API. That's what it's there for.\n\n## The vended prompt\n\nThe system prompt is also available on its own, in case you want to build on it directly (for\nexample, a serving layer that injects a timestamp or request context each turn):\n\n```python\nfrom strands_harness import HARNESS_CONTRACT, build_system_prompt\n\nprompt = build_system_prompt(\n    instructions=\"You are a data-migration assistant.\",\n    context_parts=[f\"Current time: {now}\"],\n)\n```\n\n## Versioning\n\nStrands harness is 0.x and versioned separately from the Strands Harness SDK. Patch releases\n(0.x.Y) carry bug fixes and new features, including new built-in tools; minor releases (0.X.0)\ncarry breaking changes and say so in the release notes. Pin to a minor (`strands-harness~=0.1.0`)\nto avoid breaking changes; patch releases still add features and tools. Full policy:\n[Versioning and Support](https://strandsagents.com/docs/user-guide/harness/versioning/).\n\n## Contributing ❤️\n\nContributions are welcome: bug reports, features, docs, or a well-scoped PR. See the\n[Contributing Guide](https://github.com/strands-agents/harness-sdk/blob/main/CONTRIBUTING.md) for\ndevelopment setup, how we work, and the pull-request flow. Please also review our\n[Code of Conduct](https://github.com/strands-agents/harness-sdk/blob/main/CODE_OF_CONDUCT.md).\n\n## Security\n\nSee [SECURITY.md](https://github.com/strands-agents/harness-sdk/blob/main/SECURITY.md) for how to\nreport a vulnerability. Please do not open a public issue for security concerns.\n\n## License\n\nApache-2.0. See [LICENSE](https://github.com/strands-agents/harness-sdk/blob/main/harness-py/LICENSE).\n",
+          "checked_at": "2026-09-25",
+          "coverage": "full_text",
+          "id": "strands-4",
+          "locator": "harness-py/README.md；固定提交完整原文；相对引用以来源文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-25T01:28:56.926659+00:00",
+          "rights": {
+            "basis": "Apache-2.0，仅此仓库代码与文档；模型权重、数据及外部资产单独适用各自条款。",
+            "notice": "Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\n原文未修改；许可证全文随材料提供，不包含外链图片。",
+            "url": "https://github.com/strands-agents/harness-sdk/blob/7ae759d3ad43916d373cf0f3251ac7f57e95339c/LICENSE.APACHE"
+          },
+          "title": "strands · harness-py/README.md",
+          "upstream_revision": "7ae759d3ad43916d373cf0f3251ac7f57e95339c",
+          "url": "https://github.com/strands-agents/harness-sdk/blob/7ae759d3ad43916d373cf0f3251ac7f57e95339c/harness-py/README.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-H01",
+          "name": "DeepSeek Harness",
+          "url": "https://fieldtofit.top/for-you#watch-cw-h01"
+        },
+        {
+          "id": "CW-H02",
+          "name": "Deep Agents",
+          "url": "https://fieldtofit.top/for-you#watch-cw-h02"
+        },
+        {
+          "id": "CW-T02",
+          "name": "Ollama",
+          "url": "https://fieldtofit.top/for-you#watch-cw-t02"
+        },
+        {
+          "id": "D-37",
+          "name": "Strands Harness 发布",
+          "url": "https://fieldtofit.top/for-you#news-d-37"
+        }
+      ],
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Strands Harness · 官方发布",
+          "url": "https://strandsagents.com/blog/introducing-strands-harness/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Strands Harness · 官方材料 2",
+          "url": "https://strandsagents.com/docs/user-guide/harness/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source3",
+          "title": "Strands Harness · 官方材料 3",
+          "url": "https://strandsagents.com/docs/user-guide/harness/quickstart/"
+        }
+      ],
+      "state": "published",
+      "type": "harness"
+    },
+    {
+      "aliases": [
+        "Laya"
+      ],
+      "blocks": [
+        {
           "columns": [
             "检查点 / 分支",
             "定位与限制",
             "材料版本与核对",
             "获取与使用"
           ],
+          "kind": "table",
           "rows": [
             [
               "英语",
@@ -86,32 +312,25 @@
           "text": "关联：[D-25 Jev](https://fieldtofit.top/for-you#news-d-25)。两者提供相近的分类、评分与路由用途；Laya不是Jev官方开源版，本站未验证两者可互相替换。"
         }
       ],
-      "sources": [
+      "checked_at": "2026-09-22",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M10",
+      "interpretation": [
         {
-          "title": "Laya 固定版本 README",
-          "url": "https://github.com/NandhaKishorM/laya/blob/573e5b62696ba441230cd6be71d593331b5d23af/README.md",
-          "coverage": "link_only"
+          "text": "choice、score、noul对应选择、评分与是非概率；SDK的Router按语言选择检查点。工单分流等应用可围绕这些结果继续执行代码，而不是解析一篇模型生成的文章。",
+          "title": "把固定的小判断接到程序"
         },
         {
-          "title": "Laya 固定版本模型卡",
-          "url": "https://huggingface.co/convaiinnovations/laya/raw/1c5edc17a7acd8701df6fc341c0d179f1c62c982/README.md",
-          "coverage": "link_only"
+          "text": "作者区分英语、多语言与typed-decisions检查点，披露选项过多时退化；部分较高成绩来自在对应任务数据上微调，不能当作任意任务的零样本表现。",
+          "title": "检查点与训练条件决定能否迁移"
         },
         {
-          "title": "Laya Apache-2.0 许可",
-          "url": "https://github.com/NandhaKishorM/laya/blob/573e5b62696ba441230cd6be71d593331b5d23af/LICENSE",
-          "coverage": "link_only"
-        },
-        {
-          "coverage": "link_only",
-          "title": "作者项目介绍",
-          "url": "https://laya.convaiinnovations.com/"
+          "text": "原始材料显示某些语言上高置信却答错的情况，实际采用需要域内数据和校准。自托管仍有硬件与运行成本，本站未复现作者的准确率、速度或比较实验。",
+          "title": "数值和置信度不保证判断正确"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested",
-      "aliases": [
-        "Laya"
-      ],
+      "introduction": "提供开放权重和Python SDK的结构化决策模型：输入状态和问题定义，返回选项、评分或是非概率。适合研究分类、路由等固定输出工作流；它是与Jev功能相近的独立项目，尚未经本站验证为等价替代品。",
+      "name": "Laya",
       "reading_materials": [
         {
           "approved": true,
@@ -182,28 +401,35 @@
           "upstream_revision": "本站核对2026-09-22",
           "url": "https://laya.convaiinnovations.com/"
         }
-      ]
-    },
-    {
-      "id": "CW-M01",
-      "name": "GPT",
-      "type": "model",
-      "state": "published",
-      "introduction": "OpenAI 的通用模型系列；本期材料重点在工具执行方式和运行中的任务调整。",
-      "checked_at": "2026-09-11",
-      "interpretation": [
+      ],
+      "sources": [
         {
-          "title": "工具等待期间也能推进工作。",
-          "text": "Astra 的异步调用允许模型等待工具结果时继续其他推理或工具操作；值得读的是调用过程和结果回收方式，而不只是模型名称。"
+          "coverage": "link_only",
+          "title": "Laya 固定版本 README",
+          "url": "https://github.com/NandhaKishorM/laya/blob/573e5b62696ba441230cd6be71d593331b5d23af/README.md"
         },
         {
-          "title": "长任务可以中途纠偏。",
-          "text": "执行中调整方向意味着应用需要管理正在运行的工作与新消息；它与“取消后重新问一次”有不同的交互要求。"
+          "coverage": "link_only",
+          "title": "Laya 固定版本模型卡",
+          "url": "https://huggingface.co/convaiinnovations/laya/raw/1c5edc17a7acd8701df6fc341c0d179f1c62c982/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Laya Apache-2.0 许可",
+          "url": "https://github.com/NandhaKishorM/laya/blob/573e5b62696ba441230cd6be71d593331b5d23af/LICENSE"
+        },
+        {
+          "coverage": "link_only",
+          "title": "作者项目介绍",
+          "url": "https://laya.convaiinnovations.com/"
         }
       ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -212,6 +438,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "GPT-6 Astra",
@@ -244,45 +471,44 @@
           "text": "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。"
         }
       ],
-      "sources": [
-        {
-          "title": "GPT-6 指南",
-          "url": "https://developers.openai.com/api/docs/guides/latest-model",
-          "coverage": "link_only"
-        },
-        {
-          "title": "GPT-5.6 指南",
-          "url": "https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6",
-          "coverage": "link_only"
-        },
-        {
-          "title": "模型目录",
-          "url": "https://developers.openai.com/api/docs/models",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-M02",
-      "name": "Claude",
-      "type": "model",
-      "state": "published",
-      "introduction": "Anthropic 的模型系列，Fable、Opus、Sonnet、Haiku 是并行产品线；本页资料展开前三条的重要节点。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M01",
       "interpretation": [
         {
-          "title": "模型升级会影响已有调用流程。",
-          "text": "Fable 5.1 的强制工具调用、思考块兼容规则值得单独读迁移说明；只换模型名可能使已有工作流报错。"
+          "text": "Astra 的异步调用允许模型等待工具结果时继续其他推理或工具操作；值得读的是调用过程和结果回收方式，而不只是模型名称。",
+          "title": "工具等待期间也能推进工作。"
         },
         {
-          "title": "把产品线与版本分开看。",
-          "text": "Opus 和 Sonnet 有各自升级路线；Fable 的发布不能自动解释成其他产品线停用。"
+          "text": "执行中调整方向意味着应用需要管理正在运行的工作与新消息；它与“取消后重新问一次”有不同的交互要求。",
+          "title": "长任务可以中途纠偏。"
         }
       ],
+      "introduction": "OpenAI 的通用模型系列；本期材料重点在工具执行方式和运行中的任务调整。",
+      "name": "GPT",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "GPT-6 指南",
+          "url": "https://developers.openai.com/api/docs/guides/latest-model"
+        },
+        {
+          "coverage": "link_only",
+          "title": "GPT-5.6 指南",
+          "url": "https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6"
+        },
+        {
+          "coverage": "link_only",
+          "title": "模型目录",
+          "url": "https://developers.openai.com/api/docs/models"
+        }
+      ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "发布日期 / 状态",
@@ -291,6 +517,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "Fable 5.1",
@@ -323,54 +550,49 @@
           "text": "关联：D-05 Fable 5.1；[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。[完整型号目录](https://platform.claude.com/docs/en/models/overview)另列 Haiku 4.5；本页资料不补未经核对的完整历史。"
         }
       ],
-      "sources": [
-        {
-          "title": "Fable 5.1",
-          "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
-          "coverage": "link_only"
-        },
-        {
-          "title": "Opus 5",
-          "url": "https://platform.claude.com/docs/en/models/opus-5/overview",
-          "coverage": "link_only"
-        },
-        {
-          "title": "Sonnet 5",
-          "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview",
-          "coverage": "link_only"
-        },
-        {
-          "title": "完整型号目录",
-          "url": "https://platform.claude.com/docs/en/models/overview",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-M03",
-      "name": "Gemini",
-      "type": "model",
-      "state": "published",
-      "introduction": "Google 的多模态模型系列；这里分别列出 Flash 的相邻版本与 Live 实时语音分支，Pro 关联到官方目录。不同分支不混成一条升级时间线。",
-      "checked_at": "2026-09-17",
+      "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M02",
       "interpretation": [
         {
-          "title": "视频理解和视频生成应分开。",
-          "text": "3.8 Flash 可以读取视频，但该型号输出是文本；不能因此把它放进视频生成模型清单。"
+          "text": "Fable 5.1 的强制工具调用、思考块兼容规则值得单独读迁移说明；只换模型名可能使已有工作流报错。",
+          "title": "模型升级会影响已有调用流程。"
         },
         {
-          "title": "没有新增的参数不写成升级。",
-          "text": "两页列出的输入上限和模态相同，本页资料不把“约 1M 上下文”写成 3.8 独有的新能力。"
-        },
-        {
-          "text": "Live API 支持异步工具执行，Extended Thinking 增加多步推理；这两者属于 Live 分支，不据此推断 Flash 的输出或工具能力。本站核对官方材料，未做模型调用。",
-          "title": "实时对话与后台工具分开看"
+          "text": "Opus 和 Sonnet 有各自升级路线；Fable 的发布不能自动解释成其他产品线停用。",
+          "title": "把产品线与版本分开看。"
         }
       ],
+      "introduction": "Anthropic 的模型系列，Fable、Opus、Sonnet、Haiku 是并行产品线；本页资料展开前三条的重要节点。",
+      "name": "Claude",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "Fable 5.1",
+          "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Opus 5",
+          "url": "https://platform.claude.com/docs/en/models/opus-5/overview"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Sonnet 5",
+          "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+        },
+        {
+          "coverage": "link_only",
+          "title": "完整型号目录",
+          "url": "https://platform.claude.com/docs/en/models/overview"
+        }
+      ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -379,6 +601,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "Gemini 3.8 Flash",
@@ -423,54 +646,25 @@
           "text": "关联：[D-16 Gemini 3.8 Live](https://fieldtofit.top/for-you#news-d-16)；Live API 和 AI 编程接入文档的许可快照可通过 For your AI / MCP 读取。Flash 原有核验日期为 2026-09-11，本次仅补充 Live 分支。"
         }
       ],
-      "sources": [
+      "checked_at": "2026-09-17",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M03",
+      "interpretation": [
         {
-          "title": "3.8 Flash",
-          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
-          "coverage": "link_only"
+          "text": "3.8 Flash 可以读取视频，但该型号输出是文本；不能因此把它放进视频生成模型清单。",
+          "title": "视频理解和视频生成应分开。"
         },
         {
-          "title": "3.7 Flash",
-          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash",
-          "coverage": "link_only"
+          "text": "两页列出的输入上限和模态相同，本页资料不把“约 1M 上下文”写成 3.8 独有的新能力。",
+          "title": "没有新增的参数不写成升级。"
         },
         {
-          "title": "官方目录",
-          "url": "https://ai.google.dev/gemini-api/docs/models",
-          "coverage": "link_only"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Google · Gemini 3.8 Live 发布公告",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Google · 实时语音应用与异步工具调用",
-          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Google DeepMind · Gemini 3.8 Audio 模型卡",
-          "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Live API overview",
-          "url": "https://ai.google.dev/gemini-api/docs/live-api"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Develop with agents · Docs MCP / Live API Skill",
-          "url": "https://ai.google.dev/gemini-api/docs/coding-agents"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Google · Gemini Live API examples",
-          "url": "https://github.com/google-gemini/gemini-live-api-examples"
+          "text": "Live API 支持异步工具执行，Extended Thinking 增加多步推理；这两者属于 Live 分支，不据此推断 Flash 的输出或工具能力。本站核对官方材料，未做模型调用。",
+          "title": "实时对话与后台工具分开看"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "introduction": "Google 的多模态模型系列；这里分别列出 Flash 的相邻版本与 Live 实时语音分支，Pro 关联到官方目录。不同分支不混成一条升级时间线。",
+      "name": "Gemini",
       "reading_materials": [
         {
           "approved": true,
@@ -632,28 +826,60 @@
           "upstream_revision": "2026-09-11 原有 Flash 核验",
           "url": "https://ai.google.dev/gemini-api/docs/models"
         }
-      ]
-    },
-    {
-      "id": "CW-M04",
-      "name": "Kimi",
-      "type": "model",
-      "state": "published",
-      "introduction": "Moonshot AI 的模型系列，同时覆盖原生视觉模型与面向编程的专门分支。",
-      "checked_at": "2026-09-11",
-      "interpretation": [
+      ],
+      "sources": [
         {
-          "title": "K2.7-Code 的看点是编程分支如何继续训练。",
-          "text": "它基于 K2.6，材料同时给出编程评测与推理 token 变化，可以沿这条关系读，而不是仅按数字排代际。"
+          "coverage": "link_only",
+          "title": "3.8 Flash",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash"
         },
         {
-          "title": "K3 的看点包括结构变化。",
-          "text": "KDA 和 AttnRes 是具体研究入口；读者能继续查看注意力与跨层信息传递的实现，而不只看到“更强、更长”。"
+          "coverage": "link_only",
+          "title": "3.7 Flash",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash"
+        },
+        {
+          "coverage": "link_only",
+          "title": "官方目录",
+          "url": "https://ai.google.dev/gemini-api/docs/models"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Google · Gemini 3.8 Live 发布公告",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Google · 实时语音应用与异步工具调用",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Google DeepMind · Gemini 3.8 Audio 模型卡",
+          "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Live API overview",
+          "url": "https://ai.google.dev/gemini-api/docs/live-api"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Develop with agents · Docs MCP / Live API Skill",
+          "url": "https://ai.google.dev/gemini-api/docs/coding-agents"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Google · Gemini Live API examples",
+          "url": "https://github.com/google-gemini/gemini-live-api-examples"
         }
       ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -662,6 +888,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "Kimi K3",
@@ -694,45 +921,44 @@
           "text": "关联：[CW-T03 vLLM](/for-you#watch-cw-t03)，其本页资料版本记录包含 Kimi K3 支持。"
         }
       ],
-      "sources": [
-        {
-          "title": "K3 模型卡",
-          "url": "https://huggingface.co/moonshotai/Kimi-K3",
-          "coverage": "link_only"
-        },
-        {
-          "title": "K2.7-Code",
-          "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
-          "coverage": "link_only"
-        },
-        {
-          "title": "K2.5",
-          "url": "https://huggingface.co/moonshotai/Kimi-K2.5",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-M05",
-      "name": "GLM",
-      "type": "model",
-      "state": "published",
-      "introduction": "智谱的模型系列；本页资料区分 GLM-5 主线与采用新底座的 Flash 分支。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M04",
       "interpretation": [
         {
-          "title": "Flash 值得看的是新底座。",
-          "text": "混合注意力与 mHC 是理解它的材料入口；名称中的 Flash 不足以说明它只是主模型的缩小版。"
+          "text": "它基于 K2.6，材料同时给出编程评测与推理 token 变化，可以沿这条关系读，而不是仅按数字排代际。",
+          "title": "K2.7-Code 的看点是编程分支如何继续训练。"
         },
         {
-          "title": "长上下文背后还有索引机制。",
-          "text": "5.2 的 IndexShare 说明实现怎样减少重复索引工作，可与其他模型的跨层缓存方案对照阅读。"
+          "text": "KDA 和 AttnRes 是具体研究入口；读者能继续查看注意力与跨层信息传递的实现，而不只看到“更强、更长”。",
+          "title": "K3 的看点包括结构变化。"
         }
       ],
+      "introduction": "Moonshot AI 的模型系列，同时覆盖原生视觉模型与面向编程的专门分支。",
+      "name": "Kimi",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "K3 模型卡",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3"
+        },
+        {
+          "coverage": "link_only",
+          "title": "K2.7-Code",
+          "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
+        },
+        {
+          "coverage": "link_only",
+          "title": "K2.5",
+          "url": "https://huggingface.co/moonshotai/Kimi-K2.5"
+        }
+      ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -741,6 +967,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "GLM-5.3-Flash",
@@ -773,39 +1000,34 @@
           "text": "关联：D-01 GLM-5.3-Flash；[CW-M06 DeepSeek](/for-you#watch-cw-m06)、[CW-H02 Deep Agents](/for-you#watch-cw-h02)。"
         }
       ],
-      "sources": [
-        {
-          "title": "GLM 官方仓库",
-          "url": "https://github.com/zai-org/GLM-5",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-M06",
-      "name": "DeepSeek",
-      "type": "model",
-      "state": "published",
-      "introduction": "DeepSeek 的模型系列；本页资料重点跟踪 V4 Flash 分支的推理结构与多模态变化。",
-      "checked_at": "2026-09-14",
+      "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M05",
       "interpretation": [
         {
-          "title": "读入材料与逐步生成采用不同分工。",
-          "text": "V4.1 的编码/解码结构以及共享 KV，是理解长输入怎样进入生成过程的具体切口。"
+          "text": "混合注意力与 mHC 是理解它的材料入口；名称中的 Flash 不足以说明它只是主模型的缩小版。",
+          "title": "Flash 值得看的是新底座。"
         },
         {
-          "title": "缓存复用细节比一句“节省显存”更有信息。",
-          "text": "Full、Reindex、Reuse 区分不同层的工作；材料还区分全局缓存与滑动窗口回放，值得沿这两部分继续读。"
-        },
-        {
-          "text": "V4.1 Flash 已有正式 API 入口；V4 Pro 继续提供服务。版本表补充调用名称，避免把兼容别名理解成旧模型仍在服务。",
-          "title": "模型族、调用别名与服务状态分别记录。"
+          "text": "5.2 的 IndexShare 说明实现怎样减少重复索引工作，可与其他模型的跨层缓存方案对照阅读。",
+          "title": "长上下文背后还有索引机制。"
         }
       ],
+      "introduction": "智谱的模型系列；本页资料区分 GLM-5 主线与采用新底座的 Flash 分支。",
+      "name": "GLM",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "GLM 官方仓库",
+          "url": "https://github.com/zai-org/GLM-5"
+        }
+      ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -814,6 +1036,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "DeepSeek-V4.1-Flash",
@@ -850,24 +1073,25 @@
           "text": "API 状态以 2026-09-14 读取的官方正文为准；保留 Pro 说明的精确修订时间未知。本次没有核实具体价格数值。"
         }
       ],
-      "sources": [
+      "checked_at": "2026-09-14",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M06",
+      "interpretation": [
         {
-          "title": "V4.1-Flash",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-          "coverage": "link_only"
+          "text": "V4.1 的编码/解码结构以及共享 KV，是理解长输入怎样进入生成过程的具体切口。",
+          "title": "读入材料与逐步生成采用不同分工。"
         },
         {
-          "title": "V4-Flash-0731",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
-          "coverage": "link_only"
+          "text": "Full、Reindex、Reuse 区分不同层的工作；材料还区分全局缓存与滑动窗口回放，值得沿这两部分继续读。",
+          "title": "缓存复用细节比一句“节省显存”更有信息。"
         },
         {
-          "coverage": "link_only",
-          "title": "DeepSeek 官方 API 更新日志",
-          "url": "https://api-docs.deepseek.com/updates/"
+          "text": "V4.1 Flash 已有正式 API 入口；V4 Pro 继续提供服务。版本表补充调用名称，避免把兼容别名理解成旧模型仍在服务。",
+          "title": "模型族、调用别名与服务状态分别记录。"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "introduction": "DeepSeek 的模型系列；本页资料重点跟踪 V4 Flash 分支的推理结构与多模态变化。",
+      "name": "DeepSeek",
       "reading_materials": [
         {
           "approved": true,
@@ -911,32 +1135,31 @@
           "upstream_revision": "",
           "url": "https://api-docs.deepseek.com/updates/"
         }
-      ]
-    },
-    {
-      "id": "CW-M07",
-      "name": "Qwen",
-      "type": "model",
-      "state": "published",
-      "introduction": "阿里 Qwen 模型系列；分别整理稠密模型、实验性稀疏架构与音视频理解分支，保留各自版本、接入方式和依据。",
-      "checked_at": "2026-09-20",
-      "interpretation": [
+      ],
+      "sources": [
         {
-          "title": "两个 3.8 不是同一种结构的大小版本。",
-          "text": "27B 的稠密路线与 Flash-Next 的实验架构应分别展示；数字和后缀不足以表达这层关系。"
+          "coverage": "link_only",
+          "title": "V4.1-Flash",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
         },
         {
-          "title": "部署材料需要覆盖额外组件。",
-          "text": "Flash-Next 的 Ngram 与 MTP 也属于模型材料，不能只拿活跃参数数值替代完整组成；vLLM 的适配记录提供了继续阅读入口。"
+          "coverage": "link_only",
+          "title": "V4-Flash-0731",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
         },
         {
-          "text": "Omni-Flash 增加音视频输入理解和工具调用；视频转 PDF 或 Skill 由配套插件完成。已提供固定 README、安装说明与 Apache-2.0 许可，尚未运行插件。旧分支材料保留原核对范围，本次只增补 Omni 发布。",
-          "title": "音视频模型与配套产物分开看。"
+          "coverage": "link_only",
+          "title": "DeepSeek 官方 API 更新日志",
+          "url": "https://api-docs.deepseek.com/updates/"
         }
       ],
+      "state": "published",
+      "type": "model"
+    },
+    {
+      "_position": 7,
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -945,6 +1168,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "Qwen3.8-Omni-Flash",
@@ -981,55 +1205,25 @@
           "text": "本次动态：[D-19 Qwen3.8-Omni-Flash](https://fieldtofit.top/for-you#news-d-19)。旧版本行保留原有日期，本次补充不代表重新实测所有分支。"
         }
       ],
-      "sources": [
+      "checked_at": "2026-09-20",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M07",
+      "interpretation": [
         {
-          "title": "模型卡",
-          "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
-          "coverage": "link_only"
+          "text": "27B 的稠密路线与 Flash-Next 的实验架构应分别展示；数字和后缀不足以表达这层关系。",
+          "title": "两个 3.8 不是同一种结构的大小版本。"
         },
         {
-          "title": "发布博客",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "coverage": "link_only"
+          "text": "Flash-Next 的 Ngram 与 MTP 也属于模型材料，不能只拿活跃参数数值替代完整组成；vLLM 的适配记录提供了继续阅读入口。",
+          "title": "部署材料需要覆盖额外组件。"
         },
         {
-          "title": "27B 模型卡",
-          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-          "coverage": "link_only"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Qwen · Qwen3.8-Omni-Flash 官方发布",
-          "url": "https://qwen.ai/blog?id=qwen3.8-omni-flash"
-        },
-        {
-          "coverage": "link_only",
-          "title": "QwenCloud · Model releases",
-          "url": "https://docs.qwencloud.com/changelog/models"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Alibaba Cloud · Qwen-Omni API 文档",
-          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-omni"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Qwen-MM-Plugins · 固定 README",
-          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/README.md"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Qwen-MM-Plugins · 固定安装说明",
-          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/docs/en/installation.md"
-        },
-        {
-          "coverage": "link_only",
-          "title": "Qwen-MM-Plugins · Apache-2.0 LICENSE",
-          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/LICENSE"
+          "text": "Omni-Flash 增加音视频输入理解和工具调用；视频转 PDF 或 Skill 由配套插件完成。已提供固定 README、安装说明与 Apache-2.0 许可，尚未运行插件。旧分支材料保留原核对范围，本次只增补 Omni 发布。",
+          "title": "音视频模型与配套产物分开看。"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested",
-      "_position": 7,
+      "introduction": "阿里 Qwen 模型系列；分别整理稠密模型、实验性稀疏架构与音视频理解分支，保留各自版本、接入方式和依据。",
+      "name": "Qwen",
       "reading_materials": [
         {
           "approved": true,
@@ -1136,28 +1330,60 @@
           "upstream_revision": "fac5c9e307737afadd15bacda0314870e886864c",
           "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/LICENSE"
         }
-      ]
-    },
-    {
-      "id": "CW-M08",
-      "name": "MiniMax",
-      "type": "model",
-      "state": "published",
-      "introduction": "MiniMax 的模型系列；首批展开通用与 Agent 模型主线，音乐等生成分支后续独立建表。",
-      "checked_at": "2026-09-11",
-      "interpretation": [
+      ],
+      "sources": [
         {
-          "title": "M3 可以沿“长输入如何计算”继续读。",
-          "text": "MSA 的块级 KV 筛选，是它在长上下文之外值得关注的技术材料。"
+          "coverage": "link_only",
+          "title": "模型卡",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
         },
         {
-          "title": "“参与自我改进”要读清发生在哪里。",
-          "text": "M2.7 文章描述厂商将模型用于训练实验流程；这不能被简写成用户运行时模型会自动更新自身权重。"
+          "coverage": "link_only",
+          "title": "发布博客",
+          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next"
+        },
+        {
+          "coverage": "link_only",
+          "title": "27B 模型卡",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Qwen · Qwen3.8-Omni-Flash 官方发布",
+          "url": "https://qwen.ai/blog?id=qwen3.8-omni-flash"
+        },
+        {
+          "coverage": "link_only",
+          "title": "QwenCloud · Model releases",
+          "url": "https://docs.qwencloud.com/changelog/models"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Alibaba Cloud · Qwen-Omni API 文档",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-omni"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Qwen-MM-Plugins · 固定 README",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Qwen-MM-Plugins · 固定安装说明",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/docs/en/installation.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Qwen-MM-Plugins · Apache-2.0 LICENSE",
+          "url": "https://github.com/QwenLM/Qwen-MM-Plugins/blob/fac5c9e307737afadd15bacda0314870e886864c/LICENSE"
         }
       ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "发布日期",
@@ -1166,6 +1392,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "MiniMax M3",
@@ -1190,40 +1417,39 @@
           "text": "关联：D-08 MiniMax Music 3 是另一条产品动态，不混入 M 系列升级序列。"
         }
       ],
-      "sources": [
-        {
-          "title": "M3 发布",
-          "url": "https://www.minimax.io/blog/minimax-m3",
-          "coverage": "link_only"
-        },
-        {
-          "title": "M2.7 发布",
-          "url": "https://www.minimax.io/news/minimax-m27-en",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-M09",
-      "name": "Seed / Doubao",
-      "type": "model",
-      "state": "published",
-      "introduction": "字节 Seed 的模型研究与发布入口；豆包产品名称、模型研究名称和 API 型号分别保留。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M08",
       "interpretation": [
         {
-          "title": "音视频理解与实时交互是两条阅读线。",
-          "text": "Seed2.0 Lite 的音频输入升级，与 SeedRealtime 的全双工目标分别展示，读者才能看清材料在讲哪一层能力。"
+          "text": "MSA 的块级 KV 筛选，是它在长上下文之外值得关注的技术材料。",
+          "title": "M3 可以沿“长输入如何计算”继续读。"
         },
         {
-          "title": "产品名称不能代替可调用型号。",
-          "text": "“豆包”作为产品入口保留；需要 API 的读者应继续查看具体型号与服务文档，不根据研究名称直接拼接调用参数。"
+          "text": "M2.7 文章描述厂商将模型用于训练实验流程；这不能被简写成用户运行时模型会自动更新自身权重。",
+          "title": "“参与自我改进”要读清发生在哪里。"
         }
       ],
+      "introduction": "MiniMax 的模型系列；首批展开通用与 Agent 模型主线，音乐等生成分支后续独立建表。",
+      "name": "MiniMax",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "M3 发布",
+          "url": "https://www.minimax.io/blog/minimax-m3"
+        },
+        {
+          "coverage": "link_only",
+          "title": "M2.7 发布",
+          "url": "https://www.minimax.io/news/minimax-m27-en"
+        }
+      ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -1232,6 +1458,7 @@
             "获取与使用",
             "依据"
           ],
+          "kind": "table",
           "rows": [
             [
               "Seed2.1 Pro / Turbo",
@@ -1264,51 +1491,51 @@
           "text": "关联：D-09 SeedRealtime；图像与视频生成的 Seedream / Seedance 在官方目录中另列，本期不扩成额外模型族。"
         }
       ],
-      "sources": [
-        {
-          "title": "Seed2.1",
-          "url": "https://seed.bytedance.com/en/seed2_1",
-          "coverage": "link_only"
-        },
-        {
-          "title": "Seed2.0",
-          "url": "https://seed.bytedance.com/en/seed2",
-          "coverage": "link_only"
-        },
-        {
-          "title": "官方模型目录",
-          "url": "https://seed.bytedance.com/en/models",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-T01",
-      "name": "ComfyUI",
-      "type": "tool",
-      "state": "published",
-      "introduction": "把生成与处理步骤连接成节点工作流的开源工具，可以查看、保存和复用每一步配置。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M09",
       "interpretation": [
         {
-          "title": "重点看可复用的制作过程。",
-          "text": "节点配置记录素材如何进入、经过哪些处理、如何输出，这部分材料比单张效果图更能说明项目的作用。"
+          "text": "Seed2.0 Lite 的音频输入升级，与 SeedRealtime 的全双工目标分别展示，读者才能看清材料在讲哪一层能力。",
+          "title": "音视频理解与实时交互是两条阅读线。"
         },
         {
-          "title": "版本表也要记录失效的节点。",
-          "text": "Veo 旧节点退出会影响已有流程的可运行性，应该与新增视频裁剪一起展示。"
+          "text": "“豆包”作为产品入口保留；需要 API 的读者应继续查看具体型号与服务文档，不根据研究名称直接拼接调用参数。",
+          "title": "产品名称不能代替可调用型号。"
         }
       ],
+      "introduction": "字节 Seed 的模型研究与发布入口；豆包产品名称、模型研究名称和 API 型号分别保留。",
+      "name": "Seed / Doubao",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "Seed2.1",
+          "url": "https://seed.bytedance.com/en/seed2_1"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Seed2.0",
+          "url": "https://seed.bytedance.com/en/seed2"
+        },
+        {
+          "coverage": "link_only",
+          "title": "官方模型目录",
+          "url": "https://seed.bytedance.com/en/models"
+        }
+      ],
+      "state": "published",
+      "type": "model"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "处理什么",
             "输入与产物",
             "使用形态",
             "首批材料"
           ],
+          "kind": "table",
           "rows": [
             [
               "图像、视频等生成与处理流程",
@@ -1319,13 +1546,13 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "版本",
             "发布记录日期",
             "具体变化",
             "对既有工作流的影响"
           ],
+          "kind": "table",
           "rows": [
             [
               "v0.35.0",
@@ -1346,46 +1573,46 @@
           "text": "依据：[官方项目](https://github.com/Comfy-Org/ComfyUI)、[官方发布记录](https://github.com/Comfy-Org/ComfyUI/releases)。关联：模型与自定义节点属于独立依赖，本页资料不把它们统称为 ComfyUI 自带能力。AI 应用案例仍 pending。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方项目",
-          "url": "https://github.com/Comfy-Org/ComfyUI",
-          "coverage": "link_only"
-        },
-        {
-          "title": "官方发布记录",
-          "url": "https://github.com/Comfy-Org/ComfyUI/releases",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-T02",
-      "name": "Ollama",
-      "type": "tool",
-      "state": "published",
-      "introduction": "用统一的命令和服务接口运行模型，连接模型文件与调用它们的应用。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-T01",
       "interpretation": [
         {
-          "title": "结构化输出是这次可具体阅读的变化。",
-          "text": "如果应用依赖固定字段，相关更新比“新增聊天体验”更能说明服务端处理了什么。"
+          "text": "节点配置记录素材如何进入、经过哪些处理、如何输出，这部分材料比单张效果图更能说明项目的作用。",
+          "title": "重点看可复用的制作过程。"
         },
         {
-          "title": "工具搜索和上下文压缩属于接口演进。",
-          "text": "它们连接的是 Agent 的调用流程，不等同于所有已下载模型都新增了相同能力。"
+          "text": "Veo 旧节点退出会影响已有流程的可运行性，应该与新增视频裁剪一起展示。",
+          "title": "版本表也要记录失效的节点。"
         }
       ],
+      "introduction": "把生成与处理步骤连接成节点工作流的开源工具，可以查看、保存和复用每一步配置。",
+      "name": "ComfyUI",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方项目",
+          "url": "https://github.com/Comfy-Org/ComfyUI"
+        },
+        {
+          "coverage": "link_only",
+          "title": "官方发布记录",
+          "url": "https://github.com/Comfy-Org/ComfyUI/releases"
+        }
+      ],
+      "state": "published",
+      "type": "tool"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "处理什么",
             "输入与产物",
             "使用形态",
             "首批材料"
           ],
+          "kind": "table",
           "rows": [
             [
               "模型下载、运行与应用调用",
@@ -1396,13 +1623,13 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "版本",
             "发布记录日期",
             "具体变化",
             "关注的实际问题"
           ],
+          "kind": "table",
           "rows": [
             [
               "v0.34.0",
@@ -1417,46 +1644,46 @@
           "text": "依据：[官方项目](https://github.com/ollama/ollama)、[发布记录](https://github.com/ollama/ollama/releases)。关联：[CW-T03 vLLM](/for-you#watch-cw-t03) 同属模型运行相关工具，保持各自项目与版本，不给综合优劣评分。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方项目",
-          "url": "https://github.com/ollama/ollama",
-          "coverage": "link_only"
-        },
-        {
-          "title": "发布记录",
-          "url": "https://github.com/ollama/ollama/releases",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-T03",
-      "name": "vLLM",
-      "type": "tool",
-      "state": "published",
-      "introduction": "面向模型推理与服务的开源引擎，持续适配模型结构、计算精度和运行硬件。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-T02",
       "interpretation": [
         {
-          "title": "把模型卡和支持记录接起来。",
-          "text": "Qwen 的新结构能否按某种精度运行，需要看引擎对应版本；“仓库里有权重”和“引擎已经适配”是两个时间点。"
+          "text": "如果应用依赖固定字段，相关更新比“新增聊天体验”更能说明服务端处理了什么。",
+          "title": "结构化输出是这次可具体阅读的变化。"
         },
         {
-          "title": "运行器变化会影响部署。",
-          "text": "ModelRunner V2 和 KV 定容值得在版本表里单列，不能全部归为“性能优化”。"
+          "text": "它们连接的是 Agent 的调用流程，不等同于所有已下载模型都新增了相同能力。",
+          "title": "工具搜索和上下文压缩属于接口演进。"
         }
       ],
+      "introduction": "用统一的命令和服务接口运行模型，连接模型文件与调用它们的应用。",
+      "name": "Ollama",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方项目",
+          "url": "https://github.com/ollama/ollama"
+        },
+        {
+          "coverage": "link_only",
+          "title": "发布记录",
+          "url": "https://github.com/ollama/ollama/releases"
+        }
+      ],
+      "state": "published",
+      "type": "tool"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "处理什么",
             "输入与产物",
             "使用形态",
             "首批材料"
           ],
+          "kind": "table",
           "rows": [
             [
               "将模型权重部署为推理服务",
@@ -1467,13 +1694,13 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "版本",
             "发布记录日期",
             "具体变化",
             "关注的实际问题"
           ],
+          "kind": "table",
           "rows": [
             [
               "v0.29.0",
@@ -1488,41 +1715,41 @@
           "text": "依据：[官方发布记录](https://github.com/vllm-project/vllm/releases)。关联：[CW-M04 Kimi](/for-you#watch-cw-m04)、[CW-M07 Qwen](/for-you#watch-cw-m07)。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方发布记录",
-          "url": "https://github.com/vllm-project/vllm/releases",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-T04",
-      "name": "Docling",
-      "type": "tool",
-      "state": "published",
-      "introduction": "将文档转换为可继续处理的结构化内容，保留正文、表格等文档元素。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-T03",
       "interpretation": [
         {
-          "title": "论文材料不只有正文。",
-          "text": "JATS 链接和有序编号的保留直接影响引用与阅读顺序，是“提取到文字”之外值得看的内容。"
+          "text": "Qwen 的新结构能否按某种精度运行，需要看引擎对应版本；“仓库里有权重”和“引擎已经适配”是两个时间点。",
+          "title": "把模型卡和支持记录接起来。"
         },
         {
-          "title": "区分解析与后续理解。",
-          "text": "Docling 提供文档结构；用户的 AI 再基于结果做总结或分析，网站应给出这两个步骤之间的数据关系。"
+          "text": "ModelRunner V2 和 KV 定容值得在版本表里单列，不能全部归为“性能优化”。",
+          "title": "运行器变化会影响部署。"
         }
       ],
+      "introduction": "面向模型推理与服务的开源引擎，持续适配模型结构、计算精度和运行硬件。",
+      "name": "vLLM",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方发布记录",
+          "url": "https://github.com/vllm-project/vllm/releases"
+        }
+      ],
+      "state": "published",
+      "type": "tool"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "处理什么",
             "输入与产物",
             "使用形态",
             "首批材料"
           ],
+          "kind": "table",
           "rows": [
             [
               "文档解析与格式转换",
@@ -1533,13 +1760,13 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "版本",
             "发布记录日期",
             "具体变化",
             "关注的实际问题"
           ],
+          "kind": "table",
           "rows": [
             [
               "v2.126.0",
@@ -1554,21 +1781,38 @@
           "text": "依据：[官方项目](https://github.com/docling-project/docling)、[发布记录](https://github.com/docling-project/docling/releases)。本页资料仅核对文档与更新，未实测中文论文表格或扫描件精度。"
         }
       ],
-      "sources": [
+      "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-T04",
+      "interpretation": [
         {
-          "title": "官方项目",
-          "url": "https://github.com/docling-project/docling",
-          "coverage": "link_only"
+          "text": "JATS 链接和有序编号的保留直接影响引用与阅读顺序，是“提取到文字”之外值得看的内容。",
+          "title": "论文材料不只有正文。"
         },
         {
-          "title": "发布记录",
-          "url": "https://github.com/docling-project/docling/releases",
-          "coverage": "link_only"
+          "text": "Docling 提供文档结构；用户的 AI 再基于结果做总结或分析，网站应给出这两个步骤之间的数据关系。",
+          "title": "区分解析与后续理解。"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
+      "introduction": "将文档转换为可继续处理的结构化内容，保留正文、表格等文档元素。",
+      "name": "Docling",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方项目",
+          "url": "https://github.com/docling-project/docling"
+        },
+        {
+          "coverage": "link_only",
+          "title": "发布记录",
+          "url": "https://github.com/docling-project/docling/releases"
+        }
+      ],
+      "state": "published",
+      "type": "tool"
     },
     {
+      "_position": 14,
       "blocks": [
         {
           "columns": [
@@ -1617,30 +1861,6 @@
       ],
       "introduction": "通过 MCP 让 AI 操作 Android 真机或模拟器，并获取截图、日志和执行回放的测试工具。",
       "name": "Google Artemis",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "title": "项目入口",
-          "url": "https://github.com/google/artemis"
-        },
-        {
-          "coverage": "link_only",
-          "title": "固定版本 README",
-          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/README.md"
-        },
-        {
-          "coverage": "link_only",
-          "title": "固定版本 MCP 文档",
-          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/mcp_server/README.md"
-        },
-        {
-          "coverage": "link_only",
-          "title": "固定版本运行规则",
-          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/mcp_server/rules.md"
-        }
-      ],
-      "type": "tool",
-      "state": "published",
       "reading_materials": [
         {
           "approved": true,
@@ -1708,34 +1928,41 @@
           "url": "https://github.com/google/artemis/tree/371aa6df56880643da57b30da936e9812fb0ec66"
         }
       ],
-      "_position": 14
-    },
-    {
-      "id": "CW-A01",
-      "name": "Codex",
-      "type": "agent",
-      "state": "published",
-      "introduction": "OpenAI 的编程 Agent，围绕项目文件、工具执行和持续任务提供工作入口。",
-      "checked_at": "2026-09-11",
-      "interpretation": [
+      "sources": [
         {
-          "title": "运行中的信息也有来源层级。",
-          "text": "ExternalMessage 可以把外部消息送入运行过程，其权限是工具材料级别，不能被当成用户新增授权。"
+          "coverage": "link_only",
+          "title": "项目入口",
+          "url": "https://github.com/google/artemis"
         },
         {
-          "title": "恢复记录与模型上下文要分开。",
-          "text": "include_turns 改变的是调用方拿到的历史，理解这一点可避免把“返回内容少”误写成“模型忘记了任务”。"
+          "coverage": "link_only",
+          "title": "固定版本 README",
+          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "固定版本 MCP 文档",
+          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/mcp_server/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "固定版本运行规则",
+          "url": "https://github.com/google/artemis/blob/371aa6df56880643da57b30da936e9812fb0ec66/mcp_server/rules.md"
         }
       ],
+      "state": "published",
+      "type": "tool"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
+          "kind": "table",
           "rows": [
             [
               "Codex 客户端及 CLI / SDK 入口",
@@ -1746,12 +1973,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "已核实更新",
             "日期",
             "具体内容"
           ],
+          "kind": "table",
           "rows": [
             [
               "Python SDK 0.154.0",
@@ -1765,41 +1992,41 @@
           "text": "依据：[Codex 官方更新记录](https://learn.chatgpt.com/docs/changelog)。关联：D-03 Codex；[CW-M01 GPT](/for-you#watch-cw-m01)。本次整理未验证 SDK 集成，不将这条 SDK 版本号套用到桌面应用。"
         }
       ],
-      "sources": [
-        {
-          "title": "Codex 官方更新记录",
-          "url": "https://learn.chatgpt.com/docs/changelog",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-A02",
-      "name": "Claude Code",
-      "type": "agent",
-      "state": "published",
-      "introduction": "Anthropic 的编程 Agent，通过项目上下文、终端工具及插件完成持续开发任务。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A01",
       "interpretation": [
         {
-          "title": "连接稳定性值得和新功能一起展示。",
-          "text": "兼容接口请求失败和 MCP 后空消息属于真实使用链路中的问题，本期不将这版泛化为“编程能力增强”。"
+          "text": "ExternalMessage 可以把外部消息送入运行过程，其权限是工具材料级别，不能被当成用户新增授权。",
+          "title": "运行中的信息也有来源层级。"
         },
         {
-          "title": "可管理性也在演进。",
-          "text": "插件管理的 JSON 输出让其他程序更容易读取状态，适合作为 Agent 生态连接材料。"
+          "text": "include_turns 改变的是调用方拿到的历史，理解这一点可避免把“返回内容少”误写成“模型忘记了任务”。",
+          "title": "恢复记录与模型上下文要分开。"
         }
       ],
+      "introduction": "OpenAI 的编程 Agent，围绕项目文件、工具执行和持续任务提供工作入口。",
+      "name": "Codex",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "Codex 官方更新记录",
+          "url": "https://learn.chatgpt.com/docs/changelog"
+        }
+      ],
+      "state": "published",
+      "type": "agent"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
+          "kind": "table",
           "rows": [
             [
               "Claude Code CLI 及相关客户端入口",
@@ -1810,12 +2037,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "已核实更新",
             "日期口径",
             "具体内容"
           ],
+          "kind": "table",
           "rows": [
             [
               "2.1.268",
@@ -1829,41 +2056,41 @@
           "text": "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方 CHANGELOG",
-          "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-A03",
-      "name": "Gemini CLI",
-      "type": "agent",
-      "state": "published",
-      "introduction": "Google 的终端 Agent 项目，通过项目工具和扩展接口连接模型与开发环境。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A02",
       "interpretation": [
         {
-          "title": "关注它如何处理陌生项目。",
-          "text": "工作区信任检查决定哪些扩展可以进入执行环境，这比只列“支持 MCP”更具体。"
+          "text": "兼容接口请求失败和 MCP 后空消息属于真实使用链路中的问题，本期不将这版泛化为“编程能力增强”。",
+          "title": "连接稳定性值得和新功能一起展示。"
         },
         {
-          "title": "发布通道本身是重要字段。",
-          "text": "同时存在稳定、预览和 nightly；资料要保留通道，用户和 AI 才能读清变更适用的版本。"
+          "text": "插件管理的 JSON 输出让其他程序更容易读取状态，适合作为 Agent 生态连接材料。",
+          "title": "可管理性也在演进。"
         }
       ],
+      "introduction": "Anthropic 的编程 Agent，通过项目上下文、终端工具及插件完成持续开发任务。",
+      "name": "Claude Code",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方 CHANGELOG",
+          "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+        }
+      ],
+      "state": "published",
+      "type": "agent"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
+          "kind": "table",
           "rows": [
             [
               "终端 CLI",
@@ -1874,12 +2101,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "已核实更新",
             "发布日期",
             "具体内容"
           ],
+          "kind": "table",
           "rows": [
             [
               "v0.59.0",
@@ -1893,41 +2120,41 @@
           "text": "依据：[v0.59.0 发布记录](https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0)。关联：[CW-M03 Gemini](/for-you#watch-cw-m03)、[CW-S01 Superpowers](/for-you#watch-cw-s01)。"
         }
       ],
-      "sources": [
-        {
-          "title": "v0.59.0 发布记录",
-          "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-A04",
-      "name": "OpenHands",
-      "type": "agent",
-      "state": "published",
-      "introduction": "围绕软件开发 Agent 的开源生态；当前主仓库提供 Agent Canvas，用一个控制台连接本地、远程或云端 Agent。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A03",
       "interpretation": [
         {
-          "title": "当前主仓库的重点已是多 Agent 控制台。",
-          "text": "它可连接不同 Agent 后端，应展示这个现状，而不是沿用早期单一自主编程工具的介绍。"
+          "text": "工作区信任检查决定哪些扩展可以进入执行环境，这比只列“支持 MCP”更具体。",
+          "title": "关注它如何处理陌生项目。"
         },
         {
-          "title": "运行位置和触发方式可以分别配置。",
-          "text": "Canvas 连接不同后端，自动化服务决定何时启动工作；这两份材料能解释它如何持续运行。"
+          "text": "同时存在稳定、预览和 nightly；资料要保留通道，用户和 AI 才能读清变更适用的版本。",
+          "title": "发布通道本身是重要字段。"
         }
       ],
+      "introduction": "Google 的终端 Agent 项目，通过项目工具和扩展接口连接模型与开发环境。",
+      "name": "Gemini CLI",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "v0.59.0 发布记录",
+          "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0"
+        }
+      ],
+      "state": "published",
+      "type": "agent"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
+          "kind": "table",
           "rows": [
             [
               "Agent Canvas 控制台；底层 Agent Server",
@@ -1938,11 +2165,11 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "组件",
             "当前明确承担的工作"
           ],
+          "kind": "table",
           "rows": [
             [
               "OpenHands / Agent Canvas",
@@ -1963,41 +2190,41 @@
           "text": "依据：[OpenHands 当前 README](https://github.com/OpenHands/OpenHands)。关联：[CW-H04 OpenHands SDK](/for-you#watch-cw-h04)。本条按生态主体计一项，SDK 单独解释运行机制，不重复全文。"
         }
       ],
-      "sources": [
-        {
-          "title": "OpenHands 当前 README",
-          "url": "https://github.com/OpenHands/OpenHands",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-A05",
-      "name": "Browser Use",
-      "type": "agent",
-      "state": "published",
-      "introduction": "让 Agent 操作浏览器的开源项目，把网页观察与交互接入模型执行过程。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A04",
       "interpretation": [
         {
-          "title": "错误是否可见会影响后续动作。",
-          "text": "未知工具返回错误后，上层 Agent 才有机会重试或调整；把失败包装成成功会污染整个执行过程。"
+          "text": "它可连接不同 Agent 后端，应展示这个现状，而不是沿用早期单一自主编程工具的介绍。",
+          "title": "当前主仓库的重点已是多 Agent 控制台。"
         },
         {
-          "title": "浏览器 Agent 也依赖底层运行组件。",
-          "text": "发布记录中的 BrowserHarness 版本应保留，不能只记录最外层模型名称。"
+          "text": "Canvas 连接不同后端，自动化服务决定何时启动工作；这两份材料能解释它如何持续运行。",
+          "title": "运行位置和触发方式可以分别配置。"
         }
       ],
+      "introduction": "围绕软件开发 Agent 的开源生态；当前主仓库提供 Agent Canvas，用一个控制台连接本地、远程或云端 Agent。",
+      "name": "OpenHands",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "OpenHands 当前 README",
+          "url": "https://github.com/OpenHands/OpenHands"
+        }
+      ],
+      "state": "published",
+      "type": "agent"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
+          "kind": "table",
           "rows": [
             [
               "Python Agent 库与浏览器集成",
@@ -2008,12 +2235,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "已核实更新",
             "发布日期",
             "具体内容"
           ],
+          "kind": "table",
           "rows": [
             [
               "0.13.10",
@@ -2027,54 +2254,46 @@
           "text": "依据：[官方项目](https://github.com/browser-use/browser-use)、[发布记录](https://github.com/browser-use/browser-use/releases)。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方项目",
-          "url": "https://github.com/browser-use/browser-use",
-          "coverage": "link_only"
-        },
-        {
-          "title": "发布记录",
-          "url": "https://github.com/browser-use/browser-use/releases",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-A06",
-      "name": "OpenClaw",
-      "type": "agent",
-      "state": "published",
-      "introduction": "连接消息入口、模型、工具与技能的个人 AI 助手项目，支持持续维护个人 Agent 的工作环境。",
-      "checked_at": "2026-09-21",
+      "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A05",
       "interpretation": [
         {
-          "title": "技能积累可以跨越单个工作区。",
-          "text": "Skill Workshop 记录可持续保留的技能集合，这是理解个人 Agent 怎样积累工作方法的具体入口。"
+          "text": "未知工具返回错误后，上层 Agent 才有机会重试或调整；把失败包装成成功会污染整个执行过程。",
+          "title": "错误是否可见会影响后续动作。"
         },
         {
-          "title": "持续运行需要可控更新。",
-          "text": "激活前预演和缓存复用分别处理更新稳定性与重复启动开销，能看出项目在补哪些运行环节。"
-        },
-        {
-          "text": "v2026.9.5让支持的插件在Gateway运行中安装、重载，并更新活动会话工具；同时修复会话历史保留、升级恢复、完成回执与后续答复问题。适用范围以该版本记录为准。",
-          "title": "常驻Agent的插件和会话可以继续维护"
-        },
-        {
-          "text": "官方发布说明披露部分长时间运行／端到端验证未完成，以及Android APK未随本次更新。本站未执行安装或升级；旧版本行仍保留原有核对日期。",
-          "title": "发布验证范围需要一起读"
+          "text": "发布记录中的 BrowserHarness 版本应保留，不能只记录最外层模型名称。",
+          "title": "浏览器 Agent 也依赖底层运行组件。"
         }
       ],
+      "introduction": "让 Agent 操作浏览器的开源项目，把网页观察与交互接入模型执行过程。",
+      "name": "Browser Use",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方项目",
+          "url": "https://github.com/browser-use/browser-use"
+        },
+        {
+          "coverage": "link_only",
+          "title": "发布记录",
+          "url": "https://github.com/browser-use/browser-use/releases"
+        }
+      ],
+      "state": "published",
+      "type": "agent"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
+          "kind": "table",
           "rows": [
             [
               "个人助手与 Gateway",
@@ -2085,12 +2304,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "已核实更新",
             "发布日期",
             "具体内容"
           ],
+          "kind": "table",
           "rows": [
             [
               "v2026.9.5",
@@ -2109,29 +2328,29 @@
           "text": "依据：[官方项目](https://github.com/openclaw/openclaw)、[发布记录](https://github.com/openclaw/openclaw/releases)。与 Skill 模块相互关联，但不把 OpenClaw 项目整体归成一个 Skill。"
         }
       ],
-      "sources": [
+      "checked_at": "2026-09-21",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A06",
+      "interpretation": [
         {
-          "title": "官方项目",
-          "url": "https://github.com/openclaw/openclaw",
-          "coverage": "link_only"
+          "text": "Skill Workshop 记录可持续保留的技能集合，这是理解个人 Agent 怎样积累工作方法的具体入口。",
+          "title": "技能积累可以跨越单个工作区。"
         },
         {
-          "title": "发布记录",
-          "url": "https://github.com/openclaw/openclaw/releases",
-          "coverage": "link_only"
+          "text": "激活前预演和缓存复用分别处理更新稳定性与重复启动开销，能看出项目在补哪些运行环节。",
+          "title": "持续运行需要可控更新。"
         },
         {
-          "coverage": "link_only",
-          "title": "v2026.9.5发布及验证说明",
-          "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.5"
+          "text": "v2026.9.5让支持的插件在Gateway运行中安装、重载，并更新活动会话工具；同时修复会话历史保留、升级恢复、完成回执与后续答复问题。适用范围以该版本记录为准。",
+          "title": "常驻Agent的插件和会话可以继续维护"
         },
         {
-          "coverage": "link_only",
-          "title": "v2026.9.5固定变更记录",
-          "url": "https://raw.githubusercontent.com/openclaw/openclaw/ec9c1a13db8938e5a3eaa51fca2e981cde2395a9/CHANGELOG/2026.9.5.md"
+          "text": "官方发布说明披露部分长时间运行／端到端验证未完成，以及Android APK未随本次更新。本站未执行安装或升级；旧版本行仍保留原有核对日期。",
+          "title": "发布验证范围需要一起读"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "introduction": "连接消息入口、模型、工具与技能的个人 AI 助手项目，支持持续维护个人 Agent 的工作环境。",
+      "name": "OpenClaw",
       "reading_materials": [
         {
           "approved": true,
@@ -2169,34 +2388,42 @@
           "upstream_revision": "v2026.9.5 / ec9c1a13db8938e5a3eaa51fca2e981cde2395a9",
           "url": "https://raw.githubusercontent.com/openclaw/openclaw/ec9c1a13db8938e5a3eaa51fca2e981cde2395a9/CHANGELOG/2026.9.5.md"
         }
-      ]
-    },
-    {
-      "id": "CW-A07",
-      "name": "Pi",
-      "type": "agent",
-      "state": "published",
-      "introduction": "可扩展的编程 Agent 工具包，同时提供终端入口、Agent 核心与模型调用组件。",
-      "checked_at": "2026-09-11",
-      "interpretation": [
+      ],
+      "sources": [
         {
-          "title": "既能直接用，也能读它的 Agent 核心。",
-          "text": "终端入口与底层工具包分层，是 Pi 同时出现在 Agent 与 Harness 讨论中的原因；网站保留一个主体、多个关系。"
+          "coverage": "link_only",
+          "title": "官方项目",
+          "url": "https://github.com/openclaw/openclaw"
         },
         {
-          "title": "SDK 导入修复会影响嵌入式使用。",
-          "text": "已有应用加载 Pi 时是否意外带入实验代码，是比笼统“修复若干问题”更有用的版本信息。"
+          "coverage": "link_only",
+          "title": "发布记录",
+          "url": "https://github.com/openclaw/openclaw/releases"
+        },
+        {
+          "coverage": "link_only",
+          "title": "v2026.9.5发布及验证说明",
+          "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.5"
+        },
+        {
+          "coverage": "link_only",
+          "title": "v2026.9.5固定变更记录",
+          "url": "https://raw.githubusercontent.com/openclaw/openclaw/ec9c1a13db8938e5a3eaa51fca2e981cde2395a9/CHANGELOG/2026.9.5.md"
         }
       ],
+      "state": "published",
+      "type": "agent"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
+          "kind": "table",
           "rows": [
             [
               "编程 CLI、SDK 与扩展",
@@ -2207,12 +2434,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "已核实更新",
             "发布日期",
             "具体内容"
           ],
+          "kind": "table",
           "rows": [
             [
               "v0.85.1",
@@ -2226,45 +2453,53 @@
           "text": "依据：[官方项目](https://github.com/earendil-works/pi)、[发布记录](https://github.com/earendil-works/pi/releases)。关联：[CW-S01 Superpowers](/for-you#watch-cw-s01) 的 Pi 适配。运行权限继承宿主进程，项目自述没有内置权限系统；本页资料未实测隔离配置。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方项目",
-          "url": "https://github.com/earendil-works/pi",
-          "coverage": "link_only"
-        },
-        {
-          "title": "发布记录",
-          "url": "https://github.com/earendil-works/pi/releases",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-S01",
-      "name": "Superpowers",
-      "type": "skill",
-      "state": "published",
-      "introduction": "将需求澄清、计划、测试、调试与验收组织成一套编程 Agent 工作流程。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A07",
       "interpretation": [
         {
-          "title": "关注技能之间怎样衔接。",
-          "text": "它的主体是一整套开发流程；只摘出一条提示词会漏掉设计、执行与验证的连接关系。"
+          "text": "终端入口与底层工具包分层，是 Pi 同时出现在 Agent 与 Harness 讨论中的原因；网站保留一个主体、多个关系。",
+          "title": "既能直接用，也能读它的 Agent 核心。"
         },
         {
-          "title": "宿主适配是实际内容的一部分。",
-          "text": "官方 README 分别列出多种 Agent 入口和 Pi 扩展；具体加载方式跟随宿主，不写“一次安装 everywhere”。"
+          "text": "已有应用加载 Pi 时是否意外带入实验代码，是比笼统“修复若干问题”更有用的版本信息。",
+          "title": "SDK 导入修复会影响嵌入式使用。"
         }
       ],
+      "introduction": "可扩展的编程 Agent 工具包，同时提供终端入口、Agent 核心与模型调用组件。",
+      "name": "Pi",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方项目",
+          "url": "https://github.com/earendil-works/pi"
+        },
+        {
+          "coverage": "link_only",
+          "title": "发布记录",
+          "url": "https://github.com/earendil-works/pi/releases"
+        }
+      ],
+      "state": "published",
+      "type": "agent"
+    },
+    {
+      "attention": {
+        "display_value": "284.8k",
+        "growth_7d": null,
+        "kind": "repository_stars",
+        "observed_at": "2026-09-11",
+        "precision": "github_page_approximate",
+        "source_url": "https://github.com/obra/superpowers"
+      },
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "代表技能",
             "具体做什么",
             "在页面上解释的价值"
           ],
+          "kind": "table",
           "rows": [
             [
               "brainstorming",
@@ -2297,48 +2532,48 @@
           "text": "依据：[官方 README 与技能列表](https://github.com/obra/superpowers)。关联：[CW-A07 Pi](/for-you#watch-cw-a07)、[CW-A03 Gemini CLI](/for-you#watch-cw-a03)。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方 README 与技能列表",
-          "url": "https://github.com/obra/superpowers",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested",
-      "attention": {
-        "kind": "repository_stars",
-        "display_value": "284.8k",
-        "observed_at": "2026-09-11",
-        "precision": "github_page_approximate",
-        "source_url": "https://github.com/obra/superpowers",
-        "growth_7d": null
-      }
-    },
-    {
-      "id": "CW-S02",
-      "name": "Anthropic Skills",
-      "type": "skill",
-      "state": "published",
-      "introduction": "Anthropic 公开的技能集合，展示如何把任务说明、脚本和材料组织成可加载的技能。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-S01",
       "interpretation": [
         {
-          "title": "这里可以读到技能由哪些材料组成。",
-          "text": "独立目录里的说明、脚本和资源，是理解 Skill 如何被 Agent 加载的直接样本。"
+          "text": "它的主体是一整套开发流程；只摘出一条提示词会漏掉设计、执行与验证的连接关系。",
+          "title": "关注技能之间怎样衔接。"
         },
         {
-          "title": "集合内部的许可也有区别。",
-          "text": "官方明确文档技能属于源码可见材料，其他许多技能使用 Apache 2.0；不能给整个集合统一贴上“全部开源可任意复用”。"
+          "text": "官方 README 分别列出多种 Agent 入口和 Pi 扩展；具体加载方式跟随宿主，不写“一次安装 everywhere”。",
+          "title": "宿主适配是实际内容的一部分。"
         }
       ],
+      "introduction": "将需求澄清、计划、测试、调试与验收组织成一套编程 Agent 工作流程。",
+      "name": "Superpowers",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方 README 与技能列表",
+          "url": "https://github.com/obra/superpowers"
+        }
+      ],
+      "state": "published",
+      "type": "skill"
+    },
+    {
+      "attention": {
+        "display_value": "175.6k",
+        "growth_7d": null,
+        "kind": "repository_stars",
+        "observed_at": "2026-09-11",
+        "precision": "github_page_approximate",
+        "source_url": "https://github.com/anthropics/skills"
+      },
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "代表技能 / 材料",
             "具体做什么",
             "页面应保留的说明"
           ],
+          "kind": "table",
           "rows": [
             [
               "skill-creator",
@@ -2371,53 +2606,53 @@
           "text": "依据：[官方 README](https://github.com/anthropics/skills)、[技能目录](https://github.com/anthropics/skills/tree/main/skills)。关联：[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方 README",
-          "url": "https://github.com/anthropics/skills",
-          "coverage": "link_only"
-        },
-        {
-          "title": "技能目录",
-          "url": "https://github.com/anthropics/skills/tree/main/skills",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested",
-      "attention": {
-        "kind": "repository_stars",
-        "display_value": "175.6k",
-        "observed_at": "2026-09-11",
-        "precision": "github_page_approximate",
-        "source_url": "https://github.com/anthropics/skills",
-        "growth_7d": null
-      }
-    },
-    {
-      "id": "CW-S03",
-      "name": "Vercel Agent Skills",
-      "type": "skill",
-      "state": "published",
-      "introduction": "Vercel 将前端工程和网站运行经验整理成供编程 Agent 使用的技能集合。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-S02",
       "interpretation": [
         {
-          "title": "规则有明确对象。",
-          "text": "React 性能与界面检查各自有规则边界，应该展开代表内容，而不是统一叫作“前端优化神器”。"
+          "text": "独立目录里的说明、脚本和资源，是理解 Skill 如何被 Agent 加载的直接样本。",
+          "title": "这里可以读到技能由哪些材料组成。"
         },
         {
-          "title": "部署后优化从指标出发。",
-          "text": "vercel-optimize 先收集运行数据再查代码，这段流程值得阅读；它也意味着实际执行需要对应项目的数据访问条件。"
+          "text": "官方明确文档技能属于源码可见材料，其他许多技能使用 Apache 2.0；不能给整个集合统一贴上“全部开源可任意复用”。",
+          "title": "集合内部的许可也有区别。"
         }
       ],
+      "introduction": "Anthropic 公开的技能集合，展示如何把任务说明、脚本和材料组织成可加载的技能。",
+      "name": "Anthropic Skills",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方 README",
+          "url": "https://github.com/anthropics/skills"
+        },
+        {
+          "coverage": "link_only",
+          "title": "技能目录",
+          "url": "https://github.com/anthropics/skills/tree/main/skills"
+        }
+      ],
+      "state": "published",
+      "type": "skill"
+    },
+    {
+      "attention": {
+        "display_value": "31.0k",
+        "growth_7d": null,
+        "kind": "repository_stars",
+        "observed_at": "2026-09-11",
+        "precision": "github_page_approximate",
+        "source_url": "https://github.com/vercel-labs/agent-skills"
+      },
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "代表技能",
             "具体内容",
             "值得读的材料"
           ],
+          "kind": "table",
           "rows": [
             [
               "react-best-practices",
@@ -2450,24 +2685,33 @@
           "text": "依据：[官方 README](https://github.com/vercel-labs/agent-skills)。本次整理未访问用户的 Vercel 运行数据或安装技能。"
         }
       ],
-      "sources": [
+      "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-S03",
+      "interpretation": [
         {
-          "title": "官方 README",
-          "url": "https://github.com/vercel-labs/agent-skills",
-          "coverage": "link_only"
+          "text": "React 性能与界面检查各自有规则边界，应该展开代表内容，而不是统一叫作“前端优化神器”。",
+          "title": "规则有明确对象。"
+        },
+        {
+          "text": "vercel-optimize 先收集运行数据再查代码，这段流程值得阅读；它也意味着实际执行需要对应项目的数据访问条件。",
+          "title": "部署后优化从指标出发。"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested",
-      "attention": {
-        "kind": "repository_stars",
-        "display_value": "31.0k",
-        "observed_at": "2026-09-11",
-        "precision": "github_page_approximate",
-        "source_url": "https://github.com/vercel-labs/agent-skills",
-        "growth_7d": null
-      }
+      "introduction": "Vercel 将前端工程和网站运行经验整理成供编程 Agent 使用的技能集合。",
+      "name": "Vercel Agent Skills",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方 README",
+          "url": "https://github.com/vercel-labs/agent-skills"
+        }
+      ],
+      "state": "published",
+      "type": "skill"
     },
     {
+      "_position": 25,
       "blocks": [
         {
           "columns": [
@@ -2518,35 +2762,6 @@
       ],
       "introduction": "把需求澄清、测试、代码审阅等开发流程整理成 AI 编程助手可读取的技能；仓库作为技能来源集合。",
       "name": "Addy Osmani Agent Skills",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "title": "项目入口",
-          "url": "https://github.com/addyosmani/agent-skills"
-        },
-        {
-          "coverage": "link_only",
-          "title": "固定版本 README",
-          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/README.md"
-        },
-        {
-          "coverage": "link_only",
-          "title": "interview-me",
-          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/interview-me/SKILL.md"
-        },
-        {
-          "coverage": "link_only",
-          "title": "test-driven-development",
-          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/test-driven-development/SKILL.md"
-        },
-        {
-          "coverage": "link_only",
-          "title": "code-review-and-quality",
-          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/code-review-and-quality/SKILL.md"
-        }
-      ],
-      "type": "skill",
-      "state": "published",
       "reading_materials": [
         {
           "approved": true,
@@ -2631,34 +2846,46 @@
           "url": "https://github.com/addyosmani/agent-skills/tree/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39"
         }
       ],
-      "_position": 25
-    },
-    {
-      "id": "CW-H01",
-      "name": "DeepSeek Harness",
-      "type": "harness",
-      "state": "published",
-      "introduction": "基于 Cordis 插件系统的 Agent 运行项目，模型、工具、会话和执行循环都可通过插件组合。",
-      "checked_at": "2026-09-11",
-      "interpretation": [
+      "sources": [
         {
-          "title": "连执行循环本身都能替换。",
-          "text": "模型以外的会话、工具和循环也由插件提供，是理解这个项目区别于单个聊天界面的具体入口。"
+          "coverage": "link_only",
+          "title": "项目入口",
+          "url": "https://github.com/addyosmani/agent-skills"
         },
         {
-          "title": "同一事件流支撑查看与恢复。",
-          "text": "Trajectory 和会话恢复基于相同记录，便于理解一次运行如何被保存、检查和继续。"
+          "coverage": "link_only",
+          "title": "固定版本 README",
+          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "interview-me",
+          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/interview-me/SKILL.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "test-driven-development",
+          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/test-driven-development/SKILL.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "code-review-and-quality",
+          "url": "https://github.com/addyosmani/agent-skills/blob/be4e44a9fbc5e8df0beaefadbb28bd22ee61cc39/skills/code-review-and-quality/SKILL.md"
         }
       ],
+      "state": "published",
+      "type": "skill"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "运行循环与扩展",
             "状态与恢复",
             "使用入口",
             "当前阶段"
           ],
+          "kind": "table",
           "rows": [
             [
               "标准、PTC、极简、创造模式；内核管理插件及依赖，具体能力由插件提供",
@@ -2669,12 +2896,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "已核实版本",
             "发布日期",
             "具体变化"
           ],
+          "kind": "table",
           "rows": [
             [
               "v0.1.5-rc.2，标签 dsh-v0.1.5-rc.2",
@@ -2688,46 +2915,46 @@
           "text": "依据：[官方介绍](https://www.deepseek.com/harness/)、[发布记录](https://github.com/deepseek-ai/deepseek-harness/releases)。关联：[CW-M06 DeepSeek 模型](/for-you#watch-cw-m06)。模型与 Harness 独立建档，不将开发者预览写成生产验收结果。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方介绍",
-          "url": "https://www.deepseek.com/harness/",
-          "coverage": "link_only"
-        },
-        {
-          "title": "发布记录",
-          "url": "https://github.com/deepseek-ai/deepseek-harness/releases",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-H02",
-      "name": "Deep Agents",
-      "type": "harness",
-      "state": "published",
-      "introduction": "LangChain 生态中提供规划、文件操作和子 Agent 等能力的 Agent Harness，支持在现有运行机制上扩展。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-H01",
       "interpretation": [
         {
-          "title": "核心库与成品入口是两份更新。",
-          "text": "安装核心 SDK 的开发者和使用 deepagents-code 的用户，需要读取不同的版本记录。"
+          "text": "模型以外的会话、工具和循环也由插件提供，是理解这个项目区别于单个聊天界面的具体入口。",
+          "title": "连执行循环本身都能替换。"
         },
         {
-          "title": "子 Agent 的模式命名属于调用契约。",
-          "text": "handoff 改为 isolated 是使用代码和文档时需要对应的字段变化，值得保留，不扩写成未证实的能力飞跃。"
+          "text": "Trajectory 和会话恢复基于相同记录，便于理解一次运行如何被保存、检查和继续。",
+          "title": "同一事件流支撑查看与恢复。"
         }
       ],
+      "introduction": "基于 Cordis 插件系统的 Agent 运行项目，模型、工具、会话和执行循环都可通过插件组合。",
+      "name": "DeepSeek Harness",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方介绍",
+          "url": "https://www.deepseek.com/harness/"
+        },
+        {
+          "coverage": "link_only",
+          "title": "发布记录",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/releases"
+        }
+      ],
+      "state": "published",
+      "type": "harness"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "运行循环与扩展",
             "状态与上下文",
             "使用入口",
             "组件关系"
           ],
+          "kind": "table",
           "rows": [
             [
               "工具、规划、子 Agent 与可扩展中间件",
@@ -2738,12 +2965,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "包 / 版本",
             "发布日期",
             "具体变化"
           ],
+          "kind": "table",
           "rows": [
             [
               "deepagents 0.7.13",
@@ -2762,51 +2989,51 @@
           "text": "依据：[官方概览](https://docs.langchain.com/oss/python/deepagents/overview)、[核心 0.7.13](https://github.com/langchain-ai/deepagents/releases/tag/deepagents==0.7.13)、[各包发布记录](https://github.com/langchain-ai/deepagents/releases)。关联：[CW-M05 GLM](/for-you#watch-cw-m05)。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方概览",
-          "url": "https://docs.langchain.com/oss/python/deepagents/overview",
-          "coverage": "link_only"
-        },
-        {
-          "title": "核心 0.7.13",
-          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents==0.7.13",
-          "coverage": "link_only"
-        },
-        {
-          "title": "各包发布记录",
-          "url": "https://github.com/langchain-ai/deepagents/releases",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-H03",
-      "name": "Claude Agent SDK",
-      "type": "harness",
-      "state": "published",
-      "introduction": "将 Claude Code 的工具循环、上下文管理与工具能力提供为 Python / TypeScript 库。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-H02",
       "interpretation": [
         {
-          "title": "它提供的是运行过程。",
-          "text": "文件操作、工具调用和上下文管理已在库中组织起来；页面应把这点写清，而不仅标注“支持 Claude”。"
+          "text": "安装核心 SDK 的开发者和使用 deepagents-code 的用户，需要读取不同的版本记录。",
+          "title": "核心库与成品入口是两份更新。"
         },
         {
-          "title": "运行在哪里是关键区别。",
-          "text": "Agent SDK 在调用方进程中运行，Managed Agents 由厂商托管；这决定读者应继续查看哪份部署材料。"
+          "text": "handoff 改为 isolated 是使用代码和文档时需要对应的字段变化，值得保留，不扩写成未证实的能力飞跃。",
+          "title": "子 Agent 的模式命名属于调用契约。"
         }
       ],
+      "introduction": "LangChain 生态中提供规划、文件操作和子 Agent 等能力的 Agent Harness，支持在现有运行机制上扩展。",
+      "name": "Deep Agents",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方概览",
+          "url": "https://docs.langchain.com/oss/python/deepagents/overview"
+        },
+        {
+          "coverage": "link_only",
+          "title": "核心 0.7.13",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents==0.7.13"
+        },
+        {
+          "coverage": "link_only",
+          "title": "各包发布记录",
+          "url": "https://github.com/langchain-ai/deepagents/releases"
+        }
+      ],
+      "state": "published",
+      "type": "harness"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "运行循环与扩展",
             "状态与恢复",
             "执行控制",
             "使用入口"
           ],
+          "kind": "table",
           "rows": [
             [
               "内置工具、MCP、子 Agent、Skills 与插件",
@@ -2817,12 +3044,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "本次材料节点",
             "日期口径",
             "能明确解释的内容"
           ],
+          "kind": "table",
           "rows": [
             [
               "官方 SDK 概览",
@@ -2836,41 +3063,41 @@
           "text": "依据：[官方概览](https://code.claude.com/docs/en/agent-sdk/overview)。关联：[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)。本页资料未核 SDK 包的当前版本，不把概览中的既有能力写成新发布功能。"
         }
       ],
-      "sources": [
-        {
-          "title": "官方概览",
-          "url": "https://code.claude.com/docs/en/agent-sdk/overview",
-          "coverage": "link_only"
-        }
-      ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
-    },
-    {
-      "id": "CW-H04",
-      "name": "OpenHands Software Agent SDK",
-      "type": "harness",
-      "state": "published",
-      "introduction": "面向软件任务的 Agent SDK 与服务接口，组织工具、对话、工作区和执行事件。",
       "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-H03",
       "interpretation": [
         {
-          "title": "对话与工作区是程序里的明确对象。",
-          "text": "官方文档分别提供工具、事件和工作区接口，适合继续阅读一个软件 Agent 的运行状态如何组织。"
+          "text": "文件操作、工具调用和上下文管理已在库中组织起来；页面应把这点写清，而不仅标注“支持 Claude”。",
+          "title": "它提供的是运行过程。"
         },
         {
-          "title": "界面与执行服务可以分开部署。",
-          "text": "这解释了同一个控制台为何能连接不同主机，也让读者知道该去哪个项目查运行问题。"
+          "text": "Agent SDK 在调用方进程中运行，Managed Agents 由厂商托管；这决定读者应继续查看哪份部署材料。",
+          "title": "运行在哪里是关键区别。"
         }
       ],
+      "introduction": "将 Claude Code 的工具循环、上下文管理与工具能力提供为 Python / TypeScript 库。",
+      "name": "Claude Agent SDK",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "官方概览",
+          "url": "https://code.claude.com/docs/en/agent-sdk/overview"
+        }
+      ],
+      "state": "published",
+      "type": "harness"
+    },
+    {
       "blocks": [
         {
-          "kind": "table",
           "columns": [
             "运行循环与扩展",
             "状态与上下文",
             "执行环境",
             "使用入口"
           ],
+          "kind": "table",
           "rows": [
             [
               "命令、文件、浏览器、MCP 与自定义工具",
@@ -2881,12 +3108,12 @@
           ]
         },
         {
-          "kind": "table",
           "columns": [
             "本次材料节点",
             "日期口径",
             "能明确解释的内容"
           ],
+          "kind": "table",
           "rows": [
             [
               "官方 SDK 概览与组件职责",
@@ -2900,26 +3127,43 @@
           "text": "依据：[SDK 官方文档](https://docs.openhands.dev/sdk)、[官方组件职责](https://github.com/OpenHands/OpenHands#repository-boundaries)、[SDK 仓库](https://github.com/OpenHands/software-agent-sdk)。关联：[CW-A04 OpenHands](/for-you#watch-cw-a04)。"
         }
       ],
-      "sources": [
+      "checked_at": "2026-09-11",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-H04",
+      "interpretation": [
         {
-          "title": "SDK 官方文档",
-          "url": "https://docs.openhands.dev/sdk",
-          "coverage": "link_only"
+          "text": "官方文档分别提供工具、事件和工作区接口，适合继续阅读一个软件 Agent 的运行状态如何组织。",
+          "title": "对话与工作区是程序里的明确对象。"
         },
         {
-          "title": "官方组件职责",
-          "url": "https://github.com/OpenHands/OpenHands#repository-boundaries",
-          "coverage": "link_only"
-        },
-        {
-          "title": "SDK 仓库",
-          "url": "https://github.com/OpenHands/software-agent-sdk",
-          "coverage": "link_only"
+          "text": "这解释了同一个控制台为何能连接不同主机，也让读者知道该去哪个项目查运行问题。",
+          "title": "界面与执行服务可以分开部署。"
         }
       ],
-      "evidence_status": "official_materials_reviewed_not_runtime_tested"
+      "introduction": "面向软件任务的 Agent SDK 与服务接口，组织工具、对话、工作区和执行事件。",
+      "name": "OpenHands Software Agent SDK",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "title": "SDK 官方文档",
+          "url": "https://docs.openhands.dev/sdk"
+        },
+        {
+          "coverage": "link_only",
+          "title": "官方组件职责",
+          "url": "https://github.com/OpenHands/OpenHands#repository-boundaries"
+        },
+        {
+          "coverage": "link_only",
+          "title": "SDK 仓库",
+          "url": "https://github.com/OpenHands/software-agent-sdk"
+        }
+      ],
+      "state": "published",
+      "type": "harness"
     },
     {
+      "_position": 30,
       "aliases": [
         "Nous Hermes",
         "Hermes"
@@ -3092,8 +3336,7 @@
         }
       ],
       "state": "published",
-      "type": "agent",
-      "_position": 30
+      "type": "agent"
     },
     {
       "_position": 31,
@@ -3389,5 +3632,8 @@
       "state": "published",
       "type": "skill"
     }
-  ]
+  ],
+  "reviewed_at": "2026-09-25",
+  "schema_version": "fieldtofit.watch.v1",
+  "title": "持续关注"
 }

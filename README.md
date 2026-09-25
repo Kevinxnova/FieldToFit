@@ -34,15 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.15](CHANGELOG.md#v1.5.15)** · [fieldtofit-v1.5.15](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.15)
+**当前源码版本：[v1.5.16](CHANGELOG.md#v1.5.16)** · [fieldtofit-v1.5.16](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.16)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 站点地图改为一次只读事务获取公开集合、归并关系和真实更新时间，省去重复的远程维护状态查询；正式响应从约 8.7–9.1 秒降至 2.11–2.67 秒。
-- 保留同源公开校验、草稿与下架排除、归并排除和无缓存规则；现有介绍及正文不改写。
-- Google 域名 DNS 验证已完成，地图已提交且实际网址测试通过；地图报告仍显示无法抓取，尚未确认成功读取或收录。
+- 发布用户确认的 A–F：Gemini 3.8 TTS、Antigravity SDK 本地模型、Meta Muse、Strands Harness、FLUX 3 Action 与 Gemini Live Avatar；当前 39 条动态、33 项持续关注。
+- 本期速览同步五项新动态；Strands 同时加入持续关注的 Harness 分类，以表格说明默认机制、采用入口及限制。既有动态仍保留。
+- Antigravity、Strands 与 FLUX 提供 10 份去重后的固定版本原文，包括 README、采用说明、许可证及 NOTICE；网页和 MCP 共享材料，未取得再分发许可的公告仍仅链接。
+- 保留真实原文日期、本站核对日及使用边界；FLUX 代码文档的 Apache-2.0 不替代模型权重的自定义许可。两张模型图表保持此前已审核快照。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
