@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.17"></a>
+## v1.5.17 · 三项动态与 Arena 最新快照 · 2026-09-26
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布已确认的 LFM2.5-VL-DSpark、Transformers GGUF 与 Gemini Connected Apps；42 条动态、33 项持续关注，本期速览同步，保留 Muse 与 Live Avatar。
+- Arena 采用 9 月 25 日来源数据、9 月 26 日核对：92 个可绘制配置，新增 Muse Spark 1.3、Opus 5.5、MiMo V2.6 等点；旗舰筛选同步至 9 个有完整坐标的系列。
+- AA 保留此前 133 点及原核对日期；Muse Spark 1.3 max／xhigh 已在其中。两站评分、价格单位和缺项分别展示，不互相替代。
+- 为网页与 MCP 提供固定提交的 Transformers GGUF 文档及 Apache-2.0 许可证全文；其余官网材料保持仅链接，性能数字保留作者实测与本站未复测边界。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the approved LFM2.5-VL-DSpark, Transformers GGUF and Gemini Connected Apps developments: 42 news items and 33 watch profiles, with an updated overview retaining Muse and Live Avatar.
+- Refresh Arena using September 25 source data reviewed on September 26: 92 plotted configurations, including Muse Spark 1.3, Opus 5.5 and MiMo V2.6; nine flagship series now have complete coordinates.
+- Preserve the existing 133-point AA snapshot and its review date, including Muse Spark 1.3 max/xhigh. Keep each source’s score, price unit and missing-data disclosures separate.
+- Share fixed-revision Transformers GGUF documentation and its Apache-2.0 license through web and MCP. Other announcements remain link-only, and reported benchmarks are not presented as independent FieldToFit tests.
+<!-- release-summary:en:end -->
+
+对应 REQ-4、REQ-6-2、REQ-7、REQ-8-9、REQ-9、REQ-11。修复长模型版本号撑破手机动态卡片的问题。日期证据校验新增官方模型卡域名 huggingface.co，仍限制 HTTPS、精确域名和安全 URL。未变更数据库结构、凭据、注册或执行权限。实际验证及部署状态见[本批验收](docs/validation/2026-09-26-editorial.md)。
+
 <a id="v1.5.16"></a>
 ## v1.5.16 · 六项动态与 Strands Harness 材料更新 · 2026-09-25
 

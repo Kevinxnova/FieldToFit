@@ -3718,8 +3718,8 @@ h1 {
 .news-glance a { display: grid; grid-template-columns: 1fr auto; gap: 5px 14px; padding: 13px 0; font-size: 13px; }
 .news-glance strong { grid-column: 1 / -1; }
 .news-glance a span { color: var(--muted); line-height: 1.7; }
-.news-list { display: grid; gap: 16px; }
-.news-card { border: 1px solid var(--line); border-radius: 12px; padding: 25px; background: var(--surface); }
+.news-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.news-card { min-width: 0; overflow-wrap: anywhere; border: 1px solid var(--line); border-radius: 12px; padding: 25px; background: var(--surface); }
 .news-card h4 { font-size: 21px; line-height: 1.5; margin: 10px 0 12px; }
 .news-card > p { font-size: 14px; line-height: 1.85; }
 .news-card .news-meta { font-size: 11px; color: var(--muted); }

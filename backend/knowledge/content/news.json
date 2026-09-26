@@ -4,6 +4,337 @@
     {
       "_position": 1,
       "aliases": [
+        "LFM2.5-VL-DSpark"
+      ],
+      "checked_at": "2026-09-26",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-24",
+      "highlight": true,
+      "id": "D-40",
+      "interpretation": [
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "约 2.8 亿参数的辅助模型，需要配合目标视觉模型工作，不能当成独立的同能力视觉模型。",
+          "title": "它是什么"
+        },
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "官方在 MLX／M5 Max 上报告生成阶段约 2.30–3.13 倍加速，完整任务约 1.56–2.62 倍；视觉编码与输入处理没有因此一起加速。硬件、输入长度和后端都会影响收益，本站未复现。",
+          "title": "具体看什么"
+        },
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "需要支持 DSpark 的后端。模型卡将许可标为 LFM1.0 自定义许可，不能把开放权重写成无限制商用。",
+          "title": "采用时先核对"
+        }
+      ],
+      "name": "LFM2.5-VL-DSpark",
+      "note": "未在本机部署或复现速度及输出质量。；完整许可条款与所需后端的稳定版本仍需采用者核对。；官方 H100 段落存在疑似数字笔误，本稿不采用该组数值。；版本：LFM2.5-VL-3B-DSpark@af77e9306a26e8625fde74d2a3051ab6d21bd955。官方网页仅链接；MCP可读本站解读、出处和材料范围。",
+      "organization": "Liquid AI",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-26",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／文档",
+          "reason": "原始网页仅链接；允许收录的固定版本文档另列。",
+          "retrieved_at": "2026-09-25T23:50:18.402485+00:00",
+          "rights": {
+            "basis": "仅链接；未确认官网正文再分发许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "LFM2.5-VL-DSpark · 官方发布",
+          "upstream_revision": "LFM2.5-VL-3B-DSpark@af77e9306a26e8625fde74d2a3051ab6d21bd955",
+          "url": "https://huggingface.co/blog/liquidai/lfm2-5-vl-dspark"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-26",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／文档",
+          "reason": "原始网页仅链接；允许收录的固定版本文档另列。",
+          "retrieved_at": "2026-09-25T23:50:18.174840+00:00",
+          "rights": {
+            "basis": "仅链接；未确认官网正文再分发许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "LFM2.5-VL-DSpark · 官方材料",
+          "upstream_revision": "LFM2.5-VL-3B-DSpark@af77e9306a26e8625fde74d2a3051ab6d21bd955",
+          "url": "https://huggingface.co/api/models/LiquidAI/LFM2.5-VL-3B-DSpark"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-09-24",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "LFM2.5-VL-DSpark · 官方发布",
+          "url": "https://huggingface.co/blog/liquidai/lfm2-5-vl-dspark"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "LFM2.5-VL-DSpark · 官方材料",
+          "url": "https://huggingface.co/api/models/LiquidAI/LFM2.5-VL-3B-DSpark"
+        }
+      ],
+      "state": "published",
+      "summary": "Liquid AI 发布实验性草稿模型，配合 LFM2.5-VL-3B 使用。它先生成候选 token，再由目标模型验证，重点加速回答的生成阶段。",
+      "title": "LFM2.5-VL-DSpark：给视觉模型加一个小“草稿模型”，加速生成阶段"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "TransformersGGUF"
+      ],
+      "checked_at": "2026-09-26",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-22",
+      "highlight": true,
+      "id": "D-41",
+      "interpretation": [
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "模型可以保留量化格式执行，减少为加载而展开权重的开销；并可通过本地服务接口接入客户端。",
+          "title": "变化在哪里"
+        },
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "文档针对 Apple Silicon／MPS，首批聚焦 Qwen3.5 系列；需要 main 源码及匹配的 kernels，不能据此说稳定版已普遍支持全部模型。",
+          "title": "当前支持范围"
+        },
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "缺少对应量化内核时可能在加载时反量化，内存占用会增加。官方与 llama.cpp 的测试口径不同，本站不将图中数字当作严格同条件胜负，也未做复测。",
+          "title": "特别注意回退"
+        }
+      ],
+      "name": "Transformers GGUF",
+      "note": "未在实际硬件验证安装、内存、批处理及性能。；跟踪 main 文档，不承诺某个稳定发布版本已完整支持。；版本：transformers-main-GGUF-review-2026-09-26。附固定版本GGUF文档与Apache许可正文。",
+      "organization": "Hugging Face",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-26",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／文档",
+          "reason": "原始网页仅链接；允许收录的固定版本文档另列。",
+          "retrieved_at": "2026-09-25T23:50:18.410424+00:00",
+          "rights": {
+            "basis": "仅链接；未确认官网正文再分发许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Transformers GGUF · 官方发布",
+          "upstream_revision": "transformers-main-GGUF-review-2026-09-26",
+          "url": "https://huggingface.co/blog/transformers-llama-cpp-quants"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-26",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／文档",
+          "reason": "原始网页仅链接；允许收录的固定版本文档另列。",
+          "retrieved_at": "2026-09-25T23:50:18.574820+00:00",
+          "rights": {
+            "basis": "仅链接；未确认官网正文再分发许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Transformers GGUF · 官方材料",
+          "upstream_revision": "transformers-main-GGUF-review-2026-09-26",
+          "url": "https://huggingface.co/docs/transformers/main/quantization/gguf"
+        },
+        {
+          "approved": true,
+          "body": "<!--Copyright 2026 The HuggingFace Team. All rights reserved.\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with\nthe License. You may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on\nan \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\n⚠️ Note that this file is in Markdown but contains specific syntax for our doc-builder (similar to MDX) that may not be\nrendered properly in your Markdown viewer.\n\n-->\n\n# GGUF\n\n[GGUF](https://github.com/ggerganov/ggml/blob/master/docs/gguf.md) is a single-file format used to store models for inference with [GGML](https://github.com/ggerganov/ggml), containing the model metadata and tensors. It supports many quantized data types (refer to the [quantization type table](https://hf.co/docs/hub/en/gguf#quantization-types)), which saves a significant amount of memory.\n\n<div class=\"flex justify-center\">\n    <img src=\"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hub/gguf-spec.png\"/>\n</div>\n\n\n## Load GGUF models\n\nInstall [kernels](https://huggingface.co/docs/kernels/index), otherwise the packed path falls back to full [dequantization](#dequantize) at load.\n\n```bash\npip install kernels\n```\n\nWeights stay packed when the Hub kernel [ggml-org/ggml-quantization](https://huggingface.co/ggml-org/ggml-quantization) is available. The loader defaults to MPS when that kernel is present and runs matmuls directly on the packed blocks. If the kernel isn't available, the model is dequantized at load.\n\n```py\nfrom transformers import AutoModelForCausalLM, AutoTokenizer\n\nmodel_id = \"unsloth/Qwen3.5-4B-GGUF\"\nfilename = \"Qwen3.5-4B-Q4_K_M.gguf\"\n\nmodel = AutoModelForCausalLM.from_pretrained(model_id, gguf_file=filename)\ntokenizer = AutoTokenizer.from_pretrained(model_id, gguf_file=filename)\n```\n\nThe same load works for Qwen3.5 MoE.\n\n```py\nmoe_model_id = \"unsloth/Qwen3.5-35B-A3B-GGUF\"\nmoe_filename = \"Qwen3.5-35B-A3B-Q4_K_M.gguf\"\n\nmoe_model = AutoModelForCausalLM.from_pretrained(moe_model_id, gguf_file=moe_filename)\nmoe_tokenizer = AutoTokenizer.from_pretrained(moe_model_id, gguf_file=moe_filename)\n```\n\nThe packed path currently supports Qwen3.5 and Qwen3.5 MoE. Packed loads use float32 automatically because it's faster on MPS. If you set another `dtype`, the loader returns a warning. Other architectures go through the legacy loader.\n\n## Attention\n\nOn MPS, with kernels installed, [ggml-attn](https://huggingface.co/kernels/ggml-org/ggml-attn) is the default attention when loading a GGUF file: the same flash-attention kernel llama.cpp uses for decode and prefill. If the kernel cannot be fetched, the model keeps its attention implementation. Passing `attn_implementation` (for example `\"sdpa\"`) always takes precedence.\n\nYou can also pass it explicitly:\n\n```py\nmodel = AutoModelForCausalLM.from_pretrained(\n    model_id, gguf_file=filename, attn_implementation=\"ggml-org/ggml-attn\"\n)\n```\n\n## Dequantize\n\nDequantizing unpacks every weight at load time and gives back a plain dense model. It is the fallback whenever the fast, compressed path doesn't apply. You can also ask for it explicitly with [`GgufConfig`].\n\n```py\nimport torch\n\nfrom transformers import AutoModelForCausalLM, GgufConfig\n\nquantization_config = GgufConfig(dequantize=True)\nmodel = AutoModelForCausalLM.from_pretrained(\n    model_id, gguf_file=filename, quantization_config=quantization_config, dtype=torch.bfloat16\n)\n```\n\nYou get a regular dense model in the `dtype` you passed.\n\nArchitectures other than Qwen3.5 and Qwen3.5 MoE go through the legacy loader, which always dequantizes.\n\n> [!TIP]\n> The legacy loader supports Llama, Mistral, Qwen2, Qwen2Moe, Phi3, Bloom, Falcon, StableLM, GPT2, Starcoder2, and [more](https://github.com/huggingface/transformers/blob/main/src/transformers/integrations/ggml.py).\n\n## Serve\n\n[transformers serve](../serve-cli/serving) lists each `.gguf` file in a repository as its own model. A GGUF model is named `<repo>:<file>.gguf`, since a repository holds\nseveral quantizations and the id has to say which one to load. Requests name it the same way.\n\n```shell\ntransformers serve unsloth/Qwen3.5-4B-GGUF:Qwen3.5-4B-Q4_K_M.gguf\n```\n",
+          "checked_at": "2026-09-26",
+          "coverage": "full_text",
+          "id": "transformers-1",
+          "locator": "docs/source/en/quantization/gguf.md；固定提交完整原文，相对引用以来源文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-26T05:59:55.484992+00:00",
+          "rights": {
+            "basis": "Apache-2.0，仅此仓库文档与代码；外部模型、图片和服务单独适用条款。",
+            "notice": "Copyright 2026 The HuggingFace Team. All rights reserved. 原始文档未经修改，保留版权与许可证；不复制外链图片。",
+            "url": "https://github.com/huggingface/transformers/blob/27166ea03f12c940f23176a904ab1d2ff1a3dcbb/LICENSE"
+          },
+          "title": "Transformers · docs/source/en/quantization/gguf.md",
+          "upstream_revision": "27166ea03f12c940f23176a904ab1d2ff1a3dcbb",
+          "url": "https://github.com/huggingface/transformers/blob/27166ea03f12c940f23176a904ab1d2ff1a3dcbb/docs/source/en/quantization/gguf.md"
+        },
+        {
+          "approved": true,
+          "body": "Copyright 2018- The Hugging Face team. All rights reserved.\n\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+          "checked_at": "2026-09-26",
+          "coverage": "full_text",
+          "id": "transformers-2",
+          "locator": "LICENSE；固定提交完整原文，相对引用以来源文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-26T05:59:55.484992+00:00",
+          "rights": {
+            "basis": "Apache-2.0，仅此仓库文档与代码；外部模型、图片和服务单独适用条款。",
+            "notice": "Copyright 2026 The HuggingFace Team. All rights reserved. 原始文档未经修改，保留版权与许可证；不复制外链图片。",
+            "url": "https://github.com/huggingface/transformers/blob/27166ea03f12c940f23176a904ab1d2ff1a3dcbb/LICENSE"
+          },
+          "title": "Transformers · LICENSE",
+          "upstream_revision": "27166ea03f12c940f23176a904ab1d2ff1a3dcbb",
+          "url": "https://github.com/huggingface/transformers/blob/27166ea03f12c940f23176a904ab1d2ff1a3dcbb/LICENSE"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T02",
+          "name": "Ollama",
+          "url": "https://fieldtofit.top/for-you#watch-cw-t02"
+        },
+        {
+          "id": "CW-A07",
+          "name": "Pi",
+          "url": "https://fieldtofit.top/for-you#watch-cw-a07"
+        },
+        {
+          "id": "CW-M07",
+          "name": "Qwen",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m07"
+        }
+      ],
+      "source_published_at": "2026-09-22",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Transformers GGUF · 官方发布",
+          "url": "https://huggingface.co/blog/transformers-llama-cpp-quants"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Transformers GGUF · 官方材料",
+          "url": "https://huggingface.co/docs/transformers/main/quantization/gguf"
+        }
+      ],
+      "state": "published",
+      "summary": "Hugging Face 将 ggml 量化执行接入 Transformers，允许开发者沿用 Python 模型加载接口运行 GGUF 模型。",
+      "title": "Transformers 开始高效运行 GGUF：在熟悉的 Python 接口里使用本地量化模型"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "GeminiConnectedApps"
+      ],
+      "checked_at": "2026-09-26",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-23",
+      "highlight": true,
+      "id": "D-42",
+      "interpretation": [
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "项目管理、设计与网站制作工具进入同一对话入口，关注点是能否与自己的现有工作配合。",
+          "title": "值得看什么"
+        },
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "官方给出的入口是 Gemini 设置中的应用连接，连接后可用 @ 指定应用，或在对话中提出相关请求。",
+          "title": "怎么开始"
+        },
+        {
+          "locator": "官方说明／条件与限制",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "这是逐步推出；不同地区、账户、应用和授权范围的可用性需要实际确认。本站尚未逐个连接验证，不承诺每项动作均已对所有用户开放。",
+          "title": "开放边界"
+        }
+      ],
+      "name": "Gemini Connected Apps",
+      "note": "各地区、账户与第三方订阅条件未逐一核验。；未实际测试各应用的读写操作、权限提示及失败恢复。；版本：Gemini-Connected-Apps-rollout-2026-09-23。官方网页仅链接；MCP可读本站解读、出处和材料范围。",
+      "organization": "Google",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-26",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／文档",
+          "reason": "原始网页仅链接；允许收录的固定版本文档另列。",
+          "retrieved_at": "2026-09-25T23:50:19.178747+00:00",
+          "rights": {
+            "basis": "仅链接；未确认官网正文再分发许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Gemini Connected Apps · 官方发布",
+          "upstream_revision": "Gemini-Connected-Apps-rollout-2026-09-23",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m03"
+        }
+      ],
+      "source_published_at": "2026-09-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Gemini Connected Apps · 官方发布",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
+        }
+      ],
+      "state": "published",
+      "summary": "Google 宣布开始扩展 Gemini 的第三方 Connected Apps，列出 Linear、Airtable、Adobe、Webflow 等应用，让对话可以调用更多现有工作工具。",
+      "title": "Gemini 扩展 Connected Apps：把项目管理与设计工具接进对话"
+    },
+    {
+      "_position": 1,
+      "aliases": [
         "Gemini3.8LiveAvatar"
       ],
       "checked_at": "2026-09-25",
@@ -204,7 +535,7 @@
       "checked_at": "2026-09-25",
       "editor": "FieldToFit",
       "event_date": "2026-09-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-34",
       "interpretation": [
         {
@@ -288,7 +619,7 @@
       "checked_at": "2026-09-25",
       "editor": "FieldToFit",
       "event_date": "2026-09-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-35",
       "interpretation": [
         {
@@ -435,7 +766,7 @@
       "checked_at": "2026-09-25",
       "editor": "FieldToFit",
       "event_date": "2026-09-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-38",
       "interpretation": [
         {
@@ -4344,7 +4675,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-09-25",
+  "reviewed_at": "2026-09-26",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.16](CHANGELOG.md#v1.5.16)** · [fieldtofit-v1.5.16](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.16)
+**当前源码版本：[v1.5.17](CHANGELOG.md#v1.5.17)** · [fieldtofit-v1.5.17](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.17)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布用户确认的 A–F：Gemini 3.8 TTS、Antigravity SDK 本地模型、Meta Muse、Strands Harness、FLUX 3 Action 与 Gemini Live Avatar；当前 39 条动态、33 项持续关注。
-- 本期速览同步五项新动态；Strands 同时加入持续关注的 Harness 分类，以表格说明默认机制、采用入口及限制。既有动态仍保留。
-- Antigravity、Strands 与 FLUX 提供 10 份去重后的固定版本原文，包括 README、采用说明、许可证及 NOTICE；网页和 MCP 共享材料，未取得再分发许可的公告仍仅链接。
-- 保留真实原文日期、本站核对日及使用边界；FLUX 代码文档的 Apache-2.0 不替代模型权重的自定义许可。两张模型图表保持此前已审核快照。
+- 发布已确认的 LFM2.5-VL-DSpark、Transformers GGUF 与 Gemini Connected Apps；42 条动态、33 项持续关注，本期速览同步，保留 Muse 与 Live Avatar。
+- Arena 采用 9 月 25 日来源数据、9 月 26 日核对：92 个可绘制配置，新增 Muse Spark 1.3、Opus 5.5、MiMo V2.6 等点；旗舰筛选同步至 9 个有完整坐标的系列。
+- AA 保留此前 133 点及原核对日期；Muse Spark 1.3 max／xhigh 已在其中。两站评分、价格单位和缺项分别展示，不互相替代。
+- 为网页与 MCP 提供固定提交的 Transformers GGUF 文档及 Apache-2.0 许可证全文；其余官网材料保持仅链接，性能数字保留作者实测与本站未复测边界。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

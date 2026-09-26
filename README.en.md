@@ -34,16 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.16](CHANGELOG.md#v1.5.16)** · [fieldtofit-v1.5.16](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.16)
+**Current source version: [v1.5.17](CHANGELOG.md#v1.5.17)** · [fieldtofit-v1.5.17](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.17)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the approved A–F topics: Gemini 3.8 TTS, local models in Antigravity SDK, Meta Muse, Strands Harness, FLUX 3 Action and Gemini Live Avatar, reaching 39 developments and 33 watch profiles.
-- Refresh the five-item overview and add Strands to the Harness watch category, documenting default mechanisms, adoption paths and limitations while retaining earlier developments.
-- Provide 10 distinct fixed-revision originals from Antigravity, Strands and FLUX, including READMEs, adoption guides, licenses and NOTICE files. Web and MCP share these materials; unlicensed announcements remain link-only.
-- Preserve original dates, review dates and availability boundaries. Apache-2.0 for FLUX repository code and documentation does not replace the model weights’ custom license. Existing reviewed model chart snapshots are retained.
+- Publish the approved LFM2.5-VL-DSpark, Transformers GGUF and Gemini Connected Apps developments: 42 news items and 33 watch profiles, with an updated overview retaining Muse and Live Avatar.
+- Refresh Arena using September 25 source data reviewed on September 26: 92 plotted configurations, including Muse Spark 1.3, Opus 5.5 and MiMo V2.6; nine flagship series now have complete coordinates.
+- Preserve the existing 133-point AA snapshot and its review date, including Muse Spark 1.3 max/xhigh. Keep each source’s score, price unit and missing-data disclosures separate.
+- Share fixed-revision Transformers GGUF documentation and its Apache-2.0 license through web and MCP. Other announcements remain link-only, and reported benchmarks are not presented as independent FieldToFit tests.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

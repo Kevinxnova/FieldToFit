@@ -1103,5 +1103,40 @@
     "release_date": "2026-09-02",
     "date_basis": "matched_model_release",
     "date_url": "https://artificialanalysis.ai/models/muse-spark-1-3"
+  },
+  "claude-opus-5.5-high-vertex": {
+    "release_date": "2026-09-22",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/claude-opus-5-5-high"
+  },
+  "mimo-v2-6-pro-mw0j-text": {
+    "release_date": "2026-09-21",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/mimo-v2-6-pro"
+  },
+  "deepseek-v4.1-flash-max-20260910-text": {
+    "release_date": "2026-09-10",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash"
+  },
+  "gpt-6-sol-max-text": {
+    "release_date": "2026-09-22",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/gpt-6-sol"
+  },
+  "gpt-6-luna-max-text": {
+    "release_date": "2026-09-22",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/gpt-6-luna"
+  },
+  "grok-4.7-xhigh-public": {
+    "release_date": "2026-09-21",
+    "date_basis": "matched_model_release",
+    "date_url": "https://artificialanalysis.ai/models/grok-4-7"
+  },
+  "mimo-v2-6-flash-text": {
+    "release_date": "2026-09-21",
+    "date_basis": "official_release",
+    "date_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL"
   }
 }

@@ -58,7 +58,7 @@ def build_snapshot(data, catalog):
                 assert day.year == data['year'] and day <= checked
                 assert point['date_basis'] in {'source_release_date', 'matched_model_release', 'source_version_date', 'official_release'}
                 parsed = urlsplit(point['date_url'])
-                assert parsed.scheme == 'https' and parsed.hostname in HOSTS | {'openai.com', 'ernie.baidu.com', 'help.aliyun.com'} and not parsed.username and not parsed.password and parsed.port in (None, 443)
+                assert parsed.scheme == 'https' and parsed.hostname in HOSTS | {'openai.com', 'ernie.baidu.com', 'help.aliyun.com', 'huggingface.co'} and not parsed.username and not parsed.password and parsed.port in (None, 443)
             if 'score_low' in point:
                 assert finite(point['score_low']) and finite(point['score_high'])
                 assert point['score_low'] <= point['score'] <= point['score_high']
