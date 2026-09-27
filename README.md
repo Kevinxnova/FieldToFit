@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.17](CHANGELOG.md#v1.5.17)** · [fieldtofit-v1.5.17](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.17)
+**当前源码版本：[v1.5.18](CHANGELOG.md#v1.5.18)** · [fieldtofit-v1.5.18](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.18)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布已确认的 LFM2.5-VL-DSpark、Transformers GGUF 与 Gemini Connected Apps；42 条动态、33 项持续关注，本期速览同步，保留 Muse 与 Live Avatar。
-- Arena 采用 9 月 25 日来源数据、9 月 26 日核对：92 个可绘制配置，新增 Muse Spark 1.3、Opus 5.5、MiMo V2.6 等点；旗舰筛选同步至 9 个有完整坐标的系列。
-- AA 保留此前 133 点及原核对日期；Muse Spark 1.3 max／xhigh 已在其中。两站评分、价格单位和缺项分别展示，不互相替代。
-- 为网页与 MCP 提供固定提交的 Transformers GGUF 文档及 Apache-2.0 许可证全文；其余官网材料保持仅链接，性能数字保留作者实测与本站未复测边界。
+- 发布 Muse Realtime Avatar 技术动态并同步本期速览；明确实时形象与 Muse Spark 文本模型的区别，保留官方指标与开放范围。
+- 持续关注新增 Ollaya、Whiteboard、AgentRun，按工具／Harness展示用途、采用入口及限制；当前43条动态、36项持续关注。
+- 为网页与MCP补充三个项目共10份固定提交原文，包括README、API／采用说明、版本记录、许可证和NOTICE；保留署名与SHA-256。
+- 两张模型图表保留已审核AA133点、Arena92点及真实日期。同步中英文README、项目管理总览与实际发布验收。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

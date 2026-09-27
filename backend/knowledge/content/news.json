@@ -4,6 +4,90 @@
     {
       "_position": 1,
       "aliases": [
+        "MuseRealtimeAvatar"
+      ],
+      "checked_at": "2026-09-27",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-23",
+      "highlight": true,
+      "id": "D-43",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "语音与视频共用同一条语音 token 流，重点是声音、口型、表情同步和连续对话中的形象一致性。",
+          "title": "值得看"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "官方报告448×768、25帧/秒，用户说完至收到首个同步音视频字节约870毫秒。这是官方指定系统的结果，本站未复现。",
+          "title": "具体指标"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "博客演示不代表所有形象均已在Muse应用开放，也未据此确认开放权重或通用API。它与Muse Spark 1.3是不同能力，不加入文本模型价格—分数图。",
+          "title": "开放范围"
+        }
+      ],
+      "name": "Muse Realtime Avatar",
+      "note": "原始日期：2026-09-23；版本：Muse Realtime Avatar official report 2026-09-23。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "Meta",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-27",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／项目入口",
+          "reason": "官网全文再分发依据未确认；不将链接冒充可读全文。",
+          "retrieved_at": "2026-09-27T14:02:50.418080+00:00",
+          "rights": {
+            "basis": "仅链接；固定开源正文另列",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Muse Realtime Avatar · 官方入口",
+          "upstream_revision": "Muse Realtime Avatar official report 2026-09-23",
+          "url": "https://research.meta.ai/blog/bringing-your-muse-to-life"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-36",
+          "name": "Meta Muse",
+          "url": "https://fieldtofit.top/news/D-36"
+        },
+        {
+          "id": "D-39",
+          "name": "Gemini 3.8 Live Avatar",
+          "url": "https://fieldtofit.top/news/D-39"
+        }
+      ],
+      "source_published_at": "2026-09-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Muse Realtime Avatar · 官方入口",
+          "url": "https://research.meta.ai/blog/bringing-your-muse-to-life"
+        }
+      ],
+      "state": "published",
+      "summary": "Meta 公布 Muse Realtime Avatar，用参考形象和实时语音流生成连续视频，让角色在对话中说话、做表情和动作。",
+      "title": "Muse Realtime Avatar：让实时语音带上同步的表情与动作"
+    },
+    {
+      "_position": 1,
+      "aliases": [
         "LFM2.5-VL-DSpark"
       ],
       "checked_at": "2026-09-26",
@@ -100,6 +184,117 @@
       "state": "published",
       "summary": "Liquid AI 发布实验性草稿模型，配合 LFM2.5-VL-3B 使用。它先生成候选 token，再由目标模型验证，重点加速回答的生成阶段。",
       "title": "LFM2.5-VL-DSpark：给视觉模型加一个小“草稿模型”，加速生成阶段"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "MetaMuse"
+      ],
+      "checked_at": "2026-09-25",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-23",
+      "highlight": false,
+      "id": "D-36",
+      "interpretation": [
+        {
+          "locator": "官方能力、采用条件及限制说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "官方说明 Muse for Mac 已能在用户授权后操作应用；此次还列出 Notion、GitHub、Box 等工作连接器。采用时需要核对具体权限和账户可用范围。",
+          "title": "看目前提供什么"
+        },
+        {
+          "locator": "官方能力、采用条件及限制说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "眼镜接入计划在未来数月推出，专属邮箱、部分连接器和硬件仍有预告项，不能把发布会展示合并写成现在全部可用。",
+          "title": "看哪些还在路上"
+        },
+        {
+          "locator": "官方能力、采用条件及限制说明",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "本条记录官方功能与开放节奏；本站未做电脑操作和权限隔离实测。此前安全争议的独立核验尚未完成，不用产品公告证明其安全性，也不据媒体标题断言当前仍未修复。",
+          "title": "看证据边界"
+        }
+      ],
+      "name": "Meta Muse",
+      "note": "不同地区/账户连接器范围未实测；安全漏洞修复完整证据仍待独立复核；不推断所有发布会功能已开放。官网正文仅链接；MCP可读本站解读、版本与出处。",
+      "organization": "Meta",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-25",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布或文档入口",
+          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
+          "retrieved_at": "2026-09-25",
+          "rights": {
+            "basis": "仅链接，不复制未确认再分发许可的正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Meta Muse · 官方发布",
+          "upstream_revision": "Meta Connect 2026 / Muse",
+          "url": "https://about.fb.com/br/news/2026/09/tudo-o-que-anunciamos-no-meta-connect-2026/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-25",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布或文档入口",
+          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
+          "retrieved_at": "2026-09-25",
+          "rights": {
+            "basis": "仅链接，不复制未确认再分发许可的正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Meta Muse · 官方材料 2",
+          "upstream_revision": "Meta Connect 2026 / Muse",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-33",
+          "name": "rabbit OS3",
+          "url": "https://fieldtofit.top/for-you#news-d-33"
+        },
+        {
+          "id": "CW-A06",
+          "name": "OpenClaw",
+          "url": "https://fieldtofit.top/for-you#watch-cw-a06"
+        }
+      ],
+      "source_published_at": "2026-09-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Meta Muse · 官方发布",
+          "url": "https://about.fb.com/br/news/2026/09/tudo-o-que-anunciamos-no-meta-connect-2026/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Meta Muse · 官方材料 2",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+        }
+      ],
+      "state": "published",
+      "summary": "Meta 在 Connect 2026 展示 Muse 的桌面操作、连接器、实时声音和后续硬件入口。",
+      "title": "Meta Muse：扩展 Mac 操作与连接器，并预告眼镜上的 Agent"
     },
     {
       "_position": 2,
@@ -415,117 +610,6 @@
       "state": "published",
       "summary": "Google 为 Gemini 3.8 Live 增加实时头像，把语音对话与同步生成的视频形象接在一起。",
       "title": "Gemini Live Avatar：边对话、边调用工具的实时数字形象"
-    },
-    {
-      "_position": 2,
-      "aliases": [
-        "MetaMuse"
-      ],
-      "checked_at": "2026-09-25",
-      "editor": "FieldToFit",
-      "event_date": "2026-09-23",
-      "highlight": true,
-      "id": "D-36",
-      "interpretation": [
-        {
-          "locator": "官方能力、采用条件及限制说明",
-          "source_ids": [
-            "source1",
-            "source2"
-          ],
-          "text": "官方说明 Muse for Mac 已能在用户授权后操作应用；此次还列出 Notion、GitHub、Box 等工作连接器。采用时需要核对具体权限和账户可用范围。",
-          "title": "看目前提供什么"
-        },
-        {
-          "locator": "官方能力、采用条件及限制说明",
-          "source_ids": [
-            "source1",
-            "source2"
-          ],
-          "text": "眼镜接入计划在未来数月推出，专属邮箱、部分连接器和硬件仍有预告项，不能把发布会展示合并写成现在全部可用。",
-          "title": "看哪些还在路上"
-        },
-        {
-          "locator": "官方能力、采用条件及限制说明",
-          "source_ids": [
-            "source1",
-            "source2"
-          ],
-          "text": "本条记录官方功能与开放节奏；本站未做电脑操作和权限隔离实测。此前安全争议的独立核验尚未完成，不用产品公告证明其安全性，也不据媒体标题断言当前仍未修复。",
-          "title": "看证据边界"
-        }
-      ],
-      "name": "Meta Muse",
-      "note": "不同地区/账户连接器范围未实测；安全漏洞修复完整证据仍待独立复核；不推断所有发布会功能已开放。官网正文仅链接；MCP可读本站解读、版本与出处。",
-      "organization": "Meta",
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-25",
-          "coverage": "link_only",
-          "id": "source1",
-          "locator": "官方发布或文档入口",
-          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
-          "retrieved_at": "2026-09-25",
-          "rights": {
-            "basis": "仅链接，不复制未确认再分发许可的正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Meta Muse · 官方发布",
-          "upstream_revision": "Meta Connect 2026 / Muse",
-          "url": "https://about.fb.com/br/news/2026/09/tudo-o-que-anunciamos-no-meta-connect-2026/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-25",
-          "coverage": "link_only",
-          "id": "source2",
-          "locator": "官方发布或文档入口",
-          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
-          "retrieved_at": "2026-09-25",
-          "rights": {
-            "basis": "仅链接，不复制未确认再分发许可的正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Meta Muse · 官方材料 2",
-          "upstream_revision": "Meta Connect 2026 / Muse",
-          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
-        }
-      ],
-      "related": [
-        {
-          "id": "D-33",
-          "name": "rabbit OS3",
-          "url": "https://fieldtofit.top/for-you#news-d-33"
-        },
-        {
-          "id": "CW-A06",
-          "name": "OpenClaw",
-          "url": "https://fieldtofit.top/for-you#watch-cw-a06"
-        }
-      ],
-      "source_published_at": "2026-09-23",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source1",
-          "title": "Meta Muse · 官方发布",
-          "url": "https://about.fb.com/br/news/2026/09/tudo-o-que-anunciamos-no-meta-connect-2026/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source2",
-          "title": "Meta Muse · 官方材料 2",
-          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
-        }
-      ],
-      "state": "published",
-      "summary": "Meta 在 Connect 2026 展示 Muse 的桌面操作、连接器、实时声音和后续硬件入口。",
-      "title": "Meta Muse：扩展 Mac 操作与连接器，并预告眼镜上的 Agent"
     },
     {
       "_position": 3,
@@ -4675,7 +4759,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-09-26",
+  "reviewed_at": "2026-09-27",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

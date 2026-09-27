@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.18"></a>
+## v1.5.18 · Muse 实时形象与三项持续关注 · 2026-09-27
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布 Muse Realtime Avatar 技术动态并同步本期速览；明确实时形象与 Muse Spark 文本模型的区别，保留官方指标与开放范围。
+- 持续关注新增 Ollaya、Whiteboard、AgentRun，按工具／Harness展示用途、采用入口及限制；当前43条动态、36项持续关注。
+- 为网页与MCP补充三个项目共10份固定提交原文，包括README、API／采用说明、版本记录、许可证和NOTICE；保留署名与SHA-256。
+- 两张模型图表保留已审核AA133点、Arena92点及真实日期。同步中英文README、项目管理总览与实际发布验收。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish the Muse Realtime Avatar technical announcement and refresh the overview, distinguishing real-time embodiment from Muse Spark text-model scores and documenting reported metrics and availability limits.
+- Add Ollaya, Whiteboard and AgentRun to the Tool/Harness watch categories with adoption paths and limitations, reaching 43 developments and 36 watch profiles.
+- Provide 10 fixed-revision originals through web and MCP: READMEs, API/adoption guides, changelog, licenses and NOTICE, preserving attribution and SHA-256 hashes.
+- Retain the reviewed 133-point AA and 92-point Arena snapshots and their genuine dates. Update both READMEs, the project overview and release verification evidence.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8-9、REQ-9、REQ-11。内容发布，不改变数据库结构、注册或执行权限；MCP读取资料不会自动安装工具。实际验证见[本批验收](docs/validation/2026-09-27-editorial.md)。准时日报、连续来源成功与Jev官方正文等缺口未关闭。
+
 <a id="v1.5.17"></a>
 ## v1.5.17 · 三项动态与 Arena 最新快照 · 2026-09-26
 
