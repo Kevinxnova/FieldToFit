@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.19"></a>
+## v1.5.19 · 六项资料与 relore 原文 · 2026-09-28
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布 Copilot 本地沙箱、Nemotron 3 Diarization、LeRobot 人形机器人流程、Ember-1 和 DeepSeek DSec 五条动态，同步本期速览；原始发布日期与本站核对日分别保留。
+- 持续关注新增 relore，说明已有修复检索、历史决定追溯与当前代码核验；当前48条动态、37项持续关注。
+- 网页与MCP共享 relore 同一固定提交的README、部署说明、使用说明、版本记录与Apache-2.0许可证五份原文；其他材料按已核实范围提供链接。
+- 保留 Ember 训练支持说明差异、DSec 未确认整体开源与各项未复测边界；AA133点／Arena92点保持。同步中英文README、项目管理总览与发布验收。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish five developments: Copilot local sandboxing, Nemotron 3 Diarization, LeRobot humanoids, Ember-1 and DeepSeek DSec. Refresh the overview while keeping original publication and review dates distinct.
+- Add relore to the Tool watch category, covering work-in-progress discovery, historical decisions and verification against current code: 48 developments and 37 watch profiles.
+- Share five originals from one fixed relore commit through web and MCP: README, operations, CLI guide, changelog and Apache-2.0 license. Other materials retain verified source links.
+- Disclose conflicting Ember training availability, unconfirmed DSec platform open-source availability and untested claims. Keep the 133-point AA and 92-point Arena snapshots; update bilingual READMEs, project management and validation.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8-9、REQ-9、REQ-11。修正三处随公开资料增长而失效的测试数据隔离，74项相关回归通过。内容与版本交付，不改变接口、数据库结构、注册或执行权限。实际结果见[本批验收](docs/validation/2026-09-28-editorial.md)。日报准时送达、连续全来源成功和Jev官方正文缺口未关闭。
+
 <a id="v1.5.18"></a>
 ## v1.5.18 · Muse 实时形象与三项持续关注 · 2026-09-27
 

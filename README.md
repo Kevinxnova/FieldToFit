@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.18](CHANGELOG.md#v1.5.18)** · [fieldtofit-v1.5.18](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.18)
+**当前源码版本：[v1.5.19](CHANGELOG.md#v1.5.19)** · [fieldtofit-v1.5.19](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.19)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布 Muse Realtime Avatar 技术动态并同步本期速览；明确实时形象与 Muse Spark 文本模型的区别，保留官方指标与开放范围。
-- 持续关注新增 Ollaya、Whiteboard、AgentRun，按工具／Harness展示用途、采用入口及限制；当前43条动态、36项持续关注。
-- 为网页与MCP补充三个项目共10份固定提交原文，包括README、API／采用说明、版本记录、许可证和NOTICE；保留署名与SHA-256。
-- 两张模型图表保留已审核AA133点、Arena92点及真实日期。同步中英文README、项目管理总览与实际发布验收。
+- 发布 Copilot 本地沙箱、Nemotron 3 Diarization、LeRobot 人形机器人流程、Ember-1 和 DeepSeek DSec 五条动态，同步本期速览；原始发布日期与本站核对日分别保留。
+- 持续关注新增 relore，说明已有修复检索、历史决定追溯与当前代码核验；当前48条动态、37项持续关注。
+- 网页与MCP共享 relore 同一固定提交的README、部署说明、使用说明、版本记录与Apache-2.0许可证五份原文；其他材料按已核实范围提供链接。
+- 保留 Ember 训练支持说明差异、DSec 未确认整体开源与各项未复测边界；AA133点／Arena92点保持。同步中英文README、项目管理总览与发布验收。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

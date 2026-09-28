@@ -34,16 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.18](CHANGELOG.md#v1.5.18)** · [fieldtofit-v1.5.18](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.18)
+**Current source version: [v1.5.19](CHANGELOG.md#v1.5.19)** · [fieldtofit-v1.5.19](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.19)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the Muse Realtime Avatar technical announcement and refresh the overview, distinguishing real-time embodiment from Muse Spark text-model scores and documenting reported metrics and availability limits.
-- Add Ollaya, Whiteboard and AgentRun to the Tool/Harness watch categories with adoption paths and limitations, reaching 43 developments and 36 watch profiles.
-- Provide 10 fixed-revision originals through web and MCP: READMEs, API/adoption guides, changelog, licenses and NOTICE, preserving attribution and SHA-256 hashes.
-- Retain the reviewed 133-point AA and 92-point Arena snapshots and their genuine dates. Update both READMEs, the project overview and release verification evidence.
+- Publish five developments: Copilot local sandboxing, Nemotron 3 Diarization, LeRobot humanoids, Ember-1 and DeepSeek DSec. Refresh the overview while keeping original publication and review dates distinct.
+- Add relore to the Tool watch category, covering work-in-progress discovery, historical decisions and verification against current code: 48 developments and 37 watch profiles.
+- Share five originals from one fixed relore commit through web and MCP: README, operations, CLI guide, changelog and Apache-2.0 license. Other materials retain verified source links.
+- Disclose conflicting Ember training availability, unconfirmed DSec platform open-source availability and untested claims. Keep the 133-point AA and 92-point Arena snapshots; update bilingual READMEs, project management and validation.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

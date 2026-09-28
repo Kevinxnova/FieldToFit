@@ -4,72 +4,88 @@
     {
       "_position": 1,
       "aliases": [
-        "MuseRealtimeAvatar"
+        "Copilot本地沙箱"
       ],
-      "checked_at": "2026-09-27",
+      "checked_at": "2026-09-28",
       "editor": "FieldToFit",
       "event_date": "2026-09-23",
       "highlight": true,
-      "id": "D-43",
+      "id": "D-44",
       "interpretation": [
         {
           "locator": "官方技术说明／开放范围",
           "source_ids": [
-            "source1"
+            "source1",
+            "source2"
           ],
-          "text": "语音与视频共用同一条语音 token 流，重点是声音、口型、表情同步和连续对话中的形象一致性。",
-          "title": "值得看"
+          "text": "把Agent能访问哪些资源变成可检查的项目设置。企业策略可能进一步收紧权限；操作系统无法执行所需隔离时，官方说明会报错而非无沙箱继续执行。",
+          "title": "为什么值得看"
         },
         {
           "locator": "官方技术说明／开放范围",
           "source_ids": [
-            "source1"
+            "source1",
+            "source2"
           ],
-          "text": "官方报告448×768、25帧/秒，用户说完至收到首个同步音视频字节约870毫秒。这是官方指定系统的结果，本站未复现。",
-          "title": "具体指标"
+          "text": "项目设置中开启Sandbox new sessions；当前会话可用 /sandbox on。默认关闭，项目设置变更不会立即覆盖已经运行的会话。",
+          "title": "如何使用"
         },
         {
           "locator": "官方技术说明／开放范围",
           "source_ids": [
-            "source1"
+            "source1",
+            "source2"
           ],
-          "text": "博客演示不代表所有形象均已在Muse应用开放，也未据此确认开放权重或通用API。它与Muse Spark 1.3是不同能力，不加入文本模型价格—分数图。",
-          "title": "开放范围"
+          "text": "仅针对本地仓库与工作目录会话，不适用于云端或远程主机会话；app与CLI的沙箱分别配置，当前为公开预览，本站未做隔离强度实测。",
+          "title": "边界"
         }
       ],
-      "name": "Muse Realtime Avatar",
-      "note": "原始日期：2026-09-23；版本：Muse Realtime Avatar official report 2026-09-23。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
-      "organization": "Meta",
+      "name": "Copilot 本地沙箱",
+      "note": "原始日期：2026-09-23；版本：Copilot app local sandbox public preview; weekly recap 2026-09-25。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "GitHub",
       "reading_materials": [
         {
           "approved": true,
           "body": "",
-          "checked_at": "2026-09-27",
+          "checked_at": "2026-09-28",
           "coverage": "link_only",
           "id": "source1",
-          "locator": "官方发布／项目入口",
-          "reason": "官网全文再分发依据未确认；不将链接冒充可读全文。",
-          "retrieved_at": "2026-09-27T14:02:50.418080+00:00",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T00:56:27.544125+00:00",
           "rights": {
-            "basis": "仅链接；固定开源正文另列",
+            "basis": "仅链接；公开正文需单独核对许可",
             "notice": "",
             "url": ""
           },
-          "title": "Muse Realtime Avatar · 官方入口",
-          "upstream_revision": "Muse Realtime Avatar official report 2026-09-23",
-          "url": "https://research.meta.ai/blog/bringing-your-muse-to-life"
+          "title": "Copilot 本地沙箱 · 原始发布／项目入口",
+          "upstream_revision": "Copilot app local sandbox public preview; weekly recap 2026-09-25",
+          "url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T00:56:27.503501+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Copilot 本地沙箱 · 配套材料 1",
+          "upstream_revision": "Copilot app local sandbox public preview; weekly recap 2026-09-25",
+          "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
         }
       ],
       "related": [
         {
-          "id": "D-36",
-          "name": "Meta Muse",
-          "url": "https://fieldtofit.top/news/D-36"
-        },
-        {
-          "id": "D-39",
-          "name": "Gemini 3.8 Live Avatar",
-          "url": "https://fieldtofit.top/news/D-39"
+          "id": "D-21",
+          "name": "GitHub Copilot · 2026-09-18",
+          "url": "https://fieldtofit.top/news/D-21"
         }
       ],
       "source_published_at": "2026-09-23",
@@ -77,13 +93,532 @@
         {
           "coverage": "link_only",
           "id": "source1",
-          "title": "Muse Realtime Avatar · 官方入口",
-          "url": "https://research.meta.ai/blog/bringing-your-muse-to-life"
+          "title": "Copilot 本地沙箱 · 原始发布／项目入口",
+          "url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Copilot 本地沙箱 · 配套材料 1",
+          "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
         }
       ],
       "state": "published",
-      "summary": "Meta 公布 Muse Realtime Avatar，用参考形象和实时语音流生成连续视频，让角色在对话中说话、做表情和动作。",
-      "title": "Muse Realtime Avatar：让实时语音带上同步的表情与动作"
+      "summary": "GitHub Copilot app 开放本地沙箱预览，让项目分别配置文件读写范围、联网权限以及 Git 和 GitHub CLI 凭据使用。9月25日周报再次汇总了这项变化。",
+      "title": "Copilot 本地沙箱：为 Agent 划定文件、网络与凭据边界"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "Nemotron3Diarization"
+      ],
+      "checked_at": "2026-09-28",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-23",
+      "highlight": true,
+      "id": "D-45",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "它输出说话人活动时间和概率；结合带时间戳的语音识别，能为会议记录保留发言归属。单独使用它不会转写文字，也不会确定某个通道对应谁的真实身份。",
+          "title": "值得关注"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "官方模型卡列出NeMo、Transformers及本地运行入口，模型使用OpenMDW 1.1许可；代码工具和模型权重的条件分别核对。",
+          "title": "采用入口"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "最低推荐0.32秒是音频输入缓存，不含计算、传输或语音识别时间，不能当成应用整体延迟。噪声、长录音、超出8人等情况仍需实际验证；本站未复测。",
+          "title": "数字边界"
+        }
+      ],
+      "name": "Nemotron 3 Diarization",
+      "note": "原始日期：2026-09-23；版本：Nemotron-3-Diarization model card checked 2026-09-28。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "NVIDIA",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T00:56:27.855545+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Nemotron 3 Diarization · 原始发布／项目入口",
+          "upstream_revision": "Nemotron-3-Diarization model card checked 2026-09-28",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-diarization"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T00:56:27.525717+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Nemotron 3 Diarization · 配套材料 1",
+          "upstream_revision": "Nemotron-3-Diarization model card checked 2026-09-28",
+          "url": "https://huggingface.co/nvidia/Nemotron-3-Diarization/raw/main/README.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-24",
+          "name": "Qwen3.8-LiveTranslate",
+          "url": "https://fieldtofit.top/news/D-24"
+        }
+      ],
+      "source_published_at": "2026-09-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Nemotron 3 Diarization · 原始发布／项目入口",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-diarization"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Nemotron 3 Diarization · 配套材料 1",
+          "url": "https://huggingface.co/nvidia/Nemotron-3-Diarization/raw/main/README.md"
+        }
+      ],
+      "state": "published",
+      "summary": "NVIDIA 发布约1亿参数的说话人分段模型，支持录音和流式音频，最多区分8个说话人通道，并可处理重叠发言。",
+      "title": "Nemotron 3 Diarization：让多人录音保留“谁在什么时候说话”"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "LeRobot人形机器人流程"
+      ],
+      "checked_at": "2026-09-28",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-25",
+      "highlight": true,
+      "id": "D-46",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "解释了为何较慢的视觉语言动作模型不直接承担双足平衡控制，并提供数据集、训练模型和部署文档作为研究入口。",
+          "title": "为什么值得看"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "示例约100段、71分钟遥操作数据，在4张H100上微调12000步，目标是特定的搬罐任务；这不是零样本即可完成所有家务。",
+          "title": "具体材料"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "另一个躲避实验的79.1%来自三种随机种子的仿真评估；实机视频只作为演示，不能把仿真比例写成实机成功率。本站未复现，硬件与权重各自许可须分别核对。",
+          "title": "结果怎么读"
+        }
+      ],
+      "name": "LeRobot 人形机器人流程",
+      "note": "原始日期：2026-09-25；版本：LeRobot Unitree G1 integration article 2026-09-25。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "Hugging Face / LeRobot",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T00:56:28.801280+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "LeRobot 人形机器人流程 · 原始发布／项目入口",
+          "upstream_revision": "LeRobot Unitree G1 integration article 2026-09-25",
+          "url": "https://huggingface.co/blog/nepyope/bringing-humanoids-to-lerobot"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T00:56:29.482107+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "LeRobot 人形机器人流程 · 配套材料 1",
+          "upstream_revision": "LeRobot Unitree G1 integration article 2026-09-25",
+          "url": "https://huggingface.co/docs/lerobot/main/en/unitree_g1"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-38",
+          "name": "FLUX 3 Action",
+          "url": "https://fieldtofit.top/news/D-38"
+        }
+      ],
+      "source_published_at": "2026-09-25",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "LeRobot 人形机器人流程 · 原始发布／项目入口",
+          "url": "https://huggingface.co/blog/nepyope/bringing-humanoids-to-lerobot"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "LeRobot 人形机器人流程 · 配套材料 1",
+          "url": "https://huggingface.co/docs/lerobot/main/en/unitree_g1"
+        }
+      ],
+      "state": "published",
+      "summary": "LeRobot 作者展示Unitree G1的采集、训练和部署流程：π0.5从语言、相机和机器人状态预测动作表示，SONIC控制器再把它转换为全身关节目标。",
+      "title": "LeRobot 人形机器人流程：让策略学任务，让控制器维持全身运动"
+    },
+    {
+      "_position": 4,
+      "aliases": [
+        "Ember-1"
+      ],
+      "checked_at": "2026-09-28",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-23",
+      "highlight": true,
+      "id": "D-47",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "它尝试通过训练降低Agent多轮任务的token消耗，而非单纯调低推理档位。官方报告多组任务中约40%更少token，这是作者评测，不保证每个工作负载相同。",
+          "title": "为什么值得看"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "模型路径 accounts/fireworks/models/ember-1；核对时每百万输入、缓存输入、输出token分别为3、0.3、15美元。省token不等于单价降低，真实费用还取决于任务和缓存。",
+          "title": "接入与价格"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "官方称研究模型先提供两周Serverless访问，后续是否常驻取决于需求。博客提到训练支持，但当前型号页标注fine-tuning不支持，需另核；未确认开放权重，本站未实测。",
+          "title": "开放边界"
+        }
+      ],
+      "name": "Ember-1",
+      "note": "原始日期：2026-09-23；版本：Ember-1 Research Preview。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "Fireworks Research",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T01:02:46.743860+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Ember-1 · 原始发布／项目入口",
+          "upstream_revision": "Ember-1 Research Preview",
+          "url": "https://fireworks.ai/blog/ember-1"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T01:02:47.536841+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Ember-1 · 配套材料 1",
+          "upstream_revision": "Ember-1 Research Preview",
+          "url": "https://fireworks.ai/models/fireworks/ember-1"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M04",
+          "name": "Kimi",
+          "url": "https://fieldtofit.top/watch/CW-M04"
+        }
+      ],
+      "source_published_at": "2026-09-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Ember-1 · 原始发布／项目入口",
+          "url": "https://fireworks.ai/blog/ember-1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Ember-1 · 配套材料 1",
+          "url": "https://fireworks.ai/models/fireworks/ember-1"
+        }
+      ],
+      "state": "published",
+      "summary": "Fireworks Research 发布基于Kimi K3的Ember-1，训练目标是保留有用反思、缩短冗余推理，并通过Serverless API开放研究预览。",
+      "title": "Ember-1：在Kimi K3基础上学习更短的推理，关注每项任务实际消耗"
+    },
+    {
+      "_position": 5,
+      "aliases": [
+        "DeepSeekDSec"
+      ],
+      "checked_at": "2026-09-28",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-19",
+      "highlight": true,
+      "id": "D-48",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "重点是环境镜像按需加载、独立版本层、内存与CPU调度，以及GPU训练抢占时如何保留Agent执行状态；它解决的是训练运行平台问题。",
+          "title": "为什么值得看"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "先看第2节SDK与后端，再看第5节环境层和资源管理、第6节与强化学习协同；可关联本站DeepSeek Harness，但两者不是同一个组件。",
+          "title": "读材料的路线"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "约160节点、每日300万沙箱等是作者生产部署报告，不是本站复现。论文公开不代表整个平台源码或公共API已开放；这是9月19日研究补录，不写成今天发布。",
+          "title": "规模与开放边界"
+        }
+      ],
+      "name": "DeepSeek DSec",
+      "note": "原始日期：2026-09-19；版本：arXiv:2609.22978v1。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "DeepSeek",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T01:02:48.375398+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "DeepSeek DSec · 原始发布／项目入口",
+          "upstream_revision": "arXiv:2609.22978v1",
+          "url": "https://arxiv.org/abs/2609.22978"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-28",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-28T01:02:49.447960+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "DeepSeek DSec · 配套材料 1",
+          "upstream_revision": "arXiv:2609.22978v1",
+          "url": "https://arxiv.org/html/2609.22978v1"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-H01",
+          "name": "DeepSeek Harness",
+          "url": "https://fieldtofit.top/watch/CW-H01"
+        },
+        {
+          "id": "CW-M06",
+          "name": "DeepSeek",
+          "url": "https://fieldtofit.top/watch/CW-M06"
+        }
+      ],
+      "source_published_at": "2026-09-19",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "DeepSeek DSec · 原始发布／项目入口",
+          "url": "https://arxiv.org/abs/2609.22978"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "DeepSeek DSec · 配套材料 1",
+          "url": "https://arxiv.org/html/2609.22978v1"
+        }
+      ],
+      "state": "published",
+      "summary": "DeepSeek技术报告介绍DSec沙箱基础设施，将函数调用、容器、microVM与完整VM纳入统一SDK，支撑Agent训练和评测中的有状态执行。",
+      "title": "DeepSeek DSec：让大规模Agent训练环境可暂停、恢复并弹性调度"
+    },
+    {
+      "_position": 1,
+      "aliases": [
+        "Gemini3.8LiveAvatar"
+      ],
+      "checked_at": "2026-09-25",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-24",
+      "highlight": false,
+      "id": "D-39",
+      "interpretation": [
+        {
+          "locator": "官方能力、采用条件及限制说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "头像随对话显示表情与口型，并可在继续对话时后台调用工具；适合研究导览、客户服务等交互方式的人了解。",
+          "title": "看它新增什么"
+        },
+        {
+          "locator": "官方能力、采用条件及限制说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "官方发布指向 Gemini Enterprise；自定义头像目前需要企业白名单。不能写成所有 Gemini 用户已经免费获得。",
+          "title": "看从哪里使用"
+        },
+        {
+          "locator": "官方能力、采用条件及限制说明",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "官方展示多语言和实时交互，本站未做延迟、稳定性或成本测试。它是 D-16 的新功能事件，与 Gemini 3.8 TTS 文字转语音分开说明。",
+          "title": "看哪些尚未验证"
+        }
+      ],
+      "name": "Gemini 3.8 Live Avatar",
+      "note": "没有实时延迟/成本实测；定制头像企业白名单条件以官方接入为准。官网正文仅链接；MCP可读本站解读、版本与出处。",
+      "organization": "Google",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-25",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布或文档入口",
+          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
+          "retrieved_at": "2026-09-25",
+          "rights": {
+            "basis": "仅链接，不复制未确认再分发许可的正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Gemini 3.8 Live Avatar · 官方发布",
+          "upstream_revision": "Gemini 3.8 Live with Live Avatar / 2026-09-24",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m03"
+        },
+        {
+          "id": "D-16",
+          "name": "Gemini 3.8 Live",
+          "url": "https://fieldtofit.top/for-you#news-d-16"
+        }
+      ],
+      "source_published_at": "2026-09-24",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Gemini 3.8 Live Avatar · 官方发布",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
+        }
+      ],
+      "state": "published",
+      "summary": "Google 为 Gemini 3.8 Live 增加实时头像，把语音对话与同步生成的视频形象接在一起。",
+      "title": "Gemini Live Avatar：边对话、边调用工具的实时数字形象"
     },
     {
       "_position": 1,
@@ -93,7 +628,7 @@
       "checked_at": "2026-09-26",
       "editor": "FieldToFit",
       "event_date": "2026-09-24",
-      "highlight": true,
+      "highlight": false,
       "id": "D-40",
       "interpretation": [
         {
@@ -188,123 +723,12 @@
     {
       "_position": 2,
       "aliases": [
-        "MetaMuse"
-      ],
-      "checked_at": "2026-09-25",
-      "editor": "FieldToFit",
-      "event_date": "2026-09-23",
-      "highlight": false,
-      "id": "D-36",
-      "interpretation": [
-        {
-          "locator": "官方能力、采用条件及限制说明",
-          "source_ids": [
-            "source1",
-            "source2"
-          ],
-          "text": "官方说明 Muse for Mac 已能在用户授权后操作应用；此次还列出 Notion、GitHub、Box 等工作连接器。采用时需要核对具体权限和账户可用范围。",
-          "title": "看目前提供什么"
-        },
-        {
-          "locator": "官方能力、采用条件及限制说明",
-          "source_ids": [
-            "source1",
-            "source2"
-          ],
-          "text": "眼镜接入计划在未来数月推出，专属邮箱、部分连接器和硬件仍有预告项，不能把发布会展示合并写成现在全部可用。",
-          "title": "看哪些还在路上"
-        },
-        {
-          "locator": "官方能力、采用条件及限制说明",
-          "source_ids": [
-            "source1",
-            "source2"
-          ],
-          "text": "本条记录官方功能与开放节奏；本站未做电脑操作和权限隔离实测。此前安全争议的独立核验尚未完成，不用产品公告证明其安全性，也不据媒体标题断言当前仍未修复。",
-          "title": "看证据边界"
-        }
-      ],
-      "name": "Meta Muse",
-      "note": "不同地区/账户连接器范围未实测；安全漏洞修复完整证据仍待独立复核；不推断所有发布会功能已开放。官网正文仅链接；MCP可读本站解读、版本与出处。",
-      "organization": "Meta",
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-25",
-          "coverage": "link_only",
-          "id": "source1",
-          "locator": "官方发布或文档入口",
-          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
-          "retrieved_at": "2026-09-25",
-          "rights": {
-            "basis": "仅链接，不复制未确认再分发许可的正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Meta Muse · 官方发布",
-          "upstream_revision": "Meta Connect 2026 / Muse",
-          "url": "https://about.fb.com/br/news/2026/09/tudo-o-que-anunciamos-no-meta-connect-2026/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-25",
-          "coverage": "link_only",
-          "id": "source2",
-          "locator": "官方发布或文档入口",
-          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
-          "retrieved_at": "2026-09-25",
-          "rights": {
-            "basis": "仅链接，不复制未确认再分发许可的正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Meta Muse · 官方材料 2",
-          "upstream_revision": "Meta Connect 2026 / Muse",
-          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
-        }
-      ],
-      "related": [
-        {
-          "id": "D-33",
-          "name": "rabbit OS3",
-          "url": "https://fieldtofit.top/for-you#news-d-33"
-        },
-        {
-          "id": "CW-A06",
-          "name": "OpenClaw",
-          "url": "https://fieldtofit.top/for-you#watch-cw-a06"
-        }
-      ],
-      "source_published_at": "2026-09-23",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source1",
-          "title": "Meta Muse · 官方发布",
-          "url": "https://about.fb.com/br/news/2026/09/tudo-o-que-anunciamos-no-meta-connect-2026/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source2",
-          "title": "Meta Muse · 官方材料 2",
-          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
-        }
-      ],
-      "state": "published",
-      "summary": "Meta 在 Connect 2026 展示 Muse 的桌面操作、连接器、实时声音和后续硬件入口。",
-      "title": "Meta Muse：扩展 Mac 操作与连接器，并预告眼镜上的 Agent"
-    },
-    {
-      "_position": 2,
-      "aliases": [
         "TransformersGGUF"
       ],
       "checked_at": "2026-09-26",
       "editor": "FieldToFit",
       "event_date": "2026-09-22",
-      "highlight": true,
+      "highlight": false,
       "id": "D-41",
       "interpretation": [
         {
@@ -456,7 +880,7 @@
       "checked_at": "2026-09-26",
       "editor": "FieldToFit",
       "event_date": "2026-09-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-42",
       "interpretation": [
         {
@@ -530,42 +954,129 @@
     {
       "_position": 1,
       "aliases": [
-        "Gemini3.8LiveAvatar"
+        "MuseRealtimeAvatar"
+      ],
+      "checked_at": "2026-09-27",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-23",
+      "highlight": false,
+      "id": "D-43",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "语音与视频共用同一条语音 token 流，重点是声音、口型、表情同步和连续对话中的形象一致性。",
+          "title": "值得看"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "官方报告448×768、25帧/秒，用户说完至收到首个同步音视频字节约870毫秒。这是官方指定系统的结果，本站未复现。",
+          "title": "具体指标"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "博客演示不代表所有形象均已在Muse应用开放，也未据此确认开放权重或通用API。它与Muse Spark 1.3是不同能力，不加入文本模型价格—分数图。",
+          "title": "开放范围"
+        }
+      ],
+      "name": "Muse Realtime Avatar",
+      "note": "原始日期：2026-09-23；版本：Muse Realtime Avatar official report 2026-09-23。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "Meta",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-27",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／项目入口",
+          "reason": "官网全文再分发依据未确认；不将链接冒充可读全文。",
+          "retrieved_at": "2026-09-27T14:02:50.418080+00:00",
+          "rights": {
+            "basis": "仅链接；固定开源正文另列",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Muse Realtime Avatar · 官方入口",
+          "upstream_revision": "Muse Realtime Avatar official report 2026-09-23",
+          "url": "https://research.meta.ai/blog/bringing-your-muse-to-life"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-36",
+          "name": "Meta Muse",
+          "url": "https://fieldtofit.top/news/D-36"
+        },
+        {
+          "id": "D-39",
+          "name": "Gemini 3.8 Live Avatar",
+          "url": "https://fieldtofit.top/news/D-39"
+        }
+      ],
+      "source_published_at": "2026-09-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Muse Realtime Avatar · 官方入口",
+          "url": "https://research.meta.ai/blog/bringing-your-muse-to-life"
+        }
+      ],
+      "state": "published",
+      "summary": "Meta 公布 Muse Realtime Avatar，用参考形象和实时语音流生成连续视频，让角色在对话中说话、做表情和动作。",
+      "title": "Muse Realtime Avatar：让实时语音带上同步的表情与动作"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "MetaMuse"
       ],
       "checked_at": "2026-09-25",
       "editor": "FieldToFit",
-      "event_date": "2026-09-24",
-      "highlight": true,
-      "id": "D-39",
+      "event_date": "2026-09-23",
+      "highlight": false,
+      "id": "D-36",
       "interpretation": [
         {
           "locator": "官方能力、采用条件及限制说明",
           "source_ids": [
-            "source1"
+            "source1",
+            "source2"
           ],
-          "text": "头像随对话显示表情与口型，并可在继续对话时后台调用工具；适合研究导览、客户服务等交互方式的人了解。",
-          "title": "看它新增什么"
+          "text": "官方说明 Muse for Mac 已能在用户授权后操作应用；此次还列出 Notion、GitHub、Box 等工作连接器。采用时需要核对具体权限和账户可用范围。",
+          "title": "看目前提供什么"
         },
         {
           "locator": "官方能力、采用条件及限制说明",
           "source_ids": [
-            "source1"
+            "source1",
+            "source2"
           ],
-          "text": "官方发布指向 Gemini Enterprise；自定义头像目前需要企业白名单。不能写成所有 Gemini 用户已经免费获得。",
-          "title": "看从哪里使用"
+          "text": "眼镜接入计划在未来数月推出，专属邮箱、部分连接器和硬件仍有预告项，不能把发布会展示合并写成现在全部可用。",
+          "title": "看哪些还在路上"
         },
         {
           "locator": "官方能力、采用条件及限制说明",
           "source_ids": [
-            "source1"
+            "source1",
+            "source2"
           ],
-          "text": "官方展示多语言和实时交互，本站未做延迟、稳定性或成本测试。它是 D-16 的新功能事件，与 Gemini 3.8 TTS 文字转语音分开说明。",
-          "title": "看哪些尚未验证"
+          "text": "本条记录官方功能与开放节奏；本站未做电脑操作和权限隔离实测。此前安全争议的独立核验尚未完成，不用产品公告证明其安全性，也不据媒体标题断言当前仍未修复。",
+          "title": "看证据边界"
         }
       ],
-      "name": "Gemini 3.8 Live Avatar",
-      "note": "没有实时延迟/成本实测；定制头像企业白名单条件以官方接入为准。官网正文仅链接；MCP可读本站解读、版本与出处。",
-      "organization": "Google",
+      "name": "Meta Muse",
+      "note": "不同地区/账户连接器范围未实测；安全漏洞修复完整证据仍待独立复核；不推断所有发布会功能已开放。官网正文仅链接；MCP可读本站解读、版本与出处。",
+      "organization": "Meta",
       "reading_materials": [
         {
           "approved": true,
@@ -581,35 +1092,59 @@
             "notice": "",
             "url": ""
           },
-          "title": "Gemini 3.8 Live Avatar · 官方发布",
-          "upstream_revision": "Gemini 3.8 Live with Live Avatar / 2026-09-24",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
+          "title": "Meta Muse · 官方发布",
+          "upstream_revision": "Meta Connect 2026 / Muse",
+          "url": "https://about.fb.com/br/news/2026/09/tudo-o-que-anunciamos-no-meta-connect-2026/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-25",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布或文档入口",
+          "reason": "未确认此网页正文再分发许可；固定版本开源文件如有许可另列。",
+          "retrieved_at": "2026-09-25",
+          "rights": {
+            "basis": "仅链接，不复制未确认再分发许可的正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Meta Muse · 官方材料 2",
+          "upstream_revision": "Meta Connect 2026 / Muse",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
         }
       ],
       "related": [
         {
-          "id": "CW-M03",
-          "name": "Gemini",
-          "url": "https://fieldtofit.top/for-you#watch-cw-m03"
+          "id": "D-33",
+          "name": "rabbit OS3",
+          "url": "https://fieldtofit.top/for-you#news-d-33"
         },
         {
-          "id": "D-16",
-          "name": "Gemini 3.8 Live",
-          "url": "https://fieldtofit.top/for-you#news-d-16"
+          "id": "CW-A06",
+          "name": "OpenClaw",
+          "url": "https://fieldtofit.top/for-you#watch-cw-a06"
         }
       ],
-      "source_published_at": "2026-09-24",
+      "source_published_at": "2026-09-23",
       "sources": [
         {
           "coverage": "link_only",
           "id": "source1",
-          "title": "Gemini 3.8 Live Avatar · 官方发布",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
+          "title": "Meta Muse · 官方发布",
+          "url": "https://about.fb.com/br/news/2026/09/tudo-o-que-anunciamos-no-meta-connect-2026/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Meta Muse · 官方材料 2",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
         }
       ],
       "state": "published",
-      "summary": "Google 为 Gemini 3.8 Live 增加实时头像，把语音对话与同步生成的视频形象接在一起。",
-      "title": "Gemini Live Avatar：边对话、边调用工具的实时数字形象"
+      "summary": "Meta 在 Connect 2026 展示 Muse 的桌面操作、连接器、实时声音和后续硬件入口。",
+      "title": "Meta Muse：扩展 Mac 操作与连接器，并预告眼镜上的 Agent"
     },
     {
       "_position": 3,
@@ -4759,7 +5294,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-09-27",
+  "reviewed_at": "2026-09-28",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

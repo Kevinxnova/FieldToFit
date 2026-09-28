@@ -37,11 +37,11 @@ def test_cross_collection_alias_and_publication_boundary(client):
 
 def test_body_snippet_has_exact_offsets_hash_and_readable_continuation(client):
     migrate(client)
-    body='prefix '+('original source text. '*30)+'Ｓｔｒａｓｓｅ distinctive retrieval '+('tail '*30)
+    body='prefix '+('original source text. '*30)+'Ｓｔｒａｓｓｅ LookupBodyFixtureUnique928 retrieval '+('tail '*30)
     with_material(client,material=mat(body=body,locator='README.md / retrieval'))
-    assert l.lookup('distinctive')['total']==0
+    assert l.lookup('LookupBodyFixtureUnique928')['total']==0
     publish(client,'watch','CW-M01')
-    result=l.lookup('strasse distinctive')
+    result=l.lookup('strasse LookupBodyFixtureUnique928')
     hit=result['items'][0];snippet=next(s for s in hit['snippets'] if s.get('material_id'))
     assert snippet['text']==body[snippet['offset']:snippet['end_offset']]
     assert snippet['content_role']=='source_material' and snippet['source_url']==mat()['url']
@@ -49,7 +49,7 @@ def test_body_snippet_has_exact_offsets_hash_and_readable_continuation(client):
     assert read['body'].startswith(snippet['text']) and read['material']['content_hash']==snippet['content_hash']
     with get_db() as db:
         raw=db.execute('SELECT data FROM knowledge_read_snapshots WHERE id=?',(result['snapshot'],)).fetchone()[0]
-    assert 'distinctive' not in raw and 'original source' not in raw
+    assert 'LookupBodyFixtureUnique928' not in raw and 'original source' not in raw
 
 
 def test_link_only_metadata_is_findable_but_body_not_invented(client):
@@ -65,9 +65,9 @@ def test_link_only_metadata_is_findable_but_body_not_invented(client):
 def test_legacy_evidence_not_selected_or_changed_is_not_searchable(client):
     pub,mid,_=selected('read-only');rid=pub['object']['id']
     assert l.lookup('Source detail',scope='library')['total']==1
-    with get_db() as db:db.execute('UPDATE knowledge_evidence SET body=? WHERE id=?',('STALE SOURCE SECRET',mid))
+    with get_db() as db:db.execute('UPDATE knowledge_evidence SET body=? WHERE id=?',('UnpublishedStaleEvidenceFixture928',mid))
     assert l.lookup('Source detail',scope='library')['total']==0
-    assert l.lookup('STALE SOURCE SECRET')['total']==0
+    assert l.lookup('UnpublishedStaleEvidenceFixture928')['total']==0
     from test_platform import example
     example('unselected')
     assert l.lookup('Source detail',scope='library')['total']==0

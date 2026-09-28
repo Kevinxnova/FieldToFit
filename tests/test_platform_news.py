@@ -53,7 +53,12 @@ def test_invalid_publication_is_not_partially_served(client,tmp_path,monkeypatch
     assert response.status_code==503 and 'items' not in response.json
 
 
-def test_news_filters_access_and_read_only_tools(client,monkeypatch):
+def test_news_filters_access_and_read_only_tools(client,monkeypatch,tmp_path):
+    # Keep filtering assertions independent of new editorial publications.
+    data=json.loads(news.CONTENT_PATH.read_text())
+    data['items']=[item for item in data['items'] if item['id'] in {'D-07','D-10','D-01'}]
+    path=tmp_path/'filter-news.json';path.write_text(json.dumps(data))
+    monkeypatch.setattr(news,'CONTENT_PATH',path)
     assert client.get('/api/v1/platform/news?q=deepseek').json['total']==2
     assert client.get('/api/v1/platform/news?q=nothing-match').json['total']==0
     assert client.get('/api/v1/platform/news?id=unknown').status_code==404
