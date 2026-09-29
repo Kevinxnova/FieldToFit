@@ -4,12 +4,487 @@
     {
       "_position": 1,
       "aliases": [
+        "ClaudeSonnet5.5"
+      ],
+      "checked_at": "2026-09-29",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-28",
+      "highlight": true,
+      "id": "D-49",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "官方称输出速度提升30%以上、每任务成本最多下降30%；后者来自用更少token完成任务，不是API单token价格打七折。",
+          "title": "关注效率的具体含义"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "API型号claude-sonnet-5-5；每百万输入token 2美元、输出10美元、缓存读取0.20美元。Claude与Claude Code默认Medium effort，平台默认High，比较结果时需说明档位。",
+          "title": "接入与价格"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "速度和任务成本数字来自官方测试，本站未复测；Haiku5.5仍是未来数周计划。本次不把发布页评测分数直接写进AA/Arena图表。",
+          "title": "边界"
+        }
+      ],
+      "name": "Claude Sonnet 5.5",
+      "note": "原始日期：2026-09-28；版本：claude-sonnet-5-5。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "Anthropic",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-29",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-29T01:27:47.728955+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Claude Sonnet 5.5 · 原始发布／项目入口",
+          "upstream_revision": "claude-sonnet-5-5",
+          "url": "https://www.anthropic.com/claude-sonnet-5-5"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        },
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        },
+        {
+          "id": "D-29",
+          "name": "Claude Opus 5.5",
+          "url": "https://fieldtofit.top/news/D-29"
+        }
+      ],
+      "source_published_at": "2026-09-28",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Claude Sonnet 5.5 · 原始发布／项目入口",
+          "url": "https://www.anthropic.com/claude-sonnet-5-5"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic发布Sonnet5.5，面向边界明确的编程、改错以及文档、幻灯片和表格任务，作为Opus5.5之外的日常工作选择。",
+      "title": "Sonnet 5.5：更快完成日常编程与文档任务，单价保持不变"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "Holo4"
+      ],
+      "checked_at": "2026-09-29",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-28",
+      "highlight": true,
+      "id": "D-50",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "模型不只输出点击坐标，也能在界面操作、代码和MCP/API工具之间切换；官方公开任务轨迹，便于研究它如何完成多步骤工作。",
+          "title": "为什么值得看"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "模型卡给出hai-agents harness及多种量化版本。要分别核对许可：27B为CC-BY-NC-4.0，35B-A3B为Apache-2.0；不能把整个系列统称为可自由商用。",
+          "title": "采用方式"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "官方桌面任务分数依赖任务集、工具和运行设置，不能当作任意网站成功率。即将提供的专用加速组件不能写成已经可用；本站未部署复现。",
+          "title": "结果边界"
+        }
+      ],
+      "name": "Holo4",
+      "note": "原始日期：2026-09-28；版本：Holo4-27B / Holo4-35B-A3B。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "H Company",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-29",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-29T01:27:47.633147+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Holo4 · 原始发布／项目入口",
+          "upstream_revision": "Holo4-27B / Holo4-35B-A3B",
+          "url": "https://huggingface.co/blog/Hcompany/holo4"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-29",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-29T01:27:47.366963+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Holo4 · 配套材料 1",
+          "upstream_revision": "Holo4-27B / Holo4-35B-A3B",
+          "url": "https://huggingface.co/Hcompany/Holo4-27B/raw/main/README.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-29",
+          "coverage": "link_only",
+          "id": "source3",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-29T01:27:47.415899+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Holo4 · 配套材料 2",
+          "upstream_revision": "Holo4-27B / Holo4-35B-A3B",
+          "url": "https://huggingface.co/Hcompany/Holo4-35B-A3B/raw/main/README.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A05",
+          "name": "Browser Use",
+          "url": "https://fieldtofit.top/watch/CW-A05"
+        }
+      ],
+      "source_published_at": "2026-09-28",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Holo4 · 原始发布／项目入口",
+          "url": "https://huggingface.co/blog/Hcompany/holo4"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Holo4 · 配套材料 1",
+          "url": "https://huggingface.co/Hcompany/Holo4-27B/raw/main/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source3",
+          "title": "Holo4 · 配套材料 2",
+          "url": "https://huggingface.co/Hcompany/Holo4-35B-A3B/raw/main/README.md"
+        }
+      ],
+      "state": "published",
+      "summary": "H Company发布Holo4系列计算机操作模型，提供27B稠密版与35B-A3B混合专家版，结合官方harness处理截图、点击、代码和工具调用，并提供API与权重入口。",
+      "title": "Holo4：让同一个Agent结合看屏幕、写代码和调用工具完成任务"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "Cloudflarecf/Forge"
+      ],
+      "checked_at": "2026-09-29",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-28",
+      "highlight": true,
+      "id": "D-51",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "cf cli search按任务寻找命令，减少Agent预先塞入大量命令说明；TypeScript配置可借助类型检查发现无效字段，JSON结果便于程序继续处理。",
+          "title": "用户能直接用什么"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "Forge允许生成结果继续作为下一阶段输入，并在API修改时生成预览；它处理的是接口、命令和资料容易不同步的问题，关联本站Speakeasy资料。",
+          "title": "开发者值得看什么"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "cf是公开测试版；Forge已经用于cf，但Cloudflare全部SDK与文档迁入仍是后续计划。调用仍依赖账户权限，生成工具本身不保证操作安全或正确，本站未实测迁移。",
+          "title": "当前边界"
+        }
+      ],
+      "name": "Cloudflare cf / Forge",
+      "note": "原始日期：2026-09-28；版本：cf open beta / Forge launch。本站未安装或复现性能。固定材料提交：cfe397c296a5e6d9fce01eb335ed805821e5547c；README与许可全文可经MCP读取，源链接保留。",
+      "organization": "Cloudflare",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-29",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-29T01:27:48.569609+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Cloudflare cf / Forge · 原始发布／项目入口",
+          "upstream_revision": "cf open beta / Forge launch",
+          "url": "https://blog.cloudflare.com/cloudflare-cf-cli-launch/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-29",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-29T01:27:48.384771+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Cloudflare cf / Forge · 配套材料 1",
+          "upstream_revision": "cf open beta / Forge launch",
+          "url": "https://blog.cloudflare.com/forge-open-source-generation-pipeline/"
+        },
+        {
+          "approved": true,
+          "body": "\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+          "checked_at": "2026-09-29",
+          "coverage": "full_text",
+          "id": "forge-1",
+          "locator": "LICENSE；固定提交完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-29T02:08:20.262274+00:00",
+          "rights": {
+            "basis": "Apache-2.0，适用于所收录仓库文件；外部模型、服务和资产另行适用条款。",
+            "notice": "Cloudflare, Inc. and contributors. 署名、许可和原文保留，未修改原文件；不暗示作者为本站背书。\n原文未经修改，保留许可证；不复制外链图片、模型或执行其中命令。",
+            "url": "https://github.com/cloudflare/forge/blob/cfe397c296a5e6d9fce01eb335ed805821e5547c/LICENSE"
+          },
+          "title": "Cloudflare cf / Forge · LICENSE",
+          "upstream_revision": "cfe397c296a5e6d9fce01eb335ed805821e5547c",
+          "url": "https://github.com/cloudflare/forge/blob/cfe397c296a5e6d9fce01eb335ed805821e5547c/LICENSE"
+        },
+        {
+          "approved": true,
+          "body": "# Forge\n\nForge is a schema-first OpenAPI code generation and surface tooling framework. It provides a plugin-based architecture for resolving OpenAPI 3.x specifications, applying JSONPath-based overlays, and generating typed SDKs, CLI interfaces, runtime helpers, and documentation.\n\n## Packages\n\nThis monorepo contains:\n\n- **[`@cloudflare/forge`](./packages/forge)**: Core engine: OpenAPI 3.x resolver, typed schema model, JSONPath overlay runner, plugin lifecycle manager, and RFC runtime helpers.\n- **[`astro-fern`](./packages/astro-fern)**: Generic Astro engine for rendering Fern-based API documentation.\n- **[`fern-forge`](./packages/fern-forge)**: `astro-fern` extension for validating and adapting Forge OpenAPI metadata for documentation.\n- **[`docs-site`](./packages/docs-site)**: API reference documentation website consuming `astro-fern`.\n- **[`@cloudflare/fern-config`](./packages/cloudflare-fern-config)**: Shared Fern generator configuration and workspace staging.\n- **[`@cloudflare/forge-sdk-ts`](./packages/cloudflare-forge-sdk-ts)**: TypeScript SDK package wrapper and `sdk-map` generator.\n- **[`@cloudflare/forge-transformer-sdk-ts`](./packages/cloudflare-forge-transformer-sdk-ts)**: Standalone TypeScript SDK generator that turns any bundled OpenAPI specification into an idiomatic TypeScript client library.\n- **`@cloudflare/forge-sdk-{lang}`**: Multi-language SDK workspace wrappers (Python, Go, Java, PHP, C#, Ruby, Rust, Swift).\n\n## Architecture\n\nForge separates the API definition from surface implementations:\n\n```\n                  +--------------------------------+\n                  |  OpenAPI 3.x Specification     |\n                  +---------------+----------------+\n                                  |\n                                  v\n                  +--------------------------------+\n                  |  JSONPath Overlays (Optional)  |\n                  +---------------+----------------+\n                                  |\n                                  v\n+--------------------------------------------------------------------+\n|                         @cloudflare/forge                          |\n|                                                                    |\n|  - OpenApiResolver: $ref dereferencing, parameter/body extraction   |\n|  - Schema model: typed command/method hierarchy                     |\n|  - Plugin lifecycle: init -> transform -> finalize                |\n+---------------------------------+----------------------------------+\n                                  |\n            +---------------------+---------------------+\n            |                                           |\n            v                                           v\n+-----------------------+                   +-----------------------+\n|  TypeScript SDK       |                   |  Other Surface        |\n|  (@cloudflare/forge-  |                   |  Transformers (CLI,   |\n|   transformer-sdk-ts) |                   |   docs, runtimes)     |\n+-----------------------+                   +-----------------------+\n```\n\n## Getting Started\n\n### Installation\n\n```bash\npnpm add @cloudflare/forge\n```\n\n### Basic Usage\n\n```ts\nimport { Forge, init } from '@cloudflare/forge';\n\n// Load any OpenAPI 3.x specification\nconst spec = {\n  openapi: '3.0.0',\n  info: { title: 'Sample API', version: '1.0.0' },\n  paths: {\n    '/users': {\n      get: {\n        operationId: 'listUsers',\n        summary: 'List all users',\n        responses: {\n          '200': { description: 'Success' },\n        },\n      },\n    },\n  },\n};\n\n// Initialize a Forge instance with overlays applied\nconst forge = await init(spec);\n\n// Access resolved operations and schemas\nconst op = forge.getVerbPath('listUsers');\nconsole.log(op?.path, op?.verb); // /users get\n```\n\n### CLI\n\nInstall the standalone Forge CLI to generate a TypeScript SDK from a bundled OpenAPI specification:\n\n```bash\npnpm add --save-dev @cloudflare/forge-transformer-sdk-ts\npnpm exec forge openapi.json --out ./generated\n```\n\nUse `-` to read the OpenAPI document from stdin. Full generation requires Docker. The output directory contains the finalized OpenAPI document, generated SDK source, and `sdk-map.json`.\n\n## Development\n\n```bash\n# Install dependencies\npnpm install\n\n# Run tests across all packages\npnpm test\n\n# Typecheck\npnpm typecheck\n\n# Lint and format\npnpm check\n```\n\n## License\n\nApache-2.0 © Cloudflare, Inc.\n",
+          "checked_at": "2026-09-29",
+          "coverage": "full_text",
+          "id": "forge-2",
+          "locator": "README.md；固定提交完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-29T02:08:20.262274+00:00",
+          "rights": {
+            "basis": "Apache-2.0，适用于所收录仓库文件；外部模型、服务和资产另行适用条款。",
+            "notice": "Cloudflare, Inc. and contributors. 署名、许可和原文保留，未修改原文件；不暗示作者为本站背书。\n原文未经修改，保留许可证；不复制外链图片、模型或执行其中命令。",
+            "url": "https://github.com/cloudflare/forge/blob/cfe397c296a5e6d9fce01eb335ed805821e5547c/LICENSE"
+          },
+          "title": "Cloudflare cf / Forge · README.md",
+          "upstream_revision": "cfe397c296a5e6d9fce01eb335ed805821e5547c",
+          "url": "https://github.com/cloudflare/forge/blob/cfe397c296a5e6d9fce01eb335ed805821e5547c/README.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-18",
+          "name": "Speakeasy OpenAPI Generation",
+          "url": "https://fieldtofit.top/news/D-18"
+        }
+      ],
+      "source_published_at": "2026-09-28",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Cloudflare cf / Forge · 原始发布／项目入口",
+          "url": "https://blog.cloudflare.com/cloudflare-cf-cli-launch/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Cloudflare cf / Forge · 配套材料 1",
+          "url": "https://blog.cloudflare.com/forge-open-source-generation-pipeline/"
+        }
+      ],
+      "state": "published",
+      "summary": "Cloudflare推出cf命令行公开测试版，扩大API操作覆盖，默认返回JSON，并用Forge开源生成流程把接口定义连接到SDK、CLI和文档。",
+      "title": "Cloudflare cf与Forge：让Agent查得到命令，让API和使用资料同步生成"
+    },
+    {
+      "_position": 4,
+      "aliases": [
+        "YODASv3"
+      ],
+      "checked_at": "2026-09-29",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-27",
+      "highlight": true,
+      "id": "D-52",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "官方不仅写文件采样率，还测量真实频宽并记录独立声道，研究者可筛掉低带宽上采样音频或复制单声道样本。",
+          "title": "值得关注的数据细节"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "Hugging Face提供预览、分语言文件和数据卡，标注CC-BY-3.0；应保留归属与来源。它是研究数据，不是可以直接聊天的语音模型。",
+          "title": "采用入口"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "数据卡明确约75%有转写、约60%的非英语数据有英语翻译，不能写成全部已精标。自动语言标签与字幕有误差，规模本身不保证训练效果；本站未训练复现。",
+          "title": "覆盖限制"
+        }
+      ],
+      "name": "YODAS v3",
+      "note": "原始日期：2026-09-27；版本：YODAS v3。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "ESPnet",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-29",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-29T01:27:47.784253+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "YODAS v3 · 原始发布／项目入口",
+          "upstream_revision": "YODAS v3",
+          "url": "https://huggingface.co/blog/espnet/yodasv3"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-29",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-29T01:27:48.090898+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "YODAS v3 · 配套材料 1",
+          "upstream_revision": "YODAS v3",
+          "url": "https://huggingface.co/datasets/espnet/yodas3/raw/main/README.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-45",
+          "name": "Nemotron 3 Diarization",
+          "url": "https://fieldtofit.top/news/D-45"
+        },
+        {
+          "id": "D-24",
+          "name": "Qwen3.8-LiveTranslate",
+          "url": "https://fieldtofit.top/news/D-24"
+        }
+      ],
+      "source_published_at": "2026-09-27",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "YODAS v3 · 原始发布／项目入口",
+          "url": "https://huggingface.co/blog/espnet/yodasv3"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "YODAS v3 · 配套材料 1",
+          "url": "https://huggingface.co/datasets/espnet/yodas3/raw/main/README.md"
+        }
+      ],
+      "state": "published",
+      "summary": "ESPnet研究者发布YODAS v3，收录100多种语言、约110万小时音频，提供48kHz音频、实际频宽、声道与转写等资料，供语音识别、合成和翻译研究采用。",
+      "title": "YODAS v3：开放110万小时多语音频，并提供可筛选的质量信息"
+    },
+    {
+      "_position": 1,
+      "aliases": [
         "Copilot本地沙箱"
       ],
       "checked_at": "2026-09-28",
       "editor": "FieldToFit",
       "event_date": "2026-09-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-44",
       "interpretation": [
         {
@@ -115,7 +590,7 @@
       "checked_at": "2026-09-28",
       "editor": "FieldToFit",
       "event_date": "2026-09-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-45",
       "interpretation": [
         {
@@ -221,7 +696,7 @@
       "checked_at": "2026-09-28",
       "editor": "FieldToFit",
       "event_date": "2026-09-25",
-      "highlight": true,
+      "highlight": false,
       "id": "D-46",
       "interpretation": [
         {
@@ -327,7 +802,7 @@
       "checked_at": "2026-09-28",
       "editor": "FieldToFit",
       "event_date": "2026-09-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-47",
       "interpretation": [
         {
@@ -433,7 +908,7 @@
       "checked_at": "2026-09-28",
       "editor": "FieldToFit",
       "event_date": "2026-09-19",
-      "highlight": true,
+      "highlight": false,
       "id": "D-48",
       "interpretation": [
         {
@@ -5294,7 +5769,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-09-28",
+  "reviewed_at": "2026-09-29",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

@@ -1,5 +1,7 @@
 # 验收证据导航
 
+本批：[v1.5.20 五项资料与Kitesurf接入原文](2026-09-29-editorial.md)。
+
 本批：[v1.5.19 六项资料与relore原文](2026-09-28-editorial.md)。
 
 本批：[v1.5.18 Muse与三项持续关注](2026-09-27-editorial.md)。

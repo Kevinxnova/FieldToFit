@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.20"></a>
+## v1.5.20 · 五项资料与 Kitesurf 接入原文 · 2026-09-29
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布 Sonnet 5.5、Holo4、Cloudflare cf／Forge、YODAS v3 四条动态，并同步本期速览；保留原始日期、版本与采用限制。
+- 持续关注新增 Kitesurf，介绍 WebMCP、Browser Run 接入、终端查看与兼容边界；当前52条动态、38项持续关注。
+- 网页与MCP同步六份固定原文：Forge README与Apache-2.0许可；Kitesurf采用文档、Cloudflare授权声明、CC-BY-4.0与MIT许可证。
+- 区分Sonnet单token价格与任务成本、Holo4两型号许可、YODAS标注覆盖以及Kitesurf不同日期的文档数据；AA133／Arena92保持。同步中英文README、项目管理总览与验收记录。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish Sonnet 5.5, Holo4, Cloudflare cf/Forge and YODAS v3, and refresh the overview while preserving original dates, versions and adoption limits.
+- Add Kitesurf to Tool watch profiles, covering WebMCP, Browser Run access, terminal rendering and compatibility: 52 developments and 38 watch profiles.
+- Share six fixed originals through web and MCP: Forge README and Apache-2.0 license; Kitesurf adoption documentation, Cloudflare attribution statement, CC-BY-4.0 and MIT licenses.
+- Distinguish Sonnet token pricing from task cost, Holo4 model licenses, YODAS annotation coverage and dated Kitesurf documentation. Keep AA133/Arena92; update bilingual READMEs, project management and validation.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8-9、REQ-9、REQ-11。内容及版本交付，不改变数据库结构、接口或账户权限。实际结果见[本批验收](docs/validation/2026-09-29-editorial.md)。准时日报、连续全来源成功及Jev官方全文缺口仍未关闭。
+
 <a id="v1.5.19"></a>
 ## v1.5.19 · 六项资料与 relore 原文 · 2026-09-28
 

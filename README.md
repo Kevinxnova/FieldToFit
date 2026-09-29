@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.19](CHANGELOG.md#v1.5.19)** · [fieldtofit-v1.5.19](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.19)
+**当前源码版本：[v1.5.20](CHANGELOG.md#v1.5.20)** · [fieldtofit-v1.5.20](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.20)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布 Copilot 本地沙箱、Nemotron 3 Diarization、LeRobot 人形机器人流程、Ember-1 和 DeepSeek DSec 五条动态，同步本期速览；原始发布日期与本站核对日分别保留。
-- 持续关注新增 relore，说明已有修复检索、历史决定追溯与当前代码核验；当前48条动态、37项持续关注。
-- 网页与MCP共享 relore 同一固定提交的README、部署说明、使用说明、版本记录与Apache-2.0许可证五份原文；其他材料按已核实范围提供链接。
-- 保留 Ember 训练支持说明差异、DSec 未确认整体开源与各项未复测边界；AA133点／Arena92点保持。同步中英文README、项目管理总览与发布验收。
+- 发布 Sonnet 5.5、Holo4、Cloudflare cf／Forge、YODAS v3 四条动态，并同步本期速览；保留原始日期、版本与采用限制。
+- 持续关注新增 Kitesurf，介绍 WebMCP、Browser Run 接入、终端查看与兼容边界；当前52条动态、38项持续关注。
+- 网页与MCP同步六份固定原文：Forge README与Apache-2.0许可；Kitesurf采用文档、Cloudflare授权声明、CC-BY-4.0与MIT许可证。
+- 区分Sonnet单token价格与任务成本、Holo4两型号许可、YODAS标注覆盖以及Kitesurf不同日期的文档数据；AA133／Arena92保持。同步中英文README、项目管理总览与验收记录。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
