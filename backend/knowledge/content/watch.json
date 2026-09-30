@@ -25,6 +25,255 @@
   "items": [
     {
       "aliases": [
+        "NVIDIA Kumo Tabular",
+        "KumoTabular"
+      ],
+      "blocks": [
+        {
+          "columns": [
+            "版本／材料",
+            "提供什么",
+            "采用入口",
+            "条件与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "2026-09-29 首发：Small／Medium／Large",
+              "28M–215M参数，用带标签行做上下文分类与回归",
+              "Hugging Face模型卡与SDM库",
+              "需标签上下文；本站未复测"
+            ],
+            [
+              "推理与预处理",
+              "DataFrame、表格张量与类别概率",
+              "structured-data-models；Python3.11+、PyTorch2.7+",
+              "CUDA示例；显存须按规模验证"
+            ],
+            [
+              "模型与代码许可",
+              "模型及随附材料OpenMDW-1.1；代码Apache-2.0",
+              "固定模型卡、README及两份许可",
+              "第三方与外部模型遵守各自条款"
+            ],
+            [
+              "尚未验证",
+              "分布外退化、校准、真实业务留出集表现",
+              "用自身数据验证",
+              "训练配方及合成数据生成器尚待后续开放"
+            ]
+          ]
+        }
+      ],
+      "checked_at": "2026-09-30",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M11",
+      "interpretation": [
+        {
+          "text": "官方 structured-data-models 库提供表格预处理、模型推理与示例，可直接从 DataFrame 进入预测；不是把整张表转换成聊天提示词再生成一段答案。",
+          "title": "采用方式"
+        },
+        {
+          "text": "模型在合成表格上预训练，对每个新任务无需重新训练权重；但仍需提供标签上下文。数值与类别列是主要输入，文本、图像和时间戳要先转换为特征。",
+          "title": "值得研究的设计"
+        },
+        {
+          "text": "权重标注 OpenMDW-1.1，代码为Apache-2.0；模型和代码许可分别保留。领先排名是官方评测；超出训练范围或遇到分布变化仍可能退化，训练配方及合成数据生成器写的是后续开放。本站未复测。",
+          "title": "证据和开放边界"
+        }
+      ],
+      "introduction": "NVIDIA 发布 Kumo Tabular 表格基础模型，提供 28M 至 215M 参数的三个规格，用带标签行作为上下文，为新行输出类别概率或回归结果。",
+      "name": "Kumo Tabular",
+      "note": "原始日期：2026-09-29；版本：Kumo Tabular Small / Medium / Large initial release。本站未安装或复现性能。模型卡、代码README、第三方许可声明及两份许可证共五份固定原文可经MCP读取，代码Apache-2.0与模型OpenMDW-1.1分开标示。",
+      "organization": "NVIDIA",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:24:13.899074+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "NVIDIA Kumo Tabular 技术发布",
+          "upstream_revision": "Kumo Tabular Small / Medium / Large initial release",
+          "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:24:13.025683+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Kumo Tabular 模型卡（上游当前版本）",
+          "upstream_revision": "Kumo Tabular Small / Medium / Large initial release",
+          "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/main/README.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source3",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:24:13.321280+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Structured Data Models 官方仓库",
+          "upstream_revision": "Kumo Tabular Small / Medium / Large initial release",
+          "url": "https://github.com/NVIDIA/structured-data-models"
+        },
+        {
+          "approved": true,
+          "body": "<p align=\"center\">\n<picture>\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"docs/source/images/logo_light.svg\">\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/source/images/logo_dark.svg\">\n  <img src=\"docs/source/images/logo_light.svg\" width=\"125\">\n</picture>\n</p>\n\n<h1 align=\"center\">Structured Data Models\n\n[![Python 3.11+](https://img.shields.io/badge/python-3.11+-brightgreen.svg?style=flat&color=76B900)](https://www.python.org/downloads)\n[![License: Apache 2.0](https://img.shields.io/badge/license-apache%202.0-brightgreen.svg?style=flat&color=76B900)](https://opensource.org/licenses/Apache-2.0)\n[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&color=76B900)](CONTRIBUTING.md)\n[![Docs](https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat&color=76B900)](https://nvidia.github.io/structured-data-models)\n\n</h1>\n\n**A GPU-native library of foundation models, tensor subclasses, and data processors for structured data.**\n\n- **Models:** Reference implementations of structured data foundation models, including tabular models ([`TabICLv2`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.TabICLv2), [`KumoTabular`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoTabular), *etc*), and relational models ([`KumoRelational`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoRelational)), built on a unified interface with room for future model families.\n- **Tensor semantics:** PyTorch-compatible tensor types for numerical, categorical, datetime, text, and relational data.\n- **Data processing:** Composable, extensible, and GPU-accelerated preprocessing and postprocessing for structured data workflows.\n\n## Installation\n\nThe `structured-data-models` package is available from Python 3.11 and PyTorch 2.7 onwards.\nInstall from the `main` branch:\n\n```bash\npip install git+https://github.com/NVIDIA/structured-data-models.git\n```\n\n> [!NOTE]\n> For CUDA workloads, we highly recommend installing [`cudf`](https://docs.rapids.ai/install) as an additional dependency to keep dataframe-style operations on GPU and avoid unnecessary data movement.\n\n## Model Families\n\n**Tabular Foundation Models:**\n\n- **[`TabICLv2`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.TabICLv2)** from Qu *et al.*: [TabICLv2: A Better, Faster, Scalable, and Open Tabular Foundation Model](https://arxiv.org/abs/2602.11139) (ICML '26)\n- **[`KumoTabular`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoTabular)** from Qu *et al.*: [NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction](https://huggingface.co/blog/nvidia/kumo-tabular) ('26)\n- **[`TabFM`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.TabFM)** from Kong *et al.*: [Introducing TabFM: A Zero-shot Foundation Model for Tabular Data](https://research.google/blog/introducing-tabfm-a-zero-shot-foundation-model-for-tabular-data) ('26)\n\n**Relational Foundation Models:**\n\n- **[`KumoRelational`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoRelational)** from Hudovernik *et al.*: [KumoRFM-2: Scaling Foundation Models for Relational Learning](https://arxiv.org/abs/2604.12596) (CoRR '26)\n\n## Quick Tour\n\n```python\nfrom sklearn.datasets import load_breast_cancer\n\nimport sdm\n\ndf = load_breast_cancer(as_frame=True).frame\n\n# A lossless, fully tensorized representation of the raw data on GPU:\ntable = sdm.TableTensor.from_pandas(\n    df=df,\n    stypes=sdm.infer_stypes(df, overrides={\"target\": \"categorical\"}),\n    device=\"cuda\",\n)\n\n# Access to a variety of pre-trained structured data models:\nmodel = sdm.models.TabICLv2(device=\"cuda\")\n\n# Default in-context learning forward pass:\nmodel(\n    x_context=table[:300].drop_columns(\"target\"),\n    y_context=table[:300, \"target\"],\n    x_query=table[300:].drop_columns(\"target\"),\n    num_estimators=8,\n)\n\n# Fit + Predict forward pass via key/value caching for fast inference:\nmodel.fit(\n    x=table[:300].drop_columns(\"target\"),\n    y=table[:300, \"target\"],\n    num_estimators=8,\n)\nmodel.predict(table[300:].drop_columns(\"target\"))\nmodel.clear()\n```\n\nAdditional examples are available in [`examples/`](examples).\nBenchmarks for reproducing reported results live in [`benchmark/`](benchmark).\n\n## Notice and Disclaimer\n\nThis software automatically retrieves, accesses or interacts with external materials.\nThose retrieved materials are not distributed with this software and are governed solely by separate terms, conditions and licenses.\nYou are solely responsible for finding, reviewing and complying with all applicable terms, conditions, and licenses, and for verifying the security, integrity and suitability of any retrieved materials for your specific use case.\nThis software is provided \"AS IS\", without warranty of any kind.\nThe author makes no representations or warranties regarding any retrieved materials, and assumes no liability for any losses, damages, liabilities or legal consequences from your use or inability to use this software or any retrieved materials.\nUse this software and the retrieved materials at your own risk.\n\n## License\n\nThe NVIDIA-authored source code is licensed under the [Apache License 2.0](LICENSE).\nThird-party software and separately distributed model assets are documented in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md):\n\n- [**`sdm/models/tabiclv2/`**](sdm/models/tabiclv2/) contains code derived from [`TabICLv2`](https://github.com/soda-inria/tabicl) under the BSD 3-Clause License; its terms are distributed in [`sdm/models/tabiclv2/LICENSE`](sdm/models/tabiclv2/LICENSE).\n- [**`sdm/models/tabfm/`**](sdm/models/tabfm/) contains code derived from [`TabFM`](https://github.com/google-research/tabfm) under the Apache License 2.0; its terms are distributed in [`sdm/models/tabfm/LICENSE`](sdm/models/tabfm/LICENSE).\n- [**`sdm/models/timesfm3/`**](sdm/models/timesfm3/) contains code derived from [`TimesFM`](https://github.com/google-research/timesfm) under the Apache License 2.0; its terms are distributed in [`sdm/models/timesfm3/LICENSE`](sdm/models/timesfm3/LICENSE).\n- [**`sdm/models/kumo/relational/NOTICE`**](sdm/models/kumo/relational/NOTICE) documents [`KumoRelational`](sdm/models/kumo/relational/)'s reuse of [`TabICLv2`](sdm/models/tabiclv2/)-derived components.\n- [**`third_party/pytorch/`**](third_party/pytorch/) contains the BSD 3-Clause License for material adapted from [PyTorch](https://github.com/pytorch/pytorch) in [`CONTRIBUTING.md`](CONTRIBUTING.md); its terms are distributed in [`third_party/pytorch/LICENSE`](third_party/pytorch/LICENSE).\n- [**`third_party/contributor-covenant/`**](third_party/contributor-covenant/) contains the MIT License for [Contributor Covenant version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct); its terms are distributed in [`third_party/contributor-covenant/LICENSE`](third_party/contributor-covenant/LICENSE).\n",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-1",
+          "locator": "README.md；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "Apache-2.0（NVIDIA仓库文件；外部模型另行许可）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/LICENSE"
+          },
+          "title": "Kumo Tabular · code/README.md",
+          "upstream_revision": "5d663369ff8ead4a78c910dbb8483d558e46627b",
+          "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/README.md"
+        },
+        {
+          "approved": true,
+          "body": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.\n\n\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-2",
+          "locator": "LICENSE；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "Apache-2.0（NVIDIA仓库文件；外部模型另行许可）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/LICENSE"
+          },
+          "title": "Kumo Tabular · code/LICENSE",
+          "upstream_revision": "5d663369ff8ead4a78c910dbb8483d558e46627b",
+          "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/LICENSE"
+        },
+        {
+          "approved": true,
+          "body": "# Third-Party Software\n\nThis project contains code or documentation derived from the following third-party projects.\nRuntime, test, and documentation dependencies are declared in [`pyproject.toml`](pyproject.toml)/[`uv.lock`](uv.lock), and example/benchmark dependencies are resolved separately and are not bundled with this repository.\n\n## TabICLv2\n\n- Source: https://github.com/soda-inria/tabicl\n- License: BSD 3-Clause\n- License terms: [`sdm/models/tabiclv2/LICENSE`](sdm/models/tabiclv2/LICENSE)\n- Optional pretrained weights: https://huggingface.co/jingang/TabICL\n\nThe [`sdm/models/tabiclv2/`](sdm/models/tabiclv2/) and [`sdm/models/kumo/relational`](sdm/models/kumo/relational) implementations contain code derived from [`TabICLv2`](https://github.com/soda-inria/tabicl).\n\n## TabFM\n\n- Source: https://github.com/google-research/tabfm\n- Code license: Apache License 2.0\n- License terms: [`sdm/models/tabfm/LICENSE`](sdm/models/tabfm/LICENSE)\n- Optional pretrained weights: https://huggingface.co/google/tabfm-1.0.0-pytorch\n- Weights license: [TabFM Non-Commercial License v1.0](https://huggingface.co/google/tabfm-1.0.0-pytorch/blob/main/LICENSE)\n\nThe [`sdm/models/tabfm/`](sdm/models/tabfm/) implementation contains code derived from [`TabFM`](https://github.com/google-research/tabfm).\nIts weights are not bundled with this project and may be downloaded only after the user accepts their separate license.\n\n## TimesFM 3.0\n\n- Source: https://github.com/google-research/timesfm\n- Code license: Apache License 2.0\n- License terms: [`sdm/models/timesfm3/LICENSE`](sdm/models/timesfm3/LICENSE)\n- Optional pretrained weights: https://huggingface.co/google/timesfm-3.0-pytorch\n- Weights license: [TimesFM Non-Commercial License v1.0](https://huggingface.co/google/timesfm-3.0-pytorch/blob/main/LICENSE)\n\nThe [`sdm/models/timesfm3/`](sdm/models/timesfm3/) implementation contains code derived from [`TimesFM`](https://github.com/google-research/timesfm).\nIts weights are not bundled with this project and may be downloaded only after the user accepts their separate license.\n\n## TabPFN Extensions\n\n- Source: https://github.com/PriorLabs/tabpfn-extensions\n- License: Apache License 2.0\n- License terms: [`third_party/tabpfn-extensions/LICENSE`](third_party/tabpfn-extensions/LICENSE)\n\nThe [`sdm/models/ecoc.py`](sdm/models/ecoc.py) implementation contains code derived from [`TabPFN Extensions`](https://github.com/PriorLabs/tabpfn-extensions).\n\n## PyTorch Contribution Guide\n\nPortions of [`CONTRIBUTING.md`](CONTRIBUTING.md) are adapted from the [PyTorch contribution guide](https://github.com/pytorch/pytorch/blob/main/CONTRIBUTING.md), distributed under the BSD 3-Clause License. The complete copyright notices and license terms are distributed in [`third_party/pytorch/LICENSE`](third_party/pytorch/LICENSE).\n\n## Contributor Covenant\n\n[`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) is adapted from [Contributor Covenant version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct/), distributed under the MIT License. The complete copyright notice and license terms are distributed in [`third_party/contributor-covenant/LICENSE`](third_party/contributor-covenant/LICENSE).\n",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-3",
+          "locator": "THIRD_PARTY_LICENSES.md；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "Apache-2.0（NVIDIA仓库文件；外部模型另行许可）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/LICENSE"
+          },
+          "title": "Kumo Tabular · code/THIRD_PARTY_LICENSES.md",
+          "upstream_revision": "5d663369ff8ead4a78c910dbb8483d558e46627b",
+          "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/THIRD_PARTY_LICENSES.md"
+        },
+        {
+          "approved": true,
+          "body": "---\nlicense: openmdw-1.1\ntags:\n- tabular-foundation-model\n- structured-data-models\n---\n\n# Kumo Tabular\n\nKumo Tabular is NVIDIA's pretrained tabular foundation model for classification and regression.\n\n## Getting Started\n\nInstall [`structured-data-models`](https://github.com/NVIDIA/structured-data-models) for inference:\n\n```bash\npip install structured-data-models\n```\n\nUse labeled examples as context to predict class probabilities for new data:\n\n```python\nfrom sklearn.datasets import load_breast_cancer\nimport sdm\n\ndf = load_breast_cancer(as_frame=True).frame\n\ntable = sdm.TableTensor.from_pandas(\n    df=df,\n    stypes=sdm.infer_stypes(df, overrides={\"target\": \"categorical\"}),\n    device=\"cuda\",\n)\nmodel = sdm.models.KumoTabular(task=\"classification\", device=\"cuda\")\n\nprobs = model(\n    x_context=table[:300].drop_columns(\"target\"),\n    y_context=table[:300, \"target\"],\n    x_query=table[300:].drop_columns(\"target\"),\n    num_estimators=8,\n)\n\nprint(probs)\n```\n\nTo learn more, visit [structured-data-models](https://github.com/NVIDIA/structured-data-models).\n\n## License\n\nKumo Tabular weights are released under OpenMDW 1.1.\n",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-4",
+          "locator": "README.md；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "OpenMDW-1.1（模型及随附文档）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/4f0dca60610d68f933b978e17ff8f66be3ec3b5b/LICENSE"
+          },
+          "title": "Kumo Tabular · model/README.md",
+          "upstream_revision": "4f0dca60610d68f933b978e17ff8f66be3ec3b5b",
+          "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/4f0dca60610d68f933b978e17ff8f66be3ec3b5b/README.md"
+        },
+        {
+          "approved": true,
+          "body": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.\n\n\nOpenMDW License Agreement, version 1.1 (OpenMDW-1.1)\n\nBy exercising rights granted to you under this agreement, you accept and agree\nto its terms.\n\nAs used in this agreement, \"Model Materials\" means the materials provided to\nyou under this agreement, consisting of: (1) one or more machine learning\nmodels (including architecture and parameters); and (2) all related artifacts\n(including associated data, documentation and software) that are provided to\nyou hereunder.\n\nSubject to your compliance with this agreement, permission is hereby granted,\nfree of charge, to deal in the Model Materials without restriction, including\nunder all copyright, patent, database, and trade secret rights included or\nembodied therein.\n\nIf you distribute any portion of the Model Materials, you shall retain in your\ndistribution (1) a copy of this agreement, and (2) all copyright notices and\nother notices of origin included in the Model Materials that are applicable to\nyour distribution.\n\nIf you file, maintain, or voluntarily participate in a lawsuit against any\nperson or entity asserting that the Model Materials directly or indirectly\ninfringe any patent or copyright, then all rights and grants made to you\nhereunder are terminated, unless that lawsuit was in response to a\ncorresponding lawsuit first brought against you.\n\nThis agreement does not impose any restrictions or obligations with respect to\nany use, modification, or sharing of any outputs generated by using the Model\nMaterials.\n\nTHE MODEL MATERIALS ARE PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY, OR THE\nABSENCE OF LATENT OR OTHER DEFECTS OR ERRORS, WHETHER OR NOT DISCOVERABLE, ALL\nTO THE GREATEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW.\n\nYOU ARE SOLELY RESPONSIBLE FOR (1) CLEARING RIGHTS OF OTHER PERSONS THAT MAY\nAPPLY TO THE MODEL MATERIALS OR ANY USE THEREOF, INCLUDING WITHOUT LIMITATION\nANY PERSON'S COPYRIGHTS OR OTHER RIGHTS INCLUDED OR EMBODIED IN THE MODEL\nMATERIALS; (2) OBTAINING ANY NECESSARY CONSENTS, PERMISSIONS OR OTHER RIGHTS\nREQUIRED FOR ANY USE OF THE MODEL MATERIALS; OR (3) PERFORMING ANY DUE\nDILIGENCE OR UNDERTAKING ANY OTHER INVESTIGATIONS INTO THE MODEL MATERIALS OR\nANYTHING INCORPORATED OR EMBODIED THEREIN.\n\nIN NO EVENT SHALL THE PROVIDERS OF THE MODEL MATERIALS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MODEL MATERIALS, THE\nUSE THEREOF OR OTHER DEALINGS THEREIN.",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-5",
+          "locator": "LICENSE；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "OpenMDW-1.1（模型及随附文档）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/4f0dca60610d68f933b978e17ff8f66be3ec3b5b/LICENSE"
+          },
+          "title": "Kumo Tabular · model/LICENSE",
+          "upstream_revision": "4f0dca60610d68f933b978e17ff8f66be3ec3b5b",
+          "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/4f0dca60610d68f933b978e17ff8f66be3ec3b5b/LICENSE"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-57",
+          "name": "Kumo Tabular 发布",
+          "url": "https://fieldtofit.top/news/D-57"
+        },
+        {
+          "id": "D-25",
+          "name": "Jev",
+          "url": "https://fieldtofit.top/news/D-25"
+        },
+        {
+          "id": "CW-M10",
+          "name": "Laya",
+          "url": "https://fieldtofit.top/watch/CW-M10"
+        }
+      ],
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "NVIDIA Kumo Tabular 技术发布",
+          "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Kumo Tabular 模型卡（上游当前版本）",
+          "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/main/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source3",
+          "title": "Structured Data Models 官方仓库",
+          "url": "https://github.com/NVIDIA/structured-data-models"
+        }
+      ],
+      "state": "published",
+      "type": "model"
+    },
+    {
+      "aliases": [
         "Kitesurf"
       ],
       "blocks": [
@@ -4543,7 +4792,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-09-29",
+  "reviewed_at": "2026-09-30",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

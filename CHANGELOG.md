@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.21"></a>
+## v1.5.21 · 五项动态与 Kumo Tabular 固定原文 · 2026-09-30
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布 GPT-6.1 Sol、Dots、DevDay 开发工具、Muse for Small Business、Kumo Tabular 五条动态，本期速览同步五项。
+- 持续关注新增 Kumo Tabular：表格上下文分类与回归、采用入口、版本及限制；当前57条动态、39项持续关注。
+- 网页与MCP提供 Kumo 的固定模型卡、代码README、第三方许可说明、Apache-2.0及OpenMDW-1.1全文，保留版本、署名与许可。
+- 明确Sol缓存／长上下文价格、Dots权限及额度、MCP Events提案、Decisions有限预览与Muse地区边界；AA133／Arena92图表保持既有快照。同步双语README、项目管理总览与验收记录。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish five developments: GPT-6.1 Sol, Dots, DevDay developer tools, Muse for Small Business and Kumo Tabular; refresh all five overview entries.
+- Add Kumo Tabular to Model watch profiles with tabular in-context prediction, adoption requirements and limitations: 57 developments and 39 watch profiles.
+- Share five fixed Kumo originals via web and MCP: model card, code README, third-party license statement, Apache-2.0 and OpenMDW-1.1 licenses, preserving revisions and attribution.
+- Clarify Sol cache/long-context pricing, Dots permissions and usage, proposed MCP Events, limited Decisions preview and Muse availability. Preserve AA133/Arena92 snapshots and update bilingual READMEs, project management and validation.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8-9、REQ-9、REQ-11。仅内容与版本交付，不改变数据库结构和接口。实际状态见[本批验收](docs/validation/2026-09-30-editorial.md)。准时日报、连续全来源成功及Jev官方全文缺口仍未关闭。
+
 <a id="v1.5.20"></a>
 ## v1.5.20 · 五项资料与 Kitesurf 接入原文 · 2026-09-29
 

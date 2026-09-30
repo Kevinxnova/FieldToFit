@@ -4,12 +4,731 @@
     {
       "_position": 1,
       "aliases": [
+        "GPT-6.1Sol"
+      ],
+      "checked_at": "2026-09-30",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-29",
+      "highlight": true,
+      "id": "D-53",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "标准短上下文每百万 token 输入 2 美元、输出 10 美元，缓存读取从 GPT-6 Sol 的 0.20 降至 0.10 美元。官方所说的五分之一价格，是相对 Astra 的标准输入／输出单价，不是任何任务都能省 80%。",
+          "title": "具体变化"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "接入型号为 gpt-6.1-sol；工具调用使用 Responses API。超过 272K 输入 token 的请求采用长上下文价格，缓存写入和工具费用也应另外核算。",
+          "title": "开发者要看"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "接近 Astra 来自官方特定任务评测，不能理解为全面等价。Sol Ultrafast 仍为即将提供，本次不把官方评测直接填入 AA／Arena 图表。",
+          "title": "能力边界"
+        }
+      ],
+      "name": "GPT-6.1 Sol",
+      "note": "原始日期：2026-09-29；版本：gpt-6.1-sol。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "OpenAI",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:25:58.542732+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "GPT-6.1 Sol 官方发布",
+          "upstream_revision": "gpt-6.1-sol",
+          "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:29:28.719043+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "GPT-6.1 Sol 型号、价格与接入文档",
+          "upstream_revision": "gpt-6.1-sol",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        },
+        {
+          "id": "D-30",
+          "name": "GPT-6 Sol / Luna",
+          "url": "https://fieldtofit.top/news/D-30"
+        },
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        }
+      ],
+      "source_published_at": "2026-09-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "GPT-6.1 Sol 官方发布",
+          "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "GPT-6.1 Sol 型号、价格与接入文档",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 发布 GPT-6.1 Sol，重点提升编程、电脑操作和专业文档任务，提供 API 及 ChatGPT Work、Codex 入口。",
+      "title": "GPT-6.1 Sol：升级日常复杂任务，缓存读取价格降至每百万 token 0.10 美元"
+    },
+    {
+      "_position": 2,
+      "aliases": [
+        "Dots"
+      ],
+      "checked_at": "2026-09-30",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-29",
+      "highlight": true,
+      "id": "D-54",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "它能在对话之外跟进工作，但主动研究阶段的工具限于读取；发消息、修改内容等后续动作仍受权限与审批约束。持续工作不等于默认可以操作所有账户。",
+          "title": "值得关注的机制"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "在符合条件的地区向 Pro、Business Premium 逐步开放；Enterprise 等工作区需管理员启用。可先在桌面端或桌面浏览器完成设置，再从移动端联系。",
+          "title": "谁可以采用"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2"
+          ],
+          "text": "计划包含一定深度工作额度；委托给 Codex／Work 的任务仍计算对应使用量。24/7 不等于无限算力，本站未实测长期任务可靠性。",
+          "title": "使用边界"
+        }
+      ],
+      "name": "Dots",
+      "note": "原始日期：2026-09-29；版本：Dots initial rollout 2026-09-29。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "OpenAI",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:25:58.506691+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Dots 官方发布与开放范围",
+          "upstream_revision": "Dots initial rollout 2026-09-29",
+          "url": "https://openai.com/index/introducing-dots/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:29:28.213210+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Dots 控制与权限说明",
+          "upstream_revision": "Dots initial rollout 2026-09-29",
+          "url": "https://learn.chatgpt.com/docs/dots/controls.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-A08",
+          "name": "Hermes Agent",
+          "url": "https://fieldtofit.top/watch/CW-A08"
+        },
+        {
+          "id": "D-36",
+          "name": "Meta Muse",
+          "url": "https://fieldtofit.top/news/D-36"
+        }
+      ],
+      "source_published_at": "2026-09-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Dots 官方发布与开放范围",
+          "url": "https://openai.com/index/introducing-dots/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Dots 控制与权限说明",
+          "url": "https://learn.chatgpt.com/docs/dots/controls.md"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 推出 Dots：具有云端电脑、可连接应用并持续跟进目标的 Agent。用户可在 ChatGPT、Slack 或 Teams 与其沟通、查看进度和调整任务。",
+      "title": "Dots：把持续跟进任务交给常驻 Agent，并明确它可以做什么"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "OpenAIDevDay2026"
+      ],
+      "checked_at": "2026-09-30",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-29",
+      "highlight": true,
+      "id": "D-55",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3",
+            "source4"
+          ],
+          "text": "Codex Cloud 可以复用已准备的开发环境，各任务获得独立工作区，便于团队统一依赖与设置。Agents API 新增电脑操作入口，使用前仍需核对权限、环境和计费。",
+          "title": "先准备环境再启动任务"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3",
+            "source4"
+          ],
+          "text": "插件可通过 MCP Events 支持事件触发任务，例如出现新工单后读取材料并起草处理计划。该规范仍是提案，现有 MCP 服务不会仅因提供检索就自动具备推送能力。",
+          "title": "从定时查询走向应用事件"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3",
+            "source4"
+          ],
+          "text": "Decisions API 以 Luna 处理文本或图像上下文，回答预设有限选项，面向分类、路由与动作选择；目前仅有限预览，不能写成全面开放，也不能据此声称已优于 Jev。",
+          "title": "与 Jev 相关的新方向"
+        }
+      ],
+      "name": "OpenAI DevDay 2026",
+      "note": "原始日期：2026-09-29；版本：DevDay 2026 developer workflow updates。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "OpenAI",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:25:58.447224+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "DevDay 2026 官方更新汇总",
+          "upstream_revision": "DevDay 2026 developer workflow updates",
+          "url": "https://openai.com/index/devday-2026-recap/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:29:28.315504+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Codex Cloud 环境文档",
+          "upstream_revision": "DevDay 2026 developer workflow updates",
+          "url": "https://learn.chatgpt.com/docs/cloud.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source3",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:29:28.538332+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MCP Events 提案与接入文档",
+          "upstream_revision": "DevDay 2026 developer workflow updates",
+          "url": "https://developers.openai.com/plugins/build/mcp-events"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source4",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:29:28.691692+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Agents API 电脑操作文档",
+          "upstream_revision": "DevDay 2026 developer workflow updates",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "D-12",
+          "name": "OpenAI Agents API",
+          "url": "https://fieldtofit.top/news/D-12"
+        },
+        {
+          "id": "D-25",
+          "name": "Jev",
+          "url": "https://fieldtofit.top/news/D-25"
+        }
+      ],
+      "source_published_at": "2026-09-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "DevDay 2026 官方更新汇总",
+          "url": "https://openai.com/index/devday-2026-recap/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Codex Cloud 环境文档",
+          "url": "https://learn.chatgpt.com/docs/cloud.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source3",
+          "title": "MCP Events 提案与接入文档",
+          "url": "https://developers.openai.com/plugins/build/mcp-events"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source4",
+          "title": "Agents API 电脑操作文档",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 此次开发工具更新覆盖准备环境、操作软件和响应应用事件；另外预览了面向有限答案集合的 Decisions API。",
+      "title": "DevDay 开发工具更新：可复用云环境、电脑操作，以及事件触发的插件任务"
+    },
+    {
+      "_position": 4,
+      "aliases": [
+        "MuseforSmallBusiness"
+      ],
+      "checked_at": "2026-09-30",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-29",
+      "highlight": true,
+      "id": "D-56",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "官方列出 Instagram 专业账户分析、Facebook Pages、Meta 广告账户，以及 Shopify、Stripe、QuickBooks 等业务工具；已有自定义连接器入口。",
+          "title": "具体接入什么"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "它尝试把分散业务资料放进同一工作流程，如分析销售后起草增长计划。官方明确发送、发布或花费需要批准，企业仍须审核实际结果。",
+          "title": "为什么值得看"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1"
+          ],
+          "text": "这是 Muse Agent 的技能与连接器更新，不是 Muse Spark 模型新版本；公告沿用美国、加拿大的产品范围。基础与订阅计划并存，完整地区、账户资格与费用应以产品为准，不能据此修改模型分数。",
+          "title": "范围要分清"
+        }
+      ],
+      "name": "Muse for Small Business",
+      "note": "原始日期：2026-09-29；版本：Muse for Small Business launch。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "Meta",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:25:58.427471+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Muse for Small Business 官方发布",
+          "upstream_revision": "Muse for Small Business launch",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-36",
+          "name": "Meta Muse",
+          "url": "https://fieldtofit.top/news/D-36"
+        },
+        {
+          "id": "D-43",
+          "name": "Muse Realtime Avatar",
+          "url": "https://fieldtofit.top/news/D-43"
+        }
+      ],
+      "source_published_at": "2026-09-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "Muse for Small Business 官方发布",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/"
+        }
+      ],
+      "state": "published",
+      "summary": "Meta 为 Muse 增加面向小企业的技能和连接器，可结合销售、广告和经营资料准备分析、营销内容与日常事务。",
+      "title": "Muse for Small Business：把经营资料接给 Agent，发送、发布和花费仍需批准"
+    },
+    {
+      "_position": 5,
+      "aliases": [
+        "KumoTabular"
+      ],
+      "checked_at": "2026-09-30",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-29",
+      "highlight": true,
+      "id": "D-57",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "官方 structured-data-models 库提供表格预处理、模型推理与示例，可直接从 DataFrame 进入预测；不是把整张表转换成聊天提示词再生成一段答案。",
+          "title": "采用方式"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "模型在合成表格上预训练，对每个新任务无需重新训练权重；但仍需提供标签上下文。数值与类别列是主要输入，文本、图像和时间戳要先转换为特征。",
+          "title": "值得研究的设计"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3"
+          ],
+          "text": "权重标注 OpenMDW-1.1，代码为Apache-2.0；模型和代码许可分别保留。领先排名是官方评测；超出训练范围或遇到分布变化仍可能退化，训练配方及合成数据生成器写的是后续开放。本站未复测。",
+          "title": "证据和开放边界"
+        }
+      ],
+      "name": "Kumo Tabular",
+      "note": "原始日期：2026-09-29；版本：Kumo Tabular Small / Medium / Large initial release。本站未安装或复现性能。模型卡、代码README、第三方许可声明及两份许可证共五份固定原文可经MCP读取，代码Apache-2.0与模型OpenMDW-1.1分开标示。",
+      "organization": "NVIDIA",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:24:13.899074+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "NVIDIA Kumo Tabular 技术发布",
+          "upstream_revision": "Kumo Tabular Small / Medium / Large initial release",
+          "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:24:13.025683+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Kumo Tabular 模型卡（上游当前版本）",
+          "upstream_revision": "Kumo Tabular Small / Medium / Large initial release",
+          "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/main/README.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source3",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:24:13.321280+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Structured Data Models 官方仓库",
+          "upstream_revision": "Kumo Tabular Small / Medium / Large initial release",
+          "url": "https://github.com/NVIDIA/structured-data-models"
+        },
+        {
+          "approved": true,
+          "body": "<p align=\"center\">\n<picture>\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"docs/source/images/logo_light.svg\">\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/source/images/logo_dark.svg\">\n  <img src=\"docs/source/images/logo_light.svg\" width=\"125\">\n</picture>\n</p>\n\n<h1 align=\"center\">Structured Data Models\n\n[![Python 3.11+](https://img.shields.io/badge/python-3.11+-brightgreen.svg?style=flat&color=76B900)](https://www.python.org/downloads)\n[![License: Apache 2.0](https://img.shields.io/badge/license-apache%202.0-brightgreen.svg?style=flat&color=76B900)](https://opensource.org/licenses/Apache-2.0)\n[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&color=76B900)](CONTRIBUTING.md)\n[![Docs](https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat&color=76B900)](https://nvidia.github.io/structured-data-models)\n\n</h1>\n\n**A GPU-native library of foundation models, tensor subclasses, and data processors for structured data.**\n\n- **Models:** Reference implementations of structured data foundation models, including tabular models ([`TabICLv2`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.TabICLv2), [`KumoTabular`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoTabular), *etc*), and relational models ([`KumoRelational`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoRelational)), built on a unified interface with room for future model families.\n- **Tensor semantics:** PyTorch-compatible tensor types for numerical, categorical, datetime, text, and relational data.\n- **Data processing:** Composable, extensible, and GPU-accelerated preprocessing and postprocessing for structured data workflows.\n\n## Installation\n\nThe `structured-data-models` package is available from Python 3.11 and PyTorch 2.7 onwards.\nInstall from the `main` branch:\n\n```bash\npip install git+https://github.com/NVIDIA/structured-data-models.git\n```\n\n> [!NOTE]\n> For CUDA workloads, we highly recommend installing [`cudf`](https://docs.rapids.ai/install) as an additional dependency to keep dataframe-style operations on GPU and avoid unnecessary data movement.\n\n## Model Families\n\n**Tabular Foundation Models:**\n\n- **[`TabICLv2`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.TabICLv2)** from Qu *et al.*: [TabICLv2: A Better, Faster, Scalable, and Open Tabular Foundation Model](https://arxiv.org/abs/2602.11139) (ICML '26)\n- **[`KumoTabular`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoTabular)** from Qu *et al.*: [NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction](https://huggingface.co/blog/nvidia/kumo-tabular) ('26)\n- **[`TabFM`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.TabFM)** from Kong *et al.*: [Introducing TabFM: A Zero-shot Foundation Model for Tabular Data](https://research.google/blog/introducing-tabfm-a-zero-shot-foundation-model-for-tabular-data) ('26)\n\n**Relational Foundation Models:**\n\n- **[`KumoRelational`](https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoRelational)** from Hudovernik *et al.*: [KumoRFM-2: Scaling Foundation Models for Relational Learning](https://arxiv.org/abs/2604.12596) (CoRR '26)\n\n## Quick Tour\n\n```python\nfrom sklearn.datasets import load_breast_cancer\n\nimport sdm\n\ndf = load_breast_cancer(as_frame=True).frame\n\n# A lossless, fully tensorized representation of the raw data on GPU:\ntable = sdm.TableTensor.from_pandas(\n    df=df,\n    stypes=sdm.infer_stypes(df, overrides={\"target\": \"categorical\"}),\n    device=\"cuda\",\n)\n\n# Access to a variety of pre-trained structured data models:\nmodel = sdm.models.TabICLv2(device=\"cuda\")\n\n# Default in-context learning forward pass:\nmodel(\n    x_context=table[:300].drop_columns(\"target\"),\n    y_context=table[:300, \"target\"],\n    x_query=table[300:].drop_columns(\"target\"),\n    num_estimators=8,\n)\n\n# Fit + Predict forward pass via key/value caching for fast inference:\nmodel.fit(\n    x=table[:300].drop_columns(\"target\"),\n    y=table[:300, \"target\"],\n    num_estimators=8,\n)\nmodel.predict(table[300:].drop_columns(\"target\"))\nmodel.clear()\n```\n\nAdditional examples are available in [`examples/`](examples).\nBenchmarks for reproducing reported results live in [`benchmark/`](benchmark).\n\n## Notice and Disclaimer\n\nThis software automatically retrieves, accesses or interacts with external materials.\nThose retrieved materials are not distributed with this software and are governed solely by separate terms, conditions and licenses.\nYou are solely responsible for finding, reviewing and complying with all applicable terms, conditions, and licenses, and for verifying the security, integrity and suitability of any retrieved materials for your specific use case.\nThis software is provided \"AS IS\", without warranty of any kind.\nThe author makes no representations or warranties regarding any retrieved materials, and assumes no liability for any losses, damages, liabilities or legal consequences from your use or inability to use this software or any retrieved materials.\nUse this software and the retrieved materials at your own risk.\n\n## License\n\nThe NVIDIA-authored source code is licensed under the [Apache License 2.0](LICENSE).\nThird-party software and separately distributed model assets are documented in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md):\n\n- [**`sdm/models/tabiclv2/`**](sdm/models/tabiclv2/) contains code derived from [`TabICLv2`](https://github.com/soda-inria/tabicl) under the BSD 3-Clause License; its terms are distributed in [`sdm/models/tabiclv2/LICENSE`](sdm/models/tabiclv2/LICENSE).\n- [**`sdm/models/tabfm/`**](sdm/models/tabfm/) contains code derived from [`TabFM`](https://github.com/google-research/tabfm) under the Apache License 2.0; its terms are distributed in [`sdm/models/tabfm/LICENSE`](sdm/models/tabfm/LICENSE).\n- [**`sdm/models/timesfm3/`**](sdm/models/timesfm3/) contains code derived from [`TimesFM`](https://github.com/google-research/timesfm) under the Apache License 2.0; its terms are distributed in [`sdm/models/timesfm3/LICENSE`](sdm/models/timesfm3/LICENSE).\n- [**`sdm/models/kumo/relational/NOTICE`**](sdm/models/kumo/relational/NOTICE) documents [`KumoRelational`](sdm/models/kumo/relational/)'s reuse of [`TabICLv2`](sdm/models/tabiclv2/)-derived components.\n- [**`third_party/pytorch/`**](third_party/pytorch/) contains the BSD 3-Clause License for material adapted from [PyTorch](https://github.com/pytorch/pytorch) in [`CONTRIBUTING.md`](CONTRIBUTING.md); its terms are distributed in [`third_party/pytorch/LICENSE`](third_party/pytorch/LICENSE).\n- [**`third_party/contributor-covenant/`**](third_party/contributor-covenant/) contains the MIT License for [Contributor Covenant version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct); its terms are distributed in [`third_party/contributor-covenant/LICENSE`](third_party/contributor-covenant/LICENSE).\n",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-1",
+          "locator": "README.md；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "Apache-2.0（NVIDIA仓库文件；外部模型另行许可）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/LICENSE"
+          },
+          "title": "Kumo Tabular · code/README.md",
+          "upstream_revision": "5d663369ff8ead4a78c910dbb8483d558e46627b",
+          "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/README.md"
+        },
+        {
+          "approved": true,
+          "body": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.\n\n\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-2",
+          "locator": "LICENSE；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "Apache-2.0（NVIDIA仓库文件；外部模型另行许可）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/LICENSE"
+          },
+          "title": "Kumo Tabular · code/LICENSE",
+          "upstream_revision": "5d663369ff8ead4a78c910dbb8483d558e46627b",
+          "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/LICENSE"
+        },
+        {
+          "approved": true,
+          "body": "# Third-Party Software\n\nThis project contains code or documentation derived from the following third-party projects.\nRuntime, test, and documentation dependencies are declared in [`pyproject.toml`](pyproject.toml)/[`uv.lock`](uv.lock), and example/benchmark dependencies are resolved separately and are not bundled with this repository.\n\n## TabICLv2\n\n- Source: https://github.com/soda-inria/tabicl\n- License: BSD 3-Clause\n- License terms: [`sdm/models/tabiclv2/LICENSE`](sdm/models/tabiclv2/LICENSE)\n- Optional pretrained weights: https://huggingface.co/jingang/TabICL\n\nThe [`sdm/models/tabiclv2/`](sdm/models/tabiclv2/) and [`sdm/models/kumo/relational`](sdm/models/kumo/relational) implementations contain code derived from [`TabICLv2`](https://github.com/soda-inria/tabicl).\n\n## TabFM\n\n- Source: https://github.com/google-research/tabfm\n- Code license: Apache License 2.0\n- License terms: [`sdm/models/tabfm/LICENSE`](sdm/models/tabfm/LICENSE)\n- Optional pretrained weights: https://huggingface.co/google/tabfm-1.0.0-pytorch\n- Weights license: [TabFM Non-Commercial License v1.0](https://huggingface.co/google/tabfm-1.0.0-pytorch/blob/main/LICENSE)\n\nThe [`sdm/models/tabfm/`](sdm/models/tabfm/) implementation contains code derived from [`TabFM`](https://github.com/google-research/tabfm).\nIts weights are not bundled with this project and may be downloaded only after the user accepts their separate license.\n\n## TimesFM 3.0\n\n- Source: https://github.com/google-research/timesfm\n- Code license: Apache License 2.0\n- License terms: [`sdm/models/timesfm3/LICENSE`](sdm/models/timesfm3/LICENSE)\n- Optional pretrained weights: https://huggingface.co/google/timesfm-3.0-pytorch\n- Weights license: [TimesFM Non-Commercial License v1.0](https://huggingface.co/google/timesfm-3.0-pytorch/blob/main/LICENSE)\n\nThe [`sdm/models/timesfm3/`](sdm/models/timesfm3/) implementation contains code derived from [`TimesFM`](https://github.com/google-research/timesfm).\nIts weights are not bundled with this project and may be downloaded only after the user accepts their separate license.\n\n## TabPFN Extensions\n\n- Source: https://github.com/PriorLabs/tabpfn-extensions\n- License: Apache License 2.0\n- License terms: [`third_party/tabpfn-extensions/LICENSE`](third_party/tabpfn-extensions/LICENSE)\n\nThe [`sdm/models/ecoc.py`](sdm/models/ecoc.py) implementation contains code derived from [`TabPFN Extensions`](https://github.com/PriorLabs/tabpfn-extensions).\n\n## PyTorch Contribution Guide\n\nPortions of [`CONTRIBUTING.md`](CONTRIBUTING.md) are adapted from the [PyTorch contribution guide](https://github.com/pytorch/pytorch/blob/main/CONTRIBUTING.md), distributed under the BSD 3-Clause License. The complete copyright notices and license terms are distributed in [`third_party/pytorch/LICENSE`](third_party/pytorch/LICENSE).\n\n## Contributor Covenant\n\n[`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) is adapted from [Contributor Covenant version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct/), distributed under the MIT License. The complete copyright notice and license terms are distributed in [`third_party/contributor-covenant/LICENSE`](third_party/contributor-covenant/LICENSE).\n",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-3",
+          "locator": "THIRD_PARTY_LICENSES.md；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "Apache-2.0（NVIDIA仓库文件；外部模型另行许可）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/LICENSE"
+          },
+          "title": "Kumo Tabular · code/THIRD_PARTY_LICENSES.md",
+          "upstream_revision": "5d663369ff8ead4a78c910dbb8483d558e46627b",
+          "url": "https://raw.githubusercontent.com/NVIDIA/structured-data-models/5d663369ff8ead4a78c910dbb8483d558e46627b/THIRD_PARTY_LICENSES.md"
+        },
+        {
+          "approved": true,
+          "body": "---\nlicense: openmdw-1.1\ntags:\n- tabular-foundation-model\n- structured-data-models\n---\n\n# Kumo Tabular\n\nKumo Tabular is NVIDIA's pretrained tabular foundation model for classification and regression.\n\n## Getting Started\n\nInstall [`structured-data-models`](https://github.com/NVIDIA/structured-data-models) for inference:\n\n```bash\npip install structured-data-models\n```\n\nUse labeled examples as context to predict class probabilities for new data:\n\n```python\nfrom sklearn.datasets import load_breast_cancer\nimport sdm\n\ndf = load_breast_cancer(as_frame=True).frame\n\ntable = sdm.TableTensor.from_pandas(\n    df=df,\n    stypes=sdm.infer_stypes(df, overrides={\"target\": \"categorical\"}),\n    device=\"cuda\",\n)\nmodel = sdm.models.KumoTabular(task=\"classification\", device=\"cuda\")\n\nprobs = model(\n    x_context=table[:300].drop_columns(\"target\"),\n    y_context=table[:300, \"target\"],\n    x_query=table[300:].drop_columns(\"target\"),\n    num_estimators=8,\n)\n\nprint(probs)\n```\n\nTo learn more, visit [structured-data-models](https://github.com/NVIDIA/structured-data-models).\n\n## License\n\nKumo Tabular weights are released under OpenMDW 1.1.\n",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-4",
+          "locator": "README.md；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "OpenMDW-1.1（模型及随附文档）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/4f0dca60610d68f933b978e17ff8f66be3ec3b5b/LICENSE"
+          },
+          "title": "Kumo Tabular · model/README.md",
+          "upstream_revision": "4f0dca60610d68f933b978e17ff8f66be3ec3b5b",
+          "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/4f0dca60610d68f933b978e17ff8f66be3ec3b5b/README.md"
+        },
+        {
+          "approved": true,
+          "body": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.\n\n\nOpenMDW License Agreement, version 1.1 (OpenMDW-1.1)\n\nBy exercising rights granted to you under this agreement, you accept and agree\nto its terms.\n\nAs used in this agreement, \"Model Materials\" means the materials provided to\nyou under this agreement, consisting of: (1) one or more machine learning\nmodels (including architecture and parameters); and (2) all related artifacts\n(including associated data, documentation and software) that are provided to\nyou hereunder.\n\nSubject to your compliance with this agreement, permission is hereby granted,\nfree of charge, to deal in the Model Materials without restriction, including\nunder all copyright, patent, database, and trade secret rights included or\nembodied therein.\n\nIf you distribute any portion of the Model Materials, you shall retain in your\ndistribution (1) a copy of this agreement, and (2) all copyright notices and\nother notices of origin included in the Model Materials that are applicable to\nyour distribution.\n\nIf you file, maintain, or voluntarily participate in a lawsuit against any\nperson or entity asserting that the Model Materials directly or indirectly\ninfringe any patent or copyright, then all rights and grants made to you\nhereunder are terminated, unless that lawsuit was in response to a\ncorresponding lawsuit first brought against you.\n\nThis agreement does not impose any restrictions or obligations with respect to\nany use, modification, or sharing of any outputs generated by using the Model\nMaterials.\n\nTHE MODEL MATERIALS ARE PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY, OR THE\nABSENCE OF LATENT OR OTHER DEFECTS OR ERRORS, WHETHER OR NOT DISCOVERABLE, ALL\nTO THE GREATEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW.\n\nYOU ARE SOLELY RESPONSIBLE FOR (1) CLEARING RIGHTS OF OTHER PERSONS THAT MAY\nAPPLY TO THE MODEL MATERIALS OR ANY USE THEREOF, INCLUDING WITHOUT LIMITATION\nANY PERSON'S COPYRIGHTS OR OTHER RIGHTS INCLUDED OR EMBODIED IN THE MODEL\nMATERIALS; (2) OBTAINING ANY NECESSARY CONSENTS, PERMISSIONS OR OTHER RIGHTS\nREQUIRED FOR ANY USE OF THE MODEL MATERIALS; OR (3) PERFORMING ANY DUE\nDILIGENCE OR UNDERTAKING ANY OTHER INVESTIGATIONS INTO THE MODEL MATERIALS OR\nANYTHING INCORPORATED OR EMBODIED THEREIN.\n\nIN NO EVENT SHALL THE PROVIDERS OF THE MODEL MATERIALS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MODEL MATERIALS, THE\nUSE THEREOF OR OTHER DEALINGS THEREIN.",
+          "checked_at": "2026-09-30",
+          "coverage": "full_text",
+          "id": "kumo-5",
+          "locator": "LICENSE；固定版本完整原文，相对链接以原文件为基准。",
+          "reason": "",
+          "retrieved_at": "2026-09-30T03:42:59.226161+00:00",
+          "rights": {
+            "basis": "OpenMDW-1.1（模型及随附文档）",
+            "notice": "Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. 原文、署名和许可完整保留，未改写；不复制外链资产，不暗示作者背书。",
+            "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/4f0dca60610d68f933b978e17ff8f66be3ec3b5b/LICENSE"
+          },
+          "title": "Kumo Tabular · model/LICENSE",
+          "upstream_revision": "4f0dca60610d68f933b978e17ff8f66be3ec3b5b",
+          "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/4f0dca60610d68f933b978e17ff8f66be3ec3b5b/LICENSE"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M11",
+          "name": "Kumo Tabular",
+          "url": "https://fieldtofit.top/watch/CW-M11"
+        },
+        {
+          "id": "D-25",
+          "name": "Jev",
+          "url": "https://fieldtofit.top/news/D-25"
+        },
+        {
+          "id": "CW-M10",
+          "name": "Laya",
+          "url": "https://fieldtofit.top/watch/CW-M10"
+        }
+      ],
+      "source_published_at": "2026-09-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "NVIDIA Kumo Tabular 技术发布",
+          "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Kumo Tabular 模型卡（上游当前版本）",
+          "url": "https://huggingface.co/nvidia/Kumo-Tabular/raw/main/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source3",
+          "title": "Structured Data Models 官方仓库",
+          "url": "https://github.com/NVIDIA/structured-data-models"
+        }
+      ],
+      "state": "published",
+      "summary": "NVIDIA 发布 Kumo Tabular 表格基础模型，提供 28M 至 215M 参数的三个规格，用带标签行作为上下文，为新行输出类别概率或回归结果。",
+      "title": "NVIDIA Kumo Tabular：把带标签的表格作为上下文，直接预测新行"
+    },
+    {
+      "_position": 1,
+      "aliases": [
         "ClaudeSonnet5.5"
       ],
       "checked_at": "2026-09-29",
       "editor": "FieldToFit",
       "event_date": "2026-09-28",
-      "highlight": true,
+      "highlight": false,
       "id": "D-49",
       "interpretation": [
         {
@@ -98,7 +817,7 @@
       "checked_at": "2026-09-29",
       "editor": "FieldToFit",
       "event_date": "2026-09-28",
-      "highlight": true,
+      "highlight": false,
       "id": "D-50",
       "interpretation": [
         {
@@ -231,7 +950,7 @@
       "checked_at": "2026-09-29",
       "editor": "FieldToFit",
       "event_date": "2026-09-28",
-      "highlight": true,
+      "highlight": false,
       "id": "D-51",
       "interpretation": [
         {
@@ -373,7 +1092,7 @@
       "checked_at": "2026-09-29",
       "editor": "FieldToFit",
       "event_date": "2026-09-27",
-      "highlight": true,
+      "highlight": false,
       "id": "D-52",
       "interpretation": [
         {
@@ -5769,7 +6488,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-09-29",
+  "reviewed_at": "2026-09-30",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

@@ -34,16 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.20](CHANGELOG.md#v1.5.20)** · [fieldtofit-v1.5.20](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.20)
+**Current source version: [v1.5.21](CHANGELOG.md#v1.5.21)** · [fieldtofit-v1.5.21](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.21)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish Sonnet 5.5, Holo4, Cloudflare cf/Forge and YODAS v3, and refresh the overview while preserving original dates, versions and adoption limits.
-- Add Kitesurf to Tool watch profiles, covering WebMCP, Browser Run access, terminal rendering and compatibility: 52 developments and 38 watch profiles.
-- Share six fixed originals through web and MCP: Forge README and Apache-2.0 license; Kitesurf adoption documentation, Cloudflare attribution statement, CC-BY-4.0 and MIT licenses.
-- Distinguish Sonnet token pricing from task cost, Holo4 model licenses, YODAS annotation coverage and dated Kitesurf documentation. Keep AA133/Arena92; update bilingual READMEs, project management and validation.
+- Publish five developments: GPT-6.1 Sol, Dots, DevDay developer tools, Muse for Small Business and Kumo Tabular; refresh all five overview entries.
+- Add Kumo Tabular to Model watch profiles with tabular in-context prediction, adoption requirements and limitations: 57 developments and 39 watch profiles.
+- Share five fixed Kumo originals via web and MCP: model card, code README, third-party license statement, Apache-2.0 and OpenMDW-1.1 licenses, preserving revisions and attribution.
+- Clarify Sol cache/long-context pricing, Dots permissions and usage, proposed MCP Events, limited Decisions preview and Muse availability. Preserve AA133/Arena92 snapshots and update bilingual READMEs, project management and validation.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.20](CHANGELOG.md#v1.5.20)** · [fieldtofit-v1.5.20](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.20)
+**当前源码版本：[v1.5.21](CHANGELOG.md#v1.5.21)** · [fieldtofit-v1.5.21](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.21)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布 Sonnet 5.5、Holo4、Cloudflare cf／Forge、YODAS v3 四条动态，并同步本期速览；保留原始日期、版本与采用限制。
-- 持续关注新增 Kitesurf，介绍 WebMCP、Browser Run 接入、终端查看与兼容边界；当前52条动态、38项持续关注。
-- 网页与MCP同步六份固定原文：Forge README与Apache-2.0许可；Kitesurf采用文档、Cloudflare授权声明、CC-BY-4.0与MIT许可证。
-- 区分Sonnet单token价格与任务成本、Holo4两型号许可、YODAS标注覆盖以及Kitesurf不同日期的文档数据；AA133／Arena92保持。同步中英文README、项目管理总览与验收记录。
+- 发布 GPT-6.1 Sol、Dots、DevDay 开发工具、Muse for Small Business、Kumo Tabular 五条动态，本期速览同步五项。
+- 持续关注新增 Kumo Tabular：表格上下文分类与回归、采用入口、版本及限制；当前57条动态、39项持续关注。
+- 网页与MCP提供 Kumo 的固定模型卡、代码README、第三方许可说明、Apache-2.0及OpenMDW-1.1全文，保留版本、署名与许可。
+- 明确Sol缓存／长上下文价格、Dots权限及额度、MCP Events提案、Decisions有限预览与Muse地区边界；AA133／Arena92图表保持既有快照。同步双语README、项目管理总览与验收记录。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
