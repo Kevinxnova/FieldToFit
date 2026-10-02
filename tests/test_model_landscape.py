@@ -10,7 +10,7 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     response = client.get('/api/v1/platform/model-landscape')
     assert response.status_code == 200
     body = response.json
-    assert [len(s['points']) for s in body['sources']] == [133, 92]
+    assert [len(s['points']) for s in body['sources']] == [152, 92]
     aa, arena = body['sources']
     assert aa['price_unit'] == 'usd_per_task'
     assert arena['source_updated_at'] == '2026-09-25'
@@ -18,8 +18,8 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     assert arena['points'][0]['score_low'] < arena['points'][0]['score'] < arena['points'][0]['score_high']
     assert 'v4.3' in aa['score_label']
     assert 'Style Control' in arena['score_label']
-    assert aa['coverage']['released_2026'] == 290 and arena['coverage']['released_2026'] == 105
-    assert len(aa['not_plotted']) == 157 and len(arena['not_plotted']) == 13
+    assert aa['coverage']['released_2026'] == 306 and arena['coverage']['released_2026'] == 105
+    assert len(aa['not_plotted']) == 154 and len(arena['not_plotted']) == 13
     assert len(arena['undated']) == 182
     assert all(p['release_date'].startswith('2026-') for s in body['sources'] for p in s['points'])
     assert set(p['organization'] for p in aa['points']) == set(body['companies'])
@@ -89,13 +89,14 @@ def test_candidate_parser_and_company_aliases_do_not_invent_numbers():
 
 def test_flagships_are_reviewed_series_not_per_company_score_winners():
     aa, arena = charts.snapshot()['sources']
-    assert len(aa['points']) == 133 and len(arena['points']) == 92
+    assert len(aa['points']) == 152 and len(arena['points']) == 92
     assert sum(m['status']=='plotted' for m in aa['flagship']['models']) == 11
-    assert sum(m['status']=='plotted' for m in arena['flagship']['models']) == 9
+    assert sum(m['status']=='plotted' for m in arena['flagship']['models']) == 8
     chosen = {m['company']:m for m in arena['flagship']['models']}
     assert chosen['OpenAI']['status']=='missing_coordinates' and chosen['OpenAI']['id']=='gpt-6-astra-max-text'
     assert chosen['Meta']['status']=='plotted' and chosen['Meta']['id']=='muse-spark-1-3-max-bhma-text'
     assert chosen['Kimi']['status']=='missing_coordinates'
+    assert chosen['Google']['status']=='not_listed' and chosen['Google']['id'] is None
     # New selected flagship series remains selected even when an older model scored higher.
     assert chosen['Anthropic']['status']=='plotted' and chosen['Anthropic']['family']=='Claude Opus 5.5'
     assert chosen['xAI']['status']=='plotted' and chosen['xAI']['family']=='Grok 4.7'
@@ -111,3 +112,24 @@ def test_flagships_are_reviewed_series_not_per_company_score_winners():
 def test_task_cost_handles_both_source_formats_without_token_price_substitution(value, expected):
     from scripts.maintenance.prepare_model_landscape import task_cost
     assert task_cost(value) == expected
+
+
+def test_source_release_mapping_and_missing_metrics_are_not_guessed():
+    from scripts.maintenance.prepare_model_landscape import build
+    def html(obj):
+        return '<script>self.__next_f.push('+json.dumps([1,'1:'+json.dumps(obj)+'\n'])+')</script>'
+    releases=[dict(slug='release',name='Family',releaseDate='2026-01-01',creator={'name':'Google'})]
+    configs=[dict(slug='variant-'+str(i),name='Config '+str(i),releaseSlug='release') for i in range(202)]
+    metrics=[dict(slug=c['slug'],name=c['name'],shortName=c['name'],modelCreatorName='Google',intelligenceIndex=10,intelligenceIndexCostPerTask=1) for c in configs[:-1]]
+    arena=html(dict(leaderboardSlug='overall',params={'styleControl':True},entries=[],voteCutoffISOString='2026-01-01T00:00:00Z'))
+    result=build(html([*releases,*configs,*metrics]),arena,{},'2026-10-02')['sources'][0]
+    assert result['coverage']['source_models']==202
+    assert len(result['points'])==201 and len(result['not_plotted'])==1
+    assert all(p['release_date']=='2026-01-01' and p['date_basis']=='matched_model_release' for p in result['points'])
+    missing=result['not_plotted'][0]
+    assert missing['id']=='variant-201' and missing['price'] is None and missing['score'] is None
+    assert missing['missing']==['missing_score','missing_price']
+    assert result['points'][0]['configuration'].startswith('Config ')
+    configs[0]['releaseSlug']='unknown-release'
+    with pytest.raises(ValueError,match='Missing AA release metadata'):
+        build(html([*releases,*configs,*metrics]),arena,{},'2026-10-02')

@@ -20,11 +20,11 @@
     },
     {
       "company": "Google",
-      "evidence_url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
-      "family": "Gemini 3.1 Pro",
+      "evidence_url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "family": "Gemini 4 Argon",
       "ids": {
-        "arena": "gemini-3.1-pro-preview",
-        "artificial-analysis": "gemini-3-1-pro-preview"
+        "arena": null,
+        "artificial-analysis": "gemini-4-argon"
       }
     },
     {
@@ -102,5 +102,5 @@
   ],
   "policy": "FieldToFit 编辑维护的本期旗舰系列名单；每系列每来源一个代表配置，保留来源名称。缺项不替换为旧系列，不代表来源官方旗舰分类。",
   "policy_en": "FieldToFit’s reviewed flagship-series selection, with one representative configuration per source. Original names are retained. Missing entries are not replaced with older series. This is not an official source classification.",
-  "reviewed_at": "2026-09-26"
+  "reviewed_at": "2026-10-02"
 }

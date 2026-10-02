@@ -72,6 +72,17 @@ def build(aa_html, arena_html, ledger, checked_at):
     aa_objects = objects(aa_html); arena_objects = objects(arena_html)
     dates = {o['slug']:o for o in aa_objects if 'releaseDate' in o and 'slug' in o}
     models = {o['slug']:o for o in aa_objects if 'intelligenceIndex' in o and 'shortName' in o}
+    configurations = {o['slug']:o for o in aa_objects if 'releaseSlug' in o and 'slug' in o}
+    # The source catalog can list a configuration before publishing metrics.
+    # Keep it in the explicit missing-coordinate inventory, without borrowed values.
+    for slug, config in configurations.items():
+        if slug not in models:
+            release = dates.get(config['releaseSlug'])
+            if release is None:
+                raise ValueError('Missing AA release metadata for ' + slug)
+            models[slug] = dict(slug=slug, name=config['name'], shortName=config['name'],
+                                modelCreatorName=release['creator']['name'], intelligenceIndex=None,
+                                intelligenceIndexCostPerTask=None, deprecated=release.get('deprecated', False))
     boards = [o for o in arena_objects if o.get('leaderboardSlug') == 'overall' and o.get('params', {}).get('styleControl') is True and 'entries' in o]
     assert len(boards) == 1 and len(models) > 200, 'Source structure changed; review required'
     board = boards[0]
@@ -101,13 +112,17 @@ def build(aa_html, arena_html, ledger, checked_at):
             p['missing'] = reasons; source['not_plotted'].append(p)
         else: source['points'].append(p)
     for slug, r in models.items():
-        d = dates[slug]; cost = r.get('intelligenceIndexCostPerTask')
+        release_slug = configurations.get(slug, {}).get('releaseSlug', slug)
+        d = dates.get(release_slug)
+        if d is None:
+            raise ValueError('Missing AA release metadata for ' + slug + ': ' + release_slug)
+        cost = r.get('intelligenceIndexCostPerTask')
         price = task_cost(cost)
         estimated = r.get('intelligenceIndexIsEstimated') is True
         add(aa, dict(id=slug, name=r['shortName'], organization=company(r['modelCreatorName']), source_organization=r['modelCreatorName'],
                      score=number(r['intelligenceIndex']), price=price, score_url=AA, price_url=AA,
-                     release_date=d['releaseDate'], date_basis='source_release_date', date_url='https://artificialanalysis.ai/models/'+slug,
-                     configuration=d['name'] + (' · 来源估计分' if estimated else ''), configuration_en=d['name'] + (' · Source estimate' if estimated else ''),
+                     release_date=d['releaseDate'], date_basis='source_release_date' if release_slug == slug else 'matched_model_release', date_url='https://artificialanalysis.ai/models/'+slug,
+                     configuration=r.get('name', d['name']) + (' · 来源估计分' if estimated else ''), configuration_en=r.get('name', d['name']) + (' · Source estimate' if estimated else ''),
                      estimated=estimated, deprecated=r.get('deprecated') is True))
     for r in board['entries']:
         evidence = ledger.get(r['modelKey'], {})

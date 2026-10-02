@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.22"></a>
+## v1.5.22 · 六项动态、固定原文与 AA 完整快照 · 2026-10-02
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布 Gemini 4 Argon、Pi 1.0、Clef、Google Skills、Data Agent Kit 和 Olmo-core 3 六条动态，速览同步前五项；当前63条动态、42项持续关注。
+- 更新 Gemini、Pi；新增 Clef、Data Agent Kit、Olmo-core，网页与MCP共享十份新增固定原文及MIT/Apache-2.0许可。
+- AA完整快照更新为152个可绘制配置，306个2026年配置中154个缺坐标；修复releaseSlug发布日期映射，保留原始名称与空值；Arena92点及原日期保持。
+- Google旗舰更新为Argon；Arena旧快照未收录该系列时明确显示缺项。同步双语README、项目管理总览及真实验收记录。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish six developments: Gemini 4 Argon, Pi 1.0, Clef, Google Skills, Data Agent Kit and Olmo-core 3; feature the first five in the overview: 63 developments and 42 watch profiles.
+- Update Gemini and Pi; add Clef, Data Agent Kit and Olmo-core. Share ten new fixed originals with MIT/Apache-2.0 license text through web and MCP.
+- Refresh the complete AA snapshot: 152 plotted configurations and 154 missing coordinates among 306 releases from 2026. Resolve releaseSlug date references and retain source names/nulls; preserve Arena's 92 points and dates.
+- Select Argon as Google's flagship and explicitly show its absence in the unchanged Arena snapshot. Synchronize bilingual READMEs, project management and validation evidence.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-7、REQ-8-9、REQ-9、REQ-11。图表只采用本次整批来源值，不混用旧分数；AA榜单标示v4.3，Argon详情方法页细分v4.3.2，页面说明保留此区别。无数据库结构或API变更。发布、93项回归、47次MCP协议调用、双端页面及v1.5.22正式部署已核对，见[验收记录](docs/validation/2026-10-02-editorial.md)。独立AI客户端跨日验收和连续全来源成功仍未完成。
+
 <a id="v1.5.21"></a>
 ## v1.5.21 · 五项动态与 Kumo Tabular 固定原文 · 2026-09-30
 

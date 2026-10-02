@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.21](CHANGELOG.md#v1.5.21)** · [fieldtofit-v1.5.21](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.21)
+**当前源码版本：[v1.5.22](CHANGELOG.md#v1.5.22)** · [fieldtofit-v1.5.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.22)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布 GPT-6.1 Sol、Dots、DevDay 开发工具、Muse for Small Business、Kumo Tabular 五条动态，本期速览同步五项。
-- 持续关注新增 Kumo Tabular：表格上下文分类与回归、采用入口、版本及限制；当前57条动态、39项持续关注。
-- 网页与MCP提供 Kumo 的固定模型卡、代码README、第三方许可说明、Apache-2.0及OpenMDW-1.1全文，保留版本、署名与许可。
-- 明确Sol缓存／长上下文价格、Dots权限及额度、MCP Events提案、Decisions有限预览与Muse地区边界；AA133／Arena92图表保持既有快照。同步双语README、项目管理总览与验收记录。
+- 发布 Gemini 4 Argon、Pi 1.0、Clef、Google Skills、Data Agent Kit 和 Olmo-core 3 六条动态，速览同步前五项；当前63条动态、42项持续关注。
+- 更新 Gemini、Pi；新增 Clef、Data Agent Kit、Olmo-core，网页与MCP共享十份新增固定原文及MIT/Apache-2.0许可。
+- AA完整快照更新为152个可绘制配置，306个2026年配置中154个缺坐标；修复releaseSlug发布日期映射，保留原始名称与空值；Arena92点及原日期保持。
+- Google旗舰更新为Argon；Arena旧快照未收录该系列时明确显示缺项。同步双语README、项目管理总览及真实验收记录。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
