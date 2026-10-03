@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.23"></a>
+## v1.5.23 · 五项动态、Muse Gadgets 与 AstaBrief · 2026-10-03
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布FLUX 3 Image、Muse Gadgets、llama.cpp决策模型、AstaBrief、微软MAI语音模型五项动态，并同步本期速览；当前68条动态、44项持续关注。
+- 新增Muse Gadgets工具与AstaBrief模型档案；为Laya补充llama.cpp接入说明，保留旧版本和原文。
+- 网页与MCP共享八份新增固定文档与许可：Muse设备SDK、Linux说明，llama.cpp服务器接口和AstaBrief模型卡；明确权限、支持范围、检查点与许可差异。
+- AA152点、Arena92点及各自核对日期保持；同步中英文README、项目管理总览和实际发布验收。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish five developments covering FLUX 3 Image, Muse Gadgets, decision models in llama.cpp, AstaBrief and Microsoft MAI audio models, and refresh the overview: 68 developments and 44 watch profiles.
+- Add Muse Gadgets and AstaBrief profiles; extend Laya with llama.cpp integration material while preserving existing versions and originals.
+- Share eight new fixed documents and license texts through web and MCP, including device SDK, Linux permissions, server API and model-card guidance. Explain support, checkpoint and licensing boundaries.
+- Preserve AA's 152 points, Arena's 92 points and their review dates. Synchronize bilingual READMEs, project management and publication evidence.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8-9、REQ-9、REQ-11。无数据库结构或API变更。Muse官网未标精确发布日，事件日期按仓库创建时间说明；AstaBrief技术介绍日期不等于仓库创建日；llama.cpp本次尚不支持Clef。85项回归、双端预览／正式页面、31次MCP协议调用、完整原文回读与v1.5.23部署已核对，见[验收记录](docs/validation/2026-10-03-editorial.md)。独立客户端跨日及连续全来源验收仍待完成。
+
 <a id="v1.5.22"></a>
 ## v1.5.22 · 六项动态、固定原文与 AA 完整快照 · 2026-10-02
 

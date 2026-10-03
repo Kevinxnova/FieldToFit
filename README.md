@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.22](CHANGELOG.md#v1.5.22)** · [fieldtofit-v1.5.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.22)
+**当前源码版本：[v1.5.23](CHANGELOG.md#v1.5.23)** · [fieldtofit-v1.5.23](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.23)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布 Gemini 4 Argon、Pi 1.0、Clef、Google Skills、Data Agent Kit 和 Olmo-core 3 六条动态，速览同步前五项；当前63条动态、42项持续关注。
-- 更新 Gemini、Pi；新增 Clef、Data Agent Kit、Olmo-core，网页与MCP共享十份新增固定原文及MIT/Apache-2.0许可。
-- AA完整快照更新为152个可绘制配置，306个2026年配置中154个缺坐标；修复releaseSlug发布日期映射，保留原始名称与空值；Arena92点及原日期保持。
-- Google旗舰更新为Argon；Arena旧快照未收录该系列时明确显示缺项。同步双语README、项目管理总览及真实验收记录。
+- 发布FLUX 3 Image、Muse Gadgets、llama.cpp决策模型、AstaBrief、微软MAI语音模型五项动态，并同步本期速览；当前68条动态、44项持续关注。
+- 新增Muse Gadgets工具与AstaBrief模型档案；为Laya补充llama.cpp接入说明，保留旧版本和原文。
+- 网页与MCP共享八份新增固定文档与许可：Muse设备SDK、Linux说明，llama.cpp服务器接口和AstaBrief模型卡；明确权限、支持范围、检查点与许可差异。
+- AA152点、Arena92点及各自核对日期保持；同步中英文README、项目管理总览和实际发布验收。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

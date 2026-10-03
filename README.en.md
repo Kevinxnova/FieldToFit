@@ -34,16 +34,16 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.22](CHANGELOG.md#v1.5.22)** · [fieldtofit-v1.5.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.22)
+**Current source version: [v1.5.23](CHANGELOG.md#v1.5.23)** · [fieldtofit-v1.5.23](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.23)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish six developments: Gemini 4 Argon, Pi 1.0, Clef, Google Skills, Data Agent Kit and Olmo-core 3; feature the first five in the overview: 63 developments and 42 watch profiles.
-- Update Gemini and Pi; add Clef, Data Agent Kit and Olmo-core. Share ten new fixed originals with MIT/Apache-2.0 license text through web and MCP.
-- Refresh the complete AA snapshot: 152 plotted configurations and 154 missing coordinates among 306 releases from 2026. Resolve releaseSlug date references and retain source names/nulls; preserve Arena's 92 points and dates.
-- Select Argon as Google's flagship and explicitly show its absence in the unchanged Arena snapshot. Synchronize bilingual READMEs, project management and validation evidence.
+- Publish five developments covering FLUX 3 Image, Muse Gadgets, decision models in llama.cpp, AstaBrief and Microsoft MAI audio models, and refresh the overview: 68 developments and 44 watch profiles.
+- Add Muse Gadgets and AstaBrief profiles; extend Laya with llama.cpp integration material while preserving existing versions and originals.
+- Share eight new fixed documents and license texts through web and MCP, including device SDK, Linux permissions, server API and model-card guidance. Explain support, checkpoint and licensing boundaries.
+- Preserve AA's 152 points, Arena's 92 points and their review dates. Synchronize bilingual READMEs, project management and publication evidence.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
