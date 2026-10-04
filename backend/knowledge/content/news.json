@@ -594,7 +594,19 @@
             "notice": "MIT License\n\nCopyright (c) 2025\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
           }
         }
-      ]
+      ],
+      "media": {
+        "url": "https://cdn.jsdelivr.net/gh/ag-ui-protocol/ag-ui@97f789cc1c48eaaf6949c9e9a88abb5cf6e7c5e3/docs/images/ai-protocol-stack.png",
+        "full_url": "https://cdn.jsdelivr.net/gh/ag-ui-protocol/ag-ui@97f789cc1c48eaaf6949c9e9a88abb5cf6e7c5e3/docs/images/ai-protocol-stack.png",
+        "alt": "AG-UI 官方协议分工示意：Agent 通过 MCP 连接工具，通过 A2A 连接其他 Agent，通过 AG-UI 与用户交互。",
+        "caption": "官方协议分工示意，帮助理解 AG-UI、MCP 与 A2A 的不同连接方向；不表示性能、当前兼容范围或本站实测。",
+        "source_url": "https://github.com/ag-ui-protocol/ag-ui/blob/97f789cc1c48eaaf6949c9e9a88abb5cf6e7c5e3/docs/images/ai-protocol-stack.png",
+        "credit": "AG-UI contributors · ag-ui-protocol/ag-ui",
+        "reuse_basis": "MIT License；原图未修改。版权与完整许可证保留在本条 AG-UI LICENSE 原始材料中。许可证：https://github.com/ag-ui-protocol/ag-ui/blob/97f789cc1c48eaaf6949c9e9a88abb5cf6e7c5e3/LICENSE",
+        "version": "官方仓库固定修订 97f789cc1c48eaaf6949c9e9a88abb5cf6e7c5e3；图中为协议分工概念，不是版本兼容清单。",
+        "reviewed_at": "2026-10-04",
+        "fit": "contain"
+      }
     },
     {
       "id": "D-73",

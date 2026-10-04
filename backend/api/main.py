@@ -32,6 +32,8 @@ app.register_blueprint(knowledge_bp)
 app.register_blueprint(mcp_bp)
 from backend.analytics import bp as analytics_bp
 app.register_blueprint(analytics_bp)
+from backend.traffic import bp as traffic_bp
+app.register_blueprint(traffic_bp)
 from backend.seo import bp as search_bp
 app.register_blueprint(search_bp)
 

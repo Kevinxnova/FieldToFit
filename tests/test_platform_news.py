@@ -74,3 +74,29 @@ def test_edition_metadata_change_invalidates_revision(client, tmp_path, monkeypa
     data['title'] = 'Corrected edition title'
     path = tmp_path / 'news.json'; path.write_text(json.dumps(data)); monkeypatch.setattr(news, 'CONTENT_PATH', path)
     assert client.get('/api/v1/platform/news?revision=' + original).status_code == 409
+
+
+def media_fixture():
+    return {'url':'https://example.org/thumb.png','full_url':'https://example.org/full.png',
+            'source_url':'https://example.org/release','alt':'Reviewed diagram','caption':'Diagram of this version',
+            'credit':'Example authors','reuse_basis':'Permission recorded','version':'v1 · 2026-10-01',
+            'reviewed_at':'2026-10-01','fit':'contain'}
+
+
+def test_optional_media_is_public_whitelisted_and_revisioned(client):
+    data=json.loads(news.CONTENT_PATH.read_text()); original=news.news(_data=data)
+    item=data['items'][0]; item['media']={**media_fixture(),'internal_note':'SECRET'}; item['category']='tool'
+    changed=news.news(_data=data)
+    public=next(x for x in changed['items'] if x['id']==item['id'])
+    assert public['media']==media_fixture() and public['category']=='tool'
+    assert changed['revision']!=original['revision'] and 'SECRET' not in json.dumps(changed)
+    item['state']='withdrawn'
+    assert item['id'] not in {x['id'] for x in news.news(_data=data)['items']}
+
+
+@pytest.mark.parametrize('patch', [{'url':'javascript:alert(1)'},{'url':'https://localhost/private'},
+    {'full_url':'https://127.0.0.1/private'},{'source_url':'https://user:pass@example.org/x'},
+    {'alt':''},{'reuse_basis':''},{'reviewed_at':'invalid'},{'fit':'stretch'}])
+def test_media_validation_blocks_unsafe_or_incomplete_publication(client,patch):
+    data=json.loads(news.CONTENT_PATH.read_text());data['items'][0]['media']={**media_fixture(),**patch}
+    with pytest.raises(Exception):news.validate(data)

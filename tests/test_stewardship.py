@@ -109,6 +109,7 @@ def test_natural_days_thresholds_recovery_keep_frozen_body(client):
 
 
 def test_change_ack_deferral_and_public_private_boundary(client,monkeypatch):
+    monkeypatch.setattr(ws, 'today', lambda: '2026-09-15')
     args=material(client);s.observe(*args,OK,at(1));v=s.observe(*args,{**OK,'hash':'new-body'},at(2))
     assert v['changed'] and v['needs_review']
     d={'id':args[0],'material_id':args[1],'check_revision':s.digest(v),'decision':'defer','reason':'PRIVATE-DEFER-NOTE','review_after':'2026-09-30'}
@@ -185,6 +186,7 @@ def test_stale_source_evidence_invalidates_merge(client):
 
 
 def test_removed_material_status_and_threshold_escalation(client,monkeypatch):
+    monkeypatch.setattr(ws, 'today', lambda: '2026-09-15')
     args=material(client)
     for day in range(1,4):v=s.observe(*args,FAIL,at(day))
     s.decide_material({'id':args[0],'material_id':args[1],'check_revision':s.digest(v),'decision':'defer','reason':'Wait for source recovery','review_after':'2026-09-30'})

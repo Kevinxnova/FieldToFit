@@ -207,7 +207,14 @@ def history(rid, revision=None, limit=20, cursor=None):
         return _history(db, rid, pub['revision'], limit)
 
 
-def changes(after=0, object_ids=None, limit=20, cursor=None, scope='legacy'):
+def changes(after=0, object_ids=None, limit=20, cursor=None, scope='legacy', include_related=False, initialize=False):
+    if not isinstance(include_related, bool) or not isinstance(initialize, bool):
+        raise p.PlatformError('include_related and initialize must be booleans')
+    if include_related:
+        if scope != 'workspace': raise p.PlatformError('Follow scope requires scope=workspace')
+        from backend.knowledge.follow_updates import changes as follow_changes
+        return follow_changes(after, object_ids, limit, cursor, initialize)
+    if initialize: raise p.PlatformError('initialize requires include_related=true')
     if scope=='workspace':
         from backend.knowledge.stewardship import changes as current_changes
         return current_changes(after,object_ids,limit,cursor)

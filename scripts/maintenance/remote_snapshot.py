@@ -5,6 +5,7 @@ then validates the independent local restore. Requires explicit --env-file.
 """
 import argparse
 import sqlite3
+import sys
 from pathlib import Path
 
 
@@ -46,6 +47,7 @@ def snapshot(target):
 
 
 if __name__ == '__main__':
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
     import json
     from dotenv import load_dotenv
     p=argparse.ArgumentParser(description=__doc__)

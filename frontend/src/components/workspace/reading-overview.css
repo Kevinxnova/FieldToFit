@@ -1,0 +1,56 @@
+.section-overview { border-left:3px solid var(--green); padding:4px 0 4px 16px; margin:18px 0 24px; overflow-wrap:anywhere; }
+.section-overview p { margin:6px 0; font-size:14px; line-height:1.75; }
+.section-overview strong { font-size:16px; }
+.section-overview .overview-coverage { color:var(--muted); font-size:12px; }
+.glance-b .glance-layout { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); column-gap:26px; }
+.glance-b .glance-lead { grid-column:1; grid-row:1 / span 4; }
+.glance-b .glance-secondary { grid-column:2; border-bottom:1px solid var(--line); padding:10px 0; }
+.glance-b article { min-width:0; overflow-wrap:anywhere; }
+.glance-b h4 { font-size:18px; margin:8px 0; }
+.glance-b .glance-lead h4 { font-size:23px; }
+.glance-b p { font-size:14px; line-height:1.8; margin:8px 0; }
+.glance-b .glance-secondary p { font-size:13px; }
+.glance-b a { display:inline; padding:0; font-size:inherit; }
+.glance-b article > a { font-size:12px; }
+.reviewed-image { margin:0 0 10px; }
+.reviewed-image .image-trigger { display:block; width:100%; padding:0; border:0; background:var(--surface); border-radius:7px; overflow:hidden; cursor:zoom-in; }
+.reviewed-image img { width:100%; height:100px; display:block; }
+.reviewed-image.lead-image img { height:220px; }
+.reviewed-image figcaption { font-size:11px; color:var(--muted); margin-top:6px; line-height:1.6; }
+.reading-image-dialog { max-width:min(1100px,94vw); max-height:90vh; overflow:auto; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:12px; padding:20px; }
+.reading-image-dialog::backdrop { background:rgb(0 0 0 / 65%); }
+.reviewed-image .reading-image-dialog img { height:auto; max-height:65vh; object-fit:contain; margin:15px 0; }
+.release-filters { display:flex; align-items:end; gap:10px; flex-wrap:wrap; margin:20px 0 12px; }
+.release-filters label { display:flex; flex-direction:column; gap:5px; min-width:0; font-size:12px; color:var(--muted); }
+.release-filters label:last-of-type { flex:1 1 170px; }
+.release-filters select,.release-filters input { width:100%; min-width:0; border:1px solid var(--line); background:var(--surface); color:inherit; border-radius:6px; padding:8px; min-height:42px; font:inherit; font-size:14px; }
+.release-status { font-size:12px; color:var(--muted); line-height:1.8; }
+.release-date { color:var(--muted); font-size:12px; margin:24px 0 0; }
+.release-row { padding:18px 0; border-bottom:1px solid var(--line); overflow-wrap:anywhere; scroll-margin-top:120px; }
+.release-row h4 { font-size:18px; margin:0 0 6px; line-height:1.6; }
+.release-row h4 a { color:inherit; }
+.release-row p { font-size:14px; line-height:1.75; margin:6px 0; }
+.release-row .news-meta { font-size:11px; color:var(--muted); }
+.release-row summary { color:var(--green); font-size:12px; padding:8px 0; cursor:pointer; }
+.release-row details ul { padding-left:22px; }
+.release-row details li { margin:12px 0; }
+.release-row details a { font-size:12px; margin-right:10px; }
+.release-pagination { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:24px 0; }
+.release-pagination span { margin-right:auto; color:var(--muted); font-size:12px; }
+.release-empty { padding:24px 0; }
+@media(max-width:700px) {
+ .glance-b .glance-layout { display:block; }
+ .glance-b .glance-secondary { padding:16px 0; }
+ .glance-b .glance-secondary .reviewed-image { max-width:180px; }
+ .release-filters label { flex:1 1 42%; }
+ .release-filters input,.release-filters select { font-size:16px; }
+ .release-row summary { min-height:44px; display:list-item; }
+ .reading-image-dialog { padding:14px; }
+}
+/* Override the older text-only glance link grid, regardless of bundle stylesheet order. */
+.news-glance.glance-b a { display:inline; padding:0; font-size:inherit; }
+.news-glance.glance-b article > a { font-size:12px; }
+.glance-b .glance-secondary [data-content-exposure] p { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; }
+.glance-b .glance-secondary { align-self:start; }
+.glance-b .glance-layout { align-content:start; }
+.glance-b .platform-section-heading { flex-wrap:wrap; }

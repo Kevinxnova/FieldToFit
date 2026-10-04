@@ -1,4 +1,4 @@
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams, useLocation } from 'react-router-dom';
 import { useRemote } from '../api/knowledge';
 import { NewsReading, type NewsCollection } from '../components/workspace/NewsReading';
 import { ContinuousWatch, type WatchCollection } from '../components/workspace/ContinuousWatch';
@@ -13,6 +13,8 @@ export function PublishedDetail({kind}: {kind:'news'|'watch'}) {
 }
 function Detail({kind, id}: {kind:'news'|'watch';id:string}) {
   const {pick} = useWorkspace();
+  const location=useLocation();const readingReturn=location.state?.readingReturn;
+  const back=typeof readingReturn?.url==='string'&&/^\/for-you(?:\?|$)/.test(readingReturn.url)?readingReturn:null;
   const result = useRemote<NewsCollection | WatchCollection>(`/v1/platform/${kind}?id=${encodeURIComponent(id)}`);
   const item = !result.loading && !result.error ? result.data?.items[0] : null;
   const path = `/${kind}/${id}`;
@@ -22,7 +24,7 @@ function Detail({kind, id}: {kind:'news'|'watch';id:string}) {
   return <div className="platform-page published-detail">
     {!result.loading && <PageMetadata title={item ? title+' · FieldToFit' : 'FieldToFit · '+title} description={description} path={path} index={!!item}/>}
     <VisitReady ready={!!item}/>
-    <p><Link to="/for-you">← For you</Link></p>
+    <p><Link to={back?.url||"/for-you"} state={back?{readingRestore:back.id}:undefined}>← {back?pick("返回阅读位置","Back to reading position"):"For you"}</Link></p>
     {result.loading && <p role="status">{pick('正在读取…','Loading…')}</p>}
     {result.error && <div role="alert"><p>{pick('这项资料已下架、不存在或暂时无法读取。','This item is unavailable, withdrawn or could not be loaded.')}</p><button className="button" onClick={result.reload}>{pick('重试','Retry')}</button></div>}
     {item && <><h1>{title}</h1>{kind === 'news'

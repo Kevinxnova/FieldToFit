@@ -100,3 +100,20 @@ v1.5.12 源码实现 REQ-18-1 至 4，v1.5.13 修复发布配置并于 2026-09-2
 3. **百度**：在[百度搜索资源平台](https://ziyuan.baidu.com/)单独添加并验证 `https://fieldtofit.top`，进入「普通收录」，按账号可用方式提交公开网址。若后台开放 sitemap，再提交同一地图；普通站点不能假定拥有 sitemap 权限，参见[官方权限表](https://ziyuan.baidu.com/viptools)。
 
 分别保存验证状态、提交时间、地图处理结果和索引报告；账号登录和 DNS 验证依赖所有者实际账号。2026-09-23 Google 域名 TXT 已在权威及公共 DNS 核验，所有者已提交地图并完成实际网址测试；地图报告仍显示无法抓取，成功读取待复验。Bing／百度验证与提交尚未执行。提交后由各平台决定抓取和收录，不能将「已提交」写成「已收录」。
+
+## v1.6.0 详细统计的增量迁移
+
+沿用现有数据库与凭据，在维护窗口运行 `python -m backend.analytics migrate`。迁移只新增独立统计表，不重置累计访问、不改内容表；新建数据库也包含这些表。旧 `/api/analytics/visit` 和只读总数接口保留。`FIELDTOFIT_ANALYTICS_ENABLED=1` 及匹配的正式 `FIELDTOFIT_ANALYTICS_ORIGIN` 仍是总开关；`FIELDTOFIT_ANALYTICS_DETAILS=0` 可单独停用详细采集并退回原计数。未迁移或故障时采集失败不影响阅读。
+
+`FIELDTOFIT_ANALYTICS_REQUIRE_CONSENT=1` 时须用户主动同意才发送详细事件。`FIELDTOFIT_ANALYTICS_CAMPAIGNS` 是逗号分隔的推广代号白名单，仅接受字母、数字、横线、下划线且单项最多 40 字符；未知 UTM 不保存。DNT/GPC、管理身份及已知机器人仍排除。无存储时只记匿名 PV，不估算 UV、会话和复访。
+
+`python -m backend.analytics clean` 沿用既有维护入口，清理 90 天事件／标识、超过 13 个月的日汇总及原短期会话。含统计明细的备份同样限制在 90 天内；运维须按存储提供方实际备份保留设置执行，代码清理不代表外部备份已删除。累计访问永久保留。后台 `/admin?section=statistics` 与汇总 CSV 复用管理认证，输出聚合数据，不提供访客明细。
+
+UV 是区间去重浏览器数；跨午夜的活跃会话不拆分。内容被看见按介绍区域至少一半可见连续一秒计，同一会话、同一内容去重。复制、导出、原文成功读取和网页到 MCP 的测试分别记录；网页服务测试不代表个人 AI 已连接。实际 AI 客户端连接成功没有可信回执时保持未测，不从复制量推断。启用前、失败和停采期间不补造流量。生产数据库迁移和连续三日真实运行须另记实际验收。
+
+
+### v1.6.0 最终上传注意事项
+
+2026-10-04生产副本迁移、真实配图和本地production构建已验，见[部署前证据](../validation/2026-10-04-follow-traffic.md#media-predeploy)。本机macOS的Vercel构建含平台专属Python依赖，部署时上传源码并由云端重建，不使用本机 `--prebuilt`。上传排除 `.vercel_python_packages/`、测试专用 `pyproject.toml`、私密output、数据库和环境文件；后者继续由平台提供。D-72配图已存入正式内容集合，旧v1.5.24应用不输出该字段，v1.6.0部署后核对实际图片、出处与放大；无需再次发布同一配图修订。
+
+2026-10-04本批已按上述方式完成生产备份、5张新增统计表迁移及云端源码部署；健康与MCP均为v1.6.0，D-72配图、双端阅读／关注及私有报表已验，见[生产验收](../validation/2026-10-04-follow-traffic.md#production-deployment)。连续三日真实运行仍待验。

@@ -1,3 +1,7 @@
+import { ProfileNewsOverview } from './ProfileNewsOverview';
+import type { NewsItem } from './NewsReading';
+import { ContentExposure, trackAction } from './Traffic';
+import { FollowButton } from './FollowUpdates';
 import { contentPath, publicContentLink } from '../../search';
 import { PublicMaintenance, type Maintenance } from './PublicMaintenance';
 import { ContentMaterials, type ReadingMaterial, type PreviewBodies } from './ContentMaterials';
@@ -34,9 +38,10 @@ function packageText(data:WatchCollection,item?:WatchItem){
 function download(body:string,name:string){const url=URL.createObjectURL(new Blob([body],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name+'.json';a.click();URL.revokeObjectURL(url);}
 export function WatchHandoff({data,item}:{data:WatchCollection;item?:WatchItem}){
   const {pick,notify}=useWorkspace();
-  return <div className="platform-actions"><button className="text-button" onClick={async()=>{const body=packageText(data,item);try{await navigator.clipboard.writeText(body);notify(pick('资料、解读与出处已复制','Profile and citations copied'));}catch{download(body,item?.id||'fieldtofit-watch');notify(pick('已改为下载资料','Downloaded materials instead'));}}}>{pick('交给我的 AI','Give to my AI')}</button><button className="text-button" onClick={()=>download(packageText(data,item),item?.id||'fieldtofit-watch')}>{pick(item?'下载此项资料':'下载当前范围资料',item?'Download profile':'Download current selection')}</button></div>;
+  return <div className="platform-actions"><button className="text-button" onClick={async()=>{const body=packageText(data,item);try{await navigator.clipboard.writeText(body);trackAction('handoff_copy',item?.id);notify(pick('资料、解读与出处已复制','Profile and citations copied'));}catch{download(body,item?.id||'fieldtofit-watch');notify(pick('已改为下载资料','Downloaded materials instead'));}}}>{pick('交给我的 AI','Give to my AI')}</button><button className="text-button" onClick={()=>{download(packageText(data,item),item?.id||'fieldtofit-watch');trackAction('material_export',item?.id);}}>{pick(item?'下载此项资料':'下载当前范围资料',item?'Download profile':'Download current selection')}</button></div>;
 }
-export function ContinuousWatch({result,previewBodies,standalone=false}:{standalone?:boolean;previewBodies?:PreviewBodies;result:{data:WatchCollection|null;loading:boolean;error:string;reload:()=>void}}){
+const groupGuides:Record<string,[string,string]>={model:['按模型族看版本、能力与运行条件；不同配置分开核对。','Read versions, capabilities and runtime requirements by model family; check configurations separately.'],agent:['先看自主执行的范围，再看环境、工具与授权边界。','Start with execution scope, then examine environments, tools and permission boundaries.'],tool:['从用途、接入和部署条件理解工具，沿出处核对接口。','Understand tools through purpose, integration and deployment; verify interfaces at the source.'],skill:['按可复用能力及所需工具／权限阅读，核对适用工作流。','Read reusable capabilities, required tools and permissions against the workflow.'],harness:['看模型与工具如何组织执行、保存状态和验证结果。','See how models and tools coordinate execution, preserve state and validate results.']};
+export function ContinuousWatch({result,previewBodies,standalone=false,news=[]}:{news?:NewsItem[];standalone?:boolean;previewBodies?:PreviewBodies;result:{data:WatchCollection|null;loading:boolean;error:string;reload:()=>void}}){
   const {pick,notify}=useWorkspace();const {data,loading,error,reload}=result;
   return <>
     {loading&&<p role="status">{pick('正在读取持续关注…','Loading ongoing watch…')}</p>}
@@ -44,9 +49,10 @@ export function ContinuousWatch({result,previewBodies,standalone=false}:{standal
     {data?.total===0&&<p role="status">{pick('没有匹配的持续关注资料，可更换关键词或清除筛选。','No matching profiles. Try another keyword or clear filters.')}</p>}
     {data?.groups.filter(g=>g.count>0).map(g=><section className="watch-group" key={g.id} aria-labelledby={'watch-group-'+g.id}>
       <div className="platform-section-heading"><h3 id={'watch-group-'+g.id} tabIndex={-1}>{g.name}</h3><span>{g.count} {pick('个跟踪主体','profiles')}</span></div>
+      {!standalone&&<div className="section-overview"><p>{pick(...(groupGuides[g.id]||['阅读已审资料与使用条件。','Read reviewed materials and requirements.']))}</p><ProfileNewsOverview news={news} ids={data.items.filter(i=>i.type===g.id).map(i=>i.id)} limit={1}/><p className="overview-coverage">{pick('当前覆盖：','Current coverage: ')}{data.items.filter(i=>i.type===g.id).slice(0,2).map(i=>i.name).join('、')}{g.count>2?pick(' 等',' and more'):''} · {pick('核对日期及缺项见各档案，不代表今日全部检查成功。','See each profile for review dates and gaps; this is not a daily check receipt.')}</p></div>}
       {g.id==='skill'&&<p className="muted">{pick('Star 是仓库层面的近似快照，非单个技能热度；尚无连续记录，不展示近 7 天增长。','Stars are approximate repository snapshots, not individual skill metrics. Seven-day growth is not yet available.')}</p>}
       <div className="watch-list">{data.items.filter(i=>i.type===g.id).map(item=><article className="watch-card" id={watchAnchor(item.id)} tabIndex={-1} key={item.id}>
-        <p className="news-meta">{item.id} · {pick('资料核验','Reviewed')} {item.checked_at}</p>{!standalone && <h4><Link to={contentPath(item.id)}>{item.name}</Link></h4>}<p className="watch-intro">{item.introduction}</p>
+        <p className="news-meta">{item.id} · {pick('资料核验','Reviewed')} {item.checked_at}</p>{!standalone && <h4><Link to={contentPath(item.id)}>{item.name}</Link></h4>}{!previewBodies&&<FollowButton id={item.id} name={item.name}/>}<ContentExposure id={item.id}><p className="watch-intro">{item.introduction}</p></ContentExposure>
         {item.attention&&<p className="watch-attention"><a href={item.attention.source_url} target="_blank" rel="noopener noreferrer">GitHub ★ {item.attention.display_value}</a> · {item.attention.observed_at} · {pick('仓库近似值','Approximate repository count')}</p>}
         <div className="watch-notes"><h5>FieldToFit {pick('解读','notes')}</h5><ul>{item.interpretation.slice(0,2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>
           <details data-auto-expand open={standalone || undefined}><summary>{pick('版本与更多资料','Versions and further reading')}</summary>

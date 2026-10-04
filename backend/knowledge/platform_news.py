@@ -3,11 +3,61 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime
 from urllib.parse import urlsplit
 from backend.knowledge.platform import PlatformError, text
 
 CONTENT_PATH = Path(__file__).parent / 'content' / 'news.json'
+
+
+MEDIA_FIELDS = ('url', 'full_url', 'alt', 'caption', 'source_url', 'credit', 'reuse_basis', 'version', 'reviewed_at', 'fit')
+NEWS_CATEGORIES = ('model', 'agent', 'tool', 'skill', 'harness', 'research', 'industry', 'other')
+
+
+def reading_fields(item):
+    """Optional reviewed media; nothing is scraped or fetched during publication."""
+    result = {}
+    if 'category' in item:
+        if item['category'] not in NEWS_CATEGORIES:
+            raise ValueError('Invalid news category')
+        result['category'] = item['category']
+    if item.get('media') is not None:
+        media = item['media']
+        if not isinstance(media, dict):
+            raise ValueError('Media must be an object')
+        for key in MEDIA_FIELDS:
+            text(media.get(key), 'media.' + key, 2000)
+        for key in ('url', 'full_url', 'source_url'):
+            parsed = urlsplit(media[key])
+            if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
+                raise ValueError('Media requires public HTTPS URLs')
+            import ipaddress
+            host = parsed.hostname.lower()
+            if host == 'localhost' or host.endswith(('.localhost', '.local')):
+                raise ValueError('Media cannot use local hosts')
+            try:
+                address = ipaddress.ip_address(host)
+            except ValueError:
+                address = None
+            if address and not address.is_global:
+                raise ValueError('Media cannot use private addresses')
+        if media['fit'] not in ('contain', 'cover'):
+            raise ValueError('Media fit must be contain or cover')
+        date.fromisoformat(media['reviewed_at'])
+        result['media'] = {key: media[key] for key in MEDIA_FIELDS}
+    if item.get('publication') is not None:
+        pub = item['publication']
+        if not isinstance(pub, dict):
+            raise ValueError('Invalid publication dates')
+        result['publication'] = {}
+        for key in ('first_published_at', 'updated_at'):
+            value = pub.get(key)
+            if value is not None:
+                parsed = datetime.fromisoformat(value)
+                if parsed.tzinfo is None:
+                    raise ValueError('Publication timestamp requires a timezone')
+            result['publication'][key] = value
+    return result
 
 
 def validate(data):
@@ -25,6 +75,7 @@ def validate(data):
             raise ValueError('Invalid news publication state')
         if item['state'] != 'published':
             continue
+        reading_fields(item)
         from backend.knowledge.platform_lookup import aliases
         aliases(item.get('aliases', []))
         if not isinstance(item['highlight'], bool) or not isinstance(item['note'], str) or not isinstance(item['related'], list):
@@ -77,6 +128,7 @@ def news(q='', id='', revision='', _data=None):
         if item['state'] != 'published':
             continue
         obj = {k: item[k] for k in fields}
+        obj.update(reading_fields(item))
         if item.get('aliases'):
             from backend.knowledge.platform_lookup import aliases
             obj['aliases'] = aliases(item['aliases'])

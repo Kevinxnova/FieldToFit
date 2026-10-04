@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.6.0"></a>
+## v1.6.0 · 无账号关注、私有统计与阅读改版 · 2026-10-04
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 上线无账号关注、我关注的更新、独立已读／检查进度、导入导出与旧收藏预览迁移；清单留在当前浏览器。
+- 为 HTTP/MCP 增加显式包含直接关联动态的变化范围与初始化基线，提供个人 AI 清单交接说明，保留原接口默认语义。
+- 新增 UV/PV、内容可见事件、来源、复访和成功导出／取材聚合，以及私有统计后台与 CSV；新增独立统计表，生产增量迁移与部署已验。
+- 将既有对象每日官方更新核对加入原日报日程；新增 REQ-19；上线 B 图文速览与媒体审核、紧凑日期列表及分层 overview；保留旧链接和完整详情。D-72官方配图已在正式前台显示；生产备份、增量迁移、云端构建和双端发布验收通过，自然跨日观察仍待完成。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Ship anonymous browser-local follows, unread updates, independent read/check progress, import/export and explicit legacy-save migration previews. Lists remain in the current browser.
+- Add opt-in direct-related-news scope and baseline initialization to HTTP/MCP changes, with personal AI handoff guidance and unchanged default API behavior.
+- Add aggregate UV/PV, visible content, entry sources, returning browsers and successful exports/source reads, plus a private dashboard and CSV. The additive production migration and deployment are verified.
+- Add daily official update checks for existing profiles to the original briefing schedule. Record REQ-19 and implement the image-led briefing with reviewed media, date-grouped release lists and layered section overviews; preserve detail links and existing reads. Display D-72’s reviewed official image in production. Verify the backup, additive migration, cloud build and desktop/mobile deployment; natural cross-day observation remains pending.
+<!-- release-summary:en:end -->
+
+对应 REQ-6-12、REQ-9-5/8、REQ-17-1至4、REQ-14-3。用户于2026-10-04确认完整模块的minor升级至v1.6.0；账号和自动同步仍关闭。数据库迁移仅新增统计表，原累计次数和内容保留；关闭详细分析开关可回退到既有计数。真实AI连接回执、生产连续三日及独立客户端跨日仍待完成。保留73条动态／47项持续关注的正文与图表快照，仅为D-72补充已审配图。本地与正式部署验证、日程配置和待验边界见[验收记录](docs/validation/2026-10-04-follow-traffic.md)，已按[部署指南](docs/guides/deployment.md)完成本批上线。
+
 <a id="v1.5.24"></a>
 ## v1.5.24 · Kolibri、昇腾工具与科研和交互资源 · 2026-10-04
 

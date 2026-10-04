@@ -102,6 +102,8 @@ def record_visit(browser_id, event_id, now=None):
 def clean_expired(now=None):
     """May be run by maintenance even when collection is paused; total is permanent."""
     now = int(time.time()) if now is None else int(now)
+    from backend.traffic import clean
+    clean(now)
     with get_db() as db:
         atomic(db, [
             ('DELETE FROM fieldtofit_visit_events WHERE received_at < ?', (now - RETENTION_SECONDS,)),

@@ -619,6 +619,10 @@ def platform_changes():
     args = {k: request.args[k] for k in ('after', 'limit', 'cursor', 'scope') if k in request.args}
     if 'object_id' in request.args:
         args['object_ids'] = request.args.getlist('object_id')
+    for flag in ('include_related', 'initialize'):
+        if flag in request.args:
+            if request.args[flag] not in ('true','false'): raise platform.PlatformError('Invalid boolean')
+            args[flag] = request.args[flag] == 'true'
     return jsonify(platform_updates.changes(**args))
 
 

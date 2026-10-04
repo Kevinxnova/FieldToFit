@@ -50,8 +50,8 @@ TOOLS = [
                {'id': TEXT, 'material_id': TEXT, 'content_revision': TEXT, 'revision': {'type':'integer','minimum':1}, 'offset': {'type':'integer','minimum':0}, 'limit': {'type':'integer','minimum':1,'maximum':50000}}, ['id','material_id']),
     definition('curated_export', 'Export a neutral material manifest with citations. Full text requires the material read endpoints; no task plan or best-tool recommendation.',
                {'id': TEXT, 'revision': {'type':'integer','minimum':1}}, ['id']),
-    definition('curated_changes', 'Read changes in a stable window. Set scope=workspace for current D-/CW- publications, merges, relationships, material failures and recovery; default scope=legacy preserves older clients. Poll each scope separately with its own cursor. Access recovery is not factual approval. Repeat filters/limit with next_cursor; after the final page retain resume_cursor and poll it next day. Cursors expire after 7 days; restart from after=0 and deduplicate event IDs. No draft prose or private review reasons.',
-               {'scope':{'type':'string','enum':['legacy','workspace']}, 'after': {'type':'integer','minimum':0}, 'object_ids': {'type':'array','items':TEXT,'maxItems':100}, 'limit': {'type':'integer','minimum':1,'maximum':100}, 'cursor': TEXT}),
+    definition('curated_changes', 'Read changes in a stable window. With scope=workspace, include_related=true and CW- object_ids includes directly linked news; initialize=true returns an empty baseline with until and resolved identities. Keep browser and AI progress separate. Set scope=workspace for current D-/CW- publications, merges, relationships, material failures and recovery; default scope=legacy preserves older clients. Poll each scope separately with its own cursor. Access recovery is not factual approval. Repeat filters/limit with next_cursor; after the final page retain resume_cursor and poll it next day. Cursors expire after 7 days; restart from after=0 and deduplicate event IDs. No draft prose or private review reasons.',
+               {'include_related': {'type':'boolean'}, 'initialize': {'type':'boolean'}, 'scope':{'type':'string','enum':['legacy','workspace']}, 'after': {'type':'integer','minimum':0}, 'object_ids': {'type':'array','items':TEXT,'maxItems':100}, 'limit': {'type':'integer','minimum':1,'maximum':100}, 'cursor': TEXT}),
     definition('curated_editions', 'Read reviewed overview editions with source quotations and fixed object revisions. Follow next_cursor with the same limit for history; changed or withdrawn entries are marked.',
                {'limit': {'type':'integer','minimum':1,'maximum':100}, 'cursor': TEXT}),
     definition('curated_edition', 'Read one reviewed overview edition and optional historical revision. Draft editions are never exposed.',
@@ -77,7 +77,7 @@ def invoke(name, args):
     for key, value in args.items():
         typ = spec['inputSchema']['properties'][key]['type']
         valid = {'string': isinstance(value, str), 'integer': isinstance(value, int) and not isinstance(value, bool),
-                 'object': isinstance(value, dict), 'array': isinstance(value, list)}[typ]
+                 'object': isinstance(value, dict), 'array': isinstance(value, list), 'boolean': isinstance(value, bool)}[typ]
         if not valid:
             raise ValueError(f'Invalid type for {key}')
     if name == 'curated_lookup':

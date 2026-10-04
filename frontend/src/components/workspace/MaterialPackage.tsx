@@ -1,3 +1,4 @@
+import { trackAction } from './Traffic';
 import { useState } from 'react';
 import { BASE, send } from '../../api/knowledge';
 import { useWorkspace } from './UI';
@@ -41,7 +42,7 @@ export function MaterialPackage({ references }: { references: PackageRef[] }) {
         const url = URL.createObjectURL(new Blob([content], { type: format === 'markdown' ? 'text/markdown;charset=utf-8' : 'application/json;charset=utf-8' }));
         const a = document.createElement('a'); a.href = url;
         a.download = `fieldtofit-materials-${data.generated_at.slice(0, 10)}.${format === 'markdown' ? 'md' : 'json'}`;
-        a.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+        a.click(); trackAction('material_export'); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
       }
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(false); }

@@ -1,0 +1,3 @@
+.follow-panel{margin:24px 0;padding:20px;border:1px solid var(--line);border-radius:12px}.follow-panel input[type=file]{display:block;max-width:220px}.follow-panel textarea{width:100%;box-sizing:border-box}.follow-panel li{margin:12px 0;overflow-wrap:anywhere}.follow-events{display:grid;gap:12px}.follow-events article{padding:16px;border:1px solid var(--line);border-radius:8px}.follow-button{margin:4px 8px;font-size:13px}.follow-panel p{overflow-wrap:anywhere}.follow-panel .platform-actions{flex-wrap:wrap}
+
+.reading-layout[hidden]{display:none}

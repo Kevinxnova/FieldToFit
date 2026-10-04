@@ -30,20 +30,22 @@ For researchers, engineers, graduate students, students and AI application devel
 
 Sources are checked every **1 day**. Meaningful changes are prepared, reviewed and published for people and AI. Facts, source claims, editorial opinions and tested results stay distinct, with unknowns stated. Registration and synchronization remain unavailable; application cases are on hold.
 
+The v1.6.0 source adds anonymous browser-local follows and private traffic reports. Browser and personal AI reading progress remain independent; lists support import/export. This functional batch is deployed; see [local/production validation and limitations](docs/validation/2026-10-04-follow-traffic.md).
+
 <!-- section:release -->
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.24](CHANGELOG.md#v1.5.24)** · [fieldtofit-v1.5.24](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.24)
+**Current source version: [v1.6.0](CHANGELOG.md#v1.6.0)** · [fieldtofit-v1.6.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish five developments covering Kolibri, DeepSeek Ascend tools, BootLoops, AG-UI 1.0 and Supabase/Turso, refreshing the overview: 73 developments and 47 watch profiles.
-- Add Kolibri, BootLoops and AG-UI profiles; extend DeepSeek with Ascend computation and expert communication material while preserving previous content.
-- Share nine new fixed originals and license texts through web and MCP. Explain model memory, hardware availability, research verification and SDK migration limits; retain DeepEP as links while licensing remains unverified.
-- Preserve AA's 152 points, Arena's 92 points and their review dates. Synchronize bilingual READMEs, project management and publication evidence.
+- Ship anonymous browser-local follows, unread updates, independent read/check progress, import/export and explicit legacy-save migration previews. Lists remain in the current browser.
+- Add opt-in direct-related-news scope and baseline initialization to HTTP/MCP changes, with personal AI handoff guidance and unchanged default API behavior.
+- Add aggregate UV/PV, visible content, entry sources, returning browsers and successful exports/source reads, plus a private dashboard and CSV. The additive production migration and deployment are verified.
+- Add daily official update checks for existing profiles to the original briefing schedule. Record REQ-19 and implement the image-led briefing with reviewed media, date-grouped release lists and layered section overviews; preserve detail links and existing reads. Display D-72’s reviewed official image in production. Verify the backup, additive migration, cloud build and desktop/mobile deployment; natural cross-day observation remains pending.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

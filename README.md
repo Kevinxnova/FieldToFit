@@ -30,20 +30,22 @@
 
 资料每 **1 天**检查，发现值得发布的变化后整理、审核，再同步给人和 AI。事实、来源观点、编辑评价与实测结果分开，未知项明确保留。注册与同步尚未开放，AI 应用案例暂缓。
 
+v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏览器与个人 AI 各自保存阅读进度，清单可导入导出。该功能批次已部署，范围和缺口见[本地与生产验收](docs/validation/2026-10-04-follow-traffic.md)。
+
 <!-- section:release -->
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.24](CHANGELOG.md#v1.5.24)** · [fieldtofit-v1.5.24](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.24)
+**当前源码版本：[v1.6.0](CHANGELOG.md#v1.6.0)** · [fieldtofit-v1.6.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布Kolibri、DeepSeek昇腾工具、BootLoops、AG-UI 1.0、Supabase/Turso五条动态，同步本期速览；当前73条动态、47项持续关注。
-- 新增Kolibri模型、BootLoops Harness与AG-UI工具档案；为DeepSeek补充昇腾计算和专家通信资料，保留旧内容。
-- 网页与MCP共享九份新增固定原文与许可，说明模型内存门槛、硬件配套、科研验证与SDK迁移条件；DeepEP许可未核实，保留链接。
-- AA152点、Arena92点及核对日期保持；同步中英文README、项目管理总览与实际发布证据。
+- 上线无账号关注、我关注的更新、独立已读／检查进度、导入导出与旧收藏预览迁移；清单留在当前浏览器。
+- 为 HTTP/MCP 增加显式包含直接关联动态的变化范围与初始化基线，提供个人 AI 清单交接说明，保留原接口默认语义。
+- 新增 UV/PV、内容可见事件、来源、复访和成功导出／取材聚合，以及私有统计后台与 CSV；新增独立统计表，生产增量迁移与部署已验。
+- 将既有对象每日官方更新核对加入原日报日程；新增 REQ-19；上线 B 图文速览与媒体审核、紧凑日期列表及分层 overview；保留旧链接和完整详情。D-72官方配图已在正式前台显示；生产备份、增量迁移、云端构建和双端发布验收通过，自然跨日观察仍待完成。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

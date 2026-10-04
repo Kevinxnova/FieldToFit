@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { BASE } from '../../api/knowledge';
+import { TrafficReady } from './Traffic';
+import { BASE, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 import './site-visits.css';
 
@@ -21,7 +22,7 @@ function privateBrowser() {
 }
 
 export function excludeAdminVisits() {
-  try { localStorage.setItem(ADMIN_OUT, '1'); localStorage.removeItem(ID_KEY); } catch { /* unavailable storage is already excluded */ }
+  try { localStorage.setItem(ADMIN_OUT, '1'); localStorage.removeItem(ID_KEY); localStorage.removeItem("fieldtofit-traffic-browser"); } catch { /* unavailable storage is already excluded */ }
   window.dispatchEvent(new Event(CHANGE));
 }
 
@@ -61,6 +62,11 @@ async function browserSession(): Promise<string | null> {
 
 /** Mount only when a public page's main content has actually loaded. */
 export function VisitReady({ ready = true }: { ready?: boolean }) {
+  const config=useRemote<{enabled:boolean;origin:string;consent_required:boolean}>("/analytics/config");
+  if(!config.data)return null;
+  return config.data.enabled?<TrafficReady ready={ready} config={config.data}/>:<LegacyVisitReady ready={ready}/>;
+}
+function LegacyVisitReady({ ready = true }: { ready?: boolean }) {
   const location = useLocation();
   const last = useRef(0);
   useEffect(() => {
@@ -123,6 +129,7 @@ export function VisitReady({ ready = true }: { ready?: boolean }) {
 
 export function SiteVisits() {
   const { pick, zh } = useWorkspace();
+  const detailsConfig=useRemote<{consent_required:boolean}>("/analytics/config");
   const location = useLocation();
   const [data, setData] = useState<Total | null>(null);
   const [failed, setFailed] = useState(false);
@@ -153,9 +160,10 @@ export function SiteVisits() {
   if (hidden) return null;
   const toggle = () => {
     try {
-      localStorage.removeItem(ID_KEY);
+      localStorage.removeItem(ID_KEY); localStorage.removeItem("fieldtofit-traffic-browser");
       if (excluded) { localStorage.removeItem(OPT_OUT); localStorage.removeItem(ADMIN_OUT); }
       else localStorage.setItem(OPT_OUT, '1');
+      if(excluded)localStorage.setItem('fieldtofit-analytics-consent','1');else localStorage.removeItem('fieldtofit-analytics-consent');
       setPreferenceFailed(false);
       window.dispatchEvent(new Event(CHANGE));
     } catch { setPreferenceFailed(true); }
@@ -166,9 +174,10 @@ export function SiteVisits() {
     {!failed && data && <small>{since ? pick(`自 ${since} 起统计`, `Counted since ${since}`) : pick('尚未开始统计', 'Counting has not started')}{data.status === 'paused' && since ? pick(' · 统计已暂停', ' · Collection paused') : ''}</small>}
     <details className="site-visits-details"><summary>{pick('统计说明与设置', 'About this count & preferences')}</summary>
       <p>{pick('按浏览器访问会话估算；30 分钟内刷新、换页和多标签页不重复计数。仅记录正式站公开页面，排除已知机器人、管理和测试访问；未参与统计的访问及无法识别的机器人会造成误差。数字可能稍有延迟，不代表独立人数。', 'Estimated browser visits: refreshes, navigation and tabs within 30 minutes share one visit. Counts public pages on the main site, excluding known bots, administration and tests. Opt-outs and unidentified bots affect accuracy. Updates may be delayed; this is not a unique-person count.')}</p>
-      <p>{pick('仅使用短期随机标识去重，不保存浏览历史或完整 IP。服务器标识满 24 小时后在下次访问或每日维护时清理；累计次数长期保留。退出后清除本地标识并停止发送；已计入的匿名总数不回撤。尊重浏览器隐私信号，存储不可用时不计数。', 'Short-lived random identifiers deduplicate visits; no browsing history or full IP is stored. Server identifiers expire after 24 hours and are removed on the next visit or daily maintenance; the anonymous total is retained. Opting out clears the local identifier and stops collection, without subtracting prior visits. Browser privacy signals and unavailable storage exclude collection.')}</p>
+      <p>{pick('使用第一方随机标识估算浏览、来源与复访；不保存完整 IP、搜索词或输入内容。启用详细分析时，标识和规范页面事件最多保留 90 天，无标识日汇总保留 13 个月，累计次数长期保留。退出后清除本地标识并停止发送；已计入的聚合数不回撤。尊重浏览器隐私信号；存储不可用仅计无标识浏览。', 'First-party random identifiers estimate page views, sources and return visits. No full IP, search terms or input content is stored. Detailed records expire after 90 days; anonymous daily aggregates after 13 months. Opting out clears the local identifier and stops collection. Privacy signals are respected; unavailable storage allows only anonymous page counts.')}</p>
       <p>{excluded ? pick('此浏览器当前不参与统计。', 'This browser is currently excluded.') : pick('此浏览器可参与访问统计。', 'This browser can participate in visit counting.')}</p>
       <button type="button" className="text-button" onClick={toggle}>{excluded ? pick('允许此浏览器参与', 'Allow this browser') : pick('此浏览器不参与统计', 'Exclude this browser')}</button>
+      {detailsConfig.data?.consent_required&&<button type="button" className="text-button" onClick={()=>{try{localStorage.setItem('fieldtofit-analytics-consent','1');localStorage.removeItem(OPT_OUT);window.dispatchEvent(new Event(CHANGE));setPreferenceFailed(false);}catch{setPreferenceFailed(true);}}}>{pick('同意详细统计','Consent to detailed analytics')}</button>}
       {preferenceFailed && <p role="status">{pick('浏览器无法保存设置；当前不参与统计。', 'Preferences cannot be saved; this browser is excluded.')}</p>}
       {excluded && <small>{pick('浏览器隐私信号或管理身份仍会优先排除；允许后下次打开页面生效。', 'Privacy signals and admin status still take priority; allowing applies on the next page visit.')}</small>}
     </details>

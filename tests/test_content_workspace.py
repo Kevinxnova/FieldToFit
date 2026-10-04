@@ -285,3 +285,51 @@ def test_remote_server_batch_lifecycle_and_race_rollbacks(client,monkeypatch):
     with pytest.raises(Exception) as exc:batches.attach(tid,{'version':topic(batch,tid)['version'],'kind':'watch'})
     assert getattr(exc.value,'status',None)==409
     with get_db() as db:assert db.execute('SELECT count(*) FROM fieldtofit_content_items').fetchone()[0]==before_count
+
+
+def test_news_media_review_publish_remove_and_server_dates(client):
+    from test_platform_news import media_fixture
+    migrate(client)
+    ident,ref=make(client,'news');draft=valid(client,'news',ident)
+    draft['draft']['media']=media_fixture()
+    draft['draft']['publication']={'first_published_at':'1999-01-01T00:00:00Z','updated_at':'1999-01-01T00:00:00Z'}
+    saved=call(client,f'/content/news/{ident}',{'draft_version':draft['draft_version'],'draft':draft['draft']},'patch').json
+    preview=call(client,f'/content/news/{ident}/preview').json
+    assert preview['ready'] and preview['preview']['items'][0]['media']==media_fixture()
+    assert client.get('/api/v1/platform/news?id='+ident).status_code==404
+    saved['draft']['media']['caption']='Corrected reviewed caption'
+    changed=call(client,f'/content/news/{ident}',{'draft_version':saved['draft_version'],'draft':saved['draft']},'patch').json
+    assert call(client,f'/content/news/{ident}/publish',{'draft_version':changed['draft_version'],'review_token':preview['review_token'],'confirmed':True,'reason':'Stale preview must fail'}).status_code==409
+    published=publish(client,'news',ident)
+    item=client.get('/api/v1/platform/news?id='+ident).json['items'][0]
+    assert item['media']['caption']=='Corrected reviewed caption'
+    first=item['publication']['first_published_at'];assert first and not first.startswith('1999')
+    published['draft']['media']=None
+    call(client,f'/content/news/{ident}',{'draft_version':published['draft_version'],'draft':published['draft']},'patch')
+    publish(client,'news',ident)
+    updated=client.get('/api/v1/platform/news?id='+ident).json['items'][0]
+    assert 'media' not in updated and updated['publication']['first_published_at']==first
+    assert updated['publication']['updated_at']>=first
+
+
+def test_existing_news_does_not_invent_first_publication_date(client):
+    migrate(client);ident='D-01';draft=call(client,f'/content/news/{ident}',method='get').json
+    draft['draft']['summary']+=' Reviewed correction.'
+    call(client,f'/content/news/{ident}',{'draft_version':draft['draft_version'],'draft':draft['draft']},'patch')
+    publish(client,'news',ident)
+    item=client.get('/api/v1/platform/news?id='+ident).json['items'][0]
+    assert item['publication']['first_published_at'] is None
+    assert item['publication']['updated_at']
+
+
+def test_review_date_only_does_not_claim_new_material_update(client):
+    migrate(client);ident='D-01';draft=call(client,f'/content/news/{ident}',method='get').json
+    draft['draft']['summary']+=' A substantive correction.'
+    call(client,f'/content/news/{ident}',{'draft_version':draft['draft_version'],'draft':draft['draft']},'patch')
+    published=publish(client,'news',ident)
+    dates=published['draft']['publication']
+    published['draft']['checked_at']='2026-10-04'
+    published['draft']['private_note']='Private bookkeeping only'
+    call(client,f'/content/news/{ident}',{'draft_version':published['draft_version'],'draft':published['draft']},'patch')
+    revised=publish(client,'news',ident)
+    assert revised['draft']['publication']==dates

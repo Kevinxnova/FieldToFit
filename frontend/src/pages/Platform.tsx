@@ -1,3 +1,6 @@
+import { ProfileNewsOverview } from '../components/workspace/ProfileNewsOverview';
+import { trackAction } from '../components/workspace/Traffic';
+import { FollowUpdates } from '../components/workspace/FollowUpdates';
 import { searchPages } from '../search';
 import { VisitReady } from '../components/workspace/SiteVisits';
 import { UnifiedLookup } from '../components/workspace/UnifiedLookup';
@@ -100,15 +103,17 @@ export function ForYou() {
   const news=useRemote<NewsCollection>('/v1/platform/news');
   const watch=useRemote<WatchCollection>('/v1/platform/watch?'+new URLSearchParams({q,type}));
   const filtered=!!(q||type);
+  const [following,setFollowing]=useState(false);
   if(params.get('object'))return <LegacyCatalog/>;
-  return <div className="platform-page"><VisitReady ready={!!news.data && !!watch.data && !news.loading && !watch.loading && !news.error && !watch.error}/><AliasNotice/><header className="platform-hero"><p className="platform-eyebrow">FOR YOU · {pick('给你看','CURATED READING')}</p><h1>{pick(...searchPages['/for-you'].heading)}</h1><p className="platform-lead">{pick(...searchPages['/for-you'].description)}</p><div className="platform-actions"><a className="button primary" href="#model-landscape">{pick("浏览模型图表","Explore model charts")}</a><a className="button" href="#recent-news">{pick("阅读近期动态","Read developments")}</a><Link className="button" to="/for-your-ai">{pick("交给我的 AI","Give to my AI")}</Link></div><div className="platform-hero-meta"><span>{pick('每 1 天检查 · 审核后更新','Daily checks · Reviewed updates')}</span><Link to="/about">{pick('为什么做 FieldToFit','Why FieldToFit')} ↗</Link></div></header>
+  return <div className="platform-page"><VisitReady ready={!!news.data && !!watch.data && !news.loading && !watch.loading && !news.error && !watch.error}/><AliasNotice/><header className="platform-hero"><p className="platform-eyebrow">FOR YOU · {pick('给你看','CURATED READING')}</p><h1>{pick(...searchPages['/for-you'].heading)}</h1><p className="platform-lead">{pick(...searchPages['/for-you'].description)}</p><div className="platform-actions"><a className="button primary" onClick={()=>setFollowing(false)} href="#model-landscape">{pick("浏览模型图表","Explore model charts")}</a><a className="button" onClick={()=>setFollowing(false)} href="#recent-news">{pick("阅读近期动态","Read developments")}</a><a className="button" onClick={()=>setFollowing(false)} href="#resource-dossiers">{pick("浏览持续关注","Explore ongoing watch")}</a></div><div className="platform-hero-meta"><span>{pick('每 1 天检查 · 审核后更新','Daily checks · Reviewed updates')}</span><Link to="/about">{pick('为什么做 FieldToFit','Why FieldToFit')} ↗</Link></div></header>
+    {news.data&&!news.error&&<p className="section-overview"><strong>{news.data.title}</strong><span className="muted"> · {news.data.reviewed_at}</span></p>}
     <p className="reading-page-summary">{news.data?.total??'—'} {pick('条动态 ·','developments ·')} {watch.data?.total??'—'} {pick(filtered?'个匹配的持续关注主体':'个持续关注主体',filtered?'matching profiles':'ongoing-watch profiles')}</p>
-    <div className="reading-layout"><ReadingContents newsTotal={news.data?.total??null} news={(news.data?.items||[]).map(n=>({id:newsAnchor(n.id),title:n.name}))} resources={(watch.data?.items||[]).map(i=>({id:watchAnchor(i.id),title:i.name}))} groups={(watch.data?.groups||[]).filter(g=>g.count>0).map(g=>({id:'watch-group-'+g.id,title:g.name+' · '+g.count,items:(watch.data?.items||[]).filter(i=>i.type===g.id).map(i=>({id:watchAnchor(i.id),title:i.name}))}))} resourceTotal={watch.data?.total??null} loading={watch.loading} filtered={filtered}/>
+    <FollowUpdates active={following} onActive={setFollowing}/><div hidden={following} className="reading-layout"><ReadingContents newsTotal={news.data?.total??null} news={(news.data?.items||[]).map(n=>({id:newsAnchor(n.id),title:n.name}))} resources={(watch.data?.items||[]).map(i=>({id:watchAnchor(i.id),title:i.name}))} groups={(watch.data?.groups||[]).filter(g=>g.count>0).map(g=>({id:'watch-group-'+g.id,title:g.name+' · '+g.count,items:(watch.data?.items||[]).filter(i=>i.type===g.id).map(i=>({id:watchAnchor(i.id),title:i.name}))}))} resourceTotal={watch.data?.total??null} loading={watch.loading} filtered={filtered}/>
     <div className="reading-body"><ModelLandscape/><NewsReading {...news}/>
-    <section className="watch-section"><div className="platform-section-heading"><h2 id="resource-dossiers" tabIndex={-1}>{pick('持续关注','Ongoing watch')}</h2><span>{watch.data?.collection_total??'—'} {pick('个跟踪主体','profiles')}</span></div><p className="platform-lead">{pick('跟踪重要模型与项目，看清能力、版本和演进。','Follow important models and projects: capabilities, versions and evolution.')}</p>
+    <section className="watch-section"><div className="platform-section-heading"><h2 id="resource-dossiers" tabIndex={-1}>{pick('持续关注','Ongoing watch')}</h2><span>{watch.data?.collection_total??'—'} {pick('个跟踪主体','profiles')}</span></div><div className="section-overview"><strong>{pick('把一次发现，放回长期维护的对象档案。','Put each discovery in a maintained object dossier.')}</strong><p>{pick('模型、Agent、工具、Skill 与 Harness，保留版本、原文和采用条件。','Models, agents, tools, skills and harnesses retain versions, sources and adoption conditions.')}</p><ProfileNewsOverview news={news.error?[]:news.data?.items||[]} ids={watch.data?.items.map(i=>i.id)||[]}/>{watch.data&&!watch.error&&<p className="overview-coverage">{pick('当前范围：','Current selection: ')}{watch.data.total} · {watch.data.groups.filter(g=>g.count>0).map(g=>g.name+' '+g.count).join(' / ')} · {pick('资料核对日期见各档案，非每日检查成功数。','Review dates are per profile, not a count of successful daily checks.')}</p>}</div>
     <form className="platform-search" onSubmit={e=>{e.preventDefault();setParams(p=>{p.set('q',query);p.delete('cursor');return p;});}}><input aria-label={pick('搜索持续关注','Search ongoing watch')} placeholder={pick('搜索名称、版本或关键词','Search names, versions or keywords')} value={query} onChange={e=>setQuery(e.target.value)}/><button className="button">{pick('搜索','Search')}</button><select aria-label={pick('持续关注类型','Watch type')} value={type} onChange={e=>setParams(p=>{p.set('type',e.target.value);p.delete('cursor');return p;})}><option value="">{pick('全部五类','All five groups')}</option>{Object.entries(watchNames).map(([id,name])=><option key={id} value={id}>{name}</option>)}</select></form>
     {filtered&&<button className="text-button" onClick={()=>setParams(p=>{p.delete('q');p.delete('type');return p;})}>{pick('清除全部筛选','Clear filters')}</button>}
-    <ContinuousWatch result={watch}/></section><DeveloperProjects/>
+    <ContinuousWatch result={watch} news={news.error?[]:news.data?.items||[]}/></section><DeveloperProjects/>
     </div></div></div>;
 }
 
@@ -156,7 +161,7 @@ export function ForAI() {
     `Add FieldToFit as a read-only remote HTTP MCP server: ${endpoint}. Example configuration:\n${config}\nStart with curated_lookup to search names, aliases, IDs or keywords across developments, profiles and permitted stored text. Follow each result reading arguments, then material reading arguments for curated_material, or curated_bundle to package chosen entries. A snippet is not a complete document. Poll curated_changes with scope=workspace for their publication and material-health changes; retain a separate checkpoint from scope=legacy. Preserve sources, revisions, review dates and unknowns. Editorial notes are not upstream text; follow links as needed. Continue with my requirements. If you cannot add MCP servers, guide me through the client's connector settings; do not claim to be connected.`
   ) + (local ? pick('\n这是本机地址，仅同机客户端可访问。','\nThis address is only reachable from this computer.') : '');
   const copy = async (body: string) => {
-    try { await navigator.clipboard.writeText(body); setCopyFailed(false); notify(pick('已复制','Copied')); }
+    try { await navigator.clipboard.writeText(body); setCopyFailed(false); trackAction('mcp_address_copy'); notify(pick('已复制','Copied')); }
     catch { setCopyFailed(true); notify(pick('请从下方文本框手动复制','Copy from the text area below')); }
   };
   const connect = async () => {
@@ -167,6 +172,7 @@ export function ForAI() {
       const response = await fetch(endpoint, { method:'POST', headers, signal:AbortSignal.timeout(15000), body:JSON.stringify({ jsonrpc:'2.0', id:1, method:'initialize', params:{ protocolVersion:'2025-11-25', capabilities:{}, clientInfo:{ name:'fieldtofit-platform-web', version:appVersion } } }) });
       const data = await response.json();
       if (!response.ok || data.error) throw Error(data.detail || data.error?.message || data.error || `HTTP ${response.status}`);
+      trackAction('mcp_service_check');
       setConnection(pick('网站到 MCP 服务连接成功；你的 AI 客户端仍需完成配置。', 'The website can reach MCP. Your AI client still needs configuration.'));
     } catch (e) { setConnection((e as Error).message); } finally { setBusy(false); }
   };

@@ -205,6 +205,17 @@ def composed(kind, ident, content, db, withdraw=False):
     else:
         entries=data['items'];found=next((i for i,x in enumerate(entries) if x['id']==ident),None)
         item={**content,'state':'withdrawn' if withdraw else 'published'}
+        if kind == 'news':
+            previous = entries[found] if found is not None else None
+            # Dates are server-owned. Import/review timestamps are not first publication evidence.
+            item.pop('publication', None)
+            if previous and previous.get('publication'):
+                item['publication'] = copy.deepcopy(previous['publication'])
+            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','state')
+            comparable = lambda x: {k:x.get(k) for k in public_changes}
+            if not withdraw and (previous is None or comparable(item) != comparable(previous)):
+                now = stamp()
+                item['publication'] = {'first_published_at': (previous.get('publication') or {}).get('first_published_at') if previous else now, 'updated_at': now}
         if found is not None:entries.pop(found)
         position=content.get('_position')
         if position is not None and (isinstance(position,bool) or not isinstance(position,int) or position<1):fail('展示位置必须是大于 0 的整数')
@@ -225,6 +236,7 @@ def gate(kind, ident, item, data):
     if kind=='news':
         from backend.knowledge.platform_news import validate
         validate(data)
+        if (item.get('media') or {}).get('reviewed_at', '') > today():fail('图片核对日期不能在未来')
     else:
         from backend.knowledge.platform_watch import public_collection
         public_collection(data)
@@ -260,7 +272,7 @@ def publish(kind, ident, data, withdraw=False):
             if data.get('review_token')!=token(kind,ident,item['draft_version'],revision,content,item['materials_fingerprint']):fail('Preview is out of date; review again','preview_conflict',409)
             gate(kind,ident,content,composed_data)
         else:render(kind,composed_data)
-        new=({'id':ident,**composed_data} if kind=='charts' else {**content,'state':'withdrawn' if withdraw else 'published'})
+        new=({'id':ident,**composed_data} if kind=='charts' else next(x for x in composed_data['items'] if x['id']==ident))
         writes=[('UPDATE fieldtofit_content_sets SET published_json=?,revision=revision+1,updated_at=? WHERE kind=?',(dump(composed_data),stamp(),kind)),
                 ('UPDATE fieldtofit_content_items SET published_json=?,draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',(dump(new),dump(item['draft'] if withdraw else new),stamp(),kind,ident)),
                 ('INSERT INTO fieldtofit_content_history(kind,item_id,action,reason,snapshot,created_at) VALUES(?,?,?,?,?,?)',(kind,ident,'withdraw' if withdraw else 'publish',reason,dump(new),stamp()))]

@@ -43,12 +43,24 @@ def upgrade():
 
 def event(db,ident,action,data=None):
     # Callers supply only public identity/status metadata, never review notes or bodies.
-    db.execute('INSERT INTO fieldtofit_steward_events(object_id,kind,data,created_at) VALUES(?,?,?,?)',(ident,action,ws.dump(data or {}),ws.stamp()))
+    data = dict(data or {})
+    if ident.startswith('D-'):
+        item = raw_items(db).get(ident, {})
+        related = set(data.get('related_watch_ids', [])) | {r['id'] for r in item.get('related', []) if r.get('id','').startswith('CW-')}
+        for row in rows(db, 'fieldtofit_steward_links'):
+            if row['source_id']==ident and row['target_id'].startswith('CW-'): related.add(row['target_id'])
+            if row['target_id']==ident and row['source_id'].startswith('CW-'): related.add(row['source_id'])
+        for key in ('target_id','related_id'):
+            if str(data.get(key,'')).startswith('CW-'): related.add(data[key])
+        data['related_watch_ids'] = sorted(related)
+    db.execute('INSERT INTO fieldtofit_steward_events(object_id,kind,data,created_at) VALUES(?,?,?,?)',(ident,action,ws.dump(data),ws.stamp()))
 
 def publication_event(db,kind_,ident,old,new):
     if kind_=='charts':return
     event(db,ident,'withdrawn' if new.get('state')=='withdrawn' else 'updated' if old else 'added',
-          {'from_revision':digest(old) if old else None,'to_revision':digest(new)})
+          {'from_revision':digest(old) if old else None,'to_revision':digest(new),
+           'changed_fields':[k for k in ('name','title','summary','introduction','blocks','interpretation','sources','reading_materials','related','state','media','category') if (old or {}).get(k)!=new.get(k)],
+           'related_watch_ids':sorted({r['id'] for obj in (old or {},new) for r in obj.get('related',[]) if r.get('id','').startswith('CW-')})})
     previous={m['id']:m for m in (old or {}).get('reading_materials',[])}
     current={m['id']:m for m in new.get('reading_materials',[])}
     for mid,m in previous.items():
