@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.6.1"></a>
+## v1.6.1 · 修正本期速览整列留白 · 2026-10-04
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 本期速览改为顶部通栏主精选、下方两列紧凑条目，取消主精选跨四行造成的整列留白。
+- 相关图片与所属条目的文字并排；保留出处，完整图注、版本和许可在放大窗口展示，手机按原顺序单列阅读。
+- 保留已审正文、精选顺序、关注与动态筛选行为；六种宽度布局检查和25项阅读回归通过，正式域名版本、双端布局与图片交互已验。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Place the lead briefing across the top with a two-column grid beneath, removing the empty column caused by a four-row lead span.
+- Keep each image beside its own story and retain its source. Full captions, revision and license details remain in the enlarged view; mobile uses the original reading order in one column.
+- Preserve reviewed text, editorial order, follows and archive filters. Six viewport layout checks and 25 reading regressions pass; production version, responsive layout and image interactions are verified.
+<!-- release-summary:en:end -->
+
+对应REQ-6-2。仅调整速览布局，不修改公开内容或数据库结构。[布局修正验收](docs/validation/2026-10-04-follow-traffic.md#glance-layout-fix)。
+
 <a id="v1.6.0"></a>
 ## v1.6.0 · 无账号关注、私有统计与阅读改版 · 2026-10-04
 

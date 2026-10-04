@@ -36,16 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.6.0](CHANGELOG.md#v1.6.0)** · [fieldtofit-v1.6.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.0)
+**Current source version: [v1.6.1](CHANGELOG.md#v1.6.1)** · [fieldtofit-v1.6.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Ship anonymous browser-local follows, unread updates, independent read/check progress, import/export and explicit legacy-save migration previews. Lists remain in the current browser.
-- Add opt-in direct-related-news scope and baseline initialization to HTTP/MCP changes, with personal AI handoff guidance and unchanged default API behavior.
-- Add aggregate UV/PV, visible content, entry sources, returning browsers and successful exports/source reads, plus a private dashboard and CSV. The additive production migration and deployment are verified.
-- Add daily official update checks for existing profiles to the original briefing schedule. Record REQ-19 and implement the image-led briefing with reviewed media, date-grouped release lists and layered section overviews; preserve detail links and existing reads. Display D-72’s reviewed official image in production. Verify the backup, additive migration, cloud build and desktop/mobile deployment; natural cross-day observation remains pending.
+- Place the lead briefing across the top with a two-column grid beneath, removing the empty column caused by a four-row lead span.
+- Keep each image beside its own story and retain its source. Full captions, revision and license details remain in the enlarged view; mobile uses the original reading order in one column.
+- Preserve reviewed text, editorial order, follows and archive filters. Six viewport layout checks and 25 reading regressions pass; production version, responsive layout and image interactions are verified.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

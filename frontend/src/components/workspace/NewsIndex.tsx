@@ -16,13 +16,13 @@ const eventDay=(item:NewsItem)=>dateOnly(item.event_date)||dateOnly(item.source_
 const linkedTypes:Record<string,string>={M:'model',A:'agent',T:'tool',S:'skill',H:'harness'};
 const category=(item:NewsItem)=>(item.category&&newsCategories[item.category]?item.category:undefined)||linkedTypes[item.related.find(r=>/^CW-[MATSH]\d+$/.test(r.id))?.id[3]||'']||'other';
 
-export function ReviewedImage({media,lead=false}:{media:NewsMedia;lead?:boolean}) {
+export function ReviewedImage({media,lead=false,compact=false}:{media:NewsMedia;lead?:boolean;compact?:boolean}) {
   const {pick}=useWorkspace();const [broken,setBroken]=useState(false),[fullBroken,setFullBroken]=useState(false),[expanded,setExpanded]=useState(false);
   const dialog=useRef<HTMLDialogElement>(null),trigger=useRef<HTMLButtonElement>(null);
   useEffect(()=>{setBroken(false);setFullBroken(false);setExpanded(false);dialog.current?.close();},[media.url,media.full_url]);
   return <figure className={'reviewed-image'+(lead?' lead-image':'')}>
     {!broken&&<button ref={trigger} className="image-trigger" aria-label={pick('放大图片：','Enlarge image: ')+media.alt} onClick={()=>{setExpanded(true);dialog.current?.showModal();}}><img src={media.url} alt={media.alt} loading={lead?'eager':'lazy'} decoding="async" referrerPolicy="no-referrer" style={{objectFit:media.fit}} onError={()=>setBroken(true)}/></button>}
-    <figcaption>{media.caption} · <SourceLink url={media.source_url}>{pick('图片出处','Image source')}</SourceLink>{broken&&<span> · {pick('图片暂不可用，正文仍可阅读','Image unavailable; text remains readable')}</span>}</figcaption>
+    <figcaption>{compact?pick('点图查看完整说明','Open image for full notes'):media.caption} · <SourceLink url={media.source_url}>{pick('图片出处','Image source')}</SourceLink>{broken&&<span> · {pick('图片暂不可用，正文仍可阅读','Image unavailable; text remains readable')}</span>}</figcaption>
     <dialog ref={dialog} className="reading-image-dialog" aria-label={media.alt} onClose={()=>{setExpanded(false);trigger.current?.focus();}}><button className="button" autoFocus onClick={()=>dialog.current?.close()}>{pick('关闭图片','Close image')}</button>{expanded&&(!fullBroken?<img src={media.full_url} alt={media.alt} referrerPolicy="no-referrer" onError={()=>setFullBroken(true)}/>:<p role="status">{pick('完整图片暂不可用，请查看出处。','Full image unavailable; visit the source.')}</p>)}<p>{media.caption}</p><p>{media.credit} · {media.version} · {pick('图片核对：','Image reviewed: ')}{media.reviewed_at}</p><SourceLink url={media.source_url}>{pick('图片原始出处','Original image source')}</SourceLink><p className="muted">{media.reuse_basis}</p></dialog>
   </figure>;
 }
@@ -67,7 +67,7 @@ export function NewsIndex({data,loading,error,reload,preview=false}:{data:NewsCo
     {loading&&<p role="status">{pick('正在读取动态…','Loading developments…')}</p>}{error&&<div role="alert"><p>{pick('动态暂时无法读取。','Developments are unavailable.')}</p><button className="button" onClick={reload}>{pick('重试','Retry')}</button></div>}
     {!!data&&!loading&&!error&&<>
     <section className="news-glance glance-b"><div className="platform-section-heading"><h3 id="news-overview" tabIndex={-1}>{pick('本期速览','At a glance')}</h3><span>{pick('整理日期：','Edited: ')}{data.reviewed_at}</span></div>
-      <div className="glance-layout">{highlights.map((item,i)=><article key={item.id} className={i===0?'glance-lead':'glance-secondary'}>{item.media&&<ReviewedImage media={item.media} lead={i===0}/>}<h4><Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{item.name}</Link></h4><ContentExposure id={item.id}><p>{item.summary}</p></ContentExposure>{i===0&&item.interpretation[0]&&<p className="muted">{item.interpretation[0].text}</p>}<Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{pick('查看完整资料','Read full details')} ↗</Link></article>)}</div>
+      <div className="glance-layout">{highlights.map((item,i)=><article key={item.id} className={(i===0?'glance-lead':'glance-secondary')+(item.media?' has-media':'')}><div className="glance-copy"><h4><Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{item.name}</Link></h4><ContentExposure id={item.id}><p>{item.summary}</p></ContentExposure>{i===0&&item.interpretation[0]&&<p className="glance-note muted">{item.interpretation[0].text}</p>}<Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{pick('查看完整资料','Read full details')} ↗</Link></div>{item.media&&<ReviewedImage media={item.media} lead={i===0} compact={i!==0}/>}</article>)}</div>
       {!highlights.length&&<p>{pick('本期暂无已审精选。可继续浏览发布记录。','No reviewed highlights in this edition. Browse the archive below.')}</p>}
     </section>
     <div className="platform-section-heading"><h3 id="news-releases" tabIndex={-1}>{pick('发布与更新','Releases & updates')}</h3><span>{pick('累计收录 ','Collected ')}{data.total}{pick(' 条',' records')}</span></div>
