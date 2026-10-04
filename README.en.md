@@ -34,15 +34,15 @@ Sources are checked every **1 day**. Meaningful changes are prepared, reviewed a
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.5.23](CHANGELOG.md#v1.5.23)** · [fieldtofit-v1.5.23](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.23)
+**Current source version: [v1.5.24](CHANGELOG.md#v1.5.24)** · [fieldtofit-v1.5.24](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.24)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish five developments covering FLUX 3 Image, Muse Gadgets, decision models in llama.cpp, AstaBrief and Microsoft MAI audio models, and refresh the overview: 68 developments and 44 watch profiles.
-- Add Muse Gadgets and AstaBrief profiles; extend Laya with llama.cpp integration material while preserving existing versions and originals.
-- Share eight new fixed documents and license texts through web and MCP, including device SDK, Linux permissions, server API and model-card guidance. Explain support, checkpoint and licensing boundaries.
+- Publish five developments covering Kolibri, DeepSeek Ascend tools, BootLoops, AG-UI 1.0 and Supabase/Turso, refreshing the overview: 73 developments and 47 watch profiles.
+- Add Kolibri, BootLoops and AG-UI profiles; extend DeepSeek with Ascend computation and expert communication material while preserving previous content.
+- Share nine new fixed originals and license texts through web and MCP. Explain model memory, hardware availability, research verification and SDK migration limits; retain DeepEP as links while licensing remains unverified.
 - Preserve AA's 152 points, Arena's 92 points and their review dates. Synchronize bilingual READMEs, project management and publication evidence.
 <!-- latest-summary:end -->
 

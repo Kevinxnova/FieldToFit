@@ -34,16 +34,16 @@
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.5.23](CHANGELOG.md#v1.5.23)** · [fieldtofit-v1.5.23](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.23)
+**当前源码版本：[v1.5.24](CHANGELOG.md#v1.5.24)** · [fieldtofit-v1.5.24](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.5.24)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布FLUX 3 Image、Muse Gadgets、llama.cpp决策模型、AstaBrief、微软MAI语音模型五项动态，并同步本期速览；当前68条动态、44项持续关注。
-- 新增Muse Gadgets工具与AstaBrief模型档案；为Laya补充llama.cpp接入说明，保留旧版本和原文。
-- 网页与MCP共享八份新增固定文档与许可：Muse设备SDK、Linux说明，llama.cpp服务器接口和AstaBrief模型卡；明确权限、支持范围、检查点与许可差异。
-- AA152点、Arena92点及各自核对日期保持；同步中英文README、项目管理总览和实际发布验收。
+- 发布Kolibri、DeepSeek昇腾工具、BootLoops、AG-UI 1.0、Supabase/Turso五条动态，同步本期速览；当前73条动态、47项持续关注。
+- 新增Kolibri模型、BootLoops Harness与AG-UI工具档案；为DeepSeek补充昇腾计算和专家通信资料，保留旧内容。
+- 网页与MCP共享九份新增固定原文与许可，说明模型内存门槛、硬件配套、科研验证与SDK迁移条件；DeepEP许可未核实，保留链接。
+- AA152点、Arena92点及核对日期保持；同步中英文README、项目管理总览与实际发布证据。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

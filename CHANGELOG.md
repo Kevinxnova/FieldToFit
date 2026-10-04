@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.5.24"></a>
+## v1.5.24 · Kolibri、昇腾工具与科研和交互资源 · 2026-10-04
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布Kolibri、DeepSeek昇腾工具、BootLoops、AG-UI 1.0、Supabase/Turso五条动态，同步本期速览；当前73条动态、47项持续关注。
+- 新增Kolibri模型、BootLoops Harness与AG-UI工具档案；为DeepSeek补充昇腾计算和专家通信资料，保留旧内容。
+- 网页与MCP共享九份新增固定原文与许可，说明模型内存门槛、硬件配套、科研验证与SDK迁移条件；DeepEP许可未核实，保留链接。
+- AA152点、Arena92点及核对日期保持；同步中英文README、项目管理总览与实际发布证据。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish five developments covering Kolibri, DeepSeek Ascend tools, BootLoops, AG-UI 1.0 and Supabase/Turso, refreshing the overview: 73 developments and 47 watch profiles.
+- Add Kolibri, BootLoops and AG-UI profiles; extend DeepSeek with Ascend computation and expert communication material while preserving previous content.
+- Share nine new fixed originals and license texts through web and MCP. Explain model memory, hardware availability, research verification and SDK migration limits; retain DeepEP as links while licensing remains unverified.
+- Preserve AA's 152 points, Arena's 92 points and their review dates. Synchronize bilingual READMEs, project management and publication evidence.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8-9、REQ-9、REQ-11。无数据库结构或接口变更。发布日期与本站核对日期分别记录，不将9月30日资源补录冒充10月4日首发。原文许可逐份保留，未运行上游模型、科研工具或硬件。56项回归、双端预览与正式页面、34次MCP读取、九份完整原文及v1.5.24部署已验，见[验收记录](docs/validation/2026-10-04-editorial.md)。
+
 <a id="v1.5.23"></a>
 ## v1.5.23 · 五项动态、Muse Gadgets 与 AstaBrief · 2026-10-03
 
