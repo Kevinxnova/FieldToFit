@@ -85,7 +85,10 @@ def test_relation_private_preview_both_directions_and_scope(client):
 
 
 def material(client):
-    migrate(client);with_material(client);publish(client,'watch','CW-M01')
+    migrate(client);with_material(client)
+    # Keep this historical clock fixture independent of current published profile dates.
+    detail=ws.detail('watch','CW-M01');detail['draft']['checked_at']=ws.today()
+    ws.save('watch','CW-M01',detail);publish(client,'watch','CW-M01')
     return 'CW-M01','readme','https://example.org/README.md'
 
 def at(day):return f'2026-09-{day:02d}T01:00:00+00:00'

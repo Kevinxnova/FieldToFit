@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.6.2"></a>
+## v1.6.2 · Strata 与五项持续关注档案更新 · 2026-10-05
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增Strata动态与工具档案，说明消费级显卡、量化和内存条件；当前74条动态、48项持续关注。
+- 补齐GPT-6 Sol/Luna、GPT-6.1 Sol和Claude Opus/Sonnet 5.5版本表，关联已发布动态，保留历史型号，不重复发新闻。
+- 更新Claude Code权限修复、DeepSeek Harness预览能力及Addy Skills执行流程与错误指令修正；增加11份固定原文与许可供网页和MCP读取。
+- 修复关联动态事件在缓冲写入后读取数据库导致的发布500；关联快照先读取并参与并发校验，材料观测与关系操作沿用同一修正。
+- Claude Code正文再分发许可未确认，保留官方链接与解读；AA152点、Arena92点及核对日期保持。同步中英文README、项目管理与验证记录。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add a Strata development and tool profile with hardware, quantization and memory requirements: 74 developments and 48 watch profiles.
+- Bring GPT-6 Sol/Luna, GPT-6.1 Sol and Claude Opus/Sonnet 5.5 into their existing version tables, linking published developments and preserving historical entries without duplicate news.
+- Update Claude Code permission fixes, DeepSeek Harness preview capabilities and Addy Skills workflow and instruction corrections. Add 11 fixed source documents and license texts for web and MCP reading.
+- Fix publication failures caused by reading related-news context after buffered writes. Snapshot associations before writes and retain concurrency checks across publication, material observations and relationship changes.
+- Keep Claude Code originals as links while redistribution rights remain unverified. Preserve AA's 152 points, Arena's 92 points and their dates; synchronize bilingual READMEs, project management and verification records.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8/9、REQ-11；本次为用户明确批准10月5日日报A–F的内容交付，不代表REQ-19台账功能已实现。无数据库结构或API变更。原始发布日期、订阅记录时间与本站核对日期分开记录。本站未部署上游工具或复测性能/安全修复；115项回归、双端预览和正式页面、35次MCP读取及11份全文哈希、v1.6.2部署已验，见[本批证据](docs/validation/2026-10-05-editorial.md)。
+
 <a id="v1.6.1"></a>
 ## v1.6.1 · 修正本期速览整列留白 · 2026-10-04
 

@@ -36,15 +36,17 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.6.1](CHANGELOG.md#v1.6.1)** · [fieldtofit-v1.6.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.1)
+**Current source version: [v1.6.2](CHANGELOG.md#v1.6.2)** · [fieldtofit-v1.6.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Place the lead briefing across the top with a two-column grid beneath, removing the empty column caused by a four-row lead span.
-- Keep each image beside its own story and retain its source. Full captions, revision and license details remain in the enlarged view; mobile uses the original reading order in one column.
-- Preserve reviewed text, editorial order, follows and archive filters. Six viewport layout checks and 25 reading regressions pass; production version, responsive layout and image interactions are verified.
+- Add a Strata development and tool profile with hardware, quantization and memory requirements: 74 developments and 48 watch profiles.
+- Bring GPT-6 Sol/Luna, GPT-6.1 Sol and Claude Opus/Sonnet 5.5 into their existing version tables, linking published developments and preserving historical entries without duplicate news.
+- Update Claude Code permission fixes, DeepSeek Harness preview capabilities and Addy Skills workflow and instruction corrections. Add 11 fixed source documents and license texts for web and MCP reading.
+- Fix publication failures caused by reading related-news context after buffered writes. Snapshot associations before writes and retain concurrency checks across publication, material observations and relationship changes.
+- Keep Claude Code originals as links while redistribution rights remain unverified. Preserve AA's 152 points, Arena's 92 points and their dates; synchronize bilingual READMEs, project management and verification records.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

@@ -80,3 +80,56 @@ def test_completed_resume_cursor_starts_new_window_at_first_event(client):
     resumed=f.changes(object_ids=['CW-M01'],limit=100,cursor=initial['resume_cursor'])
     assert len(resumed['items'])==1
     assert resumed['items'][0]['changed_fields']==['introduction']
+
+
+@pytest.mark.parametrize('action', ['publish', 'withdraw', 'observe', 'review', 'relation', 'relation_remove'])
+def test_news_events_use_snapshot_before_remote_writes(client, monkeypatch, action):
+    """A related-news event must not query after buffered writes, even for material events."""
+    from contextlib import contextmanager
+    from test_editorial_v130 import mat
+    from backend.knowledge.workspace_transactions import GuardedWrites
+    migrate(client)
+    relation()
+    detail = ws.detail('news', 'D-01')
+    detail['draft']['reading_materials'] = [mat()]
+    ws.save('news', 'D-01', detail)
+    publish(client, 'news', 'D-01')
+    observed = s.observe('D-01', 'readme', 'https://example.org/README.md',
+                         {'ok': True, 'hash': 'first', 'final_url': 'https://example.org/README.md'})
+    before = f.changes(object_ids=['CW-M01'], initialize=True)['until']
+    @contextmanager
+    def buffered():
+        with get_db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            g = GuardedWrites(db)
+            yield g
+            for sql, args in g.writes: db.execute(sql, args)
+    monkeypatch.setattr(s, 'editorial_transaction', buffered)
+    monkeypatch.setattr(ws, 'editorial_transaction', buffered)
+    if action == 'publish':
+        detail = ws.detail('news', 'D-01')
+        detail['draft']['reading_materials'][0]['body'] += '\nUpdated original.'
+        detail['draft']['reading_materials'].append(mat(id='license', title='License', url='https://example.org/LICENSE'))
+        ws.save('news', 'D-01', detail)
+        publish(client, 'news', 'D-01')
+    elif action == 'withdraw':
+        detail = ws.detail('news', 'D-01')
+        ws.publish('news', 'D-01', {'draft_version': detail['draft_version'], 'reason': 'Fixture withdrawal'}, True)
+    elif action == 'observe':
+        s.observe('D-01', 'readme', 'https://example.org/README.md', {'ok': True, 'hash': 'changed', 'final_url': 'https://example.org/README.md'})
+    elif action == 'review':
+        s.decide_material({'id': 'D-01', 'material_id': 'readme', 'decision': 'reviewed', 'reason': 'Original reviewed', 'check_revision': s.digest(observed)})
+    elif action == 'relation':
+        relation(target='CW-M02')
+    else:
+        link = s.public_status('D-01')['relationships'][0]['id']
+        data = {'action': 'relation_remove', 'source': 'D-01', 'target': 'CW-M01', 'link_id': link, 'reason': 'Fixture removal'}
+        pre = s.preview(data)
+        s.apply({**data, 'review_token': pre['review_token'], 'confirmed': True})
+    events = f.changes(object_ids=['CW-M01'], after=before)['items']
+    assert events and any(e['object_id'] == 'D-01' for e in events)
+    if action == 'publish':
+        assert {'updated', 'material_updated', 'material_added'} <= {e['kind'] for e in events}
+    with get_db() as db:
+        saved = [json.loads(r['data']) for r in db.execute('SELECT data FROM fieldtofit_steward_events WHERE object_id=?', ('D-01',)).fetchall()]
+    assert all('CW-M01' in e['related_watch_ids'] for e in saved)

@@ -280,10 +280,11 @@ def publish(kind, ident, data, withdraw=False):
         from backend.knowledge.editorial_batches import published
         from backend.knowledge.operation_board import event,content_source
         origin=content_source(db,kind,ident)
+        from backend.knowledge.stewardship import publication_event,event_context
+        context=event_context(db, [ident])
         published(db,kind,ident,new,withdraw)
         event(db,origin,kind+':'+ident,'withdrawn' if withdraw else 'published_update' if item['published'] else 'published_new',str(item['draft_version']))
-        from backend.knowledge.stewardship import publication_event
-        publication_event(db,kind,ident,item['published'],new)
+        publication_event(db,kind,ident,item['published'],new,context=context)
         execute_statements(db,writes)
     return detail(kind,ident)
 

@@ -1,5 +1,7 @@
 # 验收证据导航
 
+本批：[v1.6.2 A–F 内容发布](2026-10-05-editorial.md)。
+
 部署前验证：[真实配图发布、生产副本迁移与构建检查](2026-10-04-follow-traffic.md#media-predeploy)；正式发布结果见[生产部署验收](2026-10-04-follow-traffic.md#production-deployment)。
 
 当前正式批次：[v1.6.0 关注与详细统计](2026-10-04-follow-traffic.md)，已完成生产迁移与部署；日程已加每日对象核对，阅读改版已完成本地验证，REQ-19结构化检查台账仍待对齐。

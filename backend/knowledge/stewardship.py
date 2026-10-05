@@ -41,34 +41,46 @@ def upgrade():
             db.execute('BEGIN IMMEDIATE');execute_statements(db,statements)
     return {'ok':True}
 
-def event(db,ident,action,data=None):
+def event_context(db, identities):
+    """Snapshot related profiles before any buffered writes; keep them in the CAS read set."""
+    news = {i for i in identities if i.startswith('D-')}
+    if not news:return {}
+    items = raw_items(db)
+    context = {i: {r['id'] for r in items.get(i, {}).get('related', []) if r.get('id','').startswith('CW-')} for i in news}
+    for row in rows(db, 'fieldtofit_steward_links'):
+        a,b = row['source_id'],row['target_id']
+        if a in context and b.startswith('CW-'):context[a].add(b)
+        if b in context and a.startswith('CW-'):context[b].add(a)
+    return context
+
+
+def event(db,ident,action,data=None,context=None):
     # Callers supply only public identity/status metadata, never review notes or bodies.
     data = dict(data or {})
     if ident.startswith('D-'):
-        item = raw_items(db).get(ident, {})
-        related = set(data.get('related_watch_ids', [])) | {r['id'] for r in item.get('related', []) if r.get('id','').startswith('CW-')}
-        for row in rows(db, 'fieldtofit_steward_links'):
-            if row['source_id']==ident and row['target_id'].startswith('CW-'): related.add(row['target_id'])
-            if row['target_id']==ident and row['source_id'].startswith('CW-'): related.add(row['source_id'])
+        context = event_context(db, [ident]) if context is None else context
+        related = set(data.get('related_watch_ids', [])) | context.get(ident, set())
         for key in ('target_id','related_id'):
             if str(data.get(key,'')).startswith('CW-'): related.add(data[key])
         data['related_watch_ids'] = sorted(related)
     db.execute('INSERT INTO fieldtofit_steward_events(object_id,kind,data,created_at) VALUES(?,?,?,?)',(ident,action,ws.dump(data),ws.stamp()))
 
-def publication_event(db,kind_,ident,old,new):
+def publication_event(db,kind_,ident,old,new,context=None):
     if kind_=='charts':return
+    context = event_context(db, [ident]) if context is None else context
+    context = {**context, ident: set(context.get(ident, set())) | {r['id'] for obj in (old or {},new) for r in obj.get('related',[]) if r.get('id','').startswith('CW-')}}
     event(db,ident,'withdrawn' if new.get('state')=='withdrawn' else 'updated' if old else 'added',
           {'from_revision':digest(old) if old else None,'to_revision':digest(new),
            'changed_fields':[k for k in ('name','title','summary','introduction','blocks','interpretation','sources','reading_materials','related','state','media','category') if (old or {}).get(k)!=new.get(k)],
-           'related_watch_ids':sorted({r['id'] for obj in (old or {},new) for r in obj.get('related',[]) if r.get('id','').startswith('CW-')})})
+           'related_watch_ids':sorted({r['id'] for obj in (old or {},new) for r in obj.get('related',[]) if r.get('id','').startswith('CW-')})},context=context)
     previous={m['id']:m for m in (old or {}).get('reading_materials',[])}
     current={m['id']:m for m in new.get('reading_materials',[])}
     for mid,m in previous.items():
         if new.get('state')=='withdrawn' or mid not in current or (m.get('body') and not current[mid].get('body')):
-            event(db,ident,'material_withdrawn',{'material_id':mid,'availability':'unavailable'})
-        elif current[mid]!=m:event(db,ident,'material_updated',{'material_id':mid,'from_revision':digest(m),'to_revision':digest(current[mid])})
+            event(db,ident,'material_withdrawn',{'material_id':mid,'availability':'unavailable'},context=context)
+        elif current[mid]!=m:event(db,ident,'material_updated',{'material_id':mid,'from_revision':digest(m),'to_revision':digest(current[mid])},context=context)
     for mid,m in current.items():
-        if mid not in previous:event(db,ident,'material_added',{'material_id':mid,'to_revision':digest(m)})
+        if mid not in previous:event(db,ident,'material_added',{'material_id':mid,'to_revision':digest(m)},context=context)
 
 def raw_items(db):
     items={}
@@ -293,6 +305,7 @@ def apply(data):
         from backend.knowledge.editorial_batches import published
         origins={i:content_source(db,kind(i),i) for i in p['after']}
         topics={i:[dict(r) for r in db.execute('SELECT id,decision FROM fieldtofit_editorial_topics WHERE kind=? AND item_id=?',(kind(i),i)).fetchall()] for i in p['after']}
+        context=event_context(db, [source,target])
         updates=[]
         for k in ({kind(i) for i in p['after']} if action!='group' else set()):
             base=json.loads(next(r['published_json'] for r in p['sets'] if r['kind']==k));known={i['id'] for i in base['items']}
@@ -350,8 +363,8 @@ def apply(data):
                 if not withdrawn:updates.append(("UPDATE fieldtofit_inbox SET status='completed',updated_at=? WHERE kind=? AND item_id=? AND status='selected'",(stamp,kind(ident),ident)))
         execute_statements(db,updates)
         if action not in ('separate','group'):
-            event(db,source,{'merge':'merged','undo':'merge_reversed','relation':'relationship_updated','relation_remove':'relationship_removed'}[action],{'target_id':target})
-            if target in p['before']:event(db,target,'updated',{'related_id':source})
+            event(db,source,{'merge':'merged','undo':'merge_reversed','relation':'relationship_updated','relation_remove':'relationship_removed'}[action],{'target_id':target},context=context)
+            if target in p['before']:event(db,target,'updated',{'related_id':source},context=context)
     return {'ok':True,'id':aid,'source':source,'target':target,'action':action}
 
 
@@ -392,11 +405,12 @@ def observe(ident,mid,expected_url,result,at=None):
           failure_days=streak,error='' if ok else result['error'],changed=pending_change,needs_review=needs,review_priority=0 if pending_change or streak>=7 else 1)
         if ok:d.update(observed_hash=result.get('hash'),final_url=result.get('final_url'))
         if changed or (streak>=7 and old.get('failure_days',0)<7):d.pop('review_after',None)
+        context=event_context(db, [ident])
         state_changed=any(d.get(k)!=old.get(k) for k in ('availability','needs_review','review_priority','changed'))
         db.execute('INSERT INTO fieldtofit_steward_checks VALUES(?,?,?,?) ON CONFLICT(object_id,material_id) DO UPDATE SET url=excluded.url,data=excluded.data',(ident,mid,expected_url,ws.dump(d)))
         if state_changed or changed:
             action='material_changed' if changed else 'material_recovered' if ok and old.get('availability')=='check_failed' else 'material_check_failed' if not ok else 'material_checked'
-            event(db,ident,action,{'material_id':mid,'availability':d['availability'],'failure_days':streak,'needs_review':needs,'checked_at':at})
+            event(db,ident,action,{'material_id':mid,'availability':d['availability'],'failure_days':streak,'needs_review':needs,'checked_at':at},context=context)
     return d
 
 
@@ -439,8 +453,9 @@ def decide_material(data):
             current['review_after']=after
         else:
             current.update(acknowledged_failure_days=current.get('failure_days',0),needs_review=False,changed=False,review_after=None,public_note=reason,last_decision=decision,last_decision_at=ws.stamp())
+        context=event_context(db, [ident])
         db.execute('UPDATE fieldtofit_steward_checks SET data=? WHERE object_id=? AND material_id=?',(ws.dump(current),ident,mid))
-        if decision!='defer':event(db,ident,'material_reviewed',{'material_id':mid,'decision':decision,'note':reason})
+        if decision!='defer':event(db,ident,'material_reviewed',{'material_id':mid,'decision':decision,'note':reason},context=context)
         db.execute('INSERT INTO fieldtofit_steward_actions VALUES(?,?,?,?,?,?,?,?,?,NULL)',(uuid.uuid4().hex,'material_'+decision,ident,'',ws.dump(data),row[0],ws.dump(current),reason,ws.stamp()))
     return {'ok':True}
 
