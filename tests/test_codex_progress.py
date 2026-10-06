@@ -2,6 +2,7 @@
 import copy
 import json
 import pytest
+from pathlib import Path
 from test_knowledge import client, MCP
 from test_content_workspace import call, migrate, publish
 from backend.knowledge import platform_news as news
@@ -107,3 +108,87 @@ def test_confirmed_reset_requires_effective_scope_and_keeps_revisioned_evidence(
     for key in ('scope','plans','source_url','effective_at'):
         broken=copy.deepcopy(data); del event(broken)['codex_28_days']['reset'][key]
         with pytest.raises((ValueError,TypeError)): news.validate(broken)
+
+
+def source_post():
+    return copy.deepcopy(event(collection())['codex_28_days']['source_posts'][0])
+
+
+@pytest.mark.parametrize('broken', ['account','unregistered','time','duplicate','primary','avatar','future_check','context','private_url'])
+def test_source_post_evidence_gate(broken):
+    data=collection(); item=event(data); post=item['codex_28_days']['source_posts'][0]
+    if broken=='account': post['author_handle']='someone_else'
+    if broken=='unregistered': post['evidence_url']='https://example.org/unreviewed'
+    if broken=='time': post['announced_at']='2026-10-05T17:20:30.019Z'
+    if broken=='duplicate': item['codex_28_days']['source_posts'].append(copy.deepcopy(post))
+    if broken=='primary': post['kind']='supplement'
+    if broken=='avatar': post['avatar']['url']='https://example.org/tibo.jpg'
+    if broken=='future_check': post['avatar']['checked_at']='2099-01-01'
+    if broken=='context': post['context']={'kind':'quote','url':post['url'],'author_name':'Other','author_handle':'other','text_en':'Excerpt','translation_zh':'摘译','text_scope':'excerpt'}
+    if broken=='private_url': post['url']='https://x.com/thsottiaux/status/2107158998495748264?token=secret'
+    with pytest.raises((ValueError,TypeError)): news.validate(data)
+
+
+def test_posts_round_trip_corrections_private_notes_and_withdrawal(client,monkeypatch):
+    from backend.knowledge import content_workspace as ws
+    from backend import seo
+    monkeypatch.setattr(ws,'today',lambda:'2026-10-06')
+    migrate(client)
+    first=client.get('/api/v1/platform/news').json
+    cur=call(client,'/content/news/D-78',method='get').json
+    cur['draft']['codex_28_days']['source_posts'][0]['private_note']='SECRET-PENDING'
+    cur['draft']['codex_28_days']['source_posts'][0]['avatar']['internal']='SECRET-PENDING'
+    call(client,'/content/news/D-78',cur,'patch');publish(client,'news','D-78')
+    assert client.get('/api/v1/platform/news').json==first
+    cur=call(client,'/content/news/D-78',method='get').json
+    cur['draft']['codex_28_days']['overview_zh']='已审摘要修订'
+    cur['draft']['codex_28_days']['source_posts'][0]['translation_zh']='已审摘译修订'
+    call(client,'/content/news/D-78',cur,'patch')
+    assert client.get('/api/v1/platform/news').json==first
+    pre=call(client,'/content/news/D-78/preview').json
+    assert pre['ready'] and 'SECRET-PENDING' not in json.dumps(pre)
+    published=publish(client,'news','D-78');body=client.get('/api/v1/platform/news').json
+    assert body['revision']!=first['revision'] and event(body)['publication']['updated_at']
+    for path in ('/for-you','/news/D-78'):
+        page=client.get(path,base_url=seo.ORIGIN)
+        assert page.status_code==200 and '已审摘译修订' in page.text and 'SECRET-PENDING' not in page.text
+        assert 'tibo-6a3ab22f.jpg' in page.text and '英文原文摘录' in page.text
+    rpc=client.post('/api/mcp/curated',headers=MCP,json={'jsonrpc':'2.0','id':1,'method':'tools/call','params':{'name':'curated_news','arguments':{}}}).json['result']['structuredContent']
+    assert rpc==body
+    assert any(path=='/news/D-78' and changed for path,changed in seo.sitemap_entries())
+    call(client,'/content/news/D-78/withdraw',{'draft_version':published['draft_version'],'reason':'撤销原帖记录'})
+    assert 'tibo-6a3ab22f.jpg' not in client.get('/for-you').text
+    assert client.get('/news/D-78').status_code==404
+
+
+def test_related_posts_preserve_distinct_context_author_and_private_projection():
+    data=collection();item=event(data);post=copy.deepcopy(item['codex_28_days']['source_posts'][0])
+    post.update(url='https://x.com/thsottiaux/status/2106845241357824205',kind='supplement',announced_at='2026-10-04T20:33:43.488Z')
+    item['sources'].append({'id':'context','title':'Registered quote','url':'https://x.com/example/status/123','coverage':'link_only'})
+    post['context']={'kind':'quote','url':'https://x.com/example/status/123','author_name':'Other author','author_handle':'example','text_en':'Context excerpt','translation_zh':'上下文摘译','text_scope':'excerpt','private_note':'SECRET'}
+    item['sources'].append({'id':'supplement','title':'Registered supplement','url':post['url'],'coverage':'link_only'})
+    item['codex_28_days']['source_posts'].append(post)
+    result=event(news.news(_data=data))['codex_28_days']['source_posts']
+    assert result[0]['kind']=='primary' and result[1]['context']['author_handle']=='example'
+    assert 'SECRET' not in json.dumps(result)
+
+
+def test_month_grid_has_real_dates_without_creating_logs():
+    from backend.knowledge.codex_progress import calendar_month
+    topic=news.news(_data=collection())['codex_progress'];before=copy.deepcopy(topic)
+    oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
+    assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
+    assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
+    assert sum(bool(c['log']) for c in oct)==2 and sum(bool(c['log']) for c in nov)==0
+    assert topic==before
+
+
+def test_cached_avatar_is_a_static_image_and_missing_files_are_404(client,tmp_path,monkeypatch):
+    import backend.api.main as main
+    folder=tmp_path/"source-authors";folder.mkdir()
+    (folder/"tibo-6a3ab22f.jpg").write_bytes(Path("frontend/public/source-authors/tibo-6a3ab22f.jpg").read_bytes())
+    monkeypatch.setattr(main,"CLIENT_DIST",tmp_path)
+    image=client.get('/source-authors/tibo-6a3ab22f.jpg')
+    assert image.status_code==200 and image.mimetype=='image/jpeg'
+    assert image.data.startswith(b'\xff\xd8')
+    assert client.get('/source-authors/missing.jpg').status_code==404

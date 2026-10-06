@@ -8,6 +8,9 @@ import json
 import os
 import re
 from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from backend.knowledge.codex_progress import calendar_month
 from xml.etree import ElementTree as ET
 
 from flask import Blueprint, Response, redirect, render_template, request
@@ -58,6 +61,7 @@ def inline(value):
 
 bp.add_app_template_filter(inline, 'search_inline')
 bp.add_app_template_filter(public_link, 'search_link')
+bp.add_app_template_filter(lambda value: datetime.fromisoformat(value.replace('Z', '+00:00')).astimezone(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M'), 'codex_beijing')
 
 
 def preview():
@@ -86,7 +90,7 @@ def published_dates_query():
     fields = ('state','name','organization','title','summary','introduction','type',
               'source_published_at','event_date','checked_at','interpretation','blocks',
               'sources','related','note','editor','highlight','attention','origin',
-              'submission','reading_materials','aliases')
+              'submission','reading_materials','aliases','publication.updated_at')
     projection = 'json_array(' + ','.join("json_extract(snapshot,'$."+key+"')" for key in fields) + ')'
     return f"""WITH revisions AS (
         SELECT kind,item_id,action,created_at,{projection} body,
@@ -216,9 +220,15 @@ def page(path, dist):
             title = item.get('title', item['name']) + ' · FieldToFit'
             heading = item.get('title', item['name'])
             description = item.get('summary', item.get('introduction', ''))
+        topic = collections.get('news', {}).get('codex_progress', {})
+        month = topic.get('days', [{}])[0].get('date', '')[:7] if topic.get('days') else ''
+        calendar_cells = calendar_month(*map(int, month.split('-')), topic) if month else []
+        calendar_title = month.replace('-', '年') + '月' if month else ''
+        calendar_items = {entry['id']: entry for entry in collections.get('news', {}).get('items', [])}
         body = render_template('search.html', pages=PAGES, path=path, heading=heading,
                                description=description, item=item, collections=collections,
-                               catalog=catalog, revision=revision)
+                               catalog=catalog, revision=revision, calendar_cells=calendar_cells,
+                               calendar_title=calendar_title, calendar_items=calendar_items)
         return document(dist, title, description, path, body)
     except PlatformError as exc:
         status = exc.status if exc.status in (400, 404) else 503

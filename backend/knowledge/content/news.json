@@ -5,13 +5,15 @@
       "category": "industry",
       "checked_at": "2026-10-06",
       "codex_28_days": {
-        "announced_at": null,
-        "date_precision": "source_date",
         "event_key": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
         "group": "other_openai",
+        "type": "feature",
         "official_day": null,
+        "date_precision": "source_date",
+        "announced_at": null,
         "timestamp_basis": "source_date",
-        "type": "feature"
+        "overview_zh": "ChatGPT Ads测量工具",
+        "overview_en": "ChatGPT Ads measurement tools"
       },
       "editor": "FieldToFit",
       "event_date": null,
@@ -40,16 +42,16 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-06T08:49:59.226715+00:00",
-        "updated_at": "2026-10-06T08:49:59.226715+00:00"
+        "updated_at": "2026-10-06T10:32:22.110127+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-05",
       "sources": [
         {
-          "coverage": "link_only",
           "id": "announcement",
           "title": "OpenAI 广告测量与新形式公告",
-          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/"
+          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+          "coverage": "link_only"
         }
       ],
       "state": "published",
@@ -60,13 +62,15 @@
       "category": "industry",
       "checked_at": "2026-10-06",
       "codex_28_days": {
-        "announced_at": null,
-        "date_precision": "source_date",
         "event_key": "https://developers.openai.com/api/docs/changelog",
         "group": "other_openai",
+        "type": "feature",
         "official_day": null,
+        "date_precision": "source_date",
+        "announced_at": null,
         "timestamp_basis": "source_date",
-        "type": "feature"
+        "overview_zh": "API HIPAA自助入口",
+        "overview_en": "API HIPAA self-service setup"
       },
       "editor": "FieldToFit",
       "event_date": null,
@@ -95,16 +99,16 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-06T08:49:38.655693+00:00",
-        "updated_at": "2026-10-06T08:49:38.655693+00:00"
+        "updated_at": "2026-10-06T10:31:57.282266+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-05",
       "sources": [
         {
-          "coverage": "link_only",
           "id": "changelog",
           "title": "OpenAI API 官方更新日志",
-          "url": "https://developers.openai.com/api/docs/changelog"
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "coverage": "link_only"
         }
       ],
       "state": "published",
@@ -116,13 +120,15 @@
       "category": "tool",
       "checked_at": "2026-10-06",
       "codex_28_days": {
-        "announced_at": null,
-        "date_precision": "source_date",
         "event_key": "https://openai.com/index/eu-text-provenance/",
         "group": "other_openai",
+        "type": "announcement",
         "official_day": null,
+        "date_precision": "source_date",
+        "announced_at": null,
         "timestamp_basis": "source_date",
-        "type": "announcement"
+        "overview_zh": "textGrain：文本来源识别",
+        "overview_en": "textGrain: text provenance"
       },
       "editor": "FieldToFit",
       "event_date": null,
@@ -159,7 +165,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-06T03:33:20.678597+00:00",
-        "updated_at": "2026-10-06T08:50:19.405314+00:00"
+        "updated_at": "2026-10-06T10:31:34.765026+00:00"
       },
       "reading_materials": [
         {
@@ -192,10 +198,10 @@
       "source_published_at": "2026-10-05",
       "sources": [
         {
-          "coverage": "link_only",
           "id": "source-1",
           "title": "OpenAI textGrain · 官方来源 1",
-          "url": "https://openai.com/index/eu-text-provenance/"
+          "url": "https://openai.com/index/eu-text-provenance/",
+          "coverage": "link_only"
         }
       ],
       "state": "published",
@@ -206,13 +212,15 @@
       "category": "agent",
       "checked_at": "2026-10-06",
       "codex_28_days": {
-        "announced_at": "2026-10-05T18:29:37Z",
-        "date_precision": "instant",
         "event_key": "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
         "group": "codex",
+        "type": "fix",
         "official_day": null,
+        "date_precision": "instant",
+        "announced_at": "2026-10-05T18:29:37Z",
         "timestamp_basis": "official_timestamp",
-        "type": "fix"
+        "overview_zh": "CLI 0.160.1：修复远程MCP启动",
+        "overview_en": "CLI 0.160.1: remote MCP startup fix"
       },
       "editor": "FieldToFit",
       "event_date": "2026-10-06",
@@ -242,7 +250,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-06T08:49:19.280307+00:00",
-        "updated_at": "2026-10-06T08:49:19.280307+00:00"
+        "updated_at": "2026-10-06T10:31:11.563747+00:00"
       },
       "related": [
         {
@@ -254,16 +262,16 @@
       "source_published_at": "2026-10-05",
       "sources": [
         {
-          "coverage": "link_only",
           "id": "release",
           "title": "Codex CLI 0.160.1 官方版本",
-          "url": "https://github.com/openai/codex/releases/tag/rust-v0.160.1"
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
+          "coverage": "link_only"
         },
         {
-          "coverage": "link_only",
           "id": "changelog",
           "title": "Codex 官方更新日志",
-          "url": "https://learn.chatgpt.com/docs/changelog"
+          "url": "https://learn.chatgpt.com/docs/changelog",
+          "coverage": "link_only"
         }
       ],
       "state": "published",
@@ -274,13 +282,39 @@
       "category": "model",
       "checked_at": "2026-10-06",
       "codex_28_days": {
-        "announced_at": "2026-10-05T17:20:29.019Z",
-        "date_precision": "instant",
         "event_key": "https://x.com/thsottiaux/status/2107158998495748264",
         "group": "codex",
+        "type": "speed",
         "official_day": 1,
+        "date_precision": "instant",
+        "announced_at": "2026-10-05T17:20:29.019Z",
         "timestamp_basis": "post_id_derived",
-        "type": "speed"
+        "overview_zh": "订阅默认速度约 +50%",
+        "overview_en": "~50% faster by default with subscriptions",
+        "source_posts": [
+          {
+            "url": "https://x.com/thsottiaux/status/2107158998495748264",
+            "kind": "primary",
+            "author_name": "Tibo",
+            "author_handle": "thsottiaux",
+            "text_en": "We have optimized the default speed to be ~50% faster across GPT-6 Astra and GPT-6.1 Sol through the subscription…",
+            "translation_zh": "我们优化了订阅中的默认速度，让GPT-6 Astra和GPT-6.1 Sol约快50%。",
+            "text_scope": "excerpt",
+            "announced_at": "2026-10-05T17:20:29.019Z",
+            "timestamp_basis": "post_id_derived",
+            "evidence_url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/7",
+            "retrieval_method": "official_embed",
+            "checked_at": "2026-10-06",
+            "reuse_basis": "公开官方原帖短摘录及本站中文摘译；完整范围见动态解读和原帖链接。",
+            "avatar": {
+              "url": "/source-authors/tibo-6a3ab22f.jpg",
+              "source_url": "https://us1.discourse-cdn.com/openai1/original/4X/6/a/3/6a3ab22f1f40f6809bfba4e93273045c5ff4bf3f.jpeg",
+              "evidence_url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525",
+              "checked_at": "2026-10-06",
+              "retrieval_method": "official_embed"
+            }
+          }
+        ]
       },
       "editor": "FieldToFit",
       "event_date": "2026-10-06",
@@ -311,7 +345,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-06T08:48:59.095713+00:00",
-        "updated_at": "2026-10-06T08:48:59.095713+00:00"
+        "updated_at": "2026-10-06T10:30:49.382958+00:00"
       },
       "related": [
         {
@@ -328,22 +362,28 @@
       "source_published_at": "2026-10-05",
       "sources": [
         {
-          "coverage": "link_only",
           "id": "tibo",
           "title": "Tibo 官方提速公告",
-          "url": "https://x.com/thsottiaux/status/2107158998495748264"
+          "url": "https://x.com/thsottiaux/status/2107158998495748264",
+          "coverage": "link_only"
         },
         {
-          "coverage": "link_only",
           "id": "openai-employee",
           "title": "OpenAI 员工说明",
-          "url": "https://x.com/reach_vb/status/2107162023129723241"
+          "url": "https://x.com/reach_vb/status/2107162023129723241",
+          "coverage": "link_only"
         },
         {
-          "coverage": "link_only",
           "id": "embed",
           "title": "官方社区原帖嵌入",
-          "url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/7"
+          "url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/7",
+          "coverage": "link_only"
+        },
+        {
+          "id": "avatar",
+          "title": "Tibo头像：官方社区原帖嵌入",
+          "url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525",
+          "coverage": "link_only"
         }
       ],
       "state": "published",

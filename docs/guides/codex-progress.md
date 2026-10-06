@@ -1,9 +1,10 @@
 # Codex 28天专题维护
 
-专题位于 [For you](https://fieldtofit.top/for-you#news-codex-28-days) 的近期动态内，与本期速览、发布与更新同级。采用已有日志日期导航和倒序时间线，默认最近一天；「全部日志」展开已发布日期。网站只读已审核发布的真实记录，不展示内部核验状态或空白日。
+专题位于 [For you](https://fieldtofit.top/for-you#news-codex-28-days) 的近期动态内，与本期速览、发布与更新同级。提供月历／日历条概览和倒序时间线，默认月历及最近一天；「全部日志」展开已发布日期。网站只读已审核发布的真实记录，不展示内部核验状态或空白日志；月历可保留无事件自然日期。
 
-新增待对齐能力见[REQ-20-7 日历概览](../../FieldToFit-PM.md#req-20-7)与[REQ-20-8 Tibo原帖卡片](../../FieldToFit-PM.md#req-20-8)。当前网站仍使用日期／条数按钮和出处链接；产品内月历／日历条切换、每日摘要、原帖正文及X同款头像与回复／引用关系尚未开发或部署。本指南下述流程描述既有已上线能力，不能用它推定新增原帖字段已经可编辑。
+[REQ-20-7](../../FieldToFit-PM.md#req-20-7)提供月历／日历条切换，首次默认月历并记住视图，所选日期与日志保持。月历显示完整自然日期，仅已审日期有事件标记和点击入口；手机保留日期及类型点，下方显示所选摘要。今天没有已审日志时仅定位月份，保留已有详情。其他OpenAI更新与主线独立统计，重置仅统计已确认生效的记录。
 
+[REQ-20-8](../../FieldToFit-PM.md#req-20-8)在对应日志和独立详情中展示Tibo原帖卡片，真实头像与作者、摘录／译文、北京时刻及原帖入口并列。主公告展开，相关补充／回复折叠；英文界面优先英文。头像损坏时保留作者文字。原帖内容也进入无脚本HTML、API、MCP和AI交接。
 ## 日期与来源
 
 承诺原帖为UTC 2026-10-04 20:33、北京10月5日04:33；本站日历Day 1为10月5日，第28个日历日为11月1日。官方改进的Day编号独立保留。末项若跨北京午夜到11月2日，必须有官方Day 28依据，真实日期不改成11月1日。承诺背景不算更新。
@@ -17,7 +18,7 @@
 1. 阅读 [项目管理](../../FieldToFit-PM.md#req-20)，读取当前公开动态以查重：`GET /api/v1/platform/news` 或 MCP `curated_news`。专题信息在 `codex_progress`，同一条动态的归组依据在 `codex_28_days`。
 2. 检查Tibo原帖、OpenAI官方日志及 `openai/codex` 正式release，必要时读取官方社区原帖嵌入。社区用户转述只作线索。保存原URL、原始时间、时间依据、适用范围、读取方式和限制到私密 `output/codex-28-days/`。后到证据归回真实发布日；没有合格增量不改公共日期。
 3. 复用同事件已有D-/CW-编号。主线Codex／ChatGPT Work与其他OpenAI发布分开。按原帖／版本URL去重，不用其他OpenAI公告补足承诺，不作兑现评分。准备可审阅增量稿并确认本批，未确认前不建立网站草稿。
-4. 获具体批准后，通过现有内容管理选择／保存草稿。在「Codex 28天专题」填写分组、类型、事件标识、官方Day、日期精度与时间依据，来源必须已在该动态公开出处登记。保存、双端预览、提交复核、明确发布；并发版本或来源变化必须重新预览。后台不跳过审核。
+4. 获具体批准后，通过现有内容管理选择／保存草稿。在「Codex 28天专题」填写分组、类型、事件标识、官方Day、日期精度与时间依据，来源必须已在该动态公开出处登记。填写中英概览短句；有真实Tibo关联帖时填写原帖链接、作者、正文／摘译、全文或摘录、时间依据、读取方式和核对日期。头像记录原图URL、展示地址、身份出处、读取方式和核对日期，采用已核实原图或本站缓存。引用／回复保留独立作者和已登记URL；更正必须同步正文及概览，不能仅藏在折叠回复中。保存、双端预览、提交复核、明确发布；并发版本或来源变化必须重新预览。后台不跳过审核。
 5. 核对公开API、MCP、专题日期和独立详情页同一修订；保存真实运行回执。源码内容导出、版本、CHANGELOG、双语README和部署按[发布指南](releasing.md)完成。公开修订与应用版本各有记录，不以核对时间替代事件日期。
 
 示例：有时刻的官方Day 1提速事件（本站北京日历Day 2）：
@@ -38,7 +39,7 @@
 }
 ```
 
-日期精度为 `source_date` 时，`announced_at`／`event_date` 为null、`timestamp_basis` 为 `source_date`。类型可为feature、model、speed、fix、reset、announcement；分组可为codex、other_openai。reset额外对象保存plans、scope、source_url、effective_at。
+日期精度为 `source_date` 时，`announced_at`／`event_date` 为null、`timestamp_basis` 为 `source_date`。类型可为feature、model、speed、fix、reset、announcement；分组可为codex、other_openai。reset额外对象保存plans、scope、source_url、effective_at。overview_zh／overview_en各最多160字符，留空时回退标题；source_posts至多8条，恰好一条primary，其余为supplement／reply／correction。同帖去重，正文需注明excerpt或full，头像和context只公开白名单字段。原帖与上下文来源须登记在该动态sources中。
 
 ## 更正、下架与收尾
 

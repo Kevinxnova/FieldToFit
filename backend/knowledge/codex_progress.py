@@ -64,6 +64,13 @@ def metadata(item):
         raise ValueError('末日跨日补录需有官方 Day 28 依据')
     result = {k: raw.get(k) for k in ('event_key', 'group', 'type', 'official_day', 'date_precision', 'announced_at', 'timestamp_basis')}
     result.update(date=day.isoformat(), calendar_day=(day - START).days + 1)
+    from backend.knowledge.platform import text
+    for key in ('overview_zh', 'overview_en'):
+        if raw.get(key) not in (None, ''):
+            result[key] = text(raw[key], key, 160)
+    if raw.get('source_posts') is not None:
+        from backend.knowledge.codex_posts import normalize
+        result['source_posts'] = normalize(raw['source_posts'], sources)
     if raw['type'] == 'reset':
         reset = raw.get('reset')
         if raw['group'] != 'codex' or not isinstance(reset, dict):
@@ -75,6 +82,18 @@ def metadata(item):
             raise ValueError('重置须有已生效时间和登记出处')
         result['reset'] = {k: reset[k] for k in ('scope', 'plans', 'source_url', 'effective_at')}
     return result
+
+
+def calendar_month(year, month, topic):
+    """Presentation dates are not events and never enter the topic's days list."""
+    import calendar
+    first = date(year, month, 1)
+    begin = first - timedelta(days=first.weekday())
+    size = ((first.weekday() + calendar.monthrange(year, month)[1] + 6) // 7) * 7
+    logs = {d['date']: d for d in topic['days']}
+    return [{'date': (begin + timedelta(days=i)).isoformat(), 'number': (begin + timedelta(days=i)).day,
+             'in_month': (begin + timedelta(days=i)).month == month,
+             'log': logs.get((begin + timedelta(days=i)).isoformat())} for i in range(size)]
 
 
 def projection(items):

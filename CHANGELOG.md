@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.7.3"></a>
+## v1.7.3 · Codex月历概览与Tibo原帖卡片 · 2026-10-06
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增月历／日历条切换、每日摘要、跨月和今天导航，保存视图偏好并保持所选日志。
+- 在提速日志附上Tibo原帖摘录、中文摘译和真实X头像；英文原文、出处及相关回复可折叠阅读。
+- 后台可审核概览、原帖和头像资料，网页、无脚本HTML、API、MCP及AI交接共用同一发布修订。
+- 修复构建验收发现的既有source-map-js传递依赖漏洞，采用兼容补丁版1.2.2。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add month-calendar and date-strip views with daily summaries, month and today navigation, remembered preferences and preserved log selection.
+- Attach Tibo's original excerpt, Chinese translation and matching X avatar to the speed announcement, with expandable originals, provenance and related posts.
+- Review overview, post and avatar data in the existing editor; share one published revision across the website, static HTML, API, MCP and AI handoff.
+- Patch the existing source-map-js build dependency to compatible version 1.2.2 after build verification identified its advisory.
+<!-- release-summary:en:end -->
+
+实现[REQ-20-7](FieldToFit-PM.md#req-20-7)与[REQ-20-8](FieldToFit-PM.md#req-20-8)，20项主REQ／126项子REQ不变。沿用既有发布集合，无数据库迁移或新增公开接口。仅更新已批准的五项概览及D-78原帖／头像资料，不从示例截图补造重置。头像从官方社区Tibo原帖嵌入核对并缓存，不声称实时读取当前X个人页；正文明确为摘录。162项相关测试、三宽度本地及正式站交互与同源读取通过，v1.7.3已正式部署；22:00提示已同步，未来实际触发仍待验。实际开发、验证与部署状态见[验收记录](docs/validation/2026-10-06-codex-overview-posts.md#implementation)。
+
 <a id="v1.7.2"></a>
 ## v1.7.2 · Codex月历切换与真实头像方案对齐 · 2026-10-06
 <!-- release-tag:unpublished -->

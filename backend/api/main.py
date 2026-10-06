@@ -383,6 +383,11 @@ def frontend_asset(filename):
     return send_from_directory(CLIENT_DIST / 'assets', filename)
 
 
+@app.get('/source-authors/<path:filename>')
+def serve_source_author(filename):
+    return send_from_directory(CLIENT_DIST / 'source-authors', filename)
+
+
 @app.get('/brand/<path:filename>')
 def brand_asset(filename):
     return send_from_directory(CLIENT_DIST / 'brand', filename)

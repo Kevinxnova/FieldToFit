@@ -160,6 +160,11 @@ def draft_shape(kind, content):
     topic=content.get('codex_28_days')
     if kind=='news' and topic is not None:
         if not isinstance(topic,dict) or topic.get('reset') is not None and not isinstance(topic['reset'],dict):fail('专题及重置字段必须为对象')
+        if topic.get('source_posts') is not None:
+            objects(topic['source_posts'],'原帖')
+            for post in topic['source_posts']:
+                for key in ('avatar','context'):
+                    if post.get(key) is not None and not isinstance(post[key],dict):fail('原帖'+key+'必须为对象')
     for key in ('sources','interpretation'):
         objects(content.get(key),key)
     for key in ('name','title','organization','summary','introduction','checked_at','note','editor'):
