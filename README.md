@@ -36,17 +36,16 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.6.2](CHANGELOG.md#v1.6.2)** · [fieldtofit-v1.6.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.2)
+**当前源码版本：[v1.6.3](CHANGELOG.md#v1.6.3)** · [fieldtofit-v1.6.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.3)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 新增Strata动态与工具档案，说明消费级显卡、量化和内存条件；当前74条动态、48项持续关注。
-- 补齐GPT-6 Sol/Luna、GPT-6.1 Sol和Claude Opus/Sonnet 5.5版本表，关联已发布动态，保留历史型号，不重复发新闻。
-- 更新Claude Code权限修复、DeepSeek Harness预览能力及Addy Skills执行流程与错误指令修正；增加11份固定原文与许可供网页和MCP读取。
-- 修复关联动态事件在缓冲写入后读取数据库导致的发布500；关联快照先读取并参与并发校验，材料观测与关系操作沿用同一修正。
-- Claude Code正文再分发许可未确认，保留官方链接与解读；AA152点、Arena92点及核对日期保持。同步中英文README、项目管理与验证记录。
+- 新增Beam、Cloudflare Web Search API、OpenAI textGrain三条动态，速览同步；当前77条动态、49项持续关注。
+- 新增Cloudflare搜索工具档案，补充GPT水印采用说明，更新ComfyUI 0.39、Pi 1.0.4和Deep Agents SDK 0.7.22版本资料，保留历史版本。
+- 增加12份固定原文及许可供网页与MCP读取：Cloudflare文档、Pi README与MCP说明、ComfyUI和Deep Agents README及各自许可。Beam与textGrain官方正文仍仅提供链接。
+- Beam权重尚未开放、textGrain分阶段范围和检测局限均明确说明；AA152／Arena92点及来源日期保持。同步中英文README、项目管理和验证记录。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

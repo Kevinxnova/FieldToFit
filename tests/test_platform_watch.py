@@ -61,7 +61,7 @@ def test_malformed_publication_fails_closed(client,tmp_path,monkeypatch,broken):
     if broken=='source': item['sources']=[]
     if broken=='duplicate': data['items'].append(copy.deepcopy(item))
     if broken=='coverage': item['sources'][0]['coverage']='full_text'
-    if broken=='attention': next(i for i in data['items'] if i['type']=='skill')['attention']['growth_7d']=123
+    if broken=='attention': next(i for i in data['items'] if i.get('attention'))['attention']['growth_7d']=123
     path.write_text(json.dumps(data))
     assert client.get('/api/v1/platform/watch').status_code==503
 

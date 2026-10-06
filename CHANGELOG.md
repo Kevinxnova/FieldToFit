@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.6.3"></a>
+## v1.6.3 · Beam、Web Search API 与持续关注更新 · 2026-10-06
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增Beam、Cloudflare Web Search API、OpenAI textGrain三条动态，速览同步；当前77条动态、49项持续关注。
+- 新增Cloudflare搜索工具档案，补充GPT水印采用说明，更新ComfyUI 0.39、Pi 1.0.4和Deep Agents SDK 0.7.22版本资料，保留历史版本。
+- 增加12份固定原文及许可供网页与MCP读取：Cloudflare文档、Pi README与MCP说明、ComfyUI和Deep Agents README及各自许可。Beam与textGrain官方正文仍仅提供链接。
+- Beam权重尚未开放、textGrain分阶段范围和检测局限均明确说明；AA152／Arena92点及来源日期保持。同步中英文README、项目管理和验证记录。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add Beam, Cloudflare Web Search API and OpenAI textGrain developments and refresh the overview: 77 developments and 49 watch profiles.
+- Add a Cloudflare search tool profile and GPT watermark adoption notes; update ComfyUI 0.39, Pi 1.0.4 and Deep Agents SDK 0.7.22 while preserving earlier versions.
+- Provide 12 fixed source documents and license texts through the website and MCP: Cloudflare documentation, Pi README and MCP guide, and ComfyUI and Deep Agents READMEs with their licenses. Beam and textGrain originals remain links.
+- Explain Beam's pending weights and textGrain's rollout and detection limitations. Preserve AA's 152 points, Arena's 92 points and their dates; synchronize bilingual READMEs, project management and verification records.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8/9、REQ-11；本次为用户批准10月6日日报A–F的内容发布，无数据库结构或API修改。CC BY 4.0、GPL-3.0、MIT材料逐份保留原作者、固定来源和许可，文档源文件未改写；没有安装上游软件或复测性能。REQ-19结构化台账仍未开发。131项回归、双端页面、39次MCP调用与12份原文完整哈希、正式v1.6.3及站点地图均已核对，见[本批验证](docs/validation/2026-10-06-editorial.md)。
+
 <a id="v1.6.2"></a>
 ## v1.6.2 · Strata 与五项持续关注档案更新 · 2026-10-05
 

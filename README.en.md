@@ -36,17 +36,16 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.6.2](CHANGELOG.md#v1.6.2)** · [fieldtofit-v1.6.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.2)
+**Current source version: [v1.6.3](CHANGELOG.md#v1.6.3)** · [fieldtofit-v1.6.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.3)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add a Strata development and tool profile with hardware, quantization and memory requirements: 74 developments and 48 watch profiles.
-- Bring GPT-6 Sol/Luna, GPT-6.1 Sol and Claude Opus/Sonnet 5.5 into their existing version tables, linking published developments and preserving historical entries without duplicate news.
-- Update Claude Code permission fixes, DeepSeek Harness preview capabilities and Addy Skills workflow and instruction corrections. Add 11 fixed source documents and license texts for web and MCP reading.
-- Fix publication failures caused by reading related-news context after buffered writes. Snapshot associations before writes and retain concurrency checks across publication, material observations and relationship changes.
-- Keep Claude Code originals as links while redistribution rights remain unverified. Preserve AA's 152 points, Arena's 92 points and their dates; synchronize bilingual READMEs, project management and verification records.
+- Add Beam, Cloudflare Web Search API and OpenAI textGrain developments and refresh the overview: 77 developments and 49 watch profiles.
+- Add a Cloudflare search tool profile and GPT watermark adoption notes; update ComfyUI 0.39, Pi 1.0.4 and Deep Agents SDK 0.7.22 while preserving earlier versions.
+- Provide 12 fixed source documents and license texts through the website and MCP: Cloudflare documentation, Pi README and MCP guide, and ComfyUI and Deep Agents READMEs with their licenses. Beam and textGrain originals remain links.
+- Explain Beam's pending weights and textGrain's rollout and detection limitations. Preserve AA's 152 points, Arena's 92 points and their dates; synchronize bilingual READMEs, project management and verification records.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
