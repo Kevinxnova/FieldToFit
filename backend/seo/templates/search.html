@@ -3,6 +3,10 @@
   <nav aria-label="主导航">{% for url, info in pages.items() %}<a href="{{ url }}">{{ info.title[0].replace('FieldToFit · ', '') }}</a> {% endfor %}</nav>
   <main id="main-content"{% if revision %} data-public-revision="{{ revision }}"{% endif %}>
     <header class="platform-hero"><h1>{{ heading }}</h1><p class="platform-lead">{{ description }}</p></header>
+    {% if path == '/for-your-ai' %}
+    <section class="platform-panel" id="ai-codex-sync"><h2>Codex 28天进化日志：每日同步</h2><p>把专题交给你的 AI，首次读取全部日志，之后同步新增、更正和撤回。</p><code>https://fieldtofit.top/api/mcp/codex</code><p>此专题连接提供codex_updates；可选完整专题、Codex主线或其他OpenAI。建议每天北京时间22:30在支持定时任务的AI客户端中同步，读取当时已审发布的内容；连接本身不创建任务。</p><a href="/for-you#news-codex-28-days">查看专题日志</a></section>
+    <section class="platform-panel"><h2>接入后，可以这样问</h2><h3>Codex 专题：每天接收更新</h3><blockquote>通过 FieldToFit 的 Codex 专题连接，先读取全部日志。以后每天北京时间22:30只告诉我新增、更正和撤回，附上官方出处，保留原事件日期；无变化不通知。请在支持定时任务的 AI 客户端中设置每日同步。</blockquote><a href="#ai-codex-sync">查看专题连接与每日同步说明</a></section>
+    {% endif %}
     {% if item %}
     <article>
       <p>{{ item.id }} · 资料核验 {{ item.checked_at }}{% if item.source_published_at %} · 来源发布 {{ item.source_published_at }}{% endif %}</p>

@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.0](CHANGELOG.md#v1.8.0)** · [fieldtofit-v1.8.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.0)
+**Current source version: [v1.8.1](CHANGELOG.md#v1.8.1)** · [fieldtofit-v1.8.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Fold consecutive empty calendar weeks by default, show one summary plus remaining counts, and support range/full-month expansion, today and remembered preferences while preserving strip views and selected logs.
-- Add the topic MCP connection /api/mcp/codex with one codex_updates tool for initial full reads and subsequent additions, corrections and removals, including scoped pagination, expiry recovery and shared sources.
-- Provide connection and daily-sync instructions plus a read-only client that advances its checkpoint only after saving the complete cache; daily reads at 22:30 Beijing time are configured for this chat.
+- Add a Codex topic entry in the For your AI header and after connection setup, reusing the connection URL, sync scopes and daily instructions.
+- Add a bilingual initial-full/daily-changes example and dedicated-tool guidance under “After connecting, try this,” with readable static HTML.
+- Explain that the AI client must configure daily reads at 22:30 Beijing time; connecting alone does not create a scheduled task.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

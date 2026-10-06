@@ -21,6 +21,14 @@
 
 网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` v1.5.0 共 22 项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
 
+## Codex专题：首次全量与每日同步
+
+专题专用只读地址为`https://fieldtofit.top/api/mcp/codex`，只提供`codex_updates`，与上方通用13工具连接分别配置。For your AI页首的“Codex每日同步”直达连接方式后的专用入口，可复制地址、选择完整专题／Codex主线／其他OpenAI并复制每日同步说明；“接入后，可以这样问”也给出双语示例和返回连接的入口。
+
+示例：“通过FieldToFit的Codex专题连接，先读取全部日志。以后每天北京时间22:30只告诉我新增、更正和撤回，附上官方出处，保留原事件日期；无变化不通知。请在支持定时任务的AI客户端中设置每日同步。”连接本身不创建任务，读取的是当时已审发布的内容。
+
+首次不传cursor，读完全部next_cursor页并保存后保留resume_cursor；之后固定group／limit续读。过期重新全量并替换所选范围缓存，失败不推进位置。完整契约及当前实际日程见[专题维护指南](codex-progress.md#紧凑月历与专题mcp同步)。
+
 ## 统一发现，再按结果读取（REQ-8-9）
 
 用户在现有地址连接后，可以直接说：“从 FieldToFit 查找 Claude 的发布动态、持续关注资料和已存原文，列出变化与出处；材料不全请明确说明。”AI 先调用：

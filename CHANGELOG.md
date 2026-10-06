@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.1"></a>
+## v1.8.1 · For your AI补充Codex每日同步入口 · 2026-10-06
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 在For your AI页首和连接方式后提供Codex专题入口，复用连接地址、范围选择及每日同步说明。
+- 在“接入后，可以这样问”增加首次全量、之后每日新增／更正／撤回的双语示例和专用工具说明；无脚本HTML可读。
+- 明确由支持定时任务的AI客户端配置每日北京时间22:30接收，连接本身不创建任务。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add a Codex topic entry in the For your AI header and after connection setup, reusing the connection URL, sync scopes and daily instructions.
+- Add a bilingual initial-full/daily-changes example and dedicated-tool guidance under “After connecting, try this,” with readable static HTML.
+- Explain that the AI client must configure daily reads at 22:30 Beijing time; connecting alone does not create a scheduled task.
+<!-- release-summary:en:end -->
+
+完善[REQ-8-1](FieldToFit-PM.md#req-8-1)与[REQ-20-10](FieldToFit-PM.md#req-20-10)的接入页面发现及示例。通用资料连接与专题连接明确区分，复用现有专题控件；不改MCP契约、公开日志或既有22:00／22:30日程。实际检查见[本批验收](docs/validation/2026-10-06-codex-overview-posts.md#ai-page-sync)。
+
 <a id="v1.8.0"></a>
 ## v1.8.0 · 紧凑月历与Codex专题每日同步 · 2026-10-06
 

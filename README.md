@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.0](CHANGELOG.md#v1.8.0)** · [fieldtofit-v1.8.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.0)
+**当前源码版本：[v1.8.1](CHANGELOG.md#v1.8.1)** · [fieldtofit-v1.8.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.1)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 月历默认折叠连续空白周，显示一条摘要及剩余项数，支持范围展开、完整月份、今天与视图偏好，保留日历条及所选日志。
-- 新增专题MCP连接/api/mcp/codex和单一codex_updates工具，首次全量、之后同步新增／更正／撤回，支持范围、分页、过期恢复与同源出处。
-- 专题提供连接地址与每日同步说明；只读客户端完整保存缓存后才推进位置，本聊天已配置每日北京时间22:30接收。
+- 在For your AI页首和连接方式后提供Codex专题入口，复用连接地址、范围选择及每日同步说明。
+- 在“接入后，可以这样问”增加首次全量、之后每日新增／更正／撤回的双语示例和专用工具说明；无脚本HTML可读。
+- 明确由支持定时任务的AI客户端配置每日北京时间22:30接收，连接本身不创建任务。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
