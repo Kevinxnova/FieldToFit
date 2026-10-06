@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.7.2"></a>
+## v1.7.2 · Codex月历切换与真实头像方案对齐 · 2026-10-06
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按用户新要求将REQ-20-7改为可切换的月历／日历条，共享所选日期与日志详情；月历展示完整自然日期，事件标记只来自已审日志。
+- 明确REQ-20-8使用Tibo在X的同款真实头像并保存出处；对话预览使用用户原帖截图中的头像，已定位官方社区原帖嵌入的头像来源。
+- 修订需求和交互方案，区分自然日期网格与待核实／生效状态，保持同源审核规则；新能力尚未开发部署，正式站仍为v1.7.0。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Revise REQ-20-7 to support month-calendar and date-strip views sharing the selected date and log details. Show complete calendar dates, with event marks drawn only from reviewed logs.
+- Require Tibo's matching real X avatar with source provenance in REQ-20-8. The conversation preview uses the avatar from the user's post screenshot; its source has been located in the official community's embedded post.
+- Update requirements and interactions, separating calendar structure from unverified or pending-effect states while preserving shared review rules. These additions remain unbuilt and undeployed; production stays at v1.7.0.
+<!-- release-summary:en:end -->
+
+对应[REQ-20-7](FieldToFit-PM.md#req-20-7)与[REQ-20-8](FieldToFit-PM.md#req-20-8)，沿用编号与20项主REQ／126项子REQ。用户此次明确允许月历自然日期网格，并要求产品内可切换月历／日历条；旧的按周卡片建议被取代。截图中的额度重置次数及状态不是新增事实，不据此发布。头像已找到官方原帖嵌入出处，X当前个人页直接读取仍受阻，预览复用用户提供的头像快照，不声称实时核对当前头像。仅交付方案修订与文档批次，未修改网站组件、公开接口、生产数据或夜间任务。实际来源和演示检查见[对齐记录](docs/validation/2026-10-06-codex-overview-posts.md#month-avatar-alignment)。
+
 <a id="v1.7.1"></a>
 ## v1.7.1 · Codex日历概览与原帖卡片需求登记 · 2026-10-06
 <!-- release-tag:unpublished -->

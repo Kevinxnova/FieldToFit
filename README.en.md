@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.7.1](CHANGELOG.md#v1.7.1)** · Release tag not yet published
+**Current source version: [v1.7.2](CHANGELOG.md#v1.7.2)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add REQ-20-7 for a calendar-style overview before daily details, with concise summaries of updates or effective resets and date-based drill-down.
-- Add REQ-20-8 for Tibo source-post cards below related events, separating Chinese translations, English originals, primary announcements and supplementary replies, with links to X.
-- Deliver requirements and interaction proposals while retaining reviewed-log, date-precision and shared-publication rules. Both additions remain unbuilt and undeployed; production remains v1.7.0.
+- Revise REQ-20-7 to support month-calendar and date-strip views sharing the selected date and log details. Show complete calendar dates, with event marks drawn only from reviewed logs.
+- Require Tibo's matching real X avatar with source provenance in REQ-20-8. The conversation preview uses the avatar from the user's post screenshot; its source has been located in the official community's embedded post.
+- Update requirements and interactions, separating calendar structure from unverified or pending-effect states while preserving shared review rules. These additions remain unbuilt and undeployed; production stays at v1.7.0.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
