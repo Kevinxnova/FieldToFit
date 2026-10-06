@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.7.0](CHANGELOG.md#v1.7.0)** · [fieldtofit-v1.7.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.7.0)
+**Current source version: [v1.7.1](CHANGELOG.md#v1.7.1)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Launch Codex: 28 Days of Progress alongside At a glance and Releases & updates, with date navigation, latest logs, a reverse chronological timeline, mobile and theme support, and AI handoff.
-- Start on October 5 in Beijing and backfill the announced ~50% default speed improvement and CLI 0.160.1 fix. Group other OpenAI announcements separately, reusing textGrain and adding API HIPAA self-service and ChatGPT Ads measurement updates.
-- Share reviewed publication records, revisions and sources across the website, public HTML, API and MCP. Add topic editing and validation of date precision and reset scope, and connect the 22:00 nightly preparation workflow.
+- Add REQ-20-7 for a calendar-style overview before daily details, with concise summaries of updates or effective resets and date-based drill-down.
+- Add REQ-20-8 for Tibo source-post cards below related events, separating Chinese translations, English originals, primary announcements and supplementary replies, with links to X.
+- Deliver requirements and interaction proposals while retaining reviewed-log, date-precision and shared-publication rules. Both additions remain unbuilt and undeployed; production remains v1.7.0.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

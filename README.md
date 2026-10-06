@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.7.0](CHANGELOG.md#v1.7.0)** · [fieldtofit-v1.7.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.7.0)
+**当前源码版本：[v1.7.1](CHANGELOG.md#v1.7.1)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 上线「Codex 28天进化日志」，与本期速览、发布与更新同级；提供日期导航、最新日志与倒序时间线，支持手机、明暗主题及AI交接。
-- 从北京时间10月5日起算，补录约50%默认提速和CLI 0.160.1修复；其他OpenAI公告独立归组，复用textGrain并新增API HIPAA入口、ChatGPT Ads测量更新。
-- 网页、公开HTML、API与MCP共用审核发布记录、修订和来源；增加后台专题编辑、日期精度与重置范围校验，接入22:00夜间准备流程。
+- 新增REQ-20-7：在每日日志详情前展示日历式概览，每日简述更新／已生效重置，点击日期阅读详情。
+- 新增REQ-20-8：在对应事件下附Tibo原帖卡片，区分中文译文、英文原文、主公告与补充回复，并保留X原帖入口。
+- 交付需求与交互方案，保留只展示已审真实日志、日期精度和同源审核规则；两项尚未开发、部署，正式站仍为v1.7.0。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

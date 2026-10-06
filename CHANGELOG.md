@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.7.1"></a>
+## v1.7.1 · Codex日历概览与原帖卡片需求登记 · 2026-10-06
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增REQ-20-7：在每日日志详情前展示日历式概览，每日简述更新／已生效重置，点击日期阅读详情。
+- 新增REQ-20-8：在对应事件下附Tibo原帖卡片，区分中文译文、英文原文、主公告与补充回复，并保留X原帖入口。
+- 交付需求与交互方案，保留只展示已审真实日志、日期精度和同源审核规则；两项尚未开发、部署，正式站仍为v1.7.0。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add REQ-20-7 for a calendar-style overview before daily details, with concise summaries of updates or effective resets and date-based drill-down.
+- Add REQ-20-8 for Tibo source-post cards below related events, separating Chinese translations, English originals, primary announcements and supplementary replies, with links to X.
+- Deliver requirements and interaction proposals while retaining reviewed-log, date-precision and shared-publication rules. Both additions remain unbuilt and undeployed; production remains v1.7.0.
+<!-- release-summary:en:end -->
+
+对应[REQ-20-7](FieldToFit-PM.md#req-20-7)与[REQ-20-8](FieldToFit-PM.md#req-20-8)。新增两个子REQ，总计20项主REQ、126项子REQ。本批只登记方案并同步版本文档；既有日期导航及来源链接已上线，但尚不具备概览摘要或原帖卡片。用户截图用作界面参考，10月2／3日内容不据此补成10月5日起的专题事件。未修改网站组件、公开接口、生产数据或夜间任务；新方案待对齐。实际文档与演示检查见[登记与检查记录](docs/validation/2026-10-06-codex-overview-posts.md)。
+
 <a id="v1.7.0"></a>
 ## v1.7.0 · Codex 28天进化日志 · 2026-10-06
 
