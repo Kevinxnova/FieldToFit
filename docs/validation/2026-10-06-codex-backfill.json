@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "source_batch": "1.6.6",
+  "checked_at_utc": "2026-10-06T08:15:41Z",
+  "checked_at_beijing": "2026-10-06T16:15:41+08:00",
+  "coverage_from_utc": "2026-10-04T16:00:00Z",
+  "coverage_limit": "Official changelogs/news and stable releases were checked. X primary access remains partial; full social-announcement coverage and the whole October 6 day are not claimed.",
+  "site_calendar": {
+    "timezone": "Asia/Shanghai",
+    "day_1": "2026-10-05",
+    "day_28": "2026-11-01",
+    "current_day": 2,
+    "basis": "Owner requested pledge announcement date as Day 1; official Day labels retained separately."
+  },
+  "pledge": {
+    "id": "2106845241357824205",
+    "kind": "pledge_background",
+    "source_url": "https://x.com/thsottiaux/status/2106845241357824205",
+    "published_at_utc": "2026-10-04T20:33:43.488Z",
+    "published_at_beijing": "2026-10-05T04:33:43.488+08:00",
+    "published_at_pacific": "2026-10-04T13:33:43.488-07:00",
+    "timestamp_method": "X post ID derived; not an API created_at response",
+    "official_day": null
+  },
+  "official_post_evidence": [
+    {
+      "post_number": 1,
+      "source_url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/1",
+      "method": "Original-post onebox",
+      "community_post_created_at": "2026-10-05T17:33:29.264Z",
+      "community_post_time_is_not_event_time": true
+    },
+    {
+      "post_number": 2,
+      "source_url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/2",
+      "method": "Community moderator paraphrase with primary source link",
+      "community_post_created_at": "2026-10-05T17:34:52.077Z",
+      "community_post_time_is_not_event_time": true
+    },
+    {
+      "post_number": 7,
+      "source_url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/7",
+      "method": "Original-post onebox",
+      "community_post_created_at": "2026-10-05T18:08:36.107Z",
+      "community_post_time_is_not_event_time": true
+    },
+    {
+      "post_number": 17,
+      "source_url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/17",
+      "method": "Community moderator paraphrase with primary source link",
+      "community_post_created_at": "2026-10-06T07:42:45.289Z",
+      "community_post_time_is_not_event_time": true
+    }
+  ],
+  "stable_release_query": {
+    "source_url": "https://api.github.com/repos/openai/codex/releases?per_page=100",
+    "records_returned": 100,
+    "records_in_window": 5,
+    "stable_records_in_window": 1,
+    "earliest_returned_publication": "2026-09-20T22:49:40Z",
+    "drafts_and_prereleases_not_public_daily_logs": true
+  },
+  "logs": [
+    {
+      "key": "https://x.com/thsottiaux/status/2107158998495748264",
+      "title": "GPT-6 Astra／GPT-6.1 Sol默认速度约提升50%",
+      "event_date": "2026-10-06",
+      "published_at_utc": "2026-10-05T17:20:29.019Z",
+      "published_at_beijing": "2026-10-06T01:20:29.019+08:00",
+      "official_day": 1,
+      "type": "speed",
+      "summary": "官方宣布优化订阅登录下的默认速度，涵盖支持Sign in with ChatGPT的产品及合作伙伴；无需更改设置。",
+      "evidence_method": "Tibo original post quoted inside an OpenAI employee post, embedded on community.openai.com; cross-checked with linked announcement.",
+      "limits": [
+        "约50%为官方声称，本站未复测。",
+        "不解释为Fast／Ultrafast倍率或API计费变更。"
+      ],
+      "sources": [
+        "https://x.com/thsottiaux/status/2107158998495748264",
+        "https://x.com/reach_vb/status/2107162023129723241",
+        "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/7"
+      ]
+    },
+    {
+      "key": "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
+      "title": "Codex CLI 0.160.1修复远程MCP启动环境",
+      "event_date": "2026-10-06",
+      "published_at_utc": "2026-10-05T18:29:37Z",
+      "published_at_beijing": "2026-10-06T02:29:37+08:00",
+      "official_day": null,
+      "type": "fix",
+      "version": "0.160.1",
+      "summary": "显式配置远程环境变量时保留SYSTEMROOT、TEMP、TMP，使Unix主机启动远程stdio MCP时保留Windows执行端的启动环境。",
+      "evidence_method": "Official GitHub release body and published_at; official changelog agrees.",
+      "limits": [
+        "官方日志原始日期为10月5日。",
+        "此项为具体版本修复，不判定承诺兑现。"
+      ],
+      "sources": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
+        "https://learn.chatgpt.com/docs/changelog",
+        "https://api.github.com/repos/openai/codex/releases?per_page=100"
+      ]
+    }
+  ],
+  "other_openai": [
+    {
+      "key": "D-77",
+      "title": "OpenAI textGrain文本水印公告",
+      "source_date": "2026-10-05",
+      "date_precision": "source_date_only",
+      "event_date_beijing": null,
+      "existing_record_id": "D-77",
+      "summary": "指定模型的全球API可选开启水印；欧盟ChatGPT／Codex合资格文本输出将在未来几周分阶段加入。",
+      "scope": "other_openai",
+      "source_url": "https://openai.com/index/eu-text-provenance/"
+    },
+    {
+      "key": "openai-api-hipaa-self-serve-2026-10-05",
+      "title": "API增加HIPAA支持自助入口",
+      "source_date": "2026-10-05",
+      "date_precision": "source_date_only",
+      "event_date_beijing": null,
+      "existing_record_id": null,
+      "summary": "合资格组织管理员可在Organization settings > General接受标准BAA，并启用组织的HIPAA支持；资格、覆盖服务和配置要求以官方规定为准。",
+      "scope": "other_openai",
+      "source_url": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "key": "openai-ads-measurement-2026-10-05",
+      "title": "ChatGPT Ads扩展测量接入与品牌适配工具",
+      "source_date": "2026-10-05",
+      "date_precision": "source_date_only",
+      "event_date_beijing": null,
+      "existing_record_id": null,
+      "summary": "扩展广告转化和归因测量接入，Negative Phrases向合资格广告主提供。新图片广告形式是本月稍后在美国测试的预告。",
+      "scope": "other_openai",
+      "source_url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/"
+    }
+  ],
+  "internal_followups": [
+    {
+      "key": "https://x.com/thsottiaux/status/2107368734981517634",
+      "internal_only": true,
+      "public_eligible": false,
+      "official_day_reported": 2,
+      "topic": "自动审核免费",
+      "reason": "Only community moderator paraphrase and original link acquired; no primary announcement text read. Current official approval/security documentation still says review can add usage.",
+      "next_step": "Read the primary announcement or its original-post embed and reconcile eligibility/billing scope; then prepare the exact copy.",
+      "community_source": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/17"
+    },
+    {
+      "key": "https://x.com/thsottiaux/status/2106967126250791091",
+      "internal_only": true,
+      "public_eligible": false,
+      "topic": "第三方reset线索",
+      "reason": "Tracker itself marks its import unverified; no primary reset text or eligibility read.",
+      "next_step": "Read the original before calling this a shipped reset."
+    },
+    {
+      "key": "meet-the-new-codex-cli-video",
+      "internal_only": true,
+      "public_eligible": false,
+      "topic": "官方CLI演示视频",
+      "reason": "A newly published demonstration does not establish the demonstrated features were newly released that day.",
+      "next_step": "Use as supporting material only after identifying its official source and matching actual release records."
+    }
+  ],
+  "schedule": {
+    "id": "fieldtofit-codex-28",
+    "name": "FieldToFit Codex 28天夜间更新",
+    "kind": "heartbeat",
+    "status": "ACTIVE",
+    "timezone": "Asia/Shanghai",
+    "host_timezone_checked": "+0800 CST",
+    "rrule": "FREQ=DAILY;BYHOUR=22;BYMINUTE=0;BYSECOND=0;UNTIL=20261102T140000Z",
+    "target_thread_id": "01a11016-86ca-73a3-b3df-61135d5b7112",
+    "first_planned_at": "2026-10-06T22:00:00+08:00",
+    "last_planned_at": "2026-11-02T22:00:00+08:00",
+    "last_run_is_final_catchup": true,
+    "first_real_scheduled_execution_verified": false,
+    "prompt_sha256": "3e1451966db95c88b4f3bf52d8460d02fd114ea5270ff25f1e6a0adc5c827a9c",
+    "morning_schedule_preserved": {
+      "id": "fieldtofit",
+      "rrule": "FREQ=DAILY;BYHOUR=7,8;BYMINUTE=0,30;BYSECOND=0;BYSETPOS=2,3",
+      "target_thread_id": "01a07528-7b3d-7772-8945-ef6b15039d60",
+      "prompt_sha256": "3e631b4f3e9d2a3f06b60833d7f4ffde917c402609f69fe2997a3e16c46d1d80"
+    }
+  },
+  "source_archives": [
+    {
+      "private_path": "output/codex-28-days/sources/2026-10-06-community.json",
+      "sha256": "f64c9af6fc8427f6c87aa208d9aa7a7493fa7f09bf1f4b5538c6870f5535734a"
+    },
+    {
+      "private_path": "output/codex-28-days/sources/2026-10-06-codex-releases.json",
+      "sha256": "7aae4c6a8681eedc4f8e7e69b49d3018d6bac2908e3152ff787ae6341e505eeb"
+    }
+  ],
+  "delivery": {
+    "public_news_drafts_created": 0,
+    "production_records_added": 0,
+    "website_components_changed": false,
+    "verified_main_updates": 2,
+    "background_entries": 1,
+    "other_openai_items": 3,
+    "existing_records_reused": 1
+  }
+}

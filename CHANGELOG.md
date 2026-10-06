@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.6.6"></a>
+## v1.6.6 · Codex夜间安排与历史补录准备 · 2026-10-06
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按用户对齐结果，为「Codex 28天进化日志」配置北京时间每天22:00的独立检查日程，回查晚到更新；11月2日作末次补查，保留原晨报安排。
+- 核对承诺原帖嵌入与帖子ID时间，按北京时间10月5日为Day 1；准备默认提速、CLI修复两项日志及其他OpenAI发布文案，保留官方Day编号和日期精度。
+- 更新REQ-20、查询与配置证据及双语文档；免费自动审核原文仍在内部补核。专题未开发、未发布，正式站最近已验仍为v1.6.3。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Configure a separate daily 22:00 Beijing-time check for “Codex: 28 Days of Progress,” including late-arriving updates and a final November 2 catch-up. Preserve the morning editorial schedule.
+- Cross-check the pledge's embedded original post and ID-derived timestamp; use October 5 in Beijing as Day 1. Prepare speed and CLI-fix logs plus other OpenAI announcements, preserving official day labels and date precision.
+- Update REQ-20, research and schedule evidence, and bilingual documentation. The free Auto-review announcement still needs its primary text. The website section is unbuilt and unpublished; the last verified deployment remains v1.6.3.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。本批仅交付方案、独立heartbeat日程和可审阅补录文案；未改网站组件、数据库或公开接口，未创建网站内容草稿或部署。承诺与提速通过OpenAI社区的官方原帖嵌入读取；毫秒时间由帖子ID推导并标明方法，未声称X接口返回created_at。首次定时执行、社交公告完整覆盖和网站交互均待验。实际来源、日程回读、准备内容与文档检查见[本批证据](docs/validation/2026-10-06-codex-28-days-proposal.md#nightly-backfill)。
+
 <a id="v1.6.5"></a>
 ## v1.6.5 · Codex日志展示与发布时间方案修订 · 2026-10-06
 <!-- release-tag:unpublished -->
