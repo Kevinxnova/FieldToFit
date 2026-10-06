@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.6.5"></a>
+## v1.6.5 · Codex日志展示与发布时间方案修订 · 2026-10-06
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按用户反馈修订REQ-20：网站只展示已核实的当日更新日志，取消待核实／核对失败状态、空白日占位及兑现评分，改用日期导航＋倒序时间线。
+- 核对近期11次Codex CLI正式发布的精确时间，保存UTC、北京／PT换算和官方出处；区分CLI样本与功能／额度重置公告。
+- 提出北京时间12:00主核对＋18:00补查及按北京时间归入日志的方案，时点仍待对齐；未改日程、未开发部署，正式站最近已验版本仍为v1.6.3。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Revise REQ-20 to show only verified daily updates. Remove public verification-failure states, unverified or empty-day placeholders and pledge scoring; propose date navigation with a reverse chronological timeline.
+- Check precise publication times for 11 recent stable Codex CLI releases and retain UTC, Beijing/Pacific conversions and official sources. Distinguish CLI timing from product and usage-reset announcements.
+- Propose a noon main check and 18:00 follow-up in Beijing time, with logs grouped by Beijing publication date. Timing remains under discussion; schedules and production are unchanged, with the last verified deployment at v1.6.3.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)，仅交付方案修订和查询证据，不修改网站组件、数据库或公开接口。11次样本中9次在北京时间02:00–11:00，5次晚于08:00；样本不能作为Tibo或全部Codex更新的固定发布时间。原帖及完整专题公告时段仍未核实。元数据及文档检查见[本次实际记录](docs/validation/2026-10-06-codex-28-days-proposal.md#release-time-alignment)；未配置新的检查时点，未创建网站内容草稿或发布。
+
 <a id="v1.6.4"></a>
 ## v1.6.4 · Codex 28天专题需求与可视化方案 · 2026-10-06
 <!-- release-tag:unpublished -->

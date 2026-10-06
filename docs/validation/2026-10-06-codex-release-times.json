@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "scope": "OpenAI Codex CLI stable GitHub releases; not all Codex product announcements",
+    "interval_utc": "2026-09-22 <= published_at < 2026-10-06",
+    "sample_n": 11,
+    "beijing_before_08": 6,
+    "beijing_02_to_11": 9,
+    "beijing_before_12": 9,
+    "median_beijing_hour": 7.954444444444444,
+    "api_records": 100,
+    "oldest_record_in_page": "2026-09-20T22:49:40Z"
+  },
+  "records": [
+    {
+      "tag": "rust-v0.160.1",
+      "published_at": "2026-10-05T18:29:37Z",
+      "beijing": "2026-10-06T02:29:37+08:00",
+      "pacific": "2026-10-05T11:29:37-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.160.1"
+    },
+    {
+      "tag": "rust-v0.160.0",
+      "published_at": "2026-10-01T20:19:13Z",
+      "beijing": "2026-10-02T04:19:13+08:00",
+      "pacific": "2026-10-01T13:19:13-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.160.0"
+    },
+    {
+      "tag": "rust-v0.159.3",
+      "published_at": "2026-09-30T22:57:34Z",
+      "beijing": "2026-10-01T06:57:34+08:00",
+      "pacific": "2026-09-30T15:57:34-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.3"
+    },
+    {
+      "tag": "rust-v0.159.2",
+      "published_at": "2026-09-29T23:57:16Z",
+      "beijing": "2026-09-30T07:57:16+08:00",
+      "pacific": "2026-09-29T16:57:16-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.2"
+    },
+    {
+      "tag": "rust-v0.159.1",
+      "published_at": "2026-09-29T20:32:34Z",
+      "beijing": "2026-09-30T04:32:34+08:00",
+      "pacific": "2026-09-29T13:32:34-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.1"
+    },
+    {
+      "tag": "rust-v0.159.0",
+      "published_at": "2026-09-29T08:05:42Z",
+      "beijing": "2026-09-29T16:05:42+08:00",
+      "pacific": "2026-09-29T01:05:42-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.0"
+    },
+    {
+      "tag": "rust-v0.158.0",
+      "published_at": "2026-09-28T05:07:23Z",
+      "beijing": "2026-09-28T13:07:23+08:00",
+      "pacific": "2026-09-27T22:07:23-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0"
+    },
+    {
+      "tag": "rust-v0.157.1",
+      "published_at": "2026-09-26T01:02:31Z",
+      "beijing": "2026-09-26T09:02:31+08:00",
+      "pacific": "2026-09-25T18:02:31-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.157.1"
+    },
+    {
+      "tag": "rust-v0.157.0",
+      "published_at": "2026-09-25T02:31:06Z",
+      "beijing": "2026-09-25T10:31:06+08:00",
+      "pacific": "2026-09-24T19:31:06-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.157.0"
+    },
+    {
+      "tag": "rust-v0.156.1",
+      "published_at": "2026-09-23T02:41:36Z",
+      "beijing": "2026-09-23T10:41:36+08:00",
+      "pacific": "2026-09-22T19:41:36-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.1"
+    },
+    {
+      "tag": "rust-v0.156.0",
+      "published_at": "2026-09-22T19:51:01Z",
+      "beijing": "2026-09-23T03:51:01+08:00",
+      "pacific": "2026-09-22T12:51:01-07:00",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0"
+    }
+  ]
+}

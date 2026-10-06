@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.6.4](CHANGELOG.md#v1.6.4)** · Release tag not yet published
+**Current source version: [v1.6.5](CHANGELOG.md#v1.6.5)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Register REQ-20 and six child requirements for “Codex: 28 Days of Progress,” a peer section to At a glance and Releases & updates within Recent developments.
-- Propose a 28-day status calendar with a reverse chronological timeline, daily official-source checks, date and usage-reset states, reviewed publication and an end-of-series recap.
-- Deliver requirements and documentation only. The feature is unbuilt and undeployed, schedules are unchanged, and production remains v1.6.3. The original post and campaign start convention still need verification.
+- Revise REQ-20 to show only verified daily updates. Remove public verification-failure states, unverified or empty-day placeholders and pledge scoring; propose date navigation with a reverse chronological timeline.
+- Check precise publication times for 11 recent stable Codex CLI releases and retain UTC, Beijing/Pacific conversions and official sources. Distinguish CLI timing from product and usage-reset announcements.
+- Propose a noon main check and 18:00 follow-up in Beijing time, with logs grouped by Beijing publication date. Timing remains under discussion; schedules and production are unchanged, with the last verified deployment at v1.6.3.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
