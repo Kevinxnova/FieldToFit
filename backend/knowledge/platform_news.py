@@ -17,6 +17,10 @@ NEWS_CATEGORIES = ('model', 'agent', 'tool', 'skill', 'harness', 'research', 'in
 def reading_fields(item):
     """Optional reviewed media; nothing is scraped or fetched during publication."""
     result = {}
+    from backend.knowledge.codex_progress import metadata
+    topic = metadata(item)
+    if topic:
+        result['codex_28_days'] = topic
     if 'category' in item:
         if item['category'] not in NEWS_CATEGORIES:
             raise ValueError('Invalid news category')
@@ -66,7 +70,7 @@ def validate(data):
     for key in ('edition', 'title', 'reviewed_at'):
         text(data[key], key, 200)
     date.fromisoformat(data['reviewed_at'])
-    ids = set()
+    ids, topic_keys = set(), set()
     for item in data['items']:
         if not re.fullmatch(r'D-\d{2,}', item['id']) or item['id'] in ids:
             raise ValueError('Duplicate or invalid news identity')
@@ -75,7 +79,12 @@ def validate(data):
             raise ValueError('Invalid news publication state')
         if item['state'] != 'published':
             continue
-        reading_fields(item)
+        optional = reading_fields(item)
+        topic = optional.get('codex_28_days')
+        if topic:
+            if topic['event_key'] in topic_keys:
+                raise ValueError('专题事件重复，请复用已有动态')
+            topic_keys.add(topic['event_key'])
         from backend.knowledge.platform_lookup import aliases
         aliases(item.get('aliases', []))
         if not isinstance(item['highlight'], bool) or not isinstance(item['note'], str) or not isinstance(item['related'], list):
@@ -138,7 +147,9 @@ def news(q='', id='', revision='', _data=None):
         from backend.knowledge.content_materials import manifest
         obj.update(manifest(item))
         published.append(obj)
-    fingerprint = hashlib.sha256(json.dumps({'items': published, **{k: data[k] for k in ('schema_version', 'edition', 'title', 'reviewed_at')}}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    from backend.knowledge.codex_progress import projection
+    topic = projection(published)
+    fingerprint = hashlib.sha256(json.dumps({'items': published, 'codex_progress': topic, **{k: data[k] for k in ('schema_version', 'edition', 'title', 'reviewed_at')}}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     if revision and revision != fingerprint:
         raise PlatformError('News revision changed; read the current collection', 'news_revision_changed', 409)
     entries = [item for item in published if (not id or item['id'] == id) and
@@ -149,5 +160,5 @@ def news(q='', id='', revision='', _data=None):
     return {'schema_version': data['schema_version'], 'edition': data['edition'], 'title': data['title'],
             'reviewed_at': data['reviewed_at'], 'revision': fingerprint, 'total': len(entries),
             'scope': 'reviewed release news; source links and optional reviewed materials have explicit coverage; interpretation is FieldToFit editorial',
-            'items': entries if _data is not None else decorate(entries),
+            'items': entries if _data is not None else decorate(entries), 'codex_progress': projection(entries),
             **({'resolved_from':requested_id,'canonical_id':id} if requested_id and requested_id!=id else {})}

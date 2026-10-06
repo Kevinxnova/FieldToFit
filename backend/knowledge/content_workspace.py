@@ -157,6 +157,9 @@ def draft_shape(kind, content):
         return
     from backend.knowledge.platform_lookup import aliases
     aliases(content.get('aliases', []))
+    topic=content.get('codex_28_days')
+    if kind=='news' and topic is not None:
+        if not isinstance(topic,dict) or topic.get('reset') is not None and not isinstance(topic['reset'],dict):fail('专题及重置字段必须为对象')
     for key in ('sources','interpretation'):
         objects(content.get(key),key)
     for key in ('name','title','organization','summary','introduction','checked_at','note','editor'):
@@ -211,8 +214,10 @@ def composed(kind, ident, content, db, withdraw=False):
             item.pop('publication', None)
             if previous and previous.get('publication'):
                 item['publication'] = copy.deepcopy(previous['publication'])
-            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','state')
-            comparable = lambda x: {k:x.get(k) for k in public_changes}
+            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','state')
+            def comparable(x):
+                from backend.knowledge.codex_progress import metadata
+                return {**{k:x.get(k) for k in public_changes}, 'codex_28_days':metadata(x)}
             if not withdraw and (previous is None or comparable(item) != comparable(previous)):
                 now = stamp()
                 item['publication'] = {'first_published_at': (previous.get('publication') or {}).get('first_published_at') if previous else now, 'updated_at': now}
@@ -254,6 +259,9 @@ def preview(kind, ident):
         except (ValueError,KeyError,TypeError,AssertionError,PlatformError) as exc:
             return {'ready':False,'errors':[str(exc) or '材料格式不完整，请检查图表/版本结构'],'draft_version':item['draft_version']}
         focused=public if kind=='charts' else {**public,'items':[x for x in public['items'] if x['id']==ident],'total':1}
+        if kind=='news':
+            from backend.knowledge.codex_progress import projection
+            focused['codex_progress']=projection(focused['items'])
         if kind=='watch':focused['groups']=[{**g,'count':sum(x['type']==g['id'] for x in focused['items'])} for g in public['groups']]
         return {'ready':True,'errors':[],'preview':focused,'review_token':token(kind,ident,item['draft_version'],revision,draft,item['materials_fingerprint']),'draft_version':item['draft_version'],'scope':'Private preview; not published'}
 

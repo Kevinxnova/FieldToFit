@@ -6,7 +6,9 @@ import { PublicMaintenance, type Maintenance } from './PublicMaintenance';
 import { ContentMaterials, type ReadingMaterial, type PreviewBodies } from './ContentMaterials';
 import { Link } from 'react-router-dom';
 import { useWorkspace, SourceLink } from './UI';
+import type { CodexEvent, CodexTopic } from './CodexProgress';
 export type NewsItem = {
+  codex_28_days?:CodexEvent;
   maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;
   media?:NewsMedia;category?:string;event_date?:string|null;publication?:{first_published_at:string|null;updated_at:string|null};
   id: string; name: string; organization: string; title: string; summary: string; source_published_at: string | null;
@@ -15,7 +17,7 @@ export type NewsItem = {
   sources: { id: string; title: string; url: string; coverage: string }[];
   related: { id: string; name: string; url: string }[];
 };
-export type NewsCollection = { items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
+export type NewsCollection = { codex_progress?:CodexTopic; items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
 export const newsAnchor = (id: string) => 'news-' + id.toLowerCase();
 export function NewsReading({ data, loading, error, reload, previewBodies, standalone=false }: { standalone?:boolean; previewBodies?:PreviewBodies; data: NewsCollection | null; loading: boolean; error: string; reload: () => void }) {
   const { pick, notify } = useWorkspace();

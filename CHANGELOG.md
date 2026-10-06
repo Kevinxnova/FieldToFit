@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.7.0"></a>
+## v1.7.0 · Codex 28天进化日志 · 2026-10-06
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 上线「Codex 28天进化日志」，与本期速览、发布与更新同级；提供日期导航、最新日志与倒序时间线，支持手机、明暗主题及AI交接。
+- 从北京时间10月5日起算，补录约50%默认提速和CLI 0.160.1修复；其他OpenAI公告独立归组，复用textGrain并新增API HIPAA入口、ChatGPT Ads测量更新。
+- 网页、公开HTML、API与MCP共用审核发布记录、修订和来源；增加后台专题编辑、日期精度与重置范围校验，接入22:00夜间准备流程。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Launch Codex: 28 Days of Progress alongside At a glance and Releases & updates, with date navigation, latest logs, a reverse chronological timeline, mobile and theme support, and AI handoff.
+- Start on October 5 in Beijing and backfill the announced ~50% default speed improvement and CLI 0.160.1 fix. Group other OpenAI announcements separately, reusing textGrain and adding API HIPAA self-service and ChatGPT Ads measurement updates.
+- Share reviewed publication records, revisions and sources across the website, public HTML, API and MCP. Add topic editing and validation of date precision and reset scope, and connect the 22:00 nightly preparation workflow.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。用户确认minor升级至v1.7.0；保留现有公开接口与内容编号，无数据库表迁移。仅公开已审真实日志；来源只给日期时不推造北京时刻，本站日历编号与官方Day分开。约50%是官方声称，本站未实测；免费自动审核原文和免费范围继续留内部补核。22:00为检查触发时间，后续每批新内容仍须具体确认；首次定时执行、连续三日及最终收尾须在实际发生后验收。实现、补录与部署证据见[专题验收](docs/validation/2026-10-06-codex-progress.md)。
+
 <a id="v1.6.6"></a>
 ## v1.6.6 · Codex夜间安排与历史补录准备 · 2026-10-06
 <!-- release-tag:unpublished -->

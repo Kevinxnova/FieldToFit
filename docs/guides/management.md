@@ -123,3 +123,8 @@
 5. 核对返回unreviewed=0及剩余backlog，正文分开说明推荐、重要待核验、积压与失败；prepared仅表示正文和选题记录准备完成，delivered仍需实际可见消息回执。
 
 对应管理接口：GET `/api/v1/admin/workspace/batches/<id>/selection?offset=0&limit=100`；POST同路径的`selection-review`（单条，或`items`数组）。均需管理身份，不对公开MCP开放。接口无法读取时仍交付如实日报，明确检查失败，不能假装已通过或把网络失败写成没有新闻。
+
+
+## Codex 28天专题
+
+在近期动态编辑区的「Codex 28天专题」关联同一条已核实动态，填写分组、官方Day、日期精度及已登记事件来源；仍经保存、双端预览、提交复核和明确发布。后台导出／导入保留该字段，公开API与MCP共用新闻修订；取消关联或下架即时从专题移出。每日22:00的来源核对、具体批次授权、更正和收尾方法见[专题维护指南](codex-progress.md)。

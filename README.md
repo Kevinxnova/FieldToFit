@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.6.6](CHANGELOG.md#v1.6.6)** · 尚未推送发布标签
+**当前源码版本：[v1.7.0](CHANGELOG.md#v1.7.0)** · [fieldtofit-v1.7.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.7.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 按用户对齐结果，为「Codex 28天进化日志」配置北京时间每天22:00的独立检查日程，回查晚到更新；11月2日作末次补查，保留原晨报安排。
-- 核对承诺原帖嵌入与帖子ID时间，按北京时间10月5日为Day 1；准备默认提速、CLI修复两项日志及其他OpenAI发布文案，保留官方Day编号和日期精度。
-- 更新REQ-20、查询与配置证据及双语文档；免费自动审核原文仍在内部补核。专题未开发、未发布，正式站最近已验仍为v1.6.3。
+- 上线「Codex 28天进化日志」，与本期速览、发布与更新同级；提供日期导航、最新日志与倒序时间线，支持手机、明暗主题及AI交接。
+- 从北京时间10月5日起算，补录约50%默认提速和CLI 0.160.1修复；其他OpenAI公告独立归组，复用textGrain并新增API HIPAA入口、ChatGPT Ads测量更新。
+- 网页、公开HTML、API与MCP共用审核发布记录、修订和来源；增加后台专题编辑、日期精度与重置范围校验，接入22:00夜间准备流程。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

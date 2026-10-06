@@ -2,6 +2,355 @@
   "edition": "2026-09-11-launch",
   "items": [
     {
+      "category": "industry",
+      "checked_at": "2026-10-06",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+        "group": "other_openai",
+        "official_day": null,
+        "timestamp_basis": "source_date",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-81",
+      "interpretation": [
+        {
+          "locator": "Measurement integrations；Brand suitability controls",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "OpenAI扩展广告转化数据与归因测量接入；Negative Phrases向合资格广告主提供。使用条件和接入伙伴以公告为准。",
+          "title": "测量与品牌适配"
+        },
+        {
+          "locator": "New ad format / later this month / US test",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "新的图片广告形式计划本月稍后先在美国、面向首批广告主测试，仍属后续测试安排；不能写成已全球推出。公告仅提供10月5日日期，不推定精确北京时间。",
+          "title": "图片广告测试安排"
+        }
+      ],
+      "name": "ChatGPT Ads",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-06T08:49:59.226715+00:00",
+        "updated_at": "2026-10-06T08:49:59.226715+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-05",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "OpenAI 广告测量与新形式公告",
+          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/"
+        }
+      ],
+      "state": "published",
+      "summary": "扩展广告转化和归因测量接入，Negative Phrases向合资格广告主提供。新图片广告形式是本月稍后在美国测试的预告。",
+      "title": "ChatGPT Ads扩展测量接入与品牌适配工具"
+    },
+    {
+      "category": "industry",
+      "checked_at": "2026-10-06",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://developers.openai.com/api/docs/changelog",
+        "group": "other_openai",
+        "official_day": null,
+        "timestamp_basis": "source_date",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-80",
+      "interpretation": [
+        {
+          "locator": "October 2026 / Oct 5 / HIPAA support",
+          "source_ids": [
+            "changelog"
+          ],
+          "text": "合资格组织管理员可在Organization settings → General接受标准Business Associate Agreement（BAA），并启用组织的HIPAA支持。资格、覆盖服务及必要配置以官方要求为准。",
+          "title": "自助组织设置"
+        },
+        {
+          "locator": "Oct 5 changelog entry and linked HIPAA support documentation",
+          "source_ids": [
+            "changelog"
+          ],
+          "text": "这一更新是管理员自助入口，不表示所有组织或服务自动符合HIPAA要求。官方仅提供10月5日日期，保留来源日期，不推定北京时间或具体生效时刻。",
+          "title": "适用条件"
+        }
+      ],
+      "name": "OpenAI API",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-06T08:49:38.655693+00:00",
+        "updated_at": "2026-10-06T08:49:38.655693+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-05",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "changelog",
+          "title": "OpenAI API 官方更新日志",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        }
+      ],
+      "state": "published",
+      "summary": "合资格组织管理员可在Organization settings > General接受标准BAA，并启用组织的HIPAA支持；资格、覆盖服务和配置要求以官方规定为准。",
+      "title": "API增加HIPAA支持自助入口"
+    },
+    {
+      "_position": 3,
+      "category": "tool",
+      "checked_at": "2026-10-06",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://openai.com/index/eu-text-provenance/",
+        "group": "other_openai",
+        "official_day": null,
+        "timestamp_basis": "source_date",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-77",
+      "interpretation": [
+        {
+          "locator": "官方原始材料；本站未复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "API默认关闭；产品侧本次面向欧盟，不是全球所有输出已经启用。具体型号和账户能力须按接入文档核对。",
+          "title": "适用范围"
+        },
+        {
+          "locator": "官方原始材料；本站未复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "水印可能影响内容检测和导出流程；它通过词语选择嵌入统计信号，不是把用户名、提示词或对话编号写入文本。",
+          "title": "水印如何工作"
+        },
+        {
+          "locator": "官方原始材料；本站未复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "检测器初期仅向获批研究者及专业组织开放；短文本和改写会影响检测。检出不证明内容准确，未检出也不证明人类独立创作。",
+          "title": "检测权限与局限"
+        }
+      ],
+      "name": "OpenAI textGrain",
+      "note": "原文发布于2026-10-05，本站于2026-10-06核对。本站未调用服务或复测；读取资料不会自动安装或执行。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-06T03:33:20.678597+00:00",
+        "updated_at": "2026-10-06T08:50:19.405314+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-06",
+          "coverage": "link_only",
+          "id": "oct06-source-1",
+          "locator": "官方发布与采用说明",
+          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
+          "retrieved_at": "2026-10-06",
+          "rights": {},
+          "title": "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限 · 官方来源 1",
+          "upstream_revision": "textGrain首次公告；分阶段推出",
+          "url": "https://openai.com/index/eu-text-provenance/"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        },
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        }
+      ],
+      "source_published_at": "2026-10-05",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "OpenAI textGrain · 官方来源 1",
+          "url": "https://openai.com/index/eu-text-provenance/"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI公布文本来源水印方案：全球API客户可为指定模型主动开启，欧盟ChatGPT与Codex合资格文本输出将在未来几周分阶段加入水印。",
+      "title": "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-06",
+      "codex_28_days": {
+        "announced_at": "2026-10-05T18:29:37Z",
+        "date_precision": "instant",
+        "event_key": "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
+        "group": "codex",
+        "official_day": null,
+        "timestamp_basis": "official_timestamp",
+        "type": "fix"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-06",
+      "highlight": false,
+      "id": "D-79",
+      "interpretation": [
+        {
+          "locator": "0.160.1 / Bug Fixes / PR #51121",
+          "source_ids": [
+            "release"
+          ],
+          "text": "显式配置远程环境变量时，新版会保留SYSTEMROOT、TEMP和TMP，使Unix主机启动远程stdio MCP时保留Windows执行端的启动环境。这是特定远程配置的修复，可更新至CLI 0.160.1。",
+          "title": "远程MCP启动修复"
+        },
+        {
+          "locator": "GitHub release published_at；官方更新日志 October 5, 2026",
+          "source_ids": [
+            "release",
+            "changelog"
+          ],
+          "text": "官方更新日志原始日期为10月5日；GitHub published_at为UTC 10月5日18:29:37，换算为北京时间10月6日02:29。此项记录具体版本修复，未将它认定为28天承诺已兑现。",
+          "title": "发布时间与阅读范围"
+        }
+      ],
+      "name": "Codex CLI",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-06T08:49:19.280307+00:00",
+        "updated_at": "2026-10-06T08:49:19.280307+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        }
+      ],
+      "source_published_at": "2026-10-05",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Codex CLI 0.160.1 官方版本",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.160.1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "changelog",
+          "title": "Codex 官方更新日志",
+          "url": "https://learn.chatgpt.com/docs/changelog"
+        }
+      ],
+      "state": "published",
+      "summary": "显式配置远程环境变量时保留SYSTEMROOT、TEMP、TMP，使Unix主机启动远程stdio MCP时保留Windows执行端的启动环境。",
+      "title": "Codex CLI 0.160.1修复远程MCP启动环境"
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-06",
+      "codex_28_days": {
+        "announced_at": "2026-10-05T17:20:29.019Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2107158998495748264",
+        "group": "codex",
+        "official_day": 1,
+        "timestamp_basis": "post_id_derived",
+        "type": "speed"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-06",
+      "highlight": false,
+      "id": "D-78",
+      "interpretation": [
+        {
+          "locator": "Tibo官方Day 1公告；OpenAI员工原帖及其中的公告引用",
+          "source_ids": [
+            "tibo",
+            "openai-employee"
+          ],
+          "text": "官方称 GPT-6 Astra 和 GPT-6.1 Sol 的默认速度约提升50%；优化通过订阅登录生效，涵盖OpenAI产品和支持Sign in with ChatGPT的合作伙伴，举例包括OpenCode、Pi、Amp和Devin。用户无需更改设置。",
+          "title": "默认速度优化"
+        },
+        {
+          "locator": "官方社区第7帖内OpenAI员工原帖嵌入；原帖ID时间",
+          "source_ids": [
+            "tibo",
+            "embed"
+          ],
+          "text": "约50%是官方公布的幅度，FieldToFit未复测。不把这项默认速度优化解释为Fast／Ultrafast倍率或API计费变更。原帖时刻由帖子ID推导，与OpenAI社区中的员工原帖嵌入交叉核对；原帖标为官方Day 1，实际北京日期为10月6日。",
+          "title": "范围与证据"
+        }
+      ],
+      "name": "Codex／ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-06T08:48:59.095713+00:00",
+        "updated_at": "2026-10-06T08:48:59.095713+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        },
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        }
+      ],
+      "source_published_at": "2026-10-05",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "tibo",
+          "title": "Tibo 官方提速公告",
+          "url": "https://x.com/thsottiaux/status/2107158998495748264"
+        },
+        {
+          "coverage": "link_only",
+          "id": "openai-employee",
+          "title": "OpenAI 员工说明",
+          "url": "https://x.com/reach_vb/status/2107162023129723241"
+        },
+        {
+          "coverage": "link_only",
+          "id": "embed",
+          "title": "官方社区原帖嵌入",
+          "url": "https://community.openai.com/t/day-1-of-28-days-of-quality-of-life-improvements-or-a-full-reset/1403525/7"
+        }
+      ],
+      "state": "published",
+      "summary": "官方宣布优化订阅登录下的默认速度，涵盖支持Sign in with ChatGPT的产品及合作伙伴；无需更改设置。",
+      "title": "GPT-6 Astra／GPT-6.1 Sol默认速度约提升50%"
+    },
+    {
       "_position": 1,
       "category": "model",
       "checked_at": "2026-10-06",
@@ -304,88 +653,6 @@
       "state": "published",
       "summary": "Cloudflare 开放Web Search API beta，通过AI Gateway连接Ceramic.ai、Exa和Linkup，返回标题、网址与描述。",
       "title": "Cloudflare Web Search API：让 Agent 用同一接口切换搜索来源"
-    },
-    {
-      "_position": 3,
-      "category": "tool",
-      "checked_at": "2026-10-06",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-05",
-      "highlight": false,
-      "id": "D-77",
-      "interpretation": [
-        {
-          "locator": "官方原始材料；本站未复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "API默认关闭；产品侧本次面向欧盟，不是全球所有输出已经启用。具体型号和账户能力须按接入文档核对。",
-          "title": "适用范围"
-        },
-        {
-          "locator": "官方原始材料；本站未复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "水印可能影响内容检测和导出流程；它通过词语选择嵌入统计信号，不是把用户名、提示词或对话编号写入文本。",
-          "title": "水印如何工作"
-        },
-        {
-          "locator": "官方原始材料；本站未复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "检测器初期仅向获批研究者及专业组织开放；短文本和改写会影响检测。检出不证明内容准确，未检出也不证明人类独立创作。",
-          "title": "检测权限与局限"
-        }
-      ],
-      "name": "OpenAI textGrain",
-      "note": "原文发布于2026-10-05，本站于2026-10-06核对。本站未调用服务或复测；读取资料不会自动安装或执行。",
-      "organization": "OpenAI",
-      "publication": {
-        "first_published_at": "2026-10-06T03:33:20.678597+00:00",
-        "updated_at": "2026-10-06T03:33:20.678597+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-06",
-          "coverage": "link_only",
-          "id": "oct06-source-1",
-          "locator": "官方发布与采用说明",
-          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
-          "retrieved_at": "2026-10-06",
-          "rights": {},
-          "title": "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限 · 官方来源 1",
-          "upstream_revision": "textGrain首次公告；分阶段推出",
-          "url": "https://openai.com/index/eu-text-provenance/"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M01",
-          "name": "GPT",
-          "url": "https://fieldtofit.top/watch/CW-M01"
-        },
-        {
-          "id": "CW-A01",
-          "name": "Codex",
-          "url": "https://fieldtofit.top/watch/CW-A01"
-        }
-      ],
-      "source_published_at": "2026-10-05",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "OpenAI textGrain · 官方来源 1",
-          "url": "https://openai.com/index/eu-text-provenance/"
-        }
-      ],
-      "state": "published",
-      "summary": "OpenAI公布文本来源水印方案：全球API客户可为指定模型主动开启，欧盟ChatGPT与Codex合资格文本输出将在未来几周分阶段加入水印。",
-      "title": "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限"
     },
     {
       "_position": 1,
