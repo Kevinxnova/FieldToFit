@@ -36,16 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.7.3](CHANGELOG.md#v1.7.3)** · [fieldtofit-v1.7.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.7.3)
+**Current source version: [v1.7.4](CHANGELOG.md#v1.7.4)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add month-calendar and date-strip views with daily summaries, month and today navigation, remembered preferences and preserved log selection.
-- Attach Tibo's original excerpt, Chinese translation and matching X avatar to the speed announcement, with expandable originals, provenance and related posts.
-- Review overview, post and avatar data in the existing editor; share one published revision across the website, static HTML, API, MCP and AI handoff.
-- Patch the existing source-map-js build dependency to compatible version 1.2.2 after build verification identified its advisory.
+- Register REQ-20-9 with a proposal to fold empty calendar weeks, shorten log cells and expand the full month, preserving month/strip views and selected details.
+- Register REQ-20-10 for the selected daily AI-client sync: a topic-specific MCP connection reads all logs initially, then additions, corrections and removals with shared sources and revisions.
+- Deliver two interactive calendar previews and an interface proposal. The new features remain unbuilt and undeployed; production stays at v1.7.3 and no client schedule is configured.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

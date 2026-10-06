@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.7.4"></a>
+## v1.7.4 · 紧凑月历与专题MCP需求登记 · 2026-10-06
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增REQ-20-9，提出按整周折叠空白日期、缩短日志格与完整月份展开方案，保留月历／日历条和所选详情。
+- 新增REQ-20-10，按用户选择登记AI客户端每日同步：专题专用MCP首次全量，之后接收新增、更正与撤回，保留同源出处和修订。
+- 交付两种日历交互预览及接口提案；新功能尚未开发部署，正式站保持v1.7.3，客户端日程尚未配置。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Register REQ-20-9 with a proposal to fold empty calendar weeks, shorten log cells and expand the full month, preserving month/strip views and selected details.
+- Register REQ-20-10 for the selected daily AI-client sync: a topic-specific MCP connection reads all logs initially, then additions, corrections and removals with shared sources and revisions.
+- Deliver two interactive calendar previews and an interface proposal. The new features remain unbuilt and undeployed; production stays at v1.7.3 and no client schedule is configured.
+<!-- release-summary:en:end -->
+
+新增[REQ-20-9](FieldToFit-PM.md#req-20-9)与[REQ-20-10](FieldToFit-PM.md#req-20-10)，总计20项主REQ／128项子REQ。修正文首当前状态与验收导航中的旧描述，保留历史批次证据。本批只修改需求、方案、检查记录及版本元数据；不修改网站组件、生产日志、MCP行为或原22:00任务。候选连接地址及工具未启用，每日主动读取依赖客户端定时能力和保存同步位置。实际预览、协议核查及文档验证见[本批检查](docs/validation/2026-10-06-codex-overview-posts.md#compact-mcp-alignment)。
+
 <a id="v1.7.3"></a>
 ## v1.7.3 · Codex月历概览与Tibo原帖卡片 · 2026-10-06
 
