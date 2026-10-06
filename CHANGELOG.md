@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.0"></a>
+## v1.8.0 · 紧凑月历与Codex专题每日同步 · 2026-10-06
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 月历默认折叠连续空白周，显示一条摘要及剩余项数，支持范围展开、完整月份、今天与视图偏好，保留日历条及所选日志。
+- 新增专题MCP连接/api/mcp/codex和单一codex_updates工具，首次全量、之后同步新增／更正／撤回，支持范围、分页、过期恢复与同源出处。
+- 专题提供连接地址与每日同步说明；只读客户端完整保存缓存后才推进位置，本聊天已配置每日北京时间22:30接收。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Fold consecutive empty calendar weeks by default, show one summary plus remaining counts, and support range/full-month expansion, today and remembered preferences while preserving strip views and selected logs.
+- Add the topic MCP connection /api/mcp/codex with one codex_updates tool for initial full reads and subsequent additions, corrections and removals, including scoped pagination, expiry recovery and shared sources.
+- Provide connection and daily-sync instructions plus a read-only client that advances its checkpoint only after saving the complete cache; daily reads at 22:30 Beijing time are configured for this chat.
+<!-- release-summary:en:end -->
+
+实现[REQ-20-9](FieldToFit-PM.md#req-20-9)与[REQ-20-10](FieldToFit-PM.md#req-20-10)，用户明确确认v1.8.0。既有MCP及新闻发布集合兼容，无数据库迁移或新闻内容变更；专题同步位置仅保存公开ID／哈希，实际正文每页重新检查当前发布权限。一次窗口合并为最新已发布状态，更正保留原事件日期；恢复全量后替换所选范围缓存。开发、验证、部署与客户端日程的实际结果见[本批验收](docs/validation/2026-10-06-codex-overview-posts.md#compact-mcp-implementation)，配置不冒充连续自然日运行。
+
 <a id="v1.7.4"></a>
 ## v1.7.4 · 紧凑月历与专题MCP需求登记 · 2026-10-06
 <!-- release-tag:unpublished -->

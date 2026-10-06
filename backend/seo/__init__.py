@@ -10,7 +10,7 @@ import re
 from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from backend.knowledge.codex_progress import calendar_month
+from backend.knowledge.codex_progress import calendar_month, calendar_rows
 from xml.etree import ElementTree as ET
 
 from flask import Blueprint, Response, redirect, render_template, request
@@ -227,7 +227,7 @@ def page(path, dist):
         calendar_items = {entry['id']: entry for entry in collections.get('news', {}).get('items', [])}
         body = render_template('search.html', pages=PAGES, path=path, heading=heading,
                                description=description, item=item, collections=collections,
-                               catalog=catalog, revision=revision, calendar_cells=calendar_cells,
+                               catalog=catalog, revision=revision, calendar_cells=calendar_cells, calendar_rows=calendar_rows(calendar_cells),
                                calendar_title=calendar_title, calendar_items=calendar_items)
         return document(dist, title, description, path, body)
     except PlatformError as exc:

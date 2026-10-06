@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.7.4](CHANGELOG.md#v1.7.4)** · Release tag not yet published
+**Current source version: [v1.8.0](CHANGELOG.md#v1.8.0)** · [fieldtofit-v1.8.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Register REQ-20-9 with a proposal to fold empty calendar weeks, shorten log cells and expand the full month, preserving month/strip views and selected details.
-- Register REQ-20-10 for the selected daily AI-client sync: a topic-specific MCP connection reads all logs initially, then additions, corrections and removals with shared sources and revisions.
-- Deliver two interactive calendar previews and an interface proposal. The new features remain unbuilt and undeployed; production stays at v1.7.3 and no client schedule is configured.
+- Fold consecutive empty calendar weeks by default, show one summary plus remaining counts, and support range/full-month expansion, today and remembered preferences while preserving strip views and selected logs.
+- Add the topic MCP connection /api/mcp/codex with one codex_updates tool for initial full reads and subsequent additions, corrections and removals, including scoped pagination, expiry recovery and shared sources.
+- Provide connection and daily-sync instructions plus a read-only client that advances its checkpoint only after saving the complete cache; daily reads at 22:30 Beijing time are configured for this chat.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

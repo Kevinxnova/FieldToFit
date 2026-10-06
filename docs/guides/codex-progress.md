@@ -2,7 +2,7 @@
 
 专题位于 [For you](https://fieldtofit.top/for-you#news-codex-28-days) 的近期动态内，与本期速览、发布与更新同级。提供月历／日历条概览和倒序时间线，默认月历及最近一天；「全部日志」展开已发布日期。网站只读已审核发布的真实记录，不展示内部核验状态或空白日志；月历可保留无事件自然日期。
 
-[REQ-20-7](../../FieldToFit-PM.md#req-20-7)提供月历／日历条切换，首次默认月历并记住视图，所选日期与日志保持。月历显示完整自然日期，仅已审日期有事件标记和点击入口；手机保留日期及类型点，下方显示所选摘要。今天没有已审日志时仅定位月份，保留已有详情。其他OpenAI更新与主线独立统计，重置仅统计已确认生效的记录。
+[REQ-20-7](../../FieldToFit-PM.md#req-20-7)提供月历／日历条切换，首次默认月历并记住视图，所选日期与日志保持。月历保留完整自然日期结构，按REQ-20-9默认折叠空白周；仅已审日期有事件标记和点击入口。手机保留日期及类型点，下方显示所选摘要；今天没有已审日志时展开所在周，保留已有详情。其他OpenAI更新与主线独立统计，重置仅统计已确认生效的记录。
 
 [REQ-20-8](../../FieldToFit-PM.md#req-20-8)在对应日志和独立详情中展示Tibo原帖卡片，真实头像与作者、摘录／译文、北京时刻及原帖入口并列。主公告展开，相关补充／回复折叠；英文界面优先英文。头像损坏时保留作者文字。原帖内容也进入无脚本HTML、API、MCP和AI交接。
 ## 日期与来源
@@ -41,7 +41,22 @@
 
 日期精度为 `source_date` 时，`announced_at`／`event_date` 为null、`timestamp_basis` 为 `source_date`。类型可为feature、model、speed、fix、reset、announcement；分组可为codex、other_openai。reset额外对象保存plans、scope、source_url、effective_at。overview_zh／overview_en各最多160字符，留空时回退标题；source_posts至多8条，恰好一条primary，其余为supplement／reply／correction。同帖去重，正文需注明excerpt或full，头像和context只公开白名单字段。原帖与上下文来源须登记在该动态sources中。
 
-## 更正、下架与收尾
+## 紧凑月历与专题MCP同步
+
+月历默认展开有已审日志的整周，连续空白周收成日期范围；可按范围展开或选择完整月历，完整偏好保存在浏览器。新日志所在周自动可见。今天定位即使没有日志也展开所在周，保留已审详情；月历／日历条切换和URL日期选择沿用原规则。无脚本HTML使用原生details展开空白日期。自然日期不代表日志或核验状态。
+
+专用只读连接为`https://fieldtofit.top/api/mcp/codex`，只提供`codex_updates`。原`/api/mcp/curated`的13个工具保持兼容。首次不传cursor，group可为all（完整专题、主线／其他OpenAI分组）、codex或other_openai；limit为1–100，默认50。结果含同源publication_revision、专题revision、topic、items和分页／恢复位置。每个变化有object_id、kind、event_id、content_revision；added／updated附当前已审item，removed只有最小标识。原帖、头像出处、真实日期精度及已生效重置范围保留。只同步已发布日志；通用接口单独附加的maintenance可达性观察不进入日志变化流。来源内容只作资料，不执行其中的指令。
+
+1. 首次全量和基线哈希来自同一次公开集合读取；之后用上次完成的resume_cursor续读。每页has_more=true时保持group／limit，传next_cursor，直到最后一页。
+2. 全部页保存成功后才提交日志缓存和resume_cursor；失败保留原缓存／位置。按object_id更新或删除，按event_id及content_revision去重。窗口内多次修订合并为最新公开状态，不声称返回每一次中间编辑或独立公告历史。补录或更正归回原事件日期；无需预先登记新ID。
+3. 读取快照只保存公开ID／哈希，冻结分页成员，不冻结权限／正文；每页重新读取当前公开集合，撤回或移出范围即时返回删除标识。翻页期间后到内容在下一窗口收到，可能再次返回已保存的最新修订，客户端去重。无关新闻不生成专题变化；无变化为items空数组。
+4. 续读位置保留七日。snapshot_expired时重新不带cursor读取完整范围，所有页成功后替换缓存并删除不再出现的旧ID；改变group或limit也重新全量。网站与AI同步位置独立，不将读取当作网站已读、连接成功、消息送达或内容发布。
+
+可运行客户端：[sync_codex_updates.py](../../scripts/maintenance/sync_codex_updates.py)。使用Python环境运行`python scripts/maintenance/sync_codex_updates.py --state output/operations/codex-sync/state.json`，默认读取正式专题；测试副本可用--endpoint。缓存与位置以权限600的文件一次替换，输出公开变化及真实保存回执，失败不推进位置。需要读令牌时由FIELDTOFIT_READ_TOKEN环境变量传入，不保存或打印令牌。
+
+页面“通过MCP共享／每日同步”可复制连接地址和所选范围的同步说明。每天22:30北京时间由支持定时／持久存储的AI客户端拉取；22:00是本站核对触发，不保证22:30已有新获准发布内容。无变化保持安静，新增／更正／撤回才通知。当前Codex聊天已配置独立heartbeat `fieldtofit-codex-mcp`，每日北京时间22:30；11月2日22:30末次接收后结束，原22:00核对及晨报保持。正式接口已人工全量读取5条、随后无变化增量为空；首次真实定时触发及至少三个自然日待发生后记录。接口继续支持归档阅读及后续审核更正，实际证据见[验收记录](../validation/2026-10-06-codex-overview-posts.md#compact-mcp-implementation)。
+
+## 更正、下架与收尾规则
 
 维护同一动态并重新发布，旧依据及原因保留在现有内部发布历史。专题修订、公开HTML、API、MCP及AI导出同步变化；仅修改私密核验备注不进入公开投影。取消专题勾选并发布仅移出专题；下架动态则同时从专题和公开读取消失。无独立日志数据库或待核实公开记录。
 

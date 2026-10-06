@@ -1,0 +1,27 @@
+// Real compact calendar + share workflow. New-log fixtures are local only.
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const fs=require('fs'),assert=require('assert');
+const base=process.env.READING_BASE_URL||'http://127.0.0.1:8097',live=process.env.FIELDTOFIT_LIVE_CHECK==='1';
+const out=process.env.READING_OUTPUT||'/tmp/codex-sync';fs.mkdirSync(out,{recursive:true});
+const {navigate}=require('./codex-navigation.cjs');const navigationRetries=[];
+async function go(p,url){return navigate(p,url,{waitUntil:'domcontentloaded',timeout:90000},navigationRetries);}
+async function toggleFull(p,t){const button=t.locator('.codex-calendar-full');const old=await button.getAttribute('aria-expanded');await button.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await button.click();await p.waitForFunction(previous=>document.querySelector('.codex-calendar-full')?.getAttribute('aria-expanded')!==previous,old);}
+(async()=>{const b=await chromium.launch({headless:true,executablePath:process.env.READING_CHROMIUM,args:['--disable-quic']});const results=[];try{
+ const ctx=await b.newContext({extraHTTPHeaders:{DNT:'1'},permissions:['clipboard-read','clipboard-write']});
+ for(const width of [1440,390,320]){
+  const p=await ctx.newPage();await p.setViewportSize({width,height:1000});const errors=[];p.on('pageerror',e=>errors.push(e.message));await go(p,base+'/for-you?codex_date=2026-10-06');const t=p.locator('.codex-progress');await t.locator('.codex-calendar-full').waitFor({timeout:60000});
+  assert.equal(await t.locator('.codex-calendar-week').count(),1);assert.equal(await t.locator('.codex-calendar-fold').count(),2);const compact=await t.locator('.codex-overview').boundingBox().then(x=>x.height);
+  await t.locator('.codex-calendar-fold').first().focus();await p.keyboard.press('Enter');assert.equal(await t.locator('.codex-calendar-week').count(),2);assert(await t.locator('.codex-calendar-full').evaluate(e=>e===document.activeElement));
+  await toggleFull(p,t);assert.equal(await t.locator('.codex-calendar-week').count(),5);const full=await t.locator('.codex-overview').boundingBox().then(x=>x.height);assert(full>compact);await go(p,p.url());await t.locator('.codex-calendar-full').waitFor();assert.equal(await t.locator('.codex-calendar-week').count(),5);await toggleFull(p,t);assert.equal(await t.locator('.codex-calendar-week').count(),1);
+  await t.locator('.codex-share>summary').click();await t.getByRole('button',{name:'复制连接地址',exact:true}).click();assert.equal(await p.evaluate(()=>navigator.clipboard.readText()),'https://fieldtofit.top/api/mcp/codex');
+  await t.getByLabel('同步范围', {exact:true}).selectOption('codex');await t.getByRole('button',{name:'复制每日同步说明',exact:true}).click();const text=await p.evaluate(()=>navigator.clipboard.readText());assert(text.includes('group=codex')&&text.includes('removed')&&text.includes('22:30')&&text.includes('snapshot_expired'));
+  assert(!await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));await t.locator('.codex-overview').screenshot({path:out+`/${live?'live':'local'}-compact-${width}.png`});await p.evaluate(()=>document.documentElement.dataset.theme='dark');await t.locator('.codex-share').screenshot({path:out+`/${live?'live':'local'}-share-dark-${width}.png`});assert.deepEqual(errors,[]);
+  results.push({width,compact,full,folds:true,range_keyboard:true,preference:true,share_connection:true,share_instructions:true,overflow:false});await p.close();
+ }
+ await ctx.close();
+ if(!live){
+  assert(['localhost','127.0.0.1'].includes(new URL(base).hostname));const c=await b.newContext({viewport:{width:320,height:1000},extraHTTPHeaders:{DNT:'1'}});const p=await c.newPage();await p.clock.install({time:new Date('2026-11-01T12:00:00+08:00')});await go(p,base+'/for-you?codex_date=2026-10-06');await p.locator('.codex-calendar-full').waitFor();await p.getByRole('button',{name:'今天',exact:true}).click();assert.equal(await p.locator('.codex-calendar-week').count(),1);assert.equal(await p.locator('button.codex-calendar-cell').count(),0);assert((await p.locator('.codex-timeline').innerText()).includes('2026-10-06'));await c.close();
+  const next=await b.newContext({extraHTTPHeaders:{DNT:'1'}});const np=await next.newPage();const data=await (await np.request.get(base+'/api/v1/platform/news')).json();await np.clock.install({time:new Date('2026-10-14T12:00:00+08:00')});await next.route('**/api/v1/platform/news*',r=>r.fulfill({json:data}));await go(np,base+'/for-you?codex_date=2026-10-06');await np.locator('.codex-calendar-full').waitFor();const clone=JSON.parse(JSON.stringify(data.items.find(i=>i.id==='D-79')));clone.id='D-999';clone.codex_28_days.date='2026-10-14';clone.codex_28_days.calendar_day=10;data.items.push(clone);data.codex_progress.days.unshift({date:'2026-10-14',calendar_day:10,codex_ids:['D-999'],other_openai_ids:[]});data.codex_progress.total=6;await go(np,base+'/for-you?codex_date=2026-10-06');await np.locator('button.codex-calendar-cell time[datetime="2026-10-14"]').waitFor();assert.equal(await np.locator('.codex-calendar-week').count(),2);await next.close();results.push({isolated_today_cross_month_without_log:true,new_log_week_auto_visible:true});
+ }
+ fs.writeFileSync(out+`/${live?'production':'local'}-sync-browser.json`,JSON.stringify({passed:true,results,navigationRetries},null,2));console.log(JSON.stringify({passed:true,results,navigationRetries}));
+}finally{await b.close();}})().catch(e=>{console.error(e);process.exit(1)});

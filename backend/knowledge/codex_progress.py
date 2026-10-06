@@ -96,6 +96,18 @@ def calendar_month(year, month, topic):
              'log': logs.get((begin + timedelta(days=i)).isoformat())} for i in range(size)]
 
 
+def calendar_rows(cells):
+    rows = []
+    for offset in range(0, len(cells), 7):
+        week = cells[offset:offset + 7]
+        folded = not any(c['log'] for c in week)
+        if folded and rows and rows[-1]['folded']:
+            rows[-1]['weeks'].append(week)
+        else:
+            rows.append({'folded': folded, 'weeks': [week]})
+    return rows
+
+
 def projection(items):
     days, seen = {}, set()
     for item in items:
