@@ -36,16 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.6.3](CHANGELOG.md#v1.6.3)** · [fieldtofit-v1.6.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.3)
+**Current source version: [v1.6.4](CHANGELOG.md#v1.6.4)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add Beam, Cloudflare Web Search API and OpenAI textGrain developments and refresh the overview: 77 developments and 49 watch profiles.
-- Add a Cloudflare search tool profile and GPT watermark adoption notes; update ComfyUI 0.39, Pi 1.0.4 and Deep Agents SDK 0.7.22 while preserving earlier versions.
-- Provide 12 fixed source documents and license texts through the website and MCP: Cloudflare documentation, Pi README and MCP guide, and ComfyUI and Deep Agents READMEs with their licenses. Beam and textGrain originals remain links.
-- Explain Beam's pending weights and textGrain's rollout and detection limitations. Preserve AA's 152 points, Arena's 92 points and their dates; synchronize bilingual READMEs, project management and verification records.
+- Register REQ-20 and six child requirements for “Codex: 28 Days of Progress,” a peer section to At a glance and Releases & updates within Recent developments.
+- Propose a 28-day status calendar with a reverse chronological timeline, daily official-source checks, date and usage-reset states, reviewed publication and an end-of-series recap.
+- Deliver requirements and documentation only. The feature is unbuilt and undeployed, schedules are unchanged, and production remains v1.6.3. The original post and campaign start convention still need verification.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

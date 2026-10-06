@@ -36,16 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.6.3](CHANGELOG.md#v1.6.3)** · [fieldtofit-v1.6.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.6.3)
+**当前源码版本：[v1.6.4](CHANGELOG.md#v1.6.4)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 新增Beam、Cloudflare Web Search API、OpenAI textGrain三条动态，速览同步；当前77条动态、49项持续关注。
-- 新增Cloudflare搜索工具档案，补充GPT水印采用说明，更新ComfyUI 0.39、Pi 1.0.4和Deep Agents SDK 0.7.22版本资料，保留历史版本。
-- 增加12份固定原文及许可供网页与MCP读取：Cloudflare文档、Pi README与MCP说明、ComfyUI和Deep Agents README及各自许可。Beam与textGrain官方正文仍仅提供链接。
-- Beam权重尚未开放、textGrain分阶段范围和检测局限均明确说明；AA152／Arena92点及来源日期保持。同步中英文README、项目管理和验证记录。
+- 登记REQ-20及六个子项，推荐「Codex 28天进化日志」，作为近期动态内与本期速览、发布与更新同级的专题。
+- 提出28格状态日历＋倒序时间线、每日官方证据核对、日期和额度重置状态、审核后发布及专题收尾方案。
+- 本批仅交付需求与文档，专题未开发、未上线，日程未变；正式站保持v1.6.3。原帖正文与28天起算口径仍待核实。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

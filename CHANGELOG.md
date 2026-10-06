@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.6.4"></a>
+## v1.6.4 · Codex 28天专题需求与可视化方案 · 2026-10-06
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 登记REQ-20及六个子项，推荐「Codex 28天进化日志」，作为近期动态内与本期速览、发布与更新同级的专题。
+- 提出28格状态日历＋倒序时间线、每日官方证据核对、日期和额度重置状态、审核后发布及专题收尾方案。
+- 本批仅交付需求与文档，专题未开发、未上线，日程未变；正式站保持v1.6.3。原帖正文与28天起算口径仍待核实。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Register REQ-20 and six child requirements for “Codex: 28 Days of Progress,” a peer section to At a glance and Releases & updates within Recent developments.
+- Propose a 28-day status calendar with a reverse chronological timeline, daily official-source checks, date and usage-reset states, reviewed publication and an end-of-series recap.
+- Deliver requirements and documentation only. The feature is unbuilt and undeployed, schedules are unchanged, and production remains v1.6.3. The original post and campaign start convention still need verification.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)，依赖REQ-2／5／6／8／9／10／11／19；本批不修改公开接口、数据库、前台组件或生产内容。官方日志及CLI 0.160.1发布正文已取得，Tibo原帖直接读取403；不将第三方解释记为官方28天日期，也不将CLI修复记为承诺已兑现。文档及版本检查见[本次实际验证](docs/validation/2026-10-06-codex-28-days-proposal.md)。未部署、未推送发布标签，专题具体方案待对齐。
+
 <a id="v1.6.3"></a>
 ## v1.6.3 · Beam、Web Search API 与持续关注更新 · 2026-10-06
 
