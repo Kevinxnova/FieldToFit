@@ -36,15 +36,16 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.1](CHANGELOG.md#v1.8.1)** · [fieldtofit-v1.8.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.1)
+**Current source version: [v1.8.2](CHANGELOG.md#v1.8.2)** · [fieldtofit-v1.8.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add a Codex topic entry in the For your AI header and after connection setup, reusing the connection URL, sync scopes and daily instructions.
-- Add a bilingual initial-full/daily-changes example and dedicated-tool guidance under “After connecting, try this,” with readable static HTML.
-- Explain that the AI client must configure daily reads at 22:30 Beijing time; connecting alone does not create a scheduled task.
+- Add Mistral Large 4 public preview and Claude Cowork cloud-task developments and refresh the overview: 83 developments and 49 watch profiles.
+- Update Ollama v0.40.0, vLLM v0.31.0 and Claude Code v2.1.292 profiles with runtime requirements, migration changes and task fixes while retaining historical versions.
+- Add four fixed README and license documents for Ollama and vLLM, readable through the website and MCP; other official originals remain linked with explicit coverage gaps.
+- Preserve conflicting Mistral parameter descriptions and pending weights, explain Cowork local-resource availability, and retain AA's 152 points, Arena's 92 points and their review dates.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

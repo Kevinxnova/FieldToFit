@@ -88,7 +88,7 @@ def test_no_empty_topic_days_and_search_html_reads_same_logs(client):
 
 def test_private_topic_notes_do_not_refresh_public_dates(client, monkeypatch):
     from backend.knowledge import content_workspace as ws
-    monkeypatch.setattr(ws, 'today', lambda: '2026-10-06')
+    monkeypatch.setattr(ws, 'today', lambda: collection()['reviewed_at'])
     migrate(client)
     first=client.get('/api/v1/platform/news').json
     cur=call(client, '/content/news/D-78', method='get').json
@@ -132,7 +132,7 @@ def test_source_post_evidence_gate(broken):
 def test_posts_round_trip_corrections_private_notes_and_withdrawal(client,monkeypatch):
     from backend.knowledge import content_workspace as ws
     from backend import seo
-    monkeypatch.setattr(ws,'today',lambda:'2026-10-06')
+    monkeypatch.setattr(ws,'today',lambda:collection()['reviewed_at'])
     migrate(client)
     first=client.get('/api/v1/platform/news').json
     cur=call(client,'/content/news/D-78',method='get').json

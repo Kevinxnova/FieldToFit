@@ -5319,6 +5319,29 @@
       "blocks": [
         {
           "columns": [
+            "版本",
+            "原始日期口径",
+            "变化与用途",
+            "采用条件与验证",
+            "依据"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v0.40.0",
+              "订阅条目更新2026-10-06 UTC；不等同精确首发日期",
+              "Ollama v0.40.0让Apple Silicon上受支持的模型架构默认使用MLX，并补充决策模型与EmbeddingGemma 2入口。",
+              "按官方安装方式选择v0.40.0并核对Apple Silicon及模型条件；本站未安装复测速度和内存。固定README与MIT许可可通过MCP读取。",
+              "[官方发布记录](https://github.com/ollama/ollama/releases/tag/v0.40.0)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本站于2026-10-07从此前已审v0.34.0补充上述版本。以下保留历史材料及其当时适用条件。"
+        },
+        {
+          "columns": [
             "处理什么",
             "输入与产物",
             "使用形态",
@@ -5356,10 +5379,22 @@
           "text": "依据：[官方项目](https://github.com/ollama/ollama)、[发布记录](https://github.com/ollama/ollama/releases)。关联：[CW-T03 vLLM](/for-you#watch-cw-t03) 同属模型运行相关工具，保持各自项目与版本，不给综合优劣评分。"
         }
       ],
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-07",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-T02",
       "interpretation": [
+        {
+          "text": "Apple Silicon上受MLX支持的架构自动走MLX。发布记录列出Qwen3.8、Qwen3.6、Qwen3.5及Gemma4入口；不是所有模型或所有平台统一切换。",
+          "title": "受支持架构默认MLX"
+        },
+        {
+          "text": "记录列出Nimble、tev1、Clef、Clef Flash决策模型及EmbeddingGemma 2。模型许可、内存与质量需要按各模型另核，不把运行支持当作效果保证。",
+          "title": "决策与向量模型入口"
+        },
+        {
+          "text": "按官方安装方式选择v0.40.0并核对Apple Silicon及模型条件；本站未安装复测速度和内存。固定README与MIT许可可通过MCP读取。",
+          "title": "采用与测试边界"
+        },
         {
           "text": "如果应用依赖固定字段，相关更新比“新增聊天体验”更能说明服务端处理了什么。",
           "title": "结构化输出是这次可具体阅读的变化。"
@@ -5371,6 +5406,58 @@
       ],
       "introduction": "用统一的命令和服务接口运行模型，连接模型文件与调用它们的应用。",
       "name": "Ollama",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-07",
+          "coverage": "link_only",
+          "id": "oct07-source-1",
+          "locator": "官方发布和采用说明",
+          "reason": "此入口仅提供链接；获许可固定文档另列。",
+          "retrieved_at": "2026-10-07",
+          "rights": {},
+          "title": "Ollama v0.40.0：受支持的Apple Silicon模型默认MLX · 官方来源 1",
+          "upstream_revision": "v0.40.0",
+          "url": "https://github.com/ollama/ollama/releases/tag/v0.40.0"
+        },
+        {
+          "approved": true,
+          "body": "<p align=\"center\">\n  <a href=\"https://ollama.com\">\n    <img src=\"https://github.com/ollama/ollama/assets/3325447/0d0b44e2-8f4a-4e99-9b52-a5c1c741c8f7\" alt=\"ollama\" width=\"200\"/>\n  </a>\n</p>\n\n# Ollama\n\nStart building with open models.\n\n## Download\n\n### macOS\n\n```shell\ncurl -fsSL https://ollama.com/install.sh | sh\n```\n\nor [download manually](https://ollama.com/download/Ollama.dmg)\n\n### Windows\n\n```shell\nirm https://ollama.com/install.ps1 | iex\n```\n\nor [download manually](https://ollama.com/download/OllamaSetup.exe)\n\n### Linux\n\n```shell\ncurl -fsSL https://ollama.com/install.sh | sh\n```\n\n[Manual install instructions](https://docs.ollama.com/linux#manual-install)\n\n### Docker\n\nThe official [Ollama Docker image](https://hub.docker.com/r/ollama/ollama) `ollama/ollama` is available on Docker Hub.\n\n### Libraries\n\n- [ollama-python](https://github.com/ollama/ollama-python)\n- [ollama-js](https://github.com/ollama/ollama-js)\n\n### Community\n\n- [Discord](https://discord.gg/ollama)\n- [𝕏 (Twitter)](https://x.com/ollama)\n- [Reddit](https://reddit.com/r/ollama)\n\n## Get started\n\n```\nollama\n```\n\nYou'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`,  and more.\n\n### Coding\n\nTo launch a specific integration:\n\n```\nollama launch claude\n```\n\nSupported integrations include [Claude Code](https://docs.ollama.com/integrations/claude-code), [Codex](https://docs.ollama.com/integrations/codex), [Copilot CLI](https://docs.ollama.com/integrations/copilot-cli), [DeepSeek Harness](https://docs.ollama.com/integrations/deepseek-harness), [Droid](https://docs.ollama.com/integrations/droid), and [OpenCode](https://docs.ollama.com/integrations/opencode).\n\n### AI assistant\n\nUse [OpenClaw](https://docs.ollama.com/integrations/openclaw) to turn Ollama into a personal AI assistant across WhatsApp, Telegram, Slack, Discord, and more:\n\n```\nollama launch openclaw\n```\n\n### Chat with a model\n\nRun and chat with [Gemma 4](https://ollama.com/library/gemma4):\n\n```\nollama run gemma4\n```\n\nSee [ollama.com/library](https://ollama.com/library) for the full list.\n\nSee the [quickstart guide](https://docs.ollama.com/quickstart) for more details.\n\n## REST API\n\nOllama has a REST API for running and managing models.\n\n```\ncurl http://localhost:11434/api/chat -d '{\n  \"model\": \"gemma4\",\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"Why is the sky blue?\"\n  }],\n  \"stream\": false\n}'\n```\n\nSee the [API documentation](https://docs.ollama.com/api) for all endpoints.\n\n### Python\n\n```\npip install ollama\n```\n\n```python\nfrom ollama import chat\n\nresponse = chat(model='gemma4', messages=[\n  {\n    'role': 'user',\n    'content': 'Why is the sky blue?',\n  },\n])\nprint(response.message.content)\n```\n\n### JavaScript\n\n```\nnpm i ollama\n```\n\n```javascript\nimport ollama from \"ollama\";\n\nconst response = await ollama.chat({\n  model: \"gemma4\",\n  messages: [{ role: \"user\", content: \"Why is the sky blue?\" }],\n});\nconsole.log(response.message.content);\n```\n\n## Supported backends\n\n- [llama.cpp](https://github.com/ggml-org/llama.cpp) project founded by Georgi Gerganov.\n\n## Documentation\n\n- [CLI reference](https://docs.ollama.com/cli)\n- [REST API reference](https://docs.ollama.com/api)\n- [Importing models](https://docs.ollama.com/import)\n- [Modelfile reference](https://docs.ollama.com/modelfile)\n- [Building from source](https://github.com/ollama/ollama/blob/main/docs/development.md)\n\n## Community Integrations\n\n> Want to add your project? Open a pull request.\n\n### Chat Interfaces\n\n#### Web\n\n- [Open WebUI](https://github.com/open-webui/open-webui) - Extensible, self-hosted AI interface\n- [Onyx](https://github.com/onyx-dot-app/onyx) - Connected AI workspace\n- [LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT clone with multi-provider support\n- [Lobe Chat](https://github.com/lobehub/lobe-chat) - Modern chat framework with plugin ecosystem ([docs](https://lobehub.com/docs/self-hosting/examples/ollama))\n- [NextChat](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web) - Cross-platform ChatGPT UI ([docs](https://docs.nextchat.dev/models/ollama))\n- [Perplexica](https://github.com/ItzCrazyKns/Perplexica) - AI-powered search engine, open-source Perplexity alternative\n- [big-AGI](https://github.com/enricoros/big-AGI) - AI suite for professionals\n- [Lollms WebUI](https://github.com/ParisNeo/lollms-webui) - Multi-model web interface\n- [ChatOllama](https://github.com/sugarforever/chat-ollama) - Chatbot with knowledge bases\n- [Bionic GPT](https://github.com/bionic-gpt/bionic-gpt) - On-premise AI platform\n- [Chatbot UI](https://github.com/ivanfioravanti/chatbot-ollama) - ChatGPT-style web interface\n- [Hollama](https://github.com/fmaclen/hollama) - Minimal web interface\n- [Chatbox](https://github.com/Bin-Huang/Chatbox) - Desktop and web AI client\n- [chat](https://github.com/swuecho/chat) - Chat web app for teams\n- [Ollama RAG Chatbot](https://github.com/datvodinh/rag-chatbot.git) - Chat with multiple PDFs using RAG\n- [Tkinter-based client](https://github.com/chyok/ollama-gui) - Python desktop client\n\n#### Desktop\n\n- [Dify.AI](https://github.com/langgenius/dify) - LLM app development platform\n- [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) - All-in-one AI app for Mac, Windows, and Linux\n- [Maid](https://github.com/Mobile-Artificial-Intelligence/maid) - Cross-platform mobile and desktop client\n- [Witsy](https://github.com/nbonamy/witsy) - AI desktop app for Mac, Windows, and Linux\n- [Cherry Studio](https://github.com/kangfenmao/cherry-studio) - Multi-provider desktop client\n- [Ollama App](https://github.com/JHubi1/ollama-app) - Multi-platform client for desktop and mobile\n- [PyGPT](https://github.com/szczyglis-dev/py-gpt) - AI desktop assistant for Linux, Windows, and Mac\n- [Alpaca](https://github.com/Jeffser/Alpaca) - GTK4 client for Linux and macOS\n- [SwiftChat](https://github.com/aws-samples/swift-chat) - Cross-platform including iOS, Android, and Apple Vision Pro\n- [Enchanted](https://github.com/AugustDev/enchanted) - Native macOS and iOS client\n- [RWKV-Runner](https://github.com/josStorer/RWKV-Runner) - Multi-model desktop runner\n- [Ollama Grid Search](https://github.com/dezoito/ollama-grid-search) - Evaluate and compare models\n- [macai](https://github.com/Renset/macai) - macOS client for Ollama and ChatGPT\n- [AI Studio](https://github.com/MindWorkAI/AI-Studio) - Multi-provider desktop IDE\n- [Reins](https://github.com/ibrahimcetin/reins) - Parameter tuning and reasoning model support\n- [ConfiChat](https://github.com/1runeberg/confichat) - Privacy-focused with optional encryption\n- [LLocal.in](https://github.com/kartikm7/llocal) - Electron desktop client\n- [MindMac](https://mindmac.app) - AI chat client for Mac\n- [Msty](https://msty.app) - Multi-model desktop client\n- [BoltAI for Mac](https://boltai.com) - AI chat client for Mac\n- [IntelliBar](https://intellibar.app/) - AI-powered assistant for macOS\n- [Kerlig AI](https://www.kerlig.com/) - AI writing assistant for macOS\n- [Hillnote](https://hillnote.com) - Markdown-first AI workspace\n- [Perfect Memory AI](https://www.perfectmemory.ai/) - Productivity AI personalized by screen and meeting history\n\n#### Mobile\n\n- [Ollama Android Chat](https://github.com/sunshine0523/OllamaServer) - One-click Ollama on Android\n\n> SwiftChat, Enchanted, Maid, Ollama App, Reins, and ConfiChat listed above also support mobile platforms.\n\n### Code Editors & Development\n\n- [Cline](https://github.com/cline/cline) - VS Code extension for multi-file/whole-repo coding\n- [Continue](https://github.com/continuedev/continue) - Open-source AI code assistant for any IDE\n- [Void](https://github.com/voideditor/void) - Open source AI code editor, Cursor alternative\n- [Copilot for Obsidian](https://github.com/logancyang/obsidian-copilot) - AI assistant for Obsidian\n- [twinny](https://github.com/rjmacarthy/twinny) - Copilot and Copilot chat alternative\n- [gptel Emacs client](https://github.com/karthink/gptel) - LLM client for Emacs\n- [Ollama Copilot](https://github.com/bernardo-bruning/ollama-copilot) - Use Ollama as GitHub Copilot\n- [Obsidian Local GPT](https://github.com/pfrankov/obsidian-local-gpt) - Local AI for Obsidian\n- [Ellama Emacs client](https://github.com/s-kostyaev/ellama) - LLM tool for Emacs\n- [orbiton](https://github.com/xyproto/orbiton) - Config-free text editor with Ollama tab completion\n- [AI ST Completion](https://github.com/yaroslavyaroslav/OpenAI-sublime-text) - Sublime Text 4 AI assistant\n- [VT Code](https://github.com/vinhnx/vtcode) - Rust-based terminal coding agent with Tree-sitter\n- [QodeAssist](https://github.com/Palm1r/QodeAssist) - AI coding assistant for Qt Creator\n- [AI Toolkit for VS Code](https://aka.ms/ai-tooklit/ollama-docs) - Microsoft-official VS Code extension\n- [Open Interpreter](https://docs.openinterpreter.com/language-model-setup/local-models/ollama) - Natural language interface for computers\n\n### Libraries & SDKs\n\n- [LiteLLM](https://github.com/BerriAI/litellm) - Unified API for 100+ LLM providers\n- [Semantic Kernel](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic_kernel/connectors/ai/ollama) - Microsoft AI orchestration SDK\n- [LangChain4j](https://github.com/langchain4j/langchain4j) - Java LangChain ([example](https://github.com/langchain4j/langchain4j-examples/tree/main/ollama-examples/src/main/java))\n- [LangChainGo](https://github.com/tmc/langchaingo/) - Go LangChain ([example](https://github.com/tmc/langchaingo/tree/main/examples/ollama-completion-example))\n- [Spring AI](https://github.com/spring-projects/spring-ai) - Spring framework AI support ([docs](https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html))\n- [LangChain](https://python.langchain.com/docs/integrations/chat/ollama/) and [LangChain.js](https://js.langchain.com/docs/integrations/chat/ollama/) with [example](https://js.langchain.com/docs/tutorials/local_rag/)\n- [Ollama for Ruby](https://github.com/crmne/ruby_llm) - Ruby LLM library\n- [any-llm](https://github.com/mozilla-ai/any-llm) - Unified LLM interface by Mozilla\n- [OllamaSharp for .NET](https://github.com/awaescher/OllamaSharp) - .NET SDK\n- [LangChainRust](https://github.com/Abraxas-365/langchain-rust) - Rust LangChain ([example](https://github.com/Abraxas-365/langchain-rust/blob/main/examples/llm_ollama.rs))\n- [Agents-Flex for Java](https://github.com/agents-flex/agents-flex) - Java agent framework ([example](https://github.com/agents-flex/agents-flex/tree/main/agents-flex-llm/agents-flex-llm-ollama/src/test/java/com/agentsflex/llm/ollama))\n- [Elixir LangChain](https://github.com/brainlid/langchain) - Elixir LangChain\n- [Ollama-rs for Rust](https://github.com/pepperoni21/ollama-rs) - Rust SDK\n- [LangChain for .NET](https://github.com/tryAGI/LangChain) - .NET LangChain ([example](https://github.com/tryAGI/LangChain/blob/main/examples/LangChain.Samples.OpenAI/Program.cs))\n- [chromem-go](https://github.com/philippgille/chromem-go) - Go vector database with Ollama embeddings ([example](https://github.com/philippgille/chromem-go/tree/v0.5.0/examples/rag-wikipedia-ollama))\n- [LangChainDart](https://github.com/davidmigloz/langchain_dart) - Dart LangChain\n- [LlmTornado](https://github.com/lofcz/llmtornado) - Unified C# interface for multiple inference APIs\n- [Ollama4j for Java](https://github.com/ollama4j/ollama4j) - Java SDK\n- [Ollama for Laravel](https://github.com/cloudstudio/ollama-laravel) - Laravel integration\n- [Ollama for Swift](https://github.com/mattt/ollama-swift) - Swift SDK\n- [LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/llm/ollama/) and [LlamaIndexTS](https://ts.llamaindex.ai/modules/llms/available_llms/ollama) - Data framework for LLM apps\n- [Haystack](https://github.com/deepset-ai/haystack-integrations/blob/main/integrations/ollama.md) - AI pipeline framework\n- [Firebase Genkit](https://firebase.google.com/docs/genkit/plugins/ollama) - Google AI framework\n- [Ollama-hpp for C++](https://github.com/jmont-dev/ollama-hpp) - C++ SDK\n- [PromptingTools.jl](https://github.com/svilupp/PromptingTools.jl) - Julia LLM toolkit ([example](https://svilupp.github.io/PromptingTools.jl/dev/examples/working_with_ollama))\n- [Ollama for R - rollama](https://github.com/JBGruber/rollama) - R SDK\n- [Portkey](https://portkey.ai/docs/welcome/integration-guides/ollama) - AI gateway\n- [Testcontainers](https://testcontainers.com/modules/ollama/) - Container-based testing\n- [LLPhant](https://github.com/theodo-group/LLPhant?tab=readme-ov-file#ollama) - PHP AI framework\n\n### Frameworks & Agents\n\n- [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT/blob/master/docs/content/platform/ollama.md) - Autonomous AI agent platform\n- [crewAI](https://github.com/crewAIInc/crewAI) - Multi-agent orchestration framework\n- [Strands Agents](https://github.com/strands-agents/sdk-python) - Model-driven agent building by AWS\n- [Cheshire Cat](https://github.com/cheshire-cat-ai/core) - AI assistant framework\n- [any-agent](https://github.com/mozilla-ai/any-agent) - Unified agent framework interface by Mozilla\n- [Stakpak](https://github.com/stakpak/agent) - Open source DevOps agent\n- [Hexabot](https://github.com/hexastack/hexabot) - Conversational AI builder\n- [Neuro SAN](https://github.com/cognizant-ai-lab/neuro-san-studio) - Multi-agent orchestration ([docs](https://github.com/cognizant-ai-lab/neuro-san-studio/blob/main/docs/user_guide.md#ollama))\n\n### RAG & Knowledge Bases\n\n- [RAGFlow](https://github.com/infiniflow/ragflow) - RAG engine based on deep document understanding\n- [R2R](https://github.com/SciPhi-AI/R2R) - Open-source RAG engine\n- [MaxKB](https://github.com/1Panel-dev/MaxKB/) - Ready-to-use RAG chatbot\n- [Minima](https://github.com/dmayboroda/minima) - On-premises or fully local RAG\n- [Chipper](https://github.com/TilmanGriesel/chipper) - AI interface with Haystack RAG\n- [ARGO](https://github.com/xark-argo/argo) - RAG and deep research on Mac/Windows/Linux\n- [Archyve](https://github.com/nickthecook/archyve) - RAG-enabling document library\n- [Casibase](https://casibase.org) - AI knowledge base with RAG and SSO\n- [BrainSoup](https://www.nurgo-software.com/products/brainsoup) - Native client with RAG and multi-agent automation\n\n### Bots & Messaging\n\n- [LangBot](https://github.com/RockChinQ/LangBot) - Multi-platform messaging bots with agents and RAG\n- [AstrBot](https://github.com/Soulter/AstrBot/) - Multi-platform chatbot with RAG and plugins\n- [Discord-Ollama Chat Bot](https://github.com/kevinthedang/discord-ollama) - TypeScript Discord bot\n- [Ollama Telegram Bot](https://github.com/ruecat/ollama-telegram) - Telegram bot\n- [LLM Telegram Bot](https://github.com/innightwolfsleep/llm_telegram_bot) - Telegram bot for roleplay\n\n### Terminal & CLI\n\n- [aichat](https://github.com/sigoden/aichat) - All-in-one LLM CLI with Shell Assistant, RAG, and AI tools\n- [oterm](https://github.com/ggozad/oterm) - Terminal client for Ollama\n- [gollama](https://github.com/sammcj/gollama) - Go-based model manager for Ollama\n- [tlm](https://github.com/yusufcanb/tlm) - Local shell copilot\n- [tenere](https://github.com/pythops/tenere) - TUI for LLMs\n- [ParLlama](https://github.com/paulrobello/parllama) - TUI for Ollama\n- [llm-ollama](https://github.com/taketwo/llm-ollama) - Plugin for [Datasette's LLM CLI](https://llm.datasette.io/en/stable/)\n- [ShellOracle](https://github.com/djcopley/ShellOracle) - Shell command suggestions\n- [LLM-X](https://github.com/mrdjohnson/llm-x) - Progressive web app for LLMs\n- [cmdh](https://github.com/pgibler/cmdh) - Natural language to shell commands\n- [VT](https://github.com/vinhnx/vt.ai) - Minimal multimodal AI chat app\n\n### Productivity & Apps\n\n- [AppFlowy](https://github.com/AppFlowy-IO/AppFlowy) - AI collaborative workspace, self-hostable Notion alternative\n- [Screenpipe](https://github.com/mediar-ai/screenpipe) - 24/7 screen and mic recording with AI-powered search\n- [Vibe](https://github.com/thewh1teagle/vibe) - Transcribe and analyze meetings\n- [Page Assist](https://github.com/n4ze3m/page-assist) - Chrome extension for AI-powered browsing\n- [NativeMind](https://github.com/NativeMindBrowser/NativeMindExtension) - Private, on-device browser AI assistant\n- [Ollama Fortress](https://github.com/ParisNeo/ollama_proxy_server) - Security proxy for Ollama\n- [1Panel](https://github.com/1Panel-dev/1Panel/) - Web-based Linux server management\n- [Writeopia](https://github.com/Writeopia/Writeopia) - Text editor with Ollama integration\n- [QA-Pilot](https://github.com/reid41/QA-Pilot) - GitHub code repository understanding\n- [Raycast extension](https://github.com/MassimilianoPasquini97/raycast_ollama) - Ollama in Raycast\n- [Painting Droid](https://github.com/mateuszmigas/painting-droid) - Painting app with AI integrations\n- [Serene Pub](https://github.com/doolijb/serene-pub) - AI roleplaying app\n- [Mayan EDMS](https://gitlab.com/mayan-edms/mayan-edms) - Document management with Ollama workflows\n- [TagSpaces](https://www.tagspaces.org) - File management with [AI tagging](https://docs.tagspaces.org/ai/)\n\n### Observability & Monitoring\n\n- [Opik](https://www.comet.com/docs/opik/cookbook/ollama) - Debug, evaluate, and monitor LLM applications\n- [OpenLIT](https://github.com/openlit/openlit) - OpenTelemetry-native monitoring for Ollama and GPUs\n- [Lunary](https://lunary.ai/docs/integrations/ollama) - LLM observability with analytics and PII masking\n- [Langfuse](https://langfuse.com/docs/integrations/ollama) - Open source LLM observability\n- [HoneyHive](https://docs.honeyhive.ai/integrations/ollama) - AI observability and evaluation for agents\n- [MLflow Tracing](https://mlflow.org/docs/latest/llms/tracing/index.html#automatic-tracing) - Open source LLM observability\n\n### Database & Embeddings\n\n- [pgai](https://github.com/timescale/pgai) - PostgreSQL as a vector database ([guide](https://github.com/timescale/pgai/blob/main/docs/vectorizer-quick-start.md))\n- [MindsDB](https://github.com/mindsdb/mindsdb/blob/staging/mindsdb/integrations/handlers/ollama_handler/README.md) - Connect Ollama with 200+ data platforms\n- [chromem-go](https://github.com/philippgille/chromem-go/blob/v0.5.0/embed_ollama.go) - Embeddable vector database for Go ([example](https://github.com/philippgille/chromem-go/tree/v0.5.0/examples/rag-wikipedia-ollama))\n- [Kangaroo](https://github.com/dbkangaroo/kangaroo) - AI-powered SQL client\n\n### Infrastructure & Deployment\n\n#### Cloud\n\n- [Google Cloud](https://cloud.google.com/run/docs/tutorials/gpu-gemma2-with-ollama)\n- [Fly.io](https://fly.io/docs/python/do-more/add-ollama/)\n- [Koyeb](https://www.koyeb.com/deploy/ollama)\n- [Harbor](https://github.com/av/harbor) - Containerized LLM toolkit with Ollama as default backend\n\n#### Package Managers\n\n- [Pacman](https://archlinux.org/packages/extra/x86_64/ollama/)\n- [Homebrew](https://formulae.brew.sh/formula/ollama)\n- [Nix package](https://search.nixos.org/packages?show=ollama&from=0&size=50&sort=relevance&type=packages&query=ollama)\n- [Helm Chart](https://artifacthub.io/packages/helm/ollama-helm/ollama)\n- [Gentoo](https://github.com/gentoo/guru/tree/master/app-misc/ollama)\n- [Flox](https://flox.dev/blog/ollama-part-one)\n- [Guix channel](https://codeberg.org/tusharhero/ollama-guix)\n",
+          "checked_at": "2026-10-07",
+          "coverage": "full_text",
+          "id": "oct07-ollama-readme-md",
+          "locator": "固定提交完整原文，未改写；保留作者与许可",
+          "reason": "",
+          "retrieved_at": "2026-10-07",
+          "rights": {
+            "basis": "MIT; verbatim source and complete license retained",
+            "notice": "MIT License\n\nCopyright (c) Ollama\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "url": "https://raw.githubusercontent.com/ollama/ollama/0d0720e51fb2fd9aa58781c3d720c06d720c2e7b/LICENSE"
+          },
+          "title": "ollama · README.md",
+          "upstream_revision": "0d0720e51fb2fd9aa58781c3d720c06d720c2e7b",
+          "url": "https://raw.githubusercontent.com/ollama/ollama/0d0720e51fb2fd9aa58781c3d720c06d720c2e7b/README.md"
+        },
+        {
+          "approved": true,
+          "body": "MIT License\n\nCopyright (c) Ollama\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+          "checked_at": "2026-10-07",
+          "coverage": "full_text",
+          "id": "oct07-ollama-license",
+          "locator": "固定提交完整原文，未改写；保留作者与许可",
+          "reason": "",
+          "retrieved_at": "2026-10-07",
+          "rights": {
+            "basis": "MIT; verbatim source and complete license retained",
+            "notice": "MIT License\n\nCopyright (c) Ollama\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "url": "https://raw.githubusercontent.com/ollama/ollama/0d0720e51fb2fd9aa58781c3d720c06d720c2e7b/LICENSE"
+          },
+          "title": "ollama · LICENSE",
+          "upstream_revision": "0d0720e51fb2fd9aa58781c3d720c06d720c2e7b",
+          "url": "https://raw.githubusercontent.com/ollama/ollama/0d0720e51fb2fd9aa58781c3d720c06d720c2e7b/LICENSE"
+        }
+      ],
       "sources": [
         {
           "coverage": "link_only",
@@ -5381,6 +5468,11 @@
           "coverage": "link_only",
           "title": "发布记录",
           "url": "https://github.com/ollama/ollama/releases"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Ollama v0.40.0：受支持的Apple Silicon模型默认MLX",
+          "url": "https://github.com/ollama/ollama/releases/tag/v0.40.0"
         }
       ],
       "state": "published",
@@ -5388,6 +5480,29 @@
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "版本",
+            "原始日期口径",
+            "变化与用途",
+            "采用条件与验证",
+            "依据"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v0.31.0",
+              "订阅条目更新2026-10-06 UTC；不等同精确首发日期",
+              "vLLM v0.31.0增加预加载权重缓存以改善引擎重启，补充模型执行路径优化，并包含需要迁移检查的配置变化。",
+              "逐请求多模态kwargs需要显式信任开关；tokenizer_mode=slow移除，部分量化配置与参数改名。本站未部署复现，升级前应核对完整Breaking changes。",
+              "[官方发布记录](https://github.com/vllm-project/vllm/releases/tag/v0.31.0)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本站于2026-10-07从此前已审v0.29.0补充上述版本。以下保留历史材料及其当时适用条件。"
+        },
         {
           "columns": [
             "处理什么",
@@ -5427,10 +5542,22 @@
           "text": "依据：[官方发布记录](https://github.com/vllm-project/vllm/releases)。关联：[CW-M04 Kimi](/for-you#watch-cw-m04)、[CW-M07 Qwen](/for-you#watch-cw-m07)。"
         }
       ],
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-07",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-T03",
       "interpretation": [
+        {
+          "text": "vllm preload启动权重缓存进程，在引擎重启之间保留GPU中的量化后权重；与初始化引擎快照是不同能力，后者仍为实验功能且说明限定TP1。",
+          "title": "重启时复用权重"
+        },
+        {
+          "text": "发布记录包含DeepSeek-V4.1-Flash执行路径优化等变化。SM100等硬件路径有各自条件，不能扩写成所有GPU均获得相同提升。",
+          "title": "模型与硬件适配"
+        },
+        {
+          "text": "逐请求多模态kwargs需要显式信任开关；tokenizer_mode=slow移除，部分量化配置与参数改名。本站未部署复现，升级前应核对完整Breaking changes。",
+          "title": "升级配置需要检查"
+        },
         {
           "text": "Qwen 的新结构能否按某种精度运行，需要看引擎对应版本；“仓库里有权重”和“引擎已经适配”是两个时间点。",
           "title": "把模型卡和支持记录接起来。"
@@ -5442,11 +5569,68 @@
       ],
       "introduction": "面向模型推理与服务的开源引擎，持续适配模型结构、计算精度和运行硬件。",
       "name": "vLLM",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-07",
+          "coverage": "link_only",
+          "id": "oct07-source-1",
+          "locator": "官方发布和采用说明",
+          "reason": "此入口仅提供链接；获许可固定文档另列。",
+          "retrieved_at": "2026-10-07",
+          "rights": {},
+          "title": "vLLM v0.31.0：重启提速、模型适配及迁移条件 · 官方来源 1",
+          "upstream_revision": "v0.31.0",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0"
+        },
+        {
+          "approved": true,
+          "body": "<!-- markdownlint-disable MD001 MD041 -->\n<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/vllm-project/vllm/main/docs/assets/logos/vllm-logo-text-dark.png\">\n    <img alt=\"vLLM\" src=\"https://raw.githubusercontent.com/vllm-project/vllm/main/docs/assets/logos/vllm-logo-text-light.png\" width=55%>\n  </picture>\n</p>\n\n<h3 align=\"center\">\nEasy, fast, and cheap LLM serving for everyone\n</h3>\n\n<p align=\"center\">\n| <a href=\"https://docs.vllm.ai\"><b>Documentation</b></a> | <a href=\"https://blog.vllm.ai/\"><b>Blog</b></a> | <a href=\"https://arxiv.org/abs/2309.06180\"><b>Paper</b></a> | <a href=\"https://x.com/vllm_project\"><b>Twitter/X</b></a> | <a href=\"https://discuss.vllm.ai\"><b>User Forum</b></a> | <a href=\"https://slack.vllm.ai\"><b>Developer Slack</b></a> |\n</p>\n\n🔥 We have built a vLLM website to help you get started with vLLM. Please visit [vllm.ai](https://vllm.ai) to learn more.\nFor events, please visit [vllm.ai/events](https://vllm.ai/events) to join us.\n\n---\n\n## About\n\nvLLM is a fast and easy-to-use library for LLM inference and serving.\n\nOriginally developed in the [Sky Computing Lab](https://sky.cs.berkeley.edu) at UC Berkeley, vLLM has grown into one of the most active open-source AI projects built and maintained by a diverse community of many dozens of academic institutions and companies from over 2000 contributors.\n\nvLLM is fast with:\n\n- State-of-the-art serving throughput\n- Efficient management of attention key and value memory with [**PagedAttention**](https://blog.vllm.ai/2023/06/20/vllm.html)\n- Continuous batching of incoming requests, chunked prefill, prefix caching\n- Fast and flexible model execution with piecewise and full CUDA/HIP graphs\n- Quantization: FP8, MXFP8/MXFP4, NVFP4, INT8, INT4, GPTQ/AWQ, GGUF, compressed-tensors, ModelOpt, TorchAO, and [more](https://docs.vllm.ai/en/latest/features/quantization/index.html)\n- Optimized attention kernels including FlashAttention, FlashInfer, TRTLLM-GEN, FlashMLA, and Triton\n- Optimized GEMM/MoE kernels for various precisions using CUTLASS, TRTLLM-GEN, CuTeDSL\n- Speculative decoding including n-gram, suffix, EAGLE, DFlash\n- Automatic kernel generation and graph-level transformations using torch.compile\n- Disaggregated prefill, decode, and encode\n\nvLLM is flexible and easy to use with:\n\n- Seamless integration with popular Hugging Face models\n- High-throughput serving with various decoding algorithms, including *parallel sampling*, *beam search*, and more\n- Tensor, pipeline, data, expert, and context parallelism for distributed inference\n- Streaming outputs\n- Generation of structured outputs using xgrammar or guidance\n- Tool calling and reasoning parsers\n- OpenAI-compatible API server, plus Anthropic Messages API and gRPC support\n- Efficient multi-LoRA support for dense and MoE layers\n- Support for NVIDIA GPUs, AMD GPUs, Intel GPUs, and x86/ARM/PowerPC CPUs. Additionally, diverse hardware plugins such as Google TPUs, Intel Gaudi, IBM Spyre, Huawei Ascend, Rebellions NPU, Apple Silicon, MetaX GPU, and more.\n\nvLLM seamlessly supports 200+ model architectures on Hugging Face, including:\n\n- Decoder-only LLMs (e.g., Llama, Qwen, Gemma)\n- Mixture-of-Expert LLMs (e.g., Mixtral, DeepSeek-V3, Qwen-MoE, GPT-OSS)\n- Hybrid attention and state-space models (e.g., Mamba, Qwen3.5)\n- Multi-modal models (e.g., LLaVA, Qwen-VL, Pixtral)\n- Embedding and retrieval models (e.g., E5-Mistral, GTE, ColBERT)\n- Reward and classification models (e.g., Qwen-Math)\n\nFind the full list of supported models [here](https://docs.vllm.ai/en/latest/models/supported_models.html).\n\n## Getting Started\n\nInstall vLLM with [`uv`](https://docs.astral.sh/uv/) (recommended) or `pip`:\n\n```bash\nuv pip install vllm\n```\n\nOr [build from source](https://docs.vllm.ai/en/latest/getting_started/installation/gpu/index.html#build-wheel-from-source) for development.\n\nVisit our [documentation](https://docs.vllm.ai/en/latest/) to learn more.\n\n- [Installation](https://docs.vllm.ai/en/latest/getting_started/installation.html)\n- [Quickstart](https://docs.vllm.ai/en/latest/getting_started/quickstart.html)\n- [List of Supported Models](https://docs.vllm.ai/en/latest/models/supported_models.html)\n\n## Contributing\n\nWe welcome and value any contributions and collaborations.\nPlease check out [Contributing to vLLM](https://docs.vllm.ai/en/latest/contributing/index.html) for how to get involved.\n\n## Citation\n\nIf you use vLLM for your research, please cite our [paper](https://arxiv.org/abs/2309.06180):\n\n```bibtex\n@inproceedings{kwon2023efficient,\n  title={Efficient Memory Management for Large Language Model Serving with PagedAttention},\n  author={Woosuk Kwon and Zhuohan Li and Siyuan Zhuang and Ying Sheng and Lianmin Zheng and Cody Hao Yu and Joseph E. Gonzalez and Hao Zhang and Ion Stoica},\n  booktitle={Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles},\n  year={2023}\n}\n```\n\n## Contact Us\n\n<!-- --8<-- [start:contact-us] -->\n- For technical questions and feature requests, please use GitHub [Issues](https://github.com/vllm-project/vllm/issues)\n- For discussing with fellow users, please use the [vLLM Forum](https://discuss.vllm.ai)\n- For coordinating contributions and development, please use [Slack](https://slack.vllm.ai)\n- For security disclosures, please use GitHub's [Security Advisories](https://github.com/vllm-project/vllm/security/advisories) feature\n- For collaborations and partnerships, please contact us at [collaboration@vllm.ai](mailto:collaboration@vllm.ai)\n<!-- --8<-- [end:contact-us] -->\n\n## Media Kit\n\n- If you wish to use vLLM's logo, please refer to [our media kit repo](https://github.com/vllm-project/media-kit)\n",
+          "checked_at": "2026-10-07",
+          "coverage": "full_text",
+          "id": "oct07-vllm-readme-md",
+          "locator": "固定提交完整原文，未改写；保留作者与许可",
+          "reason": "",
+          "retrieved_at": "2026-10-07",
+          "rights": {
+            "basis": "Apache-2.0; verbatim source and complete license retained",
+            "notice": "vLLM contributors; unchanged source document under Apache-2.0. The complete original LICENSE is supplied alongside this document.",
+            "url": "https://raw.githubusercontent.com/vllm-project/vllm/db9527a46873454610df6dbedf79a36d6bf1a7f6/LICENSE"
+          },
+          "title": "vllm · README.md",
+          "upstream_revision": "db9527a46873454610df6dbedf79a36d6bf1a7f6",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/db9527a46873454610df6dbedf79a36d6bf1a7f6/README.md"
+        },
+        {
+          "approved": true,
+          "body": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+          "checked_at": "2026-10-07",
+          "coverage": "full_text",
+          "id": "oct07-vllm-license",
+          "locator": "固定提交完整原文，未改写；保留作者与许可",
+          "reason": "",
+          "retrieved_at": "2026-10-07",
+          "rights": {
+            "basis": "Apache-2.0; verbatim source and complete license retained",
+            "notice": "vLLM contributors; unchanged source document under Apache-2.0. The complete original LICENSE is supplied alongside this document.",
+            "url": "https://raw.githubusercontent.com/vllm-project/vllm/db9527a46873454610df6dbedf79a36d6bf1a7f6/LICENSE"
+          },
+          "title": "vllm · LICENSE",
+          "upstream_revision": "db9527a46873454610df6dbedf79a36d6bf1a7f6",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/db9527a46873454610df6dbedf79a36d6bf1a7f6/LICENSE"
+        }
+      ],
       "sources": [
         {
           "coverage": "link_only",
           "title": "官方发布记录",
           "url": "https://github.com/vllm-project/vllm/releases"
+        },
+        {
+          "coverage": "link_only",
+          "title": "vLLM v0.31.0：重启提速、模型适配及迁移条件",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0"
         }
       ],
       "state": "published",
@@ -5733,6 +5917,29 @@
       "blocks": [
         {
           "columns": [
+            "版本",
+            "原始日期口径",
+            "变化与用途",
+            "采用条件与验证",
+            "依据"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v2.1.292",
+              "订阅条目更新2026-10-06 UTC；不等同精确首发日期",
+              "Claude Code v2.1.292修复部分定时任务不触发、后台命令过早停止及权限处理问题，Agent工具增加effort参数。",
+              "本页从已审v2.1.289补充至v2.1.292，保留旧记录。官方CHANGELOG正文再分发许可未确认，仅提供链接与本站解读。",
+              "[官方发布记录](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本站于2026-10-07从此前已审v2.1.289补充上述版本。以下保留历史材料及其当时适用条件。"
+        },
+        {
+          "columns": [
             "版本 / 材料",
             "原始时间口径",
             "本次用途与变化",
@@ -5795,10 +6002,22 @@
           "text": "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "checked_at": "2026-10-05",
+      "checked_at": "2026-10-07",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A02",
       "interpretation": [
+        {
+          "text": "官方记录修复部分恢复会话后定时任务不触发、单次运行过早终止后台命令，以及后台会话重启后丢失循环唤醒。Agent工具新增effort参数。",
+          "title": "后台任务与定时执行"
+        },
+        {
+          "text": "版本记录包含沙箱读取、网络路径权限提示、托管设置和插件加载等修复。属于官方声明，本站未进行安全复测，不宣称所有越权风险已解决。",
+          "title": "权限与读取修复"
+        },
+        {
+          "text": "本页从已审v2.1.289补充至v2.1.292，保留旧记录。官方CHANGELOG正文再分发许可未确认，仅提供链接与本站解读。",
+          "title": "版本与材料范围"
+        },
         {
           "text": "权限规则：修复托管机器上复合命令内部的deny/ask规则被用户安装的mod批准覆盖的问题。",
           "title": "复合命令权限"
@@ -5836,6 +6055,20 @@
           "title": "Claude Code：补齐复合命令、IDE 文件与插件的权限修复 · 官方来源 1",
           "upstream_revision": "v2.1.289",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-07",
+          "coverage": "link_only",
+          "id": "oct07-source-1",
+          "locator": "官方发布和采用说明",
+          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
+          "retrieved_at": "2026-10-07",
+          "rights": {},
+          "title": "Claude Code v2.1.292：定时任务、后台命令和权限修复 · 官方来源 1",
+          "upstream_revision": "v2.1.292",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292"
         }
       ],
       "sources": [
@@ -5853,6 +6086,11 @@
           "coverage": "link_only",
           "title": "固定版本许可声明",
           "url": "https://github.com/anthropics/claude-code/blob/2bfb629dfaff0c8318047a4beb93cf1dc5b58b18/LICENSE.md"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Claude Code v2.1.292：定时任务、后台命令和权限修复",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292"
         }
       ],
       "state": "published",
@@ -7725,7 +7963,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-06",
+  "reviewed_at": "2026-10-07",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

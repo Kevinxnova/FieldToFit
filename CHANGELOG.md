@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.2"></a>
+## v1.8.2 · Mistral Large 4、Cowork及运行工具档案更新 · 2026-10-07
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增Mistral Large 4公共预览与Claude Cowork云端任务两条动态，并同步本期速览；共83条动态、49项持续关注。
+- 更新Ollama v0.40.0、vLLM v0.31.0、Claude Code v2.1.292档案，分别说明运行条件、迁移配置和任务修复，保留历史版本。
+- 新增Ollama／vLLM固定README与许可证共四份原文，网页与MCP可读取；其他官方正文保留链接及缺口说明。
+- 保留Mistral官方参数口径差异与权重未开放状态；明确Cowork云端任务与本机资源在线条件。AA152／Arena92及原核对日期保持。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add Mistral Large 4 public preview and Claude Cowork cloud-task developments and refresh the overview: 83 developments and 49 watch profiles.
+- Update Ollama v0.40.0, vLLM v0.31.0 and Claude Code v2.1.292 profiles with runtime requirements, migration changes and task fixes while retaining historical versions.
+- Add four fixed README and license documents for Ollama and vLLM, readable through the website and MCP; other official originals remain linked with explicit coverage gaps.
+- Preserve conflicting Mistral parameter descriptions and pending weights, explain Cowork local-resource availability, and retain AA's 152 points, Arena's 92 points and their review dates.
+<!-- release-summary:en:end -->
+
+对应REQ-4、REQ-6、REQ-8/9、REQ-11。用户明确批准10月7日日报A–E；本批无接口或数据库结构修改，保留Codex专题及同步入口。没有运行上游性能或安全复测，REQ-19仍未开发；选题分页核验、全对象内容对照及日报准时交付缺口保留。113项回归、双端正式页面、18次MCP调用及四份原文完整哈希、正式v1.8.2已验，见[本批证据](docs/validation/2026-10-07-editorial.md)。
+
 <a id="v1.8.1"></a>
 ## v1.8.1 · For your AI补充Codex每日同步入口 · 2026-10-06
 

@@ -36,15 +36,16 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.1](CHANGELOG.md#v1.8.1)** · [fieldtofit-v1.8.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.1)
+**当前源码版本：[v1.8.2](CHANGELOG.md#v1.8.2)** · [fieldtofit-v1.8.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 在For your AI页首和连接方式后提供Codex专题入口，复用连接地址、范围选择及每日同步说明。
-- 在“接入后，可以这样问”增加首次全量、之后每日新增／更正／撤回的双语示例和专用工具说明；无脚本HTML可读。
-- 明确由支持定时任务的AI客户端配置每日北京时间22:30接收，连接本身不创建任务。
+- 新增Mistral Large 4公共预览与Claude Cowork云端任务两条动态，并同步本期速览；共83条动态、49项持续关注。
+- 更新Ollama v0.40.0、vLLM v0.31.0、Claude Code v2.1.292档案，分别说明运行条件、迁移配置和任务修复，保留历史版本。
+- 新增Ollama／vLLM固定README与许可证共四份原文，网页与MCP可读取；其他官方正文保留链接及缺口说明。
+- 保留Mistral官方参数口径差异与权重未开放状态；明确Cowork云端任务与本机资源在线条件。AA152／Arena92及原核对日期保持。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
