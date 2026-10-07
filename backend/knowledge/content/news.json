@@ -10351,6 +10351,279 @@
       "state": "published",
       "summary": "字节 Seed 发布音视频全双工模型的技术与演示材料。",
       "title": "SeedRealtime：边听、边看、边交互"
+    },
+    {
+      "id": "D-90",
+      "state": "published",
+      "name": "DeepSeek-V4.1-Flash",
+      "organization": "DeepSeek-AI",
+      "title": "V4 → V4.1：Agent 的成本省在哪里？",
+      "summary": "沿三条路线，分别看输入计算、显存缓存和持久缓存怎样减少。",
+      "source_published_at": "2026-09-17",
+      "event_date": "2026-09-17",
+      "checked_at": "2026-10-07",
+      "editor": "FieldToFit",
+      "highlight": false,
+      "category": "research",
+      "note": "技术演化地图采用作者报告中的资源与条件，保持原报告日期。",
+      "sources": [
+        {
+          "id": "report",
+          "title": "DeepSeek-V4.1-Flash 技术报告 v1",
+          "url": "https://arxiv.org/html/2609.19969v1",
+          "coverage": "link_only"
+        },
+        {
+          "id": "submission",
+          "title": "arXiv 首次提交日期",
+          "url": "https://arxiv.org/abs/2609.19969",
+          "coverage": "link_only"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M06",
+          "name": "DeepSeek",
+          "url": "https://fieldtofit.top/watch/CW-M06"
+        }
+      ],
+      "interpretation": [
+        {
+          "title": "三条资源路线",
+          "text": "沿三条路线，分别看输入计算、显存缓存和持久缓存怎样减少。",
+          "locator": "§1–3、§6",
+          "source_ids": [
+            "report"
+          ]
+        }
+      ],
+      "technical_map": {
+        "slug": "agent-context-cost",
+        "question": "V4 → V4.1：Agent 的成本省在哪里？",
+        "focus": "长程 Agent 的上下文成本",
+        "takeaway": "沿三条路线，分别看输入计算、显存缓存和持久缓存怎样减少。",
+        "caution": "三项比例对应不同资源，不能相乘或换算为 API 降价；结果来自作者报告，尚未独立复现。",
+        "change_summary": "建立 CED、CSA2＋FP4 与 SWA Bounded Replay 三条路线，注明比较条件和局限。",
+        "reports": [
+          {
+            "source_id": "report",
+            "version": "arXiv v1",
+            "first_published_at": "2026-09-17",
+            "revised_at": null,
+            "substantive_revision": false,
+            "revision_note": ""
+          }
+        ],
+        "nodes": [
+          {
+            "id": "v4",
+            "label": "DeepSeek-V4-Flash",
+            "kind": "baseline",
+            "stage": 0,
+            "mechanism": "作为资源占用比较基线。",
+            "setting": "同等上下文长度／报告中的相同工作负载。",
+            "result": "V4.1 的显存与持久缓存分别比较。",
+            "limitation": "没有把不同指标合成总成本。",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1、§3.2.1",
+                "fragment": "S1"
+              }
+            ],
+            "metrics": []
+          },
+          {
+            "id": "ced",
+            "label": "CED：输入计算",
+            "kind": "method",
+            "stage": 1,
+            "mechanism": "前半层编码，后半层解码；全局 KV 来自编码器。",
+            "setting": "长序列远大于窗口；预填充8B、解码16B激活参数。",
+            "result": "长输入预填充计算约减半。",
+            "limitation": "解码仍需窗口重放；不等于端到端延迟减半。",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§2.2",
+                "fragment": "S2.SS2"
+              }
+            ],
+            "metrics": [
+              {
+                "label": "激活参数",
+                "value": 8,
+                "unit": "B／输入 token",
+                "baseline": "解码16B／token",
+                "conditions": "长输入预填充，非全流程延迟"
+              }
+            ]
+          },
+          {
+            "id": "csa-fp4",
+            "label": "CSA2＋FP4：显存",
+            "kind": "method",
+            "stage": 1,
+            "mechanism": "跨层复用 KV／索引，主 KV 使用 FP4。",
+            "setting": "相同上下文长度；全局 KV 常驻 HBM。",
+            "result": "890 bytes/token，约为 V4-Flash 的1/4。",
+            "limitation": "稀疏选择的极端边界尚未充分测试。",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§2.3、§2.4.4、图1、§6",
+                "fragment": "S2.SS3"
+              }
+            ],
+            "metrics": [
+              {
+                "label": "全局 KV",
+                "value": 890,
+                "unit": "bytes／token",
+                "baseline": "DeepSeek-V4-Flash",
+                "conditions": "相同上下文长度；常驻 HBM"
+              }
+            ]
+          },
+          {
+            "id": "bounded-replay",
+            "label": "Bounded Replay：持久缓存",
+            "kind": "method",
+            "stage": 1,
+            "mechanism": "不长期存储 SWA KV；缺失时重放最近窗口。",
+            "setting": "与全局 KV 压缩组合；相同工作负载。",
+            "result": "SSD／主机内存持久 KV 约为 V4-Flash 的1/8。",
+            "limitation": "重放是近似状态；极端边界未充分刻画。",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§3.2.1–3.2.2、§6",
+                "fragment": "S3.SS2.SSS1"
+              }
+            ],
+            "metrics": [
+              {
+                "label": "持久 KV 相对占用",
+                "value": 0.125,
+                "unit": "倍",
+                "baseline": "DeepSeek-V4-Flash",
+                "conditions": "同工作负载；包含全局 KV 压缩贡献"
+              }
+            ]
+          },
+          {
+            "id": "v41",
+            "label": "DeepSeek-V4.1-Flash",
+            "kind": "result",
+            "stage": 2,
+            "mechanism": "组合架构与部署优化。",
+            "setting": "分别观察预填充、HBM、SSD／主机内存。",
+            "result": "缓解长程 Agent 输入与缓存容量压力。",
+            "limitation": "不能从资源指标直接推断真实费用或任务收益。",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1、§6",
+                "fragment": "S6"
+              }
+            ],
+            "metrics": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "v4",
+            "to": "ced",
+            "relation": "baseline",
+            "label": "报告相对 V4-Flash 的方法／资源对比",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1、§2–3",
+                "fragment": "S1"
+              }
+            ]
+          },
+          {
+            "from": "ced",
+            "to": "v41",
+            "relation": "inheritance",
+            "label": "纳入 V4.1 的组合设计",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1、§6",
+                "fragment": "S6"
+              }
+            ]
+          },
+          {
+            "from": "v4",
+            "to": "csa-fp4",
+            "relation": "baseline",
+            "label": "报告相对 V4-Flash 的方法／资源对比",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1、§2–3",
+                "fragment": "S1"
+              }
+            ]
+          },
+          {
+            "from": "csa-fp4",
+            "to": "v41",
+            "relation": "inheritance",
+            "label": "纳入 V4.1 的组合设计",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1、§6",
+                "fragment": "S6"
+              }
+            ]
+          },
+          {
+            "from": "v4",
+            "to": "bounded-replay",
+            "relation": "baseline",
+            "label": "报告相对 V4-Flash 的方法／资源对比",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1、§2–3",
+                "fragment": "S1"
+              }
+            ]
+          },
+          {
+            "from": "bounded-replay",
+            "to": "v41",
+            "relation": "inheritance",
+            "label": "纳入 V4.1 的组合设计",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1、§6",
+                "fragment": "S6"
+              }
+            ]
+          },
+          {
+            "from": "ced",
+            "to": "csa-fp4",
+            "relation": "parallel",
+            "label": "优化不同资源，不能把比例相乘",
+            "evidence": [
+              {
+                "source_id": "report",
+                "locator": "§1",
+                "fragment": "S1"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "reviewed_at": "2026-10-07",

@@ -157,6 +157,11 @@ def draft_shape(kind, content):
         return
     from backend.knowledge.platform_lookup import aliases
     aliases(content.get('aliases', []))
+    graph=content.get('technical_map')
+    if kind=='news' and graph is not None:
+        if not isinstance(graph,dict):fail('技术地图必须为对象')
+        for key in ('nodes','edges','reports'):
+            objects(graph.get(key,[]),'技术地图'+key)
     topic=content.get('codex_28_days')
     if kind=='news' and topic is not None:
         if not isinstance(topic,dict) or topic.get('reset') is not None and not isinstance(topic['reset'],dict):fail('专题及重置字段必须为对象')
@@ -183,7 +188,7 @@ def draft_shape(kind, content):
             else:fail('资料块类型不支持')
         if content.get('origin')=='developer_submission' and (not isinstance(content.get('submission'),dict) or not isinstance(content.get('submission_review'),dict)):fail('投稿字段必须为对象')
 
-def save(kind, ident, data):
+def save(kind, ident, data, approved_topic=None):
     content=data.get('draft');version=data.get('draft_version')
     if not isinstance(content,dict) or content.get('id')!=ident:fail('Draft identity must be preserved')
     kind_check(kind);draft_shape(kind,content)
@@ -191,6 +196,18 @@ def save(kind, ident, data):
     if kind!='charts':content={**content,'state':'published'}
     with editorial_transaction() as db:
         current=detail(kind,ident,db)
+        if approved_topic:
+            from backend.knowledge.editorial_batches import _topic
+            from backend.knowledge.technical_maps import project
+            topic = _topic(db, approved_topic['id'])
+            proposal = topic['proposal']
+            if topic['decision']!='continue' or topic['version']!=approved_topic['version'] or topic['kind']!=kind or topic['item_id']!=ident or proposal.get('type')!='technical_map':
+                fail('地图决定或关联已变化，请重新确认', 'decision_required', 409)
+            base = project(current['published']) if current['published'] and current['published'].get('technical_map') else None
+            if proposal.get('base_revision') != (base['revision'] if base else None):
+                fail('公开地图已变化，请重新对齐', 'map_revision_changed', 409)
+            if content != {**proposal['website_copy'], 'id':ident, 'state':'published'}:
+                fail('草稿须与已确认地图提案一致')
         if data.get('materials_fingerprint') and data['materials_fingerprint']!=current['materials_fingerprint']:fail('Source materials changed; export again','source_conflict',409)
         if current['draft_version']!=version:fail('Draft changed; reload before saving','draft_conflict',409)
         from backend.knowledge.operation_board import event,content_source
@@ -215,14 +232,22 @@ def composed(kind, ident, content, db, withdraw=False):
         item={**content,'state':'withdrawn' if withdraw else 'published'}
         if kind == 'news':
             previous = entries[found] if found is not None else None
+            previous_map = (previous or {}).get('technical_map')
+            if previous_map and not item.get('technical_map') and not withdraw:
+                fail('撤回地图请使用下架操作，以保留身份与历史')
+            if item.get('technical_map') and any(x['id']!=ident and (x.get('technical_map') or {}).get('slug')==item['technical_map'].get('slug') for x in entries):
+                fail('此地图入口已有条目，不能另建身份')
+            if previous_map and item.get('technical_map') and previous_map['slug'] != item['technical_map'].get('slug'):
+                fail('已建立的地图入口不可更名，请沿用原入口', 'map_identity_conflict', 409)
             # Dates are server-owned. Import/review timestamps are not first publication evidence.
             item.pop('publication', None)
             if previous and previous.get('publication'):
                 item['publication'] = copy.deepcopy(previous['publication'])
-            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','state')
+            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','technical_map','state')
             def comparable(x):
                 from backend.knowledge.codex_progress import metadata
-                return {**{k:x.get(k) for k in public_changes}, 'codex_28_days':metadata(x)}
+                from backend.knowledge.technical_maps import metadata as map_metadata
+                return {**{k:x.get(k) for k in public_changes}, 'codex_28_days':metadata(x), 'technical_map':map_metadata(x)}
             if not withdraw and (previous is None or comparable(item) != comparable(previous)):
                 now = stamp()
                 item['publication'] = {'first_published_at': (previous.get('publication') or {}).get('first_published_at') if previous else now, 'updated_at': now}
@@ -245,6 +270,8 @@ def gate(kind, ident, item, data):
     # Existing validators preserve the published wire contract; add specific draft feedback.
     if kind=='news':
         from backend.knowledge.platform_news import validate
+        from backend.knowledge.technical_maps import metadata as map_metadata
+        map_metadata(item, enforce_dates=True)
         validate(data)
         if (item.get('media') or {}).get('reviewed_at', '') > today():fail('图片核对日期不能在未来')
     else:

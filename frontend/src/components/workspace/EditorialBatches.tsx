@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { send as rawSend, useRemote } from '../../api/knowledge';
+import { send as rawSend, useRemote, request } from '../../api/knowledge';
 type Obj=Record<string,any>;
 const send=<T,>(path:string,data:unknown)=>rawSend<T>(path,data,'POST',true);
 const api='/v1/admin/workspace';
@@ -21,13 +21,14 @@ export function EditorialBatches({open}:{open:(kind:string,id:string)=>void}){
  </section>;
 }
 function Topic({topic:t,busy,run,open}:{topic:Obj;busy:boolean;run:(f:()=>Promise<unknown>)=>Promise<void>;open:(kind:string,id:string)=>void}){
- const [note,setNote]=useState(''),[review,setReview]=useState(''),[kind,setKind]=useState(t.kind||'watch'),[type,setType]=useState('tool'),[target,setTarget]=useState(t.item_id||'');
+ const [note,setNote]=useState(''),[review,setReview]=useState(''),[kind,setKind]=useState(t.kind||(t.proposal.type==='technical_map'?'news':'watch')),[type,setType]=useState('tool'),[target,setTarget]=useState(t.item_id||t.proposal.target_id||'');
  const decide=(decision:string)=>run(()=>send(api+'/topics/'+t.id+'/decide',{version:t.version,decision,review_on:review,note}));
  return <article className="management-candidate"><h3>{t.proposal.title}</h3><p>{t.proposal.reason}</p><p>{t.proposal.summary}</p><p>处理状态：{labels[t.decision]||t.decision}{t.review_on?' · 复查 '+t.review_on:''}</p><a href={t.event_url} target="_blank" rel="noreferrer">核对原始出处 ↗</a>
  <details><summary>具体上站提案</summary><pre className="management-json-preview">{JSON.stringify(t.proposal,null,2)}</pre></details>
  <label>决定备注<input value={note} onChange={e=>setNote(e.target.value)}/></label><label>稍后复查日期<input type="date" value={review} onChange={e=>setReview(e.target.value)}/></label>
  <div className="platform-actions"><button className="button" disabled={busy} onClick={()=>decide('continue')}>继续整理</button><button className="button" disabled={busy||!review} onClick={()=>decide('later')}>稍后</button><button className="text-button" disabled={busy} onClick={()=>decide('declined')}>不采用</button></div>
  {t.decision==='continue'&&<fieldset><legend>关联内容草稿</legend><label>放置位置<select value={kind} onChange={e=>setKind(e.target.value)}><option value="watch">持续关注</option><option value="news">近期动态</option></select></label><label>资源类型<select value={type} onChange={e=>setType(e.target.value)}>{['model','tool','agent','skill','harness'].map(x=><option key={x}>{x}</option>)}</select></label><label>已有内容编号（新增留空）<input value={target} onChange={e=>setTarget(e.target.value)}/></label><button className="button" disabled={busy} onClick={()=>run(async()=>{const r=await send<Obj>(api+'/topics/'+t.id+'/attach',{version:t.version,kind,type,target_id:target});open(r.kind,r.id);})}>进入内容整理</button></fieldset>}
+ {t.item_id&&t.decision==='continue'&&t.proposal.type==='technical_map'&&<button className="button" disabled={busy} onClick={()=>run(async()=>{const draft=await request<Obj>(api+'/content/news/'+t.item_id,{},true);await send(api+'/maps/proposals/'+t.id+'/apply',{topic_version:t.version,draft_version:draft.draft_version});open('news',t.item_id);})}>将已确认地图方案填入草稿并预览</button>}
  {t.item_id&&<p>关联 {t.item_id} · <button className="text-button" onClick={()=>open(t.kind,t.item_id)}>查看内容与发布历史</button>{t.decision==='published'&&<a href={'/for-you#'+(t.kind==='news'?'news-':'watch-')+t.item_id.toLowerCase()}>查看网站</a>}</p>}
  <details><summary>决定与处理记录</summary>{t.history.map((h:Obj,i:number)=><p key={i}>{h.created_at} · {h.action}<br/>{h.payload}</p>)}</details></article>;
 }

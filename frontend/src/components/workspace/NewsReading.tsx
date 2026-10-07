@@ -1,3 +1,4 @@
+import type {TechnicalMap} from './TechnicalMaps';
 import { ReportCorrection, CorrectionReceipts } from './Corrections';
 import { NewsIndex, ReviewedImage, type NewsMedia } from './NewsIndex';
 import { ContentExposure, trackAction } from './Traffic';
@@ -10,7 +11,7 @@ import { useWorkspace, SourceLink } from './UI';
 import type { CodexEvent, CodexTopic } from './codexData';
 import { SourcePosts } from './SourcePostCard';
 export type NewsItem = {
-  codex_28_days?:CodexEvent;
+  codex_28_days?:CodexEvent;technical_map?:TechnicalMap;
   maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;
   media?:NewsMedia;category?:string;event_date?:string|null;publication?:{first_published_at:string|null;updated_at:string|null};
   id: string; name: string; organization: string; title: string; summary: string; source_published_at: string | null;

@@ -25,6 +25,7 @@ TEXT = {'type': 'string'}
 CODEX_TOOL = definition('codex_updates', 'Read the reviewed Codex 28 Days of Progress topic. First call without cursor returns all currently published logs and a checkpoint. Repeat group/limit with next_cursor until has_more=false; save resume_cursor only after all results are stored, then poll it daily for net additions, corrections and removals. New IDs and old-date backfills are included. items contain public source posts, avatars, date precision and source URLs. Intermediate edits are coalesced to the latest state; deduplicate event_id/content_revision. No change returns an empty list; unrelated news never generates topic events. Withdrawals and removal from the selected group return minimal tombstones. Cursors expire after 7 days: restart a full read and replace the cached scope after all pages. Client scheduling is required; this read does not publish or mark website logs read.',
                         {'group': {'type':'string','enum':['all','codex','other_openai']}, 'limit':{'type':'integer','minimum':1,'maximum':100}, 'cursor':TEXT})
 TOOLS = [
+    definition('curated_maps', 'Read reviewed technical question maps. Nodes distinguish mechanisms, experimental settings, results and limitations. Typed evidence-backed edges distinguish inheritance, baseline comparison and parallel work. Report first dates, substantive revision dates and FieldToFit publication dates are separate. The graph and units match the website; author claims are not independent replication. Drafts and private checks are excluded.', {'slug':TEXT,'q':TEXT,'revision':TEXT,'archive':{'type':'string','enum':['all','recent','historical']}}),
     definition('curated_locations', 'Read revision-bound sections, paragraphs and PDF physical pages/printed labels. Gaps identify unextracted images, scans and unverified formula layout. Only permitted reviewed D-/CW- materials.', {'id':TEXT,'material_id':TEXT,'content_revision':TEXT}, ['id','material_id']),
     definition('curated_revisions', 'List recorded public CW dossier revisions. Migration baselines are not original publication dates. Missing history stays unknown; withdrawals and current permissions win.', {'id':TEXT,'limit':{'type':'integer','minimum':1,'maximum':100},'offset':{'type':'integer','minimum':0}}, ['id']),
     definition('curated_revision_compare', 'Compare two public revisions of the same CW profile. Default latest and previous; returns changed field values and source citations. FieldToFit revisions are not upstream product versions. No private reasons.', {'id':TEXT,'from_revision':{'type':'integer','minimum':1},'to_revision':{'type':'integer','minimum':1},'include_unchanged':{'type':'boolean'}}, ['id']),
@@ -106,6 +107,9 @@ def invoke(name, args):
     if name == 'curated_watch':
         from backend.knowledge.platform_watch import watch
         return watch(**args)
+    if name == 'curated_maps':
+        from backend.knowledge.technical_maps import maps
+        return maps(**args)
     if name == 'curated_news':
         from backend.knowledge.platform_news import news
         return news(**args)

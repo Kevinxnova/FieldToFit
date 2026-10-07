@@ -378,7 +378,7 @@ def _collect(source,counters):
             url=url.replace('http://','https://');version=re.search(r'v\d+$',url)
             entries.append({'url':url,'title':' '.join(e.title.split()),'summary':' '.join(sources.plain_html(e.summary).split()),'type':'paper','version':version[0] if version else '',
                 'published_at':None if fallback else e.get('published'),'materials':[material(url,sources.plain_html(e.summary),'abstract','论文摘要')],
-                'metadata':{'primary':True,'change':'paper','gaps':['当前只有摘要，论文全文与同行评审状态未核实']+(['API 失败；仅补充 cs.AI 当日订阅中的相关标题，不代表检索与历史分页已恢复；订阅日期不作为论文发布日期'] if fallback else []),'acquisition':'official_cs_ai_feed' if fallback else 'arxiv_api'}})
+                'metadata':{'primary':True,'change':'paper','report_type':'paper','first_published_at':None if fallback else e.get('published'),'upstream_updated_at':None if fallback else e.get('updated'),'revision_kind':'unclassified','gaps':['当前只有摘要，论文全文与同行评审状态未核实']+(['API 失败；仅补充 cs.AI 当日订阅中的相关标题，不代表检索与历史分页已恢复；订阅日期不作为论文发布日期'] if fallback else []),'acquisition':'official_cs_ai_feed' if fallback else 'arxiv_api'}})
     else:raise ValueError('Unsupported daily discovery mode')
     found,changed=counters
     saved={'watermark':state.get('watermark') or boundary,'last_page_at':store.now(),'status':'backlog' if more or errors or (mode=='index' and index_pending) else 'complete','errors':errors}

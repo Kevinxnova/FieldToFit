@@ -111,6 +111,10 @@ def attach(ident,data):
         if t['decision']!='continue' or data.get('version')!=t['version']:fail('Confirm this recommendation before drafting','decision_required',409)
         kind=data.get('kind') or t['kind'] or 'watch';target=data.get('target_id') or t['item_id']
         if kind not in ('watch','news'):fail('Choose news or watch')
+        if t['proposal'].get('type')=='technical_map':
+            if kind!='news':fail('技术地图属于近期动态')
+            expected=t['proposal'].get('target_id')
+            if expected and target!=expected:fail('已有问题请更新原地图条目')
         if target:content_detail(kind,target,db)
         elif t['source_ref']:
             linked=select({'ref':t['source_ref'],'action':'select','kind':kind,'type':data.get('type','tool')},db)
@@ -180,11 +184,11 @@ def upgrade():
     schema=(Path(__file__).parent/'schema.sql').read_text().split('CREATE TABLE IF NOT EXISTS fieldtofit_editorial_batches',1)[1]
     statements=[(s.strip(),()) for s in ('CREATE TABLE IF NOT EXISTS fieldtofit_editorial_batches'+schema).split(';') if s.strip()]
     for s in definitions():
-        if s['id'].endswith('-announcements') or s['id']=='daily-hn-hot':
+        if s['id'].endswith('-announcements') or s['id'] in ('daily-hn-hot','daily-map-research'):
             statements.append(('INSERT OR IGNORE INTO knowledge_sources(id,name,category,url,adapter,config) VALUES(?,?,?,?,?,?)',(s['id'],s['name'],s['category'],s['url'],s['adapter'],store.encode(s['config']))))
     with get_db() as db:
         from backend.db import TursoConnection
         if isinstance(db,TursoConnection):db.atomic_statements(statements)
         else:
             db.execute('BEGIN IMMEDIATE');execute_statements(db,statements)
-    return {'ok':True,'added_source_ids':[s['id'] for s in definitions() if s['id'].endswith('-announcements') or s['id']=='daily-hn-hot']}
+    return {'ok':True,'added_source_ids':[s['id'] for s in definitions() if s['id'].endswith('-announcements') or s['id'] in ('daily-hn-hot','daily-map-research')]}

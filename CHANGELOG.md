@@ -4,6 +4,33 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.7"></a>
+## v1.8.7 · 近期报告驱动的技术演化地图 · 2026-10-07
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 近期动态增加按技术问题维护的演化地图、稳定详情入口与历史索引；首张采用已对齐的DeepSeek-V4.1报告，逐节点展示机制、条件、结果、局限和原文位置。
+- 网页、关联模型档案与AI共用已审图结构；支持类型明确的关系、分享、公开修订前后对照与后台双端预览，草稿和私密检查保持隔离。
+- 接入近30日研究与潜在修订队列、每日10份报告的检查交接及每周整理清单；日期和版本核对后给出具体提案，主人确认再进入草稿与发布。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Extend recent developments with question-based technical maps, stable detail links and a historical index; the aligned DeepSeek-V4.1 case exposes mechanisms, conditions, results, limitations and report locations.
+- Share the reviewed graph across the website, related model dossiers and AI, with typed relationships, sharing, public revision comparisons and paired editorial previews; drafts and private checks remain isolated.
+- Add a 30-day research and potential-revision queue, daily handoff capped at ten reports and weekly consolidation lists; verified dates and versions feed concrete proposals before owner-approved drafting and publication.
+<!-- release-summary:en:end -->
+
+用户2026-10-07认可近期技术报告方向、放置与维护机制后明确批准开发验证，登记REQ-22。作为现有news内容、阅读页面和审核流程的扩展，本批递增patch，不新增第四内容库或改变既有只读协议。新增两张私密检查表、一个幂等研究来源和curated_maps；原精选17工具增至18，兼容26工具增至27，Codex专用工具仍为一项。
+
+已对齐D-90案例作为本地种子，报告仍用真实2026-09-17日期；导入基线不推造地图首次发表日。已存在的生产数据库优先，部署／升级不会自动插入该案例。正式页面、晨间任务接入与真实自然日／每周效果尚未验收。本批仅本地源码交付，未推送、打标签或部署，正式站仍v1.8.5；上一批名称追源和服务来源也仍待部署。
+
+全量520项通过、1项既有可选跳过；最终地图与工作区38项通过。原始报告HTTP读取、五处锚点、公开检查不制造更新、三屏宽浏览器与构建已验。具体结果、范围及剩余项见[验收证据](docs/validation/2026-10-07-technical-maps.md)，运行机制见[维护指南](docs/guides/technical-maps.md)。
+
 <a id="v1.8.6"></a>
 ## v1.8.6 · 私密名称追源与服务公告接入 · 2026-10-07
 

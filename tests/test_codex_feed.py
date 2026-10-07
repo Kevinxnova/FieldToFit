@@ -51,7 +51,7 @@ def test_full_same_publication_single_tool_and_empty_delta(client):
     delta=read(client,cursor=first['resume_cursor'])
     assert delta['mode']=='delta' and delta['items']==[] and delta['revision']==first['revision']
     assert len(rpc(client,method='tools/list')['tools'])==1
-    assert len(rpc(client,method='tools/list',endpoint='/api/mcp/curated')['tools'])==17
+    assert len(rpc(client,method='tools/list',endpoint='/api/mcp/curated')['tools'])==18
     assert rpc(client,name='curated_news')['isError']
     assert rpc(client,endpoint='/api/mcp/curated')['isError']
     assert rpc(client,method='initialize')['serverInfo']['name']=='fieldtofit-codex'

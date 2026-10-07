@@ -24,7 +24,7 @@ For researchers, engineers, graduate students, students and AI application devel
 
 | Entry | What it provides | Where to start |
 | --- | --- | --- |
-| For you | AA / Arena capability-and-price charts, recent developments, and ongoing coverage of models, tools, Agents, Skills and Harnesses | Read recent changes, then follow the contents to projects, version tables, editorial notes and sources |
+| For you | AA / Arena capability-and-price charts, recent developments and technical evolution maps, and ongoing coverage of models, tools, Agents, Skills and Harnesses | Read recent changes, then follow the contents to projects, version tables, editorial notes and sources |
 | For your AI | The same published materials through MCP / API, source-text continuation, revision history and bundles | Connect your AI using the MCP address, or download materials to give it |
 | FieldToFit Community | Community purpose, developer submissions and ways to contribute | Submit a project, recommend or correct resources, or help with development |
 
@@ -36,18 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.6](CHANGELOG.md#v1.8.6)** · Release tag not yet published
+**Current source version: [v1.8.7](CHANGELOG.md#v1.8.7)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Group recent, selected and hot leads privately by name and version with exact source positions; accept local AI identity partitions, official text, changes and reasons, with review history and reopening.
-- Add 12 Doubao iOS/macOS, Volcano Ark, Bailian and MiMo API announcement sources with entry dates, model IDs, regions, deprecation schedules and body corrections; preserve original dates for historical baselines.
-- Scan hot HN stories before checking AI relevance; cap investigations at 10 groups, three searches and five materials per group, and five announcements per source, retaining failures and backlogs without public identity or publication writes.
+- Extend recent developments with question-based technical maps, stable detail links and a historical index; the aligned DeepSeek-V4.1 case exposes mechanisms, conditions, results, limitations and report locations.
+- Share the reviewed graph across the website, related model dossiers and AI, with typed relationships, sharing, public revision comparisons and paired editorial previews; drafts and private checks remain isolated.
+- Add a 30-day research and potential-revision queue, daily handoff capped at ten reports and weekly consolidation lists; verified dates and versions feed concrete proposals before owner-approved drafting and publication.
 <!-- latest-summary:end -->
 
-Source v1.8.6 is locally verified and not deployed; see [name tracing and 12-source evidence](docs/validation/2026-10-07-discovery-names-sources.md). Production remains v1.8.5, with versions, AI interfaces and existing data verified. Three real days of object checks remain pending; see [production evidence](docs/validation/2026-10-07-reviewed-maintenance.md).
+Source v1.8.7 is locally verified and not deployed; see [technical maps, shared AI and editorial maintenance evidence](docs/validation/2026-10-07-technical-maps.md), and [the preceding name tracing and 12-source evidence](docs/validation/2026-10-07-discovery-names-sources.md). Production remains v1.8.5, with versions, AI interfaces and existing data verified. Three real days of object checks remain pending; see [production evidence](docs/validation/2026-10-07-reviewed-maintenance.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

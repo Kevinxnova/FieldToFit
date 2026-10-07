@@ -87,7 +87,7 @@ def test_private_intake_and_public_mcp_scope(client):
     message = {'jsonrpc': '2.0', 'id': 1, 'method': 'tools/list'}
     listing = client.post('/api/mcp/curated', json=message, headers=MCP).json['result']['tools']
     assert 'curated_lookup' in {t['name'] for t in listing}
-    assert len(listing) == 17 and all(t['name'].startswith('curated_') for t in listing)
+    assert len(listing) == 18 and all(t['name'].startswith('curated_') for t in listing)
     assert {'curated_locations','curated_revisions','curated_revision_compare','curated_corrections'} <= {t['name'] for t in listing}
     assert client.post('/api/mcp', json=message, headers=MCP).json['result']['tools'] != listing
     message.update(method='tools/call', params={'name': 'task_context', 'arguments': {'goal': 'Run code'}})

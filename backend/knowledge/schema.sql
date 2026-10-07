@@ -450,3 +450,13 @@ CREATE TABLE IF NOT EXISTS fieldtofit_name_runs (
 CREATE TABLE IF NOT EXISTS fieldtofit_name_events (
  id TEXT PRIMARY KEY, group_id TEXT NOT NULL, day TEXT NOT NULL, data TEXT NOT NULL, created_at TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS fieldtofit_map_checks (
+ url TEXT PRIMARY KEY, version INTEGER NOT NULL, status TEXT NOT NULL,
+ fingerprint TEXT, change_kind TEXT, proof TEXT NOT NULL, checked_at TEXT NOT NULL,
+ last_success_at TEXT, error TEXT NOT NULL DEFAULT '', checked_day TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_map_check_events (
+ seq INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT NOT NULL, status TEXT NOT NULL,
+ change_kind TEXT NOT NULL, proof TEXT NOT NULL, created_at TEXT NOT NULL, checked_day TEXT NOT NULL
+);

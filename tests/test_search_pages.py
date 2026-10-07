@@ -71,7 +71,8 @@ def test_every_published_detail_html_matches_public_api(site, kind):
 
 
 def test_sitemap_exact_public_set_and_real_dates(site):
-    expected = {seo.ORIGIN+p for p in seo.PAGES}
+    expected = {seo.ORIGIN+p for p in seo.PAGES} | {seo.ORIGIN+'/maps'}
+    expected.update(seo.ORIGIN+m['path'] for m in site.get('/api/v1/platform/maps').json['items'])
     for kind in ('news', 'watch'):
         expected.update(seo.ORIGIN+seo.detail_url(item['id']) for item in site.get('/api/v1/platform/'+kind).json['items'])
     actual = urls(site)

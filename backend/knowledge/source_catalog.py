@@ -71,6 +71,8 @@ def definitions():
             limit=5,history_days=30,channel_role='service',scope=platform+' 官方'+name.split(' · ')[-1]+'；逐条保存日期、型号、平台及地域，首次建立历史基线')
     add('research','arXiv · 重点对象相关研究','https://export.arxiv.org/api/query','arxiv',limit=8,
         scope='与重点模型和 Agent 相关的论文标题/摘要，不代表全部 AI 论文或已同行评审')
+    add('map-research','技术地图 · 近30日研究与修订','https://export.arxiv.org/api/query','arxiv',limit=8,history_days=30,recheck_body=True,
+        scope='技术地图近30日研究线索与潜在修订；分页保留积压，摘要不等于读过报告，实质修订须本地核对')
     return rows
 
 

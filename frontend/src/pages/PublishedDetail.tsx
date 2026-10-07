@@ -1,3 +1,4 @@
+import {RelatedMaps} from '../components/workspace/TechnicalMaps';
 import { Link, Navigate, useParams, useLocation } from 'react-router-dom';
 import { useRemote } from '../api/knowledge';
 import { NewsReading, type NewsCollection } from '../components/workspace/NewsReading';
@@ -29,6 +30,6 @@ function Detail({kind, id}: {kind:'news'|'watch';id:string}) {
     {result.error && <div role="alert"><p>{pick('这项资料已下架、不存在或暂时无法读取。','This item is unavailable, withdrawn or could not be loaded.')}</p><button className="button" onClick={result.reload}>{pick('重试','Retry')}</button></div>}
     {item && <><h1>{title}</h1>{kind === 'news'
       ? <NewsReading {...result} data={result.data as NewsCollection} standalone/>
-      : <ContinuousWatch result={{...result,data:result.data as WatchCollection}} standalone/>}</>}
+      : <ContinuousWatch result={{...result,data:result.data as WatchCollection}} standalone/>}<RelatedMaps id={id}/></>}
   </div>;
 }

@@ -17,6 +17,10 @@ NEWS_CATEGORIES = ('model', 'agent', 'tool', 'skill', 'harness', 'research', 'in
 def reading_fields(item):
     """Optional reviewed media; nothing is scraped or fetched during publication."""
     result = {}
+    from backend.knowledge.technical_maps import metadata as map_metadata
+    graph = map_metadata(item)
+    if graph:
+        result['technical_map'] = graph
     from backend.knowledge.codex_progress import metadata
     topic = metadata(item)
     if topic:
@@ -70,7 +74,7 @@ def validate(data):
     for key in ('edition', 'title', 'reviewed_at'):
         text(data[key], key, 200)
     date.fromisoformat(data['reviewed_at'])
-    ids, topic_keys = set(), set()
+    ids, topic_keys, map_slugs, map_questions = set(), set(), set(), set()
     for item in data['items']:
         if not re.fullmatch(r'D-\d{2,}', item['id']) or item['id'] in ids:
             raise ValueError('Duplicate or invalid news identity')
@@ -80,6 +84,12 @@ def validate(data):
         if item['state'] != 'published':
             continue
         optional = reading_fields(item)
+        graph = optional.get('technical_map')
+        if graph:
+            question = graph['question'].strip().casefold()
+            if graph['slug'] in map_slugs or question in map_questions:
+                raise ValueError('此技术问题已有地图，请更新已有条目')
+            map_slugs.add(graph['slug']); map_questions.add(question)
         topic = optional.get('codex_28_days')
         if topic:
             if topic['event_key'] in topic_keys:

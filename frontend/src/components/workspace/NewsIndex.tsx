@@ -1,3 +1,4 @@
+import {MapCards} from './TechnicalMaps';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { contentPath } from '../../search';
@@ -71,6 +72,7 @@ export function NewsIndex({data,loading,error,reload,preview=false}:{data:NewsCo
       <div className="glance-layout">{highlights.map((item,i)=><article key={item.id} className={(i===0?'glance-lead':'glance-secondary')+(item.media?' has-media':'')}><div className="glance-copy"><h4><Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{item.name}</Link></h4><ContentExposure id={item.id}><p>{item.summary}</p></ContentExposure>{i===0&&item.interpretation[0]&&<p className="glance-note muted">{item.interpretation[0].text}</p>}<Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{pick('查看完整资料','Read full details')} ↗</Link></div>{item.media&&<ReviewedImage media={item.media} lead={i===0} compact={i!==0}/>}</article>)}</div>
       {!highlights.length&&<p>{pick('本期暂无已审精选。可继续浏览发布记录。','No reviewed highlights in this edition. Browse the archive below.')}</p>}
     </section>
+    <MapCards items={items} preview={preview}/>
     <CodexProgress data={data} preview={preview}/>
     <div className="platform-section-heading"><h3 id="news-releases" tabIndex={-1}>{pick('发布与更新','Releases & updates')}</h3><span>{pick('累计收录 ','Collected ')}{data.total}{pick(' 条',' records')}</span></div>
     {!preview&&<form className="release-filters" onSubmit={e=>{e.preventDefault();change({news_q:input.trim()});}}>

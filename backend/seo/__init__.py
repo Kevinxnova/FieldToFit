@@ -24,7 +24,7 @@ ROOT = Path(__file__).parent
 ORIGIN = 'https://fieldtofit.top'
 PAGES = json.loads((ROOT / 'pages.json').read_text())
 bp = Blueprint('search', __name__, template_folder='templates')
-DETAIL = re.compile(r'^/(news/D-\d{2,}|watch/CW-[MATSH]\d{2,})$')
+DETAIL = re.compile(r'^/(news/D-\d{2,}|watch/CW-[MATSH]\d{2,}|maps/[a-z][a-z0-9]*(?:-[a-z0-9]+)*)$')
 LEGACY = {'/information', '/apps', '/legacy/information', '/legacy/apps', '/tasks',
           '/briefs', '/collection', '/compare', '/cases', '/account', '/feedback',
           '/admin', '/admin/curation', '/discover', '/daily-news'}
@@ -70,7 +70,7 @@ def preview():
 
 @bp.after_app_request
 def search_headers(response):
-    if request.path in ('/api/v1/platform/news', '/api/v1/platform/watch', '/', '/connect') or request.path.rstrip('/') in PAGES or request.path.startswith(('/news/', '/watch/')):
+    if request.path in ('/api/v1/platform/news', '/api/v1/platform/watch', '/api/v1/platform/maps', '/', '/connect') or request.path.rstrip('/') in PAGES or request.path.startswith(('/news/', '/watch/', '/maps')):
         response.headers['Cache-Control'] = 'no-store'
     if preview() or request.path.startswith('/api/') or request.path in LEGACY or request.path.startswith('/records/') or response.status_code >= 400:
         response.headers['X-Robots-Tag'] = 'noindex, nofollow' if preview() else 'noindex'
@@ -90,7 +90,7 @@ def published_dates_query():
     fields = ('state','name','organization','title','summary','introduction','type',
               'source_published_at','event_date','checked_at','interpretation','blocks',
               'sources','related','note','editor','highlight','attention','origin',
-              'submission','reading_materials','aliases','publication.updated_at')
+              'submission','reading_materials','aliases','technical_map','publication.updated_at')
     projection = 'json_array(' + ','.join("json_extract(snapshot,'$."+key+"')" for key in fields) + ')'
     return f"""WITH revisions AS (
         SELECT kind,item_id,action,created_at,{projection} body,
@@ -130,6 +130,8 @@ def sitemap_entries():
             for item in workspace.render(kind, data)['items']:
                 if resolve(item['id'], db, rows[1]) == item['id']:
                     entries.append((detail_url(item['id']), dates.get((kind, item['id']))))
+                    if item.get('technical_map'):
+                        entries.append(('/maps/'+item['technical_map']['slug'], dates.get((kind,item['id']))))
         return entries
 
 
@@ -145,6 +147,7 @@ def sitemap():
             ET.SubElement(node, 'loc').text = ORIGIN + path
             if changed:
                 ET.SubElement(node, 'lastmod').text = changed
+        add('/maps')
         for path in PAGES:
             add(path)
         for path, changed in entries:
@@ -189,9 +192,9 @@ def page(path, dist):
         return redirect('/for-you' + ('?' + request.query_string.decode('utf-8', errors='replace') if request.query_string else ''), 308)
     if path == '/connect':
         return redirect('/for-your-ai', 308)
-    if path.endswith('/') and (path.rstrip('/') in PAGES or DETAIL.fullmatch(path.rstrip('/'))):
+    if path.endswith('/') and (path.rstrip('/') in PAGES or path.rstrip('/') == '/maps' or DETAIL.fullmatch(path.rstrip('/'))):
         return redirect(path.rstrip('/'), 308)
-    if path not in PAGES and not DETAIL.fullmatch(path):
+    if path not in PAGES and path != '/maps' and not DETAIL.fullmatch(path):
         return None
     try:
         item = None
@@ -200,6 +203,14 @@ def page(path, dist):
         revision = ''
         if path == '/for-you' and request.args.get('object'):
             return document(dist, PAGES[path]['title'][0], PAGES[path]['description'][0], path, index=False)
+        if path == '/maps' or path.startswith('/maps/'):
+            from backend.knowledge.technical_maps import maps
+            collection = maps(slug=path.split('/')[-1] if path != '/maps' else '', archive=request.args.get('archive','all'), q=request.args.get('q',''))
+            obj = collection['items'][0] if path != '/maps' else None
+            title = (obj['question'] if obj else '技术演化地图')+' · FieldToFit'
+            description = obj['takeaway'] if obj else '围绕技术问题，阅读近期报告中的方法、实验与局限。'
+            body = render_template('technical_maps.html', maps=collection, item=obj)
+            return document(dist,title,description,path,body)
         if path in PAGES:
             info = PAGES[path]
             title, description, heading = info['title'][0], info['description'][0], info['heading'][0]
@@ -220,6 +231,10 @@ def page(path, dist):
             title = item.get('title', item['name']) + ' · FieldToFit'
             heading = item.get('title', item['name'])
             description = item.get('summary', item.get('introduction', ''))
+        related_maps = []
+        if item:
+            from backend.knowledge.technical_maps import maps
+            related_maps = [m for m in maps()['items'] if m['id']==item['id'] or any(r['id']==item['id'] for r in m['related'])]
         topic = collections.get('news', {}).get('codex_progress', {})
         month = topic.get('days', [{}])[0].get('date', '')[:7] if topic.get('days') else ''
         calendar_cells = calendar_month(*map(int, month.split('-')), topic) if month else []
@@ -227,7 +242,7 @@ def page(path, dist):
         calendar_items = {entry['id']: entry for entry in collections.get('news', {}).get('items', [])}
         body = render_template('search.html', pages=PAGES, path=path, heading=heading,
                                description=description, item=item, collections=collections,
-                               catalog=catalog, revision=revision, calendar_cells=calendar_cells, calendar_rows=calendar_rows(calendar_cells),
+                               catalog=catalog, revision=revision, related_maps=related_maps, calendar_cells=calendar_cells, calendar_rows=calendar_rows(calendar_cells),
                                calendar_title=calendar_title, calendar_items=calendar_items)
         return document(dist, title, description, path, body)
     except PlatformError as exc:

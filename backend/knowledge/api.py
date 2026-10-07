@@ -1092,3 +1092,44 @@ def stewardship_changes():
     args={k:request.args[k] for k in ('after','limit','cursor') if k in request.args}
     if 'object_id' in request.args:args['object_ids']=request.args.getlist('object_id')
     return jsonify(changes(**args))
+
+
+@bp.get('/platform/maps')
+def platform_maps():
+    from backend.knowledge.technical_maps import maps
+    return jsonify(maps(**{k: request.args[k] for k in ('slug','q','revision','archive') if k in request.args}))
+
+@bp.get('/platform/maps/<slug>/history')
+def platform_map_history(slug):
+    from backend.knowledge.technical_maps import history
+    return jsonify(history(slug))
+
+@bp.get('/platform/maps/<slug>/compare')
+def platform_map_compare(slug):
+    from backend.knowledge.technical_maps import compare
+    return jsonify(compare(slug, **{k: request.args[k] for k in ('from_revision','to_revision') if k in request.args}))
+
+@bp.get('/admin/workspace/maps/handoff')
+@admin_required
+def workspace_maps_handoff():
+    from backend.knowledge.map_maintenance import handoff
+    return jsonify(handoff())
+
+@bp.post('/admin/workspace/maps/check')
+@admin_required
+def workspace_maps_check():
+    from backend.knowledge.map_maintenance import check
+    return jsonify(check(body()))
+
+@bp.post('/admin/workspace/maps/propose')
+@admin_required
+def workspace_maps_propose():
+    from backend.knowledge.map_maintenance import propose
+    return jsonify(propose(body()))
+
+
+@bp.post('/admin/workspace/maps/proposals/<topic_id>/apply')
+@admin_required
+def workspace_map_proposal_apply(topic_id):
+    from backend.knowledge.map_maintenance import apply_proposal
+    return jsonify(apply_proposal(topic_id, body()))

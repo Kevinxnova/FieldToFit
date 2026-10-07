@@ -1,3 +1,4 @@
+import {MapsPage} from './components/workspace/TechnicalMaps';
 import { PageMetadata, searchPages } from './search';
 import { PublishedDetail } from './pages/PublishedDetail';
 import { SiteVisits } from "./components/workspace/SiteVisits";
@@ -168,6 +169,7 @@ function Shell() {
           {[/^\/legacy\//, /^\/(tasks|compare|cases|briefs|records)(\/|$)/].some(pattern => pattern.test(location.pathname)) && <p className="platform-notice">{pick("这是保留的兼容页面。新主入口是 For you 与 For your AI；案例仍暂缓。", "This is a compatibility page. Use For you and For your AI for the new platform; cases remain pending.")} <Link to="/for-you">For you →</Link></p>}
           <Routes>
             <Route path="/" element={<Navigate to="/for-you" replace />} />
+            <Route path="/maps" element={<MapsPage/>} /><Route path="/maps/:slug" element={<MapsPage/>} />
             <Route path="/news/:id" element={<PublishedDetail kind="news" />} />
             <Route path="/watch/:id" element={<PublishedDetail kind="watch" />} />
             <Route path="/for-you" element={<ForYou />} />
