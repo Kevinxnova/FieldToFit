@@ -116,6 +116,10 @@ def validate(data):
                 text(point[key], key, 1600)
             if not point.get('source_ids') or not set(point['source_ids']) <= sources:
                 raise ValueError('Each interpretation point needs a registered source')
+    for item in data['items']:
+        roundup = (item.get('codex_28_days') or {}).get('roundup') if item['state'] == 'published' else None
+        if roundup and any(s['news_id'] not in ids for s in roundup['steps']):
+            raise ValueError('官方小结引用的日志编号不存在')
     return data
 
 
@@ -160,5 +164,5 @@ def news(q='', id='', revision='', _data=None):
     return {'schema_version': data['schema_version'], 'edition': data['edition'], 'title': data['title'],
             'reviewed_at': data['reviewed_at'], 'revision': fingerprint, 'total': len(entries),
             'scope': 'reviewed release news; source links and optional reviewed materials have explicit coverage; interpretation is FieldToFit editorial',
-            'items': entries if _data is not None else decorate(entries), 'codex_progress': projection(entries),
+            'items': entries if _data is not None else decorate(entries), 'codex_progress': projection(entries, roundup_items=published),
             **({'resolved_from':requested_id,'canonical_id':id} if requested_id and requested_id!=id else {})}

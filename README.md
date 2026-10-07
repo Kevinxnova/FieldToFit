@@ -36,16 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.3](CHANGELOG.md#v1.8.3)** · [fieldtofit-v1.8.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.3)
+**当前源码版本：[v1.8.4](CHANGELOG.md#v1.8.4)** · [fieldtofit-v1.8.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.4)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 补录Auto-review免费、Meetings专题公告、API用量等级、Decisions公开测试、ChatGPT音频上传和数学成果公告，专题共11条：4条Codex／Work、7条其他OpenAI。
-- 六条新增日志同步中英文概览；有真实关联原帖的五条附Tibo摘录及经当前X身份核对的同款头像，补充回复保持折叠。
-- D-55保留9月29日事件和有限预览背景，补记Decisions公测并关联新记录；仅来源日期的两条不推造北京时刻。
-- 网页、公开HTML、API及MCP共用发布修订；正式站共89条动态、49项持续关注，日报、历史专题及模型图保留。
+- 在10月7日日历Day 3详情前加入Tibo官方Day 2小结，按2.1–2.4关联现有四条日志，复用真实头像与完整原帖／译文。
+- 当日详情按2.2、2.3、2.4排列；2.1保留10月6日真实日期并标明已发布，API两项保持其他OpenAI分组，小结不增加事件计数。
+- 网页、无脚本HTML、API、MCP与AI交接共用同源编号；单日交接带跨日关联资料，范围过滤与撤回不会保留无效日志入口。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

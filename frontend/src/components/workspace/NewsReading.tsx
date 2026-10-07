@@ -18,7 +18,7 @@ export type NewsItem = {
   sources: { id: string; title: string; url: string; coverage: string }[];
   related: { id: string; name: string; url: string }[];
 };
-export type NewsCollection = { codex_progress?:CodexTopic; items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
+export type NewsCollection = { codex_progress?:CodexTopic; referenced_items?:NewsItem[]; items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
 export const newsAnchor = (id: string) => 'news-' + id.toLowerCase();
 export function NewsReading({ data, loading, error, reload, previewBodies, standalone=false }: { standalone?:boolean; previewBodies?:PreviewBodies; data: NewsCollection | null; loading: boolean; error: string; reload: () => void }) {
   const { pick, notify } = useWorkspace();

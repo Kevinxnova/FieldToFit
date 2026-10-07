@@ -24,7 +24,7 @@ def current(db, group):
     public = news.news(_data=data)
     items = {i['id']: i for i in public['items'] if i.get('codex_28_days') and
              (group == 'all' or i['codex_28_days']['group'] == group)}
-    topic = projection(list(items.values()))
+    topic = projection(list(items.values()), roundup_items=public['items'])
     hashes = {ident: digest(item) for ident, item in items.items()}
     return public['revision'], topic, items, hashes
 

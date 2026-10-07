@@ -36,16 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.3](CHANGELOG.md#v1.8.3)** · [fieldtofit-v1.8.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.3)
+**Current source version: [v1.8.4](CHANGELOG.md#v1.8.4)** · [fieldtofit-v1.8.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.4)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Backfill free Auto-review, the Meetings topic announcement, API tiers, Decisions public beta, ChatGPT audio uploads and mathematical results: 11 topic logs, with four Codex / Work entries and seven other OpenAI entries.
-- Add bilingual overviews to all six entries and verified Tibo excerpts and current X-profile avatars to the five entries with related posts; keep supplementary replies collapsed.
-- Preserve D-55's September 29 limited-preview context while adding its public-beta follow-up and related record; retain source-date precision for the two date-only announcements.
-- Keep the website, static HTML, API and MCP on the same published revision: 89 developments and 49 watch profiles, retaining the briefing, earlier topic logs and reviewed charts.
+- Add Tibo’s official Day 2 roundup above October 7 calendar Day 3, linking the four existing logs in 2.1–2.4 order with his verified avatar, original post and translation.
+- Order that date’s details as 2.2, 2.3 and 2.4; keep 2.1 on its real October 6 date and both API entries in other OpenAI. The roundup adds no extra events.
+- Share source-backed numbering across the website, static HTML, API, MCP and AI handoff, including cross-date references and scoped or withdrawn-link handling.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

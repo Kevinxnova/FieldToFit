@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.4"></a>
+## v1.8.4 · 官方每日小结与有序日志 · 2026-10-07
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 在10月7日日历Day 3详情前加入Tibo官方Day 2小结，按2.1–2.4关联现有四条日志，复用真实头像与完整原帖／译文。
+- 当日详情按2.2、2.3、2.4排列；2.1保留10月6日真实日期并标明已发布，API两项保持其他OpenAI分组，小结不增加事件计数。
+- 网页、无脚本HTML、API、MCP与AI交接共用同源编号；单日交接带跨日关联资料，范围过滤与撤回不会保留无效日志入口。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add Tibo’s official Day 2 roundup above October 7 calendar Day 3, linking the four existing logs in 2.1–2.4 order with his verified avatar, original post and translation.
+- Order that date’s details as 2.2, 2.3 and 2.4; keep 2.1 on its real October 6 date and both API entries in other OpenAI. The roundup adds no extra events.
+- Share source-backed numbering across the website, static HTML, API, MCP and AI handoff, including cross-date references and scoped or withdrawn-link handling.
+<!-- release-summary:en:end -->
+
+对应[REQ-20-11](FieldToFit-PM.md#req-20-11)。沿用现有动态D-85承载总结原帖与四条已审关联，不另建新闻或公开数据源；原始日期、分组和89条动态／11条专题计数保持。新增可选roundup／roundups／ordered_ids字段，旧接口与数据库结构兼容。用户直接提供总结原帖和2.1–2.4结构要求，范围为本批展示及来源整理；未来新选题仍需具体确认。103项回归、构建、仓库检查、本地及正式三宽度、后台双端、HTML／API／两MCP与原位置增量均通过；晚到小结按真实日期可查且不增加事件。实际证据见[10月7日小结展示验收](docs/validation/2026-10-07-codex-updates.md#official-roundup)。
+
 <a id="v1.8.3"></a>
 ## v1.8.3 · Codex日志补录与Decisions公测整理 · 2026-10-07
 

@@ -1,0 +1,10 @@
+{% from 'codex_posts.html' import post_card %}
+{% macro roundup_card(roundup, items) %}
+<section class="codex-roundup" aria-label="官方 Day {{ roundup.official_day }} 小结">
+{% call post_card(roundup.source_post, '官方小结') %}
+<h5>官方 Day {{ roundup.official_day }} · 今日小结</h5>
+<p class="codex-roundup-note">按原帖顺序整理，点击查看已审日志；小结不重复计数。{% if roundup.steps|length < roundup.total_steps %}当前范围展示 {{ roundup.steps|length }}/{{ roundup.total_steps }} 项。{% endif %}</p>
+<ol class="codex-roundup-steps">{% for step in roundup.steps %}{% set item=items[step.news_id] %}{% set event=item.codex_28_days %}<li><span class="codex-step-number">{{ roundup.official_day }}.{{ step.number }}</span><div><a href="/news/{{ item.id }}">{{ event.overview_zh or item.title }}</a><small>{{ 'Codex / Work' if event.group == 'codex' else '其他 OpenAI' }} · {% if event.date_precision == 'source_date' %}来源日期 {% endif %}{{ event.date }}{% if event.date != roundup.date %} 已发布{% endif %} · {{ item.id }}</small></div></li>{% endfor %}</ol>
+{% endcall %}
+</section>
+{% endmacro %}

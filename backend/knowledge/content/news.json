@@ -614,8 +614,30 @@
         "event_key": "https://x.com/ChatGPT/status/2107567930557026653",
         "group": "codex",
         "official_day": 2,
-        "overview_en": "Day 2.3: Meetings summaries in Space",
-        "overview_zh": "Day 2.3：会议摘要进入Space",
+        "overview_en": "Meeting summaries into Space",
+        "overview_zh": "会议摘要进入 Space",
+        "roundup": {
+          "official_day": 2,
+          "source_url": "https://x.com/thsottiaux/status/2107575657014468879",
+          "steps": [
+            {
+              "news_id": "D-84",
+              "number": 1
+            },
+            {
+              "news_id": "D-86",
+              "number": 2
+            },
+            {
+              "news_id": "D-85",
+              "number": 3
+            },
+            {
+              "news_id": "D-87",
+              "number": 4
+            }
+          ]
+        },
         "source_posts": [
           {
             "announced_at": "2026-10-06T20:47:11.361000Z",
@@ -638,6 +660,28 @@
             "timestamp_basis": "post_id_derived",
             "translation_zh": "把交流积累成上下文，交给Codex继续完成后续工作。",
             "url": "https://x.com/thsottiaux/status/2107573405553938664"
+          },
+          {
+            "announced_at": "2026-10-06T20:56:08.151Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-07",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-07",
+            "evidence_url": "https://x.com/thsottiaux/status/2107575657014468879",
+            "kind": "supplement",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方总结原帖及本站中文译文；按原帖编号关联已审日志。",
+            "text_en": "Roundup of Day 2/\n\n2.1/ Approve for me (auto-review) is now included and does not use usage. Can be between 2-10% of plan when used. Also better for you.\n2.2/ Simplified API for builders.\n2.3/ Meeting notes integrated.\n2.4/ Decisions API live for builders. Will use in the app to improve the experience.",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Day 2 小结/\n\n2.1/ “Approve for me（自动审核）”现已包含在内，不消耗用量。使用时可能占方案用量的 2–10%，而且对你更有利。\n2.2/ 面向开发者的简化 API。\n2.3/ 已整合会议记录。\n2.4/ Decisions API 已面向开发者上线。将用于应用中改善体验。",
+            "url": "https://x.com/thsottiaux/status/2107575657014468879"
           }
         ],
         "timestamp_basis": "post_id_derived",
@@ -684,7 +728,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-07T04:30:22.214888+00:00",
-        "updated_at": "2026-10-07T04:39:10.865362+00:00"
+        "updated_at": "2026-10-07T05:24:28.414449+00:00"
       },
       "related": [
         {
@@ -723,6 +767,12 @@
           "id": "source-4",
           "title": "Tibo当前X身份和头像",
           "url": "https://x.com/thsottiaux"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-roundup",
+          "title": "Tibo Day 2总结原帖",
+          "url": "https://x.com/thsottiaux/status/2107575657014468879"
         }
       ],
       "state": "published",

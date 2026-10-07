@@ -266,7 +266,17 @@ def preview(kind, ident):
         focused=public if kind=='charts' else {**public,'items':[x for x in public['items'] if x['id']==ident],'total':1}
         if kind=='news':
             from backend.knowledge.codex_progress import projection
-            focused['codex_progress']=projection(focused['items'])
+            focused['codex_progress']=projection(focused['items'], roundup_items=public['items'])
+            # A roundup can reference another genuine event date. Include only
+            # public dependencies in its private review, without extra events.
+            references={s['news_id'] for x in focused['items'] for s in
+                        (x.get('codex_28_days',{}).get('roundup') or {}).get('steps',[])}
+            focused_ids={x['id'] for x in focused['items']}
+            dependencies=[x for x in public['items'] if x['id'] in references-focused_ids]
+            if dependencies:
+                focused['referenced_items']=dependencies
+                contextual=projection(focused['items']+dependencies, roundup_items=public['items'])
+                focused['codex_progress']['roundups']=contextual['roundups']
         if kind=='watch':focused['groups']=[{**g,'count':sum(x['type']==g['id'] for x in focused['items'])} for g in public['groups']]
         return {'ready':True,'errors':[],'preview':focused,'review_token':token(kind,ident,item['draft_version'],revision,draft,item['materials_fingerprint']),'draft_version':item['draft_version'],'scope':'Private preview; not published'}
 

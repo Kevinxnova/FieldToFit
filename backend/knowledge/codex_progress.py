@@ -1,6 +1,7 @@
 """A date projection of reviewed news, with no separate event store or review states."""
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
+import re
 
 START = date(2026, 10, 5)
 END = START + timedelta(days=27)
@@ -71,6 +72,28 @@ def metadata(item):
     if raw.get('source_posts') is not None:
         from backend.knowledge.codex_posts import normalize
         result['source_posts'] = normalize(raw['source_posts'], sources)
+    if raw.get('roundup') is not None:
+        roundup = raw['roundup']
+        if not isinstance(roundup, dict):
+            raise ValueError('官方小结需要原帖和有序日志关联')
+        number = roundup.get('official_day')
+        post = next((p for p in result.get('source_posts', []) if p['url'] == roundup.get('source_url')), None)
+        steps = roundup.get('steps')
+        if isinstance(number, bool) or not isinstance(number, int) or not 1 <= number <= 28 or not post:
+            raise ValueError('官方小结须关联已登记核对的 Tibo 原帖和 Day 编号')
+        if not isinstance(steps, list) or not 1 <= len(steps) <= 20:
+            raise ValueError('官方小结需要 1–20 项已审日志关联')
+        normalized, numbers, ids = [], set(), set()
+        for step in steps:
+            n, ident = (step.get('number'), step.get('news_id')) if isinstance(step, dict) else (None, None)
+            if isinstance(n, bool) or not isinstance(n, int) or not 1 <= n <= 20 or n in numbers or not isinstance(ident, str) or not re.fullmatch(r'D-\d{2,}', ident) or ident in ids:
+                raise ValueError('小结序号和关联日志不可重复或无效')
+            if not re.search(rf'(?m)^\s*{number}\.{n}/', post['text_en']):
+                raise ValueError('小结序号须在已取得的英文原帖中有依据')
+            numbers.add(n); ids.add(ident)
+            normalized.append({'number': n, 'news_id': ident})
+        result['roundup'] = {'source_url': post['url'], 'official_day': number,
+                             'steps': sorted(normalized, key=lambda s: s['number'])}
     if raw['type'] == 'reset':
         reset = raw.get('reset')
         if raw['group'] != 'codex' or not isinstance(reset, dict):
@@ -108,7 +131,7 @@ def calendar_rows(cells):
     return rows
 
 
-def projection(items):
+def projection(items, roundup_items=None):
     days, seen = {}, set()
     for item in items:
         meta = item.get('codex_28_days')
@@ -123,4 +146,33 @@ def projection(items):
     for day in days.values():
         for group in ('codex_ids', 'other_openai_ids'):
             day[group].sort(key=lambda ident: (by_id[ident]['codex_28_days'].get('announced_at') or '', ident), reverse=True)
-    return {**TOPIC, 'days': [days[key] for key in sorted(days, reverse=True)], 'total': len(seen)}
+    roundups, post_urls, order = [], set(), {}
+    for item in items if roundup_items is None else roundup_items:
+        meta = item.get('codex_28_days') or {}
+        roundup = meta.get('roundup')
+        if not roundup:
+            continue
+        if roundup['source_url'] in post_urls:
+            raise ValueError('同一官方小结只关联一条动态，不重复展示或计数')
+        post_urls.add(roundup['source_url'])
+        post = next(p for p in meta['source_posts'] if p['url'] == roundup['source_url'])
+        day = instant(post['announced_at']).astimezone(ZoneInfo('Asia/Shanghai')).date()
+        if not START <= day <= END + timedelta(days=1) or (day > END and roundup['official_day'] != 28):
+            raise ValueError('官方小结日期超出专题窗口')
+        steps = [s for s in roundup['steps'] if s['news_id'] in by_id and by_id[s['news_id']].get('codex_28_days')]
+        if not steps:
+            continue
+        for step in steps:
+            order.setdefault(step['news_id'], (roundup['official_day'], step['number']))
+        roundups.append({'source_news_id': item['id'], 'official_day': roundup['official_day'],
+                         'date': day.isoformat(), 'calendar_day': (day - START).days + 1,
+                         'source_post': post, 'steps': steps, 'total_steps': len(roundup['steps'])})
+        # A real, reviewed recap may arrive after all its announcements. It is
+        # readable on that post's date without creating or redating an event.
+        days.setdefault(day.isoformat(), {'date': day.isoformat(), 'calendar_day': (day - START).days + 1,
+                                         'codex_ids': [], 'other_openai_ids': []})
+    for day in days.values():
+        original = day['codex_ids'] + day['other_openai_ids']
+        day['ordered_ids'] = sorted(original, key=lambda ident: (*order.get(ident, (99, 99)), original.index(ident)))
+    return {**TOPIC, 'days': [days[key] for key in sorted(days, reverse=True)], 'total': len(seen),
+            'roundups': sorted(roundups, key=lambda r: r['source_post']['announced_at'], reverse=True)}
