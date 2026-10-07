@@ -24,7 +24,9 @@ def selection(db,ident,refs=None):
         item=store.decode(r['published_json'],{})
         if item.get('state')!='withdrawn':suppressed_urls.update(s['url'] for s in item.get('sources',[]))
     rows=[]
+    baselines={r['id'] for r in db.execute("SELECT id FROM fieldtofit_discoveries WHERE json_extract(metadata,'$.baseline')=1").fetchall()}
     for c in candidates:
+        if c['ref'].startswith('discovery:') and c['ref'][10:] in baselines and c['inbox_status']!='selected':continue
         if c['inbox_status'] not in ('pending','selected') or c['ref'] in suppressed or c['url'] in suppressed_urls:continue
         metrics=store.decode(c['metrics'],{}) if isinstance(c['metrics'],str) else c['metrics']
         metrics=metrics.get('source_observations',{}).get(c['source'],metrics)

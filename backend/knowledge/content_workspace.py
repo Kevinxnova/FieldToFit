@@ -465,6 +465,7 @@ def backup():
     """A coherent private snapshot; concurrent publication cannot split its tables."""
     from backend.db import TursoConnection
     names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority','fieldtofit_editorial_batches','fieldtofit_editorial_topics','fieldtofit_editorial_members','fieldtofit_editorial_events','fieldtofit_discovery_versions','fieldtofit_operation_events','fieldtofit_operation_issues','fieldtofit_steward_actions','fieldtofit_steward_aliases','fieldtofit_steward_links','fieldtofit_steward_checks','fieldtofit_steward_events','fieldtofit_steward_decisions','fieldtofit_object_check_plans','fieldtofit_object_check_runs','fieldtofit_object_check_attempts','fieldtofit_correction_contexts','fieldtofit_correction_events')
+    names+=('fieldtofit_name_extractions','fieldtofit_name_groups','fieldtofit_name_runs','fieldtofit_name_events')
     statements=[('SELECT * FROM '+name,()) for name in names]
     with get_db() as db:
         if isinstance(db,TursoConnection):cursors=db.atomic_statements(statements,read_only=True)

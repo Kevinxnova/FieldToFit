@@ -180,11 +180,11 @@ def upgrade():
     schema=(Path(__file__).parent/'schema.sql').read_text().split('CREATE TABLE IF NOT EXISTS fieldtofit_editorial_batches',1)[1]
     statements=[(s.strip(),()) for s in ('CREATE TABLE IF NOT EXISTS fieldtofit_editorial_batches'+schema).split(';') if s.strip()]
     for s in definitions():
-        if s['id'].endswith('-announcements'):
+        if s['id'].endswith('-announcements') or s['id']=='daily-hn-hot':
             statements.append(('INSERT OR IGNORE INTO knowledge_sources(id,name,category,url,adapter,config) VALUES(?,?,?,?,?,?)',(s['id'],s['name'],s['category'],s['url'],s['adapter'],store.encode(s['config']))))
     with get_db() as db:
         from backend.db import TursoConnection
         if isinstance(db,TursoConnection):db.atomic_statements(statements)
         else:
             db.execute('BEGIN IMMEDIATE');execute_statements(db,statements)
-    return {'ok':True,'added_source_ids':[s['id'] for s in definitions() if s['id'].endswith('-announcements')]}
+    return {'ok':True,'added_source_ids':[s['id'] for s in definitions() if s['id'].endswith('-announcements') or s['id']=='daily-hn-hot']}

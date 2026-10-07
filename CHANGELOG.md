@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.6"></a>
+## v1.8.6 · 私密名称追源与服务公告接入 · 2026-10-07
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 近期候选、已选与热门线索按名称及版本建立私密组，保留原文位置；本地AI回传同名划分、官方正文、变化及推荐理由，支持核验历史和撤销。
+- 增加豆包iOS／Mac、火山方舟、百炼与MiMo API共12个客户端／服务公告入口，按条目保存日期、型号、地域、停用安排与正文更正；首次历史基线保留原日期。
+- HN补扫高讨论线索，再核对AI相关性；每日追源10组、每组3次检索／5份材料，每源5条，失败和积压保留续跑，不自动改公开身份、草稿或发布。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Group recent, selected and hot leads privately by name and version with exact source positions; accept local AI identity partitions, official text, changes and reasons, with review history and reopening.
+- Add 12 Doubao iOS/macOS, Volcano Ark, Bailian and MiMo API announcement sources with entry dates, model IDs, regions, deprecation schedules and body corrections; preserve original dates for historical baselines.
+- Scan hot HN stories before checking AI relevance; cap investigations at 10 groups, three searches and five materials per group, and five announcements per source, retaining failures and backlogs without public identity or publication writes.
+<!-- release-summary:en:end -->
+
+用户2026-10-07批准REQ-2-1／REQ-3-1与REQ-1-1具体方案后开发验证。沿用既有发现、后台及本地AI审阅流程，增加四张私密名称表及幂等来源注册；管理员原启停设置保留，公开API及已发布内容兼容。升级前需备份并执行既有维护升级；本地交接操作见[发现指南](docs/guides/discovery.md)。新增beautifulsoup4用于官方HTML表格与公开嵌入数据解析，不执行来源脚本。
+
+本批本地源码交付，尚未推送、打标签或部署，生产仍为v1.8.5。Jev真实官方正文、十二入口实际读取、隔离回归及后台三宽度已验，实际结果和剩余缺口见[验收记录](docs/validation/2026-10-07-discovery-names-sources.md)。连续三个真实自然日、正式新增日流程与豆包Android／Windows／网页日志仍待验或未确认。AI演化地图仅为用户要求的交互case，不新增网站内容或已批准REQ。
+
 <a id="v1.8.5"></a>
 ## v1.8.5 · 对象核对、原文定位、纠错与公开修订对照 · 2026-10-07
 

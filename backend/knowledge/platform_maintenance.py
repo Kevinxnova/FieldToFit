@@ -182,6 +182,9 @@ def run_daily(budget_seconds=180, trigger="manual"):
             report.update(status='partial',issue_refresh_error=type(exc).__name__)
     from backend.knowledge.candidate_priority import refresh
     report['priority_assessment']=refresh(limit=100)
+    from backend.knowledge.discovery_names import refresh as refresh_names
+    try:report['name_groups']=refresh_names()
+    except Exception as exc:report.update(status='partial',name_group_error=type(exc).__name__)
     return report
 
 

@@ -436,3 +436,17 @@ CREATE TABLE IF NOT EXISTS fieldtofit_correction_contexts (
 CREATE TABLE IF NOT EXISTS fieldtofit_correction_events (
  id TEXT PRIMARY KEY, feedback_id INTEGER NOT NULL, status TEXT NOT NULL, data TEXT NOT NULL, created_at TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS fieldtofit_name_extractions (
+ ref TEXT PRIMARY KEY, fingerprint TEXT NOT NULL, data TEXT NOT NULL, updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_name_groups (
+ id TEXT PRIMARY KEY, data TEXT NOT NULL, fingerprint TEXT NOT NULL,
+ review TEXT NOT NULL DEFAULT '{}', updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_name_runs (
+ day TEXT PRIMARY KEY, targets TEXT NOT NULL, created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_name_events (
+ id TEXT PRIMARY KEY, group_id TEXT NOT NULL, day TEXT NOT NULL, data TEXT NOT NULL, created_at TEXT NOT NULL
+);

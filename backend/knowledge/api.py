@@ -996,6 +996,51 @@ def editorial_upgrade():
     return jsonify(upgrade())
 
 
+@bp.get('/admin/workspace/names')
+@admin_required
+def workspace_names():
+    from backend.knowledge.discovery_names import overview
+    return jsonify(overview(request.args.get('offset',0),request.args.get('limit',30)))
+
+
+@bp.get('/admin/workspace/names/handoff')
+@admin_required
+def workspace_name_handoff():
+    from backend.knowledge.discovery_names import handoff
+    return jsonify(handoff())
+
+
+@bp.post('/admin/workspace/names/<action>')
+@admin_required
+def workspace_names_action(action):
+    from backend.knowledge import discovery_names as names
+    if action=='prepare':return jsonify(names.prepare())
+    if action=='extract':return jsonify(names.extract(body()))
+    if action=='trace':return jsonify(names.trace(body()))
+    return jsonify(error='Unknown name action'),404
+
+
+@bp.post('/admin/workspace/names/<ident>/review')
+@admin_required
+def workspace_name_review(ident):
+    from backend.knowledge.discovery_names import review
+    return jsonify(review(ident,body()))
+
+
+@bp.get('/admin/workspace/names/<ident>/history')
+@admin_required
+def workspace_name_history(ident):
+    from backend.knowledge.discovery_names import history
+    return jsonify(history(ident))
+
+
+@bp.post('/admin/workspace/names/<ident>/reopen')
+@admin_required
+def workspace_name_reopen(ident):
+    from backend.knowledge.discovery_names import reopen
+    return jsonify(reopen(ident,body()))
+
+
 @bp.get('/admin/workspace/operations')
 @admin_required
 def workspace_operation_board():

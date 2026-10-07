@@ -36,19 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.5](CHANGELOG.md#v1.8.5)** · [fieldtofit-v1.8.5](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.5)
+**Current source version: [v1.8.6](CHANGELOG.md#v1.8.6)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add a private daily ledger for all published CW profiles, freezing official entry plans, comparing approved dossiers, retaining findings and retry failures, and preparing update proposals.
-- Read and cite revision-bound sections, paragraphs and physical PDF pages, with explicit image, scan and formula gaps and compatible character-offset reads.
-- Bind corrections to specific fields or source positions and track verified publication repairs; expose reviewed receipts while keeping reports, contacts and internal notes private.
-- Compare public CW dossier revisions through share links and downloads, with matching API and four new read-only MCP tools and current withdrawal permissions.
+- Group recent, selected and hot leads privately by name and version with exact source positions; accept local AI identity partitions, official text, changes and reasons, with review history and reopening.
+- Add 12 Doubao iOS/macOS, Volcano Ark, Bailian and MiMo API announcement sources with entry dates, model IDs, regions, deprecation schedules and body corrections; preserve original dates for historical baselines.
+- Scan hot HN stories before checking AI relevance; cap investigations at 10 groups, three searches and five materials per group, and five announcements per source, retaining failures and backlogs without public identity or publication writes.
 <!-- latest-summary:end -->
 
-v1.8.5 is deployed to production, with versions, AI interfaces and existing data verified. Three real days of object checks remain pending; see [actual evidence](docs/validation/2026-10-07-reviewed-maintenance.md).
+Source v1.8.6 is locally verified and not deployed; see [name tracing and 12-source evidence](docs/validation/2026-10-07-discovery-names-sources.md). Production remains v1.8.5, with versions, AI interfaces and existing data verified. Three real days of object checks remain pending; see [production evidence](docs/validation/2026-10-07-reviewed-maintenance.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

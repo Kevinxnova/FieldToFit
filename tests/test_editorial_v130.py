@@ -123,7 +123,8 @@ def test_same_url_changed_body_preserves_previous_material(client,monkeypatch):
         current=db.execute('SELECT * FROM fieldtofit_discoveries').fetchone()
         assert history['fingerprint']==old['fingerprint'] and json.loads(history['materials'])[0]['body']==json.loads(old['materials'])[0]['body']
         assert current['id']==old['id'] and current['fingerprint']!=old['fingerprint']
-    assert len([s for s in catalog.definitions() if s['id'].endswith('-announcements')])==9
+    assert len([s for s in catalog.definitions() if s['config'].get('channel_role')=='announcements'])==9
+    assert len([s for s in catalog.definitions() if s['config'].get('channel_role')=='service'])==12
 
 
 def test_qwen_public_payload_and_bounded_repeat_cycle(client,monkeypatch):

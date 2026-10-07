@@ -11,11 +11,11 @@ ORGANIZATIONS = [
  ('meta','Meta',['Llama'],'meta-llama','https://ai.meta.com/blog/'),
  ('kimi','Kimi',['Kimi'],'moonshotai','https://www.kimi.com/'),
  ('glm','GLM',['GLM'],'zai-org','https://z.ai/'),
- ('qwen','Qwen',['Qwen'],'Qwen','https://qwen.ai/'),
+ ('qwen','Qwen',['Qwen','百炼（阿里云服务平台）'],'Qwen','https://qwen.ai/'),
  ('mimo','MiMo',['MiMo'],'XiaomiMiMo','https://mimo.xiaomi.com/'),
  ('minimax','MiniMax',['MiniMax'],'MiniMaxAI','https://www.minimax.io/'),
  ('deepseek','DeepSeek',['DeepSeek'],'deepseek-ai','https://www.deepseek.com/'),
- ('bytedance','字节',['Seed','Doubao'],'ByteDance-Seed','https://seed.bytedance.com/'),
+ ('bytedance','字节',['Seed','Doubao','火山方舟'],'ByteDance-Seed','https://seed.bytedance.com/'),
 ]
 
 
@@ -49,6 +49,26 @@ def definitions():
     add('github-skills','GitHub · Skill 项目','https://github.com/topics/agent-skills','github',query='topic:agent-skills archived:false',scope='公开 agent-skills 主题仓库；核对 README 和使用入口')
     add('hub-discovery','Hugging Face · 新模型发现','https://huggingface.co/models','hub',scope='公开模型最近变化，非全部模型评测')
     add('hn','Hacker News · AI 讨论线索','https://hn.algolia.com/api/v1/search_by_date','hn',scope='AI / Agent / 模型相关讨论；原始出处未读前保留待核实')
+    add('hn-hot','Hacker News · 高讨论补扫','https://hn.algolia.com/api/v1/search','hn_hot',limit=20,
+        scope='近7天高讨论标题，先收线索再由本地核对是否与 AI 有关；无需标题含 AI')
+    services=[
+        ('doubao-ios','豆包 · iOS 版本记录','https://apps.apple.com/cn/app/id6459478672','apple','client','bytedance','iOS'),
+        ('doubao-mac','豆包 · Mac 版本记录','https://apps.apple.com/cn/app/id6683305962','apple','client','bytedance','macOS'),
+        ('ark-models','火山方舟 · 模型发布','https://docs.volcengine.com/docs/ark/model-release-announcement?lang=zh','ark','model','bytedance','火山方舟'),
+        ('ark-platform','火山方舟 · 产品更新','https://docs.volcengine.com/docs/ark/product-update-announcements?lang=zh','ark','platform','bytedance','火山方舟'),
+        ('ark-deprecation','火山方舟 · 模型下线','https://docs.volcengine.com/docs/ark/model-deprecation-notice?lang=zh','ark','deprecation','bytedance','火山方舟'),
+        ('bailian-models','百炼 · 模型上下架与更新','https://help.aliyun.com/zh/model-studio/newly-released-models','bailian','model','qwen','百炼'),
+        ('bailian-platform','百炼 · 模型平台功能','https://help.aliyun.com/zh/model-studio/model-release-notes','bailian','platform','qwen','百炼'),
+        ('bailian-apps','百炼 · 应用功能','https://help.aliyun.com/zh/model-studio/application-release-notes','bailian','app','qwen','百炼'),
+        ('bailian-deprecation','百炼 · 模型下线','https://help.aliyun.com/zh/model-studio/model-depreciation','bailian','deprecation','qwen','百炼'),
+        ('mimo-api-models','MiMo API · 模型发布','https://mimo.mi.com/docs/en-US/updates/model','mimo','model','mimo','MiMo API'),
+        ('mimo-api-deprecation','MiMo API · 模型下线','https://mimo.mi.com/docs/en-US/updates/deprecate','mimo','deprecation','mimo','MiMo API'),
+        ('mimo-api-platform','MiMo API · 平台更新','https://mimo.mi.com/docs/en-US/updates/feature/platform','mimo','platform','mimo','MiMo API'),
+    ]
+    for ident,name,url,provider,kind,company,platform in services:
+        add(ident+'-announcements',name,url,'service',company,provider=provider,notice_kind=kind,platform=platform,
+            document_code=urlsplit(url).path.rsplit('/',1)[-1] if provider=='ark' else '',
+            limit=5,history_days=30,channel_role='service',scope=platform+' 官方'+name.split(' · ')[-1]+'；逐条保存日期、型号、平台及地域，首次建立历史基线')
     add('research','arXiv · 重点对象相关研究','https://export.arxiv.org/api/query','arxiv',limit=8,
         scope='与重点模型和 Agent 相关的论文标题/摘要，不代表全部 AI 论文或已同行评审')
     return rows
@@ -97,9 +117,10 @@ def registry(admin=False):
             if any(urlsplit(u).hostname in domains or (author and u.lower().startswith(('https://huggingface.co/'+author+'/').lower())) for u in urls):
                 matches.append({'id':p['id'],'name':p.get('name') or p.get('title'),'kind':kind})
         planned=[] if ident in ('openai','anthropic','google') or any(c['id']=='daily-'+ident+'-announcements' for c in linked) else ['官方公告及闭源产品变化入口待接入']
-        if ident=='mimo':planned.append('独立 API 更新日志待确认；当前监测官方产品页')
-        if ident=='bytedance':planned.append('豆包客户端、火山服务公告尚未接入')
-        if ident=='qwen':planned.append('百炼服务公告尚未接入；官方研究入口与服务入口分开')
+        expected={s['id'] for s in declared if s['config'].get('company')==ident and s['config'].get('mode')=='service'}
+        missing=expected-set(byid)
+        if missing:planned.append('部分服务公告配置待升级接入：'+str(len(missing))+' 个；注册后仍需正文采集验证')
+        if ident=='bytedance':planned.append('豆包 Android、Windows、网页端稳定公开更新日志尚未确认')
         tracked.append({'id':ident,'name':name,'products':products,'official_url':url,
             'tracking':['新发布与版本变化','使用材料与开放情况'],'channels':linked,'planned':planned,
             'registered_count':len(linked),'successful_count':len(collected),'published':matches})

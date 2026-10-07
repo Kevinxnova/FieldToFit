@@ -71,6 +71,17 @@ def capture(source,entry):
     ident=store.stable_id('daily',url,version)
     materials=list(entry.get('materials',[]));fresh_materials=list(materials);metadata={**entry.get('metadata',{}),'company':source['config'].get('company','')}
     metrics=entry.get('metrics',{})
+    published=iso(entry.get('published_at'))
+    if metadata.get('change')=='service_announcement' and metadata.get('date_precision')=='day' and (entry.get('published_at') is None or re.fullmatch(r'\d{4}-\d{2}-\d{2}',entry.get('published_at',''))):
+        from backend.knowledge.content_workspace import today
+        declared=metadata.get('declared_date','')
+        # The 06:30 Beijing cycle is on the previous UTC calendar date. Keep
+        # official date-only labels without fabricating midnight timestamps.
+        if isinstance(declared,str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}',declared):
+            try:
+                date_value=datetime.strptime(declared,'%Y-%m-%d').date()
+                if date_value.isoformat()<=today():published=declared
+            except ValueError:pass
     hashes=[(m['url'],m['content_hash']) for m in materials if m.get('title')!='Hub metadata']
     fp=hashlib.sha256(store.encode([entry['title'],entry.get('summary',''),version,hashes]).encode()).hexdigest()
     with editorial_transaction() as db:
@@ -78,6 +89,9 @@ def capture(source,entry):
         # A discussion does not replace primary material already collected for the same object.
         primary=metadata.get('primary',False)
         old_primary=bool(old and store.decode(old['metadata'],{}).get('primary'))
+        if old and old['fingerprint']==fp and store.decode(old['metadata'],{}).get('baseline'):
+            metadata['baseline']=True
+            metadata.setdefault('gaps',[]).append('首次历史基线，保留原日期，不作为今日新增公告')
         if old and metadata.get('gaps') and not any(m.get('coverage')=='full_text' for m in materials):
             retained=[m for m in store.decode(old['materials'],[]) if m.get('coverage')=='full_text']
             if retained:
@@ -93,7 +107,7 @@ def capture(source,entry):
                 'source_id=excluded.source_id,title=excluded.title,summary=excluded.summary,published_at=excluded.published_at,'
                 'discovered_at=CASE WHEN fieldtofit_discoveries.fingerprint!=excluded.fingerprint THEN excluded.discovered_at ELSE fieldtofit_discoveries.discovered_at END,'
                 'updated_at=excluded.updated_at,materials=excluded.materials,metrics=excluded.metrics,metadata=excluded.metadata,fingerprint=excluded.fingerprint',
-                (ident,source['id'],entry['title'][:1000],entry.get('summary','')[:4000],url,entry.get('type','tool'),iso(entry.get('published_at')),stamp,stamp,version,store.encode(materials),store.encode(metrics),store.encode(metadata),fp))
+                (ident,source['id'],entry['title'][:1000],entry.get('summary','')[:4000],url,entry.get('type','tool'),published,stamp,stamp,version,store.encode(materials),store.encode(metrics),store.encode(metadata),fp))
         db.execute('INSERT INTO fieldtofit_discovery_origins VALUES(?,?,?,?) ON CONFLICT(discovery_id,source_id,url) DO UPDATE SET observed_at=excluded.observed_at',
                    (ident,source['id'],entry.get('origin_url') or url,stamp))
         if changed and old:
@@ -113,6 +127,9 @@ def capture(source,entry):
 
 
 def collect(source):
+    if source['config'].get('mode')=='service':
+        from backend.knowledge.service_announcements import collect as notices
+        return notices(source)
     from backend.knowledge.sources import PartialSourceError
     counters=[0,0]
     try:return _collect(source,counters)
@@ -312,13 +329,25 @@ def _collect(source,counters):
                 entries.append({'url':url,'title':repo,'summary':item.get('description') or '',
                     'type':'skill' if 'skills' in cfg['query'] else 'agent','materials':mats,'published_at':item.get('created_at'),
                     'metrics':{'stars':item['stargazers_count']},'metadata':{'primary':bool(mats),'change':'repository','gaps':gaps,'archived':item.get('archived'), 'upstream_updated_at':item.get('pushed_at')}})
-    elif mode=='hn':
-        data=sources.fetch_json(source['url']+'?'+urlencode({'tags':'story','query':'AI','numericFilters':'created_at_i>'+str(int(earliest.timestamp())),'hitsPerPage':limit}))
-        for x in data.get('hits',[]):
-            if not x.get('url') or not store.relevant(x.get('title','')):continue
+    elif mode in ('hn','hn_hot'):
+        query={'tags':'story','numericFilters':'created_at_i>'+str(int(earliest.timestamp())),'hitsPerPage':limit}
+        if mode=='hn':query['query']='AI'
+        if mode=='hn_hot':
+            hits=[]
+            for threshold in ('points>=100','num_comments>=50'):
+                data=sources.fetch_json(source['url']+'?'+urlencode({**query,'numericFilters':query['numericFilters']+','+threshold}))
+                if not isinstance(data.get('hits'),list):raise ValueError('HN discussion response unavailable')
+                hits.extend(data['hits'])
+            hits=list({x['objectID']:x for x in hits}.values())
+        else:
+            data=sources.fetch_json(source['url']+'?'+urlencode(query))
+            if not isinstance(data.get('hits'),list):raise ValueError('HN discussion response unavailable')
+            hits=data['hits']
+        for x in hits:
+            if not x.get('url') or (mode=='hn' and not store.relevant(x.get('title',''))):continue
             entries.append({'url':x['url'],'origin_url':'https://news.ycombinator.com/item?id='+x['objectID'],'title':x['title'],'summary':sources.plain_html(x.get('story_text') or ''),'published_at':None,
-                'metrics':{k:x[k] for k in ('points','num_comments') if isinstance(x.get(k),int)},
-                'metadata':{'primary':False,'change':'discussion','discussion_at':x.get('created_at'),'gaps':['讨论线索，原始材料待核对']}})
+                'metrics':{**{k:x[k] for k in ('points','num_comments') if isinstance(x.get(k),int)},**({'comments':x['num_comments']} if isinstance(x.get('num_comments'),int) else {})},
+                'metadata':{'primary':False,'change':'discussion','discussion_at':x.get('created_at'),'ai_relevance':'pending' if mode=='hn_hot' else 'keyword_lead','gaps':['讨论线索，原始材料与 AI 相关性待核对' if mode=='hn_hot' else '讨论线索，原始材料待核对']}})
     elif mode=='arxiv':
         terms=('DeepSeek','Qwen','Kimi','GLM','Gemini','Claude','agent','harness')
         query=' OR '.join('ti:'+x for x in terms)

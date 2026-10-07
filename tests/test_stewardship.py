@@ -314,7 +314,8 @@ def test_remote_upgrade_uses_atomic_batch_and_is_idempotent(client,monkeypatch):
         for name in ('actions','aliases','links','checks','events','decisions'):db.execute('DROP TABLE fieldtofit_steward_'+name)
     monkeypatch.setattr(s,'get_db',remote)
     s.upgrade();s.upgrade()
-    assert calls==[13,13]
+    # Shared additive workspace migration now also includes four private name tables.
+    assert calls==[17,17]
     with get_db() as db:assert db.execute("SELECT count(*) FROM sqlite_master WHERE type='table' AND name LIKE 'fieldtofit_steward_%'").fetchone()[0]==6
     with get_db() as db:
         for name in ('object_check_plans','object_check_runs','object_check_attempts','correction_contexts','correction_events'):
