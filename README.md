@@ -36,16 +36,16 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.2](CHANGELOG.md#v1.8.2)** · [fieldtofit-v1.8.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.2)
+**当前源码版本：[v1.8.3](CHANGELOG.md#v1.8.3)** · [fieldtofit-v1.8.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.3)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 新增Mistral Large 4公共预览与Claude Cowork云端任务两条动态，并同步本期速览；共83条动态、49项持续关注。
-- 更新Ollama v0.40.0、vLLM v0.31.0、Claude Code v2.1.292档案，分别说明运行条件、迁移配置和任务修复，保留历史版本。
-- 新增Ollama／vLLM固定README与许可证共四份原文，网页与MCP可读取；其他官方正文保留链接及缺口说明。
-- 保留Mistral官方参数口径差异与权重未开放状态；明确Cowork云端任务与本机资源在线条件。AA152／Arena92及原核对日期保持。
+- 补录Auto-review免费、Meetings专题公告、API用量等级、Decisions公开测试、ChatGPT音频上传和数学成果公告，专题共11条：4条Codex／Work、7条其他OpenAI。
+- 六条新增日志同步中英文概览；有真实关联原帖的五条附Tibo摘录及经当前X身份核对的同款头像，补充回复保持折叠。
+- D-55保留9月29日事件和有限预览背景，补记Decisions公测并关联新记录；仅来源日期的两条不推造北京时刻。
+- 网页、公开HTML、API及MCP共用发布修订；正式站共89条动态、49项持续关注，日报、历史专题及模型图保留。
 <!-- latest-summary:end -->
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)

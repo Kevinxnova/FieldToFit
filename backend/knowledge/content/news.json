@@ -2,6 +2,889 @@
   "edition": "2026-09-11-launch",
   "items": [
     {
+      "category": "research",
+      "checked_at": "2026-10-07",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Mathematics results and some Lean proofs released",
+        "overview_zh": "数学成果与部分Lean证明公开",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-06T22:24:02.766000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-07",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-07",
+            "evidence_url": "https://x.com/thsottiaux/status/2107597780352950624",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖短摘录及本站中文摘译；完整正文见原帖链接。",
+            "text_en": "Completely unrelated to the rest of the ships today, but our models did solve some important math problems",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "这与今天其他发布无关；模型解决了一些重要数学问题。",
+            "url": "https://x.com/thsottiaux/status/2107597780352950624"
+          }
+        ],
+        "timestamp_basis": "source_date",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-89",
+      "interpretation": [
+        {
+          "locator": "官方公告及使用说明",
+          "source_ids": [
+            "source-1",
+            "source-2"
+          ],
+          "text": "关注AI数学研究及证明材料的读者；不是新模型接入或套餐功能。 从官方文章进入成果GitHub仓库，按论文修订和引用规则查阅；不能据此启用内部模型。",
+          "title": "影响与使用"
+        },
+        {
+          "locator": "官方范围与日期口径",
+          "source_ids": [
+            "source-1",
+            "source-2"
+          ],
+          "text": "来源日期为10月6日；没有官方精确首发时刻。 单独归其他OpenAI研究公告，不计入Codex／Work主线改进或重置。",
+          "title": "适用范围"
+        }
+      ],
+      "name": "OpenAI",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-07T04:31:41.791009+00:00",
+        "updated_at": "2026-10-07T04:40:24.965396+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "OpenAI数学成果公告",
+          "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Tibo相关说明",
+          "url": "https://x.com/thsottiaux/status/2107597780352950624"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "Tibo当前X身份和头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI发布内部前沿模型产生的一批数学成果，并在GitHub提供论文修订与引用规则、部分Lean形式化证明、模型推理摘要及计算投入说明。此项属于研究成果公开；生成成果的内部模型仍在评估和负责任发布准备中，不能写成新模型已向ChatGPT／Codex用户开放，也不计作28天主线功能改进。",
+      "title": "OpenAI公开内部前沿模型的数学成果与部分Lean证明"
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-07",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Audio uploads and transcription in ChatGPT",
+        "overview_zh": "ChatGPT音频上传与转写",
+        "source_posts": [],
+        "timestamp_basis": "source_date",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-88",
+      "interpretation": [
+        {
+          "locator": "官方公告及使用说明",
+          "source_ids": [
+            "source-1",
+            "source-2"
+          ],
+          "text": "付费ChatGPT订阅与工作区，包括Enterprise；Free不支持。 在对话中附上支持的音频文件并说明需要转写、总结或追问；核对重要细节。",
+          "title": "影响与使用"
+        },
+        {
+          "locator": "官方范围与日期口径",
+          "source_ids": [
+            "source-1",
+            "source-2"
+          ],
+          "text": "仅有官方来源日期，不填写北京公告时刻或event_date。 不把此项与Meetings插件的测试版范围合并。",
+          "title": "适用范围"
+        }
+      ],
+      "name": "OpenAI",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-07T04:31:21.162365+00:00",
+        "updated_at": "2026-10-07T04:31:21.162365+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "官方10月6日更新日志",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "音频上传与范围说明",
+          "url": "https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt"
+        }
+      ],
+      "state": "published",
+      "summary": "官方10月6日更新日志新增音频上传：把支持的录音附到对话中，即可请求转写、摘要、会议要点或后续邮件草稿。功能面向付费ChatGPT订阅与工作区，包括Enterprise；Free暂不支持。可用性仍受工作区设置、地区、客户端与所选模型影响，重要细节需要对照原始录音核对。",
+      "title": "ChatGPT支持上传音频：转写、总结并追问录音内容"
+    },
+    {
+      "_position": 3,
+      "aliases": [
+        "OpenAIDevDay2026"
+      ],
+      "checked_at": "2026-10-07",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-29",
+      "highlight": false,
+      "id": "D-55",
+      "interpretation": [
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3",
+            "source4"
+          ],
+          "text": "Codex Cloud 可以复用已准备的开发环境，各任务获得独立工作区，便于团队统一依赖与设置。Agents API 新增电脑操作入口，使用前仍需核对权限、环境和计费。",
+          "title": "先准备环境再启动任务"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3",
+            "source4"
+          ],
+          "text": "插件可通过 MCP Events 支持事件触发任务，例如出现新工单后读取材料并起草处理计划。该规范仍是提案，现有 MCP 服务不会仅因提供检索就自动具备推送能力。",
+          "title": "从定时查询走向应用事件"
+        },
+        {
+          "locator": "官方技术说明／开放范围",
+          "source_ids": [
+            "source1",
+            "source2",
+            "source3",
+            "source4",
+            "oct07-followup-1",
+            "oct07-followup-2"
+          ],
+          "text": "Decisions API以Luna处理文本或图像上下文，回答条件概率、有限选项或量表评分，面向分类和路由。9月29日DevDay时为有限预览；官方来源日期10月6日已更新为面向所有开发者的公开测试（原始公告北京10月7日04:47）。目前仅支持gpt-6-luna，不能据此声称已优于Jev。详见本次Decisions API公测发布。",
+          "title": "与 Jev 相关的新方向"
+        }
+      ],
+      "name": "OpenAI DevDay 2026",
+      "note": "原始日期：2026-09-29；版本：DevDay 2026 developer workflow updates。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": null,
+        "updated_at": "2026-10-07T04:32:01.614337+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source1",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:25:58.447224+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "DevDay 2026 官方更新汇总",
+          "upstream_revision": "DevDay 2026 developer workflow updates",
+          "url": "https://openai.com/index/devday-2026-recap/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source2",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:29:28.315504+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Codex Cloud 环境文档",
+          "upstream_revision": "DevDay 2026 developer workflow updates",
+          "url": "https://learn.chatgpt.com/docs/cloud.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source3",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:29:28.538332+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MCP Events 提案与接入文档",
+          "upstream_revision": "DevDay 2026 developer workflow updates",
+          "url": "https://developers.openai.com/plugins/build/mcp-events"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-30",
+          "coverage": "link_only",
+          "id": "source4",
+          "locator": "官方发布／配套材料",
+          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
+          "retrieved_at": "2026-09-30T03:29:28.691692+00:00",
+          "rights": {
+            "basis": "仅链接；公开正文需单独核对许可",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Agents API 电脑操作文档",
+          "upstream_revision": "DevDay 2026 developer workflow updates",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "D-12",
+          "name": "OpenAI Agents API",
+          "url": "https://fieldtofit.top/news/D-12"
+        },
+        {
+          "id": "D-25",
+          "name": "Jev",
+          "url": "https://fieldtofit.top/news/D-25"
+        },
+        {
+          "id": "D-87",
+          "name": "Decisions API转入公开测试：用GPT-6 Luna处理分类、路由和有限答案",
+          "url": "https://fieldtofit.top/news/D-87"
+        }
+      ],
+      "source_published_at": "2026-09-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source1",
+          "title": "DevDay 2026 官方更新汇总",
+          "url": "https://openai.com/index/devday-2026-recap/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source2",
+          "title": "Codex Cloud 环境文档",
+          "url": "https://learn.chatgpt.com/docs/cloud.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source3",
+          "title": "MCP Events 提案与接入文档",
+          "url": "https://developers.openai.com/plugins/build/mcp-events"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source4",
+          "title": "Agents API 电脑操作文档",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct07-followup-1",
+          "title": "Decisions公开测试 · 官方公告",
+          "url": "https://x.com/OpenAIDevs/status/2107573382229188645"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct07-followup-2",
+          "title": "Decisions官方指南",
+          "url": "https://developers.openai.com/api/docs/guides/decisions"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 此次开发工具更新覆盖准备环境、操作软件和响应应用事件；另外预览了面向有限答案集合的 Decisions API。 10月6日官方公告补记：Decisions已转入面向所有开发者的公开测试，目前仅支持gpt-6-luna。",
+      "title": "DevDay 开发工具更新：可复用云环境、电脑操作，以及事件触发的插件任务"
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-07",
+      "codex_28_days": {
+        "announced_at": "2026-10-06T20:47:05.800000Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/OpenAIDevs/status/2107573382229188645",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Decisions API enters public beta",
+        "overview_zh": "Decisions API向开发者公测",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-06T20:53:10.609000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-07",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-07",
+            "evidence_url": "https://x.com/thsottiaux/status/2107574912349303197",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖短摘录及本站中文摘译；完整正文见原帖链接。",
+            "text_en": "Decisions API is live.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Decisions API已上线。",
+            "url": "https://x.com/thsottiaux/status/2107574912349303197"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-07",
+      "highlight": false,
+      "id": "D-87",
+      "interpretation": [
+        {
+          "locator": "官方公告及使用说明",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "API开发者，使用gpt-6-luna；公开测试，不是GA或所有模型通用接口。 在Decisions Playground尝试问题与输入，或使用POST /v1/decisions及文档支持的SDK。",
+          "title": "影响与使用"
+        },
+        {
+          "locator": "官方范围与日期口径",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "速度数字为官方声称，本站未复测。9月29日DevDay为有限预览，本条记录面向所有开发者的公开测试阶段。",
+          "title": "适用范围"
+        },
+        {
+          "locator": "Tibo原帖",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "Tibo标注Day 2.4；按原始公告时刻换算北京时间展示，保留官方编号。",
+          "title": "官方专题编号"
+        }
+      ],
+      "name": "OpenAI",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-07T04:31:01.600744+00:00",
+        "updated_at": "2026-10-07T04:40:00.160513+00:00"
+      },
+      "related": [
+        {
+          "id": "D-55",
+          "name": "DevDay 开发工具更新：可复用云环境、电脑操作，以及事件触发的插件任务",
+          "url": "https://fieldtofit.top/news/D-55"
+        }
+      ],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "OpenAI Developers公测公告",
+          "url": "https://x.com/OpenAIDevs/status/2107573382229188645"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Tibo Day 2.4原帖",
+          "url": "https://x.com/thsottiaux/status/2107574912349303197"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "10月6日API日志",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "Decisions官方指南",
+          "url": "https://developers.openai.com/api/docs/guides/decisions"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-5",
+          "title": "Tibo当前X身份和头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI宣布Decisions API已向所有开发者开放公测，目前仅支持gpt-6-luna。接口接收文本或图像，返回条件概率、有限选项或按量表评分，适合分类与路由。可先在Decisions Playground尝试，再使用POST /v1/decisions接入。官方称决策速度较同模型Responses API可快至约10倍，本站未复测；Tibo称未来会用于改进应用体验，不能写成客户端现已集成。",
+      "title": "Decisions API转入公开测试：用GPT-6 Luna处理分类、路由和有限答案"
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-07",
+      "codex_28_days": {
+        "announced_at": "2026-10-06T18:33:02.788000Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/OpenAIDevs/status/2107539647392096384",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "API usage tiers simplified to three",
+        "overview_zh": "API用量等级简化为三档",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-06T19:09:07.144000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-07",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-07",
+            "evidence_url": "https://x.com/thsottiaux/status/2107548725359104441",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖短摘录及本站中文摘译；完整正文见原帖链接。",
+            "text_en": "OK this one is smaller, but we removed some friction for when building on the API.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "这项改进较小，但能减少使用API构建应用时的摩擦。",
+            "url": "https://x.com/thsottiaux/status/2107548725359104441"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-07",
+      "highlight": false,
+      "id": "D-86",
+      "interpretation": [
+        {
+          "locator": "官方公告及使用说明",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "OpenAI API组织和开发者；不是ChatGPT订阅套餐变更。 在Platform Settings → Organization → Limits查看组织等级及模型限流。",
+          "title": "影响与使用"
+        },
+        {
+          "locator": "官方范围与日期口径",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "付费等级简化不等于三个套餐价格，也不意味着所有模型具有同一限流。",
+          "title": "适用范围"
+        },
+        {
+          "locator": "Tibo原帖",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "Tibo标注Day 2.2；按原始公告时刻换算北京时间展示，保留官方编号。",
+          "title": "官方专题编号"
+        }
+      ],
+      "name": "OpenAI",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-07T04:30:41.586335+00:00",
+        "updated_at": "2026-10-07T04:39:34.921189+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "OpenAI Developers原始公告",
+          "url": "https://x.com/OpenAIDevs/status/2107539647392096384"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Tibo Day 2.2原帖",
+          "url": "https://x.com/thsottiaux/status/2107548725359104441"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "10月6日官方API日志",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "官方用量等级与限流说明",
+          "url": "https://developers.openai.com/api/docs/guides/rate-limits"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-5",
+          "title": "Tibo当前X身份和头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI将付费API用量等级从五档改为Build、Launch、Grow三档。达到累计购买门槛后组织自动升级；最高Grow档的门槛由此前1000美元降到500美元。各模型限流与月度使用上限需在Organization → Limits查看，不能把等级调整当作ChatGPT套餐重置或免费API额度。",
+      "title": "OpenAI API用量等级从五档简化为三档，Grow门槛降至累计500美元"
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-07",
+      "codex_28_days": {
+        "announced_at": "2026-10-06T20:25:26.020000Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/ChatGPT/status/2107567930557026653",
+        "group": "codex",
+        "official_day": 2,
+        "overview_en": "Day 2.3: Meetings summaries in Space",
+        "overview_zh": "Day 2.3：会议摘要进入Space",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-06T20:47:11.361000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-07",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-07",
+            "evidence_url": "https://x.com/thsottiaux/status/2107573405553938664",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖短摘录及本站中文摘译；完整正文见原帖链接。",
+            "text_en": "Just talk your heart out and build up the context to load up into codex to get it all done.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "把交流积累成上下文，交给Codex继续完成后续工作。",
+            "url": "https://x.com/thsottiaux/status/2107573405553938664"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-07",
+      "highlight": false,
+      "id": "D-85",
+      "interpretation": [
+        {
+          "locator": "官方公告及使用说明",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "macOS ChatGPT桌面应用的Pro与Business用户；Enterprise仍为后续预告。 更新桌面应用，在插件目录搜索Meetings；会后在Space使用摘要和后续事项。",
+          "title": "影响与使用"
+        },
+        {
+          "locator": "官方范围与日期口径",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "本条记录官方Day 2.3专题公告，9月29日已有Meetings beta；Enterprise仍为后续预告。",
+          "title": "适用范围"
+        },
+        {
+          "locator": "Tibo原帖",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "Tibo标注Day 2.3；按原始公告时刻换算北京时间展示，保留官方编号。",
+          "title": "官方专题编号"
+        }
+      ],
+      "name": "Codex／ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-07T04:30:22.214888+00:00",
+        "updated_at": "2026-10-07T04:39:10.865362+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "ChatGPT Meetings官方公告",
+          "url": "https://x.com/ChatGPT/status/2107567930557026653"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Tibo Day 2.3原帖",
+          "url": "https://x.com/thsottiaux/status/2107573405553938664"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "9月29日已有Meetings beta范围",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "Tibo当前X身份和头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "ChatGPT官方介绍，Meetings插件会记录会议并在Space保存个性化摘要与下一步事项，可私藏或与团队共享，再交给ChatGPT继续整理项目计划或跟进稿。Tibo将这项会议上下文流程列为Day 2.3，建议用会议上下文继续Codex工作。它是macOS桌面端面向Pro与Business的测试版；9月29日更新日志已有该功能，本条记录10月6日的官方专题公告，不声称首次上线。",
+      "title": "官方Day 2.3：把Meetings会议摘要存入Space，供后续工作使用"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-07",
+      "codex_28_days": {
+        "announced_at": "2026-10-06T07:13:54.094000Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2107368734981517634",
+        "group": "codex",
+        "official_day": 2,
+        "overview_en": "Auto-review included without plan usage",
+        "overview_zh": "Auto-review免费，不扣方案用量",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-06T07:13:54.094000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-07",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-07",
+            "evidence_url": "https://x.com/thsottiaux/status/2107368734981517634",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖短摘录及本站中文摘译；完整正文见原帖链接。",
+            "text_en": "We have made Auto-review free for all users signed in through a ChatGPT account.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "我们已让所有通过ChatGPT账号登录的用户免费使用Auto-review。",
+            "url": "https://x.com/thsottiaux/status/2107368734981517634"
+          },
+          {
+            "announced_at": "2026-10-06T16:12:10.759000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-07",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-07",
+            "evidence_url": "https://x.com/thsottiaux/status/2107504197012988007",
+            "kind": "reply",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖短摘录及本站中文摘译；完整正文见原帖链接。",
+            "text_en": "Auto-review is the “Approve for me” permission mode.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Auto-review就是“Approve for me”权限模式。",
+            "url": "https://x.com/thsottiaux/status/2107504197012988007"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-06",
+      "highlight": false,
+      "id": "D-84",
+      "interpretation": [
+        {
+          "locator": "官方公告及使用说明",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "通过ChatGPT账号登录、且客户端与组织策略允许该权限模式的Codex／Work用户；不延伸为API-key工作流免费。 打开权限菜单选择Approve for me，或在Settings → Permissions开启Auto-review；具体入口随客户端版本而异。",
+          "title": "影响与使用"
+        },
+        {
+          "locator": "官方范围与日期口径",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "审核功能调用不扣方案用量，主Agent任务仍按原方案计量。费用说明依据10月6日Tibo新公告；现有安全文档用于解释沙箱与权限机制。",
+          "title": "适用范围"
+        },
+        {
+          "locator": "Tibo原帖",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "Tibo标注Day 2.1；按原始公告时刻换算北京时间展示，保留官方编号。",
+          "title": "官方专题编号"
+        }
+      ],
+      "name": "Codex／ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-07T04:30:00.139867+00:00",
+        "updated_at": "2026-10-07T04:38:46.153845+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Tibo Day 2.1原帖",
+          "url": "https://x.com/thsottiaux/status/2107368734981517634"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Tibo说明Approve for me入口",
+          "url": "https://x.com/thsottiaux/status/2107504197012988007"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "官方Auto-review机制文档",
+          "url": "https://learn.chatgpt.com/docs/sandboxing/auto-review"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "官方安全文档",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-5",
+          "title": "Tibo当前X身份和头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo宣布，以ChatGPT账号登录的用户使用Auto-review现已免费，审核调用不再消耗方案用量。可在Settings → Permissions → Auto-review开启；当前界面也可从输入框下方权限菜单选择“Approve for me”。它由独立审核Agent检查需要跨越沙箱边界的请求，继续遵守现有权限和组织策略。",
+      "title": "Auto-review免费：用“Approve for me”代审边界请求，不扣ChatGPT方案用量"
+    },
+    {
       "_position": 1,
       "category": "model",
       "checked_at": "2026-10-07",
@@ -3334,176 +4217,6 @@
       "state": "published",
       "summary": "OpenAI 推出 Dots：具有云端电脑、可连接应用并持续跟进目标的 Agent。用户可在 ChatGPT、Slack 或 Teams 与其沟通、查看进度和调整任务。",
       "title": "Dots：把持续跟进任务交给常驻 Agent，并明确它可以做什么"
-    },
-    {
-      "_position": 3,
-      "aliases": [
-        "OpenAIDevDay2026"
-      ],
-      "checked_at": "2026-09-30",
-      "editor": "FieldToFit",
-      "event_date": "2026-09-29",
-      "highlight": false,
-      "id": "D-55",
-      "interpretation": [
-        {
-          "locator": "官方技术说明／开放范围",
-          "source_ids": [
-            "source1",
-            "source2",
-            "source3",
-            "source4"
-          ],
-          "text": "Codex Cloud 可以复用已准备的开发环境，各任务获得独立工作区，便于团队统一依赖与设置。Agents API 新增电脑操作入口，使用前仍需核对权限、环境和计费。",
-          "title": "先准备环境再启动任务"
-        },
-        {
-          "locator": "官方技术说明／开放范围",
-          "source_ids": [
-            "source1",
-            "source2",
-            "source3",
-            "source4"
-          ],
-          "text": "插件可通过 MCP Events 支持事件触发任务，例如出现新工单后读取材料并起草处理计划。该规范仍是提案，现有 MCP 服务不会仅因提供检索就自动具备推送能力。",
-          "title": "从定时查询走向应用事件"
-        },
-        {
-          "locator": "官方技术说明／开放范围",
-          "source_ids": [
-            "source1",
-            "source2",
-            "source3",
-            "source4"
-          ],
-          "text": "Decisions API 以 Luna 处理文本或图像上下文，回答预设有限选项，面向分类、路由与动作选择；目前仅有限预览，不能写成全面开放，也不能据此声称已优于 Jev。",
-          "title": "与 Jev 相关的新方向"
-        }
-      ],
-      "name": "OpenAI DevDay 2026",
-      "note": "原始日期：2026-09-29；版本：DevDay 2026 developer workflow updates。本站未安装或复现性能。官网材料仅链接，MCP可读本站解读。",
-      "organization": "OpenAI",
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-30",
-          "coverage": "link_only",
-          "id": "source1",
-          "locator": "官方发布／配套材料",
-          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
-          "retrieved_at": "2026-09-30T03:25:58.447224+00:00",
-          "rights": {
-            "basis": "仅链接；公开正文需单独核对许可",
-            "notice": "",
-            "url": ""
-          },
-          "title": "DevDay 2026 官方更新汇总",
-          "upstream_revision": "DevDay 2026 developer workflow updates",
-          "url": "https://openai.com/index/devday-2026-recap/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-30",
-          "coverage": "link_only",
-          "id": "source2",
-          "locator": "官方发布／配套材料",
-          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
-          "retrieved_at": "2026-09-30T03:29:28.315504+00:00",
-          "rights": {
-            "basis": "仅链接；公开正文需单独核对许可",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Codex Cloud 环境文档",
-          "upstream_revision": "DevDay 2026 developer workflow updates",
-          "url": "https://learn.chatgpt.com/docs/cloud.md"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-30",
-          "coverage": "link_only",
-          "id": "source3",
-          "locator": "官方发布／配套材料",
-          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
-          "retrieved_at": "2026-09-30T03:29:28.538332+00:00",
-          "rights": {
-            "basis": "仅链接；公开正文需单独核对许可",
-            "notice": "",
-            "url": ""
-          },
-          "title": "MCP Events 提案与接入文档",
-          "upstream_revision": "DevDay 2026 developer workflow updates",
-          "url": "https://developers.openai.com/plugins/build/mcp-events"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-30",
-          "coverage": "link_only",
-          "id": "source4",
-          "locator": "官方发布／配套材料",
-          "reason": "未确认该页面正文的再分发依据；MCP可读取本站解读与来源链接。",
-          "retrieved_at": "2026-09-30T03:29:28.691692+00:00",
-          "rights": {
-            "basis": "仅链接；公开正文需单独核对许可",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Agents API 电脑操作文档",
-          "upstream_revision": "DevDay 2026 developer workflow updates",
-          "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-A01",
-          "name": "Codex",
-          "url": "https://fieldtofit.top/watch/CW-A01"
-        },
-        {
-          "id": "D-12",
-          "name": "OpenAI Agents API",
-          "url": "https://fieldtofit.top/news/D-12"
-        },
-        {
-          "id": "D-25",
-          "name": "Jev",
-          "url": "https://fieldtofit.top/news/D-25"
-        }
-      ],
-      "source_published_at": "2026-09-29",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source1",
-          "title": "DevDay 2026 官方更新汇总",
-          "url": "https://openai.com/index/devday-2026-recap/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source2",
-          "title": "Codex Cloud 环境文档",
-          "url": "https://learn.chatgpt.com/docs/cloud.md"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source3",
-          "title": "MCP Events 提案与接入文档",
-          "url": "https://developers.openai.com/plugins/build/mcp-events"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source4",
-          "title": "Agents API 电脑操作文档",
-          "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
-        }
-      ],
-      "state": "published",
-      "summary": "OpenAI 此次开发工具更新覆盖准备环境、操作软件和响应应用事件；另外预览了面向有限答案集合的 Decisions API。",
-      "title": "DevDay 开发工具更新：可复用云环境、电脑操作，以及事件触发的插件任务"
     },
     {
       "_position": 4,

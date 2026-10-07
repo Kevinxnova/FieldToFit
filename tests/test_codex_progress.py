@@ -19,9 +19,12 @@ def event(data, ident='D-78'):
 def test_dates_numbering_precision_shared_api_and_mcp(client):
     body = client.get('/api/v1/platform/news').json
     days = body['codex_progress']['days']
-    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-06', 2), ('2026-10-05', 1)]
-    assert days[0]['codex_ids'] == ['D-79', 'D-78']
-    assert set(days[1]['other_openai_ids']) == {'D-77', 'D-80', 'D-81'}
+    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
+    assert days[0]['codex_ids'] == ['D-85']
+    assert set(days[0]['other_openai_ids']) == {'D-86', 'D-87'}
+    assert days[1]['codex_ids'] == ['D-84', 'D-79', 'D-78']
+    assert set(days[1]['other_openai_ids']) == {'D-88', 'D-89'}
+    assert set(days[2]['other_openai_ids']) == {'D-77', 'D-80', 'D-81'}
     assert event(body)['codex_28_days']['official_day'] == 1
     assert event(body, 'D-77')['event_date'] is None
     assert event(body, 'D-77')['codex_28_days']['announced_at'] is None
@@ -39,7 +42,7 @@ def test_invalid_evidence_blocks_publication(broken, monkeypatch):
     class FixedTime(datetime):
         @classmethod
         def now(cls, tz=None):
-            return cls.fromisoformat('2026-10-06T12:00:00+08:00').astimezone(tz)
+            return cls.fromisoformat('2026-10-07T12:00:00+08:00').astimezone(tz)
     monkeypatch.setattr(codex_progress, 'datetime', FixedTime)
     data = collection(); item = event(data); meta = item['codex_28_days']
     if broken == 'no_timezone': meta['announced_at'] = '2026-10-05T17:20:29'
@@ -69,8 +72,8 @@ def test_drafts_withdrawals_and_corrections_are_revisioned_without_private_state
     assert event(body)['publication']['updated_at']
     call(client, '/content/news/D-78/withdraw', {'draft_version':published['draft_version'], 'reason':'Source correction'})
     body = client.get('/api/v1/platform/news').json
-    assert body['codex_progress']['total'] == 4
-    assert 'D-78' not in body['codex_progress']['days'][0]['codex_ids']
+    assert body['codex_progress']['total'] == first['codex_progress']['total'] - 1
+    assert all('D-78' not in day['codex_ids'] for day in body['codex_progress']['days'])
     assert client.get('/api/v1/platform/news?id=D-78').status_code == 404
     assert client.get('/api/v1/platform/news?revision=' + first['revision']).status_code == 409
 
@@ -179,7 +182,7 @@ def test_month_grid_has_real_dates_without_creating_logs():
     oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
     assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
     assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
-    assert sum(bool(c['log']) for c in oct)==2 and sum(bool(c['log']) for c in nov)==0
+    assert sum(bool(c['log']) for c in oct)==3 and sum(bool(c['log']) for c in nov)==0
     assert topic==before
 
 

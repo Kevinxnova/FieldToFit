@@ -36,16 +36,16 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.2](CHANGELOG.md#v1.8.2)** · [fieldtofit-v1.8.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.2)
+**Current source version: [v1.8.3](CHANGELOG.md#v1.8.3)** · [fieldtofit-v1.8.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.3)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add Mistral Large 4 public preview and Claude Cowork cloud-task developments and refresh the overview: 83 developments and 49 watch profiles.
-- Update Ollama v0.40.0, vLLM v0.31.0 and Claude Code v2.1.292 profiles with runtime requirements, migration changes and task fixes while retaining historical versions.
-- Add four fixed README and license documents for Ollama and vLLM, readable through the website and MCP; other official originals remain linked with explicit coverage gaps.
-- Preserve conflicting Mistral parameter descriptions and pending weights, explain Cowork local-resource availability, and retain AA's 152 points, Arena's 92 points and their review dates.
+- Backfill free Auto-review, the Meetings topic announcement, API tiers, Decisions public beta, ChatGPT audio uploads and mathematical results: 11 topic logs, with four Codex / Work entries and seven other OpenAI entries.
+- Add bilingual overviews to all six entries and verified Tibo excerpts and current X-profile avatars to the five entries with related posts; keep supplementary replies collapsed.
+- Preserve D-55's September 29 limited-preview context while adding its public-beta follow-up and related record; retain source-date precision for the two date-only announcements.
+- Keep the website, static HTML, API and MCP on the same published revision: 89 developments and 49 watch profiles, retaining the briefing, earlier topic logs and reviewed charts.
 <!-- latest-summary:end -->
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)

@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.3"></a>
+## v1.8.3 · Codex日志补录与Decisions公测整理 · 2026-10-07
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 补录Auto-review免费、Meetings专题公告、API用量等级、Decisions公开测试、ChatGPT音频上传和数学成果公告，专题共11条：4条Codex／Work、7条其他OpenAI。
+- 六条新增日志同步中英文概览；有真实关联原帖的五条附Tibo摘录及经当前X身份核对的同款头像，补充回复保持折叠。
+- D-55保留9月29日事件和有限预览背景，补记Decisions公测并关联新记录；仅来源日期的两条不推造北京时刻。
+- 网页、公开HTML、API及MCP共用发布修订；正式站共89条动态、49项持续关注，日报、历史专题及模型图保留。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Backfill free Auto-review, the Meetings topic announcement, API tiers, Decisions public beta, ChatGPT audio uploads and mathematical results: 11 topic logs, with four Codex / Work entries and seven other OpenAI entries.
+- Add bilingual overviews to all six entries and verified Tibo excerpts and current X-profile avatars to the five entries with related posts; keep supplementary replies collapsed.
+- Preserve D-55's September 29 limited-preview context while adding its public-beta follow-up and related record; retain source-date precision for the two date-only announcements.
+- Keep the website, static HTML, API and MCP on the same published revision: 89 developments and 49 watch profiles, retaining the briefing, earlier topic logs and reviewed charts.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。用户在具体六项提案及D-55补记后明确授权整理并发布；新记录D-84至D-89沿用既有保存、预览、复核和发布流程。Meetings记录专题公告而非首次上线，研究成果不表示内部模型可用；重置因范围与生效时间缺失留内部，不生成占位。无接口或数据库迁移；77项回归、构建及仓库检查、本地与正式三宽度、原位置增量同步、health／两MCP v1.8.3及143项站点地图通过；正式部署与同源验收见[本批证据](docs/validation/2026-10-07-codex-updates.md)。真实定时准点、连续三日及末次收尾尚未通过，不以本次补发冒充。
+
 <a id="v1.8.2"></a>
 ## v1.8.2 · Mistral Large 4、Cowork及运行工具档案更新 · 2026-10-07
 
