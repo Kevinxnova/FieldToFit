@@ -6,7 +6,7 @@
 
 ## HTTP MCP
 
-公开地址为 `https://fieldtofit.top/api/mcp/curated`，正式v1.8.5提供17项精选工具，正式部署状态见[总览](../../FieldToFit-PM.md)；包含 `curated_lookup`；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
+公开地址为 `https://fieldtofit.top/api/mcp/curated`，正式v1.8.7提供18项精选工具，正式部署状态见[总览](../../FieldToFit-PM.md)；包含 `curated_lookup`；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
 
 ```json
 {
@@ -19,7 +19,7 @@
 }
 ```
 
-网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 正式v1.8.5共26项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
+网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 正式v1.8.7共27项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
 
 ## Codex专题：首次全量与每日同步
 
@@ -106,7 +106,7 @@ FIELDTOFIT_MCP_URL=https://fieldtofit.top/api/mcp/curated .venv/bin/python -m ba
 
 ## 持续关注 CW1
 
-使用 curated_watch 读取与 For you 同源的五类主体（数量以当前接口为准）。可传 q、id（如 CW-M04）、type（model / tool / agent / skill / harness）、revision。对应 GET /api/v1/platform/watch。每项含版本/技能表、中文整理、单独解读、来源和核验日；出处 coverage 为 link_only，可选材料清单分别说明正文范围。修订变化返回 409，重新读取；撤回返回 404。curated_search 继续读取独立原文库，不会把 CW-ID 当成旧数据库 ID。正式v1.8.5精选工具共17项，原HTTP MCP配置不变；具体服务以tools/list为准。
+使用 curated_watch 读取与 For you 同源的五类主体（数量以当前接口为准）。可传 q、id（如 CW-M04）、type（model / tool / agent / skill / harness）、revision。对应 GET /api/v1/platform/watch。每项含版本/技能表、中文整理、单独解读、来源和核验日；出处 coverage 为 link_only，可选材料清单分别说明正文范围。修订变化返回 409，重新读取；撤回返回 404。curated_search 继续读取独立原文库，不会把 CW-ID 当成旧数据库 ID。正式v1.8.7精选工具共18项，原HTTP MCP配置不变；具体服务以tools/list为准。
 
 
 ## 新动态与持续关注的正文读取
@@ -165,3 +165,8 @@ HTTP 为 `/api/v1/platform/content-changes`，或 `/api/v1/platform/changes?scop
 HTTP目录为`GET /api/v1/platform/content/<id>/materials/<material_id>/locations?content_revision=...`；读取在原材料URL增加`location_id=...`。公开CW历史／对照分别为`GET /api/v1/platform/content/<id>/revisions`与`.../compare?from_revision=...&to_revision=...&include_unchanged=false`，更正说明为`.../corrections`。
 
 CW公开修订编号是内容历史整数，与材料SHA-256修订、集合修订、旧原文库整数revision均分开。只有一个可公开快照时history_unavailable／409；错误位置location_not_found／404；跨对象、已撤回或不可读历史revision_unavailable／409。撤回后的旧材料读取优先返回material_withdrawn／410或对象404。没有记录的历史保持未知；对照表示本站资料变化，不能直接推断上游产品已变化。字段附各自档案出处，尚无逐事实自动证据匹配。
+
+
+## v1.8.7：技术演化地图
+
+正式已提供只读`curated_maps`，与`GET /api/v1/platform/maps`完全同源；可带slug、q、archive及revision。读取`agent-context-cost`可取得首张已审图的节点、关系、配置、数值单位、比较基线、局限与报告章节链接。稳定入口为[首张地图](https://fieldtofit.top/maps/agent-context-cost)，历史和前后对照沿用公开审核边界；只有一个已记录版本时不伪造对照。检查、失败、推荐理由及管理凭据不进入此工具。正式精选／兼容／Codex工具分别18／27／1项，旧配置和读取方式保持。部署证据见[生产验收](../validation/2026-10-08-maps-production.md)。

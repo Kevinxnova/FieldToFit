@@ -36,7 +36,7 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.7](CHANGELOG.md#v1.8.7)** · Release tag not yet published
+**Current source version: [v1.8.7](CHANGELOG.md#v1.8.7)** · [fieldtofit-v1.8.7](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.7)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
@@ -47,7 +47,7 @@ Source and deployed versions are verified separately; see this release's [valida
 - Add a 30-day research and potential-revision queue, daily handoff capped at ten reports and weekly consolidation lists; verified dates and versions feed concrete proposals before owner-approved drafting and publication.
 <!-- latest-summary:end -->
 
-Source v1.8.7 is locally verified and not deployed; see [technical maps, shared AI and editorial maintenance evidence](docs/validation/2026-10-07-technical-maps.md), and [the preceding name tracing and 12-source evidence](docs/validation/2026-10-07-discovery-names-sources.md). Production remains v1.8.5, with versions, AI interfaces and existing data verified. Three real days of object checks remain pending; see [production evidence](docs/validation/2026-10-07-reviewed-maintenance.md).
+v1.8.7 is deployed: the first recent-report technical map is published, name tracing and 12 announcement sources are connected, and the existing 07:30/08:00 maintenance task is updated. See [production evidence](docs/validation/2026-10-08-maps-production.md) for runtime versions, shared AI data and preservation of existing content. Real consecutive-day operation and the first weekly consolidation remain pending.
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

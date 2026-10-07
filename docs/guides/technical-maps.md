@@ -23,7 +23,7 @@ python scripts/maintenance/technical_maps.py --base https://fieldtofit.top --env
 python scripts/maintenance/technical_maps.py --base https://fieldtofit.top --env-file .env --output /private/tmp/map-handoff.json --checks /private/tmp/map-checks.json --proposals /private/tmp/map-proposals.json
 ```
 
-以上生产入口需部署和维护升级后才可使用。本轮未修改既有07:30／08:00自动任务的生产提示，避免其调用尚未上线的入口。部署后把这两次交接加入现有晨间流程，不新建重复任务。
+2026-10-08已完成正式部署和幂等升级；以上生产入口已可用，既有07:30／08:00晨间任务已加入名称追源、来源核对与地图交接。时间、收件对话及具体内容确认门槛保留；不新建重复任务，真实准点／连续日效果另验。
 
 检查输入为列表，每项含url、当前check_version对应的version、status。read需实际body、first_published_at、revised_at、report_version、locator、note及change_kind；变化类型为baseline／unchanged／cosmetic／method／experiment／correction，失败为failed及error。已有正文改变时不能再写baseline或unchanged。每次检查使用版本冲突保护。CLI输出权限为0600，凭据与报告正文不打印。
 

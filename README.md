@@ -36,7 +36,7 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.7](CHANGELOG.md#v1.8.7)** · 尚未推送发布标签
+**当前源码版本：[v1.8.7](CHANGELOG.md#v1.8.7)** · [fieldtofit-v1.8.7](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.7)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
@@ -47,7 +47,7 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 - 接入近30日研究与潜在修订队列、每日10份报告的检查交接及每周整理清单；日期和版本核对后给出具体提案，主人确认再进入草稿与发布。
 <!-- latest-summary:end -->
 
-源码v1.8.7已本地验证、尚未部署：近期报告驱动的技术地图、同源AI与审核／维护流程见[本批验收](docs/validation/2026-10-07-technical-maps.md)；前轮名称追源与十二公告入口见[来源验收](docs/validation/2026-10-07-discovery-names-sources.md)。当前正式站为v1.8.5，版本／AI接口及原数据保护已验；连续三日对象核对另验，见[生产证据](docs/validation/2026-10-07-reviewed-maintenance.md)。
+v1.8.7已正式部署：首张近期报告技术地图已发布，名称追源与十二公告入口已接入，既有07:30／08:00维护任务已更新。正式版本、AI同源及原数据保护见[生产验收](docs/validation/2026-10-08-maps-production.md)；连续真实自然日与首次周整理效果仍待验。
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
 
