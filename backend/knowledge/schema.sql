@@ -417,3 +417,22 @@ CREATE TABLE IF NOT EXISTS fieldtofit_steward_decisions (
  source_id TEXT NOT NULL, target_id TEXT NOT NULL, data TEXT NOT NULL,
  PRIMARY KEY(source_id,target_id)
 );
+
+CREATE TABLE IF NOT EXISTS fieldtofit_object_check_plans (
+ object_id TEXT PRIMARY KEY, data TEXT NOT NULL, version INTEGER NOT NULL, updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_object_check_runs (
+ day TEXT PRIMARY KEY, created_at TEXT NOT NULL, targets TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_object_check_attempts (
+ id TEXT PRIMARY KEY, day TEXT NOT NULL, object_id TEXT NOT NULL, data TEXT NOT NULL, created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS object_check_attempts ON fieldtofit_object_check_attempts(day,object_id,created_at);
+CREATE TABLE IF NOT EXISTS fieldtofit_correction_contexts (
+ feedback_id INTEGER PRIMARY KEY, object_id TEXT NOT NULL, data TEXT NOT NULL,
+ status TEXT NOT NULL DEFAULT 'pending', version INTEGER NOT NULL DEFAULT 1,
+ resolution TEXT NOT NULL DEFAULT '{}', updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fieldtofit_correction_events (
+ id TEXT PRIMARY KEY, feedback_id INTEGER NOT NULL, status TEXT NOT NULL, data TEXT NOT NULL, created_at TEXT NOT NULL
+);

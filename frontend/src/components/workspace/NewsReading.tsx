@@ -1,3 +1,4 @@
+import { ReportCorrection, CorrectionReceipts } from './Corrections';
 import { NewsIndex, ReviewedImage, type NewsMedia } from './NewsIndex';
 import { ContentExposure, trackAction } from './Traffic';
 import { FollowButton } from './FollowUpdates';
@@ -48,7 +49,7 @@ export function NewsReading({ data, loading, error, reload, previewBodies, stand
           <div className="news-related"><span>{pick('关联资料','Related materials')}</span>{item.related.map(r=><span key={r.id}><SourceLink url={r.url}>{r.id} · {r.name}</SourceLink>{!previewBodies&&/^CW-/.test(r.id)&&<FollowButton id={r.id} name={r.name}/>}</span>)}<Link to={'/for-you?q='+encodeURIComponent(item.name)+'#resource-dossiers'}>{pick('查找持续关注','Find an ongoing profile')}</Link></div>
         </details>
       </div>
-      <SourcePosts posts={item.codex_28_days?.source_posts}/><PublicMaintenance value={item.maintenance}/><ContentMaterials item={item} previewBodies={previewBodies}/><div className="platform-actions"><button className="text-button" onClick={() => handoff(item)}>{pick('交给我的 AI', 'Give to my AI')}</button><button className="text-button" onClick={() => share(item)}>{pick('分享动态', 'Share')}</button><SourceLink url={item.sources[0]?.url}>{pick('官方来源', 'Official source')}</SourceLink></div>
+      <SourcePosts posts={item.codex_28_days?.source_posts}/><PublicMaintenance value={item.maintenance}/><ContentMaterials item={item} previewBodies={previewBodies}/>{!previewBodies&&standalone&&<><ReportCorrection id={item.id} field="summary"/><CorrectionReceipts id={item.id}/></>}<div className="platform-actions"><button className="text-button" onClick={() => handoff(item)}>{pick('交给我的 AI', 'Give to my AI')}</button><button className="text-button" onClick={() => share(item)}>{pick('分享动态', 'Share')}</button><SourceLink url={item.sources[0]?.url}>{pick('官方来源', 'Official source')}</SourceLink></div>
     </article>)}</div>
   </section>;
 }

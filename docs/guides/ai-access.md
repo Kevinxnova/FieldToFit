@@ -6,7 +6,7 @@
 
 ## HTTP MCP
 
-公开地址为 `https://fieldtofit.top/api/mcp/curated`，v1.5.0 提供 13 项精选工具，包含 `curated_lookup`；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
+公开地址为 `https://fieldtofit.top/api/mcp/curated`，正式v1.8.5提供17项精选工具，正式部署状态见[总览](../../FieldToFit-PM.md)；包含 `curated_lookup`；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
 
 ```json
 {
@@ -19,11 +19,11 @@
 }
 ```
 
-网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` v1.5.0 共 22 项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
+网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 正式v1.8.5共26项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
 
 ## Codex专题：首次全量与每日同步
 
-专题专用只读地址为`https://fieldtofit.top/api/mcp/codex`，只提供`codex_updates`，与上方通用13工具连接分别配置。For your AI页首的“Codex每日同步”直达连接方式后的专用入口，可复制地址、选择完整专题／Codex主线／其他OpenAI并复制每日同步说明；“接入后，可以这样问”也给出双语示例和返回连接的入口。
+专题专用只读地址为`https://fieldtofit.top/api/mcp/codex`，只提供`codex_updates`，与上方通用精选连接分别配置。For your AI页首的“Codex每日同步”直达连接方式后的专用入口，可复制地址、选择完整专题／Codex主线／其他OpenAI并复制每日同步说明；“接入后，可以这样问”也给出双语示例和返回连接的入口。
 
 示例：“通过FieldToFit的Codex专题连接，先读取全部日志。以后每天北京时间22:30只告诉我新增、更正和撤回，附上官方出处，保留原事件日期；无变化不通知。请在支持定时任务的AI客户端中设置每日同步。”连接本身不创建任务，读取的是当时已审发布的内容。
 
@@ -106,7 +106,7 @@ FIELDTOFIT_MCP_URL=https://fieldtofit.top/api/mcp/curated .venv/bin/python -m ba
 
 ## 持续关注 CW1
 
-使用 curated_watch 读取与 For you 同源的五类主体（数量以当前接口为准）。可传 q、id（如 CW-M04）、type（model / tool / agent / skill / harness）、revision。对应 GET /api/v1/platform/watch。每项含版本/技能表、中文整理、单独解读、来源和核验日；出处 coverage 为 link_only，可选材料清单分别说明正文范围。修订变化返回 409，重新读取；撤回返回 404。curated_search 继续读取独立原文库，不会把 CW-ID 当成旧数据库 ID。v1.5.0 精选工具共 13 项，原 HTTP MCP 配置不变。
+使用 curated_watch 读取与 For you 同源的五类主体（数量以当前接口为准）。可传 q、id（如 CW-M04）、type（model / tool / agent / skill / harness）、revision。对应 GET /api/v1/platform/watch。每项含版本/技能表、中文整理、单独解读、来源和核验日；出处 coverage 为 link_only，可选材料清单分别说明正文范围。修订变化返回 409，重新读取；撤回返回 404。curated_search 继续读取独立原文库，不会把 CW-ID 当成旧数据库 ID。正式v1.8.5精选工具共17项，原HTTP MCP配置不变；具体服务以tools/list为准。
 
 
 ## 新动态与持续关注的正文读取
@@ -147,3 +147,21 @@ HTTP 为 `/api/v1/platform/content-changes`，或 `/api/v1/platform/changes?scop
 范围包含对象本身、直接编辑关联的动态、关系增删及归并／撤销；不按名称相似或多级关系扩散。撤回后的历史事件重新读取时隐藏正文和来源字段。记录启用前的历史不补造，失败不等同于没有更新。
 
 浏览器已读与 AI 已读独立。清单导出不是同步连接；用户更改清单后重新交接。复制说明不表示 MCP 已连接；本机地址不能交给另一设备或云端客户端直接读取。
+
+## v1.8.5：固定位置、定位纠错与CW修订对照
+
+本节描述源码能力；正式是否已部署见[项目总览](../../FieldToFit-PM.md)。全部为只读MCP，不包含后台核对或纠错写入工具。先取材料清单中的`content_revision`，再读目录和片段：
+
+| 工具 | 参数与实际语义 |
+| --- | --- |
+| `curated_locations` | `id`、`material_id`、可选`content_revision`；返回固定正文的sections／paragraphs／pages、原URL、正文哈希和缺口 |
+| `curated_material` | 原参数保留，可加`location_id`（如`section-2`／`page-3`）；offset=0从该位置开始，后续传返回的绝对next_offset，仅续读该范围 |
+| `curated_revisions` | CW的`id`、limit（1–100）、offset；列出录入／审核发布的公开快照编号及日期，导入日期明确为迁移基线 |
+| `curated_revision_compare` | CW的`id`、可选整数from_revision／to_revision、include_unchanged；默认最新与上一公开修订，返回字段前后值、各快照出处与分享路径 |
+| `curated_corrections` | D-/CW-的`id`；仅含已核实公开说明、实际修复修订和出处，不含报告、联系或内部处理记录 |
+
+位置的start／end／offset均按Python Unicode字符计数，范围为[start,end)，不是UTF-8字节或JavaScript UTF-16单元。单段仍默认12000、上限50000字符；next_offset为空表示所选范围结束，不代表整份材料已读完。citation保留对象、材料、固定修订、正文哈希、上游版本、原URL与范围；PDF另列实际文件页序、印刷标签和文件SHA-256。缺文字层／图像未提取／公式布局未验证不能当作已读取内容。
+
+HTTP目录为`GET /api/v1/platform/content/<id>/materials/<material_id>/locations?content_revision=...`；读取在原材料URL增加`location_id=...`。公开CW历史／对照分别为`GET /api/v1/platform/content/<id>/revisions`与`.../compare?from_revision=...&to_revision=...&include_unchanged=false`，更正说明为`.../corrections`。
+
+CW公开修订编号是内容历史整数，与材料SHA-256修订、集合修订、旧原文库整数revision均分开。只有一个可公开快照时history_unavailable／409；错误位置location_not_found／404；跨对象、已撤回或不可读历史revision_unavailable／409。撤回后的旧材料读取优先返回material_withdrawn／410或对象404。没有记录的历史保持未知；对照表示本站资料变化，不能直接推断上游产品已变化。字段附各自档案出处，尚无逐事实自动证据匹配。

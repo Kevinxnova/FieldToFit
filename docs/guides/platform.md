@@ -62,7 +62,7 @@ FIELDTOFIT_DATA_DIR=/tmp/fieldtofit-platform-preview ./scripts/start-backend.sh
 
 原有 `curated_export` 是带事实、引用、版本和读取链接的**资料清单**，正文需继续读取。新增 `curated_bundle` 可直接包含所存正文，两者均不生成任务步骤。网页清单使用实际 API 地址，本机地址会标明云端 AI 无法直接访问。私有部署应另外配置读令牌，不把密钥写进清单。
 
-当前源码为 13 个精选工具，旧 9 个保留，共 22 个；统一检索自 v1.5.0 提供，实际服务能力可核对 tools/list。旧 `search` / `changes` 等仍面向旧知识库，不等价于精选索引/变化流。本轮统一入口为 `curated_lookup`，跨动态／持续关注／已审原文库检索，详见[接入指南](ai-access.md)；旧原文库仍可从 `curated_search` 开始，变化使用 `curated_changes`，概览使用 `curated_editions` / `curated_edition`。HTTP/stdio 连接见[接入指南](ai-access.md)。
+v1.8.5源码为17个精选工具，旧9个保留，共26个；统一检索自 v1.5.0 提供，实际服务能力可核对 tools/list。旧 `search` / `changes` 等仍面向旧知识库，不等价于精选索引/变化流。固定章节／PDF页、CW修订对照及公开纠错说明见[接入增量](ai-access.md#v185固定位置定位纠错与cw修订对照)。统一入口为 `curated_lookup`，跨动态／持续关注／已审原文库检索，详见[接入指南](ai-access.md)；旧原文库仍可从 `curated_search` 开始，变化使用 `curated_changes`，概览使用 `curated_editions` / `curated_edition`。HTTP/stdio 连接见[接入指南](ai-access.md)。
 
 ## 来源检查与日期筛选
 

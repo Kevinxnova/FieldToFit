@@ -1,6 +1,6 @@
 # 资料模型与 AI 读取契约草案
 
-P3 · 2026-09-11。对应 [共享基础](../../FieldToFit-PM.md) 与 [AI 需求](../../FieldToFit-PM.md)。**这是完整目标语义契约，不是当前接口声明。** 当前已实现 `metis.platform.v1` 子集（修订与字符偏移读取、固定快照索引、审核期次及精选变化），差异见[实际接口](../guides/platform.md)；Edition、稳定快照和精选变化基础已实现；章节级游标、独立材料失效等仍按 REQ 补齐。 开发时先映射已有表/字段，优先复用，避免另建一套重复知识库；现有 API 见[使用指南](../guides/ai-access.md)。
+P3 · 2026-09-11。对应 [共享基础](../../FieldToFit-PM.md) 与 [AI 需求](../../FieldToFit-PM.md)。**这是完整目标语义契约，不是当前接口声明。** 当前已实现 `metis.platform.v1` 子集（修订与字符偏移读取、固定快照索引、审核期次及精选变化），差异见[实际接口](../guides/platform.md)；Edition、稳定快照和精选变化基础已实现；v1.8.5源码已增加固定章节／PDF页范围与当前材料失效权限；OCR及逐事实证据映射仍按REQ补齐。 开发时先映射已有表/字段，优先复用，避免另建一套重复知识库；现有 API 见[使用指南](../guides/ai-access.md)。
 
 ## P3 增量设计与已实现子集
 
@@ -76,3 +76,14 @@ P3 · 2026-09-11。对应 [共享基础](../../FieldToFit-PM.md) 与 [AI 需求]
 检索结果返回对象／事件，而不是把同一对象的多个材料拆成多个命中。每项包括 `scope/id/name/types/aliases/introduction/publication_revision/sources/coverage`、`match_reasons/snippets`、`reading/object_reading/bundle_ref` 和当前公开关系／维护状态（当前 D-/CW- 内容）。原文片段包含源 URL、材料 ID、哈希、已有定位与原始字符 `offset/end_offset`。片段是精确引用，未保存的正文不返回。
 
 `publication_revision` 是检索结果的变更标识；继续读取应使用返回的精确工具参数，不自行拼修订。当前材料使用 `content_revision`，旧原文库使用数字 `revision`。固定游标只保证成员与顺序；正文权限和公开数据逐页重查，更新返回 `changed_since_search`，不再公开／匹配则返回只含 ID、不可用标记与说明的占位。来源故障和游标错误不能冒充零结果。详细参数见[接入指南](../guides/ai-access.md)。
+
+## v1.8.5已实现增量与首期边界
+
+本批按[已确认方案](../../FieldToFit-PM.md#req-19)开发，正式状态见总览与[隔离验收](../validation/2026-10-07-reviewed-maintenance.md)。
+
+- Material沿用原body／materials_revision／content_hash，可加location_index（PDF物理页、印刷标签、原文件SHA-256、各页字符范围与缺口）。目录对固定正文构建Markdown标题／HTML标题或段落范围，不重新排版正文。PDF导入仅提取文字层，默认节选、未审批；全扫描文件仅链接，不声明全文。当前不托管原PDF二进制，保留原始URL和文件指纹，未实现OCR、图表实体或公式解析。
+- Correction新增私密上下文与处理事件，绑定对象、实际发布修订、公开字段路径或固定材料选段、报告时基线。完成处理需实际后续publish快照、字段差异、明确公开说明与确认；原文选段可通过修订引用解读解决，不改写来源。仅已解决公开回执进入API／MCP；撤回修订不被再发布重新曝光。联系人、报告原文与内部备注仅后台可读。
+- CW public revisions复用既有content_history，只投影import／publish白名单；最后一次withdraw之前的历史不可再读，当前被移除或撤回读取权限的材料只留最小占位。默认最新与上一不同公开投影，compare返回新增／删除／修改字段及两端档案出处；编辑内容和资料字段分开说明，不把资料变化认定为已验证产品事实。无历史不补造，D动态后续接入。
+- Object checks独立于公开内容、材料可达性检查和来源发现：每日冻结已发布CW集合与必要入口计划，每次获取绑定当前已审基线，正文观察仅私密。核对记录需要字段旧值、新值、实际来源引文、位置／哈希、可选来源日期与版本；失败／未完成不计完成，未处理差异跨重试／日期保留，已发布采纳后才退出待办。缺全入口记录不能称全覆盖。五类对象共用，不自动调用模型、改检查日、建草稿或发布。
+
+新增五表object_check_plans／runs／attempts和correction_contexts／events（统一fieldtofit_前缀）纳入私密备份，既有部署须幂等升级；原读取协议／offset语义兼容。后台API使用管理员凭据；公开目录、对照和回执沿用可选读取令牌；读令牌不能获得管理能力。详细路径见[AI接入](../guides/ai-access.md)和[维护](../guides/management.md)。

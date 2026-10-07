@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.5"></a>
+## v1.8.5 · 对象核对、原文定位、纠错与公开修订对照 · 2026-10-07
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 增加全部已发布CW的每日私密核对台账，冻结清单与官方入口、对照已审档案，保留差异、失败和重试，汇总覆盖并准备更新提案。
+- 已审材料支持固定修订的章节、段落及PDF文件页码读取和引用；图像、扫描与公式缺口明确标注，旧字符续读兼容。
+- 纠错绑定具体字段或原文位置，后台记录受理至实际发布修复；公开更正说明保留依据，报告、联系与内部备注私密。
+- CW详情增加公开修订前后对照、固定链接与下载；网页、API及新增四项只读MCP能力同源，当前撤回权限优先。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add a private daily ledger for all published CW profiles, freezing official entry plans, comparing approved dossiers, retaining findings and retry failures, and preparing update proposals.
+- Read and cite revision-bound sections, paragraphs and physical PDF pages, with explicit image, scan and formula gaps and compatible character-offset reads.
+- Bind corrections to specific fields or source positions and track verified publication repairs; expose reviewed receipts while keeping reports, contacts and internal notes private.
+- Compare public CW dossier revisions through share links and downloads, with matching API and four new read-only MCP tools and current withdrawal permissions.
+<!-- release-summary:en:end -->
+
+对应REQ-19-1／2／3／4、REQ-4-2／8-6、REQ-10-4／8、REQ-14-2与新REQ-21-1至4。2026-10-07用户要求先完善总览方案并开发验证。保留原公开契约，增加五张私密台账／纠错表与一个索引；已有环境需先备份并执行幂等维护升级。精选MCP由13增至17项，兼容端点由22增至26项，Codex专题专用工具仍一项。PDF使用已有pypdf，Flask最低版本提升至3.1以单独限制上传大小。
+
+用户随后明确更新并部署：本批已完成生产70表私密备份、五表幂等升级与v1.8.5正式部署；health／三MCP、新增工具对等、旧读取兼容及原公开集合／草稿／图表／历史保护通过。今日台账建立49项未完成清单，不冒充已核对；核对与提案不自动创建网站草稿或发布。正式49对象必要入口逐项核实、08:00实际交付及连续三日全覆盖待验；公共检查日期、OCR／公式解析与D动态修订对照为后续范围。实际测试、浏览器与迁移证据见[本批验收](docs/validation/2026-10-07-reviewed-maintenance.md)。
+
 <a id="v1.8.4"></a>
 ## v1.8.4 · 官方每日小结与有序日志 · 2026-10-07
 

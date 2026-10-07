@@ -36,16 +36,19 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.4](CHANGELOG.md#v1.8.4)** · [fieldtofit-v1.8.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.4)
+**Current source version: [v1.8.5](CHANGELOG.md#v1.8.5)** · [fieldtofit-v1.8.5](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.5)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add Tibo’s official Day 2 roundup above October 7 calendar Day 3, linking the four existing logs in 2.1–2.4 order with his verified avatar, original post and translation.
-- Order that date’s details as 2.2, 2.3 and 2.4; keep 2.1 on its real October 6 date and both API entries in other OpenAI. The roundup adds no extra events.
-- Share source-backed numbering across the website, static HTML, API, MCP and AI handoff, including cross-date references and scoped or withdrawn-link handling.
+- Add a private daily ledger for all published CW profiles, freezing official entry plans, comparing approved dossiers, retaining findings and retry failures, and preparing update proposals.
+- Read and cite revision-bound sections, paragraphs and physical PDF pages, with explicit image, scan and formula gaps and compatible character-offset reads.
+- Bind corrections to specific fields or source positions and track verified publication repairs; expose reviewed receipts while keeping reports, contacts and internal notes private.
+- Compare public CW dossier revisions through share links and downloads, with matching API and four new read-only MCP tools and current withdrawal permissions.
 <!-- latest-summary:end -->
+
+v1.8.5 is deployed to production, with versions, AI interfaces and existing data verified. Three real days of object checks remain pending; see [actual evidence](docs/validation/2026-10-07-reviewed-maintenance.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

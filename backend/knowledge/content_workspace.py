@@ -445,13 +445,15 @@ def add_candidate(data):
 def feedback_list(q='', status='', offset=0):
     where=['1=1'];args=[];offset=max(0,int(offset))
     if status:
-        if status not in ('pending','reviewing','resolved','declined'):fail('Unknown feedback status')
-        where.append("COALESCE(a.status,'pending')=?");args.append(status)
+        if status not in ('pending','reviewing','ready','publishing','resolved','declined'):fail('Unknown feedback status')
+        where.append("COALESCE(c.status,a.status,'pending')=?");args.append(status)
     if q:where.append('f.content LIKE ?');args.append('%'+q+'%')
-    clause=' FROM knowledge_feedback f LEFT JOIN knowledge_feedback_actions a ON a.feedback_id=f.id WHERE '+' AND '.join(where)
+    clause=' FROM knowledge_feedback f LEFT JOIN knowledge_feedback_actions a ON a.feedback_id=f.id LEFT JOIN fieldtofit_correction_contexts c ON c.feedback_id=f.id WHERE '+' AND '.join(where)
     with get_db() as db:
         total=db.execute('SELECT COUNT(*) n'+clause,args).fetchone()['n']
-        rows=[dict(r) for r in db.execute("SELECT f.*,COALESCE(a.status,'pending') handling_status,a.resolution,a.record_id linked_record"+clause+' ORDER BY f.created_at DESC,f.id DESC LIMIT 30 OFFSET ?',[*args,offset]).fetchall()]
+        rows=[dict(r) for r in db.execute("SELECT f.*,COALESCE(c.status,a.status,'pending') handling_status,a.resolution,a.record_id linked_record,c.feedback_id correction_id"+clause+' ORDER BY f.created_at DESC,f.id DESC LIMIT 30 OFFSET ?',[*args,offset]).fetchall()]
+        for item in rows:
+            if item.pop('correction_id') is not None:item['located_correction']=True
     return {'items':rows,'total':total,'offset':offset,'next_offset':offset+30 if offset+30<total else None}
 
 def export_draft(kind, ident):
@@ -462,7 +464,7 @@ def export_draft(kind, ident):
 def backup():
     """A coherent private snapshot; concurrent publication cannot split its tables."""
     from backend.db import TursoConnection
-    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority','fieldtofit_editorial_batches','fieldtofit_editorial_topics','fieldtofit_editorial_members','fieldtofit_editorial_events','fieldtofit_discovery_versions','fieldtofit_operation_events','fieldtofit_operation_issues','fieldtofit_steward_actions','fieldtofit_steward_aliases','fieldtofit_steward_links','fieldtofit_steward_checks','fieldtofit_steward_events','fieldtofit_steward_decisions')
+    names=('fieldtofit_content_sets','fieldtofit_content_items','fieldtofit_content_history','fieldtofit_inbox','fieldtofit_manual_candidates','fieldtofit_item_sources','fieldtofit_discoveries','fieldtofit_discovery_origins','fieldtofit_attention_observations','fieldtofit_candidate_priority','fieldtofit_editorial_batches','fieldtofit_editorial_topics','fieldtofit_editorial_members','fieldtofit_editorial_events','fieldtofit_discovery_versions','fieldtofit_operation_events','fieldtofit_operation_issues','fieldtofit_steward_actions','fieldtofit_steward_aliases','fieldtofit_steward_links','fieldtofit_steward_checks','fieldtofit_steward_events','fieldtofit_steward_decisions','fieldtofit_object_check_plans','fieldtofit_object_check_runs','fieldtofit_object_check_attempts','fieldtofit_correction_contexts','fieldtofit_correction_events')
     statements=[('SELECT * FROM '+name,()) for name in names]
     with get_db() as db:
         if isinstance(db,TursoConnection):cursors=db.atomic_statements(statements,read_only=True)

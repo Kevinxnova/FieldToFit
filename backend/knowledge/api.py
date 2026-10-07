@@ -56,7 +56,8 @@ def protect():
         allowed = allowed_origins()
         if origin and origin not in allowed:
             return jsonify(detail='Origin is not allowed'), 403
-        if not request.is_json:
+        pdf_upload = request.path == '/api/v1/admin/workspace/materials/pdf-extract' and request.method == 'POST' and request.mimetype == 'multipart/form-data'
+        if not request.is_json and not pdf_upload:
             return jsonify(detail='Use application/json'), 415
 
 
@@ -207,6 +208,9 @@ def cases():
 @bp.post('/feedback')
 def feedback():
     data = body()
+    if data.get('context'):
+        from backend.knowledge.corrections import submit
+        return jsonify(submit(data)), 201
     content = required_text(data, 'content')
     category = data.get('category', 'correction')
     if category not in {'correction', 'missing', 'use_case', 'success', 'failure', 'reuse'}:
@@ -513,6 +517,11 @@ def resolve_conflict(cid):
 @admin_required
 def triage_feedback(fid):
     data=body()
+    with get_db() as db:
+        located=db.execute('SELECT feedback_id FROM fieldtofit_correction_contexts WHERE feedback_id=?',(fid,)).fetchone()
+    if located:
+        from backend.knowledge.corrections import handle
+        return jsonify(handle(fid,data))
     if data.get('status') not in {'pending','reviewing','resolved','declined'}: raise ValueError('Invalid feedback state')
     note=required_text(data,'resolution'); rid=data.get('record_id')
     if rid and not store.get_record(rid,include_withdrawn=True): raise ValueError('Linked record not found')
@@ -815,6 +824,81 @@ def workspace_backup():
     return jsonify(backup())
 
 
+@bp.route('/admin/workspace/object-checks', methods=['GET','POST'])
+@admin_required
+def object_check_board():
+    from backend.knowledge.object_checks import start,overview
+    return jsonify(start(body().get('day')) if request.method=='POST' else overview(request.args.get('day')))
+
+
+@bp.patch('/admin/workspace/object-checks/<ident>/plan')
+@admin_required
+def object_check_plan(ident):
+    from backend.knowledge.object_checks import configure
+    return jsonify(configure(ident,body()))
+
+
+@bp.post('/admin/workspace/object-checks/<ident>/<action>')
+@admin_required
+def object_check_action(ident,action):
+    from backend.knowledge.object_checks import scan,review,overview
+    data=body(); day=data.get('day')
+    if action=='scan':return jsonify(scan(day,ident))
+    if action=='review':return jsonify(review(day,ident,data))
+    if action=='proposal':
+        from backend.knowledge import editorial_batches as batches
+        from backend.knowledge import content_workspace as ws
+        target=next((r for r in overview(day)['items'] if r['id']==ident),None)
+        if not target or target['baseline_changed'] or not target['latest'].get('reviewed_at') or not target['latest'].get('changes'):raise ValueError('先完成有依据的差异核对')
+        batch=batches.create({'day':day}); changes=target['latest']['changes']
+        return jsonify(batches.propose(batch['id'],{'event_url':changes[0]['source_url'],'event_version':ident+':'+target['latest']['baseline_hash'],
+              'fingerprint':__import__('hashlib').sha256(ws.dump(changes).encode()).hexdigest(),
+              'proposal':{'title':target['name']+' · 档案待更新','reason':target['latest']['reason'],'target_id':ident,'changes':changes,
+                          'summary':'官方证据与当前已审资料存在差异；具体上站文案确认后再创建草稿。'}}))
+    return jsonify(detail='Unknown check action'),404
+
+
+@bp.post('/admin/workspace/materials/pdf-extract')
+@admin_required
+def material_pdf_extract():
+    from backend.knowledge.material_locations import extract_pdf
+    request.max_content_length = 10*1024*1024+65536
+    file=request.files.get('file')
+    if not file:raise ValueError('请选择PDF文件')
+    return jsonify(extract_pdf(file.read(10*1024*1024+1)))
+
+
+@bp.get('/admin/workspace/corrections/<int:fid>')
+@admin_required
+def correction_detail(fid):
+    from backend.knowledge.corrections import detail
+    return jsonify(detail(fid))
+
+
+@bp.get('/platform/content/<ident>/correction-context')
+def correction_context(ident):
+    from backend.knowledge.corrections import context
+    return jsonify(context(ident,**{k:request.args[k] for k in ('field','material_id','content_revision','start','end') if k in request.args}))
+
+
+@bp.get('/platform/content/<ident>/corrections')
+def correction_receipts(ident):
+    from backend.knowledge.corrections import public
+    return jsonify(public(ident))
+
+
+@bp.get('/platform/content/<ident>/revisions')
+def content_revisions(ident):
+    from backend.knowledge.content_revisions import history
+    return jsonify(history(ident,**{k:request.args[k] for k in ('limit','offset') if k in request.args}))
+
+
+@bp.get('/platform/content/<ident>/compare')
+def content_revision_compare(ident):
+    from backend.knowledge.content_revisions import compare
+    return jsonify(compare(ident,**{k:request.args[k] for k in ('from_revision','to_revision') if k in request.args},include_unchanged=request.args.get('include_unchanged')=='true'))
+
+
 @bp.get('/platform/source-catalog')
 def source_catalog():
     from backend.knowledge.source_catalog import registry
@@ -898,7 +982,12 @@ def content_material_manifest(ident):
 @bp.get('/platform/content/<ident>/materials/<mid>')
 def content_material_read(ident,mid):
     from backend.knowledge.content_materials import read
-    return jsonify(read(ident,mid,request.args.get('content_revision',''),request.args.get('offset',0),request.args.get('limit',12000)))
+    return jsonify(read(ident,mid,request.args.get('content_revision',''),request.args.get('offset',0),request.args.get('limit',12000),request.args.get('location_id','')))
+
+@bp.get('/platform/content/<ident>/materials/<mid>/locations')
+def content_material_locations(ident,mid):
+    from backend.knowledge.content_materials import locations
+    return jsonify(locations(ident,mid,request.args.get('content_revision','')))
 
 @bp.post('/admin/workspace/upgrade')
 @admin_required

@@ -36,16 +36,19 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.4](CHANGELOG.md#v1.8.4)** · [fieldtofit-v1.8.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.4)
+**当前源码版本：[v1.8.5](CHANGELOG.md#v1.8.5)** · [fieldtofit-v1.8.5](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.5)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 在10月7日日历Day 3详情前加入Tibo官方Day 2小结，按2.1–2.4关联现有四条日志，复用真实头像与完整原帖／译文。
-- 当日详情按2.2、2.3、2.4排列；2.1保留10月6日真实日期并标明已发布，API两项保持其他OpenAI分组，小结不增加事件计数。
-- 网页、无脚本HTML、API、MCP与AI交接共用同源编号；单日交接带跨日关联资料，范围过滤与撤回不会保留无效日志入口。
+- 增加全部已发布CW的每日私密核对台账，冻结清单与官方入口、对照已审档案，保留差异、失败和重试，汇总覆盖并准备更新提案。
+- 已审材料支持固定修订的章节、段落及PDF文件页码读取和引用；图像、扫描与公式缺口明确标注，旧字符续读兼容。
+- 纠错绑定具体字段或原文位置，后台记录受理至实际发布修复；公开更正说明保留依据，报告、联系与内部备注私密。
+- CW详情增加公开修订前后对照、固定链接与下载；网页、API及新增四项只读MCP能力同源，当前撤回权限优先。
 <!-- latest-summary:end -->
+
+本批v1.8.5已部署正式站，版本／AI接口及原数据保护已验；连续三日对象核对另验，见[实际证据](docs/validation/2026-10-07-reviewed-maintenance.md)。
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
 

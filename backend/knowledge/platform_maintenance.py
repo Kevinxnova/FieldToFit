@@ -134,6 +134,14 @@ def run_daily(budget_seconds=180, trigger="manual"):
     started = time.monotonic()
     with track_run('platform_daily') as report:
         report.update(trigger=trigger,timezone='Asia/Shanghai')
+        # Establish the complete daily denominator even when collection exhausts
+        # its budget. Semantic comparisons remain explicit local/editorial work.
+        from backend.knowledge.object_checks import start as start_object_checks
+        try:
+            board=start_object_checks()
+            report['object_checks']={'day':board['day'],'totals':board['totals'],'semantic_review_required':True}
+        except Exception as exc:
+            report['object_checks']={'error':type(exc).__name__,'deferred':True}
         from backend.analytics import clean_expired
         try:
             clean_expired()

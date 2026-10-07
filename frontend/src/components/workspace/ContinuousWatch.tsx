@@ -1,3 +1,5 @@
+import { RevisionCompare } from './RevisionCompare';
+import { ReportCorrection, CorrectionReceipts } from './Corrections';
 import { ProfileNewsOverview } from './ProfileNewsOverview';
 import type { NewsItem } from './NewsReading';
 import { ContentExposure, trackAction } from './Traffic';
@@ -30,6 +32,15 @@ function Block({block,name}:{block:WatchBlock;name:string}) {
   if(block.kind==='paragraph')return <p><WatchText text={block.text}/></p>;
   return <div className="watch-table-scroll" role="region" aria-label={name+pick('内容表',' content table')} tabIndex={0}><table className="watch-table"><caption className="sr-only">{name} · {pick('结构化资料','Structured materials')}</caption><thead><tr>{block.columns.map((s,i)=><th scope="col" key={i}><WatchText text={s}/></th>)}</tr></thead><tbody>{block.rows.map((row,i)=><tr key={i}>{row.map((s,j)=><td key={j}><WatchText text={s}/></td>)}</tr>)}</tbody></table></div>;
 }
+function correctionFields(item:WatchItem,english:boolean){
+  const options=[{field:'introduction',label:english?'Introduction':'介绍'}];
+  item.interpretation.forEach((point,i)=>options.push({field:`interpretation.${i}.text`,label:(english?'Editorial note: ':'解读：')+point.title}));
+  item.blocks.forEach((block,i)=>{
+    if(block.kind==='paragraph')options.push({field:`blocks.${i}.text`,label:(english?'Paragraph ':'资料段落 ')+(i+1)});
+    else block.rows.forEach((row,r)=>row.forEach((_,c)=>options.push({field:`blocks.${i}.rows.${r}.${c}`,label:`${english?'Table':'资料表'} ${i+1} · ${row[0]} · ${block.columns[c]}`})));
+  });
+  return options;
+}
 function packageText(data:WatchCollection,item?:WatchItem){
   return JSON.stringify({schema_version:data.schema_version,revision:data.revision,reviewed_at:data.reviewed_at,scope:data.scope,items:item?[item]:data.items,
     reading:{endpoint:new URL(BASE+'/v1/platform/watch',window.location.origin).href,tool:'curated_watch',arguments:{...(data.origin?{origin:data.origin}:{}),...(item?{id:item.id}:{}),revision:data.revision}},
@@ -60,7 +71,7 @@ export function ContinuousWatch({result,previewBodies,standalone=false,news=[]}:
           {item.blocks.map((b,i)=><Block key={i} block={b} name={item.name}/>)}
           <p className="muted">{pick('以上为官方材料整理与编辑解读，未进行运行实测；原始材料按清单标注可读范围，缺失部分通过出处链接核对。','Based on reviewed official materials, not runtime tests. Follow links to read upstream sources.')}</p>
         </details>
-        <PublicMaintenance value={item.maintenance}/><ContentMaterials item={item} previewBodies={previewBodies}/><WatchHandoff data={data} item={item}/><button className="text-button" onClick={async()=>{const url=new URL(contentPath(item.id),window.location.origin).href;try{await navigator.clipboard.writeText(url);notify(pick('资料链接已复制','Link copied'));}catch{notify(url);}}}>{pick('分享此项','Share profile')}</button>
+        <PublicMaintenance value={item.maintenance}/><ContentMaterials item={item} previewBodies={previewBodies}/>{!previewBodies&&<>{standalone?<><ReportCorrection id={item.id} fieldOptions={correctionFields(item,pick('zh','en')==='en')}/><CorrectionReceipts id={item.id}/><RevisionCompare id={item.id}/></>:<Link to={contentPath(item.id)+'#revisions-'+item.id.toLowerCase()}>{pick('查看修订对照','Compare dossier revisions')}</Link>}</>}<WatchHandoff data={data} item={item}/><button className="text-button" onClick={async()=>{const url=new URL(contentPath(item.id),window.location.origin).href;try{await navigator.clipboard.writeText(url);notify(pick('资料链接已复制','Link copied'));}catch{notify(url);}}}>{pick('分享此项','Share profile')}</button>
       </article>)}</div>
     </section>)}
   </>;

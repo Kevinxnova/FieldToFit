@@ -3991,3 +3991,25 @@ body:has(.mobile-more-dialog[open]), body:has(.toc-drawer[open]) { overflow: hid
 .search-document nav { display: flex; gap: 1rem; flex-wrap: wrap; }
 .published-detail > h1 { overflow-wrap: anywhere; }
 .published-detail .news-points li > a { display: inline-block; margin-right: 1rem; }
+
+/* Revision comparison, source locations and private object checks. */
+.revision-compare, .correction-receipts { margin-top: 1.2rem; padding: 1rem; border: 1px solid var(--line); border-radius: 12px; }
+.revision-compare summary, .check-row summary { cursor: pointer; font-weight: 650; }
+.compare-controls, .revision-values { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.revision-field { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.revision-values > div { min-width: 0; }
+.revision-values pre { max-height: 28rem; overflow: auto; }
+.check-row { margin-top: 1rem; padding: 1rem; border: 1px solid var(--line); border-radius: 10px; }
+.check-row fieldset { margin-top: 1rem; }
+.check-row label, .report-correction label, .correction-review label, .compare-controls label { display: grid; gap: .4rem; margin: .6rem 0; }
+.check-row input:not([type=checkbox]), .check-row textarea, .report-correction input, .report-correction textarea, .correction-review textarea, .compare-controls select { width: 100%; max-width: 100%; box-sizing: border-box; }
+.report-correction form { padding: 1rem; border: 1px solid var(--line); border-radius: 10px; }
+.check-row .platform-original, .report-correction .platform-original { max-height: 22rem; overflow: auto; }
+.material-gaps { padding: .6rem; border-left: 3px solid currentColor; }
+.report-correction select, .content-materials select { max-width: 100%; width: 100%; min-width: 0; }
+.check-control { display: flex !important; flex-direction: row !important; align-items: flex-start; gap: .6rem; margin: .75rem 0; }
+.check-control input[type=checkbox] { width: auto !important; flex-shrink: 0; margin: .3rem 0; }
+@media(max-width:640px) { .compare-controls, .revision-values { grid-template-columns: 1fr; } .revision-compare, .check-row { padding: .75rem; } }
+
+.revision-prose { white-space: pre-wrap; overflow-wrap: anywhere; }
+.revision-values ul { padding-left: 1.25rem; }

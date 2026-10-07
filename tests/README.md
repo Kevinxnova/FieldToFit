@@ -2,6 +2,8 @@
 
 | 文件 | 检查范围 |
 | --- | --- |
+| test_reviewed_maintenance.py | 全对象冻结清单、跨重试差异／失败、固定章节／PDF、私密纠错至实际修复、CW对照／撤回及远程原子并发 |
+| browser/reviewed-maintenance.cjs | 本机隔离流程：章节／PDF、定位纠错、台账提案、真实修复、对照分享／导出与三宽度；配套fixture server只用临时数据库 |
 | test_stewardship.py | 归并／私密归组／撤销、关系、当前材料检查、变化流与历史权限边界 |
 | browser/stewardship.cjs | 仅限隔离本地夹具：管理员归并、撤销、关联／移除、复核及手机布局 |
 | test_knowledge.py | 知识库、查询、权限、账户关闭、MCP 与基本任务 |
