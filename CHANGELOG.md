@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.9"></a>
+## v1.8.9 · 两张模型图表任意公司多选需求登记 · 2026-10-08
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增REQ-7-6：Artificial Analysis 2026与Arena 2026均须支持任意公司组合多选，包含“其他”，保留全部公司与各家旗舰快捷入口。
+- 明确独立选中／取消、最后一家取消后恢复全部、搜索与放大图及表格联动、切换来源及URL保存／旧链接兼容的验收条件。
+- 核对当前源码仅支持全部／旗舰／单家公司；本批登记需求并同步版本文档，多选仍待开发、验证与上线，正式站最近已验为v1.8.8。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add REQ-7-6 for arbitrary company combinations in Artificial Analysis 2026 and Arena 2026, including Other, while retaining All companies and Company flagships shortcuts.
+- Define independent selection/removal, restoring all after removing the last company, linked search/charts/tables, and selection persistence across sources and URLs with legacy-link compatibility.
+- Confirm that current source code supports all companies, flagships or one company. This batch records requirements and synchronizes release documentation; multiselect remains unbuilt, unverified and undeployed, with v1.8.8 the last verified production version.
+<!-- release-summary:en:end -->
+
+对应[REQ-7-6](FieldToFit-PM.md#req-7-6)。总计22项主REQ、140项子REQ。仅交付需求及版本文档，无图表功能、快照、数据库或公开接口变更；未部署、未推送发布标签。实际源码核对、文档与版本检查见[登记与核对](FieldToFit-PM.md#req-7-6-review)，多选交互验收待实现后执行。
+
 <a id="v1.8.8"></a>
 ## v1.8.8 · 10月8日内容与双来源模型图表刷新 · 2026-10-08
 

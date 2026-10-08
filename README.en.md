@@ -36,16 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.8](CHANGELOG.md#v1.8.8)** · [fieldtofit-v1.8.8](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.8)
+**Current source version: [v1.8.9](CHANGELOG.md#v1.8.9)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add GPT-6 Intelligent UI, Haiku 5.5 and Claude SDK browser/computer toolsets; refresh the overview and the GPT, Claude and Claude Code v2.1.293 profiles while preserving version history.
-- Keep Sonnet's September 28 launch prices and append the October 7 cache-read reduction and Haiku release. Original pages remain linked; MCP exposes our commentary and explicit material coverage.
-- Review complete AA and Arena snapshots with 161 and 94 plottable configurations. Arena's data cutoff is October 2, separately from the October 8 review; missing values, estimates, configurations and independent units remain explicit.
-- Add Gemini 4 Argon and Sonnet 5.5 configurations to Arena, retaining official launch dates separately and accepting two exact Google/Anthropic launch domains without expanding score or price sources.
+- Add REQ-7-6 for arbitrary company combinations in Artificial Analysis 2026 and Arena 2026, including Other, while retaining All companies and Company flagships shortcuts.
+- Define independent selection/removal, restoring all after removing the last company, linked search/charts/tables, and selection persistence across sources and URLs with legacy-link compatibility.
+- Confirm that current source code supports all companies, flagships or one company. This batch records requirements and synchronizes release documentation; multiselect remains unbuilt, unverified and undeployed, with v1.8.8 the last verified production version.
 <!-- latest-summary:end -->
 
 v1.8.7 is deployed: the first recent-report technical map is published, name tracing and 12 announcement sources are connected, and the existing 07:30/08:00 maintenance task is updated. See [production evidence](docs/validation/2026-10-08-maps-production.md) for runtime versions, shared AI data and preservation of existing content. Real consecutive-day operation and the first weekly consolidation remain pending.
