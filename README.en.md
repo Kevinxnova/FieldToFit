@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.9](CHANGELOG.md#v1.8.9)** · Release tag not yet published
+**Current source version: [v1.8.10](CHANGELOG.md#v1.8.10)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add REQ-7-6 for arbitrary company combinations in Artificial Analysis 2026 and Arena 2026, including Other, while retaining All companies and Company flagships shortcuts.
-- Define independent selection/removal, restoring all after removing the last company, linked search/charts/tables, and selection persistence across sources and URLs with legacy-link compatibility.
-- Confirm that current source code supports all companies, flagships or one company. This batch records requirements and synchronizes release documentation; multiselect remains unbuilt, unverified and undeployed, with v1.8.8 the last verified production version.
+- AA and Arena support arbitrary company combinations, including Other. Toggle companies independently, restore all after removing the last, and retain All companies and Company flagships shortcuts.
+- Preserve selections in URLs, across reloads and source switches, with legacy company/flagship links supported. Search, values and coverage tables follow the selection while coordinates and reviewed snapshots stay consistent.
+- Add shared company, search and reset controls to enlarged charts. Complete the REQ-7-6 design; 44 regression tests, the production build and 14 browser check groups pass. Production deployment remains pending.
 <!-- latest-summary:end -->
 
 v1.8.7 is deployed: the first recent-report technical map is published, name tracing and 12 announcement sources are connected, and the existing 07:30/08:00 maintenance task is updated. See [production evidence](docs/validation/2026-10-08-maps-production.md) for runtime versions, shared AI data and preservation of existing content. Real consecutive-day operation and the first weekly consolidation remain pending.
