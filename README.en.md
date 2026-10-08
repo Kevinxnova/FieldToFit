@@ -36,7 +36,7 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.10](CHANGELOG.md#v1.8.10)** · Release tag not yet published
+**Current source version: [v1.8.10](CHANGELOG.md#v1.8.10)** · [fieldtofit-v1.8.10](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.10)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
@@ -44,10 +44,10 @@ Source and deployed versions are verified separately; see this release's [valida
 <!-- latest-summary:start -->
 - AA and Arena support arbitrary company combinations, including Other. Toggle companies independently, restore all after removing the last, and retain All companies and Company flagships shortcuts.
 - Preserve selections in URLs, across reloads and source switches, with legacy company/flagship links supported. Search, values and coverage tables follow the selection while coordinates and reviewed snapshots stay consistent.
-- Add shared company, search and reset controls to enlarged charts. Complete the REQ-7-6 design; 44 regression tests, the production build and 14 browser check groups pass. Production deployment remains pending.
+- Add shared company, search and reset controls to enlarged charts. Complete the REQ-7-6 design; 44 regression tests, the production build and 14 browser check groups in both local and production environments pass. Version 1.8.10 is deployed.
 <!-- latest-summary:end -->
 
-v1.8.7 is deployed: the first recent-report technical map is published, name tracing and 12 announcement sources are connected, and the existing 07:30/08:00 maintenance task is updated. See [production evidence](docs/validation/2026-10-08-maps-production.md) for runtime versions, shared AI data and preservation of existing content. Real consecutive-day operation and the first weekly consolidation remain pending.
+v1.8.10 is deployed: AA and Arena support arbitrary company combinations with linked main charts, enlarged views and tables. See [production evidence](docs/validation/2026-10-08-chart-selection.md#production-deployment) for runtime versions, all three MCP endpoints, preserved public data and desktop/mobile selection checks. Existing maps, discovery and morning tasks remain in place; real consecutive-day operation and the first weekly consolidation remain pending.
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

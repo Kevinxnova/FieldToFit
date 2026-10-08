@@ -6,14 +6,13 @@
 
 <a id="v1.8.10"></a>
 ## v1.8.10 · 模型图表任意公司多选 · 2026-10-08
-<!-- release-tag:unpublished -->
 
 ### 更新重点
 
 <!-- release-summary:zh:start -->
 - AA与Arena支持任意公司组合，包含“其他”；按钮独立选中／取消，取消最后一家恢复全部，保留全部公司和各家旗舰快捷入口。
 - 多选随网址保存、刷新和来源切换保留；旧单公司／旗舰链接兼容，搜索、数值表及缺项清单同步筛选，固定坐标与来源快照保持。
-- 放大窗口提供同一套公司多选、搜索与重置控件；完善REQ-7-6方案，44项回归、生产构建及14组浏览器验收通过，正式部署待执行。
+- 放大窗口提供同一套公司多选、搜索与重置控件；完善REQ-7-6方案，44项回归、生产构建及本地／正式各14组浏览器验收通过，已部署v1.8.10。
 <!-- release-summary:zh:end -->
 
 ### Release highlights
@@ -21,10 +20,10 @@
 <!-- release-summary:en:start -->
 - AA and Arena support arbitrary company combinations, including Other. Toggle companies independently, restore all after removing the last, and retain All companies and Company flagships shortcuts.
 - Preserve selections in URLs, across reloads and source switches, with legacy company/flagship links supported. Search, values and coverage tables follow the selection while coordinates and reviewed snapshots stay consistent.
-- Add shared company, search and reset controls to enlarged charts. Complete the REQ-7-6 design; 44 regression tests, the production build and 14 browser check groups pass. Production deployment remains pending.
+- Add shared company, search and reset controls to enlarged charts. Complete the REQ-7-6 design; 44 regression tests, the production build and 14 browser check groups in both local and production environments pass. Version 1.8.10 is deployed.
 <!-- release-summary:en:end -->
 
-对应[REQ-7-6](FieldToFit-PM.md#req-7-6)。使用重复的`company`网址参数保存公司集合，保留旧单值及`company=flagship`入口；无数据库迁移或公开接口变化。AA161／Arena94及原配置、来源、数值、单位、日期和旗舰名单保持。实际构建、回归与浏览器结果见[本批验收](docs/validation/2026-10-08-chart-selection.md)，未部署、未推送发布标签。
+对应[REQ-7-6](FieldToFit-PM.md#req-7-6)。使用重复的`company`网址参数保存公司集合，保留旧单值及`company=flagship`入口；无数据库迁移或公开接口变化。AA161／Arena94及原配置、来源、数值、单位、日期和旗舰名单保持。实际构建、回归与浏览器结果见[本批验收](docs/validation/2026-10-08-chart-selection.md)。已部署v1.8.10，正式health／三MCP、原公开内容保持、资源及同范围14组生产浏览器验收通过；源码与发布状态收尾属于同一已验批次。
 
 <a id="v1.8.9"></a>
 ## v1.8.9 · 两张模型图表任意公司多选需求登记 · 2026-10-08

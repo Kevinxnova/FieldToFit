@@ -2,7 +2,7 @@
 
 仅 Artificial Analysis / Arena，移除 Epoch。保留各自坐标定义，不统一评分。快照：`backend/knowledge/content/model-landscape.json`；HTTP：`/api/v1/platform/model-landscape`。图表由公开 HTTP 读取；既有 MCP 工具范围不变。
 
-v1.8.10新增任意公司多选，具体交互见下节；本地开发和验证状态见[本批验收](../validation/2026-10-08-chart-selection.md)。下方来源覆盖表和旗舰名单说明记录v1.5.14／2026-09-23快照；最新已发布数据为AA161／Arena94，见[2026-10-08内容验收](../validation/2026-10-08-editorial.md)。
+v1.8.10新增任意公司多选，具体交互见下节；已完成本地及正式验证并部署，见[生产验收](../validation/2026-10-08-chart-selection.md#production-deployment)。下方来源覆盖表和旗舰名单说明记录v1.5.14／2026-09-23快照；最新已发布数据为AA161／Arena94，见[2026-10-08内容验收](../validation/2026-10-08-editorial.md)。
 
 ## 任意公司多选 · REQ-7-6
 
