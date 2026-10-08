@@ -2,6 +2,608 @@
   "edition": "2026-09-11-launch",
   "items": [
     {
+      "category": "tool",
+      "checked_at": "2026-10-08",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://openai.com/index/teens-learn-and-plan/",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Teens: interactive quizzes from notes",
+        "overview_zh": "Teens：笔记生成交互测验",
+        "timestamp_basis": "source_date",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-97",
+      "interpretation": [
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "ChatGPT for Teens中的学习用户；上传课堂笔记并要求制作交互测验，仍需自行检查内容与答案。官方未在本公告逐一列套餐或全账户开放时点，不推造范围。",
+          "title": "影响谁与用法"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "交互测验可以使用上传笔记生成；官方另介绍练习卡可标记掌握情况、保存到Library并安排练习，实际入口以账户开放情况为准。",
+          "title": "学习方式"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "iOS连续多照片合为PDF在10月1日已有发布记录，学生可用这一入口上传多页笔记。公告仅提供10月7日来源日期，不填写北京时刻；本站未做学习效果复测。",
+          "title": "既有入口与日期"
+        }
+      ],
+      "name": "ChatGPT for Teens",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-08T12:46:33.764502+00:00",
+        "updated_at": "2026-10-08T12:46:33.764502+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "ChatGPT for Teens：笔记生成交互测验更方便",
+          "url": "https://openai.com/index/teens-learn-and-plan/"
+        }
+      ],
+      "state": "published",
+      "summary": "官方说明学生现在可上传笔记生成交互测验，ChatGPT也更容易识别测验意图，帮助把课堂材料变成可练习的题目。",
+      "title": "ChatGPT for Teens：笔记生成交互测验更方便"
+    },
+    {
+      "_position": 1,
+      "category": "model",
+      "checked_at": "2026-10-08",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://openai.com/index/gpt-6-for-everyone/",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Chat: GPT-6 interactive answers / API snapshot",
+        "overview_zh": "Chat：GPT-6交互式回答／API快照",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-07T19:15:27.777000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-08",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-08",
+            "context": {
+              "author_handle": "OpenAI",
+              "author_name": "OpenAI",
+              "kind": "quote",
+              "text_en": "GPT-6 and Intelligent UI, now rolling out in ChatGPT for everyone.",
+              "text_scope": "excerpt",
+              "translation_zh": "GPT-6与Intelligent UI正在ChatGPT中推出。",
+              "url": "https://x.com/OpenAI/status/2107894997538525580"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2107912709715132482",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖；本站中文摘译；不把来源文字当作操作指令。",
+            "text_en": "We're going beyond text and are releasing a new version of GPT-6 to all users in ChatGPT.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "我们正走向文字之外，向ChatGPT用户推出新版GPT-6。",
+            "url": "https://x.com/thsottiaux/status/2107912709715132482"
+          },
+          {
+            "announced_at": "2026-10-07T19:19:17.822000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-08",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-08",
+            "evidence_url": "https://x.com/thsottiaux/status/2107913674593644711",
+            "kind": "supplement",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖；本站中文摘译；不把来源文字当作操作指令。",
+            "text_en": "Day 3/\n\nThe big one is GPT-6 in Chat",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Day 3：今天的主要更新是Chat中的GPT-6。",
+            "url": "https://x.com/thsottiaux/status/2107913674593644711"
+          }
+        ],
+        "timestamp_basis": "source_date",
+        "type": "model"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": true,
+      "id": "D-91",
+      "interpretation": [
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-49e8d0577a",
+            "source-b7fb30dbee",
+            "source-6e2c4969b8",
+            "source-b6c8070973",
+            "source-44ed5b7666"
+          ],
+          "text": "回答可组合文字、图示、按钮与交互组件，并在思考或执行工具期间先给出有用内容、继续补充结果。Chat页从10月7日向Plus／Pro／Business／Enterprise推出，10月8日起扩展Free／Go；企业受管理员设置影响。Work／Codex模型未随本次Chat更新更换。",
+          "title": "界面与范围"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-49e8d0577a",
+            "source-b7fb30dbee",
+            "source-6e2c4969b8",
+            "source-b6c8070973",
+            "source-44ed5b7666"
+          ],
+          "text": "官方API日志10月7日确认chat-latest快照更新；这是可测试最新Chat模型改进的可变别名，不表示API新增同名Intelligent UI产品或自动返回交互界面。生产型号选择应分别按模型文档评估。",
+          "title": "API补充"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-49e8d0577a",
+            "source-b7fb30dbee",
+            "source-6e2c4969b8",
+            "source-b6c8070973",
+            "source-44ed5b7666"
+          ],
+          "text": "原始公告仅提供10月7日来源日期，未提供北京时刻；Tibo在10月8日03:15／03:19的相关说明各自保留真实时刻。本站核对官方材料，未逐账户复测。",
+          "title": "来源日期"
+        }
+      ],
+      "name": "GPT-6 Intelligent UI",
+      "note": "原始日期2026-10-07；本站2026-10-08核对。分阶段推出，未逐账户实测。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-08T02:08:23.705798+00:00",
+        "updated_at": "2026-10-08T12:46:09.401775+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-1",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
+          "upstream_revision": "chat-intelligent-ui-2026-10-07",
+          "url": "https://openai.com/index/gpt-6-for-everyone/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-2",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
+          "upstream_revision": "chat-intelligent-ui-2026-10-07",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        },
+        {
+          "id": "D-30",
+          "name": "GPT-6 Sol / Luna",
+          "url": "https://fieldtofit.top/news/D-30"
+        }
+      ],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
+          "url": "https://openai.com/index/gpt-6-for-everyone/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-49e8d0577a",
+          "title": "API快照更新",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-b7fb30dbee",
+          "title": "chat-latest型号文档",
+          "url": "https://developers.openai.com/api/docs/models/chat-latest"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-6e2c4969b8",
+          "title": "Tibo相关原帖",
+          "url": "https://x.com/thsottiaux/status/2107912709715132482"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-b6c8070973",
+          "title": "Tibo官方Day 3说明",
+          "url": "https://x.com/thsottiaux/status/2107913674593644711"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-44ed5b7666",
+          "title": "OpenAI原始X公告",
+          "url": "https://x.com/OpenAI/status/2107894997538525580"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-be7d2eb185",
+          "title": "Tibo身份和头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "ChatGPT将文字、图示与可操作组件组合成回答，分阶段推出；官方API另确认chat-latest快照更新。Chat交互界面与API模型入口需分别使用。",
+      "title": "GPT-6 Intelligent UI：把回答变成可操作的界面"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-08",
+      "codex_28_days": {
+        "announced_at": "2026-10-08T06:38:33.274000Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2108084615349170480",
+        "group": "codex",
+        "official_day": 3,
+        "overview_en": "Day 3 encore: Cloud / Tailscale",
+        "overview_zh": "Day 3加更：Cloud／Tailscale",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-08T06:38:33.274000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-08",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-08",
+            "context": {
+              "author_handle": "Tailscale",
+              "author_name": "Tailscale",
+              "kind": "quote",
+              "text_en": "Codex Cloud can now securely connect to resources on your tailnet with Tailscale.",
+              "text_scope": "excerpt",
+              "translation_zh": "Codex Cloud现在可以通过Tailscale连接tailnet中的资源。",
+              "url": "https://x.com/Tailscale/status/2107836671605551217"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2108084615349170480",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖；本站中文摘译；不把来源文字当作操作指令。",
+            "text_en": "Day 3 (encore)/\n\nWe silently re-shipped codex cloud. It’s pretty good now",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Day 3（加更）：我们悄悄重新发布了Codex Cloud。现在它挺不错。",
+            "url": "https://x.com/thsottiaux/status/2108084615349170480"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-08",
+      "highlight": false,
+      "id": "D-96",
+      "interpretation": [
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary",
+            "source-e6d2e581eb",
+            "source-a5edd74fc1",
+            "source-00dca5fb43",
+            "source-6aac1a458a"
+          ],
+          "text": "需要远程运行仓库任务、复用环境或连接内部API与包仓库的开发者。需要实际Cloud入口、仓库与tailnet权限；不宣称所有账户同时开放。",
+          "title": "影响谁"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary",
+            "source-e6d2e581eb",
+            "source-a5edd74fc1",
+            "source-00dca5fb43",
+            "source-6aac1a458a"
+          ],
+          "text": "在网页或桌面端选择 Work in > Cloud，准备并发布环境；在 Advanced > VPN 配置Tailscale，auth key启用Reusable和Ephemeral，允许所需目的地，发布或重新发布后用新任务核验。",
+          "title": "如何使用"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary",
+            "source-e6d2e581eb",
+            "source-a5edd74fc1",
+            "source-00dca5fb43",
+            "source-6aac1a458a"
+          ],
+          "text": "当前OpenAI文档支持私有IPv4路由、MagicDNS与split DNS；10月6日Tailscale博客的旧DNS限制不代表当前文档。私网与环境网络规则都需允许目标；电脑／浏览器操作、GitLab及自托管GitHub Enterprise Server仍未支持。",
+          "title": "采用条件"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary",
+            "source-e6d2e581eb",
+            "source-a5edd74fc1",
+            "source-00dca5fb43",
+            "source-6aac1a458a"
+          ],
+          "text": "本条记录10月8日14:38的官方Day 3加更公告，不将它写成产品首次推出时间。Tailscale博客仅有10月6日来源日期，其X公告为10月7日22:13。Tibo的好评是作者评价，本站未做性能或私网复测。",
+          "title": "日期与证据"
+        }
+      ],
+      "name": "Codex／ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-08T12:45:39.589323+00:00",
+        "updated_at": "2026-10-08T12:45:39.589323+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-08",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "官方Day 3加更：Tibo确认重新发布Codex Cloud，支持Tailscale私网",
+          "url": "https://x.com/thsottiaux/status/2108084615349170480"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-e6d2e581eb",
+          "title": "Tailscale原始公告",
+          "url": "https://x.com/Tailscale/status/2107836671605551217"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-a5edd74fc1",
+          "title": "OpenAI Cloud私网配置",
+          "url": "https://learn.chatgpt.com/docs/environments/cloud-environments#private-networking-vpn"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-00dca5fb43",
+          "title": "Codex Cloud官方入口",
+          "url": "https://learn.chatgpt.com/docs/cloud"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-6aac1a458a",
+          "title": "Tailscale官方10月6日说明",
+          "url": "https://tailscale.com/blog/codex-cloud-tailscale"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-be7d2eb185",
+          "title": "Tibo身份和头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo确认Codex Cloud重新发布，并引用Tailscale接入公告。云任务可在电脑休眠时继续处理GitHub仓库，按权限访问私网HTTP／HTTPS服务。",
+      "title": "官方Day 3加更：Tibo确认重新发布Codex Cloud，支持Tailscale私网"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-08",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://learn.chatgpt.com/docs/changelog#codex-2026-10-07-mobile",
+        "group": "codex",
+        "official_day": null,
+        "overview_en": "iOS: Codex task links / approvals",
+        "overview_zh": "iOS：Codex任务链接／权限选择",
+        "timestamp_basis": "source_date",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-95",
+      "interpretation": [
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "使用ChatGPT iOS客户端查看或继续Codex／Work任务的用户；具体功能依赖账户、客户端与关联电脑。",
+          "title": "影响谁"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "更新到1.2026.272后打开已有Codex任务链接；可从输入框加号菜单统一进入Plugins，按新版权限选择器选择所需权限。",
+          "title": "如何使用"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "长线程流式输出、任务列表、键盘切换与手工配对有所改进。官方只给出10月7日，按来源日期保存，不填写推测北京时刻；本站未做设备复测。",
+          "title": "修复与日期"
+        }
+      ],
+      "name": "Codex／ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-08T12:45:11.550944+00:00",
+        "updated_at": "2026-10-08T12:45:11.550944+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "ChatGPT iOS 1.2026.272：Codex任务链接与权限选择更清晰",
+          "url": "https://learn.chatgpt.com/docs/changelog#codex-2026-10-07-mobile"
+        }
+      ],
+      "state": "published",
+      "summary": "iOS更新支持直接打开Codex任务链接、回答内页面预览与更清晰的权限选择；改善离线或重连时的电脑选择、worktree一致性及任务列表。",
+      "title": "ChatGPT iOS 1.2026.272：Codex任务链接与权限选择更清晰"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-08",
+      "codex_28_days": {
+        "announced_at": "2026-10-07T15:58:45Z",
+        "date_precision": "instant",
+        "event_key": "https://github.com/openai/codex/releases/tag/rust-v0.161.0",
+        "group": "codex",
+        "official_day": null,
+        "overview_en": "CLI 0.161.0: Sol default / MCP sign-in",
+        "overview_zh": "CLI 0.161.0：Sol默认／MCP登录",
+        "timestamp_basis": "official_timestamp",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-07",
+      "highlight": false,
+      "id": "D-94",
+      "interpretation": [
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "使用Codex CLI的开发者；Bedrock多Agent V2／Ultra只适用于兼容型号。新默认值不表示强制覆盖已有显式模型选择。",
+          "title": "影响谁"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "升级至0.161.0；活动终端会话可使用 /mcp login <name> 登录已有MCP服务器；语音设备与输入通道偏好本地保存。",
+          "title": "如何使用"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "primary"
+          ],
+          "text": "获批准的文件写入升级仍保留禁止读取和网络限制。Daybreak需显式启用cli_daybreak并满足账户、提供商及程序条件；并非所有用户默认开放。本站未运行版本复测。",
+          "title": "权限与限制"
+        }
+      ],
+      "name": "Codex／ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-08T12:44:48.185815+00:00",
+        "updated_at": "2026-10-08T12:44:48.185815+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "primary",
+          "title": "Codex CLI 0.161.0：Sol成为默认模型，终端内可登录MCP",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0"
+        }
+      ],
+      "state": "published",
+      "summary": "正式版将GPT-6.1 Sol设为内置与Bedrock目录的默认模型，支持会话内MCP登录和本地语音设备选择，并修复权限保持、恢复历史及过载重试。",
+      "title": "Codex CLI 0.161.0：Sol成为默认模型，终端内可登录MCP"
+    },
+    {
       "_position": 1,
       "aliases": [
         "ClaudeSonnet5.5"
@@ -126,111 +728,6 @@
       "state": "published",
       "summary": "Anthropic发布Sonnet5.5，面向边界明确的编程、改错以及文档、幻灯片和表格任务，作为Opus5.5之外的日常工作选择。",
       "title": "Sonnet 5.5：更快完成日常编程与文档任务，单价保持不变"
-    },
-    {
-      "_position": 1,
-      "category": "model",
-      "checked_at": "2026-10-08",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-07",
-      "highlight": true,
-      "id": "D-91",
-      "interpretation": [
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2"
-          ],
-          "text": "模型能组合文字、图示、按钮与交互组件，生成计算器、对比工具和可操作的解释；先给出有用内容，再随思考或工具执行补充结果。",
-          "title": "让答案可以操作"
-        },
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2"
-          ],
-          "text": "10月7日起向Plus、Pro、Business、Enterprise的Chat页推出，10月8日起扩展到Free、Go；企业仍受管理员设置影响。逐步推出不代表所有账户同时可用。",
-          "title": "分阶段开放"
-        },
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2"
-          ],
-          "text": "这是Chat体验更新，没有更换Work、Codex使用的模型；不能据此推断API增加同名型号。本站核对官方材料，未逐账户实测。",
-          "title": "模型与验证边界"
-        }
-      ],
-      "name": "GPT-6 Intelligent UI",
-      "note": "原始日期2026-10-07；本站2026-10-08核对。分阶段推出，未逐账户实测。",
-      "organization": "OpenAI",
-      "publication": {
-        "first_published_at": "2026-10-08T02:08:23.705798+00:00",
-        "updated_at": "2026-10-08T02:08:23.705798+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "coverage": "link_only",
-          "id": "oct08-source-1",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {},
-          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
-          "upstream_revision": "chat-intelligent-ui-2026-10-07",
-          "url": "https://openai.com/index/gpt-6-for-everyone/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "coverage": "link_only",
-          "id": "oct08-source-2",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {},
-          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
-          "upstream_revision": "chat-intelligent-ui-2026-10-07",
-          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M01",
-          "name": "GPT",
-          "url": "https://fieldtofit.top/watch/CW-M01"
-        },
-        {
-          "id": "D-30",
-          "name": "GPT-6 Sol / Luna",
-          "url": "https://fieldtofit.top/news/D-30"
-        }
-      ],
-      "source_published_at": "2026-10-07",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
-          "url": "https://openai.com/index/gpt-6-for-everyone/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-2",
-          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
-          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-        }
-      ],
-      "state": "published",
-      "summary": "ChatGPT将文字、图示与可操作组件组合成回答，用户可以修改输入并观察结果；本次针对Chat体验分阶段推出。",
-      "title": "GPT-6 Intelligent UI：把回答变成可操作的界面"
     },
     {
       "_position": 2,

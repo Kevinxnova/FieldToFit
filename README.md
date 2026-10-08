@@ -36,18 +36,18 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.10](CHANGELOG.md#v1.8.10)** · [fieldtofit-v1.8.10](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.10)
+**当前源码版本：[v1.8.11](CHANGELOG.md#v1.8.11)** · [fieldtofit-v1.8.11](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.11)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- AA与Arena支持任意公司组合，包含“其他”；按钮独立选中／取消，取消最后一家恢复全部，保留全部公司和各家旗舰快捷入口。
-- 多选随网址保存、刷新和来源切换保留；旧单公司／旗舰链接兼容，搜索、数值表及缺项清单同步筛选，固定坐标与来源快照保持。
-- 放大窗口提供同一套公司多选、搜索与重置控件；完善REQ-7-6方案，44项回归、生产构建及本地／正式各14组浏览器验收通过，已部署v1.8.10。
+- 补录CLI 0.161.0、iOS 1.2026.272与Tibo官方Day 3的Cloud加更；保留真实北京时间与来源日期精度，Cloud加更显示在10月8日。
+- 新增Teens笔记交互测验，复用D-91补充chat-latest快照与关联原帖；主线7项、其他OpenAI9项，共16条已审日志，不发布范围未明的重置或未来预告。
+- 同步紧凑月历、日历条、真实Tibo头像及原帖、HTML/API/MCP与AI交接；Day 2总结的2.1—2.4顺序保持。
 <!-- latest-summary:end -->
 
-v1.8.10已正式部署：AA／Arena支持任意公司组合，主图、放大窗口及表格同步筛选。正式版本、三MCP、原数据保护及双端多选流程见[生产验收](docs/validation/2026-10-08-chart-selection.md#production-deployment)。既有技术地图、来源采集与晨间任务保持；连续真实自然日与首次周整理效果仍待验。
+v1.8.11已正式部署：Codex专题16条已审日志，网页／API／MCP同源及客户端5项增量通过；已发布的AA／Arena任意公司多选、首张技术地图、名称追源和十二公告入口保留。见[本批生产验收](docs/validation/2026-10-08-codex-updates.md)。既有07:30／08:00和夜间安排保持；连续真实自然日与末次收尾待验。
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
 

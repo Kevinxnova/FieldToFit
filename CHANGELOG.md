@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.11"></a>
+## v1.8.11 · Codex专题10月8日补录与既有动态补充 · 2026-10-08
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 补录CLI 0.161.0、iOS 1.2026.272与Tibo官方Day 3的Cloud加更；保留真实北京时间与来源日期精度，Cloud加更显示在10月8日。
+- 新增Teens笔记交互测验，复用D-91补充chat-latest快照与关联原帖；主线7项、其他OpenAI9项，共16条已审日志，不发布范围未明的重置或未来预告。
+- 同步紧凑月历、日历条、真实Tibo头像及原帖、HTML/API/MCP与AI交接；Day 2总结的2.1—2.4顺序保持。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Backfill CLI 0.161.0, iOS 1.2026.272 and Tibo's official Day 3 Cloud encore, retaining genuine Beijing timestamps and source-date precision; the encore appears on October 8.
+- Add interactive quizzes from teens' notes and reuse D-91 for the chat-latest snapshot and related posts: seven Codex/Work logs and nine other OpenAI logs, with no unsupported resets or future announcements.
+- Keep the compact calendar, date strip, genuine Tibo portrait and source posts aligned across HTML, API, MCP and AI handoff; retain the Day 2 roundup's 2.1–2.4 order.
+<!-- release-summary:en:end -->
+
+对应REQ-20。用户明确批准末轮核对后发布4条新增与D-91补充，正式内容已通过既有管理保存→双端预览→提交复核→明确发布流程。97条动态、49项持续关注；D-94至D-97新增，D-91同编号修订。无数据库迁移或公开接口变更。发布过程中并行v1.8.10已上线公司多选；本批快进合并其完整提交后继续交付，保留已发布图表功能与历史。实际来源、预览及发布证据见[本批验收](docs/validation/2026-10-08-codex-updates.md)。最终111项回归、正式三宽度及HTML／API／两MCP逐字段复验、客户端5项增量和空续读均通过，v1.8.11已部署。
+
 <a id="v1.8.10"></a>
 ## v1.8.10 · 模型图表任意公司多选 · 2026-10-08
 
