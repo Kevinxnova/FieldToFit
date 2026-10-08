@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.11](CHANGELOG.md#v1.8.11)** · [fieldtofit-v1.8.11](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.11)
+**当前源码版本：[v1.8.12](CHANGELOG.md#v1.8.12)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 补录CLI 0.161.0、iOS 1.2026.272与Tibo官方Day 3的Cloud加更；保留真实北京时间与来源日期精度，Cloud加更显示在10月8日。
-- 新增Teens笔记交互测验，复用D-91补充chat-latest快照与关联原帖；主线7项、其他OpenAI9项，共16条已审日志，不发布范围未明的重置或未来预告。
-- 同步紧凑月历、日历条、真实Tibo头像及原帖、HTML/API/MCP与AI交接；Day 2总结的2.1—2.4顺序保持。
+- 新增REQ-22-7「图文展示与分层阅读」，推荐默认图文解读与可探索路线全貌，保留真实报告日期、配置和原文位置。
+- 明确机制缩略图、图文段落、同条件实验图、节点／解释／证据联动和手机路径阅读的首期范围；图片复用与原数据、AI同源兼容纳入验收。
+- 仅登记待对齐方案与对话交互示意，同步22项主REQ／141项子REQ和版本文档；网站展示未开发、未部署，正式站最近已验仍为v1.8.11。
 <!-- latest-summary:end -->
 
 v1.8.11已正式部署：Codex专题16条已审日志，网页／API／MCP同源及客户端5项增量通过；已发布的AA／Arena任意公司多选、首张技术地图、名称追源和十二公告入口保留。见[本批生产验收](docs/validation/2026-10-08-codex-updates.md)。既有07:30／08:00和夜间安排保持；连续真实自然日与末次收尾待验。

@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.12"></a>
+## v1.8.12 · 技术地图图文展示需求与方案登记 · 2026-10-09
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增REQ-22-7「图文展示与分层阅读」，推荐默认图文解读与可探索路线全貌，保留真实报告日期、配置和原文位置。
+- 明确机制缩略图、图文段落、同条件实验图、节点／解释／证据联动和手机路径阅读的首期范围；图片复用与原数据、AI同源兼容纳入验收。
+- 仅登记待对齐方案与对话交互示意，同步22项主REQ／141项子REQ和版本文档；网站展示未开发、未部署，正式站最近已验仍为v1.8.11。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add REQ-22-7 for illustrated technical maps and layered reading, proposing a narrative default and an explorable route overview while retaining genuine report dates, configurations and citations.
+- Define mechanism thumbnails, illustrated sections, comparable experiment charts, linked nodes/explanations/evidence and mobile path reading; include image reuse and compatibility with reviewed data and AI access in acceptance criteria.
+- Record the proposal and an in-conversation interactive example only, synchronize 22 main requirements and 141 children plus version documentation; the website redesign is unbuilt and undeployed, with v1.8.11 the last verified production release.
+<!-- release-summary:en:end -->
+
+对应[REQ-22-7](FieldToFit-PM.md#req-22-7)。用户要求新增展示优化REQ并对齐方案，本批保留现有地图功能状态；读法、图文节奏与首期范围待所有者确认。仅需求和版本文档变化，无网站实现、快照、数据库或公开接口变化；未部署、未推送发布标签。实际源码现状、登记及检查见[本次核对](FieldToFit-PM.md#req-22-7-review)，正式界面和读者理解验收待实现后执行。
+
 <a id="v1.8.11"></a>
 ## v1.8.11 · Codex专题10月8日补录与既有动态补充 · 2026-10-08
 
