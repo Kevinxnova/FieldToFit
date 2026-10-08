@@ -36,15 +36,16 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.7](CHANGELOG.md#v1.8.7)** · [fieldtofit-v1.8.7](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.7)
+**当前源码版本：[v1.8.8](CHANGELOG.md#v1.8.8)** · [fieldtofit-v1.8.8](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.8)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 近期动态增加按技术问题维护的演化地图、稳定详情入口与历史索引；首张采用已对齐的DeepSeek-V4.1报告，逐节点展示机制、条件、结果、局限和原文位置。
-- 网页、关联模型档案与AI共用已审图结构；支持类型明确的关系、分享、公开修订前后对照与后台双端预览，草稿和私密检查保持隔离。
-- 接入近30日研究与潜在修订队列、每日10份报告的检查交接及每周整理清单；日期和版本核对后给出具体提案，主人确认再进入草稿与发布。
+- 新增GPT-6 Intelligent UI、Haiku 5.5与Claude SDK浏览器／电脑工具集三条动态，同步速览；更新GPT、Claude及Claude Code v2.1.293档案，保留历史版本。
+- Sonnet旧动态保留9月28日发布价格，追加10月7日缓存读取降价及Haiku已发布说明；官方正文仅链接，MCP可读本站解读与材料范围。
+- 完整复核AA与Arena快照：分别161／94个可绘制配置；Arena数据截止10月2日，本站核对10月8日。保留缺值、估计分、配置和两个来源各自单位。
+- Arena新增Gemini 4 Argon与Sonnet 5.5配置；官方发布日期与榜单日期分别记录，支持Google和Anthropic两个明确发布域名，不扩大评分或价格来源。
 <!-- latest-summary:end -->
 
 v1.8.7已正式部署：首张近期报告技术地图已发布，名称追源与十二公告入口已接入，既有07:30／08:00维护任务已更新。正式版本、AI同源及原数据保护见[生产验收](docs/validation/2026-10-08-maps-production.md)；连续真实自然日与首次周整理效果仍待验。

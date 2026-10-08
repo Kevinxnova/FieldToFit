@@ -3270,6 +3270,31 @@
       "blocks": [
         {
           "columns": [
+            "版本 / 材料",
+            "原始日期口径",
+            "变化与用途",
+            "采用条件",
+            "限制与验证",
+            "依据"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "Chat Intelligent UI",
+              "2026-10-07发布；10月8日起扩展Free／Go",
+              "ChatGPT将文字、图示与可操作组件组合成回答，用户可以修改输入并观察结果；本次针对Chat体验分阶段推出。",
+              "10月7日起向Plus、Pro、Business、Enterprise的Chat页推出，10月8日起扩展到Free、Go；企业仍受管理员设置影响。逐步推出不代表所有账户同时可用。",
+              "这是Chat体验更新，没有更换Work、Codex使用的模型；不能据此推断API增加同名型号。本站核对官方材料，未逐账户实测。",
+              "[官方发布](https://openai.com/index/gpt-6-for-everyone/)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。"
+        },
+        {
+          "columns": [
             "版本 / 适用材料",
             "官方原始日期",
             "本次变化与用途",
@@ -3376,10 +3401,22 @@
           "text": "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。"
         }
       ],
-      "checked_at": "2026-10-06",
+      "checked_at": "2026-10-08",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M01",
       "interpretation": [
+        {
+          "text": "模型能组合文字、图示、按钮与交互组件，生成计算器、对比工具和可操作的解释；先给出有用内容，再随思考或工具执行补充结果。",
+          "title": "让答案可以操作"
+        },
+        {
+          "text": "10月7日起向Plus、Pro、Business、Enterprise的Chat页推出，10月8日起扩展到Free、Go；企业仍受管理员设置影响。逐步推出不代表所有账户同时可用。",
+          "title": "分阶段开放"
+        },
+        {
+          "text": "这是Chat体验更新，没有更换Work、Codex使用的模型；不能据此推断API增加同名型号。本站核对官方材料，未逐账户实测。",
+          "title": "模型与验证边界"
+        },
         {
           "text": "API默认关闭；产品侧本次面向欧盟，不是全球所有输出已经启用。具体型号和账户能力须按接入文档核对。",
           "title": "适用范围"
@@ -3413,7 +3450,7 @@
           "title": "长任务可以中途纠偏。"
         }
       ],
-      "introduction": "OpenAI 的通用模型系列；本期材料重点在工具执行方式和运行中的任务调整。",
+      "introduction": "OpenAI的通用模型系列；按GPT版本与Chat、Work、Codex的实际入口分别说明，包含交互答案、工具执行和长期任务材料。",
       "name": "GPT",
       "reading_materials": [
         {
@@ -3471,6 +3508,34 @@
           "title": "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限 · 官方来源 1",
           "upstream_revision": "textGrain首次公告；分阶段推出",
           "url": "https://openai.com/index/eu-text-provenance/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-1",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
+          "upstream_revision": "chat-intelligent-ui-2026-10-07",
+          "url": "https://openai.com/index/gpt-6-for-everyone/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-2",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
+          "upstream_revision": "chat-intelligent-ui-2026-10-07",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
         }
       ],
       "sources": [
@@ -3503,6 +3568,16 @@
           "coverage": "link_only",
           "title": "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限 · 官方来源 1",
           "url": "https://openai.com/index/eu-text-provenance/"
+        },
+        {
+          "coverage": "link_only",
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
+          "url": "https://openai.com/index/gpt-6-for-everyone/"
+        },
+        {
+          "coverage": "link_only",
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
         }
       ],
       "state": "published",
@@ -3510,6 +3585,39 @@
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "版本 / 材料",
+            "原始日期口径",
+            "变化与用途",
+            "采用条件",
+            "限制与验证",
+            "依据"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "Haiku 5.5 / claude-haiku-5-5",
+              "2026-10-07",
+              "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。",
+              "Claude API及官方所列云平台；按各平台文档核对",
+              "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。",
+              "[迁移文档](https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5)"
+            ],
+            [
+              "Sonnet 5.5缓存读取",
+              "2026-10-07降价",
+              "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。",
+              "其余价格保持",
+              "不是整单费用减半",
+              "[官方日志](https://platform.claude.com/docs/en/release-notes/overview)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。"
+        },
         {
           "columns": [
             "版本 / 型号",
@@ -3585,10 +3693,22 @@
           "text": "关联：D-05 Fable 5.1；[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。[完整型号目录](https://platform.claude.com/docs/en/models/overview)另列 Haiku 4.5；本页资料不补未经核对的完整历史。"
         }
       ],
-      "checked_at": "2026-10-05",
+      "checked_at": "2026-10-08",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M02",
       "interpretation": [
+        {
+          "text": "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。",
+          "title": "型号、上下文与标准价格"
+        },
+        {
+          "text": "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。",
+          "title": "迁移需要改什么"
+        },
+        {
+          "text": "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。",
+          "title": "Sonnet缓存读取单独降价"
+        },
         {
           "text": "选型信息：当前标准API每百万输入/输出token，Opus 5.5为4/20美元，Sonnet 5.5为2/10美元；两者列出1M上下文与128k最大输出。缓存、批处理等另按官方规则，不把标准价格等同完整任务成本。",
           "title": "标准价格与上下文"
@@ -3610,7 +3730,7 @@
           "title": "把产品线与版本分开看。"
         }
       ],
-      "introduction": "Anthropic 的模型系列，Fable、Opus、Sonnet、Haiku 是并行产品线；本页资料展开前三条的重要节点。",
+      "introduction": "Anthropic的模型系列；Fable、Opus、Sonnet、Haiku分别维护版本、接入条件、价格与迁移材料，本次补充Haiku 5.5及Sonnet缓存读取降价。",
       "name": "Claude",
       "reading_materials": [
         {
@@ -3654,6 +3774,48 @@
           "title": "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 3",
           "upstream_revision": "claude-opus-5-5 / claude-sonnet-5-5",
           "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-1",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-2",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-3",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
         }
       ],
       "sources": [
@@ -3686,6 +3848,21 @@
           "coverage": "link_only",
           "title": "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 3",
           "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
+          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
         }
       ],
       "state": "published",
@@ -5917,6 +6094,31 @@
       "blocks": [
         {
           "columns": [
+            "版本 / 材料",
+            "原始日期口径",
+            "变化与用途",
+            "采用条件",
+            "限制与验证",
+            "依据"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v2.1.293",
+              "订阅条目updated 2026-10-07 UTC；未核精确首发时刻",
+              "Claude Code v2.1.293加入Haiku 5.5，并修复上下文压缩后重复工作、HTTP MCP连接内存累积及后台消息丢失等问题。",
+              "按Claude Code官方更新入口采用",
+              "本站未复现修复；保留v2.1.292历史说明",
+              "[官方版本记录](https://github.com/anthropics/claude-code/releases/tag/v2.1.293)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。"
+        },
+        {
+          "columns": [
             "版本",
             "原始日期口径",
             "变化与用途",
@@ -6002,10 +6204,22 @@
           "text": "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "checked_at": "2026-10-07",
+      "checked_at": "2026-10-08",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A02",
       "interpretation": [
+        {
+          "text": "加入Haiku 5.5；修复上下文压缩后将先前动作误认成新动作、撤回或重复已完成工作的情况。",
+          "title": "Haiku与长任务"
+        },
+        {
+          "text": "修复HTTP MCP连接累积请求导致的内存泄漏，以及工作中消息转入后台时丢失的问题。",
+          "title": "MCP与后台消息"
+        },
+        {
+          "text": "从已审v2.1.292补充v2.1.293，保留历史记录。这些是官方修复说明，本站未安装复现，不将发布记录等同本站验证。",
+          "title": "版本与验证范围"
+        },
         {
           "text": "官方记录修复部分恢复会话后定时任务不触发、单次运行过早终止后台命令，以及后台会话重启后丢失循环唤醒。Agent工具新增effort参数。",
           "title": "后台任务与定时执行"
@@ -6069,6 +6283,20 @@
           "title": "Claude Code v2.1.292：定时任务、后台命令和权限修复 · 官方来源 1",
           "upstream_revision": "v2.1.292",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-1",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "Claude Code v2.1.293：Haiku接入与长会话修复 · 官方来源 1",
+          "upstream_revision": "v2.1.293",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293"
         }
       ],
       "sources": [
@@ -6091,6 +6319,11 @@
           "coverage": "link_only",
           "title": "Claude Code v2.1.292：定时任务、后台命令和权限修复",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Claude Code v2.1.293：Haiku接入与长会话修复 · 官方来源 1",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293"
         }
       ],
       "state": "published",
@@ -7963,7 +8196,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-07",
+  "reviewed_at": "2026-10-08",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

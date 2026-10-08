@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.8"></a>
+## v1.8.8 · 10月8日内容与双来源模型图表刷新 · 2026-10-08
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 新增GPT-6 Intelligent UI、Haiku 5.5与Claude SDK浏览器／电脑工具集三条动态，同步速览；更新GPT、Claude及Claude Code v2.1.293档案，保留历史版本。
+- Sonnet旧动态保留9月28日发布价格，追加10月7日缓存读取降价及Haiku已发布说明；官方正文仅链接，MCP可读本站解读与材料范围。
+- 完整复核AA与Arena快照：分别161／94个可绘制配置；Arena数据截止10月2日，本站核对10月8日。保留缺值、估计分、配置和两个来源各自单位。
+- Arena新增Gemini 4 Argon与Sonnet 5.5配置；官方发布日期与榜单日期分别记录，支持Google和Anthropic两个明确发布域名，不扩大评分或价格来源。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add GPT-6 Intelligent UI, Haiku 5.5 and Claude SDK browser/computer toolsets; refresh the overview and the GPT, Claude and Claude Code v2.1.293 profiles while preserving version history.
+- Keep Sonnet's September 28 launch prices and append the October 7 cache-read reduction and Haiku release. Original pages remain linked; MCP exposes our commentary and explicit material coverage.
+- Review complete AA and Arena snapshots with 161 and 94 plottable configurations. Arena's data cutoff is October 2, separately from the October 8 review; missing values, estimates, configurations and independent units remain explicit.
+- Add Gemini 4 Argon and Sonnet 5.5 configurations to Arena, retaining official launch dates separately and accepting two exact Google/Anthropic launch domains without expanding score or price sources.
+<!-- release-summary:en:end -->
+
+对应REQ-4/5/6/8/9/11。用户明确批准10月8日日报A–D及AA／Arena完整刷新；正式93条动态、49项持续关注。不发布未核验线索，不宣称上游性能复测，不把网页可达等同全对象语义核验。无数据库迁移或公开接口变更。112项相关回归、双端正式页面、19次MCP调用与v1.8.8部署通过，见[本批证据](docs/validation/2026-10-08-editorial.md)。
+
 <a id="v1.8.7"></a>
 ## v1.8.7 · 近期报告驱动的技术演化地图 · 2026-10-07
 

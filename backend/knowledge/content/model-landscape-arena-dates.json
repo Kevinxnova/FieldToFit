@@ -1138,5 +1138,20 @@
     "release_date": "2026-09-21",
     "date_basis": "official_release",
     "date_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL"
+  },
+  "barium-bb-wlqc-text": {
+    "release_date": "2026-09-30",
+    "date_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+    "date_basis": "official_release"
+  },
+  "gpt-6.1-sol-max": {
+    "release_date": "2026-09-29",
+    "date_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+    "date_basis": "official_release"
+  },
+  "claude-sonnet-5-5-xhigh": {
+    "release_date": "2026-09-28",
+    "date_url": "https://www.anthropic.com/claude-sonnet-5-5",
+    "date_basis": "official_release"
   }
 }
