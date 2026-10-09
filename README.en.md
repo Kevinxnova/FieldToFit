@@ -36,18 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.18](CHANGELOG.md#v1.8.18)** · [fieldtofit-v1.8.18](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.18)
+**Current source version: [v1.8.19](CHANGELOG.md#v1.8.19)** · [fieldtofit-v1.8.19](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.19)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Rename the recent section, contents, report index and AI entry to “Selected Technical Reports & Analysis”, with matching editor, no-script pages and bilingual documentation.
-- Preserve stable links, illustrated reading, public revisions and shared interfaces; the category rename leaves reviewed reports intact.
-- Review the October 5 a16z consumer report, September 30 State of Markets II and October 8 OpenRouter update; proposed topics await owner alignment.
+- Curate the owner-aligned October 5 a16z consumer report with four numbered findings, matching arguments, highlights and separate editorial interpretation.
+- Add three verified-statistic redraws and one reading diagram, retaining US panel scope, units, genuine report/data dates and sources; separate purchase observations from future hypotheses.
+- Make figure enlargement and editor guidance accurate for originals, redraws and diagrams, retaining review, stable links, history and shared web/AI evidence.
 <!-- latest-summary:end -->
 
-v1.8.16 is deployed, retaining the v1.8.14 published copy: the Codex topic contains 18 reviewed logs, with official Day 4 steering/Ultrafast and CLI 0.162.0 dated October 9 in Beijing. Web/API/MCP alignment, three viewport widths and two client additions passed; see [production evidence](docs/validation/2026-10-09-codex-updates.md). AA/Arena company multiselect, existing maps and discovery remain available; the committed screenshot and numbered-findings proposal histories are integrated and the map redesign remains a proposal. Existing morning and evening schedules remain; punctual execution and the final review are still pending.
+v1.8.19 is deployed with the first a16z consumer analysis: an overview, four numbered findings with matching arguments, three statistical redraws and one reading diagram. Report, data and website publication dates remain distinct; web/HTTP/MCP share the same evidence. The site has 104 news items, 49 watch dossiers and three report maps, preserving existing Codex logs, AA/Arena company multiselect and discovery content. See the [production evidence](docs/validation/2026-10-09-a16z-consumer.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

@@ -36,18 +36,18 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.18](CHANGELOG.md#v1.8.18)** · [fieldtofit-v1.8.18](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.18)
+**当前源码版本：[v1.8.19](CHANGELOG.md#v1.8.19)** · [fieldtofit-v1.8.19](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.19)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 将近期栏目、目录、报告索引和AI入口统一为“技术报告精选&分析”，同步后台编辑、无脚本页面与双语说明。
-- 保留原有稳定网址、图文阅读、公开修订和同源接口；栏目改名不改变已审报告内容。
-- 核对a16z 10月5日消费AI报告、9月30日State of Markets II与10月8日OpenRouter补充数据，具体选题待所有者对齐。
+- 按已对齐的消费AI选题，整理a16z 10月5日第7版报告：四个编号核心观点、对应论述、重点标记与独立本站判断。
+- 配三张核验数据重绘图及一张阅读示意，明确美国面板、指标单位、真实报告／数据日期和原始出处；区分购买观察与未来判断。
+- 图表放大与后台说明兼容原图、本站重绘和示意；沿用已有审核、稳定网址、修订与网页／AI同源流程。
 <!-- latest-summary:end -->
 
-v1.8.16已正式部署：保留v1.8.14已发布文案，Codex专题18条已审日志，官方Day 4即时纠偏／Sol Ultrafast及CLI 0.162.0归真实北京日期10月9日；网页／API／MCP同源、三宽度及客户端两项增量通过。见[本批生产验收](docs/validation/2026-10-09-codex-updates.md)。AA／Arena公司多选、技术地图与采集保持；已提交的原图表与编号结论方案历史已整合，地图新展示仍为方案。晨间和夜间日程保持；准点运行及末次收尾待验。
+v1.8.19已正式部署：a16z消费AI首篇已发布，含路线全貌、四条编号观点及对应论述、三张数据重绘图与一张阅读示意。报告、数据与网站发表日期分别保留，网页／HTTP／MCP同源；现有104条动态、49项关注、三张报告地图，既有Codex日志、AA／Arena公司多选及采集内容保留。实际生产结果见[本批验收](docs/validation/2026-10-09-a16z-consumer.md)。
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
 

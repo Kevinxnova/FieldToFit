@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.19"></a>
+## v1.8.19 · a16z消费AI使用与付费分析 · 2026-10-09
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按已对齐的消费AI选题，整理a16z 10月5日第7版报告：四个编号核心观点、对应论述、重点标记与独立本站判断。
+- 配三张核验数据重绘图及一张阅读示意，明确美国面板、指标单位、真实报告／数据日期和原始出处；区分购买观察与未来判断。
+- 图表放大与后台说明兼容原图、本站重绘和示意；沿用已有审核、稳定网址、修订与网页／AI同源流程。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Curate the owner-aligned October 5 a16z consumer report with four numbered findings, matching arguments, highlights and separate editorial interpretation.
+- Add three verified-statistic redraws and one reading diagram, retaining US panel scope, units, genuine report/data dates and sources; separate purchase observations from future hypotheses.
+- Make figure enlargement and editor guidance accurate for originals, redraws and diagrams, retaining review, stable links, history and shared web/AI evidence.
+<!-- release-summary:en:end -->
+
+对应[REQ-22](FieldToFit-PM.md#req-22)及[REQ-22-7](FieldToFit-PM.md#req-22-7)。仅整理已对齐的首篇消费AI报告，企业使用与Agent缓存仍为后续提案。配图是本站图形设计，不套用a16z开放许可，也不将面板消费写成总营收／全球普及或生产力。新参考文案不会自动导入或发布，无数据库迁移；实际检查与正式上线结果见[本批验收](docs/validation/2026-10-09-a16z-consumer.md)。
+
 <a id="v1.8.18"></a>
 ## v1.8.18 · 技术报告精选与分析栏目命名 · 2026-10-09
 ### 更新重点

@@ -34,5 +34,65 @@
     ],
     "license": "CC BY 4.0",
     "version": "arXiv 2610.08775v1"
+  },
+  "/report-figures/a16z-20261005-personal-paid.png": {
+    "sha256": "94ff9e7bfa02c8554a8804346c5dbe48a3960b1a31f83e3aa83569e9e8706cf1",
+    "source_urls": [
+      "https://a16z.com/100-gen-ai-apps-7/"
+    ],
+    "license": "图形 © FieldToFit；原始数据归属见来源",
+    "version": "a16z 第7版 · 2026-10-05",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "2025-08": 2.1,
+      "2026-08": 4.5,
+      "unit": "% eligible consumers",
+      "cohort": "US e-receipt panel; personal ChatGPT/Gemini/Claude subscription"
+    }
+  },
+  "/report-figures/a16z-20261005-spend-concentration.png": {
+    "sha256": "8039ec0fbe567df591ede8f592442e665067b264311678582e4f6cffb6007b4e",
+    "source_urls": [
+      "https://a16z.com/100-gen-ai-apps-7/"
+    ],
+    "license": "图形 © FieldToFit；原始数据归属见来源",
+    "version": "a16z 第7版 · 2026-10-05",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "top_1_percent_payers_spend_share": 19.5,
+      "bottom_50_percent_payers_spend_share": 16.6,
+      "unit": "% observed consumer AI spend",
+      "period": "2026-08",
+      "cohort": "US consumer panel"
+    }
+  },
+  "/report-figures/a16z-20261005-ranking-gap.png": {
+    "sha256": "8d5eb5c1dd5bf88812d45f11f9bbcb8e244a54037e626123af252f5059df781d",
+    "source_urls": [
+      "https://a16z.com/100-gen-ai-apps-7/"
+    ],
+    "license": "图形 © FieldToFit；原始数据归属见来源",
+    "version": "a16z 第7版 · 2026-10-05",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "spend_top_50_absent_from_both_traffic_lists": 29,
+      "spend_top_50_in_at_least_one_traffic_list": 21,
+      "unit": "vendors",
+      "derived": "21 = 50 - 29; cell positions carry no rank information"
+    }
+  },
+  "/report-figures/a16z-20261005-observation-and-hypothesis.png": {
+    "sha256": "498fdfdf50bc7c1ceb7c88db9f8d654129025ac8ac4f99dc69d26b0be655ad90",
+    "source_urls": [
+      "https://a16z.com/100-gen-ai-apps-7/"
+    ],
+    "license": "图形 © FieldToFit；原始数据归属见来源",
+    "version": "a16z 第7版 · 2026-10-05",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "qualitative reading guide",
+      "numeric_task_shares": null,
+      "observations_and_author_hypotheses_separated": true
+    }
   }
 }

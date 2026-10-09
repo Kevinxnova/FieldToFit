@@ -1,0 +1,328 @@
+{
+  "id": "D-00",
+  "state": "published",
+  "name": "a16z 消费AI使用与付费分析",
+  "organization": "a16z / Olivia Moore",
+  "title": "谁在为 AI 付钱？流量榜之外的重度用户",
+  "category": "research",
+  "summary": "从a16z 10月5日第7版报告出发，分开阅读网页流量、手机活跃与美国消费者付费：四个核心观点及对应论述，配本站重绘图表与少量重点标记。",
+  "highlight": false,
+  "checked_at": "2026-10-09",
+  "source_published_at": "2026-10-05",
+  "event_date": "2026-10-05",
+  "editor": "FieldToFit",
+  "interpretation": [
+    {
+      "title": "读榜先看观测口径",
+      "text": "网页访问、手机月活与美国消费面板不是同一群人的同一指标；本篇按四个观点阅读原报告，并单独标明本站解释及待验证判断。",
+      "source_ids": [
+        "report"
+      ],
+      "locator": "导言、第2节与第5节"
+    }
+  ],
+  "sources": [
+    {
+      "id": "report",
+      "title": "a16z 消费AI报告 · 第7版（Olivia Moore）",
+      "url": "https://a16z.com/100-gen-ai-apps-7/",
+      "coverage": "link_only"
+    }
+  ],
+  "related": [],
+  "note": "报告发表于2026-10-05；核心付费数值为2026年8月美国面板，未独立复核原始样本。配图为本站重绘／示意，不复用a16z原图许可。",
+  "technical_map": {
+    "slug": "consumer-ai-spending",
+    "question": "谁在为 AI 付钱？流量榜之外的重度用户",
+    "focus": "流量／活跃／付费三种并行观察；四个核心观点及各自的证据与边界。",
+    "takeaway": "消费AI的流量、付费和实际用途需要分别判断。榜单差异揭示观测盲区，重度购买也仍需要使用质量与留存证据。",
+    "caution": "来自a16z 2026-10-05第7版；核心付费数据为2026年8月美国面板，不能外推全球采用、总营收或生产力。配图为本站重绘与阅读示意。",
+    "change_summary": "首篇消费AI分析：三种并行观察、四条编号结论／对应论述、三张数据重绘图与一张阅读示意；保留样本、日期及来源。",
+    "reports": [
+      {
+        "source_id": "report",
+        "version": "第7版 · 2026-10-05（核心付费数据：2026年8月）",
+        "first_published_at": "2026-10-05",
+        "revised_at": null,
+        "substantive_revision": false,
+        "revision_note": ""
+      }
+    ],
+    "nodes": [
+      {
+        "id": "web-traffic",
+        "kind": "method",
+        "stage": 0,
+        "label": "流量：网页月访问",
+        "mechanism": "以网页访问行为排序，观察产品在网页入口获得的注意力。",
+        "setting": "Similarweb月访问量；报告网页Top 50。",
+        "result": "提供网页入口的流量视角。",
+        "limitation": "访问次数不是人数，网页入口未覆盖所有桌面或聊天渠道。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "导言：Similarweb网页榜方法"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "mobile-active",
+        "kind": "method",
+        "stage": 0,
+        "label": "使用：手机月活",
+        "mechanism": "以手机应用月活用户估计排序，观察移动应用入口。",
+        "setting": "Sensor Tower月活用户估计；报告手机Top 50。",
+        "result": "提供移动应用的活跃视角。",
+        "limitation": "月活不是订阅数，也不是每天使用；不能与网页访问次数相加。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "导言：Sensor Tower手机榜方法"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "us-payment",
+        "kind": "method",
+        "stage": 1,
+        "label": "付费：美国消费面板",
+        "mechanism": "以美国面板的个人订阅和消费者卡支付观察付费；正文分别保留两项指标的分母。",
+        "setting": "YipitData美国面板；个人订阅覆盖与观测消费为不同统计项。",
+        "result": "用于阅读付费覆盖、消费集中度及付费榜差异。",
+        "limitation": "不是全球人口普查或公司总营收；消费者卡支付可能含工作用途。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "导言、第2节：YipitData面板范围与指标"
+          }
+        ],
+        "metrics": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "web-traffic",
+        "to": "us-payment",
+        "relation": "parallel",
+        "label": "不同观察入口并列；不是因果、时间推进或用户转化",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "导言：为网页／手机榜补充美国消费额榜"
+          }
+        ]
+      },
+      {
+        "from": "mobile-active",
+        "to": "us-payment",
+        "relation": "parallel",
+        "label": "不同观察入口并列；不是因果、时间推进或用户转化",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "导言：为网页／手机榜补充美国消费额榜"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "title": "这份报告的四个核心观点",
+      "findings": [
+        {
+          "id": "paid-coverage",
+          "title": "个人订阅覆盖在增长，但样本中的覆盖仍低",
+          "summary": "2026年8月，美国电子收据面板中4.5%的合格消费者，至少有一份ChatGPT、Gemini或Claude个人付费订阅；一年前为2.1%。",
+          "node_ids": [
+            "us-payment"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "第2节：个人付费订阅覆盖，2026年8月与一年前"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "先读分母，再读增长。这组统计问的是特定美国面板里的合格消费者是否持有三款产品之一的个人付费订阅；它没有直接回答一个人是否用过AI、每天用了多久，或工作时是否由公司承担费用。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/a16z-20261005-personal-paid.png",
+              "caption": "图1 · 三款产品个人付费订阅覆盖（本站重绘；单位：面板合格消费者占比）",
+              "alt": "2025年8月2.1%，2026年8月4.5%；同一报告中的美国电子收据面板个人订阅口径，纵轴从0%起。",
+              "attribution": "本站重绘／示意；数据与观点：Olivia Moore / a16z",
+              "license": "图形 © FieldToFit；原始数据归属见来源",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "第2节：个人订阅覆盖"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "读图：两根柱表示两个时点的订阅覆盖，不能据此推算新增付费者是谁、是否曾经流失，或其实际使用频率。",
+                "本站解读：增长与覆盖低可以同时成立。评估大众普及时，还需要同人群的免费使用、留存和雇主代付证据。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "4.5%不等于全球AI付费率；未被这项个人订阅指标计入，不代表没有使用AI。"
+            }
+          ]
+        },
+        {
+          "id": "spend-concentration",
+          "title": "少数高付费用户，贡献了集中消费",
+          "summary": "报告的美国面板里，消费额最高的1%付费者贡献19.5%的观测AI消费，最低的50%贡献16.6%。",
+          "node_ids": [
+            "us-payment"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "第2节：消费额分布；Consumer Spending Growth is Concentrated at the Very Top"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "本站解读：除了“有多少人在付费”，还需要问“消费增长由谁贡献”。当支出集中时，总额增长可能来自重度群体加大投入；评估大众普及，还需要看付费人数、留存和使用频率。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/a16z-20261005-spend-concentration.png",
+              "caption": "图2 · 两组付费者的消费贡献（本站重绘；单位：已观测AI消费份额）",
+              "alt": "消费额最高1%的付费者贡献19.5%，最低50%贡献16.6%。两组人数不同；横轴均为观测消费份额。",
+              "attribution": "本站重绘／示意；数据与观点：Olivia Moore / a16z",
+              "license": "图形 © FieldToFit；原始数据归属见来源",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "第2节：消费份额"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "读图：前1%和后50%按个人消费额分组。消费份额不是人数占比，也不能把19.5%解释为所有人的平均付费水平。",
+                "本站解读：分析一个产品的经营情况，应同时看付费人数、消费集中度和留存；少数人的高账单无法单独证明市场已普及。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "美国消费者卡支付可能包含工作用途；面板观测消费不是供应商的全球总营收。"
+            }
+          ]
+        },
+        {
+          "id": "ranking-gap",
+          "title": "流量榜看见的头部，未必是付费榜的头部",
+          "summary": "消费额Top 50中有29家未进入报告的网页或手机流量榜。访问、活跃和卡支付观察的是不同侧面。",
+          "node_ids": [
+            "web-traffic",
+            "mobile-active",
+            "us-payment"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "导言：三份榜单方法；第2节：29家榜单缺口与排名差异"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "本站解读：这组差异的价值是扩大产品发现的入口。只看网页或手机榜，会漏掉一些已有付费行为的供应商；桌面应用和已有聊天入口也值得观察。三种信号分别记录，更容易理解产品如何触达用户。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/a16z-20261005-ranking-gap.png",
+              "caption": "图3 · 消费额Top 50与两份流量榜的重合（本站重绘；每格1家，位置不表示排名）",
+              "alt": "50家中29家在网页和手机榜均缺席；其余21家至少进入一榜，21由50减29得到。格子仅表示数量。",
+              "attribution": "本站重绘／示意；数据与观点：Olivia Moore / a16z",
+              "license": "图形 © FieldToFit；原始数据归属见来源",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "第2节：付费榜与流量榜；导言：入口盲区"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "网页榜：Similarweb月访问量。同一个人的多次访问不能直接当作多个用户。",
+                "手机榜：Sensor Tower月活用户估计；付费榜：YipitData美国消费者卡支付面板。两者的地域、样本和计量单位不同。",
+                "本站解读：未进入流量榜，可能与产品入口、榜单门槛或收费方式有关。报告的差异不能单独判定哪一家拥有更好的模型或更高的全球营收。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "29家缺席是榜单重合事实，不是“29家没有用户”。三份榜单之间不能构建采用到付费的转化漏斗。"
+            }
+          ]
+        },
+        {
+          "id": "tools-and-hypotheses",
+          "title": "重度付费指向“做事”，大众普及仍需验证",
+          "summary": "作者观察到高消费群体更偏向自动化、产品构建和创意工具；更易用的个人Agent与新收费方式，是作者对扩大使用的判断。",
+          "node_ids": [
+            "us-payment"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "第2节：高消费群体购买倾向；第5节：产品与商业模式判断"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "这一部分最容易把购买、工作成果和未来预测连在一起。报告提供购买倾向的观察，并提出下一阶段可能的产品与收费方向；两种证据应分别阅读。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/a16z-20261005-observation-and-hypothesis.png",
+              "caption": "图4 · 购买观察与未来判断（本站整理示意；不表示任务占比或因果关系）",
+              "alt": "左侧为自动化／产品构建与创意工具的购买倾向例子；右侧为作者关于个人Agent和广告／交易收入的判断。没有虚构任务占比。",
+              "attribution": "本站重绘／示意；数据与观点：Olivia Moore / a16z",
+              "license": "图形 © FieldToFit；原始数据归属见来源",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "第2节购买观察／第5节作者判断"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "报告观察：高消费群体偏向可用于构建、自动化及创意的工具。产品类别可以提示需要继续研究的任务，却不能替代真实使用日志。",
+                "作者判断：更易用的个人Agent，以及广告或交易收入等方式，可能扩大日常使用；本篇没有将这些判断登记成已经实现的采用效果。",
+                "本站解读：要验证“做事”的价值，需要任务完成率、质量、重复使用和总成本等证据；一张付款记录无法回答这些问题。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "购买工具不等于生产力已提升；未来商业模式能否扩大普及，应等待同口径的后续观测。"
+            }
+          ]
+        }
+      ],
+      "editorial": [
+        "用这篇报告选产品时，先确定自己要完成什么任务，再找任务完成质量、重复使用与总成本的直接证据。榜单适合发现候选，无法代替个人试用或团队评估。",
+        "后续整理继续保留三种观测口径；比较新旧版本前，先核对样本、入榜规则和统计时段。更换分母后出现的增长，应与同口径增长分开说明。"
+      ]
+    }
+  }
+}
