@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.13"></a>
+## v1.8.13 · 路线全貌与报告重点解读方案修订 · 2026-10-09
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按所有者选择将REQ-22-7改为路线全貌优先，图下连续整理原技术报告重点，默认读法已对齐，内容密度与交互继续确认。
+- 明确方法、测试／比较、关键结果、失败与边界、采用判断五部分，配机制／实验图、条件与原文位置，并提供图和正文双向定位。
+- 更新真实报告交互示意与需求／版本文档；网站展示未开发、未部署，正式站最近已验仍为v1.8.11，待审报告没有自动发布。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Follow the owner's selection of a route overview as the REQ-22-7 entry point, followed by continuous technical-report highlights; the reading order is aligned while depth and interactions remain under review.
+- Define five sections covering mechanisms, evaluation and baselines, key results, failures and limits, and adoption considerations, with diagrams, conditions, citations and two-way map/text navigation.
+- Update the source-backed interactive example and requirement/version documentation only; the website redesign is unbuilt and undeployed, production was last verified at v1.8.11, and the pending report has not been published automatically.
+<!-- release-summary:en:end -->
+
+对应[REQ-22-7](FieldToFit-PM.md#req-22-7)。用户确认路线全貌主入口并要求下方整理报告重点，本批落实方案与交互示意，未实现正式组件或改变公开报告内容。作者事实与本站解读、样本／全量、费用估计及章节位置分别保留。实际文档和示意验证见[本次记录](FieldToFit-PM.md#req-22-7-review)；正文深度及交互继续对齐，未部署、未推送发布标签。
+
 <a id="v1.8.12"></a>
 ## v1.8.12 · 技术地图图文展示需求与方案登记 · 2026-10-09
 <!-- release-tag:unpublished -->

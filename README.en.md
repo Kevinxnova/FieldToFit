@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.12](CHANGELOG.md#v1.8.12)** · Release tag not yet published
+**Current source version: [v1.8.13](CHANGELOG.md#v1.8.13)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add REQ-22-7 for illustrated technical maps and layered reading, proposing a narrative default and an explorable route overview while retaining genuine report dates, configurations and citations.
-- Define mechanism thumbnails, illustrated sections, comparable experiment charts, linked nodes/explanations/evidence and mobile path reading; include image reuse and compatibility with reviewed data and AI access in acceptance criteria.
-- Record the proposal and an in-conversation interactive example only, synchronize 22 main requirements and 141 children plus version documentation; the website redesign is unbuilt and undeployed, with v1.8.11 the last verified production release.
+- Follow the owner's selection of a route overview as the REQ-22-7 entry point, followed by continuous technical-report highlights; the reading order is aligned while depth and interactions remain under review.
+- Define five sections covering mechanisms, evaluation and baselines, key results, failures and limits, and adoption considerations, with diagrams, conditions, citations and two-way map/text navigation.
+- Update the source-backed interactive example and requirement/version documentation only; the website redesign is unbuilt and undeployed, production was last verified at v1.8.11, and the pending report has not been published automatically.
 <!-- latest-summary:end -->
 
 v1.8.11 is deployed: the Codex topic contains 16 reviewed logs, with aligned web/API/MCP data and five client additions verified. Previously shipped AA/Arena company multiselect, the first technical map, name tracing and 12 announcement sources remain available. See [production evidence](docs/validation/2026-10-08-codex-updates.md). Existing morning and evening schedules remain; real consecutive-day operation and the final review are still pending.
