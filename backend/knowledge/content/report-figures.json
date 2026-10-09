@@ -1,0 +1,38 @@
+{
+  "/report-figures/bottle-v1-figure-2.png": {
+    "sha256": "66fc07def6c3266c4f7b9a340d6d104f07731fd61e4cc05acf3528fe1411a3ff",
+    "source_urls": [
+      "https://arxiv.org/html/2610.08775v1",
+      "https://arxiv.org/pdf/2610.08775v1"
+    ],
+    "license": "CC BY 4.0",
+    "version": "arXiv 2610.08775v1"
+  },
+  "/report-figures/bottle-v1-figure-3.png": {
+    "sha256": "cf093c46dae5e76826d356452f05d44297ed0bc796ea3ac60582e8734eab4aee",
+    "source_urls": [
+      "https://arxiv.org/html/2610.08775v1",
+      "https://arxiv.org/pdf/2610.08775v1"
+    ],
+    "license": "CC BY 4.0",
+    "version": "arXiv 2610.08775v1"
+  },
+  "/report-figures/bottle-v1-figure-4.png": {
+    "sha256": "694407102ad5791a6a61c7d512672db91d54bdf57bd49a8ea6c191789d915b70",
+    "source_urls": [
+      "https://arxiv.org/html/2610.08775v1",
+      "https://arxiv.org/pdf/2610.08775v1"
+    ],
+    "license": "CC BY 4.0",
+    "version": "arXiv 2610.08775v1"
+  },
+  "/report-figures/bottle-v1-table-1.png": {
+    "sha256": "3d802991013e3bc92ae0b685ae2c6f04771936a6111f62372918c2008a24448b",
+    "source_urls": [
+      "https://arxiv.org/html/2610.08775v1",
+      "https://arxiv.org/pdf/2610.08775v1"
+    ],
+    "license": "CC BY 4.0",
+    "version": "arXiv 2610.08775v1"
+  }
+}

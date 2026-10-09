@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.17"></a>
+## v1.8.17 · 技术地图结论与图文论述 · 2026-10-09
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 落实路线全貌、居中大标题、编号核心结论及同编号展开论述，保留手机连线、图文定位和段落分享入口。
+- 正文编辑、原报告图表放大、重点标记和独立编辑判断纳入现有审核与修订；网页、HTTP、MCP和无脚本页面同源。
+- 沿用已审Agent in a Bottle入口补齐四观点、原图2／3／4和表1；旧地图、真实报告日期、单位、来源与首次发表记录保持兼容。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Implement route overviews, centered large headings, numbered findings and matching arguments, retaining mobile graph edges, reading navigation and section links.
+- Add reviewed text editing, original figure enlargement, highlights and separate editorial judgment to existing publication and revision workflows; share evidence across web, HTTP, MCP and no-script pages.
+- Expand the reviewed Agent in a Bottle entry with four findings, figures 2–4 and table 1, preserving older maps, genuine report dates, units, citations and first-publication history.
+<!-- release-summary:en:end -->
+
+对应[REQ-22-7](FieldToFit-PM.md#req-22-7)。展示形式与内容字段沉淀到[地图维护指南](docs/guides/technical-maps.md#report-reading)，可选reading配置兼容旧公开协议，无新增数据库表。沿用D-103既有问题，不另建重复地图；PNG保留原图数值／坐标／图例／图注并核对许可与哈希。真实本地与正式结果见[本批验收](docs/validation/2026-10-09-map-reading.md)，正式部署与内容修订状态以该记录为准；真机、屏幕阅读器及目标读者理解效果仍待独立验收。
+
 <a id="v1.8.16"></a>
 ## v1.8.16 · Codex已审日志与并行展示方案整合 · 2026-10-09
 

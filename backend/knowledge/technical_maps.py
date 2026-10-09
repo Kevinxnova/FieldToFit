@@ -9,7 +9,7 @@ from backend.db import get_db
 from backend.knowledge.platform import PlatformError
 
 RELATIONS = ('inheritance', 'baseline', 'parallel')
-FIELDS = ('question', 'focus', 'takeaway', 'caution', 'change_summary', 'reports', 'nodes', 'edges')
+FIELDS = ('question', 'focus', 'takeaway', 'caution', 'change_summary', 'reports', 'nodes', 'edges', 'reading')
 
 
 def digest(value):
@@ -52,7 +52,7 @@ def metadata(item, enforce_dates=False):
             source = words(point, 'source_id', 100)
             if source not in sources: raise ValueError('地图依据须引用已登记出处')
             fragment = point.get('fragment', '')
-            if not isinstance(fragment, str) or not re.fullmatch(r'[A-Za-z0-9_.:-]{0,100}', fragment): raise ValueError('原文锚点格式错误')
+            if not isinstance(fragment, str) or not re.fullmatch(r'(?:[A-Za-z0-9_.:-]{0,100}|page=[1-9][0-9]{0,3})', fragment): raise ValueError('原文锚点格式错误')
             result.append({'source_id': source, 'locator': words(point, 'locator', 300), 'fragment': fragment})
         return result
     reports = value.get('reports')
@@ -119,6 +119,9 @@ def metadata(item, enforce_dates=False):
     for ident in ids: visit(ident)
     connected = {e[k] for e in out['edges'] for k in ('from', 'to')}
     if connected != ids: raise ValueError('每个节点须有明确关系，不能留下孤立节点')
+    if value.get('reading') is not None:
+        from backend.knowledge.map_reading import validate
+        out['reading'] = validate(value['reading'], ids, report_ids, sources, words, evidence)
     return out
 
 

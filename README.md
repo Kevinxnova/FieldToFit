@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.16](CHANGELOG.md#v1.8.16)** · [fieldtofit-v1.8.16](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.16)
+**当前源码版本：[v1.8.17](CHANGELOG.md#v1.8.17)** · [fieldtofit-v1.8.17](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.17)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 保留D-98官方Day 4即时纠偏／Sol Ultrafast与D-99 CLI 0.162.0，专题18条、真实10月9日与网页／API／MCP同源保持。
-- 整合原报告图表、重点标记及编号结论／对应论述的已提交方案文档，保留原图来源、页码、许可和实际示意验证边界；新展示仍未开发。
-- 保留双方完整提交历史，最终以v1.8.16统一前后端、双语README与发布记录；原v1.8.14标签和已审数据库记录保持。
+- 落实路线全貌、居中大标题、编号核心结论及同编号展开论述，保留手机连线、图文定位和段落分享入口。
+- 正文编辑、原报告图表放大、重点标记和独立编辑判断纳入现有审核与修订；网页、HTTP、MCP和无脚本页面同源。
+- 沿用已审Agent in a Bottle入口补齐四观点、原图2／3／4和表1；旧地图、真实报告日期、单位、来源与首次发表记录保持兼容。
 <!-- latest-summary:end -->
 
 v1.8.16已正式部署：保留v1.8.14已发布文案，Codex专题18条已审日志，官方Day 4即时纠偏／Sol Ultrafast及CLI 0.162.0归真实北京日期10月9日；网页／API／MCP同源、三宽度及客户端两项增量通过。见[本批生产验收](docs/validation/2026-10-09-codex-updates.md)。AA／Arena公司多选、技术地图与采集保持；已提交的原图表与编号结论方案历史已整合，地图新展示仍为方案。晨间和夜间日程保持；准点运行及末次收尾待验。

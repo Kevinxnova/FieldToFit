@@ -134,3 +134,5 @@
 [历史证据目录](../archive/metis/validation/README.md)。原 beta 编号、日期和测试结果保留，不改写成 FieldToFit 正式版验收。
 
 应用案例暂缓；真实运营、用户及客户端验收以[验收标准](../../FieldToFit-PM.md#验收总门槛)和 REQ 状态为准。
+
+- [2026-10-09 技术地图图文阅读](2026-10-09-map-reading.md)：REQ-22-7最终展示、旧地图兼容及正式部署证据。
