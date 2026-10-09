@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.14"></a>
+## v1.8.14 · 报告原图表与重点标记方案修订 · 2026-10-09
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按所有者指示将REQ-22-7正文改为原报告图表截图、关键观点／结论和相关段落解读，保持路线全貌优先。
+- 以真实PDF图2／3／4和表1更新示意，注明版本、页码、原图复用和原页入口；六处重点标记区分作者结论、关键证据、适用边界与本站判断。
+- 仅修订展示方案与版本文档；网站展示仍未开发、未部署，待审报告没有发布，正式站最近已验仍为v1.8.11。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Follow the owner's direction to combine original report screenshots, key findings and paragraph explanations under the REQ-22-7 route overview.
+- Update the example with PDF figures 2–4 and table 1, recording versions, page numbers, reuse attribution and original-page links; six highlights distinguish author findings, evidence, limitations and editorial judgment.
+- Revise the display proposal and version documents only; the redesign remains unbuilt and undeployed, the pending report is unpublished, and production was last verified at v1.8.11.
+<!-- release-summary:en:end -->
+
+对应[REQ-22-7](FieldToFit-PM.md#req-22-7)。本批按用户指定的原图表与highlight方向制作对话示意，保留原图坐标、单位、图例、图注与作者许可，原文摘录／译文、归纳与本站判断分别标注。实际PDF截图、图文交互与文档检查见[本次记录](FieldToFit-PM.md#req-22-7-review)。网站正式组件、数据库、公开内容及自动化未改变；未部署、未推送发布标签。
+
 <a id="v1.8.13"></a>
 ## v1.8.13 · 路线全貌与报告重点解读方案修订 · 2026-10-09
 <!-- release-tag:unpublished -->
