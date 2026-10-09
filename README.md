@@ -24,7 +24,7 @@
 
 | 入口 | 提供什么 | 如何开始 |
 | --- | --- | --- |
-| For you | AA / Arena 模型能力与价格图、近期动态与技术演化地图，以及模型、工具、Agent、Skill、Harness 的持续关注资料 | 先看近期变化，再沿目录阅读具体项目、版本表、逐点解读和出处 |
+| For you | AA / Arena 模型能力与价格图、近期动态与技术报告精选&分析，以及模型、工具、Agent、Skill、Harness 的持续关注资料 | 先看近期变化，再沿目录阅读具体项目、版本表、逐点解读和出处 |
 | For your AI | 同一套已发布资料的 MCP / API、原文续读、修订历史和资料包 | 复制 MCP 地址接入个人 AI，或下载资料交给它继续使用 |
 | FieldToFit 社区 | 共建介绍、开发者投稿及参与入口 | 提交项目、推荐资源、纠错，或参与开发 |
 
@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.17](CHANGELOG.md#v1.8.17)** · [fieldtofit-v1.8.17](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.17)
+**当前源码版本：[v1.8.18](CHANGELOG.md#v1.8.18)** · [fieldtofit-v1.8.18](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.18)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 落实路线全貌、居中大标题、编号核心结论及同编号展开论述，保留手机连线、图文定位和段落分享入口。
-- 正文编辑、原报告图表放大、重点标记和独立编辑判断纳入现有审核与修订；网页、HTTP、MCP和无脚本页面同源。
-- 沿用已审Agent in a Bottle入口补齐四观点、原图2／3／4和表1；旧地图、真实报告日期、单位、来源与首次发表记录保持兼容。
+- 将近期栏目、目录、报告索引和AI入口统一为“技术报告精选&分析”，同步后台编辑、无脚本页面与双语说明。
+- 保留原有稳定网址、图文阅读、公开修订和同源接口；栏目改名不改变已审报告内容。
+- 核对a16z 10月5日消费AI报告、9月30日State of Markets II与10月8日OpenRouter补充数据，具体选题待所有者对齐。
 <!-- latest-summary:end -->
 
 v1.8.16已正式部署：保留v1.8.14已发布文案，Codex专题18条已审日志，官方Day 4即时纠偏／Sol Ultrafast及CLI 0.162.0归真实北京日期10月9日；网页／API／MCP同源、三宽度及客户端两项增量通过。见[本批生产验收](docs/validation/2026-10-09-codex-updates.md)。AA／Arena公司多选、技术地图与采集保持；已提交的原图表与编号结论方案历史已整合，地图新展示仍为方案。晨间和夜间日程保持；准点运行及末次收尾待验。

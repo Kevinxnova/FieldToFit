@@ -4,6 +4,26 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.18"></a>
+## v1.8.18 · 技术报告精选与分析栏目命名 · 2026-10-09
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 将近期栏目、目录、报告索引和AI入口统一为“技术报告精选&分析”，同步后台编辑、无脚本页面与双语说明。
+- 保留原有稳定网址、图文阅读、公开修订和同源接口；栏目改名不改变已审报告内容。
+- 核对a16z 10月5日消费AI报告、9月30日State of Markets II与10月8日OpenRouter补充数据，具体选题待所有者对齐。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Rename the recent section, contents, report index and AI entry to “Selected Technical Reports & Analysis”, with matching editor, no-script pages and bilingual documentation.
+- Preserve stable links, illustrated reading, public revisions and shared interfaces; the category rename leaves reviewed reports intact.
+- Review the October 5 a16z consumer report, September 30 State of Markets II and October 8 OpenRouter update; proposed topics await owner alignment.
+<!-- release-summary:en:end -->
+
+对应[REQ-22](FieldToFit-PM.md#req-22)，沿用原有报告维护与审核流程。近期使用分析区分访问、付费、输出token和缓存token，不从单平台或美国面板外推全球采用或生产力。报告选题与配图方案仅供对齐，未创建新网站草稿／发布；本批标题和兼容验收见[实际记录](docs/validation/2026-10-09-report-selection.md)。
+
 <a id="v1.8.17"></a>
 ## v1.8.17 · 技术地图结论与图文论述 · 2026-10-09
 

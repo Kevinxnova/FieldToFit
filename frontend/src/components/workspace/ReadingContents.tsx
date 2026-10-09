@@ -9,7 +9,7 @@ export function ReadingContents({news,newsTotal,codexProgress=false,technicalMap
  const button=useRef<HTMLButtonElement>(null),dialog=useRef<HTMLDialogElement>(null);
  const main=[{id:'model-landscape',title:pick('模型能力与价格','Model capability & pricing')},{id:'recent-news',title:pick('近期动态','Recent developments')},{id:'news-overview',title:pick('本期速览','At a glance')},{id:'news-releases',title:pick('发布与更新','Releases & updates')},{id:'resource-dossiers',title:pick('持续关注','Ongoing watch')},{id:'developer-projects',title:pick('开发者投稿项目','Developer-submitted projects')}];
  const special={id:'news-codex-28-days',title:pick('Codex 28天进化日志','Codex: 28 Days of Progress')};
- const mapAnchor={id:'technical-evolution-maps',title:pick('技术演化地图','Technical evolution maps')};
+ const mapAnchor={id:'technical-evolution-maps',title:pick('技术报告精选&分析','Selected Technical Reports & Analysis')};
  const anchors=[...(technicalMaps?[mapAnchor]:[]),...(codexProgress?[special]:[]),...main,...news,...groups,...resources];const signature=anchors.map(x=>x.id).join('|');
  const group=groups.find(g=>g.id===active||g.items.some(i=>i.id===active));
  const newsActive=['recent-news','news-overview','news-releases','news-codex-28-days','technical-evolution-maps',...news.map(n=>n.id)].includes(active);

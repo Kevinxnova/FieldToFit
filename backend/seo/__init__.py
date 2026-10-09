@@ -207,8 +207,8 @@ def page(path, dist):
             from backend.knowledge.technical_maps import maps
             collection = maps(slug=path.split('/')[-1] if path != '/maps' else '', archive=request.args.get('archive','all'), q=request.args.get('q',''))
             obj = collection['items'][0] if path != '/maps' else None
-            title = (obj['question'] if obj else '技术演化地图')+' · FieldToFit'
-            description = obj['takeaway'] if obj else '围绕技术问题，阅读近期报告中的方法、实验与局限。'
+            title = (obj['question'] if obj else '技术报告精选&分析')+' · FieldToFit'
+            description = obj['takeaway'] if obj else '精选原始报告，读懂核心结论、证据和适用边界。'
             body = render_template('technical_maps.html', maps=collection, item=obj)
             return document(dist,title,description,path,body)
         if path in PAGES:

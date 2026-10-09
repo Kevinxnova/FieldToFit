@@ -24,7 +24,7 @@ For researchers, engineers, graduate students, students and AI application devel
 
 | Entry | What it provides | Where to start |
 | --- | --- | --- |
-| For you | AA / Arena capability-and-price charts, recent developments and technical evolution maps, and ongoing coverage of models, tools, Agents, Skills and Harnesses | Read recent changes, then follow the contents to projects, version tables, editorial notes and sources |
+| For you | AA / Arena capability-and-price charts, recent developments and selected technical reports with analysis, and ongoing coverage of models, tools, Agents, Skills and Harnesses | Read recent changes, then follow the contents to projects, version tables, editorial notes and sources |
 | For your AI | The same published materials through MCP / API, source-text continuation, revision history and bundles | Connect your AI using the MCP address, or download materials to give it |
 | FieldToFit Community | Community purpose, developer submissions and ways to contribute | Submit a project, recommend or correct resources, or help with development |
 
@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.17](CHANGELOG.md#v1.8.17)** · [fieldtofit-v1.8.17](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.17)
+**Current source version: [v1.8.18](CHANGELOG.md#v1.8.18)** · [fieldtofit-v1.8.18](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.18)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Implement route overviews, centered large headings, numbered findings and matching arguments, retaining mobile graph edges, reading navigation and section links.
-- Add reviewed text editing, original figure enlargement, highlights and separate editorial judgment to existing publication and revision workflows; share evidence across web, HTTP, MCP and no-script pages.
-- Expand the reviewed Agent in a Bottle entry with four findings, figures 2–4 and table 1, preserving older maps, genuine report dates, units, citations and first-publication history.
+- Rename the recent section, contents, report index and AI entry to “Selected Technical Reports & Analysis”, with matching editor, no-script pages and bilingual documentation.
+- Preserve stable links, illustrated reading, public revisions and shared interfaces; the category rename leaves reviewed reports intact.
+- Review the October 5 a16z consumer report, September 30 State of Markets II and October 8 OpenRouter update; proposed topics await owner alignment.
 <!-- latest-summary:end -->
 
 v1.8.16 is deployed, retaining the v1.8.14 published copy: the Codex topic contains 18 reviewed logs, with official Day 4 steering/Ultrafast and CLI 0.162.0 dated October 9 in Beijing. Web/API/MCP alignment, three viewport widths and two client additions passed; see [production evidence](docs/validation/2026-10-09-codex-updates.md). AA/Arena company multiselect, existing maps and discovery remain available; the committed screenshot and numbered-findings proposal histories are integrated and the map redesign remains a proposal. Existing morning and evening schedules remain; punctual execution and the final review are still pending.

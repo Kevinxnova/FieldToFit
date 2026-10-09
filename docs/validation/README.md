@@ -1,6 +1,8 @@
 # 验收证据导航
 
-本批：[v1.8.14／v1.8.16 Codex官方Day 4与CLI日志及并行整合](2026-10-09-codex-updates.md)。
+本批：[v1.8.18 技术报告精选&分析栏目命名与取材核对](2026-10-09-report-selection.md)。
+
+前轮：[v1.8.14／v1.8.16 Codex官方Day 4与CLI日志及并行整合](2026-10-09-codex-updates.md)。
 
 前轮：[v1.8.11 Codex专题补录与同源同步](2026-10-08-codex-updates.md)。
 

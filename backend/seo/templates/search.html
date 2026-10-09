@@ -24,7 +24,7 @@
     </article>
     {% endif %}
     {% for kind, collection in collections.items() %}<section><h2>{{ '近期动态' if kind == 'news' else '持续关注' }}</h2>
-    {% if kind == 'news' %}<section id="technical-evolution-maps"><h3>技术演化地图</h3>{% for entry in collection['items'] if entry.technical_map %}<article><h4><a href="/maps/{{ entry.technical_map.slug }}">{{ entry.technical_map.question }}</a></h4><p>{{ entry.technical_map.takeaway }}</p><p>本次变化：{{ entry.technical_map.change_summary }}</p></article>{% endfor %}<a href="/maps">全部地图与历史索引</a></section>{% endif %}
+    {% if kind == 'news' %}<section id="technical-evolution-maps"><h3>技术报告精选&amp;分析</h3>{% for entry in collection['items'] if entry.technical_map %}<article><h4><a href="/maps/{{ entry.technical_map.slug }}">{{ entry.technical_map.question }}</a></h4><p>{{ entry.technical_map.takeaway }}</p><p>本次变化：{{ entry.technical_map.change_summary }}</p></article>{% endfor %}<a href="/maps">全部精选与历史索引</a></section>{% endif %}
     {% if kind == 'news' and collection.codex_progress.total %}{% include 'codex_topic.html' %}{% endif %}
     {% for entry in collection['items'] %}<article><h3><a href="/{{ kind }}/{{ entry.id }}">{{ entry.title if kind == 'news' else entry.name }}</a></h3><p>{{ entry.summary if kind == 'news' else entry.introduction }}</p></article>{% endfor %}</section>{% endfor %}
     {% if catalog %}<section><h2>重点跟踪对象</h2>{% for org in catalog.tracked %}<article><h3><a href="{{ org.official_url }}">{{ org.name }}</a></h3><p>{{ org.products|join(' · ') }}</p><ul>{% for channel in org.channels %}<li><a href="{{ channel.url }}">{{ channel.name }}</a> · {{ channel.scope }}</li>{% endfor %}</ul></article>{% endfor %}</section>{% endif %}
