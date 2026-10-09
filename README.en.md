@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.14](CHANGELOG.md#v1.8.14)** · Release tag not yet published
+**Current source version: [v1.8.15](CHANGELOG.md#v1.8.15)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Follow the owner's direction to combine original report screenshots, key findings and paragraph explanations under the REQ-22-7 route overview.
-- Update the example with PDF figures 2–4 and table 1, recording versions, page numbers, reuse attribution and original-page links; six highlights distinguish author findings, evidence, limitations and editorial judgment.
-- Revise the display proposal and version documents only; the redesign remains unbuilt and undeployed, the pending report is unpublished, and production was last verified at v1.8.11.
+- Follow the owner's direction to enlarge and center REQ-22-7 headings, lead report text with numbered findings, and expand each under a matching number and title.
+- Reorganize the example into four findings and corresponding arguments with numbered supporting points, retaining original figures, highlights, attribution and map/text navigation.
+- Revise the conversation example, requirement and version documents only; the redesign remains unbuilt and undeployed, the report is unpublished, and production was last verified at v1.8.11.
 <!-- latest-summary:end -->
 
 v1.8.11 is deployed: the Codex topic contains 16 reviewed logs, with aligned web/API/MCP data and five client additions verified. Previously shipped AA/Arena company multiselect, the first technical map, name tracing and 12 announcement sources remain available. See [production evidence](docs/validation/2026-10-08-codex-updates.md). Existing morning and evening schedules remain; real consecutive-day operation and the final review are still pending.
