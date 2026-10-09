@@ -12,6 +12,15 @@ from backend.knowledge.platform import PlatformError
 SLUG='agent-context-cost'
 URL='https://arxiv.org/html/2609.19969v1'
 
+@pytest.fixture(autouse=True)
+def focused_map_seed(monkeypatch):
+    """Exercise this report's workflow independently of later curated reports."""
+    seeds=ws.seeds()
+    for item in seeds['news']['items']:
+        if item['id']!='D-90':
+            item.pop('technical_map',None)
+    monkeypatch.setattr(ws,'seeds',lambda:copy.deepcopy(seeds))
+
 def draft():return copy.deepcopy(next(x for x in ws.seeds()['news']['items'] if x['id']=='D-90'))
 def reading(version=0,body=None,**extra):return {'url':URL,'version':version,'status':'read','change_kind':'baseline','body':body or ('Actual original technical report material. '*15),'first_published_at':'2026-09-17','revised_at':None,'report_version':'arXiv v1','locator':'§2–3','note':'已实际读取架构、条件和局限。',**extra}
 def edit(client,changes):
@@ -129,7 +138,7 @@ def test_recent_intake_uses_source_dates_and_daily_budget(client):
     migrate(client)
     from backend.knowledge import discovery, source_catalog
     source=next(s for s in source_catalog.definitions() if s['config'].get('mode')=='arxiv')
-    for i in range(12):discovery.capture(source,{'title':'Paper '+str(i),'url':'https://arxiv.org/abs/2610.'+str(10000+i),'published_at':ws.today()+'T00:00:00Z','metadata':{'primary':True},'summary':'technical paper'})
+    for i in range(12):discovery.capture(source,{'title':'Paper '+str(i),'url':'https://arxiv.org/abs/2610.'+str(10000+i),'published_at':ws.today()+'T00:00:00+08:00','metadata':{'primary':True},'summary':'technical paper'})
     discovery.capture(source,{'title':'Old report','url':'https://arxiv.org/abs/2501.10000','published_at':'2025-01-01T00:00:00Z','metadata':{'upstream_updated_at':ws.today()+'T00:00:00Z','revision_kind':'cosmetic'},'summary':'old'})
     board=mm.handoff();assert len(board['targets'])==10 and board['backlog']==3
     assert any(x['reason'].startswith('超过30日') for x in board['excluded'])
@@ -158,7 +167,7 @@ def test_report_html_abs_representations_share_exact_version(client):
     migrate(client)
     from backend.knowledge import discovery,source_catalog
     source=next(s for s in source_catalog.definitions() if s['id']=='daily-map-research')
-    discovery.capture(source,{'title':'Fixture technical report','url':'https://arxiv.org/abs/2610.10050v1','published_at':ws.today()+'T00:00:00Z','metadata':{'primary':True},'summary':'Synthetic report for identity workflow validation'})
+    discovery.capture(source,{'title':'Fixture technical report','url':'https://arxiv.org/abs/2610.10050v1','published_at':ws.today()+'T00:00:00+08:00','metadata':{'primary':True,'first_published_at':ws.today()},'summary':'Synthetic report for identity workflow validation'})
     url='https://arxiv.org/html/2610.10050v1'
     mm.check(reading(url=url,first_published_at=ws.today()))
     with pytest.raises(PlatformError):mm.check(reading(url='https://arxiv.org/html/2610.10050v2',first_published_at=ws.today()))

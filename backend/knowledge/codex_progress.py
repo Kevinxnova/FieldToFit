@@ -41,8 +41,8 @@ def metadata(item):
     if raw.get('event_key') not in sources:
         raise ValueError('专题事件标识必须是已登记的官方出处链接')
     official = raw.get('official_day')
-    if official is not None and (isinstance(official, bool) or not isinstance(official, int) or not 1 <= official <= 28 or raw['group'] != 'codex'):
-        raise ValueError('官方 Day 编号须为 1–28，仅用于 Codex 主线')
+    if official is not None and (isinstance(official, bool) or not isinstance(official, int) or not 1 <= official <= 28):
+        raise ValueError('官方 Day 编号须为 1–28')
     precision, basis = raw.get('date_precision'), raw.get('timestamp_basis')
     if precision == 'instant':
         if basis not in ('official_timestamp', 'post_id_derived'):
@@ -72,6 +72,11 @@ def metadata(item):
     if raw.get('source_posts') is not None:
         from backend.knowledge.codex_posts import normalize
         result['source_posts'] = normalize(raw['source_posts'], sources)
+    if official is not None and raw['group'] == 'other_openai' and not any(
+        p['kind'] == 'primary' and p['url'] == raw['event_key']
+        for p in result.get('source_posts', [])
+    ):
+        raise ValueError('其他 OpenAI 的官方 Day 须关联同事件已核对的 Tibo 主公告')
     if raw.get('roundup') is not None:
         roundup = raw['roundup']
         if not isinstance(roundup, dict):

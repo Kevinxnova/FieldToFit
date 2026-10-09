@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.19](CHANGELOG.md#v1.8.19)** · [fieldtofit-v1.8.19](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.19)
+**当前源码版本：[v1.8.20](CHANGELOG.md#v1.8.20)** · [fieldtofit-v1.8.20](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.20)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 按已对齐的消费AI选题，整理a16z 10月5日第7版报告：四个编号核心观点、对应论述、重点标记与独立本站判断。
-- 配三张核验数据重绘图及一张阅读示意，明确美国面板、指标单位、真实报告／数据日期和原始出处；区分购买观察与未来判断。
-- 图表放大与后台说明兼容原图、本站重绘和示意；沿用已有审核、稳定网址、修订与网页／AI同源流程。
+- 按所有者批准的四条增量整理输入预测Pro测试、Dots手机与任务跟进、Windows MXC沙箱及CLI 0.162.1修复，保留各自真实日期与适用条件。
+- Dots保留“官方Day 5”并独立归其他OpenAI；修正后台分组对官方编号的限制，其他OpenAI编号须关联同事件已核对的Tibo主公告。
+- 沿用真实头像、原帖摘录、双语概览及保存／双端预览／复核／发布流程，网站、API与MCP共享同一已审修订。
 <!-- latest-summary:end -->
 
 v1.8.19已正式部署：a16z消费AI首篇已发布，含路线全貌、四条编号观点及对应论述、三张数据重绘图与一张阅读示意。报告、数据与网站发表日期分别保留，网页／HTTP／MCP同源；现有104条动态、49项关注、三张报告地图，既有Codex日志、AA／Arena公司多选及采集内容保留。实际生产结果见[本批验收](docs/validation/2026-10-09-a16z-consumer.md)。

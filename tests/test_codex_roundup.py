@@ -40,7 +40,7 @@ def install(data, tmp_path, monkeypatch):
 def test_roundup_order_preserves_dates_groups_counts_and_privacy():
     public = news.news(_data=with_roundup())
     topic = public['codex_progress']; roundup = topic['roundups'][0]
-    assert topic['total'] == 18 and len(topic['days']) == 5
+    assert topic['total'] == 22 and len(topic['days']) == 6
     assert roundup['date'] == '2026-10-07' and roundup['calendar_day'] == 3 and roundup['official_day'] == 2
     assert [s['news_id'] for s in roundup['steps']] == ['D-84', 'D-86', 'D-85', 'D-87']
     assert next(d for d in topic['days'] if d['date'] == '2026-10-07')['ordered_ids'] == ['D-86', 'D-85', 'D-87', 'D-94', 'D-95', 'D-97', 'D-91']

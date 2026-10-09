@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.20"></a>
+## v1.8.20 · Codex官方Day 5与Windows更新 · 2026-10-10
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按所有者批准的四条增量整理输入预测Pro测试、Dots手机与任务跟进、Windows MXC沙箱及CLI 0.162.1修复，保留各自真实日期与适用条件。
+- Dots保留“官方Day 5”并独立归其他OpenAI；修正后台分组对官方编号的限制，其他OpenAI编号须关联同事件已核对的Tibo主公告。
+- 沿用真实头像、原帖摘录、双语概览及保存／双端预览／复核／发布流程，网站、API与MCP共享同一已审修订。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Curate four owner-approved updates: the Pro composer-prediction beta, Dots mobile and task follow-ups, the Windows MXC sandbox and CLI 0.162.1 fixes, retaining genuine dates and eligibility.
+- Keep Dots' official Day 5 in the separate other-OpenAI group; allow its official number only with a reviewed Tibo primary post for the same event.
+- Retain real avatars, original excerpts, bilingual overviews and save/dual-preview/review/publish gates, with the same reviewed revision across the website, API and MCP.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)，仅本批四条获准内容；Windows归10月9日22:59，其余三项归10月10日。没有编号Roundup则不制造5.1／5.2；预测免费不等于发送后的任务免费，MXC保留设备与策略限制。重置证据不足继续留内部。源种子同时补齐此前已正式发布的D-100至D-104及已获批准的读取材料，不重新发布或更改其生产内容。The seed export also catches up five existing publications and their already-approved readable materials without republishing or changing production records. 无数据库迁移、公开接口兼容；实际验收和发布状态见[本批记录](docs/validation/2026-10-10-codex-updates.md)。
+
 <a id="v1.8.19"></a>
 ## v1.8.19 · a16z消费AI使用与付费分析 · 2026-10-09
 

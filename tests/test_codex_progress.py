@@ -19,9 +19,12 @@ def event(data, ident='D-78'):
 def test_dates_numbering_precision_shared_api_and_mcp(client):
     body = client.get('/api/v1/platform/news').json
     days = body['codex_progress']['days']
-    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
+    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
     by_date = {d['date']: d for d in days}
-    assert by_date['2026-10-09']['codex_ids'] == ['D-98', 'D-99'] and by_date['2026-10-09']['other_openai_ids'] == []
+    assert by_date['2026-10-10']['codex_ids'] == ['D-105', 'D-108']
+    assert by_date['2026-10-10']['other_openai_ids'] == ['D-106']
+    assert event(body, 'D-106')['codex_28_days']['official_day'] == 5
+    assert by_date['2026-10-09']['codex_ids'] == ['D-107', 'D-98', 'D-99'] and by_date['2026-10-09']['other_openai_ids'] == []
     assert event(body, 'D-98')['codex_28_days']['official_day'] == 4
     assert event(body, 'D-99')['codex_28_days']['official_day'] is None
     assert event(body, 'D-98')['codex_28_days']['announced_at'] == '2026-10-08T19:15:14.353Z'
@@ -49,7 +52,7 @@ def test_invalid_evidence_blocks_publication(broken, monkeypatch):
     class FixedTime(datetime):
         @classmethod
         def now(cls, tz=None):
-            return cls.fromisoformat('2026-10-07T12:00:00+08:00').astimezone(tz)
+            return cls.fromisoformat('2026-10-10T12:00:00+08:00').astimezone(tz)
     monkeypatch.setattr(codex_progress, 'datetime', FixedTime)
     data = collection(); item = event(data); meta = item['codex_28_days']
     if broken == 'no_timezone': meta['announced_at'] = '2026-10-05T17:20:29'
@@ -118,6 +121,41 @@ def test_confirmed_reset_requires_effective_scope_and_keeps_revisioned_evidence(
     for key in ('scope','plans','source_url','effective_at'):
         broken=copy.deepcopy(data); del event(broken)['codex_28_days']['reset'][key]
         with pytest.raises((ValueError,TypeError)): news.validate(broken)
+
+
+def test_other_openai_official_day_requires_same_event_tibo_post(client):
+    migrate(client)
+    before = client.get('/api/v1/platform/news').json
+    cur = call(client, '/content/news/D-78', method='get').json
+    cur['draft']['codex_28_days']['group'] = 'other_openai'
+    call(client, '/content/news/D-78', cur, 'patch')
+    preview = call(client, '/content/news/D-78/preview').json
+    assert preview['ready']
+    publish(client, 'news', 'D-78')
+    body = client.get('/api/v1/platform/news').json
+    item = event(body)
+    assert item['codex_28_days']['official_day'] == 1
+    assert item['codex_28_days']['group'] == 'other_openai'
+    assert item['event_date'] == event(before)['event_date']
+    assert body['codex_progress']['total'] == before['codex_progress']['total']
+    day = next(d for d in body['codex_progress']['days'] if d['date'] == item['event_date'])
+    assert 'D-78' in day['other_openai_ids'] and 'D-78' not in day['codex_ids']
+    rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call','params':{'name':'curated_news','arguments':{}}}).json['result']
+    assert rpc['structuredContent'] == body
+
+
+@pytest.mark.parametrize('broken', ['missing_post', 'different_event'])
+def test_other_openai_official_day_cannot_borrow_unrelated_post(broken):
+    data = collection()
+    item = event(data)
+    meta = item['codex_28_days']
+    meta['group'] = 'other_openai'
+    if broken == 'missing_post':
+        meta.pop('source_posts', None)
+    else:
+        meta['event_key'] = item['sources'][1]['url']
+    with pytest.raises(ValueError, match='同事件已核对的 Tibo 主公告'):
+        news.validate(data)
 
 
 def source_post():
@@ -189,7 +227,7 @@ def test_month_grid_has_real_dates_without_creating_logs():
     oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
     assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
     assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
-    assert sum(bool(c['log']) for c in oct)==5 and sum(bool(c['log']) for c in nov)==0
+    assert sum(bool(c['log']) for c in oct)==6 and sum(bool(c['log']) for c in nov)==0
     assert topic==before
 
 
