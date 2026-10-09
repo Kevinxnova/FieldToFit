@@ -36,18 +36,18 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.14](CHANGELOG.md#v1.8.14)** · [fieldtofit-v1.8.14](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.14)
+**当前源码版本：[v1.8.16](CHANGELOG.md#v1.8.16)** · [fieldtofit-v1.8.16](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.16)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布D-98官方Day 4双项日志：即时纠偏与GPT-6.1 Sol Ultrafast按原帖顺序展示，保留适用套餐、API范围和速度／计费口径。
-- 发布D-99 CLI 0.162.0正式版本日志；两项真实北京时间均归10月9日日历Day 5，原始10月8日日期及官方编号分别保留。
-- 专题增至18条（9项Codex／Work、9项其他OpenAI），同步月历、日历条、Tibo原帖／真实头像与HTML/API/MCP及AI交接，不重复统计同一发布或未核实重置。
+- 保留D-98官方Day 4即时纠偏／Sol Ultrafast与D-99 CLI 0.162.0，专题18条、真实10月9日与网页／API／MCP同源保持。
+- 整合原报告图表、重点标记及编号结论／对应论述的已提交方案文档，保留原图来源、页码、许可和实际示意验证边界；新展示仍未开发。
+- 保留双方完整提交历史，最终以v1.8.16统一前后端、双语README与发布记录；原v1.8.14标签和已审数据库记录保持。
 <!-- latest-summary:end -->
 
-v1.8.14已正式部署：Codex专题18条已审日志，官方Day 4即时纠偏／Sol Ultrafast及CLI 0.162.0归真实北京日期10月9日；网页／API／MCP同源、三宽度及客户端两项增量通过。见[本批生产验收](docs/validation/2026-10-09-codex-updates.md)。AA／Arena公司多选、技术地图与采集保持；v1.8.12／v1.8.13地图新展示仍为方案。晨间和夜间日程保持；准点运行及末次收尾待验。
+v1.8.16已正式部署：保留v1.8.14已发布文案，Codex专题18条已审日志，官方Day 4即时纠偏／Sol Ultrafast及CLI 0.162.0归真实北京日期10月9日；网页／API／MCP同源、三宽度及客户端两项增量通过。见[本批生产验收](docs/validation/2026-10-09-codex-updates.md)。AA／Arena公司多选、技术地图与采集保持；已提交的原图表与编号结论方案历史已整合，地图新展示仍为方案。晨间和夜间日程保持；准点运行及末次收尾待验。
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
 

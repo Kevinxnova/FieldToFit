@@ -4,6 +4,49 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.16"></a>
+## v1.8.16 · Codex已审日志与并行展示方案整合 · 2026-10-09
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 保留D-98官方Day 4即时纠偏／Sol Ultrafast与D-99 CLI 0.162.0，专题18条、真实10月9日与网页／API／MCP同源保持。
+- 整合原报告图表、重点标记及编号结论／对应论述的已提交方案文档，保留原图来源、页码、许可和实际示意验证边界；新展示仍未开发。
+- 保留双方完整提交历史，最终以v1.8.16统一前后端、双语README与发布记录；原v1.8.14标签和已审数据库记录保持。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Keep D-98 official Day 4 steering/Ultrafast and D-99 CLI 0.162.0, the 18-log topic, genuine October 9 Beijing dates and aligned web/API/MCP data.
+- Integrate the committed report screenshots, highlights and numbered findings/arguments proposals, preserving sources, page numbers, licenses and actual prototype validation boundaries; the new design remains unbuilt.
+- Preserve both commit histories and align final v1.8.16 backend/frontend versions, bilingual READMEs and release records; retain the published v1.8.14 tag and reviewed database content.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)及[REQ-22-7](FieldToFit-PM.md#req-22-7)。v1.8.14两条日志已审发布；v1.8.15是本批实际通过复验的中间部署，尚未形成独立整合交付提交。最终直接合并已完成的541c559（含81b1f81）方案历史，避免另建重复v1.8.15交付。并行工作流已发布D-100至D-103及三个持续关注档案修订，保留其生产集合；本聊天不认领其来源核验，新闻源导出由其原流程完成。原专题18条保持，0重置。最终v1.8.16正式部署、75项回归、三宽度／两MCP及正常游标空续读通过，见[实际验收](docs/validation/2026-10-09-codex-updates.md)。
+
+<a id="v1.8.15"></a>
+## v1.8.15 · 编号结论与对应论述展示方案 · 2026-10-09
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按所有者要求将REQ-22-7大标题居中放大，报告正文首先列出编号核心结论，再按相同编号和观点标题展开。
+- 将案例重组为四观点与对应论述，多观点使用编号分点；保留原图表、高亮、作者／本站判断区分和图文定位。
+- 仅修订对话示意、需求及版本文档；正式展示未开发、未部署，待审报告未发布，正式站最近已验仍为v1.8.11。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Follow the owner's direction to enlarge and center REQ-22-7 headings, lead report text with numbered findings, and expand each under a matching number and title.
+- Reorganize the example into four findings and corresponding arguments with numbered supporting points, retaining original figures, highlights, attribution and map/text navigation.
+- Revise the conversation example, requirement and version documents only; the redesign remains unbuilt and undeployed, the report is unpublished, and production was last verified at v1.8.11.
+<!-- release-summary:en:end -->
+
+对应[REQ-22-7](FieldToFit-PM.md#req-22-7)。本批落实用户对文字展示的四项要求，将原方法／评测／结果栏目改为四个真实核心观点的结论与对应论述；核心结论、编号、原图和段落出处绑定，本站判断单独标注。实际示意与文档检查见[本次记录](FieldToFit-PM.md#req-22-7-review)。正式组件、数据库、公开内容及自动化未改；未部署、未推送发布标签。
+
 <a id="v1.8.14"></a>
 ## v1.8.14 · Codex官方Day 4与CLI 0.162.0日志发布 · 2026-10-09
 
