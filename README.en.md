@@ -36,18 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.13](CHANGELOG.md#v1.8.13)** · Release tag not yet published
+**Current source version: [v1.8.14](CHANGELOG.md#v1.8.14)** · [fieldtofit-v1.8.14](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.14)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Follow the owner's selection of a route overview as the REQ-22-7 entry point, followed by continuous technical-report highlights; the reading order is aligned while depth and interactions remain under review.
-- Define five sections covering mechanisms, evaluation and baselines, key results, failures and limits, and adoption considerations, with diagrams, conditions, citations and two-way map/text navigation.
-- Update the source-backed interactive example and requirement/version documentation only; the website redesign is unbuilt and undeployed, production was last verified at v1.8.11, and the pending report has not been published automatically.
+- Publish D-98 as one official Day 4 log, keeping faster steering before GPT-6.1 Sol Ultrafast and distinguishing plan eligibility, API access, performance claims, and billing.
+- Publish the stable CLI 0.162.0 release as D-99. Both genuine Beijing timestamps fall on October 9, calendar Day 5, while retaining the original October 8 dates and separate official numbering.
+- Expand the topic to 18 logs, split nine Codex/Work and nine other OpenAI, with calendar, date strip, genuine Tibo portrait/posts, HTML, API, MCP, and AI handoff from one publication source.
 <!-- latest-summary:end -->
 
-v1.8.11 is deployed: the Codex topic contains 16 reviewed logs, with aligned web/API/MCP data and five client additions verified. Previously shipped AA/Arena company multiselect, the first technical map, name tracing and 12 announcement sources remain available. See [production evidence](docs/validation/2026-10-08-codex-updates.md). Existing morning and evening schedules remain; real consecutive-day operation and the final review are still pending.
+v1.8.14 is deployed: the Codex topic contains 18 reviewed logs, with official Day 4 steering/Ultrafast and CLI 0.162.0 dated October 9 in Beijing. Web/API/MCP alignment, three viewport widths and two client additions passed; see [production evidence](docs/validation/2026-10-09-codex-updates.md). AA/Arena company multiselect, existing maps and discovery remain available; the v1.8.12/v1.8.13 map redesign remains a proposal. Existing morning and evening schedules remain; punctual execution and the final review are still pending.
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

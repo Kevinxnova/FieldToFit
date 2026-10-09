@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.14"></a>
+## v1.8.14 · Codex官方Day 4与CLI 0.162.0日志发布 · 2026-10-09
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布D-98官方Day 4双项日志：即时纠偏与GPT-6.1 Sol Ultrafast按原帖顺序展示，保留适用套餐、API范围和速度／计费口径。
+- 发布D-99 CLI 0.162.0正式版本日志；两项真实北京时间均归10月9日日历Day 5，原始10月8日日期及官方编号分别保留。
+- 专题增至18条（9项Codex／Work、9项其他OpenAI），同步月历、日历条、Tibo原帖／真实头像与HTML/API/MCP及AI交接，不重复统计同一发布或未核实重置。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish D-98 as one official Day 4 log, keeping faster steering before GPT-6.1 Sol Ultrafast and distinguishing plan eligibility, API access, performance claims, and billing.
+- Publish the stable CLI 0.162.0 release as D-99. Both genuine Beijing timestamps fall on October 9, calendar Day 5, while retaining the original October 8 dates and separate official numbering.
+- Expand the topic to 18 logs, split nine Codex/Work and nine other OpenAI, with calendar, date strip, genuine Tibo portrait/posts, HTML, API, MCP, and AI handoff from one publication source.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者明确批准本批两条文案，通过既有保存→双端预览→提交复核→明确发布流程上线。99条动态、49项持续关注；原97条动态、全部持续关注及模型图表保持。仅内容及版本文档变化，无数据库迁移或公开接口变更。保留已独立提交的v1.8.12／v1.8.13方案文档历史，其地图展示仍未开发／部署。本批真实验收见[记录](docs/validation/2026-10-09-codex-updates.md)；v1.8.14正式部署、75项回归、三宽度／两MCP同源及原位置两项增量／空续读均通过。
+
 <a id="v1.8.13"></a>
 ## v1.8.13 · 路线全貌与报告重点解读方案修订 · 2026-10-09
 <!-- release-tag:unpublished -->

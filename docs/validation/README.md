@@ -1,6 +1,8 @@
 # 验收证据导航
 
-本批：[v1.8.11 Codex专题补录与同源同步](2026-10-08-codex-updates.md)。
+本批：[v1.8.14 Codex官方Day 4与CLI日志](2026-10-09-codex-updates.md)。
+
+前轮：[v1.8.11 Codex专题补录与同源同步](2026-10-08-codex-updates.md)。
 
 当前正式：[v1.8.10 模型图表任意公司多选](2026-10-08-chart-selection.md#production-deployment)，44项回归、构建及本地／正式各14组浏览器验收通过；两来源、快速键盘、旧链接、主图／放大／表格联动和三宽度已验，正式版本／三MCP与原数据保持通过。
 

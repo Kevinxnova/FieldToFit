@@ -19,13 +19,19 @@ def event(data, ident='D-78'):
 def test_dates_numbering_precision_shared_api_and_mcp(client):
     body = client.get('/api/v1/platform/news').json
     days = body['codex_progress']['days']
-    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
-    assert days[0]['codex_ids'] == ['D-96'] and days[0]['other_openai_ids'] == []
-    assert days[1]['codex_ids'] == ['D-94', 'D-85', 'D-95']
-    assert set(days[1]['other_openai_ids']) == {'D-86', 'D-87', 'D-97', 'D-91'}
-    assert days[2]['codex_ids'] == ['D-84', 'D-79', 'D-78']
-    assert set(days[2]['other_openai_ids']) == {'D-88', 'D-89'}
-    assert set(days[3]['other_openai_ids']) == {'D-77', 'D-80', 'D-81'}
+    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
+    by_date = {d['date']: d for d in days}
+    assert by_date['2026-10-09']['codex_ids'] == ['D-98', 'D-99'] and by_date['2026-10-09']['other_openai_ids'] == []
+    assert event(body, 'D-98')['codex_28_days']['official_day'] == 4
+    assert event(body, 'D-99')['codex_28_days']['official_day'] is None
+    assert event(body, 'D-98')['codex_28_days']['announced_at'] == '2026-10-08T19:15:14.353Z'
+    assert event(body, 'D-99')['codex_28_days']['announced_at'] == '2026-10-08T18:55:59Z'
+    assert by_date['2026-10-08']['codex_ids'] == ['D-96'] and by_date['2026-10-08']['other_openai_ids'] == []
+    assert by_date['2026-10-07']['codex_ids'] == ['D-94', 'D-85', 'D-95']
+    assert set(by_date['2026-10-07']['other_openai_ids']) == {'D-86', 'D-87', 'D-97', 'D-91'}
+    assert by_date['2026-10-06']['codex_ids'] == ['D-84', 'D-79', 'D-78']
+    assert set(by_date['2026-10-06']['other_openai_ids']) == {'D-88', 'D-89'}
+    assert set(by_date['2026-10-05']['other_openai_ids']) == {'D-77', 'D-80', 'D-81'}
     assert event(body)['codex_28_days']['official_day'] == 1
     assert event(body, 'D-77')['event_date'] is None
     assert event(body, 'D-77')['codex_28_days']['announced_at'] is None
@@ -50,7 +56,7 @@ def test_invalid_evidence_blocks_publication(broken, monkeypatch):
     if broken == 'wrong_day': item['event_date'] = '2026-10-05'
     if broken == 'fake_instant': meta.update(date_precision='source_date', timestamp_basis='source_date')
     if broken == 'unknown_source': meta['event_key'] = 'https://example.org/unreviewed'
-    if broken == 'duplicate': clone = copy.deepcopy(item); clone['id'] = 'D-99'; data['items'].append(clone)
+    if broken == 'duplicate': clone = copy.deepcopy(item); clone['id'] = 'D-999'; data['items'].append(clone)
     if broken == 'future': meta['announced_at'] = '2026-11-01T04:00:00Z'; item['event_date'] = '2026-11-01'
     if broken == 'official_day': meta['official_day'] = True
     if broken == 'reset_scope': meta['type'] = 'reset'
@@ -183,7 +189,7 @@ def test_month_grid_has_real_dates_without_creating_logs():
     oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
     assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
     assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
-    assert sum(bool(c['log']) for c in oct)==4 and sum(bool(c['log']) for c in nov)==0
+    assert sum(bool(c['log']) for c in oct)==5 and sum(bool(c['log']) for c in nov)==0
     assert topic==before
 
 

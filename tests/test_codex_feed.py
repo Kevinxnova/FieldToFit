@@ -44,7 +44,7 @@ def new_draft(client):
 def test_full_same_publication_single_tool_and_empty_delta(client):
     public=client.get('/api/v1/platform/news').json
     first=read(client)
-    assert first['mode']=='full' and first['total']==16 and first['topic']==public['codex_progress']
+    assert first['mode']=='full' and first['total']==18 and first['topic']==public['codex_progress']
     assert first['publication_revision']==public['revision']
     assert {e['object_id']:e['item'] for e in first['items']}=={i['id']:i for i in public['items'] if i.get('codex_28_days')}
     assert next(e['item'] for e in first['items'] if e['object_id']=='D-78')['codex_28_days']['source_posts'][0]['avatar']
@@ -77,7 +77,7 @@ def test_private_edits_unrelated_news_and_topic_only_corrections(client):
 
 
 def test_backfill_group_move_removal_and_withdrawal(client):
-    migrate(client);main=read(client,group='codex');assert main['total']==7
+    migrate(client);main=read(client,group='codex');assert main['total']==9
     ident=new_draft(client);publish(client,'news',ident)
     new=read(client,group='codex',cursor=main['resume_cursor'])
     assert new['total']==1 and new['items'][0]['object_id']==ident

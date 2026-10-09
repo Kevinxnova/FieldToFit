@@ -2,6 +2,247 @@
   "edition": "2026-09-11-launch",
   "items": [
     {
+      "category": "agent",
+      "checked_at": "2026-10-09",
+      "codex_28_days": {
+        "announced_at": "2026-10-08T18:55:59Z",
+        "date_precision": "instant",
+        "event_key": "https://github.com/openai/codex/releases/tag/rust-v0.162.0",
+        "group": "codex",
+        "official_day": null,
+        "overview_en": "CLI 0.162.0: worktrees, pinning, copying",
+        "overview_zh": "CLI 0.162.0：工作树／置顶／复制",
+        "source_posts": [],
+        "timestamp_basis": "official_timestamp",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-09",
+      "highlight": false,
+      "id": "D-99",
+      "interpretation": [
+        {
+          "locator": "官方原帖／发布说明及使用范围；FieldToFit未复测上游速度或功能",
+          "source_ids": [
+            "release"
+          ],
+          "text": "启用worktrees功能时，可从可信本地项目创建或列出受管理Git工作树。支持的服务端下，Agent Command Center可按p置顶任务并共享Pinned组。/copy用于浏览、复制对话块，Ctrl+Insert复制选择内容；tui.mouse_scroll_speed可调整鼠标滚轮速度，审批、提问和MCP提示中的跨行URL也可点击。",
+          "title": "更顺手的终端任务管理"
+        },
+        {
+          "locator": "官方原帖／发布说明及使用范围；FieldToFit未复测上游速度或功能",
+          "source_ids": [
+            "release"
+          ],
+          "text": "自定义Responses兼容提供商可声明实时网页访问与远程上下文压缩能力；Code Mode新增Promise完成即流式返回的辅助函数与可选工具搜索排序。修复Linux多拒读文件时的沙盒启动、Windows 10盘符文件访问与临时目录权限，并遵循Responses／WebSocket的Retry-After。保留显式模型配置覆盖；既有CRLF换行可在apply_patch时保留。",
+          "title": "提供商与运行可靠性"
+        },
+        {
+          "locator": "官方原帖／发布说明及使用范围；FieldToFit未复测上游速度或功能",
+          "source_ids": [
+            "release"
+          ],
+          "text": "CLI用户可安装npm install -g @openai/codex@0.162.0后使用对应入口。工作树、共享置顶、可选工具搜索均按官方列出的开关或支持条件启用，不把版本中的可选能力写成对所有账户默认开放。这是独立正式版本日志，没有取得Tibo逐版关联帖，不附拼凑原帖。",
+          "title": "如何使用与范围"
+        }
+      ],
+      "name": "Codex／ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-09T02:26:09.181461+00:00",
+        "updated_at": "2026-10-09T02:26:09.181461+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-08",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Codex CLI 0.162.0正式发布",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0"
+        }
+      ],
+      "state": "published",
+      "summary": "正式版0.162.0补充受管理Git工作树工具、任务置顶和终端对话复制，并修复Linux／Windows沙盒、重试及安装问题。部分功能仍取决于开关或服务端支持。",
+      "title": "Codex CLI 0.162.0：工作树工具、置顶与终端复制升级"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-09",
+      "codex_28_days": {
+        "announced_at": "2026-10-08T19:15:14.353Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2108275041276420573",
+        "group": "codex",
+        "official_day": 4,
+        "overview_en": "Faster steering / Sol Ultrafast",
+        "overview_zh": "即时纠偏／Sol Ultrafast",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-08T19:15:14.353Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-09",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-09",
+            "context": {
+              "author_handle": "OpenAIDevs",
+              "author_name": "OpenAI Developers",
+              "kind": "quote",
+              "text_en": "Ultrafast is rolling out today for GPT-6.1 Sol in the API, Codex, and ChatGPT Work.",
+              "text_scope": "excerpt",
+              "translation_zh": "GPT-6.1 Sol Ultrafast开始在API、Codex与ChatGPT Work推出。",
+              "url": "https://x.com/OpenAIDevs/status/2108262812489531498"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2108275041276420573",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖短摘录及本站中文摘译；完整正文与适用范围见原帖和动态解读。",
+            "text_en": "We have improved steering to be instant… Also releasing GPT-6.1 Sol ultrafast. The two work very well together.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "我们让任务纠偏响应更及时；同时推出GPT-6.1 Sol Ultrafast，两者配合得很好。",
+            "url": "https://x.com/thsottiaux/status/2108275041276420573"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "speed"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-09",
+      "highlight": false,
+      "id": "D-98",
+      "interpretation": [
+        {
+          "locator": "官方原帖／发布说明及使用范围；FieldToFit未复测上游速度或功能",
+          "source_ids": [
+            "tibo",
+            "help-steering"
+          ],
+          "text": "OpenAI正在ChatGPT桌面应用的Codex中推出更快的Steering。任务运行时，发送修正方案、补充信息或改变方向的后续消息，模型可更快响应。可在设置→通用→后续消息行为中选择立即纠偏或等待下一轮。Tibo使用了“instant”的表述，本站不把它写成所有任务零延迟的实测保证。",
+          "title": "先及时纠偏"
+        },
+        {
+          "locator": "官方原帖／发布说明及使用范围；FieldToFit未复测上游速度或功能",
+          "source_ids": [
+            "changelog",
+            "speed"
+          ],
+          "text": "GPT-6.1 Sol新增Ultrafast服务速度档。在Codex／ChatGPT Work中，需要Pro $500或符合资格的Enterprise／Edu方案；Enterprise默认关闭，需工作区所有者启用。其他自助套餐在推出时不因购买点数而获得资格。模型可用时在模型／速度选择器中选择对应的Ultrafast。",
+          "title": "再选择Sol Ultrafast"
+        },
+        {
+          "locator": "官方原帖／发布说明及使用范围；FieldToFit未复测上游速度或功能",
+          "source_ids": [
+            "openaidevs",
+            "speed"
+          ],
+          "text": "OpenAI Developers称Sol Ultrafast速度最高可达Sol Standard的8倍，属于官方声称，FieldToFit未复测，不表示整项任务必定缩短为八分之一。官方用量说明另列：Ultrafast套餐内用量按Standard的8倍消耗；购买点数及Enterprise按用量付费按6倍计费。这里的计费倍率与速度幅度是不同指标。",
+          "title": "速度与用量成本分别说明"
+        },
+        {
+          "locator": "官方原帖／发布说明及使用范围；FieldToFit未复测上游速度或功能",
+          "source_ids": [
+            "api-changelog",
+            "api-ultrafast",
+            "speed"
+          ],
+          "text": "Responses API的Sol Ultrafast向所有API用户开放，仍受独立速率限制。在请求中指定gpt-6.1-sol及service_tier=\"ultrafast\"，按API token价格计费，ChatGPT套餐倍率不适用。Sol Ultrafast支持美国／欧洲数据驻留；API另支持global processing。此项为同一发布的API范围说明，不重复计作专题新事件。",
+          "title": "API开放范围"
+        }
+      ],
+      "name": "Codex／ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-09T02:25:42.672456+00:00",
+        "updated_at": "2026-10-09T02:25:42.672456+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-08",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "tibo",
+          "title": "Tibo 官方Day 4原帖",
+          "url": "https://x.com/thsottiaux/status/2108275041276420573"
+        },
+        {
+          "coverage": "link_only",
+          "id": "openaidevs",
+          "title": "OpenAI Developers Sol Ultrafast公告",
+          "url": "https://x.com/OpenAIDevs/status/2108262812489531498"
+        },
+        {
+          "coverage": "link_only",
+          "id": "changelog",
+          "title": "ChatGPT／Codex官方更新日志",
+          "url": "https://learn.chatgpt.com/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "help-steering",
+          "title": "ChatGPT官方更新说明：更快Steering",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "speed",
+          "title": "Codex官方速度档、资格与用量说明",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/speed"
+        },
+        {
+          "coverage": "link_only",
+          "id": "api-changelog",
+          "title": "OpenAI API更新日志",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "api-ultrafast",
+          "title": "Responses API Ultrafast说明",
+          "url": "https://developers.openai.com/api/docs/guides/ultrafast-mode"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo X账号及头像身份",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo宣布Steering响应更及时，并推出Sol Ultrafast。桌面Codex支持在任务运行时更快调整方向；Ultrafast的套餐资格、使用成本和API开放范围需分别看待。",
+      "title": "官方Day 4：即时纠偏与GPT-6.1 Sol Ultrafast"
+    },
+    {
       "category": "tool",
       "checked_at": "2026-10-08",
       "codex_28_days": {
@@ -11497,7 +11738,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-08",
+  "reviewed_at": "2026-10-09",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

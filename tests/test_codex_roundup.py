@@ -40,10 +40,10 @@ def install(data, tmp_path, monkeypatch):
 def test_roundup_order_preserves_dates_groups_counts_and_privacy():
     public = news.news(_data=with_roundup())
     topic = public['codex_progress']; roundup = topic['roundups'][0]
-    assert topic['total'] == 16 and len(topic['days']) == 4
+    assert topic['total'] == 18 and len(topic['days']) == 5
     assert roundup['date'] == '2026-10-07' and roundup['calendar_day'] == 3 and roundup['official_day'] == 2
     assert [s['news_id'] for s in roundup['steps']] == ['D-84', 'D-86', 'D-85', 'D-87']
-    assert topic['days'][1]['ordered_ids'] == ['D-86', 'D-85', 'D-87', 'D-94', 'D-95', 'D-97', 'D-91']
+    assert next(d for d in topic['days'] if d['date'] == '2026-10-07')['ordered_ids'] == ['D-86', 'D-85', 'D-87', 'D-94', 'D-95', 'D-97', 'D-91']
     assert event(public, 'D-84')['codex_28_days']['date'] == '2026-10-06'
     assert event(public, 'D-86')['codex_28_days']['group'] == 'other_openai'
     assert event(public, 'D-87')['codex_28_days']['official_day'] is None
@@ -89,7 +89,7 @@ def test_late_roundup_is_readable_without_an_extra_or_redated_event(client, tmp_
     assert topic['total'] == public['total'] == 1
     assert [d['date'] for d in topic['days']] == ['2026-10-07', '2026-10-06']
     assert topic['days'][0]['ordered_ids'] == []
-    assert topic['days'][1]['ordered_ids'] == ['D-84']
+    assert next(d for d in topic['days'] if d['date'] == '2026-10-06')['ordered_ids'] == ['D-84']
     assert topic['roundups'][0]['steps'] == [{'number': 1, 'news_id': 'D-84'}]
     assert public['items'][0]['event_date'] == '2026-10-06'
 
@@ -112,5 +112,5 @@ def test_private_changes_correction_and_withdrawal_do_not_leave_stale_links(clie
     call(client, '/content/news/D-84/withdraw', {'draft_version': published['draft_version'], 'reason': 'isolated source withdrawal'})
     changed = read(client, cursor=first['resume_cursor'])
     assert changed['items'][0]['object_id'] == 'D-84' and changed['items'][0]['kind'] == 'removed'
-    assert changed['topic_changed'] and changed['topic']['total'] == 15
+    assert changed['topic_changed'] and changed['topic']['total'] == first['topic']['total'] - 1
     assert all(s['news_id'] != 'D-84' for s in changed['topic']['roundups'][0]['steps'])
