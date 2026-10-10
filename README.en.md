@@ -36,18 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.20](CHANGELOG.md#v1.8.20)** · [fieldtofit-v1.8.20](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.20)
+**Current source version: [v1.8.21](CHANGELOG.md#v1.8.21)** · [fieldtofit-v1.8.21](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.21)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Curate four owner-approved updates: the Pro composer-prediction beta, Dots mobile and task follow-ups, the Windows MXC sandbox and CLI 0.162.1 fixes, retaining genuine dates and eligibility.
-- Keep Dots' official Day 5 in the separate other-OpenAI group; allow its official number only with a reviewed Tibo primary post for the same event.
-- Retain real avatars, original excerpts, bilingual overviews and save/dual-preview/review/publish gates, with the same reviewed revision across the website, API and MCP.
+- Curate the owner's selection of today's report 1, SelfSearch v2, with a route overview and four numbered findings and arguments on tool evolution, experimental costs and model transfer.
+- Add four original redraws and diagrams, retaining genuine report dates, model configurations, task subsets and shared-success cost denominators, with counterexamples and replication limits.
+- Document daily recommendations of 2–3 reports and organization, verification and publication after selecting one; separate ordinary news approval from report selection and retain review, stable links and shared web/AI content.
 <!-- latest-summary:end -->
 
-v1.8.19 is deployed with the first a16z consumer analysis: an overview, four numbered findings with matching arguments, three statistical redraws and one reading diagram. Report, data and website publication dates remain distinct; web/HTTP/MCP share the same evidence. The site has 104 news items, 49 watch dossiers and three report maps, preserving existing Codex logs, AA/Arena company multiselect and discovery content. See the [production evidence](docs/validation/2026-10-09-a16z-consumer.md).
+v1.8.21 is deployed following the owner's choice of today's report 1, SelfSearch, with a route overview, four numbered findings and matching arguments, four original redraws/diagrams and highlights. Retain genuine report, revision and site publication dates, task scope and cost denominators; web/HTTP/MCP share the reviewed content, with existing content and private drafts preserved. The site has 112 updates, 50 watch items and four reports. Recommend 2–3 reports daily, then organize, verify and publish the one selected by the owner; see [actual validation](docs/validation/2026-10-10-selfsearch.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

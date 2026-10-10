@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.21"></a>
+## v1.8.21 · SelfSearch精选分析与每日选题机制 · 2026-10-10
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按所有者选择的今日报告1，整理SelfSearch v2：路线全貌、四个编号核心观点及对应论述，展开工具演进、实验费用与跨模型迁移。
+- 增加四张本站重绘／示意，保留真实报告日期、模型配置、任务子集和共同成功费用分母，明确反例与未独立复现边界。
+- 沉淀每天推荐2–3篇、选择一篇后整理验证发布的机制；普通日报与报告选择分开，沿用既有审核、稳定入口及网页／AI同源内容。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Curate the owner's selection of today's report 1, SelfSearch v2, with a route overview and four numbered findings and arguments on tool evolution, experimental costs and model transfer.
+- Add four original redraws and diagrams, retaining genuine report dates, model configurations, task subsets and shared-success cost denominators, with counterexamples and replication limits.
+- Document daily recommendations of 2–3 reports and organization, verification and publication after selecting one; separate ordinary news approval from report selection and retain review, stable links and shared web/AI content.
+<!-- release-summary:en:end -->
+
+对应[REQ-22](FieldToFit-PM.md#req-22)、[REQ-22-6](FieldToFit-PM.md#req-22-6)及[REQ-22-7](FieldToFit-PM.md#req-22-7)。仅报告1获选择；未选择报告不创建网站草稿。SelfSearch首次为9月29日、v2为9月30日，未核实v2实质差异，不用10月10日整理时间制造新论文日期。图形为本站设计，不将arXiv非独占许可当作原图转载许可。无数据库迁移或公开接口变更；实际验证和发布结果见[本批验收](docs/validation/2026-10-10-selfsearch.md)。
+
 <a id="v1.8.20"></a>
 ## v1.8.20 · Codex官方Day 5与Windows更新 · 2026-10-10
 

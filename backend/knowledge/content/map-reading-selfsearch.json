@@ -1,0 +1,403 @@
+{
+  "id": "D-00",
+  "state": "published",
+  "name": "SelfSearch：从改进经验进化工具",
+  "organization": "首尔大学 / Jungwoo Yang、Injin Kong、Yohan Jo",
+  "title": "AI 不换模型，也能自己改进吗？",
+  "category": "research",
+  "summary": "深读SelfSearch v2：模型权重固定，Agent从前代改进记录中调整工具与流程。四个编号核心观点与对应论述、四张本站图形，保留样本、费用分母、反例和未验证边界。",
+  "highlight": false,
+  "checked_at": "2026-10-10",
+  "source_published_at": "2026-09-29",
+  "event_date": "2026-09-29",
+  "editor": "FieldToFit",
+  "interpretation": [
+    {
+      "title": "读过程，再判断收益",
+      "text": "把模型能力与工具流程分开；本文整理作者的10代搜索、消融、费用和迁移证据，单独说明本站判断及未复现范围。",
+      "source_ids": [
+        "report"
+      ],
+      "locator": "第2–4节／第6节"
+    }
+  ],
+  "sources": [
+    {
+      "id": "report",
+      "title": "SelfSearch: Reward-Free Search for Self-Improving Agents · arXiv v2",
+      "url": "https://arxiv.org/html/2609.37968v2",
+      "coverage": "link_only"
+    }
+  ],
+  "related": [],
+  "note": "arXiv首次提交2026-09-29，v2为2026-09-30；按官方报告日期记录。配图为本站重绘／示意，非报告原图；arXiv非独占许可不作为插图转载许可。未独立复现实验。",
+  "technical_map": {
+    "slug": "selfsearch-agent-improvement",
+    "question": "AI 不换模型，也能自己改进吗？",
+    "focus": "固定模型 → 读取改进记录 → 修改工具与流程 → 冻结后独立评测与迁移。",
+    "takeaway": "改进经验可以生成有用工具，部分作者实验同时提高成功率并降低执行费用；是否更好仍须冻结实现后按同一任务和成本口径验证。",
+    "caution": "作者实验，未独立复现。Verified为120题子集；38.5%仅为共同成功题执行费用降幅，搜索和事后评测另计；不代表无限持续进步。",
+    "change_summary": "所有者选择今日报告1后发布：四个编号观点与对应论述、四张本站重绘／示意、固定模型／费用分母／反例与迁移边界。",
+    "reports": [
+      {
+        "source_id": "report",
+        "version": "arXiv 2609.37968v2 · 2026-09-30",
+        "first_published_at": "2026-09-29",
+        "revised_at": "2026-09-30",
+        "substantive_revision": false,
+        "revision_note": "读取v2；未对v1逐项对比，不将v2登记为已核实的实质更新。"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "initial",
+        "kind": "baseline",
+        "stage": 0,
+        "label": "初始Agent／固定模型",
+        "mechanism": "以初始工具与流程作为基线，模型权重不参与训练。",
+        "setting": "各配置使用相同执行模型与限制。",
+        "result": "为改进效果提供比较起点。",
+        "limitation": "模型固定不等于运行成本或任务行为完全相同。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "第2节／第3.1节：基线与模型配置",
+            "fragment": "S3.SS1"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "selfsearch",
+        "kind": "method",
+        "stage": 1,
+        "label": "过程记录 → 工具改进",
+        "mechanism": "读取前代记录、修改并验证副本，由下一代实现接棒。",
+        "setting": "两条路线共享上一代记录；10代；无下游评测反馈。",
+        "result": "形成可检查、可复用的工具与程序；消融支持记录与接棒的作用。",
+        "limitation": "仍有本地检查；不保证每条路线都提升，也不证明无限进步。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "第2节／第4节：流程与工具变化",
+            "fragment": "S2"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "performance",
+        "kind": "result",
+        "stage": 2,
+        "label": "冻结后看效果与费用",
+        "mechanism": "搜索结束后评测最后一代，区分尝试费用与共同成功费用。",
+        "setting": "Verified120题、Multilingual60题、Terminal2.1共89题。",
+        "result": "DeepSeek适应路线多语言68.3%→73.3%；共同成功题执行费用降低38.5%。",
+        "limitation": "个别路线退步；费用不含搜索，子集结果不能当作完整排行榜。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "第3.1–3.2节／表1；附录表10",
+            "fragment": "S3.T1"
+          }
+        ],
+        "metrics": [
+          {
+            "label": "DeepSeek适应路线多语言成功率",
+            "value": 73.3,
+            "unit": "%",
+            "baseline": "初始Agent 68.3%",
+            "conditions": "SWE-bench Multilingual抽样60题／8种语言；DeepSeek V4 Flash执行；10代；作者实验"
+          },
+          {
+            "label": "共同成功题执行费用降幅",
+            "value": 38.5,
+            "unit": "%",
+            "baseline": "初始Agent在双方共同成功题上的执行费用",
+            "conditions": "DeepSeek适应路线／SWE-bench Multilingual；表10独立分母；不含搜索／事后评测费用"
+          }
+        ]
+      },
+      {
+        "id": "transfer",
+        "kind": "result",
+        "stage": 3,
+        "label": "换模型验证工具迁移",
+        "mechanism": "不重新搜索，固定工具实现后交给另一模型执行。",
+        "setting": "SWE-bench Verified120题；两种搜索与执行模型组合。",
+        "result": "跨模型复用在报告的有限任务集上也获得收益。",
+        "limitation": "独立重复搜索稳定性及真实业务适用性仍需验证。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "第3.4节／表3；第6节",
+            "fragment": "S3.T3"
+          }
+        ],
+        "metrics": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "initial",
+        "to": "selfsearch",
+        "relation": "inheritance",
+        "label": "同一初始实现经过记录驱动的逐代修改",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "第2节：两条路线从相同初始Agent出发",
+            "fragment": "S2"
+          }
+        ]
+      },
+      {
+        "from": "initial",
+        "to": "performance",
+        "relation": "baseline",
+        "label": "相同执行模型与限制下比较初始和第10代",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "第3.1–3.2节／表1：比较条件",
+            "fragment": "S3.T1"
+          }
+        ]
+      },
+      {
+        "from": "selfsearch",
+        "to": "performance",
+        "relation": "inheritance",
+        "label": "最后一代工具实现冻结后进入下游评测",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "第2节／第3.1节：搜索与评测分开",
+            "fragment": "S3.SS1"
+          }
+        ]
+      },
+      {
+        "from": "performance",
+        "to": "transfer",
+        "relation": "parallel",
+        "label": "同一冻结实现的另一种评测：换执行模型，不重新搜索",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "第3.4节／表3：跨模型迁移",
+            "fragment": "S3.SS4"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "title": "这份报告的四个核心观点",
+      "findings": [
+        {
+          "id": "fixed-model-evolving-tools",
+          "title": "模型权重不变，Agent的工具和做法仍能改进",
+          "summary": "SelfSearch把改进对象放在指令、工具和执行逻辑上：读取前代记录，编辑并验证副本，再由新实现接棒下一轮。",
+          "node_ids": [
+            "initial",
+            "selfsearch"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "第2节：改进轮次、两条路线与固定运行时",
+              "fragment": "S2"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "这篇报告问的是：不在搜索期间反复跑下游题目、按分数筛选候选，Agent能否从“改进自己”的经历中找到有用变化？作者让Agent读取此前改进的过程记录，而不只是最终代码。记录包括推理、工具调用及结果、代码变化和本地检查。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/selfsearch-v2-mechanism.png",
+              "caption": "图1 · SelfSearch改进流程（本站示意；模型权重与外部运行时固定）",
+              "alt": "前代记录交给当前Agent；当前Agent编辑并验证副本，本轮运行者不变；新实现接棒下一代。两条路线共享上一代记录，共运行10代。",
+              "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
+              "license": "图形 © FieldToFit；原始数据与方法归属见来源",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "第2节／附录A：运行边界",
+                  "fragment": "S2"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "改什么：可编辑仓库里的指令、工具、执行逻辑和代码组织；当前运行者在本轮内不变，编辑结果定义下一代。",
+                "怎么探索：能力路线寻找可复用工具和程序；适应路线关注失败、矛盾证据和策略调整。两条路线各自保留实现，共享上一代的两份记录。",
+                "何时评测：搜索中没有下游基准题目或评测结果；作者冻结搜索检查点后，才用下游任务评价最后一代。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "“无奖励搜索”仍使用工具反馈与本地检查，也仍需要事后评测；这里没有训练模型权重。"
+            }
+          ]
+        },
+        {
+          "id": "experience-and-tools",
+          "title": "重要的不只是一份新代码，还有改进过程留下的经验",
+          "summary": "消融实验支持前代记录和改进者接棒的作用；工具演进案例显示，记录中的失败能变成下一代的具体修复目标。",
+          "node_ids": [
+            "selfsearch"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "第4.1–4.3节：消融、逐代变化与下游工具复用",
+              "fragment": "S4"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "报告中最有启发的变化很具体：读取长记录时，输出截断会隐藏关键证据；一个工具修复后，下一轮又会暴露新的阅读或验证困难。这让“自我改进”有了可检查的工程过程。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/selfsearch-v2-records.png",
+              "caption": "图2 · 完整方法与两种消融（本站重绘；DeepSeek配置，120题，两条路线均值，横轴0–100%）",
+              "alt": "初始81.7%；无前代记录83.8%；固定改进者83.8%；完整SelfSearch86.7%。完整方法比两种消融各高2.9个百分点。",
+              "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
+              "license": "图形 © FieldToFit；原始数据与方法归属见来源",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "第4.1节／表4：消融条件与均值",
+                  "fragment": "S4.T4"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "第6–7代（GPT配置）：一条路线加入有输出上限的文本搜索，另一条加入结构化记录阅读器；下一代各自借鉴另一条路线的工具。",
+                "第8–10代（GPT配置）：多个短摘录合起来仍可能过长，因此加入总输出限制，再补事件过滤、工具名查找、调用参数与结果配对。",
+                "一个修复案例（DeepSeek配置）：第5代保留长行首尾，匹配内容落在中间时被隐藏；第6代改为围绕匹配位置摘录，第7代另一条路线复现问题、采用修复并验证。",
+                "消融怎么读：无记录版本仍会累积代码；固定改进者版本仍会读取记录、编辑最新实现。完整方法均值更高，支持两者共同作用，但部分单条路线结果仍有差异。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "evidence",
+              "text": "工具的作用也分层：文本搜索和按行阅读被用于下游任务；GPT记录阅读器未在下游调用，它主要支持继续改进的过程。"
+            }
+          ]
+        },
+        {
+          "id": "performance-and-cost",
+          "title": "部分实验能同时更准、更省，但收益有明确条件",
+          "summary": "DeepSeek适应路线在60道多语言题中，成功率由68.3%升至73.3%；“节省38.5%”另指双方都解对的题上的执行费用。",
+          "node_ids": [
+            "performance"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "第3.1–3.2节／表1；附录D.2／表10：费用分母",
+              "fragment": "S3.SS2"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "报告测试了两种模型配置、三个基准。两条最终路线的平均成功率在六个模型—基准设置中均高于初始Agent；具体到单条路线，效果与费用并不总是一起改善。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/selfsearch-v2-results.png",
+              "caption": "图3 · 多语言实验的成功率与费用（本站重绘；平均尝试费用与共同成功费用分开表达）",
+              "alt": "DeepSeek初始／能力／适应成功率68.3／66.7／73.3%；平均执行费用0.0521／0.0321／0.0332美元每次尝试。38.5%为共同成功题上的另一项费用降幅。",
+              "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
+              "license": "图形 © FieldToFit；原始数据与方法归属见来源",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "表1：平均每次尝试；表10：共同成功题执行费用",
+                  "fragment": "S3.T1"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "评测范围：SWE-bench Verified是120题子集；SWE-bench Multilingual抽样60题、覆盖8种编程语言；Terminal-Bench 2.1使用全部89题。不能当作完整Verified排行榜。",
+                "模型配置：GPT搜索用gpt-5.6-sol、执行用gpt-5.6-luna，均为medium推理；DeepSeek搜索用deepseek-v4-pro-0813、执行用deepseek-v4-flash-0731。同一配置的初始与改进Agent保持执行模型及限制一致。",
+                "费用分母：表1平均费用包括失败的尝试；38.5%来自初始与适应Agent共同解对的题，不能从表1的0.0521与0.0332直接算出。两项均为执行模型费用，搜索与事后评测另计。",
+                "反例也要看：DeepSeek能力路线的多语言成功率由68.3%降到66.7%；GPT能力路线在Terminal-Bench成功率提高，但平均执行费用增加3.1%。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "73.3%比68.3%高5个百分点。38.5%不是总体研发成本降幅，也不是所有任务、模型或真实业务的费用承诺。"
+            }
+          ]
+        },
+        {
+          "id": "transfer-and-limits",
+          "title": "改进后的工具能跨模型复用，稳定性仍需要更多验证",
+          "summary": "作者在120道Verified题上换用执行模型，观察到跨模型复用收益；这支持工具实现具有可迁移性，但还不足以证明通用、持续的自我进化。",
+          "node_ids": [
+            "transfer"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "第3.4节／表3：跨模型迁移；第6节：稳定性与后续研究",
+              "fragment": "S3.SS4"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "如果改进只对生成它的模型有用，工具价值会很受限。作者把搜索得到的实现冻结后，交给另一模型执行，不再重新搜索。这是一项关于工具与程序可迁移性的实验。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/selfsearch-v2-transfer.png",
+              "caption": "图4 · 固定实现后的跨模型执行（本站重绘；120题成功率，能力／适应路线分别记录）",
+              "alt": "GPT执行初始75.0%，采用DeepSeek搜索的能力／适应实现为79.2／76.7%；DeepSeek执行初始81.7%，采用GPT搜索实现为83.3／85.0%。",
+              "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
+              "license": "图形 © FieldToFit；原始数据与方法归属见来源",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "第3.4节／表3：搜索模型与执行模型分开",
+                  "fragment": "S3.T3"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "迁移结果：DeepSeek搜索得到的能力路线交给GPT执行，成功率75.0%→79.2%；GPT搜索得到的适应路线交给DeepSeek执行，81.7%→85.0%。这两组比较都来自相同120题设置。",
+                "仍缺什么：独立重复搜索能否稳定得到收益，更多模型、任务与真实环境是否有效，报告均未充分回答；作者也明确提出需要研究独立搜索的稳定性。",
+                "本站解读：更值得借鉴的是保存可定位的过程记录，把失败变成具体工具修复，再冻结候选并独立评测。能修改自己，只是候选生成能力；是否值得使用，还要看任务结果与总成本。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "搜索在无网络的隔离容器中、固定资源边界下运行；本文整理作者实验，FieldToFit未独立复现。"
+            }
+          ]
+        }
+      ],
+      "editorial": [
+        "这篇报告的价值是把“Agent变得更好”拆成可追踪的工程变化：保存失败上下文、修复工具、检查修复，再用冻结的候选回答真实任务。改进流程本身也成为下一轮的学习材料。",
+        "实际采用前，应在自己的任务集上复测成功率、失败类型、运行与维护总成本，并保留旧实现和变更记录。本篇提供研究线索，不把有限实验扩写成普遍性能或成本承诺。"
+      ]
+    }
+  }
+}

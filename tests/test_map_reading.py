@@ -10,7 +10,12 @@ from backend.knowledge import technical_maps as tm, content_workspace as ws
 
 ROOT = Path(__file__).resolve().parents[1]
 
-def case(): return json.loads((ROOT/'backend/knowledge/content/map-reading-bottle.json').read_text())
+def case():
+    item = json.loads((ROOT/'backend/knowledge/content/map-reading-bottle.json').read_text())
+    # Reviewed reports now exist in the seed; give this new-publication fixture its own identity.
+    item['technical_map']['slug'] = 'reading-fixture-artifacts'
+    item['technical_map']['question'] += '（隔离格式验收）'
+    return item
 
 def prepare(client):
     migrate(client); ident, _ = make(client, 'news'); d=ws.detail('news',ident); item=case(); item['id']=ident
@@ -65,12 +70,14 @@ def test_assets_match_verified_captures_and_escaped_text(client):
         assert hashlib.sha256((ROOT/'frontend/public'/url.lstrip('/')).read_bytes()).hexdigest()==asset['sha256']
     ident=prepare(client);d=ws.detail('news',ident);d['draft']['technical_map']['reading']['findings'][0]['summary']='<script>unsafe()</script>'
     ws.save('news',ident,{'draft':d['draft'],'draft_version':d['draft_version']});publish(client,'news',ident)
-    html=client.get('/maps/reusable-agent-artifacts').data.decode()
+    html=client.get('/maps/reading-fixture-artifacts').data.decode()
     assert '<script>unsafe()' not in html and '&lt;script&gt;unsafe()' in html
 
 
 def test_consumer_analysis_preserves_panel_scope_redraw_provenance_and_publication_boundary(client):
     item=json.loads((ROOT/'backend/knowledge/content/map-reading-a16z-consumer.json').read_text())
+    item['technical_map']['slug']='consumer-fixture-analysis'
+    item['technical_map']['question']+='（隔离消费分析验收）'
     manifest=json.loads((ROOT/'backend/knowledge/content/report-figures.json').read_text())
     chart=manifest['/report-figures/a16z-20261005-ranking-gap.png']['statistics']
     assert chart['spend_top_50_absent_from_both_traffic_lists']+chart['spend_top_50_in_at_least_one_traffic_list']==50
@@ -78,16 +85,16 @@ def test_consumer_analysis_preserves_panel_scope_redraw_provenance_and_publicati
     migrate(client);ident,_=make(client,'news');d=ws.detail('news',ident);item['id']=ident
     before=tm.maps();ws.save('news',ident,{'draft':item,'draft_version':d['draft_version']})
     assert tm.maps()==before and ws.preview('news',ident)['ready']
-    publish(client,'news',ident);data=tm.maps(slug='consumer-ai-spending');public=data['items'][0]
+    publish(client,'news',ident);data=tm.maps(slug='consumer-fixture-analysis');public=data['items'][0]
     assert public['reports'][0]['first_published_at']=='2026-10-05'
     assert len(public['reading']['findings'])==4 and '美国面板' in public['caution']
     for f in public['reading']['findings']:
         fig=next(b for b in f['blocks'] if b['kind']=='figure')
         assert '本站重绘' in fig['attribution'] and 'CC BY' not in fig['license']
         assert manifest[fig['image_url']]['origin']=='fieldtofit-redraw'
-    html=client.get('/maps/consumer-ai-spending').data.decode()
+    html=client.get('/maps/consumer-fixture-analysis').data.decode()
     assert '2026-10-05' in html and '2026年8月' in html and 'argument-ranking-gap' in html
     assert '19.5%' in html and '16.6%' in html and '50减29' in html
-    rpc=client.post('/api/mcp/curated',headers=MCP,json={'jsonrpc':'2.0','id':1,'method':'tools/call','params':{'name':'curated_maps','arguments':{'slug':'consumer-ai-spending'}}}).json['result']
+    rpc=client.post('/api/mcp/curated',headers=MCP,json={'jsonrpc':'2.0','id':1,'method':'tools/call','params':{'name':'curated_maps','arguments':{'slug':'consumer-fixture-analysis'}}}).json['result']
     assert rpc['structuredContent']==data
-    assert len(tm.history('consumer-ai-spending')['items'])==1
+    assert len(tm.history('consumer-fixture-analysis')['items'])==1

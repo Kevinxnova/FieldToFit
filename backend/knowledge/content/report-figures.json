@@ -94,5 +94,102 @@
       "numeric_task_shares": null,
       "observations_and_author_hypotheses_separated": true
     }
+  },
+  "/report-figures/selfsearch-v2-mechanism.png": {
+    "sha256": "14d83e31929c1a54844b7ba73d93ab90f5410ad48e0df1fed7932bdb016bb16e",
+    "source_urls": [
+      "https://arxiv.org/html/2609.37968v2"
+    ],
+    "license": "图形 © FieldToFit；原始数据与方法归属见来源",
+    "version": "arXiv 2609.37968v2 · 2026-09-30",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "procedure diagram",
+      "generations": 10,
+      "lineages": 2,
+      "model_weights_fixed": true,
+      "downstream_feedback_during_search": false
+    }
+  },
+  "/report-figures/selfsearch-v2-records.png": {
+    "sha256": "61d88dfe83ce207077c53c49370b971455e38214a2d52f50311064b72eef87dc",
+    "source_urls": [
+      "https://arxiv.org/html/2609.37968v2"
+    ],
+    "license": "图形 © FieldToFit；原始数据与方法归属见来源",
+    "version": "arXiv 2609.37968v2 · 2026-09-30",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "unit": "% success, mean of two lineages",
+      "benchmark": "SWE-bench Verified 120 tasks",
+      "configuration": "DeepSeek V4 Pro search / V4 Flash execution; generation 10",
+      "initial": 81.7,
+      "no_records": 83.8,
+      "fixed_improver": 83.8,
+      "full": 86.7
+    }
+  },
+  "/report-figures/selfsearch-v2-results.png": {
+    "sha256": "3297f4fa30d9427270aa08b13144063aeb829ee822e22f90ec10413cdc42d0a6",
+    "source_urls": [
+      "https://arxiv.org/html/2609.37968v2"
+    ],
+    "license": "图形 © FieldToFit；原始数据与方法归属见来源",
+    "version": "arXiv 2609.37968v2 · 2026-09-30",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "benchmark": "SWE-bench Multilingual 60 sampled tasks / eight languages",
+      "success_unit": "%",
+      "success": [
+        68.3,
+        66.7,
+        73.3
+      ],
+      "average_execution_cost_unit": "USD per attempt, including failures; excludes search",
+      "average_execution_cost": [
+        0.0521,
+        0.0321,
+        0.0332
+      ],
+      "shared_success_execution_cost_reduction_percent": 38.5,
+      "shared_success_scope": "Initial and DeepSeek adaptive jointly solved tasks, separate denominator"
+    }
+  },
+  "/report-figures/selfsearch-v2-transfer.png": {
+    "sha256": "5017bad2aa60aae2ca5b366b9b434ef062fe9d9aea4fc8e578ebd13785772167",
+    "source_urls": [
+      "https://arxiv.org/html/2609.37968v2"
+    ],
+    "license": "图形 © FieldToFit；原始数据与方法归属见来源",
+    "version": "arXiv 2609.37968v2 · 2026-09-30",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "unit": "% success",
+      "benchmark": "SWE-bench Verified 120 tasks",
+      "execution_columns": [
+        "GPT-5.6 Luna",
+        "DeepSeek V4 Flash"
+      ],
+      "initial": [
+        75.0,
+        81.7
+      ],
+      "gpt_search_capability": [
+        77.5,
+        83.3
+      ],
+      "gpt_search_adaptive": [
+        75.0,
+        85.0
+      ],
+      "deepseek_search_capability": [
+        79.2,
+        86.7
+      ],
+      "deepseek_search_adaptive": [
+        76.7,
+        86.7
+      ]
+    }
   }
 }

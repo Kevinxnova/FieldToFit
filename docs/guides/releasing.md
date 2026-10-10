@@ -43,3 +43,5 @@ GitHub Release 正文从该版本段落提取，必要的相对链接转换成�
 7. 经本次任务授权发布时，以该标签创建 GitHub Release，设置非 Draft、非 Pre-release；需要作为当前正式版时设为 Latest。确认标签指向、默认分支、Release 状态和链接。只在创建成功后报告已发布。
 
 若检查、部署或推送失败，记录实际结果，不以 Release 状态冒充运行验收。源码可从历史标签获取；v1.1.0 之后的回退必须保留数据库中的发布与下架数据，见[内容管理](management.md)。
+
+Vercel归档上传使用独立的正式文件目录：仅复制api、backend、frontend源码与公开资源，以及vercel.json、requirements.txt、.python-version和项目关联配置；排除凭据、数据库、私密output、依赖、构建缓存与符号链接。上传前核对实际清单和体积，不单凭忽略规则判断归档范围；异常体积或范围须停止上传，重新检查正式目录。
