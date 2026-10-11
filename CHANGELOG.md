@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.29"></a>
+## v1.8.29 · 持续关注总览与模型大事记 · 2026-10-12
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 实现REQ-6-18至21：五类持续关注增加四列总览，ChatGPT／Claude置顶；通用模型用途为“-”，每项最近事件均保留有效记录和链接。
+- 大事记按模型在上、产品在下排列，模型框显示发布时API价格，详情默认收起；手机改为纵向倒序，保留键盘与单节点展开。
+- FieldToFit事件按日期倒序展示摘要，解读独立展开，可继续读取全部历史并从完整文章返回阅读位置；旧档案、材料与修订保留。
+- 网页与AI接口同源、双语兼容；事件优先级采用近期编辑重点，现无可比较的热度排名。已部署v1.8.29，正式双语接口、三MCP与数据保持已验；线上浏览器交互复验因超时未完成。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Implement REQ-6-18 through 21: four-column overviews for all five watch groups, with ChatGPT/Claude pinned, dashes for generic-model purpose, and a linked record in every recent-event cell.
+- Place model milestones above the timeline and products below, with historical launch API prices and initially closed details; mobile uses a newest-first vertical layout with keyboard support and one open node.
+- Present dated FieldToFit events with summaries, independent notes, complete history loading and return-to-reading navigation; preserve existing dossiers, materials and revisions.
+- Share bilingual reading data across the website and AI API. Recent editorial highlights are used because comparable popularity data is unavailable. Deployed as v1.8.29 with production bilingual API/MCP and data-preservation checks passed; production browser interaction checks remain incomplete after timeouts.
+<!-- release-summary:en:end -->
+
+所有者已确认开发并授权更新部署，最终范围见[REQ-6-18至21](FieldToFit-PM.md#watch-overview-evolution-plan)，实际验证见[持续关注验收](docs/validation/2026-10-12-watch-reading.md)。本批使用新增读取字段，不改稳定CW-/D-网址、原始材料和权限；仓库ChatGPT名称保留GPT别名，旧公开修订仍保留其当时名称。新增分类及事件摘要从已审内容整理；参考图只用于布局，没有照抄图中日期或价格。2026-10-12按所有者授权将正式站升级至v1.8.29；无数据库迁移或新内容发布，原公开内容、私密草稿和历史保持。正式环境与验收限制见[部署记录](docs/validation/2026-10-12-watch-reading.md#production-deployment)。
+
 <a id="v1.8.28"></a>
 ## v1.8.28 · 模型图表自适应原生全屏与持续关注方案 · 2026-10-12
 

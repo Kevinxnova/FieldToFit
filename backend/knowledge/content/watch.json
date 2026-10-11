@@ -3451,7 +3451,7 @@
         }
       ],
       "introduction": "OpenAI的通用模型系列；按GPT版本与Chat、Work、Codex的实际入口分别说明，包含交互答案、工具执行和长期任务材料。",
-      "name": "GPT",
+      "name": "ChatGPT",
       "reading_materials": [
         {
           "approved": true,
@@ -3581,7 +3581,10 @@
         }
       ],
       "state": "published",
-      "type": "model"
+      "type": "model",
+      "aliases": [
+        "GPT"
+      ]
     },
     {
       "blocks": [

@@ -15,7 +15,7 @@ def relation(source='D-01',target='CW-M01'):
 
 def test_initial_baseline_direct_relations_and_no_private_drafts(client):
     migrate(client);initial=f.changes(object_ids=['CW-M01'],initialize=True)
-    assert initial['items']==[] and initial['objects'][0]['name']=='GPT'
+    assert initial['items']==[] and initial['objects'][0]['name']=='ChatGPT'
     relation()
     d=ws.detail('news','D-01');d['draft']['summary']='PRIVATE-DRAFT';ws.save('news','D-01',d)
     out=f.changes(object_ids=['CW-M01'],after=initial['until'])

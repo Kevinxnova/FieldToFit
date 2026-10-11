@@ -72,7 +72,8 @@ def source_hash(kind, item):
 @lru_cache(maxsize=1)
 def catalog():
     path=ROOT/'en.json'
-    return json.loads(path.read_text()) if path.exists() else {}
+    from backend.knowledge.watch_reading_data import translations
+    return {**(json.loads(path.read_text()) if path.exists() else {}), **translations()}
 
 @lru_cache(maxsize=1)
 def baseline():

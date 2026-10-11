@@ -125,6 +125,19 @@ def watch(q='', id='', type='', revision='', origin='', _data=None):
         public = public_collection(data)
     except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
         raise PlatformError('Watch collection is temporarily unavailable', 'watch_unavailable', 503) from exc
+    from backend.knowledge.platform_news import news, CONTENT_PATH as NEWS_PATH
+    from backend.knowledge.watch_reading import enrich
+    # The overview and detail history are independent of the homepage news window.
+    # Read public news only; never expose private drafts or editorial candidates.
+    try:
+        public_events = news(_data=load_published('news', NEWS_PATH))['items']
+        public['reading_status'] = 'ready'
+    except (PlatformError, OSError, ValueError, KeyError, TypeError):
+        public_events = []
+        public['reading_status'] = 'news_unavailable'
+    public['items'] = enrich(public['items'], public_events)
+    from backend.knowledge.watch_reading_data import translations as reading_translations
+    public['reading_revision'] = hashlib.sha256(json.dumps(reading_translations(), ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     from backend.knowledge.locale import review_fingerprint
     translations={i['id']:review_fingerprint(i) for i in data['items'] if i['state']=='published' and review_fingerprint(i)}
     fingerprint = hashlib.sha256(json.dumps({**public,**({'english':translations} if translations else {})}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
