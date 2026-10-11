@@ -11,6 +11,9 @@
 .watch-overview tbody th{font-size:1rem;font-weight:650}
 .watch-overview a{color:var(--ink);text-decoration:none}.watch-overview a:hover{text-decoration:underline;text-underline-offset:4px}
 .watch-overview th a span{color:var(--muted);font-weight:400;font-size:.75rem}
+.watch-overview a.watch-topic-link{display:inline-flex;align-items:center;gap:8px;min-height:36px;margin-top:10px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--green-soft);color:var(--green);font-size:.73rem;font-weight:550;white-space:nowrap;transition:background .15s,border-color .15s}
+.watch-overview a.watch-topic-link:hover{border-color:var(--green);text-decoration:none;background:var(--surface)}
+.watch-overview .watch-topic-link span{color:inherit;font-size:.95rem;margin-left:5px}
 .watch-overview small{display:block;font-size:.73rem;color:var(--muted);font-weight:400;margin:3px 0}
 .watch-category{color:var(--green);font-size:.82rem}
 .watch-overview-note{padding:12px 24px!important;margin:0!important;font-size:.73rem;color:var(--muted);border-top:1px solid var(--line);line-height:1.65}
@@ -22,8 +25,14 @@
 .watch-milestones>.watch-reading-heading,.watch-milestones>.watch-price-note{padding:0 24px}
 .watch-price-note{font-size:.76rem!important;line-height:1.8;color:var(--muted);margin:.8rem 0 1rem}
 .watch-timeline-controls{display:flex;gap:8px}
-.watch-timeline-controls button{height:36px;width:36px;border:1px solid var(--line);background:var(--surface);border-radius:50%;color:var(--ink)}
+.watch-timeline-controls button{height:44px;width:44px;border:1px solid var(--line);background:var(--surface);border-radius:50%;color:var(--ink)}
 .watch-timeline-controls button:disabled{opacity:.3;cursor:default}
+.watch-year-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:18px 24px 0;padding-top:14px;border-top:1px solid var(--line)}
+.watch-year-nav>div{display:flex;gap:3px;overflow-x:auto;scrollbar-width:thin;min-width:0}
+.watch-year-nav button{flex-shrink:0;min-height:44px;border:0;border-radius:8px;padding:0 12px;background:transparent;color:var(--muted);font-size:.78rem;font-variant-numeric:tabular-nums}
+.watch-year-nav button:hover{background:var(--surface-soft);color:var(--ink)}
+.watch-year-nav button[aria-current]{background:var(--green-soft);color:var(--green);font-weight:650}
+.watch-year-nav button.watch-latest{color:var(--green);white-space:nowrap}
 .watch-timeline{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:8px 24px 22px}
 .watch-timeline ol{display:grid;grid-auto-columns:152px;list-style:none;padding:0;margin:0;width:max-content}
 .watch-timeline-node{width:280px;display:grid;grid-template-rows:180px 34px 14px 34px 180px;position:relative;pointer-events:none}
@@ -67,6 +76,7 @@
 .watch-reading-card>.watch-notes{display:none}
 .watch-overview :is(a,button):focus-visible,.watch-milestones :is(button,a):focus-visible,.watch-timeline:focus-visible,.watch-events :is(a,button,summary):focus-visible{outline:2px solid var(--green);outline-offset:4px}
 @media(max-width:700px){
+ .watch-overview a.watch-topic-link{min-height:44px}
  .watch-overview thead{display:none}.watch-overview table,.watch-overview tbody,.watch-overview tr{display:block}
  .watch-overview tr{padding:18px 20px}.watch-overview th,.watch-overview td{display:block;width:100%!important;padding:4px 0;border:0}
  .watch-overview tbody th{margin-bottom:8px}.watch-overview td{display:grid;grid-template-columns:68px minmax(0,1fr);gap:10px;font-size:.83rem}
@@ -78,7 +88,8 @@
 }
 @media(max-width:560px){
  .watch-milestones{padding-top:18px}.watch-milestones>.watch-reading-heading,.watch-milestones>.watch-price-note{padding:0 18px}
- .watch-timeline-controls{display:none}.watch-timeline{overflow:visible;padding:10px 18px 18px}
+ .watch-year-nav{margin:14px 18px 0;gap:8px}.watch-year-nav button{padding:0 10px}
+ .watch-timeline-controls{display:none}.watch-timeline{max-height:65vh;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;padding:10px 18px 18px;border-top:1px solid var(--line)}
  .watch-timeline ol{display:block;width:auto}.watch-timeline-node{display:block;width:auto;padding:0 0 18px 22px}
  .watch-timeline-node:before{left:0;top:0;width:1px;height:100%}.watch-timeline-node:last-child:before{width:1px}
  .watch-timeline-dot,.watch-timeline-node.product>.watch-timeline-dot{position:absolute;left:0;top:26px;margin:0;transform:translateX(-50%)}

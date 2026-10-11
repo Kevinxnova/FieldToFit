@@ -8,7 +8,7 @@ import './watchReading.css';
 
 export type WatchEvent = {date:string|null;date_kind:'release'|'source'|'commit'|'review';title:string;url?:string;news_id?:string;profile_id?:string;basis:string};
 export type WatchOverviewData = {developer:string;category:string;purpose:string;recent_event:WatchEvent};
-export type WatchMilestone = {id:string;news_id:string;date:string;date_kind:string;kind:'model'|'product';name:string;price:string|null;price_condition:string;summary:string;points:NewsItem['interpretation'];sources:NewsItem['sources']};
+export type WatchMilestone = {id:string;news_id:string|null;date:string;date_kind:string;kind:'model'|'product';name:string;price:string|null;price_condition:string;summary:string;points:NewsItem['interpretation'];sources:NewsItem['sources']};
 
 function DateLabel({kind}:{kind:string}) {
   const {pick}=useWorkspace();
@@ -22,7 +22,12 @@ export function WatchOverview({items,name}:{items:WatchItem[];name:string}) {
       <caption><span>{name} · {pick('总览','Overview')}</span><span>{items.length} {pick('项','profiles')}</span></caption>
       <thead><tr>{[pick('项目 / 开发方','Project / Developer'),pick('定位类别','Category'),pick('核心用途','Purpose'),pick('最近事件','Recent event')].map(s=><th scope="col" key={s}>{s}</th>)}</tr></thead>
       <tbody>{items.map(item=>{const o=item.overview,e=o?.recent_event;return <tr key={item.id}>
-        <th scope="row"><Link to={contentPath(item.id)}>{item.name}<span aria-hidden="true"> ↗</span></Link><small>{o?.developer||'-'}</small></th>
+        <th scope="row"><Link to={contentPath(item.id)}>{item.name}</Link><small>{o?.developer||'-'}</small>
+          {['CW-M01','CW-M02'].includes(item.id)&&<Link className="watch-topic-link" to={contentPath(item.id)} aria-label={pick('进入 '+item.name+' 专题','Explore '+item.name)}>
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
+            {pick('进入专题','Explore')}<span aria-hidden="true">→</span>
+          </Link>}
+        </th>
         <td data-label={pick('定位类别','Category')}><span className="watch-category">{o?.category||'-'}</span></td>
         <td data-label={pick('核心用途','Purpose')}>{o?.purpose||'-'}</td>
         <td className="watch-recent" data-label={pick('最近事件','Recent event')}>{e?<>
@@ -40,38 +45,57 @@ export function WatchMilestones({items,profile}:{items:WatchMilestone[];profile:
   const {pick}=useWorkspace();
   const [selected,setSelected]=useState<string|null>(null);
   const [edges,setEdges]=useState({start:true,end:true});
+  const [activeYear,setActiveYear]=useState(items[0]?.date.slice(0,4));
   const [mobile,setMobile]=useState(()=>window.matchMedia('(max-width:560px)').matches);
   const rail=useRef<HTMLDivElement>(null);
   const triggers=useRef(new Map<string,HTMLButtonElement>());
   const selectedItem=items.find(item=>item.id===selected);
+  const years=[...new Set(items.map(item=>item.date.slice(0,4)))];
   let column=1;
   const positions=new Map(items.map((item,index)=>{if(index)column+=items[index-1].kind===item.kind?2:1;return [item.id,column];}));
-  const updateEdges=()=>{const el=rail.current;if(el)setEdges({start:el.scrollLeft<2,end:el.scrollLeft+el.clientWidth>=el.scrollWidth-2});};
+  const updateEdges=()=>{
+    const el=rail.current;if(!el)return;
+    setEdges({start:el.scrollLeft<2,end:el.scrollLeft+el.clientWidth>=el.scrollWidth-2});
+    const vertical=window.matchMedia('(max-width:560px)').matches;
+    const bounds=el.getBoundingClientRect();
+    const visible=items.find(item=>{const rect=triggers.current.get(item.id)?.getBoundingClientRect();return rect&&(vertical?rect.bottom>bounds.top+35:rect.right>bounds.left+35);});
+    if(visible)setActiveYear(visible.date.slice(0,4));
+  };
   useEffect(()=>{
     const query=window.matchMedia('(max-width:560px)');const change=()=>setMobile(query.matches);
     query.addEventListener('change',change);return ()=>query.removeEventListener('change',change);
   },[]);
   useEffect(()=>{
     const el=rail.current;if(!el)return;
-    el.scrollLeft=el.scrollWidth;updateEdges();
+    el.scrollLeft=0;el.scrollTop=0;updateEdges();
     const observer=new ResizeObserver(updateEdges);observer.observe(el);
     return ()=>observer.disconnect();
-  },[items]);
+  },[items,mobile]);
   const close=()=>{const id=selected;setSelected(null);if(id)triggers.current.get(id)?.focus();};
   const move=(direction:number)=>{const el=rail.current;if(el)el.scrollBy({left:direction*304,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});};
+  const jump=(item:WatchMilestone|undefined)=>{
+    if(!item)return;const el=rail.current,node=triggers.current.get(item.id);if(!el||!node)return;
+    const bounds=el.getBoundingClientRect(),target=node.getBoundingClientRect();
+    node.focus({preventScroll:true});
+    el.scrollTo({left:mobile?0:el.scrollLeft+target.left-bounds.left-24,top:mobile?el.scrollTop+target.top-bounds.top-10:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  };
   const panel=(item:WatchMilestone)=><div className="watch-milestone-detail" id={'milestone-detail-'+item.id} role="region" aria-label={item.name}>
     <div className="watch-reading-heading"><h4>{item.name}</h4><button onClick={close} className="text-button">{pick('收起','Close')} ↑</button></div>
     <p><WatchText text={item.summary}/></p>
     <ul>{item.points.map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul>
-    <div className="watch-event-actions"><Link to={contentPath(item.news_id)}>{pick('完整记录','Full record')} ↗</Link>{item.sources.slice(0,2).map(s=><a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a>)}</div>
+    <div className="watch-event-actions">{item.news_id&&<Link to={contentPath(item.news_id)}>{pick('完整记录','Full record')} ↗</Link>}{item.sources.map(s=><a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a>)}</div>
   </div>;
   return <section className="watch-milestones" aria-labelledby={'milestones-'+profile}>
     <div className="watch-reading-heading"><div><h3 id={'milestones-'+profile}>{pick('大事记','Milestones')}</h3><span>{items[0]?.date.slice(0,4)} — {pick('至今','present')}</span></div>
       <div className="watch-timeline-controls"><button aria-label={pick('查看较早节点','Earlier milestones')} disabled={edges.start} onClick={()=>move(-1)}>←</button><button aria-label={pick('查看较新节点','Later milestones')} disabled={edges.end} onClick={()=>move(1)}>→</button></div>
     </div>
-    <p className="watch-price-note">{mobile?pick('最新在前。','Newest first. '):pick('模型在上，产品在下。','Models above, products below. ')}{pick('价格：发布时 API 标准输入 / 输出，美元 / 百万 tokens；“-”表示未核实。点击节点查看更新要点。','Price: launch API standard input / output, USD per million tokens; “-” means unverified. Select a milestone for details.')}</p>
-    <div className="watch-timeline" ref={rail} onScroll={updateEdges} role="region" tabIndex={0} aria-label={mobile?pick('大事记，最新在前','Milestones, newest first'):pick('横向大事记，可左右滚动','Milestones, scroll horizontally')}>
-      <ol>{(mobile?[...items].reverse():items).map(item=><li className={'watch-timeline-node '+item.kind+(selected===item.id?' selected':'')} style={{gridColumn:`${positions.get(item.id)} / span 2`,gridRow:1}} key={item.id}>
+    <nav className="watch-year-nav" aria-label={pick('大事记年份','Milestone years')}>
+      <div>{years.map(year=><button key={year} aria-current={activeYear===year?'date':undefined} onClick={()=>jump(items.find(item=>item.date.startsWith(year)))}>{year}</button>)}</div>
+      <button className="watch-latest" onClick={()=>jump(items[items.length-1])}>{pick('看最新','Latest')} <span aria-hidden="true">↗</span></button>
+    </nav>
+    <p className="watch-price-note">{mobile?pick('从初代开始，向下滚动。','From the first generation; scroll down. '):pick('模型在上，产品在下。','Models above, products below. ')}{pick('主要发布节点 · 价格为首发 API 标准输入 / 输出（美元 / 百万 tokens），非当前报价；“-”表示未核实或当时未提供 API。点击节点查看更新要点。','Key releases · Launch API standard input / output prices (USD per million tokens), not current quotes. “-” means unverified or no API at release. Select a milestone for details.')}</p>
+    <div className="watch-timeline" ref={rail} onScroll={updateEdges} role="region" tabIndex={0} aria-label={mobile?pick('大事记，从初代开始，可上下滚动','Milestones from the first generation, scroll vertically'):pick('横向大事记，从初代开始，可左右滚动','Milestones from the first generation, scroll horizontally')}>
+      <ol>{items.map(item=><li className={'watch-timeline-node '+item.kind+(selected===item.id?' selected':'')} style={{gridColumn:`${positions.get(item.id)} / span 2`,gridRow:1}} key={item.id}>
         <button ref={el=>{if(el)triggers.current.set(item.id,el);else triggers.current.delete(item.id);}} className="watch-node-card" aria-expanded={selected===item.id} aria-controls={'milestone-detail-'+item.id} onClick={()=>setSelected(selected===item.id?null:item.id)}>
           <span className="watch-node-date"><time dateTime={item.date}>{item.date}</time><span>{item.kind==='model'?pick('模型','Model'):pick('产品','Product')}</span>{item.date_kind==='source'&&<small>{pick('来源日期','Source date')}</small>}</span>
           <strong>{item.name}</strong>

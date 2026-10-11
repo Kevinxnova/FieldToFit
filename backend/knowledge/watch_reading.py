@@ -3,6 +3,7 @@ from datetime import date, timedelta
 import re
 
 from backend.knowledge.watch_reading_data import CATEGORIES, MILESTONES, PROFILES, SNAPSHOTS, UPDATES, PRODUCT_NAMES
+from backend.knowledge.watch_history import historical_milestones
 
 
 def zh(value):
@@ -75,7 +76,7 @@ def enrich(items, events):
             item['name'] = 'ChatGPT'
         if ident not in MILESTONES:
             continue
-        milestones = []
+        milestones = historical_milestones(ident)
         for index, (news_id, model, price, condition) in enumerate(MILESTONES[ident]):
             event = by_id.get(news_id)
             if not event or not event_date(event):
@@ -88,7 +89,7 @@ def enrich(items, events):
                                'points': event['interpretation'][1:3] if news_id == 'D-49' else event['interpretation'][:2],
                                'sources': event['sources']})
         item['milestones'] = sorted(milestones, key=lambda e: (e['date'], e['id']))
-        required_ids = {m['news_id'] for m in milestones}
+        required_ids = {m['news_id'] for m in milestones if m.get('news_id')}
         ordered = sorted([e for e in events if e['id'] in required_ids or e in direct or
                                  any(ref['id'] == ident for ref in e['related'])],
                                 key=lambda e: (event_date(e), e['id']), reverse=True)

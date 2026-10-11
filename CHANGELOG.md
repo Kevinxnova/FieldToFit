@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.30"></a>
+## v1.8.30 · 模型专题入口与初代历史 · 2026-10-12
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- ChatGPT／Claude名称与开发方下增加图标式“进入专题”按钮，沿用现有专题地址，桌面与手机均可使用。
+- 两家大事记分别从2018年初代GPT和2023年初代Claude开始，补入40个有官方出处的主要历史节点；模型发布与产品上线分开记录。
+- 默认显示初代且详情收起，新增年份跳转及“看最新”，手机时间轴内纵向滚动；价格保留首发口径及必要条件，未核实项为“-”。
+- 历史节点与本站独立事件分开，双语HTTP／MCP同源、撤回与修订保护保留；已部署v1.8.30，正式双语HTTP／MCP、资源一致性与数据保持已验；生产浏览器交互仍受超时限制。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add an illustrated Explore link below the ChatGPT/Claude name and developer, using existing topic URLs on desktop and mobile.
+- Start the timelines with the original GPT in 2018 and Claude in 2023, adding 40 source-backed historical milestones while separating model releases from product launches.
+- Start at the first generation with details collapsed; add year navigation and Latest, with an internally scrolling mobile timeline. Preserve launch pricing and conditions, leaving unverified prices as dashes.
+- Keep historical milestones separate from FieldToFit event articles, with shared bilingual HTTP/MCP data and withdrawal/revision protection. Deployed as v1.8.30; production bilingual HTTP/MCP, asset consistency and data preservation checks pass. Production browser interaction remains limited by timeouts.
+<!-- release-summary:en:end -->
+
+对应[REQ-6-19／20](FieldToFit-PM.md#watch-overview-evolution-plan)，根据所有者指定的两个专题补充入口及历史，不新增候选主题或独立D-文章。原稳定URL、原始内容、私密草稿和数据库结构保持；历史模型没有商业API时不补零价，当前报价不回填首发价。实际来源、验证和限制见[专题历史验收](docs/validation/2026-10-12-watch-history.md)。
+
 <a id="v1.8.29"></a>
 ## v1.8.29 · 持续关注总览与模型大事记 · 2026-10-12
 

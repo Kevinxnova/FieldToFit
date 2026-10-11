@@ -36,16 +36,16 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.29](CHANGELOG.md#v1.8.29)** · [fieldtofit-v1.8.29](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.29)
+**Current source version: [v1.8.30](CHANGELOG.md#v1.8.30)** · [fieldtofit-v1.8.30](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.30)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Implement REQ-6-18 through 21: four-column overviews for all five watch groups, with ChatGPT/Claude pinned, dashes for generic-model purpose, and a linked record in every recent-event cell.
-- Place model milestones above the timeline and products below, with historical launch API prices and initially closed details; mobile uses a newest-first vertical layout with keyboard support and one open node.
-- Present dated FieldToFit events with summaries, independent notes, complete history loading and return-to-reading navigation; preserve existing dossiers, materials and revisions.
-- Share bilingual reading data across the website and AI API. Recent editorial highlights are used because comparable popularity data is unavailable. Deployed as v1.8.29 with production bilingual API/MCP and data-preservation checks passed; production browser interaction checks remain incomplete after timeouts.
+- Add an illustrated Explore link below the ChatGPT/Claude name and developer, using existing topic URLs on desktop and mobile.
+- Start the timelines with the original GPT in 2018 and Claude in 2023, adding 40 source-backed historical milestones while separating model releases from product launches.
+- Start at the first generation with details collapsed; add year navigation and Latest, with an internally scrolling mobile timeline. Preserve launch pricing and conditions, leaving unverified prices as dashes.
+- Keep historical milestones separate from FieldToFit event articles, with shared bilingual HTTP/MCP data and withdrawal/revision protection. Deployed as v1.8.30; production bilingual HTTP/MCP, asset consistency and data preservation checks pass. Production browser interaction remains limited by timeouts.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

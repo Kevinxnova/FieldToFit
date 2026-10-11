@@ -136,6 +136,7 @@ PRODUCT_NAMES = {
 }
 
 def translations():
+    from backend.knowledge.watch_history import HISTORY
     result = {}
     def visit(value):
         if isinstance(value, tuple) and len(value) == 2 and all(isinstance(v, str) for v in value):
@@ -144,5 +145,5 @@ def translations():
             for v in value: visit(v)
         elif isinstance(value, dict):
             for v in value.values(): visit(v)
-    for data in (PROFILES, CATEGORIES, UPDATES, SNAPSHOTS, MILESTONES, PRODUCT_NAMES): visit(data)
+    for data in (PROFILES, CATEGORIES, UPDATES, SNAPSHOTS, MILESTONES, PRODUCT_NAMES, HISTORY): visit(data)
     return result
