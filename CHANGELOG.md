@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.22"></a>
+## v1.8.22 · ChatGPT连接Devin专题补录 · 2026-10-11
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按所有者批准发布D-113：ChatGPT个人订阅可连接Devin，保留付费Devin资格、支持模型和额度回退边界。
+- 归回10月10日其他OpenAI，附Tibo原帖摘录、真实头像与中英概览；专题23条，网页、API及MCP共享已审修订。
+- 同步此前已发布的三条新闻与D-26修订至源码，保留原生产集合、读取材料及既有维护日程。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Publish owner-approved D-113 on connecting personal ChatGPT plans to Devin, retaining paid-Devin eligibility, supported-model limits and quota fallback.
+- File the event under other OpenAI on October 10 with Tibo's excerpt, verified real avatar and bilingual overview; the 23-item topic shares its reviewed revision across web, API and MCP.
+- Export three earlier publications and the D-26 revision to source, preserving production content, approved reading materials and existing maintenance schedules.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。仅这一条新候选获明确批准；不把连接写成赠送Devin订阅，不推断地区范围，不增加未确认生效的Day 6重置。源种子同步既有D-109至D-111与D-26已审修订，不重新发布旧记录。无数据库迁移或公开接口变更；实际预览、来源、发布与部署结果见[本批验收](docs/validation/2026-10-11-codex-devin.md)。
+
 <a id="v1.8.21"></a>
 ## v1.8.21 · SelfSearch精选分析与每日选题机制 · 2026-10-10
 

@@ -22,7 +22,7 @@ def test_dates_numbering_precision_shared_api_and_mcp(client):
     assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
     by_date = {d['date']: d for d in days}
     assert by_date['2026-10-10']['codex_ids'] == ['D-105', 'D-108']
-    assert by_date['2026-10-10']['other_openai_ids'] == ['D-106']
+    assert by_date['2026-10-10']['other_openai_ids'] == ['D-113', 'D-106']
     assert event(body, 'D-106')['codex_28_days']['official_day'] == 5
     assert by_date['2026-10-09']['codex_ids'] == ['D-107', 'D-98', 'D-99'] and by_date['2026-10-09']['other_openai_ids'] == []
     assert event(body, 'D-98')['codex_28_days']['official_day'] == 4

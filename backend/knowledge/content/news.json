@@ -3,6 +3,1012 @@
   "items": [
     {
       "category": "agent",
+      "checked_at": "2026-10-11",
+      "codex_28_days": {
+        "announced_at": "2026-10-09T22:52:07.457000Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/cognition/status/2108692010056188048",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Use ChatGPT quota in Devin; paid Devin required",
+        "overview_zh": "ChatGPT额度可接入Devin；需付费Devin",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-10T04:33:40.010000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-11",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-11",
+            "evidence_url": "https://x.com/thsottiaux/status/2108777962053292398",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "关联官方原帖短摘录及中文摘译；摘译不表示赠送Devin订阅，资格与计费边界必须同时显示在正文。",
+            "text_en": "Your ChatGPT subscription is now also a Devin subscription",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "你的ChatGPT订阅现在也可用于Devin。",
+            "url": "https://x.com/thsottiaux/status/2108777962053292398"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-10",
+      "highlight": false,
+      "id": "D-113",
+      "interpretation": [
+        {
+          "locator": "Cognition／Tibo关联原帖与Devin官方资格、使用入口及计费范围；本站未独立试用",
+          "source_ids": [
+            "devin-docs"
+          ],
+          "text": "在Devin的Settings → Connections选择Continue with ChatGPT，授权后打开Use your ChatGPT plan。开关适用于Devin Cloud、Desktop和CLI；可随时关闭或解除连接。",
+          "title": "使用入口"
+        },
+        {
+          "locator": "Cognition／Tibo关联原帖与Devin官方资格、使用入口及计费范围；本站未独立试用",
+          "source_ids": [
+            "devin-docs"
+          ],
+          "text": "仅支持的GPT模型走ChatGPT额度，fast／priority变体除外；其他模型仍扣Devin用量。ChatGPT额度耗尽或连接不可用时，Devin会回退至自己的额度，耗尽后使用按需点数。此连接不赠送免费Devin订阅。",
+          "title": "共享用量，不代替Devin订阅"
+        },
+        {
+          "locator": "Cognition／Tibo关联原帖与Devin官方资格、使用入口及计费范围；本站未独立试用",
+          "source_ids": [
+            "cognition",
+            "tibo",
+            "devin-docs"
+          ],
+          "text": "原公告按帖子ID推导为北京时间10月10日06:52，Tibo关联帖为同日12:33；保留推导依据。套餐条件依据Devin官方文档，不采用X社区注释作为事实；未独立试用，不推断未说明的地区范围。",
+          "title": "公告与范围"
+        }
+      ],
+      "name": "ChatGPT × Devin",
+      "note": "",
+      "organization": "OpenAI / Cognition",
+      "publication": {
+        "first_published_at": "2026-10-11T03:58:49.763148+00:00",
+        "updated_at": "2026-10-11T03:58:49.763148+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-09",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "cognition",
+          "title": "Cognition ChatGPT订阅连接公告",
+          "url": "https://x.com/cognition/status/2108692010056188048"
+        },
+        {
+          "coverage": "link_only",
+          "id": "tibo",
+          "title": "Tibo关于Devin连接的关联原帖",
+          "url": "https://x.com/thsottiaux/status/2108777962053292398"
+        },
+        {
+          "coverage": "link_only",
+          "id": "devin-docs",
+          "title": "Devin官方资格、使用方法与计费边界",
+          "url": "https://docs.devin.ai/admin/billing/chatgpt"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo X身份与头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Devin支持连接ChatGPT Go／Plus／Pro，把支持的GPT模型用量计入ChatGPT额度。此功能面向Devin Pro／Max／Teams，不包含Devin Free或Enterprise。",
+      "title": "ChatGPT个人订阅可连接Devin，仍需Devin付费套餐"
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-29",
+      "highlight": false,
+      "id": "D-112",
+      "interpretation": [
+        {
+          "locator": "第2–4节／第6节",
+          "source_ids": [
+            "report"
+          ],
+          "text": "把模型能力与工具流程分开；本文整理作者的10代搜索、消融、费用和迁移证据，单独说明本站判断及未复现范围。",
+          "title": "读过程，再判断收益"
+        }
+      ],
+      "name": "SelfSearch：从改进经验进化工具",
+      "note": "arXiv首次提交2026-09-29，v2为2026-09-30；按官方报告日期记录。配图为本站重绘／示意，非报告原图；arXiv非独占许可不作为插图转载许可。未独立复现实验。",
+      "organization": "首尔大学 / Jungwoo Yang、Injin Kong、Yohan Jo",
+      "publication": {
+        "first_published_at": "2026-10-10T08:46:02.146079+00:00",
+        "updated_at": "2026-10-10T08:46:02.146079+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-09-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "SelfSearch: Reward-Free Search for Self-Improving Agents · arXiv v2",
+          "url": "https://arxiv.org/html/2609.37968v2"
+        }
+      ],
+      "state": "published",
+      "summary": "深读SelfSearch v2：模型权重固定，Agent从前代改进记录中调整工具与流程。四个编号核心观点与对应论述、四张本站图形，保留样本、费用分母、反例和未验证边界。",
+      "technical_map": {
+        "caution": "作者实验，未独立复现。Verified为120题子集；38.5%仅为共同成功题执行费用降幅，搜索和事后评测另计；不代表无限持续进步。",
+        "change_summary": "所有者选择今日报告1后发布：四个编号观点与对应论述、四张本站重绘／示意、固定模型／费用分母／反例与迁移边界。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "S2",
+                "locator": "第2节：两条路线从相同初始Agent出发",
+                "source_id": "report"
+              }
+            ],
+            "from": "initial",
+            "label": "同一初始实现经过记录驱动的逐代修改",
+            "relation": "inheritance",
+            "to": "selfsearch"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "S3.T1",
+                "locator": "第3.1–3.2节／表1：比较条件",
+                "source_id": "report"
+              }
+            ],
+            "from": "initial",
+            "label": "相同执行模型与限制下比较初始和第10代",
+            "relation": "baseline",
+            "to": "performance"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "S3.SS1",
+                "locator": "第2节／第3.1节：搜索与评测分开",
+                "source_id": "report"
+              }
+            ],
+            "from": "selfsearch",
+            "label": "最后一代工具实现冻结后进入下游评测",
+            "relation": "inheritance",
+            "to": "performance"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "S3.SS4",
+                "locator": "第3.4节／表3：跨模型迁移",
+                "source_id": "report"
+              }
+            ],
+            "from": "performance",
+            "label": "同一冻结实现的另一种评测：换执行模型，不重新搜索",
+            "relation": "parallel",
+            "to": "transfer"
+          }
+        ],
+        "focus": "固定模型 → 读取改进记录 → 修改工具与流程 → 冻结后独立评测与迁移。",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "S3.SS1",
+                "locator": "第2节／第3.1节：基线与模型配置",
+                "source_id": "report"
+              }
+            ],
+            "id": "initial",
+            "kind": "baseline",
+            "label": "初始Agent／固定模型",
+            "limitation": "模型固定不等于运行成本或任务行为完全相同。",
+            "mechanism": "以初始工具与流程作为基线，模型权重不参与训练。",
+            "metrics": [],
+            "result": "为改进效果提供比较起点。",
+            "setting": "各配置使用相同执行模型与限制。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "S2",
+                "locator": "第2节／第4节：流程与工具变化",
+                "source_id": "report"
+              }
+            ],
+            "id": "selfsearch",
+            "kind": "method",
+            "label": "过程记录 → 工具改进",
+            "limitation": "仍有本地检查；不保证每条路线都提升，也不证明无限进步。",
+            "mechanism": "读取前代记录、修改并验证副本，由下一代实现接棒。",
+            "metrics": [],
+            "result": "形成可检查、可复用的工具与程序；消融支持记录与接棒的作用。",
+            "setting": "两条路线共享上一代记录；10代；无下游评测反馈。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "S3.T1",
+                "locator": "第3.1–3.2节／表1；附录表10",
+                "source_id": "report"
+              }
+            ],
+            "id": "performance",
+            "kind": "result",
+            "label": "冻结后看效果与费用",
+            "limitation": "个别路线退步；费用不含搜索，子集结果不能当作完整排行榜。",
+            "mechanism": "搜索结束后评测最后一代，区分尝试费用与共同成功费用。",
+            "metrics": [
+              {
+                "baseline": "初始Agent 68.3%",
+                "conditions": "SWE-bench Multilingual抽样60题／8种语言；DeepSeek V4 Flash执行；10代；作者实验",
+                "label": "DeepSeek适应路线多语言成功率",
+                "unit": "%",
+                "value": 73.3
+              },
+              {
+                "baseline": "初始Agent在双方共同成功题上的执行费用",
+                "conditions": "DeepSeek适应路线／SWE-bench Multilingual；表10独立分母；不含搜索／事后评测费用",
+                "label": "共同成功题执行费用降幅",
+                "unit": "%",
+                "value": 38.5
+              }
+            ],
+            "result": "DeepSeek适应路线多语言68.3%→73.3%；共同成功题执行费用降低38.5%。",
+            "setting": "Verified120题、Multilingual60题、Terminal2.1共89题。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "S3.T3",
+                "locator": "第3.4节／表3；第6节",
+                "source_id": "report"
+              }
+            ],
+            "id": "transfer",
+            "kind": "result",
+            "label": "换模型验证工具迁移",
+            "limitation": "独立重复搜索稳定性及真实业务适用性仍需验证。",
+            "mechanism": "不重新搜索，固定工具实现后交给另一模型执行。",
+            "metrics": [],
+            "result": "跨模型复用在报告的有限任务集上也获得收益。",
+            "setting": "SWE-bench Verified120题；两种搜索与执行模型组合。",
+            "stage": 3
+          }
+        ],
+        "question": "AI 不换模型，也能自己改进吗？",
+        "reading": {
+          "editorial": [
+            "这篇报告的价值是把“Agent变得更好”拆成可追踪的工程变化：保存失败上下文、修复工具、检查修复，再用冻结的候选回答真实任务。改进流程本身也成为下一轮的学习材料。",
+            "实际采用前，应在自己的任务集上复测成功率、失败类型、运行与维护总成本，并保留旧实现和变更记录。本篇提供研究线索，不把有限实验扩写成普遍性能或成本承诺。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "这篇报告问的是：不在搜索期间反复跑下游题目、按分数筛选候选，Agent能否从“改进自己”的经历中找到有用变化？作者让Agent读取此前改进的过程记录，而不只是最终代码。记录包括推理、工具调用及结果、代码变化和本地检查。"
+                },
+                {
+                  "alt": "前代记录交给当前Agent；当前Agent编辑并验证副本，本轮运行者不变；新实现接棒下一代。两条路线共享上一代记录，共运行10代。",
+                  "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
+                  "caption": "图1 · SelfSearch改进流程（本站示意；模型权重与外部运行时固定）",
+                  "evidence": [
+                    {
+                      "fragment": "S2",
+                      "locator": "第2节／附录A：运行边界",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/selfsearch-v2-mechanism.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；原始数据与方法归属见来源"
+                },
+                {
+                  "items": [
+                    "改什么：可编辑仓库里的指令、工具、执行逻辑和代码组织；当前运行者在本轮内不变，编辑结果定义下一代。",
+                    "怎么探索：能力路线寻找可复用工具和程序；适应路线关注失败、矛盾证据和策略调整。两条路线各自保留实现，共享上一代的两份记录。",
+                    "何时评测：搜索中没有下游基准题目或评测结果；作者冻结搜索检查点后，才用下游任务评价最后一代。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "“无奖励搜索”仍使用工具反馈与本地检查，也仍需要事后评测；这里没有训练模型权重。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "S2",
+                  "locator": "第2节：改进轮次、两条路线与固定运行时",
+                  "source_id": "report"
+                }
+              ],
+              "id": "fixed-model-evolving-tools",
+              "node_ids": [
+                "initial",
+                "selfsearch"
+              ],
+              "summary": "SelfSearch把改进对象放在指令、工具和执行逻辑上：读取前代记录，编辑并验证副本，再由新实现接棒下一轮。",
+              "title": "模型权重不变，Agent的工具和做法仍能改进"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "报告中最有启发的变化很具体：读取长记录时，输出截断会隐藏关键证据；一个工具修复后，下一轮又会暴露新的阅读或验证困难。这让“自我改进”有了可检查的工程过程。"
+                },
+                {
+                  "alt": "初始81.7%；无前代记录83.8%；固定改进者83.8%；完整SelfSearch86.7%。完整方法比两种消融各高2.9个百分点。",
+                  "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
+                  "caption": "图2 · 完整方法与两种消融（本站重绘；DeepSeek配置，120题，两条路线均值，横轴0–100%）",
+                  "evidence": [
+                    {
+                      "fragment": "S4.T4",
+                      "locator": "第4.1节／表4：消融条件与均值",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/selfsearch-v2-records.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；原始数据与方法归属见来源"
+                },
+                {
+                  "items": [
+                    "第6–7代（GPT配置）：一条路线加入有输出上限的文本搜索，另一条加入结构化记录阅读器；下一代各自借鉴另一条路线的工具。",
+                    "第8–10代（GPT配置）：多个短摘录合起来仍可能过长，因此加入总输出限制，再补事件过滤、工具名查找、调用参数与结果配对。",
+                    "一个修复案例（DeepSeek配置）：第5代保留长行首尾，匹配内容落在中间时被隐藏；第6代改为围绕匹配位置摘录，第7代另一条路线复现问题、采用修复并验证。",
+                    "消融怎么读：无记录版本仍会累积代码；固定改进者版本仍会读取记录、编辑最新实现。完整方法均值更高，支持两者共同作用，但部分单条路线结果仍有差异。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "evidence",
+                  "text": "工具的作用也分层：文本搜索和按行阅读被用于下游任务；GPT记录阅读器未在下游调用，它主要支持继续改进的过程。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "S4",
+                  "locator": "第4.1–4.3节：消融、逐代变化与下游工具复用",
+                  "source_id": "report"
+                }
+              ],
+              "id": "experience-and-tools",
+              "node_ids": [
+                "selfsearch"
+              ],
+              "summary": "消融实验支持前代记录和改进者接棒的作用；工具演进案例显示，记录中的失败能变成下一代的具体修复目标。",
+              "title": "重要的不只是一份新代码，还有改进过程留下的经验"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "报告测试了两种模型配置、三个基准。两条最终路线的平均成功率在六个模型—基准设置中均高于初始Agent；具体到单条路线，效果与费用并不总是一起改善。"
+                },
+                {
+                  "alt": "DeepSeek初始／能力／适应成功率68.3／66.7／73.3%；平均执行费用0.0521／0.0321／0.0332美元每次尝试。38.5%为共同成功题上的另一项费用降幅。",
+                  "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
+                  "caption": "图3 · 多语言实验的成功率与费用（本站重绘；平均尝试费用与共同成功费用分开表达）",
+                  "evidence": [
+                    {
+                      "fragment": "S3.T1",
+                      "locator": "表1：平均每次尝试；表10：共同成功题执行费用",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/selfsearch-v2-results.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；原始数据与方法归属见来源"
+                },
+                {
+                  "items": [
+                    "评测范围：SWE-bench Verified是120题子集；SWE-bench Multilingual抽样60题、覆盖8种编程语言；Terminal-Bench 2.1使用全部89题。不能当作完整Verified排行榜。",
+                    "模型配置：GPT搜索用gpt-5.6-sol、执行用gpt-5.6-luna，均为medium推理；DeepSeek搜索用deepseek-v4-pro-0813、执行用deepseek-v4-flash-0731。同一配置的初始与改进Agent保持执行模型及限制一致。",
+                    "费用分母：表1平均费用包括失败的尝试；38.5%来自初始与适应Agent共同解对的题，不能从表1的0.0521与0.0332直接算出。两项均为执行模型费用，搜索与事后评测另计。",
+                    "反例也要看：DeepSeek能力路线的多语言成功率由68.3%降到66.7%；GPT能力路线在Terminal-Bench成功率提高，但平均执行费用增加3.1%。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "73.3%比68.3%高5个百分点。38.5%不是总体研发成本降幅，也不是所有任务、模型或真实业务的费用承诺。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "S3.SS2",
+                  "locator": "第3.1–3.2节／表1；附录D.2／表10：费用分母",
+                  "source_id": "report"
+                }
+              ],
+              "id": "performance-and-cost",
+              "node_ids": [
+                "performance"
+              ],
+              "summary": "DeepSeek适应路线在60道多语言题中，成功率由68.3%升至73.3%；“节省38.5%”另指双方都解对的题上的执行费用。",
+              "title": "部分实验能同时更准、更省，但收益有明确条件"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "如果改进只对生成它的模型有用，工具价值会很受限。作者把搜索得到的实现冻结后，交给另一模型执行，不再重新搜索。这是一项关于工具与程序可迁移性的实验。"
+                },
+                {
+                  "alt": "GPT执行初始75.0%，采用DeepSeek搜索的能力／适应实现为79.2／76.7%；DeepSeek执行初始81.7%，采用GPT搜索实现为83.3／85.0%。",
+                  "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
+                  "caption": "图4 · 固定实现后的跨模型执行（本站重绘；120题成功率，能力／适应路线分别记录）",
+                  "evidence": [
+                    {
+                      "fragment": "S3.T3",
+                      "locator": "第3.4节／表3：搜索模型与执行模型分开",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/selfsearch-v2-transfer.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；原始数据与方法归属见来源"
+                },
+                {
+                  "items": [
+                    "迁移结果：DeepSeek搜索得到的能力路线交给GPT执行，成功率75.0%→79.2%；GPT搜索得到的适应路线交给DeepSeek执行，81.7%→85.0%。这两组比较都来自相同120题设置。",
+                    "仍缺什么：独立重复搜索能否稳定得到收益，更多模型、任务与真实环境是否有效，报告均未充分回答；作者也明确提出需要研究独立搜索的稳定性。",
+                    "本站解读：更值得借鉴的是保存可定位的过程记录，把失败变成具体工具修复，再冻结候选并独立评测。能修改自己，只是候选生成能力；是否值得使用，还要看任务结果与总成本。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "搜索在无网络的隔离容器中、固定资源边界下运行；本文整理作者实验，FieldToFit未独立复现。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "S3.SS4",
+                  "locator": "第3.4节／表3：跨模型迁移；第6节：稳定性与后续研究",
+                  "source_id": "report"
+                }
+              ],
+              "id": "transfer-and-limits",
+              "node_ids": [
+                "transfer"
+              ],
+              "summary": "作者在120道Verified题上换用执行模型，观察到跨模型复用收益；这支持工具实现具有可迁移性，但还不足以证明通用、持续的自我进化。",
+              "title": "改进后的工具能跨模型复用，稳定性仍需要更多验证"
+            }
+          ],
+          "title": "这份报告的四个核心观点"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-09-29",
+            "revised_at": "2026-09-30",
+            "revision_note": "读取v2；未对v1逐项对比，不将v2登记为已核实的实质更新。",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "arXiv 2609.37968v2 · 2026-09-30"
+          }
+        ],
+        "slug": "selfsearch-agent-improvement",
+        "takeaway": "改进经验可以生成有用工具，部分作者实验同时提高成功率并降低执行费用；是否更好仍须冻结实现后按同一任务和成本口径验证。"
+      },
+      "title": "AI 不换模型，也能自己改进吗？"
+    },
+    {
+      "aliases": [
+        "MiMo V2.6"
+      ],
+      "checked_at": "2026-10-10",
+      "editor": "FieldToFit",
+      "event_date": "",
+      "highlight": false,
+      "id": "D-26",
+      "interpretation": [
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "pro",
+            "flash"
+          ],
+          "text": "模型卡将代码、通用 Agent、视觉和安全任务放进混合强化学习，并比较同组轨迹、区分多个已通过测试的解法。值得读的是任务与验收信号如何共同参与训练。",
+          "title": "看模型如何学习把任务做完"
+        },
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "pro",
+            "flash",
+            "distill"
+          ],
+          "text": "Pro 为1.02T总参数／42B激活，Flash为309B／15B，两者标注1M上下文；9B是基于Qwen3.5-9B的蒸馏SFT研究起点，不能当作Pro的等能力小版本。官方评测含不同口径与内部测试集，本站未复测。",
+          "title": "三个版本的体量与训练阶段不同"
+        },
+        {
+          "locator": "对应材料的训练、使用、评测或限制章节",
+          "source_ids": [
+            "pro",
+            "flash",
+            "distill"
+          ],
+          "text": "Pro/Flash提供SGLang、vLLM及托管入口，模型卡标注MIT；9B提供SGLang示例，但本轮未查到许可声明。多卡示例不能支持普通电脑即可运行的推断，本站未执行部署。",
+          "title": "采用先读部署示例和许可差异"
+        },
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-mopd-1",
+            "oct10-mopd-2"
+          ],
+          "text": "官方模型卡已列出 Pro 与 Flash 的 MOPD 检查点，分别接续此前 RL 检查点。MOPD2 将可验证任务的 mixRL 教师与开放领域的 SFT 教师结合，使用完整自主轨迹、教师历史续写和示范历史续写三类训练流。\n\n这次值得看的是 Agent 反复调用相同工具、消耗上下文却不推进任务的问题；官方称新检查点可缓解，不能写成已彻底消除。Pro 为 1.02T 总参数／42B 激活，Flash 为 309B／15B，均标注 MIT；部署示例需要多 GPU。本站未复现性能，模型卡的托管接入描述也不能替代具体 API 型号核对。 首次发布时间、具体 API 别名及各入口切换状态待核；技术报告 §5.6 尚未做全文对比，不生成技术地图。",
+          "title": "2026-10-10后续检查点补充"
+        }
+      ],
+      "name": "MiMo V2.6",
+      "note": "三个Hub仓库创建于2026-09-21 UTC，官网确切发布日期未核实；本站核对2026-09-22。Pro/Flash固定模型卡正文可通过MCP读取，9B因许可缺失仅链接。官网动态页未取得正文，技术报告全文未评审；未进行运行或性能验证。 2026-10-10补充MOPD检查点，首发日期待核；原RL材料日期保留。",
+      "organization": "Xiaomi / MiMo",
+      "publication": {
+        "first_published_at": null,
+        "updated_at": "2026-10-10T04:50:21.891519+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "---\nlicense: mit\nlanguage:\n- en\n- zh\ntags:\n- text-generation\n- multimodal\n- vision-language\n- audio\n- agent\n- video-understanding\n- long-context\n- mimo_v2\n- transformers\nlibrary_name: transformers\n---\n\n<br/><br/>\n\n<div align=\"center\">\n  <picture>\n    <source srcset=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true\" media=\"(prefers-color-scheme: dark)\">\n    <img src=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo.png?raw=true\" width=\"60%\" alt=\"Xiaomi-MiMo\" />\n  </picture>\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1;\">\n  |\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL\" target=\"_blank\">🤗 HuggingFace</a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomi.com/mimo-v2-6\" target=\"_blank\">📰 Blog </a>\n  &nbsp;|\n  <a href=\"https://platform.xiaomimimo.com\" target=\"_blank\">🎨 Xiaomi MiMo API Platform </a>\n  &nbsp;|\n  <a href=\"https://aistudio.xiaomimimo.com\" target=\"_blank\">🗨️ Xiaomi MiMo Studio </a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomimimo.com/desktop/\" target=\"_blank\">💻 Xiaomi MiMo Desktop </a>\n  &nbsp;|\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1.2;\">\n  <strong>Community</strong><br/>\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/blob/main/assets/wechat.jpg\" target=\"_blank\">WeChat Group</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/kKC2kNnQEX\" target=\"_blank\">Discord</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://t.me/+3T-I0pekOVIyNDBl\" target=\"_blank\">Telegram</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://www.reddit.com/r/XiaomiMiMo_Official/\" target=\"_blank\">Reddit</a>\n</div>\n\n<br/>\n\n# MiMo-V2.6-Pro-RL\n\n**Scaling Reinforcement Learning Toward Self-Improvement**\n\n<p align=\"center\">\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf\"><b>Technical Report</b></a>\n</p>\n\n## 1. Introduction\n\nMiMo-V2.6-Pro-RL is the flagship checkpoint of the MiMo-V2.6 series. The series is built to **scale reinforcement learning toward self-improvement** — scaling RL compute, environment diversity, and grader compute together, so the model keeps expanding its capability frontier through exploration and feedback. Key features include:\n\n- **Native Omnimodal + Long Horizon**: Text, image, video, and audio in one model; 1M tokens for long repositories, tool traces, and multi-session agent runs.\n- **You Only RL Once**: One mixed RL run across coding, general agents, visual, and cybersecurity — not separate per-domain runs. Tasks and multiple harnesses are mixed in the same batch so capabilities reinforce each other and strategies transfer to harnesses never seen in training.\n- **Scaling RL Compute**: Fully asynchronous Group Relative Policy Optimization (GRPO) on very large batches — 1,568 prompts × 16 rollouts per step, billions of tokens per update.\n- **Groupwise Agentic Grading (Self-Improvement Loop)**: Binary pass/fail cannot rank passing solutions, so the reward signal itself is scaled. An agentic grader compares rollouts *within each group*: **Groupwise Reward Synthesis (GRS)** builds task-specific rubrics offline from contrasting rollouts and fuses rubric quality with test outcomes; **Groupwise Advantage Redistribution (GAR)** ranks passing trajectories online and moves advantage toward higher-quality solutions. Judged against the policy’s own samples, this closes a self-improvement loop and steers toward shorter paths and fewer tokens per task.\n- **Aligned RL**: Cold start from self-correction — the model reflects on and rewrites its own misaligned turns into grounded next steps. Throughout RL, environment hardening, adversarial screening, and verifier cross-checks keep the loop honest against reward hacking.\n- **Multi-Prefix Multi-Teacher On-Policy Distillation (MOPD2)**: After mixed RL, MOPD2 combines autonomous student rollouts with prefix-conditioned single-turn rollouts (Teacher-Prefix and SFT-Prefix), reusing histories from teacher trajectories and SFT demonstrations so decision points train without regenerating preceding turns — extending capabilities to hard-to-verify tasks.\n\n## Model Summary\n\n- **Architecture**: Sparse MoE (Mixture of Experts), 1.02T total / 42B activated parameters\n- **Context Length**: 1M tokens\n- **Modalities**: Text, Image, Video, Audio\n- **Vision Encoder**: 681M-param MiMo ViT (28 layers: 24 SWA + 4 Full)\n- **Audio Encoder**: 308M AudioTokenizer + 127M audio patch encoder\n- **Multi-Token Prediction (MTP)**: 5-layer speculative decoder\n\n![Figure 1: MiMo-V2.6 architecture — omni encoders, hybrid SWA backbone, and MTP blocks](assets/architecture.png)\n\n*Figure 1. MiMo-V2.6 architecture.*\n\n## 2. Downloads\n\n| Model | Download |\n| --- | --- |\n| **MiMo-V2.6-Pro-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL) · 🤖 ModelScope *(at release)* |\n| **MiMo-V2.6-Flash-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) · 🤖 ModelScope *(at release)* |\n\n## 3. Evaluation Results\n\n| Benchmark | MiMo-V2.6 Pro | MiMo-V2.6 Flash | MiMo-V2.5 Pro | Claude Opus 5 | GPT-5.6 Sol | Claude Fable 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| **Code Agent** | | | | | | |\n| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |\n| ProgramBench | 26.5 | 26.0 | 12.5 | 37.0 | 25.0 | 33.0 |\n| MiMo Code Bench | 63.2 | 61.2 | 40.4 | 68.6 | 59.3 | - |\n| **General Agent** | | | | | | |\n| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |\n| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |\n| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |\n| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |\n| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |\n| Terminal Bench 2.1 | 89.9 | 87.6 | 65.2 | 89.1 | 88.8 | 84.3 |\n| OSWorld-Verified | 82.0 | 80.8 | - | 83.4 | 83.0 | 86.0 |\n| JobBench | 62.0 | 61.2 | 25.0 | 65.7 | 45.4 | 57.4 |\n| **Cybersecurity** | | | | | | |\n| CyberGym | 94.0 | 95.1 | 40.0 | - | - | - |\n| MiMo Cyber Bench | 80.2 | 77.2 | 0.0 | - | - | - |\n| ExploitGym | 17.8 | 6.0 | 0.2 | 22.1 | 30.3 | 28.4 |\n| ExploitBench | 47.9 | 25.3 | 16.6 | 70.0 | 78.5 | 78.0 |\n| SEC Bench Pro | 66.3 | 47.5 | 17.7 | - | 79.1 | - |\n| **Visual Agent** | | | | | | |\n| MiMo VisualCoding | 72.3 | 71.5 | - | 70.0 | 73.4 | 69.1 |\n\n## 4. Model Architecture\n\n### LLM Backbone\n\n| Component | MiMo-V2.6-Pro-RL |\n| --- | --- |\n| Layers (Total / SWA / GA) | 70 / 60 / 10 |\n| Hidden Size | 6144 |\n| SWA Heads (Q/KV) | 128 / 8 |\n| GA Heads (Q/KV) | 128 / 8 |\n| Head Dimensions (QK / V) | 192 / 128 |\n| Sliding Window Size | 128 |\n| Routed Experts (Total / Activated) | 384 / 8 |\n| Max Context Length | 1M |\n| MTP / Speculative Decoder | 5 SWA layers, window 1024 |\n\nThe first Transformer block uses global attention with a dense FFN. Remaining blocks interleave local SWA and GA; both use sparse MoE FFNs without shared experts.\n\n### Vision Encoder (MiMo ViT)\n\n| Configuration | Value |\n| --- | --- |\n| Layers (Total / SWA / GA) | 28 / 24 / 4 |\n| Hidden Size | 1280 |\n| Attention Heads (Q / KV) | 32 / 8 |\n| Head Dimension | 64 |\n| Patch Size (T × H × W) | 2 × 16 × 16 |\n| Sliding Window (Left / Right) | 64 / 64 |\n| Spatial Merge Size | 2 × 2 |\n| Parameters | 681M |\n\n### Audio Encoders\n\nAudioTokenizer encoder: 24 layers (12 SWA / 12 GA), hidden 1024, 20 RVQ codebooks, 308M parameters. Audio patch encoder: 6 layers, 127M parameters; four frames per patch (25 Hz → 6.25 Hz).\n\n### Speculative Decoder\n\n5-layer SWA MTP drafter (DFlash-style). Predicts 7 subsequent tokens per forward pass for parallel verification.\n\n## 5. Deployment\n\nFor best performance, follow the [SGLang MiMo cookbook](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.5). Docker image: `lmsysorg/sglang:latest`.\n\n### SGLang\n\n```bash\nsglang serve \\\n  --trust-remote-code \\\n  --model-path XiaomiMiMo/MiMo-V2.6-Pro-RL \\\n  --tp 16 \\\n  --dp 2 \\\n  --enable-dp-attention \\\n  --mm-enable-dp-encoder \\\n  --ep 16 \\\n  --moe-a2a-backend deepep \\\n  --moe-dense-tp-size 1 \\\n  --mem-fraction-static 0.7 \\\n  --max-running-requests 128 \\\n  --chunked-prefill-size 32768 \\\n  --page-size 64 \\\n  --swa-full-tokens-ratio 0.3 \\\n  --speculative-algorithm EAGLE \\\n  --speculative-num-steps 3 \\\n  --speculative-eagle-topk 1 \\\n  --speculative-num-draft-tokens 4 \\\n  --enable-multi-layer-eagle \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --host 0.0.0.0 \\\n  --port 30000 \\\n  --nnodes 2 \\\n  --node-rank <node-rank> \\\n  --dist-init-addr <node0-ip>:20000\n```\n\n### vLLM\n\nFollow the [vLLM MiMo-V2.5 recipe](https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5). Pre-built image: `docker pull vllm/vllm-openai:mimov25-cu129`.\n\n```bash\nvllm serve XiaomiMiMo/MiMo-V2.6-Pro-RL \\\n  --tensor-parallel-size 8 \\\n  --trust-remote-code \\\n  --gpu-memory-utilization 0.95 \\\n  --max-model-len auto \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --enable-auto-tool-choice \\\n  --generation-config vllm\n```\n\nRecommended sampling: `temperature=1.0`, `top_p=0.95`.\n\nAlso available in AI Studio, MiMo Code, Xiaomi MiMo Desktop, Xiaomi MiMo Open Platform API, and OpenRouter.\n\n## Citation\n\n```bibtex\n@misc{mimo2026v26pro,\n  title={MiMo-V2.6-Pro-RL},\n  author={{Xiaomi MiMo Team}},\n  year={2026},\n  howpublished={\\url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL}},\n}\n```\n\n## Contact\n\nFor questions or feedback, reach us at [mimo@xiaomi.com](mailto:mimo@xiaomi.com) or join our community:\n\n- [WeChat Group](https://work.weixin.qq.com/apph5/external_room/join/group_mng?plg_id=c417f99bd9014b5dd894daa8bfe19790&)\n- [Discord](https://discord.gg/WX2R2uNp)\n- [Telegram](https://t.me/+3T-I0pekOVIyNDBl)\n- [Reddit](https://www.reddit.com/r/XiaomiMiMo_Official/)\n",
+          "checked_at": "2026-09-22",
+          "content_hash": "c7710278e8755958dc7193058f0c01d3e1208d9a0058bfbef1515009c0709759",
+          "coverage": "full_text",
+          "id": "pro",
+          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
+          "reason": "",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "MIT；依据该固定模型卡 license: mit 声明；保留原文及许可通知。",
+            "notice": "来源：XiaomiMiMo / MiMo-V2.6-Pro-RL，修订 54b10491b1811c76aa9681a9d0ff872396a4064c。上游模型卡的声明和署名原样保留；仓库未另附 LICENSE 文件，不虚构版权年份。\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+            "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
+          },
+          "title": "MiMo-V2.6-Pro-RL 固定模型卡",
+          "upstream_revision": "54b10491b1811c76aa9681a9d0ff872396a4064c",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
+        },
+        {
+          "approved": true,
+          "body": "---\nlicense: mit\nlanguage:\n- en\n- zh\ntags:\n- text-generation\n- multimodal\n- vision-language\n- audio\n- agent\n- video-understanding\n- long-context\n- mimo_v2\n- transformers\nlibrary_name: transformers\n---\n\n<br/><br/>\n\n<div align=\"center\">\n  <picture>\n    <source srcset=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true\" media=\"(prefers-color-scheme: dark)\">\n    <img src=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo.png?raw=true\" width=\"60%\" alt=\"Xiaomi-MiMo\" />\n  </picture>\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1;\">\n  |\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL\" target=\"_blank\">🤗 HuggingFace</a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomi.com/mimo-v2-6\" target=\"_blank\">📰 Blog </a>\n  &nbsp;|\n  <a href=\"https://platform.xiaomimimo.com\" target=\"_blank\">🎨 Xiaomi MiMo API Platform </a>\n  &nbsp;|\n  <a href=\"https://aistudio.xiaomimimo.com\" target=\"_blank\">🗨️ Xiaomi MiMo Studio </a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomimimo.com/desktop/\" target=\"_blank\">💻 Xiaomi MiMo Desktop </a>\n  &nbsp;|\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1.2;\">\n  <strong>Community</strong><br/>\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/blob/main/assets/wechat.jpg\" target=\"_blank\">WeChat Group</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/kKC2kNnQEX\" target=\"_blank\">Discord</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://t.me/+3T-I0pekOVIyNDBl\" target=\"_blank\">Telegram</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://www.reddit.com/r/XiaomiMiMo_Official/\" target=\"_blank\">Reddit</a>\n</div>\n\n<br/>\n\n# MiMo-V2.6-Flash-RL\n\n**Scaling Reinforcement Learning Toward Self-Improvement**\n\n<p align=\"center\">\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/blob/main/MiMo_V2_6_technical_report.pdf\"><b>Technical Report</b></a>\n</p>\n\n## 1. Introduction\n\nMiMo-V2.6-Flash-RL is the efficiency-balanced checkpoint of the MiMo-V2.6 series. The series is built to **scale reinforcement learning toward self-improvement** — scaling RL compute, environment diversity, and grader compute together, so the model keeps expanding its capability frontier through exploration and feedback. Key features include:\n\n- **Native Omnimodal + Long Horizon**: Text, image, video, and audio in one model; 1M tokens for long repositories, tool traces, and multi-session agent runs.\n- **You Only RL Once**: One mixed RL run across coding, general agents, visual, and cybersecurity — not separate per-domain runs. Tasks and multiple harnesses are mixed in the same batch so capabilities reinforce each other and strategies transfer to harnesses never seen in training.\n- **Scaling RL Compute**: Fully asynchronous Group Relative Policy Optimization (GRPO) on very large batches — 1,568 prompts × 16 rollouts per step, billions of tokens per update.\n- **Groupwise Agentic Grading (Self-Improvement Loop)**: Binary pass/fail cannot rank passing solutions, so the reward signal itself is scaled. An agentic grader compares rollouts *within each group*: **Groupwise Reward Synthesis (GRS)** builds task-specific rubrics offline from contrasting rollouts and fuses rubric quality with test outcomes; **Groupwise Advantage Redistribution (GAR)** ranks passing trajectories online and moves advantage toward higher-quality solutions. Judged against the policy’s own samples, this closes a self-improvement loop and steers toward shorter paths and fewer tokens per task.\n- **Aligned RL**: Cold start from self-correction — the model reflects on and rewrites its own misaligned turns into grounded next steps. Throughout RL, environment hardening, adversarial screening, and verifier cross-checks keep the loop honest against reward hacking.\n- **Multi-Prefix Multi-Teacher On-Policy Distillation (MOPD2)**: After mixed RL, MOPD2 combines autonomous student rollouts with prefix-conditioned single-turn rollouts (Teacher-Prefix and SFT-Prefix), reusing histories from teacher trajectories and SFT demonstrations so decision points train without regenerating preceding turns — extending capabilities to hard-to-verify tasks.\n\n## Model Summary\n\n- **Architecture**: Sparse MoE (Mixture of Experts), 309B total / 15B activated parameters\n- **Context Length**: 1M tokens\n- **Modalities**: Text, Image, Video, Audio\n- **Vision Encoder**: 681M-param MiMo ViT (28 layers: 24 SWA + 4 Full)\n- **Audio Encoder**: 308M AudioTokenizer + 127M audio patch encoder\n- **Multi-Token Prediction (MTP)**: 5-layer speculative decoder\n\n![Figure 1: MiMo-V2.6 architecture — omni encoders, hybrid SWA backbone, and MTP blocks](assets/architecture.png)\n\n*Figure 1. MiMo-V2.6 architecture.*\n\n## 2. Downloads\n\n| Model | Download |\n| --- | --- |\n| **MiMo-V2.6-Pro-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL) · 🤖 ModelScope *(at release)* |\n| **MiMo-V2.6-Flash-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) · 🤖 ModelScope *(at release)* |\n\n## 3. Evaluation Results\n\n| Benchmark | MiMo-V2.6 Pro | MiMo-V2.6 Flash | MiMo-V2.5 Pro | Claude Opus 5 | GPT-5.6 Sol | Claude Fable 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| **Code Agent** | | | | | | |\n| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |\n| ProgramBench | 26.5 | 26.0 | 12.5 | 37.0 | 25.0 | 33.0 |\n| MiMo Code Bench | 63.2 | 61.2 | 40.4 | 68.6 | 59.3 | - |\n| **General Agent** | | | | | | |\n| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |\n| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |\n| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |\n| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |\n| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |\n| Terminal Bench 2.1 | 89.9 | 87.6 | 65.2 | 89.1 | 88.8 | 84.3 |\n| OSWorld-Verified | 82.0 | 80.8 | - | 83.4 | 83.0 | 86.0 |\n| JobBench | 62.0 | 61.2 | 25.0 | 65.7 | 45.4 | 57.4 |\n| **Cybersecurity** | | | | | | |\n| CyberGym | 94.0 | 95.1 | 40.0 | - | - | - |\n| MiMo Cyber Bench | 80.2 | 77.2 | 0.0 | - | - | - |\n| ExploitGym | 17.8 | 6.0 | 0.2 | 22.1 | 30.3 | 28.4 |\n| ExploitBench | 47.9 | 25.3 | 16.6 | 70.0 | 78.5 | 78.0 |\n| SEC Bench Pro | 66.3 | 47.5 | 17.7 | - | 79.1 | - |\n| **Visual Agent** | | | | | | |\n| MiMo VisualCoding | 72.3 | 71.5 | - | 70.0 | 73.4 | 69.1 |\n\n## 4. Model Architecture\n\n### LLM Backbone\n\n| Component | MiMo-V2.6-Flash-RL |\n| --- | --- |\n| Layers (Total / SWA / GA) | 48 / 39 / 9 |\n| Hidden Size | 4096 |\n| SWA Heads (Q/KV) | 64 / 8 |\n| GA Heads (Q/KV) | 64 / 4 |\n| Head Dimensions (QK / V) | 192 / 128 |\n| Sliding Window Size | 128 |\n| Routed Experts (Total / Activated) | 256 / 8 |\n| Max Context Length | 1M |\n| MTP / Speculative Decoder | 5 SWA layers, window 1024 |\n\nThe first Transformer block uses global attention with a dense FFN. Remaining blocks interleave local SWA and GA; both use sparse MoE FFNs without shared experts.\n\n### Vision Encoder (MiMo ViT)\n\n| Configuration | Value |\n| --- | --- |\n| Layers (Total / SWA / GA) | 28 / 24 / 4 |\n| Hidden Size | 1280 |\n| Attention Heads (Q / KV) | 32 / 8 |\n| Head Dimension | 64 |\n| Patch Size (T × H × W) | 2 × 16 × 16 |\n| Sliding Window (Left / Right) | 64 / 64 |\n| Spatial Merge Size | 2 × 2 |\n| Parameters | 681M |\n\n### Audio Encoders\n\nAudioTokenizer encoder: 24 layers (12 SWA / 12 GA), hidden 1024, 20 RVQ codebooks, 308M parameters. Audio patch encoder: 6 layers, 127M parameters; four frames per patch (25 Hz → 6.25 Hz).\n\n### Speculative Decoder\n\n5-layer SWA MTP drafter (DFlash-style). Predicts 7 subsequent tokens per forward pass for parallel verification.\n\n## 5. Deployment\n\nFor best performance, follow the [SGLang MiMo cookbook](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.5). Docker image: `lmsysorg/sglang:latest`.\n\n### SGLang\n\n```bash\nsglang serve \\\n  --trust-remote-code \\\n  --model-path XiaomiMiMo/MiMo-V2.6-Flash-RL \\\n  --tp 8 \\\n  --dp 2 \\\n  --enable-dp-attention \\\n  --enable-dp-lm-head \\\n  --mm-enable-dp-encoder \\\n  --mem-fraction-static 0.65 \\\n  --chunked-prefill-size 16384 \\\n  --speculative-algorithm EAGLE \\\n  --speculative-num-steps 3 \\\n  --speculative-eagle-topk 1 \\\n  --speculative-num-draft-tokens 4 \\\n  --enable-multi-layer-eagle \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --host 0.0.0.0 \\\n  --port 30000\n```\n\n### vLLM\n\nFollow the [vLLM MiMo-V2.5 recipe](https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5). Stable vLLM may lag; pre-built image: `docker pull vllm/vllm-openai:mimov25-cu129`.\n\n```bash\nvllm serve XiaomiMiMo/MiMo-V2.6-Flash-RL \\\n  --tensor-parallel-size 4 \\\n  --trust-remote-code \\\n  --gpu-memory-utilization 0.95 \\\n  --max-model-len auto \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --enable-auto-tool-choice \\\n  --generation-config vllm\n```\n\nRecommended sampling: `temperature=1.0`, `top_p=0.95`.\n\nAlso available in AI Studio, MiMo Code, Xiaomi MiMo Desktop, Xiaomi MiMo Open Platform API, and OpenRouter.\n\n## Citation\n\n```bibtex\n@misc{mimo2026v26flash,\n  title={MiMo-V2.6-Flash-RL},\n  author={{Xiaomi MiMo Team}},\n  year={2026},\n  howpublished={\\url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL}},\n}\n```\n\n## Contact\n\nFor questions or feedback, reach us at [mimo@xiaomi.com](mailto:mimo@xiaomi.com) or join our community:\n\n- [WeChat Group](https://work.weixin.qq.com/apph5/external_room/join/group_mng?plg_id=c417f99bd9014b5dd894daa8bfe19790&)\n- [Discord](https://discord.gg/WX2R2uNp)\n- [Telegram](https://t.me/+3T-I0pekOVIyNDBl)\n- [Reddit](https://www.reddit.com/r/XiaomiMiMo_Official/)\n",
+          "checked_at": "2026-09-22",
+          "content_hash": "f2765dfa631f8f3485c903ea14b2de25f3dfcc6223646fd86478d5d9c83d268c",
+          "coverage": "full_text",
+          "id": "flash",
+          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
+          "reason": "",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "MIT；依据该固定模型卡 license: mit 声明；保留原文及许可通知。",
+            "notice": "来源：XiaomiMiMo / MiMo-V2.6-Flash-RL，修订 3b38d063180c3e4aed9691fdc735f3d10b266ee4。上游模型卡的声明和署名原样保留；仓库未另附 LICENSE 文件，不虚构版权年份。\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+            "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/blob/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
+          },
+          "title": "MiMo-V2.6-Flash-RL 固定模型卡",
+          "upstream_revision": "3b38d063180c3e4aed9691fdc735f3d10b266ee4",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/raw/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-09-22",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "distill",
+          "locator": "官方来源及对应采用说明",
+          "reason": "该固定模型卡未声明许可，仓库未列 LICENSE；不将 Pro/Flash 的 MIT 许可套用到9B。",
+          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
+          "rights": {
+            "basis": "链接出处，不复制该正文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MiMo-V2.6-Distill-Qwen-9B 固定模型卡",
+          "upstream_revision": "f2773fb482ac3dd047a4af4003b86e56b7225d0d",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B/raw/f2773fb482ac3dd047a4af4003b86e56b7225d0d/README.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct10-mopd-1",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 官方材料1",
+          "upstream_revision": "Pro-MOPD / Flash-MOPD",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct10-mopd-2",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 补充来源2",
+          "upstream_revision": "Pro-MOPD / Flash-MOPD",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-109",
+          "name": "MiMo V2.6 MOPD 后续检查点",
+          "url": "https://fieldtofit.top/news/D-109"
+        }
+      ],
+      "source_published_at": "",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "pro",
+          "title": "MiMo-V2.6-Pro-RL 固定模型卡",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "flash",
+          "title": "MiMo-V2.6-Flash-RL 固定模型卡",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/raw/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "distill",
+          "title": "MiMo-V2.6-Distill-Qwen-9B 固定模型卡",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B/raw/f2773fb482ac3dd047a4af4003b86e56b7225d0d/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct10-mopd-1",
+          "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 官方材料1",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct10-mopd-2",
+          "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 补充来源2",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD"
+        }
+      ],
+      "state": "published",
+      "summary": "小米 MiMo 提供 Pro-RL、Flash-RL 与基于 Qwen3.5-9B 的蒸馏 SFT 检查点。模型卡介绍如何把多类 Agent 任务放进同一轮强化学习，并给出部署入口；三者的体量、训练阶段与许可需分别看。",
+      "title": "MiMo V2.6：开放 Pro、Flash 与 9B 检查点，展示 Agent 混合训练路线"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-10",
+      "highlight": false,
+      "id": "D-111",
+      "interpretation": [
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-c-1"
+          ],
+          "text": "此次更新为子代理提供独立的自动压缩窗口设置，并修复托管 Hook、关闭的 MCP 服务状态以及非交互运行中的若干行为。编辑器遇到非 UTF-8 内容时改为拒绝不安全编辑，另有日志脱敏与命令审批修复。",
+          "title": "主要变化"
+        },
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-c-1"
+          ],
+          "text": "这些变化影响团队策略与长任务运行的可预期性；本站只核对官方发布记录，没有完成本地回归。发布说明中的 Sonnet 5.5 缓存价格修正属于费用显示跟进，不应另写成模型又一次降价。",
+          "title": "采用与解读边界"
+        },
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-c-1"
+          ],
+          "text": "跨平台实际行为及迁移效果未复测；保留原档案许可与使用限制。",
+          "title": "尚未核实"
+        }
+      ],
+      "name": "Claude Code",
+      "note": "原文日期：2026-10-09 19:28:59 UTC（北京时间10月10日03:28）；本站核对：2026-10-10；未独立运行验证。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-10T04:48:27.703822+00:00",
+        "updated_at": "2026-10-10T04:48:27.703822+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct10-c-1",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Claude Code 2.1.296：补强托管策略、MCP 状态与编辑保护 · 官方材料1",
+          "upstream_revision": "v2.1.296",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.296"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-10-09",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct10-c-1",
+          "title": "Claude Code 2.1.296：补强托管策略、MCP 状态与编辑保护 · 官方材料1",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.296"
+        }
+      ],
+      "state": "published",
+      "summary": "此次更新为子代理提供独立的自动压缩窗口设置，并修复托管 Hook、关闭的 MCP 服务状态以及非交互运行中的若干行为。编辑器遇到非 UTF-8 内容时改为拒绝不安全编辑，另有日志脱敏与命令审批修复。",
+      "title": "Claude Code 2.1.296：补强托管策略、MCP 状态与编辑保护"
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-08",
+      "highlight": false,
+      "id": "D-110",
+      "interpretation": [
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-b-1",
+            "oct10-b-2"
+          ],
+          "text": "Anthropic 开放申请制 OSS Scanner，为符合条件的开源项目提供免费、定期的模型漏洞扫描。资格参照项目对基础设施与用户安全的影响逐案审核，由核心维护者通过官方登记仓库提交申请。",
+          "title": "主要变化"
+        },
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-b-1",
+            "oct10-b-2"
+          ],
+          "text": "报告包含问题解释、复现材料及可能的修复建议，但全部由模型生成，未经人工筛选；维护者仍需检查误报、严重性及项目威胁模型。它适合有能力处理这些报告的维护团队，不能当成自动验收或安全保证。对于无力自行处理的项目，官方仍保留人工核验后的协调披露流程。",
+          "title": "采用与解读边界"
+        },
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-b-1",
+            "oct10-b-2"
+          ],
+          "text": "具体项目是否获准及服务等待时间不确定；本站未申请或实测。",
+          "title": "尚未核实"
+        }
+      ],
+      "name": "OSS Scanner",
+      "note": "原文日期：2026-10-08；本站核对：2026-10-10；未独立运行验证。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-10T04:48:05.137589+00:00",
+        "updated_at": "2026-10-10T04:48:05.137589+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct10-b-1",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "OSS Scanner：开源维护者可申请免费扫描，报告仍需人工核验 · 官方材料1",
+          "upstream_revision": "OSS Scanner 首次服务说明",
+          "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct10-b-2",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "OSS Scanner：开源维护者可申请免费扫描，报告仍需人工核验 · 补充来源2",
+          "upstream_revision": "OSS Scanner 首次服务说明",
+          "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-08",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct10-b-1",
+          "title": "OSS Scanner：开源维护者可申请免费扫描，报告仍需人工核验 · 官方材料1",
+          "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct10-b-2",
+          "title": "OSS Scanner：开源维护者可申请免费扫描，报告仍需人工核验 · 补充来源2",
+          "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic 开放申请制 OSS Scanner，为符合条件的开源项目提供免费、定期的模型漏洞扫描。资格参照项目对基础设施与用户安全的影响逐案审核，由核心维护者通过官方登记仓库提交申请。",
+      "title": "OSS Scanner：开源维护者可申请免费扫描，报告仍需人工核验"
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-10",
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-109",
+      "interpretation": [
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-a-1",
+            "oct10-a-2"
+          ],
+          "text": "官方模型卡已列出 Pro 与 Flash 的 MOPD 检查点，分别接续此前 RL 检查点。MOPD2 将可验证任务的 mixRL 教师与开放领域的 SFT 教师结合，使用完整自主轨迹、教师历史续写和示范历史续写三类训练流。",
+          "title": "主要变化"
+        },
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-a-1",
+            "oct10-a-2"
+          ],
+          "text": "这次值得看的是 Agent 反复调用相同工具、消耗上下文却不推进任务的问题；官方称新检查点可缓解，不能写成已彻底消除。Pro 为 1.02T 总参数／42B 激活，Flash 为 309B／15B，均标注 MIT；部署示例需要多 GPU。本站未复现性能，模型卡的托管接入描述也不能替代具体 API 型号核对。",
+          "title": "采用与解读边界"
+        },
+        {
+          "locator": "官方发布正文；版本和限制说明",
+          "source_ids": [
+            "oct10-a-1",
+            "oct10-a-2"
+          ],
+          "text": "首次发布时间、具体 API 别名及各入口切换状态待核；技术报告 §5.6 尚未做全文对比，不生成技术地图。",
+          "title": "尚未核实"
+        }
+      ],
+      "name": "MiMo V2.6 MOPD",
+      "note": "原文日期：首发日期尚未核实，本次为后续检查点补录；本站核对：2026-10-10；未独立运行验证。",
+      "organization": "Xiaomi",
+      "publication": {
+        "first_published_at": "2026-10-10T04:47:48.798812+00:00",
+        "updated_at": "2026-10-10T04:47:48.798812+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct10-a-1",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 官方材料1",
+          "upstream_revision": "Pro-MOPD / Flash-MOPD",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct10-a-2",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 补充来源2",
+          "upstream_revision": "Pro-MOPD / Flash-MOPD",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-26",
+          "name": "MiMo V2.6 RL 检查点",
+          "url": "https://fieldtofit.top/news/D-26"
+        }
+      ],
+      "source_published_at": null,
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct10-a-1",
+          "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 官方材料1",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct10-a-2",
+          "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 补充来源2",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD"
+        }
+      ],
+      "state": "published",
+      "summary": "官方模型卡已列出 Pro 与 Flash 的 MOPD 检查点，分别接续此前 RL 检查点。MOPD2 将可验证任务的 mixRL 教师与开放领域的 SFT 教师结合，使用完整自主轨迹、教师历史续写和示范历史续写三类训练流。",
+      "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用"
+    },
+    {
+      "category": "agent",
       "checked_at": "2026-10-10",
       "codex_28_days": {
         "announced_at": "2026-10-09T19:44:51Z",
@@ -10122,130 +11128,6 @@
       "title": "Qwen-Image-2.1：直接生成透明素材，也能继续编辑"
     },
     {
-      "_position": 1,
-      "aliases": [
-        "MiMo V2.6"
-      ],
-      "checked_at": "2026-09-22",
-      "editor": "FieldToFit",
-      "event_date": "",
-      "highlight": false,
-      "id": "D-26",
-      "interpretation": [
-        {
-          "locator": "对应材料的训练、使用、评测或限制章节",
-          "source_ids": [
-            "pro",
-            "flash"
-          ],
-          "text": "模型卡将代码、通用 Agent、视觉和安全任务放进混合强化学习，并比较同组轨迹、区分多个已通过测试的解法。值得读的是任务与验收信号如何共同参与训练。",
-          "title": "看模型如何学习把任务做完"
-        },
-        {
-          "locator": "对应材料的训练、使用、评测或限制章节",
-          "source_ids": [
-            "pro",
-            "flash",
-            "distill"
-          ],
-          "text": "Pro 为1.02T总参数／42B激活，Flash为309B／15B，两者标注1M上下文；9B是基于Qwen3.5-9B的蒸馏SFT研究起点，不能当作Pro的等能力小版本。官方评测含不同口径与内部测试集，本站未复测。",
-          "title": "三个版本的体量与训练阶段不同"
-        },
-        {
-          "locator": "对应材料的训练、使用、评测或限制章节",
-          "source_ids": [
-            "pro",
-            "flash",
-            "distill"
-          ],
-          "text": "Pro/Flash提供SGLang、vLLM及托管入口，模型卡标注MIT；9B提供SGLang示例，但本轮未查到许可声明。多卡示例不能支持普通电脑即可运行的推断，本站未执行部署。",
-          "title": "采用先读部署示例和许可差异"
-        }
-      ],
-      "name": "MiMo V2.6",
-      "note": "三个Hub仓库创建于2026-09-21 UTC，官网确切发布日期未核实；本站核对2026-09-22。Pro/Flash固定模型卡正文可通过MCP读取，9B因许可缺失仅链接。官网动态页未取得正文，技术报告全文未评审；未进行运行或性能验证。",
-      "organization": "Xiaomi / MiMo",
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "---\nlicense: mit\nlanguage:\n- en\n- zh\ntags:\n- text-generation\n- multimodal\n- vision-language\n- audio\n- agent\n- video-understanding\n- long-context\n- mimo_v2\n- transformers\nlibrary_name: transformers\n---\n\n<br/><br/>\n\n<div align=\"center\">\n  <picture>\n    <source srcset=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true\" media=\"(prefers-color-scheme: dark)\">\n    <img src=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo.png?raw=true\" width=\"60%\" alt=\"Xiaomi-MiMo\" />\n  </picture>\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1;\">\n  |\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL\" target=\"_blank\">🤗 HuggingFace</a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomi.com/mimo-v2-6\" target=\"_blank\">📰 Blog </a>\n  &nbsp;|\n  <a href=\"https://platform.xiaomimimo.com\" target=\"_blank\">🎨 Xiaomi MiMo API Platform </a>\n  &nbsp;|\n  <a href=\"https://aistudio.xiaomimimo.com\" target=\"_blank\">🗨️ Xiaomi MiMo Studio </a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomimimo.com/desktop/\" target=\"_blank\">💻 Xiaomi MiMo Desktop </a>\n  &nbsp;|\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1.2;\">\n  <strong>Community</strong><br/>\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/blob/main/assets/wechat.jpg\" target=\"_blank\">WeChat Group</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/kKC2kNnQEX\" target=\"_blank\">Discord</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://t.me/+3T-I0pekOVIyNDBl\" target=\"_blank\">Telegram</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://www.reddit.com/r/XiaomiMiMo_Official/\" target=\"_blank\">Reddit</a>\n</div>\n\n<br/>\n\n# MiMo-V2.6-Pro-RL\n\n**Scaling Reinforcement Learning Toward Self-Improvement**\n\n<p align=\"center\">\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf\"><b>Technical Report</b></a>\n</p>\n\n## 1. Introduction\n\nMiMo-V2.6-Pro-RL is the flagship checkpoint of the MiMo-V2.6 series. The series is built to **scale reinforcement learning toward self-improvement** — scaling RL compute, environment diversity, and grader compute together, so the model keeps expanding its capability frontier through exploration and feedback. Key features include:\n\n- **Native Omnimodal + Long Horizon**: Text, image, video, and audio in one model; 1M tokens for long repositories, tool traces, and multi-session agent runs.\n- **You Only RL Once**: One mixed RL run across coding, general agents, visual, and cybersecurity — not separate per-domain runs. Tasks and multiple harnesses are mixed in the same batch so capabilities reinforce each other and strategies transfer to harnesses never seen in training.\n- **Scaling RL Compute**: Fully asynchronous Group Relative Policy Optimization (GRPO) on very large batches — 1,568 prompts × 16 rollouts per step, billions of tokens per update.\n- **Groupwise Agentic Grading (Self-Improvement Loop)**: Binary pass/fail cannot rank passing solutions, so the reward signal itself is scaled. An agentic grader compares rollouts *within each group*: **Groupwise Reward Synthesis (GRS)** builds task-specific rubrics offline from contrasting rollouts and fuses rubric quality with test outcomes; **Groupwise Advantage Redistribution (GAR)** ranks passing trajectories online and moves advantage toward higher-quality solutions. Judged against the policy’s own samples, this closes a self-improvement loop and steers toward shorter paths and fewer tokens per task.\n- **Aligned RL**: Cold start from self-correction — the model reflects on and rewrites its own misaligned turns into grounded next steps. Throughout RL, environment hardening, adversarial screening, and verifier cross-checks keep the loop honest against reward hacking.\n- **Multi-Prefix Multi-Teacher On-Policy Distillation (MOPD2)**: After mixed RL, MOPD2 combines autonomous student rollouts with prefix-conditioned single-turn rollouts (Teacher-Prefix and SFT-Prefix), reusing histories from teacher trajectories and SFT demonstrations so decision points train without regenerating preceding turns — extending capabilities to hard-to-verify tasks.\n\n## Model Summary\n\n- **Architecture**: Sparse MoE (Mixture of Experts), 1.02T total / 42B activated parameters\n- **Context Length**: 1M tokens\n- **Modalities**: Text, Image, Video, Audio\n- **Vision Encoder**: 681M-param MiMo ViT (28 layers: 24 SWA + 4 Full)\n- **Audio Encoder**: 308M AudioTokenizer + 127M audio patch encoder\n- **Multi-Token Prediction (MTP)**: 5-layer speculative decoder\n\n![Figure 1: MiMo-V2.6 architecture — omni encoders, hybrid SWA backbone, and MTP blocks](assets/architecture.png)\n\n*Figure 1. MiMo-V2.6 architecture.*\n\n## 2. Downloads\n\n| Model | Download |\n| --- | --- |\n| **MiMo-V2.6-Pro-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL) · 🤖 ModelScope *(at release)* |\n| **MiMo-V2.6-Flash-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) · 🤖 ModelScope *(at release)* |\n\n## 3. Evaluation Results\n\n| Benchmark | MiMo-V2.6 Pro | MiMo-V2.6 Flash | MiMo-V2.5 Pro | Claude Opus 5 | GPT-5.6 Sol | Claude Fable 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| **Code Agent** | | | | | | |\n| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |\n| ProgramBench | 26.5 | 26.0 | 12.5 | 37.0 | 25.0 | 33.0 |\n| MiMo Code Bench | 63.2 | 61.2 | 40.4 | 68.6 | 59.3 | - |\n| **General Agent** | | | | | | |\n| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |\n| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |\n| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |\n| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |\n| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |\n| Terminal Bench 2.1 | 89.9 | 87.6 | 65.2 | 89.1 | 88.8 | 84.3 |\n| OSWorld-Verified | 82.0 | 80.8 | - | 83.4 | 83.0 | 86.0 |\n| JobBench | 62.0 | 61.2 | 25.0 | 65.7 | 45.4 | 57.4 |\n| **Cybersecurity** | | | | | | |\n| CyberGym | 94.0 | 95.1 | 40.0 | - | - | - |\n| MiMo Cyber Bench | 80.2 | 77.2 | 0.0 | - | - | - |\n| ExploitGym | 17.8 | 6.0 | 0.2 | 22.1 | 30.3 | 28.4 |\n| ExploitBench | 47.9 | 25.3 | 16.6 | 70.0 | 78.5 | 78.0 |\n| SEC Bench Pro | 66.3 | 47.5 | 17.7 | - | 79.1 | - |\n| **Visual Agent** | | | | | | |\n| MiMo VisualCoding | 72.3 | 71.5 | - | 70.0 | 73.4 | 69.1 |\n\n## 4. Model Architecture\n\n### LLM Backbone\n\n| Component | MiMo-V2.6-Pro-RL |\n| --- | --- |\n| Layers (Total / SWA / GA) | 70 / 60 / 10 |\n| Hidden Size | 6144 |\n| SWA Heads (Q/KV) | 128 / 8 |\n| GA Heads (Q/KV) | 128 / 8 |\n| Head Dimensions (QK / V) | 192 / 128 |\n| Sliding Window Size | 128 |\n| Routed Experts (Total / Activated) | 384 / 8 |\n| Max Context Length | 1M |\n| MTP / Speculative Decoder | 5 SWA layers, window 1024 |\n\nThe first Transformer block uses global attention with a dense FFN. Remaining blocks interleave local SWA and GA; both use sparse MoE FFNs without shared experts.\n\n### Vision Encoder (MiMo ViT)\n\n| Configuration | Value |\n| --- | --- |\n| Layers (Total / SWA / GA) | 28 / 24 / 4 |\n| Hidden Size | 1280 |\n| Attention Heads (Q / KV) | 32 / 8 |\n| Head Dimension | 64 |\n| Patch Size (T × H × W) | 2 × 16 × 16 |\n| Sliding Window (Left / Right) | 64 / 64 |\n| Spatial Merge Size | 2 × 2 |\n| Parameters | 681M |\n\n### Audio Encoders\n\nAudioTokenizer encoder: 24 layers (12 SWA / 12 GA), hidden 1024, 20 RVQ codebooks, 308M parameters. Audio patch encoder: 6 layers, 127M parameters; four frames per patch (25 Hz → 6.25 Hz).\n\n### Speculative Decoder\n\n5-layer SWA MTP drafter (DFlash-style). Predicts 7 subsequent tokens per forward pass for parallel verification.\n\n## 5. Deployment\n\nFor best performance, follow the [SGLang MiMo cookbook](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.5). Docker image: `lmsysorg/sglang:latest`.\n\n### SGLang\n\n```bash\nsglang serve \\\n  --trust-remote-code \\\n  --model-path XiaomiMiMo/MiMo-V2.6-Pro-RL \\\n  --tp 16 \\\n  --dp 2 \\\n  --enable-dp-attention \\\n  --mm-enable-dp-encoder \\\n  --ep 16 \\\n  --moe-a2a-backend deepep \\\n  --moe-dense-tp-size 1 \\\n  --mem-fraction-static 0.7 \\\n  --max-running-requests 128 \\\n  --chunked-prefill-size 32768 \\\n  --page-size 64 \\\n  --swa-full-tokens-ratio 0.3 \\\n  --speculative-algorithm EAGLE \\\n  --speculative-num-steps 3 \\\n  --speculative-eagle-topk 1 \\\n  --speculative-num-draft-tokens 4 \\\n  --enable-multi-layer-eagle \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --host 0.0.0.0 \\\n  --port 30000 \\\n  --nnodes 2 \\\n  --node-rank <node-rank> \\\n  --dist-init-addr <node0-ip>:20000\n```\n\n### vLLM\n\nFollow the [vLLM MiMo-V2.5 recipe](https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5). Pre-built image: `docker pull vllm/vllm-openai:mimov25-cu129`.\n\n```bash\nvllm serve XiaomiMiMo/MiMo-V2.6-Pro-RL \\\n  --tensor-parallel-size 8 \\\n  --trust-remote-code \\\n  --gpu-memory-utilization 0.95 \\\n  --max-model-len auto \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --enable-auto-tool-choice \\\n  --generation-config vllm\n```\n\nRecommended sampling: `temperature=1.0`, `top_p=0.95`.\n\nAlso available in AI Studio, MiMo Code, Xiaomi MiMo Desktop, Xiaomi MiMo Open Platform API, and OpenRouter.\n\n## Citation\n\n```bibtex\n@misc{mimo2026v26pro,\n  title={MiMo-V2.6-Pro-RL},\n  author={{Xiaomi MiMo Team}},\n  year={2026},\n  howpublished={\\url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL}},\n}\n```\n\n## Contact\n\nFor questions or feedback, reach us at [mimo@xiaomi.com](mailto:mimo@xiaomi.com) or join our community:\n\n- [WeChat Group](https://work.weixin.qq.com/apph5/external_room/join/group_mng?plg_id=c417f99bd9014b5dd894daa8bfe19790&)\n- [Discord](https://discord.gg/WX2R2uNp)\n- [Telegram](https://t.me/+3T-I0pekOVIyNDBl)\n- [Reddit](https://www.reddit.com/r/XiaomiMiMo_Official/)\n",
-          "checked_at": "2026-09-22",
-          "coverage": "full_text",
-          "id": "pro",
-          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
-          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
-          "rights": {
-            "basis": "MIT；依据该固定模型卡 license: mit 声明；保留原文及许可通知。",
-            "notice": "来源：XiaomiMiMo / MiMo-V2.6-Pro-RL，修订 54b10491b1811c76aa9681a9d0ff872396a4064c。上游模型卡的声明和署名原样保留；仓库未另附 LICENSE 文件，不虚构版权年份。\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
-            "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
-          },
-          "title": "MiMo-V2.6-Pro-RL 固定模型卡",
-          "upstream_revision": "54b10491b1811c76aa9681a9d0ff872396a4064c",
-          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
-        },
-        {
-          "approved": true,
-          "body": "---\nlicense: mit\nlanguage:\n- en\n- zh\ntags:\n- text-generation\n- multimodal\n- vision-language\n- audio\n- agent\n- video-understanding\n- long-context\n- mimo_v2\n- transformers\nlibrary_name: transformers\n---\n\n<br/><br/>\n\n<div align=\"center\">\n  <picture>\n    <source srcset=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true\" media=\"(prefers-color-scheme: dark)\">\n    <img src=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo.png?raw=true\" width=\"60%\" alt=\"Xiaomi-MiMo\" />\n  </picture>\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1;\">\n  |\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL\" target=\"_blank\">🤗 HuggingFace</a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomi.com/mimo-v2-6\" target=\"_blank\">📰 Blog </a>\n  &nbsp;|\n  <a href=\"https://platform.xiaomimimo.com\" target=\"_blank\">🎨 Xiaomi MiMo API Platform </a>\n  &nbsp;|\n  <a href=\"https://aistudio.xiaomimimo.com\" target=\"_blank\">🗨️ Xiaomi MiMo Studio </a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomimimo.com/desktop/\" target=\"_blank\">💻 Xiaomi MiMo Desktop </a>\n  &nbsp;|\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1.2;\">\n  <strong>Community</strong><br/>\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/blob/main/assets/wechat.jpg\" target=\"_blank\">WeChat Group</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/kKC2kNnQEX\" target=\"_blank\">Discord</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://t.me/+3T-I0pekOVIyNDBl\" target=\"_blank\">Telegram</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://www.reddit.com/r/XiaomiMiMo_Official/\" target=\"_blank\">Reddit</a>\n</div>\n\n<br/>\n\n# MiMo-V2.6-Flash-RL\n\n**Scaling Reinforcement Learning Toward Self-Improvement**\n\n<p align=\"center\">\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/blob/main/MiMo_V2_6_technical_report.pdf\"><b>Technical Report</b></a>\n</p>\n\n## 1. Introduction\n\nMiMo-V2.6-Flash-RL is the efficiency-balanced checkpoint of the MiMo-V2.6 series. The series is built to **scale reinforcement learning toward self-improvement** — scaling RL compute, environment diversity, and grader compute together, so the model keeps expanding its capability frontier through exploration and feedback. Key features include:\n\n- **Native Omnimodal + Long Horizon**: Text, image, video, and audio in one model; 1M tokens for long repositories, tool traces, and multi-session agent runs.\n- **You Only RL Once**: One mixed RL run across coding, general agents, visual, and cybersecurity — not separate per-domain runs. Tasks and multiple harnesses are mixed in the same batch so capabilities reinforce each other and strategies transfer to harnesses never seen in training.\n- **Scaling RL Compute**: Fully asynchronous Group Relative Policy Optimization (GRPO) on very large batches — 1,568 prompts × 16 rollouts per step, billions of tokens per update.\n- **Groupwise Agentic Grading (Self-Improvement Loop)**: Binary pass/fail cannot rank passing solutions, so the reward signal itself is scaled. An agentic grader compares rollouts *within each group*: **Groupwise Reward Synthesis (GRS)** builds task-specific rubrics offline from contrasting rollouts and fuses rubric quality with test outcomes; **Groupwise Advantage Redistribution (GAR)** ranks passing trajectories online and moves advantage toward higher-quality solutions. Judged against the policy’s own samples, this closes a self-improvement loop and steers toward shorter paths and fewer tokens per task.\n- **Aligned RL**: Cold start from self-correction — the model reflects on and rewrites its own misaligned turns into grounded next steps. Throughout RL, environment hardening, adversarial screening, and verifier cross-checks keep the loop honest against reward hacking.\n- **Multi-Prefix Multi-Teacher On-Policy Distillation (MOPD2)**: After mixed RL, MOPD2 combines autonomous student rollouts with prefix-conditioned single-turn rollouts (Teacher-Prefix and SFT-Prefix), reusing histories from teacher trajectories and SFT demonstrations so decision points train without regenerating preceding turns — extending capabilities to hard-to-verify tasks.\n\n## Model Summary\n\n- **Architecture**: Sparse MoE (Mixture of Experts), 309B total / 15B activated parameters\n- **Context Length**: 1M tokens\n- **Modalities**: Text, Image, Video, Audio\n- **Vision Encoder**: 681M-param MiMo ViT (28 layers: 24 SWA + 4 Full)\n- **Audio Encoder**: 308M AudioTokenizer + 127M audio patch encoder\n- **Multi-Token Prediction (MTP)**: 5-layer speculative decoder\n\n![Figure 1: MiMo-V2.6 architecture — omni encoders, hybrid SWA backbone, and MTP blocks](assets/architecture.png)\n\n*Figure 1. MiMo-V2.6 architecture.*\n\n## 2. Downloads\n\n| Model | Download |\n| --- | --- |\n| **MiMo-V2.6-Pro-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL) · 🤖 ModelScope *(at release)* |\n| **MiMo-V2.6-Flash-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) · 🤖 ModelScope *(at release)* |\n\n## 3. Evaluation Results\n\n| Benchmark | MiMo-V2.6 Pro | MiMo-V2.6 Flash | MiMo-V2.5 Pro | Claude Opus 5 | GPT-5.6 Sol | Claude Fable 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| **Code Agent** | | | | | | |\n| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |\n| ProgramBench | 26.5 | 26.0 | 12.5 | 37.0 | 25.0 | 33.0 |\n| MiMo Code Bench | 63.2 | 61.2 | 40.4 | 68.6 | 59.3 | - |\n| **General Agent** | | | | | | |\n| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |\n| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |\n| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |\n| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |\n| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |\n| Terminal Bench 2.1 | 89.9 | 87.6 | 65.2 | 89.1 | 88.8 | 84.3 |\n| OSWorld-Verified | 82.0 | 80.8 | - | 83.4 | 83.0 | 86.0 |\n| JobBench | 62.0 | 61.2 | 25.0 | 65.7 | 45.4 | 57.4 |\n| **Cybersecurity** | | | | | | |\n| CyberGym | 94.0 | 95.1 | 40.0 | - | - | - |\n| MiMo Cyber Bench | 80.2 | 77.2 | 0.0 | - | - | - |\n| ExploitGym | 17.8 | 6.0 | 0.2 | 22.1 | 30.3 | 28.4 |\n| ExploitBench | 47.9 | 25.3 | 16.6 | 70.0 | 78.5 | 78.0 |\n| SEC Bench Pro | 66.3 | 47.5 | 17.7 | - | 79.1 | - |\n| **Visual Agent** | | | | | | |\n| MiMo VisualCoding | 72.3 | 71.5 | - | 70.0 | 73.4 | 69.1 |\n\n## 4. Model Architecture\n\n### LLM Backbone\n\n| Component | MiMo-V2.6-Flash-RL |\n| --- | --- |\n| Layers (Total / SWA / GA) | 48 / 39 / 9 |\n| Hidden Size | 4096 |\n| SWA Heads (Q/KV) | 64 / 8 |\n| GA Heads (Q/KV) | 64 / 4 |\n| Head Dimensions (QK / V) | 192 / 128 |\n| Sliding Window Size | 128 |\n| Routed Experts (Total / Activated) | 256 / 8 |\n| Max Context Length | 1M |\n| MTP / Speculative Decoder | 5 SWA layers, window 1024 |\n\nThe first Transformer block uses global attention with a dense FFN. Remaining blocks interleave local SWA and GA; both use sparse MoE FFNs without shared experts.\n\n### Vision Encoder (MiMo ViT)\n\n| Configuration | Value |\n| --- | --- |\n| Layers (Total / SWA / GA) | 28 / 24 / 4 |\n| Hidden Size | 1280 |\n| Attention Heads (Q / KV) | 32 / 8 |\n| Head Dimension | 64 |\n| Patch Size (T × H × W) | 2 × 16 × 16 |\n| Sliding Window (Left / Right) | 64 / 64 |\n| Spatial Merge Size | 2 × 2 |\n| Parameters | 681M |\n\n### Audio Encoders\n\nAudioTokenizer encoder: 24 layers (12 SWA / 12 GA), hidden 1024, 20 RVQ codebooks, 308M parameters. Audio patch encoder: 6 layers, 127M parameters; four frames per patch (25 Hz → 6.25 Hz).\n\n### Speculative Decoder\n\n5-layer SWA MTP drafter (DFlash-style). Predicts 7 subsequent tokens per forward pass for parallel verification.\n\n## 5. Deployment\n\nFor best performance, follow the [SGLang MiMo cookbook](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.5). Docker image: `lmsysorg/sglang:latest`.\n\n### SGLang\n\n```bash\nsglang serve \\\n  --trust-remote-code \\\n  --model-path XiaomiMiMo/MiMo-V2.6-Flash-RL \\\n  --tp 8 \\\n  --dp 2 \\\n  --enable-dp-attention \\\n  --enable-dp-lm-head \\\n  --mm-enable-dp-encoder \\\n  --mem-fraction-static 0.65 \\\n  --chunked-prefill-size 16384 \\\n  --speculative-algorithm EAGLE \\\n  --speculative-num-steps 3 \\\n  --speculative-eagle-topk 1 \\\n  --speculative-num-draft-tokens 4 \\\n  --enable-multi-layer-eagle \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --host 0.0.0.0 \\\n  --port 30000\n```\n\n### vLLM\n\nFollow the [vLLM MiMo-V2.5 recipe](https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5). Stable vLLM may lag; pre-built image: `docker pull vllm/vllm-openai:mimov25-cu129`.\n\n```bash\nvllm serve XiaomiMiMo/MiMo-V2.6-Flash-RL \\\n  --tensor-parallel-size 4 \\\n  --trust-remote-code \\\n  --gpu-memory-utilization 0.95 \\\n  --max-model-len auto \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --enable-auto-tool-choice \\\n  --generation-config vllm\n```\n\nRecommended sampling: `temperature=1.0`, `top_p=0.95`.\n\nAlso available in AI Studio, MiMo Code, Xiaomi MiMo Desktop, Xiaomi MiMo Open Platform API, and OpenRouter.\n\n## Citation\n\n```bibtex\n@misc{mimo2026v26flash,\n  title={MiMo-V2.6-Flash-RL},\n  author={{Xiaomi MiMo Team}},\n  year={2026},\n  howpublished={\\url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL}},\n}\n```\n\n## Contact\n\nFor questions or feedback, reach us at [mimo@xiaomi.com](mailto:mimo@xiaomi.com) or join our community:\n\n- [WeChat Group](https://work.weixin.qq.com/apph5/external_room/join/group_mng?plg_id=c417f99bd9014b5dd894daa8bfe19790&)\n- [Discord](https://discord.gg/WX2R2uNp)\n- [Telegram](https://t.me/+3T-I0pekOVIyNDBl)\n- [Reddit](https://www.reddit.com/r/XiaomiMiMo_Official/)\n",
-          "checked_at": "2026-09-22",
-          "coverage": "full_text",
-          "id": "flash",
-          "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
-          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
-          "rights": {
-            "basis": "MIT；依据该固定模型卡 license: mit 声明；保留原文及许可通知。",
-            "notice": "来源：XiaomiMiMo / MiMo-V2.6-Flash-RL，修订 3b38d063180c3e4aed9691fdc735f3d10b266ee4。上游模型卡的声明和署名原样保留；仓库未另附 LICENSE 文件，不虚构版权年份。\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
-            "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/blob/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
-          },
-          "title": "MiMo-V2.6-Flash-RL 固定模型卡",
-          "upstream_revision": "3b38d063180c3e4aed9691fdc735f3d10b266ee4",
-          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/raw/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-09-22",
-          "coverage": "link_only",
-          "id": "distill",
-          "locator": "官方来源及对应采用说明",
-          "reason": "该固定模型卡未声明许可，仓库未列 LICENSE；不将 Pro/Flash 的 MIT 许可套用到9B。",
-          "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
-          "rights": {
-            "basis": "链接出处，不复制该正文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "MiMo-V2.6-Distill-Qwen-9B 固定模型卡",
-          "upstream_revision": "f2773fb482ac3dd047a4af4003b86e56b7225d0d",
-          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B/raw/f2773fb482ac3dd047a4af4003b86e56b7225d0d/README.md"
-        }
-      ],
-      "related": [],
-      "source_published_at": "",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "pro",
-          "title": "MiMo-V2.6-Pro-RL 固定模型卡",
-          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/54b10491b1811c76aa9681a9d0ff872396a4064c/README.md"
-        },
-        {
-          "coverage": "link_only",
-          "id": "flash",
-          "title": "MiMo-V2.6-Flash-RL 固定模型卡",
-          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/raw/3b38d063180c3e4aed9691fdc735f3d10b266ee4/README.md"
-        },
-        {
-          "coverage": "link_only",
-          "id": "distill",
-          "title": "MiMo-V2.6-Distill-Qwen-9B 固定模型卡",
-          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B/raw/f2773fb482ac3dd047a4af4003b86e56b7225d0d/README.md"
-        }
-      ],
-      "state": "published",
-      "summary": "小米 MiMo 提供 Pro-RL、Flash-RL 与基于 Qwen3.5-9B 的蒸馏 SFT 检查点。模型卡介绍如何把多类 Agent 任务放进同一轮强化学习，并给出部署入口；三者的体量、训练阶段与许可需分别看。",
-      "title": "MiMo V2.6：开放 Pro、Flash 与 9B 检查点，展示 Agent 混合训练路线"
-    },
-    {
       "_position": 2,
       "aliases": [
         "Grok 4.7"
@@ -13428,416 +14310,9 @@
       "state": "published",
       "summary": "字节 Seed 发布音视频全双工模型的技术与演示材料。",
       "title": "SeedRealtime：边听、边看、边交互"
-    },
-    {
-      "category": "research",
-      "checked_at": "2026-10-10",
-      "editor": "FieldToFit",
-      "event_date": "2026-09-29",
-      "highlight": false,
-      "id": "D-112",
-      "interpretation": [
-        {
-          "locator": "第2–4节／第6节",
-          "source_ids": [
-            "report"
-          ],
-          "text": "把模型能力与工具流程分开；本文整理作者的10代搜索、消融、费用和迁移证据，单独说明本站判断及未复现范围。",
-          "title": "读过程，再判断收益"
-        }
-      ],
-      "name": "SelfSearch：从改进经验进化工具",
-      "note": "arXiv首次提交2026-09-29，v2为2026-09-30；按官方报告日期记录。配图为本站重绘／示意，非报告原图；arXiv非独占许可不作为插图转载许可。未独立复现实验。",
-      "organization": "首尔大学 / Jungwoo Yang、Injin Kong、Yohan Jo",
-      "publication": {
-        "first_published_at": "2026-10-10T08:46:02.146079+00:00",
-        "updated_at": "2026-10-10T08:46:02.146079+00:00"
-      },
-      "related": [],
-      "source_published_at": "2026-09-29",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "report",
-          "title": "SelfSearch: Reward-Free Search for Self-Improving Agents · arXiv v2",
-          "url": "https://arxiv.org/html/2609.37968v2"
-        }
-      ],
-      "state": "published",
-      "summary": "深读SelfSearch v2：模型权重固定，Agent从前代改进记录中调整工具与流程。四个编号核心观点与对应论述、四张本站图形，保留样本、费用分母、反例和未验证边界。",
-      "technical_map": {
-        "caution": "作者实验，未独立复现。Verified为120题子集；38.5%仅为共同成功题执行费用降幅，搜索和事后评测另计；不代表无限持续进步。",
-        "change_summary": "所有者选择今日报告1后发布：四个编号观点与对应论述、四张本站重绘／示意、固定模型／费用分母／反例与迁移边界。",
-        "edges": [
-          {
-            "evidence": [
-              {
-                "fragment": "S2",
-                "locator": "第2节：两条路线从相同初始Agent出发",
-                "source_id": "report"
-              }
-            ],
-            "from": "initial",
-            "label": "同一初始实现经过记录驱动的逐代修改",
-            "relation": "inheritance",
-            "to": "selfsearch"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "S3.T1",
-                "locator": "第3.1–3.2节／表1：比较条件",
-                "source_id": "report"
-              }
-            ],
-            "from": "initial",
-            "label": "相同执行模型与限制下比较初始和第10代",
-            "relation": "baseline",
-            "to": "performance"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "S3.SS1",
-                "locator": "第2节／第3.1节：搜索与评测分开",
-                "source_id": "report"
-              }
-            ],
-            "from": "selfsearch",
-            "label": "最后一代工具实现冻结后进入下游评测",
-            "relation": "inheritance",
-            "to": "performance"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "S3.SS4",
-                "locator": "第3.4节／表3：跨模型迁移",
-                "source_id": "report"
-              }
-            ],
-            "from": "performance",
-            "label": "同一冻结实现的另一种评测：换执行模型，不重新搜索",
-            "relation": "parallel",
-            "to": "transfer"
-          }
-        ],
-        "focus": "固定模型 → 读取改进记录 → 修改工具与流程 → 冻结后独立评测与迁移。",
-        "nodes": [
-          {
-            "evidence": [
-              {
-                "fragment": "S3.SS1",
-                "locator": "第2节／第3.1节：基线与模型配置",
-                "source_id": "report"
-              }
-            ],
-            "id": "initial",
-            "kind": "baseline",
-            "label": "初始Agent／固定模型",
-            "limitation": "模型固定不等于运行成本或任务行为完全相同。",
-            "mechanism": "以初始工具与流程作为基线，模型权重不参与训练。",
-            "metrics": [],
-            "result": "为改进效果提供比较起点。",
-            "setting": "各配置使用相同执行模型与限制。",
-            "stage": 0
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "S2",
-                "locator": "第2节／第4节：流程与工具变化",
-                "source_id": "report"
-              }
-            ],
-            "id": "selfsearch",
-            "kind": "method",
-            "label": "过程记录 → 工具改进",
-            "limitation": "仍有本地检查；不保证每条路线都提升，也不证明无限进步。",
-            "mechanism": "读取前代记录、修改并验证副本，由下一代实现接棒。",
-            "metrics": [],
-            "result": "形成可检查、可复用的工具与程序；消融支持记录与接棒的作用。",
-            "setting": "两条路线共享上一代记录；10代；无下游评测反馈。",
-            "stage": 1
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "S3.T1",
-                "locator": "第3.1–3.2节／表1；附录表10",
-                "source_id": "report"
-              }
-            ],
-            "id": "performance",
-            "kind": "result",
-            "label": "冻结后看效果与费用",
-            "limitation": "个别路线退步；费用不含搜索，子集结果不能当作完整排行榜。",
-            "mechanism": "搜索结束后评测最后一代，区分尝试费用与共同成功费用。",
-            "metrics": [
-              {
-                "baseline": "初始Agent 68.3%",
-                "conditions": "SWE-bench Multilingual抽样60题／8种语言；DeepSeek V4 Flash执行；10代；作者实验",
-                "label": "DeepSeek适应路线多语言成功率",
-                "unit": "%",
-                "value": 73.3
-              },
-              {
-                "baseline": "初始Agent在双方共同成功题上的执行费用",
-                "conditions": "DeepSeek适应路线／SWE-bench Multilingual；表10独立分母；不含搜索／事后评测费用",
-                "label": "共同成功题执行费用降幅",
-                "unit": "%",
-                "value": 38.5
-              }
-            ],
-            "result": "DeepSeek适应路线多语言68.3%→73.3%；共同成功题执行费用降低38.5%。",
-            "setting": "Verified120题、Multilingual60题、Terminal2.1共89题。",
-            "stage": 2
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "S3.T3",
-                "locator": "第3.4节／表3；第6节",
-                "source_id": "report"
-              }
-            ],
-            "id": "transfer",
-            "kind": "result",
-            "label": "换模型验证工具迁移",
-            "limitation": "独立重复搜索稳定性及真实业务适用性仍需验证。",
-            "mechanism": "不重新搜索，固定工具实现后交给另一模型执行。",
-            "metrics": [],
-            "result": "跨模型复用在报告的有限任务集上也获得收益。",
-            "setting": "SWE-bench Verified120题；两种搜索与执行模型组合。",
-            "stage": 3
-          }
-        ],
-        "question": "AI 不换模型，也能自己改进吗？",
-        "reading": {
-          "editorial": [
-            "这篇报告的价值是把“Agent变得更好”拆成可追踪的工程变化：保存失败上下文、修复工具、检查修复，再用冻结的候选回答真实任务。改进流程本身也成为下一轮的学习材料。",
-            "实际采用前，应在自己的任务集上复测成功率、失败类型、运行与维护总成本，并保留旧实现和变更记录。本篇提供研究线索，不把有限实验扩写成普遍性能或成本承诺。"
-          ],
-          "findings": [
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "这篇报告问的是：不在搜索期间反复跑下游题目、按分数筛选候选，Agent能否从“改进自己”的经历中找到有用变化？作者让Agent读取此前改进的过程记录，而不只是最终代码。记录包括推理、工具调用及结果、代码变化和本地检查。"
-                },
-                {
-                  "alt": "前代记录交给当前Agent；当前Agent编辑并验证副本，本轮运行者不变；新实现接棒下一代。两条路线共享上一代记录，共运行10代。",
-                  "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
-                  "caption": "图1 · SelfSearch改进流程（本站示意；模型权重与外部运行时固定）",
-                  "evidence": [
-                    {
-                      "fragment": "S2",
-                      "locator": "第2节／附录A：运行边界",
-                      "source_id": "report"
-                    }
-                  ],
-                  "image_url": "/report-figures/selfsearch-v2-mechanism.png",
-                  "kind": "figure",
-                  "license": "图形 © FieldToFit；原始数据与方法归属见来源"
-                },
-                {
-                  "items": [
-                    "改什么：可编辑仓库里的指令、工具、执行逻辑和代码组织；当前运行者在本轮内不变，编辑结果定义下一代。",
-                    "怎么探索：能力路线寻找可复用工具和程序；适应路线关注失败、矛盾证据和策略调整。两条路线各自保留实现，共享上一代的两份记录。",
-                    "何时评测：搜索中没有下游基准题目或评测结果；作者冻结搜索检查点后，才用下游任务评价最后一代。"
-                  ],
-                  "kind": "points"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "“无奖励搜索”仍使用工具反馈与本地检查，也仍需要事后评测；这里没有训练模型权重。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "S2",
-                  "locator": "第2节：改进轮次、两条路线与固定运行时",
-                  "source_id": "report"
-                }
-              ],
-              "id": "fixed-model-evolving-tools",
-              "node_ids": [
-                "initial",
-                "selfsearch"
-              ],
-              "summary": "SelfSearch把改进对象放在指令、工具和执行逻辑上：读取前代记录，编辑并验证副本，再由新实现接棒下一轮。",
-              "title": "模型权重不变，Agent的工具和做法仍能改进"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "报告中最有启发的变化很具体：读取长记录时，输出截断会隐藏关键证据；一个工具修复后，下一轮又会暴露新的阅读或验证困难。这让“自我改进”有了可检查的工程过程。"
-                },
-                {
-                  "alt": "初始81.7%；无前代记录83.8%；固定改进者83.8%；完整SelfSearch86.7%。完整方法比两种消融各高2.9个百分点。",
-                  "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
-                  "caption": "图2 · 完整方法与两种消融（本站重绘；DeepSeek配置，120题，两条路线均值，横轴0–100%）",
-                  "evidence": [
-                    {
-                      "fragment": "S4.T4",
-                      "locator": "第4.1节／表4：消融条件与均值",
-                      "source_id": "report"
-                    }
-                  ],
-                  "image_url": "/report-figures/selfsearch-v2-records.png",
-                  "kind": "figure",
-                  "license": "图形 © FieldToFit；原始数据与方法归属见来源"
-                },
-                {
-                  "items": [
-                    "第6–7代（GPT配置）：一条路线加入有输出上限的文本搜索，另一条加入结构化记录阅读器；下一代各自借鉴另一条路线的工具。",
-                    "第8–10代（GPT配置）：多个短摘录合起来仍可能过长，因此加入总输出限制，再补事件过滤、工具名查找、调用参数与结果配对。",
-                    "一个修复案例（DeepSeek配置）：第5代保留长行首尾，匹配内容落在中间时被隐藏；第6代改为围绕匹配位置摘录，第7代另一条路线复现问题、采用修复并验证。",
-                    "消融怎么读：无记录版本仍会累积代码；固定改进者版本仍会读取记录、编辑最新实现。完整方法均值更高，支持两者共同作用，但部分单条路线结果仍有差异。"
-                  ],
-                  "kind": "points"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "evidence",
-                  "text": "工具的作用也分层：文本搜索和按行阅读被用于下游任务；GPT记录阅读器未在下游调用，它主要支持继续改进的过程。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "S4",
-                  "locator": "第4.1–4.3节：消融、逐代变化与下游工具复用",
-                  "source_id": "report"
-                }
-              ],
-              "id": "experience-and-tools",
-              "node_ids": [
-                "selfsearch"
-              ],
-              "summary": "消融实验支持前代记录和改进者接棒的作用；工具演进案例显示，记录中的失败能变成下一代的具体修复目标。",
-              "title": "重要的不只是一份新代码，还有改进过程留下的经验"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "报告测试了两种模型配置、三个基准。两条最终路线的平均成功率在六个模型—基准设置中均高于初始Agent；具体到单条路线，效果与费用并不总是一起改善。"
-                },
-                {
-                  "alt": "DeepSeek初始／能力／适应成功率68.3／66.7／73.3%；平均执行费用0.0521／0.0321／0.0332美元每次尝试。38.5%为共同成功题上的另一项费用降幅。",
-                  "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
-                  "caption": "图3 · 多语言实验的成功率与费用（本站重绘；平均尝试费用与共同成功费用分开表达）",
-                  "evidence": [
-                    {
-                      "fragment": "S3.T1",
-                      "locator": "表1：平均每次尝试；表10：共同成功题执行费用",
-                      "source_id": "report"
-                    }
-                  ],
-                  "image_url": "/report-figures/selfsearch-v2-results.png",
-                  "kind": "figure",
-                  "license": "图形 © FieldToFit；原始数据与方法归属见来源"
-                },
-                {
-                  "items": [
-                    "评测范围：SWE-bench Verified是120题子集；SWE-bench Multilingual抽样60题、覆盖8种编程语言；Terminal-Bench 2.1使用全部89题。不能当作完整Verified排行榜。",
-                    "模型配置：GPT搜索用gpt-5.6-sol、执行用gpt-5.6-luna，均为medium推理；DeepSeek搜索用deepseek-v4-pro-0813、执行用deepseek-v4-flash-0731。同一配置的初始与改进Agent保持执行模型及限制一致。",
-                    "费用分母：表1平均费用包括失败的尝试；38.5%来自初始与适应Agent共同解对的题，不能从表1的0.0521与0.0332直接算出。两项均为执行模型费用，搜索与事后评测另计。",
-                    "反例也要看：DeepSeek能力路线的多语言成功率由68.3%降到66.7%；GPT能力路线在Terminal-Bench成功率提高，但平均执行费用增加3.1%。"
-                  ],
-                  "kind": "points"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "73.3%比68.3%高5个百分点。38.5%不是总体研发成本降幅，也不是所有任务、模型或真实业务的费用承诺。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "S3.SS2",
-                  "locator": "第3.1–3.2节／表1；附录D.2／表10：费用分母",
-                  "source_id": "report"
-                }
-              ],
-              "id": "performance-and-cost",
-              "node_ids": [
-                "performance"
-              ],
-              "summary": "DeepSeek适应路线在60道多语言题中，成功率由68.3%升至73.3%；“节省38.5%”另指双方都解对的题上的执行费用。",
-              "title": "部分实验能同时更准、更省，但收益有明确条件"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "如果改进只对生成它的模型有用，工具价值会很受限。作者把搜索得到的实现冻结后，交给另一模型执行，不再重新搜索。这是一项关于工具与程序可迁移性的实验。"
-                },
-                {
-                  "alt": "GPT执行初始75.0%，采用DeepSeek搜索的能力／适应实现为79.2／76.7%；DeepSeek执行初始81.7%，采用GPT搜索实现为83.3／85.0%。",
-                  "attribution": "本站重绘／示意；数据与方法：Jungwoo Yang、Injin Kong、Yohan Jo / 首尔大学",
-                  "caption": "图4 · 固定实现后的跨模型执行（本站重绘；120题成功率，能力／适应路线分别记录）",
-                  "evidence": [
-                    {
-                      "fragment": "S3.T3",
-                      "locator": "第3.4节／表3：搜索模型与执行模型分开",
-                      "source_id": "report"
-                    }
-                  ],
-                  "image_url": "/report-figures/selfsearch-v2-transfer.png",
-                  "kind": "figure",
-                  "license": "图形 © FieldToFit；原始数据与方法归属见来源"
-                },
-                {
-                  "items": [
-                    "迁移结果：DeepSeek搜索得到的能力路线交给GPT执行，成功率75.0%→79.2%；GPT搜索得到的适应路线交给DeepSeek执行，81.7%→85.0%。这两组比较都来自相同120题设置。",
-                    "仍缺什么：独立重复搜索能否稳定得到收益，更多模型、任务与真实环境是否有效，报告均未充分回答；作者也明确提出需要研究独立搜索的稳定性。",
-                    "本站解读：更值得借鉴的是保存可定位的过程记录，把失败变成具体工具修复，再冻结候选并独立评测。能修改自己，只是候选生成能力；是否值得使用，还要看任务结果与总成本。"
-                  ],
-                  "kind": "points"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "搜索在无网络的隔离容器中、固定资源边界下运行；本文整理作者实验，FieldToFit未独立复现。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "S3.SS4",
-                  "locator": "第3.4节／表3：跨模型迁移；第6节：稳定性与后续研究",
-                  "source_id": "report"
-                }
-              ],
-              "id": "transfer-and-limits",
-              "node_ids": [
-                "transfer"
-              ],
-              "summary": "作者在120道Verified题上换用执行模型，观察到跨模型复用收益；这支持工具实现具有可迁移性，但还不足以证明通用、持续的自我进化。",
-              "title": "改进后的工具能跨模型复用，稳定性仍需要更多验证"
-            }
-          ],
-          "title": "这份报告的四个核心观点"
-        },
-        "reports": [
-          {
-            "first_published_at": "2026-09-29",
-            "revised_at": "2026-09-30",
-            "revision_note": "读取v2；未对v1逐项对比，不将v2登记为已核实的实质更新。",
-            "source_id": "report",
-            "substantive_revision": false,
-            "version": "arXiv 2609.37968v2 · 2026-09-30"
-          }
-        ],
-        "slug": "selfsearch-agent-improvement",
-        "takeaway": "改进经验可以生成有用工具，部分作者实验同时提高成功率并降低执行费用；是否更好仍须冻结实现后按同一任务和成本口径验证。"
-      },
-      "title": "AI 不换模型，也能自己改进吗？"
     }
   ],
-  "reviewed_at": "2026-10-10",
+  "reviewed_at": "2026-10-11",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

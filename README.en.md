@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.21](CHANGELOG.md#v1.8.21)** · [fieldtofit-v1.8.21](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.21)
+**Current source version: [v1.8.22](CHANGELOG.md#v1.8.22)** · [fieldtofit-v1.8.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.22)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Curate the owner's selection of today's report 1, SelfSearch v2, with a route overview and four numbered findings and arguments on tool evolution, experimental costs and model transfer.
-- Add four original redraws and diagrams, retaining genuine report dates, model configurations, task subsets and shared-success cost denominators, with counterexamples and replication limits.
-- Document daily recommendations of 2–3 reports and organization, verification and publication after selecting one; separate ordinary news approval from report selection and retain review, stable links and shared web/AI content.
+- Publish owner-approved D-113 on connecting personal ChatGPT plans to Devin, retaining paid-Devin eligibility, supported-model limits and quota fallback.
+- File the event under other OpenAI on October 10 with Tibo's excerpt, verified real avatar and bilingual overview; the 23-item topic shares its reviewed revision across web, API and MCP.
+- Export three earlier publications and the D-26 revision to source, preserving production content, approved reading materials and existing maintenance schedules.
 <!-- latest-summary:end -->
 
 v1.8.21 is deployed following the owner's choice of today's report 1, SelfSearch, with a route overview, four numbered findings and matching arguments, four original redraws/diagrams and highlights. Retain genuine report, revision and site publication dates, task scope and cost denominators; web/HTTP/MCP share the reviewed content, with existing content and private drafts preserved. The site has 112 updates, 50 watch items and four reports. Recommend 2–3 reports daily, then organize, verify and publish the one selected by the owner; see [actual validation](docs/validation/2026-10-10-selfsearch.md).

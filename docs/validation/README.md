@@ -1,6 +1,8 @@
 # 验收证据导航
 
-本批：[v1.8.21 SelfSearch精选分析与每日选择机制](2026-10-10-selfsearch.md)。
+本批：[v1.8.22 ChatGPT连接Devin专题补录](2026-10-11-codex-devin.md)。
+
+前轮：[v1.8.21 SelfSearch精选分析与每日选择机制](2026-10-10-selfsearch.md)。
 
 前轮：[v1.8.20 Codex官方Day 5与四条日志](2026-10-10-codex-updates.md)。
 
