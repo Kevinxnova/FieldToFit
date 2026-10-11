@@ -36,18 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.26](CHANGELOG.md#v1.8.26)** · Release tag not yet published
+**Current source version: [v1.8.27](CHANGELOG.md#v1.8.27)** · [fieldtofit-v1.8.27](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.27)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Implement REQ-23 in source: complete English interface and reviewed translations for 119 developments, 51 profiles, five reports and readable history, with stable /en links and server-rendered English.
-- Use the same English revision for public HTTP/MCP, copying, downloads and bundles; preserve original evidence, identities, sources and dates, with explicit errors for missing or stale translations.
-- Add source-bound English review and bilingual previews for publication, merging, intake and public notes; complete isolated regression and corpus checks. This source batch is not deployed.
+- Complete REQ-23 switching guards: pending or failed reads cannot display or export data from the previous language.
+- Preserve filters and unsaved canonical editor data; restore the reading anchor or scroll position after the response, with reader actions taking priority.
+- Verify six frontend state scenarios and a four-second delayed browser read; production deployment and checks are recorded in the same English validation document.
 <!-- latest-summary:end -->
 
-REQ-23 is implemented in source with stable `/en` routes, English interfaces, published content and history, AI materials and bilingual review. Translations for 119 developments, 51 profiles and five reports were checked against an isolated snapshot. This batch is not deployed. The last verified production version is v1.8.25, which includes REQ-19/REQ-10 dispositions. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
+REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

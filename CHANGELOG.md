@@ -4,28 +4,47 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
-<a id="v1.8.26"></a>
-## v1.8.26 · 全站英文正文与双语发布审核 · 2026-10-11
-
-<!-- release-tag:unpublished -->
+<a id="v1.8.27"></a>
+## v1.8.27 · 语言切换等待与失败保护 · 2026-10-11
 
 ### 更新重点
 
 <!-- release-summary:zh:start -->
-- 完成REQ-23源码：英文界面、119条动态、51项档案、5篇报告及可访问历史逐项补齐；新增稳定/en分享与服务端英文正文。
-- 公开HTTP／MCP、复制、下载及材料包采用同版英文；原始证据、编号、出处和真实日期保留，缺译或过期返回明确错误。
-- 新增绑定源稿的英文审核与双语双端预览，覆盖发布、合并、采集及公开说明；完成隔离回归和全量核对，尚未部署。
+- 补齐REQ-23切换保护：新语言正文读取完成前不显示或导出上一语言数据，失败不回退中文。
+- 保留筛选和后台未保存原稿；异步读取后恢复阅读锚点或滚动位置，读者的新操作优先。
+- 六类前端状态回归及四秒延迟浏览器场景通过；正式部署与验收结果见同一英文验收记录。
 <!-- release-summary:zh:end -->
 
 ### Release highlights
 
 <!-- release-summary:en:start -->
-- Implement REQ-23 in source: complete English interface and reviewed translations for 119 developments, 51 profiles, five reports and readable history, with stable /en links and server-rendered English.
-- Use the same English revision for public HTTP/MCP, copying, downloads and bundles; preserve original evidence, identities, sources and dates, with explicit errors for missing or stale translations.
-- Add source-bound English review and bilingual previews for publication, merging, intake and public notes; complete isolated regression and corpus checks. This source batch is not deployed.
+- Complete REQ-23 switching guards: pending or failed reads cannot display or export data from the previous language.
+- Preserve filters and unsaved canonical editor data; restore the reading anchor or scroll position after the response, with reader actions taking priority.
+- Verify six frontend state scenarios and a four-second delayed browser read; production deployment and checks are recorded in the same English validation document.
 <!-- release-summary:en:end -->
 
-对应[REQ-23及七子项](FieldToFit-PM.md#req-23)。所有者确认开发验证并选择继续本地逐项翻译。本批保留中文默认接口、公开权限及原文定位，英语使用同一对象的已审修订；草稿变化取消旧审核，历史使用各自译文。仅重新确认相同英文不改变内容更新日期。修复跨条目引用小结的更正入口校验上下文。两张本站报告示意提供英文SVG，上游原图保真。无需新增数据库表或外部翻译服务；账户关闭、案例pending。实际验证及未验范围见[全站英文验收](docs/validation/2026-10-11-complete-english.md)，维护方式见[双语指南](docs/guides/english-content.md)。源码尚未部署；最近正式已验v1.8.25，所有者英文全文最终验收与真实自然日增量流程待验。
+在v1.8.26首次正式部署的中英切换复验中，发现旧中文资料在英文响应返回前仍可短暂显示或导出。公共读取现在从切换后的第一次渲染起要求数据语言匹配，等待及失败保持明确状态，已取消的旧响应不能覆盖当前语言。私密编辑继续读取原稿，不因界面切换重置未保存输入。此补丁不修改正文、翻译词条、公开修订、数据库表或凭据；继承v1.8.26全量翻译与已验行为。正式health及三个MCP为1.8.27，中英文完整集合HTTP／MCP、25个英文入口与实际档案下载通过，原内容／私密草稿／历史保留。实际结果及保留边界见[全站英文验收](docs/validation/2026-10-11-complete-english.md)。
+
+<a id="v1.8.26"></a>
+## v1.8.26 · 全站英文正文与双语发布审核 · 2026-10-11
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 完成REQ-23：英文界面、119条动态、51项档案、5篇报告及可访问历史逐项补齐；新增稳定/en分享与服务端英文正文。
+- 公开HTTP／MCP、复制、下载及材料包采用同版英文；原始证据、编号、出处和真实日期保留，缺译或过期返回明确错误。
+- 新增绑定源稿的英文审核与双语双端预览，覆盖发布、合并、采集及公开说明；完成隔离回归和全量核对；已按所有者授权正式部署，切换保护随后补于v1.8.27。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Implement REQ-23: complete English interface and reviewed translations for 119 developments, 51 profiles, five reports and readable history, with stable /en links and server-rendered English.
+- Use the same English revision for public HTTP/MCP, copying, downloads and bundles; preserve original evidence, identities, sources and dates, with explicit errors for missing or stale translations.
+- Add source-bound English review and bilingual previews for publication, merging, intake and public notes; complete isolated regression and corpus checks. Deploy this batch with owner authorization; v1.8.27 subsequently adds switching guards.
+<!-- release-summary:en:end -->
+
+对应[REQ-23及七子项](FieldToFit-PM.md#req-23)。所有者确认开发验证并选择继续本地逐项翻译。本批保留中文默认接口、公开权限及原文定位，英语使用同一对象的已审修订；草稿变化取消旧审核，历史使用各自译文。仅重新确认相同英文不改变内容更新日期。修复跨条目引用小结的更正入口校验上下文。两张本站报告示意提供英文SVG，上游原图保真。无需新增数据库表或外部翻译服务；账户关闭、案例pending。实际验证及未验范围见[全站英文验收](docs/validation/2026-10-11-complete-english.md)，维护方式见[双语指南](docs/guides/english-content.md)。已按所有者“更新并部署”授权正式部署；线上切换复验发现响应等待期间旧语言数据残留，随后由v1.8.27补齐保护。所有者英文全文最终验收与真实自然日增量流程待验。
 
 <a id="v1.8.25"></a>
 ## v1.8.25 · 差异处置上线与全站英文需求登记 · 2026-10-11

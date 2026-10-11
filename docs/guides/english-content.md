@@ -1,10 +1,10 @@
 # 全站英文与双语内容维护
 
-REQ-23 的当前源码实现为 v1.8.26，尚未部署。开发与验证经所有者确认；翻译服务额度不足后，所有者选择继续本地逐项翻译。本批译文在隔离环境逐项复核，正式上线前仍需所有者验收本批英文内容。实际检查范围见[验收记录](../validation/2026-10-11-complete-english.md)。
+REQ-23 全站英文于 v1.8.26 完成，v1.8.27 补齐语言切换等待与失败保护。所有者确认开发验证，选择继续本地逐项翻译，并明确授权“更新并部署”；当前正式交付及实际检查范围见[验收记录](../validation/2026-10-11-complete-english.md)。译文已由开发助手逐项复核，所有者英文全文最终审读仍待执行。
 
 ## 阅读、分享与 AI
 
-中文沿用既有地址；英文使用 `/en/for-you`、`/en/for-your-ai`、`/en/news/<id>`、`/en/watch/<id>`、`/en/maps/<slug>` 等地址。地址决定语言，直接打开英文链接也得到英文服务端正文和分享信息。切换保留查询、锚点、组件内筛选及未保存输入；账户与应用案例范围保持。
+中文沿用既有地址；英文使用 `/en/for-you`、`/en/for-your-ai`、`/en/news/<id>`、`/en/watch/<id>`、`/en/maps/<slug>` 等地址。地址决定语言，直接打开英文链接也得到英文服务端正文和分享信息。切换保留查询、锚点、组件内筛选及未保存输入。新语言响应到达前只显示加载状态，失败显示错误，不能显示、复制或下载上一语言数据。正文返回后恢复锚点或滚动位置；读者开始新的点击、滚动或键盘操作时取消待恢复位置。后台源稿保持原语言且不重置未保存输入。账户与应用案例范围保持。
 
 公开 HTTP 请求用 `lang=en`，MCP 工具在 `arguments` 中加入 `"lang":"en"`。省略参数沿用中文默认，不新增 MCP 地址或读取权限。
 
@@ -39,4 +39,4 @@ python scripts/locale/check.py --inventory output/operations/req23-english/inven
 python scripts/locale/audit.py --snapshot /private/path/copy.sqlite3 --output output/operations/req23-english/public-audit.json
 ```
 
-检查覆盖完整公开清单、可访问历史、缺译与汉字、数值、固定标识和 Markdown 链接；它不能证明自然语言含义完全一致。审读后再维护存量指纹，不能将清单工具生成的 baseline 直接当作人工确认。还须执行相关回归、前端构建及实际浏览器检查。补充文本、图文与文档提交遵循[发布规则](releasing.md)。
+检查覆盖完整公开清单、可访问历史、缺译与汉字、数值、固定标识和 Markdown 链接；它不能证明自然语言含义完全一致。审读后再维护存量指纹，不能将清单工具生成的 baseline 直接当作人工确认。还须执行相关回归、`cd frontend && npm run test:locale`、前端构建及实际浏览器检查。补充文本、图文与文档提交遵循[发布规则](releasing.md)。

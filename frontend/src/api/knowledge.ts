@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { currentLanguage, useLanguage, english } from '../locale/language';
+import { currentLanguage, useLanguage, english, restoreLanguageScroll } from '../locale/language';
 
 export const BASE = (import.meta.env.VITE_API_URL || "") + "/api";
 export type Kind = "event" | "paper" | "resource";
@@ -180,20 +180,25 @@ export function useRemote<T>(path: string | null, admin = false) {
   const selectedLanguage = useLanguage();
   const language = admin ? 'canonical' : selectedLanguage;
   const previousPath=useRef(path);
+  const previousLanguage=useRef(language);
+  const [dataLanguage,setDataLanguage]=useState(language);
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(!!path);
   const [revision, setRevision] = useState(0);
   useEffect(() => {
     const controller = new AbortController();
-    // Retain component state while the same publication changes language.
-    if (previousPath.current!==path) setData(null);
+    const changedLanguage=previousLanguage.current!==language;
+    // Keep filters and editor state; readable data must match the selected language.
+    if (previousPath.current!==path || changedLanguage) setData(null);
     previousPath.current=path;
+    previousLanguage.current=language;
+    setDataLanguage(language);
     setError("");
     setLoading(!!path);
     if (path)
       request<T>(path, { signal: controller.signal }, admin)
-        .then(value => { if (!controller.signal.aborted) setData(value); })
+        .then(value => { if (!controller.signal.aborted) {setData(value);if(changedLanguage)restoreLanguageScroll(language);} })
         .catch((e) => {
           if (!controller.signal.aborted) setError(e.message);
         })
@@ -202,7 +207,8 @@ export function useRemote<T>(path: string | null, admin = false) {
         });
     return () => controller.abort();
   }, [path, revision, admin, language]);
-  return { data, error, loading, reload: () => setRevision((r) => r + 1) };
+  const matchingLanguage=dataLanguage===language;
+  return { data:matchingLanguage?data:null, error:matchingLanguage?error:'', loading:!!path&&(loading||!matchingLanguage), reload: () => setRevision((r) => r + 1) };
 }
 export async function downloadRecord(
   id: string,
