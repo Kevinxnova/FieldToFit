@@ -1,8 +1,8 @@
 # 验收证据导航
 
-本批源码：[v1.8.24 私密核对差异处置与历史](2026-10-11-check-decisions.md)，实际本地验证与未部署范围见记录。
+最近正式：[v1.8.25 差异处置部署与全站英文需求检查](2026-10-11-deployment-english-audit.md)。新增REQ-23仅检查和方案登记，待所有者对齐；差异处置原80项本地回归与三宽度验证保留于[v1.8.24功能开发证据](2026-10-11-check-decisions.md)。
 
-最近正式：[v1.8.23 日报A–F与Anthropic行动边界精选分析](2026-10-11-action-boundaries.md)。
+前轮正式：[v1.8.23 日报A–F与Anthropic行动边界精选分析](2026-10-11-action-boundaries.md)。
 
 前轮：[v1.8.22 ChatGPT连接Devin专题补录](2026-10-11-codex-devin.md)。
 

@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.25"></a>
+## v1.8.25 · 差异处置上线与全站英文需求登记 · 2026-10-11
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 发布此前v1.8.24完成的私密差异处置与历史，支持不采纳、证据已撤回、理由恢复及跨日同证据去重。
+- 正式数据库先完整备份再幂等新增处置表，保留原公开内容、私密草稿及核对历史。
+- 登记REQ-23全站英文完整切换，核对正文、报告、档案和AI取材的中文缺口，提出存量翻译与双语审核方案供所有者确认。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Ship the private difference dispositions and history completed in v1.8.24, including declined or withdrawn evidence, reasoned reopening and cross-day evidence deduplication.
+- Back up the production database before an idempotent addition of the disposition table, preserving published content, private drafts and check history.
+- Register REQ-23 for complete English site content, audit gaps in reports, profiles and AI materials, and propose reviewed backfills and bilingual publication for owner alignment.
+<!-- release-summary:en:end -->
+
+对应[REQ-19／REQ-10](FieldToFit-PM.md#req-19)与新增[REQ-23](FieldToFit-PM.md#req-23)。处置功能沿用v1.8.24已验实现，本批补充需求、版本及正式交付记录；英文切换仅检查和方案登记，未实现翻译或发布新英文正文。新增私密表不改公开HTTP／MCP契约；账户关闭、应用案例pending及新内容逐项确认边界保持。正式交付结果见[部署与英文检查](docs/validation/2026-10-11-deployment-english-audit.md)，正式health及三个MCP均为1.8.25，处置表可用与权限、已发布119条动态／51项档案／5篇报告全文及模型图表保持已验。
+
 <a id="v1.8.24"></a>
 ## v1.8.24 · 私密核对差异处置与历史 · 2026-10-11
 

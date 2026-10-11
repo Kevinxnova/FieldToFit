@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.24](CHANGELOG.md#v1.8.24)** · Release tag not yet published
+**Current source version: [v1.8.25](CHANGELOG.md#v1.8.25)** · [fieldtofit-v1.8.25](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.25)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add private difference dispositions for declined or withdrawn evidence and manual reopening, with required reasons, recheck conditions and preserved evidence and action history.
-- Keep identical evidence out of the cross-day pending queue and admit newly reviewed evidence; whole-page hashes or quote offsets alone do not overturn a disposition.
-- Validate current findings and handling versions before preparing or continuing update proposals and linking drafts; disposition records remain administrator-only.
+- Ship the private difference dispositions and history completed in v1.8.24, including declined or withdrawn evidence, reasoned reopening and cross-day evidence deduplication.
+- Back up the production database before an idempotent addition of the disposition table, preserving published content, private drafts and check history.
+- Register REQ-23 for complete English site content, audit gaps in reports, profiles and AI materials, and propose reviewed backfills and bilingual publication for owner alignment.
 <!-- latest-summary:end -->
 
 The v1.8.24 source adds private dispositions for declined and withdrawn evidence, manual reopening and complete handling history. Identical evidence stays out of the cross-day pending queue; newly reviewed evidence re-enters, and update proposals validate current handling state. This batch is not deployed. The last verified production version is v1.8.23 with 118 updates, 51 watch items and five reports. See the [plan and actual verification](docs/validation/2026-10-11-check-decisions.md).
