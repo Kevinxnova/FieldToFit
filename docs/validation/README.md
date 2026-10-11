@@ -1,6 +1,8 @@
 # 验收证据导航
 
-本批：[v1.8.22 ChatGPT连接Devin专题补录](2026-10-11-codex-devin.md)。
+本批：[v1.8.23 日报A–F与Anthropic行动边界精选分析](2026-10-11-action-boundaries.md)。
+
+前轮：[v1.8.22 ChatGPT连接Devin专题补录](2026-10-11-codex-devin.md)。
 
 前轮：[v1.8.21 SelfSearch精选分析与每日选择机制](2026-10-10-selfsearch.md)。
 

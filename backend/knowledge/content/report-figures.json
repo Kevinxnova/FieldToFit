@@ -191,5 +191,37 @@
         86.7
       ]
     }
+  },
+  "/report-figures/anthropic-20261009-boundaries.png": {
+    "sha256": "f95a4d065296837160ab4d7f726cf6c43f7ed57be7aa749fd7df06185f475e77",
+    "source_urls": [
+      "https://www.anthropic.com/research/investigating-unintended-model-actions"
+    ],
+    "license": "图形 © FieldToFit；原始案例与报告归属见来源",
+    "version": "Anthropic官方网页 · 2026-10-09",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "qualitative reading diagram",
+      "incident_counts": null,
+      "incidence_rates": null,
+      "effectiveness_measurements": null,
+      "locator": "Overview of behaviors：四个行为分类"
+    }
+  },
+  "/report-figures/anthropic-20261009-defenses.png": {
+    "sha256": "bafccfac61feacd618553b73871e06261129b594d8730971dfe8e0bba12e4cf8",
+    "source_urls": [
+      "https://www.anthropic.com/research/investigating-unintended-model-actions"
+    ],
+    "license": "图形 © FieldToFit；原始案例与报告归属见来源",
+    "version": "Anthropic官方网页 · 2026-10-09",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "qualitative reading diagram",
+      "incident_counts": null,
+      "incidence_rates": null,
+      "effectiveness_measurements": null,
+      "locator": "Remediation；Lessons and next steps"
+    }
   }
 }

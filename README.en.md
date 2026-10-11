@@ -36,18 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.22](CHANGELOG.md#v1.8.22)** · [fieldtofit-v1.8.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.22)
+**Current source version: [v1.8.23](CHANGELOG.md#v1.8.23)** · [fieldtofit-v1.8.23](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.23)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish owner-approved D-113 on connecting personal ChatGPT plans to Devin, retaining paid-Devin eligibility, supported-model limits and quota fallback.
-- File the event under other OpenAI on October 10 with Tibo's excerpt, verified real avatar and bilingual overview; the 23-item topic shares its reviewed revision across web, API and MCP.
-- Export three earlier publications and the D-26 revision to source, preserving production content, approved reading materials and existing maintenance schedules.
+- Curate the owner's selected report 2 on Anthropic's unintended model actions with four numbered findings and arguments, separating observed cases, author judgments and FieldToFit analysis.
+- Add two original diagrams on action boundaries and layered defenses, retaining the October 9 source date, missing incidence denominators and independent-verification limits.
+- Complete the approved A–F publications and Hermes Agent / Claude Agent SDK profile updates through existing review, stable links and shared web/AI content.
 <!-- latest-summary:end -->
 
-v1.8.21 is deployed following the owner's choice of today's report 1, SelfSearch, with a route overview, four numbered findings and matching arguments, four original redraws/diagrams and highlights. Retain genuine report, revision and site publication dates, task scope and cost denominators; web/HTTP/MCP share the reviewed content, with existing content and private drafts preserved. The site has 112 updates, 50 watch items and four reports. Recommend 2–3 reports daily, then organize, verify and publish the one selected by the owner; see [actual validation](docs/validation/2026-10-10-selfsearch.md).
+v1.8.23 is deployed following the owner's choice of report 2, ‘Where should an Agent stop when it meets an obstacle?’, with four numbered findings, matching arguments and two original qualitative diagrams. The same batch publishes A–F and the Hermes Agent / Claude Agent SDK profile updates. Web, HTTP and MCP share reviewed content; existing content and model charts are preserved. The site has 118 updates, 51 watch items and five reports. The original report is linked only; the private full-text check receipt remains unconfirmed. Recommend 2–3 reports daily, then organize, verify and publish the one selected by the owner; see [actual validation](docs/validation/2026-10-11-action-boundaries.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 

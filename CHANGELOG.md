@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.23"></a>
+## v1.8.23 · Agent行动边界精选分析 · 2026-10-11
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 按所有者选择的报告2，整理Anthropic意外模型行为调查：四个编号观点及对应论述，区分案例、作者判断与本站分析。
+- 增加两张本站示意，解释四类行动边界与分层防护；保留10月9日原报告日期、无发生率分母及未独立复现的局限。
+- 完成同批A–F发布和Hermes Agent／Claude Agent SDK档案补录，沿用现有审核、稳定入口和网页／AI同源内容。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Curate the owner's selected report 2 on Anthropic's unintended model actions with four numbered findings and arguments, separating observed cases, author judgments and FieldToFit analysis.
+- Add two original diagrams on action boundaries and layered defenses, retaining the October 9 source date, missing incidence denominators and independent-verification limits.
+- Complete the approved A–F publications and Hermes Agent / Claude Agent SDK profile updates through existing review, stable links and shared web/AI content.
+<!-- release-summary:en:end -->
+
+对应[REQ-22](FieldToFit-PM.md#req-22)。普通A–F与所选报告2分别记录真实决定，不扩大到未选报告、待核验线索或榜单。原报告仅链接；上传上游全文的私密检查被自动审批拦截，该回执保留缺口，不伪造通过。无数据库迁移或公开接口修改；实际备份、双端预览、发布、部署与核对见[本批验收](docs/validation/2026-10-11-action-boundaries.md)。
+
 <a id="v1.8.22"></a>
 ## v1.8.22 · ChatGPT连接Devin专题补录 · 2026-10-11
 

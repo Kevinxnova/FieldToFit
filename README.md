@@ -36,18 +36,18 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.22](CHANGELOG.md#v1.8.22)** · [fieldtofit-v1.8.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.22)
+**当前源码版本：[v1.8.23](CHANGELOG.md#v1.8.23)** · [fieldtofit-v1.8.23](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.23)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 按所有者批准发布D-113：ChatGPT个人订阅可连接Devin，保留付费Devin资格、支持模型和额度回退边界。
-- 归回10月10日其他OpenAI，附Tibo原帖摘录、真实头像与中英概览；专题23条，网页、API及MCP共享已审修订。
-- 同步此前已发布的三条新闻与D-26修订至源码，保留原生产集合、读取材料及既有维护日程。
+- 按所有者选择的报告2，整理Anthropic意外模型行为调查：四个编号观点及对应论述，区分案例、作者判断与本站分析。
+- 增加两张本站示意，解释四类行动边界与分层防护；保留10月9日原报告日期、无发生率分母及未独立复现的局限。
+- 完成同批A–F发布和Hermes Agent／Claude Agent SDK档案补录，沿用现有审核、稳定入口和网页／AI同源内容。
 <!-- latest-summary:end -->
 
-v1.8.21已正式部署：按今日报告1选择发布SelfSearch，含路线全貌、四条编号观点与对应论述、四张本站重绘／示意和重点标记。保留真实报告／版本／本站发表日期、任务范围及费用分母；网页／HTTP／MCP同源，既有内容与私密草稿保持。当前112条动态、50项关注、4篇报告。每天推荐2–3篇，主人选择一篇后整理、验证与发布；实际结果见[本批验收](docs/validation/2026-10-10-selfsearch.md)。
+v1.8.23已正式部署：按主人选择的报告2发布《Agent遇到阻碍后，该停在哪里？》，含四条编号观点、对应论述及两张本站示意；同批A–F和Hermes Agent／Claude Agent SDK档案补录已发布。正式网页与HTTP／MCP同源，既有内容与模型图表保持；当前118条动态、51项关注、5篇报告。原报告只提供官方链接，私密全文检查回执未确认。每天推荐2–3篇，主人选择一篇后整理、验证与发布；实际结果见[本批验收](docs/validation/2026-10-11-action-boundaries.md)。
 
 [完整更新记录](CHANGELOG.md) · [项目管理总览：方案、开发、验证与网站状态](FieldToFit-PM.md)
 
