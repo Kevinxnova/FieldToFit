@@ -5,7 +5,7 @@ import OperationsOverview, { type Operations } from "../components/workspace/Ope
 import DuplicateReview, { type DuplicatePair } from "../components/workspace/DuplicateReview";
 import RelationshipEditor from "../components/workspace/RelationshipEditor";
 import { useState, type FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@fieldtofit/locale/router";
 import {
   request,
   send,

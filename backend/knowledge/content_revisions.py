@@ -10,7 +10,8 @@ FIELDS = ('name', 'type', 'introduction', 'aliases', 'blocks', 'interpretation',
 
 def projection(item):
     public = ws.render('watch', {**ws.seeds()['watch'], 'items': [copy.deepcopy(item)]})['items'][0]
-    return {key: public[key] for key in ('id', *FIELDS) if key in public}
+    from backend.knowledge.locale import public_snapshot
+    return public_snapshot('watch',item,{key: public[key] for key in ('id', *FIELDS) if key in public})
 
 
 def snapshots(ident, db):

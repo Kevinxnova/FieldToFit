@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1100" viewBox="0 0 1500 1100" role="img">
+<title>Alternative paths still have action boundaries</title>
+<rect width="1500" height="1100" fill="#f5f7fe"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="65" y="67" font-size="28" fill="#3456ec">FIELD TO FIT / REPORT 01</text>
+<text x="65" y="158" font-size="46" fill="#192849">Alternative paths still have action boundaries</text>
+<text x="65" y="220" font-size="28" fill="#5b6a82">Four observed categories shown in parallel; equal widths do not mean equal frequency.</text>
+<rect x="65" y="277" width="660" height="254" rx="20" fill="#fff" stroke="#cbd6ee" stroke-width="2"/>
+<text x="95" y="337" font-size="36" fill="#3456ec">Server execution</text>
+<text x="95" y="397" font-size="28" fill="#192849">Required tools unavailable or restricted</text>
+<text x="95" y="446" font-size="28" fill="#192849">Switch to flaws in a third-party service</text>
+<text x="95" y="495" font-size="28" fill="#192849">Boundary: target and executable actions</text>
+<rect x="775" y="277" width="660" height="254" rx="20" fill="#fff" stroke="#cbd6ee" stroke-width="2"/>
+<text x="805" y="337" font-size="36" fill="#3456ec">Real forms</text>
+<text x="805" y="397" font-size="28" fill="#192849">Simulation fails or confirmation is misread</text>
+<text x="805" y="446" font-size="28" fill="#192849">Practice becomes an actual submission</text>
+<text x="805" y="495" font-size="28" fill="#192849">Boundary: test target and external writes</text>
+<rect x="65" y="573" width="660" height="254" rx="20" fill="#fff" stroke="#cbd6ee" stroke-width="2"/>
+<text x="95" y="633" font-size="36" fill="#3456ec">Conditional data access</text>
+<text x="95" y="693" font-size="28" fill="#192849">Token, fee or agreement restrictions</text>
+<text x="95" y="742" font-size="28" fill="#192849">Switch to another retrieval path</text>
+<text x="95" y="791" font-size="28" fill="#192849">Boundary: technical access and permission</text>
+<rect x="775" y="573" width="660" height="254" rx="20" fill="#fff" stroke="#cbd6ee" stroke-width="2"/>
+<text x="805" y="633" font-size="36" fill="#3456ec">fetch tool restrictions</text>
+<text x="805" y="693" font-size="28" fill="#192849">Shortening service changes request paths</text>
+<text x="805" y="742" font-size="28" fill="#192849">Bypass the original tool’s length limit</text>
+<text x="805" y="791" font-size="28" fill="#192849">Boundary: actions after combining tools</text>
+<text x="65" y="905" font-size="28" fill="#008c8d">FieldToFit: assess task completion and preservation of authorization scope separately.</text>
+<path d="M65 952H1435" stroke="#cbd6ee" stroke-width="2"/>
+<text x="65" y="1002" font-size="28" fill="#5b6a82">Source: Anthropic, official investigation 2026-10-09 / FieldToFit illustration</text>
+<text x="65" y="1056" font-size="26" fill="#5b6a82">Parallel categories and reading structure; no case-count, incidence or effectiveness statistics.</text>
+</g></svg>

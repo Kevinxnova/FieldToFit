@@ -49,7 +49,7 @@ def inline(value):
         if url:
             url = public_link(url)
             parts.append(f'<a href="{html.escape(url, quote=True)}">{html.escape(label)}</a>'
-                         if url.startswith(('https://', '/watch/', '/news/')) else html.escape(label))
+                         if url.startswith(('https://', '/watch/', '/news/', '/en/watch/', '/en/news/', '/maps/', '/en/maps/')) else html.escape(label))
         elif bold:
             parts.append('<strong>' + html.escape(bold) + '</strong>')
         else:
@@ -70,7 +70,7 @@ def preview():
 
 @bp.after_app_request
 def search_headers(response):
-    if request.path in ('/api/v1/platform/news', '/api/v1/platform/watch', '/api/v1/platform/maps', '/', '/connect') or request.path.rstrip('/') in PAGES or request.path.startswith(('/news/', '/watch/', '/maps')):
+    if request.path.startswith('/en') or request.path in ('/api/v1/platform/news', '/api/v1/platform/watch', '/api/v1/platform/maps', '/', '/connect') or request.path.rstrip('/') in PAGES or request.path.startswith(('/news/', '/watch/', '/maps')):
         response.headers['Cache-Control'] = 'no-store'
     if preview() or request.path.startswith('/api/') or request.path in LEGACY or request.path.startswith('/records/') or response.status_code >= 400:
         response.headers['X-Robots-Tag'] = 'noindex, nofollow' if preview() else 'noindex'
@@ -145,6 +145,8 @@ def sitemap():
         def add(path, changed=None):
             node = ET.SubElement(root, 'url')
             ET.SubElement(node, 'loc').text = ORIGIN + path
+            translated=ET.SubElement(root, 'url');ET.SubElement(translated,'loc').text=ORIGIN+'/en'+path
+            if changed:ET.SubElement(translated,'lastmod').text=changed
             if changed:
                 ET.SubElement(node, 'lastmod').text = changed
         add('/maps')
@@ -164,10 +166,18 @@ def shell_path(dist):
 
 
 def document(dist, title, description, path, body='', status=200, index=True):
+    english=request.path=='/en' or request.path.startswith('/en/')
+    if english:
+        from backend.knowledge import locale
+        from backend.seo.locale import english_html
+        title=locale.text(title);description=locale.text(description);body=english_html(body)
+    clean=path.removeprefix('/en') or '/for-you'
+    path=('/en'+clean) if english else clean
     source = shell_path(dist)
     if not source.exists():
         return Response('Frontend build unavailable', status=503, headers={'Cache-Control': 'no-store'})
     content = source.read_text()
+    content=re.sub(r'<html[^>]*>', '<html lang="'+('en' if english else 'zh-CN')+'">',content,count=1)
     # Replace, never append conflicting canonical or Open Graph tags.
     content = re.sub(r'<title>.*?</title>', '', content, flags=re.S)
     content = re.sub(r'<meta\s+(?:name="(?:description|robots)"|property="og:(?:title|description|url)")[^>]*>', '', content)
@@ -178,6 +188,7 @@ def document(dist, title, description, path, body='', status=200, index=True):
             f'<meta property="og:title" content="{escape(title)}"><meta property="og:description" content="{escape(description)}">'
             f'<meta property="og:url" content="{escape(url)}"><link rel="canonical" href="{escape(url)}">'
             f'<meta name="robots" content="{"index, follow" if index and not preview() else "noindex"}">')
+    meta+=f'<link rel="alternate" hreflang="zh-CN" href="{ORIGIN+clean}"><link rel="alternate" hreflang="en" href="{ORIGIN+"/en"+clean}">'
     content = content.replace('</head>', meta + '</head>')
     content = content.replace('<div id="root"></div>', '<div id="root">' + body + '</div>')
     if status >= 400:
@@ -188,12 +199,19 @@ def document(dist, title, description, path, body='', status=200, index=True):
 
 
 def page(path, dist):
+    english=path=='/en' or path.startswith('/en/')
+    if english:path=path.removeprefix('/en') or '/'
+    prefix='/en' if english else ''
+    def localized(value):
+        if not english:return value
+        from backend.knowledge import locale
+        return locale.project(value,locale.public_fields())
     if path == '/':
-        return redirect('/for-you' + ('?' + request.query_string.decode('utf-8', errors='replace') if request.query_string else ''), 308)
+        return redirect(prefix+'/for-you' + ('?' + request.query_string.decode('utf-8', errors='replace') if request.query_string else ''), 308)
     if path == '/connect':
-        return redirect('/for-your-ai', 308)
+        return redirect(prefix+'/for-your-ai', 308)
     if path.endswith('/') and (path.rstrip('/') in PAGES or path.rstrip('/') == '/maps' or DETAIL.fullmatch(path.rstrip('/'))):
-        return redirect(path.rstrip('/'), 308)
+        return redirect(prefix+path.rstrip('/'), 308)
     if path not in PAGES and path != '/maps' and not DETAIL.fullmatch(path):
         return None
     try:
@@ -206,6 +224,7 @@ def page(path, dist):
         if path == '/maps' or path.startswith('/maps/'):
             from backend.knowledge.technical_maps import maps
             collection = maps(slug=path.split('/')[-1] if path != '/maps' else '', archive=request.args.get('archive','all'), q=request.args.get('q',''))
+            collection=localized(collection)
             obj = collection['items'][0] if path != '/maps' else None
             title = (obj['question'] if obj else '技术报告精选&分析')+' · FieldToFit'
             description = obj['takeaway'] if obj else '精选原始报告，读懂核心结论、证据和适用边界。'
@@ -213,7 +232,7 @@ def page(path, dist):
             return document(dist,title,description,path,body)
         if path in PAGES:
             info = PAGES[path]
-            title, description, heading = info['title'][0], info['description'][0], info['heading'][0]
+            title, description, heading = info['title'][int(english)], info['description'][int(english)], info['heading'][int(english)]
             if path in ('/for-you', '/for-your-ai'):
                 collections = {'news': news(), 'watch': watch(q=request.args.get('q', '') if path == '/for-you' else '', type=request.args.get('type', '') if path == '/for-you' else '')}
             elif path == '/community':
@@ -224,9 +243,10 @@ def page(path, dist):
         else:
             kind, ident = path.strip('/').split('/')
             collection = (news if kind == 'news' else watch)(id=ident)
+            collection=localized(collection)
             item = collection['items'][0]
             if item['id'] != ident:
-                return redirect(detail_url(item['id']), 308)
+                return redirect(prefix+detail_url(item['id']), 308)
             revision = collection['revision']
             title = item.get('title', item['name']) + ' · FieldToFit'
             heading = item.get('title', item['name'])
@@ -235,15 +255,16 @@ def page(path, dist):
         if item:
             from backend.knowledge.technical_maps import maps
             related_maps = [m for m in maps()['items'] if m['id']==item['id'] or any(r['id']==item['id'] for r in m['related'])]
+        collections=localized(collections);catalog=localized(catalog);related_maps=localized(related_maps)
         topic = collections.get('news', {}).get('codex_progress', {})
         month = topic.get('days', [{}])[0].get('date', '')[:7] if topic.get('days') else ''
         calendar_cells = calendar_month(*map(int, month.split('-')), topic) if month else []
-        calendar_title = month.replace('-', '年') + '月' if month else ''
+        calendar_title = month if english else month.replace('-', '年') + '月' if month else ''
         calendar_items = {entry['id']: entry for entry in collections.get('news', {}).get('items', [])}
         body = render_template('search.html', pages=PAGES, path=path, heading=heading,
                                description=description, item=item, collections=collections,
                                catalog=catalog, revision=revision, related_maps=related_maps, calendar_cells=calendar_cells, calendar_rows=calendar_rows(calendar_cells),
-                               calendar_title=calendar_title, calendar_items=calendar_items)
+                               calendar_title=calendar_title, calendar_items=calendar_items, english=english)
         return document(dist, title, description, path, body)
     except PlatformError as exc:
         status = exc.status if exc.status in (400, 404) else 503

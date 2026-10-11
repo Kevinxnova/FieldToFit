@@ -20,7 +20,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "jsxImportSource": "@fieldtofit/locale",
+    "paths": {
+      "@fieldtofit/locale/*": [
+        "./src/locale/*"
+      ]
+    }
   },
   "include": [
     "src"

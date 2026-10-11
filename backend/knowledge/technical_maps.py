@@ -149,7 +149,8 @@ def maps(slug='', q='', revision='', archive='all'):
     if archive not in ('all', 'recent', 'historical'): raise PlatformError('Invalid archive filter', 'invalid_request', 400)
     items = [project(item) for item in news()['items'] if item.get('technical_map')]
     items.sort(key=lambda x: (x['report_activity_at'], x['publication']['updated_at'] or '', x['slug']), reverse=True)
-    items = [x for x in items if (not slug or x['slug'] == slug) and (not q or q.casefold() in (x['question']+' '+x['focus']).casefold()) and (archive == 'all' or x['archived'] == (archive == 'historical'))]
+    from backend.knowledge.locale import searchable
+    items = [x for x in items if (not slug or x['slug'] == slug) and (not q or q.casefold() in ' '.join(searchable({'question':x['question'],'focus':x['focus']}).values()).casefold()) and (archive == 'all' or x['archived'] == (archive == 'historical'))]
     if slug and not items: raise PlatformError('地图未公开或已撤回', 'not_found', 404)
     rev = items[0]['revision'] if slug else digest([x['revision'] for x in items])
     if revision and revision != rev: raise PlatformError('地图已修订，请重新读取', 'map_revision_changed', 409)
@@ -166,6 +167,8 @@ def history(slug):
         item = json.loads(row['snapshot'])
         if item.get('state') != 'published' or not item.get('technical_map'): continue
         obj = project(item)
+        from backend.knowledge.locale import public_snapshot
+        obj = public_snapshot('news',item,obj)
         if obj['slug'] != slug: continue
         # Hash public content only; daily checks and private reasons cannot create revisions.
         if entries and entries[-1]['object']['revision'] == obj['revision']: continue

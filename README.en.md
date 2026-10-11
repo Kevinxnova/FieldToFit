@@ -36,18 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.25](CHANGELOG.md#v1.8.25)** · [fieldtofit-v1.8.25](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.25)
+**Current source version: [v1.8.26](CHANGELOG.md#v1.8.26)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Ship the private difference dispositions and history completed in v1.8.24, including declined or withdrawn evidence, reasoned reopening and cross-day evidence deduplication.
-- Back up the production database before an idempotent addition of the disposition table, preserving published content, private drafts and check history.
-- Register REQ-23 for complete English site content, audit gaps in reports, profiles and AI materials, and propose reviewed backfills and bilingual publication for owner alignment.
+- Implement REQ-23 in source: complete English interface and reviewed translations for 119 developments, 51 profiles, five reports and readable history, with stable /en links and server-rendered English.
+- Use the same English revision for public HTTP/MCP, copying, downloads and bundles; preserve original evidence, identities, sources and dates, with explicit errors for missing or stale translations.
+- Add source-bound English review and bilingual previews for publication, merging, intake and public notes; complete isolated regression and corpus checks. This source batch is not deployed.
 <!-- latest-summary:end -->
 
-The v1.8.24 source adds private dispositions for declined and withdrawn evidence, manual reopening and complete handling history. Identical evidence stays out of the cross-day pending queue; newly reviewed evidence re-enters, and update proposals validate current handling state. This batch is not deployed. The last verified production version is v1.8.23 with 118 updates, 51 watch items and five reports. See the [plan and actual verification](docs/validation/2026-10-11-check-decisions.md).
+REQ-23 is implemented in source with stable `/en` routes, English interfaces, published content and history, AI materials and bilingual review. Translations for 119 developments, 51 profiles and five reports were checked against an isolated snapshot. This batch is not deployed. The last verified production version is v1.8.25, which includes REQ-19/REQ-10 dispositions. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 
@@ -63,6 +63,8 @@ https://fieldtofit.top/api/mcp/curated
 Add this address to an AI client that supports remote HTTP MCP. Ask your AI to retrieve relevant materials, sources, versions and known limitations, then continue with your task.
 
 The live `curated_lookup` tool lets your AI discover developments, ongoing-watch profiles and permitted stored text within the same MCP service, with exact reading arguments and shared search previews on For your AI. Available since v1.5.0; check `tools/list` for live capabilities.
+
+The source adds optional `lang=en` for public HTTP requests and MCP tool arguments; omitted language keeps the existing Chinese default. English copies and downloads use the same revision, while original evidence retains its source language. See the [language and review contract](docs/guides/english-content.md).
 
 No website account is required. For client support and configuration, see [For your AI](https://fieldtofit.top/for-your-ai) and the [connection guide](docs/guides/ai-access.md). Protocol checks do not establish that every client has been tested in daily use.
 

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from '@fieldtofit/locale/router';
 import { BASE, request } from '../../api/knowledge';
 const ID='fieldtofit-traffic-browser',OUT='fieldtofit-visits-opt-out',ADMIN='fieldtofit-visits-admin';
 type Config={enabled:boolean;origin:string;consent_required:boolean};

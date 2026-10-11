@@ -1,4 +1,5 @@
 """Stage evidence, missing history, actual issues and private publication boundaries."""
+from english_fixtures import reviewed_preview
 from datetime import datetime,timedelta,timezone
 import copy
 import pytest
@@ -29,7 +30,7 @@ def test_recorded_stages_idempotence_and_no_implicit_publication(client):
     ident,ref=make(client);valid(client,'watch',ident)
     assert board(client)['totals']['organized']==0
     assert board(client)['totals']['organize_pending']>=1
-    p=ws.preview('watch',ident)
+    p=reviewed_preview('watch',ident)
     assert call(client,f'/content/watch/{ident}/submit-review',p).status_code==200
     assert call(client,f'/content/watch/{ident}/submit-review',p).status_code==200
     v=board(client);assert v['totals']['organized']==1 and v['totals']['review_pending']==1
@@ -38,7 +39,7 @@ def test_recorded_stages_idempotence_and_no_implicit_publication(client):
     v=board(client);assert v['totals']['review_pending']==0
     assert any(i['code']=='review_stale' for i in v['issues'])
     assert call(client,f'/content/watch/{ident}/submit-review',p).status_code==409
-    updated=ws.preview('watch',ident)
+    updated=reviewed_preview('watch',ident)
     assert call(client,f'/content/watch/{ident}/submit-review',updated).status_code==200
     assert board(client)['totals']['review_pending']==1
     assert board(client)['totals']['organized']==1

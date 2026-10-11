@@ -27,6 +27,11 @@ def example(suffix='curated', version='v1'):
 
 def publish(rid, profile):
     draft = platform.save_profile(rid, profile, platform.preview(rid)['profile_revision'], 'Source checked')
+    if draft['english']['state'] != 'reviewed' and draft['english']['fields']:
+        from english_fixtures import fixture_fields
+        draft = platform.english_review(rid, {'draft_version':draft['profile_revision'],
+            'source_hash':draft['english']['source_hash'], 'fields':fixture_fields(draft['english']),
+            'confirmed':True, 'reason':'Explicit isolated publication English review'})
     review = platform.transition(rid, 'review', draft['review_token'], 'Ready for review')
     return platform.transition(rid, 'published', review['review_token'], 'Checked introduction and original citations')
 

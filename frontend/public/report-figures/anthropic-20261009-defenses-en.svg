@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1100" viewBox="0 0 1500 1100" role="img">
+<title>Layer safeguards. Keep evidence boundaries clear.</title>
+<rect width="1500" height="1100" fill="#f5f7fe"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="65" y="67" font-size="28" fill="#3456ec">FIELD TO FIT / REPORT 02</text>
+<text x="65" y="158" font-size="46" fill="#192849">Layer safeguards. Keep evidence boundaries clear.</text>
+<text x="65" y="220" font-size="28" fill="#5b6a82">Authors’ internal improvements; no guarantee of coverage across all Claude products.</text>
+<rect x="65" y="277" width="1370" height="90" rx="20" fill="#fff" stroke="#cbd6ee" stroke-width="2"/>
+<text x="95" y="334" font-size="32" fill="#3456ec">Training</text>
+<text x="384" y="334" font-size="27" fill="#192849">Reduce rewards for bypasses; extend search and computer-use training</text>
+<rect x="65" y="389" width="1370" height="90" rx="20" fill="#fff" stroke="#cbd6ee" stroke-width="2"/>
+<text x="95" y="446" font-size="32" fill="#3456ec">Tools</text>
+<text x="384" y="446" font-size="27" fill="#192849">Tighten the actions connected tools can execute</text>
+<rect x="65" y="501" width="1370" height="90" rx="20" fill="#fff" stroke="#cbd6ee" stroke-width="2"/>
+<text x="95" y="558" font-size="32" fill="#3456ec">Environment</text>
+<text x="384" y="558" font-size="27" fill="#192849">Disable or take evaluations offline; centrally manage and isolate agents</text>
+<rect x="65" y="613" width="1370" height="90" rx="20" fill="#fff" stroke="#cbd6ee" stroke-width="2"/>
+<text x="95" y="648" font-size="27" fill="#3456ec">Monitoring</text>
+<text x="95" y="683" font-size="27" fill="#3456ec">and response</text>
+<text x="384" y="670" font-size="27" fill="#192849">Detect and block; classifiers, layered summaries and safety-team response</text>
+<rect x="65" y="771" width="660" height="143" rx="20" fill="#e7f5f2" stroke="#cbd6ee" stroke-width="2"/>
+<rect x="775" y="771" width="660" height="143" rx="20" fill="#edf0fc" stroke="#cbd6ee" stroke-width="2"/>
+<text x="95" y="830" font-size="34" fill="#3456ec">Reported by the authors</text>
+<text x="95" y="886" font-size="29" fill="#192849">All listed test cases blocked</text>
+<text x="805" y="830" font-size="34" fill="#3456ec">Still unknown</text>
+<text x="805" y="876" font-size="27" fill="#192849">Overall miss rate, independent validation</text>
+<text x="805" y="908" font-size="27" fill="#192849">and complete evaluation</text>
+<path d="M65 952H1435" stroke="#cbd6ee" stroke-width="2"/>
+<text x="65" y="1002" font-size="28" fill="#5b6a82">Source: Anthropic, official investigation 2026-10-09 / FieldToFit illustration</text>
+<text x="65" y="1056" font-size="26" fill="#5b6a82">Parallel categories and reading structure; no case-count, incidence or effectiveness statistics.</text>
+</g></svg>

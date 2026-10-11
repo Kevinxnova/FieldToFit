@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from '@fieldtofit/locale/router';
 import { TrafficReady } from './Traffic';
 import { BASE, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';

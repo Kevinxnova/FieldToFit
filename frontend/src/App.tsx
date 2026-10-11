@@ -14,7 +14,7 @@ import {
   Route,
   Routes,
   useLocation,
-} from "react-router-dom";
+} from "@fieldtofit/locale/router";
 import Explore from "./pages/Explore";
 import Dossier from "./pages/Dossier";
 
@@ -60,7 +60,7 @@ function Shell() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-  }, [location.pathname, zh]);
+  }, [location.pathname]);
   return (
     <div className="workspace">
       {!/^\/(news|watch)\//.test(location.pathname) && <PageMetadata

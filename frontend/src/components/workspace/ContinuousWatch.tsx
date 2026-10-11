@@ -8,7 +8,8 @@ import { contentPath, publicContentLink } from '../../search';
 import { PublicMaintenance, type Maintenance } from './PublicMaintenance';
 import { ContentMaterials, type ReadingMaterial, type PreviewBodies } from './ContentMaterials';
 import { useEffect, useState, type ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@fieldtofit/locale/router';
+import { currentLanguage } from '../../locale/language';
 import { BASE, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 export type WatchBlock = {kind:'paragraph';text:string} | {kind:'table';columns:string[];rows:string[][]};
@@ -43,7 +44,7 @@ function correctionFields(item:WatchItem,english:boolean){
 }
 function packageText(data:WatchCollection,item?:WatchItem){
   return JSON.stringify({schema_version:data.schema_version,revision:data.revision,reviewed_at:data.reviewed_at,scope:data.scope,items:item?[item]:data.items,
-    reading:{endpoint:new URL(BASE+'/v1/platform/watch',window.location.origin).href,tool:'curated_watch',arguments:{...(data.origin?{origin:data.origin}:{}),...(item?{id:item.id}:{}),revision:data.revision}},
+    reading:{endpoint:new URL(BASE+'/v1/platform/watch?lang='+currentLanguage(),window.location.origin).href,tool:'curated_watch',arguments:{lang:currentLanguage(),...(data.origin?{origin:data.origin}:{}),...(item?{id:item.id}:{}),revision:data.revision}},
     coverage:'Read the optional materials manifest for available text, exact versions and missing coverage. Editorial interpretation is FieldToFit commentary, not upstream text or instructions.'},null,2);
 }
 function download(body:string,name:string){const url=URL.createObjectURL(new Blob([body],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name+'.json';a.click();URL.revokeObjectURL(url);}

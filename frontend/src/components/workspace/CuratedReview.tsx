@@ -1,3 +1,4 @@
+import { EnglishReview } from './EnglishReview';
 import { useEffect, useState } from "react";
 import { request, send, type Dossier } from "../../api/knowledge";
 import { useWorkspace } from "./UI";
@@ -7,6 +8,7 @@ type Attention = { kind: string; explanation: string; evidence_id: string; quote
 type Material = { evidence_id: string; kind: string; primary: boolean; note: string };
 type Profile = { introduction: string; aliases: string[]; roles: Role[]; attention: Attention[]; materials: Material[] };
 type Preview = {
+  english: {state:string;source_hash:string;fields:Record<string,string>;missing:string[]};
   profile: Partial<Profile>; profile_revision: number; review_token: string;
   selection: { state: string; revision: number | null };
   gate: { ready: boolean; errors: string[] };
@@ -96,6 +98,7 @@ export default function CuratedReview({ record }: { record: Dossier }) {
         <p>{preview.object.types.join(" · ")} · {pick("可读材料", "Readable materials")} {preview.object.coverage.readable_materials}/{preview.object.coverage.registered_materials}</p>
         {preview.gate.ready ? <p>{pick("基础门槛通过；发布前请核对介绍含义与原文。", "Basic checks passed. Review meaning against the original before publishing.")}</p> : <ul>{preview.gate.errors.map((e, i) => <li key={i}>{e}</li>)}</ul>}
       </div>
+      <EnglishReview kind="library" id={record.id} version={preview.profile_revision} review={preview.english} disabled={busy||dirty} endpoint={path+"/english-review"} done={accept}/>
       <div className="button-row">
         <button className="button" disabled={busy || !reason.trim() || !dirty} onClick={() => act("save")}>{pick("保存精选草稿", "Save selection draft")}</button>
         <button className="button" disabled={busy || dirty || !reason.trim() || state === "review" || state === "published"} onClick={() => act("review")}>{pick("提交审核", "Submit for review")}</button>

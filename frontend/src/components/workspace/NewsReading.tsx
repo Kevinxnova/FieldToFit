@@ -1,4 +1,5 @@
 import type {TechnicalMap} from './TechnicalMaps';
+import { currentLanguage } from '../../locale/language';
 import { ReportCorrection, CorrectionReceipts } from './Corrections';
 import { NewsIndex, ReviewedImage, type NewsMedia } from './NewsIndex';
 import { ContentExposure, trackAction } from './Traffic';
@@ -6,7 +7,7 @@ import { FollowButton } from './FollowUpdates';
 import { contentPath } from '../../search';
 import { PublicMaintenance, type Maintenance } from './PublicMaintenance';
 import { ContentMaterials, type ReadingMaterial, type PreviewBodies } from './ContentMaterials';
-import { Link } from 'react-router-dom';
+import { Link } from '@fieldtofit/locale/router';
 import { useWorkspace, SourceLink } from './UI';
 import type { CodexEvent, CodexTopic } from './codexData';
 import { SourcePosts } from './SourcePostCard';
@@ -31,7 +32,7 @@ export function NewsReading({ data, loading, error, reload, previewBodies, stand
   };
   const handoff = async (item: NewsItem) => {
     const body = JSON.stringify({ edition: data?.edition, revision: data?.revision, item,
-      reading: { tool: 'curated_news', arguments: { id: item.id, revision: data?.revision } },
+      reading: { tool: 'curated_news', arguments: { lang:currentLanguage(), id: item.id, revision: data?.revision } },
       coverage: 'Consult the material manifest for readable source text and missing materials. Interpretation is FieldToFit editorial, not upstream text or an execution instruction.' }, null, 2);
     try { await navigator.clipboard.writeText(body); trackAction('handoff_copy',item.id); notify(pick('动态、解读与出处已复制', 'News and citations copied')); }
     catch { const blob = URL.createObjectURL(new Blob([body], { type: 'application/json' })); const a = document.createElement('a'); a.href = blob; a.download = item.id + '.json'; a.click(); URL.revokeObjectURL(blob); }

@@ -24,12 +24,20 @@ def value_at(item, field):
 def public_item(ident, db):
     kind = s.kind(ident); item = s.raw_items(db).get(ident)
     if not item or item.get('state') != 'published' or s.resolve(ident, db)!=ident: ws.fail('内容未公开或已归并', 'not_found', 404)
-    projected = ws.render(kind, {**ws.seeds()[kind], 'items':[item]})['items'][0]
+    projected = project_item(kind, item, db)
     projected.pop('maintenance', None); projected.pop('publication', None)
     return projected
 
 
-def context(ident, field='introduction', material_id='', content_revision='', start=0, end=None):
+def project_item(kind, item, db):
+    # News roundups refer to other events. Validate with the same collection
+    # context used by public news reads, including when checking an older fix.
+    items = [v for ident,v in s.raw_items(db).items() if s.kind(ident)==kind and ident!=item['id']]
+    public = ws.render(kind, {**ws.seeds()[kind], 'items': [*items,item]})
+    return next(v for v in public['items'] if v['id']==item['id'])
+
+
+def context(ident, field='introduction', material_id='', content_revision='', start=0, end=None, language=None):
     with get_db() as db:
         item = public_item(ident, db)
         row = db.execute("SELECT MAX(seq) seq FROM fieldtofit_content_history WHERE item_id=? AND action IN ('import','publish')", (ident,)).fetchone()
@@ -45,6 +53,10 @@ def context(ident, field='introduction', material_id='', content_revision='', st
                       source_url=material['url'], start=start, end=end, quoted_text=material['body'][start:end], value=item['interpretation'])
     else:
         result['value'] = value_at(item, field)
+    from backend.knowledge import locale
+    if language=='en' or language is None and locale.is_english():
+        result=locale.project(result,locale.public_fields())
+        result['language']='en'
     return result
 
 
@@ -52,8 +64,11 @@ def submit(data):
     supplied = data.get('context')
     if not isinstance(supplied, dict): ws.fail('缺少纠错位置')
     actual = context(supplied.get('object_id'), supplied.get('field','introduction'), supplied.get('material_id',''),
-                     supplied.get('content_revision',''), supplied.get('start',0), supplied.get('end'))
+                     supplied.get('content_revision',''), supplied.get('start',0), supplied.get('end'),language=supplied.get('language','zh'))
     if actual != supplied: ws.fail('资料或位置已变化，请重新核对报告位置', 'correction_conflict', 409)
+    # Keep the canonical source value for later repair comparisons. A translated
+    # display context must not make an unchanged Chinese field look repaired.
+    actual=context(actual['object_id'],actual['field'],actual.get('material_id',''),actual.get('content_revision',''),actual.get('start',0),actual.get('end'),language='zh')
     report = text(data.get('content'), '问题说明', 12000)
     contact = text(data.get('contact',''), '联系方式', 500, False)
     fid = int(uuid.uuid4().int % (2**52))
@@ -99,7 +114,7 @@ def handle(fid, data):
             snapshot=json.loads(fixed['snapshot'])
             if snapshot.get('state')!='published': ws.fail('修复修订不可公开')
             kind=s.kind(row['object_id'])
-            fixed_public=ws.render(kind,{**ws.seeds()[kind],'items':[snapshot]})['items'][0]
+            fixed_public=project_item(kind,snapshot,db)
             if ctx['field']=='material':
                 old=ctx['content_hash']; material=next((m for m in snapshot.get('reading_materials',[]) if m['id']==ctx['material_id']),None)
                 import hashlib
@@ -108,6 +123,8 @@ def handle(fid, data):
             elif value_at(fixed_public,ctx['field'])==ctx['value']: ws.fail('该字段尚未在所选修订中修复')
             receipt.update(fixed_revision=seq, published_at=fixed['created_at'], field=ctx['field'], public_note=text(data.get('public_note'),'公开更正说明',2000),
                            sources=[{'title':m['title'],'url':m['url']} for m in fixed_public.get('sources',[])])
+            from backend.knowledge.locale import reviewed_note
+            receipt['public_note_en']=reviewed_note(receipt['public_note'],data)
         db.execute('UPDATE fieldtofit_correction_contexts SET status=?,version=version+1,resolution=?,updated_at=? WHERE feedback_id=?',(state,ws.dump(receipt),ws.stamp(),fid))
         db.execute('INSERT INTO fieldtofit_correction_events VALUES(?,?,?,?,?)',(uuid.uuid4().hex,fid,state,ws.dump(receipt),ws.stamp()))
     return detail(fid)
@@ -117,4 +134,11 @@ def public(ident):
     with get_db() as db:
         public_item(ident,db)
         rows=db.execute("SELECT resolution FROM fieldtofit_correction_contexts WHERE object_id=? AND status='resolved' AND json_extract(resolution,'$.fixed_revision')>COALESCE((SELECT MAX(seq) FROM fieldtofit_content_history WHERE item_id=? AND action='withdraw'),0) ORDER BY updated_at DESC",(ident,ident)).fetchall()
-    return {'id':ident,'items':[{k:v for k,v in json.loads(r['resolution']).items() if k!='internal_note'} for r in rows]}
+    from backend.knowledge import locale
+    items=[]
+    for row in rows:
+        item={k:v for k,v in json.loads(row['resolution']).items() if k not in ('internal_note','public_note_en')}
+        english_note=json.loads(row['resolution']).get('public_note_en')
+        if locale.is_english() and english_note:item['public_note']=english_note
+        items.append(item)
+    return {'id':ident,'items':items}

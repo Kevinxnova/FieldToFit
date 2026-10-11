@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { request, send, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
+import { EnglishPlanReview } from './EnglishPlanReview';
 
 type Intake = {schema_version:string;items:{id:string;name:string;observed_at:string;gaps:string[]}[]};
 type Evidence = {quote:string;source_url:string};
-type Preview = {object:{name:string;introduction:string;facts:Record<string,{value:unknown;quote?:string;status:string;source_url?:string}>;
+type Preview = {english:Record<string,any>;object:{id:string;name:string;introduction:string;facts:Record<string,{value:unknown;quote?:string;status:string;source_url?:string}>;
   roles:{type:string;evidence:Evidence}[];attention:{explanation:string;evidence:Evidence}[];
   materials:{id:string;title:string;coverage:string;characters:number;note:string;source_url:string}[]};gate:{ready:boolean;errors:string[]}};
 
@@ -51,11 +52,13 @@ export default function IntakeReview() {
     }}/></label>
     {!!drafts.length && <><label>{pick('选择稿件','Choose draft')}<select value={selected} disabled={busy} onChange={e=>{setSelected(Number(e.target.value));setPreview(null);}}>{drafts.map((d,i)=><option key={i} value={i}>{String(d.introduction||d.id).slice(0,75)}</option>)}</select></label>
       <button className="button" disabled={busy} onClick={()=>act(false)}>{pick('核对引文并预览','Validate quotations and preview')}</button>
-      {preview && <><h3>{preview.object.name}</h3><p>{preview.object.introduction}</p>
-        {Object.entries(preview.object.facts).map(([key,f])=><div key={key}><strong>{labels[key]||key}</strong><p>{f.status==='unknown'?pick('未知','Unknown'):typeof f.value==='string'?f.value:JSON.stringify(f.value)}</p>{f.quote&&<blockquote>{f.quote}</blockquote>}{f.source_url&&<a href={f.source_url} target="_blank" rel="noreferrer">{pick('核对官方来源','Check official source')}</a>}</div>)}
-        <h4>{pick('对象类型与依据','Object roles and evidence')}</h4>{preview.object.roles.map(r=><div key={r.type}><strong>{r.type}</strong><blockquote>{r.evidence.quote}</blockquote></div>)}
-        <h4>{pick('关注依据','Reasons for inclusion')}</h4>{preview.object.attention.map((a,i)=><div key={i}><p>{a.explanation}</p><blockquote>{a.evidence.quote}</blockquote><a href={a.evidence.source_url} target="_blank" rel="noreferrer">{pick('核对来源','Check source')}</a></div>)}
+      {preview && <><h3 data-original-language="zh-CN">{preview.object.name}</h3><p data-original-language="zh-CN">{preview.object.introduction}</p>
+        {Object.entries(preview.object.facts).map(([key,f])=><div key={key}><strong>{labels[key]||key}</strong><p data-original-language={f.status==='unknown'?undefined:'zh-CN'}>{f.status==='unknown'?pick('未知','Unknown'):typeof f.value==='string'?f.value:JSON.stringify(f.value)}</p>{f.quote&&<blockquote data-original-language="source">{f.quote}</blockquote>}{f.source_url&&<a href={f.source_url} target="_blank" rel="noreferrer">{pick('核对官方来源','Check official source')}</a>}</div>)}
+        <h4>{pick('对象类型与依据','Object roles and evidence')}</h4>{preview.object.roles.map(r=><div key={r.type}><strong>{r.type}</strong><blockquote data-original-language="source">{r.evidence.quote}</blockquote></div>)}
+        <h4>{pick('关注依据','Reasons for inclusion')}</h4>{preview.object.attention.map((a,i)=><div key={i}><p data-original-language="zh-CN">{a.explanation}</p><blockquote data-original-language="source">{a.evidence.quote}</blockquote><a href={a.evidence.source_url} target="_blank" rel="noreferrer">{pick('核对来源','Check source')}</a></div>)}
         <h4>{pick('AI 能读取的材料','Materials available to AI')}</h4>{preview.object.materials.map(m=><div key={m.id}><a href={m.source_url} target="_blank" rel="noreferrer">{m.title}</a><p>{m.coverage==='full_text'?pick('文件全文','Full file text'):pick('摘录','Excerpt')} · {m.characters} {pick('字符','characters')} · {m.note}</p></div>)}
+        <EnglishPlanReview intake reviews={{[preview.object.id]:preview.english}} value={drafts[selected].english?{[preview.object.id]:drafts[selected].english}:{}} onChange={v=>{setDrafts(ds=>ds.map((d,i)=>i===selected?{...d,english:v[preview.object.id]}:d));setPreview({...preview,gate:{...preview.gate,ready:false}});}}/>
+        {!preview.gate.ready&&<p role="status">{preview.gate.errors.map(e=>pick(e,e)).join('; ')}</p>}
         <button className="button primary" disabled={busy||!preview.gate.ready} onClick={()=>act(true)}>{pick('核对完成，发布此稿','Reviewed — publish this draft')}</button></>}
     </>}
   </section>;

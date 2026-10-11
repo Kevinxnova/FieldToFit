@@ -17,7 +17,7 @@ import { MaterialPackage, type PackageRef } from '../components/workspace/Materi
 import { ModelLandscape } from '../components/workspace/ModelLandscape';
 import { version as appVersion } from '../../package.json';
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Link, Navigate, useSearchParams } from "react-router-dom";
+import { Link, Navigate, useSearchParams } from "@fieldtofit/locale/router";
 import { BASE, readToken, request, useRemote, type Fact } from "../api/knowledge";
 import { dateText, SourceLink, useWorkspace } from "../components/workspace/UI";
 
@@ -160,7 +160,7 @@ export function ForAI() {
   const config = JSON.stringify({ mcpServers: { fieldtofit: { url: endpoint } } }, null, 2);
   const instructions = pick(
     `请将 FieldToFit 添加为只读远程 HTTP MCP 服务。地址：${endpoint}。配置示例：\n${config}\n先用 curated_lookup 按名称、别名、编号或关键词统一检索动态、持续关注和可公开原文；按结果中的 reading 读取完整整理内容，按材料 reading 使用 curated_material 继续读取原文，也可用 curated_bundle 打包。保留片段与全文的区别。后续用 curated_changes 的 scope=workspace 查询当前动态、持续关注及材料失效/恢复变化，保留该范围自己的续读游标；旧资料库使用 scope=legacy，游标不能混用。保留来源、版本、核验日期与未知项；编辑解读不等于原文，链接资料请按需继续读取。再结合我提供的需求继续工作。如果你无法添加 MCP，请指导我在客户端的 MCP/连接器设置中添加；不要声称已经连接。`,
-    `Add FieldToFit as a read-only remote HTTP MCP server: ${endpoint}. Example configuration:\n${config}\nStart with curated_lookup to search names, aliases, IDs or keywords across developments, profiles and permitted stored text. Follow each result reading arguments, then material reading arguments for curated_material, or curated_bundle to package chosen entries. A snippet is not a complete document. Poll curated_changes with scope=workspace for their publication and material-health changes; retain a separate checkpoint from scope=legacy. Preserve sources, revisions, review dates and unknowns. Editorial notes are not upstream text; follow links as needed. Continue with my requirements. If you cannot add MCP servers, guide me through the client's connector settings; do not claim to be connected.`
+    `Add FieldToFit as a read-only remote HTTP MCP server: ${endpoint}. Example configuration:\n${config}\nPass lang="en" in every tool call to read the reviewed English content. Start with curated_lookup to search names, aliases, IDs or keywords across developments, profiles and permitted stored text. Follow each result reading arguments, then material reading arguments for curated_material, or curated_bundle to package chosen entries. A snippet is not a complete document. Poll curated_changes with scope=workspace for their publication and material-health changes; retain a separate checkpoint from scope=legacy. Preserve sources, revisions, review dates and unknowns. Editorial notes are not upstream text; follow links as needed. Continue with my requirements. If you cannot add MCP servers, guide me through the client's connector settings; do not claim to be connected.`
   ) + (local ? pick('\n这是本机地址，仅同机客户端可访问。','\nThis address is only reachable from this computer.') : '');
   const copy = async (body: string) => {
     try { await navigator.clipboard.writeText(body); setCopyFailed(false); trackAction('mcp_address_copy'); notify(pick('已复制','Copied')); }

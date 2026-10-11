@@ -421,9 +421,10 @@ def frontend(path=''):
         abort(503)
     content = shell_path(CLIENT_DIST).read_text()
     status = 200
-    if path.startswith('records/'):
+    record_path=path.removeprefix('en/')
+    if record_path.startswith('records/'):
         from backend.knowledge.store import get_record
-        record = get_record(path.removeprefix('records/'))
+        record = get_record(record_path.removeprefix('records/'))
         if record:
             title = html.escape(record['title_zh'] or record['title'])
             description = html.escape((record['summary_zh'] or record['summary'])[:300], quote=True)
@@ -432,11 +433,14 @@ def frontend(path=''):
             content = content.replace('</head>', f'<meta property="og:title" content="{title}" /><meta property="og:description" content="{description}" /></head>')
         else:
             status = 404
-    if path.startswith('records/'):
+    if record_path.startswith('records/'):
+        if path.startswith('en/'):
+            from backend.seo.locale import english_html
+            content=english_html(content).replace('lang="zh-CN"','lang="en"')
         response = Response(content, status=status, content_type='text/html; charset=utf-8')
         response.headers['Cache-Control'] = 'no-store'
         return response
-    if '/' + path not in LEGACY:
+    if ('/' + path).removeprefix('/en') not in LEGACY:
         return document(CLIENT_DIST, 'FieldToFit · 页面不存在', '', '/' + path, '<main><h1>页面不存在</h1><a href="/for-you">For you</a></main>', 404, False)
     return document(CLIENT_DIST, 'FieldToFit', '', '/' + path, index=False)
 

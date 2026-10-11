@@ -1,7 +1,7 @@
 import { searchPages, contentPath } from '../search';
 import { VisitReady } from '../components/workspace/SiteVisits';
 import { useEffect, useState, type FormEvent } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '@fieldtofit/locale/router';
 import { useRemote } from '../api/knowledge';
 import { SourceLink, useWorkspace } from '../components/workspace/UI';
 import { WatchHandoff, type WatchCollection } from '../components/workspace/ContinuousWatch';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from '@fieldtofit/locale/router';
 import { useRemote } from '../../api/knowledge';
 import { dateText, useWorkspace } from './UI';
 

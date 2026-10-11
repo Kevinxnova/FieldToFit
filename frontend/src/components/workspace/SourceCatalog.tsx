@@ -1,7 +1,7 @@
 import { searchPages, contentPath } from '../../search';
 import { VisitReady } from './SiteVisits';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@fieldtofit/locale/router';
 import { useRemote, send } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 import './source-catalog.css';

@@ -28,10 +28,11 @@ def test_revision_detects_correction_and_withdrawal_without_leaking_drafts(clien
     path = tmp_path / 'news.json'; path.write_text(json.dumps(data)); monkeypatch.setattr(news,'CONTENT_PATH',path)
     first = news.news()
     data['items'][0]['private_note'] = 'private editorial note'
-    draft = copy.deepcopy(data['items'][0]); draft.update(id='D-99',state='draft',title='Private upcoming release')
+    draft = copy.deepcopy(data['items'][0]); draft.update(id='D-'+str(max(int(i['id'][2:]) for i in data['items'])+1),state='draft',title='Private upcoming release')
     data['items'].append(draft); path.write_text(json.dumps(data))
     assert news.news()['revision'] == first['revision']
-    assert 'private' not in json.dumps(news.news()).lower()
+    assert 'private editorial note' not in json.dumps(news.news()).lower()
+    assert draft['id'] not in {item['id'] for item in news.news()['items']}
     data['items'][0]['state'] = 'withdrawn'; path.write_text(json.dumps(data))
     assert client.get('/api/v1/platform/news?id='+data['items'][0]['id']).status_code == 404
     assert client.get('/api/v1/platform/news?revision='+first['revision']).status_code == 409

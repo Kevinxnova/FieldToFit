@@ -3,7 +3,7 @@ import ResearchComparison, {
 } from "../components/workspace/ResearchComparison";
 import TaskPlan, { type TaskPlanData } from "../components/workspace/TaskPlan";
 import { useState, type FormEvent } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "@fieldtofit/locale/router";
 import {
   send,
   useRemote,

@@ -125,6 +125,8 @@ def public_status(ident,db=None,context=None):
     for row in context['checks']:
         if row['object_id']==canonical and (row['material_id'],row['url']) in current_materials:
             data=json.loads(row['data']);materials.append({'id':row['material_id'],'url':row['url'],**{k:data.get(k) for k in ('availability','last_checked_at','last_success_at','failure_days','error','needs_review','review_priority','changed','last_decision','public_note','last_decision_at')}})
+            from backend.knowledge import locale
+            if locale.is_english() and data.get('public_note_en'):materials[-1]['public_note']=data['public_note_en']
     result={'id':ident,'canonical_id':canonical,'availability':'merged' if canonical!=ident else 'available','relationships':related,'materials':materials,
             'scope':'Current maintenance observations; separate from fixed publication/material revision. Access success is not factual revalidation.'}
     result['status_revision']=digest(result)
@@ -265,6 +267,14 @@ def plan(data,db):
     elif action=='separate':
         if not right or source==target:ws.fail('请选择两个不同条目')
     else:ws.fail('不支持的维护动作')
+    from backend.knowledge import locale
+    english_reviews={}
+    for ident,value in list(after.items()):
+        if action!='group' and value.get('state')=='published':
+            if ident in data.get('english_reviews',{}):
+                try:after[ident]=ws.reviewed_english(kind(ident),value,data['english_reviews'][ident])
+                except PlatformError as exc:errors.append(str(exc))
+            english_reviews[ident]=locale.status(kind(ident),after[ident])
     focused=[]
     if after:
         for k in {kind(i) for i in after}:
@@ -285,7 +295,10 @@ def plan(data,db):
         extra['material_count']=len(after[target].get('reading_materials',[]))
     request_data={k:v for k,v in data.items() if k not in ('review_token','confirmed')}
     token=digest([request_data,before,sets,aliases,links,actions])
-    return {'ready':not errors,'errors':errors,'conflicts':conflicts,'review_token':token,'source':source,'target':target,'action':action,
+    english_fields={'__objects__':{ident:review['fields'] for ident,review in english_reviews.items()}}
+    try:english_preview=locale.project(focused,english_fields)
+    except PlatformError:english_preview=[]
+    return {'ready':not errors,'errors':errors,'conflicts':conflicts,'review_token':token,'source':source,'target':target,'action':action,'english_reviews':english_reviews,'preview_en':english_preview,
             'before':before,'after':after,'extra':extra,'preview':focused,'sets':sets,'scope':'Private review only; no publication until confirmed'}
 
 
@@ -452,10 +465,13 @@ def decide_material(data):
             if after<=ws.today():ws.fail('复查日期必须晚于今天')
             current['review_after']=after
         else:
+            from backend.knowledge.locale import reviewed_note
+            english_note=reviewed_note(reason,data)
             current.update(acknowledged_failure_days=current.get('failure_days',0),needs_review=False,changed=False,review_after=None,public_note=reason,last_decision=decision,last_decision_at=ws.stamp())
+            current['public_note_en']=english_note
         context=event_context(db, [ident])
         db.execute('UPDATE fieldtofit_steward_checks SET data=? WHERE object_id=? AND material_id=?',(ws.dump(current),ident,mid))
-        if decision!='defer':event(db,ident,'material_reviewed',{'material_id':mid,'decision':decision,'note':reason},context=context)
+        if decision!='defer':event(db,ident,'material_reviewed',{'material_id':mid,'decision':decision,'note':reason,'note_en':english_note},context=context)
         db.execute('INSERT INTO fieldtofit_steward_actions VALUES(?,?,?,?,?,?,?,?,?,NULL)',(uuid.uuid4().hex,'material_'+decision,ident,'',ws.dump(data),row[0],ws.dump(current),reason,ws.stamp()))
     return {'ok':True}
 
@@ -478,6 +494,10 @@ def changes(after=0,object_ids=None,limit=20,cursor=None):
             snap=u._snapshot(db,'workspace_changes',query,{'items':events,'after':after,'until':upper})
         result=u._page(snap,pos,limit);events=[]
         for e in snap['data']['items'][pos:pos+limit]:
+            from backend.knowledge import locale
+            e=dict(e)
+            english_note=e.pop('note_en',None)
+            if locale.is_english() and english_note:e['note']=english_note
             live=public_status(e['object_id'],db)
             # Withdrawal redacts historical prose even when a snapshot predates it.
             if live['availability']=='unavailable':e={k:v for k,v in e.items() if k in ('id','object_id','kind','observed_at','material_id','target_id')}

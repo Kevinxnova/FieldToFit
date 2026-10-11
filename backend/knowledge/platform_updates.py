@@ -72,6 +72,8 @@ def search(q='', object_type='', limit=20, offset=0, cursor=None, source='', sin
     if since and until and since > until:
         raise p.PlatformError('since must not follow until')
     query = {'q': q, 'object_type': object_type, 'limit': limit}
+    from backend.knowledge.locale import is_english,searchable
+    if is_english():query['lang']='en'
     # Keep existing unfiltered cursors compatible.
     query.update({k: v for k, v in {'source': source, 'since': since, 'until': until}.items() if v})
     if cursor and offset:
@@ -91,7 +93,8 @@ def search(q='', object_type='', limit=20, offset=0, cursor=None, source='', sin
                 day = datetime.fromisoformat(row['created_at'].replace('Z', '+00:00')).astimezone(timezone.utc).date().isoformat()
                 if (source and source != platform_sources.source_id(db, obj)) or (since and day < since) or (until and day > until):
                     continue
-                haystack = ' '.join([obj['name'], obj['original_name'], obj['introduction'], *obj['aliases']]).casefold()
+                localized=searchable(obj)
+                haystack = ' '.join([localized['name'], localized['original_name'], localized['introduction'], *localized['aliases']]).casefold()
                 if (q and q not in haystack) or (object_type and object_type not in obj['types']):
                     continue
                 refs.append({'id': row['record_id'], 'revision': row['seq']})

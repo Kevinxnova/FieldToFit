@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from '@fieldtofit/locale/router';
 import { Icon, useWorkspace } from './UI';
 
 const destinations = [

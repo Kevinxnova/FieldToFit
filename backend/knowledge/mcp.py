@@ -16,6 +16,7 @@ VERSIONS = ['2025-11-25', '2025-06-18', '2025-03-26']
 
 
 def definition(name, description, properties, required=()):
+    properties={**properties,'lang':{'type':'string','enum':['zh','en'],'description':'Reviewed display language; original source text remains verbatim. Default zh preserves existing clients.'}}
     return {'name': name, 'description': description,
             'inputSchema': {'type': 'object', 'properties': properties, 'required': list(required), 'additionalProperties': False},
             'annotations': {'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False}}
@@ -74,6 +75,14 @@ TOOLS = [
 
 
 def invoke(name, args):
+    from backend.knowledge import locale
+    if not isinstance(args,dict):raise ValueError('Invalid tool arguments')
+    if 'lang' in args and not isinstance(args['lang'],str):raise ValueError('Invalid type for lang')
+    lang=locale.language(args.get('lang'))
+    with locale.read_language(lang):data=_invoke(name,{k:v for k,v in args.items() if k!='lang'})
+    return locale.project(data,locale.public_fields()) if lang=='en' else data
+
+def _invoke(name, args):
     spec = next((t for t in [*TOOLS, CODEX_TOOL] if t['name'] == name), None)
     if not spec:
         raise ValueError('Unknown tool')

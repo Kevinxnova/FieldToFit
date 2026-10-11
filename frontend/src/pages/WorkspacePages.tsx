@@ -4,7 +4,7 @@ import ResearchComparison, {
 } from "../components/workspace/ResearchComparison";
 import { useEffect, useState, type FormEvent } from "react";
 import { FollowingUpdates } from "./KnowledgeReading";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "@fieldtofit/locale/router";
 import {
   BASE,
   formatValue,
@@ -981,7 +981,7 @@ export function Manage() {
                 result.data.feedback.map((f) => (
                   <article key={f.id}>
                     <span className="tag">{f.category}</span>
-                    <p>{f.content}</p>
+                    <p data-original-language="user">{f.content}</p>
                   </article>
                 ))
               ) : (

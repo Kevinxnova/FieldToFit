@@ -4,6 +4,10 @@
 
 先启动 FieldToFit 后端。默认资料可公开读取；如服务配置了 `FIELDTOFIT_READ_TOKEN`，HTTP 请求需携带 `Authorization: Bearer <read-token>`。管理员密码不用于 AI 读取。
 
+## 可选英文（v1.8.26源码）
+
+公开HTTP查询可加 `lang=en`；MCP工具在 `arguments` 中传 `"lang":"en"`。省略语言保持中文默认和原结构。英文网页、档案、历史、下载与资料包使用同一已审英文；原始材料正文与定位不翻译。本站英文正文缺译或过期返回明确错误。源稿审核与实际部署状态见[双语指南](english-content.md)。
+
 ## HTTP MCP
 
 公开地址为 `https://fieldtofit.top/api/mcp/curated`，正式v1.8.7提供18项精选工具，正式部署状态见[总览](../../FieldToFit-PM.md)；包含 `curated_lookup`；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。

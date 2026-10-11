@@ -121,7 +121,38 @@ def detail(kind, ident, db=None):
     if result['source_ref'] and result['source_ref'] not in refs:refs.append(result['source_ref'])
     result['source_materials']=[m for ref in refs for m in materials(ref,db)]
     result['materials_fingerprint']=hashlib.sha256(dump(result['source_materials']).encode()).hexdigest()
+    from backend.knowledge.locale import status
+    try: result['english']=status(kind,result['draft'])
+    except (KeyError,ValueError,PlatformError): result['english']={'state':'draft','missing':[],'fields':{},'source_hash':''}
     return result
+
+def reviewed_english(kind,draft,data):
+    from backend.knowledge import locale
+    fingerprint=locale.source_hash(kind,draft)
+    if data.get('source_hash')!=fingerprint:fail('Source changed; review the current English text','english_stale',409)
+    fields=data.get('fields',{})
+    if not isinstance(fields,dict) or len(dump(fields))>4000000 or any(not isinstance(k,str) or not isinstance(v,str) or not v.strip() or locale.HAN.search(v) for k,v in fields.items()):fail('Use complete English strings for every translated field')
+    required=locale.strings(locale.authored(kind,draft))
+    if set(fields)-required:fail('English fields must belong to the current source')
+    def protected(value):return re.findall(r'https?://[^\s)\]<>]+|[A-Za-z][A-Za-z0-9._-]*\d[A-Za-z0-9._-]*|(?<![\w])\d+(?:[.,]\d+)*(?:%|[kKmMbB])?',value)
+    for source,translated in fields.items():
+        if translated==locale.catalog().get(source):continue
+        if sorted(protected(source))!=sorted(protected(translated)):fail('Preserve source numbers, versions and URLs in English: '+source[:100],'english_fact_mismatch',409)
+    approved=data.get('confirmed') is True
+    en={'source_hash':fingerprint,'fields':fields,'state':'reviewed' if approved else 'draft','reviewed_at':stamp() if approved else None,'review_note':text(data.get('reason'),'reason',2000) if approved else ''}
+    replacement={**draft,'translations':{**draft.get('translations',{}),'en':en}}
+    if approved:locale.require_review(kind,replacement)
+    return replacement
+
+def english_review(kind, ident, data):
+    """Explicit bilingual review, bound to the draft and all authored facts."""
+    from backend.knowledge import locale
+    with editorial_transaction() as db:
+        current=detail(kind,ident,db)
+        if current['draft_version']!=data.get('draft_version'):fail('Draft changed; reload before English review','draft_conflict',409)
+        replacement=reviewed_english(kind,current['draft'],data)
+        db.execute('UPDATE fieldtofit_content_items SET draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',(dump(replacement),stamp(),kind,ident))
+    return detail(kind,ident)
 
 def materials(ref, db):
     if ref.startswith('discovery:'):
@@ -206,10 +237,13 @@ def save(kind, ident, data, approved_topic=None):
             base = project(current['published']) if current['published'] and current['published'].get('technical_map') else None
             if proposal.get('base_revision') != (base['revision'] if base else None):
                 fail('公开地图已变化，请重新对齐', 'map_revision_changed', 409)
-            if content != {**proposal['website_copy'], 'id':ident, 'state':'published'}:
+            if {k:v for k,v in content.items() if k!='translations'} != {k:v for k,v in {**proposal['website_copy'], 'id':ident, 'state':'published'}.items() if k!='translations'}:
                 fail('草稿须与已确认地图提案一致')
         if data.get('materials_fingerprint') and data['materials_fingerprint']!=current['materials_fingerprint']:fail('Source materials changed; export again','source_conflict',409)
         if current['draft_version']!=version:fail('Draft changed; reload before saving','draft_conflict',409)
+        # Approval metadata is server-owned; editing source text can only make it stale.
+        if current['draft'].get('translations'):content['translations']=copy.deepcopy(current['draft']['translations'])
+        else:content.pop('translations',None)
         from backend.knowledge.operation_board import event,content_source
         origin=content_source(db,kind,ident)
         db.execute('UPDATE fieldtofit_content_items SET draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',(dump(content),stamp(),kind,ident))
@@ -223,9 +257,11 @@ def composed(kind, ident, content, db, withdraw=False):
     if kind=='charts':
         if withdraw:fail('Chart snapshot cannot be withdrawn; publish a reviewed replacement')
         replacement={k:content[k] for k in ('landscape','flagships')}
-        if replacement!=data:
+        from backend.knowledge.locale import review_fingerprint
+        if replacement!={k:data[k] for k in ('landscape','flagships')} or review_fingerprint(content)!=review_fingerprint(data):
             replacement=copy.deepcopy(replacement)
             replacement['landscape']['revision']='workspace-'+hashlib.sha256(dump(replacement).encode()).hexdigest()[:16]
+        if content.get('translations'):replacement['translations']=content['translations']
         data=replacement
     else:
         entries=data['items'];found=next((i for i,x in enumerate(entries) if x['id']==ident),None)
@@ -247,7 +283,8 @@ def composed(kind, ident, content, db, withdraw=False):
             def comparable(x):
                 from backend.knowledge.codex_progress import metadata
                 from backend.knowledge.technical_maps import metadata as map_metadata
-                return {**{k:x.get(k) for k in public_changes}, 'codex_28_days':metadata(x), 'technical_map':map_metadata(x)}
+                from backend.knowledge.locale import review_fingerprint
+                return {**{k:x.get(k) for k in public_changes}, 'codex_28_days':metadata(x), 'technical_map':map_metadata(x), 'english':review_fingerprint(x)}
             if not withdraw and (previous is None or comparable(item) != comparable(previous)):
                 now = stamp()
                 item['publication'] = {'first_published_at': (previous.get('publication') or {}).get('first_published_at') if previous else now, 'updated_at': now}
@@ -260,6 +297,8 @@ def composed(kind, ident, content, db, withdraw=False):
     return data,row['revision']
 
 def gate(kind, ident, item, data):
+    from backend.knowledge.locale import require_review
+    require_review(kind,item)
     if kind=='charts':
         if any(s['checked_at']>today() for s in data['landscape']['sources']):fail('图表核对日期不能在未来')
         return render(kind,data)
@@ -305,7 +344,16 @@ def preview(kind, ident):
                 contextual=projection(focused['items']+dependencies, roundup_items=public['items'])
                 focused['codex_progress']['roundups']=contextual['roundups']
         if kind=='watch':focused['groups']=[{**g,'count':sum(x['type']==g['id'] for x in focused['items'])} for g in public['groups']]
-        return {'ready':True,'errors':[],'preview':focused,'review_token':token(kind,ident,item['draft_version'],revision,draft,item['materials_fingerprint']),'draft_version':item['draft_version'],'scope':'Private preview; not published'}
+        from backend.knowledge.locale import project,require_review,public_fields
+        try:
+            fields=copy.deepcopy(public_fields())
+            reviewed=require_review(kind,draft)
+            if kind=='charts':fields.update(reviewed)
+            else:fields['__objects__'][ident]=reviewed
+            english=project(focused,fields)
+        except PlatformError as exc:
+            return {'ready':False,'errors':[str(exc)],'draft_version':item['draft_version']}
+        return {'ready':True,'errors':[],'preview':focused,'preview_en':english,'review_token':token(kind,ident,item['draft_version'],revision,draft,item['materials_fingerprint']),'draft_version':item['draft_version'],'scope':'Private preview; not published'}
 
 def publish(kind, ident, data, withdraw=False):
     reason=text(data.get('reason'),'reason',2000)

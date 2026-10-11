@@ -18,15 +18,21 @@ def sample(body='A library for building AI agents. Requires Python 3.10. More so
     return source, m
 
 
-def draft():
+def draft(aliases=None):
     job = maintenance.jobs()['items'][0]
-    return {'schema_version': maintenance.SCHEMA, 'id': job['id'], 'fingerprint': job['fingerprint'],
+    data = {'schema_version': maintenance.SCHEMA, 'id': job['id'], 'fingerprint': job['fingerprint'],
         'base_token': job['base_token'], 'editor': 'Test editor', 'reason': 'Checked original material',
         'introduction': '用于构建 AI Agent 的程序库。', 'roles': [{'type': 'library', 'material': 'readme', 'quote': 'A library'}],
         'attention': [{'kind': 'editorial', 'material': 'readme', 'quote': 'building AI agents',
                        'explanation': '作者明确描述 Agent 构建能力。', 'observed_at': job['observed_at']}],
         'facts': {'capabilities': {'value': '构建 AI Agent', 'material': 'readme', 'quote': 'building AI agents'},
                   'limitations': {'status': 'unknown', 'value': None}}}
+    if aliases is not None:data['aliases']=aliases
+    review = maintenance.apply(data)['english']
+    from english_fixtures import fixture_fields
+    data['english'] = {'source_hash': review['source_hash'], 'fields': fixture_fields(review),
+                       'confirmed': True, 'reason': 'Explicit isolated intake English review'}
+    return data
 
 
 def test_review_is_dry_run_and_publish_is_atomic(client):
@@ -130,7 +136,7 @@ def test_intake_reuses_legacy_identity_created_after_capture(client):
 
 def test_daily_update_preserves_existing_aliases_when_not_supplied(client):
     source, material = sample()
-    first = draft(); first['aliases'] = ['OriginalAlias']
+    first = draft(aliases=['OriginalAlias'])
     maintenance.apply(first, publish=True)
     sample(material['body'] + ' Updated documentation.')
     maintenance.apply(draft(), publish=True)

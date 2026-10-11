@@ -54,6 +54,9 @@ def run(data_dir, publish=False):
         ]}
     draft = platform.save_profile(rid,profile,0,'Source-linked editorial draft; upstream version explicitly unknown')
     if publish:
+        english=draft['english']
+        draft=platform.english_review(rid,{'draft_version':draft['profile_revision'],'source_hash':english['source_hash'],
+            'fields':english['fields'],'confirmed':True,'reason':'Checked source-linked English fixture against the captured README and Chinese editorial notes'})
         draft = platform.transition(rid,'review',draft['review_token'],'Review original quotes and coverage')
         draft = platform.transition(rid,'published',draft['review_token'],'Captured official README and license checked; unknowns and link-only docs disclosed')
     return {'id':rid,'selection':draft['selection'],'gate':draft['gate'],'material_ids':[eid,lid,docs],'source_capture':capture}

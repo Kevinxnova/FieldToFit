@@ -15,6 +15,7 @@ from backend.security import secret_is_configured, secret_matches, allowed_origi
 from backend.knowledge import store
 from backend.knowledge.sources import list_sources, run_daily, enrich_record
 from backend.knowledge.export import markdown, bibtex
+from backend.knowledge.platform import PlatformError
 
 bp = Blueprint('knowledge', __name__, url_prefix='/api/v1')
 
@@ -42,11 +43,24 @@ def admin_required(fn):
 def private_admin_response(response):
     if request.path.startswith('/api/v1/admin/'):
         response.headers['Cache-Control']='private, no-store'
+    from backend.knowledge import locale
+    if request.args.get('lang')=='en':response.headers['Content-Language']='en'
+    if request.args.get('lang')=='en' and response.is_json and not request.path.startswith('/api/v1/admin/'):
+        try:
+            response.set_data(__import__('json').dumps(locale.project(response.get_json(),locale.public_fields()),ensure_ascii=False))
+            response.headers['Content-Language']='en'
+            response.headers['Cache-Control']='no-store'
+        except PlatformError as exc:
+            response=jsonify(detail=str(exc),code=exc.code);response.status_code=exc.status
+    elif response.status_code>=400 and request.headers.get('Accept-Language','').startswith('en') and response.is_json:
+        response.set_data(__import__('json').dumps(locale.project(response.get_json(),strict=False),ensure_ascii=False))
     return response
 
 
 @bp.before_request
 def protect():
+    from backend.knowledge.locale import language
+    language(request.args.get('lang'))
     if request.method == 'OPTIONS':
         return '', 204
     if not read_allowed() and not request.path.startswith('/api/v1/admin/'):
@@ -159,6 +173,8 @@ def export(rid):
         return jsonify(data)
     if fmt not in {'markdown', 'bibtex'}:
         raise ValueError('Supported formats: markdown, bibtex, json')
+    from backend.knowledge.locale import searchable
+    data=searchable(data)
     content = bibtex(data) if fmt == 'bibtex' else markdown(data)
     return Response(content, content_type='text/plain; charset=utf-8', headers={
         'Content-Disposition': f'attachment; filename="fieldtofit-{rid}.{ "bib" if fmt == "bibtex" else "md"}"'})
@@ -602,6 +618,11 @@ def platform_export(rid):
     return Response(result['markdown'], content_type='text/markdown; charset=utf-8',
                     headers={'Content-Disposition': f'attachment; filename="fieldtofit-publication-{result["revision"]}.md"'})
 
+@bp.post('/admin/platform/objects/<rid>/english-review')
+@admin_required
+def platform_english_review(rid):
+    return jsonify(platform.english_review(rid,request.get_json()))
+
 
 @bp.get('/admin/platform/objects/<rid>')
 @admin_required
@@ -795,7 +816,8 @@ def workspace_save(kind,ident):
 @bp.post('/admin/workspace/content/<kind>/<ident>/<action>')
 @admin_required
 def workspace_action(kind,ident,action):
-    from backend.knowledge.content_workspace import preview,publish,restore
+    from backend.knowledge.content_workspace import preview,publish,restore,english_review
+    if action=='english-review':return jsonify(english_review(kind,ident,body()))
     if action=='submit-review':
         from backend.knowledge.operation_board import submit
         return jsonify(submit(kind,ident,body()))

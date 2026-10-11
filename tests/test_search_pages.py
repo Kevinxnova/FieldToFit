@@ -76,6 +76,7 @@ def test_sitemap_exact_public_set_and_real_dates(site):
     for kind in ('news', 'watch'):
         expected.update(seo.ORIGIN+seo.detail_url(item['id']) for item in site.get('/api/v1/platform/'+kind).json['items'])
     actual = urls(site)
+    expected.update(seo.ORIGIN+'/en'+url.removeprefix(seo.ORIGIN) for url in list(expected))
     assert set(actual) == expected
     assert all(date is None for date in actual.values())  # seed review dates aren't modification dates
     assert all(get(site, url.removeprefix(seo.ORIGIN)).status_code == 200 for url in actual)
@@ -192,7 +193,7 @@ def test_sitemap_uses_public_snapshot_without_maintenance_reads(site, monkeypatc
     assert seo.ORIGIN+'/news/D-01' not in actual
     assert seo.ORIGIN+'/news/D-02' not in actual
     assert seo.ORIGIN+'/news/D-03' in actual
-    assert set(actual) == set(expected) - {seo.ORIGIN+'/news/D-01', seo.ORIGIN+'/news/D-02'}
+    assert set(actual) == set(expected) - {seo.ORIGIN+prefix+'/news/'+ident for prefix in ('','/en') for ident in ('D-01','D-02')}
 
 
 def test_remote_sitemap_reads_one_atomic_snapshot(site, monkeypatch):

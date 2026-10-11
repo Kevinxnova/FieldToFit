@@ -155,7 +155,7 @@ def save_record(data, reason="Source update", record_id=None, connection=None):
     return rid, True
 
 
-def add_evidence(record_id, url, title, body="", locator="", version="", evidence_type="source", coverage="excerpt", connection=None):
+def add_evidence(record_id, url, title, body="", locator="", version="", evidence_type="source", coverage="excerpt", connection=None, retrieved_at=None):
     url = canonical_url(url)
     if coverage not in {"full_text", "excerpt", "abstract", "link_only"}:
         raise ValueError("Invalid material coverage")
@@ -165,7 +165,7 @@ def add_evidence(record_id, url, title, body="", locator="", version="", evidenc
     eid = stable_id(record_id, url, version, locator, digest)
     with (nullcontext(connection) if connection is not None else get_db(atomic=True)) as db:
         inserted = db.execute("INSERT OR IGNORE INTO knowledge_evidence VALUES(?,?,?,?,?,?,?,?,?,?,?)",
-                   (eid, record_id, url, title, body, locator, version, evidence_type, coverage, now(), digest))
+                   (eid, record_id, url, title, body, locator, version, evidence_type, coverage, retrieved_at or now(), digest))
         if inserted.rowcount:
             row = db.execute('SELECT * FROM knowledge_records WHERE id=?', (record_id,)).fetchone()
             snapshot = row_record(row)

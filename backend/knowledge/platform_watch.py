@@ -121,15 +121,19 @@ def watch(q='', id='', type='', revision='', origin='', _data=None):
         raise PlatformError('Unknown watch type', 'invalid_type', 400)
     try:
         from backend.knowledge.content_workspace import load_published
-        public = public_collection(_data if _data is not None else load_published('watch', CONTENT_PATH))
+        data = _data if _data is not None else load_published('watch', CONTENT_PATH)
+        public = public_collection(data)
     except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
         raise PlatformError('Watch collection is temporarily unavailable', 'watch_unavailable', 503) from exc
-    fingerprint = hashlib.sha256(json.dumps(public, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    from backend.knowledge.locale import review_fingerprint
+    translations={i['id']:review_fingerprint(i) for i in data['items'] if i['state']=='published' and review_fingerprint(i)}
+    fingerprint = hashlib.sha256(json.dumps({**public,**({'english':translations} if translations else {})}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     if revision and revision != fingerprint:
         raise PlatformError('Watch revision changed; read the current collection', 'watch_revision_changed', 409)
+    from backend.knowledge.locale import searchable
     entries = [i for i in public['items'] if (not id or i['id'] == id) and (not type or i['type'] == type)
                and (not origin or i.get('origin') == origin)
-               and (not q or q.casefold() in json.dumps(i, ensure_ascii=False).casefold())]
+               and (not q or q.casefold() in json.dumps(searchable(i), ensure_ascii=False).casefold())]
     if id and not entries:
         raise PlatformError('Watch item not found or withdrawn', 'not_found', 404)
     from backend.knowledge.stewardship import decorate

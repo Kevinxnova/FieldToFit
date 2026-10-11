@@ -1,5 +1,5 @@
 import { publicContentLink } from '../../search';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '@fieldtofit/locale/router';
 import { useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 export type Maintenance = {id:string;canonical_id:string;availability:string;status_revision?:string;relationships:{id:string;name:string;url:string;relation:string;direction:string;version:string;evidence:string}[];materials:{id:string;availability:string;last_checked_at:string;last_success_at:string;failure_days:number;error:string;needs_review:boolean;public_note?:string;changed?:boolean}[]};

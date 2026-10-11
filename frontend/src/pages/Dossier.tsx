@@ -1,7 +1,7 @@
 import { VisitReady } from '../components/workspace/SiteVisits';
 import { useState } from "react";
 import { StructuredReading } from "./KnowledgeReading";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "@fieldtofit/locale/router";
 import SkillDetails from "../components/workspace/SkillDetails";
 import {
   downloadRecord,

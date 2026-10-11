@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { currentLanguage, useLanguage, english } from '../locale/language';
 
 export const BASE = (import.meta.env.VITE_API_URL || "") + "/api";
 export type Kind = "event" | "paper" | "resource";
@@ -144,6 +145,7 @@ export async function request<T>(
   admin = false,
 ): Promise<T> {
   const headers = new Headers(options.headers);
+  headers.set('Accept-Language',currentLanguage()==='en' ? 'en' : 'zh-CN');
   if (options.body) headers.set("Content-Type", "application/json");
   const token = readToken();
   if (token) headers.set("Authorization", `Bearer ${token}`);
@@ -152,7 +154,8 @@ export async function request<T>(
       "X-Admin-Password",
       sessionStorage.getItem("fieldtofit-admin-password") || "",
     );
-  const response = await fetch(BASE + path, {
+  const localizedPath = !admin && currentLanguage()==='en' && !/[?&]lang=/.test(path) ? path+(path.includes('?')?'&':'?')+'lang=en' : path;
+  const response = await fetch(BASE + localizedPath, {
     ...options,
     headers,
     credentials: "include",
@@ -160,7 +163,7 @@ export async function request<T>(
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
     throw new Error(
-      error.detail || error.error || `Request failed (${response.status})`,
+      currentLanguage()==='en' ? english(error.detail || error.error || `Request failed (${response.status})`) : error.detail || error.error || `Request failed (${response.status})`,
     );
   }
   return response.json();
@@ -174,13 +177,18 @@ export function send<T>(
   return request<T>(path, { method, body: JSON.stringify(data) }, admin);
 }
 export function useRemote<T>(path: string | null, admin = false) {
+  const selectedLanguage = useLanguage();
+  const language = admin ? 'canonical' : selectedLanguage;
+  const previousPath=useRef(path);
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(!!path);
   const [revision, setRevision] = useState(0);
   useEffect(() => {
     const controller = new AbortController();
-    setData(null);
+    // Retain component state while the same publication changes language.
+    if (previousPath.current!==path) setData(null);
+    previousPath.current=path;
     setError("");
     setLoading(!!path);
     if (path)
@@ -193,7 +201,7 @@ export function useRemote<T>(path: string | null, admin = false) {
           if (!controller.signal.aborted) setLoading(false);
         });
     return () => controller.abort();
-  }, [path, revision, admin]);
+  }, [path, revision, admin, language]);
   return { data, error, loading, reload: () => setRevision((r) => r + 1) };
 }
 export async function downloadRecord(
@@ -203,7 +211,7 @@ export async function downloadRecord(
   const headers = new Headers();
   if (readToken()) headers.set("Authorization", `Bearer ${readToken()}`);
   const response = await fetch(
-    `${BASE}/v1/records/${id}/export?format=${format}`,
+    `${BASE}/v1/records/${id}/export?format=${format}&lang=${currentLanguage()}`,
     { headers, credentials: "include" },
   );
   if (!response.ok) throw new Error("Export failed");

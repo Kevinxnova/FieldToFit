@@ -1,6 +1,6 @@
 import {MapCards} from './TechnicalMaps';
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from '@fieldtofit/locale/router';
 import { contentPath } from '../../search';
 import { ContentExposure } from './Traffic';
 import { SourceLink, useWorkspace } from './UI';

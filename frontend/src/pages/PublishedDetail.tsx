@@ -1,5 +1,5 @@
 import {RelatedMaps} from '../components/workspace/TechnicalMaps';
-import { Link, Navigate, useParams, useLocation } from 'react-router-dom';
+import { Link, Navigate, useParams, useLocation } from '@fieldtofit/locale/router';
 import { useRemote } from '../api/knowledge';
 import { NewsReading, type NewsCollection } from '../components/workspace/NewsReading';
 import { ContinuousWatch, type WatchCollection } from '../components/workspace/ContinuousWatch';

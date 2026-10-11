@@ -101,6 +101,8 @@ def index(db):
         for item in public['items']:
             ident = item['id']
             materials = cm.normalize(raw_items[ident])
+            from backend.knowledge.locale import searchable
+            localized=searchable(item)
             doc = {'id': ident, 'scope': kind, 'name': item['name'],
                    'types': [item['type']] if kind == 'watch' else ['event'],
                    'aliases': item.get('aliases', []), 'introduction': item.get('introduction', item.get('summary', '')),
@@ -111,11 +113,13 @@ def index(db):
                    'reading': {'tool': 'curated_' + kind, 'arguments': {'id': ident, 'revision': public['revision']}},
                    'object_reading': {'tool': 'curated_object', 'arguments': {'id': ident}},
                    'bundle_ref': {'id': ident, **({'content_revision': item['materials_revision']} if item.get('materials_revision') else {})},
-                   '_related': item.get('related', []), '_fields': list(fields(item)), '_bodies': {m['id']: m['body'] for m in materials if m['coverage'] in {'full_text', 'excerpt'}}}
+                   '_related': item.get('related', []), '_fields': list(fields(localized)), '_bodies': {m['id']: m['body'] for m in materials if m['coverage'] in {'full_text', 'excerpt'}}}
+            for key in ('name','aliases','introduction','materials'):doc[key]=localized.get(key,doc[key])
             docs[ident] = doc
     evidence = {(r['record_id'], r['id']): r for r in results[2]}
     for row in results[1]:
-        obj = store.decode(row['snapshot'], {})
+        from backend.knowledge.locale import searchable
+        obj = searchable(store.decode(row['snapshot'], {}))
         ident = row['record_id']; revision = row['seq']
         materials = []; bodies = {}
         for m in obj['materials']:
@@ -218,6 +222,8 @@ def lookup(q, scope='all', object_type='', limit=10, cursor=None):
         raise p.PlatformError('Invalid lookup scope or object type')
     limit = p.integer(limit, 'limit', 1, 50)
     query = {'q': q, 'scope': scope, 'object_type': object_type, 'limit': limit}
+    from backend.knowledge.locale import is_english
+    if is_english():query['lang']='en'
     with get_db() as db:
         if not isinstance(db, TursoConnection):
             db.execute('BEGIN')

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@fieldtofit/locale/router';
 import { contentPath } from '../../search';
 import { useWorkspace } from './UI';
 import { SourcePostCard } from './SourcePostCard';

@@ -163,11 +163,14 @@ def news(q='', id='', revision='', _data=None):
         published.append(obj)
     from backend.knowledge.codex_progress import projection
     topic = projection(published)
-    fingerprint = hashlib.sha256(json.dumps({'items': published, 'codex_progress': topic, **{k: data[k] for k in ('schema_version', 'edition', 'title', 'reviewed_at')}}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    from backend.knowledge.locale import review_fingerprint
+    translations={i['id']:review_fingerprint(i) for i in data['items'] if i['state']=='published' and review_fingerprint(i)}
+    fingerprint = hashlib.sha256(json.dumps({'items': published, 'codex_progress': topic, **({'english':translations} if translations else {}), **{k: data[k] for k in ('schema_version', 'edition', 'title', 'reviewed_at')}}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     if revision and revision != fingerprint:
         raise PlatformError('News revision changed; read the current collection', 'news_revision_changed', 409)
+    from backend.knowledge.locale import searchable
     entries = [item for item in published if (not id or item['id'] == id) and
-               (not q or q in ' '.join([item['title'], item['name'], item['organization'], item['summary']]).casefold())]
+               (not q or q in ' '.join(str(v) for v in searchable({k:item[k] for k in ('title','name','organization','summary')}).values()).casefold())]
     if id and not entries:
         raise PlatformError('News item not found or withdrawn', 'not_found', 404)
     from backend.knowledge.stewardship import decorate

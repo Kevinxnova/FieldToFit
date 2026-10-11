@@ -1,4 +1,5 @@
 """Reviewed report text follows the existing publication boundary and history."""
+from english_fixtures import reviewed_preview
 import copy
 import hashlib
 import json
@@ -26,7 +27,7 @@ def prepare(client):
 def test_reading_publication_ai_no_js_revision_and_restore(client):
     before=tm.maps();ident=prepare(client)
     assert tm.maps()==before
-    preview=ws.preview('news',ident);assert preview['ready']
+    preview=reviewed_preview('news',ident);assert preview['ready']
     assert preview['preview']['items'][0]['technical_map']['reading']==case()['technical_map']['reading']
     publish(client,'news',ident);slug=case()['technical_map']['slug'];first=tm.maps(slug=slug)
     assert first['items'][0]['reading']==case()['technical_map']['reading']
@@ -61,7 +62,7 @@ def test_reading_publication_ai_no_js_revision_and_restore(client):
 def test_unreviewable_reading_cannot_publish(client,change):
     ident=prepare(client);before=tm.maps();d=ws.detail('news',ident);change(d['draft']['technical_map']['reading'])
     ws.save('news',ident,{'draft':d['draft'],'draft_version':d['draft_version']})
-    assert not ws.preview('news',ident)['ready'] and tm.maps()==before
+    assert not reviewed_preview('news',ident)['ready'] and tm.maps()==before
 
 
 def test_assets_match_verified_captures_and_escaped_text(client):
@@ -84,7 +85,7 @@ def test_consumer_analysis_preserves_panel_scope_redraw_provenance_and_publicati
     assert all(e['relation']=='parallel' for e in item['technical_map']['edges'])
     migrate(client);ident,_=make(client,'news');d=ws.detail('news',ident);item['id']=ident
     before=tm.maps();ws.save('news',ident,{'draft':item,'draft_version':d['draft_version']})
-    assert tm.maps()==before and ws.preview('news',ident)['ready']
+    assert tm.maps()==before and reviewed_preview('news',ident)['ready']
     publish(client,'news',ident);data=tm.maps(slug='consumer-fixture-analysis');public=data['items'][0]
     assert public['reports'][0]['first_published_at']=='2026-10-05'
     assert len(public['reading']['findings'])==4 and '美国面板' in public['caution']

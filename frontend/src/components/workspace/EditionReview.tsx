@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@fieldtofit/locale/router';
 import { request, send, useRemote } from '../../api/knowledge';
 import { SourceLink, useWorkspace } from './UI';
 

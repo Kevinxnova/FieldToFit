@@ -92,7 +92,7 @@ def invalidate(db, rid, reason='Underlying source record or material changed'):
 
 
 def _normalize(data):
-    if not isinstance(data, dict) or set(data) - {'introduction', 'aliases', 'roles', 'attention', 'materials'}:
+    if not isinstance(data, dict) or set(data) - {'introduction', 'aliases', 'roles', 'attention', 'materials','translations'}:
         raise PlatformError('Unsupported profile fields')
     out = {'introduction': text(data.get('introduction', ''), 'introduction', 1200, required=False)}
     aliases = data.get('aliases', [])
@@ -216,10 +216,25 @@ def _draft(db, rid):
                         'scope': 'Declared materials only; not all upstream documentation'},
            'unknown_fields': [k for k, f in facts.items() if f.get('status') == 'unknown'],
            'limitations': 'Source claims and editorial organization; no tool execution or task suitability certification.'}
+    from backend.knowledge import locale
+    if profile.get('translations'):obj['translations']=profile['translations']
+    english=locale.status('library',obj)
+    if locale.strings(locale.authored('library',obj)) and english['state']!='reviewed':errors.append('Complete and confirm the English review before publication')
     # Hash includes actual record revision and immutable evidence IDs, not a moving review clock.
     token = hashlib.sha256(store.encode({'profile_revision': profile_revision, 'object': obj, 'selection': _selection(db, rid)}).encode()).hexdigest()
     return {'schema_version': SCHEMA_VERSION, 'object': obj, 'profile': profile, 'profile_revision': profile_revision,
-            'review_token': token, 'selection': _selection(db, rid), 'gate': {'ready': not errors, 'errors': errors}}
+            'review_token': token, 'selection': _selection(db, rid), 'english':english,'gate': {'ready': not errors, 'errors': errors}}
+
+def english_review(rid,data,connection=None):
+    from backend.knowledge.content_workspace import reviewed_english
+    with (nullcontext(connection) if connection is not None else get_db(atomic=True)) as db:
+        current=_draft(db,rid)
+        if data.get('draft_version')!=current['profile_revision']:raise PlatformError('Profile changed; reload before English review','revision_conflict',409)
+        obj=reviewed_english('library',current['object'],data)
+        profile=current['profile'];profile['translations']=obj['translations']
+        db.execute('UPDATE knowledge_platform_profiles SET data=?,revision=revision+1,updated_at=? WHERE record_id=?',(store.encode(profile),store.now(),rid))
+        if current['selection']['state']=='published':_append(db,rid,'needs_review',{},'English draft changed; explicit bilingual publication review required')
+        return _draft(db,rid)
 
 
 def preview(rid):
@@ -234,6 +249,7 @@ def save_profile(rid, data, expected_revision, reason, connection=None):
     with (nullcontext(connection) if connection is not None else get_db(atomic=True)) as db:
         _record(db, rid)
         old, revision = _profile(db, rid)
+        if old.get('translations'):normalized['translations']=copy.deepcopy(old['translations'])
         if revision != expected_revision:
             raise PlatformError('Profile changed; reload before saving', 'revision_conflict', 409)
         if old != normalized:
@@ -293,6 +309,8 @@ def _get_object(db, rid, revision=None):
     source_check = platform_sources.status(db, platform_sources.source_id(db, obj))
     from backend.knowledge.platform_maintenance import public_check
     source_check.update(public_check(db, source_check['id'], obj))
+    from backend.knowledge.locale import public_snapshot
+    obj=public_snapshot('library',obj,obj)
     return {'schema_version': SCHEMA_VERSION, 'revision': row['seq'], 'published_at': row['created_at'],
             'selection_state': selection['state'], 'is_current': selection['state'] == 'published' and selection['revision'] == row['seq'],
             'record_checked_at': record['checked_at'], 'freshness': record['freshness'], 'source_check': source_check, 'object': obj}
@@ -327,6 +345,8 @@ def read_material(rid, material_id, revision=None, offset=0, limit=12000):
 
 def export(rid, revision=None):
     publication = get_object(rid, revision)
+    from backend.knowledge.locale import searchable,is_english
+    publication=searchable(publication)
     obj = publication['object']
     lines = [f"# {obj['name']}", '', obj['introduction'], '', f"Object: {rid}", f"Publication revision: {publication['revision']}",
              f"Source version: {obj['upstream_version'] or 'unknown'}", f"Selection state: {publication['selection_state']}",
@@ -342,7 +362,7 @@ def export(rid, revision=None):
         lines.extend(['', f"### {material['title']} · {material['locator']}", f"ID: {material['id']}",
                       f"Source: {material['source_url']}", f"Version: {material['upstream_version'] or 'unknown'}",
                       f"Coverage: {material['coverage']} / {material['source_coverage']}; characters: {material['characters']}",
-                      f"Note: {material['note']}", f"Read: /api/v1/platform/objects/{rid}/materials/{material['id']}?revision={publication['revision']}"])
+                      f"Note: {material['note']}", f"Read: /api/v1/platform/objects/{rid}/materials/{material['id']}?revision={publication['revision']}"+('&lang=en' if is_english() else '')])
     lines.extend(['', '## Reading boundary', obj['limitations'],
                   'This is a material manifest with citations. Original text is available through the material read endpoints; no task plan is generated.'])
     return {**publication, 'markdown': '\n'.join(lines), 'export_kind': 'manifest_with_citations', 'requires_service_for_full_text': True}

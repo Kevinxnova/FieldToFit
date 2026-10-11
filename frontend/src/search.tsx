@@ -1,18 +1,20 @@
 import { useEffect } from 'react';
+import { languagePath, useLanguage } from './locale/language';
 import pages from '../../backend/seo/pages.json';
 
 type PageCopy = { title: [string, string]; heading: [string, string]; description: [string, string] };
 export const searchPages = pages as unknown as Record<string, PageCopy>;
-export const contentPath = (id: string) => (id.startsWith('D-') ? '/news/' : '/watch/') + id;
+export const contentPath = (id: string) => languagePath((id.startsWith('D-') ? '/news/' : '/watch/') + id);
 export function publicContentLink(url: string) {
   const match = /^\/for-you#(?:news|watch)-((?:d-\d+|cw-[matsh]\d+))$/i.exec(url);
   return match ? contentPath(match[1].toUpperCase()) : url;
 }
 
 export function PageMetadata({ title, description = '', path, index = true }: {title:string; description?:string; path:string; index?:boolean}) {
+  const language=useLanguage();
   useEffect(() => {
     document.title = title;
-    const url = 'https://fieldtofit.top' + path;
+    const url = 'https://fieldtofit.top' + languagePath(path,language);
     const meta = (attribute: 'name'|'property', name: string, content: string) => {
       const nodes = [...document.head.querySelectorAll<HTMLMetaElement>(`meta[${attribute}="${name}"]`)];
       const node = nodes.shift() || document.createElement('meta');
@@ -25,6 +27,10 @@ export function PageMetadata({ title, description = '', path, index = true }: {t
     const links = [...document.head.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]')];
     const link = links.shift() || document.createElement('link'); links.forEach(n => n.remove());
     link.rel = 'canonical'; link.href = url; document.head.appendChild(link);
-  }, [title, description, path, index]);
+    for (const locale of ['zh','en'] as const) {
+      const alternate=document.head.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${locale==='zh'?'zh-CN':'en'}"]`) || document.createElement('link');
+      alternate.rel='alternate';alternate.hreflang=locale==='zh'?'zh-CN':'en';alternate.href='https://fieldtofit.top'+languagePath(path,locale);document.head.appendChild(alternate);
+    }
+  }, [title, description, path, index,language]);
   return null;
 }

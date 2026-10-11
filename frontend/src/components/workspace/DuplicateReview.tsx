@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@fieldtofit/locale/router";
 import { type Dossier } from "../../api/knowledge";
 import { SourceLink, useWorkspace } from "./UI";
 

@@ -1,4 +1,5 @@
 """v1.4.0 identity and material lifecycle acceptance; isolated content only."""
+from english_fixtures import reviewed_preview
 import copy
 import json
 from datetime import datetime,timedelta,timezone
@@ -14,7 +15,8 @@ from backend.db import get_db
 def ready(data):
     p=s.preview(data)
     data={**data,'choices':{c['field']:'target' for c in p['conflicts']}}
-    p=s.preview(data);assert p['ready'],p['errors']
+    from english_fixtures import reviewed_merge
+    data,p=reviewed_merge(data);assert p['ready'],p['errors']
     return data,p
 
 
@@ -134,12 +136,12 @@ def test_old_material_links_permissions_after_merge_and_cursor_redaction(client)
     assert cm.read(source,'readme',rev)['maintenance']['canonical_id']==target
     item=ws.detail('watch',target);item['draft']['reading_materials']=[];ws.save('watch',target,item);publish(client,'watch',target)
     with pytest.raises(PlatformError):cm.read(source,'readme',rev)
-    p=ws.preview('watch',target);ws.publish('watch',target,{'draft_version':p['draft_version'],'reason':'Withdraw test'},True)
+    p=reviewed_preview('watch',target);ws.publish('watch',target,{'draft_version':p['draft_version'],'reason':'Withdraw test'},True)
     assert s.public_status(source)['availability']=='unavailable'
 
 
 def test_failed_recheck_cannot_resurrect_withdrawn_item(client,monkeypatch):
-    args=material(client);p=ws.preview('watch',args[0]);ws.publish('watch',args[0],{'draft_version':p['draft_version'],'reason':'Withdraw'},True)
+    args=material(client);p=reviewed_preview('watch',args[0]);ws.publish('watch',args[0],{'draft_version':p['draft_version'],'reason':'Withdraw'},True)
     assert s.observe(*args,OK,at(5))['status']=='discarded'
     assert s.public_status(args[0])['availability']=='unavailable'
 
@@ -226,7 +228,7 @@ def test_relation_removal_and_old_change_snapshot_redaction(client):
     d={'action':'relation_remove','source':'D-01','link_id':lid,'reason':'Incorrect relationship'}
     p=s.preview(d);s.apply({**d,'review_token':p['review_token'],'confirmed':True})
     assert not s.public_status('D-01')['relationships'] and not s.public_status(args[0])['relationships']
-    p=ws.preview('watch',args[0]);ws.publish('watch',args[0],{'draft_version':p['draft_version'],'reason':'Withdraw'},True)
+    p=reviewed_preview('watch',args[0]);ws.publish('watch',args[0],{'draft_version':p['draft_version'],'reason':'Withdraw'},True)
     page=first
     while page['has_more']:
         page=s.changes(limit=1,cursor=page['next_cursor'])
@@ -243,7 +245,7 @@ def test_private_group_can_hold_unapproved_material_without_publishing(client):
     s.apply({**data,'review_token':p['review_token'],'confirmed':True})
     assert client.get('/api/v1/platform/watch').json==before
     assert any(not m['approved'] for m in ws.detail('watch',target)['draft']['reading_materials'])
-    assert not ws.preview('watch',target)['ready']
+    assert not reviewed_preview('watch',target)['ready']
     assert not any({v['source'],v['target']}=={source,target} for v in s.suggestions())
 
 
@@ -315,7 +317,7 @@ def test_remote_upgrade_uses_atomic_batch_and_is_idempotent(client,monkeypatch):
     monkeypatch.setattr(s,'get_db',remote)
     s.upgrade();s.upgrade()
     # Shared additive workspace migration also includes four private name tables and two private map check tables.
-    assert calls==[19,19]
+    assert calls==[21,21]
     with get_db() as db:assert db.execute("SELECT count(*) FROM sqlite_master WHERE type='table' AND name LIKE 'fieldtofit_steward_%'").fetchone()[0]==6
     with get_db() as db:
         for name in ('object_check_plans','object_check_runs','object_check_attempts','correction_contexts','correction_events'):

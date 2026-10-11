@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from '@fieldtofit/locale/router';
 import { BASE, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 import { ContentMaterials, type ReadingMaterial } from './ContentMaterials';
@@ -52,7 +52,7 @@ export function UnifiedLookup(){
      <h3><Link to={hit.web_url}>{hit.name}</Link></h3><p>{hit.introduction}</p>
      <p className="lookup-reasons">{hit.match_reasons.map(r=><span key={r}>{reasons[r]||r}</span>)}</p>
      {hit.changed_since_search&&<p className="platform-notice">{pick('搜索后此项已更新；下面展示当前公开版本。','Updated since this search; the current public revision is shown below.')}</p>}
-     {hit.snippets.map((s,i)=><blockquote className="lookup-snippet" key={i}><small>{s.content_role==='source_material'?pick('原文片段','Source excerpt'):pick('整理内容 / 标题片段','Editorial / title excerpt')}{s.locator?' · '+s.locator:''}</small><p>{s.text}</p>{s.source_url&&<a href={s.source_url} target="_blank" rel="noreferrer">{pick('核对原始出处','Verify source')} ↗</a>}</blockquote>)}
+     {hit.snippets.map((s,i)=><blockquote className="lookup-snippet" key={i}><small>{s.content_role==='source_material'?pick('原文片段','Source excerpt'):pick('整理内容 / 标题片段','Editorial / title excerpt')}{s.locator?' · '+s.locator:''}</small><p data-original-language={s.content_role==='source_material'?'source':undefined}>{s.text}</p>{s.source_url&&<a href={s.source_url} target="_blank" rel="noreferrer">{pick('核对原始出处','Verify source')} ↗</a>}</blockquote>)}
      <p className="muted">{hit.coverage.readable_materials?pick(`${hit.coverage.readable_materials} 份所存材料可读 · ${hit.coverage.link_only_materials} 份仅链接`,`${hit.coverage.readable_materials} readable stored materials · ${hit.coverage.link_only_materials} link-only`):pick('当前没有可读的所存原文；已整理内容和来源链接可用。','No readable stored source text; editorial content and source links are available.')}{hit.checked_at?' · '+pick('核对日期 ','Reviewed ')+hit.checked_at:''}</p>
      <div className="platform-actions"><Link className="text-button" to={hit.web_url}>{pick('查看完整内容','Read full entry')}</Link><button className="button" onClick={()=>copy(hit)}>{pick('把这项交给 AI','Give this to my AI')}</button><button className="button" aria-pressed={selected.some(p=>p.id===hit.id)} disabled={selected.length>=10&&!selected.some(p=>p.id===hit.id)} onClick={()=>toggle(hit)}>{selected.some(p=>p.id===hit.id)?pick('移出资料包','Remove from package'):pick('加入资料包','Add to package')}</button></div>
      <PublicMaintenance value={hit.maintenance}/>{hit.scope!=='library'&&<ContentMaterials item={hit}/>}

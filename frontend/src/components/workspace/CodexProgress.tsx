@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from '@fieldtofit/locale/router';
 import { contentPath } from '../../search';
 import { SourceLink, useWorkspace } from './UI';
 import { ContentExposure, trackAction } from './Traffic';
@@ -14,7 +14,7 @@ import { CodexShare } from './CodexShare';
 import { CodexRoundup } from './CodexRoundup';
 
 export function CodexProgress({data,preview=false}:{data:NewsCollection;preview?:boolean}) {
-  const {pick,notify}=useWorkspace();const [params,setParams]=useSearchParams();
+  const {pick,notify,zh}=useWorkspace();const [params,setParams]=useSearchParams();
   const topic=data.codex_progress;
   if(!topic?.days.length)return null;
   const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Shanghai'}).format(new Date());
@@ -31,7 +31,7 @@ export function CodexProgress({data,preview=false}:{data:NewsCollection;preview?
     const ids=days.flatMap(d=>dayItems(d,byId).map(i=>i.id));
     const summaries=roundups.filter(r=>days.some(d=>d.date===r.date));
     const references=[...new Set(summaries.flatMap(r=>r.steps.map(s=>s.news_id)))].filter(id=>!ids.includes(id));
-    const value=JSON.stringify({schema_version:'fieldtofit.codex-progress.v1',revision:data.revision,topic:{...topic,days,roundups:summaries,total:ids.length},items:ids.map(id=>byId.get(id)),referenced_items:references.map(id=>byId.get(id)),reading:[...ids,...references].map(id=>({tool:'curated_news',arguments:{id,revision:data.revision}}))},null,2);
+    const value=JSON.stringify({schema_version:'fieldtofit.codex-progress.v1',revision:data.revision,topic:{...topic,days,roundups:summaries,total:ids.length},items:ids.map(id=>byId.get(id)),referenced_items:references.map(id=>byId.get(id)),reading:[...ids,...references].map(id=>({tool:'curated_news',arguments:{id,revision:data.revision,...(!zh?{lang:'en'}:{})}}))},null,2);
     try{await navigator.clipboard.writeText(value);ids.forEach(id=>trackAction('handoff_copy',id));notify(pick('所选日志、出处和AI读取方式已复制','Selected logs, sources and AI reading instructions copied'));}
     catch{const url=URL.createObjectURL(new Blob([value],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='codex-28-days-'+current+'.json';a.click();URL.revokeObjectURL(url);}
   };

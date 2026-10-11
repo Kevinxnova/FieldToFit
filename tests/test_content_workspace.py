@@ -8,6 +8,12 @@ from backend.knowledge import content_workspace as ws
 
 BASE='/api/v1/admin/workspace'
 def call(client,path,body=None,method='post'):
+    import re
+    match=re.fullmatch(r'/content/(news|watch|charts)/([^/]+)/preview',path)
+    if match:
+        from english_fixtures import approve_fixture
+        try:approve_fixture(*match.groups())
+        except (ValueError,KeyError,TypeError):pass
     return getattr(client,method)(BASE+path,headers=ADMIN,**({'json':body or {}} if method!='get' else {}))
 def migrate(client):
     r=call(client,'/migrate');assert r.status_code==200,r.json
@@ -26,6 +32,8 @@ def valid(client,kind,ident):
     return r.json
 
 def publish(client,kind,ident):
+    from english_fixtures import approve_fixture
+    approve_fixture(kind,ident)
     preview=call(client,f'/content/{kind}/{ident}/preview').json;assert preview['ready'],preview
     r=call(client,f'/content/{kind}/{ident}/publish',{'draft_version':preview['draft_version'],'review_token':preview['review_token'],'confirmed':True,'reason':'Reviewed isolated test content'})
     assert r.status_code==200,r.json
@@ -78,6 +86,7 @@ def test_conflicts_import_provenance_and_publication_preview(client):
     bad={**exported,'materials_fingerprint':'stale'}
     assert call(client,f'/content/watch/{ident}',bad,'patch').status_code==409
     preview=call(client,f'/content/watch/{ident}/preview').json
+    exported=call(client,f'/content/watch/{ident}/export',method='get').json
     assert call(client,f'/content/watch/{ident}',exported,'patch').status_code==200
     assert call(client,f'/content/watch/{ident}',exported,'patch').status_code==409
     assert call(client,f'/content/watch/{ident}/publish',{'draft_version':preview['draft_version'],'review_token':preview['review_token'],'reason':'test','confirmed':True}).status_code==409
@@ -297,6 +306,7 @@ def test_news_media_review_publish_remove_and_server_dates(client):
     preview=call(client,f'/content/news/{ident}/preview').json
     assert preview['ready'] and preview['preview']['items'][0]['media']==media_fixture()
     assert client.get('/api/v1/platform/news?id='+ident).status_code==404
+    saved=call(client,f'/content/news/{ident}',method='get').json
     saved['draft']['media']['caption']='Corrected reviewed caption'
     changed=call(client,f'/content/news/{ident}',{'draft_version':saved['draft_version'],'draft':saved['draft']},'patch').json
     assert call(client,f'/content/news/{ident}/publish',{'draft_version':changed['draft_version'],'review_token':preview['review_token'],'confirmed':True,'reason':'Stale preview must fail'}).status_code==409

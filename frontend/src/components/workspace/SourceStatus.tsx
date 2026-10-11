@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from '@fieldtofit/locale/router';
 import { useRemote } from '../../api/knowledge';
 import { dateText, useWorkspace } from './UI';
 

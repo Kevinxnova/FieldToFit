@@ -1,6 +1,6 @@
 import { publicContentLink } from '../../search';
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '@fieldtofit/locale/router';
 import { useWorkspace } from './UI';
 export type ReadingAnchor = { id:string;title:string };
 export function ReadingContents({news,newsTotal,codexProgress=false,technicalMaps=false,resources,resourceTotal,loading,filtered,groups=[]}:{groups?:{id:string;title:string;items:ReadingAnchor[]}[];news:ReadingAnchor[];newsTotal:number|null;codexProgress?:boolean;technicalMaps?:boolean;resources:ReadingAnchor[];resourceTotal:number|null;loading:boolean;filtered:boolean}){

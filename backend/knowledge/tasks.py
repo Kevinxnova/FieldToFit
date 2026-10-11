@@ -183,6 +183,8 @@ def pack(goal,constraints=None,persona='engineer',limit=12,offset=0,background='
             'research_comparison':research_compare(dossiers) if persona in {'researcher','graduate'} and len(dossiers)>1 else None,
             'next_steps':task_plan['next_steps'],
             'generated_at':store.now(),'ai_generated':False}
+    from backend.knowledge.locale import searchable
+    result=searchable(result)
     result['markdown']=task_markdown(result)
     return result
 

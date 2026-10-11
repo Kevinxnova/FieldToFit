@@ -6,7 +6,8 @@ import {
   type ReactNode,
 } from "react";
 import type { Context as ReactContext } from "react";
-import { Link } from "react-router-dom";
+import { useLanguage, changeLanguage } from "../../locale/language";
+import { Link } from "@fieldtofit/locale/router";
 import { request, send, safeURL, type RecordItem } from "../../api/knowledge";
 
 const paths: Record<string, ReactNode> = {
@@ -191,7 +192,7 @@ function saveLocal(key: string, value: unknown) {
   catch { /* Reading still works when browser storage is unavailable. */ }
 }
 export function WorkspaceProvider({ children }: { children: ReactNode }) {
-  const [zh, setZh] = useState(() => local("fieldtofit-workspace-zh", true));
+  const zh = useLanguage() === "zh";
   const [dark, setDark] = useState(() => local("fieldtofit-workspace-dark", false));
   const [collection, setCollection] = useState<CollectionItem[]>(() =>
     local("fieldtofit-collection", []),
@@ -277,7 +278,7 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
         zh,
         dark,
         pick,
-        toggleLang: () => setZh(!zh),
+        toggleLang: () => changeLanguage(zh ? "en" : "zh"),
         toggleTheme: () => setDark(!dark),
         collection,
         toggleCollection,
@@ -304,7 +305,8 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   );
 }
 export function useWorkspace() {
-  return useContext(Context);
+  const context=useContext(Context);const zh=useLanguage()==='zh';
+  return {...context,zh,pick:(cn:string,en:string)=>zh ? cn : en};
 }
 export function titleOf(record: RecordItem, zh: boolean) {
   return record.kind !== "resource" && zh && record.title_zh
