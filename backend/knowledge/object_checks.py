@@ -9,6 +9,7 @@ from backend.knowledge import content_workspace as ws, stewardship as s
 from backend.knowledge.corrections import public_item, value_at
 from backend.knowledge.workspace_transactions import editorial_transaction
 from backend.knowledge.platform import text, integer
+from backend.knowledge import check_decisions as decisions
 
 
 def plan(item):
@@ -67,26 +68,35 @@ def overview(day=None):
         targets=json.loads(run['targets']) if run else []
         current=s.raw_items(db)
         aliases=s.rows(db,'fieldtofit_steward_aliases')
+        handling_available=decisions.available(db)
+        handling=decisions.events(db) if handling_available else []
+        findings=db.execute("SELECT object_id,json_extract(data,'$.changes') changes FROM fieldtofit_object_check_attempts ORDER BY created_at DESC,id DESC").fetchall()
+        by_object={};events_by_object={}
+        for finding in findings:
+            by_object.setdefault(finding['object_id'],[]).extend(json.loads(finding['changes'] or '[]'))
+        for event in handling:events_by_object.setdefault(event['object_id'],[]).append(event)
     totals={'expected':len(targets),'completed':0,'changed':0,'unchanged':0,'failed':0,'incomplete':0};rows=[]
     for target in targets:
         history=[r for r in attempts if r['day']==day and r['object_id']==target['id']]
         latest=history[-1]['data'] if history else {}
         state=latest.get('status','incomplete')
-        item=current.get(target['id']); baseline_changed=False
+        item=current.get(target['id']); baseline_changed=False;projected={}
+        if item and item.get('state')=='published' and s.resolve(target['id'],aliases=aliases)==target['id']:
+            projected=ws.render('watch',{**ws.seeds()['watch'],'items':[item]})['items'][0]
+            projected.pop('maintenance',None);projected.pop('publication',None)
         if latest.get('baseline_hash'):
-            if not item or item.get('state')!='published' or s.resolve(target['id'],aliases=aliases)!=target['id']:baseline_changed=True
-            else:
-                projected=ws.render('watch',{**ws.seeds()['watch'],'items':[item]})['items'][0]
-                projected.pop('maintenance',None);projected.pop('publication',None)
-                baseline_changed=s.digest(projected)!=latest['baseline_hash']
+            baseline_changed=not projected or s.digest(projected)!=latest['baseline_hash']
         if baseline_changed:state='incomplete'
         totals[state]+=1;totals['completed']+=int(state in ('changed','unchanged'))
+        object_history=events_by_object.get(target['id'],[]);candidates=by_object.get(target['id'],[])
         row={**target,'status':state,'baseline_changed':baseline_changed, 'last_attempt':history[-1]['created_at'] if history else None,
-             'latest':latest,'attempt_id':history[-1]['id'] if history else '', 'history':history,
+             'latest':{**latest,'changes':decisions.pending(candidates,projected,object_history)},
+             'handled_changes':decisions.handled(object_history,projected,candidates),'handling_history':object_history,
+             'attempt_id':history[-1]['id'] if history else '', 'history':history,
              'plan_entries_current':json.loads(plans[target['id']]['data']) if target['id'] in plans else target['entries'],
              'plan_version_current':plans[target['id']]['version'] if target['id'] in plans else 0}
         rows.append(row)
-    return {'day':day,'created_at':run['created_at'] if run else None,'totals':totals,'items':rows,
+    return {'day':day,'created_at':run['created_at'] if run else None,'totals':totals,'items':rows,'handling_available':handling_available,
             'scope':'已发布CW当次冻结清单；HTTP获取不算档案核对完成；公共内容与日期不会自动更新。'}
 
 
@@ -105,7 +115,7 @@ def scan(day, ident):
     if not target:ws.fail('对象不在当天清单')
     with get_db() as db:
         baseline=public_item(ident,db)
-        prior=[{'changes':json.loads(r['changes'] or '[]')} for r in db.execute("SELECT json_extract(data,'$.changes') changes FROM fieldtofit_object_check_attempts WHERE object_id=? ORDER BY created_at DESC,id DESC",(ident,)).fetchall()]
+        prior=decisions.prior_changes(db,ident);handling=decisions.events(db,ident)
     from backend.knowledge.sources import fetch,plain_html,COLLECTION_DEADLINE
     observations=[];started=time.monotonic()
     deadline_token=COLLECTION_DEADLINE.set(started+90)
@@ -124,14 +134,7 @@ def scan(day, ident):
                 observations.append({**entry,'fetched':False,'error':str(exc)[:1000],'checked_at':ws.stamp()})
     finally:
         COLLECTION_DEADLINE.reset(deadline_token)
-    pending=[];seen=set()
-    for attempt in prior:
-        for change in attempt.get('changes',[]):
-            key=ws.dump([change['field'],change['after'],change['source_url']])
-            try: before=value_at(baseline,change['field'])
-            except ws.PlatformError:continue
-            if before!=change['after'] and key not in seen:
-                pending.append({**change,'before':before,'pending_from_previous':True});seen.add(key)
+    pending=[{**c,'pending_from_previous':True} for c in decisions.pending(prior,baseline,handling)]
     return append(day,ident,{'baseline':baseline,'baseline_hash':s.digest(baseline),'observations':observations,'changes':pending,
                             'status':'failed' if any(e['required'] and not e['fetched'] for e in observations) else 'incomplete',
                             'reason':'来源已获取，仍需对照当前已审档案；抓取成功不代表没有变化。'})
@@ -163,16 +166,8 @@ def review(day, ident, data):
         completed=data.get('completed') is True and all(r.get('fetched') for r in last['observations'] if r['required']) and bool(last['observations'])
         if data.get('completed') is True and not completed:ws.fail('必要入口未齐，不能登记已完成')
         # An unchanged fetch/retry cannot silently erase an unresolved finding.
-        older=db.execute("SELECT json_extract(data,'$.changes') changes FROM fieldtofit_object_check_attempts WHERE object_id=? ORDER BY created_at DESC,id DESC",(ident,)).fetchall()
-        seen={ws.dump([r['field'],r['after'],r['source_url']]) for r in checked}
-        for attempt in older:
-            old={'changes':json.loads(attempt['changes'] or '[]')}
-            for change in old.get('changes',[]):
-                key=ws.dump([change['field'],change['after'],change['source_url']])
-                try: before=value_at(baseline,change['field'])
-                except ws.PlatformError:continue
-                if before!=change['after'] and key not in seen:
-                    checked.append({**change,'before':before,'pending_from_previous':True});seen.add(key)
+        older=[{**c,'pending_from_previous':True} for c in decisions.prior_changes(db,ident)]
+        checked=decisions.pending([*checked,*older],baseline,decisions.events(db,ident))
         status='changed' if completed and checked else 'unchanged' if completed else 'failed' if any(r['required'] and not r.get('fetched') for r in last['observations']) else 'incomplete'
         result={**last,'status':status,'changes':checked,'reason':reason,'reviewed_at':ws.stamp()}
         db.execute('INSERT INTO fieldtofit_object_check_attempts VALUES(?,?,?,?,?)',(uuid.uuid4().hex,day,ident,ws.dump(result),ws.stamp()))

@@ -842,9 +842,11 @@ def object_check_plan(ident):
 @admin_required
 def object_check_action(ident,action):
     from backend.knowledge.object_checks import scan,review,overview
+    from backend.knowledge.check_decisions import handle
     data=body(); day=data.get('day')
     if action=='scan':return jsonify(scan(day,ident))
     if action=='review':return jsonify(review(day,ident,data))
+    if action=='handle':return jsonify(handle(day,ident,data))
     if action=='proposal':
         from backend.knowledge import editorial_batches as batches
         from backend.knowledge import content_workspace as ws
@@ -854,7 +856,8 @@ def object_check_action(ident,action):
         return jsonify(batches.propose(batch['id'],{'event_url':changes[0]['source_url'],'event_version':ident+':'+target['latest']['baseline_hash'],
               'fingerprint':__import__('hashlib').sha256(ws.dump(changes).encode()).hexdigest(),
               'proposal':{'title':target['name']+' · 档案待更新','reason':target['latest']['reason'],'target_id':ident,'changes':changes,
-                          'summary':'官方证据与当前已审资料存在差异；具体上站文案确认后再创建草稿。'}}))
+                          'summary':'官方证据与当前已审资料存在差异；具体上站文案确认后再创建草稿。',
+                          'object_check':{'object_id':ident,'baseline_hash':target['latest']['baseline_hash']}}}))
     return jsonify(detail='Unknown check action'),404
 
 

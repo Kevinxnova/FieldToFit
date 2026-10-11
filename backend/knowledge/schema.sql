@@ -428,6 +428,12 @@ CREATE TABLE IF NOT EXISTS fieldtofit_object_check_attempts (
  id TEXT PRIMARY KEY, day TEXT NOT NULL, object_id TEXT NOT NULL, data TEXT NOT NULL, created_at TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS object_check_attempts ON fieldtofit_object_check_attempts(day,object_id,created_at);
+CREATE TABLE IF NOT EXISTS fieldtofit_object_check_decisions (
+ id TEXT PRIMARY KEY, object_id TEXT NOT NULL, difference_id TEXT NOT NULL,
+ version INTEGER NOT NULL, data TEXT NOT NULL, created_at TEXT NOT NULL,
+ UNIQUE(object_id,difference_id,version)
+);
+CREATE INDEX IF NOT EXISTS object_check_decisions ON fieldtofit_object_check_decisions(object_id,created_at,id);
 CREATE TABLE IF NOT EXISTS fieldtofit_correction_contexts (
  feedback_id INTEGER PRIMARY KEY, object_id TEXT NOT NULL, data TEXT NOT NULL,
  status TEXT NOT NULL DEFAULT 'pending', version INTEGER NOT NULL DEFAULT 1,

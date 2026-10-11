@@ -2,6 +2,8 @@
 
 | 文件 | 检查范围 |
 | --- | --- |
+| test_check_decisions.py | 私密差异处置／恢复、跨日抑制、新证据重入、旧提案保护、权限／备份／升级及远程原子冲突 |
+| browser/check-decisions_server.py | 本机隔离浏览器夹具：两项差异、固定官方文本与测试凭据；只用临时数据库 |
 | test_reviewed_maintenance.py | 全对象冻结清单、跨重试差异／失败、固定章节／PDF、私密纠错至实际修复、CW对照／撤回及远程原子并发 |
 | browser/reviewed-maintenance.cjs | 本机隔离流程：章节／PDF、定位纠错、台账提案、真实修复、对照分享／导出与三宽度；配套fixture server只用临时数据库 |
 | test_stewardship.py | 归并／私密归组／撤销、关系、当前材料检查、变化流与历史权限边界 |

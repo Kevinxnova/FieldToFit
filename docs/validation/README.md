@@ -1,6 +1,8 @@
 # 验收证据导航
 
-本批：[v1.8.23 日报A–F与Anthropic行动边界精选分析](2026-10-11-action-boundaries.md)。
+本批源码：[v1.8.24 私密核对差异处置与历史](2026-10-11-check-decisions.md)，实际本地验证与未部署范围见记录。
+
+最近正式：[v1.8.23 日报A–F与Anthropic行动边界精选分析](2026-10-11-action-boundaries.md)。
 
 前轮：[v1.8.22 ChatGPT连接Devin专题补录](2026-10-11-codex-devin.md)。
 

@@ -6,6 +6,7 @@ from backend.db import get_db
 from backend.knowledge.content_workspace import dump, stamp, today, fail, text
 from backend.knowledge.workspace_transactions import editorial_transaction
 from backend.knowledge import store
+from backend.knowledge.check_decisions import is_check_proposal, validate_proposal
 
 
 def _batch(db, ident):
@@ -64,6 +65,8 @@ def propose(ident,data):
     topic_id=hashlib.sha256(event_key.encode()).hexdigest()[:24];ref=text(data.get('ref',''),'ref',200,False)
     if len(dump(proposal))>40000:fail('Proposal too large')
     with editorial_transaction() as db:
+        if is_check_proposal(proposal):
+            validate_proposal(db,proposal)
         _batch(db,ident)
         if ref:
             from backend.knowledge.content_workspace import candidate
@@ -98,6 +101,8 @@ def decide(ident,data):
     with editorial_transaction() as db:
         t=_topic(db,ident)
         if data.get('version')!=t['version']:fail('Recommendation changed; read again','topic_conflict',409)
+        if decision=='continue' and is_check_proposal(t['proposal']):
+            validate_proposal(db,t['proposal'])
         db.execute('UPDATE fieldtofit_editorial_topics SET decision=?,review_on=?,version=version+1,updated_at=? WHERE id=?',(decision,review_on,stamp(),ident))
         _audit(db,ident,'decision',{'decision':decision,'note':text(data.get('note',''),'note',2000,False),'fingerprint':t['fingerprint']})
     return {'id':ident,'decision':decision}
@@ -109,8 +114,12 @@ def attach(ident,data):
     with editorial_transaction() as db:
         t=_topic(db,ident)
         if t['decision']!='continue' or data.get('version')!=t['version']:fail('Confirm this recommendation before drafting','decision_required',409)
+        if is_check_proposal(t['proposal']):
+            validate_proposal(db,t['proposal'])
         kind=data.get('kind') or t['kind'] or 'watch';target=data.get('target_id') or t['item_id']
         if kind not in ('watch','news'):fail('Choose news or watch')
+        if is_check_proposal(t['proposal']) and (kind!='watch' or target!=t['proposal']['target_id']):
+            fail('核对差异提案须关联原档案')
         if t['proposal'].get('type')=='technical_map':
             if kind!='news':fail('技术地图属于近期动态')
             expected=t['proposal'].get('target_id')

@@ -4,6 +4,29 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.24"></a>
+## v1.8.24 · 私密核对差异处置与历史 · 2026-10-11
+
+<!-- release-tag:unpublished -->
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 后台核对差异增加“不采纳／证据已撤回”及手动恢复，必填理由与复查条件，原证据和每次处理历史保留。
+- 相同证据跨日退出待办，新的实际核对证据重新进入；整页哈希或引用位置变化不自动推翻原决定。
+- 更新提案关联当前差异并复核处理版本，防止已关闭或过期差异继续进入草稿；处理记录仅后台可见。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Add private difference dispositions for declined or withdrawn evidence and manual reopening, with required reasons, recheck conditions and preserved evidence and action history.
+- Keep identical evidence out of the cross-day pending queue and admit newly reviewed evidence; whole-page hashes or quote offsets alone do not overturn a disposition.
+- Validate current findings and handling versions before preparing or continuing update proposals and linking drafts; disposition records remain administrator-only.
+<!-- release-summary:en:end -->
+
+对应[REQ-19-2／REQ-19-3及REQ-10-1](FieldToFit-PM.md#req-19)。扩展既有私密后台及提案流程，新增一张追加处置表，旧记录派生差异身份并保留原核对历史；现有维护升级幂等建表，备份纳入新表。处置动作不修改公开内容、日期、模型图表或当日核对完成数。公开HTTP／MCP契约保留，注册与应用案例范围保持。具体方案及实际开发、隔离验证与未验范围见[本批验收](docs/validation/2026-10-11-check-decisions.md)；本批源码尚未正式部署，既有站点最近已验版本仍为v1.8.23。
+
 <a id="v1.8.23"></a>
 ## v1.8.23 · Agent行动边界精选分析 · 2026-10-11
 

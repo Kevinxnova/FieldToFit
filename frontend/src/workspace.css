@@ -4005,6 +4005,11 @@ body:has(.mobile-more-dialog[open]), body:has(.toc-drawer[open]) { overflow: hid
 .check-row input:not([type=checkbox]), .check-row textarea, .report-correction input, .report-correction textarea, .correction-review textarea, .compare-controls select { width: 100%; max-width: 100%; box-sizing: border-box; }
 .report-correction form { padding: 1rem; border: 1px solid var(--line); border-radius: 10px; }
 .check-row .platform-original, .report-correction .platform-original { max-height: 22rem; overflow: auto; }
+.check-difference { margin: .8rem 0; padding: .8rem; border: 1px solid var(--line); border-radius: 8px; }
+.check-difference, .difference-history { overflow-wrap: anywhere; min-width: 0; }
+.difference-handling { min-width: 0; }
+.difference-handling select { width: 100%; max-width: 100%; }
+.difference-evidence blockquote { white-space: pre-wrap; margin: .6rem 0; padding-left: .8rem; border-left: 3px solid var(--line); }
 .material-gaps { padding: .6rem; border-left: 3px solid currentColor; }
 .report-correction select, .content-materials select { max-width: 100%; width: 100%; min-width: 0; }
 .check-control { display: flex !important; flex-direction: row !important; align-items: flex-start; gap: .6rem; margin: .75rem 0; }

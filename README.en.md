@@ -36,18 +36,18 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.23](CHANGELOG.md#v1.8.23)** · [fieldtofit-v1.8.23](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.23)
+**Current source version: [v1.8.24](CHANGELOG.md#v1.8.24)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Curate the owner's selected report 2 on Anthropic's unintended model actions with four numbered findings and arguments, separating observed cases, author judgments and FieldToFit analysis.
-- Add two original diagrams on action boundaries and layered defenses, retaining the October 9 source date, missing incidence denominators and independent-verification limits.
-- Complete the approved A–F publications and Hermes Agent / Claude Agent SDK profile updates through existing review, stable links and shared web/AI content.
+- Add private difference dispositions for declined or withdrawn evidence and manual reopening, with required reasons, recheck conditions and preserved evidence and action history.
+- Keep identical evidence out of the cross-day pending queue and admit newly reviewed evidence; whole-page hashes or quote offsets alone do not overturn a disposition.
+- Validate current findings and handling versions before preparing or continuing update proposals and linking drafts; disposition records remain administrator-only.
 <!-- latest-summary:end -->
 
-v1.8.23 is deployed following the owner's choice of report 2, ‘Where should an Agent stop when it meets an obstacle?’, with four numbered findings, matching arguments and two original qualitative diagrams. The same batch publishes A–F and the Hermes Agent / Claude Agent SDK profile updates. Web, HTTP and MCP share reviewed content; existing content and model charts are preserved. The site has 118 updates, 51 watch items and five reports. The original report is linked only; the private full-text check receipt remains unconfirmed. Recommend 2–3 reports daily, then organize, verify and publish the one selected by the owner; see [actual validation](docs/validation/2026-10-11-action-boundaries.md).
+The v1.8.24 source adds private dispositions for declined and withdrawn evidence, manual reopening and complete handling history. Identical evidence stays out of the cross-day pending queue; newly reviewed evidence re-enters, and update proposals validate current handling state. This batch is not deployed. The last verified production version is v1.8.23 with 118 updates, 51 watch items and five reports. See the [plan and actual verification](docs/validation/2026-10-11-check-decisions.md).
 
 [Full changelog](CHANGELOG.md) · [Project management: plans, development, verification and deployment](FieldToFit-PM.md)
 
