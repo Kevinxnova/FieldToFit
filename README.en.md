@@ -36,15 +36,16 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.27](CHANGELOG.md#v1.8.27)** · [fieldtofit-v1.8.27](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.27)
+**Current source version: [v1.8.28](CHANGELOG.md#v1.8.28)** · [fieldtofit-v1.8.28](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.28)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Complete REQ-23 switching guards: pending or failed reads cannot display or export data from the previous language.
-- Preserve filters and unsaved canonical editor data; restore the reading anchor or scroll position after the response, with reader actions taking priority.
-- Verify six frontend state scenarios and a four-second delayed browser read; production deployment and checks are recorded in the same English validation document.
+- Refine REQ-6-18 through 21 with four-column overviews and dashes for uninformative cells; rename the detail views ChatGPT/Claude and remove version routes.
+- Show release date, model and price in initially collapsed milestone nodes, with major updates on click; redesign the dated event list for owner alignment.
+- Implement REQ-7-7: a rounded View fullscreen button with an expand icon opens either chart in native fullscreen, fitting all model names, axes, attribution and dates to the screen by default, with filters and exit restoration preserved.
+- Chart fullscreen is deployed as v1.8.28; production versions, all three MCP endpoints and unchanged public data are verified. Watch-view proposals remain a separate pending delivery.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

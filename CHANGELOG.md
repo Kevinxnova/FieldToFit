@@ -4,6 +4,31 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.28"></a>
+## v1.8.28 · 模型图表自适应原生全屏与持续关注方案 · 2026-10-12
+
+### 更新重点
+
+<!-- release-summary:zh:start -->
+- 修订REQ-6-18至21：总览无实质信息显示“-”，采用四列设计；详情改名ChatGPT／Claude，删除版本路线。
+- 第二轮大事记默认仅显示发布日期／型号／价格，点击查看重大更新；重做日期式事件列表，具体视觉与价格口径待对齐。
+- 实现REQ-7-7：两张模型图以带展开图标的圆角“全屏查看”按钮替换“放大查看”，原生全屏默认适应屏幕，完整显示名称、坐标、来源与日期；保留筛选并支持退出恢复。
+- 图表全屏已部署v1.8.28，正式版本、三MCP及原数据保持已验；持续关注方案保留为独立待交付范围。
+<!-- release-summary:zh:end -->
+
+### Release highlights
+
+<!-- release-summary:en:start -->
+- Refine REQ-6-18 through 21 with four-column overviews and dashes for uninformative cells; rename the detail views ChatGPT/Claude and remove version routes.
+- Show release date, model and price in initially collapsed milestone nodes, with major updates on click; redesign the dated event list for owner alignment.
+- Implement REQ-7-7: a rounded View fullscreen button with an expand icon opens either chart in native fullscreen, fitting all model names, axes, attribution and dates to the screen by default, with filters and exit restoration preserved.
+- Chart fullscreen is deployed as v1.8.28; production versions, all three MCP endpoints and unchanged public data are verified. Watch-view proposals remain a separate pending delivery.
+<!-- release-summary:en:end -->
+
+具体方案、验收条件及本轮核对范围统一记录于[项目管理文档](FieldToFit-PM.md#watch-overview-evolution-plan)。本地代码和既有档案已核对；线上页面读取未成功，不记为生产验收。对话内示意使用既有条目的局部布局样例，不宣称完整历史；参考图片仅作布局参考。现有接口、数据库、凭据、公开内容、历史和日程均保留。本项第二轮方案待对齐，持续关注新功能、补录内容和正式发布尚未执行。第二轮明确采用“-”规则和新命名，取消第一轮版本路线；保留真实历史，价格样例不是当前报价。
+
+新增[REQ-7-7全屏需求与验收](FieldToFit-PM.md#req-7-7-plan)：已替换网页内dialog放大实现，增加原生全屏、默认一屏自适应、按需筛选／缩放、退出位置与焦点恢复以及失败提示。实际浏览器、回归及构建结果见[本地全屏验收](docs/validation/2026-10-11-chart-fullscreen.md)。原坐标域与公开快照保持，无接口或数据迁移。2026-10-12按所有者授权完成正式部署，沿用同批v1.8.28；[正式验收](docs/validation/2026-10-11-chart-fullscreen.md#production-deployment)记录实际环境与范围。
+
 <a id="v1.8.27"></a>
 ## v1.8.27 · 语言切换等待与失败保护 · 2026-10-11
 

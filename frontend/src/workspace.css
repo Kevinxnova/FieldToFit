@@ -3789,7 +3789,7 @@ h1 {
 .landscape-chart-heading h3 { margin:0;font-size:1.2rem; }
 .landscape-scope { font-size:.83rem;color:var(--muted);line-height:1.8; }
 .landscape-plot { width:100%;overflow:hidden; }
-.landscape-plot svg,.landscape-dialog svg { display:block;width:100%;height:auto; }
+.landscape-plot svg { display:block;width:100%;height:auto; }
 .chart-grid { stroke:var(--line);stroke-dasharray:3 5; }
 .chart-tick,.chart-credit { fill:var(--muted);font-size:12px; }
 .chart-axis-title { fill:var(--text);font-size:13px; }
@@ -3807,12 +3807,10 @@ h1 {
 .landscape-data,.landscape-explanation { margin-top:1.1rem;border-top:1px solid var(--line);padding-top:1rem;font-size:.85rem;line-height:1.8; }
 .landscape-data summary,.landscape-explanation summary { cursor:pointer;color:var(--green); }
 .landscape-explanation li+li { margin-top:.9rem; }
-.landscape-dialog { border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);width:min(1100px,94vw);max-width:94vw;max-height:90dvh;padding:1.5rem; }
-.landscape-dialog::backdrop { background:#0009; }
 .news-editorial > h5 { color:var(--green);font-size:.85rem;letter-spacing:.02em; }
 #ai-materials { scroll-margin-top:110px; }
 .platform-hero textarea { width:100%; }
-@media(max-width:600px){.model-landscape{padding:1rem}.model-landscape h2{font-size:1.45rem}.landscape-tabs button{font-size:.73rem;padding:10px 4px}.landscape-models{grid-template-columns:1fr}.landscape-dialog{padding:.8rem}.landscape-plot svg{min-width:0}.landscape-explanation ul{padding-left:1.2rem}}
+@media(max-width:600px){.model-landscape{padding:1rem}.model-landscape h2{font-size:1.45rem}.landscape-tabs button{font-size:.73rem;padding:10px 4px}.landscape-models{grid-template-columns:1fr}.landscape-plot svg{min-width:0}.landscape-explanation ul{padding-left:1.2rem}}
 
 /* v1.0.2: direct source labels, stable company colors and dense chart reading. */
 .landscape-chart-heading h3 span { color:var(--muted);font-size:.8em;margin-left:.4em; }
@@ -3827,7 +3825,7 @@ h1 {
 .chart-search button { padding:9px 0; }
 .chart-coverage,.landscape-hint { font-size:.76rem;color:var(--muted);line-height:1.7; }
 .landscape-plot { border:1px solid var(--line);border-radius:10px;background:#fff;margin:14px 0; }
-.landscape-plot svg,.landscape-dialog svg { background:#fff;color:#242b35; }
+.landscape-plot svg { background:#fff;color:#242b35; }
 .chart-model-name { font:500 14px Arial,sans-serif;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round; }
 .chart-point.selected .chart-model-name,.chart-point:focus-visible .chart-model-name { font-weight:700; }
 .chart-point.selected circle,.chart-point:focus-visible circle { stroke:#111;stroke-width:3; }
@@ -3838,11 +3836,35 @@ h1 {
 .model-landscape .chart-credit { font-size:14px;fill:#657077; }
 .chart-table-org { display:block;font-weight:400;color:var(--muted);font-size:.75rem;margin-top:5px; }
 .landscape-empty { padding:3rem 1rem;text-align:center;line-height:1.8;background:var(--surface-soft);border-radius:8px; }
-.landscape-dialog { width:96vw;max-width:1500px;padding:1rem; }
-.landscape-dialog select { padding:6px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--text); }
-.landscape-zoom-scroll { max-height:62dvh;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);background:white; }
-.landscape-dialog .landscape-point-detail { margin:.5rem 0; }
-@media(max-width:600px){.chart-search label{flex-basis:100%}.chart-company-legend{gap:5px}.chart-company-legend button{font-size:.7rem;padding:7px}.landscape-dialog .landscape-chart-heading{flex-wrap:wrap}.landscape-dialog .landscape-chart-heading h3{font-size:1rem}.landscape-zoom-scroll{max-height:55dvh}.chart-coverage{font-size:.73rem}}
+.landscape-chart { min-width:0; }
+.landscape-chart:fullscreen { box-sizing:border-box;display:flex;flex-direction:column;gap:.4rem;width:100%;height:100%;max-width:none;max-height:none;padding:.7rem 1rem;background:var(--surface);color:var(--text);overflow:hidden; }
+.landscape-chart:fullscreen::backdrop { background:var(--surface); }
+.landscape-chart:fullscreen > .landscape-chart-heading { flex:none;z-index:3;background:var(--surface);padding:0 0 .4rem;border-bottom:1px solid var(--line); }
+.landscape-chart-actions { display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:1rem; }
+.landscape-chart-actions label { display:flex;align-items:center;gap:.4rem;margin:0;white-space:nowrap;font-size:.85rem; }
+.landscape-chart-actions button { white-space:nowrap; }
+.landscape-chart-actions .chart-fullscreen-button { display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;margin:0;padding:6px 14px 6px 7px;border:1px solid color-mix(in srgb,var(--green) 35%,var(--line));border-radius:12px;background:linear-gradient(135deg,var(--surface),var(--green-soft));color:var(--green);font-family:inherit;font-size:.8rem;font-weight:650;line-height:1.2;letter-spacing:.02em;cursor:pointer;box-shadow:0 2px 5px #00000008;transition:background .18s,border-color .18s,box-shadow .18s,transform .18s; }
+.chart-fullscreen-icon { display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:8px;background:var(--surface);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--green) 15%,transparent); }
+.chart-fullscreen-icon svg { display:block;width:18px;height:18px;transition:transform .18s; }
+@media(hover:hover){.landscape-chart-actions .chart-fullscreen-button:hover { border-color:var(--green);background:var(--green-soft);box-shadow:0 4px 12px #00000012;transform:translateY(-1px); }.chart-fullscreen-button:hover .chart-fullscreen-icon svg { transform:scale(1.08); }}
+.landscape-chart-actions .chart-fullscreen-button:active { transform:translateY(0);box-shadow:0 1px 3px #0000000d; }
+.landscape-chart-actions .chart-fullscreen-button:focus-visible { outline:2px solid var(--green);outline-offset:3px; }
+.landscape-chart-actions .chart-fullscreen-button[aria-disabled="true"] { opacity:.6;cursor:progress;transform:none; }
+@media(prefers-reduced-motion:reduce){.landscape-chart-actions .chart-fullscreen-button,.chart-fullscreen-icon svg { transition:none; }.landscape-chart-actions .chart-fullscreen-button:hover,.chart-fullscreen-button:hover .chart-fullscreen-icon svg { transform:none; }}
+
+.landscape-fullscreen-error { flex:none;margin:0;padding:.5rem;border:1px solid var(--line);border-radius:8px;line-height:1.5; }
+.landscape-chart-actions select { padding:6px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--text); }
+.landscape-chart:fullscreen > .landscape-chart-controls { display:none; }
+.landscape-chart:fullscreen > .landscape-chart-controls.is-open { display:block;position:absolute;z-index:2;right:1rem;top:4.5rem;width:min(650px,calc(100% - 2rem));max-height:calc(100% - 6rem);overflow:auto;padding:1rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);box-shadow:0 10px 40px #0003; }
+.landscape-chart:fullscreen > .landscape-plot { flex:1;min-height:0;max-height:none;min-width:0;margin:0;overflow:auto;overscroll-behavior:contain; }
+.landscape-chart:fullscreen > .landscape-empty { flex:1;min-height:0;margin:0; }
+.landscape-chart:fullscreen > .landscape-hint { flex:none;margin:0;font-size:.75rem; }
+.landscape-chart:fullscreen > .landscape-point-detail { flex:none;max-height:22vh;overflow:auto;margin:0;padding:.4rem .7rem;font-size:.75rem;line-height:1.4; }
+.landscape-chart:fullscreen > .landscape-point-detail p { display:inline;margin:0 .5rem; }
+.landscape-chart:fullscreen > .landscape-attribution { flex:none;font-size:.7rem;line-height:1.4; }
+.landscape-chart:fullscreen > .landscape-attribution p { margin:0; }
+.landscape-chart:fullscreen > .landscape-data { display:none; }
+@media(max-width:600px){.chart-search label{flex-basis:100%}.chart-company-legend{gap:5px}.chart-company-legend button{font-size:.7rem;padding:7px}.landscape-chart-heading{flex-wrap:wrap}.landscape-chart-heading h3{font-size:1rem}.landscape-chart:fullscreen{padding:.5rem}.landscape-chart-actions{gap:.65rem}.landscape-chart-actions label{font-size:.75rem}.landscape-chart:fullscreen > .landscape-chart-controls.is-open{top:6.5rem;max-height:calc(100% - 7rem)}.chart-coverage{font-size:.73rem}}
 
 .chart-flagship-note { margin:12px 0;padding:12px 16px;border-radius:8px;background:var(--surface-soft);font-size:.8rem;line-height:1.8; }
 .chart-flagship-note p { margin:0 0 .5rem; }

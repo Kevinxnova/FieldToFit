@@ -36,15 +36,16 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.27](CHANGELOG.md#v1.8.27)** · [fieldtofit-v1.8.27](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.27)
+**当前源码版本：[v1.8.28](CHANGELOG.md#v1.8.28)** · [fieldtofit-v1.8.28](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.28)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 补齐REQ-23切换保护：新语言正文读取完成前不显示或导出上一语言数据，失败不回退中文。
-- 保留筛选和后台未保存原稿；异步读取后恢复阅读锚点或滚动位置，读者的新操作优先。
-- 六类前端状态回归及四秒延迟浏览器场景通过；正式部署与验收结果见同一英文验收记录。
+- 修订REQ-6-18至21：总览无实质信息显示“-”，采用四列设计；详情改名ChatGPT／Claude，删除版本路线。
+- 第二轮大事记默认仅显示发布日期／型号／价格，点击查看重大更新；重做日期式事件列表，具体视觉与价格口径待对齐。
+- 实现REQ-7-7：两张模型图以带展开图标的圆角“全屏查看”按钮替换“放大查看”，原生全屏默认适应屏幕，完整显示名称、坐标、来源与日期；保留筛选并支持退出恢复。
+- 图表全屏已部署v1.8.28，正式版本、三MCP及原数据保持已验；持续关注方案保留为独立待交付范围。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
