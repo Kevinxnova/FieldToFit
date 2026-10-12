@@ -1,7 +1,35 @@
 {
-  "version": "1.8.34",
-  "revision": "59f0c6bd157d889e8654f5475012957aadbb4e835809cdbfe565c3dcd119e92f",
+  "version": "1.8.35",
+  "revision": "029fe8279304274d3b6916682d8420ae53e10415a9fd71c3bb2b07b6f3a5edf7",
   "items": [
+    {
+      "version": "1.8.35",
+      "date": "2026-10-12",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "技术报告默认展示最新四篇",
+          "highlights": [
+            "技术报告精选&分析默认按收录／修订时间倒序展示最新四篇，修复仅显示三篇的问题。",
+            "首页不再因报告原始日期超过30天而隐藏卡片。",
+            "不足四篇时显示实际数量，全部精选与历史索引继续可用。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Show the four latest selected reports",
+          "highlights": [
+            "Show the four latest selected technical reports by collection or revision date, fixing the three-card limit.",
+            "Keep homepage cards visible when original reports exceed 30 days.",
+            "Show the available reports when fewer than four exist, retaining the full report and history index."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.35"
+    },
     {
       "version": "1.8.34",
       "date": "2026-10-12",

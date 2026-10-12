@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.35"></a>
+## v1.8.35 · 技术报告默认展示最新四篇 · 2026-10-12
+
+<!-- public-title:en:Show the four latest selected reports -->
+<!-- release-summary:zh:start -->
+- 技术报告精选&分析默认按收录／修订时间倒序展示最新四篇，修复仅显示三篇的问题。
+- 首页不再因报告原始日期超过30天而隐藏卡片。
+- 不足四篇时显示实际数量，全部精选与历史索引继续可用。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Show the four latest selected technical reports by collection or revision date, fixing the three-card limit.
+- Keep homepage cards visible when original reports exceed 30 days.
+- Show the available reports when fewer than four exist, retaining the full report and history index.
+<!-- release-summary:en:end -->
+
+对应REQ-22-1／3，按所有者要求修复默认展示数量；不足四篇时展示实际条数。保留真实日期、历史分类、报告正文和公开API，无数据库迁移。验证与网站状态见[四篇报告展示验收](docs/validation/2026-10-12-report-cards.md)；所有者已授权更新并部署，结果以验收记录为准。
+
 <a id="v1.8.34"></a>
 ## v1.8.34 · 更新日志、开源入口与日报同步 · 2026-10-12
 

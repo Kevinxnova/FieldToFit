@@ -36,16 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.34](CHANGELOG.md#v1.8.34)** · [fieldtofit-v1.8.34](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.34)
+**Current source version: [v1.8.35](CHANGELOG.md#v1.8.35)** · [fieldtofit-v1.8.35](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.35)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Implement REQ-12-5/6: a bilingual release timeline, update notices after releases and a branded OPEN SOURCE link below Content management.
-- Add reviewed developer and purpose labels for nanoMuse and Durable Actors, linked to reviewed events.
-- Subsequent news publications update the ongoing-update title and highlights while retaining original event dates and history.
-- Keep daily content and report selections separate; favor official technical reports for mainstream models and products.
+- Show the four latest selected technical reports by collection or revision date, fixing the three-card limit.
+- Keep homepage cards visible when original reports exceed 30 days.
+- Show the available reports when fewer than four exist, retaining the full report and history index.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
