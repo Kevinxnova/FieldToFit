@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.39"></a>
+## v1.8.39 · 热点信息卡转正放大 · 2026-10-12
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Information cards that turn forward on hover -->
+<!-- release-summary:zh:start -->
+- 三列热点信息卡默认轻微倾斜陈列，鼠标移入时平滑转正、上浮并放大，移开后回到原姿态。
+- 加强边缘厚度和阴影，增加关键变化图形区高度；反光随鼠标移动，卡面保持正向阅读。
+- 键盘聚焦同样转正；窄屏、触屏和减少动态效果模式保持静态。本批仅本地更新，尚未部署。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Three-column information cards rest at subtle angles, smoothly face forward and enlarge on hover, and return to their resting positions on exit.
+- Stronger edge depth, shadows and a taller key-change panel give the cards more dimension. Only the glare follows the pointer while the text stays front-facing.
+- Keyboard focus also brings cards forward. Narrow layouts, touch devices and reduced-motion mode stay static. This batch remains local and undeployed.
+<!-- release-summary:en:end -->
+
+对应REQ-6-22，替换此前悬停跟随倾斜的表现，保留三列自适应、内容与阅读入口；901–1100px窗口将首页目录收为按钮，避免挤占三列。无接口或数据迁移；实际结果见[转正放大验收](docs/validation/2026-10-12-hot-card-presentation.md)。
+
 <a id="v1.8.38"></a>
 ## v1.8.38 · 热点信息卡三列自适应 · 2026-10-12
 

@@ -1,34 +1,34 @@
 {
-  "version": "1.8.38",
-  "revision": "5039208724dbb1a293c3f7d5056a772750c565c9dd2bd5e34add9e1e2797129e",
+  "version": "1.8.39",
+  "revision": "63010ef2776eb31688bf81575451fc0f4aa5293c4b76bb72d9fcf99042f2d2fd",
   "items": [
     {
-      "version": "1.8.38",
+      "version": "1.8.39",
       "date": "2026-10-12",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "热点信息卡三列自适应",
+          "title": "热点信息卡转正放大",
           "highlights": [
-            "热点信息卡按阅读区域的实际宽度排版，空间足够时一排三张，修复较窄桌面窗口被提前切为单列的问题。",
-            "卡片留白、标题、图形区和镭射边框随卡宽调整；同排等宽等高，正文保持可读字号，手机窄屏采用单列。",
-            "保留镭射动效、完整内容及原有阅读入口；本批完成本地验证，尚未部署或正式发布首批卡片。"
+            "三列热点信息卡默认轻微倾斜陈列，鼠标移入时平滑转正、上浮并放大，移开后回到原姿态。",
+            "加强边缘厚度和阴影，增加关键变化图形区高度；反光随鼠标移动，卡面保持正向阅读。",
+            "键盘聚焦同样转正；窄屏、触屏和减少动态效果模式保持静态。本批仅本地更新，尚未部署。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Responsive three-column information cards",
+          "title": "Information cards that turn forward on hover",
           "highlights": [
-            "Arrange information cards using the reading area's actual width, keeping three cards per row when space permits instead of switching narrow desktop windows to one column too early.",
-            "Adapt padding, headings, artwork and foil borders to each card's width, with equal-sized cards per row, readable body text and a single column on narrow screens.",
-            "Preserve holographic effects, complete content and reading links. This batch is locally validated, without deployment or initial production card publication."
+            "Three-column information cards rest at subtle angles, smoothly face forward and enlarge on hover, and return to their resting positions on exit.",
+            "Stronger edge depth, shadows and a taller key-change panel give the cards more dimension. Only the glare follows the pointer while the text stays front-facing.",
+            "Keyboard focus also brings cards forward. Narrow layouts, touch devices and reduced-motion mode stay static. This batch remains local and undeployed."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.38"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.39"
     },
     {
       "version": "1.8.35",
