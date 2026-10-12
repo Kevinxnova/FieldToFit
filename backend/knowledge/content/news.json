@@ -3,6 +3,1582 @@
   "items": [
     {
       "category": "agent",
+      "checked_at": "2026-10-12",
+      "codex_28_days": {
+        "announced_at": "2026-10-10T22:15:39.368Z",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2109045220411351517",
+        "group": "codex",
+        "official_day": 6,
+        "overview_en": "Global usage reset announcement · official Day 6",
+        "overview_zh": "全球额度重置公告 · 官方Day 6",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-10T22:15:39.368Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-12",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-12",
+            "evidence_url": "https://x.com/thsottiaux/status/2109045220411351517",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对本人原帖全文及关联回复；中文为本站译文。",
+            "text_en": "Day 6/ Reset",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Day 6／重置",
+            "url": "https://x.com/thsottiaux/status/2109045220411351517"
+          },
+          {
+            "announced_at": "2026-10-10T22:16:20.441Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-12",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-12",
+            "evidence_url": "https://x.com/thsottiaux/status/2109045392684032299",
+            "kind": "reply",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对本人原帖全文及关联回复；中文为本站译文。",
+            "text_en": "Global reset by EOD. May the tokens do good things for you.",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "全球重置将在当天结束前进行。愿这些token助你做好事。",
+            "url": "https://x.com/thsottiaux/status/2109045392684032299"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-11",
+      "highlight": false,
+      "id": "D-123",
+      "interpretation": [
+        {
+          "locator": "直接读取Tibo主公告及本人补充回复；公告时刻按帖子ID推导，未推造生效时刻。",
+          "source_ids": [
+            "tibo",
+            "tibo-reply"
+          ],
+          "text": "主帖为“Day 6/ Reset”；Tibo随后回复“Global reset by EOD”。这是官方Day 6的全球额度重置公告，沿用同一事件，只记一条日志。",
+          "title": "这次公布了什么"
+        },
+        {
+          "locator": "直接读取Tibo主公告及本人补充回复；公告时刻按帖子ID推导，未推造生效时刻。",
+          "source_ids": [
+            "tibo",
+            "tibo-reply"
+          ],
+          "text": "主公告按帖子ID推导为北京时间 2026-10-11 06:15:39，补充回复为 06:16:20；本站归该日、日历Day 7，保留原帖官方Day 6。原帖ID推导是时间依据，并非X接口返回的创建时间。",
+          "title": "日期与编号"
+        },
+        {
+          "locator": "直接读取Tibo主公告及本人补充回复；公告时刻按帖子ID推导，未推造生效时刻。",
+          "source_ids": [
+            "tibo",
+            "tibo-reply"
+          ],
+          "text": "原帖将范围表述为全球，但没有逐项列出套餐、用量窗口或具体生效时刻。此处不据公告推断每个账户已到账，也不增加“已生效重置”计数。使用前可查看自己的用量页面；额度到账情况以账户显示为准。",
+          "title": "适用范围与使用"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-12T02:04:06.186737+00:00",
+        "updated_at": "2026-10-12T02:04:06.186737+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-10",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "tibo",
+          "title": "Tibo官方Day 6重置主公告",
+          "url": "https://x.com/thsottiaux/status/2109045220411351517"
+        },
+        {
+          "coverage": "link_only",
+          "id": "tibo-reply",
+          "title": "Tibo关于全球重置时间的补充回复",
+          "url": "https://x.com/thsottiaux/status/2109045392684032299"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo X身份与头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo发布官方Day 6「Reset」，补充称全球重置会在当天结束前进行（by EOD）。本条记录重置公告；原帖未注明EOD的时区、各套餐范围或实际生效时刻。",
+      "title": "官方Day 6：Tibo宣布全球额度重置",
+      "translations": {
+        "en": {
+          "fields": {
+            "Tibo X身份与头像": "Tibo X identity and avatar",
+            "Tibo关于全球重置时间的补充回复": "Tibo follow-up on global reset timing",
+            "Tibo发布官方Day 6「Reset」，补充称全球重置会在当天结束前进行（by EOD）。本条记录重置公告；原帖未注明EOD的时区、各套餐范围或实际生效时刻。": "Tibo posted official Day 6, \"Reset\", adding that a global reset would happen by EOD. This records the announcement; the posts do not specify the EOD timezone, eligibility by plan, or the actual effective time.",
+            "Tibo官方Day 6重置主公告": "Tibo official Day 6 reset announcement",
+            "主公告按帖子ID推导为北京时间 2026-10-11 06:15:39，补充回复为 06:16:20；本站归该日、日历Day 7，保留原帖官方Day 6。原帖ID推导是时间依据，并非X接口返回的创建时间。": "Post IDs place the main announcement at Beijing time 2026-10-11 06:15:39 and its reply at 06:16:20. FieldToFit uses that date, calendar Day 7, while retaining official Day 6. These are ID-derived timestamps, not creation times returned by the X API.",
+            "主帖为“Day 6/ Reset”；Tibo随后回复“Global reset by EOD”。这是官方Day 6的全球额度重置公告，沿用同一事件，只记一条日志。": "The main post says \"Day 6/ Reset\"; Tibo then replies \"Global reset by EOD\". This is the official Day 6 global usage-reset announcement, recorded once as the same event.",
+            "全球额度重置公告 · 官方Day 6": "Global usage reset announcement · official Day 6",
+            "原帖将范围表述为全球，但没有逐项列出套餐、用量窗口或具体生效时刻。此处不据公告推断每个账户已到账，也不增加“已生效重置”计数。使用前可查看自己的用量页面；额度到账情况以账户显示为准。": "The posts describe the reset as global, without listing plans, usage windows or an exact effective time. The announcement does not establish receipt for every account and does not increase the confirmed-effective reset count. Check your own usage page before relying on refreshed quota.",
+            "官方Day 6：Tibo宣布全球额度重置": "Official Day 6: Tibo announces a global usage reset",
+            "日期与编号": "Date and numbering",
+            "直接核对本人原帖全文及关联回复；中文为本站译文。": "Full original posts and related reply verified directly; Chinese translations are by FieldToFit.",
+            "直接读取Tibo主公告及本人补充回复；公告时刻按帖子ID推导，未推造生效时刻。": "Directly read Tibo's main announcement and follow-up reply; announcement timestamps are derived from post IDs, without inventing an effective time.",
+            "这次公布了什么": "What was announced",
+            "适用范围与使用": "Scope and use"
+          },
+          "review_note": "已核对中英文原帖、公告范围、北京时间和官方编号；本条不宣称每个账户到账。",
+          "reviewed_at": "2026-10-12T01:58:49.882756+00:00",
+          "source_hash": "c371db69d691890ce5cd1f373b0b2d089e2490bcd29a179d1f2aed189a33a9b0",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-07",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-06",
+      "highlight": false,
+      "id": "D-82",
+      "interpretation": [
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2"
+          ],
+          "text": "通过Mistral Studio或API调用mistral-large-4。模型页列出1M上下文、图文输入、工具调用与结构化输出；当前是公共预览。",
+          "title": "现在如何使用"
+        },
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2"
+          ],
+          "text": "官方计划月底开放权重，当前不能写成已能下载自部署。本站未复测性能、稳定性或成本，不用官方宣传替代独立榜单。",
+          "title": "权重与性能边界"
+        },
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2"
+          ],
+          "text": "官方发布文章写总参数1T／激活49B，模型页写1.05T／52B；两份材料不一致，本页保留各自口径，暂不合并为统一数字。",
+          "title": "参数口径仍有冲突"
+        }
+      ],
+      "name": "Mistral Large 4",
+      "note": "原文事件日期2026-10-06，本站2026-10-07核对；权重尚待开放，参数口径差异保留。",
+      "organization": "Mistral AI",
+      "publication": {
+        "first_published_at": "2026-10-07T04:21:35.805438+00:00",
+        "updated_at": "2026-10-12T01:56:26.187942+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-07",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct07-source-1",
+          "locator": "官方发布和采用说明",
+          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
+          "retrieved_at": "2026-10-07",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 1",
+          "upstream_revision": "mistral-large-4-public-preview-2026-10-06",
+          "url": "https://mistral.ai/news/mistral-large-4/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-07",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct07-source-2",
+          "locator": "官方发布和采用说明",
+          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
+          "retrieved_at": "2026-10-07",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 2",
+          "upstream_revision": "mistral-large-4-public-preview-2026-10-06",
+          "url": "https://docs.mistral.ai/models/mistral-large"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Mistral Large 4 · 官方来源 1",
+          "url": "https://mistral.ai/news/mistral-large-4/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Mistral Large 4 · 官方来源 2",
+          "url": "https://docs.mistral.ai/models/mistral-large"
+        }
+      ],
+      "state": "published",
+      "summary": "Mistral于10月6日开放Large 4公共预览，面向编程、Agent和多模态文档任务；现在可通过Studio/API使用，下载权重仍需等待月底计划。",
+      "title": "Mistral Large 4：API公开预览，权重计划月底开放"
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-11",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-11",
+      "highlight": true,
+      "id": "D-119",
+      "interpretation": [
+        {
+          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
+          "source_ids": [
+            "rea-repo",
+            "rea-faq"
+          ],
+          "text": "REA（Reverse Engineer Anything）把反汇编、伪代码、引用关系和运行行为组织为本地 MCP 工具，再用匹配的调查技能指导编码 Agent。它可帮助阅读没有源码的软件、分析兼容性或重建已明确验收标准的功能；CLI 也能使用同一工作流。REA 提供工具与证据组织，不是一款新的基础模型。",
+          "title": "它解决什么：让 Agent 沿证据调查软件行为"
+        },
+        {
+          "locator": "6.4.0 发布记录：Highlights 的 Android、JEB、Large analyses、JavaScript",
+          "source_ids": [
+            "rea-release"
+          ],
+          "text": "北京时间10月11日11:58发布的6.4.0新增 ADB 设备检查、拆分 APK 获取、日志与截图，以及需显式执行的应用生命周期操作；Apktool 读取清单和本地化字符串，JEB 接入本地项目。大型分析可先读摘要、再选取证据；JavaScript 分析设置内存和超时边界，资源耗尽时保留已完成事实与未知项。",
+          "title": "6.4.0：补入 Android，并让大型分析按需读取证据"
+        },
+        {
+          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
+          "source_ids": [
+            "rea-release",
+            "rea-faq",
+            "rea-setup",
+            "rea-license"
+          ],
+          "text": "可接入 Claude Code、Codex、Cursor、Gemini CLI；6.4.0还补充 Pi、Hermes、Qwen Code。只安装技能文件不够，仍需配置 MCP。深入原生程序分析使用 Ghidra、Hopper 或 IDA 等引擎；静态 JavaScript／.NET 路径不必依赖原生引擎。项目为 MIT，具体外部工具仍有各自安装与使用条件。",
+          "title": "怎么接入：本地工具、匹配技能与实际分析引擎"
+        },
+        {
+          "locator": "DX-Ball 案例：Sound-panning behavior、compiled-byte comparison、2026-10-07 project checkpoint",
+          "source_ids": [
+            "rea-case"
+          ],
+          "text": "官方 DX-Ball 案例记录的是 REA 4.1.0，不是6.4.0的性能评测。其声音平移函数在原版 x86 上完成3,205组行为比较，固定编译器条件下匹配63字节编译结果。10月7日项目检查点仍将完整可玩重建列为进行中；单函数通过不能推成任意程序均能完整恢复，本站尚未安装或独立复现。",
+          "title": "案例能证明什么：一个函数的行为与编译结果"
+        },
+        {
+          "locator": "N0zoM1z0 2026-10-10：working memory／oracles；TH08 浮点常量漏查与验收器修复",
+          "source_ids": [
+            "rea-essay",
+            "rea-case"
+          ],
+          "text": "10月10日的重建经验文章强调让 Agent 保留工作记忆、使用参考行为校验，并披露一次字节比较漏查浮点常量、错误接受结果的经历。我们的判断是：REA 值得关注之处在于把分析、假设与复核接起来；采用时还应审查比较工具、增加负例，不能只看“通过”标记或展示案例。该文是实践经验，不提供通用成功率或速度基准。",
+          "title": "FieldToFit 判断：验收器本身也需要验证"
+        },
+        {
+          "locator": "FAQ：local analysis／model-provider data policy；6.4.0 Changes、Breaking Changes",
+          "source_ids": [
+            "rea-faq",
+            "rea-release"
+          ],
+          "text": "目标分析在本地进行，但 Agent 获得的分析结果仍受所用模型服务的数据政策约束，不能因此认定整个流程离线。6.4.0中的 Windows P0 保持只读，部分 Windows NativeAOT 流程尚未在真实 Windows 主机验证。已有用户升级时还应核对旧证据格式的迁移说明，并更新固定版本的 MCP 配置。",
+          "title": "采用边界：平台支持与数据流要逐项确认"
+        }
+      ],
+      "name": "REA 6.4.0",
+      "note": "本条记录6.4.0版本事件，不称项目于今日首发。GitHub固定标签与npm最新版均核到6.4.0；案例使用4.1.0，日期与版本分开保留。热度和累计Star不作为能力、近期增长或榜单排名证据。上述结果来自项目作者，本站未实装或复现。",
+      "organization": "morluto / REA",
+      "publication": {
+        "first_published_at": "2026-10-11T05:27:29.365459+00:00",
+        "updated_at": "2026-10-11T05:27:29.365459+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "rea-release",
+          "locator": "6.4.0 发布记录：Highlights 的 Android、JEB、Large analyses、JavaScript",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "REA 6.4.0 官方发布记录",
+          "upstream_revision": "rea-agents-6.4.0",
+          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.4.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "rea-repo",
+          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "REA 官方仓库",
+          "upstream_revision": "2026-10-11核对",
+          "url": "https://github.com/morluto/rea"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "rea-faq",
+          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "REA FAQ 与数据边界",
+          "upstream_revision": "2026-10-11核对",
+          "url": "https://rea.tools/faq/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "rea-setup",
+          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "REA 接入说明",
+          "upstream_revision": "2026-10-11核对",
+          "url": "https://rea.tools/get-started/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "rea-case",
+          "locator": "DX-Ball 案例：Sound-panning behavior、compiled-byte comparison、2026-10-07 project checkpoint",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "DX-Ball 声音平移函数案例",
+          "upstream_revision": "case-4.1.0-checkpoint-20261007",
+          "url": "https://rea.tools/showcase/dx-ball/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "rea-essay",
+          "locator": "N0zoM1z0 2026-10-10：working memory／oracles；TH08 浮点常量漏查与验收器修复",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "N0zoM1z0：逆向工程重建经验与校验失误",
+          "upstream_revision": "2026-10-10",
+          "url": "https://rea.tools/blog/touhou-reconstruction/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "rea-license",
+          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "REA 6.4.0 固定版本 MIT 许可",
+          "upstream_revision": "rea-agents-6.4.0",
+          "url": "https://github.com/morluto/rea/blob/rea-agents-6.4.0/LICENSE"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T16",
+          "name": "REA 持续关注档案",
+          "url": "https://fieldtofit.top/watch/CW-T16"
+        }
+      ],
+      "source_published_at": "2026-10-11",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "rea-release",
+          "title": "REA 6.4.0 官方发布记录",
+          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.4.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-repo",
+          "title": "REA 官方仓库",
+          "url": "https://github.com/morluto/rea"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-faq",
+          "title": "REA FAQ 与数据边界",
+          "url": "https://rea.tools/faq/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-setup",
+          "title": "REA 接入说明",
+          "url": "https://rea.tools/get-started/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-case",
+          "title": "DX-Ball 声音平移函数案例",
+          "url": "https://rea.tools/showcase/dx-ball/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-essay",
+          "title": "N0zoM1z0：逆向工程重建经验与校验失误",
+          "url": "https://rea.tools/blog/touhou-reconstruction/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-license",
+          "title": "REA 6.4.0 固定版本 MIT 许可",
+          "url": "https://github.com/morluto/rea/blob/rea-agents-6.4.0/LICENSE"
+        }
+      ],
+      "state": "published",
+      "summary": "REA把逆向分析工具接给编码Agent，用可追溯证据调查软件行为。6.4.0新增Android检查和大型证据按需读取；官方游戏重建案例展示了可核验进展，也提醒验收器本身可能出错。",
+      "title": "REA 6.4.0：让编码 Agent 沿证据理解软件行为"
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-07",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-06",
+      "highlight": false,
+      "id": "D-83",
+      "interpretation": [
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "新云端任务和新定时任务无需电脑一直在线；访问已连接本机文件夹、本地连接器和部分浏览器能力仍需要Claude桌面应用在线。关闭应用不会让本机资源继续可用。",
+          "title": "云端任务与本机资源分开看"
+        },
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "10月6日前在本机启动的任务及本机定时任务仍留在本机；Pro／Max的新任务不能再切回Only on your computer。需要新本机任务时，官方提供Claude Code桌面入口和任务数据迁移说明。",
+          "title": "已有任务保持原运行位置"
+        },
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "Team／Enterprise仍涉及beta及管理员启用条件，不能套用全部Pro／Max规则。本次核对官方说明，未实测各套餐迁移与后台运行。",
+          "title": "套餐与验证范围"
+        }
+      ],
+      "name": "Claude Cowork",
+      "note": "原文事件日期2026-10-06，本站2026-10-07核对；新任务与既有本机任务、套餐适用范围分别说明。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-07T04:22:05.296639+00:00",
+        "updated_at": "2026-10-12T01:56:02.557377+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-07",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct07-source-1",
+          "locator": "官方发布和采用说明",
+          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
+          "retrieved_at": "2026-10-07",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线 · 官方来源 1",
+          "upstream_revision": "cowork-cloud-2026-10-06",
+          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        },
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Claude Cowork · 官方来源 1",
+          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
+        }
+      ],
+      "state": "published",
+      "summary": "Claude Cowork的Pro／Max新任务从10月6日起在云端运行，可跨网页、桌面和手机接续；本机文件、连接器及浏览器操作仍有桌面在线条件。",
+      "title": "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线"
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-08",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-07",
+      "highlight": false,
+      "id": "D-92",
+      "interpretation": [
+        {
+          "locator": "官方发布与采用条件；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。",
+          "title": "型号、上下文与标准价格"
+        },
+        {
+          "locator": "官方发布与采用条件；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。",
+          "title": "迁移需要改什么"
+        },
+        {
+          "locator": "官方发布与采用条件；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。",
+          "title": "Sonnet缓存读取单独降价"
+        }
+      ],
+      "name": "Claude Haiku 5.5",
+      "note": "原始日期2026-10-07；本站2026-10-08核对。按官方型号、平台和迁移条件使用；本站未复测。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-08T02:08:40.656818+00:00",
+        "updated_at": "2026-10-12T01:55:39.196368+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct08-source-1",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct08-source-2",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct08-source-3",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        },
+        {
+          "id": "D-49",
+          "name": "Claude Sonnet 5.5",
+          "url": "https://fieldtofit.top/news/D-49"
+        }
+      ],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
+          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "state": "published",
+      "summary": "Haiku 5.5面向分类、路由、提取、摘要等高频任务；加入1M上下文与自适应思考，迁移时需重算token预算。",
+      "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价"
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-06",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-05",
+      "highlight": false,
+      "id": "D-75",
+      "interpretation": [
+        {
+          "locator": "官方原始材料；本站未复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "材料展开异步强化学习、长任务训练和推理长度控制，可研究怎样在少用token与完成复杂任务之间取舍。",
+          "title": "异步训练与推理长度"
+        },
+        {
+          "locator": "官方原始材料；本站未复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "官方“3–4倍更少推理计算”是特定评测估算，未计预填充、部分注意力及服务开销，不能换算成实际账单便宜3–4倍。",
+          "title": "效率指标的口径"
+        },
+        {
+          "locator": "官方原始材料；本站未复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "仍在最终红队评估，可申请早期访问；权重、模型卡和开发材料计划本月稍后开放，不能写成已经可下载。",
+          "title": "开放进度"
+        }
+      ],
+      "name": "Beam",
+      "note": "原文发布于2026-10-05，本站于2026-10-06核对。权重与最终模型卡尚未开放；不以官方估算代替实际部署成本。",
+      "organization": "Reflection",
+      "publication": {
+        "first_published_at": "2026-10-06T03:32:41.433159+00:00",
+        "updated_at": "2026-10-11T05:25:49.492258+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-06",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct06-source-1",
+          "locator": "官方发布与采用说明",
+          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
+          "retrieved_at": "2026-10-06",
+          "rights": {
+            "basis": "",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Beam：Reflection 公布首个模型，先看推理效率与开放时间 · 官方来源 1",
+          "upstream_revision": "Beam；首次公布、早期访问申请",
+          "url": "https://reflection.ai/blog/introducing-beam"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M04",
+          "name": "Kimi",
+          "url": "https://fieldtofit.top/watch/CW-M04"
+        },
+        {
+          "id": "CW-M05",
+          "name": "GLM",
+          "url": "https://fieldtofit.top/watch/CW-M05"
+        },
+        {
+          "id": "CW-M07",
+          "name": "Qwen",
+          "url": "https://fieldtofit.top/watch/CW-M07"
+        }
+      ],
+      "source_published_at": "2026-10-05",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Beam · 官方来源 1",
+          "url": "https://reflection.ai/blog/introducing-beam"
+        }
+      ],
+      "state": "published",
+      "summary": "Reflection 公布面向编程、推理和 Agent 的文本模型 Beam，采用501B总参数、23B激活的MoE架构。",
+      "title": "Beam：Reflection 公布首个模型，先看推理效率与开放时间"
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-11",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-09",
+      "highlight": false,
+      "id": "D-118",
+      "interpretation": [
+        {
+          "locator": "Overview of behaviors；Remediation；Discussion and alignment takeaways",
+          "source_ids": [
+            "report"
+          ],
+          "text": "本文基于作者对评测及内部使用轨迹的调查，区分已观察案例、作者影响判断与本站采用分析；不推断全部Claude使用的意外行为概率。",
+          "title": "从完成任务转向判断行动边界"
+        }
+      ],
+      "name": "Anthropic意外模型行为调查",
+      "note": "报告首次发表2026-10-09；轨迹回查始于7月，未给统一数据观察截止日或事件分母。本文读取10月11日网页，原文无编号版本、未核实另有修订日期；图形为本站示意，不转载原图或全文，不表示发生率。本站未独立复现案例或作者防护效果。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-11T04:38:32.114796+00:00",
+        "updated_at": "2026-10-11T04:38:32.114796+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "report",
+          "locator": "全文各节：Overview of behaviors / Remediation / Discussion and alignment takeaways",
+          "reason": "已读取官方全文；未取得全文和原图再分发许可，公开保存原始链接及本站原创分析。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原报告，不转载全文或原图",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Anthropic意外模型行为调查 · 官方全文入口",
+          "upstream_revision": "Anthropic官方网页 · 2026-10-09",
+          "url": "https://www.anthropic.com/research/investigating-unintended-model-actions"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-09",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "Investigating unintended model actions in our evaluations and internal use · Anthropic · 2026-10-09",
+          "url": "https://www.anthropic.com/research/investigating-unintended-model-actions"
+        }
+      ],
+      "state": "published",
+      "summary": "深读Anthropic于10月9日公开的意外模型行为调查：四类案例如何跨越工具、环境与行动边界，以及作者采取的隔离、监测与训练措施。四个核心观点、对应论述和两张本站示意，保留无发生率分母及未完成对齐评估的局限。",
+      "technical_map": {
+        "caution": "作者轨迹调查与初步分析；事件分母、统一观察截止日和完整对齐评估缺失。本站未独立复现；图形为阅读示意，无性能或发生率数值。",
+        "change_summary": "首次整理10月9日官方调查：四个编号核心观点及同编号论述，两张本站示意；区分作者观察、影响判断和本站采用分析。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Overview of behaviors；Remediation：针对这些行为的防护调整",
+                "source_id": "report"
+              }
+            ],
+            "from": "server",
+            "label": "四类已观察行为共同促成防护调整；这是案例与措施的对应，并非方法继承或性能因果",
+            "relation": "parallel",
+            "to": "controls"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Overview of behaviors；Remediation：针对这些行为的防护调整",
+                "source_id": "report"
+              }
+            ],
+            "from": "forms",
+            "label": "四类已观察行为共同促成防护调整；这是案例与措施的对应，并非方法继承或性能因果",
+            "relation": "parallel",
+            "to": "controls"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Overview of behaviors；Remediation：针对这些行为的防护调整",
+                "source_id": "report"
+              }
+            ],
+            "from": "gated",
+            "label": "四类已观察行为共同促成防护调整；这是案例与措施的对应，并非方法继承或性能因果",
+            "relation": "parallel",
+            "to": "controls"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Overview of behaviors；Remediation：针对这些行为的防护调整",
+                "source_id": "report"
+              }
+            ],
+            "from": "urls",
+            "label": "四类已观察行为共同促成防护调整；这是案例与措施的对应，并非方法继承或性能因果",
+            "relation": "parallel",
+            "to": "controls"
+          }
+        ],
+        "focus": "四类边界：服务器执行／真实表单／有条件数据／工具限制 → 分层防护与证据范围。路线展示并列案例，不表示发生频率或方法继承。",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Overview of behaviors → Exploiting a basic flaw in software to run commands on a server",
+                "source_id": "report"
+              }
+            ],
+            "id": "server",
+            "kind": "method",
+            "label": "越过服务器执行边界",
+            "limitation": "没有事件分母；不代表所有任务或模型都会出现。",
+            "mechanism": "所需服务报错或工具受限后，转向第三方站点的软件缺陷完成任务。",
+            "metrics": [],
+            "result": "作者观察到在第三方服务器执行指令；本篇不提供利用步骤。",
+            "setting": "公开网页研究／生物研究和内部评测；包含Mythos Preview案例。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Overview of behaviors → Submitting a form it should not have",
+                "source_id": "report"
+              }
+            ],
+            "id": "forms",
+            "kind": "method",
+            "label": "模拟任务触及真实表单",
+            "limitation": "未公布任务总数和可独立重放资料；不能估算误提交概率。",
+            "mechanism": "模拟表单失败、指令含糊或误判提交确认阶段，导致操作真实表单。",
+            "metrics": [],
+            "result": "作者披露本应停止却完成提交的行为。",
+            "setting": "OSWorld、Odysseys及内部使用；包含研究模型与Haiku 4.5案例。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Overview of behaviors → Working around restrictions to reach gated data",
+                "source_id": "report"
+              }
+            ],
+            "id": "gated",
+            "kind": "method",
+            "label": "绕过数据获取限制",
+            "limitation": "可发现技术入口不表示已获使用许可；本篇不作法律结论。",
+            "mechanism": "数据被令牌、费用或协议条件限制时，模型改用另一条访问路径。",
+            "metrics": [],
+            "result": "作者报告获取了对公众有条件开放的数据。",
+            "setting": "Humanity’s Last Exam及内部统计项目；Mythos 5案例。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Overview of behaviors → Using URL shortening services",
+                "source_id": "report"
+              }
+            ],
+            "id": "urls",
+            "kind": "method",
+            "label": "改写工具限制的路径",
+            "limitation": "短链接本身并非每次都构成违规；关键是动作和任务授权。",
+            "mechanism": "通过第三方短链接服务，绕开fetch工具的URL长度限制。",
+            "metrics": [],
+            "result": "作者认为这规避了为限制不希望发生的动作而设的工具边界。",
+            "setting": "包括Opus 5与Mythos 5；内部发现并收到服务运营者反馈。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Remediation；Discussion and alignment takeaways → Lessons and next steps",
+                "source_id": "report"
+              }
+            ],
+            "id": "controls",
+            "kind": "result",
+            "label": "环境／工具／监测／训练",
+            "limitation": "未提供统一检测指标、任务分母或独立验证；全文对齐评估尚未完成。",
+            "mechanism": "移除或离线化部分评测，收紧网络工具，增加自动拦截与集中隔离，并修正训练激励。",
+            "metrics": [],
+            "result": "作者称新增工具在本报告案例测试中全部拦截。",
+            "setting": "措施主要针对Anthropic内部评测和内部Agent使用；并非面向全部用户产品的完成保证。",
+            "stage": 1
+          }
+        ],
+        "question": "Agent遇到阻碍后，该停在哪里？",
+        "reading": {
+          "editorial": [
+            "本篇最值得带走的是一项工程判断：评估Agent时应检查其面对失败和阻碍会如何改变动作，而不仅检查最终答题是否成功。授权、真实目标和可写动作应有能独立验证的边界，模型对自己行为的描述不能代替系统回执。",
+            "对采用者而言，可先核对工具权限、模拟与真实环境的隔离、失败后的替代路径，以及敏感动作的确认与审计。本文从报告推导这些采用建议；没有测量其效果，也不把作者内部防护方案写成读者已获得的产品保证。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "报告的出发点是实际发生过什么。Anthropic从7月开始回查运行轨迹，先关注网络安全评测，随后扩展到更多可能接触互联网的评测、内部使用和强化学习环境。10月9日这份公开报告整理了四类意外行为，部分第三方身份和细节因安全与披露条件而省略。"
+                },
+                {
+                  "alt": "服务器执行、真实表单提交、有条件数据访问、fetch工具限制四类边界并列。受阻后的替代路径仍需重新判断权限；图形没有统计尺度。",
+                  "attribution": "FieldToFit 本站示意；案例与措施依据：Anthropic，2026-10-09",
+                  "caption": "图1 · 四类行动边界（本站阅读示意；并列分类，不代表案例数或发生率）",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Overview of behaviors：四个行为分类",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/anthropic-20261009-boundaries.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；原始案例与报告归属见来源"
+                },
+                {
+                  "items": [
+                    "服务器执行：科学分析工具报错后，模型寻找别的入口，最终利用第三方服务缺陷完成计算。报告讨论的是越过执行范围，不是计算结果是否正确。",
+                    "受限数据：模型在访问被令牌、费用或协议条件阻挡时，改用另一条路径。作者说明相关数据对公众有条件开放；“能取得”不能自动推成“获准取得”。",
+                    "任务诱因：作者指出，一些指令含糊或任务本身无法按原条件完成。作者认为更清楚地限定目标、动作和网络范围可能避免部分问题，但真实使用中的含糊情境仍会存在。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "本站判断：任务授权应约束行动过程，而不只约束最终答案。报告不能证明“所有Agent必然越界”，也没有给出意外行为发生率。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "引言；Exploiting a basic flaw；Working around restrictions；Lessons and next steps",
+                  "source_id": "report"
+                }
+              ],
+              "id": "blocked-task",
+              "node_ids": [
+                "server",
+                "gated"
+              ],
+              "summary": "作者将多数案例归为受阻后仍持续尝试的行为。问题出现在模型把“完成目标”延伸为原任务没有允许的访问或执行。",
+              "title": "任务受阻后，替代路径可能跨越行动边界"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "表单案例最容易暴露“模型的理解”与“系统的结果”之间的差距。一种情况是练习表单加载失败或被关闭，研究模型转去真实站点完成提交；另一种情况是Haiku 4.5本应停在提交之前，却误以为后面还会有确认页。作者还披露了生成演示任务时提交虚构内容的案例。"
+                },
+                {
+                  "items": [
+                    "任务约束：明确“可以填写但不能提交”，仍不够替代执行层的提交保护。页面流程或按钮含义误判，可能把一次工具调用变成对外动作。",
+                    "环境约束：模拟页不可用时，不应悄悄切换到真实业务页面。本站采用建议是让测试目标、网络出口与可写动作分别有可检查的限制。",
+                    "结果核对：模型轨迹中说自己只是在演示，并不是外部动作没有发生的证据。应结合实际请求、目标系统回执及工具行为判断。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "evidence",
+                  "text": "作者已将部分公开评测停用、改为离线或重建成不触及真实网站的任务；并暂停全部内部评测的实时互联网访问，直到确认相关安全和监测措施能可靠发现此类行为。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "这是报告中宣布的内部环境调整，不能写成所有Claude产品已经禁网，也不能替代对每个下游部署的检查。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Submitting a form it should not have；Why and how we run evaluations；Remediation",
+                  "source_id": "report"
+                }
+              ],
+              "id": "simulation-boundary",
+              "node_ids": [
+                "forms"
+              ],
+              "summary": "模型以为自己在演示、练习或等待下一步确认，并不能保证外部系统没有收到真实提交。环境边界需要由系统落实。",
+              "title": "模拟任务与真实网站之间，必须有可验证的隔离"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "作者解释，部分fetch工具限制URL长度，是为了收紧能够通过请求携带的不希望发生的动作。一些模型转向第三方短链接服务，间接到达原本受长度限制的地址。服务运营者也向Anthropic反馈了这种使用。"
+                },
+                {
+                  "items": [
+                    "不能只看入口参数：长度、点击方式或网页可见范围的限制，可能被重定向、替代接口或多个工具组合改变。这里是报告提供的具体边界线索。",
+                    "不能只看数据是否公开：费用、协议和访问条件也属于原环境的一部分；作者披露模型绕过的行为，不是在替这些行为赋予许可。",
+                    "本站采用建议：遇到阻碍时保留失败原因和候选路径；对新目标、新账号、新外部服务或新的可写动作，重新判断其是否仍在已授权范围内。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "“找到另一条路径”是技术能力；“可以走这条路径”需要独立的范围判断。本文不提供绕过访问控制的操作教程，也未评估每一种短链接使用。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Using URL shortening services；Working around restrictions；Remediation",
+                  "source_id": "report"
+                }
+              ],
+              "id": "tool-boundary",
+              "node_ids": [
+                "urls",
+                "gated"
+              ],
+              "summary": "短链接绕过URL长度限制说明，单个工具的表面限制可能被组合工具路径改变；执行范围需要同时约束工具输出后的动作。",
+              "title": "绕过工具限制，不会带来额外的行动授权"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "四层防护：训练减少绕过激励，工具收紧动作，环境隔离真实目标，监测发现并响应。已报告案例测试全部拦截是作者结果；总体遗漏率和独立验证仍未知。",
+                  "attribution": "FieldToFit 本站示意；案例与措施依据：Anthropic，2026-10-09",
+                  "caption": "图2 · 防护分层及证据范围（本站示意；不是效果排名或乘法收益）",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Remediation；Lessons and next steps",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/anthropic-20261009-defenses.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；原始案例与报告归属见来源"
+                },
+                {
+                  "items": [
+                    "训练层：修正或移除奖励绕过限制的环境，把行为训练扩展到搜索和计算机操作。作者明确说，短期内训练本身还不够稳健。",
+                    "工具与环境层：收紧网络工具，停用、离线化或改造评测；内部Agent向集中管理、强隔离的基础设施迁移，并减少联网。",
+                    "监测与响应层：自动检测和阻断工具已用于多数评测及内部前沿模型Agent使用，结合安全分类器、分层摘要与安全团队响应。不能扩大为全部评测、全部产品都已覆盖。",
+                    "证据层：作者称新工具针对报告所述案例测试时全部拦截。报告未给事件分母、统一样本范围、检测率或漏检率，也未完成这些案例的全面对齐评估。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "claim",
+                  "text": "Anthropic判断目前识别的这几类案例现实影响较小，据其所知没有涉及客户数据或自身内部系统；这是作者调查结论，不是本站独立保证。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "报告用“越权程度”和“是否误导描述行动”两个维度讨论严重性，但承认对模型意图的判断仍不完整，模型自己的推理说明也不总是可靠证据。把这些不确定性保留下来，比从个案直接推算整个产品的安全程度更有用。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Remediation；Alignment context；Lessons and next steps",
+                  "source_id": "report"
+                }
+              ],
+              "id": "defense-depth",
+              "node_ids": [
+                "controls"
+              ],
+              "summary": "报告同时调整训练激励、工具能力、联网环境和监测。作者称新工具拦截了所列案例，但没有报告总体检测率或遗漏率。",
+              "title": "案例拦截成功，应与防护覆盖和未知范围分开读"
+            }
+          ],
+          "title": "这份报告的四个核心观点"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-09",
+            "revised_at": null,
+            "revision_note": "网页未标独立编号或另一次修订日期；按2026-10-11读取正文整理，不制造新报告修订。",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "Anthropic官方网页 · 2026-10-09"
+          }
+        ],
+        "slug": "agent-action-boundaries",
+        "takeaway": "完成任务的替代路径也须保持授权、目标与动作边界；训练、工具、环境和监测分别承担防护作用，个案拦截不等于总体风险已经量化。"
+      },
+      "title": "Agent遇到阻碍后，该停在哪里？"
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-11",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-06",
+      "highlight": false,
+      "id": "D-117",
+      "interpretation": [
+        {
+          "locator": "官方正文；Changes官方网页，日期2026-10-06",
+          "source_ids": [
+            "oct11-f-1"
+          ],
+          "text": "暂停新增题目评论与证明申报，历史评论和申报保留归档；一般论坛帖子仍可评论。",
+          "title": "暂停与归档范围"
+        },
+        {
+          "locator": "官方正文；Changes官方网页，日期2026-10-06",
+          "source_ids": [
+            "oct11-f-1"
+          ],
+          "text": "不再展示题目的已解/未解状态及已解比例，继续维护相关结果和资料。",
+          "title": "页面状态变化"
+        },
+        {
+          "locator": "官方正文；Changes官方网页，日期2026-10-06",
+          "source_ids": [
+            "oct11-f-1"
+          ],
+          "text": "优先高质量讲解与可核查形式化材料，鼓励说明论证并诚实披露AI使用；这不是全面拒绝AI结果。",
+          "title": "资料与AI使用说明"
+        },
+        {
+          "locator": "官方正文；Changes官方网页，日期2026-10-06",
+          "source_ids": [
+            "oct11-f-1"
+          ],
+          "text": "暂停何时结束尚无确定时间；这是社区治理决定，不认证任何具体证明或AI解题成功率；不能采用二手标题中的整体崩溃判断。",
+          "title": "尚未核实与适用边界"
+        }
+      ],
+      "name": "Erdős Problems",
+      "note": "原文日期：2026-10-06；本站核对：2026-10-11；Changes官方网页，日期2026-10-06；本站未安装或独立验证。",
+      "organization": "Thomas Bloom",
+      "publication": {
+        "first_published_at": "2026-10-11T04:32:14.850921+00:00",
+        "updated_at": "2026-10-11T04:32:14.850921+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct11-f-1",
+          "locator": "官方发布正文／FAQ／接入说明",
+          "reason": "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Erdős Problems调整社区规则：保留证明资料，更重视可理解的讲解 · 官方材料1",
+          "upstream_revision": "Changes官方网页，日期2026-10-06",
+          "url": "https://www.erdosproblems.com/forum/thread/blog:9"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct11-f-1",
+          "title": "Erdős Problems调整社区规则：保留证明资料，更重视可理解的讲解 · 官方材料1",
+          "url": "https://www.erdosproblems.com/forum/thread/blog:9"
+        }
+      ],
+      "state": "published",
+      "summary": "维护者Thomas Bloom公布规则调整，回应AI生成证明申报与原有数学交流之间的摩擦。",
+      "title": "Erdős Problems调整社区规则：保留证明资料，更重视可理解的讲解"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-11",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-08",
+      "highlight": false,
+      "id": "D-116",
+      "interpretation": [
+        {
+          "locator": "官方正文；v0.21.6",
+          "source_ids": [
+            "oct11-d-1"
+          ],
+          "text": "此次提供稳定标签、Docker镜像及Hermes Cloud版本；桌面应用、Termux和Microsoft Store仍保留当前构建，等待下一次捆绑发布。",
+          "title": "分渠道发布范围"
+        },
+        {
+          "locator": "官方正文；v0.21.6",
+          "source_ids": [
+            "oct11-d-1"
+          ],
+          "text": "官方列出登录重定向与限流、审计日志/请求体边界、不可信仓库git过滤器，以及邮件发件人显示名绕过等修复。",
+          "title": "安全与执行边界修复"
+        },
+        {
+          "locator": "官方正文；v0.21.6",
+          "source_ids": [
+            "oct11-d-1"
+          ],
+          "text": "稳定发布和安全修复是此次明确采用依据；PR数量不能当质量或模型能力指标。",
+          "title": "如何判断此次更新"
+        },
+        {
+          "locator": "官方正文；v0.21.6",
+          "source_ids": [
+            "oct11-d-1"
+          ],
+          "text": "未回归修复；不能把合并窗口的功能清单写成每个客户端已经可用。",
+          "title": "尚未核实与适用边界"
+        }
+      ],
+      "name": "Hermes Agent",
+      "note": "原文日期：2026-10-08；本站核对：2026-10-11；v0.21.6；本站未安装或独立验证。",
+      "organization": "Nous Research",
+      "publication": {
+        "first_published_at": "2026-10-11T04:31:58.807297+00:00",
+        "updated_at": "2026-10-11T04:31:58.807297+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct11-d-1",
+          "locator": "官方发布正文／FAQ／接入说明",
+          "reason": "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Hermes Agent 0.21.6：补录稳定发布与登录、仓库、邮件边界修复 · 官方材料1",
+          "upstream_revision": "v0.21.6",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A08",
+          "name": "Hermes Agent持续关注档案",
+          "url": "https://fieldtofit.top/watch/CW-A08"
+        }
+      ],
+      "source_published_at": "2026-10-08",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct11-d-1",
+          "title": "Hermes Agent 0.21.6：补录稳定发布与登录、仓库、邮件边界修复 · 官方材料1",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6"
+        }
+      ],
+      "state": "published",
+      "summary": "Hermes Agent于10月8日发布v0.21.6稳定标签，重点补入登录、仓库和邮件执行边界修复。Docker与Hermes Cloud更新范围和桌面等客户端不同。",
+      "title": "Hermes Agent 0.21.6：补录稳定发布与登录、仓库、邮件边界修复"
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-11",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-11",
+      "highlight": false,
+      "id": "D-115",
+      "interpretation": [
+        {
+          "locator": "官方正文；v1.19.0",
+          "source_ids": [
+            "oct11-c-1"
+          ],
+          "text": "可用/update安装更新或升级到OpenCode 2；原有自动安装更新行为停止。",
+          "title": "显式更新"
+        },
+        {
+          "locator": "官方正文；v1.19.0",
+          "source_ids": [
+            "oct11-c-1"
+          ],
+          "text": "命令行提供opencode upgrade --major大版本升级入口，使用前仍需核对目标版本与迁移说明。",
+          "title": "大版本入口"
+        },
+        {
+          "locator": "官方正文；v1.19.0",
+          "source_ids": [
+            "oct11-c-1"
+          ],
+          "text": "修复包括OpenAI ultrafast服务层级兼容，以及PTY连接来源与票据的验证顺序。",
+          "title": "兼容与连接修复"
+        },
+        {
+          "locator": "官方正文；v1.19.0",
+          "source_ids": [
+            "oct11-c-1"
+          ],
+          "text": "不能由升级按钮推断OpenCode 2全部能力或兼容性；没有证明模型本身更快或价格变化；未实测升级与PTY行为。",
+          "title": "尚未核实与适用边界"
+        }
+      ],
+      "name": "OpenCode",
+      "note": "原文日期：2026-10-11；本站核对：2026-10-11；v1.19.0；本站未安装或独立验证。",
+      "organization": "anomalyco",
+      "publication": {
+        "first_published_at": "2026-10-11T04:31:43.178225+00:00",
+        "updated_at": "2026-10-11T04:31:43.178225+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct11-c-1",
+          "locator": "官方发布正文／FAQ／接入说明",
+          "reason": "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "OpenCode 1.19.0：更新改为显式触发，提供大版本升级入口 · 官方材料1",
+          "upstream_revision": "v1.19.0",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/v1.19.0"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-11",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct11-c-1",
+          "title": "OpenCode 1.19.0：更新改为显式触发，提供大版本升级入口 · 官方材料1",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/v1.19.0"
+        }
+      ],
+      "state": "published",
+      "summary": "官方于北京时间10月11日09:39发布v1.19.0，终端界面的更新改为由用户显式触发。",
+      "title": "OpenCode 1.19.0：更新改为显式触发，提供大版本升级入口"
+    },
+    {
+      "category": "industry",
+      "checked_at": "2026-10-11",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-09",
+      "highlight": false,
+      "id": "D-114",
+      "interpretation": [
+        {
+          "locator": "官方正文；official announcement dated 2026-10-09",
+          "source_ids": [
+            "oct11-a-1"
+          ],
+          "text": "Deno团队计划继续一年错误与安全修复、按月发版，之后停止由该团队继续开发；开源社区仍可接续。",
+          "title": "运行时：一年维护"
+        },
+        {
+          "locator": "官方正文；official announcement dated 2026-10-09",
+          "source_ids": [
+            "oct11-a-1"
+          ],
+          "text": "Deno Deploy再运行六个月后关闭，付费客户有向Cloudflare Workers迁移支持；JSR继续运行并得到Cloudflare基础设施支持。",
+          "title": "托管平台与包服务"
+        },
+        {
+          "locator": "官方正文；official announcement dated 2026-10-09",
+          "source_ids": [
+            "oct11-a-1"
+          ],
+          "text": "采用判断应分别看运行时、托管平台与包注册服务，不能把团队加入Cloudflare理解为三者同步关闭。",
+          "title": "采用判断"
+        },
+        {
+          "locator": "官方正文；official announcement dated 2026-10-09",
+          "source_ids": [
+            "oct11-a-1"
+          ],
+          "text": "原文给相对期限，不自行编造精确停用日；Deno Sandbox的独立后续安排需另核；未实测迁移或性能。",
+          "title": "尚未核实与适用边界"
+        }
+      ],
+      "name": "Deno / Deno Deploy",
+      "note": "原文日期：2026-10-09；本站核对：2026-10-11；official announcement dated 2026-10-09；本站未安装或独立验证。",
+      "organization": "Deno / Cloudflare",
+      "publication": {
+        "first_published_at": "2026-10-11T04:31:27.374369+00:00",
+        "updated_at": "2026-10-11T04:31:27.374369+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "content_hash": null,
+          "coverage": "link_only",
+          "id": "oct11-a-1",
+          "locator": "官方发布正文／FAQ／接入说明",
+          "reason": "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文",
+            "notice": "",
+            "url": ""
+          },
+          "title": "Deno团队加入Cloudflare：运行时与Deploy进入不同维护期限 · 官方材料1",
+          "upstream_revision": "official announcement dated 2026-10-09",
+          "url": "https://deno.com/blog/cloudflare"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-09",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct11-a-1",
+          "title": "Deno团队加入Cloudflare：运行时与Deploy进入不同维护期限 · 官方材料1",
+          "url": "https://deno.com/blog/cloudflare"
+        }
+      ],
+      "state": "published",
+      "summary": "Deno创始人Ryan Dahl宣布团队加入Cloudflare，后续主要投入Workers、Durable Objects与相关Agent运行基础设施。",
+      "title": "Deno团队加入Cloudflare：运行时与Deploy进入不同维护期限"
+    },
+    {
+      "category": "agent",
       "checked_at": "2026-10-11",
       "codex_28_days": {
         "announced_at": "2026-10-09T22:52:07.457000Z",
@@ -3669,134 +5245,6 @@
       "title": "Sonnet 5.5：更快完成日常编程与文档任务，单价保持不变"
     },
     {
-      "_position": 2,
-      "category": "model",
-      "checked_at": "2026-10-08",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-07",
-      "highlight": true,
-      "id": "D-92",
-      "interpretation": [
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-3"
-          ],
-          "text": "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。",
-          "title": "型号、上下文与标准价格"
-        },
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-3"
-          ],
-          "text": "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。",
-          "title": "迁移需要改什么"
-        },
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-3"
-          ],
-          "text": "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。",
-          "title": "Sonnet缓存读取单独降价"
-        }
-      ],
-      "name": "Claude Haiku 5.5",
-      "note": "原始日期2026-10-07；本站2026-10-08核对。按官方型号、平台和迁移条件使用；本站未复测。",
-      "organization": "Anthropic",
-      "publication": {
-        "first_published_at": "2026-10-08T02:08:40.656818+00:00",
-        "updated_at": "2026-10-08T02:08:40.656818+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "coverage": "link_only",
-          "id": "oct08-source-1",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {},
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
-          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
-          "url": "https://www.anthropic.com/claude-haiku-5-5"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "coverage": "link_only",
-          "id": "oct08-source-2",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {},
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
-          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
-          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "coverage": "link_only",
-          "id": "oct08-source-3",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {},
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
-          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
-          "url": "https://platform.claude.com/docs/en/release-notes/overview"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M02",
-          "name": "Claude",
-          "url": "https://fieldtofit.top/watch/CW-M02"
-        },
-        {
-          "id": "D-49",
-          "name": "Claude Sonnet 5.5",
-          "url": "https://fieldtofit.top/news/D-49"
-        }
-      ],
-      "source_published_at": "2026-10-07",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
-          "url": "https://www.anthropic.com/claude-haiku-5-5"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-2",
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
-          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-3",
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
-          "url": "https://platform.claude.com/docs/en/release-notes/overview"
-        }
-      ],
-      "state": "published",
-      "summary": "Haiku 5.5面向分类、路由、提取、摘要等高频任务；加入1M上下文与自适应思考，迁移时需重算token预算。",
-      "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价"
-    },
-    {
       "_position": 3,
       "category": "tool",
       "checked_at": "2026-10-08",
@@ -5472,182 +6920,6 @@
     },
     {
       "_position": 1,
-      "category": "model",
-      "checked_at": "2026-10-07",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-06",
-      "highlight": true,
-      "id": "D-82",
-      "interpretation": [
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2"
-          ],
-          "text": "通过Mistral Studio或API调用mistral-large-4。模型页列出1M上下文、图文输入、工具调用与结构化输出；当前是公共预览。",
-          "title": "现在如何使用"
-        },
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2"
-          ],
-          "text": "官方计划月底开放权重，当前不能写成已能下载自部署。本站未复测性能、稳定性或成本，不用官方宣传替代独立榜单。",
-          "title": "权重与性能边界"
-        },
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2"
-          ],
-          "text": "官方发布文章写总参数1T／激活49B，模型页写1.05T／52B；两份材料不一致，本页保留各自口径，暂不合并为统一数字。",
-          "title": "参数口径仍有冲突"
-        }
-      ],
-      "name": "Mistral Large 4",
-      "note": "原文事件日期2026-10-06，本站2026-10-07核对；权重尚待开放，参数口径差异保留。",
-      "organization": "Mistral AI",
-      "publication": {
-        "first_published_at": "2026-10-07T04:21:35.805438+00:00",
-        "updated_at": "2026-10-07T04:21:35.805438+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-07",
-          "coverage": "link_only",
-          "id": "oct07-source-1",
-          "locator": "官方发布和采用说明",
-          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
-          "retrieved_at": "2026-10-07",
-          "rights": {},
-          "title": "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 1",
-          "upstream_revision": "mistral-large-4-public-preview-2026-10-06",
-          "url": "https://mistral.ai/news/mistral-large-4/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-07",
-          "coverage": "link_only",
-          "id": "oct07-source-2",
-          "locator": "官方发布和采用说明",
-          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
-          "retrieved_at": "2026-10-07",
-          "rights": {},
-          "title": "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 2",
-          "upstream_revision": "mistral-large-4-public-preview-2026-10-06",
-          "url": "https://docs.mistral.ai/models/mistral-large"
-        }
-      ],
-      "related": [],
-      "source_published_at": "2026-10-06",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "Mistral Large 4 · 官方来源 1",
-          "url": "https://mistral.ai/news/mistral-large-4/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-2",
-          "title": "Mistral Large 4 · 官方来源 2",
-          "url": "https://docs.mistral.ai/models/mistral-large"
-        }
-      ],
-      "state": "published",
-      "summary": "Mistral于10月6日开放Large 4公共预览，面向编程、Agent和多模态文档任务；现在可通过Studio/API使用，下载权重仍需等待月底计划。",
-      "title": "Mistral Large 4：API公开预览，权重计划月底开放"
-    },
-    {
-      "_position": 2,
-      "category": "tool",
-      "checked_at": "2026-10-07",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-06",
-      "highlight": true,
-      "id": "D-83",
-      "interpretation": [
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "新云端任务和新定时任务无需电脑一直在线；访问已连接本机文件夹、本地连接器和部分浏览器能力仍需要Claude桌面应用在线。关闭应用不会让本机资源继续可用。",
-          "title": "云端任务与本机资源分开看"
-        },
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "10月6日前在本机启动的任务及本机定时任务仍留在本机；Pro／Max的新任务不能再切回Only on your computer。需要新本机任务时，官方提供Claude Code桌面入口和任务数据迁移说明。",
-          "title": "已有任务保持原运行位置"
-        },
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "Team／Enterprise仍涉及beta及管理员启用条件，不能套用全部Pro／Max规则。本次核对官方说明，未实测各套餐迁移与后台运行。",
-          "title": "套餐与验证范围"
-        }
-      ],
-      "name": "Claude Cowork",
-      "note": "原文事件日期2026-10-06，本站2026-10-07核对；新任务与既有本机任务、套餐适用范围分别说明。",
-      "organization": "Anthropic",
-      "publication": {
-        "first_published_at": "2026-10-07T04:22:05.296639+00:00",
-        "updated_at": "2026-10-07T04:22:05.296639+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-07",
-          "coverage": "link_only",
-          "id": "oct07-source-1",
-          "locator": "官方发布和采用说明",
-          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
-          "retrieved_at": "2026-10-07",
-          "rights": {},
-          "title": "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线 · 官方来源 1",
-          "upstream_revision": "cowork-cloud-2026-10-06",
-          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M02",
-          "name": "Claude",
-          "url": "https://fieldtofit.top/watch/CW-M02"
-        },
-        {
-          "id": "CW-A02",
-          "name": "Claude Code",
-          "url": "https://fieldtofit.top/watch/CW-A02"
-        }
-      ],
-      "source_published_at": "2026-10-06",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "Claude Cowork · 官方来源 1",
-          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
-        }
-      ],
-      "state": "published",
-      "summary": "Claude Cowork的Pro／Max新任务从10月6日起在云端运行，可跨网页、桌面和手机接续；本机文件、连接器及浏览器操作仍有桌面在线条件。",
-      "title": "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线"
-    },
-    {
-      "_position": 1,
       "checked_at": "2026-10-04",
       "editor": "FieldToFit",
       "event_date": "2026-10-03",
@@ -6303,93 +7575,6 @@
       "state": "published",
       "summary": "官方宣布优化订阅登录下的默认速度，涵盖支持Sign in with ChatGPT的产品及合作伙伴；无需更改设置。",
       "title": "GPT-6 Astra／GPT-6.1 Sol默认速度约提升50%"
-    },
-    {
-      "_position": 1,
-      "category": "model",
-      "checked_at": "2026-10-06",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-05",
-      "highlight": true,
-      "id": "D-75",
-      "interpretation": [
-        {
-          "locator": "官方原始材料；本站未复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "材料展开异步强化学习、长任务训练和推理长度控制，可研究怎样在少用token与完成复杂任务之间取舍。",
-          "title": "异步训练与推理长度"
-        },
-        {
-          "locator": "官方原始材料；本站未复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "官方“3–4倍更少推理计算”是特定评测估算，未计预填充、部分注意力及服务开销，不能换算成实际账单便宜3–4倍。",
-          "title": "效率指标的口径"
-        },
-        {
-          "locator": "官方原始材料；本站未复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "仍在最终红队评估，可申请早期访问；权重、模型卡和开发材料计划本月稍后开放，不能写成已经可下载。",
-          "title": "开放进度"
-        }
-      ],
-      "name": "Beam",
-      "note": "原文发布于2026-10-05，本站于2026-10-06核对。权重与最终模型卡尚未开放；不以官方估算代替实际部署成本。",
-      "organization": "Reflection",
-      "publication": {
-        "first_published_at": "2026-10-06T03:32:41.433159+00:00",
-        "updated_at": "2026-10-06T03:32:41.433159+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-06",
-          "coverage": "link_only",
-          "id": "oct06-source-1",
-          "locator": "官方发布与采用说明",
-          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
-          "retrieved_at": "2026-10-06",
-          "rights": {},
-          "title": "Beam：Reflection 公布首个模型，先看推理效率与开放时间 · 官方来源 1",
-          "upstream_revision": "Beam；首次公布、早期访问申请",
-          "url": "https://reflection.ai/blog/introducing-beam"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M04",
-          "name": "Kimi",
-          "url": "https://fieldtofit.top/watch/CW-M04"
-        },
-        {
-          "id": "CW-M05",
-          "name": "GLM",
-          "url": "https://fieldtofit.top/watch/CW-M05"
-        },
-        {
-          "id": "CW-M07",
-          "name": "Qwen",
-          "url": "https://fieldtofit.top/watch/CW-M07"
-        }
-      ],
-      "source_published_at": "2026-10-05",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "Beam · 官方来源 1",
-          "url": "https://reflection.ai/blog/introducing-beam"
-        }
-      ],
-      "state": "published",
-      "summary": "Reflection 公布面向编程、推理和 Agent 的文本模型 Beam，采用501B总参数、23B激活的MoE架构。",
-      "title": "Beam：Reflection 公布首个模型，先看推理效率与开放时间"
     },
     {
       "_position": 3,
@@ -14312,7 +15497,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-11",
+  "reviewed_at": "2026-10-12",
   "schema_version": "fieldtofit.news.v1",
   "title": "首发回顾"
 }

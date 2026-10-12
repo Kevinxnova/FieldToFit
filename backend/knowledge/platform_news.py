@@ -170,7 +170,7 @@ def news(q='', id='', revision='', _data=None):
         raise PlatformError('News revision changed; read the current collection', 'news_revision_changed', 409)
     from backend.knowledge.locale import searchable
     entries = [item for item in published if (not id or item['id'] == id) and
-               (not q or q in ' '.join(str(v) for v in searchable({k:item[k] for k in ('title','name','organization','summary')}).values()).casefold())]
+               (not q or q in ' '.join(str(v) for k,v in searchable({'id':item['id'],**{k:item[k] for k in ('title','name','organization','summary')}}).items() if k!='id').casefold())]
     if id and not entries:
         raise PlatformError('News item not found or withdrawn', 'not_found', 404)
     from backend.knowledge.stewardship import decorate

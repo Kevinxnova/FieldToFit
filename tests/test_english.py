@@ -153,6 +153,26 @@ def test_english_direct_routes_metadata_and_filters(client):
     r=client.get('/api/v1/platform/news?q=document&lang=en')
     assert r.status_code==200 and r.json['total']>0
 
+def test_news_search_uses_the_objects_reviewed_translation(client):
+    from english_fixtures import fixture_fields
+    ws.migrate()
+    current=ws.detail('news','D-123')
+    source='已审重置公告搜索测试'
+    translated='Quota scope fixture announcement'
+    current['draft']['title']=source
+    saved=ws.save('news','D-123',current)
+    fields={**fixture_fields(saved['english']),source:translated}
+    ws.english_review('news','D-123',{'draft_version':saved['draft_version'],
+        'source_hash':saved['english']['source_hash'],'fields':fields,
+        'confirmed':True,'reason':'Isolated reviewed search fixture'})
+    preview=ws.preview('news','D-123');assert preview['ready']
+    ws.publish('news','D-123',{**preview,'confirmed':True,'reason':'Isolated search fixture'})
+    english=client.get('/api/v1/platform/news?q=quota%20scope%20fixture&lang=en')
+    assert english.status_code==200 and [i['id'] for i in english.json['items']]==['D-123']
+    assert english.json['items'][0]['title']==translated
+    chinese=client.get('/api/v1/platform/news?q=quota%20scope%20fixture')
+    assert chinese.status_code==200 and chinese.json['total']==0
+
 def test_intake_bilingual_review_is_stable_and_atomic(client,monkeypatch):
     from test_platform_maintenance import sample,draft as intake_draft
     from backend.knowledge import platform_maintenance as maintenance,store,platform

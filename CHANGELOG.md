@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.32"></a>
+## v1.8.32 · Codex重置公告补录与英文搜索 · 2026-10-12
+
+<!-- release-summary:zh:start -->
+- 补录Tibo官方Day 6全球额度重置公告，归北京时间10月11日、日历Day 7；概览、正文及主帖／回复卡片保持一致。
+- 重置公告与已生效重置分开判断；保留原帖时间依据和真实头像，不推造套餐、EOD时区或实际生效时刻。
+- 修复英文动态搜索读取记录专属已审译文的问题；MCP正常位置接收一条新增，随后空续读，专题24条。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add Tibo's official Day 6 global usage-reset announcement on October 11 Beijing time, calendar Day 7, with matching overview, article and original-post/reply cards.
+- Distinguish verified reset announcements from confirmed-effective resets; preserve timestamp evidence and the real avatar without inventing plans, an EOD timezone or an effective time.
+- Fix English news search to use each record's reviewed translation; the normal MCP checkpoint receives one addition followed by an empty read, with 24 topic records.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者明确授权重新搜索整理、更新并部署已对齐的Day 6公告；仅D-123为本批新内容，不扩展未来自动发布授权。announcement沿用既有字段，已生效reset校验／计数保持，无数据库迁移或公开接口破坏。源码导出同时保留既有已审生产内容；并行日报的未完成代码在本批隔离工作区之外。85项回归、构建、仓库检查及正式中英三宽度、HTTP／MCP同源与英文搜索通过；v1.8.32已部署，结果见[本批验收](docs/validation/2026-10-12-codex-reset-announcement.md)。北京时间22:00／22:30准点执行仍未通过，不将提示回读或人工发布写成调度修复。
+
 <a id="v1.8.30"></a>
 ## v1.8.30 · 模型专题入口与初代历史 · 2026-10-12
 
