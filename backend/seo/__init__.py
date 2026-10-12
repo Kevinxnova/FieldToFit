@@ -90,7 +90,7 @@ def published_dates_query():
     fields = ('state','name','organization','title','summary','introduction','type',
               'source_published_at','event_date','checked_at','interpretation','blocks',
               'sources','related','note','editor','highlight','attention','origin',
-              'submission','reading_materials','aliases','technical_map','publication.updated_at')
+              'submission','reading_materials','aliases','technical_map','hot_card','publication.updated_at')
     projection = 'json_array(' + ','.join("json_extract(snapshot,'$."+key+"')" for key in fields) + ')'
     return f"""WITH revisions AS (
         SELECT kind,item_id,action,created_at,{projection} body,

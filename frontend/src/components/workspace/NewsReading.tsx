@@ -1,3 +1,4 @@
+import { HotCardReading, type HotCard } from './HotCards';
 import type {TechnicalMap} from './TechnicalMaps';
 import { currentLanguage } from '../../locale/language';
 import { ReportCorrection, CorrectionReceipts } from './Corrections';
@@ -12,7 +13,7 @@ import { useWorkspace, SourceLink } from './UI';
 import type { CodexEvent, CodexTopic } from './codexData';
 import { SourcePosts } from './SourcePostCard';
 export type NewsItem = {
-  codex_28_days?:CodexEvent;technical_map?:TechnicalMap;
+  hot_card?:HotCard;codex_28_days?:CodexEvent;technical_map?:TechnicalMap;
   maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;
   media?:NewsMedia;category?:string;event_date?:string|null;publication?:{first_published_at:string|null;updated_at:string|null};
   id: string; name: string; organization: string; title: string; summary: string; source_published_at: string | null;
@@ -39,7 +40,8 @@ export function NewsReading({ data, loading, error, reload, previewBodies, stand
   };
   if(!standalone)return <NewsIndex data={data} loading={loading} error={error} reload={reload} preview={!!previewBodies}/>;
   return <section className="news-section">
-    <div className="news-list">{data?.items.map(item => <article className="news-card" id={newsAnchor(item.id)} tabIndex={-1} key={item.id}>
+    <div className="news-list">{data?.items.map(item => <article className={'news-card'+(item.hot_card?' has-hot-card':'')} id={newsAnchor(item.id)} tabIndex={-1} key={item.id}>
+      {item.hot_card&&<HotCardReading item={item} preview={!!previewBodies}/>}
       <>{item.media&&<ReviewedImage media={item.media} lead/>}</><p className="news-meta">{item.id} · {item.organization} · {item.source_published_at ? pick('来源发布 ', 'Source date ') + item.source_published_at : pick('首次发布日期待核实', 'First release date unconfirmed')}</p>
       {!standalone && <h4><Link to={contentPath(item.id)}>{item.title}</Link></h4>}<ContentExposure id={item.id}><p>{item.summary}</p></ContentExposure>
       <div className="news-editorial"><h5>{pick('FieldToFit 解读','FieldToFit notes')}</h5>

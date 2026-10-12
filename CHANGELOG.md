@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.36"></a>
+## v1.8.36 · 热点信息卡 · 2026-10-12
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Information cards for important product updates -->
+<!-- release-summary:zh:start -->
+- 新增REQ-6-22热点信息卡：本期速览下独立精选区域、详情分层解读、全部卡片筛选与人工分享图保存。
+- 复用双语草稿／审核／发布流程，校验图片与文案版本；待更正暂停下载，轮换与原日期分别维护。
+- 完成三组双语样稿、六张分享图及本地验证；本批未部署，首批卡片尚未正式发布。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add REQ-6-22 information cards below At a glance, with layered detail reading, an archive filter and manually prepared share images.
+- Reuse bilingual drafts, review and publication; bind images to copy revisions, pause downloads during corrections and preserve original dates when rotating selections.
+- Prepare three bilingual samples and six share images with local validation. This batch is not deployed and the first cards are not published to production.
+<!-- release-summary:en:end -->
+
+对应REQ-6-22，关联REQ-10／11／23。新增可选hot_card字段、静态PNG及登记清单；旧文章／接口兼容，无数据库迁移，既有日程不变，无自动发布或在线生成器。实际64项回归、101项浏览器检查、二维码及待验范围见[验收记录](docs/validation/2026-10-12-hot-information-cards.md)，维护方法见[信息卡指南](docs/guides/hot-information-cards.md)。
+
 <a id="v1.8.35"></a>
 ## v1.8.35 · 技术报告默认展示最新四篇 · 2026-10-12
 

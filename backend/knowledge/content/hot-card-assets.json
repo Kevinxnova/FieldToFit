@@ -1,0 +1,41 @@
+{
+  "/hot-cards/d-83-7309a5b69432-zh.png": {
+    "url": "/hot-cards/d-83-7309a5b69432-zh.png",
+    "sha256": "44a79fc0b1276805e50783c81fdb698605923764857caffe94d477448874c75f",
+    "content_revision": "7309a5b69432f28b463f44ae3af281219fa5d736bd9edba20afdb2f949504c5e",
+    "news_id": "D-83"
+  },
+  "/hot-cards/d-83-7309a5b69432-en.png": {
+    "url": "/hot-cards/d-83-7309a5b69432-en.png",
+    "sha256": "27518b57669c440625120b3506ea12b276f67c8d56219554b0cdaa60240bfd5d",
+    "text_revision": "5e5484184fce45d716b5b4d6ffac86a2b8f75c5387e4a36783c8d6fb0fbe0d40",
+    "content_revision": "7309a5b69432f28b463f44ae3af281219fa5d736bd9edba20afdb2f949504c5e",
+    "news_id": "D-83"
+  },
+  "/hot-cards/d-113-4679029b0f9b-zh.png": {
+    "url": "/hot-cards/d-113-4679029b0f9b-zh.png",
+    "sha256": "7a8545587b96e6bd1c3e2ae9a5f6ba4fd4d0547d3e094b32949e7a429cb9fcad",
+    "content_revision": "4679029b0f9b11bb370ff391d8d43214f3709b3a6045dbdee4495403e38689b4",
+    "news_id": "D-113"
+  },
+  "/hot-cards/d-113-4679029b0f9b-en.png": {
+    "url": "/hot-cards/d-113-4679029b0f9b-en.png",
+    "sha256": "db2de408e7b92d1bc77af6eb19f97a99e51cfde1c4d92759df91b105fb057966",
+    "text_revision": "7dbedd94dc49a6209b2221068ff21af0edfe675927e11a9512e9adaf4f262ee2",
+    "content_revision": "4679029b0f9b11bb370ff391d8d43214f3709b3a6045dbdee4495403e38689b4",
+    "news_id": "D-113"
+  },
+  "/hot-cards/d-92-b783ac5a9680-zh.png": {
+    "url": "/hot-cards/d-92-b783ac5a9680-zh.png",
+    "sha256": "f6a4f898e0465bce722bff618d080e6be06765eb7964975d4680e0749c8ec1c5",
+    "content_revision": "b783ac5a9680c903dc76fa2647afd87abedebf6477808abc4aa7bd60e140b74a",
+    "news_id": "D-92"
+  },
+  "/hot-cards/d-92-b783ac5a9680-en.png": {
+    "url": "/hot-cards/d-92-b783ac5a9680-en.png",
+    "sha256": "44cf904db06b17657dd3b79519d2dfe9570bf2ed2d96d77edf64feab7f27fe3e",
+    "text_revision": "33c132b6e9d680bc8fc4db2afbdaf85a126fc5038ad0bd63d856e5a8a11c53cc",
+    "content_revision": "b783ac5a9680c903dc76fa2647afd87abedebf6477808abc4aa7bd60e140b74a",
+    "news_id": "D-92"
+  }
+}

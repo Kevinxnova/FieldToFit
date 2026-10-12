@@ -17,6 +17,10 @@ NEWS_CATEGORIES = ('model', 'agent', 'tool', 'skill', 'harness', 'research', 'in
 def reading_fields(item):
     """Optional reviewed media; nothing is scraped or fetched during publication."""
     result = {}
+    from backend.knowledge.hot_cards import metadata as card_metadata
+    card = card_metadata(item)
+    if card:
+        result['hot_card'] = card
     from backend.knowledge.technical_maps import metadata as map_metadata
     graph = map_metadata(item)
     if graph:
@@ -74,6 +78,8 @@ def validate(data):
     for key in ('edition', 'title', 'reviewed_at'):
         text(data[key], key, 200)
     date.fromisoformat(data['reviewed_at'])
+    from backend.knowledge.hot_cards import validate_selection
+    validate_selection(data['items'])
     ids, topic_keys, map_slugs, map_questions = set(), set(), set(), set()
     for item in data['items']:
         if not re.fullmatch(r'D-\d{2,}', item['id']) or item['id'] in ids:
@@ -170,7 +176,7 @@ def news(q='', id='', revision='', _data=None):
         raise PlatformError('News revision changed; read the current collection', 'news_revision_changed', 409)
     from backend.knowledge.locale import searchable
     entries = [item for item in published if (not id or item['id'] == id) and
-               (not q or q in ' '.join(str(v) for k,v in searchable({'id':item['id'],**{k:item[k] for k in ('title','name','organization','summary')}}).items() if k!='id').casefold())]
+               (not q or q in ' '.join(str(v) for k,v in searchable({'id':item['id'],**{k:item[k] for k in ('title','name','organization','summary')},'hot_card':{k:(item.get('hot_card') or {}).get(k,'') for k in ('headline','scope')}}).items() if k!='id').casefold())]
     if id and not entries:
         raise PlatformError('News item not found or withdrawn', 'not_found', 404)
     from backend.knowledge.stewardship import decorate

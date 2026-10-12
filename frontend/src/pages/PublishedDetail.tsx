@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {RelatedMaps} from '../components/workspace/TechnicalMaps';
 import { Link, Navigate, useParams, useLocation } from '@fieldtofit/locale/router';
 import { useRemote } from '../api/knowledge';
@@ -15,10 +16,11 @@ export function PublishedDetail({kind}: {kind:'news'|'watch'}) {
 function Detail({kind, id}: {kind:'news'|'watch';id:string}) {
   const {pick} = useWorkspace();
   const location=useLocation();const readingReturn=location.state?.readingReturn;
-  const back=typeof readingReturn?.url==='string'&&/^(?:\/for-you(?:\?|$)|\/(?:en\/)?watch\/CW-[MATSH]\d+$)/.test(readingReturn.url)?readingReturn:null;
+  const back=typeof readingReturn?.url==='string'&&/^(?:\/for-you(?:[?#]|$)|\/(?:en\/)?watch\/CW-[MATSH]\d+$)/.test(readingReturn.url)?readingReturn:null;
   const result = useRemote<NewsCollection | WatchCollection>(`/v1/platform/${kind}?id=${encodeURIComponent(id)}`);
   const item = !result.loading && !result.error ? result.data?.items[0] : null;
   const path = `/${kind}/${id}`;
+  useEffect(()=>{if(!item||location.hash!=='#hot-information-card')return;const frame=requestAnimationFrame(()=>{const node=document.getElementById('hot-information-card');node?.focus({preventScroll:true});node?.scrollIntoView({block:'start'});});return()=>cancelAnimationFrame(frame);},[item,location.hash]);
   if (item && item.id !== id) return <Navigate to={contentPath(item.id)} replace/>;
   const title = item ? ('title' in item ? item.title : item.name) : pick('资料详情','Dossier');
   const description = item ? ('summary' in item ? item.summary : item.introduction) : '';

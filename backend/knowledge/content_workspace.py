@@ -188,6 +188,15 @@ def draft_shape(kind, content):
         return
     from backend.knowledge.platform_lookup import aliases
     aliases(content.get('aliases', []))
+    card=content.get('hot_card')
+    if kind=='news' and card is not None:
+        if not isinstance(card,dict):fail('热点信息卡必须为对象')
+        for key in ('changes','audiences','limits','evidence'):
+            objects(card.get(key),'热点信息卡'+key)
+            fields=('source_id','locator') if key=='evidence' else ('title','detail')
+            if any(not isinstance(row.get(field),str) for row in card[key] for field in fields):fail('热点信息卡字段必须为文本')
+        if any(not isinstance(card.get(key),str) for key in ('headline','scope','next_step','verification','revised_at','checked_at','status','update_note')):fail('热点信息卡字段必须为文本')
+        if card.get('share') is not None and not isinstance(card['share'],dict):fail('分享图片必须为对象')
     graph=content.get('technical_map')
     if kind=='news' and graph is not None:
         if not isinstance(graph,dict):fail('技术地图必须为对象')
@@ -279,12 +288,15 @@ def composed(kind, ident, content, db, withdraw=False):
             item.pop('publication', None)
             if previous and previous.get('publication'):
                 item['publication'] = copy.deepcopy(previous['publication'])
-            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','technical_map','state')
+            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','technical_map','hot_card','state')
             def comparable(x):
                 from backend.knowledge.codex_progress import metadata
                 from backend.knowledge.technical_maps import metadata as map_metadata
                 from backend.knowledge.locale import review_fingerprint
-                return {**{k:x.get(k) for k in public_changes}, 'codex_28_days':metadata(x), 'technical_map':map_metadata(x), 'english':review_fingerprint(x)}
+                from backend.knowledge.hot_cards import metadata as card_metadata
+                card = card_metadata(x)
+                return {**{k:x.get(k) for k in public_changes}, 'codex_28_days':metadata(x), 'technical_map':map_metadata(x),
+                        'hot_card':{k:card[k] for k in ('revision','status','update_note')} if card else None, 'english':review_fingerprint(x)}
             if not withdraw and (previous is None or comparable(item) != comparable(previous)):
                 data['title']='近期动态与采用更新'
                 data['edition']='reviewed-updates'
@@ -313,6 +325,10 @@ def gate(kind, ident, item, data):
         from backend.knowledge.platform_news import validate
         from backend.knowledge.technical_maps import metadata as map_metadata
         map_metadata(item, enforce_dates=True)
+        from backend.knowledge.hot_cards import metadata as card_metadata
+        card_metadata(item, enforce_assets=True)
+        from backend.knowledge.hot_cards import validate_english_image
+        validate_english_image(item, require_review(kind,item))
         validate(data)
         if (item.get('media') or {}).get('reviewed_at', '') > today():fail('图片核对日期不能在未来')
     else:

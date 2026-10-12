@@ -1,7 +1,35 @@
 {
-  "version": "1.8.35",
-  "revision": "029fe8279304274d3b6916682d8420ae53e10415a9fd71c3bb2b07b6f3a5edf7",
+  "version": "1.8.36",
+  "revision": "fbe282d8fa0493ed0d126a67c3013b27cd917514cef0a35f0a571ccc4fc6608b",
   "items": [
+    {
+      "version": "1.8.36",
+      "date": "2026-10-12",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "热点信息卡",
+          "highlights": [
+            "新增REQ-6-22热点信息卡：本期速览下独立精选区域、详情分层解读、全部卡片筛选与人工分享图保存。",
+            "复用双语草稿／审核／发布流程，校验图片与文案版本；待更正暂停下载，轮换与原日期分别维护。",
+            "完成三组双语样稿、六张分享图及本地验证；本批未部署，首批卡片尚未正式发布。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Information cards for important product updates",
+          "highlights": [
+            "Add REQ-6-22 information cards below At a glance, with layered detail reading, an archive filter and manually prepared share images.",
+            "Reuse bilingual drafts, review and publication; bind images to copy revisions, pause downloads during corrections and preserve original dates when rotating selections.",
+            "Prepare three bilingual samples and six share images with local validation. This batch is not deployed and the first cards are not published to production."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.36"
+    },
     {
       "version": "1.8.35",
       "date": "2026-10-12",

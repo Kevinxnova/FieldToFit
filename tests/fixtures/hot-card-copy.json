@@ -1,0 +1,62 @@
+{
+  "D-83": {
+    "headline": ["合上电脑，云端任务继续跑", "Close your laptop. Cloud tasks keep running."],
+    "scope": ["Cowork 的 Pro／Max 新任务转向云端。能否离开电脑，关键看任务是否还需要本机资源。", "New Cowork tasks on Pro / Max run in the cloud. Whether you can leave your computer depends on the local resources the task needs."],
+    "changes": [
+      {"title": ["新任务在云端运行", "New tasks run in the cloud"], "detail": ["Pro／Max 不再为新任务提供“仅在本机运行”选项。", "Pro / Max no longer offer the local-only option for new tasks."]},
+      {"title": ["新定时任务不必守电脑", "New schedules can run offline"], "detail": ["纯云端任务可在电脑离线时继续执行。", "Cloud-only tasks can continue while your computer is offline."]},
+      {"title": ["同一任务跨设备接续", "Continue across devices"], "detail": ["可在网页、桌面与手机查看进度、调整任务和接收结果。", "View progress, steer tasks and receive results on web, desktop and mobile."]}
+    ],
+    "audiences": [
+      {"title": ["经常切换设备的人", "People switching devices"], "detail": ["电脑发起任务，出门后用手机查看或接续。", "Start at your desk, then check or continue on your phone."]},
+      {"title": ["需要定时处理资料的人", "People scheduling work"], "detail": ["只依赖云端资源的任务，减少对本机持续在线的依赖。", "Tasks using only cloud resources depend less on an always-online computer."]}
+    ],
+    "limits": [
+      {"title": ["本机资源仍需桌面在线", "Local resources still need desktop"], "detail": ["本机文件、本地连接器和部分浏览器操作，仍需桌面应用保持在线。", "Local files, local connectors and some browser operations still require the desktop app to stay online."]},
+      {"title": ["旧任务与团队套餐另看", "Check older tasks and team plans"], "detail": ["2026-10-06前的本机任务与定时任务仍留在本机；Team／Enterprise 另有 beta 与管理员条件。", "Local tasks and schedules from before 2026-10-06 stay local. Team / Enterprise have separate beta and admin conditions."]}
+    ],
+    "next_step": ["确认套餐和任务依赖，再用一个不访问本机资源的短任务，试一次跨设备接续。", "Check your plan and task dependencies, then try continuing a short task across devices without local resources."],
+    "evidence": [{"source_id": "source-1", "locator": ["官方文档：云端任务、设备间接续、本机资源与旧任务说明。", "Official documentation: cloud tasks, switching devices, local resources and existing tasks."]}],
+    "verification": ["依据官方说明整理；本站未独立实测跨设备执行。", "Based on official documentation; cross-device execution has not been independently tested by FieldToFit."]
+  },
+  "D-113": {
+    "headline": ["ChatGPT 额度，可以接到 Devin 用", "Use your ChatGPT allowance in Devin"],
+    "scope": ["适合已有 ChatGPT 与 Devin 付费套餐的人。连接后，部分 GPT 用量计入 ChatGPT 额度。", "For people with eligible paid ChatGPT and Devin plans. Once connected, supported GPT usage counts toward your ChatGPT allowance."],
+    "changes": [
+      {"title": ["连接已有 ChatGPT 订阅", "Connect your ChatGPT plan"], "detail": ["在 Devin 的 Settings → Connections 授权，再打开 Use your ChatGPT plan。", "Authorize in Devin Settings → Connections, then enable Use your ChatGPT plan."]},
+      {"title": ["多个 Devin 入口适用", "Available across Devin clients"], "detail": ["连接开关适用于 Devin Cloud、Desktop 和 CLI，可关闭或解除连接。", "The connection applies to Devin Cloud, Desktop and CLI. You can turn it off or disconnect."]},
+      {"title": ["支持的 GPT 用量共享", "Supported GPT usage is shared"], "detail": ["符合条件的 GPT 调用使用 ChatGPT 额度，其他模型仍使用 Devin 用量。", "Eligible GPT calls use your ChatGPT allowance; other models still use Devin usage."]}
+    ],
+    "audiences": [
+      {"title": ["同时订阅两边的开发者", "Developers with both plans"], "detail": ["可把已有 ChatGPT 额度用于 Devin 的编程任务。", "Use an existing ChatGPT allowance for coding tasks in Devin."]},
+      {"title": ["需要核对用量的团队", "Teams tracking usage"], "detail": ["连接前先分清每种模型使用哪边额度。", "Identify which allowance each model uses before connecting."]}
+    ],
+    "limits": [
+      {"title": ["两边套餐都要符合条件", "Both plans must be eligible"], "detail": ["ChatGPT Go／Plus／Pro 配 Devin Pro／Max／Teams；不含 Devin Free／Enterprise，也不赠送 Devin 订阅。", "ChatGPT Go / Plus / Pro with Devin Pro / Max / Teams. Devin Free / Enterprise are excluded; no Devin subscription is included."]},
+      {"title": ["留意例外与自动回退", "Watch exceptions and fallback"], "detail": ["fast／priority 变体除外；ChatGPT 额度耗尽或不可用时，回退 Devin 额度，再使用按需点数。", "fast / priority variants are excluded. If ChatGPT usage is exhausted or unavailable, Devin usage is used, followed by on-demand credits."]}
+    ],
+    "next_step": ["连接前确认两边套餐、模型选择与 Devin 按需用量设置，再用一个小任务观察实际扣量。", "Check both plans, model selection and Devin on-demand settings, then inspect usage on a small task."],
+    "evidence": [{"source_id": "devin-docs", "locator": ["Devin 官方文档：套餐资格、连接步骤、支持模型与用量回退。", "Devin documentation: eligibility, connection steps, supported models and usage fallback."]}],
+    "verification": ["依据 Devin 官方说明整理；本站未独立试用或核对实际账单。", "Based on Devin documentation; FieldToFit has not independently tried the connection or verified actual billing."]
+  },
+  "D-92": {
+    "headline": ["Haiku 升级，先检查迁移与预算", "Upgrading Haiku? Check migration and budget first."],
+    "scope": ["Haiku 5.5 面向分类、路由、提取等高频任务。新能力可用，旧调用配置与费用估算需要重看。", "Haiku 5.5 targets frequent classification, routing and extraction tasks. Review existing request settings and cost estimates before using the new capabilities."],
+    "changes": [
+      {"title": ["更长的输入与输出", "Longer input and output"], "detail": ["型号 claude-haiku-5-5：1M 上下文，最高 128K 输出。", "Model claude-haiku-5-5: 1M context and up to 128K output."]},
+      {"title": ["默认自适应思考", "Adaptive thinking by default"], "detail": ["旧 budget_tokens 配置会报错，需要按新接口调整。", "The old budget_tokens setting causes an error; update the request for the new interface."]},
+      {"title": ["重新核算 token 数", "Recount tokens"], "detail": ["新分词器可能增加相同文本的 token 数，不能只按旧用量估算费用。", "The new tokenizer may increase token counts for the same text. Do not estimate cost using old counts alone."]}
+    ],
+    "audiences": [
+      {"title": ["高频 API 任务维护者", "High-volume API maintainers"], "detail": ["用真实分类、提取样本比较质量、延迟和任务费用。", "Compare quality, latency and task cost on real classification and extraction samples."]},
+      {"title": ["维护旧 Haiku 集成的人", "Maintainers of older integrations"], "detail": ["优先检查请求参数与返回内容的解析方式。", "Inspect request parameters and response parsing first."]}
+    ],
+    "limits": [
+      {"title": ["不要固定读取第一块", "Do not assume the first block is text"], "detail": ["按内容块类型读取回答；单价变化不等于整项任务费用同比变化。", "Read responses by content block type. A unit-price change does not imply the same change in total task cost."]},
+      {"title": ["平台与长上下文要分开核对", "Check platforms and context tiers"], "detail": ["Claude API 与云平台能力分别确认；标准输入／输出价格有 ≤100K 和 >100K 提示长度分档。", "Check Claude API and cloud platforms separately. Standard input / output prices have separate tiers for prompts of ≤100K and >100K tokens."]}
+    ],
+    "next_step": ["先在测试环境迁移一个典型任务，记录输入输出 token、质量与费用，再决定是否扩大替换。", "Migrate one representative task in a test environment. Record input and output tokens, quality and cost before expanding the rollout."],
+    "evidence": [{"source_id": "source-2", "locator": ["Haiku 5.5 官方迁移说明：上下文、思考参数、内容块与分词器变化。", "Official Haiku 5.5 migration guide: context, thinking parameters, content blocks and tokenizer changes."]}],
+    "verification": ["依据官方说明整理；本站未独立复测性能、迁移或任务费用。", "Based on official documentation; FieldToFit has not independently tested performance, migration or per-task cost."]
+  }
+}

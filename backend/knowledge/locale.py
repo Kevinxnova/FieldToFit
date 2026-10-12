@@ -28,7 +28,7 @@ def read_language(value):
 def searchable(value):
     return project(value,public_fields()) if is_english() else value
 OWNED={
-    'news':('id','name','organization','title','summary','source_published_at','event_date','checked_at','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','technical_map','aliases'),
+    'news':('id','name','organization','title','summary','source_published_at','event_date','checked_at','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','technical_map','hot_card','aliases'),
     'watch':('id','name','type','introduction','checked_at','evidence_status','sources','interpretation','blocks','attention','origin','submission','reading_materials','aliases'),
     'charts':('landscape','flagships'),
     'library':('id','name','original_name','aliases','types','roles','introduction','official_url','upstream_version','source_published_at','source_id','collected_at','checked_at','source_revision','facts','attention','materials','coverage','unknown_fields','limitations'),

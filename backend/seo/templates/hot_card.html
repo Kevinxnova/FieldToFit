@@ -1,0 +1,15 @@
+{% macro hot_card(item, english=false) %}
+{% set card=item.hot_card %}
+<section id="hot-information-card">
+  <h2>{{ 'Information card' if english else '热点信息卡' }} · {{ card.headline }}</h2>
+  <p>{{ card.scope }}</p>
+  {% if card.status == 'needs_update' %}<p>{{ 'Update pending; image downloads paused: ' if english else '待更新，暂停分享下载：' }}{{ card.update_note }}</p>{% endif %}
+  {% for key,zh,en in [('changes','发生了什么变化','What changed'),('audiences','对谁有用 · 本站判断','Who benefits · Our assessment'),('limits','采用前，先看这些条件','Conditions to check first')] %}
+  <section><h3>{{ en if english else zh }}</h3><ul>{% for point in card[key] %}<li><strong>{{ point.title }}</strong><p>{{ point.detail }}</p></li>{% endfor %}</ul></section>
+  {% endfor %}
+  <h3>{{ 'A useful next step · Our suggestion' if english else '下一步 · 本站建议' }}</h3><p>{{ card.next_step }}</p>
+  <h3>{{ 'Official evidence' if english else '官方证据' }}</h3><ul>{% for evidence in card.evidence %}{% for source in item.sources if source.id == evidence.source_id %}<li><a href="{{ source.url }}">{{ source.title }}</a><p>{{ evidence.locator }}</p></li>{% endfor %}{% endfor %}</ul>
+  <p>{{ 'Event date: ' if english else '事件日期：' }}{{ item.event_date or item.source_published_at }} · {{ 'Card revised: ' if english else '卡片修订：' }}{{ card.revised_at }} · {{ 'Source checked: ' if english else '来源核对：' }}{{ card.checked_at }}</p><p>{{ card.verification }}</p>
+  {% if card.share %}<a href="{{ card.share['en' if english else 'zh'].url }}" download>{{ 'Save share image' if english else '保存分享图' }}</a>{% endif %}
+</section>
+{% endmacro %}

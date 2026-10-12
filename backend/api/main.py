@@ -395,6 +395,11 @@ def serve_report_figure(filename):
     return send_from_directory(CLIENT_DIST / 'report-figures', filename)
 
 
+@app.get('/hot-cards/<path:filename>')
+def serve_hot_card(filename):
+    return send_from_directory(CLIENT_DIST / 'hot-cards', filename)
+
+
 @app.get('/brand/<path:filename>')
 def brand_asset(filename):
     return send_from_directory(CLIENT_DIST / 'brand', filename)
