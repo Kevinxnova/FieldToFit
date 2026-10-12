@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.38"></a>
+## v1.8.38 · 热点信息卡三列自适应 · 2026-10-12
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Responsive three-column information cards -->
+<!-- release-summary:zh:start -->
+- 热点信息卡按阅读区域的实际宽度排版，空间足够时一排三张，修复较窄桌面窗口被提前切为单列的问题。
+- 卡片留白、标题、图形区和镭射边框随卡宽调整；同排等宽等高，正文保持可读字号，手机窄屏采用单列。
+- 保留镭射动效、完整内容及原有阅读入口；本批完成本地验证，尚未部署或正式发布首批卡片。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Arrange information cards using the reading area's actual width, keeping three cards per row when space permits instead of switching narrow desktop windows to one column too early.
+- Adapt padding, headings, artwork and foil borders to each card's width, with equal-sized cards per row, readable body text and a single column on narrow screens.
+- Preserve holographic effects, complete content and reading links. This batch is locally validated, without deployment or initial production card publication.
+<!-- release-summary:en:end -->
+
+对应REQ-6-22。仅调整信息卡响应式样式，无接口、内容、图片资源或数据库变更。实际尺寸与阅读检查见[三列布局验收](docs/validation/2026-10-12-hot-card-layout.md)。
+
 <a id="v1.8.37"></a>
 ## v1.8.37 · 热点信息卡镭射收藏样式 · 2026-10-12
 
