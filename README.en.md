@@ -36,7 +36,7 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.40](CHANGELOG.md#v1.8.40)** · Release tag not yet published
+**Current source version: [v1.8.40](CHANGELOG.md#v1.8.40)** · [fieldtofit-v1.8.40](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.40)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
@@ -44,7 +44,7 @@ Source and deployed versions are verified separately; see this release's [valida
 <!-- latest-summary:start -->
 - Information cards initially hide audience and adoption conditions, revealing them on hover or keyboard focus. An explicit button lets touch readers expand and collapse them.
 - Cards stay flat while retaining hover enlargement and glare. Wider cards keep the three-column layout, and expanding one leaves its neighbors compact.
-- Maintenance guidance and local verification are updated. This batch remains undeployed, with no initial production card publication.
+- Publish the first Claude Cowork, ChatGPT × Devin and Haiku 5.5 cards, with bilingual layered explanations, official evidence and manually prepared share images.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

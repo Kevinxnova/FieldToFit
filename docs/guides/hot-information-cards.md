@@ -26,7 +26,7 @@
 
 人工完成全部文案与排版。使用1080px宽PNG，二维码指向 `https://fieldtofit.top/news/D-ID#hot-information-card`；英文使用 `/en/news/D-ID#hot-information-card`。图内保留来源、事件日期、修订日、核对日和未实测范围。上线前从最终PNG实际解码二维码，检查手机阅读及下载落盘。
 
-本轮三个样稿在[双语文案](../../tests/fixtures/hot-card-copy.json)和[完整隔离样本](../../tests/fixtures/hot-cards.json)中；它们仅供隔离验证，不导入正式数据库或覆盖原正文。六张人工PNG在 `frontend/public/hot-cards/`，文件清单为 `backend/knowledge/content/hot-card-assets.json`。后续独立事件需重新选题，不机械复制样稿。
+本轮三个样稿在[双语文案](../../tests/fixtures/hot-card-copy.json)和[完整隔离样本](../../tests/fixtures/hot-cards.json)中；完整隔离样本仅用于验证，不整条导入正式数据库或覆盖原正文。2026-10-13按所有者明确授权，从三个既有已发布动态逐条补充已预览的hot_card与双语审核，经预览后正式发布；原正文、来源和事件日期保持。六张人工PNG在 `frontend/public/hot-cards/`，文件清单为 `backend/knowledge/content/hot-card-assets.json`。后续独立事件需重新选题，不机械复制样稿。
 
 ## 图片登记与发布
 

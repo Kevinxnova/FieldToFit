@@ -1,6 +1,6 @@
 # 热点信息卡按需展开验收
 
-日期：2026-10-12（Asia/Shanghai），源码批次v1.8.40，对应[REQ-6-22](../../FieldToFit-PM.md#hot-information-cards-plan)。所有者要求默认隐藏人群和条件、悬停时显示，卡片略宽，并取消旋转。本批未部署、未发布正式卡片或修改生产数据库。
+日期：2026-10-12（Asia/Shanghai），源码批次v1.8.40，对应[REQ-6-22](../../FieldToFit-PM.md#hot-information-cards-plan)。所有者要求默认隐藏人群和条件、悬停时显示，卡片略宽，并取消旋转。本地验证时尚未部署；2026-10-12完成代码部署，2026-10-13按明确授权发布首批三张卡片，正式结果见下文。
 
 ## 已实现
 
@@ -21,8 +21,26 @@
 6. `npm --prefix frontend run build`类型检查与生产构建通过，128个模块，保留既有主包超过500kB提示。
 7. `release_metadata.py --write`同步完成，无参数复核通过；`check_repository.py`核对v1.8.40、154文档、1272本地链接、315相对导入、23主REQ／156子REQ，错误0。`git diff --check`通过。
 
-原始结果与截图保存在忽略目录 `output/operations/hot-cards/disclosure/`，包含 `result.json`、`current-window.jpg` 和中英／主题／触屏截图。未重复执行后端或分享图片回归，既有完整流程证据见[热点信息卡验收](2026-10-12-hot-information-cards.md)。
+原始结果与截图保存在忽略目录 `output/operations/hot-cards/disclosure/`，包含 `result.json`、`current-window.jpg` 和中英／主题／触屏截图。上述本地展示批次未重复执行后端或分享图片回归；发布前已补跑下述79项回归。既有完整流程证据见[热点信息卡验收](2026-10-12-hot-information-cards.md)。
+
+<a id="production-deployment"></a>
+## 正式部署与首批发布
+
+2026-10-12至13（Asia/Shanghai），所有者明确要求「更新并部署」，并于10月13日授权使用既有管理员凭据发布已预览的三张信息卡。版本沿用本批v1.8.40，发布状态收尾依照[发布指南](../guides/releasing.md)不另增补丁版本。
+
+- 发布前完成生产数据库只读备份，82张表、完整性检查通过；私密备份和凭据均留在忽略目录，未进入源码或部署包。独立部署目录核对267个文件，首轮13,435,469字节，排除凭据、数据库、output、依赖和构建缓存。
+- `tests/test_hot_cards.py`、`test_platform_news.py`、`test_content_workspace.py`、`test_english.py`、`test_release_metadata.py`、`test_release_operations.py`共 **79项通过**（28.70秒）。前端生产构建、版本同步及本地117项交互结果见上文。
+- 首次代码部署 `dpl_2QY7Kq8VVz4oFZH7JngxmF3ivxb6` 于10月12日23:32创建并完成，正式域名为 [fieldtofit.top](https://fieldtofit.top/for-you#hot-information-cards)。内容发布前比较完整公开集合，动态／关注／报告／模型图表均未变化。
+- 10月13日发布记录收尾部署 `dpl_HptvxFNtkJniTwabomXi4YdHLu89` 已就绪并绑定正式域名，独立目录267文件、13,435,555字节；应用文件与工作区逐项SHA-256一致，前端构建资源与首轮相同。最终health／三MCP版本复核通过，中英更新日志修订与本地生成数据一致，动态／关注／报告／图表四个公开集合与卡片发布后验收快照完全一致。
+- 10月13日按保存、英文审核、双端预览和明确发布流程，依次发布[D-83](https://fieldtofit.top/news/D-83#hot-information-card)、[D-113](https://fieldtofit.top/news/D-113#hot-information-card)、[D-92](https://fieldtofit.top/news/D-92#hot-information-card)。每项发布后核对原正文和首次发布时间保持，仅补充卡片、审核及真实修订记录。
+- 正式`/api/health`与`/api/mcp`、`/api/mcp/curated`、`/api/mcp/codex`均报告1.8.40；三条`curated_news`信息卡与HTTP一致。中英文详情HTML均包含对应标题与稳定锚点，六张PNG下载字节与登记SHA-256逐张一致；线上JS／CSS与本地生产构建完全一致。
+- 公开动态总数仍为124；其余121条逐字段不变，三条原正文、来源、事件日期与首次发布时间不变。53项关注档案不变，关联事件仅同步这三次真实修订时间，集合修订随之变化；6篇报告和模型图表完整投影不变。初次比较将关联事件的修订时间也要求不变而失败，逐字段确认差异后改为对照真实发布回执，未放宽其余内容检查。
+- 正式Chrome1440px首页三列、默认收起、卡面无旋转、悬停仅展开对应卡、相邻卡高度不变、放大与移开收起通过，已查看默认与展开截图。随后读取详情的浏览器等待超时，计划的其余尺寸／语言及线上按钮下载／返回流程未完成；应用内浏览器读取也超时。正式HTTP详情及六PNG成功不替代这些交互验证。
+
+发布状态收尾另跑版本／发布操作15项回归通过（0.68秒）；元数据同步复核一致，仓库检查覆盖154份文档、1275个本地链接、315个相对导入、23主REQ／156子REQ，错误0；`git diff --check`通过。
+
+生产原始回执、完整对比、截图和部署清单保存在忽略目录`output/operations/v1.8.40-release/`；私密内容不提交到仓库。
 
 ## 状态与边界
 
-本批未推送或部署。真实手机、微信转发、Safari／Firefox及辅助技术真机测试仍待验；浏览器触屏模拟不代表真机结果。
+正式网站和首批三张卡片已发布。线上详情往返及其他尺寸的浏览器复验尚未完成；本地双语／多尺寸／键盘／触屏模拟已验。真实手机、微信转发、Safari／Firefox及辅助技术真机测试仍待验；浏览器触屏模拟不代表真机结果。
