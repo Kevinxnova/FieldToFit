@@ -1,0 +1,53 @@
+/** Async release updates, failures and language races against the real page component. */
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const {createRequire} = require('node:module');
+const root = path.resolve(__dirname, '../..');
+const fr = createRequire(path.join(root, 'frontend/package.json'));
+const React = fr('react');
+const {create, act} = fr('react-test-renderer');
+const ts = fr('typescript');
+global.IS_REACT_ACT_ENVIRONMENT = true;
+const Language = React.createContext('zh');
+let selected = 'zh', pending = [], intervals = [], listeners = {}, loc = {hash:''};
+global.window = {setTimeout, clearTimeout, setInterval:fn=>{intervals.push(fn);return intervals.length;},clearInterval:()=>{},addEventListener:(key,fn)=>listeners[key]=fn,removeEventListener:key=>delete listeners[key],scrollBy:()=>{}};
+global.document = {visibilityState:'visible',addEventListener:(key,fn)=>listeners[key]=fn,removeEventListener:key=>delete listeners[key],getElementById:()=>null,querySelectorAll:()=>[]};
+global.requestAnimationFrame = fn => {fn();return 1;}; global.cancelAnimationFrame=()=>{};
+const source = fs.readFileSync(path.join(root,'frontend/src/pages/Changelog.tsx'),'utf8');
+const compiled = ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;
+const loaded={exports:{}};
+new Function('require','module','exports',compiled)(name=>{
+  if(name.endsWith('.css'))return {};
+  if(name==='@fieldtofit/locale/router')return {useLocation:()=>loc};
+  if(name==='../api/knowledge')return {request:(url,options)=>new Promise((resolve,reject)=>pending.push({url,options,resolve,reject}))};
+  if(name==='../locale/language')return {useLanguage:()=>React.useContext(Language),restoreLanguageScroll:()=>{}};
+  if(name==='../components/workspace/UI')return {useWorkspace:()=>{const lang=React.useContext(Language);return {pick:(zh,en)=>lang==='en'?en:zh};}};
+  return fr(name);
+},loaded,loaded.exports);
+const Entry = version => ({version,date:'2026-10-12',deployed_on:'',title:'Release '+version,highlights:['Change'],details:'Detail',translation_available:true,status:'current',source_url:'https://github.com/Kevinxnova/FieldToFit'});
+const data = (rev,language='zh') => ({version:rev,revision:rev,language,items:[Entry(rev)],archive_url:'https://github.com/Kevinxnova/FieldToFit'});
+const resolve = async (index,value) => act(async()=>pending[index].resolve(value));
+const reject = async index => act(async()=>pending[index].reject(new Error('Offline')));
+let renderer;
+const element=()=>React.createElement(Language.Provider,{value:selected},React.createElement(loaded.exports.default));
+const text=()=>JSON.stringify(renderer.toJSON());
+async function click(label){await act(async()=>renderer.root.findAllByType('button').find(button=>button.children.join('')===label).props.onClick());}
+(async()=>{
+  await act(async()=>{renderer=create(element());}); await resolve(0,data('1.0.0'));
+  assert.match(text(),/Release 1.0.0/);
+  await act(async()=>intervals.at(-1)());await resolve(1,{revision:'1.0.0',version:'1.0.0'});assert.equal(pending.length,2);
+  await act(async()=>intervals.at(-1)());await resolve(2,{revision:'1.0.1',version:'1.0.1'});await resolve(3,data('1.0.1'));
+  assert.match(text(),/有新版本记录/);assert.match(text(),/Release 1.0.0/);assert.doesNotMatch(text(),/Release 1.0.1/);
+  await click('更新列表');assert.match(text(),/Release 1.0.1/);assert.doesNotMatch(text(),/有新版本记录/);
+  console.log('PASS: unchanged metadata avoids a download; new notes wait for the reader to apply them');
+  await act(async()=>intervals.at(-1)());await reject(4);assert.match(text(),/Release 1.0.1/);assert.match(text(),/已保留当前阅读记录/);
+  await click('重试');await resolve(5,data('1.0.1'));assert.doesNotMatch(text(),/暂时无法读取/);
+  console.log('PASS: a failed check retains the readable snapshot and supports retry');
+  global.document.visibilityState='hidden';const before=pending.length;await act(async()=>intervals.at(-1)());assert.equal(pending.length,before);global.document.visibilityState='visible';
+  selected='en';await act(async()=>renderer.update(element()));assert.doesNotMatch(text(),/Release 1.0.1/);assert.match(pending[6].url,/lang=en/);
+  selected='zh';await act(async()=>renderer.update(element()));assert(pending[6].options.signal.aborted);
+  await resolve(6,data('9.0.0','en'));assert.doesNotMatch(text(),/Release 9.0.0/);await resolve(7,data('1.0.2'));
+  assert.match(text(),/Release 1.0.2/);await act(async()=>renderer.unmount());assert.equal(Object.keys(listeners).length,0);
+  console.log('PASS: background checks pause, stale language responses are ignored and listeners are removed');
+})().catch(error=>{console.error(error);process.exitCode=1;});

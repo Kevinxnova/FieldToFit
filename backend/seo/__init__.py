@@ -219,6 +219,12 @@ def page(path, dist):
         collections = {}
         catalog = None
         revision = ''
+        if path == '/changelog':
+            from backend.site_changelog import history
+            info = PAGES[path]
+            body = render_template('changelog.html', data=history('en' if english else 'zh'), english=english,
+                                   heading=info['heading'][int(english)], description=info['description'][int(english)])
+            return document(dist, info['title'][int(english)], info['description'][int(english)], path, body)
         if path == '/for-you' and request.args.get('object'):
             return document(dist, PAGES[path]['title'][0], PAGES[path]['description'][0], path, index=False)
         if path == '/maps' or path.startswith('/maps/'):

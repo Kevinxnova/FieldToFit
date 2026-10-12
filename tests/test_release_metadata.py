@@ -7,7 +7,7 @@ from scripts.maintenance import release_metadata as metadata
 @pytest.fixture
 def release_tree(tmp_path):
     for name in ['backend/__init__.py', 'frontend/package.json', 'frontend/package-lock.json',
-                 'CHANGELOG.md', 'README.md', 'README.en.md']:
+                 'CHANGELOG.md', 'README.md', 'README.en.md', 'backend/seo/changelog.json']:
         target = tmp_path / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(metadata.ROOT / name, target)

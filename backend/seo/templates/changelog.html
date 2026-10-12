@@ -1,0 +1,16 @@
+<main id="main-content" class="platform-page changelog-page">
+  <header><h1>{{ heading }}</h1><p>{{ description }}</p><p>{{ 'Running version: ' if english else '当前运行版本：' }}v{{ data.version }}</p></header>
+  {% for item in data['items'] %}
+  <article class="changelog-entry" id="v{{ item.version }}">
+    <p><a href="#v{{ item.version }}">v{{ item.version }}</a> · <time>{{ item.date }}</time> · {{ ('Current version' if english else '当前版本') if item.status == 'current' else ('Deployed' if english else '已上线') if item.status == 'deployed' else ('Deployment unverified' if english else '上线状态未核实') }}</p>
+    <h2>{{ item.title }}</h2>
+    {% if item.translation_available %}<ul>{% for line in item.highlights[:3] %}<li>{{ line }}</li>{% endfor %}</ul>{% else %}<p>{{ 'The English summary for this version is not available.' if english else '此版本摘要暂未提供。' }}</p>{% endif %}
+    <details><summary>{{ 'Full notes' if english else '完整说明' }}</summary>
+      {% if item.highlights|length > 3 %}<ul>{% for line in item.highlights[3:] %}<li>{{ line }}</li>{% endfor %}</ul>{% endif %}
+      {% if item.details %}<p>{{ item.details }}</p>{% endif %}
+      <a href="{{ item.source_url }}" target="_blank" rel="noopener noreferrer">{{ 'View the original GitHub record' if english else '查看 GitHub 原记录' }}</a>
+    </details>
+  </article>
+  {% endfor %}
+  <a href="{{ data.archive_url }}" target="_blank" rel="noopener noreferrer">{{ 'View the Metis archive' if english else '查看 Metis 历史归档' }}</a>
+</main>

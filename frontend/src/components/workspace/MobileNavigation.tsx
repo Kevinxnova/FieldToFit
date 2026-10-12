@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from '@fieldtofit/locale/router';
 import { Icon, useWorkspace } from './UI';
+import { OpenSourceLink } from './OpenSourceLink';
 
 const destinations = [
   ['/about', 'info', '关于 FieldToFit', 'About FieldToFit', '了解项目的立意与使用方式', 'Understand the project and how to use it'],
+  ['/changelog', 'clock', '更新日志', 'Changelog', '查看 FieldToFit 每个版本的变化', 'Read what changed in each FieldToFit release'],
   ['/community', 'source', 'FieldToFit 社区', 'FieldToFit Community', '投稿项目、推荐资源、参与共建', 'Submit projects, recommend resources, and contribute'],
   ['/sources', 'source', '数据来源', 'Sources', '查看关注对象、采集渠道与检查情况', 'View tracked subjects, collection channels, and check status'],
   ['/admin', 'settings', '内容管理', 'Content management', '每日审阅、资料管理与需求反馈', 'Daily review, content management, and feedback'],
@@ -62,6 +64,7 @@ export function MobileNavigation() {
             <Icon name={icon} /><span><strong>{pick(zh, en)}</strong><small>{pick(descriptionZh, descriptionEn)}</small></span><Icon name="chevron" size={16} />
           </NavLink>)}
         </nav>
+        <OpenSourceLink onClick={close} />
       </section>
       {bar(true)}
     </dialog>

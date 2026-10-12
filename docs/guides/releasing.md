@@ -20,7 +20,7 @@
 
 - `backend/__init__.py` 的 `__version__` 是应用版本来源；网站及 MCP 读取实际运行版本。
 - CHANGELOG 的最新版本段落维护中文和英文 `release-summary` 摘要，两种语言均由维护者核对。
-- `python scripts/maintenance/release_metadata.py --write` 同步前端 package/lock 版本、中英文 README 的版本及摘要；默认不加参数只检查，不修改。
+- `python scripts/maintenance/release_metadata.py --write` 同步前端 package/lock 版本、中英文 README 的版本及摘要，以及站内日志生成数据 `backend/seo/changelog.json`；默认不加参数只检查，不修改。
 - README 的 `section` 标记固定对应章节。同步工具不自动翻译介绍；功能或社区规则变化时需人工同步两版正文。
 - `python scripts/maintenance/check_repository.py` 验证最新版本记录、摘要、双语章节、前后端版本和文档链接，不以“文件里曾出现该版本号”代替一致性检查。
 
@@ -31,6 +31,12 @@
 README 的版本区链接到同一条 CHANGELOG 和 GitHub 标签。未推送的源码批次在 CHANGELOG 本版段落标记 `<!-- release-tag:unpublished -->`，同步工具不为 README 生成不存在的下载标签链接。
 
 GitHub Release 正文从该版本段落提取，必要的相对链接转换成该标签下的 GitHub 地址，不另维护一份仓库内 Release 文档。
+
+## 站内更新日志
+
+`/changelog` 与 `/en/changelog` 读取从唯一 CHANGELOG 生成的公开投影，不维护第二份人工版本历史。每版可提供 `public-title:en:` 标题、双语 `public-summary:zh/en:start/end` 与 `public-details:zh/en:start/end` 标记；缺少公开摘要时复用已审 release-summary，其他操作正文不自动公开。缺少英文摘要时明确显示缺译，不回退中文。
+
+当前运行版本由后端决定，屏蔽将来的版本和其他带 unpublished 标记的源码批次；旧版本只有核实后在原版本段落补 `<!-- site-deployed:YYYY-MM-DD -->` 才标为已上线。该日期必须来自真实验收，不改原版本日期；Metis历史保留在原附录。当前版上线不依赖猜测的日期。每次发布前重新生成并检查；网站可见期间每60秒及回前台检查修订，提示读者应用新记录并保持阅读位置。
 
 ## 一次发布的步骤
 

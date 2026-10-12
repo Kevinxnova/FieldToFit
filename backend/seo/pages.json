@@ -41,6 +41,11 @@
       "FieldToFit is a living AI map shared by people and AI: understand existing solutions, judge their fit, and choose the right path to adopt or build."
     ]
   },
+  "/changelog": {
+    "title": ["FieldToFit · 更新日志", "FieldToFit · Changelog"],
+    "heading": ["FieldToFit 更新日志", "FieldToFit changelog"],
+    "description": ["记录 FieldToFit 每个版本的功能、体验改进和修复，保留真实日期与原始更新记录。", "Follow FieldToFit features, improvements and fixes by version, with original dates and release notes."]
+  },
   "/community": {
     "title": [
       "FieldToFit · FieldToFit 社区",

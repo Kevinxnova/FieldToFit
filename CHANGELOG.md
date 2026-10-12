@@ -4,8 +4,52 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.34"></a>
+## v1.8.34 · 更新日志、开源入口与日报同步 · 2026-10-12
+
+<!-- public-title:en:Changelog, open source and daily updates -->
+<!-- public-summary:zh:start -->
+- 新增站内更新日志，按版本倒序查看日期、主要变化和完整说明。
+- 「内容管理」下方增加 FieldToFit 图标与 OPEN SOURCE 小框，点击直达开源仓库。
+- 日报新增项目的开发者、用途与动态关联同步到持续关注总览。
+<!-- public-summary:zh:end -->
+<!-- public-summary:en:start -->
+- Read dated releases, highlights and full notes in the new on-site changelog, newest first.
+- Open the source repository from the compact FieldToFit icon and OPEN SOURCE link below Content management.
+- Keep developers, purposes and related developments for new daily selections in the watch overview.
+<!-- public-summary:en:end -->
+<!-- public-details:zh:start -->
+更新日志在「关于 FieldToFit」下方，手机通过「更多」进入；支持版本直达、历史加载和中英文阅读。页面打开期间每分钟及回到前台检查新记录，提示后可更新并保留阅读位置；读取失败可重试。
+
+网站与开源仓库的更新记录保持同步。当前运行版本单独标示；历史只有明确上线证据才标为已上线，原始日期保持不变。开源小框沿用本站品牌图标，轻量呈现，电脑与手机均可直接打开仓库。
+<!-- public-details:zh:end -->
+<!-- public-details:en:start -->
+Find the changelog below About FieldToFit or in More on mobile. It supports direct version links, earlier releases and both languages. While visible, the page checks for updates every minute and when returning to the foreground, then lets you refresh without losing your reading position. Failed reads can be retried.
+
+The site and source repository share the same release history. The running version is marked separately; earlier deployments are marked only with explicit evidence, preserving original dates. The compact source link uses the FieldToFit brand mark and opens the repository on desktop and mobile.
+<!-- public-details:en:end -->
+<!-- release-summary:zh:start -->
+- 新增REQ-12-5／6：站内双语时间线更新日志、发布后更新提示，以及内容管理下方的品牌OPEN SOURCE小框。
+- 登记 nanoMuse 与 Durable Actors 总表开发者、用途，关联已审动态。
+- 后续动态发布同步持续更新栏目标题与本期速览，保留原始事件日期与历史。
+- 日报动态与技术报告分别选择；新报告优先主流模型、产品官方材料。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Implement REQ-12-5/6: a bilingual release timeline, update notices after releases and a branded OPEN SOURCE link below Content management.
+- Add reviewed developer and purpose labels for nanoMuse and Durable Actors, linked to reviewed events.
+- Subsequent news publications update the ongoing-update title and highlights while retaining original event dates and history.
+- Keep daily content and report selections separate; favor official technical reports for mainstream models and products.
+<!-- release-summary:en:end -->
+
+- 所有者具体批准2026-10-12 A–D及相关本期速览／总表同步；普通动态、对应档案与技术报告选择分开。新报告优先主流大模型、主流产品官方材料。
+- 仅补充已核对象的总览标签和新闻发布时的栏目元数据；不更改榜单数值、历史事件日期或未选报告。无需数据库迁移。
+- 日报验证和正式内容结果见[内容验收](docs/validation/2026-10-12-briefing-publication.md)。此前仅内容发布授权下的整站部署被拒绝；所有者随后明确要求「可以 去更新并部署」，批准本批整站更新；保留并行已发布的v1.8.32／33后，以v1.8.34交付。REQ-12-5／6实现、实际验证和最终部署结果见[更新日志验收](docs/validation/2026-10-12-changelog.md)。无需数据库迁移。
+
 <a id="v1.8.33"></a>
 ## v1.8.33 · 2026-10-12 · MiMo-V2.6 技术报告图文专题
+
+<!-- site-deployed:2026-10-12 -->
+<!-- public-title:en:MiMo-V2.6 technical report and original figures -->
 
 <!-- release-summary:zh:start -->
 - 发布主人选中的 MiMo-V2.6 报告专题，包含四条核心结论、同号论述与完整双语分析。
@@ -23,6 +67,9 @@
 <a id="v1.8.32"></a>
 ## v1.8.32 · Codex重置公告补录与英文搜索 · 2026-10-12
 
+<!-- site-deployed:2026-10-12 -->
+<!-- public-title:en:Codex reset announcement and English search -->
+
 <!-- release-summary:zh:start -->
 - 补录Tibo官方Day 6全球额度重置公告，归北京时间10月11日、日历Day 7；概览、正文及主帖／回复卡片保持一致。
 - 重置公告与已生效重置分开判断；保留原帖时间依据和真实头像，不推造套餐、EOD时区或实际生效时刻。
@@ -38,6 +85,9 @@
 
 <a id="v1.8.30"></a>
 ## v1.8.30 · 模型专题入口与初代历史 · 2026-10-12
+
+<!-- site-deployed:2026-10-12 -->
+<!-- public-title:en:Model topic links and first-generation history -->
 
 ### 更新重点
 
@@ -62,6 +112,9 @@
 <a id="v1.8.29"></a>
 ## v1.8.29 · 持续关注总览与模型大事记 · 2026-10-12
 
+<!-- site-deployed:2026-10-12 -->
+<!-- public-title:en:Watch overviews and model milestones -->
+
 ### 更新重点
 
 <!-- release-summary:zh:start -->
@@ -84,6 +137,9 @@
 
 <a id="v1.8.28"></a>
 ## v1.8.28 · 模型图表自适应原生全屏与持续关注方案 · 2026-10-12
+
+<!-- site-deployed:2026-10-12 -->
+<!-- public-title:en:Adaptive fullscreen model charts -->
 
 ### 更新重点
 

@@ -3,6 +3,8 @@ import { PageMetadata, searchPages } from './search';
 import { PublishedDetail } from './pages/PublishedDetail';
 import { SiteVisits } from "./components/workspace/SiteVisits";
 import { MobileNavigation } from "./components/workspace/MobileNavigation";
+import { OpenSourceLink } from "./components/workspace/OpenSourceLink";
+import Changelog from './pages/Changelog';
 import { Community } from "./pages/Community";
 import { ForYou, ForAI, AboutFieldToFit, LegacyPlatformEntry } from "./pages/Platform";
 import { useEffect, lazy, Suspense } from "react";
@@ -48,6 +50,7 @@ function Shell() {
   const active = [
     ...links,
     ["/about", "info", "关于 FieldToFit", "About FieldToFit"],
+    ["/changelog", "clock", "更新日志", "Changelog"],
     ["/community", "source", "FieldToFit 社区", "FieldToFit Community"],
     ["/collection", "bookmark", "我的收藏", "My collection"],
     ["/tasks", "book", "任务工作台", "Task workbench"],
@@ -110,6 +113,7 @@ function Shell() {
           aria-label={pick("辅助导航", "More navigation")}
         >
           <NavLink to="/about"><Icon name="info" size={18} />{pick("关于 FieldToFit", "About FieldToFit")}</NavLink>
+          <NavLink to="/changelog"><Icon name="clock" size={18} />{pick("更新日志", "Changelog")}</NavLink>
           <NavLink to="/community"><Icon name="source" size={18} />{pick("FieldToFit 社区", "FieldToFit Community")}</NavLink>
           <NavLink to="/collection"><Icon name="bookmark" size={18} />{pick("本地收藏", "Local bookmarks")}</NavLink>
           <NavLink to="/sources">
@@ -122,6 +126,7 @@ function Shell() {
           </NavLink>
 
         </nav>
+        <OpenSourceLink />
         <div className="sidebar-footer">
           <span className="status-dot" />
           OPEN KNOWLEDGE · DAILY
@@ -175,6 +180,7 @@ function Shell() {
             <Route path="/for-you" element={<ForYou />} />
             <Route path="/for-your-ai" element={<ForAI />} />
             <Route path="/about" element={<AboutFieldToFit />} />
+            <Route path="/changelog" element={<Changelog />} />
             <Route path="/tasks" element={<TaskWorkbench />} />
             <Route path="/briefs" element={<DailyBriefs />} />
             <Route
@@ -210,6 +216,7 @@ function Shell() {
           </Routes>
           <footer className="page-footer">
             <Link to="/about">{pick("关于 FieldToFit", "About FieldToFit")}</Link>
+            <Link to="/changelog">{pick("更新日志", "Changelog")}</Link>
             <Link to="/community">{pick("FieldToFit 社区", "Community")}</Link>
             <p>
               {pick(
@@ -226,7 +233,7 @@ function Shell() {
         </main>
       </div>
       <MobileNavigation />
-      {compare.length > 0 && !["/for-you", "/for-your-ai", "/about", "/community"].includes(location.pathname) && (
+      {compare.length > 0 && !["/for-you", "/for-your-ai", "/about", "/changelog", "/community"].includes(location.pathname) && (
         <div className="compare-tray">
           <Icon name="compare" />
           <span>

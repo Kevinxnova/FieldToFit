@@ -286,6 +286,8 @@ def composed(kind, ident, content, db, withdraw=False):
                 from backend.knowledge.locale import review_fingerprint
                 return {**{k:x.get(k) for k in public_changes}, 'codex_28_days':metadata(x), 'technical_map':map_metadata(x), 'english':review_fingerprint(x)}
             if not withdraw and (previous is None or comparable(item) != comparable(previous)):
+                data['title']='近期动态与采用更新'
+                data['edition']='reviewed-updates'
                 now = stamp()
                 item['publication'] = {'first_published_at': (previous.get('publication') or {}).get('first_published_at') if previous else now, 'updated_at': now}
         if found is not None:entries.pop(found)

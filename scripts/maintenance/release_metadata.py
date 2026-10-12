@@ -2,6 +2,7 @@
 import argparse
 import ast
 import json
+import hashlib
 from pathlib import Path
 import re
 
@@ -44,6 +45,48 @@ def latest_entry(root=ROOT):
     return parts[1]
 
 
+def public_changelog(root=ROOT):
+    """Publish only explicit bilingual summaries, never arbitrary release prose."""
+    version = read_version(root)
+    source = (root / 'CHANGELOG.md').read_text()
+    headings = list(re.finditer(r'^## v(\d+\.\d+\.\d+) · ([^\n]+)', source, re.M))
+    items = []
+    seen = set()
+    for index, match in enumerate(headings):
+        number, heading = match.groups()
+        if number in seen:
+            raise ValueError('Duplicate changelog version: ' + number)
+        seen.add(number)
+        if tuple(map(int, number.split('.'))) > tuple(map(int, version.split('.'))):
+            continue
+        entry = source[match.end():headings[index + 1].start() if index + 1 < len(headings) else len(source)]
+        entry = entry.split('## 附录：', 1)[0]
+        if number != version and '<!-- release-tag:unpublished -->' in entry:
+            continue
+        date = re.search(r'\d{4}-\d{2}-\d{2}', heading)
+        title = re.sub(r'\d{4}-\d{2}-\d{2}', '', heading).strip(' ·')
+        localized = {}
+        for language in ('zh', 'en'):
+            def optional(name):
+                return block(entry, name)[1] if f'<!-- {name}:start -->' in entry else ''
+            summary = optional('public-summary:' + language) or optional('release-summary:' + language)
+            bullets = re.findall(r'^- (.+)$', summary, re.M)
+            title_match = re.search(r'<!-- public-title:' + language + r':(.*?) -->', entry)
+            localized[language] = {
+                'title': title_match[1].strip() if title_match else title if language == 'zh' else 'Updates in v' + number,
+                'highlights': bullets,
+                'details': optional('public-details:' + language),
+                'translation_available': bool(bullets),
+            }
+        deployed = re.search(r'<!-- site-deployed:(\d{4}-\d{2}-\d{2}) -->', entry)
+        items.append({'version': number, 'date': date[0] if date else '',
+                      'deployed_on': deployed[1] if deployed else '', 'copy': localized,
+                      'source_url': 'https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v' + number})
+    items.sort(key=lambda item: tuple(map(int, item['version'].split('.'))), reverse=True)
+    return json.dumps({'version': version, 'revision': hashlib.sha256(source.encode()).hexdigest(),
+                       'items': items}, ensure_ascii=False, indent=2) + '\n'
+
+
 def expected_updates(root=ROOT):
     version, entry = read_version(root), latest_entry(root)
     updates = {}
@@ -76,13 +119,14 @@ def expected_updates(root=ROOT):
         text = replace_block(text, 'current-version', current)
         text = replace_block(text, 'latest-summary', summary)
         updates[path] = text
+    updates[root / 'backend/seo/changelog.json'] = public_changelog(root)
     return updates
 
 
 def check(root=ROOT):
     try:
         return [f'Release metadata out of sync: {p.relative_to(root)}'
-                for p, expected in expected_updates(root).items() if p.read_text() != expected]
+                for p, expected in expected_updates(root).items() if not p.exists() or p.read_text() != expected]
     except (ValueError, OSError, KeyError, StopIteration) as error:
         return [f'Release metadata: {error}']
 
@@ -95,7 +139,8 @@ def main():
         # Validate every source first, so a missing translation cannot cause partial writes.
         updates = expected_updates()
         for path, expected in updates.items():
-            if path.read_text() != expected:
+            if not path.exists() or path.read_text() != expected:
+                path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(expected)
                 print('Updated', path.relative_to(ROOT))
     errors = check()

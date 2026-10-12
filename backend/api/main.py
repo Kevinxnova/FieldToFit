@@ -36,6 +36,8 @@ from backend.traffic import bp as traffic_bp
 app.register_blueprint(traffic_bp)
 from backend.seo import bp as search_bp
 app.register_blueprint(search_bp)
+from backend.site_changelog import bp as changelog_bp
+app.register_blueprint(changelog_bp)
 
 ALLOWED_ORIGINS = allowed_origins()
 
