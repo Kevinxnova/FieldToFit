@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.40"></a>
+## v1.8.40 · 热点信息卡按需展开 · 2026-10-12
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Information cards with on-demand details -->
+<!-- release-summary:zh:start -->
+- 热点信息卡默认隐藏人群与采用条件，鼠标移入或键盘聚焦时展开，离开后收起；触屏可通过明确按钮展开与收起。
+- 卡面取消旋转，保留悬停放大与反光；三列卡片加宽，展开单张时其他卡片保持紧凑。
+- 已同步维护方案与本地验证；本批尚未部署或发布首批正式卡片。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Information cards initially hide audience and adoption conditions, revealing them on hover or keyboard focus. An explicit button lets touch readers expand and collapse them.
+- Cards stay flat while retaining hover enlargement and glare. Wider cards keep the three-column layout, and expanding one leaves its neighbors compact.
+- Maintenance guidance and local verification are updated. This batch remains undeployed, with no initial production card publication.
+<!-- release-summary:en:end -->
+
+对应REQ-6-22，调整预览信息层级与宽度；官方证据、阅读入口和待更新提示保持可见，完整详情与人工图片不变。无接口或数据库变更。实际结果见[按需展开验收](docs/validation/2026-10-12-hot-card-disclosure.md)。
+
 <a id="v1.8.39"></a>
 ## v1.8.39 · 热点信息卡转正放大 · 2026-10-12
 

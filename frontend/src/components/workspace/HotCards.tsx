@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 import { Link } from '@fieldtofit/locale/router';
 import { useLanguage } from '../../locale/language';
 import { contentPath } from '../../search';
@@ -18,11 +18,23 @@ export type HotCard = {
 function HotCardPreview({ item }: { item: NewsItem }) {
   const { pick } = useWorkspace();
   const motion = useHotCardMotion();
+  const disclosureId = useId();
+  const [hovered, setHovered] = useState(false);
+  const [keyboardActive, setKeyboardActive] = useState(false);
+  const [pinned, setPinned] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const expanded = !dismissed && (hovered || keyboardActive || pinned);
   const card = item.hot_card!;
   const path = contentPath(item.id) + '#hot-information-card';
   const readingReturn = { url: '/for-you#hot-information-cards', id: 'hot-information-cards' };
   const source = item.sources.find(entry => entry.id === card.evidence[0]?.source_id);
-  return <article className="hot-card-preview" ref={motion}>
+  return <article className="hot-card-preview" ref={motion}
+    onPointerEnter={event => { if (event.pointerType === 'mouse') { setHovered(true); setDismissed(false); } }}
+    onPointerLeave={() => { setHovered(false); setDismissed(false); }}
+    onPointerDown={() => setKeyboardActive(false)}
+    onFocusCapture={event => { if (event.target.matches(':focus-visible')) { setKeyboardActive(true); setDismissed(false); } }}
+    onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) { setKeyboardActive(false); setDismissed(false); } }}
+    onKeyDown={event => { if (event.key === 'Escape' && expanded) { setPinned(false); setDismissed(true); event.preventDefault(); } }}>
     <div className="hot-card-foil"><div className="hot-card-face">
       <div className="hot-card-collection"><strong>FieldToFit</strong><span>{item.id} · {pick('热点信息卡', 'INFORMATION CARD')}</span></div>
       <p className="hot-card-kicker"><strong>{item.name}</strong><span>{item.event_date || item.source_published_at || pick('日期待核实', 'Date unconfirmed')}</span></p>
@@ -36,8 +48,15 @@ function HotCardPreview({ item }: { item: NewsItem }) {
       </div>
       <h4><Link to={path} state={{ readingReturn }}>{card.headline}</Link></h4>
       <p className="hot-card-scope-preview">{card.scope}</p>
-      <div className="hot-card-audience"><strong>{pick('对谁有用 · 本站判断', 'Who benefits · Our assessment')}</strong><ul>{card.audiences.map((point, i) => <li key={i}>{point.title}</li>)}</ul></div>
-      <p className="hot-card-limit"><strong>{pick('先看条件', 'Check first')}</strong>{card.limits[0].detail}</p>
+      <button type="button" className="hot-card-disclosure" aria-expanded={expanded} aria-controls={disclosureId}
+        onClick={() => { setPinned(!expanded); setDismissed(expanded); }}>
+        {expanded ? pick('收起人群与条件', 'Hide audience and conditions') : pick('展开人群与条件', 'Show audience and conditions')}
+        <span aria-hidden="true">{expanded ? '−' : '+'}</span>
+      </button>
+      <div className="hot-card-extra" id={disclosureId} hidden={!expanded}>
+        <div className="hot-card-audience"><strong>{pick('对谁有用 · 本站判断', 'Who benefits · Our assessment')}</strong><ul>{card.audiences.map((point, i) => <li key={i}>{point.title}</li>)}</ul></div>
+        <p className="hot-card-limit"><strong>{pick('先看条件', 'Check first')}</strong>{card.limits[0].detail}</p>
+      </div>
       {card.status === 'needs_update' && <p className="hot-card-preview-maintenance" role="status">{pick('待更新：', 'Update pending: ')}{card.update_note}</p>}
       <div className="hot-card-preview-footer">
         {source && <SourceLink className="hot-card-source" url={source.url}>{pick('官方证据', 'Official evidence')} ↗</SourceLink>}

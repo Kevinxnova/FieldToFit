@@ -1,6 +1,6 @@
 .hot-card-section{margin:36px 0 44px;padding-top:22px;border-top:1px solid var(--line);container:hot-cards / inline-size}
 .hot-card-subtitle{color:var(--muted);margin:0 0 20px;font-size:15px}
-.hot-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2cqi,24px);isolation:isolate}
+.hot-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:clamp(12px,1.5cqi,16px);margin-inline:-18px;isolation:isolate}
 .hot-card-preview{
   --card-foil:linear-gradient(130deg,#a9cfae 0%,#e8e5c7 22%,#b7d4df 45%,#c1bbdd 65%,#c7d9a8 85%,#a9cfae 100%);
   --card-art:linear-gradient(135deg,#e4eedb,#e5e8f3);
@@ -42,6 +42,11 @@
 .hot-card-preview h4 a:hover{text-decoration:underline;text-underline-offset:4px}
 .hot-card-preview p{font-size:13px;line-height:1.85;margin:0 0 16px}
 .hot-card-scope-preview{color:var(--card-secondary)}
+.hot-card-disclosure{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:44px;margin:0 0 12px;padding:8px 0;border:0;background:none;color:var(--green);font:inherit;font-size:12px;text-align:left;cursor:pointer}
+.hot-card-disclosure span{font-size:18px;flex:none}
+.hot-card-disclosure:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
+.hot-card-extra:not([hidden]){animation:hot-card-reveal 180ms ease-out}
+@keyframes hot-card-reveal{from{opacity:0}to{opacity:1}}
 .hot-card-audience{border-top:1px solid var(--line);padding-top:15px;margin-bottom:17px}
 .hot-card-audience>strong{font-size:11px;line-height:1.6;font-weight:400;color:var(--card-secondary)}
 .hot-card-audience ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin:9px 0 0;padding:0}
@@ -55,12 +60,8 @@
 .hot-card-read:hover{text-decoration:underline;text-underline-offset:3px}
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
   @container hot-cards (width >= 600px){
-    .hot-card-preview{--card-rest-y:-8deg;--card-rest-z:-.8deg}
-    .hot-card-preview:nth-child(2){--card-rest-y:5deg;--card-rest-z:.6deg}
-    .hot-card-preview:nth-child(3){--card-rest-y:8deg;--card-rest-z:.8deg}
-    .hot-card-foil{transform:rotateX(3deg) rotateY(var(--card-rest-y)) rotateZ(var(--card-rest-z))}
     .hot-card-preview:is([data-presenting="true"],:focus-within){z-index:1}
-    .hot-card-preview:is([data-presenting="true"],:focus-within) .hot-card-foil{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-8px) scale(1.04);box-shadow:0 4px 0 var(--line),0 28px 44px var(--card-shadow)}
+    .hot-card-preview:is([data-presenting="true"],:focus-within) .hot-card-foil{transform:translateY(-8px) scale(1.04);box-shadow:0 4px 0 var(--line),0 28px 44px var(--card-shadow)}
     .hot-card-preview:is([data-presenting="true"],:focus-within) .hot-card-foil::after{opacity:1}
     .hot-card-preview:is([data-presenting="true"],:focus-within) .hot-card-art{transform:translateZ(12px)}
     .hot-card-preview:is([data-presenting="true"],:focus-within) h4{transform:translateZ(8px)}
@@ -69,6 +70,7 @@
 @media(prefers-reduced-motion:reduce){
   .hot-card-foil,.hot-card-art,.hot-card-preview h4{transform:none!important;transition:none!important}
   .hot-card-foil::after{display:none}
+  .hot-card-extra{animation:none!important}
 }
 @media(pointer:coarse){
   .hot-card-preview-footer a{display:inline-flex;align-items:center;min-height:44px}
@@ -100,6 +102,8 @@
 .hot-card-dialog{max-width:min(760px,94vw);max-height:90vh;overflow:auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:16px}
 .hot-card-dialog::backdrop{background:rgb(0 0 0 / 65%)}
 .hot-card-dialog img{display:block;width:100%;height:auto;margin-top:15px}
+/* Give cards more reading space while keeping the desktop contents rail usable. */
+.reading-layout:has(.hot-card-section){grid-template-columns:170px minmax(0,1fr);column-gap:24px}
 /* Keep a medium desktop's contents rail from squeezing the three-card shelf. */
 @media(min-width:901px) and (max-width:1100px){
   .reading-layout:has(.hot-card-section){display:block}
@@ -109,8 +113,8 @@
 }
 /* Use space inside the reading column, not the outer browser width. */
 @container hot-cards (width < 600px){
-  .hot-card-grid{grid-template-columns:minmax(0,1fr);gap:22px}
-  .hot-card-preview{width:100%;max-width:520px;justify-self:center}
+  .hot-card-grid{grid-template-columns:minmax(0,1fr);gap:22px;margin-inline:0}
+  .hot-card-preview{width:100%;max-width:560px;justify-self:center}
 }
 @media(max-width:600px){.hot-card-sheet{padding:22px 18px}.hot-card-sheet h2{font-size:29px}.hot-card-scenarios{grid-template-columns:1fr;gap:0}.hot-card-sheet .hot-card-conditions{padding:16px 12px}.hot-card-brand span{letter-spacing:0}.hot-card-sheet h3 small{display:block;margin:3px 0 0}.hot-card-sheet li{font-size:15px}}
 

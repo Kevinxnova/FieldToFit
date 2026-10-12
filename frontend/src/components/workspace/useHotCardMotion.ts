@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-/** Keep the hit area still as the card faces the reader; only the glare follows the mouse. */
+/** Keep the hit area still while the card lifts; only the glare follows the mouse. */
 export function useHotCardMotion() {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
