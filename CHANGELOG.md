@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.33"></a>
+## v1.8.33 · 2026-10-12 · MiMo-V2.6 技术报告图文专题
+
+<!-- release-summary:zh:start -->
+- 发布主人选中的 MiMo-V2.6 报告专题，包含四条核心结论、同号论述与完整双语分析。
+- 新增四张原创训练端点、评分、路由和 MOPD2 图表，保留实验条件与来源位置。
+- 训练过程与最终检查点、RL 费用与 API 价格分别表达；原始全文仅链接。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the owner-selected MiMo-V2.6 report with four core findings, matching arguments and complete bilingual analysis.
+- Add four original figures for training endpoints, grading, routing and MOPD2, with experimental settings and source locations.
+- Distinguish training from final checkpoints and RL costs from API prices; link to upstream full text only.
+<!-- release-summary:en:end -->
+
+对应REQ-22，选择具体报告即授权整理、预览、验证、发布及必要资源部署。本批从正式v1.8.32接续，不纳入此前待批准的日报栏目／总表代码。无数据库迁移；图像资源及清单随v1.8.33上线，正文D-124已按既有后台双语预览、审核与发布流程公开；正式三宽度图文、定位、放大与AI分享通过。实际结果见[报告验收](docs/validation/2026-10-12-mimo-report.md)。
+
 <a id="v1.8.32"></a>
 ## v1.8.32 · Codex重置公告补录与英文搜索 · 2026-10-12
 

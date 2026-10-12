@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.32](CHANGELOG.md#v1.8.32)** · [fieldtofit-v1.8.32](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.32)
+**当前源码版本：[v1.8.33](CHANGELOG.md#v1.8.33)** · [fieldtofit-v1.8.33](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.33)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 补录Tibo官方Day 6全球额度重置公告，归北京时间10月11日、日历Day 7；概览、正文及主帖／回复卡片保持一致。
-- 重置公告与已生效重置分开判断；保留原帖时间依据和真实头像，不推造套餐、EOD时区或实际生效时刻。
-- 修复英文动态搜索读取记录专属已审译文的问题；MCP正常位置接收一条新增，随后空续读，专题24条。
+- 发布主人选中的 MiMo-V2.6 报告专题，包含四条核心结论、同号论述与完整双语分析。
+- 新增四张原创训练端点、评分、路由和 MOPD2 图表，保留实验条件与来源位置。
+- 训练过程与最终检查点、RL 费用与 API 价格分别表达；原始全文仅链接。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

@@ -223,5 +223,86 @@
       "effectiveness_measurements": null,
       "locator": "Remediation；Lessons and next steps"
     }
+  },
+  "/report-figures/mimo-v26-training.png": {
+    "sha256": "d573e4b5233b2ffaf136846bb2aa28d6f9deb700a7ad6307af2ee0e028b23fdf",
+    "source_urls": [
+      "https://arxiv.org/html/2610.11959v1"
+    ],
+    "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告",
+    "version": "arXiv 2610.11959 v1",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "reported score endpoints",
+      "metric": "DeepSWE v1.1 avg@3",
+      "unit": "score on 0–100 scale",
+      "pro": [
+        58.4,
+        72.6
+      ],
+      "flash": [
+        48.7,
+        65.7
+      ],
+      "locator": "§4.1; Figure 3",
+      "interpolation": false
+    }
+  },
+  "/report-figures/mimo-v26-grading.png": {
+    "sha256": "195e106a1c14ca8fbcc85fdc7445107c9afd4af264a48c09220cf1753fdc1cd4",
+    "source_urls": [
+      "https://arxiv.org/html/2610.11959v1"
+    ],
+    "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告",
+    "version": "arXiv 2610.11959 v1",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "qualitative method diagram",
+      "locator": "§4.3.1–4.3.2; Figure 7",
+      "numerical_effect_sizes": null
+    }
+  },
+  "/report-figures/mimo-v26-router.png": {
+    "sha256": "377966d92e666fcca6d71b831aefd9c17aefe9ab43ffe2e737432476a28b2cea",
+    "source_urls": [
+      "https://arxiv.org/html/2610.11959v1"
+    ],
+    "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告",
+    "version": "arXiv 2610.11959 v1",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "reported load endpoints",
+      "layer": 9,
+      "experts": 384,
+      "steps": 20,
+      "CV": [
+        0.78,
+        2.0
+      ],
+      "peak_mean_ratio": [
+        6,
+        16
+      ],
+      "cold_percent": [
+        0.5,
+        22
+      ],
+      "cold_definition": "load below 0.1 times mean",
+      "locator": "§5.4; Figure 11"
+    }
+  },
+  "/report-figures/mimo-v26-mopd2.png": {
+    "sha256": "a453de2d8332405dca93b4a4874bf8b61c3bb492522525be39dece84bb059c56",
+    "source_urls": [
+      "https://arxiv.org/html/2610.11959v1"
+    ],
+    "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告",
+    "version": "arXiv 2610.11959 v1",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "qualitative distillation diagram",
+      "locator": "§5.6; Figure 13",
+      "numerical_effect_sizes": null
+    }
   }
 }

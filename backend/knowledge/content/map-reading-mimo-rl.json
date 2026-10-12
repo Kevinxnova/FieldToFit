@@ -1,0 +1,418 @@
+{
+  "id": "D-124",
+  "state": "published",
+  "name": "MiMo-V2.6 强化学习技术报告",
+  "organization": "Xiaomi LLM-Core",
+  "title": "MiMo-V2.6：长任务 Agent 的提升，来自怎样的强化学习？",
+  "category": "research",
+  "summary": "从训练规模、环境与评分信号，到冻结 MoE 路由器和 MOPD2 多教师蒸馏，拆解 MiMo-V2.6 的长任务训练路线。四条核心结论、对应论述与四张本站图表；训练曲线端点、最终检查点成绩和费用口径分别解释。",
+  "highlight": false,
+  "checked_at": "2026-10-12",
+  "source_published_at": "2026-10-08",
+  "event_date": "2026-10-08",
+  "editor": "FieldToFit",
+  "interpretation": [
+    {
+      "title": "从检查点发布追到训练机制",
+      "text": "本篇深读 2026-10-08技术报告，解释训练路线与实验边界；关联已审 MiMo 动态。它是本站专题首次整理，不是模型今天首次发布，也不改写旧事件日期。",
+      "source_ids": [
+        "report"
+      ],
+      "locator": "§1; §4–7"
+    }
+  ],
+  "sources": [
+    {
+      "id": "report",
+      "title": "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement · Xiaomi LLM-Core · arXiv 2610.11959 v1",
+      "url": "https://arxiv.org/html/2610.11959v1",
+      "coverage": "link_only"
+    },
+    {
+      "id": "checkpoint-release",
+      "title": "关联已审动态 D-26 · MiMo-V2.6 模型与训练路线",
+      "url": "https://fieldtofit.top/news/D-26",
+      "coverage": "link_only"
+    },
+    {
+      "id": "checkpoint-mopd",
+      "title": "关联已审动态 D-109 · MiMo-V2.6 MOPD 检查点",
+      "url": "https://fieldtofit.top/news/D-109",
+      "coverage": "link_only"
+    }
+  ],
+  "related": [],
+  "note": "报告首次提交 2026-10-08 13:41:53 UTC；本文核对 2026-10-12，使用 arXiv 2610.11959 v1，未确认后续实质修订。作者实验未由本站复现；仅链接原始全文，四张图为本站重绘／示意。RL 费用不包含完整预训练成本，也不是 API 报价；报告中的自我改进愿景不证明无限递归自主改进。",
+  "reading_materials": [
+    {
+      "id": "report",
+      "title": "MiMo-V2.6 官方技术报告 · 固定版本全文入口",
+      "url": "https://arxiv.org/html/2610.11959v1",
+      "coverage": "link_only",
+      "body": "",
+      "checked_at": "2026-10-12",
+      "retrieved_at": "2026-10-12",
+      "upstream_revision": "arXiv 2610.11959 v1",
+      "locator": "§1–8; Figures 3, 7, 8, 11, 13; Table 3",
+      "reason": "已实际读取主要章节全文；未取得上游全文或原图再分发许可，公开保留原始入口与本站原创分析。",
+      "approved": true,
+      "rights": {
+        "basis": "仅链接原报告；本站图表重新设计，不转载原图"
+      }
+    }
+  ],
+  "technical_map": {
+    "slug": "mimo-agentic-rl",
+    "question": "MiMo-V2.6：长任务 Agent 的提升，来自怎样的强化学习？",
+    "focus": "混合任务 RL：计算／环境／评分共同扩展 → 稳定路由与细粒度奖励 → MOPD2 能力融合。连线表示报告中明确纳入的训练步骤，非单项因果收益。",
+    "takeaway": "长任务 Agent 的提升来自训练系统的联合设计：更丰富的可验证经验、更细的解法评价、稳定的 MoE 执行，以及在学生生成上进行多教师监督。",
+    "caution": "作者实验未复现；训练曲线与最终成绩分开，RL 费用不等于完整成本或 API 报价；方法示意无性能比例。",
+    "change_summary": "首次深读 2026-10-08 MiMo-V2.6 v1：四条结论及同号论述、四张原创重绘／示意，保留评分、路由、蒸馏和实验边界。",
+    "reports": [
+      {
+        "source_id": "report",
+        "version": "arXiv 2610.11959 v1",
+        "first_published_at": "2026-10-08",
+        "revised_at": null,
+        "substantive_revision": false,
+        "revision_note": "固定读取 v1；未核实后续实质修订。本站写作日期不作为报告修订日期。"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "scale",
+        "kind": "method",
+        "stage": 0,
+        "label": "计算、环境、评分共同扩展",
+        "mechanism": "在同一混合任务训练中扩大批量与吞吐，增加任务／harness 多样性，并投入更多评分计算。",
+        "setting": "Pro 与 Flash；GRPO，异步 partial rollout；每批 1,568 个 prompt，各 16 条轨迹，约 25K 轨迹。",
+        "result": "DeepSWE v1.1 训练曲线 avg@3：Pro 58.4 → 72.6；Flash 48.7 → 65.7。",
+        "limitation": "训练曲线是合成系统的结果，不能单独归因给某一组件；不与最终检查点表混合。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "§4.1; §5.1; Figure 3"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "grading",
+        "kind": "method",
+        "stage": 1,
+        "label": "通过测试后仍区分质量",
+        "mechanism": "GRS 用离线任务标准合成奖励；GAR 在线比较组内解法，再分配通过轨迹的正优势。",
+        "setting": "两种方法用于不同代码任务子集；GAR 对照是 Flash 代码任务、batch 128。",
+        "result": "作者图 8显示 GAR 对照中通过率与效率改善；本篇不从图形估算未标注端点。",
+        "limitation": "依赖评分器、环境和验证质量；奖励攻击防御与行为惩罚仍需分开检查。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "§4.3.1–4.3.3; Figures 7–8"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "router",
+        "kind": "method",
+        "stage": 1,
+        "label": "冻结路由以保持专家负载稳定",
+        "mechanism": "RL 阶段保持 MoE 路由器参数不变，减少路由漂移导致的专家负载塌缩。",
+        "setting": "Pro；第 9层、384 专家；可训练与冻结路由器两个运行比较，前 20 步。",
+        "result": "可训练路由器的 CV 从 0.78 到 2.0；峰值负载从均值 6 倍到 16 倍；冷专家占比从 0.5% 到 22%。",
+        "limitation": "这是指定层与指定运行的实验；冻结路由不消除微批次 OOM、硬件和调度故障。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "§5.4–5.5; Figure 11"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "mopd2",
+        "kind": "method",
+        "stage": 2,
+        "label": "多前缀、多教师扩展能力",
+        "mechanism": "保留 Standard MOPD 的学生自主轨迹，并加入教师轨迹／SFT 数据前缀上的学生单轮生成与同历史教师监督。",
+        "setting": "mixed RL 后；按领域分配教师。SFT-Prefix OPD 用固定示范历史限制当前生成之前的累积偏移。",
+        "result": "作者将其用于难以设计可靠训练验证器的领域；最终模型评测见表 3。",
+        "limitation": "教师前缀不是学生之前自主生成的整段历史；最终成绩不能当作单独 MOPD2 的消融效果。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "§5.6; Figure 13; Table 3"
+          }
+        ],
+        "metrics": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "scale",
+        "to": "grading",
+        "relation": "inheritance",
+        "label": "混合任务 RL 纳入更细的组内评分；评分扩展是训练路线的一部分",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "§4.1; §4.3"
+          }
+        ]
+      },
+      {
+        "from": "scale",
+        "to": "router",
+        "relation": "inheritance",
+        "label": "大规模 RL 使用冻结路由器保持专家负载",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "§5.1; §5.4"
+          }
+        ]
+      },
+      {
+        "from": "grading",
+        "to": "router",
+        "relation": "parallel",
+        "label": "评分质量与专家负载是并行工程问题，不是相互带来性能增益的证据",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "§4.3; §5.4"
+          }
+        ]
+      },
+      {
+        "from": "scale",
+        "to": "mopd2",
+        "relation": "inheritance",
+        "label": "混合 RL 后接多前缀、多教师蒸馏",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "§5.6; Figure 13"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "title": "这份报告的四条核心结论",
+      "findings": [
+        {
+          "id": "three-axis-scaling",
+          "title": "长任务能力的扩展，同时依赖算力、环境和反馈",
+          "summary": "更长、更大的训练批次只是其中一环。任务与 harness 多样性、验证质量、评分预算和异步调度共同决定模型能学到什么。",
+          "node_ids": [
+            "scale",
+            "grading"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "§4.1–4.2; §5.1–5.3; §6; Figure 3"
+            },
+            {
+              "source_id": "checkpoint-release",
+              "locator": "本站已有事件；保留原事件日期"
+            },
+            {
+              "source_id": "checkpoint-mopd",
+              "locator": "本站检查点补录；与本篇技术深读区分"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "MiMo-V2.6 是一组多模态 MoE 模型。报告写 Pro 总参数 1.02T、激活 42B，Flash 总参数 310B、激活 15B；Flash 模型卡此前使用 309B，本篇保留报告口径，未推造两者差异的原因。模型先经历预训练与 agent-centric 中期训练，再进入混合任务 RL 和后续蒸馏。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "计算规模：训练每步使用 1,568 个 prompt × 16 条 rollout，约 25K 轨迹与 2.7–3.7B tokens，上下文最长 1M。异步 partial rollout 将未完成轨迹延续到后续训练阶段；这些是训练配置，不能直接当作每个 API 入口的上下文承诺。",
+                "环境扩展：任务涉及代码、通用工具工作流、视觉和网络安全；报告将训练任务与多个 harness 混合。held-out harness 检查提供跨框架泛化线索，但不能证明对任意真实业务都同样有效。",
+                "评分与工程：Pro 的报告 RL 计算费用中 rollout 占 43.8%、训练占 43.5%、grader 占 12.7%。评分本身需要工具环境与执行计算，harness pool、数据／控制平面分离及 Sample Mixer 也属于路线。"
+              ]
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/mimo-v26-training.png",
+              "caption": "图 1 · DeepSWE v1.1 训练曲线的已报告起止分数（本站重绘；仅展示端点）",
+              "alt": "avg@3、0–100 分数尺度；Pro 58.4 → 72.6，Flash 48.7 → 65.7。端点来自原图 3对应正文，未插值训练过程；不是表 3最终检查点分数。",
+              "attribution": "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1",
+              "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "§4.1; Figure 3"
+                }
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "作者报告 Pro／Flash 的 RL 后训练费用为 $2.6M／$0.9M；这不包含完整预训练成本，也不是 API 售价。图 1是训练过程的 avg@3；表 3的最终模型 DeepSWE 分数为 71.9／67.9，必须保留各自阶段与评测口径。"
+            }
+          ]
+        },
+        {
+          "id": "quality-beyond-tests",
+          "title": "都通过测试的解法，也需要不同的学习信号",
+          "summary": "GRS 与 GAR 分别用离线标准、在线比较区分解法质量；行为惩罚则另行约束冗长与无效动作。三者不能混写成一个万能评分器。",
+          "node_ids": [
+            "grading"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "§4.3.1–4.3.3; Figures 7–8"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "二值测试擅长判断任务是否通过，却可能把合理修复、过度改动与碰巧过关的实现赋予相同奖励。报告的重点是让评分器查看代码、运行证据与行为轨迹，再为组内的质量差异提供可训练信号。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "GRS：先比较同一任务的多条离线轨迹，构造任务相关的实现标准与行为标准；后续每条轨迹单独评分。测试奖励乘以两个 rubric 分数，失败仍为零，通过者也能因质量不同得到不同奖励。",
+                "GAR：在线检查同组成功与失败轨迹，允许读取仓库和做针对性测试，再按解法适当性、实现精确性、最小改动、额外影响及代码质量排序。确认依赖外部泄漏答案的轨迹先被置零，余下通过者再分配正优势。",
+                "另有行为正则：组相对长度惩罚与片段级惩罚约束冗长、无效或重复动作。它们不等于 GRS／GAR 本身，也不意味着所有工具循环已被解决。"
+              ]
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/mimo-v26-grading.png",
+              "caption": "图 2 · GRS 与 GAR 怎样区分通过解法（本站方法示意；无数值尺度）",
+              "alt": "GRS：离线轨迹比较 → 任务 rubric → 测试奖励与质量分数组合。GAR：组内在线检查 → 修正作弊奖励 → 通过解法排序 → 正优势重分配。两者用于不同任务子集，不表示性能倍数。",
+              "attribution": "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1",
+              "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "§4.3.1–4.3.2; Figure 7"
+                }
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "evidence",
+              "text": "原图 8的 GAR 对照是 Flash、代码任务、batch 128；作者报告通过率与 token／轮数表现更优。本篇不从未标注图形反推精确增益，不把这个局部对照扩成整个模型家族的因果证明。"
+            },
+            {
+              "kind": "paragraph",
+              "text": "奖励质量也依赖环境是否可信。报告同时描述环境准备、对抗检查和训练中审计；“检测到的 reward hacking 较少”只描述检测结果，不能证明不存在未检出的作弊。"
+            }
+          ]
+        },
+        {
+          "id": "routing-stability",
+          "title": "MoE 的训练稳定性，不能只看整批平均负载",
+          "summary": "路由漂移会让专家越来越不均衡。冻结路由器在作者对照中保持负载稳定，但微批次尖峰、内存和调度仍可能中断训练。",
+          "node_ids": [
+            "router"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "§5.4–5.5; Figures 11–12"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "在 Pro 第 9层的 384 个专家上，作者比较路由器可训练与冻结的两次 RL 运行。可训练路由器在前 20 步出现负载塌缩；作者只恢复路由参数、保留其他权重时，负载接近初始水平，benchmark 表现未变。这支持路由漂移是该次塌缩原因的判断。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/mimo-v26-router.png",
+              "caption": "图 3 · 可训练路由器的负载变化（本站重绘；第 9层、前 20步）",
+              "alt": "三个独立尺度：CV 0.78 → 2.0；峰值／均值 6 → 16；负载低于均值 0.1 倍的冷专家占比 0.5% → 22%。冻结组仅在正文说明，不能把三种指标相乘。",
+              "attribution": "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1",
+              "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "§5.4; Figure 11"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "冻结后的对照：CV 约 0.7、峰值约均值 5.5 倍，冷专家占比接近 1%，benchmark 仍正常提升。这是指定层和运行的证据，不能推广为所有 MoE 都必须永久冻结路由器。",
+                "微批次仍会尖峰：报告记录整批较均衡时，某层的 expert-parallel rank 仍收到均值 30 倍以上 token，造成 GPU OOM。作者调整并行配置以容纳这些峰值。",
+                "工程故障不能略过：硬件错误、Kubernetes 故障、grader 网络不可达、rollout 长度估计偏差与 CPU 打包内存不足分别导致中断。失败分析解释了“扩大训练”还需要哪些可恢复能力。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "冻结路由器是报告中的稳定化手段；它不是显存问题、异步采样或基础设施可靠性的总解决方案。"
+            }
+          ]
+        },
+        {
+          "id": "multi-prefix-distillation",
+          "title": "MOPD2 把教师能力接到学生实际生成的下一轮",
+          "summary": "学生继续生成，教师在同一历史与学生前序 token 上给监督；教师轨迹或 SFT 数据提供历史前缀，帮助处理难验证领域与长轨迹偏移。",
+          "node_ids": [
+            "mopd2",
+            "scale"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "§5.6; Figure 13; Table 3; §7"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "mixed RL 擅长利用可以可靠验证的任务，但长程游戏开发、科研或具身场景未必容易设计奖励。MOPD2 接在 mixed RL 之后，按领域使用不同教师，把可验证和难验证领域的能力融合；其中 SFT 教师来自高质量合成示范。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/mimo-v26-mopd2.png",
+              "caption": "图 4 · MOPD2 的三条生成与监督路径（本站阅读示意）",
+              "alt": "Standard MOPD 保留学生自主轨迹；Teacher-Prefix OPD 和 SFT-Prefix OPD 使用各自历史前缀，学生只采样下一轮，预指定教师条件于相同历史及学生已生成 token。无效果大小或比例。",
+              "attribution": "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1",
+              "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "§5.6; Figure 13"
+                }
+              ]
+            },
+            {
+              "kind": "points",
+              "items": [
+                "Standard MOPD：在有合适 mixRL 教师的领域继续使用学生自主 rollout；学生访问自己可能到达的状态，教师给 token 级监督。",
+                "Teacher-Prefix OPD：从教师轨迹的每个 assistant 回合前截取完整历史。学生从该历史独立生成一轮，不重新生成此前互动；教师条件于同一历史与学生已生成的 token。",
+                "SFT-Prefix OPD：固定示范前缀限制当前回合之前的累积偏移；学生输出仍是自己的 continuation，而非照抄固定示范答案。不能把这一历史来源误写成学生之前自主生成的整段轨迹。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "表 3是最终模型跨 benchmark 的成绩，包含不同评测设置和部分内部任务；不能独立归因给 MOPD2。§7 的 9B 开源实验还区分各领域的单独 RL 与多 harness 代码实验，不能据此宣称一个 9B 检查点同时覆盖所有能力。"
+            },
+            {
+              "kind": "paragraph",
+              "text": "这条路线把“自我改进”具体化为受环境、评分与教师监督约束的训练迭代。报告展示持续扩展 RL 的潜力与可研究的工程栈，没有证明模型已经获得无需人类目标、算力预算或验证器的无限递归改进。"
+            }
+          ]
+        }
+      ],
+      "editorial": [
+        "本站判断：这份报告的价值是解释训练闭环怎样工作，而不是再排列一组最终模型分数。环境、评分器、harness、内存与调度都会进入“能力”的形成过程；采用者和研究者应分别核对模型能力、任务环境与实际执行配置。",
+        "读成绩时先辨认阶段与口径：混合 RL 训练曲线、特定配置消融、MOPD2 后的最终检查点、开源 9B 分领域实验分别回答不同问题。将它们合成一个“提升倍数”会抹掉关键条件；更稳妥的展示是保留原始指标、比较基线与报告位置。",
+        "对采用决策，本篇提供训练机制与可信度边界，不替代本地任务测试，也不承诺某个 API 已切换到相同检查点。能否减少你的工具循环、等待和失败，仍要在固定版本、权限、任务与预算下验证。"
+      ]
+    }
+  }
+}
