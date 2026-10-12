@@ -4,6 +4,7 @@ import { useLanguage } from '../../locale/language';
 import { contentPath } from '../../search';
 import { SourceLink, useWorkspace } from './UI';
 import type { NewsItem } from './NewsReading';
+import { useHotCardMotion } from './useHotCardMotion';
 import './hot-cards.css';
 
 type Point = {title:string;detail:string};
@@ -14,21 +15,45 @@ export type HotCard = {
   share?:{content_revision:string;zh:{url:string;sha256:string};en:{url:string;sha256:string}};
 };
 
+function HotCardPreview({ item }: { item: NewsItem }) {
+  const { pick } = useWorkspace();
+  const motion = useHotCardMotion();
+  const card = item.hot_card!;
+  const path = contentPath(item.id) + '#hot-information-card';
+  const readingReturn = { url: '/for-you#hot-information-cards', id: 'hot-information-cards' };
+  const source = item.sources.find(entry => entry.id === card.evidence[0]?.source_id);
+  return <article className="hot-card-preview" ref={motion}>
+    <div className="hot-card-foil"><div className="hot-card-face">
+      <div className="hot-card-collection"><strong>FieldToFit</strong><span>{item.id} · {pick('热点信息卡', 'INFORMATION CARD')}</span></div>
+      <p className="hot-card-kicker"><strong>{item.name}</strong><span>{item.event_date || item.source_published_at || pick('日期待核实', 'Date unconfirmed')}</span></p>
+      <div className="hot-card-art">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true">
+          <rect x="10" y="13" width="32" height="40" rx="5" transform="rotate(-12 26 33)"/>
+          <rect x="22" y="17" width="32" height="40" rx="5"/>
+          <path d="M29 32h18M29 39h18M29 46h10M47 4v12M41 10h12"/>
+        </svg>
+        <div><span>{pick('关键变化', 'Key change')}</span><strong>{card.changes[0].title}</strong></div>
+      </div>
+      <h4><Link to={path} state={{ readingReturn }}>{card.headline}</Link></h4>
+      <p className="hot-card-scope-preview">{card.scope}</p>
+      <div className="hot-card-audience"><strong>{pick('对谁有用 · 本站判断', 'Who benefits · Our assessment')}</strong><ul>{card.audiences.map((point, i) => <li key={i}>{point.title}</li>)}</ul></div>
+      <p className="hot-card-limit"><strong>{pick('先看条件', 'Check first')}</strong>{card.limits[0].detail}</p>
+      {card.status === 'needs_update' && <p className="hot-card-preview-maintenance" role="status">{pick('待更新：', 'Update pending: ')}{card.update_note}</p>}
+      <div className="hot-card-preview-footer">
+        {source && <SourceLink className="hot-card-source" url={source.url}>{pick('官方证据', 'Official evidence')} ↗</SourceLink>}
+        <Link className="hot-card-read" to={path} state={{ readingReturn }}>{pick('读完整信息卡', 'Read the full card')} ↗</Link>
+      </div>
+    </div></div>
+  </article>;
+}
+
 export function HotCardHighlights({items,preview=false}:{items:NewsItem[];preview?:boolean}) {
   const {pick}=useWorkspace();
   const cards=items.filter(i=>i.hot_card&&i.hot_card.featured_rank>0).sort((a,b)=>a.hot_card!.featured_rank-b.hot_card!.featured_rank).slice(0,3);
   return <section className="hot-card-section" aria-labelledby="hot-information-cards">
     <div className="platform-section-heading"><h3 id="hot-information-cards" tabIndex={-1}>{pick('热点信息卡','Information cards')}</h3><span>{pick('编辑精选','Editorial selection')}</span></div>
     <p className="hot-card-subtitle">{pick('这次更新，对谁有用？','Who benefits from this update?')}</p>
-    <div className="hot-card-grid">{cards.map(item=>{const card=item.hot_card!;const path=contentPath(item.id)+'#hot-information-card';return <article className="hot-card-preview" key={item.id}>
-      <p className="hot-card-kicker">{item.name} · {item.event_date||item.source_published_at||pick('日期待核实','Date unconfirmed')}</p>
-      <h4><Link to={path} state={{readingReturn:{url:'/for-you#hot-information-cards',id:'hot-information-cards'}}}>{card.headline}</Link></h4>
-      <p>{card.scope}</p>
-      <div className="hot-card-audience"><strong>{pick('对谁有用','Who benefits')}</strong><p>{card.audiences.map(p=>p.title).join(' / ')}</p></div>
-      <p className="hot-card-limit"><strong>{pick('先看条件：','Check first: ')}</strong>{card.limits[0].detail}</p>
-      {card.status==='needs_update'&&<p role="status">{pick('待更新：','Update pending: ')}{card.update_note}</p>}
-      <Link className="hot-card-read" to={path} state={{readingReturn:{url:'/for-you#hot-information-cards',id:'hot-information-cards'}}}>{pick('读完整信息卡','Read the full card')} ↗</Link>
-    </article>;})}</div>
+    <div className="hot-card-grid">{cards.map(item => <HotCardPreview key={item.id} item={item}/>)}</div>
     {!cards.length&&<p className="muted">{pick('暂无已审信息卡，完成审核后会在这里展示。','Reviewed information cards will appear here when available.')}</p>}
     {!preview&&<Link className="hot-card-all" to="/for-you?news_cards=1&news_range=all#news-releases">{pick('查看全部信息卡','View all information cards')} →</Link>}
   </section>;

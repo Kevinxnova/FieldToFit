@@ -1,34 +1,34 @@
 {
-  "version": "1.8.36",
-  "revision": "fbe282d8fa0493ed0d126a67c3013b27cd917514cef0a35f0a571ccc4fc6608b",
+  "version": "1.8.37",
+  "revision": "0d4d3606b78b07a470cd8f896f757f7eefb96697f3fc1422103dcdec769e2d42",
   "items": [
     {
-      "version": "1.8.36",
+      "version": "1.8.37",
       "date": "2026-10-12",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "热点信息卡",
+          "title": "热点信息卡镭射收藏样式",
           "highlights": [
-            "新增REQ-6-22热点信息卡：本期速览下独立精选区域、详情分层解读、全部卡片筛选与人工分享图保存。",
-            "复用双语草稿／审核／发布流程，校验图片与文案版本；待更正暂停下载，轮换与原日期分别维护。",
-            "完成三组双语样稿、六张分享图及本地验证；本批未部署，首批卡片尚未正式发布。"
+            "热点信息卡采用已确认的镭射收藏样式，加入渐变边框、关键变化图形区与官方证据入口。",
+            "鼠标悬停时卡面轻微倾斜、分层浮起并反光；离开后复位，触屏与减少动态效果模式保持静态阅读。",
+            "保留三张精选、双语详情、人工分享图和原位返回；本批仅本地开发验证，尚未部署或发布首批卡片。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Information cards for important product updates",
+          "title": "Holographic information cards",
           "highlights": [
-            "Add REQ-6-22 information cards below At a glance, with layered detail reading, an archive filter and manually prepared share images.",
-            "Reuse bilingual drafts, review and publication; bind images to copy revisions, pause downloads during corrections and preserve original dates when rotating selections.",
-            "Prepare three bilingual samples and six share images with local validation. This batch is not deployed and the first cards are not published to production."
+            "Restyle information cards with the approved holographic collectible design, including foil borders, a key-change panel and official evidence links.",
+            "Add pointer-driven tilt, depth and glare with a smooth reset; preserve static reading on touch devices and when reduced motion is requested.",
+            "Retain three editorial selections, bilingual details, manual share images and return navigation. This batch is locally developed and validated, with no deployment or initial card publication."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.36"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.37"
     },
     {
       "version": "1.8.35",

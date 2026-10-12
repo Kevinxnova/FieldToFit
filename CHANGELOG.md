@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.37"></a>
+## v1.8.37 · 热点信息卡镭射收藏样式 · 2026-10-12
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Holographic information cards -->
+<!-- release-summary:zh:start -->
+- 热点信息卡采用已确认的镭射收藏样式，加入渐变边框、关键变化图形区与官方证据入口。
+- 鼠标悬停时卡面轻微倾斜、分层浮起并反光；离开后复位，触屏与减少动态效果模式保持静态阅读。
+- 保留三张精选、双语详情、人工分享图和原位返回；本批仅本地开发验证，尚未部署或发布首批卡片。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Restyle information cards with the approved holographic collectible design, including foil borders, a key-change panel and official evidence links.
+- Add pointer-driven tilt, depth and glare with a smooth reset; preserve static reading on touch devices and when reduced motion is requested.
+- Retain three editorial selections, bilingual details, manual share images and return navigation. This batch is locally developed and validated, with no deployment or initial card publication.
+<!-- release-summary:en:end -->
+
+对应REQ-6-22，按所有者选定的镭射收藏卡方案完成前端增强。动效采用本地CSS与指针处理，无新增运行依赖、数据字段或迁移，不改变内容修订、图片绑定及审核发布规则。实际验证与待验范围见[镭射样式验收](docs/validation/2026-10-12-hot-card-motion.md)。
+
 <a id="v1.8.36"></a>
 ## v1.8.36 · 热点信息卡 · 2026-10-12
 

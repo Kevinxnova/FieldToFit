@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.36](CHANGELOG.md#v1.8.36)** · Release tag not yet published
+**Current source version: [v1.8.37](CHANGELOG.md#v1.8.37)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add REQ-6-22 information cards below At a glance, with layered detail reading, an archive filter and manually prepared share images.
-- Reuse bilingual drafts, review and publication; bind images to copy revisions, pause downloads during corrections and preserve original dates when rotating selections.
-- Prepare three bilingual samples and six share images with local validation. This batch is not deployed and the first cards are not published to production.
+- Restyle information cards with the approved holographic collectible design, including foil borders, a key-change panel and official evidence links.
+- Add pointer-driven tilt, depth and glare with a smooth reset; preserve static reading on touch devices and when reduced motion is requested.
+- Retain three editorial selections, bilingual details, manual share images and return navigation. This batch is locally developed and validated, with no deployment or initial card publication.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
