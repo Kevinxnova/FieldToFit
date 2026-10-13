@@ -1,34 +1,34 @@
 {
-  "version": "1.8.44",
-  "revision": "924b4c567698f11a7c3b81ed5211db6508ab1873368e3eb0d287b2bbde9aa023",
+  "version": "1.8.45",
+  "revision": "e85b8c058d3d3b7581f44942b040743d2f4b983664e31634e90ae8127b3be6ce",
   "items": [
     {
-      "version": "1.8.44",
+      "version": "1.8.45",
       "date": "2026-10-13",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "AI日报需求与中午出刊方案登记",
+          "title": "日报版式与入口demo对齐",
           "highlights": [
-            "新增REQ-24及八个子项：独立日报页、七个栏目与11维度覆盖、热点产品版本表、市场快照及每天北京时间12:00出刊目标。",
-            "提出编辑部杂志式阅读、提前取材与定时出刊、双语及AI同源读取，并明确日报自动发布与既有审核规则需要单独对齐。",
-            "本批仅登记需求与方案；页面未开发、定时任务未创建、未部署，正式站保留此前已验版本。"
+            "记录所有者已选择先验收一期样刊，再按约定规则每天自动发布；真实样刊尚未验收，自动发布尚未启用。",
+            "完成编辑部杂志式、卡片仪表盘式两种对话内demo，以及桌面侧栏、首页导读下方和手机底部的日报入口示意。",
+            "推荐美股最近收盘、A股上午收盘与港股11:30盘中快照；视觉、入口及行情仍待对齐，正式页面未开发、未部署。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "AI daily briefing requirements and noon publication proposal",
+          "title": "Daily briefing design and entry-point previews",
           "highlights": [
-            "Register REQ-24 and eight subrequirements for a daily briefing page, seven sections covering eleven dimensions, product versions, market snapshots and a daily noon publication target in Asia/Shanghai.",
-            "Propose a magazine-style reading layout, advance preparation, scheduled publication and matching bilingual website and AI access, with daily-specific publication rules still requiring owner alignment.",
-            "Deliver requirements and a proposal only. The page is unimplemented, no schedule has been created, and the previously verified production version remains in place."
+            "Record the owner's choice to review one complete sample issue before enabling daily publication under agreed rules. The real sample remains unreviewed and automatic publication is inactive.",
+            "Complete two in-conversation previews, using magazine and card-dashboard layouts, plus desktop sidebar, home-page and mobile navigation entry demonstrations.",
+            "Recommend the latest US close, A-share morning close and an 11:30 Hong Kong intraday snapshot. Design, placement and market conventions await alignment; production pages remain unimplemented and undeployed."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.44"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.45"
     },
     {
       "version": "1.8.42",

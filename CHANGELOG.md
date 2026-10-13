@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.45"></a>
+## v1.8.45 · 日报版式与入口demo对齐 · 2026-10-13
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Daily briefing design and entry-point previews -->
+<!-- release-summary:zh:start -->
+- 记录所有者已选择先验收一期样刊，再按约定规则每天自动发布；真实样刊尚未验收，自动发布尚未启用。
+- 完成编辑部杂志式、卡片仪表盘式两种对话内demo，以及桌面侧栏、首页导读下方和手机底部的日报入口示意。
+- 推荐美股最近收盘、A股上午收盘与港股11:30盘中快照；视觉、入口及行情仍待对齐，正式页面未开发、未部署。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Record the owner's choice to review one complete sample issue before enabling daily publication under agreed rules. The real sample remains unreviewed and automatic publication is inactive.
+- Complete two in-conversation previews, using magazine and card-dashboard layouts, plus desktop sidebar, home-page and mobile navigation entry demonstrations.
+- Recommend the latest US close, A-share morning close and an 11:30 Hong Kong intraday snapshot. Design, placement and market conventions await alignment; production pages remain unimplemented and undeployed.
+<!-- release-summary:en:end -->
+
+对应[REQ-24](FieldToFit-PM.md#req-24)。本批只交付对话内交互demo及需求／版本文档，不包含真实日报内容或网站功能改动。示例标题、产品版本、日期及模拟行情明确标记为设计示例。现有公开API、数据库、生产内容与定时安排保持；实际预览范围与未验证项见[本次记录](docs/validation/2026-10-13-daily-briefing-demo.md)。
+
 <a id="v1.8.44"></a>
 ## v1.8.44 · AI日报需求与中午出刊方案登记 · 2026-10-13
 
