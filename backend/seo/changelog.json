@@ -1,34 +1,34 @@
 {
-  "version": "1.8.46",
-  "revision": "c97978b1eec66ea90c113224802b97f1369546fbc3de40ac25b00d35c4f3ff30",
+  "version": "1.8.47",
+  "revision": "47e36df900ed0ff97b94629034a3cccffbb737b989bb6e777ee35b9f6b2075e9",
   "items": [
     {
-      "version": "1.8.46",
+      "version": "1.8.47",
       "date": "2026-10-13",
-      "deployed_on": "",
+      "deployed_on": "2026-10-13",
       "copy": {
         "zh": {
-          "title": "For you横幅方向与交互视觉对齐",
+          "title": "For you沉浸式首屏与交互球体",
           "highlights": [
-            "按所有者选择，将REQ-6-23／24明确为横幅沉浸布局，其余大致排版保留。",
-            "补充接近a16z参考的玻璃球、城市纵深、环绕品牌文字、球面流光与点击能量波，并记录新版对话预览的实际检查。",
-            "本批为方案与文档更新；新版质感待审阅，正式组件未开发、未部署。"
+            "For you首屏采用已确认的横幅布局，配合夕阳城市、玻璃球、密集光点与FieldToFit环绕文字。",
+            "球体默认持续运动，保留指针流光与点击能量波；按要求移除交互提示和播放按钮，支持减少动态效果与静态回退。",
+            "精简双语导读，按实际内容宽度适配桌面和手机，保留三阅读入口、目录及我关注的切换。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "For you immersive banner and interactive visual alignment",
+          "title": "Immersive For you hero with an interactive sphere",
           "highlights": [
-            "Align REQ-6-23/24 with the owner's selected immersive banner layout, retaining the broadly accepted arrangement.",
-            "Specify a reference-quality glass sphere, city depth, orbiting brand lettering, surface trails and click pulses, with actual checks of the revised conversation preview.",
-            "Update the proposal and documentation only. The revised visual awaits review; production components remain unimplemented and undeployed."
+            "Introduce the approved immersive For you banner with a sunset city, glass sphere, dense light points and orbiting FieldToFit lettering.",
+            "Animate by default with pointer trails and click pulses; remove the interaction hint and playback button as requested, while supporting reduced motion and a static fallback.",
+            "Refine the bilingual introduction and adapt to the available content width, preserving all three reading links, contents navigation and the Following filter transition."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.46"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.47"
     },
     {
       "version": "1.8.42",

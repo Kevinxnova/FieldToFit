@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.47"></a>
+## v1.8.47 · For you沉浸式首屏与交互球体 · 2026-10-13
+
+<!-- site-deployed:2026-10-13 -->
+<!-- public-title:en:Immersive For you hero with an interactive sphere -->
+<!-- release-summary:zh:start -->
+- For you首屏采用已确认的横幅布局，配合夕阳城市、玻璃球、密集光点与FieldToFit环绕文字。
+- 球体默认持续运动，保留指针流光与点击能量波；按要求移除交互提示和播放按钮，支持减少动态效果与静态回退。
+- 精简双语导读，按实际内容宽度适配桌面和手机，保留三阅读入口、目录及我关注的切换。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Introduce the approved immersive For you banner with a sunset city, glass sphere, dense light points and orbiting FieldToFit lettering.
+- Animate by default with pointer trails and click pulses; remove the interaction hint and playback button as requested, while supporting reduced motion and a static fallback.
+- Refine the bilingual introduction and adapt to the available content width, preserving all three reading links, contents navigation and the Following filter transition.
+<!-- release-summary:en:end -->
+
+对应[REQ-6-23／24](FieldToFit-PM.md#for-you-hero-proposal)。所有者明确授权最终开发、验证通过后更新发布，并确认无第二项补充。现有API、数据库、模型图表与审核流程保持；新增公开场景素材留有来源与哈希记录。本地构建、75项相关回归、最终17项搜索正文复验、动画生命周期与双语多尺寸检查通过；正式v1.8.47、三个MCP版本、双语服务端正文、四个公开集合保持及四图哈希核对通过。正式浏览器连接超时，未将本地画面冒充线上视觉复验；实际结果与边界见[本批证据](docs/validation/2026-10-13-for-you-hero.md)。
+
 <a id="v1.8.46"></a>
 ## v1.8.46 · For you横幅方向与交互视觉对齐 · 2026-10-13
 

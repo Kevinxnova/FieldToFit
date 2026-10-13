@@ -1,0 +1,31 @@
+{
+  "reference": "https://a16z.com/100-gen-ai-apps-7/",
+  "retrieved_on": "2026-10-13",
+  "usage": "Owner-selected For you scene reference. Original city / surface textures; FieldToFit renderer and lettering authored separately. No ranking data.",
+  "assets": [
+    {
+      "file": "city.avif",
+      "source": "https://a16z.com/wp-content/themes/a16z/assets/images/app-gen-7/bg.avif",
+      "bytes": 339994,
+      "sha256": "2efd9b258d28fb6843c85fda298a3d56cd9683c85cbbce9b45b7ee255d1671f5"
+    },
+    {
+      "file": "surface.webp",
+      "source": "https://a16z.com/wp-content/themes/a16z/assets/images/app-gen-7/planet.webp",
+      "bytes": 90252,
+      "sha256": "89294522de3f10130c489b421144996e91eaa3f12e7e6411ec84c2d9e02a0a43"
+    },
+    {
+      "file": "geometry.webp",
+      "source": "https://a16z.com/wp-content/themes/a16z/assets/images/app-gen-7/geo.webp",
+      "bytes": 186144,
+      "sha256": "33cef2b8922e38fce856ac58e21b8b57193150995febaebcea1f61017e94f840"
+    },
+    {
+      "file": "poster.webp",
+      "source": "Static capture of the FieldToFit WebGL renderer; see credited input textures above.",
+      "bytes": 147126,
+      "sha256": "c3af491e25f5acc5684b0465c6aa18206242de4fcdd56b56763441d5e97fb17e"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+.for-you-hero { container: for-you-hero / inline-size; margin: 18px 0 30px; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.for-you-hero-banner { position: relative; isolation: isolate; overflow: hidden; min-height: 525px; background: #0c2024; }
+.for-you-scene { position: absolute; inset: 0; touch-action: pan-y; }
+.for-you-scene-poster, .for-you-scene-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.for-you-scene-poster { object-fit: cover; object-position: center; }
+.for-you-scene-canvas { visibility: hidden; }
+.for-you-scene[data-renderer="webgl2"] .for-you-scene-canvas { visibility: visible; }
+.for-you-scene[data-renderer="webgl2"] .for-you-scene-poster { visibility: hidden; }
+.for-you-scene-target { display: none; position: absolute; border: 0; border-radius: 50%; background: transparent; padding: 0; color: #f4f5ed; cursor: pointer; }
+.for-you-scene[data-renderer="webgl2"] .for-you-scene-target:not(:disabled) { display: block; }
+.for-you-scene-target:focus-visible { outline: 2px solid #dbf7e6; outline-offset: 5px; }
+.for-you-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(7,24,26,.97) 0%,rgba(7,24,26,.93) 20%,rgba(7,24,26,.67) 34%,rgba(7,24,26,.15) 49%,transparent 62%); pointer-events: none; }
+.for-you-hero-intro { position: relative; z-index: 1; color: #f4f5ed; width: 44%; padding: 48px 0 38px 36px; pointer-events: none; }
+.for-you-hero-eyebrow { color: #d1e0c5; font-size: 11px; letter-spacing: 1.8px; font-weight: 500; margin: 0 0 25px; }
+.for-you-hero h1 { font-size: clamp(30px,3.4vw,43px); font-weight: 500; line-height: 1.32; letter-spacing: -1px; white-space: pre-line; margin: 0 0 24px; text-wrap: balance; }
+.for-you-hero h1 span { display: block; }
+html[lang="en"] .for-you-hero h1 { font-size: clamp(28px,2.6vw,38px); }
+.for-you-hero-summary { max-width: 305px; color: #d4dfda; font-size: 14px; line-height: 1.9; margin: 0 0 23px; white-space: pre-line; }
+.for-you-hero-types { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 0; color: #e2eada; font-size: 11px; }
+.for-you-hero-types li { padding: 4px 8px; border: 1px solid #829b8066; border-radius: 4px; background: #17302a55; }
+.for-you-hero-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; font-size: 11px; line-height: 1.7; color: #c0d1c5; margin: 22px 0 0; }
+.for-you-hero-meta a { color: #d1e0c5; pointer-events: auto; text-underline-offset: 3px; }
+.for-you-hero-links { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); padding: 0 25px; }
+.for-you-hero-links a { display: flex; align-items: center; gap: 13px; min-width: 0; min-height: 102px; padding: 20px 16px; color: var(--ink); text-decoration: none; }
+.for-you-hero-links a + a { border-left: 1px solid var(--line); }
+.for-you-hero-links a:hover, .for-you-hero-links a:focus-visible { background: var(--surface-soft); }
+.for-you-hero-number { align-self: flex-start; margin-top: 4px; color: var(--muted); font-size: 11px; }
+.for-you-hero-links strong { display: block; font-size: 14px; font-weight: 550; }
+.for-you-hero-links strong + span { display: block; margin-top: 7px; font-size: 11px; line-height: 1.7; color: var(--muted); }
+.for-you-hero-arrow { margin-left: auto; flex-shrink: 0; }
+@container for-you-hero (min-width:701px) and (max-width:900px) { .for-you-hero-intro { width: 47%; padding-left: 26px; } .for-you-hero-links { padding: 0 12px; } .for-you-hero-links a { padding: 20px 10px; gap: 8px; } }
+@container for-you-hero (max-width:700px) {
+  .for-you-hero-banner { min-height: 650px; }
+  .for-you-hero-intro { width: 100%; padding: 28px 24px 344px; }
+  .for-you-hero h1 { font-size: 31px; line-height: 1.32; margin-bottom: 16px; }
+  .for-you-hero h1 span:nth-child(n+2) { display: inline-block; }
+  .for-you-hero-summary { max-width: none; font-size: 13px; line-height: 1.75; margin-bottom: 17px; white-space: normal; }
+  .for-you-hero-meta { margin-top: 18px; }
+  .for-you-scene { inset: auto 0 0; height: 320px; }
+  .for-you-scene-poster { object-position: right center; }
+  .for-you-hero-shade { background: linear-gradient(180deg,#0c2024 0%,#0c2024 calc(100% - 327px),rgba(12,32,36,.95) calc(100% - 315px),transparent calc(100% - 268px)); }
+  .for-you-hero-links { grid-template-columns: 1fr; padding: 0 22px; }
+  .for-you-hero-links a { min-height: 78px; padding: 15px 0; }
+  .for-you-hero-links a + a { border-left: 0; border-top: 1px solid var(--line); }
+}
