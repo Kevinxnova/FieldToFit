@@ -44,7 +44,7 @@ export function ForYouHero({ onRead }: { onRead: () => void }) {
       </div>
     </div>
     <nav className="for-you-hero-links" aria-label={pick('阅读入口', 'Reading sections')}>
-      <Link to="/for-you/daily"><span className="for-you-hero-number" aria-hidden="true">01</span><span><strong>{pick("阅读 AI 日报", "Read AI Daily")}</strong><span>{pick("每天中午，读懂今日重点", "The essentials, every noon")}</span></span><span className="for-you-hero-arrow" aria-hidden="true">↗</span></Link>
+      <Link to="/for-you/daily"><span className="for-you-hero-number" aria-hidden="true">01</span><span><strong>{pick("阅读 AI 日报", "Read AI Daily")}</strong><span>{pick("每天早上 9 点，读懂今日重点", "The essentials, daily at 09:00 Beijing time")}</span></span><span className="for-you-hero-arrow" aria-hidden="true">↗</span></Link>
       {destinations.map(([id, title, description], index) => <a key={id} href={'#' + id} onClick={onRead}>
         <span className="for-you-hero-number" aria-hidden="true">0{index + 2}</span><span><strong>{title}</strong><span>{description}</span></span><span className="for-you-hero-arrow" aria-hidden="true">↘</span>
       </a>)}

@@ -9,7 +9,7 @@ from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 from backend.knowledge.platform import PlatformError
 
-TZ = ZoneInfo('Asia/Shanghai')
+from .schedule import TZ, CUTOFF_AT, local_time
 SECTIONS = ('companies', 'chips', 'robotics', 'infrastructure', 'policy')
 DIMENSIONS = ('global_companies', 'china_companies', 'chips', 'open_source', 'coding', 'agents_robotics', 'infrastructure', 'research', 'policy', 'business', 'markets')
 LABELS = {'companies': ('AI公司', 'AI companies'), 'chips': ('AI芯片', 'AI chips'), 'robotics': ('具身智能', 'Embodied AI'), 'infrastructure': ('基础设施', 'Infrastructure'), 'policy': ('监管政策', 'Policy')}
@@ -83,7 +83,7 @@ def validate(raw, now=None):
     if cutoff>now or start>=cutoff or cutoff-start>timedelta(days=2): fail('Invalid or future news window')
     if cutoff.astimezone(TZ).date().isoformat()!=day: fail('Cutoff must belong to the issue date in Beijing')
     if raw['kind'] not in ('daily','review_sample'): fail('Invalid edition kind')
-    if raw['kind']=='daily' and (cutoff.astimezone(TZ).hour,cutoff.astimezone(TZ).minute)!=(11,30): fail('Daily cutoff is 11:30 Asia/Shanghai')
+    if raw['kind']=='daily' and local_time(cutoff)!=CUTOFF_AT: fail('Daily cutoff is '+CUTOFF_AT.strftime('%H:%M')+' Asia/Shanghai')
     for k in ('headline','intro','takeaway','closing'): bilingual(raw[k],k,1600 if k!='headline' else 160)
     if not isinstance(raw['sources'],list) or len(raw['sources'])>100: fail('At most 100 sources')
     source_ids=set()

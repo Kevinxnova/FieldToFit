@@ -14,6 +14,7 @@ from backend.knowledge.models import generate_json
 from backend.knowledge.sources import fetch, fetch_json, plain_html
 from .schema import TZ, DIMENSIONS, stamp, instant, digest, validate, fail
 from . import service
+from .schedule import COLLECT_AT, CUTOFF_AT, PUBLISH_AT, CHECK_AT, cutoff_for, local_time
 
 # Explicit mapping is configurable: successful checks in one dimension never imply
 # that another dimension or all of an organization's products were checked.
@@ -36,7 +37,7 @@ def source_map():
 
 def configuration():
     mapping=source_map()
-    return {'enabled':os.getenv('FIELDTOFIT_DAILY_AUTOPUBLISH')=='1','timezone':'Asia/Shanghai','cutoff':'11:30','publish':'12:00','quote_adapter_configured':bool(os.getenv('FIELDTOFIT_DAILY_QUOTES_URL')),'missing_source_dimensions':[k for k,v in mapping.items() if not v], 'schedule_verified':os.getenv('FIELDTOFIT_DAILY_SCHEDULE_VERIFIED')=='1'}
+    return {'enabled':os.getenv('FIELDTOFIT_DAILY_AUTOPUBLISH')=='1','timezone':'Asia/Shanghai','collect':COLLECT_AT.strftime('%H:%M'),'cutoff':CUTOFF_AT.strftime('%H:%M'),'publish':PUBLISH_AT.strftime('%H:%M'),'check':CHECK_AT.strftime('%H:%M'),'quote_adapter_configured':bool(os.getenv('FIELDTOFIT_DAILY_QUOTES_URL')),'missing_source_dimensions':[k for k,v in mapping.items() if not v], 'schedule_verified':os.getenv('FIELDTOFIT_DAILY_SCHEDULE_VERIFIED')=='1'}
 
 def claim(day,phase,now=None,manual=False):
     now=now or datetime.now(timezone.utc);token=uuid.uuid4().hex
@@ -56,7 +57,7 @@ def finish(day,phase,token,state,result):
 
 def collect(day, now=None):
     """Reuse source-store evidence. Coverage needs every explicitly mapped check."""
-    now=now or datetime.now(timezone.utc);cutoff=datetime.fromisoformat(day+'T11:30:00+08:00');start=cutoff-timedelta(days=1)
+    now=now or datetime.now(timezone.utc);cutoff=cutoff_for(day);start=cutoff-timedelta(days=1)
     mapping=source_map();config=configuration()
     if config['missing_source_dimensions']:fail('Missing source coverage: '+', '.join(config['missing_source_dimensions']),'daily_configuration',503)
     if not config['quote_adapter_configured']:fail('A licensed closing-price adapter is not configured','daily_configuration',503)
@@ -136,7 +137,7 @@ def run(phase='tick',now=None,manual=False):
     if not config['enabled']:return {'state':'disabled','date':day}
     if not config['schedule_verified']:return {'state':'blocked','code':'schedule_not_verified','date':day}
     if phase=='tick':
-        if (local.hour,local.minute)<(11,30):phase='collect'
+        if local_time(now)<CUTOFF_AT:phase='collect'
         else:
             try:current=service.draft(day)
             except Exception:current=None
@@ -145,10 +146,10 @@ def run(phase='tick',now=None,manual=False):
             elif current and current['reviewed']:phase='publish'
             else:phase='prepare'
     if phase not in ('collect','prepare','publish','check'):fail('Invalid daily phase')
-    if phase=='collect' and (local.hour,local.minute)<(10,45):return {'state':'not_due','date':day}
-    if phase=='prepare' and (local.hour,local.minute)<(11,30):return {'state':'not_due','date':day}
-    if phase in ('publish','check') and local.hour<12:return {'state':'not_due','date':day}
-    if phase=='check' and not manual and (local.hour,local.minute)<(12,5):return {'state':'not_due','date':day}
+    if phase=='collect' and local_time(now)<COLLECT_AT:return {'state':'not_due','date':day}
+    if phase=='prepare' and local_time(now)<CUTOFF_AT:return {'state':'not_due','date':day}
+    if phase in ('publish','check') and local_time(now)<PUBLISH_AT:return {'state':'not_due','date':day}
+    if phase=='check' and not manual and local_time(now)<CHECK_AT:return {'state':'not_due','date':day}
     token=claim(day,phase,now,manual=manual)
     if not token:return {'state':'already_completed','date':day,'phase':phase}
     try:

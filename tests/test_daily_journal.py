@@ -94,8 +94,9 @@ def test_auth_csrf_and_strict_inputs(client,issue,monkeypatch):
     monkeypatch.setenv('FIELDTOFIT_READ_TOKEN','private-read-token')
     assert client.get('/api/v1/daily').status_code==401
 
-def test_noon_idempotence_leases_and_errors_preserve_previous(client,issue,monkeypatch):
-    publish(issue);now=instant('2026-10-14T12:00:00+08:00')
+def test_nine_idempotence_leases_and_errors_preserve_previous(client,issue,monkeypatch):
+    publish(issue);now=instant('2026-10-14T09:00:00+08:00')
+    assert service.archive(now=instant('2026-10-14T08:59:59+08:00'))['status']=='scheduled'
     assert service.archive(now=now)['status']=='delayed'
     monkeypatch.setenv('FIELDTOFIT_DAILY_AUTOPUBLISH','1');monkeypatch.setenv('FIELDTOFIT_DAILY_SCHEDULE_VERIFIED','1')
     assert pipeline.run('publish',now=now)['state']=='failed'
@@ -107,18 +108,18 @@ def test_noon_idempotence_leases_and_errors_preserve_previous(client,issue,monke
     pipeline.finish('2026-10-14','prepare',replacement,'completed',{})
     assert pipeline.claim('2026-10-14','prepare',now+timedelta(minutes=12)) is None
 
-def test_daily_complete_close_before_noon_and_weekend(client,issue):
+def test_daily_complete_close_before_nine_and_weekend(client,issue):
     # Friday closes are legal in a Sunday issue; calendar adapter is responsible
     # for proving that these are the most recent complete exchange sessions.
-    issue['kind']='daily';issue['date']='2026-10-18';issue['window_start']='2026-10-17T11:30:00+08:00';issue['cutoff_at']='2026-10-18T11:30:00+08:00'
+    issue['kind']='daily';issue['date']='2026-10-18';issue['window_start']='2026-10-17T08:30:00+08:00';issue['cutoff_at']='2026-10-18T08:30:00+08:00'
     for c in issue['coverage']:c['state']='checked';c['source_ids']=['s1']
     for m in issue['markets']:
         m['trade_date']='2026-10-16';m['closed_at']='2026-10-16T16:00:00-04:00' if m['id']=='us' else '2026-10-16T16:00:00+08:00';m['state']='holiday'
         for r in m['rows']:
             if r['state']=='verified':r['as_of']=m['closed_at']
-    assert validate(issue,now=instant('2026-10-18T12:00:00+08:00'))
+    assert validate(issue,now=instant('2026-10-18T09:00:00+08:00'))
     issue['markets'][0]['closed_at']='2026-10-19T16:00:00-04:00'
-    with pytest.raises(PlatformError):validate(issue,now=instant('2026-10-18T12:00:00+08:00'))
+    with pytest.raises(PlatformError):validate(issue,now=instant('2026-10-18T09:00:00+08:00'))
 
 def test_empty_issue_and_coverage_failure(client,issue):
     issue['stories']=[];issue['products']=[]
@@ -143,21 +144,53 @@ def test_search_html_and_sitemap_match_public_permissions(client,issue):
     assert client.get('/for-you/daily/2026-10-13').status_code==404
     assert '/for-you/daily/2026-10-13' not in client.get('/sitemap.xml').text
 
-def test_automatic_publish_at_noon_then_readback_is_idempotent(client,issue,monkeypatch):
-    issue['kind']='daily';issue['window_start']='2026-10-12T11:30:00+08:00';issue['cutoff_at']='2026-10-13T11:30:00+08:00'
+def test_automatic_publish_at_nine_then_readback_is_idempotent(client,issue,monkeypatch):
+    issue['kind']='daily';issue['window_start']='2026-10-12T08:30:00+08:00';issue['cutoff_at']='2026-10-13T08:30:00+08:00'
     for c in issue['coverage']:c['state']='checked';c['source_ids']=['s1']
     for m in issue['markets'][1:]:
         m['trade_date']='2026-10-12';m['closed_at']='2026-10-12T16:00:00+08:00'
         for r in m['rows']:
             if r['state']=='verified':r['as_of']=m['closed_at']
-    for entry in issue['sources']+issue['products']+issue['coverage']:entry['checked_at']='2026-10-13T11:30:00+08:00'
+    for entry in issue['sources']+issue['products']+issue['coverage']:entry['checked_at']='2026-10-13T08:30:00+08:00'
     ready(issue)
     monkeypatch.setenv('FIELDTOFIT_DAILY_AUTOPUBLISH','1');monkeypatch.setenv('FIELDTOFIT_DAILY_SCHEDULE_VERIFIED','1')
-    assert pipeline.run('tick',now=instant('2026-10-13T11:55:00+08:00'))['state']=='not_due'
-    r=pipeline.run('tick',now=instant('2026-10-13T12:00:00+08:00'));assert r['state']=='completed' and r['revision']==1
-    assert pipeline.run('publish',now=instant('2026-10-13T12:01:00+08:00'))['state']=='already_completed'
-    assert pipeline.run('tick',now=instant('2026-10-13T12:05:00+08:00'))['content_hash']==r['content_hash']
-    assert service.read()['publication']['published_at']=='2026-10-13T04:00:00Z'
+    assert pipeline.run('tick',now=instant('2026-10-13T08:59:59+08:00'))['state']=='not_due'
+    with pytest.raises(PlatformError) as early:
+        service.publish(issue['date'],1,REASON,automatic=True,now=instant('2026-10-13T00:59:59Z'))
+    assert early.value.code=='daily_not_due'
+    r=pipeline.run('tick',now=instant('2026-10-13T01:00:00Z'));assert r['state']=='completed' and r['revision']==1
+    assert pipeline.run('publish',now=instant('2026-10-13T09:01:00+08:00'))['state']=='already_completed'
+    assert pipeline.run('tick',now=instant('2026-10-13T09:04:59+08:00'))['state']=='not_due'
+    assert pipeline.run('tick',now=instant('2026-10-13T09:05:00+08:00'))['content_hash']==r['content_hash']
+    assert service.read()['publication']['published_at']=='2026-10-13T01:00:00Z'
+
+@pytest.mark.parametrize('phase,before,due',[
+    ('collect','07:44:59','07:45:00'),
+    ('prepare','08:29:59','08:30:00'),
+])
+def test_morning_collection_and_cutoff_boundaries(client,monkeypatch,phase,before,due):
+    monkeypatch.setenv('FIELDTOFIT_DAILY_AUTOPUBLISH','1');monkeypatch.setenv('FIELDTOFIT_DAILY_SCHEDULE_VERIFIED','1')
+    calls=[]
+    from backend.daily_briefing import sources
+    monkeypatch.setattr(sources,'refresh',lambda mapping:calls.append('collect') or {'complete':True})
+    monkeypatch.setattr(pipeline,'prepare',lambda day:calls.append('prepare') or {'date':day})
+    assert pipeline.run(phase,now=instant('2026-10-14T'+before+'+08:00'))['state']=='not_due'
+    assert calls==[]
+    result=pipeline.run('tick',now=instant('2026-10-14T'+due+'+08:00'))
+    assert result['state']=='completed' and result['phase']==phase and calls==[phase]
+
+def test_morning_window_and_old_cutoff_rejected(client,issue):
+    from backend.daily_briefing.schedule import cutoff_for
+    cutoff=cutoff_for('2026-10-14')
+    assert cutoff.isoformat()=='2026-10-14T08:30:00+08:00'
+    assert (cutoff-timedelta(days=1)).isoformat()=='2026-10-13T08:30:00+08:00'
+    config=pipeline.configuration()
+    assert [config[k] for k in ('collect','cutoff','publish','check')]==['07:45','08:30','09:00','09:05']
+    # Historical samples retain their real times; new daily editions must use
+    # the approved cutoff, and old noon rules must never silently reappear.
+    assert validate(issue)['cutoff_at']=='2026-10-13T21:55:00+08:00'
+    issue['kind']='daily';issue['cutoff_at']='2026-10-13T11:30:00+08:00'
+    with pytest.raises(PlatformError,match='08:30'):validate(issue)
 
 def test_registry_does_not_expand_morning_schedule(client):
     from backend.daily_briefing.sources import seed,CHANNELS
@@ -169,7 +202,7 @@ def test_registry_does_not_expand_morning_schedule(client):
     assert not pipeline.configuration()['missing_source_dimensions']
 
 def test_independent_review_failure_never_saves_draft(client,issue,monkeypatch):
-    issue['kind']='daily';issue['window_start']='2026-10-12T11:30:00+08:00';issue['cutoff_at']='2026-10-13T11:30:00+08:00'
+    issue['kind']='daily';issue['window_start']='2026-10-12T08:30:00+08:00';issue['cutoff_at']='2026-10-13T08:30:00+08:00'
     for c in issue['coverage']:c['state']='checked';c['source_ids']=['s1']
     for m in issue['markets'][1:]:
         m['trade_date']='2026-10-12';m['closed_at']='2026-10-12T16:00:00+08:00'

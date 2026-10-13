@@ -1,4 +1,5 @@
 <main><nav><a href="{{ prefix }}/for-you">For you</a> / <a href="{{ prefix }}/for-you/daily">{{ pick('AI日报','AI Daily') }}</a> · <a href="{{ prefix }}/for-you/daily/archive">{{ pick('往期归档','Archive') }}</a></nav>
+<p>{{ pick('每日北京时间 09:00 更新','Updated daily at 09:00 Beijing time') }}</p>
 {% if issue %}
 <h1>{{ issue.headline }}</h1><p>{{ issue.date }} · {{ pick('实际出刊','Published') }} {{ issue.publication.published_at }} · r{{ issue.publication.revision }}</p><p>{{ pick('取材截止','Cutoff') }} {{ issue.cutoff_at }}</p><p>{{ issue.intro }}</p><p>{{ issue.takeaway }}</p>
 <a href="{{ issue.pdf['en' if english else 'zh'].url }}">{{ pick('导出 PDF','Export PDF') }}</a>

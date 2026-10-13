@@ -1,34 +1,34 @@
 {
-  "version": "1.8.53",
-  "revision": "d7504200e1ebc7248a76ce4b8756a3fbde36d0ce7551b94fb0fd6598e96b5493",
+  "version": "1.9.0",
+  "revision": "b934084a7651cdc7e5ff202c1c767b9bfb3ad989bf84722fc87f661797699378",
   "items": [
     {
-      "version": "1.8.53",
+      "version": "1.9.0",
       "date": "2026-10-14",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "AI日报正式模块与双语杂志PDF",
+          "title": "AI日报模块与每天09:00出刊",
           "highlights": [
-            "在For you首位加入AI日报，提供杂志式阅读、日期归档、七栏目、产品追踪和三个市场的最近完整收盘展示。",
-            "加入浅色刊物式PDF按钮；整期网页、双语PDF与HTTP／MCP共用不可变发布快照，支持更正、撤回与失败重试。",
-            "完成私密核验管理和可恢复的中午出刊程序；本地验证通过，尚未部署。行情供应授权、来源真实完整扫描、调度精度及自然日运行仍待验证，生产自动发布保持关闭。"
+            "汇总完整AI日报模块：For you首位入口、杂志页／归档、七栏目、产品追踪、最近完整收盘行情及双语杂志PDF。",
+            "日报目标改为每天北京时间09:00：07:45采集、08:30截稿、09:00发布、09:05回读，双语页面文案与延迟判断同步调整。",
+            "按所有者明确确认升级v1.9.0，增加开发前主动判断z／y／x的规则；历史版本和标签保持。本批未部署，授权行情、真实采集和生产调度仍待接入验证，自动发布保持关闭。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "AI Daily module and bilingual magazine PDFs",
+          "title": "AI Daily milestone and 09:00 publication",
           "highlights": [
-            "Add AI Daily as the first For you reading entry, with magazine-style editions, date archives, seven sections, product tracking and the latest complete close for three markets.",
-            "Add a light magazine-style PDF control. Web, bilingual PDFs and HTTP/MCP use immutable publication snapshots, with corrections, withdrawal and download recovery.",
-            "Implement private review and a resumable noon publishing pipeline. Local verification passed; this batch is not deployed. Quote redistribution, complete live source scans, scheduler precision and natural-day operation remain unverified; production automation stays disabled."
+            "Consolidate the complete AI Daily module: the first For you entry, magazine editions and archives, seven sections, product tracking, latest complete market closes and bilingual magazine PDFs.",
+            "Move the daily target to 09:00 Beijing time: collect at 07:45, close the news window at 08:30, publish at 09:00 and verify at 09:05; update bilingual copy and delay detection together.",
+            "Upgrade to v1.9.0 with explicit owner approval and require proactive patch/minor/major assessment before development. Preserve previous versions and tags. This batch is not deployed; licensed quotes, live collection and production scheduling still need validation, and automatic publication remains disabled."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.53"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.9.0"
     },
     {
       "version": "1.8.52",

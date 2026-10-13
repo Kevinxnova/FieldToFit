@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.9.0"></a>
+## v1.9.0 · AI日报模块与每天09:00出刊 · 2026-10-14
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:AI Daily milestone and 09:00 publication -->
+<!-- release-summary:zh:start -->
+- 汇总完整AI日报模块：For you首位入口、杂志页／归档、七栏目、产品追踪、最近完整收盘行情及双语杂志PDF。
+- 日报目标改为每天北京时间09:00：07:45采集、08:30截稿、09:00发布、09:05回读，双语页面文案与延迟判断同步调整。
+- 按所有者明确确认升级v1.9.0，增加开发前主动判断z／y／x的规则；历史版本和标签保持。本批未部署，授权行情、真实采集和生产调度仍待接入验证，自动发布保持关闭。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Consolidate the complete AI Daily module: the first For you entry, magazine editions and archives, seven sections, product tracking, latest complete market closes and bilingual magazine PDFs.
+- Move the daily target to 09:00 Beijing time: collect at 07:45, close the news window at 08:30, publish at 09:00 and verify at 09:05; update bilingual copy and delay detection together.
+- Upgrade to v1.9.0 with explicit owner approval and require proactive patch/minor/major assessment before development. Preserve previous versions and tags. This batch is not deployed; licensed quotes, live collection and production scheduling still need validation, and automatic publication remains disabled.
+<!-- release-summary:en:end -->
+
+对应[REQ-24](FieldToFit-PM.md#req-24)。minor范围经2026-10-14所有者确认，汇总v1.8.53的完整日报能力与本轮09:00调整；无破坏性API变化，不覆盖旧标签。数据库仍为新增独立表，回滚保留历史数据。历史样刊及其PDF不改期次或实际截稿时间；08:00私密提案任务不变。[验证记录](docs/validation/2026-10-14-daily-journal.md#morning-release)与[运行说明](docs/guides/daily-journal.md)保留真实上线缺口。
+
 <a id="v1.8.53"></a>
 ## v1.8.53 · AI日报正式模块与双语杂志PDF · 2026-10-14
 

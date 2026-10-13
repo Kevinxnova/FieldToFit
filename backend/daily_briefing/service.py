@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timezone
 from backend.db import get_db
 from backend.knowledge.workspace_transactions import editorial_transaction
+from .schedule import PUBLISH_AT, local_time
 from .schema import TZ, validate, digest, project, day_key, stamp, fail, bilingual
 
 
@@ -78,7 +79,7 @@ def publish(day, version, reason, automatic=False, now=None):
         if row['review_hash']!=h or {r['lang'] for r in artifacts}!={'zh','en'}: fail('Review and both PDFs must be ready','daily_not_ready',409)
         if automatic:
             if row['state']=='withdrawn': fail('A withdrawn edition requires owner action','daily_withdrawn',409)
-            if data['kind']!='daily' or now.astimezone(TZ).date().isoformat()!=day or now.astimezone(TZ).hour<12: fail('Automatic publication is only permitted from noon on the issue date','daily_not_due',409)
+            if data['kind']!='daily' or now.astimezone(TZ).date().isoformat()!=day or local_time(now)<PUBLISH_AT: fail('Automatic publication is only permitted from '+PUBLISH_AT.strftime('%H:%M')+' Asia/Shanghai on the issue date','daily_not_due',409)
             if previous and digest(dec(previous['snapshot_json']))!=digest(_public_copy(data)): fail('Automatic corrections require owner review','daily_correction',409)
         public=_public_copy(data);public_hash=digest(public)
         if previous and previous['content_hash']==public_hash and row['state']=='published': return {'date':day,'revision':previous['revision'],'content_hash':public_hash,'unchanged':True}
@@ -110,7 +111,7 @@ def archive(lang='zh', limit=30, offset=0, now=None):
         total=db.execute('SELECT COUNT(*) n FROM fieldtofit_daily_issues WHERE state=?',('published',)).fetchone()['n']
         latest=db.execute('SELECT MAX(day) day FROM fieldtofit_daily_issues WHERE state=?',('published',)).fetchone()['day']
     items=[{'date':r['day'],'revision':r['revision'],'content_hash':r['content_hash'],'published_at':r['published_at'],'headline':project(dec(r['snapshot_json'])['headline'],lang),'kind':dec(r['snapshot_json'])['kind']} for r in rows]
-    return {'items':items,'total':total,'offset':offset,'next_offset':offset+limit if offset+limit<total else None,'latest':latest,'today':today,'status':'delayed' if now.astimezone(TZ).hour>=12 and latest!=today else 'scheduled' if latest!=today else 'published','timezone':'Asia/Shanghai'}
+    return {'items':items,'total':total,'offset':offset,'next_offset':offset+limit if offset+limit<total else None,'latest':latest,'today':today,'status':'delayed' if local_time(now)>=PUBLISH_AT and latest!=today else 'scheduled' if latest!=today else 'published','timezone':'Asia/Shanghai'}
 
 def read(day=None,lang='zh',revision=None):
     if lang not in ('zh','en'): fail('Unsupported language')

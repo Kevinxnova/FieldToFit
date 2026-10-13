@@ -1,4 +1,4 @@
-"""Additional public source channels for the noon magazine, not the 08:00 workflow.
+"""Additional public source channels for the 09:00 magazine, not the 08:00 workflow.
 
 Registration is not a successful scan. The existing bounded discovery adapters
 retain original dates, unfinished pagination and source failures.
@@ -31,7 +31,7 @@ CHANNELS=[
 def seed():
     with get_db() as db:
         for key,name,url,mode,prefix in CHANNELS:
-            cfg={'daily_enabled':False,'mode':mode,'company':'journal-'+key,'path_prefix':prefix,'limit':8,'pages_per_day':1,'history_days':3,'recheck_body':True,'scope':'Noon journal source; original-date checks and incomplete pagination remain explicit.'}
+            cfg={'daily_enabled':False,'mode':mode,'company':'journal-'+key,'path_prefix':prefix,'limit':8,'pages_per_day':1,'history_days':3,'recheck_body':True,'scope':'Morning journal source; original-date checks and incomplete pagination remain explicit.'}
             db.execute('INSERT OR IGNORE INTO knowledge_sources(id,name,category,url,adapter,config) VALUES(?,?,?,?,?,?)',('journal-'+key,name,'official',url,'daily_discovery',encode(cfg)))
 
 def refresh(mapping,budget_seconds=220):
