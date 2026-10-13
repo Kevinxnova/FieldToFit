@@ -1,7 +1,35 @@
 {
-  "version": "1.8.42",
-  "revision": "7fb58f5478c90cebeadd21008047f01d35bf5a33e10dbd2dbe89e6d1812b8658",
+  "version": "1.8.43",
+  "revision": "107ca0cfecd0d0a8f4211b2351b7834c3847782e994fffdf0ed003d1afc1d7db",
   "items": [
+    {
+      "version": "1.8.43",
+      "date": "2026-10-13",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "For you首屏需求与视觉方案登记",
+          "highlights": [
+            "登记REQ-6-23／24：优化For you首屏导读与阅读入口，加入与FieldToFit主题相容的AI观察球体视觉。",
+            "提供导读与观察球、横幅沉浸两种待对齐方案，明确标题、短简介、五类资料与每日检查说明的呈现。",
+            "本批仅交付需求及文档；方案尚未确认，正式组件未开发、未部署，正式站仍为此前已验版本。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "For you hero requirements and visual proposal",
+          "highlights": [
+            "Register REQ-6-23/24 for a clearer For you hero and reading links, with an AI observation sphere suited to FieldToFit.",
+            "Propose split reading-and-sphere and immersive-banner layouts, covering the title, short introduction, five resource types and source-check wording.",
+            "Deliver requirements and documentation only. The proposal awaits alignment; production components remain unimplemented and undeployed, with the previously verified site version retained."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.43"
+    },
     {
       "version": "1.8.42",
       "date": "2026-10-13",

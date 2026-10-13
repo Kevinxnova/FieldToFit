@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.43"></a>
+## v1.8.43 · For you首屏需求与视觉方案登记 · 2026-10-13
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:For you hero requirements and visual proposal -->
+<!-- release-summary:zh:start -->
+- 登记REQ-6-23／24：优化For you首屏导读与阅读入口，加入与FieldToFit主题相容的AI观察球体视觉。
+- 提供导读与观察球、横幅沉浸两种待对齐方案，明确标题、短简介、五类资料与每日检查说明的呈现。
+- 本批仅交付需求及文档；方案尚未确认，正式组件未开发、未部署，正式站仍为此前已验版本。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register REQ-6-23/24 for a clearer For you hero and reading links, with an AI observation sphere suited to FieldToFit.
+- Propose split reading-and-sphere and immersive-banner layouts, covering the title, short introduction, five resource types and source-check wording.
+- Deliver requirements and documentation only. The proposal awaits alignment; production components remain unimplemented and undeployed, with the previously verified site version retained.
+<!-- release-summary:en:end -->
+
+对应[REQ-6-23／24](FieldToFit-PM.md#for-you-hero-proposal)。参考a16z页面及用户截图的视觉构图，未引入排名数据；对话独立示意不代表正式组件或最终素材。仅需求、源码版本与双语发布文档登记，无公共API、数据库、生产内容或日程变更。实际核对和检查见[本次记录](docs/validation/2026-10-13-for-you-hero-proposal.md)。所有者尚未确认方案，未开发或部署；正式站最近已验版本仍为v1.8.42。
+
 <a id="v1.8.42"></a>
 ## v1.8.42 · Muse Wonder模型卡图文与晨报内容 · 2026-10-13
 
