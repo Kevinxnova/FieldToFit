@@ -16,9 +16,13 @@ import './for-ai.css';
 
 type Pair = string[];
 type Mode = { id: string; label: Pair; path: string; start: Pair; setup: Pair; verify: Pair; source: string; command?: string; transport?: string; note?: Pair };
-type Client = { id: string; name: string; mark: string; caption: Pair; modes: Mode[]; note?: Pair };
+type Client = { id: string; name: string; logo: string; caption: Pair; modes: Mode[]; note?: Pair };
 const clients: Client[] = guideData.clients;
 const publicEndpoint = 'https://fieldtofit.top/api/mcp/curated';
+
+function ClientLogo({ client }: { client: Client }) {
+  return <span className={'ai-client-mark ai-mark-' + client.id} aria-hidden="true"><img src={client.logo} alt="" width="32" height="32"/></span>;
+}
 
 /** A copy failure exposes this exact payload, never a different control's value. */
 export function CopyAction({ text, label, primary = false, tracked = false }: { text: string; label: string; primary?: boolean; tracked?: boolean }) {
@@ -91,12 +95,12 @@ export function ForAI() {
   return <div className="platform-page ai-page"><VisitReady/>
     <header className="ai-hero">
       <div className="ai-hero-copy"><p className="ai-kicker"><span/> FOR YOUR AI</p><h1>{pick(...searchPages['/for-your-ai'].heading)}</h1><p className="ai-intro">{pick(...searchPages['/for-your-ai'].description)}</p><div className="ai-trust"><span><Icon name="source" size={14}/>{pick('出处可追溯', 'Traceable sources')}</span><span><Icon name="book" size={14}/>{pick('公开资料，只读接入', 'Public materials, read-only')}</span></div><div className="ai-hero-actions"><a className="button primary" href="#ai-connect">{pick('连接我的 AI', 'Connect my AI')} <Icon name="arrow" size={16}/></a><a className="ai-inline-link" href="#ai-materials">{pick('直接带走资料', 'Take a source package')} <Icon name="arrow" size={16}/></a></div></div>
-      <div className="ai-connection-art" aria-hidden="true"><div className="ai-art-grid"/><span className="ai-art-label">FIELDTOFIT / SOURCE LAYER</span><div className="ai-source-stack"><span><i>01</i>{pick('动态', 'Updates')}</span><span><i>02</i>{pick('档案', 'Profiles')}</span><span><i>03</i>{pick('原文', 'Sources')}</span></div><div className="ai-glass-orb"><svg className="ai-brand-mark" viewBox="0 0 160 112" fill="currentColor" focusable="false"><rect x="0" y="32" width="24" height="24"/><rect x="32" y="32" width="24" height="24"/><rect x="0" y="64" width="24" height="24"/><rect x="32" y="64" width="24" height="24"/><path d="M64 0H160V24H104V32H88V80H104V112H64Z"/><rect x="96" y="40" width="24" height="24"/><rect x="128" y="40" width="24" height="24"/></svg></div><div className="ai-art-path"><i/><i/><i/></div><div className={'ai-target ai-target-'+clientId}><span>{client.mark}</span><strong>{client.name}</strong></div><span className="ai-art-foot">{pick('同一份资料，延伸到你的 AI', 'YOUR SOURCES, WITHIN REACH')}</span></div>
+      <div className="ai-connection-art" aria-hidden="true"><div className="ai-art-grid"/><span className="ai-art-label">FIELDTOFIT / SOURCE LAYER</span><div className="ai-source-stack"><span><i>01</i>{pick('动态', 'Updates')}</span><span><i>02</i>{pick('档案', 'Profiles')}</span><span><i>03</i>{pick('原文', 'Sources')}</span></div><div className="ai-glass-orb"><svg className="ai-brand-mark" viewBox="0 0 160 112" fill="currentColor" focusable="false"><rect x="0" y="32" width="24" height="24"/><rect x="32" y="32" width="24" height="24"/><rect x="0" y="64" width="24" height="24"/><rect x="32" y="64" width="24" height="24"/><path d="M64 0H160V24H104V32H88V80H104V112H64Z"/><rect x="96" y="40" width="24" height="24"/><rect x="128" y="40" width="24" height="24"/></svg></div><div className="ai-art-path"><i/><i/><i/></div><div className={'ai-target ai-target-'+clientId}><ClientLogo client={client}/><strong>{client.name}</strong></div><span className="ai-art-foot">{pick('同一份资料，延伸到你的 AI', 'YOUR SOURCES, WITHIN REACH')}</span></div>
     </header>
 
     <section className="ai-onboarding" id="ai-connect" aria-labelledby="ai-connect-title">
       <div className="ai-section-heading"><div><p className="ai-kicker">01 / CONNECT</p><h2 id="ai-connect-title">{pick('你使用哪款 AI？', 'Choose your AI.')}</h2></div><p>{pick('选好客户端，跟着三步接入。', 'Pick your client. Follow three steps.')}</p></div>
-      <div className="ai-client-picker" role="group" aria-label={pick('选择 AI 客户端', 'Choose an AI client')}>{clients.map(item => <button key={item.id} type="button" aria-pressed={item.id === clientId} onClick={() => {setClientId(item.id);setModeId(item.modes[0].id);}}><span className={'ai-client-mark ai-mark-'+item.id}>{item.mark}</span><span><strong>{item.name}</strong><small>{t(item.caption)}</small></span><span className="ai-choice-dot">{item.id === clientId && <Icon name="check" size={12}/>}</span></button>)}</div>
+      <div className="ai-client-picker" role="group" aria-label={pick('选择 AI 客户端', 'Choose an AI client')}>{clients.map(item => <button key={item.id} type="button" aria-pressed={item.id === clientId} onClick={() => {setClientId(item.id);setModeId(item.modes[0].id);}}><ClientLogo client={item}/><span><strong>{item.name}</strong><small>{t(item.caption)}</small></span><span className="ai-choice-dot">{item.id === clientId && <Icon name="check" size={12}/>}</span></button>)}</div>
       <div className="ai-guide">
         <div className="ai-guide-top"><h3>{pick('连接到 ', 'Connect to ')}{client.name}</h3>{client.modes.length > 1 && <div className="ai-mode-picker" role="group" aria-label={pick('接入方式', 'Setup method')}>{client.modes.map(item => <button key={item.id} aria-pressed={mode.id === item.id} onClick={() => setModeId(item.id)}>{t(item.label)}</button>)}</div>}</div>
         {cloudLocal && <p className="ai-local-notice">{pick('你正在本机预览。Claude 云端无法访问此地址；公开站点请使用：', 'This is a local preview. Claude’s cloud cannot reach this address. For the public site, use: ')}<a href={publicEndpoint}>{publicEndpoint}</a></p>}

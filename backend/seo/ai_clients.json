@@ -4,7 +4,6 @@
     {
       "id": "codex",
       "name": "Codex",
-      "mark": "C",
       "caption": [
         "桌面应用 / 命令行",
         "Desktop / CLI"
@@ -54,12 +53,12 @@
           ],
           "source": "https://developers.openai.com/learn/docs-mcp"
         }
-      ]
+      ],
+      "logo": "/brand/clients/chatgpt.svg"
     },
     {
       "id": "claude",
       "name": "Claude",
-      "mark": "✳",
       "caption": [
         "网页 / 桌面 / Code",
         "Web / desktop / Code"
@@ -113,12 +112,12 @@
           ],
           "source": "https://code.claude.com/docs/en/mcp"
         }
-      ]
+      ],
+      "logo": "/brand/clients/claude.svg"
     },
     {
       "id": "openclaw",
       "name": "OpenClaw",
-      "mark": "◈",
       "caption": [
         "控制台 / 命令行",
         "Control UI / CLI"
@@ -172,12 +171,12 @@
       "note": [
         "运行中的 Gateway／Agent 可能需要重新加载或重启；连接仍遵循其工具权限设置。",
         "A running Gateway or agent may need a reload or restart; its tool policies still apply."
-      ]
+      ],
+      "logo": "/brand/clients/openclaw.svg"
     },
     {
       "id": "pi",
       "name": "Pi",
-      "mark": "π",
       "caption": [
         "Pi coding agent",
         "Pi coding agent"
@@ -209,7 +208,8 @@
       "note": [
         "适用于带内置 MCP 的版本。若没有 pi mcp 命令，先升级或查看所用扩展的说明；MCP 扩展可能接管 /mcp。",
         "Requires a version with built-in MCP. If pi mcp is unavailable, update or consult your extension’s guide; an MCP extension may replace /mcp."
-      ]
+      ],
+      "logo": "/brand/clients/pi.svg"
     }
   ]
 }

@@ -58,3 +58,21 @@
 - 版本元数据同步为v1.8.50；仓库检查覆盖162份文档、1331个本地链接和332个相对导入，0错误；`git diff --check`通过。
 
 本批仍仅本地交付，未部署；客户端聊天验收边界沿用上一批记录。
+
+
+<a id="client-mark-review"></a>
+## 同日复审：四客户端真实标志（v1.8.51）
+
+所有者要求将Codex的C占位换为GPT标志，并将Claude、OpenClaw、Pi占位字符改为对应原始标志。已从官方素材取得GPT黑白结形、Claude橙色星形、OpenClaw龙虾和Pi三色图形，选择卡与上方示意图共用组件；图片仅作装饰，按钮仍用产品名称作为无障碍名称。官方出处、提取方式及归属见[素材说明](../guides/brand-assets.md#client-marks)。
+
+实际复验：
+
+- TypeScript／Vite构建通过；既有大于500 kB的分块提示仍存在。`node tests/frontend/for-ai.cjs`五组交互回归通过，包括四客户端七路径、双语复制、服务检查、超时和异步切换保护；既有react-test-renderer弃用提示仍存在。
+- 官方素材读取遇到本机Python证书链错误，改用系统curl并保持TLS校验。OpenAI品牌页和ChatGPT首页下载受403／超时限制，最终从ChatGPT官方CDN取得SVG；没有使用第三方重绘文件。
+- 初次浏览器检查发现新增独立静态目录不在后端路由中；已将素材移入现有`/brand/clients/`路径并重新构建。最终五个图标位置均加载成功、naturalWidth大于0；四客户端逐一切换后示意图名称与图片地址对应，全部加载成功。
+- 1440px中文浅色／深色视觉检查通过；GPT采用SVG原有黑白配色并与页面主题一致。320／390px中文浅色与英文深色共四组手机尺寸组合未横向溢出，390px截图中的四图标及名称清晰。
+- 截图保存于`output/operations/for-ai-20261013/client-marks-desktop-zh.jpg`、`client-marks-desktop-dark.jpg`、`client-marks-mobile-zh.jpg`和`client-marks-mobile-en-dark.jpg`；本地预览恢复中文浅色与默认窗口尺寸。
+
+版本元数据同步为v1.8.51；仓库检查为162份文档、1340个本地链接、332个相对导入，0错误，`git diff --check`通过。
+
+本批仅本地交付，未部署；接口与接入步骤保持，真实客户端完整聊天验收边界沿用上一批。

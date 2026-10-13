@@ -1,34 +1,34 @@
 {
-  "version": "1.8.50",
-  "revision": "31d9315b5c16cf9e18077b0978213cb2c1d6efbe5b2bb5f5ab7cc4b68f5aa483",
+  "version": "1.8.51",
+  "revision": "296db746745a3f0875ddc680490df8353da956cbb031515aebe9826dd3ce6dc4",
   "items": [
     {
-      "version": "1.8.50",
+      "version": "1.8.51",
       "date": "2026-10-13",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "For your AI品牌图形与主标题修订",
+          "title": "For your AI四客户端真实标志",
           "highlights": [
-            "将For your AI玻璃球中的f→f替换为现有FieldToFit品牌图形，保留原始比例并适配明暗主题。",
-            "主标题改为「把 FieldToFit，接入你的 AI。」，同步英文和无脚本页面。",
-            "本批按页面复审意见进行局部修订，四客户端接入步骤保持；仅本地更新，未部署。"
+            "四客户端选择卡使用真实产品标志：Codex按所有者指定采用GPT标志，Claude、OpenClaw、Pi使用各自官网图形。",
+            "上方连接示意图同步使用所选产品标志，保留原始形状及配色，并适配明暗主题和手机布局。",
+            "标志随站点本地提供，记录官方来源与归属；接入步骤保持，本批未部署。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "For your AI brand mark and headline",
+          "title": "Official client marks on For your AI",
           "highlights": [
-            "Replace f→f in the For your AI glass sphere with the existing FieldToFit emblem, retaining its proportions in light and dark themes.",
-            "Change the headline to “Connect FieldToFit to your AI.” with matching Chinese and no-JavaScript output.",
-            "Apply the requested visual revision while retaining the four client guides. This batch is local and not deployed."
+            "Replace client placeholders with official marks: GPT for Codex as requested, and the Claude, OpenClaw and Pi website marks.",
+            "Use the selected product mark in the connection illustration, preserving its geometry and colors across themes and mobile layouts.",
+            "Serve the marks locally with documented official sources and ownership. Setup instructions are retained; this batch is not deployed."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.50"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.51"
     },
     {
       "version": "1.8.47",

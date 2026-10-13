@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.51"></a>
+## v1.8.51 · For your AI四客户端真实标志 · 2026-10-13
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Official client marks on For your AI -->
+<!-- release-summary:zh:start -->
+- 四客户端选择卡使用真实产品标志：Codex按所有者指定采用GPT标志，Claude、OpenClaw、Pi使用各自官网图形。
+- 上方连接示意图同步使用所选产品标志，保留原始形状及配色，并适配明暗主题和手机布局。
+- 标志随站点本地提供，记录官方来源与归属；接入步骤保持，本批未部署。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Replace client placeholders with official marks: GPT for Codex as requested, and the Claude, OpenClaw and Pi website marks.
+- Use the selected product mark in the connection illustration, preserving its geometry and colors across themes and mobile layouts.
+- Serve the marks locally with documented official sources and ownership. Setup instructions are retained; this batch is not deployed.
+<!-- release-summary:en:end -->
+
+对应[REQ-8-10](FieldToFit-PM.md#req-8-10)。产品标志只用于识别接入对象，来源及处理见[素材说明](docs/guides/brand-assets.md#client-marks)，实际验证见[本次复验](docs/validation/2026-10-13-for-ai-onboarding.md#client-mark-review)。
+
 <a id="v1.8.50"></a>
 ## v1.8.50 · For your AI品牌图形与主标题修订 · 2026-10-13
 

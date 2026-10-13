@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.50](CHANGELOG.md#v1.8.50)** · Release tag not yet published
+**Current source version: [v1.8.51](CHANGELOG.md#v1.8.51)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Replace f→f in the For your AI glass sphere with the existing FieldToFit emblem, retaining its proportions in light and dark themes.
-- Change the headline to “Connect FieldToFit to your AI.” with matching Chinese and no-JavaScript output.
-- Apply the requested visual revision while retaining the four client guides. This batch is local and not deployed.
+- Replace client placeholders with official marks: GPT for Codex as requested, and the Claude, OpenClaw and Pi website marks.
+- Use the selected product mark in the connection illustration, preserving its geometry and colors across themes and mobile layouts.
+- Serve the marks locally with documented official sources and ownership. Setup instructions are retained; this batch is not deployed.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
