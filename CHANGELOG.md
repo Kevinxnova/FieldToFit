@@ -4,8 +4,8 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
-<a id="v1.8.41"></a>
-## v1.8.41 · Muse Wonder模型卡图文与晨报内容 · 2026-10-13
+<a id="v1.8.42"></a>
+## v1.8.42 · Muse Wonder模型卡图文与晨报内容 · 2026-10-13
 
 <!-- site-deployed:2026-10-13 -->
 <!-- public-title:en:Muse Wonder model-card analysis and reviewed daily updates -->
@@ -20,7 +20,27 @@
 - Verify bilingual desktop/mobile reading and matching AI data, retaining original event dates, historical versions and the limits of unreproduced experiments.
 <!-- release-summary:en:end -->
 
-对应REQ-6／REQ-11／REQ-22／REQ-23。仅新增已选择专题所需PNG与来源清单，沿用现有内容审核、双语预览和发布接口，无数据库迁移；原图与全文仅链接。39项相关回归、专题本地六组及正式四组中英文／桌面手机图文、普通内容本地44项与正式16项浏览器阅读通过；六条动态、五项档案与D-133已正式发布，三图哈希、12个对象两种语言HTTP／MCP／服务端正文及三个MCP版本核对通过，五项最新事件同步，榜单与旧报告保留。实际结果见[本批验收](docs/validation/2026-10-13-muse-wonder-and-daily.md)。
+对应REQ-6／REQ-11／REQ-22／REQ-23。本批保留并行Codex v1.8.41提交与标签，整合后以v1.8.42交付；文章和事件日期不因版本合并改写。仅新增已选择专题所需PNG与来源清单，沿用现有内容审核、双语预览和发布接口，无数据库迁移；原图与全文仅链接。39项相关回归、专题本地六组及正式四组中英文／桌面手机图文、普通内容本地44项与正式16项浏览器阅读通过；六条动态、五项档案与D-133已正式发布，三图哈希、12个对象两种语言HTTP／MCP／服务端正文及三个MCP版本核对通过，五项最新事件同步，榜单与旧报告保留。实际结果见[本批验收](docs/validation/2026-10-13-muse-wonder-and-daily.md)。
+
+正式v1.8.42采用收窄清单：保持此前已批准且实际部署的Codex源数据基线，仅更新本批已公开专题参考和必要版本／发布元数据；四个完整公开集合、三个MCP版本及三图哈希复验通过。源码保留并行Codex已发表快照和双方历史；104项相关回归通过。
+
+<a id="v1.8.41"></a>
+## v1.8.41 · Codex官方Day 7／8与重置确认补记 · 2026-10-13
+
+<!-- site-deployed:2026-10-13 -->
+<!-- public-title:en:Codex official Days 7 and 8, with reset confirmation -->
+<!-- release-summary:zh:start -->
+- 补录官方Day 7：GPT-6.1 Sol在Codex／Work的默认上下文扩至500k，订阅用量免长上下文附加费；不扩大为API或购买点数优惠。
+- 补录官方Day 8全球重置公告，保留PST时间表述；D-123补入官方Day 6已全部传播的确认，仍归10月11日。
+- 正文、概览、真实头像及原帖卡片同源更新，专题共26条；已生效重置计数不推造，正常MCP位置接收两条新增及一条更正。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add official Day 7: a 500k default GPT-6.1 Sol context in Codex / Work and no long-context surcharge on subscription usage, without extending the statement to API or purchased credits.
+- Add the official Day 8 global-reset announcement with its PST wording; amend D-123 with official Day 6's fully-propagated confirmation while retaining October 11.
+- Keep articles, overviews, real avatars and original-post cards on one reviewed source, with 26 topic records; preserve the strict reset counter and receive two additions plus one amendment through the normal MCP checkpoint.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者明确批准“2条新增＋D-123更正”；不扩展未来批次授权。北京日期与官方Day独立保存；确认帖发布时间不冒充准确生效开始时刻，未逐档说明的套餐／用量窗口不补造。原有公开接口兼容，无数据库迁移。源码导出保留此前已审核发布的内容及信息卡，不重新发布其他记录；实际预览、回归、MCP与部署结果见[本批验收](docs/validation/2026-10-13-codex-days7-8.md)。日程目标22:00／22:30保持，延后heartbeat和本次人工验收不代表准点执行已通过。
 
 <a id="v1.8.40"></a>
 ## v1.8.40 · 热点信息卡按需展开 · 2026-10-12

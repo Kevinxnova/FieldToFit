@@ -1,30 +1,1691 @@
 {
-  "edition": "2026-09-11-launch",
+  "edition": "reviewed-updates",
   "items": [
     {
       "category": "agent",
+      "checked_at": "2026-10-13",
+      "codex_28_days": {
+        "announced_at": "2026-10-13T01:03:25.417000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2109812216212099456",
+        "group": "codex",
+        "official_day": 8,
+        "overview_en": "Global reset announcement · official Day 8",
+        "overview_zh": "全球重置公告 · 官方 Day 8",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-13T01:03:25.417000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-13",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-13",
+            "evidence_url": "https://x.com/thsottiaux/status/2109812216212099456",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对本人原帖全文及关联回复；中文为本站译文。",
+            "text_en": "Day 8/ Reset",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Day 8／重置",
+            "url": "https://x.com/thsottiaux/status/2109812216212099456"
+          },
+          {
+            "announced_at": "2026-10-13T01:03:59.841000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-13",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-13",
+            "evidence_url": "https://x.com/thsottiaux/status/2109812360596865224",
+            "kind": "reply",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对本人原帖全文及关联回复；中文为本站译文。",
+            "text_en": "Global reset landing by EOD PST time. Enjoy",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "全球重置将在PST当天结束前落地。请享用。",
+            "url": "https://x.com/thsottiaux/status/2109812360596865224"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": false,
+      "id": "D-126",
+      "interpretation": [
+        {
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "source_ids": [
+            "tibo",
+            "tibo-reply"
+          ],
+          "text": "Tibo 发布“Day 8／Reset”，随后回复称全球重置将在 PST 当天结束前落地。此条记录已核实的官方公告，不将生效预告写成已经完成。",
+          "title": "官方公告"
+        },
+        {
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "source_ids": [
+            "tibo",
+            "tibo-reply"
+          ],
+          "text": "回复原文为“Global reset landing by EOD PST time. Enjoy”。保留原帖 PST 表述，不推造精确开始时刻；本次原帖没有逐档列出套餐或具体受影响的用量窗口，不能据公告承诺每个账户已经到账。主帖按帖子 ID 推导为北京时间 2026-10-13 09:03:25，回复为 09:03:59；本站日历 Day 9，保留官方 Day 8。",
+          "title": "时间与适用范围"
+        },
+        {
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "source_ids": [
+            "banked-help"
+          ],
+          "text": "如需查看自己的额度，以账户 Settings → Usage 的当前读数为准。全球重置和可留存的 banked reset 是不同机制，不能把本公告当作新增一张可自行兑换的重置卡。取得同次官方完成与范围依据后，将更新同一条日志。",
+          "title": "查看自己的额度"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-13T03:12:48.635919+00:00",
+        "updated_at": "2026-10-13T03:12:48.635919+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "tibo",
+          "title": "Tibo 官方 Day 8 重置公告",
+          "url": "https://x.com/thsottiaux/status/2109812216212099456"
+        },
+        {
+          "coverage": "link_only",
+          "id": "tibo-reply",
+          "title": "Tibo 关于 PST 当天结束前落地的回复",
+          "url": "https://x.com/thsottiaux/status/2109812360596865224"
+        },
+        {
+          "coverage": "link_only",
+          "id": "banked-help",
+          "title": "OpenAI 重置机制说明",
+          "url": "https://help.openai.com/en/articles/20001498-how-banked-codex-resets-work"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo X 身份与头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo 发布“Day 8／Reset”，随后说明全球重置将在 PST 当天结束前落地。本条记录已核实的官方公告，不将生效预告写成已经完成。",
+      "title": "官方 Day 8：Tibo 宣布全球额度重置，称 PST 当天结束前落地",
+      "translations": {
+        "en": {
+          "fields": {
+            "OpenAI 重置机制说明": "OpenAI explanation of reset mechanisms",
+            "Tibo X 身份与头像": "Tibo X identity and avatar",
+            "Tibo 关于 PST 当天结束前落地的回复": "Tibo reply on arrival by EOD PST",
+            "Tibo 发布“Day 8／Reset”，随后回复称全球重置将在 PST 当天结束前落地。此条记录已核实的官方公告，不将生效预告写成已经完成。": "Tibo posted \"Day 8 / Reset\", then said a global reset would arrive by the end of the day in PST. This records the verified announcement without claiming completion.",
+            "Tibo 发布“Day 8／Reset”，随后说明全球重置将在 PST 当天结束前落地。本条记录已核实的官方公告，不将生效预告写成已经完成。": "Tibo posted “Day 8 / Reset” and said a global reset would arrive by the end of the day in PST. This records the verified announcement, without claiming completion.",
+            "Tibo 官方 Day 8 重置公告": "Tibo official Day 8 reset announcement",
+            "全球重置公告 · 官方 Day 8": "Global reset announcement · official Day 8",
+            "回复原文为“Global reset landing by EOD PST time. Enjoy”。保留原帖 PST 表述，不推造精确开始时刻；本次原帖没有逐档列出套餐或具体受影响的用量窗口，不能据公告承诺每个账户已经到账。主帖按帖子 ID 推导为北京时间 2026-10-13 09:03:25，回复为 09:03:59；本站日历 Day 9，保留官方 Day 8。": "The reply specifies EOD PST; no precise start time or plan-by-plan usage windows are supplied. Receipt for every account is not inferred. Post IDs place the announcement at Beijing time 2026-10-13 09:03:25 and the reply at 09:03:59. This is calendar Day 9 and official Day 8.",
+            "如需查看自己的额度，以账户 Settings → Usage 的当前读数为准。全球重置和可留存的 banked reset 是不同机制，不能把本公告当作新增一张可自行兑换的重置卡。取得同次官方完成与范围依据后，将更新同一条日志。": "Check your own Settings → Usage. A global reset differs from a saved banked reset; this announcement does not mean a banked reset has been granted. Later verified completion and scope evidence will amend the same record.",
+            "官方 Day 8：Tibo 宣布全球额度重置，称 PST 当天结束前落地": "Official Day 8: Tibo announces a global usage reset by EOD PST",
+            "官方公告": "Official announcement",
+            "时间与适用范围": "Timing and scope",
+            "查看自己的额度": "Check your own usage",
+            "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。": "Tibo posts and registered official sources were verified directly; post times are ID-derived, without inventing activation times.",
+            "直接核对本人原帖全文及关联回复；中文为本站译文。": "Full original posts and related replies verified directly; Chinese translations are by FieldToFit."
+          },
+          "reviewed_at": "2026-10-13T03:06:13.505510+00:00",
+          "source_hash": "88144188541f902c5454e891d90f36f2dde5dccf2c386eda8e2d80a71552d9ed",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-13",
+      "codex_28_days": {
+        "announced_at": "2026-10-11T23:45:59.831000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2109430343346581527",
+        "group": "codex",
+        "official_day": 7,
+        "overview_en": "500k default context; no subscription long-context surcharge",
+        "overview_zh": "Sol 默认上下文 500k · 订阅免长上下文附加费",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-11T23:45:59.831000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-13",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-13",
+            "evidence_url": "https://x.com/thsottiaux/status/2109430343346581527",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "已直接读取本人原帖全文；此卡片选摘重点，中文为本站译文。",
+            "text_en": "We have increased default context length for GPT-6.1 Sol to 500k when used through Codex & Work, up from 272k",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Codex与Work中的GPT-6.1 Sol默认上下文已从272k增至500k。",
+            "url": "https://x.com/thsottiaux/status/2109430343346581527"
+          },
+          {
+            "announced_at": "2026-10-11T23:48:11.261000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-13",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-13",
+            "evidence_url": "https://x.com/thsottiaux/status/2109430894604026039",
+            "kind": "reply",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对本人原帖全文及关联回复；中文为本站译文。",
+            "text_en": "With this change, we are not charging long context fees for GPT-6.1 Sol when drawing usage from the subscription.",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "随着这项变化，从订阅扣除用量时，GPT-6.1 Sol不再收取长上下文附加费。",
+            "url": "https://x.com/thsottiaux/status/2109430894604026039"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-12",
+      "highlight": false,
+      "id": "D-125",
+      "interpretation": [
+        {
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "source_ids": [
+            "tibo",
+            "models"
+          ],
+          "text": "Codex 与 ChatGPT Work 中的 GPT-6.1 Sol 默认上下文从 272k 增至 500k。Tibo 称更大的默认值有助于减少上下文压缩，适合需要长时间保留较多背景与细节的任务；本站未独立复测。使用时，在支持且对账户可用的客户端选择 GPT-6.1 Sol。原帖说明仍可自行覆盖上下文设置，最大上下文表述为 1M；500k 不是本次新增的模型上限。",
+          "title": "默认上下文与使用"
+        },
+        {
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "source_ids": [
+            "tibo-fees",
+            "api-model"
+          ],
+          "text": "Tibo 补充称，从订阅扣除用量时，GPT-6.1 Sol 不再收取长上下文附加费；正常订阅用量仍会消耗。该说明不能推成 API 定价修改、购买点数一律免费或所有套餐均可用。官方 API 模型页在本次读取时仍列出超过 272K 输入的长上下文加价。",
+          "title": "订阅计费边界"
+        },
+        {
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "source_ids": [
+            "tibo",
+            "tibo-fees"
+          ],
+          "text": "主帖按帖子 ID 推导为北京时间 2026-10-12 07:45:59，补充帖为 07:48:11。本站归该日、日历 Day 8，保留官方 Day 7；这是发布时间依据，不是新增能力的精确生效时刻。",
+          "title": "日期与编号"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-13T03:12:26.950282+00:00",
+        "updated_at": "2026-10-13T03:12:26.950282+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-11",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "tibo",
+          "title": "Tibo 官方 Day 7 上下文公告",
+          "url": "https://x.com/thsottiaux/status/2109430343346581527"
+        },
+        {
+          "coverage": "link_only",
+          "id": "tibo-fees",
+          "title": "Tibo 关于订阅长上下文附加费的补充",
+          "url": "https://x.com/thsottiaux/status/2109430894604026039"
+        },
+        {
+          "coverage": "link_only",
+          "id": "api-model",
+          "title": "OpenAI API 模型规格与计费",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+        },
+        {
+          "coverage": "link_only",
+          "id": "models",
+          "title": "Codex／Work 模型选择与可用范围",
+          "url": "https://learn.chatgpt.com/docs/models"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo X 身份与头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo 宣布，Codex 与 ChatGPT Work 中的 GPT-6.1 Sol 默认上下文从 272k 增至 500k；后续补充称，计入订阅用量时不再收取该模型的长上下文附加费。",
+      "title": "官方 Day 7：GPT-6.1 Sol 默认上下文扩至 500k，订阅用量免长上下文附加费",
+      "translations": {
+        "en": {
+          "fields": {
+            "Codex 与 ChatGPT Work 中的 GPT-6.1 Sol 默认上下文从 272k 增至 500k。Tibo 称更大的默认值有助于减少上下文压缩，适合需要长时间保留较多背景与细节的任务；本站未独立复测。使用时，在支持且对账户可用的客户端选择 GPT-6.1 Sol。原帖说明仍可自行覆盖上下文设置，最大上下文表述为 1M；500k 不是本次新增的模型上限。": "GPT-6.1 Sol now defaults to 500k context in Codex and ChatGPT Work, up from 272k. Tibo says this can reduce compaction for extended tasks; FieldToFit has not independently tested that benefit. Select GPT-6.1 Sol in an eligible client. The post says settings can override the default and describes a 1M maximum; 500k is not a new model ceiling.",
+            "Codex／Work 模型选择与可用范围": "Codex / Work model selection and availability",
+            "OpenAI API 模型规格与计费": "OpenAI API model specifications and pricing",
+            "Sol 默认上下文 500k · 订阅免长上下文附加费": "500k default context; no subscription long-context surcharge",
+            "Tibo X 身份与头像": "Tibo X identity and avatar",
+            "Tibo 关于订阅长上下文附加费的补充": "Tibo follow-up on subscription long-context fees",
+            "Tibo 官方 Day 7 上下文公告": "Tibo official Day 7 context announcement",
+            "Tibo 宣布，Codex 与 ChatGPT Work 中的 GPT-6.1 Sol 默认上下文从 272k 增至 500k；后续补充称，计入订阅用量时不再收取该模型的长上下文附加费。": "Tibo announced a 500k default context for GPT-6.1 Sol in Codex and ChatGPT Work, increased from 272k. His follow-up removes the long-context surcharge when usage draws from the subscription.",
+            "Tibo 补充称，从订阅扣除用量时，GPT-6.1 Sol 不再收取长上下文附加费；正常订阅用量仍会消耗。该说明不能推成 API 定价修改、购买点数一律免费或所有套餐均可用。官方 API 模型页在本次读取时仍列出超过 272K 输入的长上下文加价。": "The follow-up removes the GPT-6.1 Sol long-context surcharge when usage draws from the subscription; normal usage still counts. This does not establish an API price change, free purchased-credit usage or universal plan access. Current API model documentation retains its separate rates above 272K input tokens.",
+            "主帖按帖子 ID 推导为北京时间 2026-10-12 07:45:59，补充帖为 07:48:11。本站归该日、日历 Day 8，保留官方 Day 7；这是发布时间依据，不是新增能力的精确生效时刻。": "Post IDs place the announcement at Beijing time 2026-10-12 07:45:59 and the reply at 07:48:11. FieldToFit uses that date, calendar Day 8, and retains official Day 7. These establish publication times, not a precise activation time.",
+            "官方 Day 7：GPT-6.1 Sol 默认上下文扩至 500k，订阅用量免长上下文附加费": "Official Day 7: GPT-6.1 Sol gets a 500k default context and no long-context surcharge on subscription usage",
+            "已直接读取本人原帖全文；此卡片选摘重点，中文为本站译文。": "The full original post was read directly; this card excerpts its key statement, translated into Chinese by FieldToFit.",
+            "日期与编号": "Date and numbering",
+            "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。": "Tibo posts and registered official sources were verified directly; post times are ID-derived, without inventing activation times.",
+            "直接核对本人原帖全文及关联回复；中文为本站译文。": "Full original posts and related replies verified directly; Chinese translations are by FieldToFit.",
+            "订阅计费边界": "Subscription billing boundary",
+            "默认上下文与使用": "Default context and use"
+          },
+          "reviewed_at": "2026-10-13T03:05:31.710136+00:00",
+          "source_hash": "411a47077e68374fdeb5d5aafcbb53c8953b3499b1fa3b4bd969df4407b02c6e",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
       "checked_at": "2026-10-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-08",
+      "highlight": false,
+      "id": "D-124",
+      "interpretation": [
+        {
+          "locator": "§1; §4–7",
+          "source_ids": [
+            "report"
+          ],
+          "text": "本篇深读 2026-10-08技术报告，解释训练路线与实验边界；关联已审 MiMo 动态。它是本站专题首次整理，不是模型今天首次发布，也不改写旧事件日期。",
+          "title": "从检查点发布追到训练机制"
+        }
+      ],
+      "name": "MiMo-V2.6 强化学习技术报告",
+      "note": "报告首次提交 2026-10-08 13:41:53 UTC；本文核对 2026-10-12，使用 arXiv 2610.11959 v1，未确认后续实质修订。作者实验未由本站复现；仅链接原始全文，四张图为本站重绘／示意。RL 费用不包含完整预训练成本，也不是 API 报价；报告中的自我改进愿景不证明无限递归自主改进。",
+      "organization": "Xiaomi LLM-Core",
+      "publication": {
+        "first_published_at": "2026-10-12T03:52:48.197322+00:00",
+        "updated_at": "2026-10-12T03:52:48.197322+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "report",
+          "locator": "§1–8; Figures 3, 7, 8, 11, 13; Table 3",
+          "reason": "已实际读取主要章节全文；未取得上游全文或原图再分发许可，公开保留原始入口与本站原创分析。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "仅链接原报告；本站图表重新设计，不转载原图"
+          },
+          "title": "MiMo-V2.6 官方技术报告 · 固定版本全文入口",
+          "upstream_revision": "arXiv 2610.11959 v1",
+          "url": "https://arxiv.org/html/2610.11959v1"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-08",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement · Xiaomi LLM-Core · arXiv 2610.11959 v1",
+          "url": "https://arxiv.org/html/2610.11959v1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "checkpoint-release",
+          "title": "关联已审动态 D-26 · MiMo-V2.6 模型与训练路线",
+          "url": "https://fieldtofit.top/news/D-26"
+        },
+        {
+          "coverage": "link_only",
+          "id": "checkpoint-mopd",
+          "title": "关联已审动态 D-109 · MiMo-V2.6 MOPD 检查点",
+          "url": "https://fieldtofit.top/news/D-109"
+        }
+      ],
+      "state": "published",
+      "summary": "从训练规模、环境与评分信号，到冻结 MoE 路由器和 MOPD2 多教师蒸馏，拆解 MiMo-V2.6 的长任务训练路线。四条核心结论、对应论述与四张本站图表；训练曲线端点、最终检查点成绩和费用口径分别解释。",
+      "technical_map": {
+        "caution": "作者实验未复现；训练曲线与最终成绩分开，RL 费用不等于完整成本或 API 报价；方法示意无性能比例。",
+        "change_summary": "首次深读 2026-10-08 MiMo-V2.6 v1：四条结论及同号论述、四张原创重绘／示意，保留评分、路由、蒸馏和实验边界。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.1; §4.3",
+                "source_id": "report"
+              }
+            ],
+            "from": "scale",
+            "label": "混合任务 RL 纳入更细的组内评分；评分扩展是训练路线的一部分",
+            "relation": "inheritance",
+            "to": "grading"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§5.1; §5.4",
+                "source_id": "report"
+              }
+            ],
+            "from": "scale",
+            "label": "大规模 RL 使用冻结路由器保持专家负载",
+            "relation": "inheritance",
+            "to": "router"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.3; §5.4",
+                "source_id": "report"
+              }
+            ],
+            "from": "grading",
+            "label": "评分质量与专家负载是并行工程问题，不是相互带来性能增益的证据",
+            "relation": "parallel",
+            "to": "router"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§5.6; Figure 13",
+                "source_id": "report"
+              }
+            ],
+            "from": "scale",
+            "label": "混合 RL 后接多前缀、多教师蒸馏",
+            "relation": "inheritance",
+            "to": "mopd2"
+          }
+        ],
+        "focus": "混合任务 RL：计算／环境／评分共同扩展 → 稳定路由与细粒度奖励 → MOPD2 能力融合。连线表示报告中明确纳入的训练步骤，非单项因果收益。",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.1; §5.1; Figure 3",
+                "source_id": "report"
+              }
+            ],
+            "id": "scale",
+            "kind": "method",
+            "label": "计算、环境、评分共同扩展",
+            "limitation": "训练曲线是合成系统的结果，不能单独归因给某一组件；不与最终检查点表混合。",
+            "mechanism": "在同一混合任务训练中扩大批量与吞吐，增加任务／harness 多样性，并投入更多评分计算。",
+            "metrics": [],
+            "result": "DeepSWE v1.1 训练曲线 avg@3：Pro 58.4 → 72.6；Flash 48.7 → 65.7。",
+            "setting": "Pro 与 Flash；GRPO，异步 partial rollout；每批 1,568 个 prompt，各 16 条轨迹，约 25K 轨迹。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.3.1–4.3.3; Figures 7–8",
+                "source_id": "report"
+              }
+            ],
+            "id": "grading",
+            "kind": "method",
+            "label": "通过测试后仍区分质量",
+            "limitation": "依赖评分器、环境和验证质量；奖励攻击防御与行为惩罚仍需分开检查。",
+            "mechanism": "GRS 用离线任务标准合成奖励；GAR 在线比较组内解法，再分配通过轨迹的正优势。",
+            "metrics": [],
+            "result": "作者图 8显示 GAR 对照中通过率与效率改善；本篇不从图形估算未标注端点。",
+            "setting": "两种方法用于不同代码任务子集；GAR 对照是 Flash 代码任务、batch 128。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§5.4–5.5; Figure 11",
+                "source_id": "report"
+              }
+            ],
+            "id": "router",
+            "kind": "method",
+            "label": "冻结路由以保持专家负载稳定",
+            "limitation": "这是指定层与指定运行的实验；冻结路由不消除微批次 OOM、硬件和调度故障。",
+            "mechanism": "RL 阶段保持 MoE 路由器参数不变，减少路由漂移导致的专家负载塌缩。",
+            "metrics": [],
+            "result": "可训练路由器的 CV 从 0.78 到 2.0；峰值负载从均值 6 倍到 16 倍；冷专家占比从 0.5% 到 22%。",
+            "setting": "Pro；第 9层、384 专家；可训练与冻结路由器两个运行比较，前 20 步。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§5.6; Figure 13; Table 3",
+                "source_id": "report"
+              }
+            ],
+            "id": "mopd2",
+            "kind": "method",
+            "label": "多前缀、多教师扩展能力",
+            "limitation": "教师前缀不是学生之前自主生成的整段历史；最终成绩不能当作单独 MOPD2 的消融效果。",
+            "mechanism": "保留 Standard MOPD 的学生自主轨迹，并加入教师轨迹／SFT 数据前缀上的学生单轮生成与同历史教师监督。",
+            "metrics": [],
+            "result": "作者将其用于难以设计可靠训练验证器的领域；最终模型评测见表 3。",
+            "setting": "mixed RL 后；按领域分配教师。SFT-Prefix OPD 用固定示范历史限制当前生成之前的累积偏移。",
+            "stage": 2
+          }
+        ],
+        "question": "MiMo-V2.6：长任务 Agent 的提升，来自怎样的强化学习？",
+        "reading": {
+          "editorial": [
+            "本站判断：这份报告的价值是解释训练闭环怎样工作，而不是再排列一组最终模型分数。环境、评分器、harness、内存与调度都会进入“能力”的形成过程；采用者和研究者应分别核对模型能力、任务环境与实际执行配置。",
+            "读成绩时先辨认阶段与口径：混合 RL 训练曲线、特定配置消融、MOPD2 后的最终检查点、开源 9B 分领域实验分别回答不同问题。将它们合成一个“提升倍数”会抹掉关键条件；更稳妥的展示是保留原始指标、比较基线与报告位置。",
+            "对采用决策，本篇提供训练机制与可信度边界，不替代本地任务测试，也不承诺某个 API 已切换到相同检查点。能否减少你的工具循环、等待和失败，仍要在固定版本、权限、任务与预算下验证。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "MiMo-V2.6 是一组多模态 MoE 模型。报告写 Pro 总参数 1.02T、激活 42B，Flash 总参数 310B、激活 15B；Flash 模型卡此前使用 309B，本篇保留报告口径，未推造两者差异的原因。模型先经历预训练与 agent-centric 中期训练，再进入混合任务 RL 和后续蒸馏。"
+                },
+                {
+                  "items": [
+                    "计算规模：训练每步使用 1,568 个 prompt × 16 条 rollout，约 25K 轨迹与 2.7–3.7B tokens，上下文最长 1M。异步 partial rollout 将未完成轨迹延续到后续训练阶段；这些是训练配置，不能直接当作每个 API 入口的上下文承诺。",
+                    "环境扩展：任务涉及代码、通用工具工作流、视觉和网络安全；报告将训练任务与多个 harness 混合。held-out harness 检查提供跨框架泛化线索，但不能证明对任意真实业务都同样有效。",
+                    "评分与工程：Pro 的报告 RL 计算费用中 rollout 占 43.8%、训练占 43.5%、grader 占 12.7%。评分本身需要工具环境与执行计算，harness pool、数据／控制平面分离及 Sample Mixer 也属于路线。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "avg@3、0–100 分数尺度；Pro 58.4 → 72.6，Flash 48.7 → 65.7。端点来自原图 3对应正文，未插值训练过程；不是表 3最终检查点分数。",
+                  "attribution": "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1",
+                  "caption": "图 1 · DeepSWE v1.1 训练曲线的已报告起止分数（本站重绘；仅展示端点）",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§4.1; Figure 3",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/mimo-v26-training.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "作者报告 Pro／Flash 的 RL 后训练费用为 $2.6M／$0.9M；这不包含完整预训练成本，也不是 API 售价。图 1是训练过程的 avg@3；表 3的最终模型 DeepSWE 分数为 71.9／67.9，必须保留各自阶段与评测口径。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§4.1–4.2; §5.1–5.3; §6; Figure 3",
+                  "source_id": "report"
+                },
+                {
+                  "fragment": "",
+                  "locator": "本站已有事件；保留原事件日期",
+                  "source_id": "checkpoint-release"
+                },
+                {
+                  "fragment": "",
+                  "locator": "本站检查点补录；与本篇技术深读区分",
+                  "source_id": "checkpoint-mopd"
+                }
+              ],
+              "id": "three-axis-scaling",
+              "node_ids": [
+                "scale",
+                "grading"
+              ],
+              "summary": "更长、更大的训练批次只是其中一环。任务与 harness 多样性、验证质量、评分预算和异步调度共同决定模型能学到什么。",
+              "title": "长任务能力的扩展，同时依赖算力、环境和反馈"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "二值测试擅长判断任务是否通过，却可能把合理修复、过度改动与碰巧过关的实现赋予相同奖励。报告的重点是让评分器查看代码、运行证据与行为轨迹，再为组内的质量差异提供可训练信号。"
+                },
+                {
+                  "items": [
+                    "GRS：先比较同一任务的多条离线轨迹，构造任务相关的实现标准与行为标准；后续每条轨迹单独评分。测试奖励乘以两个 rubric 分数，失败仍为零，通过者也能因质量不同得到不同奖励。",
+                    "GAR：在线检查同组成功与失败轨迹，允许读取仓库和做针对性测试，再按解法适当性、实现精确性、最小改动、额外影响及代码质量排序。确认依赖外部泄漏答案的轨迹先被置零，余下通过者再分配正优势。",
+                    "另有行为正则：组相对长度惩罚与片段级惩罚约束冗长、无效或重复动作。它们不等于 GRS／GAR 本身，也不意味着所有工具循环已被解决。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "GRS：离线轨迹比较 → 任务 rubric → 测试奖励与质量分数组合。GAR：组内在线检查 → 修正作弊奖励 → 通过解法排序 → 正优势重分配。两者用于不同任务子集，不表示性能倍数。",
+                  "attribution": "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1",
+                  "caption": "图 2 · GRS 与 GAR 怎样区分通过解法（本站方法示意；无数值尺度）",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§4.3.1–4.3.2; Figure 7",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/mimo-v26-grading.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "evidence",
+                  "text": "原图 8的 GAR 对照是 Flash、代码任务、batch 128；作者报告通过率与 token／轮数表现更优。本篇不从未标注图形反推精确增益，不把这个局部对照扩成整个模型家族的因果证明。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "奖励质量也依赖环境是否可信。报告同时描述环境准备、对抗检查和训练中审计；“检测到的 reward hacking 较少”只描述检测结果，不能证明不存在未检出的作弊。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§4.3.1–4.3.3; Figures 7–8",
+                  "source_id": "report"
+                }
+              ],
+              "id": "quality-beyond-tests",
+              "node_ids": [
+                "grading"
+              ],
+              "summary": "GRS 与 GAR 分别用离线标准、在线比较区分解法质量；行为惩罚则另行约束冗长与无效动作。三者不能混写成一个万能评分器。",
+              "title": "都通过测试的解法，也需要不同的学习信号"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "在 Pro 第 9层的 384 个专家上，作者比较路由器可训练与冻结的两次 RL 运行。可训练路由器在前 20 步出现负载塌缩；作者只恢复路由参数、保留其他权重时，负载接近初始水平，benchmark 表现未变。这支持路由漂移是该次塌缩原因的判断。"
+                },
+                {
+                  "alt": "三个独立尺度：CV 0.78 → 2.0；峰值／均值 6 → 16；负载低于均值 0.1 倍的冷专家占比 0.5% → 22%。冻结组仅在正文说明，不能把三种指标相乘。",
+                  "attribution": "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1",
+                  "caption": "图 3 · 可训练路由器的负载变化（本站重绘；第 9层、前 20步）",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§5.4; Figure 11",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/mimo-v26-router.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告"
+                },
+                {
+                  "items": [
+                    "冻结后的对照：CV 约 0.7、峰值约均值 5.5 倍，冷专家占比接近 1%，benchmark 仍正常提升。这是指定层和运行的证据，不能推广为所有 MoE 都必须永久冻结路由器。",
+                    "微批次仍会尖峰：报告记录整批较均衡时，某层的 expert-parallel rank 仍收到均值 30 倍以上 token，造成 GPU OOM。作者调整并行配置以容纳这些峰值。",
+                    "工程故障不能略过：硬件错误、Kubernetes 故障、grader 网络不可达、rollout 长度估计偏差与 CPU 打包内存不足分别导致中断。失败分析解释了“扩大训练”还需要哪些可恢复能力。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "冻结路由器是报告中的稳定化手段；它不是显存问题、异步采样或基础设施可靠性的总解决方案。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§5.4–5.5; Figures 11–12",
+                  "source_id": "report"
+                }
+              ],
+              "id": "routing-stability",
+              "node_ids": [
+                "router"
+              ],
+              "summary": "路由漂移会让专家越来越不均衡。冻结路由器在作者对照中保持负载稳定，但微批次尖峰、内存和调度仍可能中断训练。",
+              "title": "MoE 的训练稳定性，不能只看整批平均负载"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "mixed RL 擅长利用可以可靠验证的任务，但长程游戏开发、科研或具身场景未必容易设计奖励。MOPD2 接在 mixed RL 之后，按领域使用不同教师，把可验证和难验证领域的能力融合；其中 SFT 教师来自高质量合成示范。"
+                },
+                {
+                  "alt": "Standard MOPD 保留学生自主轨迹；Teacher-Prefix OPD 和 SFT-Prefix OPD 使用各自历史前缀，学生只采样下一轮，预指定教师条件于相同历史及学生已生成 token。无效果大小或比例。",
+                  "attribution": "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1",
+                  "caption": "图 4 · MOPD2 的三条生成与监督路径（本站阅读示意）",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§5.6; Figure 13",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/mimo-v26-mopd2.png",
+                  "kind": "figure",
+                  "license": "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告"
+                },
+                {
+                  "items": [
+                    "Standard MOPD：在有合适 mixRL 教师的领域继续使用学生自主 rollout；学生访问自己可能到达的状态，教师给 token 级监督。",
+                    "Teacher-Prefix OPD：从教师轨迹的每个 assistant 回合前截取完整历史。学生从该历史独立生成一轮，不重新生成此前互动；教师条件于同一历史与学生已生成的 token。",
+                    "SFT-Prefix OPD：固定示范前缀限制当前回合之前的累积偏移；学生输出仍是自己的 continuation，而非照抄固定示范答案。不能把这一历史来源误写成学生之前自主生成的整段轨迹。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "表 3是最终模型跨 benchmark 的成绩，包含不同评测设置和部分内部任务；不能独立归因给 MOPD2。§7 的 9B 开源实验还区分各领域的单独 RL 与多 harness 代码实验，不能据此宣称一个 9B 检查点同时覆盖所有能力。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "这条路线把“自我改进”具体化为受环境、评分与教师监督约束的训练迭代。报告展示持续扩展 RL 的潜力与可研究的工程栈，没有证明模型已经获得无需人类目标、算力预算或验证器的无限递归改进。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§5.6; Figure 13; Table 3; §7",
+                  "source_id": "report"
+                }
+              ],
+              "id": "multi-prefix-distillation",
+              "node_ids": [
+                "mopd2",
+                "scale"
+              ],
+              "summary": "学生继续生成，教师在同一历史与学生前序 token 上给监督；教师轨迹或 SFT 数据提供历史前缀，帮助处理难验证领域与长轨迹偏移。",
+              "title": "MOPD2 把教师能力接到学生实际生成的下一轮"
+            }
+          ],
+          "title": "这份报告的四条核心结论"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-08",
+            "revised_at": null,
+            "revision_note": "固定读取 v1；未核实后续实质修订。本站写作日期不作为报告修订日期。",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "arXiv 2610.11959 v1"
+          }
+        ],
+        "slug": "mimo-agentic-rl",
+        "takeaway": "长任务 Agent 的提升来自训练系统的联合设计：更丰富的可验证经验、更细的解法评价、稳定的 MoE 执行，以及在学生生成上进行多教师监督。"
+      },
+      "title": "MiMo-V2.6：长任务 Agent 的提升，来自怎样的强化学习？",
+      "translations": {
+        "en": {
+          "fields": {
+            "DeepSWE v1.1 训练曲线 avg@3：Pro 58.4 → 72.6；Flash 48.7 → 65.7。": "DeepSWE v1.1 training-curve avg@3: Pro 58.4 → 72.6; Flash 48.7 → 65.7.",
+            "FieldToFit 本站重绘／示意；依据 Xiaomi LLM-Core，arXiv 2610.11959 v1": "FieldToFit redraw / schematic, based on Xiaomi LLM-Core, arXiv 2610.11959 v1",
+            "GAR：在线检查同组成功与失败轨迹，允许读取仓库和做针对性测试，再按解法适当性、实现精确性、最小改动、额外影响及代码质量排序。确认依赖外部泄漏答案的轨迹先被置零，余下通过者再分配正优势。": "GAR: inspect successful and failed trajectories online, with repository access and targeted tests, then rank approach suitability, precision, minimality, unintended effects and craftsmanship. Trajectories confirmed to rely on leaked external answers are first assigned zero reward; positive advantage is then redistributed among the remaining passes.",
+            "GRS 与 GAR 分别用离线标准、在线比较区分解法质量；行为惩罚则另行约束冗长与无效动作。三者不能混写成一个万能评分器。": "GRS and GAR distinguish solution quality using offline rubrics and online comparisons; separate behavioral penalties constrain verbosity and ineffective actions. They are not one universal grader.",
+            "GRS 用离线任务标准合成奖励；GAR 在线比较组内解法，再分配通过轨迹的正优势。": "GRS synthesizes rewards using offline task rubrics; GAR compares solutions within online groups and redistributes positive advantage among passing trajectories.",
+            "GRS：先比较同一任务的多条离线轨迹，构造任务相关的实现标准与行为标准；后续每条轨迹单独评分。测试奖励乘以两个 rubric 分数，失败仍为零，通过者也能因质量不同得到不同奖励。": "GRS: compare offline trajectories for one task to construct implementation and behavior rubrics; score later trajectories individually. Multiply the test reward by both rubric scores. Failures retain zero reward, while passes receive different rewards based on quality.",
+            "GRS：离线轨迹比较 → 任务 rubric → 测试奖励与质量分数组合。GAR：组内在线检查 → 修正作弊奖励 → 通过解法排序 → 正优势重分配。两者用于不同任务子集，不表示性能倍数。": "GRS: compare offline trajectories → task rubrics → combine test reward and quality scores. GAR: inspect an online group → correct hack rewards → rank passing solutions → redistribute positive advantage. They apply to different task subsets and imply no performance multiplier.",
+            "MOPD2 把教师能力接到学生实际生成的下一轮": "MOPD2 connects teacher capabilities to the student’s next generated turn",
+            "MiMo-V2.6 官方技术报告 · 固定版本全文入口": "MiMo-V2.6 official technical report: versioned full-text link",
+            "MiMo-V2.6 强化学习技术报告": "MiMo-V2.6 reinforcement learning report",
+            "MiMo-V2.6 是一组多模态 MoE 模型。报告写 Pro 总参数 1.02T、激活 42B，Flash 总参数 310B、激活 15B；Flash 模型卡此前使用 309B，本篇保留报告口径，未推造两者差异的原因。模型先经历预训练与 agent-centric 中期训练，再进入混合任务 RL 和后续蒸馏。": "MiMo-V2.6 is a multimodal MoE family. The report lists Pro at 1.02T total / 42B active parameters and Flash at 310B total / 15B active; an earlier Flash model card used 309B. This article preserves the report definition without inventing a reason for the difference. Pretraining and agent-centric mid-training precede mixed-task RL and subsequent distillation.",
+            "MiMo-V2.6：长任务 Agent 的提升，来自怎样的强化学习？": "MiMo-V2.6: what makes reinforcement learning improve long-horizon agents?",
+            "MoE 的训练稳定性，不能只看整批平均负载": "MoE training stability requires more than average batch loads",
+            "Pro 与 Flash；GRPO，异步 partial rollout；每批 1,568 个 prompt，各 16 条轨迹，约 25K 轨迹。": "Pro and Flash; GRPO with asynchronous partial rollout; 1,568 prompts with 16 trajectories each, approximately 25K trajectories per batch.",
+            "Pro；第 9层、384 专家；可训练与冻结路由器两个运行比较，前 20 步。": "Pro; layer 9 with 384 experts; comparison of trainable and frozen routers over the first 20 steps.",
+            "RL 阶段保持 MoE 路由器参数不变，减少路由漂移导致的专家负载塌缩。": "Keep MoE router parameters fixed during RL to reduce expert-load collapse caused by router drift.",
+            "SFT-Prefix OPD：固定示范前缀限制当前回合之前的累积偏移；学生输出仍是自己的 continuation，而非照抄固定示范答案。不能把这一历史来源误写成学生之前自主生成的整段轨迹。": "SFT-Prefix OPD: fixed demonstration prefixes limit accumulated deviations before the current turn. The student still generates its own continuation rather than copying a fixed target. These histories must not be described as an entire prior autonomous student rollout.",
+            "Standard MOPD 保留学生自主轨迹；Teacher-Prefix OPD 和 SFT-Prefix OPD 使用各自历史前缀，学生只采样下一轮，预指定教师条件于相同历史及学生已生成 token。无效果大小或比例。": "Standard MOPD retains autonomous student rollouts. Teacher-Prefix OPD and SFT-Prefix OPD start from their respective histories; the student samples only the next turn, and a preassigned teacher conditions on the same history and generated student tokens. No effect size or proportion is implied.",
+            "Standard MOPD：在有合适 mixRL 教师的领域继续使用学生自主 rollout；学生访问自己可能到达的状态，教师给 token 级监督。": "Standard MOPD: retain autonomous student rollouts where suitable mixRL teachers exist. The student visits states it can reach, with teacher supervision at the token level.",
+            "Teacher-Prefix OPD：从教师轨迹的每个 assistant 回合前截取完整历史。学生从该历史独立生成一轮，不重新生成此前互动；教师条件于同一历史与学生已生成的 token。": "Teacher-Prefix OPD: extract full histories ending before each assistant turn in a teacher trajectory. The student independently generates one turn without regenerating earlier interactions; the teacher conditions on the same history and already generated student tokens.",
+            "avg@3、0–100 分数尺度；Pro 58.4 → 72.6，Flash 48.7 → 65.7。端点来自原图 3对应正文，未插值训练过程；不是表 3最终检查点分数。": "avg@3 on a 0–100 score scale: Pro 58.4 → 72.6, Flash 48.7 → 65.7. Endpoints come from the text for original Figure 3. No intermediate training trajectory is interpolated; these are not Table 3 final-checkpoint scores.",
+            "mixed RL 后；按领域分配教师。SFT-Prefix OPD 用固定示范历史限制当前生成之前的累积偏移。": "After mixed RL, assign teachers by domain. SFT-Prefix OPD uses fixed demonstration histories to limit accumulated deviations before the current generation.",
+            "mixed RL 擅长利用可以可靠验证的任务，但长程游戏开发、科研或具身场景未必容易设计奖励。MOPD2 接在 mixed RL 之后，按领域使用不同教师，把可验证和难验证领域的能力融合；其中 SFT 教师来自高质量合成示范。": "Mixed RL benefits from reliably verifiable tasks, while long-horizon game development, scientific research and embodied settings can lack suitable rewards. MOPD2 follows mixed RL and assigns different teachers by domain to combine capabilities from verifiable and hard-to-verify settings; SFT teachers are trained on high-quality synthetic demonstrations.",
+            "三个独立尺度：CV 0.78 → 2.0；峰值／均值 6 → 16；负载低于均值 0.1 倍的冷专家占比 0.5% → 22%。冻结组仅在正文说明，不能把三种指标相乘。": "Three separate scales: CV 0.78 → 2.0; peak / mean 6 → 16; fraction of cold experts with load below 0.1 times the mean 0.5% → 22%. The frozen run is discussed in the text; these metrics must not be multiplied together.",
+            "两种方法用于不同代码任务子集；GAR 对照是 Flash 代码任务、batch 128。": "The two methods apply to different code-task subsets; the GAR comparison uses Flash on code tasks with batch 128.",
+            "二值测试擅长判断任务是否通过，却可能把合理修复、过度改动与碰巧过关的实现赋予相同奖励。报告的重点是让评分器查看代码、运行证据与行为轨迹，再为组内的质量差异提供可训练信号。": "Binary tests identify passing tasks but can reward a sound fix, an excessive change and an accidentally passing implementation equally. The report uses graders that inspect code, execution evidence and trajectories, turning within-group quality differences into trainable signals.",
+            "仅链接原报告；本站图表重新设计，不转载原图": "Link to the original report only; FieldToFit figures are newly designed and do not reproduce the original graphics",
+            "从检查点发布追到训练机制": "From checkpoint releases to the training mechanism",
+            "从训练规模、环境与评分信号，到冻结 MoE 路由器和 MOPD2 多教师蒸馏，拆解 MiMo-V2.6 的长任务训练路线。四条核心结论、对应论述与四张本站图表；训练曲线端点、最终检查点成绩和费用口径分别解释。": "From training scale, environments and grading signals to frozen MoE routing and MOPD2 multi-teacher distillation: unpacking the MiMo-V2.6 long-horizon training pipeline. Four findings, matching arguments and four FieldToFit figures distinguish training-curve endpoints, final-checkpoint results and cost definitions.",
+            "作者图 8显示 GAR 对照中通过率与效率改善；本篇不从图形估算未标注端点。": "Author Figure 8 reports pass-rate and efficiency improvements in the GAR comparison; this article does not estimate unlabelled endpoints from the chart.",
+            "作者实验未复现；训练曲线与最终成绩分开，RL 费用不等于完整成本或 API 报价；方法示意无性能比例。": "Author experiments have not been reproduced. Separate training curves from final scores and RL costs from full costs or API prices; method schematics imply no performance ratios.",
+            "作者将其用于难以设计可靠训练验证器的领域；最终模型评测见表 3。": "The authors apply it to domains with difficult training-time verification; final model evaluations are in Table 3.",
+            "作者报告 Pro／Flash 的 RL 后训练费用为 $2.6M／$0.9M；这不包含完整预训练成本，也不是 API 售价。图 1是训练过程的 avg@3；表 3的最终模型 DeepSWE 分数为 71.9／67.9，必须保留各自阶段与评测口径。": "The authors report Pro / Flash RL post-training costs of $2.6M / $0.9M, excluding full pretraining costs and unrelated to API pricing. Figure 1 uses training-process avg@3; Table 3 lists final-model DeepSWE scores of 71.9 / 67.9. Preserve their respective stages and evaluation definitions.",
+            "依赖评分器、环境和验证质量；奖励攻击防御与行为惩罚仍需分开检查。": "Results depend on grader, environment and verifier quality; reward-hacking defenses and behavioral penalties require separate inspection.",
+            "保留 Standard MOPD 的学生自主轨迹，并加入教师轨迹／SFT 数据前缀上的学生单轮生成与同历史教师监督。": "Retain autonomous student trajectories in Standard MOPD and add single-turn student generation from teacher-trajectory / SFT-data prefixes, supervised by teachers conditioned on the same history.",
+            "关联已审动态 D-109 · MiMo-V2.6 MOPD 检查点": "Related reviewed event D-109: MiMo-V2.6 MOPD checkpoints",
+            "关联已审动态 D-26 · MiMo-V2.6 模型与训练路线": "Related reviewed event D-26: MiMo-V2.6 models and training pipeline",
+            "冻结后的对照：CV 约 0.7、峰值约均值 5.5 倍，冷专家占比接近 1%，benchmark 仍正常提升。这是指定层和运行的证据，不能推广为所有 MoE 都必须永久冻结路由器。": "Frozen-run comparison: CV is approximately 0.7, peak load about 5.5 times the mean and cold experts near 1%, while benchmarks continue improving. This concerns a specific layer and run, not a universal requirement to freeze every MoE router permanently.",
+            "冻结路由以保持专家负载稳定": "Freeze routing to stabilize expert loads",
+            "冻结路由器是报告中的稳定化手段；它不是显存问题、异步采样或基础设施可靠性的总解决方案。": "Freezing routing is a stabilization method in this report, not a complete solution for memory, asynchronous sampling or infrastructure reliability.",
+            "原图 8的 GAR 对照是 Flash、代码任务、batch 128；作者报告通过率与 token／轮数表现更优。本篇不从未标注图形反推精确增益，不把这个局部对照扩成整个模型家族的因果证明。": "Original Figure 8 compares GAR on Flash code tasks with batch 128; the authors report better pass-rate and token / turn behavior. This article does not infer exact gains from unlabelled curves or extend this local comparison into a causal proof for the whole model family.",
+            "另有行为正则：组相对长度惩罚与片段级惩罚约束冗长、无效或重复动作。它们不等于 GRS／GAR 本身，也不意味着所有工具循环已被解决。": "Separate behavioral regularization uses group-relative length and segment-level penalties for verbosity, ineffective or repeated actions. These are distinct from GRS / GAR and do not mean every tool loop has been solved.",
+            "可训练路由器的 CV 从 0.78 到 2.0；峰值负载从均值 6 倍到 16 倍；冷专家占比从 0.5% 到 22%。": "With a trainable router, CV rises from 0.78 to 2.0, peak load from 6 to 16 times the mean, and cold-expert fraction from 0.5% to 22%.",
+            "固定读取 v1；未核实后续实质修订。本站写作日期不作为报告修订日期。": "Read fixed v1; no later substantive revision confirmed. FieldToFit’s writing date is not a report revision date.",
+            "图 1 · DeepSWE v1.1 训练曲线的已报告起止分数（本站重绘；仅展示端点）": "Figure 1: reported start / end scores of the DeepSWE v1.1 training curves (FieldToFit redraw; endpoints only)",
+            "图 2 · GRS 与 GAR 怎样区分通过解法（本站方法示意；无数值尺度）": "Figure 2: how GRS and GAR distinguish passing solutions (FieldToFit method schematic; no numerical scale)",
+            "图 3 · 可训练路由器的负载变化（本站重绘；第 9层、前 20步）": "Figure 3: load changes with a trainable router (FieldToFit redraw; layer 9, first 20 steps)",
+            "图 4 · MOPD2 的三条生成与监督路径（本站阅读示意）": "Figure 4: three generation / supervision paths in MOPD2 (FieldToFit reading schematic)",
+            "图形 © FieldToFit；公开数据与方法归属 Xiaomi LLM-Core，见原报告": "Graphics © FieldToFit; public data and methods belong to Xiaomi LLM-Core, as cited in the original report",
+            "在 Pro 第 9层的 384 个专家上，作者比较路由器可训练与冻结的两次 RL 运行。可训练路由器在前 20 步出现负载塌缩；作者只恢复路由参数、保留其他权重时，负载接近初始水平，benchmark 表现未变。这支持路由漂移是该次塌缩原因的判断。": "For the 384 experts at Pro layer 9, the authors compare RL runs with trainable and frozen routers. The trainable router exhibits load collapse over the first 20 steps. Restoring only router parameters while retaining the other weights returns loads near their initial levels without changing benchmark performance, supporting router drift as the cause in this run.",
+            "在同一混合任务训练中扩大批量与吞吐，增加任务／harness 多样性，并投入更多评分计算。": "Increase batch size and throughput, diversify tasks and harnesses, and allocate more grading compute within mixed-task training.",
+            "多前缀、多教师扩展能力": "Extend capabilities with multiple prefixes and teachers",
+            "大规模 RL 使用冻结路由器保持专家负载": "Large-scale RL uses a frozen router to maintain expert loads",
+            "奖励质量也依赖环境是否可信。报告同时描述环境准备、对抗检查和训练中审计；“检测到的 reward hacking 较少”只描述检测结果，不能证明不存在未检出的作弊。": "Reward quality also depends on trustworthy environments. The report describes environment preparation, adversarial checks and training-time auditing. A low detected reward-hacking rate describes detections, not proof that undetected hacks are absent.",
+            "学生继续生成，教师在同一历史与学生前序 token 上给监督；教师轨迹或 SFT 数据提供历史前缀，帮助处理难验证领域与长轨迹偏移。": "The student generates continuations while teachers supervise the same history and preceding student tokens. Teacher trajectories or SFT data provide history prefixes for hard-to-verify domains and long-trajectory deviations.",
+            "对采用决策，本篇提供训练机制与可信度边界，不替代本地任务测试，也不承诺某个 API 已切换到相同检查点。能否减少你的工具循环、等待和失败，仍要在固定版本、权限、任务与预算下验证。": "For adoption decisions, this analysis explains training mechanisms and evidential limits, not a substitute for local task testing or a promise that an API serves the same checkpoint. Whether it reduces tool loops, waiting or failures requires testing with fixed versions, permissions, tasks and budgets.",
+            "工程故障不能略过：硬件错误、Kubernetes 故障、grader 网络不可达、rollout 长度估计偏差与 CPU 打包内存不足分别导致中断。失败分析解释了“扩大训练”还需要哪些可恢复能力。": "Engineering failures matter: hardware errors, Kubernetes failures, grader network outages, biased rollout-length estimates and CPU packing-memory limits each cause interruptions. The failure analysis shows what recoverability scaling training also requires.",
+            "已实际读取主要章节全文；未取得上游全文或原图再分发许可，公开保留原始入口与本站原创分析。": "The full main sections were read. With no permission confirmed to redistribute the upstream full text or original figures, this publication retains the source link and original FieldToFit analysis.",
+            "微批次仍会尖峰：报告记录整批较均衡时，某层的 expert-parallel rank 仍收到均值 30 倍以上 token，造成 GPU OOM。作者调整并行配置以容纳这些峰值。": "Microbatches can still spike: even with a relatively balanced full batch, an expert-parallel rank receives over 30 times the mean token load at one layer, causing GPU OOM. The authors adjust parallelism to accommodate these peaks.",
+            "报告首次提交 2026-10-08 13:41:53 UTC；本文核对 2026-10-12，使用 arXiv 2610.11959 v1，未确认后续实质修订。作者实验未由本站复现；仅链接原始全文，四张图为本站重绘／示意。RL 费用不包含完整预训练成本，也不是 API 报价；报告中的自我改进愿景不证明无限递归自主改进。": "First submitted 2026-10-08 13:41:53 UTC; checked on 2026-10-12 against arXiv 2610.11959 v1, with no later substantive revision confirmed. FieldToFit has not reproduced the experiments. The original full text is linked, and four figures are FieldToFit redraws / schematics. RL costs exclude full pretraining costs and are not API prices; the self-improvement vision does not demonstrate unlimited recursive autonomous improvement.",
+            "教师前缀不是学生之前自主生成的整段历史；最终成绩不能当作单独 MOPD2 的消融效果。": "Teacher prefixes are not an entire prior student-generated history; final scores do not isolate the ablation effect of MOPD2 alone.",
+            "更长、更大的训练批次只是其中一环。任务与 harness 多样性、验证质量、评分预算和异步调度共同决定模型能学到什么。": "Longer and larger training batches are only one part. Task and harness diversity, verifier quality, grading budgets and asynchronous scheduling jointly shape what the model learns.",
+            "本站判断：这份报告的价值是解释训练闭环怎样工作，而不是再排列一组最终模型分数。环境、评分器、harness、内存与调度都会进入“能力”的形成过程；采用者和研究者应分别核对模型能力、任务环境与实际执行配置。": "FieldToFit analysis: the report’s value is explaining the training feedback loop, rather than ranking another set of final-model scores. Environments, graders, harnesses, memory and scheduling all participate in capability formation. Users and researchers should examine model capability, task environments and actual execution settings separately.",
+            "本站已有事件；保留原事件日期": "Existing FieldToFit event; preserve its original event date",
+            "本站检查点补录；与本篇技术深读区分": "FieldToFit checkpoint update, distinct from this technical reading",
+            "本篇深读 2026-10-08技术报告，解释训练路线与实验边界；关联已审 MiMo 动态。它是本站专题首次整理，不是模型今天首次发布，也不改写旧事件日期。": "This reading of the 2026-10-08 technical report explains the training pipeline and experimental limits, linking to reviewed MiMo events. It is the first FieldToFit analysis of this topic, rather than a model launch today, and preserves earlier event dates.",
+            "混合 RL 后接多前缀、多教师蒸馏": "Mixed RL is followed by multi-prefix, multi-teacher distillation",
+            "混合任务 RL 纳入更细的组内评分；评分扩展是训练路线的一部分": "Mixed-task RL incorporates finer groupwise grading as part of the training pipeline",
+            "混合任务 RL：计算／环境／评分共同扩展 → 稳定路由与细粒度奖励 → MOPD2 能力融合。连线表示报告中明确纳入的训练步骤，非单项因果收益。": "Mixed-task RL: scale compute / environments / grading → stable routing and finer rewards → MOPD2 capability integration. Links indicate incorporated training steps, not isolated causal gains.",
+            "环境扩展：任务涉及代码、通用工具工作流、视觉和网络安全；报告将训练任务与多个 harness 混合。held-out harness 检查提供跨框架泛化线索，但不能证明对任意真实业务都同样有效。": "Environment scale: tasks span coding, general tool workflows, vision and cybersecurity, with training mixed across multiple harnesses. Held-out harness evaluation offers evidence of cross-framework generalization, not equal effectiveness in every real business workflow.",
+            "表 3是最终模型跨 benchmark 的成绩，包含不同评测设置和部分内部任务；不能独立归因给 MOPD2。§7 的 9B 开源实验还区分各领域的单独 RL 与多 harness 代码实验，不能据此宣称一个 9B 检查点同时覆盖所有能力。": "Table 3 evaluates final models across benchmarks with differing settings and some internal tasks, so it cannot isolate MOPD2’s contribution. The 9B open experiments in §7 distinguish separate domain RL from multi-harness coding experiments; they do not establish that one 9B checkpoint delivers all capabilities.",
+            "计算、环境、评分共同扩展": "Scale compute, environments and grading",
+            "计算规模：训练每步使用 1,568 个 prompt × 16 条 rollout，约 25K 轨迹与 2.7–3.7B tokens，上下文最长 1M。异步 partial rollout 将未完成轨迹延续到后续训练阶段；这些是训练配置，不能直接当作每个 API 入口的上下文承诺。": "Compute scale: each step uses 1,568 prompts × 16 rollouts, approximately 25K trajectories and 2.7–3.7B tokens, with context up to 1M. Asynchronous partial rollout resumes unfinished trajectories in later phases. These are training settings, not a context-window guarantee for every API endpoint.",
+            "训练曲线是合成系统的结果，不能单独归因给某一组件；不与最终检查点表混合。": "The training curves measure the combined system, not the isolated causal effect of one component; keep them separate from the final-checkpoint table.",
+            "评分与工程：Pro 的报告 RL 计算费用中 rollout 占 43.8%、训练占 43.5%、grader 占 12.7%。评分本身需要工具环境与执行计算，harness pool、数据／控制平面分离及 Sample Mixer 也属于路线。": "Grading and infrastructure: the reported Pro RL compute-cost shares are 43.8% rollout, 43.5% training and 12.7% grader. Grading itself requires tool environments and execution compute; a harness pool, separated data / control planes and Sample Mixer are part of the pipeline.",
+            "评分质量与专家负载是并行工程问题，不是相互带来性能增益的证据": "Grading quality and expert load are parallel engineering issues, not evidence that either causes gains in the other",
+            "读成绩时先辨认阶段与口径：混合 RL 训练曲线、特定配置消融、MOPD2 后的最终检查点、开源 9B 分领域实验分别回答不同问题。将它们合成一个“提升倍数”会抹掉关键条件；更稳妥的展示是保留原始指标、比较基线与报告位置。": "Identify stage and definition before interpreting results: mixed-RL training curves, specific-configuration ablations, final checkpoints after MOPD2 and domain-specific open 9B experiments answer different questions. Combining them into one improvement multiplier erases important conditions; retain original metrics, baselines and report locations.",
+            "路由漂移会让专家越来越不均衡。冻结路由器在作者对照中保持负载稳定，但微批次尖峰、内存和调度仍可能中断训练。": "Router drift can increasingly unbalance experts. Freezing routing stabilizes loads in the authors’ comparison, while microbatch spikes, memory and scheduling can still interrupt training.",
+            "这份报告的四条核心结论": "Four core findings from this report",
+            "这是指定层与指定运行的实验；冻结路由不消除微批次 OOM、硬件和调度故障。": "This experiment concerns a specified layer and training run; freezing routing does not eliminate microbatch OOM, hardware or scheduling failures.",
+            "这条路线把“自我改进”具体化为受环境、评分与教师监督约束的训练迭代。报告展示持续扩展 RL 的潜力与可研究的工程栈，没有证明模型已经获得无需人类目标、算力预算或验证器的无限递归改进。": "This pipeline makes self-improvement concrete as training iterations constrained by environments, grading and teachers. The report demonstrates the potential of scaled RL and a researchable engineering stack, not unlimited recursive improvement without human goals, compute budgets or verifiers.",
+            "通过测试后仍区分质量": "Distinguish quality among passing solutions",
+            "都通过测试的解法，也需要不同的学习信号": "Solutions that all pass tests still need different learning signals",
+            "长任务 Agent 的提升来自训练系统的联合设计：更丰富的可验证经验、更细的解法评价、稳定的 MoE 执行，以及在学生生成上进行多教师监督。": "Long-horizon agent improvements come from jointly designed training systems: richer verifiable experience, finer solution assessment, stable MoE execution and multi-teacher supervision of student generation.",
+            "长任务能力的扩展，同时依赖算力、环境和反馈": "Scaling long-horizon capabilities requires compute, environments and feedback together",
+            "首次深读 2026-10-08 MiMo-V2.6 v1：四条结论及同号论述、四张原创重绘／示意，保留评分、路由、蒸馏和实验边界。": "First analysis of the 2026-10-08 MiMo-V2.6 v1 report: four findings with matching arguments and four original redraws / schematics, preserving grading, routing, distillation and experimental limits."
+          },
+          "reviewed_at": "2026-10-12T03:51:35.486069+00:00",
+          "source_hash": "5d92e25d50646b12eb4b6621db9e2e0837ad167dc6b27e2bdbcf1da7a030856e",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-08",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-07",
+      "highlight": false,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "用真实分类、提取样本比较质量、延迟和任务费用。",
+            "title": "高频 API 任务维护者"
+          },
+          {
+            "detail": "优先检查请求参数与返回内容的解析方式。",
+            "title": "维护旧 Haiku 集成的人"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "型号 claude-haiku-5-5：1M 上下文，最高 128K 输出。",
+            "title": "更长的输入与输出"
+          },
+          {
+            "detail": "旧 budget_tokens 配置会报错，需要按新接口调整。",
+            "title": "默认自适应思考"
+          },
+          {
+            "detail": "新分词器可能增加相同文本的 token 数，不能只按旧用量估算费用。",
+            "title": "重新核算 token 数"
+          }
+        ],
+        "checked_at": "2026-10-12",
+        "evidence": [
+          {
+            "locator": "Haiku 5.5 官方迁移说明：上下文、思考参数、内容块与分词器变化。",
+            "source_id": "source-2"
+          }
+        ],
+        "featured_rank": 3,
+        "headline": "Haiku 升级，先检查迁移与预算",
+        "limits": [
+          {
+            "detail": "按内容块类型读取回答；单价变化不等于整项任务费用同比变化。",
+            "title": "不要固定读取第一块"
+          },
+          {
+            "detail": "Claude API 与云平台能力分别确认；标准输入／输出价格有 ≤100K 和 >100K 提示长度分档。",
+            "title": "平台与长上下文要分开核对"
+          }
+        ],
+        "next_step": "先在测试环境迁移一个典型任务，记录输入输出 token、质量与费用，再决定是否扩大替换。",
+        "revised_at": "2026-10-12",
+        "scope": "Haiku 5.5 面向分类、路由、提取等高频任务。新能力可用，旧调用配置与费用估算需要重看。",
+        "share": {
+          "content_revision": "b783ac5a9680c903dc76fa2647afd87abedebf6477808abc4aa7bd60e140b74a",
+          "en": {
+            "sha256": "44cf904db06b17657dd3b79519d2dfe9570bf2ed2d96d77edf64feab7f27fe3e",
+            "text_revision": "33c132b6e9d680bc8fc4db2afbdaf85a126fc5038ad0bd63d856e5a8a11c53cc",
+            "url": "/hot-cards/d-92-b783ac5a9680-en.png"
+          },
+          "zh": {
+            "sha256": "f6a4f898e0465bce722bff618d080e6be06765eb7964975d4680e0749c8ec1c5",
+            "url": "/hot-cards/d-92-b783ac5a9680-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "依据官方说明整理；本站未独立复测性能、迁移或任务费用。"
+      },
+      "id": "D-92",
+      "interpretation": [
+        {
+          "locator": "官方发布与采用条件；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。",
+          "title": "型号、上下文与标准价格"
+        },
+        {
+          "locator": "官方发布与采用条件；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。",
+          "title": "迁移需要改什么"
+        },
+        {
+          "locator": "官方发布与采用条件；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。",
+          "title": "Sonnet缓存读取单独降价"
+        }
+      ],
+      "name": "Claude Haiku 5.5",
+      "note": "原始日期2026-10-07；本站2026-10-08核对。按官方型号、平台和迁移条件使用；本站未复测。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-08T02:08:40.656818+00:00",
+        "updated_at": "2026-10-12T16:36:42.706408+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-1",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-2",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-3",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
+          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        },
+        {
+          "id": "D-49",
+          "name": "Claude Sonnet 5.5",
+          "url": "https://fieldtofit.top/news/D-49"
+        }
+      ],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
+          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "state": "published",
+      "summary": "Haiku 5.5面向分类、路由、提取、摘要等高频任务；加入1M上下文与自适应思考，迁移时需重算token预算。",
+      "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude API 与云平台能力分别确认；标准输入／输出价格有 ≤100K 和 >100K 提示长度分档。": "Check Claude API and cloud platforms separately. Standard input / output prices have separate tiers for prompts of ≤100K and >100K tokens.",
+            "Haiku 5.5 官方迁移说明：上下文、思考参数、内容块与分词器变化。": "Official Haiku 5.5 migration guide: context, thinking parameters, content blocks and tokenizer changes.",
+            "Haiku 5.5 面向分类、路由、提取等高频任务。新能力可用，旧调用配置与费用估算需要重看。": "Haiku 5.5 targets frequent classification, routing and extraction tasks. Review existing request settings and cost estimates before using the new capabilities.",
+            "Haiku 5.5发布与Sonnet 5.5缓存读取降价": "Haiku 5.5 release and lower Sonnet 5.5 cache-read prices",
+            "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 1",
+            "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 2",
+            "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 3",
+            "Haiku 5.5面向分类、路由、提取、摘要等高频任务；加入1M上下文与自适应思考，迁移时需重算token预算。": "Haiku 5.5 targets high-volume classification, routing, extraction and summarization tasks. It adds 1M context and adaptive thinking; migration requires recalculating token budgets.",
+            "Haiku 升级，先检查迁移与预算": "Upgrading Haiku? Check migration and budget first.",
+            "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。": "Sonnet 5.5 cache reads fall from $0.20 to $0.10 per million tokens; cache writes and other prices remain unchanged. This does not halve every invocation's cost. FieldToFit has not retested model performance or migration.",
+            "Sonnet缓存读取单独降价": "Sonnet cache reading separate price reduction",
+            "不要固定读取第一块": "Do not assume the first block is text",
+            "优先检查请求参数与返回内容的解析方式。": "Inspect request parameters and response parsing first.",
+            "依据官方说明整理；本站未独立复测性能、迁移或任务费用。": "Based on official documentation; FieldToFit has not independently tested performance, migration or per-task cost.",
+            "先在测试环境迁移一个典型任务，记录输入输出 token、质量与费用，再决定是否扩大替换。": "Migrate one representative task in a test environment. Record input and output tokens, quality and cost before expanding the rollout.",
+            "原始日期2026-10-07；本站2026-10-08核对。按官方型号、平台和迁移条件使用；本站未复测。": "Original Date 2026-10-07; FieldToFit 2026-10-08 Check. Used according to the official model, platform and migration conditions; FieldToFit is not retested.",
+            "型号 claude-haiku-5-5：1M 上下文，最高 128K 输出。": "Model claude-haiku-5-5: 1M context and up to 128K output.",
+            "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。": "Model claude-haiku-5-5 has 1M context and up to 128k output. Per million input / output tokens, prompts up to 100K cost $0.10 / $0.50; prompts above 100K cost $0.50 / $2.50. Check Claude API and each cloud platform's capabilities separately.",
+            "型号、上下文与标准价格": "Model, context and standard price",
+            "官方发布、版本记录或采用说明": "Official release, version record or adoption instructions",
+            "官方发布与采用条件；本站未运行复测": "Official release and adoption conditions; FieldToFit does not run retest",
+            "平台与长上下文要分开核对": "Check platforms and context tiers",
+            "按内容块类型读取回答；单价变化不等于整项任务费用同比变化。": "Read responses by content block type. A unit-price change does not imply the same change in total task cost.",
+            "新分词器可能增加相同文本的 token 数，不能只按旧用量估算费用。": "The new tokenizer may increase token counts for the same text. Do not estimate cost using old counts alone.",
+            "旧 budget_tokens 配置会报错，需要按新接口调整。": "The old budget_tokens setting causes an error; update the request for the new interface.",
+            "更长的输入与输出": "Longer input and output",
+            "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。": "The text redistribution license has not been confirmed; MCP provides FieldToFit interpretation and source list, source text only links.",
+            "用真实分类、提取样本比较质量、延迟和任务费用。": "Compare quality, latency and task cost on real classification and extraction samples.",
+            "维护旧 Haiku 集成的人": "Maintainers of older integrations",
+            "迁移需要改什么": "What needs to be changed for migration?",
+            "重新核算 token 数": "Recount tokens",
+            "高频 API 任务维护者": "High-volume API maintainers",
+            "默认自适应思考": "Adaptive thinking by default",
+            "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs."
+          },
+          "reviewed_at": "2026-10-12T16:35:03.233155+00:00",
+          "source_hash": "b5bee08853589095a5ed461b823b44c8eb628e5224c8b8ea93160b9030b553d0",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-07",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-06",
+      "highlight": false,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "电脑发起任务，出门后用手机查看或接续。",
+            "title": "经常切换设备的人"
+          },
+          {
+            "detail": "只依赖云端资源的任务，减少对本机持续在线的依赖。",
+            "title": "需要定时处理资料的人"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "Pro／Max 不再为新任务提供“仅在本机运行”选项。",
+            "title": "新任务在云端运行"
+          },
+          {
+            "detail": "纯云端任务可在电脑离线时继续执行。",
+            "title": "新定时任务不必守电脑"
+          },
+          {
+            "detail": "可在网页、桌面与手机查看进度、调整任务和接收结果。",
+            "title": "同一任务跨设备接续"
+          }
+        ],
+        "checked_at": "2026-10-12",
+        "evidence": [
+          {
+            "locator": "官方文档：云端任务、设备间接续、本机资源与旧任务说明。",
+            "source_id": "source-1"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "合上电脑，云端任务继续跑",
+        "limits": [
+          {
+            "detail": "本机文件、本地连接器和部分浏览器操作，仍需桌面应用保持在线。",
+            "title": "本机资源仍需桌面在线"
+          },
+          {
+            "detail": "2026-10-06前的本机任务与定时任务仍留在本机；Team／Enterprise 另有 beta 与管理员条件。",
+            "title": "旧任务与团队套餐另看"
+          }
+        ],
+        "next_step": "确认套餐和任务依赖，再用一个不访问本机资源的短任务，试一次跨设备接续。",
+        "revised_at": "2026-10-12",
+        "scope": "Cowork 的 Pro／Max 新任务转向云端。能否离开电脑，关键看任务是否还需要本机资源。",
+        "share": {
+          "content_revision": "7309a5b69432f28b463f44ae3af281219fa5d736bd9edba20afdb2f949504c5e",
+          "en": {
+            "sha256": "27518b57669c440625120b3506ea12b276f67c8d56219554b0cdaa60240bfd5d",
+            "text_revision": "5e5484184fce45d716b5b4d6ffac86a2b8f75c5387e4a36783c8d6fb0fbe0d40",
+            "url": "/hot-cards/d-83-7309a5b69432-en.png"
+          },
+          "zh": {
+            "sha256": "44a79fc0b1276805e50783c81fdb698605923764857caffe94d477448874c75f",
+            "url": "/hot-cards/d-83-7309a5b69432-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "依据官方说明整理；本站未独立实测跨设备执行。"
+      },
+      "id": "D-83",
+      "interpretation": [
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "新云端任务和新定时任务无需电脑一直在线；访问已连接本机文件夹、本地连接器和部分浏览器能力仍需要Claude桌面应用在线。关闭应用不会让本机资源继续可用。",
+          "title": "云端任务与本机资源分开看"
+        },
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "10月6日前在本机启动的任务及本机定时任务仍留在本机；Pro／Max的新任务不能再切回Only on your computer。需要新本机任务时，官方提供Claude Code桌面入口和任务数据迁移说明。",
+          "title": "已有任务保持原运行位置"
+        },
+        {
+          "locator": "官方原始说明；本站未运行复测",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "Team／Enterprise仍涉及beta及管理员启用条件，不能套用全部Pro／Max规则。本次核对官方说明，未实测各套餐迁移与后台运行。",
+          "title": "套餐与验证范围"
+        }
+      ],
+      "name": "Claude Cowork",
+      "note": "原文事件日期2026-10-06，本站2026-10-07核对；新任务与既有本机任务、套餐适用范围分别说明。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-07T04:22:05.296639+00:00",
+        "updated_at": "2026-10-12T16:35:58.425089+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-07",
+          "coverage": "link_only",
+          "id": "oct07-source-1",
+          "locator": "官方发布和采用说明",
+          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
+          "retrieved_at": "2026-10-07",
+          "rights": {},
+          "title": "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线 · 官方来源 1",
+          "upstream_revision": "cowork-cloud-2026-10-06",
+          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        },
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Claude Cowork · 官方来源 1",
+          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
+        }
+      ],
+      "state": "published",
+      "summary": "Claude Cowork的Pro／Max新任务从10月6日起在云端运行，可跨网页、桌面和手机接续；本机文件、连接器及浏览器操作仍有桌面在线条件。",
+      "title": "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线",
+      "translations": {
+        "en": {
+          "fields": {
+            "10月6日前在本机启动的任务及本机定时任务仍留在本机；Pro／Max的新任务不能再切回Only on your computer。需要新本机任务时，官方提供Claude Code桌面入口和任务数据迁移说明。": "Tasks started locally before 10/6 and local scheduled tasks remain local. New Pro / Max tasks can no longer switch back to Only on your computer. For new local tasks, official materials provide Claude Code desktop access and task-data migration guidance.",
+            "2026-10-06前的本机任务与定时任务仍留在本机；Team／Enterprise 另有 beta 与管理员条件。": "Local tasks and schedules from before 2026-10-06 stay local. Team / Enterprise have separate beta and admin conditions.",
+            "Claude Cowork · 官方来源 1": "Claude Cowork · Official Source 1",
+            "Claude Cowork的Pro／Max新任务从10月6日起在云端运行，可跨网页、桌面和手机接续；本机文件、连接器及浏览器操作仍有桌面在线条件。": "New Claude Cowork tasks for Pro / Max run in the cloud from 10/6 and can continue across web, desktop and mobile. Access to local files, connectors and browser operations still requires the desktop to be online.",
+            "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线": "Claude Cowork: new Pro / Max tasks move to the cloud; local access still requires an online desktop",
+            "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线 · 官方来源 1": "Claude Cowork: Pro/Max's new task turns to the cloud, and local access still needs to be desktop online · Official source 1",
+            "Cowork 的 Pro／Max 新任务转向云端。能否离开电脑，关键看任务是否还需要本机资源。": "New Cowork tasks on Pro / Max run in the cloud. Whether you can leave your computer depends on the local resources the task needs.",
+            "Pro／Max 不再为新任务提供“仅在本机运行”选项。": "Pro / Max no longer offer the local-only option for new tasks.",
+            "Team／Enterprise仍涉及beta及管理员启用条件，不能套用全部Pro／Max规则。本次核对官方说明，未实测各套餐迁移与后台运行。": "Team / Enterprise still have beta and admin-enablement conditions; all Pro / Max rules cannot be applied to them. FieldToFit reviewed official explanations without testing migration or background execution for each plan.",
+            "云端任务与本机资源分开看": "Cloud tasks and local resources are separated.",
+            "依据官方说明整理；本站未独立实测跨设备执行。": "Based on official documentation; cross-device execution has not been independently tested by FieldToFit.",
+            "原文事件日期2026-10-06，本站2026-10-07核对；新任务与既有本机任务、套餐适用范围分别说明。": "Source text event date 2026-10-06, FieldToFit 2026-10-07 check; new tasks and existing local tasks, plan scope of application are explained separately.",
+            "只依赖云端资源的任务，减少对本机持续在线的依赖。": "Tasks using only cloud resources depend less on an always-online computer.",
+            "可在网页、桌面与手机查看进度、调整任务和接收结果。": "View progress, steer tasks and receive results on web, desktop and mobile.",
+            "合上电脑，云端任务继续跑": "Close your laptop. Cloud tasks keep running.",
+            "同一任务跨设备接续": "Continue across devices",
+            "套餐与验证范围": "Plan and verification scope",
+            "官方原始说明；本站未运行复测": "Official original description; FieldToFit does not run retest",
+            "官方发布和采用说明": "Official release and adoption instructions",
+            "官方文档：云端任务、设备间接续、本机资源与旧任务说明。": "Official documentation: cloud tasks, switching devices, local resources and existing tasks.",
+            "已有任务保持原运行位置": "Existing tasks maintain the original running position.",
+            "新云端任务和新定时任务无需电脑一直在线；访问已连接本机文件夹、本地连接器和部分浏览器能力仍需要Claude桌面应用在线。关闭应用不会让本机资源继续可用。": "New cloud tasks and scheduled tasks do not require a constantly online computer. Access to connected local folders, local connectors and some browser features still requires the Claude desktop app to be online. Closing it does not keep local resources available.",
+            "新任务在云端运行": "New tasks run in the cloud",
+            "新定时任务不必守电脑": "New schedules can run offline",
+            "旧任务与团队套餐另看": "Check older tasks and team plans",
+            "本机文件、本地连接器和部分浏览器操作，仍需桌面应用保持在线。": "Local files, local connectors and some browser operations still require the desktop app to stay online.",
+            "本机资源仍需桌面在线": "Local resources still need desktop",
+            "正文再分发许可未确认，保留官方链接与本站解读。": "Full-text redistribution permission is unconfirmed; retain the official link and FieldToFit interpretation.",
+            "电脑发起任务，出门后用手机查看或接续。": "Start at your desk, then check or continue on your phone.",
+            "确认套餐和任务依赖，再用一个不访问本机资源的短任务，试一次跨设备接续。": "Check your plan and task dependencies, then try continuing a short task across devices without local resources.",
+            "纯云端任务可在电脑离线时继续执行。": "Cloud-only tasks can continue while your computer is offline.",
+            "经常切换设备的人": "People switching devices",
+            "需要定时处理资料的人": "People scheduling work"
+          },
+          "reviewed_at": "2026-10-12T16:34:28.121431+00:00",
+          "source_hash": "388b4a2c16b4ce1389f3f651d7f404c0a26e2ae011ebaa9f5512f20116d3a9df",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-11",
+      "highlight": true,
+      "id": "D-122",
+      "interpretation": [
+        {
+          "locator": "v0.8.0 README / Release notes",
+          "source_ids": [
+            "oct12-c-1",
+            "oct12-c-2"
+          ],
+          "text": "Python可通过uv完成建项目、开发、客户端生成和观察；TypeScript与Python客户端共享明确接口。状态恢复是基础设施设计目标，本站未实测故障恢复或一致性。",
+          "title": "持久状态与开发工具"
+        },
+        {
+          "locator": "v0.8.0 README / Release notes",
+          "source_ids": [
+            "oct12-c-1",
+            "oct12-c-2"
+          ],
+          "text": "迁移需要调整Helm镜像字段与相应环境变量，TypeScript工具要求Bun1.4.2+；已有部署仍引用保存过的镜像，必须保留它们以便重启和重新激活。",
+          "title": "部署迁移与旧镜像保留"
+        },
+        {
+          "locator": "v0.8.0 README / Release notes",
+          "source_ids": [
+            "oct12-c-1",
+            "oct12-c-2"
+          ],
+          "text": "MIT；新增CRC32C校验与构造阶段SQLite访问。代码中带模型调用示例不代表框架提高模型能力，也不保证迁移兼容全部生产系统。来源是 10月 10日UTC的版本发布，不能改写为今日首发。",
+          "title": "存储变化与未实测边界"
+        }
+      ],
+      "name": "Durable Actors",
+      "note": "原文日期（UTC）：2026-10-10；事件日期（北京时间）：2026-10-11；本站核对：2026-10-12；版本：v0.8.0。本站未安装或复现性能。",
+      "organization": "TerseAI",
+      "publication": {
+        "first_published_at": "2026-10-12T02:06:29.346176+00:00",
+        "updated_at": "2026-10-12T02:06:29.346176+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-c-1",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 1",
+          "upstream_revision": "v0.8.0",
+          "url": "https://github.com/TerseAI/durable-actors/releases/tag/v0.8.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-c-2",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 2",
+          "upstream_revision": "v0.8.0",
+          "url": "https://github.com/TerseAI/durable-actors/blob/v0.8.0/README.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T17",
+          "name": "Durable Actors",
+          "url": "https://fieldtofit.top/watch/CW-T17"
+        }
+      ],
+      "source_published_at": "2026-10-10",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct12-c-1",
+          "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 1",
+          "url": "https://github.com/TerseAI/durable-actors/releases/tag/v0.8.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct12-c-2",
+          "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 2",
+          "url": "https://github.com/TerseAI/durable-actors/blob/v0.8.0/README.md"
+        }
+      ],
+      "state": "published",
+      "summary": "Durable Actors提供可持久化状态和序列化执行，供多人聊天、协作应用与Agent协调使用。0.8.0于北京时间 10月 11日 05:51发布，补入Python原生开发工具、分开的运行镜像及存储完整性检查。",
+      "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求",
+      "translations": {
+        "en": {
+          "fields": {
+            "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求": "Durable Actors 0.8.0: persistent shared agent sessions with migration requirements",
+            "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 1": "Durable Actors 0.8.0 · Official source 1",
+            "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 2": "Durable Actors 0.8.0 · Official source 2",
+            "Durable Actors提供可持久化状态和序列化执行，供多人聊天、协作应用与Agent协调使用。0.8.0于北京时间 10月 11日 05:51发布，补入Python原生开发工具、分开的运行镜像及存储完整性检查。": "Durable Actors provides persistent state and serialized execution for group chat, collaborative applications and agent coordination. Version 0.8.0 was released at 05:51 Beijing time on 10/11, adding native Python development tools, separate runtime images and storage integrity checks.",
+            "MIT；新增CRC32C校验与构造阶段SQLite访问。代码中带模型调用示例不代表框架提高模型能力，也不保证迁移兼容全部生产系统。来源是 10月 10日UTC的版本发布，不能改写为今日首发。": "MIT; this release adds CRC32C checks and SQLite access during construction. Model-call examples do not imply improved model capabilities or compatibility with every production migration. The upstream release is dated 10/10 UTC and should not be described as a first release today.",
+            "Python可通过uv完成建项目、开发、客户端生成和观察；TypeScript与Python客户端共享明确接口。状态恢复是基础设施设计目标，本站未实测故障恢复或一致性。": "Python supports project creation, development, client generation and observation through uv. TypeScript and Python clients share defined interfaces. State recovery is an infrastructure design goal; FieldToFit has not tested failure recovery or consistency.",
+            "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。": "Only FieldToFit commentary and source links are published; full upstream text with unverified reuse rights is not reproduced.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原文日期（UTC）：2026-10-10；事件日期（北京时间）：2026-10-11；本站核对：2026-10-12；版本：v0.8.0。本站未安装或复现性能。": "Source date (UTC): 2026-10-10; event date (Beijing): 2026-10-11; checked by FieldToFit: 2026-10-12; version: v0.8.0 ; FieldToFit has not installed it or reproduced performance results.",
+            "固定发布记录与官方说明": "Pinned release notes and official documentation",
+            "存储变化与未实测边界": "Storage changes and untested behavior",
+            "持久状态与开发工具": "Persistent state and development tools",
+            "迁移需要调整Helm镜像字段与相应环境变量，TypeScript工具要求Bun1.4.2+；已有部署仍引用保存过的镜像，必须保留它们以便重启和重新激活。": "Migration requires changes to Helm image fields and corresponding environment variables; TypeScript tooling requires Bun1.4.2+. Existing deployments still refer to saved images, which must be retained for restart and reactivation.",
+            "部署迁移与旧镜像保留": "Deployment migration and saved images"
+          },
+          "reviewed_at": "2026-10-12T01:53:35.414762+00:00",
+          "source_hash": "6075182d5dcd42dc585dc43a624e4b2000f83dc5f10fde9b71bb6ee84da7abd1",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-12",
+      "highlight": true,
+      "id": "D-121",
+      "interpretation": [
+        {
+          "locator": "v1.0.3 README / Release notes",
+          "source_ids": [
+            "oct12-b-1",
+            "oct12-b-2"
+          ],
+          "text": "新版本统一跨端聊天外观，并让桌面与网页同时保存多个OpenAI兼容端点；修复Android自备Anthropic密钥发送失败、工具输出回车处理等问题。",
+          "title": "跨端与模型接入修复"
+        },
+        {
+          "locator": "v1.0.3 README / Release notes",
+          "source_ids": [
+            "oct12-b-1",
+            "oct12-b-2"
+          ],
+          "text": "发布记录披露旧调试日志可能含原始API密钥，现加入凭据头脱敏；这是一项具体修复，不等于整个系统已通过独立安全审计。",
+          "title": "凭据日志的具体修复"
+        },
+        {
+          "locator": "v1.0.3 README / Release notes",
+          "source_ids": [
+            "oct12-b-1",
+            "oct12-b-2"
+          ],
+          "text": "GPL-3.0-or-later；iOS入口是TestFlight测试版，而且不能像Android和电脑那样操控其他应用屏幕。自托管中继不代表外部模型处理全过程离线；社区额度并非无限免费。本站未安装、未测试后台任务和权限行为。",
+          "title": "社区产品与运行限制"
+        }
+      ],
+      "name": "nanoMuse",
+      "note": "原文日期（UTC）：2026-10-11；事件日期（北京时间）：2026-10-12；本站核对：2026-10-12；版本：v1.0.3。本站未安装或复现性能。",
+      "organization": "nano-muse",
+      "publication": {
+        "first_published_at": "2026-10-12T02:06:05.789226+00:00",
+        "updated_at": "2026-10-12T02:06:05.789226+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-b-1",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 1",
+          "upstream_revision": "v1.0.3",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.3"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-b-2",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 2",
+          "upstream_revision": "v1.0.3",
+          "url": "https://github.com/nano-muse/nanoMuse/blob/v1.0.3/README.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A09",
+          "name": "nanoMuse",
+          "url": "https://fieldtofit.top/watch/CW-A09"
+        },
+        {
+          "id": "CW-H01",
+          "name": "DeepSeek Harness",
+          "url": "https://fieldtofit.top/watch/CW-H01"
+        }
+      ],
+      "source_published_at": "2026-10-11",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct12-b-1",
+          "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 1",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.3"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct12-b-2",
+          "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 2",
+          "url": "https://github.com/nano-muse/nanoMuse/blob/v1.0.3/README.md"
+        }
+      ],
+      "state": "published",
+      "summary": "nanoMuse是社区开发的开源个人Agent，受Meta Muse启发，但不是Meta官方模型或Muse SDK。1.0.3于北京时间 10月 12日 01:37发布，提供手机、桌面和网页客户端，并可选择社区中继、自有中继及自备模型密钥。",
+      "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护",
+      "translations": {
+        "en": {
+          "fields": {
+            "GPL-3.0-or-later；iOS入口是TestFlight测试版，而且不能像Android和电脑那样操控其他应用屏幕。自托管中继不代表外部模型处理全过程离线；社区额度并非无限免费。本站未安装、未测试后台任务和权限行为。": "GPL-3.0-or-later; the iOS client is a TestFlight beta and cannot control other applications on screen as the Android and computer clients can. A self-hosted relay does not make external model processing fully offline; community allowances are finite. FieldToFit has not installed it or tested background tasks and permission behavior.",
+            "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护": "nanoMuse 1.0.3: a personal agent across devices, with multiple endpoints and safer credential logs",
+            "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 1": "nanoMuse 1.0.3 · Official source 1",
+            "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 2": "nanoMuse 1.0.3 · Official source 2",
+            "nanoMuse是社区开发的开源个人Agent，受Meta Muse启发，但不是Meta官方模型或Muse SDK。1.0.3于北京时间 10月 12日 01:37发布，提供手机、桌面和网页客户端，并可选择社区中继、自有中继及自备模型密钥。": "nanoMuse is a community-built open-source personal agent inspired by Meta Muse. It is neither an official Meta model nor the Muse SDK. Version 1.0.3 was released at 01:37 Beijing time on 10/12 and provides phone, desktop and web clients, with community or self-hosted relays and user-supplied model keys.",
+            "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。": "Only FieldToFit commentary and source links are published; full upstream text with unverified reuse rights is not reproduced.",
+            "凭据日志的具体修复": "A specific credential-log fix",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原文日期（UTC）：2026-10-11；事件日期（北京时间）：2026-10-12；本站核对：2026-10-12；版本：v1.0.3。本站未安装或复现性能。": "Source date (UTC): 2026-10-11; event date (Beijing): 2026-10-12; checked by FieldToFit: 2026-10-12; version: v1.0.3 ; FieldToFit has not installed it or reproduced performance results.",
+            "发布记录披露旧调试日志可能含原始API密钥，现加入凭据头脱敏；这是一项具体修复，不等于整个系统已通过独立安全审计。": "The release notes disclose that older debug logs could contain raw API keys; credential-header masking has now been added. This is a specific fix, not an independent security audit of the entire system.",
+            "固定发布记录与官方说明": "Pinned release notes and official documentation",
+            "新版本统一跨端聊天外观，并让桌面与网页同时保存多个OpenAI兼容端点；修复Android自备Anthropic密钥发送失败、工具输出回车处理等问题。": "This release unifies chat presentation across clients and lets desktop and web clients retain multiple OpenAI-compatible endpoints. It fixes failed requests with user-supplied Anthropic keys on Android and carriage-return handling in tool output.",
+            "社区产品与运行限制": "Community product and runtime limitations",
+            "跨端与模型接入修复": "Client and model connection fixes"
+          },
+          "reviewed_at": "2026-10-12T01:53:23.305684+00:00",
+          "source_hash": "dff74bb53e25989efbf5b4eb0fbbf88da7ed85a84fd1de41929e2bbdd6f9f817",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-10",
+      "highlight": true,
+      "id": "D-120",
+      "interpretation": [
+        {
+          "locator": "v0.4.5 README / Release notes",
+          "source_ids": [
+            "oct12-a-1",
+            "oct12-a-2"
+          ],
+          "text": "窗口叠在应用之上，目标附近可点击穿透，提示可以自动消失；工具不负责点击、输入或截屏，不应将“指向允许按钮”解释成已获得用户授权。",
+          "title": "用户仍掌握点击与确认"
+        },
+        {
+          "locator": "v0.4.5 README / Release notes",
+          "source_ids": [
+            "oct12-a-1",
+            "oct12-a-2"
+          ],
+          "text": "0.4.5主要压缩技能和文档，较少使用的细节按需读取；不将文档缩短写成模型推理提速。固定版本README与主分支分开核对。",
+          "title": "固定版本的文档变化"
+        },
+        {
+          "locator": "v0.4.5 README / Release notes",
+          "source_ids": [
+            "oct12-a-1",
+            "oct12-a-2"
+          ],
+          "text": "MIT；源码构建要求macOS14+、Xcode16+。绘制无需额外权限，但按界面元素找位置可能需要辅助功能权限，特定窗口标题读取还有录屏条件。预编译文件未公证，安装与真机行为尚未实测。",
+          "title": "许可、安装与权限条件"
+        }
+      ],
+      "name": "bigarrow",
+      "note": "原文日期（UTC）：2026-10-09；事件日期（北京时间）：2026-10-10；本站核对：2026-10-12；版本：v0.4.5。本站未安装或复现性能。",
+      "organization": "franzenzenhofer",
+      "publication": {
+        "first_published_at": "2026-10-12T02:05:42.150590+00:00",
+        "updated_at": "2026-10-12T02:05:42.150590+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-a-1",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "bigarrow 0.4.5：让 Agent 指出该点哪里，把确认交回用户 · 官方材料 1",
+          "upstream_revision": "v0.4.5",
+          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen/releases/tag/v0.4.5"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-a-2",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "bigarrow 0.4.5：让 Agent 指出该点哪里，把确认交回用户 · 官方材料 2",
+          "upstream_revision": "v0.4.5",
+          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen/blob/v0.4.5/README.md"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-10-09",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct12-a-1",
+          "title": "bigarrow 0.4.5：让 Agent 指出该点哪里，把确认交回用户 · 官方材料 1",
+          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen/releases/tag/v0.4.5"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct12-a-2",
+          "title": "bigarrow 0.4.5：让 Agent 指出该点哪里，把确认交回用户 · 官方材料 2",
+          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen/blob/v0.4.5/README.md"
+        }
+      ],
+      "state": "published",
+      "summary": "bigarrow是macOS上的轻量命令行指示工具，配有Claude Code与Codex技能。Agent可以在屏幕上画箭头、框和文字，帮助用户找到需要自己点击或确认的位置。它本身没有AI模型。",
+      "title": "bigarrow 0.4.5：让 Agent 指出该点哪里，把确认交回用户",
+      "translations": {
+        "en": {
+          "fields": {
+            "0.4.5主要压缩技能和文档，较少使用的细节按需读取；不将文档缩短写成模型推理提速。固定版本README与主分支分开核对。": "0.4.5 mainly reduces skill and documentation length, loading less common details on demand. Shorter documentation is not faster model inference. The pinned-version README was checked separately from the main branch.",
+            "MIT；源码构建要求macOS14+、Xcode16+。绘制无需额外权限，但按界面元素找位置可能需要辅助功能权限，特定窗口标题读取还有录屏条件。预编译文件未公证，安装与真机行为尚未实测。": "MIT; building from source requires macOS14+ and Xcode16+. Drawing needs no additional permissions, but locating interface elements may require accessibility access, and some window-title queries require screen recording. Prebuilt files are not notarized; installation and on-device behavior have not been tested.",
+            "bigarrow 0.4.5：让 Agent 指出该点哪里，把确认交回用户": "bigarrow 0.4.5: show agents where to point, leaving confirmation to the user",
+            "bigarrow 0.4.5：让 Agent 指出该点哪里，把确认交回用户 · 官方材料 1": "bigarrow 0.4.5 · Official source 1",
+            "bigarrow 0.4.5：让 Agent 指出该点哪里，把确认交回用户 · 官方材料 2": "bigarrow 0.4.5 · Official source 2",
+            "bigarrow是macOS上的轻量命令行指示工具，配有Claude Code与Codex技能。Agent可以在屏幕上画箭头、框和文字，帮助用户找到需要自己点击或确认的位置。它本身没有AI模型。": "bigarrow is a lightweight macOS command-line pointer tool with Claude Code and Codex skills. Agents can draw arrows, boxes and text on screen to show users where they need to click or confirm. It contains no AI model.",
+            "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。": "Only FieldToFit commentary and source links are published; full upstream text with unverified reuse rights is not reproduced.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原文日期（UTC）：2026-10-09；事件日期（北京时间）：2026-10-10；本站核对：2026-10-12；版本：v0.4.5。本站未安装或复现性能。": "Source date (UTC): 2026-10-09; event date (Beijing): 2026-10-10; checked by FieldToFit: 2026-10-12; version: v0.4.5 ; FieldToFit has not installed it or reproduced performance results.",
+            "固定发布记录与官方说明": "Pinned release notes and official documentation",
+            "固定版本的文档变化": "Documentation changes in the pinned version",
+            "用户仍掌握点击与确认": "The user retains control of clicks and confirmation",
+            "窗口叠在应用之上，目标附近可点击穿透，提示可以自动消失；工具不负责点击、输入或截屏，不应将“指向允许按钮”解释成已获得用户授权。": "Overlays sit above applications, allow click-through near the target and can disappear automatically. The tool does not click, type or capture screenshots. Pointing at an Allow button does not mean user authorization has been obtained.",
+            "许可、安装与权限条件": "License, installation and permission requirements"
+          },
+          "reviewed_at": "2026-10-12T01:53:12.054429+00:00",
+          "source_hash": "2f052a4d68d9cd2b8b40f2c6506782d041584b49e649ea30a4de656b92362e94",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-13",
       "codex_28_days": {
         "announced_at": "2026-10-10T22:15:39.368Z",
         "date_precision": "instant",
         "event_key": "https://x.com/thsottiaux/status/2109045220411351517",
         "group": "codex",
         "official_day": 6,
-        "overview_en": "Global usage reset announcement · official Day 6",
-        "overview_zh": "全球额度重置公告 · 官方Day 6",
+        "overview_en": "Global reset fully propagated · official Day 6",
+        "overview_zh": "全球重置已全部传播 · 官方 Day 6",
         "source_posts": [
           {
             "announced_at": "2026-10-10T22:15:39.368Z",
             "author_handle": "thsottiaux",
             "author_name": "Tibo",
             "avatar": {
-              "checked_at": "2026-10-12",
+              "checked_at": "2026-10-13",
               "evidence_url": "https://x.com/thsottiaux",
               "retrieval_method": "direct_x",
               "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
               "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
             },
-            "checked_at": "2026-10-12",
+            "checked_at": "2026-10-13",
             "evidence_url": "https://x.com/thsottiaux/status/2109045220411351517",
             "kind": "primary",
             "retrieval_method": "direct_x",
@@ -40,13 +1701,13 @@
             "author_handle": "thsottiaux",
             "author_name": "Tibo",
             "avatar": {
-              "checked_at": "2026-10-12",
+              "checked_at": "2026-10-13",
               "evidence_url": "https://x.com/thsottiaux",
               "retrieval_method": "direct_x",
               "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
               "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
             },
-            "checked_at": "2026-10-12",
+            "checked_at": "2026-10-13",
             "evidence_url": "https://x.com/thsottiaux/status/2109045392684032299",
             "kind": "reply",
             "retrieval_method": "direct_x",
@@ -56,6 +1717,28 @@
             "timestamp_basis": "post_id_derived",
             "translation_zh": "全球重置将在当天结束前进行。愿这些token助你做好事。",
             "url": "https://x.com/thsottiaux/status/2109045392684032299"
+          },
+          {
+            "announced_at": "2026-10-11T04:01:09.077000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-13",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-13",
+            "evidence_url": "https://x.com/thsottiaux/status/2109132167112782291",
+            "kind": "reply",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对本人原帖全文及关联回复；中文为本站译文。",
+            "text_en": "Put the reset in the bag. All propagated.",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "这次重置已完成，已全部传播。",
+            "url": "https://x.com/thsottiaux/status/2109132167112782291"
           }
         ],
         "timestamp_basis": "post_id_derived",
@@ -67,31 +1750,32 @@
       "id": "D-123",
       "interpretation": [
         {
-          "locator": "直接读取Tibo主公告及本人补充回复；公告时刻按帖子ID推导，未推造生效时刻。",
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
           "source_ids": [
             "tibo",
-            "tibo-reply"
+            "tibo-reply",
+            "tibo-confirmation"
           ],
-          "text": "主帖为“Day 6/ Reset”；Tibo随后回复“Global reset by EOD”。这是官方Day 6的全球额度重置公告，沿用同一事件，只记一条日志。",
-          "title": "这次公布了什么"
+          "text": "北京时间 2026-10-11 06:15，Tibo 发布官方 Day 6 重置公告，06:16 补充称全球重置将在当天结束前进行。同日 12:01，他在关联回复中确认“Put the reset in the bag. All propagated.”，即这次重置已完成、已全部传播。此处补入官方完成声明，沿用同一事件，不重复增加日志。",
+          "title": "公告与后续确认"
         },
         {
-          "locator": "直接读取Tibo主公告及本人补充回复；公告时刻按帖子ID推导，未推造生效时刻。",
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
           "source_ids": [
-            "tibo",
-            "tibo-reply"
+            "tibo-confirmation"
           ],
-          "text": "主公告按帖子ID推导为北京时间 2026-10-11 06:15:39，补充回复为 06:16:20；本站归该日、日历Day 7，保留原帖官方Day 6。原帖ID推导是时间依据，并非X接口返回的创建时间。",
-          "title": "日期与编号"
+          "text": "12:01 是确认帖的发布时间，不冒充重置开始生效的准确时刻。原帖没有逐档列出适用套餐或具体用量窗口，不据此承诺每个账户的实际到账情况；自己的当前额度仍以账户用量页面显示为准。",
+          "title": "证据边界与用量"
         },
         {
-          "locator": "直接读取Tibo主公告及本人补充回复；公告时刻按帖子ID推导，未推造生效时刻。",
+          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
           "source_ids": [
             "tibo",
-            "tibo-reply"
+            "tibo-reply",
+            "tibo-confirmation"
           ],
-          "text": "原帖将范围表述为全球，但没有逐项列出套餐、用量窗口或具体生效时刻。此处不据公告推断每个账户已到账，也不增加“已生效重置”计数。使用前可查看自己的用量页面；额度到账情况以账户显示为准。",
-          "title": "适用范围与使用"
+          "text": "主公告按帖子 ID 推导为北京时间 2026-10-11 06:15:39，补充回复 06:16:20，完成确认 12:01:09。保留 D-123 与原日期、日历 Day 7 及官方 Day 6；正文、概览与原帖卡片同步更正，原帖发布时间不作为精确生效开始时刻。",
+          "title": "原日期与编号"
         }
       ],
       "name": "Codex / ChatGPT Work",
@@ -99,7 +1783,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-12T02:04:06.186737+00:00",
-        "updated_at": "2026-10-12T02:04:06.186737+00:00"
+        "updated_at": "2026-10-13T03:13:10.628797+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-10",
@@ -107,46 +1791,52 @@
         {
           "coverage": "link_only",
           "id": "tibo",
-          "title": "Tibo官方Day 6重置主公告",
+          "title": "Tibo 官方 Day 6 重置主公告",
           "url": "https://x.com/thsottiaux/status/2109045220411351517"
         },
         {
           "coverage": "link_only",
           "id": "tibo-reply",
-          "title": "Tibo关于全球重置时间的补充回复",
+          "title": "Tibo 关于全球重置时间的补充回复",
           "url": "https://x.com/thsottiaux/status/2109045392684032299"
         },
         {
           "coverage": "link_only",
+          "id": "tibo-confirmation",
+          "title": "Tibo 确认重置已全部传播",
+          "url": "https://x.com/thsottiaux/status/2109132167112782291"
+        },
+        {
+          "coverage": "link_only",
           "id": "identity",
-          "title": "Tibo X身份与头像",
+          "title": "Tibo X 身份与头像",
           "url": "https://x.com/thsottiaux"
         }
       ],
       "state": "published",
-      "summary": "Tibo发布官方Day 6「Reset」，补充称全球重置会在当天结束前进行（by EOD）。本条记录重置公告；原帖未注明EOD的时区、各套餐范围或实际生效时刻。",
-      "title": "官方Day 6：Tibo宣布全球额度重置",
+      "summary": "Tibo 先发布官方 Day 6 重置公告，随后在北京时间 2026-10-11 12:01 确认“重置已完成，已全部传播”。本次补入官方完成声明；原帖未逐档列出套餐、具体用量窗口或准确生效开始时刻。",
+      "title": "官方 Day 6：Tibo 确认全球额度重置已全部传播",
       "translations": {
         "en": {
           "fields": {
-            "Tibo X身份与头像": "Tibo X identity and avatar",
-            "Tibo关于全球重置时间的补充回复": "Tibo follow-up on global reset timing",
-            "Tibo发布官方Day 6「Reset」，补充称全球重置会在当天结束前进行（by EOD）。本条记录重置公告；原帖未注明EOD的时区、各套餐范围或实际生效时刻。": "Tibo posted official Day 6, \"Reset\", adding that a global reset would happen by EOD. This records the announcement; the posts do not specify the EOD timezone, eligibility by plan, or the actual effective time.",
-            "Tibo官方Day 6重置主公告": "Tibo official Day 6 reset announcement",
-            "主公告按帖子ID推导为北京时间 2026-10-11 06:15:39，补充回复为 06:16:20；本站归该日、日历Day 7，保留原帖官方Day 6。原帖ID推导是时间依据，并非X接口返回的创建时间。": "Post IDs place the main announcement at Beijing time 2026-10-11 06:15:39 and its reply at 06:16:20. FieldToFit uses that date, calendar Day 7, while retaining official Day 6. These are ID-derived timestamps, not creation times returned by the X API.",
-            "主帖为“Day 6/ Reset”；Tibo随后回复“Global reset by EOD”。这是官方Day 6的全球额度重置公告，沿用同一事件，只记一条日志。": "The main post says \"Day 6/ Reset\"; Tibo then replies \"Global reset by EOD\". This is the official Day 6 global usage-reset announcement, recorded once as the same event.",
-            "全球额度重置公告 · 官方Day 6": "Global usage reset announcement · official Day 6",
-            "原帖将范围表述为全球，但没有逐项列出套餐、用量窗口或具体生效时刻。此处不据公告推断每个账户已到账，也不增加“已生效重置”计数。使用前可查看自己的用量页面；额度到账情况以账户显示为准。": "The posts describe the reset as global, without listing plans, usage windows or an exact effective time. The announcement does not establish receipt for every account and does not increase the confirmed-effective reset count. Check your own usage page before relying on refreshed quota.",
-            "官方Day 6：Tibo宣布全球额度重置": "Official Day 6: Tibo announces a global usage reset",
-            "日期与编号": "Date and numbering",
-            "直接核对本人原帖全文及关联回复；中文为本站译文。": "Full original posts and related reply verified directly; Chinese translations are by FieldToFit.",
-            "直接读取Tibo主公告及本人补充回复；公告时刻按帖子ID推导，未推造生效时刻。": "Directly read Tibo's main announcement and follow-up reply; announcement timestamps are derived from post IDs, without inventing an effective time.",
-            "这次公布了什么": "What was announced",
-            "适用范围与使用": "Scope and use"
+            "12:01 是确认帖的发布时间，不冒充重置开始生效的准确时刻。原帖没有逐档列出适用套餐或具体用量窗口，不据此承诺每个账户的实际到账情况；自己的当前额度仍以账户用量页面显示为准。": "The confirmation post’s 12:01 publication time is not the reset’s exact start time. The posts do not enumerate eligible plans or usage windows and do not verify an individual account’s balance. Check your own usage page for current quota.",
+            "Tibo X 身份与头像": "Tibo X identity and avatar",
+            "Tibo 先发布官方 Day 6 重置公告，随后在北京时间 2026-10-11 12:01 确认“重置已完成，已全部传播”。本次补入官方完成声明；原帖未逐档列出套餐、具体用量窗口或准确生效开始时刻。": "After announcing the official Day 6 reset, Tibo confirmed at Beijing time 2026-10-11 12:01 that it had fully propagated. This amendment adds his completion statement; precise effective timing and plan-by-plan usage windows remain unspecified.",
+            "Tibo 关于全球重置时间的补充回复": "Tibo follow-up on global reset timing",
+            "Tibo 官方 Day 6 重置主公告": "Tibo official Day 6 reset announcement",
+            "Tibo 确认重置已全部传播": "Tibo confirmation that the reset fully propagated",
+            "主公告按帖子 ID 推导为北京时间 2026-10-11 06:15:39，补充回复 06:16:20，完成确认 12:01:09。保留 D-123 与原日期、日历 Day 7 及官方 Day 6；正文、概览与原帖卡片同步更正，原帖发布时间不作为精确生效开始时刻。": "Post IDs place the main announcement at Beijing time 2026-10-11 06:15:39, its reply at 06:16:20 and the completion statement at 12:01:09. D-123 retains its original date, calendar Day 7 and official Day 6. The body, overview and source cards are amended together; publication times are not exact activation times.",
+            "全球重置已全部传播 · 官方 Day 6": "Global reset fully propagated · official Day 6",
+            "公告与后续确认": "Announcement and completion statement",
+            "北京时间 2026-10-11 06:15，Tibo 发布官方 Day 6 重置公告，06:16 补充称全球重置将在当天结束前进行。同日 12:01，他在关联回复中确认“Put the reset in the bag. All propagated.”，即这次重置已完成、已全部传播。此处补入官方完成声明，沿用同一事件，不重复增加日志。": "At 06:15 Beijing time on 2026-10-11, Tibo announced the official Day 6 reset, followed at 06:16 by an end-of-day global-reset statement. At 12:01 that day, a linked reply confirmed that it had fully propagated. This amendment adds his completion statement to the same event without duplicating the log.",
+            "原日期与编号": "Original date and numbering",
+            "官方 Day 6：Tibo 确认全球额度重置已全部传播": "Official Day 6: Tibo confirms the global usage reset has fully propagated",
+            "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。": "Tibo posts and registered official sources were verified directly; post times are ID-derived, without inventing activation times.",
+            "直接核对本人原帖全文及关联回复；中文为本站译文。": "Full original posts and related replies verified directly; Chinese translations are by FieldToFit.",
+            "证据边界与用量": "Evidence and individual usage"
           },
-          "review_note": "已核对中英文原帖、公告范围、北京时间和官方编号；本条不宣称每个账户到账。",
-          "reviewed_at": "2026-10-12T01:58:49.882756+00:00",
-          "source_hash": "c371db69d691890ce5cd1f373b0b2d089e2490bcd29a179d1f2aed189a33a9b0",
+          "reviewed_at": "2026-10-13T03:06:31.132352+00:00",
+          "source_hash": "f6dd7bccbf224f686f46a619126c64bf548d58c67408e941e5b5db42f17868fd",
           "state": "reviewed"
         }
       }
@@ -514,234 +2204,6 @@
       "state": "published",
       "summary": "REA把逆向分析工具接给编码Agent，用可追溯证据调查软件行为。6.4.0新增Android检查和大型证据按需读取；官方游戏重建案例展示了可核验进展，也提醒验收器本身可能出错。",
       "title": "REA 6.4.0：让编码 Agent 沿证据理解软件行为"
-    },
-    {
-      "category": "tool",
-      "checked_at": "2026-10-07",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-06",
-      "highlight": false,
-      "id": "D-83",
-      "interpretation": [
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "新云端任务和新定时任务无需电脑一直在线；访问已连接本机文件夹、本地连接器和部分浏览器能力仍需要Claude桌面应用在线。关闭应用不会让本机资源继续可用。",
-          "title": "云端任务与本机资源分开看"
-        },
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "10月6日前在本机启动的任务及本机定时任务仍留在本机；Pro／Max的新任务不能再切回Only on your computer。需要新本机任务时，官方提供Claude Code桌面入口和任务数据迁移说明。",
-          "title": "已有任务保持原运行位置"
-        },
-        {
-          "locator": "官方原始说明；本站未运行复测",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "Team／Enterprise仍涉及beta及管理员启用条件，不能套用全部Pro／Max规则。本次核对官方说明，未实测各套餐迁移与后台运行。",
-          "title": "套餐与验证范围"
-        }
-      ],
-      "name": "Claude Cowork",
-      "note": "原文事件日期2026-10-06，本站2026-10-07核对；新任务与既有本机任务、套餐适用范围分别说明。",
-      "organization": "Anthropic",
-      "publication": {
-        "first_published_at": "2026-10-07T04:22:05.296639+00:00",
-        "updated_at": "2026-10-12T01:56:02.557377+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-07",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "oct07-source-1",
-          "locator": "官方发布和采用说明",
-          "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
-          "retrieved_at": "2026-10-07",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线 · 官方来源 1",
-          "upstream_revision": "cowork-cloud-2026-10-06",
-          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M02",
-          "name": "Claude",
-          "url": "https://fieldtofit.top/watch/CW-M02"
-        },
-        {
-          "id": "CW-A02",
-          "name": "Claude Code",
-          "url": "https://fieldtofit.top/watch/CW-A02"
-        }
-      ],
-      "source_published_at": "2026-10-06",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "Claude Cowork · 官方来源 1",
-          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
-        }
-      ],
-      "state": "published",
-      "summary": "Claude Cowork的Pro／Max新任务从10月6日起在云端运行，可跨网页、桌面和手机接续；本机文件、连接器及浏览器操作仍有桌面在线条件。",
-      "title": "Claude Cowork：Pro／Max新任务转向云端，本机访问仍需桌面在线"
-    },
-    {
-      "category": "model",
-      "checked_at": "2026-10-08",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-07",
-      "highlight": false,
-      "id": "D-92",
-      "interpretation": [
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-3"
-          ],
-          "text": "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。",
-          "title": "型号、上下文与标准价格"
-        },
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-3"
-          ],
-          "text": "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。",
-          "title": "迁移需要改什么"
-        },
-        {
-          "locator": "官方发布与采用条件；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-3"
-          ],
-          "text": "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。",
-          "title": "Sonnet缓存读取单独降价"
-        }
-      ],
-      "name": "Claude Haiku 5.5",
-      "note": "原始日期2026-10-07；本站2026-10-08核对。按官方型号、平台和迁移条件使用；本站未复测。",
-      "organization": "Anthropic",
-      "publication": {
-        "first_published_at": "2026-10-08T02:08:40.656818+00:00",
-        "updated_at": "2026-10-12T01:55:39.196368+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "oct08-source-1",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
-          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
-          "url": "https://www.anthropic.com/claude-haiku-5-5"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "oct08-source-2",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
-          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
-          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "oct08-source-3",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
-          "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
-          "url": "https://platform.claude.com/docs/en/release-notes/overview"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M02",
-          "name": "Claude",
-          "url": "https://fieldtofit.top/watch/CW-M02"
-        },
-        {
-          "id": "D-49",
-          "name": "Claude Sonnet 5.5",
-          "url": "https://fieldtofit.top/news/D-49"
-        }
-      ],
-      "source_published_at": "2026-10-07",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1",
-          "url": "https://www.anthropic.com/claude-haiku-5-5"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-2",
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2",
-          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-3",
-          "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
-          "url": "https://platform.claude.com/docs/en/release-notes/overview"
-        }
-      ],
-      "state": "published",
-      "summary": "Haiku 5.5面向分类、路由、提取、摘要等高频任务；加入1M上下文与自适应思考，迁移时需重算token预算。",
-      "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价"
     },
     {
       "category": "model",
@@ -1618,6 +3080,69 @@
       "editor": "FieldToFit",
       "event_date": "2026-10-10",
       "highlight": false,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "可把已有 ChatGPT 额度用于 Devin 的编程任务。",
+            "title": "同时订阅两边的开发者"
+          },
+          {
+            "detail": "连接前先分清每种模型使用哪边额度。",
+            "title": "需要核对用量的团队"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "在 Devin 的 Settings → Connections 授权，再打开 Use your ChatGPT plan。",
+            "title": "连接已有 ChatGPT 订阅"
+          },
+          {
+            "detail": "连接开关适用于 Devin Cloud、Desktop 和 CLI，可关闭或解除连接。",
+            "title": "多个 Devin 入口适用"
+          },
+          {
+            "detail": "符合条件的 GPT 调用使用 ChatGPT 额度，其他模型仍使用 Devin 用量。",
+            "title": "支持的 GPT 用量共享"
+          }
+        ],
+        "checked_at": "2026-10-12",
+        "evidence": [
+          {
+            "locator": "Devin 官方文档：套餐资格、连接步骤、支持模型与用量回退。",
+            "source_id": "devin-docs"
+          }
+        ],
+        "featured_rank": 2,
+        "headline": "ChatGPT 额度，可以接到 Devin 用",
+        "limits": [
+          {
+            "detail": "ChatGPT Go／Plus／Pro 配 Devin Pro／Max／Teams；不含 Devin Free／Enterprise，也不赠送 Devin 订阅。",
+            "title": "两边套餐都要符合条件"
+          },
+          {
+            "detail": "fast／priority 变体除外；ChatGPT 额度耗尽或不可用时，回退 Devin 额度，再使用按需点数。",
+            "title": "留意例外与自动回退"
+          }
+        ],
+        "next_step": "连接前确认两边套餐、模型选择与 Devin 按需用量设置，再用一个小任务观察实际扣量。",
+        "revised_at": "2026-10-12",
+        "scope": "适合已有 ChatGPT 与 Devin 付费套餐的人。连接后，部分 GPT 用量计入 ChatGPT 额度。",
+        "share": {
+          "content_revision": "4679029b0f9b11bb370ff391d8d43214f3709b3a6045dbdee4495403e38689b4",
+          "en": {
+            "sha256": "db2de408e7b92d1bc77af6eb19f97a99e51cfde1c4d92759df91b105fb057966",
+            "text_revision": "7dbedd94dc49a6209b2221068ff21af0edfe675927e11a9512e9adaf4f262ee2",
+            "url": "/hot-cards/d-113-4679029b0f9b-en.png"
+          },
+          "zh": {
+            "sha256": "7a8545587b96e6bd1c3e2ae9a5f6ba4fd4d0547d3e094b32949e7a429cb9fcad",
+            "url": "/hot-cards/d-113-4679029b0f9b-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "依据 Devin 官方说明整理；本站未独立试用或核对实际账单。"
+      },
       "id": "D-113",
       "interpretation": [
         {
@@ -1652,7 +3177,7 @@
       "organization": "OpenAI / Cognition",
       "publication": {
         "first_published_at": "2026-10-11T03:58:49.763148+00:00",
-        "updated_at": "2026-10-11T03:58:49.763148+00:00"
+        "updated_at": "2026-10-12T16:36:22.558235+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-09",
@@ -1684,7 +3209,50 @@
       ],
       "state": "published",
       "summary": "Devin支持连接ChatGPT Go／Plus／Pro，把支持的GPT模型用量计入ChatGPT额度。此功能面向Devin Pro／Max／Teams，不包含Devin Free或Enterprise。",
-      "title": "ChatGPT个人订阅可连接Devin，仍需Devin付费套餐"
+      "title": "ChatGPT个人订阅可连接Devin，仍需Devin付费套餐",
+      "translations": {
+        "en": {
+          "fields": {
+            "ChatGPT Go／Plus／Pro 配 Devin Pro／Max／Teams；不含 Devin Free／Enterprise，也不赠送 Devin 订阅。": "ChatGPT Go / Plus / Pro with Devin Pro / Max / Teams. Devin Free / Enterprise are excluded; no Devin subscription is included.",
+            "ChatGPT 额度，可以接到 Devin 用": "Use your ChatGPT allowance in Devin",
+            "ChatGPT个人订阅可连接Devin，仍需Devin付费套餐": "ChatGPT personal subscriptions can connect to Devin; a paid Devin plan is still required",
+            "ChatGPT额度可接入Devin；需付费Devin": "ChatGPT quota can be accessed to Devin; need to pay Devin",
+            "Cognition ChatGPT订阅连接公告": "Cognition ChatGPT Subscription Connection Announcement",
+            "Cognition／Tibo关联原帖与Devin官方资格、使用入口及计费范围；本站未独立试用": "Related Cognition / Tibo source posts and official Devin eligibility, setup and billing scope; not independently tried by FieldToFit",
+            "Devin 官方文档：套餐资格、连接步骤、支持模型与用量回退。": "Devin documentation: eligibility, connection steps, supported models and usage fallback.",
+            "Devin官方资格、使用方法与计费边界": "Devin's official qualifications, usage methods and billing boundaries",
+            "Devin支持连接ChatGPT Go／Plus／Pro，把支持的GPT模型用量计入ChatGPT额度。此功能面向Devin Pro／Max／Teams，不包含Devin Free或Enterprise。": "Devin supports connecting ChatGPT Go / Plus / Pro and counting supported GPT model usage against ChatGPT quotas. This is available for Devin Pro / Max / Teams, excluding Devin Free and Enterprise.",
+            "Tibo X身份与头像": "Tibo X identity and avatar",
+            "Tibo关于Devin连接的关联原帖": "Tibo's original related post about Devin connection",
+            "fast／priority 变体除外；ChatGPT 额度耗尽或不可用时，回退 Devin 额度，再使用按需点数。": "fast / priority variants are excluded. If ChatGPT usage is exhausted or unavailable, Devin usage is used, followed by on-demand credits.",
+            "两边套餐都要符合条件": "Both plans must be eligible",
+            "仅支持的GPT模型走ChatGPT额度，fast／priority变体除外；其他模型仍扣Devin用量。ChatGPT额度耗尽或连接不可用时，Devin会回退至自己的额度，耗尽后使用按需点数。此连接不赠送免费Devin订阅。": "Only supported GPT models use the ChatGPT quota; fast / priority variants are excluded. Other models still consume Devin usage. If the ChatGPT quota runs out or the connection is unavailable, Devin falls back to its own quota, then on-demand credits after that is exhausted. This connection does not provide a free Devin subscription.",
+            "使用入口": "Usage entry",
+            "依据 Devin 官方说明整理；本站未独立试用或核对实际账单。": "Based on Devin documentation; FieldToFit has not independently tried the connection or verified actual billing.",
+            "公告与范围": "Announcement and scope",
+            "共享用量，不代替Devin订阅": "Shared usage does not replace a Devin subscription",
+            "关联官方原帖短摘录及中文摘译；摘译不表示赠送Devin订阅，资格与计费边界必须同时显示在正文。": "Related official original post short excerpts and Chinese excerpts; excerpts do not mean giving away Devin subscriptions, and the boundaries of qualification and billing must be displayed in the text at the same time.",
+            "原公告按帖子ID推导为北京时间10月10日06:52，Tibo关联帖为同日12:33；保留推导依据。套餐条件依据Devin官方文档，不采用X社区注释作为事实；未独立试用，不推断未说明的地区范围。": "The original announcement time is derived from its post ID as 10/10 06:52 Beijing time; Tibo's related post is at 12:33 the same day. The derivation basis is retained. Plan conditions follow official Devin documentation, without treating X community notes as facts. FieldToFit has not independently tried it or inferred unstated regional availability.",
+            "可把已有 ChatGPT 额度用于 Devin 的编程任务。": "Use an existing ChatGPT allowance for coding tasks in Devin.",
+            "同时订阅两边的开发者": "Developers with both plans",
+            "在 Devin 的 Settings → Connections 授权，再打开 Use your ChatGPT plan。": "Authorize in Devin Settings → Connections, then enable Use your ChatGPT plan.",
+            "在Devin的Settings → Connections选择Continue with ChatGPT，授权后打开Use your ChatGPT plan。开关适用于Devin Cloud、Desktop和CLI；可随时关闭或解除连接。": "In Devin Settings → Connections, choose Continue with ChatGPT, authorize and enable Use your ChatGPT plan. The toggle applies to Devin Cloud, Desktop and CLI; it can be disabled or disconnected at any time.",
+            "多个 Devin 入口适用": "Available across Devin clients",
+            "支持的 GPT 用量共享": "Supported GPT usage is shared",
+            "留意例外与自动回退": "Watch exceptions and fallback",
+            "符合条件的 GPT 调用使用 ChatGPT 额度，其他模型仍使用 Devin 用量。": "Eligible GPT calls use your ChatGPT allowance; other models still use Devin usage.",
+            "连接前先分清每种模型使用哪边额度。": "Identify which allowance each model uses before connecting.",
+            "连接前确认两边套餐、模型选择与 Devin 按需用量设置，再用一个小任务观察实际扣量。": "Check both plans, model selection and Devin on-demand settings, then inspect usage on a small task.",
+            "连接已有 ChatGPT 订阅": "Connect your ChatGPT plan",
+            "连接开关适用于 Devin Cloud、Desktop 和 CLI，可关闭或解除连接。": "The connection applies to Devin Cloud, Desktop and CLI. You can turn it off or disconnect.",
+            "适合已有 ChatGPT 与 Devin 付费套餐的人。连接后，部分 GPT 用量计入 ChatGPT 额度。": "For people with eligible paid ChatGPT and Devin plans. Once connected, supported GPT usage counts toward your ChatGPT allowance.",
+            "需要核对用量的团队": "Teams tracking usage"
+          },
+          "reviewed_at": "2026-10-12T16:34:45.705884+00:00",
+          "source_hash": "c5be25b0d3dcec9aae0b20f97536eec60a9db38b2fc4a923389260e4bffa4333",
+          "state": "reviewed"
+        }
+      }
     },
     {
       "category": "research",
@@ -15497,7 +17065,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-12",
+  "reviewed_at": "2026-10-13",
   "schema_version": "fieldtofit.news.v1",
-  "title": "首发回顾"
+  "title": "近期动态与采用更新"
 }

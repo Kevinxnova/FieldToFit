@@ -10,6 +10,23 @@ from backend.knowledge import content_workspace as ws, hot_cards, locale, platfo
 FIXTURE=Path(__file__).parent/'fixtures/hot-cards.json'
 
 
+@pytest.fixture(autouse=True)
+def uncarded_article_baseline(tmp_path, monkeypatch):
+    """Keep card-creation tests independent of already published production cards."""
+    data=json.loads(platform_news.CONTENT_PATH.read_text())
+    for item in data['items']:
+        if item.pop('hot_card', None) is not None:
+            en=item.get('translations', {}).get('en', {})
+            en['source_hash']=locale.source_hash('news', item)
+            required=locale.strings(locale.authored('news', item))
+            en['fields']={k:v for k,v in en.get('fields', {}).items() if k in required}
+    path=tmp_path/'uncarded-news.json'
+    path.write_text(json.dumps(data, ensure_ascii=False))
+    monkeypatch.setattr(platform_news, 'CONTENT_PATH', path)
+    seeds=ws.seeds();seeds['news']=data
+    monkeypatch.setattr(ws, 'seeds', lambda:copy.deepcopy(seeds))
+
+
 def samples():
     return json.loads(FIXTURE.read_text())
 

@@ -36,7 +36,7 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.41](CHANGELOG.md#v1.8.41)** · [fieldtofit-v1.8.41](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.41)
+**当前源码版本：[v1.8.42](CHANGELOG.md#v1.8.42)** · [fieldtofit-v1.8.42](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.42)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
