@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.48](CHANGELOG.md#v1.8.48)** · Release tag not yet published
+**Current source version: [v1.8.49](CHANGELOG.md#v1.8.49)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Confirm a magazine-style briefing within For you, retaining For you and For your AI as the two primary destinations.
-- Revise the entry preview: place the daily briefing before the three existing reading links, with four desktop columns, a two-by-two mobile layout and a return path to For you.
-- Update REQ-24 and preview evidence. This batch contains design and documentation only; the real sample awaits review, and production briefing pages and automatic publication remain inactive.
+- Redesign For your AI with open spacing, subtle glass lighting and a source-to-client illustration, adapting to desktop, mobile, light and dark themes.
+- Add seven setup paths for Codex, Claude, OpenClaw and Pi, with official references and review dates. Bring first questions, precise copy actions and service checks forward while retaining search, packages and topic sync.
+- Verify bilingual output, clipboard recovery, asynchronous switching, isolated service reads and the local page. This batch is not deployed and does not claim end-to-end chat acceptance in all four clients.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
@@ -60,7 +60,7 @@ Public read-only MCP address:
 https://fieldtofit.top/api/mcp/curated
 ```
 
-Add this address to an AI client that supports remote HTTP MCP. Ask your AI to retrieve relevant materials, sources, versions and known limitations, then continue with your task.
+Add this address to an AI client that supports remote HTTP MCP. The source now includes step-by-step For your AI guides for Codex, Claude, OpenClaw and Pi, plus first questions, official references and review dates; this batch is not deployed. Ask your AI to retrieve relevant materials, sources, versions and known limitations, then continue with your task.
 
 The live `curated_lookup` tool lets your AI discover developments, ongoing-watch profiles and permitted stored text within the same MCP service, with exact reading arguments and shared search previews on For your AI. Available since v1.5.0; check `tools/list` for live capabilities.
 

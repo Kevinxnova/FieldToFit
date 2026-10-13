@@ -1,0 +1,22 @@
+<section class="platform-panel" id="ai-connect">
+  <h2>{{ 'Choose your AI' if english else '选择你的 AI' }}</h2>
+  <p>{{ 'Open the setup, add the server, then ask your AI to read a source. Copying alone does not connect a client.' if english else '找到添加入口，填写服务信息，再让你的 AI 实际读取资料。复制本身不会完成连接。' }}</p>
+  <code>{{ ai_endpoint }}</code>
+  {% for client in ai_clients.clients %}
+  <article><h3>{{ client.name }}</h3>
+    {% for mode in client.modes %}
+    <h4>{{ mode.label[1 if english else 0] }}</h4>
+    <ol><li>{{ mode.start[1 if english else 0] }} <code>{{ mode.path }}</code></li>
+      <li>{{ mode.setup[1 if english else 0] }}{% if mode.command %}<pre>{{ mode.command.replace('{endpoint}', ai_command_endpoint) }}</pre>{% else %}<p>fieldtofit · {{ mode.transport }} · {{ ai_endpoint }}</p>{% endif %}</li>
+      <li>{{ mode.verify[1 if english else 0] }}</li></ol>
+    {% if mode.note %}<p>{{ mode.note[1 if english else 0] }}</p>{% endif %}
+    <a href="{{ mode.source }}">{{ 'Official setup guide' if english else '官方接入说明' }}</a>
+    {% endfor %}
+    {% if client.note %}<p>{{ client.note[1 if english else 0] }}</p>{% endif %}
+  </article>{% endfor %}
+  <p>{{ 'Instructions checked ' if english else '步骤核对日期：' }}{{ ai_clients.checked_at }}</p>
+</section>
+<section class="platform-panel" id="ai-first-read"><h2>{{ 'Start the conversation' if english else '第一句话，从这里开始' }}</h2>
+  <blockquote>{{ 'Use FieldToFit to find Claude and read one complete entry. Cite sources, publication revision and review date. Distinguish editorial content, stored text and link-only material. If the connection is unavailable, say so. Pass lang="en" in every tool call.' if english else '请通过 FieldToFit 查找 Claude，读取一项完整资料，附上出处、资料修订与核验日期。区分整理内容、已存原文和仅链接资料；无法调用连接时请明确说明。' }}</blockquote>
+  <p>{{ 'Confirm an actual tool call and a sourced answer in your own AI. A website service check does not verify client setup.' if english else '请在自己的 AI 中确认实际工具调用与带出处的回答；网页服务检查不代表客户端接入成功。' }}</p>
+</section>

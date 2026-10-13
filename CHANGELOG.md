@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.49"></a>
+## v1.8.49 · For your AI接入工作台与四客户端引导 · 2026-10-13
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:For your AI connection workspace and four client guides -->
+<!-- release-summary:zh:start -->
+- 按已确认方向重构For your AI：浅色留白、局部玻璃流光和资料流向所选AI的示意，适配手机、桌面及明暗主题。
+- 为Codex、Claude、OpenClaw、Pi提供七种接入引导，附官方说明与核对日期；首次提问、具体复制按钮和服务检查前置，保留搜索、资料包及专题同步。
+- 完成双语、复制失败／异步切换保护、隔离服务读取和本地页面验证；本批未部署，未宣称四款真实客户端均已完成聊天取材验收。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Redesign For your AI with open spacing, subtle glass lighting and a source-to-client illustration, adapting to desktop, mobile, light and dark themes.
+- Add seven setup paths for Codex, Claude, OpenClaw and Pi, with official references and review dates. Bring first questions, precise copy actions and service checks forward while retaining search, packages and topic sync.
+- Verify bilingual output, clipboard recovery, asynchronous switching, isolated service reads and the local page. This batch is not deployed and does not claim end-to-end chat acceptance in all four clients.
+<!-- release-summary:en:end -->
+
+对应[REQ-8-10至12](FieldToFit-PM.md#for-ai-onboarding-plan)。按所有者要求先登记总览再开发验证；Claude网页／桌面与Code分开，Pi说明内置MCP与扩展差异。界面与无脚本页面复用同一客户端步骤数据，原公开API、数据库、内容与日程保持。54项相关回归、五组新交互测试、六组语言回归、构建及五宽度双语浏览器验收的实际范围见[证据](docs/validation/2026-10-13-for-ai-onboarding.md)。本批仅本地开发交付，正式站未更新。
+
 <a id="v1.8.48"></a>
 ## v1.8.48 · 日报归属For you与杂志式确认 · 2026-10-13
 

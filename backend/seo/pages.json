@@ -19,12 +19,12 @@
       "FieldToFit · For your AI"
     ],
     "heading": [
-      "把 FieldToFit，\n接入你的 AI。",
-      "Connect FieldToFit.\nGive your AI the sources."
+      "好资料，\n与你的 AI 相连。",
+      "Good sources.\nMeet your AI."
     ],
     "description": [
-      "这里提供与 For you 同源的近期动态、持续关注资料、版本和出处。复制 MCP 接入说明给你的 AI，或在支持远程 MCP 的客户端中添加服务；接入后，让它按你的问题检索和读取。暂时无法接入，也可以下载下方资料直接交给 AI。",
-      "Access the same developments, profiles, versions and sources as For you. Copy the MCP setup instructions for your AI or add the service in a remote-MCP client, then ask it to read the materials relevant to your question. You can also download profiles below."
+      "把持续整理的 AI 动态、项目档案与原文，接入你的 Codex、Claude、OpenClaw 或 Pi。让每一次提问，都有资料可循。",
+      "Bring curated AI developments, project profiles and source materials to Codex, Claude, OpenClaw or Pi. Give every question a place to start."
     ]
   },
   "/about": {
@@ -42,9 +42,18 @@
     ]
   },
   "/changelog": {
-    "title": ["FieldToFit · 更新日志", "FieldToFit · Changelog"],
-    "heading": ["FieldToFit 更新日志", "FieldToFit changelog"],
-    "description": ["记录 FieldToFit 每个版本的功能、体验改进和修复，保留真实日期与原始更新记录。", "Follow FieldToFit features, improvements and fixes by version, with original dates and release notes."]
+    "title": [
+      "FieldToFit · 更新日志",
+      "FieldToFit · Changelog"
+    ],
+    "heading": [
+      "FieldToFit 更新日志",
+      "FieldToFit changelog"
+    ],
+    "description": [
+      "记录 FieldToFit 每个版本的功能、体验改进和修复，保留真实日期与原始更新记录。",
+      "Follow FieldToFit features, improvements and fixes by version, with original dates and release notes."
+    ]
   },
   "/community": {
     "title": [

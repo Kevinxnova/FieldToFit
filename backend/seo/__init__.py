@@ -7,6 +7,7 @@ import html
 import json
 import os
 import re
+import shlex
 from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -23,6 +24,7 @@ from backend.knowledge.platform_watch import watch
 ROOT = Path(__file__).parent
 ORIGIN = 'https://fieldtofit.top'
 PAGES = json.loads((ROOT / 'pages.json').read_text())
+AI_CLIENTS = json.loads((ROOT / 'ai_clients.json').read_text())
 bp = Blueprint('search', __name__, template_folder='templates')
 DETAIL = re.compile(r'^/(news/D-\d{2,}|watch/CW-[MATSH]\d{2,}|maps/[a-z][a-z0-9]*(?:-[a-z0-9]+)*)$')
 LEGACY = {'/information', '/apps', '/legacy/information', '/legacy/apps', '/tasks',
@@ -268,7 +270,7 @@ def page(path, dist):
         calendar_title = month if english else month.replace('-', '年') + '月' if month else ''
         calendar_items = {entry['id']: entry for entry in collections.get('news', {}).get('items', [])}
         body = render_template('search.html', pages=PAGES, path=path, heading=heading,
-                               description=description, item=item, collections=collections,
+                               description=description, item=item, collections=collections, ai_clients=AI_CLIENTS, ai_endpoint=request.url_root.rstrip('/')+'/api/mcp/curated', ai_command_endpoint=shlex.quote(request.url_root.rstrip('/')+'/api/mcp/curated'),
                                catalog=catalog, revision=revision, related_maps=related_maps, calendar_cells=calendar_cells, calendar_rows=calendar_rows(calendar_cells),
                                calendar_title=calendar_title, calendar_items=calendar_items, english=english)
         return document(dist, title, description, path, body)

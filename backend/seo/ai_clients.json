@@ -1,0 +1,215 @@
+{
+  "checked_at": "2026-10-13",
+  "clients": [
+    {
+      "id": "codex",
+      "name": "Codex",
+      "mark": "C",
+      "caption": [
+        "桌面应用 / 命令行",
+        "Desktop / CLI"
+      ],
+      "modes": [
+        {
+          "id": "desktop",
+          "label": [
+            "桌面应用",
+            "Desktop app"
+          ],
+          "path": "Settings → MCP servers → Add server",
+          "start": [
+            "打开 Codex 的设置，进入 MCP servers，选择 Add server。",
+            "Open Codex settings, select MCP servers, then Add server."
+          ],
+          "setup": [
+            "按连接信息填写，保存后选择 Restart。",
+            "Enter the fields shown here, save, then select Restart."
+          ],
+          "verify": [
+            "在新对话输入 /mcp 查看服务，再发送下方测试问题。",
+            "Enter /mcp in a new chat to inspect the server, then send the test question below."
+          ],
+          "source": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli",
+          "transport": "Streamable HTTP"
+        },
+        {
+          "id": "cli",
+          "label": [
+            "命令行",
+            "CLI"
+          ],
+          "path": "Terminal → codex",
+          "start": [
+            "在已安装 Codex CLI 的电脑上打开终端。",
+            "Open a terminal on the computer with Codex CLI installed."
+          ],
+          "setup": [
+            "运行这条命令，添加名为 fieldtofit 的服务。",
+            "Run this command to add the fieldtofit server."
+          ],
+          "command": "codex mcp add fieldtofit --url {endpoint}",
+          "verify": [
+            "运行 codex mcp list 查看配置；重新打开 Codex，用 /mcp 查看连接，再发送测试问题。",
+            "Check the configuration with codex mcp list. Reopen Codex, inspect /mcp, and send the test question."
+          ],
+          "source": "https://developers.openai.com/learn/docs-mcp"
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "mark": "✳",
+      "caption": [
+        "网页 / 桌面 / Code",
+        "Web / desktop / Code"
+      ],
+      "modes": [
+        {
+          "id": "desktop",
+          "label": [
+            "网页 / 桌面",
+            "Web / desktop"
+          ],
+          "path": "Customize → Connectors → + Add",
+          "start": [
+            "打开 Customize → Connectors，选择 + Add → Add custom connector。",
+            "Open Customize → Connectors, then + Add → Add custom connector."
+          ],
+          "setup": [
+            "填写名称和地址，继续后核对认证；本站公开服务选择 No sign in，再完成添加。",
+            "Enter the name and URL. Continue to authentication; choose No sign in for the public service, then finish adding."
+          ],
+          "verify": [
+            "在对话的 + → Connectors 中启用 FieldToFit，再发送测试问题。",
+            "Enable FieldToFit under + → Connectors in your chat, then send the test question."
+          ],
+          "source": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+          "note": [
+            "团队账号可能需要管理员先添加。远程连接来自 Claude 云端，不能访问本机地址。",
+            "A team administrator may need to add it first. Remote connections originate in Claude’s cloud and cannot reach localhost."
+          ],
+          "transport": "Remote MCP"
+        },
+        {
+          "id": "code",
+          "label": [
+            "Claude Code",
+            "Claude Code"
+          ],
+          "path": "Terminal → Claude Code",
+          "start": [
+            "在使用 Claude Code 的项目目录打开终端。",
+            "Open a terminal in the project where you use Claude Code."
+          ],
+          "setup": [
+            "运行命令，添加此项目的 HTTP MCP 服务。",
+            "Run the command to add an HTTP MCP server for this project."
+          ],
+          "command": "claude mcp add --transport http fieldtofit {endpoint}",
+          "verify": [
+            "重新打开 Claude Code，输入 /mcp 查看连接，再发送测试问题。",
+            "Reopen Claude Code, inspect the connection with /mcp, then send the test question."
+          ],
+          "source": "https://code.claude.com/docs/en/mcp"
+        }
+      ]
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "mark": "◈",
+      "caption": [
+        "控制台 / 命令行",
+        "Control UI / CLI"
+      ],
+      "modes": [
+        {
+          "id": "desktop",
+          "label": [
+            "控制台",
+            "Control UI"
+          ],
+          "path": "Settings → MCP → Add server",
+          "start": [
+            "在 OpenClaw 控制台打开 Settings → MCP，选择 Add server。",
+            "Open Settings → MCP in the OpenClaw Control UI, then select Add server."
+          ],
+          "setup": [
+            "填写名称、Streamable HTTP 和地址，添加服务器。",
+            "Add the server with its name, Streamable HTTP transport, and URL."
+          ],
+          "verify": [
+            "运行 openclaw mcp doctor fieldtofit --probe 检查实际连接，再在 Agent 中发送测试问题。",
+            "Run openclaw mcp doctor fieldtofit --probe to check the live connection, then send the test question to your agent."
+          ],
+          "source": "https://docs.openclaw.ai/tools/mcp",
+          "transport": "Streamable HTTP"
+        },
+        {
+          "id": "cli",
+          "label": [
+            "命令行",
+            "CLI"
+          ],
+          "path": "Terminal → OpenClaw",
+          "start": [
+            "在运行 OpenClaw 的机器上打开终端。",
+            "Open a terminal on the machine running OpenClaw."
+          ],
+          "setup": [
+            "运行命令，将 FieldToFit 加入 OpenClaw 的 MCP 配置。",
+            "Run the command to add FieldToFit to OpenClaw’s MCP configuration."
+          ],
+          "command": "openclaw mcp add fieldtofit --url {endpoint} --transport streamable-http",
+          "verify": [
+            "运行 openclaw mcp doctor fieldtofit --probe 检查，再在 Agent 中发送测试问题。",
+            "Run openclaw mcp doctor fieldtofit --probe, then send the test question to your agent."
+          ],
+          "source": "https://docs.openclaw.ai/tools/mcp"
+        }
+      ],
+      "note": [
+        "运行中的 Gateway／Agent 可能需要重新加载或重启；连接仍遵循其工具权限设置。",
+        "A running Gateway or agent may need a reload or restart; its tool policies still apply."
+      ]
+    },
+    {
+      "id": "pi",
+      "name": "Pi",
+      "mark": "π",
+      "caption": [
+        "Pi coding agent",
+        "Pi coding agent"
+      ],
+      "modes": [
+        {
+          "id": "cli",
+          "label": [
+            "命令行",
+            "CLI"
+          ],
+          "path": "Terminal → Pi",
+          "start": [
+            "在已安装 Pi coding agent 的电脑上打开终端。",
+            "Open a terminal on the computer with Pi coding agent installed."
+          ],
+          "setup": [
+            "运行命令，使用 Pi 内置的远程 MCP 接入。",
+            "Run the command to use Pi’s built-in remote MCP support."
+          ],
+          "command": "pi mcp add fieldtofit --url {endpoint}",
+          "verify": [
+            "运行 pi mcp list 检查；打开 Pi，已有会话先 /reload，再用 /mcp 检查并发送测试问题。",
+            "Run pi mcp list, then open Pi. In an existing session, use /reload, inspect /mcp, and send the test question."
+          ],
+          "source": "https://pi.dev/docs/latest/mcp"
+        }
+      ],
+      "note": [
+        "适用于带内置 MCP 的版本。若没有 pi mcp 命令，先升级或查看所用扩展的说明；MCP 扩展可能接管 /mcp。",
+        "Requires a version with built-in MCP. If pi mcp is unavailable, update or consult your extension’s guide; an MCP extension may replace /mcp."
+      ]
+    }
+  ]
+}

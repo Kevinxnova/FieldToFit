@@ -220,3 +220,28 @@ def test_remote_sitemap_reads_one_atomic_snapshot(site, monkeypatch):
     assert urls(site) == expected
     assert len(batches) == 1
     assert len(batches[0]) == 3
+
+
+@pytest.mark.parametrize('language', ['zh', 'en'])
+def test_ai_setup_without_javascript_keeps_all_client_paths(site, language):
+    path = '/en/for-your-ai' if language == 'en' else '/for-your-ai'
+    response = get(site, path)
+    assert response.status_code == 200
+    setup = response.text.split('id="ai-connect"', 1)[1].split('id="ai-codex-sync"', 1)[0]
+    for name in ('Codex', 'Claude', 'OpenClaw', 'Pi'):
+        assert f'<h3>{name}</h3>' in setup
+    for command in ('codex mcp add fieldtofit --url', 'claude mcp add --transport http fieldtofit',
+                    'openclaw mcp add fieldtofit --url', 'pi mcp add fieldtofit --url'):
+        assert command in setup
+    assert '{endpoint}' not in setup
+    assert seo.ORIGIN+'/api/mcp/curated' in setup
+    assert 'https://pi.dev/docs/latest/mcp' in setup
+    assert seo.AI_CLIENTS['checked_at'] in setup
+    assert 'id="ai-first-read"' in setup
+    if language == 'en':
+        assert 'lang=&#34;en&#34;' in setup or 'lang="en"' in setup
+        assert 'A website service check does not verify client setup.' in setup
+        import re
+        assert not re.search('[\u3400-\u9fff]', setup)
+    else:
+        assert '网页服务检查不代表客户端接入成功' in setup

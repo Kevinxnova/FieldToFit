@@ -1,34 +1,34 @@
 {
-  "version": "1.8.48",
-  "revision": "e8eb999acfb8633a8723e6d259adcfb82529ec608db23573139fcb65ba14328e",
+  "version": "1.8.49",
+  "revision": "f9f3f7d10445bcdda59b704341a6552302fba2db253d2cf3e8987758a5136841",
   "items": [
     {
-      "version": "1.8.48",
+      "version": "1.8.49",
       "date": "2026-10-13",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "日报归属For you与杂志式确认",
+          "title": "For your AI接入工作台与四客户端引导",
           "highlights": [
-            "确认日报采用编辑部杂志式，归属For you；主导航继续保留For you和For your AI。",
-            "修订入口demo：将阅读AI日报放在原三个阅读入口之前，桌面四列、手机两行两列，演示进入日报及返回For you。",
-            "更新REQ-24与实际预览证据；本批仅方案和文档，真实样刊待验收，正式日报和自动出刊尚未开发或启用。"
+            "按已确认方向重构For your AI：浅色留白、局部玻璃流光和资料流向所选AI的示意，适配手机、桌面及明暗主题。",
+            "为Codex、Claude、OpenClaw、Pi提供七种接入引导，附官方说明与核对日期；首次提问、具体复制按钮和服务检查前置，保留搜索、资料包及专题同步。",
+            "完成双语、复制失败／异步切换保护、隔离服务读取和本地页面验证；本批未部署，未宣称四款真实客户端均已完成聊天取材验收。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Magazine briefing within For you",
+          "title": "For your AI connection workspace and four client guides",
           "highlights": [
-            "Confirm a magazine-style briefing within For you, retaining For you and For your AI as the two primary destinations.",
-            "Revise the entry preview: place the daily briefing before the three existing reading links, with four desktop columns, a two-by-two mobile layout and a return path to For you.",
-            "Update REQ-24 and preview evidence. This batch contains design and documentation only; the real sample awaits review, and production briefing pages and automatic publication remain inactive."
+            "Redesign For your AI with open spacing, subtle glass lighting and a source-to-client illustration, adapting to desktop, mobile, light and dark themes.",
+            "Add seven setup paths for Codex, Claude, OpenClaw and Pi, with official references and review dates. Bring first questions, precise copy actions and service checks forward while retaining search, packages and topic sync.",
+            "Verify bilingual output, clipboard recovery, asynchronous switching, isolated service reads and the local page. This batch is not deployed and does not claim end-to-end chat acceptance in all four clients."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.48"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.49"
     },
     {
       "version": "1.8.47",
