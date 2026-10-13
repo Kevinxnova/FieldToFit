@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.46"></a>
+## v1.8.46 · For you横幅方向与交互视觉对齐 · 2026-10-13
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:For you immersive banner and interactive visual alignment -->
+<!-- release-summary:zh:start -->
+- 按所有者选择，将REQ-6-23／24明确为横幅沉浸布局，其余大致排版保留。
+- 补充接近a16z参考的玻璃球、城市纵深、环绕品牌文字、球面流光与点击能量波，并记录新版对话预览的实际检查。
+- 本批为方案与文档更新；新版质感待审阅，正式组件未开发、未部署。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Align REQ-6-23/24 with the owner's selected immersive banner layout, retaining the broadly accepted arrangement.
+- Specify a reference-quality glass sphere, city depth, orbiting brand lettering, surface trails and click pulses, with actual checks of the revised conversation preview.
+- Update the proposal and documentation only. The revised visual awaits review; production components remain unimplemented and undeployed.
+<!-- release-summary:en:end -->
+
+对应[REQ-6-23／24](FieldToFit-PM.md#for-you-hero-proposal)。预览使用参考场景纹理与独立交互渲染，不声称逐像素1:1复刻；素材未加入正式资源，未改公共API、数据库或内容审核。保留并行v1.8.44／45日报方案提交，本批顺延为v1.8.46。实际验证与未验边界见[本次记录](docs/validation/2026-10-13-for-you-hero-proposal.md)。正式站最近已验版本仍为v1.8.42，本轮未复验生产。
+
 <a id="v1.8.45"></a>
 ## v1.8.45 · 日报版式与入口demo对齐 · 2026-10-13
 

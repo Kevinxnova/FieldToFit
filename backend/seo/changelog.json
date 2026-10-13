@@ -1,34 +1,34 @@
 {
-  "version": "1.8.45",
-  "revision": "e85b8c058d3d3b7581f44942b040743d2f4b983664e31634e90ae8127b3be6ce",
+  "version": "1.8.46",
+  "revision": "c97978b1eec66ea90c113224802b97f1369546fbc3de40ac25b00d35c4f3ff30",
   "items": [
     {
-      "version": "1.8.45",
+      "version": "1.8.46",
       "date": "2026-10-13",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "日报版式与入口demo对齐",
+          "title": "For you横幅方向与交互视觉对齐",
           "highlights": [
-            "记录所有者已选择先验收一期样刊，再按约定规则每天自动发布；真实样刊尚未验收，自动发布尚未启用。",
-            "完成编辑部杂志式、卡片仪表盘式两种对话内demo，以及桌面侧栏、首页导读下方和手机底部的日报入口示意。",
-            "推荐美股最近收盘、A股上午收盘与港股11:30盘中快照；视觉、入口及行情仍待对齐，正式页面未开发、未部署。"
+            "按所有者选择，将REQ-6-23／24明确为横幅沉浸布局，其余大致排版保留。",
+            "补充接近a16z参考的玻璃球、城市纵深、环绕品牌文字、球面流光与点击能量波，并记录新版对话预览的实际检查。",
+            "本批为方案与文档更新；新版质感待审阅，正式组件未开发、未部署。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Daily briefing design and entry-point previews",
+          "title": "For you immersive banner and interactive visual alignment",
           "highlights": [
-            "Record the owner's choice to review one complete sample issue before enabling daily publication under agreed rules. The real sample remains unreviewed and automatic publication is inactive.",
-            "Complete two in-conversation previews, using magazine and card-dashboard layouts, plus desktop sidebar, home-page and mobile navigation entry demonstrations.",
-            "Recommend the latest US close, A-share morning close and an 11:30 Hong Kong intraday snapshot. Design, placement and market conventions await alignment; production pages remain unimplemented and undeployed."
+            "Align REQ-6-23/24 with the owner's selected immersive banner layout, retaining the broadly accepted arrangement.",
+            "Specify a reference-quality glass sphere, city depth, orbiting brand lettering, surface trails and click pulses, with actual checks of the revised conversation preview.",
+            "Update the proposal and documentation only. The revised visual awaits review; production components remain unimplemented and undeployed."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.45"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.46"
     },
     {
       "version": "1.8.42",

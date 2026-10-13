@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.45](CHANGELOG.md#v1.8.45)** · Release tag not yet published
+**Current source version: [v1.8.46](CHANGELOG.md#v1.8.46)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Record the owner's choice to review one complete sample issue before enabling daily publication under agreed rules. The real sample remains unreviewed and automatic publication is inactive.
-- Complete two in-conversation previews, using magazine and card-dashboard layouts, plus desktop sidebar, home-page and mobile navigation entry demonstrations.
-- Recommend the latest US close, A-share morning close and an 11:30 Hong Kong intraday snapshot. Design, placement and market conventions await alignment; production pages remain unimplemented and undeployed.
+- Align REQ-6-23/24 with the owner's selected immersive banner layout, retaining the broadly accepted arrangement.
+- Specify a reference-quality glass sphere, city depth, orbiting brand lettering, surface trails and click pulses, with actual checks of the revised conversation preview.
+- Update the proposal and documentation only. The revised visual awaits review; production components remain unimplemented and undeployed.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
