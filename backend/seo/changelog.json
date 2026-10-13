@@ -1,7 +1,35 @@
 {
-  "version": "1.8.47",
-  "revision": "47e36df900ed0ff97b94629034a3cccffbb737b989bb6e777ee35b9f6b2075e9",
+  "version": "1.8.48",
+  "revision": "e8eb999acfb8633a8723e6d259adcfb82529ec608db23573139fcb65ba14328e",
   "items": [
+    {
+      "version": "1.8.48",
+      "date": "2026-10-13",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "日报归属For you与杂志式确认",
+          "highlights": [
+            "确认日报采用编辑部杂志式，归属For you；主导航继续保留For you和For your AI。",
+            "修订入口demo：将阅读AI日报放在原三个阅读入口之前，桌面四列、手机两行两列，演示进入日报及返回For you。",
+            "更新REQ-24与实际预览证据；本批仅方案和文档，真实样刊待验收，正式日报和自动出刊尚未开发或启用。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Magazine briefing within For you",
+          "highlights": [
+            "Confirm a magazine-style briefing within For you, retaining For you and For your AI as the two primary destinations.",
+            "Revise the entry preview: place the daily briefing before the three existing reading links, with four desktop columns, a two-by-two mobile layout and a return path to For you.",
+            "Update REQ-24 and preview evidence. This batch contains design and documentation only; the real sample awaits review, and production briefing pages and automatic publication remain inactive."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.48"
+    },
     {
       "version": "1.8.47",
       "date": "2026-10-13",

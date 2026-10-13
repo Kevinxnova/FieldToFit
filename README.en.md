@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.47](CHANGELOG.md#v1.8.47)** · [fieldtofit-v1.8.47](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.47)
+**Current source version: [v1.8.48](CHANGELOG.md#v1.8.48)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Introduce the approved immersive For you banner with a sunset city, glass sphere, dense light points and orbiting FieldToFit lettering.
-- Animate by default with pointer trails and click pulses; remove the interaction hint and playback button as requested, while supporting reduced motion and a static fallback.
-- Refine the bilingual introduction and adapt to the available content width, preserving all three reading links, contents navigation and the Following filter transition.
+- Confirm a magazine-style briefing within For you, retaining For you and For your AI as the two primary destinations.
+- Revise the entry preview: place the daily briefing before the three existing reading links, with four desktop columns, a two-by-two mobile layout and a return path to For you.
+- Update REQ-24 and preview evidence. This batch contains design and documentation only; the real sample awaits review, and production briefing pages and automatic publication remain inactive.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

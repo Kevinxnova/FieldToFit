@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.48"></a>
+## v1.8.48 · 日报归属For you与杂志式确认 · 2026-10-13
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Magazine briefing within For you -->
+<!-- release-summary:zh:start -->
+- 确认日报采用编辑部杂志式，归属For you；主导航继续保留For you和For your AI。
+- 修订入口demo：将阅读AI日报放在原三个阅读入口之前，桌面四列、手机两行两列，演示进入日报及返回For you。
+- 更新REQ-24与实际预览证据；本批仅方案和文档，真实样刊待验收，正式日报和自动出刊尚未开发或启用。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Confirm a magazine-style briefing within For you, retaining For you and For your AI as the two primary destinations.
+- Revise the entry preview: place the daily briefing before the three existing reading links, with four desktop columns, a two-by-two mobile layout and a return path to For you.
+- Update REQ-24 and preview evidence. This batch contains design and documentation only; the real sample awaits review, and production briefing pages and automatic publication remain inactive.
+<!-- release-summary:en:end -->
+
+对应[REQ-24](FieldToFit-PM.md#req-24)。替代此前增加第三主导航／手机日报标签的提案；保留既定样刊先验收规则。1024px桌面与390px手机的排列、进入／返回及宽度已实际检查，见[记录](docs/validation/2026-10-13-daily-briefing-demo.md)。没有改动正式首屏组件、公开API、数据库或日程；本批未部署，正式站最近已验版本为v1.8.47。
+
 <a id="v1.8.47"></a>
 ## v1.8.47 · For you沉浸式首屏与交互球体 · 2026-10-13
 

@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.47](CHANGELOG.md#v1.8.47)** · [fieldtofit-v1.8.47](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.47)
+**当前源码版本：[v1.8.48](CHANGELOG.md#v1.8.48)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- For you首屏采用已确认的横幅布局，配合夕阳城市、玻璃球、密集光点与FieldToFit环绕文字。
-- 球体默认持续运动，保留指针流光与点击能量波；按要求移除交互提示和播放按钮，支持减少动态效果与静态回退。
-- 精简双语导读，按实际内容宽度适配桌面和手机，保留三阅读入口、目录及我关注的切换。
+- 确认日报采用编辑部杂志式，归属For you；主导航继续保留For you和For your AI。
+- 修订入口demo：将阅读AI日报放在原三个阅读入口之前，桌面四列、手机两行两列，演示进入日报及返回For you。
+- 更新REQ-24与实际预览证据；本批仅方案和文档，真实样刊待验收，正式日报和自动出刊尚未开发或启用。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
