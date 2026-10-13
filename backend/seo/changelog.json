@@ -1,18 +1,18 @@
 {
   "version": "1.9.0",
-  "revision": "b934084a7651cdc7e5ff202c1c767b9bfb3ad989bf84722fc87f661797699378",
+  "revision": "7a8b84f8e691a4abcf8064414ebaf482f2a93250eda0c5aef426524309735bda",
   "items": [
     {
       "version": "1.9.0",
       "date": "2026-10-14",
-      "deployed_on": "",
+      "deployed_on": "2026-10-14",
       "copy": {
         "zh": {
           "title": "AI日报模块与每天09:00出刊",
           "highlights": [
             "汇总完整AI日报模块：For you首位入口、杂志页／归档、七栏目、产品追踪、最近完整收盘行情及双语杂志PDF。",
             "日报目标改为每天北京时间09:00：07:45采集、08:30截稿、09:00发布、09:05回读，双语页面文案与延迟判断同步调整。",
-            "按所有者明确确认升级v1.9.0，增加开发前主动判断z／y／x的规则；历史版本和标签保持。本批未部署，授权行情、真实采集和生产调度仍待接入验证，自动发布保持关闭。"
+            "按所有者明确确认升级v1.9.0，增加开发前主动判断z／y／x的规则；历史版本和标签保持。本批已部署，已验收的10月13日晚间样刊及双语PDF正式发布；授权行情、采集完整性、模型接入和分钟调度仍未齐备，自动发布保持关闭。"
           ],
           "details": "",
           "translation_available": true
@@ -22,7 +22,7 @@
           "highlights": [
             "Consolidate the complete AI Daily module: the first For you entry, magazine editions and archives, seven sections, product tracking, latest complete market closes and bilingual magazine PDFs.",
             "Move the daily target to 09:00 Beijing time: collect at 07:45, close the news window at 08:30, publish at 09:00 and verify at 09:05; update bilingual copy and delay detection together.",
-            "Upgrade to v1.9.0 with explicit owner approval and require proactive patch/minor/major assessment before development. Preserve previous versions and tags. This batch is not deployed; licensed quotes, live collection and production scheduling still need validation, and automatic publication remains disabled."
+            "Upgrade to v1.9.0 with explicit owner approval and require proactive patch/minor/major assessment before development. Preserve previous versions and tags. This release is deployed with the approved October 13 evening sample and bilingual PDFs. Licensed quotes, complete collection, model access and minute-level scheduling are still incomplete; automatic publication remains disabled."
           ],
           "details": "",
           "translation_available": true
