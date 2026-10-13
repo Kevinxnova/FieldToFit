@@ -1,28 +1,58 @@
 {
-  "version": "1.8.51",
-  "revision": "296db746745a3f0875ddc680490df8353da956cbb031515aebe9826dd3ce6dc4",
+  "version": "1.8.52",
+  "revision": "b461be5ab0868bc062fa85aaa81591c7554ef219bcc340dc0272cf3b390879b1",
   "items": [
     {
-      "version": "1.8.51",
+      "version": "1.8.52",
       "date": "2026-10-13",
-      "deployed_on": "",
+      "deployed_on": "2026-10-13",
       "copy": {
         "zh": {
-          "title": "For your AI四客户端真实标志",
+          "title": "For your AI正式验收与远程检索连接修复",
           "highlights": [
-            "四客户端选择卡使用真实产品标志：Codex按所有者指定采用GPT标志，Claude、OpenClaw、Pi使用各自官网图形。",
-            "上方连接示意图同步使用所选产品标志，保留原始形状及配色，并适配明暗主题和手机布局。",
-            "标志随站点本地提供，记录官方来源与归属；接入步骤保持，本批未部署。"
+            "完成For your AI接入工作台的最终交付，保留已确认标题、FieldToFit品牌图形与Codex／Claude／OpenClaw／Pi真实标志。",
+            "修复正式验收中发现的远程检索断连：索引读取结束后释放旧连接，再保存或恢复分页游标；不自动重试结果不确定的写入。",
+            "新增断连恢复与写入不重试回归，保持公开资料、API与SQLite分页语义；四客户端完整聊天验收仍未逐一完成。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Official client marks on For your AI",
+          "title": "For your AI release verification and remote lookup connection fix",
           "highlights": [
-            "Replace client placeholders with official marks: GPT for Codex as requested, and the Claude, OpenClaw and Pi website marks.",
-            "Use the selected product mark in the connection illustration, preserving its geometry and colors across themes and mobile layouts.",
-            "Serve the marks locally with documented official sources and ownership. Setup instructions are retained; this batch is not deployed."
+            "Complete the For your AI workspace delivery with the approved headline, FieldToFit emblem and official marks for Codex, Claude, OpenClaw and Pi.",
+            "Fix a remote lookup disconnect discovered during production verification: release the index transport before saving or resuming a cursor, without retrying writes whose outcome is uncertain.",
+            "Add regressions for expired connections and lost write responses while preserving published content, public APIs and SQLite pagination semantics. Full chat acceptance in all four clients remains incomplete."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.52"
+    },
+    {
+      "version": "1.8.51",
+      "date": "2026-10-13",
+      "deployed_on": "2026-10-13",
+      "copy": {
+        "zh": {
+          "title": "For your AI接入工作台与四客户端引导",
+          "highlights": [
+            "For your AI采用浅色留白与局部玻璃流光，主标题为「把 FieldToFit，接入你的 AI。」，连接示意使用FieldToFit品牌图形和所选客户端真实标志。",
+            "为Codex、Claude、OpenClaw、Pi提供七种接入路径、官方说明与具体复制内容；Codex按所有者指定使用GPT标志，其他客户端保留官网图形及配色。",
+            "前置首次提问、三种使用示例和本站服务检查，保留统一搜索、资料包下载及Codex专题同步；支持双语、明暗主题、手机和无脚本指引。",
+            "区分网站服务可达与客户端实际连接，复制失败可手动取用；四款真实客户端的完整聊天验收仍未逐一完成。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "For your AI connection workspace and four client guides",
+          "highlights": [
+            "Redesign For your AI with open spacing, subtle glass lighting and the headline “Connect FieldToFit to your AI.” The illustration uses the FieldToFit emblem and the selected client's official mark.",
+            "Provide seven setup paths for Codex, Claude, OpenClaw and Pi, with official references and precise copy actions. Use the GPT mark for Codex as requested and retain the other clients' official geometry and colors.",
+            "Bring the first question, three usage examples and service checks forward while retaining search, downloads and Codex topic sync. Support both languages, themes, mobile layouts and no-JavaScript guides.",
+            "Distinguish service availability from actual client connection and provide manual copy recovery. Full chat acceptance in all four real clients remains incomplete."
           ],
           "details": "",
           "translation_available": true

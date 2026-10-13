@@ -194,3 +194,88 @@ def test_merge_deduplicates_twenty_shared_aliases_before_limit(client):
     source['aliases']=['Alias'+str(i) for i in range(20)];target['aliases']=source['aliases'][:]
     merged,_=st.combine(source,target,{})
     assert len(merged['aliases'])==20
+
+
+@pytest.fixture
+def idle_remote_lookup(monkeypatch):
+    """A remote transport expires while the fully fetched index is processed."""
+    import sqlite3
+    import httpx
+    from contextlib import contextmanager
+    from backend import db as database
+
+    local = sqlite3.connect(':memory:')
+    local.execute('CREATE TABLE knowledge_read_snapshots (id, kind, query, data, created_at, expires_at)')
+    clients, attempts = [], []
+
+    class Transport:
+        def __init__(self, **kwargs):
+            self.stale = False
+            self.closed = False
+            clients.append(self)
+
+        def post(self, url, *, json, headers):
+            results = []
+            for request in json['requests']:
+                if request['type'] == 'close':
+                    results.append({'type': 'ok', 'response': {}})
+                    continue
+                stmt = request['stmt']
+                attempts.append(stmt['sql'])
+                if self.stale:
+                    raise httpx.RemoteProtocolError('Server disconnected without sending a response')
+                params = [arg.get('value') for arg in stmt['args']]
+                cursor = local.execute(stmt['sql'], params)
+                columns = [{'name': col[0]} for col in cursor.description or []]
+                rows = [[{'type': 'text', 'value': value} for value in row] for row in cursor.fetchall()]
+                if state['fail_insert'] and stmt['sql'].startswith('INSERT'):
+                    # The server accepted the write, but its response was lost.
+                    raise httpx.RemoteProtocolError('Response lost after insert')
+                results.append({'type': 'ok', 'response': {'result': {'cols': columns, 'rows': rows}}})
+            return httpx.Response(200, json={'results': results}, request=httpx.Request('POST', url))
+
+        def close(self):
+            self.closed = True
+
+    @contextmanager
+    def remote_db():
+        db = database.TursoConnection()
+        db._base = 'https://database.example'
+        db._token = 'test-only'
+        db.row_factory = sqlite3.Row
+        try:
+            yield db
+        finally:
+            db.close()
+
+    def materialized_index(db):
+        db.execute('SELECT 1')
+        clients[-1].stale = True
+        return {}
+
+    state = {'fail_insert': False, 'attempts': attempts, 'clients': clients, 'local': local}
+    monkeypatch.setattr(database.httpx, 'Client', Transport)
+    monkeypatch.setattr(l, 'get_db', remote_db)
+    monkeypatch.setattr(l, 'index', materialized_index)
+    yield state
+    local.close()
+
+
+def test_lookup_and_cursor_survive_transport_expiring_during_indexing(idle_remote_lookup):
+    first = l.lookup('Claude')
+    resumed = l.lookup('Claude', cursor=first['page_cursor'])
+    assert first['total'] == resumed['total'] == 0
+    assert first['snapshot'] == resumed['snapshot']
+    attempts = idle_remote_lookup['attempts']
+    assert sum(sql.startswith('DELETE') for sql in attempts) == 1
+    assert sum(sql.startswith('INSERT') for sql in attempts) == 1
+    assert all(client.closed for client in idle_remote_lookup['clients'])
+
+
+def test_lookup_does_not_retry_an_accepted_write_with_lost_response(idle_remote_lookup):
+    import httpx
+    idle_remote_lookup['fail_insert'] = True
+    with pytest.raises(httpx.RemoteProtocolError, match='Response lost after insert'):
+        l.lookup('Claude')
+    assert sum(sql.startswith('INSERT') for sql in idle_remote_lookup['attempts']) == 1
+    assert idle_remote_lookup['local'].execute('SELECT count(*) FROM knowledge_read_snapshots').fetchone()[0] == 1

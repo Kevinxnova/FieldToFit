@@ -231,6 +231,11 @@ def lookup(q, scope='all', object_type='', limit=10, cursor=None):
             docs = index(db)
         except (ValueError, KeyError, TypeError, OSError) as exc:
             raise p.PlatformError('Published discovery index is temporarily unavailable', 'lookup_unavailable', 503) from exc
+        if isinstance(db, TursoConnection):
+            # The atomic index read has completed and all rows are materialized.
+            # Its HTTP connection can expire during indexing/ranking; open a fresh
+            # transport for cursor storage without replaying an ambiguous write.
+            db.close()
         if cursor:
             snapshot, position = _resume(db, cursor, 'lookup', query)
         else:

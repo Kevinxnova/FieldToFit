@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.51](CHANGELOG.md#v1.8.51)** · Release tag not yet published
+**Current source version: [v1.8.52](CHANGELOG.md#v1.8.52)** · [fieldtofit-v1.8.52](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.52)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Replace client placeholders with official marks: GPT for Codex as requested, and the Claude, OpenClaw and Pi website marks.
-- Use the selected product mark in the connection illustration, preserving its geometry and colors across themes and mobile layouts.
-- Serve the marks locally with documented official sources and ownership. Setup instructions are retained; this batch is not deployed.
+- Complete the For your AI workspace delivery with the approved headline, FieldToFit emblem and official marks for Codex, Claude, OpenClaw and Pi.
+- Fix a remote lookup disconnect discovered during production verification: release the index transport before saving or resuming a cursor, without retrying writes whose outcome is uncertain.
+- Add regressions for expired connections and lost write responses while preserving published content, public APIs and SQLite pagination semantics. Full chat acceptance in all four clients remains incomplete.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
@@ -60,7 +60,7 @@ Public read-only MCP address:
 https://fieldtofit.top/api/mcp/curated
 ```
 
-Add this address to an AI client that supports remote HTTP MCP. The source now includes step-by-step For your AI guides for Codex, Claude, OpenClaw and Pi, plus first questions, official references and review dates; this batch is not deployed. Ask your AI to retrieve relevant materials, sources, versions and known limitations, then continue with your task.
+Add this address to an AI client that supports remote HTTP MCP. For your AI now provides live step-by-step guides for Codex, Claude, OpenClaw and Pi, plus first questions, official references and review dates. Ask your AI to retrieve relevant materials, sources, versions and known limitations, then continue with your task.
 
 The live `curated_lookup` tool lets your AI discover developments, ongoing-watch profiles and permitted stored text within the same MCP service, with exact reading arguments and shared search previews on For your AI. Available since v1.5.0; check `tools/list` for live capabilities.
 

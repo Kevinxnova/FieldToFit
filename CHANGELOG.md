@@ -4,23 +4,43 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
-<a id="v1.8.51"></a>
-## v1.8.51 · For your AI四客户端真实标志 · 2026-10-13
+<a id="v1.8.52"></a>
+## v1.8.52 · For your AI正式验收与远程检索连接修复 · 2026-10-13
 
-<!-- release-tag:unpublished -->
-<!-- public-title:en:Official client marks on For your AI -->
+<!-- site-deployed:2026-10-13 -->
+<!-- public-title:en:For your AI release verification and remote lookup connection fix -->
 <!-- release-summary:zh:start -->
-- 四客户端选择卡使用真实产品标志：Codex按所有者指定采用GPT标志，Claude、OpenClaw、Pi使用各自官网图形。
-- 上方连接示意图同步使用所选产品标志，保留原始形状及配色，并适配明暗主题和手机布局。
-- 标志随站点本地提供，记录官方来源与归属；接入步骤保持，本批未部署。
+- 完成For your AI接入工作台的最终交付，保留已确认标题、FieldToFit品牌图形与Codex／Claude／OpenClaw／Pi真实标志。
+- 修复正式验收中发现的远程检索断连：索引读取结束后释放旧连接，再保存或恢复分页游标；不自动重试结果不确定的写入。
+- 新增断连恢复与写入不重试回归，保持公开资料、API与SQLite分页语义；四客户端完整聊天验收仍未逐一完成。
 <!-- release-summary:zh:end -->
 <!-- release-summary:en:start -->
-- Replace client placeholders with official marks: GPT for Codex as requested, and the Claude, OpenClaw and Pi website marks.
-- Use the selected product mark in the connection illustration, preserving its geometry and colors across themes and mobile layouts.
-- Serve the marks locally with documented official sources and ownership. Setup instructions are retained; this batch is not deployed.
+- Complete the For your AI workspace delivery with the approved headline, FieldToFit emblem and official marks for Codex, Claude, OpenClaw and Pi.
+- Fix a remote lookup disconnect discovered during production verification: release the index transport before saving or resuming a cursor, without retrying writes whose outcome is uncertain.
+- Add regressions for expired connections and lost write responses while preserving published content, public APIs and SQLite pagination semantics. Full chat acceptance in all four clients remains incomplete.
 <!-- release-summary:en:end -->
 
-对应[REQ-8-10](FieldToFit-PM.md#req-8-10)。产品标志只用于识别接入对象，来源及处理见[素材说明](docs/guides/brand-assets.md#client-marks)，实际验证见[本次复验](docs/validation/2026-10-13-for-ai-onboarding.md#client-mark-review)。
+对应[REQ-8-9至12](FieldToFit-PM.md#for-ai-onboarding-plan)。v1.8.51首轮正式读取通过，发布状态收尾部署随后两次检索返回500，日志定位到索引处理后旧HTTP连接断开；本版补充修复，未修改已审内容或数据库结构。74项相关回归、五组交互／六组语言与正式构建通过；正式双语页面、四标志、三个MCP及两轮双语检索／游标恢复／完整读取已通过，四公开集合保持。正式浏览器视觉因工具超时未完成。验证与部署事实见[记录](docs/validation/2026-10-13-for-ai-onboarding.md#remote-lookup-fix)。
+
+<a id="v1.8.51"></a>
+## v1.8.51 · For your AI接入工作台与四客户端引导 · 2026-10-13
+
+<!-- site-deployed:2026-10-13 -->
+<!-- public-title:en:For your AI connection workspace and four client guides -->
+<!-- release-summary:zh:start -->
+- For your AI采用浅色留白与局部玻璃流光，主标题为「把 FieldToFit，接入你的 AI。」，连接示意使用FieldToFit品牌图形和所选客户端真实标志。
+- 为Codex、Claude、OpenClaw、Pi提供七种接入路径、官方说明与具体复制内容；Codex按所有者指定使用GPT标志，其他客户端保留官网图形及配色。
+- 前置首次提问、三种使用示例和本站服务检查，保留统一搜索、资料包下载及Codex专题同步；支持双语、明暗主题、手机和无脚本指引。
+- 区分网站服务可达与客户端实际连接，复制失败可手动取用；四款真实客户端的完整聊天验收仍未逐一完成。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Redesign For your AI with open spacing, subtle glass lighting and the headline “Connect FieldToFit to your AI.” The illustration uses the FieldToFit emblem and the selected client's official mark.
+- Provide seven setup paths for Codex, Claude, OpenClaw and Pi, with official references and precise copy actions. Use the GPT mark for Codex as requested and retain the other clients' official geometry and colors.
+- Bring the first question, three usage examples and service checks forward while retaining search, downloads and Codex topic sync. Support both languages, themes, mobile layouts and no-JavaScript guides.
+- Distinguish service availability from actual client connection and provide manual copy recovery. Full chat acceptance in all four real clients remains incomplete.
+<!-- release-summary:en:end -->
+
+对应[REQ-8-10至12](FieldToFit-PM.md#for-ai-onboarding-plan)。本版汇总v1.8.49–51的已确认页面实现与两轮复审；未改变公开API、生产内容或日程。素材来源见[说明](docs/guides/brand-assets.md#client-marks)，开发与发布验证见[验收记录](docs/validation/2026-10-13-for-ai-onboarding.md#production-deployment)。2026-10-13已部署正式站；54项回归、五组交互／六组语言及正式双语HTTP／三个MCP／资源一致性通过，公开内容集合保持。正式浏览器因连接与工具超时未完成视觉复验；本地视觉验收和线上构建资源哈希已核对。
 
 <a id="v1.8.50"></a>
 ## v1.8.50 · For your AI品牌图形与主标题修订 · 2026-10-13

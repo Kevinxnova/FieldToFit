@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.51](CHANGELOG.md#v1.8.51)** · 尚未推送发布标签
+**当前源码版本：[v1.8.52](CHANGELOG.md#v1.8.52)** · [fieldtofit-v1.8.52](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.52)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 四客户端选择卡使用真实产品标志：Codex按所有者指定采用GPT标志，Claude、OpenClaw、Pi使用各自官网图形。
-- 上方连接示意图同步使用所选产品标志，保留原始形状及配色，并适配明暗主题和手机布局。
-- 标志随站点本地提供，记录官方来源与归属；接入步骤保持，本批未部署。
+- 完成For your AI接入工作台的最终交付，保留已确认标题、FieldToFit品牌图形与Codex／Claude／OpenClaw／Pi真实标志。
+- 修复正式验收中发现的远程检索断连：索引读取结束后释放旧连接，再保存或恢复分页游标；不自动重试结果不确定的写入。
+- 新增断连恢复与写入不重试回归，保持公开资料、API与SQLite分页语义；四客户端完整聊天验收仍未逐一完成。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
@@ -60,7 +60,7 @@ REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条
 https://fieldtofit.top/api/mcp/curated
 ```
 
-将地址添加到支持远程 HTTP MCP 的 AI 客户端。源码中的 For your AI 已新增 Codex、Claude、OpenClaw、Pi 分步接入与首次提问，含官方说明和核对日期；本批尚未部署。连接后，让 AI 检索相关资料、读取出处、版本和已知限制，并结合你的任务继续工作。
+将地址添加到支持远程 HTTP MCP 的 AI 客户端。For your AI 已上线 Codex、Claude、OpenClaw、Pi 分步接入与首次提问，含官方说明和核对日期。连接后，让 AI 检索相关资料、读取出处、版本和已知限制，并结合你的任务继续工作。
 
 `curated_lookup` 已上线：在同一 MCP 内检索近期动态、持续关注和可公开原文，按结果继续读取或打包；For your AI 提供同源搜索预览。本版继续提供同一 MCP 地址；正式服务能力可通过 `tools/list` 核对。
 

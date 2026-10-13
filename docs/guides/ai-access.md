@@ -8,13 +8,13 @@
 
 公开HTTP查询可加 `lang=en`；MCP工具在 `arguments` 中传 `"lang":"en"`。省略语言保持中文默认和原结构。英文网页、档案、历史、下载与资料包使用同一已审英文；原始材料正文与定位不翻译。本站英文正文缺译或过期返回明确错误。源稿审核与实际部署状态见[双语指南](english-content.md)。
 
-## For your AI 分步接入（v1.8.49源码，未部署）
+## For your AI 分步接入（已上线v1.8.52）
 
 页面先选Codex、Claude、OpenClaw或Pi，再按三步完成添加与首次读取。Codex支持桌面／命令行；Claude支持网页／桌面及独立Claude Code步骤；OpenClaw支持控制台／命令行；Pi使用带内置MCP的coding agent版本，已有扩展可能接管连接。每种路径的官方文档和2026-10-13核对记录与网页共同维护于[客户端引导数据](../../backend/seo/ai_clients.json)。
 
 复制服务地址、命令或测试问题各自有反馈与手动回退。客户端内实际调用FieldToFit并返回带出处、修订与核验日期的内容，才是读取成功；网站检查仅确认服务可达。英文提问包含每次调用传lang=en的要求。运行中的OpenClaw可能需要重载；Claude云端不能读取localhost。私有读令牌仍独立配置、不进入复制内容，暂无账号要求。
 
-本轮验证包含官方步骤、现有Codex／Claude命令帮助、Codex临时配置解析、隔离HTTP MCP双语查找／完整读取及网页交互；未在四款真实客户端逐一进行聊天取材，不将协议测试当成客户端全验。实际结果见[验收](../validation/2026-10-13-for-ai-onboarding.md)。
+本轮验证包含官方步骤、现有Codex／Claude命令帮助、Codex临时配置解析、隔离与正式HTTP MCP双语查找／完整读取及本地网页交互；未在四款真实客户端逐一进行聊天取材，不将协议测试当成客户端全验。实际结果见[验收](../validation/2026-10-13-for-ai-onboarding.md)。
 
 ## HTTP MCP
 
