@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.40](CHANGELOG.md#v1.8.40)** · [fieldtofit-v1.8.40](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.40)
+**当前源码版本：[v1.8.41](CHANGELOG.md#v1.8.41)** · [fieldtofit-v1.8.41](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.41)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 热点信息卡默认隐藏人群与采用条件，鼠标移入或键盘聚焦时展开，离开后收起；触屏可通过明确按钮展开与收起。
-- 卡面取消旋转，保留悬停放大与反光；三列卡片加宽，展开单张时其他卡片保持紧凑。
-- 首批Claude Cowork、ChatGPT × Devin与Haiku 5.5信息卡已上线，提供中英文分层解读、官方证据和人工分享图。
+- 补录官方Day 7：GPT-6.1 Sol在Codex／Work的默认上下文扩至500k，订阅用量免长上下文附加费；不扩大为API或购买点数优惠。
+- 补录官方Day 8全球重置公告，保留PST时间表述；D-123补入官方Day 6已全部传播的确认，仍归10月11日。
+- 正文、概览、真实头像及原帖卡片同源更新，专题共26条；已生效重置计数不推造，正常MCP位置接收两条新增及一条更正。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

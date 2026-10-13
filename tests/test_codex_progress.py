@@ -19,8 +19,13 @@ def event(data, ident='D-78'):
 def test_dates_numbering_precision_shared_api_and_mcp(client):
     body = client.get('/api/v1/platform/news').json
     days = body['codex_progress']['days']
-    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
+    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
     by_date = {d['date']: d for d in days}
+    assert by_date['2026-10-13']['codex_ids'] == ['D-126']
+    assert by_date['2026-10-12']['codex_ids'] == ['D-125']
+    assert event(body, 'D-125')['codex_28_days']['official_day'] == 7
+    assert event(body, 'D-126')['codex_28_days']['official_day'] == 8
+    assert event(body, 'D-126')['codex_28_days']['type'] == 'announcement'
     assert by_date['2026-10-11']['codex_ids'] == ['D-123']
     reset_announcement = event(body, 'D-123')['codex_28_days']
     assert reset_announcement['official_day'] == 6 and reset_announcement['type'] == 'announcement' and 'reset' not in reset_announcement
@@ -230,7 +235,7 @@ def test_month_grid_has_real_dates_without_creating_logs():
     oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
     assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
     assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
-    assert sum(bool(c['log']) for c in oct)==7 and sum(bool(c['log']) for c in nov)==0
+    assert sum(bool(c['log']) for c in oct)==9 and sum(bool(c['log']) for c in nov)==0
     assert topic==before
 
 

@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.40](CHANGELOG.md#v1.8.40)** · [fieldtofit-v1.8.40](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.40)
+**Current source version: [v1.8.41](CHANGELOG.md#v1.8.41)** · [fieldtofit-v1.8.41](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.41)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Information cards initially hide audience and adoption conditions, revealing them on hover or keyboard focus. An explicit button lets touch readers expand and collapse them.
-- Cards stay flat while retaining hover enlargement and glare. Wider cards keep the three-column layout, and expanding one leaves its neighbors compact.
-- Publish the first Claude Cowork, ChatGPT × Devin and Haiku 5.5 cards, with bilingual layered explanations, official evidence and manually prepared share images.
+- Add official Day 7: a 500k default GPT-6.1 Sol context in Codex / Work and no long-context surcharge on subscription usage, without extending the statement to API or purchased credits.
+- Add the official Day 8 global-reset announcement with its PST wording; amend D-123 with official Day 6's fully-propagated confirmation while retaining October 11.
+- Keep articles, overviews, real avatars and original-post cards on one reviewed source, with 26 topic records; preserve the strict reset counter and receive two additions plus one amendment through the normal MCP checkpoint.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
