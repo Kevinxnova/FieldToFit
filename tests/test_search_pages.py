@@ -219,7 +219,7 @@ def test_remote_sitemap_reads_one_atomic_snapshot(site, monkeypatch):
     monkeypatch.setattr(database, 'get_db', remote_db)
     assert urls(site) == expected
     assert len(batches) == 1
-    assert len(batches[0]) == 3
+    assert len(batches[0]) == 4  # Daily archive joins the same atomic read snapshot.
 
 
 @pytest.mark.parametrize('language', ['zh', 'en'])

@@ -53,16 +53,27 @@
       "regions": [
         "hkg1"
       ],
-      "includeFiles": "backend/{knowledge/content/**,db/*.sql,seo/**}"
+      "includeFiles": "backend/{daily_briefing/fonts/**,knowledge/content/**,db/*.sql,seo/**}"
     },
     "api/cron_knowledge.py": {
       "maxDuration": 300,
       "regions": [
         "hkg1"
       ]
+    },
+    "api/cron_daily_journal.py": {
+      "maxDuration": 300,
+      "regions": [
+        "hkg1"
+      ],
+      "includeFiles": "backend/{daily_briefing/fonts/**,knowledge/content/**,db/*.sql}"
     }
   },
   "rewrites": [
+    {
+      "source": "/api/cron/daily-journal",
+      "destination": "/api/cron_daily_journal.py"
+    },
     {
       "source": "/api/cron/platform",
       "destination": "/api/cron_platform.py"

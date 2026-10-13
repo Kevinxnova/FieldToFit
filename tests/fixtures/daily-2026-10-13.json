@@ -1,0 +1,1112 @@
+{
+  "schema_version": "fieldtofit.daily.v1",
+  "date": "2026-10-13",
+  "kind": "review_sample",
+  "window_start": "2026-10-12T00:00:00+08:00",
+  "cutoff_at": "2026-10-13T21:55:00+08:00",
+  "headline": {
+    "zh": "从模型发布，\n到任务交付。",
+    "en": "From model releases\nto getting work done."
+  },
+  "intro": {
+    "zh": "Meta 把新模型放进 Agent 与编程产品；微软继续用自研芯片重算推理成本；上海将人形机器人进工厂写入量化目标。",
+    "en": "Meta brings new models to agents and coding; Microsoft revisits inference economics with its own chips; Shanghai sets numerical targets for humanoid robots in factories."
+  },
+  "takeaway": {
+    "zh": "本期关注一条主线：能力要变成可持续的交付，还需要成本、可靠性与治理一起跟上。",
+    "en": "This issue follows one theme: sustained delivery requires cost, reliability and governance to advance alongside capability."
+  },
+  "closing": {
+    "zh": "当“能做”变成“能持续交付”，谁能把可靠性和成本一起降下来？下次读到新模型、新芯片或机器人订单，可以带着这个问题看证据。",
+    "en": "As capability becomes sustained delivery, who can improve reliability while bringing costs down? Keep this question in mind when examining evidence behind a new model, chip or robot order."
+  },
+  "stories": [
+    {
+      "id": "event-1",
+      "event_key": "sample-2026-10-1",
+      "section": "companies",
+      "dimensions": [
+        "global_companies",
+        "coding"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "Meta 推出 Muse Wonder，重点放在持续完成任务",
+        "en": "Meta introduces Muse Wonder, focused on sustained task execution"
+      },
+      "summary": {
+        "zh": "Muse Wonder 与 Muse Wonder Full 同时亮相，强调记忆、注意力管理和 Agent 能力。Wonder 已进入 Meta Model API 与 Muse Code；Full 当前面向 Muse Code 订阅用户。",
+        "en": "Muse Wonder and Muse Wonder Full emphasize memory, attention management and agent capabilities. Wonder is available through the Meta Model API and Muse Code; Full currently serves Muse Code subscribers."
+      },
+      "analysis": {
+        "zh": "对开发者而言，选型除了看基准分数，还应比较长任务完成率、调用成本以及中断后的恢复能力。",
+        "en": "Developers should compare long-task completion, call costs and recovery after interruptions alongside benchmark scores."
+      },
+      "source_ids": [
+        "s1",
+        "s2"
+      ],
+      "highlight": true
+    },
+    {
+      "id": "event-2",
+      "event_key": "sample-2026-10-2",
+      "section": "companies",
+      "dimensions": [
+        "open_source",
+        "agents_robotics"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "OpenClaw 2026.10.2，优先修复升级与运行可靠性",
+        "en": "OpenClaw 2026.10.2 prioritizes upgrade recovery and reliability"
+      },
+      "summary": {
+        "zh": "新稳定版处理从 2026.10.1 升级时的卡顿与恢复问题，并调整上下文压缩、凭据遮蔽和缓存一致性。",
+        "en": "The stable release addresses stalls and recovery when upgrading from 2026.10.1, alongside changes to context compaction, credential masking and cache consistency."
+      },
+      "analysis": {
+        "zh": "Agent 日常可用性同样取决于维护能力。旧用户应先对照自己的升级路径与配置，再安排更新。",
+        "en": "Day-to-day agent usefulness also depends on maintenance. Existing users should review their upgrade path and configuration before updating."
+      },
+      "source_ids": [
+        "s3"
+      ],
+      "highlight": false
+    },
+    {
+      "id": "event-3",
+      "event_key": "sample-2026-10-3",
+      "section": "companies",
+      "dimensions": [
+        "research",
+        "global_companies"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "Anthropic 将自我复制风险研究延伸到小模型",
+        "en": "Anthropic extends self-replication risk research to smaller models"
+      },
+      "summary": {
+        "zh": "研究发现，小模型可以完成复制链中的部分任务，但端到端表现仍受错误影响；更强模型在简化评估中达到的能力，不能直接外推到真实网络。",
+        "en": "The study finds that smaller models can complete parts of a replication chain, while errors still affect end-to-end performance. Capabilities of stronger models in simplified evaluations do not directly establish capabilities on real networks."
+      },
+      "analysis": {
+        "zh": "终端设备和边缘算力也需要进入 AI 安全评估范围，不能只关注大型数据中心。",
+        "en": "AI safety evaluation should also cover endpoint devices and edge computing, rather than focusing only on large data centers."
+      },
+      "source_ids": [
+        "s4"
+      ],
+      "highlight": false
+    },
+    {
+      "id": "event-4",
+      "event_key": "sample-2026-10-4",
+      "section": "chips",
+      "dimensions": [
+        "chips",
+        "infrastructure"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "Maia 300：微软继续将自有推理负载迁向自研系统",
+        "en": "Maia 300: Microsoft continues shifting inference workloads to its own systems"
+      },
+      "summary": {
+        "zh": "微软宣布 Maia 300 将于 2027 年开始生产，并计划把 Maia 系统扩至多吉瓦部署。Maia 200 已运行于 Microsoft Copilot 与 MAI，GitHub Copilot、Foundry 的后续接入仍有时间表。",
+        "en": "Microsoft announced that Maia 300 production will begin in 2027 and plans multi-gigawatt Maia deployments. Maia 200 already serves Microsoft Copilot and MAI; GitHub Copilot and Foundry integration remain scheduled future steps."
+      },
+      "analysis": {
+        "zh": "竞争单位从单颗芯片扩展到整个机架、电力和软件系统。对云客户，更该追问这些效率何时转化为可购买的服务与价格。",
+        "en": "Competition extends beyond chips to racks, power and software. Cloud customers should ask when projected efficiencies will become purchasable services and prices."
+      },
+      "source_ids": [
+        "s5"
+      ],
+      "highlight": true,
+      "metric": {
+        "value": "40%",
+        "label": {
+          "zh": "微软预期的每兆瓦 token 产出提升",
+          "en": "Microsoft’s projected increase in tokens per megawatt"
+        },
+        "note": {
+          "zh": "对比其所称领先 GPU 系统；厂商预期，非独立实测。",
+          "en": "Versus what it calls leading GPU systems; a company projection, not an independent measurement."
+        }
+      }
+    },
+    {
+      "id": "event-5",
+      "event_key": "sample-2026-10-5",
+      "section": "robotics",
+      "dimensions": [
+        "agents_robotics",
+        "policy"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "8,000 台人形机器人进工厂：上海给出产业目标",
+        "en": "Shanghai targets 8,000 humanoid robots in factories by 2028"
+      },
+      "summary": {
+        "zh": "上海在 10 月 12 日工博会开幕时发布新一代智能制造行动，提出到 2028 年推动 8,000 台人形机器人进工厂，并打造 500 家先进智能工厂。",
+        "en": "At the opening of the industrial fair on October 12, Shanghai announced a new intelligent-manufacturing initiative targeting 8,000 humanoid robots in factories and 500 advanced smart factories by 2028."
+      },
+      "analysis": {
+        "zh": "需求开始被写成可追踪的场景与数量。后续更值得跟踪采购、工位任务和持续运行数据，而非只看发布会演示。",
+        "en": "Demand is being expressed as measurable scenarios and quantities. Procurement, workstation tasks and sustained operation will be more informative than demonstrations alone."
+      },
+      "source_ids": [
+        "s6"
+      ],
+      "highlight": true,
+      "metric": {
+        "value": "8,000",
+        "label": {
+          "zh": "台人形机器人进工厂",
+          "en": "Humanoid robots targeted for factories"
+        },
+        "note": {
+          "zh": "上海行动目标，目标年份 2028。",
+          "en": "Shanghai initiative target for 2028."
+        }
+      }
+    },
+    {
+      "id": "event-6",
+      "event_key": "sample-2026-10-6",
+      "section": "robotics",
+      "dimensions": [
+        "agents_robotics"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "ABB 新增 IRB 1700 系列，重点仍是节拍、精度和工位适配",
+        "en": "ABB adds IRB 1700 robots, emphasizing precision and workstation fit"
+      },
+      "summary": {
+        "zh": "ABB 发布 IRB 1700 与 IRB 1700ID 两款工业机器人，面向精密制造任务，强调负载、紧凑布局及生产效率。",
+        "en": "ABB launched the IRB 1700 and IRB 1700ID industrial robots for precision manufacturing, emphasizing payload, compact layouts and production efficiency."
+      },
+      "analysis": {
+        "zh": "与人形机器人目标对照，成熟工业机器人的价值更容易落到具体工序。对制造用户，适配现有产线和维护成本同样重要。",
+        "en": "Compared with humanoid deployment targets, established industrial robots can be assessed against specific processes. Line integration and maintenance costs matter to manufacturing customers."
+      },
+      "source_ids": [
+        "s7"
+      ],
+      "highlight": false
+    },
+    {
+      "id": "event-7",
+      "event_key": "sample-2026-10-7",
+      "section": "infrastructure",
+      "dimensions": [
+        "infrastructure"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "USFP 光模块方案，把更高密度互连带进 AI 集群讨论",
+        "en": "USFP optics bring denser interconnects into the AI cluster discussion"
+      },
+      "summary": {
+        "zh": "NVIDIA 与 Cisco 公布 USFP 可插拔光学外形方案，面向每通道 400 Gb/s 互连；拟先支持 16 条全双工通道，并规划后续扩展。",
+        "en": "NVIDIA and Cisco announced the USFP pluggable optics form factor for 400 Gb/s per-lane links. Initial plans support 16 full-duplex lanes, with further expansion planned."
+      },
+      "analysis": {
+        "zh": "算力扩张不仅受芯片限制，网络带宽、布线密度和能耗也会影响集群效率。这类变化更适合进入基础设施选型观察清单。",
+        "en": "Cluster expansion depends on network bandwidth, cabling density and power as well as chips. This development belongs on infrastructure procurement watchlists."
+      },
+      "source_ids": [
+        "s8"
+      ],
+      "highlight": false
+    },
+    {
+      "id": "event-8",
+      "event_key": "sample-2026-10-8",
+      "section": "policy",
+      "dimensions": [
+        "policy"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "英国强化 AI 风险应对，讨论事件报告与网络防御",
+        "en": "The UK strengthens AI risk defenses and considers reporting rules"
+      },
+      "summary": {
+        "zh": "英国政府公布 AI 风险防御措施，并考虑强化相关立法与报告机制，覆盖严重事件及险些发生的事件。",
+        "en": "The UK government announced defenses against AI risks and is considering stronger legislation and reporting mechanisms covering serious incidents and near misses."
+      },
+      "analysis": {
+        "zh": "对提供 Agent 或高权限 AI 服务的团队，可追踪事件记录、上报及应急处置要求的后续细化。",
+        "en": "Teams building agents or AI services with broad permissions should follow the evolving requirements for incident records, reporting and emergency response."
+      },
+      "source_ids": [
+        "s9"
+      ],
+      "highlight": false
+    },
+    {
+      "id": "event-9",
+      "event_key": "sample-2026-10-9",
+      "section": "policy",
+      "dimensions": [
+        "policy"
+      ],
+      "event_date": "2026-10-12",
+      "title": {
+        "zh": "欧盟 AI 科学小组跟进失控事件，拟继续向企业索取信息",
+        "en": "EU AI scientific panel follows up on loss-of-control incidents"
+      },
+      "summary": {
+        "zh": "欧委会披露 10 月 9 日特别会议：AI Office 已收到严重事件报告，并就安全实践发出信息请求；接下来将合并专家问题继续调查。",
+        "en": "The European Commission described an extraordinary October 9 meeting: the AI Office had received serious-incident reports and issued requests for information about safety practices. Further inquiries will consolidate expert questions."
+      },
+      "analysis": {
+        "zh": "模型开发与测试阶段的可监测性、事故证据保存，正在进入监管关注范围。",
+        "en": "Monitoring during development and testing, and preservation of incident evidence, are entering regulatory focus."
+      },
+      "source_ids": [
+        "s10"
+      ],
+      "highlight": false
+    }
+  ],
+  "products": [
+    {
+      "id": "product-1",
+      "name": {
+        "zh": "Muse Wonder",
+        "en": "Muse Wonder"
+      },
+      "organization": {
+        "zh": "Meta · 模型",
+        "en": "Meta · Model"
+      },
+      "version": {
+        "zh": "Wonder / Full",
+        "en": "Wonder / Full"
+      },
+      "release_date": "2026-10-12",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "changes": {
+        "zh": "面向 Agent 与编程；Wonder 提供 API，Full 当前限 Muse Code 订阅入口。",
+        "en": "Agents and coding; Wonder has an API, while Full currently requires a Muse Code subscription."
+      },
+      "source_ids": [
+        "s1"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "product-2",
+      "name": {
+        "zh": "OpenClaw",
+        "en": "OpenClaw"
+      },
+      "organization": {
+        "zh": "OpenClaw 项目 · Agent",
+        "en": "OpenClaw project · Agent"
+      },
+      "version": {
+        "zh": "2026.10.2 稳定版",
+        "en": "2026.10.2 stable"
+      },
+      "release_date": "2026-10-12",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "changes": {
+        "zh": "升级恢复、上下文压缩与运行修复；开源发布。",
+        "en": "Upgrade recovery, context compaction and runtime fixes; open-source release."
+      },
+      "source_ids": [
+        "s3"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "product-3",
+      "name": {
+        "zh": "Claude Haiku",
+        "en": "Claude Haiku"
+      },
+      "organization": {
+        "zh": "Anthropic · 模型",
+        "en": "Anthropic · Model"
+      },
+      "version": {
+        "zh": "Haiku 5.5",
+        "en": "Haiku 5.5"
+      },
+      "release_date": "2026-10-07",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "changes": {
+        "zh": "面向速度和成本敏感场景；通过 Claude 平台及合作云平台提供。",
+        "en": "Designed for speed- and cost-sensitive tasks; offered through the Claude platform and partner clouds."
+      },
+      "source_ids": [
+        "s11"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "product-4",
+      "name": {
+        "zh": "Qwen Image",
+        "en": "Qwen Image"
+      },
+      "organization": {
+        "zh": "阿里千问 · 图像模型",
+        "en": "Qwen · Image model"
+      },
+      "version": {
+        "zh": "2.1 Turbo",
+        "en": "2.1 Turbo"
+      },
+      "release_date": "2026-10-09",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "changes": {
+        "zh": "8 步图像生成与编辑；提供权重与 API。权重采用 qwen-research 许可，使用前需核对条款。",
+        "en": "Eight-step image generation and editing; weights and API available. Weights use the qwen-research license; check its terms before use."
+      },
+      "source_ids": [
+        "s12",
+        "s13"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "product-5",
+      "name": {
+        "zh": "GPT-6.1 Sol",
+        "en": "GPT-6.1 Sol"
+      },
+      "organization": {
+        "zh": "OpenAI · 模型 / API",
+        "en": "OpenAI · Model / API"
+      },
+      "version": {
+        "zh": "Ultrafast 模式更新",
+        "en": "Ultrafast mode update"
+      },
+      "release_date": "2026-10-08",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "changes": {
+        "zh": "Responses API 新增超快模式；这是服务能力更新，不是另一个模型版本。",
+        "en": "Ultrafast mode added to the Responses API. This is a service capability update, not a separate model version."
+      },
+      "source_ids": [
+        "s14"
+      ],
+      "is_new": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": {
+        "zh": "Meta 官方发布 · 2026-10-12",
+        "en": "about.fb.com · Original source"
+      },
+      "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s2",
+      "title": {
+        "zh": "Meta 技术说明",
+        "en": "research.meta.ai · Original source"
+      },
+      "url": "https://research.meta.ai/blog/muse-wonder",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s3",
+      "title": {
+        "zh": "OpenClaw 官方 release",
+        "en": "github.com · Original source"
+      },
+      "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.2",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s4",
+      "title": {
+        "zh": "Anthropic 原始研究 · 2026-10-12",
+        "en": "anthropic.com · Original source"
+      },
+      "url": "https://www.anthropic.com/research/self-replicating-ai",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s5",
+      "title": {
+        "zh": "微软官方公告 · 2026-10-12",
+        "en": "blogs.microsoft.com · Original source"
+      },
+      "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s6",
+      "title": {
+        "zh": "上海市政府网站 · 解放日报 · 2026-10-13",
+        "en": "shanghai.gov.cn · Original source"
+      },
+      "url": "https://www.shanghai.gov.cn/nw4411/20261013/361be69ddd6843c9933e1800d43ab20c.html",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s7",
+      "title": {
+        "zh": "ABB 在 A3 发布的原始新闻稿 · 2026-10-12",
+        "en": "automate.org · Original source"
+      },
+      "url": "https://www.automate.org/robotics/news/abb-robotics-introduces-two-new-high-performance-robots-for-precision-manufacturing",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s8",
+      "title": {
+        "zh": "NVIDIA 官方公告 · 2026-10-12",
+        "en": "nvidianews.nvidia.com · Original source"
+      },
+      "url": "https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s9",
+      "title": {
+        "zh": "英国政府公告 · 2026-10-12",
+        "en": "gov.uk · Original source"
+      },
+      "url": "https://www.gov.uk/government/news/britain-steps-up-national-defences-against-growing-ai-risks",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s10",
+      "title": {
+        "zh": "欧委会原文 · 公告 2026-10-12 / 更新 10-13",
+        "en": "digital-strategy.ec.europa.eu · Original source"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s11",
+      "title": {
+        "zh": "官方产品说明",
+        "en": "anthropic.com · Original source"
+      },
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s12",
+      "title": {
+        "zh": "官方更新记录",
+        "en": "github.com · Original source"
+      },
+      "url": "https://github.com/QwenLM/Qwen-Image-2.1",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s13",
+      "title": {
+        "zh": "模型卡 / 许可",
+        "en": "huggingface.co · Original source"
+      },
+      "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s14",
+      "title": {
+        "zh": "官方 API 更新日志",
+        "en": "developers.openai.com · Original source"
+      },
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s15",
+      "title": {
+        "zh": "Yahoo",
+        "en": "finance.yahoo.com · Original source"
+      },
+      "url": "https://finance.yahoo.com/quote/NVDA/history/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s16",
+      "title": {
+        "zh": "Stock Analysis",
+        "en": "stockanalysis.com · Original source"
+      },
+      "url": "https://stockanalysis.com/stocks/amd/history/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s17",
+      "title": {
+        "zh": "Investing",
+        "en": "investing.com · Original source"
+      },
+      "url": "https://www.investing.com/equities/intel-corp-historical-data",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s18",
+      "title": {
+        "zh": "Stock Analysis",
+        "en": "stockanalysis.com · Original source"
+      },
+      "url": "https://stockanalysis.com/stocks/msft/history/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s19",
+      "title": {
+        "zh": "Yahoo",
+        "en": "finance.yahoo.com · Original source"
+      },
+      "url": "https://finance.yahoo.com/quote/GOOGL/history/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s20",
+      "title": {
+        "zh": "Yahoo",
+        "en": "finance.yahoo.com · Original source"
+      },
+      "url": "https://finance.yahoo.com/quote/META/history/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s21",
+      "title": {
+        "zh": "Stock Analysis",
+        "en": "stockanalysis.com · Original source"
+      },
+      "url": "https://stockanalysis.com/stocks/amzn/history/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s22",
+      "title": {
+        "zh": "Yahoo",
+        "en": "hk.finance.yahoo.com · Original source"
+      },
+      "url": "https://hk.finance.yahoo.com/quote/688256.SS/history/",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s23",
+      "title": {
+        "zh": "Investing",
+        "en": "cn.investing.com · Original source"
+      },
+      "url": "https://cn.investing.com/equities/iflytek-a-historical-data",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s24",
+      "title": {
+        "zh": "Investing",
+        "en": "hk.investing.com · Original source"
+      },
+      "url": "https://hk.investing.com/equities/hygon-information-tech-historical-data",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s25",
+      "title": {
+        "zh": "Investing",
+        "en": "hk.investing.com · Original source"
+      },
+      "url": "https://hk.investing.com/equities/baidu-historical-data",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s26",
+      "title": {
+        "zh": "富途",
+        "en": "futunn.com · Original source"
+      },
+      "url": "https://www.futunn.com/stock/09988-HK",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s27",
+      "title": {
+        "zh": "新华社",
+        "en": "xinhuanet.com · Original source"
+      },
+      "url": "https://www.xinhuanet.com/20261013/bd91bb58016f421e8a8bc8560b817ea8/c.html",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s28",
+      "title": {
+        "zh": "记录滞后",
+        "en": "cn.investing.com · Original source"
+      },
+      "url": "https://cn.investing.com/equities/sensetime-group-inc-historical-data",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    },
+    {
+      "id": "s29",
+      "title": {
+        "zh": "证券之星",
+        "en": "4g.stockstar.com · Original source"
+      },
+      "url": "https://4g.stockstar.com/detail/RB2026101300033070",
+      "published_at": null,
+      "checked_at": "2026-10-13T21:55:00+08:00"
+    }
+  ],
+  "markets": [
+    {
+      "id": "us",
+      "currency": "USD",
+      "trade_date": "2026-10-12",
+      "closed_at": "2026-10-12T16:00:00-04:00",
+      "state": "closed",
+      "note": {
+        "zh": "常规收盘；不含盘后或次日盘中。",
+        "en": "Regular session close; excludes after-hours and the following intraday session."
+      },
+      "rows": [
+        {
+          "ticker": "NVDA",
+          "name": {
+            "zh": "NVIDIA",
+            "en": "NVIDIA"
+          },
+          "price": 226.32,
+          "change_pct": -1.29,
+          "state": "verified",
+          "source_ids": [
+            "s15"
+          ],
+          "as_of": "2026-10-12T16:00:00-04:00",
+          "delay_minutes": null
+        },
+        {
+          "ticker": "AMD",
+          "name": {
+            "zh": "AMD",
+            "en": "AMD"
+          },
+          "price": 594.24,
+          "change_pct": -2.28,
+          "state": "verified",
+          "source_ids": [
+            "s16"
+          ],
+          "as_of": "2026-10-12T16:00:00-04:00",
+          "delay_minutes": null
+        },
+        {
+          "ticker": "INTC",
+          "name": {
+            "zh": "Intel",
+            "en": "Intel"
+          },
+          "price": 101.35,
+          "change_pct": -3.2,
+          "state": "verified",
+          "source_ids": [
+            "s17"
+          ],
+          "as_of": "2026-10-12T16:00:00-04:00",
+          "delay_minutes": null
+        },
+        {
+          "ticker": "MSFT",
+          "name": {
+            "zh": "微软",
+            "en": "Microsoft"
+          },
+          "price": 541.15,
+          "change_pct": 1.14,
+          "state": "verified",
+          "source_ids": [
+            "s18"
+          ],
+          "as_of": "2026-10-12T16:00:00-04:00",
+          "delay_minutes": null
+        },
+        {
+          "ticker": "GOOGL",
+          "name": {
+            "zh": "Alphabet",
+            "en": "Alphabet"
+          },
+          "price": 352.72,
+          "change_pct": 0.3,
+          "state": "verified",
+          "source_ids": [
+            "s19"
+          ],
+          "as_of": "2026-10-12T16:00:00-04:00",
+          "delay_minutes": null
+        },
+        {
+          "ticker": "META",
+          "name": {
+            "zh": "Meta",
+            "en": "Meta"
+          },
+          "price": 742.96,
+          "change_pct": 3.38,
+          "state": "verified",
+          "source_ids": [
+            "s20"
+          ],
+          "as_of": "2026-10-12T16:00:00-04:00",
+          "delay_minutes": null
+        },
+        {
+          "ticker": "AMZN",
+          "name": {
+            "zh": "亚马逊",
+            "en": "Amazon"
+          },
+          "price": 259.53,
+          "change_pct": -1.11,
+          "state": "verified",
+          "source_ids": [
+            "s21"
+          ],
+          "as_of": "2026-10-12T16:00:00-04:00",
+          "delay_minutes": null
+        }
+      ]
+    },
+    {
+      "id": "cn",
+      "currency": "CNY",
+      "trade_date": "2026-10-13",
+      "closed_at": "2026-10-13T15:00:00+08:00",
+      "state": "closed",
+      "note": {
+        "zh": "上海／深圳交易所当日完整收盘。",
+        "en": "Complete Shanghai/Shenzhen session close."
+      },
+      "rows": [
+        {
+          "ticker": "688256",
+          "name": {
+            "zh": "寒武纪",
+            "en": "Cambricon"
+          },
+          "price": 976.49,
+          "change_pct": 0.47,
+          "state": "verified",
+          "source_ids": [
+            "s22"
+          ],
+          "as_of": "2026-10-13T15:00:00+08:00",
+          "delay_minutes": null
+        },
+        {
+          "ticker": "002230",
+          "name": {
+            "zh": "科大讯飞",
+            "en": "iFlytek"
+          },
+          "price": 37.22,
+          "change_pct": -0.59,
+          "state": "verified",
+          "source_ids": [
+            "s23"
+          ],
+          "as_of": "2026-10-13T15:00:00+08:00",
+          "delay_minutes": null
+        },
+        {
+          "ticker": "688041",
+          "name": {
+            "zh": "海光信息",
+            "en": "Hygon"
+          },
+          "price": 209.74,
+          "change_pct": -1.76,
+          "state": "verified",
+          "source_ids": [
+            "s24"
+          ],
+          "as_of": "2026-10-13T15:00:00+08:00",
+          "delay_minutes": null
+        }
+      ]
+    },
+    {
+      "id": "hk",
+      "currency": "HKD",
+      "trade_date": "2026-10-13",
+      "closed_at": null,
+      "state": "closed",
+      "note": {
+        "zh": "来源确认当日收市，但没有统一的精确时分。商汤缺值；阿里来源披露延迟15分钟。",
+        "en": "Sources identify this date’s close, without a common exact timestamp. SenseTime is missing; Alibaba’s source discloses a 15-minute delay."
+      },
+      "rows": [
+        {
+          "ticker": "09888",
+          "name": {
+            "zh": "百度",
+            "en": "Baidu"
+          },
+          "price": 81.65,
+          "change_pct": -0.18,
+          "state": "verified",
+          "source_ids": [
+            "s25"
+          ],
+          "as_of": null,
+          "delay_minutes": null
+        },
+        {
+          "ticker": "09988",
+          "name": {
+            "zh": "阿里巴巴",
+            "en": "Alibaba"
+          },
+          "price": 107.2,
+          "change_pct": -0.92,
+          "state": "verified",
+          "source_ids": [
+            "s26"
+          ],
+          "as_of": null,
+          "delay_minutes": 15
+        },
+        {
+          "ticker": "00700",
+          "name": {
+            "zh": "腾讯",
+            "en": "Tencent"
+          },
+          "price": 425.2,
+          "change_pct": -0.14,
+          "state": "verified",
+          "source_ids": [
+            "s27"
+          ],
+          "as_of": null,
+          "delay_minutes": null
+        },
+        {
+          "ticker": "00020",
+          "name": {
+            "zh": "商汤",
+            "en": "SenseTime"
+          },
+          "price": null,
+          "change_pct": null,
+          "state": "missing",
+          "source_ids": [
+            "s28"
+          ],
+          "as_of": null,
+          "delay_minutes": null
+        },
+        {
+          "ticker": "00981",
+          "name": {
+            "zh": "中芯国际",
+            "en": "SMIC"
+          },
+          "price": 55.55,
+          "change_pct": -1.16,
+          "state": "verified",
+          "source_ids": [
+            "s29"
+          ],
+          "as_of": null,
+          "delay_minutes": null
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "dimension": "global_companies",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "china_companies",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "chips",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "open_source",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "coding",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "agents_robotics",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "infrastructure",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "research",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "policy",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "business",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    },
+    {
+      "dimension": "markets",
+      "state": "limited",
+      "checked_at": "2026-10-13T21:55:00+08:00",
+      "source_ids": [],
+      "note": {
+        "zh": "已验收样刊保留原始取材；不是11维度完整自动扫描。",
+        "en": "Approved sample preserves its original research; it is not a complete automated eleven-dimension scan."
+      }
+    }
+  ],
+  "section_notes": {
+    "companies": {
+      "zh": "本期无其他已核实的重要新增。",
+      "en": "No other verified material updates in this issue."
+    },
+    "chips": {
+      "zh": "本期无其他已核实的重要新增。",
+      "en": "No other verified material updates in this issue."
+    },
+    "robotics": {
+      "zh": "本期无其他已核实的重要新增。",
+      "en": "No other verified material updates in this issue."
+    },
+    "infrastructure": {
+      "zh": "本期无其他已核实的重要新增。",
+      "en": "No other verified material updates in this issue."
+    },
+    "policy": {
+      "zh": "本期无其他已核实的重要新增。",
+      "en": "No other verified material updates in this issue."
+    }
+  },
+  "image": {
+    "url": "https://msblogs.thesourcemediaassets.com/2026/10/OMB-Maia-300-Hero_10_9_26.png",
+    "source_id": "s5",
+    "alt": {
+      "zh": "微软 Azure Maia 300 芯片官方配图",
+      "en": "Microsoft’s official Azure Maia 300 chip image"
+    },
+    "caption": {
+      "zh": "Azure Maia 300 · 微软官方配图",
+      "en": "Azure Maia 300 · Official Microsoft image"
+    },
+    "credit": "Microsoft",
+    "reuse_basis": "Owner-approved local editorial sample; attribution retained. Public redistribution rights require verification before production use."
+  }
+}

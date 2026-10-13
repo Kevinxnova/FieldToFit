@@ -113,7 +113,8 @@ def sitemap_entries():
 
     queries = [("SELECT kind,published_json FROM fieldtofit_content_sets WHERE kind IN ('news','watch')", ()),
                ('SELECT source_id,target_id FROM fieldtofit_steward_aliases', ()),
-               (published_dates_query(), ())]
+               (published_dates_query(), ()),
+               ("SELECT i.day,p.published_at FROM fieldtofit_daily_issues i JOIN fieldtofit_daily_publications p ON p.day=i.day AND p.revision=i.published_revision WHERE i.state='published'", ())]
     with get_db() as db:
         if isinstance(db, TursoConnection):
             rows = [cursor.fetchall() for cursor in db.atomic_statements(queries, read_only=True)]
@@ -134,6 +135,7 @@ def sitemap_entries():
                     entries.append((detail_url(item['id']), dates.get((kind, item['id']))))
                     if item.get('technical_map'):
                         entries.append(('/maps/'+item['technical_map']['slug'], dates.get((kind,item['id']))))
+        if rows[3]:entries.extend([('/for-you/daily',None),('/for-you/daily/archive',None)]+[('/for-you/daily/'+r['day'],r['published_at']) for r in rows[3]])
         return entries
 
 
@@ -208,6 +210,9 @@ def page(path, dist):
         if not english:return value
         from backend.knowledge import locale
         return locale.project(value,locale.public_fields())
+    if path == '/for-you/daily' or path.startswith('/for-you/daily/'):
+        from backend.daily_briefing.seo import page as daily_page
+        return daily_page(path, dist, english)
     if path == '/':
         return redirect(prefix+'/for-you' + ('?' + request.query_string.decode('utf-8', errors='replace') if request.query_string else ''), 308)
     if path == '/connect':

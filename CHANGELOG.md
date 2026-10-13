@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.53"></a>
+## v1.8.53 · AI日报正式模块与双语杂志PDF · 2026-10-14
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:AI Daily module and bilingual magazine PDFs -->
+<!-- release-summary:zh:start -->
+- 在For you首位加入AI日报，提供杂志式阅读、日期归档、七栏目、产品追踪和三个市场的最近完整收盘展示。
+- 加入浅色刊物式PDF按钮；整期网页、双语PDF与HTTP／MCP共用不可变发布快照，支持更正、撤回与失败重试。
+- 完成私密核验管理和可恢复的中午出刊程序；本地验证通过，尚未部署。行情供应授权、来源真实完整扫描、调度精度及自然日运行仍待验证，生产自动发布保持关闭。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add AI Daily as the first For you reading entry, with magazine-style editions, date archives, seven sections, product tracking and the latest complete close for three markets.
+- Add a light magazine-style PDF control. Web, bilingual PDFs and HTTP/MCP use immutable publication snapshots, with corrections, withdrawal and download recovery.
+- Implement private review and a resumable noon publishing pipeline. Local verification passed; this batch is not deployed. Quote redistribution, complete live source scans, scheduler precision and natural-day operation remain unverified; production automation stays disabled.
+<!-- release-summary:en:end -->
+
+对应[REQ-24](FieldToFit-PM.md#req-24)。新增独立表与接口，保留现有API、账号关闭状态、晨间安排及生产内容。PDF包含开源Noto字体及许可证；使用有界图片编码避免发布事务体积失控。未擅自升级minor、购买行情或启用生产任务。实际验证与缺口见[验收记录](docs/validation/2026-10-14-daily-journal.md)，接入与回滚见[运行说明](docs/guides/daily-journal.md)。
+
 <a id="v1.8.52"></a>
 ## v1.8.52 · For your AI正式验收与远程检索连接修复 · 2026-10-13
 

@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.52](CHANGELOG.md#v1.8.52)** · [fieldtofit-v1.8.52](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.52)
+**Current source version: [v1.8.53](CHANGELOG.md#v1.8.53)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Complete the For your AI workspace delivery with the approved headline, FieldToFit emblem and official marks for Codex, Claude, OpenClaw and Pi.
-- Fix a remote lookup disconnect discovered during production verification: release the index transport before saving or resuming a cursor, without retrying writes whose outcome is uncertain.
-- Add regressions for expired connections and lost write responses while preserving published content, public APIs and SQLite pagination semantics. Full chat acceptance in all four clients remains incomplete.
+- Add AI Daily as the first For you reading entry, with magazine-style editions, date archives, seven sections, product tracking and the latest complete close for three markets.
+- Add a light magazine-style PDF control. Web, bilingual PDFs and HTTP/MCP use immutable publication snapshots, with corrections, withdrawal and download recovery.
+- Implement private review and a resumable noon publishing pipeline. Local verification passed; this batch is not deployed. Quote redistribution, complete live source scans, scheduler precision and natural-day operation remain unverified; production automation stays disabled.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

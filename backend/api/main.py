@@ -29,6 +29,8 @@ app.config['MAX_CONTENT_LENGTH'] = 2_500_000
 from backend.knowledge.api import bp as knowledge_bp
 from backend.knowledge.mcp import bp as mcp_bp
 app.register_blueprint(knowledge_bp)
+from backend.daily_briefing.api import bp as daily_briefing_bp
+app.register_blueprint(daily_briefing_bp)
 app.register_blueprint(mcp_bp)
 from backend.analytics import bp as analytics_bp
 app.register_blueprint(analytics_bp)

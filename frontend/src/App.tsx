@@ -1,3 +1,4 @@
+import DailyJournal from './pages/DailyJournal';
 import {MapsPage} from './components/workspace/TechnicalMaps';
 import { PageMetadata, searchPages } from './search';
 import { PublishedDetail } from './pages/PublishedDetail';
@@ -66,7 +67,7 @@ function Shell() {
   }, [location.pathname]);
   return (
     <div className="workspace">
-      {!/^\/(news|watch)\//.test(location.pathname) && <PageMetadata
+      {!/^\/(news|watch)\//.test(location.pathname) && !location.pathname.startsWith('/for-you/daily') && <PageMetadata
         title={searchPages[location.pathname] ? pick(...searchPages[location.pathname].title) : `FieldToFit · ${active ? pick(active[2],active[3]) : pick('资料详情','Dossier')}`}
         description={searchPages[location.pathname] ? pick(...searchPages[location.pathname].description) : ''}
         path={location.pathname} index={!!searchPages[location.pathname] && !(location.pathname === "/for-you" && new URLSearchParams(location.search).has("object"))}/>}
@@ -178,6 +179,9 @@ function Shell() {
             <Route path="/news/:id" element={<PublishedDetail kind="news" />} />
             <Route path="/watch/:id" element={<PublishedDetail kind="watch" />} />
             <Route path="/for-you" element={<ForYou />} />
+            <Route path="/for-you/daily" element={<DailyJournal/>} />
+            <Route path="/for-you/daily/archive" element={<DailyJournal archiveOnly/>} />
+            <Route path="/for-you/daily/:day" element={<DailyJournal/>} />
             <Route path="/for-your-ai" element={<ForAI />} />
             <Route path="/about" element={<AboutFieldToFit />} />
             <Route path="/changelog" element={<Changelog />} />
@@ -233,7 +237,7 @@ function Shell() {
         </main>
       </div>
       <MobileNavigation />
-      {compare.length > 0 && !["/for-you", "/for-your-ai", "/about", "/changelog", "/community"].includes(location.pathname) && (
+      {compare.length > 0 && !location.pathname.startsWith("/for-you/daily") && !["/for-you", "/for-your-ai", "/about", "/changelog", "/community"].includes(location.pathname) && (
         <div className="compare-tray">
           <Icon name="compare" />
           <span>

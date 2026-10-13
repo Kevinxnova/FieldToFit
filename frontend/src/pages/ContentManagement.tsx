@@ -1,3 +1,4 @@
+import { DailyJournalAdmin } from '../components/workspace/DailyJournalAdmin';
 import { HotCardEditor } from '../components/workspace/HotCardEditor';
 import { LanguageContext } from '../locale/language';
 import { EnglishReview } from '../components/workspace/EnglishReview';
@@ -48,7 +49,7 @@ function ReviewedAliases({value,onChange}:{value:string[];onChange:(v:string[])=
 }
 
 export default function ContentManagement(){
- const {pick}=useWorkspace();const [params,setParams]=useSearchParams();const sections=['daily','library','feedback','statistics','settings'];const section=sections.includes(params.get('section')||'')?params.get('section')!:'daily';
+ const {pick}=useWorkspace();const [params,setParams]=useSearchParams();const sections=['daily','journal','library','feedback','statistics','settings'];const section=sections.includes(params.get('section')||'')?params.get('section')!:'daily';
  const [authed,setAuthed]=useState(!!sessionStorage.getItem('fieldtofit-admin-password')),[password,setPassword]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false),[editor,setEditor]=useState<{kind:string;id:string}|null>(null),[editorDirty,setEditorDirty]=useState(false),[candidateRef,setCandidateRef]=useState(params.get('candidate')||'');
  useEffect(()=>{if(authed)excludeAdminVisits();},[authed]);
  const status=useRemote<{migrated:boolean;collections:Obj[]}>(authed?api+'/status':null,true);
@@ -56,10 +57,11 @@ export default function ContentManagement(){
  const open=(kind:string,id:string)=>{setEditor({kind,id});setParams({section:'library'});};
  async function login(e:React.FormEvent){e.preventDefault();setBusy(true);setError('');try{await send('/admin/verify',{password});sessionStorage.setItem('fieldtofit-admin-password',password);setPassword('');setAuthed(true);}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
  return <div className="management-page"><header className="management-heading"><div><p className="platform-eyebrow">FIELDTOFIT · CONTENT MANAGEMENT</p><h1>{pick('内容管理','Content management')}</h1><p>审阅发现、维护共享内容、回应需求。发布后的资料同时供 For you 和 For your AI 使用。</p></div>{authed&&<button className="text-button" onClick={()=>{sessionStorage.removeItem('fieldtofit-admin-password');setAuthed(false);setEditor(null);}}>退出管理</button>}</header>
- {!authed?<form className="management-login" onSubmit={login}><h2>管理员登录</h2><Field label="管理密码" type="password" value={password} onChange={setPassword}/><ErrorLine error={error}/><button className="button primary" disabled={busy||!password}>进入管理</button></form>:<><nav className="management-nav" aria-label="内容管理模块">{sections.map((s,i)=><button key={s} className={'button '+(section===s?'primary':'subtle')} aria-current={section===s?'page':undefined} onClick={()=>navigate(s)}>{['每日审阅','内容库','需求反馈','访问统计','来源与运行'][i]}</button>)}</nav>
+ {!authed?<form className="management-login" onSubmit={login}><h2>管理员登录</h2><Field label="管理密码" type="password" value={password} onChange={setPassword}/><ErrorLine error={error}/><button className="button primary" disabled={busy||!password}>进入管理</button></form>:<><nav className="management-nav" aria-label="内容管理模块">{sections.map((s,i)=><button key={s} className={'button '+(section===s?'primary':'subtle')} aria-current={section===s?'page':undefined} onClick={()=>navigate(s)}>{[pick('每日审阅','Daily review'),pick('公开日报','AI Daily'),pick('内容库','Library'),pick('需求反馈','Feedback'),pick('访问统计','Statistics'),pick('来源与运行','Sources and operations')][i]}</button>)}</nav>
  <ErrorLine error={error||status.error}/>{status.loading&&<p role="status">正在检查内容库…</p>}{status.error&&<button className="button" onClick={status.reload}>重试连接</button>}
  {status.data&&!status.data.migrated&&<section className="management-callout"><h2>接入现有网站内容</h2><p>将已发布的动态、持续关注与图表原样导入数据库，保留现有编号、链接和材料。此操作不会把采集结果自动发布。</p><button className="button primary" disabled={busy} onClick={async()=>{setBusy(true);try{await send(api+'/migrate',{},'POST',true);status.reload();}catch(e){setError((e as Error).message);}finally{setBusy(false);}}}>导入现有已发布内容</button></section>}
  {status.data?.migrated&&<>{section==='daily'&&<><Stewardship open={open}/><OperationBoard open={open} issuesOnly onCandidate={ref=>{setCandidateRef(ref);document.getElementById('daily-review-list')?.scrollIntoView({behavior:'smooth'});}}/><DiscoveryNames/><MapMaintenance/><EditorialBatches open={open}/><DailyReview open={open} reference={candidateRef}/></>}{section==='library'&&(editor?<ContentEditor key={editor.kind+editor.id} {...editor} onDirty={setEditorDirty} close={()=>{setEditorDirty(false);setEditor(null);}}/>:<Library open={open}/>)}{section==='feedback'&&<FeedbackInbox open={open}/>}</>}
+ {section==='journal'&&<DailyJournalAdmin/>}
  {section==='statistics'&&<TrafficReport/>}
  {section==='settings'&&<><ObjectChecks/><OperationBoard open={open}/><section className="management-callout"><h2>来源与运行</h2><p>采集仍按 1 天检查。这里管理来源、重试失败和整理服务；内容发布请到内容库完成。</p><button className="button" onClick={async()=>{try{download(await request(api+'/backup',{},true),'fieldtofit-workspace-private-backup');}catch(e){setError((e as Error).message);}}}>下载内容库备份</button><p className="muted">备份包含内部草稿和审阅记录，请作为私密文件保存。</p></section><SourceCatalog admin/><details><summary>高级来源配置与运行记录</summary><KnowledgeOps embedded/></details></>}
  </>}

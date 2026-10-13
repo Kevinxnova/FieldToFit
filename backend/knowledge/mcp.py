@@ -26,6 +26,7 @@ TEXT = {'type': 'string'}
 CODEX_TOOL = definition('codex_updates', 'Read the reviewed Codex 28 Days of Progress topic. First call without cursor returns all currently published logs and a checkpoint. Repeat group/limit with next_cursor until has_more=false; save resume_cursor only after all results are stored, then poll it daily for net additions, corrections and removals. New IDs and old-date backfills are included. items contain public source posts, avatars, date precision and source URLs. Intermediate edits are coalesced to the latest state; deduplicate event_id/content_revision. No change returns an empty list; unrelated news never generates topic events. Withdrawals and removal from the selected group return minimal tombstones. Cursors expire after 7 days: restart a full read and replace the cached scope after all pages. Client scheduling is required; this read does not publish or mark website logs read.',
                         {'group': {'type':'string','enum':['all','codex','other_openai']}, 'limit':{'type':'integer','minimum':1,'maximum':100}, 'cursor':TEXT})
 TOOLS = [
+    definition('curated_daily', 'Read the published AI daily magazine, its archive, source links and complete US/CN/HK closing snapshots. Both languages, website and PDFs share the same immutable content hash. Without day, returns the archive; day=latest returns the latest actual issue. Never treat an older issue as today. Withdrawals override history.', {'day':TEXT,'revision':{'type':'integer','minimum':1},'limit':{'type':'integer','minimum':1,'maximum':100},'offset':{'type':'integer','minimum':0}}),
     definition('curated_maps', 'Read selected technical reports and reviewed analysis organized around questions. Nodes distinguish mechanisms, experimental settings, results and limitations. Typed evidence-backed edges distinguish inheritance, baseline comparison and parallel work. Report first dates, substantive revision dates and FieldToFit publication dates are separate. Optional reviewed reading includes numbered findings, matching arguments, licensed original figures, highlights and separate editorial judgment. The reading, graph and units match the website; author claims are not independent replication. Drafts and private checks are excluded.', {'slug':TEXT,'q':TEXT,'revision':TEXT,'archive':{'type':'string','enum':['all','recent','historical']}}),
     definition('curated_locations', 'Read revision-bound sections, paragraphs and PDF physical pages/printed labels. Gaps identify unextracted images, scans and unverified formula layout. Only permitted reviewed D-/CW- materials.', {'id':TEXT,'material_id':TEXT,'content_revision':TEXT}, ['id','material_id']),
     definition('curated_revisions', 'List recorded public CW dossier revisions. Migration baselines are not original publication dates. Missing history stays unknown; withdrawals and current permissions win.', {'id':TEXT,'limit':{'type':'integer','minimum':1,'maximum':100},'offset':{'type':'integer','minimum':0}}, ['id']),
@@ -80,7 +81,7 @@ def invoke(name, args):
     if 'lang' in args and not isinstance(args['lang'],str):raise ValueError('Invalid type for lang')
     lang=locale.language(args.get('lang'))
     with locale.read_language(lang):data=_invoke(name,{k:v for k,v in args.items() if k!='lang'})
-    return locale.project(data,locale.public_fields()) if lang=='en' else data
+    return locale.project(data,locale.public_fields()) if lang=='en' and name!='curated_daily' else data
 
 def _invoke(name, args):
     spec = next((t for t in [*TOOLS, CODEX_TOOL] if t['name'] == name), None)
@@ -96,6 +97,15 @@ def _invoke(name, args):
                  'object': isinstance(value, dict), 'array': isinstance(value, list), 'boolean': isinstance(value, bool)}[typ]
         if not valid:
             raise ValueError(f'Invalid type for {key}')
+    if name == 'curated_daily':
+        from backend.daily_briefing import service
+        from backend.knowledge.locale import is_english
+        lang='en' if is_english() else 'zh'
+        if args.get('day'):
+            if 'limit' in args or 'offset' in args:raise ValueError('Pagination only applies to the archive')
+            return service.read(None if args['day']=='latest' else args['day'],lang,args.get('revision'))
+        if 'revision' in args:raise ValueError('A revision requires a day')
+        return service.archive(lang,args.get('limit',30),args.get('offset',0))
     if name == 'codex_updates':
         from backend.knowledge.codex_feed import updates
         return updates(**args)

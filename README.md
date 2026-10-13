@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.52](CHANGELOG.md#v1.8.52)** · [fieldtofit-v1.8.52](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.52)
+**当前源码版本：[v1.8.53](CHANGELOG.md#v1.8.53)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 完成For your AI接入工作台的最终交付，保留已确认标题、FieldToFit品牌图形与Codex／Claude／OpenClaw／Pi真实标志。
-- 修复正式验收中发现的远程检索断连：索引读取结束后释放旧连接，再保存或恢复分页游标；不自动重试结果不确定的写入。
-- 新增断连恢复与写入不重试回归，保持公开资料、API与SQLite分页语义；四客户端完整聊天验收仍未逐一完成。
+- 在For you首位加入AI日报，提供杂志式阅读、日期归档、七栏目、产品追踪和三个市场的最近完整收盘展示。
+- 加入浅色刊物式PDF按钮；整期网页、双语PDF与HTTP／MCP共用不可变发布快照，支持更正、撤回与失败重试。
+- 完成私密核验管理和可恢复的中午出刊程序；本地验证通过，尚未部署。行情供应授权、来源真实完整扫描、调度精度及自然日运行仍待验证，生产自动发布保持关闭。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
