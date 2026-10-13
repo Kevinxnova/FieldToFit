@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.43](CHANGELOG.md#v1.8.43)** · Release tag not yet published
+**Current source version: [v1.8.44](CHANGELOG.md#v1.8.44)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Register REQ-6-23/24 for a clearer For you hero and reading links, with an AI observation sphere suited to FieldToFit.
-- Propose split reading-and-sphere and immersive-banner layouts, covering the title, short introduction, five resource types and source-check wording.
-- Deliver requirements and documentation only. The proposal awaits alignment; production components remain unimplemented and undeployed, with the previously verified site version retained.
+- Register REQ-24 and eight subrequirements for a daily briefing page, seven sections covering eleven dimensions, product versions, market snapshots and a daily noon publication target in Asia/Shanghai.
+- Propose a magazine-style reading layout, advance preparation, scheduled publication and matching bilingual website and AI access, with daily-specific publication rules still requiring owner alignment.
+- Deliver requirements and a proposal only. The page is unimplemented, no schedule has been created, and the previously verified production version remains in place.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

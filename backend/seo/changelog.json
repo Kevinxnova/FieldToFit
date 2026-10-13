@@ -1,34 +1,34 @@
 {
-  "version": "1.8.43",
-  "revision": "107ca0cfecd0d0a8f4211b2351b7834c3847782e994fffdf0ed003d1afc1d7db",
+  "version": "1.8.44",
+  "revision": "924b4c567698f11a7c3b81ed5211db6508ab1873368e3eb0d287b2bbde9aa023",
   "items": [
     {
-      "version": "1.8.43",
+      "version": "1.8.44",
       "date": "2026-10-13",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "For you首屏需求与视觉方案登记",
+          "title": "AI日报需求与中午出刊方案登记",
           "highlights": [
-            "登记REQ-6-23／24：优化For you首屏导读与阅读入口，加入与FieldToFit主题相容的AI观察球体视觉。",
-            "提供导读与观察球、横幅沉浸两种待对齐方案，明确标题、短简介、五类资料与每日检查说明的呈现。",
-            "本批仅交付需求及文档；方案尚未确认，正式组件未开发、未部署，正式站仍为此前已验版本。"
+            "新增REQ-24及八个子项：独立日报页、七个栏目与11维度覆盖、热点产品版本表、市场快照及每天北京时间12:00出刊目标。",
+            "提出编辑部杂志式阅读、提前取材与定时出刊、双语及AI同源读取，并明确日报自动发布与既有审核规则需要单独对齐。",
+            "本批仅登记需求与方案；页面未开发、定时任务未创建、未部署，正式站保留此前已验版本。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "For you hero requirements and visual proposal",
+          "title": "AI daily briefing requirements and noon publication proposal",
           "highlights": [
-            "Register REQ-6-23/24 for a clearer For you hero and reading links, with an AI observation sphere suited to FieldToFit.",
-            "Propose split reading-and-sphere and immersive-banner layouts, covering the title, short introduction, five resource types and source-check wording.",
-            "Deliver requirements and documentation only. The proposal awaits alignment; production components remain unimplemented and undeployed, with the previously verified site version retained."
+            "Register REQ-24 and eight subrequirements for a daily briefing page, seven sections covering eleven dimensions, product versions, market snapshots and a daily noon publication target in Asia/Shanghai.",
+            "Propose a magazine-style reading layout, advance preparation, scheduled publication and matching bilingual website and AI access, with daily-specific publication rules still requiring owner alignment.",
+            "Deliver requirements and a proposal only. The page is unimplemented, no schedule has been created, and the previously verified production version remains in place."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.43"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.44"
     },
     {
       "version": "1.8.42",

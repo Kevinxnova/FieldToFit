@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.44"></a>
+## v1.8.44 · AI日报需求与中午出刊方案登记 · 2026-10-13
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:AI daily briefing requirements and noon publication proposal -->
+<!-- release-summary:zh:start -->
+- 新增REQ-24及八个子项：独立日报页、七个栏目与11维度覆盖、热点产品版本表、市场快照及每天北京时间12:00出刊目标。
+- 提出编辑部杂志式阅读、提前取材与定时出刊、双语及AI同源读取，并明确日报自动发布与既有审核规则需要单独对齐。
+- 本批仅登记需求与方案；页面未开发、定时任务未创建、未部署，正式站保留此前已验版本。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register REQ-24 and eight subrequirements for a daily briefing page, seven sections covering eleven dimensions, product versions, market snapshots and a daily noon publication target in Asia/Shanghai.
+- Propose a magazine-style reading layout, advance preparation, scheduled publication and matching bilingual website and AI access, with daily-specific publication rules still requiring owner alignment.
+- Deliver requirements and a proposal only. The page is unimplemented, no schedule has been created, and the previously verified production version remains in place.
+<!-- release-summary:en:end -->
+
+对应[REQ-24](FieldToFit-PM.md#req-24)。仅需求、版本与双语文档登记，无公共API、数据库、生产内容或日程变更。参考日报未能直接读取，未宣称完成其视觉核对；当前旧日报路由、现行调度与人工双语门槛已核对。实际证据及检查见[本次记录](docs/validation/2026-10-13-daily-briefing-proposal.md)。视觉、发布权限与行情口径仍待所有者决定；正式站最近已验版本为v1.8.42，本批未重新执行生产检查。
+
 <a id="v1.8.43"></a>
 ## v1.8.43 · For you首屏需求与视觉方案登记 · 2026-10-13
 
