@@ -1,4 +1,4 @@
 -r requirements.txt
-pytest>=8.0.0
+pytest>=9.1.1
 # Generate deterministic PDF fixtures for the task-packet acceptance checks.
 reportlab==4.5.1
