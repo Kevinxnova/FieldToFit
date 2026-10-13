@@ -20,7 +20,8 @@
 .ai-glass-orb { isolation:isolate; position:absolute; width:158px; height:158px; border-radius:50%; top:77px; left:28%; display:grid; place-items:center; background:radial-gradient(circle at 29% 21%,#ffffffef 0%,#eaf5e93d 26%,#a8d2c633 52%,#88afa680 75%,#dfeee68c 88%); border:1px solid #fffffff0; box-shadow:inset -9px -12px 21px #7399895c,inset 4px 4px 18px #ffffff,0 16px 30px #3055461a; }
 .ai-glass-orb:before { content:''; position:absolute; inset:-9px -25px; border:1px solid #9fbfaf77; border-radius:50%; transform:rotate(-28deg) scaleY(.38); }
 .ai-glass-orb:after { content:''; position:absolute; inset:0; border-radius:inherit; background:conic-gradient(from 40deg,transparent 30%,#f6fff898 46%,transparent 60%); opacity:.5; clip-path:circle(50%); z-index:0; animation:ai-glow 12s linear infinite; }
-.ai-glass-orb>span { position:relative; z-index:1; color:#426458; font-size:38px; font-weight:500; letter-spacing:-.08em; text-shadow:0 2px 2px #fff; }.ai-glass-orb>span>span { font-size:27px; padding:0 5px; }
+/* Original emblem geometry from the supplied horizontal brand logo. */
+.ai-brand-mark { position:relative; z-index:1; display:block; width:52%; height:auto; color:#151917; }
 .ai-art-path { position:absolute; height:1px; left:64%; right:19%; top:156px; background:linear-gradient(90deg,#abc4b4,#619b93); }
 .ai-art-path i { position:absolute; height:3px; width:8px; top:-1px; background:#588e83; box-shadow:0 0 7px #6cae9f; border-radius:3px; animation:ai-travel 3s ease-in-out infinite; }.ai-art-path i:nth-child(2) { animation-delay:1s; }.ai-art-path i:nth-child(3) { animation-delay:2s; }
 .ai-target { position:absolute; right:20px; top:113px; width:76px; min-height:82px; border-radius:15px; border:1px solid #ffffffdc; background:var(--ai-glass); box-shadow:0 9px 30px #19463b12; display:grid; justify-items:center; padding:12px 7px; gap:5px; }
@@ -54,7 +55,7 @@
 [data-theme="dark"] .ai-page { --ai-accent:#acd8bf; --ai-muted:#afbbb3; --ai-glass:#23372bd9; --ai-wash:#24392f; }
 [data-theme="dark"] .ai-connection-art { background:radial-gradient(ellipse at 60% 60%,#35625277,transparent 65%),#1c2922; border-color:var(--line); }
 [data-theme="dark"] .ai-glass-orb { background:radial-gradient(circle at 29% 21%,#d5f4e2b8,#789c814d 26%,#3d675833 52%,#174c3880 75%,#94baa58c 88%); border-color:#8bab98; box-shadow:inset -9px -12px 21px #294d375c,inset 4px 4px 18px #c4e3c8a6,0 16px 30px #0003; }
-[data-theme="dark"] .ai-glass-orb>span { position:relative; z-index:1; color:#d8ebdd; text-shadow:0 1px 2px #24412d; }[data-theme="dark"] .ai-source-stack>span,[data-theme="dark"] .ai-target { border-color:#7b9c8066; }
+[data-theme="dark"] .ai-brand-mark { color:#FAFBF8; }[data-theme="dark"] .ai-source-stack>span,[data-theme="dark"] .ai-target { border-color:#7b9c8066; }
 [data-theme="dark"] .ai-mark-claude { color:#e0a58a; }[data-theme="dark"] .ai-mark-openclaw { color:#eaa29b; }[data-theme="dark"] .ai-mark-pi { color:#cab0e0; }
 @keyframes ai-glow { to { transform:rotate(360deg); } }@keyframes ai-travel { 0% { left:0; opacity:0; } 25% { opacity:.8; } 90%,100% { left:95%; opacity:0; } }
 @container (max-width:760px) { .ai-hero { grid-template-columns:1fr .85fr; gap:16px; }.ai-connection-art { height:285px; }.ai-glass-orb { width:132px; height:132px; left:22%; top:82px; }.ai-source-stack { width:79px; left:9px; }.ai-source-stack>span { padding:8px; gap:6px; }.ai-target { right:9px; width:65px; }.ai-client-picker>button { padding:15px 10px; gap:7px; }.ai-client-mark { width:24px; }.ai-client-picker small { font-size:9px; }.ai-guide { padding:24px; }.ai-guide-grid { gap:20px; }.ai-section-heading>p { max-width:210px; }.ai-examples { gap:10px; }.ai-examples article { padding:18px; }.ai-first-read { padding:24px; gap:20px; } }

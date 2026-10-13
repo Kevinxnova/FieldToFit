@@ -1,34 +1,34 @@
 {
-  "version": "1.8.49",
-  "revision": "f9f3f7d10445bcdda59b704341a6552302fba2db253d2cf3e8987758a5136841",
+  "version": "1.8.50",
+  "revision": "31d9315b5c16cf9e18077b0978213cb2c1d6efbe5b2bb5f5ab7cc4b68f5aa483",
   "items": [
     {
-      "version": "1.8.49",
+      "version": "1.8.50",
       "date": "2026-10-13",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "For your AI接入工作台与四客户端引导",
+          "title": "For your AI品牌图形与主标题修订",
           "highlights": [
-            "按已确认方向重构For your AI：浅色留白、局部玻璃流光和资料流向所选AI的示意，适配手机、桌面及明暗主题。",
-            "为Codex、Claude、OpenClaw、Pi提供七种接入引导，附官方说明与核对日期；首次提问、具体复制按钮和服务检查前置，保留搜索、资料包及专题同步。",
-            "完成双语、复制失败／异步切换保护、隔离服务读取和本地页面验证；本批未部署，未宣称四款真实客户端均已完成聊天取材验收。"
+            "将For your AI玻璃球中的f→f替换为现有FieldToFit品牌图形，保留原始比例并适配明暗主题。",
+            "主标题改为「把 FieldToFit，接入你的 AI。」，同步英文和无脚本页面。",
+            "本批按页面复审意见进行局部修订，四客户端接入步骤保持；仅本地更新，未部署。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "For your AI connection workspace and four client guides",
+          "title": "For your AI brand mark and headline",
           "highlights": [
-            "Redesign For your AI with open spacing, subtle glass lighting and a source-to-client illustration, adapting to desktop, mobile, light and dark themes.",
-            "Add seven setup paths for Codex, Claude, OpenClaw and Pi, with official references and review dates. Bring first questions, precise copy actions and service checks forward while retaining search, packages and topic sync.",
-            "Verify bilingual output, clipboard recovery, asynchronous switching, isolated service reads and the local page. This batch is not deployed and does not claim end-to-end chat acceptance in all four clients."
+            "Replace f→f in the For your AI glass sphere with the existing FieldToFit emblem, retaining its proportions in light and dark themes.",
+            "Change the headline to “Connect FieldToFit to your AI.” with matching Chinese and no-JavaScript output.",
+            "Apply the requested visual revision while retaining the four client guides. This batch is local and not deployed."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.49"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.50"
     },
     {
       "version": "1.8.47",

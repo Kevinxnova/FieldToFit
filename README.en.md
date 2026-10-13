@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.8.49](CHANGELOG.md#v1.8.49)** · Release tag not yet published
+**Current source version: [v1.8.50](CHANGELOG.md#v1.8.50)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Redesign For your AI with open spacing, subtle glass lighting and a source-to-client illustration, adapting to desktop, mobile, light and dark themes.
-- Add seven setup paths for Codex, Claude, OpenClaw and Pi, with official references and review dates. Bring first questions, precise copy actions and service checks forward while retaining search, packages and topic sync.
-- Verify bilingual output, clipboard recovery, asynchronous switching, isolated service reads and the local page. This batch is not deployed and does not claim end-to-end chat acceptance in all four clients.
+- Replace f→f in the For your AI glass sphere with the existing FieldToFit emblem, retaining its proportions in light and dark themes.
+- Change the headline to “Connect FieldToFit to your AI.” with matching Chinese and no-JavaScript output.
+- Apply the requested visual revision while retaining the four client guides. This batch is local and not deployed.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

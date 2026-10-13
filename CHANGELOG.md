@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.50"></a>
+## v1.8.50 · For your AI品牌图形与主标题修订 · 2026-10-13
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:For your AI brand mark and headline -->
+<!-- release-summary:zh:start -->
+- 将For your AI玻璃球中的f→f替换为现有FieldToFit品牌图形，保留原始比例并适配明暗主题。
+- 主标题改为「把 FieldToFit，接入你的 AI。」，同步英文和无脚本页面。
+- 本批按页面复审意见进行局部修订，四客户端接入步骤保持；仅本地更新，未部署。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Replace f→f in the For your AI glass sphere with the existing FieldToFit emblem, retaining its proportions in light and dark themes.
+- Change the headline to “Connect FieldToFit to your AI.” with matching Chinese and no-JavaScript output.
+- Apply the requested visual revision while retaining the four client guides. This batch is local and not deployed.
+<!-- release-summary:en:end -->
+
+对应[REQ-8-10](FieldToFit-PM.md#req-8-10)，按所有者页面复审意见修订标题与图形；未改变接入步骤、公开API或数据。实际验证见[本次复验](docs/validation/2026-10-13-for-ai-onboarding.md#brand-headline-review)。
+
 <a id="v1.8.49"></a>
 ## v1.8.49 · For your AI接入工作台与四客户端引导 · 2026-10-13
 

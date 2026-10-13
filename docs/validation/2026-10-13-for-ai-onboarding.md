@@ -42,3 +42,19 @@
 - 本机Codex／Claude的`mcp add --help`语法已核对；Codex通过临时`-c`覆盖解析出streamable_http与本机服务URL，未写入用户配置。环境未安装OpenClaw／Pi；未逐一进行四款真实客户端的完整聊天取材。
 
 截图、尺寸回执与协议回执保存于忽略目录`output/operations/for-ai-20261013`。最终构建和当前本地版本同步为v1.8.49；未部署、未推送或创建发布标签。真机、屏幕阅读器、系统减少动态效果及四客户端完整聊天验收仍未完成；减少动态效果已通过CSS实现，不把静态检查冒充系统设置实测。
+
+
+<a id="brand-headline-review"></a>
+## 同日复审：品牌图形与主标题（v1.8.50）
+
+所有者确认将玻璃球中的f→f替换为FieldToFit标志，主标题改为「把 FieldToFit，接入你的 AI。」。本批直接复用现有横版品牌SVG中的图形几何，保留160:112比例，浅色使用原墨色、深色使用原纸白；既有品牌素材文件未改写。共享页面文案同步为英文“Connect FieldToFit to your AI.”，无脚本页面沿用同一来源。
+
+实际复验：
+
+- TypeScript／Vite构建通过；现有大于500 kB的构建分块提示仍存在。本机frontend目录默认命令路径未提供npm／node，改用已安装Node的绝对路径后完成构建。
+- `PYTHON_DOTENV_DISABLED=1 .venv/bin/python -m pytest tests/test_search_pages.py -q -k 'ai_setup or public_landing'`：2项通过、17项未选择，覆盖双语无脚本接入页面。未新增针对静态替换的测试，未将上一批54项回归计入本批。
+- 本地隔离服务重启为v1.8.50；中文浅色、英文深色分别检查320／390／1440px，共6组尺寸／语言／主题组合，页面未横向溢出；主标题和原比例品牌图形显示正常。390px英文浅色也已视觉检查。
+- 桌面中文、手机中文及手机英文深色截图分别保存于`output/operations/for-ai-20261013/brand-headline-desktop-zh.jpg`、`brand-headline-mobile-zh.jpg`、`brand-headline-mobile-en-dark.jpg`。浏览器控制台无error／warn，预览恢复中文浅色与默认窗口尺寸。
+- 版本元数据同步为v1.8.50；仓库检查覆盖162份文档、1331个本地链接和332个相对导入，0错误；`git diff --check`通过。
+
+本批仍仅本地交付，未部署；客户端聊天验收边界沿用上一批记录。
