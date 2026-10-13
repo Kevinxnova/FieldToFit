@@ -1,0 +1,433 @@
+{
+  "category": "research",
+  "checked_at": "2026-10-13",
+  "editor": "FieldToFit",
+  "event_date": "2026-10-12",
+  "highlight": false,
+  "id": "D-133",
+  "interpretation": [
+    {
+      "locator": "Model card §1–6; official launch",
+      "source_ids": [
+        "report",
+        "launch"
+      ],
+      "text": "本文深读官方模型卡的能力、风险评估与局限章节，并核对发布入口。它是本站专题首次整理；模型发布日期为 2026-10-12，本站核对为 2026-10-13，未复现实验。",
+      "title": "用测试口径解释能力，保留真实产品边界"
+    }
+  ],
+  "maintenance": {
+    "availability": "available",
+    "canonical_id": "D-133",
+    "id": "D-133",
+    "materials": [],
+    "relationships": [],
+    "scope": "Current maintenance observations; separate from fixed publication/material revision. Access success is not factual revalidation.",
+    "status_revision": "88a4b502def34e83457894a3b4aa97bd64019010b0d58660f0fcda72e1fc040d"
+  },
+  "materials": [
+    {
+      "characters": 0,
+      "checked_at": "2026-10-13",
+      "content_hash": null,
+      "coverage": "link_only",
+      "id": "report",
+      "locator": "pp1–13; benchmark image p3 and scoring notes p7",
+      "read_url": "/api/v1/platform/content/D-133/materials/report?content_revision=e3ff2a75dd5f09dd3b63524d70f6ea6ac0277811442a9c02c89b9bc06a87dff2",
+      "reading": {
+        "arguments": {
+          "content_revision": "e3ff2a75dd5f09dd3b63524d70f6ea6ac0277811442a9c02c89b9bc06a87dff2",
+          "id": "D-133",
+          "material_id": "report"
+        },
+        "tool": "curated_material"
+      },
+      "reason": "已读完整模型卡并核对图表页面；原文再分发许可未确认，公开仅保留出处及本站原创分析。",
+      "retrieved_at": "2026-10-13",
+      "rights": {
+        "basis": "原文仅链接；公开统计事实用于本站重新设计的图表",
+        "notice": "",
+        "url": ""
+      },
+      "title": "Muse Wonder 模型卡 · 官方全文入口",
+      "upstream_revision": "2026-10-12 model card",
+      "url": "https://research.meta.ai/static/muse-wonder-model-card"
+    }
+  ],
+  "materials_revision": "e3ff2a75dd5f09dd3b63524d70f6ea6ac0277811442a9c02c89b9bc06a87dff2",
+  "name": "Muse Wonder Model Card",
+  "note": "采用 2026-10-12 公开模型卡，未标独立修订号，未核实后续实质修订。原文首次日期、本站核对与本文发表分别保留。作者实验未由本站复现；上游全文与原图仅链接，三张图为本站原创重绘／阅读示意。",
+  "organization": "Meta",
+  "publication": {
+    "first_published_at": "2026-10-13T03:47:41.618826+00:00",
+    "updated_at": "2026-10-13T03:47:41.618826+00:00"
+  },
+  "related": [],
+  "source_published_at": "2026-10-12",
+  "sources": [
+    {
+      "coverage": "link_only",
+      "id": "report",
+      "title": "Muse Wonder Model Card · Meta · 2026-10-12",
+      "url": "https://research.meta.ai/static/muse-wonder-model-card"
+    },
+    {
+      "coverage": "link_only",
+      "id": "launch",
+      "title": "Muse Wonder 官方发布与产品入口",
+      "url": "https://research.meta.ai/blog/muse-wonder"
+    },
+    {
+      "coverage": "link_only",
+      "id": "model-release",
+      "title": "Muse Wonder official release · FieldToFit D-127",
+      "url": "https://fieldtofit.top/news/D-127"
+    }
+  ],
+  "summary": "从记忆测试的上下文范围，到桌面工作流的两种计分，再到攻击能力与安全缓解，逐层阅读 Muse Wonder 模型卡。四条核心结论、对应论述与三张本站重绘图；模型能力、系统条件和作者风险判断分别保留。",
+  "technical_map": {
+    "caution": "作者实验未复现；不同运行框架与评分分母分别保留。仅链接原文，图表为本站重绘；不由模型卡推断未核实的价格、权重开放或全场景安全。",
+    "change_summary": "首次整理Muse Wonder 2026-10-12 模型卡：四条结论与对应论述、三张本站重绘，补齐记忆范围、两种工作流计分、标记分类与安全缓解条件。",
+    "edges": [
+      {
+        "evidence": [
+          {
+            "fragment": "",
+            "locator": "§3; pp4–5",
+            "source_id": "report"
+          }
+        ],
+        "from": "memory",
+        "label": "并列核对记忆与端到端任务",
+        "relation": "parallel",
+        "to": "workflow"
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "",
+            "locator": "§3–4; pp5–7",
+            "source_id": "report"
+          }
+        ],
+        "from": "workflow",
+        "label": "能力结果与攻击能力分别评测",
+        "relation": "parallel",
+        "to": "cyber"
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "",
+            "locator": "§4–6; pp7–12",
+            "source_id": "report"
+          }
+        ],
+        "from": "cyber",
+        "label": "攻击能力与部署缓解属于同一风险框架的不同核对面",
+        "relation": "parallel",
+        "to": "safeguards"
+      }
+    ],
+    "focus": "四个并行核对面：记忆测试范围、工作流完整交付、攻击计分与系统缓解。沿线阅读报告位置，保留每项指标的独立定义。",
+    "nodes": [
+      {
+        "evidence": [
+          {
+            "fragment": "",
+            "locator": "pp1,3,5; MemoryBench",
+            "source_id": "report"
+          }
+        ],
+        "id": "memory",
+        "kind": "result",
+        "label": "记忆测试有范围",
+        "limitation": "1M推理上下文不是这个测试的长度；没有无限会话、所有语言或隐私行为的验证。",
+        "mechanism": "跨轮次回忆关键事实，并处理干扰、冲突和后续更新。",
+        "metrics": [],
+        "result": "Full 85.5，Wonder 85.6，为模型卡报告分数。",
+        "setting": "MemoryBench；64K–100K token；LLM评判与加权问题标准。",
+        "stage": 0
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "",
+            "locator": "pp3–6; OSWorld V2.1 and overall methodology",
+            "source_id": "report"
+          }
+        ],
+        "id": "workflow",
+        "kind": "result",
+        "label": "部分完成与完整成功分开",
+        "limitation": "部分得分不等于任务成功率；不同评测行的运行框架与结果来源须分别读。",
+        "mechanism": "桌面工作流由真实任务环境和程序化评分器评价，部分奖励与严格完成是两种指标。",
+        "metrics": [
+          {
+            "baseline": "同一模型同一任务的部分得分 78.4；计分定义不同，不计算因果差值",
+            "conditions": "OSWorld V2.1; 108 workflows; max; model card pp3,5",
+            "label": "Wonder Full strict binary completion",
+            "unit": "%",
+            "value": 39.4
+          }
+        ],
+        "result": "Wonder Full：78.4 部分得分／39.4%严格成功；Wonder：72.6／34.3%。",
+        "setting": "OSWorld V2.1；108 个Ubuntu桌面工作流；内部共同框架；max推理配置。",
+        "stage": 1
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "",
+            "locator": "p7; ExploitGym scoring footnote",
+            "source_id": "report"
+          }
+        ],
+        "id": "cyber",
+        "kind": "result",
+        "label": "取得标记先核计分范围",
+        "limitation": "标记数不是不同漏洞数量，也不是以全部任务为分母的成功率。",
+        "mechanism": "对攻击能力测试取得的标记做验证，将预期漏洞与非预期漏洞路径区分。",
+        "metrics": [
+          {
+            "baseline": "92 total captured flags; 71 from unintended vulnerability paths",
+            "conditions": "Muse Wonder Full; ExploitGym scoring footnote; model card p7",
+            "label": "Ranking-comparable captured flags",
+            "unit": "flags",
+            "value": 21
+          }
+        ],
+        "result": "92 个标记：21 个经预期漏洞取得、71 个经非预期漏洞取得；可比排名用 21。",
+        "setting": "Muse Wonder Full；ExploitGym；GPT-cyber验证并由Gemini 3.1 Pro独立确认。",
+        "stage": 1
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "",
+            "locator": "pp7–12; risk assessment, Trust and Safety, limitations",
+            "source_id": "report"
+          }
+        ],
+        "id": "safeguards",
+        "kind": "method",
+        "label": "风险判断依赖缓解与场景",
+        "limitation": "未缓解的生化领域高风险不能排除；特定测试 0%有害行为不代表所有场景零风险。",
+        "mechanism": "结合安全后训练、系统级分类器与应用场景防护进行风险评估。",
+        "metrics": [],
+        "result": "作者在加入缓解措施后，将各风险领域评为moderate or lower。",
+        "setting": "Meta Superintelligence Scaling Framework；Wonder Full覆盖该家族的风险评估。",
+        "stage": 2
+      }
+    ],
+    "question": "Muse Wonder：持续记忆与长任务，怎样读懂能力和安全评测？",
+    "reading": {
+      "editorial": [
+        "FieldToFit判断：本次最值得跟进的是有长期状态的Agent是否能完整交付，而非把单一记忆分数当作产品成熟度。实际选型可先建立含更新、冲突、重启和最终状态验证的小型业务测试。",
+        "模型、运行框架与应用配置共同影响结果。网站的模型动态负责说明发布与入口，本篇专题负责解释原始证据和边界；社区nanoMuse另有作者和版本，不作为Meta官方模型的别名。",
+        "后续只在新的正式模型卡、真实评测修订或明确入口变化出现时更新本篇；原始发布日期、报告修订、本站核对与文章修订分别记载。本站未安装、运行或复现模型评测。"
+      ],
+      "findings": [
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "官方发布把Active Memory描述为可利用既有对话资料的能力，并以Active Focus强调持续推进目标与处理阻塞。模型卡给出的可核证据则更具体：输入上下文为 1M token；MemoryBench测试长多轮对话中的关键事实，其中同时有干扰对话、互相冲突的细节和之后更新的信息。这里的产品功能、输入容量和测试任务需要分别理解。"
+            },
+            {
+              "items": [
+                "MemoryBench对话长度为 64K–100K token，由LLM评判器按问题特定的加权标准计分；它不是在 1M token全长上测出同样的回忆可靠性。",
+                "模型卡表中Full为 85.5、Wonder为 85.6；这些是该项测试的报告分数，不能解释为任意个人资料被正确记住的概率。",
+                "本文未验证不同用户的隔离、删除语义、跨端同步或记忆保留期限；模型卡也未提供这些行为的完整产品测试。"
+              ],
+              "kind": "points"
+            },
+            {
+              "alt": "输入容量 1M token与MemoryBench的 64K–100K token范围分别展示；Full分数 85.5、Wonder 85.6。",
+              "attribution": "FieldToFit 本站重绘；数据与测试说明来自 Meta 2026-10-12 模型卡。",
+              "caption": "图 1｜本站阅读示意：框的面积不代表token数量；输入容量与记忆测试口径分开。",
+              "evidence": [
+                {
+                  "fragment": "page=5",
+                  "locator": "pp1,3,5; MemoryBench",
+                  "source_id": "report"
+                }
+              ],
+              "image_url": "/report-figures/muse-wonder-20261012-memory.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; original data: Meta model card."
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "从测试中的回忆能力到可长期信任的个人Agent，还需要应用层的记忆更新、冲突处理、数据隔离与删除验证。"
+            }
+          ],
+          "evidence": [
+            {
+              "fragment": "page=5",
+              "locator": "pp1,3,5; MemoryBench",
+              "source_id": "report"
+            }
+          ],
+          "id": "memory-scope",
+          "node_ids": [
+            "memory"
+          ],
+          "summary": "1M token输入容量、64K–100K token记忆测试与实际跨会话产品是三个不同层面。记住测试里的关键事实，不能自动推出所有长期任务都可靠。",
+          "title": "持续记忆值得看，但证据仍来自有界测试"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "OSWorld V2.1 使用完整Ubuntu桌面上的 108 个真实工作流。Agent通过截图、点击、输入、滚动等动作操作环境，程序化评分器核对任务结果。模型卡将平均每任务部分奖励作为主要指标，并另列严格二元完成率。分步完成一些要求也能获得部分分数；是否全部完成则要另看严格指标。"
+            },
+            {
+              "items": [
+                "Wonder Full（max）：部分得分 78.4，严格完成 39.4%；Wonder（max）：72.6 与 34.3%。两项保留各自名称，不把 78.4 写成完整成功率。",
+                "内部控制的代码对照尽量采用同一评测运行框架；外部代码结果保留发布方或模型供应方采用的Agent产品。SWE-Marathon明确不是同一运行框架的受控比较。",
+                "部分比较结果来自第三方，部分来自供应方或内部验证；竞争模型的提示、工具和运行配置采用尽力匹配。每一行都需保留来源与条件，不能据整张表推出统一的全场景排名。"
+              ],
+              "kind": "points"
+            },
+            {
+              "alt": "OSWorld V2.1 两种计分：Full为 78.4 部分得分与 39.4%严格完成；Wonder为 72.6 与 34.3%。",
+              "attribution": "FieldToFit 本站重绘；数据与测试说明来自 Meta 2026-10-12 模型卡。",
+              "caption": "图 2｜本站重绘，纵轴从 0 到 100；平均部分奖励乘 100 与严格完成百分比分别标记，不由差值推算失败概率。",
+              "evidence": [
+                {
+                  "fragment": "page=3",
+                  "locator": "pp3,5; OSWorld V2.1",
+                  "source_id": "report"
+                }
+              ],
+              "image_url": "/report-figures/muse-wonder-20261012-workflow.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; original data: Meta model card."
+            },
+            {
+              "kind": "highlight",
+              "label": "evidence",
+              "text": "对实际自动化，更关键的问题是最终状态是否满足全部要求，而不只是执行轨迹看起来推进了多少。"
+            }
+          ],
+          "evidence": [
+            {
+              "fragment": "page=5",
+              "locator": "pp3–6; OSWorld V2.1 and methodology",
+              "source_id": "report"
+            }
+          ],
+          "id": "workflow-metrics",
+          "node_ids": [
+            "workflow"
+          ],
+          "summary": "OSWorld V2.1 为 108 个工作流同时给出部分奖励与严格完成。Wonder Full的 78.4 与 39.4%并非两种模型强弱排名，而是同一任务集合的两种计分。",
+          "title": "长任务取得部分进展，仍可能没有完整交付"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "Muse Wonder Full在ExploitGym取得 92 个标记。模型卡并未把这个总数直接当作排名成绩：GPT-cyber验证器检查了利用路径，随后由Gemini 3.1 Pro独立确认，其中 21 个经预期漏洞取得，71 个经非预期漏洞取得。公开排名仅计预期漏洞利用，所以可与公开排名比较的是 21。"
+            },
+            {
+              "items": [
+                "92、21、71 的单位均为取得的标记，不是独立漏洞数；模型卡此处没有给出用于计算整体任务成功率的完整尝试分母。",
+                "非预期路径不能直接加入受限定规则的排名，但也不能简单说成没有攻击意义。评价真实系统风险时，超出预定测试路径的行为仍值得调查。",
+                "能力测试与防越狱测试属于不同问题。CyberBench、PolyGuard等攻击成功率有各自提示与单轮／多轮条件，不能用标记数或某个低攻击成功率代替完整安全结论。"
+              ],
+              "kind": "points"
+            },
+            {
+              "alt": "共取得 92 个标记，其中 21 个对应预期漏洞、71 个对应非预期漏洞；只有 21 用于与公开排名比较。",
+              "attribution": "FieldToFit 本站重绘；数据与测试说明来自 Meta 2026-10-12 模型卡。",
+              "caption": "图 3｜本站重绘，横轴为标记数量；21＋71＝92。没有绘制整体任务成功率，也不把标记数量当独立漏洞数。",
+              "evidence": [
+                {
+                  "fragment": "page=7",
+                  "locator": "p7; ExploitGym scoring footnote",
+                  "source_id": "report"
+                }
+              ],
+              "image_url": "/report-figures/muse-wonder-20261012-flags.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; original data: Meta model card."
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "先读什么被计入分数，再谈能力提升；越过预设路径的结果需要同时接受基准规则与现实风险的两种检查。"
+            }
+          ],
+          "evidence": [
+            {
+              "fragment": "page=7",
+              "locator": "p7; ExploitGym footnote",
+              "source_id": "report"
+            }
+          ],
+          "id": "scoring-scope",
+          "node_ids": [
+            "cyber"
+          ],
+          "summary": "验证后只有 21 个标记通过预期漏洞取得，其余 71 个通过非预期漏洞取得。这个差别同时影响基准可比性和对真实攻击能力的理解。",
+          "title": "攻击测试取得 92 个标记，不等于 92 个可比排名成绩"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "模型卡用Wonder Full作为家族中最强变体进行风险评估。在Meta自己的风险框架中，未缓解模型在网络安全和失去控制领域被评为moderate or lower，但生化领域的高风险阈值不能排除。针对这个领域加入安全后训练、系统级分类器等措施后，作者才将所有领域评为moderate or lower，并据此支持部署决定。"
+            },
+            {
+              "items": [
+                "一般能力评测方法说明拒答计零分并留在分母；生化代理评测表的特定脚注则注明先剔除拒答。阅读时按表保留这一区别，不把两种分母规则合并。",
+                "Agentic Misalignment在所测场景报告 0%有害行为，MASK为 87.3%；样本和场景边界仍适用，不能把某次零事件观察转换成所有部署的零风险。",
+                "模型卡仍列出事实错误、多步推理、空间／3D任务、未充分评估的语言，以及量化、服务配置、提示、工具和运行框架带来的变化。真实不可逆动作也需额外的人类确认等防护。"
+              ],
+              "kind": "points"
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "作者的残余风险判断必须连同缓解措施与框架定义一起读；它没有替应用开发者完成具体业务、语言与操作权限的验证。"
+            },
+            {
+              "kind": "paragraph",
+              "text": "获取方式也属于部署条件：Wonder提供API与Muse Code入口，Full在Muse Code订阅入口提供，消费者产品更新分阶段推出。本篇没有核实各地区、额度、价格或权重开放条件，因此保留官方入口，不扩写成人人可用或开放权重的发布。"
+            }
+          ],
+          "evidence": [
+            {
+              "fragment": "page=7",
+              "locator": "pp7–12; risk assessment and limitations",
+              "source_id": "report"
+            }
+          ],
+          "id": "deployment-conditions",
+          "node_ids": [
+            "safeguards"
+          ],
+          "summary": "作者未排除未缓解模型在生化领域达到高风险阈值，加入防护后才形成各领域moderate or lower的部署判断。它不是所有环境的安全保证。",
+          "title": "安全缓解后的风险判断，保留框架和部署条件"
+        }
+      ],
+      "title": "这份模型卡的四条核心结论"
+    },
+    "reports": [
+      {
+        "first_published_at": "2026-10-12",
+        "revised_at": null,
+        "revision_note": "本次读取发布日公开模型卡；未标独立修订号，未核到后续实质修订。",
+        "source_id": "report",
+        "substantive_revision": false,
+        "version": "2026-10-12 model card"
+      }
+    ],
+    "slug": "muse-wonder-agent-evaluation",
+    "takeaway": "持续记忆与长任务能力要连同评测范围、完整完成率、利用路径和部署防护一起判断；模型卡提供可审证据，但仍有应用场景验证缺口。"
+  },
+  "title": "Muse Wonder：持续记忆与长任务，怎样读懂能力和安全评测？"
+}

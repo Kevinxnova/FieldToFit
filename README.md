@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.8.40](CHANGELOG.md#v1.8.40)** · [fieldtofit-v1.8.40](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.40)
+**当前源码版本：[v1.8.41](CHANGELOG.md#v1.8.41)** · [fieldtofit-v1.8.41](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.8.41)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 热点信息卡默认隐藏人群与采用条件，鼠标移入或键盘聚焦时展开，离开后收起；触屏可通过明确按钮展开与收起。
-- 卡面取消旋转，保留悬停放大与反光；三列卡片加宽，展开单张时其他卡片保持紧凑。
-- 首批Claude Cowork、ChatGPT × Devin与Haiku 5.5信息卡已上线，提供中英文分层解读、官方证据和人工分享图。
+- 发布Muse Wonder模型卡专题，以四条结论与三张本站重绘解释长期记忆、工作流评分和安全缓解边界。
+- 新增Muse Wonder、nanoMuse 1.0.4、Strata 0.1.43.1、Pi 1.2.0、Deep Agents 0.7.24与Hermes 0.21.7动态，同步五项档案、本期速览和最新事件。
+- 中英文桌面／手机图文与AI读取核对一致，保留原始事件日期、历史版本和未复现实验的说明。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

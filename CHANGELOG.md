@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.8.41"></a>
+## v1.8.41 · Muse Wonder模型卡图文与晨报内容 · 2026-10-13
+
+<!-- site-deployed:2026-10-13 -->
+<!-- public-title:en:Muse Wonder model-card analysis and reviewed daily updates -->
+<!-- release-summary:zh:start -->
+- 发布Muse Wonder模型卡专题，以四条结论与三张本站重绘解释长期记忆、工作流评分和安全缓解边界。
+- 新增Muse Wonder、nanoMuse 1.0.4、Strata 0.1.43.1、Pi 1.2.0、Deep Agents 0.7.24与Hermes 0.21.7动态，同步五项档案、本期速览和最新事件。
+- 中英文桌面／手机图文与AI读取核对一致，保留原始事件日期、历史版本和未复现实验的说明。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the Muse Wonder model-card analysis, with four findings and three FieldToFit redraws explaining memory scope, workflow scoring and safety mitigations.
+- Add updates for Muse Wonder, nanoMuse 1.0.4, Strata 0.1.43.1, Pi 1.2.0, Deep Agents 0.7.24 and Hermes 0.21.7, synchronizing five dossiers, the overview and latest events.
+- Verify bilingual desktop/mobile reading and matching AI data, retaining original event dates, historical versions and the limits of unreproduced experiments.
+<!-- release-summary:en:end -->
+
+对应REQ-6／REQ-11／REQ-22／REQ-23。仅新增已选择专题所需PNG与来源清单，沿用现有内容审核、双语预览和发布接口，无数据库迁移；原图与全文仅链接。39项相关回归、专题本地六组及正式四组中英文／桌面手机图文、普通内容本地44项与正式16项浏览器阅读通过；六条动态、五项档案与D-133已正式发布，三图哈希、12个对象两种语言HTTP／MCP／服务端正文及三个MCP版本核对通过，五项最新事件同步，榜单与旧报告保留。实际结果见[本批验收](docs/validation/2026-10-13-muse-wonder-and-daily.md)。
+
 <a id="v1.8.40"></a>
 ## v1.8.40 · 热点信息卡按需展开 · 2026-10-12
 

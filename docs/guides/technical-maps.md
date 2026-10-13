@@ -76,3 +76,8 @@ Agent in a Bottle的已对齐参考文案保存为backend/knowledge/content/map-
 原图没有合适的复用许可时，可以根据已核对的公开统计事实制作本站重绘，或制作明确标记的阅读示意。图题、替代文字与署名必须注明“本站重绘／示意”，来源、版本、单位、分母及适用边界与正文一致；图形设计权利与原始数据归属分别说明，不套用其他论文的开放许可。登记PNG、SHA-256及来源，随应用验证与部署。原始报告入口继续保留，不在原图上修改数据。
 
 数据图采用真实尺度，人数与消费贡献不能混成同一指标。派生数值写明算式（如21 = 50 − 29）；定性类别图不伪造任务频率。观察与作者预测分开，三种并行观察不构建未经证实的因果或转化漏斗。渲染脚本scripts/maintenance/render_a16z_consumer_figures.py保存本例数据与图形设计，可指定中文字体重建。
+
+
+### Muse Wonder模型卡案例
+
+已按具体选择发布的[模型卡专题](https://fieldtofit.top/maps/muse-wonder-agent-evaluation)采用四结论与同号论述、三张本站重绘，分别核对记忆范围、工作流的部分／严格计分、攻击标记分类和系统缓解。公开结构示例为backend/knowledge/content/map-reading-muse-wonder.json；渲染脚本为scripts/maintenance/render_muse_wonder_figures.py（需matplotlib）。示例仅保存已公开投影，不自动导入或发布；原始全文／原图仅链接，模型发布日、报告版本和本站发表分别保留。

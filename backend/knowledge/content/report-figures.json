@@ -304,5 +304,70 @@
       "locator": "§5.6; Figure 13",
       "numerical_effect_sizes": null
     }
+  },
+  "/report-figures/muse-wonder-20261012-memory.png": {
+    "sha256": "ce6ae9bee5cce5722748e72cd386fa6972d820b556041ff83d5caedb940621ce",
+    "source_urls": [
+      "https://research.meta.ai/static/muse-wonder-model-card"
+    ],
+    "license": "Graphics © FieldToFit; original data: Meta model card.",
+    "version": "Muse Wonder Model Card · 2026-10-12",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "inference_context_tokens": 1000000,
+      "memorybench_context_tokens": [
+        64000,
+        100000
+      ],
+      "reported_rubric_score_full": 85.5,
+      "reported_rubric_score_wonder": 85.6,
+      "score_unit": "reported MemoryBench rubric score",
+      "kind": "scope diagram; areas carry no numeric meaning",
+      "locator": "pp1,3,5"
+    }
+  },
+  "/report-figures/muse-wonder-20261012-workflow.png": {
+    "sha256": "ce20e21aceb1e9413390bed7091110307816b5592dffbaba8428f05ae723e02a",
+    "source_urls": [
+      "https://research.meta.ai/static/muse-wonder-model-card"
+    ],
+    "license": "Graphics © FieldToFit; original data: Meta model card.",
+    "version": "Muse Wonder Model Card · 2026-10-12",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "benchmark": "OSWorld V2.1",
+      "workflows": 108,
+      "models": [
+        "Muse Wonder Full (max)",
+        "Muse Wonder (max)"
+      ],
+      "partial_reward_x100": [
+        78.4,
+        72.6
+      ],
+      "strict_binary_completion_percent": [
+        39.4,
+        34.3
+      ],
+      "locator": "pp3,5",
+      "interpretation": "Scores are not interchangeable; do not infer an exact number of completed tasks."
+    }
+  },
+  "/report-figures/muse-wonder-20261012-flags.png": {
+    "sha256": "215c2eeb5db0a96717e1575cf1e88d3eeb4ba998679a507da8a5e46fe0831474",
+    "source_urls": [
+      "https://research.meta.ai/static/muse-wonder-model-card"
+    ],
+    "license": "Graphics © FieldToFit; original data: Meta model card.",
+    "version": "Muse Wonder Model Card · 2026-10-12",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "captured_flags": 92,
+      "intended_vulnerability_flags": 21,
+      "unintended_vulnerability_flags": 71,
+      "unit": "captured flags",
+      "ranking_comparable": 21,
+      "locator": "p7, ExploitGym scoring footnote"
+    }
   }
 }

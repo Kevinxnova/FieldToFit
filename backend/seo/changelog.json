@@ -1,7 +1,35 @@
 {
-  "version": "1.8.40",
-  "revision": "62863eb3ad413cb85f703a7729552dcc27dac2165fbeb8303b4136b99d4e0371",
+  "version": "1.8.41",
+  "revision": "c73ab929d4979f27b73b7acd8bfd1aaa70954554faa5e85373b366f7469d2847",
   "items": [
+    {
+      "version": "1.8.41",
+      "date": "2026-10-13",
+      "deployed_on": "2026-10-13",
+      "copy": {
+        "zh": {
+          "title": "Muse Wonder模型卡图文与晨报内容",
+          "highlights": [
+            "发布Muse Wonder模型卡专题，以四条结论与三张本站重绘解释长期记忆、工作流评分和安全缓解边界。",
+            "新增Muse Wonder、nanoMuse 1.0.4、Strata 0.1.43.1、Pi 1.2.0、Deep Agents 0.7.24与Hermes 0.21.7动态，同步五项档案、本期速览和最新事件。",
+            "中英文桌面／手机图文与AI读取核对一致，保留原始事件日期、历史版本和未复现实验的说明。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Muse Wonder model-card analysis and reviewed daily updates",
+          "highlights": [
+            "Publish the Muse Wonder model-card analysis, with four findings and three FieldToFit redraws explaining memory scope, workflow scoring and safety mitigations.",
+            "Add updates for Muse Wonder, nanoMuse 1.0.4, Strata 0.1.43.1, Pi 1.2.0, Deep Agents 0.7.24 and Hermes 0.21.7, synchronizing five dossiers, the overview and latest events.",
+            "Verify bilingual desktop/mobile reading and matching AI data, retaining original event dates, historical versions and the limits of unreproduced experiments."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.8.41"
+    },
     {
       "version": "1.8.40",
       "date": "2026-10-12",
