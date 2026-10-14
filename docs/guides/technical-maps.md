@@ -81,3 +81,10 @@ Agent in a Bottle的已对齐参考文案保存为backend/knowledge/content/map-
 ### Muse Wonder模型卡案例
 
 已按具体选择发布的[模型卡专题](https://fieldtofit.top/maps/muse-wonder-agent-evaluation)采用四结论与同号论述、三张本站重绘，分别核对记忆范围、工作流的部分／严格计分、攻击标记分类和系统缓解。公开结构示例为backend/knowledge/content/map-reading-muse-wonder.json；渲染脚本为scripts/maintenance/render_muse_wonder_figures.py（需matplotlib）。示例仅保存已公开投影，不自动导入或发布；原始全文／原图仅链接，模型发布日、报告版本和本站发表分别保留。
+
+
+### 报告只标月份时
+
+报告原文只给YYYY-MM时，first_published_at保留该月份，不填该月1日或本站下载日。公开来源说明写明精度、未核实的首发日以及独立的公告／本站发表日期。近期筛选只使用该月时间范围，历史日级记录保持原样；私密读取台账也接受同一月份值。已有月份稿在编辑器使用month输入。日期精度变化是内容更正，不自动判为报告实质修订。
+
+本例为[Gemini 4 Argon模型卡专题](https://fieldtofit.top/maps/gemini-argon-evaluation)：14页卡与5页方法，四结论、同号论述、三张本站重绘；可复现图表脚本为scripts/maintenance/render_gemini_argon_figures.py（需matplotlib）。原始日期仅2026年10月，217页安全报告未完成深读。

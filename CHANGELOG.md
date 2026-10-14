@@ -4,6 +4,26 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.9.2"></a>
+## v1.9.2 · Gemini 4 Argon专题与获批晨报更新 · 2026-10-14
+
+<!-- site-deployed:2026-10-14 -->
+<!-- public-title:en:Gemini 4 Argon analysis and approved daily updates -->
+<!-- release-summary:zh:start -->
+- 为用户选中的Gemini 4 Argon模型卡专题加入四结论、同号论述与三张本站重绘，分别保留任务成绩、运行条件和安全差值的口径。
+- 支持报告仅给月份的真实日期精度，兼容日级历史，不猜造首发日；编辑、网页与HTTP／MCP沿用同一数据。
+- 接续今日已明确批准的A–I九项动态、七项档案、原事件后续和本期速览／总表；技术报告2／3、未核验线索和榜单保持原状态。
+- 保留独立获批Codex批次已上线的英文AI JSON原文保护与窄屏身份排版修复，D-126／D-144内容及其他已审材料不覆盖。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add four findings, matching arguments and three FieldToFit redraws for the owner-selected Gemini 4 Argon model card, retaining task, execution-setting and safety-delta definitions.
+- Preserve month-only report dates without inventing a first day, maintaining compatibility with daily dates and shared editor, web, HTTP and MCP data.
+- Continue the nine explicitly approved A–I updates, seven dossiers, follow-up history and overview/latest-event projections; reports 2/3, unverified leads and model charts retain their existing status.
+- Retain the independently approved Codex fixes for original fields in English AI JSON previews and narrow source-card headers, without overwriting D-126/D-144 or other reviewed content.
+<!-- release-summary:en:end -->
+
+对应REQ-6／REQ-11／REQ-22／REQ-23。本批为既有内容、图文资源及日期精度兼容的patch；v1.9.0完整日报minor已确认，本批不新增模块、不改日程或自动发布配置，无数据库迁移。正式部署与内容发布验收见[本批记录](docs/validation/2026-10-14-argon-and-daily.md)。
+
 <a id="v1.9.1"></a>
 ## v1.9.1 · Codex重置完成更正与Agents沙箱预热 · 2026-10-14
 

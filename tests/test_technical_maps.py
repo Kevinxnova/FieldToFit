@@ -178,3 +178,25 @@ def test_report_html_abs_representations_share_exact_version(client):
     assert topic['source_ref'].startswith('discovery:') and topic['proposal']['report_fingerprints']
     assert mm.propose({'content':content,'reason':'Synthetic workflow fixture','base_revision':None})['suppressed'] is False  # Same batch: linked once, no duplicate member.
     with get_db() as db:assert db.execute('SELECT count(*) FROM fieldtofit_editorial_members WHERE topic_id=?',(result['id'],)).fetchone()[0]==1
+
+
+def test_report_month_is_preserved_in_http_and_mcp(client):
+    migrate(client)
+    month = date.today().strftime('%Y-%m')
+    edit(client, lambda d: d['technical_map']['reports'][0].update(first_published_at=month, revised_at=None, substantive_revision=False, revision_note='Only the month is given by the original report.'))
+    publish(client, 'news', 'D-90')
+    public = client.get('/api/v1/platform/maps?slug='+SLUG).json
+    assert public['items'][0]['reports'][0]['first_published_at'] == month
+    assert public['items'][0]['report_activity_at'] == month
+    assert public['items'][0]['archived'] is False
+    rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call','params':{'name':'curated_maps','arguments':{'slug':SLUG}}}).json['result']
+    assert rpc['structuredContent'] == public
+    page = client.get('/maps/'+SLUG, base_url='https://fieldtofit.top')
+    assert 'Only the month is given by the original report.' in page.text
+
+
+def test_invalid_or_future_report_month_is_rejected():
+    with pytest.raises(ValueError): tm.report_date('2026-13')
+    with pytest.raises(ValueError): tm.report_date('2999-01')
+    assert tm.report_period_end('2026-02').isoformat() == '2026-02-28'
+    assert tm.report_period_end('2024-02').isoformat() == '2024-02-29'

@@ -5,6 +5,7 @@ import json
 import math
 import re
 from datetime import date, timedelta
+from calendar import monthrange
 from backend.db import get_db
 from backend.knowledge.platform import PlatformError
 
@@ -22,6 +23,26 @@ def day(value, enforce_dates=True):
     from backend.knowledge.content_workspace import today
     if enforce_dates and result > date.fromisoformat(today()): raise ValueError('报告日期不能在未来')
     return result.isoformat()
+
+
+def report_date(value, enforce_dates=True):
+    """Retain the precision supplied by the report; never invent a first day."""
+    if isinstance(value, str) and re.fullmatch(r"[0-9]{4}-[0-9]{2}", value):
+        year, month = map(int, value.split("-"))
+        date(year, month, 1)  # validate without exposing a synthetic publication day
+        from backend.knowledge.content_workspace import today
+        if enforce_dates and value > today()[:7]:
+            raise ValueError('报告日期不能在未来')
+        return value
+    return day(value, enforce_dates)
+
+
+def report_period_end(value):
+    """Use the end of an uncertain month only for recent/historical filtering."""
+    if len(value) == 7:
+        year, month = map(int, value.split('-'))
+        return date(year, month, monthrange(year, month)[1])
+    return date.fromisoformat(value)
 
 
 def metadata(item, enforce_dates=False):
@@ -62,9 +83,9 @@ def metadata(item, enforce_dates=False):
         if not isinstance(report,dict): raise ValueError('报告须为对象')
         source = words(report, 'source_id', 100)
         if source not in sources: raise ValueError('报告须引用已登记出处')
-        first = day(report.get('first_published_at'), enforce_dates)
+        first = report_date(report.get('first_published_at'), enforce_dates)
         revised = day(report['revised_at'], enforce_dates) if report.get('revised_at') else None
-        if revised and revised < first: raise ValueError('报告修订不能早于首次发布')
+        if revised and revised < (first + '-01' if len(first) == 7 else first): raise ValueError('报告修订不能早于首次发布')
         substantive = report.get('substantive_revision', False)
         if not isinstance(substantive, bool): raise ValueError('实质修订标记须为布尔值')
         note = report.get('revision_note', '')
@@ -135,10 +156,10 @@ def project(item):
            'publication': {key: publication.get(key) for key in ('first_published_at', 'updated_at')},
            'path': '/maps/' + graph['slug'], 'evidence_scope': '作者技术报告与FieldToFit解读；未声称独立复现'}
     obj['revision'] = digest(obj)
-    fresh = max(r['revised_at'] if r['substantive_revision'] else r['first_published_at'] for r in graph['reports'])
+    fresh = max((r['revised_at'] if r['substantive_revision'] else r['first_published_at'] for r in graph['reports']), key=report_period_end)
     obj['report_activity_at'] = fresh
     from backend.knowledge.content_workspace import today
-    obj['archived'] = (date.fromisoformat(today()) - date.fromisoformat(fresh)).days >= 30
+    obj['archived'] = (date.fromisoformat(today()) - report_period_end(fresh)).days >= 30
     return obj
 
 

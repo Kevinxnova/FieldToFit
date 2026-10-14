@@ -90,9 +90,9 @@ def check(data):
         body = ws.text(data.get('body'), 'body', 500000)
         if len(body) < 150: ws.fail('须实际读取足够的报告正文')
         fingerprint = tm.digest(body)
-        first = tm.day(data.get('first_published_at'))
+        first = tm.report_date(data.get('first_published_at'))
         revised = tm.day(data['revised_at']) if data.get('revised_at') else None
-        if revised and revised < first: ws.fail('修订日期早于首次发表')
+        if revised and revised < (first + '-01' if len(first) == 7 else first): ws.fail('修订日期早于首次发表')
         proof = {'first_published_at': first, 'revised_at': revised,
                  'version': ws.text(data.get('report_version'), 'report_version', 100),
                  'locator': ws.text(data.get('locator'), 'locator', 300), 'note': ws.text(data.get('note'), 'note', 1600), 'excerpt': body[:2000]}
@@ -142,8 +142,8 @@ def propose(data):
         if any(report[k] != proof.get(k) for k in ('first_published_at', 'revised_at')) or report['version'] != proof.get('version'): ws.fail('提案报告日期／版本与实际读取不一致')
         if report['substantive_revision'] and proof.get('revision_kind') not in SUBSTANTIVE: ws.fail('文字修订或基线检查不能冒充实质报告更新')
     if not target:
-        activity = max(r['revised_at'] if r['substantive_revision'] else r['first_published_at'] for r in graph['reports'])
-        if (date.fromisoformat(ws.today())-date.fromisoformat(activity)).days >= 30: ws.fail('新地图须有近30日报告或实质修订')
+        activity = max((r['revised_at'] if r['substantive_revision'] else r['first_published_at'] for r in graph['reports']), key=tm.report_period_end)
+        if (date.fromisoformat(ws.today())-tm.report_period_end(activity)).days >= 30: ws.fail('新地图须有近30日报告或实质修订')
     changes = [{'field': k, 'before': target.get(k) if target else None, 'after': graph.get(k)} for k in tm.FIELDS if not target or target.get(k) != graph.get(k)]
     if not changes: ws.fail('没有地图内容变化，无须重复提案')
     from backend.knowledge import editorial_batches as batches

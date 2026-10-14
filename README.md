@@ -36,16 +36,16 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.9.1](CHANGELOG.md#v1.9.1)** · [fieldtofit-v1.9.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.1)
+**当前源码版本：[v1.9.2](CHANGELOG.md#v1.9.2)** · [fieldtofit-v1.9.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 修订D-126：补入Tibo官方Day 8全球重置完成声明，正文、日历概览和原帖卡片保持同源；保留10月13日与原编号。
-- 新增Agents API沙箱预热日志D-144，独立归入其他OpenAI；说明提前准备环境、未接入会话前免费与接入后容器计费边界。
-- 修复英文管理预览对AI JSON内中文原帖的误翻译，并让窄屏原帖身份与标签自动分行，避免作者名逐字换行。
-- 两项保留真实北京日期、官方编号及来源范围；不推造重置精确生效时刻或套餐清单，严格重置计数保持0。两项已审核发布，展示修复已验；同站月份兼容版按协调顺序接续。
+- 为用户选中的Gemini 4 Argon模型卡专题加入四结论、同号论述与三张本站重绘，分别保留任务成绩、运行条件和安全差值的口径。
+- 支持报告仅给月份的真实日期精度，兼容日级历史，不猜造首发日；编辑、网页与HTTP／MCP沿用同一数据。
+- 接续今日已明确批准的A–I九项动态、七项档案、原事件后续和本期速览／总表；技术报告2／3、未核验线索和榜单保持原状态。
+- 保留独立获批Codex批次已上线的英文AI JSON原文保护与窄屏身份排版修复，D-126／D-144内容及其他已审材料不覆盖。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

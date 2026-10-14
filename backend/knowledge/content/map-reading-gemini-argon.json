@@ -1,0 +1,495 @@
+{
+  "id": "D-141",
+  "name": "Gemini 4 Argon Model Card",
+  "organization": "Google DeepMind",
+  "title": "Gemini 4 Argon：长任务成绩领先在哪，哪些比较并不等价？",
+  "summary": "深读 14 页模型卡与 5 页评测方法，用四条结论区分上下文容量、分任务成绩、运行配置和安全判断。三张本站重绘保留原始单位与对照；模型卡仅标 2026 年 10 月，不补造首发日，本站未复现实验。",
+  "source_published_at": null,
+  "event_date": "2026-10-14",
+  "checked_at": "2026-10-14",
+  "interpretation": [
+    {
+      "title": "能力、条件与风险分开判断",
+      "text": "深读 14 页模型卡与 5 页评测方法，用四条结论区分上下文容量、分任务成绩、运行配置和安全判断。三张本站重绘保留原始单位与对照；模型卡仅标 2026 年 10 月，不补造首发日，本站未复现实验。",
+      "source_ids": [
+        "report",
+        "methods"
+      ],
+      "locator": "Card physical pp2–14; methods physical pp1–5"
+    }
+  ],
+  "sources": [
+    {
+      "id": "report",
+      "title": "Gemini 4 Argon Model Card · October 2026",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf",
+      "coverage": "link_only"
+    },
+    {
+      "id": "methods",
+      "title": "Model evaluation: Approach, methodology & results · Gemini 4 Argon",
+      "url": "https://deepmind.google/models/evals-methodology/gemini-4-argon/",
+      "coverage": "link_only"
+    },
+    {
+      "id": "access",
+      "title": "Google 10 月 13 日扩大开放公告",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "coverage": "link_only"
+    }
+  ],
+  "related": [
+    {
+      "id": "CW-M03",
+      "name": "Gemini",
+      "url": "https://fieldtofit.top/watch/CW-M03"
+    }
+  ],
+  "note": "模型卡：2026 年 10 月，日级首发与独立修订号未核实。10 月 13 日为开放公告；10 月 14 日为本站核对及本篇整理事件。页码用PDF物理页，封面计入；原文全文与原图仅链接，图表为原创重绘。217 页安全报告未完成深读，本篇不替代其安全论证。",
+  "editor": "FieldToFit",
+  "highlight": false,
+  "technical_map": {
+    "slug": "gemini-argon-evaluation",
+    "question": "Gemini 4 Argon：长任务成绩领先在哪，哪些比较并不等价？",
+    "focus": "主流模型的能力证据与评测可比性",
+    "takeaway": "Argon的知识工作与长上下文成绩值得关注，但选型仍须逐任务、逐配置理解；安全收益与残余风险分开。",
+    "caution": "作者与外部榜单数据混合；本站未复现实验，未完成 217 页安全报告深读。",
+    "change_summary": "首次整理所选模型卡：四条结论、同号论述、三张本站重绘，保留月份日期与指标条件。",
+    "reports": [
+      {
+        "source_id": "report",
+        "version": "October 2026 model card",
+        "first_published_at": "2026-10",
+        "revised_at": null,
+        "substantive_revision": false,
+        "revision_note": "原卡只标 2026 年 10 月；首发日和独立修订号未核实。开放公告 10 月 13 日不替代报告首发日。"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "context",
+        "kind": "method",
+        "stage": 0,
+        "label": "多模态与上下文容量",
+        "mechanism": "稀疏MoE，原生多模态输入；RL包含多步推理与问题求解数据。",
+        "setting": "文本、图像、音频、视频输入；文本输出；输入输出合计最多 1M token。",
+        "result": "GraphWalks BFS F1：短组 99.7%，长组 84.2%。",
+        "limitation": "容量不是无限记忆；两组样本不同，不能把差值当同一任务随长度下降的因果。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card pp2–3,6; methods p3",
+            "fragment": "page=6"
+          },
+          {
+            "source_id": "methods",
+            "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+            "fragment": ""
+          }
+        ],
+        "metrics": [
+          {
+            "value": 84.2,
+            "label": "GraphWalks BFS F1",
+            "unit": "%",
+            "baseline": "Gemini 4 Argon up to 128K: 99.7%",
+            "conditions": "200 problems, 256K to 1M; other subset 650 items"
+          }
+        ]
+      },
+      {
+        "id": "conditions",
+        "kind": "method",
+        "stage": 1,
+        "label": "把运行框架与预算读进成绩",
+        "mechanism": "多数pass@1 且最高thinking；小集多次试验均值，具体例外另列。",
+        "setting": "PostTrainBench同一OpenCode、单H100、10 小时；OSWorld离线子集部分分、3 次取最大。",
+        "result": "配置、子集、取样与供应商自报共同限定比较。",
+        "limitation": "不是所有模型、所有行均由Google同条件重测；视觉帧数也不同。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card p5; methods pp2–4",
+            "fragment": "page=5"
+          },
+          {
+            "source_id": "methods",
+            "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+            "fragment": ""
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "tasks",
+        "kind": "result",
+        "stage": 2,
+        "label": "分任务强项与落后项并存",
+        "mechanism": "知识工作、代码、终端与机器学习工程分别计分。",
+        "setting": "模型卡 2026 年 10 月矩阵；按行保留外部榜单与内部复测口径。",
+        "result": "Vals 68.9%，FrontierSWE 55.0%，Terminal-Bench 57.4%，PostTrainBench 45.3%。",
+        "limitation": "不平均不同基准，不从一行领先推出全任务领先。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card p6; methods pp2–3",
+            "fragment": "page=6"
+          },
+          {
+            "source_id": "methods",
+            "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+            "fragment": ""
+          }
+        ],
+        "metrics": [
+          {
+            "value": 68.9,
+            "label": "Vals Index",
+            "unit": "%",
+            "baseline": "GPT-6 Astra 63.1%; Fable 5.1 65.8%; Opus 5.5 67.0%",
+            "conditions": "Official matrix row; results sourced from Vals AI"
+          }
+        ]
+      },
+      {
+        "id": "safety-baseline",
+        "kind": "baseline",
+        "stage": 1,
+        "label": "Gemini 3.1 Pro安全对照",
+        "mechanism": "同一组内部自动安全评测中的比较基线。",
+        "setting": "绝对百分点变化；每项更好方向分别定义。",
+        "result": "表内只报告差值，并未给所有绝对发生率。",
+        "limitation": "改进过的评测不与旧模型卡直接拼表。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card pp9–10",
+            "fragment": "page=10"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "safety",
+        "kind": "result",
+        "stage": 2,
+        "label": "安全收益与残余风险分别读",
+        "mechanism": "内容安全、拒绝行为和前沿能力风险采用不同评估。",
+        "setting": "对照Gemini 3.1 Pro；内部自动评测及FSF阈值判断。",
+        "result": "文本安全+1.57pp，多语-3.16pp，图像到文本-9.29pp；拒绝语气+5.50pp，过度拒绝-9.60pp。",
+        "limitation": "作者称文本安全在置信区间内相近；生物／网络CCL及隐蔽／情境意识TCL不能排除，不是零风险证明。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card pp9–14",
+            "fragment": "page=10"
+          }
+        ],
+        "metrics": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "context",
+        "to": "tasks",
+        "relation": "parallel",
+        "label": "同一模型的上下文与分任务证据并列，非因果证明",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card pp2–6",
+            "fragment": "page=6"
+          }
+        ]
+      },
+      {
+        "from": "conditions",
+        "to": "tasks",
+        "relation": "parallel",
+        "label": "配置说明与结果对应阅读，不把框架当模型继承",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card p5 links the detailed evaluation methods",
+            "fragment": "page=5"
+          },
+          {
+            "source_id": "methods",
+            "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+            "fragment": ""
+          }
+        ]
+      },
+      {
+        "from": "safety-baseline",
+        "to": "safety",
+        "relation": "baseline",
+        "label": "Gemini 3.1 Pro是本表安全差值基线",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card p10 table heading",
+            "fragment": "page=10"
+          }
+        ]
+      },
+      {
+        "from": "tasks",
+        "to": "safety",
+        "relation": "parallel",
+        "label": "能力成绩与安全判断分别评估",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Card pp5,8–11",
+            "fragment": "page=9"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "title": "四条核心结论",
+      "findings": [
+        {
+          "id": "context-scope",
+          "title": "1M窗口是容量，长任务仍需检验是否完整交付",
+          "summary": "GraphWalks长组 84.2%与短组 99.7%来自不同样本，不是无限记忆或长度退化的统一概率。",
+          "node_ids": [
+            "context"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "Card pp2–3,6–7; methods p3",
+              "fragment": "page=6"
+            },
+            {
+              "source_id": "methods",
+              "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+              "fragment": ""
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "模型卡明确Argon不是旧模型的微调版本，而是新的稀疏MoE模型。多模态输入和多步推理训练使它可以覆盖较复杂工作流；但公开卡没有给参数总量、训练数据各类占比或完整训练预算，不能补出机制细节。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "容量：输入与输出合计最多 1M token；不是输入 1M再额外输出 1M。",
+                "测试：最多 128K组 650 题；256K至 1M组 200 题，BFS F1 分别 99.7%／84.2%。两组题不同，不能由 15.5 个百分点差值推算同一任务的失败增加。",
+                "产品：模型卡仍列幻觉、延迟／超时与 2026 年 3 月知识截止。检索、引用核对和任务终态验证仍有价值。"
+              ]
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/gemini-argon-202610-context.png",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "Physical p6 / printed p5",
+                  "fragment": "page=6"
+                }
+              ],
+              "alt": "两个GraphWalks子集的BFS F1 为 99.7%和 84.2%，样本分别 650 与 200。",
+              "caption": "本站重绘：不同子集使用同一指标，但不是同题重复实验，也不是记忆成功概率。",
+              "attribution": "FieldToFit本站重绘；公开数据来自Google DeepMind的 2026 年 10 月模型卡。",
+              "license": "Graphics © FieldToFit; original data: Google DeepMind model card."
+            },
+            {
+              "kind": "highlight",
+              "text": "长上下文提高可放入的信息量，不自动证明模型能正确使用每条信息或交付无人监督任务。",
+              "label": "limit"
+            }
+          ]
+        },
+        {
+          "id": "task-strengths",
+          "title": "知识工作强项不能替代每项任务的独立比较",
+          "summary": "Vals领先，但FrontierSWE、Terminal-Bench和PostTrainBench有更高的对照模型；不要制作伪统一排行榜。",
+          "node_ids": [
+            "tasks",
+            "conditions"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "Card p6; methods pp2–3",
+              "fragment": "page=6"
+            },
+            {
+              "source_id": "methods",
+              "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+              "fragment": ""
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "第 6 页矩阵的价值是把不同工作类型展开。知识工作和工程任务没有同一个分母；即便单位都写百分比，也不能平均成通用Agent成功率。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "Vals Index：Argon 68.9%，GPT-6 Astra 63.1%，Fable 5.1 65.8%，Opus 5.5 67.0%；本行可描述为表内领先。",
+                "FrontierSWE v2：Argon 55.0%，Astra 65.5%；Terminal-Bench 4.0：Argon 57.4%，Opus 5.5 为 66.4%；本行不能写Argon全面领先。",
+                "PostTrainBench：Argon 45.3%，Opus 5.5 为 49.3%。共享硬件和框架改善可比性，但仍只是四个基础模型与七个基准的加权结果。"
+              ]
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/gemini-argon-202610-tasks.png",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "Physical p6 / printed p5",
+                  "fragment": "page=6"
+                }
+              ],
+              "alt": "四个基准分别展示四个模型分数，Argon并非每行最高。",
+              "caption": "本站重绘：每行独立比较，横轴 0–100%。不跨行相加；对照数据来源和运行设置见正文。",
+              "attribution": "FieldToFit本站重绘；公开数据来自Google DeepMind的 2026 年 10 月模型卡。",
+              "license": "Graphics © FieldToFit; original data: Google DeepMind model card."
+            },
+            {
+              "kind": "highlight",
+              "text": "选型应从自己的任务类型出发，先判断结果对应的工作流与评分是否接近实际业务。",
+              "label": "evidence"
+            }
+          ]
+        },
+        {
+          "id": "evaluation-settings",
+          "title": "框架、预算和取分方式会改变“更强”的含义",
+          "summary": "多数pass@1 并不覆盖所有行；OSWorld的部分分与 3 次最大值、不同视觉帧数都需明示。",
+          "node_ids": [
+            "conditions",
+            "tasks"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "Card pp5–6; methods pp2–4",
+              "fragment": "page=5"
+            },
+            {
+              "source_id": "methods",
+              "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+              "fragment": ""
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "方法文档默认最高thinking、单次尝试，且小基准平均多次试验以降低波动。其他厂商通常引用自报结果，能取得时用最大推理设置，否则用最佳可得结果；这不是一场统一实验。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "PostTrainBench v1.1：全部模型由Google复测，OpenCode、单NVIDIA H100、10 小时预算；数据与权重范围必须一起写。",
+                "OSWorld 2.0：离线子集部分分，3 次运行取最大，每次单次尝试；默认 1080p、最多 500 步，Gemini CUA框架与并行批量工具调用。69.2%不能直接称完整任务成功率。",
+                "视频理解LVBench：Gemini用 1FPS，Astra 800 帧、Fable 5.1 为 300 帧、Opus 5.5 为 600 帧，受到API限制。Terminal-Bench Science还有 6 倍验证器超时安排。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "text": "框架和样本不同不让结果失去价值，但限制了它能回答的问题；不能由分数反推真实用户的时间、费用或事故率。",
+              "label": "limit"
+            }
+          ]
+        },
+        {
+          "id": "safety-boundaries",
+          "title": "安全表有改善也有例外，残余风险需另读",
+          "summary": "百分点差值不是事故概率；内容安全评测与前沿风险阈值不是同一套分数。",
+          "node_ids": [
+            "safety-baseline",
+            "safety"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "Card pp9–14",
+              "fragment": "page=10"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "安全差值对照Gemini 3.1 Pro。多语、图像到文本、拒绝语气与过度拒绝总体改善；文本安全原始差值+1.57pp，在“越低越好”的方向上增加，但作者称置信区间内相近。不能只保留绿色数字。"
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/gemini-argon-202610-safety.png",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "Physical p10 / printed p9",
+                  "fragment": "page=10"
+                }
+              ],
+              "alt": "安全差值：+1.57、-3.16、-9.29、+5.50、-9.60 个百分点，改善方向逐项不同。",
+              "caption": "本站重绘：保留原始符号和指标方向。未给绝对基线，不能换算事故率或相对降幅。",
+              "attribution": "FieldToFit本站重绘；公开数据来自Google DeepMind的 2026 年 10 月模型卡。",
+              "license": "Graphics © FieldToFit; original data: Google DeepMind model card."
+            },
+            {
+              "kind": "points",
+              "items": [
+                "Google说明评测与查询集已改进，旧模型卡数字不能直接拼接比较；人工复核发现的损失多为误报或非严重问题，这是作者解释，不是本站验证。",
+                "前沿风险：生物与网络CCL不能排除；隐蔽／情境意识TCL不能排除。Google据此部署缓解并评估残余风险，而不是宣布模型无风险。",
+                "本篇读完 14 页模型卡，不等于已完成 217 页安全报告和安全案例论证。模型、工具权限、监控与人工批准需要一起考虑。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "text": "作者评测及缓解声明不等于独立安全认证，更不能把测试阈值转换为生产事故概率。",
+              "label": "limit"
+            }
+          ]
+        }
+      ],
+      "editorial": [
+        "FieldToFit分析：最有用的读法，是先确定任务，再检查成绩的样本、工具与预算，最后给不可逆行动设权限与人工批准。主流模型品牌与一个高分都不能替代业务任务的验收。",
+        "可以为自己的工作流建立小测试：长资料的引用定位、代码修改后的完整测试、超时后的接续，以及输出中的不确定性提示。记录成功与失败、用时和token费用，避免只挑最好一次。",
+        "日期分开维护：模型 9 月 30 日发布、10 月 13 日扩大开放；本模型卡只知 2026 年 10 月；本站核对与文章发表在 10 月 14 日。后续只有真实新证据或实质修订才更新，不由无变化检查刷新公开日期。"
+      ]
+    }
+  },
+  "category": "research",
+  "publication": {
+    "first_published_at": "2026-10-14T03:18:58.759207+00:00",
+    "updated_at": "2026-10-14T03:18:58.759207+00:00"
+  },
+  "materials_revision": "d60f305f40a288eb93902d8f4b0828afc9e89da45504c97d8eeaac834eb5cd96",
+  "materials": [
+    {
+      "id": "report",
+      "title": "Gemini 4 Argon Model Card · October 2026",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf",
+      "coverage": "link_only",
+      "checked_at": "2026-10-14",
+      "retrieved_at": "2026-10-14",
+      "upstream_revision": "October 2026 model card",
+      "locator": "14 physical pages, including the cover; results p6, safety p10",
+      "reason": "已读全文与关键图表；原文再分发许可未确认，只公开原创分析、来源链接和重绘统计。",
+      "rights": {
+        "basis": "原文仅链接；本站图形基于公开事实重新设计",
+        "url": "",
+        "notice": ""
+      },
+      "content_hash": null,
+      "characters": 0,
+      "reading": {
+        "tool": "curated_material",
+        "arguments": {
+          "id": "D-141",
+          "material_id": "report",
+          "content_revision": "d60f305f40a288eb93902d8f4b0828afc9e89da45504c97d8eeaac834eb5cd96"
+        }
+      },
+      "read_url": "/api/v1/platform/content/D-141/materials/report?content_revision=d60f305f40a288eb93902d8f4b0828afc9e89da45504c97d8eeaac834eb5cd96"
+    }
+  ]
+}

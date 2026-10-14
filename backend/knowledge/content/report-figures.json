@@ -369,5 +369,116 @@
       "ranking_comparable": 21,
       "locator": "p7, ExploitGym scoring footnote"
     }
+  },
+  "/report-figures/gemini-argon-202610-tasks.png": {
+    "sha256": "152062cbcdc8fc95cd9d1906c3b135b253ef6b6888e580f361c056f98fa95021",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf"
+    ],
+    "license": "Graphics © FieldToFit; original data: Google DeepMind model card.",
+    "version": "Gemini 4 Argon Model Card · October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "models": [
+        "Gemini 4 Argon",
+        "GPT-6 Astra",
+        "Claude Fable 5.1",
+        "Claude Opus 5.5"
+      ],
+      "benchmarks": [
+        "Vals Index",
+        "FrontierSWE v2",
+        "Terminal-Bench 4.0",
+        "PostTrainBench"
+      ],
+      "scores_percent": [
+        [
+          68.9,
+          63.1,
+          65.8,
+          67.0
+        ],
+        [
+          55.0,
+          65.5,
+          56.3,
+          62.3
+        ],
+        [
+          57.4,
+          58.2,
+          57.9,
+          66.4
+        ],
+        [
+          45.3,
+          44.3,
+          40.2,
+          49.3
+        ]
+      ],
+      "locator": "physical p6 / printed p5",
+      "notes": "Independent rows; provider/public-leaderboard results except shared PostTrainBench configuration. No aggregate ranking."
+    }
+  },
+  "/report-figures/gemini-argon-202610-context.png": {
+    "sha256": "f3a10524e5b1c46af0e835bdcdf51a8062d68062e11d35a2cd0769dcb42d9647",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf"
+    ],
+    "license": "Graphics © FieldToFit; original data: Google DeepMind model card.",
+    "version": "Gemini 4 Argon Model Card · October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "gemini_bfs_f1_percent": [
+        99.7,
+        84.2
+      ],
+      "subsets": [
+        "up to 128K",
+        "256K to 1M"
+      ],
+      "sample_sizes": [
+        650,
+        200
+      ],
+      "locator": "card physical p6; methods physical p3",
+      "scope": "Different subsets; capacity is combined input/output, not unlimited memory."
+    }
+  },
+  "/report-figures/gemini-argon-202610-safety.png": {
+    "sha256": "fe0bbf4d48acdd1df3955fb2a1dba5c4f1db846bcc707b61766eda63e4603874",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf"
+    ],
+    "license": "Graphics © FieldToFit; original data: Google DeepMind model card.",
+    "version": "Gemini 4 Argon Model Card · October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "baseline": "Gemini 3.1 Pro",
+      "metrics": [
+        "Text safety (lower better)",
+        "Multilingual (lower better)",
+        "Image-to-text (lower better)",
+        "Refusal tone (higher better)",
+        "Unjustified refusal (lower better)"
+      ],
+      "deltas_percentage_points": [
+        1.57,
+        -3.16,
+        -9.29,
+        5.5,
+        -9.6
+      ],
+      "lower_is_better": [
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "locator": "physical p10 / printed p9",
+      "scope": "Internal automated changes, not deployment incident rates. Raw directions retained."
+    }
   }
 }
