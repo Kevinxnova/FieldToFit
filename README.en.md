@@ -36,16 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.9.2](CHANGELOG.md#v1.9.2)** · [fieldtofit-v1.9.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.2)
+**Current source version: [v1.9.3](CHANGELOG.md#v1.9.3)** · [fieldtofit-v1.9.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.3)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add four findings, matching arguments and three FieldToFit redraws for the owner-selected Gemini 4 Argon model card, retaining task, execution-setting and safety-delta definitions.
-- Preserve month-only report dates without inventing a first day, maintaining compatibility with daily dates and shared editor, web, HTTP and MCP data.
-- Continue the nine explicitly approved A–I updates, seven dossiers, follow-up history and overview/latest-event projections; reports 2/3, unverified leads and model charts retain their existing status.
-- Retain the independently approved Codex fixes for original fields in English AI JSON previews and narrow source-card headers, without overwriting D-126/D-144 or other reviewed content.
+- Use local Codex GPT for daily research, bilingual writing and factual review as requested, without MiniMax or an additional paid model API.
+- Bind local copy to evidence, provide private bilingual PDF proofs and page-by-page layout review, and deliver automatically after 09:00 with resumable preparation and public readback. Preserve owner edits, withdrawals and published revisions.
+- Preserve the private 07:30/08:00 editorial task, magazine design, complete-close market basis and historical sample. Local execution requires the computer and app to be online; free quote verification and consecutive real publications remain under observation.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

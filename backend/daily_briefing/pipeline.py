@@ -37,7 +37,7 @@ def source_map():
 
 def configuration():
     mapping=source_map()
-    return {'enabled':os.getenv('FIELDTOFIT_DAILY_AUTOPUBLISH')=='1','timezone':'Asia/Shanghai','collect':COLLECT_AT.strftime('%H:%M'),'cutoff':CUTOFF_AT.strftime('%H:%M'),'publish':PUBLISH_AT.strftime('%H:%M'),'check':CHECK_AT.strftime('%H:%M'),'quote_adapter_configured':bool(os.getenv('FIELDTOFIT_DAILY_QUOTES_URL')),'missing_source_dimensions':[k for k,v in mapping.items() if not v], 'schedule_verified':os.getenv('FIELDTOFIT_DAILY_SCHEDULE_VERIFIED')=='1'}
+    return {'enabled':os.getenv('FIELDTOFIT_DAILY_AUTOPUBLISH')=='1','timezone':'Asia/Shanghai','collect':COLLECT_AT.strftime('%H:%M'),'cutoff':CUTOFF_AT.strftime('%H:%M'),'publish':PUBLISH_AT.strftime('%H:%M'),'check':CHECK_AT.strftime('%H:%M'),'quote_adapter_configured':bool(os.getenv('FIELDTOFIT_DAILY_QUOTES_URL')),'missing_source_dimensions':[k for k,v in mapping.items() if not v], 'schedule_verified':os.getenv('FIELDTOFIT_DAILY_SCHEDULE_VERIFIED')=='1', 'local_gpt_supported':True}
 
 def claim(day,phase,now=None,manual=False):
     now=now or datetime.now(timezone.utc);token=uuid.uuid4().hex

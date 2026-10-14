@@ -1,7 +1,35 @@
 {
-  "version": "1.9.2",
-  "revision": "72c4f298f2581faeccda96ca64069c46880841862e81446ec20e392531d9b469",
+  "version": "1.9.3",
+  "revision": "7ce7d10af7ff9429ab5d5af2783c96ebecdb7932e78333ef36f42efff378490a",
   "items": [
+    {
+      "version": "1.9.3",
+      "date": "2026-10-14",
+      "deployed_on": "2026-10-14",
+      "copy": {
+        "zh": {
+          "title": "本地GPT日报准备、核验与自动交付",
+          "highlights": [
+            "按所有者确认，以本机Codex GPT承接日报取材、双语写作和事实复核，不接入MiniMax或额外付费模型API。",
+            "新增本地稿件与证据绑定、私密双语PDF校样、逐页排版核验和09:00后自动交付，支持同稿恢复与公开回读；人工改稿、撤回和已发表修订不被自动覆盖。",
+            "保持原07:30／08:00私密选题、日报设计、完整收盘口径和历史样刊；本地运行依赖电脑及应用在线，逐期免费行情核实与连续真实出刊仍需观察。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Local GPT preparation, review and automatic daily delivery",
+          "highlights": [
+            "Use local Codex GPT for daily research, bilingual writing and factual review as requested, without MiniMax or an additional paid model API.",
+            "Bind local copy to evidence, provide private bilingual PDF proofs and page-by-page layout review, and deliver automatically after 09:00 with resumable preparation and public readback. Preserve owner edits, withdrawals and published revisions.",
+            "Preserve the private 07:30/08:00 editorial task, magazine design, complete-close market basis and historical sample. Local execution requires the computer and app to be online; free quote verification and consecutive real publications remain under observation."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.9.3"
+    },
     {
       "version": "1.9.2",
       "date": "2026-10-14",

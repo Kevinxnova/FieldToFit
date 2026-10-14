@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.9.3"></a>
+## v1.9.3 · 本地GPT日报准备、核验与自动交付 · 2026-10-14
+
+<!-- site-deployed:2026-10-14 -->
+<!-- public-title:en:Local GPT preparation, review and automatic daily delivery -->
+<!-- release-summary:zh:start -->
+- 按所有者确认，以本机Codex GPT承接日报取材、双语写作和事实复核，不接入MiniMax或额外付费模型API。
+- 新增本地稿件与证据绑定、私密双语PDF校样、逐页排版核验和09:00后自动交付，支持同稿恢复与公开回读；人工改稿、撤回和已发表修订不被自动覆盖。
+- 保持原07:30／08:00私密选题、日报设计、完整收盘口径和历史样刊；本地运行依赖电脑及应用在线，逐期免费行情核实与连续真实出刊仍需观察。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Use local Codex GPT for daily research, bilingual writing and factual review as requested, without MiniMax or an additional paid model API.
+- Bind local copy to evidence, provide private bilingual PDF proofs and page-by-page layout review, and deliver automatically after 09:00 with resumable preparation and public readback. Preserve owner edits, withdrawals and published revisions.
+- Preserve the private 07:30/08:00 editorial task, magazine design, complete-close market basis and historical sample. Local execution requires the computer and app to be online; free quote verification and consecutive real publications remain under observation.
+<!-- release-summary:en:end -->
+
+对应[REQ-24](FieldToFit-PM.md#req-24)，补齐已批准v1.9日报模块的本地运行接入，属于兼容patch；现有人工核验接口默认语义保持，新增私密校样读取与可选本地复核／automatic参数，无数据库迁移。事实核验、任务注册、部署及真实出刊分别记账，不把定时任务创建等同完整日报验收。实际结果见[本地接入验证](docs/validation/2026-10-14-local-gpt-daily.md)及[运行指南](docs/guides/daily-journal.md)。
+
 <a id="v1.9.2"></a>
 ## v1.9.2 · Gemini 4 Argon专题与获批晨报更新 · 2026-10-14
 

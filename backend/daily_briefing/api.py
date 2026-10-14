@@ -58,6 +58,11 @@ def admin_index():return jsonify(service.administrative_index())
 @bp.get('/admin/daily/<day>')
 @admin_required
 def admin_read(day):return jsonify(service.draft(day))
+@bp.get('/admin/daily/<day>/pdf')
+@admin_required
+def admin_pdf(day):
+    lang=request.args.get('lang','zh');data,sha=service.prepared_pdf_bytes(day,lang)
+    return Response(data,content_type='application/pdf',headers={'ETag':'"'+sha+'"','Content-Disposition':f'attachment; filename="FieldToFit-proof-{day}-{lang}.pdf"'})
 @bp.post('/admin/daily')
 @admin_required
 def admin_save():
@@ -66,12 +71,18 @@ def admin_save():
 @admin_required
 def admin_review(day):
     b=body()
+    if 'review_report' in b:
+        report=b['review_report']
+        if not isinstance(report,dict) or report.get('method')!='local_gpt':fail('Expected a local GPT editorial review')
+        return jsonify(service.approve(day,b['draft_version'],report))
     if b.get('facts_and_languages_checked') is not True:fail('Confirm source facts and both languages before review')
     return jsonify(service.approve(day,b['draft_version'],{'approved':True,'method':'owner'}))
 @bp.post('/admin/daily/<day>/publish')
 @admin_required
 def admin_publish(day):
-    b=body();return jsonify(service.publish(day,b['draft_version'],b['reason']))
+    b=body();automatic=b.get('automatic',False)
+    if type(automatic) is not bool:fail('Automatic publication must be a boolean')
+    return jsonify(service.publish(day,b['draft_version'],b['reason'],automatic=automatic,proof_hashes=b.get('proof_hashes')))
 @bp.post('/admin/daily/<day>/withdraw')
 @admin_required
 def admin_withdraw(day):

@@ -36,16 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.9.2](CHANGELOG.md#v1.9.2)** · [fieldtofit-v1.9.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.2)
+**当前源码版本：[v1.9.3](CHANGELOG.md#v1.9.3)** · [fieldtofit-v1.9.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.3)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 为用户选中的Gemini 4 Argon模型卡专题加入四结论、同号论述与三张本站重绘，分别保留任务成绩、运行条件和安全差值的口径。
-- 支持报告仅给月份的真实日期精度，兼容日级历史，不猜造首发日；编辑、网页与HTTP／MCP沿用同一数据。
-- 接续今日已明确批准的A–I九项动态、七项档案、原事件后续和本期速览／总表；技术报告2／3、未核验线索和榜单保持原状态。
-- 保留独立获批Codex批次已上线的英文AI JSON原文保护与窄屏身份排版修复，D-126／D-144内容及其他已审材料不覆盖。
+- 按所有者确认，以本机Codex GPT承接日报取材、双语写作和事实复核，不接入MiniMax或额外付费模型API。
+- 新增本地稿件与证据绑定、私密双语PDF校样、逐页排版核验和09:00后自动交付，支持同稿恢复与公开回读；人工改稿、撤回和已发表修订不被自动覆盖。
+- 保持原07:30／08:00私密选题、日报设计、完整收盘口径和历史样刊；本地运行依赖电脑及应用在线，逐期免费行情核实与连续真实出刊仍需观察。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

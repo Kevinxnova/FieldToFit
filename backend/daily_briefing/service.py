@@ -1,11 +1,31 @@
 """Immutable bilingual editions. All render work finishes before publication."""
 import base64
 import json
+import re
 from datetime import datetime, timezone
 from backend.db import get_db
 from backend.knowledge.workspace_transactions import editorial_transaction
 from .schedule import PUBLISH_AT, local_time
-from .schema import TZ, validate, digest, project, day_key, stamp, fail, bilingual
+from .schema import TZ, validate, digest, project, day_key, stamp, fail, bilingual, instant
+
+LOCAL_REVIEW_CHECKS = ('sources', 'facts', 'bilingual', 'coverage', 'market_closes', 'image_rights', 'deduplication')
+
+def local_review(report, data):
+    """Bind an actual local GPT review to one immutable edition and evidence set."""
+    if (not isinstance(report, dict) or report.get('method') != 'local_gpt'
+            or report.get('approved') is not True or report.get('issues') != []
+            or report.get('content_hash') != digest(data)
+            or not re.fullmatch(r'[0-9a-f]{64}', str(report.get('evidence_hash', '')))
+            or not isinstance(report.get('checks'), dict)
+            or set(report['checks']) != set(LOCAL_REVIEW_CHECKS)
+            or any(v is not True for v in report['checks'].values())):
+        fail('Local GPT review must match the edition and pass every editorial check', 'daily_review', 409)
+    reviewed = instant(report.get('reviewed_at'))
+    if reviewed > datetime.now(timezone.utc) or reviewed < instant(data['cutoff_at']):
+        fail('Local review must follow the actual cutoff', 'daily_review', 409)
+    if data['kind'] != 'daily':
+        fail('Local automation cannot publish a review sample', 'daily_review', 409)
+    return {k: report[k] for k in ('checks', 'reviewed_at')}
 
 
 def enc(v): return json.dumps(v,ensure_ascii=False,separators=(',',':'),allow_nan=False)
@@ -49,7 +69,8 @@ def approve(day, version, report, renderer=None):
     """Review binds copy + evidence. Saving any change invalidates both PDFs."""
     from .pdf import render
     d=draft(day);_version(d,version);data=validate(d['draft']);content_hash=digest(data)
-    if not isinstance(report,dict) or report.get('approved') is not True or report.get('method') not in ('owner','independent_model'): fail('Explicit fact and bilingual review is required')
+    if not isinstance(report,dict) or report.get('approved') is not True or report.get('method') not in ('owner','independent_model','local_gpt'): fail('Explicit fact and bilingual review is required')
+    local_checks = local_review(report, data) if report['method']=='local_gpt' else {}
     if any(c['state']=='failed' for c in data['coverage']): fail('Failed coverage must be resolved before review','daily_coverage',409)
     if data['kind']=='daily' and any(c['state']!='checked' for c in data['coverage']): fail('All eleven dimensions require successful checks','daily_coverage',409)
     if renderer is None:
@@ -61,7 +82,7 @@ def approve(day, version, report, renderer=None):
         image=fetch(data['image']['url'],max_bytes=5_000_000)[0]
     artifacts={lang:renderer(data,lang,image=image) for lang in ('zh','en')}
     if sum(len(a['bytes']) for a in artifacts.values())>2_500_000:fail('PDF pair exceeds the publication storage budget','daily_pdf_size',413)
-    review={'approved':True,'method':report['method'],'checked_at':stamp(),'content_hash':content_hash,'evidence_hash':report.get('evidence_hash'), 'pages':{l:a['pages'] for l,a in artifacts.items()}}
+    review={'approved':True,'method':report['method'],'checked_at':stamp(),'content_hash':content_hash,'evidence_hash':report.get('evidence_hash'), 'pages':{l:a['pages'] for l,a in artifacts.items()}, **local_checks}
     with editorial_transaction() as db:
         row=_issue(db,day);_version(row,version)
         if digest(dec(row['draft_json']))!=content_hash: fail('Review is stale','daily_conflict',409)
@@ -70,7 +91,7 @@ def approve(day, version, report, renderer=None):
         db.execute('UPDATE fieldtofit_daily_issues SET review_hash=?,review_json=?,updated_at=? WHERE day=?',(content_hash,enc(review),stamp(),day))
     return review
 
-def publish(day, version, reason, automatic=False, now=None):
+def publish(day, version, reason, automatic=False, now=None, proof_hashes=None):
     now=now or datetime.now(timezone.utc);bilingual(reason,'publication/correction reason',600)
     with editorial_transaction() as db:
         row=_issue(db,day);_version(row,version);data=validate(dec(row['draft_json']),now=now);h=digest(data)
@@ -81,6 +102,12 @@ def publish(day, version, reason, automatic=False, now=None):
             if row['state']=='withdrawn': fail('A withdrawn edition requires owner action','daily_withdrawn',409)
             if data['kind']!='daily' or now.astimezone(TZ).date().isoformat()!=day or local_time(now)<PUBLISH_AT: fail('Automatic publication is only permitted from '+PUBLISH_AT.strftime('%H:%M')+' Asia/Shanghai on the issue date','daily_not_due',409)
             if previous and digest(dec(previous['snapshot_json']))!=digest(_public_copy(data)): fail('Automatic corrections require owner review','daily_correction',409)
+        local_automatic = automatic and dec(row['review_json']).get('method') == 'local_gpt'
+        if proof_hashes is not None or local_automatic:
+            if (not isinstance(proof_hashes, dict) or set(proof_hashes) != {'zh', 'en'}
+                    or any(not re.fullmatch(r'[0-9a-f]{64}', str(v)) for v in proof_hashes.values())
+                    or proof_hashes != {r['lang']:r['sha256'] for r in artifacts}):
+                fail('PDF proofs changed after visual review','daily_pdf_conflict',409)
         public=_public_copy(data);public_hash=digest(public)
         if previous and previous['content_hash']==public_hash and row['state']=='published': return {'date':day,'revision':previous['revision'],'content_hash':public_hash,'unchanged':True}
         revision=(previous['revision'] if previous else 0)+1
@@ -141,3 +168,15 @@ def pdf_bytes(day,lang,revision=None):
         r=db.execute('SELECT p.* FROM fieldtofit_daily_pdfs p JOIN fieldtofit_daily_issues i ON i.day=p.day WHERE p.day=? AND p.revision=? AND p.lang=? AND i.state=?',(day,revision,lang,'published')).fetchone()
     if not r: fail('PDF is unavailable','daily_pdf_unavailable',503)
     return base64.b64decode(r['data_base64']),r['sha256'],revision
+
+def prepared_pdf_bytes(day, lang):
+    """Private proof copy, available only while the current review still matches."""
+    if lang not in ('zh','en'):fail('Unsupported language')
+    with get_db() as db:
+        row=_issue(db,day)
+        h=digest(dec(row['draft_json']))
+        if row['state']=='withdrawn' or row['review_hash']!=h:
+            fail('The draft has no current PDF proof','daily_not_ready',409)
+        artifact=db.execute('SELECT * FROM fieldtofit_daily_prepared WHERE day=? AND content_hash=? AND lang=?',(day,h,lang)).fetchone()
+        if not artifact:fail('PDF proof is unavailable','daily_not_ready',409)
+    return base64.b64decode(artifact['data_base64']),artifact['sha256']
