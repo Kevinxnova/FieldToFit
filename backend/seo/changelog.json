@@ -1,7 +1,37 @@
 {
-  "version": "1.9.0",
-  "revision": "7a8b84f8e691a4abcf8064414ebaf482f2a93250eda0c5aef426524309735bda",
+  "version": "1.9.1",
+  "revision": "76479a3a1c772b1734b3c5f39c0293990852642c82429d7718b4a05f0b939a82",
   "items": [
+    {
+      "version": "1.9.1",
+      "date": "2026-10-14",
+      "deployed_on": "2026-10-14",
+      "copy": {
+        "zh": {
+          "title": "Codex重置完成更正与Agents沙箱预热",
+          "highlights": [
+            "修订D-126：补入Tibo官方Day 8全球重置完成声明，正文、日历概览和原帖卡片保持同源；保留10月13日与原编号。",
+            "新增Agents API沙箱预热日志D-144，独立归入其他OpenAI；说明提前准备环境、未接入会话前免费与接入后容器计费边界。",
+            "修复英文管理预览对AI JSON内中文原帖的误翻译，并让窄屏原帖身份与标签自动分行，避免作者名逐字换行。",
+            "两项保留真实北京日期、官方编号及来源范围；不推造重置精确生效时刻或套餐清单，严格重置计数保持0。两项已审核发布，展示修复已验；同站月份兼容版按协调顺序接续。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Codex reset completion and Agents sandbox pre-warming",
+          "highlights": [
+            "Amend D-126 with Tibo’s official Day 8 global reset completion statement, updating the body, calendar overview and source card together while preserving October 13 and its ID.",
+            "Add Agents API sandbox pre-warming as D-144 in Other OpenAI, explaining advance setup, free pre-attachment warming and standard container billing after attachment.",
+            "Protect original-post fields in the English admin AI JSON preview and wrap narrow source-card headers so author names remain readable.",
+            "Preserve genuine Beijing dates, official numbering and evidence boundaries. Do not invent exact reset activation or complete plan eligibility; the strict reset count remains zero. The two items are published and display fixes are verified; the coordinated month-compatible deployment follows."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.9.1"
+    },
     {
       "version": "1.9.0",
       "date": "2026-10-14",

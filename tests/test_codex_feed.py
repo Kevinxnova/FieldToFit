@@ -44,14 +44,14 @@ def new_draft(client):
 def test_full_same_publication_single_tool_and_empty_delta(client):
     public=client.get('/api/v1/platform/news').json
     first=read(client)
-    assert first['mode']=='full' and first['total']==26 and first['topic']==public['codex_progress']
+    assert first['mode']=='full' and first['total']==27 and first['topic']==public['codex_progress']
     assert first['publication_revision']==public['revision']
     assert {e['object_id']:e['item'] for e in first['items']}=={i['id']:i for i in public['items'] if i.get('codex_28_days')}
     assert next(e['item'] for e in first['items'] if e['object_id']=='D-78')['codex_28_days']['source_posts'][0]['avatar']
     delta=read(client,cursor=first['resume_cursor'])
     assert delta['mode']=='delta' and delta['items']==[] and delta['revision']==first['revision']
     assert len(rpc(client,method='tools/list')['tools'])==1
-    assert len(rpc(client,method='tools/list',endpoint='/api/mcp/curated')['tools'])==18
+    assert len(rpc(client,method='tools/list',endpoint='/api/mcp/curated')['tools'])==19
     assert rpc(client,name='curated_news')['isError']
     assert rpc(client,endpoint='/api/mcp/curated')['isError']
     assert rpc(client,method='initialize')['serverInfo']['name']=='fieldtofit-codex'

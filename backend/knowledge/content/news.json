@@ -3,28 +3,1794 @@
   "items": [
     {
       "category": "agent",
+      "checked_at": "2026-10-14",
+      "codex_28_days": {
+        "announced_at": "2026-10-12T16:35:13.549000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/kevinwhinnery/status/2109684324048236713",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI · Pre-warm Agents sandboxes",
+        "overview_zh": "其他 OpenAI · Agents 沙箱可提前预热",
+        "source_posts": [],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": false,
+      "id": "D-144",
+      "interpretation": [
+        {
+          "locator": "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。",
+          "source_ids": [
+            "prewarm-announcement",
+            "prewarm-doc"
+          ],
+          "text": "面向使用 Agents API 的开发者。可以先创建 OpenAI 托管沙箱、安装依赖、加载文件或运行准备命令，再将准备好的环境接入会话。数据分析应用可在用户选择数据集时准备 Python 工作区，编码流程可在用户输入请求时准备仓库。减少用户等待是官方说明，本站未复测具体速度。",
+          "title": "改了什么、适合谁"
+        },
+        {
+          "locator": "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。",
+          "source_ids": [
+            "prewarm-workflow",
+            "prewarm-doc"
+          ],
+          "text": "通过 POST /v1/agents/environments 创建环境，查询状态或用 webhook 等待 ready，然后在创建会话时传入 environment_id。也可在准备未完成时接入，但 Agent 对工作区的访问会等待准备结束。官方示例要求 Python SDK 3.28.0、Node.js 7.32.0、Java 4.80.0 或 Ruby 0.103.0 及以上版本。",
+          "title": "如何使用"
+        },
+        {
+          "locator": "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。",
+          "source_ids": [
+            "prewarm-pricing",
+            "prewarm-doc"
+          ],
+          "text": "连接会话之前的预热，包括容器使用，免费；未连接环境 5 分钟后过期，应靠近预计任务时刻创建。接入后适用标准容器计费，并有 20 分钟空闲期限，活动可续延。免费预热不代表后续模型或容器调用免费。本条属于其他 OpenAI，不计作 Codex／Work 当天承诺更新，也不添加未经原帖说明的官方 Day 编号。",
+          "title": "费用与生命周期"
+        },
+        {
+          "locator": "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。",
+          "source_ids": [
+            "prewarm-announcement"
+          ],
+          "text": "公告帖 ID 推导为 UTC 10 月 12 日 16:35:13，即北京时间 10 月 13 日 00:35:13；归回真实北京公告日期，不以本次收录日代替。官网文档用于核对当前操作与计费范围，不冒充自身带有精确发布日期。",
+          "title": "日期"
+        }
+      ],
+      "name": "OpenAI Agents API",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-14T03:07:14.677130+00:00",
+        "updated_at": "2026-10-14T03:07:14.677130+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "prewarm-announcement",
+          "title": "Kevin Whinnery 的 Agents API 沙箱预热公告",
+          "url": "https://x.com/kevinwhinnery/status/2109684324048236713"
+        },
+        {
+          "coverage": "link_only",
+          "id": "prewarm-workflow",
+          "title": "Kevin Whinnery 的三步使用说明",
+          "url": "https://x.com/kevinwhinnery/status/2109684327411769579"
+        },
+        {
+          "coverage": "link_only",
+          "id": "prewarm-pricing",
+          "title": "Kevin Whinnery 的预热费用与期限说明",
+          "url": "https://x.com/kevinwhinnery/status/2109684330285183413"
+        },
+        {
+          "coverage": "link_only",
+          "id": "prewarm-doc",
+          "title": "OpenAI 官方沙箱预热指南",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/prewarmed"
+        },
+        {
+          "coverage": "link_only",
+          "id": "author-identity",
+          "title": "Kevin Whinnery 开发者关系身份",
+          "url": "https://x.com/kevinwhinnery"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 开发者关系人员 Kevin Whinnery 宣布 Agents API 沙箱预热更新。开发者可在创建会话前准备依赖、文件与环境，把启动准备工作提前；未接入会话前的预热免费，接入后按正常容器计费。",
+      "title": "Agents API 新增沙箱预热：先准备环境，再启动会话",
+      "translations": {
+        "en": {
+          "fields": {
+            "Agents API 新增沙箱预热：先准备环境，再启动会话": "Agents API adds sandbox pre-warming for faster session starts",
+            "Kevin Whinnery 开发者关系身份": "Kevin Whinnery’s developer-relations profile",
+            "Kevin Whinnery 的 Agents API 沙箱预热公告": "Kevin Whinnery’s Agents API sandbox pre-warming announcement",
+            "Kevin Whinnery 的三步使用说明": "Kevin Whinnery’s three-step workflow",
+            "Kevin Whinnery 的预热费用与期限说明": "Kevin Whinnery on pre-warming pricing and lifetime",
+            "OpenAI 官方沙箱预热指南": "OpenAI official sandbox pre-warming guide",
+            "OpenAI 开发者关系人员 Kevin Whinnery 宣布 Agents API 沙箱预热更新。开发者可在创建会话前准备依赖、文件与环境，把启动准备工作提前；未接入会话前的预热免费，接入后按正常容器计费。": "OpenAI developer-relations staff member Kevin Whinnery announced sandbox pre-warming in the Agents API. Developers can prepare packages, files and setup before a session starts. Pre-warming before attachment is free; normal container pricing applies after attachment.",
+            "公告帖 ID 推导为 UTC 10 月 12 日 16:35:13，即北京时间 10 月 13 日 00:35:13；归回真实北京公告日期，不以本次收录日代替。官网文档用于核对当前操作与计费范围，不冒充自身带有精确发布日期。": "The announcement ID yields 10-12, 16:35:13 UTC, or 10-13, 00:35:13 Beijing time. That is the event date. The current documentation supports workflow and pricing, without supplying its own exact publication time.",
+            "其他 OpenAI · Agents 沙箱可提前预热": "Other OpenAI · Pre-warm Agents sandboxes",
+            "如何使用": "How to use it",
+            "改了什么、适合谁": "What changes and who benefits",
+            "日期": "Date",
+            "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。": "Official posts and registered documentation verified directly; post times are ID-derived, without inventing activation times or measured benefits.",
+            "费用与生命周期": "Pricing and lifecycle",
+            "连接会话之前的预热，包括容器使用，免费；未连接环境 5 分钟后过期，应靠近预计任务时刻创建。接入后适用标准容器计费，并有 20 分钟空闲期限，活动可续延。免费预热不代表后续模型或容器调用免费。本条属于其他 OpenAI，不计作 Codex／Work 当天承诺更新，也不添加未经原帖说明的官方 Day 编号。": "Pre-attachment warming, including container usage, is free. Unattached environments expire after 5 minutes. Standard container pricing applies after attachment, with a 20-minute idle lifetime that activity can extend. Model usage is not made free. This is Other OpenAI, with no inferred official Day number.",
+            "通过 POST /v1/agents/environments 创建环境，查询状态或用 webhook 等待 ready，然后在创建会话时传入 environment_id。也可在准备未完成时接入，但 Agent 对工作区的访问会等待准备结束。官方示例要求 Python SDK 3.28.0、Node.js 7.32.0、Java 4.80.0 或 Ruby 0.103.0 及以上版本。": "Create an environment with POST /v1/agents/environments, wait for ready through retrieval or a webhook, then pass environment_id when creating the session. Early attachment is allowed, but workspace access waits for setup. The guide requires Python SDK 3.28.0, Node.js 7.32.0, Java 4.80.0 or Ruby 0.103.0 or later.",
+            "面向使用 Agents API 的开发者。可以先创建 OpenAI 托管沙箱、安装依赖、加载文件或运行准备命令，再将准备好的环境接入会话。数据分析应用可在用户选择数据集时准备 Python 工作区，编码流程可在用户输入请求时准备仓库。减少用户等待是官方说明，本站未复测具体速度。": "Agents API developers can create an OpenAI-hosted sandbox, install dependencies, load files and run setup before starting a session. Preparing a workspace while a user chooses data or writes a request can reduce their wait. This is the stated benefit; FieldToFit has not benchmarked it."
+          },
+          "reviewed_at": "2026-10-14T02:51:15.111831+00:00",
+          "source_hash": "1554c7e15bfebdf84a9188793fdcb44b86a29586a93fbecb0ce74b69ded29bd3",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
       "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-12",
+      "highlight": false,
+      "id": "D-133",
+      "interpretation": [
+        {
+          "locator": "Model card §1–6; official launch",
+          "source_ids": [
+            "report",
+            "launch"
+          ],
+          "text": "本文深读官方模型卡的能力、风险评估与局限章节，并核对发布入口。它是本站专题首次整理；模型发布日期为 2026-10-12，本站核对为 2026-10-13，未复现实验。",
+          "title": "用测试口径解释能力，保留真实产品边界"
+        }
+      ],
+      "name": "Muse Wonder Model Card",
+      "note": "采用 2026-10-12 公开模型卡，未标独立修订号，未核实后续实质修订。原文首次日期、本站核对与本文发表分别保留。作者实验未由本站复现；上游全文与原图仅链接，三张图为本站原创重绘／阅读示意。",
+      "organization": "Meta",
+      "publication": {
+        "first_published_at": "2026-10-13T03:47:41.618826+00:00",
+        "updated_at": "2026-10-13T03:47:41.618826+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "report",
+          "locator": "pp1–13; benchmark image p3 and scoring notes p7",
+          "reason": "已读完整模型卡并核对图表页面；原文再分发许可未确认，公开仅保留出处及本站原创分析。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原文仅链接；公开统计事实用于本站重新设计的图表"
+          },
+          "title": "Muse Wonder 模型卡 · 官方全文入口",
+          "upstream_revision": "2026-10-12 model card",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "Muse Wonder Model Card · Meta · 2026-10-12",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card"
+        },
+        {
+          "coverage": "link_only",
+          "id": "launch",
+          "title": "Muse Wonder 官方发布与产品入口",
+          "url": "https://research.meta.ai/blog/muse-wonder"
+        },
+        {
+          "coverage": "link_only",
+          "id": "model-release",
+          "title": "Muse Wonder official release · FieldToFit D-127",
+          "url": "https://fieldtofit.top/news/D-127"
+        }
+      ],
+      "state": "published",
+      "summary": "从记忆测试的上下文范围，到桌面工作流的两种计分，再到攻击能力与安全缓解，逐层阅读 Muse Wonder 模型卡。四条核心结论、对应论述与三张本站重绘图；模型能力、系统条件和作者风险判断分别保留。",
+      "technical_map": {
+        "caution": "作者实验未复现；不同运行框架与评分分母分别保留。仅链接原文，图表为本站重绘；不由模型卡推断未核实的价格、权重开放或全场景安全。",
+        "change_summary": "首次整理Muse Wonder 2026-10-12 模型卡：四条结论与对应论述、三张本站重绘，补齐记忆范围、两种工作流计分、标记分类与安全缓解条件。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "locator": "§3; pp4–5",
+                "source_id": "report"
+              }
+            ],
+            "from": "memory",
+            "label": "并列核对记忆与端到端任务",
+            "relation": "parallel",
+            "to": "workflow"
+          },
+          {
+            "evidence": [
+              {
+                "locator": "§3–4; pp5–7",
+                "source_id": "report"
+              }
+            ],
+            "from": "workflow",
+            "label": "能力结果与攻击能力分别评测",
+            "relation": "parallel",
+            "to": "cyber"
+          },
+          {
+            "evidence": [
+              {
+                "locator": "§4–6; pp7–12",
+                "source_id": "report"
+              }
+            ],
+            "from": "cyber",
+            "label": "攻击能力与部署缓解属于同一风险框架的不同核对面",
+            "relation": "parallel",
+            "to": "safeguards"
+          }
+        ],
+        "focus": "四个并行核对面：记忆测试范围、工作流完整交付、攻击计分与系统缓解。沿线阅读报告位置，保留每项指标的独立定义。",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "locator": "pp1,3,5; MemoryBench",
+                "source_id": "report"
+              }
+            ],
+            "id": "memory",
+            "kind": "result",
+            "label": "记忆测试有范围",
+            "limitation": "1M推理上下文不是这个测试的长度；没有无限会话、所有语言或隐私行为的验证。",
+            "mechanism": "跨轮次回忆关键事实，并处理干扰、冲突和后续更新。",
+            "metrics": [],
+            "result": "Full 85.5，Wonder 85.6，为模型卡报告分数。",
+            "setting": "MemoryBench；64K–100K token；LLM评判与加权问题标准。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "locator": "pp3–6; OSWorld V2.1 and overall methodology",
+                "source_id": "report"
+              }
+            ],
+            "id": "workflow",
+            "kind": "result",
+            "label": "部分完成与完整成功分开",
+            "limitation": "部分得分不等于任务成功率；不同评测行的运行框架与结果来源须分别读。",
+            "mechanism": "桌面工作流由真实任务环境和程序化评分器评价，部分奖励与严格完成是两种指标。",
+            "metrics": [
+              {
+                "baseline": "同一模型同一任务的部分得分 78.4；计分定义不同，不计算因果差值",
+                "conditions": "OSWorld V2.1; 108 workflows; max; model card pp3,5",
+                "label": "Wonder Full strict binary completion",
+                "unit": "%",
+                "value": 39.4
+              }
+            ],
+            "result": "Wonder Full：78.4 部分得分／39.4%严格成功；Wonder：72.6／34.3%。",
+            "setting": "OSWorld V2.1；108 个Ubuntu桌面工作流；内部共同框架；max推理配置。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "locator": "p7; ExploitGym scoring footnote",
+                "source_id": "report"
+              }
+            ],
+            "id": "cyber",
+            "kind": "result",
+            "label": "取得标记先核计分范围",
+            "limitation": "标记数不是不同漏洞数量，也不是以全部任务为分母的成功率。",
+            "mechanism": "对攻击能力测试取得的标记做验证，将预期漏洞与非预期漏洞路径区分。",
+            "metrics": [
+              {
+                "baseline": "92 total captured flags; 71 from unintended vulnerability paths",
+                "conditions": "Muse Wonder Full; ExploitGym scoring footnote; model card p7",
+                "label": "Ranking-comparable captured flags",
+                "unit": "flags",
+                "value": 21
+              }
+            ],
+            "result": "92 个标记：21 个经预期漏洞取得、71 个经非预期漏洞取得；可比排名用 21。",
+            "setting": "Muse Wonder Full；ExploitGym；GPT-cyber验证并由Gemini 3.1 Pro独立确认。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "locator": "pp7–12; risk assessment, Trust and Safety, limitations",
+                "source_id": "report"
+              }
+            ],
+            "id": "safeguards",
+            "kind": "method",
+            "label": "风险判断依赖缓解与场景",
+            "limitation": "未缓解的生化领域高风险不能排除；特定测试 0%有害行为不代表所有场景零风险。",
+            "mechanism": "结合安全后训练、系统级分类器与应用场景防护进行风险评估。",
+            "metrics": [],
+            "result": "作者在加入缓解措施后，将各风险领域评为moderate or lower。",
+            "setting": "Meta Superintelligence Scaling Framework；Wonder Full覆盖该家族的风险评估。",
+            "stage": 2
+          }
+        ],
+        "question": "Muse Wonder：持续记忆与长任务，怎样读懂能力和安全评测？",
+        "reading": {
+          "editorial": [
+            "FieldToFit判断：本次最值得跟进的是有长期状态的Agent是否能完整交付，而非把单一记忆分数当作产品成熟度。实际选型可先建立含更新、冲突、重启和最终状态验证的小型业务测试。",
+            "模型、运行框架与应用配置共同影响结果。网站的模型动态负责说明发布与入口，本篇专题负责解释原始证据和边界；社区nanoMuse另有作者和版本，不作为Meta官方模型的别名。",
+            "后续只在新的正式模型卡、真实评测修订或明确入口变化出现时更新本篇；原始发布日期、报告修订、本站核对与文章修订分别记载。本站未安装、运行或复现模型评测。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "官方发布把Active Memory描述为可利用既有对话资料的能力，并以Active Focus强调持续推进目标与处理阻塞。模型卡给出的可核证据则更具体：输入上下文为 1M token；MemoryBench测试长多轮对话中的关键事实，其中同时有干扰对话、互相冲突的细节和之后更新的信息。这里的产品功能、输入容量和测试任务需要分别理解。"
+                },
+                {
+                  "items": [
+                    "MemoryBench对话长度为 64K–100K token，由LLM评判器按问题特定的加权标准计分；它不是在 1M token全长上测出同样的回忆可靠性。",
+                    "模型卡表中Full为 85.5、Wonder为 85.6；这些是该项测试的报告分数，不能解释为任意个人资料被正确记住的概率。",
+                    "本文未验证不同用户的隔离、删除语义、跨端同步或记忆保留期限；模型卡也未提供这些行为的完整产品测试。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "输入容量 1M token与MemoryBench的 64K–100K token范围分别展示；Full分数 85.5、Wonder 85.6。",
+                  "attribution": "FieldToFit 本站重绘；数据与测试说明来自 Meta 2026-10-12 模型卡。",
+                  "caption": "图 1｜本站阅读示意：框的面积不代表token数量；输入容量与记忆测试口径分开。",
+                  "evidence": [
+                    {
+                      "fragment": "page=5",
+                      "locator": "pp1,3,5; MemoryBench",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/muse-wonder-20261012-memory.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Meta model card."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "从测试中的回忆能力到可长期信任的个人Agent，还需要应用层的记忆更新、冲突处理、数据隔离与删除验证。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=5",
+                  "locator": "pp1,3,5; MemoryBench",
+                  "source_id": "report"
+                }
+              ],
+              "id": "memory-scope",
+              "node_ids": [
+                "memory"
+              ],
+              "summary": "1M token输入容量、64K–100K token记忆测试与实际跨会话产品是三个不同层面。记住测试里的关键事实，不能自动推出所有长期任务都可靠。",
+              "title": "持续记忆值得看，但证据仍来自有界测试"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "OSWorld V2.1 使用完整Ubuntu桌面上的 108 个真实工作流。Agent通过截图、点击、输入、滚动等动作操作环境，程序化评分器核对任务结果。模型卡将平均每任务部分奖励作为主要指标，并另列严格二元完成率。分步完成一些要求也能获得部分分数；是否全部完成则要另看严格指标。"
+                },
+                {
+                  "items": [
+                    "Wonder Full（max）：部分得分 78.4，严格完成 39.4%；Wonder（max）：72.6 与 34.3%。两项保留各自名称，不把 78.4 写成完整成功率。",
+                    "内部控制的代码对照尽量采用同一评测运行框架；外部代码结果保留发布方或模型供应方采用的Agent产品。SWE-Marathon明确不是同一运行框架的受控比较。",
+                    "部分比较结果来自第三方，部分来自供应方或内部验证；竞争模型的提示、工具和运行配置采用尽力匹配。每一行都需保留来源与条件，不能据整张表推出统一的全场景排名。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "OSWorld V2.1 两种计分：Full为 78.4 部分得分与 39.4%严格完成；Wonder为 72.6 与 34.3%。",
+                  "attribution": "FieldToFit 本站重绘；数据与测试说明来自 Meta 2026-10-12 模型卡。",
+                  "caption": "图 2｜本站重绘，纵轴从 0 到 100；平均部分奖励乘 100 与严格完成百分比分别标记，不由差值推算失败概率。",
+                  "evidence": [
+                    {
+                      "fragment": "page=3",
+                      "locator": "pp3,5; OSWorld V2.1",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/muse-wonder-20261012-workflow.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Meta model card."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "evidence",
+                  "text": "对实际自动化，更关键的问题是最终状态是否满足全部要求，而不只是执行轨迹看起来推进了多少。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=5",
+                  "locator": "pp3–6; OSWorld V2.1 and methodology",
+                  "source_id": "report"
+                }
+              ],
+              "id": "workflow-metrics",
+              "node_ids": [
+                "workflow"
+              ],
+              "summary": "OSWorld V2.1 为 108 个工作流同时给出部分奖励与严格完成。Wonder Full的 78.4 与 39.4%并非两种模型强弱排名，而是同一任务集合的两种计分。",
+              "title": "长任务取得部分进展，仍可能没有完整交付"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Muse Wonder Full在ExploitGym取得 92 个标记。模型卡并未把这个总数直接当作排名成绩：GPT-cyber验证器检查了利用路径，随后由Gemini 3.1 Pro独立确认，其中 21 个经预期漏洞取得，71 个经非预期漏洞取得。公开排名仅计预期漏洞利用，所以可与公开排名比较的是 21。"
+                },
+                {
+                  "items": [
+                    "92、21、71 的单位均为取得的标记，不是独立漏洞数；模型卡此处没有给出用于计算整体任务成功率的完整尝试分母。",
+                    "非预期路径不能直接加入受限定规则的排名，但也不能简单说成没有攻击意义。评价真实系统风险时，超出预定测试路径的行为仍值得调查。",
+                    "能力测试与防越狱测试属于不同问题。CyberBench、PolyGuard等攻击成功率有各自提示与单轮／多轮条件，不能用标记数或某个低攻击成功率代替完整安全结论。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "共取得 92 个标记，其中 21 个对应预期漏洞、71 个对应非预期漏洞；只有 21 用于与公开排名比较。",
+                  "attribution": "FieldToFit 本站重绘；数据与测试说明来自 Meta 2026-10-12 模型卡。",
+                  "caption": "图 3｜本站重绘，横轴为标记数量；21＋71＝92。没有绘制整体任务成功率，也不把标记数量当独立漏洞数。",
+                  "evidence": [
+                    {
+                      "fragment": "page=7",
+                      "locator": "p7; ExploitGym scoring footnote",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/muse-wonder-20261012-flags.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Meta model card."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "先读什么被计入分数，再谈能力提升；越过预设路径的结果需要同时接受基准规则与现实风险的两种检查。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=7",
+                  "locator": "p7; ExploitGym footnote",
+                  "source_id": "report"
+                }
+              ],
+              "id": "scoring-scope",
+              "node_ids": [
+                "cyber"
+              ],
+              "summary": "验证后只有 21 个标记通过预期漏洞取得，其余 71 个通过非预期漏洞取得。这个差别同时影响基准可比性和对真实攻击能力的理解。",
+              "title": "攻击测试取得 92 个标记，不等于 92 个可比排名成绩"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "模型卡用Wonder Full作为家族中最强变体进行风险评估。在Meta自己的风险框架中，未缓解模型在网络安全和失去控制领域被评为moderate or lower，但生化领域的高风险阈值不能排除。针对这个领域加入安全后训练、系统级分类器等措施后，作者才将所有领域评为moderate or lower，并据此支持部署决定。"
+                },
+                {
+                  "items": [
+                    "一般能力评测方法说明拒答计零分并留在分母；生化代理评测表的特定脚注则注明先剔除拒答。阅读时按表保留这一区别，不把两种分母规则合并。",
+                    "Agentic Misalignment在所测场景报告 0%有害行为，MASK为 87.3%；样本和场景边界仍适用，不能把某次零事件观察转换成所有部署的零风险。",
+                    "模型卡仍列出事实错误、多步推理、空间／3D任务、未充分评估的语言，以及量化、服务配置、提示、工具和运行框架带来的变化。真实不可逆动作也需额外的人类确认等防护。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "作者的残余风险判断必须连同缓解措施与框架定义一起读；它没有替应用开发者完成具体业务、语言与操作权限的验证。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "获取方式也属于部署条件：Wonder提供API与Muse Code入口，Full在Muse Code订阅入口提供，消费者产品更新分阶段推出。本篇没有核实各地区、额度、价格或权重开放条件，因此保留官方入口，不扩写成人人可用或开放权重的发布。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=7",
+                  "locator": "pp7–12; risk assessment and limitations",
+                  "source_id": "report"
+                }
+              ],
+              "id": "deployment-conditions",
+              "node_ids": [
+                "safeguards"
+              ],
+              "summary": "作者未排除未缓解模型在生化领域达到高风险阈值，加入防护后才形成各领域moderate or lower的部署判断。它不是所有环境的安全保证。",
+              "title": "安全缓解后的风险判断，保留框架和部署条件"
+            }
+          ],
+          "title": "这份模型卡的四条核心结论"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-12",
+            "revised_at": null,
+            "revision_note": "本次读取发布日公开模型卡；未标独立修订号，未核到后续实质修订。",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "2026-10-12 model card"
+          }
+        ],
+        "slug": "muse-wonder-agent-evaluation",
+        "takeaway": "持续记忆与长任务能力要连同评测范围、完整完成率、利用路径和部署防护一起判断；模型卡提供可审证据，但仍有应用场景验证缺口。"
+      },
+      "title": "Muse Wonder：持续记忆与长任务，怎样读懂能力和安全评测？",
+      "translations": {
+        "en": {
+          "fields": {
+            "1M token输入容量、64K–100K token记忆测试与实际跨会话产品是三个不同层面。记住测试里的关键事实，不能自动推出所有长期任务都可靠。": "A 1M-token input capacity, a 64K–100K-token memory benchmark and the cross-session product are three different layers. Remembering key test facts does not establish reliability for every long-running task.",
+            "1M推理上下文不是这个测试的长度；没有无限会话、所有语言或隐私行为的验证。": "The 1M inference context is not this test’s length; unlimited conversations, every-language performance and privacy behavior are not established.",
+            "92 个标记：21 个经预期漏洞取得、71 个经非预期漏洞取得；可比排名用 21。": "92 captured flags: 21 via intended vulnerabilities and 71 via unintended vulnerabilities; 21 is comparable with the published ranking.",
+            "92、21、71 的单位均为取得的标记，不是独立漏洞数；模型卡此处没有给出用于计算整体任务成功率的完整尝试分母。": "The units for 92, 21 and 71 are captured flags, not distinct vulnerabilities; this passage does not provide the complete attempt denominator for an overall task-success rate.",
+            "Agentic Misalignment在所测场景报告 0%有害行为，MASK为 87.3%；样本和场景边界仍适用，不能把某次零事件观察转换成所有部署的零风险。": "Agentic Misalignment reports 0% harmful action in the tested scenarios and MASK scores 87.3%; sample and scenario limits still apply, and zero observed events do not establish zero risk in every deployment.",
+            "FieldToFit 本站重绘；数据与测试说明来自 Meta 2026-10-12 模型卡。": "FieldToFit redraw; data and evaluation descriptions from Meta’s 2026-10-12 model card.",
+            "FieldToFit判断：本次最值得跟进的是有长期状态的Agent是否能完整交付，而非把单一记忆分数当作产品成熟度。实际选型可先建立含更新、冲突、重启和最终状态验证的小型业务测试。": "FieldToFit assessment: the most useful follow-up is whether a stateful long-running agent completes delivery, alongside its recall score. Practical selection can begin with a small workflow test covering updates, conflicts, restarts and final-state verification.",
+            "Full 85.5，Wonder 85.6，为模型卡报告分数。": "Full 85.5 and Wonder 85.6 are the scores reported in the model card.",
+            "MemoryBench对话长度为 64K–100K token，由LLM评判器按问题特定的加权标准计分；它不是在 1M token全长上测出同样的回忆可靠性。": "MemoryBench conversations contain 64K–100K tokens and are scored by an LLM judge using weighted question-specific rubrics. The result does not establish identical recall reliability across the full 1M-token context.",
+            "MemoryBench；64K–100K token；LLM评判与加权问题标准。": "MemoryBench; 64K–100K tokens; LLM judging and weighted question-specific rubrics.",
+            "Meta Superintelligence Scaling Framework；Wonder Full覆盖该家族的风险评估。": "Meta Superintelligence Scaling Framework; Wonder Full is used for the family’s risk assessment.",
+            "Muse Wonder Full在ExploitGym取得 92 个标记。模型卡并未把这个总数直接当作排名成绩：GPT-cyber验证器检查了利用路径，随后由Gemini 3.1 Pro独立确认，其中 21 个经预期漏洞取得，71 个经非预期漏洞取得。公开排名仅计预期漏洞利用，所以可与公开排名比较的是 21。": "Muse Wonder Full captured 92 flags in ExploitGym. The model card does not treat that total as a ranking score: a GPT-cyber verifier checked the exploitation paths, independently confirmed by Gemini 3.1 Pro;21 used intended vulnerabilities and 71 used unintended vulnerabilities. The published ranking counts intended-vulnerability exploitations only, so 21 is the comparable figure.",
+            "Muse Wonder Full；ExploitGym；GPT-cyber验证并由Gemini 3.1 Pro独立确认。": "Muse Wonder Full; ExploitGym; GPT-cyber verification with independent confirmation by Gemini 3.1 Pro.",
+            "Muse Wonder 官方发布与产品入口": "Muse Wonder official launch and product access",
+            "Muse Wonder 模型卡 · 官方全文入口": "Muse Wonder model card · official full-text entry",
+            "Muse Wonder：持续记忆与长任务，怎样读懂能力和安全评测？": "Muse Wonder: reading the evidence for persistent memory, long tasks and safety",
+            "OSWorld V2.1 两种计分：Full为 78.4 部分得分与 39.4%严格完成；Wonder为 72.6 与 34.3%。": "Two OSWorld V2.1 metrics: Full has partial score 78.4 and strict completion 39.4%; Wonder has 72.6 and 34.3%.",
+            "OSWorld V2.1 为 108 个工作流同时给出部分奖励与严格完成。Wonder Full的 78.4 与 39.4%并非两种模型强弱排名，而是同一任务集合的两种计分。": "OSWorld V2.1 reports partial reward and strict completion for 108 workflows. Wonder Full’s 78.4 and 39.4% are two grading rules on the same task set, rather than two rankings of model strength.",
+            "OSWorld V2.1 使用完整Ubuntu桌面上的 108 个真实工作流。Agent通过截图、点击、输入、滚动等动作操作环境，程序化评分器核对任务结果。模型卡将平均每任务部分奖励作为主要指标，并另列严格二元完成率。分步完成一些要求也能获得部分分数；是否全部完成则要另看严格指标。": "OSWorld V2.1 uses 108 real workflows on a full Ubuntu desktop. The agent acts through screenshots, clicks, typing and scrolling, and programmatic graders check results. The model card uses mean per-task partial reward as the primary metric and separately reports strict binary completion. Completing some requirements can earn partial credit; full completion requires the strict metric.",
+            "OSWorld V2.1；108 个Ubuntu桌面工作流；内部共同框架；max推理配置。": "OSWorld V2.1; 108 Ubuntu desktop workflows; a common internal framework; max reasoning configuration.",
+            "Wonder Full（max）：部分得分 78.4，严格完成 39.4%；Wonder（max）：72.6 与 34.3%。两项保留各自名称，不把 78.4 写成完整成功率。": "Wonder Full (max): partial score 78.4 and strict completion 39.4%; Wonder (max): 72.6 and 34.3%. Keep the metric names and do not label 78.4 as a complete-success rate.",
+            "Wonder Full：78.4 部分得分／39.4%严格成功；Wonder：72.6／34.3%。": "Wonder Full: 78.4 partial score / 39.4% strict success; Wonder: 72.6 / 34.3%.",
+            "一般能力评测方法说明拒答计零分并留在分母；生化代理评测表的特定脚注则注明先剔除拒答。阅读时按表保留这一区别，不把两种分母规则合并。": "The general capability methodology gives refusals zero credit and retains them in the denominator; a specific footnote in the chemical and biological proxy table says refusals are dropped before scoring. Retain that distinction rather than combine the two denominator rules.",
+            "从测试中的回忆能力到可长期信任的个人Agent，还需要应用层的记忆更新、冲突处理、数据隔离与删除验证。": "Moving from benchmark recall to a trustworthy long-running personal agent still requires application-level checks of memory updates, conflict handling, data isolation and deletion.",
+            "从记忆测试的上下文范围，到桌面工作流的两种计分，再到攻击能力与安全缓解，逐层阅读 Muse Wonder 模型卡。四条核心结论、对应论述与三张本站重绘图；模型能力、系统条件和作者风险判断分别保留。": "Read the Muse Wonder model card through memory-test scope, two desktop-workflow scoring rules, cyber capability and safety mitigations. Four core findings, matching arguments and three FieldToFit redraws keep model capabilities, system conditions and the author’s risk assessment separate.",
+            "作者在加入缓解措施后，将各风险领域评为moderate or lower。": "After mitigations, the author assesses each risk domain as moderate or lower.",
+            "作者实验未复现；不同运行框架与评分分母分别保留。仅链接原文，图表为本站重绘；不由模型卡推断未核实的价格、权重开放或全场景安全。": "The author’s experiments have not been reproduced. Harnesses and scoring denominators remain separate. Upstream material is linked and figures are FieldToFit redraws; the card does not establish unverified prices, weight access or universal safety.",
+            "作者未排除未缓解模型在生化领域达到高风险阈值，加入防护后才形成各领域moderate or lower的部署判断。它不是所有环境的安全保证。": "The author does not rule out the unmitigated model reaching the high-risk threshold in the chemical and biological domain. The moderate or lower deployment assessment follows mitigations; it is not a safety guarantee for every environment.",
+            "作者的残余风险判断必须连同缓解措施与框架定义一起读；它没有替应用开发者完成具体业务、语言与操作权限的验证。": "Read the author’s residual-risk assessment together with its mitigations and framework definitions; it does not complete the application developer’s validation of specific workflows, languages and action permissions.",
+            "先读什么被计入分数，再谈能力提升；越过预设路径的结果需要同时接受基准规则与现实风险的两种检查。": "Read what is counted before discussing capability gains; results beyond the intended path require both a benchmark-rule check and a real-risk assessment.",
+            "共取得 92 个标记，其中 21 个对应预期漏洞、71 个对应非预期漏洞；只有 21 用于与公开排名比较。": "92 flags captured:21 via intended vulnerabilities and 71 via unintended vulnerabilities; only 21 is comparable with the published ranking.",
+            "内部控制的代码对照尽量采用同一评测运行框架；外部代码结果保留发布方或模型供应方采用的Agent产品。SWE-Marathon明确不是同一运行框架的受控比较。": "Controlled internal coding comparisons use a common benchmark-specific harness where practical; external coding results retain the reporting vendor’s or model provider’s agent product. SWE-Marathon is explicitly not a controlled common-harness comparison.",
+            "原文仅链接；公开统计事实用于本站重新设计的图表": "Upstream text is linked only; public statistical facts are used in newly designed FieldToFit figures",
+            "取得标记先核计分范围": "Verify flag-scoring scope first",
+            "同一模型同一任务的部分得分 78.4；计分定义不同，不计算因果差值": "Partial score 78.4 for the same model and tasks; the grading definitions differ, so no causal difference is calculated",
+            "后续只在新的正式模型卡、真实评测修订或明确入口变化出现时更新本篇；原始发布日期、报告修订、本站核对与文章修订分别记载。本站未安装、运行或复现模型评测。": "Update this article when a new official model card, substantive evaluation revision or verified access change appears. Original release, report revision, FieldToFit check and article revision are recorded separately. FieldToFit has not installed, run or reproduced the model evaluations.",
+            "四个并行核对面：记忆测试范围、工作流完整交付、攻击计分与系统缓解。沿线阅读报告位置，保留每项指标的独立定义。": "Four parallel checks: memory-test scope, complete workflow delivery, cyber scoring and system mitigations. Follow the report locations while preserving each metric’s definition.",
+            "图 1｜本站阅读示意：框的面积不代表token数量；输入容量与记忆测试口径分开。": "Figure 1 | FieldToFit reading diagram: box area does not represent token count; input capacity and memory-test scope are separate.",
+            "图 2｜本站重绘，纵轴从 0 到 100；平均部分奖励乘 100 与严格完成百分比分别标记，不由差值推算失败概率。": "Figure 2 | FieldToFit redraw with a 0 to 100 axis; mean partial reward multiplied by 100 and strict completion percentage are labeled separately, without inferring failure probability from their difference.",
+            "图 3｜本站重绘，横轴为标记数量；21＋71＝92。没有绘制整体任务成功率，也不把标记数量当独立漏洞数。": "Figure 3 | FieldToFit redraw; the axis counts flags, with 21＋71＝92. No overall task-success rate is plotted, and flag count is not treated as a count of distinct vulnerabilities.",
+            "安全缓解后的风险判断，保留框架和部署条件": "Retain the framework and deployment conditions of mitigated-risk judgments",
+            "官方发布把Active Memory描述为可利用既有对话资料的能力，并以Active Focus强调持续推进目标与处理阻塞。模型卡给出的可核证据则更具体：输入上下文为 1M token；MemoryBench测试长多轮对话中的关键事实，其中同时有干扰对话、互相冲突的细节和之后更新的信息。这里的产品功能、输入容量和测试任务需要分别理解。": "The launch describes Active Memory as drawing on prior conversations and Active Focus as maintaining goals and working through blockers. The model card gives narrower verifiable evidence: a 1M-token input context and MemoryBench tests of key facts in long multi-turn conversations, with distractors, conflicting details and later updates. Product features, input capacity and benchmark tasks should be interpreted separately.",
+            "对实际自动化，更关键的问题是最终状态是否满足全部要求，而不只是执行轨迹看起来推进了多少。": "For practical automation, the more consequential question is whether the final state meets every requirement, alongside how much progress the trajectory appears to make.",
+            "对攻击能力测试取得的标记做验证，将预期漏洞与非预期漏洞路径区分。": "Verify captured flags in cyber-capability testing and distinguish intended from unintended vulnerability paths.",
+            "已读完整模型卡并核对图表页面；原文再分发许可未确认，公开仅保留出处及本站原创分析。": "The complete model card and table pages were read. Upstream redistribution rights are unverified; the public article contains source links and original FieldToFit analysis only.",
+            "并列核对记忆与端到端任务": "Review memory and end-to-end tasks in parallel",
+            "持续记忆与长任务能力要连同评测范围、完整完成率、利用路径和部署防护一起判断；模型卡提供可审证据，但仍有应用场景验证缺口。": "Judge persistent memory and long-task capability together with test scope, complete-success metrics, exploitation paths and deployment safeguards. The card provides reviewable evidence while leaving application-specific validation gaps.",
+            "持续记忆值得看，但证据仍来自有界测试": "Persistent memory matters, while the evidence remains bounded",
+            "攻击测试取得 92 个标记，不等于 92 个可比排名成绩": "Capturing 92 flags does not produce 92 ranking-comparable results",
+            "攻击能力与部署缓解属于同一风险框架的不同核对面": "Cyber capability and deployment mitigations are separate checks within the risk framework",
+            "未缓解的生化领域高风险不能排除；特定测试 0%有害行为不代表所有场景零风险。": "High risk in the unmitigated chemical and biological domain is not ruled out; 0% harmful action in a specific test does not establish zero risk in every scenario.",
+            "本文未验证不同用户的隔离、删除语义、跨端同步或记忆保留期限；模型卡也未提供这些行为的完整产品测试。": "This article has not verified isolation between users, deletion semantics, cross-device synchronization or memory-retention periods; the model card does not provide comprehensive product tests of these behaviors.",
+            "本文深读官方模型卡的能力、风险评估与局限章节，并核对发布入口。它是本站专题首次整理；模型发布日期为 2026-10-12，本站核对为 2026-10-13，未复现实验。": "This article reads the model card’s capabilities, risk assessment and limitations and checks the launch entry. It is FieldToFit’s first treatment of this topic: the model was released on 2026-10-12 and checked here on 2026-10-13. The experiments have not been reproduced.",
+            "本次读取发布日公开模型卡；未标独立修订号，未核到后续实质修订。": "Read the model card available on its release date; no separate revision identifier or later substantive revision was verified.",
+            "标记数不是不同漏洞数量，也不是以全部任务为分母的成功率。": "Flag count is neither a count of distinct vulnerabilities nor a success rate over all attempted tasks.",
+            "桌面工作流由真实任务环境和程序化评分器评价，部分奖励与严格完成是两种指标。": "Desktop workflows use real task environments and programmatic graders; partial reward and strict completion are separate metrics.",
+            "模型、运行框架与应用配置共同影响结果。网站的模型动态负责说明发布与入口，本篇专题负责解释原始证据和边界；社区nanoMuse另有作者和版本，不作为Meta官方模型的别名。": "Models, harnesses and application configuration jointly affect results. The model news item explains release and access, while this article examines primary evidence and its limits. Community nanoMuse has its own author and versions and is not an alias for Meta’s official model.",
+            "模型卡仍列出事实错误、多步推理、空间／3D任务、未充分评估的语言，以及量化、服务配置、提示、工具和运行框架带来的变化。真实不可逆动作也需额外的人类确认等防护。": "The card still lists factual errors, multi-step reasoning, spatial/3D tasks, insufficiently evaluated languages, and variation with quantization, serving configuration, prompts, tools and harnesses. Real irreversible actions require additional safeguards such as human confirmation.",
+            "模型卡用Wonder Full作为家族中最强变体进行风险评估。在Meta自己的风险框架中，未缓解模型在网络安全和失去控制领域被评为moderate or lower，但生化领域的高风险阈值不能排除。针对这个领域加入安全后训练、系统级分类器等措施后，作者才将所有领域评为moderate or lower，并据此支持部署决定。": "The model card uses Wonder Full, the family’s strongest variant, for risk assessment. Within Meta’s framework, the unmitigated model is assessed as moderate or lower for cybersecurity and loss of control, while the high-risk threshold in the chemical and biological domain cannot be ruled out. After safety post-training, system-level classifiers and other mitigations for that domain, the author assesses every domain as moderate or lower and uses that assessment to support deployment.",
+            "模型卡表中Full为 85.5、Wonder为 85.6；这些是该项测试的报告分数，不能解释为任意个人资料被正确记住的概率。": "The model card reports 85.5 for Full and 85.6 for Wonder. These are benchmark scores, not the probability that any arbitrary piece of personal information will be remembered correctly.",
+            "用测试口径解释能力，保留真实产品边界": "Explain capabilities through test definitions and retain product boundaries",
+            "结合安全后训练、系统级分类器与应用场景防护进行风险评估。": "Assess risk with safety post-training, system-level classifiers and application-specific safeguards.",
+            "能力测试与防越狱测试属于不同问题。CyberBench、PolyGuard等攻击成功率有各自提示与单轮／多轮条件，不能用标记数或某个低攻击成功率代替完整安全结论。": "Capability tests and jailbreak-resistance tests answer different questions. Attack-success rates from CyberBench and PolyGuard have their own prompts and single-turn or multi-turn conditions; neither flag count nor one low attack-success rate establishes comprehensive safety.",
+            "能力结果与攻击能力分别评测": "Assess task results and cyber capability separately",
+            "获取方式也属于部署条件：Wonder提供API与Muse Code入口，Full在Muse Code订阅入口提供，消费者产品更新分阶段推出。本篇没有核实各地区、额度、价格或权重开放条件，因此保留官方入口，不扩写成人人可用或开放权重的发布。": "Access is also a deployment condition: Wonder has API and Muse Code access, Full is offered through Muse Code subscriptions, and consumer-product updates roll out in stages. This article has not verified regional access, quotas, prices or weight availability, so it links official entries without claiming universal access or open weights.",
+            "记忆测试有范围": "Memory tests have a scope",
+            "跨轮次回忆关键事实，并处理干扰、冲突和后续更新。": "Recall key facts across turns with distractors, conflicting turns and later updates.",
+            "输入容量 1M token与MemoryBench的 64K–100K token范围分别展示；Full分数 85.5、Wonder 85.6。": "Input capacity of 1M tokens and MemoryBench’s 64K–100K-token scope shown separately; Full scores 85.5 and Wonder 85.6.",
+            "这份模型卡的四条核心结论": "Four core findings from the model card",
+            "部分完成与完整成功分开": "Separate partial progress from complete success",
+            "部分得分不等于任务成功率；不同评测行的运行框架与结果来源须分别读。": "Partial score is not a task success rate; harnesses and result sources must be read separately for each benchmark row.",
+            "部分比较结果来自第三方，部分来自供应方或内部验证；竞争模型的提示、工具和运行配置采用尽力匹配。每一行都需保留来源与条件，不能据整张表推出统一的全场景排名。": "Some comparison results come from third parties, others from providers or internal validation; competitor prompts, tools and runtime configurations are best-effort matches. Preserve the source and conditions of each row rather than derive a universal ranking from the whole table.",
+            "采用 2026-10-12 公开模型卡，未标独立修订号，未核实后续实质修订。原文首次日期、本站核对与本文发表分别保留。作者实验未由本站复现；上游全文与原图仅链接，三张图为本站原创重绘／阅读示意。": "Uses the publicly available 2026-10-12 model card, which has no separate revision identifier; no later substantive revision has been verified. Upstream date, FieldToFit check date and article publication remain separate. The author’s experiments have not been reproduced here. Upstream text and artwork are linked only; the three figures are original FieldToFit redraws or reading diagrams.",
+            "长任务取得部分进展，仍可能没有完整交付": "Partial progress on a long task can fall short of complete delivery",
+            "非预期路径不能直接加入受限定规则的排名，但也不能简单说成没有攻击意义。评价真实系统风险时，超出预定测试路径的行为仍值得调查。": "Unintended paths cannot simply be added to a ranking with restricted rules, but that does not make them irrelevant to attack capability. Behavior beyond the intended test path still matters when assessing real-system risk.",
+            "风险判断依赖缓解与场景": "Risk assessment depends on mitigations and context",
+            "首次整理Muse Wonder 2026-10-12 模型卡：四条结论与对应论述、三张本站重绘，补齐记忆范围、两种工作流计分、标记分类与安全缓解条件。": "First analysis of the Muse Wonder 2026-10-12 model card: four findings and matching arguments, three FieldToFit redraws, memory scope, two workflow metrics, flag classification and mitigation conditions.",
+            "验证后只有 21 个标记通过预期漏洞取得，其余 71 个通过非预期漏洞取得。这个差别同时影响基准可比性和对真实攻击能力的理解。": "Verification found 21 flags captured through intended vulnerabilities and 71 through unintended vulnerabilities. This distinction affects benchmark comparability and the interpretation of real attack capability."
+          },
+          "reviewed_at": "2026-10-13T03:44:15.424210+00:00",
+          "source_hash": "4edfa58c23223dd6f63e41a03340f387c7bf087a1d11609420f288412a53f881",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-12",
+      "highlight": true,
+      "id": "D-127",
+      "interpretation": [
+        {
+          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
+          "source_ids": [
+            "oct13-a-1",
+            "oct13-a-2"
+          ],
+          "text": "模型卡列出 1M token推理上下文，支持文本、图像、视频和音频输入，输出为文本；本次没有核实音视频生成能力。",
+          "title": "输入和输出范围"
+        },
+        {
+          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
+          "source_ids": [
+            "oct13-a-1",
+            "oct13-a-2"
+          ],
+          "text": "Wonder提供API与Muse Code入口，Full面向Muse Code订阅用户；消费者Muse更新分阶段推出，各地区可用性、额度、具体价格与权重获取条件仍未逐项核实。",
+          "title": "获取入口分阶段开放"
+        },
+        {
+          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
+          "source_ids": [
+            "oct13-a-1",
+            "oct13-a-2"
+          ],
+          "text": "官方表格包含不同运行框架和评分口径。长期记忆测试不证明无限记忆，工作流部分得分不等于完整成功率；本站未运行或复现模型评测。Meta官方模型与社区nanoMuse分别记载。",
+          "title": "能力成绩保留评测条件"
+        }
+      ],
+      "name": "Muse Wonder",
+      "note": "原始时间：2026-10-12 (day precision)；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：Muse Wonder / Wonder Full · 2026-10-12。本站未安装、运行或复现性能。",
+      "organization": "Meta",
+      "publication": {
+        "first_published_at": "2026-10-13T03:41:15.206302+00:00",
+        "updated_at": "2026-10-13T03:41:15.206302+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-a-1",
+          "locator": "Official release/model card; 2026-10-12 (day precision)",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 1",
+          "upstream_revision": "Muse Wonder / Wonder Full · 2026-10-12",
+          "url": "https://research.meta.ai/blog/muse-wonder"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-a-2",
+          "locator": "Official release/model card; 2026-10-12 (day precision)",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 2",
+          "upstream_revision": "Muse Wonder / Wonder Full · 2026-10-12",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-a-1",
+          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 1",
+          "url": "https://research.meta.ai/blog/muse-wonder"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct13-a-2",
+          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 2",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card"
+        },
+        {
+          "coverage": "link_only",
+          "id": "analysis",
+          "title": "Muse Wonder 模型卡专题解读",
+          "url": "https://fieldtofit.top/maps/muse-wonder-agent-evaluation"
+        }
+      ],
+      "state": "published",
+      "summary": "Meta于 2026-10-12 公布Muse Wonder与Wonder Full，强调利用既有对话资料的Active Memory，以及跟踪任务目标、阻塞和需澄清事项的Active Focus。",
+      "title": "Muse Wonder：Meta将长任务与持续记忆带入新模型，入口仍分阶段开放",
+      "translations": {
+        "en": {
+          "fields": {
+            "Meta于 2026-10-12 公布Muse Wonder与Wonder Full，强调利用既有对话资料的Active Memory，以及跟踪任务目标、阻塞和需澄清事项的Active Focus。": "Meta announced Muse Wonder and Wonder Full on 2026-10-12, emphasizing Active Memory for prior conversation information and Active Focus for tracking goals, blockers and matters needing clarification.",
+            "Muse Wonder 模型卡专题解读": "Muse Wonder model-card analysis",
+            "Muse Wonder：Meta将长任务与持续记忆带入新模型，入口仍分阶段开放": "Muse Wonder: Meta brings long tasks and persistent memory to a new model, with staged access",
+            "Wonder提供API与Muse Code入口，Full面向Muse Code订阅用户；消费者Muse更新分阶段推出，各地区可用性、额度、具体价格与权重获取条件仍未逐项核实。": "Wonder has API and Muse Code access; Full is offered to Muse Code subscribers. Consumer Muse updates roll out in stages. Regional access, quotas, exact prices and weight-access conditions have not been verified individually.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12 (day precision)；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：Muse Wonder / Wonder Full · 2026-10-12。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12 (day precision); event date (Beijing or publisher calendar date): 2026-10-12; checked:2026-10-13; version: Muse Wonder / Wonder Full · 2026-10-12. FieldToFit has not installed, run or reproduced performance.",
+            "官方表格包含不同运行框架和评分口径。长期记忆测试不证明无限记忆，工作流部分得分不等于完整成功率；本站未运行或复现模型评测。Meta官方模型与社区nanoMuse分别记载。": "The official tables include different harnesses and scoring rules. Memory tests do not establish unlimited memory, and partial workflow score is not complete-success rate. FieldToFit has not run or reproduced the model evaluations. Meta’s official model and community nanoMuse are recorded separately.",
+            "模型卡列出 1M token推理上下文，支持文本、图像、视频和音频输入，输出为文本；本次没有核实音视频生成能力。": "The model card lists a 1M-token inference context and text, image, video and audio inputs, with text output. Audio or video generation capabilities were not verified.",
+            "能力成绩保留评测条件": "Retain evaluation conditions",
+            "获取入口分阶段开放": "Access rolls out in stages",
+            "输入和输出范围": "Input and output scope"
+          },
+          "reviewed_at": "2026-10-13T03:32:16.850388+00:00",
+          "source_hash": "a2b1ed499c8c6f4261e1335bb1d113308b03e04e2a875c4b083b8474f9e9536f",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": true,
+      "id": "D-128",
+      "interpretation": [
+        {
+          "locator": "v1.0.4 release / model card",
+          "source_ids": [
+            "oct13-b-1"
+          ],
+          "text": "MCP敏感环境配置转入加密凭据存储；拒绝含密码的URL，避免向未知重定向主机转发密钥。这些是具体防护变化，未验证整个系统的独立安全审计。",
+          "title": "凭据存储与重定向保护"
+        },
+        {
+          "locator": "v1.0.4 release / model card",
+          "source_ids": [
+            "oct13-b-1"
+          ],
+          "text": "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。",
+          "title": "手机审批与支付边界"
+        },
+        {
+          "locator": "v1.0.4 release / model card",
+          "source_ids": [
+            "oct13-b-1"
+          ],
+          "text": "桌面新增DeepSeek Harness；iOS的TestFlight提交、审核与用户取得版本分别记载，不把桌面 1.0.4 当作所有iOS用户的现有版本。GPL-3.0-or-later；外部模型服务、跨端同步与iOS不能操控其他应用的限制保留。",
+          "title": "分发版本与社区边界"
+        }
+      ],
+      "name": "nanoMuse",
+      "note": "原始时间：2026-10-12T17:30:52Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v1.0.4。本站未安装、运行或复现性能。",
+      "organization": "nano-muse",
+      "publication": {
+        "first_published_at": "2026-10-13T03:41:39.840696+00:00",
+        "updated_at": "2026-10-13T03:41:39.840696+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-b-1",
+          "locator": "Official release/model card; 2026-10-12T17:30:52Z",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "nanoMuse v1.0.4 · Official source 1",
+          "upstream_revision": "v1.0.4",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.4"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A09",
+          "name": "nanoMuse",
+          "url": "https://fieldtofit.top/watch/CW-A09"
+        }
+      ],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-b-1",
+          "title": "nanoMuse v1.0.4 · Official source 1",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.4"
+        }
+      ],
+      "state": "published",
+      "summary": "nanoMuse是社区个人Agent，并非Meta官方Muse。1.0.4 于北京时间 2026-10-13 01:30 发布，补充加密凭据、跨设备操作审批与桌面DeepSeek Harness接入。",
+      "title": "nanoMuse 1.0.4：加强跨设备审批与凭据存储，iOS通道需分开看",
+      "translations": {
+        "en": {
+          "fields": {
+            "MCP敏感环境配置转入加密凭据存储；拒绝含密码的URL，避免向未知重定向主机转发密钥。这些是具体防护变化，未验证整个系统的独立安全审计。": "Sensitive MCP environment configuration moves to an encrypted credential store; password-bearing URLs are rejected and keys are not forwarded to unknown redirect hosts. These are specific safeguards, not a verified independent security audit of the whole system.",
+            "nanoMuse 1.0.4：加强跨设备审批与凭据存储，iOS通道需分开看": "nanoMuse 1.0.4: stronger cross-device approvals and credential storage, with separate iOS rollout",
+            "nanoMuse是社区个人Agent，并非Meta官方Muse。1.0.4 于北京时间 2026-10-13 01:30 发布，补充加密凭据、跨设备操作审批与桌面DeepSeek Harness接入。": "nanoMuse is a community personal agent, not Meta’s official Muse. Version 1.0.4 was released at 01:30 Beijing time on 2026-10-13, adding encrypted credentials, cross-device action approvals and desktop DeepSeek Harness integration.",
+            "凭据存储与重定向保护": "Credential storage and redirect protection",
+            "分发版本与社区边界": "Distribution versions and community boundaries",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12T17:30:52Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v1.0.4。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T17:30:52Z; event date (Beijing or publisher calendar date): 2026-10-13; checked:2026-10-13; version: v1.0.4; FieldToFit has not installed, run or reproduced performance.",
+            "手机审批与支付边界": "Phone approvals and payment boundaries",
+            "桌面新增DeepSeek Harness；iOS的TestFlight提交、审核与用户取得版本分别记载，不把桌面 1.0.4 当作所有iOS用户的现有版本。GPL-3.0-or-later；外部模型服务、跨端同步与iOS不能操控其他应用的限制保留。": "Desktop adds DeepSeek Harness. TestFlight submission, review and the version available to iOS users are separate; desktop 1.0.4 is not assumed to be available to all iOS users. GPL-3.0-or-later; external model services, cross-device synchronization and iOS’s inability to control other applications remain relevant.",
+            "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。": "Cross-device actions can be approved on the phone that initiated the task. Payments allow one-time approval or denial, and approval timeouts are treated as denial. FieldToFit has not tested actual device permissions or timeout behavior."
+          },
+          "reviewed_at": "2026-10-13T03:32:28.090053+00:00",
+          "source_hash": "ae3d2d480e3de9a0b6cf1e1233b268aa5fe6a0e686262ce3ac18052f99985840",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": true,
+      "id": "D-129",
+      "interpretation": [
+        {
+          "locator": "v0.1.43.1 release / model card",
+          "source_ids": [
+            "oct13-c-1"
+          ],
+          "text": "自适应计算重叠恢复为默认关闭、主动开启；对部分NVIDIA卡有利的设置可能拖慢另一些消费级设备，不能默认套用。",
+          "title": "自适应重叠默认值变化"
+        },
+        {
+          "locator": "v0.1.43.1 release / model card",
+          "source_ids": [
+            "oct13-c-1"
+          ],
+          "text": "长提示词读取失败可回退，慢磁盘进度检测得到修复；更新器核对实际引擎版本，避免新构建标记与旧二进制混用导致后续更新被跳过。",
+          "title": "读取回退与真实构建版本"
+        },
+        {
+          "locator": "v0.1.43.1 release / model card",
+          "source_ids": [
+            "oct13-c-1"
+          ],
+          "text": "修复双NVIDIA卡并发、部分AMD／Intel路径与工具输出解析。作者吞吐量来自指定显卡、请求数和配置，双Intel卡部分修复仍待报告者验证。Windows/Linux、内存、显存、量化和权重条件保留；MIT；本站未安装或复现速度和精度。",
+          "title": "硬件限定的修复与成绩"
+        }
+      ],
+      "name": "Strata",
+      "note": "原始时间：2026-10-12T17:30:57Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v0.1.43.1。本站未安装、运行或复现性能。",
+      "organization": "Niko1221",
+      "publication": {
+        "first_published_at": "2026-10-13T03:42:33.606257+00:00",
+        "updated_at": "2026-10-13T03:42:33.606257+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-c-1",
+          "locator": "Official release/model card; 2026-10-12T17:30:57Z",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Strata v0.1.43.1 · Official source 1",
+          "upstream_revision": "v0.1.43.1",
+          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.43.1"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T14",
+          "name": "Strata",
+          "url": "https://fieldtofit.top/watch/CW-T14"
+        }
+      ],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-c-1",
+          "title": "Strata v0.1.43.1 · Official source 1",
+          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.43.1"
+        }
+      ],
+      "state": "published",
+      "summary": "Strata是本地模型推理运行器。0.1.43.1 于北京时间 2026-10-13 01:30 发布，修复读取、构建与多GPU执行路径；不同硬件的性能条件分别保留。",
+      "title": "Strata 0.1.43.1：修复推理回退与构建识别，硬件成绩按配置阅读",
+      "translations": {
+        "en": {
+          "fields": {
+            "Strata 0.1.43.1：修复推理回退与构建识别，硬件成绩按配置阅读": "Strata 0.1.43.1: inference fallback and build identification fixes, with hardware-specific results",
+            "Strata是本地模型推理运行器。0.1.43.1 于北京时间 2026-10-13 01:30 发布，修复读取、构建与多GPU执行路径；不同硬件的性能条件分别保留。": "Strata is a local model inference runtime. Version 0.1.43.1 was released at 01:30 Beijing time on 2026-10-13, fixing reading, builds and multi-GPU execution paths while retaining hardware-specific performance conditions.",
+            "修复双NVIDIA卡并发、部分AMD／Intel路径与工具输出解析。作者吞吐量来自指定显卡、请求数和配置，双Intel卡部分修复仍待报告者验证。Windows/Linux、内存、显存、量化和权重条件保留；MIT；本站未安装或复现速度和精度。": "Fixes cover dual-NVIDIA concurrency, selected AMD/Intel paths and tool-output parsing. Author-reported throughput uses specified GPUs, request counts and configurations; some dual-Intel fixes await the reporter’s verification. Windows/Linux, RAM, VRAM, quantization and weight requirements remain; MIT; FieldToFit has not installed it or reproduced speed and accuracy.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12T17:30:57Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v0.1.43.1。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T17:30:57Z; event date (Beijing or publisher calendar date): 2026-10-13; checked:2026-10-13; version: v0.1.43.1; FieldToFit has not installed, run or reproduced performance.",
+            "硬件限定的修复与成绩": "Hardware-specific fixes and results",
+            "自适应计算重叠恢复为默认关闭、主动开启；对部分NVIDIA卡有利的设置可能拖慢另一些消费级设备，不能默认套用。": "Adaptive compute overlap returns to disabled by default and explicit opt-in. A setting that helps some NVIDIA cards can slow other consumer devices and should not be applied universally.",
+            "自适应重叠默认值变化": "Adaptive-overlap default changes",
+            "读取回退与真实构建版本": "Read fallback and actual build version",
+            "长提示词读取失败可回退，慢磁盘进度检测得到修复；更新器核对实际引擎版本，避免新构建标记与旧二进制混用导致后续更新被跳过。": "Long-prompt reads can fall back on failure, and slow-disk progress detection is corrected. The updater checks the actual engine version to avoid mixing a new build stamp with an old binary and skipping later updates."
+          },
+          "reviewed_at": "2026-10-13T03:32:59.273800+00:00",
+          "source_hash": "8b4b3a50d15668bc3258a78f6fe42771e18dd71908096ae9021df6941cd06bb3",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": true,
+      "id": "D-130",
+      "interpretation": [
+        {
+          "locator": "v1.2.0 release / model card",
+          "source_ids": [
+            "oct13-d-1"
+          ],
+          "text": "OpenRouter列表按当前密钥可用范围展示，并保留上下文、输出和价格；配置Schema用于编辑器校验与补全，主题字段需按新规则迁移。列表存在不保证账号调用成功。",
+          "title": "模型列表与配置校验"
+        },
+        {
+          "locator": "v1.2.0 release / model card",
+          "source_ids": [
+            "oct13-d-1"
+          ],
+          "text": "扩展触发的运行也进入启动钩子，处理器需区分用户消息与自定义消息；启动期间的队列与忙碌状态语义有变化，不能假定每次事件都带用户提示词。",
+          "title": "扩展启动事件与并发"
+        },
+        {
+          "locator": "v1.2.0 release / model card",
+          "source_ids": [
+            "oct13-d-1"
+          ],
+          "text": "修复资源注册、非对象结构化结果，以及等待OAuth刷新时已取消调用仍被发出的行为。远程剪贴板需主动开启并依赖终端；宿主进程权限边界保留，主题、扩展和认证迁移未实测。",
+          "title": "MCP与采用边界"
+        }
+      ],
+      "name": "Pi",
+      "note": "原始时间：2026-10-12T23:03:53Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v1.2.0。本站未安装、运行或复现性能。",
+      "organization": "earendil-works",
+      "publication": {
+        "first_published_at": "2026-10-13T03:43:25.345228+00:00",
+        "updated_at": "2026-10-13T03:43:25.345228+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-d-1",
+          "locator": "Official release/model card; 2026-10-12T23:03:53Z",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Pi v1.2.0 · Official source 1",
+          "upstream_revision": "v1.2.0",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v1.2.0"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A07",
+          "name": "Pi",
+          "url": "https://fieldtofit.top/watch/CW-A07"
+        }
+      ],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-d-1",
+          "title": "Pi v1.2.0 · Official source 1",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v1.2.0"
+        }
+      ],
+      "state": "published",
+      "summary": "Pi是Agent CLI、SDK与扩展框架。1.2.0 于北京时间 2026-10-13 07:03 发布，补充按密钥的模型列表、配置Schema与扩展事件兼容变化。",
+      "title": "Pi 1.2.0：按密钥展示模型，扩展作者需处理兼容变化",
+      "translations": {
+        "en": {
+          "fields": {
+            "MCP与采用边界": "MCP fixes and adoption boundaries",
+            "OpenRouter列表按当前密钥可用范围展示，并保留上下文、输出和价格；配置Schema用于编辑器校验与补全，主题字段需按新规则迁移。列表存在不保证账号调用成功。": "OpenRouter lists models available to the current key, including context, output and price information. Configuration schemas support editor validation and completion; theme fields require migration to the new rules. A listed model does not guarantee a successful account call.",
+            "Pi 1.2.0：按密钥展示模型，扩展作者需处理兼容变化": "Pi 1.2.0: models listed by key access, with compatibility changes for extension authors",
+            "Pi是Agent CLI、SDK与扩展框架。1.2.0 于北京时间 2026-10-13 07:03 发布，补充按密钥的模型列表、配置Schema与扩展事件兼容变化。": "Pi is an agent CLI, SDK and extension framework. Version 1.2.0 was released at 07:03 Beijing time on 2026-10-13, adding per-key model lists, configuration schemas and extension-event compatibility changes.",
+            "修复资源注册、非对象结构化结果，以及等待OAuth刷新时已取消调用仍被发出的行为。远程剪贴板需主动开启并依赖终端；宿主进程权限边界保留，主题、扩展和认证迁移未实测。": "Fixes cover resource registration, non-object structured results, and calls being sent after cancellation while waiting for OAuth refresh. Remote clipboard support is opt-in and terminal-dependent. Host-process permission boundaries remain; theme, extension and authentication migration have not been tested.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12T23:03:53Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v1.2.0。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T23:03:53Z; event date (Beijing or publisher calendar date): 2026-10-13; checked:2026-10-13; version: v1.2.0; FieldToFit has not installed, run or reproduced performance.",
+            "扩展启动事件与并发": "Extension startup events and concurrency",
+            "扩展触发的运行也进入启动钩子，处理器需区分用户消息与自定义消息；启动期间的队列与忙碌状态语义有变化，不能假定每次事件都带用户提示词。": "Extension-triggered runs also enter the startup hook. Handlers must distinguish user from custom messages; queue and busy-state semantics change during startup, so handlers cannot assume every event carries a user prompt.",
+            "模型列表与配置校验": "Model lists and configuration validation"
+          },
+          "reviewed_at": "2026-10-13T03:33:31.329744+00:00",
+          "source_hash": "67905b6e4752e1825d3dcc6259c6ce5869fda3d1d32e3cec17fdc099bee6f06e",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "harness",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-12",
+      "highlight": true,
+      "id": "D-131",
+      "interpretation": [
+        {
+          "locator": "deepagents==0.7.24 release / model card",
+          "source_ids": [
+            "oct13-e-1"
+          ],
+          "text": "为异步子Agent增加fork模式支持；实际运行与状态行为需结合自己的后端配置验证。",
+          "title": "异步fork模式"
+        },
+        {
+          "locator": "deepagents==0.7.24 release / model card",
+          "source_ids": [
+            "oct13-e-1"
+          ],
+          "text": "修复摘要调用的上下文溢出恢复，并在并行子Agent调用中保留父级评判规则。本站未运行复测。",
+          "title": "摘要与并行调用修复"
+        },
+        {
+          "locator": "deepagents==0.7.24 release / model card",
+          "source_ids": [
+            "oct13-e-1"
+          ],
+          "text": "本次属于deepagents核心SDK；deepagents-code、Talon等组件分别记录版本。保留 0.7.22 按需加载Skill工具的历史说明，不预先承诺token或费用节省。",
+          "title": "组件版本和收益边界"
+        }
+      ],
+      "name": "Deep Agents",
+      "note": "原始时间：2026-10-12T04:46:40Z；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：deepagents==0.7.24。本站未安装、运行或复现性能。",
+      "organization": "LangChain",
+      "publication": {
+        "first_published_at": "2026-10-13T03:44:15.969000+00:00",
+        "updated_at": "2026-10-13T03:44:15.969000+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-e-1",
+          "locator": "Official release/model card; 2026-10-12T04:46:40Z",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Deep Agents deepagents==0.7.24 · Official source 1",
+          "upstream_revision": "deepagents==0.7.24",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.24"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-H02",
+          "name": "Deep Agents",
+          "url": "https://fieldtofit.top/watch/CW-H02"
+        }
+      ],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-e-1",
+          "title": "Deep Agents deepagents==0.7.24 · Official source 1",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.24"
+        }
+      ],
+      "state": "published",
+      "summary": "deepagents核心SDK 0.7.24 于北京时间 2026-10-12 12:46 发布。本次补录异步子Agent的fork模式、摘要溢出恢复与父级评判规则保留。",
+      "title": "Deep Agents 0.7.24：补入异步子Agent分支与上下文恢复",
+      "translations": {
+        "en": {
+          "fields": {
+            "Deep Agents 0.7.24：补入异步子Agent分支与上下文恢复": "Deep Agents 0.7.24: asynchronous subagent forks and context recovery",
+            "deepagents核心SDK 0.7.24 于北京时间 2026-10-12 12:46 发布。本次补录异步子Agent的fork模式、摘要溢出恢复与父级评判规则保留。": "The deepagents core SDK 0.7.24 was released at 12:46 Beijing time on 2026-10-12. This addition covers fork mode for asynchronous subagents, summary-overflow recovery and preservation of the parent rubric.",
+            "为异步子Agent增加fork模式支持；实际运行与状态行为需结合自己的后端配置验证。": "Adds fork-mode support for asynchronous subagents; actual execution and state behavior need validation with the selected backend configuration.",
+            "修复摘要调用的上下文溢出恢复，并在并行子Agent调用中保留父级评判规则。本站未运行复测。": "Fixes recovery from context overflow during summary calls and preserves the parent rubric in parallel subagent calls. FieldToFit has not run regression tests.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12T04:46:40Z；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：deepagents==0.7.24。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T04:46:40Z; event date (Beijing or publisher calendar date): 2026-10-12; checked:2026-10-13; version: deepagents==0.7.24. FieldToFit has not installed, run or reproduced performance.",
+            "异步fork模式": "Asynchronous fork mode",
+            "摘要与并行调用修复": "Summary and parallel-call fixes",
+            "本次属于deepagents核心SDK；deepagents-code、Talon等组件分别记录版本。保留 0.7.22 按需加载Skill工具的历史说明，不预先承诺token或费用节省。": "This release concerns the deepagents core SDK; deepagents-code, Talon and other components have separate versions. Retain the 0.7.22 explanation of on-demand skill-tool loading, without promising token or cost savings.",
+            "组件版本和收益边界": "Component versions and benefit limits"
+          },
+          "reviewed_at": "2026-10-13T03:34:02.975413+00:00",
+          "source_hash": "c55736c4857d71d7083e5723d0f4629fcbe1c84590eb2d4f1e9ba6b90b00dba0",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-12",
+      "highlight": false,
+      "id": "D-132",
+      "interpretation": [
+        {
+          "locator": "v0.21.7 release / model card",
+          "source_ids": [
+            "oct13-f-1"
+          ],
+          "text": "官方仓库源码安装默认更新到稳定标签；已经更新的安装不会倒退，仍可选择主分支。分叉仓库、Store／MSIX和捆绑桌面安装分别保留通道规则。",
+          "title": "源码安装与分发通道"
+        },
+        {
+          "locator": "v0.21.7 release / model card",
+          "source_ids": [
+            "oct13-f-1"
+          ],
+          "text": "桌面源码安装可选择更新通道；恢复会话保留签名推理资料，修复部分Bedrock Converse推理模型恢复问题。稳定检查支持现有GitHub认证，区分限流与部分防火墙阻断。",
+          "title": "恢复推理与检查可靠性"
+        },
+        {
+          "locator": "v0.21.7 release / model card",
+          "source_ids": [
+            "oct13-f-1"
+          ],
+          "text": "完整整理版说明尚待 0.22.0；合并窗口的所有改动不能当作逐项验证功能。本站未执行升级、恢复会话或验证修复，正文日期与实际发布时间分别保留。",
+          "title": "发布说明与未验证范围"
+        }
+      ],
+      "name": "Hermes Agent",
+      "note": "原始时间：2026-10-12T05:53:41Z; release text 2026-10-11；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：v0.21.7。本站未安装、运行或复现性能。",
+      "organization": "Nous Research",
+      "publication": {
+        "first_published_at": "2026-10-13T03:45:06.684551+00:00",
+        "updated_at": "2026-10-13T03:45:06.684551+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-f-1",
+          "locator": "Official release/model card; 2026-10-12T05:53:41Z; release text 2026-10-11",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Hermes Agent v0.21.7 · Official source 1",
+          "upstream_revision": "v0.21.7",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.7"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A08",
+          "name": "Hermes Agent",
+          "url": "https://fieldtofit.top/watch/CW-A08"
+        }
+      ],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-f-1",
+          "title": "Hermes Agent v0.21.7 · Official source 1",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.7"
+        }
+      ],
+      "state": "published",
+      "summary": "Hermes Agent 0.21.7 正文标注 2026-10-11，GitHub发布时间为北京时间 2026-10-12 13:53。本次补录源码更新通道、恢复会话与稳定检查行为。",
+      "title": "Hermes 0.21.7：源码安装默认稳定标签，修复恢复会话的推理资料",
+      "translations": {
+        "en": {
+          "fields": {
+            "Hermes 0.21.7：源码安装默认稳定标签，修复恢复会话的推理资料": "Hermes 0.21.7: source installs follow stable tags and preserve reasoning on resume",
+            "Hermes Agent 0.21.7 正文标注 2026-10-11，GitHub发布时间为北京时间 2026-10-12 13:53。本次补录源码更新通道、恢复会话与稳定检查行为。": "Hermes Agent 0.21.7’s release text is dated 2026-10-11; GitHub publication was at 13:53 Beijing time on 2026-10-12. This update records source-update channels, resumed sessions and stable-release checks.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12T05:53:41Z; release text 2026-10-11；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：v0.21.7。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T05:53:41Z; release text 2026-10-11; event date (Beijing or publisher calendar date): 2026-10-12; checked:2026-10-13; version: v0.21.7; FieldToFit has not installed, run or reproduced performance.",
+            "发布说明与未验证范围": "Release notes and unverified scope",
+            "完整整理版说明尚待 0.22.0；合并窗口的所有改动不能当作逐项验证功能。本站未执行升级、恢复会话或验证修复，正文日期与实际发布时间分别保留。": "Full curated notes await 0.22.0; not every change in the merge window is an individually verified feature. FieldToFit has not upgraded, resumed sessions or verified the fixes. The release-text date and actual publication date remain separate.",
+            "官方仓库源码安装默认更新到稳定标签；已经更新的安装不会倒退，仍可选择主分支。分叉仓库、Store／MSIX和捆绑桌面安装分别保留通道规则。": "Official-repository source installs now update to stable tags; installations already ahead do not move backward and can still select the main branch. Forks, Store/MSIX and bundled desktop installs retain their own channel rules.",
+            "恢复推理与检查可靠性": "Reasoning replay and check reliability",
+            "桌面源码安装可选择更新通道；恢复会话保留签名推理资料，修复部分Bedrock Converse推理模型恢复问题。稳定检查支持现有GitHub认证，区分限流与部分防火墙阻断。": "Desktop source installs can select their update channel. Resumed sessions retain signed reasoning, and recovery for some Bedrock Converse reasoning models is corrected. Stable checks use existing GitHub authentication and distinguish rate limits from some firewall blocks.",
+            "源码安装与分发通道": "Source installations and distribution channels"
+          },
+          "reviewed_at": "2026-10-13T03:34:32.921723+00:00",
+          "source_hash": "cafd17acdab49339fde0053aadd390207544ed457603d7e0a10b7de34911e193",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-11",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-11",
+      "highlight": false,
+      "id": "D-119",
+      "interpretation": [
+        {
+          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
+          "source_ids": [
+            "rea-repo",
+            "rea-faq"
+          ],
+          "text": "REA（Reverse Engineer Anything）把反汇编、伪代码、引用关系和运行行为组织为本地 MCP 工具，再用匹配的调查技能指导编码 Agent。它可帮助阅读没有源码的软件、分析兼容性或重建已明确验收标准的功能；CLI 也能使用同一工作流。REA 提供工具与证据组织，不是一款新的基础模型。",
+          "title": "它解决什么：让 Agent 沿证据调查软件行为"
+        },
+        {
+          "locator": "6.4.0 发布记录：Highlights 的 Android、JEB、Large analyses、JavaScript",
+          "source_ids": [
+            "rea-release"
+          ],
+          "text": "北京时间10月11日11:58发布的6.4.0新增 ADB 设备检查、拆分 APK 获取、日志与截图，以及需显式执行的应用生命周期操作；Apktool 读取清单和本地化字符串，JEB 接入本地项目。大型分析可先读摘要、再选取证据；JavaScript 分析设置内存和超时边界，资源耗尽时保留已完成事实与未知项。",
+          "title": "6.4.0：补入 Android，并让大型分析按需读取证据"
+        },
+        {
+          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
+          "source_ids": [
+            "rea-release",
+            "rea-faq",
+            "rea-setup",
+            "rea-license"
+          ],
+          "text": "可接入 Claude Code、Codex、Cursor、Gemini CLI；6.4.0还补充 Pi、Hermes、Qwen Code。只安装技能文件不够，仍需配置 MCP。深入原生程序分析使用 Ghidra、Hopper 或 IDA 等引擎；静态 JavaScript／.NET 路径不必依赖原生引擎。项目为 MIT，具体外部工具仍有各自安装与使用条件。",
+          "title": "怎么接入：本地工具、匹配技能与实际分析引擎"
+        },
+        {
+          "locator": "DX-Ball 案例：Sound-panning behavior、compiled-byte comparison、2026-10-07 project checkpoint",
+          "source_ids": [
+            "rea-case"
+          ],
+          "text": "官方 DX-Ball 案例记录的是 REA 4.1.0，不是6.4.0的性能评测。其声音平移函数在原版 x86 上完成3,205组行为比较，固定编译器条件下匹配63字节编译结果。10月7日项目检查点仍将完整可玩重建列为进行中；单函数通过不能推成任意程序均能完整恢复，本站尚未安装或独立复现。",
+          "title": "案例能证明什么：一个函数的行为与编译结果"
+        },
+        {
+          "locator": "N0zoM1z0 2026-10-10：working memory／oracles；TH08 浮点常量漏查与验收器修复",
+          "source_ids": [
+            "rea-essay",
+            "rea-case"
+          ],
+          "text": "10月10日的重建经验文章强调让 Agent 保留工作记忆、使用参考行为校验，并披露一次字节比较漏查浮点常量、错误接受结果的经历。我们的判断是：REA 值得关注之处在于把分析、假设与复核接起来；采用时还应审查比较工具、增加负例，不能只看“通过”标记或展示案例。该文是实践经验，不提供通用成功率或速度基准。",
+          "title": "FieldToFit 判断：验收器本身也需要验证"
+        },
+        {
+          "locator": "FAQ：local analysis／model-provider data policy；6.4.0 Changes、Breaking Changes",
+          "source_ids": [
+            "rea-faq",
+            "rea-release"
+          ],
+          "text": "目标分析在本地进行，但 Agent 获得的分析结果仍受所用模型服务的数据政策约束，不能因此认定整个流程离线。6.4.0中的 Windows P0 保持只读，部分 Windows NativeAOT 流程尚未在真实 Windows 主机验证。已有用户升级时还应核对旧证据格式的迁移说明，并更新固定版本的 MCP 配置。",
+          "title": "采用边界：平台支持与数据流要逐项确认"
+        }
+      ],
+      "name": "REA 6.4.0",
+      "note": "本条记录6.4.0版本事件，不称项目于今日首发。GitHub固定标签与npm最新版均核到6.4.0；案例使用4.1.0，日期与版本分开保留。热度和累计Star不作为能力、近期增长或榜单排名证据。上述结果来自项目作者，本站未实装或复现。",
+      "organization": "morluto / REA",
+      "publication": {
+        "first_published_at": "2026-10-11T05:27:29.365459+00:00",
+        "updated_at": "2026-10-13T03:39:39.478776+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "coverage": "link_only",
+          "id": "rea-release",
+          "locator": "6.4.0 发布记录：Highlights 的 Android、JEB、Large analyses、JavaScript",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文"
+          },
+          "title": "REA 6.4.0 官方发布记录",
+          "upstream_revision": "rea-agents-6.4.0",
+          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.4.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "coverage": "link_only",
+          "id": "rea-repo",
+          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文"
+          },
+          "title": "REA 官方仓库",
+          "upstream_revision": "2026-10-11核对",
+          "url": "https://github.com/morluto/rea"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "coverage": "link_only",
+          "id": "rea-faq",
+          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文"
+          },
+          "title": "REA FAQ 与数据边界",
+          "upstream_revision": "2026-10-11核对",
+          "url": "https://rea.tools/faq/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "coverage": "link_only",
+          "id": "rea-setup",
+          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文"
+          },
+          "title": "REA 接入说明",
+          "upstream_revision": "2026-10-11核对",
+          "url": "https://rea.tools/get-started/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "coverage": "link_only",
+          "id": "rea-case",
+          "locator": "DX-Ball 案例：Sound-panning behavior、compiled-byte comparison、2026-10-07 project checkpoint",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文"
+          },
+          "title": "DX-Ball 声音平移函数案例",
+          "upstream_revision": "case-4.1.0-checkpoint-20261007",
+          "url": "https://rea.tools/showcase/dx-ball/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "coverage": "link_only",
+          "id": "rea-essay",
+          "locator": "N0zoM1z0 2026-10-10：working memory／oracles；TH08 浮点常量漏查与验收器修复",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文"
+          },
+          "title": "N0zoM1z0：逆向工程重建经验与校验失误",
+          "upstream_revision": "2026-10-10",
+          "url": "https://rea.tools/blog/touhou-reconstruction/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-11",
+          "coverage": "link_only",
+          "id": "rea-license",
+          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
+          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
+          "retrieved_at": "2026-10-11",
+          "rights": {
+            "basis": "仅链接原文；不转载全文"
+          },
+          "title": "REA 6.4.0 固定版本 MIT 许可",
+          "upstream_revision": "rea-agents-6.4.0",
+          "url": "https://github.com/morluto/rea/blob/rea-agents-6.4.0/LICENSE"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T16",
+          "name": "REA 持续关注档案",
+          "url": "https://fieldtofit.top/watch/CW-T16"
+        }
+      ],
+      "source_published_at": "2026-10-11",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "rea-release",
+          "title": "REA 6.4.0 官方发布记录",
+          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.4.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-repo",
+          "title": "REA 官方仓库",
+          "url": "https://github.com/morluto/rea"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-faq",
+          "title": "REA FAQ 与数据边界",
+          "url": "https://rea.tools/faq/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-setup",
+          "title": "REA 接入说明",
+          "url": "https://rea.tools/get-started/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-case",
+          "title": "DX-Ball 声音平移函数案例",
+          "url": "https://rea.tools/showcase/dx-ball/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-essay",
+          "title": "N0zoM1z0：逆向工程重建经验与校验失误",
+          "url": "https://rea.tools/blog/touhou-reconstruction/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "rea-license",
+          "title": "REA 6.4.0 固定版本 MIT 许可",
+          "url": "https://github.com/morluto/rea/blob/rea-agents-6.4.0/LICENSE"
+        }
+      ],
+      "state": "published",
+      "summary": "REA把逆向分析工具接给编码Agent，用可追溯证据调查软件行为。6.4.0新增Android检查和大型证据按需读取；官方游戏重建案例展示了可核验进展，也提醒验收器本身可能出错。",
+      "title": "REA 6.4.0：让编码 Agent 沿证据理解软件行为",
+      "translations": {
+        "en": {
+          "fields": {
+            "10月10日的重建经验文章强调让 Agent 保留工作记忆、使用参考行为校验，并披露一次字节比较漏查浮点常量、错误接受结果的经历。我们的判断是：REA 值得关注之处在于把分析、假设与复核接起来；采用时还应审查比较工具、增加负例，不能只看“通过”标记或展示案例。该文是实践经验，不提供通用成功率或速度基准。": "The reconstruction experience article from 10/10 emphasizes preserving agent working memory and checking against reference behavior. It discloses a byte comparison that missed floating-point constants and incorrectly accepted a result. Our interpretation: REA deserves attention for connecting analysis, hypotheses and review. Adoption should also examine comparison tools and add negative cases, rather than relying only on a “passed” marker or showcase. This is a practice report, without a general success-rate or speed benchmark.",
+            "2026-10-11核对": "Reviewed 2026-10-11",
+            "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE": "6.4.0 Changes: Pi / Hermes / Qwen Code; FAQ: backends, setup and skills; tagged LICENSE",
+            "6.4.0 发布记录：Highlights 的 Android、JEB、Large analyses、JavaScript": "6.4.0 release notes: Highlights for Android, JEB, Large analyses and JavaScript",
+            "6.4.0：补入 Android，并让大型分析按需读取证据": "6.4.0: Android support and on-demand evidence for large analyses",
+            "DX-Ball 声音平移函数案例": "DX-Ball sound-panning function example",
+            "DX-Ball 案例：Sound-panning behavior、compiled-byte comparison、2026-10-07 project checkpoint": "DX-Ball example: Sound-panning behavior, compiled-byte comparison, 2026-10-07 project checkpoint",
+            "FieldToFit 判断：验收器本身也需要验证": "FieldToFit interpretation: the verifier also needs verification",
+            "N0zoM1z0 2026-10-10：working memory／oracles；TH08 浮点常量漏查与验收器修复": "N0zoM1z0 2026-10-10: working memory / oracles; missed TH08 floating-point constants and verifier fix",
+            "N0zoM1z0：逆向工程重建经验与校验失误": "N0zoM1z0: reverse-engineering reconstruction experience and validation mistakes",
+            "REA 6.4.0 固定版本 MIT 许可": "MIT license at the pinned REA 6.4.0 version",
+            "REA 6.4.0 官方发布记录": "Official REA 6.4.0 release notes",
+            "REA 6.4.0：让编码 Agent 沿证据理解软件行为": "REA 6.4.0: helping coding agents investigate software behavior through evidence",
+            "REA FAQ 与数据边界": "REA FAQ and data boundaries",
+            "REA 官方仓库": "Official REA repository",
+            "REA 持续关注档案": "REA ongoing-watch profile",
+            "REA 接入说明": "REA setup guide",
+            "REA把逆向分析工具接给编码Agent，用可追溯证据调查软件行为。6.4.0新增Android检查和大型证据按需读取；官方游戏重建案例展示了可核验进展，也提醒验收器本身可能出错。": "REA connects reverse-engineering tools to coding agents, using traceable evidence to investigate software behavior. Version 6.4.0 adds Android inspection and on-demand access to large evidence sets. The official game-reconstruction example shows verifiable progress and also warns that the verifier itself can be wrong.",
+            "REA（Reverse Engineer Anything）把反汇编、伪代码、引用关系和运行行为组织为本地 MCP 工具，再用匹配的调查技能指导编码 Agent。它可帮助阅读没有源码的软件、分析兼容性或重建已明确验收标准的功能；CLI 也能使用同一工作流。REA 提供工具与证据组织，不是一款新的基础模型。": "REA (Reverse Engineer Anything) organizes disassembly, pseudocode, references and runtime behavior into local MCP tools, then guides coding agents with matching investigation skills. It can help read software without source code, analyze compatibility or reconstruct functionality with explicit acceptance criteria. The CLI supports the same workflow. REA provides tools and evidence organization; it is not a new foundation model.",
+            "仅链接原文；不转载全文": "Original link only; no full-text republication",
+            "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流": "Repository README: What is REA / MCP and skills; FAQ: analysis scope and workflow",
+            "北京时间10月11日11:58发布的6.4.0新增 ADB 设备检查、拆分 APK 获取、日志与截图，以及需显式执行的应用生命周期操作；Apktool 读取清单和本地化字符串，JEB 接入本地项目。大型分析可先读摘要、再选取证据；JavaScript 分析设置内存和超时边界，资源耗尽时保留已完成事实与未知项。": "Version 6.4.0, released at 11:58 Beijing time on 10/11, adds ADB device inspection, split-APK retrieval, logs and screenshots, plus application lifecycle operations that require explicit execution. Apktool reads manifests and localized strings; JEB connects to local projects. Large analyses can start with summaries and retrieve selected evidence. JavaScript analysis sets memory and timeout boundaries, preserving completed facts and unknowns when resources are exhausted.",
+            "原文仅链接；发布本站原创整理、准确版本与案例边界。": "Original text is link-only. Publish FieldToFit's original summary with accurate versions and example limitations.",
+            "可接入 Claude Code、Codex、Cursor、Gemini CLI；6.4.0还补充 Pi、Hermes、Qwen Code。只安装技能文件不够，仍需配置 MCP。深入原生程序分析使用 Ghidra、Hopper 或 IDA 等引擎；静态 JavaScript／.NET 路径不必依赖原生引擎。项目为 MIT，具体外部工具仍有各自安装与使用条件。": "Supports Claude Code, Codex, Cursor and Gemini CLI; 6.4.0 also adds Pi, Hermes and Qwen Code. Installing skill files alone is insufficient; MCP configuration is still required. Deep native-program analysis uses engines such as Ghidra, Hopper or IDA. Static JavaScript / .NET paths do not require a native engine. The project is MIT-licensed; external tools have their own installation and usage conditions.",
+            "它解决什么：让 Agent 沿证据调查软件行为": "What it solves: guiding agents through evidence about software behavior",
+            "官方 DX-Ball 案例记录的是 REA 4.1.0，不是6.4.0的性能评测。其声音平移函数在原版 x86 上完成3,205组行为比较，固定编译器条件下匹配63字节编译结果。10月7日项目检查点仍将完整可玩重建列为进行中；单函数通过不能推成任意程序均能完整恢复，本站尚未安装或独立复现。": "The official DX-Ball example records REA 4.1.0, not a performance evaluation of 6.4.0. Its sound-panning function passed 3,205 behavioral comparisons on the original x86 platform and matched 63 bytes of compiled output under fixed compiler conditions. The 10/7 project checkpoint still lists a fully playable reconstruction as ongoing. Passing one function does not establish that arbitrary programs can be completely recovered. FieldToFit has not installed or independently reproduced it.",
+            "怎么接入：本地工具、匹配技能与实际分析引擎": "How to connect: local tools, matching skills and actual analysis engines",
+            "本条记录6.4.0版本事件，不称项目于今日首发。GitHub固定标签与npm最新版均核到6.4.0；案例使用4.1.0，日期与版本分开保留。热度和累计Star不作为能力、近期增长或榜单排名证据。上述结果来自项目作者，本站未实装或复现。": "This records the 6.4.0 version event, without claiming the project first launched today. The pinned GitHub tag and latest npm version were both checked as 6.4.0. The example uses 4.1.0; dates and versions remain separate. Popularity and cumulative stars are not evidence of capability, recent growth or ranking. These results come from the project author; FieldToFit has not installed or reproduced them.",
+            "案例能证明什么：一个函数的行为与编译结果": "What the example establishes: one function's behavior and compiled output",
+            "目标分析在本地进行，但 Agent 获得的分析结果仍受所用模型服务的数据政策约束，不能因此认定整个流程离线。6.4.0中的 Windows P0 保持只读，部分 Windows NativeAOT 流程尚未在真实 Windows 主机验证。已有用户升级时还应核对旧证据格式的迁移说明，并更新固定版本的 MCP 配置。": "Target analysis runs locally, but analysis results received by the agent remain subject to the chosen model service's data policies. This does not establish that the whole workflow is offline. Windows P0 in 6.4.0 remains read-only; some Windows NativeAOT workflows have not been verified on a real Windows host. Upgrading users should also check migration guidance for older evidence formats and update pinned MCP configuration.",
+            "采用边界：平台支持与数据流要逐项确认": "Adoption boundaries: check platform support and data flow individually"
+          },
+          "reviewed_at": "2026-10-13T03:31:06.506761+00:00",
+          "source_hash": "b3a43363a1f640644c0348c61cdda6c83e0ec34af07d6d51e4292dbc385efba4",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-08",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://openai.com/index/gpt-6-for-everyone/",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Chat: GPT-6 interactive answers / API snapshot",
+        "overview_zh": "Chat：GPT-6交互式回答／API快照",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-07T19:15:27.777000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-08",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-08",
+            "context": {
+              "author_handle": "OpenAI",
+              "author_name": "OpenAI",
+              "kind": "quote",
+              "text_en": "GPT-6 and Intelligent UI, now rolling out in ChatGPT for everyone.",
+              "text_scope": "excerpt",
+              "translation_zh": "GPT-6与Intelligent UI正在ChatGPT中推出。",
+              "url": "https://x.com/OpenAI/status/2107894997538525580"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2107912709715132482",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖；本站中文摘译；不把来源文字当作操作指令。",
+            "text_en": "We're going beyond text and are releasing a new version of GPT-6 to all users in ChatGPT.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "我们正走向文字之外，向ChatGPT用户推出新版GPT-6。",
+            "url": "https://x.com/thsottiaux/status/2107912709715132482"
+          },
+          {
+            "announced_at": "2026-10-07T19:19:17.822000Z",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-08",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-08",
+            "evidence_url": "https://x.com/thsottiaux/status/2107913674593644711",
+            "kind": "supplement",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "公开官方原帖；本站中文摘译；不把来源文字当作操作指令。",
+            "text_en": "Day 3/\n\nThe big one is GPT-6 in Chat",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Day 3：今天的主要更新是Chat中的GPT-6。",
+            "url": "https://x.com/thsottiaux/status/2107913674593644711"
+          }
+        ],
+        "timestamp_basis": "source_date",
+        "type": "model"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-91",
+      "interpretation": [
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-49e8d0577a",
+            "source-b7fb30dbee",
+            "source-6e2c4969b8",
+            "source-b6c8070973",
+            "source-44ed5b7666"
+          ],
+          "text": "回答可组合文字、图示、按钮与交互组件，并在思考或执行工具期间先给出有用内容、继续补充结果。Chat页从10月7日向Plus／Pro／Business／Enterprise推出，10月8日起扩展Free／Go；企业受管理员设置影响。Work／Codex模型未随本次Chat更新更换。",
+          "title": "界面与范围"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-49e8d0577a",
+            "source-b7fb30dbee",
+            "source-6e2c4969b8",
+            "source-b6c8070973",
+            "source-44ed5b7666"
+          ],
+          "text": "官方API日志10月7日确认chat-latest快照更新；这是可测试最新Chat模型改进的可变别名，不表示API新增同名Intelligent UI产品或自动返回交互界面。生产型号选择应分别按模型文档评估。",
+          "title": "API补充"
+        },
+        {
+          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-49e8d0577a",
+            "source-b7fb30dbee",
+            "source-6e2c4969b8",
+            "source-b6c8070973",
+            "source-44ed5b7666"
+          ],
+          "text": "原始公告仅提供10月7日来源日期，未提供北京时刻；Tibo在10月8日03:15／03:19的相关说明各自保留真实时刻。本站核对官方材料，未逐账户复测。",
+          "title": "来源日期"
+        }
+      ],
+      "name": "GPT-6 Intelligent UI",
+      "note": "原始日期2026-10-07；本站2026-10-08核对。分阶段推出，未逐账户实测。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-08T02:08:23.705798+00:00",
+        "updated_at": "2026-10-13T03:39:14.399066+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-1",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
+          "upstream_revision": "chat-intelligent-ui-2026-10-07",
+          "url": "https://openai.com/index/gpt-6-for-everyone/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-08",
+          "coverage": "link_only",
+          "id": "oct08-source-2",
+          "locator": "官方发布、版本记录或采用说明",
+          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
+          "retrieved_at": "2026-10-08",
+          "rights": {},
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
+          "upstream_revision": "chat-intelligent-ui-2026-10-07",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        },
+        {
+          "id": "D-30",
+          "name": "GPT-6 Sol / Luna",
+          "url": "https://fieldtofit.top/news/D-30"
+        }
+      ],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
+          "url": "https://openai.com/index/gpt-6-for-everyone/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-49e8d0577a",
+          "title": "API快照更新",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-b7fb30dbee",
+          "title": "chat-latest型号文档",
+          "url": "https://developers.openai.com/api/docs/models/chat-latest"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-6e2c4969b8",
+          "title": "Tibo相关原帖",
+          "url": "https://x.com/thsottiaux/status/2107912709715132482"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-b6c8070973",
+          "title": "Tibo官方Day 3说明",
+          "url": "https://x.com/thsottiaux/status/2107913674593644711"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-44ed5b7666",
+          "title": "OpenAI原始X公告",
+          "url": "https://x.com/OpenAI/status/2107894997538525580"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-be7d2eb185",
+          "title": "Tibo身份和头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "ChatGPT将文字、图示与可操作组件组合成回答，分阶段推出；官方API另确认chat-latest快照更新。Chat交互界面与API模型入口需分别使用。",
+      "title": "GPT-6 Intelligent UI：把回答变成可操作的界面",
+      "translations": {
+        "en": {
+          "fields": {
+            "API快照更新": "API snapshot update",
+            "API补充": "API supplement",
+            "ChatGPT将文字、图示与可操作组件组合成回答，分阶段推出；官方API另确认chat-latest快照更新。Chat交互界面与API模型入口需分别使用。": "ChatGPT combines text, diagrams and interactive components in answers, with a phased rollout. The official API documentation separately confirms an updated chat-latest snapshot. Chat interfaces and API model entry points must be used separately.",
+            "Chat：GPT-6交互式回答／API快照": "Chat: GPT-6 Interactive Answer/API Snapshot",
+            "GPT-6 Intelligent UI：把回答变成可操作的界面": "GPT-6 Intelligent UI: turning answers into interactive interfaces",
+            "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1": "GPT-6 Intelligent UI: Turn answers into an actionable interface · Official source 1",
+            "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2": "GPT-6 Intelligent UI: Turn answers into an actionable interface · Official source 2",
+            "OpenAI原始X公告": "OpenAI Original X Announcement",
+            "Tibo官方Day 3说明": "Tibo Official Day 3 Description",
+            "Tibo相关原帖": "Original posts related to Tibo",
+            "Tibo身份和头像": "Tibo identity and avatar",
+            "chat-latest型号文档": "Chat-latest model document",
+            "公开官方原帖；本站中文摘译；不把来源文字当作操作指令。": "Public official original post; FieldToFit Chinese excerpt; do not take the source text as an operating instruction.",
+            "原始公告仅提供10月7日来源日期，未提供北京时刻；Tibo在10月8日03:15／03:19的相关说明各自保留真实时刻。本站核对官方材料，未逐账户复测。": "The original announcement gives only the 10/7 source date, without a Beijing time. Tibo’s related explanations retain their actual 10/8 times, 03:15 / 03:19. FieldToFit reviewed official materials without retesting every account.",
+            "原始日期2026-10-07；本站2026-10-08核对。分阶段推出，未逐账户实测。": "Original Date 2026-10-07; FieldToFit 2026-10-08 Check. Launched in stages, not account-by-account runtime test.",
+            "回答可组合文字、图示、按钮与交互组件，并在思考或执行工具期间先给出有用内容、继续补充结果。Chat页从10月7日向Plus／Pro／Business／Enterprise推出，10月8日起扩展Free／Go；企业受管理员设置影响。Work／Codex模型未随本次Chat更新更换。": "Answers can combine text, diagrams, buttons and interactive components, providing useful content while thinking or running tools and then adding results. Chat rolls out to Plus / Pro / Business / Enterprise from 10/7, expanding to Free / Go from 10/8; Enterprise depends on admin settings. This Chat update does not replace Work / Codex models.",
+            "官方API日志10月7日确认chat-latest快照更新；这是可测试最新Chat模型改进的可变别名，不表示API新增同名Intelligent UI产品或自动返回交互界面。生产型号选择应分别按模型文档评估。": "The official 10/7 API changelog confirms an updated chat-latest snapshot. This mutable alias lets developers test the latest Chat model improvements; it does not add an API product named Intelligent UI or automatically return interactive interfaces. Evaluate production model choices against their respective documentation.",
+            "官方公告／更新日志及使用范围；本站未运行复测": "Official announcement/update log and scope of use; FieldToFit does not run retest",
+            "官方发布、版本记录或采用说明": "Official release, version record or adoption instructions",
+            "来源日期": "Date of origin",
+            "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。": "The text redistribution license has not been confirmed; MCP provides FieldToFit interpretation and source list, source text only links.",
+            "界面与范围": "Interface and scope"
+          },
+          "reviewed_at": "2026-10-13T03:30:48.886226+00:00",
+          "source_hash": "fcaa16a4fd394889d5f53399bcd771d10ef1107d9d9744e4250d47530b3f2515",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-14",
       "codex_28_days": {
         "announced_at": "2026-10-13T01:03:25.417000+00:00",
         "date_precision": "instant",
         "event_key": "https://x.com/thsottiaux/status/2109812216212099456",
         "group": "codex",
         "official_day": 8,
-        "overview_en": "Global reset announcement · official Day 8",
-        "overview_zh": "全球重置公告 · 官方 Day 8",
+        "overview_en": "Global reset: official completion confirmation · Day 8",
+        "overview_zh": "全球重置已获官方完成确认 · 官方 Day 8",
         "source_posts": [
           {
             "announced_at": "2026-10-13T01:03:25.417000+00:00",
             "author_handle": "thsottiaux",
             "author_name": "Tibo",
             "avatar": {
-              "checked_at": "2026-10-13",
+              "checked_at": "2026-10-14",
               "evidence_url": "https://x.com/thsottiaux",
               "retrieval_method": "direct_x",
               "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
               "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
             },
-            "checked_at": "2026-10-13",
+            "checked_at": "2026-10-14",
             "evidence_url": "https://x.com/thsottiaux/status/2109812216212099456",
             "kind": "primary",
             "retrieval_method": "direct_x",
@@ -40,13 +1806,13 @@
             "author_handle": "thsottiaux",
             "author_name": "Tibo",
             "avatar": {
-              "checked_at": "2026-10-13",
+              "checked_at": "2026-10-14",
               "evidence_url": "https://x.com/thsottiaux",
               "retrieval_method": "direct_x",
               "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
               "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
             },
-            "checked_at": "2026-10-13",
+            "checked_at": "2026-10-14",
             "evidence_url": "https://x.com/thsottiaux/status/2109812360596865224",
             "kind": "reply",
             "retrieval_method": "direct_x",
@@ -56,6 +1822,28 @@
             "timestamp_basis": "post_id_derived",
             "translation_zh": "全球重置将在PST当天结束前落地。请享用。",
             "url": "https://x.com/thsottiaux/status/2109812360596865224"
+          },
+          {
+            "announced_at": "2026-10-13T05:06:06.031000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-14",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-14",
+            "evidence_url": "https://x.com/thsottiaux/status/2109873287853707513",
+            "kind": "reply",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对本人原帖全文及关联回复；中文为本站译文。",
+            "text_en": "What would you like with your side of reset? It's done.",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "重置已经完成，你还想来点什么配菜？",
+            "url": "https://x.com/thsottiaux/status/2109873287853707513"
           }
         ],
         "timestamp_basis": "post_id_derived",
@@ -67,29 +1855,31 @@
       "id": "D-126",
       "interpretation": [
         {
-          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "locator": "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。",
           "source_ids": [
             "tibo",
-            "tibo-reply"
+            "tibo-reply",
+            "tibo-completion"
           ],
-          "text": "Tibo 发布“Day 8／Reset”，随后回复称全球重置将在 PST 当天结束前落地。此条记录已核实的官方公告，不将生效预告写成已经完成。",
-          "title": "官方公告"
+          "text": "Tibo 先发布“Day 8／Reset”，并回复称全球重置将在 PST 当天结束前落地；随后引用该回复，确认这次重置已完成。正文、概览及关联原帖一起修订，保留同一事件编号。",
+          "title": "公告与完成声明"
         },
         {
-          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "locator": "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。",
           "source_ids": [
             "tibo",
-            "tibo-reply"
+            "tibo-reply",
+            "tibo-completion"
           ],
-          "text": "回复原文为“Global reset landing by EOD PST time. Enjoy”。保留原帖 PST 表述，不推造精确开始时刻；本次原帖没有逐档列出套餐或具体受影响的用量窗口，不能据公告承诺每个账户已经到账。主帖按帖子 ID 推导为北京时间 2026-10-13 09:03:25，回复为 09:03:59；本站日历 Day 9，保留官方 Day 8。",
+          "text": "主帖为北京时间 10 月 13 日 09:03:25，原计划回复为 09:03:59，完成确认帖为 13:06:06，均按帖子 ID 推导。确认帖表示发布者在该时刻宣布完成，不是准确生效开始时刻。保留原计划的 PST 表述作公告历史；这组帖子没有逐档说明套餐名单和具体用量窗口，本站不推断每个账户已到账。日历 Day 9 与官方 Day 8 分开保留。",
           "title": "时间与适用范围"
         },
         {
-          "locator": "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。",
+          "locator": "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。",
           "source_ids": [
             "banked-help"
           ],
-          "text": "如需查看自己的额度，以账户 Settings → Usage 的当前读数为准。全球重置和可留存的 banked reset 是不同机制，不能把本公告当作新增一张可自行兑换的重置卡。取得同次官方完成与范围依据后，将更新同一条日志。",
+          "text": "打开 Settings → Usage，查看当前账户或工作区的额度；显示未刷新时可重新加载或打开同一栏。全球重置直接作用于符合条件的用量，与可留存、由用户兑换的 banked reset 不同；本次完成声明不能改写为新增一张重置卡。",
           "title": "查看自己的额度"
         }
       ],
@@ -98,7 +1888,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-13T03:12:48.635919+00:00",
-        "updated_at": "2026-10-13T03:12:48.635919+00:00"
+        "updated_at": "2026-10-14T03:06:52.572782+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-13",
@@ -117,6 +1907,12 @@
         },
         {
           "coverage": "link_only",
+          "id": "tibo-completion",
+          "title": "Tibo 官方 Day 8 重置完成声明",
+          "url": "https://x.com/thsottiaux/status/2109873287853707513"
+        },
+        {
+          "coverage": "link_only",
           "id": "banked-help",
           "title": "OpenAI 重置机制说明",
           "url": "https://help.openai.com/en/articles/20001498-how-banked-codex-resets-work"
@@ -129,29 +1925,30 @@
         }
       ],
       "state": "published",
-      "summary": "Tibo 发布“Day 8／Reset”，随后说明全球重置将在 PST 当天结束前落地。本条记录已核实的官方公告，不将生效预告写成已经完成。",
-      "title": "官方 Day 8：Tibo 宣布全球额度重置，称 PST 当天结束前落地",
+      "summary": "Tibo 在官方 Day 8 全球重置公告之后，于北京时间 10 月 13 日 13:06 引用同次公告并确认“已完成”。继续沿用 D-126，不把确认帖时刻当作准确生效开始时刻，也不推断每个账户的到账情况。",
+      "title": "官方 Day 8：Tibo 确认全球额度重置已完成",
       "translations": {
         "en": {
           "fields": {
             "OpenAI 重置机制说明": "OpenAI explanation of reset mechanisms",
             "Tibo X 身份与头像": "Tibo X identity and avatar",
+            "Tibo 先发布“Day 8／Reset”，并回复称全球重置将在 PST 当天结束前落地；随后引用该回复，确认这次重置已完成。正文、概览及关联原帖一起修订，保留同一事件编号。": "Tibo first announced Day 8 / Reset and a global reset by EOD PST. He later quoted that reply and confirmed completion. The body, overview and source card will change together under the same event ID.",
             "Tibo 关于 PST 当天结束前落地的回复": "Tibo reply on arrival by EOD PST",
-            "Tibo 发布“Day 8／Reset”，随后回复称全球重置将在 PST 当天结束前落地。此条记录已核实的官方公告，不将生效预告写成已经完成。": "Tibo posted \"Day 8 / Reset\", then said a global reset would arrive by the end of the day in PST. This records the verified announcement without claiming completion.",
-            "Tibo 发布“Day 8／Reset”，随后说明全球重置将在 PST 当天结束前落地。本条记录已核实的官方公告，不将生效预告写成已经完成。": "Tibo posted “Day 8 / Reset” and said a global reset would arrive by the end of the day in PST. This records the verified announcement, without claiming completion.",
+            "Tibo 在官方 Day 8 全球重置公告之后，于北京时间 10 月 13 日 13:06 引用同次公告并确认“已完成”。继续沿用 D-126，不把确认帖时刻当作准确生效开始时刻，也不推断每个账户的到账情况。": "After his official Day 8 global reset announcement, Tibo quoted the same notice and confirmed completion at Beijing time 10-13, 13:06. This amends D-126 without treating the confirmation post as an exact activation time or verifying receipt for every account.",
             "Tibo 官方 Day 8 重置公告": "Tibo official Day 8 reset announcement",
-            "全球重置公告 · 官方 Day 8": "Global reset announcement · official Day 8",
-            "回复原文为“Global reset landing by EOD PST time. Enjoy”。保留原帖 PST 表述，不推造精确开始时刻；本次原帖没有逐档列出套餐或具体受影响的用量窗口，不能据公告承诺每个账户已经到账。主帖按帖子 ID 推导为北京时间 2026-10-13 09:03:25，回复为 09:03:59；本站日历 Day 9，保留官方 Day 8。": "The reply specifies EOD PST; no precise start time or plan-by-plan usage windows are supplied. Receipt for every account is not inferred. Post IDs place the announcement at Beijing time 2026-10-13 09:03:25 and the reply at 09:03:59. This is calendar Day 9 and official Day 8.",
-            "如需查看自己的额度，以账户 Settings → Usage 的当前读数为准。全球重置和可留存的 banked reset 是不同机制，不能把本公告当作新增一张可自行兑换的重置卡。取得同次官方完成与范围依据后，将更新同一条日志。": "Check your own Settings → Usage. A global reset differs from a saved banked reset; this announcement does not mean a banked reset has been granted. Later verified completion and scope evidence will amend the same record.",
-            "官方 Day 8：Tibo 宣布全球额度重置，称 PST 当天结束前落地": "Official Day 8: Tibo announces a global usage reset by EOD PST",
-            "官方公告": "Official announcement",
+            "Tibo 官方 Day 8 重置完成声明": "Tibo official Day 8 completion statement",
+            "主帖为北京时间 10 月 13 日 09:03:25，原计划回复为 09:03:59，完成确认帖为 13:06:06，均按帖子 ID 推导。确认帖表示发布者在该时刻宣布完成，不是准确生效开始时刻。保留原计划的 PST 表述作公告历史；这组帖子没有逐档说明套餐名单和具体用量窗口，本站不推断每个账户已到账。日历 Day 9 与官方 Day 8 分开保留。": "Post IDs place the announcement at Beijing time 10-13, 09:03:25, its timing reply at 09:03:59, and the completion statement at 13:06:06. The last timestamp identifies when completion was announced, not an exact activation start. PST remains part of the original plan. These posts do not enumerate plans or affected usage windows; receipt for each account is not inferred. Calendar Day 9 and official Day 8 remain separate.",
+            "全球重置已获官方完成确认 · 官方 Day 8": "Global reset: official completion confirmation · Day 8",
+            "公告与完成声明": "Announcement and completion",
+            "官方 Day 8：Tibo 确认全球额度重置已完成": "Official Day 8: Tibo confirms the global usage reset is complete",
+            "打开 Settings → Usage，查看当前账户或工作区的额度；显示未刷新时可重新加载或打开同一栏。全球重置直接作用于符合条件的用量，与可留存、由用户兑换的 banked reset 不同；本次完成声明不能改写为新增一张重置卡。": "Check Settings → Usage for the current account or workspace; refresh or reopen it if necessary. A global reset applies directly to eligible usage, unlike a saved banked reset that you redeem. This statement does not establish an additional banked reset.",
             "时间与适用范围": "Timing and scope",
             "查看自己的额度": "Check your own usage",
-            "直接核对 Tibo 原帖及已登记官方出处；原帖时刻按 ID 推导，未推造实际生效时刻。": "Tibo posts and registered official sources were verified directly; post times are ID-derived, without inventing activation times.",
+            "直接核对官方原帖和已登记官方文档；原帖时刻按 ID 推导，不推造生效时刻或实测效果。": "Official posts and registered documentation verified directly; post times are ID-derived, without inventing activation times or measured benefits.",
             "直接核对本人原帖全文及关联回复；中文为本站译文。": "Full original posts and related replies verified directly; Chinese translations are by FieldToFit."
           },
-          "reviewed_at": "2026-10-13T03:06:13.505510+00:00",
-          "source_hash": "88144188541f902c5454e891d90f36f2dde5dccf2c386eda8e2d80a71552d9ed",
+          "reviewed_at": "2026-10-14T02:50:38.397374+00:00",
+          "source_hash": "bffc01c4d7ec6b6ced76dfd7e449c996257c303892caaf7ef2d7f4f70ba1317b",
           "state": "reviewed"
         }
       }
@@ -1279,7 +3076,7 @@
       "checked_at": "2026-10-12",
       "editor": "FieldToFit",
       "event_date": "2026-10-11",
-      "highlight": true,
+      "highlight": false,
       "id": "D-122",
       "interpretation": [
         {
@@ -1315,7 +3112,7 @@
       "organization": "TerseAI",
       "publication": {
         "first_published_at": "2026-10-12T02:06:29.346176+00:00",
-        "updated_at": "2026-10-12T02:06:29.346176+00:00"
+        "updated_at": "2026-10-13T03:40:51.619058+00:00"
       },
       "reading_materials": [
         {
@@ -1394,8 +3191,8 @@
             "迁移需要调整Helm镜像字段与相应环境变量，TypeScript工具要求Bun1.4.2+；已有部署仍引用保存过的镜像，必须保留它们以便重启和重新激活。": "Migration requires changes to Helm image fields and corresponding environment variables; TypeScript tooling requires Bun1.4.2+. Existing deployments still refer to saved images, which must be retained for restart and reactivation.",
             "部署迁移与旧镜像保留": "Deployment migration and saved images"
           },
-          "reviewed_at": "2026-10-12T01:53:35.414762+00:00",
-          "source_hash": "6075182d5dcd42dc585dc43a624e4b2000f83dc5f10fde9b71bb6ee84da7abd1",
+          "reviewed_at": "2026-10-13T03:31:59.324621+00:00",
+          "source_hash": "e9b15159a9711c9d75a310a010e5f5435ce7ff477d22057b698f04a867ee17cf",
           "state": "reviewed"
         }
       }
@@ -1405,7 +3202,7 @@
       "checked_at": "2026-10-12",
       "editor": "FieldToFit",
       "event_date": "2026-10-12",
-      "highlight": true,
+      "highlight": false,
       "id": "D-121",
       "interpretation": [
         {
@@ -1441,7 +3238,7 @@
       "organization": "nano-muse",
       "publication": {
         "first_published_at": "2026-10-12T02:06:05.789226+00:00",
-        "updated_at": "2026-10-12T02:06:05.789226+00:00"
+        "updated_at": "2026-10-13T03:40:27.947209+00:00"
       },
       "reading_materials": [
         {
@@ -1525,8 +3322,8 @@
             "社区产品与运行限制": "Community product and runtime limitations",
             "跨端与模型接入修复": "Client and model connection fixes"
           },
-          "reviewed_at": "2026-10-12T01:53:23.305684+00:00",
-          "source_hash": "dff74bb53e25989efbf5b4eb0fbbf88da7ed85a84fd1de41929e2bbdd6f9f817",
+          "reviewed_at": "2026-10-13T03:31:42.003385+00:00",
+          "source_hash": "a2ab55950e16acea06d58e9fa1de3ee45d763d1c48cde4822fac97c7ad348e95",
           "state": "reviewed"
         }
       }
@@ -1536,7 +3333,7 @@
       "checked_at": "2026-10-12",
       "editor": "FieldToFit",
       "event_date": "2026-10-10",
-      "highlight": true,
+      "highlight": false,
       "id": "D-120",
       "interpretation": [
         {
@@ -1572,7 +3369,7 @@
       "organization": "franzenzenhofer",
       "publication": {
         "first_published_at": "2026-10-12T02:05:42.150590+00:00",
-        "updated_at": "2026-10-12T02:05:42.150590+00:00"
+        "updated_at": "2026-10-13T03:40:03.481222+00:00"
       },
       "reading_materials": [
         {
@@ -1656,8 +3453,8 @@
             "窗口叠在应用之上，目标附近可点击穿透，提示可以自动消失；工具不负责点击、输入或截屏，不应将“指向允许按钮”解释成已获得用户授权。": "Overlays sit above applications, allow click-through near the target and can disappear automatically. The tool does not click, type or capture screenshots. Pointing at an Allow button does not mean user authorization has been obtained.",
             "许可、安装与权限条件": "License, installation and permission requirements"
           },
-          "reviewed_at": "2026-10-12T01:53:12.054429+00:00",
-          "source_hash": "2f052a4d68d9cd2b8b40f2c6506782d041584b49e649ea30a4de656b92362e94",
+          "reviewed_at": "2026-10-13T03:31:24.524988+00:00",
+          "source_hash": "9dffe7df23b7864c248219efadbb3507d84fbefcd6a02705b3b849a1a4745722",
           "state": "reviewed"
         }
       }
@@ -1943,267 +3740,6 @@
       "state": "published",
       "summary": "Mistral于10月6日开放Large 4公共预览，面向编程、Agent和多模态文档任务；现在可通过Studio/API使用，下载权重仍需等待月底计划。",
       "title": "Mistral Large 4：API公开预览，权重计划月底开放"
-    },
-    {
-      "category": "tool",
-      "checked_at": "2026-10-11",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-11",
-      "highlight": true,
-      "id": "D-119",
-      "interpretation": [
-        {
-          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
-          "source_ids": [
-            "rea-repo",
-            "rea-faq"
-          ],
-          "text": "REA（Reverse Engineer Anything）把反汇编、伪代码、引用关系和运行行为组织为本地 MCP 工具，再用匹配的调查技能指导编码 Agent。它可帮助阅读没有源码的软件、分析兼容性或重建已明确验收标准的功能；CLI 也能使用同一工作流。REA 提供工具与证据组织，不是一款新的基础模型。",
-          "title": "它解决什么：让 Agent 沿证据调查软件行为"
-        },
-        {
-          "locator": "6.4.0 发布记录：Highlights 的 Android、JEB、Large analyses、JavaScript",
-          "source_ids": [
-            "rea-release"
-          ],
-          "text": "北京时间10月11日11:58发布的6.4.0新增 ADB 设备检查、拆分 APK 获取、日志与截图，以及需显式执行的应用生命周期操作；Apktool 读取清单和本地化字符串，JEB 接入本地项目。大型分析可先读摘要、再选取证据；JavaScript 分析设置内存和超时边界，资源耗尽时保留已完成事实与未知项。",
-          "title": "6.4.0：补入 Android，并让大型分析按需读取证据"
-        },
-        {
-          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
-          "source_ids": [
-            "rea-release",
-            "rea-faq",
-            "rea-setup",
-            "rea-license"
-          ],
-          "text": "可接入 Claude Code、Codex、Cursor、Gemini CLI；6.4.0还补充 Pi、Hermes、Qwen Code。只安装技能文件不够，仍需配置 MCP。深入原生程序分析使用 Ghidra、Hopper 或 IDA 等引擎；静态 JavaScript／.NET 路径不必依赖原生引擎。项目为 MIT，具体外部工具仍有各自安装与使用条件。",
-          "title": "怎么接入：本地工具、匹配技能与实际分析引擎"
-        },
-        {
-          "locator": "DX-Ball 案例：Sound-panning behavior、compiled-byte comparison、2026-10-07 project checkpoint",
-          "source_ids": [
-            "rea-case"
-          ],
-          "text": "官方 DX-Ball 案例记录的是 REA 4.1.0，不是6.4.0的性能评测。其声音平移函数在原版 x86 上完成3,205组行为比较，固定编译器条件下匹配63字节编译结果。10月7日项目检查点仍将完整可玩重建列为进行中；单函数通过不能推成任意程序均能完整恢复，本站尚未安装或独立复现。",
-          "title": "案例能证明什么：一个函数的行为与编译结果"
-        },
-        {
-          "locator": "N0zoM1z0 2026-10-10：working memory／oracles；TH08 浮点常量漏查与验收器修复",
-          "source_ids": [
-            "rea-essay",
-            "rea-case"
-          ],
-          "text": "10月10日的重建经验文章强调让 Agent 保留工作记忆、使用参考行为校验，并披露一次字节比较漏查浮点常量、错误接受结果的经历。我们的判断是：REA 值得关注之处在于把分析、假设与复核接起来；采用时还应审查比较工具、增加负例，不能只看“通过”标记或展示案例。该文是实践经验，不提供通用成功率或速度基准。",
-          "title": "FieldToFit 判断：验收器本身也需要验证"
-        },
-        {
-          "locator": "FAQ：local analysis／model-provider data policy；6.4.0 Changes、Breaking Changes",
-          "source_ids": [
-            "rea-faq",
-            "rea-release"
-          ],
-          "text": "目标分析在本地进行，但 Agent 获得的分析结果仍受所用模型服务的数据政策约束，不能因此认定整个流程离线。6.4.0中的 Windows P0 保持只读，部分 Windows NativeAOT 流程尚未在真实 Windows 主机验证。已有用户升级时还应核对旧证据格式的迁移说明，并更新固定版本的 MCP 配置。",
-          "title": "采用边界：平台支持与数据流要逐项确认"
-        }
-      ],
-      "name": "REA 6.4.0",
-      "note": "本条记录6.4.0版本事件，不称项目于今日首发。GitHub固定标签与npm最新版均核到6.4.0；案例使用4.1.0，日期与版本分开保留。热度和累计Star不作为能力、近期增长或榜单排名证据。上述结果来自项目作者，本站未实装或复现。",
-      "organization": "morluto / REA",
-      "publication": {
-        "first_published_at": "2026-10-11T05:27:29.365459+00:00",
-        "updated_at": "2026-10-11T05:27:29.365459+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-11",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "rea-release",
-          "locator": "6.4.0 发布记录：Highlights 的 Android、JEB、Large analyses、JavaScript",
-          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
-          "retrieved_at": "2026-10-11",
-          "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "REA 6.4.0 官方发布记录",
-          "upstream_revision": "rea-agents-6.4.0",
-          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.4.0"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-11",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "rea-repo",
-          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
-          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
-          "retrieved_at": "2026-10-11",
-          "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "REA 官方仓库",
-          "upstream_revision": "2026-10-11核对",
-          "url": "https://github.com/morluto/rea"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-11",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "rea-faq",
-          "locator": "仓库 README：What is REA／MCP 与 skill；FAQ：分析范围与工作流",
-          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
-          "retrieved_at": "2026-10-11",
-          "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "REA FAQ 与数据边界",
-          "upstream_revision": "2026-10-11核对",
-          "url": "https://rea.tools/faq/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-11",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "rea-setup",
-          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
-          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
-          "retrieved_at": "2026-10-11",
-          "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "REA 接入说明",
-          "upstream_revision": "2026-10-11核对",
-          "url": "https://rea.tools/get-started/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-11",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "rea-case",
-          "locator": "DX-Ball 案例：Sound-panning behavior、compiled-byte comparison、2026-10-07 project checkpoint",
-          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
-          "retrieved_at": "2026-10-11",
-          "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "DX-Ball 声音平移函数案例",
-          "upstream_revision": "case-4.1.0-checkpoint-20261007",
-          "url": "https://rea.tools/showcase/dx-ball/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-11",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "rea-essay",
-          "locator": "N0zoM1z0 2026-10-10：working memory／oracles；TH08 浮点常量漏查与验收器修复",
-          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
-          "retrieved_at": "2026-10-11",
-          "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "N0zoM1z0：逆向工程重建经验与校验失误",
-          "upstream_revision": "2026-10-10",
-          "url": "https://rea.tools/blog/touhou-reconstruction/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-11",
-          "content_hash": null,
-          "coverage": "link_only",
-          "id": "rea-license",
-          "locator": "6.4.0 Changes：Pi／Hermes／Qwen Code；FAQ：后端、setup 与 skill；固定标签 LICENSE",
-          "reason": "原文仅链接；发布本站原创整理、准确版本与案例边界。",
-          "retrieved_at": "2026-10-11",
-          "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
-          },
-          "title": "REA 6.4.0 固定版本 MIT 许可",
-          "upstream_revision": "rea-agents-6.4.0",
-          "url": "https://github.com/morluto/rea/blob/rea-agents-6.4.0/LICENSE"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-T16",
-          "name": "REA 持续关注档案",
-          "url": "https://fieldtofit.top/watch/CW-T16"
-        }
-      ],
-      "source_published_at": "2026-10-11",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "rea-release",
-          "title": "REA 6.4.0 官方发布记录",
-          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.4.0"
-        },
-        {
-          "coverage": "link_only",
-          "id": "rea-repo",
-          "title": "REA 官方仓库",
-          "url": "https://github.com/morluto/rea"
-        },
-        {
-          "coverage": "link_only",
-          "id": "rea-faq",
-          "title": "REA FAQ 与数据边界",
-          "url": "https://rea.tools/faq/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "rea-setup",
-          "title": "REA 接入说明",
-          "url": "https://rea.tools/get-started/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "rea-case",
-          "title": "DX-Ball 声音平移函数案例",
-          "url": "https://rea.tools/showcase/dx-ball/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "rea-essay",
-          "title": "N0zoM1z0：逆向工程重建经验与校验失误",
-          "url": "https://rea.tools/blog/touhou-reconstruction/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "rea-license",
-          "title": "REA 6.4.0 固定版本 MIT 许可",
-          "url": "https://github.com/morluto/rea/blob/rea-agents-6.4.0/LICENSE"
-        }
-      ],
-      "state": "published",
-      "summary": "REA把逆向分析工具接给编码Agent，用可追溯证据调查软件行为。6.4.0新增Android检查和大型证据按需读取；官方游戏重建案例展示了可核验进展，也提醒验收器本身可能出错。",
-      "title": "REA 6.4.0：让编码 Agent 沿证据理解软件行为"
     },
     {
       "category": "model",
@@ -6148,228 +7684,6 @@
       "state": "published",
       "summary": "官方说明学生现在可上传笔记生成交互测验，ChatGPT也更容易识别测验意图，帮助把课堂材料变成可练习的题目。",
       "title": "ChatGPT for Teens：笔记生成交互测验更方便"
-    },
-    {
-      "_position": 1,
-      "category": "model",
-      "checked_at": "2026-10-08",
-      "codex_28_days": {
-        "announced_at": null,
-        "date_precision": "source_date",
-        "event_key": "https://openai.com/index/gpt-6-for-everyone/",
-        "group": "other_openai",
-        "official_day": null,
-        "overview_en": "Chat: GPT-6 interactive answers / API snapshot",
-        "overview_zh": "Chat：GPT-6交互式回答／API快照",
-        "source_posts": [
-          {
-            "announced_at": "2026-10-07T19:15:27.777000Z",
-            "author_handle": "thsottiaux",
-            "author_name": "Tibo",
-            "avatar": {
-              "checked_at": "2026-10-08",
-              "evidence_url": "https://x.com/thsottiaux",
-              "retrieval_method": "direct_x",
-              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
-              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
-            },
-            "checked_at": "2026-10-08",
-            "context": {
-              "author_handle": "OpenAI",
-              "author_name": "OpenAI",
-              "kind": "quote",
-              "text_en": "GPT-6 and Intelligent UI, now rolling out in ChatGPT for everyone.",
-              "text_scope": "excerpt",
-              "translation_zh": "GPT-6与Intelligent UI正在ChatGPT中推出。",
-              "url": "https://x.com/OpenAI/status/2107894997538525580"
-            },
-            "evidence_url": "https://x.com/thsottiaux/status/2107912709715132482",
-            "kind": "primary",
-            "retrieval_method": "direct_x",
-            "reuse_basis": "公开官方原帖；本站中文摘译；不把来源文字当作操作指令。",
-            "text_en": "We're going beyond text and are releasing a new version of GPT-6 to all users in ChatGPT.",
-            "text_scope": "excerpt",
-            "timestamp_basis": "post_id_derived",
-            "translation_zh": "我们正走向文字之外，向ChatGPT用户推出新版GPT-6。",
-            "url": "https://x.com/thsottiaux/status/2107912709715132482"
-          },
-          {
-            "announced_at": "2026-10-07T19:19:17.822000Z",
-            "author_handle": "thsottiaux",
-            "author_name": "Tibo",
-            "avatar": {
-              "checked_at": "2026-10-08",
-              "evidence_url": "https://x.com/thsottiaux",
-              "retrieval_method": "direct_x",
-              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
-              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
-            },
-            "checked_at": "2026-10-08",
-            "evidence_url": "https://x.com/thsottiaux/status/2107913674593644711",
-            "kind": "supplement",
-            "retrieval_method": "direct_x",
-            "reuse_basis": "公开官方原帖；本站中文摘译；不把来源文字当作操作指令。",
-            "text_en": "Day 3/\n\nThe big one is GPT-6 in Chat",
-            "text_scope": "excerpt",
-            "timestamp_basis": "post_id_derived",
-            "translation_zh": "Day 3：今天的主要更新是Chat中的GPT-6。",
-            "url": "https://x.com/thsottiaux/status/2107913674593644711"
-          }
-        ],
-        "timestamp_basis": "source_date",
-        "type": "model"
-      },
-      "editor": "FieldToFit",
-      "event_date": null,
-      "highlight": true,
-      "id": "D-91",
-      "interpretation": [
-        {
-          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-49e8d0577a",
-            "source-b7fb30dbee",
-            "source-6e2c4969b8",
-            "source-b6c8070973",
-            "source-44ed5b7666"
-          ],
-          "text": "回答可组合文字、图示、按钮与交互组件，并在思考或执行工具期间先给出有用内容、继续补充结果。Chat页从10月7日向Plus／Pro／Business／Enterprise推出，10月8日起扩展Free／Go；企业受管理员设置影响。Work／Codex模型未随本次Chat更新更换。",
-          "title": "界面与范围"
-        },
-        {
-          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-49e8d0577a",
-            "source-b7fb30dbee",
-            "source-6e2c4969b8",
-            "source-b6c8070973",
-            "source-44ed5b7666"
-          ],
-          "text": "官方API日志10月7日确认chat-latest快照更新；这是可测试最新Chat模型改进的可变别名，不表示API新增同名Intelligent UI产品或自动返回交互界面。生产型号选择应分别按模型文档评估。",
-          "title": "API补充"
-        },
-        {
-          "locator": "官方公告／更新日志及使用范围；本站未运行复测",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-49e8d0577a",
-            "source-b7fb30dbee",
-            "source-6e2c4969b8",
-            "source-b6c8070973",
-            "source-44ed5b7666"
-          ],
-          "text": "原始公告仅提供10月7日来源日期，未提供北京时刻；Tibo在10月8日03:15／03:19的相关说明各自保留真实时刻。本站核对官方材料，未逐账户复测。",
-          "title": "来源日期"
-        }
-      ],
-      "name": "GPT-6 Intelligent UI",
-      "note": "原始日期2026-10-07；本站2026-10-08核对。分阶段推出，未逐账户实测。",
-      "organization": "OpenAI",
-      "publication": {
-        "first_published_at": "2026-10-08T02:08:23.705798+00:00",
-        "updated_at": "2026-10-08T12:46:09.401775+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "coverage": "link_only",
-          "id": "oct08-source-1",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {},
-          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
-          "upstream_revision": "chat-intelligent-ui-2026-10-07",
-          "url": "https://openai.com/index/gpt-6-for-everyone/"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-08",
-          "coverage": "link_only",
-          "id": "oct08-source-2",
-          "locator": "官方发布、版本记录或采用说明",
-          "reason": "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。",
-          "retrieved_at": "2026-10-08",
-          "rights": {},
-          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
-          "upstream_revision": "chat-intelligent-ui-2026-10-07",
-          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M01",
-          "name": "GPT",
-          "url": "https://fieldtofit.top/watch/CW-M01"
-        },
-        {
-          "id": "D-30",
-          "name": "GPT-6 Sol / Luna",
-          "url": "https://fieldtofit.top/news/D-30"
-        }
-      ],
-      "source_published_at": "2026-10-07",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1",
-          "url": "https://openai.com/index/gpt-6-for-everyone/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-2",
-          "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
-          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-49e8d0577a",
-          "title": "API快照更新",
-          "url": "https://developers.openai.com/api/docs/changelog"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-b7fb30dbee",
-          "title": "chat-latest型号文档",
-          "url": "https://developers.openai.com/api/docs/models/chat-latest"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-6e2c4969b8",
-          "title": "Tibo相关原帖",
-          "url": "https://x.com/thsottiaux/status/2107912709715132482"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-b6c8070973",
-          "title": "Tibo官方Day 3说明",
-          "url": "https://x.com/thsottiaux/status/2107913674593644711"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-44ed5b7666",
-          "title": "OpenAI原始X公告",
-          "url": "https://x.com/OpenAI/status/2107894997538525580"
-        },
-        {
-          "coverage": "link_only",
-          "id": "source-be7d2eb185",
-          "title": "Tibo身份和头像",
-          "url": "https://x.com/thsottiaux"
-        }
-      ],
-      "state": "published",
-      "summary": "ChatGPT将文字、图示与可操作组件组合成回答，分阶段推出；官方API另确认chat-latest快照更新。Chat交互界面与API模型入口需分别使用。",
-      "title": "GPT-6 Intelligent UI：把回答变成可操作的界面"
     },
     {
       "category": "agent",
@@ -17065,7 +18379,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-13",
+  "reviewed_at": "2026-10-14",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

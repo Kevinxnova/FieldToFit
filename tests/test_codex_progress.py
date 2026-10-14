@@ -22,6 +22,11 @@ def test_dates_numbering_precision_shared_api_and_mcp(client):
     assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
     by_date = {d['date']: d for d in days}
     assert by_date['2026-10-13']['codex_ids'] == ['D-126']
+    assert by_date['2026-10-13']['other_openai_ids'] == ['D-144']
+    prewarm = event(body, 'D-144')['codex_28_days']
+    assert prewarm['date'] == '2026-10-13' and prewarm['official_day'] is None and prewarm['group'] == 'other_openai'
+    assert prewarm['source_posts'] == []
+    assert any(p['url'].endswith('2109873287853707513') for p in event(body, 'D-126')['codex_28_days']['source_posts'])
     assert by_date['2026-10-12']['codex_ids'] == ['D-125']
     assert event(body, 'D-125')['codex_28_days']['official_day'] == 7
     assert event(body, 'D-126')['codex_28_days']['official_day'] == 8

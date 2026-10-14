@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.9.1"></a>
+## v1.9.1 · Codex重置完成更正与Agents沙箱预热 · 2026-10-14
+
+<!-- site-deployed:2026-10-14 -->
+<!-- public-title:en:Codex reset completion and Agents sandbox pre-warming -->
+<!-- release-summary:zh:start -->
+- 修订D-126：补入Tibo官方Day 8全球重置完成声明，正文、日历概览和原帖卡片保持同源；保留10月13日与原编号。
+- 新增Agents API沙箱预热日志D-144，独立归入其他OpenAI；说明提前准备环境、未接入会话前免费与接入后容器计费边界。
+- 修复英文管理预览对AI JSON内中文原帖的误翻译，并让窄屏原帖身份与标签自动分行，避免作者名逐字换行。
+- 两项保留真实北京日期、官方编号及来源范围；不推造重置精确生效时刻或套餐清单，严格重置计数保持0。两项已审核发布，展示修复已验；同站月份兼容版按协调顺序接续。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Amend D-126 with Tibo’s official Day 8 global reset completion statement, updating the body, calendar overview and source card together while preserving October 13 and its ID.
+- Add Agents API sandbox pre-warming as D-144 in Other OpenAI, explaining advance setup, free pre-attachment warming and standard container billing after attachment.
+- Protect original-post fields in the English admin AI JSON preview and wrap narrow source-card headers so author names remain readable.
+- Preserve genuine Beijing dates, official numbering and evidence boundaries. Do not invent exact reset activation or complete plan eligibility; the strict reset count remains zero. The two items are published and display fixes are verified; the coordinated month-compatible deployment follows.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者明确要求“进行最后的整理并发布”，授权此前完整提案的1条新增与D-126更正；D-134为拟号，内容系统分配D-144，已有草稿不覆盖。沿用原审核发布集合、API/MCP和数据库，不新增模块、协议或迁移；自已确认v1.9.0里程碑以来，本批为内容／证据与测试基线的patch交付。原晨间及22:00／22:30安排保持。实际验证与部署结果见[本批验收](docs/validation/2026-10-14-codex-day8-prewarming.md)。
+
+本批首次正式部署曾覆盖同站未提交的月份兼容，触发动态读取503；报告保护性撤回后读取恢复，既有Codex27条与本批两项保持。停止从旧基线继续部署；本地提交先保留v1.9.1历史，兼容v1.9.2以本提交为基线一次更新默认分支。线上完整验收在兼容版接续，不能将本地预览或部署READY视为全站读取通过。
+
 <a id="v1.9.0"></a>
 ## v1.9.0 · AI日报模块与每天09:00出刊 · 2026-10-14
 

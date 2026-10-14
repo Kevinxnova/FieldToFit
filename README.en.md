@@ -36,15 +36,16 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.9.0](CHANGELOG.md#v1.9.0)** · [fieldtofit-v1.9.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.0)
+**Current source version: [v1.9.1](CHANGELOG.md#v1.9.1)** · [fieldtofit-v1.9.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Consolidate the complete AI Daily module: the first For you entry, magazine editions and archives, seven sections, product tracking, latest complete market closes and bilingual magazine PDFs.
-- Move the daily target to 09:00 Beijing time: collect at 07:45, close the news window at 08:30, publish at 09:00 and verify at 09:05; update bilingual copy and delay detection together.
-- Upgrade to v1.9.0 with explicit owner approval and require proactive patch/minor/major assessment before development. Preserve previous versions and tags. This release is deployed with the approved October 13 evening sample and bilingual PDFs. Licensed quotes, complete collection, model access and minute-level scheduling are still incomplete; automatic publication remains disabled.
+- Amend D-126 with Tibo’s official Day 8 global reset completion statement, updating the body, calendar overview and source card together while preserving October 13 and its ID.
+- Add Agents API sandbox pre-warming as D-144 in Other OpenAI, explaining advance setup, free pre-attachment warming and standard container billing after attachment.
+- Protect original-post fields in the English admin AI JSON preview and wrap narrow source-card headers so author names remain readable.
+- Preserve genuine Beijing dates, official numbering and evidence boundaries. Do not invent exact reset activation or complete plan eligibility; the strict reset count remains zero. The two items are published and display fixes are verified; the coordinated month-compatible deployment follows.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
