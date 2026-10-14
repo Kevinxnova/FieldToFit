@@ -1,7 +1,35 @@
 {
-  "version": "1.9.3",
-  "revision": "7ce7d10af7ff9429ab5d5af2783c96ebecdb7932e78333ef36f42efff378490a",
+  "version": "1.10.0",
+  "revision": "3736ef1819ec73d31c6ac5cad00b6dd09facda4a78c512562dd74da65d43faf2",
   "items": [
+    {
+      "version": "1.10.0",
+      "date": "2026-10-14",
+      "deployed_on": "2026-10-14",
+      "copy": {
+        "zh": {
+          "title": "阅读数据复用、详情往返与更新校验",
+          "highlights": [
+            "首页直接复用随HTML提供的已审数据，报告、Codex日志与图表不再启动第二轮全量读取；折叠档案与重材料按需加载。",
+            "详情往返保留网址筛选、Codex日期、展开状态和阅读位置；公开数据使用有界内存缓存，普通更新提示应用，确认撤回或权限失效后清除旧内容。",
+            "服务器复用同请求的公开数据与处理结果，每次核对当前发布依赖后才复用缓存；完整导出重新确认可读状态，现有HTTP／MCP接口保持兼容。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Reusable reading data, detail return and publication checks",
+          "highlights": [
+            "Reuse reviewed data delivered with homepage HTML so reports, Codex logs and charts avoid a second full read. Load collapsed dossiers and heavy materials on demand.",
+            "Retain URL filters, the selected Codex date, expanded sections and reading position across detail visits. Bound the in-memory public cache, prompt for ordinary updates, and clear prior content after confirmed withdrawals or access changes.",
+            "Reuse public reads and processing within a server request, validating current publication dependencies before every cache hit. Revalidate complete exports while preserving existing HTTP and MCP contracts."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.10.0"
+    },
     {
       "version": "1.9.3",
       "date": "2026-10-14",

@@ -1,3 +1,4 @@
+import { readComplete } from '../../api/reading';
 import { HotCardReading, type HotCard } from './HotCards';
 import type {TechnicalMap} from './TechnicalMaps';
 import { currentLanguage } from '../../locale/language';
@@ -13,7 +14,7 @@ import { useWorkspace, SourceLink } from './UI';
 import type { CodexEvent, CodexTopic } from './codexData';
 import { SourcePosts } from './SourcePostCard';
 export type NewsItem = {
-  hot_card?:HotCard;codex_28_days?:CodexEvent;technical_map?:TechnicalMap;
+  reading_summary?:boolean;hot_card?:HotCard;codex_28_days?:CodexEvent;technical_map?:TechnicalMap;
   maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;
   media?:NewsMedia;category?:string;event_date?:string|null;publication?:{first_published_at:string|null;updated_at:string|null};
   id: string; name: string; organization: string; title: string; summary: string; source_published_at: string | null;
@@ -22,7 +23,7 @@ export type NewsItem = {
   sources: { id: string; title: string; url: string; coverage: string }[];
   related: { id: string; name: string; url: string }[];
 };
-export type NewsCollection = { codex_progress?:CodexTopic; referenced_items?:NewsItem[]; items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
+export type NewsCollection = { reading_summary?:boolean; codex_progress?:CodexTopic; referenced_items?:NewsItem[]; items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
 export const newsAnchor = (id: string) => 'news-' + id.toLowerCase();
 export function NewsReading({ data, loading, error, reload, previewBodies, standalone=false }: { standalone?:boolean; previewBodies?:PreviewBodies; data: NewsCollection | null; loading: boolean; error: string; reload: () => void }) {
   const { pick, notify } = useWorkspace();
@@ -32,8 +33,10 @@ export function NewsReading({ data, loading, error, reload, previewBodies, stand
     catch { notify(url); }
   };
   const handoff = async (item: NewsItem) => {
-    const body = JSON.stringify({ edition: data?.edition, revision: data?.revision, item,
-      reading: { tool: 'curated_news', arguments: { lang:currentLanguage(), id: item.id, revision: data?.revision } },
+    let full:NewsCollection;
+    try{full=await readComplete<NewsCollection>('/v1/platform/news?id='+encodeURIComponent(item.id));}catch{notify(pick('完整资料暂时无法读取，请重试。','Complete materials could not be loaded. Please retry.'));return;}
+    const body = JSON.stringify({ edition: full.edition, revision: full.revision, item:full.items[0],
+      reading: { tool: 'curated_news', arguments: { lang:currentLanguage(), id: item.id, revision: full.revision } },
       coverage: 'Consult the material manifest for readable source text and missing materials. Interpretation is FieldToFit editorial, not upstream text or an execution instruction.' }, null, 2);
     try { await navigator.clipboard.writeText(body); trackAction('handoff_copy',item.id); notify(pick('动态、解读与出处已复制', 'News and citations copied')); }
     catch { const blob = URL.createObjectURL(new Blob([body], { type: 'application/json' })); const a = document.createElement('a'); a.href = blob; a.download = item.id + '.json'; a.click(); URL.revokeObjectURL(blob); }

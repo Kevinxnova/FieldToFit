@@ -4040,3 +4040,8 @@ body:has(.mobile-more-dialog[open]), body:has(.toc-drawer[open]) { overflow: hid
 
 .revision-prose { white-space: pre-wrap; overflow-wrap: anywhere; }
 .revision-values ul { padding-left: 1.25rem; }
+
+/* Publication checks must not move the reader's page or cover mobile navigation. */
+.reading-update { position: fixed; z-index: 70; right: 20px; bottom: 20px; max-width: min(600px, calc(100vw - 40px)); margin: 0; box-shadow: var(--shadow); }
+.reading-update .text-button { margin-left: 8px; }
+@media (max-width: 700px) { .reading-update { right: 12px; bottom: calc(79px + env(safe-area-inset-bottom, 0px)); max-width: calc(100vw - 24px); padding: 10px 14px; } }

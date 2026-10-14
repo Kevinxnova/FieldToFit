@@ -159,6 +159,8 @@ def test_redirects_query_canonical_and_failure(site, monkeypatch):
     assert f'rel="canonical" href="{seo.ORIGIN}/for-you"' in get(site, '/for-you?q=test').text
     def broken(*args, **kwargs):
         raise RuntimeError('SECRET database credentials')
+    from backend.knowledge import reading
+    monkeypatch.setattr(reading, 'dependencies', broken)
     monkeypatch.setattr(seo, 'news', broken)
     monkeypatch.setattr(seo, 'sitemap_entries', broken)
     for path in ('/for-you', '/news/D-01', '/sitemap.xml'):

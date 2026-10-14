@@ -26,6 +26,9 @@ def kind(ident):
     return 'news' if ident.startswith('D-') else 'watch'
 
 def rows(db,table):
+    from flask import g, has_request_context
+    if has_request_context() and table in getattr(g, 'reading_tables', {}):
+        return g.reading_tables[table]
     try:return [dict(r) for r in db.execute('SELECT * FROM '+table).fetchall()]
     except Exception as e:
         if 'no such table: '+table not in str(e):raise
@@ -83,6 +86,9 @@ def publication_event(db,kind_,ident,old,new,context=None):
         if mid not in previous:event(db,ident,'material_added',{'material_id':mid,'to_revision':digest(m)},context=context)
 
 def raw_items(db):
+    from flask import g, has_request_context
+    if has_request_context() and hasattr(g, 'reading_raw'):
+        return {i['id']:i for k in ('news','watch') for i in g.reading_raw[k]['items']}
     items={}
     for k in ('news','watch'):
         r=db.execute('SELECT published_json FROM fieldtofit_content_sets WHERE kind=?',(k,)).fetchone()

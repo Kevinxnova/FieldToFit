@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.9.3](CHANGELOG.md#v1.9.3)** · [fieldtofit-v1.9.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.3)
+**当前源码版本：[v1.10.0](CHANGELOG.md#v1.10.0)** · [fieldtofit-v1.10.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 按所有者确认，以本机Codex GPT承接日报取材、双语写作和事实复核，不接入MiniMax或额外付费模型API。
-- 新增本地稿件与证据绑定、私密双语PDF校样、逐页排版核验和09:00后自动交付，支持同稿恢复与公开回读；人工改稿、撤回和已发表修订不被自动覆盖。
-- 保持原07:30／08:00私密选题、日报设计、完整收盘口径和历史样刊；本地运行依赖电脑及应用在线，逐期免费行情核实与连续真实出刊仍需观察。
+- 首页直接复用随HTML提供的已审数据，报告、Codex日志与图表不再启动第二轮全量读取；折叠档案与重材料按需加载。
+- 详情往返保留网址筛选、Codex日期、展开状态和阅读位置；公开数据使用有界内存缓存，普通更新提示应用，确认撤回或权限失效后清除旧内容。
+- 服务器复用同请求的公开数据与处理结果，每次核对当前发布依赖后才复用缓存；完整导出重新确认可读状态，现有HTTP／MCP接口保持兼容。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

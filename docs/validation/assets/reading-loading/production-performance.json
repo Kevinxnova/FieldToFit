@@ -1,0 +1,238 @@
+{
+  "before": {
+    "at": "2026-10-14T13:56:45Z",
+    "html": [
+      {
+        "path": "/for-you",
+        "ttfb": 11.927576,
+        "total": 12.009559,
+        "bytes": 120201,
+        "gzip_reference": 34248,
+        "bootstrap": false,
+        "server_timing": "",
+        "status": 200
+      },
+      {
+        "path": "/for-you",
+        "ttfb": 11.85886,
+        "total": 12.0983,
+        "bytes": 120201,
+        "gzip_reference": 34248,
+        "bootstrap": false,
+        "server_timing": "",
+        "status": 200
+      },
+      {
+        "path": "/for-you",
+        "ttfb": 11.808811,
+        "total": 12.034357,
+        "bytes": 120201,
+        "gzip_reference": 34248,
+        "bootstrap": false,
+        "server_timing": "",
+        "status": 200
+      },
+      {
+        "path": "/en/for-you",
+        "ttfb": 18.912279,
+        "total": 19.108909,
+        "bytes": 132515,
+        "gzip_reference": 32133,
+        "bootstrap": false,
+        "server_timing": "",
+        "status": 200
+      }
+    ],
+    "version": "v1.9.3"
+  },
+  "after": {
+    "at": "2026-10-14T14:02:52Z",
+    "html": [
+      {
+        "path": "/for-you",
+        "ttfb": 6.688619,
+        "total": 8.803775,
+        "bytes": 949180,
+        "gzip_reference": 183293,
+        "bootstrap": true,
+        "server_timing": "server-timing: reading_revision;dur=1840.06, reading_database;dur=2082.88, reading_projection;dur=306.70, reading_revision;dur=1828.04",
+        "status": 200
+      },
+      {
+        "path": "/for-you",
+        "ttfb": 2.05179,
+        "total": 2.512827,
+        "bytes": 949180,
+        "gzip_reference": 183293,
+        "bootstrap": true,
+        "server_timing": "server-timing: reading_revision;dur=1768.65",
+        "status": 200
+      },
+      {
+        "path": "/for-you",
+        "ttfb": 2.175925,
+        "total": 2.727836,
+        "bytes": 949180,
+        "gzip_reference": 183293,
+        "bootstrap": true,
+        "server_timing": "server-timing: reading_revision;dur=1863.84",
+        "status": 200
+      },
+      {
+        "path": "/en/for-you",
+        "ttfb": 8.168295,
+        "total": 8.658212,
+        "bytes": 1006209,
+        "gzip_reference": 178535,
+        "bootstrap": true,
+        "server_timing": "server-timing: reading_revision;dur=1819.39, reading_database;dur=3241.10, reading_projection;dur=400.29, reading_revision;dur=1829.63",
+        "status": 200
+      }
+    ],
+    "version": "v1.10.0",
+    "mcp": {
+      "/api/mcp": {
+        "name": "fieldtofit",
+        "version": "1.10.0"
+      },
+      "/api/mcp/curated": {
+        "name": "fieldtofit",
+        "version": "1.10.0"
+      },
+      "/api/mcp/codex": {
+        "name": "fieldtofit-codex",
+        "version": "1.10.0"
+      }
+    },
+    "unchanged": {
+      "/api/v1/platform/news": true,
+      "/api/v1/platform/watch": true,
+      "/api/v1/platform/maps": true,
+      "/api/v1/platform/model-landscape": true
+    }
+  },
+  "extra_before_english_fix": {
+    "zh": {
+      "news": 144,
+      "watch": 53,
+      "unchanged_bytes": 99
+    },
+    "en": {
+      "news": 144,
+      "watch": 53,
+      "unchanged_bytes": 99
+    },
+    "/assets/index-BS05LPXK.js": {
+      "sha256": "29b09b5ea8a8ac2892c464d25d768a71f204b29ca6415d307cc2ca08d716633f",
+      "bytes": 1657030
+    },
+    "/assets/index-DCYNxR1G.css": {
+      "sha256": "b46132fd8e3bd9ced523e776d14d463dfb98b3cf084ef3e6ecd5cff8a3622edb",
+      "bytes": 173020
+    },
+    "curated_news": {
+      "id": "D-126",
+      "http_mcp_equal": true
+    },
+    "curated_watch": {
+      "id": "CW-M01",
+      "http_mcp_equal": true
+    },
+    "/for-you": [
+      {
+        "ttfb": 6.418103,
+        "total": 6.849656,
+        "wire_bytes": 189782
+      },
+      {
+        "ttfb": 2.032805,
+        "total": 2.738783,
+        "wire_bytes": 190105
+      },
+      {
+        "ttfb": 2.057546,
+        "total": 2.430802,
+        "wire_bytes": 189953
+      }
+    ],
+    "/en/for-you": [
+      {
+        "ttfb": 7.977317,
+        "total": 8.095692,
+        "wire_bytes": 185457
+      },
+      {
+        "ttfb": 8.066499,
+        "total": 8.242099,
+        "wire_bytes": 185457
+      },
+      {
+        "ttfb": 8.153711,
+        "total": 8.378295,
+        "wire_bytes": 185457
+      }
+    ]
+  },
+  "final_after_english_fix": {
+    "at": "2026-10-14T14:14:40Z",
+    "pages": {
+      "/en/for-you": [
+        {
+          "ttfb": 8.715363,
+          "total": 8.869965,
+          "wire_bytes": 185661,
+          "decoded_bytes": 1006209,
+          "status": 200,
+          "server_timing": "server-timing: reading_revision;dur=2073.39, reading_database;dur=3130.45, reading_projection;dur=475.74, reading_revision;dur=1837.33"
+        },
+        {
+          "ttfb": 2.47659,
+          "total": 2.737237,
+          "wire_bytes": 185286,
+          "decoded_bytes": 1006209,
+          "status": 200,
+          "server_timing": "server-timing: reading_revision;dur=1797.64"
+        },
+        {
+          "ttfb": 2.501834,
+          "total": 2.746126,
+          "wire_bytes": 185423,
+          "decoded_bytes": 1006209,
+          "status": 200,
+          "server_timing": "server-timing: reading_revision;dur=1842.91"
+        }
+      ],
+      "/for-you": [
+        {
+          "ttfb": 6.444473,
+          "total": 6.639253,
+          "wire_bytes": 189782,
+          "decoded_bytes": 949180,
+          "status": 200,
+          "server_timing": "server-timing: reading_revision;dur=1813.64, reading_database;dur=2114.73, reading_projection;dur=327.60, reading_revision;dur=1864.34"
+        },
+        {
+          "ttfb": 2.336809,
+          "total": 2.473311,
+          "wire_bytes": 189953,
+          "decoded_bytes": 949180,
+          "status": 200,
+          "server_timing": "server-timing: reading_revision;dur=1785.71"
+        },
+        {
+          "ttfb": 2.122491,
+          "total": 2.548288,
+          "wire_bytes": 189953,
+          "decoded_bytes": 949180,
+          "status": 200,
+          "server_timing": "server-timing: reading_revision;dur=1816.62"
+        }
+      ]
+    },
+    "health": {
+      "status": "ok",
+      "version": "v1.10.0"
+    },
+    "changelog_html_version": true
+  }
+}

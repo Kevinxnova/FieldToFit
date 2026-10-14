@@ -1,7 +1,7 @@
 """Public search pages read the same reviewed publications as HTTP and MCP.
 
-No crawler-specific rendering and no retained page cache: a withdrawal takes
-effect on the next request, including sitemap and error responses.
+No crawler-specific rendering. Reading projections are revision-checked on every
+request; a withdrawal takes effect on the next read, including sitemap and errors.
 """
 import html
 import json
@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 from backend.knowledge.codex_progress import calendar_month, calendar_rows
 from xml.etree import ElementTree as ET
 
-from flask import Blueprint, Response, redirect, render_template, request
+from flask import Blueprint, Response, redirect, render_template, request, g
 from markupsafe import Markup
 
 from backend.knowledge.platform import PlatformError
@@ -72,6 +72,8 @@ def preview():
 
 @bp.after_app_request
 def search_headers(response):
+    if hasattr(g, 'reading_timings'):
+        response.headers['Server-Timing'] = ', '.join(f'{name};dur={elapsed:.2f}' for name, elapsed in g.reading_timings)
     if request.path.startswith('/en') or request.path in ('/api/v1/platform/news', '/api/v1/platform/watch', '/api/v1/platform/maps', '/', '/connect') or request.path.rstrip('/') in PAGES or request.path.startswith(('/news/', '/watch/', '/maps')):
         response.headers['Cache-Control'] = 'no-store'
     if preview() or request.path.startswith('/api/') or request.path in LEGACY or request.path.startswith('/records/') or response.status_code >= 400:
@@ -169,7 +171,7 @@ def shell_path(dist):
     return dist / 'index.html' if (dist / 'index.html').exists() else ROOT / 'client.html'
 
 
-def document(dist, title, description, path, body='', status=200, index=True):
+def document(dist, title, description, path, body='', status=200, index=True, bootstrap=None):
     english=request.path=='/en' or request.path.startswith('/en/')
     if english:
         from backend.knowledge import locale
@@ -195,6 +197,10 @@ def document(dist, title, description, path, body='', status=200, index=True):
     meta+=f'<link rel="alternate" hreflang="zh-CN" href="{ORIGIN+clean}"><link rel="alternate" hreflang="en" href="{ORIGIN+"/en"+clean}">'
     content = content.replace('</head>', meta + '</head>')
     content = content.replace('<div id="root"></div>', '<div id="root">' + body + '</div>')
+    if bootstrap is not None and status == 200:
+        # JSON is data, escaped against script termination; never translated as HTML.
+        encoded = json.dumps(bootstrap, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026').replace('\u2028','\\u2028').replace('\u2029','\\u2029')
+        content = content.replace('</body>', '<script type="application/json" id="fieldtofit-reading">'+encoded+'</script></body>')
     if status >= 400:
         # Do not turn an actual 404/503 into a cached client success or leak a stale body.
         content = re.sub(r'<script\b[^>]*>.*?</script>', '', content, flags=re.S)
@@ -207,7 +213,9 @@ def page(path, dist):
     if english:path=path.removeprefix('/en') or '/'
     prefix='/en' if english else ''
     def localized(value):
-        if not english:return value
+        # Empty optional sections have no text to translate. In particular, a
+        # cached homepage must not reload publication bodies for None / [].
+        if not english or not value:return value
         from backend.knowledge import locale
         return locale.project(value,locale.public_fields())
     if path == '/for-you/daily' or path.startswith('/for-you/daily/'):
@@ -226,6 +234,7 @@ def page(path, dist):
         collections = {}
         catalog = None
         revision = ''
+        reading = None
         if path == '/changelog':
             from backend.site_changelog import history
             info = PAGES[path]
@@ -246,7 +255,14 @@ def page(path, dist):
         if path in PAGES:
             info = PAGES[path]
             title, description, heading = info['title'][int(english)], info['description'][int(english)], info['heading'][int(english)]
-            if path in ('/for-you', '/for-your-ai'):
+            if path == '/for-you':
+                from backend.knowledge.api import read_allowed
+                if not read_allowed():
+                    return document(dist, title, description, path, status=401, index=False)
+                from backend.knowledge.reading import overview
+                reading = overview(q=request.args.get('q',''), type=request.args.get('type',''))
+                collections = {'news':reading['news'], 'watch':reading['watch']}
+            elif path == '/for-your-ai':
                 collections = {'news': news(), 'watch': watch(q=request.args.get('q', '') if path == '/for-you' else '', type=request.args.get('type', '') if path == '/for-you' else '')}
             elif path == '/community':
                 collections = {'watch': watch(origin='developer_submission')}
@@ -268,7 +284,8 @@ def page(path, dist):
         if item:
             from backend.knowledge.technical_maps import maps
             related_maps = [m for m in maps()['items'] if m['id']==item['id'] or any(r['id']==item['id'] for r in m['related'])]
-        collections=localized(collections);catalog=localized(catalog);related_maps=localized(related_maps)
+        if reading is None: collections=localized(collections)
+        catalog=localized(catalog);related_maps=localized(related_maps)
         topic = collections.get('news', {}).get('codex_progress', {})
         month = topic.get('days', [{}])[0].get('date', '')[:7] if topic.get('days') else ''
         calendar_cells = calendar_month(*map(int, month.split('-')), topic) if month else []
@@ -278,7 +295,8 @@ def page(path, dist):
                                description=description, item=item, collections=collections, ai_clients=AI_CLIENTS, ai_endpoint=request.url_root.rstrip('/')+'/api/mcp/curated', ai_command_endpoint=shlex.quote(request.url_root.rstrip('/')+'/api/mcp/curated'),
                                catalog=catalog, revision=revision, related_maps=related_maps, calendar_cells=calendar_cells, calendar_rows=calendar_rows(calendar_cells),
                                calendar_title=calendar_title, calendar_items=calendar_items, english=english)
-        return document(dist, title, description, path, body)
+        boot = {'language':'en' if english else 'zh', 'q':request.args.get('q',''), 'type':request.args.get('type',''), 'data':reading} if reading else None
+        return document(dist, title, description, path, body, bootstrap=boot)
     except PlatformError as exc:
         status = exc.status if exc.status in (400, 404) else 503
     except Exception:

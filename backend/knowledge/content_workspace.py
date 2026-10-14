@@ -31,6 +31,9 @@ def kind_check(kind):
     if kind not in KINDS: fail('Unknown content collection')
 
 def load_published(kind, fallback):
+    from flask import g, has_request_context
+    if has_request_context() and hasattr(g, 'reading_raw') and kind in g.reading_raw:
+        return g.reading_raw[kind]
     try:
         with get_db() as db:
             row = db.execute('SELECT published_json FROM fieldtofit_content_sets WHERE kind=?', (kind,)).fetchone()

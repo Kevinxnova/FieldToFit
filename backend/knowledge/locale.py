@@ -182,7 +182,7 @@ def public_fields():
             if en.get('state')=='reviewed' and en.get('source_hash')==source_hash(kind,item):fields['__objects__'][item['id']]=en.get('fields',{})
     from backend.db import get_db
     with get_db() as db:
-        rows=db.execute("SELECT p.snapshot FROM knowledge_publications p JOIN knowledge_selections s ON s.record_id=p.record_id AND s.state='published' AND s.revision=p.seq").fetchall()
+        rows=g.reading_library if has_request_context() and hasattr(g, 'reading_library') else db.execute("SELECT p.snapshot FROM knowledge_publications p JOIN knowledge_selections s ON s.record_id=p.record_id AND s.state='published' AND s.revision=p.seq").fetchall()
         for row in rows:
             item=json.loads(row['snapshot']);en=item.get('translations',{}).get('en',{})
             if en.get('state')=='reviewed' and en.get('source_hash')==source_hash('library',item):fields['__objects__'][item['id']]=en.get('fields',{})

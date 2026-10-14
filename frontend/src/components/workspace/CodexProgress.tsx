@@ -1,3 +1,4 @@
+import { readComplete } from '../../api/reading';
 import { Link, useSearchParams } from '@fieldtofit/locale/router';
 import { contentPath } from '../../search';
 import { SourceLink, useWorkspace } from './UI';
@@ -28,10 +29,15 @@ export function CodexProgress({data,preview=false}:{data:NewsCollection;preview?
   const officialSteps=new Map(roundups.flatMap(r=>r.steps.map(s=>[s.news_id,`${r.official_day}.${s.number}`] as const)));
   const choose=(value:string)=>{const next=new URLSearchParams(params);next.set('codex_date',value);setParams(next,{replace:true,preventScrollReset:true});};
   const exportLogs=async()=>{
+    let complete:NewsCollection;
+    try{complete=await readComplete<NewsCollection>('/v1/platform/news');}catch{notify(pick('完整日志暂时无法读取，请重试。','Complete logs could not be loaded. Please retry.'));return;}
+    if(complete.revision!==data.revision){notify(pick('日志已经变化，请更新页面后重试。','Logs have changed. Update the page and retry.'));return;}
+    const byId=new Map(complete.items.map(i=>[i.id,i]));
     const ids=days.flatMap(d=>dayItems(d,byId).map(i=>i.id));
     const summaries=roundups.filter(r=>days.some(d=>d.date===r.date));
     const references=[...new Set(summaries.flatMap(r=>r.steps.map(s=>s.news_id)))].filter(id=>!ids.includes(id));
-    const value=JSON.stringify({schema_version:'fieldtofit.codex-progress.v1',revision:data.revision,topic:{...topic,days,roundups:summaries,total:ids.length},items:ids.map(id=>byId.get(id)),referenced_items:references.map(id=>byId.get(id)),reading:[...ids,...references].map(id=>({tool:'curated_news',arguments:{id,revision:data.revision,...(!zh?{lang:'en'}:{})}}))},null,2);
+    if([...ids,...references].some(id=>!byId.has(id))){notify(pick('日志已经变化，请更新页面后重试。','Logs have changed. Update the page and retry.'));return;}
+    const value=JSON.stringify({schema_version:'fieldtofit.codex-progress.v1',revision:complete.revision,topic:{...topic,days,roundups:summaries,total:ids.length},items:ids.map(id=>byId.get(id)),referenced_items:references.map(id=>byId.get(id)),reading:[...ids,...references].map(id=>({tool:'curated_news',arguments:{id,revision:complete.revision,...(!zh?{lang:'en'}:{})}}))},null,2);
     try{await navigator.clipboard.writeText(value);ids.forEach(id=>trackAction('handoff_copy',id));notify(pick('所选日志、出处和AI读取方式已复制','Selected logs, sources and AI reading instructions copied'));}
     catch{const url=URL.createObjectURL(new Blob([value],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='codex-28-days-'+current+'.json';a.click();URL.revokeObjectURL(url);}
   };

@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.10.0"></a>
+## v1.10.0 · 阅读数据复用、详情往返与更新校验 · 2026-10-14
+
+<!-- site-deployed:2026-10-14 -->
+<!-- public-title:en:Reusable reading data, detail return and publication checks -->
+<!-- release-summary:zh:start -->
+- 首页直接复用随HTML提供的已审数据，报告、Codex日志与图表不再启动第二轮全量读取；折叠档案与重材料按需加载。
+- 详情往返保留网址筛选、Codex日期、展开状态和阅读位置；公开数据使用有界内存缓存，普通更新提示应用，确认撤回或权限失效后清除旧内容。
+- 服务器复用同请求的公开数据与处理结果，每次核对当前发布依赖后才复用缓存；完整导出重新确认可读状态，现有HTTP／MCP接口保持兼容。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Reuse reviewed data delivered with homepage HTML so reports, Codex logs and charts avoid a second full read. Load collapsed dossiers and heavy materials on demand.
+- Retain URL filters, the selected Codex date, expanded sections and reading position across detail visits. Bound the in-memory public cache, prompt for ordinary updates, and clear prior content after confirmed withdrawals or access changes.
+- Reuse public reads and processing within a server request, validating current publication dependencies before every cache hit. Revalidate complete exports while preserving existing HTTP and MCP contracts.
+<!-- release-summary:en:end -->
+
+对应[REQ-6-25至30](FieldToFit-PM.md#reading-loading-plan)。所有者确认v1.10.0 minor并授权开发、验证，随后明确更新并部署；本批改变公开阅读加载流程，无数据库迁移，不新增发布必经步骤。正文不写入浏览器持久存储；在线可见时每60秒、返回及回前台检查，断网／后台不保证即时获知撤回。仅会话内的位置、展开状态和网址筛选保留。实际性能、回归、浏览器证据和缺口见[阅读加载验收](docs/validation/2026-10-14-reading-loading.md)。本批已部署至正式站，公开集合与HTTP／MCP同源读取已核对；性能与浏览器验收边界见上述记录，持久化阅读快照另行对齐。
+
 <a id="v1.9.3"></a>
 ## v1.9.3 · 本地GPT日报准备、核验与自动交付 · 2026-10-14
 

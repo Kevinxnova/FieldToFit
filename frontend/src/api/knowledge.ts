@@ -162,9 +162,9 @@ export async function request<T>(
   });
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
-    throw new Error(
+    throw Object.assign(new Error(
       currentLanguage()==='en' ? english(error.detail || error.error || `Request failed (${response.status})`) : error.detail || error.error || `Request failed (${response.status})`,
-    );
+    ), {status:response.status,code:error.code});
   }
   return response.json();
 }

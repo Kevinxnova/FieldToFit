@@ -1,10 +1,11 @@
+import { hasReadingPosition } from './readingPosition';
 import { publicContentLink } from '../../search';
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from '@fieldtofit/locale/router';
+import { Link, useLocation, useNavigationType } from '@fieldtofit/locale/router';
 import { useWorkspace } from './UI';
 export type ReadingAnchor = { id:string;title:string };
 export function ReadingContents({news,newsTotal,codexProgress=false,technicalMaps=false,resources,resourceTotal,loading,filtered,groups=[]}:{groups?:{id:string;title:string;items:ReadingAnchor[]}[];news:ReadingAnchor[];newsTotal:number|null;codexProgress?:boolean;technicalMaps?:boolean;resources:ReadingAnchor[];resourceTotal:number|null;loading:boolean;filtered:boolean}){
- const {pick}=useWorkspace(),location=useLocation();const [active,setActive]=useState('model-landscape'),[expanded,setExpanded]=useState<string|null>(null),[open,setOpen]=useState(false);
+ const {pick}=useWorkspace(),location=useLocation(),navigation=useNavigationType();const [active,setActive]=useState('model-landscape'),[expanded,setExpanded]=useState<string|null>(null),[open,setOpen]=useState(false);
  const navigating=useRef(false);
  const button=useRef<HTMLButtonElement>(null),dialog=useRef<HTMLDialogElement>(null);
  const main=[{id:'model-landscape',title:pick('模型能力与价格','Model capability & pricing')},{id:'recent-news',title:pick('近期动态','Recent developments')},{id:'news-overview',title:pick('本期速览','At a glance')},{id:'news-releases',title:pick('发布与更新','Releases & updates')},{id:'resource-dossiers',title:pick('持续关注','Ongoing watch')},{id:'developer-projects',title:pick('开发者投稿项目','Developer-submitted projects')}];
@@ -16,7 +17,7 @@ export function ReadingContents({news,newsTotal,codexProgress=false,technicalMap
  const newsActive=['recent-news','news-overview','hot-information-cards','news-releases','news-codex-28-days','technical-evolution-maps',...news.map(n=>n.id)].includes(active);
  const chapter=group?group.title.replace(/\s*·\s*\d+$/,''):newsActive?main[1].title:main.find(x=>x.id===active)?.title||main[0].title;
  useEffect(()=>{let frame=0;const update=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{let best=-Infinity,current='model-landscape';for(const id of signature.split('|')){const node=document.getElementById(id);if(node){const top=node.getBoundingClientRect().top;if(top<=155&&top>=best){best=top;current=id;}}}setActive(current);});};update();window.addEventListener('scroll',update,{passive:true});return()=>{cancelAnimationFrame(frame);window.removeEventListener('scroll',update);};},[signature]);
- useEffect(()=>{let id='';try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}if(!signature.split('|').includes(id))return;const frame=requestAnimationFrame(()=>{const node=document.getElementById(id);node?.querySelectorAll('details[data-auto-expand]').forEach(d=>(d as HTMLDetailsElement).open=true);node?.focus({preventScroll:true});node?.scrollIntoView({block:'start'});setActive(id);});return()=>cancelAnimationFrame(frame);},[location.hash,signature]);
+ useEffect(()=>{if((navigation==='POP'||location.state?.restoreReading||location.state?.readingRestore)&&hasReadingPosition())return;let id='';try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}if(!signature.split('|').includes(id))return;const frame=requestAnimationFrame(()=>{const node=document.getElementById(id);node?.querySelectorAll('details[data-auto-expand]').forEach(d=>(d as HTMLDetailsElement).open=true);node?.focus({preventScroll:true});node?.scrollIntoView({block:'start'});setActive(id);});return()=>cancelAnimationFrame(frame);},[location.hash,signature]);
  useEffect(()=>{const dismiss=()=>{navigating.current=true;dialog.current?.close();setOpen(false);};window.addEventListener('fieldtofit:open-more',dismiss);return()=>window.removeEventListener('fieldtofit:open-more',dismiss);},[]);
  useEffect(()=>{const media=window.matchMedia('(max-width:900px)');const change=()=>{if(!media.matches)dialog.current?.close();};media.addEventListener('change',change);return()=>media.removeEventListener('change',change);},[]);
  const close=()=>{dialog.current?.close();setOpen(false);};

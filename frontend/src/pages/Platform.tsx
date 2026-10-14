@@ -1,3 +1,4 @@
+import { useHomeReading } from '../api/reading';
 import { ForYouHero } from '../components/workspace/ForYouHero';
 import { ProfileNewsOverview } from '../components/workspace/ProfileNewsOverview';
 import { FollowUpdates } from '../components/workspace/FollowUpdates';
@@ -5,9 +6,9 @@ import { searchPages } from '../search';
 import { VisitReady } from '../components/workspace/SiteVisits';
 import { AliasNotice } from '../components/workspace/PublicMaintenance';
 import { DeveloperProjects } from "./Community";
-import { ContinuousWatch, watchAnchor, watchNames, type WatchCollection } from '../components/workspace/ContinuousWatch';
+import { ContinuousWatch, watchAnchor, watchNames } from '../components/workspace/ContinuousWatch';
 import { ReadingContents } from '../components/workspace/ReadingContents';
-import { NewsReading, newsAnchor, type NewsCollection } from '../components/workspace/NewsReading';
+import { NewsReading, newsAnchor } from '../components/workspace/NewsReading';
 import { PublicationHistory } from '../components/workspace/PublicationHistory';
 import { SourceContext, ObjectSourceStatus, type SourceCheck } from '../components/workspace/SourceStatus';
 import { MaterialPackage, type PackageRef } from '../components/workspace/MaterialPackage';
@@ -99,8 +100,10 @@ export function ForYou() {
   const [query,setQuery]=useState(params.get('q')||'');
   const q=params.get('q')||'';const type=params.get('type')||'';
   useEffect(()=>setQuery(q),[q]);
-  const news=useRemote<NewsCollection>('/v1/platform/news');
-  const watch=useRemote<WatchCollection>('/v1/platform/watch?'+new URLSearchParams({q,type}));
+  const home=useHomeReading(q,type);
+  const shared=home.data||home.shared;
+  const news={...home,data:shared?.news||null,loading:!shared&&home.loading,error:shared?'':home.error};
+  const watch={...home,data:home.data?.watch||null};
   const filtered=!!(q||type);
   const [following,setFollowing]=useState(false);
   if(params.get('object'))return <LegacyCatalog/>;
@@ -108,11 +111,11 @@ export function ForYou() {
     {news.data&&!news.error&&<p className="section-overview"><strong>{news.data.title}</strong><span className="muted"> · {news.data.reviewed_at}</span></p>}
     <p className="reading-page-summary">{news.data?.total??'—'} {pick('条动态 ·','developments ·')} {watch.data?.total??'—'} {pick(filtered?'个匹配的持续关注主体':'个持续关注主体',filtered?'matching profiles':'ongoing-watch profiles')}</p>
     <FollowUpdates active={following} onActive={setFollowing}/><div hidden={following} className="reading-layout"><ReadingContents technicalMaps={!!news.data?.items.some(n=>n.technical_map)} codexProgress={!!news.data?.codex_progress?.total} newsTotal={news.data?.total??null} news={(news.data?.items||[]).map(n=>({id:newsAnchor(n.id),title:n.name}))} resources={(watch.data?.items||[]).map(i=>({id:watchAnchor(i.id),title:i.name}))} groups={(watch.data?.groups||[]).filter(g=>g.count>0).map(g=>({id:'watch-group-'+g.id,title:g.name+' · '+g.count,items:(watch.data?.items||[]).filter(i=>i.type===g.id).map(i=>({id:watchAnchor(i.id),title:i.name}))}))} resourceTotal={watch.data?.total??null} loading={watch.loading} filtered={filtered}/>
-    <div className="reading-body"><ModelLandscape/><NewsReading {...news}/>
+    <div className="reading-body">{shared&&<ModelLandscape previewData={shared.charts}/>}<NewsReading {...news}/>
     <section className="watch-section"><div className="platform-section-heading"><h2 id="resource-dossiers" tabIndex={-1}>{pick('持续关注','Ongoing watch')}</h2><span>{watch.data?.collection_total??'—'} {pick('个跟踪主体','profiles')}</span></div><div className="section-overview"><strong>{pick('把一次发现，放回长期维护的对象档案。','Put each discovery in a maintained object dossier.')}</strong><p>{pick('模型、Agent、工具、Skill 与 Harness，保留版本、原文和采用条件。','Models, agents, tools, skills and harnesses retain versions, sources and adoption conditions.')}</p><ProfileNewsOverview news={news.error?[]:news.data?.items||[]} ids={watch.data?.items.map(i=>i.id)||[]}/>{watch.data&&!watch.error&&<p className="overview-coverage">{pick('当前范围：','Current selection: ')}{watch.data.total} · {watch.data.groups.filter(g=>g.count>0).map(g=>g.name+' '+g.count).join(' / ')} · {pick('资料核对日期见各档案，非每日检查成功数。','Review dates are per profile, not a count of successful daily checks.')}</p>}</div>
     <form className="platform-search" onSubmit={e=>{e.preventDefault();setParams(p=>{p.set('q',query);p.delete('cursor');return p;});}}><input aria-label={pick('搜索持续关注','Search ongoing watch')} placeholder={pick('搜索名称、版本或关键词','Search names, versions or keywords')} value={query} onChange={e=>setQuery(e.target.value)}/><button className="button">{pick('搜索','Search')}</button><select aria-label={pick('持续关注类型','Watch type')} value={type} onChange={e=>setParams(p=>{p.set('type',e.target.value);p.delete('cursor');return p;})}><option value="">{pick('全部五类','All five groups')}</option>{Object.entries(watchNames).map(([id,name])=><option key={id} value={id}>{name}</option>)}</select></form>
     {filtered&&<button className="text-button" onClick={()=>setParams(p=>{p.delete('q');p.delete('type');return p;})}>{pick('清除全部筛选','Clear filters')}</button>}
-    <ContinuousWatch result={watch} news={news.error?[]:news.data?.items||[]}/></section><DeveloperProjects/>
+    <ContinuousWatch result={watch} news={news.error?[]:news.data?.items||[]}/></section><DeveloperProjects readingData={shared?.projects} readingLoading={!shared&&home.loading}/>
     </div></div></div>;
 }
 

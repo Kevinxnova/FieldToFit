@@ -1,0 +1,20 @@
+/** Delayed scroll events and frame restoration must stay scoped to their route. */
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {createRequire}=require('node:module');const root=path.resolve(__dirname,'../..'),fr=createRequire(path.join(root,'frontend/package.json')),ts=fr('typescript');
+let stored={},frames=[],scrolls=[],listeners={},top=100;
+global.location={pathname:'/for-you',search:'?codex_date=2026-10-12'};
+global.sessionStorage={getItem:key=>stored[key]||null,setItem:(key,value)=>stored[key]=value};
+global.window={scrollY:1000,scrollTo:(_x,y)=>{scrolls.push(y);top-=y-window.scrollY;window.scrollY=y;},addEventListener:(name,fn)=>(listeners[name]??=[]).push(fn),removeEventListener:(name,fn)=>listeners[name]=listeners[name]?.filter(x=>x!==fn)};
+const anchor={id:'technical-evolution-maps',getClientRects:()=>[1],getBoundingClientRect:()=>({top}),focus:()=>{}},content={querySelectorAll:query=>query==='[id]'?[anchor]:[]};
+global.document={getElementById:id=>id==='main-content'?content:id===anchor.id?anchor:null,activeElement:null};
+global.requestAnimationFrame=fn=>{frames.push(fn);return frames.length;};
+const m={exports:{}};new Function('module','exports',ts.transpileModule(fs.readFileSync(path.join(root,'frontend/src/components/workspace/readingPosition.ts'),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText)(m,m.exports);
+const api=m.exports,flush=()=>{while(frames.length)frames.shift()();};
+api.saveReadingPosition();const source=JSON.stringify(stored);
+location.pathname='/maps/example';window.scrollY=0;api.saveReadingPosition('/for-you?codex_date=2026-10-12');assert.equal(JSON.stringify(stored),source);
+location.pathname='/for-you';window.scrollY=0;top=1100;assert(api.restoreReadingPosition());flush();assert.equal(scrolls.at(-1),1000);
+api.restoreReadingPosition();location.pathname='/maps/example';let count=scrolls.length;flush();assert.equal(scrolls.length,count);
+location.pathname='/for-you';api.restoreReadingPosition();count=scrolls.length;listeners.pointerdown.forEach(fn=>fn());flush();assert.equal(scrolls.length,count);
+api.restoreReadingPosition();window.scrollY=1500;top=-400;api.saveReadingPosition(location.pathname+location.search,true);count=scrolls.length;flush();assert.equal(scrolls.length,count);
+assert.equal(JSON.parse(stored['fieldtofit.reading.positions'])[location.pathname+location.search].y,1500);
+console.log('PASS route changes reject old scroll saves and pending frame jumps; stable anchors restore offsets; reader input cancels restoration');

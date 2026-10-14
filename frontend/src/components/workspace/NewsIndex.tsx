@@ -1,3 +1,5 @@
+import { useReadingRemote } from '../../api/reading';
+import { hasReadingPosition } from './readingPosition';
 import { HotCardHighlights, HotCardReading } from './HotCards';
 import {MapCards} from './TechnicalMaps';
 import { useEffect, useRef, useState } from 'react';
@@ -57,6 +59,7 @@ export function NewsIndex({data,loading,error,reload,preview=false}:{data:NewsCo
   const restored=useRef(false);
   useEffect(()=>{
     if(loading||error||!data||preview||restored.current)return;
+    if(hasReadingPosition()&&(location.state?.restoreReading||location.state?.readingRestore)){restored.current=true;return;}
     let id='';
     if(location.state?.readingRestore)id=location.state.readingRestore;
     else if(!location.hash){try{const saved=JSON.parse(sessionStorage.getItem('fieldtofit.reading.return')||'null');if(saved?.search===location.search)id=saved.id;sessionStorage.removeItem('fieldtofit.reading.return');}catch{/* Optional restoration only. */}}
@@ -92,10 +95,22 @@ export function NewsIndex({data,loading,error,reload,preview=false}:{data:NewsCo
       <h4><Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{item.title}</Link></h4><ContentExposure id={item.id}><p>{item.summary}</p></ContentExposure>
       {item.hot_card&&<Link className="hot-card-badge" to={contentPath(item.id)+'#hot-information-card'} state={linkState(item.id)} onClick={()=>remember(item.id)}>{pick('热点信息卡','Information card')}{item.hot_card.status==='needs_update'?' · '+pick('待更新','Update pending'):''}</Link>}
       <p className="news-meta">{pick(...newsCategories[category(item)])}{!item.category&&category(item)!=='other'?pick('相关',' related'):''} · {item.name} · {item.source_published_at?pick('官方发布 ','Source released ')+item.source_published_at:pick('来源发布日期未明确','Source date unconfirmed')}{item.event_date&&item.event_date!==item.source_published_at?' · '+pick('事件日期 ','Event date ')+item.event_date:''} · {pick('核对 ','Checked ')}{item.checked_at}</p>
-      <details><summary>{pick('展开要点与来源','Key changes and sources')}</summary><ul>{item.interpretation.slice(0,3).map((point,j)=><li key={j}><strong>{point.title}</strong><p>{point.text}</p>{point.source_ids.map(id=>{const source=item.sources.find(s=>s.id===id);return source&&<SourceLink key={id} url={source.url}>{source.title}</SourceLink>;})}</li>)}</ul>{item.publication&&<p className="muted">{pick('本站首次发布：','First published here: ')}{item.publication.first_published_at||pick('历史日期未留存','Historical date not retained')} · {pick('最近修订：','Last revised: ')}{item.publication.updated_at}</p>}<Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{pick('查看完整资料','Read full details')} ↗</Link></details>
+      <NewsPoints item={item} linkState={linkState(item.id)} remember={()=>remember(item.id)}/>
     </article></div>)}</div>
     {!matching.length&&<div className="release-empty"><p>{pick('当前筛选没有匹配条目。','No records match these filters.')}</p><button className="button" onClick={reset}>{pick('清除筛选，查看全部','Clear filters and view all')}</button></div>}
     {!preview&&matching.length>0&&<nav className="release-pagination" aria-label={pick('动态分页','News pagination')}><span>{pick(`第 ${page} / ${pages} 页 · 每页10条`,`Page ${page} / ${pages} · 10 per page`)}</span>{[-1,1].map(step=><button key={step} className="button" disabled={step<0?page===1:page===pages} onClick={()=>{change({news_page:String(page+step)});requestAnimationFrame(()=>{document.getElementById('news-releases')?.focus({preventScroll:true});document.getElementById('news-releases')?.scrollIntoView({block:'start'});});}}>{step<0?pick('上一页动态','Previous developments'):pick('下一页动态','Next developments')}</button>)}</nav>}
     </>}
   </section>;
+}
+
+function NewsPoints({item,linkState,remember}:{item:NewsItem;linkState:unknown;remember:()=>void}){
+  const {pick}=useWorkspace();const [open,setOpen]=useState(false);
+  const remote=useReadingRemote<NewsCollection>(item.reading_summary&&open?'/v1/platform/news?id='+encodeURIComponent(item.id):null);
+  const full=item.reading_summary?remote.data?.items[0]:item;
+  return <details onToggle={event=>setOpen(event.currentTarget.open)}><summary>{pick('展开要点与来源','Key changes and sources')}</summary>
+    {remote.loading&&<p role="status">{pick('正在读取…','Loading…')}</p>}{(remote.error||remote.refreshError)&&<p role="alert">{pick('资料暂时无法读取。','Materials are unavailable.')} <button className="text-button" onClick={remote.reload}>{pick('重试','Retry')}</button></p>}
+    {full&&<ul>{full.interpretation.slice(0,3).map((point,j)=><li key={j}><strong>{point.title}</strong><p>{point.text}</p>{point.source_ids.map(id=>{const source=full.sources.find(s=>s.id===id);return source&&<SourceLink key={id} url={source.url}>{source.title}</SourceLink>;})}</li>)}</ul>}
+    {item.publication&&<p className="muted">{pick('本站首次发布：','First published here: ')}{item.publication.first_published_at||pick('历史日期未留存','Historical date not retained')} · {pick('最近修订：','Last revised: ')}{item.publication.updated_at}</p>}
+    <Link to={contentPath(item.id)} state={linkState} onClick={remember}>{pick('查看完整资料','Read full details')} ↗</Link>
+  </details>;
 }

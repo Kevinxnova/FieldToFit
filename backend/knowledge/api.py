@@ -45,7 +45,7 @@ def private_admin_response(response):
         response.headers['Cache-Control']='private, no-store'
     from backend.knowledge import locale
     if request.args.get('lang')=='en':response.headers['Content-Language']='en'
-    if request.args.get('lang')=='en' and response.is_json and not request.path.startswith('/api/v1/admin/'):
+    if request.args.get('lang')=='en' and response.is_json and not request.path.startswith('/api/v1/admin/') and request.path != '/api/v1/platform/reading':
         try:
             response.set_data(__import__('json').dumps(locale.project(response.get_json(),locale.public_fields()),ensure_ascii=False))
             response.headers['Content-Language']='en'
@@ -1158,3 +1158,11 @@ def workspace_maps_propose():
 def workspace_map_proposal_apply(topic_id):
     from backend.knowledge.map_maintenance import apply_proposal
     return jsonify(apply_proposal(topic_id, body()))
+
+
+@bp.get('/platform/reading')
+def platform_reading():
+    from backend.knowledge.reading import overview
+    response = jsonify(overview(**{k: request.args[k] for k in ('q','type','after') if k in request.args}))
+    response.headers['Cache-Control'] = 'private, no-store'
+    return response

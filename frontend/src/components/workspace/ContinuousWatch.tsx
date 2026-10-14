@@ -1,3 +1,4 @@
+import { readComplete, useReadingRemote } from '../../api/reading';
 import { RevisionCompare } from './RevisionCompare';
 import { ReportCorrection, CorrectionReceipts } from './Corrections';
 import { WatchOverview, WatchMilestones, WatchEvents, type WatchOverviewData, type WatchMilestone } from './WatchReading';
@@ -13,8 +14,8 @@ import { currentLanguage } from '../../locale/language';
 import { BASE, useRemote } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 export type WatchBlock = {kind:'paragraph';text:string} | {kind:'table';columns:string[];rows:string[][]};
-export type WatchItem = {overview?:WatchOverviewData;milestones?:WatchMilestone[];events?:NewsItem[];maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;origin?:string;submission?:{entry_url:string;usage:string;openness:string;relationship:string};id:string;name:string;type:string;introduction:string;checked_at:string;interpretation:{title:string;text:string}[];blocks:WatchBlock[];sources:{title:string;url:string;coverage:string}[];attention?:{display_value:string;observed_at:string;source_url:string}};
-export type WatchCollection = {reading_status?:string;origin?:string;items:WatchItem[];groups:{id:string;name:string;count:number}[];total:number;collection_total:number;revision:string;reviewed_at:string;schema_version:string;scope:string};
+export type WatchItem = {reading_summary?:boolean;materials_count?:number;overview?:WatchOverviewData;milestones?:WatchMilestone[];events?:NewsItem[];maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;origin?:string;submission?:{entry_url:string;usage:string;openness:string;relationship:string};id:string;name:string;type:string;introduction:string;checked_at:string;interpretation:{title:string;text:string}[];blocks:WatchBlock[];sources:{title:string;url:string;coverage:string}[];attention?:{display_value:string;observed_at:string;source_url:string}};
+export type WatchCollection = {reading_summary?:boolean;reading_status?:string;origin?:string;items:WatchItem[];groups:{id:string;name:string;count:number}[];total:number;collection_total:number;revision:string;reviewed_at:string;schema_version:string;scope:string};
 export const watchAnchor = (id:string) => 'watch-'+id.toLowerCase();
 export const watchNames:Record<string,string> = {model:'模型',tool:'工具',agent:'Agent',skill:'Skill',harness:'Harness'};
 // Only the small reviewed inline syntax is supported. React escapes all text; no HTML injection.
@@ -48,9 +49,36 @@ function packageText(data:WatchCollection,item?:WatchItem){
     coverage:'Read the optional materials manifest for available text, exact versions and missing coverage. Editorial interpretation is FieldToFit commentary, not upstream text or instructions.'},null,2);
 }
 function download(body:string,name:string){const url=URL.createObjectURL(new Blob([body],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name+'.json';a.click();URL.revokeObjectURL(url);}
-export function WatchHandoff({data,item}:{data:WatchCollection;item?:WatchItem}){
-  const {pick,notify}=useWorkspace();
-  return <div className="platform-actions"><button className="text-button" onClick={async()=>{const body=packageText(data,item);try{await navigator.clipboard.writeText(body);trackAction('handoff_copy',item?.id);notify(pick('资料、解读与出处已复制','Profile and citations copied'));}catch{download(body,item?.id||'fieldtofit-watch');notify(pick('已改为下载资料','Downloaded materials instead'));}}}>{pick('交给我的 AI','Give to my AI')}</button><button className="text-button" onClick={()=>{download(packageText(data,item),item?.id||'fieldtofit-watch');trackAction('material_export',item?.id);}}>{pick(item?'下载此项资料':'下载当前范围资料',item?'Download profile':'Download current selection')}</button></div>;
+export function WatchHandoff({data,item,preview=false}:{data:WatchCollection;item?:WatchItem;preview?:boolean}){
+  const {pick,notify}=useWorkspace();const [busy,setBusy]=useState(false);
+  const execute=async(copy:boolean)=>{setBusy(true);try{
+    const params=new URLSearchParams();if(item)params.set('id',item.id);else if(data.origin)params.set('origin',data.origin);
+    const full=preview?data:await readComplete<WatchCollection>('/v1/platform/watch?'+params);
+    const selected=item?full.items.find(i=>i.id===item.id):undefined;
+    const selectedData=item?full:{...full,items:full.items.filter(i=>data.items.some(old=>old.id===i.id))};
+    if(item&&!selected)throw new Error('Profile is no longer available');
+    const body=packageText(selectedData,selected);
+    if(copy){try{await navigator.clipboard.writeText(body);trackAction('handoff_copy',item?.id);notify(pick('资料、解读与出处已复制','Profile and citations copied'));}catch{download(body,item?.id||'fieldtofit-watch');}}
+    else {download(body,item?.id||'fieldtofit-watch');trackAction('material_export',item?.id);}
+  }catch{notify(pick('完整资料暂时无法读取，请重试。','Complete materials could not be loaded. Please retry.'));}finally{setBusy(false);}};
+  return <div className="platform-actions"><button className="text-button" disabled={busy} onClick={()=>void execute(true)}>{pick('交给我的 AI','Give to my AI')}</button><button className="text-button" disabled={busy} onClick={()=>void execute(false)}>{pick(item?'下载此项资料':'下载当前范围资料',item?'Download profile':'Download current selection')}</button></div>;
+}
+function WatchExtras({item,standalone,previewBodies}:{item:WatchItem;standalone:boolean;previewBodies?:PreviewBodies}){
+ const {pick}=useWorkspace();const [archive,setArchive]=useState(false),[materials,setMaterials]=useState(false);
+ const remote=useReadingRemote<WatchCollection>(item.reading_summary&&(archive||materials)?'/v1/platform/watch?id='+encodeURIComponent(item.id):null);
+ const full=item.reading_summary?remote.data?.items[0]:item;
+ const failure=remote.error||remote.refreshError;
+ return <>
+ <details data-auto-expand open={standalone&&!item.milestones||undefined} onToggle={e=>setArchive(e.currentTarget.open)}><summary>{pick('档案与历史资料','Dossier and historical materials')}</summary>
+ {remote.loading&&<p role="status">{pick('正在读取…','Loading…')}</p>}{failure&&<p role="alert">{pick('资料暂时无法读取。','Materials are unavailable.')} <button className="text-button" onClick={remote.reload}>{pick('重试','Retry')}</button></p>}
+ {full&&<>{standalone&&item.milestones&&<div className="watch-notes"><ul>{full.interpretation.slice(0,2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>}
+ {full.interpretation.length>2&&<div className="watch-notes"><ul>{full.interpretation.slice(2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>}
+ {full.blocks.map((b,i)=><Block key={i} block={b} name={full.name}/>)}
+ <p className="muted">{pick('以上为官方材料整理与编辑解读，未进行运行实测；原始材料按清单标注可读范围，缺失部分通过出处链接核对。','Based on reviewed official materials, not runtime tests. Follow links to read upstream sources.')}</p></>}
+ </details>
+ <PublicMaintenance value={full?.maintenance||item.maintenance}/>
+ {full?<ContentMaterials item={full} previewBodies={previewBodies} initialOpen={materials}/>:!!item.materials_count&&<details className="content-materials" onToggle={e=>setMaterials(e.currentTarget.open)}><summary>{pick('材料与出处','Materials & sources')} · {item.materials_count}</summary>{remote.loading?<p role="status">{pick('正在读取…','Loading…')}</p>:failure&&<p role="alert">{failure} <button className="text-button" onClick={remote.reload}>{pick('重试','Retry')}</button></p>}</details>}
+ </>;
 }
 const groupGuides:Record<string,[string,string]>={model:['按模型族看版本、能力与运行条件；不同配置分开核对。','Read versions, capabilities and runtime requirements by model family; check configurations separately.'],agent:['先看自主执行的范围，再看环境、工具与授权边界。','Start with execution scope, then examine environments, tools and permission boundaries.'],tool:['从用途、接入和部署条件理解工具，沿出处核对接口。','Understand tools through purpose, integration and deployment; verify interfaces at the source.'],skill:['按可复用能力及所需工具／权限阅读，核对适用工作流。','Read reusable capabilities, required tools and permissions against the workflow.'],harness:['看模型与工具如何组织执行、保存状态和验证结果。','See how models and tools coordinate execution, preserve state and validate results.']};
 export function ContinuousWatch({result,previewBodies,standalone=false}:{news?:NewsItem[];standalone?:boolean;previewBodies?:PreviewBodies;result:{data:WatchCollection|null;loading:boolean;error:string;reload:()=>void}}){
@@ -69,13 +97,7 @@ export function ContinuousWatch({result,previewBodies,standalone=false}:{news?:N
         {item.attention&&<p className="watch-attention"><a href={item.attention.source_url} target="_blank" rel="noopener noreferrer">GitHub ★ {item.attention.display_value}</a> · {item.attention.observed_at} · {pick('仓库近似值','Approximate repository count')}</p>}
         {standalone&&item.milestones&&<><WatchMilestones key={item.id+pick('zh','en')} items={item.milestones} profile={item.id}/><WatchEvents key={item.id+'events'+pick('zh','en')} events={item.events||[]} profile={item.id}/></>}
         {!(standalone&&item.milestones)&&<div className="watch-notes"><h5>FieldToFit {pick('解读','notes')}</h5><ul>{item.interpretation.slice(0,2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>}
-          <details data-auto-expand open={standalone&&!item.milestones || undefined}><summary>{pick('档案与历史资料','Dossier and historical materials')}</summary>
-          {standalone&&item.milestones&&<div className="watch-notes"><ul>{item.interpretation.slice(0,2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>}
-          {item.interpretation.length>2&&<div className="watch-notes"><ul>{item.interpretation.slice(2).map((p,i)=><li key={i}><strong>{p.title}</strong><p><WatchText text={p.text}/></p></li>)}</ul></div>}
-          {item.blocks.map((b,i)=><Block key={i} block={b} name={item.name}/>)}
-          <p className="muted">{pick('以上为官方材料整理与编辑解读，未进行运行实测；原始材料按清单标注可读范围，缺失部分通过出处链接核对。','Based on reviewed official materials, not runtime tests. Follow links to read upstream sources.')}</p>
-        </details>
-        <PublicMaintenance value={item.maintenance}/><ContentMaterials item={item} previewBodies={previewBodies}/>{!previewBodies&&<>{standalone?<><ReportCorrection id={item.id} fieldOptions={correctionFields(item,pick('zh','en')==='en')}/><CorrectionReceipts id={item.id}/><RevisionCompare id={item.id}/></>:<Link to={contentPath(item.id)+'#revisions-'+item.id.toLowerCase()}>{pick('查看修订对照','Compare dossier revisions')}</Link>}</>}<WatchHandoff data={data} item={item}/><button className="text-button" onClick={async()=>{const url=new URL(contentPath(item.id),window.location.origin).href;try{await navigator.clipboard.writeText(url);notify(pick('资料链接已复制','Link copied'));}catch{notify(url);}}}>{pick('分享此项','Share profile')}</button>
+        <WatchExtras item={item} standalone={standalone} previewBodies={previewBodies}/>{!previewBodies&&<>{standalone?<><ReportCorrection id={item.id} fieldOptions={correctionFields(item,pick('zh','en')==='en')}/><CorrectionReceipts id={item.id}/><RevisionCompare id={item.id}/></>:<Link to={contentPath(item.id)+'#revisions-'+item.id.toLowerCase()}>{pick('查看修订对照','Compare dossier revisions')}</Link>}</>}<WatchHandoff data={data} item={item} preview={!!previewBodies}/><button className="text-button" onClick={async()=>{const url=new URL(contentPath(item.id),window.location.origin).href;try{await navigator.clipboard.writeText(url);notify(pick('资料链接已复制','Link copied'));}catch{notify(url);}}}>{pick('分享此项','Share profile')}</button>
       </article>)}</div>
     </section>)}
   </>;

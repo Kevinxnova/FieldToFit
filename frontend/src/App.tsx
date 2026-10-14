@@ -1,3 +1,4 @@
+import { ReadingSession } from './components/workspace/ReadingSession';
 import DailyJournal from './pages/DailyJournal';
 import {MapsPage} from './components/workspace/TechnicalMaps';
 import { PageMetadata, searchPages } from './search';
@@ -8,7 +9,7 @@ import { OpenSourceLink } from "./components/workspace/OpenSourceLink";
 import Changelog from './pages/Changelog';
 import { Community } from "./pages/Community";
 import { ForYou, ForAI, AboutFieldToFit, LegacyPlatformEntry } from "./pages/Platform";
-import { useEffect, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import {
   BrowserRouter,
   Link,
@@ -61,10 +62,7 @@ function Shell() {
     ["/account", "user", "我的账户", "Account"],
     ["/feedback", "flag", "反馈需求", "Feedback"],
   ].find((x) => location.pathname === x[0] || location.pathname.startsWith(x[0] + "/"));
-  useEffect(() => {
-    window.scrollTo(0, 0);
 
-  }, [location.pathname]);
   return (
     <div className="workspace">
       {!/^\/(news|watch)\//.test(location.pathname) && !location.pathname.startsWith('/for-you/daily') && <PageMetadata
@@ -171,7 +169,7 @@ function Shell() {
             </Link>
           </div>
         </header>
-        <main tabIndex={-1} id="main-content" className="page-content">
+        <main tabIndex={-1} id="main-content" className="page-content"><ReadingSession/>
           {[/^\/legacy\//, /^\/(tasks|compare|cases|briefs|records)(\/|$)/].some(pattern => pattern.test(location.pathname)) && <p className="platform-notice">{pick("这是保留的兼容页面。新主入口是 For you 与 For your AI；案例仍暂缓。", "This is a compatibility page. Use For you and For your AI for the new platform; cases remain pending.")} <Link to="/for-you">For you →</Link></p>}
           <Routes>
             <Route path="/" element={<Navigate to="/for-you" replace />} />

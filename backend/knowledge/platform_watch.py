@@ -130,7 +130,9 @@ def watch(q='', id='', type='', revision='', origin='', _data=None):
     # The overview and detail history are independent of the homepage news window.
     # Read public news only; never expose private drafts or editorial candidates.
     try:
-        public_events = news(_data=load_published('news', NEWS_PATH))['items']
+        from flask import g, has_request_context
+        shared = getattr(g, 'reading_news', None) if has_request_context() else None
+        public_events = [{k:v for k,v in i.items() if k!='maintenance'} for i in shared['items']] if shared else news(_data=load_published('news', NEWS_PATH))['items']
         public['reading_status'] = 'ready'
     except (PlatformError, OSError, ValueError, KeyError, TypeError):
         public_events = []

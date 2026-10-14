@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.9.3](CHANGELOG.md#v1.9.3)** · [fieldtofit-v1.9.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.9.3)
+**Current source version: [v1.10.0](CHANGELOG.md#v1.10.0)** · [fieldtofit-v1.10.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Use local Codex GPT for daily research, bilingual writing and factual review as requested, without MiniMax or an additional paid model API.
-- Bind local copy to evidence, provide private bilingual PDF proofs and page-by-page layout review, and deliver automatically after 09:00 with resumable preparation and public readback. Preserve owner edits, withdrawals and published revisions.
-- Preserve the private 07:30/08:00 editorial task, magazine design, complete-close market basis and historical sample. Local execution requires the computer and app to be online; free quote verification and consecutive real publications remain under observation.
+- Reuse reviewed data delivered with homepage HTML so reports, Codex logs and charts avoid a second full read. Load collapsed dossiers and heavy materials on demand.
+- Retain URL filters, the selected Codex date, expanded sections and reading position across detail visits. Bound the in-memory public cache, prompt for ordinary updates, and clear prior content after confirmed withdrawals or access changes.
+- Reuse public reads and processing within a server request, validating current publication dependencies before every cache hit. Revalidate complete exports while preserving existing HTTP and MCP contracts.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

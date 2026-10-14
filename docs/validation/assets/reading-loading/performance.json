@@ -1,0 +1,403 @@
+{
+  "baseline_commit": "f10ff12",
+  "candidate": "1.10.0 local",
+  "sample": "isolated repository seed: 134 news, 49 watch",
+  "notes": "Flask test client and temporary SQLite; process startup, migrations, assets and network latency excluded",
+  "before": [
+    {
+      "html": [
+        {
+          "ms": 152.17,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 130.65,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 117.49,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 120.91,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 118.39,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 120.52,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        }
+      ],
+      "initial_extra": [
+        {
+          "path": "news",
+          "bytes": 1229030,
+          "gzip": 193975,
+          "selects": 4,
+          "connections": 2
+        },
+        {
+          "path": "watch",
+          "bytes": 996368,
+          "gzip": 131362,
+          "selects": 5,
+          "connections": 3
+        },
+        {
+          "path": "model-landscape",
+          "bytes": 410663,
+          "gzip": 44071,
+          "selects": 1,
+          "connections": 1
+        },
+        {
+          "path": "watch?origin=developer_submission",
+          "bytes": 843,
+          "gzip": 513,
+          "selects": 5,
+          "connections": 3
+        }
+      ],
+      "initial_bytes": 2752724,
+      "initial_gzip": 402099,
+      "news": 134,
+      "watch": 49
+    },
+    {
+      "html": [
+        {
+          "ms": 148.87,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 113.93,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 109.49,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 125.33,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 122.21,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 122.79,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        }
+      ],
+      "initial_extra": [
+        {
+          "path": "news",
+          "bytes": 1229030,
+          "gzip": 193975,
+          "selects": 4,
+          "connections": 2
+        },
+        {
+          "path": "watch",
+          "bytes": 996368,
+          "gzip": 131362,
+          "selects": 5,
+          "connections": 3
+        },
+        {
+          "path": "model-landscape",
+          "bytes": 410663,
+          "gzip": 44071,
+          "selects": 1,
+          "connections": 1
+        },
+        {
+          "path": "watch?origin=developer_submission",
+          "bytes": 843,
+          "gzip": 513,
+          "selects": 5,
+          "connections": 3
+        }
+      ],
+      "initial_bytes": 2752724,
+      "initial_gzip": 402099,
+      "news": 134,
+      "watch": 49
+    },
+    {
+      "html": [
+        {
+          "ms": 154.34,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 118.61,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 123.28,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 125.77,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 122.39,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        },
+        {
+          "ms": 129.09,
+          "selects": 9,
+          "connections": 5,
+          "bytes": 115820,
+          "gzip": 32178
+        }
+      ],
+      "initial_extra": [
+        {
+          "path": "news",
+          "bytes": 1229030,
+          "gzip": 193975,
+          "selects": 4,
+          "connections": 2
+        },
+        {
+          "path": "watch",
+          "bytes": 996368,
+          "gzip": 131362,
+          "selects": 5,
+          "connections": 3
+        },
+        {
+          "path": "model-landscape",
+          "bytes": 410663,
+          "gzip": 44071,
+          "selects": 1,
+          "connections": 1
+        },
+        {
+          "path": "watch?origin=developer_submission",
+          "bytes": 843,
+          "gzip": 513,
+          "selects": 5,
+          "connections": 3
+        }
+      ],
+      "initial_bytes": 2752724,
+      "initial_gzip": 402099,
+      "news": 134,
+      "watch": 49
+    }
+  ],
+  "after": [
+    {
+      "html": [
+        {
+          "ms": 178.12,
+          "selects": 13,
+          "connections": 7,
+          "bytes": 889869,
+          "gzip": 171052
+        },
+        {
+          "ms": 17.32,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171052
+        },
+        {
+          "ms": 16.38,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171052
+        },
+        {
+          "ms": 16.85,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171052
+        },
+        {
+          "ms": 22.72,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171052
+        },
+        {
+          "ms": 17.22,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171052
+        }
+      ],
+      "initial_extra": [],
+      "initial_bytes": 889869,
+      "initial_gzip": 171052,
+      "news": 134,
+      "watch": 49
+    },
+    {
+      "html": [
+        {
+          "ms": 182.54,
+          "selects": 13,
+          "connections": 7,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 16.83,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 15.81,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 15.96,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 17.05,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 15.87,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        }
+      ],
+      "initial_extra": [],
+      "initial_bytes": 889869,
+      "initial_gzip": 171051,
+      "news": 134,
+      "watch": 49
+    },
+    {
+      "html": [
+        {
+          "ms": 166.44,
+          "selects": 13,
+          "connections": 7,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 17.34,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 16.84,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 16.87,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 16.75,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        },
+        {
+          "ms": 17.26,
+          "selects": 6,
+          "connections": 2,
+          "bytes": 889869,
+          "gzip": 171051
+        }
+      ],
+      "initial_extra": [],
+      "initial_bytes": 889869,
+      "initial_gzip": 171051,
+      "news": 134,
+      "watch": 49
+    }
+  ]
+}
