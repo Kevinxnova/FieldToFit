@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.10.1"></a>
+## v1.10.1 · Codex Day 9存储优化与GPT-5.5退役日志 · 2026-10-15
+
+<!-- public-title:en:Codex Day 9 storage optimization and GPT-5.5 retirement -->
+<!-- release-summary:zh:start -->
+- 新增D-145官方Day 9桌面状态存储优化，归北京时间10月14日07:32；60%为官方预期，附直接核对的Tibo摘录与真实头像。
+- 新增D-146 GPT-5.5退役日志，适用于ChatGPT登录的Codex，API Key会话不受影响；保留10月14日来源日期，另列北京时间10月15日03:00截止。
+- 两条经双语审核与三宽度双端预览发布，专题29条（17主线／12其他OpenAI），严格reset计数仍0；保留既有阅读加载优化、公开接口与日程。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add D-145 for official Day 9 desktop state-storage optimization at 07:32 Beijing time on October 14. Identify 60% as an official projection and retain a verified Tibo excerpt and real avatar.
+- Add D-146 for GPT-5.5 retirement from ChatGPT-authenticated Codex; API-key sessions are unaffected. Preserve October 14 source-date precision and separately state the October 15 03:00 Beijing cutoff.
+- Publish both after bilingual review and human/AI previews at three widths. The topic has 29 logs (17 Codex/Work and 12 Other OpenAI) with zero strict resets; preserve reading optimizations, compatible public interfaces and schedules.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者明确批准“发布这2条”；本批沿用既有字段、审核与发布流程，自已确认v1.10.0阅读加载minor以来属于内容及证据patch，无新模块、协议变化或数据库迁移。已审生产集合以白名单同步源码，其他已发布修订仅导出、不重新发布；不扩展未来批次授权。实际核对、预览、回归与部署结果见[验收记录](docs/validation/2026-10-15-codex-day9-retirement.md)。
+
 <a id="v1.10.0"></a>
 ## v1.10.0 · 阅读数据复用、详情往返与更新校验 · 2026-10-14
 

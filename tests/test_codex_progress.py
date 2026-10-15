@@ -19,8 +19,15 @@ def event(data, ident='D-78'):
 def test_dates_numbering_precision_shared_api_and_mcp(client):
     body = client.get('/api/v1/platform/news').json
     days = body['codex_progress']['days']
-    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
+    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-14', 10), ('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
     by_date = {d['date']: d for d in days}
+    assert set(by_date['2026-10-14']['codex_ids']) == {'D-145', 'D-146'}
+    storage = event(body, 'D-145')['codex_28_days']
+    assert storage['official_day'] == 9 and storage['date_precision'] == 'instant'
+    assert storage['source_posts'][0]['text_scope'] == 'excerpt'
+    retirement = event(body, 'D-146')
+    assert retirement['event_date'] is None and retirement['codex_28_days']['announced_at'] is None
+    assert retirement['codex_28_days']['date_precision'] == 'source_date'
     assert by_date['2026-10-13']['codex_ids'] == ['D-126']
     assert by_date['2026-10-13']['other_openai_ids'] == ['D-144']
     prewarm = event(body, 'D-144')['codex_28_days']
@@ -240,7 +247,7 @@ def test_month_grid_has_real_dates_without_creating_logs():
     oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
     assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
     assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
-    assert sum(bool(c['log']) for c in oct)==9 and sum(bool(c['log']) for c in nov)==0
+    assert sum(bool(c['log']) for c in oct)==10 and sum(bool(c['log']) for c in nov)==0
     assert topic==before
 
 

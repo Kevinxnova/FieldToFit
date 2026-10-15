@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.10.0](CHANGELOG.md#v1.10.0)** · [fieldtofit-v1.10.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.0)
+**Current source version: [v1.10.1](CHANGELOG.md#v1.10.1)** · [fieldtofit-v1.10.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Reuse reviewed data delivered with homepage HTML so reports, Codex logs and charts avoid a second full read. Load collapsed dossiers and heavy materials on demand.
-- Retain URL filters, the selected Codex date, expanded sections and reading position across detail visits. Bound the in-memory public cache, prompt for ordinary updates, and clear prior content after confirmed withdrawals or access changes.
-- Reuse public reads and processing within a server request, validating current publication dependencies before every cache hit. Revalidate complete exports while preserving existing HTTP and MCP contracts.
+- Add D-145 for official Day 9 desktop state-storage optimization at 07:32 Beijing time on October 14. Identify 60% as an official projection and retain a verified Tibo excerpt and real avatar.
+- Add D-146 for GPT-5.5 retirement from ChatGPT-authenticated Codex; API-key sessions are unaffected. Preserve October 14 source-date precision and separately state the October 15 03:00 Beijing cutoff.
+- Publish both after bilingual review and human/AI previews at three widths. The topic has 29 logs (17 Codex/Work and 12 Other OpenAI) with zero strict resets; preserve reading optimizations, compatible public interfaces and schedules.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

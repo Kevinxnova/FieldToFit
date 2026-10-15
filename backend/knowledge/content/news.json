@@ -2,6 +2,1642 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "model",
+      "checked_at": "2026-10-15",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://learn.chatgpt.com/docs/changelog#codex-2026-10-14-gpt-55-retirement",
+        "group": "codex",
+        "official_day": null,
+        "overview_en": "GPT-5.5 retirement: ChatGPT sign-in",
+        "overview_zh": "GPT-5.5 退役 · ChatGPT 登录范围",
+        "source_posts": [],
+        "timestamp_basis": "source_date",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-146",
+      "interpretation": [
+        {
+          "locator": "已直接核对官方原帖或日志及已登记出处；区分公告时间、来源日期与实际截止时刻。",
+          "source_ids": [
+            "official",
+            "models"
+          ],
+          "text": "官方 10 月 14 日日志将 Codex 的 GPT-5.5 退役截止列为当日 12:00 PDT／19:00 UTC，即北京时间 10 月 15 日 03:00。适用于通过 ChatGPT 登录的 Codex；OpenAI API 和 API Key 认证的 Codex 会话不受本次变更影响。仍固定 gpt-5.5 的默认设置、Agent、定时任务和脚本应检查可用替代型号；具体可用性按套餐、客户端和工作区权限确认。本站仅取得日志的来源日期，未将截止时间当作公告发布时间。",
+          "title": "变化与使用范围"
+        }
+      ],
+      "name": "Codex",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-15T03:09:24.081115+00:00",
+        "updated_at": "2026-10-15T03:09:24.081115+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "official",
+          "title": "Codex 官方 10 月 14 日退役日志",
+          "url": "https://learn.chatgpt.com/docs/changelog#codex-2026-10-14-gpt-55-retirement"
+        },
+        {
+          "coverage": "link_only",
+          "id": "models",
+          "title": "官方模型可用性与替代指引",
+          "url": "https://learn.chatgpt.com/docs/models"
+        }
+      ],
+      "state": "published",
+      "summary": "官方列明退役截止为北京时间 10 月 15 日 03:00；仍固定旧型号的配置需检查。",
+      "title": "GPT-5.5 退出 Codex 的 ChatGPT 登录入口，API Key 会话不受影响",
+      "translations": {
+        "en": {
+          "fields": {
+            "Codex 官方 10 月 14 日退役日志": "Official Codex 10-14 retirement notice",
+            "GPT-5.5 退出 Codex 的 ChatGPT 登录入口，API Key 会话不受影响": "GPT-5.5 retires from Codex with ChatGPT sign-in; API-key sessions are unaffected",
+            "GPT-5.5 退役 · ChatGPT 登录范围": "GPT-5.5 retirement: ChatGPT sign-in",
+            "变化与使用范围": "Changes and scope",
+            "官方 10 月 14 日日志将 Codex 的 GPT-5.5 退役截止列为当日 12:00 PDT／19:00 UTC，即北京时间 10 月 15 日 03:00。适用于通过 ChatGPT 登录的 Codex；OpenAI API 和 API Key 认证的 Codex 会话不受本次变更影响。仍固定 gpt-5.5 的默认设置、Agent、定时任务和脚本应检查可用替代型号；具体可用性按套餐、客户端和工作区权限确认。本站仅取得日志的来源日期，未将截止时间当作公告发布时间。": "The 10-14 changelog sets the GPT-5.5 retirement cutoff in Codex at 12:00 PDT / 19:00 UTC, or 10-15 at 03:00 Beijing time. It affects ChatGPT-authenticated Codex; OpenAI API access and API-key-authenticated Codex sessions are unaffected. Review defaults, agents, scheduled tasks and scripts still selecting gpt-5.5, choosing a replacement available to your plan, client and workspace. Only the notice’s source date is known; its cutoff is not its publication timestamp.",
+            "官方列明退役截止为北京时间 10 月 15 日 03:00；仍固定旧型号的配置需检查。": "The official cutoff is 10-15 at 03:00 Beijing time; review configurations that still pin the model.",
+            "官方模型可用性与替代指引": "Official model availability and replacement guidance",
+            "已直接核对官方原帖或日志及已登记出处；区分公告时间、来源日期与实际截止时刻。": "Original official post or changelog and registered sources checked directly; announcement time, source date and effective cutoff are kept distinct."
+          },
+          "reviewed_at": "2026-10-15T03:04:06.474002+00:00",
+          "source_hash": "6c2fd1cf88af62de5ba3306269b34db54aa0d7bb380e3186ad9ee17a36567bc5",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-15",
+      "codex_28_days": {
+        "announced_at": "2026-10-13T23:32:43.847000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2110151780478927344",
+        "group": "codex",
+        "official_day": 9,
+        "overview_en": "State storage: projected 60% reduction",
+        "overview_zh": "状态存储优化 · 官方预计减少 60%",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-13T23:32:43.847000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-15",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg"
+            },
+            "checked_at": "2026-10-15",
+            "evidence_url": "https://x.com/thsottiaux/status/2110151780478927344",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "本站短摘译；原帖已直接读取，并由 X 官方 oEmbed 交叉核对。省略部分用省略号标示；60%为官方预期。",
+            "text_en": "Day 9/ … should reduce the amount stored on disk by 60%.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "第9天／……预计磁盘存储量减少60%。",
+            "url": "https://x.com/thsottiaux/status/2110151780478927344"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "fix"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": false,
+      "id": "D-145",
+      "interpretation": [
+        {
+          "locator": "已直接核对官方原帖或日志及已登记出处；区分公告时间、来源日期与实际截止时刻。",
+          "source_ids": [
+            "official",
+            "identity"
+          ],
+          "text": "Tibo 宣布，ChatGPT 和 Codex 桌面应用已推出本地状态保存优化，预计相关磁盘存储量减少 60%，回应重度用户的空间压力。原帖未列具体版本、操作系统或手动清理步骤；60%是官方预期，本站未实测，具体使用以客户端更新提示为准。",
+          "title": "变化与使用范围"
+        }
+      ],
+      "name": "ChatGPT / Codex",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-15T03:09:01.920747+00:00",
+        "updated_at": "2026-10-15T03:09:01.920747+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "official",
+          "title": "Tibo 官方 Day 9 原帖",
+          "url": "https://x.com/thsottiaux/status/2110151780478927344"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo 身份与头像出处",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo 宣布桌面端已推出状态保存优化，60%为官方预期，本站未实测。",
+      "title": "官方 Day 9：ChatGPT／Codex 桌面端优化状态存储，预计减少 60%磁盘占用",
+      "translations": {
+        "en": {
+          "fields": {
+            "Tibo 官方 Day 9 原帖": "Tibo official Day 9 post",
+            "Tibo 宣布桌面端已推出状态保存优化，60%为官方预期，本站未实测。": "Tibo announced a desktop state-storage rollout, projecting 60% less disk use; not independently tested here.",
+            "Tibo 宣布，ChatGPT 和 Codex 桌面应用已推出本地状态保存优化，预计相关磁盘存储量减少 60%，回应重度用户的空间压力。原帖未列具体版本、操作系统或手动清理步骤；60%是官方预期，本站未实测，具体使用以客户端更新提示为准。": "Tibo announced a rollout changing local state persistence in the ChatGPT and Codex desktop apps, projecting 60% less disk storage to address space pressure for heavy users. The post specifies no build number, operating-system list or manual clean-up steps. The 60% figure is an official projection, not tested by FieldToFit; follow the desktop client’s update guidance.",
+            "Tibo 身份与头像出处": "Tibo identity and avatar provenance",
+            "变化与使用范围": "Changes and scope",
+            "官方 Day 9：ChatGPT／Codex 桌面端优化状态存储，预计减少 60%磁盘占用": "Official Day 9: desktop state-storage optimization projects 60% less disk use",
+            "已直接核对官方原帖或日志及已登记出处；区分公告时间、来源日期与实际截止时刻。": "Original official post or changelog and registered sources checked directly; announcement time, source date and effective cutoff are kept distinct.",
+            "本站短摘译；原帖已直接读取，并由 X 官方 oEmbed 交叉核对。省略部分用省略号标示；60%为官方预期。": "Short excerpt and FieldToFit translation; original post read directly and cross-checked with official X oEmbed. Ellipses mark omissions; 60% is an official projection.",
+            "状态存储优化 · 官方预计减少 60%": "State storage: projected 60% reduction"
+          },
+          "reviewed_at": "2026-10-15T03:03:26.791908+00:00",
+          "source_hash": "6d03a41748901350e94c16a029c2881e1c3550cf0503bcb4e52e8827fe770080",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-09-30",
+      "highlight": false,
+      "id": "D-58",
+      "interpretation": [
+        {
+          "locator": "Official October 13 access announcement",
+          "source_ids": [
+            "oct14-a-1"
+          ],
+          "text": "Google于 10 月 13 日公布更广泛开放安排，接续 9 月 30 日的Fairwind合作方阶段；本次是取得方式变化，不重写首次发布。 API每百万输入／输出token介绍期为 2／10 美元，11 月 30 日结束后为 4／20 美元，缓存输入另算。这不是订阅费，不由训练或资源比例推算。",
+          "title": "2026-10-13 后续：取得方式扩大"
+        },
+        {
+          "locator": "官方发布及对应采用说明",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "官方把最大输出从 64k 提高到 1M token，面向更长的工作过程；这是输出上限，不应混写成上下文窗口的变化。",
+          "title": "值得关注"
+        },
+        {
+          "locator": "官方发布及对应采用说明",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "当前先面向 Fairwind 计划的可信网络防御合作方；普通开发者不能把“发布”理解为“已普遍可用”。",
+          "title": "开放范围"
+        },
+        {
+          "locator": "官方发布及对应采用说明",
+          "source_ids": [
+            "source-1"
+          ],
+          "text": "介绍期输入／输出价格为每百万 token 2／10 美元，后续为 4／20 美元；介绍期截止和普遍开放时间尚未确认，本站未实测。",
+          "title": "采用条件"
+        }
+      ],
+      "name": "Gemini 4 Argon",
+      "note": "原始材料核对，不代表本站部署或性能复现。",
+      "organization": "Google",
+      "publication": {
+        "first_published_at": null,
+        "updated_at": "2026-10-14T03:40:55.198651+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-02",
+          "coverage": "link_only",
+          "id": "source-1",
+          "locator": "原始发布/文档入口",
+          "reason": "保留来源链接；未据此取得页面正文再分发许可。",
+          "retrieved_at": "2026-10-02",
+          "rights": {},
+          "title": "Google 官方发布",
+          "upstream_revision": "2026-09-30",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-a-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Gemini 4 Argon 2026-10-13 access expansion · Official source 1",
+          "upstream_revision": "2026-10-13 access expansion",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/for-you#watch-cw-m03"
+        }
+      ],
+      "source_published_at": "2026-09-30",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Google 官方发布",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct14-a-1",
+          "title": "Gemini 4 Argon 2026-10-13 access expansion · Official source 1",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        }
+      ],
+      "state": "published",
+      "summary": "Google 发布 Gemini 4 Argon，强调软件工程、知识工作和网络防御中的长任务执行。",
+      "title": "Gemini 4 Argon：长任务能力升级，当前先向特定合作方开放",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-13 后续：取得方式扩大": "2026-10-13 follow-up: broader access",
+            "Gemini 4 Argon：长任务能力升级，当前先向特定合作方开放": "Gemini 4 Argon: improved long-task execution, initially available to selected partners",
+            "Google 发布 Gemini 4 Argon，强调软件工程、知识工作和网络防御中的长任务执行。": "Google releases Gemini 4 Argon, emphasizing long-task execution in software engineering, knowledge work and cyber defense.",
+            "Google 官方发布": "Google official release",
+            "Google于 10 月 13 日公布更广泛开放安排，接续 9 月 30 日的Fairwind合作方阶段；本次是取得方式变化，不重写首次发布。 API每百万输入／输出token介绍期为 2／10 美元，11 月 30 日结束后为 4／20 美元，缓存输入另算。这不是订阅费，不由训练或资源比例推算。": "Google announced broader access on 10/13, following the 9/30 Fairwind partner phase. This changes access conditions rather than the original launch date. Introductory API pricing is USD 2/10 per million input/output tokens, becoming USD 4/20 after 11/30; cached input is separate. These are not subscription fees or prices inferred from training-resource ratios.",
+            "介绍期输入／输出价格为每百万 token 2／10 美元，后续为 4／20 美元；介绍期截止和普遍开放时间尚未确认，本站未实测。": "Introductory input / output prices are $2 / $10 per million tokens, later $4 / $20. The introductory period's end and general-availability date remain unconfirmed. FieldToFit has not tested it.",
+            "保留来源链接；未据此取得页面正文再分发许可。": "Retain the source link; do not obtain permission to redistribute the page body based on this.",
+            "值得关注": "Worth following",
+            "原创解读与链接": "Original commentary and source links",
+            "原始发布/文档入口": "Original release/document entrance",
+            "原始材料核对，不代表本站部署或性能复现。": "Original material checking does not represent FieldToFit deployment or performance reproduce.",
+            "官方发布及对应采用说明": "Official release and corresponding adoption instructions",
+            "官方把最大输出从 64k 提高到 1M token，面向更长的工作过程；这是输出上限，不应混写成上下文窗口的变化。": "Official materials raise maximum output from 64k to 1M tokens for longer work. This is an output limit, rather than a change to the context window.",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "开放范围": "Open scope",
+            "当前先面向 Fairwind 计划的可信网络防御合作方；普通开发者不能把“发布”理解为“已普遍可用”。": "Initial access is for trusted cyber-defense partners in Fairwind. General developers should not interpret the announcement as universal availability.",
+            "采用条件": "Conditions for adoption"
+          },
+          "reviewed_at": "2026-10-14T03:10:34.122967+00:00",
+          "source_hash": "8133761cda49045ff09e83b33dd0bb1ce1fba482179876a1bda877f7818ac24c",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": true,
+      "id": "D-134",
+      "interpretation": [
+        {
+          "locator": "2026-10-13 access expansion; official limitations and footnotes",
+          "source_ids": [
+            "oct14-a-1",
+            "oct14-a-2"
+          ],
+          "text": "开发者通过AI Studio／Gemini API付费层采用；Gemini应用与AI Mode面向AI Ultra／Pro，相应企业与Antigravity入口另按资格确认。全球开始开放不保证所有账户、地域和功能同时可用，精确API型号与配额仍待账户核对。",
+          "title": "入口与账户分层"
+        },
+        {
+          "locator": "2026-10-13 access expansion; official limitations and footnotes",
+          "source_ids": [
+            "oct14-a-1",
+            "oct14-a-2"
+          ],
+          "text": "API每百万输入／输出token介绍期为 2／10 美元，11 月 30 日结束后为 4／20 美元，缓存输入另算。这不是订阅费，不由训练或资源比例推算。",
+          "title": "介绍期价格有截止日"
+        },
+        {
+          "locator": "2026-10-13 access expansion; official limitations and footnotes",
+          "source_ids": [
+            "oct14-a-1",
+            "oct14-a-2"
+          ],
+          "text": "模型卡列文本、图像、音频和视频输入、文本输出，输入与输出合计最多 1M token；仍可能幻觉、缓慢或超时，知识截止 2026 年 3 月，部分领域更早。本站未运行复测。",
+          "title": "长上下文与可靠性边界"
+        }
+      ],
+      "name": "Gemini 4 Argon",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：2026-10-13 access expansion。本站未安装或复现性能。",
+      "organization": "Google DeepMind",
+      "publication": {
+        "first_published_at": "2026-10-14T03:21:28.410934+00:00",
+        "updated_at": "2026-10-14T03:21:28.410934+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-a-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Gemini 4 Argon 2026-10-13 access expansion · Official source 1",
+          "upstream_revision": "2026-10-13 access expansion",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-a-2",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Gemini 4 Argon 2026-10-13 access expansion · Official source 2",
+          "upstream_revision": "2026-10-13 access expansion",
+          "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini 4 Argon",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-a-1",
+          "title": "Gemini 4 Argon 2026-10-13 access expansion · Official source 1",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct14-a-2",
+          "title": "Gemini 4 Argon 2026-10-13 access expansion · Official source 2",
+          "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf"
+        },
+        {
+          "coverage": "link_only",
+          "id": "argon-analysis",
+          "title": "Gemini 4 Argon模型卡专题",
+          "url": "https://fieldtofit.top/maps/gemini-argon-evaluation"
+        }
+      ],
+      "state": "published",
+      "summary": "Google于 10 月 13 日公布更广泛开放安排，接续 9 月 30 日的Fairwind合作方阶段；本次是取得方式变化，不重写首次发布。",
+      "title": "Gemini 4 Argon：从合作方开放扩展到开发者与订阅用户",
+      "translations": {
+        "en": {
+          "fields": {
+            "API每百万输入／输出token介绍期为 2／10 美元，11 月 30 日结束后为 4／20 美元，缓存输入另算。这不是订阅费，不由训练或资源比例推算。": "Introductory API pricing is USD 2/10 per million input/output tokens, becoming USD 4/20 after 11/30; cached input is separate. These are not subscription fees or prices inferred from training-resource ratios.",
+            "Gemini 4 Argon模型卡专题": "Gemini 4 Argon model-card analysis",
+            "Gemini 4 Argon：从合作方开放扩展到开发者与订阅用户": "Gemini 4 Argon: access expands from partners to developers and subscribers",
+            "Google于 10 月 13 日公布更广泛开放安排，接续 9 月 30 日的Fairwind合作方阶段；本次是取得方式变化，不重写首次发布。": "Google announced broader access on 10/13, following the 9/30 Fairwind partner phase. This changes access conditions rather than the original launch date.",
+            "介绍期价格有截止日": "Introductory pricing has an end date",
+            "入口与账户分层": "Access depends on the channel and account",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：2026-10-13 access expansion。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-13; checked: 2026-10-14; version: 2026-10-13 access expansion; FieldToFit has not installed or reproduced performance.",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "开发者通过AI Studio／Gemini API付费层采用；Gemini应用与AI Mode面向AI Ultra／Pro，相应企业与Antigravity入口另按资格确认。全球开始开放不保证所有账户、地域和功能同时可用，精确API型号与配额仍待账户核对。": "Developers use the paid tier through AI Studio/Gemini API. Gemini app and AI Mode access targets AI Ultra/Pro; enterprise and Antigravity eligibility must be checked separately. A global rollout does not guarantee simultaneous access for every account, region or feature; exact API identifiers and quotas still require account checks.",
+            "模型卡列文本、图像、音频和视频输入、文本输出，输入与输出合计最多 1M token；仍可能幻觉、缓慢或超时，知识截止 2026 年 3 月，部分领域更早。本站未运行复测。": "The card lists text, image, audio and video inputs with text output, and a combined input/output window up to 1M tokens. Hallucinations, slowness and timeouts remain possible. The knowledge cutoff is 2026-3, earlier in some domains; FieldToFit has not run the model.",
+            "长上下文与可靠性边界": "Long-context and reliability limits"
+          },
+          "reviewed_at": "2026-10-14T03:05:56.097078+00:00",
+          "source_hash": "d0861dc02082325f9bccabbfdc74caafda1e123e8dbab6a94db18d0b2eceed37",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": true,
+      "id": "D-142",
+      "interpretation": [
+        {
+          "locator": "HomeView / Siri AI beta 27.2; official limitations and footnotes",
+          "source_ids": [
+            "oct14-h-1",
+            "oct14-h-2"
+          ],
+          "text": "最多识别六人；个人上下文需配对兼容Apple Intelligence的iPhone／iPad、启用Siri AI及受支持语言。内容显示受识别、位置与近期解锁约束，脚注保留短暂离开Wi-Fi的例外，不能称离网即隐藏。",
+          "title": "共享与个人内容分开"
+        },
+        {
+          "locator": "HomeView / Siri AI beta 27.2; official limitations and footnotes",
+          "source_ids": [
+            "oct14-h-1",
+            "oct14-h-2"
+          ],
+          "text": "HomeView软件 27.2 中Siri AI为beta，首批八个市场支持英语；公告未列中国大陆上市或中文支持。预订事件不是全面上市。",
+          "title": "地区、语言与软件状态"
+        },
+        {
+          "locator": "HomeView / Siri AI beta 27.2; official limitations and footnotes",
+          "source_ids": [
+            "oct14-h-1",
+            "oct14-h-2"
+          ],
+          "text": "部分服务端AI有每日额度，未来扩大额度收费；部分摄像头功能需合格iCloud+。请求可使用Private Cloud Compute，不是全部离线；识别准确性、误触与隐私保证未独立验证。",
+          "title": "云端额度与隐私声明"
+        }
+      ],
+      "name": "Apple HomeView",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：HomeView / Siri AI beta 27.2。本站未安装或复现性能。",
+      "organization": "Apple",
+      "publication": {
+        "first_published_at": "2026-10-14T03:40:07.207027+00:00",
+        "updated_at": "2026-10-14T03:40:07.207027+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-h-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Apple HomeView HomeView / Siri AI beta 27.2 · Official source 1",
+          "upstream_revision": "HomeView / Siri AI beta 27.2",
+          "url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-h-2",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Apple HomeView HomeView / Siri AI beta 27.2 · Official source 2",
+          "upstream_revision": "HomeView / Siri AI beta 27.2",
+          "url": "https://www.apple.com/apple-homeview/"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-h-1",
+          "title": "Apple HomeView HomeView / Siri AI beta 27.2 · Official source 1",
+          "url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct14-h-2",
+          "title": "Apple HomeView HomeView / Siri AI beta 27.2 · Official source 2",
+          "url": "https://www.apple.com/apple-homeview/"
+        }
+      ],
+      "state": "published",
+      "summary": "Apple公布 7 英寸A18 家庭屏幕，整合Siri AI、FaceTime与家庭控制；美国两款机型均 299 美元，首批地区计划 11 月 13 日上市，壁挂附件另购。",
+      "title": "Apple HomeView：共享家庭屏幕，个人上下文仍有采用门槛",
+      "translations": {
+        "en": {
+          "fields": {
+            "Apple HomeView：共享家庭屏幕，个人上下文仍有采用门槛": "Apple HomeView: a shared home screen with conditions for personal context",
+            "Apple公布 7 英寸A18 家庭屏幕，整合Siri AI、FaceTime与家庭控制；美国两款机型均 299 美元，首批地区计划 11 月 13 日上市，壁挂附件另购。": "Apple announced a 7-inch A18 home display with Siri AI, FaceTime and home controls. Both U.S. models cost USD 299, with availability planned for 11/13 in initial markets; wall-mount accessories are separate.",
+            "HomeView软件 27.2 中Siri AI为beta，首批八个市场支持英语；公告未列中国大陆上市或中文支持。预订事件不是全面上市。": "Siri AI is beta in HomeView software 27.2 and supports English in eight initial markets. The announcement does not list mainland-China availability or Chinese support. Preorders do not equal general availability.",
+            "云端额度与隐私声明": "Cloud limits and privacy claims",
+            "共享与个人内容分开": "Shared and personal content differ",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：HomeView / Siri AI beta 27.2。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-13; checked: 2026-10-14; version: HomeView / Siri AI beta 27.2; FieldToFit has not installed or reproduced performance.",
+            "地区、语言与软件状态": "Regions, languages and software status",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "最多识别六人；个人上下文需配对兼容Apple Intelligence的iPhone／iPad、启用Siri AI及受支持语言。内容显示受识别、位置与近期解锁约束，脚注保留短暂离开Wi-Fi的例外，不能称离网即隐藏。": "Recognizes up to six people. Personal context requires a paired Apple Intelligence-compatible iPhone/iPad, enabled Siri AI and a supported language. Display depends on recognition, location and recent unlocking; a footnote allows a temporary Wi-Fi-disconnection exception, so going offline does not guarantee immediate hiding.",
+            "部分服务端AI有每日额度，未来扩大额度收费；部分摄像头功能需合格iCloud+。请求可使用Private Cloud Compute，不是全部离线；识别准确性、误触与隐私保证未独立验证。": "Some server-side AI features have daily limits, with paid expanded access planned. Some camera features require an eligible iCloud+ plan. Requests can use Private Cloud Compute and are not entirely offline. Recognition accuracy, accidental actions and privacy guarantees have not been independently verified."
+          },
+          "reviewed_at": "2026-10-14T03:10:11.331197+00:00",
+          "source_hash": "93bf41fad01ffe002113070a35cb051b2c60a56f9ef0e2d4a987cd195b9fd57f",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": true,
+      "id": "D-143",
+      "interpretation": [
+        {
+          "locator": "Scion engineering article 2026-10-13; official limitations and footnotes",
+          "source_ids": [
+            "oct14-i-1"
+          ],
+          "text": "以changeset记录变更，服务端计算派生历史，采用稀疏／虚拟检出与分层缓存；假设客户端持续在线。",
+          "title": "方法与在线前提"
+        },
+        {
+          "locator": "Scion engineering article 2026-10-13; official limitations and footnotes",
+          "source_ids": [
+            "oct14-i-1"
+          ],
+          "text": "作者称相较原Git镜像体系，CPU／内存需求降至约 1/200，CI获得约 25%CPU容量收益；不是代码质量、普遍生产率或API价格等比例提高，本站未复现。",
+          "title": "内部资源对照有限定"
+        },
+        {
+          "locator": "Scion engineering article 2026-10-13; official limitations and footnotes",
+          "source_ids": [
+            "oct14-i-1"
+          ],
+          "text": "Scion不适合普遍替代Git，现有工具链高度定制，没有公众可直接采用的发行包。人仍需维护架构约束、审查变更意图及测试；内部模型快照不写成公众新版本。",
+          "title": "采用与人工审阅边界"
+        }
+      ],
+      "name": "Anthropic Scion",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：Scion engineering article 2026-10-13。本站未安装或复现性能。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-14T03:40:31.461788+00:00",
+        "updated_at": "2026-10-14T03:40:31.461788+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-i-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Anthropic Scion Scion engineering article 2026-10-13 · Official source 1",
+          "upstream_revision": "Scion engineering article 2026-10-13",
+          "url": "https://www.anthropic.com/engineering/redesigning-source-control"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        },
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-i-1",
+          "title": "Anthropic Scion Scion engineering article 2026-10-13 · Official source 1",
+          "url": "https://www.anthropic.com/engineering/redesigning-source-control"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic分享内部Scion系统，将提交、查询和合并放到服务器，客户端按需检出；本次为工程实践分享，不是公众工具发行。",
+      "title": "Anthropic Scion：Agent代码增长推动内部源代码管理重新设计",
+      "translations": {
+        "en": {
+          "fields": {
+            "Anthropic Scion：Agent代码增长推动内部源代码管理重新设计": "Anthropic Scion: agent-written code drives an internal source-control redesign",
+            "Anthropic分享内部Scion系统，将提交、查询和合并放到服务器，客户端按需检出；本次为工程实践分享，不是公众工具发行。": "Anthropic describes its internal Scion system, placing commits, queries and merges on servers with on-demand client checkouts. This is an engineering case study rather than a public tool release.",
+            "Scion不适合普遍替代Git，现有工具链高度定制，没有公众可直接采用的发行包。人仍需维护架构约束、审查变更意图及测试；内部模型快照不写成公众新版本。": "Scion is unsuitable as a general Git replacement, uses a highly customized toolchain and has no directly adoptable public package. Humans still maintain architectural constraints, review intent and test changes; internal model snapshots are not public releases.",
+            "以changeset记录变更，服务端计算派生历史，采用稀疏／虚拟检出与分层缓存；假设客户端持续在线。": "Records changes as changesets, computes derived history on servers and uses sparse/virtual checkouts with tiered caching, assuming continuously online clients.",
+            "作者称相较原Git镜像体系，CPU／内存需求降至约 1/200，CI获得约 25%CPU容量收益；不是代码质量、普遍生产率或API价格等比例提高，本站未复现。": "The author reports CPU/memory requirements of roughly 1/200 of the previous Git-mirror system and about 25% CPU-capacity benefit for CI. This does not establish proportional improvements in code quality, general productivity or API pricing; FieldToFit has not reproduced it.",
+            "内部资源对照有限定": "Internal resource comparisons are scoped",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：Scion engineering article 2026-10-13。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-13; checked: 2026-10-14; version: Scion engineering article 2026-10-13; FieldToFit has not installed or reproduced performance.",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "方法与在线前提": "Design and online assumptions",
+            "采用与人工审阅边界": "Adoption and human-review limits"
+          },
+          "reviewed_at": "2026-10-14T03:10:22.673829+00:00",
+          "source_hash": "826b7994422e44b63209eae9c133fbdeafc3b21b3d80f82bd28996a72ee043f9",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-12",
+      "highlight": false,
+      "id": "D-127",
+      "interpretation": [
+        {
+          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
+          "source_ids": [
+            "oct13-a-1",
+            "oct13-a-2"
+          ],
+          "text": "模型卡列出 1M token推理上下文，支持文本、图像、视频和音频输入，输出为文本；本次没有核实音视频生成能力。",
+          "title": "输入和输出范围"
+        },
+        {
+          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
+          "source_ids": [
+            "oct13-a-1",
+            "oct13-a-2"
+          ],
+          "text": "Wonder提供API与Muse Code入口，Full面向Muse Code订阅用户；消费者Muse更新分阶段推出，各地区可用性、额度、具体价格与权重获取条件仍未逐项核实。",
+          "title": "获取入口分阶段开放"
+        },
+        {
+          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
+          "source_ids": [
+            "oct13-a-1",
+            "oct13-a-2"
+          ],
+          "text": "官方表格包含不同运行框架和评分口径。长期记忆测试不证明无限记忆，工作流部分得分不等于完整成功率；本站未运行或复现模型评测。Meta官方模型与社区nanoMuse分别记载。",
+          "title": "能力成绩保留评测条件"
+        }
+      ],
+      "name": "Muse Wonder",
+      "note": "原始时间：2026-10-12 (day precision)；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：Muse Wonder / Wonder Full · 2026-10-12。本站未安装、运行或复现性能。",
+      "organization": "Meta",
+      "publication": {
+        "first_published_at": "2026-10-13T03:41:15.206302+00:00",
+        "updated_at": "2026-10-14T03:21:03.605948+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-a-1",
+          "locator": "Official release/model card; 2026-10-12 (day precision)",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 1",
+          "upstream_revision": "Muse Wonder / Wonder Full · 2026-10-12",
+          "url": "https://research.meta.ai/blog/muse-wonder"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-a-2",
+          "locator": "Official release/model card; 2026-10-12 (day precision)",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 2",
+          "upstream_revision": "Muse Wonder / Wonder Full · 2026-10-12",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-a-1",
+          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 1",
+          "url": "https://research.meta.ai/blog/muse-wonder"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct13-a-2",
+          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 2",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card"
+        },
+        {
+          "coverage": "link_only",
+          "id": "analysis",
+          "title": "Muse Wonder 模型卡专题解读",
+          "url": "https://fieldtofit.top/maps/muse-wonder-agent-evaluation"
+        }
+      ],
+      "state": "published",
+      "summary": "Meta于 2026-10-12 公布Muse Wonder与Wonder Full，强调利用既有对话资料的Active Memory，以及跟踪任务目标、阻塞和需澄清事项的Active Focus。",
+      "title": "Muse Wonder：Meta将长任务与持续记忆带入新模型，入口仍分阶段开放",
+      "translations": {
+        "en": {
+          "fields": {
+            "Meta于 2026-10-12 公布Muse Wonder与Wonder Full，强调利用既有对话资料的Active Memory，以及跟踪任务目标、阻塞和需澄清事项的Active Focus。": "Meta announced Muse Wonder and Wonder Full on 2026-10-12, emphasizing Active Memory for prior conversation information and Active Focus for tracking goals, blockers and matters needing clarification.",
+            "Muse Wonder 模型卡专题解读": "Muse Wonder model-card analysis",
+            "Muse Wonder：Meta将长任务与持续记忆带入新模型，入口仍分阶段开放": "Muse Wonder: Meta brings long tasks and persistent memory to a new model, with staged access",
+            "Wonder提供API与Muse Code入口，Full面向Muse Code订阅用户；消费者Muse更新分阶段推出，各地区可用性、额度、具体价格与权重获取条件仍未逐项核实。": "Wonder has API and Muse Code access; Full is offered to Muse Code subscribers. Consumer Muse updates roll out in stages. Regional access, quotas, exact prices and weight-access conditions have not been verified individually.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12 (day precision)；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：Muse Wonder / Wonder Full · 2026-10-12。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12 (day precision); event date (Beijing or publisher calendar date): 2026-10-12; checked:2026-10-13; version: Muse Wonder / Wonder Full · 2026-10-12. FieldToFit has not installed, run or reproduced performance.",
+            "官方表格包含不同运行框架和评分口径。长期记忆测试不证明无限记忆，工作流部分得分不等于完整成功率；本站未运行或复现模型评测。Meta官方模型与社区nanoMuse分别记载。": "The official tables include different harnesses and scoring rules. Memory tests do not establish unlimited memory, and partial workflow score is not complete-success rate. FieldToFit has not run or reproduced the model evaluations. Meta’s official model and community nanoMuse are recorded separately.",
+            "模型卡列出 1M token推理上下文，支持文本、图像、视频和音频输入，输出为文本；本次没有核实音视频生成能力。": "The model card lists a 1M-token inference context and text, image, video and audio inputs, with text output. Audio or video generation capabilities were not verified.",
+            "能力成绩保留评测条件": "Retain evaluation conditions",
+            "获取入口分阶段开放": "Access rolls out in stages",
+            "输入和输出范围": "Input and output scope"
+          },
+          "reviewed_at": "2026-10-14T03:05:38.532859+00:00",
+          "source_hash": "acc0628006afb5311f4bb975d5dadb3461693fa7ae8c2067f7238c8922e2ed19",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": false,
+      "id": "D-141",
+      "interpretation": [
+        {
+          "locator": "Card physical pp2–14; methods physical pp1–5",
+          "source_ids": [
+            "report",
+            "methods"
+          ],
+          "text": "深读 14 页模型卡与 5 页评测方法，用四条结论区分上下文容量、分任务成绩、运行配置和安全判断。三张本站重绘保留原始单位与对照；模型卡仅标 2026 年 10 月，不补造首发日，本站未复现实验。",
+          "title": "能力、条件与风险分开判断"
+        }
+      ],
+      "name": "Gemini 4 Argon Model Card",
+      "note": "模型卡：2026 年 10 月，日级首发与独立修订号未核实。10 月 13 日为开放公告；10 月 14 日为本站核对及本篇整理事件。页码用PDF物理页，封面计入；原文全文与原图仅链接，图表为原创重绘。217 页安全报告未完成深读，本篇不替代其安全论证。",
+      "organization": "Google DeepMind",
+      "publication": {
+        "first_published_at": "2026-10-14T03:18:58.759207+00:00",
+        "updated_at": "2026-10-14T04:00:31.149194+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "report",
+          "locator": "14 physical pages, including the cover; results p6, safety p10",
+          "reason": "已读全文与关键图表；原文再分发许可未确认，只公开原创分析、来源链接和重绘统计。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原文仅链接；本站图形基于公开事实重新设计"
+          },
+          "title": "Gemini 4 Argon Model Card · October 2026",
+          "upstream_revision": "October 2026 model card",
+          "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        }
+      ],
+      "source_published_at": null,
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "Gemini 4 Argon Model Card · October 2026",
+          "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf"
+        },
+        {
+          "coverage": "link_only",
+          "id": "methods",
+          "title": "Model evaluation: Approach, methodology & results · Gemini 4 Argon",
+          "url": "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "access",
+          "title": "Google 10 月 13 日扩大开放公告",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        }
+      ],
+      "state": "published",
+      "summary": "深读 14 页模型卡与 5 页评测方法，用四条结论区分上下文容量、分任务成绩、运行配置和安全判断。三张本站重绘保留原始单位与对照；模型卡仅标 2026 年 10 月，不补造首发日，本站未复现实验。",
+      "technical_map": {
+        "caution": "作者与外部榜单数据混合；本站未复现实验，未完成 217 页安全报告深读。",
+        "change_summary": "首次整理所选模型卡：四条结论、同号论述、三张本站重绘，保留月份日期与指标条件。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "page=6",
+                "locator": "Card pp2–6",
+                "source_id": "report"
+              }
+            ],
+            "from": "context",
+            "label": "同一模型的上下文与分任务证据并列，非因果证明",
+            "relation": "parallel",
+            "to": "tasks"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=5",
+                "locator": "Card p5 links the detailed evaluation methods",
+                "source_id": "report"
+              },
+              {
+                "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+                "source_id": "methods"
+              }
+            ],
+            "from": "conditions",
+            "label": "配置说明与结果对应阅读，不把框架当模型继承",
+            "relation": "parallel",
+            "to": "tasks"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=10",
+                "locator": "Card p10 table heading",
+                "source_id": "report"
+              }
+            ],
+            "from": "safety-baseline",
+            "label": "Gemini 3.1 Pro是本表安全差值基线",
+            "relation": "baseline",
+            "to": "safety"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=9",
+                "locator": "Card pp5,8–11",
+                "source_id": "report"
+              }
+            ],
+            "from": "tasks",
+            "label": "能力成绩与安全判断分别评估",
+            "relation": "parallel",
+            "to": "safety"
+          }
+        ],
+        "focus": "主流模型的能力证据与评测可比性",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "page=6",
+                "locator": "Card pp2–3,6; methods p3",
+                "source_id": "report"
+              },
+              {
+                "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+                "source_id": "methods"
+              }
+            ],
+            "id": "context",
+            "kind": "method",
+            "label": "多模态与上下文容量",
+            "limitation": "容量不是无限记忆；两组样本不同，不能把差值当同一任务随长度下降的因果。",
+            "mechanism": "稀疏MoE，原生多模态输入；RL包含多步推理与问题求解数据。",
+            "metrics": [
+              {
+                "baseline": "Gemini 4 Argon up to 128K: 99.7%",
+                "conditions": "200 problems, 256K to 1M; other subset 650 items",
+                "label": "GraphWalks BFS F1",
+                "unit": "%",
+                "value": 84.2
+              }
+            ],
+            "result": "GraphWalks BFS F1：短组 99.7%，长组 84.2%。",
+            "setting": "文本、图像、音频、视频输入；文本输出；输入输出合计最多 1M token。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=5",
+                "locator": "Card p5; methods pp2–4",
+                "source_id": "report"
+              },
+              {
+                "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+                "source_id": "methods"
+              }
+            ],
+            "id": "conditions",
+            "kind": "method",
+            "label": "把运行框架与预算读进成绩",
+            "limitation": "不是所有模型、所有行均由Google同条件重测；视觉帧数也不同。",
+            "mechanism": "多数pass@1 且最高thinking；小集多次试验均值，具体例外另列。",
+            "metrics": [],
+            "result": "配置、子集、取样与供应商自报共同限定比较。",
+            "setting": "PostTrainBench同一OpenCode、单H100、10 小时；OSWorld离线子集部分分、3 次取最大。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=6",
+                "locator": "Card p6; methods pp2–3",
+                "source_id": "report"
+              },
+              {
+                "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+                "source_id": "methods"
+              }
+            ],
+            "id": "tasks",
+            "kind": "result",
+            "label": "分任务强项与落后项并存",
+            "limitation": "不平均不同基准，不从一行领先推出全任务领先。",
+            "mechanism": "知识工作、代码、终端与机器学习工程分别计分。",
+            "metrics": [
+              {
+                "baseline": "GPT-6 Astra 63.1%; Fable 5.1 65.8%; Opus 5.5 67.0%",
+                "conditions": "Official matrix row; results sourced from Vals AI",
+                "label": "Vals Index",
+                "unit": "%",
+                "value": 68.9
+              }
+            ],
+            "result": "Vals 68.9%，FrontierSWE 55.0%，Terminal-Bench 57.4%，PostTrainBench 45.3%。",
+            "setting": "模型卡 2026 年 10 月矩阵；按行保留外部榜单与内部复测口径。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=10",
+                "locator": "Card pp9–10",
+                "source_id": "report"
+              }
+            ],
+            "id": "safety-baseline",
+            "kind": "baseline",
+            "label": "Gemini 3.1 Pro安全对照",
+            "limitation": "改进过的评测不与旧模型卡直接拼表。",
+            "mechanism": "同一组内部自动安全评测中的比较基线。",
+            "metrics": [],
+            "result": "表内只报告差值，并未给所有绝对发生率。",
+            "setting": "绝对百分点变化；每项更好方向分别定义。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=10",
+                "locator": "Card pp9–14",
+                "source_id": "report"
+              }
+            ],
+            "id": "safety",
+            "kind": "result",
+            "label": "安全收益与残余风险分别读",
+            "limitation": "作者称文本安全在置信区间内相近；生物／网络CCL及隐蔽／情境意识TCL不能排除，不是零风险证明。",
+            "mechanism": "内容安全、拒绝行为和前沿能力风险采用不同评估。",
+            "metrics": [],
+            "result": "文本安全+1.57pp，多语-3.16pp，图像到文本-9.29pp；拒绝语气+5.50pp，过度拒绝-9.60pp。",
+            "setting": "对照Gemini 3.1 Pro；内部自动评测及FSF阈值判断。",
+            "stage": 2
+          }
+        ],
+        "question": "Gemini 4 Argon：长任务成绩领先在哪，哪些比较并不等价？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：最有用的读法，是先确定任务，再检查成绩的样本、工具与预算，最后给不可逆行动设权限与人工批准。主流模型品牌与一个高分都不能替代业务任务的验收。",
+            "可以为自己的工作流建立小测试：长资料的引用定位、代码修改后的完整测试、超时后的接续，以及输出中的不确定性提示。记录成功与失败、用时和token费用，避免只挑最好一次。",
+            "日期分开维护：模型 9 月 30 日发布、10 月 13 日扩大开放；本模型卡只知 2026 年 10 月；本站核对与文章发表在 10 月 14 日。后续只有真实新证据或实质修订才更新，不由无变化检查刷新公开日期。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "模型卡明确Argon不是旧模型的微调版本，而是新的稀疏MoE模型。多模态输入和多步推理训练使它可以覆盖较复杂工作流；但公开卡没有给参数总量、训练数据各类占比或完整训练预算，不能补出机制细节。"
+                },
+                {
+                  "items": [
+                    "容量：输入与输出合计最多 1M token；不是输入 1M再额外输出 1M。",
+                    "测试：最多 128K组 650 题；256K至 1M组 200 题，BFS F1 分别 99.7%／84.2%。两组题不同，不能由 15.5 个百分点差值推算同一任务的失败增加。",
+                    "产品：模型卡仍列幻觉、延迟／超时与 2026 年 3 月知识截止。检索、引用核对和任务终态验证仍有价值。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "两个GraphWalks子集的BFS F1 为 99.7%和 84.2%，样本分别 650 与 200。",
+                  "attribution": "FieldToFit本站重绘；公开数据来自Google DeepMind的 2026 年 10 月模型卡。",
+                  "caption": "本站重绘：不同子集使用同一指标，但不是同题重复实验，也不是记忆成功概率。",
+                  "evidence": [
+                    {
+                      "fragment": "page=6",
+                      "locator": "Physical p6 / printed p5",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/gemini-argon-202610-context.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Google DeepMind model card."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "长上下文提高可放入的信息量，不自动证明模型能正确使用每条信息或交付无人监督任务。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=6",
+                  "locator": "Card pp2–3,6–7; methods p3",
+                  "source_id": "report"
+                },
+                {
+                  "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+                  "source_id": "methods"
+                }
+              ],
+              "id": "context-scope",
+              "node_ids": [
+                "context"
+              ],
+              "summary": "GraphWalks长组 84.2%与短组 99.7%来自不同样本，不是无限记忆或长度退化的统一概率。",
+              "title": "1M窗口是容量，长任务仍需检验是否完整交付"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "第 6 页矩阵的价值是把不同工作类型展开。知识工作和工程任务没有同一个分母；即便单位都写百分比，也不能平均成通用Agent成功率。"
+                },
+                {
+                  "items": [
+                    "Vals Index：Argon 68.9%，GPT-6 Astra 63.1%，Fable 5.1 65.8%，Opus 5.5 67.0%；本行可描述为表内领先。",
+                    "FrontierSWE v2：Argon 55.0%，Astra 65.5%；Terminal-Bench 4.0：Argon 57.4%，Opus 5.5 为 66.4%；本行不能写Argon全面领先。",
+                    "PostTrainBench：Argon 45.3%，Opus 5.5 为 49.3%。共享硬件和框架改善可比性，但仍只是四个基础模型与七个基准的加权结果。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "四个基准分别展示四个模型分数，Argon并非每行最高。",
+                  "attribution": "FieldToFit本站重绘；公开数据来自Google DeepMind的 2026 年 10 月模型卡。",
+                  "caption": "本站重绘：每行独立比较，横轴 0–100%。不跨行相加；对照数据来源和运行设置见正文。",
+                  "evidence": [
+                    {
+                      "fragment": "page=6",
+                      "locator": "Physical p6 / printed p5",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/gemini-argon-202610-tasks.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Google DeepMind model card."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "evidence",
+                  "text": "选型应从自己的任务类型出发，先判断结果对应的工作流与评分是否接近实际业务。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=6",
+                  "locator": "Card p6; methods pp2–3",
+                  "source_id": "report"
+                },
+                {
+                  "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+                  "source_id": "methods"
+                }
+              ],
+              "id": "task-strengths",
+              "node_ids": [
+                "tasks",
+                "conditions"
+              ],
+              "summary": "Vals领先，但FrontierSWE、Terminal-Bench和PostTrainBench有更高的对照模型；不要制作伪统一排行榜。",
+              "title": "知识工作强项不能替代每项任务的独立比较"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "方法文档默认最高thinking、单次尝试，且小基准平均多次试验以降低波动。其他厂商通常引用自报结果，能取得时用最大推理设置，否则用最佳可得结果；这不是一场统一实验。"
+                },
+                {
+                  "items": [
+                    "PostTrainBench v1.1：全部模型由Google复测，OpenCode、单NVIDIA H100、10 小时预算；数据与权重范围必须一起写。",
+                    "OSWorld 2.0：离线子集部分分，3 次运行取最大，每次单次尝试；默认 1080p、最多 500 步，Gemini CUA框架与并行批量工具调用。69.2%不能直接称完整任务成功率。",
+                    "视频理解LVBench：Gemini用 1FPS，Astra 800 帧、Fable 5.1 为 300 帧、Opus 5.5 为 600 帧，受到API限制。Terminal-Bench Science还有 6 倍验证器超时安排。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "框架和样本不同不让结果失去价值，但限制了它能回答的问题；不能由分数反推真实用户的时间、费用或事故率。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=5",
+                  "locator": "Card pp5–6; methods pp2–4",
+                  "source_id": "report"
+                },
+                {
+                  "locator": "Model evaluation: Approach, methodology & results; physical pp2–4",
+                  "source_id": "methods"
+                }
+              ],
+              "id": "evaluation-settings",
+              "node_ids": [
+                "conditions",
+                "tasks"
+              ],
+              "summary": "多数pass@1 并不覆盖所有行；OSWorld的部分分与 3 次最大值、不同视觉帧数都需明示。",
+              "title": "框架、预算和取分方式会改变“更强”的含义"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "安全差值对照Gemini 3.1 Pro。多语、图像到文本、拒绝语气与过度拒绝总体改善；文本安全原始差值+1.57pp，在“越低越好”的方向上增加，但作者称置信区间内相近。不能只保留绿色数字。"
+                },
+                {
+                  "alt": "安全差值：+1.57、-3.16、-9.29、+5.50、-9.60 个百分点，改善方向逐项不同。",
+                  "attribution": "FieldToFit本站重绘；公开数据来自Google DeepMind的 2026 年 10 月模型卡。",
+                  "caption": "本站重绘：保留原始符号和指标方向。未给绝对基线，不能换算事故率或相对降幅。",
+                  "evidence": [
+                    {
+                      "fragment": "page=10",
+                      "locator": "Physical p10 / printed p9",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/gemini-argon-202610-safety.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Google DeepMind model card."
+                },
+                {
+                  "items": [
+                    "Google说明评测与查询集已改进，旧模型卡数字不能直接拼接比较；人工复核发现的损失多为误报或非严重问题，这是作者解释，不是本站验证。",
+                    "前沿风险：生物与网络CCL不能排除；隐蔽／情境意识TCL不能排除。Google据此部署缓解并评估残余风险，而不是宣布模型无风险。",
+                    "本篇读完 14 页模型卡，不等于已完成 217 页安全报告和安全案例论证。模型、工具权限、监控与人工批准需要一起考虑。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "作者评测及缓解声明不等于独立安全认证，更不能把测试阈值转换为生产事故概率。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=10",
+                  "locator": "Card pp9–14",
+                  "source_id": "report"
+                }
+              ],
+              "id": "safety-boundaries",
+              "node_ids": [
+                "safety-baseline",
+                "safety"
+              ],
+              "summary": "百分点差值不是事故概率；内容安全评测与前沿风险阈值不是同一套分数。",
+              "title": "安全表有改善也有例外，残余风险需另读"
+            }
+          ],
+          "title": "四条核心结论"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10",
+            "revised_at": null,
+            "revision_note": "原卡只标 2026 年 10 月；首发日和独立修订号未核实。开放公告 10 月 13 日不替代报告首发日。",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "October 2026 model card"
+          }
+        ],
+        "slug": "gemini-argon-evaluation",
+        "takeaway": "Argon的知识工作与长上下文成绩值得关注，但选型仍须逐任务、逐配置理解；安全收益与残余风险分开。"
+      },
+      "title": "Gemini 4 Argon：长任务成绩领先在哪，哪些比较并不等价？",
+      "translations": {
+        "en": {
+          "fields": {
+            "1M窗口是容量，长任务仍需检验是否完整交付": "A 1M window is capacity; long tasks still need completion checks",
+            "Argon的知识工作与长上下文成绩值得关注，但选型仍须逐任务、逐配置理解；安全收益与残余风险分开。": "Argon’s knowledge-work and long-context results merit attention, but selection requires task- and setting-specific interpretation, with safety gains separate from residual risk.",
+            "FieldToFit分析：最有用的读法，是先确定任务，再检查成绩的样本、工具与预算，最后给不可逆行动设权限与人工批准。主流模型品牌与一个高分都不能替代业务任务的验收。": "FieldToFit assessment: begin with the task, inspect samples, tools and budgets, then set permissions and human approval for irreversible actions. A mainstream brand or high score cannot replace validation on the actual workflow.",
+            "FieldToFit本站重绘；公开数据来自Google DeepMind的 2026 年 10 月模型卡。": "FieldToFit redraw using public data from Google DeepMind’s 2026-10 model card.",
+            "FrontierSWE v2：Argon 55.0%，Astra 65.5%；Terminal-Bench 4.0：Argon 57.4%，Opus 5.5 为 66.4%；本行不能写Argon全面领先。": "FrontierSWE v2: Argon 55.0%, Astra 65.5%. Terminal-Bench 4.0: Argon 57.4%, Opus 5.5 66.4%; these rows do not show universal Argon leadership.",
+            "Gemini 3.1 Pro安全对照": "Gemini 3.1 Pro safety baseline",
+            "Gemini 3.1 Pro是本表安全差值基线": "Gemini 3.1 Pro is the baseline for the safety deltas",
+            "Gemini 4 Argon：长任务成绩领先在哪，哪些比较并不等价？": "Gemini 4 Argon: where it leads on long tasks, and which comparisons are not equivalent",
+            "Google 10 月 13 日扩大开放公告": "Google’s 10/13 broader-access announcement",
+            "Google说明评测与查询集已改进，旧模型卡数字不能直接拼接比较；人工复核发现的损失多为误报或非严重问题，这是作者解释，不是本站验证。": "Google says evaluations and query sets were updated, limiting direct comparison with older cards. Its manual review describes most losses as false positives or non-egregious; that is the author’s explanation, not FieldToFit verification.",
+            "GraphWalks BFS F1：短组 99.7%，长组 84.2%。": "GraphWalks BFS F1: 99.7% on the shorter subset and 84.2% on the longer subset.",
+            "GraphWalks长组 84.2%与短组 99.7%来自不同样本，不是无限记忆或长度退化的统一概率。": "GraphWalks 84.2% on the longer subset and 99.7% on the shorter subset use different samples, not a universal probability of memory or length degradation.",
+            "OSWorld 2.0：离线子集部分分，3 次运行取最大，每次单次尝试；默认 1080p、最多 500 步，Gemini CUA框架与并行批量工具调用。69.2%不能直接称完整任务成功率。": "OSWorld 2.0: offline-subset partial score, maximum over 3 runs with one attempt per run; default 1080p, up to 500 steps, Gemini CUA harness and parallel batched tool calls. Its 69.2% is not a complete-task success rate.",
+            "PostTrainBench v1.1：全部模型由Google复测，OpenCode、单NVIDIA H100、10 小时预算；数据与权重范围必须一起写。": "PostTrainBench v1.1: Google retests all models using OpenCode, one NVIDIA H100 and a 10-hour budget; the data and weighting scope must accompany the score.",
+            "PostTrainBench同一OpenCode、单H100、10 小时；OSWorld离线子集部分分、3 次取最大。": "PostTrainBench uses shared OpenCode, one H100 and 10 hours. OSWorld reports partial score on the offline subset, maximized over 3 runs.",
+            "PostTrainBench：Argon 45.3%，Opus 5.5 为 49.3%。共享硬件和框架改善可比性，但仍只是四个基础模型与七个基准的加权结果。": "PostTrainBench: Argon 45.3%, Opus 5.5 49.3%. Shared hardware and harness improve comparability, but the result remains a weighted aggregate over four base models and seven benchmarks.",
+            "Vals Index：Argon 68.9%，GPT-6 Astra 63.1%，Fable 5.1 65.8%，Opus 5.5 67.0%；本行可描述为表内领先。": "Vals Index: Argon 68.9%, GPT-6 Astra 63.1%, Fable 5.1 65.8%, Opus 5.5 67.0%; Argon leads within this row.",
+            "Vals领先，但FrontierSWE、Terminal-Bench和PostTrainBench有更高的对照模型；不要制作伪统一排行榜。": "Vals leads, while comparator models score higher on FrontierSWE, Terminal-Bench and PostTrainBench; avoid a false unified ranking.",
+            "不平均不同基准，不从一行领先推出全任务领先。": "Do not average distinct benchmarks or infer universal leadership from one row.",
+            "不是所有模型、所有行均由Google同条件重测；视觉帧数也不同。": "Google did not retest every model on every row under identical conditions; visual frame counts also differ.",
+            "两个GraphWalks子集的BFS F1 为 99.7%和 84.2%，样本分别 650 与 200。": "BFS F1 of 99.7% and 84.2% on two GraphWalks subsets, with 650 and 200 items.",
+            "主流模型的能力证据与评测可比性": "Evidence and comparability for a mainstream model",
+            "产品：模型卡仍列幻觉、延迟／超时与 2026 年 3 月知识截止。检索、引用核对和任务终态验证仍有价值。": "Product use: the card retains hallucinations, latency/timeouts and a 2026-3 knowledge cutoff. Retrieval, citation checks and final-state verification remain useful.",
+            "作者与外部榜单数据混合；本站未复现实验，未完成 217 页安全报告深读。": "Mixes author and external-leaderboard results; FieldToFit has not reproduced experiments or fully read the 217-page safety report.",
+            "作者称文本安全在置信区间内相近；生物／网络CCL及隐蔽／情境意识TCL不能排除，不是零风险证明。": "The author describes text safety as similar within confidence intervals. Biological/cyber CCL and stealth/situational-awareness TCL cannot be ruled out; this does not establish zero risk.",
+            "作者评测及缓解声明不等于独立安全认证，更不能把测试阈值转换为生产事故概率。": "Author evaluations and mitigation claims are not independent safety certification, and test thresholds do not translate into production incident probabilities.",
+            "内容安全、拒绝行为和前沿能力风险采用不同评估。": "Content safety, refusals and frontier-capability risks use different assessments.",
+            "分任务强项与落后项并存": "Task strengths coexist with weaker rows",
+            "前沿风险：生物与网络CCL不能排除；隐蔽／情境意识TCL不能排除。Google据此部署缓解并评估残余风险，而不是宣布模型无风险。": "Frontier risk: biological/cyber CCL and stealth/situational-awareness TCL cannot be ruled out. Google responds with mitigations and residual-risk assessments rather than a zero-risk declaration.",
+            "原卡只标 2026 年 10 月；首发日和独立修订号未核实。开放公告 10 月 13 日不替代报告首发日。": "The card gives only 2026-10; its first day and independent revision identifier are unverified. The 10/13 access announcement is not substituted for the card’s first publication day.",
+            "原文仅链接；本站图形基于公开事实重新设计": "Link upstream text only; redesign graphics from public factual data",
+            "可以为自己的工作流建立小测试：长资料的引用定位、代码修改后的完整测试、超时后的接续，以及输出中的不确定性提示。记录成功与失败、用时和token费用，避免只挑最好一次。": "Create a small workflow test covering citations in long documents, complete tests after code edits, recovery after timeouts and uncertainty disclosure. Record successes, failures, elapsed time and token costs rather than selecting only the best attempt.",
+            "同一模型的上下文与分任务证据并列，非因果证明": "Context and task evidence for the same model; not a causal claim",
+            "同一组内部自动安全评测中的比较基线。": "Comparison baseline in the same internal automated safety evaluations.",
+            "四个基准分别展示四个模型分数，Argon并非每行最高。": "Four separate benchmark rows for four models; Argon is not highest on every row.",
+            "四条核心结论": "Four core findings",
+            "多数pass@1 且最高thinking；小集多次试验均值，具体例外另列。": "Mostly pass@1 at highest thinking, with multiple-trial averaging for small sets and explicit exceptions.",
+            "多数pass@1 并不覆盖所有行；OSWorld的部分分与 3 次最大值、不同视觉帧数都需明示。": "Mostly pass@1 does not describe every row; OSWorld partial score/maximum over 3 and different visual frame counts need explicit disclosure.",
+            "多模态与上下文容量": "Multimodal input and context capacity",
+            "安全差值对照Gemini 3.1 Pro。多语、图像到文本、拒绝语气与过度拒绝总体改善；文本安全原始差值+1.57pp，在“越低越好”的方向上增加，但作者称置信区间内相近。不能只保留绿色数字。": "Safety deltas compare with Gemini 3.1 Pro. Multilingual, image-to-text, refusal tone and over-refusal improve overall. Text safety has a raw +1.57pp change on a lower-is-better metric, while the author describes it as similar within confidence intervals. Keep the exception alongside the improvements.",
+            "安全差值：+1.57、-3.16、-9.29、+5.50、-9.60 个百分点，改善方向逐项不同。": "Safety deltas: +1.57, -3.16, -9.29, +5.50 and -9.60 percentage points, with metric-specific directions.",
+            "安全收益与残余风险分别读": "Read safety gains separately from residual risk",
+            "安全表有改善也有例外，残余风险需另读": "Safety tables show improvements and exceptions; residual risk is separate",
+            "容量不是无限记忆；两组样本不同，不能把差值当同一任务随长度下降的因果。": "Capacity is not unlimited memory. The subsets differ; their gap is not a causal estimate of degradation with length.",
+            "容量：输入与输出合计最多 1M token；不是输入 1M再额外输出 1M。": "Capacity: up to 1M tokens for input and output combined, not 1M input plus another 1M output.",
+            "对照Gemini 3.1 Pro；内部自动评测及FSF阈值判断。": "Relative to Gemini 3.1 Pro; internal automated tests and FSF threshold assessments.",
+            "已读全文与关键图表；原文再分发许可未确认，只公开原创分析、来源链接和重绘统计。": "The full text and key tables were read. Redistribution rights are unverified; publish original analysis, source links and redrawn statistics only.",
+            "把运行框架与预算读进成绩": "Read harness and budget with the score",
+            "改进过的评测不与旧模型卡直接拼表。": "Updated evaluations should not be directly combined with older model cards.",
+            "文本、图像、音频、视频输入；文本输出；输入输出合计最多 1M token。": "Text, image, audio and video input; text output; up to 1M combined input/output tokens.",
+            "文本安全+1.57pp，多语-3.16pp，图像到文本-9.29pp；拒绝语气+5.50pp，过度拒绝-9.60pp。": "Text safety +1.57pp, multilingual -3.16pp, image-to-text -9.29pp; refusal tone +5.50pp, over-refusal -9.60pp.",
+            "方法文档默认最高thinking、单次尝试，且小基准平均多次试验以降低波动。其他厂商通常引用自报结果，能取得时用最大推理设置，否则用最佳可得结果；这不是一场统一实验。": "The methods default to highest thinking and single attempts, averaging multiple trials for smaller benchmarks. Other providers generally contribute self-reported results at maximum reasoning when available, otherwise the best available result; this is not one uniform experiment.",
+            "日期分开维护：模型 9 月 30 日发布、10 月 13 日扩大开放；本模型卡只知 2026 年 10 月；本站核对与文章发表在 10 月 14 日。后续只有真实新证据或实质修订才更新，不由无变化检查刷新公开日期。": "Maintain dates separately: model launch 9/30, broader access 10/13, card known only as 2026-10, and FieldToFit checking/publication on 10/14. Update for real new evidence or substantive revisions, without refreshing public dates for unchanged checks.",
+            "本站重绘：不同子集使用同一指标，但不是同题重复实验，也不是记忆成功概率。": "FieldToFit redraw: the subsets share a metric but are not repeated identical tasks or memory-success probabilities.",
+            "本站重绘：保留原始符号和指标方向。未给绝对基线，不能换算事故率或相对降幅。": "FieldToFit redraw: retain raw signs and metric directions. Without absolute baselines, do not derive incident rates or relative reductions.",
+            "本站重绘：每行独立比较，横轴 0–100%。不跨行相加；对照数据来源和运行设置见正文。": "FieldToFit redraw: compare each row separately on a 0–100% axis. Do not sum across rows; sources and settings are explained in the text.",
+            "本篇读完 14 页模型卡，不等于已完成 217 页安全报告和安全案例论证。模型、工具权限、监控与人工批准需要一起考虑。": "Reading the 14-page card is not completion of the 217-page safety report or its safety cases. Consider the model together with tool permissions, monitoring and human approval.",
+            "框架、预算和取分方式会改变“更强”的含义": "Harness, budget and aggregation change what “better” means",
+            "框架和样本不同不让结果失去价值，但限制了它能回答的问题；不能由分数反推真实用户的时间、费用或事故率。": "Different harnesses and samples do not make results useless, but bound what they answer; scores do not determine real-user time, cost or incident rates.",
+            "模型卡 2026 年 10 月矩阵；按行保留外部榜单与内部复测口径。": "2026-10 matrix, retaining external-leaderboard and internal-retest definitions by row.",
+            "模型卡明确Argon不是旧模型的微调版本，而是新的稀疏MoE模型。多模态输入和多步推理训练使它可以覆盖较复杂工作流；但公开卡没有给参数总量、训练数据各类占比或完整训练预算，不能补出机制细节。": "The card says Argon is a new sparse-MoE model rather than a fine-tune of a prior model. Multimodal input and multi-step reasoning training support complex workflows, but it does not disclose total parameter count, modality shares or a complete training budget.",
+            "模型卡：2026 年 10 月，日级首发与独立修订号未核实。10 月 13 日为开放公告；10 月 14 日为本站核对及本篇整理事件。页码用PDF物理页，封面计入；原文全文与原图仅链接，图表为原创重绘。217 页安全报告未完成深读，本篇不替代其安全论证。": "Model card: 2026-10; the exact first publication day and separate revision identifier are unverified. 10/13 is the access announcement; 10/14 is FieldToFit’s check and editorial event. Citations use physical PDF pages including the cover. Upstream text and figures are linked only; the charts are original redraws. The 217-page safety report has not been fully read and its safety argument is not established by this article.",
+            "测试：最多 128K组 650 题；256K至 1M组 200 题，BFS F1 分别 99.7%／84.2%。两组题不同，不能由 15.5 个百分点差值推算同一任务的失败增加。": "Testing: 650 items up to 128K and 200 problems from 256K to 1M, with BFS F1 of 99.7%/84.2%. The tasks differ; the 15.5-percentage-point gap does not estimate increased failure on the same task.",
+            "深读 14 页模型卡与 5 页评测方法，用四条结论区分上下文容量、分任务成绩、运行配置和安全判断。三张本站重绘保留原始单位与对照；模型卡仅标 2026 年 10 月，不补造首发日，本站未复现实验。": "Read the 14-page model card and 5-page evaluation methods through four findings separating context capacity, task scores, execution settings and safety assessment. Three original redraws retain units and comparisons. The card gives only 2026-10, without a verified first publication day; FieldToFit has not reproduced the experiments.",
+            "百分点差值不是事故概率；内容安全评测与前沿风险阈值不是同一套分数。": "Percentage-point deltas are not incident probabilities; content-safety tests and frontier-risk thresholds are separate assessments.",
+            "知识工作、代码、终端与机器学习工程分别计分。": "Knowledge work, coding, terminal tasks and ML engineering are scored separately.",
+            "知识工作强项不能替代每项任务的独立比较": "Strength in knowledge work does not replace task-by-task comparison",
+            "稀疏MoE，原生多模态输入；RL包含多步推理与问题求解数据。": "Sparse MoE with native multimodal input; RL includes multi-step reasoning and problem-solving data.",
+            "第 6 页矩阵的价值是把不同工作类型展开。知识工作和工程任务没有同一个分母；即便单位都写百分比，也不能平均成通用Agent成功率。": "The physical page 6 matrix separates work types. Knowledge and engineering tasks do not share a denominator; percentage units alone do not justify averaging them into a general agent success rate.",
+            "绝对百分点变化；每项更好方向分别定义。": "Absolute percentage-point changes, with metric-specific improvement directions.",
+            "能力、条件与风险分开判断": "Assess capability, conditions and risk separately",
+            "能力成绩与安全判断分别评估": "Capability scores and safety assessments are distinct",
+            "表内只报告差值，并未给所有绝对发生率。": "The table gives deltas rather than every absolute occurrence rate.",
+            "视频理解LVBench：Gemini用 1FPS，Astra 800 帧、Fable 5.1 为 300 帧、Opus 5.5 为 600 帧，受到API限制。Terminal-Bench Science还有 6 倍验证器超时安排。": "Video understanding on LVBench: Gemini uses 1FPS, Astra 800 frames, Fable 5.1 300 and Opus 5.5 600, constrained by APIs. Terminal-Bench Science also uses a 6× verifier timeout.",
+            "选型应从自己的任务类型出发，先判断结果对应的工作流与评分是否接近实际业务。": "Selection should begin with the actual task, checking whether the workflow and grading resemble the intended business use.",
+            "配置、子集、取样与供应商自报共同限定比较。": "Settings, subsets, sampling and provider-reported results bound the comparisons.",
+            "配置说明与结果对应阅读，不把框架当模型继承": "Read settings with results; harnesses are not model inheritance",
+            "长上下文提高可放入的信息量，不自动证明模型能正确使用每条信息或交付无人监督任务。": "A longer context increases information capacity; it does not establish correct use of every detail or unsupervised task completion.",
+            "首次整理所选模型卡：四条结论、同号论述、三张本站重绘，保留月份日期与指标条件。": "First analysis of the selected card: four findings, matching arguments and three original redraws, retaining month precision and metric conditions."
+          },
+          "reviewed_at": "2026-10-14T03:59:57.689274+00:00",
+          "source_hash": "bed31e871f33631b17cfca4abdb40014571d3a038d35b956800cf666f7a20202",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": true,
+      "id": "D-135",
+      "interpretation": [
+        {
+          "locator": "v0.64.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-b-1"
+          ],
+          "text": "文件工具操作串行协调，状态文件原子保存，损坏时可从备份恢复。",
+          "title": "原子写入与恢复"
+        },
+        {
+          "locator": "v0.64.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-b-1"
+          ],
+          "text": "Headless传递已解析的目录信任状态，A2A增加V1→V2 迁移，ACP补入使用量通知和会话清理；认证与执行权限仍需配置。",
+          "title": "信任状态与协议迁移"
+        },
+        {
+          "locator": "v0.64.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-b-1"
+          ],
+          "text": "修复活动操作中Ctrl+C传递、代码里的@卡住或吞引号、Windows输入法及扩展更新文件锁。稳定、预览与nightly通道分开，本站未回归跨平台行为。",
+          "title": "输入与取消修复"
+        }
+      ],
+      "name": "Gemini CLI",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.64.0。本站未安装或复现性能。",
+      "organization": "Google",
+      "publication": {
+        "first_published_at": "2026-10-14T03:22:19.925601+00:00",
+        "updated_at": "2026-10-14T03:22:19.925601+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-b-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Gemini CLI v0.64.0 · Official source 1",
+          "upstream_revision": "v0.64.0",
+          "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A03",
+          "name": "Gemini CLI",
+          "url": "https://fieldtofit.top/watch/CW-A03"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-b-1",
+          "title": "Gemini CLI v0.64.0 · Official source 1",
+          "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0"
+        }
+      ],
+      "state": "published",
+      "summary": "稳定版于北京时间 10 月 14 日 04:44 发布；本次为客户端维护，不是Gemini模型能力或价格更新。",
+      "title": "Gemini CLI 0.64.0：补强文件写入、状态恢复与取消操作",
+      "translations": {
+        "en": {
+          "fields": {
+            "Gemini CLI 0.64.0：补强文件写入、状态恢复与取消操作": "Gemini CLI 0.64.0: stronger file writes, state recovery and cancellation",
+            "Headless传递已解析的目录信任状态，A2A增加V1→V2 迁移，ACP补入使用量通知和会话清理；认证与执行权限仍需配置。": "Headless mode carries resolved folder-trust state; A2A adds V1→V2 migration, and ACP adds usage notifications and session cleanup. Authentication and execution permissions still require configuration.",
+            "信任状态与协议迁移": "Trust state and protocol migration",
+            "修复活动操作中Ctrl+C传递、代码里的@卡住或吞引号、Windows输入法及扩展更新文件锁。稳定、预览与nightly通道分开，本站未回归跨平台行为。": "Fixes cover Ctrl+C propagation during active operations, @ in code hanging or swallowing quotes, Windows IME and extension-update file locks. Stable, preview and nightly channels remain distinct; FieldToFit has not tested cross-platform behavior.",
+            "原创解读与链接": "Original commentary and source links",
+            "原子写入与恢复": "Atomic writes and recovery",
+            "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.64.0。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-14; checked: 2026-10-14; version: v0.64.0; FieldToFit has not installed or reproduced performance.",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "文件工具操作串行协调，状态文件原子保存，损坏时可从备份恢复。": "File-tool operations are coordinated serially; state files are saved atomically and can recover from a backup if corrupted.",
+            "稳定版于北京时间 10 月 14 日 04:44 发布；本次为客户端维护，不是Gemini模型能力或价格更新。": "The stable release arrived at 04:44 Beijing time on 10/14. This is client maintenance rather than a Gemini model-capability or pricing update.",
+            "输入与取消修复": "Input and cancellation fixes"
+          },
+          "reviewed_at": "2026-10-14T03:06:27.214813+00:00",
+          "source_hash": "f9120c2e9f0a32f2e84fe93b105b5aba820e4c24ba38bc00723ba26bc454dac6",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": true,
+      "id": "D-136",
+      "interpretation": [
+        {
+          "locator": "v0.40.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-c-1"
+          ],
+          "text": "加入Nano Banana 2.1、Vidu Q4、Kling Virtual Try-On等节点；平台上架与模型作者发布是不同事件，账户、费用和数据处理条件分别核对。",
+          "title": "伙伴接入不等于模型首发"
+        },
+        {
+          "locator": "v0.40.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-c-1"
+          ],
+          "text": "变更末尾通用路径需--enable-assets，Windows独立包另有默认开启安排，不能使用早期提交概括所有平台。",
+          "title": "资产开关按安装方式确认"
+        },
+        {
+          "locator": "v0.40.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-c-1"
+          ],
+          "text": "包含低显存、注意力和加载修复，前端包推进至 1.55.17。升级需核对工作流、自定义节点与依赖；本站未验证插件兼容、显存收益或外部API可用性。",
+          "title": "兼容与执行边界"
+        }
+      ],
+      "name": "ComfyUI",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.40.0。本站未安装或复现性能。",
+      "organization": "Comfy-Org",
+      "publication": {
+        "first_published_at": "2026-10-14T03:35:42.073422+00:00",
+        "updated_at": "2026-10-14T03:35:42.073422+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-c-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "ComfyUI v0.40.0 · Official source 1",
+          "upstream_revision": "v0.40.0",
+          "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.40.0"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T01",
+          "name": "ComfyUI",
+          "url": "https://fieldtofit.top/watch/CW-T01"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-c-1",
+          "title": "ComfyUI v0.40.0 · Official source 1",
+          "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.40.0"
+        }
+      ],
+      "state": "published",
+      "summary": "北京时间 10 月 14 日 05:29 发布，新增资产导出、标准 3D输出、摄像机节点及原生LoRA堆栈加载。",
+      "title": "ComfyUI 0.40.0：资产与 3D输出更新，伙伴节点需分开看",
+      "translations": {
+        "en": {
+          "fields": {
+            "ComfyUI 0.40.0：资产与 3D输出更新，伙伴节点需分开看": "ComfyUI 0.40.0: assets and 3D output updates, with separate partner-node conditions",
+            "伙伴接入不等于模型首发": "Partner integration is not a model launch",
+            "兼容与执行边界": "Compatibility and execution limits",
+            "加入Nano Banana 2.1、Vidu Q4、Kling Virtual Try-On等节点；平台上架与模型作者发布是不同事件，账户、费用和数据处理条件分别核对。": "Adds nodes for Nano Banana 2.1, Vidu Q4 and Kling Virtual Try-On. Platform integration differs from a model-author launch; accounts, charges and data-handling terms need separate checks.",
+            "包含低显存、注意力和加载修复，前端包推进至 1.55.17。升级需核对工作流、自定义节点与依赖；本站未验证插件兼容、显存收益或外部API可用性。": "Includes low-memory, attention and loading fixes, with frontend package 1.55.17. Check workflows, custom nodes and dependencies before upgrading; FieldToFit has not tested plugin compatibility, memory savings or external API availability.",
+            "北京时间 10 月 14 日 05:29 发布，新增资产导出、标准 3D输出、摄像机节点及原生LoRA堆栈加载。": "Released at 05:29 Beijing time on 10/14, adding asset export, standard 3D output, camera nodes and native LoRA-stack loading.",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.40.0。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-14; checked: 2026-10-14; version: v0.40.0; FieldToFit has not installed or reproduced performance.",
+            "变更末尾通用路径需--enable-assets，Windows独立包另有默认开启安排，不能使用早期提交概括所有平台。": "The final changes require --enable-assets on the general path, with a separate default-on arrangement for Windows standalone packages. Earlier commits do not establish a universal default.",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "资产开关按安装方式确认": "Asset defaults depend on the installation"
+          },
+          "reviewed_at": "2026-10-14T03:06:57.131296+00:00",
+          "source_hash": "c3174d9f407eb3aa6a276c3ed27cdc93910cf6ec3c14d96c184e9f5a566a0b1e",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": false,
+      "id": "D-128",
+      "interpretation": [
+        {
+          "locator": "v1.0.4 release / model card",
+          "source_ids": [
+            "oct13-b-1"
+          ],
+          "text": "MCP敏感环境配置转入加密凭据存储；拒绝含密码的URL，避免向未知重定向主机转发密钥。这些是具体防护变化，未验证整个系统的独立安全审计。",
+          "title": "凭据存储与重定向保护"
+        },
+        {
+          "locator": "v1.0.4 release / model card",
+          "source_ids": [
+            "oct13-b-1"
+          ],
+          "text": "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。",
+          "title": "手机审批与支付边界"
+        },
+        {
+          "locator": "v1.0.4 release / model card",
+          "source_ids": [
+            "oct13-b-1"
+          ],
+          "text": "桌面新增DeepSeek Harness；iOS的TestFlight提交、审核与用户取得版本分别记载，不把桌面 1.0.4 当作所有iOS用户的现有版本。GPL-3.0-or-later；外部模型服务、跨端同步与iOS不能操控其他应用的限制保留。",
+          "title": "分发版本与社区边界"
+        }
+      ],
+      "name": "nanoMuse",
+      "note": "原始时间：2026-10-12T17:30:52Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v1.0.4。本站未安装、运行或复现性能。",
+      "organization": "nano-muse",
+      "publication": {
+        "first_published_at": "2026-10-13T03:41:39.840696+00:00",
+        "updated_at": "2026-10-14T03:20:39.934378+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-b-1",
+          "locator": "Official release/model card; 2026-10-12T17:30:52Z",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "nanoMuse v1.0.4 · Official source 1",
+          "upstream_revision": "v1.0.4",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.4"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A09",
+          "name": "nanoMuse",
+          "url": "https://fieldtofit.top/watch/CW-A09"
+        }
+      ],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-b-1",
+          "title": "nanoMuse v1.0.4 · Official source 1",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.4"
+        }
+      ],
+      "state": "published",
+      "summary": "nanoMuse是社区个人Agent，并非Meta官方Muse。1.0.4 于北京时间 2026-10-13 01:30 发布，补充加密凭据、跨设备操作审批与桌面DeepSeek Harness接入。",
+      "title": "nanoMuse 1.0.4：加强跨设备审批与凭据存储，iOS通道需分开看",
+      "translations": {
+        "en": {
+          "fields": {
+            "MCP敏感环境配置转入加密凭据存储；拒绝含密码的URL，避免向未知重定向主机转发密钥。这些是具体防护变化，未验证整个系统的独立安全审计。": "Sensitive MCP environment configuration moves to an encrypted credential store; password-bearing URLs are rejected and keys are not forwarded to unknown redirect hosts. These are specific safeguards, not a verified independent security audit of the whole system.",
+            "nanoMuse 1.0.4：加强跨设备审批与凭据存储，iOS通道需分开看": "nanoMuse 1.0.4: stronger cross-device approvals and credential storage, with separate iOS rollout",
+            "nanoMuse是社区个人Agent，并非Meta官方Muse。1.0.4 于北京时间 2026-10-13 01:30 发布，补充加密凭据、跨设备操作审批与桌面DeepSeek Harness接入。": "nanoMuse is a community personal agent, not Meta’s official Muse. Version 1.0.4 was released at 01:30 Beijing time on 2026-10-13, adding encrypted credentials, cross-device action approvals and desktop DeepSeek Harness integration.",
+            "凭据存储与重定向保护": "Credential storage and redirect protection",
+            "分发版本与社区边界": "Distribution versions and community boundaries",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12T17:30:52Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v1.0.4。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T17:30:52Z; event date (Beijing or publisher calendar date): 2026-10-13; checked:2026-10-13; version: v1.0.4; FieldToFit has not installed, run or reproduced performance.",
+            "手机审批与支付边界": "Phone approvals and payment boundaries",
+            "桌面新增DeepSeek Harness；iOS的TestFlight提交、审核与用户取得版本分别记载，不把桌面 1.0.4 当作所有iOS用户的现有版本。GPL-3.0-or-later；外部模型服务、跨端同步与iOS不能操控其他应用的限制保留。": "Desktop adds DeepSeek Harness. TestFlight submission, review and the version available to iOS users are separate; desktop 1.0.4 is not assumed to be available to all iOS users. GPL-3.0-or-later; external model services, cross-device synchronization and iOS’s inability to control other applications remain relevant.",
+            "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。": "Cross-device actions can be approved on the phone that initiated the task. Payments allow one-time approval or denial, and approval timeouts are treated as denial. FieldToFit has not tested actual device permissions or timeout behavior."
+          },
+          "reviewed_at": "2026-10-14T03:05:20.909946+00:00",
+          "source_hash": "b543ffe16cceb0678f9def07dd156f5a5d6416b9e1b2e1c9818224c7765ff269",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "agent",
       "checked_at": "2026-10-14",
       "codex_28_days": {
@@ -124,6 +1760,532 @@
           },
           "reviewed_at": "2026-10-14T02:51:15.111831+00:00",
           "source_hash": "1554c7e15bfebdf84a9188793fdcb44b86a29586a93fbecb0ce74b69ded29bd3",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": false,
+      "id": "D-129",
+      "interpretation": [
+        {
+          "locator": "v0.1.43.1 release / model card",
+          "source_ids": [
+            "oct13-c-1"
+          ],
+          "text": "自适应计算重叠恢复为默认关闭、主动开启；对部分NVIDIA卡有利的设置可能拖慢另一些消费级设备，不能默认套用。",
+          "title": "自适应重叠默认值变化"
+        },
+        {
+          "locator": "v0.1.43.1 release / model card",
+          "source_ids": [
+            "oct13-c-1"
+          ],
+          "text": "长提示词读取失败可回退，慢磁盘进度检测得到修复；更新器核对实际引擎版本，避免新构建标记与旧二进制混用导致后续更新被跳过。",
+          "title": "读取回退与真实构建版本"
+        },
+        {
+          "locator": "v0.1.43.1 release / model card",
+          "source_ids": [
+            "oct13-c-1"
+          ],
+          "text": "修复双NVIDIA卡并发、部分AMD／Intel路径与工具输出解析。作者吞吐量来自指定显卡、请求数和配置，双Intel卡部分修复仍待报告者验证。Windows/Linux、内存、显存、量化和权重条件保留；MIT；本站未安装或复现速度和精度。",
+          "title": "硬件限定的修复与成绩"
+        }
+      ],
+      "name": "Strata",
+      "note": "原始时间：2026-10-12T17:30:57Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v0.1.43.1。本站未安装、运行或复现性能。",
+      "organization": "Niko1221",
+      "publication": {
+        "first_published_at": "2026-10-13T03:42:33.606257+00:00",
+        "updated_at": "2026-10-14T03:20:16.518191+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-c-1",
+          "locator": "Official release/model card; 2026-10-12T17:30:57Z",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Strata v0.1.43.1 · Official source 1",
+          "upstream_revision": "v0.1.43.1",
+          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.43.1"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T14",
+          "name": "Strata",
+          "url": "https://fieldtofit.top/watch/CW-T14"
+        }
+      ],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct13-c-1",
+          "title": "Strata v0.1.43.1 · Official source 1",
+          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.43.1"
+        }
+      ],
+      "state": "published",
+      "summary": "Strata是本地模型推理运行器。0.1.43.1 于北京时间 2026-10-13 01:30 发布，修复读取、构建与多GPU执行路径；不同硬件的性能条件分别保留。",
+      "title": "Strata 0.1.43.1：修复推理回退与构建识别，硬件成绩按配置阅读",
+      "translations": {
+        "en": {
+          "fields": {
+            "Strata 0.1.43.1：修复推理回退与构建识别，硬件成绩按配置阅读": "Strata 0.1.43.1: inference fallback and build identification fixes, with hardware-specific results",
+            "Strata是本地模型推理运行器。0.1.43.1 于北京时间 2026-10-13 01:30 发布，修复读取、构建与多GPU执行路径；不同硬件的性能条件分别保留。": "Strata is a local model inference runtime. Version 0.1.43.1 was released at 01:30 Beijing time on 2026-10-13, fixing reading, builds and multi-GPU execution paths while retaining hardware-specific performance conditions.",
+            "修复双NVIDIA卡并发、部分AMD／Intel路径与工具输出解析。作者吞吐量来自指定显卡、请求数和配置，双Intel卡部分修复仍待报告者验证。Windows/Linux、内存、显存、量化和权重条件保留；MIT；本站未安装或复现速度和精度。": "Fixes cover dual-NVIDIA concurrency, selected AMD/Intel paths and tool-output parsing. Author-reported throughput uses specified GPUs, request counts and configurations; some dual-Intel fixes await the reporter’s verification. Windows/Linux, RAM, VRAM, quantization and weight requirements remain; MIT; FieldToFit has not installed it or reproduced speed and accuracy.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原始时间：2026-10-12T17:30:57Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v0.1.43.1。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T17:30:57Z; event date (Beijing or publisher calendar date): 2026-10-13; checked:2026-10-13; version: v0.1.43.1; FieldToFit has not installed, run or reproduced performance.",
+            "硬件限定的修复与成绩": "Hardware-specific fixes and results",
+            "自适应计算重叠恢复为默认关闭、主动开启；对部分NVIDIA卡有利的设置可能拖慢另一些消费级设备，不能默认套用。": "Adaptive compute overlap returns to disabled by default and explicit opt-in. A setting that helps some NVIDIA cards can slow other consumer devices and should not be applied universally.",
+            "自适应重叠默认值变化": "Adaptive-overlap default changes",
+            "读取回退与真实构建版本": "Read fallback and actual build version",
+            "长提示词读取失败可回退，慢磁盘进度检测得到修复；更新器核对实际引擎版本，避免新构建标记与旧二进制混用导致后续更新被跳过。": "Long-prompt reads can fall back on failure, and slow-disk progress detection is corrected. The updater checks the actual engine version to avoid mixing a new build stamp with an old binary and skipping later updates."
+          },
+          "reviewed_at": "2026-10-14T03:05:03.221271+00:00",
+          "source_hash": "8cb929fad11d2a2476573cb37ae7dafafb034acf90852c8fac1f868c0c1bebea",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": false,
+      "id": "D-137",
+      "interpretation": [
+        {
+          "locator": "v1.0.5; official limitations and footnotes",
+          "source_ids": [
+            "oct14-d-1"
+          ],
+          "text": "Android长命令审批卡折叠内容，保持允许／拒绝按钮可见；桌面修复按钮请求方式，退出前检查活动回复、电脑操作、跨设备任务和审批。",
+          "title": "手机审批与桌面退出"
+        },
+        {
+          "locator": "v1.0.5; official limitations and footnotes",
+          "source_ids": [
+            "oct14-d-1"
+          ],
+          "text": "Windows增加更新元数据及校验，Python运行时接入DeepSeek Harness，并修复端点地址重复与部分数据权限处理。",
+          "title": "更新校验与运行时接入"
+        },
+        {
+          "locator": "v1.0.5; official limitations and footnotes",
+          "source_ids": [
+            "oct14-d-1"
+          ],
+          "text": "iOS公开TestFlight链接仍为 1.0.4／build 26，1.0.5／build 28 在提交审核阶段；Mac未公证、Windows未签名。GPL-3.0-or-later；主聊天云端保存与同步设置须确认。本站未复验修复。",
+          "title": "各分发通道单独记录"
+        }
+      ],
+      "name": "nanoMuse",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v1.0.5。本站未安装或复现性能。",
+      "organization": "nano-muse",
+      "publication": {
+        "first_published_at": "2026-10-14T03:36:34.189652+00:00",
+        "updated_at": "2026-10-14T03:36:34.189652+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-d-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "nanoMuse v1.0.5 · Official source 1",
+          "upstream_revision": "v1.0.5",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.5"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A09",
+          "name": "nanoMuse",
+          "url": "https://fieldtofit.top/watch/CW-A09"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-d-1",
+          "title": "nanoMuse v1.0.5 · Official source 1",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.5"
+        }
+      ],
+      "state": "published",
+      "summary": "Lookout于北京时间 10 月 14 日 02:10 发布。nanoMuse为社区个人Agent，与Meta官方Muse无隶属关系。",
+      "title": "nanoMuse 1.0.5：审批与退出保护修复，iOS仍需区分审核阶段",
+      "translations": {
+        "en": {
+          "fields": {
+            "Android长命令审批卡折叠内容，保持允许／拒绝按钮可见；桌面修复按钮请求方式，退出前检查活动回复、电脑操作、跨设备任务和审批。": "Android approval cards fold long commands while keeping allow/deny visible. Desktop fixes button request methods and checks active replies, computer actions, cross-device tasks and approvals before quitting.",
+            "Lookout于北京时间 10 月 14 日 02:10 发布。nanoMuse为社区个人Agent，与Meta官方Muse无隶属关系。": "Lookout was released at 02:10 Beijing time on 10/14. nanoMuse is a community personal agent, unaffiliated with Meta’s official Muse.",
+            "Windows增加更新元数据及校验，Python运行时接入DeepSeek Harness，并修复端点地址重复与部分数据权限处理。": "Windows adds update metadata and validation; the Python runtime integrates DeepSeek Harness, with endpoint-address deduplication and some data-permission fixes.",
+            "iOS公开TestFlight链接仍为 1.0.4／build 26，1.0.5／build 28 在提交审核阶段；Mac未公证、Windows未签名。GPL-3.0-or-later；主聊天云端保存与同步设置须确认。本站未复验修复。": "The public iOS TestFlight link remains 1.0.4/build 26; 1.0.5/build 28 is submitted for review. Mac builds are unnotarized and Windows builds unsigned. GPL-3.0-or-later; confirm cloud storage and synchronization settings for primary chats; FieldToFit has not verified the fixes.",
+            "nanoMuse 1.0.5：审批与退出保护修复，iOS仍需区分审核阶段": "nanoMuse 1.0.5: approval and quit-protection fixes, with separate iOS review status",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v1.0.5。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-14; checked: 2026-10-14; version: v1.0.5; FieldToFit has not installed or reproduced performance.",
+            "各分发通道单独记录": "Track distribution channels separately",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "手机审批与桌面退出": "Phone approvals and desktop quitting",
+            "更新校验与运行时接入": "Update checks and runtime integration"
+          },
+          "reviewed_at": "2026-10-14T03:07:30.255407+00:00",
+          "source_hash": "6136f50d7e76611807e7f41d4ac54de485a8edda8ab17ae120f5328fa482533f",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": false,
+      "id": "D-138",
+      "interpretation": [
+        {
+          "locator": "v0.1.44; official limitations and footnotes",
+          "source_ids": [
+            "oct14-e-1",
+            "oct14-e-2"
+          ],
+          "text": "需macOS 15 或更新及Command Line Tools、从源码构建；一次一请求，测量上下文最多 32K，仅两台Mac完成作者测试，部分模型族不支持。",
+          "title": "Mac仍是实验路径"
+        },
+        {
+          "locator": "v0.1.44; official limitations and footnotes",
+          "source_ids": [
+            "oct14-e-1",
+            "oct14-e-2"
+          ],
+          "text": "官方称M4／M5 之外的Mac可能错误输出（有M2 Max报告），Linux CUDA 12.1 源码构建失败，部分Pascal搭配无AVX2 CPU可能中止。0.1.44 当时建议前两类等 0.1.44.1，后一类保留 0.1.43.1；交付前已取得新补丁，状态见下条。",
+          "title": "先读已知问题"
+        },
+        {
+          "locator": "v0.1.44; official limitations and footnotes",
+          "source_ids": [
+            "oct14-e-1",
+            "oct14-e-2"
+          ],
+          "text": "RDNA4 与部分Unsloth文件读取方式改变，输出可能与旧版不同；吞吐、KL及同token比例不混成通用准确率。本站未安装或复现性能。",
+          "title": "量化与性能不能脱离配置"
+        },
+        {
+          "locator": "v0.1.44; official limitations and footnotes",
+          "source_ids": [
+            "oct14-e-1",
+            "oct14-e-2"
+          ],
+          "text": "补丁于北京时间 10 月 14 日 08:13 发布，修正无AVX2 CPU启动、CUDA 12.0／12.1 构建及Metal线程限制；还保留已安装模型大小，并让Responses路由遵循reasoning_effort。维护者没有M2 设备，仍请报告者复验；不能宣称M2 已独立验收。",
+          "title": "交付前补查：0.1.44.1"
+        }
+      ],
+      "name": "Strata",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.1.44。本站未安装或复现性能。",
+      "organization": "Niko1221",
+      "publication": {
+        "first_published_at": "2026-10-14T03:37:26.121674+00:00",
+        "updated_at": "2026-10-14T03:37:26.121674+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-e-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Strata v0.1.44 · Official source 1",
+          "upstream_revision": "v0.1.44",
+          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.44"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-e-2",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Strata v0.1.44 · Official source 2",
+          "upstream_revision": "v0.1.44",
+          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.44.1"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T14",
+          "name": "Strata",
+          "url": "https://fieldtofit.top/watch/CW-T14"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-e-1",
+          "title": "Strata v0.1.44 · Official source 1",
+          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.44"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct14-e-2",
+          "title": "Strata v0.1.44 · Official source 2",
+          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.44.1"
+        }
+      ],
+      "state": "published",
+      "summary": "北京时间 10 月 14 日 03:26 发布，增加Unsloth量化选择、NVFP4 包、Qwen3.6-35B-A3B支持及实验性Metal引擎。",
+      "title": "Strata 0.1.44：实验性Mac路径与 0.1.44.1 补丁边界",
+      "translations": {
+        "en": {
+          "fields": {
+            "Mac仍是实验路径": "Mac remains experimental",
+            "RDNA4 与部分Unsloth文件读取方式改变，输出可能与旧版不同；吞吐、KL及同token比例不混成通用准确率。本站未安装或复现性能。": "Read behavior changes for RDNA4 and some Unsloth files may alter output. Throughput, KL and same-token ratios are not interchangeable with general accuracy; FieldToFit has not installed or reproduced the runtime.",
+            "Strata 0.1.44：实验性Mac路径与 0.1.44.1 补丁边界": "Strata 0.1.44: experimental Mac support and the 0.1.44.1 hotfix limits",
+            "交付前补查：0.1.44.1": "Pre-publication follow-up: 0.1.44.1",
+            "先读已知问题": "Read known issues first",
+            "北京时间 10 月 14 日 03:26 发布，增加Unsloth量化选择、NVFP4 包、Qwen3.6-35B-A3B支持及实验性Metal引擎。": "Released at 03:26 Beijing time on 10/14, adding Unsloth quantization choices, NVFP4 packages, Qwen3.6-35B-A3B support and an experimental Metal engine.",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.1.44。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-14; checked: 2026-10-14; version: v0.1.44; FieldToFit has not installed or reproduced performance.",
+            "官方称M4／M5 之外的Mac可能错误输出（有M2 Max报告），Linux CUDA 12.1 源码构建失败，部分Pascal搭配无AVX2 CPU可能中止。0.1.44 当时建议前两类等 0.1.44.1，后一类保留 0.1.43.1；交付前已取得新补丁，状态见下条。": "The author reports possible incorrect output on Macs other than M4/M5, including M2 Max, Linux CUDA 12.1 source-build failures, and aborts with some Pascal GPUs and CPUs without AVX2; The original 0.1.44 advice was to wait for 0.1.44.1 in the first two cases and retain 0.1.43.1 in the latter. A hotfix was obtained before publication; see the follow-up below.",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "补丁于北京时间 10 月 14 日 08:13 发布，修正无AVX2 CPU启动、CUDA 12.0／12.1 构建及Metal线程限制；还保留已安装模型大小，并让Responses路由遵循reasoning_effort。维护者没有M2 设备，仍请报告者复验；不能宣称M2 已独立验收。": "The hotfix was released at 08:13 Beijing time on 10/14, correcting startup on CPUs without AVX2, CUDA 12.0/12.1 builds and Metal thread limits. It also retains the installed model size and respects reasoning_effort on the Responses route. The maintainer has no M2 and requests reporter verification; independent M2 validation is not established.",
+            "量化与性能不能脱离配置": "Quantization and performance depend on configuration",
+            "需macOS 15 或更新及Command Line Tools、从源码构建；一次一请求，测量上下文最多 32K，仅两台Mac完成作者测试，部分模型族不支持。": "Requires macOS 15 or later, Command Line Tools and a source build. It processes one request at a time, with measured context up to 32K; the author tested only two Macs and some model families are unsupported."
+          },
+          "reviewed_at": "2026-10-14T03:12:03.855754+00:00",
+          "source_hash": "353adf1c6738727d99a5f02d5a3c9cf494ab379c7ea7089e53fcda96a0b46a0a",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": false,
+      "id": "D-139",
+      "interpretation": [
+        {
+          "locator": "v0.13.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-f-1"
+          ],
+          "text": "作者指定typed-decisions测量为 0.650、ECE 0.033；视觉路径仅核运行一致性，不等于视觉准确率。延迟依赖问题数、状态长度、图像与设备。",
+          "title": "决策成绩与视觉验证分开"
+        },
+        {
+          "locator": "v0.13.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-f-1"
+          ],
+          "text": "Decima-agent 2.2 改变长问题／选项窗口，旧运行器拒绝新布局；可按SHA-256 固定取得旧 2.1。固定路由器manifest不会固定其下游目标。",
+          "title": "固定版本的范围"
+        },
+        {
+          "locator": "v0.13.0; official limitations and footnotes",
+          "source_ids": [
+            "oct14-f-1"
+          ],
+          "text": "修复CUDA闲置后解码失败等问题。运行器Apache-2.0 不覆盖全部权重；d1 的LFM Open License v1.0 含年营收 10,000,000 美元商业门槛。逐权重协议与硬件须核对，本站未实测。",
+          "title": "运行器与权重许可不同"
+        }
+      ],
+      "name": "Ollaya",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：v0.13.0。本站未安装或复现性能。",
+      "organization": "ollaya-dev",
+      "publication": {
+        "first_published_at": "2026-10-14T03:38:18.700116+00:00",
+        "updated_at": "2026-10-14T03:38:18.700116+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-f-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Ollaya v0.13.0 · Official source 1",
+          "upstream_revision": "v0.13.0",
+          "url": "https://github.com/ollaya-dev/ollaya/releases/tag/v0.13.0"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T06",
+          "name": "Ollaya",
+          "url": "https://fieldtofit.top/watch/CW-T06"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-f-1",
+          "title": "Ollaya v0.13.0 · Official source 1",
+          "url": "https://github.com/ollaya-dev/ollaya/releases/tag/v0.13.0"
+        }
+      ],
+      "state": "published",
+      "summary": "北京时间 10 月 13 日 11:07 发布，新增Liquid AI d1 文本／图像决策路径、Decima-agent 2.2 及manifest摘要取得方式。",
+      "title": "Ollaya 0.13.0：新决策模型与摘要固定版本，许可逐权重核对",
+      "translations": {
+        "en": {
+          "fields": {
+            "Decima-agent 2.2 改变长问题／选项窗口，旧运行器拒绝新布局；可按SHA-256 固定取得旧 2.1。固定路由器manifest不会固定其下游目标。": "Decima-agent 2.2 changes long-question/option windows; older runtimes reject the new layout. Old 2.1 can be pinned by SHA-256; Pinning a router manifest does not pin its downstream targets.",
+            "Ollaya 0.13.0：新决策模型与摘要固定版本，许可逐权重核对": "Ollaya 0.13.0: decision models and digest pinning, with weight-specific licenses",
+            "作者指定typed-decisions测量为 0.650、ECE 0.033；视觉路径仅核运行一致性，不等于视觉准确率。延迟依赖问题数、状态长度、图像与设备。": "The author reports 0.650 on a specified typed-decisions measurement and ECE 0.033. Vision-path parity checks do not measure visual accuracy. Latency depends on question count, state length, images and hardware.",
+            "修复CUDA闲置后解码失败等问题。运行器Apache-2.0 不覆盖全部权重；d1 的LFM Open License v1.0 含年营收 10,000,000 美元商业门槛。逐权重协议与硬件须核对，本站未实测。": "Includes a fix for CUDA decoder failures after idling. The runtime’s Apache-2.0 license does not cover every weight. d1’s LFM Open License v1.0 includes a USD 10,000,000 annual-revenue commercial threshold. Check each weight agreement and hardware requirement; FieldToFit has not tested it.",
+            "决策成绩与视觉验证分开": "Separate decision scores from vision checks",
+            "北京时间 10 月 13 日 11:07 发布，新增Liquid AI d1 文本／图像决策路径、Decima-agent 2.2 及manifest摘要取得方式。": "Released at 11:07 Beijing time on 10/13, adding Liquid AI d1 text/image decision paths, Decima-agent 2.2 and retrieval by manifest digest.",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：v0.13.0。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-13; checked: 2026-10-14; version: v0.13.0; FieldToFit has not installed or reproduced performance.",
+            "固定版本的范围": "Scope of version pinning",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "运行器与权重许可不同": "Runtime and weight licenses differ"
+          },
+          "reviewed_at": "2026-10-14T03:08:46.749773+00:00",
+          "source_hash": "df38088b170d1eb81dca1d2879723ac08034c1824125dd7fd5a52b32807f9514",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "skill",
+      "checked_at": "2026-10-14",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": false,
+      "id": "D-140",
+      "interpretation": [
+        {
+          "locator": "0.6.13; official limitations and footnotes",
+          "source_ids": [
+            "oct14-g-1"
+          ],
+          "text": "修复错误边界、未定义refetch及纯空格标题等样例，simplify-ignore增加代码块保护与已撤销修改保留。",
+          "title": "样例与编辑保护"
+        },
+        {
+          "locator": "0.6.13; official limitations and footnotes",
+          "source_ids": [
+            "oct14-g-1"
+          ],
+          "text": "测试驱动技能增加提示已含代码时的触发；作者固定模型、6 条目标及 24 条相邻提示不代表跨模型与客户端全覆盖。",
+          "title": "评测样本限定"
+        },
+        {
+          "locator": "0.6.13; official limitations and footnotes",
+          "source_ids": [
+            "oct14-g-1"
+          ],
+          "text": "/review与/test文档改为主会话执行，不再称自动派生persona；宿主列表区分维护者实际运行入口，部分 0.6.12 指南撤回。本站未运行作者评测。",
+          "title": "主会话与宿主边界"
+        }
+      ],
+      "name": "Addy Osmani Agent Skills",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：0.6.13。本站未安装或复现性能。",
+      "organization": "Addy Osmani",
+      "publication": {
+        "first_published_at": "2026-10-14T03:39:12.728265+00:00",
+        "updated_at": "2026-10-14T03:39:12.728265+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-g-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "Addy Osmani Agent Skills 0.6.13 · Official source 1",
+          "upstream_revision": "0.6.13",
+          "url": "https://github.com/addyosmani/agent-skills/releases/tag/0.6.13"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-S04",
+          "name": "Addy Osmani Agent Skills",
+          "url": "https://fieldtofit.top/watch/CW-S04"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct14-g-1",
+          "title": "Addy Osmani Agent Skills 0.6.13 · Official source 1",
+          "url": "https://github.com/addyosmani/agent-skills/releases/tag/0.6.13"
+        }
+      ],
+      "state": "published",
+      "summary": "北京时间 10 月 14 日 04:21 发布，接续 0.6.12；本次读取资料不会安装、加载或执行这些技能。",
+      "title": "Agent Skills 0.6.13：修正样例、保护规则与宿主说明",
+      "translations": {
+        "en": {
+          "fields": {
+            "/review与/test文档改为主会话执行，不再称自动派生persona；宿主列表区分维护者实际运行入口，部分 0.6.12 指南撤回。本站未运行作者评测。": "/review and /test documentation now describes main-session execution rather than automatically spawning personas. Host lists distinguish interfaces actually run by maintainers, and some 0.6.12 guidance is withdrawn; FieldToFit has not run the author’s evaluations.",
+            "Agent Skills 0.6.13：修正样例、保护规则与宿主说明": "Agent Skills 0.6.13: sample, protection-rule and host-documentation fixes",
+            "主会话与宿主边界": "Main-session and host boundaries",
+            "修复错误边界、未定义refetch及纯空格标题等样例，simplify-ignore增加代码块保护与已撤销修改保留。": "Fixes examples involving error boundaries, undefined refetch and whitespace-only titles. simplify-ignore strengthens code-block protection and preservation of reverted edits.",
+            "北京时间 10 月 14 日 04:21 发布，接续 0.6.12；本次读取资料不会安装、加载或执行这些技能。": "Released at 04:21 Beijing time on 10/14, following 0.6.12. Reading these materials does not install, load or execute the skills.",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：0.6.13。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-14; checked: 2026-10-14; version: 0.6.13; FieldToFit has not installed or reproduced performance.",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "样例与编辑保护": "Samples and editing protection",
+            "测试驱动技能增加提示已含代码时的触发；作者固定模型、6 条目标及 24 条相邻提示不代表跨模型与客户端全覆盖。": "The test-driven skill adds triggering when prompts already contain code. The author’s fixed model, 6 target prompts and 24 neighboring prompts do not establish coverage across models and clients.",
+            "评测样本限定": "Evaluation sample limits"
+          },
+          "reviewed_at": "2026-10-14T03:09:28.533250+00:00",
+          "source_hash": "a8753dd6c22581db93386588b1b46284656c239a1bfcbc8b5732b1213022274a",
           "state": "reviewed"
         }
       }
@@ -622,331 +2784,11 @@
       }
     },
     {
-      "category": "model",
-      "checked_at": "2026-10-13",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-12",
-      "highlight": true,
-      "id": "D-127",
-      "interpretation": [
-        {
-          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
-          "source_ids": [
-            "oct13-a-1",
-            "oct13-a-2"
-          ],
-          "text": "模型卡列出 1M token推理上下文，支持文本、图像、视频和音频输入，输出为文本；本次没有核实音视频生成能力。",
-          "title": "输入和输出范围"
-        },
-        {
-          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
-          "source_ids": [
-            "oct13-a-1",
-            "oct13-a-2"
-          ],
-          "text": "Wonder提供API与Muse Code入口，Full面向Muse Code订阅用户；消费者Muse更新分阶段推出，各地区可用性、额度、具体价格与权重获取条件仍未逐项核实。",
-          "title": "获取入口分阶段开放"
-        },
-        {
-          "locator": "Muse Wonder / Wonder Full · 2026-10-12 release / model card",
-          "source_ids": [
-            "oct13-a-1",
-            "oct13-a-2"
-          ],
-          "text": "官方表格包含不同运行框架和评分口径。长期记忆测试不证明无限记忆，工作流部分得分不等于完整成功率；本站未运行或复现模型评测。Meta官方模型与社区nanoMuse分别记载。",
-          "title": "能力成绩保留评测条件"
-        }
-      ],
-      "name": "Muse Wonder",
-      "note": "原始时间：2026-10-12 (day precision)；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：Muse Wonder / Wonder Full · 2026-10-12。本站未安装、运行或复现性能。",
-      "organization": "Meta",
-      "publication": {
-        "first_published_at": "2026-10-13T03:41:15.206302+00:00",
-        "updated_at": "2026-10-13T03:41:15.206302+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-13",
-          "coverage": "link_only",
-          "id": "oct13-a-1",
-          "locator": "Official release/model card; 2026-10-12 (day precision)",
-          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
-          "retrieved_at": "2026-10-13",
-          "rights": {
-            "basis": "原创整理，链接原文"
-          },
-          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 1",
-          "upstream_revision": "Muse Wonder / Wonder Full · 2026-10-12",
-          "url": "https://research.meta.ai/blog/muse-wonder"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-13",
-          "coverage": "link_only",
-          "id": "oct13-a-2",
-          "locator": "Official release/model card; 2026-10-12 (day precision)",
-          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
-          "retrieved_at": "2026-10-13",
-          "rights": {
-            "basis": "原创整理，链接原文"
-          },
-          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 2",
-          "upstream_revision": "Muse Wonder / Wonder Full · 2026-10-12",
-          "url": "https://research.meta.ai/static/muse-wonder-model-card"
-        }
-      ],
-      "related": [],
-      "source_published_at": "2026-10-12",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "oct13-a-1",
-          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 1",
-          "url": "https://research.meta.ai/blog/muse-wonder"
-        },
-        {
-          "coverage": "link_only",
-          "id": "oct13-a-2",
-          "title": "Muse Wonder Muse Wonder / Wonder Full · 2026-10-12 · Official source 2",
-          "url": "https://research.meta.ai/static/muse-wonder-model-card"
-        },
-        {
-          "coverage": "link_only",
-          "id": "analysis",
-          "title": "Muse Wonder 模型卡专题解读",
-          "url": "https://fieldtofit.top/maps/muse-wonder-agent-evaluation"
-        }
-      ],
-      "state": "published",
-      "summary": "Meta于 2026-10-12 公布Muse Wonder与Wonder Full，强调利用既有对话资料的Active Memory，以及跟踪任务目标、阻塞和需澄清事项的Active Focus。",
-      "title": "Muse Wonder：Meta将长任务与持续记忆带入新模型，入口仍分阶段开放",
-      "translations": {
-        "en": {
-          "fields": {
-            "Meta于 2026-10-12 公布Muse Wonder与Wonder Full，强调利用既有对话资料的Active Memory，以及跟踪任务目标、阻塞和需澄清事项的Active Focus。": "Meta announced Muse Wonder and Wonder Full on 2026-10-12, emphasizing Active Memory for prior conversation information and Active Focus for tracking goals, blockers and matters needing clarification.",
-            "Muse Wonder 模型卡专题解读": "Muse Wonder model-card analysis",
-            "Muse Wonder：Meta将长任务与持续记忆带入新模型，入口仍分阶段开放": "Muse Wonder: Meta brings long tasks and persistent memory to a new model, with staged access",
-            "Wonder提供API与Muse Code入口，Full面向Muse Code订阅用户；消费者Muse更新分阶段推出，各地区可用性、额度、具体价格与权重获取条件仍未逐项核实。": "Wonder has API and Muse Code access; Full is offered to Muse Code subscribers. Consumer Muse updates roll out in stages. Regional access, quotas, exact prices and weight-access conditions have not been verified individually.",
-            "原创整理，链接原文": "Original commentary with links to the source",
-            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
-            "原始时间：2026-10-12 (day precision)；事件日期（北京时间或发布者日历日期）：2026-10-12；本站核对：2026-10-13；版本：Muse Wonder / Wonder Full · 2026-10-12。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12 (day precision); event date (Beijing or publisher calendar date): 2026-10-12; checked:2026-10-13; version: Muse Wonder / Wonder Full · 2026-10-12. FieldToFit has not installed, run or reproduced performance.",
-            "官方表格包含不同运行框架和评分口径。长期记忆测试不证明无限记忆，工作流部分得分不等于完整成功率；本站未运行或复现模型评测。Meta官方模型与社区nanoMuse分别记载。": "The official tables include different harnesses and scoring rules. Memory tests do not establish unlimited memory, and partial workflow score is not complete-success rate. FieldToFit has not run or reproduced the model evaluations. Meta’s official model and community nanoMuse are recorded separately.",
-            "模型卡列出 1M token推理上下文，支持文本、图像、视频和音频输入，输出为文本；本次没有核实音视频生成能力。": "The model card lists a 1M-token inference context and text, image, video and audio inputs, with text output. Audio or video generation capabilities were not verified.",
-            "能力成绩保留评测条件": "Retain evaluation conditions",
-            "获取入口分阶段开放": "Access rolls out in stages",
-            "输入和输出范围": "Input and output scope"
-          },
-          "reviewed_at": "2026-10-13T03:32:16.850388+00:00",
-          "source_hash": "a2b1ed499c8c6f4261e1335bb1d113308b03e04e2a875c4b083b8474f9e9536f",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
       "category": "agent",
       "checked_at": "2026-10-13",
       "editor": "FieldToFit",
       "event_date": "2026-10-13",
-      "highlight": true,
-      "id": "D-128",
-      "interpretation": [
-        {
-          "locator": "v1.0.4 release / model card",
-          "source_ids": [
-            "oct13-b-1"
-          ],
-          "text": "MCP敏感环境配置转入加密凭据存储；拒绝含密码的URL，避免向未知重定向主机转发密钥。这些是具体防护变化，未验证整个系统的独立安全审计。",
-          "title": "凭据存储与重定向保护"
-        },
-        {
-          "locator": "v1.0.4 release / model card",
-          "source_ids": [
-            "oct13-b-1"
-          ],
-          "text": "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。",
-          "title": "手机审批与支付边界"
-        },
-        {
-          "locator": "v1.0.4 release / model card",
-          "source_ids": [
-            "oct13-b-1"
-          ],
-          "text": "桌面新增DeepSeek Harness；iOS的TestFlight提交、审核与用户取得版本分别记载，不把桌面 1.0.4 当作所有iOS用户的现有版本。GPL-3.0-or-later；外部模型服务、跨端同步与iOS不能操控其他应用的限制保留。",
-          "title": "分发版本与社区边界"
-        }
-      ],
-      "name": "nanoMuse",
-      "note": "原始时间：2026-10-12T17:30:52Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v1.0.4。本站未安装、运行或复现性能。",
-      "organization": "nano-muse",
-      "publication": {
-        "first_published_at": "2026-10-13T03:41:39.840696+00:00",
-        "updated_at": "2026-10-13T03:41:39.840696+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-13",
-          "coverage": "link_only",
-          "id": "oct13-b-1",
-          "locator": "Official release/model card; 2026-10-12T17:30:52Z",
-          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
-          "retrieved_at": "2026-10-13",
-          "rights": {
-            "basis": "原创整理，链接原文"
-          },
-          "title": "nanoMuse v1.0.4 · Official source 1",
-          "upstream_revision": "v1.0.4",
-          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.4"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-A09",
-          "name": "nanoMuse",
-          "url": "https://fieldtofit.top/watch/CW-A09"
-        }
-      ],
-      "source_published_at": "2026-10-12",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "oct13-b-1",
-          "title": "nanoMuse v1.0.4 · Official source 1",
-          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.4"
-        }
-      ],
-      "state": "published",
-      "summary": "nanoMuse是社区个人Agent，并非Meta官方Muse。1.0.4 于北京时间 2026-10-13 01:30 发布，补充加密凭据、跨设备操作审批与桌面DeepSeek Harness接入。",
-      "title": "nanoMuse 1.0.4：加强跨设备审批与凭据存储，iOS通道需分开看",
-      "translations": {
-        "en": {
-          "fields": {
-            "MCP敏感环境配置转入加密凭据存储；拒绝含密码的URL，避免向未知重定向主机转发密钥。这些是具体防护变化，未验证整个系统的独立安全审计。": "Sensitive MCP environment configuration moves to an encrypted credential store; password-bearing URLs are rejected and keys are not forwarded to unknown redirect hosts. These are specific safeguards, not a verified independent security audit of the whole system.",
-            "nanoMuse 1.0.4：加强跨设备审批与凭据存储，iOS通道需分开看": "nanoMuse 1.0.4: stronger cross-device approvals and credential storage, with separate iOS rollout",
-            "nanoMuse是社区个人Agent，并非Meta官方Muse。1.0.4 于北京时间 2026-10-13 01:30 发布，补充加密凭据、跨设备操作审批与桌面DeepSeek Harness接入。": "nanoMuse is a community personal agent, not Meta’s official Muse. Version 1.0.4 was released at 01:30 Beijing time on 2026-10-13, adding encrypted credentials, cross-device action approvals and desktop DeepSeek Harness integration.",
-            "凭据存储与重定向保护": "Credential storage and redirect protection",
-            "分发版本与社区边界": "Distribution versions and community boundaries",
-            "原创整理，链接原文": "Original commentary with links to the source",
-            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
-            "原始时间：2026-10-12T17:30:52Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v1.0.4。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T17:30:52Z; event date (Beijing or publisher calendar date): 2026-10-13; checked:2026-10-13; version: v1.0.4; FieldToFit has not installed, run or reproduced performance.",
-            "手机审批与支付边界": "Phone approvals and payment boundaries",
-            "桌面新增DeepSeek Harness；iOS的TestFlight提交、审核与用户取得版本分别记载，不把桌面 1.0.4 当作所有iOS用户的现有版本。GPL-3.0-or-later；外部模型服务、跨端同步与iOS不能操控其他应用的限制保留。": "Desktop adds DeepSeek Harness. TestFlight submission, review and the version available to iOS users are separate; desktop 1.0.4 is not assumed to be available to all iOS users. GPL-3.0-or-later; external model services, cross-device synchronization and iOS’s inability to control other applications remain relevant.",
-            "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。": "Cross-device actions can be approved on the phone that initiated the task. Payments allow one-time approval or denial, and approval timeouts are treated as denial. FieldToFit has not tested actual device permissions or timeout behavior."
-          },
-          "reviewed_at": "2026-10-13T03:32:28.090053+00:00",
-          "source_hash": "ae3d2d480e3de9a0b6cf1e1233b268aa5fe6a0e686262ce3ac18052f99985840",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
-      "category": "tool",
-      "checked_at": "2026-10-13",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-13",
-      "highlight": true,
-      "id": "D-129",
-      "interpretation": [
-        {
-          "locator": "v0.1.43.1 release / model card",
-          "source_ids": [
-            "oct13-c-1"
-          ],
-          "text": "自适应计算重叠恢复为默认关闭、主动开启；对部分NVIDIA卡有利的设置可能拖慢另一些消费级设备，不能默认套用。",
-          "title": "自适应重叠默认值变化"
-        },
-        {
-          "locator": "v0.1.43.1 release / model card",
-          "source_ids": [
-            "oct13-c-1"
-          ],
-          "text": "长提示词读取失败可回退，慢磁盘进度检测得到修复；更新器核对实际引擎版本，避免新构建标记与旧二进制混用导致后续更新被跳过。",
-          "title": "读取回退与真实构建版本"
-        },
-        {
-          "locator": "v0.1.43.1 release / model card",
-          "source_ids": [
-            "oct13-c-1"
-          ],
-          "text": "修复双NVIDIA卡并发、部分AMD／Intel路径与工具输出解析。作者吞吐量来自指定显卡、请求数和配置，双Intel卡部分修复仍待报告者验证。Windows/Linux、内存、显存、量化和权重条件保留；MIT；本站未安装或复现速度和精度。",
-          "title": "硬件限定的修复与成绩"
-        }
-      ],
-      "name": "Strata",
-      "note": "原始时间：2026-10-12T17:30:57Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v0.1.43.1。本站未安装、运行或复现性能。",
-      "organization": "Niko1221",
-      "publication": {
-        "first_published_at": "2026-10-13T03:42:33.606257+00:00",
-        "updated_at": "2026-10-13T03:42:33.606257+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-13",
-          "coverage": "link_only",
-          "id": "oct13-c-1",
-          "locator": "Official release/model card; 2026-10-12T17:30:57Z",
-          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
-          "retrieved_at": "2026-10-13",
-          "rights": {
-            "basis": "原创整理，链接原文"
-          },
-          "title": "Strata v0.1.43.1 · Official source 1",
-          "upstream_revision": "v0.1.43.1",
-          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.43.1"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-T14",
-          "name": "Strata",
-          "url": "https://fieldtofit.top/watch/CW-T14"
-        }
-      ],
-      "source_published_at": "2026-10-12",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "oct13-c-1",
-          "title": "Strata v0.1.43.1 · Official source 1",
-          "url": "https://github.com/Niko1221/Strata/releases/tag/v0.1.43.1"
-        }
-      ],
-      "state": "published",
-      "summary": "Strata是本地模型推理运行器。0.1.43.1 于北京时间 2026-10-13 01:30 发布，修复读取、构建与多GPU执行路径；不同硬件的性能条件分别保留。",
-      "title": "Strata 0.1.43.1：修复推理回退与构建识别，硬件成绩按配置阅读",
-      "translations": {
-        "en": {
-          "fields": {
-            "Strata 0.1.43.1：修复推理回退与构建识别，硬件成绩按配置阅读": "Strata 0.1.43.1: inference fallback and build identification fixes, with hardware-specific results",
-            "Strata是本地模型推理运行器。0.1.43.1 于北京时间 2026-10-13 01:30 发布，修复读取、构建与多GPU执行路径；不同硬件的性能条件分别保留。": "Strata is a local model inference runtime. Version 0.1.43.1 was released at 01:30 Beijing time on 2026-10-13, fixing reading, builds and multi-GPU execution paths while retaining hardware-specific performance conditions.",
-            "修复双NVIDIA卡并发、部分AMD／Intel路径与工具输出解析。作者吞吐量来自指定显卡、请求数和配置，双Intel卡部分修复仍待报告者验证。Windows/Linux、内存、显存、量化和权重条件保留；MIT；本站未安装或复现速度和精度。": "Fixes cover dual-NVIDIA concurrency, selected AMD/Intel paths and tool-output parsing. Author-reported throughput uses specified GPUs, request counts and configurations; some dual-Intel fixes await the reporter’s verification. Windows/Linux, RAM, VRAM, quantization and weight requirements remain; MIT; FieldToFit has not installed it or reproduced speed and accuracy.",
-            "原创整理，链接原文": "Original commentary with links to the source",
-            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
-            "原始时间：2026-10-12T17:30:57Z；事件日期（北京时间或发布者日历日期）：2026-10-13；本站核对：2026-10-13；版本：v0.1.43.1。本站未安装、运行或复现性能。": "Upstream time: 2026-10-12T17:30:57Z; event date (Beijing or publisher calendar date): 2026-10-13; checked:2026-10-13; version: v0.1.43.1; FieldToFit has not installed, run or reproduced performance.",
-            "硬件限定的修复与成绩": "Hardware-specific fixes and results",
-            "自适应计算重叠恢复为默认关闭、主动开启；对部分NVIDIA卡有利的设置可能拖慢另一些消费级设备，不能默认套用。": "Adaptive compute overlap returns to disabled by default and explicit opt-in. A setting that helps some NVIDIA cards can slow other consumer devices and should not be applied universally.",
-            "自适应重叠默认值变化": "Adaptive-overlap default changes",
-            "读取回退与真实构建版本": "Read fallback and actual build version",
-            "长提示词读取失败可回退，慢磁盘进度检测得到修复；更新器核对实际引擎版本，避免新构建标记与旧二进制混用导致后续更新被跳过。": "Long-prompt reads can fall back on failure, and slow-disk progress detection is corrected. The updater checks the actual engine version to avoid mixing a new build stamp with an old binary and skipping later updates."
-          },
-          "reviewed_at": "2026-10-13T03:32:59.273800+00:00",
-          "source_hash": "8b4b3a50d15668bc3258a78f6fe42771e18dd71908096ae9021df6941cd06bb3",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
-      "category": "agent",
-      "checked_at": "2026-10-13",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-13",
-      "highlight": true,
+      "highlight": false,
       "id": "D-130",
       "interpretation": [
         {
@@ -979,7 +2821,7 @@
       "organization": "earendil-works",
       "publication": {
         "first_published_at": "2026-10-13T03:43:25.345228+00:00",
-        "updated_at": "2026-10-13T03:43:25.345228+00:00"
+        "updated_at": "2026-10-14T03:19:52.895544+00:00"
       },
       "reading_materials": [
         {
@@ -1033,8 +2875,8 @@
             "扩展触发的运行也进入启动钩子，处理器需区分用户消息与自定义消息；启动期间的队列与忙碌状态语义有变化，不能假定每次事件都带用户提示词。": "Extension-triggered runs also enter the startup hook. Handlers must distinguish user from custom messages; queue and busy-state semantics change during startup, so handlers cannot assume every event carries a user prompt.",
             "模型列表与配置校验": "Model lists and configuration validation"
           },
-          "reviewed_at": "2026-10-13T03:33:31.329744+00:00",
-          "source_hash": "67905b6e4752e1825d3dcc6259c6ce5869fda3d1d32e3cec17fdc099bee6f06e",
+          "reviewed_at": "2026-10-14T03:04:45.454671+00:00",
+          "source_hash": "b8c7aa787766c4ee9bdbe5c21c67dce3d41c3c56b59ac461f25e7115dac4bcda",
           "state": "reviewed"
         }
       }
@@ -1044,7 +2886,7 @@
       "checked_at": "2026-10-13",
       "editor": "FieldToFit",
       "event_date": "2026-10-12",
-      "highlight": true,
+      "highlight": false,
       "id": "D-131",
       "interpretation": [
         {
@@ -1077,7 +2919,7 @@
       "organization": "LangChain",
       "publication": {
         "first_published_at": "2026-10-13T03:44:15.969000+00:00",
-        "updated_at": "2026-10-13T03:44:15.969000+00:00"
+        "updated_at": "2026-10-14T03:19:29.118083+00:00"
       },
       "reading_materials": [
         {
@@ -1131,8 +2973,8 @@
             "本次属于deepagents核心SDK；deepagents-code、Talon等组件分别记录版本。保留 0.7.22 按需加载Skill工具的历史说明，不预先承诺token或费用节省。": "This release concerns the deepagents core SDK; deepagents-code, Talon and other components have separate versions. Retain the 0.7.22 explanation of on-demand skill-tool loading, without promising token or cost savings.",
             "组件版本和收益边界": "Component versions and benefit limits"
           },
-          "reviewed_at": "2026-10-13T03:34:02.975413+00:00",
-          "source_hash": "c55736c4857d71d7083e5723d0f4629fcbe1c84590eb2d4f1e9ba6b90b00dba0",
+          "reviewed_at": "2026-10-14T03:04:27.681062+00:00",
+          "source_hash": "f8f76a20d28f938035cbee6404af6bb84fa0e7f57c89541abfc6ce5a84ad66a7",
           "state": "reviewed"
         }
       }
@@ -11580,78 +13422,6 @@
       "title": "微软 MAI 语音模型更新：边听边转写，再用同一声音跨语言回答"
     },
     {
-      "_position": 1,
-      "checked_at": "2026-10-02",
-      "editor": "FieldToFit",
-      "event_date": "2026-09-30",
-      "highlight": false,
-      "id": "D-58",
-      "interpretation": [
-        {
-          "locator": "官方发布及对应采用说明",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "官方把最大输出从 64k 提高到 1M token，面向更长的工作过程；这是输出上限，不应混写成上下文窗口的变化。",
-          "title": "值得关注"
-        },
-        {
-          "locator": "官方发布及对应采用说明",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "当前先面向 Fairwind 计划的可信网络防御合作方；普通开发者不能把“发布”理解为“已普遍可用”。",
-          "title": "开放范围"
-        },
-        {
-          "locator": "官方发布及对应采用说明",
-          "source_ids": [
-            "source-1"
-          ],
-          "text": "介绍期输入／输出价格为每百万 token 2／10 美元，后续为 4／20 美元；介绍期截止和普遍开放时间尚未确认，本站未实测。",
-          "title": "采用条件"
-        }
-      ],
-      "name": "Gemini 4 Argon",
-      "note": "原始材料核对，不代表本站部署或性能复现。",
-      "organization": "Google",
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-02",
-          "coverage": "link_only",
-          "id": "source-1",
-          "locator": "原始发布/文档入口",
-          "reason": "保留来源链接；未据此取得页面正文再分发许可。",
-          "retrieved_at": "2026-10-02",
-          "rights": {},
-          "title": "Google 官方发布",
-          "upstream_revision": "2026-09-30",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M03",
-          "name": "Gemini",
-          "url": "https://fieldtofit.top/for-you#watch-cw-m03"
-        }
-      ],
-      "source_published_at": "2026-09-30",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "source-1",
-          "title": "Google 官方发布",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
-        }
-      ],
-      "state": "published",
-      "summary": "Google 发布 Gemini 4 Argon，强调软件工程、知识工作和网络防御中的长任务执行。",
-      "title": "Gemini 4 Argon：长任务能力升级，当前先向特定合作方开放"
-    },
-    {
       "_position": 2,
       "checked_at": "2026-10-02",
       "editor": "FieldToFit",
@@ -18379,7 +20149,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-14",
+  "reviewed_at": "2026-10-15",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }
