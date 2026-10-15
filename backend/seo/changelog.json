@@ -1,7 +1,35 @@
 {
-  "version": "1.10.2",
-  "revision": "da6c666b79340388a196a39a5f2b7a27a4af2ecc5f8299f9ac7e3eba274b2f4b",
+  "version": "1.10.3",
+  "revision": "1e7f8acefe69116aeaa11badb04dd365ea9cbde5e7cb7cad77892ad7ce15da11",
   "items": [
+    {
+      "version": "1.10.3",
+      "date": "2026-10-15",
+      "deployed_on": "2026-10-15",
+      "copy": {
+        "zh": {
+          "title": "首页精选报告四篇轮换与完整索引",
+          "highlights": [
+            "实现首页固定四篇、正式发布后轮换最早一篇及全部索引保留，统一交互／无脚本网页与AI读取的精选名单和排序。",
+            "明确真实上站及已审实质修订口径，日常核对和文字修改不置顶，发布回执记录实际进入与移出。",
+            "已部署正式站并接入原晨间任务的真实发布回执；已审文章和原时点保留，连续自然日效果仍待观察。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Four-report homepage rotation and complete index",
+          "highlights": [
+            "Implement a four-report homepage window, replacement after successful publication and a complete index, sharing selection and ordering across interactive HTML, direct HTML and AI reads.",
+            "Define genuine publication and reviewed substantive-revision dates; routine checks and copy edits do not promote reports, and receipts record actual entries and exits.",
+            "Deploy to production and connect the existing morning task to actual publication receipts; retain reviewed articles and the original schedule. Consecutive-day operation remains under observation."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.10.3"
+    },
     {
       "version": "1.10.2",
       "date": "2026-10-15",

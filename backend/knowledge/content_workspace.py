@@ -305,6 +305,9 @@ def composed(kind, ident, content, db, withdraw=False):
                 data['edition']='reviewed-updates'
                 now = stamp()
                 item['publication'] = {'first_published_at': (previous.get('publication') or {}).get('first_published_at') if previous else now, 'updated_at': now}
+                if item.get('technical_map'):
+                    from backend.knowledge.report_selection import publication_date
+                    item['publication']['report_selected_at'] = publication_date(previous, item, now)
         if found is not None:entries.pop(found)
         position=content.get('_position')
         if position is not None and (isinstance(position,bool) or not isinstance(position,int) or position<1):fail('展示位置必须是大于 0 的整数')
@@ -392,6 +395,14 @@ def publish(kind, ident, data, withdraw=False):
             gate(kind,ident,content,composed_data)
         else:render(kind,composed_data)
         new=({'id':ident,**composed_data} if kind=='charts' else next(x for x in composed_data['items'] if x['id']==ident))
+        report_rotation = None
+        if kind == 'news' and (new.get('technical_map') or (item['published'] or {}).get('technical_map')):
+            from backend.knowledge.report_selection import rotation
+            before = [x for x in composed_data['items'] if x['id'] != ident]
+            if item['published']:
+                before.append(item['published'])
+            report_rotation = rotation(before, composed_data['items'])
+            report_rotation['status'] = 'withdrawn' if withdraw else 'published'
         writes=[('UPDATE fieldtofit_content_sets SET published_json=?,revision=revision+1,updated_at=? WHERE kind=?',(dump(composed_data),stamp(),kind)),
                 ('UPDATE fieldtofit_content_items SET published_json=?,draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',(dump(new),dump(item['draft'] if withdraw else new),stamp(),kind,ident)),
                 ('INSERT INTO fieldtofit_content_history(kind,item_id,action,reason,snapshot,created_at) VALUES(?,?,?,?,?,?)',(kind,ident,'withdraw' if withdraw else 'publish',reason,dump(new),stamp()))]
@@ -405,7 +416,10 @@ def publish(kind, ident, data, withdraw=False):
         event(db,origin,kind+':'+ident,'withdrawn' if withdraw else 'published_update' if item['published'] else 'published_new',str(item['draft_version']))
         publication_event(db,kind,ident,item['published'],new,context=context)
         execute_statements(db,writes)
-    return detail(kind,ident)
+    result = detail(kind,ident)
+    if report_rotation is not None:
+        result['report_rotation'] = report_rotation
+    return result
 
 def restore(kind, ident, data):
     with editorial_transaction() as db:

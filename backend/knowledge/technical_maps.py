@@ -153,8 +153,10 @@ def project(item):
     publication = item.get('publication') or {}
     obj = {**graph, 'id': item['id'], 'title': item['title'], 'summary': item['summary'], 'sources': sources,
            'related': [{k: r[k] for k in ('id', 'name', 'url')} for r in item.get('related', [])],
-           'publication': {key: publication.get(key) for key in ('first_published_at', 'updated_at')},
+           'publication': {key: publication.get(key) for key in ('first_published_at', 'updated_at', 'report_selected_at') if key != 'report_selected_at' or key in publication},
            'path': '/maps/' + graph['slug'], 'evidence_scope': '作者技术报告与FieldToFit解读；未声称独立复现'}
+    from backend.knowledge.report_selection import selected_at
+    obj['selected_at'] = selected_at(item)
     obj['revision'] = digest(obj)
     fresh = max((r['revised_at'] if r['substantive_revision'] else r['first_published_at'] for r in graph['reports']), key=report_period_end)
     obj['report_activity_at'] = fresh
@@ -168,14 +170,16 @@ def maps(slug='', q='', revision='', archive='all'):
     from backend.knowledge.platform import text
     slug = text(slug, 'slug', 80, False); q = text(q, 'q', 200, False); revision = text(revision, 'revision', 128, False)
     if archive not in ('all', 'recent', 'historical'): raise PlatformError('Invalid archive filter', 'invalid_request', 400)
-    items = [project(item) for item in news()['items'] if item.get('technical_map')]
-    items.sort(key=lambda x: (x['report_activity_at'], x['publication']['updated_at'] or '', x['slug']), reverse=True)
+    collection = news()
+    items = [project(item) for item in collection['items'] if item.get('technical_map')]
+    from backend.knowledge.report_selection import key
+    items.sort(key=key, reverse=True)
     from backend.knowledge.locale import searchable
     items = [x for x in items if (not slug or x['slug'] == slug) and (not q or q.casefold() in ' '.join(searchable({'question':x['question'],'focus':x['focus']}).values()).casefold()) and (archive == 'all' or x['archived'] == (archive == 'historical'))]
     if slug and not items: raise PlatformError('地图未公开或已撤回', 'not_found', 404)
     rev = items[0]['revision'] if slug else digest([x['revision'] for x in items])
     if revision and revision != rev: raise PlatformError('地图已修订，请重新读取', 'map_revision_changed', 409)
-    return {'schema_version': 'fieldtofit.technical-maps.v1', 'items': items, 'total': len(items), 'revision': rev,
+    return {'schema_version': 'fieldtofit.technical-maps.v1', 'items': items, 'total': len(items), 'revision': rev, 'report_selection': collection['report_selection'],
             'scope': '同一个技术问题的已审路线；报告日期与地图修订日期分开；不包含私密检查或审核理由'}
 
 

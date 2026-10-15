@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.10.2](CHANGELOG.md#v1.10.2)** · [fieldtofit-v1.10.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.2)
+**当前源码版本：[v1.10.3](CHANGELOG.md#v1.10.3)** · [fieldtofit-v1.10.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.3)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 为所有者选中的Nano Banana2.1模型卡整理四结论、同号论述与三张本站重绘，分开保留人工偏好Elo、自动事实性、编辑任务和安全判断的口径。
-- 接续10月15日明确批准的A–F六项动态、六项对应档案与本期速览／总表最新事件，保留原始日期、分发条件和历史版本。
-- 沿用既有图文专题、双语审核与HTTP／MCP读取流程；未选报告、未核验线索与模型榜单保持原状态。
+- 实现首页固定四篇、正式发布后轮换最早一篇及全部索引保留，统一交互／无脚本网页与AI读取的精选名单和排序。
+- 明确真实上站及已审实质修订口径，日常核对和文字修改不置顶，发布回执记录实际进入与移出。
+- 已部署正式站并接入原晨间任务的真实发布回执；已审文章和原时点保留，连续自然日效果仍待观察。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

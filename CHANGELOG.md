@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.10.3"></a>
+## v1.10.3 · 首页精选报告四篇轮换与完整索引 · 2026-10-15
+
+<!-- site-deployed:2026-10-15 -->
+<!-- public-title:en:Four-report homepage rotation and complete index -->
+<!-- release-summary:zh:start -->
+- 实现首页固定四篇、正式发布后轮换最早一篇及全部索引保留，统一交互／无脚本网页与AI读取的精选名单和排序。
+- 明确真实上站及已审实质修订口径，日常核对和文字修改不置顶，发布回执记录实际进入与移出。
+- 已部署正式站并接入原晨间任务的真实发布回执；已审文章和原时点保留，连续自然日效果仍待观察。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Implement a four-report homepage window, replacement after successful publication and a complete index, sharing selection and ordering across interactive HTML, direct HTML and AI reads.
+- Define genuine publication and reviewed substantive-revision dates; routine checks and copy edits do not promote reports, and receipts record actual entries and exits.
+- Deploy to production and connect the existing morning task to actual publication receipts; retain reviewed articles and the original schedule. Consecutive-day operation remains under observation.
+<!-- release-summary:en:end -->
+
+对应[REQ-22-8](FieldToFit-PM.md#report-homepage-rotation-plan)，复用已有模块、审核与稳定入口，无数据库迁移。正式部署、双语网页／HTTP／MCP同源及原数据保护已验，原晨间任务已接入发布回执规则；实际结果与仍待观察的自然日边界见[验收](docs/validation/2026-10-15-report-rotation.md)。
+
 <a id="v1.10.2"></a>
 ## v1.10.2 · Nano Banana2.1专题与获批动态更新 · 2026-10-15
 

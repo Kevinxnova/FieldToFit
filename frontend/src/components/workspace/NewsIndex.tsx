@@ -79,7 +79,7 @@ export function NewsIndex({data,loading,error,reload,preview=false}:{data:NewsCo
     </section>
     <HotCardHighlights items={items} preview={preview}/>
     {preview&&items.filter(i=>i.hot_card).map(i=><HotCardReading key={i.id} item={i} preview/>)}
-    <MapCards items={items} preview={preview}/>
+    <MapCards items={items} selection={data.report_selection} preview={preview}/>
     <CodexProgress data={data} preview={preview}/>
     <div className="platform-section-heading"><h3 id="news-releases" tabIndex={-1}>{pick('发布与更新','Releases & updates')}</h3><span>{pick('累计收录 ','Collected ')}{data.total}{pick(' 条',' records')}</span></div>
     {!preview&&<form className="release-filters" onSubmit={e=>{e.preventDefault();change({news_q:input.trim()});}}>

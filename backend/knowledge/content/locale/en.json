@@ -6975,5 +6975,7 @@
   "原始提案（保留输入语言）": "Original proposal (input language)",
   "原文字段保留输入语言；英文正文在下方逐项审核。": "Source fields retain their input language. Review the English fields below.",
   "内部处理备注（保留输入语言）": "Internal handling notes (input language)",
-  "近期动态与采用更新": "Recent developments and adoption updates"
+  "近期动态与采用更新": "Recent developments and adoption updates",
+  "本站精选：": "Selected here: ",
+  "全部精选按本站上站或实质更新排序；首页展示其中最新四篇，历史文章保留原入口。": "All reports follow site publication or substantive updates. The homepage shows the latest four; older articles retain stable links."
 }

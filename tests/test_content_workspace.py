@@ -26,6 +26,8 @@ def make(client,kind='watch'):
 def valid(client,kind,ident):
     d=call(client,f'/content/{kind}/{ident}',method='get').json
     content=copy.deepcopy(ws.seeds()[kind]['items'][0]);content['id']=ident;content['name']='Reviewed isolated example';content['highlight']=False;content.pop('codex_28_days',None)
+    # Generic lifecycle fixtures must not clone a curated report's unique slug.
+    content.pop('technical_map',None)
     if kind=='watch':content['type']='tool'
     content['private_note']='INTERNAL-SECRET'
     r=call(client,f'/content/{kind}/{ident}',{'draft_version':d['draft_version'],'draft':content},'patch');assert r.status_code==200,r.json

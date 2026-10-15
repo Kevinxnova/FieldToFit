@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.10.2](CHANGELOG.md#v1.10.2)** · [fieldtofit-v1.10.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.2)
+**Current source version: [v1.10.3](CHANGELOG.md#v1.10.3)** · [fieldtofit-v1.10.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.3)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Present four findings, matching arguments and three original redraws for the owner-selected Nano Banana2.1 model card, separating human-preference Elo, automated factuality, editing tasks and safety assessments.
-- Continue the six explicitly approved October15 A–F updates, six matching dossiers and overview/latest-event projections while preserving source dates, distribution conditions and historical versions.
-- Retain existing report reading, bilingual review and shared HTTP/MCP data. Unselected reports, unverified leads and model charts keep their prior status.
+- Implement a four-report homepage window, replacement after successful publication and a complete index, sharing selection and ordering across interactive HTML, direct HTML and AI reads.
+- Define genuine publication and reviewed substantive-revision dates; routine checks and copy edits do not promote reports, and receipts record actual entries and exits.
+- Deploy to production and connect the existing morning task to actual publication receipts; retain reviewed articles and the original schedule. Consecutive-day operation remains under observation.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
