@@ -1,0 +1,105 @@
+{
+  "baseline": {
+    "html": [
+      {
+        "ms": 173.38,
+        "selects": 15,
+        "connections": 7,
+        "bytes": 936542,
+        "gzip": 181225
+      },
+      {
+        "ms": 16.22,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 936542,
+        "gzip": 181225
+      },
+      {
+        "ms": 16.66,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 936542,
+        "gzip": 181225
+      },
+      {
+        "ms": 16.77,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 936542,
+        "gzip": 181225
+      },
+      {
+        "ms": 16.36,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 936542,
+        "gzip": 181225
+      },
+      {
+        "ms": 15.86,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 936542,
+        "gzip": 181225
+      }
+    ],
+    "initial_extra": [],
+    "initial_bytes": 936542,
+    "initial_gzip": 181225,
+    "news": 153,
+    "watch": 50
+  },
+  "after": {
+    "html": [
+      {
+        "ms": 171.98,
+        "selects": 15,
+        "connections": 7,
+        "bytes": 122617,
+        "gzip": 27761
+      },
+      {
+        "ms": 10.71,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 122617,
+        "gzip": 27761
+      },
+      {
+        "ms": 10.29,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 122617,
+        "gzip": 27761
+      },
+      {
+        "ms": 9.55,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 122617,
+        "gzip": 27761
+      },
+      {
+        "ms": 9.69,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 122617,
+        "gzip": 27761
+      },
+      {
+        "ms": 10.24,
+        "selects": 7,
+        "connections": 2,
+        "bytes": 122617,
+        "gzip": 27761
+      }
+    ],
+    "initial_extra": [],
+    "initial_bytes": 122617,
+    "initial_gzip": 27761,
+    "news": 153,
+    "watch": 50
+  },
+  "environment": "isolated local Flask test client; 153 news and 50 watch records; no production reads"
+}

@@ -32,11 +32,11 @@ export function ReviewedImage({media,lead=false,compact=false}:{media:NewsMedia;
   </figure>;
 }
 
-export function NewsIndex({data,loading,error,reload,preview=false}:{data:NewsCollection|null;loading:boolean;error:string;reload:()=>void;preview?:boolean}) {
+export function NewsIndex({data,loading,error,reload,preview=false,topics=true,hotCards=false}:{data:NewsCollection|null;loading:boolean;error:string;reload:()=>void;preview?:boolean;topics?:boolean;hotCards?:boolean}) {
   const {pick}=useWorkspace();const [params,setParams]=useSearchParams(),location=useLocation();
-  const range=['7','30','all'].includes(params.get('news_range')||'')?params.get('news_range')!:'7';
+  const range=['7','30','all'].includes(params.get('news_range')||'')?params.get('news_range')!:hotCards?'all':'7';
   const basis=params.get('news_sort')==='updated'?'updated':'event';
-  const cardsOnly=params.get('news_cards')==='1';
+  const cardsOnly=hotCards||params.get('news_cards')==='1';
   const type=params.get('news_type')||'all',query=params.get('news_q')||'';
   const [input,setInput]=useState(query);useEffect(()=>setInput(query),[query]);
   const [today,setToday]=useState(()=>chinaDay(new Date()));
@@ -53,7 +53,7 @@ export function NewsIndex({data,loading,error,reload,preview=false}:{data:NewsCo
   const change=(values:Record<string,string>)=>setParams(p=>{p.delete('news_page');for(const [key,value]of Object.entries(values)){if(value)p.set(key,value);else p.delete(key);}return p;},{preventScrollReset:true});
   const reset=()=>change({news_range:'all',news_type:'',news_q:'',news_sort:'',news_cards:''});
   const remember=(id:string)=>{if(preview)return;try{sessionStorage.setItem('fieldtofit.reading.return',JSON.stringify({search:location.search,id}));}catch{/* Links and URL filters work without session storage. */}};
-  const returnTo='/for-you'+location.search;
+  const returnTo=location.pathname+location.search+location.hash;
   const linkState=(id:string)=>({readingReturn:{url:returnTo,id}});
   const signature=visible.map(i=>i.id).join('|');
   const restored=useRef(false);
@@ -69,24 +69,24 @@ export function NewsIndex({data,loading,error,reload,preview=false}:{data:NewsCo
   const hashId=/^#news-(d-\d+)$/i.exec(location.hash)?.[1].toUpperCase();
   const excluded=hashId&&!visible.some(i=>i.id===hashId)?items.find(i=>i.id===hashId):undefined;
   return <section className="news-section">
-    <div className="platform-section-heading"><h2 id="recent-news" tabIndex={-1}>{pick('近期动态','Recent developments')}</h2><span>{data?.reviewed_at}</span></div>
-    <div className="section-overview"><strong>{data?.title||pick('从变化读到采用条件','From changes to adoption conditions')}</strong><p>{pick('本期速览提炼已审内容；发布记录保留事件日期、解读和原始出处。','The briefing highlights reviewed material; the archive retains event dates, notes and sources.')}</p></div>
+    <div className="platform-section-heading"><h2 id="recent-news" tabIndex={-1}>{hotCards?pick('热点索引','Information card index'):pick('近期动态','Recent developments')}</h2><span>{data?.reviewed_at}</span></div>
+    <div className="section-overview"><strong>{hotCards?pick('从变化读到采用条件','From changes to adoption conditions'):data?.title||pick('从变化读到采用条件','From changes to adoption conditions')}</strong><p>{hotCards?pick('按时间、类型或关键词查找信息卡，进入详情查看人群、条件与证据。','Find cards by date, type or keyword, then open their audiences, conditions and evidence.'):pick('近期热点速览提炼已审内容；发布记录保留事件日期、解读和原始出处。','The briefing highlights reviewed material; the archive retains event dates, notes and sources.')}</p></div>
     {loading&&<p role="status">{pick('正在读取动态…','Loading developments…')}</p>}{error&&<div role="alert"><p>{pick('动态暂时无法读取。','Developments are unavailable.')}</p><button className="button" onClick={reload}>{pick('重试','Retry')}</button></div>}
     {!!data&&!loading&&!error&&<>
-    <section className="news-glance glance-b"><div className="platform-section-heading"><h3 id="news-overview" tabIndex={-1}>{pick('本期速览','At a glance')}</h3><span>{pick('整理日期：','Edited: ')}{data.reviewed_at}</span></div>
+    {!hotCards&&<section className="news-glance glance-b"><div className="platform-section-heading"><h3 id="news-overview" tabIndex={-1}>{pick('近期热点速览','Recent highlights')}</h3><span>{pick('整理日期：','Edited: ')}{data.reviewed_at}</span></div>
       <div className="glance-layout">{highlights.map((item,i)=><article key={item.id} className={(i===0?'glance-lead':'glance-secondary')+(item.media?' has-media':'')}><div className="glance-copy"><h4><Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{item.name}</Link></h4><ContentExposure id={item.id}><p>{item.summary}</p></ContentExposure>{i===0&&item.interpretation[0]&&<p className="glance-note muted">{item.interpretation[0].text}</p>}<Link to={contentPath(item.id)} state={linkState(item.id)} onClick={()=>remember(item.id)}>{pick('查看完整资料','Read full details')} ↗</Link></div>{item.media&&<ReviewedImage media={item.media} lead={i===0} compact={i!==0}/>}</article>)}</div>
       {!highlights.length&&<p>{pick('本期暂无已审精选。可继续浏览发布记录。','No reviewed highlights in this edition. Browse the archive below.')}</p>}
-    </section>
-    <HotCardHighlights items={items} preview={preview}/>
+    </section>}
+    {topics&&<HotCardHighlights items={items} preview={preview}/>}
     {preview&&items.filter(i=>i.hot_card).map(i=><HotCardReading key={i.id} item={i} preview/>)}
-    <MapCards items={items} selection={data.report_selection} preview={preview}/>
-    <CodexProgress data={data} preview={preview}/>
+    {topics&&<MapCards items={items} selection={data.report_selection} preview={preview}/>}
+    {topics&&<CodexProgress data={data} preview={preview}/>}
     <div className="platform-section-heading"><h3 id="news-releases" tabIndex={-1}>{pick('发布与更新','Releases & updates')}</h3><span>{pick('累计收录 ','Collected ')}{data.total}{pick(' 条',' records')}</span></div>
     {!preview&&<form className="release-filters" onSubmit={e=>{e.preventDefault();change({news_q:input.trim()});}}>
       <label>{pick('时间范围','Time range')}<select aria-label={pick('时间范围','Time range')} value={range} onChange={e=>change({news_range:e.target.value})}><option value="7">{pick('近7日','Last 7 days')}</option><option value="30">{pick('近30日','Last 30 days')}</option><option value="all">{pick('全部时间','All time')}</option></select></label>
       <label>{pick('日期口径','Date basis')}<select aria-label={pick('日期口径','Date basis')} value={basis} onChange={e=>change({news_sort:e.target.value})}><option value="event">{pick('事件／来源发布','Event / source release')}</option><option value="updated">{pick('最近收录／更新','Recently added / revised')}</option></select></label>
       <label>{pick('内容类型','Content type')}<select aria-label={pick('内容类型','Content type')} value={type} onChange={e=>change({news_type:e.target.value})}><option value="all">{pick('全部类型','All types')}</option>{Object.entries(newsCategories).map(([key,label])=><option key={key} value={key}>{pick(...label)}</option>)}</select></label>
-      <label>{pick('热点信息卡','Information cards')}<select aria-label={pick('热点信息卡','Information cards')} value={cardsOnly?'1':'all'} onChange={e=>change({news_cards:e.target.value==='1'?'1':''})}><option value="all">{pick('全部动态','All developments')}</option><option value="1">{pick('仅有信息卡','With information cards')}</option></select></label>
+      {!hotCards&&<label>{pick('热点信息卡','Information cards')}<select aria-label={pick('热点信息卡','Information cards')} value={cardsOnly?'1':'all'} onChange={e=>change({news_cards:e.target.value==='1'?'1':''})}><option value="all">{pick('全部动态','All developments')}</option><option value="1">{pick('仅有信息卡','With information cards')}</option></select></label>}
       <label>{pick('对象／关键词','Object / keyword')}<input type="search" aria-label={pick('对象／关键词','Object / keyword')} value={input} onChange={e=>setInput(e.target.value)} maxLength={200}/></label><button className="button">{pick('查找动态','Find developments')}</button>
     </form>}
     <p className="release-status" role="status">{preview?pick('私密预览 · 当前条目','Private preview · current record'):pick(`${range==='all'?'全部时间':start+' — '+today} · ${basis==='event'?'事件／来源日期':'本站实际收录／修订日期'} · 匹配 ${matching.length} 条 · 日期未明确 ${items.filter(i=>!day(i)).length} 条（全部时间可查）`,`${range==='all'?'All time':start+' — '+today} · ${basis==='event'?'Event / source dates':'Actual publication / revision dates'} · ${matching.length} matches · ${items.filter(i=>!day(i)).length} undated (available under All time)`)}</p>

@@ -21,9 +21,9 @@ export function ForYouHero({ onRead }: { onRead: () => void }) {
     return () => { disposed = true; destroy?.(); };
   }, []);
   const destinations = [
-    ['model-landscape', pick('浏览模型图表', 'Explore model charts'), pick('比较能力与价格', 'Compare capability and cost')],
-    ['recent-news', pick('阅读近期动态', 'Read developments'), pick('了解发布、变化与解读', 'Releases, changes and analysis')],
-    ['resource-dossiers', pick('浏览持续关注', 'Explore ongoing watch'), pick('查看版本、原文与采用条件', 'Versions, sources and adoption')],
+    ['/for-you/news', pick('阅读近期动态', 'Read developments'), pick('了解发布、变化与解读', 'Releases, changes and analysis')],
+    ['/for-you/models', pick('浏览模型图表', 'Explore model charts'), pick('比较能力与价格', 'Compare capability and cost')],
+    ['/for-you/watch', pick('浏览持续关注', 'Explore ongoing watch'), pick('查看版本、原文与采用条件', 'Versions, sources and adoption')],
   ];
   return <header className="for-you-hero">
     <div className="for-you-hero-banner">
@@ -45,9 +45,9 @@ export function ForYouHero({ onRead }: { onRead: () => void }) {
     </div>
     <nav className="for-you-hero-links" aria-label={pick('阅读入口', 'Reading sections')}>
       <Link to="/for-you/daily"><span className="for-you-hero-number" aria-hidden="true">01</span><span><strong>{pick("阅读 AI 日报", "Read AI Daily")}</strong><span>{pick("每天早上 9 点，读懂今日重点", "The essentials, daily at 09:00 Beijing time")}</span></span><span className="for-you-hero-arrow" aria-hidden="true">↗</span></Link>
-      {destinations.map(([id, title, description], index) => <a key={id} href={'#' + id} onClick={onRead}>
-        <span className="for-you-hero-number" aria-hidden="true">0{index + 2}</span><span><strong>{title}</strong><span>{description}</span></span><span className="for-you-hero-arrow" aria-hidden="true">↘</span>
-      </a>)}
+      {destinations.map(([id, title, description], index) => <Link key={id} to={id} onClick={onRead}>
+        <span className="for-you-hero-number" aria-hidden="true">0{index + 2}</span><span><strong>{title}</strong><span>{description}</span></span><span className="for-you-hero-arrow" aria-hidden="true">↗</span>
+      </Link>)}
     </nav>
   </header>;
 }

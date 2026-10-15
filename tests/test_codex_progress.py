@@ -112,7 +112,7 @@ def test_no_empty_topic_days_and_search_html_reads_same_logs(client):
     data = collection()
     for item in data['items']: item.pop('codex_28_days', None)
     assert news.news(_data=data)['codex_progress']['days'] == []
-    page = client.get('/for-you', headers={'Host':'fieldtofit.top'})
+    page = client.get('/for-you/codex', headers={'Host':'fieldtofit.top'})
     assert page.status_code == 200
     assert 'id="news-codex-28-days"' in page.text and 'Codex CLI 0.160.1' in page.text
     assert '官方 Day 1' in page.text and '来源日期 · 未提供时刻' in page.text
@@ -217,7 +217,7 @@ def test_posts_round_trip_corrections_private_notes_and_withdrawal(client,monkey
     assert pre['ready'] and 'SECRET-PENDING' not in json.dumps(pre)
     published=publish(client,'news','D-78');body=client.get('/api/v1/platform/news').json
     assert body['revision']!=first['revision'] and event(body)['publication']['updated_at']
-    for path in ('/for-you','/news/D-78'):
+    for path in ('/for-you/codex','/news/D-78'):
         page=client.get(path,base_url=seo.ORIGIN)
         assert page.status_code==200 and '已审摘译修订' in page.text and 'SECRET-PENDING' not in page.text
         assert 'tibo-6a3ab22f.jpg' in page.text and '英文原文摘录' in page.text
@@ -225,7 +225,7 @@ def test_posts_round_trip_corrections_private_notes_and_withdrawal(client,monkey
     assert rpc==body
     assert any(path=='/news/D-78' and changed for path,changed in seo.sitemap_entries())
     call(client,'/content/news/D-78/withdraw',{'draft_version':published['draft_version'],'reason':'撤销原帖记录'})
-    assert 'tibo-6a3ab22f.jpg' not in client.get('/for-you').text
+    assert 'tibo-6a3ab22f.jpg' not in client.get('/for-you/codex').text
     assert client.get('/news/D-78').status_code==404
 
 

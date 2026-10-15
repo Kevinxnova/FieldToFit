@@ -6,7 +6,9 @@ import type { WatchCollection } from '../components/workspace/ContinuousWatch';
 import type { Landscape } from '../components/workspace/ModelLandscape';
 import type { DailyPreviewData } from '../components/workspace/DailyPreview';
 
-export type ReadingHome = {revision:string;safety:{items:[string,boolean,[string,string,string][],string[]?][];aliases:unknown[];daily?:string[]};news:NewsCollection;watch:WatchCollection;projects:WatchCollection;charts:Landscape;daily:DailyPreviewData};
+export type ChartPreview = Pick<Landscape['sources'][number],'id'|'name'|'source_url'|'source_updated_at'|'checked_at'|'score_label'|'price_label'|'price_label_en'|'coverage'> & {image:string|null};
+export type ReadingView = 'full'|'home'|'news'|'watch'|'models'|'hot-cards'|'codex';
+export type ReadingHome = {view?:ReadingView;home_preview?:{highlights:string[];hot_cards:string[];reports:string[];codex:string[];watch_events:{watch_id:string;news_id:string;date:string}[]};chart_previews?:ChartPreview[];revision:string;safety:{items:[string,boolean,[string,string,string][],string[]?][];aliases:unknown[];daily?:string[]};news:NewsCollection;watch:WatchCollection;projects:WatchCollection;charts:Landscape;daily:DailyPreviewData};
 type Entry = {data:any;error:string;pending?:Promise<void>;used:number;bytes:number;home:boolean;terminal?:boolean};
 const entries = new Map<string,Entry>();
 const listeners = new Set<()=>void>();
@@ -18,7 +20,7 @@ const MAX_BYTES=8*1024*1024;
 const emit=()=>{version++;listeners.forEach(fn=>fn());};
 const subscribe=(fn:()=>void)=>{listeners.add(fn);return()=>{listeners.delete(fn);};};
 const snapshot=()=>version;
-const homePath=(q='',type='')=>'/v1/platform/reading?'+new URLSearchParams({q,type});
+const homePath=(q='',type='',view:ReadingView='full')=>'/v1/platform/reading?'+new URLSearchParams({q,type,...(view==='full'?{}:{view})});
 const keyFor=(path:string,language:string)=>language+'|'+path;
 function scope(){if(identity!==readToken()){identity=readToken();generation++;entries.clear();latest=null;proposed=null;notice='';adoptedRevision='';bootstrapKey='';queueMicrotask(emit);}}
 function trim(protect:string){
@@ -98,7 +100,7 @@ async function fetchEntry(path:string,language:string,force=false){
 // This public bootstrap is emitted by the same request that rendered the page.
 if(typeof document!=='undefined'){
   const node=document.getElementById('fieldtofit-reading');
-  if(node){try{const boot=JSON.parse(node.textContent||'');if(!readToken()&&boot.language===currentLanguage()&&boot.data?.revision){bootstrapKey=keyFor(homePath(boot.q,boot.type),boot.language);put(homePath(boot.q,boot.type),boot.language,boot.data);}}catch{/* Fall back to a normal public read. */}node.remove();}
+  if(node){try{const boot=JSON.parse(node.textContent||'');if(!readToken()&&boot.language===currentLanguage()&&boot.data?.revision){bootstrapKey=keyFor(homePath(boot.q,boot.type,boot.view),boot.language);put(homePath(boot.q,boot.type,boot.view),boot.language,boot.data);}}catch{/* Fall back to a normal public read. */}node.remove();}
 }
 export function useReadingRemote<T>(path:string|null){
   const language=useLanguage();scope();useSyncExternalStore(subscribe,snapshot,snapshot);
@@ -120,8 +122,8 @@ export function useReadingRemote<T>(path:string|null){
   useEffect(()=>{if(data){window.dispatchEvent(new Event('fieldtofit:reading-ready'));restoreLanguageScroll(language);}},[key,data]);
   return {data:data as T|null,error:data?'':entry?.error||(notice==='access'?'Read access changed':''),refreshError:data?entry?.error||'':'',loading:!!path&&!data&&!entry?.error&&notice!=='access',refreshing:!!entry?.pending,reload:()=>{if(path)void fetchEntry(path,language,true);}};
 }
-export function useHomeReading(q:string,type:string){
-  const result=useReadingRemote<ReadingHome>(homePath(q,type));
+export function useHomeReading(q:string,type:string,view:ReadingView='full'){
+  const result=useReadingRemote<ReadingHome>(homePath(q,type,view));
   return {...result,shared:latest?.language===currentLanguage()?latest.data:null};
 }
 export async function readComplete<T>(path:string):Promise<T>{
@@ -135,7 +137,7 @@ export function useReadingUpdates(active:boolean,home=false){
   const language=useLanguage();useSyncExternalStore(subscribe,snapshot,snapshot);
   useEffect(()=>{
     if(!active)return;
-    if(!home&&(!latest||latest.language!==language))void fetchEntry(homePath(),language);
+    if(!home&&(!latest||latest.language!==language))void fetchEntry(homePath('','','home'),language);
     const check=()=>{void checkReading();};
     // A bootstrap is already current; navigation/focus checks occur independently.
     const timer=setInterval(check,60000);window.addEventListener('focus',check);document.addEventListener('visibilitychange',check);window.addEventListener('fieldtofit:check-reading',check);

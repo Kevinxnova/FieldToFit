@@ -16,7 +16,7 @@ export function PublishedDetail({kind}: {kind:'news'|'watch'}) {
 function Detail({kind, id}: {kind:'news'|'watch';id:string}) {
   const {pick} = useWorkspace();
   const location=useLocation();const readingReturn=location.state?.readingReturn;
-  const back=typeof readingReturn?.url==='string'&&/^(?:\/(?:en\/)?for-you(?:[?#]|$)|\/(?:en\/)?watch\/CW-[MATSH]\d+$)/.test(readingReturn.url)?readingReturn:null;
+  const back=typeof readingReturn?.url==='string'&&/^(?:\/(?:en\/)?for-you(?:\/(?:news|watch|models|codex|hot-cards))?(?:[?#]|$)|\/(?:en\/)?watch\/CW-[MATSH]\d+$)/.test(readingReturn.url)?readingReturn:null;
   const result = useRemote<NewsCollection | WatchCollection>(`/v1/platform/${kind}?id=${encodeURIComponent(id)}`);
   const item = !result.loading && !result.error ? result.data?.items[0] : null;
   const path = `/${kind}/${id}`;

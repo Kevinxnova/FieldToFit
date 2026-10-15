@@ -74,7 +74,7 @@ export function HotCardHighlights({items,preview=false}:{items:NewsItem[];previe
     <p className="hot-card-subtitle">{pick('这次更新，对谁有用？','Who benefits from this update?')}</p>
     <div className="hot-card-grid">{cards.map(item => <HotCardPreview key={item.id} item={item}/>)}</div>
     {!cards.length&&<p className="muted">{pick('暂无已审信息卡，完成审核后会在这里展示。','Reviewed information cards will appear here when available.')}</p>}
-    {!preview&&<Link className="hot-card-all" to="/for-you?news_cards=1&news_range=all#news-releases">{pick('查看全部信息卡','View all information cards')} →</Link>}
+    {!preview&&<Link className="hot-card-all" to="/for-you/hot-cards">{pick('查看全部信息卡','View all information cards')} →</Link>}
   </section>;
 }
 

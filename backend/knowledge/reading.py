@@ -153,9 +153,12 @@ def build(revision, dep):
     return result, search
 
 
-def overview(q='', type='', after=''):
+def overview(q='', type='', after='', view='full'):
     from backend.knowledge import locale
     from backend.knowledge.platform import text
+    from backend.knowledge.home_preview import VIEWS, project
+    if view not in VIEWS:
+        raise PlatformError('Unknown reading view', 'invalid_view', 400)
     q, type = text(q, 'q', 200, False), text(type, 'type', 200, False)
     if type not in ('', 'model', 'agent', 'tool', 'skill', 'harness'):
         raise PlatformError('Unknown watch type', 'invalid_type', 400)
@@ -192,5 +195,5 @@ def overview(q='', type='', after=''):
         out['watch']['items'] = [i for i in all_items if (not type or i['type']==type) and (not q or q.casefold() in search[i['id']])]
         out['watch']['total'] = len(out['watch']['items'])
         out['watch']['groups'] = [{**group,'count':sum(i['type']==group['id'] for i in out['watch']['items'])} for group in out['watch']['groups']]
-        return out
+        return project(out, view)
     raise PlatformError('Published content changed during reading; retry', 'reading_changed', 503)

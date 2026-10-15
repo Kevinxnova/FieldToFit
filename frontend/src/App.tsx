@@ -1,4 +1,5 @@
 import { ReadingSession } from './components/workspace/ReadingSession';
+import { ForYouSection } from './pages/ForYouSection';
 import DailyJournal from './pages/DailyJournal';
 import {MapsPage} from './components/workspace/TechnicalMaps';
 import { PageMetadata, searchPages } from './search';
@@ -177,6 +178,7 @@ function Shell() {
             <Route path="/news/:id" element={<PublishedDetail kind="news" />} />
             <Route path="/watch/:id" element={<PublishedDetail kind="watch" />} />
             <Route path="/for-you" element={<ForYou />} />
+            {(['news','hot-cards','codex','models','watch'] as const).map(section=><Route key={section} path={'/for-you/'+section} element={<ForYouSection key={section} section={section}/>}/>)}
             <Route path="/for-you/daily" element={<DailyJournal/>} />
             <Route path="/for-you/daily/archive" element={<DailyJournal archiveOnly/>} />
             <Route path="/for-you/daily/:day" element={<DailyJournal/>} />

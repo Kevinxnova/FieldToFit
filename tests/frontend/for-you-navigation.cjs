@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {createRequire}=require('node:module');
+const root=path.resolve(__dirname,'../..'),fr=createRequire(path.join(root,'frontend/package.json')),ts=fr('typescript');
+const moduleValue={exports:{}};
+new Function('module','exports',ts.transpileModule(fs.readFileSync(path.join(root,'frontend/src/components/workspace/forYouNavigation.ts'),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText)(moduleValue,moduleValue.exports);
+const {legacyForYouTarget:target}=moduleValue.exports;
+assert.equal(target('?chart=arena&company=OpenAI&company=Google','#model-landscape'),'/for-you/models?chart=arena&company=OpenAI&company=Google#model-landscape');
+assert.equal(target('?news_range=all&news_page=3&news_q=Agent','#news-releases'),'/for-you/news?news_range=all&news_page=3&news_q=Agent#news-releases');
+assert.equal(target('?q=Docker&type=tool','#watch-group-tool'),'/for-you/watch?q=Docker&type=tool#watch-group-tool');
+assert.equal(target('?codex_date=2026-10-14','#news-codex-28-days'),'/for-you/codex?codex_date=2026-10-14#news-codex-28-days');
+assert.equal(target('','#news-D-83'),'/news/D-83');
+assert.equal(target('','#watch-cw-t01'),'/watch/CW-T01');
+assert.equal(target('?object=existing&revision=3&chart=arena','#news-releases'),null);
+assert.equal(target('?chart=arena&news_page=2',''),null);
+assert.equal(target('?chart=arena&news_page=2','#news-releases'),'/for-you/news?chart=arena&news_page=2#news-releases');
+for(const hash of ['#daily-preview','#recent-news','#hot-information-cards','#technical-evolution-maps','#news-codex-28-days','#model-landscape','#resource-dossiers','#developer-projects'])assert.equal(target('',hash),null);
+console.log('PASS legacy section, item, multi-company, combined-filter and object/revision links');

@@ -1163,6 +1163,6 @@ def workspace_map_proposal_apply(topic_id):
 @bp.get('/platform/reading')
 def platform_reading():
     from backend.knowledge.reading import overview
-    response = jsonify(overview(**{k: request.args[k] for k in ('q','type','after') if k in request.args}))
+    response = jsonify(overview(**{k: request.args[k] for k in ('q','type','after','view') if k in request.args}))
     response.headers['Cache-Control'] = 'private, no-store'
     return response

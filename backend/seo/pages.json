@@ -82,5 +82,75 @@
       "重点对象和发现渠道共用真实来源配置。已接入、已采集和已发布分别展示；每 1 天检查，有值得发布的内容再整理审核。",
       "Tracked organizations and discovery channels share actual configuration. Connection, collection and publication are separate; sources are checked daily and content is reviewed before publication."
     ]
+  },
+  "/for-you/news": {
+    "title": [
+      "FieldToFit · 近期动态",
+      "FieldToFit · Recent developments"
+    ],
+    "heading": [
+      "近期动态",
+      "Recent developments"
+    ],
+    "description": [
+      "近期热点速览与完整发布记录，保留事件日期、解读和出处。",
+      "Recent highlights and releases with event dates, interpretation and sources."
+    ]
+  },
+  "/for-you/hot-cards": {
+    "title": [
+      "FieldToFit · 热点信息卡",
+      "FieldToFit · Information cards"
+    ],
+    "heading": [
+      "热点信息卡",
+      "Information cards"
+    ],
+    "description": [
+      "浏览已审信息卡，核对变化、人群、采用条件与官方证据。",
+      "Browse reviewed information cards, audiences, conditions and official evidence."
+    ]
+  },
+  "/for-you/codex": {
+    "title": [
+      "FieldToFit · Codex 28天进化日志",
+      "FieldToFit · Codex: 28 Days of Progress"
+    ],
+    "heading": [
+      "Codex 28天进化日志",
+      "Codex: 28 Days of Progress"
+    ],
+    "description": [
+      "按真实日期阅读 Codex、ChatGPT Work 与其他 OpenAI 更新。",
+      "Read Codex, ChatGPT Work and other OpenAI updates by their actual dates."
+    ]
+  },
+  "/for-you/models": {
+    "title": [
+      "FieldToFit · 模型能力与价格",
+      "FieldToFit · Model capability & pricing"
+    ],
+    "heading": [
+      "模型能力与价格",
+      "Model capability & pricing"
+    ],
+    "description": [
+      "按来源比较能力与价格，保留配置、单位和真实核对日期。",
+      "Compare capability and price by source, preserving configurations, units and review dates."
+    ]
+  },
+  "/for-you/watch": {
+    "title": [
+      "FieldToFit · 持续关注",
+      "FieldToFit · Ongoing watch"
+    ],
+    "heading": [
+      "持续关注",
+      "Ongoing watch"
+    ],
+    "description": [
+      "完整浏览模型、工具、Agent、Skill 与 Harness 的档案和关联事件。",
+      "Explore complete model, tool, agent, skill and harness dossiers and related events."
+    ]
   }
 }

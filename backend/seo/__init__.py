@@ -229,6 +229,9 @@ def page(path, dist):
         return redirect(prefix+path.rstrip('/'), 308)
     if path not in PAGES and path != '/maps' and not DETAIL.fullmatch(path):
         return None
+    if (path == '/for-you' and not request.args.get('object')) or path in ('/for-you/news','/for-you/hot-cards','/for-you/codex','/for-you/models','/for-you/watch'):
+        from backend.seo.for_you import page as for_you_page
+        return for_you_page(path, dist, english)
     try:
         item = None
         collections = {}

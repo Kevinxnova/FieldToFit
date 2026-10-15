@@ -1,7 +1,37 @@
 {
-  "version": "1.10.4",
-  "revision": "5486e7a41d14aa264aeb2728f69acc90149852812127b06060fad997e154fe23",
+  "version": "1.11.0",
+  "revision": "e5ab059091a941b2620b0e053440c9a16fc3e30c44a3ca3916b1752b87a51eec",
   "items": [
+    {
+      "version": "1.11.0",
+      "date": "2026-10-15",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "For you 七区预览与完整栏目阅读",
+          "highlights": [
+            "按已确认顺序组织AI日报、近期动态、热点信息卡、技术报告精选&分析、Codex日志、模型能力与价格及持续关注七区；日报和热点卡沿用原样式，近期热点一主两次，报告四篇2×2，模型双来源纵排。",
+            "新增动态、热点索引、Codex、模型和持续关注五个完整栏目，复用日报／报告／单条详情；保留旧链接、筛选、日期、双语切换及详情返回的阅读位置。",
+            "首页只读取实际预览与必要校验信息，完整内容按栏目读取；同一内容集下首页HTML及内嵌数据减少86.9%，审核内容、真实来源日期和完整HTTP／MCP接口保持兼容。",
+            "本地开发、相关回归、双语四宽度、深浅色与阅读往返已验；所有者确认v1.11.0及本地提交，尚未推送或部署。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Seven homepage previews and complete reading sections",
+          "highlights": [
+            "Arrange AI Daily, recent developments, information cards, selected technical reports and analysis, the Codex log, model capability and pricing, and ongoing watch in the agreed order. Keep the daily and information-card styles, use one lead and two secondary highlights, four reports in a desktop 2×2 grid, and vertically stacked model sources.",
+            "Add five complete sections for developments, information cards, Codex, models and ongoing watch while reusing daily editions, reports and item details. Preserve old links, filters, dates, language switching and return positions.",
+            "Load only visible previews and necessary publication checks on the homepage, then read complete content by section. Homepage HTML and embedded data are 86.9% smaller with the same records; reviewed content, genuine source dates and full HTTP/MCP interfaces remain compatible.",
+            "Complete local development, regression checks, both languages at four widths, light/dark layouts and reading round trips. The owner approved v1.11.0 and a local commit; this batch has not been pushed or deployed."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.0"
+    },
     {
       "version": "1.10.4",
       "date": "2026-10-15",

@@ -101,7 +101,9 @@ def test_bootstrap_matches_api_and_escapes_untrusted_json(site,monkeypatch):
     assert response.status_code==200
     match=re.search(r'<script type="application/json" id="fieldtofit-reading">(.*?)</script>',response.text,re.S)
     boot=json.loads(match[1]);assert boot['language']=='zh'
-    assert boot['data']==site.get(PATH+'?q=GPT&type=model').json
+    assert boot['view']=='home'
+    assert boot['data']==site.get(PATH+'?view=home').json
+    assert '/for-you/watch?q=GPT&amp;type=model' in response.text
     assert 'reading_revision;dur=' in response.headers['Server-Timing']
     from backend import seo
     with site.application.test_request_context('/for-you'):

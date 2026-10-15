@@ -62,7 +62,7 @@ def test_complete_index_homepage_html_reading_and_mcp_agree(site, reports):
         assert response.status_code == 200
         section = BeautifulSoup(response.data, 'html.parser').find(id='technical-evolution-maps')
         assert len(section.select('time[datetime]')) == 4
-        assert [a['href'].split('/')[-1] for a in section.select('h4 a')] == [f'isolated-report-{n}' for n in [6, 5, 4, 3]]
+        assert [a['href'].split('/')[-1] for a in section.select('article h3 a')] == [f'isolated-report-{n}' for n in [6, 5, 4, 3]]
         index = site.get(prefix + '/maps')
         assert index.status_code == 200
         for n in range(1, 7):
