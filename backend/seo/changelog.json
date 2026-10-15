@@ -1,7 +1,35 @@
 {
-  "version": "1.10.3",
-  "revision": "1e7f8acefe69116aeaa11badb04dd365ea9cbde5e7cb7cad77892ad7ce15da11",
+  "version": "1.10.4",
+  "revision": "5486e7a41d14aa264aeb2728f69acc90149852812127b06060fad997e154fe23",
   "items": [
+    {
+      "version": "1.10.4",
+      "date": "2026-10-15",
+      "deployed_on": "2026-10-15",
+      "copy": {
+        "zh": {
+          "title": "首页报纸头版式 AI 日报预览",
+          "highlights": [
+            "在For you四个阅读入口下方加入报纸头版式日报预览：真实期次、居中导读与最多三条重点，桌面横排、手机单列。",
+            "复用同一已发布日报快照；完整阅读和重点定位固定期次及修订，支持双语、往期归档及返回首页阅读位置。",
+            "将出刊／更正／撤回和北京时间跨日纳入首页更新校验，未出刊、样刊、空刊及读取失败如实展示；已正式部署v1.10.4，双语桌面与手机预览通过线上验收。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Newspaper-style AI daily preview on the homepage",
+          "highlights": [
+            "Add a newspaper-style daily preview below the four For you reading links, with genuine edition dates, a centered introduction and up to three highlights in desktop columns or a mobile stack.",
+            "Reuse the published daily snapshot and bind full-edition and story links to its date and revision, preserving language, archive access and the homepage reading position.",
+            "Include publications, corrections, withdrawals and Beijing date changes in homepage update checks. Distinguish unpublished issues, samples, empty archives and read failures. Deployed as v1.10.4, with production acceptance of both languages on desktop and mobile widths."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.10.4"
+    },
     {
       "version": "1.10.3",
       "date": "2026-10-15",

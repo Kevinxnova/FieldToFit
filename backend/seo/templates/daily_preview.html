@@ -1,0 +1,17 @@
+{% set daily = daily_preview %}
+{% set issue = daily.issue %}
+{% set current = daily.status == 'published' %}
+{% set edition_path = issue.path ~ '?revision=' ~ issue.publication.revision if issue else '' %}
+{% set prefix = '/en' if english else '' %}
+<section id="daily-preview"{% if issue %} data-daily-date="{{ issue.date }}" data-daily-revision="{{ issue.publication.revision }}" data-daily-hash="{{ issue.publication.content_hash }}"{% endif %}>
+  <header><p>FieldToFit Daily</p><h2>{{ ('Today’s AI Daily' if current else 'Latest edition · AI Daily' if issue else 'AI Daily') if english else ('今日 AI 日报' if current else '最近一期 · AI 日报' if issue else 'AI 日报') }}</h2>
+  {% if issue %}<time datetime="{{ issue.date }}">{{ issue.date }}</time>{% if issue.kind == 'review_sample' %}<p>{{ 'Evening review sample' if english else '晚间审阅样刊' }}</p>{% endif %}{% endif %}</header>
+  {% if not current %}<p>{{ 'Today’s issue has not been published yet. Updated daily at 09:00 Beijing time.' if english else '今日日报尚未出刊。每日北京时间 09:00 更新' }}</p>{% endif %}
+  {% if issue %}
+  <h3><a href="{{ prefix }}{{ edition_path }}">{{ issue.headline }}</a></h3><p>{{ issue.intro }}</p>
+  {% for story in issue.highlights %}<article><h4><a href="{{ prefix }}{{ edition_path }}#daily-story-{{ story.id }}">{{ story.title }}</a></h4><p>{{ story.summary }}</p></article>{% endfor %}
+  <p>{{ 'Published' if english else '实际出刊' }} <time datetime="{{ issue.publication.first_published_at }}">{{ issue.publication.first_published_at|codex_beijing }}</time>{% if issue.publication.revision > 1 %} · {{ 'Revised' if english else '修订于' }} <time datetime="{{ issue.publication.published_at }}">{{ issue.publication.published_at|codex_beijing }}</time> · r{{ issue.publication.revision }}{% endif %} · {{ 'Beijing time' if english else '北京时间' }}</p>
+  <a href="{{ prefix }}{{ edition_path }}">{{ 'Read this edition' if english else '阅读完整日报' }}</a>
+  {% else %}<p>{{ 'The introduction and highlights will appear here when an edition is published.' if english else '完整期刊发布后，会在这里展示导读与重点。' }}</p>{% endif %}
+  <a href="{{ prefix }}/for-you/daily/archive">{{ 'Past editions' if english else '往期日报' }}</a>
+</section>

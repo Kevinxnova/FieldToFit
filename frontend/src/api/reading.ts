@@ -4,8 +4,9 @@ import { currentLanguage, useLanguage, restoreLanguageScroll } from '../locale/l
 import type { NewsCollection } from '../components/workspace/NewsReading';
 import type { WatchCollection } from '../components/workspace/ContinuousWatch';
 import type { Landscape } from '../components/workspace/ModelLandscape';
+import type { DailyPreviewData } from '../components/workspace/DailyPreview';
 
-export type ReadingHome = {revision:string;safety:{items:[string,boolean,[string,string,string][],string[]?][];aliases:unknown[]};news:NewsCollection;watch:WatchCollection;projects:WatchCollection;charts:Landscape};
+export type ReadingHome = {revision:string;safety:{items:[string,boolean,[string,string,string][],string[]?][];aliases:unknown[];daily?:string[]};news:NewsCollection;watch:WatchCollection;projects:WatchCollection;charts:Landscape;daily:DailyPreviewData};
 type Entry = {data:any;error:string;pending?:Promise<void>;used:number;bytes:number;home:boolean;terminal?:boolean};
 const entries = new Map<string,Entry>();
 const listeners = new Set<()=>void>();
@@ -43,6 +44,8 @@ export function applyReadingUpdate(){
   window.dispatchEvent(new Event('fieldtofit:restore-reading'));
 }
 function restricted(before:ReadingHome,after:ReadingHome){
+  const previousDay=before.daily?.issue?.date;
+  if(previousDay&&after.safety.daily&&!after.safety.daily.includes(previousDay))return true;
   const next=new Map(after.safety.items.map(i=>[i[0],i]));
   return JSON.stringify(before.safety.aliases)!==JSON.stringify(after.safety.aliases)||before.safety.items.some(([id,translated,materials,sections=[]])=>{
     const value=next.get(id);if(!value||translated&&!value[1]||sections.some(section=>!value[3]?.includes(section)))return true;

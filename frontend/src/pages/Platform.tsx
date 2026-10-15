@@ -1,5 +1,6 @@
 import { useHomeReading } from '../api/reading';
 import { ForYouHero } from '../components/workspace/ForYouHero';
+import { DailyPreview } from '../components/workspace/DailyPreview';
 import { ProfileNewsOverview } from '../components/workspace/ProfileNewsOverview';
 import { FollowUpdates } from '../components/workspace/FollowUpdates';
 import { searchPages } from '../search';
@@ -108,6 +109,7 @@ export function ForYou() {
   const [following,setFollowing]=useState(false);
   if(params.get('object'))return <LegacyCatalog/>;
   return <div className="platform-page"><VisitReady ready={!!news.data && !!watch.data && !news.loading && !watch.loading && !news.error && !watch.error}/><AliasNotice/><ForYouHero onRead={()=>setFollowing(false)}/>
+    <DailyPreview data={home.data?.daily} loading={home.loading} error={home.error} retry={home.reload}/>
     {news.data&&!news.error&&<p className="section-overview"><strong>{news.data.title}</strong><span className="muted"> · {news.data.reviewed_at}</span></p>}
     <p className="reading-page-summary">{news.data?.total??'—'} {pick('条动态 ·','developments ·')} {watch.data?.total??'—'} {pick(filtered?'个匹配的持续关注主体':'个持续关注主体',filtered?'matching profiles':'ongoing-watch profiles')}</p>
     <FollowUpdates active={following} onActive={setFollowing}/><div hidden={following} className="reading-layout"><ReadingContents technicalMaps={!!news.data?.items.some(n=>n.technical_map)} codexProgress={!!news.data?.codex_progress?.total} newsTotal={news.data?.total??null} news={(news.data?.items||[]).map(n=>({id:newsAnchor(n.id),title:n.name}))} resources={(watch.data?.items||[]).map(i=>({id:watchAnchor(i.id),title:i.name}))} groups={(watch.data?.groups||[]).filter(g=>g.count>0).map(g=>({id:'watch-group-'+g.id,title:g.name+' · '+g.count,items:(watch.data?.items||[]).filter(i=>i.type===g.id).map(i=>({id:watchAnchor(i.id),title:i.name}))}))} resourceTotal={watch.data?.total??null} loading={watch.loading} filtered={filtered}/>

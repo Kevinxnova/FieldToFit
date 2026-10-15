@@ -294,7 +294,8 @@ def page(path, dist):
         body = render_template('search.html', pages=PAGES, path=path, heading=heading,
                                description=description, item=item, collections=collections, ai_clients=AI_CLIENTS, ai_endpoint=request.url_root.rstrip('/')+'/api/mcp/curated', ai_command_endpoint=shlex.quote(request.url_root.rstrip('/')+'/api/mcp/curated'),
                                catalog=catalog, revision=revision, related_maps=related_maps, calendar_cells=calendar_cells, calendar_rows=calendar_rows(calendar_cells),
-                               calendar_title=calendar_title, calendar_items=calendar_items, english=english)
+                               calendar_title=calendar_title, calendar_items=calendar_items, english=english,
+                               daily_preview=reading['daily'] if reading else None)
         boot = {'language':'en' if english else 'zh', 'q':request.args.get('q',''), 'type':request.args.get('type',''), 'data':reading} if reading else None
         return document(dist, title, description, path, body, bootstrap=boot)
     except PlatformError as exc:

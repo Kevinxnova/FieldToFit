@@ -7,7 +7,7 @@ function toLocale(to:To) { return typeof to==='string' ? languagePath(to) : {...
 export function Link(props:LinkProps) {
   useLanguage();const source=baseLocation();
   const destination=typeof props.to==='string'?props.to:props.to.pathname||'';
-  const detail=/^\/(?:en\/)?(?:news\/|watch\/|maps(?:\/|$))/.test(destination);
+  const detail=/^\/(?:en\/)?(?:news\/|watch\/|maps(?:\/|$)|for-you\/daily(?:\/|$))/.test(destination);
   const fromHome=canonicalPath(source.pathname)==='/for-you';
   const returning=/^\/(?:en\/)?for-you(?:#technical-evolution-maps)?$/.test(destination)||!!props.state?.readingRestore||!!props.state?.restoreReading;
   const remembered=source.state?.readingReturn;

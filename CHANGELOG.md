@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.10.4"></a>
+## v1.10.4 · 首页报纸头版式 AI 日报预览 · 2026-10-15
+
+<!-- site-deployed:2026-10-15 -->
+<!-- public-title:en:Newspaper-style AI daily preview on the homepage -->
+<!-- release-summary:zh:start -->
+- 在For you四个阅读入口下方加入报纸头版式日报预览：真实期次、居中导读与最多三条重点，桌面横排、手机单列。
+- 复用同一已发布日报快照；完整阅读和重点定位固定期次及修订，支持双语、往期归档及返回首页阅读位置。
+- 将出刊／更正／撤回和北京时间跨日纳入首页更新校验，未出刊、样刊、空刊及读取失败如实展示；已正式部署v1.10.4，双语桌面与手机预览通过线上验收。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add a newspaper-style daily preview below the four For you reading links, with genuine edition dates, a centered introduction and up to three highlights in desktop columns or a mobile stack.
+- Reuse the published daily snapshot and bind full-edition and story links to its date and revision, preserving language, archive access and the homepage reading position.
+- Include publications, corrections, withdrawals and Beijing date changes in homepage update checks. Distinguish unpublished issues, samples, empty archives and read failures. Deployed as v1.10.4, with production acceptance of both languages on desktop and mobile widths.
+<!-- release-summary:en:end -->
+
+对应[REQ-24-10](FieldToFit-PM.md#daily-homepage-preview-plan)。所有者明确选择「报纸头版」，授权先完善项目总览表、再开发验证。开发前及交付前结合v1.10.0以来累计内容更新和报告轮换重新判级：本批复用既有日报、阅读缓存与发布流程，属于兼容展示patch，无新模块、主要流程重构、数据库迁移或破坏性接口变化。所有者随后授权“更新并部署”，正式v1.10.4已上线；10月15日r1预览与完整日报同源，双语四宽度、跳转、HTML／HTTP／MCP及原内容保持通过。不改期刊内容、生产配置或日程。实际回归、构建、浏览器及本地状态见[验收记录](docs/validation/2026-10-15-daily-preview.md)。
+
 <a id="v1.10.3"></a>
 ## v1.10.3 · 首页精选报告四篇轮换与完整索引 · 2026-10-15
 

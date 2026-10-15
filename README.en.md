@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.10.3](CHANGELOG.md#v1.10.3)** · [fieldtofit-v1.10.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.3)
+**Current source version: [v1.10.4](CHANGELOG.md#v1.10.4)** · [fieldtofit-v1.10.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.4)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Implement a four-report homepage window, replacement after successful publication and a complete index, sharing selection and ordering across interactive HTML, direct HTML and AI reads.
-- Define genuine publication and reviewed substantive-revision dates; routine checks and copy edits do not promote reports, and receipts record actual entries and exits.
-- Deploy to production and connect the existing morning task to actual publication receipts; retain reviewed articles and the original schedule. Consecutive-day operation remains under observation.
+- Add a newspaper-style daily preview below the four For you reading links, with genuine edition dates, a centered introduction and up to three highlights in desktop columns or a mobile stack.
+- Reuse the published daily snapshot and bind full-edition and story links to its date and revision, preserving language, archive access and the homepage reading position.
+- Include publications, corrections, withdrawals and Beijing date changes in homepage update checks. Distinguish unpublished issues, samples, empty archives and read failures. Deployed as v1.10.4, with production acceptance of both languages on desktop and mobile widths.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

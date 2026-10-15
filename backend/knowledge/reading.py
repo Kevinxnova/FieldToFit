@@ -46,9 +46,13 @@ def dependencies():
     queries += [(t, 'SELECT * FROM '+t+' ORDER BY '+{'fieldtofit_steward_aliases':'source_id','fieldtofit_steward_checks':'object_id,material_id','fieldtofit_steward_links':'id'}[t]) for t in TABLES]
     queries += [('library', "SELECT p.seq FROM knowledge_publications p JOIN knowledge_selections s ON s.record_id=p.record_id AND s.state='published' AND s.revision=p.seq ORDER BY p.seq")]
     queries = [(key, sql) for key, sql in queries if ('fieldtofit_content_sets' if key == 'sets' else 'knowledge_publications' if key == 'library' else key) in names]
+    from backend.daily_briefing.home import MANIFEST_SQL, clock
+    if {'fieldtofit_daily_issues', 'fieldtofit_daily_publications'} <= names:
+        queries.append(('daily', MANIFEST_SQL))
     with get_db() as db:
         results = batch(db, [(sql, ()) for _, sql in queries])
     dep = {key: rows for (key, _), rows in zip(queries, results)}
+    dep['daily_clock'] = clock()
     # Source deployments and tests may use released files before a content migration.
     files = [(str(p), p.stat().st_mtime_ns, p.stat().st_size) for p in sorted(Path(__file__).parent.joinpath('content').rglob('*.json'))]
     from backend import config, db as database
@@ -123,7 +127,8 @@ def safety(raw, dep):
             fingerprint = source_hash(kind, item)
             translated = (en.get('state') == 'reviewed' and en.get('source_hash') == fingerprint) or (not en and fingerprint in baseline().get(kind+':'+item['id'], []))
             values.append([item['id'], translated, [(m['id'], m['url'], m['coverage']) for m in item.get('reading_materials', [])], [key for key in ('technical_map','hot_card') if item.get(key)]])
-    return {'items': values, 'aliases': dep.get('fieldtofit_steward_aliases', [])}
+    return {'items': values, 'aliases': dep.get('fieldtofit_steward_aliases', []),
+            'daily': [row['day'] for row in dep.get('daily', [])]}
 
 
 def build(revision, dep):
@@ -141,7 +146,9 @@ def build(revision, dep):
     # Match the full-profile endpoint's search scope, including reviewed English.
     search = {i['id']: json.dumps(locale.searchable({k:v for k,v in i.items() if k!='maintenance'}), ensure_ascii=False).casefold() for i in w['items']}
     n, w, chart = project(n), project(w), project(snapshot())
-    result = {'revision': revision, 'safety': safety(raw, dep), 'news': slim_news(n), 'watch': slim_watch(w), 'charts': chart}
+    from backend.daily_briefing.home import preview
+    daily = preview(dep.get('daily', []), dep['daily_clock'], 'en' if locale.is_english() else 'zh')
+    result = {'revision': revision, 'safety': safety(raw, dep), 'news': slim_news(n), 'watch': slim_watch(w), 'charts': chart, 'daily': daily}
     timed('reading_projection', started)
     return result, search
 
