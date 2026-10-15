@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.10.1](CHANGELOG.md#v1.10.1)** · [fieldtofit-v1.10.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.1)
+**当前源码版本：[v1.10.2](CHANGELOG.md#v1.10.2)** · [fieldtofit-v1.10.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.10.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 新增D-145官方Day 9桌面状态存储优化，归北京时间10月14日07:32；60%为官方预期，附直接核对的Tibo摘录与真实头像。
-- 新增D-146 GPT-5.5退役日志，适用于ChatGPT登录的Codex，API Key会话不受影响；保留10月14日来源日期，另列北京时间10月15日03:00截止。
-- 两条经双语审核与三宽度双端预览发布，专题29条（17主线／12其他OpenAI），严格reset计数仍0；保留既有阅读加载优化、公开接口与日程。
+- 为所有者选中的Nano Banana2.1模型卡整理四结论、同号论述与三张本站重绘，分开保留人工偏好Elo、自动事实性、编辑任务和安全判断的口径。
+- 接续10月15日明确批准的A–F六项动态、六项对应档案与本期速览／总表最新事件，保留原始日期、分发条件和历史版本。
+- 沿用既有图文专题、双语审核与HTTP／MCP读取流程；未选报告、未核验线索与模型榜单保持原状态。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

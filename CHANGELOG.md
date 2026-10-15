@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.10.2"></a>
+## v1.10.2 · Nano Banana2.1专题与获批动态更新 · 2026-10-15
+
+<!-- site-deployed:2026-10-15 -->
+<!-- public-title:en:Nano Banana2.1 analysis and approved daily updates -->
+<!-- release-summary:zh:start -->
+- 为所有者选中的Nano Banana2.1模型卡整理四结论、同号论述与三张本站重绘，分开保留人工偏好Elo、自动事实性、编辑任务和安全判断的口径。
+- 接续10月15日明确批准的A–F六项动态、六项对应档案与本期速览／总表最新事件，保留原始日期、分发条件和历史版本。
+- 沿用既有图文专题、双语审核与HTTP／MCP读取流程；未选报告、未核验线索与模型榜单保持原状态。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Present four findings, matching arguments and three original redraws for the owner-selected Nano Banana2.1 model card, separating human-preference Elo, automated factuality, editing tasks and safety assessments.
+- Continue the six explicitly approved October15 A–F updates, six matching dossiers and overview/latest-event projections while preserving source dates, distribution conditions and historical versions.
+- Retain existing report reading, bilingual review and shared HTTP/MCP data. Unselected reports, unverified leads and model charts keep their prior status.
+<!-- release-summary:en:end -->
+
+对应REQ-6／REQ-11／REQ-22／REQ-23。本批为既有模块的内容与静态图表补丁，接续已确认v1.10.0，无新模块、流程重构、数据库迁移或日程变更；具体发布与必要部署由本会话“A-F全部发布，报告1”授权。实际检查及正式状态见[本批验收](docs/validation/2026-10-15-nano-banana-and-daily.md)。
+
 <a id="v1.10.1"></a>
 ## v1.10.1 · Codex Day 9存储优化与GPT-5.5退役日志 · 2026-10-15
 

@@ -1,0 +1,501 @@
+{
+  "id": "D-153",
+  "state": "published",
+  "name": "Nano Banana 2.1 Model Card",
+  "organization": "Google DeepMind",
+  "title": "Nano Banana 2.1：图像偏好、事实性与编辑一致性要分开看",
+  "category": "research",
+  "summary": "深读 8 页官方模型卡，以四条结论和三张本站重绘区分图像偏好、事实性、编辑一致性与采用边界。Thinking在多项作者评测中得分更高，但Elo不是正确率，AutoRater也不是业务准确率；小字、角色一致性和空间关系错误仍需人工核对。",
+  "highlight": false,
+  "checked_at": "2026-10-15",
+  "source_published_at": "2026-10-06",
+  "event_date": "2026-10-06",
+  "editor": "FieldToFit",
+  "sources": [
+    {
+      "id": "report",
+      "title": "Nano Banana 2.1 Model Card · October 2026",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Nano-Banana-2-1-Model-Card.pdf",
+      "coverage": "link_only"
+    },
+    {
+      "id": "card-page",
+      "title": "Nano Banana2.1 官方模型卡页面 · 2026-10-06",
+      "url": "https://deepmind.google/models/model-cards/nano-banana-2-1/",
+      "coverage": "link_only"
+    }
+  ],
+  "related": [
+    {
+      "id": "CW-M03",
+      "name": "Gemini",
+      "url": "https://fieldtofit.top/watch/CW-M03"
+    },
+    {
+      "id": "CW-T01",
+      "name": "ComfyUI",
+      "url": "https://fieldtofit.top/watch/CW-T01"
+    },
+    {
+      "id": "D-136",
+      "name": "ComfyUI0.40.0 伙伴节点更新",
+      "url": "https://fieldtofit.top/news/D-136"
+    }
+  ],
+  "interpretation": [
+    {
+      "title": "分开读指标、条件与失败边界",
+      "text": "深读 8 页官方模型卡，以四条结论和三张本站重绘区分图像偏好、事实性、编辑一致性与采用边界。Thinking在多项作者评测中得分更高，但Elo不是正确率，AutoRater也不是业务准确率；小字、角色一致性和空间关系错误仍需人工核对。",
+      "source_ids": [
+        "report"
+      ],
+      "locator": "8-page model card, physical pp2-8; results p5"
+    }
+  ],
+  "note": "PDF版本仅标 2026 年 10 月；官网页面标发布日期 2026-10-06。模型卡首次日期保留月精度，页面发布日期、本站核对和网站发表分别记录；无独立修订号。页码为含封面的PDF物理页。原文和原图仅链接，三图为本站原创重绘。作者评测未复现，未核实全部账户、地区、价格或具体API切换。",
+  "reading_materials": [
+    {
+      "id": "report",
+      "title": "Nano Banana 2.1 Model Card · October 2026",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Nano-Banana-2-1-Model-Card.pdf",
+      "coverage": "link_only",
+      "body": "",
+      "approved": true,
+      "checked_at": "2026-10-15",
+      "retrieved_at": "2026-10-15",
+      "upstream_revision": "October 2026 model card",
+      "locator": "8 physical pages; metric tables p5; limitations p6; safety pp7-8",
+      "reason": "已完整读取 8 页与结果表；原文再分发许可未确认，仅公开原创分析、原文链接及事实重绘。",
+      "rights": {
+        "basis": "原文仅链接；本站图形依据公开事实重新设计"
+      }
+    }
+  ],
+  "technical_map": {
+    "slug": "image-generation-factuality-editing",
+    "question": "Nano Banana 2.1：图像偏好、事实性与编辑一致性要分开看",
+    "focus": "主流图像模型的评测量尺、编辑一致性与采用边界",
+    "takeaway": "Nano Banana2.1 在多项作者评测中更受偏好，但事实性、编辑一致性、输出规格和安全判断需要分开；工作流采用仍需自己的样本验证。",
+    "caution": "作者评测未复现；样本与评分器细节有限，±范围置信水平未充分交代，不能推出任意图片准确率、费用或全渠道开放。",
+    "change_summary": "首次整理所选模型卡：四结论、同号论述与三张本站重绘，保留原始指标、日期精度和已知限制。",
+    "reports": [
+      {
+        "source_id": "report",
+        "version": "October 2026 model card",
+        "first_published_at": "2026-10",
+        "revised_at": null,
+        "substantive_revision": false,
+        "revision_note": "PDF仅标月份；官网页面发布日期 2026-10-06 独立记录，不据下载日期制造实质修订。"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "baselines",
+        "kind": "baseline",
+        "stage": 0,
+        "label": "两个旧模型是表内比较基线",
+        "mechanism": "Gemini3.1FlashImage的Thinking配置与Gemini3ProImage参与同表比较。",
+        "setting": "分别保留Nano Banana2 Thinking与Nano BananaPro名称和配置。",
+        "result": "总偏好分别 990±7 与 935±8；事实性分别 0.179 与 0.265。",
+        "limitation": "结果只对应表内任务，不构成所有模型的统一榜单。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p5; related model, evaluation or safety sections",
+            "fragment": "page=5"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "evaluation",
+        "kind": "method",
+        "stage": 1,
+        "label": "人工偏好与自动事实性分开计分",
+        "mechanism": "SxS人工比较生成Elo；事实性采用单边AutoRater。",
+        "setting": "文生图、编辑、多轮及回归集合分别覆盖不同质量方面。",
+        "result": "±范围保留原表；卡未说明充分样本量、置信水平或业务校准。",
+        "limitation": "不同指标不能平均；自动评分不是现实正确率。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p4; related model, evaluation or safety sections",
+            "fragment": "page=4"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "generation",
+        "kind": "result",
+        "stage": 2,
+        "label": "Thinking偏好较高，事实性另有量尺",
+        "mechanism": "2.1 区分Thinking与NoThinking配置，不推断未公开的内部推理算法。",
+        "setting": "同一官方结果表的总偏好、信息图设计与事实性行。",
+        "result": "总偏好 1050±14 对 1015±13；事实性 0.521 对 0.328。",
+        "limitation": "不把Elo提升换成准确率，不把Thinking收益换成未核费用或延迟。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p5; related model, evaluation or safety sections",
+            "fragment": "page=5"
+          }
+        ],
+        "metrics": [
+          {
+            "label": "Overall preference / Thinking",
+            "value": 1050,
+            "unit": "Elo",
+            "baseline": "2.1 NoThinking1015±13; Nano Banana2 Thinking990±7; Nano BananaPro935±8",
+            "conditions": "Author human SxS; source Thinking±14; confidence level/sample detail not fully specified"
+          },
+          {
+            "label": "Infographic factuality / Thinking",
+            "value": 0.521,
+            "unit": "AutoRater score",
+            "baseline": "2.1 NoThinking0.328; Nano Banana2 Thinking0.179; Nano BananaPro0.265",
+            "conditions": "Single-sided AutoRater; not a calibrated business accuracy rate"
+          }
+        ]
+      },
+      {
+        "id": "editing",
+        "kind": "result",
+        "stage": 2,
+        "label": "人物与多参考编辑分别看",
+        "mechanism": "按编辑任务分别做人类偏好比较。",
+        "setting": "单人物、多人物、多参考图分别为独立评测行。",
+        "result": "Thinking分别 1028±14、1106±14、1066±22。",
+        "limitation": "角色仍可能不一致；不能以点估计证明所有差异显著。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p5; related model, evaluation or safety sections",
+            "fragment": "page=5"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "specification",
+        "kind": "method",
+        "stage": 0,
+        "label": "基础依赖与云端交付条件",
+        "mechanism": "模型基于Gemini3.6Flash，原生接收文本与图像并输出文本或图像。",
+        "setting": "输入上下文最多 1M；图像 4K输出token、文本 64K输出token。",
+        "result": "卡列GeminiApp、AIStudio、API、SearchAIMode、Ads、Flow与Stitch入口。",
+        "limitation": "token不是像素；列出渠道不保证每个地区账户同步可用。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p2; related model, evaluation or safety sections",
+            "fragment": "page=2"
+          }
+        ],
+        "metrics": []
+      },
+      {
+        "id": "limitations",
+        "kind": "result",
+        "stage": 3,
+        "label": "失败与安全推断保留边界",
+        "mechanism": "基础模型能力、人工红队与其他Gemini型号前沿评测分别说明。",
+        "setting": "小字、长段落、角色、遮罩/涂鸦、姿态与空间关系均有已知不足。",
+        "result": "前沿安全判断依赖Gemini3.1Pro与Gemini3.7Flash评测，不是本型号完整独立重测。",
+        "limitation": "作者上线阈值判断不等于独立安全认证或零风险。",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p7; related model, evaluation or safety sections",
+            "fragment": "page=7"
+          }
+        ],
+        "metrics": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "baselines",
+        "to": "generation",
+        "relation": "baseline",
+        "label": "旧模型作为文生图比较基线",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p5; corresponding results and limitations",
+            "fragment": "page=5"
+          }
+        ]
+      },
+      {
+        "from": "baselines",
+        "to": "editing",
+        "relation": "baseline",
+        "label": "旧模型作为编辑任务比较基线",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p5; corresponding results and limitations",
+            "fragment": "page=5"
+          }
+        ]
+      },
+      {
+        "from": "evaluation",
+        "to": "generation",
+        "relation": "parallel",
+        "label": "评测口径与生成结果对应，不构造训练因果",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p4; corresponding results and limitations",
+            "fragment": "page=4"
+          }
+        ]
+      },
+      {
+        "from": "evaluation",
+        "to": "editing",
+        "relation": "parallel",
+        "label": "独立编辑行沿用人工偏好口径",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p5; corresponding results and limitations",
+            "fragment": "page=5"
+          }
+        ]
+      },
+      {
+        "from": "specification",
+        "to": "generation",
+        "relation": "parallel",
+        "label": "规格与成绩并列，不由上下文容量推出质量",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p2; corresponding results and limitations",
+            "fragment": "page=2"
+          }
+        ]
+      },
+      {
+        "from": "generation",
+        "to": "limitations",
+        "relation": "parallel",
+        "label": "成绩与已知不足同时保留",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p6; corresponding results and limitations",
+            "fragment": "page=6"
+          }
+        ]
+      },
+      {
+        "from": "editing",
+        "to": "limitations",
+        "relation": "parallel",
+        "label": "编辑成绩不取消一致性与安全边界",
+        "evidence": [
+          {
+            "source_id": "report",
+            "locator": "Physical p6; corresponding results and limitations",
+            "fragment": "page=6"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "title": "Nano Banana 2.1：图像偏好、事实性与编辑一致性要分开看",
+      "findings": [
+        {
+          "id": "preference-and-facts",
+          "title": "更受偏好不等于事实更准确，两套评分必须分开",
+          "summary": "Thinking在作者偏好表中较高，但Elo与事实性AutoRater不是同一种量尺。",
+          "node_ids": [
+            "evaluation",
+            "generation",
+            "baselines"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "Physical p5; interpretation with stated conditions",
+              "fragment": "page=5"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "模型卡把图像质量拆成文生图、编辑与多轮场景，并用回归集合观察旧版常见用法。它没有把所有指标合成一个通用图像正确率。理解这份报告，首先要保留评分者与任务的差别。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "人工偏好：总偏好Elo依次为 2.1Thinking1050±14、2.1NoThinking1015±13、Nano Banana2Thinking990±7、Nano BananaPro935±8；信息图设计为 1048±17、1001±17、961±12、912±12。",
+                "自动事实性：四种配置分别 0.521、0.328、0.179、0.265，来自单边AutoRater。不能将其与Elo相加、平均，也不能直接说Thinking让实际业务准确率达到 52.1%。",
+                "不确定性：重绘保留±范围，但卡没有交代足够的样本量、区间置信水平或AutoRater校准细节，不能补造显著性结论。"
+              ]
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/nano-banana-21-202610-preference.png",
+              "alt": "总偏好与信息图设计的四配置Elo点估计及原表±范围。",
+              "caption": "本站重绘：Elo表示相对人工偏好，各任务分别比较；±区间的置信水平未充分说明。",
+              "attribution": "FieldToFit本站重绘；原始统计来自Google DeepMind的 2026 年 10 月Nano Banana2.1 模型卡。",
+              "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card.",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "Physical p5: reported capability tables",
+                  "fragment": "page=5"
+                }
+              ]
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/nano-banana-21-202610-factuality.png",
+              "alt": "信息图事实性AutoRater分数为 0.521、0.328、0.179、0.265。",
+              "caption": "本站重绘：保留原始评分量尺；不是业务准确率，不与Elo拼成总分。",
+              "attribution": "FieldToFit本站重绘；原始统计来自Google DeepMind的 2026 年 10 月Nano Banana2.1 模型卡。",
+              "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card.",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "Physical p5: reported capability tables",
+                  "fragment": "page=5"
+                }
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "evidence",
+              "text": "报告支持“这些评测中的偏好与事实性评分改善”，尚不支持“任意信息图都可免核对”或“所有用户工作流同幅提高”。"
+            }
+          ]
+        },
+        {
+          "id": "editing-consistency",
+          "title": "编辑改善要按任务看，人物一致性仍非保证",
+          "summary": "单人物、多人物与多参考图应逐行对比；较高点估计不等于每项差异都显著。",
+          "node_ids": [
+            "editing",
+            "baselines"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "Physical p5; interpretation with stated conditions",
+              "fragment": "page=5"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "编辑的难点并不只有画面是否好看，还包括修改后人物、产品或多个参考元素能否保持。卡将这些问题拆开，比用一个编辑总分更有助于读者判断自己的任务是否被覆盖。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "单人物一致性：Thinking1028±14，NoThinking1021±14；两项原表范围明显重叠，不能仅用较高点估计宣布确定优势。",
+                "多人物一致性：Thinking1106±14、NoThinking1068±14；多参考编辑为 1066±22、1041±20。它们是不同任务，不能横向平均成一致性成功率。",
+                "其他行：一般编辑、产品、风格化和遮罩／涂鸦各有比较结果。卡仍承认角色不一致、部分指令未遵循、涂鸦残留和输入姿态固着。"
+              ]
+            },
+            {
+              "kind": "figure",
+              "image_url": "/report-figures/nano-banana-21-202610-editing.png",
+              "alt": "三类编辑任务各有四配置Elo与原始±范围，不跨行合计。",
+              "caption": "本站重绘：按任务比较，图中原始范围不自动构成统计显著性检验。",
+              "attribution": "FieldToFit本站重绘；原始统计来自Google DeepMind的 2026 年 10 月Nano Banana2.1 模型卡。",
+              "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card.",
+              "evidence": [
+                {
+                  "source_id": "report",
+                  "locator": "Physical p5: reported capability tables",
+                  "fragment": "page=5"
+                }
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "用于品牌人物、产品或多轮编辑时，仍应逐图核对身份、文字、遮罩边缘与空间关系；这里是建议检查的项目，不是本站完成的性能测试。"
+            }
+          ]
+        },
+        {
+          "id": "specification-and-access",
+          "title": "上下文和输出规格不能代替画质与可得性",
+          "summary": "输入最多 1M，图像输出 4K指token；官方列出渠道仍需核对账户与地区。",
+          "node_ids": [
+            "specification",
+            "generation"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "Physical p2; interpretation with stated conditions",
+              "fragment": "page=2"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "模型基于Gemini3.6Flash，可接收文本与图像并输出图像与文本。这说明基础依赖和接口形态，但报告没有提供足够信息来独立还原图像训练配方、参数规模或Thinking内部算法。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "输入：文本与图像，上下文窗口最多 1M token。输出：图像 4K token、文本 64K token；不把 4K token解释为 4K像素分辨率，也不由这些数字推算生成时长。",
+                "采用：卡列GeminiApp、AIStudio、GeminiAPI、SearchAIMode、Ads、Flow与Stitch。渠道名称不保证每种账户、地域或工作流使用同一型号与配额，具体API标识和价格仍需采用时确认。",
+                "本地工具关系：本站已审ComfyUI0.40.0 加入伙伴节点。节点上架、作者模型首发和实际账户可调用是三个不同事件，不能互相代替。"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "failure-and-safety",
+          "title": "已知失败和安全推断必须与成绩一起保留",
+          "summary": "图像质量仍有限；前沿安全部分依赖其他型号评测，不是本模型的完整独立认证。",
+          "node_ids": [
+            "limitations",
+            "evaluation"
+          ],
+          "evidence": [
+            {
+              "source_id": "report",
+              "locator": "Physical p7; interpretation with stated conditions",
+              "fragment": "page=7"
+            }
+          ],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "卡把图像质量局限、人工红队和前沿安全分开陈述。三类证据回答的问题不同：对偏好测试得分更高，不会自动消除幻觉、拒绝行为或被滥用的风险。"
+            },
+            {
+              "kind": "points",
+              "items": [
+                "质量与可靠性：小字可能模糊，长段文字、角色一致性、左右定位与 3D／世界知识事实性仍有限，偶有缓慢或超时。知识截止依赖基础模型，部分领域可能更早。",
+                "人工红队：作者称儿童安全满足其上线阈值，一般内容安全与部分比较相近或改善。这是作者自己的评估和阈值，不是独立安全认证。",
+                "前沿风险：卡依赖Gemini3.1Pro与Gemini3.7Flash结果，并据未见实质新能力判断 2.1 不太可能达到相关阈值。应写成基于其他模型的推断，不能声称 2.1 已独立重跑全部测试或“零风险”。"
+              ]
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "作者报告与本站分析都不能替代具体业务的验证。对需要事实正确、身份一致或合规审核的图片，保留原始依据和人工复核。"
+            }
+          ]
+        }
+      ],
+      "editorial": [
+        "FieldToFit判断：这份卡最有价值的是拆开指标，而不是提供一个“最强图像模型”的总答案。偏好、事实性与编辑任务分别决定它能支持哪些判断。",
+        "采用建议：先列自己的信息图、产品、人物与多轮编辑样本，再分别检查文字、事实、身份和修改保留；Thinking收益应连同实际费用和等待时间另测。本建议未被本站运行验证。",
+        "来源与修订：官网页面 2026-10-06，PDF版本 2026 年 10 月，本站核对 2026-10-15，网站发表时间由真实发布回执记录。8 页全文已读，原文只链接；三张图为本站重绘，均引物理第 5 页。"
+      ]
+    }
+  }
+}

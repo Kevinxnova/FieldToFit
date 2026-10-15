@@ -2,6 +2,1232 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "research",
+      "checked_at": "2026-10-15",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-06",
+      "highlight": false,
+      "id": "D-153",
+      "interpretation": [
+        {
+          "locator": "8-page model card, physical pp2-8; results p5",
+          "source_ids": [
+            "report"
+          ],
+          "text": "深读 8 页官方模型卡，以四条结论和三张本站重绘区分图像偏好、事实性、编辑一致性与采用边界。Thinking在多项作者评测中得分更高，但Elo不是正确率，AutoRater也不是业务准确率；小字、角色一致性和空间关系错误仍需人工核对。",
+          "title": "分开读指标、条件与失败边界"
+        }
+      ],
+      "name": "Nano Banana 2.1 Model Card",
+      "note": "PDF版本仅标 2026 年 10 月；官网页面标发布日期 2026-10-06。模型卡首次日期保留月精度，页面发布日期、本站核对和网站发表分别记录；无独立修订号。页码为含封面的PDF物理页。原文和原图仅链接，三图为本站原创重绘。作者评测未复现，未核实全部账户、地区、价格或具体API切换。",
+      "organization": "Google DeepMind",
+      "publication": {
+        "first_published_at": "2026-10-15T03:52:29.277139+00:00",
+        "updated_at": "2026-10-15T03:52:29.277139+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-15",
+          "coverage": "link_only",
+          "id": "report",
+          "locator": "8 physical pages; metric tables p5; limitations p6; safety pp7-8",
+          "reason": "已完整读取 8 页与结果表；原文再分发许可未确认，仅公开原创分析、原文链接及事实重绘。",
+          "retrieved_at": "2026-10-15",
+          "rights": {
+            "basis": "原文仅链接；本站图形依据公开事实重新设计"
+          },
+          "title": "Nano Banana 2.1 Model Card · October 2026",
+          "upstream_revision": "October 2026 model card",
+          "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Nano-Banana-2-1-Model-Card.pdf"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        },
+        {
+          "id": "CW-T01",
+          "name": "ComfyUI",
+          "url": "https://fieldtofit.top/watch/CW-T01"
+        },
+        {
+          "id": "D-136",
+          "name": "ComfyUI0.40.0 伙伴节点更新",
+          "url": "https://fieldtofit.top/news/D-136"
+        }
+      ],
+      "source_published_at": "2026-10-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "Nano Banana 2.1 Model Card · October 2026",
+          "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Nano-Banana-2-1-Model-Card.pdf"
+        },
+        {
+          "coverage": "link_only",
+          "id": "card-page",
+          "title": "Nano Banana2.1 官方模型卡页面 · 2026-10-06",
+          "url": "https://deepmind.google/models/model-cards/nano-banana-2-1/"
+        }
+      ],
+      "state": "published",
+      "summary": "深读 8 页官方模型卡，以四条结论和三张本站重绘区分图像偏好、事实性、编辑一致性与采用边界。Thinking在多项作者评测中得分更高，但Elo不是正确率，AutoRater也不是业务准确率；小字、角色一致性和空间关系错误仍需人工核对。",
+      "technical_map": {
+        "caution": "作者评测未复现；样本与评分器细节有限，±范围置信水平未充分交代，不能推出任意图片准确率、费用或全渠道开放。",
+        "change_summary": "首次整理所选模型卡：四结论、同号论述与三张本站重绘，保留原始指标、日期精度和已知限制。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "page=5",
+                "locator": "Physical p5; corresponding results and limitations",
+                "source_id": "report"
+              }
+            ],
+            "from": "baselines",
+            "label": "旧模型作为文生图比较基线",
+            "relation": "baseline",
+            "to": "generation"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=5",
+                "locator": "Physical p5; corresponding results and limitations",
+                "source_id": "report"
+              }
+            ],
+            "from": "baselines",
+            "label": "旧模型作为编辑任务比较基线",
+            "relation": "baseline",
+            "to": "editing"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=4",
+                "locator": "Physical p4; corresponding results and limitations",
+                "source_id": "report"
+              }
+            ],
+            "from": "evaluation",
+            "label": "评测口径与生成结果对应，不构造训练因果",
+            "relation": "parallel",
+            "to": "generation"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=5",
+                "locator": "Physical p5; corresponding results and limitations",
+                "source_id": "report"
+              }
+            ],
+            "from": "evaluation",
+            "label": "独立编辑行沿用人工偏好口径",
+            "relation": "parallel",
+            "to": "editing"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=2",
+                "locator": "Physical p2; corresponding results and limitations",
+                "source_id": "report"
+              }
+            ],
+            "from": "specification",
+            "label": "规格与成绩并列，不由上下文容量推出质量",
+            "relation": "parallel",
+            "to": "generation"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=6",
+                "locator": "Physical p6; corresponding results and limitations",
+                "source_id": "report"
+              }
+            ],
+            "from": "generation",
+            "label": "成绩与已知不足同时保留",
+            "relation": "parallel",
+            "to": "limitations"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=6",
+                "locator": "Physical p6; corresponding results and limitations",
+                "source_id": "report"
+              }
+            ],
+            "from": "editing",
+            "label": "编辑成绩不取消一致性与安全边界",
+            "relation": "parallel",
+            "to": "limitations"
+          }
+        ],
+        "focus": "主流图像模型的评测量尺、编辑一致性与采用边界",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "page=5",
+                "locator": "Physical p5; related model, evaluation or safety sections",
+                "source_id": "report"
+              }
+            ],
+            "id": "baselines",
+            "kind": "baseline",
+            "label": "两个旧模型是表内比较基线",
+            "limitation": "结果只对应表内任务，不构成所有模型的统一榜单。",
+            "mechanism": "Gemini3.1FlashImage的Thinking配置与Gemini3ProImage参与同表比较。",
+            "metrics": [],
+            "result": "总偏好分别 990±7 与 935±8；事实性分别 0.179 与 0.265。",
+            "setting": "分别保留Nano Banana2 Thinking与Nano BananaPro名称和配置。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=4",
+                "locator": "Physical p4; related model, evaluation or safety sections",
+                "source_id": "report"
+              }
+            ],
+            "id": "evaluation",
+            "kind": "method",
+            "label": "人工偏好与自动事实性分开计分",
+            "limitation": "不同指标不能平均；自动评分不是现实正确率。",
+            "mechanism": "SxS人工比较生成Elo；事实性采用单边AutoRater。",
+            "metrics": [],
+            "result": "±范围保留原表；卡未说明充分样本量、置信水平或业务校准。",
+            "setting": "文生图、编辑、多轮及回归集合分别覆盖不同质量方面。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=5",
+                "locator": "Physical p5; related model, evaluation or safety sections",
+                "source_id": "report"
+              }
+            ],
+            "id": "generation",
+            "kind": "result",
+            "label": "Thinking偏好较高，事实性另有量尺",
+            "limitation": "不把Elo提升换成准确率，不把Thinking收益换成未核费用或延迟。",
+            "mechanism": "2.1 区分Thinking与NoThinking配置，不推断未公开的内部推理算法。",
+            "metrics": [
+              {
+                "baseline": "2.1 NoThinking1015±13; Nano Banana2 Thinking990±7; Nano BananaPro935±8",
+                "conditions": "Author human SxS; source Thinking±14; confidence level/sample detail not fully specified",
+                "label": "Overall preference / Thinking",
+                "unit": "Elo",
+                "value": 1050
+              },
+              {
+                "baseline": "2.1 NoThinking0.328; Nano Banana2 Thinking0.179; Nano BananaPro0.265",
+                "conditions": "Single-sided AutoRater; not a calibrated business accuracy rate",
+                "label": "Infographic factuality / Thinking",
+                "unit": "AutoRater score",
+                "value": 0.521
+              }
+            ],
+            "result": "总偏好 1050±14 对 1015±13；事实性 0.521 对 0.328。",
+            "setting": "同一官方结果表的总偏好、信息图设计与事实性行。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=5",
+                "locator": "Physical p5; related model, evaluation or safety sections",
+                "source_id": "report"
+              }
+            ],
+            "id": "editing",
+            "kind": "result",
+            "label": "人物与多参考编辑分别看",
+            "limitation": "角色仍可能不一致；不能以点估计证明所有差异显著。",
+            "mechanism": "按编辑任务分别做人类偏好比较。",
+            "metrics": [],
+            "result": "Thinking分别 1028±14、1106±14、1066±22。",
+            "setting": "单人物、多人物、多参考图分别为独立评测行。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=2",
+                "locator": "Physical p2; related model, evaluation or safety sections",
+                "source_id": "report"
+              }
+            ],
+            "id": "specification",
+            "kind": "method",
+            "label": "基础依赖与云端交付条件",
+            "limitation": "token不是像素；列出渠道不保证每个地区账户同步可用。",
+            "mechanism": "模型基于Gemini3.6Flash，原生接收文本与图像并输出文本或图像。",
+            "metrics": [],
+            "result": "卡列GeminiApp、AIStudio、API、SearchAIMode、Ads、Flow与Stitch入口。",
+            "setting": "输入上下文最多 1M；图像 4K输出token、文本 64K输出token。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "page=7",
+                "locator": "Physical p7; related model, evaluation or safety sections",
+                "source_id": "report"
+              }
+            ],
+            "id": "limitations",
+            "kind": "result",
+            "label": "失败与安全推断保留边界",
+            "limitation": "作者上线阈值判断不等于独立安全认证或零风险。",
+            "mechanism": "基础模型能力、人工红队与其他Gemini型号前沿评测分别说明。",
+            "metrics": [],
+            "result": "前沿安全判断依赖Gemini3.1Pro与Gemini3.7Flash评测，不是本型号完整独立重测。",
+            "setting": "小字、长段落、角色、遮罩/涂鸦、姿态与空间关系均有已知不足。",
+            "stage": 3
+          }
+        ],
+        "question": "Nano Banana 2.1：图像偏好、事实性与编辑一致性要分开看",
+        "reading": {
+          "editorial": [
+            "FieldToFit判断：这份卡最有价值的是拆开指标，而不是提供一个“最强图像模型”的总答案。偏好、事实性与编辑任务分别决定它能支持哪些判断。",
+            "采用建议：先列自己的信息图、产品、人物与多轮编辑样本，再分别检查文字、事实、身份和修改保留；Thinking收益应连同实际费用和等待时间另测。本建议未被本站运行验证。",
+            "来源与修订：官网页面 2026-10-06，PDF版本 2026 年 10 月，本站核对 2026-10-15，网站发表时间由真实发布回执记录。8 页全文已读，原文只链接；三张图为本站重绘，均引物理第 5 页。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "模型卡把图像质量拆成文生图、编辑与多轮场景，并用回归集合观察旧版常见用法。它没有把所有指标合成一个通用图像正确率。理解这份报告，首先要保留评分者与任务的差别。"
+                },
+                {
+                  "items": [
+                    "人工偏好：总偏好Elo依次为 2.1Thinking1050±14、2.1NoThinking1015±13、Nano Banana2Thinking990±7、Nano BananaPro935±8；信息图设计为 1048±17、1001±17、961±12、912±12。",
+                    "自动事实性：四种配置分别 0.521、0.328、0.179、0.265，来自单边AutoRater。不能将其与Elo相加、平均，也不能直接说Thinking让实际业务准确率达到 52.1%。",
+                    "不确定性：重绘保留±范围，但卡没有交代足够的样本量、区间置信水平或AutoRater校准细节，不能补造显著性结论。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "总偏好与信息图设计的四配置Elo点估计及原表±范围。",
+                  "attribution": "FieldToFit本站重绘；原始统计来自Google DeepMind的 2026 年 10 月Nano Banana2.1 模型卡。",
+                  "caption": "本站重绘：Elo表示相对人工偏好，各任务分别比较；±区间的置信水平未充分说明。",
+                  "evidence": [
+                    {
+                      "fragment": "page=5",
+                      "locator": "Physical p5: reported capability tables",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nano-banana-21-202610-preference.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card."
+                },
+                {
+                  "alt": "信息图事实性AutoRater分数为 0.521、0.328、0.179、0.265。",
+                  "attribution": "FieldToFit本站重绘；原始统计来自Google DeepMind的 2026 年 10 月Nano Banana2.1 模型卡。",
+                  "caption": "本站重绘：保留原始评分量尺；不是业务准确率，不与Elo拼成总分。",
+                  "evidence": [
+                    {
+                      "fragment": "page=5",
+                      "locator": "Physical p5: reported capability tables",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nano-banana-21-202610-factuality.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "evidence",
+                  "text": "报告支持“这些评测中的偏好与事实性评分改善”，尚不支持“任意信息图都可免核对”或“所有用户工作流同幅提高”。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=5",
+                  "locator": "Physical p5; interpretation with stated conditions",
+                  "source_id": "report"
+                }
+              ],
+              "id": "preference-and-facts",
+              "node_ids": [
+                "evaluation",
+                "generation",
+                "baselines"
+              ],
+              "summary": "Thinking在作者偏好表中较高，但Elo与事实性AutoRater不是同一种量尺。",
+              "title": "更受偏好不等于事实更准确，两套评分必须分开"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "编辑的难点并不只有画面是否好看，还包括修改后人物、产品或多个参考元素能否保持。卡将这些问题拆开，比用一个编辑总分更有助于读者判断自己的任务是否被覆盖。"
+                },
+                {
+                  "items": [
+                    "单人物一致性：Thinking1028±14，NoThinking1021±14；两项原表范围明显重叠，不能仅用较高点估计宣布确定优势。",
+                    "多人物一致性：Thinking1106±14、NoThinking1068±14；多参考编辑为 1066±22、1041±20。它们是不同任务，不能横向平均成一致性成功率。",
+                    "其他行：一般编辑、产品、风格化和遮罩／涂鸦各有比较结果。卡仍承认角色不一致、部分指令未遵循、涂鸦残留和输入姿态固着。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "alt": "三类编辑任务各有四配置Elo与原始±范围，不跨行合计。",
+                  "attribution": "FieldToFit本站重绘；原始统计来自Google DeepMind的 2026 年 10 月Nano Banana2.1 模型卡。",
+                  "caption": "本站重绘：按任务比较，图中原始范围不自动构成统计显著性检验。",
+                  "evidence": [
+                    {
+                      "fragment": "page=5",
+                      "locator": "Physical p5: reported capability tables",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nano-banana-21-202610-editing.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "用于品牌人物、产品或多轮编辑时，仍应逐图核对身份、文字、遮罩边缘与空间关系；这里是建议检查的项目，不是本站完成的性能测试。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=5",
+                  "locator": "Physical p5; interpretation with stated conditions",
+                  "source_id": "report"
+                }
+              ],
+              "id": "editing-consistency",
+              "node_ids": [
+                "editing",
+                "baselines"
+              ],
+              "summary": "单人物、多人物与多参考图应逐行对比；较高点估计不等于每项差异都显著。",
+              "title": "编辑改善要按任务看，人物一致性仍非保证"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "模型基于Gemini3.6Flash，可接收文本与图像并输出图像与文本。这说明基础依赖和接口形态，但报告没有提供足够信息来独立还原图像训练配方、参数规模或Thinking内部算法。"
+                },
+                {
+                  "items": [
+                    "输入：文本与图像，上下文窗口最多 1M token。输出：图像 4K token、文本 64K token；不把 4K token解释为 4K像素分辨率，也不由这些数字推算生成时长。",
+                    "采用：卡列GeminiApp、AIStudio、GeminiAPI、SearchAIMode、Ads、Flow与Stitch。渠道名称不保证每种账户、地域或工作流使用同一型号与配额，具体API标识和价格仍需采用时确认。",
+                    "本地工具关系：本站已审ComfyUI0.40.0 加入伙伴节点。节点上架、作者模型首发和实际账户可调用是三个不同事件，不能互相代替。"
+                  ],
+                  "kind": "points"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=2",
+                  "locator": "Physical p2; interpretation with stated conditions",
+                  "source_id": "report"
+                }
+              ],
+              "id": "specification-and-access",
+              "node_ids": [
+                "specification",
+                "generation"
+              ],
+              "summary": "输入最多 1M，图像输出 4K指token；官方列出渠道仍需核对账户与地区。",
+              "title": "上下文和输出规格不能代替画质与可得性"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "卡把图像质量局限、人工红队和前沿安全分开陈述。三类证据回答的问题不同：对偏好测试得分更高，不会自动消除幻觉、拒绝行为或被滥用的风险。"
+                },
+                {
+                  "items": [
+                    "质量与可靠性：小字可能模糊，长段文字、角色一致性、左右定位与 3D／世界知识事实性仍有限，偶有缓慢或超时。知识截止依赖基础模型，部分领域可能更早。",
+                    "人工红队：作者称儿童安全满足其上线阈值，一般内容安全与部分比较相近或改善。这是作者自己的评估和阈值，不是独立安全认证。",
+                    "前沿风险：卡依赖Gemini3.1Pro与Gemini3.7Flash结果，并据未见实质新能力判断 2.1 不太可能达到相关阈值。应写成基于其他模型的推断，不能声称 2.1 已独立重跑全部测试或“零风险”。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "作者报告与本站分析都不能替代具体业务的验证。对需要事实正确、身份一致或合规审核的图片，保留原始依据和人工复核。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "page=7",
+                  "locator": "Physical p7; interpretation with stated conditions",
+                  "source_id": "report"
+                }
+              ],
+              "id": "failure-and-safety",
+              "node_ids": [
+                "limitations",
+                "evaluation"
+              ],
+              "summary": "图像质量仍有限；前沿安全部分依赖其他型号评测，不是本模型的完整独立认证。",
+              "title": "已知失败和安全推断必须与成绩一起保留"
+            }
+          ],
+          "title": "Nano Banana 2.1：图像偏好、事实性与编辑一致性要分开看"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10",
+            "revised_at": null,
+            "revision_note": "PDF仅标月份；官网页面发布日期 2026-10-06 独立记录，不据下载日期制造实质修订。",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "October 2026 model card"
+          }
+        ],
+        "slug": "image-generation-factuality-editing",
+        "takeaway": "Nano Banana2.1 在多项作者评测中更受偏好，但事实性、编辑一致性、输出规格和安全判断需要分开；工作流采用仍需自己的样本验证。"
+      },
+      "title": "Nano Banana 2.1：图像偏好、事实性与编辑一致性要分开看",
+      "translations": {
+        "en": {
+          "fields": {
+            "2.1 区分Thinking与NoThinking配置，不推断未公开的内部推理算法。": "2.1 distinguishes Thinking from NoThinking without disclosing an internal reasoning algorithm.",
+            "ComfyUI0.40.0 伙伴节点更新": "ComfyUI0.40.0 partner-node update",
+            "FieldToFit判断：这份卡最有价值的是拆开指标，而不是提供一个“最强图像模型”的总答案。偏好、事实性与编辑任务分别决定它能支持哪些判断。": "FieldToFit assessment: the card’s main value is separating metrics rather than declaring one best image model. Preference, factuality and editing tasks support distinct judgments.",
+            "FieldToFit本站重绘；原始统计来自Google DeepMind的 2026 年 10 月Nano Banana2.1 模型卡。": "FieldToFit redraw; original statistics from Google DeepMind’s 2026-10 Nano Banana2.1 model card.",
+            "Gemini3.1FlashImage的Thinking配置与Gemini3ProImage参与同表比较。": "Gemini3.1FlashImage Thinking and Gemini3ProImage are compared in the same table.",
+            "Nano Banana 2.1：图像偏好、事实性与编辑一致性要分开看": "Nano Banana 2.1: separate image preference, factuality and editing consistency",
+            "Nano Banana2.1 在多项作者评测中更受偏好，但事实性、编辑一致性、输出规格和安全判断需要分开；工作流采用仍需自己的样本验证。": "Nano Banana2.1 is preferred in several author evaluations, but factuality, editing consistency, output specifications and safety assessments remain distinct; adoption still needs workflow-specific validation.",
+            "Nano Banana2.1 官方模型卡页面 · 2026-10-06": "Nano Banana2.1 official model-card page · 2026-10-06",
+            "PDF仅标月份；官网页面发布日期 2026-10-06 独立记录，不据下载日期制造实质修订。": "The PDF gives only a month; record the official page date 2026-10-06 separately, without turning the download date into a substantive revision.",
+            "PDF版本仅标 2026 年 10 月；官网页面标发布日期 2026-10-06。模型卡首次日期保留月精度，页面发布日期、本站核对和网站发表分别记录；无独立修订号。页码为含封面的PDF物理页。原文和原图仅链接，三图为本站原创重绘。作者评测未复现，未核实全部账户、地区、价格或具体API切换。": "The PDF gives only 2026-10; the official page gives 2026-10-06. Retain month precision for the report while recording the page date, FieldToFit check and website publication separately; no independent revision number is provided. Citations use physical PDF pages including the cover. Upstream text and figures are linked only; three charts are original redraws. Author results were not reproduced; account, regional, price and exact API rollout conditions are not fully verified.",
+            "SxS人工比较生成Elo；事实性采用单边AutoRater。": "Side-by-side human comparison produces Elo; factuality uses a single-sided AutoRater.",
+            "Thinking偏好较高，事实性另有量尺": "Higher Thinking preference uses a separate scale from factuality",
+            "Thinking分别 1028±14、1106±14、1066±22。": "Thinking scores are 1028±14, 1106±14 and 1066±22.",
+            "Thinking在作者偏好表中较高，但Elo与事实性AutoRater不是同一种量尺。": "Thinking is higher in the author’s preference table, but Elo and factuality AutoRater are different scales.",
+            "token不是像素；列出渠道不保证每个地区账户同步可用。": "Tokens are not pixels; listed channels do not guarantee simultaneous access in every region/account.",
+            "±范围保留原表；卡未说明充分样本量、置信水平或业务校准。": "Retain the source ± ranges; the card does not give sufficient sample, confidence-level or business-calibration detail.",
+            "三类编辑任务各有四配置Elo与原始±范围，不跨行合计。": "Three editing tasks each show four configurations and original ± ranges without cross-row aggregation.",
+            "上下文和输出规格不能代替画质与可得性": "Context and output specifications do not establish image quality or access",
+            "不同指标不能平均；自动评分不是现实正确率。": "Do not average different metrics; automated scoring is not real-world accuracy.",
+            "不把Elo提升换成准确率，不把Thinking收益换成未核费用或延迟。": "Do not convert Elo gains into accuracy or infer unverified cost/latency effects from Thinking.",
+            "不确定性：重绘保留±范围，但卡没有交代足够的样本量、区间置信水平或AutoRater校准细节，不能补造显著性结论。": "Uncertainty: the redraw retains ± ranges, but the card does not give sufficient sample-size, confidence-level or AutoRater-calibration detail to invent significance claims.",
+            "两个旧模型是表内比较基线": "Two earlier models are table baselines",
+            "主流图像模型的评测量尺、编辑一致性与采用边界": "Metrics, editing consistency and adoption limits for a mainstream image model",
+            "人工偏好与自动事实性分开计分": "Score human preference and automated factuality separately",
+            "人工偏好：总偏好Elo依次为 2.1Thinking1050±14、2.1NoThinking1015±13、Nano Banana2Thinking990±7、Nano BananaPro935±8；信息图设计为 1048±17、1001±17、961±12、912±12。": "Human preference: overall Elo is 2.1Thinking1050±14, 2.1NoThinking1015±13, Nano Banana2Thinking990±7 and Nano BananaPro935±8; infographic design is 1048±17, 1001±17, 961±12 and 912±12.",
+            "人工红队：作者称儿童安全满足其上线阈值，一般内容安全与部分比较相近或改善。这是作者自己的评估和阈值，不是独立安全认证。": "Human red teaming: the author says child safety met its launch thresholds, with similar or improved general content safety in some comparisons. These are the author’s assessments and thresholds, not independent certification.",
+            "人物与多参考编辑分别看": "Read character and multi-reference editing separately",
+            "作者上线阈值判断不等于独立安全认证或零风险。": "Author launch-threshold assessments are not independent safety certification or zero risk.",
+            "作者报告与本站分析都不能替代具体业务的验证。对需要事实正确、身份一致或合规审核的图片，保留原始依据和人工复核。": "Neither the author report nor FieldToFit analysis replaces validation for a specific use. Preserve underlying evidence and human review for images requiring factual correctness, identity consistency or compliance review.",
+            "作者评测未复现；样本与评分器细节有限，±范围置信水平未充分交代，不能推出任意图片准确率、费用或全渠道开放。": "Author results were not reproduced; limited sample/grader detail and unspecified ± confidence levels do not establish universal image accuracy, costs or access across all channels.",
+            "信息图事实性AutoRater分数为 0.521、0.328、0.179、0.265。": "Infographic-factuality AutoRater scores are 0.521, 0.328, 0.179 and 0.265.",
+            "其他行：一般编辑、产品、风格化和遮罩／涂鸦各有比较结果。卡仍承认角色不一致、部分指令未遵循、涂鸦残留和输入姿态固着。": "Other rows cover general editing, products, stylization and masks/ink. The card retains character inconsistency, partial instruction following, ink persistence and retained input poses as limitations.",
+            "分别保留Nano Banana2 Thinking与Nano BananaPro名称和配置。": "Retain the Nano Banana2 Thinking and Nano BananaPro names and settings separately.",
+            "分开读指标、条件与失败边界": "Read metrics, settings and failures separately",
+            "前沿安全判断依赖Gemini3.1Pro与Gemini3.7Flash评测，不是本型号完整独立重测。": "Frontier safety relies on Gemini3.1Pro and Gemini3.7Flash evaluations rather than a complete independent suite for this model.",
+            "前沿风险：卡依赖Gemini3.1Pro与Gemini3.7Flash结果，并据未见实质新能力判断 2.1 不太可能达到相关阈值。应写成基于其他模型的推断，不能声称 2.1 已独立重跑全部测试或“零风险”。": "Frontier risk: the card relies on Gemini3.1Pro and Gemini3.7Flash and infers 2.1 is unlikely to reach relevant thresholds because it finds no material new capabilities. This is an inference from other models, not proof that 2.1 independently reran the entire suite or has zero risk.",
+            "单人物、多人物、多参考图分别为独立评测行。": "Single-character, multi-character and multi-reference editing are independent rows.",
+            "单人物、多人物与多参考图应逐行对比；较高点估计不等于每项差异都显著。": "Compare single-character, multi-character and multi-reference rows separately; higher point estimates do not establish significance for every difference.",
+            "单人物一致性：Thinking1028±14，NoThinking1021±14；两项原表范围明显重叠，不能仅用较高点估计宣布确定优势。": "Single-character consistency: Thinking1028±14 versus NoThinking1021±14. The source ranges overlap substantially; the higher point estimate alone does not establish a definite advantage.",
+            "卡列GeminiApp、AIStudio、API、SearchAIMode、Ads、Flow与Stitch入口。": "The card lists GeminiApp, AIStudio, API, SearchAIMode, Ads, Flow and Stitch channels.",
+            "卡把图像质量局限、人工红队和前沿安全分开陈述。三类证据回答的问题不同：对偏好测试得分更高，不会自动消除幻觉、拒绝行为或被滥用的风险。": "The card separates image-quality limits, human red teaming and frontier safety. These answer different questions: a higher preference score does not remove hallucination, refusal or misuse risks.",
+            "原文仅链接；本站图形依据公开事实重新设计": "Link upstream text only; redesign FieldToFit graphics using public facts",
+            "同一官方结果表的总偏好、信息图设计与事实性行。": "Overall preference, infographic design and factuality rows in the same official table.",
+            "图像质量仍有限；前沿安全部分依赖其他型号评测，不是本模型的完整独立认证。": "Image-quality limitations remain; frontier safety partly relies on other models rather than a complete independent certification of this model.",
+            "基础依赖与云端交付条件": "Base dependency and hosted delivery conditions",
+            "基础模型能力、人工红队与其他Gemini型号前沿评测分别说明。": "Base-model capabilities, human red teaming and other Gemini frontier evaluations are described separately.",
+            "多人物一致性：Thinking1106±14、NoThinking1068±14；多参考编辑为 1066±22、1041±20。它们是不同任务，不能横向平均成一致性成功率。": "Multi-character consistency: Thinking1106±14 and NoThinking1068±14; multi-reference editing is 1066±22 and 1041±20. These are different tasks and should not be averaged into a consistency success rate.",
+            "失败与安全推断保留边界": "Bound failure and safety inferences",
+            "小字、长段落、角色、遮罩/涂鸦、姿态与空间关系均有已知不足。": "Known weaknesses cover small text, long passages, characters, masks/ink, poses and spatial relations.",
+            "已完整读取 8 页与结果表；原文再分发许可未确认，仅公开原创分析、原文链接及事实重绘。": "All 8 pages and result tables were read; redistribution rights are unverified, so publish original analysis, source links and factual redraws only.",
+            "已知失败和安全推断必须与成绩一起保留": "Keep known failures and safety inferences alongside scores",
+            "总偏好 1050±14 对 1015±13；事实性 0.521 对 0.328。": "Overall preference 1050±14 versus 1015±13; factuality 0.521 versus 0.328.",
+            "总偏好与信息图设计的四配置Elo点估计及原表±范围。": "Four-configuration Elo point estimates and source ± ranges for overall preference and infographic design.",
+            "总偏好分别 990±7 与 935±8；事实性分别 0.179 与 0.265。": "Overall preference is 990±7 and 935±8; factuality is 0.179 and 0.265.",
+            "成绩与已知不足同时保留": "Retain results alongside known limitations",
+            "报告支持“这些评测中的偏好与事实性评分改善”，尚不支持“任意信息图都可免核对”或“所有用户工作流同幅提高”。": "The report supports improved preference and factuality scores in these evaluations, not unchecked use of every infographic or identical gains across all workflows.",
+            "按编辑任务分别做人类偏好比较。": "Human preference comparisons are separated by editing task.",
+            "文生图、编辑、多轮及回归集合分别覆盖不同质量方面。": "Text-to-image, editing, multi-turn and regression sets cover distinct quality aspects.",
+            "旧模型作为文生图比较基线": "Earlier models are text-to-image baselines",
+            "旧模型作为编辑任务比较基线": "Earlier models are editing baselines",
+            "更受偏好不等于事实更准确，两套评分必须分开": "Preference and factuality use separate scores",
+            "本地工具关系：本站已审ComfyUI0.40.0 加入伙伴节点。节点上架、作者模型首发和实际账户可调用是三个不同事件，不能互相代替。": "Local-tool relationship: the reviewed ComfyUI0.40.0 release adds partner nodes. Node integration, the author’s model launch and actual account access are three separate events.",
+            "本站重绘：Elo表示相对人工偏好，各任务分别比较；±区间的置信水平未充分说明。": "FieldToFit redraw: Elo represents relative human preference within each task; confidence levels for the ± ranges are not fully specified.",
+            "本站重绘：保留原始评分量尺；不是业务准确率，不与Elo拼成总分。": "FieldToFit redraw: retain the original scoring scale; this is not business accuracy or a component of an Elo-based total.",
+            "本站重绘：按任务比较，图中原始范围不自动构成统计显著性检验。": "FieldToFit redraw: compare within tasks; the plotted source ranges do not automatically establish a significance test.",
+            "来源与修订：官网页面 2026-10-06，PDF版本 2026 年 10 月，本站核对 2026-10-15，网站发表时间由真实发布回执记录。8 页全文已读，原文只链接；三张图为本站重绘，均引物理第 5 页。": "Sources and revision: official page 2026-10-06, PDF version 2026-10, FieldToFit checked 2026-10-15; actual publication time comes from the publication receipt. All 8 pages were read. Upstream text is linked only; the three FieldToFit redraws cite physical page 5.",
+            "模型卡把图像质量拆成文生图、编辑与多轮场景，并用回归集合观察旧版常见用法。它没有把所有指标合成一个通用图像正确率。理解这份报告，首先要保留评分者与任务的差别。": "The card divides quality into text-to-image, editing and multi-turn scenarios, with regression sets for common earlier uses. It does not combine every metric into a universal image-correctness rate. Preserve differences in graders and tasks when reading the results.",
+            "模型基于Gemini3.6Flash，原生接收文本与图像并输出文本或图像。": "Based on Gemini3.6Flash, the model takes text/images and produces text/images.",
+            "模型基于Gemini3.6Flash，可接收文本与图像并输出图像与文本。这说明基础依赖和接口形态，但报告没有提供足够信息来独立还原图像训练配方、参数规模或Thinking内部算法。": "Based on Gemini3.6Flash, the model takes text/images and produces images/text. This identifies the dependency and interface, but does not provide enough information to reconstruct its image-training recipe, parameter count or internal Thinking algorithm.",
+            "深读 8 页官方模型卡，以四条结论和三张本站重绘区分图像偏好、事实性、编辑一致性与采用边界。Thinking在多项作者评测中得分更高，但Elo不是正确率，AutoRater也不是业务准确率；小字、角色一致性和空间关系错误仍需人工核对。": "Read the 8-page official model card through four findings and three original redraws separating image preference, factuality, editing consistency and adoption limits. Thinking scores higher in several author evaluations, but Elo is not correctness and AutoRater is not business accuracy. Small text, character consistency and spatial errors still need human review.",
+            "独立编辑行沿用人工偏好口径": "Independent editing rows use human-preference scoring",
+            "用于品牌人物、产品或多轮编辑时，仍应逐图核对身份、文字、遮罩边缘与空间关系；这里是建议检查的项目，不是本站完成的性能测试。": "For brand characters, products or multi-turn edits, inspect identity, text, mask boundaries and spatial relations in each image. These are suggested checks, not performance tests completed by FieldToFit.",
+            "结果只对应表内任务，不构成所有模型的统一榜单。": "Results apply to the table’s tasks, not a universal model ranking.",
+            "编辑成绩不取消一致性与安全边界": "Editing scores do not remove consistency or safety limits",
+            "编辑改善要按任务看，人物一致性仍非保证": "Editing gains depend on the task; character consistency is not guaranteed",
+            "编辑的难点并不只有画面是否好看，还包括修改后人物、产品或多个参考元素能否保持。卡将这些问题拆开，比用一个编辑总分更有助于读者判断自己的任务是否被覆盖。": "Editing concerns more than appearance: characters, products and multiple references must survive changes. Separate rows help readers judge coverage of their own task better than one editing total.",
+            "自动事实性：四种配置分别 0.521、0.328、0.179、0.265，来自单边AutoRater。不能将其与Elo相加、平均，也不能直接说Thinking让实际业务准确率达到 52.1%。": "Automated factuality: the four settings score 0.521, 0.328, 0.179 and 0.265 with a single-sided AutoRater. Do not add or average these with Elo, or claim Thinking achieves 52.1% business accuracy.",
+            "规格与成绩并列，不由上下文容量推出质量": "Specifications accompany scores; context capacity does not imply quality",
+            "角色仍可能不一致；不能以点估计证明所有差异显著。": "Character inconsistency remains; point estimates do not establish universal statistical significance.",
+            "评测口径与生成结果对应，不构造训练因果": "Evaluation definitions accompany generation results without a training-causality claim",
+            "质量与可靠性：小字可能模糊，长段文字、角色一致性、左右定位与 3D／世界知识事实性仍有限，偶有缓慢或超时。知识截止依赖基础模型，部分领域可能更早。": "Quality and reliability: small text can be blurry; long text, character consistency, left/right location and 3D/world-knowledge factuality remain limited, with occasional slowness or timeouts. Knowledge cutoff depends on the base model and may be earlier in some domains.",
+            "输入上下文最多 1M；图像 4K输出token、文本 64K输出token。": "Input context up to 1M; image output 4K tokens and text output 64K tokens.",
+            "输入最多 1M，图像输出 4K指token；官方列出渠道仍需核对账户与地区。": "Input is up to 1M, while image output 4K means tokens; listed channels still require account and region checks.",
+            "输入：文本与图像，上下文窗口最多 1M token。输出：图像 4K token、文本 64K token；不把 4K token解释为 4K像素分辨率，也不由这些数字推算生成时长。": "Input: text and images with context up to 1M tokens. Output: images 4K tokens and text 64K tokens. Do not interpret 4K tokens as 4K pixel resolution or infer generation duration from these figures.",
+            "采用建议：先列自己的信息图、产品、人物与多轮编辑样本，再分别检查文字、事实、身份和修改保留；Thinking收益应连同实际费用和等待时间另测。本建议未被本站运行验证。": "Adoption proposal: define your own infographic, product, character and multi-turn samples, then check text, facts, identity and preserved edits separately. Measure Thinking gains alongside actual cost and wait time; FieldToFit has not run this proposed validation.",
+            "采用：卡列GeminiApp、AIStudio、GeminiAPI、SearchAIMode、Ads、Flow与Stitch。渠道名称不保证每种账户、地域或工作流使用同一型号与配额，具体API标识和价格仍需采用时确认。": "Access: the card lists GeminiApp, AIStudio, GeminiAPI, SearchAIMode, Ads, Flow and Stitch. Channel names do not guarantee the same model or quota for every account, region or workflow; verify exact API identifiers and prices at adoption.",
+            "首次整理所选模型卡：四结论、同号论述与三张本站重绘，保留原始指标、日期精度和已知限制。": "First analysis of the selected card: four findings, matching arguments and three original redraws, retaining metric definitions, date precision and known limitations."
+          },
+          "review_note": "真实用户明确选择2026-10-15报告1 Nano Banana2.1模型卡。已完整读取8页原文并核对第5页表格；87项双语逐项核对事实、数字、偏好Elo、自动事实性、编辑任务条件与图表来源；原文仅链接，三张本站重绘已部署且哈希一致。",
+          "reviewed_at": "2026-10-15T03:51:31.347017+00:00",
+          "source_hash": "e380e0aefe32cdf4d6987502db0c60d104a28ab2e74616f48ca8163e7cec315b",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-15",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-13",
+      "highlight": true,
+      "id": "D-152",
+      "interpretation": [
+        {
+          "locator": "Apple TV4K4th generation / tvOS27.2 beta; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-f-1"
+          ],
+          "text": "支持对话式找片、内容追问及部分个人上下文请求；新机远场麦克风提供免手持入口，家庭摄像机描述等另有设置与iCloud+条件。",
+          "title": "对话与个人上下文"
+        },
+        {
+          "locator": "Apple TV4K4th generation / tvOS27.2 beta; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-f-1"
+          ],
+          "text": "Siri AI为tvOS27.2 beta，家庭所有者需兼容Apple Intelligence的iPhone／iPad、开启功能并使用支持语言。首发列美、澳、加、印度、新西兰、新加坡、南非、英国的英语，未列中文或中国大陆。",
+          "title": "英语beta与设备条件"
+        },
+        {
+          "locator": "Apple TV4K4th generation / tvOS27.2 beta; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-f-1"
+          ],
+          "text": "远场Siri支持普通话不等于Siri AI支持中文。部分服务器功能有日用量限制，未来扩展访问可能收费；第 2 代及以后的Apple TV4K也可使用Siri AI。本站未测试设备、地域或账户可用性。",
+          "title": "普通Siri与Siri AI分开"
+        }
+      ],
+      "name": "Apple TV 4K / Siri AI",
+      "note": "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-15；版本：Apple TV4K4th generation / tvOS27.2 beta。本站未安装或复现性能。",
+      "organization": "Apple",
+      "publication": {
+        "first_published_at": "2026-10-15T03:49:09.167153+00:00",
+        "updated_at": "2026-10-15T03:49:09.167153+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-15",
+          "coverage": "link_only",
+          "id": "oct15-f-1",
+          "locator": "Official release or announcement, explicit limitations and footnotes",
+          "reason": "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-15",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Apple TV 4K / Siri AI Apple TV4K4th generation / tvOS27.2 beta · Official source 1",
+          "upstream_revision": "Apple TV4K4th generation / tvOS27.2 beta",
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/"
+        }
+      ],
+      "related": [
+        {
+          "id": "D-142",
+          "name": "Apple HomeView",
+          "url": "https://fieldtofit.top/news/D-142"
+        }
+      ],
+      "source_published_at": "2026-10-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct15-f-1",
+          "title": "Apple TV 4K / Siri AI Apple TV4K4th generation / tvOS27.2 beta · Official source 1",
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/"
+        }
+      ],
+      "state": "published",
+      "summary": "Apple于 10 月 13 日公布第 4 代Apple TV4K，称 11 月 13 日上市。此次记录Siri AI采用条件，不将硬件公告重写为今日首发。",
+      "title": "Apple TV 4K接入Siri AI：客厅对话入口仍受语言与地区限制",
+      "translations": {
+        "en": {
+          "fields": {
+            "Apple TV 4K接入Siri AI：客厅对话入口仍受语言与地区限制": "Siri AI on Apple TV 4K: living-room conversations with language and regional limits",
+            "Apple于 10 月 13 日公布第 4 代Apple TV4K，称 11 月 13 日上市。此次记录Siri AI采用条件，不将硬件公告重写为今日首发。": "Apple announced the 4th-generation Apple TV4K on 10/13, with availability from 11/13. This records Siri AI adoption conditions rather than presenting the hardware announcement as today’s launch.",
+            "Siri AI为tvOS27.2 beta，家庭所有者需兼容Apple Intelligence的iPhone／iPad、开启功能并使用支持语言。首发列美、澳、加、印度、新西兰、新加坡、南非、英国的英语，未列中文或中国大陆。": "Siri AI is a tvOS27.2 beta. The home owner needs a compatible Apple Intelligence iPhone/iPad with the feature enabled in a supported language. Launch lists English in the US, Australia, Canada, India, New Zealand, Singapore, South Africa and UK; Chinese and mainland China are not listed.",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-15；版本：Apple TV4K4th generation / tvOS27.2 beta。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-13; checked:2026-10-15; version:Apple TV4K4th generation / tvOS27.2 beta; FieldToFit has not installed or reproduced performance.",
+            "对话与个人上下文": "Conversation and personal context",
+            "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
+            "支持对话式找片、内容追问及部分个人上下文请求；新机远场麦克风提供免手持入口，家庭摄像机描述等另有设置与iCloud+条件。": "Supports conversational discovery, follow-up questions and some personal-context requests. The new model adds far-field microphones; home-camera descriptions have separate setup and iCloud+ requirements.",
+            "普通Siri与Siri AI分开": "Distinguish ordinary Siri from Siri AI",
+            "英语beta与设备条件": "English beta and device requirements",
+            "远场Siri支持普通话不等于Siri AI支持中文。部分服务器功能有日用量限制，未来扩展访问可能收费；第 2 代及以后的Apple TV4K也可使用Siri AI。本站未测试设备、地域或账户可用性。": "Mandarin support for far-field Siri does not imply Chinese support for Siri AI. Some server features have daily limits and expanded access may carry future charges. Siri AI also supports Apple TV4K 2nd generation or later; FieldToFit has not tested devices, regions or account availability."
+          },
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:34:29.369515+00:00",
+          "source_hash": "23bc0da0d0b0de5ef948514fb29bbd1f4016b725de6d1ed603eb7e8a9ca9cd8b",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-15",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": true,
+      "id": "D-151",
+      "interpretation": [
+        {
+          "locator": "deepagents==0.7.25; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-e-1"
+          ],
+          "text": "此前FilesystemBackend可能在检查后跟随符号链接，触达被拒绝路径。使用者应复核现有规则与目标审批；不能据此宣称全部越权风险已消除。",
+          "title": "具体权限边界修复"
+        },
+        {
+          "locator": "deepagents==0.7.25; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-e-1"
+          ],
+          "text": "从模型profile读取内联Skill工具支持，修复沙箱路径glob搜索；搜索优先ripgrep并跳过.git。",
+          "title": "技能与搜索"
+        },
+        {
+          "locator": "deepagents==0.7.25; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-e-1"
+          ],
+          "text": "本次为deepagents核心SDK，不能混入deepagents-code或Talon的独立版本。保留 0.7.24 异步子Agent历史说明；本站未做安全复测。",
+          "title": "各包版本分开"
+        }
+      ],
+      "name": "Deep Agents",
+      "note": "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：deepagents==0.7.25。本站未安装或复现性能。",
+      "organization": "LangChain",
+      "publication": {
+        "first_published_at": "2026-10-15T03:48:18.093027+00:00",
+        "updated_at": "2026-10-15T03:48:18.093027+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-15",
+          "coverage": "link_only",
+          "id": "oct15-e-1",
+          "locator": "Official release or announcement, explicit limitations and footnotes",
+          "reason": "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-15",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Deep Agents deepagents==0.7.25 · Official source 1",
+          "upstream_revision": "deepagents==0.7.25",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.25"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-H02",
+          "name": "Deep Agents",
+          "url": "https://fieldtofit.top/watch/CW-H02"
+        }
+      ],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct15-e-1",
+          "title": "Deep Agents deepagents==0.7.25 · Official source 1",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.25"
+        }
+      ],
+      "state": "published",
+      "summary": "核心SDK于北京时间 10 月 14 日 09:13 发布。文件系统规则和interrupt_on审批同时检查请求路径与解析后的真实目标。",
+      "title": "Deep Agents 0.7.25：权限检查覆盖符号链接解析后的路径",
+      "translations": {
+        "en": {
+          "fields": {
+            "Deep Agents 0.7.25：权限检查覆盖符号链接解析后的路径": "Deep Agents 0.7.25: permission checks include symlink-resolved paths",
+            "从模型profile读取内联Skill工具支持，修复沙箱路径glob搜索；搜索优先ripgrep并跳过.git。": "Reads inline skill-tool support from model profiles and fixes sandbox path-glob search. Search prefers ripgrep and skips.git.",
+            "具体权限边界修复": "A specific permission-boundary fix",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：deepagents==0.7.25。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-14; checked:2026-10-15; version:deepagents==0.7.25; FieldToFit has not installed or reproduced performance.",
+            "各包版本分开": "Keep package versions separate",
+            "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
+            "技能与搜索": "Skills and search",
+            "本次为deepagents核心SDK，不能混入deepagents-code或Talon的独立版本。保留 0.7.24 异步子Agent历史说明；本站未做安全复测。": "This is the deepagents core SDK, separate from deepagents-code and Talon. Preserve the 0.7.24 async-subagent history; FieldToFit has not performed security retesting.",
+            "核心SDK于北京时间 10 月 14 日 09:13 发布。文件系统规则和interrupt_on审批同时检查请求路径与解析后的真实目标。": "The core SDK was released at 09:13 Beijing time on 10/14. Filesystem rules and interrupt_on approvals check both requested paths and their resolved targets.",
+            "此前FilesystemBackend可能在检查后跟随符号链接，触达被拒绝路径。使用者应复核现有规则与目标审批；不能据此宣称全部越权风险已消除。": "Previously FilesystemBackend could follow a symlink after the check and reach a denied path. Review existing rules and target approvals; this does not establish elimination of every permission risk."
+          },
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:33:58.691868+00:00",
+          "source_hash": "e35c273c7cdaf63d519fd6a6c48f3994e364e267e22bafd482e212e64939079e",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-15",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": false,
+      "id": "D-150",
+      "interpretation": [
+        {
+          "locator": "v2.139.0; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-d-1"
+          ],
+          "text": "补入Numbers单元格图片、PPTX组合图处理，并修正文档编号、列表、图片和链接保留的多处问题。",
+          "title": "格式与结构保留"
+        },
+        {
+          "locator": "v2.139.0; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-d-1"
+          ],
+          "text": "调整长驻PDF处理线程、部分模型加载、流式终止和解析异常处理；模型、OCR与ASR依赖仍按所选管线另查。",
+          "title": "批量处理维护"
+        },
+        {
+          "locator": "v2.139.0; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-d-1"
+          ],
+          "text": "逐页分数可用于排查和筛选，不等于事实正确率。格式支持增加不证明复杂中文表格或扫描件均准确；本站未做精度与吞吐复测。",
+          "title": "置信信息不是正确率"
+        }
+      ],
+      "name": "Docling",
+      "note": "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：v2.139.0。本站未安装或复现性能。",
+      "organization": "Docling project",
+      "publication": {
+        "first_published_at": "2026-10-15T03:47:27.306516+00:00",
+        "updated_at": "2026-10-15T03:47:27.306516+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-15",
+          "coverage": "link_only",
+          "id": "oct15-d-1",
+          "locator": "Official release or announcement, explicit limitations and footnotes",
+          "reason": "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-15",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Docling v2.139.0 · Official source 1",
+          "upstream_revision": "v2.139.0",
+          "url": "https://github.com/docling-project/docling/releases/tag/v2.139.0"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T04",
+          "name": "Docling",
+          "url": "https://fieldtofit.top/watch/CW-T04"
+        }
+      ],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct15-d-1",
+          "title": "Docling v2.139.0 · Official source 1",
+          "url": "https://github.com/docling-project/docling/releases/tag/v2.139.0"
+        }
+      ],
+      "state": "published",
+      "summary": "官方于北京时间 10 月 14 日 20:18 发布。逐页ConfidenceScores、线程后端并发结果控制，以及进度和事件回调补入此次版本。",
+      "title": "Docling 2.139.0：逐页置信信息与文档结构维护",
+      "translations": {
+        "en": {
+          "fields": {
+            "Docling 2.139.0：逐页置信信息与文档结构维护": "Docling 2.139.0: per-page confidence and document-structure maintenance",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：v2.139.0。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-14; checked:2026-10-15; version:v2.139.0; FieldToFit has not installed or reproduced performance.",
+            "官方于北京时间 10 月 14 日 20:18 发布。逐页ConfidenceScores、线程后端并发结果控制，以及进度和事件回调补入此次版本。": "Released at 20:18 Beijing time on 10/14, adding per-page ConfidenceScores, threaded-backend concurrent-result controls, progress and event callbacks.",
+            "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
+            "批量处理维护": "Batch-processing maintenance",
+            "格式与结构保留": "Format and structure preservation",
+            "置信信息不是正确率": "Confidence is not accuracy",
+            "补入Numbers单元格图片、PPTX组合图处理，并修正文档编号、列表、图片和链接保留的多处问题。": "Adds Numbers cell-picture and PPTX combination-chart handling, with fixes for numbering, lists, images and preserved links.",
+            "调整长驻PDF处理线程、部分模型加载、流式终止和解析异常处理；模型、OCR与ASR依赖仍按所选管线另查。": "Adjusts long-lived PDF processing threads, some model-loading paths, streaming termination and parser errors. Model, OCR and ASR dependencies still depend on the selected pipeline.",
+            "逐页分数可用于排查和筛选，不等于事实正确率。格式支持增加不证明复杂中文表格或扫描件均准确；本站未做精度与吞吐复测。": "Per-page scores support diagnosis and filtering rather than factual accuracy guarantees. Added format support does not establish accuracy for complex Chinese tables or scans; FieldToFit has not tested accuracy or throughput."
+          },
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:33:22.977619+00:00",
+          "source_hash": "527520ef8599f63d4bfe67294cf0ddd78715ee563aa7c600f471a690fc7f2926",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-15",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": true,
+      "id": "D-149",
+      "interpretation": [
+        {
+          "locator": "rea-agents-6.5.0; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-c-1"
+          ],
+          "text": "选定JavaScript文件可恢复跨bundle关系，多类分析提供紧凑摘要和已留存Evidence分页；未选入文件保留未知覆盖，不能概括为完整应用扫描。",
+          "title": "选源与留存证据"
+        },
+        {
+          "locator": "rea-agents-6.5.0; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-c-1"
+          ],
+          "text": "SQLite检查要求明确选择离线数据库，并使用 24 系列Node24.15+或 26+及DatabaseSync.limits。复制活跃数据库／WAL不证明原子快照；旧的一般Node最低版本不能套用到每个功能。",
+          "title": "离线SQLite有独立门槛"
+        },
+        {
+          "locator": "rea-agents-6.5.0; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-c-1"
+          ],
+          "text": "WASM需自备对应WABT，信号录制解码另有Linux与外部工具条件。Frida插桩会执行外部代码，不能把全项目称为只读；多种宿主／引擎组合仍未核验。本站未安装引擎或复现结果准确性。",
+          "title": "只读范围与实际执行分开"
+        }
+      ],
+      "name": "REA",
+      "note": "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：rea-agents-6.5.0。本站未安装或复现性能。",
+      "organization": "morluto",
+      "publication": {
+        "first_published_at": "2026-10-15T03:46:34.628854+00:00",
+        "updated_at": "2026-10-15T03:46:34.628854+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-15",
+          "coverage": "link_only",
+          "id": "oct15-c-1",
+          "locator": "Official release or announcement, explicit limitations and footnotes",
+          "reason": "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-15",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "REA rea-agents-6.5.0 · Official source 1",
+          "upstream_revision": "rea-agents-6.5.0",
+          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.5.0"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T16",
+          "name": "REA",
+          "url": "https://fieldtofit.top/watch/CW-T16"
+        }
+      ],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct15-c-1",
+          "title": "REA rea-agents-6.5.0 · Official source 1",
+          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.5.0"
+        }
+      ],
+      "state": "published",
+      "summary": "GitHub于北京时间 10 月 14 日 20:32 发布，变更日志标题日期为 10 月 13 日。这是已有REA6.4.0 档案的后续版本，不重写首次发现。",
+      "title": "REA 6.5.0：证据分页与离线分析扩展，运行条件逐项保留",
+      "translations": {
+        "en": {
+          "fields": {
+            "GitHub于北京时间 10 月 14 日 20:32 发布，变更日志标题日期为 10 月 13 日。这是已有REA6.4.0 档案的后续版本，不重写首次发现。": "GitHub published the release at 20:32 Beijing time on 10/14; its changelog heading says 10/13. This follows the existing REA6.4.0 dossier rather than resetting the original discovery.",
+            "REA 6.5.0：证据分页与离线分析扩展，运行条件逐项保留": "REA 6.5.0: paged evidence and offline analysis with explicit prerequisites",
+            "SQLite检查要求明确选择离线数据库，并使用 24 系列Node24.15+或 26+及DatabaseSync.limits。复制活跃数据库／WAL不证明原子快照；旧的一般Node最低版本不能套用到每个功能。": "SQLite inspection requires an explicitly selected offline database and Node24.15+ in the 24 series or 26+, with DatabaseSync.limits. Copying a live database/WAL does not establish an atomic snapshot; the general Node minimum does not cover every feature.",
+            "WASM需自备对应WABT，信号录制解码另有Linux与外部工具条件。Frida插桩会执行外部代码，不能把全项目称为只读；多种宿主／引擎组合仍未核验。本站未安装引擎或复现结果准确性。": "WASM requires a compatible external WABT; recorded-signal decoding has Linux and external-tool requirements. Frida instrumentation executes foreign code, so the entire project is not read-only. Many host/engine combinations remain unverified; FieldToFit has not installed engines or reproduced result accuracy.",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：rea-agents-6.5.0。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-14; checked:2026-10-15; version:rea-agents-6.5.0; FieldToFit has not installed or reproduced performance.",
+            "只读范围与实际执行分开": "Separate read-only inspection from execution",
+            "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
+            "离线SQLite有独立门槛": "Offline SQLite has separate prerequisites",
+            "选定JavaScript文件可恢复跨bundle关系，多类分析提供紧凑摘要和已留存Evidence分页；未选入文件保留未知覆盖，不能概括为完整应用扫描。": "Selected JavaScript files support cross-bundle recovery, with compact summaries and retained Evidence pages across multiple analyses. Unselected files keep unknown coverage; this is not a complete-application scan.",
+            "选源与留存证据": "Selected inputs and retained evidence"
+          },
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:32:51.369932+00:00",
+          "source_hash": "75c4f344ecf4fa6620765117f1fe2944de9e671ead63eb9a0d0eb224a34d6678",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-15",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-15",
+      "highlight": true,
+      "id": "D-148",
+      "interpretation": [
+        {
+          "locator": "v0.22.1; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-b-1"
+          ],
+          "text": "修复小型及斜杠调用技能在压缩后丢失重载标记，以及摘要、示例路径影响锚点索引的问题。",
+          "title": "技能与上下文"
+        },
+        {
+          "locator": "v0.22.1; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-b-1"
+          ],
+          "text": "MCP与插件调用保留各服务器期限，模型选择列表增加精选入口，并补入Nemotron Super3.5 默认参数。模型提供方权限、费用和参数仍需自行核对。",
+          "title": "调用期限与模型列表"
+        },
+        {
+          "locator": "v0.22.1; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-b-1"
+          ],
+          "text": "正文保留rc.5-v0.22.1 标识，GitHub prerelease=false；不能仅凭其一认定全部渠道已推送。Windows Store与插件更新修复列入说明；社区目录新增项目不等于Nous全部背书。本站未实测升级。",
+          "title": "分发状态单独核对"
+        }
+      ],
+      "name": "Hermes Agent",
+      "note": "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：v0.22.1。本站未安装或复现性能。",
+      "organization": "Nous Research",
+      "publication": {
+        "first_published_at": "2026-10-15T03:45:42.978099+00:00",
+        "updated_at": "2026-10-15T03:45:42.978099+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-15",
+          "coverage": "link_only",
+          "id": "oct15-b-1",
+          "locator": "Official release or announcement, explicit limitations and footnotes",
+          "reason": "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-15",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Hermes Agent v0.22.1 · Official source 1",
+          "upstream_revision": "v0.22.1",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.1"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A08",
+          "name": "Hermes Agent",
+          "url": "https://fieldtofit.top/watch/CW-A08"
+        }
+      ],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct15-b-1",
+          "title": "Hermes Agent v0.22.1 · Official source 1",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.1"
+        }
+      ],
+      "state": "published",
+      "summary": "GitHub标签于北京时间 10 月 15 日 07:59 发布；正文Release Date为 10 月 14 日。本次补录技能压缩、MCP与插件维护，不据合并数量宣称能力提高。",
+      "title": "Hermes Agent 0.22.1：保留技能压缩标记与MCP调用期限",
+      "translations": {
+        "en": {
+          "fields": {
+            "GitHub标签于北京时间 10 月 15 日 07:59 发布；正文Release Date为 10 月 14 日。本次补录技能压缩、MCP与插件维护，不据合并数量宣称能力提高。": "The GitHub tag was published at 07:59 Beijing time on 10/15, while the release text dates it 10/14. This records skill compaction, MCP and plugin maintenance without inferring capability from commit counts.",
+            "Hermes Agent 0.22.1：保留技能压缩标记与MCP调用期限": "Hermes Agent 0.22.1: preserve skill compaction markers and MCP deadlines",
+            "MCP与插件调用保留各服务器期限，模型选择列表增加精选入口，并补入Nemotron Super3.5 默认参数。模型提供方权限、费用和参数仍需自行核对。": "MCP and plugin calls preserve server-specific deadlines. Model selection gains a curated list and Nemotron Super3.5 default parameters. Provider permissions, charges and settings still require checking.",
+            "修复小型及斜杠调用技能在压缩后丢失重载标记，以及摘要、示例路径影响锚点索引的问题。": "Fixes lost reload markers for small and slash-invoked skills after compaction, and issues involving summaries and example paths in the anchor index.",
+            "分发状态单独核对": "Check distribution status separately",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：v0.22.1。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-15; checked:2026-10-15; version:v0.22.1; FieldToFit has not installed or reproduced performance.",
+            "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
+            "技能与上下文": "Skills and context",
+            "正文保留rc.5-v0.22.1 标识，GitHub prerelease=false；不能仅凭其一认定全部渠道已推送。Windows Store与插件更新修复列入说明；社区目录新增项目不等于Nous全部背书。本站未实测升级。": "The text retains rc.5-v0.22.1 while GitHub says prerelease=false; neither alone proves delivery through every channel. Windows Store and plugin-update fixes are listed. Community catalog additions do not imply blanket Nous endorsement; FieldToFit has not tested the upgrade.",
+            "调用期限与模型列表": "Call deadlines and model lists"
+          },
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:32:19.762400+00:00",
+          "source_hash": "9f20fd3ad7aa1baa5350a7987293915c9a1bacd30ebea2ede9dcc502c3c8c701",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-15",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-15",
+      "highlight": true,
+      "id": "D-147",
+      "interpretation": [
+        {
+          "locator": "Claude Code2.1.300 / PythonSDK0.2.167; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-a-1",
+            "oct15-a-2"
+          ],
+          "text": "修复部分headless／Agent SDK恢复时丢失近期消息、压缩摘要或带回旧历史的问题。其中一类修复仅适用于本版起生成的压缩记录，不承诺旧记录全部自动恢复。",
+          "title": "压缩与恢复"
+        },
+        {
+          "locator": "Claude Code2.1.300 / PythonSDK0.2.167; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-a-1",
+            "oct15-a-2"
+          ],
+          "text": "补强压缩后MCP工具及指令通知、恢复后的工具搜索；Hook改写输入增加校验，部分云会话误报写入成功及策略读取超时也被修复。升级需核对自己的Hook、代理与会话配置。",
+          "title": "MCP与工具输入"
+        },
+        {
+          "locator": "Claude Code2.1.300 / PythonSDK0.2.167; changes, limits and footnotes",
+          "source_ids": [
+            "oct15-a-1",
+            "oct15-a-2"
+          ],
+          "text": "Python0.2.167 发行说明仅明确捆绑CLI2.1.300；不能推定TypeScript包同步更新。SDK认证、许可和第三方产品使用限制保留；本站未回归运行行为。",
+          "title": "两个包分别记版本"
+        }
+      ],
+      "name": "Claude Code / Claude Agent SDK (Python)",
+      "note": "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：Claude Code2.1.300 / PythonSDK0.2.167。本站未安装或复现性能。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-15T03:44:22.656231+00:00",
+        "updated_at": "2026-10-15T03:44:22.656231+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-15",
+          "coverage": "link_only",
+          "id": "oct15-a-1",
+          "locator": "Official release or announcement, explicit limitations and footnotes",
+          "reason": "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-15",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.300 / PythonSDK0.2.167 · Official source 1",
+          "upstream_revision": "Claude Code2.1.300 / PythonSDK0.2.167",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-15",
+          "coverage": "link_only",
+          "id": "oct15-a-2",
+          "locator": "Official release or announcement, explicit limitations and footnotes",
+          "reason": "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-15",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.300 / PythonSDK0.2.167 · Official source 2",
+          "upstream_revision": "Claude Code2.1.300 / PythonSDK0.2.167",
+          "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.167"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        },
+        {
+          "id": "CW-H03",
+          "name": "Claude Agent SDK",
+          "url": "https://fieldtofit.top/watch/CW-H03"
+        }
+      ],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct15-a-1",
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.300 / PythonSDK0.2.167 · Official source 1",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct15-a-2",
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.300 / PythonSDK0.2.167 · Official source 2",
+          "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.167"
+        }
+      ],
+      "state": "published",
+      "summary": "Claude Code与Python Agent SDK分别于北京时间 10 月 15 日 02:24、03:25 发布。本次重点是会话恢复、MCP与执行边界维护，不是模型能力更新。",
+      "title": "Claude Code 2.1.300：修复压缩后的恢复，Python SDK更新捆绑CLI",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude Code 2.1.300：修复压缩后的恢复，Python SDK更新捆绑CLI": "Claude Code 2.1.300: compaction recovery fixes and a Python SDK CLI update",
+            "Claude Code与Python Agent SDK分别于北京时间 10 月 15 日 02:24、03:25 发布。本次重点是会话恢复、MCP与执行边界维护，不是模型能力更新。": "Claude Code and Python Agent SDK were released at 02:24 and 03:25 Beijing time on 10/15. The changes maintain session recovery, MCP and execution boundaries rather than model capabilities.",
+            "MCP与工具输入": "MCP and tool input",
+            "Python0.2.167 发行说明仅明确捆绑CLI2.1.300；不能推定TypeScript包同步更新。SDK认证、许可和第三方产品使用限制保留；本站未回归运行行为。": "The Python0.2.167 release only explicitly updates its bundled CLI2.1.300; do not infer a matching TypeScript release. SDK authentication, licensing and third-party-product restrictions remain; FieldToFit has not regression-tested runtime behavior.",
+            "两个包分别记版本": "Track the two packages separately",
+            "修复部分headless／Agent SDK恢复时丢失近期消息、压缩摘要或带回旧历史的问题。其中一类修复仅适用于本版起生成的压缩记录，不承诺旧记录全部自动恢复。": "Fixes some headless/Agent SDK resumes that lost recent messages or compaction summaries, or restored old history. One fix applies only to compactions created from this version onward; it does not promise recovery of every older record.",
+            "压缩与恢复": "Compaction and recovery",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：Claude Code2.1.300 / PythonSDK0.2.167。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-15; checked:2026-10-15; version:Claude Code2.1.300 / PythonSDK0.2.167; FieldToFit has not installed or reproduced performance.",
+            "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
+            "补强压缩后MCP工具及指令通知、恢复后的工具搜索；Hook改写输入增加校验，部分云会话误报写入成功及策略读取超时也被修复。升级需核对自己的Hook、代理与会话配置。": "Improves post-compaction MCP tool/instruction notifications and resumed tool search. Hook-rewritten input gains validation; some cloud-session false write-success reports and policy-read timeouts are fixed. Check your hooks, proxy and session settings when upgrading."
+          },
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:31:30.869401+00:00",
+          "source_hash": "6f80cc1b1bee7aeb759ea2a7c31201bdea2dfa8ec89396c54692dd4d5377a9ff",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "model",
       "checked_at": "2026-10-15",
       "codex_28_days": {
@@ -309,7 +1535,7 @@
       "checked_at": "2026-10-14",
       "editor": "FieldToFit",
       "event_date": "2026-10-13",
-      "highlight": true,
+      "highlight": false,
       "id": "D-134",
       "interpretation": [
         {
@@ -345,7 +1571,7 @@
       "organization": "Google DeepMind",
       "publication": {
         "first_published_at": "2026-10-14T03:21:28.410934+00:00",
-        "updated_at": "2026-10-14T03:21:28.410934+00:00"
+        "updated_at": "2026-10-15T03:43:58.846660+00:00"
       },
       "reading_materials": [
         {
@@ -428,8 +1654,9 @@
             "模型卡列文本、图像、音频和视频输入、文本输出，输入与输出合计最多 1M token；仍可能幻觉、缓慢或超时，知识截止 2026 年 3 月，部分领域更早。本站未运行复测。": "The card lists text, image, audio and video inputs with text output, and a combined input/output window up to 1M tokens. Hallucinations, slowness and timeouts remain possible. The knowledge cutoff is 2026-3, earlier in some domains; FieldToFit has not run the model.",
             "长上下文与可靠性边界": "Long-context and reliability limits"
           },
-          "reviewed_at": "2026-10-14T03:05:56.097078+00:00",
-          "source_hash": "d0861dc02082325f9bccabbfdc74caafda1e123e8dbab6a94db18d0b2eceed37",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:31:13.244722+00:00",
+          "source_hash": "33a132aaedce2ba827522ca035c9435698b3e6a31d445981f19f5774de1a76b2",
           "state": "reviewed"
         }
       }
@@ -439,7 +1666,7 @@
       "checked_at": "2026-10-14",
       "editor": "FieldToFit",
       "event_date": "2026-10-13",
-      "highlight": true,
+      "highlight": false,
       "id": "D-142",
       "interpretation": [
         {
@@ -475,7 +1702,7 @@
       "organization": "Apple",
       "publication": {
         "first_published_at": "2026-10-14T03:40:07.207027+00:00",
-        "updated_at": "2026-10-14T03:40:07.207027+00:00"
+        "updated_at": "2026-10-15T03:43:35.372221+00:00"
       },
       "reading_materials": [
         {
@@ -545,8 +1772,9 @@
             "最多识别六人；个人上下文需配对兼容Apple Intelligence的iPhone／iPad、启用Siri AI及受支持语言。内容显示受识别、位置与近期解锁约束，脚注保留短暂离开Wi-Fi的例外，不能称离网即隐藏。": "Recognizes up to six people. Personal context requires a paired Apple Intelligence-compatible iPhone/iPad, enabled Siri AI and a supported language. Display depends on recognition, location and recent unlocking; a footnote allows a temporary Wi-Fi-disconnection exception, so going offline does not guarantee immediate hiding.",
             "部分服务端AI有每日额度，未来扩大额度收费；部分摄像头功能需合格iCloud+。请求可使用Private Cloud Compute，不是全部离线；识别准确性、误触与隐私保证未独立验证。": "Some server-side AI features have daily limits, with paid expanded access planned. Some camera features require an eligible iCloud+ plan. Requests can use Private Cloud Compute and are not entirely offline. Recognition accuracy, accidental actions and privacy guarantees have not been independently verified."
           },
-          "reviewed_at": "2026-10-14T03:10:11.331197+00:00",
-          "source_hash": "93bf41fad01ffe002113070a35cb051b2c60a56f9ef0e2d4a987cd195b9fd57f",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:30:55.775772+00:00",
+          "source_hash": "7ac16863bdceb1c6474be9df8e54d7ba6ca40c2a3205d06786cb966671ee76ee",
           "state": "reviewed"
         }
       }
@@ -556,7 +1784,7 @@
       "checked_at": "2026-10-14",
       "editor": "FieldToFit",
       "event_date": "2026-10-13",
-      "highlight": true,
+      "highlight": false,
       "id": "D-143",
       "interpretation": [
         {
@@ -589,7 +1817,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-10-14T03:40:31.461788+00:00",
-        "updated_at": "2026-10-14T03:40:31.461788+00:00"
+        "updated_at": "2026-10-15T03:43:11.874532+00:00"
       },
       "reading_materials": [
         {
@@ -648,8 +1876,9 @@
             "方法与在线前提": "Design and online assumptions",
             "采用与人工审阅边界": "Adoption and human-review limits"
           },
-          "reviewed_at": "2026-10-14T03:10:22.673829+00:00",
-          "source_hash": "826b7994422e44b63209eae9c133fbdeafc3b21b3d80f82bd28996a72ee043f9",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:30:38.077504+00:00",
+          "source_hash": "de73e961ce99528a8eac37e9394d8a7dabc71eb6a7631df4fd2ecab2eb227c5f",
           "state": "reviewed"
         }
       }
@@ -1348,7 +2577,7 @@
       "checked_at": "2026-10-14",
       "editor": "FieldToFit",
       "event_date": "2026-10-14",
-      "highlight": true,
+      "highlight": false,
       "id": "D-135",
       "interpretation": [
         {
@@ -1381,7 +2610,7 @@
       "organization": "Google",
       "publication": {
         "first_published_at": "2026-10-14T03:22:19.925601+00:00",
-        "updated_at": "2026-10-14T03:22:19.925601+00:00"
+        "updated_at": "2026-10-15T03:42:47.818857+00:00"
       },
       "reading_materials": [
         {
@@ -1435,8 +2664,9 @@
             "稳定版于北京时间 10 月 14 日 04:44 发布；本次为客户端维护，不是Gemini模型能力或价格更新。": "The stable release arrived at 04:44 Beijing time on 10/14. This is client maintenance rather than a Gemini model-capability or pricing update.",
             "输入与取消修复": "Input and cancellation fixes"
           },
-          "reviewed_at": "2026-10-14T03:06:27.214813+00:00",
-          "source_hash": "f9120c2e9f0a32f2e84fe93b105b5aba820e4c24ba38bc00723ba26bc454dac6",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:30:20.420367+00:00",
+          "source_hash": "f754cad78ba1b59c4729a070748212e4f5c4bc36c7d290b38c1bbff813dd4a12",
           "state": "reviewed"
         }
       }
@@ -1446,7 +2676,7 @@
       "checked_at": "2026-10-14",
       "editor": "FieldToFit",
       "event_date": "2026-10-14",
-      "highlight": true,
+      "highlight": false,
       "id": "D-136",
       "interpretation": [
         {
@@ -1479,7 +2709,7 @@
       "organization": "Comfy-Org",
       "publication": {
         "first_published_at": "2026-10-14T03:35:42.073422+00:00",
-        "updated_at": "2026-10-14T03:35:42.073422+00:00"
+        "updated_at": "2026-10-15T03:42:24.198554+00:00"
       },
       "reading_materials": [
         {
@@ -1533,8 +2763,9 @@
             "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
             "资产开关按安装方式确认": "Asset defaults depend on the installation"
           },
-          "reviewed_at": "2026-10-14T03:06:57.131296+00:00",
-          "source_hash": "c3174d9f407eb3aa6a276c3ed27cdc93910cf6ec3c14d96c184e9f5a566a0b1e",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:30:02.730785+00:00",
+          "source_hash": "66054fe40703312737b3fe425b86163d596d27505b6d290a25ca30d244b14649",
           "state": "reviewed"
         }
       }

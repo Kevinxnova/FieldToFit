@@ -480,5 +480,146 @@
       "locator": "physical p10 / printed p9",
       "scope": "Internal automated changes, not deployment incident rates. Raw directions retained."
     }
+  },
+  "/report-figures/nano-banana-21-202610-preference.png": {
+    "sha256": "06ba1379b0afb26859f8dd256557429d62632ee7e14b2526a2a579f70619dc8a",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/Model-Cards/Nano-Banana-2-1-Model-Card.pdf"
+    ],
+    "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card.",
+    "version": "Nano Banana 2.1 Model Card · October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "models": [
+        "Nano Banana 2.1\nThinking",
+        "Nano Banana 2.1\nNo Thinking",
+        "Nano Banana 2\nThinking",
+        "Nano Banana Pro"
+      ],
+      "rows": [
+        "overall preference",
+        "infographic design"
+      ],
+      "elo": [
+        [
+          1050,
+          1015,
+          990,
+          935
+        ],
+        [
+          1048,
+          1001,
+          961,
+          912
+        ]
+      ],
+      "source_plus_minus": [
+        [
+          14,
+          13,
+          7,
+          8
+        ],
+        [
+          17,
+          17,
+          12,
+          12
+        ]
+      ],
+      "locator": "physical p5",
+      "scope": "Separate preference evaluations, no cross-task total; source uncertainty interpretation unspecified."
+    }
+  },
+  "/report-figures/nano-banana-21-202610-factuality.png": {
+    "sha256": "ba3f42b5ae915a964af4b68ef5277fc1355e54415fca8f6ff7fb763df9904e33",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/Model-Cards/Nano-Banana-2-1-Model-Card.pdf"
+    ],
+    "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card.",
+    "version": "Nano Banana 2.1 Model Card · October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "models": [
+        "Nano Banana 2.1\nThinking",
+        "Nano Banana 2.1\nNo Thinking",
+        "Nano Banana 2\nThinking",
+        "Nano Banana Pro"
+      ],
+      "scores": [
+        0.521,
+        0.328,
+        0.179,
+        0.265
+      ],
+      "metric": "Infographic factuality / single-sided AutoRater",
+      "locator": "physical p5",
+      "scope": "No published sample-size or calibration details sufficient for a business accuracy claim."
+    }
+  },
+  "/report-figures/nano-banana-21-202610-editing.png": {
+    "sha256": "9e8fb2022b530c7046c57b1c988d78e4e1fc9d770dd4ff7f70bafbe723ebb321",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/Model-Cards/Nano-Banana-2-1-Model-Card.pdf"
+    ],
+    "license": "Graphics © FieldToFit; original data: Google DeepMind Nano Banana 2.1 model card.",
+    "version": "Nano Banana 2.1 Model Card · October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "models": [
+        "Nano Banana 2.1\nThinking",
+        "Nano Banana 2.1\nNo Thinking",
+        "Nano Banana 2\nThinking",
+        "Nano Banana Pro"
+      ],
+      "rows": [
+        "single-character",
+        "multi-character",
+        "multi-reference"
+      ],
+      "elo": [
+        [
+          1028,
+          1021,
+          981,
+          991
+        ],
+        [
+          1106,
+          1068,
+          978,
+          1011
+        ],
+        [
+          1066,
+          1041,
+          988,
+          989
+        ]
+      ],
+      "source_plus_minus": [
+        [
+          14,
+          14,
+          10,
+          9
+        ],
+        [
+          14,
+          14,
+          10,
+          10
+        ],
+        [
+          22,
+          20,
+          13,
+          12
+        ]
+      ],
+      "locator": "physical p5",
+      "scope": "No inference of universal or statistically significant gains from overlapping source ranges."
+    }
   }
 }
