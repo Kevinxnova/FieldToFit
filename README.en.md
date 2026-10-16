@@ -36,16 +36,16 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.11.0](CHANGELOG.md#v1.11.0)** · [fieldtofit-v1.11.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.0)
+**Current source version: [v1.11.1](CHANGELOG.md#v1.11.1)** · [fieldtofit-v1.11.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Arrange AI Daily, recent developments, information cards, selected technical reports and analysis, the Codex log, model capability and pricing, and ongoing watch in the agreed order. Keep the daily and information-card styles, use one lead and two secondary highlights, four reports in a desktop 2×2 grid, and vertically stacked model sources.
-- Add five complete sections for developments, information cards, Codex, models and ongoing watch while reusing daily editions, reports and item details. Preserve old links, filters, dates, language switching and return positions.
-- Load only visible previews and necessary publication checks on the homepage, then read complete content by section. Homepage HTML and embedded data are 86.9% smaller with the same records; reviewed content, genuine source dates and full HTTP/MCP interfaces remain compatible.
-- Deploy v1.11.0 to production and verify both homepage languages, five complete sections, three MCP versions, static assets and preservation of existing content through direct reads. Four widths, light/dark layouts and reading round trips passed local browser checks; production browser interaction checks remain pending after connection timeouts.
+- Present four findings, matching arguments and three original diagrams for the selected Muse Spark Open materials, separating deployment requirements, task scoring, evidence provenance and kernel versus end-to-end gains.
+- Continue the eight approved October16 A–H updates, six dossiers and explicitly related earlier events. Refresh highlights, complete sections and latest-event tables on the optimized homepage while retaining source dates and history.
+- Apply the existing four-report rotation after successful publication. Keep all historical reports in the complete index and preserve unselected reports and model-chart snapshots.
+- Preserve parallel Voice and Codex evidence on the same item, clarify UTC and Beijing dates, and restore its missing publicly referenced author image.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

@@ -372,8 +372,6 @@
             "静态JavaScript路径不需原生引擎；原生分析依赖Ghidra／Hopper／IDA": "Static JavaScript path does not require a native engine; native analysis depends on Ghidra/Hopper/IDA",
             "首次发布日期未知，不以HN讨论日期替代；演示4.1.0不是已核实的当前发行版；未安装或验证分析准确性。": "The first release date is unknown and must not be replaced by the HN discussion date. Demo version 4.1.0 is not a verified current release. FieldToFit has not installed REA or verified analysis accuracy."
           },
-          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
-          "reviewed_at": "2026-10-15T03:33:03.342567+00:00",
           "source_hash": "e9205f006e0a32d14cb7a5d88f2e648f45d3d067f46717f93f6e5fa1479529e2",
           "state": "reviewed"
         }
@@ -3627,6 +3625,25 @@
       "blocks": [
         {
           "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "既有语音与体验记录 → GPT-Live-1.1 / Quip",
+              "[GPT-Live-1.1：全双工语音更新，安全结果需要分场景阅读](https://fieldtofit.top/news/D-155)",
+              "原文日期：2026-10-15；事件日期：2026-10-15；本站核对：2026-10-16；版本：GPT-Live-1.1 / Quip。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。"
+        },
+        {
+          "columns": [
             "版本 / 材料",
             "原始日期口径",
             "变化与用途",
@@ -3758,10 +3775,26 @@
           "text": "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。"
         }
       ],
-      "checked_at": "2026-10-08",
+      "checked_at": "2026-10-16",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M01",
       "interpretation": [
+        {
+          "text": "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。",
+          "title": "2026-10-16 补录：GPT-Live-1.1 / Quip"
+        },
+        {
+          "text": "系统卡称Plus及以上默认 1.1，其他用户为Quip；不能据此确认全部地区与每个账户已完成切换。",
+          "title": "套餐与开放范围"
+        },
+        {
+          "text": "生产提示集未见显著退步，但合成边界难例的部分安全类别有显著退步；不能写成全面更安全，也不把测试分数当真实流量中的事故率。",
+          "title": "两套安全测试"
+        },
+        {
+          "text": "CW-M01 新增语音分支并保留D-13 旧节点。API型号、价格和具体账户开放状态仍待核；本站未调用实测。",
+          "title": "历史与未知项"
+        },
         {
           "text": "模型能组合文字、图示、按钮与交互组件，生成计算器、对比工具和可操作的解释；先给出有用内容，再随思考或工具执行补充结果。",
           "title": "让答案可以操作"
@@ -3807,8 +3840,8 @@
           "title": "长任务可以中途纠偏。"
         }
       ],
-      "introduction": "OpenAI的通用模型系列；按GPT版本与Chat、Work、Codex的实际入口分别说明，包含交互答案、工具执行和长期任务材料。",
-      "name": "ChatGPT",
+      "introduction": "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。",
+      "name": "GPT",
       "reading_materials": [
         {
           "approved": true,
@@ -3893,6 +3926,22 @@
           "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
           "upstream_revision": "chat-intelligent-ui-2026-10-07",
           "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-16",
+          "coverage": "link_only",
+          "id": "oct16-b-1",
+          "locator": "Official release/card, explicit limitations and migration guide",
+          "reason": "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。",
+          "retrieved_at": "2026-10-16",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "GPT-Live-1.1 / Quip GPT-Live-1.1 / Quip · Official source 1",
+          "upstream_revision": "GPT-Live-1.1 / Quip",
+          "url": "https://deploymentsafety.openai.com/gpt-live-1-1"
         }
       ],
       "sources": [
@@ -3935,13 +3984,136 @@
           "coverage": "link_only",
           "title": "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2",
           "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct16-b-1",
+          "title": "GPT-Live-1.1 / Quip GPT-Live-1.1 / Quip · Official source 1",
+          "url": "https://deploymentsafety.openai.com/gpt-live-1-1"
         }
       ],
       "state": "published",
-      "type": "model",
-      "aliases": [
-        "GPT"
-      ]
+      "translations": {
+        "en": {
+          "fields": {
+            "10月7日起向Plus、Pro、Business、Enterprise的Chat页推出，10月8日起扩展到Free、Go；企业仍受管理员设置影响。逐步推出不代表所有账户同时可用。": "Rollout starts on 10/7 in Chat for Plus, Pro, Business and Enterprise, expanding to Free and Go from 10/8. Enterprise access remains subject to administrator settings. Gradual rollout does not establish simultaneous availability for all accounts.",
+            "2026-10-07发布；10月8日起扩展Free／Go": "2026-10-07 released; 10/8 expands Free/Go",
+            "2026-10-16 补录：GPT-Live-1.1 / Quip": "2026-10-16 addition:GPT-Live-1.1 / Quip",
+            "5.6 系列，gpt-5.6 别名指向 Sol": "5.6 series, gpt-5.6 alias refers to Sol",
+            "API 模型标识 gpt-6-astra；具体账户权限另查": "API model identification gpt-6-astra; specific account permissions are checked separately",
+            "API默认关闭；产品侧本次面向欧盟，不是全球所有输出已经启用。具体型号和账户能力须按接入文档核对。": "The API feature is off by default. This product rollout targets the EU; it does not mean all outputs worldwide already use it. Check supported models and account capabilities in integration documentation.",
+            "API；分别保留模型标识": "API; keep the model identification separately",
+            "API；固定分支标识可避免把别名误当独立模型": "API; fixed branch identification can avoid mistaking alias as independent models",
+            "Astra 的异步调用允许模型等待工具结果时继续其他推理或工具操作；值得读的是调用过程和结果回收方式，而不只是模型名称。": "Astra's asynchronous calls let it continue other reasoning or tool operations while waiting for tool results. The call flow and result-collection mechanism provide useful details beyond the model name.",
+            "CW-M01 新增语音分支并保留D-13 旧节点。API型号、价格和具体账户开放状态仍待核；本站未调用实测。": "Add the voice branch to CW-M01 and retain D-13; API identifiers, prices and account-specific availability remain unverified; FieldToFit has not run inference tests.",
+            "ChatGPT将文字、图示与可操作组件组合成回答，用户可以修改输入并观察结果；本次针对Chat体验分阶段推出。": "ChatGPT combines text, diagrams and actionable components in answers, letting users change inputs and observe results. This rollout concerns the Chat experience and proceeds in stages.",
+            "GPT 档案补齐：把 GPT-6 Sol/Luna 与 GPT-6.1 Sol 放回同一张版本表 · 官方来源 1": "GPT profile complete: Put GPT-6 Sol/Luna and GPT-6.1 Sol back to the same version table · Official source 1",
+            "GPT 档案补齐：把 GPT-6 Sol/Luna 与 GPT-6.1 Sol 放回同一张版本表 · 官方来源 2": "GPT profile complete: Put GPT-6 Sol/Luna and GPT-6.1 Sol back to the same version table · Official source 2",
+            "GPT 档案补齐：把 GPT-6 Sol/Luna 与 GPT-6.1 Sol 放回同一张版本表 · 官方来源 3": "GPT profile complete: Put GPT-6 Sol/Luna and GPT-6.1 Sol back to the same version table · Official source 3",
+            "GPT-5.6 指南": "GPT-5.6 Guide",
+            "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 1": "GPT-6 Intelligent UI: Turn answers into an actionable interface · Official source 1",
+            "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2": "GPT-6 Intelligent UI: Turn answers into an actionable interface · Official source 2",
+            "GPT-6 Sol / GPT-6 Luna / GPT-6.1 Sol；官方型号目录核对2026-10-05": "GPT-6 Sol / GPT-6 Luna / GPT-6.1 Sol; Official Model Catalog Check 2026-10-05",
+            "GPT-6 指南": "GPT-6 Guide",
+            "GPT-6日常工作分支，保留历史节点": "GPT-6 daily work branch, keep historical nodes",
+            "GPT-6较轻任务分支": "GPT-6 Lighter Task Branch",
+            "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限 · 官方来源 1": "OpenAI textGrain: distinguish optional watermarks, EU online scope and detector permissions · Official source 1",
+            "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。": "OpenAI announced GPT-Live-1.1 and Quip on 10/15, following Live-1 and mini. Full-duplex interaction listens, responds and handles interruptions continuously, with thinking-model delegation. The source is a system card, not verification of a public API identifier or price.",
+            "OpenAI公布文本来源水印方案：全球API客户可为指定模型主动开启，欧盟ChatGPT与Codex合资格文本输出将在未来几周分阶段加入水印。": "OpenAI announces a text-provenance watermarking scheme. Global API customers can opt in for specified models. Eligible ChatGPT and Codex text outputs in the EU will receive watermarks in phases over the coming weeks.",
+            "Responses用于工具调用；Chat Completions不含工具调用；1,050,000上下文、128k输出": "Responses are used for tool calls; Chat Completions do not contain tool calls; 1,050,000 context, 128k output",
+            "Sol分支后续型号": "Sol branch follow-up model",
+            "[GPT-5.6 指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)": "[GPT-5.6 Guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)",
+            "[GPT-6 指南](https://developers.openai.com/api/docs/guides/latest-model)": "[GPT-6 Guide](https://developers.openai.com/api/docs/guides/latest-model)",
+            "[GPT-Live-1.1：全双工语音更新，安全结果需要分场景阅读](https://fieldtofit.top/news/D-155)": "[GPT-Live-1.1: full-duplex voice with scenario-specific safety results](https://fieldtofit.top/news/D-155)",
+            "[型号文档](https://developers.openai.com/api/docs/models/gpt-6.1-sol)": "[Model Document](https://developers.openai.com/api/docs/models/gpt-6.1-sol)",
+            "[官方发布](https://openai.com/index/gpt-6-for-everyone/)": "[Official Release](https://openai.com/index/gpt-6-for-everyone/)",
+            "[官方发布](https://openai.com/index/introducing-gpt-6-sol-and-luna/)": "[Official Release](https://openai.com/index/introducing-gpt-6-sol-and-luna/)",
+            "[官方说明](https://openai.com/index/eu-text-provenance/)": "[Official Note](https://openai.com/index/eu-text-provenance/)",
+            "[模型目录](https://developers.openai.com/api/docs/models)": "[Model Catalog](https://developers.openai.com/api/docs/models)",
+            "textGrain首次公告": "The first announcement of textGrain",
+            "textGrain首次公告；分阶段推出": "The first announcement of textGrain; phased launch",
+            "与 Sol 属于同代不同档位": "It belongs to the same generation and is different from Sol.",
+            "与Luna共同补齐不同任务和成本档位；后续6.1单列": "Work with Luna to complete different tasks and cost levels; follow-up 6.1 single column",
+            "与已有型号关系": "Relationship with existing models",
+            "两套安全测试": "Two safety test sets",
+            "主要变化或定位": "Major changes or positioning",
+            "主要能力或价格口径": "Main ability or price measurement basis",
+            "事件与官方依据": "Event and official evidence",
+            "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
+            "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
+            "依据": "Evidence",
+            "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。": "Association: D-02 GPT-6 Astra; [CW-A01 Codex](/for-you#watch-cw-a01). The model version and the Codex client version are recorded separately.",
+            "关联：[CW-A01](https://fieldtofit.top/watch/CW-A01)。以下保留各历史版本及其当时适用条件。": "Association: [CW-A01 ](https://fieldtofit.top/watch/CW-A01). The following retains the historical versions and their applicable conditions at that time.",
+            "具体接入条件": "Specific access conditions",
+            "准确型号、接口能力和价格以各型号文档为准": "The exact model, interface capability and price are subject to the documents of each model.",
+            "分阶段开放": "Open in stages",
+            "历史与未知项": "History and unknowns",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原始发布日期": "The original release date",
+            "原始日期口径": "Original date measurement basis",
+            "原文日期：2026-10-15；事件日期：2026-10-15；本站核对：2026-10-16；版本：GPT-Live-1.1 / Quip。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-15; checked:2026-10-16; version:GPT-Live-1.1 / Quip. Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
+            "变化与用途": "Change and use",
+            "在 5.6 已有能力上继续演进": "5.6 has the ability to continue to evolve",
+            "复杂编程、电脑操作与专业任务；能力为官方定位": "Complex programming, computer operation and professional tasks; ability is the official positioning",
+            "套餐与开放范围": "Plans and availability",
+            "官方原始日期": "The official original date",
+            "官方发布、版本记录或采用说明": "Official release, version record or adoption instructions",
+            "官方发布与采用说明": "Official announcement and adoption guidance",
+            "官方发布和采用材料": "Official release and adoption of materials",
+            "对照关系": "Contrast relationship",
+            "工具等待期间也能推进工作。": "The work can also be promoted while the tool is waiting.",
+            "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
+            "执行中调整方向意味着应用需要管理正在运行的工作与新消息；它与“取消后重新问一次”有不同的交互要求。": "Steering during execution requires applications to manage running work alongside new messages. Its interaction requirements differ from cancelling and asking again.",
+            "按官方型号文档与账户可用范围选择；本站未调用实测": "Select according to the official model document and the available range of the account; FieldToFit did not call runtime test",
+            "接入区别：6.1 Sol文档列出1,050,000上下文、128k最大输出；工具调用使用Responses API，Chat Completions入口不提供同样的工具能力。": "Integration differences: 6.1 Sol documentation specifies 1,050,000 context and 128k maximum output. Tool calls use Responses API; Chat Completions does not provide the same tool capabilities.",
+            "接入或运行条件": "Access or operation conditions",
+            "支持异步工具调用；通过 WebSocket 在执行中接收方向调整；不支持 none 推理档位": "Asynchronous tool calls; steering during execution via WebSocket; none reasoning level unsupported",
+            "既有语音与体验记录 → GPT-Live-1.1 / Quip": "Existing voice and experience records → GPT-Live-1.1 / Quip",
+            "日期与状态": "Date and status",
+            "日期与限制": "Dates and limitations",
+            "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M01 GPT, D-30, D-53。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M01 GPT, D-30, D-53. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
+            "本次变化与用途": "Changes and uses this time",
+            "检测器初期仅向获批研究者及专业组织开放；短文本和改写会影响检测。检出不证明内容准确，未检出也不证明人类独立创作。": "The detector initially opens only to approved researchers and professional organizations. Short texts and rewriting affect detection. A detection result does not prove factual accuracy; absence of detection does not establish independent human authorship.",
+            "检测权限与局限": "Detection permissions and limitations",
+            "模型与验证边界": "Model and verification boundary",
+            "模型目录": "Model catalog",
+            "模型能组合文字、图示、按钮与交互组件，生成计算器、对比工具和可操作的解释；先给出有用内容，再随思考或工具执行补充结果。": "The model combines text, diagrams, buttons and interactive components into calculators, comparison tools and actionable explanations. Useful content appears first, with more results added as reasoning or tool execution proceeds.",
+            "正文再分发许可未确认，保留官方链接与本站解读。": "Full-text redistribution permission is unconfirmed; retain the official link and FieldToFit interpretation.",
+            "正文再分发许可未确认，保留官方链接及本站解读。": "The text redistribution license has not been confirmed, and the official link and FieldToFit interpretation are retained.",
+            "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。": "The text redistribution license has not been confirmed; MCP provides FieldToFit interpretation and source list, source text only links.",
+            "水印可能影响内容检测和导出流程；它通过词语选择嵌入统计信号，不是把用户名、提示词或对话编号写入文本。": "Watermarks may affect the content detection and export process; it embeds statistical signals through word selection, not by writing user names, prompts or dialogue numbers into the text.",
+            "水印如何工作": "How does watermark work?",
+            "版本 / 分支": "Version / Branch",
+            "版本 / 型号": "Version / Model",
+            "版本 / 材料": "Version / Material",
+            "版本 / 适用材料": "Version / Applicable Materials",
+            "版本关系": "Version relationship",
+            "版本关系：保留Astra和此前5.6系列历史行，新增6 Sol、6 Luna、6.1 Sol，各自标明正式型号和发布日期，不能把旧行直接改名。": "Version relationships: retain Astra and historical 5.6-series rows, adding 6 Sol, 6 Luna and 6.1 Sol with their own official identifiers and release dates. Do not simply rename older rows.",
+            "版本变化": "Version change",
+            "独立模型档位；本页资料不据名称推断相同输出质量或性能倍率": "Independent model gear; the information on this page does not infer the same output quality or performance magnification based on the name.",
+            "生产提示集未见显著退步，但合成边界难例的部分安全类别有显著退步；不能写成全面更安全，也不把测试分数当真实流量中的事故率。": "Production prompts show no significant regressions, but some safety categories regress significantly on synthetic edge cases. This is not universal safety improvement, and scores are not incident rates in real traffic.",
+            "系列支持用代码组合工具调用；多 Agent 能力处于 beta": "Series support code combination tool calls; multi-Agent capabilities are in beta",
+            "系统卡称Plus及以上默认 1.1，其他用户为Quip；不能据此确认全部地区与每个账户已完成切换。": "The card names 1.1 as default for Plus and higher tiers and Quip for others; this does not verify rollout in every region and account.",
+            "获取与使用": "Acquisition and use",
+            "让答案可以操作": "Make the answer workable",
+            "这是Chat体验更新，没有更换Work、Codex使用的模型；不能据此推断API增加同名型号。本站核对官方材料，未逐账户实测。": "This updates the Chat experience without replacing models used by Work or Codex. It does not imply a new API model with the same name. FieldToFit reviewed official materials without testing every account.",
+            "适用范围": "Scope of application",
+            "采用与核验边界": "Adopt and verify the boundary",
+            "采用条件": "Conditions for adoption",
+            "采用条件与限制": "Conditions and restrictions for adoption",
+            "采用限制：支持low到max等推理档位，不支持none/minimal。把这些实际接入约束放进表格，而不是只写更强、更快；本站未做账户调用和性能复测。": "Adoption constraints: reasoning levels include low through max, with none/minimal unsupported. These actual integration requirements belong in the table, alongside capability descriptions. FieldToFit has not made account calls or retested performance.",
+            "长任务可以中途纠偏。": "Long-term tasks can be corrected halfway.",
+            "限制与验证": "Restriction and verification",
+            "面向较轻任务与较大调用量；不等同Astra能力": "For light tasks and large calls; not equivalent to Astra ability",
+            "首发日待核；并行分支": "Initial date to be nuclear; parallel branch",
+            "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
+            "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
+          },
+          "source_hash": "ded507a93e74eaba9d3ac4dbd5ed97cea3f5d7d964619c33381bef701e6be733",
+          "state": "reviewed"
+        }
+      },
+      "type": "model"
     },
     {
       "blocks": [
@@ -6342,8 +6514,6 @@
             "逐页分数可用于排查和筛选，不等于事实正确率。格式支持增加不证明复杂中文表格或扫描件均准确；本站未做精度与吞吐复测。": "Per-page scores support diagnosis and filtering rather than factual accuracy guarantees. Added format support does not establish accuracy for complex Chinese tables or scans; FieldToFit has not tested accuracy or throughput.",
             "首批材料": "The first batch of materials"
           },
-          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
-          "reviewed_at": "2026-10-15T03:33:39.537591+00:00",
           "source_hash": "967e9508d1d14bcdacd896574822db251cbb09bc421e1749b06b2932cf030a43",
           "state": "reviewed"
         }
@@ -6567,6 +6737,25 @@
           "kind": "table",
           "rows": [
             [
+              "v2.1.300 → v2.1.301",
+              "[Claude Code 2.1.301：限制无人值守等待，Python SDK同步捆绑版本](https://fieldtofit.top/news/D-161)",
+              "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：Claude Code2.1.301 / PythonSDK0.2.168。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。"
+        },
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "v2.1.296 → v2.1.300",
               "[Claude Code 2.1.300：修复压缩后的恢复，Python SDK更新捆绑CLI](https://fieldtofit.top/news/D-147)",
               "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：Claude Code2.1.300 / PythonSDK0.2.167。本站未安装或复现性能。"
@@ -6735,10 +6924,26 @@
           "text": "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "checked_at": "2026-10-15",
+      "checked_at": "2026-10-16",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A02",
       "interpretation": [
+        {
+          "text": "CLI与Python SDK分别于北京时间 10 月 16 日 03:22、04:22 发布，GitHub UTC日期为 10 月 15 日。更新维护等待、工作区保护与错误识别，不是模型或用量额度更新。",
+          "title": "2026-10-16 补录：Claude Code2.1.301 / PythonSDK0.2.168"
+        },
+        {
+          "text": "无人值守重试可设置用量限制等待上限；Grep／Glob运行失败不再伪装为无匹配，避免把执行故障误读为没有结果。",
+          "title": "等待与错误识别"
+        },
+        {
+          "text": "修复退出时可能删除含未推送提交的Hook工作树，以及部分工作流跳过步骤仍报告成功的问题。",
+          "title": "工作区与任务结果"
+        },
+        {
+          "text": "CW-A02 由 2.1.300 补至 2.1.301；CW-H03 由Python0.2.167 补至 0.2.168，捆绑CLI2.1.301。不推定TypeScript SDK同步升级；本站未回归测试。",
+          "title": "两个包独立记版本"
+        },
         {
           "text": "Claude Code与Python Agent SDK分别于北京时间 10 月 15 日 02:24、03:25 发布。本次重点是会话恢复、MCP与执行边界维护，不是模型能力更新。",
           "title": "2026-10-15 补录：Claude Code2.1.300 / PythonSDK0.2.167"
@@ -6816,7 +7021,7 @@
           "title": "可管理性也在演进。"
         }
       ],
-      "introduction": "Claude Code与Python Agent SDK分别于北京时间 10 月 15 日 02:24、03:25 发布。本次重点是会话恢复、MCP与执行边界维护，不是模型能力更新。",
+      "introduction": "CLI与Python SDK分别于北京时间 10 月 16 日 03:22、04:22 发布，GitHub UTC日期为 10 月 15 日。更新维护等待、工作区保护与错误识别，不是模型或用量额度更新。",
       "name": "Claude Code",
       "reading_materials": [
         {
@@ -6920,6 +7125,38 @@
           "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.300 / PythonSDK0.2.167 · Official source 2",
           "upstream_revision": "Claude Code2.1.300 / PythonSDK0.2.167",
           "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.167"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-16",
+          "coverage": "link_only",
+          "id": "oct16-g-1",
+          "locator": "Official release/card, explicit limitations and migration guide",
+          "reason": "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。",
+          "retrieved_at": "2026-10-16",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 1",
+          "upstream_revision": "Claude Code2.1.301 / PythonSDK0.2.168",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-16",
+          "coverage": "link_only",
+          "id": "oct16-g-2",
+          "locator": "Official release/card, explicit limitations and migration guide",
+          "reason": "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。",
+          "retrieved_at": "2026-10-16",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 2",
+          "upstream_revision": "Claude Code2.1.301 / PythonSDK0.2.168",
+          "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.168"
         }
       ],
       "sources": [
@@ -6970,6 +7207,18 @@
           "id": "oct15-a-2",
           "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.300 / PythonSDK0.2.167 · Official source 2",
           "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.167"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct16-g-1",
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 1",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct16-g-2",
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 2",
+          "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.168"
         }
       ],
       "state": "published",
@@ -6980,6 +7229,9 @@
             "2026-10-09 19:28:59 UTC（北京时间10月10日03:28）": "2026-10-09 19:28:59 UTC (Beijing Time 10/10 03:28)",
             "2026-10-10版本补充：v2.1.296": "2026-10-10 Version Supplement: v2.1.296",
             "2026-10-15 补录：Claude Code2.1.300 / PythonSDK0.2.167": "2026-10-15 addition:Claude Code2.1.300 / PythonSDK0.2.167",
+            "2026-10-16 补录：Claude Code2.1.301 / PythonSDK0.2.168": "2026-10-16 addition:Claude Code2.1.301 / PythonSDK0.2.168",
+            "CLI与Python SDK分别于北京时间 10 月 16 日 03:22、04:22 发布，GitHub UTC日期为 10 月 15 日。更新维护等待、工作区保护与错误识别，不是模型或用量额度更新。": "The CLI and Python SDK were released at 03:22 and 04:22 Beijing time on 10/16; GitHub’s UTC date is 10/15. This maintains waiting, worktree protection and error reporting rather than models or usage limits.",
+            "CW-A02 由 2.1.300 补至 2.1.301；CW-H03 由Python0.2.167 补至 0.2.168，捆绑CLI2.1.301。不推定TypeScript SDK同步升级；本站未回归测试。": "Update CW-A02 from 2.1.300 to 2.1.301 and CW-H03 from Python0.2.167 to 0.2.168, bundling CLI2.1.301; Do not infer a TypeScript SDK update; FieldToFit has not regression-tested it.",
             "Claude Code 2.1.296：补强托管策略、MCP 状态与编辑保护 · 官方材料1": "Claude Code 2.1.296: Strengthen hosting strategy, MCP status and editing protection · Official materials 1",
             "Claude Code CLI 及相关客户端入口": "Claude Code CLI and related client entrances",
             "Claude Code v2.1.292修复部分定时任务不触发、后台命令过早停止及权限处理问题，Agent工具增加effort参数。": "Claude Code v2.1.292 fixes some scheduled tasks not firing, background commands stopping too early and permission handling. The Agent tool gains an effort parameter.",
@@ -6998,6 +7250,7 @@
             "MCP与工具输入": "MCP and tool input",
             "Python0.2.167 发行说明仅明确捆绑CLI2.1.300；不能推定TypeScript包同步更新。SDK认证、许可和第三方产品使用限制保留；本站未回归运行行为。": "The Python0.2.167 release only explicitly updates its bundled CLI2.1.300; do not infer a matching TypeScript release. SDK authentication, licensing and third-party-product restrictions remain; FieldToFit has not regression-tested runtime behavior.",
             "[Claude Code 2.1.300：修复压缩后的恢复，Python SDK更新捆绑CLI](https://fieldtofit.top/news/D-147)": "[Claude Code 2.1.300: compaction recovery fixes and a Python SDK CLI update](https://fieldtofit.top/news/D-147)",
+            "[Claude Code 2.1.301：限制无人值守等待，Python SDK同步捆绑版本](https://fieldtofit.top/news/D-161)": "[Claude Code 2.1.301: bounded unattended waits and a Python SDK CLI update](https://fieldtofit.top/news/D-161)",
             "[官方发布](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)": "[Official Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)",
             "[官方发布记录](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)": "[Official Release Record](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)",
             "[官方材料](https://github.com/anthropics/claude-code/releases/tag/v2.1.289)": "[Official Materials](https://github.com/anthropics/claude-code/releases/tag/v2.1.289)",
@@ -7006,6 +7259,7 @@
             "v2.1.294修复prompt／agent hooks以指令形式编写时，可能放过本应拦截操作的问题。": "v2.1.294 fixes instruction-style prompt / agent hooks allowing operations they should block.",
             "上游LICENSE为All rights reserved并指向商业条款，未确认全文再分发许可；本次提供官方版本链接和本站整理，不把CHANGELOG正文标成MCP可读全文。": "Upstream LICENSE states All rights reserved and points to commercial terms. Full-text redistribution permission is unverified. This batch supplies official version links and FieldToFit notes, without describing CHANGELOG text as MCP-readable full text.",
             "两个包分别记版本": "Track the two packages separately",
+            "两个包独立记版本": "Track both packages independently",
             "事件与官方依据": "Event and official evidence",
             "从已审v2.1.292补充v2.1.293，保留历史记录。这些是官方修复说明，本站未安装复现，不将发布记录等同本站验证。": "Adds v2.1.293 after the reviewed v2.1.292, retaining history. These are official fix descriptions. FieldToFit has not installed or reproduced them; release notes are not FieldToFit verification.",
             "以上为2026-10-05本次核对；以下保留旧版本资料，不代表旧版已包含本次修复。": "The review above was performed on 2026-10-05. Older material below remains historical and does not imply that those versions include these fixes.",
@@ -7013,12 +7267,14 @@
             "以上为2026-10-09核对的新增材料；以下保留历史版本及当时适用条件。": "New materials above were checked on 2026-10-09. Historical versions below retain the conditions that applied at the time.",
             "以上为2026-10-10核对的新增版本；以下保留历史资料及其当时适用条件。": "The versions above were newly checked on 2026-10-10. Historical material below retains the conditions that applied at the time.",
             "以下保留此前已审内容与当时适用条件。": "Previously reviewed content and its original applicable conditions are retained below.",
+            "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
             "依据": "Evidence",
             "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。": "Based on: [Official CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md). Association: [CW-M02 Claude](/for-you#watch-cw-m02), [CW-S02 Anthropic Skills](/for-you#watch-cw-s02), [CW-H03 Claude Agent SDK](/for-you#watch-cw-h03).",
             "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。": "Retain the official source and version; the fixed text that can be redistributed is not imported this time, and the link is not declared as the full text.",
             "修复HTTP MCP连接累积请求导致的内存泄漏，以及工作中消息转入后台时丢失的问题。": "Fixes memory leaks from accumulating HTTP MCP requests and messages lost when active work moves to the background.",
             "修复指令式hooks的阻断判断": "Fix the blocking judgment of instructional hooks",
             "修复第三方兼容接口的请求失败；修复 MCP 调用后误判空消息；插件管理支持 JSON 输出；修复部分会话恢复和权限规则问题": "Fix the request failure of the third-party compatible interface; fix the misjudgment of empty messages after MCP call; plug-in management supports JSON output; fix some session recovery and permission rule problems",
+            "修复退出时可能删除含未推送提交的Hook工作树，以及部分工作流跳过步骤仍报告成功的问题。": "Fixes quitting that could delete a hook-created worktree with unpushed commits, and some workflow steps being skipped while success was reported.",
             "修复部分headless／Agent SDK恢复时丢失近期消息、压缩摘要或带回旧历史的问题。其中一类修复仅适用于本版起生成的压缩记录，不承诺旧记录全部自动恢复。": "Fixes some headless/Agent SDK resumes that lost recent messages or compaction summaries, or restored old history. One fix applies only to compactions created from this version onward; it does not promise recovery of every older record.",
             "具体入口": "Specific entrance",
             "具体内容": "Value",
@@ -7031,6 +7287,7 @@
             "原始时间口径": "Original time measurement basis",
             "原文日期": "Source text date",
             "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：Claude Code2.1.300 / PythonSDK0.2.167。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-15; checked:2026-10-15; version:Claude Code2.1.300 / PythonSDK0.2.167; FieldToFit has not installed or reproduced performance.",
+            "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：Claude Code2.1.301 / PythonSDK0.2.168。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-16; checked:2026-10-16; version:Claude Code2.1.301 / PythonSDK0.2.168; Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
             "变化": "Change",
             "变化与用途": "Change and use",
             "可管理性也在演进。": "Manageability is also evolving.",
@@ -7047,6 +7304,8 @@
             "官方发布记录／模型卡／采用说明": "Official release record/model card/use instructions",
             "官方版本订阅条目更新2026-10-03 UTC；不冒充精确首发时间": "Official version subscription entry update 2026-10-03 UTC; do not pretend to be the exact release time",
             "官方记录修复部分恢复会话后定时任务不触发、单次运行过早终止后台命令，以及后台会话重启后丢失循环唤醒。Agent工具新增effort参数。": "Official fixes cover scheduled tasks not firing after some resumed sessions, one-shot runs ending background commands too early, and recurring wakeups lost after background-session restarts. The Agent tool gains an effort parameter.",
+            "工作区与任务结果": "Worktrees and workflow results",
+            "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
             "已核实更新": "Verified and updated",
             "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
             "执行与扩展": "Execution and expansion",
@@ -7055,6 +7314,7 @@
             "改善Stop／SubagentStop中指令式prompt hook的判断，减少应该继续工作时过早停止。": "Improves instruction-style prompt-hook judgments in Stop / SubagentStop, reducing premature stops when work should continue.",
             "文件、命令、插件、MCP 与会话": "Files, commands, plug-ins, MCP and sessions",
             "文件与插件：修复IDE经符号链接引用文件时Read拒绝规则未生效，以及本地插件旧副本、热更新等问题。": "Files and plugins: fixes Read deny rules failing for IDE file references through symlinks, plus stale local plugin copies and hot-update issues.",
+            "无人值守重试可设置用量限制等待上限；Grep／Glob运行失败不再伪装为无匹配，避免把执行故障误读为没有结果。": "Unattended retries can cap usage-limit waits. Grep/Glob failures no longer appear as no matches, keeping execution errors distinct from empty results.",
             "日期与限制": "Dates and limitations",
             "日期口径": "Date basis",
             "更新": "Update",
@@ -7080,6 +7340,7 @@
             "版本口径": "Version measurement basis",
             "版本记录包含沙箱读取、网络路径权限提示、托管设置和插件加载等修复。属于官方声明，本站未进行安全复测，不宣称所有越权风险已解决。": "Release notes include fixes for sandbox reads, network-path permission prompts, managed settings and plugin loading. These are official claims. FieldToFit has not repeated security tests or established that all authorization risks are resolved.",
             "由已审v2.1.293补充v2.1.294。本站核对官方发行说明，未复现修复；模型判断型hook不等于硬隔离保证，未核齐的更高版本不混入。": "Adds v2.1.294 after the reviewed v2.1.293. FieldToFit reviewed official release notes without reproducing the fixes. Model-judgment hooks are not hard-isolation guarantees; unverified higher versions are excluded.",
+            "等待与错误识别": "Wait limits and error reporting",
             "补强压缩后MCP工具及指令通知、恢复后的工具搜索；Hook改写输入增加校验，部分云会话误报写入成功及策略读取超时也被修复。升级需核对自己的Hook、代理与会话配置。": "Improves post-compaction MCP tool/instruction notifications and resumed tool search. Hook-rewritten input gains validation; some cloud-session false write-success reports and policy-read timeouts are fixed. Check your hooks, proxy and session settings when upgrading.",
             "订阅条目updated 2026-10-07 UTC；未核精确首发时刻": "Subscription entry updated 2026-10-07 UTC; Uncored accurate first release time",
             "订阅条目更新2026-10-06 UTC；不等同精确首发日期": "Subscription entry update 2026-10-06 UTC; not equal to the exact release date",
@@ -7094,9 +7355,7 @@
             "验证与采用边界": "Verification and adoption of boundaries",
             "验证范围": "Scope of verification"
           },
-          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
-          "reviewed_at": "2026-10-15T03:31:41.880283+00:00",
-          "source_hash": "66e182bee60da9f23a3e86ec106cff1da73e040f078344c206d518f5bb6377a4",
+          "source_hash": "f77019d9bc700ee080b61b361b23bb309daef178ff0f3b7ba8edf31e003cc834",
           "state": "reviewed"
         }
       },
@@ -7240,6 +7499,25 @@
       "blocks": [
         {
           "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "0.13.10 → 0.13.13",
+              "[Browser Use 0.13.13：接入OpenAI浏览器工具，修正截图与点击坐标](https://fieldtofit.top/news/D-162)",
+              "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：0.13.13。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。"
+        },
+        {
+          "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
@@ -7275,10 +7553,26 @@
           "text": "依据：[官方项目](https://github.com/browser-use/browser-use)、[发布记录](https://github.com/browser-use/browser-use/releases)。"
         }
       ],
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-16",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A05",
       "interpretation": [
+        {
+          "text": "官方于北京时间 10 月 16 日 07:50 发布 0.13.13，GitHub UTC日期为 10 月 15 日。加入OpenAI浏览器工具驱动，支持本地、Browser Use Cloud与借用的浏览器会话。",
+          "title": "2026-10-16 补录：0.13.13"
+        },
+        {
+          "text": "修复临时空标签页URL，以及缩放显示下截图、裁剪与指针坐标不一致的问题。",
+          "title": "导航与坐标"
+        },
+        {
+          "text": "18 个默认工具与 6 个可选动作；需要openai-tools额外依赖、OpenAI Python3.31+，自定义HTTP客户端也有兼容要求。",
+          "title": "接入条件"
+        },
+        {
+          "text": "CW-A05 由 0.13.10 补至 0.13.13；0.13.12 的PyPI发布曾取消。作者测试不等于本站复现或更广泛性能评测。",
+          "title": "版本与验证边界"
+        },
         {
           "text": "未知工具返回错误后，上层 Agent 才有机会重试或调整；把失败包装成成功会污染整个执行过程。",
           "title": "错误是否可见会影响后续动作。"
@@ -7288,8 +7582,26 @@
           "title": "浏览器 Agent 也依赖底层运行组件。"
         }
       ],
-      "introduction": "让 Agent 操作浏览器的开源项目，把网页观察与交互接入模型执行过程。",
+      "introduction": "官方于北京时间 10 月 16 日 07:50 发布 0.13.13，GitHub UTC日期为 10 月 15 日。加入OpenAI浏览器工具驱动，支持本地、Browser Use Cloud与借用的浏览器会话。",
       "name": "Browser Use",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-16",
+          "coverage": "link_only",
+          "id": "oct16-h-1",
+          "locator": "Official release/card, explicit limitations and migration guide",
+          "reason": "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。",
+          "retrieved_at": "2026-10-16",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Browser Use 0.13.13 · Official source 1",
+          "upstream_revision": "0.13.13",
+          "url": "https://github.com/browser-use/browser-use/releases/tag/0.13.13"
+        }
+      ],
       "sources": [
         {
           "coverage": "link_only",
@@ -7300,13 +7612,81 @@
           "coverage": "link_only",
           "title": "发布记录",
           "url": "https://github.com/browser-use/browser-use/releases"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct16-h-1",
+          "title": "Browser Use 0.13.13 · Official source 1",
+          "url": "https://github.com/browser-use/browser-use/releases/tag/0.13.13"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "18 个默认工具与 6 个可选动作；需要openai-tools额外依赖、OpenAI Python3.31+，自定义HTTP客户端也有兼容要求。": "Provides 18 default tools and 6 optional actions. Requires the openai-tools extra and OpenAI Python3.31+, with compatibility requirements for custom HTTP clients.",
+            "2026-10-16 补录：0.13.13": "2026-10-16 addition:0.13.13",
+            "CW-A05 由 0.13.10 补至 0.13.13；0.13.12 的PyPI发布曾取消。作者测试不等于本站复现或更广泛性能评测。": "Update CW-A05 from 0.13.10 to 0.13.13; the 0.13.12 PyPI publication was cancelled. Author testing is not FieldToFit replication or a broader performance evaluation.",
+            "Python Agent 库与浏览器集成": "Python Agent library and browser integration",
+            "[Browser Use 0.13.13：接入OpenAI浏览器工具，修正截图与点击坐标](https://fieldtofit.top/news/D-162)": "[Browser Use 0.13.13: OpenAI browser tools and coordinate fixes](https://fieldtofit.top/news/D-162)",
+            "事件与官方依据": "Event and official evidence",
+            "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
+            "依据：[官方项目](https://github.com/browser-use/browser-use)、[发布记录](https://github.com/browser-use/browser-use/releases)。": "Based on: [Official Project](https://github.com/browser-use/browser-use), [Release Record](https://github.com/browser-use/browser-use/releases).",
+            "修复临时空标签页URL，以及缩放显示下截图、裁剪与指针坐标不一致的问题。": "Fixes temporary empty tab URLs and mismatches among screenshots, crops and pointer coordinates on scaled displays.",
+            "具体入口": "Specific entrance",
+            "具体内容": "Value",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：0.13.13。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-16; checked:2026-10-16; version:0.13.13. Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
+            "发布日期": "Release date",
+            "发布记录": "Publication records",
+            "发布记录中的 BrowserHarness 版本应保留，不能只记录最外层模型名称。": "Retain the BrowserHarness version from release notes, alongside the model identifier.",
+            "官方于北京时间 10 月 16 日 07:50 发布 0.13.13，GitHub UTC日期为 10 月 15 日。加入OpenAI浏览器工具驱动，支持本地、Browser Use Cloud与借用的浏览器会话。": "Released at 07:50 Beijing time on 10/16, with a GitHub UTC date of 10/15, 0.13.13 adds an OpenAI browser-tool driver for local, Browser Use Cloud and borrowed browser sessions.",
+            "官方项目": "Official project",
+            "导航与坐标": "Navigation and coordinates",
+            "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
+            "已核实更新": "Verified and updated",
+            "开源库版本，独立于商业云服务": "Open source library version, independent of commercial cloud services",
+            "执行与扩展": "Execution and expansion",
+            "接入条件": "Integration requirements",
+            "日期与限制": "Dates and limitations",
+            "更新 BrowserHarness 与 MCP SDK 依赖并固定版本；未知 MCP 工具调用明确返回应用错误": "Update BrowserHarness and MCP SDK dependency and fix the version; unknown MCP tool calls clearly return application errors",
+            "未知工具返回错误后，上层 Agent 才有机会重试或调整；把失败包装成成功会污染整个执行过程。": "Returning an error for an unknown tool gives the agent a chance to retry or adjust. Presenting failure as success contaminates the execution flow.",
+            "本次展示的材料": "The materials on display this time",
+            "浏览器 Agent 也依赖底层运行组件。": "Browser Agent also relies on underlying running components.",
+            "浏览器组件与 MCP 错误处理": "Browser components and MCP error handling",
+            "版本与验证边界": "Version and validation boundaries",
+            "版本变化": "Version change",
+            "版本口径": "Version measurement basis",
+            "网页读取、导航与交互；模型、浏览器运行环境分别配置": "Web page reading, navigation and interaction; model and browser running environment are configured respectively",
+            "错误是否可见会影响后续动作。": "Whether the error is visible or not will affect the subsequent action."
+          },
+          "source_hash": "92c17475be0767a98d21dc3a5f159945245fde56ccfd38aeec9a8337412d7c11",
+          "state": "reviewed"
+        }
+      },
       "type": "agent"
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v2026.9.5 → v2026.10.4",
+              "[OpenClaw 2026.10.4：修复Gateway恢复与群聊权限判断](https://fieldtofit.top/news/D-159)",
+              "原文日期：2026-10-16；事件日期：2026-10-16；本站核对：2026-10-16；版本：v2026.10.4。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。"
+        },
         {
           "columns": [
             "具体入口",
@@ -7349,10 +7729,26 @@
           "text": "依据：[官方项目](https://github.com/openclaw/openclaw)、[发布记录](https://github.com/openclaw/openclaw/releases)。与 Skill 模块相互关联，但不把 OpenClaw 项目整体归成一个 Skill。"
         }
       ],
-      "checked_at": "2026-09-21",
+      "checked_at": "2026-10-16",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A06",
       "interpretation": [
+        {
+          "text": "官方于北京时间 10 月 16 日 08:36 发布v2026.10.4，定位为 10.3 之后的稳定性补丁。本站档案此前为v2026.9.5，本次只核对 10.4 的明确修复，中间版本仍待补读。",
+          "title": "2026-10-16 补录：v2026.10.4"
+        },
+        {
+          "text": "修复睡眠／时钟跳变后的Gateway所有权判断，以及关闭过程中的会话与转录工作线程问题。",
+          "title": "恢复与关闭"
+        },
+        {
+          "text": "Tlon群组私信中的其他参与者不再被误作所有者；另修复无头浏览器等待通行密钥时的点击问题。",
+          "title": "群聊与浏览器边界"
+        },
+        {
+          "text": "此补丁不改配置，不等于 9.5 到 10.4 整个跨度均无需迁移；本站未回归测试运行与权限行为。",
+          "title": "不泛化迁移结论"
+        },
         {
           "text": "Skill Workshop 记录可持续保留的技能集合，这是理解个人 Agent 怎样积累工作方法的具体入口。",
           "title": "技能积累可以跨越单个工作区。"
@@ -7370,7 +7766,7 @@
           "title": "发布验证范围需要一起读"
         }
       ],
-      "introduction": "连接消息入口、模型、工具与技能的个人 AI 助手项目，支持持续维护个人 Agent 的工作环境。",
+      "introduction": "官方于北京时间 10 月 16 日 08:36 发布v2026.10.4，定位为 10.3 之后的稳定性补丁。本站档案此前为v2026.9.5，本次只核对 10.4 的明确修复，中间版本仍待补读。",
       "name": "OpenClaw",
       "reading_materials": [
         {
@@ -7408,6 +7804,22 @@
           "title": "v2026.9.5固定变更记录",
           "upstream_revision": "v2026.9.5 / ec9c1a13db8938e5a3eaa51fca2e981cde2395a9",
           "url": "https://raw.githubusercontent.com/openclaw/openclaw/ec9c1a13db8938e5a3eaa51fca2e981cde2395a9/CHANGELOG/2026.9.5.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-16",
+          "coverage": "link_only",
+          "id": "oct16-f-1",
+          "locator": "Official release/card, explicit limitations and migration guide",
+          "reason": "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。",
+          "retrieved_at": "2026-10-16",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "OpenClaw v2026.10.4 · Official source 1",
+          "upstream_revision": "v2026.10.4",
+          "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.4"
         }
       ],
       "sources": [
@@ -7430,9 +7842,69 @@
           "coverage": "link_only",
           "title": "v2026.9.5固定变更记录",
           "url": "https://raw.githubusercontent.com/openclaw/openclaw/ec9c1a13db8938e5a3eaa51fca2e981cde2395a9/CHANGELOG/2026.9.5.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct16-f-1",
+          "title": "OpenClaw v2026.10.4 · Official source 1",
+          "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.4"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-16 补录：v2026.10.4": "2026-10-16 addition:v2026.10.4",
+            "Skill Workshop 保留跨工作区的 Agent 技能集合；在激活前隔离预演核心与插件更新；复用已有缓存和工作进程": "Skill Workshop retains agent skills across workspaces; isolated dry runs test core and plugin updates before activation; existing caches and workers are reused",
+            "Skill Workshop 记录可持续保留的技能集合，这是理解个人 Agent 怎样积累工作方法的具体入口。": "Skill Workshop records a persistent skill collection, providing a concrete way to understand how personal agents accumulate working methods.",
+            "Tlon群组私信中的其他参与者不再被误作所有者；另修复无头浏览器等待通行密钥时的点击问题。": "Other participants in Tlon group DMs are no longer treated as owners. Also fixes clicks while a headless browser waits for a passkey.",
+            "[OpenClaw 2026.10.4：修复Gateway恢复与群聊权限判断](https://fieldtofit.top/news/D-159)": "[OpenClaw 2026.10.4: Gateway recovery and group-permission fixes](https://fieldtofit.top/news/D-159)",
+            "v2026.9.3 为标签；发布页日期是 2026-09-08": "v2026.9.3 is the label; the release page date is 2026-09-08",
+            "v2026.9.5发布及验证说明": "v2026.9.5 Release and Verification Instructions",
+            "v2026.9.5固定变更记录": "v2026.9.5 Fixed Change Record",
+            "v2026.9.5让支持的插件在Gateway运行中安装、重载，并更新活动会话工具；同时修复会话历史保留、升级恢复、完成回执与后续答复问题。适用范围以该版本记录为准。": "v2026.9.5 lets supported plugins install and reload while Gateway runs, refreshing tools in active sessions. It also fixes session-history retention, upgrade recovery, completion receipts and follow-up replies. Scope follows that version's release notes.",
+            "不泛化迁移结论": "Do not generalize migration claims",
+            "个人助手与 Gateway": "Personal assistant and Gateway",
+            "事件与官方依据": "Event and official evidence",
+            "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
+            "依据：[官方项目](https://github.com/openclaw/openclaw)、[发布记录](https://github.com/openclaw/openclaw/releases)。与 Skill 模块相互关联，但不把 OpenClaw 项目整体归成一个 Skill。": "Based on: [Official Project](https://github.com/openclaw/openclaw), [Release Record](https://github.com/openclaw/openclaw/releases). It is interrelated with the Skill module, but does not classify the OpenClaw project as a whole as a Skill.",
+            "修复睡眠／时钟跳变后的Gateway所有权判断，以及关闭过程中的会话与转录工作线程问题。": "Fixes Gateway ownership after sleep/clock jumps and session/transcript-worker issues during shutdown.",
+            "具体入口": "Specific entrance",
+            "具体内容": "Value",
+            "原创解读与来源链接": "Original commentary and source links",
+            "原文日期：2026-10-16；事件日期：2026-10-16；本站核对：2026-10-16；版本：v2026.10.4。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-16; event date: 2026-10-16; checked:2026-10-16; version:v2026.10.4; Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
+            "发布日期": "Release date",
+            "发布记录": "Publication records",
+            "发布验证范围需要一起读": "The scope of publication verification needs to be read together.",
+            "多消息渠道、工具、技能及工作区": "Multiple information channels, tools, skills and workspaces",
+            "官方于北京时间 10 月 16 日 08:36 发布v2026.10.4，定位为 10.3 之后的稳定性补丁。本站档案此前为v2026.9.5，本次只核对 10.4 的明确修复，中间版本仍待补读。": "Released at 08:36 Beijing time on 10/16, v2026.10.4 is a stability patch after 10.3. The dossier previously recorded v2026.9.5; this checks specific 10.4 fixes while intermediate releases await review.",
+            "官方发布 2026-09-19；本行核对 2026-09-21": "Official release of 2026-09-19; our bank checks 2026-09-21",
+            "官方发布、文档与对应限制章节": "Official release, documents and corresponding restricted chapters",
+            "官方发布说明披露部分长时间运行／端到端验证未完成，以及Android APK未随本次更新。本站未执行安装或升级；旧版本行仍保留原有核对日期。": "Official release notes disclose incomplete long-running / end-to-end validation and an Android APK not included in this update. FieldToFit has not installed or upgraded it. Older rows retain original check dates.",
+            "官方项目": "Official project",
+            "尚未确认本站全文再分发依据；提供来源链接及本站整理，不将链接标为已收录全文。": "The basis for the redistribution of the full text of FieldToFit has not been confirmed; provide the source link and FieldToFit sorting, and do not mark the link as included full text.",
+            "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
+            "已核实更新": "Verified and updated",
+            "常驻Agent的插件和会话可以继续维护": "Plug-ins and sessions of resident Agent can continue to be maintained.",
+            "恢复与关闭": "Recovery and shutdown",
+            "执行与扩展": "Execution and expansion",
+            "技能积累可以跨越单个工作区。": "Skill accumulation can span a single work area.",
+            "持续运行需要可控更新。": "Continuous operation requires controllable updates.",
+            "支持的插件安装／重载无需重启Gateway；区分执行与结果交付；保留会话历史并修复服务升级。本站未升级实测。": "Supported plugins install / reload without restarting Gateway; distinguishes execution from result delivery; retains session history and fixes service upgrades. FieldToFit has not tested an upgrade.",
+            "日期与限制": "Dates and limitations",
+            "本次展示的材料": "The materials on display this time",
+            "此补丁不改配置，不等于 9.5 到 10.4 整个跨度均无需迁移；本站未回归测试运行与权限行为。": "No configuration change in this patch does not establish a migration-free path across the whole 9.5-to 10.4 gap. FieldToFit has not regression-tested runtime or permissions.",
+            "激活前预演和缓存复用分别处理更新稳定性与重复启动开销，能看出项目在补哪些运行环节。": "Pre-activation dry runs and cache reuse address update stability and repeated startup overhead, respectively, showing which runtime stages the project improves.",
+            "版本变化": "Version change",
+            "版本口径": "Version measurement basis",
+            "群聊与浏览器边界": "Group-chat and browser boundaries",
+            "跨工作区技能、更新预演与缓存复用": "Cross-workspace skills, update preview and cache reuse",
+            "链接原始出处；不复制正文": "Link the original source; do not copy the text"
+          },
+          "source_hash": "06048da6bbeaa2fd68dfe93c5d530e340a7b788fee3eed7203a2ecd23372ce65",
+          "state": "reviewed"
+        }
+      },
       "type": "agent"
     },
     {
@@ -8557,8 +9029,6 @@
             "运行循环与扩展": "Run cycle and extension",
             "限制与验证": "Restriction and verification"
           },
-          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
-          "reviewed_at": "2026-10-15T03:34:09.755530+00:00",
           "source_hash": "10c6ffba7afeb17428fb7813a8ac3ac7d62f6e884d691b1563022ebd1366928a",
           "state": "reviewed"
         }
@@ -8567,6 +9037,25 @@
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "Python0.2.167 / CLI2.1.300 → Python0.2.168 / CLI2.1.301",
+              "[Claude Code 2.1.301：限制无人值守等待，Python SDK同步捆绑版本](https://fieldtofit.top/news/D-161)",
+              "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：Claude Code2.1.301 / PythonSDK0.2.168。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。"
+        },
         {
           "columns": [
             "版本变化",
@@ -8646,10 +9135,26 @@
           "text": "依据：[官方概览](https://code.claude.com/docs/en/agent-sdk/overview)。关联：[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)。以下9月11日历史资料未核 SDK 包的当时版本，不把概览中的既有能力写成新发布功能。"
         }
       ],
-      "checked_at": "2026-10-15",
+      "checked_at": "2026-10-16",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-H03",
       "interpretation": [
+        {
+          "text": "CLI与Python SDK分别于北京时间 10 月 16 日 03:22、04:22 发布，GitHub UTC日期为 10 月 15 日。更新维护等待、工作区保护与错误识别，不是模型或用量额度更新。",
+          "title": "2026-10-16 补录：Claude Code2.1.301 / PythonSDK0.2.168"
+        },
+        {
+          "text": "无人值守重试可设置用量限制等待上限；Grep／Glob运行失败不再伪装为无匹配，避免把执行故障误读为没有结果。",
+          "title": "等待与错误识别"
+        },
+        {
+          "text": "修复退出时可能删除含未推送提交的Hook工作树，以及部分工作流跳过步骤仍报告成功的问题。",
+          "title": "工作区与任务结果"
+        },
+        {
+          "text": "CW-A02 由 2.1.300 补至 2.1.301；CW-H03 由Python0.2.167 补至 0.2.168，捆绑CLI2.1.301。不推定TypeScript SDK同步升级；本站未回归测试。",
+          "title": "两个包独立记版本"
+        },
         {
           "text": "Claude Code与Python Agent SDK分别于北京时间 10 月 15 日 02:24、03:25 发布。本次重点是会话恢复、MCP与执行边界维护，不是模型能力更新。",
           "title": "2026-10-15 补录：Claude Code2.1.300 / PythonSDK0.2.167"
@@ -8691,7 +9196,7 @@
           "title": "运行在哪里是关键区别。"
         }
       ],
-      "introduction": "Claude Code与Python Agent SDK分别于北京时间 10 月 15 日 02:24、03:25 发布。本次重点是会话恢复、MCP与执行边界维护，不是模型能力更新。",
+      "introduction": "CLI与Python SDK分别于北京时间 10 月 16 日 03:22、04:22 发布，GitHub UTC日期为 10 月 15 日。更新维护等待、工作区保护与错误识别，不是模型或用量额度更新。",
       "name": "Claude Agent SDK",
       "reading_materials": [
         {
@@ -8757,6 +9262,38 @@
           "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.300 / PythonSDK0.2.167 · Official source 2",
           "upstream_revision": "Claude Code2.1.300 / PythonSDK0.2.167",
           "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.167"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-16",
+          "coverage": "link_only",
+          "id": "oct16-g-1",
+          "locator": "Official release/card, explicit limitations and migration guide",
+          "reason": "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。",
+          "retrieved_at": "2026-10-16",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 1",
+          "upstream_revision": "Claude Code2.1.301 / PythonSDK0.2.168",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-16",
+          "coverage": "link_only",
+          "id": "oct16-g-2",
+          "locator": "Official release/card, explicit limitations and migration guide",
+          "reason": "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。",
+          "retrieved_at": "2026-10-16",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 2",
+          "upstream_revision": "Claude Code2.1.301 / PythonSDK0.2.168",
+          "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.168"
         }
       ],
       "sources": [
@@ -8788,6 +9325,18 @@
           "id": "oct15-a-2",
           "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.300 / PythonSDK0.2.167 · Official source 2",
           "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.167"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct16-g-1",
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 1",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct16-g-2",
+          "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 2",
+          "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.168"
         }
       ],
       "state": "published",
@@ -8797,7 +9346,10 @@
             "2026-09-11 文档快照；包版本未核": "2026-09-11 document snapshot; package version not checked",
             "2026-10-08 UTC；overview认证条件无新增生效日期": "2026-10-08 UTC; no new effective date for overview authentication conditions",
             "2026-10-15 补录：Claude Code2.1.300 / PythonSDK0.2.167": "2026-10-15 addition:Claude Code2.1.300 / PythonSDK0.2.167",
+            "2026-10-16 补录：Claude Code2.1.301 / PythonSDK0.2.168": "2026-10-16 addition:Claude Code2.1.301 / PythonSDK0.2.168",
             "Agent SDK 在调用方进程中运行，Managed Agents 由厂商托管；这决定读者应继续查看哪份部署材料。": "Agent SDK runs in the caller's process, and Managed Agents are hosted by the manufacturer; this determines which deployment materials readers should continue to view.",
+            "CLI与Python SDK分别于北京时间 10 月 16 日 03:22、04:22 发布，GitHub UTC日期为 10 月 15 日。更新维护等待、工作区保护与错误识别，不是模型或用量额度更新。": "The CLI and Python SDK were released at 03:22 and 04:22 Beijing time on 10/16; GitHub’s UTC date is 10/15. This maintains waiting, worktree protection and error reporting rather than models or usage limits.",
+            "CW-A02 由 2.1.300 补至 2.1.301；CW-H03 由Python0.2.167 补至 0.2.168，捆绑CLI2.1.301。不推定TypeScript SDK同步升级；本站未回归测试。": "Update CW-A02 from 2.1.300 to 2.1.301 and CW-H03 from Python0.2.167 to 0.2.168, bundling CLI2.1.301; Do not infer a TypeScript SDK update; FieldToFit has not regression-tested it.",
             "Claude Agent SDK：补明第三方认证边界与Python包版本 · 官方材料1": "Claude Agent SDK: Make up the third-party authentication boundary and Python package version · Official materials 1",
             "Claude Agent SDK：补明第三方认证边界与Python包版本 · 官方材料2": "Claude Agent SDK: Make up the third-party authentication boundary and Python package version · Official materials 2",
             "Claude Code与Python Agent SDK分别于北京时间 10 月 15 日 02:24、03:25 发布。本次重点是会话恢复、MCP与执行边界维护，不是模型能力更新。": "Claude Code and Python Agent SDK were released at 02:24 and 03:25 Beijing time on 10/15. The changes maintain session recovery, MCP and execution boundaries rather than model capabilities.",
@@ -8809,21 +9361,26 @@
             "Python包与捆绑CLI": "Python package and bundled CLI",
             "SDK 提供执行循环；普通 API Client SDK 需要应用自行实现循环；Managed Agents 是独立托管产品": "The SDK supplies an execution loop; ordinary API Client SDKs leave the loop to applications; Managed Agents is a separate hosted product",
             "[Claude Code 2.1.300：修复压缩后的恢复，Python SDK更新捆绑CLI](https://fieldtofit.top/news/D-147)": "[Claude Code 2.1.300: compaction recovery fixes and a Python SDK CLI update](https://fieldtofit.top/news/D-147)",
+            "[Claude Code 2.1.301：限制无人值守等待，Python SDK同步捆绑版本](https://fieldtofit.top/news/D-161)": "[Claude Code 2.1.301: bounded unattended waits and a Python SDK CLI update](https://fieldtofit.top/news/D-161)",
             "[官方材料](https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.165)": "[Official Materials](https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.165)",
             "两个包分别记版本": "Track the two packages separately",
+            "两个包独立记版本": "Track both packages independently",
             "事件与官方依据": "Event and official evidence",
             "仅链接原文；不转载全文": "Original link only; no full-text republication",
             "以上为2026-10-11实际核对的补充；以下保留历史资料及当时适用的版本与日期。": "The additions above were actually checked on 2026-10-11. Historical material below retains the versions and dates that applied at the time.",
             "以下保留此前已审内容与当时适用条件。": "Previously reviewed content and its original applicable conditions are retained below.",
+            "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
             "使用入口": "Usage entry",
             "依据：[官方概览](https://code.claude.com/docs/en/agent-sdk/overview)。关联：[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)。以下9月11日历史资料未核 SDK 包的当时版本，不把概览中的既有能力写成新发布功能。": "Source: [official overview](https://code.claude.com/docs/en/agent-sdk/overview). Related: [CW-A02 Claude Code](/for-you#watch-cw-a02), [CW-S02 Anthropic Skills](/for-you#watch-cw-s02). Historical material below, dated 9/11, did not verify the then-current SDK package version. Existing overview capabilities are not presented as newly released features.",
             "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。": "Retain official sources and versions. Full-text republication permission is unverified; this batch publishes only FieldToFit's original preparation and source links.",
+            "修复退出时可能删除含未推送提交的Hook工作树，以及部分工作流跳过步骤仍报告成功的问题。": "Fixes quitting that could delete a hook-created worktree with unpushed commits, and some workflow steps being skipped while success was reported.",
             "修复部分headless／Agent SDK恢复时丢失近期消息、压缩摘要或带回旧历史的问题。其中一类修复仅适用于本版起生成的压缩记录，不承诺旧记录全部自动恢复。": "Fixes some headless/Agent SDK resumes that lost recent messages or compaction summaries, or restored old history. One fix applies only to compactions created from this version onward; it does not promise recovery of every older record.",
             "内置工具、MCP、子 Agent、Skills 与插件": "Built-in tools, MCP, sub-Agent, Skills and plug-ins",
             "压缩与恢复": "Compaction and recovery",
             "原创解读与来源链接": "Original commentary and source links",
             "原文日期": "Source text date",
             "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：Claude Code2.1.300 / PythonSDK0.2.167。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-15; checked:2026-10-15; version:Claude Code2.1.300 / PythonSDK0.2.167; FieldToFit has not installed or reproduced performance.",
+            "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：Claude Code2.1.301 / PythonSDK0.2.168。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-16; checked:2026-10-16; version:Claude Code2.1.301 / PythonSDK0.2.168; Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
             "多轮会话、恢复与分叉": "Multiple rounds of sessions, recovery and fork",
             "它提供的是运行过程。": "What it provides is the running process.",
             "官方 SDK 概览": "Overview of the official SDK",
@@ -8832,10 +9389,13 @@
             "官方发布正文／FAQ／接入说明": "Official announcement / FAQ / setup guide",
             "官方概览": "Official overview",
             "尚未核实与适用边界": "Unverified details and applicability limits",
+            "工作区与任务结果": "Worktrees and workflow results",
+            "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
             "已核对变化": "Checked changes",
             "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
             "执行控制": "Execution control",
             "文件操作、工具调用和上下文管理已在库中组织起来；页面应把这点写清，而不仅标注“支持 Claude”。": "File operation, tool calls and context management have been organized in the library; the page should write this clearly, not only mark \"support Claude\".",
+            "无人值守重试可设置用量限制等待上限；Grep／Glob运行失败不再伪装为无匹配，避免把执行故障误读为没有结果。": "Unattended retries can cap usage-limit waits. Grep/Glob failures no longer appear as no matches, keeping execution errors distinct from empty results.",
             "日期与限制": "Dates and limitations",
             "日期口径": "Date basis",
             "本次材料节点": "This material node",
@@ -8846,6 +9406,7 @@
             "版本变化": "Version change",
             "状态与恢复": "Status and recovery",
             "第三方认证条件": "Third-party authentication conditions",
+            "等待与错误识别": "Wait limits and error reporting",
             "维护者发行变化": "Changes in the issuance of maintainers",
             "能明确解释的内容": "Content that can be clearly explained",
             "补强压缩后MCP工具及指令通知、恢复后的工具搜索；Hook改写输入增加校验，部分云会话误报写入成功及策略读取超时也被修复。升级需核对自己的Hook、代理与会话配置。": "Improves post-compaction MCP tool/instruction notifications and resumed tool search. Hook-rewritten input gains validation; some cloud-session false write-success reports and policy-read timeouts are fixed. Check your hooks, proxy and session settings when upgrading.",
@@ -8855,9 +9416,7 @@
             "运行循环与扩展": "Run cycle and extension",
             "采用边界": "Adopt the boundary"
           },
-          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
-          "reviewed_at": "2026-10-15T03:32:00.370922+00:00",
-          "source_hash": "00d23c2465508cd4b5379bb7409b9c74f40a3d4c31b004f75cdfb9cfb7b347fa",
+          "source_hash": "6f730835824eb280db072f59fb423a1d9c03d7cb45af06296ea8b863dec08694",
           "state": "reviewed"
         }
       },
@@ -8943,6 +9502,25 @@
         "Hermes"
       ],
       "blocks": [
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v0.22.1 → v0.22.2",
+              "[Hermes Agent 0.22.2：修正上一版打包错误与Gateway启动问题](https://fieldtofit.top/news/D-158)",
+              "原文日期：2026-10-15；事件日期：2026-10-15；本站核对：2026-10-16；版本：v0.22.2。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。"
+        },
         {
           "columns": [
             "版本变化",
@@ -9060,10 +9638,26 @@
           "text": "关注依据是可核对的项目材料与具体维护记录。没有近期 Star 增长序列，不标注近期暴涨。本站未验证资源占用、渠道接入及稳定性；当前向 AI 提供结构化介绍和来源链接，未托管仓库全文。"
         }
       ],
-      "checked_at": "2026-10-15",
+      "checked_at": "2026-10-16",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A08",
       "interpretation": [
+        {
+          "text": "官方于北京时间 10 月 15 日 16:21 发布 0.22.2，明确披露 0.22.1 从错误提交构建，混入未正式发布的Gateway工作，曾导致部分Microsoft Store安装停在Connecting。本站同时补充旧事件更正。",
+          "title": "2026-10-16 补录：v0.22.2"
+        },
+        {
+          "text": "修复PID复用／所有权判断与受监督Gateway启动问题，不能把此前错误构建作为完整稳定版能力依据。",
+          "title": "恢复预期构建"
+        },
+        {
+          "text": "调整本地模型流式输出及停滞计时；0.22.1 Gateway产生的部分会话在 0.22.2 仍不能删除，不能写成全部问题解决。",
+          "title": "长输出与已知问题"
+        },
+        {
+          "text": "CW-A08 由 0.22.1 补至 0.22.2，D-148 保留原日期并追加作者更正。本站未安装或验证升级。",
+          "title": "保留历史"
+        },
         {
           "text": "GitHub标签于北京时间 10 月 15 日 07:59 发布；正文Release Date为 10 月 14 日。本次补录技能压缩、MCP与插件维护，不据合并数量宣称能力提高。",
           "title": "2026-10-15 补录：v0.22.1"
@@ -9125,7 +9719,7 @@
           "title": "采用依据落到会话与状态管理"
         }
       ],
-      "introduction": "GitHub标签于北京时间 10 月 15 日 07:59 发布；正文Release Date为 10 月 14 日。本次补录技能压缩、MCP与插件维护，不据合并数量宣称能力提高。",
+      "introduction": "官方于北京时间 10 月 15 日 16:21 发布 0.22.2，明确披露 0.22.1 从错误提交构建，混入未正式发布的Gateway工作，曾导致部分Microsoft Store安装停在Connecting。本站同时补充旧事件更正。",
       "name": "Hermes Agent",
       "reading_materials": [
         {
@@ -9247,6 +9841,22 @@
           "title": "Hermes Agent v0.22.1 · Official source 1",
           "upstream_revision": "v0.22.1",
           "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.1"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-16",
+          "coverage": "link_only",
+          "id": "oct16-e-1",
+          "locator": "Official release/card, explicit limitations and migration guide",
+          "reason": "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。",
+          "retrieved_at": "2026-10-16",
+          "rights": {
+            "basis": "原创解读与来源链接"
+          },
+          "title": "Hermes Agent v0.22.2 · Official source 1",
+          "upstream_revision": "v0.22.2",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2"
         }
       ],
       "sources": [
@@ -9287,6 +9897,12 @@
           "id": "oct15-b-1",
           "title": "Hermes Agent v0.22.1 · Official source 1",
           "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct16-e-1",
+          "title": "Hermes Agent v0.22.2 · Official source 1",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2"
         }
       ],
       "state": "published",
@@ -9296,6 +9912,8 @@
             "2026-09-16已核对的历史标签重点修复运行问题：并发刷新引发的远程登录会话失效，以及长时间运行时重复数据库写入句柄的问题。": "Historical tags checked on 2026-09-16 focus on runtime fixes: concurrent refresh invalidating remote login sessions, and duplicate database-write handles in long-running processes.",
             "2026-10-13 版本补录：v0.21.7": "2026-10-13 version addition: v0.21.7",
             "2026-10-15 补录：v0.22.1": "2026-10-15 addition:v0.22.1",
+            "2026-10-16 补录：v0.22.2": "2026-10-16 addition:v0.22.2",
+            "CW-A08 由 0.22.1 补至 0.22.2，D-148 保留原日期并追加作者更正。本站未安装或验证升级。": "Update CW-A08 from 0.22.1 to 0.22.2 and append the author’s correction to D-148 without changing its date. FieldToFit has not installed or validated the upgrade.",
             "GitHub标签于北京时间 10 月 15 日 07:59 发布；正文Release Date为 10 月 14 日。本次补录技能压缩、MCP与插件维护，不据合并数量宣称能力提高。": "The GitHub tag was published at 07:59 Beijing time on 10/15, while the release text dates it 10/14. This records skill compaction, MCP and plugin maintenance without inferring capability from commit counts.",
             "Hermes Agent 0.21.6：补录稳定发布与登录、仓库、邮件边界修复 · 官方材料1": "Hermes Agent 0.21.6: record the stable release and fixes to login, repository and email boundaries · Official material 1",
             "Hermes Agent 0.21.7 正文标注 2026-10-11，GitHub发布时间为北京时间 2026-10-12 13:53。本次补录源码更新通道、恢复会话与稳定检查行为。": "Hermes Agent 0.21.7’s release text is dated 2026-10-11; GitHub publication was at 13:53 Beijing time on 2026-10-12. This update records source-update channels, resumed sessions and stable-release checks.",
@@ -9308,6 +9926,7 @@
             "README 列出技能积累、对话检索及记忆管理": "README lists skill accumulation, dialogue retrieval and memory management",
             "[Hermes 0.21.7：源码安装默认稳定标签，修复恢复会话的推理资料](https://fieldtofit.top/news/D-132)": "[Hermes 0.21.7: source installs follow stable tags and preserve reasoning on resume](https://fieldtofit.top/news/D-132)",
             "[Hermes Agent 0.22.1：保留技能压缩标记与MCP调用期限](https://fieldtofit.top/news/D-148)": "[Hermes Agent 0.22.1: preserve skill compaction markers and MCP deadlines](https://fieldtofit.top/news/D-148)",
+            "[Hermes Agent 0.22.2：修正上一版打包错误与Gateway启动问题](https://fieldtofit.top/news/D-158)": "[Hermes Agent 0.22.2: correct the previous build and Gateway startup](https://fieldtofit.top/news/D-158)",
             "[固定版本 LICENSE](https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/LICENSE)；所接模型服务的账户和费用另查": "[pinned version LICENSE](https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/LICENSE); Check the account and fee of the model service separately",
             "[固定版本 README](https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/README.md)；未验证自动改进效果": "[pinned version README](https://github.com/NousResearch/hermes-agent/blob/v2026.9.14/README.md); Unverified automatic improvement effect",
             "[官方文档](https://hermes-agent.nousresearch.com/docs/)；当前文档可能超出该标签版本，接入需按版本核对": "[Official Document](https://hermes-agent.nousresearch.com/docs/); The current document may exceed the label version, and the access needs to be checked by version.",
@@ -9319,10 +9938,13 @@
             "仅链接原文；不转载全文": "Original link only; no full-text republication",
             "以上为2026-10-11实际核对的补充；以下保留历史资料及当时适用的版本与日期。": "The additions above were actually checked on 2026-10-11. Historical material below retains the versions and dates that applied at the time.",
             "以下保留此前已审内容与当时适用条件。": "Previously reviewed content and its original applicable conditions are retained below.",
+            "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
             "以下保留此前已审版本及其当时适用条件。": "Earlier reviewed versions and their original applicable conditions are retained below.",
             "使用入口 / 限制": "Use entrance / Restrictions",
             "依据": "Evidence",
+            "保留历史": "Retain history",
             "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。": "Retain official sources and versions. Full-text republication permission is unverified; this batch publishes only FieldToFit's original preparation and source links.",
+            "修复PID复用／所有权判断与受监督Gateway启动问题，不能把此前错误构建作为完整稳定版能力依据。": "Fixes PID-reuse/ownership checks and supervised Gateway startup. The earlier wrong build should not be used as evidence of a complete stable release.",
             "修复小型及斜杠调用技能在压缩后丢失重载标记，以及摘要、示例路径影响锚点索引的问题。": "Fixes lost reload markers for small and slash-invoked skills after compaction, and issues involving summaries and example paths in the anchor index.",
             "修复并发刷新引发的远程登录失效；修复长期进程重复 state.db 写入句柄": "Fix remote login invalidation caused by concurrent refresh; fix duplicate state.db write handles in long-running processes",
             "关注依据是可核对的项目材料与具体维护记录。没有近期 Star 增长序列，不标注近期暴涨。本站未验证资源占用、渠道接入及稳定性；当前向 AI 提供结构化介绍和来源链接，未托管仓库全文。": "Inclusion is based on verifiable project materials and concrete maintenance records. No recent Star-growth series is available, so no surge is claimed. FieldToFit has not verified resource use, channel integrations or stability. AI receives structured introductions and source links; full repository text is not hosted.",
@@ -9336,6 +9958,7 @@
             "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
             "原文日期": "Source text date",
             "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：v0.22.1。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-15; checked:2026-10-15; version:v0.22.1; FieldToFit has not installed or reproduced performance.",
+            "原文日期：2026-10-15；事件日期：2026-10-15；本站核对：2026-10-16；版本：v0.22.2。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-15; checked:2026-10-16; version:v0.22.2; Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
             "发布日期": "Release date",
             "发布说明与未验证范围": "Release notes and unverified scope",
             "发布说明已核对；未安装或长时间运行实测": "The release notes have been checked; runtime test has not been installed or run for a long time",
@@ -9343,6 +9966,7 @@
             "如何判断此次更新": "How to assess this update",
             "安全与执行边界修复": "Security and execution-boundary fixes",
             "完整整理版说明尚待 0.22.0；合并窗口的所有改动不能当作逐项验证功能。本站未执行升级、恢复会话或验证修复，正文日期与实际发布时间分别保留。": "Full curated notes await 0.22.0; not every change in the merge window is an individually verified feature. FieldToFit has not upgraded, resumed sessions or verified the fixes. The release-text date and actual publication date remain separate.",
+            "官方于北京时间 10 月 15 日 16:21 发布 0.22.2，明确披露 0.22.1 从错误提交构建，混入未正式发布的Gateway工作，曾导致部分Microsoft Store安装停在Connecting。本站同时补充旧事件更正。": "Released at 16:21 Beijing time on 10/15, 0.22.2 discloses that 0.22.1 was built from the wrong commit and included unreleased Gateway work, leaving some Microsoft Store installs at Connecting. FieldToFit adds a correction to the earlier event.",
             "官方仓库源码安装默认更新到稳定标签；已经更新的安装不会倒退，仍可选择主分支。分叉仓库、Store／MSIX和捆绑桌面安装分别保留通道规则。": "Official-repository source installs now update to stable tags; installations already ahead do not move backward and can still select the main branch. Forks, Store/MSIX and bundled desktop installs retain their own channel rules.",
             "官方列出登录重定向与限流、审计日志/请求体边界、不可信仓库git过滤器，以及邮件发件人显示名绕过等修复。": "Official fixes cover login redirects and rate limits, audit-log and request-body boundaries, git filters in untrusted repositories, and email sender-display-name bypasses.",
             "官方发布或固定版本材料": "Officially released or pinned version materials",
@@ -9350,12 +9974,14 @@
             "定位与主要变化": "Positioning and major changes",
             "对准备部署常驻 Agent 的读者，登录恢复和状态存储是具体的采用依据。可先从对应版本的修复记录与运行文档了解这些环节；本站尚未验证长期运行效果。": "Login recovery and state storage provide concrete adoption information for readers deploying persistent agents. Review the corresponding fix records and runtime documentation; FieldToFit has not verified long-term operation.",
             "尚未核实与适用边界": "Unverified details and applicability limits",
+            "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
             "已审版本变化": "Reviewed version change",
             "已有 Git 安装可按官方说明更新；Docker / Cloud 使用对应标签": "Update existing Git installations using official instructions; Docker / Cloud use the corresponding tags",
             "已核对内容": "The content has been checked",
             "已核对变化": "Checked changes",
             "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
             "恢复推理与检查可靠性": "Reasoning replay and check reliability",
+            "恢复预期构建": "Restore the intended build",
             "技能与上下文": "Skills and context",
             "日期与边界": "Dates and boundaries",
             "日期与限制": "Dates and limitations",
@@ -9376,17 +10002,17 @@
             "版本变化": "Version change",
             "稳定发布和安全修复是此次明确采用依据；PR数量不能当质量或模型能力指标。": "The stable release and security fixes provide explicit adoption evidence. PR counts are not quality or model-capability metrics.",
             "记忆与技能": "Memory and skills",
+            "调整本地模型流式输出及停滞计时；0.22.1 Gateway产生的部分会话在 0.22.2 仍不能删除，不能写成全部问题解决。": "Adjusts local-model streaming and stall timers. Some sessions created through the 0.22.1 Gateway still cannot be deleted in 0.22.2; not every issue is resolved.",
             "调用期限与模型列表": "Call deadlines and model lists",
             "资料项": "Information items",
             "采用依据落到会话与状态管理": "Adopt the basis for session and state management",
             "采用入口": "Adopt the entrance",
             "采用边界": "Adopt the boundary",
             "链接至原始材料；本批不转载全文": "Link to the original materials; the full text will not be reprinted in this batch",
+            "长输出与已知问题": "Long output and a known issue",
             "项目与开放情况": "Project and opening situation"
           },
-          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
-          "reviewed_at": "2026-10-15T03:32:31.629897+00:00",
-          "source_hash": "21b2cd77ec754f93b33c75fdb722c5e47ee45ffb0cb3915ed6412736a5ffe8d5",
+          "source_hash": "6f736196aff4530044869ad803069883528c916d57a74c7abde60d42d52ae834",
           "state": "reviewed"
         }
       },

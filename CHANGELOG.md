@@ -4,6 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.11.1"></a>
+## v1.11.1 · Muse Spark Open专题与八项获批动态 · 2026-10-16
+
+<!-- site-deployed:2026-10-16 -->
+<!-- public-title:en:Muse Spark Open analysis and eight approved updates -->
+<!-- release-summary:zh:start -->
+- 为所选Muse Spark Open材料整理四结论、同号论述及三张本站重绘，区分部署门槛、任务计分、评测来源与局部／端到端收益。
+- 接续10月16日获批A–H八项动态、六份档案与明确对应的旧事件，按优化后的首页更新动态重点、完整栏目及总表最新事件，保留原始日期和历史。
+- 新专题正式发布后使用既有四篇轮换；完整报告索引继续保留全部历史，未选报告和模型榜单保持原状态。
+- 保留同条目并行补充的语音与Codex出处，澄清跨日日期，并补齐已公开引用但缺失的作者头像。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Present four findings, matching arguments and three original diagrams for the selected Muse Spark Open materials, separating deployment requirements, task scoring, evidence provenance and kernel versus end-to-end gains.
+- Continue the eight approved October16 A–H updates, six dossiers and explicitly related earlier events. Refresh highlights, complete sections and latest-event tables on the optimized homepage while retaining source dates and history.
+- Apply the existing four-report rotation after successful publication. Keep all historical reports in the complete index and preserve unselected reports and model-chart snapshots.
+- Preserve parallel Voice and Codex evidence on the same item, clarify UTC and Beijing dates, and restore its missing publicly referenced author image.
+<!-- release-summary:en:end -->
+
+源码仅导出公开白名单，并移除历史种子中的私密英文审阅说明与时间；公开正文、译文与审核指纹保持，生产私密审阅历史不修改。
+
+对应REQ-6-31至33、REQ-11、REQ-22-8及REQ-23。本批与自v1.11.0以来累计变化均为既有模块的兼容内容／静态资源patch，无新模块、主要阅读流程重构、数据库迁移或日程变更；不改变首页七区结构。真实用户明确批准A–H、报告1及首页／详情同步、报告轮替。报告2和待核验线索不发布；不刷新AA／Arena数值。实际验证与部署状态见[本批记录](docs/validation/2026-10-16-muse-spark-and-daily.md)。
+
 <a id="v1.11.0"></a>
 ## v1.11.0 · For you 七区预览与完整栏目阅读 · 2026-10-15
 

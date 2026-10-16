@@ -1,7 +1,37 @@
 {
-  "version": "1.11.0",
-  "revision": "e3930b10fd2816a6da93336b38d97debf0960f7f522ead59f0dad6fcb11ee920",
+  "version": "1.11.1",
+  "revision": "e3e574745012a9215753099cb681838e8db31f9ed84a3fb0f4734b8d406071f6",
   "items": [
+    {
+      "version": "1.11.1",
+      "date": "2026-10-16",
+      "deployed_on": "2026-10-16",
+      "copy": {
+        "zh": {
+          "title": "Muse Spark Open专题与八项获批动态",
+          "highlights": [
+            "为所选Muse Spark Open材料整理四结论、同号论述及三张本站重绘，区分部署门槛、任务计分、评测来源与局部／端到端收益。",
+            "接续10月16日获批A–H八项动态、六份档案与明确对应的旧事件，按优化后的首页更新动态重点、完整栏目及总表最新事件，保留原始日期和历史。",
+            "新专题正式发布后使用既有四篇轮换；完整报告索引继续保留全部历史，未选报告和模型榜单保持原状态。",
+            "保留同条目并行补充的语音与Codex出处，澄清跨日日期，并补齐已公开引用但缺失的作者头像。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Muse Spark Open analysis and eight approved updates",
+          "highlights": [
+            "Present four findings, matching arguments and three original diagrams for the selected Muse Spark Open materials, separating deployment requirements, task scoring, evidence provenance and kernel versus end-to-end gains.",
+            "Continue the eight approved October16 A–H updates, six dossiers and explicitly related earlier events. Refresh highlights, complete sections and latest-event tables on the optimized homepage while retaining source dates and history.",
+            "Apply the existing four-report rotation after successful publication. Keep all historical reports in the complete index and preserve unselected reports and model-chart snapshots.",
+            "Preserve parallel Voice and Codex evidence on the same item, clarify UTC and Beijing dates, and restore its missing publicly referenced author image."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.1"
+    },
     {
       "version": "1.11.0",
       "date": "2026-10-15",

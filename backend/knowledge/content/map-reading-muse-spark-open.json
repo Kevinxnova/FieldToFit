@@ -1,0 +1,625 @@
+{
+  "category": "research",
+  "checked_at": "2026-10-16",
+  "editor": "FieldToFit",
+  "event_date": "2026-10-15",
+  "highlight": false,
+  "id": "D-163",
+  "interpretation": [
+    {
+      "locator": "Methodology pp1-8; card overview, benchmarks and limitations; launch Available Now",
+      "source_ids": [
+        "method",
+        "card",
+        "launch"
+      ],
+      "text": "开放权重让部署与修改更可控，但选模型仍要读清实验条件。本文以四条结论、同号论述和三张本站重绘，区分硬件门槛、两类Agent计分、榜单来源和内核／端到端收益；作者评测未经本站复现。",
+      "title": "先核对量尺，再决定是否采用"
+    }
+  ],
+  "name": "Muse Spark Open Evaluation Methodology / Model Card",
+  "note": "方法PDF仅标 2026-10；模型卡与公告明确模型发布日 2026-10-15。本站核对日 2026-10-16 与实际网站发表分别保存。无独立修订号；完整安全评估报告仍待发布。原文与原图仅链接，三图为本站原创重绘，不声称复现、价格降低或全场景安全。",
+  "organization": "Meta Superintelligence Labs",
+  "publication": {
+    "first_published_at": "2026-10-16T15:00:12.630987+00:00",
+    "report_selected_at": "2026-10-16T15:00:12.630987+00:00",
+    "updated_at": "2026-10-16T15:00:12.630987+00:00"
+  },
+  "reading_materials": [
+    {
+      "approved": true,
+      "body": "",
+      "checked_at": "2026-10-16",
+      "coverage": "link_only",
+      "id": "method",
+      "locator": "8 physical pages; overall p1, MCP pp2-3, OSWorld p3, coding p4, multimodal pp6-7, safety pp7-8",
+      "reason": "已实际读取并核对来源位置；未确认原文再分发许可，公开原创分析、事实示意和原文链接。",
+      "retrieved_at": "2026-10-16",
+      "rights": {
+        "basis": "原文仅链接，本站图形为原创事实重绘"
+      },
+      "title": "Muse Spark Open Evaluation Methodology · October 2026",
+      "upstream_revision": "October 2026",
+      "url": "https://research.meta.ai/static/muse-spark-open-evaluation-methodology"
+    },
+    {
+      "approved": true,
+      "body": "",
+      "checked_at": "2026-10-16",
+      "coverage": "link_only",
+      "id": "card",
+      "locator": "Overview, Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+      "reason": "已实际读取并核对来源位置；未确认原文再分发许可，公开原创分析、事实示意和原文链接。",
+      "retrieved_at": "2026-10-16",
+      "rights": {
+        "basis": "原文仅链接，本站图形为原创事实重绘"
+      },
+      "title": "Muse Spark Open Model Card · release 2026-10-15",
+      "upstream_revision": "2026-10-15 launch checkpoint",
+      "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B"
+    },
+    {
+      "approved": true,
+      "body": "",
+      "checked_at": "2026-10-16",
+      "coverage": "link_only",
+      "id": "launch",
+      "locator": "2026-10-15; Optimized for Apple Silicon and Available Now",
+      "reason": "已实际读取并核对来源位置；未确认原文再分发许可，公开原创分析、事实示意和原文链接。",
+      "retrieved_at": "2026-10-16",
+      "rights": {
+        "basis": "原文仅链接，本站图形为原创事实重绘"
+      },
+      "title": "Introducing Muse Spark Open · 2026-10-15",
+      "upstream_revision": "2026-10-15 launch checkpoint",
+      "url": "https://research.meta.ai/blog/muse-spark-open"
+    }
+  ],
+  "related": [
+    {
+      "id": "D-154",
+      "name": "Muse Spark Open",
+      "url": "https://fieldtofit.top/news/D-154"
+    },
+    {
+      "id": "D-133",
+      "name": "Muse Wonder",
+      "url": "https://fieldtofit.top/maps/muse-wonder-agent-evaluation"
+    }
+  ],
+  "source_published_at": "2026-10-15",
+  "sources": [
+    {
+      "coverage": "link_only",
+      "id": "method",
+      "title": "Muse Spark Open Evaluation Methodology · October 2026",
+      "url": "https://research.meta.ai/static/muse-spark-open-evaluation-methodology"
+    },
+    {
+      "coverage": "link_only",
+      "id": "card",
+      "title": "Muse Spark Open Model Card · release 2026-10-15",
+      "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B"
+    },
+    {
+      "coverage": "link_only",
+      "id": "launch",
+      "title": "Introducing Muse Spark Open · 2026-10-15",
+      "url": "https://research.meta.ai/blog/muse-spark-open"
+    }
+  ],
+  "state": "published",
+  "summary": "开放权重让部署与修改更可控，但选模型仍要读清实验条件。本文以四条结论、同号论述和三张本站重绘，区分硬件门槛、两类Agent计分、榜单来源和内核／端到端收益；作者评测未经本站复现。",
+  "technical_map": {
+    "caution": "作者评测未复现；报告月份精度保留。MCP本行split分母未明确，第三方框架不同，完整安全报告待发布。",
+    "change_summary": "首次整理所有者选中的Muse Spark Open材料：四结论、同号论述和三张原创重绘；与Muse Wonder保持独立问题与入口。",
+    "edges": [
+      {
+        "evidence": [
+          {
+            "locator": "p1 Overall Methodology",
+            "source_id": "method"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "发布配置与评测出处分别核对",
+        "relation": "parallel",
+        "to": "provenance"
+      },
+      {
+        "evidence": [
+          {
+            "locator": "p3 OSWorld-Verified",
+            "source_id": "method"
+          }
+        ],
+        "from": "provenance",
+        "label": "并列量尺：GUI平均奖励",
+        "relation": "parallel",
+        "to": "gui"
+      },
+      {
+        "evidence": [
+          {
+            "locator": "pp2-3 MCP-Atlas",
+            "source_id": "method"
+          }
+        ],
+        "from": "provenance",
+        "label": "并列量尺：MCP阈值通过率",
+        "relation": "parallel",
+        "to": "mcp"
+      },
+      {
+        "evidence": [
+          {
+            "locator": "Available Now",
+            "source_id": "launch"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "运行优化独立于成绩排名",
+        "relation": "parallel",
+        "to": "runtime"
+      },
+      {
+        "evidence": [
+          {
+            "locator": "Access and Limitations",
+            "source_id": "card"
+          }
+        ],
+        "from": "runtime",
+        "label": "性能声明与采用条件同时核对",
+        "relation": "parallel",
+        "to": "adoption"
+      },
+      {
+        "evidence": [
+          {
+            "locator": "Considerations and Limitations",
+            "source_id": "card"
+          }
+        ],
+        "from": "gui",
+        "label": "任务成绩不直接替代现场验证",
+        "relation": "parallel",
+        "to": "adoption"
+      }
+    ],
+    "focus": "主流开放模型的Agent评测与采用边界",
+    "nodes": [
+      {
+        "evidence": [
+          {
+            "locator": "Model Overview; Model Access and Best Practices",
+            "source_id": "card"
+          }
+        ],
+        "id": "checkpoint",
+        "kind": "baseline",
+        "label": "开放检查点与运行配置",
+        "limitation": "激活参数不是显存要求；量化、框架和许可另核。",
+        "mechanism": "MoE Transformer 与感知编码器，原生多模态输入、文字输出。",
+        "metrics": [],
+        "result": "可自托管或使用第三方API。",
+        "setting": "816B 总参数／42B 激活；推理上下文 1M；作者评测采用 xhigh。",
+        "stage": 0
+      },
+      {
+        "evidence": [
+          {
+            "locator": "pp1-2 Overall Methodology; p4 Coding",
+            "source_id": "method"
+          }
+        ],
+        "id": "provenance",
+        "kind": "method",
+        "label": "每行成绩先确认出处与框架",
+        "limitation": "未针对第三方模型逐一优化，不能把差距全部归因于权重。",
+        "mechanism": "评测方法分别记录内部运行、官方榜单和提供方自报。",
+        "metrics": [],
+        "result": "缺值保留缺值，不补零；不同来源不等同统一实跑。",
+        "setting": "AA 指数取 2026-10-07；编程任务采用不同首选Agent框架。",
+        "stage": 1
+      },
+      {
+        "evidence": [
+          {
+            "locator": "p3 OSWorld-Verified",
+            "source_id": "method"
+          },
+          {
+            "locator": "Benchmarks, OSWorld Verified row",
+            "source_id": "card"
+          }
+        ],
+        "id": "gui",
+        "kind": "result",
+        "label": "GUI子集的平均奖励",
+        "limitation": "不是任意电脑任务的成功概率；Kimi为自报，坐标约定也不同。",
+        "mechanism": "只允许截图与GUI操作，按最终虚拟机状态给奖励。",
+        "metrics": [
+          {
+            "baseline": "Inkling 40.1 in card; Kimi K3 84.8 self-reported",
+            "conditions": "361-task subset; 4 attempts; 200-step cap; native coordinate formats; not a model-only controlled comparison",
+            "label": "OSWorld-Verified",
+            "unit": "mean task reward × 100",
+            "value": 80.4
+          }
+        ],
+        "result": "模型卡报告 80.4；是平均奖励的百分制展示。",
+        "setting": "361 任务、排除Google Drive、每题 4 次、最多 200 步。",
+        "stage": 2
+      },
+      {
+        "evidence": [
+          {
+            "locator": "pp2-3 MCP-Atlas",
+            "source_id": "method"
+          },
+          {
+            "locator": "Benchmarks, MCP-Atlas row",
+            "source_id": "card"
+          }
+        ],
+        "id": "mcp",
+        "kind": "result",
+        "label": "MCP任务按覆盖阈值判通过",
+        "limitation": "本文件未单独明确该成绩所用split的分母，不把 1000 当已确认分母。",
+        "mechanism": "每项声明记 0／0.5／1，平均覆盖至少 0.75 才算任务通过。",
+        "metrics": [
+          {
+            "baseline": "Inkling 76.0 in model card; Scale AI scoring pipeline for these rows",
+            "conditions": "Claim coverage threshold 0.75; reported split not explicitly specified; benchmark total 1000 is not an inferred score denominator",
+            "label": "MCP-Atlas",
+            "unit": "task pass rate (%)",
+            "value": 89.2
+          }
+        ],
+        "result": "模型卡给出 89.2% 任务通过率。",
+        "setting": "基准含 1000 任务、公开／私有各 500，36 个服务与 220 工具。",
+        "stage": 2
+      },
+      {
+        "evidence": [
+          {
+            "locator": "Available Now",
+            "source_id": "launch"
+          }
+        ],
+        "id": "runtime",
+        "kind": "result",
+        "label": "局部内核与完整路径分开",
+        "limitation": "不能相乘、推广到所有硬件或推导API价格。",
+        "mechanism": "在SGLang中提供可自动调优Helion内核。",
+        "metrics": [
+          {
+            "baseline": "Author comparison in launch post; no independent FieldToFit run",
+            "conditions": "Specific end-to-end path; distinct from 1.03–3.95× kernel results",
+            "label": "AMD MI350 end-to-end speedup",
+            "unit": "%",
+            "value": 3
+          }
+        ],
+        "result": "内核 1.03–3.95×；MI350 端到端 +3%。",
+        "setting": "NVIDIA／AMD内核；端到端结果明确为AMD MI350。",
+        "stage": 2
+      },
+      {
+        "evidence": [
+          {
+            "locator": "Model Access; Safety and Preparedness; Considerations and Limitations",
+            "source_id": "card"
+          }
+        ],
+        "id": "adoption",
+        "kind": "method",
+        "label": "采用仍需自己的边界验证",
+        "limitation": "完整安全报告待发布；微调或量化后的结果不自动继承原检查点结论。",
+        "mechanism": "将权重、工具权限、运行框架和业务评测作为整体。",
+        "metrics": [],
+        "result": "部署可控性增加，但不能保证你的任务稳定完成。",
+        "setting": "自定义许可；NVFP4 至少 700GB显存、BF16 至少 2TB，作者所列配置。",
+        "stage": 3
+      }
+    ],
+    "question": "Muse Spark Open：开放模型的成绩，怎样才算可比较？",
+    "reading": {
+      "editorial": [
+        "FieldToFit分析：开放权重提高了部署与修改的控制权，但不能替你完成设备、任务和权限验证。先选择自己的验收样本，再用作者成绩决定值得测试什么。",
+        "对照来源、框架和量尺，是把模型发布读成采用方案的关键。本文的并行连线仅组织需要同时核对的证据，不主张模型训练的因果继承。",
+        "方法PDF仅标 2026-10；模型卡与公告明确模型发布日 2026-10-15。本站核对日 2026-10-16 与实际网站发表分别保存。无独立修订号；完整安全评估报告仍待发布。原文与原图仅链接，三图为本站原创重绘，不声称复现、价格降低或全场景安全。"
+      ],
+      "findings": [
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "Muse Spark Open把编码、工具使用和多模态输入放在同一开放检查点中。MoE只激活部分专家，意味着每个token的计算路径较稀疏；本站据此提醒：不要把激活参数直接当成需要下载、存储或驻留的全部权重。"
+            },
+            {
+              "items": [
+                "模型卡列出 816B总参数、42B激活，以及文字／图像／视频／音频输入和文字输出；不是一个文字输出之外的通用生成套件。",
+                "NVFP4 至少 700GB显存、BF16 至少 2TB是作者列出的运行要求；双M5 Ultra演示也依赖大容量统一内存，不能转述成普通个人电脑均可部署。"
+              ],
+              "kind": "points"
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "FieldToFit判断：选型前先确认机器容量、精度、框架与任务，再讨论是否适合本地运行。"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "Overview and Model Access",
+              "source_id": "card"
+            }
+          ],
+          "id": "open-weights",
+          "node_ids": [
+            "checkpoint",
+            "adoption"
+          ],
+          "summary": "开放的是配置和部署选择，硬件门槛仍要看完整检查点与精度。",
+          "title": "激活 42B，不代表只需存 42B权重"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "两个数来自不同任务系统。OSWorld让Agent操作完整桌面，检查最终状态；MCP-Atlas让Agent调用服务工具，先评价声明覆盖，再按阈值判断通过。把它们并排展示有助于辨认能力范围，合成一个平均数却会抹掉测量意义。"
+            },
+            {
+              "alt": "OSWorld与MCP-Atlas的任务范围、工具和评分方式对照",
+              "attribution": "FieldToFit 本站原创重绘；依据 Meta 的 Muse Spark Open 官方材料。",
+              "caption": "图 1｜本站重绘。MCP基准总量不等于已核实的本行成绩分母；两列不能合成总准确率。",
+              "evidence": [
+                {
+                  "locator": "pp2-3; result values from model card Benchmarks",
+                  "source_id": "method"
+                }
+              ],
+              "image_url": "/report-figures/muse-spark-open-202610-task-scope.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; source facts: Meta Muse Spark Open model card, evaluation methodology and launch post."
+            },
+            {
+              "items": [
+                "OSWorld为 361 任务子集，排除Google Drive依赖任务；只有GUI、最多 200 步、每题四次取平均。它保留实际操作约束，不等于所有桌面软件都已覆盖。",
+                "MCP-Atlas的 1000 是基准总任务量；89.2%的实际公开／私有split分母在该方法说明中未单独明确。本次保留缺口，不反推通过了多少条。"
+              ],
+              "kind": "points"
+            },
+            {
+              "kind": "highlight",
+              "label": "evidence",
+              "text": "比较时至少保留：任务集合、工具权限、尝试次数、评分规则和结果来源。"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "pp2-3 MCP-Atlas and OSWorld-Verified",
+              "source_id": "method"
+            }
+          ],
+          "id": "two-metrics",
+          "node_ids": [
+            "gui",
+            "mcp"
+          ],
+          "summary": "GUI奖励与MCP任务通过率采用不同分母、规则和工具。",
+          "title": "80.4 与 89.2，不能平均成一个Agent成功率"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "方法文档的价值在于保留每行证据链。作者采用较高推理档位，但也说明第三方工具与系统提示未逐一优化。我们的判断是：这些结果可以帮助缩小候选范围，尚不足以单独隔离模型权重、推理预算与Agent工程各自贡献。"
+            },
+            {
+              "alt": "六类评测的成绩来源和关键配置对照表",
+              "attribution": "FieldToFit 本站原创重绘；依据 Meta 的 Muse Spark Open 官方材料。",
+              "caption": "图 2｜本站重绘。AA指数与部分工作任务数据使用 10 月 7 日快照；未报告不等于零能力。",
+              "evidence": [
+                {
+                  "locator": "pp1-7 Overall and per-benchmark details",
+                  "source_id": "method"
+                }
+              ],
+              "image_url": "/report-figures/muse-spark-open-202610-provenance.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; source facts: Meta Muse Spark Open model card, evaluation methodology and launch post."
+            },
+            {
+              "items": [
+                "编程表中的首选框架包含Muse Code、Claude Code和Kimi Code等。真实选型可以比较完整方案，但不能将方案差异全归为底层模型差异。",
+                "遇到自报或缺值，保留来源身份和未知项；不要补零、拼接旧卡分数，或把报告中的快照改写为今天实时排名。"
+              ],
+              "kind": "points"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "p1 Overall; p2 index snapshot; p4 coding; pp6-7 multimodal",
+              "source_id": "method"
+            }
+          ],
+          "id": "provenance-first",
+          "node_ids": [
+            "provenance",
+            "gui",
+            "mcp"
+          ],
+          "summary": "内部运行、榜单快照与厂商自报不能被写成同一场统一测试。",
+          "title": "先看成绩出处与Agent框架，再看名次"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "发布文章把Helion内核优化与整体推理收益分开报告。FieldToFit保留这种区分：模型工作流还包含未被该内核覆盖的操作，不能用最大局部倍数给整机、所有任务或API价格作承诺。"
+            },
+            {
+              "alt": "内核 1.03 至 3.95 倍与AMD MI350 端到端 3%的口径示意",
+              "attribution": "FieldToFit 本站原创重绘；依据 Meta 的 Muse Spark Open 官方材料。",
+              "caption": "图 3｜本站示意，非同尺度统计柱图。两个声明的硬件与路径范围不同，不能相乘或推导API降价。",
+              "evidence": [
+                {
+                  "locator": "Available Now",
+                  "source_id": "launch"
+                }
+              ],
+              "image_url": "/report-figures/muse-spark-open-202610-runtime-scope.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; source facts: Meta Muse Spark Open model card, evaluation methodology and launch post."
+            },
+            {
+              "items": [
+                "自定义Muse许可要求署名等条件；部分MaaS业务还有单独商业门槛。不能把开放权重简写为任意商业用途均无限制。",
+                "量化、下游修改和工具接入可能改变质量或风险。模型卡建议应用自己的防护与不可逆操作确认；详细安全报告仍待发布，当前材料不是全场景安全证明。"
+              ],
+              "kind": "points"
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "FieldToFit判断：用你自己的任务集合验证完成质量、失败恢复与资源占用，再决定是否替换现有方案。"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "Available Now; model card Access, License and Limitations",
+              "source_id": "launch"
+            }
+          ],
+          "id": "deployment-gains",
+          "node_ids": [
+            "runtime",
+            "adoption"
+          ],
+          "summary": "局部优化、端到端收益、许可与安全是不同采用条件。",
+          "title": "内核提速，不自动变成整条工作流同幅提速"
+        }
+      ],
+      "title": "Muse Spark Open：开放模型的成绩，怎样才算可比较？"
+    },
+    "reports": [
+      {
+        "first_published_at": "2026-10",
+        "revised_at": null,
+        "revision_note": "保留原始日期精度；本站阅读和发布不冒充上游修订。",
+        "source_id": "method",
+        "substantive_revision": false,
+        "version": "October 2026 methodology"
+      },
+      {
+        "first_published_at": "2026-10-15",
+        "revised_at": null,
+        "revision_note": "保留原始日期精度；本站阅读和发布不冒充上游修订。",
+        "source_id": "card",
+        "substantive_revision": false,
+        "version": "2026-10-15 launch checkpoint"
+      },
+      {
+        "first_published_at": "2026-10-15",
+        "revised_at": null,
+        "revision_note": "保留原始日期精度；本站阅读和发布不冒充上游修订。",
+        "source_id": "launch",
+        "substantive_revision": false,
+        "version": "2026-10-15 launch checkpoint"
+      }
+    ],
+    "slug": "muse-spark-open-evaluation",
+    "takeaway": "Muse Spark Open提供可自托管的多模态检查点；判断是否适合采用，应同时看任务／计分、成绩出处、硬件与许可，不把排行榜或局部加速当成业务保证。"
+  },
+  "title": "Muse Spark Open：开放模型的成绩，怎样才算可比较？",
+  "translations": {
+    "en": {
+      "fields": {
+        "361 任务、排除Google Drive、每题 4 次、最多 200 步。": "361 tasks, Google Drive excluded, 4 attempts each, up to 200 steps.",
+        "80.4 与 89.2，不能平均成一个Agent成功率": "80.4 and 89.2 are not one average agent success rate",
+        "816B 总参数／42B 激活；推理上下文 1M；作者评测采用 xhigh。": "816B total / 42B active; 1M inference context; author evaluations use xhigh.",
+        "AA 指数取 2026-10-07；编程任务采用不同首选Agent框架。": "The AA index uses 2026-10-07 data; coding tasks use different preferred agent harnesses.",
+        "FieldToFit 本站原创重绘；依据 Meta 的 Muse Spark Open 官方材料。": "Original FieldToFit redraw based on Meta’s official Muse Spark Open materials.",
+        "FieldToFit分析：开放权重提高了部署与修改的控制权，但不能替你完成设备、任务和权限验证。先选择自己的验收样本，再用作者成绩决定值得测试什么。": "FieldToFit analysis: open weights increase deployment and modification control without performing device, task or permission validation for you. Define acceptance samples first, then use author scores to decide what deserves testing.",
+        "FieldToFit判断：用你自己的任务集合验证完成质量、失败恢复与资源占用，再决定是否替换现有方案。": "FieldToFit assessment: evaluate completion quality, failure recovery and resource use on your own tasks before replacing the existing system.",
+        "FieldToFit判断：选型前先确认机器容量、精度、框架与任务，再讨论是否适合本地运行。": "FieldToFit assessment: confirm capacity, precision, runtime and tasks before deciding whether local deployment fits.",
+        "GUI奖励与MCP任务通过率采用不同分母、规则和工具。": "GUI reward and MCP task pass rate use different denominators, rules and tools.",
+        "GUI子集的平均奖励": "Mean reward on a GUI subset",
+        "MCP-Atlas的 1000 是基准总任务量；89.2%的实际公开／私有split分母在该方法说明中未单独明确。本次保留缺口，不反推通过了多少条。": "The 1000 MCP-Atlas tasks describe the benchmark. This methodology does not separately identify the public/private split denominator underlying 89.2%. We retain that gap rather than infer how many tasks passed.",
+        "MCP任务按覆盖阈值判通过": "MCP tasks pass a claim-coverage threshold",
+        "MoE Transformer 与感知编码器，原生多模态输入、文字输出。": "A MoE Transformer and perception encoder accept multimodal input and return text.",
+        "Muse Spark Open把编码、工具使用和多模态输入放在同一开放检查点中。MoE只激活部分专家，意味着每个token的计算路径较稀疏；本站据此提醒：不要把激活参数直接当成需要下载、存储或驻留的全部权重。": "Muse Spark Open combines coding, tool use and multimodal input in one open checkpoint. MoE activates only some experts, making each token’s computation sparse. Our reading is to avoid equating active parameters with all weights to download, store or keep resident.",
+        "Muse Spark Open提供可自托管的多模态检查点；判断是否适合采用，应同时看任务／计分、成绩出处、硬件与许可，不把排行榜或局部加速当成业务保证。": "Muse Spark Open offers a self-hostable multimodal checkpoint. Adoption requires task/scoring details, provenance, hardware and licensing; rankings or local speedups are not business guarantees.",
+        "Muse Spark Open：开放模型的成绩，怎样才算可比较？": "Muse Spark Open: what makes open-model scores comparable?",
+        "NVFP4 至少 700GB显存、BF16 至少 2TB是作者列出的运行要求；双M5 Ultra演示也依赖大容量统一内存，不能转述成普通个人电脑均可部署。": "The author lists at least 700GB VRAM for NVFP4 and 2TB for BF16; the two M5 Ultra demonstration also relies on large unified memory. This is not support for every ordinary personal computer.",
+        "NVIDIA／AMD内核；端到端结果明确为AMD MI350。": "NVIDIA / AMD kernels; the end-to-end result specifically uses AMD MI350;",
+        "OSWorld与MCP-Atlas的任务范围、工具和评分方式对照": "OSWorld and MCP-Atlas task scope, tools and scoring",
+        "OSWorld为 361 任务子集，排除Google Drive依赖任务；只有GUI、最多 200 步、每题四次取平均。它保留实际操作约束，不等于所有桌面软件都已覆盖。": "OSWorld uses a 361-task subset excluding Google Drive dependencies, GUI only, at most 200 steps and four-attempt averaging. These are concrete constraints, not coverage of every desktop application.",
+        "不是任意电脑任务的成功概率；Kimi为自报，坐标约定也不同。": "Not a success probability for arbitrary desktop tasks; Kimi is self-reported and coordinate conventions differ.",
+        "不能相乘、推广到所有硬件或推导API价格。": "Do not multiply them, generalize to all hardware or infer API prices.",
+        "两个数来自不同任务系统。OSWorld让Agent操作完整桌面，检查最终状态；MCP-Atlas让Agent调用服务工具，先评价声明覆盖，再按阈值判断通过。把它们并排展示有助于辨认能力范围，合成一个平均数却会抹掉测量意义。": "The values come from different task systems. OSWorld asks an agent to operate a desktop and checks final state. MCP-Atlas evaluates tool tasks through claim coverage and a pass threshold. Showing both identifies coverage; averaging them removes their measurement meaning.",
+        "主流开放模型的Agent评测与采用边界": "Agent evaluation and adoption boundaries for a mainstream open model",
+        "任务成绩不直接替代现场验证": "Task scores do not replace application validation",
+        "作者评测未复现；报告月份精度保留。MCP本行split分母未明确，第三方框架不同，完整安全报告待发布。": "Author evaluations were not reproduced; preserve month precision. The MCP score’s split denominator is unspecified, third-party harnesses differ and full safety reporting is pending.",
+        "保留原始日期精度；本站阅读和发布不冒充上游修订。": "Retain source date precision; local reading and site publication are not upstream revisions.",
+        "先核对量尺，再决定是否采用": "Check the measure before choosing the model",
+        "先看成绩出处与Agent框架，再看名次": "Read score provenance and agent harnesses before ranks",
+        "六类评测的成绩来源和关键配置对照表": "Provenance and configuration table for six evaluations",
+        "内核 1.03 至 3.95 倍与AMD MI350 端到端 3%的口径示意": "Scope diagram for 1.03–3.95× kernel gains and AMD MI350 end-to-end 3%",
+        "内核 1.03–3.95×；MI350 端到端 +3%。": "Kernels 1.03–3.95×; MI350 end-to-end +3%.",
+        "内核提速，不自动变成整条工作流同幅提速": "Kernel speedups do not guarantee equal workflow gains",
+        "内部运行、榜单快照与厂商自报不能被写成同一场统一测试。": "Internal runs, leaderboard snapshots and provider reports are not one uniform evaluation.",
+        "原文仅链接，本站图形为原创事实重绘": "Link upstream text only; FieldToFit diagrams are original factual redraws",
+        "发布文章把Helion内核优化与整体推理收益分开报告。FieldToFit保留这种区分：模型工作流还包含未被该内核覆盖的操作，不能用最大局部倍数给整机、所有任务或API价格作承诺。": "The launch post separates Helion kernel optimization from whole-inference gains. We preserve that distinction: workflows include operations outside those kernels, so a maximum local multiplier does not promise the same gain for a machine, every task or API pricing.",
+        "发布配置与评测出处分别核对": "Check release configuration and evaluation provenance separately",
+        "只允许截图与GUI操作，按最终虚拟机状态给奖励。": "Screenshot and GUI actions only; final VM state determines reward.",
+        "可自托管或使用第三方API。": "Self-hosting or third-party APIs are available.",
+        "图 1｜本站重绘。MCP基准总量不等于已核实的本行成绩分母；两列不能合成总准确率。": "Figure 1 | FieldToFit redraw. Benchmark size is not a verified denominator for the reported MCP score; the columns do not form an overall accuracy.",
+        "图 2｜本站重绘。AA指数与部分工作任务数据使用 10 月 7 日快照；未报告不等于零能力。": "Figure 2 | FieldToFit redraw. The AA index and some work-task figures use the 10/7 snapshot; unavailable results do not mean zero capability.",
+        "图 3｜本站示意，非同尺度统计柱图。两个声明的硬件与路径范围不同，不能相乘或推导API降价。": "Figure 3 | FieldToFit diagram, not a common-scale statistical bar chart. Hardware and path scopes differ; do not multiply the claims or infer an API price cut.",
+        "在SGLang中提供可自动调优Helion内核。": "SGLang includes auto-tunable Helion kernels.",
+        "基准含 1000 任务、公开／私有各 500，36 个服务与 220 工具。": "The benchmark has 1000 tasks, public / private splits of 500 each, 36 servers and 220 tools.",
+        "完整安全报告待发布；微调或量化后的结果不自动继承原检查点结论。": "Full safety reporting is pending; modified or quantized models do not automatically inherit the released checkpoint’s results.",
+        "对照来源、框架和量尺，是把模型发布读成采用方案的关键。本文的并行连线仅组织需要同时核对的证据，不主张模型训练的因果继承。": "Checking sources, harnesses and measures turns a release into an adoption assessment. Parallel links organize evidence to check together; they do not assert causal training inheritance.",
+        "将权重、工具权限、运行框架和业务评测作为整体。": "Treat weights, tool permissions, runtime and task evaluation as a system.",
+        "局部优化、端到端收益、许可与安全是不同采用条件。": "Kernel optimization, end-to-end gain, licensing and safety are separate adoption conditions.",
+        "局部内核与完整路径分开": "Separate kernels from the whole path",
+        "已实际读取并核对来源位置；未确认原文再分发许可，公开原创分析、事实示意和原文链接。": "Actually read and checked against source locations; text redistribution rights are unverified, so publish original analysis, factual diagrams and source links.",
+        "并列量尺：GUI平均奖励": "Parallel measure: GUI mean reward",
+        "并列量尺：MCP阈值通过率": "Parallel measure: MCP thresholded pass rate",
+        "开放权重让部署与修改更可控，但选模型仍要读清实验条件。本文以四条结论、同号论述和三张本站重绘，区分硬件门槛、两类Agent计分、榜单来源和内核／端到端收益；作者评测未经本站复现。": "Open weights offer more control over deployment and modification, but model selection still requires reading the experimental conditions. Four findings, matching arguments and three original diagrams separate hardware requirements, two agent-scoring rules, score provenance and kernel versus end-to-end gains. FieldToFit has not reproduced the author’s evaluations.",
+        "开放检查点与运行配置": "Open checkpoint and runtime configuration",
+        "开放的是配置和部署选择，硬件门槛仍要看完整检查点与精度。": "Open weights expand configuration and deployment choices; requirements still depend on the full checkpoint and precision.",
+        "性能声明与采用条件同时核对": "Check performance claims alongside adoption conditions",
+        "方法PDF仅标 2026-10；模型卡与公告明确模型发布日 2026-10-15。本站核对日 2026-10-16 与实际网站发表分别保存。无独立修订号；完整安全评估报告仍待发布。原文与原图仅链接，三图为本站原创重绘，不声称复现、价格降低或全场景安全。": "The methodology PDF gives only 2026-10; the card and announcement date the model release 2026-10-15. The 2026-10-16 check and actual site publication are recorded separately. No independent revision number is given; the full safety evaluation report is pending. Link original text and artwork only; three diagrams are original FieldToFit redraws. No claim of replication, lower prices or universal safety is made.",
+        "方法文档的价值在于保留每行证据链。作者采用较高推理档位，但也说明第三方工具与系统提示未逐一优化。我们的判断是：这些结果可以帮助缩小候选范围，尚不足以单独隔离模型权重、推理预算与Agent工程各自贡献。": "The methodology preserves provenance for each row. It uses high reasoning settings but acknowledges that third-party tools and system prompts were not individually optimized. Our assessment is that the results can narrow choices without isolating the contributions of weights, inference budget and agent engineering.",
+        "未针对第三方模型逐一优化，不能把差距全部归因于权重。": "Third-party setups were not individually optimized; gaps cannot be attributed solely to weights.",
+        "本文件未单独明确该成绩所用split的分母，不把 1000 当已确认分母。": "The document does not separately identify the split denominator for that score; 1000 is not a confirmed denominator.",
+        "模型卡列出 816B总参数、42B激活，以及文字／图像／视频／音频输入和文字输出；不是一个文字输出之外的通用生成套件。": "The card lists 816B total and 42B active parameters, text / image / video / audio input and text output; it is not a general generator of all those output modalities.",
+        "模型卡报告 80.4；是平均奖励的百分制展示。": "The card reports 80.4, a percentage-scale presentation of mean reward.",
+        "模型卡给出 89.2% 任务通过率。": "The card gives an 89.2% task pass rate.",
+        "每行成绩先确认出处与框架": "Check provenance and harness for each row",
+        "每项声明记 0／0.5／1，平均覆盖至少 0.75 才算任务通过。": "Each claim scores 0 / 0.5 / 1; average coverage at least 0.75 passes a task.",
+        "比较时至少保留：任务集合、工具权限、尝试次数、评分规则和结果来源。": "Preserve at least the task set, tool permissions, attempts, scoring rule and result source in a comparison.",
+        "激活 42B，不代表只需存 42B权重": "42B active does not mean storing only 42B weights",
+        "激活参数不是显存要求；量化、框架和许可另核。": "Active parameters are not a VRAM requirement; check quantization, frameworks and licensing separately.",
+        "编程表中的首选框架包含Muse Code、Claude Code和Kimi Code等。真实选型可以比较完整方案，但不能将方案差异全归为底层模型差异。": "Preferred coding harnesses include Muse Code, Claude Code and Kimi Code. Comparing complete systems is useful, but their differences cannot all be assigned to the base model.",
+        "缺值保留缺值，不补零；不同来源不等同统一实跑。": "Missing values stay missing, not zero; mixed sources are not one uniform rerun.",
+        "自定义Muse许可要求署名等条件；部分MaaS业务还有单独商业门槛。不能把开放权重简写为任意商业用途均无限制。": "The custom Muse license has attribution and other conditions, with a separate commercial threshold for some MaaS businesses. Open weights do not mean unrestricted use in every commercial context.",
+        "自定义许可；NVFP4 至少 700GB显存、BF16 至少 2TB，作者所列配置。": "Custom license; author-listed NVFP4 minimum 700GB VRAM and BF16 2TB.",
+        "评测方法分别记录内部运行、官方榜单和提供方自报。": "The methodology separates internal runs, official leaderboards and provider self-reports.",
+        "运行优化独立于成绩排名": "Runtime optimization is separate from score rankings",
+        "遇到自报或缺值，保留来源身份和未知项；不要补零、拼接旧卡分数，或把报告中的快照改写为今天实时排名。": "For self-reports and missing values, preserve provenance and unknowns. Do not fill zeros, splice old-card scores or relabel the document’s snapshot as today’s live ranking.",
+        "部署可控性增加，但不能保证你的任务稳定完成。": "Deployment control improves without guaranteeing reliable completion of your tasks.",
+        "采用仍需自己的边界验证": "Adoption still needs local validation",
+        "量化、下游修改和工具接入可能改变质量或风险。模型卡建议应用自己的防护与不可逆操作确认；详细安全报告仍待发布，当前材料不是全场景安全证明。": "Quantization, downstream modifications and tool integration may change quality or risk. The card recommends application guardrails and confirmation for irreversible actions. Detailed safety reporting is pending; current materials are not proof of universal safety.",
+        "首次整理所有者选中的Muse Spark Open材料：四结论、同号论述和三张原创重绘；与Muse Wonder保持独立问题与入口。": "First analysis of owner-selected Muse Spark Open materials: four findings, matching arguments and three original diagrams; keep a question and URL distinct from Muse Wonder."
+      },
+      "source_hash": "23011e3c1c34b418001c2b12c93ea2e05dd9cc688a261d429849c92399bc2334",
+      "state": "reviewed"
+    }
+  }
+}
