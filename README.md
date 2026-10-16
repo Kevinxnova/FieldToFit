@@ -36,16 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.11.1](CHANGELOG.md#v1.11.1)** · [fieldtofit-v1.11.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.1)
+**当前源码版本：[v1.11.2](CHANGELOG.md#v1.11.2)** · [fieldtofit-v1.11.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 为所选Muse Spark Open材料整理四结论、同号论述及三张本站重绘，区分部署门槛、任务计分、评测来源与局部／端到端收益。
-- 接续10月16日获批A–H八项动态、六份档案与明确对应的旧事件，按优化后的首页更新动态重点、完整栏目及总表最新事件，保留原始日期和历史。
-- 新专题正式发布后使用既有四篇轮换；完整报告索引继续保留全部历史，未选报告和模型榜单保持原状态。
-- 保留同条目并行补充的语音与Codex出处，澄清跨日日期，并补齐已公开引用但缺失的作者头像。
+- 补入官方Day 10重置与完成声明、Day 11容量优化，归真实北京日期10月15日；完成声明不冒充准确生效或账户到账时刻。
+- 整理CLI 0.163.0、GPT-Live-1.1语音、原生Decisions、Enterprise Sites、Rosalind学术申请及Sites建站数调整；语音复用D-155并保留已有安全分析，API尚待推出。
+- 八项经具体批准、双语三宽度和AI同源预览；专题37条（21主线／16其他OpenAI），严格reset计数仍0，真实头像缓存保留出处。兼容既有首页、完整栏目、接口与日程。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

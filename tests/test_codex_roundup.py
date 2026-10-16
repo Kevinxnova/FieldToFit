@@ -40,7 +40,7 @@ def install(data, tmp_path, monkeypatch):
 def test_roundup_order_preserves_dates_groups_counts_and_privacy():
     public = news.news(_data=with_roundup())
     topic = public['codex_progress']; roundup = topic['roundups'][0]
-    assert topic['total'] == 29 and len(topic['days']) == 10
+    assert topic['total'] == 37 and len(topic['days']) == 12
     assert roundup['date'] == '2026-10-07' and roundup['calendar_day'] == 3 and roundup['official_day'] == 2
     assert [s['news_id'] for s in roundup['steps']] == ['D-84', 'D-86', 'D-85', 'D-87']
     assert next(d for d in topic['days'] if d['date'] == '2026-10-07')['ordered_ids'] == ['D-86', 'D-85', 'D-87', 'D-94', 'D-95', 'D-97', 'D-91']
@@ -73,7 +73,7 @@ def test_roundup_scopes_static_html_and_both_mcp_interfaces(client, tmp_path, mo
     rpc = client.post('/api/mcp/curated', headers=MCP, json={'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call',
         'params': {'name': 'curated_news', 'arguments': {}}}).json['result']['structuredContent']
     assert rpc == public
-    page = client.get('/for-you', headers={'Host': 'fieldtofit.top'}).text
+    page = client.get('/for-you/codex', headers={'Host': 'fieldtofit.top'}).text
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(page, 'html.parser'); card = soup.select_one('.codex-roundup')
     assert [e.get_text() for e in card.select('.codex-step-number')] == ['2.1', '2.2', '2.3', '2.4']

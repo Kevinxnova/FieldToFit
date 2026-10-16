@@ -1,7 +1,35 @@
 {
-  "version": "1.11.1",
-  "revision": "e3e574745012a9215753099cb681838e8db31f9ed84a3fb0f4734b8d406071f6",
+  "version": "1.11.2",
+  "revision": "7f22db23e6ff6af9871f4d5a1283f3a1a86c384965973d8b2174eb4632114418",
   "items": [
+    {
+      "version": "1.11.2",
+      "date": "2026-10-16",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Codex Day 10／11及六项官方更新",
+          "highlights": [
+            "补入官方Day 10重置与完成声明、Day 11容量优化，归真实北京日期10月15日；完成声明不冒充准确生效或账户到账时刻。",
+            "整理CLI 0.163.0、GPT-Live-1.1语音、原生Decisions、Enterprise Sites、Rosalind学术申请及Sites建站数调整；语音复用D-155并保留已有安全分析，API尚待推出。",
+            "八项经具体批准、双语三宽度和AI同源预览；专题37条（21主线／16其他OpenAI），严格reset计数仍0，真实头像缓存保留出处。兼容既有首页、完整栏目、接口与日程。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Codex Days 10 and 11 with six official updates",
+          "highlights": [
+            "Add the official Day 10 reset and completion statement and Day 11 capacity improvements on their real October 15 Beijing dates. A completion post is not an exact activation or account-credit time.",
+            "Cover CLI 0.163.0, GPT-Live-1.1 Voice, native Decisions integration, Enterprise Sites, Rosalind academic applications and Site-count changes. Reuse D-155 for Voice and retain its existing safety analysis; the Voice API remains forthcoming.",
+            "Publish eight approved topic entries after bilingual human/AI previews at three widths. The topic has 37 logs (21 Codex/Work and 16 Other OpenAI), with zero strict resets and a provenance-backed real-avatar cache. Preserve the homepage, complete sections, compatible interfaces and schedules."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.2"
+    },
     {
       "version": "1.11.1",
       "date": "2026-10-16",

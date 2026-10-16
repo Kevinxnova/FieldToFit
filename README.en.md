@@ -36,16 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.11.1](CHANGELOG.md#v1.11.1)** · [fieldtofit-v1.11.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.1)
+**Current source version: [v1.11.2](CHANGELOG.md#v1.11.2)** · [fieldtofit-v1.11.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Present four findings, matching arguments and three original diagrams for the selected Muse Spark Open materials, separating deployment requirements, task scoring, evidence provenance and kernel versus end-to-end gains.
-- Continue the eight approved October16 A–H updates, six dossiers and explicitly related earlier events. Refresh highlights, complete sections and latest-event tables on the optimized homepage while retaining source dates and history.
-- Apply the existing four-report rotation after successful publication. Keep all historical reports in the complete index and preserve unselected reports and model-chart snapshots.
-- Preserve parallel Voice and Codex evidence on the same item, clarify UTC and Beijing dates, and restore its missing publicly referenced author image.
+- Add the official Day 10 reset and completion statement and Day 11 capacity improvements on their real October 15 Beijing dates. A completion post is not an exact activation or account-credit time.
+- Cover CLI 0.163.0, GPT-Live-1.1 Voice, native Decisions integration, Enterprise Sites, Rosalind academic applications and Site-count changes. Reuse D-155 for Voice and retain its existing safety analysis; the Voice API remains forthcoming.
+- Publish eight approved topic entries after bilingual human/AI previews at three widths. The topic has 37 logs (21 Codex/Work and 16 Other OpenAI), with zero strict resets and a provenance-backed real-avatar cache. Preserve the homepage, complete sections, compatible interfaces and schedules.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.11.2"></a>
+## v1.11.2 · Codex Day 10／11及六项官方更新 · 2026-10-16
+
+<!-- public-title:en:Codex Days 10 and 11 with six official updates -->
+<!-- release-summary:zh:start -->
+- 补入官方Day 10重置与完成声明、Day 11容量优化，归真实北京日期10月15日；完成声明不冒充准确生效或账户到账时刻。
+- 整理CLI 0.163.0、GPT-Live-1.1语音、原生Decisions、Enterprise Sites、Rosalind学术申请及Sites建站数调整；语音复用D-155并保留已有安全分析，API尚待推出。
+- 八项经具体批准、双语三宽度和AI同源预览；专题37条（21主线／16其他OpenAI），严格reset计数仍0，真实头像缓存保留出处。兼容既有首页、完整栏目、接口与日程。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 10 reset and completion statement and Day 11 capacity improvements on their real October 15 Beijing dates. A completion post is not an exact activation or account-credit time.
+- Cover CLI 0.163.0, GPT-Live-1.1 Voice, native Decisions integration, Enterprise Sites, Rosalind academic applications and Site-count changes. Reuse D-155 for Voice and retain its existing safety analysis; the Voice API remains forthcoming.
+- Publish eight approved topic entries after bilingual human/AI previews at three widths. The topic has 37 logs (21 Codex/Work and 16 Other OpenAI), with zero strict resets and a provenance-backed real-avatar cache. Preserve the homepage, complete sections, compatible interfaces and schedules.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者已对两项直接授权，并明确回复“这6项一并发布”。复用同事件编号与现有审核／发布及MCP流程，不另建公开来源或台账。结合v1.11.0后的累计内容改动判为兼容patch，无新模块、主要阅读流程重构、协议变化或数据库迁移；保留并行批次及其完整历史。实际来源、日期、预览、回归及部署状态见[验收](docs/validation/2026-10-16-codex-days10-11.md)。未来新批次仍具体确认。
+
 <a id="v1.11.1"></a>
 ## v1.11.1 · Muse Spark Open专题与八项获批动态 · 2026-10-16
 

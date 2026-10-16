@@ -1851,6 +1851,79 @@
       }
     },
     {
+      "category": "tool",
+      "checked_at": "2026-10-16",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://help.openai.com/en/articles/20001339",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: no fixed Sites count",
+        "overview_zh": "其他 OpenAI · Sites 取消固定建站数",
+        "source_posts": [],
+        "timestamp_basis": "source_date",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-170",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。",
+          "source_ids": [
+            "limits",
+            "notes"
+          ],
+          "text": "ChatGPT 官方 10 月 15 日更新日志说明，Plus 和 Pro 不再受到固定可创建 Site 数量的限制。官方帮助页同时保留跨 Site 共享的使用与存储限制；即使某个新 Site 不使用存储，达到共享限制后也可能无法创建。建站和编辑仍消耗 Codex 用量，运行与托管的使用口径另行计算。可以继续从 Work 或桌面 Codex 中描述网站需求并使用 Sites；本条不是新推出 Sites，也不表示容量、托管或模型调用无限。来源只给日期，未推造北京发布时刻，与 Enterprise 正式可用公告分开记录。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "ChatGPT Sites",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-16T05:29:15.040716+00:00",
+        "updated_at": "2026-10-16T05:29:15.040716+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "limits",
+          "title": "Sites 官方数量、使用和存储限制",
+          "url": "https://help.openai.com/en/articles/20001339"
+        },
+        {
+          "coverage": "link_only",
+          "id": "notes",
+          "title": "ChatGPT 官方 10 月 15 日更新日志",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        }
+      ],
+      "state": "published",
+      "summary": "不再限制固定 Site 数量，不等于无限额度；达到共享限制仍可能无法新建。",
+      "title": "Sites 取消 Plus 与 Pro 固定建站数，仍保留用量与存储限制",
+      "translations": {
+        "en": {
+          "fields": {
+            "ChatGPT 官方 10 月 15 日更新日志": "Official ChatGPT 10-15 release notes",
+            "ChatGPT 官方 10 月 15 日更新日志说明，Plus 和 Pro 不再受到固定可创建 Site 数量的限制。官方帮助页同时保留跨 Site 共享的使用与存储限制；即使某个新 Site 不使用存储，达到共享限制后也可能无法创建。建站和编辑仍消耗 Codex 用量，运行与托管的使用口径另行计算。可以继续从 Work 或桌面 Codex 中描述网站需求并使用 Sites；本条不是新推出 Sites，也不表示容量、托管或模型调用无限。来源只给日期，未推造北京发布时刻，与 Enterprise 正式可用公告分开记录。": "The official 10-15 ChatGPT notes remove the fixed number of Sites Plus and Pro users can create. The help guide retains shared usage and storage limits across Sites, which can still prevent creation even when a new Site would not use storage. Building and editing continue to consume Codex usage; running and hosting use a separate accounting scope. Create through Work or desktop Codex using Sites as available to the account. This is not the initial launch of Sites or unlimited storage, hosting or model use. Only a source date is available, kept separate from the Enterprise GA announcement.",
+            "Sites 取消 Plus 与 Pro 固定建站数，仍保留用量与存储限制": "Sites removes fixed Plus/Pro creation counts; usage and storage limits remain",
+            "Sites 官方数量、使用和存储限制": "Official Sites count, usage and storage limits",
+            "不再限制固定 Site 数量，不等于无限额度；达到共享限制仍可能无法新建。": "No fixed Site-count cap does not mean unlimited usage; shared limits can still block creation.",
+            "其他 OpenAI · Sites 取消固定建站数": "Other OpenAI: no fixed Sites count",
+            "变化与适用范围": "Changes and scope",
+            "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。": "Registered official sources verified directly; source date retained without an invented announcement time."
+          },
+          "source_hash": "5c737dd7408a5e7a442aa66a163ddedeb8c8356aa65cf50112b1658f2e77d87f",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "model",
       "checked_at": "2026-10-16",
       "editor": "FieldToFit",
@@ -2095,6 +2168,87 @@
       }
     },
     {
+      "category": "tool",
+      "checked_at": "2026-10-16",
+      "codex_28_days": {
+        "announced_at": "2026-10-15T21:15:00.704000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/OpenAI/status/2110841898076418336",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: Rosalind academic applications",
+        "overview_zh": "其他 OpenAI · Rosalind 学术赞助申请",
+        "source_posts": [],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-16",
+      "highlight": false,
+      "id": "D-169",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导。",
+          "source_ids": [
+            "announcement",
+            "article",
+            "help"
+          ],
+          "text": "OpenAI 于北京时间 10 月 16 日 05:15 公告 Rosalind Academic Plan。合资格的美国高校实验室可由 PI 或实验室负责人申请，获批后最多获得 30 个 ChatGPT Business Standard 席位、最长 12 个月赞助；GPT-Rosalind 须另满足 trusted-access 审核并为合资格成员启用，API 不包含在本计划内。高校已有 OpenAI Enterprise 协议的实验室应走校内现有接入流程。提交申请、持有大学邮箱或既有订阅都不等于立即获批；帮助页提示获批后的设置阶段需要支付卡。既有模型与用量限制继续适用，不把科研示例当作已验证的科学或医疗结果。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Rosalind Academic Plan",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-16T05:28:52.770242+00:00",
+        "updated_at": "2026-10-16T05:28:52.770242+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "OpenAI 学术计划公告",
+          "url": "https://x.com/OpenAI/status/2110841898076418336"
+        },
+        {
+          "coverage": "link_only",
+          "id": "article",
+          "title": "Rosalind 学术计划官方说明",
+          "url": "https://openai.com/index/introducing-the-rosalind-academic-plan/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "help",
+          "title": "Rosalind 学术计划官方资格与设置",
+          "url": "https://help.openai.com/en/articles/20001602"
+        }
+      ],
+      "state": "published",
+      "summary": "最长 12 个月 Business Standard 席位，Rosalind 访问仍需 trusted-access 审核，不含 API。",
+      "title": "Rosalind 学术计划开放申请：美国高校实验室可申请最多 30 席赞助",
+      "translations": {
+        "en": {
+          "fields": {
+            "OpenAI 于北京时间 10 月 16 日 05:15 公告 Rosalind Academic Plan。合资格的美国高校实验室可由 PI 或实验室负责人申请，获批后最多获得 30 个 ChatGPT Business Standard 席位、最长 12 个月赞助；GPT-Rosalind 须另满足 trusted-access 审核并为合资格成员启用，API 不包含在本计划内。高校已有 OpenAI Enterprise 协议的实验室应走校内现有接入流程。提交申请、持有大学邮箱或既有订阅都不等于立即获批；帮助页提示获批后的设置阶段需要支付卡。既有模型与用量限制继续适用，不把科研示例当作已验证的科学或医疗结果。": "OpenAI announced the Rosalind Academic Plan at 05:15 Beijing time on 10-16. PIs or lab leads at eligible US university labs may apply for up to 30 sponsored ChatGPT Business Standard seats for up to 12 months. GPT-Rosalind remains subject to trusted-access review and activation for eligible members; API access is excluded. Labs covered by an OpenAI Enterprise agreement should use their university’s existing access process. Applying, holding a university email or having a subscription does not guarantee approval; the help page requires a payment card during approved setup. Existing model and usage limits remain, and research examples are not verified scientific or medical outcomes.",
+            "OpenAI 学术计划公告": "OpenAI academic-plan announcement",
+            "Rosalind 学术计划官方说明": "Official Rosalind Academic Plan announcement",
+            "Rosalind 学术计划官方资格与设置": "Official Rosalind eligibility and setup guide",
+            "Rosalind 学术计划开放申请：美国高校实验室可申请最多 30 席赞助": "Rosalind Academic Plan applications open for up to 30 sponsored seats at eligible US labs",
+            "其他 OpenAI · Rosalind 学术赞助申请": "Other OpenAI: Rosalind academic applications",
+            "变化与适用范围": "Changes and scope",
+            "最长 12 个月 Business Standard 席位，Rosalind 访问仍需 trusted-access 审核，不含 API。": "Up to 12 months of Business Standard seats, with Rosalind subject to trusted-access review; API access is excluded.",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导。": "Registered official sources verified directly; post times are ID-derived."
+          },
+          "source_hash": "61ac4e098a77c3a04c87551b240f65888b1a162885b67baa0eaf2c7c4fa8d1e3",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "agent",
       "checked_at": "2026-10-15",
       "editor": "FieldToFit",
@@ -2328,6 +2482,87 @@
     },
     {
       "category": "tool",
+      "checked_at": "2026-10-16",
+      "codex_28_days": {
+        "announced_at": "2026-10-15T20:39:34.387000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/OpenAIDevs/status/2110832979656524283",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: Sites Enterprise GA",
+        "overview_zh": "其他 OpenAI · Sites 企业正式可用",
+        "source_posts": [],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-16",
+      "highlight": false,
+      "id": "D-168",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导。",
+          "source_ids": [
+            "announcement",
+            "sites",
+            "help"
+          ],
+          "text": "OpenAI Developers 于北京时间 10 月 16 日 04:39 宣布 Sites 面向 Enterprise 正式可用，合资格工作区的新建 Site 支持美国和欧洲数据驻留；不据此推断旧 Site 自动迁移。Sites 可构建带数据库与认证的团队应用，在支持的工作区让访客使用各自已连接账号与现有权限。使用前需核对工作区角色和管理员设置；Enterprise 公开发布默认关闭，需管理员启用。当前帮助文档说明 Enterprise 运行及托管费用暂免，但建站与编辑仍计入 Codex 用量，使用和存储限制继续适用，不是所有用量免费或无限。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "ChatGPT Sites",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-16T05:28:30.796849+00:00",
+        "updated_at": "2026-10-16T05:28:30.796849+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "OpenAI Developers 企业 Sites 公告",
+          "url": "https://x.com/OpenAIDevs/status/2110832979656524283"
+        },
+        {
+          "coverage": "link_only",
+          "id": "sites",
+          "title": "Sites 官方开发与发布指南",
+          "url": "https://learn.chatgpt.com/docs/sites"
+        },
+        {
+          "coverage": "link_only",
+          "id": "help",
+          "title": "官方 Sites 可用性、费用与限制",
+          "url": "https://help.openai.com/en/articles/20001339"
+        }
+      ],
+      "state": "published",
+      "summary": "工作区权限和发布控制继续适用；建站、编辑仍消耗 Codex 用量。",
+      "title": "Sites 面向 Enterprise 正式可用，新建站点支持合资格美欧数据驻留",
+      "translations": {
+        "en": {
+          "fields": {
+            "OpenAI Developers 于北京时间 10 月 16 日 04:39 宣布 Sites 面向 Enterprise 正式可用，合资格工作区的新建 Site 支持美国和欧洲数据驻留；不据此推断旧 Site 自动迁移。Sites 可构建带数据库与认证的团队应用，在支持的工作区让访客使用各自已连接账号与现有权限。使用前需核对工作区角色和管理员设置；Enterprise 公开发布默认关闭，需管理员启用。当前帮助文档说明 Enterprise 运行及托管费用暂免，但建站与编辑仍计入 Codex 用量，使用和存储限制继续适用，不是所有用量免费或无限。": "At 04:39 Beijing time on 10-16, OpenAI Developers announced Sites GA for Enterprise, with US/EU data residency for new Sites in eligible workspaces; this does not imply automatic migration of existing Sites. Sites can provide team apps with databases and authentication and, where supported, each visitor’s own connected accounts and permissions. Access depends on roles and admin settings, and Enterprise public publishing is off by default until enabled. Current help guidance waives Enterprise running/hosting charges, while building and editing still consume Codex usage and usage/storage limits continue. This is not unlimited or entirely free usage.",
+            "OpenAI Developers 企业 Sites 公告": "OpenAI Developers Enterprise Sites announcement",
+            "Sites 官方开发与发布指南": "Official Sites creation and publishing guide",
+            "Sites 面向 Enterprise 正式可用，新建站点支持合资格美欧数据驻留": "Sites reaches Enterprise GA with eligible US/EU residency for new Sites",
+            "其他 OpenAI · Sites 企业正式可用": "Other OpenAI: Sites Enterprise GA",
+            "变化与适用范围": "Changes and scope",
+            "官方 Sites 可用性、费用与限制": "Official Sites availability, charges and limits",
+            "工作区权限和发布控制继续适用；建站、编辑仍消耗 Codex 用量。": "Workspace access and publishing controls remain; building and editing still consume Codex usage.",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导。": "Registered official sources verified directly; post times are ID-derived."
+          },
+          "source_hash": "7b3cf5501d678157dde4aa885900164a803123961a29214febdbb1139510691c",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
       "checked_at": "2026-10-15",
       "editor": "FieldToFit",
       "event_date": "2026-10-13",
@@ -2419,6 +2654,414 @@
             "远场Siri支持普通话不等于Siri AI支持中文。部分服务器功能有日用量限制，未来扩展访问可能收费；第 2 代及以后的Apple TV4K也可使用Siri AI。本站未测试设备、地域或账户可用性。": "Mandarin support for far-field Siri does not imply Chinese support for Siri AI. Some server features have daily limits and expanded access may carry future charges. Siri AI also supports Apple TV4K 2nd generation or later; FieldToFit has not tested devices, regions or account availability."
           },
           "source_hash": "6d9405f968abf2e3fb4dacea0f1a149043d53964bf8836367dae690f817baca3",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-16",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://developers.openai.com/api/docs/guides/decisions-voice",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: native voice Decisions",
+        "overview_zh": "其他 OpenAI · 语音原生接入 Decisions",
+        "source_posts": [],
+        "timestamp_basis": "source_date",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-167",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。",
+          "source_ids": [
+            "guide",
+            "changelog"
+          ],
+          "text": "官方 API 日志在 10 月 15 日加入 GPT-Live 原生 Decisions 集成：语音模型可识别需要处理的请求并直接调用 Decisions，减少经过应用转发的一次往返；开发者也可按输入或输出转写增量自行调用。当前文档示例使用 gpt-live-1 和 gpt-6-luna，并通过 session.delegation 配置选项；外部动作仍由应用执行，须等实际结果再告诉用户已完成。该变化是既有 Decisions API 的语音集成，不是重发 10 月 6 日公测，也不能据此声称 GPT-Live-1.1 已开放 API。只有来源日期，未推造北京公告时刻；本站未实测延迟或成本。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "OpenAI API",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-16T05:28:08.812705+00:00",
+        "updated_at": "2026-10-16T05:28:08.812705+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "guide",
+          "title": "官方语音连接 Decisions 指南",
+          "url": "https://developers.openai.com/api/docs/guides/decisions-voice"
+        },
+        {
+          "coverage": "link_only",
+          "id": "changelog",
+          "title": "OpenAI API 10 月 15 日更新日志",
+          "url": "https://developers.openai.com/api/docs/changelog.md"
+        }
+      ],
+      "state": "published",
+      "summary": "开发者可让 Live 直接调用 Decisions，或基于输入、输出转写增量自行触发。",
+      "title": "GPT-Live 原生连接 Decisions API，可在语音过程中触发决策",
+      "translations": {
+        "en": {
+          "fields": {
+            "GPT-Live 原生连接 Decisions API，可在语音过程中触发决策": "GPT-Live gains native Decisions API integration during voice interaction",
+            "OpenAI API 10 月 15 日更新日志": "Official API 10-15 changelog",
+            "其他 OpenAI · 语音原生接入 Decisions": "Other OpenAI: native voice Decisions",
+            "变化与适用范围": "Changes and scope",
+            "官方 API 日志在 10 月 15 日加入 GPT-Live 原生 Decisions 集成：语音模型可识别需要处理的请求并直接调用 Decisions，减少经过应用转发的一次往返；开发者也可按输入或输出转写增量自行调用。当前文档示例使用 gpt-live-1 和 gpt-6-luna，并通过 session.delegation 配置选项；外部动作仍由应用执行，须等实际结果再告诉用户已完成。该变化是既有 Decisions API 的语音集成，不是重发 10 月 6 日公测，也不能据此声称 GPT-Live-1.1 已开放 API。只有来源日期，未推造北京公告时刻；本站未实测延迟或成本。": "The official 10-15 API changelog adds native Decisions integration in GPT-Live. Live can identify a request and call Decisions directly, avoiding one application forwarding round trip; builders may also trigger calls from input or output transcript deltas. Current examples use gpt-live-1 and gpt-6-luna with session.delegation. The application still executes external actions and must report real results before the model claims completion. This extends the existing Decisions API rather than relaunching its 10-6 beta, and does not make GPT-Live-1.1 available through the API. Only the source date is known; FieldToFit has not benchmarked latency or cost.",
+            "官方语音连接 Decisions 指南": "Official voice-to-Decisions guide",
+            "开发者可让 Live 直接调用 Decisions，或基于输入、输出转写增量自行触发。": "Builders can let Live call Decisions directly or trigger decisions from input/output transcript deltas.",
+            "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。": "Registered official sources verified directly; source date retained without an invented announcement time."
+          },
+          "source_hash": "019a87c03ed3ff6ac451c5d27dea92db31ea86c2d7a9fb2dd3c522e68634cbb0",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-16",
+      "codex_28_days": {
+        "announced_at": "2026-10-15T21:30:38Z",
+        "date_precision": "instant",
+        "event_key": "https://github.com/openai/codex/releases/tag/rust-v0.163.0",
+        "group": "codex",
+        "official_day": null,
+        "overview_en": "CLI 0.163.0: settings, steering and resume",
+        "overview_zh": "CLI 0.163.0 · 配置、引导与恢复",
+        "source_posts": [],
+        "timestamp_basis": "official_timestamp",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-16",
+      "highlight": false,
+      "id": "D-165",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；使用官方发布时刻。",
+          "source_ids": [
+            "release"
+          ],
+          "text": "0.163.0 为 openai/codex 正式发行，发布时间换算为北京时间 10 月 16 日 05:30。可通过/config 检索并修改支持的设置，需重启的更改会提示；回复过程中发送追问可即时引导，打断还会停止活跃 Code Mode 单元及其嵌套调用。/keymap 支持配置引导键，默认 Ctrl+X；/daemon 可重启托管后台服务并预先提醒可能中断的工作。修复恢复线程时的权限与网络批准，仍尊重显式覆盖和当前托管策略；网络代理在 DNS 查询前先检查权限。发行包不再捆绑补丁 zsh，旧 shell 标志会收到迁移提醒。仅记录正式版，不将 alpha 算为已推出的稳定功能；本站未安装实测。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex CLI",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-16T05:27:46.692332+00:00",
+        "updated_at": "2026-10-16T05:27:46.692332+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "openai/codex 0.163.0 正式发行",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0"
+        }
+      ],
+      "state": "published",
+      "summary": "新增/config、可配置快捷键和后台服务重启入口，并修复会话恢复与网络权限边界。",
+      "title": "Codex CLI 0.163.0 正式版：配置检索、即时引导与权限恢复",
+      "translations": {
+        "en": {
+          "fields": {
+            "0.163.0 为 openai/codex 正式发行，发布时间换算为北京时间 10 月 16 日 05:30。可通过/config 检索并修改支持的设置，需重启的更改会提示；回复过程中发送追问可即时引导，打断还会停止活跃 Code Mode 单元及其嵌套调用。/keymap 支持配置引导键，默认 Ctrl+X；/daemon 可重启托管后台服务并预先提醒可能中断的工作。修复恢复线程时的权限与网络批准，仍尊重显式覆盖和当前托管策略；网络代理在 DNS 查询前先检查权限。发行包不再捆绑补丁 zsh，旧 shell 标志会收到迁移提醒。仅记录正式版，不将 alpha 算为已推出的稳定功能；本站未安装实测。": "The official openai/codex 0.163.0 release was published at 05:30 Beijing time on 10-16. Use /config to search and change supported preferences, with restart guidance where needed. Follow-ups can steer immediately, and interruption stops active Code Mode cells and nested calls. /keymap configures a leader key, defaulting to Ctrl+X; /daemon restarts managed servers after warning about affected work. Resume restores permissions and network approvals while respecting overrides and managed policy, and the proxy checks permission before DNS resolution. Packages no longer bundle patched zsh, with migration notices for retired shell flags. This is a stable release, not an alpha; FieldToFit has not installed or tested it.",
+            "CLI 0.163.0 · 配置、引导与恢复": "CLI 0.163.0: settings, steering and resume",
+            "Codex CLI 0.163.0 正式版：配置检索、即时引导与权限恢复": "Codex CLI 0.163.0: searchable preferences, immediate steering and restored permissions",
+            "openai/codex 0.163.0 正式发行": "Official openai/codex 0.163.0 release",
+            "变化与适用范围": "Changes and scope",
+            "新增/config、可配置快捷键和后台服务重启入口，并修复会话恢复与网络权限边界。": "Adds /config, configurable shortcuts and managed-server restart controls, with resume and network-permission fixes.",
+            "直接核对已登记官方出处；使用官方发布时刻。": "Registered official sources verified directly; official publication timestamp retained."
+          },
+          "source_hash": "183e72d3679c44cd3d425776b1aba508b06f7273932508bc1be0cef7804874c2",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-16",
+      "codex_28_days": {
+        "announced_at": "2026-10-15T15:11:30.957000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2110750421367287996",
+        "group": "codex",
+        "official_day": 11,
+        "overview_en": "Capacity changes: fewer interruptions",
+        "overview_zh": "容量优化 · 减少模型满载中断",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-15T15:11:30.957000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-16",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-16",
+            "evidence_url": "https://x.com/thsottiaux/status/2110750421367287996",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "已直接核对本人原帖；中文为本站译文。摘录以省略号标明省略，全文标记仅用于已取得的短帖。",
+            "text_en": "Day 11/ … decrease the occurrence of the disruptive \"Selected model is at capacity. Please try a different model\".",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "第11天／……减少“所选模型已满载，请尝试其他模型”这类中断的出现。",
+            "url": "https://x.com/thsottiaux/status/2110750421367287996"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "fix"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-15",
+      "highlight": false,
+      "id": "D-164",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导。",
+          "source_ids": [
+            "tibo"
+          ],
+          "text": "Tibo 于北京时间 10 月 15 日 23:11 发布官方 Day 11 更新，称已上线多项改动并增加算力，以明显减少“所选模型已满载，请尝试其他模型”的中断。即使仍遇到该情况，任务也预期可以在等待后自行继续，而不是一直阻塞。此处为官方服务行为说明，本站未做对照实测；不保证每个账户完全不再遇到满载，也不推造等待时长、客户端版本、套餐范围或需要操作的开关。官方请仍遇到该问题的用户反馈。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-16T05:27:24.706058+00:00",
+        "updated_at": "2026-10-16T05:27:24.706058+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "tibo",
+          "title": "Tibo 官方 Day 11 容量公告",
+          "url": "https://x.com/thsottiaux/status/2110750421367287996"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo 身份与头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo 称已上线多项改动与更多算力；遇到满载时也应在等待后自动继续。",
+      "title": "官方 Day 11：扩充算力，减少模型满载中断",
+      "translations": {
+        "en": {
+          "fields": {
+            "Tibo 于北京时间 10 月 15 日 23:11 发布官方 Day 11 更新，称已上线多项改动并增加算力，以明显减少“所选模型已满载，请尝试其他模型”的中断。即使仍遇到该情况，任务也预期可以在等待后自行继续，而不是一直阻塞。此处为官方服务行为说明，本站未做对照实测；不保证每个账户完全不再遇到满载，也不推造等待时长、客户端版本、套餐范围或需要操作的开关。官方请仍遇到该问题的用户反馈。": "At 23:11 Beijing time on 10-15, Tibo announced official Day 11: shipped changes and added compute intended to substantially reduce the selected-model-at-capacity interruption. If it occurs, work should eventually resume on its own instead of remaining blocked. These are official service claims, not a FieldToFit controlled test. The post gives no guaranteed wait, client version, plan list or required toggle, and does not promise zero capacity errors for every account. Tibo asks users to report continuing occurrences.",
+            "Tibo 官方 Day 11 容量公告": "Tibo official Day 11 capacity announcement",
+            "Tibo 称已上线多项改动与更多算力；遇到满载时也应在等待后自动继续。": "Tibo says changes and added compute are live; capacity-blocked work should eventually continue automatically.",
+            "Tibo 身份与头像": "Tibo identity and avatar",
+            "变化与适用范围": "Changes and scope",
+            "官方 Day 11：扩充算力，减少模型满载中断": "Official Day 11: added compute to reduce model-capacity interruptions",
+            "容量优化 · 减少模型满载中断": "Capacity changes: fewer interruptions",
+            "已直接核对本人原帖；中文为本站译文。摘录以省略号标明省略，全文标记仅用于已取得的短帖。": "Original post verified directly; Chinese is a FieldToFit translation. Ellipses mark omissions in excerpts; full labels are used only for verified short posts.",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导。": "Registered official sources verified directly; post times are ID-derived."
+          },
+          "source_hash": "1e4084547a5c3f6277fc41385f362daf6369d59be74f5dd45f6a45e9e9d2b1de",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-16",
+      "codex_28_days": {
+        "announced_at": "2026-10-15T04:55:51.053000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2110595484180214059",
+        "group": "codex",
+        "official_day": 10,
+        "overview_en": "Day 10 reset: officially confirmed complete",
+        "overview_zh": "Day 10 重置 · 官方宣布完成",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-15T04:55:51.053000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-16",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-16",
+            "evidence_url": "https://x.com/thsottiaux/status/2110595484180214059",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "已直接核对本人原帖；中文为本站译文。摘录以省略号标明省略，全文标记仅用于已取得的短帖。",
+            "text_en": "The reports of my reset button being lost are greatly exaggerated\n\nDay 10/ Reset",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "所谓“我弄丢了重置按钮”的说法严重夸大了。\n\n第10天／重置",
+            "url": "https://x.com/thsottiaux/status/2110595484180214059"
+          },
+          {
+            "announced_at": "2026-10-15T04:56:07.708000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-16",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-16",
+            "context": {
+              "author_handle": "thsottiaux",
+              "author_name": "Tibo",
+              "kind": "reply",
+              "text_en": "Day 10/ Reset",
+              "text_scope": "excerpt",
+              "translation_zh": "第10天／重置",
+              "url": "https://x.com/thsottiaux/status/2110595484180214059"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2110595554036400151",
+            "kind": "reply",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "已直接核对本人原帖；中文为本站译文。摘录以省略号标明省略，全文标记仅用于已取得的短帖。",
+            "text_en": "Landing within the next 2 hours",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "会在接下来2小时内落地。",
+            "url": "https://x.com/thsottiaux/status/2110595554036400151"
+          },
+          {
+            "announced_at": "2026-10-15T06:28:13.924000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-16",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-16",
+            "context": {
+              "author_handle": "thsottiaux",
+              "author_name": "Tibo",
+              "kind": "quote",
+              "text_en": "Landing within the next 2 hours",
+              "text_scope": "full",
+              "translation_zh": "会在接下来2小时内落地。",
+              "url": "https://x.com/thsottiaux/status/2110595554036400151"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2110618732666257557",
+            "kind": "supplement",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "已直接核对本人原帖；中文为本站译文。摘录以省略号标明省略，全文标记仅用于已取得的短帖。",
+            "text_en": "Done and dusted",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "已完成。",
+            "url": "https://x.com/thsottiaux/status/2110618732666257557"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-15",
+      "highlight": false,
+      "id": "D-160",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导。",
+          "source_ids": [
+            "tibo",
+            "window",
+            "completion"
+          ],
+          "text": "Tibo 于北京时间 10 月 15 日 12:55 发布官方 Day 10 重置公告，12:56 回复预计在接下来 2 小时内落地，14:28 再转引该回复并写下“已完成”。这三条属于同一事件，合并为一条日志，保留官方 Day 10 和本站日历 Day 11。完成声明的发布时间不等于所有账户实际到账时刻；原帖没有逐项列出适用套餐、额度窗口、恢复数量或准确生效起点。请以自己账户的用量显示为准。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-16T05:27:02.567512+00:00",
+        "updated_at": "2026-10-16T05:27:02.567512+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "tibo",
+          "title": "Tibo 官方 Day 10 公告",
+          "url": "https://x.com/thsottiaux/status/2110595484180214059"
+        },
+        {
+          "coverage": "link_only",
+          "id": "window",
+          "title": "Tibo 两小时窗口回复",
+          "url": "https://x.com/thsottiaux/status/2110595554036400151"
+        },
+        {
+          "coverage": "link_only",
+          "id": "completion",
+          "title": "Tibo 官方完成声明",
+          "url": "https://x.com/thsottiaux/status/2110618732666257557"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo 身份与头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "北京 10 月 15 日 12:55 官宣，14:28 发布完成声明；套餐与用量窗口未逐项列出。",
+      "title": "官方 Day 10：Tibo 发布重置，并随后宣布完成",
+      "translations": {
+        "en": {
+          "fields": {
+            "Day 10 重置 · 官方宣布完成": "Day 10 reset: officially confirmed complete",
+            "Tibo 两小时窗口回复": "Tibo two-hour delivery-window reply",
+            "Tibo 于北京时间 10 月 15 日 12:55 发布官方 Day 10 重置公告，12:56 回复预计在接下来 2 小时内落地，14:28 再转引该回复并写下“已完成”。这三条属于同一事件，合并为一条日志，保留官方 Day 10 和本站日历 Day 11。完成声明的发布时间不等于所有账户实际到账时刻；原帖没有逐项列出适用套餐、额度窗口、恢复数量或准确生效起点。请以自己账户的用量显示为准。": "Tibo announced the official Day 10 reset at 12:55 Beijing time on 10-15, followed at 12:56 by a 2-hour delivery estimate and at 14:28 by a completion post quoting that reply. These are one event, retaining official Day 10 and calendar Day 11. The completion-post time is not every account’s credit time. The posts do not itemize plan eligibility, usage windows, restored amounts or an exact activation start. Check your account’s usage display.",
+            "Tibo 官方 Day 10 公告": "Tibo official Day 10 announcement",
+            "Tibo 官方完成声明": "Tibo official completion statement",
+            "Tibo 身份与头像": "Tibo identity and avatar",
+            "北京 10 月 15 日 12:55 官宣，14:28 发布完成声明；套餐与用量窗口未逐项列出。": "Announced at 12:55 Beijing time on 10-15, with completion at 14:28; plans and usage windows are not itemized.",
+            "变化与适用范围": "Changes and scope",
+            "官方 Day 10：Tibo 发布重置，并随后宣布完成": "Official Day 10: Tibo announces a reset and subsequently confirms completion",
+            "已直接核对本人原帖；中文为本站译文。摘录以省略号标明省略，全文标记仅用于已取得的短帖。": "Original post verified directly; Chinese is a FieldToFit translation. Ellipses mark omissions in excerpts; full labels are used only for verified short posts.",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导。": "Registered official sources verified directly; post times are ID-derived."
+          },
+          "source_hash": "aeabea86f30e4fadaeda59d151b93009e07b1af5b822988041d7716b8395a265",
           "state": "reviewed"
         }
       }
@@ -23219,7 +23862,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-15",
+  "reviewed_at": "2026-10-16",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

@@ -19,8 +19,23 @@ def event(data, ident='D-78'):
 def test_dates_numbering_precision_shared_api_and_mcp(client):
     body = client.get('/api/v1/platform/news').json
     days = body['codex_progress']['days']
-    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-14', 10), ('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
+    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-16', 12), ('2026-10-15', 11), ('2026-10-14', 10), ('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
     by_date = {d['date']: d for d in days}
+    assert set(by_date['2026-10-16']['codex_ids']) == {'D-155', 'D-165'}
+    assert set(by_date['2026-10-16']['other_openai_ids']) == {'D-168', 'D-169'}
+    assert set(by_date['2026-10-15']['codex_ids']) == {'D-160', 'D-164'}
+    assert set(by_date['2026-10-15']['other_openai_ids']) == {'D-167', 'D-170'}
+    reset = event(body, 'D-160')['codex_28_days']
+    assert reset['official_day'] == 10 and reset['type'] == 'announcement' and 'reset' not in reset
+    assert len(reset['source_posts']) == 3 and reset['source_posts'][-1]['text_en'] == 'Done and dusted'
+    assert event(body, 'D-164')['codex_28_days']['official_day'] == 11
+    assert event(body, 'D-165')['codex_28_days']['timestamp_basis'] == 'official_timestamp'
+    voice = event(body, 'D-155')
+    assert len(voice['interpretation']) >= 2 and voice['codex_28_days']['source_posts'][0]['context']['author_handle'] == 'OpenAI'
+    for ident in ['D-167', 'D-170']:
+        item = event(body, ident)
+        assert item['event_date'] is None and item['codex_28_days']['announced_at'] is None
+        assert item['codex_28_days']['date_precision'] == 'source_date'
     assert set(by_date['2026-10-14']['codex_ids']) == {'D-145', 'D-146'}
     storage = event(body, 'D-145')['codex_28_days']
     assert storage['official_day'] == 9 and storage['date_precision'] == 'instant'
@@ -247,7 +262,7 @@ def test_month_grid_has_real_dates_without_creating_logs():
     oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
     assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
     assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
-    assert sum(bool(c['log']) for c in oct)==10 and sum(bool(c['log']) for c in nov)==0
+    assert sum(bool(c['log']) for c in oct)==12 and sum(bool(c['log']) for c in nov)==0
     assert topic==before
 
 
