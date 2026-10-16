@@ -4,23 +4,62 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
-<a id="v1.11.1"></a>
-## v1.11.1 · 首页显示完整模型原图 · 2026-10-16
+<a id="v1.11.3"></a>
+## v1.11.3 · 首页显示完整模型原图 · 2026-10-17
 
-<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-10-17 -->
 <!-- public-title:en:Complete original model charts on the homepage -->
 <!-- release-summary:zh:start -->
 - 模型能力与价格按Artificial Analysis、Arena上下排列，每行展示一张完整原图；保留模型名称、公司颜色、引线、评分区间、坐标单位及真实日期。
 - 桌面与手机均等比显示整张图，点击图表或阅读入口直达对应来源；复用完整栏目的绘图与当前已审快照，保持筛选、查找和全屏功能。
-- 本批为独立工作区的本地显示修正，未部署或公开发布；不修改模型数值、内容记录或生产数据库。
+- 已部署v1.11.3；双语原图数据、来源入口、正式资源及HTTP／MCP版本通过线上直读核对，既有内容保持。双语四宽度及交互通过本机验收；线上浏览器连接超时，交互复验待补。
 <!-- release-summary:zh:end -->
 <!-- release-summary:en:start -->
 - Display complete Artificial Analysis and Arena charts, one per row, preserving model names, company colors, label leaders, score intervals, units and genuine dates.
 - Fit each full chart proportionally on desktop and mobile. Both the chart and reading link open the corresponding source; reuse the full section’s renderer and current reviewed snapshot while preserving filters, model search and fullscreen.
-- This display correction is local to an isolated worktree and has not been deployed or publicly released. Model values, content records and production databases are unchanged.
+- Deploy v1.11.3 and verify bilingual chart data, source links, production assets and HTTP/MCP versions through direct reads, preserving existing content. Bilingual layouts at four widths and interactions passed local checks; production browser interaction checks remain pending after connection timeouts.
 <!-- release-summary:en:end -->
 
-对应[REQ-6-31](FieldToFit-PM.md#req-6-31)及[确认方案](FieldToFit-PM.md#for-you-preview-hub-plan)。先更新总览再开发验证；对v1.11.0后的累计范围判级为既有模块的兼容显示patch，无新模块、主要阅读流程重构或数据库迁移。首页读取新增只用于绘图的最小坐标字段，保留原预览image字段兼容旧读取端；完整接口与已审快照不变。独立工作区基于v1.11.0，本批拟交付v1.11.1；与并行内容更新正式合入前需按最新已交付版本复核序号，不覆盖历史标签。实际验证见[验收记录](docs/validation/2026-10-16-model-original-preview.md)。
+对应[REQ-6-31](FieldToFit-PM.md#req-6-31)及[确认方案](FieldToFit-PM.md#for-you-preview-hub-plan)。先更新总览再开发验证；对v1.11.0后的累计范围判级为既有模块的兼容显示patch，无新模块、主要阅读流程重构或数据库迁移。首页读取新增只用于绘图的最小坐标字段，保留原预览image字段兼容旧读取端；完整接口与已审快照不变。原图改动先在独立工作区完成；2026-10-17所有者再次授权更新部署并允许协调并行任务。合入已发布v1.11.2后接续为v1.11.3，保留v1.11.1内容批次、v1.11.2专题和全部历史标签。实际验证见[验收记录](docs/validation/2026-10-16-model-original-preview.md)。
+
+<a id="v1.11.2"></a>
+## v1.11.2 · Codex Day 10／11及六项官方更新 · 2026-10-16
+
+<!-- public-title:en:Codex Days 10 and 11 with six official updates -->
+<!-- release-summary:zh:start -->
+- 补入官方Day 10重置与完成声明、Day 11容量优化，归真实北京日期10月15日；完成声明不冒充准确生效或账户到账时刻。
+- 整理CLI 0.163.0、GPT-Live-1.1语音、原生Decisions、Enterprise Sites、Rosalind学术申请及Sites建站数调整；语音复用D-155并保留已有安全分析，API尚待推出。
+- 八项经具体批准、双语三宽度和AI同源预览；专题37条（21主线／16其他OpenAI），严格reset计数仍0，真实头像缓存保留出处。兼容既有首页、完整栏目、接口与日程。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 10 reset and completion statement and Day 11 capacity improvements on their real October 15 Beijing dates. A completion post is not an exact activation or account-credit time.
+- Cover CLI 0.163.0, GPT-Live-1.1 Voice, native Decisions integration, Enterprise Sites, Rosalind academic applications and Site-count changes. Reuse D-155 for Voice and retain its existing safety analysis; the Voice API remains forthcoming.
+- Publish eight approved topic entries after bilingual human/AI previews at three widths. The topic has 37 logs (21 Codex/Work and 16 Other OpenAI), with zero strict resets and a provenance-backed real-avatar cache. Preserve the homepage, complete sections, compatible interfaces and schedules.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者已对两项直接授权，并明确回复“这6项一并发布”。复用同事件编号与现有审核／发布及MCP流程，不另建公开来源或台账。结合v1.11.0后的累计内容改动判为兼容patch，无新模块、主要阅读流程重构、协议变化或数据库迁移；保留并行批次及其完整历史。实际来源、日期、预览、回归及部署状态见[验收](docs/validation/2026-10-16-codex-days10-11.md)。未来新批次仍具体确认。
+
+<a id="v1.11.1"></a>
+## v1.11.1 · Muse Spark Open专题与八项获批动态 · 2026-10-16
+
+<!-- site-deployed:2026-10-16 -->
+<!-- public-title:en:Muse Spark Open analysis and eight approved updates -->
+<!-- release-summary:zh:start -->
+- 为所选Muse Spark Open材料整理四结论、同号论述及三张本站重绘，区分部署门槛、任务计分、评测来源与局部／端到端收益。
+- 接续10月16日获批A–H八项动态、六份档案与明确对应的旧事件，按优化后的首页更新动态重点、完整栏目及总表最新事件，保留原始日期和历史。
+- 新专题正式发布后使用既有四篇轮换；完整报告索引继续保留全部历史，未选报告和模型榜单保持原状态。
+- 保留同条目并行补充的语音与Codex出处，澄清跨日日期，并补齐已公开引用但缺失的作者头像。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Present four findings, matching arguments and three original diagrams for the selected Muse Spark Open materials, separating deployment requirements, task scoring, evidence provenance and kernel versus end-to-end gains.
+- Continue the eight approved October16 A–H updates, six dossiers and explicitly related earlier events. Refresh highlights, complete sections and latest-event tables on the optimized homepage while retaining source dates and history.
+- Apply the existing four-report rotation after successful publication. Keep all historical reports in the complete index and preserve unselected reports and model-chart snapshots.
+- Preserve parallel Voice and Codex evidence on the same item, clarify UTC and Beijing dates, and restore its missing publicly referenced author image.
+<!-- release-summary:en:end -->
+
+源码仅导出公开白名单，并移除历史种子中的私密英文审阅说明与时间；公开正文、译文与审核指纹保持，生产私密审阅历史不修改。
+
+对应REQ-6-31至33、REQ-11、REQ-22-8及REQ-23。本批与自v1.11.0以来累计变化均为既有模块的兼容内容／静态资源patch，无新模块、主要阅读流程重构、数据库迁移或日程变更；不改变首页七区结构。真实用户明确批准A–H、报告1及首页／详情同步、报告轮替。报告2和待核验线索不发布；不刷新AA／Arena数值。实际验证与部署状态见[本批记录](docs/validation/2026-10-16-muse-spark-and-daily.md)。
 
 <a id="v1.11.0"></a>
 ## v1.11.0 · For you 七区预览与完整栏目阅读 · 2026-10-15

@@ -36,7 +36,7 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.11.1](CHANGELOG.md#v1.11.1)** · Release tag not yet published
+**Current source version: [v1.11.3](CHANGELOG.md#v1.11.3)** · [fieldtofit-v1.11.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.3)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
@@ -44,7 +44,7 @@ Source and deployed versions are verified separately; see this release's [valida
 <!-- latest-summary:start -->
 - Display complete Artificial Analysis and Arena charts, one per row, preserving model names, company colors, label leaders, score intervals, units and genuine dates.
 - Fit each full chart proportionally on desktop and mobile. Both the chart and reading link open the corresponding source; reuse the full section’s renderer and current reviewed snapshot while preserving filters, model search and fullscreen.
-- This display correction is local to an isolated worktree and has not been deployed or publicly released. Model values, content records and production databases are unchanged.
+- Deploy v1.11.3 and verify bilingual chart data, source links, production assets and HTTP/MCP versions through direct reads, preserving existing content. Bilingual layouts at four widths and interactions passed local checks; production browser interaction checks remain pending after connection timeouts.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

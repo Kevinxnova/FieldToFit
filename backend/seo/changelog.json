@@ -1,18 +1,18 @@
 {
-  "version": "1.11.1",
-  "revision": "129d092cdb7d153d6e93c7e8b6563d2812233197838208eb5c283e925cd5156a",
+  "version": "1.11.3",
+  "revision": "1b476d6b2b2a1c17882ead3fa47fd686d128389ef4847185db012a4307035531",
   "items": [
     {
-      "version": "1.11.1",
-      "date": "2026-10-16",
-      "deployed_on": "",
+      "version": "1.11.3",
+      "date": "2026-10-17",
+      "deployed_on": "2026-10-17",
       "copy": {
         "zh": {
           "title": "首页显示完整模型原图",
           "highlights": [
             "模型能力与价格按Artificial Analysis、Arena上下排列，每行展示一张完整原图；保留模型名称、公司颜色、引线、评分区间、坐标单位及真实日期。",
             "桌面与手机均等比显示整张图，点击图表或阅读入口直达对应来源；复用完整栏目的绘图与当前已审快照，保持筛选、查找和全屏功能。",
-            "本批为独立工作区的本地显示修正，未部署或公开发布；不修改模型数值、内容记录或生产数据库。"
+            "已部署v1.11.3；双语原图数据、来源入口、正式资源及HTTP／MCP版本通过线上直读核对，既有内容保持。双语四宽度及交互通过本机验收；线上浏览器连接超时，交互复验待补。"
           ],
           "details": "",
           "translation_available": true
@@ -22,7 +22,65 @@
           "highlights": [
             "Display complete Artificial Analysis and Arena charts, one per row, preserving model names, company colors, label leaders, score intervals, units and genuine dates.",
             "Fit each full chart proportionally on desktop and mobile. Both the chart and reading link open the corresponding source; reuse the full section’s renderer and current reviewed snapshot while preserving filters, model search and fullscreen.",
-            "This display correction is local to an isolated worktree and has not been deployed or publicly released. Model values, content records and production databases are unchanged."
+            "Deploy v1.11.3 and verify bilingual chart data, source links, production assets and HTTP/MCP versions through direct reads, preserving existing content. Bilingual layouts at four widths and interactions passed local checks; production browser interaction checks remain pending after connection timeouts."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.3"
+    },
+    {
+      "version": "1.11.2",
+      "date": "2026-10-16",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Codex Day 10／11及六项官方更新",
+          "highlights": [
+            "补入官方Day 10重置与完成声明、Day 11容量优化，归真实北京日期10月15日；完成声明不冒充准确生效或账户到账时刻。",
+            "整理CLI 0.163.0、GPT-Live-1.1语音、原生Decisions、Enterprise Sites、Rosalind学术申请及Sites建站数调整；语音复用D-155并保留已有安全分析，API尚待推出。",
+            "八项经具体批准、双语三宽度和AI同源预览；专题37条（21主线／16其他OpenAI），严格reset计数仍0，真实头像缓存保留出处。兼容既有首页、完整栏目、接口与日程。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Codex Days 10 and 11 with six official updates",
+          "highlights": [
+            "Add the official Day 10 reset and completion statement and Day 11 capacity improvements on their real October 15 Beijing dates. A completion post is not an exact activation or account-credit time.",
+            "Cover CLI 0.163.0, GPT-Live-1.1 Voice, native Decisions integration, Enterprise Sites, Rosalind academic applications and Site-count changes. Reuse D-155 for Voice and retain its existing safety analysis; the Voice API remains forthcoming.",
+            "Publish eight approved topic entries after bilingual human/AI previews at three widths. The topic has 37 logs (21 Codex/Work and 16 Other OpenAI), with zero strict resets and a provenance-backed real-avatar cache. Preserve the homepage, complete sections, compatible interfaces and schedules."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.2"
+    },
+    {
+      "version": "1.11.1",
+      "date": "2026-10-16",
+      "deployed_on": "2026-10-16",
+      "copy": {
+        "zh": {
+          "title": "Muse Spark Open专题与八项获批动态",
+          "highlights": [
+            "为所选Muse Spark Open材料整理四结论、同号论述及三张本站重绘，区分部署门槛、任务计分、评测来源与局部／端到端收益。",
+            "接续10月16日获批A–H八项动态、六份档案与明确对应的旧事件，按优化后的首页更新动态重点、完整栏目及总表最新事件，保留原始日期和历史。",
+            "新专题正式发布后使用既有四篇轮换；完整报告索引继续保留全部历史，未选报告和模型榜单保持原状态。",
+            "保留同条目并行补充的语音与Codex出处，澄清跨日日期，并补齐已公开引用但缺失的作者头像。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Muse Spark Open analysis and eight approved updates",
+          "highlights": [
+            "Present four findings, matching arguments and three original diagrams for the selected Muse Spark Open materials, separating deployment requirements, task scoring, evidence provenance and kernel versus end-to-end gains.",
+            "Continue the eight approved October16 A–H updates, six dossiers and explicitly related earlier events. Refresh highlights, complete sections and latest-event tables on the optimized homepage while retaining source dates and history.",
+            "Apply the existing four-report rotation after successful publication. Keep all historical reports in the complete index and preserve unselected reports and model-chart snapshots.",
+            "Preserve parallel Voice and Codex evidence on the same item, clarify UTC and Beijing dates, and restore its missing publicly referenced author image."
           ],
           "details": "",
           "translation_available": true

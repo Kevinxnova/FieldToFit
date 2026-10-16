@@ -621,5 +621,108 @@
       "locator": "physical p5",
       "scope": "No inference of universal or statistically significant gains from overlapping source ranges."
     }
+  },
+  "/report-figures/muse-spark-open-202610-task-scope.png": {
+    "sha256": "3aca863c5684c068871e943862c25c06aec15fcbebdf876027167017181a90aa",
+    "source_urls": [
+      "https://research.meta.ai/static/muse-spark-open-evaluation-methodology",
+      "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Meta Muse Spark Open model card, evaluation methodology and launch post.",
+    "version": "Muse Spark Open · 2026-10 model card and methodology / 2026-10-15 announcement",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "osworld": {
+        "tasks": 361,
+        "attempts": 4,
+        "step_cap": 200,
+        "score": 80.4,
+        "unit": "mean task reward × 100",
+        "excluded": "Google Drive-dependent tasks"
+      },
+      "mcp_atlas": {
+        "benchmark_tasks": 1000,
+        "public": 500,
+        "private": 500,
+        "servers": 36,
+        "tools": 220,
+        "claim_grades": [
+          0,
+          0.5,
+          1
+        ],
+        "pass_threshold": 0.75,
+        "reported_pass_rate_percent": 89.2,
+        "reported_split": "Not explicitly specified in the source methodology"
+      },
+      "locator": "Methodology pp2-3; model card Benchmarks",
+      "scope": "Different evaluation protocols; not a common accuracy scale"
+    }
+  },
+  "/report-figures/muse-spark-open-202610-provenance.png": {
+    "sha256": "530654174159de178f943149d519159f84345dad9e724f2d0eb0ec76c09127b3",
+    "source_urls": [
+      "https://research.meta.ai/static/muse-spark-open-evaluation-methodology"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Meta Muse Spark Open model card, evaluation methodology and launch post.",
+    "version": "Muse Spark Open · 2026-10 model card and methodology / 2026-10-15 announcement",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "rows": [
+        [
+          "AA Intelligence Index",
+          "Artificial Analysis snapshot",
+          "2026-10-07; v4.3"
+        ],
+        [
+          "MCP-Atlas",
+          "Scale AI; Beam self-report",
+          "Split / grader / threshold matter"
+        ],
+        [
+          "OSWorld-Verified",
+          "Meta runs; Kimi self-report",
+          "361 tasks; native coordinates"
+        ],
+        [
+          "DeepSWE v1.1",
+          "Preferred harness by model",
+          "Muse Code / Claude Code / others"
+        ],
+        [
+          "Terminal-Bench 2.1",
+          "AA; Beam self-report",
+          "89 tasks; Terminus 2 for AA runs"
+        ],
+        [
+          "Video-MME v2",
+          "Internal runs",
+          "800 videos / 3,200 questions; no audio"
+        ]
+      ],
+      "locator": "Methodology pp1-7",
+      "scope": "Source and setup map; no new ranking, no zero-imputation for missing results"
+    }
+  },
+  "/report-figures/muse-spark-open-202610-runtime-scope.png": {
+    "sha256": "3e0f2557ec812d62d42ef3748cd645ed957a264f54f4d10a584a1f2aaa168fcc",
+    "source_urls": [
+      "https://research.meta.ai/blog/muse-spark-open"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Meta Muse Spark Open model card, evaluation methodology and launch post.",
+    "version": "Muse Spark Open · 2026-10 model card and methodology / 2026-10-15 announcement",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kernel_speedup_range": [
+        1.03,
+        3.95
+      ],
+      "kernel_unit": "×",
+      "kernel_hardware": "NVIDIA and AMD",
+      "end_to_end_speedup_percent": 3,
+      "end_to_end_hardware": "AMD MI350",
+      "locator": "Launch post, Available Now",
+      "scope": "Separate author-reported scopes; not scaled bars or combined resource/cost arithmetic"
+    }
   }
 }

@@ -104,7 +104,7 @@ def test_conflicts_import_provenance_and_publication_preview(client):
 def test_withdraw_restores_to_draft_and_preserves_previous_public_while_editing(client):
     migrate(client);ident='CW-M01';original=client.get('/api/v1/platform/watch?id='+ident).json
     d=call(client,f'/content/watch/{ident}',method='get').json
-    original_seq=d['history'][0]['seq'];d['draft']['name']='Revised name'
+    original_seq=d['history'][0]['seq'];original_draft_name=d['draft']['name'];d['draft']['name']='Revised name'
     call(client,f'/content/watch/{ident}',d,'patch')
     assert client.get('/api/v1/platform/watch?id='+ident).json==original
     d=publish(client,'watch',ident)
@@ -112,7 +112,7 @@ def test_withdraw_restores_to_draft_and_preserves_previous_public_while_editing(
     assert withdrawn['state']=='withdrawn'
     assert client.get('/api/v1/platform/watch?id='+ident).status_code==404
     restored=call(client,f'/content/watch/{ident}/restore',{'draft_version':withdrawn['draft_version'],'seq':original_seq})
-    assert restored.status_code==200 and restored.json['draft']['name']==original['items'][0]['name']
+    assert restored.status_code==200 and restored.json['draft']['name']==original_draft_name
     assert client.get('/api/v1/platform/watch?id='+ident).status_code==404
     publish(client,'watch',ident)
     assert client.get('/api/v1/platform/watch?id='+ident).json['items']==original['items']
