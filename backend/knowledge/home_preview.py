@@ -13,7 +13,7 @@ def event_date(item):
 
 
 def chart_preview(source):
-    """A raster-free thumbnail, with no model bodies or interactive point dataset."""
+    """Original plot coordinates plus a legacy thumbnail for older preview clients."""
     points = source['points']
     image = None
     if points:
@@ -37,7 +37,7 @@ def chart_preview(source):
             marks.append(f'<circle cx="{x(p["price"]):.2f}" cy="{y(p["score"]):.2f}" r="3" fill="#668e73"/>')
         svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 210"><g font-family="sans-serif" font-size="13" fill="#718476">'+''.join(marks)+'</g></svg>'
         image = 'data:image/svg+xml;base64,'+base64.b64encode(svg.encode()).decode()
-    return {k: source[k] for k in ('id','name','source_url','source_updated_at','checked_at','score_label','price_label','price_label_en','coverage')} | {'image': image}
+    return {k: source[k] for k in ('id','name','source_url','source_updated_at','checked_at','score_label','price_label','price_label_en','coverage')} | {'image': image, 'plot_points': [{k: p[k] for k in ('id', 'name', 'organization', 'score', 'price', 'score_low', 'score_high', 'estimated') if k in p} for p in points]}
 
 
 def project(data, view):

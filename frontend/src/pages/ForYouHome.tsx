@@ -5,6 +5,7 @@ import { ForYouHero } from '../components/workspace/ForYouHero';
 import { DailyPreview } from '../components/workspace/DailyPreview';
 import { FollowUpdates } from '../components/workspace/FollowUpdates';
 import { HotCardHighlights } from '../components/workspace/HotCards';
+import { ModelChart } from '../components/workspace/ModelChart';
 import { MapCards } from '../components/workspace/TechnicalMaps';
 import { ReadingContents } from '../components/workspace/ReadingContents';
 import { VisitReady } from '../components/workspace/SiteVisits';
@@ -67,8 +68,13 @@ function Home(){
   </div>;
 }
 function ModelPreview({source}:{source:ChartPreview}){
-  const {pick,zh}=useWorkspace();const to='/for-you/models?chart='+source.id;
-  return <article><div className="platform-section-heading"><h3><Link to={to}>{source.name}</Link></h3><span>{source.coverage.plotted} {pick('个配置','configurations')}</span></div><p>{source.score_label} ↑</p>{source.image&&<Link to={to} className="home-chart-image"><img src={source.image} alt={source.name+pick('：已审快照的能力与价格分布缩略图',' reviewed capability and price distribution')} width="700" height="210" loading="lazy"/></Link>}<p className="home-chart-unit">{zh?source.price_label:source.price_label_en} · {pick('对数刻度','log scale')} →</p><p className="home-meta">{pick('来源日期：','Source date: ')}{source.source_updated_at||pick('来源未标注','Not provided')} · {pick('核对：','Checked: ')}{source.checked_at}</p><div className="platform-actions"><Link to={to}>{pick('查看完整图表与配置','Open full chart and configurations')} ↗</Link><SourceLink url={source.source_url}>{pick('原始来源','Original source')}</SourceLink></div></article>;
+  const {pick}=useWorkspace();const to='/for-you/models?chart='+source.id;
+  return <article>
+    <div className="platform-section-heading"><h3><Link to={to}>{source.name}</Link></h3><span>{source.coverage.plotted} {pick('个配置','configurations')}</span></div>
+    {!!source.plot_points?.length&&<Link to={to} className="home-chart-image landscape-plot" aria-label={source.name+pick('：查看完整图表与配置',' — open full chart and configurations')}><ModelChart source={{...source,points:source.plot_points}}/></Link>}
+    <p className="home-meta">{pick('来源日期：','Source date: ')}{source.source_updated_at||pick('来源未标注','Not provided')} · {pick('核对：','Checked: ')}{source.checked_at}</p>
+    <div className="platform-actions"><Link to={to}>{pick('查看完整图表与配置','Open full chart and configurations')} ↗</Link><SourceLink url={source.source_url}>{pick('原始来源','Original source')}</SourceLink></div>
+  </article>;
 }
 function HomeNewsArt({item,lead}:{item:NewsItem;lead:boolean}){
   const {pick}=useWorkspace();const [broken,setBroken]=useState(false);

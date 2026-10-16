@@ -3,10 +3,11 @@ import { request, readToken } from './knowledge';
 import { currentLanguage, useLanguage, restoreLanguageScroll } from '../locale/language';
 import type { NewsCollection } from '../components/workspace/NewsReading';
 import type { WatchCollection } from '../components/workspace/ContinuousWatch';
+import type { ChartPoint } from '../components/workspace/ModelChart';
 import type { Landscape } from '../components/workspace/ModelLandscape';
 import type { DailyPreviewData } from '../components/workspace/DailyPreview';
 
-export type ChartPreview = Pick<Landscape['sources'][number],'id'|'name'|'source_url'|'source_updated_at'|'checked_at'|'score_label'|'price_label'|'price_label_en'|'coverage'> & {image:string|null};
+export type ChartPreview = Pick<Landscape['sources'][number],'id'|'name'|'source_url'|'source_updated_at'|'checked_at'|'score_label'|'price_label'|'price_label_en'|'coverage'> & {image:string|null;plot_points?:ChartPoint[]};
 export type ReadingView = 'full'|'home'|'news'|'watch'|'models'|'hot-cards'|'codex';
 export type ReadingHome = {view?:ReadingView;home_preview?:{highlights:string[];hot_cards:string[];reports:string[];codex:string[];watch_events:{watch_id:string;news_id:string;date:string}[]};chart_previews?:ChartPreview[];revision:string;safety:{items:[string,boolean,[string,string,string][],string[]?][];aliases:unknown[];daily?:string[]};news:NewsCollection;watch:WatchCollection;projects:WatchCollection;charts:Landscape;daily:DailyPreviewData};
 type Entry = {data:any;error:string;pending?:Promise<void>;used:number;bytes:number;home:boolean;terminal?:boolean};

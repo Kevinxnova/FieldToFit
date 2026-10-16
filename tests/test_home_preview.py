@@ -39,6 +39,9 @@ def test_home_contains_only_bounded_previews_and_real_chart_metadata(client):
         for key in ('source_url','source_updated_at','checked_at','score_label','price_label','price_label_en'):
             assert preview[key] == source[key]
         assert 'points' not in preview and preview['image'].startswith('data:image/svg+xml;base64,')
+        expected = [{k:p[k] for k in ('id','name','organization','score','price','score_low','score_high','estimated') if k in p} for p in source['points']]
+        assert preview['plot_points'] == expected
+        assert len(preview['plot_points']) == source['coverage']['plotted']
     assert len(response.data) < len(client.get(PATH).data)*.45
     assert home['safety'] == full['safety']
     assert client.get(PATH).json == full  # A lightweight view cannot mutate full public reads.
@@ -149,3 +152,19 @@ def test_archive_date_basis_category_and_invalid_page():
     assert result['items'][0]['id'] == 'D-12'
     args['news_type'] = 'model'
     assert not news_archive(records, args)['items']
+
+
+def test_home_plot_follows_reviewed_changes_without_mutating_source(client):
+    full = client.get(PATH).json
+    source = full['charts']['sources'][0]
+    source['points'][0].update(name='Reviewed <model> & configuration', score=42, price=1.25)
+    source['checked_at'] = '2026-10-16'
+    original = copy.deepcopy(full)
+    preview = project(copy.deepcopy(full), 'home')['chart_previews'][0]
+    assert preview['plot_points'][0]['name'] == 'Reviewed <model> & configuration'
+    assert preview['plot_points'][0]['score'] == 42 and preview['plot_points'][0]['price'] == 1.25
+    assert preview['checked_at'] == '2026-10-16'
+    assert full == original
+    source['points'] = []
+    preview = project(full, 'home')['chart_previews'][0]
+    assert preview['plot_points'] == [] and preview['image'] is None

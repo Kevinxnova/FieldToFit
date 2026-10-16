@@ -3831,9 +3831,9 @@ h1 {
 .chart-point.selected circle,.chart-point:focus-visible circle { stroke:#111;stroke-width:3; }
 .chart-interval { stroke-width:1.4;opacity:.45; }
 .chart-leader { stroke-width:.7;opacity:.38; }
-.model-landscape .chart-tick { font-size:16px;fill:#657077; }
-.model-landscape .chart-axis-title { font-size:19px;fill:#26333a; }
-.model-landscape .chart-credit { font-size:14px;fill:#657077; }
+.model-landscape .chart-tick,.home-chart-image .chart-tick { font-size:16px;fill:#657077; }
+.model-landscape .chart-axis-title,.home-chart-image .chart-axis-title { font-size:19px;fill:#26333a; }
+.model-landscape .chart-credit,.home-chart-image .chart-credit { font-size:14px;fill:#657077; }
 .chart-table-org { display:block;font-weight:400;color:var(--muted);font-size:.75rem;margin-top:5px; }
 .landscape-empty { padding:3rem 1rem;text-align:center;line-height:1.8;background:var(--surface-soft);border-radius:8px; }
 .landscape-chart { min-width:0; }

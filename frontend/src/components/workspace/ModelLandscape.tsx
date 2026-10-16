@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from '@fieldtofit/locale/router';
 import { useRemote } from '../../api/knowledge';
 import { SourceLink, useWorkspace } from './UI';
-import { placeLabels } from './chartLabels';
+import { ModelChart, companyColors } from './ModelChart';
+export { companyColors } from './ModelChart';
 import { useChartFullscreen } from './useChartFullscreen';
 
 type Model = { id:string; name:string; organization:string; source_organization:string; score:number|null; score_low?:number; score_high?:number; price:number|null; score_url:string; price_url:string; configuration:string; configuration_en:string; release_date:string|null; date_url:string|null; date_basis:string|null; missing?:string[]; estimated?:boolean; deprecated?:boolean };
@@ -10,7 +11,6 @@ type Point = Model & {score:number;price:number};
 type ChartSource = { id:string; name:string; source_url:string; source_updated_at:string|null; checked_at:string; score_label:string; price_label:string; price_label_en:string; note:string; note_en:string; flagship:{reviewed_at:string;policy:string;policy_en:string;models:{company:string;family:string;id:string|null;evidence_url:string;status:string}[]}; points:Point[]; not_plotted:Model[]; undated:Model[]; coverage:{source_models:number;released_2026:number;outside_year:number;plotted:number;missing_coordinates:number;unconfirmed_date:number} };
 export type Landscape = { revision:string; interval_days:number; sources:ChartSource[] };
 const choices = [{id:'artificial-analysis',name:'Artificial Analysis'},{id:'arena',name:'Arena'}];
-export const companyColors:Record<string,string> = {OpenAI:'#242b35',Anthropic:'#a4542a',Google:'#238340',xAI:'#8051ad',Meta:'#157ab9',Kimi:'#168f9d',GLM:'#9b445f',Qwen:'#bd6714',MIMO:'#907900',MiniMax:'#d33981',DeepSeek:'#3456d1','其他':'#69757a'};
 const fmt=(n:number)=>n.toLocaleString('en-US',{maximumFractionDigits:4});
 
 function useChartParams() {
@@ -86,7 +86,8 @@ function Scatter({source,chartParams}:{source:ChartSource;chartParams:ReturnType
   const [plotSize,setPlotSize]=useState({width:1400,height:1200});
   useEffect(()=>{setScale(1);setFiltersOpen(false);},[fullscreen]);
   const matches=(p:Model)=>(mode==='all'||(mode==='flagship'?flagshipIds.has(p.id):companies.includes(p.organization)))&&p.name.toLowerCase().includes(query.trim().toLowerCase());
-  const points=source.points.filter(matches),missing=source.not_plotted.filter(matches),undated=source.undated.filter(matches);
+  const selectionKey=companies.join(',');
+  const points=useMemo(()=>source.points.filter(matches),[source,mode,selectionKey,query]),missing=source.not_plotted.filter(matches),undated=source.undated.filter(matches);
   const point=points.find(p=>p.id===selected);
   useEffect(()=>{
     if(!fullscreen || !plotContainer.current)return;
@@ -99,33 +100,7 @@ function Scatter({source,chartParams}:{source:ChartSource;chartParams:ReturnType
     return ()=>observer.disconnect();
   },[fullscreen,points.length]);
   const width=fullscreen?plotSize.width:1400,height=fullscreen?plotSize.height:1200;
-  const left=78,right=width-90,top=86,bottom=height-120;
-  // Keep domains fixed when filtering so a model never appears to gain capability or lose cost.
-  const low=Math.floor(Math.min(...source.points.map(p=>p.score_low??p.score))/5)*5-5;
-  const high=Math.ceil(Math.max(...source.points.map(p=>p.score_high??p.score))/5)*5+5;
-  const priceMin=10**Math.floor(Math.log10(Math.min(...source.points.map(p=>p.price))));
-  const priceMax=10**Math.ceil(Math.log10(Math.max(...source.points.map(p=>p.price))));
-  const x=(n:number)=>left+(Math.log10(n)-Math.log10(priceMin))/(Math.log10(priceMax)-Math.log10(priceMin))*(right-left);
-  const y=(n:number)=>bottom-(n-low)/(high-low)*(bottom-top);
-  const selectionKey=companies.join(',');
-  const labels=useMemo(()=>placeLabels(points.map(p=>({id:p.id,name:p.name,x:x(p.price),y:y(p.score)})),width,height-40),[source,mode,selectionKey,query,width,height]);
-  const byId=new Map(labels.map(p=>[p.id,p]));
-  const ticks:number[]=[];for(let decade=priceMin;decade<=priceMax*1.001;decade*=10)for(const m of [1,2,5])if(decade*m<=priceMax*1.001)ticks.push(decade*m);
   const date=source.source_updated_at||pick('来源未标注','Not provided by source');
-  const plot=(expanded=false)=><svg viewBox={`0 0 ${width} ${height}`} style={{width:expanded?`${scale*100}%`:'100%',height:expanded?`${scale*100}%`:undefined}} role="group" aria-label={source.name+pick(' 能力与价格散点图',' capability and price scatterplot')}>
-    <title>{source.name} · 2026 · {source.score_label}</title><desc>{pick('横轴是对数价格，纵轴是评分。点旁直接标注来源模型名，同公司同色。点击模型或用键盘选择查看依据。','Logarithmic price on x, score on y. Original model names label dots, colored by company. Select a model by click or keyboard to inspect evidence.')}</desc>
-    <text x={left} y={34} className="chart-axis-title">{source.score_label} ↑</text>
-    {Array.from({length:9},(_,i)=>low+(high-low)*i/8).map(v=><g key={v}><line className="chart-grid" x1={left} x2={right} y1={y(v)} y2={y(v)}/><text className="chart-tick" x={left-12} y={y(v)+5} textAnchor="end">{Number(v.toFixed(1))}</text></g>)}
-    {ticks.map(v=><g key={v}><line className="chart-grid" x1={x(v)} x2={x(v)} y1={top} y2={bottom}/><text className="chart-tick" x={x(v)} y={bottom+28} textAnchor="middle">${fmt(v)}</text></g>)}
-    {points.map(p=>{const l=byId.get(p.id)!;return <line key={p.id} className="chart-leader" x1={l.x} y1={l.y} x2={Math.max(l.lx,Math.min(l.lx+l.width,l.x))} y2={l.ly+8} stroke={companyColors[p.organization]}/>;})}
-    {points.map(p=>{const l=byId.get(p.id)!;const color=companyColors[p.organization];return <g key={p.id} data-model-id={p.id} data-company={p.organization} className={'chart-point'+(selected===p.id?' selected':'')} role="button" tabIndex={0} aria-label={`${p.name}; ${source.score_label}: ${fmt(p.score)}; ${source.price_label_en}: ${fmt(p.price)}`} onClick={()=>setSelected(p.id)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setSelected(p.id);}}}>
-      <title>{p.name}: {fmt(p.score)} · ${fmt(p.price)}</title>
-      {p.score_low!==undefined&&p.score_high!==undefined&&<line className="chart-interval" x1={l.x} x2={l.x} y1={y(p.score_low)} y2={y(p.score_high)} stroke={color}/>}
-      <circle cx={l.x} cy={l.y} r={selected===p.id?8:6} fill={p.estimated?'white':color} stroke={color}/><text x={l.lx} y={l.ly+13} className="chart-model-name" fill={color}>{p.name}</text>
-    </g>;})}
-    <text className="chart-axis-title" x={(left+right)/2} y={height-60} textAnchor="middle">{zh?source.price_label:source.price_label_en} · {pick('对数刻度','log scale')} →</text>
-    <text className="chart-credit" x={left} y={height-20}>Source: {source.name} · {pick('源日期','Source date')}: {date} · FieldToFit {source.checked_at}</text>
-  </svg>;
   const details=point?<div className="landscape-point-detail" aria-live="polite"><strong>{point.name}</strong><p>{point.source_organization||point.organization} · {source.score_label}: <b>{fmt(point.score)}</b> · {zh?source.price_label:source.price_label_en}: <b>${fmt(point.price)}</b></p><p>{zh?point.configuration:point.configuration_en}</p><p>{dateDescription(point)} {point.release_date}{point.date_url&&<> · <SourceLink url={point.date_url}>{pick('日期依据','Date evidence')}</SourceLink></>}{point.deprecated&&pick(' · 来源已标为旧版本',' · Deprecated by source')}</p><SourceLink url={point.score_url}>{pick('核对评分与价格','Verify score and price')}</SourceLink></div>:<p className="landscape-hint">{pick('点击图中的模型名称或圆点，查看数值与依据。','Select a model name or dot to inspect values and evidence.')}</p>;
   function dateDescription(p:Model){return p.date_basis==='source_version_date'?pick('来源版本日期：','Source version date: '):p.date_basis==='matched_model_release'?pick('对应模型发布记录：','Matched model release: '):pick('发布日期：','Release date: ');}
   const selection=mode==='all'?pick('全部公司','All companies'):mode==='flagship'?pick('各家旗舰模型','Company flagships'):companies.map(name=>name==='其他'?pick('其他','Other'):name).join(zh?'、':', ');
@@ -155,7 +130,7 @@ function Scatter({source,chartParams}:{source:ChartSource;chartParams:ReturnType
     {filters()}
     {mode==='flagship'&&<div className="chart-flagship-note"><p>{pick('本期旗舰系列，每家一个代表配置；名单由 FieldToFit 维护。','One representative configuration per company’s selected flagship series; curated by FieldToFit.')} {pick('名单核验：','Selection reviewed: ')}{source.flagship.reviewed_at}</p><details><summary>{pick('查看旗舰名单与缺项','View flagship selection and gaps')}</summary><p>{zh?source.flagship.policy:source.flagship.policy_en}</p><ul>{source.flagship.models.map(m=><li key={m.company}><strong>{m.company}</strong> · <SourceLink url={m.evidence_url}>{m.family}</SourceLink> · {m.status==='plotted'?pick('已绘制','Plotted'):m.status==='missing_coordinates'?pick('来源缺少坐标数据，暂未绘制','Missing coordinates; not plotted'):m.status==='unconfirmed_date'?pick('来源日期待确认，暂未绘制','Date unconfirmed; not plotted'):pick('当前来源快照未收录，暂未绘制','Not listed in this source snapshot')}</li>)}</ul></details></div>}
     </div>
-    {points.length?<div ref={plotContainer} className={fullscreen?"landscape-plot landscape-zoom-scroll":"landscape-plot"} tabIndex={fullscreen?0:undefined}>{plot(fullscreen)}</div>:<p className="landscape-empty">{fullscreen?pick('当前筛选没有可绘制的模型。可打开筛选并重置，或退出全屏查看缺项清单。','No plottable models match. Open Filters to reset, or exit fullscreen to view the coverage list.'):pick('当前筛选没有可绘制的模型。可查看下方缺项清单，或重置筛选。','No plottable models match. Check the coverage list below or reset filters.')}</p>}
+    {points.length?<div ref={plotContainer} className={fullscreen?"landscape-plot landscape-zoom-scroll":"landscape-plot"} tabIndex={fullscreen?0:undefined}><ModelChart source={source} points={points} width={width} height={height} expanded={fullscreen} scale={scale} selected={selected} onSelect={setSelected}/></div>:<p className="landscape-empty">{fullscreen?pick('当前筛选没有可绘制的模型。可打开筛选并重置，或退出全屏查看缺项清单。','No plottable models match. Open Filters to reset, or exit fullscreen to view the coverage list.'):pick('当前筛选没有可绘制的模型。可查看下方缺项清单，或重置筛选。','No plottable models match. Check the coverage list below or reset filters.')}</p>}
     {details}
     <div className="landscape-attribution"><p>{pick('引用来源：','Source: ')}<SourceLink url={source.source_url}>{source.name}</SourceLink> · {pick('FieldToFit 根据公开数值绘制。','Drawn by FieldToFit from public values.')}</p><p>{pick('源数据更新：','Source updated: ')}<span data-source-date>{date}</span> · {pick('本站核验 / 同步：','Reviewed / synced: ')}{source.checked_at}</p>{!source.source_updated_at&&<p>{pick('来源未标明本组数据的整体更新时间；模型发布日期不作为数据更新日期。','No overall update date is given; model release dates are not data update dates.')}</p>}</div>
     <details className="landscape-data"><summary>{pick(`数值与出处（当前筛选 ${points.length}）`,`Values and sources (${points.length} matching)`)}</summary>{table(points,source.name+' · 2026')}</details>

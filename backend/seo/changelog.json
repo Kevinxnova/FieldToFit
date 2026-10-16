@@ -1,7 +1,35 @@
 {
-  "version": "1.11.0",
-  "revision": "e3930b10fd2816a6da93336b38d97debf0960f7f522ead59f0dad6fcb11ee920",
+  "version": "1.11.1",
+  "revision": "129d092cdb7d153d6e93c7e8b6563d2812233197838208eb5c283e925cd5156a",
   "items": [
+    {
+      "version": "1.11.1",
+      "date": "2026-10-16",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "首页显示完整模型原图",
+          "highlights": [
+            "模型能力与价格按Artificial Analysis、Arena上下排列，每行展示一张完整原图；保留模型名称、公司颜色、引线、评分区间、坐标单位及真实日期。",
+            "桌面与手机均等比显示整张图，点击图表或阅读入口直达对应来源；复用完整栏目的绘图与当前已审快照，保持筛选、查找和全屏功能。",
+            "本批为独立工作区的本地显示修正，未部署或公开发布；不修改模型数值、内容记录或生产数据库。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Complete original model charts on the homepage",
+          "highlights": [
+            "Display complete Artificial Analysis and Arena charts, one per row, preserving model names, company colors, label leaders, score intervals, units and genuine dates.",
+            "Fit each full chart proportionally on desktop and mobile. Both the chart and reading link open the corresponding source; reuse the full section’s renderer and current reviewed snapshot while preserving filters, model search and fullscreen.",
+            "This display correction is local to an isolated worktree and has not been deployed or publicly released. Model values, content records and production databases are unchanged."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.1"
+    },
     {
       "version": "1.11.0",
       "date": "2026-10-15",

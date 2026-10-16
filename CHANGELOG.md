@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.11.1"></a>
+## v1.11.1 · 首页显示完整模型原图 · 2026-10-16
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Complete original model charts on the homepage -->
+<!-- release-summary:zh:start -->
+- 模型能力与价格按Artificial Analysis、Arena上下排列，每行展示一张完整原图；保留模型名称、公司颜色、引线、评分区间、坐标单位及真实日期。
+- 桌面与手机均等比显示整张图，点击图表或阅读入口直达对应来源；复用完整栏目的绘图与当前已审快照，保持筛选、查找和全屏功能。
+- 本批为独立工作区的本地显示修正，未部署或公开发布；不修改模型数值、内容记录或生产数据库。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Display complete Artificial Analysis and Arena charts, one per row, preserving model names, company colors, label leaders, score intervals, units and genuine dates.
+- Fit each full chart proportionally on desktop and mobile. Both the chart and reading link open the corresponding source; reuse the full section’s renderer and current reviewed snapshot while preserving filters, model search and fullscreen.
+- This display correction is local to an isolated worktree and has not been deployed or publicly released. Model values, content records and production databases are unchanged.
+<!-- release-summary:en:end -->
+
+对应[REQ-6-31](FieldToFit-PM.md#req-6-31)及[确认方案](FieldToFit-PM.md#for-you-preview-hub-plan)。先更新总览再开发验证；对v1.11.0后的累计范围判级为既有模块的兼容显示patch，无新模块、主要阅读流程重构或数据库迁移。首页读取新增只用于绘图的最小坐标字段，保留原预览image字段兼容旧读取端；完整接口与已审快照不变。独立工作区基于v1.11.0，本批拟交付v1.11.1；与并行内容更新正式合入前需按最新已交付版本复核序号，不覆盖历史标签。实际验证见[验收记录](docs/validation/2026-10-16-model-original-preview.md)。
+
 <a id="v1.11.0"></a>
 ## v1.11.0 · For you 七区预览与完整栏目阅读 · 2026-10-15
 
