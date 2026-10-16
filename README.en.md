@@ -24,7 +24,7 @@ For researchers, engineers, graduate students, students and AI application devel
 
 | Entry | What it provides | Where to start |
 | --- | --- | --- |
-| For you | AI Daily, recent developments, information cards, selected technical reports and analysis, the Codex log, AA / Arena capability and pricing, and five ongoing-watch categories | The v1.11.0 source provides seven previews leading to complete sections or items, with return-position restoration; this batch is not yet deployed |
+| For you | AI Daily, recent developments, information cards, selected technical reports and analysis, the Codex log, AA / Arena capability and pricing, and five ongoing-watch categories | v1.11.0 is deployed with seven previews leading to complete sections or items and return-position restoration; production direct reads passed, with browser interaction rechecks pending |
 | For your AI | The same published materials through MCP / API, source-text continuation, revision history and bundles | Connect your AI using the MCP address, or download materials to give it |
 | FieldToFit Community | Community purpose, developer submissions and ways to contribute | Submit a project, recommend or correct resources, or help with development |
 
@@ -36,7 +36,7 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.11.0](CHANGELOG.md#v1.11.0)** · Release tag not yet published
+**Current source version: [v1.11.0](CHANGELOG.md#v1.11.0)** · [fieldtofit-v1.11.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
@@ -45,7 +45,7 @@ Source and deployed versions are verified separately; see this release's [valida
 - Arrange AI Daily, recent developments, information cards, selected technical reports and analysis, the Codex log, model capability and pricing, and ongoing watch in the agreed order. Keep the daily and information-card styles, use one lead and two secondary highlights, four reports in a desktop 2×2 grid, and vertically stacked model sources.
 - Add five complete sections for developments, information cards, Codex, models and ongoing watch while reusing daily editions, reports and item details. Preserve old links, filters, dates, language switching and return positions.
 - Load only visible previews and necessary publication checks on the homepage, then read complete content by section. Homepage HTML and embedded data are 86.9% smaller with the same records; reviewed content, genuine source dates and full HTTP/MCP interfaces remain compatible.
-- Complete local development, regression checks, both languages at four widths, light/dark layouts and reading round trips. The owner approved v1.11.0 and a local commit; this batch has not been pushed or deployed.
+- Deploy v1.11.0 to production and verify both homepage languages, five complete sections, three MCP versions, static assets and preservation of existing content through direct reads. Four widths, light/dark layouts and reading round trips passed local browser checks; production browser interaction checks remain pending after connection timeouts.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

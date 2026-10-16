@@ -7,24 +7,24 @@
 <a id="v1.11.0"></a>
 ## v1.11.0 · For you 七区预览与完整栏目阅读 · 2026-10-15
 
-<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-10-16 -->
 <!-- public-title:en:Seven homepage previews and complete reading sections -->
 <!-- release-summary:zh:start -->
 - 按已确认顺序组织AI日报、近期动态、热点信息卡、技术报告精选&分析、Codex日志、模型能力与价格及持续关注七区；日报和热点卡沿用原样式，近期热点一主两次，报告四篇2×2，模型双来源纵排。
 - 新增动态、热点索引、Codex、模型和持续关注五个完整栏目，复用日报／报告／单条详情；保留旧链接、筛选、日期、双语切换及详情返回的阅读位置。
 - 首页只读取实际预览与必要校验信息，完整内容按栏目读取；同一内容集下首页HTML及内嵌数据减少86.9%，审核内容、真实来源日期和完整HTTP／MCP接口保持兼容。
-- 本地开发、相关回归、双语四宽度、深浅色与阅读往返已验；所有者确认v1.11.0及本地提交，尚未推送或部署。
+- 已正式部署v1.11.0；双语首页及五个完整栏目、三个MCP版本、静态资源与原有内容保持已通过线上直读核对。四宽度、深浅色及阅读往返通过本机验收；本轮线上浏览器连接超时，交互复验待补。
 <!-- release-summary:zh:end -->
 <!-- release-summary:en:start -->
 - Arrange AI Daily, recent developments, information cards, selected technical reports and analysis, the Codex log, model capability and pricing, and ongoing watch in the agreed order. Keep the daily and information-card styles, use one lead and two secondary highlights, four reports in a desktop 2×2 grid, and vertically stacked model sources.
 - Add five complete sections for developments, information cards, Codex, models and ongoing watch while reusing daily editions, reports and item details. Preserve old links, filters, dates, language switching and return positions.
 - Load only visible previews and necessary publication checks on the homepage, then read complete content by section. Homepage HTML and embedded data are 86.9% smaller with the same records; reviewed content, genuine source dates and full HTTP/MCP interfaces remain compatible.
-- Complete local development, regression checks, both languages at four widths, light/dark layouts and reading round trips. The owner approved v1.11.0 and a local commit; this batch has not been pushed or deployed.
+- Deploy v1.11.0 to production and verify both homepage languages, five complete sections, three MCP versions, static assets and preservation of existing content through direct reads. Four widths, light/dark layouts and reading round trips passed local browser checks; production browser interaction checks remain pending after connection timeouts.
 <!-- release-summary:en:end -->
 
 对应[REQ-6-31至33](FieldToFit-PM.md#for-you-preview-hub-plan)。先完善项目总览与七区确认方案，再开发并验证；所有者随后明确确认“v1.11.0，完成本地提交”。开发前和交付前结合v1.10.0以来累计变化判级：首页从完整长页改为“预览→完整栏目／条目”，构成主要阅读流程变化，以minor交付；无产品方向、核心协议或破坏性架构变更。新增路径兼容旧锚点与查询参数，不迁移数据库、不发布新内容、不修改既有审核快照。回滚可恢复既有页面呈现，并为新增路径保留兼容跳转。
 
-相关后端125项覆盖、四组前端套件、生产构建和本机浏览器验收已完成；性能结果与冷响应／大包／真机及线上验收边界见[实际记录](docs/validation/2026-10-15-for-you-preview-hub.md)。本次授权仅包含版本归档及本地提交；未打标签、推送、创建Release或部署，原正式站点状态保持。
+相关后端125项覆盖、四组前端套件、生产构建和本机浏览器验收已完成；性能结果与冷响应／大包／真机及线上验收边界见[实际记录](docs/validation/2026-10-15-for-you-preview-hub.md)。所有者随后明确要求“去更新并部署”；2026-10-16正式站已升级v1.11.0，公开内容基线、双语12条页面、站点地图、资源及HTTP／MCP同源已验。本轮线上浏览器多次连接超时，未把本机截图或交互结果标为生产验收；详见同一验收记录。发布收尾属于本批既有版本，不另递增patch。
 
 <a id="v1.10.4"></a>
 ## v1.10.4 · 首页报纸头版式 AI 日报预览 · 2026-10-15

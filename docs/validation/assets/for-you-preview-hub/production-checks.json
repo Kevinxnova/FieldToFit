@@ -1,0 +1,197 @@
+{
+  "mcp": {
+    "name": "fieldtofit",
+    "version": "1.11.0"
+  },
+  "mcp/curated": {
+    "name": "fieldtofit",
+    "version": "1.11.0"
+  },
+  "mcp/codex": {
+    "name": "fieldtofit-codex",
+    "version": "1.11.0"
+  },
+  "shared_news": true,
+  "shared_watch": true,
+  "shared_maps": true,
+  "shared_daily": true,
+  "shared_daily-en": true,
+  "assets": [
+    "/assets/index-8KqIpCeB.js",
+    "/assets/index-N-OdD_b2.css"
+  ],
+  "assets/en": [
+    "/assets/index-8KqIpCeB.js",
+    "/assets/index-N-OdD_b2.css"
+  ],
+  "pages": {
+    "/for-you": {
+      "bytes": 127825,
+      "headings": [
+        "了解 AI 新变化，\n持续关注\n模型与项目。",
+        "最近一期 · AI 日报",
+        "近期动态",
+        "热点信息卡",
+        "技术报告精选&分析",
+        "Codex 28天进化日志",
+        "模型能力与价格",
+        "持续关注"
+      ]
+    },
+    "/for-you/news": {
+      "bytes": 283708,
+      "headings": [
+        "近期动态",
+        "近期热点速览",
+        "发布与更新"
+      ]
+    },
+    "/for-you/hot-cards": {
+      "bytes": 77339,
+      "headings": [
+        "热点信息卡",
+        "发布与更新"
+      ]
+    },
+    "/for-you/codex": {
+      "bytes": 235729,
+      "headings": [
+        "Codex 28天进化日志"
+      ]
+    },
+    "/for-you/models": {
+      "bytes": 504784,
+      "headings": [
+        "模型能力与价格",
+        "Artificial Analysis",
+        "Arena"
+      ]
+    },
+    "/for-you/watch": {
+      "bytes": 203149,
+      "headings": [
+        "持续关注",
+        "模型 · 15",
+        "工具 · 17",
+        "Agent · 9",
+        "Skill · 5",
+        "Harness · 7"
+      ]
+    },
+    "/en/for-you": {
+      "bytes": 130398,
+      "headings": [
+        "Understand what’s new in AI.\nFollow the models and projects that matter.",
+        "Latest edition · AI Daily",
+        "Recent developments",
+        "Information cards",
+        "Selected Technical Reports & Analysis",
+        "Codex: 28 Days of Progress",
+        "Model capability & pricing",
+        "Ongoing watch"
+      ]
+    },
+    "/en/for-you/news": {
+      "bytes": 303991,
+      "headings": [
+        "Recent developments",
+        "Recent highlights",
+        "Releases & updates"
+      ]
+    },
+    "/en/for-you/hot-cards": {
+      "bytes": 78385,
+      "headings": [
+        "Information cards",
+        "Releases & updates"
+      ]
+    },
+    "/en/for-you/codex": {
+      "bytes": 249395,
+      "headings": [
+        "Codex: 28 Days of Progress"
+      ]
+    },
+    "/en/for-you/models": {
+      "bytes": 517361,
+      "headings": [
+        "Model capability & pricing",
+        "Artificial Analysis",
+        "Arena"
+      ]
+    },
+    "/en/for-you/watch": {
+      "bytes": 212823,
+      "headings": [
+        "Ongoing watch",
+        "Model · 15",
+        "Tool · 17",
+        "Agent · 9",
+        "Skill · 5",
+        "Harness · 7"
+      ]
+    }
+  },
+  "sitemap": true,
+  "assets_ok": true,
+  "date": "2026-10-16",
+  "origin": "https://fieldtofit.top",
+  "version": "1.11.0",
+  "content_preserved": {
+    "news": {
+      "sha256": "a403dc7583ae131dbc7a04bb04ca175d9975c048da6d73d3f8821a73052b6135",
+      "total": 153
+    },
+    "watch": {
+      "sha256": "abcebe84856251939a67013769b561ed14f55a889f3d90b9840b02a9ef8c0761",
+      "total": 53
+    },
+    "maps": {
+      "sha256": "bfd1b1da1bdee6fe7a861ac8716cf1ad20e8628343148a6d1088109fe92b3652",
+      "total": 9
+    },
+    "charts": {
+      "sha256": "814c0332ece9f7eda3a9e8a728817fae057f122b050b47328140d982c4ac7fbf",
+      "total": null
+    },
+    "daily": {
+      "sha256": "072139e2b6d049e6ca586935253ce7c9e88d9bfd2e7b231849ffdf2d31e9b761",
+      "total": null
+    },
+    "daily-en": {
+      "sha256": "8c0098a1009e192639755c9bc1735b5be8c81b46cbeff174bba1f1bc77244e58",
+      "total": null
+    },
+    "archive": {
+      "sha256": "5356da51bb750becc59b5367daaccdd1835b73ab23bc4565b832fc2097aee2a4",
+      "total": 3
+    }
+  },
+  "full_reading_changed_fields": [
+    "revision"
+  ],
+  "browser_verification": "pending: connection and screenshot timeouts; local browser checks are recorded separately",
+  "final_deployment": {
+    "id": "dpl_GezaJA7T715FMsF81XSWkVR9ptLY",
+    "url": "https://fieldtofit-o0iuk48nf-kevinnova-projects.vercel.app",
+    "content_recheck": "all baseline hashes unchanged from first accepted deployment",
+    "mcp": {
+      "/api/mcp": {
+        "name": "fieldtofit",
+        "version": "1.11.0"
+      },
+      "/api/mcp/curated": {
+        "name": "fieldtofit",
+        "version": "1.11.0"
+      },
+      "/api/mcp/codex": {
+        "name": "fieldtofit-codex",
+        "version": "1.11.0"
+      }
+    },
+    "changelog_revision": "e3930b10fd2816a6da93336b38d97debf0960f7f522ead59f0dad6fcb11ee920",
+    "upload_files": 331,
+    "upload_bytes": 26698807,
+    "source_manifest_matches": true
+  }
+}
