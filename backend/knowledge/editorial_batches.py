@@ -60,7 +60,14 @@ def propose(ident,data):
     from backend.knowledge.platform_watch import valid_url
     event_url=valid_url(text(data.get('event_url'),'event_url',1600))
     # The caller may give a canonical event URL to merge primary and secondary sources.
-    event_key=store.canonical_url(event_url)+'|'+text(data.get('event_version',''),'event_version',200,False)
+    version = text(data.get('event_version',''),'event_version',200,False)
+    if proposal.get('type') == 'hot_card':
+        from backend.knowledge.hot_cards import PROSE
+        card = proposal.get('card')
+        if not isinstance(card, dict) or any(key not in card for key in PROSE):
+            fail('信息卡提案须包含完整拟上卡文案与证据，不能只给标题')
+        if not version.startswith('hot-card:'):version = 'hot-card:' + version
+    event_key=store.canonical_url(event_url)+'|'+version
     fingerprint=text(data.get('fingerprint'),'fingerprint',128)
     topic_id=hashlib.sha256(event_key.encode()).hexdigest()[:24];ref=text(data.get('ref',''),'ref',200,False)
     if len(dump(proposal))>40000:fail('Proposal too large')
@@ -120,6 +127,7 @@ def attach(ident,data):
         if kind not in ('watch','news'):fail('Choose news or watch')
         if is_check_proposal(t['proposal']) and (kind!='watch' or target!=t['proposal']['target_id']):
             fail('核对差异提案须关联原档案')
+        if t['proposal'].get('type')=='hot_card' and kind!='news':fail('信息卡须关联同一事件的近期动态')
         if t['proposal'].get('type')=='technical_map':
             if kind!='news':fail('技术地图属于近期动态')
             expected=t['proposal'].get('target_id')
@@ -178,8 +186,15 @@ def delivery(ident,data):
 
 
 def published(db,kind,ident,content,withdraw,topics=None):
-    if topics is None:topics=db.execute("SELECT id FROM fieldtofit_editorial_topics WHERE kind=? AND item_id=? AND (decision='continue' OR ?=1)",(kind,ident,int(withdraw))).fetchall()
+    if topics is None:topics=db.execute("SELECT id,proposal FROM fieldtofit_editorial_topics WHERE kind=? AND item_id=? AND (decision='continue' OR ?=1)",(kind,ident,int(withdraw))).fetchall()
     for row in topics:
+        proposal = json.loads(row['proposal'])
+        if not withdraw and proposal.get('type') == 'hot_card':
+            from backend.knowledge.hot_cards import PROSE
+            actual = content.get('hot_card') if kind == 'news' else None
+            expected = proposal.get('card')
+            if not actual or not isinstance(expected, dict) or any(actual.get(k) != expected.get(k) for k in PROSE):
+                continue  # Publishing an ordinary update does not publish its separate card proposal.
         state='withdrawn' if withdraw else 'published'
         db.execute('UPDATE fieldtofit_editorial_topics SET decision=?,version=version+1,updated_at=? WHERE id=?',(state,stamp(),row['id']))
         _audit(db,row['id'],state,{'kind':kind,'id':ident,'content_hash':hashlib.sha256(dump(content).encode()).hexdigest(),'url':'/for-you#'+('news-' if kind=='news' else 'watch-')+ident.lower()})

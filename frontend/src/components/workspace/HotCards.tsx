@@ -53,15 +53,17 @@ function HotCardPreview({ item }: { item: NewsItem }) {
         {expanded ? pick('收起人群与条件', 'Hide audience and conditions') : pick('展开人群与条件', 'Show audience and conditions')}
         <span aria-hidden="true">{expanded ? '−' : '+'}</span>
       </button>
+      {/* Keep links still when pointer entry expands the panel. */}
+      <div className="hot-card-preview-footer">
+        {source && <SourceLink className="hot-card-source" url={source.url}>{pick('官方证据', 'Official evidence')} ↗</SourceLink>}
+        <Link className="hot-card-read" to={path} state={{ readingReturn }}>{pick('读完整信息卡', 'Read the full card')} ↗</Link>
+      </div>
       <div className="hot-card-extra" id={disclosureId} hidden={!expanded}>
         <div className="hot-card-audience"><strong>{pick('对谁有用 · 本站判断', 'Who benefits · Our assessment')}</strong><ul>{card.audiences.map((point, i) => <li key={i}>{point.title}</li>)}</ul></div>
         <p className="hot-card-limit"><strong>{pick('先看条件', 'Check first')}</strong>{card.limits[0].detail}</p>
       </div>
       {card.status === 'needs_update' && <p className="hot-card-preview-maintenance" role="status">{pick('待更新：', 'Update pending: ')}{card.update_note}</p>}
-      <div className="hot-card-preview-footer">
-        {source && <SourceLink className="hot-card-source" url={source.url}>{pick('官方证据', 'Official evidence')} ↗</SourceLink>}
-        <Link className="hot-card-read" to={path} state={{ readingReturn }}>{pick('读完整信息卡', 'Read the full card')} ↗</Link>
-      </div>
+
     </div></div>
   </article>;
 }

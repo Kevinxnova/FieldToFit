@@ -47,7 +47,8 @@ def project(data, view):
     items = news['items']
     if view == 'home':
         highlights = [i['id'] for i in items if i.get('highlight')][:3]
-        hot = sorted((i for i in items if i.get('hot_card', {}).get('featured_rank', 0)>0), key=lambda i: i['hot_card']['featured_rank'])[:3]
+        from backend.knowledge.hot_cards import selected
+        hot = selected(items)
         reports = news.get('report_selection', {}).get('ids', [])[:4]
         logs = sorted((i for i in items if i.get('codex_28_days')), key=lambda i: (i['codex_28_days']['date'], i.get('publication', {}).get('updated_at') or '', int(i['id'].split('-')[-1])), reverse=True)[:3]
         # A review/check timestamp is not an event. Never fill empty slots with old profiles.

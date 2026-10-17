@@ -323,7 +323,7 @@ def apply(data):
         from backend.knowledge.operation_board import content_source,event as operation_event
         from backend.knowledge.editorial_batches import published
         origins={i:content_source(db,kind(i),i) for i in p['after']}
-        topics={i:[dict(r) for r in db.execute('SELECT id,decision FROM fieldtofit_editorial_topics WHERE kind=? AND item_id=?',(kind(i),i)).fetchall()] for i in p['after']}
+        topics={i:[dict(r) for r in db.execute('SELECT id,decision,proposal FROM fieldtofit_editorial_topics WHERE kind=? AND item_id=?',(kind(i),i)).fetchall()] for i in p['after']}
         context=event_context(db, [source,target])
         updates=[]
         for k in ({kind(i) for i in p['after']} if action!='group' else set()):

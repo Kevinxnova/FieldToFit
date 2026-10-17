@@ -84,10 +84,12 @@ fs.mkdirSync(out, { recursive: true });
       await page.keyboard.press('Enter');
       assert.ok(await first.locator('.hot-card-extra').isVisible()); checks++;
       await first.locator('h4 a').focus();
+      const readingTop = await first.evaluate(node => node.getBoundingClientRect().top);
       await page.keyboard.press('Enter'); await page.locator('.hot-card-sheet').waitFor();
       assert.ok(page.url().includes('/news/D-83#hot-information-card')); checks++;
       await page.locator('.published-detail>p>a').click();
-      await page.waitForFunction(() => document.activeElement?.id === 'hot-information-cards'); checks++;
+      // The unified homepage restores the actual reading offset, not an imposed section focus.
+      await page.waitForFunction(top => { const card = document.querySelector('.hot-card-preview'); return card && Math.abs(card.getBoundingClientRect().top - top) < 12; }, readingTop); checks++;
     }
     // All three cards remain individually targetable in the owner's narrow desktop window.
     await page.setViewportSize({ width: 882, height: 1100 });
@@ -146,12 +148,23 @@ fs.mkdirSync(out, { recursive: true });
       await touch.close();
     }
     // Long reviewed copy and correction status must remain readable on a small screen.
-    const raw = await (await context.request.get(base + '/api/v1/platform/news')).json();
-    await page.route('**/api/v1/platform/news', route => {
-      const data = structuredClone(raw), card = data.items.find(i => i.id === 'D-83').hot_card;
+    const mutate = data => {
+      const card = data.news.items.find(i => i.id === 'D-83').hot_card;
       card.headline = card.headline.repeat(4); card.scope = card.scope.repeat(3);
       card.status = 'needs_update'; card.update_note = '套餐条件待核对，暂停分享图下载。';
-      return route.fulfill({ json: data });
+      return data;
+    };
+    // The optimized homepage bootstraps its own reading view; mock that boundary.
+    const raw = await (await context.request.get(base + '/api/v1/platform/reading?view=home')).json();
+    await page.route('**/api/v1/platform/reading?*', route => route.fulfill({json:mutate(structuredClone(raw))}));
+    await page.route('**/for-you', async route => {
+      const response = await route.fetch();
+      const body = (await response.text()).replace(/(<script[^>]*id="fieldtofit-reading"[^>]*>)([\s\S]*?)(<\/script>)/,
+        (_, open, source, close) => {
+          const boot = JSON.parse(source); mutate(boot.data);
+          return open + JSON.stringify(boot).replaceAll('<', '\\u003c') + close;
+        });
+      return route.fulfill({response, body});
     });
     await page.setViewportSize({ width: 320, height: 900 });
     await page.goto(base + '/for-you#hot-information-cards');

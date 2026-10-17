@@ -62,8 +62,8 @@ def reading_fields(item):
         if not isinstance(pub, dict):
             raise ValueError('Invalid publication dates')
         result['publication'] = {}
-        for key in ('first_published_at', 'updated_at', 'report_selected_at'):
-            if key == 'report_selected_at' and key not in pub:
+        for key in ('first_published_at', 'updated_at', 'report_selected_at', 'hot_card_first_published_at', 'hot_card_selected_at'):
+            if key not in ('first_published_at', 'updated_at') and key not in pub:
                 continue
             value = pub.get(key)
             if value is not None:
@@ -171,11 +171,13 @@ def news(q='', id='', revision='', _data=None):
         published.append(obj)
     from backend.knowledge.report_selection import selection
     report_selection = selection(published)
+    from backend.knowledge.hot_cards import selection as card_selection
+    hot_card_selection = card_selection(published)
     from backend.knowledge.codex_progress import projection
     topic = projection(published)
     from backend.knowledge.locale import review_fingerprint
     translations={i['id']:review_fingerprint(i) for i in data['items'] if i['state']=='published' and review_fingerprint(i)}
-    fingerprint = hashlib.sha256(json.dumps({'items': published, 'report_selection': report_selection, 'codex_progress': topic, **({'english':translations} if translations else {}), **{k: data[k] for k in ('schema_version', 'edition', 'title', 'reviewed_at')}}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    fingerprint = hashlib.sha256(json.dumps({'items': published, 'report_selection': report_selection, 'hot_card_selection': hot_card_selection, 'codex_progress': topic, **({'english':translations} if translations else {}), **{k: data[k] for k in ('schema_version', 'edition', 'title', 'reviewed_at')}}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     if revision and revision != fingerprint:
         raise PlatformError('News revision changed; read the current collection', 'news_revision_changed', 409)
     from backend.knowledge.locale import searchable
@@ -187,5 +189,5 @@ def news(q='', id='', revision='', _data=None):
     return {'schema_version': data['schema_version'], 'edition': data['edition'], 'title': data['title'],
             'reviewed_at': data['reviewed_at'], 'revision': fingerprint, 'total': len(entries),
             'scope': 'reviewed release news; source links and optional reviewed materials have explicit coverage; interpretation is FieldToFit editorial',
-            'report_selection': report_selection, 'items': entries if _data is not None else decorate(entries), 'codex_progress': projection(entries, roundup_items=published),
+            'report_selection': report_selection, 'hot_card_selection': hot_card_selection, 'items': entries if _data is not None else decorate(entries), 'codex_progress': projection(entries, roundup_items=published),
             **({'resolved_from':requested_id,'canonical_id':id} if requested_id and requested_id!=id else {})}

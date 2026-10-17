@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.11.6"></a>
+## v1.11.6 · 三部分晨报与热点信息卡轮换 · 2026-10-17
+
+<!-- site-deployed:2026-10-17 -->
+<!-- public-title:en:Three-part briefings and information-card rotation -->
+<!-- release-summary:zh:start -->
+- 日报新增「热点信息卡｜今日推荐与旧卡维护」，每天主推一张、优质时最多三张；卡片、动态和报告分别选择，旧卡核对与失败如实列明。
+- 新卡正式发布后与首页三张名单同事务轮换，移出的旧卡保留完整索引、详情和分享链接；普通修订不置顶，位置变化保留私密改稿与真实日期。
+- 增加只读信息卡交接、统一网页与AI首页名单，以及预览和实际发布的替换回执；只有新卡正式发布成功才轮换，保存与预览保持公开名单。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add daily information-card recommendations and existing-card checks as the third briefing part: normally one recommendation, up to three when valuable. Keep news, reports and card choices separate and report actual coverage and failures.
+- Rotate the three-card homepage window atomically with successful publication. Retain replaced cards in the complete index, details and share links; ordinary edits do not promote cards, and position changes preserve private drafts and genuine dates.
+- Add a read-only card handoff, one homepage selection shared by web and AI, and proposed versus actual replacement receipts. Rotate only after successful publication; saving and previewing preserve public selection.
+<!-- release-summary:en:end -->
+
+对应[REQ-6-34／REQ-11-6](FieldToFit-PM.md#hot-information-cards-plan)。所有者确认三部分日报及卡片提案／选择／发布流程，授权先完善总览再开发验证；本轮不发表新卡；所有者随后明确要求“更新并部署”，本批沿用v1.11.6按实际验收收尾。本批及自v1.11.0累计范围是既有首页预览、信息卡和编辑交接的兼容增强patch，无新完整模块、主要阅读流程重构、数据迁移或协议破坏；旧rank和已审图片继续兼容。原07:30／08:00、同一安排、对话和通知保持，仅接入已确认第三部分。真实自然日、真机／微信传播与正式验收分别记录。[验证范围](docs/validation/2026-10-17-hot-card-daily-rotation.md)。
+
 <a id="v1.11.5"></a>
 ## v1.11.5 · MAI-Base-2专题与十项获批动态 · 2026-10-17
 

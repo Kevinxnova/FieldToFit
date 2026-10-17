@@ -122,4 +122,107 @@ def validate_selection(items):
         ranks.append(card.get('featured_rank', 0))
     selected = [r for r in ranks if r]
     if len(selected) > 3 or len(set(selected)) != len(selected):
-        raise ValueError('Choose at most three cards with distinct positions; unselect the replaced card first')
+        raise ValueError('Choose at most three cards with distinct positions')
+
+
+LIMIT = 3
+
+
+def selected(items):
+    return sorted((i for i in items if i.get('state', 'published') == 'published'
+                   and (i.get('hot_card') or {}).get('featured_rank', 0) > 0),
+                  key=lambda i: i['hot_card']['featured_rank'])[:LIMIT]
+
+
+def selection(items):
+    return {'limit': LIMIT, 'ids': [i['id'] for i in selected(items)],
+            'basis': 'reviewed_card_publication_and_editorial_selection'}
+
+
+def set_rank(item, rank):
+    """Changing only a numeric position preserves the exact reviewed translation."""
+    card = item.get('hot_card')
+    if not card or card['featured_rank'] == rank:
+        return
+    from backend.knowledge import locale
+    from backend.knowledge.platform import PlatformError
+    try:
+        reviewed = locale.status('news', item)
+    except (ValueError, KeyError, TypeError, PlatformError):
+        reviewed = None  # An incomplete private draft remains unapproved.
+    card['featured_rank'] = rank
+    if reviewed and reviewed['state'] == 'reviewed':
+        en = item.setdefault('translations', {}).setdefault('en', {})
+        en.update(state='reviewed', source_hash=locale.source_hash('news', item), fields=reviewed['fields'])
+
+
+def apply_rotation(items, ident, previous, now):
+    """Compose positions without writes; the workspace commits all affected rows."""
+    current = next(i for i in items if i['id'] == ident)
+    card = current.get('hot_card')
+    prior = (previous or {}).get('hot_card')
+    rank = (card or {}).get('featured_rank', 0)
+    if type(rank) is not int or rank not in (0, 1, 2, 3):
+        raise ValueError('Card selection must be 0 (archive) or 1–3')
+    if current['state'] == 'published' and card:
+        pub = current.setdefault('publication', {})
+        old_pub = (previous or {}).get('publication') or {}
+        for key in ('hot_card_first_published_at', 'hot_card_selected_at'):
+            pub.pop(key, None)
+            if key in old_pub:
+                pub[key] = old_pub[key]
+        if not prior:
+            pub['hot_card_first_published_at'] = now
+        # Ordinary edits to an existing card never create another selection time.
+        if rank and (not prior or not prior.get('featured_rank')):
+            pub['hot_card_selected_at'] = now
+    others = selected([i for i in items if i['id'] != ident])
+    if current['state'] == 'published' and card and rank:
+        position = 0 if not prior else rank - 1
+        others.insert(min(position, len(others)), current)
+    ranks = {i['id']: n for n, i in enumerate(others[:LIMIT], 1)}
+    for item in items:
+        if item['state'] == 'published' and item.get('hot_card'):
+            set_rank(item, ranks.get(item['id'], 0))
+
+
+def rotation(before, after, status='published'):
+    def brief(item):
+        pub = item.get('publication') or {}
+        return {'id': item['id'], 'title': item['hot_card']['headline'],
+                'url': '/news/' + item['id'] + '#hot-information-card',
+                'selected_at': pub.get('hot_card_selected_at')}
+    old = [brief(i) for i in selected(before)]
+    new = [brief(i) for i in selected(after)]
+    old_ids = {i['id'] for i in old}; new_ids = {i['id'] for i in new}
+    visible = {i['id'] for i in after if i.get('state', 'published') == 'published' and i.get('hot_card')}
+    return {'status': status, 'limit': LIMIT, 'before': old, 'after': new,
+            'changed': [i['id'] for i in old] != [i['id'] for i in new],
+            'entered': [i for i in new if i['id'] not in old_ids],
+            'left': [i for i in old if i['id'] not in new_ids],
+            'index_only': [i for i in old if i['id'] not in new_ids and i['id'] in visible]}
+
+
+def rotation_writes(db, before, after, ident, reason, now):
+    """Synchronize only positions; preserve unrelated private edits and invalidate previews."""
+    from backend.knowledge.content_workspace import dump, fail
+    old = {i['id']: i for i in before}
+    writes = []
+    for item in after:
+        prior = old.get(item['id'])
+        if item['id'] == ident or not prior or item == prior:
+            continue
+        row = db.execute('SELECT * FROM fieldtofit_content_items WHERE kind=? AND id=?', ('news', item['id'])).fetchone()
+        if not row or json.loads(row['published_json']) != prior:
+            fail('Information card changed; reload and preview again', 'draft_conflict', 409)
+        draft = json.loads(row['draft_json'])
+        old_rank = prior['hot_card']['featured_rank']
+        # Keep an explicitly edited private position; align an untouched position.
+        if type((draft.get('hot_card') or {}).get('featured_rank')) is int and draft['hot_card']['featured_rank'] == old_rank:
+            set_rank(draft, item['hot_card']['featured_rank'])
+        writes.extend([
+            ('UPDATE fieldtofit_content_items SET published_json=?,draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',
+             (dump(item), dump(draft), now, 'news', item['id'])),
+            ('INSERT INTO fieldtofit_content_history(kind,item_id,action,reason,snapshot,created_at) VALUES(?,?,?,?,?,?)',
+             ('news', item['id'], 'hot_card_rotation', reason, dump(item), now))])
+    return writes

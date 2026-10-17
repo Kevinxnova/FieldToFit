@@ -1,7 +1,35 @@
 {
-  "version": "1.11.5",
-  "revision": "49a1829f8527c694cffc8a5ef979e8ad51d0d8eb3969543647346b1a1aee2c2d",
+  "version": "1.11.6",
+  "revision": "58f50bcf4dcdb9afba3e02b0c76c01c204516c6584c2e809288e40a25f9027ee",
   "items": [
+    {
+      "version": "1.11.6",
+      "date": "2026-10-17",
+      "deployed_on": "2026-10-17",
+      "copy": {
+        "zh": {
+          "title": "三部分晨报与热点信息卡轮换",
+          "highlights": [
+            "日报新增「热点信息卡｜今日推荐与旧卡维护」，每天主推一张、优质时最多三张；卡片、动态和报告分别选择，旧卡核对与失败如实列明。",
+            "新卡正式发布后与首页三张名单同事务轮换，移出的旧卡保留完整索引、详情和分享链接；普通修订不置顶，位置变化保留私密改稿与真实日期。",
+            "增加只读信息卡交接、统一网页与AI首页名单，以及预览和实际发布的替换回执；只有新卡正式发布成功才轮换，保存与预览保持公开名单。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Three-part briefings and information-card rotation",
+          "highlights": [
+            "Add daily information-card recommendations and existing-card checks as the third briefing part: normally one recommendation, up to three when valuable. Keep news, reports and card choices separate and report actual coverage and failures.",
+            "Rotate the three-card homepage window atomically with successful publication. Retain replaced cards in the complete index, details and share links; ordinary edits do not promote cards, and position changes preserve private drafts and genuine dates.",
+            "Add a read-only card handoff, one homepage selection shared by web and AI, and proposed versus actual replacement receipts. Rotate only after successful publication; saving and previewing preserve public selection."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.6"
+    },
     {
       "version": "1.11.5",
       "date": "2026-10-17",

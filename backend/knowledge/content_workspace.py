@@ -262,7 +262,7 @@ def save(kind, ident, data, approved_topic=None):
         event(db,origin,kind+':'+ident,'edited',str(version+1))
     return detail(kind,ident)
 
-def composed(kind, ident, content, db, withdraw=False):
+def composed(kind, ident, content, db, withdraw=False, card_receipt=None):
     row=db.execute('SELECT * FROM fieldtofit_content_sets WHERE kind=?',(kind,)).fetchone()
     if not row:fail('Import the released content first','migration_required',409)
     data=json.loads(row['published_json'])
@@ -276,10 +276,13 @@ def composed(kind, ident, content, db, withdraw=False):
         if content.get('translations'):replacement['translations']=content['translations']
         data=replacement
     else:
+        before_cards = copy.deepcopy(data['items']) if kind == 'news' and (content.get('hot_card') or any(x['id'] == ident and x.get('hot_card') for x in data['items'])) else None
         entries=data['items'];found=next((i for i,x in enumerate(entries) if x['id']==ident),None)
-        item={**content,'state':'withdrawn' if withdraw else 'published'}
+        item={**copy.deepcopy(content),'state':'withdrawn' if withdraw else 'published'}
         if kind == 'news':
             previous = entries[found] if found is not None else None
+            if (previous or {}).get('hot_card') and not item.get('hot_card') and not withdraw:
+                fail('移出首页请设为仅详情与历史；撤回信息卡请使用下架操作')
             previous_map = (previous or {}).get('technical_map')
             if previous_map and not item.get('technical_map') and not withdraw:
                 fail('撤回地图请使用下架操作，以保留身份与历史')
@@ -312,6 +315,11 @@ def composed(kind, ident, content, db, withdraw=False):
         position=content.get('_position')
         if position is not None and (isinstance(position,bool) or not isinstance(position,int) or position<1):fail('展示位置必须是大于 0 的整数')
         entries.insert(min(position-1,len(entries)) if position is not None else (found if found is not None else 0),item)
+        if before_cards is not None:
+            from backend.knowledge.hot_cards import apply_rotation, rotation
+            apply_rotation(entries, ident, previous, stamp())
+            if card_receipt is not None:
+                card_receipt.update(rotation(before_cards, entries, 'preview'))
         data['reviewed_at']=today()
         if kind=='news' and sum(x['state']=='published' and x.get('highlight') for x in entries)>5:fail('本期速览最多 5 条，请先取消其他条目的速览标记')
     return data,row['revision']
@@ -348,8 +356,9 @@ def token(kind, ident, version, revision, content, fingerprint):
 def preview(kind, ident):
     with get_db() as db:
         item=detail(kind,ident,db);draft=item['draft']
+        card_receipt = {}
         try:
-            data,revision=composed(kind,ident,draft,db)
+            data,revision=composed(kind,ident,draft,db,card_receipt=card_receipt)
             public=gate(kind,ident,draft,data)
         except (ValueError,KeyError,TypeError,AssertionError,PlatformError) as exc:
             return {'ready':False,'errors':[str(exc) or '材料格式不完整，请检查图表/版本结构'],'draft_version':item['draft_version']}
@@ -377,7 +386,7 @@ def preview(kind, ident):
             english=project(focused,fields)
         except PlatformError as exc:
             return {'ready':False,'errors':[str(exc)],'draft_version':item['draft_version']}
-        return {'ready':True,'errors':[],'preview':focused,'preview_en':english,'review_token':token(kind,ident,item['draft_version'],revision,draft,item['materials_fingerprint']),'draft_version':item['draft_version'],'scope':'Private preview; not published'}
+        return {'ready':True,'errors':[],'preview':focused,'preview_en':english,'review_token':token(kind,ident,item['draft_version'],revision,draft,item['materials_fingerprint']),'draft_version':item['draft_version'],'scope':'Private preview; not published', **({'hot_card_rotation':card_receipt} if card_receipt else {})}
 
 def publish(kind, ident, data, withdraw=False):
     reason=text(data.get('reason'),'reason',2000)
@@ -388,7 +397,11 @@ def publish(kind, ident, data, withdraw=False):
         if item['draft_version']!=data.get('draft_version'):fail('Draft changed; preview again','draft_conflict',409)
         content=item['published'] if withdraw else item['draft']
         if withdraw and not content:fail('Unpublished draft cannot be withdrawn')
-        composed_data,revision=composed(kind,ident,content,db,withdraw)
+        before_cards = None
+        card_receipt = {}
+        if kind == 'news' and (content.get('hot_card') or (item['published'] or {}).get('hot_card')):
+            before_cards = json.loads(db.execute('SELECT published_json FROM fieldtofit_content_sets WHERE kind=?', ('news',)).fetchone()['published_json'])['items']
+        composed_data,revision=composed(kind,ident,content,db,withdraw,card_receipt)
         if not withdraw:
             if data.get('confirmed') is not True:fail('Review confirmation required')
             if data.get('review_token')!=token(kind,ident,item['draft_version'],revision,content,item['materials_fingerprint']):fail('Preview is out of date; review again','preview_conflict',409)
@@ -406,6 +419,10 @@ def publish(kind, ident, data, withdraw=False):
         writes=[('UPDATE fieldtofit_content_sets SET published_json=?,revision=revision+1,updated_at=? WHERE kind=?',(dump(composed_data),stamp(),kind)),
                 ('UPDATE fieldtofit_content_items SET published_json=?,draft_json=?,draft_version=draft_version+1,updated_at=? WHERE kind=? AND id=?',(dump(new),dump(item['draft'] if withdraw else new),stamp(),kind,ident)),
                 ('INSERT INTO fieldtofit_content_history(kind,item_id,action,reason,snapshot,created_at) VALUES(?,?,?,?,?,?)',(kind,ident,'withdraw' if withdraw else 'publish',reason,dump(new),stamp()))]
+        if before_cards is not None:
+            from backend.knowledge.hot_cards import rotation_writes
+            writes.extend(rotation_writes(db, before_cards, composed_data['items'], ident, reason, stamp()))
+            card_receipt['status'] = 'withdrawn' if withdraw else 'published'
         if not withdraw:writes.append(("UPDATE fieldtofit_inbox SET status='completed',updated_at=? WHERE kind=? AND item_id=? AND status='selected'",(stamp(),kind,ident)))
         from backend.knowledge.editorial_batches import published
         from backend.knowledge.operation_board import event,content_source
@@ -417,6 +434,8 @@ def publish(kind, ident, data, withdraw=False):
         publication_event(db,kind,ident,item['published'],new,context=context)
         execute_statements(db,writes)
     result = detail(kind,ident)
+    if card_receipt:
+        result['hot_card_rotation'] = card_receipt
     if report_rotation is not None:
         result['report_rotation'] = report_rotation
     return result

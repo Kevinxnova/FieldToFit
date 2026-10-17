@@ -113,7 +113,7 @@ def test_static_card_files_and_serverless_manifest(client,tmp_path,monkeypatch):
     assert hot_cards.metadata(sample,enforce_assets=True)
 
 
-@pytest.mark.parametrize('broken',['source','date','rank','duplicate_rank','copy','asset','english_image','translation','draft_shape'])
+@pytest.mark.parametrize('broken',['source','date','rank','copy','asset','english_image','translation','draft_shape'])
 def test_card_rejects_invalid_review_and_stale_images(client,broken):
     ws.migrate();sample=samples()[0]
     if broken=='source':sample['hot_card']['evidence'][0]['source_id']='missing'
@@ -127,8 +127,6 @@ def test_card_rejects_invalid_review_and_stale_images(client,broken):
         current=ws.detail('news',sample['id']);current['draft']['hot_card']={'changes':'bad'}
         with pytest.raises(ValueError):ws.save('news',sample['id'],{'draft_version':current['draft_version'],'draft':current['draft']})
         return
-    if broken=='duplicate_rank':
-        save_card(sample);publish(sample['id']);sample=samples()[1];sample['hot_card']['featured_rank']=1
     save_card(sample)
     assert not ws.preview('news',sample['id'])['ready']
 
