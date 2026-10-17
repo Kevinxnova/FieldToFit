@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.11.3](CHANGELOG.md#v1.11.3)** · [fieldtofit-v1.11.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.3)
+**Current source version: [v1.11.4](CHANGELOG.md#v1.11.4)** · [fieldtofit-v1.11.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.4)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Display complete Artificial Analysis and Arena charts, one per row, preserving model names, company colors, label leaders, score intervals, units and genuine dates.
-- Fit each full chart proportionally on desktop and mobile. Both the chart and reading link open the corresponding source; reuse the full section’s renderer and current reviewed snapshot while preserving filters, model search and fullscreen.
-- Deploy v1.11.3 and verify bilingual chart data, source links, production assets and HTTP/MCP versions through direct reads, preserving existing content. Bilingual layouts at four widths and interactions passed local checks; production browser interaction checks remain pending after connection timeouts.
+- Cover GPT-6 Astra Pro parallel agents and tool improvements in ChatGPT, collaborative Slides in Space, and GPT-Live API prompt-generated voices with nine presets, retaining plan, billing and rollout boundaries.
+- Backfill the October 7 Day 2 reset-processing statement and October 8 Day 3 banked-reset announcement and confirmation. Keep historical dates; completion posts do not establish exact activation or individual balances, and the strict reset count remains zero.
+- Publish five specifically approved entries after bilingual previews at three widths and matching AI previews. The topic has 42 logs (24 Codex/Work and 18 Other OpenAI). Distinguish the Pro original and edit times and omit an unsupported Day 12 label; preserve homepage charts, interfaces and schedules.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

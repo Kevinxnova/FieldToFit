@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.11.3](CHANGELOG.md#v1.11.3)** · [fieldtofit-v1.11.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.3)
+**当前源码版本：[v1.11.4](CHANGELOG.md#v1.11.4)** · [fieldtofit-v1.11.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.4)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 模型能力与价格按Artificial Analysis、Arena上下排列，每行展示一张完整原图；保留模型名称、公司颜色、引线、评分区间、坐标单位及真实日期。
-- 桌面与手机均等比显示整张图，点击图表或阅读入口直达对应来源；复用完整栏目的绘图与当前已审快照，保持筛选、查找和全屏功能。
-- 已部署v1.11.3；双语原图数据、来源入口、正式资源及HTTP／MCP版本通过线上直读核对，既有内容保持。双语四宽度及交互通过本机验收；线上浏览器连接超时，交互复验待补。
+- 整理ChatGPT GPT-6 Astra Pro的并行代理与工具改进、Space协作Slides及GPT-Live API文字生成声音与九种预设，保留套餐、计费及推出范围。
+- 补回10月7日Day 2后续重置处理声明与10月8日Day 3储备重置公告及确认；历史归日不变，完成帖不冒充准确生效或各账户余额，严格reset计数仍0。
+- 五项经具体批准与双语三宽度、AI同源预览后发布，专题42条（24主线／18其他OpenAI）。Pro初帖与编辑时刻分开，无直接Tibo编号不填Day 12；保留既有首页图表、接口和日程。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

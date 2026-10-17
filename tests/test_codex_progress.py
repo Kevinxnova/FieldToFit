@@ -19,9 +19,9 @@ def event(data, ident='D-78'):
 def test_dates_numbering_precision_shared_api_and_mcp(client):
     body = client.get('/api/v1/platform/news').json
     days = body['codex_progress']['days']
-    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-16', 12), ('2026-10-15', 11), ('2026-10-14', 10), ('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
+    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-17', 13), ('2026-10-16', 12), ('2026-10-15', 11), ('2026-10-14', 10), ('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
     by_date = {d['date']: d for d in days}
-    assert set(by_date['2026-10-16']['codex_ids']) == {'D-155', 'D-165'}
+    assert set(by_date['2026-10-16']['codex_ids']) == {'D-155', 'D-165', 'D-172'}
     assert set(by_date['2026-10-16']['other_openai_ids']) == {'D-168', 'D-169'}
     assert set(by_date['2026-10-15']['codex_ids']) == {'D-160', 'D-164'}
     assert set(by_date['2026-10-15']['other_openai_ids']) == {'D-167', 'D-170'}
@@ -64,8 +64,8 @@ def test_dates_numbering_precision_shared_api_and_mcp(client):
     assert event(body, 'D-99')['codex_28_days']['official_day'] is None
     assert event(body, 'D-98')['codex_28_days']['announced_at'] == '2026-10-08T19:15:14.353Z'
     assert event(body, 'D-99')['codex_28_days']['announced_at'] == '2026-10-08T18:55:59Z'
-    assert by_date['2026-10-08']['codex_ids'] == ['D-96'] and by_date['2026-10-08']['other_openai_ids'] == []
-    assert by_date['2026-10-07']['codex_ids'] == ['D-94', 'D-85', 'D-95']
+    assert by_date['2026-10-08']['codex_ids'] == ['D-96', 'D-175'] and by_date['2026-10-08']['other_openai_ids'] == []
+    assert by_date['2026-10-07']['codex_ids'] == ['D-94', 'D-174', 'D-85', 'D-95']
     assert set(by_date['2026-10-07']['other_openai_ids']) == {'D-86', 'D-87', 'D-97', 'D-91'}
     assert by_date['2026-10-06']['codex_ids'] == ['D-84', 'D-79', 'D-78']
     assert set(by_date['2026-10-06']['other_openai_ids']) == {'D-88', 'D-89'}
@@ -262,7 +262,7 @@ def test_month_grid_has_real_dates_without_creating_logs():
     oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
     assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
     assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
-    assert sum(bool(c['log']) for c in oct)==12 and sum(bool(c['log']) for c in nov)==0
+    assert sum(bool(c['log']) for c in oct)==13 and sum(bool(c['log']) for c in nov)==0
     assert topic==before
 
 

@@ -1,7 +1,35 @@
 {
-  "version": "1.11.3",
-  "revision": "1b476d6b2b2a1c17882ead3fa47fd686d128389ef4847185db012a4307035531",
+  "version": "1.11.4",
+  "revision": "3588d393d4d2797934c6e7c55ab4ebc9ebb1c279674c8d742b727033c088b1e8",
   "items": [
+    {
+      "version": "1.11.4",
+      "date": "2026-10-17",
+      "deployed_on": "2026-10-17",
+      "copy": {
+        "zh": {
+          "title": "五项获批专题更新与历史公告补录",
+          "highlights": [
+            "整理ChatGPT GPT-6 Astra Pro的并行代理与工具改进、Space协作Slides及GPT-Live API文字生成声音与九种预设，保留套餐、计费及推出范围。",
+            "补回10月7日Day 2后续重置处理声明与10月8日Day 3储备重置公告及确认；历史归日不变，完成帖不冒充准确生效或各账户余额，严格reset计数仍0。",
+            "五项经具体批准与双语三宽度、AI同源预览后发布，专题42条（24主线／18其他OpenAI）。Pro初帖与编辑时刻分开，无直接Tibo编号不填Day 12；保留既有首页图表、接口和日程。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Five approved topic updates and historical announcement backfills",
+          "highlights": [
+            "Cover GPT-6 Astra Pro parallel agents and tool improvements in ChatGPT, collaborative Slides in Space, and GPT-Live API prompt-generated voices with nine presets, retaining plan, billing and rollout boundaries.",
+            "Backfill the October 7 Day 2 reset-processing statement and October 8 Day 3 banked-reset announcement and confirmation. Keep historical dates; completion posts do not establish exact activation or individual balances, and the strict reset count remains zero.",
+            "Publish five specifically approved entries after bilingual previews at three widths and matching AI previews. The topic has 42 logs (24 Codex/Work and 18 Other OpenAI). Distinguish the Pro original and edit times and omit an unsupported Day 12 label; preserve homepage charts, interfaces and schedules."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.4"
+    },
     {
       "version": "1.11.3",
       "date": "2026-10-17",

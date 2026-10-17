@@ -2,6 +2,553 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "tool",
+      "checked_at": "2026-10-17",
+      "codex_28_days": {
+        "announced_at": "2026-10-07T19:19:17.822000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2107913674593644711",
+        "group": "codex",
+        "official_day": 3,
+        "overview_en": "Day 3 banked reset: officially confirmed landed",
+        "overview_zh": "Day 3 储备重置 · 官方确认已落地",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-07T19:19:17.822000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-17",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-17",
+            "evidence_url": "https://x.com/thsottiaux/status/2107913674593644711",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对原帖与当前 X 身份；英文仅标注范围内的原文，中文为本站摘译；精确毫秒按帖子 ID 推导，与页面分钟及日期交叉核对。",
+            "text_en": "Loading a banked reset in everyone's paid accounts.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "正向所有人的付费账户加载一次储备重置。",
+            "url": "https://x.com/thsottiaux/status/2107913674593644711"
+          },
+          {
+            "announced_at": "2026-10-08T03:44:55.740000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-17",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-17",
+            "context": {
+              "author_handle": "thsottiaux",
+              "author_name": "Tibo",
+              "kind": "quote",
+              "text_en": "Loading a banked reset in everyone's paid accounts.",
+              "text_scope": "excerpt",
+              "translation_zh": "正向付费账户加载储备重置。",
+              "url": "https://x.com/thsottiaux/status/2107913674593644711"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2108040921044639779",
+            "kind": "supplement",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对原帖与当前 X 身份；英文仅标注范围内的原文，中文为本站摘译；精确毫秒按帖子 ID 推导，与页面分钟及日期交叉核对。",
+            "text_en": "Confirmed landed across all accounts. How are we doing so far?",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "确认已在所有账户落地。目前感觉如何？",
+            "url": "https://x.com/thsottiaux/status/2108040921044639779"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-08",
+      "highlight": false,
+      "id": "D-175",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "回补北京时间 10 月 8 日 03:19 的官方 Day 3 公告：Tibo 称正向付费账户加载一次 banked reset，并回复预计在原文所称 EOD PST 前到达；同日 11:44，他引用该公告确认已在所有账户落地。这里的“所有账户”承接付费账户公告语境，不扩大到免费账户。本条只补记该储备重置事件，GPT-6／Intelligent UI 仍复用 D-91，不另计模型发布。储备重置不等于所有账户额度已自动清零；使用入口和本次提示以账户用量面板为准。原帖未逐档列套餐、具体窗口、有效期或准确生效开始时刻，确认帖的发布时间不充当生效时刻，也不套用九月优惠的资格。本条归回 10 月 8 日，保留官方 Day 3。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-17T02:24:52.413066+00:00",
+        "updated_at": "2026-10-17T02:24:52.413066+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Tibo Day 3 公告",
+          "url": "https://x.com/thsottiaux/status/2107913674593644711"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Tibo 原文 EOD PST 窗口回复",
+          "url": "https://x.com/thsottiaux/status/2107913738791596286"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "Tibo 随后确认",
+          "url": "https://x.com/thsottiaux/status/2108040921044639779"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "Tibo 身份与同款头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo 官方 Day 3 宣布向付费账户发放储备重置，并在随后确认已落地；储备重置不等于账户额度自动清零。",
+      "title": "官方 Day 3 储备重置：Tibo 宣布发放，随后确认已落地",
+      "translations": {
+        "en": {
+          "fields": {
+            "Day 3 储备重置 · 官方确认已落地": "Day 3 banked reset: officially confirmed landed",
+            "Tibo Day 3 公告": "Tibo Day 3 announcement",
+            "Tibo 原文 EOD PST 窗口回复": "Tibo reply using the original EOD PST wording",
+            "Tibo 官方 Day 3 宣布向付费账户发放储备重置，并在随后确认已落地；储备重置不等于账户额度自动清零。": "In his official Day 3 announcement, Tibo said paid accounts would receive a banked reset and later confirmed it had landed. A banked reset does not establish that account allowances were automatically cleared.",
+            "Tibo 身份与同款头像": "Tibo identity and matching avatar",
+            "Tibo 随后确认": "Tibo subsequent confirmation",
+            "变化与适用范围": "Changes and scope",
+            "回补北京时间 10 月 8 日 03:19 的官方 Day 3 公告：Tibo 称正向付费账户加载一次 banked reset，并回复预计在原文所称 EOD PST 前到达；同日 11:44，他引用该公告确认已在所有账户落地。这里的“所有账户”承接付费账户公告语境，不扩大到免费账户。本条只补记该储备重置事件，GPT-6／Intelligent UI 仍复用 D-91，不另计模型发布。储备重置不等于所有账户额度已自动清零；使用入口和本次提示以账户用量面板为准。原帖未逐档列套餐、具体窗口、有效期或准确生效开始时刻，确认帖的发布时间不充当生效时刻，也不套用九月优惠的资格。本条归回 10 月 8 日，保留官方 Day 3。": "At 03:19 Beijing time on 10/8, Tibo’s official Day 3 post said a banked reset was being loaded into paid accounts. A reply used the original deadline wording EOD PST. At 11:44, he quoted the announcement and confirmed it had landed across accounts; that statement retains the paid-account context. This backfill covers the banked reset only; the GPT-6 and Intelligent UI launch remains D-91 for that event. A banked reset is not evidence that every account allowance was automatically cleared. Follow the offer shown in your own usage panel. The posts do not itemize plans, windows, expiry or an exact effective start, and the confirmation-post time is not that start. We do not borrow eligibility from the September offer. This announcement remains on 10/8 with official Day 3.",
+            "官方 Day 3 储备重置：Tibo 宣布发放，随后确认已落地": "Official Day 3 banked reset: announced and subsequently confirmed landed",
+            "直接核对原帖与当前 X 身份；英文仅标注范围内的原文，中文为本站摘译；精确毫秒按帖子 ID 推导，与页面分钟及日期交叉核对。": "Original post and current X identity verified directly; English preserves the labeled excerpt or full text and Chinese is a FieldToFit translation. Milliseconds are post-ID derived and cross-checked against the page minute and date.",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Registered official sources verified directly; post-ID-derived timestamps cross-checked with the page date and minute."
+          },
+          "source_hash": "070b10b6db19cc3ad657e03dd841ada8848893fe501b2ea4c9814a7b31a483ee",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-17",
+      "codex_28_days": {
+        "announced_at": "2026-10-07T03:35:09.157000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2107676072871600470",
+        "group": "codex",
+        "official_day": 2,
+        "overview_en": "Day 2 follow-up reset: processed, per Tibo",
+        "overview_zh": "Day 2 后续重置 · 官方称已处理",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-07T03:35:09.157000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-17",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-17",
+            "context": {
+              "author_handle": "thsottiaux",
+              "author_name": "Tibo",
+              "kind": "quote",
+              "text_en": "Roundup of Day 2/",
+              "text_scope": "excerpt",
+              "translation_zh": "Day 2小结。",
+              "url": "https://x.com/thsottiaux/status/2107575657014468879"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2107676072871600470",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对原帖与当前 X 身份；英文仅标注范围内的原文，中文为本站摘译；精确毫秒按帖子 ID 推导，与页面分钟及日期交叉核对。",
+            "text_en": "…the reset has been processed. Enjoy!",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "……重置已处理。祝使用愉快！",
+            "url": "https://x.com/thsottiaux/status/2107676072871600470"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-07",
+      "highlight": false,
+      "id": "D-174",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "本条回补北京时间 10 月 7 日 11:35 的 Tibo 官方声明：在引用 Day 2 四项更新小结后，他宣布额度重置已经处理，并在随后回复说明已推出的改进仍会保留、下一天进入 Day 3。因此保留其 Day 2 后续关系，不制造社区索引中的“2.5”官方分项，也不改动现有 2.1—2.4 的四项顺序。本条记录的是官方处理声明；原帖没有逐档列出套餐、额度窗口、恢复数量或准确生效开始时刻，不能据此断言每个账户的余额。用户以自身用量面板显示为准。本条保留 10 月 7 日的原始公告日期。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-17T02:24:28.304735+00:00",
+        "updated_at": "2026-10-17T02:24:28.304735+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Tibo 已处理声明",
+          "url": "https://x.com/thsottiaux/status/2107676072871600470"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Tibo Day 2 小结",
+          "url": "https://x.com/thsottiaux/status/2107575657014468879"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "Tibo 下一天为 Day 3 的回复",
+          "url": "https://x.com/thsottiaux/status/2107676261099426030"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "Tibo 身份与同款头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo 在引用 Day 2 小结后确认一次额度重置已处理；仅记录官方声明，不推断各账户余额、完整套餐范围或准确生效时刻。",
+      "title": "Day 2 后续：Tibo 确认一次额度重置已处理",
+      "translations": {
+        "en": {
+          "fields": {
+            "Day 2 后续重置 · 官方称已处理": "Day 2 follow-up reset: processed, per Tibo",
+            "Day 2 后续：Tibo 确认一次额度重置已处理": "Day 2 follow-up: Tibo confirms a usage reset was processed",
+            "Tibo Day 2 小结": "Tibo Day 2 roundup",
+            "Tibo 下一天为 Day 3 的回复": "Tibo reply identifying the next day as Day 3",
+            "Tibo 在引用 Day 2 小结后确认一次额度重置已处理；仅记录官方声明，不推断各账户余额、完整套餐范围或准确生效时刻。": "After quoting his Day 2 roundup, Tibo confirmed a usage reset was processed. This records the official statement without inferring account balances, complete plan scope or an exact effective time.",
+            "Tibo 已处理声明": "Tibo reset-processing statement",
+            "Tibo 身份与同款头像": "Tibo identity and matching avatar",
+            "变化与适用范围": "Changes and scope",
+            "本条回补北京时间 10 月 7 日 11:35 的 Tibo 官方声明：在引用 Day 2 四项更新小结后，他宣布额度重置已经处理，并在随后回复说明已推出的改进仍会保留、下一天进入 Day 3。因此保留其 Day 2 后续关系，不制造社区索引中的“2.5”官方分项，也不改动现有 2.1—2.4 的四项顺序。本条记录的是官方处理声明；原帖没有逐档列出套餐、额度窗口、恢复数量或准确生效开始时刻，不能据此断言每个账户的余额。用户以自身用量面板显示为准。本条保留 10 月 7 日的原始公告日期。": "This backfill records Tibo’s 11:35 Beijing-time statement on 10/7 that a usage reset had been processed. It quotes his Day 2 roundup; his subsequent reply says the improvements remain and Day 3 comes next. We retain that Day 2 relationship without inventing an official 2.5 step or changing the existing 2.1–2.4 roundup. The post does not itemize plans, allowance windows, restored amounts or the exact effective start. It does not establish individual account balances. Check your own usage panel. This record retains the original 10/7 announcement date.",
+            "直接核对原帖与当前 X 身份；英文仅标注范围内的原文，中文为本站摘译；精确毫秒按帖子 ID 推导，与页面分钟及日期交叉核对。": "Original post and current X identity verified directly; English preserves the labeled excerpt or full text and Chinese is a FieldToFit translation. Milliseconds are post-ID derived and cross-checked against the page minute and date.",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Registered official sources verified directly; post-ID-derived timestamps cross-checked with the page date and minute."
+          },
+          "source_hash": "505cc2efbe40bdee151f17184acd3eb6ceb9c24943d684b13ed634b8cb73237b",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-17",
+      "codex_28_days": {
+        "announced_at": "2026-10-16T17:08:32.297000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/OpenAIDevs/status/2111142258867335430",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: prompt-to-voice and 9 presets",
+        "overview_zh": "其他 OpenAI · API 文字生成声音与 9 种新预设",
+        "source_posts": [],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": false,
+      "id": "D-173",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4",
+            "source-5"
+          ],
+          "text": "OpenAI Developers 在北京时间 10 月 17 日 01:08 介绍 GPT-Live-1 的声音配置；API 日志以 10 月 16 日记录正式推出。所有 API 客户可通过文字描述生成并保存自定义声音，无需参考录音或同意录音；这种 prompt-generated 声音用于 GPT-Live，不适用于 Text to Speech、Realtime 或 Chat Completions API。可在声音 Playground 操作，或向/v1/audio/voices 提交 type=prompt 的请求，保存返回的声音 ID 并在 GPT-Live 会话复用。每个组织最多 100 种此类声音。创建声音免费，使用声音生成语音及 Playground 试听仍按正常 GPT-Live 会话计费。另新增德语、法语、印地语、日语和韩语的九种自然预设声音，可通过会话输出声音配置选用。此次是 GPT-Live-1 API 的声音能力更新，不代表昨天 GPT-Live-1.1 已开放 API；后者仍按 D-155 保留“API 即将推出”的边界。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "OpenAI API / GPT-Live",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-17T02:24:04.406720+00:00",
+        "updated_at": "2026-10-17T02:24:04.406720+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-16",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "OpenAI Developers 声音公告",
+          "url": "https://x.com/OpenAIDevs/status/2111142258867335430"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "官方九种预设声音补充",
+          "url": "https://x.com/OpenAIDevs/status/2111142271177621603"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "API 官方更新日志",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "自定义声音官方指南",
+          "url": "https://developers.openai.com/api/docs/guides/custom-voices#create-a-voice-from-a-description"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-5",
+          "title": "官方声音选项",
+          "url": "https://developers.openai.com/api/docs/guides/live-conversations#voice-options"
+        }
+      ],
+      "state": "published",
+      "summary": "GPT-Live-1 API 新增文字生成自定义声音与九种国际预设，创建声音免费，生成语音仍按正常会话计费；不等于 GPT-Live-1.1 API 已上线。",
+      "title": "GPT-Live API 支持文字生成自定义声音，新增九种国际预设声音",
+      "translations": {
+        "en": {
+          "fields": {
+            "API 官方更新日志": "Official API changelog",
+            "GPT-Live API 支持文字生成自定义声音，新增九种国际预设声音": "GPT-Live API adds prompt-generated voices and nine international presets",
+            "GPT-Live-1 API 新增文字生成自定义声音与九种国际预设，创建声音免费，生成语音仍按正常会话计费；不等于 GPT-Live-1.1 API 已上线。": "The GPT-Live-1 API adds prompt-generated voices and nine international presets. Voice creation is free; speech generation uses regular session billing. This does not establish GPT-Live-1.1 API availability.",
+            "OpenAI Developers 在北京时间 10 月 17 日 01:08 介绍 GPT-Live-1 的声音配置；API 日志以 10 月 16 日记录正式推出。所有 API 客户可通过文字描述生成并保存自定义声音，无需参考录音或同意录音；这种 prompt-generated 声音用于 GPT-Live，不适用于 Text to Speech、Realtime 或 Chat Completions API。可在声音 Playground 操作，或向/v1/audio/voices 提交 type=prompt 的请求，保存返回的声音 ID 并在 GPT-Live 会话复用。每个组织最多 100 种此类声音。创建声音免费，使用声音生成语音及 Playground 试听仍按正常 GPT-Live 会话计费。另新增德语、法语、印地语、日语和韩语的九种自然预设声音，可通过会话输出声音配置选用。此次是 GPT-Live-1 API 的声音能力更新，不代表昨天 GPT-Live-1.1 已开放 API；后者仍按 D-155 保留“API 即将推出”的边界。": "OpenAI Developers announced new GPT-Live-1 voice options at 01:08 Beijing time on 10/17; the API changelog records the release under 10/16. All API customers can create and save a voice from a text description in the voice Playground or through /v1/audio/voices with type=prompt, then reuse its ID in GPT-Live. No reference or consent recording is required for this workflow. Prompt-generated voices work with GPT-Live, not the Text to Speech, Realtime or Chat Completions APIs. Organizations can save up to 100. Creation is free; speech generation and Playground listening use regular session billing. Nine natural presets add German, French, Hindi, Japanese and Korean options. This is a GPT-Live-1 API voice update, not evidence that GPT-Live-1.1 has reached the API; D-155 retains its forthcoming-API qualification.",
+            "OpenAI Developers 声音公告": "OpenAI Developers voice announcement",
+            "其他 OpenAI · API 文字生成声音与 9 种新预设": "Other OpenAI: prompt-to-voice and 9 presets",
+            "变化与适用范围": "Changes and scope",
+            "官方九种预设声音补充": "Official supplement on nine preset voices",
+            "官方声音选项": "Official voice options",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Registered official sources verified directly; post-ID-derived timestamps cross-checked with the page date and minute.",
+            "自定义声音官方指南": "Official custom voices guide"
+          },
+          "source_hash": "9b9ea5592c1a17740bb165fbb183baf0b77b1cd9ed6ea9c2d43bdd26429f87b6",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-17",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://learn.chatgpt.com/docs/space/getting-started#create-and-refine-slides",
+        "group": "codex",
+        "official_day": null,
+        "overview_en": "Work: collaborative Slides in Space",
+        "overview_zh": "Work · Space 协作制作演示文稿",
+        "source_posts": [],
+        "timestamp_basis": "source_date",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-172",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "ChatGPT 官方 10 月 16 日更新日志宣布 Slides 正在向拥有 Space 权限的合资格 Pro、Business 与 Enterprise 用户推出。可在 Work 中请求根据对话、文件或大纲创建 Space 演示文稿，也可提供参考 deck 引导风格。网页与桌面可直接编辑文字、图片、形状、表格和图表，或选择元素请求 ChatGPT 修改；团队可同时编辑同一 deck 并使用共享评论。Slides 现支持查看与编辑权限，没有独立的仅评论角色。可在 ChatGPT 直接展示；网页支持导出 PowerPoint、PDF 或 Google Slides，桌面在已安装对应软件时可在 PowerPoint 或 Keynote 打开。手机可通过对话创建并查看，直接编辑元素使用网页／桌面；Windows 若生成普通 PowerPoint 文件，可切换云模式或使用网页制作 Space 协作 deck。本条只有 10 月 16 日来源日期，不填推算北京时间。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "ChatGPT Work / Space",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-17T02:23:40.301571+00:00",
+        "updated_at": "2026-10-17T02:23:40.301571+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-16",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "ChatGPT 官方 10 月 16 日更新日志",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Space 当前文档",
+          "url": "https://learn.chatgpt.com/docs/space"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "Slides 创建与导出",
+          "url": "https://learn.chatgpt.com/docs/space/getting-started#create-and-refine-slides"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "Slides 协作权限",
+          "url": "https://learn.chatgpt.com/docs/space/collaboration#collaborate-on-slides"
+        }
+      ],
+      "state": "published",
+      "summary": "Slides 正在向拥有 Space 权限的合资格 Pro、Business 与 Enterprise 用户推出，可在 Work 中创建、共同编辑并导出 deck。",
+      "title": "ChatGPT Slides 进入 Space：与团队共同编辑、展示与导出演示文稿",
+      "translations": {
+        "en": {
+          "fields": {
+            "ChatGPT Slides 进入 Space：与团队共同编辑、展示与导出演示文稿": "ChatGPT Slides in Space: collaborate, present and export decks",
+            "ChatGPT 官方 10 月 16 日更新日志": "ChatGPT official 10/16 release notes",
+            "ChatGPT 官方 10 月 16 日更新日志宣布 Slides 正在向拥有 Space 权限的合资格 Pro、Business 与 Enterprise 用户推出。可在 Work 中请求根据对话、文件或大纲创建 Space 演示文稿，也可提供参考 deck 引导风格。网页与桌面可直接编辑文字、图片、形状、表格和图表，或选择元素请求 ChatGPT 修改；团队可同时编辑同一 deck 并使用共享评论。Slides 现支持查看与编辑权限，没有独立的仅评论角色。可在 ChatGPT 直接展示；网页支持导出 PowerPoint、PDF 或 Google Slides，桌面在已安装对应软件时可在 PowerPoint 或 Keynote 打开。手机可通过对话创建并查看，直接编辑元素使用网页／桌面；Windows 若生成普通 PowerPoint 文件，可切换云模式或使用网页制作 Space 协作 deck。本条只有 10 月 16 日来源日期，不填推算北京时间。": "ChatGPT Slides is rolling out to eligible Pro, Business and Enterprise users with Space access, according to the 10/16 release notes. In Work, ask for a presentation in Space using a conversation, files, an outline or a reference deck. Edit elements on web or desktop, request changes from ChatGPT, and collaborate on the same deck. Slides supports view and edit permissions, with shared comments but no separate comment-only role. Present in ChatGPT; web exports include PowerPoint, PDF and Google Slides. Desktop can open supported installed presentation apps. Mobile supports conversational creation and viewing; use web or desktop for direct element edits. If Windows produces a standalone PowerPoint file, use cloud mode or the web for a collaborative Space deck. Only the 10/16 source date is established; no Beijing timestamp is inferred.",
+            "Slides 创建与导出": "Create and export Slides",
+            "Slides 协作权限": "Slides collaboration permissions",
+            "Slides 正在向拥有 Space 权限的合资格 Pro、Business 与 Enterprise 用户推出，可在 Work 中创建、共同编辑并导出 deck。": "Slides is rolling out to eligible Pro, Business and Enterprise users with Space access, supporting deck creation in Work, collaborative editing and exports.",
+            "Space 当前文档": "Current Space documentation",
+            "Work · Space 协作制作演示文稿": "Work: collaborative Slides in Space",
+            "变化与适用范围": "Changes and scope",
+            "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。": "Registered official sources verified directly; source date retained without an invented announcement time."
+          },
+          "source_hash": "cd0f37a88eb38d7fd80745dfe000f56b9bedf753e5f1f7ae3f3094d52de0dd08",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-17",
+      "codex_28_days": {
+        "announced_at": "2026-10-16T20:00:22.918000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/OpenAI/status/2111185504746213705",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: Pro parallel agents and tools",
+        "overview_zh": "其他 OpenAI · Pro 并行代理与工具升级",
+        "source_posts": [],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": false,
+      "id": "D-171",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4",
+            "source-5"
+          ],
+          "text": "OpenAI 宣布升级 ChatGPT 的 GPT-6 Astra Pro：响应更快，插件与工具使用得到改进，并可让多个代理并行处理任务的不同部分。用户可在对话中跟踪各代理进度，打开完成的任务查看工作。此次面向 Chat 页的合资格 Pro 用户推出；托管工作区受设置与推出资格影响。使用时在 Chat 页选择可用的 Pro 选项，再提出可拆分的任务；不要据此改变 Codex／Work 的模型、配额或套餐判断。速度改善为官方描述，本站未复测，也未取得统一提升比例。首版原帖发布于北京时间 10 月 17 日 04:00；04:27 编辑版将名称明确为 GPT-6 Astra Pro，是同一事件，不另计一次更新。官方帮助日志标注 10 月 16 日来源日期。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "ChatGPT",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-17T02:23:16.214727+00:00",
+        "updated_at": "2026-10-17T02:23:16.214727+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-16",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "OpenAI 首次原帖",
+          "url": "https://x.com/OpenAI/status/2111185504746213705"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "OpenAI 编辑后的当前原帖",
+          "url": "https://x.com/OpenAI/status/2111192259073094035"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "OpenAI 编辑历史",
+          "url": "https://x.com/OpenAI/status/2111192259073094035/history"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "ChatGPT 官方更新日志",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-5",
+          "title": "官方模型使用范围",
+          "url": "https://help.openai.com/en/articles/20001354"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 升级 ChatGPT Chat 页的 GPT-6 Astra Pro，支持并行代理，并改进工具使用与响应速度；面向合资格 Pro 用户推出。",
+      "title": "ChatGPT GPT-6 Astra Pro 更新：更快响应，并行代理与工具使用改进",
+      "translations": {
+        "en": {
+          "fields": {
+            "ChatGPT GPT-6 Astra Pro 更新：更快响应，并行代理与工具使用改进": "GPT-6 Astra Pro in ChatGPT: faster responses, parallel agents and improved tools",
+            "ChatGPT 官方更新日志": "ChatGPT official release notes",
+            "OpenAI 升级 ChatGPT Chat 页的 GPT-6 Astra Pro，支持并行代理，并改进工具使用与响应速度；面向合资格 Pro 用户推出。": "OpenAI is upgrading GPT-6 Astra Pro in the ChatGPT Chat tab for eligible Pro users, with parallel agents, improved tool use and faster responses.",
+            "OpenAI 宣布升级 ChatGPT 的 GPT-6 Astra Pro：响应更快，插件与工具使用得到改进，并可让多个代理并行处理任务的不同部分。用户可在对话中跟踪各代理进度，打开完成的任务查看工作。此次面向 Chat 页的合资格 Pro 用户推出；托管工作区受设置与推出资格影响。使用时在 Chat 页选择可用的 Pro 选项，再提出可拆分的任务；不要据此改变 Codex／Work 的模型、配额或套餐判断。速度改善为官方描述，本站未复测，也未取得统一提升比例。首版原帖发布于北京时间 10 月 17 日 04:00；04:27 编辑版将名称明确为 GPT-6 Astra Pro，是同一事件，不另计一次更新。官方帮助日志标注 10 月 16 日来源日期。": "OpenAI has upgraded GPT-6 Astra Pro in ChatGPT with faster responses, improved plugin and tool use, and agents that handle parts of a task in parallel. Follow their progress in the conversation and open completed work. The update is rolling out to eligible Pro users in the Chat tab; managed workspaces depend on settings and rollout eligibility. Choose an available Pro option in Chat and describe the task. These announcements do not establish changes to Codex or Work allowances. Speed improvements are official claims, not FieldToFit measurements. The original post appeared at 04:00 Beijing time on 10/17; a 04:27 edit clarified the GPT-6 Astra Pro name. Both versions are one event. Official release notes use the 10/16 source date.",
+            "OpenAI 编辑历史": "OpenAI edit history",
+            "OpenAI 编辑后的当前原帖": "OpenAI current edited post",
+            "OpenAI 首次原帖": "OpenAI original post",
+            "其他 OpenAI · Pro 并行代理与工具升级": "Other OpenAI: Pro parallel agents and tools",
+            "变化与适用范围": "Changes and scope",
+            "官方模型使用范围": "Official model availability",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Registered official sources verified directly; post-ID-derived timestamps cross-checked with the page date and minute."
+          },
+          "source_hash": "b710a33898af147cb19cc19e07ff411c22a1697e9d85fc3a79c2244c40e667f4",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "research",
       "checked_at": "2026-10-16",
       "editor": "FieldToFit",
@@ -23862,7 +24409,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-16",
+  "reviewed_at": "2026-10-17",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

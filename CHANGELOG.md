@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.11.4"></a>
+## v1.11.4 · 五项获批专题更新与历史公告补录 · 2026-10-17
+
+<!-- site-deployed:2026-10-17 -->
+<!-- public-title:en:Five approved topic updates and historical announcement backfills -->
+<!-- release-summary:zh:start -->
+- 整理ChatGPT GPT-6 Astra Pro的并行代理与工具改进、Space协作Slides及GPT-Live API文字生成声音与九种预设，保留套餐、计费及推出范围。
+- 补回10月7日Day 2后续重置处理声明与10月8日Day 3储备重置公告及确认；历史归日不变，完成帖不冒充准确生效或各账户余额，严格reset计数仍0。
+- 五项经具体批准与双语三宽度、AI同源预览后发布，专题42条（24主线／18其他OpenAI）。Pro初帖与编辑时刻分开，无直接Tibo编号不填Day 12；保留既有首页图表、接口和日程。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Cover GPT-6 Astra Pro parallel agents and tool improvements in ChatGPT, collaborative Slides in Space, and GPT-Live API prompt-generated voices with nine presets, retaining plan, billing and rollout boundaries.
+- Backfill the October 7 Day 2 reset-processing statement and October 8 Day 3 banked-reset announcement and confirmation. Keep historical dates; completion posts do not establish exact activation or individual balances, and the strict reset count remains zero.
+- Publish five specifically approved entries after bilingual previews at three widths and matching AI previews. The topic has 42 logs (24 Codex/Work and 18 Other OpenAI). Distinguish the Pro original and edit times and omit an unsupported Day 12 label; preserve homepage charts, interfaces and schedules.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者对完整五项双语文案明确回复“发布这5项（推荐）”。本批使用既有内容管理、专题与增量读取字段；结合v1.11.0以来累计显示与内容范围，判为兼容内容patch，无新模块、主要用户流程或协议变化、数据库迁移。Dots小组件只有周范围，仍留内部，不制造日级日期；社区Day 12索引不写成Tibo原帖编号。实际来源、备份、审核、验证和部署见[验收](docs/validation/2026-10-17-codex-five-updates.md)。未来新批次仍具体批准。
+
 <a id="v1.11.3"></a>
 ## v1.11.3 · 首页显示完整模型原图 · 2026-10-17
 
