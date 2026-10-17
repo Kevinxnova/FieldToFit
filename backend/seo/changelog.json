@@ -1,7 +1,35 @@
 {
-  "version": "1.11.4",
-  "revision": "3588d393d4d2797934c6e7c55ab4ebc9ebb1c279674c8d742b727033c088b1e8",
+  "version": "1.11.5",
+  "revision": "49a1829f8527c694cffc8a5ef979e8ad51d0d8eb3969543647346b1a1aee2c2d",
   "items": [
+    {
+      "version": "1.11.5",
+      "date": "2026-10-17",
+      "deployed_on": "2026-10-17",
+      "copy": {
+        "zh": {
+          "title": "MAI-Base-2专题与十项获批动态",
+          "highlights": [
+            "为获选MAI-Base-2技术报告整理四条核心结论、同号论述与三张原创事实示意，区分数据曝光、等BPB计算效率及系统指标。",
+            "接续10月17日获批A–J十项动态、九份已有档案和七处关联事件补录，同步首页三重点、五条完整栏目速览与总表最新事件。",
+            "沿用正式发布后四篇报告轮替，全部精选与历史索引保留所有报告及稳定入口；保留旧事件日期、Codex专题、公开日报和模型榜单。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "MAI-Base-2 analysis and ten approved updates",
+          "highlights": [
+            "Present four core findings, matching arguments and three original factual diagrams for the selected MAI-Base-2 report, separating data exposure, matched-BPB compute efficiency and system metrics.",
+            "Continue ten approved October17 updates, nine existing dossiers and seven related earlier events. Synchronize three homepage highlights, five complete-section highlights and latest-event tables.",
+            "Reuse four-report rotation after successful publication, retaining every report and stable entry in the complete index. Preserve source dates, Codex progress, the public daily journal and model charts."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.5"
+    },
     {
       "version": "1.11.4",
       "date": "2026-10-17",

@@ -1,0 +1,626 @@
+{
+  "category": "research",
+  "checked_at": "2026-10-17",
+  "editor": "FieldToFit",
+  "event_date": "2026-10-15",
+  "highlight": false,
+  "id": "D-186",
+  "interpretation": [
+    {
+      "locator": "Official complete technical article; PDF pp1–13",
+      "source_ids": [
+        "report",
+        "web"
+      ],
+      "text": "微软把数据重复规律、超参数外推和万卡系统放在同一条训练路线中。本文以四条结论、对应论述及三张本站原创示意，解释等质量计算量、固定内存MoE与真实训练利用率的不同含义；作者实验未经本站复现。",
+      "title": "把训练方法、计算口径和工程条件一起读"
+    }
+  ],
+  "name": "Frontier Pre-training at Microsoft AI / MAI-Base-2",
+  "note": "官方网页日期为 2026-10-15，未标编号修订；PDF入口参数v=2 不被解释为已确认的论文v2 或实质修订。本站 2026-10-17 核对，实际上站时间由发布记录维护。完整网页已深读，并交叉核对 13 页PDF中的定义与位置；原图尚未完成逐图视觉复核，本站不复制或数字化原图曲线。原文仅链接，三图为本站原创事实示意。",
+  "organization": "Microsoft AI",
+  "publication": {
+    "first_published_at": "2026-10-17T03:17:49.268525+00:00",
+    "report_selected_at": "2026-10-17T03:17:49.268525+00:00",
+    "updated_at": "2026-10-17T03:17:49.268525+00:00"
+  },
+  "reading_materials": [
+    {
+      "approved": true,
+      "body": "",
+      "checked_at": "2026-10-17",
+      "coverage": "link_only",
+      "id": "report",
+      "locator": "PDF pp1–13; web sections Robust scaling ladders through What’s next",
+      "reason": "已深读官方技术正文；再分发许可未确认，仅公开原文入口及本站原创分析。",
+      "retrieved_at": "2026-10-17",
+      "rights": {
+        "basis": "Link only; original commentary and factual diagrams by FieldToFit."
+      },
+      "title": "Frontier Pre-training at Microsoft AI · official PDF",
+      "upstream_revision": "Lab Notes 2026-10-15; unnumbered",
+      "url": "https://microsoft.ai/pdf/Frontier-Pre-training-at-Microsoft-AI.pdf?v=2"
+    },
+    {
+      "approved": true,
+      "body": "",
+      "checked_at": "2026-10-17",
+      "coverage": "link_only",
+      "id": "web",
+      "locator": "PDF pp1–13; web sections Robust scaling ladders through What’s next",
+      "reason": "已深读官方技术正文；再分发许可未确认，仅公开原文入口及本站原创分析。",
+      "retrieved_at": "2026-10-17",
+      "rights": {
+        "basis": "Link only; original commentary and factual diagrams by FieldToFit."
+      },
+      "title": "Microsoft AI Lab Notes · 2026-10-15",
+      "upstream_revision": "Lab Notes 2026-10-15; unnumbered",
+      "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
+    }
+  ],
+  "related": [],
+  "source_published_at": "2026-10-15",
+  "sources": [
+    {
+      "coverage": "link_only",
+      "id": "report",
+      "title": "Frontier Pre-training at Microsoft AI · official PDF",
+      "url": "https://microsoft.ai/pdf/Frontier-Pre-training-at-Microsoft-AI.pdf?v=2"
+    },
+    {
+      "coverage": "link_only",
+      "id": "web",
+      "title": "Microsoft AI Lab Notes · 2026-10-15",
+      "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
+    }
+  ],
+  "state": "published",
+  "summary": "微软把数据重复规律、超参数外推和万卡系统放在同一条训练路线中。本文以四条结论、对应论述及三张本站原创示意，解释等质量计算量、固定内存MoE与真实训练利用率的不同含义；作者实验未经本站复现。",
+  "technical_map": {
+    "caution": "作者结果未复现；部分基准私有、部分对照已后训练；模型仍在后训练。原文图表仅链接，本站图形为事实示意而非实验曲线。",
+    "change_summary": "首次整理所选MAI-Base-2 技术文，提供四结论、同号论述、三张原创事实图，并区分BPB拟合效率、实际训练计算、MFU和goodput。",
+    "edges": [
+      {
+        "evidence": [
+          {
+            "fragment": "page=4",
+            "locator": "pp3–4; Robust scaling ladders; Figure 2",
+            "source_id": "report"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "并行核对训练证据",
+        "relation": "parallel",
+        "to": "exposure"
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=6",
+            "locator": "pp5–7; Scaling laws for hyperparameters; Figure 4",
+            "source_id": "report"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "并行核对训练证据",
+        "relation": "parallel",
+        "to": "hyperparameters"
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=5",
+            "locator": "pp4–5; Isolating modeling efficiency from compute; Figure 3",
+            "source_id": "report"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "并行核对训练证据",
+        "relation": "parallel",
+        "to": "efficiency"
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=8",
+            "locator": "pp7–9; Scaling MoE; Figure 6",
+            "source_id": "report"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "并行核对训练证据",
+        "relation": "parallel",
+        "to": "dropless"
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=10",
+            "locator": "p2; pp9–11; Scaling Muon and Activation gradient clipping",
+            "source_id": "report"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "并行核对训练证据",
+        "relation": "parallel",
+        "to": "system"
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=12",
+            "locator": "pp11–12; Scaling Data; Figure 10",
+            "source_id": "report"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "并行核对训练证据",
+        "relation": "parallel",
+        "to": "data"
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=13",
+            "locator": "pp1–3; What’s next pp12–13",
+            "source_id": "report"
+          }
+        ],
+        "from": "checkpoint",
+        "label": "并行核对训练证据",
+        "relation": "parallel",
+        "to": "adoption"
+      }
+    ],
+    "focus": "数据曝光、等质量计算量和万卡系统如何共同决定预训练结果",
+    "nodes": [
+      {
+        "evidence": [
+          {
+            "fragment": "page=1",
+            "locator": "pp1–3; How MAI-Base-2 Compares",
+            "source_id": "report"
+          }
+        ],
+        "id": "checkpoint",
+        "kind": "baseline",
+        "label": "底座规模与训练配置",
+        "limitation": "不是已核实的公开权重或通用API交付。",
+        "mechanism": "稀疏MoE底座，原生视觉预训练。",
+        "metrics": [],
+        "result": "预训练已完成，仍在后训练。",
+        "setting": "2.8T总参数、80B激活、50T训练token；16k GB200、38 天。",
+        "stage": 0
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=4",
+            "locator": "pp3–4; Robust scaling ladders; Figure 2",
+            "source_id": "report"
+          }
+        ],
+        "id": "exposure",
+        "kind": "method",
+        "label": "小实验保留数据重复规律",
+        "limitation": "报告示例不是所有数据集的固定重复配方。",
+        "mechanism": "source scaling缩小独特样本池，保持重复次数和TPP。",
+        "metrics": [],
+        "result": "降低小规模实验偏好欠正则化配置的风险。",
+        "setting": "固定配方的L18 至L42 缩放阶梯；TPP为每激活参数训练token数。",
+        "stage": 1
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=6",
+            "locator": "pp5–7; Scaling laws for hyperparameters; Figure 4",
+            "source_id": "report"
+          }
+        ],
+        "id": "hyperparameters",
+        "kind": "method",
+        "label": "联合外推学习率与衰减",
+        "limitation": "经验式依赖此配方，不是任意模型可照抄的常数。",
+        "mechanism": "按LR与LR×WD搜索，再拟合步数和TPP的经验关系。",
+        "metrics": [],
+        "result": "在作者中间规模实验中优于此前启发式。",
+        "setting": "小规模搜索，中间规模验证；同时拟合dropout。",
+        "stage": 1
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=5",
+            "locator": "pp4–5; Isolating modeling efficiency from compute; Figure 3",
+            "source_id": "report"
+          }
+        ],
+        "id": "efficiency",
+        "kind": "result",
+        "label": "等BPB比较训练计算",
+        "limitation": "不是实际总费用或API价格倍数。",
+        "mechanism": "四项保留集各拟合BPB与FLOPs，计算达到基线BPB所需算力。",
+        "metrics": [
+          {
+            "baseline": "DeepSeek-V4-Pro-Base reported training FLOPs",
+            "conditions": "Four independently fitted held-out tasks; range 4.2–12.3; known final endpoint included; not actual total cost",
+            "label": "Matched-BPB pre-training FLOPs efficiency lower bound",
+            "unit": "ratio",
+            "value": 4.2
+          }
+        ],
+        "result": "作者报告 4.2–12.3 倍FLOPs效率；最终大模型实际训练计算更多。",
+        "setting": "基线DeepSeek-V4-Pro-Base；拟合包含已知MAI-Base-2 终点。",
+        "stage": 2
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=8",
+            "locator": "pp7–9; Scaling MoE; Figure 6",
+            "source_id": "report"
+          }
+        ],
+        "id": "dropless",
+        "kind": "method",
+        "label": "固定内存，多轮处理溢出",
+        "limitation": "额外轮次增加工作量；层级MFU不等于整次训练MFU。",
+        "mechanism": "分组固定专家容量，多轮dispatch／compute／collect，不丢弃溢出token。",
+        "metrics": [],
+        "result": "作者MoE层MFU由 24%升至 35%，使全层MoE成为可用选择。",
+        "setting": "容量可调，组内共享空闲容量，稳态目标一轮。",
+        "stage": 1
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=10",
+            "locator": "p2; pp9–11; Scaling Muon and Activation gradient clipping",
+            "source_id": "report"
+          }
+        ],
+        "id": "system",
+        "kind": "result",
+        "label": "算力利用率与有效进展时间分开",
+        "limitation": "MFU排除重计算和优化器FLOPs，goodput为有训练进展的时间比例。",
+        "mechanism": "Muon分片重组与通信重叠；激活梯度裁剪抑制局部异常。",
+        "metrics": [],
+        "result": "整次训练MFU 21%，goodput 89%；Muon每步 165 ms，占 2.1%。",
+        "setting": "16k GB200，38 天；MFU按每卡 2.5 PFLOPS归一。",
+        "stage": 2
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=12",
+            "locator": "pp11–12; Scaling Data; Figure 10",
+            "source_id": "report"
+          }
+        ],
+        "id": "data",
+        "kind": "method",
+        "label": "独特数据与重复后混合比例分开",
+        "limitation": "4.5T与 18%分母不同，不能直接相除为独特语料占比。",
+        "mechanism": "改进解析、去重、主题分桶及多样性采样；无模型蒸馏的自建语料路线。",
+        "metrics": [],
+        "result": "重复后的视觉数据占 50T训练混合 18%。",
+        "setting": "独特训练token比上代约增 36%；视觉独特token 4.5T。",
+        "stage": 1
+      },
+      {
+        "evidence": [
+          {
+            "fragment": "page=13",
+            "locator": "pp1–3; What’s next pp12–13",
+            "source_id": "report"
+          }
+        ],
+        "id": "adoption",
+        "kind": "method",
+        "label": "公开报告与可取得模型分开",
+        "limitation": "仍在后训练，未来可信合作伙伴权重许可不是当前开放下载。",
+        "mechanism": "评估使用保留集BPB；代码为内部代码库，其他任务向供应商委托。",
+        "metrics": [],
+        "result": "提供训练配方和工程证据，不足以判断全部产品任务。",
+        "setting": "比较 2026-10 之前可用检查点，部分对照已经后训练。",
+        "stage": 3
+      }
+    ],
+    "question": "MAI-Base-2：预训练计算节省，怎样变成可靠的大规模训练？",
+    "reading": {
+      "editorial": [
+        "FieldToFit分析：这份报告最值得复用的是一条判断链——小实验是否控制了数据曝光，效率比较是否固定质量目标，系统实现是否把FLOPs优势变成实际进展。对训练团队，这是实验设计清单；对模型采用者，则是避免将训练论文直接翻译成产品承诺的方法。",
+        "路线连线并列组织需要同时检查的证据，不宣称某一模块独自造成全部增益。原文日期、本站核对及实际发表分开保存，后续若公开检查点或实质修订，再按新证据接续同一入口。",
+        "官方网页日期为 2026-10-15，未标编号修订；PDF入口参数v=2 不被解释为已确认的论文v2 或实质修订。本站 2026-10-17 核对，实际上站时间由发布记录维护。完整网页已深读，并交叉核对 13 页PDF中的定义与位置；原图尚未完成逐图视觉复核，本站不复制或数字化原图曲线。原文仅链接，三图为本站原创事实示意。"
+      ],
+      "findings": [
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "把小模型训练得更久，并不一定模拟了大模型的处境。若小实验每次看到新数据，而最终训练要重复同一来源，小实验可能偏爱到了大规模才过拟合的配置。source scaling主动缩小小实验的独特样本池，同时保持各来源重复次数及TPP；它控制的是实验条件，不只是数据总量。"
+            },
+            {
+              "alt": "两种训练跨度均重复八次的source scaling示例",
+              "attribution": "FieldToFit 本站原创事实示意，依据 Microsoft AI 官方技术文。",
+              "caption": "图 1｜本站示意。5T与 50T、八次重复取自作者示例，不是全部语料的实测配方；未数字化图 2 曲线。",
+              "evidence": [
+                {
+                  "fragment": "page=4",
+                  "locator": "p4; Figure 2 and source scaling example",
+                  "source_id": "report"
+                }
+              ],
+              "image_url": "/report-figures/mai-base-2-202610-source-scaling.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; source facts: Microsoft AI, Frontier Pre-training at Microsoft AI, 2026-10-15."
+            },
+            {
+              "items": [
+                "学习率与权重衰减联合搜索，作者改用LR和LR×WD坐标，再拟合训练步数与TPP的关系；这避免把两个耦合量当成彼此独立的旋钮。",
+                "这些经验关系先从小规模估计，再在中间规模验证。本站判断是：这种验证链比只公布一条最终训练曲线更能说明配方如何被选中，但不意味着其他数据和优化器可以照抄常数。"
+              ],
+              "kind": "points"
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "示例中的重复次数与经验超参数关系都有条件，不能当作通用训练默认值。"
+            }
+          ],
+          "evidence": [
+            {
+              "fragment": "page=4",
+              "locator": "pp3–7; Figures 2 and 4",
+              "source_id": "report"
+            }
+          ],
+          "id": "scale-exposure",
+          "node_ids": [
+            "exposure",
+            "hyperparameters"
+          ],
+          "summary": "预测大训练前，先让小实验的数据曝光与正则化条件可比较。",
+          "title": "小模型要重复相似的数据，外推才更可信"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "作者没有用最终两台不同大小模型的总训练计算直接宣布节省，而是在代码、问答、STEM和数学四项保留集上分别拟合BPB与训练FLOPs。以DeepSeek-V4-Pro-Base的BPB为目标，估计微软阶梯达到相同质量需要多少FLOPs，再与基线训练计算比较。BPB按字节度量，有助于跨tokenizer比较，但仍是指定文本保留集指标。"
+            },
+            {
+              "alt": "匹配基线BPB后比较所需训练FLOPs的定义示意",
+              "attribution": "FieldToFit 本站原创事实示意，依据 Microsoft AI 官方技术文。",
+              "caption": "图 2｜本站示意，非实验曲线。4.2–12.3 倍为四项独立拟合结果的范围；已知最终终点纳入拟合，不是盲预测。",
+              "evidence": [
+                {
+                  "fragment": "page=5",
+                  "locator": "pp4–5; Figure 3",
+                  "source_id": "report"
+                }
+              ],
+              "image_url": "/report-figures/mai-base-2-202610-efficiency-scope.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; source facts: Microsoft AI, Frontier Pre-training at Microsoft AI, 2026-10-15."
+            },
+            {
+              "items": [
+                "拟合纳入了已经训练完成的MAI-Base-2 终点，因此匹配点位于拟合模型范围内。这个口径比把它叫外推验证更准确，也应与图 2 用于预测终点的阶梯实验分开。",
+                "作者明确最终MAI-Base-2 实际使用的训练FLOPs比基线更多，并把配方效率投入更大的模型。效率提升和总支出下降是不同问题，报告未给出可推导API价格或完整训练账单的依据。"
+              ],
+              "kind": "points"
+            },
+            {
+              "kind": "highlight",
+              "label": "evidence",
+              "text": "这里的可审结论是“同一保留集质量目标下的估计训练计算更少”，不是最终模型总成本更低。"
+            }
+          ],
+          "evidence": [
+            {
+              "fragment": "page=5",
+              "locator": "pp4–5; Isolating modeling efficiency from compute",
+              "source_id": "report"
+            }
+          ],
+          "id": "equal-quality",
+          "node_ids": [
+            "efficiency",
+            "checkpoint"
+          ],
+          "summary": "先固定质量目标，再问训练配方需要多少计算。",
+          "title": "4.2–12.3 倍是在等BPB处比较，不是实际账单"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "微软称全层MoE此前在FLOPs上占优，却因实现开销在实际时间上不如隔层布局。新版把专家分组，为每个专家设固定token容量，用额外轮次处理溢出，并允许同组使用空闲容量；少分配内存可能意味着更多轮次，不是消除代价。通信与计算重叠、设备端元数据和批量归约减少了每专家开销。"
+            },
+            {
+              "alt": "固定内存多轮MoE，以及分母不同的 21% MFU与 89% goodput",
+              "attribution": "FieldToFit 本站原创事实示意，依据 Microsoft AI 官方技术文。",
+              "caption": "图 3｜本站定性示意，不表示真实耗时比例。整次训练MFU 21%与goodput 89%分母不同，不能相减或当作同一利用率。",
+              "evidence": [
+                {
+                  "fragment": "page=8",
+                  "locator": "p2; pp8–10; Figure 6",
+                  "source_id": "report"
+                }
+              ],
+              "image_url": "/report-figures/mai-base-2-202610-system-scope.png",
+              "kind": "figure",
+              "license": "Graphics © FieldToFit; source facts: Microsoft AI, Frontier Pre-training at Microsoft AI, 2026-10-15."
+            },
+            {
+              "items": [
+                "MoE层MFU由 24%到 35%是局部实现结果；整次训练MFU为 21%，按每卡 2.5 PFLOPS归一，排除重计算和优化器FLOPs。goodput 89%则表示有训练进展的时间占比。",
+                "Muon需要完整矩阵做正交化，和分片优化器有张力；实现通过重分片及通信重叠处理。作者报告每步 165 ms、占 2.1%，理论 55 ms仍有差距，保留尾部等待、调度、负载不均和复制分配等解释。",
+                "激活梯度裁剪针对局部异常，避免一小部分样本牵连整批权重梯度；还帮助追到预处理截断许可头的错误。报告把方法收益与数据诊断连起来，但没有逐项隔离最终模型全部增益。"
+              ],
+              "kind": "points"
+            }
+          ],
+          "evidence": [
+            {
+              "fragment": "page=8",
+              "locator": "pp7–11; Figures 5–9",
+              "source_id": "report"
+            }
+          ],
+          "id": "systems",
+          "node_ids": [
+            "dropless",
+            "system"
+          ],
+          "summary": "计算上更稀疏的选择，也可能输给通信、碎片和尾部等待。",
+          "title": "全层MoE能否划算，要同时看内存和真实训练时间"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "MAI-Base-2 以无编码器VLM方式原生预训练视觉。作者称独特训练token比上代约增 36%，视觉语料含 4.5T独特token，重复后视觉数据占 50T混合的 18%。独特样本量、重复曝光量和混合占比分母不同，本文保留各自单位，不反推未公布的数据明细。"
+            },
+            {
+              "items": [
+                "代码保留集是微软内部代码库；STEM、数学和问答集由供应商提供并进行去污染。它们能支持报告内BPB比较，不能替代开放任务集复现或你的业务质量评测。",
+                "Kimi K3、Qwen3.8 和MiMo-V2.6-Pro-RL的可用对照已后训练，DeepSeek-V4-Pro-Base则是底座。作者已注明后训练可能影响结果，不将这张表写成统一纯预训练竞赛。",
+                "官方仍说模型在后训练，未来通过Foundry向可信合作伙伴许可权重是计划，不写成已公开下载或普遍可调用。训练数据知识截止为 2026-03，也不是报告发布日期。"
+              ],
+              "kind": "points"
+            },
+            {
+              "kind": "highlight",
+              "label": "limit",
+              "text": "FieldToFit判断：这是一份有方法和工程细节的训练报告；可帮助判断实验设计，尚不能替代独立复现、应用评测或取得模型的实际条件。"
+            }
+          ],
+          "evidence": [
+            {
+              "fragment": "page=12",
+              "locator": "pp1–3 and pp11–13; Scaling Data and What’s next",
+              "source_id": "report"
+            }
+          ],
+          "id": "data-and-access",
+          "node_ids": [
+            "data",
+            "adoption"
+          ],
+          "summary": "语料规模、基准结论和未来产品入口不能互相替代。",
+          "title": "原生视觉训练已纳入，公开可用性仍需另看"
+        }
+      ],
+      "title": "MAI-Base-2：预训练计算节省，怎样变成可靠的大规模训练？"
+    },
+    "reports": [
+      {
+        "first_published_at": "2026-10-15",
+        "revised_at": null,
+        "revision_note": "网页明确日期，PDF入口参数不冒充编号修订；本站首次整理不是上游修订。",
+        "source_id": "report",
+        "substantive_revision": false,
+        "version": "Lab Notes 2026-10-15; unnumbered"
+      }
+    ],
+    "slug": "mai-base-2-pretraining",
+    "takeaway": "配方效率要连同可比较的实验条件和真实系统代价判断；少用FLOPs的能力，不自动等于最终训练账单更低。"
+  },
+  "title": "MAI-Base-2：预训练计算节省，怎样变成可靠的大规模训练？",
+  "translations": {
+    "en": {
+      "fields": {
+        "16k GB200，38 天；MFU按每卡 2.5 PFLOPS归一。": "16k GB200 over 38 days; MFU normalized to 2.5 PFLOPS per GPU.",
+        "2.8T总参数、80B激活、50T训练token；16k GB200、38 天。": "2.8T total and 80B active parameters; 50T training tokens; 16k GB200 GPUs over 38 days.",
+        "4.2–12.3 倍是在等BPB处比较，不是实际账单": "4.2–12.3 times compares matched BPB, not actual bills",
+        "4.5T与 18%分母不同，不能直接相除为独特语料占比。": "4.5T and 18% use different denominators; do not divide them into a unique-corpus share.",
+        "FieldToFit 本站原创事实示意，依据 Microsoft AI 官方技术文。": "Original factual diagram by FieldToFit, based on the official Microsoft AI technical article.",
+        "FieldToFit分析：这份报告最值得复用的是一条判断链——小实验是否控制了数据曝光，效率比较是否固定质量目标，系统实现是否把FLOPs优势变成实际进展。对训练团队，这是实验设计清单；对模型采用者，则是避免将训练论文直接翻译成产品承诺的方法。": "FieldToFit analysis: the reusable decision chain asks whether small experiments control data exposure, efficiency comparisons fix a quality target, and systems turn FLOPs advantages into real progress. For training teams it guides experiments; for adopters it prevents turning a training paper into unsupported product promises.",
+        "FieldToFit判断：这是一份有方法和工程细节的训练报告；可帮助判断实验设计，尚不能替代独立复现、应用评测或取得模型的实际条件。": "FieldToFit assessment: this report offers useful experimental and engineering detail, but cannot replace independent reproduction, application evaluation or actual access conditions.",
+        "Kimi K3、Qwen3.8 和MiMo-V2.6-Pro-RL的可用对照已后训练，DeepSeek-V4-Pro-Base则是底座。作者已注明后训练可能影响结果，不将这张表写成统一纯预训练竞赛。": "Available Kimi K3, Qwen3.8 and MiMo-V2.6-Pro-RL comparators are post-trained, while DeepSeek-V4-Pro-Base is a base checkpoint. Post-training may affect results, so the table is not a uniform base-pretraining contest.",
+        "MAI-Base-2 以无编码器VLM方式原生预训练视觉。作者称独特训练token比上代约增 36%，视觉语料含 4.5T独特token，重复后视觉数据占 50T混合的 18%。独特样本量、重复曝光量和混合占比分母不同，本文保留各自单位，不反推未公布的数据明细。": "MAI-Base-2 uses native encoder-free VLM pre-training. Unique training tokens grow about 36% over the predecessor; the vision corpus has 4.5T unique tokens and, after repetition, contributes 18% of the 50T mixture. Unique volume, repeated exposure and mixture shares use different denominators; we do not infer undisclosed data details.",
+        "MAI-Base-2：预训练计算节省，怎样变成可靠的大规模训练？": "MAI-Base-2: turning pre-training efficiency into a reliable large-scale run",
+        "MFU排除重计算和优化器FLOPs，goodput为有训练进展的时间比例。": "MFU excludes recomputation and optimizer FLOPs; goodput is the fraction of time with training progress.",
+        "MoE层MFU由 24%到 35%是局部实现结果；整次训练MFU为 21%，按每卡 2.5 PFLOPS归一，排除重计算和优化器FLOPs。goodput 89%则表示有训练进展的时间占比。": "MoE-layer MFU from 24% to 35% is a local implementation result. Whole-run MFU is 21%, normalized to 2.5 PFLOPS per GPU and excluding recomputation and optimizer FLOPs. Goodput 89% is the fraction of time with training progress.",
+        "Muon分片重组与通信重叠；激活梯度裁剪抑制局部异常。": "Muon resharding and communication overlap; activation-gradient clipping targets local outliers.",
+        "Muon需要完整矩阵做正交化，和分片优化器有张力；实现通过重分片及通信重叠处理。作者报告每步 165 ms、占 2.1%，理论 55 ms仍有差距，保留尾部等待、调度、负载不均和复制分配等解释。": "Muon needs full matrices for orthogonalization, creating tension with optimizer sharding. Resharding and communication overlap address this. The authors report 165 ms per step, or 2.1%, with a remaining gap to theoretical 55 ms due to stragglers, scheduling, imbalance and copies/allocations.",
+        "source scaling缩小独特样本池，保持重复次数和TPP。": "Source scaling restricts unique samples while preserving repetitions and TPP.",
+        "不是实际总费用或API价格倍数。": "Not a multiplier for actual total cost or API pricing.",
+        "不是已核实的公开权重或通用API交付。": "Not a verified public-weight or general API release.",
+        "两种训练跨度均重复八次的source scaling示例": "Source-scaling illustration with eight repetitions at two training horizons",
+        "仍在后训练，未来可信合作伙伴权重许可不是当前开放下载。": "Ongoing post-training and future partner weight licensing are not current public downloads.",
+        "代码保留集是微软内部代码库；STEM、数学和问答集由供应商提供并进行去污染。它们能支持报告内BPB比较，不能替代开放任务集复现或你的业务质量评测。": "Held-out code uses Microsoft’s internal codebase; STEM, math and QA sets are vendor-commissioned and decontaminated. They support within-report BPB comparisons, not open-task reproduction or business-quality evaluation.",
+        "作者MoE层MFU由 24%升至 35%，使全层MoE成为可用选择。": "Authors raise MoE-layer MFU from 24% to 35%, enabling MoE in every layer.",
+        "作者报告 4.2–12.3 倍FLOPs效率；最终大模型实际训练计算更多。": "Authors report 4.2–12.3 times FLOPs efficiency; the final large model actually used more training compute.",
+        "作者明确最终MAI-Base-2 实际使用的训练FLOPs比基线更多，并把配方效率投入更大的模型。效率提升和总支出下降是不同问题，报告未给出可推导API价格或完整训练账单的依据。": "The final MAI-Base-2 run explicitly uses more training FLOPs than the baseline, investing recipe efficiency in a larger model. Efficiency and lower total spending are different questions; the report does not establish API prices or a complete training bill.",
+        "作者没有用最终两台不同大小模型的总训练计算直接宣布节省，而是在代码、问答、STEM和数学四项保留集上分别拟合BPB与训练FLOPs。以DeepSeek-V4-Pro-Base的BPB为目标，估计微软阶梯达到相同质量需要多少FLOPs，再与基线训练计算比较。BPB按字节度量，有助于跨tokenizer比较，但仍是指定文本保留集指标。": "Rather than declaring savings from total compute of two differently sized final models, the authors fit BPB against training FLOPs independently for held-out code, QA, STEM and math. They estimate the ladder compute needed to match DeepSeek-V4-Pro-Base BPB, then compare it with baseline training compute. BPB measures by byte and helps compare tokenizers, while remaining a metric for specified held-out text.",
+        "作者结果未复现；部分基准私有、部分对照已后训练；模型仍在后训练。原文图表仅链接，本站图形为事实示意而非实验曲线。": "Author results are not reproduced; some benchmarks are private and some comparators post-trained. The model is still in post-training. Original charts are linked only; our diagrams illustrate facts rather than experimental curves.",
+        "先固定质量目标，再问训练配方需要多少计算。": "Fix the quality target before asking how much compute a recipe needs.",
+        "全层MoE能否划算，要同时看内存和真实训练时间": "Whether all-layer MoE pays off depends on memory and elapsed training time",
+        "公开报告与可取得模型分开": "Separate public reporting from model access",
+        "分组固定专家容量，多轮dispatch／compute／collect，不丢弃溢出token。": "Group experts with fixed capacities and repeated dispatch / compute / collect, retaining overflow tokens.",
+        "匹配基线BPB后比较所需训练FLOPs的定义示意": "Definition diagram for training FLOPs needed to match baseline BPB",
+        "原生视觉训练已纳入，公开可用性仍需另看": "Native vision is included; public availability is a separate question",
+        "四项保留集各拟合BPB与FLOPs，计算达到基线BPB所需算力。": "Fit BPB versus FLOPs separately for four held-out sets, estimating compute to match baseline BPB.",
+        "固定内存多轮MoE，以及分母不同的 21% MFU与 89% goodput": "Fixed-memory multi-round MoE and distinct denominators for 21% MFU and 89% goodput",
+        "固定内存，多轮处理溢出": "Fixed memory with extra overflow rounds",
+        "固定配方的L18 至L42 缩放阶梯；TPP为每激活参数训练token数。": "A fixed-recipe L18 to L42 scaling ladder; TPP is training tokens per active parameter.",
+        "图 1｜本站示意。5T与 50T、八次重复取自作者示例，不是全部语料的实测配方；未数字化图 2 曲线。": "Figure 1 | Original diagram. 5T, 50T and eight repetitions come from the authors’ illustration, not a measured recipe for all data; Figure 2 curves are not digitized.",
+        "图 2｜本站示意，非实验曲线。4.2–12.3 倍为四项独立拟合结果的范围；已知最终终点纳入拟合，不是盲预测。": "Figure 2 | Original definition diagram, not an experimental curve. 4.2–12.3 times spans four independent fits; the known final endpoint is included, not a blind prediction.",
+        "图 3｜本站定性示意，不表示真实耗时比例。整次训练MFU 21%与goodput 89%分母不同，不能相减或当作同一利用率。": "Figure 3 | Qualitative diagram, not measured timing proportions. Whole-run MFU 21% and goodput 89% have distinct denominators; do not subtract them or treat them as one utilization measure.",
+        "在作者中间规模实验中优于此前启发式。": "Outperforms earlier heuristics in the authors’ intermediate-scale tests.",
+        "基线DeepSeek-V4-Pro-Base；拟合包含已知MAI-Base-2 终点。": "DeepSeek-V4-Pro-Base baseline; fits include the known MAI-Base-2 endpoint.",
+        "学习率与权重衰减联合搜索，作者改用LR和LR×WD坐标，再拟合训练步数与TPP的关系；这避免把两个耦合量当成彼此独立的旋钮。": "Learning rate and weight decay are swept jointly using LR and LR×WD coordinates, then related to steps and TPP, avoiding treating coupled quantities as independent controls.",
+        "官方仍说模型在后训练，未来通过Foundry向可信合作伙伴许可权重是计划，不写成已公开下载或普遍可调用。训练数据知识截止为 2026-03，也不是报告发布日期。": "The official source says post-training is ongoing. Future licensing through Foundry to trusted partners is a plan, not public downloads or universal API availability. Training data has a 2026-03 knowledge cutoff, distinct from publication date.",
+        "官方网页日期为 2026-10-15，未标编号修订；PDF入口参数v=2 不被解释为已确认的论文v2 或实质修订。本站 2026-10-17 核对，实际上站时间由发布记录维护。完整网页已深读，并交叉核对 13 页PDF中的定义与位置；原图尚未完成逐图视觉复核，本站不复制或数字化原图曲线。原文仅链接，三图为本站原创事实示意。": "The official web article is dated 2026-10-15 with no numbered revision. The PDF URL parameter v=2 is not treated as a verified paper v2 or substantive revision. Checked on 2026-10-17; the publication record maintains the actual site date. The complete web article was read and definitions and locations cross-checked in the 13-page PDF. Individual original charts have not completed visual review; no original curves are copied or digitized. Upstream text is linked only; three diagrams are original factual illustrations.",
+        "容量可调，组内共享空闲容量，稳态目标一轮。": "Capacity is tunable, with spare capacity shared inside a group; steady state targets one round.",
+        "小实验保留数据重复规律": "Preserve repetition patterns in small experiments",
+        "小模型要重复相似的数据，外推才更可信": "Small models need comparable data repetition for reliable scaling",
+        "小规模搜索，中间规模验证；同时拟合dropout。": "Small-scale sweeps with intermediate-scale validation; dropout is also fitted.",
+        "已深读官方技术正文；再分发许可未确认，仅公开原文入口及本站原创分析。": "The official technical text was read; redistribution rights are unverified, so publish source links and original analysis only.",
+        "并行核对训练证据": "Check training evidence in parallel",
+        "底座规模与训练配置": "Base-model size and training setup",
+        "微软把数据重复规律、超参数外推和万卡系统放在同一条训练路线中。本文以四条结论、对应论述及三张本站原创示意，解释等质量计算量、固定内存MoE与真实训练利用率的不同含义；作者实验未经本站复现。": "Microsoft connects repeated-data behavior, hyperparameter scaling and a large GPU system in one training recipe. Four findings, matching arguments and three original diagrams explain matched-quality compute, fixed-memory MoE and training utilization. FieldToFit has not reproduced the experiments.",
+        "微软称全层MoE此前在FLOPs上占优，却因实现开销在实际时间上不如隔层布局。新版把专家分组，为每个专家设固定token容量，用额外轮次处理溢出，并允许同组使用空闲容量；少分配内存可能意味着更多轮次，不是消除代价。通信与计算重叠、设备端元数据和批量归约减少了每专家开销。": "Microsoft says MoE in every layer previously won on FLOPs but lost on elapsed time to alternating layers. The new design groups experts with fixed token capacities, handles overflow in extra rounds and borrows spare capacity within a group. Less memory can mean more rounds; the tradeoff remains. Communication overlap, device metadata and batched reductions reduce per-expert overhead.",
+        "把小模型训练得更久，并不一定模拟了大模型的处境。若小实验每次看到新数据，而最终训练要重复同一来源，小实验可能偏爱到了大规模才过拟合的配置。source scaling主动缩小小实验的独特样本池，同时保持各来源重复次数及TPP；它控制的是实验条件，不只是数据总量。": "Training a small model longer does not necessarily reproduce the large model’s conditions. If small runs keep seeing fresh examples while the final run repeats sources, the experiment can favor settings that overfit only at scale. Source scaling restricts unique samples in smaller runs while preserving source repetitions and TPP: it controls experimental conditions, not just volume.",
+        "把训练方法、计算口径和工程条件一起读": "Read the recipe, compute definition and engineering conditions together",
+        "报告示例不是所有数据集的固定重复配方。": "The illustration is not a fixed repetition recipe for every dataset.",
+        "拟合纳入了已经训练完成的MAI-Base-2 终点，因此匹配点位于拟合模型范围内。这个口径比把它叫外推验证更准确，也应与图 2 用于预测终点的阶梯实验分开。": "The fit includes the already completed MAI-Base-2 endpoint, keeping matching points within the fitted family. Keep this distinct from Figure 2’s ladder used to predict the endpoint.",
+        "按LR与LR×WD搜索，再拟合步数和TPP的经验关系。": "Sweep LR and LR×WD, then fit empirical relations with steps and TPP.",
+        "提供训练配方和工程证据，不足以判断全部产品任务。": "Provides recipe and engineering evidence, not conclusions for every product task.",
+        "改进解析、去重、主题分桶及多样性采样；无模型蒸馏的自建语料路线。": "Improve parsing, deduplication, topic bins and diversity sampling, using an in-house organic-data route without model distillation.",
+        "数据曝光、等质量计算量和万卡系统如何共同决定预训练结果": "How data exposure, matched-quality compute and a large GPU system shape pre-training",
+        "整次训练MFU 21%，goodput 89%；Muon每步 165 ms，占 2.1%。": "Whole-run MFU 21%, goodput 89%; Muon takes 165 ms per step, or 2.1%.",
+        "比较 2026-10 之前可用检查点，部分对照已经后训练。": "Compare checkpoints available before 2026-10, including some post-trained alternatives.",
+        "激活梯度裁剪针对局部异常，避免一小部分样本牵连整批权重梯度；还帮助追到预处理截断许可头的错误。报告把方法收益与数据诊断连起来，但没有逐项隔离最终模型全部增益。": "Activation-gradient clipping targets local outliers instead of letting a few examples suppress the full batch gradient. It also helped trace a preprocessing bug that truncated a license header. This connects optimization with data diagnosis without isolating every contribution to the final model.",
+        "独特数据与重复后混合比例分开": "Separate unique data from repeated mixture shares",
+        "独特训练token比上代约增 36%；视觉独特token 4.5T。": "Unique training tokens grow about 36% over the predecessor; 4.5T unique vision tokens.",
+        "示例中的重复次数与经验超参数关系都有条件，不能当作通用训练默认值。": "Repetition counts and empirical hyperparameter relations are conditional, not universal training defaults.",
+        "稀疏MoE底座，原生视觉预训练。": "A sparse MoE base model with native visual pre-training.",
+        "等BPB比较训练计算": "Compare training compute at matched BPB",
+        "算力利用率与有效进展时间分开": "Separate compute utilization from progress time",
+        "经验式依赖此配方，不是任意模型可照抄的常数。": "The empirical laws depend on this recipe; constants are not universal defaults.",
+        "网页明确日期，PDF入口参数不冒充编号修订；本站首次整理不是上游修订。": "The web article dates publication; PDF URL parameters are not numbered revisions. This first local analysis is not an upstream revision.",
+        "联合外推学习率与衰减": "Scale learning rate and decay jointly",
+        "计算上更稀疏的选择，也可能输给通信、碎片和尾部等待。": "A sparser compute choice can still lose to communication, fragmentation and stragglers.",
+        "评估使用保留集BPB；代码为内部代码库，其他任务向供应商委托。": "Evaluate held-out BPB on an internal codebase and commissioned vendor sets for other tasks.",
+        "语料规模、基准结论和未来产品入口不能互相替代。": "Corpus scale, benchmark conclusions and future product access are distinct.",
+        "路线连线并列组织需要同时检查的证据，不宣称某一模块独自造成全部增益。原文日期、本站核对及实际发表分开保存，后续若公开检查点或实质修订，再按新证据接续同一入口。": "Route edges organize evidence to check together, not causal attribution of every gain to one module. Source, check and site dates remain separate; later checkpoint access or substantive revisions can extend this stable entry.",
+        "这些经验关系先从小规模估计，再在中间规模验证。本站判断是：这种验证链比只公布一条最终训练曲线更能说明配方如何被选中，但不意味着其他数据和优化器可以照抄常数。": "The relations are estimated at small scale and validated at intermediate scale. Our assessment: this validation chain explains recipe selection better than a final training curve alone, while not making the constants transferable to other data and optimizers.",
+        "这里的可审结论是“同一保留集质量目标下的估计训练计算更少”，不是最终模型总成本更低。": "The reviewable claim is less estimated compute at a matched held-out quality target, not lower total cost for the final model.",
+        "配方效率要连同可比较的实验条件和真实系统代价判断；少用FLOPs的能力，不自动等于最终训练账单更低。": "Judge recipe efficiency with comparable experimental conditions and real system costs; needing fewer FLOPs does not automatically lower the final training bill.",
+        "重复后的视觉数据占 50T训练混合 18%。": "Repeated vision data accounts for 18% of the 50T training mixture.",
+        "降低小规模实验偏好欠正则化配置的风险。": "Reduces the risk of small experiments favoring under-regularized settings.",
+        "预测大训练前，先让小实验的数据曝光与正则化条件可比较。": "Make data exposure and regularization comparable before predicting a large run.",
+        "预训练已完成，仍在后训练。": "Pre-training is complete; post-training is ongoing.",
+        "额外轮次增加工作量；层级MFU不等于整次训练MFU。": "Extra rounds add work; layer MFU is not whole-run MFU.",
+        "首次整理所选MAI-Base-2 技术文，提供四结论、同号论述、三张原创事实图，并区分BPB拟合效率、实际训练计算、MFU和goodput。": "First analysis of the selected MAI-Base-2 technical article: four findings, matching arguments and three original factual diagrams distinguish fitted BPB efficiency, actual training compute, MFU and goodput."
+      },
+      "source_hash": "a27e73b5ffdbe1e74a2f6adf946d4bba136ebf1cfd998b43dd59855553dc6d27",
+      "state": "reviewed"
+    }
+  }
+}

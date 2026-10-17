@@ -724,5 +724,62 @@
       "locator": "Launch post, Available Now",
       "scope": "Separate author-reported scopes; not scaled bars or combined resource/cost arithmetic"
     }
+  },
+  "/report-figures/mai-base-2-202610-source-scaling.png": {
+    "sha256": "0472d3df79959639be5d6a0de8fe1c57146e8c01fca565ff23e7aa877066b8cc",
+    "source_urls": [
+      "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/",
+      "https://microsoft.ai/pdf/Frontier-Pre-training-at-Microsoft-AI.pdf?v=2"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Microsoft AI, Frontier Pre-training at Microsoft AI, 2026-10-15.",
+    "version": "Lab Notes 2026-10-15; no numbered revision",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "example_tokens_T": [
+        5,
+        50
+      ],
+      "source_fraction": [
+        0.1,
+        1
+      ],
+      "example_repetitions": 8,
+      "scope": "Report illustrative example; not measured curve points"
+    }
+  },
+  "/report-figures/mai-base-2-202610-efficiency-scope.png": {
+    "sha256": "eadcdd008c7647860a0777eebb08d9ac0125e4f680ce5e6042d7bb0a171dab4d",
+    "source_urls": [
+      "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/",
+      "https://microsoft.ai/pdf/Frontier-Pre-training-at-Microsoft-AI.pdf?v=2"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Microsoft AI, Frontier Pre-training at Microsoft AI, 2026-10-15.",
+    "version": "Lab Notes 2026-10-15; no numbered revision",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "efficiency_range": [
+        4.2,
+        12.3
+      ],
+      "unit": "matched-BPB pretraining FLOPs ratio",
+      "baseline": "DeepSeek-V4-Pro-Base",
+      "scope": "Four independent fitted held-out tasks; not actual total cost"
+    }
+  },
+  "/report-figures/mai-base-2-202610-system-scope.png": {
+    "sha256": "07a9ecbc352a86ebc0b43904eaa45b726fdf1e5f7cc08d818248ce628e1f7316",
+    "source_urls": [
+      "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/",
+      "https://microsoft.ai/pdf/Frontier-Pre-training-at-Microsoft-AI.pdf?v=2"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Microsoft AI, Frontier Pre-training at Microsoft AI, 2026-10-15.",
+    "version": "Lab Notes 2026-10-15; no numbered revision",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "whole_run_MFU_percent": 21,
+      "goodput_percent": 89,
+      "MFU_normalization_PFLOPS": 2.5,
+      "scope": "Qualitative MoE diagram; metrics are not directly comparable"
+    }
   }
 }

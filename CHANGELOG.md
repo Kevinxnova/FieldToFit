@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.11.5"></a>
+## v1.11.5 · MAI-Base-2专题与十项获批动态 · 2026-10-17
+
+<!-- site-deployed:2026-10-17 -->
+<!-- public-title:en:MAI-Base-2 analysis and ten approved updates -->
+<!-- release-summary:zh:start -->
+- 为获选MAI-Base-2技术报告整理四条核心结论、同号论述与三张原创事实示意，区分数据曝光、等BPB计算效率及系统指标。
+- 接续10月17日获批A–J十项动态、九份已有档案和七处关联事件补录，同步首页三重点、五条完整栏目速览与总表最新事件。
+- 沿用正式发布后四篇报告轮替，全部精选与历史索引保留所有报告及稳定入口；保留旧事件日期、Codex专题、公开日报和模型榜单。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Present four core findings, matching arguments and three original factual diagrams for the selected MAI-Base-2 report, separating data exposure, matched-BPB compute efficiency and system metrics.
+- Continue ten approved October17 updates, nine existing dossiers and seven related earlier events. Synchronize three homepage highlights, five complete-section highlights and latest-event tables.
+- Reuse four-report rotation after successful publication, retaining every report and stable entry in the complete index. Preserve source dates, Codex progress, the public daily journal and model charts.
+<!-- release-summary:en:end -->
+
+对应REQ-11、REQ-6-31至33、REQ-22-8及REQ-23。本批及自v1.11.0累计范围为兼容内容／静态资源patch，无新模块、阅读流程重构、数据库迁移或日程变更。所有者明确批准A–J、报告1及更新部署；未选报告、未核验线索、榜单不发布。[实际验证与部署边界](docs/validation/2026-10-17-mai-base-and-daily.md)。
+
 <a id="v1.11.4"></a>
 ## v1.11.4 · 五项获批专题更新与历史公告补录 · 2026-10-17
 

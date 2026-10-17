@@ -721,6 +721,25 @@
       "blocks": [
         {
           "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "1.0 and adapter history → release/2026-10-16",
+              "[AG-UI：Claude适配器修复审批与结构化结果](https://fieldtofit.top/news/D-181)",
+              "原文日期：2026-10-16；本站核对：2026-10-17；版本：release/2026-10-16。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
             "版本或材料",
             "用途与本次变化",
             "采用入口",
@@ -743,10 +762,26 @@
           ]
         }
       ],
-      "checked_at": "2026-10-04",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-T13",
       "interpretation": [
+        {
+          "text": "AG-UI于 2026-10-16 发布多语言包更新：TypeScript Claude Agent SDK适配器 0.0.7、Python适配器 0.2.2，以及core／client等 1.0.3。",
+          "title": "2026-10-17 补录：release/2026-10-16"
+        },
+        {
+          "text": "适配器保留拆分内容、限定工具名、结构化结果和失败状态，恢复原会话与延迟审批；这些是界面及工具调用链的兼容修复。",
+          "title": "会话与工具结果"
+        },
+        {
+          "text": "工具结果信封与前端负载序列化有破坏性变化；Python错误标记改用原生语义。解析与快照集成需复核，core／client 1.0.3 仅标维护更新。",
+          "title": "破坏性序列化变化"
+        },
+        {
+          "text": "watsonx适配器向提示只发送文字，媒体会丢弃并警告；不把生态整体描述为全模态无损。按语言与包迁移，本站未做集成测试。",
+          "title": "不同适配器保留各自边界"
+        },
         {
           "text": "为什么值得看：前端可以区分哪条消息来自哪个子任务，显示等待用户批准、取消或完成状态；不必仅把所有输出塞进同一个聊天气泡。",
           "title": "看清Agent运行过程"
@@ -854,6 +889,22 @@
           "title": "AG-UI · LICENSE",
           "upstream_revision": "97f789cc1c48eaaf6949c9e9a88abb5cf6e7c5e3",
           "url": "https://raw.githubusercontent.com/ag-ui-protocol/ag-ui/97f789cc1c48eaaf6949c9e9a88abb5cf6e7c5e3/LICENSE"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-f-1",
+          "locator": "Exact release / official documentation; release/2026-10-16",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "AG-UI · release/2026-10-16 · official 1",
+          "upstream_revision": "release/2026-10-16",
+          "url": "https://github.com/ag-ui-protocol/ag-ui/releases/tag/release/2026-10-16"
         }
       ],
       "sources": [
@@ -876,9 +927,62 @@
           "coverage": "link_only",
           "title": "官方代码仓库",
           "url": "https://github.com/ag-ui-protocol/ag-ui"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-f-1",
+          "title": "AG-UI · release/2026-10-16 · official 1",
+          "url": "https://github.com/ag-ui-protocol/ag-ui/releases/tag/release/2026-10-16"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-17 补录：release/2026-10-16": "2026-10-17 addition: release/2026-10-16",
+            "AG-UI 1.0 为 Agent 与应用界面之间的事件提供稳定规范，覆盖子Agent、人工中断、多模态工具结果和token用量。": "AG-UI 1.0 provides a stable event specification between agents and application interfaces, covering subagents, human interruptions, multimodal tool results and token usage.",
+            "AG-UI specification 1.0；核对官方迁移说明2026-10-04": "AG-UI specification 1.0; Check the official migration instructions 2026-10-04",
+            "AG-UI于 2026-10-16 发布多语言包更新：TypeScript Claude Agent SDK适配器 0.0.7、Python适配器 0.2.2，以及core／client等 1.0.3。": "AG-UI’s 2026-10-16 release updates the TypeScript Claude Agent SDK adapter to 0.0.7, its Python adapter to 0.2.2, and core / client packages to 1.0.3.",
+            "[AG-UI：Claude适配器修复审批与结构化结果](https://fieldtofit.top/news/D-181)": "[AG-UI: Claude adapters fix approvals and structured results](https://fieldtofit.top/news/D-181)",
+            "[官方材料](https://www.copilotkit.ai/blog/ag-ui-1.0)": "[Official Materials](https://www.copilotkit.ai/blog/ag-ui-1.0)",
+            "[本次动态](https://fieldtofit.top/news/D-72)": "[This news](https://fieldtofit.top/news/D-72)",
+            "watsonx适配器向提示只发送文字，媒体会丢弃并警告；不把生态整体描述为全模态无损。按语言与包迁移，本站未做集成测试。": "The watsonx adapter sends text only to prompts, dropping media with a warning. This is not lossless multimodal support across the ecosystem. Migrate by language and package; FieldToFit has not integration-tested it.",
+            "不同适配器保留各自边界": "Adapters retain distinct boundaries",
+            "为什么值得看：前端可以区分哪条消息来自哪个子任务，显示等待用户批准、取消或完成状态；不必仅把所有输出塞进同一个聊天气泡。": "Why is it worth watching: The front-end can distinguish which message comes from which sub-task, and display the status of waiting for user approval, cancellation or completion; there is no need to just stuff all outputs into the same chat bubble.",
+            "事件与官方依据": "Event and official evidence",
+            "事件规范与语言SDK": "Event specification and language SDK",
+            "会话与工具结果": "Sessions and tool results",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
+            "具体材料：JSON Schema定义字段，协议正文说明事件顺序与错误行为；TypeScript、Python、.NET有对应迁移说明。": "Materials: JSON Schema defines fields; the protocol describes event ordering and error behavior. TypeScript, Python and .NET have corresponding migration guidance.",
+            "升级边界：协议兼容不等于SDK零改动。TS校验器入口迁移、自定义字段转metadata，Python JSON Patch改用类型对象；过渡兼容项还有到期规则。仓库MIT，本站未执行集成测试。": "Upgrade boundary: protocol compatibility does not imply zero SDK changes. The TS validator entry point moves, custom fields move to metadata and Python JSON Patch uses typed objects. Transitional compatibility features also have expiry rules. The repository is MIT-licensed; FieldToFit has not run integration tests.",
+            "协议兼容与代码迁移": "Protocol compatibility and code migration",
+            "原文日期：2026-10-16；本站核对：2026-10-17；版本：release/2026-10-16。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: release/2026-10-16. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "固定原文与许可可由MCP继续读取": "Fixed source text and licenses can continue to be read by MCP",
+            "固定版本完整原文件；引用保留署名和许可": "pinned version of complete source text; reference reserved attribution and license",
+            "官方代码仓库": "Official code repository",
+            "官方发布与项目入口": "Official release and project entrance",
+            "官方发布和采用材料": "Official release and adoption of materials",
+            "工具结果信封与前端负载序列化有破坏性变化；Python错误标记改用原生语义。解析与快照集成需复核，core／client 1.0.3 仅标维护更新。": "Tool-result envelopes and frontend payload serialization have breaking changes; Python error flags use native semantics. Recheck parsers and snapshot integrations. Core / client 1.0.3 is labeled maintenance only.",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "日期与限制": "Dates and limitations",
+            "未执行收录代码；链接材料不等于已提供全文": "The inclusion code has not been executed; the linked materials do not mean that the full text has been provided.",
+            "条件与验证边界": "Conditions and verification boundaries",
+            "来源链接；该网页正文再分发许可尚未确认。": "Source link; the redistribution license of the text of this web page has not been confirmed.",
+            "核对日期 2026-10-04": "Check the date 2026-10-04",
+            "模型卡／文档或相关仓库": "Model card/document or related repository",
+            "版本变化": "Version change",
+            "版本或材料": "Version or material",
+            "用途与本次变化": "Use and this change",
+            "看清Agent运行过程": "See the operation process of Agent clearly",
+            "破坏性序列化变化": "Breaking serialization changes",
+            "规范及补充材料": "Specification and supplementary materials",
+            "适配器保留拆分内容、限定工具名、结构化结果和失败状态，恢复原会话与延迟审批；这些是界面及工具调用链的兼容修复。": "Adapters preserve split content, qualified tool names, structured results and failure states, with resumed sessions and deferred approvals. These are compatibility fixes for UI and tool-call flows.",
+            "采用入口": "Adopt the entrance"
+          },
+          "source_hash": "53d51e5f1fe153a12c56657494bed82dce4e03716efb99041f233fa2d0824e53",
+          "state": "reviewed"
+        }
+      },
       "type": "tool"
     },
     {
@@ -2809,6 +2913,48 @@
       "blocks": [
         {
           "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "0.2.4 → v0.3.0–v0.3.2",
+              "[Whiteboard 0.3：SSH远程审阅进入实验阶段](https://fieldtofit.top/news/D-180)",
+              "原文日期：2026-10-16；本站核对：2026-10-17；版本：v0.3.0–v0.3.2。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
+            "版本",
+            "原文日期",
+            "变化",
+            "采用边界",
+            "来源"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v0.2.4",
+              "2026-10-09 06:46:01 UTC",
+              "Whiteboard 0.2.4 调整差异解析与语言查询加载，文件内容流式到达时仍可交互，嵌入式代码预览默认展开，并修正加载过程中的覆盖计数。更适合关注大型变更审阅体验的使用者。",
+              "不同仓库大小下的加载性能、跨平台体验及历史版本迁移待实测。",
+              "[官方发布](https://github.com/devdotfast/whiteboard/releases/tag/v0.2.4)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以上为2026-10-10核对的新增版本；以下保留历史资料及其当时适用条件。"
+        },
+        {
+          "columns": [
             "模块",
             "提供什么",
             "采用入口",
@@ -2837,10 +2983,30 @@
           ]
         }
       ],
-      "checked_at": "2026-09-27",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-T07",
       "interpretation": [
+        {
+          "text": "Whiteboard于北京时间 2026-10-17 01:00、04:40、06:07 依次发布 0.3.0、0.3.1、0.3.2，增加SSH远程Linux代码审阅，随后补外部编辑器入口与Windows更新前停止MCP服务。",
+          "title": "2026-10-17 补录：v0.3.0–v0.3.2"
+        },
+        {
+          "text": "实验功能要求Linux x64／ARM64、glibc 2.34+和指定HTTPS下载入口；三平台桌面客户端不代表远端macOS已经支持。",
+          "title": "远端条件"
+        },
+        {
+          "text": "远端被视为受信任的本机延伸，依赖SSH配置；Windows需预装密钥并先接受主机密钥。HTTPS云Agent连接仍为将来能力。",
+          "title": "认证与信任边界"
+        },
+        {
+          "text": "档案在 0.2.4 之后追加新版本，保留分享同步与直接编辑等已有边界。新版文档提及首页、结构化差异与Azure DevOps入口，本站未安装或验证远端操作。",
+          "title": "保留旧限制"
+        },
+        {
+          "text": "作者的性能提升数字依赖其特定对照，本站不写成任意仓库或编程 Agent 都同幅提速。README 中不能直接编辑文件、跨仓库审阅有限和分享后更新不会自动同步的限制仍保留；项目采用 MIT 许可，本站未完成桌面实测。",
+          "title": "2026-10-10版本补充：v0.2.4"
+        },
         {
           "text": "从图和说明跳回对应代码，结合语义差异视图审阅改动，帮助人理解Agent为什么这样实现。",
           "title": "值得看"
@@ -2856,8 +3022,6 @@
       ],
       "introduction": "Whiteboard 是开源桌面协作画布，可连接已有编程Agent，让架构图、设计解释、决策记录与本地代码相互对应。",
       "name": "Whiteboard",
-      "note": "原始日期：未核定，按近期资源补录；版本：Whiteboard official README snapshot 2026-09-27。本站未安装或复现性能。固定材料提交：3911ff73a3b54c508ebe22f0eaf33a0534658b62；README与许可全文可经MCP读取，源链接保留。",
-      "organization": "dev.fast",
       "reading_materials": [
         {
           "approved": true,
@@ -2912,13 +3076,82 @@
           "title": "Whiteboard · LICENSE",
           "upstream_revision": "3911ff73a3b54c508ebe22f0eaf33a0534658b62",
           "url": "https://github.com/devdotfast/whiteboard/blob/3911ff73a3b54c508ebe22f0eaf33a0534658b62/LICENSE"
-        }
-      ],
-      "related": [
+        },
         {
-          "id": "CW-S05",
-          "name": "Diagram Design",
-          "url": "https://fieldtofit.top/watch/CW-S05"
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "coverage": "link_only",
+          "id": "oct10-g-1",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {},
+          "title": "Whiteboard 0.2.4：改善差异加载与代码查看 · 官方材料1",
+          "upstream_revision": "v0.2.4",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.2.4"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "coverage": "link_only",
+          "id": "oct10-g-2",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {},
+          "title": "Whiteboard 0.2.4：改善差异加载与代码查看 · 补充来源2",
+          "upstream_revision": "v0.2.4",
+          "url": "https://github.com/devdotfast/whiteboard"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-e-1",
+          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 1",
+          "upstream_revision": "v0.3.0–v0.3.2",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-e-2",
+          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 2",
+          "upstream_revision": "v0.3.0–v0.3.2",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.1"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-e-3",
+          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 3",
+          "upstream_revision": "v0.3.0–v0.3.2",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.2"
         }
       ],
       "sources": [
@@ -2927,9 +3160,107 @@
           "id": "source1",
           "title": "Whiteboard · 官方入口",
           "url": "https://github.com/devdotfast/whiteboard"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct10-g-1",
+          "title": "Whiteboard 0.2.4：改善差异加载与代码查看 · 官方材料1",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.2.4"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct10-g-2",
+          "title": "Whiteboard 0.2.4：改善差异加载与代码查看 · 补充来源2",
+          "url": "https://github.com/devdotfast/whiteboard"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-e-1",
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 1",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-e-2",
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 2",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-e-3",
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 3",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.2"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-10版本补充：v0.2.4": "2026-10-10 Version Supplement: v0.2.4",
+            "2026-10-17 补录：v0.3.0–v0.3.2": "2026-10-17 addition: v0.3.0–v0.3.2",
+            "LICENSE；固定提交完整原文，相对链接以原文件为基准。": "LICENSE; pinned commit of complete source text, relative links are based on source text.",
+            "MIT，适用于所收录仓库文件；外部模型、服务和资产另行适用条款。": "MIT, applicable to the included repository files; external models, services and assets apply to separate terms.",
+            "README.md；固定提交完整原文，相对链接以原文件为基准。": "README.md; pinned commit of complete source text, relative links are based on source text.",
+            "README明确不能直接编辑文件；跨仓库审阅支持有限，分享后的后续更新不会自动同步。项目为MIT许可，本站未做完整桌面使用验收。": "The README explicitly rules out direct file editing. Cross-repository review is limited, and later updates after sharing are not synchronized automatically. The project is MIT-licensed. FieldToFit has not completed desktop acceptance testing.",
+            "Whiteboard 0.2.4 调整差异解析与语言查询加载，文件内容流式到达时仍可交互，嵌入式代码预览默认展开，并修正加载过程中的覆盖计数。更适合关注大型变更审阅体验的使用者。": "Whiteboard 0.2.4 changes diff parsing and language-query loading, keeps the interface interactive as file contents stream in, expands embedded code previews by default, and corrects coverage counts during loading. These changes matter to readers reviewing large changes.",
+            "Whiteboard 0.2.4：改善差异加载与代码查看 · 官方材料1": "Whiteboard 0.2.4: Improve differential loading and code viewing · Official materials 1",
+            "Whiteboard 0.2.4：改善差异加载与代码查看 · 补充来源2": "Whiteboard 0.2.4: Improve differential loading and code viewing · Supplementary source 2",
+            "Whiteboard · 官方入口": "Whiteboard · Official Entrance",
+            "Whiteboard 是开源桌面协作画布，可连接已有编程Agent，让架构图、设计解释、决策记录与本地代码相互对应。": "Whiteboard is an open-source desktop collaboration canvas that connects existing coding agents, linking architecture diagrams, design explanations and decision records to local code.",
+            "Whiteboard于北京时间 2026-10-17 01:00、04:40、06:07 依次发布 0.3.0、0.3.1、0.3.2，增加SSH远程Linux代码审阅，随后补外部编辑器入口与Windows更新前停止MCP服务。": "Whiteboard released 0.3.0, 0.3.1 and 0.3.2 at 01:00, 04:40 and 06:07 Beijing time on 2026-10-17, adding SSH-based Linux code review, external-editor access and stopping MCP before Windows updates.",
+            "[Whiteboard 0.3：SSH远程审阅进入实验阶段](https://fieldtofit.top/news/D-180)": "[Whiteboard 0.3: experimental remote review over SSH](https://fieldtofit.top/news/D-180)",
+            "[官方发布](https://github.com/devdotfast/whiteboard/releases/tag/v0.2.4)": "[Official Release](https://github.com/devdotfast/whiteboard/releases/tag/v0.2.4)",
+            "不同仓库大小下的加载性能、跨平台体验及历史版本迁移待实测。": "Loading performance, cross-platform experience and historical version migration under different repository sizes are pending runtime test.",
+            "事件与官方依据": "Event and official evidence",
+            "仅链接；固定开源正文另列": "Link only; fixed open source text column separately",
+            "从图和说明跳回对应代码，结合语义差异视图审阅改动，帮助人理解Agent为什么这样实现。": "Jump from diagrams and explanations to corresponding code, and review changes with semantic diffs to understand an agent's implementation decisions.",
+            "代码审阅": "Code review",
+            "以上为2026-10-10核对的新增版本；以下保留历史资料及其当时适用条件。": "The versions above were newly checked on 2026-10-10. Historical material below retains the conditions that applied at the time.",
+            "作者的性能提升数字依赖其特定对照，本站不写成任意仓库或编程 Agent 都同幅提速。README 中不能直接编辑文件、跨仓库审阅有限和分享后更新不会自动同步的限制仍保留；项目采用 MIT 许可，本站未完成桌面实测。": "The author's performance improvements depend on a particular comparison and do not establish equivalent speedups for arbitrary repositories or coding agents. README limitations remain: no direct file editing, limited cross-repository review, and no automatic synchronization of later updates after sharing. The project is MIT-licensed. FieldToFit has not completed desktop runtime testing.",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
+            "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。": "Retain the official source and version; the fixed text that can be redistributed is not imported this time, and the link is not declared as the full text.",
+            "保留旧限制": "Retain earlier limitations",
+            "值得看": "It is worth seeing.",
+            "分享与协作": "Sharing and collaboration",
+            "分享后变更不自动同步；跨仓库支持有限": "Changes after sharing are not automatically synchronized; cross-repository support is limited",
+            "分享审阅结果": "Share the review results",
+            "协作画布": "Collaborative canvas",
+            "原文日期": "Source text date",
+            "原文日期：2026-10-16；本站核对：2026-10-17；版本：v0.3.0–v0.3.2。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: v0.3.0–v0.3.2; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "变化": "Change",
+            "图示跳转代码、语义差异": "Diagram jump code, semantic difference",
+            "官方README示例": "Official README example",
+            "官方入口提供桌面下载；连接已有Agent后，让其审阅分支或解释一个API设计。它和Diagram Design的出图技能用途不同，关联仅作为相近阅读入口。": "Download the desktop app from the official entry point, connect an existing agent, then ask it to review a branch or explain an API design. Its purpose differs from Diagram Design's diagram-generation skill; the relationship is a related reading entry point.",
+            "官方发布记录／模型卡／采用说明": "Official release record/model card/use instructions",
+            "官方发布／项目入口": "Official Release/Project Entrance",
+            "官网全文再分发依据未确认；不将链接冒充可读全文。": "The basis for the redistribution of the full text of the official website has not been confirmed; do not pretend to be a readable full text of the link.",
+            "实验功能要求Linux x64／ARM64、glibc 2.34+和指定HTTPS下载入口；三平台桌面客户端不代表远端macOS已经支持。": "The experimental feature requires Linux x64 / ARM64, glibc 2.34+ and specified HTTPS downloads. Three-platform desktop support does not establish remote macOS support.",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "应用分享入口": "Application sharing entrance",
+            "当前不支持直接编辑文件": "Direct editing of files is not supported at present.",
+            "当前限制": "Current restrictions",
+            "怎么使用": "How to use",
+            "把设计图、解释与代码关联": "Associate the design drawing and interpretation with the code",
+            "提供什么": "What do you offer?",
+            "日期与限制": "Dates and limitations",
+            "本站未完成安装与使用验收": "FieldToFit has not completed installation and use acceptance",
+            "条件与限制": "Conditions and restrictions",
+            "来源": "Source",
+            "桌面应用连接已有编程Agent": "Desktop application connection has been programmed Agent",
+            "档案在 0.2.4 之后追加新版本，保留分享同步与直接编辑等已有边界。新版文档提及首页、结构化差异与Azure DevOps入口，本站未安装或验证远端操作。": "The dossier adds versions after 0.2.4 while preserving sharing-sync and direct-editing limitations. Updated docs mention the home view, structured diffs and Azure DevOps access; FieldToFit has not installed it or tested remote operations.",
+            "模块": "Module",
+            "版本": "Version",
+            "版本变化": "Version change",
+            "认证与信任边界": "Authentication and trust boundary",
+            "远端条件": "Remote-host requirements",
+            "远端被视为受信任的本机延伸，依赖SSH配置；Windows需预装密钥并先接受主机密钥。HTTPS云Agent连接仍为将来能力。": "The remote host is a trusted extension of the local machine and uses SSH configuration. Windows requires keys loaded in advance and prior host-key acceptance. HTTPS cloud-agent connections remain planned.",
+            "采用入口": "Adopt the entrance",
+            "采用边界": "Adopt the boundary"
+          },
+          "source_hash": "c6c39c24d343d067d2b7ed0aaee7fce09dc7d698b4777c685ff7ce721f10d961",
+          "state": "reviewed"
+        }
+      },
       "type": "tool"
     },
     {
@@ -3632,6 +3963,25 @@
           "kind": "table",
           "rows": [
             [
+              "existing voice history → gpt-live-1 / prompt-to-voice",
+              "[GPT-Live：文字定制声音，创建免费与会话计费分开](https://fieldtofit.top/news/D-173)",
+              "原文日期：2026-10-16；本站核对：2026-10-17；版本：gpt-live-1 / prompt-to-voice。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "既有语音与体验记录 → GPT-Live-1.1 / Quip",
               "[GPT-Live-1.1：全双工语音更新，安全结果需要分场景阅读](https://fieldtofit.top/news/D-155)",
               "原文日期：2026-10-15；事件日期：2026-10-15；本站核对：2026-10-16；版本：GPT-Live-1.1 / Quip。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。"
@@ -3775,10 +4125,30 @@
           "text": "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。"
         }
       ],
-      "checked_at": "2026-10-16",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M01",
       "interpretation": [
+        {
+          "text": "OpenAI于 2026-10-16 开放prompt-to-voice：全部API客户可用文字描述生成、保存并复用声音；另增加九种德、法、印地、日、韩语自然声音。",
+          "title": "2026-10-17 补录：gpt-live-1 / prompt-to-voice"
+        },
+        {
+          "text": "创建声音免费，试听及语音对话仍按GPT-Live会话计费；每个组织至多保存 100 个提示生成声音。",
+          "title": "创建与使用分别计费"
+        },
+        {
+          "text": "提示生成声音只支持GPT-Live，不直接适用于TTS、Realtime或Chat Completions。录音克隆另有资格与同意流程；创建声音不支持Zero Data Retention。",
+          "title": "支持范围和保留条件"
+        },
+        {
+          "text": "本事件接续既有GPT-Live记录，保留Live-1.1／Quip及原生Decisions历史；不能由此推定GPT-Live-1.1 公开API已经上线。本站未调用或试听。",
+          "title": "与既有语音分支区分"
+        },
+        {
+          "text": "OpenAI Developers 在北京时间 10 月 17 日 01:08 介绍 GPT-Live-1 的声音配置；API 日志以 10 月 16 日记录正式推出。所有 API 客户可通过文字描述生成并保存自定义声音，无需参考录音或同意录音；这种 prompt-generated 声音用于 GPT-Live，不适用于 Text to Speech、Realtime 或 Chat Completions API。可在声音 Playground 操作，或向/v1/audio/voices 提交 type=prompt 的请求，保存返回的声音 ID 并在 GPT-Live 会话复用。每个组织最多 100 种此类声音。创建声音免费，使用声音生成语音及 Playground 试听仍按正常 GPT-Live 会话计费。另新增德语、法语、印地语、日语和韩语的九种自然预设声音，可通过会话输出声音配置选用。此次是 GPT-Live-1 API 的声音能力更新，不代表昨天 GPT-Live-1.1 已开放 API；后者仍按 D-155 保留“API 即将推出”的边界。",
+          "title": "变化与适用范围"
+        },
         {
           "text": "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。",
           "title": "2026-10-16 补录：GPT-Live-1.1 / Quip"
@@ -3942,6 +4312,38 @@
           "title": "GPT-Live-1.1 / Quip GPT-Live-1.1 / Quip · Official source 1",
           "upstream_revision": "GPT-Live-1.1 / Quip",
           "url": "https://deploymentsafety.openai.com/gpt-live-1-1"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-a-1",
+          "locator": "Exact release / official documentation; gpt-live-1 / prompt-to-voice",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "GPT-Live prompt-to-voice · gpt-live-1 / prompt-to-voice · official 1",
+          "upstream_revision": "gpt-live-1 / prompt-to-voice",
+          "url": "https://developers.openai.com/api/docs/changelog.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-a-2",
+          "locator": "Exact release / official documentation; gpt-live-1 / prompt-to-voice",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "GPT-Live prompt-to-voice · gpt-live-1 / prompt-to-voice · official 2",
+          "upstream_revision": "gpt-live-1 / prompt-to-voice",
+          "url": "https://developers.openai.com/api/docs/guides/custom-voices.md"
         }
       ],
       "sources": [
@@ -3990,6 +4392,18 @@
           "id": "oct16-b-1",
           "title": "GPT-Live-1.1 / Quip GPT-Live-1.1 / Quip · Official source 1",
           "url": "https://deploymentsafety.openai.com/gpt-live-1-1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-a-1",
+          "title": "GPT-Live prompt-to-voice · gpt-live-1 / prompt-to-voice · official 1",
+          "url": "https://developers.openai.com/api/docs/changelog.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-a-2",
+          "title": "GPT-Live prompt-to-voice · gpt-live-1 / prompt-to-voice · official 2",
+          "url": "https://developers.openai.com/api/docs/guides/custom-voices.md"
         }
       ],
       "state": "published",
@@ -3999,6 +4413,7 @@
             "10月7日起向Plus、Pro、Business、Enterprise的Chat页推出，10月8日起扩展到Free、Go；企业仍受管理员设置影响。逐步推出不代表所有账户同时可用。": "Rollout starts on 10/7 in Chat for Plus, Pro, Business and Enterprise, expanding to Free and Go from 10/8. Enterprise access remains subject to administrator settings. Gradual rollout does not establish simultaneous availability for all accounts.",
             "2026-10-07发布；10月8日起扩展Free／Go": "2026-10-07 released; 10/8 expands Free/Go",
             "2026-10-16 补录：GPT-Live-1.1 / Quip": "2026-10-16 addition:GPT-Live-1.1 / Quip",
+            "2026-10-17 补录：gpt-live-1 / prompt-to-voice": "2026-10-17 addition: gpt-live-1 / prompt-to-voice",
             "5.6 系列，gpt-5.6 别名指向 Sol": "5.6 series, gpt-5.6 alias refers to Sol",
             "API 模型标识 gpt-6-astra；具体账户权限另查": "API model identification gpt-6-astra; specific account permissions are checked separately",
             "API默认关闭；产品侧本次面向欧盟，不是全球所有输出已经启用。具体型号和账户能力须按接入文档核对。": "The API feature is off by default. This product rollout targets the EU; it does not mean all outputs worldwide already use it. Check supported models and account capabilities in integration documentation.",
@@ -4017,14 +4432,17 @@
             "GPT-6 指南": "GPT-6 Guide",
             "GPT-6日常工作分支，保留历史节点": "GPT-6 daily work branch, keep historical nodes",
             "GPT-6较轻任务分支": "GPT-6 Lighter Task Branch",
+            "OpenAI Developers 在北京时间 10 月 17 日 01:08 介绍 GPT-Live-1 的声音配置；API 日志以 10 月 16 日记录正式推出。所有 API 客户可通过文字描述生成并保存自定义声音，无需参考录音或同意录音；这种 prompt-generated 声音用于 GPT-Live，不适用于 Text to Speech、Realtime 或 Chat Completions API。可在声音 Playground 操作，或向/v1/audio/voices 提交 type=prompt 的请求，保存返回的声音 ID 并在 GPT-Live 会话复用。每个组织最多 100 种此类声音。创建声音免费，使用声音生成语音及 Playground 试听仍按正常 GPT-Live 会话计费。另新增德语、法语、印地语、日语和韩语的九种自然预设声音，可通过会话输出声音配置选用。此次是 GPT-Live-1 API 的声音能力更新，不代表昨天 GPT-Live-1.1 已开放 API；后者仍按 D-155 保留“API 即将推出”的边界。": "OpenAI Developers announced new GPT-Live-1 voice options at 01:08 Beijing time on 10/17; the API changelog records the release under 10/16. All API customers can create and save a voice from a text description in the voice Playground or through /v1/audio/voices with type=prompt, then reuse its ID in GPT-Live. No reference or consent recording is required for this workflow. Prompt-generated voices work with GPT-Live, not the Text to Speech, Realtime or Chat Completions APIs. Organizations can save up to 100. Creation is free; speech generation and Playground listening use regular session billing. Nine natural presets add German, French, Hindi, Japanese and Korean options. This is a GPT-Live-1 API voice update, not evidence that GPT-Live-1.1 has reached the API; D-155 retains its forthcoming-API qualification.",
             "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限 · 官方来源 1": "OpenAI textGrain: distinguish optional watermarks, EU online scope and detector permissions · Official source 1",
             "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。": "OpenAI announced GPT-Live-1.1 and Quip on 10/15, following Live-1 and mini. Full-duplex interaction listens, responds and handles interruptions continuously, with thinking-model delegation. The source is a system card, not verification of a public API identifier or price.",
+            "OpenAI于 2026-10-16 开放prompt-to-voice：全部API客户可用文字描述生成、保存并复用声音；另增加九种德、法、印地、日、韩语自然声音。": "On 2026-10-16 OpenAI opened prompt-to-voice to all API customers: describe, save and reuse a voice. Nine natural voices in German, French, Hindi, Japanese and Korean were also added.",
             "OpenAI公布文本来源水印方案：全球API客户可为指定模型主动开启，欧盟ChatGPT与Codex合资格文本输出将在未来几周分阶段加入水印。": "OpenAI announces a text-provenance watermarking scheme. Global API customers can opt in for specified models. Eligible ChatGPT and Codex text outputs in the EU will receive watermarks in phases over the coming weeks.",
             "Responses用于工具调用；Chat Completions不含工具调用；1,050,000上下文、128k输出": "Responses are used for tool calls; Chat Completions do not contain tool calls; 1,050,000 context, 128k output",
             "Sol分支后续型号": "Sol branch follow-up model",
             "[GPT-5.6 指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)": "[GPT-5.6 Guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)",
             "[GPT-6 指南](https://developers.openai.com/api/docs/guides/latest-model)": "[GPT-6 Guide](https://developers.openai.com/api/docs/guides/latest-model)",
             "[GPT-Live-1.1：全双工语音更新，安全结果需要分场景阅读](https://fieldtofit.top/news/D-155)": "[GPT-Live-1.1: full-duplex voice with scenario-specific safety results](https://fieldtofit.top/news/D-155)",
+            "[GPT-Live：文字定制声音，创建免费与会话计费分开](https://fieldtofit.top/news/D-173)": "[GPT-Live: prompt-generated voices separate free creation from session billing](https://fieldtofit.top/news/D-173)",
             "[型号文档](https://developers.openai.com/api/docs/models/gpt-6.1-sol)": "[Model Document](https://developers.openai.com/api/docs/models/gpt-6.1-sol)",
             "[官方发布](https://openai.com/index/gpt-6-for-everyone/)": "[Official Release](https://openai.com/index/gpt-6-for-everyone/)",
             "[官方发布](https://openai.com/index/introducing-gpt-6-sol-and-luna/)": "[Official Release](https://openai.com/index/introducing-gpt-6-sol-and-luna/)",
@@ -4035,6 +4453,7 @@
             "与 Sol 属于同代不同档位": "It belongs to the same generation and is different from Sol.",
             "与Luna共同补齐不同任务和成本档位；后续6.1单列": "Work with Luna to complete different tasks and cost levels; follow-up 6.1 single column",
             "与已有型号关系": "Relationship with existing models",
+            "与既有语音分支区分": "Keep voice branches distinct",
             "两套安全测试": "Two safety test sets",
             "主要变化或定位": "Major changes or positioning",
             "主要能力或价格口径": "Main ability or price measurement basis",
@@ -4042,17 +4461,22 @@
             "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
             "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
             "依据": "Evidence",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
             "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。": "Association: D-02 GPT-6 Astra; [CW-A01 Codex](/for-you#watch-cw-a01). The model version and the Codex client version are recorded separately.",
             "关联：[CW-A01](https://fieldtofit.top/watch/CW-A01)。以下保留各历史版本及其当时适用条件。": "Association: [CW-A01 ](https://fieldtofit.top/watch/CW-A01). The following retains the historical versions and their applicable conditions at that time.",
             "具体接入条件": "Specific access conditions",
             "准确型号、接口能力和价格以各型号文档为准": "The exact model, interface capability and price are subject to the documents of each model.",
             "分阶段开放": "Open in stages",
+            "创建与使用分别计费": "Creation and use have separate billing",
+            "创建声音免费，试听及语音对话仍按GPT-Live会话计费；每个组织至多保存 100 个提示生成声音。": "Voice creation is free; previews and voice conversations still use GPT-Live session billing. An organization can save at most 100 prompt-generated voices.",
             "历史与未知项": "History and unknowns",
             "原创解读与来源链接": "Original commentary and source links",
             "原始发布日期": "The original release date",
             "原始日期口径": "Original date measurement basis",
             "原文日期：2026-10-15；事件日期：2026-10-15；本站核对：2026-10-16；版本：GPT-Live-1.1 / Quip。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-15; checked:2026-10-16; version:GPT-Live-1.1 / Quip. Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
+            "原文日期：2026-10-16；本站核对：2026-10-17；版本：gpt-live-1 / prompt-to-voice。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: gpt-live-1 / prompt-to-voice. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
             "变化与用途": "Change and use",
+            "变化与适用范围": "Changes and scope",
             "在 5.6 已有能力上继续演进": "5.6 has the ability to continue to evolve",
             "复杂编程、电脑操作与专业任务；能力为官方定位": "Complex programming, computer operation and professional tasks; ability is the official positioning",
             "套餐与开放范围": "Plans and availability",
@@ -4063,14 +4487,18 @@
             "对照关系": "Contrast relationship",
             "工具等待期间也能推进工作。": "The work can also be promoted while the tool is waiting.",
             "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
             "执行中调整方向意味着应用需要管理正在运行的工作与新消息；它与“取消后重新问一次”有不同的交互要求。": "Steering during execution requires applications to manage running work alongside new messages. Its interaction requirements differ from cancelling and asking again.",
             "按官方型号文档与账户可用范围选择；本站未调用实测": "Select according to the official model document and the available range of the account; FieldToFit did not call runtime test",
             "接入区别：6.1 Sol文档列出1,050,000上下文、128k最大输出；工具调用使用Responses API，Chat Completions入口不提供同样的工具能力。": "Integration differences: 6.1 Sol documentation specifies 1,050,000 context and 128k maximum output. Tool calls use Responses API; Chat Completions does not provide the same tool capabilities.",
             "接入或运行条件": "Access or operation conditions",
+            "提示生成声音只支持GPT-Live，不直接适用于TTS、Realtime或Chat Completions。录音克隆另有资格与同意流程；创建声音不支持Zero Data Retention。": "Prompt-generated voices support GPT-Live only, not TTS, Realtime or Chat Completions. Recording-based cloning has separate eligibility and consent requirements; voice creation does not support Zero Data Retention.",
             "支持异步工具调用；通过 WebSocket 在执行中接收方向调整；不支持 none 推理档位": "Asynchronous tool calls; steering during execution via WebSocket; none reasoning level unsupported",
+            "支持范围和保留条件": "Supported endpoints and retention",
             "既有语音与体验记录 → GPT-Live-1.1 / Quip": "Existing voice and experience records → GPT-Live-1.1 / Quip",
             "日期与状态": "Date and status",
             "日期与限制": "Dates and limitations",
+            "本事件接续既有GPT-Live记录，保留Live-1.1／Quip及原生Decisions历史；不能由此推定GPT-Live-1.1 公开API已经上线。本站未调用或试听。": "This event extends the existing GPT-Live record while retaining Live-1.1 / Quip and native Decisions history. It does not establish availability of a public GPT-Live-1.1 API. FieldToFit has not called or auditioned it.",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M01 GPT, D-30, D-53。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M01 GPT, D-30, D-53. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次变化与用途": "Changes and uses this time",
             "检测器初期仅向获批研究者及专业组织开放；短文本和改写会影响检测。检出不证明内容准确，未检出也不证明人类独立创作。": "The detector initially opens only to approved researchers and professional organizations. Short texts and rewriting affect detection. A detection result does not prove factual accuracy; absence of detection does not establish independent human authorship.",
@@ -4109,7 +4537,7 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "source_hash": "ded507a93e74eaba9d3ac4dbd5ed97cea3f5d7d964619c33381bef701e6be733",
+          "source_hash": "97489d1414e4372b48688b007310862058e7cb708dd5d2b97855880d2c392a19",
           "state": "reviewed"
         }
       },
@@ -4117,6 +4545,48 @@
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "existing model history → claude-opus-5-5 / Fast mode GA",
+              "[Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费](https://fieldtofit.top/news/D-177)",
+              "原文日期：2026-10-15；本站核对：2026-10-17；版本：claude-opus-5-5 / Fast mode GA。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
+            "更新",
+            "原文日期",
+            "变化与用途",
+            "采用边界",
+            "依据"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "2026使用政策（11月12日生效）",
+              "2026-10-08",
+              "Claude使用政策于10月8日公布更新、11月12日生效，补充高风险人工监督与自主硬件边界，并说明虐待条款的适用范围。",
+              "官方区分持续、无目的的极端虐待与普通不满、反驳、创作和模型测试，不能概括为不允许批评Claude。本条不变更模型版本或价格。",
+              "[官方材料](https://www.anthropic.com/news/2026-usage-policy-update)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以上为2026-10-09核对的新增材料；以下保留历史版本及当时适用条件。"
+        },
         {
           "columns": [
             "版本 / 材料",
@@ -4225,10 +4695,38 @@
           "text": "关联：D-05 Fable 5.1；[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。[完整型号目录](https://platform.claude.com/docs/en/models/overview)另列 Haiku 4.5；本页资料不补未经核对的完整历史。"
         }
       ],
-      "checked_at": "2026-10-08",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M02",
       "interpretation": [
+        {
+          "text": "Anthropic于 2026-10-15 将Opus 5.5 Fast mode移出研究预览，Start、Build、Scale层级可使用默认快速限额，Azure托管的Microsoft Foundry部署也已支持。",
+          "title": "2026-10-17 补录：claude-opus-5-5 / Fast mode GA"
+        },
+        {
+          "text": "最高 2.5 倍指输出token速度，使用相同模型权重；不保证首token延迟或整个任务同倍缩短。",
+          "title": "同权重，更快输出"
+        },
+        {
+          "text": "快速模式单独限流并按更高费率计费，标准／快速模式不共享前缀缓存。组织实际额度、Evaluation层级与端到端收益仍需逐项核实。",
+          "title": "费用、缓存和限额"
+        },
+        {
+          "text": "Opus 5 及 4.8 仍有研究预览要求，不能将 5.5 的范围套到其他型号或所有云平台。本站未实测。",
+          "title": "型号和平台边界"
+        },
+        {
+          "text": "Anthropic于10月8日公布更新，11月12日生效。更新整理欺骗活动限制，并细化高风险用途的人工监督要求。",
+          "title": "公布日与生效日"
+        },
+        {
+          "text": "对可能造成人身伤害的自主硬件，要求合格人员能够观察、停止设备，断开Claude后仍能保持安全状态；应结合具体用途阅读官方政策。",
+          "title": "自主硬件的监督要求"
+        },
+        {
+          "text": "官方区分持续、无目的的极端虐待与普通不满、反驳、创作和模型测试，不能概括为不允许批评Claude。本条不变更模型版本或价格。",
+          "title": "不要扩大虐待条款的含义"
+        },
         {
           "text": "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。",
           "title": "型号、上下文与标准价格"
@@ -4348,6 +4846,52 @@
           "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
           "upstream_revision": "claude-haiku-5-5-launch-2026-10-07",
           "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-09",
+          "coverage": "link_only",
+          "id": "oct09-c-1",
+          "locator": "官方公告、版本记录或采用说明",
+          "reason": "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。",
+          "retrieved_at": "2026-10-09",
+          "rights": {},
+          "title": "Anthropic使用政策更新说明",
+          "upstream_revision": "usage-policy-2026-effective-2026-11-12",
+          "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-b-1",
+          "locator": "Exact release / official documentation; claude-opus-5-5 / Fast mode GA",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 1",
+          "upstream_revision": "claude-opus-5-5 / Fast mode GA",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-b-2",
+          "locator": "Exact release / official documentation; claude-opus-5-5 / Fast mode GA",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 2",
+          "upstream_revision": "claude-opus-5-5 / Fast mode GA",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
         }
       ],
       "sources": [
@@ -4395,9 +4939,134 @@
           "coverage": "link_only",
           "title": "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3",
           "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Anthropic使用政策更新说明",
+          "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-b-1",
+          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 1",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-b-2",
+          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 2",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "1M上下文、128k最大输出；标准输入/输出每百万token $2/$10": "1M context, 128k maximum output; standard input/output per million token $ 2 /$ 10",
+            "1M上下文、128k最大输出；标准输入/输出每百万token $4/$20": "1M context, 128k maximum output; standard input/output per million token $ 4 /$ 20",
+            "2026-10-07降价": "2026-10-07 Price reduction",
+            "2026-10-17 补录：claude-opus-5-5 / Fast mode GA": "2026-10-17 addition: claude-opus-5-5 / Fast mode GA",
+            "2026使用政策（11月12日生效）": "2026 Usage Policy (11/12 takes effect)",
+            "Anthropic于 2026-10-15 将Opus 5.5 Fast mode移出研究预览，Start、Build、Scale层级可使用默认快速限额，Azure托管的Microsoft Foundry部署也已支持。": "On 2026-10-15 Anthropic moved Opus 5.5 Fast mode out of research preview for Start, Build and Scale tiers with default fast-mode limits, including Azure-hosted Microsoft Foundry deployments.",
+            "Anthropic于10月8日公布更新，11月12日生效。更新整理欺骗活动限制，并细化高风险用途的人工监督要求。": "Anthropic announced the update on 10/8, effective 11/12. It reorganizes restrictions on deceptive activity and details human-oversight requirements for high-risk uses.",
+            "Anthropic使用政策更新说明": "Anthropic Usage Policy Update Instructions",
+            "Anthropic的模型系列；Fable、Opus、Sonnet、Haiku分别维护版本、接入条件、价格与迁移材料，本次补充Haiku 5.5及Sonnet缓存读取降价。": "Anthropic's model family. Fable, Opus, Sonnet and Haiku retain separate versions, access conditions, prices and migration materials. This update adds Haiku 5.5 and the Sonnet cache-read price reduction.",
+            "Claude API及官方所列云平台；按各平台文档核对": "Claude API and the official cloud platform; check according to the documents of each platform",
+            "Claude API；各云入口见官方列表": "Claude API; see the official list of each cloud entrance",
+            "Claude API；旧采样参数需要核对": "Claude API; old sampling parameters need to be checked",
+            "Claude API；迁移时核对思考配置": "Claude API; Check and think about the configuration when migrating",
+            "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 1": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 1",
+            "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 2": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 2",
+            "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 3": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 3",
+            "Claude使用政策于10月8日公布更新、11月12日生效，补充高风险人工监督与自主硬件边界，并说明虐待条款的适用范围。": "Claude's Usage Policy update was announced on 10/8 and takes effect on 11/12. It adds human-oversight requirements for high-risk uses and boundaries for autonomous hardware, and clarifies the scope of abuse provisions.",
+            "Fable 5 的延续": "The continuation of Fable 5",
+            "Fable 5.1 的强制工具调用、思考块兼容规则值得单独读迁移说明；只换模型名可能使已有工作流报错。": "Read the Fable 5.1 migration guide for forced tool-calling and thinking-block compatibility rules. Changing only the model name may break existing workflows.",
+            "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 1",
+            "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 2",
+            "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 3",
+            "Opus 5 及 4.8 仍有研究预览要求，不能将 5.5 的范围套到其他型号或所有云平台。本站未实测。": "Opus 5 and 4.8 still have research-preview requirements. Do not extend 5.5 availability to other models or every cloud platform. FieldToFit has not tested it.",
+            "Opus 和 Sonnet 有各自升级路线；Fable 的发布不能自动解释成其他产品线停用。": "Opus and Sonnet have their own upgrade routes; the release of Fable cannot be automatically interpreted as the deactivation of other product lines.",
+            "Opus后续版本": "Follow-up version of Opus",
+            "Sonnet 5.5缓存读取": "Sonnet 5.5 Cache Reading",
+            "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。": "Sonnet 5.5 cache reads fall from $0.20 to $0.10 per million tokens; cache writes and other prices remain unchanged. This does not halve every invocation's cost. FieldToFit has not retested model performance or migration.",
+            "Sonnet后续版本": "Follow-up version of Sonnet",
+            "Sonnet缓存读取单独降价": "Sonnet cache reading separate price reduction",
+            "[Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费](https://fieldtofit.top/news/D-177)": "[Opus 5.5 Fast mode: broader access with separate fast-mode billing](https://fieldtofit.top/news/D-177)",
+            "[官方日志](https://platform.claude.com/docs/en/release-notes/overview)": "[Official Log](https://platform.claude.com/docs/en/release-notes/overview)",
+            "[官方材料](https://www.anthropic.com/news/2026-usage-policy-update)": "[Official Materials](https://www.anthropic.com/news/2026-usage-policy-update)",
+            "[迁移文档](https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5)": "[Migration Document](https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5)",
+            "thinking状态、工具选择与旧型号兼容需按迁移说明核对": "The thinking status and tool selection are compatible with the old model and need to be checked according to the migration instructions.",
+            "不是整单费用减半": "It's not the whole order cost is halved.",
+            "不要扩大虐待条款的含义": "Don't expand the meaning of abuse clauses.",
+            "与已有型号关系": "Relationship with existing models",
+            "主要变化": "Main changes",
+            "主要能力或价格口径": "Main ability or price measurement basis",
+            "事件与官方依据": "Event and official evidence",
+            "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
+            "以上为2026-10-09核对的新增材料；以下保留历史版本及当时适用条件。": "New materials above were checked on 2026-10-09. Historical versions below retain the conditions that applied at the time.",
+            "依据": "Evidence",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
+            "公布日与生效日": "Announcement date and effective date",
+            "关联：D-05 Fable 5.1；[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。[完整型号目录](https://platform.claude.com/docs/en/models/overview)另列 Haiku 4.5；本页资料不补未经核对的完整历史。": "Related: D-05 Fable 5.1; [CW-A02 Claude Code](/for-you#watch-cw-a02), [CW-H03 Claude Agent SDK](/for-you#watch-cw-h03). The [complete model catalog](https://platform.claude.com/docs/en/models/overview) separately lists Haiku 4.5. This profile does not fill unverified historical gaps.",
+            "其余价格保持": "The rest of the prices are maintained.",
+            "原始发布日期": "The original release date",
+            "原始日期口径": "Original date measurement basis",
+            "原文日期": "Source text date",
+            "原文日期：2026-10-15；本站核对：2026-10-17；版本：claude-opus-5-5 / Fast mode GA。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-15; checked: 2026-10-17; version: claude-opus-5-5 / Fast mode GA. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "发布日期 / 状态": "Release Date / Status",
+            "变化与用途": "Change and use",
+            "同权重，更快输出": "Same weights, faster output",
+            "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。": "Model claude-haiku-5-5 has 1M context and up to 128k output. Per million input / output tokens, prompts up to 100K cost $0.10 / $0.50; prompts above 100K cost $0.50 / $2.50. Check Claude API and each cloud platform's capabilities separately.",
+            "型号、上下文与标准价格": "Model, context and standard price",
+            "型号和平台边界": "Model and platform scope",
+            "完整型号家族": "Complete model family",
+            "完整型号目录": "Complete model catalog",
+            "官方公告、版本记录或采用说明": "Official announcement, version record or adoption instructions",
+            "官方区分持续、无目的的极端虐待与普通不满、反驳、创作和模型测试，不能概括为不允许批评Claude。本条不变更模型版本或价格。": "Official policy distinguishes sustained, purposeless extreme abuse from ordinary dissatisfaction, disagreement, creative work and model testing. It should not be summarized as banning criticism of Claude. This entry changes neither model versions nor prices.",
+            "官方发布、版本记录或采用说明": "Official release, version record or adoption instructions",
+            "官方发布和采用材料": "Official release and adoption of materials",
+            "官方强调长程编程与研究；新增逐消息 effort 等 beta 接口；强制工具选择存在不兼容变化": "Official focus on long-running coding and research; beta interfaces add per-message effort; forced tool selection includes incompatible changes",
+            "对可能造成人身伤害的自主硬件，要求合格人员能够观察、停止设备，断开Claude后仍能保持安全状态；应结合具体用途阅读官方政策。": "For autonomous hardware that may cause physical harm, qualified people must be able to observe and stop equipment. It must remain safe after disconnecting Claude. Read the official policy in the context of the particular use.",
+            "对照 Opus 4.8": "Compare Opus 4.8",
+            "对照 Sonnet 4.6": "Compare with Sonnet 4.6",
+            "对照关系": "Contrast relationship",
+            "展示方式：每个型号分开列日期、定位、接入、价格口径与迁移材料；原有Fable、Haiku等行保留，不把整个Claude家族收缩成两款。本站未实测迁移。": "Each model separately lists its date, purpose, integration, pricing basis and migration materials. Original Fable, Haiku and other rows remain; the Claude family is not reduced to two models. FieldToFit has not tested migration.",
+            "工具强制选择等迁移限制见官方说明；缓存/批处理价格另算": "See the official instructions for migration restrictions such as tool forced selection; cache/batch price is calculated separately.",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "快速模式单独限流并按更高费率计费，标准／快速模式不共享前缀缓存。组织实际额度、Evaluation层级与端到端收益仍需逐项核实。": "Fast mode has separate rate limits and premium pricing; standard and fast modes do not share prefix caches. Check organizational limits, Evaluation-tier access and end-to-end benefits separately.",
+            "把产品线与版本分开看。": "Look at the product line and the version separately.",
+            "日期与限制": "Dates and limitations",
+            "更新": "Update",
+            "最高 2.5 倍指输出token速度，使用相同模型权重；不保证首token延迟或整个任务同倍缩短。": "Up to 2.5 times refers to output-token speed with the same model weights; it does not promise the same reduction in time to first token or total task duration.",
+            "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。": "The text has not been confirmed to distribute the permission; keep the official entrance, MCP can read the FieldToFit interpretation and source list.",
+            "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M02 Claude, D-29, D-49。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M02 Claude, D-29, D-49. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
+            "标准价格与上下文": "Standard price and context",
+            "模型升级会影响已有调用流程。": "The model upgrade will affect the existing call process.",
+            "正文再分发许可未确认，保留官方链接及本站解读。": "The text redistribution license has not been confirmed, and the official link and FieldToFit interpretation are retained.",
+            "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。": "The text redistribution license has not been confirmed; MCP provides FieldToFit interpretation and source list, source text only links.",
+            "版本 / 分支": "Version / Branch",
+            "版本 / 型号": "Version / Model",
+            "版本 / 材料": "Version / Material",
+            "版本变化": "Version change",
+            "自主硬件的监督要求": "Supervision requirements for autonomous hardware",
+            "获取与使用": "Acquisition and use",
+            "费用、缓存和限额": "Pricing, caching and limits",
+            "迁移条件": "Migration conditions",
+            "迁移要看：强制工具选择存在兼容限制；thinking材料与型号、对话状态有关，不能直接把旧会话内部状态搬到新型号。": "Migration checks: forced tool selection has compatibility restrictions. Thinking content depends on the model and conversation state; do not directly move an older session's internal state to a new model.",
+            "迁移需要改什么": "What needs to be changed for migration?",
+            "选型信息：当前标准API每百万输入/输出token，Opus 5.5为4/20美元，Sonnet 5.5为2/10美元；两者列出1M上下文与128k最大输出。缓存、批处理等另按官方规则，不把标准价格等同完整任务成本。": "Selection information: current standard API prices per million input/output tokens are $4/$20 for Opus 5.5 and $2/$10 for Sonnet 5.5. Both list 1M context and 128k maximum output. Caching, batch processing and other options follow separate official rules. Standard prices are not full task costs.",
+            "采用条件": "Conditions for adoption",
+            "采用条件与限制": "Conditions and restrictions for adoption",
+            "采用边界": "Adopt the boundary",
+            "限制与验证": "Restriction and verification",
+            "默认开启思考；支持对话期间调整工具集合": "Turn on thinking by default; support to adjust the tool collection during the dialogue",
+            "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
+            "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
+          },
+          "source_hash": "19483fdf64da87dd026656c39720536698aa904d47fdea13248160d0257cb1cb",
+          "state": "reviewed"
+        }
+      },
       "type": "model"
     },
     {
@@ -5857,6 +6526,44 @@
       "blocks": [
         {
           "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "0.40.0 → v0.41.0",
+              "[ComfyUI 0.41.0：图像、潜空间节点与运行支持更新](https://fieldtofit.top/news/D-182)",
+              "原文日期：2026-10-15；本站核对：2026-10-17；版本：v0.41.0。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v0.39.0 → v0.40.0",
+              "[ComfyUI 0.40.0：资产与 3D输出更新，伙伴节点需分开看](https://fieldtofit.top/news/D-136)",
+              "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.40.0。本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审内容与当时适用条件。"
+        },
+        {
+          "columns": [
             "版本 / 适用材料",
             "官方原始日期",
             "本次变化与用途",
@@ -5925,10 +6632,42 @@
           "text": "依据：[官方项目](https://github.com/Comfy-Org/ComfyUI)、[官方发布记录](https://github.com/Comfy-Org/ComfyUI/releases)。关联：模型与自定义节点属于独立依赖，本页资料不把它们统称为 ComfyUI 自带能力。AI 应用案例仍 pending。"
         }
       ],
-      "checked_at": "2026-10-06",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-T01",
       "interpretation": [
+        {
+          "text": "ComfyUI 0.41.0 于北京时间 2026-10-16 06:57 发布，接续 0.40.0，新增ImageSDRToHDR、ReferenceMultiLatent、Latent Geometries节点及工作流模板更新。",
+          "title": "2026-10-17 补录：v0.41.0"
+        },
+        {
+          "text": "补入MiniMax-H3 LightVAE和Flux3-image支持；这不是模型作者的首发公告。权重、许可、依赖和硬件仍按具体模型核对。",
+          "title": "运行器支持与模型发布分开"
+        },
+        {
+          "text": "记录中LoRA堆栈禁用之后又撤回禁用，不能只摘其中一条就认定最终版移除了功能。",
+          "title": "按最终状态读取变更"
+        },
+        {
+          "text": "保留已有资产与 3D输出记录。HDR效果、工作流迁移和伙伴模型兼容未实测，不给出普遍质量或速度提升承诺。",
+          "title": "保留采用边界"
+        },
+        {
+          "text": "北京时间 10 月 14 日 05:29 发布，新增资产导出、标准 3D输出、摄像机节点及原生LoRA堆栈加载。",
+          "title": "2026-10-14 补录：v0.40.0"
+        },
+        {
+          "text": "加入Nano Banana 2.1、Vidu Q4、Kling Virtual Try-On等节点；平台上架与模型作者发布是不同事件，账户、费用和数据处理条件分别核对。",
+          "title": "伙伴接入不等于模型首发"
+        },
+        {
+          "text": "变更末尾通用路径需--enable-assets，Windows独立包另有默认开启安排，不能使用早期提交概括所有平台。",
+          "title": "资产开关按安装方式确认"
+        },
+        {
+          "text": "包含低显存、注意力和加载修复，前端包推进至 1.55.17。升级需核对工作流、自定义节点与依赖；本站未验证插件兼容、显存收益或外部API可用性。",
+          "title": "兼容与执行边界"
+        },
         {
           "text": "工作流可连接新模型服务；有节点不代表模型权重已开放、能在本机离线运行或免付费。",
           "title": "模型节点与本地运行"
@@ -5950,7 +6689,7 @@
           "title": "版本表也要记录失效的节点。"
         }
       ],
-      "introduction": "把生成与处理步骤连接成节点工作流的开源工具，可以查看、保存和复用每一步配置。",
+      "introduction": "北京时间 10 月 14 日 05:29 发布，新增资产导出、标准 3D输出、摄像机节点及原生LoRA堆栈加载。",
       "name": "ComfyUI",
       "reading_materials": [
         {
@@ -6002,6 +6741,38 @@
           "title": "comfy · LICENSE",
           "upstream_revision": "b0b743566f65daafc423b4fea8a2fbda94b3384a",
           "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/b0b743566f65daafc423b4fea8a2fbda94b3384a/LICENSE"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-c-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "ComfyUI v0.40.0 · Official source 1",
+          "upstream_revision": "v0.40.0",
+          "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.40.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-g-1",
+          "locator": "Exact release / official documentation; v0.41.0",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "ComfyUI · v0.41.0 · official 1",
+          "upstream_revision": "v0.41.0",
+          "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.41.0"
         }
       ],
       "sources": [
@@ -6019,9 +6790,100 @@
           "coverage": "link_only",
           "title": "ComfyUI 0.39：新模型节点与离线运行边界分开看 · 官方来源 1",
           "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.39.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct14-c-1",
+          "title": "ComfyUI v0.40.0 · Official source 1",
+          "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.40.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-g-1",
+          "title": "ComfyUI · v0.41.0 · official 1",
+          "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.41.0"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-14 补录：v0.40.0": "2026-10-14 addition: v0.40.0",
+            "2026-10-17 补录：v0.41.0": "2026-10-17 addition: v0.41.0",
+            "ComfyUI 0.39：新模型节点与离线运行边界分开看 · 官方来源 1": "ComfyUI 0.39: New model nodes are separated from offline operation boundaries · Official source 1",
+            "ComfyUI 0.41.0 于北京时间 2026-10-16 06:57 发布，接续 0.40.0，新增ImageSDRToHDR、ReferenceMultiLatent、Latent Geometries节点及工作流模板更新。": "ComfyUI 0.41.0 was released at 06:57 Beijing time on 2026-10-16, following 0.40.0, adding ImageSDRToHDR, ReferenceMultiLatent and Latent Geometries nodes and updated workflow templates.",
+            "ComfyUI新增FLUX 3 Image等合作方节点，同时加入offline与disable-partner-nodes开关。": "ComfyUI adds FLUX 3 Image and other partner nodes, and also adds offline and disable-partner-nodes switches.",
+            "PyTorch 最低版本提升到 2.7；修正部分低显存放大问题": "The lowest version of PyTorch is upgraded to 2.7; some low VRAM amplification problems are fixed",
+            "Veo 旧节点退出会影响已有流程的可运行性，应该与新增视频裁剪一起展示。": "Retiring older Veo nodes affects whether existing workflows can run. Present this alongside the new video-cropping features.",
+            "[ComfyUI 0.40.0：资产与 3D输出更新，伙伴节点需分开看](https://fieldtofit.top/news/D-136)": "[ComfyUI 0.40.0: assets and 3D output updates, with separate partner-node conditions](https://fieldtofit.top/news/D-136)",
+            "[ComfyUI 0.41.0：图像、潜空间节点与运行支持更新](https://fieldtofit.top/news/D-182)": "[ComfyUI 0.41.0: image and latent nodes with runtime support updates](https://fieldtofit.top/news/D-182)",
+            "[官方说明](https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.39.0)": "[Official Note](https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.39.0)",
+            "v0.39.0；原档案v0.35.0": "v0.39.0; original profile v0.35.0",
+            "事件与官方依据": "Event and official evidence",
+            "以下保留此前已审内容与当时适用条件。": "Previously reviewed content and its original applicable conditions are retained below.",
+            "伙伴接入不等于模型首发": "Partner integration is not a model launch",
+            "使用形态": "Use the form",
+            "依据": "Evidence",
+            "依据：[官方项目](https://github.com/Comfy-Org/ComfyUI)、[官方发布记录](https://github.com/Comfy-Org/ComfyUI/releases)。关联：模型与自定义节点属于独立依赖，本页资料不把它们统称为 ComfyUI 自带能力。AI 应用案例仍 pending。": "Based on: [Official Project](https://github.com/Comfy-Org/ComfyUI), [Official Release Record](https://github.com/Comfy-Org/ComfyUI/releases). Association: Models and custom nodes are independent dependencies, and the information on this page does not collectively refer to them as ComfyUI's own capabilities. AI application cases are still pending.",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
+            "保留已有资产与 3D输出记录。HDR效果、工作流迁移和伙伴模型兼容未实测，不给出普遍质量或速度提升承诺。": "Retain existing asset and 3D-output records. HDR results, workflow migrations and partner-model compatibility remain untested; no universal quality or speed gain is promised.",
+            "保留采用边界": "Retain adoption boundaries",
+            "修复Qwen Image 2.1选择int8/int4缓存时崩溃，增加16bit浮点EXR保存。本站未运行复测。": "Fixes Qwen Image 2.1 crashes with int8/int4 caches and adds 16bit floating-point EXR saving. FieldToFit has not run or retested it.",
+            "关联：[D-64](https://fieldtofit.top/news/D-64)、[CW-M07](https://fieldtofit.top/watch/CW-M07)。以下保留各历史版本及其当时适用条件。": "Association: [D-64 ](https://fieldtofit.top/news/D-64), [CW-M07 ](https://fieldtofit.top/watch/CW-M07). The following retains the historical versions and their applicable conditions at that time.",
+            "具体变化": "Specific changes",
+            "兼容与执行边界": "Compatibility and execution limits",
+            "加入Nano Banana 2.1、Vidu Q4、Kling Virtual Try-On等节点；平台上架与模型作者发布是不同事件，账户、费用和数据处理条件分别核对。": "Adds nodes for Nano Banana 2.1, Vidu Q4 and Kling Virtual Try-On. Platform integration differs from a model-author launch; accounts, charges and data-handling terms need separate checks.",
+            "包含低显存、注意力和加载修复，前端包推进至 1.55.17。升级需核对工作流、自定义节点与依赖；本站未验证插件兼容、显存收益或外部API可用性。": "Includes low-memory, attention and loading fixes, with frontend package 1.55.17. Check workflows, custom nodes and dependencies before upgrading; FieldToFit has not tested plugin compatibility, memory savings or external API availability.",
+            "北京时间 10 月 14 日 05:29 发布，新增资产导出、标准 3D输出、摄像机节点及原生LoRA堆栈加载。": "Released at 05:29 Beijing time on 10/14, adding asset export, standard 3D output, camera nodes and native LoRA-stack loading.",
+            "原创解读与链接": "Original commentary and source links",
+            "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.40.0。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-14; checked: 2026-10-14; version: v0.40.0; FieldToFit has not installed or reproduced performance.",
+            "原文日期：2026-10-15；本站核对：2026-10-17；版本：v0.41.0。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-15; checked: 2026-10-17; version: v0.41.0; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "发布记录日期": "Release record date",
+            "变更末尾通用路径需--enable-assets，Windows独立包另有默认开启安排，不能使用早期提交概括所有平台。": "The final changes require --enable-assets on the general path, with a separate default-on arrangement for Windows standalone packages. Earlier commits do not establish a universal default.",
+            "固定版本完整文件，未改写，保留原作者与许可": "pinned version of the complete file, not rewritten, retain the original author and license",
+            "图像、视频等生成与处理流程": "The generation and processing process of images, videos, etc.",
+            "处理什么": "What to deal with?",
+            "官方原始日期": "The official original date",
+            "官方发布与采用说明": "Official announcement and adoption guidance",
+            "官方发布记录": "Official release record",
+            "官方项目": "Official project",
+            "官方项目、节点变更、运行依赖": "Official projects, node changes, operation dependencies",
+            "对既有工作流的影响": "Impact on the existing workflow",
+            "工作流修复": "Workflow repair",
+            "工作流可连接新模型服务；有节点不代表模型权重已开放、能在本机离线运行或免付费。": "Workflows can connect new model services. A node does not establish open weights, local offline execution or free access.",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "按最终状态读取变更": "Read the final change state",
+            "接入或运行条件": "Access or operation conditions",
+            "新增 VideoTrim、VideoCrop；高级图像保存支持 AVIF；移除将退役的 Veo 2 / 3.0 服务节点": "Adds VideoTrim and VideoCrop; advanced image saving supports AVIF; removes nodes for Veo 2 / 3.0 services scheduled for retirement",
+            "新增离线和关闭合作方节点选项，旧disable-api-nodes标记弃用；离线用户要核对启动设置和所用节点。": "Adds offline and disable-partner-node options; deprecates the old disable-api-nodes flag. Offline users should check launch settings and the nodes they use.",
+            "日期与限制": "Dates and limitations",
+            "更新工具时也要核对运行依赖": "When updating tools, you should also check the running dependencies.",
+            "本地 / 自行部署的节点界面与执行后端；第三方服务节点另有调用条件": "Local/self-deployed node interface and execution back-end; third-party service node has other call conditions",
+            "本次变化与用途": "Changes and uses this time",
+            "模型与素材、节点参数 → 媒体结果与工作流配置": "Model and material, node parameters → media results and workflow configuration",
+            "模型节点与本地运行": "Model node and local operation",
+            "此入口仅提供链接；已获许可的固定文档在材料清单中另列。": "This entrance only provides links; licensed fixed documents are listed separately in the list of materials.",
+            "版本": "Version",
+            "版本 / 适用材料": "Version / Applicable Materials",
+            "版本变化": "Version change",
+            "版本表也要记录失效的节点。": "The version table also needs to record the failed nodes.",
+            "离线与合作方开关": "Offline and partner switch",
+            "节点配置记录素材如何进入、经过哪些处理、如何输出，这部分材料比单张效果图更能说明项目的作用。": "Node configurations show how inputs enter, which processing steps they pass through and how outputs are produced. These materials explain the project's role more clearly than a single result image.",
+            "补入MiniMax-H3 LightVAE和Flux3-image支持；这不是模型作者的首发公告。权重、许可、依赖和硬件仍按具体模型核对。": "Adds MiniMax-H3 LightVAE and Flux3-image support; this is not a first-release announcement by those model authors. Check each model’s weights, license, dependencies and hardware.",
+            "视频裁剪可进入工作流；使用旧服务节点的流程需要检查替换": "Video cropping can enter the workflow; the process using the old service node needs to be checked and replaced.",
+            "记录中LoRA堆栈禁用之后又撤回禁用，不能只摘其中一条就认定最终版移除了功能。": "The log disables and then reverts disabling the LoRA stack. One entry alone does not establish that the final version removed the feature.",
+            "资产开关按安装方式确认": "Asset defaults depend on the installation",
+            "输入与产物": "Input and product",
+            "运行器支持与模型发布分开": "Separate runtime support from model launches",
+            "重点看可复用的制作过程。": "Focus on the reusable production process.",
+            "限制与验证": "Restriction and verification",
+            "首批材料": "The first batch of materials"
+          },
+          "source_hash": "5d752a6733105a42c5543fc994ba9573812aa9cc2de8fbd5ea5097caa375ebc6",
+          "state": "reviewed"
+        }
+      },
       "type": "tool"
     },
     {
@@ -6356,6 +7218,25 @@
           "kind": "table",
           "rows": [
             [
+              "2.139.0 → v2.140.0",
+              "[Docling 2.140.0：远程兼容ASR与版面修复](https://fieldtofit.top/news/D-184)",
+              "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.140.0。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "v2.126.0 → v2.139.0",
               "[Docling 2.139.0：逐页置信信息与文档结构维护](https://fieldtofit.top/news/D-150)",
               "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：v2.139.0。本站未安装或复现性能。"
@@ -6405,10 +7286,26 @@
           "text": "依据：[官方项目](https://github.com/docling-project/docling)、[发布记录](https://github.com/docling-project/docling/releases)。本页资料仅核对文档与更新，未实测中文论文表格或扫描件精度。"
         }
       ],
-      "checked_at": "2026-10-15",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-T04",
       "interpretation": [
+        {
+          "text": "Docling 2.140.0 于北京时间 2026-10-16 17:00 发布，增加远程OpenAI兼容服务器转写与原生Distil-Whisper预设预取入口，接续 2.139.0。",
+          "title": "2026-10-17 补录：v2.140.0"
+        },
+        {
+          "text": "OpenAI兼容是接口契约，不等于必须或免费使用OpenAI。模型、认证、费用与数据流向由服务器和部署选择决定。",
+          "title": "接口兼容不决定服务条件"
+        },
+        {
+          "text": "修复PPTX组合图形坐标、重复OCR区域、ODT隐藏段及逐页置信映射；阅读顺序候选处理遵守文档超时。",
+          "title": "版面与超时处理"
+        },
+        {
+          "text": "保留旧版逐页置信信息。解析和ASR接入更新不证明中文扫描件准确率或转写速度普遍改善；本站未复现。",
+          "title": "不扩写准确率结论"
+        },
         {
           "text": "官方于北京时间 10 月 14 日 20:18 发布。逐页ConfidenceScores、线程后端并发结果控制，以及进度和事件回调补入此次版本。",
           "title": "2026-10-15 补录：v2.139.0"
@@ -6452,6 +7349,22 @@
           "title": "Docling v2.139.0 · Official source 1",
           "upstream_revision": "v2.139.0",
           "url": "https://github.com/docling-project/docling/releases/tag/v2.139.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-i-1",
+          "locator": "Exact release / official documentation; v2.140.0",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Docling · v2.140.0 · official 1",
+          "upstream_revision": "v2.140.0",
+          "url": "https://github.com/docling-project/docling/releases/tag/v2.140.0"
         }
       ],
       "sources": [
@@ -6470,6 +7383,12 @@
           "id": "oct15-d-1",
           "title": "Docling v2.139.0 · Official source 1",
           "url": "https://github.com/docling-project/docling/releases/tag/v2.139.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-i-1",
+          "title": "Docling · v2.140.0 · official 1",
+          "url": "https://github.com/docling-project/docling/releases/tag/v2.140.0"
         }
       ],
       "state": "published",
@@ -6477,19 +7396,28 @@
         "en": {
           "fields": {
             "2026-10-15 补录：v2.139.0": "2026-10-15 addition:v2.139.0",
+            "2026-10-17 补录：v2.140.0": "2026-10-17 addition: v2.140.0",
+            "Docling 2.140.0 于北京时间 2026-10-16 17:00 发布，增加远程OpenAI兼容服务器转写与原生Distil-Whisper预设预取入口，接续 2.139.0。": "Docling 2.140.0 was released at 17:00 Beijing time on 2026-10-16, following 2.139.0, adding remote OpenAI-compatible transcription and prefetching for native Distil-Whisper presets.",
             "Docling 提供文档结构；用户的 AI 再基于结果做总结或分析，网站应给出这两个步骤之间的数据关系。": "Docling provides a document structure; the user's AI then summarizes or analyzes based on the results, and the website should give the data relationship between the two steps.",
             "JATS 链接和有序编号的保留直接影响引用与阅读顺序，是“提取到文字”之外值得看的内容。": "The retention of JATS links and ordered numbers directly affects the order of citation and reading, which is worth reading content other than \"extracted to text\".",
+            "OpenAI兼容是接口契约，不等于必须或免费使用OpenAI。模型、认证、费用与数据流向由服务器和部署选择决定。": "OpenAI compatibility is an interface contract, not mandatory or free OpenAI service. Models, authentication, cost and data flow depend on the server and deployment.",
             "PDF、办公等文档 → Markdown / 结构化文档数据": "PDF, office and other documents → Markdown / Structured document data",
             "[Docling 2.139.0：逐页置信信息与文档结构维护](https://fieldtofit.top/news/D-150)": "[Docling 2.139.0: per-page confidence and document-structure maintenance](https://fieldtofit.top/news/D-150)",
+            "[Docling 2.140.0：远程兼容ASR与版面修复](https://fieldtofit.top/news/D-184)": "[Docling 2.140.0: remote compatible ASR and layout fixes](https://fieldtofit.top/news/D-184)",
+            "不扩写准确率结论": "Do not infer accuracy gains",
             "事件与官方依据": "Event and official evidence",
             "以下保留此前已审内容与当时适用条件。": "Previously reviewed content and its original applicable conditions are retained below.",
             "使用形态": "Use the form",
             "依据：[官方项目](https://github.com/docling-project/docling)、[发布记录](https://github.com/docling-project/docling/releases)。本页资料仅核对文档与更新，未实测中文论文表格或扫描件精度。": "Sources: [official project](https://github.com/docling-project/docling), [release notes](https://github.com/docling-project/docling/releases). This profile reviews documentation and updates only; Chinese-paper table accuracy and scanned-document accuracy have not been tested.",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
+            "保留旧版逐页置信信息。解析和ASR接入更新不证明中文扫描件准确率或转写速度普遍改善；本站未复现。": "Retain earlier per-page confidence information. Parsing and ASR integration updates do not demonstrate general gains in Chinese scan accuracy or transcription speed; FieldToFit has not reproduced results.",
+            "修复PPTX组合图形坐标、重复OCR区域、ODT隐藏段及逐页置信映射；阅读顺序候选处理遵守文档超时。": "Fixes grouped PPTX coordinates, duplicate OCR regions, hidden ODT paragraphs and page-confidence mapping; reading-order candidate handling respects document timeouts.",
             "关注的实际问题": "Practical issues of concern",
             "具体变化": "Specific changes",
             "区分解析与后续理解。": "Distinguish between analysis and follow-up understanding.",
             "原创解读与来源链接": "Original commentary and source links",
             "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：v2.139.0。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-14; checked:2026-10-15; version:v2.139.0; FieldToFit has not installed or reproduced performance.",
+            "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.140.0。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: v2.140.0; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
             "发布记录": "Publication records",
             "发布记录日期": "Release record date",
             "增加原生 PDF 管线；完善 Apple Pages 解析；保留 JATS 链接；改进 Markdown 有序列表起始编号与硬换行保留": "Add native PDF pipelines; improve Apple Pages parsing; retain JATS links; improve Markdown ordered list starting numbers and hard newline retention",
@@ -6497,8 +7425,10 @@
             "官方于北京时间 10 月 14 日 20:18 发布。逐页ConfidenceScores、线程后端并发结果控制，以及进度和事件回调补入此次版本。": "Released at 20:18 Beijing time on 10/14, adding per-page ConfidenceScores, threaded-backend concurrent-result controls, progress and event callbacks.",
             "官方项目": "Official project",
             "官方项目、输入格式、导出与版本记录": "Official project, input format, export and version record",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
             "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
             "批量处理维护": "Batch-processing maintenance",
+            "接口兼容不决定服务条件": "API compatibility does not determine service terms",
             "文档解析与格式转换": "Document parsing and format conversion",
             "文档转换后能否保留链接、编号等结构信息": "Can links, numbers and other structural information be retained after document conversion?",
             "日期与限制": "Dates and limitations",
@@ -6506,6 +7436,7 @@
             "格式与结构保留": "Format and structure preservation",
             "版本": "Version",
             "版本变化": "Version change",
+            "版面与超时处理": "Layout and timeout handling",
             "置信信息不是正确率": "Confidence is not accuracy",
             "补入Numbers单元格图片、PPTX组合图处理，并修正文档编号、列表、图片和链接保留的多处问题。": "Adds Numbers cell-picture and PPTX combination-chart handling, with fixes for numbering, lists, images and preserved links.",
             "论文材料不只有正文。": "The thesis materials are not only the text.",
@@ -6514,7 +7445,7 @@
             "逐页分数可用于排查和筛选，不等于事实正确率。格式支持增加不证明复杂中文表格或扫描件均准确；本站未做精度与吞吐复测。": "Per-page scores support diagnosis and filtering rather than factual accuracy guarantees. Added format support does not establish accuracy for complex Chinese tables or scans; FieldToFit has not tested accuracy or throughput.",
             "首批材料": "The first batch of materials"
           },
-          "source_hash": "967e9508d1d14bcdacd896574822db251cbb09bc421e1749b06b2932cf030a43",
+          "source_hash": "226d10541d22cbdd28af4ac56b242def2cd44023a1bf4a6a121ea05321ccf2c5",
           "state": "reviewed"
         }
       },
@@ -6737,6 +7668,25 @@
           "kind": "table",
           "rows": [
             [
+              "2.1.301 → v2.1.302",
+              "[Claude Code 2.1.302：修复MCP兼容、文件读取与任务状态](https://fieldtofit.top/news/D-179)",
+              "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.1.302。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "v2.1.300 → v2.1.301",
               "[Claude Code 2.1.301：限制无人值守等待，Python SDK同步捆绑版本](https://fieldtofit.top/news/D-161)",
               "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：Claude Code2.1.301 / PythonSDK0.2.168。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。"
@@ -6924,10 +7874,26 @@
           "text": "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "checked_at": "2026-10-16",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A02",
       "interpretation": [
+        {
+          "text": "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。",
+          "title": "2026-10-17 补录：v2.1.302"
+        },
+        {
+          "text": "修复协商MCP 2026-07-28 但缺少部分可选字段时工具不可用；Read拒绝超过 128MB的图像来源。",
+          "title": "协议和读取保护"
+        },
+        {
+          "text": "部分第三方提供方非交互／SDK会话使用default权限模式；fork子代理的默认前后台方式有变化。另修正错误任务状态及从头重跑导致重复操作的问题，自动化维护者需回归预期。",
+          "title": "自动运行的行为变化"
+        },
+        {
+          "text": "Python SDK仍为 0.2.168、捆绑 2.1.301，不记为随CLI同步升级。客户端分类器型号变量不改变服务端分类器；本站未运行回归。",
+          "title": "CLI和SDK独立跟进"
+        },
         {
           "text": "CLI与Python SDK分别于北京时间 10 月 16 日 03:22、04:22 发布，GitHub UTC日期为 10 月 15 日。更新维护等待、工作区保护与错误识别，不是模型或用量额度更新。",
           "title": "2026-10-16 补录：Claude Code2.1.301 / PythonSDK0.2.168"
@@ -7157,6 +8123,22 @@
           "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 2",
           "upstream_revision": "Claude Code2.1.301 / PythonSDK0.2.168",
           "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.168"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-d-1",
+          "locator": "Exact release / official documentation; v2.1.302",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Claude Code · v2.1.302 · official 1",
+          "upstream_revision": "v2.1.302",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
         }
       ],
       "sources": [
@@ -7219,6 +8201,12 @@
           "id": "oct16-g-2",
           "title": "Claude Code / Claude Agent SDK (Python) Claude Code2.1.301 / PythonSDK0.2.168 · Official source 2",
           "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.168"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-d-1",
+          "title": "Claude Code · v2.1.302 · official 1",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
         }
       ],
       "state": "published",
@@ -7230,9 +8218,12 @@
             "2026-10-10版本补充：v2.1.296": "2026-10-10 Version Supplement: v2.1.296",
             "2026-10-15 补录：Claude Code2.1.300 / PythonSDK0.2.167": "2026-10-15 addition:Claude Code2.1.300 / PythonSDK0.2.167",
             "2026-10-16 补录：Claude Code2.1.301 / PythonSDK0.2.168": "2026-10-16 addition:Claude Code2.1.301 / PythonSDK0.2.168",
+            "2026-10-17 补录：v2.1.302": "2026-10-17 addition: v2.1.302",
             "CLI与Python SDK分别于北京时间 10 月 16 日 03:22、04:22 发布，GitHub UTC日期为 10 月 15 日。更新维护等待、工作区保护与错误识别，不是模型或用量额度更新。": "The CLI and Python SDK were released at 03:22 and 04:22 Beijing time on 10/16; GitHub’s UTC date is 10/15. This maintains waiting, worktree protection and error reporting rather than models or usage limits.",
+            "CLI和SDK独立跟进": "Track CLI and SDK independently",
             "CW-A02 由 2.1.300 补至 2.1.301；CW-H03 由Python0.2.167 补至 0.2.168，捆绑CLI2.1.301。不推定TypeScript SDK同步升级；本站未回归测试。": "Update CW-A02 from 2.1.300 to 2.1.301 and CW-H03 from Python0.2.167 to 0.2.168, bundling CLI2.1.301; Do not infer a TypeScript SDK update; FieldToFit has not regression-tested it.",
             "Claude Code 2.1.296：补强托管策略、MCP 状态与编辑保护 · 官方材料1": "Claude Code 2.1.296: Strengthen hosting strategy, MCP status and editing protection · Official materials 1",
+            "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。": "Claude Code 2.1.302 was released at 04:53 Beijing time on 2026-10-17, following 2.1.301, with fixes for optional protocol fields, compaction and cloud-task state handling.",
             "Claude Code CLI 及相关客户端入口": "Claude Code CLI and related client entrances",
             "Claude Code v2.1.292修复部分定时任务不触发、后台命令过早停止及权限处理问题，Agent工具增加effort参数。": "Claude Code v2.1.292 fixes some scheduled tasks not firing, background commands stopping too early and permission handling. The Agent tool gains an effort parameter.",
             "Claude Code v2.1.292：定时任务、后台命令和权限修复": "Claude Code v2.1.292: Timed tasks, background commands and permission repair",
@@ -7248,9 +8239,11 @@
             "IDE与插件行为": "IDE and plug-in behavior",
             "MCP与后台消息": "MCP and background messages",
             "MCP与工具输入": "MCP and tool input",
+            "Python SDK仍为 0.2.168、捆绑 2.1.301，不记为随CLI同步升级。客户端分类器型号变量不改变服务端分类器；本站未运行回归。": "The Python SDK remains 0.2.168, bundling 2.1.301; it is not recorded as updated alongside the CLI. The client classifier-model variable does not change the server classifier. FieldToFit has not run regression tests.",
             "Python0.2.167 发行说明仅明确捆绑CLI2.1.300；不能推定TypeScript包同步更新。SDK认证、许可和第三方产品使用限制保留；本站未回归运行行为。": "The Python0.2.167 release only explicitly updates its bundled CLI2.1.300; do not infer a matching TypeScript release. SDK authentication, licensing and third-party-product restrictions remain; FieldToFit has not regression-tested runtime behavior.",
             "[Claude Code 2.1.300：修复压缩后的恢复，Python SDK更新捆绑CLI](https://fieldtofit.top/news/D-147)": "[Claude Code 2.1.300: compaction recovery fixes and a Python SDK CLI update](https://fieldtofit.top/news/D-147)",
             "[Claude Code 2.1.301：限制无人值守等待，Python SDK同步捆绑版本](https://fieldtofit.top/news/D-161)": "[Claude Code 2.1.301: bounded unattended waits and a Python SDK CLI update](https://fieldtofit.top/news/D-161)",
+            "[Claude Code 2.1.302：修复MCP兼容、文件读取与任务状态](https://fieldtofit.top/news/D-179)": "[Claude Code 2.1.302: MCP compatibility, file reading and task-state fixes](https://fieldtofit.top/news/D-179)",
             "[官方发布](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)": "[Official Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)",
             "[官方发布记录](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)": "[Official Release Record](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)",
             "[官方材料](https://github.com/anthropics/claude-code/releases/tag/v2.1.289)": "[Official Materials](https://github.com/anthropics/claude-code/releases/tag/v2.1.289)",
@@ -7270,8 +8263,10 @@
             "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
             "依据": "Evidence",
             "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。": "Based on: [Official CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md). Association: [CW-M02 Claude](/for-you#watch-cw-m02), [CW-S02 Anthropic Skills](/for-you#watch-cw-s02), [CW-H03 Claude Agent SDK](/for-you#watch-cw-h03).",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
             "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。": "Retain the official source and version; the fixed text that can be redistributed is not imported this time, and the link is not declared as the full text.",
             "修复HTTP MCP连接累积请求导致的内存泄漏，以及工作中消息转入后台时丢失的问题。": "Fixes memory leaks from accumulating HTTP MCP requests and messages lost when active work moves to the background.",
+            "修复协商MCP 2026-07-28 但缺少部分可选字段时工具不可用；Read拒绝超过 128MB的图像来源。": "Fixes unavailable tools when negotiating MCP 2026-07-28 with some optional fields missing; Read refuses image sources over 128MB.",
             "修复指令式hooks的阻断判断": "Fix the blocking judgment of instructional hooks",
             "修复第三方兼容接口的请求失败；修复 MCP 调用后误判空消息；插件管理支持 JSON 输出；修复部分会话恢复和权限规则问题": "Fix the request failure of the third-party compatible interface; fix the misjudgment of empty messages after MCP call; plug-in management supports JSON output; fix some session recovery and permission rule problems",
             "修复退出时可能删除含未推送提交的Hook工作树，以及部分工作流跳过步骤仍报告成功的问题。": "Fixes quitting that could delete a hook-created worktree with unpushed commits, and some workflow steps being skipped while success was reported.",
@@ -7281,6 +8276,7 @@
             "兼容接口请求失败和 MCP 后空消息属于真实使用链路中的问题，本期不将这版泛化为“编程能力增强”。": "Compatibility-interface request failures and empty messages after MCP concern actual usage flows. This version is not generalized as improved coding ability.",
             "减少过早停止": "Reduce and stop too early",
             "加入Haiku 5.5；修复上下文压缩后将先前动作误认成新动作、撤回或重复已完成工作的情况。": "Adds Haiku 5.5 and fixes compacted sessions treating earlier actions as new, undoing them or repeating completed work.",
+            "协议和读取保护": "Protocol and read protection",
             "压缩与恢复": "Compaction and recovery",
             "原创解读与来源链接": "Original commentary and source links",
             "原始日期口径": "Original date measurement basis",
@@ -7288,6 +8284,7 @@
             "原文日期": "Source text date",
             "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：Claude Code2.1.300 / PythonSDK0.2.167。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-15; checked:2026-10-15; version:Claude Code2.1.300 / PythonSDK0.2.167; FieldToFit has not installed or reproduced performance.",
             "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：Claude Code2.1.301 / PythonSDK0.2.168。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-16; checked:2026-10-16; version:Claude Code2.1.301 / PythonSDK0.2.168; Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
+            "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.1.302。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: v2.1.302; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
             "变化": "Change",
             "变化与用途": "Change and use",
             "可管理性也在演进。": "Manageability is also evolving.",
@@ -7307,6 +8304,7 @@
             "工作区与任务结果": "Worktrees and workflow results",
             "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
             "已核实更新": "Verified and updated",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
             "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
             "执行与扩展": "Execution and expansion",
             "按Claude Code官方更新入口采用": "According to the official update entrance of Claude Code",
@@ -7341,12 +8339,14 @@
             "版本记录包含沙箱读取、网络路径权限提示、托管设置和插件加载等修复。属于官方声明，本站未进行安全复测，不宣称所有越权风险已解决。": "Release notes include fixes for sandbox reads, network-path permission prompts, managed settings and plugin loading. These are official claims. FieldToFit has not repeated security tests or established that all authorization risks are resolved.",
             "由已审v2.1.293补充v2.1.294。本站核对官方发行说明，未复现修复；模型判断型hook不等于硬隔离保证，未核齐的更高版本不混入。": "Adds v2.1.294 after the reviewed v2.1.293. FieldToFit reviewed official release notes without reproducing the fixes. Model-judgment hooks are not hard-isolation guarantees; unverified higher versions are excluded.",
             "等待与错误识别": "Wait limits and error reporting",
+            "自动运行的行为变化": "Behavior changes in automation",
             "补强压缩后MCP工具及指令通知、恢复后的工具搜索；Hook改写输入增加校验，部分云会话误报写入成功及策略读取超时也被修复。升级需核对自己的Hook、代理与会话配置。": "Improves post-compaction MCP tool/instruction notifications and resumed tool search. Hook-rewritten input gains validation; some cloud-session false write-success reports and policy-read timeouts are fixed. Check your hooks, proxy and session settings when upgrading.",
             "订阅条目updated 2026-10-07 UTC；未核精确首发时刻": "Subscription entry updated 2026-10-07 UTC; Uncored accurate first release time",
             "订阅条目更新2026-10-06 UTC；不等同精确首发日期": "Subscription entry update 2026-10-06 UTC; not equal to the exact release date",
             "跨平台实际行为及迁移效果未复测；保留原档案许可与使用限制。": "The actual behavior and migration effect of cross-platform have not been retested; the original profile license and usage restrictions are retained.",
             "这些变化影响团队策略与长任务运行的可预期性；本站只核对官方发布记录，没有完成本地回归。发布说明中的 Sonnet 5.5 缓存价格修正属于费用显示跟进，不应另写成模型又一次降价。": "These changes affect the predictability of team policies and long-running tasks. FieldToFit reviewed only official release notes and has not completed local regression tests. The Sonnet 5.5 cache-price correction concerns displayed costs; it should not be reported as another model price cut.",
             "连接稳定性值得和新功能一起展示。": "The stability of the connection is worth showing with the new features.",
+            "部分第三方提供方非交互／SDK会话使用default权限模式；fork子代理的默认前后台方式有变化。另修正错误任务状态及从头重跑导致重复操作的问题，自动化维护者需回归预期。": "Some noninteractive / SDK sessions with third-party providers use default permission mode; forked subagents have changed foreground/background defaults. Incorrect task states and restarts that duplicate operations are also addressed; automation owners should recheck expectations.",
             "采用入口": "Adopt the entrance",
             "采用条件": "Conditions for adoption",
             "采用条件与验证": "Adopt conditions and verification",
@@ -7355,7 +8355,7 @@
             "验证与采用边界": "Verification and adoption of boundaries",
             "验证范围": "Scope of verification"
           },
-          "source_hash": "f77019d9bc700ee080b61b361b23bb309daef178ff0f3b7ba8edf31e003cc834",
+          "source_hash": "0b318a2b348181ec78815d641e370886b88d284e217e12148da6ff0f1a90cc98",
           "state": "reviewed"
         }
       },
@@ -7911,6 +8911,49 @@
       "blocks": [
         {
           "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "1.2.0 → v1.3.0",
+              "[Pi 1.3.0：模型切换、会话恢复与Kimi端点迁移](https://fieldtofit.top/news/D-183)",
+              "原文日期：2026-10-15；本站核对：2026-10-17；版本：v1.3.0。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
+            "本次核对",
+            "内容与来源",
+            "日期与边界"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "已审版本变化",
+              "v1.0.4 → v1.2.0",
+              "2026-10-12T23:03:53Z"
+            ],
+            [
+              "本次动态",
+              "[Pi 1.2.0：按密钥展示模型，扩展作者需处理兼容变化](https://fieldtofit.top/news/D-130)",
+              "原事件日期保留；本站核对 2026-10-13，未运行复测。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审版本及其当时适用条件。"
+        },
+        {
+          "columns": [
             "版本 / 适用材料",
             "官方原始日期",
             "本次变化与用途",
@@ -7998,10 +9041,42 @@
           "text": "本次收录固定 README / 模型卡与许可。原文中的命令和相对路径是供读者核对的来源内容，不代表已由 FieldToFit 执行；包版本、模型权重与运行环境须分别确认。"
         }
       ],
-      "checked_at": "2026-10-06",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A07",
       "interpretation": [
+        {
+          "text": "Pi 1.3.0 于北京时间 2026-10-16 03:17 发布，新增分享目标选择，改善GPT-6 推理级别切换的缓存保持，并恢复会话已启用的工具。",
+          "title": "2026-10-17 补录：v1.3.0"
+        },
+        {
+          "text": "切换模型不再把旧型号思考块作为普通可见文本传给新模型；最终工具参数是无效JSON时拒绝执行，不再只用已解析的部分。",
+          "title": "模型切换和参数完整性"
+        },
+        {
+          "text": "Kimi Code改走Chat Completions，自定义base URL覆盖必须包含/v1。缓存保持取决于提供方与凭据路径，不能推定全部请求都更便宜。",
+          "title": "自定义端点需迁移"
+        },
+        {
+          "text": "档案由 1.2.0 补至 1.3.0，保留扩展兼容与宿主权限边界。特定型号修复不代替各提供方开放状态核验；本站未安装回归。",
+          "title": "版本边界"
+        },
+        {
+          "text": "Pi是Agent CLI、SDK与扩展框架。1.2.0 于北京时间 2026-10-13 07:03 发布，补充按密钥的模型列表、配置Schema与扩展事件兼容变化。",
+          "title": "2026-10-13 版本补录：v1.2.0"
+        },
+        {
+          "text": "OpenRouter列表按当前密钥可用范围展示，并保留上下文、输出和价格；配置Schema用于编辑器校验与补全，主题字段需按新规则迁移。列表存在不保证账号调用成功。",
+          "title": "模型列表与配置校验"
+        },
+        {
+          "text": "扩展触发的运行也进入启动钩子，处理器需区分用户消息与自定义消息；启动期间的队列与忙碌状态语义有变化，不能假定每次事件都带用户提示词。",
+          "title": "扩展启动事件与并发"
+        },
+        {
+          "text": "修复资源注册、非对象结构化结果，以及等待OAuth刷新时已取消调用仍被发出的行为。远程剪贴板需主动开启并依赖终端；宿主进程权限边界保留，主题、扩展和认证迁移未实测。",
+          "title": "MCP与采用边界"
+        },
         {
           "text": "普通tools列表现在默认保留MCP工具，包含mcp__开头项时才对它们施加对应筛选；不能假定只列codemode就隔绝了MCP。",
           "title": "MCP工具选择语义"
@@ -8031,7 +9106,7 @@
           "title": "Codemode 不等于整个 Agent 已隔离"
         }
       ],
-      "introduction": "可扩展的 Agent CLI、SDK 与运行框架；Pi 1.0 加入原生 MCP / Codemode、延迟加载工具和虚拟模型。Pi Durable 为实验性长运行包，默认进程权限和隔离需要按固定说明核对。",
+      "introduction": "Pi是Agent CLI、SDK与扩展框架。1.2.0 于北京时间 2026-10-13 07:03 发布，补充按密钥的模型列表、配置Schema与扩展事件兼容变化。",
       "name": "Pi",
       "reading_materials": [
         {
@@ -8165,6 +9240,54 @@
           "title": "pi · LICENSE",
           "upstream_revision": "7c10bd4337495ee613f2224843ecdf349b80d1df",
           "url": "https://raw.githubusercontent.com/earendil-works/pi/7c10bd4337495ee613f2224843ecdf349b80d1df/LICENSE"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-d-1",
+          "locator": "Official release/model card; 2026-10-12T23:03:53Z",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Pi v1.2.0 · Official source 1",
+          "upstream_revision": "v1.2.0",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v1.2.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-h-1",
+          "locator": "Exact release / official documentation; v1.3.0",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Pi · v1.3.0 · official 1",
+          "upstream_revision": "v1.3.0",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v1.3.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-h-2",
+          "locator": "Exact release / official documentation; v1.3.0",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Pi · v1.3.0 · official 2",
+          "upstream_revision": "v1.3.0",
+          "url": "https://github.com/earendil-works/pi/blob/v1.3.0/packages/coding-agent/docs/providers.md"
         }
       ],
       "sources": [
@@ -8197,9 +9320,130 @@
           "coverage": "link_only",
           "title": "Pi 1.0.4：按工具范围配置 MCP，修复接入与图像读取 · 官方来源 1",
           "url": "https://github.com/earendil-works/pi/releases/tag/v1.0.4"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct13-d-1",
+          "title": "Pi v1.2.0 · Official source 1",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v1.2.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-h-1",
+          "title": "Pi · v1.3.0 · official 1",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v1.3.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-h-2",
+          "title": "Pi · v1.3.0 · official 2",
+          "url": "https://github.com/earendil-works/pi/blob/v1.3.0/packages/coding-agent/docs/providers.md"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-13 版本补录：v1.2.0": "2026-10-13 version addition: v1.2.0",
+            "2026-10-17 补录：v1.3.0": "2026-10-17 addition: v1.3.0",
+            "Codemode 不等于整个 Agent 已隔离": "Codemode does not mean that the entire Agent has been isolated.",
+            "Codemode 允许在受控代码环境里组织多个工具调用，按需返回结果，影响的是工具密集任务的执行方式。": "Codemode allows multiple tool calls to be organized in a controlled code environment and returns results on demand, which affects the execution of tool-intensive tasks.",
+            "Kimi Code改走Chat Completions，自定义base URL覆盖必须包含/v1。缓存保持取决于提供方与凭据路径，不能推定全部请求都更便宜。": "Kimi Code moves to Chat Completions; a custom base URL override must include /v1; Cache preservation depends on provider and credential paths and does not establish cheaper requests universally.",
+            "MCP 设计说明": "MCP design instructions",
+            "MCP与采用边界": "MCP fixes and adoption boundaries",
+            "MCP工具选择语义": "MCP tool selection semantics",
+            "OpenRouter列表按当前密钥可用范围展示，并保留上下文、输出和价格；配置Schema用于编辑器校验与补全，主题字段需按新规则迁移。列表存在不保证账号调用成功。": "OpenRouter lists models available to the current key, including context, output and price information. Configuration schemas support editor validation and completion; theme fields require migration to the new rules. A listed model does not guarantee a successful account call.",
+            "Pi 1.0 已发布，Pi Durable 则是另一个实验性长运行 Agent 包；本轮未做 Pi 连接 FieldToFit MCP 的客户端实测。": "Pi 1.0 has been released, and Pi Durable is another experimental long-run Agent package; this round did not do the client runtime test of Pi connection FieldToFit MCP.",
+            "Pi 1.0.4：按工具范围配置 MCP，修复接入与图像读取 · 官方来源 1": "Pi 1.0.4: Configure MCP according to the tool scope, repair access and image reading · Official source 1",
+            "Pi 1.0；官方 2026-10-01": "Pi 1.0; Official 2026-10-01",
+            "Pi 1.3.0 于北京时间 2026-10-16 03:17 发布，新增分享目标选择，改善GPT-6 推理级别切换的缓存保持，并恢复会话已启用的工具。": "Pi 1.3.0 was released at 03:17 Beijing time on 2026-10-16, adding share-target selection, preserving caches across GPT-6 reasoning-level changes and restoring enabled session tools.",
+            "Pi 固定 README": "Pi fixed README",
+            "Pi为工具选择增加通配符，并允许单次运行禁用MCP。": "Pi adds wildcards to the tool selection and allows a single run to disable MCP.",
+            "Pi是Agent CLI、SDK与扩展框架。1.2.0 于北京时间 2026-10-13 07:03 发布，补充按密钥的模型列表、配置Schema与扩展事件兼容变化。": "Pi is an agent CLI, SDK and extension framework. Version 1.2.0 was released at 07:03 Beijing time on 2026-10-13, adding per-key model lists, configuration schemas and extension-event compatibility changes.",
+            "README、许可正文可通过 MCP 读取": "README and the license text can be read by MCP",
+            "[Pi 1.2.0：按密钥展示模型，扩展作者需处理兼容变化](https://fieldtofit.top/news/D-130)": "[Pi 1.2.0: models listed by key access, with compatibility changes for extension authors](https://fieldtofit.top/news/D-130)",
+            "[Pi 1.3.0：模型切换、会话恢复与Kimi端点迁移](https://fieldtofit.top/news/D-183)": "[Pi 1.3.0: model switching, session recovery and Kimi endpoint migration](https://fieldtofit.top/news/D-183)",
+            "[固定原文](https://raw.githubusercontent.com/earendil-works/pi/0495646a8322ff99ce40ac2f9e15f1f49f56bb11/README.md)": "[Fixed source text](https://raw.githubusercontent.com/earendil-works/pi/0495646a8322ff99ce40ac2f9e15f1f49f56bb11/README.md)",
+            "[官方说明](https://earendil.com/posts/pi-1-0/)": "[Official Note](https://earendil.com/posts/pi-1-0/)",
+            "[官方说明](https://github.com/earendil-works/pi/releases/tag/v1.0.4)": "[Official Note](https://github.com/earendil-works/pi/releases/tag/v1.0.4)",
+            "v1.0.4；原档案Pi1.0": "v1.0.4; original profile Pi1.0",
+            "事件与官方依据": "Event and official evidence",
+            "以下保留此前已审版本及其当时适用条件。": "Earlier reviewed versions and their original applicable conditions are retained below.",
+            "依据": "Evidence",
+            "依据：[官方项目](https://github.com/earendil-works/pi)、[发布记录](https://github.com/earendil-works/pi/releases)。关联：[CW-S01 Superpowers](/for-you#watch-cw-s01) 的 Pi 适配。运行权限继承宿主进程，项目自述没有内置权限系统；本页资料未实测隔离配置。": "Sources: [official project](https://github.com/earendil-works/pi), [release notes](https://github.com/earendil-works/pi/releases). Related: Pi adaptation in [CW-S01 Superpowers](/for-you#watch-cw-s01). Runtime permissions inherit the host process; the project says it has no built-in permission system. FieldToFit has not tested isolation configurations.",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
+            "保留来源链接；未据此取得页面正文再分发许可。": "Retain the source link; do not obtain permission to redistribute the page body based on this.",
+            "修复资源注册、非对象结构化结果，以及等待OAuth刷新时已取消调用仍被发出的行为。远程剪贴板需主动开启并依赖终端；宿主进程权限边界保留，主题、扩展和认证迁移未实测。": "Fixes cover resource registration, non-object structured results, and calls being sent after cancellation while waiting for OAuth refresh. Remote clipboard support is opt-in and terminal-dependent. Host-process permission boundaries remain; theme, extension and authentication migration have not been tested.",
+            "修复部分OpenID Connect注册的MCP登录问题、连接中关闭的传输清理；Codemode读取图片可传回图像块供image展示。": "Fixes some MCP logins using OpenID Connect registration and transport cleanup when a connection closes. Codemode image reads can return image blocks for image display.",
+            "值得看": "It is worth seeing.",
+            "值得看；可研究的材料；成熟度要分开；Codemode 不等于整个 Agent 已隔离": "Worth seeing; researchable materials; maturity should be separated; Codemode does not mean that the whole Agent has been isolated.",
+            "关联：[D-59](https://fieldtofit.top/news/D-59)。以下保留各历史版本及其当时适用条件。": "Association: [D-59 ](https://fieldtofit.top/news/D-59). The following retains the historical versions and their applicable conditions at that time.",
+            "具体入口": "Specific entrance",
+            "具体内容": "Value",
+            "内容与来源": "Content and source",
+            "切换模型不再把旧型号思考块作为普通可见文本传给新模型；最终工具参数是无效JSON时拒绝执行，不再只用已解析的部分。": "Switching models no longer forwards the earlier model’s thinking blocks as ordinary visible text. Invalid final JSON tool arguments are rejected rather than executing only the parsed subset.",
+            "原事件日期保留；本站核对 2026-10-13，未运行复测。": "Original event date retained; checked on 2026-10-13 without runtime testing.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原始发布/文档入口": "Original release/document entrance",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原文日期：2026-10-15；本站核对：2026-10-17；版本：v1.3.0。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-15; checked: 2026-10-17; version: v1.3.0; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "发布日期": "Release date",
+            "发布记录": "Publication records",
+            "可研究的材料": "Researchable materials",
+            "固定 README 明确说明 Pi 默认继承启动用户与进程权限，未内置统一的文件、进程、网络及凭据权限系统；Codemode 的工具组织方式不能视为对整个 Agent 的安全隔离。": "Fixed README clearly shows that Pi inherits startup user and process permissions by default, and does not have a built-in unified file, process, network and credential permission system; Codemode's tool organization cannot be regarded as a security isolation of the entire Agent.",
+            "固定代码/模型提交 0495646a8322ff99ce40ac2f9e15f1f49f56bb11": "Pinned code/model commit 0495646a8322ff99ce40ac2f9e15f1f49f56bb11",
+            "固定版本完整文件，未改写，保留原作者与许可": "pinned version of the complete file, not rewritten, retain the original author and license",
+            "完整固定版本文件；相对链接按来源目录定位": "Complete pinned version file; relative links are located by source directory",
+            "官方原始日期": "The official original date",
+            "官方发布与采用说明": "Official announcement and adoption guidance",
+            "官方提供扩展和多种模型能力组合入口，可继续核对工具如何发现、调用以及保留状态。": "The official provides an entrance to the combination of extensions and multiple model capabilities, and you can continue to check how the tool discovers, calls and retains the status.",
+            "官方项目": "Official project",
+            "工具循环、状态、扩展包与多模型接口": "Tool loop, state, extension package and multi-model interface",
+            "工具筛选控制哪些工具暴露给模型，不等于系统权限隔离；本站未安装Pi复测。": "Tool filtering controls exposure to the model; it does not provide system-permission isolation. FieldToFit has not installed or retested Pi.",
+            "已审版本变化": "Reviewed version change",
+            "已核实更新": "Verified and updated",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "当前官方仓库 earendil-works/pi；旧仓库名称作为别名": "The current official repository earendil-works/pi; the old repository name is used as an alias",
+            "成熟度要分开": "The maturity should be separated.",
+            "执行与扩展": "Execution and expansion",
+            "扩展启动事件与并发": "Extension startup events and concurrency",
+            "扩展触发的运行也进入启动钩子，处理器需区分用户消息与自定义消息；启动期间的队列与忙碌状态语义有变化，不能假定每次事件都带用户提示词。": "Extension-triggered runs also enter the startup hook. Handlers must distinguish user from custom messages; queue and busy-state semantics change during startup, so handlers cannot assume every event carries a user prompt.",
+            "接入与图像读取": "Access and image reading",
+            "接入或运行条件": "Access or operation conditions",
+            "新增模型支持；修复 0.85.0 中 SDK 导入意外加载实验模块的问题；现有 SDK / stdio RPC 接口保持兼容": "New model support; fix the problem of SDK import accidentally loading experimental modules in 0.85.0; the existing SDK / stdio RPC interface remains compatible",
+            "日期与边界": "Dates and boundaries",
+            "日期与限制": "Dates and limitations",
+            "普通tools列表现在默认保留MCP工具，包含mcp__开头项时才对它们施加对应筛选；不能假定只列codemode就隔绝了MCP。": "The ordinary tools list now retains MCP tools by default. Corresponding filters apply only when it includes mcp__ entries. Listing only codemode does not establish isolation from MCP.",
+            "未运行复测；公告和代码提交分别标记": "Not running retest; announcement and code submission are marked separately",
+            "本次动态": "Related event",
+            "本次变化与用途": "Changes and uses this time",
+            "本次展示的材料": "The materials on display this time",
+            "本次收录固定 README / 模型卡与许可。原文中的命令和相对路径是供读者核对的来源内容，不代表已由 FieldToFit 执行；包版本、模型权重与运行环境须分别确认。": "This batch stores pinned README/model-card and license files. Source commands and relative paths are reference material, rather than actions FieldToFit has executed. Package versions, model weights and runtime environments require separate confirmation.",
+            "本次核对": "Current review",
+            "档案由 1.2.0 补至 1.3.0，保留扩展兼容与宿主权限边界。特定型号修复不代替各提供方开放状态核验；本站未安装回归。": "Update the dossier from 1.2.0 to 1.3.0, preserving extension compatibility and host-permission boundaries. Model-specific fixes do not verify provider availability; FieldToFit has not installed or regression-tested it.",
+            "模型切换和参数完整性": "Model switching and argument integrity",
+            "模型列表与配置校验": "Model lists and configuration validation",
+            "此入口仅提供链接；已获许可的固定文档在材料清单中另列。": "This entrance only provides links; licensed fixed documents are listed separately in the list of materials.",
+            "版本 / 适用材料": "Version / Applicable Materials",
+            "版本与材料": "Versions and materials",
+            "版本公告": "Version announcement",
+            "版本变化": "Version change",
+            "版本口径": "Version measurement basis",
+            "版本边界": "Version boundaries",
+            "编程 CLI、SDK 与扩展": "Programming CLI, SDK and extension",
+            "能确认的用途": "The purpose that can be confirmed",
+            "自定义端点需迁移": "Custom endpoints need migration",
+            "采用入口": "Adopt the entrance",
+            "采用边界": "Adopt the boundary",
+            "阅读材料不自动安装或执行；其他目录未完整收录": "Reading materials are not automatically installed or executed; other directories are not fully included.",
+            "限制与本站验证": "Restriction and FieldToFit verification",
+            "限制与验证": "Restriction and verification",
+            "项目分层、扩展机制、SDK 兼容变化": "Project layering, extension mechanism, SDK compatibility changes"
+          },
+          "source_hash": "7fdee0b03b37c8d2c242182dda2350d7704f80fa35a1a517e25986ee82cfee67",
+          "state": "reviewed"
+        }
+      },
       "type": "agent"
     },
     {
@@ -8651,6 +9895,25 @@
           "kind": "table",
           "rows": [
             [
+              "0.7.25 → deepagents==0.7.26–0.7.28",
+              "[Deep Agents 0.7.28：异步状态与路径参数修复](https://fieldtofit.top/news/D-185)",
+              "原文日期：2026-10-16；本站核对：2026-10-17；版本：deepagents==0.7.26–0.7.28。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
+        },
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "deepagents==0.7.24 → deepagents==0.7.25",
               "[Deep Agents 0.7.25：权限检查覆盖符号链接解析后的路径](https://fieldtofit.top/news/D-151)",
               "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：deepagents==0.7.25。本站未安装或复现性能。"
@@ -8752,10 +10015,26 @@
           "text": "依据：[官方概览](https://docs.langchain.com/oss/python/deepagents/overview)、[核心 0.7.13](https://github.com/langchain-ai/deepagents/releases/tag/deepagents==0.7.13)、[各包发布记录](https://github.com/langchain-ai/deepagents/releases)。关联：[CW-M05 GLM](/for-you#watch-cw-m05)。"
         }
       ],
-      "checked_at": "2026-10-15",
+      "checked_at": "2026-10-17",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-H02",
       "interpretation": [
+        {
+          "text": "核心SDK 0.7.28 于北京时间 2026-10-17 04:21 发布，修复ContextHubBackend.glob忽略path参数；0.7.26–0.7.27 补入异步子代理等待人工状态、父任务轨迹和状态通知。",
+          "title": "2026-10-17 补录：deepagents==0.7.26–0.7.28"
+        },
+        {
+          "text": "保留解析后的工具结果路径，档案由 0.7.25 补至 0.7.28，并保留 0.7.25 符号链接目标权限修复。小段版本维护不是完整安全保证。",
+          "title": "结果路径和既有权限修复"
+        },
+        {
+          "text": "同仓库deepagents-code 0.1.86 的沙箱提供方与UI变化不是核心SDK 0.7.28 的新能力。两个包安装和迁移条件分别核对。",
+          "title": "SDK和CLI独立记版本"
+        },
+        {
+          "text": "本站未运行路径、权限或异步恢复测试；不声称已独立验证漏洞修复。",
+          "title": "测试边界"
+        },
         {
           "text": "核心SDK于北京时间 10 月 14 日 09:13 发布。文件系统规则和interrupt_on审批同时检查请求路径与解析后的真实目标。",
           "title": "2026-10-15 补录：deepagents==0.7.25"
@@ -8907,6 +10186,54 @@
           "title": "Deep Agents deepagents==0.7.25 · Official source 1",
           "upstream_revision": "deepagents==0.7.25",
           "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.25"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-j-1",
+          "locator": "Exact release / official documentation; deepagents==0.7.26–0.7.28",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Deep Agents · deepagents==0.7.26–0.7.28 · official 1",
+          "upstream_revision": "deepagents==0.7.26–0.7.28",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.26"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-j-2",
+          "locator": "Exact release / official documentation; deepagents==0.7.26–0.7.28",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Deep Agents · deepagents==0.7.26–0.7.28 · official 2",
+          "upstream_revision": "deepagents==0.7.26–0.7.28",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.27"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-j-3",
+          "locator": "Exact release / official documentation; deepagents==0.7.26–0.7.28",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Deep Agents · deepagents==0.7.26–0.7.28 · official 3",
+          "upstream_revision": "deepagents==0.7.26–0.7.28",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.28"
         }
       ],
       "sources": [
@@ -8946,6 +10273,24 @@
           "id": "oct15-e-1",
           "title": "Deep Agents deepagents==0.7.25 · Official source 1",
           "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.25"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-j-1",
+          "title": "Deep Agents · deepagents==0.7.26–0.7.28 · official 1",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.26"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-j-2",
+          "title": "Deep Agents · deepagents==0.7.26–0.7.28 · official 2",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.27"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-j-3",
+          "title": "Deep Agents · deepagents==0.7.26–0.7.28 · official 3",
+          "url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.28"
         }
       ],
       "state": "published",
@@ -8954,11 +10299,14 @@
           "fields": {
             "2026-10-13 版本补录：deepagents==0.7.24": "2026-10-13 version addition: deepagents==0.7.24",
             "2026-10-15 补录：deepagents==0.7.25": "2026-10-15 addition:deepagents==0.7.25",
+            "2026-10-17 补录：deepagents==0.7.26–0.7.28": "2026-10-17 addition: deepagents==0.7.26–0.7.28",
             "Deep Agents 0.7.22：读到 Skill 时，再加载它的工具 · 官方来源 1": "Deep Agents 0.7.22: When reading Skill, load its tools · Official source 1",
             "Deep Agents 0.7.22：读到 Skill 时，再加载它的工具 · 官方来源 2": "Deep Agents 0.7.22: When reading Skill, load its tools · Official source 2",
             "SDK 子 Agent 模式由 handoff 更名为 isolated": "SDK sub-Agent mode was renamed isolated from handoff",
+            "SDK和CLI独立记版本": "Track SDK and CLI versions separately",
             "[Deep Agents 0.7.24：补入异步子Agent分支与上下文恢复](https://fieldtofit.top/news/D-131)": "[Deep Agents 0.7.24: asynchronous subagent forks and context recovery](https://fieldtofit.top/news/D-131)",
             "[Deep Agents 0.7.25：权限检查覆盖符号链接解析后的路径](https://fieldtofit.top/news/D-151)": "[Deep Agents 0.7.25: permission checks include symlink-resolved paths](https://fieldtofit.top/news/D-151)",
+            "[Deep Agents 0.7.28：异步状态与路径参数修复](https://fieldtofit.top/news/D-185)": "[Deep Agents 0.7.28: asynchronous state and path-argument fixes](https://fieldtofit.top/news/D-185)",
             "[官方说明](https://github.com/langchain-ai/deepagents/releases/tag/deepagents==0.7.22)": "[Official Note](https://github.com/langchain-ai/deepagents/releases/tag/deepagents==0.7.22)",
             "deepagents SDK0.7.22；原SDK0.7.13": "Deepagents SDK0.7.22; original SDK0.7.13",
             "deepagents核心SDK 0.7.24 于北京时间 2026-10-12 12:46 发布。本次补录异步子Agent的fork模式、摘要溢出恢复与父级评判规则保留。": "The deepagents core SDK 0.7.24 was released at 12:46 Beijing time on 2026-10-12. This addition covers fork mode for asynchronous subagents, summary-overflow recovery and preservation of the parent rubric.",
@@ -8971,6 +10319,8 @@
             "使用入口": "Usage entry",
             "依据": "Evidence",
             "依据：[官方概览](https://docs.langchain.com/oss/python/deepagents/overview)、[核心 0.7.13](https://github.com/langchain-ai/deepagents/releases/tag/deepagents==0.7.13)、[各包发布记录](https://github.com/langchain-ai/deepagents/releases)。关联：[CW-M05 GLM](/for-you#watch-cw-m05)。": "Based on: [Official Overview](https://docs.langchain.com/oss/python/deepagents/overview), [Core 0.7.13](https://github.com/langchain-ai/deepagents/releases/tag/deepagents==0.7.13), [Release Records of Each Package](https://github.com/langchain-ai/deepagents/releases). Association: [CW-M05 GLM](/for-you#watch-cw-m05).",
+            "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
+            "保留解析后的工具结果路径，档案由 0.7.25 补至 0.7.28，并保留 0.7.25 符号链接目标权限修复。小段版本维护不是完整安全保证。": "Preserve resolved tool-result paths and update the dossier from 0.7.25 to 0.7.28, retaining 0.7.25 symlink-target permission fixes. A short maintenance range is not a complete security guarantee.",
             "修复摘要调用的上下文溢出恢复，并在并行子Agent调用中保留父级评判规则。本站未运行复测。": "Fixes recovery from context overflow during summary calls and preserves the parent rubric in parallel subagent calls. FieldToFit has not run regression tests.",
             "关联：[CW-S02](https://fieldtofit.top/watch/CW-S02)。以下保留各历史版本及其当时适用条件。": "Association: [CW-S02 ](https://fieldtofit.top/watch/CW-S02). The following retains the historical versions and their applicable conditions at that time.",
             "具体变化": "Specific changes",
@@ -8983,9 +10333,11 @@
             "原创解读与来源链接": "Original commentary and source links",
             "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
             "原文日期：2026-10-14；事件日期：2026-10-14；本站核对：2026-10-15；版本：deepagents==0.7.25。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-14; checked:2026-10-15; version:deepagents==0.7.25; FieldToFit has not installed or reproduced performance.",
+            "原文日期：2026-10-16；本站核对：2026-10-17；版本：deepagents==0.7.26–0.7.28。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: deepagents==0.7.26–0.7.28. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
             "发布日期": "Release date",
             "各包发布记录": "Release records of each package",
             "各包版本分开": "Keep package versions separate",
+            "同仓库deepagents-code 0.1.86 的沙箱提供方与UI变化不是核心SDK 0.7.28 的新能力。两个包安装和迁移条件分别核对。": "Sandbox-provider and UI changes in the separate deepagents-code 0.1.86 package are not core SDK 0.7.28 features. Check installation and migration for each package separately.",
             "固定版本完整文件，未改写，保留原作者与许可": "pinned version of the complete file, not rewritten, retain the original author and license",
             "增加 GLM-5.3 型号资料；调整工作区确认后重启与 effort 缓存标识处理": "Add GLM-5.3 model information; restart and effort cache identification processing after adjusting the workspace confirmation",
             "子 Agent 的模式命名属于调用契约。": "The pattern naming of the sub-Agent belongs to the call contract.",
@@ -8995,6 +10347,7 @@
             "官方概览": "Official overview",
             "工具、规划、子 Agent 与可扩展中间件": "Tools, planning, sub-Agent and extensible middleware",
             "已审版本变化": "Reviewed version change",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
             "已读官方原文；公开原创整理和链接，不再分发未确认许可的原文。": "Official text read; publish original commentary and links without redistributing text with unverified reuse rights.",
             "延迟加载不自动保证节省多少token，也不替代权限检查；收益需按自己的模型、技能和任务验证。": "Delayed loading does not automatically guarantee how many tokens are saved, nor does it replace the permission check; the benefits need to be verified according to their own models, skills and tasks.",
             "建立在 LangChain / LangGraph 之上，分别保留库与应用版本": "Based on LangChain / LangGraph, keep the library and application version respectively",
@@ -9013,23 +10366,27 @@
             "本次属于deepagents核心SDK；deepagents-code、Talon等组件分别记录版本。保留 0.7.22 按需加载Skill工具的历史说明，不预先承诺token或费用节省。": "This release concerns the deepagents core SDK; deepagents-code, Talon and other components have separate versions. Retain the 0.7.22 explanation of on-demand skill-tool loading, without promising token or cost savings.",
             "本次是deepagents核心SDK，code与Talon各有版本；另修复覆盖文本时保留旧编码的问题。本站未运行复测。": "This release concerns the deepagents core SDK; code and Talon have separate versions. It also fixes overwritten text retaining the old encoding. FieldToFit has not run or retested it.",
             "本次核对": "Current review",
+            "本站未运行路径、权限或异步恢复测试；不声称已独立验证漏洞修复。": "FieldToFit has not tested paths, permissions or asynchronous recovery and does not claim independent verification of vulnerability fixes.",
             "核心 0.7.13": "Core 0.7.13",
             "核心 SDK；另有 deepagents-code 编程入口": "Core SDK; there is also a deepagents-code programming entrance",
+            "核心SDK 0.7.28 于北京时间 2026-10-17 04:21 发布，修复ContextHubBackend.glob忽略path参数；0.7.26–0.7.27 补入异步子代理等待人工状态、父任务轨迹和状态通知。": "Core SDK 0.7.28 was released at 04:21 Beijing time on 2026-10-17, fixing ContextHubBackend.glob ignoring path. Versions 0.7.26–0.7.27 add asynchronous subagent human-wait states, parent-task traces and status notifications.",
             "核心SDK于北京时间 10 月 14 日 09:13 发布。文件系统规则和interrupt_on审批同时检查请求路径与解析后的真实目标。": "The core SDK was released at 09:13 Beijing time on 10/14. Filesystem rules and interrupt_on approvals check both requested paths and their resolved targets.",
             "核心SDK将Skill附带工具的加载推迟到Agent实际读取该Skill时。": "The core SDK postpones the loading of the skill accessory tool until the Agent actually reads the skill.",
             "核心库与成品入口是两份更新。": "The core library and the finished product entrance are two updates.",
             "此入口仅提供链接；已获许可的固定文档在材料清单中另列。": "This entrance only provides links; licensed fixed documents are listed separately in the list of materials.",
             "此前FilesystemBackend可能在检查后跟随符号链接，触达被拒绝路径。使用者应复核现有规则与目标审批；不能据此宣称全部越权风险已消除。": "Previously FilesystemBackend could follow a symlink after the check and reach a denied path. Review existing rules and target approvals; this does not establish elimination of every permission risk.",
+            "测试边界": "Testing boundary",
             "版本 / 适用材料": "Version / Applicable Materials",
             "版本变化": "Version change",
             "版本范围与修复": "Version scope and repair",
             "状态与上下文": "Status and context",
             "组件关系": "Component relationship",
             "组件版本和收益边界": "Component versions and benefit limits",
+            "结果路径和既有权限修复": "Result paths and existing permission fixes",
             "运行循环与扩展": "Run cycle and extension",
             "限制与验证": "Restriction and verification"
           },
-          "source_hash": "10c6ffba7afeb17428fb7813a8ac3ac7d62f6e884d691b1563022ebd1366928a",
+          "source_hash": "7642a832fcea20f4dc129885c920ec6aa2ae8aac7bb6d8808e0bfe62bece610d",
           "state": "reviewed"
         }
       },
@@ -10311,9 +11668,565 @@
       ],
       "state": "published",
       "type": "skill"
+    },
+    {
+      "blocks": [
+        {
+          "columns": [
+            "项目",
+            "已核实信息"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "原始介绍日期",
+              "2026-10-02；本站核对2026-10-10"
+            ],
+            [
+              "版本与运行",
+              "Whistle 初始模型卡；Needle C++ CPU运行时"
+            ],
+            [
+              "音频输入",
+              "16kHz单声道；单次最多30秒"
+            ],
+            [
+              "支持语言",
+              "英语、德语、法语、西班牙语、意大利语、荷兰语、波兰语；未列中文"
+            ],
+            [
+              "许可",
+              "模型卡标注Apache-2.0；具体代码及第三方依赖分别按自身许可"
+            ],
+            [
+              "关联边界",
+              "端侧ASR资源；不是既有说话人分离模型的替代版"
+            ]
+          ]
+        }
+      ],
+      "checked_at": "2026-10-10",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-M15",
+      "interpretation": [
+        {
+          "text": "输入为 16kHz 单声道音频，单次最多 30 秒，不能直接描述为长会议流式转写。官方的低延迟数字来自指定 Apple M4 Pro 和音频样本；错误率对照还涉及不同来源和运行条件，不是本站同条件测评。模型卡标注 Apache-2.0，适合有端侧语音需求的开发者进一步试用。",
+          "title": "采用条件"
+        },
+        {
+          "text": "中文支持未列出；真实设备耗时、长音频分段效果及准确率未复测。",
+          "title": "仍需实测"
+        }
+      ],
+      "introduction": "Whistle 在 Needle 的 C++ 运行时上提供 CPU 语音识别，模型文件为 16.9MB，并支持词级时间戳、置信度和关键词偏置。官方列出英语、德语、法语、西班牙语、意大利语、荷兰语及波兰语，不含中文。",
+      "name": "Whistle",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "coverage": "link_only",
+          "id": "oct10-d-1",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {},
+          "title": "Whistle：16.9MB 的端侧语音识别模型，覆盖七种语言 · 官方材料1",
+          "upstream_revision": "Whistle 初始模型卡",
+          "url": "https://cactuscompute.com/blog/whistle"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "coverage": "link_only",
+          "id": "oct10-d-2",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {},
+          "title": "Whistle：16.9MB 的端侧语音识别模型，覆盖七种语言 · 补充来源2",
+          "upstream_revision": "Whistle 初始模型卡",
+          "url": "https://huggingface.co/Cactus-Compute/whistle"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-10",
+          "coverage": "link_only",
+          "id": "oct10-d-3",
+          "locator": "官方发布记录／模型卡／采用说明",
+          "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
+          "retrieved_at": "2026-10-10",
+          "rights": {},
+          "title": "Whistle：16.9MB 的端侧语音识别模型，覆盖七种语言 · 补充来源3",
+          "upstream_revision": "Whistle 初始模型卡",
+          "url": "https://github.com/cactus-compute/needle"
+        }
+      ],
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct10-d-1",
+          "title": "Whistle：16.9MB 的端侧语音识别模型，覆盖七种语言 · 官方材料1",
+          "url": "https://cactuscompute.com/blog/whistle"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct10-d-2",
+          "title": "Whistle：16.9MB 的端侧语音识别模型，覆盖七种语言 · 补充来源2",
+          "url": "https://huggingface.co/Cactus-Compute/whistle"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct10-d-3",
+          "title": "Whistle：16.9MB 的端侧语音识别模型，覆盖七种语言 · 补充来源3",
+          "url": "https://github.com/cactus-compute/needle"
+        }
+      ],
+      "state": "published",
+      "type": "model",
+      "translations": {
+        "en": {}
+      }
+    },
+    {
+      "blocks": [
+        {
+          "columns": [
+            "资料项",
+            "已核对内容",
+            "范围与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "已审版本",
+              "v0.8.0",
+              "原文UTC日期 2026-10-10；本站核对 2026-10-12"
+            ],
+            [
+              "本次动态",
+              "[Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求](https://fieldtofit.top/news/D-122)",
+              "版本变化、限制与来源见关联动态"
+            ],
+            [
+              "开发者与定位",
+              "TerseAI",
+              "共享会话、持久状态与序列化执行"
+            ],
+            [
+              "迁移与环境",
+              "MIT / Python / TypeScript",
+              "Helm字段images.controlPlane、images.typescript、images.python；Bun1.4.2+；保留旧运行镜像"
+            ],
+            [
+              "采用边界",
+              "未实测",
+              "未验证故障恢复、一致性或生产迁移兼容性"
+            ]
+          ]
+        }
+      ],
+      "checked_at": "2026-10-12",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-T17",
+      "interpretation": [
+        {
+          "text": "Python可通过uv完成建项目、开发、客户端生成和观察；TypeScript与Python客户端共享明确接口。状态恢复是基础设施设计目标，本站未实测故障恢复或一致性。",
+          "title": "持久状态与开发工具"
+        },
+        {
+          "text": "迁移需要调整Helm镜像字段与相应环境变量，TypeScript工具要求Bun1.4.2+；已有部署仍引用保存过的镜像，必须保留它们以便重启和重新激活。",
+          "title": "部署迁移与旧镜像保留"
+        },
+        {
+          "text": "MIT；新增CRC32C校验与构造阶段SQLite访问。代码中带模型调用示例不代表框架提高模型能力，也不保证迁移兼容全部生产系统。来源是 10月 10日UTC的版本发布，不能改写为今日首发。",
+          "title": "存储变化与未实测边界"
+        }
+      ],
+      "introduction": "Durable Actors提供可持久化状态和序列化执行，供多人聊天、协作应用与Agent协调使用。0.8.0于北京时间 10月 11日 05:51发布，补入Python原生开发工具、分开的运行镜像及存储完整性检查。",
+      "name": "Durable Actors",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-c-1",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 1",
+          "upstream_revision": "v0.8.0",
+          "url": "https://github.com/TerseAI/durable-actors/releases/tag/v0.8.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-c-2",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 2",
+          "upstream_revision": "v0.8.0",
+          "url": "https://github.com/TerseAI/durable-actors/blob/v0.8.0/README.md"
+        }
+      ],
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct12-c-1",
+          "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 1",
+          "url": "https://github.com/TerseAI/durable-actors/releases/tag/v0.8.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct12-c-2",
+          "title": "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 2",
+          "url": "https://github.com/TerseAI/durable-actors/blob/v0.8.0/README.md"
+        }
+      ],
+      "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 1": "Durable Actors 0.8.0 · Official source 1",
+            "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 2": "Durable Actors 0.8.0 · Official source 2",
+            "Durable Actors提供可持久化状态和序列化执行，供多人聊天、协作应用与Agent协调使用。0.8.0于北京时间 10月 11日 05:51发布，补入Python原生开发工具、分开的运行镜像及存储完整性检查。": "Durable Actors provides persistent state and serialized execution for group chat, collaborative applications and agent coordination. Version 0.8.0 was released at 05:51 Beijing time on 10/11, adding native Python development tools, separate runtime images and storage integrity checks.",
+            "Helm字段images.controlPlane、images.typescript、images.python；Bun1.4.2+；保留旧运行镜像": "Helm fields images.controlPlane, images.typescript, images.python; Bun1.4.2+; retain old runtime images",
+            "MIT；新增CRC32C校验与构造阶段SQLite访问。代码中带模型调用示例不代表框架提高模型能力，也不保证迁移兼容全部生产系统。来源是 10月 10日UTC的版本发布，不能改写为今日首发。": "MIT; this release adds CRC32C checks and SQLite access during construction. Model-call examples do not imply improved model capabilities or compatibility with every production migration. The upstream release is dated 10/10 UTC and should not be described as a first release today.",
+            "Python可通过uv完成建项目、开发、客户端生成和观察；TypeScript与Python客户端共享明确接口。状态恢复是基础设施设计目标，本站未实测故障恢复或一致性。": "Python supports project creation, development, client generation and observation through uv. TypeScript and Python clients share defined interfaces. State recovery is an infrastructure design goal; FieldToFit has not tested failure recovery or consistency.",
+            "[Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求](https://fieldtofit.top/news/D-122)": "[Durable Actors 0.8.0: persistent shared agent sessions with migration requirements](https://fieldtofit.top/news/D-122)",
+            "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。": "Only FieldToFit commentary and source links are published; full upstream text with unverified reuse rights is not reproduced.",
+            "共享会话、持久状态与序列化执行": "Shared sessions, persistent state and serialized execution",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原文UTC日期 2026-10-10；本站核对 2026-10-12": "Upstream UTC date 2026-10-10; checked 2026-10-12",
+            "固定发布记录与官方说明": "Pinned release notes and official documentation",
+            "存储变化与未实测边界": "Storage changes and untested behavior",
+            "已审版本": "Reviewed version",
+            "已核对内容": "Reviewed information",
+            "开发者与定位": "Developer and purpose",
+            "持久状态与开发工具": "Persistent state and development tools",
+            "未实测": "Not tested",
+            "未验证故障恢复、一致性或生产迁移兼容性": "Failure recovery, consistency and production migration compatibility have not been verified",
+            "本次动态": "Related event",
+            "版本变化、限制与来源见关联动态": "See the related event for version changes, limitations and sources",
+            "范围与限制": "Scope and limitations",
+            "资料项": "Item",
+            "迁移与环境": "Migration and environment",
+            "迁移需要调整Helm镜像字段与相应环境变量，TypeScript工具要求Bun1.4.2+；已有部署仍引用保存过的镜像，必须保留它们以便重启和重新激活。": "Migration requires changes to Helm image fields and corresponding environment variables; TypeScript tooling requires Bun1.4.2+. Existing deployments still refer to saved images, which must be retained for restart and reactivation.",
+            "部署迁移与旧镜像保留": "Deployment migration and saved images",
+            "采用边界": "Adoption limitations"
+          },
+          "source_hash": "a4080e2df3a4f401ed507177226dbc07ce53ce12b1153febc9c90c00962a718d",
+          "state": "reviewed"
+        }
+      },
+      "type": "tool"
+    },
+    {
+      "blocks": [
+        {
+          "columns": [
+            "版本变化",
+            "事件与官方依据",
+            "日期与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v1.0.4 → v1.0.5",
+              "[nanoMuse 1.0.5：审批与退出保护修复，iOS仍需区分审核阶段](https://fieldtofit.top/news/D-137)",
+              "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v1.0.5。本站未安装或复现性能。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审内容与当时适用条件。"
+        },
+        {
+          "columns": [
+            "本次核对",
+            "内容与来源",
+            "日期与边界"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "已审版本变化",
+              "v1.0.3 → v1.0.4",
+              "2026-10-12T17:30:52Z"
+            ],
+            [
+              "本次动态",
+              "[nanoMuse 1.0.4：加强跨设备审批与凭据存储，iOS通道需分开看](https://fieldtofit.top/news/D-128)",
+              "原事件日期保留；本站核对 2026-10-13，未运行复测。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "以下保留此前已审版本及其当时适用条件。"
+        },
+        {
+          "columns": [
+            "资料项",
+            "已核对内容",
+            "范围与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "已审版本",
+              "v1.0.3",
+              "原文UTC日期 2026-10-11；本站核对 2026-10-12"
+            ],
+            [
+              "本次动态",
+              "[nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护](https://fieldtofit.top/news/D-121)",
+              "版本变化、限制与来源见关联动态"
+            ],
+            [
+              "开发者与定位",
+              "nano-muse",
+              "社区个人Agent；不是Meta官方Muse产品"
+            ],
+            [
+              "平台与托管",
+              "Android / iOS / macOS / Windows / Linux / Web",
+              "社区或自有中继；自备模型密钥；iOS为TestFlight测试版"
+            ],
+            [
+              "许可与运行边界",
+              "GPL-3.0-or-later",
+              "iOS不能操控其他应用；模型请求可能交给外部服务；未安装或测试权限"
+            ]
+          ]
+        }
+      ],
+      "checked_at": "2026-10-14",
+      "evidence_status": "official_materials_reviewed_not_runtime_tested",
+      "id": "CW-A09",
+      "interpretation": [
+        {
+          "text": "Lookout于北京时间 10 月 14 日 02:10 发布。nanoMuse为社区个人Agent，与Meta官方Muse无隶属关系。",
+          "title": "2026-10-14 补录：v1.0.5"
+        },
+        {
+          "text": "Android长命令审批卡折叠内容，保持允许／拒绝按钮可见；桌面修复按钮请求方式，退出前检查活动回复、电脑操作、跨设备任务和审批。",
+          "title": "手机审批与桌面退出"
+        },
+        {
+          "text": "Windows增加更新元数据及校验，Python运行时接入DeepSeek Harness，并修复端点地址重复与部分数据权限处理。",
+          "title": "更新校验与运行时接入"
+        },
+        {
+          "text": "iOS公开TestFlight链接仍为 1.0.4／build 26，1.0.5／build 28 在提交审核阶段；Mac未公证、Windows未签名。GPL-3.0-or-later；主聊天云端保存与同步设置须确认。本站未复验修复。",
+          "title": "各分发通道单独记录"
+        },
+        {
+          "text": "nanoMuse是社区个人Agent，并非Meta官方Muse。1.0.4 于北京时间 2026-10-13 01:30 发布，补充加密凭据、跨设备操作审批与桌面DeepSeek Harness接入。",
+          "title": "2026-10-13 版本补录：v1.0.4"
+        },
+        {
+          "text": "MCP敏感环境配置转入加密凭据存储；拒绝含密码的URL，避免向未知重定向主机转发密钥。这些是具体防护变化，未验证整个系统的独立安全审计。",
+          "title": "凭据存储与重定向保护"
+        },
+        {
+          "text": "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。",
+          "title": "手机审批与支付边界"
+        },
+        {
+          "text": "桌面新增DeepSeek Harness；iOS的TestFlight提交、审核与用户取得版本分别记载，不把桌面 1.0.4 当作所有iOS用户的现有版本。GPL-3.0-or-later；外部模型服务、跨端同步与iOS不能操控其他应用的限制保留。",
+          "title": "分发版本与社区边界"
+        },
+        {
+          "text": "新版本统一跨端聊天外观，并让桌面与网页同时保存多个OpenAI兼容端点；修复Android自备Anthropic密钥发送失败、工具输出回车处理等问题。",
+          "title": "跨端与模型接入修复"
+        },
+        {
+          "text": "发布记录披露旧调试日志可能含原始API密钥，现加入凭据头脱敏；这是一项具体修复，不等于整个系统已通过独立安全审计。",
+          "title": "凭据日志的具体修复"
+        },
+        {
+          "text": "GPL-3.0-or-later；iOS入口是TestFlight测试版，而且不能像Android和电脑那样操控其他应用屏幕。自托管中继不代表外部模型处理全过程离线；社区额度并非无限免费。本站未安装、未测试后台任务和权限行为。",
+          "title": "社区产品与运行限制"
+        }
+      ],
+      "introduction": "Lookout于北京时间 10 月 14 日 02:10 发布。nanoMuse为社区个人Agent，与Meta官方Muse无隶属关系。",
+      "name": "nanoMuse",
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-b-1",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 1",
+          "upstream_revision": "v1.0.3",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.3"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-12",
+          "coverage": "link_only",
+          "id": "oct12-b-2",
+          "locator": "固定发布记录与官方说明",
+          "reason": "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。",
+          "retrieved_at": "2026-10-12",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 2",
+          "upstream_revision": "v1.0.3",
+          "url": "https://github.com/nano-muse/nanoMuse/blob/v1.0.3/README.md"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-13",
+          "coverage": "link_only",
+          "id": "oct13-b-1",
+          "locator": "Official release/model card; 2026-10-12T17:30:52Z",
+          "reason": "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-13",
+          "rights": {
+            "basis": "原创整理，链接原文"
+          },
+          "title": "nanoMuse v1.0.4 · Official source 1",
+          "upstream_revision": "v1.0.4",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.4"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-14",
+          "coverage": "link_only",
+          "id": "oct14-d-1",
+          "locator": "Official article/release and stated limitations",
+          "reason": "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。",
+          "retrieved_at": "2026-10-14",
+          "rights": {
+            "basis": "原创解读与链接"
+          },
+          "title": "nanoMuse v1.0.5 · Official source 1",
+          "upstream_revision": "v1.0.5",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.5"
+        }
+      ],
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct12-b-1",
+          "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 1",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.3"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct12-b-2",
+          "title": "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 2",
+          "url": "https://github.com/nano-muse/nanoMuse/blob/v1.0.3/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct13-b-1",
+          "title": "nanoMuse v1.0.4 · Official source 1",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.4"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct14-d-1",
+          "title": "nanoMuse v1.0.5 · Official source 1",
+          "url": "https://github.com/nano-muse/nanoMuse/releases/tag/v1.0.5"
+        }
+      ],
+      "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-13 版本补录：v1.0.4": "2026-10-13 version addition: v1.0.4",
+            "2026-10-14 补录：v1.0.5": "2026-10-14 addition: v1.0.5",
+            "Android长命令审批卡折叠内容，保持允许／拒绝按钮可见；桌面修复按钮请求方式，退出前检查活动回复、电脑操作、跨设备任务和审批。": "Android approval cards fold long commands while keeping allow/deny visible. Desktop fixes button request methods and checks active replies, computer actions, cross-device tasks and approvals before quitting.",
+            "GPL-3.0-or-later；iOS入口是TestFlight测试版，而且不能像Android和电脑那样操控其他应用屏幕。自托管中继不代表外部模型处理全过程离线；社区额度并非无限免费。本站未安装、未测试后台任务和权限行为。": "GPL-3.0-or-later; the iOS client is a TestFlight beta and cannot control other applications on screen as the Android and computer clients can. A self-hosted relay does not make external model processing fully offline; community allowances are finite. FieldToFit has not installed it or tested background tasks and permission behavior.",
+            "Lookout于北京时间 10 月 14 日 02:10 发布。nanoMuse为社区个人Agent，与Meta官方Muse无隶属关系。": "Lookout was released at 02:10 Beijing time on 10/14. nanoMuse is a community personal agent, unaffiliated with Meta’s official Muse.",
+            "MCP敏感环境配置转入加密凭据存储；拒绝含密码的URL，避免向未知重定向主机转发密钥。这些是具体防护变化，未验证整个系统的独立安全审计。": "Sensitive MCP environment configuration moves to an encrypted credential store; password-bearing URLs are rejected and keys are not forwarded to unknown redirect hosts. These are specific safeguards, not a verified independent security audit of the whole system.",
+            "Windows增加更新元数据及校验，Python运行时接入DeepSeek Harness，并修复端点地址重复与部分数据权限处理。": "Windows adds update metadata and validation; the Python runtime integrates DeepSeek Harness, with endpoint-address deduplication and some data-permission fixes.",
+            "[nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护](https://fieldtofit.top/news/D-121)": "[nanoMuse 1.0.3: a personal agent across devices, with multiple endpoints and safer credential logs](https://fieldtofit.top/news/D-121)",
+            "[nanoMuse 1.0.4：加强跨设备审批与凭据存储，iOS通道需分开看](https://fieldtofit.top/news/D-128)": "[nanoMuse 1.0.4: stronger cross-device approvals and credential storage, with separate iOS rollout](https://fieldtofit.top/news/D-128)",
+            "[nanoMuse 1.0.5：审批与退出保护修复，iOS仍需区分审核阶段](https://fieldtofit.top/news/D-137)": "[nanoMuse 1.0.5: approval and quit-protection fixes, with separate iOS review status](https://fieldtofit.top/news/D-137)",
+            "iOS不能操控其他应用；模型请求可能交给外部服务；未安装或测试权限": "iOS cannot control other applications; model requests may be sent to external services; installation and permissions have not been tested",
+            "iOS公开TestFlight链接仍为 1.0.4／build 26，1.0.5／build 28 在提交审核阶段；Mac未公证、Windows未签名。GPL-3.0-or-later；主聊天云端保存与同步设置须确认。本站未复验修复。": "The public iOS TestFlight link remains 1.0.4/build 26; 1.0.5/build 28 is submitted for review. Mac builds are unnotarized and Windows builds unsigned. GPL-3.0-or-later; confirm cloud storage and synchronization settings for primary chats; FieldToFit has not verified the fixes.",
+            "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 1": "nanoMuse 1.0.3 · Official source 1",
+            "nanoMuse 1.0.3：跨设备个人 Agent，补齐多端点与凭据日志保护 · 官方材料 2": "nanoMuse 1.0.3 · Official source 2",
+            "nanoMuse是社区个人Agent，并非Meta官方Muse。1.0.4 于北京时间 2026-10-13 01:30 发布，补充加密凭据、跨设备操作审批与桌面DeepSeek Harness接入。": "nanoMuse is a community personal agent, not Meta’s official Muse. Version 1.0.4 was released at 01:30 Beijing time on 2026-10-13, adding encrypted credentials, cross-device action approvals and desktop DeepSeek Harness integration.",
+            "事件与官方依据": "Event and official evidence",
+            "仅发布本站原创整理与出处链接；不转载未核实许可的原文全文。": "Only FieldToFit commentary and source links are published; full upstream text with unverified reuse rights is not reproduced.",
+            "以下保留此前已审内容与当时适用条件。": "Previously reviewed content and its original applicable conditions are retained below.",
+            "以下保留此前已审版本及其当时适用条件。": "Earlier reviewed versions and their original applicable conditions are retained below.",
+            "内容与来源": "Content and source",
+            "凭据存储与重定向保护": "Credential storage and redirect protection",
+            "凭据日志的具体修复": "A specific credential-log fix",
+            "分发版本与社区边界": "Distribution versions and community boundaries",
+            "原事件日期保留；本站核对 2026-10-13，未运行复测。": "Original event date retained; checked on 2026-10-13 without runtime testing.",
+            "原创整理，链接原文": "Original commentary with links to the source",
+            "原创解读与链接": "Original commentary and source links",
+            "原始发布正文已读；公开本站原创整理与链接，不再分发未确认许可的原文。": "The original release text was read; publish FieldToFit commentary and links without redistributing upstream text with unverified rights.",
+            "原文UTC日期 2026-10-11；本站核对 2026-10-12": "Upstream UTC date 2026-10-11; checked 2026-10-12",
+            "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v1.0.5。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-14; checked: 2026-10-14; version: v1.0.5; FieldToFit has not installed or reproduced performance.",
+            "发布记录披露旧调试日志可能含原始API密钥，现加入凭据头脱敏；这是一项具体修复，不等于整个系统已通过独立安全审计。": "The release notes disclose that older debug logs could contain raw API keys; credential-header masking has now been added. This is a specific fix, not an independent security audit of the entire system.",
+            "各分发通道单独记录": "Track distribution channels separately",
+            "固定发布记录与官方说明": "Pinned release notes and official documentation",
+            "已实际读取官方原文；公开原创整理与链接，不再分发未确认许可的原文。": "The official text was read; publish original commentary and links without redistributing upstream text with unverified reuse rights.",
+            "已审版本": "Reviewed version",
+            "已审版本变化": "Reviewed version change",
+            "已核对内容": "Reviewed information",
+            "平台与托管": "Platforms and hosting",
+            "开发者与定位": "Developer and purpose",
+            "手机审批与支付边界": "Phone approvals and payment boundaries",
+            "手机审批与桌面退出": "Phone approvals and desktop quitting",
+            "新版本统一跨端聊天外观，并让桌面与网页同时保存多个OpenAI兼容端点；修复Android自备Anthropic密钥发送失败、工具输出回车处理等问题。": "This release unifies chat presentation across clients and lets desktop and web clients retain multiple OpenAI-compatible endpoints. It fixes failed requests with user-supplied Anthropic keys on Android and carriage-return handling in tool output.",
+            "日期与边界": "Dates and boundaries",
+            "日期与限制": "Dates and limitations",
+            "更新校验与运行时接入": "Update checks and runtime integration",
+            "本次动态": "Related event",
+            "本次核对": "Current review",
+            "桌面新增DeepSeek Harness；iOS的TestFlight提交、审核与用户取得版本分别记载，不把桌面 1.0.4 当作所有iOS用户的现有版本。GPL-3.0-or-later；外部模型服务、跨端同步与iOS不能操控其他应用的限制保留。": "Desktop adds DeepSeek Harness. TestFlight submission, review and the version available to iOS users are separate; desktop 1.0.4 is not assumed to be available to all iOS users. GPL-3.0-or-later; external model services, cross-device synchronization and iOS’s inability to control other applications remain relevant.",
+            "版本变化": "Version change",
+            "版本变化、限制与来源见关联动态": "See the related event for version changes, limitations and sources",
+            "社区个人Agent；不是Meta官方Muse产品": "Community personal agent; not an official Meta Muse product",
+            "社区产品与运行限制": "Community product and runtime limitations",
+            "社区或自有中继；自备模型密钥；iOS为TestFlight测试版": "Community or self-hosted relay; user-supplied model keys; iOS is a TestFlight beta",
+            "范围与限制": "Scope and limitations",
+            "许可与运行边界": "License and runtime limitations",
+            "资料项": "Item",
+            "跨端与模型接入修复": "Client and model connection fixes",
+            "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。": "Cross-device actions can be approved on the phone that initiated the task. Payments allow one-time approval or denial, and approval timeouts are treated as denial. FieldToFit has not tested actual device permissions or timeout behavior."
+          },
+          "source_hash": "68a7c8b622aa0f3ef4cf309dc925672a14413263cf8cb0bec6f9acde80ecf017",
+          "state": "reviewed"
+        }
+      },
+      "type": "agent"
     }
   ],
-  "reviewed_at": "2026-10-08",
+  "reviewed_at": "2026-10-17",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }
