@@ -1,7 +1,35 @@
 {
-  "version": "1.11.6",
-  "revision": "58f50bcf4dcdb9afba3e02b0c76c01c204516c6584c2e809288e40a25f9027ee",
+  "version": "1.11.7",
+  "revision": "c7f93548b80ea9d3158ee2f3380eb8fd14b9080bf47df474cdf1b910dbfa3b47",
   "items": [
+    {
+      "version": "1.11.7",
+      "date": "2026-10-18",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Day 12／13与Dots入口补录",
+          "highlights": [
+            "整理官方Day 12的子代理上下文复用、缓存与路由优化，以及Day 13额度重置公告，分别保留10月17日与18日真实北京日期。",
+            "补录Dots的iOS主屏小组件与Shortcuts入口，保留已有dot权限、应用版本和通话条件；为既有Pro升级补Tibo真实转引与同款头像，不重复计事件或制造分项编号。",
+            "本批具体批准后沿用双语草稿、双端预览与明确发布；公告与已生效重置分开，既有新闻、信息卡、报告、图表和日程保持。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Day 12 and 13 updates and Dots entry points",
+          "highlights": [
+            "Cover official Day 12 context reuse, caching and routing improvements and the Day 13 reset announcement, retaining their genuine October 17 and 18 Beijing dates.",
+            "Backfill Dots iOS widgets and Shortcuts with existing-access, app-version and calling conditions. Add Tibo's authentic linked post and avatar to the existing Pro update without duplicate events or invented step numbers.",
+            "Use specifically approved bilingual drafts, matching web and AI previews and explicit publication. Keep announcements separate from confirmed effective resets and preserve existing news, cards, reports, charts and schedules."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.7"
+    },
     {
       "version": "1.11.6",
       "date": "2026-10-17",

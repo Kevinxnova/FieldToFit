@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.11.7"></a>
+## v1.11.7 · Day 12／13与Dots入口补录 · 2026-10-18
+
+<!-- release-tag:unpublished -->
+<!-- public-title:en:Day 12 and 13 updates and Dots entry points -->
+<!-- release-summary:zh:start -->
+- 整理官方Day 12的子代理上下文复用、缓存与路由优化，以及Day 13额度重置公告，分别保留10月17日与18日真实北京日期。
+- 补录Dots的iOS主屏小组件与Shortcuts入口，保留已有dot权限、应用版本和通话条件；为既有Pro升级补Tibo真实转引与同款头像，不重复计事件或制造分项编号。
+- 本批具体批准后沿用双语草稿、双端预览与明确发布；公告与已生效重置分开，既有新闻、信息卡、报告、图表和日程保持。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Cover official Day 12 context reuse, caching and routing improvements and the Day 13 reset announcement, retaining their genuine October 17 and 18 Beijing dates.
+- Backfill Dots iOS widgets and Shortcuts with existing-access, app-version and calling conditions. Add Tibo's authentic linked post and avatar to the existing Pro update without duplicate events or invented step numbers.
+- Use specifically approved bilingual drafts, matching web and AI previews and explicit publication. Keep announcements separate from confirmed effective resets and preserve existing news, cards, reports, charts and schedules.
+<!-- release-summary:en:end -->
+
+对应[REQ-20](FieldToFit-PM.md#req-20)。所有者明确回复“发布这4项（推荐）”。本批及自v1.11.0以来累计范围为兼容内容patch，无新完整模块、主要阅读流程、协议或数据库迁移；本轮不扩大未来批次发布授权。具体来源、真实回执、备份、验证及部署状态见[验收](docs/validation/2026-10-18-codex-days12-13.md)。
+
 <a id="v1.11.6"></a>
 ## v1.11.6 · 三部分晨报与热点信息卡轮换 · 2026-10-17
 

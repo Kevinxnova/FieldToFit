@@ -2,6 +2,392 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "tool",
+      "checked_at": "2026-10-18",
+      "codex_28_days": {
+        "announced_at": "2026-10-16T16:39:21.877000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/Gavmn/status/2111134917073449266",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: open a dot from iOS widgets or Shortcuts",
+        "overview_zh": "其他 OpenAI · iOS 小组件与 Shortcuts 打开 dot",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-16T23:57:00.212000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-18",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-18",
+            "context": {
+              "author_handle": "Gavmn",
+              "author_name": "Gavin Nelson",
+              "kind": "quote",
+              "text_en": "Dots, now on your Home Screen",
+              "text_scope": "full",
+              "translation_zh": "Dots现已来到主屏幕。",
+              "url": "https://x.com/Gavmn/status/2111136119945396436"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2111245052513259606",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。",
+            "text_en": "And update your app to enjoy this gem …",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "更新应用，试试这个新功能……",
+            "url": "https://x.com/thsottiaux/status/2111245052513259606"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": false,
+      "id": "D-193",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。",
+          "source_ids": [
+            "oct18-1",
+            "oct18-2",
+            "oct18-3",
+            "oct18-4",
+            "oct18-5",
+            "oct18-6",
+            "oct18-7",
+            "oct18-8",
+            "oct18-9"
+          ],
+          "text": "OpenAI设计师Gavin Nelson在北京时间 10月 17日 00:39发帖展示Dots主屏入口，00:44编辑文案；Tibo于 07:57在Day 12主帖下建议更新应用并转引该帖。官方文档确认：ChatGPT iOS 1.2026.279起正逐步推出Your dot主屏小组件与Open your dot快捷指令，需要账户已有dot权限。长按iPhone主屏空白区域，进入编辑→添加小组件→ChatGPT→Your dot；点按即可打开对话。可在编辑小组件中开启默认关闭的消息／通话按钮，通话按钮受账户可用性影响。Apple Shortcuts可选Messaging、Dictation或Call模式，支持Action按钮的iPhone还可绑定已保存的快捷指令。这里是iOS新增入口，不代表所有账户获开放Dots，也不扩展为Android小组件发布。官方周报仅给 10月 12–16日范围，本条日期依据带时区的原帖，而非推造周报发布日期。没有独立官方分项编号。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "ChatGPT Dots",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-18T03:02:59.529552+00:00",
+        "updated_at": "2026-10-18T03:02:59.529552+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-16",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct18-1",
+          "title": "Gavin Nelson 首版主屏小组件公告",
+          "url": "https://x.com/Gavmn/status/2111134917073449266"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-2",
+          "title": "同帖编辑版",
+          "url": "https://x.com/Gavmn/status/2111136119945396436"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-3",
+          "title": "原作者 OpenAI 设计师身份页",
+          "url": "https://x.com/Gavmn"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-4",
+          "title": "Tibo 建议更新应用并转引小组件",
+          "url": "https://x.com/thsottiaux/status/2111245052513259606"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-5",
+          "title": "Day 12 回复所属主帖",
+          "url": "https://x.com/thsottiaux/status/2111244596131111253"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-6",
+          "title": "官方 iOS 小组件与 Shortcuts 指南",
+          "url": "https://learn.chatgpt.com/docs/dots/channels#ios-widgets-and-shortcuts"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-7",
+          "title": "官方 10月 12–16日周报",
+          "url": "https://learn.chatgpt.com/docs/whats-new"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-8",
+          "title": "Dots 资格与推出范围",
+          "url": "https://learn.chatgpt.com/docs/dots#access"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-9",
+          "title": "Tibo 当前 X 身份与真实头像出处",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Dots新增iOS主屏小组件与Apple Shortcuts快捷入口，需已有dot权限及ChatGPT iOS 1.2026.279等合资格版本；通话功能受账户可用性影响。",
+      "title": "Dots 新增 iOS 主屏小组件与 Shortcuts 入口，需已有 dot 权限",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "f461d9861668bbe0d87b9f97c5561d997587f7356d9c31f1dc7d6ced97291ea0",
+          "fields": {
+            "Day 12 回复所属主帖": "Day 12 parent post for the reply",
+            "Dots 新增 iOS 主屏小组件与 Shortcuts 入口，需已有 dot 权限": "Dots adds iOS Home Screen widgets and Shortcuts for eligible accounts",
+            "Dots 资格与推出范围": "Dots eligibility and rollout",
+            "Dots新增iOS主屏小组件与Apple Shortcuts快捷入口，需已有dot权限及ChatGPT iOS 1.2026.279等合资格版本；通话功能受账户可用性影响。": "Dots adds iOS Home Screen widgets and Apple Shortcuts, rolling out with ChatGPT for iOS 1.2026.279 for accounts with dot access. Calling depends on availability.",
+            "Gavin Nelson 首版主屏小组件公告": "Gavin Nelson original Home Screen widget announcement",
+            "OpenAI设计师Gavin Nelson在北京时间 10月 17日 00:39发帖展示Dots主屏入口，00:44编辑文案；Tibo于 07:57在Day 12主帖下建议更新应用并转引该帖。官方文档确认：ChatGPT iOS 1.2026.279起正逐步推出Your dot主屏小组件与Open your dot快捷指令，需要账户已有dot权限。长按iPhone主屏空白区域，进入编辑→添加小组件→ChatGPT→Your dot；点按即可打开对话。可在编辑小组件中开启默认关闭的消息／通话按钮，通话按钮受账户可用性影响。Apple Shortcuts可选Messaging、Dictation或Call模式，支持Action按钮的iPhone还可绑定已保存的快捷指令。这里是iOS新增入口，不代表所有账户获开放Dots，也不扩展为Android小组件发布。官方周报仅给 10月 12–16日范围，本条日期依据带时区的原帖，而非推造周报发布日期。没有独立官方分项编号。": "OpenAI designer Gavin Nelson posted the Dots Home Screen feature at 00:39 Beijing time on 10/17 and edited the wording at 00:44. At 07:57, Tibo endorsed it in a reply to his Day 12 post. Official documentation confirms a gradual rollout of the Your dot widget and Open your dot action with ChatGPT for iOS 1.2026.279, for accounts that already have dot access. Touch and hold an empty iPhone Home Screen area, then choose Edit, Add Widget, ChatGPT and Your dot. Tap it to open the conversation. Optional message and call buttons are off by default; calling depends on availability. Apple Shortcuts supports Messaging, Dictation and Call, and a saved shortcut can be assigned to a supported iPhone Action button. This iOS entry point does not grant universal Dots access or announce Android widgets. The official weekly digest supplies only a 10/12–16 range; the event date comes from the timestamped original post. No separate official step number is supplied.",
+            "Tibo 建议更新应用并转引小组件": "Tibo recommends updating the app and links the widget",
+            "Tibo 当前 X 身份与真实头像出处": "Tibo current X identity and authentic avatar source",
+            "其他 OpenAI · iOS 小组件与 Shortcuts 打开 dot": "Other OpenAI: open a dot from iOS widgets or Shortcuts",
+            "原作者 OpenAI 设计师身份页": "Original author identity: designer at OpenAI",
+            "变化与适用范围": "Changes and availability",
+            "同帖编辑版": "Edited version of the same post",
+            "官方 10月 12–16日周报": "Official weekly digest for 10/12–16",
+            "官方 iOS 小组件与 Shortcuts 指南": "Official iOS widgets and Shortcuts guide",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Directly checked the registered official sources. Post times are derived from their IDs and cross-checked against displayed dates and minutes.",
+            "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。": "The original post and public structured data were read directly. Excerpts do not reconstruct omitted text; Chinese translations are by FieldToFit."
+          }
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-18",
+      "codex_28_days": {
+        "announced_at": "2026-10-17T16:20:57.749000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2111492673890824348",
+        "group": "codex",
+        "official_day": 13,
+        "overview_en": "Day 13: reset announced for an EOD PST window",
+        "overview_zh": "Day 13 · 重置公告，原帖说明 EOD PST 窗口",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-17T16:20:57.749000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-18",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-18",
+            "evidence_url": "https://x.com/thsottiaux/status/2111492673890824348",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。",
+            "text_en": "Day 13/ Le limit reset",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "官方Day 13：额度重置。",
+            "url": "https://x.com/thsottiaux/status/2111492673890824348"
+          },
+          {
+            "announced_at": "2026-10-17T16:21:13.040000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-18",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-18",
+            "evidence_url": "https://x.com/thsottiaux/status/2111492738025959922",
+            "kind": "supplement",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。",
+            "text_en": "Landing sometime today by EOD PST",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "将在PST当天结束前的某个时刻落地。",
+            "url": "https://x.com/thsottiaux/status/2111492738025959922"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-18",
+      "highlight": false,
+      "id": "D-192",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。",
+          "source_ids": [
+            "oct18-1",
+            "oct18-2",
+            "oct18-3"
+          ],
+          "text": "北京时间 10月 18日 00:20，Tibo发布官方Day 13额度重置公告；00:21在同帖回复中说明将在PST当天结束前的某个时刻落地。这里保留原帖的PST表述，不自行改成PDT或推算准确生效时刻。公告未列出套餐清单、具体额度／周窗口及每个账户的到账情况。用户可在Codex／ChatGPT Work查看账户自己的用量页面和重置时间。本条记录已核实的官方公告，不把时间窗口当作到账保证；暂不填reset生效字段，也不增加已生效重置计数。官方Day 13对应本站日历Day 14。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-18T03:02:34.532414+00:00",
+        "updated_at": "2026-10-18T03:02:34.532414+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-17",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct18-1",
+          "title": "Tibo 官方 Day 13 重置公告",
+          "url": "https://x.com/thsottiaux/status/2111492673890824348"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-2",
+          "title": "Tibo 同帖补充时间窗口",
+          "url": "https://x.com/thsottiaux/status/2111492738025959922"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-3",
+          "title": "Tibo 当前 X 身份与真实头像出处",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo发布官方Day 13额度重置公告，随后回复给出EOD PST窗口；未公布完整套餐范围或准确生效时刻。",
+      "title": "官方 Day 13：额度重置公告，后续时间窗口保留 EOD PST 原文",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "036b50e87da513adbbd051e29b48c7955c5f84447fafc6f0d32ebce88457f75b",
+          "fields": {
+            "Day 13 · 重置公告，原帖说明 EOD PST 窗口": "Day 13: reset announced for an EOD PST window",
+            "Tibo 同帖补充时间窗口": "Tibo reply specifying the window",
+            "Tibo 官方 Day 13 重置公告": "Tibo official Day 13 reset announcement",
+            "Tibo 当前 X 身份与真实头像出处": "Tibo current X identity and authentic avatar source",
+            "Tibo发布官方Day 13额度重置公告，随后回复给出EOD PST窗口；未公布完整套餐范围或准确生效时刻。": "Tibo announced an official Day 13 usage reset and an EOD PST window, without specifying complete plan coverage or an exact activation time.",
+            "北京时间 10月 18日 00:20，Tibo发布官方Day 13额度重置公告；00:21在同帖回复中说明将在PST当天结束前的某个时刻落地。这里保留原帖的PST表述，不自行改成PDT或推算准确生效时刻。公告未列出套餐清单、具体额度／周窗口及每个账户的到账情况。用户可在Codex／ChatGPT Work查看账户自己的用量页面和重置时间。本条记录已核实的官方公告，不把时间窗口当作到账保证；暂不填reset生效字段，也不增加已生效重置计数。官方Day 13对应本站日历Day 14。": "At 00:20 Beijing time on 10/18, Tibo announced the official Day 13 usage reset. A linked reply at 00:21 specified a time before the end of that day in PST. We retain PST as written and infer neither PDT nor an exact activation time. These posts do not enumerate plans, allowance amounts, usage windows or individual account balances. Check the usage page for your own Codex or ChatGPT Work account. This entry records the verified announcement; a planned window is not proof of delivery. It leaves reset activation fields empty and does not raise the confirmed-reset count. Official Day 13 is calendar Day 14 here.",
+            "变化与适用范围": "Changes and availability",
+            "官方 Day 13：额度重置公告，后续时间窗口保留 EOD PST 原文": "Official Day 13: usage reset announced with an EOD PST window",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Directly checked the registered official sources. Post times are derived from their IDs and cross-checked against displayed dates and minutes.",
+            "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。": "The original post and public structured data were read directly. Excerpts do not reconstruct omitted text; Chinese translations are by FieldToFit."
+          }
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-18",
+      "codex_28_days": {
+        "announced_at": "2026-10-16T23:55:11.402000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2111244596131111253",
+        "group": "codex",
+        "official_day": 12,
+        "overview_en": "Day 12: context reuse and better cache hits",
+        "overview_zh": "Day 12 · 复用子代理上下文，提高缓存命中",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-16T23:55:11.402000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-18",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-18",
+            "evidence_url": "https://x.com/thsottiaux/status/2111244596131111253",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。",
+            "text_en": "Day 12/ … reusing context across subagents, keeping context cached longer, and improved request routing …",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "官方Day 12：……在子代理之间复用上下文、更长时间保留缓存，并改进请求路由……",
+            "url": "https://x.com/thsottiaux/status/2111244596131111253"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": false,
+      "id": "D-191",
+      "interpretation": [
+        {
+          "locator": "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。",
+          "source_ids": [
+            "oct18-1",
+            "oct18-2"
+          ],
+          "text": "北京时间 10月 17日 07:55，Tibo宣布Codex与ChatGPT Work已做用量效率优化：子代理之间复用上下文、延长上下文缓存保留，并改进请求路由以提高缓存命中率。按官方说法，这些改进可提高同样用量下能够完成的工作。继续使用Codex／Work即可；该公告未要求用户更换模型、套餐或开启新选项，也没有给出适用套餐明细或统一节省比例。它是服务端效率改进，不代表套餐额度翻倍、另发点数或一次额度重置；收益为官方描述，本站未独立复测。官方Day 12与本站日历Day 13分列。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-18T03:02:09.651758+00:00",
+        "updated_at": "2026-10-18T03:02:09.651758+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-16",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct18-1",
+          "title": "Tibo 官方 Day 12 主帖",
+          "url": "https://x.com/thsottiaux/status/2111244596131111253"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-2",
+          "title": "Tibo 当前 X 身份与真实头像出处",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Tibo宣布通过子代理上下文复用、延长缓存和请求路由优化，提高Codex／Work的有效用量；未公布统一节省比例。",
+      "title": "官方 Day 12：上下文复用与缓存优化，提高 Codex／Work 有效用量",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "7d51a33cc8310f7e8d84501544b7a9c15d6d3ccd539921f68c18d49e05ad4373",
+          "fields": {
+            "Day 12 · 复用子代理上下文，提高缓存命中": "Day 12: context reuse and better cache hits",
+            "Tibo 官方 Day 12 主帖": "Tibo official Day 12 primary post",
+            "Tibo 当前 X 身份与真实头像出处": "Tibo current X identity and authentic avatar source",
+            "Tibo宣布通过子代理上下文复用、延长缓存和请求路由优化，提高Codex／Work的有效用量；未公布统一节省比例。": "Tibo announced context reuse between subagents, longer caching and improved routing to make Codex and Work usage go further. No uniform saving was specified.",
+            "北京时间 10月 17日 07:55，Tibo宣布Codex与ChatGPT Work已做用量效率优化：子代理之间复用上下文、延长上下文缓存保留，并改进请求路由以提高缓存命中率。按官方说法，这些改进可提高同样用量下能够完成的工作。继续使用Codex／Work即可；该公告未要求用户更换模型、套餐或开启新选项，也没有给出适用套餐明细或统一节省比例。它是服务端效率改进，不代表套餐额度翻倍、另发点数或一次额度重置；收益为官方描述，本站未独立复测。官方Day 12与本站日历Day 13分列。": "At 07:55 Beijing time on 10/17, Tibo announced usage-efficiency improvements to Codex and ChatGPT Work: sharing context between subagents, retaining cached context longer and routing requests to improve cache hits. OpenAI says these changes make the available usage go further. Continue using Codex or Work; the announcement requires no new model, plan or setting and specifies neither a plan-by-plan scope nor a uniform saving. This is an efficiency update, rather than a doubled quota, credit grant or reset. FieldToFit has not independently measured the benefit. Official Day 12 falls on calendar Day 13 on this site.",
+            "变化与适用范围": "Changes and availability",
+            "官方 Day 12：上下文复用与缓存优化，提高 Codex／Work 有效用量": "Official Day 12: context reuse and caching improve effective usage in Codex and Work",
+            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Directly checked the registered official sources. Post times are derived from their IDs and cross-checked against displayed dates and minutes.",
+            "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。": "The original post and public structured data were read directly. Excerpts do not reconstruct omitted text; Chinese translations are by FieldToFit."
+          }
+        }
+      }
+    },
+    {
       "category": "research",
       "checked_at": "2026-10-17",
       "editor": "FieldToFit",
@@ -4000,16 +4386,48 @@
     },
     {
       "category": "tool",
-      "checked_at": "2026-10-17",
+      "checked_at": "2026-10-18",
       "codex_28_days": {
         "announced_at": "2026-10-16T20:00:22.918000+00:00",
         "date_precision": "instant",
         "event_key": "https://x.com/OpenAI/status/2111185504746213705",
         "group": "other_openai",
         "official_day": null,
-        "overview_en": "Other OpenAI: Pro parallel agents and tools",
-        "overview_zh": "其他 OpenAI · Pro 并行代理与工具升级",
-        "source_posts": [],
+        "overview_en": "Other OpenAI: Pro upgrade, with Tibo’s linked post",
+        "overview_zh": "其他 OpenAI · Pro 并行代理升级，补 Tibo 转引",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-16T23:56:37.643000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-18",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-18",
+            "context": {
+              "author_handle": "OpenAI",
+              "author_name": "OpenAI",
+              "kind": "quote",
+              "text_en": "GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools.",
+              "text_scope": "excerpt",
+              "translation_zh": "ChatGPT中的GPT-6 Astra Pro升级，响应更快，插件与工具使用得到改进。",
+              "url": "https://x.com/OpenAI/status/2111192259073094035"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2111244957851984181",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。",
+            "text_en": "We also significantly improved GPT-6 Pro for all pro users …",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "我们还为所有Pro用户显著改进了GPT-6 Pro……",
+            "url": "https://x.com/thsottiaux/status/2111244957851984181"
+          }
+        ],
         "timestamp_basis": "post_id_derived",
         "type": "feature"
       },
@@ -4025,9 +4443,12 @@
             "source-2",
             "source-3",
             "source-4",
-            "source-5"
+            "source-5",
+            "oct18-6",
+            "oct18-7",
+            "oct18-8"
           ],
-          "text": "OpenAI 宣布升级 ChatGPT 的 GPT-6 Astra Pro：响应更快，插件与工具使用得到改进，并可让多个代理并行处理任务的不同部分。用户可在对话中跟踪各代理进度，打开完成的任务查看工作。此次面向 Chat 页的合资格 Pro 用户推出；托管工作区受设置与推出资格影响。使用时在 Chat 页选择可用的 Pro 选项，再提出可拆分的任务；不要据此改变 Codex／Work 的模型、配额或套餐判断。速度改善为官方描述，本站未复测，也未取得统一提升比例。首版原帖发布于北京时间 10 月 17 日 04:00；04:27 编辑版将名称明确为 GPT-6 Astra Pro，是同一事件，不另计一次更新。官方帮助日志标注 10 月 16 日来源日期。",
+          "text": "OpenAI宣布升级ChatGPT的GPT-6 Astra Pro：响应更快，插件与工具使用得到改进，并可让多个代理并行处理任务的不同部分。用户可在对话中跟踪各代理进度，打开完成的任务查看工作。此次面向Chat页的合资格Pro用户推出；托管工作区受设置与推出资格影响。使用时在Chat页选择可用的Pro选项，再提出可拆分的任务；不要据此改变Codex／Work的模型、配额或套餐判断。速度改善为官方描述，本站未复测，也未取得统一提升比例。首版原帖发布于北京时间 10月 17日 04:00；04:27编辑版将名称明确为GPT-6 Astra Pro，是同一事件，不另计一次更新。官方帮助日志标注 10月 16日来源日期。 新核对补充：10月 17日 07:56，Tibo在Day 12主帖下转引同一OpenAI公告，说明Pro升级；补上原帖卡片及Day 12上下文，沿用D-171、04:00首发时刻与其他OpenAI分组。Tibo没有在这条回复中提供独立分项编号，不使用社区的 12.1编号。",
           "title": "变化与适用范围"
         }
       ],
@@ -4036,7 +4457,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-17T02:23:16.214727+00:00",
-        "updated_at": "2026-10-17T02:23:16.214727+00:00"
+        "updated_at": "2026-10-18T03:03:24.347688+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-16",
@@ -4070,28 +4491,50 @@
           "id": "source-5",
           "title": "官方模型使用范围",
           "url": "https://help.openai.com/en/articles/20001354"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-6",
+          "title": "Tibo 在 Day 12 帖下补充并转引 Pro 升级",
+          "url": "https://x.com/thsottiaux/status/2111244957851984181"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-7",
+          "title": "Day 12 回复所属主帖",
+          "url": "https://x.com/thsottiaux/status/2111244596131111253"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct18-8",
+          "title": "Tibo 当前 X 身份与真实头像出处",
+          "url": "https://x.com/thsottiaux"
         }
       ],
       "state": "published",
       "summary": "OpenAI 升级 ChatGPT Chat 页的 GPT-6 Astra Pro，支持并行代理，并改进工具使用与响应速度；面向合资格 Pro 用户推出。",
-      "title": "ChatGPT GPT-6 Astra Pro 更新：更快响应，并行代理与工具使用改进",
+      "title": "ChatGPT GPT-6 Astra Pro更新：更快响应，并行代理与工具使用改进",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "2a05ec9e239136af0b39d6fdb42f630d9c25730b7506d6c906e129bd5d1d55af",
           "fields": {
-            "ChatGPT GPT-6 Astra Pro 更新：更快响应，并行代理与工具使用改进": "GPT-6 Astra Pro in ChatGPT: faster responses, parallel agents and improved tools",
+            "ChatGPT GPT-6 Astra Pro更新：更快响应，并行代理与工具使用改进": "GPT-6 Astra Pro in ChatGPT: faster responses, parallel agents and improved tools",
             "ChatGPT 官方更新日志": "ChatGPT official release notes",
+            "Day 12 回复所属主帖": "Day 12 parent post for the reply",
             "OpenAI 升级 ChatGPT Chat 页的 GPT-6 Astra Pro，支持并行代理，并改进工具使用与响应速度；面向合资格 Pro 用户推出。": "OpenAI is upgrading GPT-6 Astra Pro in the ChatGPT Chat tab for eligible Pro users, with parallel agents, improved tool use and faster responses.",
-            "OpenAI 宣布升级 ChatGPT 的 GPT-6 Astra Pro：响应更快，插件与工具使用得到改进，并可让多个代理并行处理任务的不同部分。用户可在对话中跟踪各代理进度，打开完成的任务查看工作。此次面向 Chat 页的合资格 Pro 用户推出；托管工作区受设置与推出资格影响。使用时在 Chat 页选择可用的 Pro 选项，再提出可拆分的任务；不要据此改变 Codex／Work 的模型、配额或套餐判断。速度改善为官方描述，本站未复测，也未取得统一提升比例。首版原帖发布于北京时间 10 月 17 日 04:00；04:27 编辑版将名称明确为 GPT-6 Astra Pro，是同一事件，不另计一次更新。官方帮助日志标注 10 月 16 日来源日期。": "OpenAI has upgraded GPT-6 Astra Pro in ChatGPT with faster responses, improved plugin and tool use, and agents that handle parts of a task in parallel. Follow their progress in the conversation and open completed work. The update is rolling out to eligible Pro users in the Chat tab; managed workspaces depend on settings and rollout eligibility. Choose an available Pro option in Chat and describe the task. These announcements do not establish changes to Codex or Work allowances. Speed improvements are official claims, not FieldToFit measurements. The original post appeared at 04:00 Beijing time on 10/17; a 04:27 edit clarified the GPT-6 Astra Pro name. Both versions are one event. Official release notes use the 10/16 source date.",
             "OpenAI 编辑历史": "OpenAI edit history",
             "OpenAI 编辑后的当前原帖": "OpenAI current edited post",
             "OpenAI 首次原帖": "OpenAI original post",
-            "其他 OpenAI · Pro 并行代理与工具升级": "Other OpenAI: Pro parallel agents and tools",
-            "变化与适用范围": "Changes and scope",
+            "OpenAI宣布升级ChatGPT的GPT-6 Astra Pro：响应更快，插件与工具使用得到改进，并可让多个代理并行处理任务的不同部分。用户可在对话中跟踪各代理进度，打开完成的任务查看工作。此次面向Chat页的合资格Pro用户推出；托管工作区受设置与推出资格影响。使用时在Chat页选择可用的Pro选项，再提出可拆分的任务；不要据此改变Codex／Work的模型、配额或套餐判断。速度改善为官方描述，本站未复测，也未取得统一提升比例。首版原帖发布于北京时间 10月 17日 04:00；04:27编辑版将名称明确为GPT-6 Astra Pro，是同一事件，不另计一次更新。官方帮助日志标注 10月 16日来源日期。 新核对补充：10月 17日 07:56，Tibo在Day 12主帖下转引同一OpenAI公告，说明Pro升级；补上原帖卡片及Day 12上下文，沿用D-171、04:00首发时刻与其他OpenAI分组。Tibo没有在这条回复中提供独立分项编号，不使用社区的 12.1编号。": "OpenAI has upgraded GPT-6 Astra Pro in ChatGPT with faster responses, improved plugin and tool use, and agents that handle parts of a task in parallel. Follow their progress in the conversation and open completed work. The update is rolling out to eligible Pro users in the Chat tab; managed workspaces depend on settings and rollout eligibility. Choose an available Pro option in Chat and describe a task that can be divided up. These announcements do not establish changes to Codex or Work models, allowances or plans. Speed improvements are official descriptions, not FieldToFit measurements; no uniform percentage was established. The original post appeared at 04:00 Beijing time on 10/17; a 04:27 edit clarified the GPT-6 Astra Pro name. Both versions are one event. Official release notes use the 10/16 source date. Additional checked source: at 07:56 on 10/17, Tibo linked this same announcement in a reply to his Day 12 post. The source card adds that Day 12 context while retaining D-171, its original 04:00 timestamp and Other OpenAI grouping. His reply supplies no separate step number; the community label 12.1 is not adopted.",
+            "Tibo 在 Day 12 帖下补充并转引 Pro 升级": "Tibo links the Pro upgrade in his Day 12 thread",
+            "Tibo 当前 X 身份与真实头像出处": "Tibo current X identity and authentic avatar source",
+            "其他 OpenAI · Pro 并行代理升级，补 Tibo 转引": "Other OpenAI: Pro upgrade, with Tibo’s linked post",
+            "变化与适用范围": "Changes and availability",
             "官方模型使用范围": "Official model availability",
-            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Registered official sources verified directly; post-ID-derived timestamps cross-checked with the page date and minute."
-          },
-          "source_hash": "b710a33898af147cb19cc19e07ff411c22a1697e9d85fc3a79c2244c40e667f4",
-          "state": "reviewed"
+            "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Directly checked the registered official sources. Post times are derived from their IDs and cross-checked against displayed dates and minutes.",
+            "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。": "The original post and public structured data were read directly. Excerpts do not reconstruct omitted text; Chinese translations are by FieldToFit."
+          }
         }
       }
     },
@@ -26542,7 +26985,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-17",
+  "reviewed_at": "2026-10-18",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }
