@@ -12,7 +12,7 @@ export type DailyPreviewData = {
     publication:{revision:number;content_hash:string;published_at:string;first_published_at:string};
   };
 };
-const sectionNames:Record<string,[string,string]>={companies:['AI公司','AI companies'],chips:['AI芯片','AI chips'],robotics:['具身智能','Embodied AI'],infrastructure:['基础设施','Infrastructure'],policy:['监管政策','Policy'],markets:['AI股市','AI markets']};
+const sectionNames:Record<string,[string,string]>={companies:['AI公司','AI companies'],chips:['AI芯片','AI chips'],robotics:['具身智能','Embodied AI'],infrastructure:['基础设施','Infrastructure'],policy:['监管政策','Policy'],business:['商业动态','Business'],markets:['AI股市','AI markets']};
 const beijingDay=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 const publicationTime=(value:string,zh:boolean)=>new Date(value).toLocaleString(zh?'zh-CN':'en-GB',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
 
@@ -42,7 +42,7 @@ export function DailyPreview({data,loading,error,retry}:{data?:DailyPreviewData;
           <p className="dp-kicker">0{index+1} / {pick(...(sectionNames[story.section]||['今日重点','Highlights']))}</p>
           <h4><Link to={edition+'#daily-story-'+story.id}>{story.title}</Link></h4><p>{story.summary}</p>
         </article>)}</div>}
-        <footer className="dp-footer"><div className="dp-publication"><span>{pick('实际出刊','Published')} <time dateTime={issue.publication.first_published_at}>{publicationTime(issue.publication.first_published_at,zh)}</time></span>{issue.publication.revision>1&&<span>{pick('修订于','Revised')} <time dateTime={issue.publication.published_at}>{publicationTime(issue.publication.published_at,zh)}</time> · r{issue.publication.revision}</span>}<small>{pick('北京时间','Beijing time')}</small></div><div className="dp-actions"><Link className="dp-archive" to="/for-you/daily/archive">{pick('往期日报','Past editions')} →</Link><Link className="dp-read" to={edition}>{pick('阅读完整日报','Read this edition')} <span aria-hidden="true">↗</span></Link></div></footer>
+        <footer className="dp-footer">{issue.publication.revision>1&&<div className="dp-publication"><span>{pick('修订于','Revised')} <time dateTime={issue.publication.published_at}>{publicationTime(issue.publication.published_at,zh)}</time> · r{issue.publication.revision}</span><small>{pick('北京时间','Beijing time')}</small></div>}<div className="dp-actions"><Link className="dp-archive" to="/for-you/daily/archive">{pick('往期日报','Past editions')} →</Link><Link className="dp-read" to={edition}>{pick('阅读完整日报','Read this edition')} <span aria-hidden="true">↗</span></Link></div></footer>
       </>:<div className="dp-empty"><p>{pick('完整期刊发布后，会在这里展示导读与重点。','The introduction and highlights will appear here when an edition is published.')}</p><Link to="/for-you/daily/archive">{pick('查看日报归档','View daily archive')} →</Link></div>}
     </>}
   </section>;

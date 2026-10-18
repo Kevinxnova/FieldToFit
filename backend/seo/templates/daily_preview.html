@@ -10,7 +10,7 @@
   {% if issue %}
   <h3><a href="{{ prefix }}{{ edition_path }}">{{ issue.headline }}</a></h3><p>{{ issue.intro }}</p>
   {% for story in issue.highlights %}<article><h4><a href="{{ prefix }}{{ edition_path }}#daily-story-{{ story.id }}">{{ story.title }}</a></h4><p>{{ story.summary }}</p></article>{% endfor %}
-  <p>{{ 'Published' if english else '实际出刊' }} <time datetime="{{ issue.publication.first_published_at }}">{{ issue.publication.first_published_at|codex_beijing }}</time>{% if issue.publication.revision > 1 %} · {{ 'Revised' if english else '修订于' }} <time datetime="{{ issue.publication.published_at }}">{{ issue.publication.published_at|codex_beijing }}</time> · r{{ issue.publication.revision }}{% endif %} · {{ 'Beijing time' if english else '北京时间' }}</p>
+  {% if issue.publication.revision > 1 %}<p>{{ 'Revised' if english else '修订于' }} <time datetime="{{ issue.publication.published_at }}">{{ issue.publication.published_at|codex_beijing }}</time> · r{{ issue.publication.revision }} · {{ 'Beijing time' if english else '北京时间' }}</p>{% endif %}
   <a href="{{ prefix }}{{ edition_path }}">{{ 'Read this edition' if english else '阅读完整日报' }}</a>
   {% else %}<p>{{ 'The introduction and highlights will appear here when an edition is published.' if english else '完整期刊发布后，会在这里展示导读与重点。' }}</p>{% endif %}
   <a href="{{ prefix }}/for-you/daily/archive">{{ 'Past editions' if english else '往期日报' }}</a>

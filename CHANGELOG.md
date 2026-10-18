@@ -7,20 +7,20 @@
 <a id="v1.12.0"></a>
 ## v1.12.0 · 日报九栏目与取材核验升级 · 2026-10-18
 
-<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-10-18 -->
 <!-- public-title:en:Nine-section daily journal and editorial evidence -->
 <!-- release-summary:zh:start -->
 - 日报采用九栏目顺序，热点AI产品追踪独立成栏，商业动态位于监管政策之后；网页、双语PDF和AI读取同步。
 - 具身智能、基础设施与商业动态增加细分主题、中英文检索和媒体线索追溯，核对原始日期、事件阶段及融资交易口径。
-- 新版取材、事件与产品记录绑定复核和PDF校样；保留历史日报结构、内容哈希与已发布PDF。
+- 新版取材、事件与产品记录绑定复核和PDF校样；页面隐藏实际出刊时间，后台记录与历史日报、哈希和PDF保持。
 <!-- release-summary:zh:end -->
 <!-- release-summary:en:start -->
 - Give the daily journal nine ordered sections, with a standalone product tracker and business after policy across web, bilingual PDFs and AI reading.
 - Expand robotics, infrastructure and business research through topic checks, Chinese and international searches and media leads, verifying original dates, event stages and transaction terms.
-- Bind new research, event and product evidence to editorial review and PDF proofs while preserving historical layouts, content hashes and published PDFs.
+- Bind new research, event and product evidence to editorial review and PDF proofs. Hide publication timestamps on the page while preserving audit records, historical layouts, hashes and PDFs.
 <!-- release-summary:en:end -->
 
-对应[REQ-24-11](FieldToFit-PM.md#daily-nine-sections)。所有者确认九栏目及minor v1.12.0开发验证。兼容新增layout_version=2，既有JSON协议和历史期刊保持，无数据库迁移；本地GPT和免费来源继续适用，云端模型、生产配置和原私密选题日程不变。149项回归、21组浏览器、6组语言及构建通过，双语各7页校样已逐页检查；本地开发验证完成，尚未部署，见[验收记录](docs/validation/2026-10-18-daily-nine-sections.md)。
+对应[REQ-24-11](FieldToFit-PM.md#daily-nine-sections)。所有者确认九栏目及minor v1.12.0开发验证。兼容新增layout_version=2，既有JSON协议和历史期刊保持，无数据库迁移；本地GPT和免费来源继续适用，云端模型、生产配置和原私密选题日程不变。所有者随后批准以v1.12.0部署、隐藏网页初次出刊时间、同步既有定时任务，并要求重编今日刊。沿用已批准未发布批次完成收尾，保留开发提交历史，不另拆版本。149项回归、21组本地浏览器、6组语言及构建通过，最终展示调整86项相关回归通过；正式健康与MCP版本已核对。10月18日r2已按原新闻窗口发布，双语各6页PDF逐页核验且公开回读一致，r1内容与PDF保持；定时任务已同步九栏目及新核验规则，原六个时点和私密选题任务不变。新规则连续自然日准点表现仍待真实运行，见[验收记录](docs/validation/2026-10-18-daily-nine-sections.md)。
 
 <a id="v1.11.8"></a>
 ## v1.11.8 · GPT-6系统卡、DeepSeek联网与获批日报 · 2026-10-18
