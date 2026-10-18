@@ -6,9 +6,10 @@ from datetime import datetime, timezone
 from backend.db import get_db
 from backend.knowledge.workspace_transactions import editorial_transaction
 from .schedule import PUBLISH_AT, local_time
-from .schema import TZ, validate, digest, project, day_key, stamp, fail, bilingual, instant
+from .schema import TZ, validate, digest, project, day_key, stamp, fail, bilingual, instant, EDITION_ORDER
 
 LOCAL_REVIEW_CHECKS = ('sources', 'facts', 'bilingual', 'coverage', 'market_closes', 'image_rights', 'deduplication')
+EXTENDED_REVIEW_CHECKS = (*LOCAL_REVIEW_CHECKS, 'research_scope', 'event_status')
 
 def local_review(report, data):
     """Bind an actual local GPT review to one immutable edition and evidence set."""
@@ -17,7 +18,7 @@ def local_review(report, data):
             or report.get('content_hash') != digest(data)
             or not re.fullmatch(r'[0-9a-f]{64}', str(report.get('evidence_hash', '')))
             or not isinstance(report.get('checks'), dict)
-            or set(report['checks']) != set(LOCAL_REVIEW_CHECKS)
+            or set(report['checks']) != set(EXTENDED_REVIEW_CHECKS if data.get('layout_version') == 2 else LOCAL_REVIEW_CHECKS)
             or any(v is not True for v in report['checks'].values())):
         fail('Local GPT review must match the edition and pass every editorial check', 'daily_review', 409)
     reviewed = instant(report.get('reviewed_at'))
@@ -119,6 +120,7 @@ def publish(day, version, reason, automatic=False, now=None, proof_hashes=None):
 
 def _public_copy(data):
     data=json.loads(enc(data));data.pop('coverage',None)
+    if data.get('layout_version') == 2: data['section_order'] = list(EDITION_ORDER)
     if data.get('image'): data['image'].pop('reuse_basis',None)
     return data
 

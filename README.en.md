@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.11.8](CHANGELOG.md#v1.11.8)** · [fieldtofit-v1.11.8](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.8)
+**Current source version: [v1.12.0](CHANGELOG.md#v1.12.0)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Cover the DeepSeek checkpoint, web tools and OpenAI / Gemini migration notices, updating related profiles, homepage highlights and full news while retaining original dates and history.
-- Present the selected GPT-6 October system card with four findings, matching arguments and three FieldToFit redraws, distinguishing product month, length adjustment and agent boundaries. Rotate homepage reports after publication and retain the full index.
-- Attach the selected Search / Fetch card to the same news identity, with Chinese and English share images and stable QR links. Enter the homepage after publication and preserve older cards, details and share links.
+- Give the daily journal nine ordered sections, with a standalone product tracker and business after policy across web, bilingual PDFs and AI reading.
+- Expand robotics, infrastructure and business research through topic checks, Chinese and international searches and media leads, verifying original dates, event stages and transaction terms.
+- Bind new research, event and product evidence to editorial review and PDF proofs while preserving historical layouts, content hashes and published PDFs.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

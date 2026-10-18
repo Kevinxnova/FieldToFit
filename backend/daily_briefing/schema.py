@@ -10,9 +10,19 @@ from zoneinfo import ZoneInfo
 from backend.knowledge.platform import PlatformError
 
 from .schedule import TZ, CUTOFF_AT, local_time
-SECTIONS = ('companies', 'chips', 'robotics', 'infrastructure', 'policy')
+LEGACY_SECTIONS = ('companies', 'chips', 'robotics', 'infrastructure', 'policy')
+SECTIONS = (*LEGACY_SECTIONS, 'business')
+EDITION_ORDER = ('highlights', 'companies', 'products', 'chips', 'robotics', 'infrastructure', 'policy', 'business', 'markets')
 DIMENSIONS = ('global_companies', 'china_companies', 'chips', 'open_source', 'coding', 'agents_robotics', 'infrastructure', 'research', 'policy', 'business', 'markets')
-LABELS = {'companies': ('AI公司', 'AI companies'), 'chips': ('AI芯片', 'AI chips'), 'robotics': ('具身智能', 'Embodied AI'), 'infrastructure': ('基础设施', 'Infrastructure'), 'policy': ('监管政策', 'Policy')}
+LABELS = {'highlights': ('今日重点', 'Highlights'), 'companies': ('AI公司', 'AI companies'), 'products': ('热点 AI 产品追踪', 'AI product tracker'), 'chips': ('AI芯片', 'AI chips'), 'robotics': ('具身智能', 'Embodied AI'), 'infrastructure': ('基础设施', 'Infrastructure'), 'policy': ('监管政策', 'Policy'), 'business': ('商业动态', 'Business'), 'markets': ('AI股市', 'AI markets')}
+
+def news_sections(issue):
+    return SECTIONS if issue.get('layout_version') == 2 else LEGACY_SECTIONS
+
+def edition_sections(issue):
+    """Old snapshots retain their original layout and content hash."""
+    keys = EDITION_ORDER if issue.get('layout_version') == 2 else ('highlights', *LEGACY_SECTIONS, 'markets')
+    return [(key, *LABELS[key]) for key in keys]
 SECURITIES = {
  'us': [('NVDA','NVIDIA','NVIDIA'),('AMD','AMD','AMD'),('INTC','Intel','Intel'),('MSFT','微软','Microsoft'),('GOOGL','Alphabet','Alphabet'),('META','Meta','Meta'),('AMZN','亚马逊','Amazon')],
  'cn': [('688256','寒武纪','Cambricon'),('002230','科大讯飞','iFlytek'),('688041','海光信息','Hygon')],
@@ -77,13 +87,15 @@ def validate(raw, now=None):
     if not isinstance(raw,dict): fail('Issue must be an object')
     now=now or datetime.now(timezone.utc)
     required={'schema_version','date','kind','window_start','cutoff_at','headline','intro','takeaway','closing','stories','products','sources','markets','coverage','section_notes'}
-    if set(raw)-required-{'image'} or required-set(raw): fail('Invalid daily snapshot fields')
+    if set(raw)-required-{'image','layout_version'} or required-set(raw): fail('Invalid daily snapshot fields')
+    if 'layout_version' in raw and (type(raw['layout_version']) is not int or raw['layout_version'] != 2): fail('Unknown daily layout')
     if raw['schema_version']!='fieldtofit.daily.v1': fail('Unknown daily schema')
     day=day_key(raw['date']);cutoff=instant(raw['cutoff_at']);start=instant(raw['window_start'])
     if cutoff>now or start>=cutoff or cutoff-start>timedelta(days=2): fail('Invalid or future news window')
     if cutoff.astimezone(TZ).date().isoformat()!=day: fail('Cutoff must belong to the issue date in Beijing')
     if raw['kind'] not in ('daily','review_sample'): fail('Invalid edition kind')
     if raw['kind']=='daily' and local_time(cutoff)!=CUTOFF_AT: fail('Daily cutoff is '+CUTOFF_AT.strftime('%H:%M')+' Asia/Shanghai')
+    if raw.get('layout_version') == 2 and raw['kind'] == 'daily' and cutoff-start != timedelta(days=1): fail('Nine-section daily news window must be exactly 24 hours')
     for k in ('headline','intro','takeaway','closing'): bilingual(raw[k],k,1600 if k!='headline' else 160)
     if not isinstance(raw['sources'],list) or len(raw['sources'])>100: fail('At most 100 sources')
     source_ids=set()
@@ -109,7 +121,7 @@ def validate(raw, now=None):
         ids.add(s['id']);text(s['event_key'],'event identity',200)
         if s['event_key'] in keys: fail('Duplicate event; use a cross-reference')
         keys.add(s['event_key'])
-        if s['section'] not in SECTIONS: fail('Unknown public section')
+        if s['section'] not in news_sections(raw): fail('Unknown public section')
         if not isinstance(s['dimensions'],list) or not s['dimensions'] or not set(s['dimensions'])<=set(DIMENSIONS): fail('Invalid coverage dimensions')
         if day_key(s['event_date'])>day: fail('Future event date')
         for k in ('title','summary','analysis'): bilingual(s[k],k,200 if k=='title' else 1800)
@@ -123,7 +135,7 @@ def validate(raw, now=None):
     if highlights>3: fail('At most three highlights')
     if raw['stories'] and not highlights: fail('Choose at least one highlight')
     notes=raw['section_notes']
-    if not isinstance(notes,dict) or set(notes)!=set(SECTIONS): fail('All five news sections need a coverage note')
+    if not isinstance(notes,dict) or set(notes)!=set(news_sections(raw)): fail('All news sections need a coverage note')
     for k,v in notes.items(): bilingual(v,'section note '+k,400)
     if not isinstance(raw['products'],list) or len(raw['products'])>30: fail('At most 30 products')
     product_ids=set()

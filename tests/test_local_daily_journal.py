@@ -1,4 +1,5 @@
 """Local GPT handoff exercises the real HTTP review/publication boundary."""
+from daily_editorial_helpers import modernize, evidence_fields
 from copy import deepcopy
 from datetime import datetime, timezone, timedelta
 import json
@@ -30,16 +31,17 @@ def bundle(tmp_path, monkeypatch):
         source['published_at']=None;source['checked_at']=stamp(cutoff)
     for c in data['coverage']:
         c.update(state='checked',checked_at=stamp(cutoff),source_ids=[data['sources'][0]['id']])
-    for story in data['stories']:story['event_date']=min(story['event_date'],day)
+    for story in data['stories']:story['event_date']=day
     for product in data['products']:
-        product['release_date']=min(product['release_date'],day);product['checked_at']=stamp(cutoff)
+        product['release_date']=day;product['checked_at']=stamp(cutoff)
     for market in data['markets']:
         closed=cutoff-timedelta(days=1,hours=16 if market['id']=='us' else 1)
         market.update(trade_date=closed.astimezone(__import__('zoneinfo').ZoneInfo('America/New_York') if market['id']=='us' else TZ).date().isoformat(),closed_at=closed.isoformat())
         for row in market['rows']:
             if row['state']=='verified':row['as_of']=market['closed_at']
     evidence={'date':day,'source_checks':[{'source_id':s['id'],'url':s['url'],'checked_at':s['checked_at'],'excerpt':'Synthetic source quotation for isolated integration testing only.'} for s in data['sources']]}
-    review={'method':'local_gpt','approved':True,'issues':[],'content_hash':digest(data),'evidence_hash':digest(evidence),'reviewed_at':stamp(cutoff),'checks':dict.fromkeys(service.LOCAL_REVIEW_CHECKS,True)}
+    modernize(data);evidence.update(evidence_fields(data))
+    review={'method':'local_gpt','approved':True,'issues':[],'content_hash':digest(data),'evidence_hash':digest(evidence),'reviewed_at':stamp(cutoff),'checks':dict.fromkeys(service.EXTENDED_REVIEW_CHECKS,True)}
     for name,obj in [('issue',data),('evidence',evidence),('review',review)]:write(tmp_path/(name+'.json'),obj)
     monkeypatch.setattr(pdf,'render',lambda data,lang,image=None,revision=1:renderer(data,lang,image))
     return data,review,tmp_path,cutoff

@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 from backend.daily_briefing import service
 from backend.daily_briefing.schema import TZ, day_key, digest, project, validate
 from backend.daily_briefing.schedule import PUBLISH_AT, local_time
+from backend.daily_briefing.editorial import research_plan, validate_editorial
 
 BASE = 'https://fieldtofit.top'
 
@@ -84,6 +85,7 @@ def load_bundle(directory, day, now):
                 or not isinstance(check.get('excerpt'), str) or len(check['excerpt'].strip()) < 20):
             raise ValueError('Each original source needs a dated quotation in the evidence file')
     service.local_review(report, data)
+    validate_editorial(data, evidence, now)
     if any(c['state'] != 'checked' for c in data['coverage']):
         raise ValueError('All eleven dimensions require an actual check')
     if any(m['state'] == 'unavailable' or not any(r['state'] == 'verified' for r in m['rows']) for m in data['markets']):
@@ -140,9 +142,12 @@ def check_layout(directory, data, pages):
 def run(phase, day, directory, site=None, now=None):
     day_key(day)
     now = now or datetime.now(timezone.utc)
+    if phase == 'plan':
+        return research_plan(day)
     if phase == 'status':
         status = site.call('/api/v1/admin/daily')
         result = {'date': day, 'local_gpt_supported': status['configuration'].get('local_gpt_supported', False),
+                  'supported_layout_versions': status['configuration'].get('supported_layout_versions', [1]),
                   'cloud_pipeline_enabled': status['configuration']['enabled'],
                   'edition': site.call('/api/v1/admin/daily/' + day, missing=True)}
         write(directory / 'remote-status.json', result)
@@ -165,6 +170,11 @@ def run(phase, day, directory, site=None, now=None):
                 raise ValueError('An existing draft, correction or withdrawal requires owner inspection')
         if remote and remote['state'] == 'published':
             return verify_public(site, directory, data)
+        layouts = status['configuration'].get('supported_layout_versions', [1])
+        if data.get('layout_version', 1) not in layouts:
+            raise ValueError('Deploy nine-section support before sending a new-format edition')
+        if phase in ('stage', 'publish') and 2 in layouts and data.get('layout_version') != 2:
+            raise ValueError('New local editions require the nine-section layout and editorial evidence')
         if phase == 'stage':
             # Exact same draft can safely resume after an uncertain save/review response.
             if remote is None or remote['draft']!=data:
@@ -203,14 +213,14 @@ def run(phase, day, directory, site=None, now=None):
 def main():
     os.umask(0o077)
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=('status', 'validate', 'stage', 'publish', 'check'))
+    parser.add_argument('phase', choices=('plan', 'status', 'validate', 'stage', 'publish', 'check'))
     parser.add_argument('--day', default=datetime.now(TZ).date().isoformat())
     parser.add_argument('--directory', type=Path)
     parser.add_argument('--env-file', type=Path, default=ROOT / '.env')
     args = parser.parse_args()
     directory = args.directory or ROOT / 'output' / 'daily-journal' / day_key(args.day)
     try:
-        site = None if args.phase == 'validate' else Website(args.env_file)
+        site = None if args.phase in ('plan', 'validate') else Website(args.env_file)
         result = run(args.phase, args.day, directory, site)
         print(json.dumps(result, ensure_ascii=False))
         return 0

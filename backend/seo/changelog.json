@@ -1,7 +1,35 @@
 {
-  "version": "1.11.8",
-  "revision": "ebca90cc92f0e1b405fa459b6dcaa4040bee071552bfe7311392bf00ee58266f",
+  "version": "1.12.0",
+  "revision": "13ea87978e8351b01ca0fd11c3ba6e854856bdd52703463bec9892c97a72f6c6",
   "items": [
+    {
+      "version": "1.12.0",
+      "date": "2026-10-18",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "日报九栏目与取材核验升级",
+          "highlights": [
+            "日报采用九栏目顺序，热点AI产品追踪独立成栏，商业动态位于监管政策之后；网页、双语PDF和AI读取同步。",
+            "具身智能、基础设施与商业动态增加细分主题、中英文检索和媒体线索追溯，核对原始日期、事件阶段及融资交易口径。",
+            "新版取材、事件与产品记录绑定复核和PDF校样；保留历史日报结构、内容哈希与已发布PDF。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Nine-section daily journal and editorial evidence",
+          "highlights": [
+            "Give the daily journal nine ordered sections, with a standalone product tracker and business after policy across web, bilingual PDFs and AI reading.",
+            "Expand robotics, infrastructure and business research through topic checks, Chinese and international searches and media leads, verifying original dates, event stages and transaction terms.",
+            "Bind new research, event and product evidence to editorial review and PDF proofs while preserving historical layouts, content hashes and published PDFs."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.12.0"
+    },
     {
       "version": "1.11.8",
       "date": "2026-10-18",
