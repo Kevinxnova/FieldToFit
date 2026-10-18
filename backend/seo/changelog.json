@@ -1,34 +1,34 @@
 {
-  "version": "1.11.7",
-  "revision": "c7f93548b80ea9d3158ee2f3380eb8fd14b9080bf47df474cdf1b910dbfa3b47",
+  "version": "1.11.8",
+  "revision": "ebca90cc92f0e1b405fa459b6dcaa4040bee071552bfe7311392bf00ee58266f",
   "items": [
     {
-      "version": "1.11.7",
+      "version": "1.11.8",
       "date": "2026-10-18",
-      "deployed_on": "",
+      "deployed_on": "2026-10-18",
       "copy": {
         "zh": {
-          "title": "Day 12／13与Dots入口补录",
+          "title": "GPT-6系统卡、DeepSeek联网与获批日报",
           "highlights": [
-            "整理官方Day 12的子代理上下文复用、缓存与路由优化，以及Day 13额度重置公告，分别保留10月17日与18日真实北京日期。",
-            "补录Dots的iOS主屏小组件与Shortcuts入口，保留已有dot权限、应用版本和通话条件；为既有Pro升级补Tibo真实转引与同款头像，不重复计事件或制造分项编号。",
-            "本批具体批准后沿用双语草稿、双端预览与明确发布；公告与已生效重置分开，既有新闻、信息卡、报告、图表和日程保持。"
+            "整理DeepSeek新检查点、联网工具及OpenAI／Gemini迁移提醒，同步对应档案、首页重点和完整近期动态，保留原公告日期与历史。",
+            "所选GPT-6十月系统卡提供四结论、同号论述与三张本站重绘，区分产品月份、长度校正和Agent边界；正式上站后轮换首页四篇，全部索引保留旧报告。",
+            "所选Search／Fetch信息卡沿用原动态编号，提供中英文分享图与稳定二维码；成功发布后进入首页首位，旧卡保留索引、详情及原分享链接。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Day 12 and 13 updates and Dots entry points",
+          "title": "GPT-6 safety analysis, DeepSeek web tools and approved daily updates",
           "highlights": [
-            "Cover official Day 12 context reuse, caching and routing improvements and the Day 13 reset announcement, retaining their genuine October 17 and 18 Beijing dates.",
-            "Backfill Dots iOS widgets and Shortcuts with existing-access, app-version and calling conditions. Add Tibo's authentic linked post and avatar to the existing Pro update without duplicate events or invented step numbers.",
-            "Use specifically approved bilingual drafts, matching web and AI previews and explicit publication. Keep announcements separate from confirmed effective resets and preserve existing news, cards, reports, charts and schedules."
+            "Cover the DeepSeek checkpoint, web tools and OpenAI / Gemini migration notices, updating related profiles, homepage highlights and full news while retaining original dates and history.",
+            "Present the selected GPT-6 October system card with four findings, matching arguments and three FieldToFit redraws, distinguishing product month, length adjustment and agent boundaries. Rotate homepage reports after publication and retain the full index.",
+            "Attach the selected Search / Fetch card to the same news identity, with Chinese and English share images and stable QR links. Enter the homepage after publication and preserve older cards, details and share links."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.7"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.11.8"
     },
     {
       "version": "1.11.6",

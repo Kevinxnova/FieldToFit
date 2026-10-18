@@ -781,5 +781,81 @@
       "MFU_normalization_PFLOPS": 2.5,
       "scope": "Qualitative MoE diagram; metrics are not directly comparable"
     }
+  },
+  "/report-figures/gpt6-oct2026-versions.png": {
+    "sha256": "20616ff5c2cafe3fb4c706b755d9131a388d09cce84f9288b5ee62040f586774",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-october"
+    ],
+    "license": "Graphics © FieldToFit; source facts: OpenAI, GPT-6 Sol and GPT-6 Luna: October 2026 update, 2026-10-07.",
+    "version": "October 2026 update; unnumbered",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "scope": "Factual schematic at 2026-10-07 report publication, not a current deployment assertion",
+      "products": {
+        "ChatGPT": "October",
+        "Codex / Work": "September"
+      },
+      "locator": "Introduction"
+    }
+  },
+  "/report-figures/gpt6-oct2026-healthbench.png": {
+    "sha256": "502f089308b81c3419ef6a3cd3ed0144d8dffa1877eab1b862e158d741188b88",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-october"
+    ],
+    "license": "Graphics © FieldToFit; source facts: OpenAI, GPT-6 Sol and GPT-6 Luna: October 2026 update, 2026-10-07.",
+    "version": "October 2026 update; unnumbered",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Table 5, HealthBench Professional",
+      "raw_score": [
+        56.6,
+        62.2,
+        46.8,
+        57.8
+      ],
+      "length_adjusted_score": [
+        54.0,
+        55.2,
+        44.1,
+        48.2
+      ],
+      "mean_visible_response_characters": [
+        2894,
+        4360,
+        2920,
+        5289
+      ],
+      "score_scale": [
+        0,
+        100
+      ],
+      "scope": "Vendor benchmark, not clinical outcomes; no inferred task counts or confidence intervals"
+    }
+  },
+  "/report-figures/gpt6-oct2026-warnings.png": {
+    "sha256": "2a05253501d262c1718b2346a7f24e4c047738201e7b302f63ede3f43b592952",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-october"
+    ],
+    "license": "Graphics © FieldToFit; source facts: OpenAI, GPT-6 Sol and GPT-6 Luna: October 2026 update, 2026-10-07.",
+    "version": "October 2026 update; unnumbered",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Respecting Warnings; Figure 5 text",
+      "conditional_failure_percent": [
+        34,
+        28,
+        27,
+        15.9
+      ],
+      "scale": [
+        0,
+        100
+      ],
+      "reasoning": "maximum",
+      "scope": "Simulated primarily low-stakes tasks, without system-level safeguards; point estimates only, no inferred sample sizes or confidence intervals"
+    }
   }
 }

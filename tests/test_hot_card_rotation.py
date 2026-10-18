@@ -101,7 +101,7 @@ def test_publish_rotates_atomically_and_keeps_images_dates_private_drafts(client
     with pytest.raises(Exception, match='Draft changed'):
         ws.publish('news', old_ids[1], {**stale, 'confirmed': True, 'reason': 'Old preview must fail'})
     assert client.get('/news/' + old_ids[-1]).status_code == 200
-    assert client.get('/api/v1/platform/reading?view=hot-cards').json['news']['total'] == 4
+    assert client.get('/api/v1/platform/reading?view=hot-cards').json['news']['total'] == sum(bool(i.get('hot_card')) for i in before['items']) + 1
 
 
 def test_failed_stale_or_invalid_preview_leaves_every_row_unchanged(client, fourth, monkeypatch):
@@ -126,7 +126,8 @@ def test_failed_stale_or_invalid_preview_leaves_every_row_unchanged(client, four
 
 
 def test_copy_check_layout_do_not_promote_old_card_and_withdraw_is_distinct(client, fourth):
-    old_ids = public(client)['hot_card_selection']['ids']
+    before = public(client)
+    old_ids = before['hot_card_selection']['ids']
     publish(fourth)
     ident = old_ids[-1]
     original = ws.detail('news', ident)
@@ -143,10 +144,11 @@ def test_copy_check_layout_do_not_promote_old_card_and_withdraw_is_distinct(clie
     result = ws.publish('news', fourth, {'draft_version': current['draft_version'], 'reason': 'Isolated withdrawal'}, True)
     assert result['hot_card_rotation']['status'] == 'withdrawn' and not result['hot_card_rotation']['index_only']
     assert client.get('/news/' + fourth).status_code == 404
-    assert client.get('/api/v1/platform/reading?view=hot-cards').json['news']['total'] == 3
+    assert client.get('/api/v1/platform/reading?view=hot-cards').json['news']['total'] == sum(bool(i.get('hot_card')) for i in before['items'])
 
 
 def test_home_html_http_mcp_share_one_complete_selection(site, fourth):
+    baseline = sum(bool(i.get('hot_card')) for i in public(site)['items'])
     publish(fourth)
     for lang in ('zh', 'en'):
         data = site.get('/api/v1/platform/news?lang=' + lang).json
@@ -163,7 +165,7 @@ def test_home_html_http_mcp_share_one_complete_selection(site, fourth):
         rpc = site.post('/api/mcp/curated', headers=MCP, json={'jsonrpc':'2.0','id':1,'method':'tools/call',
             'params':{'name':'curated_news','arguments':{'lang':lang}}}).json['result']
         assert rpc['structuredContent'] == data
-        assert len([i for i in data['items'] if i.get('hot_card')]) == 4
+        assert len([i for i in data['items'] if i.get('hot_card')]) == baseline + 1
 
 
 def test_handoff_never_invents_checks_and_preserves_same_batch_proposals():

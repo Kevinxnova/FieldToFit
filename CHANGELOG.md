@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.11.8"></a>
+## v1.11.8 · GPT-6系统卡、DeepSeek联网与获批日报 · 2026-10-18
+
+<!-- site-deployed:2026-10-18 -->
+<!-- public-title:en:GPT-6 safety analysis, DeepSeek web tools and approved daily updates -->
+<!-- release-summary:zh:start -->
+- 整理DeepSeek新检查点、联网工具及OpenAI／Gemini迁移提醒，同步对应档案、首页重点和完整近期动态，保留原公告日期与历史。
+- 所选GPT-6十月系统卡提供四结论、同号论述与三张本站重绘，区分产品月份、长度校正和Agent边界；正式上站后轮换首页四篇，全部索引保留旧报告。
+- 所选Search／Fetch信息卡沿用原动态编号，提供中英文分享图与稳定二维码；成功发布后进入首页首位，旧卡保留索引、详情及原分享链接。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Cover the DeepSeek checkpoint, web tools and OpenAI / Gemini migration notices, updating related profiles, homepage highlights and full news while retaining original dates and history.
+- Present the selected GPT-6 October system card with four findings, matching arguments and three FieldToFit redraws, distinguishing product month, length adjustment and agent boundaries. Rotate homepage reports after publication and retain the full index.
+- Attach the selected Search / Fetch card to the same news identity, with Chinese and English share images and stable QR links. Enter the homepage after publication and preserve older cards, details and share links.
+<!-- release-summary:en:end -->
+
+对应REQ-11、REQ-6-31至34、REQ-22-8和REQ-23。兼容内容／静态资源patch，无迁移。未选报告、未核验线索、榜单和日程不改变。现有回归改为按完整卡片集合核对总数，避免把首页三张上限误用于历史索引；备份、预览、两类实际轮换与部署状态见[验收](docs/validation/2026-10-18-gpt6-deepseek-and-daily.md)。
+
 <a id="v1.11.7"></a>
 ## v1.11.7 · Day 12／13与Dots入口补录 · 2026-10-18
 

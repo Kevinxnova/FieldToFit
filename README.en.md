@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.11.7](CHANGELOG.md#v1.11.7)** · Release tag not yet published
+**Current source version: [v1.11.8](CHANGELOG.md#v1.11.8)** · [fieldtofit-v1.11.8](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.11.8)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Cover official Day 12 context reuse, caching and routing improvements and the Day 13 reset announcement, retaining their genuine October 17 and 18 Beijing dates.
-- Backfill Dots iOS widgets and Shortcuts with existing-access, app-version and calling conditions. Add Tibo's authentic linked post and avatar to the existing Pro update without duplicate events or invented step numbers.
-- Use specifically approved bilingual drafts, matching web and AI previews and explicit publication. Keep announcements separate from confirmed effective resets and preserve existing news, cards, reports, charts and schedules.
+- Cover the DeepSeek checkpoint, web tools and OpenAI / Gemini migration notices, updating related profiles, homepage highlights and full news while retaining original dates and history.
+- Present the selected GPT-6 October system card with four findings, matching arguments and three FieldToFit redraws, distinguishing product month, length adjustment and agent boundaries. Rotate homepage reports after publication and retain the full index.
+- Attach the selected Search / Fetch card to the same news identity, with Chinese and English share images and stable QR links. Enter the homepage after publication and preserve older cards, details and share links.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

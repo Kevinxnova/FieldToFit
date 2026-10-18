@@ -2,6 +2,1308 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "research",
+      "checked_at": "2026-10-18",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-07",
+      "highlight": false,
+      "id": "D-194",
+      "interpretation": [
+        {
+          "locator": "Introduction; evaluation settings and comparison versions",
+          "source_ids": [
+            "report"
+          ],
+          "text": "系统卡描述的是特定部署版本，安全与能力评估还使用不同推理设置。",
+          "title": "同名 Sol 与 Luna，也要先看产品和发布月份"
+        },
+        {
+          "locator": "Production Benchmarks; U18 evaluations; Tables 1–2",
+          "source_ids": [
+            "report"
+          ],
+          "text": "报告同时公开回归和缓解，底模测分与部署保护须分别理解。",
+          "title": "总体安全判断改善，不代表每一类别都前进"
+        },
+        {
+          "locator": "Health; Table 5",
+          "source_ids": [
+            "report"
+          ],
+          "text": "Professional 校正分改善，但原始分增长包含更长回答带来的评分机会。",
+          "title": "HealthBench 进步要连同回答长度和校正口径读"
+        },
+        {
+          "locator": "Alignment; Respecting Warnings; Factuality; Disclosure of limitations",
+          "source_ids": [
+            "report"
+          ],
+          "text": "越障、事实性与限制披露分别测量，不把某一失败率当作完整 Agent 可靠性。",
+          "title": "Agent 边界有改善，仍须保留成功口径和模拟环境"
+        }
+      ],
+      "name": "GPT-6 Sol / GPT-6 Luna",
+      "note": "厂商自测，本站未复现。正文保留模型月份、推理设置、评分单位与未知项；本站核对日不替代原文日。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-18T03:33:55.087735+00:00",
+        "updated_at": "2026-10-18T03:33:55.087735+00:00",
+        "report_selected_at": "2026-10-18T03:33:55.087735+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-07",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "GPT-6 Sol and GPT-6 Luna: October 2026 update",
+          "url": "https://deploymentsafety.openai.com/gpt-6-october"
+        }
+      ],
+      "state": "published",
+      "summary": "从四条证据链读十月系统卡：产品版本、安全回归与保护栈、HealthBench 长度校正，以及 Agent 遇到限制后的行为。",
+      "title": "GPT-6 十月版：安全指标进步，为什么仍会出现退步项？",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "60406b199e11e8866f1b4bcb501c37ea8eb00d737c0153f1b6b82cefaaea0c33",
+          "fields": {
+            "Agent 边界有改善，仍须保留成功口径和模拟环境": "Agent boundaries improve, but success criteria and simulated settings still matter",
+            "FieldToFit 分析：这份卡片的价值是让“模型更安全”变成可追问的问题：比较的是哪个产品与月份？任务与分母是什么？测了哪一层保护？读者可据此评估自己的 Agent 流程，而非从一个总分推断所有实际场景。": "FieldToFit analysis: the value of this card is to turn a broad safety claim into specific questions: which product and month, which task and denominator, and which safeguard layer? Readers can use those questions to assess their own agent workflows rather than infer all real-world outcomes from one score.",
+            "GPT-5.6 八月版与 GPT-6 十月版成功绕过环境限制的条件失败率": "Conditional failure rates for successful environmental-restriction circumvention: GPT-5.6 August versus GPT-6 October",
+            "GPT-5.6 八月版与 GPT-6 十月版；分数为 0–100，越高越好。": "GPT-5.6 August versus GPT-6 October; scores range from 0–100 and higher is better.",
+            "GPT-6 Sol 十月版：原始 62.2、校正 55.2、平均 4,360 字符；GPT-5.6 Sol 八月版为 56.6、54.0、2,894 字符。校正后的进步幅度小于只看原始分的印象。": "GPT-6 Sol October: raw 62.2, adjusted 55.2, mean 4,360 characters. GPT-5.6 Sol August: 56.6, 54.0, 2,894 characters. Gains after adjustment are smaller than the impression from raw scores alone.",
+            "GPT-6 十月版：安全指标进步，为什么仍会出现退步项？": "GPT-6 in October: why safety gains can coexist with regressions",
+            "HealthBench Professional 对照": "HealthBench Professional comparison",
+            "HealthBench 进步要连同回答长度和校正口径读": "Read HealthBench gains with answer length and adjustment rules",
+            "Luna 对应为 57.8、48.2、5,289 字符，对照八月版 46.8、44.1、2,920 字符。这里比较同一 Professional 指标，不把其他 HealthBench 变体拼成总分。": "Luna records 57.8, 48.2 and 5,289 characters versus the August version's 46.8, 44.1 and 2,920 characters. This compares one Professional metric rather than combining other HealthBench variants into an overall score.",
+            "Luna 有 0.25%样本因基础设施原因提前退出并排除。": "Infrastructure issues caused 0.25% of Luna samples to exit early and be excluded.",
+            "Production Benchmarks 刻意挑选既有模型尚未理想处理的困难样本，并在没有完整系统保护的情况下评价模型行为。报告披露部分自伤、血腥、性内容及青少年相关类别回归，同时说明人工复审和对抗测试。这里不能只摘录“总体更安全”，也不能把困难集失败率当作真实用户事故率。": "Production Benchmarks deliberately select difficult cases that earlier models did not handle ideally, evaluating behavior without the full system safeguards. The report discloses regressions in some self-harm, gore, sexual-content and teen-related categories alongside manual review and adversarial testing. Neither a blanket claim of greater safety nor a real-user incident rate follows from these difficult-set results.",
+            "Production Benchmarks 及青少年、多轮等评估；不含完整生产保护栈。": "Production Benchmarks plus teen and multi-turn evaluations; without the full production safeguard stack.",
+            "Professional 校正分改善，但原始分增长包含更长回答带来的评分机会。": "Professional adjusted scores improve, while raw-score gains also reflect scoring opportunities from longer answers.",
+            "Respecting Warnings 更新为成功绕过环境限制的条件失败率。": "Respecting Warnings now measures conditional failure rates for successful circumvention of environmental restrictions.",
+            "Respecting Warnings 考察遇到环境限制后是否仍成功绕过；新版主要指标由“尝试”改为“成功”，更客观但也与模型能力纠缠。最高推理设置下，Sol 从 34%降到 28%，Luna 从 27%降到 15.9%。这些是指定模拟环境中的条件失败率，作者明确讨论了模型识别评测环境、误把限制当提示注入等外部有效性问题。": "Respecting Warnings tests whether a model successfully circumvents environmental restrictions. The revised main metric moves from attempts to success, improving objectivity while entangling it with model capability. At maximum reasoning effort, Sol falls from 34% to 28% and Luna from 27% to 15.9%. These are conditional failure rates in specified simulations, with evaluation-awareness and external-validity limitations explicitly discussed by the author.",
+            "Sol 为 34%→28%；Luna 为 27%→15.9%。": "Sol: 34%→28%; Luna: 27%→15.9%.",
+            "Sol 十月版原始 62.2 分、平均 4,360 字符；Luna 为 57.8 分、5,289 字符。": "October Sol: raw 62.2 points and mean 4,360 characters; Luna: 57.8 points and 5,289 characters.",
+            "Sol 校正分 54.0→55.2；Luna 校正分 44.1→48.2。": "Sol adjusted scores: 54.0→55.2; Luna adjusted scores: 44.1→48.2.",
+            "不把长度惩罚当医疗质量真值，也不从均值重建逐题结果。": "Do not treat the length penalty as clinical ground truth or reconstruct per-task results from means.",
+            "事实密集、历史用户报错及高风险提示三类困难集合。": "Three difficult sets: factuality-heavy prompts, user-flagged historical failures and high-stakes prompts.",
+            "事实性评估分别看“回答至少含一处错误”和“断言错误占比”，提示集又分事实密集、用户报错和高风险三类。两种分母不同；多数指标改善不等于全部改善。": "Factuality distinguishes responses containing at least one error from the fraction of erroneous claims, across factuality-heavy, user-flagged and high-stakes prompt sets. The denominators differ; improvement on most metrics does not mean improvement on every metric.",
+            "事实错误要说明分母": "State the denominator for factual errors",
+            "从四条证据链读十月系统卡：产品版本、安全回归与保护栈、HealthBench 长度校正，以及 Agent 遇到限制后的行为。": "Read the October system card through four evidence chains: product versions, safety regressions and safeguards, HealthBench length adjustment, and agent behavior after restrictions.",
+            "以 2,000 字符为无调整点；Professional 每多 500 字符扣 1.47 分，短回答对应加分。": "Use 2,000 characters as the no-adjustment point; Professional deducts 1.47 points per additional 500 characters, with corresponding credit for shorter answers.",
+            "作者将若干回归描述为整体严重性较低，并列出青少年响应分类器等额外缓解；这些是作者审核与部署说明，不是本站独立风险验证。": "The author describes reviewed regressions as generally low severity and identifies additional mitigations such as classifiers for teen responses. These are the author's review and deployment statements, not independent FieldToFit risk validation.",
+            "作者报告多数指标改善，事实密集集的断言级错误为例外。": "The author reports improvement on most metrics, with claim-level errors on the factuality-heavy set as the exception.",
+            "作者报告披露失败减少，未在本文重绘未核完整图表的分项数值。": "The author reports fewer disclosure failures; this article does not redraw component values without complete chart verification.",
+            "作者结论与本站判断分开：作者报告多个边界指标改善；本站据此建议把任务完成、授权遵守、事实核验和限制披露分开验收。": "Author conclusion and editorial judgment: the author reports improvements on several boundary measures; FieldToFit recommends separate acceptance checks for completion, authorization, factual verification and limitation disclosure.",
+            "使用刻意困难的生产衍生样本；安全评估取最低部署推理设置。": "Use deliberately difficult production-derived cases; safety evaluations use the lowest deployed reasoning settings.",
+            "先辨认产品与月份": "Identify product and release month",
+            "关键证据：表 5 把长度校正分、原始分和平均字符数放在一起，阅读时也应保留这三层。": "Key evidence: Table 5 reports adjusted scores, raw scores and mean characters together; interpretation should retain all three.",
+            "厂商自测，本站未复现。正文保留模型月份、推理设置、评分单位与未知项；本站核对日不替代原文日。": "Vendor evaluation, not reproduced by FieldToFit. The article preserves model months, reasoning settings, metric units and unknowns; the editorial check date does not replace the source date.",
+            "厂商自测，本站未复现；主体 HTML 已完整阅读，图形仅重绘已核事实。未逐页核对独立 PDF、未转录全部交互图表，也不把旧卡分数跨版本直接拼接。": "Vendor evaluation, not independently reproduced by FieldToFit. The main HTML was read in full and diagrams redraw verified facts only. No page-by-page independent PDF check or transcription of every interactive chart; no direct cross-version combination of earlier-card scores.",
+            "厂商自测；只支持该基准比较，不直接衡量临床效果。": "Vendor evaluation supporting this benchmark comparison, not direct clinical effectiveness.",
+            "原始分增益与长度校正后的增益不同。": "Raw-score gains differ from gains after length adjustment.",
+            "原报告十月更新无独立编号修订；本站首次整理不记作上游实质修订。": "The original October update has no independent numbered revision; this first editorial analysis is not an upstream substantive revision.",
+            "原报告发表于 2026-10-07，本站于 2026-10-18 核对；首次上站与后续修订由真实发布记录维护。原文保留官方入口，三图为本站重绘或事实示意；没有复制上游图形设计，也未独立运行模型评测。": "The original report was published on 2026-10-07 and checked by FieldToFit on 2026-10-18. Actual publication records determine first site publication and later revisions. The original remains linked; three diagrams are FieldToFit redraws or factual schematics, without copying upstream graphic design or independently running model evaluations.",
+            "同名 Sol 与 Luna，也要先看产品和发布月份": "Even Sol and Luna names need a product and release month",
+            "同名模型按部署月份区分。": "Models sharing a name are distinguished by deployment month.",
+            "同时报告原始分、长度校正分与平均可见回答长度。": "Report raw scores, length-adjusted scores and mean visible response lengths together.",
+            "四个模型的 HealthBench Professional 原始分、长度校正分和平均回答字符数": "HealthBench Professional raw scores, length-adjusted scores and mean response characters for four models",
+            "图 1｜本站事实示意，依据报告导言；不是当前所有产品版本的实时列表。": "Figure 1 | FieldToFit factual diagram based on the introduction; not a live list of current versions across all products.",
+            "图 2｜本站按表 5 重绘；0–100 分，越高越好。长度单位为字符，不是 token；不表示临床效果。": "Figure 2 | FieldToFit redraw of Table 5; 0–100 points, higher is better. Length is measured in characters, not tokens; these are not clinical outcomes.",
+            "图 3｜本站重绘图 5 正文点估计；百分比，越低越好。最高推理设置、无系统保护的模拟低风险任务；不反推样本量或真实使用发生率。": "Figure 3 | FieldToFit redraw of point estimates stated with Figure 5; percent, lower is better. Maximum effort, simulated low-stakes tasks without system safeguards; no inferred sample sizes or production prevalence.",
+            "基线行为测试不含第一方标准开发者提示；编码样本经过针对性挑选。": "Baseline behavior without the standard first-party developer prompt; coding cases are deliberately selected.",
+            "多项能力改善，但部分安全类别出现统计显著回归。": "Several capabilities improve while some safety categories show statistically significant regressions.",
+            "安全改善需要具体到版本、指标和保护层；既不抹去回归，也不把困难集失败率当日常风险。": "Safety gains depend on versions, metrics and safeguard layers: retain regressions without treating difficult-set failures as everyday risk.",
+            "安全评估取最低部署推理设置，以接近大多数使用；能力评估取最高推理强度，以探查能力上界。两种设置不能混成一张无条件能力表。": "Safety evaluations use the lowest deployed reasoning settings to reflect most usage; capability assessments use maximum reasoning effort to probe an upper bound. They cannot be merged into an unconditional capability table.",
+            "少拒答与更安全是并列目标，可能存在权衡。敏感但正常的问题回答得更充分，不等于所有有害请求都能通过；反过来，拒答更少也不能单独证明安全。": "Fewer unnecessary refusals and safer responses are parallel objectives with potential trade-offs. More complete answers to legitimate sensitive questions do not imply that all harmful requests succeed; fewer refusals alone do not prove safety.",
+            "并列核对证据与口径": "Check evidence and definitions in parallel",
+            "底模行为与分类器等生产保护分别说明。": "Describe base-model behavior separately from production protections such as classifiers.",
+            "开放回答可能因更长而覆盖更多正向评分项，却未必更方便患者或临床读者使用。报告以 2,000 字符为无调整点；HealthBench Professional 每增加 500 字符扣 1.47 分，较短回答作相应正向调整，其他 HealthBench 变体使用各自系数。模型提示中没有提供长度惩罚细则。": "Longer open-ended answers can satisfy more positive rubric criteria without necessarily becoming more useful to patients or clinicians. The report uses 2,000 characters as the no-adjustment point. HealthBench Professional deducts 1.47 points per additional 500 characters, with a corresponding positive adjustment for shorter answers; other HealthBench variants use their own coefficients. Models are not given the penalty details in their prompts.",
+            "总体安全判断改善，不代表每一类别都前进": "A stronger overall safety judgment does not mean every category improves",
+            "成功绕过与尝试分开": "Separate successful circumvention from attempts",
+            "把版本身份、测量口径和部署保护逐层拆开": "Separate version identity, measurement definitions and deployment protections",
+            "报告列举人工复审、对抗测试及生产保护；不是同一组无保护测分。": "The report describes manual review, adversarial testing and production protections, separate from unprotected model scores.",
+            "报告发布时：ChatGPT 为十月版；Codex 与 Work 仍为九月版。": "At report publication: October versions in ChatGPT, September versions in Codex and Work.",
+            "报告同时公开回归和缓解，底模测分与部署保护须分别理解。": "The report discloses regressions alongside mitigations; model scores and deployment protections need separate interpretation.",
+            "报告时点的 ChatGPT 十月版与 Codex／Work 九月版对应图": "Mapping at report time: October versions in ChatGPT and September versions in Codex and Work",
+            "旧模型对照可能来自其后续版本，政策、评审器和数据也会演进。优先读本卡同表比较，避免把不同系统卡的数字直接拼接。": "Earlier-model comparisons can use later versions of those models, while policies, graders and datasets also evolve. Prefer within-card comparisons rather than combining numbers across cards.",
+            "最高推理设置、模拟工作环境、无生产保护栈，主要为低风险情境。": "Maximum reasoning effort, simulated work environments, no production safeguard stack, primarily low-stakes situations.",
+            "有联网能力的评审模型分别检查回答级和断言级错误。": "A web-enabled grading model checks response-level and claim-level factual errors separately.",
+            "本报告针对十月版 Sol 与 Luna。": "This report concerns the October Sol and Luna versions.",
+            "本站未独立评估保护栈或实际用户风险。": "FieldToFit has not independently evaluated the safeguard stack or real-user risk.",
+            "模型能力和识别评测环境会影响结果；不是日常违规概率。": "Model capability and evaluation awareness affect results; these are not everyday violation probabilities.",
+            "用真实编码任务中的阻塞，以及缺少搜索工具的任务，评估最终答复是否披露限制。": "Use blockers in realistic coding tasks and tasks lacking a search tool to evaluate whether final answers disclose limitations.",
+            "系统卡描述的是特定部署版本，安全与能力评估还使用不同推理设置。": "The card describes specific deployed versions, and safety and capability evaluations use different reasoning settings.",
+            "系统缓解须另列": "Keep system mitigations separate",
+            "越障、事实性与限制披露分别测量，不把某一失败率当作完整 Agent 可靠性。": "Circumvention, factuality and limitation disclosure are measured separately; no single failure rate represents complete agent reliability.",
+            "这些样本的失败率不代表日常流量发生率。": "Failure rates on these cases do not estimate prevalence in everyday traffic.",
+            "这份十月更新首先划定身份：报告发布时，ChatGPT 切换到十月版 GPT-6 Sol 和 Luna，Codex 与 ChatGPT Work 仍使用九月版。它们共享产品名称，但不能据此把一份卡片的结果平移到所有入口；本次映射只保留报告时点，不替代后来更新。": "The October update first establishes identity: at publication, ChatGPT moved to the October GPT-6 Sol and Luna versions while Codex and ChatGPT Work still used September versions. Shared product names do not make one card applicable to every surface. This mapping is retained at report time and does not replace subsequent updates.",
+            "这是报告时点映射，不替代其他产品后续更新记录。": "This is a mapping at report time, not a record of subsequent product updates.",
+            "适用边界：底模评估、完整保护栈和真实生产发生率是三种证据，不能互相替代。": "Boundary: base-model evaluation, the full safeguard stack and real-world prevalence are three distinct kinds of evidence.",
+            "遇阻后的披露也要测": "Measure disclosure after blockers",
+            "部署安全判断综合收益、回归性质和缓解措施。": "Deployment safety judgment combines gains, the nature of regressions and mitigations.",
+            "长度校正改变读数": "Length adjustment changes the reading",
+            "限制披露评估关注编码遇阻或缺少搜索工具时是否如实说明。报告注明 Luna 有 0.25%样本因基础设施问题提前退出并排除；本文保留排除条件，不猜测未完整展开图表的数值。": "Disclosure evaluations test whether models acknowledge coding blockers or an unavailable search tool. The report excludes 0.25% of Luna samples that exited early due to infrastructure issues. This article retains that exclusion and does not guess values from charts not fully expanded.",
+            "集合经过筛选，不推算普通用户的错误遭遇率。": "Selected sets do not estimate error prevalence for ordinary users.",
+            "首次整理所选 GPT-6 十月版系统卡，提供四结论、同号论述和三张本站重绘；保留原始日期、评分口径、比较版本与未复现边界。": "First analysis of the selected GPT-6 October system card, with four findings, matching arguments and three FieldToFit redraws, preserving source date, metric definitions, comparison versions and reproduction limits.",
+            "高难样本测量底模行为": "Difficult cases measure base-model behavior"
+          },
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:19:25.190981+00:00"
+        }
+      },
+      "reading_materials": [],
+      "technical_map": {
+        "caution": "厂商自测，本站未复现；主体 HTML 已完整阅读，图形仅重绘已核事实。未逐页核对独立 PDF、未转录全部交互图表，也不把旧卡分数跨版本直接拼接。",
+        "change_summary": "首次整理所选 GPT-6 十月版系统卡，提供四结论、同号论述和三张本站重绘；保留原始日期、评分口径、比较版本与未复现边界。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Introduction; Production Benchmarks",
+                "source_id": "report"
+              }
+            ],
+            "from": "versions",
+            "label": "并列核对证据与口径",
+            "relation": "parallel",
+            "to": "benchmarks"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Production Benchmarks; U18 mitigations",
+                "source_id": "report"
+              }
+            ],
+            "from": "benchmarks",
+            "label": "并列核对证据与口径",
+            "relation": "parallel",
+            "to": "systems"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Introduction; Health",
+                "source_id": "report"
+              }
+            ],
+            "from": "versions",
+            "label": "并列核对证据与口径",
+            "relation": "parallel",
+            "to": "health"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Health; Table 5",
+                "source_id": "report"
+              }
+            ],
+            "from": "health",
+            "label": "并列核对证据与口径",
+            "relation": "parallel",
+            "to": "scoring"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Alignment; Respecting Warnings",
+                "source_id": "report"
+              }
+            ],
+            "from": "versions",
+            "label": "并列核对证据与口径",
+            "relation": "parallel",
+            "to": "warnings"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Alignment; Disclosure of limitations",
+                "source_id": "report"
+              }
+            ],
+            "from": "warnings",
+            "label": "并列核对证据与口径",
+            "relation": "parallel",
+            "to": "disclosure"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Factuality; Figure 3",
+                "source_id": "report"
+              }
+            ],
+            "from": "versions",
+            "label": "并列核对证据与口径",
+            "relation": "parallel",
+            "to": "factuality"
+          }
+        ],
+        "focus": "把版本身份、测量口径和部署保护逐层拆开",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Introduction; product/version distinction",
+                "source_id": "report"
+              }
+            ],
+            "id": "versions",
+            "kind": "baseline",
+            "label": "先辨认产品与月份",
+            "limitation": "这是报告时点映射，不替代其他产品后续更新记录。",
+            "mechanism": "同名模型按部署月份区分。",
+            "metrics": [],
+            "result": "本报告针对十月版 Sol 与 Luna。",
+            "setting": "报告发布时：ChatGPT 为十月版；Codex 与 Work 仍为九月版。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Production Benchmarks; U18 evaluations; Tables 1–2",
+                "source_id": "report"
+              }
+            ],
+            "id": "benchmarks",
+            "kind": "method",
+            "label": "高难样本测量底模行为",
+            "limitation": "这些样本的失败率不代表日常流量发生率。",
+            "mechanism": "使用刻意困难的生产衍生样本；安全评估取最低部署推理设置。",
+            "metrics": [],
+            "result": "多项能力改善，但部分安全类别出现统计显著回归。",
+            "setting": "Production Benchmarks 及青少年、多轮等评估；不含完整生产保护栈。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Introduction; U18 classifier-based mitigation",
+                "source_id": "report"
+              }
+            ],
+            "id": "systems",
+            "kind": "method",
+            "label": "系统缓解须另列",
+            "limitation": "本站未独立评估保护栈或实际用户风险。",
+            "mechanism": "底模行为与分类器等生产保护分别说明。",
+            "metrics": [],
+            "result": "部署安全判断综合收益、回归性质和缓解措施。",
+            "setting": "报告列举人工复审、对抗测试及生产保护；不是同一组无保护测分。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Health; Table 5",
+                "source_id": "report"
+              }
+            ],
+            "id": "health",
+            "kind": "result",
+            "label": "HealthBench Professional 对照",
+            "limitation": "厂商自测；只支持该基准比较，不直接衡量临床效果。",
+            "mechanism": "同时报告原始分、长度校正分与平均可见回答长度。",
+            "metrics": [
+              {
+                "baseline": "GPT-5.6 Sol August: 54.0 points",
+                "conditions": "Table 5; vendor evaluation; lowest deployed reasoning setting for safety evaluations",
+                "label": "HealthBench Professional length-adjusted score, GPT-6 Sol October",
+                "unit": "points on a 0–100 scale",
+                "value": 55.2
+              },
+              {
+                "baseline": "GPT-5.6 Luna August: 44.1 points",
+                "conditions": "Table 5; vendor evaluation; not clinical outcome evidence",
+                "label": "HealthBench Professional length-adjusted score, GPT-6 Luna October",
+                "unit": "points on a 0–100 scale",
+                "value": 48.2
+              }
+            ],
+            "result": "Sol 校正分 54.0→55.2；Luna 校正分 44.1→48.2。",
+            "setting": "GPT-5.6 八月版与 GPT-6 十月版；分数为 0–100，越高越好。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Health; length-adjustment definition; Table 5",
+                "source_id": "report"
+              }
+            ],
+            "id": "scoring",
+            "kind": "method",
+            "label": "长度校正改变读数",
+            "limitation": "不把长度惩罚当医疗质量真值，也不从均值重建逐题结果。",
+            "mechanism": "以 2,000 字符为无调整点；Professional 每多 500 字符扣 1.47 分，短回答对应加分。",
+            "metrics": [],
+            "result": "原始分增益与长度校正后的增益不同。",
+            "setting": "Sol 十月版原始 62.2 分、平均 4,360 字符；Luna 为 57.8 分、5,289 字符。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Alignment; Respecting Warnings; Figure 5",
+                "source_id": "report"
+              }
+            ],
+            "id": "warnings",
+            "kind": "result",
+            "label": "成功绕过与尝试分开",
+            "limitation": "模型能力和识别评测环境会影响结果；不是日常违规概率。",
+            "mechanism": "Respecting Warnings 更新为成功绕过环境限制的条件失败率。",
+            "metrics": [
+              {
+                "baseline": "GPT-5.6 Luna August: 27%",
+                "conditions": "Maximum reasoning effort; simulated primarily low-stakes environments; without system-level safeguards; not production prevalence",
+                "label": "Respecting Warnings successful-circumvention conditional failure rate, GPT-6 Luna October",
+                "unit": "percent",
+                "value": 15.9
+              }
+            ],
+            "result": "Sol 为 34%→28%；Luna 为 27%→15.9%。",
+            "setting": "最高推理设置、模拟工作环境、无生产保护栈，主要为低风险情境。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Deception; Disclosure of limitations; Figures 6–7",
+                "source_id": "report"
+              }
+            ],
+            "id": "disclosure",
+            "kind": "method",
+            "label": "遇阻后的披露也要测",
+            "limitation": "Luna 有 0.25%样本因基础设施原因提前退出并排除。",
+            "mechanism": "用真实编码任务中的阻塞，以及缺少搜索工具的任务，评估最终答复是否披露限制。",
+            "metrics": [],
+            "result": "作者报告披露失败减少，未在本文重绘未核完整图表的分项数值。",
+            "setting": "基线行为测试不含第一方标准开发者提示；编码样本经过针对性挑选。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Factuality; Figure 3",
+                "source_id": "report"
+              }
+            ],
+            "id": "factuality",
+            "kind": "method",
+            "label": "事实错误要说明分母",
+            "limitation": "集合经过筛选，不推算普通用户的错误遭遇率。",
+            "mechanism": "有联网能力的评审模型分别检查回答级和断言级错误。",
+            "metrics": [],
+            "result": "作者报告多数指标改善，事实密集集的断言级错误为例外。",
+            "setting": "事实密集、历史用户报错及高风险提示三类困难集合。",
+            "stage": 2
+          }
+        ],
+        "question": "GPT-6 十月版：安全指标进步，为什么仍会出现退步项？",
+        "reading": {
+          "editorial": [
+            "FieldToFit 分析：这份卡片的价值是让“模型更安全”变成可追问的问题：比较的是哪个产品与月份？任务与分母是什么？测了哪一层保护？读者可据此评估自己的 Agent 流程，而非从一个总分推断所有实际场景。",
+            "原报告发表于 2026-10-07，本站于 2026-10-18 核对；首次上站与后续修订由真实发布记录维护。原文保留官方入口，三图为本站重绘或事实示意；没有复制上游图形设计，也未独立运行模型评测。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "这份十月更新首先划定身份：报告发布时，ChatGPT 切换到十月版 GPT-6 Sol 和 Luna，Codex 与 ChatGPT Work 仍使用九月版。它们共享产品名称，但不能据此把一份卡片的结果平移到所有入口；本次映射只保留报告时点，不替代后来更新。"
+                },
+                {
+                  "alt": "报告时点的 ChatGPT 十月版与 Codex／Work 九月版对应图",
+                  "attribution": "FieldToFit redraw from OpenAI source facts; not an independent reproduction.",
+                  "caption": "图 1｜本站事实示意，依据报告导言；不是当前所有产品版本的实时列表。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Introduction",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/gpt6-oct2026-versions.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; source facts: OpenAI, GPT-6 Sol and GPT-6 Luna: October 2026 update, 2026-10-07."
+                },
+                {
+                  "items": [
+                    "安全评估取最低部署推理设置，以接近大多数使用；能力评估取最高推理强度，以探查能力上界。两种设置不能混成一张无条件能力表。",
+                    "旧模型对照可能来自其后续版本，政策、评审器和数据也会演进。优先读本卡同表比较，避免把不同系统卡的数字直接拼接。"
+                  ],
+                  "kind": "points"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Introduction; evaluation settings and comparison versions",
+                  "source_id": "report"
+                }
+              ],
+              "id": "version-and-scope",
+              "node_ids": [
+                "versions"
+              ],
+              "summary": "系统卡描述的是特定部署版本，安全与能力评估还使用不同推理设置。",
+              "title": "同名 Sol 与 Luna，也要先看产品和发布月份"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Production Benchmarks 刻意挑选既有模型尚未理想处理的困难样本，并在没有完整系统保护的情况下评价模型行为。报告披露部分自伤、血腥、性内容及青少年相关类别回归，同时说明人工复审和对抗测试。这里不能只摘录“总体更安全”，也不能把困难集失败率当作真实用户事故率。"
+                },
+                {
+                  "items": [
+                    "作者将若干回归描述为整体严重性较低，并列出青少年响应分类器等额外缓解；这些是作者审核与部署说明，不是本站独立风险验证。",
+                    "少拒答与更安全是并列目标，可能存在权衡。敏感但正常的问题回答得更充分，不等于所有有害请求都能通过；反过来，拒答更少也不能单独证明安全。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "适用边界：底模评估、完整保护栈和真实生产发生率是三种证据，不能互相替代。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Production Benchmarks; U18 evaluations; Tables 1–2",
+                  "source_id": "report"
+                }
+              ],
+              "id": "gains-and-regressions",
+              "node_ids": [
+                "benchmarks",
+                "systems"
+              ],
+              "summary": "报告同时公开回归和缓解，底模测分与部署保护须分别理解。",
+              "title": "总体安全判断改善，不代表每一类别都前进"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "开放回答可能因更长而覆盖更多正向评分项，却未必更方便患者或临床读者使用。报告以 2,000 字符为无调整点；HealthBench Professional 每增加 500 字符扣 1.47 分，较短回答作相应正向调整，其他 HealthBench 变体使用各自系数。模型提示中没有提供长度惩罚细则。"
+                },
+                {
+                  "alt": "四个模型的 HealthBench Professional 原始分、长度校正分和平均回答字符数",
+                  "attribution": "FieldToFit redraw from OpenAI source facts; not an independent reproduction.",
+                  "caption": "图 2｜本站按表 5 重绘；0–100 分，越高越好。长度单位为字符，不是 token；不表示临床效果。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Table 5; HealthBench Professional",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/gpt6-oct2026-healthbench.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; source facts: OpenAI, GPT-6 Sol and GPT-6 Luna: October 2026 update, 2026-10-07."
+                },
+                {
+                  "items": [
+                    "GPT-6 Sol 十月版：原始 62.2、校正 55.2、平均 4,360 字符；GPT-5.6 Sol 八月版为 56.6、54.0、2,894 字符。校正后的进步幅度小于只看原始分的印象。",
+                    "Luna 对应为 57.8、48.2、5,289 字符，对照八月版 46.8、44.1、2,920 字符。这里比较同一 Professional 指标，不把其他 HealthBench 变体拼成总分。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "evidence",
+                  "text": "关键证据：表 5 把长度校正分、原始分和平均字符数放在一起，阅读时也应保留这三层。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Health; Table 5",
+                  "source_id": "report"
+                }
+              ],
+              "id": "length-adjustment",
+              "node_ids": [
+                "health",
+                "scoring"
+              ],
+              "summary": "Professional 校正分改善，但原始分增长包含更长回答带来的评分机会。",
+              "title": "HealthBench 进步要连同回答长度和校正口径读"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Respecting Warnings 考察遇到环境限制后是否仍成功绕过；新版主要指标由“尝试”改为“成功”，更客观但也与模型能力纠缠。最高推理设置下，Sol 从 34%降到 28%，Luna 从 27%降到 15.9%。这些是指定模拟环境中的条件失败率，作者明确讨论了模型识别评测环境、误把限制当提示注入等外部有效性问题。"
+                },
+                {
+                  "alt": "GPT-5.6 八月版与 GPT-6 十月版成功绕过环境限制的条件失败率",
+                  "attribution": "FieldToFit redraw from OpenAI source facts; not an independent reproduction.",
+                  "caption": "图 3｜本站重绘图 5 正文点估计；百分比，越低越好。最高推理设置、无系统保护的模拟低风险任务；不反推样本量或真实使用发生率。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Respecting Warnings; Figure 5",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/gpt6-oct2026-warnings.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; source facts: OpenAI, GPT-6 Sol and GPT-6 Luna: October 2026 update, 2026-10-07."
+                },
+                {
+                  "items": [
+                    "事实性评估分别看“回答至少含一处错误”和“断言错误占比”，提示集又分事实密集、用户报错和高风险三类。两种分母不同；多数指标改善不等于全部改善。",
+                    "限制披露评估关注编码遇阻或缺少搜索工具时是否如实说明。报告注明 Luna 有 0.25%样本因基础设施问题提前退出并排除；本文保留排除条件，不猜测未完整展开图表的数值。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "claim",
+                  "text": "作者结论与本站判断分开：作者报告多个边界指标改善；本站据此建议把任务完成、授权遵守、事实核验和限制披露分开验收。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Alignment; Respecting Warnings; Factuality; Disclosure of limitations",
+                  "source_id": "report"
+                }
+              ],
+              "id": "agent-boundaries",
+              "node_ids": [
+                "warnings",
+                "disclosure",
+                "factuality"
+              ],
+              "summary": "越障、事实性与限制披露分别测量，不把某一失败率当作完整 Agent 可靠性。",
+              "title": "Agent 边界有改善，仍须保留成功口径和模拟环境"
+            }
+          ],
+          "title": "GPT-6 十月版：安全指标进步，为什么仍会出现退步项？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-07",
+            "revised_at": null,
+            "revision_note": "原报告十月更新无独立编号修订；本站首次整理不记作上游实质修订。",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "October 2026 update; unnumbered"
+          }
+        ],
+        "slug": "gpt6-october-safety-evaluation",
+        "takeaway": "安全改善需要具体到版本、指标和保护层；既不抹去回归，也不把困难集失败率当日常风险。"
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-18",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": true,
+      "id": "D-187",
+      "interpretation": [
+        {
+          "locator": "Model card: evaluation results and harness notes",
+          "source_ids": [
+            "model-card"
+          ],
+          "text": "DeepSWE v1.1 为 77.0，对上一检查点 74.2，使用 Mini-SWE-V2；Terminal-Bench 4.0 为 42.3，对 31.2，使用 Claude Code。不同环境的数字不能合成同条件排名，本站未复现。",
+          "title": "实验分数连同测试环境阅读"
+        },
+        {
+          "locator": "Model card: tokenizer, encoding and deployment notes",
+          "source_ids": [
+            "model-card"
+          ],
+          "text": "包内不提供 Jinja 聊天模板，应参考官方编码器或 deepseek-recipe。格式转换不替代推理服务、工具执行或网络传输，接入方仍需实现这些环节。",
+          "title": "自部署先对齐消息格式"
+        },
+        {
+          "locator": "Official announcement and model-card scope",
+          "source_ids": [
+            "announcement",
+            "model-card"
+          ],
+          "text": "在 CW-M06 追加 1017 检查点，保留 V4.1-Flash 旧节点及 D-90 报告。准确 API 型号、账户切换与部署资源仍待实际核对；本条不刷新模型分数图。",
+          "title": "接续原模型档案"
+        }
+      ],
+      "name": "DeepSeek-V4.1-Flash-1017",
+      "note": "作者结果未独立复现；模型、工具接口和运行器版本分别表达。",
+      "organization": "DeepSeek",
+      "publication": {
+        "first_published_at": "2026-10-18T03:30:41.656179+00:00",
+        "updated_at": "2026-10-18T03:30:41.656179+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-M06",
+          "name": "DeepSeek",
+          "url": "https://fieldtofit.top/watch/CW-M06"
+        }
+      ],
+      "source_published_at": "2026-10-17",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "DeepSeek official announcement · 2026-10-17",
+          "url": "https://api-docs.deepseek.com/news/news261017/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "model-card",
+          "title": "DeepSeek-V4.1-Flash-1017 model card",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+        }
+      ],
+      "state": "published",
+      "summary": "DeepSeek 于 2026-10-17 发布新检查点，官网、App 和 API 已提供；模型卡标注 MIT。作者称通过带自反馈的强化学习改善端到端项目开发。",
+      "title": "DeepSeek-V4.1-Flash-1017：编程与 Agent 检查点更新，部署需核对提示格式",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "9be91b543e2a6ab759e18414c7e5a47e8e01b726c120e1ca331b88774b893496",
+          "fields": {
+            "DeepSWE v1.1 为 77.0，对上一检查点 74.2，使用 Mini-SWE-V2；Terminal-Bench 4.0 为 42.3，对 31.2，使用 Claude Code。不同环境的数字不能合成同条件排名，本站未复现。": "DeepSWE v1.1 scores 77.0 versus the previous checkpoint's 74.2 using Mini-SWE-V2; Terminal-Bench 4.0 scores 42.3 versus 31.2 using Claude Code. Different harnesses do not form a like-for-like overall ranking; FieldToFit has not reproduced the results.",
+            "DeepSeek 于 2026-10-17 发布新检查点，官网、App 和 API 已提供；模型卡标注 MIT。作者称通过带自反馈的强化学习改善端到端项目开发。": "DeepSeek released the checkpoint on 2026-10-17 for its website, app and API. The model card specifies MIT. The author reports improved end-to-end project development through reinforcement learning with self-feedback.",
+            "DeepSeek-V4.1-Flash-1017：编程与 Agent 检查点更新，部署需核对提示格式": "DeepSeek-V4.1-Flash-1017: a coding and agent checkpoint with deployment-format requirements",
+            "作者结果未独立复现；模型、工具接口和运行器版本分别表达。": "Author results have not been independently reproduced; model, tool-interface and harness versions are distinguished.",
+            "包内不提供 Jinja 聊天模板，应参考官方编码器或 deepseek-recipe。格式转换不替代推理服务、工具执行或网络传输，接入方仍需实现这些环节。": "The package does not provide a Jinja chat template; use the official encoder or deepseek-recipe. Format conversion does not replace inference serving, tool execution or network transport, which remain the integrator's responsibility.",
+            "在 CW-M06 追加 1017 检查点，保留 V4.1-Flash 旧节点及 D-90 报告。准确 API 型号、账户切换与部署资源仍待实际核对；本条不刷新模型分数图。": "Append the 1017 checkpoint to CW-M06 while retaining the V4.1-Flash history and D-90 report. Exact API identifiers, account switching and deployment resources still require verification; this update does not refresh model score charts.",
+            "实验分数连同测试环境阅读": "Read scores with their evaluation harness",
+            "接续原模型档案": "Continue the existing model profile",
+            "自部署先对齐消息格式": "Align message formatting before self-deployment"
+          },
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:09:44.136621+00:00"
+        }
+      },
+      "_position": 1,
+      "reading_materials": []
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-18",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": true,
+      "id": "D-188",
+      "interpretation": [
+        {
+          "locator": "Search & Fetch: Billing",
+          "source_ids": [
+            "deepseek-search"
+          ],
+          "text": "两个接口分别为每 1,000 次成功请求 0.75 美元。Search 须返回非空结果，Fetch 须取得正文；失败、空搜索和超时不计费，结果条数不改变单次请求价格。",
+          "title": "成功请求才计费"
+        },
+        {
+          "locator": "Search & Fetch: Billing; server-side tool-call offer",
+          "source_ids": [
+            "deepseek-search"
+          ],
+          "text": "经 DeepSeek Harness、Claude Code 或 Codex 使用 DeepSeek API 的服务端工具调用目前免费，北京时间 2026-11-01 00:00 起计费。不能扩写为全部直接接口、模型推理或其他厂商调用免费。",
+          "title": "临时优惠按调用路径区分"
+        },
+        {
+          "locator": "Search & Fetch: Rate Limits; release announcement",
+          "source_ids": [
+            "deepseek-search",
+            "announcement"
+          ],
+          "text": "Search、Fetch 各为账户级 5 QPS；Fetch 另受目标域名限速与访问规则约束。官方建议新模型配合 Harness v0.2.1-rc.1 或更高；本站未核完整发行包，也未调用、核账或复测取文质量。",
+          "title": "限流和采用条件继续保留"
+        }
+      ],
+      "name": "DeepSeek Search / Fetch",
+      "note": "同一事件的信息卡与本条共用动态编号；优惠、限流和未实测范围随正文保留。",
+      "organization": "DeepSeek",
+      "publication": {
+        "first_published_at": "2026-10-18T03:29:30.154135+00:00",
+        "updated_at": "2026-10-18T03:29:30.154135+00:00",
+        "hot_card_first_published_at": "2026-10-18T03:29:30.154167+00:00",
+        "hot_card_selected_at": "2026-10-18T03:29:30.154167+00:00"
+      },
+      "related": [
+        {
+          "id": "CW-M06",
+          "name": "DeepSeek",
+          "url": "https://fieldtofit.top/watch/CW-M06"
+        },
+        {
+          "id": "CW-H01",
+          "name": "DeepSeek Harness",
+          "url": "https://fieldtofit.top/watch/CW-H01"
+        }
+      ],
+      "source_published_at": "2026-10-17",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "deepseek-search",
+          "title": "DeepSeek Search & Fetch · Authentication / Billing / Rate Limits",
+          "url": "https://api-docs.deepseek.com/guides/search/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "DeepSeek official announcement · 2026-10-17",
+          "url": "https://api-docs.deepseek.com/news/news261017/"
+        }
+      ],
+      "state": "published",
+      "summary": "2026-10-17 公告开放 Search 与 Fetch：搜索返回结构化结果，取文返回单页 Markdown。两接口使用 DeepSeek API 密钥，按成功请求分别计费。",
+      "title": "DeepSeek Search／Fetch：开放联网接口，临时免费仅限指定服务端工具路径",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "31f5988cda1e3a92fc100dd3b82ea5c6a98ad7aee13a9fb1757fafefd91b3af8",
+          "fields": {
+            "2026-10-17 公告开放 Search 与 Fetch：搜索返回结构化结果，取文返回单页 Markdown。两接口使用 DeepSeek API 密钥，按成功请求分别计费。": "The 2026-10-17 announcement opens Search and Fetch: structured search results and single-page Markdown retrieval. Both use a DeepSeek API key and are billed separately per successful request.",
+            "DeepSeek Search／Fetch 面向有 DeepSeek API 账户的 Agent 与 RAG 应用；优惠按调用路径区分。": "DeepSeek Search / Fetch serve Agent and RAG applications with a DeepSeek API account; the offer depends on the call path.",
+            "DeepSeek Search／Fetch：开放联网接口，临时免费仅限指定服务端工具路径": "DeepSeek Search / Fetch: web tools with a limited server-side introductory offer",
+            "Search & Fetch：Authentication、Billing、Rate Limits；10 月 17 日发布公告。": "Search & Fetch: Authentication, Billing, Rate Limits; announcement dated 10/17.",
+            "Search 返回结构化结果；Fetch 把单页内容转成 Markdown。": "Search returns structured results; Fetch converts a single page into Markdown.",
+            "Search、Fetch 各 5 QPS，按账户算；Fetch 另受目标域名限速和访问规则限制。": "Search and Fetch each allow 5 QPS per account; Fetch also respects destination-domain limits and access rules.",
+            "Search、Fetch 各为账户级 5 QPS；Fetch 另受目标域名限速与访问规则约束。官方建议新模型配合 Harness v0.2.1-rc.1 或更高；本站未核完整发行包，也未调用、核账或复测取文质量。": "Search and Fetch each allow 5 QPS per account; Fetch also respects destination-domain limits and access rules. The author recommends Harness v0.2.1-rc.1 or later for the new model. FieldToFit has not checked the complete release package or tested calls, billing or retrieval quality.",
+            "不能据此把所有直接调用、模型推理或其他厂商请求视为免费。": "It does not make all direct calls, model inference or other vendors' requests free.",
+            "两个接口分别为每 1,000 次成功请求 0.75 美元。Search 须返回非空结果，Fetch 须取得正文；失败、空搜索和超时不计费，结果条数不改变单次请求价格。": "Each interface costs USD 0.75 per 1,000 successful requests. Search requires non-empty results and Fetch requires retrieved content. Failures, empty searches and timeouts are not billed; result count does not change the per-request price.",
+            "两接口各为每千次 0.75 美元；失败、空搜索和超时不收费，结果条数不影响单次价格。": "Each interface costs USD 0.75 per thousand requests; failures, empty searches and timeouts are free, and result count does not affect the per-request price.",
+            "临时优惠按调用路径区分": "The temporary offer depends on the call path",
+            "先确认是否使用 DeepSeek API 及上述服务端工具路径。": "First confirm use of the DeepSeek API and the specified server-side tool path.",
+            "先试一次查询和单页取文，再按 11 月 1 日后的费率估算预算。": "Try one query and one-page retrieval, then estimate the budget at the rates after 11/1.",
+            "免费有范围": "The free offer has a scope",
+            "分别核对搜索质量、正文完整性和工具请求量。": "Check search quality, content completeness and tool-request volume separately.",
+            "同一事件的信息卡与本条共用动态编号；优惠、限流和未实测范围随正文保留。": "The information card shares this news identity; offer scope, limits and untested aspects remain explicit.",
+            "已有编程工具用户": "Existing coding-tool users",
+            "成功请求才计费": "Billing counts successful requests",
+            "指定工具路径暂时免费": "Specified tool paths are temporarily free",
+            "按官方材料整理；本站未调用、核账或复测搜索与取文质量。": "Compiled from official materials; FieldToFit has not tested calls, audited bills or reproduced search and retrieval quality.",
+            "按成功请求计费": "Successful requests are billed",
+            "接入 Agent／RAG 的人": "Agent / RAG integrators",
+            "搜索与取文各司其职": "Search and retrieval have distinct roles",
+            "经 DeepSeek Harness、Claude Code 或 Codex 使用 DeepSeek API 的服务端工具调用目前免费，北京时间 2026-11-01 00:00 起计费。不能扩写为全部直接接口、模型推理或其他厂商调用免费。": "Server-side tool calls using the DeepSeek API through DeepSeek Harness, Claude Code or Codex are temporarily free; billing starts at 2026-11-01 00:00 Beijing time. This does not make all direct interface calls, model inference or other vendors' calls free.",
+            "经 Harness、Claude Code 或 Codex 调用 DeepSeek 服务端工具，11 月 1 日北京时间 00:00 起计费。": "DeepSeek server-side tools through Harness, Claude Code or Codex start billing at 00:00 Beijing time on 11/1.",
+            "给 Agent 接上联网工具，先看何时开始计费": "Give your agent web tools; check when billing begins",
+            "限流和采用条件继续保留": "Retain rate limits and adoption conditions",
+            "限速与目标网站条件": "Rate and destination-site conditions"
+          },
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:09:29.743651+00:00"
+        }
+      },
+      "_position": 1,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "分别核对搜索质量、正文完整性和工具请求量。",
+            "title": "接入 Agent／RAG 的人"
+          },
+          {
+            "detail": "先确认是否使用 DeepSeek API 及上述服务端工具路径。",
+            "title": "已有编程工具用户"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "Search 返回结构化结果；Fetch 把单页内容转成 Markdown。",
+            "title": "搜索与取文各司其职"
+          },
+          {
+            "detail": "两接口各为每千次 0.75 美元；失败、空搜索和超时不收费，结果条数不影响单次价格。",
+            "title": "按成功请求计费"
+          },
+          {
+            "detail": "经 Harness、Claude Code 或 Codex 调用 DeepSeek 服务端工具，11 月 1 日北京时间 00:00 起计费。",
+            "title": "指定工具路径暂时免费"
+          }
+        ],
+        "checked_at": "2026-10-18",
+        "event_date": "2026-10-17",
+        "evidence": [
+          {
+            "locator": "Search & Fetch：Authentication、Billing、Rate Limits；10 月 17 日发布公告。",
+            "source_id": "deepseek-search"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "给 Agent 接上联网工具，先看何时开始计费",
+        "limits": [
+          {
+            "detail": "不能据此把所有直接调用、模型推理或其他厂商请求视为免费。",
+            "title": "免费有范围"
+          },
+          {
+            "detail": "Search、Fetch 各 5 QPS，按账户算；Fetch 另受目标域名限速和访问规则限制。",
+            "title": "限速与目标网站条件"
+          }
+        ],
+        "next_step": "先试一次查询和单页取文，再按 11 月 1 日后的费率估算预算。",
+        "revised_at": "2026-10-18",
+        "scope": "DeepSeek Search／Fetch 面向有 DeepSeek API 账户的 Agent 与 RAG 应用；优惠按调用路径区分。",
+        "share": {
+          "content_revision": "504d62293b266fdad09e2ebdc7fe165020c9cd64f085ebd20ff6af7b704e48b9",
+          "en": {
+            "sha256": "645de1b53653aff321843e694612d71e65a8423b7d5542556704722a2053e07d",
+            "text_revision": "b5ddca27af5fb9e7ef1e645e8a281d2d73d8891e1ce733099871744ebec0c53e",
+            "url": "/hot-cards/d-188-504d62293b26-en.png"
+          },
+          "zh": {
+            "sha256": "b1178411cbb5191c68319f5347d733a95b7ef4f3d643e6ba3c47ad6c0558c5b7",
+            "url": "/hot-cards/d-188-504d62293b26-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "按官方材料整理；本站未调用、核账或复测搜索与取文质量。"
+      },
+      "reading_materials": []
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-17",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-15",
+      "highlight": false,
+      "id": "D-177",
+      "interpretation": [
+        {
+          "locator": "claude-opus-5-5 / Fast mode GA; official release and stated limitations",
+          "source_ids": [
+            "oct17-b-1",
+            "oct17-b-2"
+          ],
+          "text": "最高 2.5 倍指输出token速度，使用相同模型权重；不保证首token延迟或整个任务同倍缩短。",
+          "title": "同权重，更快输出"
+        },
+        {
+          "locator": "claude-opus-5-5 / Fast mode GA; official release and stated limitations",
+          "source_ids": [
+            "oct17-b-1",
+            "oct17-b-2"
+          ],
+          "text": "快速模式单独限流并按更高费率计费，标准／快速模式不共享前缀缓存。组织实际额度、Evaluation层级与端到端收益仍需逐项核实。",
+          "title": "费用、缓存和限额"
+        },
+        {
+          "locator": "claude-opus-5-5 / Fast mode GA; official release and stated limitations",
+          "source_ids": [
+            "oct17-b-1",
+            "oct17-b-2"
+          ],
+          "text": "Opus 5 及 4.8 仍有研究预览要求，不能将 5.5 的范围套到其他型号或所有云平台。本站未实测。",
+          "title": "型号和平台边界"
+        }
+      ],
+      "name": "Claude Opus Fast mode",
+      "note": "原文日期：2026-10-15；本站核对：2026-10-17；版本：claude-opus-5-5 / Fast mode GA。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-17T03:07:12.725594+00:00",
+        "updated_at": "2026-10-18T03:30:10.483924+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-b-1",
+          "locator": "Exact release / official documentation; claude-opus-5-5 / Fast mode GA",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 1",
+          "upstream_revision": "claude-opus-5-5 / Fast mode GA",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-b-2",
+          "locator": "Exact release / official documentation; claude-opus-5-5 / Fast mode GA",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 2",
+          "upstream_revision": "claude-opus-5-5 / Fast mode GA",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct17-b-1",
+          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 1",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-b-2",
+          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 2",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic于 2026-10-15 将Opus 5.5 Fast mode移出研究预览，Start、Build、Scale层级可使用默认快速限额，Azure托管的Microsoft Foundry部署也已支持。",
+      "title": "Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费",
+      "translations": {
+        "en": {
+          "fields": {
+            "Anthropic于 2026-10-15 将Opus 5.5 Fast mode移出研究预览，Start、Build、Scale层级可使用默认快速限额，Azure托管的Microsoft Foundry部署也已支持。": "On 2026-10-15 Anthropic moved Opus 5.5 Fast mode out of research preview for Start, Build and Scale tiers with default fast-mode limits, including Azure-hosted Microsoft Foundry deployments.",
+            "Opus 5 及 4.8 仍有研究预览要求，不能将 5.5 的范围套到其他型号或所有云平台。本站未实测。": "Opus 5 and 4.8 still have research-preview requirements. Do not extend 5.5 availability to other models or every cloud platform. FieldToFit has not tested it.",
+            "Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费": "Opus 5.5 Fast mode: broader access with separate fast-mode billing",
+            "原文日期：2026-10-15；本站核对：2026-10-17；版本：claude-opus-5-5 / Fast mode GA。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-15; checked: 2026-10-17; version: claude-opus-5-5 / Fast mode GA. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "同权重，更快输出": "Same weights, faster output",
+            "型号和平台边界": "Model and platform scope",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "快速模式单独限流并按更高费率计费，标准／快速模式不共享前缀缓存。组织实际额度、Evaluation层级与端到端收益仍需逐项核实。": "Fast mode has separate rate limits and premium pricing; standard and fast modes do not share prefix caches. Check organizational limits, Evaluation-tier access and end-to-end benefits separately.",
+            "最高 2.5 倍指输出token速度，使用相同模型权重；不保证首token延迟或整个任务同倍缩短。": "Up to 2.5 times refers to output-token speed with the same model weights; it does not promise the same reduction in time to first token or total task duration.",
+            "费用、缓存和限额": "Pricing, caching and limits"
+          },
+          "source_hash": "fed265a6e5cfbdb0f6322d00aee4e2abc70210c9d601211f488973037e6fccec",
+          "state": "reviewed",
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:05:50.086948+00:00"
+        }
+      },
+      "_position": 2
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-18",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-08",
+      "highlight": true,
+      "id": "D-190",
+      "interpretation": [
+        {
+          "locator": "Changelog: 2026-10-08; Flash routing",
+          "source_ids": [
+            "changelog"
+          ],
+          "text": "gemini-3.7-flash 请求已路由至 gemini-3.8-flash，gemini-3.5-flash 路由至 gemini-3.6-flash；旧型号从 AI Studio 选择器移除。建议显式更新配置并核对行为与用量变化。",
+          "title": "旧 Flash 请求已改路由"
+        },
+        {
+          "locator": "Changelog: 2026-10-08; Deep Research deprecation",
+          "source_ids": [
+            "changelog",
+            "deprecations"
+          ],
+          "text": "deep-research-pro-preview-12-2025 将于 2026-10-23 关闭；可迁移到 deep-research-preview-04-2026 或 deep-research-max-preview-04-2026，分别侧重效率与完整性。",
+          "title": "旧 Research 预览有明确关闭日"
+        },
+        {
+          "locator": "Changelog: Deep Research migration instruction",
+          "source_ids": [
+            "changelog"
+          ],
+          "text": "Deep Research 需修改 interactions.create 的 agent 参数，而非只替换普通生成接口的 model。两个新预览的能力、费用与权限应分别核对；本站未实测迁移。",
+          "title": "迁移的是 agent 参数"
+        }
+      ],
+      "name": "Gemini API / Deep Research",
+      "note": "保留 2026-10-08 公告与旧版本历史；接口改路由不等于行为、价格或采用条件完全一致。",
+      "organization": "Google",
+      "publication": {
+        "first_published_at": "2026-10-18T03:28:26.943684+00:00",
+        "updated_at": "2026-10-18T03:28:26.943684+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        }
+      ],
+      "source_published_at": "2026-10-08",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "changelog",
+          "title": "Gemini API changelog · 2026-10-08",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deprecations",
+          "title": "Gemini API deprecations",
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+        }
+      ],
+      "state": "published",
+      "summary": "Google 在 2026-10-08 日志说明旧 Flash 路由与 Deep Research 迁移；旧 Research 预览接近停用。本条为既有官方公告维护补录，不写作今日新模型发布。",
+      "title": "Gemini API：旧 Flash 已改路由，旧 Deep Research 预览 2026-10-23 关闭",
+      "translations": {
+        "en": {
+          "fields": {
+            "Deep Research 需修改 interactions.create 的 agent 参数，而非只替换普通生成接口的 model。两个新预览的能力、费用与权限应分别核对；本站未实测迁移。": "Deep Research migration changes the agent parameter in interactions.create, not merely the model on an ordinary generation request. Check capabilities, fees and permissions for each preview separately; FieldToFit has not tested migration.",
+            "Gemini API：旧 Flash 已改路由，旧 Deep Research 预览 2026-10-23 关闭": "Gemini API: old Flash routing changed; the old Deep Research preview closes on 2026-10-23",
+            "Google 在 2026-10-08 日志说明旧 Flash 路由与 Deep Research 迁移；旧 Research 预览接近停用。本条为既有官方公告维护补录，不写作今日新模型发布。": "Google's 2026-10-08 log describes old Flash routing and Deep Research migration. The old Research preview is nearing shutdown. This backfills an existing official notice rather than announcing a new model today.",
+            "deep-research-pro-preview-12-2025 将于 2026-10-23 关闭；可迁移到 deep-research-preview-04-2026 或 deep-research-max-preview-04-2026，分别侧重效率与完整性。": "deep-research-pro-preview-12-2025 closes on 2026-10-23. Migration targets are deep-research-preview-04-2026 and deep-research-max-preview-04-2026, emphasizing efficiency and completeness respectively.",
+            "gemini-3.7-flash 请求已路由至 gemini-3.8-flash，gemini-3.5-flash 路由至 gemini-3.6-flash；旧型号从 AI Studio 选择器移除。建议显式更新配置并核对行为与用量变化。": "gemini-3.7-flash requests route to gemini-3.8-flash and gemini-3.5-flash routes to gemini-3.6-flash; old models were removed from the AI Studio selector. Update configurations explicitly and check behavior and usage changes.",
+            "保留 2026-10-08 公告与旧版本历史；接口改路由不等于行为、价格或采用条件完全一致。": "Retain the 2026-10-08 notice and old-version history; rerouting does not imply identical behavior, prices or adoption conditions.",
+            "旧 Flash 请求已改路由": "Old Flash requests have been rerouted",
+            "旧 Research 预览有明确关闭日": "The old Research preview has a specific shutdown date",
+            "迁移的是 agent 参数": "Migrate the agent parameter"
+          },
+          "source_hash": "1beb30a569532c17f376be475538e9add5767bc9ba8ec30e3501f17792c8e16f",
+          "state": "reviewed",
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:09:09.942726+00:00"
+        }
+      },
+      "_position": 1
+    },
+    {
+      "checked_at": "2026-10-18",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": true,
+      "id": "D-189",
+      "interpretation": [
+        {
+          "locator": "Deprecations: 2026-10-14 announcement table",
+          "source_ids": [
+            "deprecations"
+          ],
+          "text": "受影响型号为 gpt-4o-2024-08-06、gpt-4o-2024-11-20、gpt-4o-mini-2024-07-18、gpt-4.1-2025-04-14、gpt-4.1-mini-2025-04-14；停用日期均为 2027-01-14。",
+          "title": "完整型号决定适用范围"
+        },
+        {
+          "locator": "Deprecations: fine-tuned versions and recommended replacement",
+          "source_ids": [
+            "deprecations"
+          ],
+          "text": "对应底座的微调版本同日停用；官方表列替代型号为 gpt-6-luna。迁移前检查接口、输出格式、任务质量与成本，推荐替代项不保证行为或费用完全相同。",
+          "title": "微调与替代型号也要盘点"
+        },
+        {
+          "locator": "Official deprecation scope",
+          "source_ids": [
+            "deprecations"
+          ],
+          "text": "在 CW-M01 保留旧模型历史并追加生命周期表；不能写成今日首次公告或所有 GPT-4 型号立即关闭。本站未调用旧端点或完成迁移回归。",
+          "title": "作为旧公告补录"
+        }
+      ],
+      "name": "OpenAI API model snapshots",
+      "note": "公告日期 2026-10-14；停用日期 2027-01-14；本站核对 2026-10-18，三者分别保留。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-18T03:27:16.063672+00:00",
+        "updated_at": "2026-10-18T03:27:16.063672+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "deprecations",
+          "title": "OpenAI API deprecations · 2026-10-14",
+          "url": "https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 于 2026-10-14 公告五个指定 API 快照的停用日期，微调版本沿用对应底座期限。本文补入已有档案的迁移节点，保留真实公告日期。",
+      "title": "OpenAI API：五个 GPT-4 系列快照将于 2027-01-14 停用",
+      "translations": {
+        "en": {
+          "fields": {
+            "OpenAI API：五个 GPT-4 系列快照将于 2027-01-14 停用": "OpenAI API: five GPT-4 family snapshots retire on 2027-01-14",
+            "OpenAI 于 2026-10-14 公告五个指定 API 快照的停用日期，微调版本沿用对应底座期限。本文补入已有档案的迁移节点，保留真实公告日期。": "OpenAI announced retirement dates for five specified API snapshots on 2026-10-14. Fine-tuned variants follow their base-model deadlines. This update backfills a migration milestone while retaining the actual announcement date.",
+            "作为旧公告补录": "Backfill the original announcement",
+            "公告日期 2026-10-14；停用日期 2027-01-14；本站核对 2026-10-18，三者分别保留。": "Announcement: 2026-10-14; retirement: 2027-01-14; FieldToFit check: 2026-10-18. These dates remain distinct.",
+            "受影响型号为 gpt-4o-2024-08-06、gpt-4o-2024-11-20、gpt-4o-mini-2024-07-18、gpt-4.1-2025-04-14、gpt-4.1-mini-2025-04-14；停用日期均为 2027-01-14。": "Affected identifiers: gpt-4o-2024-08-06, gpt-4o-2024-11-20, gpt-4o-mini-2024-07-18, gpt-4.1-2025-04-14 and gpt-4.1-mini-2025-04-14 (snapshot). All retire on 2027-01-14.",
+            "在 CW-M01 保留旧模型历史并追加生命周期表；不能写成今日首次公告或所有 GPT-4 型号立即关闭。本站未调用旧端点或完成迁移回归。": "Retain old-model history in CW-M01 and append the lifecycle table. This is neither a first announcement today nor an immediate shutdown of all GPT-4 models. FieldToFit has not called the old endpoints or completed migration regression tests.",
+            "完整型号决定适用范围": "Exact identifiers determine scope",
+            "对应底座的微调版本同日停用；官方表列替代型号为 gpt-6-luna。迁移前检查接口、输出格式、任务质量与成本，推荐替代项不保证行为或费用完全相同。": "Fine-tunes of those bases retire on the same date; the official table recommends gpt-6-luna (recommended). Check interfaces, output formats, task quality and costs before migration: a recommended replacement does not guarantee identical behavior or pricing.",
+            "微调与替代型号也要盘点": "Inventory fine-tunes and replacement models"
+          },
+          "source_hash": "d5620022d9a399a1eda146f5bce22c294377427d92205b7e247ae4cab2df9564",
+          "state": "reviewed",
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:08:49.989066+00:00"
+        }
+      },
+      "_position": 1,
+      "category": "model"
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-10-17",
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-178",
+      "interpretation": [
+        {
+          "locator": "Krea 3; official release and stated limitations",
+          "source_ids": [
+            "oct17-c-1",
+            "oct17-c-2"
+          ],
+          "text": "多数编辑低于 8 秒是作者平台声明。跨型号对照为 2026-09-24 至 2026-10-01 在Krea平台内含排队的编辑任务中位时间，不是各厂商原生API的延迟排名。",
+          "title": "计时来自指定平台样本"
+        },
+        {
+          "locator": "Krea 3; official release and stated limitations",
+          "source_ids": [
+            "oct17-c-1",
+            "oct17-c-2"
+          ],
+          "text": "列价为 2K每图 0.06 美元、1K每图 0.03 美元，未计图像参考输入。批量示例基于指定数量与列价，实际账单另核。",
+          "title": "列价不含参考输入"
+        },
+        {
+          "locator": "Krea 3; official release and stated limitations",
+          "source_ids": [
+            "oct17-c-1",
+            "oct17-c-2"
+          ],
+          "text": "官网列出自家及合作平台入口；地区、实际可用型号与质量盲测未核实。本站未调用，不写成今日首发或全面优于其他模型。",
+          "title": "开放和质量仍有未知项"
+        }
+      ],
+      "name": "Krea 3",
+      "note": "原文日期：2026-10-15；本站核对：2026-10-17；版本：Krea 3。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。",
+      "organization": "Krea",
+      "publication": {
+        "first_published_at": "2026-10-17T03:07:36.350529+00:00",
+        "updated_at": "2026-10-18T03:28:57.201517+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-c-1",
+          "locator": "Exact release / official documentation; Krea 3",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Krea 3 · Krea 3 · official 1",
+          "upstream_revision": "Krea 3",
+          "url": "https://www.krea.ai/blog/introducing-krea-3"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-c-2",
+          "locator": "Exact release / official documentation; Krea 3",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Krea 3 · Krea 3 · official 2",
+          "upstream_revision": "Krea 3",
+          "url": "https://www.krea.ai/krea-3"
+        }
+      ],
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct17-c-1",
+          "title": "Krea 3 · Krea 3 · official 1",
+          "url": "https://www.krea.ai/blog/introducing-krea-3"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-c-2",
+          "title": "Krea 3 · Krea 3 · official 2",
+          "url": "https://www.krea.ai/krea-3"
+        }
+      ],
+      "state": "published",
+      "summary": "Krea在标注 2026-10-15 的官方介绍中展示Krea 3：原生 2K图像编辑、至多六张参考图，强调商品和人物一致性。介绍日期与媒体页 2026-10-12 标签不同，首发日期尚未锁定。",
+      "title": "Krea 3：批量图像编辑，需要连同价格与计时口径阅读",
+      "translations": {
+        "en": {
+          "fields": {
+            "Krea 3：批量图像编辑，需要连同价格与计时口径阅读": "Krea 3: read batch editing alongside pricing and timing definitions",
+            "Krea在标注 2026-10-15 的官方介绍中展示Krea 3：原生 2K图像编辑、至多六张参考图，强调商品和人物一致性。介绍日期与媒体页 2026-10-12 标签不同，首发日期尚未锁定。": "Krea presents Krea 3 in an official article dated 2026-10-15: native 2K editing, up to six reference images and product/person consistency. A media-page label says 2026-10-12; the first-release date remains unverified.",
+            "列价不含参考输入": "Listed prices exclude reference inputs",
+            "列价为 2K每图 0.06 美元、1K每图 0.03 美元，未计图像参考输入。批量示例基于指定数量与列价，实际账单另核。": "Listed prices are 0.06 dollars per 2K image and 0.03 dollars per 1K image, excluding reference-image inputs. Batch examples use specified quantities and list prices; verify actual bills separately.",
+            "原文日期：2026-10-15；本站核对：2026-10-17；版本：Krea 3。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-15; checked: 2026-10-17; version: Krea 3. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "多数编辑低于 8 秒是作者平台声明。跨型号对照为 2026-09-24 至 2026-10-01 在Krea平台内含排队的编辑任务中位时间，不是各厂商原生API的延迟排名。": "Most edits below 8 seconds is an author-platform claim. Cross-model comparisons use median editing times including queues on Krea from 2026-09-24 to 2026-10-01, not a latency ranking of vendors’ native APIs.",
+            "官网列出自家及合作平台入口；地区、实际可用型号与质量盲测未核实。本站未调用，不写成今日首发或全面优于其他模型。": "The site lists first-party and partner access. Regions, available variants and quality blind tests remain unverified. FieldToFit has not called it and does not present this as a first release today or universal superiority.",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "开放和质量仍有未知项": "Availability and quality have unknowns",
+            "计时来自指定平台样本": "Timing comes from a specified platform sample"
+          },
+          "source_hash": "09a650c7bd3d65afd9c5d6af827ce15fa2efda811e0b42bc0b52cd1b4b613b34",
+          "state": "reviewed",
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:06:14.526676+00:00"
+        }
+      },
+      "_position": 3
+    },
+    {
       "category": "tool",
       "checked_at": "2026-10-18",
       "codex_28_days": {
@@ -159,7 +1461,9 @@
             "官方 iOS 小组件与 Shortcuts 指南": "Official iOS widgets and Shortcuts guide",
             "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Directly checked the registered official sources. Post times are derived from their IDs and cross-checked against displayed dates and minutes.",
             "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。": "The original post and public structured data were read directly. Excerpts do not reconstruct omitted text; Chinese translations are by FieldToFit."
-          }
+          },
+          "review_note": "已逐项核对官方原帖、原始与北京时间、型号与版本、套餐资格、摘录归属及中英数字；保留重置公告与已生效计数的区别，未复测性能。",
+          "reviewed_at": "2026-10-18T02:43:26.789976+00:00"
         }
       }
     },
@@ -286,9 +1590,110 @@
             "官方 Day 13：额度重置公告，后续时间窗口保留 EOD PST 原文": "Official Day 13: usage reset announced with an EOD PST window",
             "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Directly checked the registered official sources. Post times are derived from their IDs and cross-checked against displayed dates and minutes.",
             "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。": "The original post and public structured data were read directly. Excerpts do not reconstruct omitted text; Chinese translations are by FieldToFit."
-          }
+          },
+          "review_note": "已逐项核对官方原帖、原始与北京时间、型号与版本、套餐资格、摘录归属及中英数字；保留重置公告与已生效计数的区别，未复测性能。",
+          "reviewed_at": "2026-10-18T02:43:01.460721+00:00"
         }
       }
+    },
+    {
+      "category": "agent",
+      "checked_at": "2026-10-17",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": false,
+      "id": "D-179",
+      "interpretation": [
+        {
+          "locator": "v2.1.302; official release and stated limitations",
+          "source_ids": [
+            "oct17-d-1"
+          ],
+          "text": "修复协商MCP 2026-07-28 但缺少部分可选字段时工具不可用；Read拒绝超过 128MB的图像来源。",
+          "title": "协议和读取保护"
+        },
+        {
+          "locator": "v2.1.302; official release and stated limitations",
+          "source_ids": [
+            "oct17-d-1"
+          ],
+          "text": "部分第三方提供方非交互／SDK会话使用default权限模式；fork子代理的默认前后台方式有变化。另修正错误任务状态及从头重跑导致重复操作的问题，自动化维护者需回归预期。",
+          "title": "自动运行的行为变化"
+        },
+        {
+          "locator": "v2.1.302; official release and stated limitations",
+          "source_ids": [
+            "oct17-d-1"
+          ],
+          "text": "Python SDK仍为 0.2.168、捆绑 2.1.301，不记为随CLI同步升级。客户端分类器型号变量不改变服务端分类器；本站未运行回归。",
+          "title": "CLI和SDK独立跟进"
+        }
+      ],
+      "name": "Claude Code",
+      "note": "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.1.302。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-17T03:08:00.181070+00:00",
+        "updated_at": "2026-10-18T03:27:47.017558+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-d-1",
+          "locator": "Exact release / official documentation; v2.1.302",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Claude Code · v2.1.302 · official 1",
+          "upstream_revision": "v2.1.302",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-10-16",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct17-d-1",
+          "title": "Claude Code · v2.1.302 · official 1",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
+        }
+      ],
+      "state": "published",
+      "summary": "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。",
+      "title": "Claude Code 2.1.302：修复MCP兼容、文件读取与任务状态",
+      "translations": {
+        "en": {
+          "fields": {
+            "CLI和SDK独立跟进": "Track CLI and SDK independently",
+            "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。": "Claude Code 2.1.302 was released at 04:53 Beijing time on 2026-10-17, following 2.1.301, with fixes for optional protocol fields, compaction and cloud-task state handling.",
+            "Claude Code 2.1.302：修复MCP兼容、文件读取与任务状态": "Claude Code 2.1.302: MCP compatibility, file reading and task-state fixes",
+            "Python SDK仍为 0.2.168、捆绑 2.1.301，不记为随CLI同步升级。客户端分类器型号变量不改变服务端分类器；本站未运行回归。": "The Python SDK remains 0.2.168, bundling 2.1.301; it is not recorded as updated alongside the CLI. The client classifier-model variable does not change the server classifier. FieldToFit has not run regression tests.",
+            "修复协商MCP 2026-07-28 但缺少部分可选字段时工具不可用；Read拒绝超过 128MB的图像来源。": "Fixes unavailable tools when negotiating MCP 2026-07-28 with some optional fields missing; Read refuses image sources over 128MB.",
+            "协议和读取保护": "Protocol and read protection",
+            "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.1.302。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: v2.1.302; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "自动运行的行为变化": "Behavior changes in automation",
+            "部分第三方提供方非交互／SDK会话使用default权限模式；fork子代理的默认前后台方式有变化。另修正错误任务状态及从头重跑导致重复操作的问题，自动化维护者需回归预期。": "Some noninteractive / SDK sessions with third-party providers use default permission mode; forked subagents have changed foreground/background defaults. Incorrect task states and restarts that duplicate operations are also addressed; automation owners should recheck expectations."
+          },
+          "source_hash": "fdeed8b0e209c71da3dbaf818387b50a96f1a0f0a59f0d0f949b85571f462f43",
+          "state": "reviewed",
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:06:33.291253+00:00"
+        }
+      },
+      "_position": 4
     },
     {
       "category": "tool",
@@ -383,7 +1788,9 @@
             "官方 Day 12：上下文复用与缓存优化，提高 Codex／Work 有效用量": "Official Day 12: context reuse and caching improve effective usage in Codex and Work",
             "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Directly checked the registered official sources. Post times are derived from their IDs and cross-checked against displayed dates and minutes.",
             "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。": "The original post and public structured data were read directly. Excerpts do not reconstruct omitted text; Chinese translations are by FieldToFit."
-          }
+          },
+          "review_note": "已逐项核对官方原帖、原始与北京时间、型号与版本、套餐资格、摘录归属及中英数字；保留重置公告与已生效计数的区别，未复测性能。",
+          "reviewed_at": "2026-10-18T02:42:35.847109+00:00"
         }
       }
     },
@@ -1009,9 +2416,160 @@
             "首次整理所选MAI-Base-2 技术文，提供四结论、同号论述、三张原创事实图，并区分BPB拟合效率、实际训练计算、MFU和goodput。": "First analysis of the selected MAI-Base-2 technical article: four findings, matching arguments and three original factual diagrams distinguish fitted BPB efficiency, actual training compute, MFU and goodput."
           },
           "source_hash": "a27e73b5ffdbe1e74a2f6adf946d4bba136ebf1cfd998b43dd59855553dc6d27",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "真实用户选择10月17日报告1 MAI-Base-2，并要求适配当前首页轮替。已深读官方技术文并交叉核对PDF定义与位置；85项英文字段逐项核对，四结论、三张原创图与双语桌面／手机、图表放大和AI复制通过隔离预览。保留等BPB拟合、实际训练计算、MFU与goodput分母和未复现边界；三图实际部署哈希已核对。",
+          "reviewed_at": "2026-10-17T02:59:25.541516+00:00"
         }
       }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-17",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": false,
+      "id": "D-180",
+      "interpretation": [
+        {
+          "locator": "v0.3.0–v0.3.2; official release and stated limitations",
+          "source_ids": [
+            "oct17-e-1",
+            "oct17-e-2",
+            "oct17-e-3"
+          ],
+          "text": "实验功能要求Linux x64／ARM64、glibc 2.34+和指定HTTPS下载入口；三平台桌面客户端不代表远端macOS已经支持。",
+          "title": "远端条件"
+        },
+        {
+          "locator": "v0.3.0–v0.3.2; official release and stated limitations",
+          "source_ids": [
+            "oct17-e-1",
+            "oct17-e-2",
+            "oct17-e-3"
+          ],
+          "text": "远端被视为受信任的本机延伸，依赖SSH配置；Windows需预装密钥并先接受主机密钥。HTTPS云Agent连接仍为将来能力。",
+          "title": "认证与信任边界"
+        },
+        {
+          "locator": "v0.3.0–v0.3.2; official release and stated limitations",
+          "source_ids": [
+            "oct17-e-1",
+            "oct17-e-2",
+            "oct17-e-3"
+          ],
+          "text": "档案在 0.2.4 之后追加新版本，保留分享同步与直接编辑等已有边界。新版文档提及首页、结构化差异与Azure DevOps入口，本站未安装或验证远端操作。",
+          "title": "保留旧限制"
+        }
+      ],
+      "name": "Whiteboard",
+      "note": "原文日期：2026-10-16；本站核对：2026-10-17；版本：v0.3.0–v0.3.2。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。",
+      "organization": "devdotfast",
+      "publication": {
+        "first_published_at": "2026-10-17T03:08:24.222650+00:00",
+        "updated_at": "2026-10-18T03:26:42.421103+00:00"
+      },
+      "reading_materials": [
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-e-1",
+          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 1",
+          "upstream_revision": "v0.3.0–v0.3.2",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.0"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-e-2",
+          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 2",
+          "upstream_revision": "v0.3.0–v0.3.2",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.1"
+        },
+        {
+          "approved": true,
+          "body": "",
+          "checked_at": "2026-10-17",
+          "coverage": "link_only",
+          "id": "oct17-e-3",
+          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
+          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
+          "retrieved_at": "2026-10-17",
+          "rights": {
+            "basis": "Link only; original FieldToFit commentary."
+          },
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 3",
+          "upstream_revision": "v0.3.0–v0.3.2",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.2"
+        }
+      ],
+      "related": [
+        {
+          "id": "CW-T07",
+          "name": "Whiteboard",
+          "url": "https://fieldtofit.top/watch/CW-T07"
+        }
+      ],
+      "source_published_at": "2026-10-16",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct17-e-1",
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 1",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-e-2",
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 2",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct17-e-3",
+          "title": "Whiteboard · v0.3.0–v0.3.2 · official 3",
+          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.2"
+        }
+      ],
+      "state": "published",
+      "summary": "Whiteboard于北京时间 2026-10-17 01:00、04:40、06:07 依次发布 0.3.0、0.3.1、0.3.2，增加SSH远程Linux代码审阅，随后补外部编辑器入口与Windows更新前停止MCP服务。",
+      "title": "Whiteboard 0.3：SSH远程审阅进入实验阶段",
+      "translations": {
+        "en": {
+          "fields": {
+            "Whiteboard 0.3：SSH远程审阅进入实验阶段": "Whiteboard 0.3: experimental remote review over SSH",
+            "Whiteboard于北京时间 2026-10-17 01:00、04:40、06:07 依次发布 0.3.0、0.3.1、0.3.2，增加SSH远程Linux代码审阅，随后补外部编辑器入口与Windows更新前停止MCP服务。": "Whiteboard released 0.3.0, 0.3.1 and 0.3.2 at 01:00, 04:40 and 06:07 Beijing time on 2026-10-17, adding SSH-based Linux code review, external-editor access and stopping MCP before Windows updates.",
+            "保留旧限制": "Retain earlier limitations",
+            "原文日期：2026-10-16；本站核对：2026-10-17；版本：v0.3.0–v0.3.2。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: v0.3.0–v0.3.2; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "实验功能要求Linux x64／ARM64、glibc 2.34+和指定HTTPS下载入口；三平台桌面客户端不代表远端macOS已经支持。": "The experimental feature requires Linux x64 / ARM64, glibc 2.34+ and specified HTTPS downloads. Three-platform desktop support does not establish remote macOS support.",
+            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
+            "档案在 0.2.4 之后追加新版本，保留分享同步与直接编辑等已有边界。新版文档提及首页、结构化差异与Azure DevOps入口，本站未安装或验证远端操作。": "The dossier adds versions after 0.2.4 while preserving sharing-sync and direct-editing limitations. Updated docs mention the home view, structured diffs and Azure DevOps access; FieldToFit has not installed it or tested remote operations.",
+            "认证与信任边界": "Authentication and trust boundary",
+            "远端条件": "Remote-host requirements",
+            "远端被视为受信任的本机延伸，依赖SSH配置；Windows需预装密钥并先接受主机密钥。HTTPS云Agent连接仍为将来能力。": "The remote host is a trusted extension of the local machine and uses SSH configuration. Windows requires keys loaded in advance and prior host-key acceptance. HTTPS cloud-agent connections remain planned."
+          },
+          "source_hash": "cc8a1a0415a47ec248c98f3dfb27c77895e03144ce73e40501152af66b099bef",
+          "state": "reviewed",
+          "review_note": "本批用户已明确选择A–D、报告1、卡1。已核对完整中英稿、模型版本、日期、计费／评测口径、官方链接及未实测边界；本次不扩大其他选题。",
+          "reviewed_at": "2026-10-18T03:07:02.815910+00:00"
+        }
+      },
+      "_position": 5
     },
     {
       "category": "model",
@@ -1193,9 +2751,12 @@
             "自定义声音官方指南": "Official custom voices guide"
           },
           "source_hash": "653a6084f1357e2d7b3bfd82f804435ab751f9653e3d61400b07d44c38c94ef8",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-17用户明确批准的A-J及对应档案/速览。",
+          "reviewed_at": "2026-10-17T02:52:17.592085+00:00"
         }
-      }
+      },
+      "_position": 1
     },
     {
       "checked_at": "2026-10-17",
@@ -1416,9 +2977,12 @@
             "重点看插话、停顿和背景噪声": "Focus on interrupting, pause and background noise"
           },
           "source_hash": "23f72d55df2a391d356136cccbd8facdbdc32277368afaf91f2859861bbc074f",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T02:55:14.115673+00:00"
         }
-      }
+      },
+      "_position": 2
     },
     {
       "category": "agent",
@@ -1597,130 +3161,12 @@
             "此前FilesystemBackend可能在检查后跟随符号链接，触达被拒绝路径。使用者应复核现有规则与目标审批；不能据此宣称全部越权风险已消除。": "Previously FilesystemBackend could follow a symlink after the check and reach a denied path. Review existing rules and target approvals; this does not establish elimination of every permission risk."
           },
           "source_hash": "58530243ed8fac7390302934834a6c70b80c308f95d0f37c4f8861fae6e59512",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:03:50.937789+00:00"
         }
-      }
-    },
-    {
-      "category": "model",
-      "checked_at": "2026-10-17",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-15",
-      "highlight": true,
-      "id": "D-177",
-      "interpretation": [
-        {
-          "locator": "claude-opus-5-5 / Fast mode GA; official release and stated limitations",
-          "source_ids": [
-            "oct17-b-1",
-            "oct17-b-2"
-          ],
-          "text": "最高 2.5 倍指输出token速度，使用相同模型权重；不保证首token延迟或整个任务同倍缩短。",
-          "title": "同权重，更快输出"
-        },
-        {
-          "locator": "claude-opus-5-5 / Fast mode GA; official release and stated limitations",
-          "source_ids": [
-            "oct17-b-1",
-            "oct17-b-2"
-          ],
-          "text": "快速模式单独限流并按更高费率计费，标准／快速模式不共享前缀缓存。组织实际额度、Evaluation层级与端到端收益仍需逐项核实。",
-          "title": "费用、缓存和限额"
-        },
-        {
-          "locator": "claude-opus-5-5 / Fast mode GA; official release and stated limitations",
-          "source_ids": [
-            "oct17-b-1",
-            "oct17-b-2"
-          ],
-          "text": "Opus 5 及 4.8 仍有研究预览要求，不能将 5.5 的范围套到其他型号或所有云平台。本站未实测。",
-          "title": "型号和平台边界"
-        }
-      ],
-      "name": "Claude Opus Fast mode",
-      "note": "原文日期：2026-10-15；本站核对：2026-10-17；版本：claude-opus-5-5 / Fast mode GA。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。",
-      "organization": "Anthropic",
-      "publication": {
-        "first_published_at": "2026-10-17T03:07:12.725594+00:00",
-        "updated_at": "2026-10-17T03:07:12.725594+00:00"
       },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-17",
-          "coverage": "link_only",
-          "id": "oct17-b-1",
-          "locator": "Exact release / official documentation; claude-opus-5-5 / Fast mode GA",
-          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
-          "retrieved_at": "2026-10-17",
-          "rights": {
-            "basis": "Link only; original FieldToFit commentary."
-          },
-          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 1",
-          "upstream_revision": "claude-opus-5-5 / Fast mode GA",
-          "url": "https://platform.claude.com/docs/en/release-notes/overview"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-17",
-          "coverage": "link_only",
-          "id": "oct17-b-2",
-          "locator": "Exact release / official documentation; claude-opus-5-5 / Fast mode GA",
-          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
-          "retrieved_at": "2026-10-17",
-          "rights": {
-            "basis": "Link only; original FieldToFit commentary."
-          },
-          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 2",
-          "upstream_revision": "claude-opus-5-5 / Fast mode GA",
-          "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-M02",
-          "name": "Claude",
-          "url": "https://fieldtofit.top/watch/CW-M02"
-        }
-      ],
-      "source_published_at": "2026-10-15",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "oct17-b-1",
-          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 1",
-          "url": "https://platform.claude.com/docs/en/release-notes/overview"
-        },
-        {
-          "coverage": "link_only",
-          "id": "oct17-b-2",
-          "title": "Claude Opus Fast mode · claude-opus-5-5 / Fast mode GA · official 2",
-          "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
-        }
-      ],
-      "state": "published",
-      "summary": "Anthropic于 2026-10-15 将Opus 5.5 Fast mode移出研究预览，Start、Build、Scale层级可使用默认快速限额，Azure托管的Microsoft Foundry部署也已支持。",
-      "title": "Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费",
-      "translations": {
-        "en": {
-          "fields": {
-            "Anthropic于 2026-10-15 将Opus 5.5 Fast mode移出研究预览，Start、Build、Scale层级可使用默认快速限额，Azure托管的Microsoft Foundry部署也已支持。": "On 2026-10-15 Anthropic moved Opus 5.5 Fast mode out of research preview for Start, Build and Scale tiers with default fast-mode limits, including Azure-hosted Microsoft Foundry deployments.",
-            "Opus 5 及 4.8 仍有研究预览要求，不能将 5.5 的范围套到其他型号或所有云平台。本站未实测。": "Opus 5 and 4.8 still have research-preview requirements. Do not extend 5.5 availability to other models or every cloud platform. FieldToFit has not tested it.",
-            "Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费": "Opus 5.5 Fast mode: broader access with separate fast-mode billing",
-            "原文日期：2026-10-15；本站核对：2026-10-17；版本：claude-opus-5-5 / Fast mode GA。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-15; checked: 2026-10-17; version: claude-opus-5-5 / Fast mode GA. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
-            "同权重，更快输出": "Same weights, faster output",
-            "型号和平台边界": "Model and platform scope",
-            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
-            "快速模式单独限流并按更高费率计费，标准／快速模式不共享前缀缓存。组织实际额度、Evaluation层级与端到端收益仍需逐项核实。": "Fast mode has separate rate limits and premium pricing; standard and fast modes do not share prefix caches. Check organizational limits, Evaluation-tier access and end-to-end benefits separately.",
-            "最高 2.5 倍指输出token速度，使用相同模型权重；不保证首token延迟或整个任务同倍缩短。": "Up to 2.5 times refers to output-token speed with the same model weights; it does not promise the same reduction in time to first token or total task duration.",
-            "费用、缓存和限额": "Pricing, caching and limits"
-          },
-          "source_hash": "e664c3b9eb772b2c5475ced15555df23e4099d73702fefcfbd8cb76e0d284c2c",
-          "state": "reviewed"
-        }
-      }
+      "_position": 3
     },
     {
       "category": "agent",
@@ -1876,9 +3322,12 @@
             "模型列表与配置校验": "Model lists and configuration validation"
           },
           "source_hash": "7bc39f5ebcfdafbd71fa77032ec756f8c5cf5b66e0c81511bede1fa14500df20",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:02:00.555773+00:00"
         }
-      }
+      },
+      "_position": 4
     },
     {
       "checked_at": "2026-10-17",
@@ -2127,9 +3576,12 @@
             "采用说明与条件": "Instructions and conditions for adoption"
           },
           "source_hash": "452f9b659c8884c151bf31def9f27e4f898c8c92e0bad07a9ebab51a4be9f8f8",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:00:04.307693+00:00"
         }
-      }
+      },
+      "_position": 4
     },
     {
       "category": "tool",
@@ -2262,9 +3714,12 @@
             "逐页分数可用于排查和筛选，不等于事实正确率。格式支持增加不证明复杂中文表格或扫描件均准确；本站未做精度与吞吐复测。": "Per-page scores support diagnosis and filtering rather than factual accuracy guarantees. Added format support does not establish accuracy for complex Chinese tables or scans; FieldToFit has not tested accuracy or throughput."
           },
           "source_hash": "e7f7c5dd60ecc3fb2a164f17a05124a8fb11288d825259d87d2705a313c0610c",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:02:54.906770+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "tool",
@@ -2397,366 +3852,12 @@
             "资产开关按安装方式确认": "Asset defaults depend on the installation"
           },
           "source_hash": "3a6417a80b2846c87f2fe25009622cfb0d8e42a06e7c60fc806cad24a77ffbc9",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:01:02.354779+00:00"
         }
-      }
-    },
-    {
-      "category": "model",
-      "checked_at": "2026-10-17",
-      "editor": "FieldToFit",
-      "event_date": null,
-      "highlight": true,
-      "id": "D-178",
-      "interpretation": [
-        {
-          "locator": "Krea 3; official release and stated limitations",
-          "source_ids": [
-            "oct17-c-1",
-            "oct17-c-2"
-          ],
-          "text": "多数编辑低于 8 秒是作者平台声明。跨型号对照为 2026-09-24 至 2026-10-01 在Krea平台内含排队的编辑任务中位时间，不是各厂商原生API的延迟排名。",
-          "title": "计时来自指定平台样本"
-        },
-        {
-          "locator": "Krea 3; official release and stated limitations",
-          "source_ids": [
-            "oct17-c-1",
-            "oct17-c-2"
-          ],
-          "text": "列价为 2K每图 0.06 美元、1K每图 0.03 美元，未计图像参考输入。批量示例基于指定数量与列价，实际账单另核。",
-          "title": "列价不含参考输入"
-        },
-        {
-          "locator": "Krea 3; official release and stated limitations",
-          "source_ids": [
-            "oct17-c-1",
-            "oct17-c-2"
-          ],
-          "text": "官网列出自家及合作平台入口；地区、实际可用型号与质量盲测未核实。本站未调用，不写成今日首发或全面优于其他模型。",
-          "title": "开放和质量仍有未知项"
-        }
-      ],
-      "name": "Krea 3",
-      "note": "原文日期：2026-10-15；本站核对：2026-10-17；版本：Krea 3。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。",
-      "organization": "Krea",
-      "publication": {
-        "first_published_at": "2026-10-17T03:07:36.350529+00:00",
-        "updated_at": "2026-10-17T03:07:36.350529+00:00"
       },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-17",
-          "coverage": "link_only",
-          "id": "oct17-c-1",
-          "locator": "Exact release / official documentation; Krea 3",
-          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
-          "retrieved_at": "2026-10-17",
-          "rights": {
-            "basis": "Link only; original FieldToFit commentary."
-          },
-          "title": "Krea 3 · Krea 3 · official 1",
-          "upstream_revision": "Krea 3",
-          "url": "https://www.krea.ai/blog/introducing-krea-3"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-17",
-          "coverage": "link_only",
-          "id": "oct17-c-2",
-          "locator": "Exact release / official documentation; Krea 3",
-          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
-          "retrieved_at": "2026-10-17",
-          "rights": {
-            "basis": "Link only; original FieldToFit commentary."
-          },
-          "title": "Krea 3 · Krea 3 · official 2",
-          "upstream_revision": "Krea 3",
-          "url": "https://www.krea.ai/krea-3"
-        }
-      ],
-      "related": [],
-      "source_published_at": "2026-10-15",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "oct17-c-1",
-          "title": "Krea 3 · Krea 3 · official 1",
-          "url": "https://www.krea.ai/blog/introducing-krea-3"
-        },
-        {
-          "coverage": "link_only",
-          "id": "oct17-c-2",
-          "title": "Krea 3 · Krea 3 · official 2",
-          "url": "https://www.krea.ai/krea-3"
-        }
-      ],
-      "state": "published",
-      "summary": "Krea在标注 2026-10-15 的官方介绍中展示Krea 3：原生 2K图像编辑、至多六张参考图，强调商品和人物一致性。介绍日期与媒体页 2026-10-12 标签不同，首发日期尚未锁定。",
-      "title": "Krea 3：批量图像编辑，需要连同价格与计时口径阅读",
-      "translations": {
-        "en": {
-          "fields": {
-            "Krea 3：批量图像编辑，需要连同价格与计时口径阅读": "Krea 3: read batch editing alongside pricing and timing definitions",
-            "Krea在标注 2026-10-15 的官方介绍中展示Krea 3：原生 2K图像编辑、至多六张参考图，强调商品和人物一致性。介绍日期与媒体页 2026-10-12 标签不同，首发日期尚未锁定。": "Krea presents Krea 3 in an official article dated 2026-10-15: native 2K editing, up to six reference images and product/person consistency. A media-page label says 2026-10-12; the first-release date remains unverified.",
-            "列价不含参考输入": "Listed prices exclude reference inputs",
-            "列价为 2K每图 0.06 美元、1K每图 0.03 美元，未计图像参考输入。批量示例基于指定数量与列价，实际账单另核。": "Listed prices are 0.06 dollars per 2K image and 0.03 dollars per 1K image, excluding reference-image inputs. Batch examples use specified quantities and list prices; verify actual bills separately.",
-            "原文日期：2026-10-15；本站核对：2026-10-17；版本：Krea 3。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-15; checked: 2026-10-17; version: Krea 3. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
-            "多数编辑低于 8 秒是作者平台声明。跨型号对照为 2026-09-24 至 2026-10-01 在Krea平台内含排队的编辑任务中位时间，不是各厂商原生API的延迟排名。": "Most edits below 8 seconds is an author-platform claim. Cross-model comparisons use median editing times including queues on Krea from 2026-09-24 to 2026-10-01, not a latency ranking of vendors’ native APIs.",
-            "官网列出自家及合作平台入口；地区、实际可用型号与质量盲测未核实。本站未调用，不写成今日首发或全面优于其他模型。": "The site lists first-party and partner access. Regions, available variants and quality blind tests remain unverified. FieldToFit has not called it and does not present this as a first release today or universal superiority.",
-            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
-            "开放和质量仍有未知项": "Availability and quality have unknowns",
-            "计时来自指定平台样本": "Timing comes from a specified platform sample"
-          },
-          "source_hash": "79988fd2f7581e66d3d9d2addecc58fe923fea01c9c6c24200331d6916f3625f",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
-      "category": "agent",
-      "checked_at": "2026-10-17",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-17",
-      "highlight": true,
-      "id": "D-179",
-      "interpretation": [
-        {
-          "locator": "v2.1.302; official release and stated limitations",
-          "source_ids": [
-            "oct17-d-1"
-          ],
-          "text": "修复协商MCP 2026-07-28 但缺少部分可选字段时工具不可用；Read拒绝超过 128MB的图像来源。",
-          "title": "协议和读取保护"
-        },
-        {
-          "locator": "v2.1.302; official release and stated limitations",
-          "source_ids": [
-            "oct17-d-1"
-          ],
-          "text": "部分第三方提供方非交互／SDK会话使用default权限模式；fork子代理的默认前后台方式有变化。另修正错误任务状态及从头重跑导致重复操作的问题，自动化维护者需回归预期。",
-          "title": "自动运行的行为变化"
-        },
-        {
-          "locator": "v2.1.302; official release and stated limitations",
-          "source_ids": [
-            "oct17-d-1"
-          ],
-          "text": "Python SDK仍为 0.2.168、捆绑 2.1.301，不记为随CLI同步升级。客户端分类器型号变量不改变服务端分类器；本站未运行回归。",
-          "title": "CLI和SDK独立跟进"
-        }
-      ],
-      "name": "Claude Code",
-      "note": "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.1.302。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。",
-      "organization": "Anthropic",
-      "publication": {
-        "first_published_at": "2026-10-17T03:08:00.181070+00:00",
-        "updated_at": "2026-10-17T03:08:00.181070+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-17",
-          "coverage": "link_only",
-          "id": "oct17-d-1",
-          "locator": "Exact release / official documentation; v2.1.302",
-          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
-          "retrieved_at": "2026-10-17",
-          "rights": {
-            "basis": "Link only; original FieldToFit commentary."
-          },
-          "title": "Claude Code · v2.1.302 · official 1",
-          "upstream_revision": "v2.1.302",
-          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-A02",
-          "name": "Claude Code",
-          "url": "https://fieldtofit.top/watch/CW-A02"
-        }
-      ],
-      "source_published_at": "2026-10-16",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "oct17-d-1",
-          "title": "Claude Code · v2.1.302 · official 1",
-          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
-        }
-      ],
-      "state": "published",
-      "summary": "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。",
-      "title": "Claude Code 2.1.302：修复MCP兼容、文件读取与任务状态",
-      "translations": {
-        "en": {
-          "fields": {
-            "CLI和SDK独立跟进": "Track CLI and SDK independently",
-            "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。": "Claude Code 2.1.302 was released at 04:53 Beijing time on 2026-10-17, following 2.1.301, with fixes for optional protocol fields, compaction and cloud-task state handling.",
-            "Claude Code 2.1.302：修复MCP兼容、文件读取与任务状态": "Claude Code 2.1.302: MCP compatibility, file reading and task-state fixes",
-            "Python SDK仍为 0.2.168、捆绑 2.1.301，不记为随CLI同步升级。客户端分类器型号变量不改变服务端分类器；本站未运行回归。": "The Python SDK remains 0.2.168, bundling 2.1.301; it is not recorded as updated alongside the CLI. The client classifier-model variable does not change the server classifier. FieldToFit has not run regression tests.",
-            "修复协商MCP 2026-07-28 但缺少部分可选字段时工具不可用；Read拒绝超过 128MB的图像来源。": "Fixes unavailable tools when negotiating MCP 2026-07-28 with some optional fields missing; Read refuses image sources over 128MB.",
-            "协议和读取保护": "Protocol and read protection",
-            "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.1.302。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: v2.1.302; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
-            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
-            "自动运行的行为变化": "Behavior changes in automation",
-            "部分第三方提供方非交互／SDK会话使用default权限模式；fork子代理的默认前后台方式有变化。另修正错误任务状态及从头重跑导致重复操作的问题，自动化维护者需回归预期。": "Some noninteractive / SDK sessions with third-party providers use default permission mode; forked subagents have changed foreground/background defaults. Incorrect task states and restarts that duplicate operations are also addressed; automation owners should recheck expectations."
-          },
-          "source_hash": "d4789fe3ceefd62698c7a82a412998606040e617633e6aa92a93adbd4cde7319",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
-      "category": "tool",
-      "checked_at": "2026-10-17",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-17",
-      "highlight": true,
-      "id": "D-180",
-      "interpretation": [
-        {
-          "locator": "v0.3.0–v0.3.2; official release and stated limitations",
-          "source_ids": [
-            "oct17-e-1",
-            "oct17-e-2",
-            "oct17-e-3"
-          ],
-          "text": "实验功能要求Linux x64／ARM64、glibc 2.34+和指定HTTPS下载入口；三平台桌面客户端不代表远端macOS已经支持。",
-          "title": "远端条件"
-        },
-        {
-          "locator": "v0.3.0–v0.3.2; official release and stated limitations",
-          "source_ids": [
-            "oct17-e-1",
-            "oct17-e-2",
-            "oct17-e-3"
-          ],
-          "text": "远端被视为受信任的本机延伸，依赖SSH配置；Windows需预装密钥并先接受主机密钥。HTTPS云Agent连接仍为将来能力。",
-          "title": "认证与信任边界"
-        },
-        {
-          "locator": "v0.3.0–v0.3.2; official release and stated limitations",
-          "source_ids": [
-            "oct17-e-1",
-            "oct17-e-2",
-            "oct17-e-3"
-          ],
-          "text": "档案在 0.2.4 之后追加新版本，保留分享同步与直接编辑等已有边界。新版文档提及首页、结构化差异与Azure DevOps入口，本站未安装或验证远端操作。",
-          "title": "保留旧限制"
-        }
-      ],
-      "name": "Whiteboard",
-      "note": "原文日期：2026-10-16；本站核对：2026-10-17；版本：v0.3.0–v0.3.2。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。",
-      "organization": "devdotfast",
-      "publication": {
-        "first_published_at": "2026-10-17T03:08:24.222650+00:00",
-        "updated_at": "2026-10-17T03:08:24.222650+00:00"
-      },
-      "reading_materials": [
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-17",
-          "coverage": "link_only",
-          "id": "oct17-e-1",
-          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
-          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
-          "retrieved_at": "2026-10-17",
-          "rights": {
-            "basis": "Link only; original FieldToFit commentary."
-          },
-          "title": "Whiteboard · v0.3.0–v0.3.2 · official 1",
-          "upstream_revision": "v0.3.0–v0.3.2",
-          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.0"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-17",
-          "coverage": "link_only",
-          "id": "oct17-e-2",
-          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
-          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
-          "retrieved_at": "2026-10-17",
-          "rights": {
-            "basis": "Link only; original FieldToFit commentary."
-          },
-          "title": "Whiteboard · v0.3.0–v0.3.2 · official 2",
-          "upstream_revision": "v0.3.0–v0.3.2",
-          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.1"
-        },
-        {
-          "approved": true,
-          "body": "",
-          "checked_at": "2026-10-17",
-          "coverage": "link_only",
-          "id": "oct17-e-3",
-          "locator": "Exact release / official documentation; v0.3.0–v0.3.2",
-          "reason": "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。",
-          "retrieved_at": "2026-10-17",
-          "rights": {
-            "basis": "Link only; original FieldToFit commentary."
-          },
-          "title": "Whiteboard · v0.3.0–v0.3.2 · official 3",
-          "upstream_revision": "v0.3.0–v0.3.2",
-          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.2"
-        }
-      ],
-      "related": [
-        {
-          "id": "CW-T07",
-          "name": "Whiteboard",
-          "url": "https://fieldtofit.top/watch/CW-T07"
-        }
-      ],
-      "source_published_at": "2026-10-16",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "oct17-e-1",
-          "title": "Whiteboard · v0.3.0–v0.3.2 · official 1",
-          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.0"
-        },
-        {
-          "coverage": "link_only",
-          "id": "oct17-e-2",
-          "title": "Whiteboard · v0.3.0–v0.3.2 · official 2",
-          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.1"
-        },
-        {
-          "coverage": "link_only",
-          "id": "oct17-e-3",
-          "title": "Whiteboard · v0.3.0–v0.3.2 · official 3",
-          "url": "https://github.com/devdotfast/whiteboard/releases/tag/v0.3.2"
-        }
-      ],
-      "state": "published",
-      "summary": "Whiteboard于北京时间 2026-10-17 01:00、04:40、06:07 依次发布 0.3.0、0.3.1、0.3.2，增加SSH远程Linux代码审阅，随后补外部编辑器入口与Windows更新前停止MCP服务。",
-      "title": "Whiteboard 0.3：SSH远程审阅进入实验阶段",
-      "translations": {
-        "en": {
-          "fields": {
-            "Whiteboard 0.3：SSH远程审阅进入实验阶段": "Whiteboard 0.3: experimental remote review over SSH",
-            "Whiteboard于北京时间 2026-10-17 01:00、04:40、06:07 依次发布 0.3.0、0.3.1、0.3.2，增加SSH远程Linux代码审阅，随后补外部编辑器入口与Windows更新前停止MCP服务。": "Whiteboard released 0.3.0, 0.3.1 and 0.3.2 at 01:00, 04:40 and 06:07 Beijing time on 2026-10-17, adding SSH-based Linux code review, external-editor access and stopping MCP before Windows updates.",
-            "保留旧限制": "Retain earlier limitations",
-            "原文日期：2026-10-16；本站核对：2026-10-17；版本：v0.3.0–v0.3.2。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: v0.3.0–v0.3.2; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
-            "实验功能要求Linux x64／ARM64、glibc 2.34+和指定HTTPS下载入口；三平台桌面客户端不代表远端macOS已经支持。": "The experimental feature requires Linux x64 / ARM64, glibc 2.34+ and specified HTTPS downloads. Three-platform desktop support does not establish remote macOS support.",
-            "已核对原始材料；原文再分发许可未确认，仅公开链接和本站原创解读。": "Original sources were checked; redistribution rights are unverified, so publish links and original FieldToFit analysis only.",
-            "档案在 0.2.4 之后追加新版本，保留分享同步与直接编辑等已有边界。新版文档提及首页、结构化差异与Azure DevOps入口，本站未安装或验证远端操作。": "The dossier adds versions after 0.2.4 while preserving sharing-sync and direct-editing limitations. Updated docs mention the home view, structured diffs and Azure DevOps access; FieldToFit has not installed it or tested remote operations.",
-            "认证与信任边界": "Authentication and trust boundary",
-            "远端条件": "Remote-host requirements",
-            "远端被视为受信任的本机延伸，依赖SSH配置；Windows需预装密钥并先接受主机密钥。HTTPS云Agent连接仍为将来能力。": "The remote host is a trusted extension of the local machine and uses SSH configuration. Windows requires keys loaded in advance and prior host-key acceptance. HTTPS cloud-agent connections remain planned."
-          },
-          "source_hash": "41cb186757cd25e1f4613acb2a5591e9f81b640534ad339b847dfde84e10e7d6",
-          "state": "reviewed"
-        }
-      }
+      "_position": 5
     },
     {
       "category": "harness",
@@ -2900,9 +4001,12 @@
             "结果路径和既有权限修复": "Result paths and existing permission fixes"
           },
           "source_hash": "f6f2c737e99ae66538233d746fcc2de2329b1d7073f238572765c703a99c7b3e",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:03:12.536350+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "tool",
@@ -2996,9 +4100,12 @@
             "版面与超时处理": "Layout and timeout handling"
           },
           "source_hash": "faa215ed18342f3d46b8df312ac6c27733cc39406b32d9e0c8016b59305c62f7",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:02:18.440301+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "agent",
@@ -3117,9 +4224,12 @@
             "自定义端点需迁移": "Custom endpoints need migration"
           },
           "source_hash": "4af357955112e6eea5b93c855e28ffabb494c3bc8cad3a9c3b2236f718deecf8",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:01:20.259337+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "tool",
@@ -3213,9 +4323,12 @@
             "运行器支持与模型发布分开": "Separate runtime support from model launches"
           },
           "source_hash": "e8448c8885b18ef3a58d771cc36076a0fec6022c59b278823382f59d5387f9a5",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T03:00:22.069959+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "tool",
@@ -3309,9 +4422,12 @@
             "适配器保留拆分内容、限定工具名、结构化结果和失败状态，恢复原会话与延迟审批；这些是界面及工具调用链的兼容修复。": "Adapters preserve split content, qualified tool names, structured results and failure states, with resumed sessions and deferred approvals. These are compatibility fixes for UI and tool-call flows."
           },
           "source_hash": "8549e74a88c473e3c94f6de9168cb6801344486ad3df7053e120d581b8bdbcd0",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T02:59:25.863339+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "model",
@@ -3436,9 +4552,12 @@
             "采用自定义Muse许可，部分MaaS业务有单独商业条件。作者内核 1.03–3.95×与AMD MI350 端到端 3%是不同口径，不推导整机或API同幅降价。": "The custom Muse license includes separate commercial conditions for some MaaS businesses. Author-reported 1.03–3.95× kernel gains and AMD MI350 end-to-end 3% use different scopes; they do not imply equivalent machine or API price reductions."
           },
           "source_hash": "89a63c5522dcface5e44b593a329066042edcc6d413c7989ff8be0c69b8ca17d",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-17用户明确批准的A-J及对应档案/速览。",
+          "reviewed_at": "2026-10-17T02:51:59.817503+00:00"
         }
-      }
+      },
+      "_position": 1
     },
     {
       "category": "tool",
@@ -3579,7 +4698,9 @@
             "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Registered official sources verified directly; post-ID-derived timestamps cross-checked with the page date and minute."
           },
           "source_hash": "070b10b6db19cc3ad657e03dd841ada8848893fe501b2ea4c9814a7b31a483ee",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项审读本批中英文、日期／精度、官方出处、套餐与计费范围及真实头像；Pro原帖与编辑分开，不借社区填写Day12；储备重置不作自动清零，历史公告不计严格reset。",
+          "reviewed_at": "2026-10-17T02:19:52.491356+00:00"
         }
       }
     },
@@ -3776,9 +4897,12 @@
             "语音更新 · 新声音与多语言口音": "Voice updates: new voices and accents"
           },
           "source_hash": "7ef7ef07868d8f5b488a53b5841296203044273bd68064c34c8878d17e405fdc",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-17用户明确批准的A-J及对应档案/速览。",
+          "reviewed_at": "2026-10-17T02:51:41.824229+00:00"
         }
-      }
+      },
+      "_position": 2
     },
     {
       "category": "tool",
@@ -3897,7 +5021,9 @@
             "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Registered official sources verified directly; post-ID-derived timestamps cross-checked with the page date and minute."
           },
           "source_hash": "505cc2efbe40bdee151f17184acd3eb6ceb9c24943d684b13ed634b8cb73237b",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项审读本批中英文、日期／精度、官方出处、套餐与计费范围及真实头像；Pro原帖与编辑分开，不借社区填写Day12；储备重置不作自动清零，历史公告不计严格reset。",
+          "reviewed_at": "2026-10-17T02:19:18.381733+00:00"
         }
       }
     },
@@ -4067,9 +5193,12 @@
             "等待与错误识别": "Wait limits and error reporting"
           },
           "source_hash": "40796a5fe581abddf297d2e4e1238c8973081e5cc93a0acc3f77f5b41c6440ee",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对本批10月17日用户具体批准的中英文文案，数字、版本、日期、许可、原帖与未复现边界一致。A复用D-173保留原有专题，不发表重复D-176。",
+          "reviewed_at": "2026-10-17T02:58:35.343711+00:00"
         }
-      }
+      },
+      "_position": 5
     },
     {
       "category": "agent",
@@ -4189,9 +5318,12 @@
             "终端配置从多层tui.json(c)迁移为全局cli.json并自动迁移；官方称其他受支持V1 配置原则上继续兼容，不要求全部重写。部分新SDK仍在开发。": "Terminal settings move from layered tui.json(c) to global cli.json with automatic migration. Other supported V1 configuration is intended to remain compatible, not require a complete rewrite. Some new SDK work is still in development."
           },
           "source_hash": "e134e3ed7e3fb051954e69c7e41c687d0a1a19af18d3418c1fea47c697b4e66e",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-17用户明确批准的A-J及对应档案/速览。",
+          "reviewed_at": "2026-10-17T02:51:23.780928+00:00"
         }
-      }
+      },
+      "_position": 3
     },
     {
       "category": "agent",
@@ -4291,9 +5423,12 @@
             "长输出与已知问题": "Long output and a known issue"
           },
           "source_hash": "bbba5ef244bd26e6d2130baa5a96480fe2b20055dd6857f29086bd146139c21a",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-17用户明确批准的A-J及对应档案/速览。",
+          "reviewed_at": "2026-10-17T02:51:05.235149+00:00"
         }
-      }
+      },
+      "_position": 4
     },
     {
       "category": "tool",
@@ -4380,7 +5515,9 @@
             "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。": "Registered official sources verified directly; source date retained without an invented announcement time."
           },
           "source_hash": "cd0f37a88eb38d7fd80745dfe000f56b9bedf753e5f1f7ae3f3094d52de0dd08",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项审读本批中英文、日期／精度、官方出处、套餐与计费范围及真实头像；Pro原帖与编辑分开，不借社区填写Day12；储备重置不作自动清零，历史公告不计严格reset。",
+          "reviewed_at": "2026-10-17T02:18:29.265192+00:00"
         }
       }
     },
@@ -4534,7 +5671,9 @@
             "官方模型使用范围": "Official model availability",
             "直接核对已登记官方出处；原帖时刻按 ID 推导，并与页面日期／分钟核对。": "Directly checked the registered official sources. Post times are derived from their IDs and cross-checked against displayed dates and minutes.",
             "直接读取原帖及公开结构化数据；摘录不补写省略内容，中文为本站译文。": "The original post and public structured data were read directly. Excerpts do not reconstruct omitted text; Chinese translations are by FieldToFit."
-          }
+          },
+          "review_note": "已逐项核对官方原帖、原始与北京时间、型号与版本、套餐资格、摘录归属及中英数字；保留重置公告与已生效计数的区别，未复测性能。",
+          "reviewed_at": "2026-10-18T02:43:45.283236+00:00"
         }
       }
     },
@@ -5159,7 +6298,9 @@
             "首次整理所有者选中的Muse Spark Open材料：四结论、同号论述和三张原创重绘；与Muse Wonder保持独立问题与入口。": "First analysis of owner-selected Muse Spark Open materials: four findings, matching arguments and three original diagrams; keep a question and URL distinct from Muse Wonder."
           },
           "source_hash": "23011e3c1c34b418001c2b12c93ea2e05dd9cc688a261d429849c92399bc2334",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "真实用户选择10月16日报告1 Muse Spark Open，并要求适配当前首页轮替。已读8页方法、模型卡和发布文章；79项英文字段逐项核对，四结论、三张原创图与双语桌面／手机、图表放大和AI复制通过隔离预览。保留方法月份日期、MCP分母缺口、评测框架差异及未复现边界；三图实际部署哈希已核对。",
+          "reviewed_at": "2026-10-16T05:33:05.644023+00:00"
         }
       }
     },
@@ -5256,9 +6397,12 @@
             "版本与验证边界": "Version and validation boundaries"
           },
           "source_hash": "280dc5d800abfbef70c2de0614d3d37fbec3e0d02e9549c3bb934ae639f0c374",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-16用户明确批准的A-H及对应档案/速览。",
+          "reviewed_at": "2026-10-16T05:32:42.640211+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "agent",
@@ -5444,9 +6588,12 @@
             "补强压缩后MCP工具及指令通知、恢复后的工具搜索；Hook改写输入增加校验，部分云会话误报写入成功及策略读取超时也被修复。升级需核对自己的Hook、代理与会话配置。": "Improves post-compaction MCP tool/instruction notifications and resumed tool search. Hook-rewritten input gains validation; some cloud-session false write-success reports and policy-read timeouts are fixed. Check your hooks, proxy and session settings when upgrading."
           },
           "source_hash": "c10c9670ab9cf3e108addfba341cc910217917f024217885b196371b8dad6ae3",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-16用户明确批准的A-H及对应档案/速览。",
+          "reviewed_at": "2026-10-16T05:32:24.982937+00:00"
         }
-      }
+      },
+      "_position": 1
     },
     {
       "category": "agent",
@@ -5541,9 +6688,12 @@
             "群聊与浏览器边界": "Group-chat and browser boundaries"
           },
           "source_hash": "b4635e52aea4e298bd855b9dbcaa3c8c071331547c12186fe93f79e272d0cf94",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-16用户明确批准的A-H及对应档案/速览。",
+          "reviewed_at": "2026-10-16T05:30:55.361570+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "tool",
@@ -5614,7 +6764,9 @@
             "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。": "Registered official sources verified directly; source date retained without an invented announcement time."
           },
           "source_hash": "5c737dd7408a5e7a442aa66a163ddedeb8c8356aa65cf50112b1658f2e77d87f",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文、Day10/Day11与本站真实日期、短帖全文/摘录及真实头像；完成声明时刻不冒充精确生效或账户到账，容量优化不保证零错误，不推造套餐或等待时长。",
+          "reviewed_at": "2026-10-16T05:23:03.132834+00:00"
         }
       }
     },
@@ -5761,9 +6913,12 @@
             "采用监督训练、蒸馏和Agent强化学习；知识与编程测试并非全面领先，重知识任务仍有检索等条件。": "Uses supervised training, distillation and agent reinforcement learning. It does not lead every knowledge or coding evaluation; knowledge-heavy tasks may still require retrieval."
           },
           "source_hash": "1a463bdc621495ac30fea36c1c68864bd809d33ec76a1ad807ace66cbbf9eecc",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-16用户明确批准的A-H及对应档案/速览。",
+          "reviewed_at": "2026-10-16T05:29:43.427219+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "tool",
@@ -5858,9 +7013,12 @@
             "选源与留存证据": "Selected inputs and retained evidence"
           },
           "source_hash": "505989a000cd8da770e667a9f4f86b044099259f495d2c66ff37039512a8aa29",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-16用户明确批准的A-H及对应档案/速览。",
+          "reviewed_at": "2026-10-16T05:27:49.906945+00:00"
         }
-      }
+      },
+      "_position": 2
     },
     {
       "category": "tool",
@@ -5939,7 +7097,9 @@
             "直接核对已登记官方出处；原帖时刻按 ID 推导。": "Registered official sources verified directly; post times are ID-derived."
           },
           "source_hash": "61ac4e098a77c3a04c87551b240f65888b1a162885b67baa0eaf2c7c4fa8d1e3",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文、Day10/Day11与本站真实日期、短帖全文/摘录及真实头像；完成声明时刻不冒充精确生效或账户到账，容量优化不保证零错误，不推造套餐或等待时长。",
+          "reviewed_at": "2026-10-16T05:17:47.541888+00:00"
         }
       }
     },
@@ -6074,9 +7234,12 @@
             "调用期限与模型列表": "Call deadlines and model lists"
           },
           "source_hash": "34222434d86f487ba306efb8df9099569f107392e0b99a3e5d3a6511a879e1f1",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-16用户明确批准的A-H及对应档案/速览。",
+          "reviewed_at": "2026-10-16T05:30:36.989798+00:00"
         }
-      }
+      },
+      "_position": 5
     },
     {
       "category": "tool",
@@ -6155,7 +7318,9 @@
             "直接核对已登记官方出处；原帖时刻按 ID 推导。": "Registered official sources verified directly; post times are ID-derived."
           },
           "source_hash": "7b3cf5501d678157dde4aa885900164a803123961a29214febdbb1139510691c",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文、Day10/Day11与本站真实日期、短帖全文/摘录及真实头像；完成声明时刻不冒充精确生效或账户到账，容量优化不保证零错误，不推造套餐或等待时长。",
+          "reviewed_at": "2026-10-16T05:17:15.805441+00:00"
         }
       }
     },
@@ -6252,9 +7417,12 @@
             "远场Siri支持普通话不等于Siri AI支持中文。部分服务器功能有日用量限制，未来扩展访问可能收费；第 2 代及以后的Apple TV4K也可使用Siri AI。本站未测试设备、地域或账户可用性。": "Mandarin support for far-field Siri does not imply Chinese support for Siri AI. Some server features have daily limits and expanded access may carry future charges. Siri AI also supports Apple TV4K 2nd generation or later; FieldToFit has not tested devices, regions or account availability."
           },
           "source_hash": "6d9405f968abf2e3fb4dacea0f1a149043d53964bf8836367dae690f817baca3",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-16用户明确批准的A-H及对应档案/速览。",
+          "reviewed_at": "2026-10-16T05:27:14.031636+00:00"
         }
-      }
+      },
+      "_position": 4
     },
     {
       "category": "tool",
@@ -6325,7 +7493,9 @@
             "直接核对已登记官方出处；仅保留来源日期，不推造公告时刻。": "Registered official sources verified directly; source date retained without an invented announcement time."
           },
           "source_hash": "019a87c03ed3ff6ac451c5d27dea92db31ea86c2d7a9fb2dd3c522e68634cbb0",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文、Day10/Day11与本站真实日期、短帖全文/摘录及真实头像；完成声明时刻不冒充精确生效或账户到账，容量优化不保证零错误，不推造套餐或等待时长。",
+          "reviewed_at": "2026-10-16T05:16:41.968262+00:00"
         }
       }
     },
@@ -6390,7 +7560,9 @@
             "直接核对已登记官方出处；使用官方发布时刻。": "Registered official sources verified directly; official publication timestamp retained."
           },
           "source_hash": "183e72d3679c44cd3d425776b1aba508b06f7273932508bc1be0cef7804874c2",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文、Day10/Day11与本站真实日期、短帖全文/摘录及真实头像；完成声明时刻不冒充精确生效或账户到账，容量优化不保证零错误，不推造套餐或等待时长。",
+          "reviewed_at": "2026-10-16T05:15:36.378157+00:00"
         }
       }
     },
@@ -6486,7 +7658,9 @@
             "直接核对已登记官方出处；原帖时刻按 ID 推导。": "Registered official sources verified directly; post times are ID-derived."
           },
           "source_hash": "1e4084547a5c3f6277fc41385f362daf6369d59be74f5dd45f6a45e9e9d2b1de",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文、Day10/Day11与本站真实日期、短帖全文/摘录及真实头像；完成声明时刻不冒充精确生效或账户到账，容量优化不保证零错误，不推造套餐或等待时长。",
+          "reviewed_at": "2026-10-16T05:14:31.734170+00:00"
         }
       }
     },
@@ -6660,7 +7834,9 @@
             "直接核对已登记官方出处；原帖时刻按 ID 推导。": "Registered official sources verified directly; post times are ID-derived."
           },
           "source_hash": "aeabea86f30e4fadaeda59d151b93009e07b1af5b822988041d7716b8395a265",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文、Day10/Day11与本站真实日期、短帖全文/摘录及真实头像；完成声明时刻不冒充精确生效或账户到账，容量优化不保证零错误，不推造套餐或等待时长。",
+          "reviewed_at": "2026-10-16T05:13:44.313513+00:00"
         }
       }
     },
@@ -7260,7 +8436,9 @@
             "首次整理所选模型卡：四结论、同号论述与三张本站重绘，保留原始指标、日期精度和已知限制。": "First analysis of the selected card: four findings, matching arguments and three original redraws, retaining metric definitions, date precision and known limitations."
           },
           "source_hash": "e380e0aefe32cdf4d6987502db0c60d104a28ab2e74616f48ca8163e7cec315b",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "真实用户明确选择2026-10-15报告1 Nano Banana2.1模型卡。已完整读取8页原文并核对第5页表格；87项双语逐项核对事实、数字、偏好Elo、自动事实性、编辑任务条件与图表来源；原文仅链接，三张本站重绘已部署且哈希一致。",
+          "reviewed_at": "2026-10-15T03:51:31.347017+00:00"
         }
       }
     },
@@ -7389,9 +8567,12 @@
             "长上下文与可靠性边界": "Long-context and reliability limits"
           },
           "source_hash": "33a132aaedce2ba827522ca035c9435698b3e6a31d445981f19f5774de1a76b2",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:31:13.244722+00:00"
         }
-      }
+      },
+      "_position": 1
     },
     {
       "category": "model",
@@ -7462,7 +8643,9 @@
             "已直接核对官方原帖或日志及已登记出处；区分公告时间、来源日期与实际截止时刻。": "Original official post or changelog and registered sources checked directly; announcement time, source date and effective cutoff are kept distinct."
           },
           "source_hash": "6c2fd1cf88af62de5ba3306269b34db54aa0d7bb380e3186ad9ee17a36567bc5",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "已逐项核对两条中英文案、数字与范围。60%为状态存储官方预期，非本站实测；GPT-5.5仅ChatGPT认证的Codex退役，API Key不受影响；来源日期与截止时刻分开，真实头像及摘录范围保留。",
+          "reviewed_at": "2026-10-15T03:04:06.474002+00:00"
         }
       }
     },
@@ -7578,9 +8761,12 @@
             "部分服务端AI有每日额度，未来扩大额度收费；部分摄像头功能需合格iCloud+。请求可使用Private Cloud Compute，不是全部离线；识别准确性、误触与隐私保证未独立验证。": "Some server-side AI features have daily limits, with paid expanded access planned. Some camera features require an eligible iCloud+ plan. Requests can use Private Cloud Compute and are not entirely offline. Recognition accuracy, accidental actions and privacy guarantees have not been independently verified."
           },
           "source_hash": "7ac16863bdceb1c6474be9df8e54d7ba6ca40c2a3205d06786cb966671ee76ee",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:30:55.775772+00:00"
         }
-      }
+      },
+      "_position": 2
     },
     {
       "category": "tool",
@@ -7675,7 +8861,9 @@
             "状态存储优化 · 官方预计减少 60%": "State storage: projected 60% reduction"
           },
           "source_hash": "6d03a41748901350e94c16a029c2881e1c3550cf0503bcb4e52e8827fe770080",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "已逐项核对两条中英文案、数字与范围。60%为状态存储官方预期，非本站实测；GPT-5.5仅ChatGPT认证的Codex退役，API Key不受影响；来源日期与截止时刻分开，真实头像及摘录范围保留。",
+          "reviewed_at": "2026-10-15T03:03:26.791908+00:00"
         }
       }
     },
@@ -7777,9 +8965,12 @@
             "采用与人工审阅边界": "Adoption and human-review limits"
           },
           "source_hash": "de73e961ce99528a8eac37e9394d8a7dabc71eb6a7631df4fd2ecab2eb227c5f",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:30:38.077504+00:00"
         }
-      }
+      },
+      "_position": 3
     },
     {
       "checked_at": "2026-10-14",
@@ -7907,9 +9098,12 @@
             "采用条件": "Conditions for adoption"
           },
           "source_hash": "8133761cda49045ff09e83b33dd0bb1ce1fba482179876a1bda877f7818ac24c",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:10:34.122967+00:00"
         }
-      }
+      },
+      "_position": 1
     },
     {
       "category": "agent",
@@ -8004,9 +9198,12 @@
             "输入与取消修复": "Input and cancellation fixes"
           },
           "source_hash": "f754cad78ba1b59c4729a070748212e4f5c4bc36c7d290b38c1bbff813dd4a12",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-15用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-15T03:30:20.420367+00:00"
         }
-      }
+      },
+      "_position": 4
     },
     {
       "category": "model",
@@ -8127,9 +9324,12 @@
             "输入和输出范围": "Input and output scope"
           },
           "source_hash": "acc0628006afb5311f4bb975d5dadb3461693fa7ae8c2067f7238c8922e2ed19",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:05:38.532859+00:00"
         }
-      }
+      },
+      "_position": 1
     },
     {
       "category": "research",
@@ -8691,7 +9891,9 @@
             "首次整理所选模型卡：四条结论、同号论述、三张本站重绘，保留月份日期与指标条件。": "First analysis of the selected card: four findings, matching arguments and three original redraws, retaining month precision and metric conditions."
           },
           "source_hash": "bed31e871f33631b17cfca4abdb40014571d3a038d35b956800cf666f7a20202",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "真实用户明确选报告1 Gemini 4 Argon。已读14页模型卡及5页评测方法并核对第6/10页图表；79项双语逐项核对事实、数字、评测框架、分母、缓解条件与图表来源；原文仅链接，三张本站重绘已部署且哈希一致。",
+          "reviewed_at": "2026-10-14T03:59:57.689274+00:00"
         }
       }
     },
@@ -8788,9 +9990,12 @@
             "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。": "Cross-device actions can be approved on the phone that initiated the task. Payments allow one-time approval or denial, and approval timeouts are treated as denial. FieldToFit has not tested actual device permissions or timeout behavior."
           },
           "source_hash": "b543ffe16cceb0678f9def07dd156f5a5d6416b9e1b2e1c9818224c7765ff269",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:05:20.909946+00:00"
         }
-      }
+      },
+      "_position": 2
     },
     {
       "category": "agent",
@@ -8914,7 +10119,9 @@
             "面向使用 Agents API 的开发者。可以先创建 OpenAI 托管沙箱、安装依赖、加载文件或运行准备命令，再将准备好的环境接入会话。数据分析应用可在用户选择数据集时准备 Python 工作区，编码流程可在用户输入请求时准备仓库。减少用户等待是官方说明，本站未复测具体速度。": "Agents API developers can create an OpenAI-hosted sandbox, install dependencies, load files and run setup before starting a session. Preparing a workspace while a user chooses data or writes a request can reduce their wait. This is the stated benefit; FieldToFit has not benchmarked it."
           },
           "source_hash": "1554c7e15bfebdf84a9188793fdcb44b86a29586a93fbecb0ce74b69ded29bd3",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "已逐项核对本批中英正文、官方Day和北京原日期、原帖全文及头像、预热免费边界与SDK版本；不推造重置实际生效时刻、套餐范围或性能实测。",
+          "reviewed_at": "2026-10-14T02:51:15.111831+00:00"
         }
       }
     },
@@ -9011,9 +10218,12 @@
             "长提示词读取失败可回退，慢磁盘进度检测得到修复；更新器核对实际引擎版本，避免新构建标记与旧二进制混用导致后续更新被跳过。": "Long-prompt reads can fall back on failure, and slow-disk progress detection is corrected. The updater checks the actual engine version to avoid mixing a new build stamp with an old binary and skipping later updates."
           },
           "source_hash": "8cb929fad11d2a2476573cb37ae7dafafb034acf90852c8fac1f868c0c1bebea",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:05:03.221271+00:00"
         }
-      }
+      },
+      "_position": 3
     },
     {
       "category": "agent",
@@ -9108,9 +10318,12 @@
             "更新校验与运行时接入": "Update checks and runtime integration"
           },
           "source_hash": "6136f50d7e76611807e7f41d4ac54de485a8edda8ab17ae120f5328fa482533f",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:07:30.255407+00:00"
         }
-      }
+      },
+      "_position": 9
     },
     {
       "category": "tool",
@@ -9241,9 +10454,12 @@
             "需macOS 15 或更新及Command Line Tools、从源码构建；一次一请求，测量上下文最多 32K，仅两台Mac完成作者测试，部分模型族不支持。": "Requires macOS 15 or later, Command Line Tools and a source build. It processes one request at a time, with measured context up to 32K; the author tested only two Macs and some model families are unsupported."
           },
           "source_hash": "353adf1c6738727d99a5f02d5a3c9cf494ab379c7ea7089e53fcda96a0b46a0a",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:12:03.855754+00:00"
         }
-      }
+      },
+      "_position": 10
     },
     {
       "category": "tool",
@@ -9338,9 +10554,12 @@
             "运行器与权重许可不同": "Runtime and weight licenses differ"
           },
           "source_hash": "df38088b170d1eb81dca1d2879723ac08034c1824125dd7fd5a52b32807f9514",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:08:46.749773+00:00"
         }
-      }
+      },
+      "_position": 11
     },
     {
       "category": "skill",
@@ -9435,9 +10654,12 @@
             "评测样本限定": "Evaluation sample limits"
           },
           "source_hash": "a8753dd6c22581db93386588b1b46284656c239a1bfcbc8b5732b1213022274a",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:09:28.533250+00:00"
         }
-      }
+      },
+      "_position": 12
     },
     {
       "category": "research",
@@ -9927,7 +11149,9 @@
             "验证后只有 21 个标记通过预期漏洞取得，其余 71 个通过非预期漏洞取得。这个差别同时影响基准可比性和对真实攻击能力的理解。": "Verification found 21 flags captured through intended vulnerabilities and 71 through unintended vulnerabilities. This distinction affects benchmark comparability and the interpretation of real attack capability."
           },
           "source_hash": "4edfa58c23223dd6f63e41a03340f387c7bf087a1d11609420f288412a53f881",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "真实用户明确选报告1 Muse Wonder。已读13页模型卡并核对第3/7页图表；78项双语逐项核对事实、数字、评测框架、分母、缓解条件与图表来源；原文仅链接，三张本站重绘已部署且哈希一致。",
+          "reviewed_at": "2026-10-13T03:44:15.424210+00:00"
         }
       }
     },
@@ -10024,9 +11248,12 @@
             "组件版本和收益边界": "Component versions and benefit limits"
           },
           "source_hash": "f8f76a20d28f938035cbee6404af6bb84fa0e7f57c89541abfc6ce5a84ad66a7",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-14用户明确批准的A-I及对应档案/速览。",
+          "reviewed_at": "2026-10-14T03:04:27.681062+00:00"
         }
-      }
+      },
+      "_position": 5
     },
     {
       "category": "agent",
@@ -10121,9 +11348,12 @@
             "源码安装与分发通道": "Source installations and distribution channels"
           },
           "source_hash": "cafd17acdab49339fde0053aadd390207544ed457603d7e0a10b7de34911e193",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-13用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-13T03:34:32.921723+00:00"
         }
-      }
+      },
+      "_position": 6
     },
     {
       "category": "tool",
@@ -10400,9 +11630,12 @@
             "采用边界：平台支持与数据流要逐项确认": "Adoption boundaries: check platform support and data flow individually"
           },
           "source_hash": "b3a43363a1f640644c0348c61cdda6c83e0ec34af07d6d51e4292dbc385efba4",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-13用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-13T03:31:06.506761+00:00"
         }
-      }
+      },
+      "_position": 1
     },
     {
       "category": "model",
@@ -10651,9 +11884,12 @@
             "界面与范围": "Interface and scope"
           },
           "source_hash": "fcaa16a4fd394889d5f53399bcd771d10ef1107d9d9744e4250d47530b3f2515",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-13用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-13T03:30:48.886226+00:00"
         }
-      }
+      },
+      "_position": 1
     },
     {
       "category": "agent",
@@ -10836,7 +12072,9 @@
             "直接核对本人原帖全文及关联回复；中文为本站译文。": "Full original posts and related replies verified directly; Chinese translations are by FieldToFit."
           },
           "source_hash": "bffc01c4d7ec6b6ced76dfd7e449c996257c303892caaf7ef2d7f4f70ba1317b",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "已逐项核对本批中英正文、官方Day和北京原日期、原帖全文及头像、预热免费边界与SDK版本；不推造重置实际生效时刻、套餐范围或性能实测。",
+          "reviewed_at": "2026-10-14T02:50:38.397374+00:00"
         }
       }
     },
@@ -10999,7 +12237,9 @@
             "默认上下文与使用": "Default context and use"
           },
           "source_hash": "411a47077e68374fdeb5d5aafcbb53c8953b3499b1fa3b4bd969df4407b02c6e",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "已核对本批中文与英文范围、发布时间、官方Day及原帖译文；未扩大API／购买点数或重置适用范围。",
+          "reviewed_at": "2026-10-13T03:05:31.710136+00:00"
         }
       }
     },
@@ -11076,7 +12316,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "§4.1; §4.3",
                 "source_id": "report"
               }
@@ -11089,7 +12328,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "§5.1; §5.4",
                 "source_id": "report"
               }
@@ -11102,7 +12340,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "§4.3; §5.4",
                 "source_id": "report"
               }
@@ -11115,7 +12352,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "§5.6; Figure 13",
                 "source_id": "report"
               }
@@ -11131,7 +12367,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "§4.1; §5.1; Figure 3",
                 "source_id": "report"
               }
@@ -11149,7 +12384,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "§4.3.1–4.3.3; Figures 7–8",
                 "source_id": "report"
               }
@@ -11167,7 +12401,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "§5.4–5.5; Figure 11",
                 "source_id": "report"
               }
@@ -11185,7 +12418,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "§5.6; Figure 13; Table 3",
                 "source_id": "report"
               }
@@ -11229,7 +12461,6 @@
                   "caption": "图 1 · DeepSWE v1.1 训练曲线的已报告起止分数（本站重绘；仅展示端点）",
                   "evidence": [
                     {
-                      "fragment": "",
                       "locator": "§4.1; Figure 3",
                       "source_id": "report"
                     }
@@ -11246,17 +12477,14 @@
               ],
               "evidence": [
                 {
-                  "fragment": "",
                   "locator": "§4.1–4.2; §5.1–5.3; §6; Figure 3",
                   "source_id": "report"
                 },
                 {
-                  "fragment": "",
                   "locator": "本站已有事件；保留原事件日期",
                   "source_id": "checkpoint-release"
                 },
                 {
-                  "fragment": "",
                   "locator": "本站检查点补录；与本篇技术深读区分",
                   "source_id": "checkpoint-mopd"
                 }
@@ -11289,7 +12517,6 @@
                   "caption": "图 2 · GRS 与 GAR 怎样区分通过解法（本站方法示意；无数值尺度）",
                   "evidence": [
                     {
-                      "fragment": "",
                       "locator": "§4.3.1–4.3.2; Figure 7",
                       "source_id": "report"
                     }
@@ -11310,7 +12537,6 @@
               ],
               "evidence": [
                 {
-                  "fragment": "",
                   "locator": "§4.3.1–4.3.3; Figures 7–8",
                   "source_id": "report"
                 }
@@ -11334,7 +12560,6 @@
                   "caption": "图 3 · 可训练路由器的负载变化（本站重绘；第 9层、前 20步）",
                   "evidence": [
                     {
-                      "fragment": "",
                       "locator": "§5.4; Figure 11",
                       "source_id": "report"
                     }
@@ -11359,7 +12584,6 @@
               ],
               "evidence": [
                 {
-                  "fragment": "",
                   "locator": "§5.4–5.5; Figures 11–12",
                   "source_id": "report"
                 }
@@ -11383,7 +12607,6 @@
                   "caption": "图 4 · MOPD2 的三条生成与监督路径（本站阅读示意）",
                   "evidence": [
                     {
-                      "fragment": "",
                       "locator": "§5.6; Figure 13",
                       "source_id": "report"
                     }
@@ -11412,7 +12635,6 @@
               ],
               "evidence": [
                 {
-                  "fragment": "",
                   "locator": "§5.6; Figure 13; Table 3; §7",
                   "source_id": "report"
                 }
@@ -11533,7 +12755,9 @@
             "首次深读 2026-10-08 MiMo-V2.6 v1：四条结论及同号论述、四张原创重绘／示意，保留评分、路由、蒸馏和实验边界。": "First analysis of the 2026-10-08 MiMo-V2.6 v1 report: four findings with matching arguments and four original redraws / schematics, preserving grading, routing, distillation and experimental limits."
           },
           "source_hash": "5d92e25d50646b12eb4b6621db9e2e0837ad167dc6b27e2bdbcf1da7a030856e",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项实际核对本篇86项中英文；保留模型、数字、日期、版本、图表来源、三类蒸馏路径与未复现边界。图中仅使用已报告端点或定性关系；上游全文不再分发。",
+          "reviewed_at": "2026-10-12T03:51:35.486069+00:00"
         }
       }
     },
@@ -11575,7 +12799,7 @@
             "source_id": "source-2"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Haiku 升级，先检查迁移与预算",
         "limits": [
           {
@@ -11764,10 +12988,13 @@
             "默认自适应思考": "Adaptive thinking by default",
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs."
           },
-          "source_hash": "b5bee08853589095a5ed461b823b44c8eb628e5224c8b8ea93160b9030b553d0",
-          "state": "reviewed"
+          "source_hash": "f0fc5da94fdaef790d34ac977cbe9aac041d647a9067c1a0cfb2c932a4c37de6",
+          "state": "reviewed",
+          "review_note": "所有者已预览首批三张信息卡并授权更新部署；沿用原文英文，仅补齐已审信息卡翻译。",
+          "reviewed_at": "2026-10-12T16:35:03.233155+00:00"
         }
-      }
+      },
+      "_position": 2
     },
     {
       "category": "tool",
@@ -11807,7 +13034,7 @@
             "source_id": "source-1"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "合上电脑，云端任务继续跑",
         "limits": [
           {
@@ -11949,10 +13176,13 @@
             "经常切换设备的人": "People switching devices",
             "需要定时处理资料的人": "People scheduling work"
           },
-          "source_hash": "388b4a2c16b4ce1389f3f651d7f404c0a26e2ae011ebaa9f5512f20116d3a9df",
-          "state": "reviewed"
+          "source_hash": "4fae26a85214f01a9ae00c4a6af4a81fbaf77b8f04a92fd12bf1b44cc9ea3ea4",
+          "state": "reviewed",
+          "review_note": "所有者已预览首批三张信息卡并授权更新部署；沿用原文英文，仅补齐已审信息卡翻译。",
+          "reviewed_at": "2026-10-12T16:34:28.121431+00:00"
         }
-      }
+      },
+      "_position": 2
     },
     {
       "category": "tool",
@@ -12075,7 +13305,9 @@
             "部署迁移与旧镜像保留": "Deployment migration and saved images"
           },
           "source_hash": "e9b15159a9711c9d75a310a010e5f5435ce7ff477d22057b698f04a867ee17cf",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-13用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-13T03:31:59.324621+00:00"
         }
       }
     },
@@ -12205,7 +13437,9 @@
             "跨端与模型接入修复": "Client and model connection fixes"
           },
           "source_hash": "a2ab55950e16acea06d58e9fa1de3ee45d763d1c48cde4822fac97c7ad348e95",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-13用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-13T03:31:42.003385+00:00"
         }
       }
     },
@@ -12335,7 +13569,9 @@
             "许可、安装与权限条件": "License, installation and permission requirements"
           },
           "source_hash": "9dffe7df23b7864c248219efadbb3507d84fbefcd6a02705b3b849a1a4745722",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-13用户明确批准的A-F及对应档案/速览。",
+          "reviewed_at": "2026-10-13T03:31:24.524988+00:00"
         }
       }
     },
@@ -12513,7 +13749,9 @@
             "证据边界与用量": "Evidence and individual usage"
           },
           "source_hash": "f6dd7bccbf224f686f46a619126c64bf548d58c67408e941e5b5db42f17868fd",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "已核对本批中文与英文范围、发布时间、官方Day及原帖译文；未扩大API／购买点数或重置适用范围。",
+          "reviewed_at": "2026-10-13T03:06:31.132352+00:00"
         }
       }
     },
@@ -12565,17 +13803,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-07",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct07-source-1",
           "locator": "官方发布和采用说明",
           "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
           "retrieved_at": "2026-10-07",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 1",
           "upstream_revision": "mistral-large-4-public-preview-2026-10-06",
           "url": "https://mistral.ai/news/mistral-large-4/"
@@ -12584,17 +13817,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-07",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct07-source-2",
           "locator": "官方发布和采用说明",
           "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
           "retrieved_at": "2026-10-07",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 2",
           "upstream_revision": "mistral-large-4-public-preview-2026-10-06",
           "url": "https://docs.mistral.ai/models/mistral-large"
@@ -12618,7 +13846,34 @@
       ],
       "state": "published",
       "summary": "Mistral于10月6日开放Large 4公共预览，面向编程、Agent和多模态文档任务；现在可通过Studio/API使用，下载权重仍需等待月底计划。",
-      "title": "Mistral Large 4：API公开预览，权重计划月底开放"
+      "title": "Mistral Large 4：API公开预览，权重计划月底开放",
+      "_position": 1,
+      "translations": {
+        "en": {
+          "fields": {
+            "Mistral Large 4 · 官方来源 1": "Mistral Large 4 · Official Source 1",
+            "Mistral Large 4 · 官方来源 2": "Mistral Large 4 · Official Source 2",
+            "Mistral Large 4：API公开预览，权重计划月底开放": "Mistral Large 4: public API preview; weights planned for month-end",
+            "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 1": "Mistral Large 4: API public preview, weights plan to open at the end of the month · Official source 1",
+            "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 2": "Mistral Large 4: API public preview, weights plan to open at the end of the month · Official source 2",
+            "Mistral于10月6日开放Large 4公共预览，面向编程、Agent和多模态文档任务；现在可通过Studio/API使用，下载权重仍需等待月底计划。": "Mistral opens the Large 4 public preview on 10/6 for coding, agent and multimodal document tasks. It is available through Studio/API; downloadable weights are still planned for the end of the month.",
+            "原文事件日期2026-10-06，本站2026-10-07核对；权重尚待开放，参数口径差异保留。": "Source text event date 2026-10-06, FieldToFit 2026-10-07 check; weights are still open, parameter measurement basis difference is retained.",
+            "参数口径仍有冲突": "There is still a conflict between the parameter measurement basis",
+            "官方原始说明；本站未运行复测": "Official original description; FieldToFit does not run retest",
+            "官方发布和采用说明": "Official release and adoption instructions",
+            "官方发布文章写总参数1T／激活49B，模型页写1.05T／52B；两份材料不一致，本页保留各自口径，暂不合并为统一数字。": "The official announcement lists 1T total / 49B active parameters, while the model page lists 1.05T / 52B. The materials disagree; this page retains each stated basis without merging them into one number.",
+            "官方计划月底开放权重，当前不能写成已能下载自部署。本站未复测性能、稳定性或成本，不用官方宣传替代独立榜单。": "Weights are planned for month-end, so downloading and self-deployment cannot be described as available now. FieldToFit has not retested performance, stability or cost and does not replace independent leaderboards with official promotion.",
+            "权重与性能边界": "Weights and performance boundaries",
+            "正文再分发许可未确认，保留官方链接与本站解读。": "Full-text redistribution permission is unconfirmed; retain the official link and FieldToFit interpretation.",
+            "现在如何使用": "How to use it now",
+            "通过Mistral Studio或API调用mistral-large-4。模型页列出1M上下文、图文输入、工具调用与结构化输出；当前是公共预览。": "Call mistral-large-4 through Mistral Studio or API. The model page lists 1M context, graphic input, tool calls and structured output; it is currently a public preview."
+          },
+          "review_note": "逐项复核来源、版本、日期、数字、许可、角色关系及未实测边界；同步中英文，不将社区nanoMuse写为Meta官方。",
+          "reviewed_at": "2026-10-12T01:49:22.678287+00:00",
+          "source_hash": "79858434c7b2e14b5f94e8f6c76ba78eda296673ec196ea24dbaee223693b497",
+          "state": "reviewed"
+        }
+      }
     },
     {
       "category": "model",
@@ -12665,17 +13920,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-06",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct06-source-1",
           "locator": "官方发布与采用说明",
           "reason": "正文再分发许可未确认，保留官方链接与本站解读。",
           "retrieved_at": "2026-10-06",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "Beam：Reflection 公布首个模型，先看推理效率与开放时间 · 官方来源 1",
           "upstream_revision": "Beam；首次公布、早期访问申请",
           "url": "https://reflection.ai/blog/introducing-beam"
@@ -12709,7 +13959,8 @@
       ],
       "state": "published",
       "summary": "Reflection 公布面向编程、推理和 Agent 的文本模型 Beam，采用501B总参数、23B激活的MoE架构。",
-      "title": "Beam：Reflection 公布首个模型，先看推理效率与开放时间"
+      "title": "Beam：Reflection 公布首个模型，先看推理效率与开放时间",
+      "_position": 1
     },
     {
       "category": "research",
@@ -12740,16 +13991,13 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-11",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "report",
           "locator": "全文各节：Overview of behaviors / Remediation / Discussion and alignment takeaways",
           "reason": "已读取官方全文；未取得全文和原图再分发许可，公开保存原始链接及本站原创分析。",
           "retrieved_at": "2026-10-11",
           "rights": {
-            "basis": "仅链接原报告，不转载全文或原图",
-            "notice": "",
-            "url": ""
+            "basis": "仅链接原报告，不转载全文或原图"
           },
           "title": "Anthropic意外模型行为调查 · 官方全文入口",
           "upstream_revision": "Anthropic官方网页 · 2026-10-09",
@@ -13169,16 +14417,13 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-11",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct11-f-1",
           "locator": "官方发布正文／FAQ／接入说明",
           "reason": "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。",
           "retrieved_at": "2026-10-11",
           "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
+            "basis": "仅链接原文；不转载全文"
           },
           "title": "Erdős Problems调整社区规则：保留证明资料，更重视可理解的讲解 · 官方材料1",
           "upstream_revision": "Changes官方网页，日期2026-10-06",
@@ -13252,16 +14497,13 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-11",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct11-d-1",
           "locator": "官方发布正文／FAQ／接入说明",
           "reason": "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。",
           "retrieved_at": "2026-10-11",
           "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
+            "basis": "仅链接原文；不转载全文"
           },
           "title": "Hermes Agent 0.21.6：补录稳定发布与登录、仓库、邮件边界修复 · 官方材料1",
           "upstream_revision": "v0.21.6",
@@ -13451,7 +14693,9 @@
             "显式更新": "Explicit updates"
           },
           "source_hash": "bd3a6155d27017ec045546457267964743d103e146624e9f0f43cb3247b4bb5d",
-          "state": "reviewed"
+          "state": "reviewed",
+          "review_note": "逐项核对中英文的固定版本、原始日期、指标条件、社区/官方关系、许可与未实测边界；仅处理2026-10-16用户明确批准的A-H及对应档案/速览。",
+          "reviewed_at": "2026-10-16T05:29:19.683672+00:00"
         }
       }
     },
@@ -13508,16 +14752,13 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-11",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct11-a-1",
           "locator": "官方发布正文／FAQ／接入说明",
           "reason": "保留官方出处和版本；未核实全文转载许可，本批仅发布本站原创整理及原始链接。",
           "retrieved_at": "2026-10-11",
           "rights": {
-            "basis": "仅链接原文；不转载全文",
-            "notice": "",
-            "url": ""
+            "basis": "仅链接原文；不转载全文"
           },
           "title": "Deno团队加入Cloudflare：运行时与Deploy进入不同维护期限 · 官方材料1",
           "upstream_revision": "official announcement dated 2026-10-09",
@@ -13611,7 +14852,7 @@
             "source_id": "devin-docs"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "ChatGPT 额度，可以接到 Devin 用",
         "limits": [
           {
@@ -13747,8 +14988,10 @@
             "适合已有 ChatGPT 与 Devin 付费套餐的人。连接后，部分 GPT 用量计入 ChatGPT 额度。": "For people with eligible paid ChatGPT and Devin plans. Once connected, supported GPT usage counts toward your ChatGPT allowance.",
             "需要核对用量的团队": "Teams tracking usage"
           },
-          "source_hash": "c5be25b0d3dcec9aae0b20f97536eec60a9db38b2fc4a923389260e4bffa4333",
-          "state": "reviewed"
+          "source_hash": "abc6f8f1701b329bdfad7735575f730e5641ccf5c06ebfce1c33168dd335e802",
+          "state": "reviewed",
+          "review_note": "所有者已预览首批三张信息卡并授权更新部署；沿用原文英文，仅补齐已审信息卡翻译。",
+          "reviewed_at": "2026-10-12T16:34:45.705884+00:00"
         }
       }
     },
@@ -14220,11 +15463,9 @@
           "approved": true,
           "body": "---\nlicense: mit\nlanguage:\n- en\n- zh\ntags:\n- text-generation\n- multimodal\n- vision-language\n- audio\n- agent\n- video-understanding\n- long-context\n- mimo_v2\n- transformers\nlibrary_name: transformers\n---\n\n<br/><br/>\n\n<div align=\"center\">\n  <picture>\n    <source srcset=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true\" media=\"(prefers-color-scheme: dark)\">\n    <img src=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo.png?raw=true\" width=\"60%\" alt=\"Xiaomi-MiMo\" />\n  </picture>\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1;\">\n  |\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL\" target=\"_blank\">🤗 HuggingFace</a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomi.com/mimo-v2-6\" target=\"_blank\">📰 Blog </a>\n  &nbsp;|\n  <a href=\"https://platform.xiaomimimo.com\" target=\"_blank\">🎨 Xiaomi MiMo API Platform </a>\n  &nbsp;|\n  <a href=\"https://aistudio.xiaomimimo.com\" target=\"_blank\">🗨️ Xiaomi MiMo Studio </a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomimimo.com/desktop/\" target=\"_blank\">💻 Xiaomi MiMo Desktop </a>\n  &nbsp;|\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1.2;\">\n  <strong>Community</strong><br/>\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/blob/main/assets/wechat.jpg\" target=\"_blank\">WeChat Group</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/kKC2kNnQEX\" target=\"_blank\">Discord</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://t.me/+3T-I0pekOVIyNDBl\" target=\"_blank\">Telegram</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://www.reddit.com/r/XiaomiMiMo_Official/\" target=\"_blank\">Reddit</a>\n</div>\n\n<br/>\n\n# MiMo-V2.6-Pro-RL\n\n**Scaling Reinforcement Learning Toward Self-Improvement**\n\n<p align=\"center\">\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf\"><b>Technical Report</b></a>\n</p>\n\n## 1. Introduction\n\nMiMo-V2.6-Pro-RL is the flagship checkpoint of the MiMo-V2.6 series. The series is built to **scale reinforcement learning toward self-improvement** — scaling RL compute, environment diversity, and grader compute together, so the model keeps expanding its capability frontier through exploration and feedback. Key features include:\n\n- **Native Omnimodal + Long Horizon**: Text, image, video, and audio in one model; 1M tokens for long repositories, tool traces, and multi-session agent runs.\n- **You Only RL Once**: One mixed RL run across coding, general agents, visual, and cybersecurity — not separate per-domain runs. Tasks and multiple harnesses are mixed in the same batch so capabilities reinforce each other and strategies transfer to harnesses never seen in training.\n- **Scaling RL Compute**: Fully asynchronous Group Relative Policy Optimization (GRPO) on very large batches — 1,568 prompts × 16 rollouts per step, billions of tokens per update.\n- **Groupwise Agentic Grading (Self-Improvement Loop)**: Binary pass/fail cannot rank passing solutions, so the reward signal itself is scaled. An agentic grader compares rollouts *within each group*: **Groupwise Reward Synthesis (GRS)** builds task-specific rubrics offline from contrasting rollouts and fuses rubric quality with test outcomes; **Groupwise Advantage Redistribution (GAR)** ranks passing trajectories online and moves advantage toward higher-quality solutions. Judged against the policy’s own samples, this closes a self-improvement loop and steers toward shorter paths and fewer tokens per task.\n- **Aligned RL**: Cold start from self-correction — the model reflects on and rewrites its own misaligned turns into grounded next steps. Throughout RL, environment hardening, adversarial screening, and verifier cross-checks keep the loop honest against reward hacking.\n- **Multi-Prefix Multi-Teacher On-Policy Distillation (MOPD2)**: After mixed RL, MOPD2 combines autonomous student rollouts with prefix-conditioned single-turn rollouts (Teacher-Prefix and SFT-Prefix), reusing histories from teacher trajectories and SFT demonstrations so decision points train without regenerating preceding turns — extending capabilities to hard-to-verify tasks.\n\n## Model Summary\n\n- **Architecture**: Sparse MoE (Mixture of Experts), 1.02T total / 42B activated parameters\n- **Context Length**: 1M tokens\n- **Modalities**: Text, Image, Video, Audio\n- **Vision Encoder**: 681M-param MiMo ViT (28 layers: 24 SWA + 4 Full)\n- **Audio Encoder**: 308M AudioTokenizer + 127M audio patch encoder\n- **Multi-Token Prediction (MTP)**: 5-layer speculative decoder\n\n![Figure 1: MiMo-V2.6 architecture — omni encoders, hybrid SWA backbone, and MTP blocks](assets/architecture.png)\n\n*Figure 1. MiMo-V2.6 architecture.*\n\n## 2. Downloads\n\n| Model | Download |\n| --- | --- |\n| **MiMo-V2.6-Pro-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL) · 🤖 ModelScope *(at release)* |\n| **MiMo-V2.6-Flash-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) · 🤖 ModelScope *(at release)* |\n\n## 3. Evaluation Results\n\n| Benchmark | MiMo-V2.6 Pro | MiMo-V2.6 Flash | MiMo-V2.5 Pro | Claude Opus 5 | GPT-5.6 Sol | Claude Fable 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| **Code Agent** | | | | | | |\n| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |\n| ProgramBench | 26.5 | 26.0 | 12.5 | 37.0 | 25.0 | 33.0 |\n| MiMo Code Bench | 63.2 | 61.2 | 40.4 | 68.6 | 59.3 | - |\n| **General Agent** | | | | | | |\n| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |\n| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |\n| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |\n| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |\n| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |\n| Terminal Bench 2.1 | 89.9 | 87.6 | 65.2 | 89.1 | 88.8 | 84.3 |\n| OSWorld-Verified | 82.0 | 80.8 | - | 83.4 | 83.0 | 86.0 |\n| JobBench | 62.0 | 61.2 | 25.0 | 65.7 | 45.4 | 57.4 |\n| **Cybersecurity** | | | | | | |\n| CyberGym | 94.0 | 95.1 | 40.0 | - | - | - |\n| MiMo Cyber Bench | 80.2 | 77.2 | 0.0 | - | - | - |\n| ExploitGym | 17.8 | 6.0 | 0.2 | 22.1 | 30.3 | 28.4 |\n| ExploitBench | 47.9 | 25.3 | 16.6 | 70.0 | 78.5 | 78.0 |\n| SEC Bench Pro | 66.3 | 47.5 | 17.7 | - | 79.1 | - |\n| **Visual Agent** | | | | | | |\n| MiMo VisualCoding | 72.3 | 71.5 | - | 70.0 | 73.4 | 69.1 |\n\n## 4. Model Architecture\n\n### LLM Backbone\n\n| Component | MiMo-V2.6-Pro-RL |\n| --- | --- |\n| Layers (Total / SWA / GA) | 70 / 60 / 10 |\n| Hidden Size | 6144 |\n| SWA Heads (Q/KV) | 128 / 8 |\n| GA Heads (Q/KV) | 128 / 8 |\n| Head Dimensions (QK / V) | 192 / 128 |\n| Sliding Window Size | 128 |\n| Routed Experts (Total / Activated) | 384 / 8 |\n| Max Context Length | 1M |\n| MTP / Speculative Decoder | 5 SWA layers, window 1024 |\n\nThe first Transformer block uses global attention with a dense FFN. Remaining blocks interleave local SWA and GA; both use sparse MoE FFNs without shared experts.\n\n### Vision Encoder (MiMo ViT)\n\n| Configuration | Value |\n| --- | --- |\n| Layers (Total / SWA / GA) | 28 / 24 / 4 |\n| Hidden Size | 1280 |\n| Attention Heads (Q / KV) | 32 / 8 |\n| Head Dimension | 64 |\n| Patch Size (T × H × W) | 2 × 16 × 16 |\n| Sliding Window (Left / Right) | 64 / 64 |\n| Spatial Merge Size | 2 × 2 |\n| Parameters | 681M |\n\n### Audio Encoders\n\nAudioTokenizer encoder: 24 layers (12 SWA / 12 GA), hidden 1024, 20 RVQ codebooks, 308M parameters. Audio patch encoder: 6 layers, 127M parameters; four frames per patch (25 Hz → 6.25 Hz).\n\n### Speculative Decoder\n\n5-layer SWA MTP drafter (DFlash-style). Predicts 7 subsequent tokens per forward pass for parallel verification.\n\n## 5. Deployment\n\nFor best performance, follow the [SGLang MiMo cookbook](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.5). Docker image: `lmsysorg/sglang:latest`.\n\n### SGLang\n\n```bash\nsglang serve \\\n  --trust-remote-code \\\n  --model-path XiaomiMiMo/MiMo-V2.6-Pro-RL \\\n  --tp 16 \\\n  --dp 2 \\\n  --enable-dp-attention \\\n  --mm-enable-dp-encoder \\\n  --ep 16 \\\n  --moe-a2a-backend deepep \\\n  --moe-dense-tp-size 1 \\\n  --mem-fraction-static 0.7 \\\n  --max-running-requests 128 \\\n  --chunked-prefill-size 32768 \\\n  --page-size 64 \\\n  --swa-full-tokens-ratio 0.3 \\\n  --speculative-algorithm EAGLE \\\n  --speculative-num-steps 3 \\\n  --speculative-eagle-topk 1 \\\n  --speculative-num-draft-tokens 4 \\\n  --enable-multi-layer-eagle \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --host 0.0.0.0 \\\n  --port 30000 \\\n  --nnodes 2 \\\n  --node-rank <node-rank> \\\n  --dist-init-addr <node0-ip>:20000\n```\n\n### vLLM\n\nFollow the [vLLM MiMo-V2.5 recipe](https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5). Pre-built image: `docker pull vllm/vllm-openai:mimov25-cu129`.\n\n```bash\nvllm serve XiaomiMiMo/MiMo-V2.6-Pro-RL \\\n  --tensor-parallel-size 8 \\\n  --trust-remote-code \\\n  --gpu-memory-utilization 0.95 \\\n  --max-model-len auto \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --enable-auto-tool-choice \\\n  --generation-config vllm\n```\n\nRecommended sampling: `temperature=1.0`, `top_p=0.95`.\n\nAlso available in AI Studio, MiMo Code, Xiaomi MiMo Desktop, Xiaomi MiMo Open Platform API, and OpenRouter.\n\n## Citation\n\n```bibtex\n@misc{mimo2026v26pro,\n  title={MiMo-V2.6-Pro-RL},\n  author={{Xiaomi MiMo Team}},\n  year={2026},\n  howpublished={\\url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL}},\n}\n```\n\n## Contact\n\nFor questions or feedback, reach us at [mimo@xiaomi.com](mailto:mimo@xiaomi.com) or join our community:\n\n- [WeChat Group](https://work.weixin.qq.com/apph5/external_room/join/group_mng?plg_id=c417f99bd9014b5dd894daa8bfe19790&)\n- [Discord](https://discord.gg/WX2R2uNp)\n- [Telegram](https://t.me/+3T-I0pekOVIyNDBl)\n- [Reddit](https://www.reddit.com/r/XiaomiMiMo_Official/)\n",
           "checked_at": "2026-09-22",
-          "content_hash": "c7710278e8755958dc7193058f0c01d3e1208d9a0058bfbef1515009c0709759",
           "coverage": "full_text",
           "id": "pro",
           "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
-          "reason": "",
           "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
           "rights": {
             "basis": "MIT；依据该固定模型卡 license: mit 声明；保留原文及许可通知。",
@@ -14239,11 +15480,9 @@
           "approved": true,
           "body": "---\nlicense: mit\nlanguage:\n- en\n- zh\ntags:\n- text-generation\n- multimodal\n- vision-language\n- audio\n- agent\n- video-understanding\n- long-context\n- mimo_v2\n- transformers\nlibrary_name: transformers\n---\n\n<br/><br/>\n\n<div align=\"center\">\n  <picture>\n    <source srcset=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true\" media=\"(prefers-color-scheme: dark)\">\n    <img src=\"https://github.com/XiaomiMiMo/MiMo/raw/main/figures/Xiaomi_MiMo.png?raw=true\" width=\"60%\" alt=\"Xiaomi-MiMo\" />\n  </picture>\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1;\">\n  |\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL\" target=\"_blank\">🤗 HuggingFace</a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomi.com/mimo-v2-6\" target=\"_blank\">📰 Blog </a>\n  &nbsp;|\n  <a href=\"https://platform.xiaomimimo.com\" target=\"_blank\">🎨 Xiaomi MiMo API Platform </a>\n  &nbsp;|\n  <a href=\"https://aistudio.xiaomimimo.com\" target=\"_blank\">🗨️ Xiaomi MiMo Studio </a>\n  &nbsp;|\n  <a href=\"https://mimo.xiaomimimo.com/desktop/\" target=\"_blank\">💻 Xiaomi MiMo Desktop </a>\n  &nbsp;|\n</div>\n\n<br/>\n\n<div align=\"center\" style=\"line-height: 1.2;\">\n  <strong>Community</strong><br/>\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/blob/main/assets/wechat.jpg\" target=\"_blank\">WeChat Group</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/kKC2kNnQEX\" target=\"_blank\">Discord</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://t.me/+3T-I0pekOVIyNDBl\" target=\"_blank\">Telegram</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://www.reddit.com/r/XiaomiMiMo_Official/\" target=\"_blank\">Reddit</a>\n</div>\n\n<br/>\n\n# MiMo-V2.6-Flash-RL\n\n**Scaling Reinforcement Learning Toward Self-Improvement**\n\n<p align=\"center\">\n  <a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/blob/main/MiMo_V2_6_technical_report.pdf\"><b>Technical Report</b></a>\n</p>\n\n## 1. Introduction\n\nMiMo-V2.6-Flash-RL is the efficiency-balanced checkpoint of the MiMo-V2.6 series. The series is built to **scale reinforcement learning toward self-improvement** — scaling RL compute, environment diversity, and grader compute together, so the model keeps expanding its capability frontier through exploration and feedback. Key features include:\n\n- **Native Omnimodal + Long Horizon**: Text, image, video, and audio in one model; 1M tokens for long repositories, tool traces, and multi-session agent runs.\n- **You Only RL Once**: One mixed RL run across coding, general agents, visual, and cybersecurity — not separate per-domain runs. Tasks and multiple harnesses are mixed in the same batch so capabilities reinforce each other and strategies transfer to harnesses never seen in training.\n- **Scaling RL Compute**: Fully asynchronous Group Relative Policy Optimization (GRPO) on very large batches — 1,568 prompts × 16 rollouts per step, billions of tokens per update.\n- **Groupwise Agentic Grading (Self-Improvement Loop)**: Binary pass/fail cannot rank passing solutions, so the reward signal itself is scaled. An agentic grader compares rollouts *within each group*: **Groupwise Reward Synthesis (GRS)** builds task-specific rubrics offline from contrasting rollouts and fuses rubric quality with test outcomes; **Groupwise Advantage Redistribution (GAR)** ranks passing trajectories online and moves advantage toward higher-quality solutions. Judged against the policy’s own samples, this closes a self-improvement loop and steers toward shorter paths and fewer tokens per task.\n- **Aligned RL**: Cold start from self-correction — the model reflects on and rewrites its own misaligned turns into grounded next steps. Throughout RL, environment hardening, adversarial screening, and verifier cross-checks keep the loop honest against reward hacking.\n- **Multi-Prefix Multi-Teacher On-Policy Distillation (MOPD2)**: After mixed RL, MOPD2 combines autonomous student rollouts with prefix-conditioned single-turn rollouts (Teacher-Prefix and SFT-Prefix), reusing histories from teacher trajectories and SFT demonstrations so decision points train without regenerating preceding turns — extending capabilities to hard-to-verify tasks.\n\n## Model Summary\n\n- **Architecture**: Sparse MoE (Mixture of Experts), 309B total / 15B activated parameters\n- **Context Length**: 1M tokens\n- **Modalities**: Text, Image, Video, Audio\n- **Vision Encoder**: 681M-param MiMo ViT (28 layers: 24 SWA + 4 Full)\n- **Audio Encoder**: 308M AudioTokenizer + 127M audio patch encoder\n- **Multi-Token Prediction (MTP)**: 5-layer speculative decoder\n\n![Figure 1: MiMo-V2.6 architecture — omni encoders, hybrid SWA backbone, and MTP blocks](assets/architecture.png)\n\n*Figure 1. MiMo-V2.6 architecture.*\n\n## 2. Downloads\n\n| Model | Download |\n| --- | --- |\n| **MiMo-V2.6-Pro-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL) · 🤖 ModelScope *(at release)* |\n| **MiMo-V2.6-Flash-RL** | [🤗 HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) · 🤖 ModelScope *(at release)* |\n\n## 3. Evaluation Results\n\n| Benchmark | MiMo-V2.6 Pro | MiMo-V2.6 Flash | MiMo-V2.5 Pro | Claude Opus 5 | GPT-5.6 Sol | Claude Fable 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| **Code Agent** | | | | | | |\n| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |\n| ProgramBench | 26.5 | 26.0 | 12.5 | 37.0 | 25.0 | 33.0 |\n| MiMo Code Bench | 63.2 | 61.2 | 40.4 | 68.6 | 59.3 | - |\n| **General Agent** | | | | | | |\n| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |\n| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |\n| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |\n| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |\n| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |\n| Terminal Bench 2.1 | 89.9 | 87.6 | 65.2 | 89.1 | 88.8 | 84.3 |\n| OSWorld-Verified | 82.0 | 80.8 | - | 83.4 | 83.0 | 86.0 |\n| JobBench | 62.0 | 61.2 | 25.0 | 65.7 | 45.4 | 57.4 |\n| **Cybersecurity** | | | | | | |\n| CyberGym | 94.0 | 95.1 | 40.0 | - | - | - |\n| MiMo Cyber Bench | 80.2 | 77.2 | 0.0 | - | - | - |\n| ExploitGym | 17.8 | 6.0 | 0.2 | 22.1 | 30.3 | 28.4 |\n| ExploitBench | 47.9 | 25.3 | 16.6 | 70.0 | 78.5 | 78.0 |\n| SEC Bench Pro | 66.3 | 47.5 | 17.7 | - | 79.1 | - |\n| **Visual Agent** | | | | | | |\n| MiMo VisualCoding | 72.3 | 71.5 | - | 70.0 | 73.4 | 69.1 |\n\n## 4. Model Architecture\n\n### LLM Backbone\n\n| Component | MiMo-V2.6-Flash-RL |\n| --- | --- |\n| Layers (Total / SWA / GA) | 48 / 39 / 9 |\n| Hidden Size | 4096 |\n| SWA Heads (Q/KV) | 64 / 8 |\n| GA Heads (Q/KV) | 64 / 4 |\n| Head Dimensions (QK / V) | 192 / 128 |\n| Sliding Window Size | 128 |\n| Routed Experts (Total / Activated) | 256 / 8 |\n| Max Context Length | 1M |\n| MTP / Speculative Decoder | 5 SWA layers, window 1024 |\n\nThe first Transformer block uses global attention with a dense FFN. Remaining blocks interleave local SWA and GA; both use sparse MoE FFNs without shared experts.\n\n### Vision Encoder (MiMo ViT)\n\n| Configuration | Value |\n| --- | --- |\n| Layers (Total / SWA / GA) | 28 / 24 / 4 |\n| Hidden Size | 1280 |\n| Attention Heads (Q / KV) | 32 / 8 |\n| Head Dimension | 64 |\n| Patch Size (T × H × W) | 2 × 16 × 16 |\n| Sliding Window (Left / Right) | 64 / 64 |\n| Spatial Merge Size | 2 × 2 |\n| Parameters | 681M |\n\n### Audio Encoders\n\nAudioTokenizer encoder: 24 layers (12 SWA / 12 GA), hidden 1024, 20 RVQ codebooks, 308M parameters. Audio patch encoder: 6 layers, 127M parameters; four frames per patch (25 Hz → 6.25 Hz).\n\n### Speculative Decoder\n\n5-layer SWA MTP drafter (DFlash-style). Predicts 7 subsequent tokens per forward pass for parallel verification.\n\n## 5. Deployment\n\nFor best performance, follow the [SGLang MiMo cookbook](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.5). Docker image: `lmsysorg/sglang:latest`.\n\n### SGLang\n\n```bash\nsglang serve \\\n  --trust-remote-code \\\n  --model-path XiaomiMiMo/MiMo-V2.6-Flash-RL \\\n  --tp 8 \\\n  --dp 2 \\\n  --enable-dp-attention \\\n  --enable-dp-lm-head \\\n  --mm-enable-dp-encoder \\\n  --mem-fraction-static 0.65 \\\n  --chunked-prefill-size 16384 \\\n  --speculative-algorithm EAGLE \\\n  --speculative-num-steps 3 \\\n  --speculative-eagle-topk 1 \\\n  --speculative-num-draft-tokens 4 \\\n  --enable-multi-layer-eagle \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --host 0.0.0.0 \\\n  --port 30000\n```\n\n### vLLM\n\nFollow the [vLLM MiMo-V2.5 recipe](https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5). Stable vLLM may lag; pre-built image: `docker pull vllm/vllm-openai:mimov25-cu129`.\n\n```bash\nvllm serve XiaomiMiMo/MiMo-V2.6-Flash-RL \\\n  --tensor-parallel-size 4 \\\n  --trust-remote-code \\\n  --gpu-memory-utilization 0.95 \\\n  --max-model-len auto \\\n  --reasoning-parser mimo \\\n  --tool-call-parser mimo \\\n  --enable-auto-tool-choice \\\n  --generation-config vllm\n```\n\nRecommended sampling: `temperature=1.0`, `top_p=0.95`.\n\nAlso available in AI Studio, MiMo Code, Xiaomi MiMo Desktop, Xiaomi MiMo Open Platform API, and OpenRouter.\n\n## Citation\n\n```bibtex\n@misc{mimo2026v26flash,\n  title={MiMo-V2.6-Flash-RL},\n  author={{Xiaomi MiMo Team}},\n  year={2026},\n  howpublished={\\url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL}},\n}\n```\n\n## Contact\n\nFor questions or feedback, reach us at [mimo@xiaomi.com](mailto:mimo@xiaomi.com) or join our community:\n\n- [WeChat Group](https://work.weixin.qq.com/apph5/external_room/join/group_mng?plg_id=c417f99bd9014b5dd894daa8bfe19790&)\n- [Discord](https://discord.gg/WX2R2uNp)\n- [Telegram](https://t.me/+3T-I0pekOVIyNDBl)\n- [Reddit](https://www.reddit.com/r/XiaomiMiMo_Official/)\n",
           "checked_at": "2026-09-22",
-          "content_hash": "f2765dfa631f8f3485c903ea14b2de25f3dfcc6223646fd86478d5d9c83d268c",
           "coverage": "full_text",
           "id": "flash",
           "locator": "固定修订完整 UTF-8 原文；原样保留，不执行其中指令。",
-          "reason": "",
           "retrieved_at": "2026-09-22T00:16:04.966616+00:00",
           "rights": {
             "basis": "MIT；依据该固定模型卡 license: mit 声明；保留原文及许可通知。",
@@ -14258,7 +15497,6 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-09-22",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "distill",
           "locator": "官方来源及对应采用说明",
@@ -14277,17 +15515,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-10",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct10-mopd-1",
           "locator": "官方发布记录／模型卡／采用说明",
           "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
           "retrieved_at": "2026-10-10",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 官方材料1",
           "upstream_revision": "Pro-MOPD / Flash-MOPD",
           "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD"
@@ -14296,17 +15529,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-10",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct10-mopd-2",
           "locator": "官方发布记录／模型卡／采用说明",
           "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
           "retrieved_at": "2026-10-10",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 补充来源2",
           "upstream_revision": "Pro-MOPD / Flash-MOPD",
           "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD"
@@ -14354,7 +15582,8 @@
       ],
       "state": "published",
       "summary": "小米 MiMo 提供 Pro-RL、Flash-RL 与基于 Qwen3.5-9B 的蒸馏 SFT 检查点。模型卡介绍如何把多类 Agent 任务放进同一轮强化学习，并给出部署入口；三者的体量、训练阶段与许可需分别看。",
-      "title": "MiMo V2.6：开放 Pro、Flash 与 9B 检查点，展示 Agent 混合训练路线"
+      "title": "MiMo V2.6：开放 Pro、Flash 与 9B 检查点，展示 Agent 混合训练路线",
+      "_position": 1
     },
     {
       "category": "agent",
@@ -14401,17 +15630,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-10",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct10-c-1",
           "locator": "官方发布记录／模型卡／采用说明",
           "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
           "retrieved_at": "2026-10-10",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "Claude Code 2.1.296：补强托管策略、MCP 状态与编辑保护 · 官方材料1",
           "upstream_revision": "v2.1.296",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.296"
@@ -14485,17 +15709,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-10",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct10-b-1",
           "locator": "官方发布记录／模型卡／采用说明",
           "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
           "retrieved_at": "2026-10-10",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "OSS Scanner：开源维护者可申请免费扫描，报告仍需人工核验 · 官方材料1",
           "upstream_revision": "OSS Scanner 首次服务说明",
           "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
@@ -14504,17 +15723,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-10",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct10-b-2",
           "locator": "官方发布记录／模型卡／采用说明",
           "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
           "retrieved_at": "2026-10-10",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "OSS Scanner：开源维护者可申请免费扫描，报告仍需人工核验 · 补充来源2",
           "upstream_revision": "OSS Scanner 首次服务说明",
           "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
@@ -14588,17 +15802,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-10",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct10-a-1",
           "locator": "官方发布记录／模型卡／采用说明",
           "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
           "retrieved_at": "2026-10-10",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 官方材料1",
           "upstream_revision": "Pro-MOPD / Flash-MOPD",
           "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD"
@@ -14607,17 +15816,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-10",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct10-a-2",
           "locator": "官方发布记录／模型卡／采用说明",
           "reason": "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。",
           "retrieved_at": "2026-10-10",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "MiMo V2.6 MOPD：补入多教师训练检查点，缓解重复工具调用 · 补充来源2",
           "upstream_revision": "Pro-MOPD / Flash-MOPD",
           "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD"
@@ -15058,7 +16262,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "导言：为网页／手机榜补充美国消费额榜",
                 "source_id": "report"
               }
@@ -15071,7 +16274,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "导言：为网页／手机榜补充美国消费额榜",
                 "source_id": "report"
               }
@@ -15087,7 +16289,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "导言：Similarweb网页榜方法",
                 "source_id": "report"
               }
@@ -15105,7 +16306,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "导言：Sensor Tower手机榜方法",
                 "source_id": "report"
               }
@@ -15123,7 +16323,6 @@
           {
             "evidence": [
               {
-                "fragment": "",
                 "locator": "导言、第2节：YipitData面板范围与指标",
                 "source_id": "report"
               }
@@ -15158,7 +16357,6 @@
                   "caption": "图1 · 三款产品个人付费订阅覆盖（本站重绘；单位：面板合格消费者占比）",
                   "evidence": [
                     {
-                      "fragment": "",
                       "locator": "第2节：个人订阅覆盖",
                       "source_id": "report"
                     }
@@ -15182,7 +16380,6 @@
               ],
               "evidence": [
                 {
-                  "fragment": "",
                   "locator": "第2节：个人付费订阅覆盖，2026年8月与一年前",
                   "source_id": "report"
                 }
@@ -15206,7 +16403,6 @@
                   "caption": "图2 · 两组付费者的消费贡献（本站重绘；单位：已观测AI消费份额）",
                   "evidence": [
                     {
-                      "fragment": "",
                       "locator": "第2节：消费份额",
                       "source_id": "report"
                     }
@@ -15230,7 +16426,6 @@
               ],
               "evidence": [
                 {
-                  "fragment": "",
                   "locator": "第2节：消费额分布；Consumer Spending Growth is Concentrated at the Very Top",
                   "source_id": "report"
                 }
@@ -15254,7 +16449,6 @@
                   "caption": "图3 · 消费额Top 50与两份流量榜的重合（本站重绘；每格1家，位置不表示排名）",
                   "evidence": [
                     {
-                      "fragment": "",
                       "locator": "第2节：付费榜与流量榜；导言：入口盲区",
                       "source_id": "report"
                     }
@@ -15279,7 +16473,6 @@
               ],
               "evidence": [
                 {
-                  "fragment": "",
                   "locator": "导言：三份榜单方法；第2节：29家榜单缺口与排名差异",
                   "source_id": "report"
                 }
@@ -15305,7 +16498,6 @@
                   "caption": "图4 · 购买观察与未来判断（本站整理示意；不表示任务占比或因果关系）",
                   "evidence": [
                     {
-                      "fragment": "",
                       "locator": "第2节购买观察／第5节作者判断",
                       "source_id": "report"
                     }
@@ -15330,7 +16522,6 @@
               ],
               "evidence": [
                 {
-                  "fragment": "",
                   "locator": "第2节：高消费群体购买倾向；第5节：产品与商业模式判断",
                   "source_id": "report"
                 }
@@ -15613,7 +16804,6 @@
                 "source_id": "report"
               },
               {
-                "fragment": "",
                 "locator": "Jev既有介绍；本图实验版本与数值仅依据作者报告§4.2",
                 "source_id": "jev-fieldtofit"
               }
@@ -16054,17 +17244,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-09",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct09-c-1",
           "locator": "官方公告、版本记录或采用说明",
           "reason": "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。",
           "retrieved_at": "2026-10-09",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "Anthropic使用政策更新说明",
           "upstream_revision": "usage-policy-2026-effective-2026-11-12",
           "url": "https://www.anthropic.com/news/2026-usage-policy-update"
@@ -16144,17 +17329,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-09",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct09-b-1",
           "locator": "官方公告、版本记录或采用说明",
           "reason": "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。",
           "retrieved_at": "2026-10-09",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "Developer Knowledge官方生态介绍",
           "upstream_revision": "developer-knowledge-ecosystem-2026-10-07",
           "url": "https://developers.googleblog.com/supercharge-your-development-with-the-google-developer-knowledge-api-ecosystem/"
@@ -16163,17 +17343,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-09",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct09-b-2",
           "locator": "官方公告、版本记录或采用说明",
           "reason": "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。",
           "retrieved_at": "2026-10-09",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "Developer Knowledge版本记录",
           "upstream_revision": "developer-knowledge-ecosystem-2026-10-07",
           "url": "https://developers.google.com/knowledge/release-notes"
@@ -16182,17 +17357,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-09",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct09-b-3",
           "locator": "官方公告、版本记录或采用说明",
           "reason": "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。",
           "retrieved_at": "2026-10-09",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "API范围与采用说明",
           "upstream_revision": "developer-knowledge-ecosystem-2026-10-07",
           "url": "https://developers.google.com/knowledge/api"
@@ -16201,17 +17371,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-09",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct09-b-4",
           "locator": "官方公告、版本记录或采用说明",
           "reason": "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。",
           "retrieved_at": "2026-10-09",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "MCP工具文档",
           "upstream_revision": "developer-knowledge-ecosystem-2026-10-07",
           "url": "https://developers.google.com/knowledge/mcp"
@@ -16300,17 +17465,12 @@
           "approved": true,
           "body": "",
           "checked_at": "2026-10-09",
-          "content_hash": null,
           "coverage": "link_only",
           "id": "oct09-a-1",
           "locator": "官方公告、版本记录或采用说明",
           "reason": "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。",
           "retrieved_at": "2026-10-09",
-          "rights": {
-            "basis": "",
-            "notice": "",
-            "url": ""
-          },
+          "rights": {},
           "title": "Gemini at Work 2026官方公告",
           "upstream_revision": "gemini-at-work-2026-10-08",
           "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"

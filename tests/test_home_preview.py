@@ -139,7 +139,8 @@ def test_shared_archive_filters_work_without_scripts(site):
     empty = BeautifulSoup(site.get('/for-you/news?news_range=all&news_q=no-such-record-xyz').text, 'html.parser')
     assert not empty.select('#news-releases article')
     assert '当前筛选没有匹配条目' in empty.select_one('#news-releases').text
-    assert len(BeautifulSoup(site.get('/for-you/hot-cards').text, 'html.parser').select('#news-releases article')) == 3
+    archive = BeautifulSoup(site.get('/for-you/hot-cards').text, 'html.parser').select('#news-releases article h3 a')
+    assert {a['href'].split('/')[-1] for a in archive} == {i['id'] for i in originals.values() if i.get('hot_card')}
 
 
 def test_archive_date_basis_category_and_invalid_page():
