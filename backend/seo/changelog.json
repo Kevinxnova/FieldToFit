@@ -1,7 +1,35 @@
 {
-  "version": "1.12.0",
-  "revision": "47e65998c132763020bc4332b2295d1cc3785d98b483dcdbe547e98a3cf018b8",
+  "version": "1.12.1",
+  "revision": "8768e8d19176aff42f5b1220ab44af4f1f3ef0b481a775ce391d23b20c9b1bf1",
   "items": [
+    {
+      "version": "1.12.1",
+      "date": "2026-10-19",
+      "deployed_on": "2026-10-19",
+      "copy": {
+        "zh": {
+          "title": "MCP兼容续读与接入诊断修复",
+          "highlights": [
+            "动态、档案与报告新增可选摘要分页和完整JSON分段续读，绑定原查询、语言与内容哈希；旧地址、工具、参数及默认完整返回保持兼容。",
+            "本地stdio桥接补充可信证书处理，明确区分证书、DNS、超时与HTTP错误，始终验证TLS且不回显凭据。",
+            "For your AI服务检查实际读取公开摘要，显示失败阶段与耗时；四客户端接入、双语长内容续读和排错说明同步完善。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Compatible bounded MCP reading and connection diagnostics",
+          "highlights": [
+            "Add optional summary pagination and complete JSON chunks for news, profiles and reports, bound to query, language and content hashes. Keep existing endpoints, tools, arguments and default full results compatible.",
+            "Improve trusted-certificate handling in the stdio bridge and distinguish certificate, DNS, timeout and HTTP failures without disabling TLS verification or revealing credentials.",
+            "Make the For your AI check read a published summary and show the failing stage and elapsed time; update four-client setup and bilingual reading and troubleshooting guidance."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.12.1"
+    },
     {
       "version": "1.12.0",
       "date": "2026-10-18",

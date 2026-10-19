@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.12.0](CHANGELOG.md#v1.12.0)** · [fieldtofit-v1.12.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.12.0)
+**当前源码版本：[v1.12.1](CHANGELOG.md#v1.12.1)** · [fieldtofit-v1.12.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.12.1)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 日报采用九栏目顺序，热点AI产品追踪独立成栏，商业动态位于监管政策之后；网页、双语PDF和AI读取同步。
-- 具身智能、基础设施与商业动态增加细分主题、中英文检索和媒体线索追溯，核对原始日期、事件阶段及融资交易口径。
-- 新版取材、事件与产品记录绑定复核和PDF校样；页面隐藏实际出刊时间，后台记录与历史日报、哈希和PDF保持。
+- 动态、档案与报告新增可选摘要分页和完整JSON分段续读，绑定原查询、语言与内容哈希；旧地址、工具、参数及默认完整返回保持兼容。
+- 本地stdio桥接补充可信证书处理，明确区分证书、DNS、超时与HTTP错误，始终验证TLS且不回显凭据。
+- For your AI服务检查实际读取公开摘要，显示失败阶段与耗时；四客户端接入、双语长内容续读和排错说明同步完善。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

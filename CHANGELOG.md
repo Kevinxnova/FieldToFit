@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.12.1"></a>
+## v1.12.1 · MCP兼容续读与接入诊断修复 · 2026-10-19
+
+<!-- site-deployed:2026-10-19 -->
+<!-- public-title:en:Compatible bounded MCP reading and connection diagnostics -->
+<!-- release-summary:zh:start -->
+- 动态、档案与报告新增可选摘要分页和完整JSON分段续读，绑定原查询、语言与内容哈希；旧地址、工具、参数及默认完整返回保持兼容。
+- 本地stdio桥接补充可信证书处理，明确区分证书、DNS、超时与HTTP错误，始终验证TLS且不回显凭据。
+- For your AI服务检查实际读取公开摘要，显示失败阶段与耗时；四客户端接入、双语长内容续读和排错说明同步完善。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add optional summary pagination and complete JSON chunks for news, profiles and reports, bound to query, language and content hashes. Keep existing endpoints, tools, arguments and default full results compatible.
+- Improve trusted-certificate handling in the stdio bridge and distinguish certificate, DNS, timeout and HTTP failures without disabling TLS verification or revealing credentials.
+- Make the For your AI check read a published summary and show the failing stage and elapsed time; update four-client setup and bilingual reading and troubleshooting guidance.
+<!-- release-summary:en:end -->
+
+对应[REQ-8-6／11／12](FieldToFit-PM.md#mcp-compatible-reading-repair)。所有者授权先更新总览、再开发验证，通过后更新部署。本批及自v1.12.0累计范围为既有读取能力兼容patch，无新完整模块、主要用户流程重构、数据库迁移或协议破坏。按先总览、后实现完成；219项相关集成、44项最终专项、五组前端行为与158次本机HTTP完整重组通过。正式站已运行v1.12.1；部署、四客户端连接、双语实读与公开数据保持的实际结果见[本批验收](docs/validation/2026-10-19-mcp-reading-repair.md)。旧配置继续兼容，完整四客户端模型聊天不作为已验证范围。
+
 <a id="v1.12.0"></a>
 ## v1.12.0 · 日报九栏目与取材核验升级 · 2026-10-18
 

@@ -8,17 +8,42 @@
 
 公开HTTP查询可加 `lang=en`；MCP工具在 `arguments` 中传 `"lang":"en"`。省略语言保持中文默认和原结构。英文网页、档案、历史、下载与资料包使用同一已审英文；原始材料正文与定位不翻译。本站英文正文缺译或过期返回明确错误。源稿审核与实际部署状态见[双语指南](english-content.md)。
 
-## For your AI 分步接入（已上线v1.8.52）
+## For your AI 分步接入
 
-页面先选Codex、Claude、OpenClaw或Pi，再按三步完成添加与首次读取。Codex支持桌面／命令行；Claude支持网页／桌面及独立Claude Code步骤；OpenClaw支持控制台／命令行；Pi使用带内置MCP的coding agent版本，已有扩展可能接管连接。每种路径的官方文档和2026-10-13核对记录与网页共同维护于[客户端引导数据](../../backend/seo/ai_clients.json)。
+页面先选Codex、Claude、OpenClaw或Pi，再按三步完成添加与首次读取。Codex支持桌面／命令行；Claude支持网页／桌面及独立Claude Code步骤；OpenClaw支持控制台／命令行；Pi使用带内置MCP的coding agent版本，已有扩展可能接管连接。每种路径的官方文档和2026-10-19核对信息与网页共同维护于[客户端引导数据](../../backend/seo/ai_clients.json)。
 
-复制服务地址、命令或测试问题各自有反馈与手动回退。客户端内实际调用FieldToFit并返回带出处、修订与核验日期的内容，才是读取成功；网站检查仅确认服务可达。英文提问包含每次调用传lang=en的要求。运行中的OpenClaw可能需要重载；Claude云端不能读取localhost。私有读令牌仍独立配置、不进入复制内容，暂无账号要求。
+复制服务地址、命令或测试问题各自有反馈与手动回退。客户端内实际调用FieldToFit并返回带出处、修订与核验日期的内容，才是读取成功；网站检查完成初始化和一次真实摘要读取，仍需在自己的客户端完成首次调用。英文提问包含每次调用传lang=en的要求。运行中的OpenClaw可能需要重载；Claude云端不能读取localhost。私有读令牌仍独立配置、不进入复制内容，暂无账号要求。
 
-本轮验证包含官方步骤、现有Codex／Claude命令帮助、Codex临时配置解析、隔离与正式HTTP MCP双语查找／完整读取及本地网页交互；未在四款真实客户端逐一进行聊天取材，不将协议测试当成客户端全验。实际结果见[验收](../validation/2026-10-13-for-ai-onboarding.md)。
+2026-10-19已核对四款客户端原生连接及工具发现；完整模型聊天不作为已验证范围。兼容修复与部署证据见[本次验收](../validation/2026-10-19-mcp-reading-repair.md)，早期界面验收见[原记录](../validation/2026-10-13-for-ai-onboarding.md)。
+
+## 有界摘要与完整分段读取（v1.12.1）
+
+`curated_news`、`curated_watch`、`curated_maps`保留原地址、名称、过滤参数和省略新参数时的完整返回。为避免客户端截断大结果，新连接优先显式使用：
+
+```json
+{"name":"curated_news","arguments":{"response_mode":"summary","page_size":3,"lang":"zh"}}
+```
+
+摘要默认5项、最多10项，并受10000字节（UTF-8 JSON）条目预算约束，实际返回可少于page_size。摘要是节选，不含全部出处；每项`reading`给出完整条目的工具、身份、修订、语言和分段参数。按其参数调用可得`representation=json_fragment`，`text`为完整结果规范JSON的片段；默认4000、最多6000个Unicode字符，同时受JSON转义后10000字节预算限制，片段可能更短。按`offset`顺序拼接text，再解析JSON；对拼接内容的UTF-8字节计算SHA-256，应等于`content_hash`。不能对每个片段单独解析JSON，或把片段当全文。
+
+两种模式都用`response_cursor=next_cursor`续读，保持原工具、过滤条件、语言和page_size／max_characters，直到`has_more=false`。这是新增的响应分页游标，勿与既有检索／同步参数`cursor`混用。每次读取重新检查公开权限与当前正文；内容哈希变化返回`reading_revision_changed`，丢弃旧片段或部分列表并从头读取。不存在或已撤回的条目继续返回原有错误；游标不授予权限，不保证保留旧正文。
+
+`response_mode=full`或省略所有新参数保持旧结果；page_size仅用于summary，max_characters仅用于chunk，不能无模式传控制参数。其他工具继续使用原有limit／字符预算／cursor，不接受这组新参数。尤其资料包只打包需要的对象并限制max_characters，原文使用curated_material的offset／limit。
+
+网页「检查本站服务」现在依次执行initialize、initialized通知和`curated_news`的一项摘要读取，45秒整体超时。显示通过表示本次真实读取成功（也可能是真实空集合），不表示用户客户端已配置或模型已完整作答。读取失败区分阶段、耗时、HTTP权限、协议、网络及超时；切换客户端、语言或读取令牌会取消旧检查。
+
+四款客户端的设置路径与命令于2026-10-19再次按官网及隔离原生连接核对。Claude免费账号最多一个自定义连接，团队可能需管理员；Pi需支持内置MCP的版本。无完整四客户端聊天验收时不宣称全部模型调用已验。
+
+### 常见错误
+
+- 直接浏览器GET服务地址返回405是预期；使用Streamable HTTP，勿误选旧SSE。406通常是Accept缺少application/json或text/event-stream。
+- 正式站公开内容无需FieldToFit令牌或OAuth；私有部署401／403需核对读令牌和访问权限，勿使用管理员密码。
+- stdio错误在stderr及JSON-RPC error.data.code中分类为tls_certificate_error、tls_error、ca_configuration_error、dns_error、timeout、http_error、invalid_response或connection_error，不回显URL查询、令牌或服务响应。
+- Python证书不足时安装可信证书，或将SSL_CERT_FILE／SSL_CERT_DIR指向可信CA配置。未显式配置且默认信任库为空时采用已安装certifi；不覆盖显式信任设置，也不关闭TLS校验。客户端启动桥接时应传递该环境变量。
 
 ## HTTP MCP
 
-公开地址为 `https://fieldtofit.top/api/mcp/curated`，正式v1.8.7提供18项精选工具，正式部署状态见[总览](../../FieldToFit-PM.md)；包含 `curated_lookup`；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
+公开地址为 `https://fieldtofit.top/api/mcp/curated`，当前提供19项精选工具，正式部署状态见[总览](../../FieldToFit-PM.md)；包含 `curated_lookup`；本地对应 `http://127.0.0.1:8000/api/mcp/curated`。下面是通用配置示意，客户端的配置字段可能不同；按所用客户端填写 URL 和可选读令牌。
 
 ```json
 {
@@ -31,7 +56,7 @@
 }
 ```
 
-网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 正式v1.8.7共27项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
+网页 `/for-your-ai` 可以检查连接（`/connect` 兼容跳转）。旧兼容端点 `/api/mcp` 当前共28项工具：新增 `curated_history` 公开修订历史，保留 `curated_sources` 精选采集源状态，保留 `curated_bundle` 原文包及 `curated_changes`、`curated_editions`、`curated_edition`；其余精选读取 `curated_search`、`curated_object`、`curated_material`、`curated_export`，具体参数见[平台指南](platform.md)。以下旧 9 项保留兼容：`search`、`get_record`、`read_evidence`、`compare`、`task_context`、`changes`、`sources`、`daily_briefs`、`research_materials`。
 
 ## Codex专题：首次全量与每日同步
 

@@ -8,6 +8,7 @@
 | browser/reviewed-maintenance.cjs | 本机隔离流程：章节／PDF、定位纠错、台账提案、真实修复、对照分享／导出与三宽度；配套fixture server只用临时数据库 |
 | test_stewardship.py | 归并／私密归组／撤销、关系、当前材料检查、变化流与历史权限边界 |
 | browser/stewardship.cjs | 仅限隔离本地夹具：管理员归并、撤销、关联／移除、复核及手机布局 |
+| test_mcp_reading.py、test_mcp_stdio.py | 兼容完整返回、摘要分页、分段重组／字节预算、游标绑定／撤回／权限及可信证书与故障脱敏 |
 | test_knowledge.py | 知识库、查询、权限、账户关闭、MCP 与基本任务 |
 | test_workspace_completion.py | 采集进度、材料、整理、约束、编辑与任务检索 |
 | test_task_packets.py | 既有任务结构、证据边界、PDF 技术回归和导出 |

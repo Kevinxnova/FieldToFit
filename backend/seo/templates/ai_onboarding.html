@@ -20,3 +20,8 @@
   <blockquote>{{ 'Use FieldToFit to find Claude and read one complete entry. Cite sources, publication revision and review date. Distinguish editorial content, stored text and link-only material. If the connection is unavailable, say so. Pass lang="en" in every tool call.' if english else '请通过 FieldToFit 查找 Claude，读取一项完整资料，附上出处、资料修订与核验日期。区分整理内容、已存原文和仅链接资料；无法调用连接时请明确说明。' }}</blockquote>
   <p>{{ 'Confirm an actual tool call and a sourced answer in your own AI. A website service check does not verify client setup.' if english else '请在自己的 AI 中确认实际工具调用与带出处的回答；网页服务检查不代表客户端接入成功。' }}</p>
 </section>
+
+<section class="platform-panel" id="ai-reading-help">{% for item in ai_clients.help %}<h3>{{ item.title[1 if english else 0] }}</h3><p>{{ item.text[1 if english else 0] }}</p>{% endfor %}
+<p>{{ 'The interactive service check performs initialization and a real bounded read. Successful connection alone does not pass the reading check.' if english else '交互页面的服务检查会完成初始化和一次有界真实读取；只连通但读取失败不会显示通过。' }}</p>
+<pre>{"name":"curated_news","arguments":{"response_mode":"summary","page_size":3}}</pre>
+<p>{{ 'Follow each reading for full chunks; pass next_cursor as response_cursor, concatenate text by offset and verify content_hash before treating it as complete.' if english else '按每项reading分段读取，将next_cursor传为response_cursor；按offset拼接text并核对content_hash后才是完整结果。' }}</p></section>

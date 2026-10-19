@@ -43,31 +43,64 @@ export function CopyAction({ text, label, primary = false, tracked = false }: { 
 }
 
 function ServiceCheck({ endpoint }: { endpoint: string }) {
-  const { pick } = useWorkspace();
+  const { pick, zh } = useWorkspace();
   const [state, setState] = useState<'idle' | 'busy' | 'ready' | 'error'>('idle');
+  const [phase, setPhase] = useState<'connect' | 'read'>('connect');
   const [error, setError] = useState('');
+  const [seconds, setSeconds] = useState('0.0');
+  const [count, setCount] = useState(0);
   const controller = useRef<AbortController | null>(null);
   useEffect(() => () => { controller.current?.abort(); controller.current = null; }, []);
   async function check() {
     controller.current?.abort();
     const active = new AbortController(); controller.current = active;
-    const timeout = window.setTimeout(() => active.abort(), 15000);
-    setState('busy'); setError('');
+    const started = Date.now();
+    const timeout = window.setTimeout(() => active.abort(), 45000);
+    setState('busy'); setPhase('connect'); setError('');
     try {
       const headers: Record<string, string> = { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream' };
       const token = readToken(); if (token) headers.Authorization = 'Bearer ' + token;
-      const response = await fetch(endpoint, { method: 'POST', headers, signal: active.signal, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-11-25', capabilities: {}, clientInfo: { name: 'fieldtofit-platform-web', version } } }) });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      if (data.error || !data.result?.serverInfo || !data.result?.protocolVersion) throw new Error('MCP');
-      if (controller.current !== active) return;
-      setState('ready'); trackAction('mcp_service_check');
+      async function rpc(body: object, notification = false) {
+        const response = await fetch(endpoint, { method: 'POST', headers, signal: active.signal, body: JSON.stringify(body) });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        if (notification) { if (response.status !== 202) throw new Error('protocol'); return null; }
+        let data;
+        try { data = await response.json(); } catch { throw new Error('protocol'); }
+        if (data?.jsonrpc !== '2.0' || data.id !== (body as {id: number}).id || data.error || !data.result) throw new Error('protocol');
+        return data.result;
+      }
+      const init = await rpc({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-11-25', capabilities: {}, clientInfo: { name: 'fieldtofit-platform-web', version } } });
+      if (typeof init?.serverInfo?.name !== 'string' || !init.serverInfo.name || !['2025-11-25', '2025-06-18', '2025-03-26'].includes(init.protocolVersion)) throw new Error('protocol');
+      if (controller.current !== active || active.signal.aborted) return;
+      headers['MCP-Protocol-Version'] = init.protocolVersion;
+      await rpc({ jsonrpc: '2.0', method: 'notifications/initialized' }, true);
+      if (controller.current !== active || active.signal.aborted) return;
+      setPhase('read');
+      const result = await rpc({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'curated_news', arguments: { response_mode: 'summary', page_size: 1, lang: zh ? 'zh' : 'en' } } });
+      if (result?.isError) throw new Error('read');
+      const data = result?.structuredContent;
+      if (data?.schema_version !== 'fieldtofit.mcp-reading.v1' || data.source_tool !== 'curated_news' || data.response_mode !== 'summary' || !Array.isArray(data.items) || data.items.length > 1 || !Number.isInteger(data.total) || data.total < data.items.length || (data.total > 0 && data.items.length === 0) || typeof data.has_more !== 'boolean' || !/^[a-f0-9]{64}$/.test(data.content_hash)) throw new Error('protocol');
+      if (controller.current !== active || active.signal.aborted) return;
+      setCount(data.items.length); setState('ready'); trackAction('mcp_service_check');
     } catch (reason) {
       if (controller.current !== active) return;
-      setError(reason instanceof Error ? reason.message : 'MCP'); setState('error');
-    } finally { window.clearTimeout(timeout); }
+      setError(active.signal.aborted ? 'timeout' : reason instanceof Error && /^(HTTP \d{3}|protocol|read)$/.test(reason.message) ? reason.message : 'network'); setState('error');
+    } finally {
+      window.clearTimeout(timeout);
+      if (controller.current === active) setSeconds(((Date.now() - started) / 1000).toFixed(1));
+    }
   }
-  return <div className="ai-service-check"><button className="text-button" disabled={state === 'busy'} onClick={check}><Icon name="source" size={15}/>{state === 'busy' ? pick('正在检查…', 'Checking…') : pick('检查本站服务', 'Check this service')}</button><p role="status">{state === 'ready' ? pick('本站服务可达。请在自己的 AI 中完成实际读取，确认接入。', 'This service is reachable. Confirm setup by reading materials in your own AI.') : state === 'error' ? pick('暂时无法连接，请检查网络或读取权限后重试。', 'Could not connect. Check your network or read access, then retry.') + (error.startsWith('HTTP ') ? ` (${error})` : '') : pick('这里检查服务可用性；不会代替你连接客户端。', 'Checks service availability; does not connect your client.')}</p></div>;
+  const explanation = error === 'timeout' ? pick('请求超时，请稍后重试。', 'The request timed out. Please retry.')
+    : error === 'HTTP 401' || error === 'HTTP 403' ? pick('请检查读取令牌或访问权限。', 'Check the read token or access permissions.')
+    : error === 'HTTP 406' || error === 'HTTP 405' ? pick('请检查服务地址与 Streamable HTTP 接入方式。', 'Check the endpoint and Streamable HTTP transport.')
+    : error === 'protocol' ? pick('服务返回了无法识别的读取结果，请重试或反馈。', 'The service returned an invalid reading response. Retry or report it.')
+    : error === 'read' ? pick('资料读取失败，请重试或反馈。', 'The material read failed. Retry or report it.')
+    : error.startsWith('HTTP ') ? pick('服务暂时无法完成请求，请稍后重试。', 'The service could not complete this request. Please retry later.')
+    : pick('请检查网络、服务地址或浏览器连接限制。', 'Check the network, endpoint or browser connection restrictions.');
+  return <div className="ai-service-check"><button className="text-button" disabled={state === 'busy'} onClick={check}><Icon name="source" size={15}/>{state === 'busy' ? pick('正在检查…', 'Checking…') : pick('检查本站服务', 'Check this service')}</button><p role="status">{state === 'busy' ? phase === 'connect' ? pick('正在检查连接…', 'Checking the connection…') : pick('连接成功，正在实际读取资料…', 'Connected. Reading published materials…')
+    : state === 'ready' ? pick(`连接和实际读取通过（${count ? '已读1项摘要' : '当前公开集合为空'}，${seconds}秒）。请在自己的 AI 中完成读取，确认客户端接入。`, `Connection and real read passed (${count ? '1 summary read' : 'the public collection is empty'}, ${seconds}s). Confirm client setup by reading in your own AI.`)
+    : state === 'error' ? pick(`${phase === 'read' ? '连接成功，读取检查失败' : '连接检查失败'}（${seconds}秒）。`, `${phase === 'read' ? 'Connected, but the reading check failed' : 'Connection check failed'} (${seconds}s). `) + explanation + (error.startsWith('HTTP ') ? ` (${error})` : '')
+    : pick('检查连接并实际读取一项公开摘要；不会替你配置客户端。', 'Checks the connection and reads a published summary; does not configure your client.')}</p></div>;
 }
 
 export function ForAI() {
@@ -85,8 +118,9 @@ export function ForAI() {
   const command = mode.command?.replace('{endpoint}', `'${endpoint.replace(/'/g, "'\\''")}'`);
   const config = JSON.stringify({ mcpServers: { fieldtofit: { type: 'http', url: endpoint } } }, null, 2);
   const languageHint = zh ? '' : ' Pass lang="en" in every FieldToFit tool call.';
-  const testQuestion = pick('请通过已连接的 FieldToFit 查找 Claude，读取一项完整资料，简述内容并附上出处、资料修订与核验日期。区分整理内容、已存原文和仅链接资料。如果无法调用连接，请明确说明，不要用已有知识代答。', 'Use the connected FieldToFit service to find Claude and read one complete entry. Summarize it with sources, publication revision and review date. Distinguish editorial content, stored text and link-only sources. If the connection is unavailable, say so instead of answering from memory.') + languageHint;
-  const instructions = pick(`请将 FieldToFit 添加为只读远程 HTTP MCP 服务：${endpoint}。先用 curated_lookup 检索，按结果 reading 读取完整内容，按材料 reading 使用 curated_material 续读原文，或用 curated_bundle 打包。使用 curated_changes 的 scope=workspace 读取当前资料变化；scope=legacy 使用独立游标。保留出处、版本、核验日期、材料覆盖和未知项。无法配置时请指导我操作，不要声称已经连接。`, `Add FieldToFit as a read-only HTTP MCP service: ${endpoint}. Use curated_lookup, follow result reading instructions for full entries and curated_material for source text, or curated_bundle for packages. Read changes with curated_changes scope=workspace; retain a separate cursor for scope=legacy. Preserve sources, revisions, review dates, coverage and unknowns. If you cannot configure it, guide me without claiming a connection.`) + languageHint;
+  const boundedHint = pick(' 动态／档案／报告优先使用 response_mode=summary、page_size=3，再按 reading 分段读取；将 next_cursor 传为 response_cursor，直到 has_more=false。完整片段按offset拼接解析JSON并核对content_hash，不把摘要或单段当全文。', ' For news/profiles/reports prefer response_mode=summary, page_size=3, then follow reading for chunks. Pass next_cursor as response_cursor until has_more=false; concatenate text by offset, parse JSON and verify content_hash. A summary or fragment is not the full entry.');
+  const testQuestion = pick('请通过已连接的 FieldToFit 查找 Claude，读取一项完整资料，简述内容并附上出处、资料修订与核验日期。区分整理内容、已存原文和仅链接资料。如果无法调用连接，请明确说明，不要用已有知识代答。', 'Use the connected FieldToFit service to find Claude and read one complete entry. Summarize it with sources, publication revision and review date. Distinguish editorial content, stored text and link-only sources. If the connection is unavailable, say so instead of answering from memory.') + boundedHint + languageHint;
+  const instructions = pick(`请将 FieldToFit 添加为只读远程 HTTP MCP 服务：${endpoint}。先用 curated_lookup（limit=3）检索；动态／档案／报告使用 curated_news/watch/maps 的 response_mode=summary、page_size=3，按 reading 使用 chunk 模式读取完整内容，固定原参数并将 next_cursor 传为 response_cursor 直到结束；片段按 offset 拼接后解析JSON，并核对content_hash。资料变化时丢弃片段重新读取，按材料 reading 使用 curated_material 续读原文，或用 curated_bundle 打包。使用 curated_changes 的 scope=workspace 读取当前资料变化；scope=legacy 使用独立游标。保留出处、版本、核验日期、材料覆盖和未知项。无法配置时请指导我操作，不要声称已经连接。`, `Add FieldToFit as a read-only HTTP MCP service: ${endpoint}. Use curated_lookup with limit=3. For news/profiles/reports use curated_news/watch/maps response_mode=summary, page_size=3, then follow reading for chunk mode. Repeat the same arguments with response_cursor=next_cursor until complete; concatenate text by offset, parse JSON and verify content_hash. Restart on content changes and curated_material for source text, or curated_bundle for packages. Read changes with curated_changes scope=workspace; retain a separate cursor for scope=legacy. Preserve sources, revisions, review dates, coverage and unknowns. If you cannot configure it, guide me without claiming a connection.`) + languageHint;
   const examples = [
     { title: pick('跟上最近的变化', 'Catch up on changes'), text: pick('最近有哪些值得关注的 AI 更新？', 'What has changed in AI recently?'), prompt: pick('通过 FieldToFit 读取近期已发布的 AI 动态，选出三项变化并解释其意义，附上出处与原事件日期；区分官方声明、本站解读和未核实的信息。', 'Read recent published AI developments from FieldToFit. Explain three changes and why they matter, with sources and original event dates. Distinguish official claims, editorial notes and unverified information.') },
     { title: pick('深入一个项目', 'Explore a project'), text: pick('帮我了解 Pi，以及它的使用条件。', 'Help me understand Pi and its requirements.'), prompt: pick('通过 FieldToFit 查找 Pi coding agent，读取完整档案及可用材料，说明用途、当前收录版本、使用条件与限制，并附上来源和核验日期。缺失内容请明确说明。', 'Find Pi coding agent in FieldToFit. Read its full profile and available materials, explain its purpose, recorded version, requirements and limitations, and cite sources and review dates. Identify missing information.') },
@@ -111,7 +145,7 @@ export function ForAI() {
         </ol>
         <div className="ai-setup-panel"><div className="ai-panel-caption"><span>{command ? 'TERMINAL' : pick('填写示意', 'CONNECTION DETAILS')}</span><span>{client.name}</span></div>
           {command ? <><pre className="ai-command"><code>{command}</code></pre><CopyAction text={command} label={pick('复制接入命令', 'Copy setup command')} primary tracked/><p className="ai-panel-note">{pick('在你自己的终端运行；复制不会执行命令。', 'Run in your own terminal. Copying does not execute it.')}</p></> : <><div className="ai-field"><span>{pick('名称', 'Name')}</span><strong>fieldtofit</strong></div><div className="ai-field"><span>{pick('连接类型', 'Transport')}</span><strong>{mode.transport}</strong></div><div className="ai-field ai-url-field"><span>{pick('服务地址', 'Server URL')}</span><code>{endpoint}</code></div><CopyAction text={endpoint} label={pick('复制服务地址', 'Copy server URL')} primary tracked/><p className="ai-panel-note">{pick('正式站公开资料无需 FieldToFit 账号。', 'Public site materials need no FieldToFit account.')}</p></>}
-          <ServiceCheck key={clientId + mode.id + accessRevision + endpoint} endpoint={endpoint}/>
+          <ServiceCheck key={clientId + mode.id + accessRevision + endpoint + String(zh)} endpoint={endpoint}/>
         </div></div>
         <div className="ai-guide-footer"><span>{pick('步骤核对于 ', 'Instructions checked ')}{guideData.checked_at}</span><a href={mode.source} target="_blank" rel="noreferrer">{client.name} {pick('官方接入说明', 'official setup guide')} ↗</a></div>
         {(mode.note || client.note) && <p className="ai-guide-note">{mode.note && t(mode.note)}{mode.note && client.note ? ' ' : ''}{client.note && t(client.note)}</p>}
@@ -121,7 +155,7 @@ export function ForAI() {
 
     <section className="ai-first-read" id="ai-first-read" aria-labelledby="ai-first-title"><div><p className="ai-kicker">02 / FIRST CONVERSATION</p><h2 id="ai-first-title">{pick('第一句话，从这里开始。', 'Start the conversation.')}</h2><p>{pick('添加服务后，把这句话发给你的 AI。', 'After adding the service, send this to your AI.')}</p></div><div className="ai-question"><span className="ai-quote-mark" aria-hidden="true">“</span><p>{pick('从 FieldToFit 找到 Claude 的资料，读完一项，并告诉我出处。', 'Find Claude in FieldToFit, read one entry, and show me the sources.')}</p><CopyAction text={testQuestion} label={pick('复制测试问题', 'Copy test question')}/></div><p className="ai-read-result"><Icon name="check" size={17}/>{pick('看到实际工具调用，以及带出处、修订和核验日期的回答，才算完成这次读取。', 'Look for an actual tool call and an answer with sources, revision and review date to confirm the read.')}</p></section>
 
-    <section className="ai-examples" aria-label={pick('接入后的提问示例', 'Questions to try after setup')}>{examples.map((example, i) => <article key={i}><span className="ai-example-index">0{i + 1}</span><h3>{example.title}</h3><p>{example.text}</p><CopyAction key={example.prompt} text={example.prompt + languageHint} label={pick('复制这个问题', 'Copy this question')}/></article>)}</section>
+    <section className="ai-examples" aria-label={pick('接入后的提问示例', 'Questions to try after setup')}>{examples.map((example, i) => <article key={i}><span className="ai-example-index">0{i + 1}</span><h3>{example.title}</h3><p>{example.text}</p><CopyAction key={example.prompt} text={example.prompt + boundedHint + languageHint} label={pick('复制这个问题', 'Copy this question')}/></article>)}</section>
 
     <section className="ai-materials" id="ai-materials" aria-labelledby="ai-materials-title"><div className="ai-section-heading"><div><p className="ai-kicker">03 / TAKE IT WITH YOU</p><h2 id="ai-materials-title">{pick('先挑一份资料，也可以。', 'Start with a source package.')}</h2></div><p>{pick('搜索、预览，再复制或下载给 AI。', 'Search, preview, then copy or download for your AI.')}</p></div><UnifiedLookup key={'lookup-'+accessRevision}/><details className="ai-disclosure"><summary>{pick('浏览全部持续关注档案', 'Browse all ongoing-watch profiles')}<span>↗</span></summary><WatchAI key={'watch-'+accessRevision}/><DeveloperProjects key={'projects-'+accessRevision} ai/></details><details className="ai-disclosure"><summary>{pick('技术报告与分析资料', 'Technical reports and analysis')}<span>↗</span></summary><MapsAI/></details></section>
 
@@ -129,6 +163,7 @@ export function ForAI() {
       <section className="ai-sync" id="ai-codex-sync"><div><Icon name="clock" size={22}/><h3>{pick('Codex 专题，每日同步', 'Codex topic, daily sync')}</h3><p>{pick('通过专题专用连接读取全部日志，再接收新增、更正和撤回。', 'Use the dedicated topic connection to read the logs, then follow additions, corrections and removals.')}</p></div><CodexShare initiallyOpen/><Link className="ai-inline-link" to="/for-you#news-codex-28-days">{pick('查看专题日志', 'View the topic logs')} <Icon name="arrow" size={15}/></Link></section>
       <details className="ai-disclosure"><summary>{pick('通用接入、私有部署与更多帮助', 'General setup, private hosting and help')}<span>＋</span></summary><div className="ai-help"><h3>{pick('通用 HTTP MCP 配置', 'Generic HTTP MCP configuration')}</h3><p>{pick('客户端字段可能不同，请以所用客户端的官方说明为准。', 'Client fields vary; follow your client’s official documentation.')}</p><pre>{config}</pre><CopyAction text={config} label={pick('复制通用配置', 'Copy generic configuration')} tracked/><CopyAction key={instructions} text={instructions} label={pick('复制 MCP 接入说明', 'Copy MCP setup instructions')} tracked/>
       <h3>{pick('找不到入口或读取失败？', 'Missing a setting or unable to read?')}</h3><p>{pick('核对上方官方说明和客户端版本。已添加同名服务时先检查现有配置；没有工具时重新打开会话，并核对工具是否启用。也可以使用上方资料下载。', 'Check the official guide and your client version. If the name already exists, inspect its configuration. If tools are missing, reopen the session and check whether they are enabled. You can also download materials above.')}</p>
+      {guideData.help.map((item, i) => <section key={i}><h3>{t(item.title)}</h3><p>{t(item.text)}</p></section>)}
       <h3>{pick('私有部署的读取权限', 'Read access for private deployments')}</h3><p>{pick('读取令牌只保存在本次浏览器会话，不进入复制内容。客户端需要另行设置 Authorization: Bearer；不要使用管理员密码。', 'Read tokens stay in this browser session and are excluded from copied content. Configure Authorization: Bearer separately in the client; never use an admin password.')}</p><form className="platform-search" onSubmit={event => {event.preventDefault();if (token) sessionStorage.setItem('fieldtofit-read-token', token);else sessionStorage.removeItem('fieldtofit-read-token');setToken('');setAccessRevision(value => value + 1);notify(pick('读取设置已更新', 'Read access updated'));}}><input type="password" autoComplete="off" aria-label={pick('读取令牌', 'Read token')} value={token} onChange={event => setToken(event.target.value)}/><button className="button">{pick('保存读取设置', 'Save read access')}</button></form><h3>{pick('本地 stdio 桥接', 'Local stdio bridge')}</h3><p>{pick('后端运行后，在项目目录启动；客户端需要该 Python 的绝对路径。', 'With the backend running, start from the project directory; your client needs the absolute Python path.')}</p><pre>.venv/bin/python -m backend.mcp_stdio</pre><p>FIELDTOFIT_MCP_URL = {endpoint}</p></div></details>
     </section>
   </div>;

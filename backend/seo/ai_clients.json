@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-13",
+  "checked_at": "2026-10-19",
   "clients": [
     {
       "id": "codex",
@@ -85,8 +85,8 @@
           ],
           "source": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
           "note": [
-            "团队账号可能需要管理员先添加。远程连接来自 Claude 云端，不能访问本机地址。",
-            "A team administrator may need to add it first. Remote connections originate in Claude’s cloud and cannot reach localhost."
+            "团队账号可能需要管理员先添加；Claude免费账号最多一个自定义连接。远程连接来自Claude云端，不能访问本机地址。",
+            "A team administrator may need to add it first; Claude Free allows one custom connector. Remote connections originate in Claude’s cloud and cannot reach localhost."
           ],
           "transport": "Remote MCP"
         },
@@ -210,6 +210,38 @@
         "Requires a version with built-in MCP. If pi mcp is unavailable, update or consult your extension’s guide; an MCP extension may replace /mcp."
       ],
       "logo": "/brand/clients/pi.svg"
+    }
+  ],
+  "help": [
+    {
+      "title": [
+        "资料太长，或只读到一部分？",
+        "Too much data or an incomplete read?"
+      ],
+      "text": [
+        "先取少量摘要，再读取所需条目。请让 AI 使用 summary 模式并沿 reading 分段续读，直到结束；摘要或单个片段不是全文。旧配置仍可使用，资料修订后应重新读取。",
+        "Start with a few summaries, then read the entries you need. Ask your AI to use summary mode and follow reading through every chunk. A summary or one fragment is not the full text. Existing configurations remain supported; restart if the source changes."
+      ]
+    },
+    {
+      "title": [
+        "看到 405、406 或认证错误？",
+        "Seeing 405, 406 or an authentication error?"
+      ],
+      "text": [
+        "服务地址用于 MCP 客户端，直接在浏览器打开返回405是正常的。选择 Streamable HTTP，不要选择旧版SSE；406通常表示请求头不符合协议。正式站公开资料无需登录；401／403请核对读取权限，不要填管理员密码。",
+        "This URL is for an MCP client; opening it in a browser normally returns 405. Choose Streamable HTTP rather than legacy SSE; 406 usually means incompatible request headers. Public site materials need no sign-in. For 401/403, check read access; never use an administrator password."
+      ]
+    },
+    {
+      "title": [
+        "本地桥接出现证书或连接错误？",
+        "Certificate or connection errors in the local bridge?"
+      ],
+      "text": [
+        "桥接会区分TLS证书、DNS、超时和HTTP错误。证书失败时安装Python可信证书，或将SSL_CERT_FILE设为可信CA证书包的绝对路径；默认信任库为空时可使用已安装certifi。不要关闭证书验证。反馈时提供客户端版本、失败阶段和错误类型，勿附令牌。",
+        "The bridge distinguishes TLS certificates, DNS, timeouts and HTTP errors. Install Python trusted certificates or point SSL_CERT_FILE at an absolute trusted CA bundle path. An empty default trust store can use installed certifi. Keep certificate verification enabled. Report the client version, failing stage and error category without tokens."
+      ]
     }
   ]
 }
