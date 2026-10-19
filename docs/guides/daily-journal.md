@@ -1,6 +1,6 @@
 # 公开 AI 日报运行说明
 
-对应 [REQ-24](../../FieldToFit-PM.md#req-24)。本模块与既有 08:00 私密选题日报分开，主导航仍只有 For you / For your AI。v1.9.0已于2026-10-14部署，已确认的10月13日晚间样刊已发布；此后所有者选择本地Codex GPT自动日更，云端模型流水线保持关闭。最新接入与任务状态见[本地运行验证](../validation/2026-10-14-local-gpt-daily.md)，历史样刊见[正式验收](../validation/2026-10-14-daily-journal.md#production-deployment)。
+对应 [REQ-24](../../FieldToFit-PM.md#req-24)。本模块与既有 08:00 私密选题日报分开，主导航仍只有 For you / For your AI。v1.9.0已于2026-10-14部署，已确认的10月13日晚间样刊已发布；此后所有者选择本地Codex GPT自动日更，云端模型流水线保持关闭。初始接入记录见[本地运行验证](../validation/2026-10-14-local-gpt-daily.md)，历史样刊见[正式验收](../validation/2026-10-14-daily-journal.md#production-deployment)。
 
 ## 阅读、发布和版本
 
@@ -8,7 +8,32 @@
 - 管理入口 `/admin?section=journal`：整期 JSON 导入 → 保存私密草稿 → 中英文预览 → 确认来源、行情时间及双语 → 生成两份 PDF → 发布。更新用 `draft_version` 防止覆盖并发修改，原因中英文必填；撤回后全部历史下载和读取不可用。
 - `GET /api/v1/daily` 返回归档，`/latest` 返回最新；`/<date>?lang=en&revision=1` 返回指定语言/修订。`/<date>/pdf` 使用相同参数，文件名包含期次、语言、修订。
 - MCP `curated_daily` 不传 `day` 返回归档；`day="latest"` 或实际日期读取；所有入口共享 `publication.content_hash`。PDF 的 Subject 和页脚保留内容哈希及修订，内部覆盖台账不公开。旧 `/api/daily-news` 和旧简报接口保持。
-- 已发布历史版为七栏目；v1.12.0新版为上文约定九栏目，最多三条重点、独立产品追踪和全部三个市场；PDF 页数由实际内容决定，不能把样刊的五页写成永久常数。发布事务先确认双语 PDF 都已准备好；任何失败都不替换上一期。
+- 历史布局1为七栏目，布局2为九栏目、三个市场；当前布局3延续九栏目，最多三条重点、独立产品追踪和四个市场30行行情。PDF 页数由实际内容决定，不能把样刊页数写成永久常数。发布事务先确认双语 PDF 都已准备好；任何失败都不替换上一期。
+
+## 当前质量标准（v1.13.0）
+
+[REQ-24-12](../../FieldToFit-PM.md#daily-quality-watchlist)以10月19日已验收重编样刊为标准。新建本地稿必须采用`layout_version=3`；先status确认生产支持3。历史布局1／2及其PDF不重排。九栏目顺序保持，内部仍逐项核对11维度；外层schema仍为`fieldtofit.daily.v1`。
+
+- 新闻窗口仍是前日08:30至当日08:30。先选24小时新消息，不足时扩查此前72小时进展，再选近7日有读者价值的观察。`freshness`为`new/recent/watch`；`event_date`是事件真实日期，`date_label`中英说明原始日期和归类，不把网页更新或抓取时间冒充新事件。日期-only来源明确边界不确定性；精确时间按72小时／7天检查。
+- 目标8–12条独立、有用的报道，不是凑数下限。AI公司、AI芯片、具身智能、基础设施、监管政策、商业动态六个新闻栏目须有实质报道或注明日期的观察。每条正文说明发生了什么、为何影响读者及仍待兑现的条件，不加折叠小标签。栏目不足先扩大来源和窗口；仍不足时不发布空白模板，保留上一期并记录具体缺口。
+- 五个强化检索栏目为芯片、政策、具身智能、基础设施和商业动态。`plan`包含细分主题、中英文查询及原文入口；它不是搜索成功回执。每栏覆盖全部主题、中外搜索、official/search/media及至少两个域名。媒体用于发现，事实追溯原文；商业媒体独家仍需两家独立原创出版者。
+- 比较最近7期的实际内容和事件身份；同事件已有报道必须有实质新增信息。`quality_review.previous_editions`保存日期、内容哈希、event_keys；不能只换标题避开去重。近期产品可作为明确标注的版本基线，不能伪装新版本。
+- 产品增加`release_channel`，取值stable/alpha/beta/nightly/preview/announced，须与product_checks一致；同一条涉及另一个beta功能时在changes明确区分。重点仍最多三条，另存简短`highlight_title`与`highlight_summary`，不复制长正文撑版面。
+- 行情扩展为30家公司，四个市场US/CN/HK/KR、五个产业组；完整登记见`backend/daily_briefing/watchlist.py`。新增美光、Sandisk、海力士、三星、长鑫科技、WDC、STX、澜起、兆易、江波龙、佰维、AVGO、TSM ADR、ANET、VRT。代码、上市身份、日历、币种、最近完整收盘和适用使用条件须逐期核验；不自动假设未上市公司有股价。
+- 新增`market_overview`的title/summary/note均为双语，给出基于数值的分化观察。不同市场收盘不同步，不能拼成指数或臆造因果；晚于收盘的新闻不能解释此前涨跌。价格已核实但涨跌未核实时用`state=partial`、change_pct=null；连价格未核实则missing且价格、涨跌、as_of均null。整市场无法核实不出刊。免费访问不等于批量再分发授权，只按来源明确许可使用带归属的有限数据。
+
+`evidence.json`保留source_checks、research_checks、event_checks、product_checks，并增加`quality_review`：
+
+- sections：六项`section/story_ids/selection_reason`，选入理由必须结合实际正文；
+- stories：逐条`story_id/reader_value/previously_covered/new_information`，重复事件必须写实质新增事实；
+- count_reason、market_assessment：本期编辑取舍及行情解读依据；
+- previous_editions：最近7期以内的`date/content_hash/event_keys`回执。
+
+`review.json`继续使用真实的local_gpt复核，绑定稿件与证据哈希。checks为sources、facts、bilingual、coverage、market_closes、image_rights、deduplication、research_scope、event_status、editorial_value、freshness、market_context共12项。必须实际开原文、核对双语及价格后才能签署。服务端review会核验传入的整份evidence和哈希，拒绝空栏目、缺失质量记录、错误日期归类和整市场缺失；结构校验不替代事实判断。
+
+按validate → stage → 下载两语私密PDF → PDF技能逐页检查 → layout-review → publish → check执行。PDF页数随内容，不固定六页。自动发布仍限当日09:00后，不自动替换人工改稿、已发布更正或撤回。10月19日r2是所有者明确授权的单次更正，保留r1与真实时间。页面不展示“实际出刊”一行；后台审计保持。
+
+2026-10-19已部署并以验收样刊更正当日r2；两语正文、六页PDF及r1保留已核对。每日任务已回读为当前规则，沿用原六个触发时间与本地GPT，云端模型流水线保持关闭；[实际上线证据](../validation/2026-10-19-daily-quality.md)。下方v1.12.0专节保留为历史兼容说明；本地工作流使用本节当前标准，不用于新稿降级。
 
 ## 九栏目与本地取材核验（v1.12.0，已部署）
 
@@ -62,9 +87,9 @@ For you四个阅读入口下方采用[REQ-24-10报纸头版](../../FieldToFit-PM
 
 当日工作目录为已忽略的 `output/daily-journal/YYYY-MM-DD/`，保存：
 
-- `issue.json`：GPT查阅真实原文后写成的完整双语一期，严格符合schema，`kind=daily`。实际新闻窗口为前日08:30至当日08:30，07:45阶段仅准备候选；08:30以后补查窗口尾段再冻结。标题、版本、事实、产品和行情不能从样刊平移。按生产支持采用已确认九栏目（旧版七栏目仅兼容历史）、最多三重点，条数不凑数，缺合格新闻使用对应栏目说明。重点可配官方原图，必须有适用的使用依据和出处。
-- `evidence.json`：包含 `date` 和 `source_checks`；每条记录对应 `source_id`、完整 `url`、实际 `checked_at`、支持正文的原文短引 `excerpt`（至少20字符），并保存实际检索入口、关键事实定位、交易日历及来源使用依据。十一维度逐项记录实际检查，不把打不开写作无更新；替代官方入口可以补齐证据，但不能仅凭搜索摘要声称核验成功。源于网站私密批次的原文也要保留实际证据。免费行情按各地最近完整收盘核对，至少核实每个市场的一项有效收盘，15只观察证券全部保留；个股缺值用null，整市场不可得则延迟出刊。无法确认适用使用范围的来源不得写成已授权。
-- `review.json`：在成稿后重新打开原文，单独作事实和双语复核。包含 `method=local_gpt`、`approved=true`、空 `issues`、`reviewed_at`、`content_hash`、`evidence_hash`，以及 `checks` 中 `sources/facts/bilingual/coverage/market_closes/image_rights/deduplication/research_scope/event_status` 九个实际通过的布尔项（历史七栏稿仍使用原七项）。两个哈希分别使用schema的 `digest(issue)` 与 `digest(evidence)`。发现问题先修稿并重新复核；不能为了运行通过而自动填写true。此记录代表本地GPT复核，不冒称所有者逐期人工验收，也不冒称另一个独立模型已核查。
+- `issue.json`：GPT查阅真实原文后写成的完整双语一期，严格符合schema，`kind=daily`。实际新闻窗口为前日08:30至当日08:30，07:45阶段仅准备候选；08:30以后补查窗口尾段再冻结。标题、版本、事实、产品和行情不能从样刊平移。确认生产支持3后采用layout_version=3九栏目、最多三重点，目标8–12条有用报道；不足先扩查72小时／7天，仍不能完成六个新闻栏目的实质内容则延迟出刊，不以空栏目说明过关。重点可配官方原图，必须有适用的使用依据和出处。
+- `evidence.json`：包含 `date` 和 `source_checks`；每条记录对应 `source_id`、完整 `url`、实际 `checked_at`、支持正文的原文短引 `excerpt`（至少20字符），并保存实际检索入口、关键事实定位、交易日历及来源使用依据。十一维度逐项记录实际检查，不把打不开写作无更新；替代官方入口可以补齐证据，但不能仅凭搜索摘要声称核验成功。源于网站私密批次的原文也要保留实际证据。免费行情按各地最近完整收盘核对，至少核实每个市场的一项有效收盘，US/CN/HK/KR四地30只观察证券全部保留；个股缺值用null，整市场不可得则延迟出刊。无法确认适用使用范围的来源不得写成已授权。
+- `review.json`：在成稿后重新打开原文，单独作事实和双语复核。包含 `method=local_gpt`、`approved=true`、空 `issues`、`reviewed_at`、`content_hash`、`evidence_hash`，以及 `checks` 中 `sources/facts/bilingual/coverage/market_closes/image_rights/deduplication/research_scope/event_status/editorial_value/freshness/market_context` 十二个实际通过的布尔项（历史布局1／2保留原七／九项）。两个哈希分别使用schema的 `digest(issue)` 与 `digest(evidence)`。发现问题先修稿并重新复核；不能为了运行通过而自动填写true。此记录代表本地GPT复核，不冒称所有者逐期人工验收，也不冒称另一个独立模型已核查。
 - `layout-review.json`：实际查看两语全部PDF页面后保存 `approved=true`、当前 `content_hash`，以及 `proofs.zh/en` 的文件 `sha256` 和实际 `checked_pages`（从1到该语言全部页码）。程序在发布前校验稿件、两个文件和页码，缺失或过期则不发布。仅本任务有匹配 `draft-receipt.json` 的未发表稿可修正并重新stage；人工改稿、已发表修订和撤回不能自动覆盖。
 
 ### 发送、发布与真实回执
@@ -72,7 +97,7 @@ For you四个阅读入口下方采用[REQ-24-10报纸头版](../../FieldToFit-PM
 使用 `.venv/bin/python scripts/maintenance/local_daily_journal.py <phase>`，日期默认当前北京时间；可显式指定 `--day`。`--env-file`只读既有本地 `.env` 中管理员凭据，凭据只发送到固定 `https://fieldtofit.top/api/v1/admin/`，禁止重定向、日志泄露或模型密钥传输。
 
 1. `status`：读取生产是否支持本地GPT和当日期次，保存私密 `remote-status.json`。未部署支持时继续本地取材，不写正式草稿。
-2. `validate`：离线校验期次、窗口、来源短引、全维度、三地行情及复核哈希，不调用模型或数据库。
+2. `validate`：离线校验期次、窗口、来源短引、全维度、四地行情、质量记录及复核哈希，不调用模型或数据库。
 3. `stage`：上传完全匹配的稿件和本地复核记录，网站生成双语PDF，回读核验后保存 `prepared.json` 并下载私密 `proof-zh/en.pdf`。通过受保护的 `/api/v1/admin/daily/<day>/pdf` 取得校样，改稿或撤回后旧校样不能再读取。不存在稿件才创建；同稿可续跑，已有异稿或撤回状态不得覆盖。正式发布前渲染并检查两种语言全部页面，核对原图／来源、译文完整、标题不孤悬、表格不截断；失败先修正并重新复核，不发布。
 4. `publish`：09:00以前返回未到期；09:00后带 `automatic=true` 及已逐页核验的 `proof_hashes.zh/en` 调用现有受保护接口，服务端在发布事务内再次强制当天、非样刊、无自动更正、未撤回及当前两份PDF哈希一致。相同正文在并发操作中重新生成PDF也会使旧校样核验失效。请求结果不明时先重读远端，禁止盲目重发。每次发布必须绑定当期真实复核及两份已备PDF。
 5. `check`：核对中英文全部字段、同一修订／公开哈希／实际出刊时间，下载两份PDF并校验真实文件哈希，保存 `publication.json` 和 `published-zh/en.pdf`。发布成功与回读成功分开记录；文件保存、触发成功或prepared不代表已经出刊。首三日还须检查实际PDF排版；失败保留真实缺口和上一期，不删审计痕迹。

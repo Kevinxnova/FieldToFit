@@ -2,3 +2,17 @@
 @media(max-width:900px){.daily-journal{padding:26px 24px}.dj-lead{gap:23px}.dj-highlights{gap:17px}.dj-highlights h3{font-size:15px}.dj-intro h2{font-size:29px}}
 @media(max-width:600px){.daily-journal{padding:23px 16px}.dj-masthead h1{font-size:36px}.dj-date strong{font-size:43px}.dj-date small{max-width:100px}.dj-masthead p:not(.dj-kicker){font-size:10px;max-width:170px;line-height:1.7}.dj-edition{align-items:flex-start;flex-wrap:wrap;gap:13px}.dj-edition>div:first-child{flex:1;min-width:160px}.dj-download{min-height:60px;padding:8px 10px;gap:10px}.dj-download strong{font-size:12px}.dj-cover{width:29px;height:38px}.dj-index{gap:0 17px}.dj-index a{min-height:44px;font-size:11px}.dj-lead{grid-template-columns:1fr;gap:18px;padding:25px 0}.dj-intro h2{font-size:29px}.dj-intro-text{font-size:14px}.dj-highlights{grid-template-columns:1fr;gap:0}.dj-highlights>div{padding:15px 0}.dj-highlights>div+div{border-top:1px solid var(--line)}.dj-highlights h3{font-size:18px}.dj-highlights p{font-size:13px}.dj-paired{grid-template-columns:1fr;gap:0}.dj-story h3{font-size:20px}.dj-products{padding:17px 14px}.dj-product{grid-template-columns:1fr 1fr;gap:9px 15px}.dj-product>div:last-child{grid-column:1/-1}.dj-market-table{font-size:11px}.dj-market-table th,.dj-market-table td{padding:12px 3px}.dj-market-table small,.dj-market-table .dj-sources{font-size:9px}.dj-market-table th:first-child{width:29%}.dj-market-table th:last-child{width:28%}.dj-metric{padding:15px 13px;gap:14px}.dj-metric strong{font-size:33px}.dj-archive>a{flex-wrap:wrap;gap:10px}.dj-archive h2{flex-basis:100%;font-size:18px}.dj-archive>a>span{display:none}}
 @media(prefers-reduced-motion:reduce){.dj-download{transition:none}}
+
+/* Reviewed quality edition: industry groups remain readable across four markets. */
+.dj-quality .dj-intro h2{max-width:900px;font-size:clamp(29px,3.7vw,46px)}
+.dj-quality .dj-story .dj-analysis{font-size:13px}
+.dj-market-overview h3{font-size:24px;line-height:1.5;margin-bottom:12px}
+.dj-market-overview>p{font-size:14px;line-height:1.9;max-width:950px}
+.dj-market-overview>p.dj-muted{font-size:12px}
+.dj-market-group{margin-top:28px}.dj-market-group>h3{font-size:18px;font-weight:550}
+.dj-table-scroll{overflow-x:auto;max-width:100%}.dj-table-scroll:focus-visible{outline:2px solid var(--dj-green);outline-offset:3px}
+.dj-quality .dj-market-table{min-width:590px;table-layout:auto}
+.dj-quality .dj-market-table th:first-child{width:24%}.dj-quality .dj-market-table th:last-child{width:25%}
+.dj-quality .dj-market-table td:nth-child(3),.dj-quality .dj-market-table td:nth-child(4){white-space:nowrap}
+.dj-quality .dj-sources a{overflow-wrap:anywhere}
+@media(max-width:600px){.dj-quality .dj-intro h2{font-size:30px}.dj-market-overview h3{font-size:21px}.dj-quality .dj-market-table{font-size:12px}}

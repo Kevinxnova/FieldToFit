@@ -17,6 +17,10 @@ from scripts.maintenance.local_daily_journal import run, write, Website, check_l
 
 @pytest.fixture
 def bundle(tmp_path, monkeypatch):
+    # Legacy handoff remains testable against a server advertising layout 2.
+    from backend.daily_briefing import pipeline
+    configuration=pipeline.configuration
+    monkeypatch.setattr(pipeline,'configuration',lambda:dict(configuration(),supported_layout_versions=[1,2]))
     now=datetime.now(TZ)
     day=now.date().isoformat()
     cutoff=now.replace(hour=8,minute=30,second=0,microsecond=0)

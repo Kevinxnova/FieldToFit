@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.13.0"></a>
+## v1.13.0 · 日报内容质量与产业链行情 · 2026-10-19
+<!-- site-deployed:2026-10-19 -->
+<!-- public-title:en: Editorial quality and AI supply-chain markets -->
+<!-- release-summary:zh:start -->
+- 日报优先报道24小时新消息，明确区分近期进展与近7日观察；六个新闻栏目增加选题价值、真实日期和去重核验。
+- 行情扩展至美股、A股、港股、韩股30家公司，按存储、配套、芯片制造、互联供电及平台分组，保留币种、交易日、来源及未核实缺值。
+- 采用已验收的杂志式正文与双语PDF，新稿在服务端核对编辑证据和校样；旧刊内容、修订与PDF保持。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Prioritize news from the past 24 hours while clearly dating recent developments and seven-day observations; review selection value, original dates and duplication across all six news sections.
+- Expand market coverage to 30 companies across the US, mainland China, Hong Kong and Korea, grouped by industry with currencies, sessions, sources and unverified fields preserved.
+- Adopt the approved magazine reporting and bilingual PDFs, with server-side editorial evidence and proof checks for new editions; preserve historical copy, revisions and PDFs.
+<!-- release-summary:en:end -->
+
+对应[REQ-24-12](FieldToFit-PM.md#daily-quality-watchlist)。所有者先验收10月19日重编样刊，再确认本次minor开发与上线；延续v1.12.1读取兼容和v1.12.2独立内容更新。新稿layout_version=3，旧布局1／2继续读取，不迁移数据库或改动公开工具路径。此次更正10月19日日报使用明确授权，不扩大日常任务的自动更正权限。
+
+开发、PDF、浏览器、正式替换及任务回读结果见[本批验收](docs/validation/2026-10-19-daily-quality.md)。
+
 <a id="v1.12.2"></a>
 ## v1.12.2 · Claude平台动态、AI预期差距与信息卡 · 2026-10-19
 <!-- site-deployed:2026-10-19 -->

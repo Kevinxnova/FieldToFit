@@ -88,7 +88,7 @@ def load_bundle(directory, day, now):
     validate_editorial(data, evidence, now)
     if any(c['state'] != 'checked' for c in data['coverage']):
         raise ValueError('All eleven dimensions require an actual check')
-    if any(m['state'] == 'unavailable' or not any(r['state'] == 'verified' for r in m['rows']) for m in data['markets']):
+    if any(m['state'] == 'unavailable' or not any(r['state'] in ('verified','partial') for r in m['rows']) for m in data['markets']):
         raise ValueError('A complete market is missing; keep the previous edition')
     return data, report
 
@@ -173,8 +173,8 @@ def run(phase, day, directory, site=None, now=None):
         layouts = status['configuration'].get('supported_layout_versions', [1])
         if data.get('layout_version', 1) not in layouts:
             raise ValueError('Deploy nine-section support before sending a new-format edition')
-        if phase in ('stage', 'publish') and 2 in layouts and data.get('layout_version') != 2:
-            raise ValueError('New local editions require the nine-section layout and editorial evidence')
+        if phase in ('stage', 'publish') and max(layouts)>=2 and data.get('layout_version') != max(layouts):
+            raise ValueError('New local editions require the latest supported layout and editorial evidence')
         if phase == 'stage':
             # Exact same draft can safely resume after an uncertain save/review response.
             if remote is None or remote['draft']!=data:
@@ -184,7 +184,7 @@ def run(phase, day, directory, site=None, now=None):
                 version = remote['draft_version']
             write(directory/'draft-receipt.json',{'date':day,'content_hash':digest(data),'draft_version':version})
             if not remote or remote['draft']!=data or not remote['reviewed'] or remote['review'].get('method') != 'local_gpt' or remote['review'].get('evidence_hash') != report['evidence_hash']:
-                site.call('/api/v1/admin/daily/' + day + '/review', {'draft_version': version, 'review_report': report})
+                site.call('/api/v1/admin/daily/' + day + '/review', {'draft_version': version, 'review_report': report, **({'evidence':json.loads((directory/'evidence.json').read_text())} if data.get('layout_version')==3 else {})})
             ready = site.call('/api/v1/admin/daily/' + day)
             if not ready['reviewed'] or ready['draft'] != data or ready['review'].get('evidence_hash') != report['evidence_hash']:
                 raise ValueError('Remote preparation changed; inspect before publication')

@@ -74,7 +74,7 @@ def admin_review(day):
     if 'review_report' in b:
         report=b['review_report']
         if not isinstance(report,dict) or report.get('method')!='local_gpt':fail('Expected a local GPT editorial review')
-        return jsonify(service.approve(day,b['draft_version'],report))
+        return jsonify(service.approve(day,b['draft_version'],report,evidence=b.get('evidence')))
     if b.get('facts_and_languages_checked') is not True:fail('Confirm source facts and both languages before review')
     return jsonify(service.approve(day,b['draft_version'],{'approved':True,'method':'owner'}))
 @bp.post('/admin/daily/<day>/publish')

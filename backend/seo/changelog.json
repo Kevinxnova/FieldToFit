@@ -1,7 +1,35 @@
 {
-  "version": "1.12.2",
-  "revision": "f38cd1b1ae4db2c31dd143bf20b29c0c27fd7acc313e684919d6c71de2a335fb",
+  "version": "1.13.0",
+  "revision": "a42034c129cb7471ca12522e9dbb5163629c69abba1b43ec5d07fde4960fcdec",
   "items": [
+    {
+      "version": "1.13.0",
+      "date": "2026-10-19",
+      "deployed_on": "2026-10-19",
+      "copy": {
+        "zh": {
+          "title": "日报内容质量与产业链行情",
+          "highlights": [
+            "日报优先报道24小时新消息，明确区分近期进展与近7日观察；六个新闻栏目增加选题价值、真实日期和去重核验。",
+            "行情扩展至美股、A股、港股、韩股30家公司，按存储、配套、芯片制造、互联供电及平台分组，保留币种、交易日、来源及未核实缺值。",
+            "采用已验收的杂志式正文与双语PDF，新稿在服务端核对编辑证据和校样；旧刊内容、修订与PDF保持。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Editorial quality and AI supply-chain markets",
+          "highlights": [
+            "Prioritize news from the past 24 hours while clearly dating recent developments and seven-day observations; review selection value, original dates and duplication across all six news sections.",
+            "Expand market coverage to 30 companies across the US, mainland China, Hong Kong and Korea, grouped by industry with currencies, sessions, sources and unverified fields preserved.",
+            "Adopt the approved magazine reporting and bilingual PDFs, with server-side editorial evidence and proof checks for new editions; preserve historical copy, revisions and PDFs."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.13.0"
+    },
     {
       "version": "1.12.2",
       "date": "2026-10-19",

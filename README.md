@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.12.2](CHANGELOG.md#v1.12.2)** · [fieldtofit-v1.12.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.12.2)
+**当前源码版本：[v1.13.0](CHANGELOG.md#v1.13.0)** · [fieldtofit-v1.13.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.13.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布获批的Claude企业指令读取与OpenTelemetry平台动态，并同步已有档案的采用条件，保留模型版本、价格及历史。
-- 已发布所选AI预期差距报告，采用四结论、同号论述与三张本站重绘，保留样本、调查时段、问法与条件情景边界。
-- 完成对应中英信息卡和稳定分享图；报告及卡片首页轮替已按实际发布回执确认，全部索引与旧链接保留。
+- 日报优先报道24小时新消息，明确区分近期进展与近7日观察；六个新闻栏目增加选题价值、真实日期和去重核验。
+- 行情扩展至美股、A股、港股、韩股30家公司，按存储、配套、芯片制造、互联供电及平台分组，保留币种、交易日、来源及未核实缺值。
+- 采用已验收的杂志式正文与双语PDF，新稿在服务端核对编辑证据和校样；旧刊内容、修订与PDF保持。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
