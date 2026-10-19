@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.12.2"></a>
+## v1.12.2 · Claude平台动态、AI预期差距与信息卡 · 2026-10-19
+<!-- site-deployed:2026-10-19 -->
+<!-- release-summary:zh:start -->
+- 发布获批的Claude企业指令读取与OpenTelemetry平台动态，并同步已有档案的采用条件，保留模型版本、价格及历史。
+- 已发布所选AI预期差距报告，采用四结论、同号论述与三张本站重绘，保留样本、调查时段、问法与条件情景边界。
+- 完成对应中英信息卡和稳定分享图；报告及卡片首页轮替已按实际发布回执确认，全部索引与旧链接保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the approved Claude instruction-access and OpenTelemetry platform updates and related profile conditions, retaining model versions, pricing and history.
+- Publish the selected AI expectations report through four findings, matching arguments and three FieldToFit redraws, preserving samples, survey periods, questions and conditional-scenario boundaries.
+- Publish the bilingual card and stable share images; confirm homepage rotation from actual publication receipts, retaining full indexes and old links.
+<!-- release-summary:en:end -->
+<!-- public-title:en: Claude updates, AI expectations and information card -->
+
+接续REQ-11、REQ-6-31至34、REQ-22-8及REQ-23，保留v1.12.1的MCP兼容修复；本批为内容／静态资源patch，无迁移或新模块。报告按四结论与同号论述展开，三图为独立设计的本站重绘；卡片保留专用权限、账户级范围和未实测条件。未选报告、模型榜单和定时配置保持。
+
+实际检查、资源部署、CMS发布及两类首页轮替分别记录于[本批验收](docs/validation/2026-10-19-claude-expectations-and-daily.md)，不以构建、保存或预览代替上站。
+
 <a id="v1.12.1"></a>
 ## v1.12.1 · MCP兼容续读与接入诊断修复 · 2026-10-19
 

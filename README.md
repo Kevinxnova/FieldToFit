@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.12.1](CHANGELOG.md#v1.12.1)** · [fieldtofit-v1.12.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.12.1)
+**当前源码版本：[v1.12.2](CHANGELOG.md#v1.12.2)** · [fieldtofit-v1.12.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.12.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 动态、档案与报告新增可选摘要分页和完整JSON分段续读，绑定原查询、语言与内容哈希；旧地址、工具、参数及默认完整返回保持兼容。
-- 本地stdio桥接补充可信证书处理，明确区分证书、DNS、超时与HTTP错误，始终验证TLS且不回显凭据。
-- For your AI服务检查实际读取公开摘要，显示失败阶段与耗时；四客户端接入、双语长内容续读和排错说明同步完善。
+- 发布获批的Claude企业指令读取与OpenTelemetry平台动态，并同步已有档案的采用条件，保留模型版本、价格及历史。
+- 已发布所选AI预期差距报告，采用四结论、同号论述与三张本站重绘，保留样本、调查时段、问法与条件情景边界。
+- 完成对应中英信息卡和稳定分享图；报告及卡片首页轮替已按实际发布回执确认，全部索引与旧链接保留。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

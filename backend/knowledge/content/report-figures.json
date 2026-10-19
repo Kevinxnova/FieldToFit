@@ -857,5 +857,97 @@
       "reasoning": "maximum",
       "scope": "Simulated primarily low-stakes tasks, without system-level safeguards; point estimates only, no inferred sample sizes or confidence intervals"
     }
+  },
+  "/report-figures/ai-expectations-20261016-expectations.png": {
+    "sha256": "eaff06e6e91974119538c96199dce195ee2851487910f7dbea178a61f28e8174",
+    "source_urls": [
+      "https://www.anthropic.com/research/ai-expectations-gap"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Sacher, Cotter, Jones, Korinek and McCrory, The Anthropic Institute, 2026-10-16. Original report graphics are not reproduced.",
+    "version": "2026-10-16; unnumbered report; appendix dated October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Figure 1 p.4",
+        "Figure 5 p.8"
+      ],
+      "capability_belief_percent": [
+        39,
+        91
+      ],
+      "own_work_hours_mean_percent": [
+        28,
+        75
+      ],
+      "figure5_valid_n": [
+        2278,
+        1147
+      ],
+      "scale": [
+        0,
+        100
+      ],
+      "scope": "Beliefs, not measured capability or jobs lost; panels have different populations; original Figure 5 intervals omitted explicitly"
+    }
+  },
+  "/report-figures/ai-expectations-20261016-adoption-time.png": {
+    "sha256": "1923d295fccf33009ea31416c06cc2d6b1d7715b6126a6ed8bf41d16ac957417",
+    "source_urls": [
+      "https://www.anthropic.com/research/ai-expectations-gap"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Sacher, Cotter, Jones, Korinek and McCrory, The Anthropic Institute, 2026-10-16. Original report graphics are not reproduced.",
+    "version": "2026-10-16; unnumbered report; appendix dated October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Adoption p.4",
+        "Figure 4 p.7"
+      ],
+      "conditional_task_adoption_percent": [
+        42,
+        65
+      ],
+      "respondents_quarter_time_or_less_percent": [
+        26,
+        59
+      ],
+      "scale": [
+        0,
+        100
+      ],
+      "scope": "Adoption conditional on AI-capable tasks; time self-reported including corrections, public group restricted to work users; no shared denominator or funnel"
+    }
+  },
+  "/report-figures/ai-expectations-20261016-scenarios.png": {
+    "sha256": "106d171b064097c976afac0d72c6b8852d74f688d3e057fc2acfaedad1f0790e",
+    "source_urls": [
+      "https://www.anthropic.com/research/ai-expectations-gap"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Sacher, Cotter, Jones, Korinek and McCrory, The Anthropic Institute, 2026-10-16. Original report graphics are not reproduced.",
+    "version": "2026-10-16; unnumbered report; appendix dated October 2026",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Figure 7 p.12; footnote 5 p.15",
+      "groups": [
+        "US adults",
+        "Website visitors",
+        "Anthropic staff"
+      ],
+      "complete_response_n": [
+        3259,
+        23075,
+        1093
+      ],
+      "median_model_implied_annual_growth_percent": [
+        5.4,
+        12.5,
+        17.1
+      ],
+      "axis": [
+        0,
+        30
+      ],
+      "scope": "Conditional model outputs, medians only; no reconstructed quantile intervals; public 2030 half, self-selected visitors; not realized GDP or forecast accuracy"
+    }
   }
 }

@@ -1,7 +1,35 @@
 {
-  "version": "1.12.1",
-  "revision": "8768e8d19176aff42f5b1220ab44af4f1f3ef0b481a775ce391d23b20c9b1bf1",
+  "version": "1.12.2",
+  "revision": "f38cd1b1ae4db2c31dd143bf20b29c0c27fd7acc313e684919d6c71de2a335fb",
   "items": [
+    {
+      "version": "1.12.2",
+      "date": "2026-10-19",
+      "deployed_on": "2026-10-19",
+      "copy": {
+        "zh": {
+          "title": "Claude平台动态、AI预期差距与信息卡",
+          "highlights": [
+            "发布获批的Claude企业指令读取与OpenTelemetry平台动态，并同步已有档案的采用条件，保留模型版本、价格及历史。",
+            "已发布所选AI预期差距报告，采用四结论、同号论述与三张本站重绘，保留样本、调查时段、问法与条件情景边界。",
+            "完成对应中英信息卡和稳定分享图；报告及卡片首页轮替已按实际发布回执确认，全部索引与旧链接保留。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Claude updates, AI expectations and information card",
+          "highlights": [
+            "Publish the approved Claude instruction-access and OpenTelemetry platform updates and related profile conditions, retaining model versions, pricing and history.",
+            "Publish the selected AI expectations report through four findings, matching arguments and three FieldToFit redraws, preserving samples, survey periods, questions and conditional-scenario boundaries.",
+            "Publish the bilingual card and stable share images; confirm homepage rotation from actual publication receipts, retaining full indexes and old links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.12.2"
+    },
     {
       "version": "1.12.1",
       "date": "2026-10-19",
