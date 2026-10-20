@@ -949,5 +949,115 @@
       ],
       "scope": "Conditional model outputs, medians only; no reconstructed quantile intervals; public 2030 half, self-selected visitors; not realized GDP or forecast accuracy"
     }
+  },
+  "/report-figures/low-resource-code-20261019-languages.png": {
+    "sha256": "3c7a2c4e04dea8d90f621d8b7ac5f0f9891f39d84972c4153a83b42012fd53b5",
+    "source_urls": [
+      "https://openai.com/index/low-resource-programming-languages/"
+    ],
+    "license": "Graphics © FieldToFit; source facts: OpenAI, Advancing coding in low-resource programming languages, 2026-10-19. Original report graphics are not reproduced.",
+    "version": "2026-10-19; unnumbered official web research",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Section 1: mean and per-language test pass rates",
+      "metric": "test pass rate, percent",
+      "effort": "maximum",
+      "mean_20_languages": [
+        26.8,
+        40.3,
+        87.4
+      ],
+      "mean_models": [
+        "GPT-5.6 Sol",
+        "GPT-6 Luna",
+        "GPT-6 Astra"
+      ],
+      "selected_languages": [
+        "COBOL",
+        "OCaml",
+        "Fortran",
+        "Visual Basic"
+      ],
+      "baseline": [
+        10.9,
+        25.6,
+        21.4,
+        27.5
+      ],
+      "GPT-6 Astra": [
+        72.1,
+        85.8,
+        83.5,
+        89.4
+      ],
+      "axis": [
+        0,
+        100
+      ],
+      "scope": "Selected examples do not describe all languages; not migration success; no invented intervals"
+    }
+  },
+  "/report-figures/low-resource-code-20261019-migration.png": {
+    "sha256": "d72b3a097d0882af67ea80169e3cd7de9dfb49d8f8f798e92bfafbd12f722ab6",
+    "source_urls": [
+      "https://openai.com/index/low-resource-programming-languages/"
+    ],
+    "license": "Graphics © FieldToFit; source facts: OpenAI, Advancing coding in low-resource programming languages, 2026-10-19. Original report graphics are not reproduced.",
+    "version": "2026-10-19; unnumbered official web research",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Section 2: accuracy at low and higher effort",
+      "metric": "all-tests migration success, percent",
+      "low_effort_models": [
+        "GPT-5.6 Sol",
+        "GPT-6.1 Sol"
+      ],
+      "low_effort": [
+        5.4,
+        86.6
+      ],
+      "higher_effort_model": "GPT-6.1 Sol",
+      "higher_effort": 97.9,
+      "exact_higher_effort": "not specified",
+      "axis": [
+        0,
+        100
+      ],
+      "scope": "Different effort conditions shown in separate panels; full hidden-test denominator undisclosed"
+    }
+  },
+  "/report-figures/low-resource-code-20261019-cost.png": {
+    "sha256": "0e90c9d817ccb01a7df9b48686f6a22295ff97da34f5c65cf83f7d02febe950e",
+    "source_urls": [
+      "https://openai.com/index/low-resource-programming-languages/"
+    ],
+    "license": "Graphics © FieldToFit; source facts: OpenAI, Advancing coding in low-resource programming languages, 2026-10-19. Original report graphics are not reproduced.",
+    "version": "2026-10-19; unnumbered official web research",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Section 1: estimated API cost",
+        "Section 2: 61% of baseline API cost"
+      ],
+      "database_usd_per_sample": {
+        "GPT-5.6 Sol": 3.48,
+        "GPT-6 Luna": 0.77
+      },
+      "migration_low_effort_relative_cost": {
+        "GPT-5.6 Sol": 100,
+        "GPT-6.1 Sol": 61
+      },
+      "axes": [
+        [
+          0,
+          4.2
+        ],
+        [
+          0,
+          120
+        ]
+      ],
+      "scope": "Different task units; not token prices; no invented absolute migration dollars"
+    }
   }
 }

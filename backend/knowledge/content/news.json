@@ -2,6 +2,352 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "_position": 1,
+      "category": "model",
+      "checked_at": "2026-10-20",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-19",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "按真实 token、缓存和重试核算总成本；本站建议。",
+            "title": "API 与 Agent 开发团队"
+          },
+          {
+            "detail": "先等权重与许可材料，不把 API 可用当本地部署已开放；本站建议。",
+            "title": "计划自行部署的团队"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "2026-10-19 推出 M3.1 Flash。",
+            "title": "新版本"
+          },
+          {
+            "detail": "每百万 token：输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元。",
+            "title": "分开核算三项价格"
+          },
+          {
+            "detail": "可经官方入口采用，模型权重仍待后续发布。",
+            "title": "开放入口与权重分开"
+          }
+        ],
+        "checked_at": "2026-10-20",
+        "evidence": [
+          {
+            "locator": "Pricing: flat pricing per 1M tokens; API/M Plan/MiniMax Code access; model weights later",
+            "source_id": "release"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "M3.1 Flash 已开放调用，先分清三项 API 价格与权重状态",
+        "limits": [
+          {
+            "detail": "公告 API 单价不证明每个任务都更便宜，作者性能不能代替自身测试。",
+            "title": "报价与任务成本"
+          },
+          {
+            "detail": "账户资格、准确请求型号、地域、限流与后续权重许可未核齐。",
+            "title": "仍待核对"
+          }
+        ],
+        "next_step": "用可重复的代表任务对照质量、失败重试、延迟和完整账单，再决定是否迁移。本站建议，未实测。",
+        "revised_at": "2026-10-20",
+        "scope": "MiniMax M3.1 Flash；官方列出 API、M Plan 及 MiniMax Code。以下是 API 单价，不是订阅套餐价格。",
+        "share": {
+          "content_revision": "7cf1cd16ecf053c956627ccd3f30ed0171d1b082c7e9b7c144582bb2b1e179a0",
+          "en": {
+            "sha256": "cf5f3bad73faf939def6d2a96c78a22f1a6998cda1287b8d64875ad1d3c9ef85",
+            "text_revision": "b72562d7a6207f6f1fb1485585baf72e67c074da46a0c3fac3e6b2407d18adc0",
+            "url": "/hot-cards/d-203-7cf1cd16ecf0-en.png"
+          },
+          "zh": {
+            "sha256": "b922cccf880ff928f4bf72b55dbd0606d1f260811491fd1e12f7ea6897939ec0",
+            "url": "/hot-cards/d-203-7cf1cd16ecf0-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "官方正文已读；未调用 API、测速度／质量／账单或下载权重。"
+      },
+      "id": "D-203",
+      "interpretation": [
+        {
+          "locator": "Access: API / M Plan / MiniMax Code",
+          "source_ids": [
+            "release"
+          ],
+          "text": "官方已列 API、M Plan 与 MiniMax Code；这些是产品入口，不证明每个账户、地域或配额都已开通。准确请求型号与账户可用范围仍须对照当前 API 文档核验。",
+          "title": "新版本与可用入口"
+        },
+        {
+          "locator": "Pricing: flat pricing per 1M tokens",
+          "source_ids": [
+            "release"
+          ],
+          "text": "每百万 token 输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元，均为公告 API 报价，不是 M Plan 订阅价或一次任务总账单。真实费用还受输入输出量、缓存命中和失败重试影响。",
+          "title": "三项 API 单价分开核算"
+        },
+        {
+          "locator": "Model weights later; benchmark claims",
+          "source_ids": [
+            "release"
+          ],
+          "text": "公告称模型权重会在后续发布；本次不写成权重已可下载或本地部署已开放。作者性能结果未由本站复测；建议用代表任务对照质量、延迟、重试和完整费用。",
+          "title": "调用开放与权重开放分别表达"
+        }
+      ],
+      "name": "MiniMax M3.1 Flash",
+      "note": "版本 M3.1 Flash；原文 2026-10-19，本站核对 2026-10-20。未调用 API、测性能／账单或下载权重；账户、地域、限流和权重许可未核齐。",
+      "organization": "MiniMax",
+      "publication": {
+        "first_published_at": "2026-10-20T04:53:13.976735+00:00",
+        "hot_card_first_published_at": "2026-10-20T04:53:13.976768+00:00",
+        "hot_card_selected_at": "2026-10-20T04:53:13.976768+00:00",
+        "updated_at": "2026-10-20T05:00:55.672533+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M08",
+          "name": "MiniMax",
+          "url": "https://fieldtofit.top/watch/CW-M08"
+        }
+      ],
+      "source_published_at": "2026-10-19",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "MiniMax M3.1 Flash · official release · 2026-10-19",
+          "url": "https://www.minimax.io/blog/minimax-m31f"
+        }
+      ],
+      "state": "published",
+      "summary": "MiniMax 于 2026-10-19 推出 M3.1 Flash，列出 API、M Plan 和 MiniMax Code 入口。API 每百万 token 输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元；公告明确权重稍后发布。",
+      "title": "MiniMax M3.1 Flash：已开放调用，权重仍待后续发布",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-19 推出 M3.1 Flash。": "M3.1 Flash launched on 2026-10-19.",
+            "API 与 Agent 开发团队": "API and Agent development teams",
+            "M3.1 Flash 已开放调用，先分清三项 API 价格与权重状态": "M3.1 Flash access is open: separate API rates from weight release",
+            "MiniMax M3.1 Flash：已开放调用，权重仍待后续发布": "MiniMax M3.1 Flash: access available, model weights to follow",
+            "MiniMax M3.1 Flash；官方列出 API、M Plan 及 MiniMax Code。以下是 API 单价，不是订阅套餐价格。": "MiniMax M3.1 Flash; official routes include API, M Plan and MiniMax Code. The rates below are API prices, not subscription-plan prices.",
+            "MiniMax 于 2026-10-19 推出 M3.1 Flash，列出 API、M Plan 和 MiniMax Code 入口。API 每百万 token 输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元；公告明确权重稍后发布。": "MiniMax introduced M3.1 Flash on 2026-10-19 through API, M Plan and MiniMax Code. API rates per million tokens are USD 0.15 input, USD 0.60 output and USD 0.015 cached input; model weights will follow.",
+            "三项 API 单价分开核算": "Separate the three API rates",
+            "仍待核对": "Still unconfirmed",
+            "先等权重与许可材料，不把 API 可用当本地部署已开放；本站建议。": "Wait for weights and license materials; API availability does not mean local deployment is open. FieldToFit suggestion.",
+            "公告 API 单价不证明每个任务都更便宜，作者性能不能代替自身测试。": "Announced API rates do not establish lower costs for every task; vendor performance cannot replace your own tests.",
+            "公告称模型权重会在后续发布；本次不写成权重已可下载或本地部署已开放。作者性能结果未由本站复测；建议用代表任务对照质量、延迟、重试和完整费用。": "The announcement says model weights will be released later. This is not a claim that weights are downloadable or local deployment is available. FieldToFit has not reproduced vendor performance; compare quality, latency, retries and total costs on representative tasks.",
+            "分开核算三项价格": "Separate three API rates",
+            "可经官方入口采用，模型权重仍待后续发布。": "Official access routes are available; model weights will follow.",
+            "官方已列 API、M Plan 与 MiniMax Code；这些是产品入口，不证明每个账户、地域或配额都已开通。准确请求型号与账户可用范围仍须对照当前 API 文档核验。": "The official post lists API, M Plan and MiniMax Code. These routes do not establish access for every account, region or quota. Check the current API documentation for the exact request identifier and account scope.",
+            "官方正文已读；未调用 API、测速度／质量／账单或下载权重。": "Official text read; no API calls, speed / quality / billing tests or weight downloads.",
+            "开放入口与权重分开": "Access and weights are separate",
+            "报价与任务成本": "Rates versus task costs",
+            "按真实 token、缓存和重试核算总成本；本站建议。": "Calculate total spending using actual tokens, caching and retries; FieldToFit suggestion.",
+            "新版本": "New version",
+            "新版本与可用入口": "New version and access routes",
+            "每百万 token 输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元，均为公告 API 报价，不是 M Plan 订阅价或一次任务总账单。真实费用还受输入输出量、缓存命中和失败重试影响。": "Per million tokens: USD 0.15 input, USD 0.60 output and USD 0.015 cached input. These announced API rates are not M Plan subscription prices or total task bills. Spending also depends on input/output volume, cache hits and retries.",
+            "每百万 token：输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元。": "Per million tokens: USD 0.15 input, USD 0.60 output and USD 0.015 cached input.",
+            "版本 M3.1 Flash；原文 2026-10-19，本站核对 2026-10-20。未调用 API、测性能／账单或下载权重；账户、地域、限流和权重许可未核齐。": "Version M3.1 Flash; source 2026-10-19, checked 2026-10-20. No API, performance, billing or weight-download tests; account, region, rate limits and weight-license details remain incomplete.",
+            "用可重复的代表任务对照质量、失败重试、延迟和完整账单，再决定是否迁移。本站建议，未实测。": "Compare quality, retries, latency and the full bill on repeatable representative tasks before migrating. FieldToFit suggestion; untested.",
+            "计划自行部署的团队": "Teams planning local deployment",
+            "调用开放与权重开放分别表达": "Distinguish API access from weight release",
+            "账户资格、准确请求型号、地域、限流与后续权重许可未核齐。": "Account eligibility, exact request identifier, regions, rate limits and future weight-license terms remain incomplete."
+          },
+          "reviewed_at": "2026-10-20T05:00:35.964887+00:00",
+          "source_hash": "efdb8991384460a207f5a02a7e43f0507a0907a844c646315ea2315b6eddc439",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "_position": 2,
+      "category": "model",
+      "checked_at": "2026-10-20",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-15",
+      "highlight": true,
+      "id": "D-204",
+      "interpretation": [
+        {
+          "locator": "Timestral launch: covariates, context, quantiles; model overview",
+          "source_ids": [
+            "release",
+            "model"
+          ],
+          "text": "模型支持多变量概率预测、历史协变量与已知未来协变量，并给出 21 个分位数。上下文上限 32,768 指时间步，不是聊天文本 token；不将它归为通用聊天模型。",
+          "title": "任务是预测数值序列"
+        },
+        {
+          "locator": "Repository License; Timestral-209M LICENSE conditions 1 and 2",
+          "source_ids": [
+            "code",
+            "license"
+          ],
+          "text": "仓库代码 Apache 2.0 不替代权重 Modified MIT。209M 权重许可要求保留归属与许可声明；企业或雇主上月全球合并月收入超过 20,000,000 美元时，不获该许可授权，可向 Mistral 申请商业许可。其余规格也应核对各自下载仓库条款。",
+          "title": "代码与权重许可分开审查"
+        },
+        {
+          "locator": "Release: CPU inference / full technical report will follow",
+          "source_ids": [
+            "release",
+            "code"
+          ],
+          "text": "作者提供 CPU 推理实现，但本站未运行模型或复现速度、精度和基准排名。采用时应以自己的预测窗口、数据频率、缺失值和部署硬件验证；公告预告的完整技术报告尚不能当作已读报告推荐。",
+          "title": "CPU 可运行不等于业务已验证"
+        }
+      ],
+      "name": "Timestral 1.0",
+      "note": "Timestral 1.0；原文 2026-10-15，本站核对 2026-10-20。权重许可门槛依据 209M 官方文件，不推断其他规格条款相同；无模型运行或业务精度实测，本批不新建持续关注档案。",
+      "organization": "Mistral AI",
+      "publication": {
+        "first_published_at": "2026-10-20T04:47:24.307601+00:00",
+        "updated_at": "2026-10-20T05:00:21.236928+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Timestral · Mistral AI · 2026-10-15",
+          "url": "https://mistral.ai/news/timestral/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "code",
+          "title": "mistralai/timestral · CPU inference / License",
+          "url": "https://github.com/mistralai/timestral"
+        },
+        {
+          "coverage": "link_only",
+          "id": "model",
+          "title": "Timestral 1.0 209M · official model documentation",
+          "url": "https://docs.mistral.ai/models/timestral-1-0-209m"
+        },
+        {
+          "coverage": "link_only",
+          "id": "license",
+          "title": "Timestral-209M · Modified MIT License · conditions 1 and 2",
+          "url": "https://huggingface.co/mistralai/Timestral-209M/blob/main/LICENSE"
+        }
+      ],
+      "state": "published",
+      "summary": "Mistral 于 2026-10-15 发布 Timestral 1.0 时间序列模型，提供 5M、28M、123M、209M 规格与 CPU 推理代码。代码为 Apache 2.0，权重为附收入门槛的 Modified MIT；完整技术报告仍待后续发布。",
+      "title": "Timestral：数值时间序列预测，先看权重许可与采用条件",
+      "translations": {
+        "en": {
+          "fields": {
+            "CPU 可运行不等于业务已验证": "CPU inference still needs business validation",
+            "Mistral 于 2026-10-15 发布 Timestral 1.0 时间序列模型，提供 5M、28M、123M、209M 规格与 CPU 推理代码。代码为 Apache 2.0，权重为附收入门槛的 Modified MIT；完整技术报告仍待后续发布。": "Mistral released Timestral 1.0 on 2026-10-15 in 5M, 28M, 123M and 209M sizes, with CPU inference code. Code is Apache 2.0; weights use Modified MIT with a revenue threshold. A full technical report is still to follow.",
+            "Timestral 1.0；原文 2026-10-15，本站核对 2026-10-20。权重许可门槛依据 209M 官方文件，不推断其他规格条款相同；无模型运行或业务精度实测，本批不新建持续关注档案。": "Timestral 1.0; source 2026-10-15, checked 2026-10-20. The weight-license threshold is verified from the official 209M file, without assuming identical terms for other sizes. No model or business-accuracy tests; no new watch dossier is created.",
+            "Timestral：数值时间序列预测，先看权重许可与采用条件": "Timestral: numerical time-series forecasts, with weight-license conditions",
+            "仓库代码 Apache 2.0 不替代权重 Modified MIT。209M 权重许可要求保留归属与许可声明；企业或雇主上月全球合并月收入超过 20,000,000 美元时，不获该许可授权，可向 Mistral 申请商业许可。其余规格也应核对各自下载仓库条款。": "Apache 2.0 for repository code does not replace Modified MIT for weights. The 209M weight license requires attribution and permission notices; it grants no rights when the company’s or employer’s preceding-month global consolidated monthly revenue exceeds USD 20,000,000. A commercial license may be requested from Mistral. Check the download repository terms for other sizes too.",
+            "代码与权重许可分开审查": "Review code and weights separately",
+            "任务是预测数值序列": "The task forecasts numerical sequences",
+            "作者提供 CPU 推理实现，但本站未运行模型或复现速度、精度和基准排名。采用时应以自己的预测窗口、数据频率、缺失值和部署硬件验证；公告预告的完整技术报告尚不能当作已读报告推荐。": "The author provides CPU inference code, but FieldToFit has not run the model or reproduced speed, accuracy or rankings. Validate forecast horizons, data frequency, missing values and deployment hardware on your own data. The promised full technical report cannot yet be treated as a read report recommendation.",
+            "模型支持多变量概率预测、历史协变量与已知未来协变量，并给出 21 个分位数。上下文上限 32,768 指时间步，不是聊天文本 token；不将它归为通用聊天模型。": "The model supports probabilistic multivariate forecasting, past-only and known-future covariates, and 21 quantiles. Its maximum context of 32,768 refers to time steps, not chat tokens; it is not classified as a general chat model."
+          },
+          "reviewed_at": "2026-10-20T05:00:01.570461+00:00",
+          "source_hash": "f6a71536d9b06f595ed59b580371bd854e4924d3be453d9a18f3fdb7966e21dc",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "_position": 1,
+      "category": "model",
+      "checked_at": "2026-10-18",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-08",
+      "highlight": false,
+      "id": "D-190",
+      "interpretation": [
+        {
+          "locator": "Changelog: 2026-10-08; Flash routing",
+          "source_ids": [
+            "changelog"
+          ],
+          "text": "gemini-3.7-flash 请求已路由至 gemini-3.8-flash，gemini-3.5-flash 路由至 gemini-3.6-flash；旧型号从 AI Studio 选择器移除。建议显式更新配置并核对行为与用量变化。",
+          "title": "旧 Flash 请求已改路由"
+        },
+        {
+          "locator": "Changelog: 2026-10-08; Deep Research deprecation",
+          "source_ids": [
+            "changelog",
+            "deprecations"
+          ],
+          "text": "deep-research-pro-preview-12-2025 将于 2026-10-23 关闭；可迁移到 deep-research-preview-04-2026 或 deep-research-max-preview-04-2026，分别侧重效率与完整性。",
+          "title": "旧 Research 预览有明确关闭日"
+        },
+        {
+          "locator": "Changelog: Deep Research migration instruction",
+          "source_ids": [
+            "changelog"
+          ],
+          "text": "Deep Research 需修改 interactions.create 的 agent 参数，而非只替换普通生成接口的 model。两个新预览的能力、费用与权限应分别核对；本站未实测迁移。",
+          "title": "迁移的是 agent 参数"
+        }
+      ],
+      "name": "Gemini API / Deep Research",
+      "note": "保留 2026-10-08 公告与旧版本历史；接口改路由不等于行为、价格或采用条件完全一致。",
+      "organization": "Google",
+      "publication": {
+        "first_published_at": "2026-10-18T03:28:26.943684+00:00",
+        "updated_at": "2026-10-20T04:47:00.005842+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        }
+      ],
+      "source_published_at": "2026-10-08",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "changelog",
+          "title": "Gemini API changelog · 2026-10-08",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deprecations",
+          "title": "Gemini API deprecations",
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+        }
+      ],
+      "state": "published",
+      "summary": "Google 在 2026-10-08 日志说明旧 Flash 路由与 Deep Research 迁移；旧 Research 预览接近停用。本条为既有官方公告维护补录，不写作今日新模型发布。",
+      "title": "Gemini API：旧 Flash 已改路由，旧 Deep Research 预览 2026-10-23 关闭",
+      "translations": {
+        "en": {
+          "fields": {
+            "Deep Research 需修改 interactions.create 的 agent 参数，而非只替换普通生成接口的 model。两个新预览的能力、费用与权限应分别核对；本站未实测迁移。": "Deep Research migration changes the agent parameter in interactions.create, not merely the model on an ordinary generation request. Check capabilities, fees and permissions for each preview separately; FieldToFit has not tested migration.",
+            "Gemini API：旧 Flash 已改路由，旧 Deep Research 预览 2026-10-23 关闭": "Gemini API: old Flash routing changed; the old Deep Research preview closes on 2026-10-23",
+            "Google 在 2026-10-08 日志说明旧 Flash 路由与 Deep Research 迁移；旧 Research 预览接近停用。本条为既有官方公告维护补录，不写作今日新模型发布。": "Google's 2026-10-08 log describes old Flash routing and Deep Research migration. The old Research preview is nearing shutdown. This backfills an existing official notice rather than announcing a new model today.",
+            "deep-research-pro-preview-12-2025 将于 2026-10-23 关闭；可迁移到 deep-research-preview-04-2026 或 deep-research-max-preview-04-2026，分别侧重效率与完整性。": "deep-research-pro-preview-12-2025 closes on 2026-10-23. Migration targets are deep-research-preview-04-2026 and deep-research-max-preview-04-2026, emphasizing efficiency and completeness respectively.",
+            "gemini-3.7-flash 请求已路由至 gemini-3.8-flash，gemini-3.5-flash 路由至 gemini-3.6-flash；旧型号从 AI Studio 选择器移除。建议显式更新配置并核对行为与用量变化。": "gemini-3.7-flash requests route to gemini-3.8-flash and gemini-3.5-flash routes to gemini-3.6-flash; old models were removed from the AI Studio selector. Update configurations explicitly and check behavior and usage changes.",
+            "保留 2026-10-08 公告与旧版本历史；接口改路由不等于行为、价格或采用条件完全一致。": "Retain the 2026-10-08 notice and old-version history; rerouting does not imply identical behavior, prices or adoption conditions.",
+            "旧 Flash 请求已改路由": "Old Flash requests have been rerouted",
+            "旧 Research 预览有明确关闭日": "The old Research preview has a specific shutdown date",
+            "迁移的是 agent 参数": "Migrate the agent parameter"
+          },
+          "reviewed_at": "2026-10-20T04:26:54.914864+00:00",
+          "source_hash": "fc78065247e8050c2a7d373d70428e2fc57e42c3a0e1285874c26ab3572b8f26",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "_position": 3,
       "category": "research",
       "checked_at": "2026-10-20",
       "codex_28_days": {
@@ -18,7 +364,7 @@
       },
       "editor": "FieldToFit",
       "event_date": null,
-      "highlight": false,
+      "highlight": true,
       "id": "D-202",
       "interpretation": [
         {
@@ -30,16 +376,55 @@
           ],
           "text": "OpenAI在 10月 19日研究公告中发布MultiLangBench评测方案与测试集：让模型用 20种语言实现兼容SQLite的引擎，开发者可从官方GitHub仓库查看测试与运行方法。公告另报告COBOL代码迁移评测，两项评测不可混为一套已开源测试。OpenAI称GPT-6 Astra在MultiLangBench的最高推理设置下平均通过率为 87.4%；这是官方结果，本站未复测。此条为研究与评测资源发布，不代表新模型上线；只保留 10月 19日来源日期，不推造北京时间。",
           "title": "变化与适用范围"
+        },
+        {
+          "locator": "Section 1",
+          "source_ids": [
+            "oct20-1"
+          ],
+          "text": "最大推理强度下，20 种语言平均测试通过率升至 87.4%，COBOL 仍落后于其他所列语言。",
+          "title": "多语言能力进步明显，平均分仍需拆开看"
+        },
+        {
+          "locator": "Section 2",
+          "source_ids": [
+            "oct20-1"
+          ],
+          "text": "隐藏测试要求可观察输出逐字节一致，全部通过才算成功；低强度 86.6%与更高强度 97.9%分别表达。",
+          "title": "迁移的关键是保持行为，验收比代码能运行更严格"
+        },
+        {
+          "locator": "Sections 1 and 2: cost",
+          "source_ids": [
+            "oct20-1"
+          ],
+          "text": "数据库以美元／样本计，迁移以旧模型成本为 100 比较；它们都不是 API 价目表。",
+          "title": "成本优势有参考价值，但必须保留任务单位与基线"
+        },
+        {
+          "locator": "README: Test Suite / Usage / Grading",
+          "source_ids": [
+            "oct20-2"
+          ],
+          "text": "仓库默认 272 项与约 24k 转换测试须区分，论文各结果具体子集尚未确认；本站未复现。",
+          "title": "公开评测便于追查，测试子集和生产验收仍有缺口"
         }
       ],
       "name": "OpenAI / MultiLangBench",
-      "note": "",
+      "note": "研究事件，不是新模型首发或调价公告；结果由作者报告，本站未复现，不更新榜单。",
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-20T04:22:28.211155+00:00",
-        "updated_at": "2026-10-20T04:22:28.211155+00:00"
+        "report_selected_at": "2026-10-20T04:53:40.245439+00:00",
+        "updated_at": "2026-10-20T04:53:40.245439+00:00"
       },
-      "related": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT / GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
       "source_published_at": "2026-10-19",
       "sources": [
         {
@@ -63,21 +448,1017 @@
       ],
       "state": "published",
       "summary": "其他 OpenAI · MultiLangBench 开源与低资源语言评测",
+      "technical_map": {
+        "caution": "模型作者报告的实验，非本站复现或生产可靠性承诺。研究网页与公开 README 已读，测试子集、重复次数和完整成本配置尚未核齐。",
+        "change_summary": "首次整理 2026-10-19 官方研究网页：四结论、同号展开及三张独立重绘，保留方法、指标单位、推理条件和证据缺口。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 1: Building SQLite from scratch",
+                "source_id": "oct20-1"
+              }
+            ],
+            "from": "two-tasks",
+            "label": "同一研究的独立证据层",
+            "relation": "parallel",
+            "to": "database"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 1: per-language results",
+                "source_id": "oct20-1"
+              }
+            ],
+            "from": "two-tasks",
+            "label": "同一研究的独立证据层",
+            "relation": "parallel",
+            "to": "language-gaps"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 2: Migrating a COBOL codebase",
+                "source_id": "oct20-1"
+              }
+            ],
+            "from": "two-tasks",
+            "label": "同一研究的独立证据层",
+            "relation": "parallel",
+            "to": "migration"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Sections 1 and 2: estimated API cost",
+                "source_id": "oct20-1"
+              }
+            ],
+            "from": "two-tasks",
+            "label": "同一研究的独立证据层",
+            "relation": "parallel",
+            "to": "cost"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "README: Test Suite / Usage / Grading",
+                "source_id": "oct20-2"
+              },
+              {
+                "fragment": "",
+                "locator": "Section 1: release of evaluation setup and test suite",
+                "source_id": "oct20-1"
+              }
+            ],
+            "from": "two-tasks",
+            "label": "同一研究的独立证据层",
+            "relation": "parallel",
+            "to": "protocol"
+          }
+        ],
+        "focus": "构建新功能 → 保持旧行为 → 核算成本与测试边界",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Opening; sections 1 and 2",
+                "source_id": "oct20-1"
+              }
+            ],
+            "id": "two-tasks",
+            "kind": "method",
+            "label": "两种任务，两种通过口径",
+            "limitation": "不可合并成一个生产可靠性分数。",
+            "mechanism": "一项从零构建兼容数据库，另一项迁移已有 COBOL 程序。",
+            "metrics": [],
+            "result": "分别比较测试通过率和全部测试通过的迁移成功率。",
+            "setting": "MultiLangBench 覆盖 20 种语言；迁移目标为 C++、Java、Kotlin、Python、Rust。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 1: Building SQLite from scratch",
+                "source_id": "oct20-1"
+              }
+            ],
+            "id": "database",
+            "kind": "result",
+            "label": "数据库功能通过率",
+            "limitation": "仍有未通过功能，平均值掩盖语言差异。",
+            "mechanism": "初始数据库与 SQL 输入，参考 SQLite 核对修改后内容。",
+            "metrics": [],
+            "result": "GPT-6 Astra 87.4%，GPT-5.6 Sol 26.8%，GPT-6 Luna 40.3%。",
+            "setting": "最大推理强度，20 种语言平均。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 1: per-language results",
+                "source_id": "oct20-1"
+              }
+            ],
+            "id": "language-gaps",
+            "kind": "result",
+            "label": "低资源语言进步不均",
+            "limitation": "没有给出每个分数的置信区间或生产分布。",
+            "mechanism": "在相同数据库任务下按语言比较。",
+            "metrics": [],
+            "result": "COBOL 10.9%→72.1%；OCaml 25.6%→85.8%；Fortran 21.4%→83.5%；Visual Basic 27.5%→89.4%。",
+            "setting": "GPT-5.6 Sol 到 GPT-6 Astra，最大推理强度。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 2: Migrating a COBOL codebase",
+                "source_id": "oct20-1"
+              }
+            ],
+            "id": "migration",
+            "kind": "result",
+            "label": "迁移必须逐字节保真",
+            "limitation": "作者未在该处注明更高强度的具体档位。",
+            "mechanism": "隐藏测试核对可观察输出，全部通过才算迁移成功。",
+            "metrics": [],
+            "result": "GPT-6.1 Sol 86.6%，GPT-5.6 Sol 5.4%；前者更高强度 97.9%。",
+            "setting": "低推理强度比较；更高强度另列。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Sections 1 and 2: estimated API cost",
+                "source_id": "oct20-1"
+              }
+            ],
+            "id": "cost",
+            "kind": "result",
+            "label": "任务成本保留单位和基线",
+            "limitation": "不是百万 token 报价，也不是任意业务的迁移预算。",
+            "mechanism": "比较该评测运行中的估算 API 开销。",
+            "metrics": [],
+            "result": "Luna 0.77 美元／样本，旧 Sol 3.48 美元／样本；迁移新 Sol 为旧 Sol 的 61%。",
+            "setting": "数据库每样本成本；迁移相对基线成本，分开表达。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "README: Test Suite / Usage / Grading",
+                "source_id": "oct20-2"
+              },
+              {
+                "fragment": "",
+                "locator": "Section 1: release of evaluation setup and test suite",
+                "source_id": "oct20-1"
+              }
+            ],
+            "id": "protocol",
+            "kind": "result",
+            "label": "公开测试范围与复现条件",
+            "limitation": "未确认研究各结果采用的具体子集；本站未运行评测。",
+            "mechanism": "SQLite 3.40.1 参考语义；隔离既有实现，禁止联网。",
+            "metrics": [],
+            "result": "README 允许运行完整转换测试集以提高高分区辨别精度。",
+            "setting": "约 51k 原始测试中转换约 24k，默认只运行 272 个；单测试 60 秒。",
+            "stage": 1
+          }
+        ],
+        "question": "代码能跑，还能保持原来行为吗？OpenAI 的多语言评测",
+        "reading": {
+          "editorial": [
+            "FieldToFit 分析：这份研究最有价值的是把“新增功能”与“保持已有行为”并列。旧系统改造应先建立可观察行为基线，再选择语言与模型；预算应包括测试、失败修正和人工业务复核。把模型分数用于确定试点优先级，比直接用它批准全面迁移更稳妥。",
+            "来源与修订：原报告 Advancing coding in low-resource programming languages，作者／机构 OpenAI，首次发表 2026-10-19，官方网页无编号。数据观察时段未披露；本站 2026-10-20 核对正文与 MultiLangBench README，未重跑实验。首次上站与后续修订以服务器真实记录为准，三图为本站独立重绘。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "OpenAI 把初始数据库和 SQL 作为共同接口，让模型用指定语言从零构建 SQLite 兼容引擎，再由参考实现检查修改后的数据库内容。这要求模型维护状态、处理错误并增补功能；测量的是长编码会话中构建了多少可通过测试的功能。"
+                },
+                {
+                  "alt": "20 种语言平均测试通过率及四种语言的 GPT-5.6 Sol 与 GPT-6 Astra 对比",
+                  "attribution": "FieldToFit 根据作者报告值独立重绘，非作者原图；未重跑评测。",
+                  "caption": "图 1｜作者报告值，纵轴为测试通过率%，均按正文最大推理强度口径。四语言仅是已列示例，不代表全部 20 种语言分布。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Section 1: mean and per-language test pass rates",
+                      "source_id": "oct20-1"
+                    }
+                  ],
+                  "image_url": "/report-figures/low-resource-code-20261019-languages.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; source facts: OpenAI, Advancing coding in low-resource programming languages, 2026-10-19. Original report graphics are not reproduced."
+                },
+                {
+                  "items": [
+                    "平均值依次为 GPT-5.6 Sol 26.8%、GPT-6 Luna 40.3%、GPT-6 Astra 87.4%。这是测试通过率，不是全部任务一次成功的概率。",
+                    "Astra 在 19／20 种语言中超过 83%，COBOL 为 72.1%。选择模型时应先看团队实际使用语言、失败类型和业务边界，而非只看总体均值。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "证据边界：结果由模型作者报告，本站未独立重跑；正文未给出逐语言误差区间，不能把小差异解释成已证实的统计优势。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Section 1",
+                  "source_id": "oct20-1"
+                }
+              ],
+              "id": "language-gains",
+              "node_ids": [
+                "two-tasks",
+                "database",
+                "language-gaps"
+              ],
+              "summary": "最大推理强度下，20 种语言平均测试通过率升至 87.4%，COBOL 仍落后于其他所列语言。",
+              "title": "多语言能力进步明显，平均分仍需拆开看"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "第二项任务将 COBOL 程序迁移到 C++、Java、Kotlin、Python 或 Rust。作者强调语言语义可能承载既有业务规则：例如未明确请求舍入时，COBOL 定点算术会丢弃多余小数位；迁移后改为舍入，即使程序能跑，也可能改变结果。"
+                },
+                {
+                  "alt": "COBOL 迁移低强度成功率 5.4%与 86.6%；新模型更高强度 97.9%单独显示",
+                  "attribution": "FieldToFit 根据作者报告值独立重绘，非作者原图；未重跑评测。",
+                  "caption": "图 2｜单位为全部隐藏测试通过的迁移成功率%。低强度两模型可直接比较；右侧是不同推理条件，作者未注明更高强度具体档位。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Section 2: accuracy at low and higher reasoning effort",
+                      "source_id": "oct20-1"
+                    }
+                  ],
+                  "image_url": "/report-figures/low-resource-code-20261019-migration.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; source facts: OpenAI, Advancing coding in low-resource programming languages, 2026-10-19. Original report graphics are not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "相同低推理强度下，GPT-6.1 Sol 为 86.6%，GPT-5.6 Sol 为 5.4%；新模型在更高强度达到 97.9%。前一个数据库评测可获得部分功能分，这里却须全部测试通过，两者分数不能横向当成同一指标。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "上线边界：隐藏测试覆盖以外的依赖、数据、权限和业务规则仍须专家核对。97.9%不是生产系统零风险迁移的保证。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Section 2",
+                  "source_id": "oct20-1"
+                }
+              ],
+              "id": "behavior-parity",
+              "node_ids": [
+                "two-tasks",
+                "migration"
+              ],
+              "summary": "隐藏测试要求可观察输出逐字节一致，全部通过才算成功；低强度 86.6%与更高强度 97.9%分别表达。",
+              "title": "迁移的关键是保持行为，验收比代码能运行更严格"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "作者估算 MultiLangBench 中 GPT-6 Luna 平均每样本 0.77 美元，GPT-5.6 Sol 为 3.48 美元，约低 78%。这同时伴随测试通过率从 26.8%升至 40.3%，仍远低于 Astra 的 87.4%；不能只用更便宜推导任务已经足够可靠。"
+                },
+                {
+                  "alt": "数据库估算 API 成本 0.77 与 3.48 美元／样本；迁移相对成本 61 与 100",
+                  "attribution": "FieldToFit 根据作者报告值独立重绘，非作者原图；未重跑评测。",
+                  "caption": "图 3｜两面板单位不同：左为数据库美元／样本，右为 COBOL 迁移低强度相对成本，旧 Sol=100。不可相乘或当作 token 报价；未补造作者未给出的绝对迁移美元成本。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Sections 1 and 2: estimated API cost",
+                      "source_id": "oct20-1"
+                    }
+                  ],
+                  "image_url": "/report-figures/low-resource-code-20261019-cost.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit; source facts: OpenAI, Advancing coding in low-resource programming languages, 2026-10-19. Original report graphics are not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "迁移评测中新 Sol 低强度的成本为旧 Sol 的 61%，即约低 39%，同时迁移成功率更高。文章未充分披露每项成本的计价日期、全部提示与重试配置，读者仍需在自己的流程中计入验证、失败重跑和人工复核。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "evidence",
+                  "text": "本站建议：先固定任务、推理强度、验证规则和预算，再比较成功完成一次任务的总费用；不要从每样本结果反推通用百万 token 价格。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Sections 1 and 2: cost",
+                  "source_id": "oct20-1"
+                }
+              ],
+              "id": "cost-conditions",
+              "node_ids": [
+                "cost",
+                "database",
+                "migration"
+              ],
+              "summary": "数据库以美元／样本计，迁移以旧模型成本为 100 比较；它们都不是 API 价目表。",
+              "title": "成本优势有参考价值，但必须保留任务单位与基线"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "公开仓库说明：约 51k 条 SQLite 原始 TCL 测试中，约 24k 条转换到共同接口；默认使用哈希以 00、01、02 开头的 272 条测试，也可运行完整转换集来提高高分区的精度。README 采用 SQLite 3.40.1 参考语义，单测试超时 60 秒。"
+                },
+                {
+                  "items": [
+                    "运行环境需提供指定文档，隔离已有 SQLite 库、可执行文件及嵌入实现，并限制联网；不符合目标语言或混入其他实现会影响有效性。本站仅阅读仓库，不运行上游代码。",
+                    "不能因为 README 默认 272 条，就断言研究图全部采用 272 条。各结果所用子集、重复次数、完整提示、预算与误差估计尚未核齐；COBOL 迁移隐藏测试的完整规模也未在所读正文披露。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "证据分层：作者实验结果、公开仓库协议和本站采用建议分别记录。实验进步支持进一步试验，不代替真实系统的回归测试、审计和回滚。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "README: Test Suite / Usage / Grading",
+                  "source_id": "oct20-2"
+                },
+                {
+                  "fragment": "",
+                  "locator": "Section 1: release of evaluation setup and test suite; repository adds protocol details",
+                  "source_id": "oct20-1"
+                }
+              ],
+              "id": "protocol-boundaries",
+              "node_ids": [
+                "protocol",
+                "two-tasks"
+              ],
+              "summary": "仓库默认 272 项与约 24k 转换测试须区分，论文各结果具体子集尚未确认；本站未复现。",
+              "title": "公开评测便于追查，测试子集和生产验收仍有缺口"
+            }
+          ],
+          "title": "代码能跑，还能保持原来行为吗？OpenAI 的多语言评测"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-19",
+            "revised_at": null,
+            "revision_note": "上游网页无编号；本次为本站首次整理，不制造上游实质修订。",
+            "source_id": "oct20-1",
+            "substantive_revision": false,
+            "version": "2026-10-19; unnumbered official web research"
+          }
+        ],
+        "slug": "low-resource-code-behavior-preservation",
+        "takeaway": "先区分两种通过口径，再按自己的语言、业务规则和验证成本选择迁移路线。"
+      },
       "title": "OpenAI 开源 MultiLangBench，并公布低资源语言与 COBOL 迁移评测",
       "translations": {
         "en": {
-          "state": "reviewed",
-          "source_hash": "fa89c732a8993512fb33a6b740b632536b1d249f08df96f25d4aec072c320172",
           "fields": {
+            "20 种语言平均测试通过率及四种语言的 GPT-5.6 Sol 与 GPT-6 Astra 对比": "Mean test pass rate across 20 languages and GPT-5.6 Sol versus GPT-6 Astra in four languages",
+            "Astra 在 19／20 种语言中超过 83%，COBOL 为 72.1%。选择模型时应先看团队实际使用语言、失败类型和业务边界，而非只看总体均值。": "Astra exceeds 83% in 19/20 languages, with COBOL at 72.1%. Model selection should consider the team’s language, failure types and business boundaries before the overall mean.",
+            "COBOL 迁移低强度成功率 5.4%与 86.6%；新模型更高强度 97.9%单独显示": "COBOL migration success at low effort: 5.4% and 86.6%; newer model at higher effort: 97.9%, shown separately",
+            "FieldToFit 分析：这份研究最有价值的是把“新增功能”与“保持已有行为”并列。旧系统改造应先建立可观察行为基线，再选择语言与模型；预算应包括测试、失败修正和人工业务复核。把模型分数用于确定试点优先级，比直接用它批准全面迁移更稳妥。": "FieldToFit analysis: the useful distinction is between adding functionality and preserving existing behavior. Legacy modernization should establish observable behavior baselines before selecting languages and models; budgets include tests, repairs and human business review. Scores help prioritize pilots and require further evidence for broad migration.",
+            "FieldToFit 根据作者报告值独立重绘，非作者原图；未重跑评测。": "Independently redrawn by FieldToFit from author-reported values, not original author graphics; evaluations were not rerun.",
+            "GPT-5.6 Sol 到 GPT-6 Astra，最大推理强度。": "GPT-5.6 Sol to GPT-6 Astra, maximum reasoning effort.",
+            "GPT-6.1 Sol 86.6%，GPT-5.6 Sol 5.4%；前者更高强度 97.9%。": "GPT-6.1 Sol 86.6%, GPT-5.6 Sol 5.4%; the former reaches 97.9% at higher effort.",
+            "Luna 0.77 美元／样本，旧 Sol 3.48 美元／样本；迁移新 Sol 为旧 Sol 的 61%。": "Luna USD 0.77/sample, older Sol USD 3.48/sample; migration with newer Sol costs 61% of older Sol.",
+            "MultiLangBench 覆盖 20 种语言；迁移目标为 C++、Java、Kotlin、Python、Rust。": "MultiLangBench covers 20 languages; migration targets C++, Java, Kotlin, Python and Rust.",
             "OpenAI MultiLangBench 官方开源仓库": "Official OpenAI MultiLangBench repository",
             "OpenAI 低资源编程语言研究公告（10月 19日来源日期）": "OpenAI low-resource coding research announcement (10/19 source date)",
             "OpenAI 关联研究公告帖（北京 10月 20日 06:30）": "Related OpenAI research post (10/20 06:30 Beijing)",
             "OpenAI 开源 MultiLangBench，并公布低资源语言与 COBOL 迁移评测": "OpenAI releases MultiLangBench and reports low-resource coding evaluations",
+            "OpenAI 把初始数据库和 SQL 作为共同接口，让模型用指定语言从零构建 SQLite 兼容引擎，再由参考实现检查修改后的数据库内容。这要求模型维护状态、处理错误并增补功能；测量的是长编码会话中构建了多少可通过测试的功能。": "OpenAI supplies an initial database and SQL as a common interface. The model builds a SQLite-compatible engine in a specified language; a reference implementation checks the modified contents. This requires state management, error handling and feature additions, measuring tested functionality built during an extended coding session.",
             "OpenAI在 10月 19日研究公告中发布MultiLangBench评测方案与测试集：让模型用 20种语言实现兼容SQLite的引擎，开发者可从官方GitHub仓库查看测试与运行方法。公告另报告COBOL代码迁移评测，两项评测不可混为一套已开源测试。OpenAI称GPT-6 Astra在MultiLangBench的最高推理设置下平均通过率为 87.4%；这是官方结果，本站未复测。此条为研究与评测资源发布，不代表新模型上线；只保留 10月 19日来源日期，不推造北京时间。": "OpenAI’s 10/19 research announcement releases the MultiLangBench setup and tests for building SQLite-compatible engines across 20 languages. Developers can inspect the official GitHub repository. A separate COBOL migration evaluation is also reported; its tests must not be assumed included in that release. OpenAI reports an 87.4% average pass rate for GPT-6 Astra at maximum reasoning effort on MultiLangBench. FieldToFit has not reproduced that result. This is a research and evaluation-resource release, not a new model launch. Only the 10/19 source date is established.",
+            "README 允许运行完整转换测试集以提高高分区辨别精度。": "The README permits the full converted suite to improve precision at high scores.",
+            "SQLite 3.40.1 参考语义；隔离既有实现，禁止联网。": "SQLite 3.40.1 reference semantics; isolate existing implementations and disable internet.",
+            "一项从零构建兼容数据库，另一项迁移已有 COBOL 程序。": "One task builds a compatible database; the other migrates existing COBOL programs.",
+            "上游网页无编号；本次为本站首次整理，不制造上游实质修订。": "The upstream page is unnumbered; this is the first site analysis, not an upstream substantive revision.",
+            "上线边界：隐藏测试覆盖以外的依赖、数据、权限和业务规则仍须专家核对。97.9%不是生产系统零风险迁移的保证。": "Deployment boundary: experts must still review dependencies, data, permissions and business rules beyond hidden-test coverage. 97.9% does not guarantee risk-free production migration.",
+            "不可合并成一个生产可靠性分数。": "They cannot be combined into one production reliability score.",
+            "不是百万 token 报价，也不是任意业务的迁移预算。": "Neither token list prices nor a budget for arbitrary business migrations.",
+            "不能因为 README 默认 272 条，就断言研究图全部采用 272 条。各结果所用子集、重复次数、完整提示、预算与误差估计尚未核齐；COBOL 迁移隐藏测试的完整规模也未在所读正文披露。": "A default of 272 in the README does not prove every published result used 272. Per-result subsets, repetition counts, full prompts, budgets and uncertainty estimates remain incomplete; the read text also does not disclose the full size of hidden COBOL migration tests.",
+            "两种任务，两种通过口径": "Two tasks with different pass criteria",
+            "仍有未通过功能，平均值掩盖语言差异。": "Failed functionality remains, and averages hide language differences.",
+            "仓库默认 272 项与约 24k 转换测试须区分，论文各结果具体子集尚未确认；本站未复现。": "Distinguish the default 272 tests from about 24k converted tests. Subsets behind individual reported results remain unconfirmed; no reproduction was performed here.",
+            "代码能跑，还能保持原来行为吗？OpenAI 的多语言评测": "Code runs—but does it preserve behavior? OpenAI’s multilingual evaluations",
+            "任务成本保留单位和基线": "Task costs retain units and baselines",
+            "低推理强度比较；更高强度另列。": "Compare low reasoning effort; list higher effort separately.",
+            "低资源语言进步不均": "Uneven gains across low-resource languages",
+            "作者估算 MultiLangBench 中 GPT-6 Luna 平均每样本 0.77 美元，GPT-5.6 Sol 为 3.48 美元，约低 78%。这同时伴随测试通过率从 26.8%升至 40.3%，仍远低于 Astra 的 87.4%；不能只用更便宜推导任务已经足够可靠。": "For MultiLangBench, the author estimates GPT-6 Luna at USD 0.77 per sample versus GPT-5.6 Sol at USD 3.48, about 78% lower. Test pass rate rises from 26.8% to 40.3%, still below Astra’s 87.4%; lower spending alone does not establish sufficient reliability.",
+            "作者未在该处注明更高强度的具体档位。": "The author does not specify the exact higher-effort level there.",
+            "先区分两种通过口径，再按自己的语言、业务规则和验证成本选择迁移路线。": "Separate the two pass criteria, then choose a migration path using your language, business rules and validation costs.",
+            "公开仓库说明：约 51k 条 SQLite 原始 TCL 测试中，约 24k 条转换到共同接口；默认使用哈希以 00、01、02 开头的 272 条测试，也可运行完整转换集来提高高分区的精度。README 采用 SQLite 3.40.1 参考语义，单测试超时 60 秒。": "The public repository converts about 24k of about 51k original SQLite TCL tests to the shared interface. The default uses 272 tests with hashes starting 00, 01 or 02; the full converted suite can improve precision near high scores. The README uses SQLite 3.40.1 reference semantics and a 60-second per-test timeout.",
+            "公开测试范围与复现条件": "Public test scope and reproduction conditions",
+            "公开评测便于追查，测试子集和生产验收仍有缺口": "Public evaluation aids inspection; subsets and production acceptance remain open",
             "其他 OpenAI · MultiLangBench 开源与低资源语言评测": "Other OpenAI: open MultiLangBench and low-resource coding evaluations",
+            "分别比较测试通过率和全部测试通过的迁移成功率。": "Compare test pass rates separately from migrations passing all tests.",
+            "初始数据库与 SQL 输入，参考 SQLite 核对修改后内容。": "An initial database and SQL are inputs; reference SQLite checks modified contents.",
             "变化与适用范围": "Changes and availability",
-            "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps."
+            "同一研究的独立证据层": "Independent evidence layer within the research",
+            "图 1｜作者报告值，纵轴为测试通过率%，均按正文最大推理强度口径。四语言仅是已列示例，不代表全部 20 种语言分布。": "Figure 1 | Author-reported test pass rate %, at maximum reasoning effort as stated in the text. Four languages are selected examples, not the full distribution across 20 languages.",
+            "图 2｜单位为全部隐藏测试通过的迁移成功率%。低强度两模型可直接比较；右侧是不同推理条件，作者未注明更高强度具体档位。": "Figure 2 | Successful migrations with every hidden test passing, %. Two models at low effort are comparable; the right panel uses a different effort condition, whose exact level is unspecified.",
+            "图 3｜两面板单位不同：左为数据库美元／样本，右为 COBOL 迁移低强度相对成本，旧 Sol=100。不可相乘或当作 token 报价；未补造作者未给出的绝对迁移美元成本。": "Figure 3 | Different units: database USD/sample on the left; low-effort COBOL migration relative cost, older Sol=100, on the right. Do not multiply panels or treat them as token prices; unreported absolute migration spending is not invented.",
+            "在相同数据库任务下按语言比较。": "Compare languages within the same database task.",
+            "多语言能力进步明显，平均分仍需拆开看": "Multilingual gains are large; look beyond the mean",
+            "平均值依次为 GPT-5.6 Sol 26.8%、GPT-6 Luna 40.3%、GPT-6 Astra 87.4%。这是测试通过率，不是全部任务一次成功的概率。": "The means are GPT-5.6 Sol 26.8%, GPT-6 Luna 40.3% and GPT-6 Astra 87.4%. These are test pass rates, not probabilities of every task succeeding on the first attempt.",
+            "成本优势有参考价值，但必须保留任务单位与基线": "Cost gains matter when task units and baselines remain explicit",
+            "数据库以美元／样本计，迁移以旧模型成本为 100 比较；它们都不是 API 价目表。": "Database costs use USD/sample; migration uses older-model cost as 100. Neither is an API price list.",
+            "数据库估算 API 成本 0.77 与 3.48 美元／样本；迁移相对成本 61 与 100": "Estimated database API cost USD 0.77 versus 3.48/sample; migration relative cost 61 versus 100",
+            "数据库功能通过率": "Database functionality pass rates",
+            "数据库每样本成本；迁移相对基线成本，分开表达。": "Database cost per sample; migration cost relative to baseline, stated separately.",
+            "最大推理强度下，20 种语言平均测试通过率升至 87.4%，COBOL 仍落后于其他所列语言。": "At maximum reasoning effort, mean test pass rate across 20 languages reaches 87.4%; COBOL trails the other listed languages.",
+            "最大推理强度，20 种语言平均。": "Maximum reasoning effort; mean across 20 languages.",
+            "未确认研究各结果采用的具体子集；本站未运行评测。": "The exact subset behind each research result is unconfirmed; FieldToFit has not run the evaluation.",
+            "本站建议：先固定任务、推理强度、验证规则和预算，再比较成功完成一次任务的总费用；不要从每样本结果反推通用百万 token 价格。": "FieldToFit suggestion: fix tasks, reasoning effort, acceptance rules and budgets before comparing total spending per successful task. Do not infer general token prices from per-sample results.",
+            "来源与修订：原报告 Advancing coding in low-resource programming languages，作者／机构 OpenAI，首次发表 2026-10-19，官方网页无编号。数据观察时段未披露；本站 2026-10-20 核对正文与 MultiLangBench README，未重跑实验。首次上站与后续修订以服务器真实记录为准，三图为本站独立重绘。": "Sources and revisions: Advancing coding in low-resource programming languages, author/institution OpenAI, first published 2026-10-19, unnumbered official web page. Observation period is undisclosed. FieldToFit checked the text and MultiLangBench README on 2026-10-20 without rerunning experiments. Server records determine actual first site publication and revisions; three figures are independent redraws.",
+            "构建新功能 → 保持旧行为 → 核算成本与测试边界": "Build functionality → preserve behavior → examine cost and test boundaries",
+            "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
+            "模型作者报告的实验，非本站复现或生产可靠性承诺。研究网页与公开 README 已读，测试子集、重复次数和完整成本配置尚未核齐。": "Model-author experiments, not a FieldToFit reproduction or production reliability promise. Research page and public README read; test subsets, repetitions and full cost configurations remain incomplete.",
+            "比较该评测运行中的估算 API 开销。": "Compare estimated API spending within these evaluation runs.",
+            "没有给出每个分数的置信区间或生产分布。": "No confidence intervals or production-task distribution are provided for these scores.",
+            "相同低推理强度下，GPT-6.1 Sol 为 86.6%，GPT-5.6 Sol 为 5.4%；新模型在更高强度达到 97.9%。前一个数据库评测可获得部分功能分，这里却须全部测试通过，两者分数不能横向当成同一指标。": "At the same low reasoning effort, GPT-6.1 Sol scores 86.6% and GPT-5.6 Sol 5.4%; the newer model reaches 97.9% at higher effort. The database evaluation grants partial functionality credit, while migration requires every test to pass. Their scores are different metrics.",
+            "研究事件，不是新模型首发或调价公告；结果由作者报告，本站未复现，不更新榜单。": "A research event, not a new-model launch or pricing announcement; author-reported results without site reproduction or leaderboard changes.",
+            "第二项任务将 COBOL 程序迁移到 C++、Java、Kotlin、Python 或 Rust。作者强调语言语义可能承载既有业务规则：例如未明确请求舍入时，COBOL 定点算术会丢弃多余小数位；迁移后改为舍入，即使程序能跑，也可能改变结果。": "The second task migrates COBOL programs to C++, Java, Kotlin, Python or Rust. Language semantics can encode business rules: COBOL fixed-point arithmetic discards excess decimal digits unless rounding is explicitly requested. Replacing this with rounding can change outputs even when the migrated program runs.",
+            "约 51k 原始测试中转换约 24k，默认只运行 272 个；单测试 60 秒。": "About 24k converted from about 51k original tests; default runs 272; 60 seconds per test.",
+            "证据分层：作者实验结果、公开仓库协议和本站采用建议分别记录。实验进步支持进一步试验，不代替真实系统的回归测试、审计和回滚。": "Evidence layers: author experiments, public repository protocols and FieldToFit adoption advice are recorded separately. Experimental progress supports further trials without replacing system regression tests, audits and rollback plans.",
+            "证据边界：结果由模型作者报告，本站未独立重跑；正文未给出逐语言误差区间，不能把小差异解释成已证实的统计优势。": "Evidence boundary: results are reported by the model author and not independently rerun here. The text provides no per-language uncertainty intervals, so small differences are not established statistical advantages.",
+            "迁移必须逐字节保真": "Migration requires byte-for-byte parity",
+            "迁移的关键是保持行为，验收比代码能运行更严格": "Migration must preserve behavior under stricter acceptance",
+            "迁移评测中新 Sol 低强度的成本为旧 Sol 的 61%，即约低 39%，同时迁移成功率更高。文章未充分披露每项成本的计价日期、全部提示与重试配置，读者仍需在自己的流程中计入验证、失败重跑和人工复核。": "In migration, the newer Sol at low effort costs 61% of older Sol, about 39% lower, while succeeding more often. Pricing dates and full prompting/retry configurations are not fully disclosed; readers should include validation, reruns and human review in their own workflows.",
+            "运行环境需提供指定文档，隔离已有 SQLite 库、可执行文件及嵌入实现，并限制联网；不符合目标语言或混入其他实现会影响有效性。本站仅阅读仓库，不运行上游代码。": "The environment supplies specified documentation, isolates existing SQLite libraries, executables and embedded implementations, and restricts internet access. Wrong-language or mixed implementations affect validity. FieldToFit read the repository without executing upstream code.",
+            "隐藏测试核对可观察输出，全部通过才算迁移成功。": "Hidden tests compare observable outputs; every test must pass for a successful migration.",
+            "隐藏测试要求可观察输出逐字节一致，全部通过才算成功；低强度 86.6%与更高强度 97.9%分别表达。": "Hidden tests require byte-for-byte observable output parity and all tests passing; low-effort 86.6% and higher-effort 97.9% are kept separate.",
+            "首次整理 2026-10-19 官方研究网页：四结论、同号展开及三张独立重绘，保留方法、指标单位、推理条件和证据缺口。": "First analysis of the 2026-10-19 official research page: four findings, matching arguments and three independent redraws, retaining methods, metric units, effort settings and evidence gaps."
+          },
+          "reviewed_at": "2026-10-20T04:44:15.619556+00:00",
+          "source_hash": "0c31d224ef81f630f550744bbda6ce792f47f34751cc00429f056504ecfaf8de",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "_position": 1,
+      "category": "tool",
+      "checked_at": "2026-10-18",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": false,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "分别核对搜索质量、正文完整性和工具请求量。",
+            "title": "接入 Agent／RAG 的人"
+          },
+          {
+            "detail": "先确认是否使用 DeepSeek API 及上述服务端工具路径。",
+            "title": "已有编程工具用户"
           }
+        ],
+        "changes": [
+          {
+            "detail": "Search 返回结构化结果；Fetch 把单页内容转成 Markdown。",
+            "title": "搜索与取文各司其职"
+          },
+          {
+            "detail": "两接口各为每千次 0.75 美元；失败、空搜索和超时不收费，结果条数不影响单次价格。",
+            "title": "按成功请求计费"
+          },
+          {
+            "detail": "经 Harness、Claude Code 或 Codex 调用 DeepSeek 服务端工具，11 月 1 日北京时间 00:00 起计费。",
+            "title": "指定工具路径暂时免费"
+          }
+        ],
+        "checked_at": "2026-10-18",
+        "event_date": "2026-10-17",
+        "evidence": [
+          {
+            "locator": "Search & Fetch：Authentication、Billing、Rate Limits；10 月 17 日发布公告。",
+            "source_id": "deepseek-search"
+          }
+        ],
+        "featured_rank": 3,
+        "headline": "给 Agent 接上联网工具，先看何时开始计费",
+        "limits": [
+          {
+            "detail": "不能据此把所有直接调用、模型推理或其他厂商请求视为免费。",
+            "title": "免费有范围"
+          },
+          {
+            "detail": "Search、Fetch 各 5 QPS，按账户算；Fetch 另受目标域名限速和访问规则限制。",
+            "title": "限速与目标网站条件"
+          }
+        ],
+        "next_step": "先试一次查询和单页取文，再按 11 月 1 日后的费率估算预算。",
+        "revised_at": "2026-10-18",
+        "scope": "DeepSeek Search／Fetch 面向有 DeepSeek API 账户的 Agent 与 RAG 应用；优惠按调用路径区分。",
+        "share": {
+          "content_revision": "504d62293b266fdad09e2ebdc7fe165020c9cd64f085ebd20ff6af7b704e48b9",
+          "en": {
+            "sha256": "645de1b53653aff321843e694612d71e65a8423b7d5542556704722a2053e07d",
+            "text_revision": "b5ddca27af5fb9e7ef1e645e8a281d2d73d8891e1ce733099871744ebec0c53e",
+            "url": "/hot-cards/d-188-504d62293b26-en.png"
+          },
+          "zh": {
+            "sha256": "b1178411cbb5191c68319f5347d733a95b7ef4f3d643e6ba3c47ad6c0558c5b7",
+            "url": "/hot-cards/d-188-504d62293b26-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "按官方材料整理；本站未调用、核账或复测搜索与取文质量。"
+      },
+      "id": "D-188",
+      "interpretation": [
+        {
+          "locator": "Search & Fetch: Billing",
+          "source_ids": [
+            "deepseek-search"
+          ],
+          "text": "两个接口分别为每 1,000 次成功请求 0.75 美元。Search 须返回非空结果，Fetch 须取得正文；失败、空搜索和超时不计费，结果条数不改变单次请求价格。",
+          "title": "成功请求才计费"
+        },
+        {
+          "locator": "Search & Fetch: Billing; server-side tool-call offer",
+          "source_ids": [
+            "deepseek-search"
+          ],
+          "text": "经 DeepSeek Harness、Claude Code 或 Codex 使用 DeepSeek API 的服务端工具调用目前免费，北京时间 2026-11-01 00:00 起计费。不能扩写为全部直接接口、模型推理或其他厂商调用免费。",
+          "title": "临时优惠按调用路径区分"
+        },
+        {
+          "locator": "Search & Fetch: Rate Limits; release announcement",
+          "source_ids": [
+            "deepseek-search",
+            "announcement"
+          ],
+          "text": "Search、Fetch 各为账户级 5 QPS；Fetch 另受目标域名限速与访问规则约束。官方建议新模型配合 Harness v0.2.1-rc.1 或更高；本站未核完整发行包，也未调用、核账或复测取文质量。",
+          "title": "限流和采用条件继续保留"
+        }
+      ],
+      "name": "DeepSeek Search / Fetch",
+      "note": "同一事件的信息卡与本条共用动态编号；优惠、限流和未实测范围随正文保留。",
+      "organization": "DeepSeek",
+      "publication": {
+        "first_published_at": "2026-10-18T03:29:30.154135+00:00",
+        "hot_card_first_published_at": "2026-10-18T03:29:30.154167+00:00",
+        "hot_card_selected_at": "2026-10-18T03:29:30.154167+00:00",
+        "updated_at": "2026-10-20T04:46:35.380600+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M06",
+          "name": "DeepSeek",
+          "url": "https://fieldtofit.top/watch/CW-M06"
+        },
+        {
+          "id": "CW-H01",
+          "name": "DeepSeek Harness",
+          "url": "https://fieldtofit.top/watch/CW-H01"
+        }
+      ],
+      "source_published_at": "2026-10-17",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "deepseek-search",
+          "title": "DeepSeek Search & Fetch · Authentication / Billing / Rate Limits",
+          "url": "https://api-docs.deepseek.com/guides/search/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "DeepSeek official announcement · 2026-10-17",
+          "url": "https://api-docs.deepseek.com/news/news261017/"
+        }
+      ],
+      "state": "published",
+      "summary": "2026-10-17 公告开放 Search 与 Fetch：搜索返回结构化结果，取文返回单页 Markdown。两接口使用 DeepSeek API 密钥，按成功请求分别计费。",
+      "title": "DeepSeek Search／Fetch：开放联网接口，临时免费仅限指定服务端工具路径",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-17 公告开放 Search 与 Fetch：搜索返回结构化结果，取文返回单页 Markdown。两接口使用 DeepSeek API 密钥，按成功请求分别计费。": "The 2026-10-17 announcement opens Search and Fetch: structured search results and single-page Markdown retrieval. Both use a DeepSeek API key and are billed separately per successful request.",
+            "DeepSeek Search／Fetch 面向有 DeepSeek API 账户的 Agent 与 RAG 应用；优惠按调用路径区分。": "DeepSeek Search / Fetch serve Agent and RAG applications with a DeepSeek API account; the offer depends on the call path.",
+            "DeepSeek Search／Fetch：开放联网接口，临时免费仅限指定服务端工具路径": "DeepSeek Search / Fetch: web tools with a limited server-side introductory offer",
+            "Search & Fetch：Authentication、Billing、Rate Limits；10 月 17 日发布公告。": "Search & Fetch: Authentication, Billing, Rate Limits; announcement dated 10/17.",
+            "Search 返回结构化结果；Fetch 把单页内容转成 Markdown。": "Search returns structured results; Fetch converts a single page into Markdown.",
+            "Search、Fetch 各 5 QPS，按账户算；Fetch 另受目标域名限速和访问规则限制。": "Search and Fetch each allow 5 QPS per account; Fetch also respects destination-domain limits and access rules.",
+            "Search、Fetch 各为账户级 5 QPS；Fetch 另受目标域名限速与访问规则约束。官方建议新模型配合 Harness v0.2.1-rc.1 或更高；本站未核完整发行包，也未调用、核账或复测取文质量。": "Search and Fetch each allow 5 QPS per account; Fetch also respects destination-domain limits and access rules. The author recommends Harness v0.2.1-rc.1 or later for the new model. FieldToFit has not checked the complete release package or tested calls, billing or retrieval quality.",
+            "不能据此把所有直接调用、模型推理或其他厂商请求视为免费。": "It does not make all direct calls, model inference or other vendors' requests free.",
+            "两个接口分别为每 1,000 次成功请求 0.75 美元。Search 须返回非空结果，Fetch 须取得正文；失败、空搜索和超时不计费，结果条数不改变单次请求价格。": "Each interface costs USD 0.75 per 1,000 successful requests. Search requires non-empty results and Fetch requires retrieved content. Failures, empty searches and timeouts are not billed; result count does not change the per-request price.",
+            "两接口各为每千次 0.75 美元；失败、空搜索和超时不收费，结果条数不影响单次价格。": "Each interface costs USD 0.75 per thousand requests; failures, empty searches and timeouts are free, and result count does not affect the per-request price.",
+            "临时优惠按调用路径区分": "The temporary offer depends on the call path",
+            "先确认是否使用 DeepSeek API 及上述服务端工具路径。": "First confirm use of the DeepSeek API and the specified server-side tool path.",
+            "先试一次查询和单页取文，再按 11 月 1 日后的费率估算预算。": "Try one query and one-page retrieval, then estimate the budget at the rates after 11/1.",
+            "免费有范围": "The free offer has a scope",
+            "分别核对搜索质量、正文完整性和工具请求量。": "Check search quality, content completeness and tool-request volume separately.",
+            "同一事件的信息卡与本条共用动态编号；优惠、限流和未实测范围随正文保留。": "The information card shares this news identity; offer scope, limits and untested aspects remain explicit.",
+            "已有编程工具用户": "Existing coding-tool users",
+            "成功请求才计费": "Billing counts successful requests",
+            "指定工具路径暂时免费": "Specified tool paths are temporarily free",
+            "按官方材料整理；本站未调用、核账或复测搜索与取文质量。": "Compiled from official materials; FieldToFit has not tested calls, audited bills or reproduced search and retrieval quality.",
+            "按成功请求计费": "Successful requests are billed",
+            "接入 Agent／RAG 的人": "Agent / RAG integrators",
+            "搜索与取文各司其职": "Search and retrieval have distinct roles",
+            "经 DeepSeek Harness、Claude Code 或 Codex 使用 DeepSeek API 的服务端工具调用目前免费，北京时间 2026-11-01 00:00 起计费。不能扩写为全部直接接口、模型推理或其他厂商调用免费。": "Server-side tool calls using the DeepSeek API through DeepSeek Harness, Claude Code or Codex are temporarily free; billing starts at 2026-11-01 00:00 Beijing time. This does not make all direct interface calls, model inference or other vendors' calls free.",
+            "经 Harness、Claude Code 或 Codex 调用 DeepSeek 服务端工具，11 月 1 日北京时间 00:00 起计费。": "DeepSeek server-side tools through Harness, Claude Code or Codex start billing at 00:00 Beijing time on 11/1.",
+            "给 Agent 接上联网工具，先看何时开始计费": "Give your agent web tools; check when billing begins",
+            "限流和采用条件继续保留": "Retain rate limits and adoption conditions",
+            "限速与目标网站条件": "Rate and destination-site conditions"
+          },
+          "reviewed_at": "2026-10-20T04:26:45.934362+00:00",
+          "source_hash": "0583b63fdd4664dcb76749fc2f5d33d1c478a71539598d2540ff23e5b46a86dd",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "_position": 1,
+      "category": "model",
+      "checked_at": "2026-10-18",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-17",
+      "highlight": false,
+      "id": "D-187",
+      "interpretation": [
+        {
+          "locator": "Model card: evaluation results and harness notes",
+          "source_ids": [
+            "model-card"
+          ],
+          "text": "DeepSWE v1.1 为 77.0，对上一检查点 74.2，使用 Mini-SWE-V2；Terminal-Bench 4.0 为 42.3，对 31.2，使用 Claude Code。不同环境的数字不能合成同条件排名，本站未复现。",
+          "title": "实验分数连同测试环境阅读"
+        },
+        {
+          "locator": "Model card: tokenizer, encoding and deployment notes",
+          "source_ids": [
+            "model-card"
+          ],
+          "text": "包内不提供 Jinja 聊天模板，应参考官方编码器或 deepseek-recipe。格式转换不替代推理服务、工具执行或网络传输，接入方仍需实现这些环节。",
+          "title": "自部署先对齐消息格式"
+        },
+        {
+          "locator": "Official announcement and model-card scope",
+          "source_ids": [
+            "announcement",
+            "model-card"
+          ],
+          "text": "在 CW-M06 追加 1017 检查点，保留 V4.1-Flash 旧节点及 D-90 报告。准确 API 型号、账户切换与部署资源仍待实际核对；本条不刷新模型分数图。",
+          "title": "接续原模型档案"
+        }
+      ],
+      "name": "DeepSeek-V4.1-Flash-1017",
+      "note": "作者结果未独立复现；模型、工具接口和运行器版本分别表达。",
+      "organization": "DeepSeek",
+      "publication": {
+        "first_published_at": "2026-10-18T03:30:41.656179+00:00",
+        "updated_at": "2026-10-20T04:46:09.291624+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M06",
+          "name": "DeepSeek",
+          "url": "https://fieldtofit.top/watch/CW-M06"
+        }
+      ],
+      "source_published_at": "2026-10-17",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "DeepSeek official announcement · 2026-10-17",
+          "url": "https://api-docs.deepseek.com/news/news261017/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "model-card",
+          "title": "DeepSeek-V4.1-Flash-1017 model card",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+        }
+      ],
+      "state": "published",
+      "summary": "DeepSeek 于 2026-10-17 发布新检查点，官网、App 和 API 已提供；模型卡标注 MIT。作者称通过带自反馈的强化学习改善端到端项目开发。",
+      "title": "DeepSeek-V4.1-Flash-1017：编程与 Agent 检查点更新，部署需核对提示格式",
+      "translations": {
+        "en": {
+          "fields": {
+            "DeepSWE v1.1 为 77.0，对上一检查点 74.2，使用 Mini-SWE-V2；Terminal-Bench 4.0 为 42.3，对 31.2，使用 Claude Code。不同环境的数字不能合成同条件排名，本站未复现。": "DeepSWE v1.1 scores 77.0 versus the previous checkpoint's 74.2 using Mini-SWE-V2; Terminal-Bench 4.0 scores 42.3 versus 31.2 using Claude Code. Different harnesses do not form a like-for-like overall ranking; FieldToFit has not reproduced the results.",
+            "DeepSeek 于 2026-10-17 发布新检查点，官网、App 和 API 已提供；模型卡标注 MIT。作者称通过带自反馈的强化学习改善端到端项目开发。": "DeepSeek released the checkpoint on 2026-10-17 for its website, app and API. The model card specifies MIT. The author reports improved end-to-end project development through reinforcement learning with self-feedback.",
+            "DeepSeek-V4.1-Flash-1017：编程与 Agent 检查点更新，部署需核对提示格式": "DeepSeek-V4.1-Flash-1017: a coding and agent checkpoint with deployment-format requirements",
+            "作者结果未独立复现；模型、工具接口和运行器版本分别表达。": "Author results have not been independently reproduced; model, tool-interface and harness versions are distinguished.",
+            "包内不提供 Jinja 聊天模板，应参考官方编码器或 deepseek-recipe。格式转换不替代推理服务、工具执行或网络传输，接入方仍需实现这些环节。": "The package does not provide a Jinja chat template; use the official encoder or deepseek-recipe. Format conversion does not replace inference serving, tool execution or network transport, which remain the integrator's responsibility.",
+            "在 CW-M06 追加 1017 检查点，保留 V4.1-Flash 旧节点及 D-90 报告。准确 API 型号、账户切换与部署资源仍待实际核对；本条不刷新模型分数图。": "Append the 1017 checkpoint to CW-M06 while retaining the V4.1-Flash history and D-90 report. Exact API identifiers, account switching and deployment resources still require verification; this update does not refresh model score charts.",
+            "实验分数连同测试环境阅读": "Read scores with their evaluation harness",
+            "接续原模型档案": "Continue the existing model profile",
+            "自部署先对齐消息格式": "Align message formatting before self-deployment"
+          },
+          "reviewed_at": "2026-10-20T04:26:36.629639+00:00",
+          "source_hash": "66a76fba065e589e71785ddcbcd87980a63677baec0ad361e4a9e8b58f0f30ed",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "_position": 1,
+      "category": "tool",
+      "checked_at": "2026-10-19",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": false,
+      "id": "D-197",
+      "interpretation": [
+        {
+          "locator": "What you get: SDK tracing / API tracing; Release notes: 2026-10-14",
+          "source_ids": [
+            "overview",
+            "release"
+          ],
+          "text": "SDK 可追踪客户端工具，API 可提供每次模型运行、Managed Agents 轮次与服务端工具。两者可以接入同一追踪；排查耗时与失败不等于保证提速。",
+          "title": "SDK 与服务端覆盖互补"
+        },
+        {
+          "locator": "Content modes; API setup; Compatibility",
+          "source_ids": [
+            "overview",
+            "api"
+          ],
+          "text": "API 侧目标由管理员配置。默认 Metadata only 不含提示与响应；Full content 可包括输入输出，并受内容大小与组织数据限制。数据到达后服从接收服务自己的访问与保留规则。",
+          "title": "内容模式决定会导出什么"
+        },
+        {
+          "locator": "Delivery and health; Compatibility: excludes Covered Models",
+          "source_ids": [
+            "api"
+          ],
+          "text": "导出是 best effort，可能丢失 span，同一 span 也可能重复到达，可用 trace ID 与 span ID 去重。本站未实测导出、第三方费用或字段完整率；Managed Agents 不因这项能力变成 ZDR。",
+          "title": "追踪不保证完整审计"
+        }
+      ],
+      "name": "Claude OpenTelemetry export",
+      "note": "原文 2026-10-14，本站核对 2026-10-19；平台 beta，保留覆盖差异、内容模式与未实测边界，不变更模型分数。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-19T03:11:21.600210+00:00",
+        "updated_at": "2026-10-20T04:45:43.631592+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "overview",
+          "title": "OpenTelemetry for the Claude API · coverage / content modes",
+          "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry"
+        },
+        {
+          "coverage": "link_only",
+          "id": "api",
+          "title": "OpenTelemetry API setup · Delivery / Compatibility",
+          "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry/api"
+        },
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Claude Platform release notes · 2026-10-14",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic 于 2026-10-14 开放 OpenTelemetry 导出 beta，支持 Messages API 及 Managed Agents 追踪；SDK 与 API 覆盖互补，默认仅元数据，Full content 可含模型输入输出。",
+      "title": "Claude 平台 OpenTelemetry 导出 beta：追踪请求，先选内容范围",
+      "translations": {
+        "en": {
+          "fields": {
+            "API 侧目标由管理员配置。默认 Metadata only 不含提示与响应；Full content 可包括输入输出，并受内容大小与组织数据限制。数据到达后服从接收服务自己的访问与保留规则。": "Administrators configure API destinations. Metadata only excludes prompts and responses by default; Full content can include them, subject to content-size and organizational data restrictions. Delivered data follows the recipient service’s access and retention rules.",
+            "Anthropic 于 2026-10-14 开放 OpenTelemetry 导出 beta，支持 Messages API 及 Managed Agents 追踪；SDK 与 API 覆盖互补，默认仅元数据，Full content 可含模型输入输出。": "On 2026-10-14, Anthropic introduced OpenTelemetry export beta for Messages API and Managed Agents traces. SDK and API coverage complement each other; metadata is the default, while Full content can include model prompts and responses.",
+            "Claude 平台 OpenTelemetry 导出 beta：追踪请求，先选内容范围": "Claude OpenTelemetry export beta: trace requests and choose content scope",
+            "SDK 与服务端覆盖互补": "SDK and API coverage complement each other",
+            "SDK 可追踪客户端工具，API 可提供每次模型运行、Managed Agents 轮次与服务端工具。两者可以接入同一追踪；排查耗时与失败不等于保证提速。": "The SDK traces client tools; the API provides model runs, Managed Agents turns and server tools. Both can join one trace. Diagnosing latency and failures does not guarantee faster execution.",
+            "内容模式决定会导出什么": "Content mode determines exported data",
+            "原文 2026-10-14，本站核对 2026-10-19；平台 beta，保留覆盖差异、内容模式与未实测边界，不变更模型分数。": "Source 2026-10-14; checked 2026-10-19. Platform beta with coverage differences, content modes and untested limits retained; no model-score changes.",
+            "导出是 best effort，可能丢失 span，同一 span 也可能重复到达，可用 trace ID 与 span ID 去重。本站未实测导出、第三方费用或字段完整率；Managed Agents 不因这项能力变成 ZDR。": "Export is best effort: spans may be lost or delivered more than once. Deduplicate with trace and span IDs. FieldToFit has not tested export, third-party fees or field completeness; this feature does not make Managed Agents ZDR eligible.",
+            "追踪不保证完整审计": "Tracing is not a completeness guarantee"
+          },
+          "reviewed_at": "2026-10-20T04:26:27.406085+00:00",
+          "source_hash": "eaf4c9dac7b3889646f4a08d31c3896752334366c492e096253c229777e342aa",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "_position": 1,
+      "category": "tool",
+      "checked_at": "2026-10-19",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-15",
+      "highlight": false,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "核对访问范围、内部告知及接收系统权限。",
+            "title": "企业合规与管理员"
+          },
+          {
+            "detail": "检查自己的指令内容，理解其可见边界。",
+            "title": "使用组织账户的成员"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "可返回组织现有成员保存的两类指令文字。",
+            "title": "新增读取内容"
+          },
+          {
+            "detail": "使用 Compliance Access Key，并具备 read:compliance_user_data。",
+            "title": "需要专用权限"
+          },
+          {
+            "detail": "同一成员加入多个组织时，可能在各组织返回相同偏好。",
+            "title": "注意账户级范围"
+          }
+        ],
+        "checked_at": "2026-10-19",
+        "evidence": [
+          {
+            "locator": "2026-10-15 · Compliance API user_preferences",
+            "source_id": "release"
+          },
+          {
+            "locator": "List user preferences; Required scope",
+            "source_id": "reference"
+          }
+        ],
+        "featured_rank": 2,
+        "headline": "企业合规接口新增指令读取，先核对谁能看、能看到什么",
+        "limits": [
+          {
+            "detail": "当前为 beta；普通 Admin API key 不可替代专用凭据。",
+            "title": "专用凭据与 beta"
+          },
+          {
+            "detail": "默认仅列已设置偏好的当前成员；这不是全部个人聊天公开，也不是新增模型能力。",
+            "title": "读取范围"
+          }
+        ],
+        "next_step": "先由合资格管理员确认权限与组织范围，再在测试账户核对输出；本站未调用此接口。",
+        "revised_at": "2026-10-19",
+        "scope": "Claude Enterprise 组织的 Compliance API user_preferences beta；涉及 Claude 个人指令及 Cowork 全局指令。",
+        "share": {
+          "content_revision": "04bd718312fef5098d8c8546fa8e2b513f852678f4636e022e11bcf31b2d221d",
+          "en": {
+            "sha256": "b5bcb5de62f8dfa288ddd881b4ef1f6f3e379faa1c49ab248a636dfc5304af60",
+            "text_revision": "13e6a768a7e9b0633f093693fab1ad46161cbd60d8d1c9a910863756d83e5bd7",
+            "url": "/hot-cards/d-196-04bd718312fe-en.png"
+          },
+          "zh": {
+            "sha256": "91caec87cda4869ce820f2301e2d58ef6e9036e2b46ca47ea0eab6c5505b6e1a",
+            "url": "/hot-cards/d-196-04bd718312fe-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "官方公告与接口文档交叉核对；未实测企业账户、跨组织输出或分页"
+      },
+      "id": "D-196",
+      "interpretation": [
+        {
+          "locator": "Release notes: 2026-10-15; Required scope; List user preferences",
+          "source_ids": [
+            "release",
+            "reference"
+          ],
+          "text": "接口读取当前组织成员保存的 conversation_preferences 与 cowork_global_instructions。须使用 Compliance Access Key 并具备 read:compliance_user_data；普通 Admin API key 不可替代。",
+          "title": "两类指令与专用授权"
+        },
+        {
+          "locator": "List user preferences: account-level settings and include_unset",
+          "source_ids": [
+            "reference"
+          ],
+          "text": "这两项是账户级设置，同一成员属于多个组织时可返回相同文字。默认只返回设置了至少一项的当前成员；这不等于全部个人聊天向组织公开。",
+          "title": "账户级内容与组织成员关系分开"
+        },
+        {
+          "locator": "List user preferences: pagination and required scope",
+          "source_ids": [
+            "reference"
+          ],
+          "text": "合资格管理员应核对密钥权限、组织边界与内部告知，再用测试账户验证输出。分页应沿 next_page 读取至 null，空页不一定是最后一页。本站未调用接口，未验证企业开通、跨组织返回或分页。",
+          "title": "先核对读取范围和接收权限"
+        }
+      ],
+      "name": "Claude Enterprise Compliance API",
+      "note": "原文 2026-10-15，本站核对 2026-10-19；beta 平台功能，未作账户或权限实测。同事件信息卡保留来源与适用边界。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-19T03:12:12.824121+00:00",
+        "hot_card_first_published_at": "2026-10-19T03:12:12.824160+00:00",
+        "hot_card_selected_at": "2026-10-19T03:12:12.824160+00:00",
+        "updated_at": "2026-10-20T04:45:18.324713+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Claude Platform release notes · 2026-10-15",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "coverage": "link_only",
+          "id": "reference",
+          "title": "Compliance API · List user preferences / Required scope",
+          "url": "https://platform.claude.com/docs/en/manage-claude/compliance-org-data"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic 于 2026-10-15 为 Enterprise 组织开放 user_preferences beta，可读 Claude 个人指令和 Cowork 全局指令。需要专用凭据与用户数据读取权限；这项平台功能不改变模型版本或价格。",
+      "title": "Claude Enterprise 新增指令读取：一起看专用权限与账户级范围",
+      "translations": {
+        "en": {
+          "fields": {
+            "Anthropic 于 2026-10-15 为 Enterprise 组织开放 user_preferences beta，可读 Claude 个人指令和 Cowork 全局指令。需要专用凭据与用户数据读取权限；这项平台功能不改变模型版本或价格。": "On 2026-10-15, Anthropic introduced user_preferences beta for Enterprise organizations to read Instructions for Claude and Cowork Global instructions. Dedicated credentials and user-data read scope are required; this platform feature changes neither model versions nor prices.",
+            "Claude Enterprise 新增指令读取：一起看专用权限与账户级范围": "Claude Enterprise adds instruction access: check dedicated permissions and account-level scope",
+            "Claude Enterprise 组织的 Compliance API user_preferences beta；涉及 Claude 个人指令及 Cowork 全局指令。": "Claude Enterprise Compliance API user_preferences beta; covers Instructions for Claude and Cowork Global instructions.",
+            "专用凭据与 beta": "Dedicated key and beta",
+            "两类指令与专用授权": "Two instruction settings and dedicated authorization",
+            "企业合规与管理员": "Enterprise compliance and administrators",
+            "企业合规接口新增指令读取，先核对谁能看、能看到什么": "Enterprise instruction access: check who can see what",
+            "使用 Compliance Access Key，并具备 read:compliance_user_data。": "Requires a Compliance Access Key and read:compliance_user_data.",
+            "使用组织账户的成员": "Organization account members",
+            "先核对读取范围和接收权限": "Check scope and recipient access first",
+            "先由合资格管理员确认权限与组织范围，再在测试账户核对输出；本站未调用此接口。": "Have qualified administrators check permissions and organization scope, then verify output with a test account; FieldToFit has not called this endpoint.",
+            "原文 2026-10-15，本站核对 2026-10-19；beta 平台功能，未作账户或权限实测。同事件信息卡保留来源与适用边界。": "Source 2026-10-15; checked 2026-10-19. A beta platform feature without account or permission testing; The information card retains sources and adoption boundaries.",
+            "可返回组织现有成员保存的两类指令文字。": "Returns the two kinds of instruction text saved by current organization members.",
+            "合资格管理员应核对密钥权限、组织边界与内部告知，再用测试账户验证输出。分页应沿 next_page 读取至 null，空页不一定是最后一页。本站未调用接口，未验证企业开通、跨组织返回或分页。": "Qualified administrators should check key scopes, organizational boundaries and internal notice, then verify output with a test account. Follow next_page until null; an empty page need not be the last. FieldToFit has not tested provisioning, cross-organization results or pagination.",
+            "同一成员加入多个组织时，可能在各组织返回相同偏好。": "The same preferences can appear under each organization a member belongs to.",
+            "官方公告与接口文档交叉核对；未实测企业账户、跨组织输出或分页": "Official release notes and endpoint documentation cross-checked; enterprise access, cross-organization output and pagination are untested.",
+            "当前为 beta；普通 Admin API key 不可替代专用凭据。": "Currently beta; an ordinary Admin API key cannot replace the dedicated credential.",
+            "接口读取当前组织成员保存的 conversation_preferences 与 cowork_global_instructions。须使用 Compliance Access Key 并具备 read:compliance_user_data；普通 Admin API key 不可替代。": "The endpoint reads current members’ conversation_preferences and cowork_global_instructions. It requires a Compliance Access Key with read:compliance_user_data; an ordinary Admin API key is not a substitute.",
+            "新增读取内容": "New instruction access",
+            "核对访问范围、内部告知及接收系统权限。": "Check access scope, internal notice and recipient-system permissions.",
+            "检查自己的指令内容，理解其可见边界。": "Review your instructions and understand their visibility boundaries.",
+            "注意账户级范围": "Account-level scope matters",
+            "读取范围": "Read scope",
+            "账户级内容与组织成员关系分开": "Separate account-level text from organization membership",
+            "这两项是账户级设置，同一成员属于多个组织时可返回相同文字。默认只返回设置了至少一项的当前成员；这不等于全部个人聊天向组织公开。": "Both settings belong to the account, so the same text can appear under each organization a member belongs to. By default, only current members with at least one setting are returned; this does not make all personal chats public.",
+            "需要专用权限": "Dedicated permission required",
+            "默认仅列已设置偏好的当前成员；这不是全部个人聊天公开，也不是新增模型能力。": "By default, lists current members with saved preferences. This is not all personal chats becoming public or a new model capability."
+          },
+          "reviewed_at": "2026-10-20T04:26:18.169687+00:00",
+          "source_hash": "f97c6936909ddfdd2b97ad9cfe7b84978d6e49cc972550ae35a0656228c4d03f",
+          "state": "reviewed"
         }
       }
     },
@@ -162,8 +1543,6 @@
       "title": "OpenAI 协助受攻击的 OpenCode 用户恢复 API 使用并退还受影响额度",
       "translations": {
         "en": {
-          "state": "reviewed",
-          "source_hash": "de223da32c65bb88a9ded9b11b71e62401041ef0be79e16ccf6c87d1851d242c",
           "fields": {
             "OpenAI 协助受攻击的 OpenCode 用户恢复 API 使用并退还受影响额度": "OpenAI helps affected OpenCode API customers recover access and credits",
             "Tibo X身份与真实头像": "Tibo X identity and authentic avatar",
@@ -173,7 +1552,10 @@
             "变化与适用范围": "Changes and availability",
             "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
             "直接读取X原帖公开结构化数据；帖子ID时刻与页面发布时间交叉核对。中文为本站摘译。": "The original public X structured data was read directly. Its post-ID timestamp was cross-checked with page publication metadata. Chinese text is a FieldToFit excerpt translation."
-          }
+          },
+          "reviewed_at": "2026-10-20T04:17:21.281891+00:00",
+          "source_hash": "de223da32c65bb88a9ded9b11b71e62401041ef0be79e16ccf6c87d1851d242c",
+          "state": "reviewed"
         }
       }
     },
@@ -242,8 +1624,6 @@
       "title": "Chrome 更新：Chat 跨标签取材，Work 操作网页",
       "translations": {
         "en": {
-          "state": "reviewed",
-          "source_hash": "25494d2bf59ad61448bc11526c7eb4bb9bb3af5156d6a8228932528e306a4e6b",
           "fields": {
             "ChatGPT Chrome 更新原帖": "Original ChatGPT Chrome update post",
             "ChatGPT在北京时间 10月 16日 04:02公布Chrome更新：Chat可以从已打开的标签页收集信息，Work可操作标签页完成发送消息、填写表单、下载文件，以及整理和分组标签页。面向使用Chrome的ChatGPT用户；原帖未列逐套餐或最低版本范围。按当前官方指南，可在桌面应用“Settings → Computer Use”连接Chrome、安装所需扩展，再在Work中选择@Chrome及允许的网站。此条补回 10月 16日；它记录本次Chat／Work更新，不将已有Chrome集成写成首次推出。": "ChatGPT announced a Chrome update at 04:02 Beijing time on 10/16. Chat can gather context across open tabs; Work can act on tabs to send messages, fill forms, download files and organize tab groups. The post does not specify plan-by-plan eligibility or minimum versions. The current setup guide points desktop users to Settings → Computer Use to connect Chrome and install its extension, then select @Chrome and grant site access in Work. This backfill retains 10/16 and describes this Chat/Work update, not the first-ever availability of Chrome integration.",
@@ -253,7 +1633,10 @@
             "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
             "浏览器扩展当前安装与权限指南": "Current browser-extension setup and permissions guide",
             "直接读取原帖全文的官方ChatGPT账号页": "Official ChatGPT profile carrying the original full post"
-          }
+          },
+          "reviewed_at": "2026-10-20T04:08:53.646492+00:00",
+          "source_hash": "25494d2bf59ad61448bc11526c7eb4bb9bb3af5156d6a8228932528e306a4e6b",
+          "state": "reviewed"
         }
       }
     },
@@ -361,8 +1744,6 @@
       "title": "官方 Day 15：Tibo 转引 COOKED 首期直播",
       "translations": {
         "en": {
-          "state": "reviewed",
-          "source_hash": "c6130657330fdfa2f2091e66d5861bc37ff6685559083a122474497a94e61079",
           "fields": {
             "COOKED: Ep. 1 官方标题帖": "Official COOKED: Ep. 1 title post",
             "Day 15 · COOKED 首期直播公告": "Day 15: first COOKED broadcast announcement",
@@ -374,7 +1755,10 @@
             "官方 Day 15：Tibo 转引 COOKED 首期直播": "Official Day 15: Tibo shares the first COOKED broadcast",
             "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
             "直接读取X原帖全文及其明确引用关系；中文保留原词cooked的双关。直播名称与入口另据被引用的OpenAI Developers帖说明。": "The complete original X post and its explicit quote relationship were read directly. The Chinese translation retains the wordplay in cooked. The broadcast title and link are established by the quoted OpenAI Developers post."
-          }
+          },
+          "reviewed_at": "2026-10-20T04:08:28.800409+00:00",
+          "source_hash": "c6130657330fdfa2f2091e66d5861bc37ff6685559083a122474497a94e61079",
+          "state": "reviewed"
         }
       }
     },
@@ -936,180 +2320,6 @@
     },
     {
       "_position": 1,
-      "category": "tool",
-      "checked_at": "2026-10-19",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-15",
-      "highlight": true,
-      "hot_card": {
-        "audiences": [
-          {
-            "detail": "核对访问范围、内部告知及接收系统权限。",
-            "title": "企业合规与管理员"
-          },
-          {
-            "detail": "检查自己的指令内容，理解其可见边界。",
-            "title": "使用组织账户的成员"
-          }
-        ],
-        "changes": [
-          {
-            "detail": "可返回组织现有成员保存的两类指令文字。",
-            "title": "新增读取内容"
-          },
-          {
-            "detail": "使用 Compliance Access Key，并具备 read:compliance_user_data。",
-            "title": "需要专用权限"
-          },
-          {
-            "detail": "同一成员加入多个组织时，可能在各组织返回相同偏好。",
-            "title": "注意账户级范围"
-          }
-        ],
-        "checked_at": "2026-10-19",
-        "evidence": [
-          {
-            "locator": "2026-10-15 · Compliance API user_preferences",
-            "source_id": "release"
-          },
-          {
-            "locator": "List user preferences; Required scope",
-            "source_id": "reference"
-          }
-        ],
-        "featured_rank": 1,
-        "headline": "企业合规接口新增指令读取，先核对谁能看、能看到什么",
-        "limits": [
-          {
-            "detail": "当前为 beta；普通 Admin API key 不可替代专用凭据。",
-            "title": "专用凭据与 beta"
-          },
-          {
-            "detail": "默认仅列已设置偏好的当前成员；这不是全部个人聊天公开，也不是新增模型能力。",
-            "title": "读取范围"
-          }
-        ],
-        "next_step": "先由合资格管理员确认权限与组织范围，再在测试账户核对输出；本站未调用此接口。",
-        "revised_at": "2026-10-19",
-        "scope": "Claude Enterprise 组织的 Compliance API user_preferences beta；涉及 Claude 个人指令及 Cowork 全局指令。",
-        "share": {
-          "content_revision": "04bd718312fef5098d8c8546fa8e2b513f852678f4636e022e11bcf31b2d221d",
-          "en": {
-            "sha256": "b5bcb5de62f8dfa288ddd881b4ef1f6f3e379faa1c49ab248a636dfc5304af60",
-            "text_revision": "13e6a768a7e9b0633f093693fab1ad46161cbd60d8d1c9a910863756d83e5bd7",
-            "url": "/hot-cards/d-196-04bd718312fe-en.png"
-          },
-          "zh": {
-            "sha256": "91caec87cda4869ce820f2301e2d58ef6e9036e2b46ca47ea0eab6c5505b6e1a",
-            "url": "/hot-cards/d-196-04bd718312fe-zh.png"
-          }
-        },
-        "status": "current",
-        "update_note": "",
-        "verification": "官方公告与接口文档交叉核对；未实测企业账户、跨组织输出或分页"
-      },
-      "id": "D-196",
-      "interpretation": [
-        {
-          "locator": "Release notes: 2026-10-15; Required scope; List user preferences",
-          "source_ids": [
-            "release",
-            "reference"
-          ],
-          "text": "接口读取当前组织成员保存的 conversation_preferences 与 cowork_global_instructions。须使用 Compliance Access Key 并具备 read:compliance_user_data；普通 Admin API key 不可替代。",
-          "title": "两类指令与专用授权"
-        },
-        {
-          "locator": "List user preferences: account-level settings and include_unset",
-          "source_ids": [
-            "reference"
-          ],
-          "text": "这两项是账户级设置，同一成员属于多个组织时可返回相同文字。默认只返回设置了至少一项的当前成员；这不等于全部个人聊天向组织公开。",
-          "title": "账户级内容与组织成员关系分开"
-        },
-        {
-          "locator": "List user preferences: pagination and required scope",
-          "source_ids": [
-            "reference"
-          ],
-          "text": "合资格管理员应核对密钥权限、组织边界与内部告知，再用测试账户验证输出。分页应沿 next_page 读取至 null，空页不一定是最后一页。本站未调用接口，未验证企业开通、跨组织返回或分页。",
-          "title": "先核对读取范围和接收权限"
-        }
-      ],
-      "name": "Claude Enterprise Compliance API",
-      "note": "原文 2026-10-15，本站核对 2026-10-19；beta 平台功能，未作账户或权限实测。同事件信息卡保留来源与适用边界。",
-      "organization": "Anthropic",
-      "publication": {
-        "first_published_at": "2026-10-19T03:12:12.824121+00:00",
-        "hot_card_first_published_at": "2026-10-19T03:12:12.824160+00:00",
-        "hot_card_selected_at": "2026-10-19T03:12:12.824160+00:00",
-        "updated_at": "2026-10-19T03:12:12.824121+00:00"
-      },
-      "reading_materials": [],
-      "related": [
-        {
-          "id": "CW-M02",
-          "name": "Claude",
-          "url": "https://fieldtofit.top/watch/CW-M02"
-        }
-      ],
-      "source_published_at": "2026-10-15",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "release",
-          "title": "Claude Platform release notes · 2026-10-15",
-          "url": "https://platform.claude.com/docs/en/release-notes/overview"
-        },
-        {
-          "coverage": "link_only",
-          "id": "reference",
-          "title": "Compliance API · List user preferences / Required scope",
-          "url": "https://platform.claude.com/docs/en/manage-claude/compliance-org-data"
-        }
-      ],
-      "state": "published",
-      "summary": "Anthropic 于 2026-10-15 为 Enterprise 组织开放 user_preferences beta，可读 Claude 个人指令和 Cowork 全局指令。需要专用凭据与用户数据读取权限；这项平台功能不改变模型版本或价格。",
-      "title": "Claude Enterprise 新增指令读取：一起看专用权限与账户级范围",
-      "translations": {
-        "en": {
-          "fields": {
-            "Anthropic 于 2026-10-15 为 Enterprise 组织开放 user_preferences beta，可读 Claude 个人指令和 Cowork 全局指令。需要专用凭据与用户数据读取权限；这项平台功能不改变模型版本或价格。": "On 2026-10-15, Anthropic introduced user_preferences beta for Enterprise organizations to read Instructions for Claude and Cowork Global instructions. Dedicated credentials and user-data read scope are required; this platform feature changes neither model versions nor prices.",
-            "Claude Enterprise 新增指令读取：一起看专用权限与账户级范围": "Claude Enterprise adds instruction access: check dedicated permissions and account-level scope",
-            "Claude Enterprise 组织的 Compliance API user_preferences beta；涉及 Claude 个人指令及 Cowork 全局指令。": "Claude Enterprise Compliance API user_preferences beta; covers Instructions for Claude and Cowork Global instructions.",
-            "专用凭据与 beta": "Dedicated key and beta",
-            "两类指令与专用授权": "Two instruction settings and dedicated authorization",
-            "企业合规与管理员": "Enterprise compliance and administrators",
-            "企业合规接口新增指令读取，先核对谁能看、能看到什么": "Enterprise instruction access: check who can see what",
-            "使用 Compliance Access Key，并具备 read:compliance_user_data。": "Requires a Compliance Access Key and read:compliance_user_data.",
-            "使用组织账户的成员": "Organization account members",
-            "先核对读取范围和接收权限": "Check scope and recipient access first",
-            "先由合资格管理员确认权限与组织范围，再在测试账户核对输出；本站未调用此接口。": "Have qualified administrators check permissions and organization scope, then verify output with a test account; FieldToFit has not called this endpoint.",
-            "原文 2026-10-15，本站核对 2026-10-19；beta 平台功能，未作账户或权限实测。同事件信息卡保留来源与适用边界。": "Source 2026-10-15; checked 2026-10-19. A beta platform feature without account or permission testing; The information card retains sources and adoption boundaries.",
-            "可返回组织现有成员保存的两类指令文字。": "Returns the two kinds of instruction text saved by current organization members.",
-            "合资格管理员应核对密钥权限、组织边界与内部告知，再用测试账户验证输出。分页应沿 next_page 读取至 null，空页不一定是最后一页。本站未调用接口，未验证企业开通、跨组织返回或分页。": "Qualified administrators should check key scopes, organizational boundaries and internal notice, then verify output with a test account. Follow next_page until null; an empty page need not be the last. FieldToFit has not tested provisioning, cross-organization results or pagination.",
-            "同一成员加入多个组织时，可能在各组织返回相同偏好。": "The same preferences can appear under each organization a member belongs to.",
-            "官方公告与接口文档交叉核对；未实测企业账户、跨组织输出或分页": "Official release notes and endpoint documentation cross-checked; enterprise access, cross-organization output and pagination are untested.",
-            "当前为 beta；普通 Admin API key 不可替代专用凭据。": "Currently beta; an ordinary Admin API key cannot replace the dedicated credential.",
-            "接口读取当前组织成员保存的 conversation_preferences 与 cowork_global_instructions。须使用 Compliance Access Key 并具备 read:compliance_user_data；普通 Admin API key 不可替代。": "The endpoint reads current members’ conversation_preferences and cowork_global_instructions. It requires a Compliance Access Key with read:compliance_user_data; an ordinary Admin API key is not a substitute.",
-            "新增读取内容": "New instruction access",
-            "核对访问范围、内部告知及接收系统权限。": "Check access scope, internal notice and recipient-system permissions.",
-            "检查自己的指令内容，理解其可见边界。": "Review your instructions and understand their visibility boundaries.",
-            "注意账户级范围": "Account-level scope matters",
-            "读取范围": "Read scope",
-            "账户级内容与组织成员关系分开": "Separate account-level text from organization membership",
-            "这两项是账户级设置，同一成员属于多个组织时可返回相同文字。默认只返回设置了至少一项的当前成员；这不等于全部个人聊天向组织公开。": "Both settings belong to the account, so the same text can appear under each organization a member belongs to. By default, only current members with at least one setting are returned; this does not make all personal chats public.",
-            "需要专用权限": "Dedicated permission required",
-            "默认仅列已设置偏好的当前成员；这不是全部个人聊天公开，也不是新增模型能力。": "By default, lists current members with saved preferences. This is not all personal chats becoming public or a new model capability."
-          },
-          "reviewed_at": "2026-10-19T02:50:10.077592+00:00",
-          "source_hash": "2d3d4d489102747e78a77105bee83202b422c5bea42578979a4b8a27ddbd9e58",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
-      "_position": 1,
       "category": "model",
       "checked_at": "2026-10-17",
       "codex_28_days": {
@@ -1296,100 +2506,6 @@
     },
     {
       "_position": 1,
-      "category": "tool",
-      "checked_at": "2026-10-19",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-14",
-      "highlight": true,
-      "id": "D-197",
-      "interpretation": [
-        {
-          "locator": "What you get: SDK tracing / API tracing; Release notes: 2026-10-14",
-          "source_ids": [
-            "overview",
-            "release"
-          ],
-          "text": "SDK 可追踪客户端工具，API 可提供每次模型运行、Managed Agents 轮次与服务端工具。两者可以接入同一追踪；排查耗时与失败不等于保证提速。",
-          "title": "SDK 与服务端覆盖互补"
-        },
-        {
-          "locator": "Content modes; API setup; Compatibility",
-          "source_ids": [
-            "overview",
-            "api"
-          ],
-          "text": "API 侧目标由管理员配置。默认 Metadata only 不含提示与响应；Full content 可包括输入输出，并受内容大小与组织数据限制。数据到达后服从接收服务自己的访问与保留规则。",
-          "title": "内容模式决定会导出什么"
-        },
-        {
-          "locator": "Delivery and health; Compatibility: excludes Covered Models",
-          "source_ids": [
-            "api"
-          ],
-          "text": "导出是 best effort，可能丢失 span，同一 span 也可能重复到达，可用 trace ID 与 span ID 去重。本站未实测导出、第三方费用或字段完整率；Managed Agents 不因这项能力变成 ZDR。",
-          "title": "追踪不保证完整审计"
-        }
-      ],
-      "name": "Claude OpenTelemetry export",
-      "note": "原文 2026-10-14，本站核对 2026-10-19；平台 beta，保留覆盖差异、内容模式与未实测边界，不变更模型分数。",
-      "organization": "Anthropic",
-      "publication": {
-        "first_published_at": "2026-10-19T03:11:21.600210+00:00",
-        "updated_at": "2026-10-19T03:11:21.600210+00:00"
-      },
-      "reading_materials": [],
-      "related": [
-        {
-          "id": "CW-M02",
-          "name": "Claude",
-          "url": "https://fieldtofit.top/watch/CW-M02"
-        }
-      ],
-      "source_published_at": "2026-10-14",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "overview",
-          "title": "OpenTelemetry for the Claude API · coverage / content modes",
-          "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry"
-        },
-        {
-          "coverage": "link_only",
-          "id": "api",
-          "title": "OpenTelemetry API setup · Delivery / Compatibility",
-          "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry/api"
-        },
-        {
-          "coverage": "link_only",
-          "id": "release",
-          "title": "Claude Platform release notes · 2026-10-14",
-          "url": "https://platform.claude.com/docs/en/release-notes/overview"
-        }
-      ],
-      "state": "published",
-      "summary": "Anthropic 于 2026-10-14 开放 OpenTelemetry 导出 beta，支持 Messages API 及 Managed Agents 追踪；SDK 与 API 覆盖互补，默认仅元数据，Full content 可含模型输入输出。",
-      "title": "Claude 平台 OpenTelemetry 导出 beta：追踪请求，先选内容范围",
-      "translations": {
-        "en": {
-          "fields": {
-            "API 侧目标由管理员配置。默认 Metadata only 不含提示与响应；Full content 可包括输入输出，并受内容大小与组织数据限制。数据到达后服从接收服务自己的访问与保留规则。": "Administrators configure API destinations. Metadata only excludes prompts and responses by default; Full content can include them, subject to content-size and organizational data restrictions. Delivered data follows the recipient service’s access and retention rules.",
-            "Anthropic 于 2026-10-14 开放 OpenTelemetry 导出 beta，支持 Messages API 及 Managed Agents 追踪；SDK 与 API 覆盖互补，默认仅元数据，Full content 可含模型输入输出。": "On 2026-10-14, Anthropic introduced OpenTelemetry export beta for Messages API and Managed Agents traces. SDK and API coverage complement each other; metadata is the default, while Full content can include model prompts and responses.",
-            "Claude 平台 OpenTelemetry 导出 beta：追踪请求，先选内容范围": "Claude OpenTelemetry export beta: trace requests and choose content scope",
-            "SDK 与服务端覆盖互补": "SDK and API coverage complement each other",
-            "SDK 可追踪客户端工具，API 可提供每次模型运行、Managed Agents 轮次与服务端工具。两者可以接入同一追踪；排查耗时与失败不等于保证提速。": "The SDK traces client tools; the API provides model runs, Managed Agents turns and server tools. Both can join one trace. Diagnosing latency and failures does not guarantee faster execution.",
-            "内容模式决定会导出什么": "Content mode determines exported data",
-            "原文 2026-10-14，本站核对 2026-10-19；平台 beta，保留覆盖差异、内容模式与未实测边界，不变更模型分数。": "Source 2026-10-14; checked 2026-10-19. Platform beta with coverage differences, content modes and untested limits retained; no model-score changes.",
-            "导出是 best effort，可能丢失 span，同一 span 也可能重复到达，可用 trace ID 与 span ID 去重。本站未实测导出、第三方费用或字段完整率；Managed Agents 不因这项能力变成 ZDR。": "Export is best effort: spans may be lost or delivered more than once. Deduplicate with trace and span IDs. FieldToFit has not tested export, third-party fees or field completeness; this feature does not make Managed Agents ZDR eligible.",
-            "追踪不保证完整审计": "Tracing is not a completeness guarantee"
-          },
-          "reviewed_at": "2026-10-19T02:50:00.466980+00:00",
-          "source_hash": "038755b1179b34b3f3ce9e65dcd2cd27e6f4a566aedb05d5e941f141c37554d4",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
-      "_position": 1,
       "category": "model",
       "checked_at": "2026-10-18",
       "editor": "FieldToFit",
@@ -1563,8 +2679,6 @@
       "title": "官方 Day 14：桌面应用支持编辑线程中的历史消息",
       "translations": {
         "en": {
-          "state": "reviewed",
-          "source_hash": "763cb478f41465a4688edf830bd254c5cfb7a544020f31a63d979002ed32b6bb",
           "fields": {
             "Day 14 · 编辑历史消息；丢弃编辑点后的输出与工具调用": "Day 14: edit earlier messages; discard later outputs and tool calls",
             "Tibo 官方 Day 14 消息编辑公告": "Tibo official Day 14 announcement on editing messages",
@@ -1576,7 +2690,10 @@
             "官方 Day 14：桌面应用支持编辑线程中的历史消息": "Official Day 14: edit earlier messages in desktop threads",
             "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
             "直接读取X原帖公开结构化数据，与页面发布时间交叉核对；仅展示短摘录，中文为本站译文。": "The original X post and its public structured data were read directly and cross-checked against the page timestamp. Only a short excerpt is shown; the Chinese translation is by FieldToFit."
-          }
+          },
+          "reviewed_at": "2026-10-20T04:18:03.674399+00:00",
+          "source_hash": "763cb478f41465a4688edf830bd254c5cfb7a544020f31a63d979002ed32b6bb",
+          "state": "reviewed"
         }
       }
     },
@@ -2205,270 +3322,6 @@
       }
     },
     {
-      "_position": 1,
-      "category": "model",
-      "checked_at": "2026-10-18",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-17",
-      "highlight": true,
-      "id": "D-187",
-      "interpretation": [
-        {
-          "locator": "Model card: evaluation results and harness notes",
-          "source_ids": [
-            "model-card"
-          ],
-          "text": "DeepSWE v1.1 为 77.0，对上一检查点 74.2，使用 Mini-SWE-V2；Terminal-Bench 4.0 为 42.3，对 31.2，使用 Claude Code。不同环境的数字不能合成同条件排名，本站未复现。",
-          "title": "实验分数连同测试环境阅读"
-        },
-        {
-          "locator": "Model card: tokenizer, encoding and deployment notes",
-          "source_ids": [
-            "model-card"
-          ],
-          "text": "包内不提供 Jinja 聊天模板，应参考官方编码器或 deepseek-recipe。格式转换不替代推理服务、工具执行或网络传输，接入方仍需实现这些环节。",
-          "title": "自部署先对齐消息格式"
-        },
-        {
-          "locator": "Official announcement and model-card scope",
-          "source_ids": [
-            "announcement",
-            "model-card"
-          ],
-          "text": "在 CW-M06 追加 1017 检查点，保留 V4.1-Flash 旧节点及 D-90 报告。准确 API 型号、账户切换与部署资源仍待实际核对；本条不刷新模型分数图。",
-          "title": "接续原模型档案"
-        }
-      ],
-      "name": "DeepSeek-V4.1-Flash-1017",
-      "note": "作者结果未独立复现；模型、工具接口和运行器版本分别表达。",
-      "organization": "DeepSeek",
-      "publication": {
-        "first_published_at": "2026-10-18T03:30:41.656179+00:00",
-        "updated_at": "2026-10-18T03:30:41.656179+00:00"
-      },
-      "reading_materials": [],
-      "related": [
-        {
-          "id": "CW-M06",
-          "name": "DeepSeek",
-          "url": "https://fieldtofit.top/watch/CW-M06"
-        }
-      ],
-      "source_published_at": "2026-10-17",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "announcement",
-          "title": "DeepSeek official announcement · 2026-10-17",
-          "url": "https://api-docs.deepseek.com/news/news261017/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "model-card",
-          "title": "DeepSeek-V4.1-Flash-1017 model card",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
-        }
-      ],
-      "state": "published",
-      "summary": "DeepSeek 于 2026-10-17 发布新检查点，官网、App 和 API 已提供；模型卡标注 MIT。作者称通过带自反馈的强化学习改善端到端项目开发。",
-      "title": "DeepSeek-V4.1-Flash-1017：编程与 Agent 检查点更新，部署需核对提示格式",
-      "translations": {
-        "en": {
-          "fields": {
-            "DeepSWE v1.1 为 77.0，对上一检查点 74.2，使用 Mini-SWE-V2；Terminal-Bench 4.0 为 42.3，对 31.2，使用 Claude Code。不同环境的数字不能合成同条件排名，本站未复现。": "DeepSWE v1.1 scores 77.0 versus the previous checkpoint's 74.2 using Mini-SWE-V2; Terminal-Bench 4.0 scores 42.3 versus 31.2 using Claude Code. Different harnesses do not form a like-for-like overall ranking; FieldToFit has not reproduced the results.",
-            "DeepSeek 于 2026-10-17 发布新检查点，官网、App 和 API 已提供；模型卡标注 MIT。作者称通过带自反馈的强化学习改善端到端项目开发。": "DeepSeek released the checkpoint on 2026-10-17 for its website, app and API. The model card specifies MIT. The author reports improved end-to-end project development through reinforcement learning with self-feedback.",
-            "DeepSeek-V4.1-Flash-1017：编程与 Agent 检查点更新，部署需核对提示格式": "DeepSeek-V4.1-Flash-1017: a coding and agent checkpoint with deployment-format requirements",
-            "作者结果未独立复现；模型、工具接口和运行器版本分别表达。": "Author results have not been independently reproduced; model, tool-interface and harness versions are distinguished.",
-            "包内不提供 Jinja 聊天模板，应参考官方编码器或 deepseek-recipe。格式转换不替代推理服务、工具执行或网络传输，接入方仍需实现这些环节。": "The package does not provide a Jinja chat template; use the official encoder or deepseek-recipe. Format conversion does not replace inference serving, tool execution or network transport, which remain the integrator's responsibility.",
-            "在 CW-M06 追加 1017 检查点，保留 V4.1-Flash 旧节点及 D-90 报告。准确 API 型号、账户切换与部署资源仍待实际核对；本条不刷新模型分数图。": "Append the 1017 checkpoint to CW-M06 while retaining the V4.1-Flash history and D-90 report. Exact API identifiers, account switching and deployment resources still require verification; this update does not refresh model score charts.",
-            "实验分数连同测试环境阅读": "Read scores with their evaluation harness",
-            "接续原模型档案": "Continue the existing model profile",
-            "自部署先对齐消息格式": "Align message formatting before self-deployment"
-          },
-          "reviewed_at": "2026-10-18T03:09:44.136621+00:00",
-          "source_hash": "9be91b543e2a6ab759e18414c7e5a47e8e01b726c120e1ca331b88774b893496",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
-      "_position": 1,
-      "category": "tool",
-      "checked_at": "2026-10-18",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-17",
-      "highlight": true,
-      "hot_card": {
-        "audiences": [
-          {
-            "detail": "分别核对搜索质量、正文完整性和工具请求量。",
-            "title": "接入 Agent／RAG 的人"
-          },
-          {
-            "detail": "先确认是否使用 DeepSeek API 及上述服务端工具路径。",
-            "title": "已有编程工具用户"
-          }
-        ],
-        "changes": [
-          {
-            "detail": "Search 返回结构化结果；Fetch 把单页内容转成 Markdown。",
-            "title": "搜索与取文各司其职"
-          },
-          {
-            "detail": "两接口各为每千次 0.75 美元；失败、空搜索和超时不收费，结果条数不影响单次价格。",
-            "title": "按成功请求计费"
-          },
-          {
-            "detail": "经 Harness、Claude Code 或 Codex 调用 DeepSeek 服务端工具，11 月 1 日北京时间 00:00 起计费。",
-            "title": "指定工具路径暂时免费"
-          }
-        ],
-        "checked_at": "2026-10-18",
-        "event_date": "2026-10-17",
-        "evidence": [
-          {
-            "locator": "Search & Fetch：Authentication、Billing、Rate Limits；10 月 17 日发布公告。",
-            "source_id": "deepseek-search"
-          }
-        ],
-        "featured_rank": 2,
-        "headline": "给 Agent 接上联网工具，先看何时开始计费",
-        "limits": [
-          {
-            "detail": "不能据此把所有直接调用、模型推理或其他厂商请求视为免费。",
-            "title": "免费有范围"
-          },
-          {
-            "detail": "Search、Fetch 各 5 QPS，按账户算；Fetch 另受目标域名限速和访问规则限制。",
-            "title": "限速与目标网站条件"
-          }
-        ],
-        "next_step": "先试一次查询和单页取文，再按 11 月 1 日后的费率估算预算。",
-        "revised_at": "2026-10-18",
-        "scope": "DeepSeek Search／Fetch 面向有 DeepSeek API 账户的 Agent 与 RAG 应用；优惠按调用路径区分。",
-        "share": {
-          "content_revision": "504d62293b266fdad09e2ebdc7fe165020c9cd64f085ebd20ff6af7b704e48b9",
-          "en": {
-            "sha256": "645de1b53653aff321843e694612d71e65a8423b7d5542556704722a2053e07d",
-            "text_revision": "b5ddca27af5fb9e7ef1e645e8a281d2d73d8891e1ce733099871744ebec0c53e",
-            "url": "/hot-cards/d-188-504d62293b26-en.png"
-          },
-          "zh": {
-            "sha256": "b1178411cbb5191c68319f5347d733a95b7ef4f3d643e6ba3c47ad6c0558c5b7",
-            "url": "/hot-cards/d-188-504d62293b26-zh.png"
-          }
-        },
-        "status": "current",
-        "update_note": "",
-        "verification": "按官方材料整理；本站未调用、核账或复测搜索与取文质量。"
-      },
-      "id": "D-188",
-      "interpretation": [
-        {
-          "locator": "Search & Fetch: Billing",
-          "source_ids": [
-            "deepseek-search"
-          ],
-          "text": "两个接口分别为每 1,000 次成功请求 0.75 美元。Search 须返回非空结果，Fetch 须取得正文；失败、空搜索和超时不计费，结果条数不改变单次请求价格。",
-          "title": "成功请求才计费"
-        },
-        {
-          "locator": "Search & Fetch: Billing; server-side tool-call offer",
-          "source_ids": [
-            "deepseek-search"
-          ],
-          "text": "经 DeepSeek Harness、Claude Code 或 Codex 使用 DeepSeek API 的服务端工具调用目前免费，北京时间 2026-11-01 00:00 起计费。不能扩写为全部直接接口、模型推理或其他厂商调用免费。",
-          "title": "临时优惠按调用路径区分"
-        },
-        {
-          "locator": "Search & Fetch: Rate Limits; release announcement",
-          "source_ids": [
-            "deepseek-search",
-            "announcement"
-          ],
-          "text": "Search、Fetch 各为账户级 5 QPS；Fetch 另受目标域名限速与访问规则约束。官方建议新模型配合 Harness v0.2.1-rc.1 或更高；本站未核完整发行包，也未调用、核账或复测取文质量。",
-          "title": "限流和采用条件继续保留"
-        }
-      ],
-      "name": "DeepSeek Search / Fetch",
-      "note": "同一事件的信息卡与本条共用动态编号；优惠、限流和未实测范围随正文保留。",
-      "organization": "DeepSeek",
-      "publication": {
-        "first_published_at": "2026-10-18T03:29:30.154135+00:00",
-        "hot_card_first_published_at": "2026-10-18T03:29:30.154167+00:00",
-        "hot_card_selected_at": "2026-10-18T03:29:30.154167+00:00",
-        "updated_at": "2026-10-18T03:29:30.154135+00:00"
-      },
-      "reading_materials": [],
-      "related": [
-        {
-          "id": "CW-M06",
-          "name": "DeepSeek",
-          "url": "https://fieldtofit.top/watch/CW-M06"
-        },
-        {
-          "id": "CW-H01",
-          "name": "DeepSeek Harness",
-          "url": "https://fieldtofit.top/watch/CW-H01"
-        }
-      ],
-      "source_published_at": "2026-10-17",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "deepseek-search",
-          "title": "DeepSeek Search & Fetch · Authentication / Billing / Rate Limits",
-          "url": "https://api-docs.deepseek.com/guides/search/"
-        },
-        {
-          "coverage": "link_only",
-          "id": "announcement",
-          "title": "DeepSeek official announcement · 2026-10-17",
-          "url": "https://api-docs.deepseek.com/news/news261017/"
-        }
-      ],
-      "state": "published",
-      "summary": "2026-10-17 公告开放 Search 与 Fetch：搜索返回结构化结果，取文返回单页 Markdown。两接口使用 DeepSeek API 密钥，按成功请求分别计费。",
-      "title": "DeepSeek Search／Fetch：开放联网接口，临时免费仅限指定服务端工具路径",
-      "translations": {
-        "en": {
-          "fields": {
-            "2026-10-17 公告开放 Search 与 Fetch：搜索返回结构化结果，取文返回单页 Markdown。两接口使用 DeepSeek API 密钥，按成功请求分别计费。": "The 2026-10-17 announcement opens Search and Fetch: structured search results and single-page Markdown retrieval. Both use a DeepSeek API key and are billed separately per successful request.",
-            "DeepSeek Search／Fetch 面向有 DeepSeek API 账户的 Agent 与 RAG 应用；优惠按调用路径区分。": "DeepSeek Search / Fetch serve Agent and RAG applications with a DeepSeek API account; the offer depends on the call path.",
-            "DeepSeek Search／Fetch：开放联网接口，临时免费仅限指定服务端工具路径": "DeepSeek Search / Fetch: web tools with a limited server-side introductory offer",
-            "Search & Fetch：Authentication、Billing、Rate Limits；10 月 17 日发布公告。": "Search & Fetch: Authentication, Billing, Rate Limits; announcement dated 10/17.",
-            "Search 返回结构化结果；Fetch 把单页内容转成 Markdown。": "Search returns structured results; Fetch converts a single page into Markdown.",
-            "Search、Fetch 各 5 QPS，按账户算；Fetch 另受目标域名限速和访问规则限制。": "Search and Fetch each allow 5 QPS per account; Fetch also respects destination-domain limits and access rules.",
-            "Search、Fetch 各为账户级 5 QPS；Fetch 另受目标域名限速与访问规则约束。官方建议新模型配合 Harness v0.2.1-rc.1 或更高；本站未核完整发行包，也未调用、核账或复测取文质量。": "Search and Fetch each allow 5 QPS per account; Fetch also respects destination-domain limits and access rules. The author recommends Harness v0.2.1-rc.1 or later for the new model. FieldToFit has not checked the complete release package or tested calls, billing or retrieval quality.",
-            "不能据此把所有直接调用、模型推理或其他厂商请求视为免费。": "It does not make all direct calls, model inference or other vendors' requests free.",
-            "两个接口分别为每 1,000 次成功请求 0.75 美元。Search 须返回非空结果，Fetch 须取得正文；失败、空搜索和超时不计费，结果条数不改变单次请求价格。": "Each interface costs USD 0.75 per 1,000 successful requests. Search requires non-empty results and Fetch requires retrieved content. Failures, empty searches and timeouts are not billed; result count does not change the per-request price.",
-            "两接口各为每千次 0.75 美元；失败、空搜索和超时不收费，结果条数不影响单次价格。": "Each interface costs USD 0.75 per thousand requests; failures, empty searches and timeouts are free, and result count does not affect the per-request price.",
-            "临时优惠按调用路径区分": "The temporary offer depends on the call path",
-            "先确认是否使用 DeepSeek API 及上述服务端工具路径。": "First confirm use of the DeepSeek API and the specified server-side tool path.",
-            "先试一次查询和单页取文，再按 11 月 1 日后的费率估算预算。": "Try one query and one-page retrieval, then estimate the budget at the rates after 11/1.",
-            "免费有范围": "The free offer has a scope",
-            "分别核对搜索质量、正文完整性和工具请求量。": "Check search quality, content completeness and tool-request volume separately.",
-            "同一事件的信息卡与本条共用动态编号；优惠、限流和未实测范围随正文保留。": "The information card shares this news identity; offer scope, limits and untested aspects remain explicit.",
-            "已有编程工具用户": "Existing coding-tool users",
-            "成功请求才计费": "Billing counts successful requests",
-            "指定工具路径暂时免费": "Specified tool paths are temporarily free",
-            "按官方材料整理；本站未调用、核账或复测搜索与取文质量。": "Compiled from official materials; FieldToFit has not tested calls, audited bills or reproduced search and retrieval quality.",
-            "按成功请求计费": "Successful requests are billed",
-            "接入 Agent／RAG 的人": "Agent / RAG integrators",
-            "搜索与取文各司其职": "Search and retrieval have distinct roles",
-            "经 DeepSeek Harness、Claude Code 或 Codex 使用 DeepSeek API 的服务端工具调用目前免费，北京时间 2026-11-01 00:00 起计费。不能扩写为全部直接接口、模型推理或其他厂商调用免费。": "Server-side tool calls using the DeepSeek API through DeepSeek Harness, Claude Code or Codex are temporarily free; billing starts at 2026-11-01 00:00 Beijing time. This does not make all direct interface calls, model inference or other vendors' calls free.",
-            "经 Harness、Claude Code 或 Codex 调用 DeepSeek 服务端工具，11 月 1 日北京时间 00:00 起计费。": "DeepSeek server-side tools through Harness, Claude Code or Codex start billing at 00:00 Beijing time on 11/1.",
-            "给 Agent 接上联网工具，先看何时开始计费": "Give your agent web tools; check when billing begins",
-            "限流和采用条件继续保留": "Retain rate limits and adoption conditions",
-            "限速与目标网站条件": "Rate and destination-site conditions"
-          },
-          "reviewed_at": "2026-10-18T03:09:29.743651+00:00",
-          "source_hash": "b9cf6e0e1f73d0d604fdcf0868c4b3b02fcca90359740ff517a72981b3d02a86",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
       "_position": 2,
       "category": "model",
       "checked_at": "2026-10-17",
@@ -2587,93 +3440,6 @@
           },
           "reviewed_at": "2026-10-18T03:05:50.086948+00:00",
           "source_hash": "fed265a6e5cfbdb0f6322d00aee4e2abc70210c9d601211f488973037e6fccec",
-          "state": "reviewed"
-        }
-      }
-    },
-    {
-      "_position": 1,
-      "category": "model",
-      "checked_at": "2026-10-18",
-      "editor": "FieldToFit",
-      "event_date": "2026-10-08",
-      "highlight": true,
-      "id": "D-190",
-      "interpretation": [
-        {
-          "locator": "Changelog: 2026-10-08; Flash routing",
-          "source_ids": [
-            "changelog"
-          ],
-          "text": "gemini-3.7-flash 请求已路由至 gemini-3.8-flash，gemini-3.5-flash 路由至 gemini-3.6-flash；旧型号从 AI Studio 选择器移除。建议显式更新配置并核对行为与用量变化。",
-          "title": "旧 Flash 请求已改路由"
-        },
-        {
-          "locator": "Changelog: 2026-10-08; Deep Research deprecation",
-          "source_ids": [
-            "changelog",
-            "deprecations"
-          ],
-          "text": "deep-research-pro-preview-12-2025 将于 2026-10-23 关闭；可迁移到 deep-research-preview-04-2026 或 deep-research-max-preview-04-2026，分别侧重效率与完整性。",
-          "title": "旧 Research 预览有明确关闭日"
-        },
-        {
-          "locator": "Changelog: Deep Research migration instruction",
-          "source_ids": [
-            "changelog"
-          ],
-          "text": "Deep Research 需修改 interactions.create 的 agent 参数，而非只替换普通生成接口的 model。两个新预览的能力、费用与权限应分别核对；本站未实测迁移。",
-          "title": "迁移的是 agent 参数"
-        }
-      ],
-      "name": "Gemini API / Deep Research",
-      "note": "保留 2026-10-08 公告与旧版本历史；接口改路由不等于行为、价格或采用条件完全一致。",
-      "organization": "Google",
-      "publication": {
-        "first_published_at": "2026-10-18T03:28:26.943684+00:00",
-        "updated_at": "2026-10-18T03:28:26.943684+00:00"
-      },
-      "reading_materials": [],
-      "related": [
-        {
-          "id": "CW-M03",
-          "name": "Gemini",
-          "url": "https://fieldtofit.top/watch/CW-M03"
-        }
-      ],
-      "source_published_at": "2026-10-08",
-      "sources": [
-        {
-          "coverage": "link_only",
-          "id": "changelog",
-          "title": "Gemini API changelog · 2026-10-08",
-          "url": "https://ai.google.dev/gemini-api/docs/changelog"
-        },
-        {
-          "coverage": "link_only",
-          "id": "deprecations",
-          "title": "Gemini API deprecations",
-          "url": "https://ai.google.dev/gemini-api/docs/deprecations"
-        }
-      ],
-      "state": "published",
-      "summary": "Google 在 2026-10-08 日志说明旧 Flash 路由与 Deep Research 迁移；旧 Research 预览接近停用。本条为既有官方公告维护补录，不写作今日新模型发布。",
-      "title": "Gemini API：旧 Flash 已改路由，旧 Deep Research 预览 2026-10-23 关闭",
-      "translations": {
-        "en": {
-          "fields": {
-            "Deep Research 需修改 interactions.create 的 agent 参数，而非只替换普通生成接口的 model。两个新预览的能力、费用与权限应分别核对；本站未实测迁移。": "Deep Research migration changes the agent parameter in interactions.create, not merely the model on an ordinary generation request. Check capabilities, fees and permissions for each preview separately; FieldToFit has not tested migration.",
-            "Gemini API：旧 Flash 已改路由，旧 Deep Research 预览 2026-10-23 关闭": "Gemini API: old Flash routing changed; the old Deep Research preview closes on 2026-10-23",
-            "Google 在 2026-10-08 日志说明旧 Flash 路由与 Deep Research 迁移；旧 Research 预览接近停用。本条为既有官方公告维护补录，不写作今日新模型发布。": "Google's 2026-10-08 log describes old Flash routing and Deep Research migration. The old Research preview is nearing shutdown. This backfills an existing official notice rather than announcing a new model today.",
-            "deep-research-pro-preview-12-2025 将于 2026-10-23 关闭；可迁移到 deep-research-preview-04-2026 或 deep-research-max-preview-04-2026，分别侧重效率与完整性。": "deep-research-pro-preview-12-2025 closes on 2026-10-23. Migration targets are deep-research-preview-04-2026 and deep-research-max-preview-04-2026, emphasizing efficiency and completeness respectively.",
-            "gemini-3.7-flash 请求已路由至 gemini-3.8-flash，gemini-3.5-flash 路由至 gemini-3.6-flash；旧型号从 AI Studio 选择器移除。建议显式更新配置并核对行为与用量变化。": "gemini-3.7-flash requests route to gemini-3.8-flash and gemini-3.5-flash routes to gemini-3.6-flash; old models were removed from the AI Studio selector. Update configurations explicitly and check behavior and usage changes.",
-            "保留 2026-10-08 公告与旧版本历史；接口改路由不等于行为、价格或采用条件完全一致。": "Retain the 2026-10-08 notice and old-version history; rerouting does not imply identical behavior, prices or adoption conditions.",
-            "旧 Flash 请求已改路由": "Old Flash requests have been rerouted",
-            "旧 Research 预览有明确关闭日": "The old Research preview has a specific shutdown date",
-            "迁移的是 agent 参数": "Migrate the agent parameter"
-          },
-          "reviewed_at": "2026-10-18T03:09:09.942726+00:00",
-          "source_hash": "1beb30a569532c17f376be475538e9add5767bc9ba8ec30e3501f17792c8e16f",
           "state": "reviewed"
         }
       }
@@ -14273,7 +15039,7 @@
             "source_id": "source-1"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "合上电脑，云端任务继续跑",
         "limits": [
           {
@@ -14416,7 +15182,7 @@
             "需要定时处理资料的人": "People scheduling work"
           },
           "reviewed_at": "2026-10-12T16:34:28.121431+00:00",
-          "source_hash": "4ade9e6716df0ee39dcc18be6132f2dcacdaf053487ec8b78a37c6c61711c04d",
+          "source_hash": "52c2dc8a5d59105638f3a6c279ea2f7aea3437e4d08c1ba9d1f280871b547219",
           "state": "reviewed"
         }
       }

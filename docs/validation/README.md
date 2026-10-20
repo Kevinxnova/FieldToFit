@@ -1,5 +1,7 @@
 # 验收证据导航
 
+- [2026-10-20：MiniMax、Timestral与代码行为保真](2026-10-20-minimax-timestral-and-code.md)：获批A–C／报告1／卡1，中英图文、真实发布与首页轮替。
+
 - [2026-10-20：Codex Day 15与历史公告补录](2026-10-20-codex-day15-and-backfill.md)：v1.13.1已部署；五项发布、50条专题、全库88表备份恢复及双语／MCP／正常游标验收。
 
 - [2026-10-19：Claude动态、AI预期差距与信息卡](2026-10-19-claude-expectations-and-daily.md)：v1.12.2兼容内容／资源批次，原文、样本、分享图与实际发布／部署分阶段核验。

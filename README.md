@@ -36,15 +36,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.13.1](CHANGELOG.md#v1.13.1)** · [fieldtofit-v1.13.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.13.1)
+**当前源码版本：[v1.13.2](CHANGELOG.md#v1.13.2)** · [fieldtofit-v1.13.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.13.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 整理官方Day 15的COOKED直播公告，并补录Chrome跨标签取材与Work网页操作，保留原始事件日期。
-- 收录受影响OpenCode API客户恢复说明及MultiLangBench研究，明确适用范围、来源日期和官方结果口径。
-- 补充Day 14历史消息编辑后的输出与工具调用处理说明；网页、月历概览、原帖与AI读取沿用同一审核修订。
+- 更新获批MiniMax M3.1 Flash、Timestral动态及对应已有档案，保留价格、许可和权重开放边界。
+- 所选OpenAI代码研究复用现有事件，配四结论、同号论述与三张独立重绘，区分指标、推理条件和成本单位。
+- 发布中英信息卡，报告与卡片首页按真实回执轮替，历史索引与并行Codex专题保持。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

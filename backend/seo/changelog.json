@@ -1,7 +1,35 @@
 {
-  "version": "1.13.1",
-  "revision": "c9a6f89f4e423510ef0db2afadb3f9ac07f1bc4d6c6a5a70472873721bfa5e92",
+  "version": "1.13.2",
+  "revision": "e9403738f046974ba95df5251ce74312e4ddd16dba0fb14852c195b7c6fbe0a5",
   "items": [
+    {
+      "version": "1.13.2",
+      "date": "2026-10-20",
+      "deployed_on": "2026-10-20",
+      "copy": {
+        "zh": {
+          "title": "MiniMax、Timestral与代码行为保真报告",
+          "highlights": [
+            "更新获批MiniMax M3.1 Flash、Timestral动态及对应已有档案，保留价格、许可和权重开放边界。",
+            "所选OpenAI代码研究复用现有事件，配四结论、同号论述与三张独立重绘，区分指标、推理条件和成本单位。",
+            "发布中英信息卡，报告与卡片首页按真实回执轮替，历史索引与并行Codex专题保持。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "MiniMax, Timestral and behavior-preserving coding",
+          "highlights": [
+            "Update approved MiniMax M3.1 Flash and Timestral news with related existing profiles, retaining prices, licenses and weight-release boundaries.",
+            "Reuse the existing event for the selected OpenAI coding research, with four findings, matching arguments and three redraws; separate metrics, effort conditions and cost units.",
+            "Publish a bilingual card and rotate homepage reports and cards using actual receipts, preserving historical indexes and the concurrent Codex topic."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.13.2"
+    },
     {
       "version": "1.13.1",
       "date": "2026-10-20",

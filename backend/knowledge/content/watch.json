@@ -4927,6 +4927,27 @@
       "blocks": [
         {
           "columns": [
+            "事件／版本",
+            "原始日期",
+            "新增与采用边界",
+            "关联动态"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "低资源语言与 COBOL 迁移研究",
+              "2026-10-19",
+              "20 语言 SQLite 兼容构建与 COBOL 逐字节行为迁移两类评测；作者报告能力／成本进步，非新模型首发，未复现。",
+              "[D-202](https://fieldtofit.top/news/D-202)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本次只补充官方研究事件，保留以下 GPT 模型列表、价格、开放方式与历史版本；不更新榜单分数，也不表示整个模型家族已完成当日全量核验。"
+        },
+        {
+          "columns": [
             "版本／事件",
             "原始日期",
             "本次已核变化",
@@ -5115,10 +5136,14 @@
           "text": "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。"
         }
       ],
-      "checked_at": "2026-10-18",
+      "checked_at": "2026-10-20",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M01",
       "interpretation": [
+        {
+          "text": "数据库测试通过率与全部测试通过的迁移成功率不等同；低／更高推理强度及每样本／相对成本分别记录。本站未复现评测。",
+          "title": "编程研究：新增功能与行为保真分别验收"
+        },
         {
           "text": "本次按明确官方公告补入上表，旧正文与原始日期保留；未独立复现性能、调用或迁移。",
           "title": "已核更新与采用边界"
@@ -5404,6 +5429,21 @@
           "id": "deprecations",
           "title": "OpenAI API deprecations · 2026-10-14",
           "url": "https://developers.openai.com/api/docs/deprecations"
+        },
+        {
+          "coverage": "link_only",
+          "title": "OpenAI 低资源编程语言研究公告（10月 19日来源日期）",
+          "url": "https://openai.com/index/low-resource-programming-languages/"
+        },
+        {
+          "coverage": "link_only",
+          "title": "OpenAI MultiLangBench 官方开源仓库",
+          "url": "https://github.com/openai/MultiLangBench"
+        },
+        {
+          "coverage": "link_only",
+          "title": "OpenAI 关联研究公告帖（北京 10月 20日 06:30）",
+          "url": "https://x.com/OpenAI/status/2112310345863930168"
         }
       ],
       "state": "published",
@@ -5411,6 +5451,7 @@
         "en": {
           "fields": {
             "10月7日起向Plus、Pro、Business、Enterprise的Chat页推出，10月8日起扩展到Free、Go；企业仍受管理员设置影响。逐步推出不代表所有账户同时可用。": "Rollout starts on 10/7 in Chat for Plus, Pro, Business and Enterprise, expanding to Free and Go from 10/8. Enterprise access remains subject to administrator settings. Gradual rollout does not establish simultaneous availability for all accounts.",
+            "20 语言 SQLite 兼容构建与 COBOL 逐字节行为迁移两类评测；作者报告能力／成本进步，非新模型首发，未复现。": "Two evaluations: SQLite-compatible builds in 20 languages and byte-for-byte COBOL migration. Author-reported capability / cost gains, not a new-model launch; not reproduced.",
             "2026-10-07发布；10月8日起扩展Free／Go": "2026-10-07 released; 10/8 expands Free/Go",
             "2026-10-16 补录：GPT-Live-1.1 / Quip": "2026-10-16 addition:GPT-Live-1.1 / Quip",
             "2026-10-17 补录：gpt-live-1 / prompt-to-voice": "2026-10-17 addition: gpt-live-1 / prompt-to-voice",
@@ -5433,7 +5474,10 @@
             "GPT-6日常工作分支，保留历史节点": "GPT-6 daily work branch, keep historical nodes",
             "GPT-6较轻任务分支": "GPT-6 Lighter Task Branch",
             "OpenAI Developers 在北京时间 10 月 17 日 01:08 介绍 GPT-Live-1 的声音配置；API 日志以 10 月 16 日记录正式推出。所有 API 客户可通过文字描述生成并保存自定义声音，无需参考录音或同意录音；这种 prompt-generated 声音用于 GPT-Live，不适用于 Text to Speech、Realtime 或 Chat Completions API。可在声音 Playground 操作，或向/v1/audio/voices 提交 type=prompt 的请求，保存返回的声音 ID 并在 GPT-Live 会话复用。每个组织最多 100 种此类声音。创建声音免费，使用声音生成语音及 Playground 试听仍按正常 GPT-Live 会话计费。另新增德语、法语、印地语、日语和韩语的九种自然预设声音，可通过会话输出声音配置选用。此次是 GPT-Live-1 API 的声音能力更新，不代表昨天 GPT-Live-1.1 已开放 API；后者仍按 D-155 保留“API 即将推出”的边界。": "OpenAI Developers announced new GPT-Live-1 voice options at 01:08 Beijing time on 10/17; the API changelog records the release under 10/16. All API customers can create and save a voice from a text description in the voice Playground or through /v1/audio/voices with type=prompt, then reuse its ID in GPT-Live. No reference or consent recording is required for this workflow. Prompt-generated voices work with GPT-Live, not the Text to Speech, Realtime or Chat Completions APIs. Organizations can save up to 100. Creation is free; speech generation and Playground listening use regular session billing. Nine natural presets add German, French, Hindi, Japanese and Korean options. This is a GPT-Live-1 API voice update, not evidence that GPT-Live-1.1 has reached the API; D-155 retains its forthcoming-API qualification.",
+            "OpenAI MultiLangBench 官方开源仓库": "Official OpenAI MultiLangBench repository",
             "OpenAI textGrain：分清可选水印、欧盟上线范围与检测器权限 · 官方来源 1": "OpenAI textGrain: distinguish optional watermarks, EU online scope and detector permissions · Official source 1",
+            "OpenAI 低资源编程语言研究公告（10月 19日来源日期）": "OpenAI low-resource coding research announcement (10/19 source date)",
+            "OpenAI 关联研究公告帖（北京 10月 20日 06:30）": "Related OpenAI research post (10/20 06:30 Beijing)",
             "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。": "OpenAI announced GPT-Live-1.1 and Quip on 10/15, following Live-1 and mini. Full-duplex interaction listens, responds and handles interruptions continuously, with thinking-model delegation. The source is a system card, not verification of a public API identifier or price.",
             "OpenAI于 2026-10-16 开放prompt-to-voice：全部API客户可用文字描述生成、保存并复用声音；另增加九种德、法、印地、日、韩语自然声音。": "On 2026-10-16 OpenAI opened prompt-to-voice to all API customers: describe, save and reuse a voice. Nine natural voices in German, French, Hindi, Japanese and Korean were also added.",
             "OpenAI公布文本来源水印方案：全球API客户可为指定模型主动开启，欧盟ChatGPT与Codex合资格文本输出将在未来几周分阶段加入水印。": "OpenAI announces a text-provenance watermarking scheme. Global API customers can opt in for specified models. Eligible ChatGPT and Codex text outputs in the EU will receive watermarks in phases over the coming weeks.",
@@ -5458,8 +5502,10 @@
             "主要变化或定位": "Major changes or positioning",
             "主要能力或价格口径": "Main ability or price measurement basis",
             "事件与官方依据": "Event and official evidence",
+            "事件／版本": "Event / version",
             "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
             "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
+            "低资源语言与 COBOL 迁移研究": "Low-resource languages and COBOL migration research",
             "依据": "Evidence",
             "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
             "关联动态": "Related news",
@@ -5500,12 +5546,15 @@
             "提示生成声音只支持GPT-Live，不直接适用于TTS、Realtime或Chat Completions。录音克隆另有资格与同意流程；创建声音不支持Zero Data Retention。": "Prompt-generated voices support GPT-Live only, not TTS, Realtime or Chat Completions. Recording-based cloning has separate eligibility and consent requirements; voice creation does not support Zero Data Retention.",
             "支持异步工具调用；通过 WebSocket 在执行中接收方向调整；不支持 none 推理档位": "Asynchronous tool calls; steering during execution via WebSocket; none reasoning level unsupported",
             "支持范围和保留条件": "Supported endpoints and retention",
+            "数据库测试通过率与全部测试通过的迁移成功率不等同；低／更高推理强度及每样本／相对成本分别记录。本站未复现评测。": "Database test pass rates and all-tests migration success are distinct. Low / higher effort and per-sample / relative costs are recorded separately. FieldToFit has not reproduced the evaluations.",
+            "新增与采用边界": "New information and adoption boundaries",
             "既有语音与体验记录 → GPT-Live-1.1 / Quip": "Existing voice and experience records → GPT-Live-1.1 / Quip",
             "日期与状态": "Date and status",
             "日期与限制": "Dates and limitations",
             "本事件接续既有GPT-Live记录，保留Live-1.1／Quip及原生Decisions历史；不能由此推定GPT-Live-1.1 公开API已经上线。本站未调用或试听。": "This event extends the existing GPT-Live record while retaining Live-1.1 / Quip and native Decisions history. It does not establish availability of a public GPT-Live-1.1 API. FieldToFit has not called or auditioned it.",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M01 GPT, D-30, D-53。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M01 GPT, D-30, D-53. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次变化与用途": "Changes and uses this time",
+            "本次只补充官方研究事件，保留以下 GPT 模型列表、价格、开放方式与历史版本；不更新榜单分数，也不表示整个模型家族已完成当日全量核验。": "This adds only the official research event, preserving GPT model lists, prices, access and historical versions below. No leaderboard scores change, and this does not imply a complete daily audit of the model family.",
             "本次已核变化": "Verified change",
             "本次按明确官方公告补入上表，旧正文与原始日期保留；未独立复现性能、调用或迁移。": "This update appends the table from explicit official notices, retaining existing prose and original dates; performance, calls and migration have not been independently reproduced.",
             "检测器初期仅向获批研究者及专业组织开放；短文本和改写会影响检测。检出不证明内容准确，未检出也不证明人类独立创作。": "The detector initially opens only to approved researchers and professional organizations. Short texts and rewriting affect detection. A detection result does not prove factual accuracy; absence of detection does not establish independent human authorship.",
@@ -5530,6 +5579,7 @@
             "生产提示集未见显著退步，但合成边界难例的部分安全类别有显著退步；不能写成全面更安全，也不把测试分数当真实流量中的事故率。": "Production prompts show no significant regressions, but some safety categories regress significantly on synthetic edge cases. This is not universal safety improvement, and scores are not incident rates in real traffic.",
             "系列支持用代码组合工具调用；多 Agent 能力处于 beta": "Series support code combination tool calls; multi-Agent capabilities are in beta",
             "系统卡称Plus及以上默认 1.1，其他用户为Quip；不能据此确认全部地区与每个账户已完成切换。": "The card names 1.1 as default for Plus and higher tiers and Quip for others; this does not verify rollout in every region and account.",
+            "编程研究：新增功能与行为保真分别验收": "Coding research: validate functionality and behavior separately",
             "获取与使用": "Acquisition and use",
             "让答案可以操作": "Make the answer workable",
             "这是Chat体验更新，没有更换Work、Codex使用的模型；不能据此推断API增加同名型号。本站核对官方材料，未逐账户实测。": "This updates the Chat experience without replacing models used by Work or Codex. It does not imply a new API model with the same name. FieldToFit reviewed official materials without testing every account.",
@@ -5545,8 +5595,8 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "reviewed_at": "2026-10-18T03:08:03.014623+00:00",
-          "source_hash": "50bb0cc49110e446e1b0e7e784ce4a0ba7768a284833787ded2f475f51a2ddfd",
+          "reviewed_at": "2026-10-20T04:37:38.978220+00:00",
+          "source_hash": "c4507c583abb82bc4fc626520729fc66f4a6a92c28d53f4bcc54d96d42ecb69f",
           "state": "reviewed"
         }
       },
@@ -8504,6 +8554,27 @@
       "blocks": [
         {
           "columns": [
+            "事件／版本",
+            "原始日期",
+            "新增与采用边界",
+            "关联动态"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "M3.1 Flash",
+              "2026-10-19",
+              "API／M Plan／MiniMax Code 已列入口；每百万 token 输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元。权重待后续发布，未实测。",
+              "[D-203](https://fieldtofit.top/news/D-203)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本次新增 M3.1 Flash 事件与 API 报价，保留以下 M3、M2.7 及音乐分支的原始版本和历史记录。仅复核此次发布，不代表 MiniMax 全部入口今日已逐项核验。"
+        },
+        {
+          "columns": [
             "版本 / 分支",
             "发布日期",
             "对照关系",
@@ -8536,10 +8607,14 @@
           "text": "关联：D-08 MiniMax Music 3 是另一条产品动态，不混入 M 系列升级序列。"
         }
       ],
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-20",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M08",
       "interpretation": [
+        {
+          "text": "调用入口已列出，API 单价与订阅价分开；权重仍待后续发布，作者性能和本站测试分开。",
+          "title": "M3.1 Flash 调用入口与权重状态"
+        },
         {
           "text": "MSA 的块级 KV 筛选，是它在长上下文之外值得关注的技术材料。",
           "title": "M3 可以沿“长输入如何计算”继续读。"
@@ -8561,9 +8636,53 @@
           "coverage": "link_only",
           "title": "M2.7 发布",
           "url": "https://www.minimax.io/news/minimax-m27-en"
+        },
+        {
+          "coverage": "link_only",
+          "title": "MiniMax M3.1 Flash · official release · 2026-10-19",
+          "url": "https://www.minimax.io/blog/minimax-m31f"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "API／M Plan／MiniMax Code 已列入口；每百万 token 输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元。权重待后续发布，未实测。": "API / M Plan / MiniMax Code routes listed; per million tokens USD 0.15 input, USD 0.60 output, USD 0.015 cached input. Weights to follow; untested.",
+            "Agent 团队、复杂技能和动态工具搜索；软件与办公任务材料": "Agent team, complex skills and dynamic tool search; software and office task materials",
+            "M 系列新节点": "M series new node",
+            "M 系列此前节点": "M series previous node",
+            "M2.7 发布": "M2.7 Release",
+            "M2.7 文章描述厂商将模型用于训练实验流程；这不能被简写成用户运行时模型会自动更新自身权重。": "The M2.7 article describes the vendor using models in its training-experiment workflow. This does not mean a user-facing model automatically updates its weights at runtime.",
+            "M3 发布": "M3 Release",
+            "M3 可以沿“长输入如何计算”继续读。": "M3 can continue to read along \"How to calculate long input\".",
+            "M3.1 Flash 调用入口与权重状态": "M3.1 Flash access and weight status",
+            "MSA 的块级 KV 筛选，是它在长上下文之外值得关注的技术材料。": "MSA's block-level KV screening is a technical material worthy of attention outside the long-term context.",
+            "MSA 稀疏注意力，1M 上下文；图像、视频理解及桌面操作能力": "MSA sparse attention, 1M context; image, video understanding and desktop operation ability",
+            "MiniMax 的模型系列；首批展开通用与 Agent 模型主线，音乐等生成分支后续独立建表。": "MiniMax's model family. Initial coverage details the general-purpose and agent-model main line; music and other generation branches will have separate tables later.",
+            "[M2.7 发布](https://www.minimax.io/news/minimax-m27-en)": "[M2.7 Release](https://www.minimax.io/news/minimax-m27-en)",
+            "[M3 发布](https://www.minimax.io/blog/minimax-m3)": "[M3 Release](https://www.minimax.io/blog/minimax-m3)",
+            "“参与自我改进”要读清发生在哪里。": "\"Participation in self-improvement\" should be read clearly where it happened.",
+            "主要变化": "Main changes",
+            "事件／版本": "Event / version",
+            "依据": "Evidence",
+            "关联动态": "Related news",
+            "关联：D-08 MiniMax Music 3 是另一条产品动态，不混入 M 系列升级序列。": "Related: D-08 MiniMax Music 3 is another product dynamic, which is not mixed with the M series upgrade sequence.",
+            "原始日期": "Original date",
+            "发布日期": "Release date",
+            "官方发布与产品入口": "Official release and product entrance",
+            "官方文章列出 API / Code / Token Plan；权重下载状态不由文章宣传推定": "The official article lists API / Code / Token Plan; weights download status is not presumed by the article publicity",
+            "对照关系": "Contrast relationship",
+            "新增与采用边界": "New information and adoption boundaries",
+            "本次新增 M3.1 Flash 事件与 API 报价，保留以下 M3、M2.7 及音乐分支的原始版本和历史记录。仅复核此次发布，不代表 MiniMax 全部入口今日已逐项核验。": "This adds the M3.1 Flash event and API rates while preserving original versions and history for M3, M2.7 and the music branch below. Only this release was checked, not every MiniMax source today.",
+            "版本 / 分支": "Version / Branch",
+            "获取与使用": "Acquisition and use",
+            "调用入口已列出，API 单价与订阅价分开；权重仍待后续发布，作者性能和本站测试分开。": "Access routes are listed; API and subscription prices are separate. Weights will follow; vendor performance is distinct from site tests."
+          },
+          "reviewed_at": "2026-10-20T04:27:03.075405+00:00",
+          "source_hash": "0270bca1a250fa95736661a51d78aee3478d18ebeb09868bf87f6aac803ba606",
+          "state": "reviewed"
+        }
+      },
       "type": "model"
     },
     {
@@ -13537,7 +13656,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-19",
+  "reviewed_at": "2026-10-20",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

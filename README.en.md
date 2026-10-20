@@ -36,15 +36,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.13.1](CHANGELOG.md#v1.13.1)** · [fieldtofit-v1.13.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.13.1)
+**Current source version: [v1.13.2](CHANGELOG.md#v1.13.2)** · [fieldtofit-v1.13.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.13.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add the official Day 15 COOKED broadcast announcement and backfill Chrome tab research and Work browser actions with their original event dates.
-- Cover recovery for affected OpenCode API customers and MultiLangBench research, preserving scope, source-date precision and attribution of official results.
-- Clarify how Day 14 message editing treats later outputs and tool calls; keep the website, calendar summaries, source posts and AI reading on the same reviewed revision.
+- Update approved MiniMax M3.1 Flash and Timestral news with related existing profiles, retaining prices, licenses and weight-release boundaries.
+- Reuse the existing event for the selected OpenAI coding research, with four findings, matching arguments and three redraws; separate metrics, effort conditions and cost units.
+- Publish a bilingual card and rotate homepage reports and cards using actual receipts, preserving historical indexes and the concurrent Codex topic.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

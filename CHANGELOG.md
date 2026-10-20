@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.13.2"></a>
+## v1.13.2 · MiniMax、Timestral与代码行为保真报告 · 2026-10-20
+<!-- site-deployed:2026-10-20 -->
+<!-- public-title:en: MiniMax, Timestral and behavior-preserving coding -->
+<!-- release-summary:zh:start -->
+- 更新获批MiniMax M3.1 Flash、Timestral动态及对应已有档案，保留价格、许可和权重开放边界。
+- 所选OpenAI代码研究复用现有事件，配四结论、同号论述与三张独立重绘，区分指标、推理条件和成本单位。
+- 发布中英信息卡，报告与卡片首页按真实回执轮替，历史索引与并行Codex专题保持。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Update approved MiniMax M3.1 Flash and Timestral news with related existing profiles, retaining prices, licenses and weight-release boundaries.
+- Reuse the existing event for the selected OpenAI coding research, with four findings, matching arguments and three redraws; separate metrics, effort conditions and cost units.
+- Publish a bilingual card and rotate homepage reports and cards using actual receipts, preserving historical indexes and the concurrent Codex topic.
+<!-- release-summary:en:end -->
+
+接续REQ-11、REQ-6-34／REQ-11-6及REQ-22-8，保留v1.13.1独立Codex专题与v1.13.0日报能力，无数据库迁移或新主要流程。动态C与所选报告复用同一D-ID，卡1与动态A共用事件；报告2、榜单、未选卡和日程不扩大。完整生产备份与独立33表内容恢复均已核验。
+
+实际原文、中英稿、图表、分享图、发布与首页轮替见[本批验收](docs/validation/2026-10-20-minimax-timestral-and-code.md)；保存、预览和部署不当作内容已上站。
+
 <a id="v1.13.1"></a>
 ## v1.13.1 · Codex Day 15与历史公告补录 · 2026-10-20
 <!-- public-title:en: Codex Day 15 and historical announcement updates -->
