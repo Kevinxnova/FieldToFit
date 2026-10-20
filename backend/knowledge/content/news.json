@@ -3,6 +3,383 @@
   "items": [
     {
       "category": "research",
+      "checked_at": "2026-10-20",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://openai.com/index/low-resource-programming-languages/",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: open MultiLangBench and low-resource coding evaluations",
+        "overview_zh": "其他 OpenAI · MultiLangBench 开源与低资源语言评测",
+        "source_posts": [],
+        "timestamp_basis": "source_date",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-202",
+      "interpretation": [
+        {
+          "locator": "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。",
+          "source_ids": [
+            "oct20-1",
+            "oct20-2",
+            "oct20-3"
+          ],
+          "text": "OpenAI在 10月 19日研究公告中发布MultiLangBench评测方案与测试集：让模型用 20种语言实现兼容SQLite的引擎，开发者可从官方GitHub仓库查看测试与运行方法。公告另报告COBOL代码迁移评测，两项评测不可混为一套已开源测试。OpenAI称GPT-6 Astra在MultiLangBench的最高推理设置下平均通过率为 87.4%；这是官方结果，本站未复测。此条为研究与评测资源发布，不代表新模型上线；只保留 10月 19日来源日期，不推造北京时间。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "OpenAI / MultiLangBench",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-20T04:22:28.211155+00:00",
+        "updated_at": "2026-10-20T04:22:28.211155+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-19",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct20-1",
+          "title": "OpenAI 低资源编程语言研究公告（10月 19日来源日期）",
+          "url": "https://openai.com/index/low-resource-programming-languages/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-2",
+          "title": "OpenAI MultiLangBench 官方开源仓库",
+          "url": "https://github.com/openai/MultiLangBench"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-3",
+          "title": "OpenAI 关联研究公告帖（北京 10月 20日 06:30）",
+          "url": "https://x.com/OpenAI/status/2112310345863930168"
+        }
+      ],
+      "state": "published",
+      "summary": "其他 OpenAI · MultiLangBench 开源与低资源语言评测",
+      "title": "OpenAI 开源 MultiLangBench，并公布低资源语言与 COBOL 迁移评测",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "fa89c732a8993512fb33a6b740b632536b1d249f08df96f25d4aec072c320172",
+          "fields": {
+            "OpenAI MultiLangBench 官方开源仓库": "Official OpenAI MultiLangBench repository",
+            "OpenAI 低资源编程语言研究公告（10月 19日来源日期）": "OpenAI low-resource coding research announcement (10/19 source date)",
+            "OpenAI 关联研究公告帖（北京 10月 20日 06:30）": "Related OpenAI research post (10/20 06:30 Beijing)",
+            "OpenAI 开源 MultiLangBench，并公布低资源语言与 COBOL 迁移评测": "OpenAI releases MultiLangBench and reports low-resource coding evaluations",
+            "OpenAI在 10月 19日研究公告中发布MultiLangBench评测方案与测试集：让模型用 20种语言实现兼容SQLite的引擎，开发者可从官方GitHub仓库查看测试与运行方法。公告另报告COBOL代码迁移评测，两项评测不可混为一套已开源测试。OpenAI称GPT-6 Astra在MultiLangBench的最高推理设置下平均通过率为 87.4%；这是官方结果，本站未复测。此条为研究与评测资源发布，不代表新模型上线；只保留 10月 19日来源日期，不推造北京时间。": "OpenAI’s 10/19 research announcement releases the MultiLangBench setup and tests for building SQLite-compatible engines across 20 languages. Developers can inspect the official GitHub repository. A separate COBOL migration evaluation is also reported; its tests must not be assumed included in that release. OpenAI reports an 87.4% average pass rate for GPT-6 Astra at maximum reasoning effort on MultiLangBench. FieldToFit has not reproduced that result. This is a research and evaluation-resource release, not a new model launch. Only the 10/19 source date is established.",
+            "其他 OpenAI · MultiLangBench 开源与低资源语言评测": "Other OpenAI: open MultiLangBench and low-resource coding evaluations",
+            "变化与适用范围": "Changes and availability",
+            "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps."
+          }
+        }
+      }
+    },
+    {
+      "category": "other",
+      "checked_at": "2026-10-20",
+      "codex_28_days": {
+        "announced_at": "2026-10-19T04:12:15.194000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2112034063934742720",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: OpenCode attack-related API recovery and refunds",
+        "overview_zh": "其他 OpenAI · OpenCode 攻击相关 API 恢复与退款",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-19T04:12:15.194000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-20",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-20",
+            "evidence_url": "https://x.com/thsottiaux/status/2112034063934742720",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接读取X原帖公开结构化数据；帖子ID时刻与页面发布时间交叉核对。中文为本站摘译。",
+            "text_en": "Our team worked with OpenCode … any credits refunded which would have been drawn in the attack.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "我们的团队与OpenCode合作……退还攻击中被消耗的额度。",
+            "url": "https://x.com/thsottiaux/status/2112034063934742720"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-19",
+      "highlight": false,
+      "id": "D-201",
+      "interpretation": [
+        {
+          "locator": "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。",
+          "source_ids": [
+            "oct20-1",
+            "oct20-2"
+          ],
+          "text": "北京时间 10月 19日 12:12，Tibo表示OpenAI团队已与OpenCode合作，协助同时为OpenAI API客户的受影响用户恢复使用，并退还攻击中被消耗的额度。范围针对这次攻击涉及的API客户，不是面向全部ChatGPT／Codex订阅的重置。受影响用户可核对自己的API使用和额度记录；原帖没有给出逐账户金额、处理截止或统一到账时刻，本条不推断每个账户都已到账。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "OpenAI API / OpenCode",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-20T04:22:03.164659+00:00",
+        "updated_at": "2026-10-20T04:22:03.164659+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-19",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct20-1",
+          "title": "Tibo 对 OpenCode 事件的 API 恢复与退款说明",
+          "url": "https://x.com/thsottiaux/status/2112034063934742720"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-2",
+          "title": "Tibo X身份与真实头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "其他 OpenAI · OpenCode 攻击相关 API 恢复与退款",
+      "title": "OpenAI 协助受攻击的 OpenCode 用户恢复 API 使用并退还受影响额度",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "de223da32c65bb88a9ded9b11b71e62401041ef0be79e16ccf6c87d1851d242c",
+          "fields": {
+            "OpenAI 协助受攻击的 OpenCode 用户恢复 API 使用并退还受影响额度": "OpenAI helps affected OpenCode API customers recover access and credits",
+            "Tibo X身份与真实头像": "Tibo X identity and authentic avatar",
+            "Tibo 对 OpenCode 事件的 API 恢复与退款说明": "Tibo on API recovery and refunds for the OpenCode incident",
+            "其他 OpenAI · OpenCode 攻击相关 API 恢复与退款": "Other OpenAI: OpenCode attack-related API recovery and refunds",
+            "北京时间 10月 19日 12:12，Tibo表示OpenAI团队已与OpenCode合作，协助同时为OpenAI API客户的受影响用户恢复使用，并退还攻击中被消耗的额度。范围针对这次攻击涉及的API客户，不是面向全部ChatGPT／Codex订阅的重置。受影响用户可核对自己的API使用和额度记录；原帖没有给出逐账户金额、处理截止或统一到账时刻，本条不推断每个账户都已到账。": "At 12:12 Beijing time on 10/19, Tibo said OpenAI had worked with OpenCode to restore service for affected users who were also OpenAI API customers and refund credits drawn during the attack. The statement concerns affected API customers, not a global ChatGPT or Codex subscription reset. Affected users can check their own usage and credit records. The post gives no per-account amount, processing deadline or universal receipt time; this entry does not assert that every account has received credits.",
+            "变化与适用范围": "Changes and availability",
+            "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
+            "直接读取X原帖公开结构化数据；帖子ID时刻与页面发布时间交叉核对。中文为本站摘译。": "The original public X structured data was read directly. Its post-ID timestamp was cross-checked with page publication metadata. Chinese text is a FieldToFit excerpt translation."
+          }
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-20",
+      "codex_28_days": {
+        "announced_at": "2026-10-15T20:02:51.131000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/ChatGPT/status/2110823738531037651",
+        "group": "codex",
+        "official_day": null,
+        "overview_en": "Work: Chrome actions; Chat: context across tabs",
+        "overview_zh": "Work · Chrome 网页操作；Chat 跨标签取材",
+        "source_posts": [],
+        "timestamp_basis": "post_id_derived",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-16",
+      "highlight": false,
+      "id": "D-200",
+      "interpretation": [
+        {
+          "locator": "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。",
+          "source_ids": [
+            "oct20-1",
+            "oct20-2",
+            "oct20-3"
+          ],
+          "text": "ChatGPT在北京时间 10月 16日 04:02公布Chrome更新：Chat可以从已打开的标签页收集信息，Work可操作标签页完成发送消息、填写表单、下载文件，以及整理和分组标签页。面向使用Chrome的ChatGPT用户；原帖未列逐套餐或最低版本范围。按当前官方指南，可在桌面应用“Settings → Computer Use”连接Chrome、安装所需扩展，再在Work中选择@Chrome及允许的网站。此条补回 10月 16日；它记录本次Chat／Work更新，不将已有Chrome集成写成首次推出。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "ChatGPT Work / Chrome",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-20T04:21:38.421052+00:00",
+        "updated_at": "2026-10-20T04:21:38.421052+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-15",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct20-1",
+          "title": "ChatGPT Chrome 更新原帖",
+          "url": "https://x.com/ChatGPT/status/2110823738531037651"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-2",
+          "title": "直接读取原帖全文的官方ChatGPT账号页",
+          "url": "https://x.com/ChatGPT"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-3",
+          "title": "浏览器扩展当前安装与权限指南",
+          "url": "https://learn.chatgpt.com/docs/chrome-extension"
+        }
+      ],
+      "state": "published",
+      "summary": "Work · Chrome 网页操作；Chat 跨标签取材",
+      "title": "Chrome 更新：Chat 跨标签取材，Work 操作网页",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "25494d2bf59ad61448bc11526c7eb4bb9bb3af5156d6a8228932528e306a4e6b",
+          "fields": {
+            "ChatGPT Chrome 更新原帖": "Original ChatGPT Chrome update post",
+            "ChatGPT在北京时间 10月 16日 04:02公布Chrome更新：Chat可以从已打开的标签页收集信息，Work可操作标签页完成发送消息、填写表单、下载文件，以及整理和分组标签页。面向使用Chrome的ChatGPT用户；原帖未列逐套餐或最低版本范围。按当前官方指南，可在桌面应用“Settings → Computer Use”连接Chrome、安装所需扩展，再在Work中选择@Chrome及允许的网站。此条补回 10月 16日；它记录本次Chat／Work更新，不将已有Chrome集成写成首次推出。": "ChatGPT announced a Chrome update at 04:02 Beijing time on 10/16. Chat can gather context across open tabs; Work can act on tabs to send messages, fill forms, download files and organize tab groups. The post does not specify plan-by-plan eligibility or minimum versions. The current setup guide points desktop users to Settings → Computer Use to connect Chrome and install its extension, then select @Chrome and grant site access in Work. This backfill retains 10/16 and describes this Chat/Work update, not the first-ever availability of Chrome integration.",
+            "Chrome 更新：Chat 跨标签取材，Work 操作网页": "Chrome update: tab context in Chat and browser actions in Work",
+            "Work · Chrome 网页操作；Chat 跨标签取材": "Work: Chrome actions; Chat: context across tabs",
+            "变化与适用范围": "Changes and availability",
+            "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
+            "浏览器扩展当前安装与权限指南": "Current browser-extension setup and permissions guide",
+            "直接读取原帖全文的官方ChatGPT账号页": "Official ChatGPT profile carrying the original full post"
+          }
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-20",
+      "codex_28_days": {
+        "announced_at": "2026-10-19T19:45:28.929000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2112268918681485431",
+        "group": "codex",
+        "official_day": 15,
+        "overview_en": "Day 15: first COOKED broadcast announcement",
+        "overview_zh": "Day 15 · COOKED 首期直播公告",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-19T19:45:28.929000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-20",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-20",
+            "context": {
+              "author_handle": "OpenAIDevs",
+              "author_name": "OpenAI Developers",
+              "kind": "quote",
+              "text_en": "Here’s what we’re cooking with Codex:",
+              "text_scope": "excerpt",
+              "translation_zh": "来看看我们正在用Codex做些什么：",
+              "url": "https://x.com/OpenAIDevs/status/2112242739198959913"
+            },
+            "evidence_url": "https://x.com/thsottiaux/status/2112268918681485431",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接读取X原帖全文及其明确引用关系；中文保留原词cooked的双关。直播名称与入口另据被引用的OpenAI Developers帖说明。",
+            "text_en": "Day 15/ We're cooked",
+            "text_scope": "full",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Day 15／我们「cooked」了。",
+            "url": "https://x.com/thsottiaux/status/2112268918681485431"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-20",
+      "highlight": false,
+      "id": "D-199",
+      "interpretation": [
+        {
+          "locator": "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。",
+          "source_ids": [
+            "oct20-1",
+            "oct20-2",
+            "oct20-3",
+            "oct20-4"
+          ],
+          "text": "北京时间 10月 20日 03:45，Tibo以“Day 15/ We're cooked”转引OpenAI Developers的COOKED首期直播入口。可通过官方原帖观看该场直播。本条记录官方Day 15的直播公告；已核对的帖文没有宣布新功能或额度重置，直播中的项目展示也不作为新推出功能统计。归本站 10月 20日（日历Day 16），保留官方Day 15。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex / ChatGPT Work",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-20T04:21:13.633027+00:00",
+        "updated_at": "2026-10-20T04:21:13.633027+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-19",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "oct20-1",
+          "title": "Tibo 官方 Day 15 原帖",
+          "url": "https://x.com/thsottiaux/status/2112268918681485431"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-2",
+          "title": "OpenAI Developers 被引用的直播入口",
+          "url": "https://x.com/OpenAIDevs/status/2112242739198959913"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-3",
+          "title": "COOKED: Ep. 1 官方标题帖",
+          "url": "https://x.com/OpenAIDevs/status/2112242522475078020"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-4",
+          "title": "Tibo X身份与真实头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Day 15 · COOKED 首期直播公告",
+      "title": "官方 Day 15：Tibo 转引 COOKED 首期直播",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "c6130657330fdfa2f2091e66d5861bc37ff6685559083a122474497a94e61079",
+          "fields": {
+            "COOKED: Ep. 1 官方标题帖": "Official COOKED: Ep. 1 title post",
+            "Day 15 · COOKED 首期直播公告": "Day 15: first COOKED broadcast announcement",
+            "OpenAI Developers 被引用的直播入口": "Quoted OpenAI Developers broadcast link",
+            "Tibo X身份与真实头像": "Tibo X identity and authentic avatar",
+            "Tibo 官方 Day 15 原帖": "Tibo original official Day 15 post",
+            "北京时间 10月 20日 03:45，Tibo以“Day 15/ We're cooked”转引OpenAI Developers的COOKED首期直播入口。可通过官方原帖观看该场直播。本条记录官方Day 15的直播公告；已核对的帖文没有宣布新功能或额度重置，直播中的项目展示也不作为新推出功能统计。归本站 10月 20日（日历Day 16），保留官方Day 15。": "At 03:45 Beijing time on 10/20, Tibo marked official Day 15 by sharing OpenAI Developers’ first COOKED broadcast. The official post links to the broadcast. This entry records the official Day 15 broadcast announcement: the verified post does not announce a feature release or a usage reset, and showcased projects are not counted as newly shipped product features. The date, 10/20, is calendar Day 16 on FieldToFit; the official Day 15 label is preserved.",
+            "变化与适用范围": "Changes and availability",
+            "官方 Day 15：Tibo 转引 COOKED 首期直播": "Official Day 15: Tibo shares the first COOKED broadcast",
+            "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
+            "直接读取X原帖全文及其明确引用关系；中文保留原词cooked的双关。直播名称与入口另据被引用的OpenAI Developers帖说明。": "The complete original X post and its explicit quote relationship were read directly. The Chinese translation retains the wordplay in cooked. The broadcast title and link are established by the quoted OpenAI Developers post."
+          }
+        }
+      }
+    },
+    {
+      "category": "research",
       "checked_at": "2026-10-19",
       "editor": "FieldToFit",
       "event_date": "2026-10-16",
@@ -1093,15 +1470,15 @@
     },
     {
       "category": "tool",
-      "checked_at": "2026-10-19",
+      "checked_at": "2026-10-20",
       "codex_28_days": {
         "announced_at": "2026-10-19T01:18:10.189000+00:00",
         "date_precision": "instant",
         "event_key": "https://x.com/thsottiaux/status/2111990254408434095",
         "group": "codex",
         "official_day": 14,
-        "overview_en": "Day 14: edit earlier messages in desktop threads",
-        "overview_zh": "Day 14 · 桌面线程支持编辑历史消息",
+        "overview_en": "Day 14: edit earlier messages; discard later outputs and tool calls",
+        "overview_zh": "Day 14 · 编辑历史消息；丢弃编辑点后的输出与工具调用",
         "source_posts": [
           {
             "announced_at": "2026-10-19T01:18:10.189000+00:00",
@@ -1135,12 +1512,14 @@
       "id": "D-195",
       "interpretation": [
         {
-          "locator": "直接核对Tibo原帖，帖子ID时间与页面UTC发布时间交叉核对。",
+          "locator": "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。",
           "source_ids": [
             "oct19-1",
-            "oct19-2"
+            "oct19-2",
+            "oct20-3",
+            "oct20-4"
           ],
-          "text": "北京时间 10月 19日 09:18，Tibo宣布桌面应用现在支持编辑线程中的历史消息，并将这项体验改进列为官方Day 14。需要调整此前消息时，可在桌面应用的对应线程使用历史消息编辑功能。公告只确认桌面端能力，未给出最低版本号、逐套餐范围或详细操作路径，也未说明修改后如何处理后续消息；本条不扩展为网页、手机或CLI同步上线。原帖时间与X页面发布时间交叉核对，归本站 10月 19日（日历Day 15），保留官方Day 14。",
+          "text": "北京时间 10月 19日 09:18，Tibo宣布桌面应用支持编辑线程中的历史消息，列为官方Day 14。10:10，OpenAI的VB（@reach_vb）在该帖回复链补充：编辑点之后的模型输出和工具调用会被丢弃，以免旧内容干扰模型。需要改写此前输入时，可在对应桌面线程使用此功能；该说明没有承诺回滚已经执行的文件、网页或数据库操作，也没有承诺退回已消耗用量。原公告未列最低版本、逐套餐或网页／手机／CLI同步范围。保留 10月 19日（日历Day 15）及原Tibo卡片；这项补充归回同一事件。",
           "title": "变化与适用范围"
         }
       ],
@@ -1149,7 +1528,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-19T02:36:32.085070+00:00",
-        "updated_at": "2026-10-19T02:36:32.085070+00:00"
+        "updated_at": "2026-10-20T04:22:53.229645+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-19",
@@ -1165,27 +1544,39 @@
           "id": "oct19-2",
           "title": "Tibo 当前X身份与真实头像出处",
           "url": "https://x.com/thsottiaux"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-3",
+          "title": "VB 对历史消息编辑后续处理的说明",
+          "url": "https://x.com/reach_vb/status/2112003522439094329"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct20-4",
+          "title": "VB 当前X身份页",
+          "url": "https://x.com/reach_vb"
         }
       ],
       "state": "published",
-      "summary": "Tibo将桌面线程历史消息编辑列为官方Day 14改进；原帖未给出最低版本号或套餐细分。",
+      "summary": "Day 14 · 编辑历史消息；丢弃编辑点后的输出与工具调用",
       "title": "官方 Day 14：桌面应用支持编辑线程中的历史消息",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "763cb478f41465a4688edf830bd254c5cfb7a544020f31a63d979002ed32b6bb",
           "fields": {
-            "Day 14 · 桌面线程支持编辑历史消息": "Day 14: edit earlier messages in desktop threads",
+            "Day 14 · 编辑历史消息；丢弃编辑点后的输出与工具调用": "Day 14: edit earlier messages; discard later outputs and tool calls",
             "Tibo 官方 Day 14 消息编辑公告": "Tibo official Day 14 announcement on editing messages",
             "Tibo 当前X身份与真实头像出处": "Tibo current X identity and authentic avatar source",
-            "Tibo将桌面线程历史消息编辑列为官方Day 14改进；原帖未给出最低版本号或套餐细分。": "Tibo identifies editing earlier desktop-thread messages as the official Day 14 improvement. No minimum version or plan-by-plan scope is specified.",
-            "北京时间 10月 19日 09:18，Tibo宣布桌面应用现在支持编辑线程中的历史消息，并将这项体验改进列为官方Day 14。需要调整此前消息时，可在桌面应用的对应线程使用历史消息编辑功能。公告只确认桌面端能力，未给出最低版本号、逐套餐范围或详细操作路径，也未说明修改后如何处理后续消息；本条不扩展为网页、手机或CLI同步上线。原帖时间与X页面发布时间交叉核对，归本站 10月 19日（日历Day 15），保留官方Day 14。": "At 09:18 Beijing time on 10/19, Tibo announced that earlier messages in a thread can now be edited in the desktop app, identifying this usability improvement as official Day 14. Use the history-editing feature in the relevant desktop thread when a previous message needs changing. The announcement does not specify a minimum version, plan-by-plan availability, detailed controls, or how subsequent messages are handled after an edit. It does not establish a simultaneous web, mobile or CLI release. The post timestamp is cross-checked against X page metadata. This entry belongs to 10/19, calendar Day 15 on FieldToFit, while retaining official Day 14.",
+            "VB 对历史消息编辑后续处理的说明": "VB clarification on subsequent content after editing a message",
+            "VB 当前X身份页": "VB current X identity profile",
+            "北京时间 10月 19日 09:18，Tibo宣布桌面应用支持编辑线程中的历史消息，列为官方Day 14。10:10，OpenAI的VB（@reach_vb）在该帖回复链补充：编辑点之后的模型输出和工具调用会被丢弃，以免旧内容干扰模型。需要改写此前输入时，可在对应桌面线程使用此功能；该说明没有承诺回滚已经执行的文件、网页或数据库操作，也没有承诺退回已消耗用量。原公告未列最低版本、逐套餐或网页／手机／CLI同步范围。保留 10月 19日（日历Day 15）及原Tibo卡片；这项补充归回同一事件。": "At 09:18 Beijing time on 10/19, Tibo announced earlier-message editing in desktop threads as official Day 14. At 10:10, OpenAI’s VB (@reach_vb) clarified in the same reply chain that model outputs and tool calls after the edited message are discarded to avoid confusing the model. Use the feature in a desktop thread when changing earlier input. The clarification does not promise to undo file, browser or database actions already performed, or refund consumed usage. Minimum versions, plan coverage and a simultaneous web/mobile/CLI release remain unspecified. The entry retains 10/19, calendar Day 15, and Tibo’s original card.",
             "变化与适用范围": "Changes and availability",
             "官方 Day 14：桌面应用支持编辑线程中的历史消息": "Official Day 14: edit earlier messages in desktop threads",
-            "直接核对Tibo原帖，帖子ID时间与页面UTC发布时间交叉核对。": "The Tibo original post was read directly. Its ID-derived time was cross-checked against the UTC publication time on the page.",
+            "核对已登记官方出处；原帖时刻按ID推导并交叉核对，仅来源日期不推造北京时间。": "Registered official sources checked. Post-ID timestamps are cross-checked; source dates alone do not establish Beijing timestamps.",
             "直接读取X原帖公开结构化数据，与页面发布时间交叉核对；仅展示短摘录，中文为本站译文。": "The original X post and its public structured data were read directly and cross-checked against the page timestamp. Only a short excerpt is shown; the Chinese translation is by FieldToFit."
-          },
-          "reviewed_at": "2026-10-19T02:31:42.316346+00:00",
-          "source_hash": "1de8f8e20915d123f229705e31c5e32f9eeba6dc6b7c26d2cc2e710a24191e0a",
-          "state": "reviewed"
+          }
         }
       }
     },
@@ -28984,7 +29375,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-19",
+  "reviewed_at": "2026-10-20",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

@@ -1,7 +1,35 @@
 {
-  "version": "1.13.0",
-  "revision": "a42034c129cb7471ca12522e9dbb5163629c69abba1b43ec5d07fde4960fcdec",
+  "version": "1.13.1",
+  "revision": "c9a6f89f4e423510ef0db2afadb3f9ac07f1bc4d6c6a5a70472873721bfa5e92",
   "items": [
+    {
+      "version": "1.13.1",
+      "date": "2026-10-20",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Codex Day 15与历史公告补录",
+          "highlights": [
+            "整理官方Day 15的COOKED直播公告，并补录Chrome跨标签取材与Work网页操作，保留原始事件日期。",
+            "收录受影响OpenCode API客户恢复说明及MultiLangBench研究，明确适用范围、来源日期和官方结果口径。",
+            "补充Day 14历史消息编辑后的输出与工具调用处理说明；网页、月历概览、原帖与AI读取沿用同一审核修订。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Codex Day 15 and historical announcement updates",
+          "highlights": [
+            "Add the official Day 15 COOKED broadcast announcement and backfill Chrome tab research and Work browser actions with their original event dates.",
+            "Cover recovery for affected OpenCode API customers and MultiLangBench research, preserving scope, source-date precision and attribution of official results.",
+            "Clarify how Day 14 message editing treats later outputs and tool calls; keep the website, calendar summaries, source posts and AI reading on the same reviewed revision."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.13.1"
+    },
     {
       "version": "1.13.0",
       "date": "2026-10-19",

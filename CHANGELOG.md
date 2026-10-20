@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.13.1"></a>
+## v1.13.1 · Codex Day 15与历史公告补录 · 2026-10-20
+<!-- public-title:en: Codex Day 15 and historical announcement updates -->
+<!-- release-summary:zh:start -->
+- 整理官方Day 15的COOKED直播公告，并补录Chrome跨标签取材与Work网页操作，保留原始事件日期。
+- 收录受影响OpenCode API客户恢复说明及MultiLangBench研究，明确适用范围、来源日期和官方结果口径。
+- 补充Day 14历史消息编辑后的输出与工具调用处理说明；网页、月历概览、原帖与AI读取沿用同一审核修订。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 15 COOKED broadcast announcement and backfill Chrome tab research and Work browser actions with their original event dates.
+- Cover recovery for affected OpenCode API customers and MultiLangBench research, preserving scope, source-date precision and attribution of official results.
+- Clarify how Day 14 message editing treats later outputs and tool calls; keep the website, calendar summaries, source posts and AI reading on the same reviewed revision.
+<!-- release-summary:en:end -->
+
+对应REQ-20-3／5／8／10，所有者明确批准四项新增及D-195补充；延续v1.13.0的兼容内容patch，无数据库迁移、协议或主要用户流程变化。直播不是新功能，API退款不是订阅全局重置，研究指标未经本站复测；编辑后丢弃线程记录不承诺撤销已经执行的外部操作或退回用量。完整生产数据库备份已恢复并通过独立SQLite检查。
+
+具体编号、双语预览、公开同源、增量接收及实际部署见[本批验收](docs/validation/2026-10-20-codex-day15-and-backfill.md)。
+
 <a id="v1.13.0"></a>
 ## v1.13.0 · 日报内容质量与产业链行情 · 2026-10-19
 <!-- site-deployed:2026-10-19 -->
