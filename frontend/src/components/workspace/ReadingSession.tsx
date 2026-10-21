@@ -8,8 +8,9 @@ import { useWorkspace } from './UI';
 export function ReadingSession(){
   const browserLocation=useBrowserLocation();
   const location=useLocation(),navigation=useNavigationType(),{pick}=useWorkspace();
-  const relevant=/^\/(for-you(?:\/(?:news|watch|models|codex|hot-cards))?$|news\/|watch\/|maps(?:\/|$))/.test(location.pathname);
-  const updates=useReadingUpdates(relevant,location.pathname.startsWith('/for-you')), first=useRef(true), previousPath=useRef(location.pathname), pendingRestore=useRef(false);
+  const evolution=location.pathname.startsWith('/for-you/evolution');
+  const relevant=evolution||/^\/(for-you(?:\/(?:news|watch|models|codex|hot-cards))?$|news\/|watch\/|maps(?:\/|$))/.test(location.pathname);
+  const updates=useReadingUpdates(relevant&&!evolution,location.pathname.startsWith('/for-you')), first=useRef(true), previousPath=useRef(location.pathname), pendingRestore=useRef(false);
   useEffect(()=>{const previous=window.history.scrollRestoration;window.history.scrollRestoration='manual';return()=>{window.history.scrollRestoration=previous;};},[]);
   useLayoutEffect(()=>{
     const returning=navigation==='POP'||location.state?.readingRestore||location.state?.restoreReading;

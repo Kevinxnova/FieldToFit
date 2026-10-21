@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { lazy, Suspense, useState, type ReactNode } from 'react';
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from '@fieldtofit/locale/router';
 import { useHomeReading, type ChartPreview } from '../api/reading';
 import { ForYouHero } from '../components/workspace/ForYouHero';
@@ -16,6 +16,7 @@ import { legacyForYouTarget, legacyReadingTargets } from '../components/workspac
 import { contentPath } from '../search';
 import type { NewsItem } from '../components/workspace/NewsReading';
 import './for-you-preview.css';
+const EvolutionHome = lazy(() => import('../features/evolution/Evolution').then(m=>({default:m.EvolutionHome})));
 
 export function PreviewHeading({id,title,to,action,children}:{id:string;title:string;to:string;action:string;children?:ReactNode}){
   return <><header className="platform-section-heading"><h2 id={id} tabIndex={-1}>{title}</h2><Link to={to}>{action} ↗</Link></header>{children&&<p className="home-section-intro">{children}</p>}</>;
@@ -54,6 +55,7 @@ function Home(){
       </section>
       {data?<HotCardHighlights items={selected(data.home_preview?.hot_cards)}/>:<section className="home-section"><PreviewHeading id="hot-information-cards" title={pick('热点信息卡','Information cards')} to="/for-you/hot-cards" action={pick('全部热点','All information cards')}/></section>}
       {data?<MapCards items={selected(data.home_preview?.reports)} selection={data.news.report_selection} home/>:<section className="home-section"><PreviewHeading id="technical-evolution-maps" title={pick('技术报告精选&分析','Selected Technical Reports & Analysis')} to="/maps" action={pick('全部精选','All reports')}/></section>}
+      <Suspense fallback={<p role="status">{pick('载入大模型专题…','Loading LLM topic…')}</p>}><EvolutionHome/></Suspense>
       <section className="home-section home-codex"><PreviewHeading id="news-codex-28-days" title={pick('Codex 28天进化日志','Codex: 28 Days of Progress')} to="/for-you/codex" action={pick('完整日志','Full log')}>{pick('把每一次真实更新，放回它发生的时间。','Place each update on its actual date.')}</PreviewHeading>
         <div className="home-codex-frame"><div className="home-codex-intro"><strong>Codex</strong><p>{pick('28天进化日志','28 Days of Progress')}</p><small>{pick('官方公告 · 已审记录','Official announcements · Reviewed records')}</small><Link className="button" to="/for-you/codex">{pick('按日期阅读','Read by date')} →</Link></div><div className="home-log-list">
           {logs.map(item=>{const event=item.codex_28_days!;return <article key={item.id}><Link className="home-log-date" to={'/for-you/codex?codex_date='+event.date+'#codex-day-'+event.date}><time dateTime={event.date}>{event.date.slice(5)}</time>{event.official_day&&<small>{pick('官方','Official')} Day {event.official_day}</small>}</Link><div><p className="home-meta">{event.group==='codex'?'Codex / Work':pick('其他 OpenAI','Other OpenAI')}</p><h3><Link to={contentPath(item.id)}>{(zh?event.overview_zh:event.overview_en)||item.title}</Link></h3><p>{item.summary}</p></div></article>;})}{data&&!logs.length&&empty}

@@ -53,7 +53,7 @@
       "regions": [
         "hkg1"
       ],
-      "includeFiles": "backend/{daily_briefing/fonts/**,knowledge/content/**,db/*.sql,seo/**}"
+      "includeFiles": "backend/{daily_briefing/fonts/**,knowledge/content/**,db/*.sql,seo/**,llm_evolution/**}"
     },
     "api/cron_knowledge.py": {
       "maxDuration": 300,

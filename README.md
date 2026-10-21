@@ -30,21 +30,23 @@
 
 资料每 **1 天**检查，发现值得发布的变化后整理、审核，再同步给人和 AI。事实、来源观点、编辑评价与实测结果分开，未知项明确保留。注册与同步尚未开放，AI 应用案例暂缓。
 
+v1.14.0 源码新增[大模型专题](FieldToFit-PM.md#req-25)：2017—2026三张分支图、16条路线、31个节点、18题双语图文及本地阅读记录。本批已部署；正式双语页面／接口通过，线上浏览器交互复验因连接超时待补；见[验证记录](docs/validation/2026-10-21-llm-evolution.md)。
+
 v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏览器与个人 AI 各自保存阅读进度，清单可导入导出。该功能批次已部署，范围和缺口见[本地与生产验收](docs/validation/2026-10-04-follow-traffic.md)。
 
 <!-- section:release -->
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.13.2](CHANGELOG.md#v1.13.2)** · [fieldtofit-v1.13.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.13.2)
+**当前源码版本：[v1.14.0](CHANGELOG.md#v1.14.0)** · [fieldtofit-v1.14.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.14.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 更新获批MiniMax M3.1 Flash、Timestral动态及对应已有档案，保留价格、许可和权重开放边界。
-- 所选OpenAI代码研究复用现有事件，配四结论、同号论述与三张独立重绘，区分指标、推理条件和成本单位。
-- 发布中英信息卡，报告与卡片首页按真实回执轮替，历史索引与并行Codex专题保持。
+- 新增2017—2026大模型专题：训练、推理、系统三张横向分支图，16条路线、31个节点与具体公司／型号证据。
+- 首页展示重点，完整图支持全部节点、主线收起、节点详情开合、公司高亮与全屏阅读。
+- 提供18题双语图文目录、KV容量计算器及浏览器本地已读记录；修订提示、筛选与详情返回共用稳定编号。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

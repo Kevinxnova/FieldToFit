@@ -1,0 +1,2785 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "updated_at": "2026-10-21",
+  "period": "2017–2026",
+  "change_reason": [
+    "首批路线与18题图文目录；后续按来源审校修订",
+    "Initial routes and 18 illustrated questions; future revisions require source review"
+  ],
+  "tracks": [
+    {
+      "id": "train",
+      "name": "Train",
+      "label": [
+        "训练",
+        "Training"
+      ],
+      "description": [
+        "扩大容量，改进学习信号。",
+        "Scale capacity and improve learning signals."
+      ]
+    },
+    {
+      "id": "inference",
+      "name": "Inference",
+      "label": [
+        "推理",
+        "Inference"
+      ],
+      "description": [
+        "减少每步成本，为难题分配计算。",
+        "Reduce step costs and allocate compute to hard problems."
+      ]
+    },
+    {
+      "id": "systems",
+      "name": "System",
+      "label": [
+        "系统（推训）",
+        "Training & serving systems"
+      ],
+      "description": [
+        "让模型装得下，让服务跑得稳。",
+        "Fit the model and serve it reliably."
+      ]
+    }
+  ],
+  "groups": {
+    "Transformer": [
+      "模型容量",
+      "Model capacity"
+    ],
+    "Feedback": [
+      "训练反馈",
+      "Training feedback"
+    ],
+    "KV": [
+      "KV 表示",
+      "KV representation"
+    ],
+    "Generation": [
+      "生成与求解",
+      "Generation & solving"
+    ],
+    "Context": [
+      "上下文使用",
+      "Context use"
+    ],
+    "Execution": [
+      "数值精度",
+      "Numerical precision"
+    ],
+    "Distributed": [
+      "分布式训练",
+      "Distributed training"
+    ],
+    "Serving": [
+      "执行与服务",
+      "Execution & serving"
+    ]
+  },
+  "companies": {
+    "openai": "OpenAI",
+    "google": "Google",
+    "meta": "Meta",
+    "deepseek": "DeepSeek",
+    "alibaba": "Alibaba / Qwen",
+    "anthropic": "Anthropic",
+    "microsoft": "Microsoft",
+    "nvidia": "NVIDIA"
+  },
+  "sources": {
+    "llama": {
+      "id": "llama",
+      "title": "Meta Llama 3.1",
+      "date": "2024-07-23",
+      "url": "https://ai.meta.com/blog/meta-llama-3-1/",
+      "checked_at": "2026-10-21"
+    },
+    "gqa": {
+      "id": "gqa",
+      "title": "Meta Llama 3",
+      "date": "2024-04-18",
+      "url": "https://ai.meta.com/blog/meta-llama-3/",
+      "checked_at": "2026-10-21"
+    },
+    "qwen": {
+      "id": "qwen",
+      "title": "Qwen3",
+      "date": "2025-04-29",
+      "url": "https://qwenlm.github.io/blog/qwen3/",
+      "checked_at": "2026-10-21"
+    },
+    "gemini": {
+      "id": "gemini",
+      "title": "Gemini 1.5",
+      "date": "2024-02-15",
+      "url": "https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/",
+      "checked_at": "2026-10-21"
+    },
+    "v3": {
+      "id": "v3",
+      "title": "DeepSeek-V3 Technical Report",
+      "date": "2024-12-27",
+      "url": "https://arxiv.org/abs/2412.19437",
+      "checked_at": "2026-10-21"
+    },
+    "r1": {
+      "id": "r1",
+      "title": "DeepSeek-R1 project",
+      "date": "2025",
+      "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+      "checked_at": "2026-10-21"
+    },
+    "o1": {
+      "id": "o1",
+      "title": "Learning to reason with LLMs",
+      "date": "2024-09-12",
+      "url": "https://openai.com/index/learning-to-reason-with-llms/",
+      "checked_at": "2026-10-21"
+    },
+    "claude": {
+      "id": "claude",
+      "title": "Claude 3.7 Sonnet and Claude Code",
+      "date": "2025-02-24",
+      "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+      "checked_at": "2026-10-21"
+    },
+    "instruct": {
+      "id": "instruct",
+      "title": "Training language models to follow instructions with human feedback",
+      "date": "2022-03-04",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "checked_at": "2026-10-21"
+    },
+    "speculative": {
+      "id": "speculative",
+      "title": "Looking back at speculative decoding",
+      "date": "2024",
+      "url": "https://research.google/blog/looking-back-at-speculative-decoding/",
+      "checked_at": "2026-10-21"
+    },
+    "zero": {
+      "id": "zero",
+      "title": "ZeRO & DeepSpeed release",
+      "date": "2020-02-13",
+      "url": "https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/",
+      "checked_at": "2026-10-21"
+    },
+    "megatron": {
+      "id": "megatron",
+      "title": "Megatron-LM",
+      "date": "2019-09-17",
+      "url": "https://arxiv.org/abs/1909.08053",
+      "checked_at": "2026-10-21"
+    },
+    "megatronCompany": {
+      "id": "megatronCompany",
+      "title": "NVIDIA Megatron Core",
+      "date": "",
+      "url": "https://developer.nvidia.com/cuda/cuda-x-libraries/megatron-core",
+      "checked_at": "2026-10-21"
+    },
+    "flash": {
+      "id": "flash",
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "date": "2022-05-27",
+      "url": "https://arxiv.org/abs/2205.14135",
+      "checked_at": "2026-10-21"
+    },
+    "paged": {
+      "id": "paged",
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "date": "2023-09-12",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "checked_at": "2026-10-21"
+    },
+    "dynamo": {
+      "id": "dynamo",
+      "title": "Introducing NVIDIA Dynamo",
+      "date": "2025-03-18",
+      "url": "https://developer.nvidia.com/blog/introducing-nvidia-dynamo-a-low-latency-distributed-inference-framework-for-scaling-reasoning-ai-models/",
+      "checked_at": "2026-10-21"
+    },
+    "epd": {
+      "id": "epd",
+      "title": "When to Use Encode-Prefill-Decode Disaggregation",
+      "date": "2026-09-09",
+      "url": "https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/",
+      "checked_at": "2026-10-21"
+    },
+    "switch": {
+      "id": "switch",
+      "title": "Switch Transformers",
+      "date": "2021-01-11",
+      "url": "https://arxiv.org/abs/2101.03961",
+      "checked_at": "2026-10-21"
+    },
+    "transformer": {
+      "id": "transformer",
+      "title": "Attention Is All You Need",
+      "date": "2017-06-12",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "checked_at": "2026-10-21"
+    },
+    "scaling": {
+      "id": "scaling",
+      "title": "Scaling Laws for Neural Language Models",
+      "date": "2020-01-23",
+      "url": "https://arxiv.org/abs/2001.08361",
+      "checked_at": "2026-10-21"
+    },
+    "chinchilla": {
+      "id": "chinchilla",
+      "title": "Training Compute-Optimal Large Language Models",
+      "date": "2022-03-29",
+      "url": "https://arxiv.org/abs/2203.15556",
+      "checked_at": "2026-10-21"
+    },
+    "mqa": {
+      "id": "mqa",
+      "title": "Fast Transformer Decoding: One Write-Head is All You Need",
+      "date": "2019-11-05",
+      "url": "https://arxiv.org/abs/1911.02150",
+      "checked_at": "2026-10-21"
+    },
+    "gqa_paper": {
+      "id": "gqa_paper",
+      "title": "GQA: Training Generalized Multi-Query Transformer Models",
+      "date": "2023-05-22",
+      "url": "https://arxiv.org/abs/2305.13245",
+      "checked_at": "2026-10-21"
+    },
+    "dpo": {
+      "id": "dpo",
+      "title": "Direct Preference Optimization",
+      "date": "2023-05-29",
+      "url": "https://arxiv.org/abs/2305.18290",
+      "checked_at": "2026-10-21"
+    },
+    "spec_paper": {
+      "id": "spec_paper",
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "date": "2022-11-30",
+      "url": "https://arxiv.org/abs/2211.17192",
+      "checked_at": "2026-10-21"
+    },
+    "testtime": {
+      "id": "testtime",
+      "title": "Scaling LLM Test-Time Compute Optimally",
+      "date": "2024-08-06",
+      "url": "https://arxiv.org/abs/2408.03314",
+      "checked_at": "2026-10-21"
+    },
+    "zero_paper": {
+      "id": "zero_paper",
+      "title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+      "date": "2019-10-04",
+      "url": "https://arxiv.org/abs/1910.02054",
+      "checked_at": "2026-10-21"
+    },
+    "parallel": {
+      "id": "parallel",
+      "title": "Efficient Large-Scale Language Model Training on GPU Clusters",
+      "date": "2021-04-09",
+      "url": "https://arxiv.org/abs/2104.04473",
+      "checked_at": "2026-10-21"
+    },
+    "distserve": {
+      "id": "distserve",
+      "title": "DistServe: Disaggregating Prefill and Decoding",
+      "date": "2024-01-17",
+      "url": "https://arxiv.org/abs/2401.09670",
+      "checked_at": "2026-10-21"
+    },
+    "rope": {
+      "id": "rope",
+      "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+      "date": "2021-04-20",
+      "url": "https://arxiv.org/abs/2104.09864",
+      "checked_at": "2026-10-21"
+    },
+    "lost": {
+      "id": "lost",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "date": "2023-07-06",
+      "url": "https://arxiv.org/abs/2307.03172",
+      "checked_at": "2026-10-21"
+    },
+    "awq": {
+      "id": "awq",
+      "title": "AWQ: Activation-aware Weight Quantization",
+      "date": "2023-06-01",
+      "url": "https://arxiv.org/abs/2306.00978",
+      "checked_at": "2026-10-21"
+    },
+    "orca": {
+      "id": "orca",
+      "title": "Orca: A Distributed Serving System for Transformer-Based Generative Models",
+      "date": "2022-07",
+      "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
+      "checked_at": "2026-10-21"
+    },
+    "r1_paper": {
+      "id": "r1_paper",
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "date": "2025-01-22",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "checked_at": "2026-10-21"
+    }
+  },
+  "routes": [
+    {
+      "id": "dense",
+      "track": "train",
+      "group": "Transformer",
+      "highlight": true,
+      "title": [
+        "稠密模型 · Dense",
+        "Dense models"
+      ],
+      "problem": [
+        "规模扩大后，计算预算要如何分给参数与训练数据？",
+        "How should limited compute be split between model size and training tokens?"
+      ],
+      "method": [
+        "保持稠密计算，在模型规模、数据量和训练预算之间联合取舍。",
+        "Jointly choose parameters and data within a dense-compute budget."
+      ],
+      "limit": [
+        "训练最优与高频部署时的总成本最优可能不同。",
+        "Training-optimal allocation can differ from lifetime-cost optimality."
+      ],
+      "nodes": [
+        {
+          "id": "dense-transformer",
+          "source": "transformer",
+          "date": "2017-06-12",
+          "title": "Transformer",
+          "question": "T01",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "用注意力替代循环依赖，在同一层并行处理训练位置。",
+            "Replace recurrence with attention to process training positions in parallel."
+          ],
+          "evidence": [
+            "2017论文提出纯注意力序列转换架构；训练并行并不消除生成时的自回归依赖。",
+            "The 2017 paper introduces an attention-only sequence-transduction architecture. Parallel training does not remove autoregressive generation dependencies."
+          ]
+        },
+        {
+          "id": "dense-scaling",
+          "source": "scaling",
+          "date": "2020-01-23",
+          "title": "Scaling laws",
+          "question": "T02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "拟合损失随模型、数据与训练计算变化的幂律，讨论固定预算下的分配。",
+            "Fit loss scaling with model size, data and compute, and study fixed-budget allocation."
+          ],
+          "evidence": [
+            "2020研究建立可测量的规模规律；其数据范围和分配结论后来被新的训练实验重新检验。",
+            "The 2020 work establishes measurable scaling relationships. Later training experiments revisit its empirical regime and allocation conclusions."
+          ]
+        },
+        {
+          "id": "dense-chinchilla",
+          "source": "chinchilla",
+          "date": "2022-03-29",
+          "title": "Chinchilla",
+          "question": "T02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "在固定训练预算内联合选择参数量和训练token，增加数据投入。",
+            "Jointly choose parameters and training tokens within a fixed compute budget."
+          ],
+          "evidence": [
+            "2022研究比较多种参数／数据配置，指出很多模型相对其大小训练不足；结论不是永久固定比例。",
+            "The 2022 study compares parameter/data configurations and identifies undertraining relative to model size; it does not prescribe a permanent ratio."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "dense-case-0",
+          "company": "meta",
+          "model": "Llama 3.1",
+          "year": "2024",
+          "source": "llama",
+          "evidence": [
+            "Meta 明确说明 Llama 3.1 采用标准 decoder-only Transformer，而非 MoE。",
+            "Meta explicitly describes Llama 3.1 as a standard decoder-only Transformer rather than MoE."
+          ],
+          "relation": "documented-use"
+        },
+        {
+          "id": "dense-case-1",
+          "company": "alibaba",
+          "model": "Qwen3-32B family",
+          "year": "2025",
+          "source": "qwen",
+          "evidence": [
+            "Qwen3 同时发布多种稠密型号与 MoE 型号；此处仅标稠密型号。",
+            "Qwen3 includes both dense and MoE models; the model label identifies the architecture here."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "T01",
+        "T02"
+      ]
+    },
+    {
+      "id": "moe",
+      "track": "train",
+      "group": "Transformer",
+      "highlight": false,
+      "title": [
+        "稀疏专家 · MoE",
+        "Sparse experts · MoE"
+      ],
+      "problem": [
+        "希望扩大模型容量，又不让每个 token 的计算同比增加。",
+        "How can capacity grow without proportional per-token compute?"
+      ],
+      "method": [
+        "路由器为 token 选择部分专家，区分总参数量与激活参数量。",
+        "Route each token to a subset of experts; distinguish total and active parameters."
+      ],
+      "limit": [
+        "增加路由、负载均衡和跨设备通信问题；并非全方位替代稠密模型。",
+        "Routing, load balance and cross-device transfers add constraints."
+      ],
+      "nodes": [
+        {
+          "id": "moe-switch",
+          "source": "switch",
+          "date": "2021-01-11",
+          "title": "Switch Transformer",
+          "question": "T03",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "用top-1路由让每个token只调用一个前馈专家，扩大条件计算容量。",
+            "Use top-1 routing to activate one feed-forward expert per token and scale conditional capacity."
+          ],
+          "evidence": [
+            "Switch论文研究稀疏专家的简化路由、稳定性和负载均衡；总参数和单token激活量需分别计算。",
+            "Switch studies simplified sparse routing, stability and load balance. Total parameters and per-token activation must be counted separately."
+          ]
+        },
+        {
+          "id": "moe-v3",
+          "source": "v3",
+          "date": "2024-12-27",
+          "title": "DeepSeekMoE / V3",
+          "question": "T03",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "DeepSeek-V3组合MoE与MLA，将稀疏计算和KV表示优化用于不同瓶颈。",
+            "DeepSeek-V3 combines MoE and MLA, targeting separate compute and KV representation constraints."
+          ],
+          "evidence": [
+            "V3技术报告公开DeepSeekMoE与MLA；MLA已在V2验证，不应把2024年12月当作MLA首次提出日期。",
+            "The V3 report discloses DeepSeekMoE and MLA, with MLA previously validated in V2; December 2024 is not the invention date of MLA."
+          ]
+        },
+        {
+          "id": "moe-qwen",
+          "source": "qwen",
+          "date": "2025-04-29",
+          "title": "Qwen3 MoE",
+          "question": "T03",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "Qwen3提供稠密与MoE两类型号，区分总参数和激活参数。",
+            "Qwen3 offers dense and MoE variants, distinguishing total and active parameters."
+          ],
+          "evidence": [
+            "2025发布说明明确列出不同型号及混合思考能力；公司路线须绑定具体型号和模式。",
+            "The 2025 announcement identifies model variants and hybrid thinking. Route labels must refer to specific models and modes."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "moe-case-0",
+          "company": "google",
+          "model": "Gemini 1.5 Pro",
+          "year": "2024",
+          "source": "gemini",
+          "evidence": [
+            "Google 公布 Gemini 1.5 使用 MoE 架构。",
+            "Google discloses a mixture-of-experts architecture for Gemini 1.5."
+          ],
+          "relation": "documented-use"
+        },
+        {
+          "id": "moe-case-1",
+          "company": "deepseek",
+          "model": "DeepSeek-V3",
+          "year": "2024",
+          "source": "v3",
+          "evidence": [
+            "技术报告说明 V3 组合 DeepSeekMoE 与 MLA；架构路线与 KV 路线可以同时采用。",
+            "The V3 report discloses DeepSeekMoE and MLA, with MLA previously validated in V2."
+          ],
+          "relation": "documented-use"
+        },
+        {
+          "id": "moe-case-2",
+          "company": "alibaba",
+          "model": "Qwen3-235B-A22B",
+          "year": "2025",
+          "source": "qwen",
+          "evidence": [
+            "Qwen3-235B-A22B 与 Qwen3-30B-A3B 为 MoE 型号。",
+            "Qwen3 includes both dense and MoE models; the model label identifies the architecture here."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "T03"
+      ]
+    },
+    {
+      "id": "preference",
+      "track": "train",
+      "group": "Feedback",
+      "highlight": false,
+      "title": [
+        "偏好对齐 · RLHF / DPO",
+        "Preference alignment"
+      ],
+      "problem": [
+        "文本预测目标不直接等同于遵循用户意图和偏好。",
+        "Text prediction does not directly optimize instruction following."
+      ],
+      "method": [
+        "RLHF 可通过奖励模型与策略优化利用反馈；DPO 从偏好对直接优化策略。",
+        "Use demonstrations and preferences through reward-model RLHF or direct preference optimization."
+      ],
+      "limit": [
+        "反馈来源、偏好质量和数据分布仍决定效果；DPO 并非 RLHF 的必经后继。",
+        "Feedback quality and distribution matter; these are alternative methods, not mandatory sequential stages."
+      ],
+      "nodes": [
+        {
+          "id": "preference-instruct",
+          "source": "instruct",
+          "date": "2022-03-04",
+          "title": "InstructGPT / RLHF",
+          "question": "T04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "示范做SFT，比较数据训练奖励模型，再用带约束的策略优化利用反馈。",
+            "Use demonstrations for SFT, comparisons for reward modeling and constrained policy optimization for feedback."
+          ],
+          "evidence": [
+            "InstructGPT公布了这套后训练流程与评测；人类偏好提升不能直接等同于所有事实都正确。",
+            "InstructGPT reports this pipeline and evaluations; better human preference scores do not establish universal factual correctness."
+          ]
+        },
+        {
+          "id": "preference-dpo",
+          "source": "dpo",
+          "date": "2023-05-29",
+          "title": "DPO",
+          "question": "T05",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "直接优化胜者与败者相对参考策略的概率比，省去独立奖励模型训练。",
+            "Optimize winner/loser probability ratios relative to a reference, without fitting a separate reward model."
+          ],
+          "evidence": [
+            "DPO从KL正则化目标推导偏好损失，仍需要偏好对与参考策略，属于替代方法而非必经后继。",
+            "DPO derives a preference loss from a KL-regularized objective. It still needs preference pairs and a reference and is an alternative, not a mandatory successor."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "preference-case-0",
+          "company": "openai",
+          "model": "InstructGPT · RLHF",
+          "year": "2022",
+          "source": "instruct",
+          "evidence": [
+            "InstructGPT 采用示范微调、偏好奖励模型与强化学习流程。",
+            "InstructGPT uses demonstration tuning, preference-based reward modeling and reinforcement learning."
+          ],
+          "relation": "documented-use"
+        },
+        {
+          "id": "preference-case-1",
+          "company": "meta",
+          "model": "Llama 3.1 · SFT + DPO",
+          "year": "2024",
+          "source": "llama",
+          "evidence": [
+            "Meta 公布迭代后训练，每轮包含监督微调与直接偏好优化等步骤。",
+            "Meta reports iterative post-training with supervised fine-tuning and DPO for Llama 3.1."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "T04",
+        "T05"
+      ]
+    },
+    {
+      "id": "reasoning_rl",
+      "track": "train",
+      "group": "Feedback",
+      "highlight": true,
+      "title": [
+        "强化学习提升推理",
+        "Reasoning through RL"
+      ],
+      "problem": [
+        "如何通过训练，让模型更有效地执行多步求解？",
+        "How can training improve multistep problem solving?"
+      ],
+      "method": [
+        "用强化学习塑造推理行为。R1 公开了包含可验证任务反馈的具体训练方案。",
+        "Optimize reasoning behavior using feedback, including verifiable outcomes in disclosed R1 tasks."
+      ],
+      "limit": [
+        "o1 的公开说明不足以证明其奖励、算法与 R1 相同；需分别核对。",
+        "o1 disclosures do not establish the same algorithm or rewards as R1."
+      ],
+      "nodes": [
+        {
+          "id": "reasoning_rl-o1",
+          "source": "o1",
+          "date": "2024-09-12",
+          "title": "o1 · reasoning RL",
+          "question": "T06",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "通过强化学习塑造求解行为，并研究训练计算与回答时计算的扩展。",
+            "Shape problem solving through RL and study scaling of training and answering compute."
+          ],
+          "evidence": [
+            "OpenAI在2024年公开方向与实验；未公开完整奖励和算法，不能按R1的方案补全。",
+            "OpenAI discloses the direction and experiments in 2024, not a complete reward or algorithm specification; R1 cannot fill those gaps."
+          ]
+        },
+        {
+          "id": "reasoning_rl-r1_paper",
+          "source": "r1_paper",
+          "date": "2025-01-22",
+          "title": "R1 / R1-Zero",
+          "question": "T06",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "可核验任务反馈支持推理RL；区分R1-Zero直接RL与R1冷启动、多阶段流程。",
+            "Verifiable feedback supports reasoning RL; distinguish direct-RL R1-Zero from cold-start, multistage R1."
+          ],
+          "evidence": [
+            "2025报告公开组内相对奖励等方法；验证最终答案不等于证明每步推理正确。",
+            "The 2025 report describes methods including group-relative rewards. Checking the final outcome does not prove every reasoning step."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "reasoning_rl-case-0",
+          "company": "openai",
+          "model": "o1 · reasoning RL",
+          "year": "2024",
+          "source": "o1",
+          "evidence": [
+            "OpenAI 公开说明 o1 通过强化学习学习推理，并受益于训练与回答时计算扩展。",
+            "OpenAI describes reasoning RL and gains from increased training and answering compute, without publishing the full recipe."
+          ],
+          "relation": "documented-use"
+        },
+        {
+          "id": "reasoning_rl-case-1",
+          "company": "deepseek",
+          "model": "DeepSeek-R1",
+          "year": "2025",
+          "source": "r1",
+          "evidence": [
+            "R1 项目区分 R1-Zero 的直接 RL 探索与 R1 的多阶段方案。",
+            "The project distinguishes direct-RL R1-Zero from the multistage R1 approach."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "T06"
+      ]
+    },
+    {
+      "id": "shared_kv",
+      "track": "inference",
+      "group": "KV",
+      "highlight": true,
+      "title": [
+        "共享 KV · MQA / GQA",
+        "Shared KV · MQA / GQA"
+      ],
+      "problem": [
+        "增量解码需要反复读取历史 KV，容量与带宽成为约束。",
+        "Repeated historical KV reads constrain decoding capacity and bandwidth."
+      ],
+      "method": [
+        "减少 KV 头数：MQA 全部 Query 头共享，GQA 按组共享。",
+        "Share KV heads across all query heads or groups."
+      ],
+      "limit": [
+        "涉及模型架构与质量取舍；缓存缩小比例不能直接当作端到端提速。",
+        "Architecture and quality tradeoffs remain; cache ratios are not speedup ratios."
+      ],
+      "nodes": [
+        {
+          "id": "shared_kv-mqa",
+          "source": "mqa",
+          "date": "2019-11-05",
+          "title": "MQA",
+          "question": "I01",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "让全部Query头共享一组K/V，降低增量解码时的缓存读取量。",
+            "Share one K/V set across query heads to reduce incremental-decoding cache traffic."
+          ],
+          "evidence": [
+            "2019 MQA研究以共享KV缓解带宽需求；实际质量与吞吐仍取决于模型和实现。",
+            "The 2019 MQA work reduces bandwidth demand through shared KV; quality and throughput remain model- and implementation-dependent."
+          ]
+        },
+        {
+          "id": "shared_kv-gqa_paper",
+          "source": "gqa_paper",
+          "date": "2023-05-22",
+          "title": "GQA",
+          "question": "I02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "将Query头分组共享K/V，在MHA与MQA之间选择缓存和质量的取舍。",
+            "Share K/V within query-head groups, choosing a memory/quality tradeoff between MHA and MQA."
+          ],
+          "evidence": [
+            "2023 GQA论文研究从多头模型转换与训练；缓存载荷比不等于端到端速度比。",
+            "The 2023 GQA paper studies model conversion and training; cache-payload ratios are not end-to-end speed ratios."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "shared_kv-case-0",
+          "company": "meta",
+          "model": "Llama 3 · GQA",
+          "year": "2024",
+          "source": "gqa",
+          "evidence": [
+            "Meta 明确说明 Llama 3 的 8B、70B 型号采用 GQA，以改善推理效率。",
+            "Meta states that Llama 3 8B and 70B use GQA to improve inference efficiency."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "I01",
+        "I02"
+      ]
+    },
+    {
+      "id": "latent_kv",
+      "track": "inference",
+      "group": "KV",
+      "highlight": false,
+      "title": [
+        "潜变量压缩 · MLA",
+        "Latent KV · MLA"
+      ],
+      "problem": [
+        "希望进一步减少每个 token 需要缓存的 KV 表示。",
+        "How can the cached representation per token shrink further?"
+      ],
+      "method": [
+        "把 KV 压缩为低维潜变量表示，并结合相应注意力实现。",
+        "Cache a low-dimensional joint latent representation with appropriate positional handling."
+      ],
+      "limit": [
+        "这是独立的表示设计，不是把 GQA 的组数再调小；依赖模型与内核支持。",
+        "A separate representation design, requiring model and kernel support."
+      ],
+      "nodes": [
+        {
+          "id": "latent_kv-v3",
+          "source": "v3",
+          "date": "2024-12-27",
+          "title": "MLA · V3",
+          "question": "I02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "DeepSeek-V3组合MoE与MLA，将稀疏计算和KV表示优化用于不同瓶颈。",
+            "DeepSeek-V3 combines MoE and MLA, targeting separate compute and KV representation constraints."
+          ],
+          "evidence": [
+            "V3技术报告公开DeepSeekMoE与MLA；MLA已在V2验证，不应把2024年12月当作MLA首次提出日期。",
+            "The V3 report discloses DeepSeekMoE and MLA, with MLA previously validated in V2; December 2024 is not the invention date of MLA."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "latent_kv-case-0",
+          "company": "deepseek",
+          "model": "V2 / V3 · MLA",
+          "year": "2024",
+          "source": "v3",
+          "evidence": [
+            "V3 报告明确采用已在 V2 验证的 MLA，目标包含高效推理。",
+            "The V3 report discloses DeepSeekMoE and MLA, with MLA previously validated in V2."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "I02"
+      ]
+    },
+    {
+      "id": "draft_verify",
+      "track": "inference",
+      "group": "Generation",
+      "highlight": false,
+      "title": [
+        "草稿—验证 · 推测解码",
+        "Draft and verify"
+      ],
+      "problem": [
+        "逐 token 串行运行目标模型，使生成速度受限。",
+        "Sequential target-model calls constrain generation."
+      ],
+      "method": [
+        "先产生多个候选 token，再由目标模型并行验证与校正采样。",
+        "Propose multiple tokens, then verify and correct sampling with the target."
+      ],
+      "limit": [
+        "保持目标分布依赖完整算法；收益由接受率、草稿开销与服务负载共同决定。",
+        "Distribution preservation requires the complete algorithm; acceptance and cost determine gains."
+      ],
+      "nodes": [
+        {
+          "id": "draft_verify-spec_paper",
+          "source": "spec_paper",
+          "date": "2022-11-30",
+          "title": "Speculative decoding",
+          "question": "I03",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "草稿提出候选，目标模型并行验证，用接受／拒绝和残差采样恢复目标分布。",
+            "Draft candidates, verify them in parallel, and use acceptance/rejection with residual sampling to recover the target distribution."
+          ],
+          "evidence": [
+            "方法于2022年公开、发表于ICML 2023；无损采样结论依赖完整校正算法及分布假设。",
+            "First disclosed in 2022 and published at ICML 2023. Distribution preservation depends on the full correction algorithm and assumptions."
+          ]
+        },
+        {
+          "id": "draft_verify-speculative",
+          "source": "speculative",
+          "date": "2024",
+          "title": "AI Overviews",
+          "question": "I03",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "Google公开AI Overviews使用推测解码，以草稿—验证减少昂贵生成步骤。",
+            "Google discloses speculative decoding in AI Overviews to reduce expensive generation steps."
+          ],
+          "evidence": [
+            "这是2024年的产品采用披露，不是该方法的首次提出；未承诺所有请求获得一致收益。",
+            "This is a 2024 adoption disclosure, not the method’s invention, and does not promise identical gains for all requests."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "draft_verify-case-0",
+          "company": "google",
+          "model": "Search AI Overviews",
+          "year": "2024",
+          "source": "speculative",
+          "evidence": [
+            "Google Research 在 2024 年回顾中明确表示 AI Overviews 使用推测解码加速。",
+            "Google Research reports speculative decoding in Search AI Overviews in its 2024 retrospective."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "I03"
+      ]
+    },
+    {
+      "id": "thinking",
+      "track": "inference",
+      "group": "Generation",
+      "highlight": true,
+      "title": [
+        "增加求解计算 · Test-time",
+        "Test-time compute"
+      ],
+      "problem": [
+        "复杂问题可能需要更多推理步骤、候选探索和验证。",
+        "Hard problems may benefit from more search and verification."
+      ],
+      "method": [
+        "在回答阶段增加或分配计算；部分型号提供普通回答与思考模式。",
+        "Allocate answering compute to trajectories, candidates and verification."
+      ],
+      "limit": [
+        "更多 token 不保证正确；需同时评价质量、延迟、成本与停止条件。",
+        "More tokens do not guarantee correctness; measure cost, latency and stopping behavior."
+      ],
+      "nodes": [
+        {
+          "id": "thinking-testtime",
+          "source": "testtime",
+          "date": "2024-08-06",
+          "title": "Test-time compute",
+          "question": "I05",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "把有限回答预算分给更长求解、候选搜索与验证，结合问题难度调节。",
+            "Allocate answering budgets among longer trajectories, search and verification according to difficulty."
+          ],
+          "evidence": [
+            "2024研究讨论最优推理计算分配；结果依赖具体模型、任务与验证器。",
+            "The 2024 study examines optimal inference-compute allocation, conditional on models, tasks and verifiers."
+          ]
+        },
+        {
+          "id": "thinking-claude",
+          "source": "claude",
+          "date": "2025-02-24",
+          "title": "Extended thinking",
+          "question": "I05",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "Claude 3.7同时提供标准回答与扩展思考，允许设置思考预算。",
+            "Claude 3.7 offers standard responses and extended thinking with an adjustable budget."
+          ],
+          "evidence": [
+            "2025官方公告披露外部能力；并未由此公开其内部搜索或奖励算法。",
+            "The 2025 announcement discloses product behavior, not an internal search or reward algorithm."
+          ]
+        },
+        {
+          "id": "thinking-qwen",
+          "source": "qwen",
+          "date": "2025-04-29",
+          "title": "Hybrid thinking",
+          "question": "I05",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "Qwen3提供思考与非思考模式，让回答预算成为可选择的维度。",
+            "Qwen3 offers thinking and non-thinking modes, making answering budget a selectable dimension."
+          ],
+          "evidence": [
+            "2025发布说明明确列出不同型号及混合思考能力；公司路线须绑定具体型号和模式。",
+            "The 2025 announcement identifies model variants and hybrid thinking. Route labels must refer to specific models and modes."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "thinking-case-0",
+          "company": "openai",
+          "model": "o1",
+          "year": "2024",
+          "source": "o1",
+          "evidence": [
+            "o1 的公开研究把回答时计算作为推理质量扩展的一个维度。",
+            "OpenAI describes reasoning RL and gains from increased training and answering compute, without publishing the full recipe."
+          ],
+          "relation": "documented-use"
+        },
+        {
+          "id": "thinking-case-1",
+          "company": "anthropic",
+          "model": "Claude 3.7 Sonnet",
+          "year": "2025",
+          "source": "claude",
+          "evidence": [
+            "Claude 3.7 支持标准回答与扩展思考，允许调整思考预算。",
+            "Claude 3.7 offers standard responses and extended thinking with a configurable budget."
+          ],
+          "relation": "documented-use"
+        },
+        {
+          "id": "thinking-case-2",
+          "company": "alibaba",
+          "model": "Qwen3 · hybrid thinking",
+          "year": "2025",
+          "source": "qwen",
+          "evidence": [
+            "Qwen3 发布说明包含 thinking / non-thinking 混合模式。",
+            "Qwen3 discloses thinking and non-thinking modes."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "I05"
+      ]
+    },
+    {
+      "id": "long_context",
+      "track": "inference",
+      "group": "Context",
+      "highlight": false,
+      "title": [
+        "长上下文与位置",
+        "Long context & positions"
+      ],
+      "problem": [
+        "模型能够接收更多 token，只说明接口或结构允许更长输入，不证明能可靠使用其中每个事实。Lost in the Middle 在其被测模型和检索／问答任务中观察到位置敏感性：信息在中间时表现可能更差。",
+        "Accepting more tokens establishes an input capacity, not reliable use of every fact. Lost in the Middle found positional sensitivity in its tested models and retrieval/QA tasks, with information in the middle sometimes used less effectively."
+      ],
+      "method": [
+        "旋转Query与Key的位置表示，让点积包含相对位置信息。",
+        "Rotate query/key positional representations so dot products encode relative position."
+      ],
+      "limit": [
+        "长输入增加 prefill 成本与 KV 占用；压缩、检索和摘要可能漏掉关键细节。实际系统需要证据定位、引用检查与任务级评测，不能只依据最大窗口数字选型。",
+        "Long inputs increase prefill work and KV memory. Compression, retrieval and summaries may omit crucial details. Systems need evidence localization, citation checks and task-level evaluation rather than selection by maximum window size alone."
+      ],
+      "nodes": [
+        {
+          "id": "long_context-rope",
+          "source": "rope",
+          "date": "2021-04-20",
+          "title": "RoPE",
+          "question": "I04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "旋转Query与Key的位置表示，让点积包含相对位置信息。",
+            "Rotate query/key positional representations so dot products encode relative position."
+          ],
+          "evidence": [
+            "RoFormer于2021年提出RoPE；位置编码机制不保证未训练长度下的检索和推理质量。",
+            "RoFormer introduces RoPE in 2021. Positional encoding does not guarantee retrieval or reasoning at unseen lengths."
+          ]
+        },
+        {
+          "id": "long_context-lost",
+          "source": "lost",
+          "date": "2023-07-06",
+          "title": "Lost in the Middle",
+          "question": "I04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "在不同上下文位置放置证据，分别检验窗口容量与有效使用。",
+            "Place evidence at different context positions to test effective use separately from capacity."
+          ],
+          "evidence": [
+            "2023研究发现其被测模型与任务存在位置敏感性；不能外推为所有后续模型的统一表现。",
+            "The 2023 work finds positional sensitivity in its tested models and tasks; this is not a universal result for later models."
+          ]
+        }
+      ],
+      "cases": [],
+      "questions": [
+        "I04"
+      ]
+    },
+    {
+      "id": "quantization",
+      "track": "inference",
+      "group": "Execution",
+      "highlight": false,
+      "title": [
+        "低比特执行",
+        "Low-bit execution"
+      ],
+      "problem": [
+        "权重从高精度数转换为低比特编码可减少存储和读取流量，但量化误差可能改变模型行为。权重量化、激活量化与 KV 量化针对不同张量，不能用一个“4 bit”标签概括整个推理过程。",
+        "Low-bit weight codes reduce storage and read traffic, but quantization errors can change behavior. Weight, activation and KV quantization target different tensors; one “4-bit” label does not describe the entire inference process."
+      ],
+      "method": [
+        "利用激活信息调整敏感权重的缩放，控制低比特权重量化误差。",
+        "Use activation information to scale sensitive weights and control low-bit weight-quantization errors."
+      ],
+      "limit": [
+        "异常值、校准数据与任务分布影响误差；硬件是否支持高效内核决定收益。上线前要验证长上下文、特定领域和输出一致性，不能只测一个平均分。",
+        "Outliers, calibration data and task distributions affect error. Efficient kernel support determines performance. Validate long contexts, domain tasks and output behavior rather than relying on one average score."
+      ],
+      "nodes": [
+        {
+          "id": "quantization-awq",
+          "source": "awq",
+          "date": "2023-06-01",
+          "title": "AWQ",
+          "question": "I06",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "利用激活信息调整敏感权重的缩放，控制低比特权重量化误差。",
+            "Use activation information to scale sensitive weights and control low-bit weight-quantization errors."
+          ],
+          "evidence": [
+            "AWQ针对权重量化；缓存与激活精度、内核支持以及评测任务需要另行说明。",
+            "AWQ targets weight quantization. KV/activation precision, kernel support and evaluation tasks need separate specification."
+          ]
+        }
+      ],
+      "cases": [],
+      "questions": [
+        "I06"
+      ]
+    },
+    {
+      "id": "sharding",
+      "track": "systems",
+      "group": "Distributed",
+      "highlight": true,
+      "title": [
+        "状态分片 · ZeRO",
+        "Training-state sharding"
+      ],
+      "problem": [
+        "数据并行副本重复保存参数、梯度与优化器状态。",
+        "Data-parallel replicas duplicate training states."
+      ],
+      "method": [
+        "分阶段切分训练状态，用通信换取更低的单卡显存占用。",
+        "Partition optimizer states, gradients and parameters in stages."
+      ],
+      "limit": [
+        "显存节省会引入通信与调度成本；可与模型并行组合。",
+        "Reduced memory adds communication and scheduling work; combine with model parallelism."
+      ],
+      "nodes": [
+        {
+          "id": "sharding-zero_paper",
+          "source": "zero_paper",
+          "date": "2019-10-04",
+          "title": "ZeRO",
+          "question": "S01",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "逐阶段分片优化器、梯度和参数，减少数据并行副本的状态冗余。",
+            "Progressively shard optimizer states, gradients and parameters to reduce data-parallel redundancy."
+          ],
+          "evidence": [
+            "2019 ZeRO论文给出状态分片方案；理论状态节省不包含激活、通信缓冲和峰值收集开销。",
+            "The 2019 ZeRO paper presents state partitioning; ideal state savings exclude activations, communication buffers and peak gather costs."
+          ]
+        },
+        {
+          "id": "sharding-zero",
+          "source": "zero",
+          "date": "2020-02-13",
+          "title": "DeepSpeed",
+          "question": "S01",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "DeepSpeed发布将ZeRO状态优化带入训练系统，协调显存与通信。",
+            "The DeepSpeed release brings ZeRO state optimization into a training system, balancing memory and communication."
+          ],
+          "evidence": [
+            "Microsoft的2020发布说明是项目采用证据；ZeRO论文时间仍保留为2019。",
+            "Microsoft’s 2020 announcement is project-adoption evidence; the ZeRO paper remains dated 2019."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "sharding-case-0",
+          "company": "microsoft",
+          "model": "DeepSpeed / ZeRO",
+          "year": "2020",
+          "source": "zero",
+          "evidence": [
+            "Microsoft 在 DeepSpeed 发布说明中介绍 ZeRO 优化器及其减少训练资源占用的机制。",
+            "Microsoft introduces ZeRO training-state optimization in the 2020 DeepSpeed release."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "S01"
+      ]
+    },
+    {
+      "id": "model_parallel",
+      "track": "systems",
+      "group": "Distributed",
+      "highlight": false,
+      "title": [
+        "计算切分 · 模型并行",
+        "Model parallelism"
+      ],
+      "problem": [
+        "模型计算和参数规模超出单个设备的有效承载范围。",
+        "One device cannot hold or efficiently compute the model."
+      ],
+      "method": [
+        "把层内张量、不同层及数据批次分配到多个设备。",
+        "Partition layer tensors, pipeline stages and batches over devices."
+      ],
+      "limit": [
+        "不同并行方式带来通信、流水线气泡与拓扑要求；不是 ZeRO 的替代品。",
+        "Communication, bubbles and topology constrain different parallel layouts."
+      ],
+      "nodes": [
+        {
+          "id": "model_parallel-megatron",
+          "source": "megatron",
+          "date": "2019-09-17",
+          "title": "Megatron-LM",
+          "question": "S02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "在Transformer层内部切分张量运算，让多GPU协同承担一层计算。",
+            "Partition tensor operations within Transformer layers across GPUs."
+          ],
+          "evidence": [
+            "2019 Megatron-LM研究层内模型并行；后续多种并行的组合单列在2021节点。",
+            "Megatron-LM in 2019 studies intra-layer parallelism. The later parallelism combination has a separate 2021 milestone."
+          ]
+        },
+        {
+          "id": "model_parallel-parallel",
+          "source": "parallel",
+          "date": "2021-04-09",
+          "title": "TP × PP × DP",
+          "question": "S02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "联合配置张量、流水线与数据并行，按网络拓扑和微批量协调通信与气泡。",
+            "Combine tensor, pipeline and data parallelism around topology, microbatches, communication and bubbles."
+          ],
+          "evidence": [
+            "2021工作研究大规模训练中的并行组合；不能只按GPU数量预测吞吐。",
+            "The 2021 work studies parallelism combinations for large-scale training; device count alone does not predict throughput."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "model_parallel-case-0",
+          "company": "nvidia",
+          "model": "Megatron-LM / Core",
+          "year": "2019+",
+          "source": "megatronCompany",
+          "evidence": [
+            "NVIDIA 将 Megatron Core 定位为可组合训练库，支持多种并行方法及其组合。",
+            "NVIDIA describes composable parallel training in Megatron Core; this is a maintained project page."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "S02"
+      ]
+    },
+    {
+      "id": "kernels",
+      "track": "systems",
+      "group": "Serving",
+      "highlight": false,
+      "title": [
+        "算子内核 · IO-aware attention",
+        "IO-aware kernels"
+      ],
+      "problem": [
+        "注意力计算中间结果的显存读写代价很高。",
+        "Attention intermediate reads and writes can be expensive."
+      ],
+      "method": [
+        "分块计算与在线 softmax，在片上完成局部处理，减少完整矩阵写回。",
+        "Tile attention with online softmax to avoid full intermediate matrix writes."
+      ],
+      "limit": [
+        "优化执行方式，并未把标准稠密注意力变成线性复杂度。",
+        "Dense attention does not become linear-complexity attention."
+      ],
+      "nodes": [
+        {
+          "id": "kernels-flash",
+          "source": "flash",
+          "date": "2022-05-27",
+          "title": "FlashAttention",
+          "question": "S03",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "分块加在线softmax减少HBM中间读写，保持标准注意力的数学运算。",
+            "Tiling and online softmax reduce HBM intermediates while preserving mathematical attention."
+          ],
+          "evidence": [
+            "2022 FlashAttention研究IO复杂度与内核实现；降低中间存储不等于把稠密交互变成线性复杂度。",
+            "FlashAttention in 2022 studies IO complexity and kernels. Less intermediate storage does not make dense interactions linear."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "kernels-case-0",
+          "company": "research",
+          "model": "FlashAttention · research",
+          "year": "2022",
+          "source": "flash",
+          "evidence": [
+            "此处标研究方法及其论文；未据此推断某家公司的所有线上模型均采用该实现。",
+            "This is a research method, not evidence that every company uses this implementation in production."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "S03"
+      ]
+    },
+    {
+      "id": "kv_paging",
+      "track": "systems",
+      "group": "Serving",
+      "highlight": false,
+      "title": [
+        "缓存管理 · PagedAttention",
+        "Paged KV allocation"
+      ],
+      "problem": [
+        "不同请求的 KV 动态增长，连续预留空间容易浪费。",
+        "Variable growing requests waste contiguous reservations."
+      ],
+      "method": [
+        "通过块表分离逻辑序列与物理 KV 位置，提高分配与共享效率。",
+        "Map logical token blocks to physical KV blocks through a table."
+      ],
+      "limit": [
+        "不改变模型在数学上所需的 KV 量；可与 GQA、MLA 和阶段分离结合。",
+        "Does not reduce mathematical KV payload; complements representation changes."
+      ],
+      "nodes": [
+        {
+          "id": "kv_paging-paged",
+          "source": "paged",
+          "date": "2023-09-12",
+          "title": "PagedAttention / vLLM",
+          "question": "S04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "用块表将逻辑token映射到非连续物理KV块，按需分配与共享。",
+            "Map logical tokens to noncontiguous KV blocks, allocating and sharing on demand."
+          ],
+          "evidence": [
+            "2023 PagedAttention／vLLM论文研究KV管理；其收益是减少浪费，不是直接缩小单token表示。",
+            "The 2023 PagedAttention/vLLM paper studies KV management; it reduces allocation waste rather than directly shrinking each token’s representation."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "kv_paging-case-0",
+          "company": "research",
+          "model": "vLLM · open source",
+          "year": "2023",
+          "source": "paged",
+          "evidence": [
+            "以原论文为机制依据。开源项目本身不等于某家公司的独占路线。",
+            "The original paper grounds the mechanism; the open-source project is not a company-exclusive route."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "S04"
+      ]
+    },
+    {
+      "id": "batching",
+      "track": "systems",
+      "group": "Serving",
+      "highlight": false,
+      "title": [
+        "迭代级调度",
+        "Iteration-level scheduling"
+      ],
+      "problem": [
+        "静态请求批处理可能让短请求等待长请求，已完成槽位也不能及时补充。Orca 的迭代级调度允许完成的请求退出、新请求在迭代边界加入，提高利用率，同时引入更细粒度的调度问题。",
+        "Static request batches can make short requests wait for long ones and leave completed slots unfilled. Orca’s iteration-level scheduling admits and removes requests at iteration boundaries, improving utilization while creating finer scheduling decisions."
+      ],
+      "method": [
+        "在每轮迭代接纳新请求、移除已完成请求，避免等待整个静态批次。",
+        "Admit new requests and remove completed ones at iteration boundaries instead of waiting for a static batch."
+      ],
+      "limit": [
+        "高吞吐不等于好的交互体验。需报告 TTFT、token 间延迟、尾分位和满足 SLO 的吞吐，并给定到达率、输入／输出长度分布。过度合批可能提高吞吐却使每个用户更慢。",
+        "High throughput does not equal good interaction. Report TTFT, inter-token latency, tail percentiles and SLO-compliant throughput alongside arrival rate and length distributions. Aggressive batching may increase throughput while slowing every user."
+      ],
+      "nodes": [
+        {
+          "id": "batching-orca",
+          "source": "orca",
+          "date": "2022-07",
+          "title": "Orca",
+          "question": "S05",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "在每轮迭代接纳新请求、移除已完成请求，避免等待整个静态批次。",
+            "Admit new requests and remove completed ones at iteration boundaries instead of waiting for a static batch."
+          ],
+          "evidence": [
+            "OSDI 2022的Orca提出迭代级调度等设计；吞吐需与首token及尾延迟联合评估。",
+            "Orca at OSDI 2022 presents iteration-level scheduling and related designs; assess throughput with first-token and tail latency."
+          ]
+        }
+      ],
+      "cases": [],
+      "questions": [
+        "S05"
+      ]
+    },
+    {
+      "id": "disaggregation",
+      "track": "systems",
+      "group": "Serving",
+      "highlight": true,
+      "title": [
+        "阶段分离 · PD → EPD",
+        "Disaggregation · PD → EPD"
+      ],
+      "problem": [
+        "编码、Prefill、Decode 的资源特点与延迟目标不同，混跑可能互相干扰。",
+        "Encoding, prefill and decode differ in resource and latency needs."
+      ],
+      "method": [
+        "分离部署、独立调度并传递状态；多模态场景进一步分离编码阶段。",
+        "Separate pools and scheduling, transferring KV or embeddings between stages."
+      ],
+      "limit": [
+        "需要承担 KV / 嵌入传输和资源调配成本；收益依赖流量、网络与硬件。",
+        "Transfers and resource imbalance can outweigh reduced interference."
+      ],
+      "nodes": [
+        {
+          "id": "disaggregation-distserve",
+          "source": "distserve",
+          "date": "2024-01-17",
+          "title": "DistServe",
+          "question": "S06",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "分离Prefill与Decode资源，分别优化首token与生成时延并传递KV状态。",
+            "Separate prefill/decode resources and transfer KV to optimize first-token and generation latency independently."
+          ],
+          "evidence": [
+            "2024 DistServe研究分离部署的有效吞吐；状态传输、资源配比与SLO是必要条件。",
+            "DistServe in 2024 studies disaggregated goodput, conditioned on state transfer, resource ratios and SLOs."
+          ]
+        },
+        {
+          "id": "disaggregation-dynamo",
+          "source": "dynamo",
+          "date": "2025-03-18",
+          "title": "Dynamo · PD",
+          "question": "S06",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "Dynamo引入PD分离与KV感知路由，按请求状态和资源池调度。",
+            "Dynamo introduces PD disaggregation and KV-aware routing across resource pools."
+          ],
+          "evidence": [
+            "NVIDIA于2025-03-18披露系统设计；项目支持某机制不表示每个部署都启用它。",
+            "NVIDIA discloses the design on March 18, 2025. Framework support does not mean every deployment enables it."
+          ]
+        },
+        {
+          "id": "disaggregation-epd",
+          "source": "epd",
+          "date": "2026-09-09",
+          "title": "Dynamo · EPD",
+          "question": "S06",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "将多模态Encode进一步分离，与Prefill、Decode分别扩缩容并传输状态。",
+            "Also separate multimodal encoding, independently scaling encode, prefill and decode and transferring state."
+          ],
+          "evidence": [
+            "2026-09-09官方分析讨论EPD适用条件；需要按模态、输入长度、硬件、网络和流量评测。",
+            "The September 9, 2026 analysis discusses EPD conditions. Evaluate modality, input lengths, hardware, network and load."
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "disaggregation-case-0",
+          "company": "nvidia",
+          "model": "Dynamo · PD disaggregation",
+          "year": "2025",
+          "source": "dynamo",
+          "evidence": [
+            "NVIDIA Dynamo 发布说明包含 Prefill / Decode 分离与 KV 感知路由。",
+            "NVIDIA Dynamo discloses prefill/decode disaggregation and KV-aware routing."
+          ],
+          "relation": "documented-use"
+        },
+        {
+          "id": "disaggregation-case-1",
+          "company": "nvidia",
+          "model": "Dynamo · EPD disaggregation",
+          "year": "2026",
+          "source": "epd",
+          "evidence": [
+            "NVIDIA 于 2026-09-09 公布多模态编码、Prefill、Decode 分离的适用条件与实验。",
+            "NVIDIA discusses conditions and experiments for multimodal EPD disaggregation on September 9, 2026."
+          ],
+          "relation": "documented-use"
+        }
+      ],
+      "questions": [
+        "S06"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "T01",
+      "track": "train",
+      "route": "dense",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "Transformer 为什么更适合并行训练？",
+        "Why is Transformer training more parallel?"
+      ],
+      "goal": [
+        "分清训练中的位置并行与生成时的自回归依赖。",
+        "Separate parallel training positions from autoregressive generation."
+      ],
+      "problem": [
+        "循环网络的下一状态依赖上一状态，序列维度难以完全并行。2017 年 Transformer 用注意力连接位置，让一层中各位置的计算可组织成矩阵运算。它消除的是层内的循环路径，并没有消除层与层的依赖。",
+        "Recurrent states depend on preceding states, limiting parallelism over positions. The 2017 Transformer connects positions through attention and expresses each layer as matrix operations. This removes within-layer recurrence, not dependencies between layers."
+      ],
+      "mechanism": [
+        "训练时完整目标序列已知，右移后的真实 token 作为输入；因果掩码阻止位置读取未来答案。QKᵀ 为各位置计算相关性，softmax 后加权 V。解码时未来 token 尚未知，普通自回归模型仍需生成一个再生成下一个；KV cache 只能省去历史 K/V 的重复计算。",
+        "During training the target sequence is known. Shifted ground-truth tokens are inputs and a causal mask hides future tokens. QKᵀ scores positions, and softmax weights V. During decoding future tokens are unknown: ordinary autoregressive generation still produces them sequentially. KV caching avoids recomputing past keys and values."
+      ],
+      "formula": "Attention(Q,K,V) = softmax(QKᵀ / √dₖ + mask)V",
+      "example": [
+        "教学图：训练 [A,B,C]→[B,C,D] 时，三个位置的损失可在同一前向过程中得到；生成时必须先得到 B 才能把 B 作为下一步输入。并行程度取决于批量、序列长度、硬件和实现。",
+        "Teaching example: training [A,B,C]→[B,C,D] can compute losses at all three positions in one forward pass. Generation must obtain B before using B as the next input. Actual parallelism depends on batch size, sequence length, hardware and implementation."
+      ],
+      "limit": [
+        "标准稠密注意力的分数矩阵随序列长度平方增长。更好的并行性不等于低总计算量；长上下文又引出了显存、IO、位置表示和训练数据覆盖问题。",
+        "Dense attention scores grow quadratically with sequence length. More parallelism does not mean less total computation; long contexts introduce memory, IO, positional representation and data-coverage constraints."
+      ],
+      "figure": {
+        "kind": "compare",
+        "labels": [
+          [
+            "循环：A → B → C",
+            "Recurrent: A → B → C"
+          ],
+          [
+            "训练：A、B、C 同层计算",
+            "Training: A, B, C in one layer"
+          ],
+          [
+            "生成：A → 生成 B → 生成 C",
+            "Decode: A → generate B → generate C"
+          ]
+        ],
+        "caption": [
+          "依赖关系重绘；并排表示可并行，不是实测时间。",
+          "Dependency redraw; parallel layout is not a measured runtime."
+        ]
+      },
+      "sources": [
+        "transformer"
+      ],
+      "related": [
+        "I01",
+        "S03"
+      ]
+    },
+    {
+      "id": "T02",
+      "track": "train",
+      "route": "dense",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "同样算力，参数与训练 token 如何分配？",
+        "How should a fixed compute budget split parameters and tokens?"
+      ],
+      "goal": [
+        "用预算曲线理解 Scaling laws 与 Chinchilla 的转折。",
+        "Understand scaling laws and Chinchilla through a compute budget."
+      ],
+      "problem": [
+        "2020 年 Scaling laws 描述损失随参数、数据和计算量变化的规律。2022 年 Chinchilla 指出，许多大模型相对其参数量训练得不够充分；固定训练算力下，单纯增加参数可能不如增加训练数据。",
+        "The 2020 scaling-laws work models loss against parameters, data and compute. Chinchilla in 2022 found many large models undertrained relative to their size; spending a fixed budget on more parameters can be worse than training on more tokens."
+      ],
+      "mechanism": [
+        "把稠密 decoder 的训练计算近似为 C≈6ND：N 为参数量，D 为训练 token 数，6 概括前向和反向的主项。在相同 C 上选不同 N、D 并测量损失，再拟合最优分配。Chinchilla 的研究支持在其实验范围内随预算同时扩展模型与数据，不是对所有模型规定一个永久比例。",
+        "Approximate dense decoder training compute as C≈6ND, where N is parameters, D is training tokens, and 6 captures dominant forward/backward work. Evaluate loss for different N,D at the same C and fit an allocation. Chinchilla supports scaling both within its experimental regime, not an eternal token-to-parameter ratio."
+      ],
+      "formula": "C ≈ 6 × N × D  [FLOPs]",
+      "example": [
+        "教学算例：10B 参数×200B token 约为 1.2×10²² FLOPs；同一近似预算也可训练 20B×100B。公式只证明预算近似相同，不能证明两者质量相同；忽略注意力序列开销、稀疏性和硬件利用率。",
+        "Teaching example: 10B parameters × 200B tokens is approximately 1.2×10²² FLOPs; 20B × 100B uses the same approximation. Equal approximate compute does not imply equal quality. This omits sequence-dependent attention, sparsity and hardware utilization."
+      ],
+      "limit": [
+        "训练损失最优未必是产品全生命周期最便宜。高调用量服务可选择更小模型、训练更久，以降低每次推理成本；高质量且不重复的数据供给也会成为约束。",
+        "Training-loss optimality is not lifecycle-cost optimality. A high-volume service may train a smaller model longer to reduce per-call inference cost. Available high-quality, nonredundant data is another constraint."
+      ],
+      "figure": {
+        "kind": "compare",
+        "labels": [
+          [
+            "预算 C 固定",
+            "Fixed budget C"
+          ],
+          [
+            "更大 N · 更少 D",
+            "Larger N · fewer D"
+          ],
+          [
+            "更小 N · 更多 D",
+            "Smaller N · more D"
+          ]
+        ],
+        "caption": [
+          "两条预算分配路线，质量需另行测量。",
+          "Two budget allocations; quality must be measured separately."
+        ]
+      },
+      "sources": [
+        "scaling",
+        "chinchilla"
+      ],
+      "related": [
+        "T03",
+        "I06"
+      ]
+    },
+    {
+      "id": "T03",
+      "track": "train",
+      "route": "moe",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "Dense 和 MoE 究竟在交换什么？",
+        "What do dense models and MoE trade?"
+      ],
+      "goal": [
+        "总参数、激活参数、路由和通信要分开看。",
+        "Distinguish total parameters, active parameters, routing and communication."
+      ],
+      "problem": [
+        "稠密模型通常对每个 token 使用全部前馈层参数，扩大容量会增加该部分计算。MoE 用多个专家扩展容量，让每个 token 只调用部分专家。它改变的是容量和计算的关系，不保证显存、延迟与训练难度同时下降。",
+        "Dense models normally use all feed-forward parameters for each token. MoE grows capacity through multiple experts while activating only a subset per token. It changes capacity versus compute, without guaranteeing lower memory, latency or training difficulty."
+      ],
+      "mechanism": [
+        "路由器给 token 分配专家，专家处理后再合并结果。Switch 研究了 top-1 路由；其他系统采用多专家和共享专家。总参数影响存储，激活参数更接近单 token 计算主项，但注意力、路由和设备间交换仍要计算。",
+        "A router dispatches tokens to experts and combines their outputs. Switch studied top-1 routing; other systems use multiple and shared experts. Total parameters affect storage; active parameters better approximate dominant per-token work, but attention, routing and device transfers remain."
+      ],
+      "formula": "y(x) = Σᵢ∈Top-k(x) gᵢ(x) Eᵢ(x)",
+      "example": [
+        "公开实践：Gemini 1.5 Pro、DeepSeek-V3 与 Qwen3-235B-A22B 都披露 MoE；Qwen3 同时提供稠密型号。不能把一家公司的整个产品族贴成唯一架构，也不能把 A22B 视为整个模型只需存储 22B 参数。",
+        "Public examples include Gemini 1.5 Pro, DeepSeek-V3 and Qwen3-235B-A22B. Qwen3 also has dense models. A company need not use one architecture across its family, and A22B does not mean only 22B parameters need to be stored."
+      ],
+      "limit": [
+        "专家不均衡会造成热点、空闲或容量溢出；跨设备 all-to-all 又受拓扑与带宽影响。需要结合批量、负载均衡策略和真实服务延迟评价稀疏收益。",
+        "Uneven expert loads create hotspots, idle devices or capacity overflow. Cross-device all-to-all depends on network topology and bandwidth. Evaluate sparse gains with batch size, balancing strategy and actual serving latency."
+      ],
+      "figure": {
+        "kind": "fork",
+        "labels": [
+          [
+            "Token → 路由器",
+            "Token → router"
+          ],
+          [
+            "选中专家 E₁、E₃",
+            "Selected experts E₁, E₃"
+          ],
+          [
+            "其余专家不激活",
+            "Other experts inactive"
+          ],
+          [
+            "加权合并输出",
+            "Weighted output merge"
+          ]
+        ],
+        "caption": [
+          "选择性激活示意；专家数量和 top-k 是教学配置。",
+          "Selective activation; expert count and top-k are illustrative."
+        ]
+      },
+      "sources": [
+        "switch",
+        "gemini",
+        "v3",
+        "qwen"
+      ],
+      "related": [
+        "S02",
+        "T02"
+      ]
+    },
+    {
+      "id": "T04",
+      "track": "train",
+      "route": "preference",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "SFT、奖励模型、RLHF 分别解决什么？",
+        "What do SFT, reward models and RLHF each solve?"
+      ],
+      "goal": [
+        "从预测文本转向利用示范和偏好。",
+        "Move from text prediction to demonstrations and preferences."
+      ],
+      "problem": [
+        "预训练擅长延续文本，却不直接以“满足指令”为目标。InstructGPT 将人类示范与比较反馈引入后训练，使训练信号更贴近期望行为。示范质量、标注者偏好和任务覆盖都会影响最终行为。",
+        "Pretraining learns text continuation rather than directly optimizing instruction fulfillment. InstructGPT adds demonstrations and comparative feedback during post-training. Demonstration quality, annotator preferences and task coverage shape behavior."
+      ],
+      "mechanism": [
+        "SFT 用示范答案做监督学习；奖励模型从同一提示下的答案排序学习打分；RL 阶段生成答案并优化奖励，同时通常用与参考策略的偏离约束稳定训练。这是一个具体流程，RLHF 也包含其他实现，不应把 PPO 当作唯一方法。",
+        "SFT learns from demonstrated answers. A reward model learns scores from answer rankings for the same prompt. RL then samples answers and optimizes reward, typically constraining deviation from a reference policy. This is one concrete pipeline; RLHF does not uniquely imply PPO."
+      ],
+      "formula": "J(π) = E[r(x,y)] − β · D_KL(π ∥ π_ref)",
+      "example": [
+        "目标式是概念简化：奖励越高越好，但偏离参考策略会付出代价。β 太小可能过度追逐奖励漏洞；太大又限制行为变化。具体实现的 KL 估计、采样和优化细节必须回到论文。",
+        "This simplified objective rewards better scores but penalizes deviation. Too little regularization can exploit reward errors; too much can prevent useful change. KL estimators, sampling and optimization details belong to the specific implementation."
+      ],
+      "limit": [
+        "学到的奖励不是事实正确性的证明。偏好模型可能偏爱长度或语气；优化器也可能放大评分漏洞。必须用独立任务评估、人工检查和分布外测试检验收益。",
+        "A learned reward is not proof of factual correctness. Preferences may favor length or tone, and optimization can amplify scoring loopholes. Validate using independent tasks, human review and out-of-distribution tests."
+      ],
+      "figure": {
+        "kind": "pipeline",
+        "labels": [
+          [
+            "示范 → SFT",
+            "Demonstrations → SFT"
+          ],
+          [
+            "答案比较 → 奖励模型",
+            "Comparisons → reward model"
+          ],
+          [
+            "采样 → 奖励与 KL",
+            "Sample → reward and KL"
+          ],
+          [
+            "策略更新 → 再评估",
+            "Policy update → reevaluate"
+          ]
+        ],
+        "caption": [
+          "InstructGPT 后训练机制的简化重绘。",
+          "Simplified redraw of InstructGPT post-training."
+        ]
+      },
+      "sources": [
+        "instruct"
+      ],
+      "related": [
+        "T05",
+        "T06"
+      ]
+    },
+    {
+      "id": "T05",
+      "track": "train",
+      "route": "preference",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "DPO 为何可以省掉独立奖励模型？",
+        "Why can DPO omit a separate reward model?"
+      ],
+      "goal": [
+        "理解隐式奖励与离线偏好对的作用。",
+        "Understand implicit rewards and offline preference pairs."
+      ],
+      "problem": [
+        "基于奖励模型的 RLHF 包含奖励拟合、在线采样和策略优化等环节。DPO 利用 KL 正则化奖励最大化问题的关系，把偏好学习写成直接针对策略的分类式目标，减少训练流程中的独立组件。",
+        "Reward-model RLHF includes reward fitting, online sampling and policy optimization. DPO uses the relationship in KL-regularized reward maximization to turn preference learning into a classification-like policy objective, reducing separate training components."
+      ],
+      "mechanism": [
+        "对同一提示 x 的胜者 y_w 与败者 y_l，比较当前策略相对于参考策略的对数概率比。提高胜者的相对优势，不需要先训练一个单独的标量奖励网络。这依赖论文中的偏好模型与优化推导；并不意味着无需偏好数据或参考策略。",
+        "For a winner y_w and loser y_l under prompt x, compare log-probability ratios between current and reference policies. Increase the winner’s relative advantage without first fitting a separate scalar reward network. The derivation assumes a preference model; preference data and a reference policy are still needed."
+      ],
+      "formula": "L_DPO = −log σ(β{log[π(y_w|x)/π_ref(y_w|x)] − log[π(y_l|x)/π_ref(y_l|x)]})",
+      "example": [
+        "若胜者相对参考策略的比值为 2、败者为 1，括号中的优势为 log 2；反过来则为 −log 2。目标鼓励区分偏好对，不保证答案绝对概率上升，也不是对事实真假的直接判别。",
+        "If the winner’s ratio to reference is 2 and the loser’s is 1, the margin is log 2; reversed it is −log 2. The objective separates pairs. It does not guarantee an increase in absolute answer probability or directly judge factual truth."
+      ],
+      "limit": [
+        "离线偏好覆盖不到的新策略行为仍可能出错。噪声偏好、长度偏差、β 和参考策略选择都会影响结果。Meta 披露 Llama 3.1 使用 SFT 与 DPO，不说明所有公司的后训练都采用这条路线。",
+        "New policy behavior outside offline preference coverage can still fail. Noisy labels, length bias, β and the reference choice matter. Meta reports SFT and DPO for Llama 3.1; this does not establish every company’s training recipe."
+      ],
+      "figure": {
+        "kind": "compare",
+        "labels": [
+          [
+            "提示 x + 胜者 y_w",
+            "Prompt x + winner y_w"
+          ],
+          [
+            "提示 x + 败者 y_l",
+            "Prompt x + loser y_l"
+          ],
+          [
+            "策略／参考比值 → 偏好损失",
+            "Policy/reference ratios → preference loss"
+          ]
+        ],
+        "caption": [
+          "同一提示下比较两条完整回答的相对概率。",
+          "Compare relative probabilities of complete answers to the same prompt."
+        ]
+      },
+      "sources": [
+        "dpo",
+        "llama"
+      ],
+      "related": [
+        "T04",
+        "T06"
+      ]
+    },
+    {
+      "id": "T06",
+      "track": "train",
+      "route": "reasoning_rl",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "可验证奖励怎样塑造推理行为？",
+        "How do verifiable rewards shape reasoning?"
+      ],
+      "goal": [
+        "区分 R1-Zero 探索与 R1 多阶段训练。",
+        "Distinguish R1-Zero from the multistage R1 pipeline."
+      ],
+      "problem": [
+        "示范微调受限于可用的优质推理轨迹。在数学答案可核验、代码可测试的部分任务中，结果反馈能提供强化学习信号，让模型通过采样与更新调整求解行为。奖励仍只覆盖验证器能够检查的部分。",
+        "Supervised reasoning is limited by available high-quality traces. Some math answers and code outputs can be checked, providing RL signals through sampling and updates. The reward only covers what the verifier can actually check."
+      ],
+      "mechanism": [
+        "R1-Zero 探索了不先做 SFT 的直接 RL；R1 则采用冷启动数据和多阶段训练，不能把两者混为同一配方。GRPO 用同一问题一组候选的相对奖励构造优势估计，配合策略约束更新；最终答案奖励并不逐步证明推理过程正确。",
+        "R1-Zero explores direct RL without preliminary SFT. R1 uses cold-start data and multiple stages. GRPO estimates advantages from relative rewards within a group of candidates for one prompt, then updates the constrained policy. Outcome rewards do not prove every reasoning step correct."
+      ],
+      "formula": "Âᵢ ≈ (rᵢ − mean(r_group)) / std(r_group)",
+      "example": [
+        "教学算例：四个候选奖励 [0,0,1,1]，相对优势将正确候选与错误候选分开；若整组同分则没有这种区分信号，实现需处理零方差。OpenAI o1 公开了推理 RL 方向，但不能据此断言它采用同一奖励和算法。",
+        "Example: rewards [0,0,1,1] distinguish correct from incorrect candidates. Equal group rewards provide no such discrimination, and implementations must handle zero variance. OpenAI describes reasoning RL for o1, but this does not establish identical rewards or algorithms."
+      ],
+      "limit": [
+        "验证器可能被绕过，测试用例可能不完整，容易验证的任务也不代表所有开放问题。要同时检查泛化、可读性、长度成本和奖励漏洞，不把生成更长解释直接当成推理能力提升。",
+        "Verifiers can be exploited and tests can be incomplete. Easily checked tasks do not represent all open-ended problems. Check generalization, readability, length costs and reward hacking; longer explanations alone are not evidence of better reasoning."
+      ],
+      "figure": {
+        "kind": "pipeline",
+        "labels": [
+          [
+            "同一问题 → 一组候选",
+            "One problem → candidate group"
+          ],
+          [
+            "答案／测试验证",
+            "Answer / test verification"
+          ],
+          [
+            "组内相对奖励",
+            "Relative group rewards"
+          ],
+          [
+            "更新策略 → 新采样",
+            "Update policy → resample"
+          ]
+        ],
+        "caption": [
+          "组内相对奖励简图；未表示完整 R1 训练配方。",
+          "Relative-reward sketch, not the entire R1 training recipe."
+        ]
+      },
+      "sources": [
+        "r1_paper",
+        "r1",
+        "o1"
+      ],
+      "related": [
+        "T04",
+        "I05"
+      ]
+    },
+    {
+      "id": "I01",
+      "track": "inference",
+      "route": "shared_kv",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "KV cache 为什么随上下文和并发增长？",
+        "Why does KV cache grow with context and concurrency?"
+      ],
+      "goal": [
+        "把缓存容量写成可检查的 MiB 算式。",
+        "Turn cache capacity into a checkable MiB calculation."
+      ],
+      "problem": [
+        "自回归解码不断读取历史 token 的键和值。缓存它们可避免重复投影，但每个请求、每一层都要保留历史状态；更长的输入和输出、更高并发都会推高容量与带宽需求。",
+        "Autoregressive decoding repeatedly reads keys and values for past tokens. Caching avoids repeated projections, but every request and layer retains history. Longer inputs and outputs and higher concurrency increase memory and bandwidth demand."
+      ],
+      "mechanism": [
+        "标准 MHA／MQA／GQA 的理想 KV 载荷为 2×B×L×T×H_kv×d×s 字节，2 对应 K 与 V；B 是等长请求数，L 是层数，T 是每个请求当前缓存长度，H_kv 是 KV 头数，d 是头维度，s 是每元素字节。异长请求用各自 T 求和。",
+        "For standard MHA/MQA/GQA, ideal KV payload is 2×B×L×T×H_kv×d×s bytes. The 2 counts K and V; B is equal-length requests, L layers, T cached tokens per request, H_kv KV heads, d head dimension and s bytes per element. Sum individual lengths for unequal requests."
+      ],
+      "formula": "KV_MiB = 2 B L T H_kv d s / 2²⁰",
+      "example": [
+        "默认教学配置 B=1、L=32、T=4096、H_kv=8、d=128、s=2，得到 512 MiB；8 个这样的请求需要 4096 MiB。下方计算器只计算缓存载荷，不包括权重、激活、工作区、分页碎片、量化元数据与副本。",
+        "Default teaching configuration B=1, L=32, T=4096, H_kv=8, d=128, s=2 gives 512 MiB; eight such requests need 4096 MiB. The calculator excludes weights, activations, workspace, fragmentation, quantization metadata and replicas."
+      ],
+      "limit": [
+        "容量减小不自动等于相同比例提速：decode 可能受带宽、计算或调度限制。MLA 使用不同的压缩表示，不能把这条标准 KV 公式直接套作其精确容量。",
+        "Smaller capacity does not imply proportional speedup: decode may be limited by bandwidth, compute or scheduling. MLA has a different compressed representation; this standard formula is not its exact memory model."
+      ],
+      "figure": {
+        "kind": "pipeline",
+        "labels": [
+          [
+            "每个 token：K + V",
+            "Each token: K + V"
+          ],
+          [
+            "× 层数 × KV 头",
+            "× layers × KV heads"
+          ],
+          [
+            "× 历史长度 × 请求数",
+            "× history × requests"
+          ]
+        ],
+        "caption": [
+          "载荷乘数示意；下方数值可交互调整。",
+          "Payload factors; adjust the calculator below."
+        ]
+      },
+      "sources": [
+        "mqa",
+        "gqa_paper"
+      ],
+      "related": [
+        "I02",
+        "S04"
+      ]
+    },
+    {
+      "id": "I02",
+      "track": "inference",
+      "route": "shared_kv",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "MQA、GQA 和 MLA 分别怎样减少 KV？",
+        "How do MQA, GQA and MLA reduce KV?"
+      ],
+      "goal": [
+        "共享 KV 头与压缩潜变量是不同的设计。",
+        "Shared KV heads and latent compression are distinct designs."
+      ],
+      "problem": [
+        "Query 头可以学习不同的关注方式，但为每个 Query 头保留独立 K/V 会扩大缓存。2019 年 MQA、2023 年 GQA 探索共享 K/V；DeepSeek 的 MLA 则改变缓存表示。",
+        "Query heads can attend differently, but independent K/V for every query head increases cache. MQA (2019) and GQA (2023) explore shared K/V; DeepSeek’s MLA changes the cached representation."
+      ],
+      "mechanism": [
+        "MHA 中 H_kv=H_q；MQA 中所有 Query 头共享一组 KV，H_kv=1；GQA 则有 1<H_kv<H_q 个组。MLA 使用低维联合潜变量及其解压映射，并处理位置表示相关分量。它不是简单把 GQA 组数继续减小。",
+        "MHA has H_kv=H_q. MQA shares one KV set across query heads, H_kv=1. GQA uses an intermediate group count. MLA uses a low-dimensional joint latent representation, reconstruction mappings and positional components. It is not simply a smaller GQA group count."
+      ],
+      "formula": "MHA → GQA: ideal KV ratio = H_kv / H_q",
+      "example": [
+        "教学配置 32 个 Query 头、8 个 KV 头，在其余条件相同时，GQA 载荷为 MHA 的四分之一。Meta Llama 3 的 8B／70B 披露 GQA；DeepSeek-V3 披露 MLA；这些是具体型号的证据。",
+        "With 32 query heads and 8 KV heads, GQA has one quarter of MHA’s ideal payload, all else equal. Meta discloses GQA in Llama 3 8B/70B, and DeepSeek-V3 discloses MLA. These are model-specific examples."
+      ],
+      "limit": [
+        "共享程度与模型质量存在取舍，需要训练或转换与验证；压缩表示依赖模型结构和内核支持。不能仅改服务端参数就无损把任意模型改成 MLA，也不能直接用载荷比推断吞吐比。",
+        "Sharing trades against model quality and requires training or conversion and validation. Latent representations need architecture and kernel support. A serving setting cannot losslessly turn any model into MLA, and payload ratios do not determine throughput ratios."
+      ],
+      "figure": {
+        "kind": "compare",
+        "labels": [
+          [
+            "MHA：每头独立 KV",
+            "MHA: KV per query head"
+          ],
+          [
+            "GQA / MQA：组内共享 KV",
+            "GQA / MQA: shared KV"
+          ],
+          [
+            "MLA：压缩潜变量 + 位置分量",
+            "MLA: latent + positional components"
+          ]
+        ],
+        "caption": [
+          "表示结构对照；MLA 的精确缓存需按实现计算。",
+          "Representation comparison; calculate MLA memory for its implementation."
+        ]
+      },
+      "sources": [
+        "mqa",
+        "gqa_paper",
+        "gqa",
+        "v3"
+      ],
+      "related": [
+        "I01",
+        "S04"
+      ]
+    },
+    {
+      "id": "I03",
+      "track": "inference",
+      "route": "draft_verify",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "推测解码如何加速又保持目标分布？",
+        "How can speculative decoding preserve the target distribution?"
+      ],
+      "goal": [
+        "接受／拒绝与校正采样缺一不可。",
+        "Acceptance, rejection and correction all matter."
+      ],
+      "problem": [
+        "大模型逐 token 调用有串行成本。较便宜的草稿模型先提出多个 token，再由目标模型一次前向验证候选位置；若接受足够多，就可用较少昂贵步骤推进多 token。",
+        "Calling a large model token by token incurs sequential cost. A cheaper draft proposes several tokens and the target verifies their positions in one forward pass. Sufficient acceptance advances multiple tokens per expensive step."
+      ],
+      "mechanism": [
+        "令目标分布为 p、草稿分布为 q，对草稿采样 token 的接受概率为 min(1,p/q)。首次拒绝后从归一化的正残差 max(0,p−q) 采样，并丢弃其后的草稿。完整接受／拒绝与校正算法在其假设下保持目标分布；并非简单选择目标模型最喜欢的草稿。",
+        "With target p and draft q, accept a proposed token with min(1,p/q). On the first rejection sample from the normalized positive residual max(0,p−q), discarding later draft tokens. The complete algorithm preserves the target distribution under its assumptions; simply picking the target’s favorite draft does not."
+      ],
+      "formula": "α(x)=min(1,p(x)/q(x));  p_correct(x) ∝ max(0,p(x)−q(x))",
+      "example": [
+        "教学算例：两词分布 p=(0.6,0.4)、q=(0.8,0.2)。第一个词接受率 0.75，第二个为 1；拒绝部分被校正为第二词，最终回到 p。Google 披露 AI Overviews 使用推测解码，未说明所有请求都获得同样加速。",
+        "Example: p=(0.6,0.4), q=(0.8,0.2). The first token is accepted with 0.75 and the second with 1. Rejected mass is corrected to the second token, recovering p. Google reports its use in AI Overviews, not uniform acceleration for every request."
+      ],
+      "limit": [
+        "收益取决于草稿成本、接受率、验证批量与服务器负载。温度、截断采样及数值实现也必须与目标分布定义一致。高并发、低接受率或昂贵草稿都可能抵消收益。",
+        "Gains depend on draft cost, acceptance, verification batch and server load. Temperature, truncation and numerical implementation must agree with the defined target distribution. High concurrency, low acceptance or costly drafts can erase the gain."
+      ],
+      "figure": {
+        "kind": "pipeline",
+        "labels": [
+          [
+            "草稿 q：提出 k 个 token",
+            "Draft q: propose k tokens"
+          ],
+          [
+            "目标 p：并行验证",
+            "Target p: parallel verification"
+          ],
+          [
+            "接受前缀／首次拒绝",
+            "Accept prefix / first rejection"
+          ],
+          [
+            "残差校正 → 继续",
+            "Residual correction → continue"
+          ]
+        ],
+        "caption": [
+          "精确采样方法重绘，不是任意草稿验证都无损。",
+          "Redraw of exact sampling; arbitrary draft verification is not necessarily lossless."
+        ]
+      },
+      "sources": [
+        "spec_paper",
+        "speculative"
+      ],
+      "related": [
+        "I05",
+        "S05"
+      ]
+    },
+    {
+      "id": "I04",
+      "track": "inference",
+      "route": "long_context",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "长上下文为什么不等于可靠长记忆？",
+        "Why is a long context not reliable long-term memory?"
+      ],
+      "goal": [
+        "窗口大小、位置信息与检索能力分开验证。",
+        "Test window size, positions and retrieval separately."
+      ],
+      "problem": [
+        "模型能够接收更多 token，只说明接口或结构允许更长输入，不证明能可靠使用其中每个事实。Lost in the Middle 在其被测模型和检索／问答任务中观察到位置敏感性：信息在中间时表现可能更差。",
+        "Accepting more tokens establishes an input capacity, not reliable use of every fact. Lost in the Middle found positional sensitivity in its tested models and retrieval/QA tasks, with information in the middle sometimes used less effectively."
+      ],
+      "mechanism": [
+        "RoPE 将位置编码为 Query／Key 的旋转，使点积携带相对位置信息。扩展窗口还需要考虑训练长度分布、位置外推或缩放与验证；它不解决所有检索干扰。应把“放得下”“找得到”“推得对”分成三个测量。",
+        "RoPE rotates queries and keys so their dot products encode relative position. Extending windows also requires training-length coverage, positional extrapolation or scaling and validation. It does not solve all retrieval interference. Measure capacity, retrieval and reasoning separately."
+      ],
+      "formula": "dense attention work ∝ T²; standard KV payload ∝ T",
+      "example": [
+        "教学检查：将同一证据分别放在开头、中间、结尾，并加入相似干扰材料，比较引用正确性与回答质量。固定问题与长度才能隔离位置效应；历史研究结果不能直接当成今天所有模型的能力判定。",
+        "Teaching protocol: place the same evidence at the beginning, middle and end, adding similar distractors. Compare citation accuracy and answer quality while holding question and length fixed. Historical results are not a verdict on every current model."
+      ],
+      "limit": [
+        "长输入增加 prefill 成本与 KV 占用；压缩、检索和摘要可能漏掉关键细节。实际系统需要证据定位、引用检查与任务级评测，不能只依据最大窗口数字选型。",
+        "Long inputs increase prefill work and KV memory. Compression, retrieval and summaries may omit crucial details. Systems need evidence localization, citation checks and task-level evaluation rather than selection by maximum window size alone."
+      ],
+      "figure": {
+        "kind": "compare",
+        "labels": [
+          [
+            "窗口：能容纳多少",
+            "Capacity: how much fits"
+          ],
+          [
+            "检索：证据在哪里",
+            "Retrieval: where is evidence"
+          ],
+          [
+            "推理：是否正确使用",
+            "Reasoning: is it used correctly"
+          ]
+        ],
+        "caption": [
+          "三个独立评价维度，不是自动依次达成的阶段。",
+          "Three distinct evaluation dimensions, not automatically achieved stages."
+        ]
+      },
+      "sources": [
+        "rope",
+        "lost"
+      ],
+      "related": [
+        "I01",
+        "S03"
+      ]
+    },
+    {
+      "id": "I05",
+      "track": "inference",
+      "route": "thinking",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "更多推理计算应该花在何处？",
+        "Where should extra inference compute go?"
+      ],
+      "goal": [
+        "在串行思考、并行候选与验证之间分配预算。",
+        "Allocate budget across serial reasoning, candidates and verification."
+      ],
+      "problem": [
+        "模型参数固定后，回答阶段仍可改变投入的计算。难题可能受益于更长求解过程或多候选搜索，但简单问题未必值得同样预算。2024 年研究将预算分配和问题难度联系起来，产品也开始提供思考预算。",
+        "With parameters fixed, answering compute can still vary. Hard problems may benefit from longer reasoning or candidate search; simple problems may not justify the same budget. Research in 2024 connected allocation to difficulty, while products exposed thinking budgets."
+      ],
+      "mechanism": [
+        "串行计算延长单条求解轨迹；并行计算产生多条候选；验证器或重排序决定选哪条。预算必须同时包含候选生成与评分，而不是只数最终返回的 token。不同难度、模型和验证器会产生不同的最优分配。",
+        "Serial compute extends one trajectory; parallel compute produces candidates; a verifier or ranker selects among them. Account for generation and scoring, not just returned tokens. Difficulty, model and verifier quality change the best allocation."
+      ],
+      "formula": "C_total = Σ C_generate(candidateᵢ) + C_verify + C_select",
+      "example": [
+        "教学对照：8 条短候选与 1 条长轨迹可能具有相近 token 预算，但关键路径延迟与错误相关性不同。o1、Claude 3.7 和 Qwen3 公开了不同形式的推理／思考能力；不能推断它们内部使用同一种搜索。",
+        "Eight short candidates and one long trajectory may have similar token budgets but different critical-path latency and correlated errors. o1, Claude 3.7 and Qwen3 disclose different reasoning/thinking capabilities, without establishing identical internal search."
+      ],
+      "limit": [
+        "更多计算可能反复强化错误。验证器不可靠时，多候选选择还可能挑中迎合评分的答案。应按任务画质量—成本—延迟曲线，并设置停止规则；没有一个通用“思考越久越好”的结论。",
+        "More compute can reinforce mistakes. An unreliable verifier may select candidates that exploit scoring. Measure task-specific quality–cost–latency curves and define stopping rules; longer thinking is not universally better."
+      ],
+      "figure": {
+        "kind": "fork",
+        "labels": [
+          [
+            "给定任务与预算",
+            "Task and budget"
+          ],
+          [
+            "串行：更长求解",
+            "Serial: longer trajectory"
+          ],
+          [
+            "并行：多条候选",
+            "Parallel: multiple candidates"
+          ],
+          [
+            "验证、选择与停止",
+            "Verify, select and stop"
+          ]
+        ],
+        "caption": [
+          "预算分配示意，不推测闭源模型内部实现。",
+          "Allocation sketch; no inference about proprietary internals."
+        ]
+      },
+      "sources": [
+        "testtime",
+        "o1",
+        "claude",
+        "qwen"
+      ],
+      "related": [
+        "T06",
+        "I03"
+      ]
+    },
+    {
+      "id": "I06",
+      "track": "inference",
+      "route": "quantization",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "低比特量化省了什么，又损失什么？",
+        "What does low-bit quantization save and sacrifice?"
+      ],
+      "goal": [
+        "分开核算权重、激活和 KV 的精度。",
+        "Account for weights, activations and KV precision separately."
+      ],
+      "problem": [
+        "权重从高精度数转换为低比特编码可减少存储和读取流量，但量化误差可能改变模型行为。权重量化、激活量化与 KV 量化针对不同张量，不能用一个“4 bit”标签概括整个推理过程。",
+        "Low-bit weight codes reduce storage and read traffic, but quantization errors can change behavior. Weight, activation and KV quantization target different tensors; one “4-bit” label does not describe the entire inference process."
+      ],
+      "mechanism": [
+        "分组量化为一组数保存比例尺与可能的零点；编码舍入并截断，执行时直接使用低比特内核或反量化。AWQ 根据激活信息识别敏感权重并调整缩放，目标是在低比特权重量化中控制质量损失。",
+        "Grouped quantization stores a scale and sometimes a zero point per group. Codes are rounded and clipped, then consumed by low-bit kernels or dequantized. AWQ uses activation information to identify sensitive weights and adjust scaling, controlling losses in low-bit weight quantization."
+      ],
+      "formula": "q = clip(round(w/s)+z);  ŵ = s(q−z)",
+      "example": [
+        "教学算例：10B 权重仅按编码计，FP16 约 20GB，4-bit 约 5GB（十进制）；实际还要加比例尺、零点和未量化张量。权重减小四倍不代表总显存或服务延迟也缩小四倍。",
+        "For 10B weights, payload alone is about 20GB in FP16 and 5GB at 4 bits (decimal). Add scales, zero points and unquantized tensors. Fourfold weight reduction does not imply fourfold reduction in total memory or latency."
+      ],
+      "limit": [
+        "异常值、校准数据与任务分布影响误差；硬件是否支持高效内核决定收益。上线前要验证长上下文、特定领域和输出一致性，不能只测一个平均分。",
+        "Outliers, calibration data and task distributions affect error. Efficient kernel support determines performance. Validate long contexts, domain tasks and output behavior rather than relying on one average score."
+      ],
+      "figure": {
+        "kind": "pipeline",
+        "labels": [
+          [
+            "高精度权重",
+            "High-precision weights"
+          ],
+          [
+            "分组比例尺 + 低比特码",
+            "Group scale + low-bit codes"
+          ],
+          [
+            "内核计算／反量化",
+            "Kernel compute / dequantize"
+          ],
+          [
+            "独立质量与速度评估",
+            "Separate quality and speed tests"
+          ]
+        ],
+        "caption": [
+          "权重量化示意；不代表 KV 也已量化。",
+          "Weight quantization sketch; KV is not implicitly quantized."
+        ]
+      },
+      "sources": [
+        "awq"
+      ],
+      "related": [
+        "I01",
+        "T02"
+      ]
+    },
+    {
+      "id": "S01",
+      "track": "systems",
+      "route": "sharding",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "ZeRO 把哪些训练状态分片了？",
+        "Which training states does ZeRO shard?"
+      ],
+      "goal": [
+        "逐级拆开参数、梯度和优化器状态的冗余。",
+        "Remove redundancy in parameters, gradients and optimizer states."
+      ],
+      "problem": [
+        "普通数据并行在每张卡放一份模型和训练状态。Adam 的动量、方差及混合精度主权重会比前向权重本身占用更多空间。ZeRO 在保持数据并行思路的同时，把这些状态分散到多个设备。",
+        "Ordinary data parallelism replicates model and training states per device. Adam moments, variances and mixed-precision master weights can exceed forward-weight memory. ZeRO distributes those states while retaining data-parallel training."
+      ],
+      "mechanism": [
+        "Stage 1 分片优化器状态；Stage 2 再分片梯度；Stage 3 进一步分片参数，计算某层时按需收集。用 P、G、O 表示参数、梯度、优化器字节数，理想每卡状态从 P+G+O 逐步变为 P+G+O/n、P+(G+O)/n、(P+G+O)/n。",
+        "Stage 1 shards optimizer states; Stage 2 also shards gradients; Stage 3 also shards parameters, gathering them when needed. With parameter, gradient and optimizer bytes P,G,O, ideal per-device state goes from P+G+O to P+G+O/n, P+(G+O)/n and (P+G+O)/n."
+      ],
+      "formula": "ZeRO-3 ideal state/device = (P + G + O) / n",
+      "example": [
+        "教学算例 P=2、G=2、O=12 字节／参数，n=4：复制状态为16，三个阶段理想值依次为7、5.5、4。不同精度与优化器的分项不同；这些不是峰值显存，未计激活、收集缓冲与通信工作区。",
+        "Example: P=2, G=2, O=12 bytes/parameter and n=4 gives 16 replicated bytes and ideal stage totals of 7, 5.5 and 4. Precision and optimizers change these terms. These are not peak-memory estimates; activations, gather buffers and workspaces are excluded."
+      ],
+      "limit": [
+        "更深分片会带来参数收集、通信和调度压力。有效性取决于网络、计算重叠和微批量；训练装得下之后还要解决吞吐，不可只按理论状态字节选配置。",
+        "Deeper sharding adds gathering, communication and scheduling pressure. Network, overlap and microbatch size matter. Fitting the model does not guarantee good throughput; choose configurations beyond theoretical state bytes."
+      ],
+      "figure": {
+        "kind": "compare",
+        "labels": [
+          [
+            "Stage 1：分 O",
+            "Stage 1: shard O"
+          ],
+          [
+            "Stage 2：分 O + G",
+            "Stage 2: shard O + G"
+          ],
+          [
+            "Stage 3：分 O + G + P",
+            "Stage 3: shard O + G + P"
+          ]
+        ],
+        "caption": [
+          "三阶段状态分片重绘，未包含激活。",
+          "Three sharding stages, excluding activations."
+        ]
+      },
+      "sources": [
+        "zero_paper",
+        "zero"
+      ],
+      "related": [
+        "S02",
+        "T03"
+      ]
+    },
+    {
+      "id": "S02",
+      "track": "systems",
+      "route": "model_parallel",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "数据、张量、流水线和专家并行怎样组合？",
+        "How do data, tensor, pipeline and expert parallelism combine?"
+      ],
+      "goal": [
+        "按切分对象与通信路径选择设备布局。",
+        "Choose device layouts by partition and communication path."
+      ],
+      "problem": [
+        "当单设备无法承担参数、激活或计算，系统必须分工。不同并行方式切不同对象：DP 切样本，TP 切层内张量，PP 切层，EP 切专家。它们可以组合，但不是四个互不影响的倍数。",
+        "When one device cannot handle parameters, activations or compute, work must be distributed. DP partitions samples, TP tensors within layers, PP layers and EP experts. They can combine, but are not four independent multipliers."
+      ],
+      "mechanism": [
+        "TP 在一层中频繁交换部分结果，通常适合快互联；PP 在阶段间传激活，使用微批量填充流水线；DP 同步梯度或分片状态；EP 根据路由执行 token 的分发与回收。MoE 系统中 EP 常与 DP 组的布局耦合。",
+        "TP frequently exchanges partial results within a layer and favors fast links. PP transfers activations between stages and fills pipelines with microbatches. DP synchronizes gradients or sharded states. EP dispatches and gathers routed tokens; in MoE, its layout often interacts with DP groups."
+      ],
+      "formula": "For a simple dense mesh: devices = DP × TP × PP",
+      "example": [
+        "教学布局：16 卡可按 DP=2、TP=4、PP=2 组织。把 TP 组放到快速节点内、PP 跨阶段是可评估的起点，最终要测量；不在公式中盲目再乘 EP。Megatron 2019 展示层内并行，2021 工作研究多种并行组合。",
+        "Example: 16 devices can form DP=2, TP=4, PP=2. Placing TP groups on fast local links is a starting hypothesis to benchmark. Do not blindly multiply by EP again. Megatron 2019 demonstrated intra-layer parallelism; the 2021 work studied combinations."
+      ],
+      "limit": [
+        "PP 存在气泡与阶段不均衡，TP 可能被集合通信拖慢，EP 受热门专家和 all-to-all 影响。应联合检查显存、网络拓扑、有效批量和故障恢复，而非只追求卡数。",
+        "PP has bubbles and stage imbalance, TP can be constrained by collectives, and EP by hot experts and all-to-all. Inspect memory, network topology, effective batch and fault recovery jointly rather than maximizing device count."
+      ],
+      "figure": {
+        "kind": "compare",
+        "labels": [
+          [
+            "DP：不同样本",
+            "DP: different samples"
+          ],
+          [
+            "TP：同层张量切片",
+            "TP: tensors within a layer"
+          ],
+          [
+            "PP：不同层／阶段",
+            "PP: layers / stages"
+          ],
+          [
+            "EP：不同专家",
+            "EP: experts"
+          ]
+        ],
+        "caption": [
+          "并行维度对照，具体设备分组需要联合设计。",
+          "Parallel dimensions; actual device groups need joint design."
+        ]
+      },
+      "sources": [
+        "megatron",
+        "parallel",
+        "switch"
+      ],
+      "related": [
+        "S01",
+        "T03"
+      ]
+    },
+    {
+      "id": "S03",
+      "track": "systems",
+      "route": "kernels",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "FlashAttention 为什么不改公式却更快？",
+        "Why can FlashAttention be faster with the same formula?"
+      ],
+      "goal": [
+        "区分 FLOPs、显存 IO 与中间矩阵存储。",
+        "Distinguish FLOPs, memory IO and intermediate storage."
+      ],
+      "problem": [
+        "朴素注意力可能在 HBM 中物化并读写 T×T 分数和概率矩阵，数据搬运成为负担。FlashAttention 将注意力分块，尽可能在片上 SRAM 中完成局部运算，避免把完整中间矩阵写回显存。",
+        "Naive attention may materialize and repeatedly read/write T×T scores and probabilities in HBM. FlashAttention tiles the operation and performs local work in on-chip SRAM, avoiding full intermediate matrices in device memory."
+      ],
+      "mechanism": [
+        "在线 softmax 维护每行的最大值 m、归一化和 l 与加权输出。读入新的分块后，用新的最大值对已有累积量重缩放，再合并本块贡献。反向传播可重算部分中间量，用计算换 IO；数学上仍为标准注意力，浮点舍入不必逐位一致。",
+        "Online softmax maintains each row’s maximum m, normalization sum l and weighted output. Each new tile rescales previous accumulators to the updated maximum and merges its contribution. Backward can recompute intermediates, trading compute for IO. The mathematical attention is unchanged, not necessarily bitwise floating-point results."
+      ],
+      "formula": "m′ = max(m, max(S_tile)); l′ = e^(m−m′)l + Σe^(S_tile−m′)",
+      "example": [
+        "教学图将 HBM 中的 Q/K/V 分块搬入 SRAM，局部计算后只写所需输出与统计量。避免完整 T² 中间存储不意味着避免 T² 个稠密注意力交互。实际收益要报告序列长度、头维度、精度与硬件。",
+        "The sketch moves Q/K/V tiles from HBM into SRAM, writing required outputs and statistics. Avoiding full T² intermediate storage does not eliminate T² dense interactions. Report sequence length, head dimension, precision and hardware when measuring gains."
+      ],
+      "limit": [
+        "片上容量、线程布局与内核支持决定适用范围；小序列或特殊掩码未必有同样收益。FlashAttention 解决执行效率，不能替代长上下文能力评测或 KV 分配管理。",
+        "On-chip capacity, thread layout and kernel support define applicability. Small sequences or special masks may gain less. FlashAttention optimizes execution; it does not replace long-context evaluation or KV allocation management."
+      ],
+      "figure": {
+        "kind": "pipeline",
+        "labels": [
+          [
+            "HBM：Q / K / V",
+            "HBM: Q / K / V"
+          ],
+          [
+            "SRAM：分块 + 在线 softmax",
+            "SRAM: tiles + online softmax"
+          ],
+          [
+            "HBM：输出与统计量",
+            "HBM: outputs and statistics"
+          ]
+        ],
+        "caption": [
+          "IO 路径重绘；框的大小不表示实际容量。",
+          "IO-path redraw; box sizes do not represent capacities."
+        ]
+      },
+      "sources": [
+        "flash"
+      ],
+      "related": [
+        "I04",
+        "S04"
+      ]
+    },
+    {
+      "id": "S04",
+      "track": "systems",
+      "route": "kv_paging",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "PagedAttention 如何减少 KV 分配浪费？",
+        "How does PagedAttention reduce KV allocation waste?"
+      ],
+      "goal": [
+        "逻辑连续的序列不必占用连续物理显存。",
+        "Logically consecutive tokens need not occupy contiguous memory."
+      ],
+      "problem": [
+        "请求长度不同且输出逐步增长，预先分配最大连续缓存容易浪费，动态扩容又会产生碎片。PagedAttention 将 KV 拆成固定大小块，通过块表将序列的逻辑位置映射到非连续物理块。",
+        "Requests have different lengths and grow during generation. Reserving maximum contiguous buffers wastes memory, while resizing causes fragmentation. PagedAttention divides KV into fixed-size blocks and maps logical positions to noncontiguous physical blocks."
+      ],
+      "mechanism": [
+        "请求只在需要时获得新块；注意力内核通过块表找到对应 K/V。分支采样等场景可共享相同前缀块，并按需复制写入。它优化分配和共享，不直接压缩每个 token 的数学 KV 载荷，可与 GQA 等表示方案互补。",
+        "Requests acquire blocks as needed, and attention kernels follow the block table. Branching samples can share common prefix blocks with copy-on-write. This improves allocation and sharing rather than compressing each token’s mathematical KV payload; it complements representations such as GQA."
+      ],
+      "formula": "blocks = ceil(T / block_size)",
+      "example": [
+        "教学算例：块大小16 token，长度33的请求需要3块、容量48，最后一块空15个位置。仍有尾块浪费与元数据成本，但不必预留整个最大窗口；实际内核配置与策略影响结果。",
+        "Example: block size 16 and length 33 need 3 blocks with capacity 48, leaving 15 unused positions. Tail waste and metadata remain, but the maximum context need not be reserved. Real kernels and allocation policies affect results."
+      ],
+      "limit": [
+        "块表间接访问、引用计数与内核实现带来复杂度；跨请求共享还需要正确的缓存键和隔离。分页提高可容纳请求数，不自动保证每个请求的延迟目标。",
+        "Indirection, reference counting and kernels add complexity. Cross-request sharing requires correct cache keys and isolation. Paging can fit more requests without automatically meeting their latency targets."
+      ],
+      "figure": {
+        "kind": "pipeline",
+        "labels": [
+          [
+            "逻辑块：0 → 1 → 2",
+            "Logical blocks: 0 → 1 → 2"
+          ],
+          [
+            "块表：0↦7，1↦2，2↦9",
+            "Block table: 0↦7, 1↦2, 2↦9"
+          ],
+          [
+            "物理块：7、2、9",
+            "Physical blocks: 7, 2, 9"
+          ]
+        ],
+        "caption": [
+          "非连续映射重绘；编号仅为教学示例。",
+          "Noncontiguous mapping; block numbers are illustrative."
+        ]
+      },
+      "sources": [
+        "paged"
+      ],
+      "related": [
+        "I01",
+        "S05"
+      ]
+    },
+    {
+      "id": "S05",
+      "track": "systems",
+      "route": "batching",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "连续批处理如何兼顾吞吐和用户延迟？",
+        "How does continuous batching balance throughput and latency?"
+      ],
+      "goal": [
+        "在每轮迭代调度请求，而不等待整批结束。",
+        "Schedule at iteration boundaries rather than whole-batch completion."
+      ],
+      "problem": [
+        "静态请求批处理可能让短请求等待长请求，已完成槽位也不能及时补充。Orca 的迭代级调度允许完成的请求退出、新请求在迭代边界加入，提高利用率，同时引入更细粒度的调度问题。",
+        "Static request batches can make short requests wait for long ones and leave completed slots unfilled. Orca’s iteration-level scheduling admits and removes requests at iteration boundaries, improving utilization while creating finer scheduling decisions."
+      ],
+      "mechanism": [
+        "调度器结合待处理输入、正在生成的请求、token 预算和显存余量决定每轮工作。Prefill 的计算较重，decode 对每步时延敏感；大输入一次占用太多工作可能伤害正在输出的请求。分块 prefill 是可组合策略，不是所有连续批处理天然具备的性质。",
+        "Each iteration is selected from pending inputs and decoding requests under token and memory budgets. Heavy prefill work can interfere with latency-sensitive decode. Chunked prefill can complement this scheduling, but is not an automatic property of every continuous-batching implementation."
+      ],
+      "formula": "TTFT = first_token_time − arrival; TPOT ≈ (last − first)/(output_tokens − 1)",
+      "example": [
+        "教学时序：第1轮 A/B/C，B 完成后第2轮 A/D/C，A 完成后第3轮 E/D/C。替换的是请求槽位，不代表所有请求各自耗时相同。TPOT 示例公式要求输出至少2 token，均值也会隐藏尾延迟。",
+        "Teaching schedule: iteration 1 has A/B/C; after B finishes, iteration 2 has A/D/C; after A finishes, iteration 3 has E/D/C. Replacing slots does not imply equal request costs. This TPOT estimate requires at least two output tokens; means can hide tail latency."
+      ],
+      "limit": [
+        "高吞吐不等于好的交互体验。需报告 TTFT、token 间延迟、尾分位和满足 SLO 的吞吐，并给定到达率、输入／输出长度分布。过度合批可能提高吞吐却使每个用户更慢。",
+        "High throughput does not equal good interaction. Report TTFT, inter-token latency, tail percentiles and SLO-compliant throughput alongside arrival rate and length distributions. Aggressive batching may increase throughput while slowing every user."
+      ],
+      "figure": {
+        "kind": "schedule",
+        "labels": [
+          [
+            "轮次 1：A · B · C",
+            "Iteration 1: A · B · C"
+          ],
+          [
+            "轮次 2：A · D · C",
+            "Iteration 2: A · D · C"
+          ],
+          [
+            "轮次 3：E · D · C",
+            "Iteration 3: E · D · C"
+          ]
+        ],
+        "caption": [
+          "迭代边界加入／退出示意，不是性能实测。",
+          "Admission/departure at iteration boundaries, not a benchmark."
+        ]
+      },
+      "sources": [
+        "orca",
+        "paged"
+      ],
+      "related": [
+        "S04",
+        "S06"
+      ]
+    },
+    {
+      "id": "S06",
+      "track": "systems",
+      "route": "disaggregation",
+      "revision": 1,
+      "updated_at": "2026-10-21",
+      "change_reason": [
+        "首批图文解析",
+        "Initial illustrated explanation"
+      ],
+      "title": [
+        "Prefill／Decode 何时值得分开？",
+        "When should prefill and decode be disaggregated?"
+      ],
+      "goal": [
+        "把独立扩缩容收益与状态传输成本一起算。",
+        "Compare independent scaling with state-transfer cost."
+      ],
+      "problem": [
+        "Prefill 并行处理输入，decode 逐步生成，两者的计算与带宽需求以及时延目标不同。混跑可能互相干扰。DistServe 在2024年研究分离部署；NVIDIA Dynamo 在2025年披露 PD 分离，2026年进一步讨论多模态 EPD 的适用条件。",
+        "Prefill processes inputs in parallel; decode generates stepwise. They have different compute/bandwidth needs and latency targets, and may interfere when colocated. DistServe studied separation in 2024; NVIDIA Dynamo disclosed PD in 2025 and discussed multimodal EPD conditions in 2026."
+      ],
+      "mechanism": [
+        "PD 把输入处理和生成放到不同资源池，传递 KV 状态，并按各自负载调度。EPD 进一步把图像／视频等编码阶段独立出来，编码输出仍需送往语言模型。收益来自减少干扰与独立配比，不来自免费获得更多计算。",
+        "PD assigns input processing and generation to separate pools, transfers KV state and schedules each workload. EPD also separates image/video encoding, whose outputs still feed the language model. Gains come from reduced interference and independent resource ratios, not free compute."
+      ],
+      "formula": "T_transfer ≳ state_bytes / effective_link_bandwidth",
+      "example": [
+        "教学下界：1 GiB 状态经过有效带宽25 GiB/s的链路，纯传输至少约40ms，另有排队与协调成本。若避免的干扰小于这些新增成本，分离可能不划算；需按到达率、模态、输入长度、硬件与 SLO 重测。",
+        "Teaching lower bound: 1 GiB over an effective 25 GiB/s link takes at least about 40ms, before queueing and coordination. If avoided interference is smaller than added costs, separation may lose. Reevaluate arrival rates, modality, lengths, hardware and SLOs."
+      ],
+      "limit": [
+        "低负载、短请求或慢网络可能不适合分离；独立资源池还会出现容量配比失衡。2026-09-09 的 EPD 来源是有条件的技术分析，不代表所有多模态服务都应该拆成三个池。",
+        "Low load, short requests or slow networks may favor colocation. Separate pools can become imbalanced. The September 9, 2026 EPD source is a conditional technical analysis, not a mandate to split all multimodal services into three pools."
+      ],
+      "figure": {
+        "kind": "pipeline",
+        "labels": [
+          [
+            "Encode：图像／视频编码",
+            "Encode: image / video encoding"
+          ],
+          [
+            "Prefill：输入 → KV",
+            "Prefill: inputs → KV"
+          ],
+          [
+            "传输 KV 状态",
+            "Transfer KV state"
+          ],
+          [
+            "Decode：逐步生成",
+            "Decode: stepwise generation"
+          ]
+        ],
+        "caption": [
+          "EPD 服务路径重绘，箭头包含传输与排队成本。",
+          "EPD serving path; arrows include transfer and queueing costs."
+        ]
+      },
+      "sources": [
+        "distserve",
+        "dynamo",
+        "epd"
+      ],
+      "related": [
+        "S05",
+        "I01"
+      ]
+    }
+  ]
+}

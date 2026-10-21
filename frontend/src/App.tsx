@@ -37,6 +37,7 @@ import {
   WorkspaceProvider,
   useWorkspace,
 } from "./components/workspace/UI";
+const Evolution = lazy(() => import("./features/evolution/Evolution"));
 const Manage = lazy(() => import("./pages/ContentManagement"));
 import TaskWorkbench from "./pages/TaskWorkbench";
 import { DailyBriefs } from "./pages/KnowledgeReading";
@@ -66,7 +67,7 @@ function Shell() {
 
   return (
     <div className="workspace">
-      {!/^\/(news|watch)\//.test(location.pathname) && !location.pathname.startsWith('/for-you/daily') && <PageMetadata
+      {!/^\/(news|watch)\//.test(location.pathname) && !location.pathname.startsWith('/for-you/daily') && !location.pathname.startsWith('/for-you/evolution') && <PageMetadata
         title={searchPages[location.pathname] ? pick(...searchPages[location.pathname].title) : `FieldToFit · ${active ? pick(active[2],active[3]) : pick('资料详情','Dossier')}`}
         description={searchPages[location.pathname] ? pick(...searchPages[location.pathname].description) : ''}
         path={location.pathname} index={!!searchPages[location.pathname] && !(location.pathname === "/for-you" && new URLSearchParams(location.search).has("object"))}/>}
@@ -179,6 +180,8 @@ function Shell() {
             <Route path="/watch/:id" element={<PublishedDetail kind="watch" />} />
             <Route path="/for-you" element={<ForYou />} />
             {(['news','hot-cards','codex','models','watch'] as const).map(section=><Route key={section} path={'/for-you/'+section} element={<ForYouSection key={section} section={section}/>}/>)}
+            <Route path="/for-you/evolution/questions/:id" element={<Suspense fallback={<p role="status">{pick("载入解析…","Loading explanation…")}</p>}><Evolution/></Suspense>} />
+            <Route path="/for-you/evolution/*" element={<Suspense fallback={<p role="status">{pick("载入专题…","Loading topic…")}</p>}><Evolution/></Suspense>} />
             <Route path="/for-you/daily" element={<DailyJournal/>} />
             <Route path="/for-you/daily/archive" element={<DailyJournal archiveOnly/>} />
             <Route path="/for-you/daily/:day" element={<DailyJournal/>} />

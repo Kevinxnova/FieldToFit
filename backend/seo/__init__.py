@@ -158,6 +158,9 @@ def sitemap():
         add('/maps')
         for path in PAGES:
             add(path)
+        from backend.llm_evolution import sitemap_entries as evolution_entries
+        for path, changed in evolution_entries():
+            add(path, changed)
         for path, changed in entries:
             add(path, changed)
         return Response(ET.tostring(root, encoding='utf-8', xml_declaration=True),
@@ -218,6 +221,9 @@ def page(path, dist):
         if not english or not value:return value
         from backend.knowledge import locale
         return locale.project(value,locale.public_fields())
+    if path == '/for-you/evolution' or path.startswith('/for-you/evolution/'):
+        from backend.llm_evolution import page as evolution_page
+        return evolution_page(path, dist, english)
     if path == '/for-you/daily' or path.startswith('/for-you/daily/'):
         from backend.daily_briefing.seo import page as daily_page
         return daily_page(path, dist, english)

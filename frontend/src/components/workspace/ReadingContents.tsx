@@ -13,7 +13,7 @@ export function ReadingContents({news,newsTotal,codexProgress=false,technicalMap
  const daily={id:'daily-preview',title:pick('AI日报','AI Daily')};
  const special={id:'news-codex-28-days',title:pick('Codex 28天进化日志','Codex: 28 Days of Progress')};
  const mapAnchor={id:'technical-evolution-maps',title:pick('技术报告精选&分析','Selected Technical Reports & Analysis')};
- const homeAnchors=[daily,main[1],cards,mapAnchor,special,main[0],main[4]];
+ const homeAnchors=[daily,main[1],cards,mapAnchor,{id:"llm-evolution",title:pick("大模型技术演进","LLM technical evolution")},special,main[0],main[4]];
  const anchors=home?homeAnchors:[daily,...(technicalMaps?[mapAnchor]:[]),...(codexProgress?[special]:[]),cards,...main,...news,...groups,...resources];const signature=anchors.map(x=>x.id).join('|');
  const group=groups.find(g=>g.id===active||g.items.some(i=>i.id===active));
  const newsActive=['recent-news','news-overview','hot-information-cards','news-releases','news-codex-28-days','technical-evolution-maps',...news.map(n=>n.id)].includes(active);

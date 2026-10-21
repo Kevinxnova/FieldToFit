@@ -75,10 +75,14 @@ def test_sitemap_exact_public_set_and_real_dates(site):
     expected.update(seo.ORIGIN+m['path'] for m in site.get('/api/v1/platform/maps').json['items'])
     for kind in ('news', 'watch'):
         expected.update(seo.ORIGIN+seo.detail_url(item['id']) for item in site.get('/api/v1/platform/'+kind).json['items'])
+    from backend.llm_evolution import sitemap_entries as evolution_entries
+    topic_dates = {seo.ORIGIN+p:date for p,date in evolution_entries()}
+    expected.update(topic_dates)
     actual = urls(site)
     expected.update(seo.ORIGIN+'/en'+url.removeprefix(seo.ORIGIN) for url in list(expected))
     assert set(actual) == expected
-    assert all(date is None for date in actual.values())  # seed review dates aren't modification dates
+    topic_dates.update({seo.ORIGIN+'/en'+url.removeprefix(seo.ORIGIN):date for url,date in list(topic_dates.items())})
+    assert all(date == topic_dates.get(url) for url,date in actual.items())  # only editorial changes supply dates
     assert all(get(site, url.removeprefix(seo.ORIGIN)).status_code == 200 for url in actual)
     migrate(site)
     assert urls(site) == actual  # importing unchanged content doesn't manufacture freshness

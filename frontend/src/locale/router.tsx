@@ -7,9 +7,9 @@ function toLocale(to:To) { return typeof to==='string' ? languagePath(to) : {...
 export function Link(props:LinkProps) {
   useLanguage();const source=baseLocation();
   const destination=typeof props.to==='string'?props.to:props.to.pathname||'';
-  const detail=/^\/(?:en\/)?(?:news\/|watch\/|maps(?:\/|$)|for-you\/(?:daily|news|watch|models|codex|hot-cards)(?:[/?#]|$))/.test(destination);
+  const detail=/^\/(?:en\/)?(?:news\/|watch\/|maps(?:\/|$)|for-you\/(?:daily|evolution|news|watch|models|codex|hot-cards)(?:[/?#]|$))/.test(destination);
   const fromHome=/^\/for-you(?:\/(?:news|watch|models|codex|hot-cards))?$/.test(canonicalPath(source.pathname));
-  const returning=/^\/(?:en\/)?for-you(?:#technical-evolution-maps)?$/.test(destination)||!!props.state?.readingRestore||!!props.state?.restoreReading;
+  const returning=/^\/(?:en\/)?for-you(?:#(?:technical-evolution-maps|llm-evolution))?$/.test(destination)||!!props.state?.readingRestore||!!props.state?.restoreReading;
   const remembered=source.state?.readingReturn;
   const to=returning&&remembered?.url&&/^\/(?:en\/)?for-you(?:\/(?:news|watch|models|codex|hot-cards))?(?:[?#]|$)/.test(remembered.url)?remembered.url:props.to;
   const state=fromHome&&detail?{...props.state,readingReturn:{url:source.pathname+source.search+source.hash,id:props.state?.readingReturn?.id},restoreReading:false}:returning&&remembered?{...props.state,restoreReading:true}:detail&&remembered?{readingReturn:remembered,...props.state}:props.state;

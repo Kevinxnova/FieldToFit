@@ -1,7 +1,35 @@
 {
-  "version": "1.13.2",
-  "revision": "e9403738f046974ba95df5251ce74312e4ddd16dba0fb14852c195b7c6fbe0a5",
+  "version": "1.14.0",
+  "revision": "8287d262fca892c12cdfde3b3c1991cd6316516f941e5f6ed0f031e3fac1965d",
   "items": [
+    {
+      "version": "1.14.0",
+      "date": "2026-10-21",
+      "deployed_on": "2026-10-21",
+      "copy": {
+        "zh": {
+          "title": "大模型技术演进与重要问题",
+          "highlights": [
+            "新增2017—2026大模型专题：训练、推理、系统三张横向分支图，16条路线、31个节点与具体公司／型号证据。",
+            "首页展示重点，完整图支持全部节点、主线收起、节点详情开合、公司高亮与全屏阅读。",
+            "提供18题双语图文目录、KV容量计算器及浏览器本地已读记录；修订提示、筛选与详情返回共用稳定编号。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "LLM technical evolution and important questions",
+          "highlights": [
+            "Add a 2017–2026 LLM topic with three horizontal branching maps, 16 routes, 31 milestones and company/model-specific evidence.",
+            "Show highlights on the homepage, with all milestones, track collapse, node details, company highlights and full-screen reading in the complete maps.",
+            "Provide 18 bilingual illustrated questions, a KV-memory calculator and browser-local reading records with revision notices, filters and stable detail links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.14.0"
+    },
     {
       "version": "1.13.2",
       "date": "2026-10-20",

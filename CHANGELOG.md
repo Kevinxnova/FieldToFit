@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.14.0"></a>
+## v1.14.0 · 大模型技术演进与重要问题 · 2026-10-21
+<!-- site-deployed:2026-10-21 -->
+<!-- public-title:en: LLM technical evolution and important questions -->
+<!-- release-summary:zh:start -->
+- 新增2017—2026大模型专题：训练、推理、系统三张横向分支图，16条路线、31个节点与具体公司／型号证据。
+- 首页展示重点，完整图支持全部节点、主线收起、节点详情开合、公司高亮与全屏阅读。
+- 提供18题双语图文目录、KV容量计算器及浏览器本地已读记录；修订提示、筛选与详情返回共用稳定编号。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add a 2017–2026 LLM topic with three horizontal branching maps, 16 routes, 31 milestones and company/model-specific evidence.
+- Show highlights on the homepage, with all milestones, track collapse, node details, company highlights and full-screen reading in the complete maps.
+- Provide 18 bilingual illustrated questions, a KV-memory calculator and browser-local reading records with revision notices, filters and stable detail links.
+<!-- release-summary:en:end -->
+
+对应[REQ-25](FieldToFit-PM.md#req-25)。所有者已确认本次minor：新增独立专题和阅读流程，兼容既有首页、报告、公开API与MCP，无数据库迁移。单一版本化目录供前端、服务端正文与新增只读JSON使用；后续内容修订须核对来源，暂不新增CMS编辑入口或自动发布任务。阅读记录限当前浏览器，受存储可用性影响；图为筛选后的技术路线，不声称穷尽技术史。
+
+所有者随后明确授权更新并部署，2026-10-21已部署正式站点；版本、三个MCP、40个双语专题页面、目录同源与既有入口读取通过。正式浏览器交互因连接超时未完成，保留本地双端交互验证；实际结果与已知边界见[本批验收](docs/validation/2026-10-21-llm-evolution.md)。
+
 <a id="v1.13.2"></a>
 ## v1.13.2 · MiniMax、Timestral与代码行为保真报告 · 2026-10-20
 <!-- site-deployed:2026-10-20 -->
