@@ -1,5 +1,7 @@
 # 验收证据导航
 
+- [2026-10-21获批日报批次：Voxtral、DeepInfer、自评监控与两卡](2026-10-21-voxtral-deepinfer-self-assessment.md)：真实内容发布、两类轮替、故障恢复及v1.14.2源码收尾。
+
 - [2026-10-21 大模型专题本地与生产验收](2026-10-21-llm-evolution.md)：v1.14.0已部署，三图／18题／本地阅读记录；40双语页、HTTP／MCP通过，线上浏览器连接超时、交互复验待补。
 
 - [2026-10-20：MiniMax、Timestral与代码行为保真](2026-10-20-minimax-timestral-and-code.md)：获批A–C／报告1／卡1，中英图文、真实发布与首页轮替。

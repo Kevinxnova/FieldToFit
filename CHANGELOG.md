@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.14.2"></a>
+## v1.14.2 · 已发布日报内容的源码归档与验收接续 · 2026-10-22
+<!-- public-title:en: Source archive and verification for the approved daily batch -->
+<!-- release-summary:zh:start -->
+- 补齐已获批日报批次的三份档案源码快照、报告绘图源与真实验收记录。
+- 接续并行v1.14.1的公开图片及Codex内容，保留原发布、来源日期和两类首页精选名单。
+- 内容已在正式站点发布，本版完成源码与版本收尾，不新增内容发布或刷新精选时间。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Archive three approved profile snapshots, the report figure source and actual verification for the daily batch.
+- Preserve the concurrent v1.14.1 public images and Codex content, including original publication/source dates and both homepage selections.
+- Complete the source and version follow-up for content already published on the live site, without new publications or selection timestamps.
+<!-- release-summary:en:end -->
+
+接续REQ-11、REQ-6-34／REQ-11-6及REQ-22-8的10月21日A–D、报告1、卡1／卡2具体批准。v1.14.1资源与公开集合已包含在并行正式提交36817ac，本版以其为父提交，补齐遗漏的三份档案归档、可复现绘图源及本批验收。此前未推送的本地19fd157保留参考，不强推或移动既有标签。兼容内容／文档patch；自v1.14.0以来无新模块、主要流程或协议变化，无数据库迁移。本版不扩大为10月22日新提案的发布；其具体选择单独接续。
+
+内容正式上站、两类首页轮替、资源部署、已通过与未完成的验证分别见[本批实际验收](docs/validation/2026-10-21-voxtral-deepinfer-self-assessment.md)。软件版本收尾不制造新的上站事件、报告修订或卡片轮替。
+
 <a id="v1.14.1"></a>
 ## v1.14.1 · Codex Day 15／16与最新四项核对 · 2026-10-22
 <!-- public-title:en: Codex Days 15/16 and four new reviewed updates -->

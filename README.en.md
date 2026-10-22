@@ -38,16 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.14.1](CHANGELOG.md#v1.14.1)** · [fieldtofit-v1.14.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.14.1)
+**Current source version: [v1.14.2](CHANGELOG.md#v1.14.2)** · [fieldtofit-v1.14.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.14.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add the official Day 15 reset announcement and Day 16 caching update, separating announcements, account receipt and API cache pricing.
-- Cover the affected-account usage fix, locked chats and election-information integrations; backfill two desktop fixes and Agents API tooling.
-- Date sandbox prewarming to its October 9 source log, retain the later post and clarify active-turn billing across web summaries and AI reading.
-- Add PHP checking skills, Dots Pro usage boundaries, API project service tiers and the Rosalind research atlas with source-date precision and claim limits.
+- Archive three approved profile snapshots, the report figure source and actual verification for the daily batch.
+- Preserve the concurrent v1.14.1 public images and Codex content, including original publication/source dates and both homepage selections.
+- Complete the source and version follow-up for content already published on the live site, without new publications or selection timestamps.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

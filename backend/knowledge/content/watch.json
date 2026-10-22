@@ -7445,6 +7445,27 @@
       "blocks": [
         {
           "columns": [
+            "事件／版本",
+            "原文／事件日期",
+            "新增与采用边界",
+            "关联动态"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "DeepSeek-V4.1-Flash-1017 → DeepInfer main774ce244b87c",
+              "2026-10-20 / 2026-10-20",
+              "开源范围提供DeepSeek-V4.1-Flash离线推理，默认检查点为DeepSeek-V4.1-Flash-1017。它关联已有模型事件D-187，不是该模型再次发布，也不改变API报价。",
+              "[D-207](https://fieldtofit.top/news/D-207)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。"
+        },
+        {
+          "columns": [
             "版本／事件",
             "原始日期",
             "本次已核变化",
@@ -7538,10 +7559,14 @@
           "text": "API 状态以 2026-09-14 读取的官方正文为准；保留 Pro 说明的精确修订时间未知。本次没有核实具体价格数值。"
         }
       ],
-      "checked_at": "2026-10-18",
+      "checked_at": "2026-10-21",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M06",
       "interpretation": [
+        {
+          "text": "main提交 774ce244b87cc0eb8d4b94ab9f5de2ab22049f01；初始提交 2026-10-20 04:09:42 UTC，最新提交 11:03:13 UTC，不冒充独立公告时刻。本站 2026-10-21核对；未核得编号Release，未构建、部署或复现性能。代码Apache-2.0不替代模型权重许可。",
+          "title": "DeepInfer：开源离线推理核心，完整在线服务仍需补齐组件"
+        },
         {
           "text": "本次按明确官方公告补入上表，旧正文与原始日期保留；未独立复现性能、调用或迁移。",
           "title": "已核更新与采用边界"
@@ -7724,6 +7749,16 @@
           "id": "deepseek-search",
           "title": "DeepSeek Search & Fetch · Authentication / Billing / Rate Limits",
           "url": "https://api-docs.deepseek.com/guides/search/"
+        },
+        {
+          "coverage": "link_only",
+          "title": "DeepInfer · official README · checked against main 774ce244b87c",
+          "url": "https://github.com/deepseek-ai/DeepInfer"
+        },
+        {
+          "coverage": "link_only",
+          "title": "DeepInfer · fixed main revision774ce244b87c",
+          "url": "https://github.com/deepseek-ai/DeepInfer/tree/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01"
         }
       ],
       "state": "published",
@@ -7736,6 +7771,7 @@
             "API：deepseek-flash；旧 Flash / Flash Vision Exp 名称暂时路由到 V4.1 Flash": "API: deepseek-flash; the old Flash / Flash Vision Exp name is temporarily routed to V4.1 Flash",
             "DSpark 结构与推测解码模块；官方报告 Agent 评测改善": "DSpark structure and speculative decoding module; official report Agent evaluation improvement",
             "DeepGEMM-Ascend 与 DeepEP-Ascend 分别提供昇腾平台矩阵计算和 MoE 专家并行通信实现，适合研究模型推理基础设施。": "DeepGEMM-Ascend and DeepEP-Ascend provide matrix-compute and MoE expert-parallel communication implementations for Ascend, respectively, for research into model-inference infrastructure.",
+            "DeepInfer：开源离线推理核心，完整在线服务仍需补齐组件": "DeepInfer: an open-source offline inference core with serving components still required",
             "DeepSeek 官方 API 更新日志": "DeepSeek Official API Update Log",
             "DeepSeek 的模型系列；本页资料重点跟踪 V4 Flash 分支的推理结构与多模态变化。": "DeepSeek's model family. This profile focuses on the V4 Flash branch's inference architecture and multimodal changes.",
             "Full、Reindex、Reuse 区分不同层的工作；材料还区分全局缓存与滑动窗口回放，值得沿这两部分继续读。": "Full, Reindex and Reuse distinguish work across layers. Materials also separate global caching from sliding-window replay; both are useful reading paths.",
@@ -7748,8 +7784,10 @@
             "[官方材料](https://github.com/deepseek-ai/DeepGEMM-Ascend)": "[Official Materials](https://github.com/deepseek-ai/DeepGEMM-Ascend)",
             "[本次动态](https://fieldtofit.top/news/D-70)": "[This news](https://fieldtofit.top/news/D-70)",
             "deepseek-v4-pro；实际账户调用未实测": "deepseek-v4-pro; The actual account call has not runtime test",
+            "main提交 774ce244b87cc0eb8d4b94ab9f5de2ab22049f01；初始提交 2026-10-20 04:09:42 UTC，最新提交 11:03:13 UTC，不冒充独立公告时刻。本站 2026-10-21核对；未核得编号Release，未构建、部署或复现性能。代码Apache-2.0不替代模型权重许可。": "main commit 774ce244b87cc0eb8d4b94ab9f5de2ab22049f01; initial commit 2026-10-20 04:09:42 UTC and latest 11:03:13 UTC, not an independently verified announcement time. Checked 2026-10-21; no numbered Release verified and no builds, deployment or benchmarks run. Code Apache-2.0 does not replace model-weight terms.",
             "与 V4.1 Flash 并行的 Pro 服务": "Pro service parallel to V4.1 Flash",
             "主要变化": "Main changes",
+            "事件／版本": "Event / version",
             "依据": "Evidence",
             "关联动态": "Related news",
             "关联：D-10 DeepSeek-V4.1-Flash；[CW-H01 DeepSeek Harness](/for-you#watch-cw-h01)。Harness 是独立软件项目，不是该模型的版本号。": "Association: D-10 DeepSeek-V4.1-Flash; [CW-H01 DeepSeek Harness](/for-you#watch-cw-h01). Harness is an independent software project, not the version number of the model.",
@@ -7757,6 +7795,7 @@
             "具体看什么：DeepGEMM支持BF16、FP8、FP4等算子，并尽量沿用已有接口；DeepEP处理专家间的dispatch/combine通信。两者解决不同瓶颈，不是新模型发布。": "What to examine: DeepGEMM supports BF16, FP8, FP4 and other operators while retaining existing interfaces where possible. DeepEP handles dispatch/combine communication between experts. They address different bottlenecks; neither is a new model release.",
             "分别提供结构化搜索与单页 Markdown，每 1,000 次成功请求 0.75 美元。": "Structured search and single-page Markdown retrieval, each at USD 0.75 per 1,000 successful requests.",
             "原始日期": "Original date",
+            "原文／事件日期": "Source / event date",
             "固定原文与许可可由MCP继续读取": "Fixed source text and licenses can continue to be read by MCP",
             "固定版本完整原文件；引用保留署名和许可": "pinned version of complete source text; reference reserved attribution and license",
             "图像与文本输入、文本输出，1M 上下文；编码器/解码器分工，共享全局 KV；CSA2 设置 Full / Reindex / Reuse": "Image and text input, text output, 1M context; encoder/decoder division of labor, shared global KV; CSA2 setting Full / Reindex / Reuse",
@@ -7768,11 +7807,14 @@
             "对照关系": "Contrast relationship",
             "已保留核对过的官方出处；尚未取得在本站公开分发正文的依据，因此只提供外部链接，不宣称可离线阅读全文。": "The official source that has been checked has been retained; the basis for public distribution of the text on FieldToFit has not been obtained, so only external links are provided, and the full text can be read offline is not claimed.",
             "已核更新与采用边界": "Verified updates and adoption boundaries",
+            "开源范围提供DeepSeek-V4.1-Flash离线推理，默认检查点为DeepSeek-V4.1-Flash-1017。它关联已有模型事件D-187，不是该模型再次发布，也不改变API报价。": "The open release provides offline DeepSeek-V4.1-Flash inference, defaulting to DeepSeek-V4.1-Flash-1017; it relates to existing model event D-187, rather than relaunching the model or changing API prices.",
             "性能复现和许可缺口": "Performance reproduce and license notch",
             "指定 DeepSeek 服务端工具路径于北京时间 2026-11-01 00:00 起计费；两接口各按账户 5 QPS。": "Specified DeepSeek server-side tool paths start billing at 2026-11-01 00:00 Beijing time; each interface allows 5 QPS per account.",
+            "新增与采用边界": "New information and adoption boundaries",
             "日期与状态": "Date and status",
             "替代此前 preview": "Replace the previous preview",
             "未执行收录代码；链接材料不等于已提供全文": "The inclusion code has not been executed; the linked materials do not mean that the full text has been provided.",
+            "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。": "This adds only the approved event, preserving original versions, prices, conditions and history below. It does not imply a complete daily audit of every official source.",
             "本次已核变化": "Verified change",
             "本次按明确官方公告补入上表，旧正文与原始日期保留；未独立复现性能、调用或迁移。": "This update appends the table from explicit official notices, retaining existing prose and original dates; performance, calls and migration have not been independently reproduced.",
             "条件与验证边界": "Conditions and verification boundaries",
@@ -7794,8 +7836,8 @@
             "采用条件：验证硬件集中在Ascend950系列，并依赖相应CANN、torch_npu和网络环境，不能推成所有昇腾卡即装即用。": "Adoption conditions: validation focuses on the Ascend950 series, with corresponding CANN, torch_npu and network requirements. This does not imply plug-and-play support for every Ascend card.",
             "验证硬件与运行环境": "Verify the hardware and operating environment"
           },
-          "reviewed_at": "2026-10-18T03:07:32.014693+00:00",
-          "source_hash": "f261461a7f1c85d09f2c9b3f8cd9d783195d42e91769cd7da5d54d860a32d619",
+          "reviewed_at": "2026-10-21T04:01:36.283126+00:00",
+          "source_hash": "a7fd6772a32fb4ee02e64724d6c3d9b09b5bb4644f6bdcdb850e58c419c7428a",
           "state": "reviewed"
         }
       },
@@ -9905,6 +9947,27 @@
       "blocks": [
         {
           "columns": [
+            "事件／版本",
+            "原文／事件日期",
+            "新增与采用边界",
+            "关联动态"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v2.1.302 → v2.1.305",
+              "2026-10-20 / 2026-10-21",
+              "修复 2.1.304回归：Vertex、Bedrock及其他网关拒绝工具搜索时，重试不带该功能；Workflow恢复读取日志而非重跑已完成pipeline()/parallel() Agent。",
+              "[D-208](https://fieldtofit.top/news/D-208)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。"
+        },
+        {
+          "columns": [
             "版本变化",
             "事件与官方依据",
             "日期与限制"
@@ -10118,10 +10181,14 @@
           "text": "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "checked_at": "2026-10-17",
+      "checked_at": "2026-10-21",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A02",
       "interpretation": [
+        {
+          "text": "v2.1.305；发布 2026-10-20 20:46:50 UTC，即北京时间 2026-10-21 04:46:50，本站当日核对。未安装回归、测试网关或启用新权限选项。",
+          "title": "Claude Code 2.1.305：修复网关兼容，升级需检查权限变化"
+        },
         {
           "text": "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。",
           "title": "2026-10-17 补录：v2.1.302"
@@ -10451,6 +10518,11 @@
           "id": "oct17-d-1",
           "title": "Claude Code · v2.1.302 · official 1",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Claude Code v2.1.305 · official immutable release",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305"
         }
       ],
       "state": "published",
@@ -10468,6 +10540,7 @@
             "CW-A02 由 2.1.300 补至 2.1.301；CW-H03 由Python0.2.167 补至 0.2.168，捆绑CLI2.1.301。不推定TypeScript SDK同步升级；本站未回归测试。": "Update CW-A02 from 2.1.300 to 2.1.301 and CW-H03 from Python0.2.167 to 0.2.168, bundling CLI2.1.301; Do not infer a TypeScript SDK update; FieldToFit has not regression-tested it.",
             "Claude Code 2.1.296：补强托管策略、MCP 状态与编辑保护 · 官方材料1": "Claude Code 2.1.296: Strengthen hosting strategy, MCP status and editing protection · Official materials 1",
             "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。": "Claude Code 2.1.302 was released at 04:53 Beijing time on 2026-10-17, following 2.1.301, with fixes for optional protocol fields, compaction and cloud-task state handling.",
+            "Claude Code 2.1.305：修复网关兼容，升级需检查权限变化": "Claude Code 2.1.305: gateway fixes and permission changes to review",
             "Claude Code CLI 及相关客户端入口": "Claude Code CLI and related client entrances",
             "Claude Code v2.1.292修复部分定时任务不触发、后台命令过早停止及权限处理问题，Agent工具增加effort参数。": "Claude Code v2.1.292 fixes some scheduled tasks not firing, background commands stopping too early and permission handling. The Agent tool gains an effort parameter.",
             "Claude Code v2.1.292：定时任务、后台命令和权限修复": "Claude Code v2.1.292: Timed tasks, background commands and permission repair",
@@ -10494,10 +10567,12 @@
             "[官方材料](https://github.com/anthropics/claude-code/releases/tag/v2.1.294)": "[Official Materials](https://github.com/anthropics/claude-code/releases/tag/v2.1.294)",
             "[官方版本记录](https://github.com/anthropics/claude-code/releases/tag/v2.1.293)": "[Official Version Record](https://github.com/anthropics/claude-code/releases/tag/v2.1.293)",
             "v2.1.294修复prompt／agent hooks以指令形式编写时，可能放过本应拦截操作的问题。": "v2.1.294 fixes instruction-style prompt / agent hooks allowing operations they should block.",
+            "v2.1.305；发布 2026-10-20 20:46:50 UTC，即北京时间 2026-10-21 04:46:50，本站当日核对。未安装回归、测试网关或启用新权限选项。": "v2.1.305; released 2026-10-20 20:46:50 UTC, or 2026-10-21 04:46:50 Beijing, checked that day. No installation regression, gateway tests or enabling of new permission options.",
             "上游LICENSE为All rights reserved并指向商业条款，未确认全文再分发许可；本次提供官方版本链接和本站整理，不把CHANGELOG正文标成MCP可读全文。": "Upstream LICENSE states All rights reserved and points to commercial terms. Full-text redistribution permission is unverified. This batch supplies official version links and FieldToFit notes, without describing CHANGELOG text as MCP-readable full text.",
             "两个包分别记版本": "Track the two packages separately",
             "两个包独立记版本": "Track both packages independently",
             "事件与官方依据": "Event and official evidence",
+            "事件／版本": "Event / version",
             "从已审v2.1.292补充v2.1.293，保留历史记录。这些是官方修复说明，本站未安装复现，不将发布记录等同本站验证。": "Adds v2.1.293 after the reviewed v2.1.292, retaining history. These are official fix descriptions. FieldToFit has not installed or reproduced them; release notes are not FieldToFit verification.",
             "以上为2026-10-05本次核对；以下保留旧版本资料，不代表旧版已包含本次修复。": "The review above was performed on 2026-10-05. Older material below remains historical and does not imply that those versions include these fixes.",
             "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
@@ -10509,12 +10584,14 @@
             "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。": "Based on: [Official CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md). Association: [CW-M02 Claude](/for-you#watch-cw-m02), [CW-S02 Anthropic Skills](/for-you#watch-cw-s02), [CW-H03 Claude Agent SDK](/for-you#watch-cw-h03).",
             "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。": "Previously reviewed content and its conditions remain below; this version addition does not mean all official entry points were rechecked.",
             "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。": "Retain the official source and version; the fixed text that can be redistributed is not imported this time, and the link is not declared as the full text.",
+            "修复 2.1.304回归：Vertex、Bedrock及其他网关拒绝工具搜索时，重试不带该功能；Workflow恢复读取日志而非重跑已完成pipeline()/parallel() Agent。": "Fixes a 2.1.304 regression by retrying without tool search when Vertex, Bedrock or other gateways reject it. Workflow resume reads the journal instead of rerunning completed pipeline()/parallel() agents.",
             "修复HTTP MCP连接累积请求导致的内存泄漏，以及工作中消息转入后台时丢失的问题。": "Fixes memory leaks from accumulating HTTP MCP requests and messages lost when active work moves to the background.",
             "修复协商MCP 2026-07-28 但缺少部分可选字段时工具不可用；Read拒绝超过 128MB的图像来源。": "Fixes unavailable tools when negotiating MCP 2026-07-28 with some optional fields missing; Read refuses image sources over 128MB.",
             "修复指令式hooks的阻断判断": "Fix the blocking judgment of instructional hooks",
             "修复第三方兼容接口的请求失败；修复 MCP 调用后误判空消息；插件管理支持 JSON 输出；修复部分会话恢复和权限规则问题": "Fix the request failure of the third-party compatible interface; fix the misjudgment of empty messages after MCP call; plug-in management supports JSON output; fix some session recovery and permission rule problems",
             "修复退出时可能删除含未推送提交的Hook工作树，以及部分工作流跳过步骤仍报告成功的问题。": "Fixes quitting that could delete a hook-created worktree with unpushed commits, and some workflow steps being skipped while success was reported.",
             "修复部分headless／Agent SDK恢复时丢失近期消息、压缩摘要或带回旧历史的问题。其中一类修复仅适用于本版起生成的压缩记录，不承诺旧记录全部自动恢复。": "Fixes some headless/Agent SDK resumes that lost recent messages or compaction summaries, or restored old history. One fix applies only to compactions created from this version onward; it does not promise recovery of every older record.",
+            "关联动态": "Related news",
             "具体入口": "Specific entrance",
             "具体内容": "Value",
             "兼容接口请求失败和 MCP 后空消息属于真实使用链路中的问题，本期不将这版泛化为“编程能力增强”。": "Compatibility-interface request failures and empty messages after MCP concern actual usage flows. This version is not generalized as improved coding ability.",
@@ -10529,6 +10606,7 @@
             "原文日期：2026-10-14；事件日期：2026-10-15；本站核对：2026-10-15；版本：Claude Code2.1.300 / PythonSDK0.2.167。本站未安装或复现性能。": "Source date: 2026-10-14; event date: 2026-10-15; checked:2026-10-15; version:Claude Code2.1.300 / PythonSDK0.2.167; FieldToFit has not installed or reproduced performance.",
             "原文日期：2026-10-15；事件日期：2026-10-16；本站核对：2026-10-16；版本：Claude Code2.1.301 / PythonSDK0.2.168。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-16; checked:2026-10-16; version:Claude Code2.1.301 / PythonSDK0.2.168; Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
             "原文日期：2026-10-16；本站核对：2026-10-17；版本：v2.1.302。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: v2.1.302; GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "原文／事件日期": "Source / event date",
             "变化": "Change",
             "变化与用途": "Change and use",
             "可管理性也在演进。": "Manageability is also evolving.",
@@ -10556,11 +10634,13 @@
             "改善Stop／SubagentStop中指令式prompt hook的判断，减少应该继续工作时过早停止。": "Improves instruction-style prompt-hook judgments in Stop / SubagentStop, reducing premature stops when work should continue.",
             "文件、命令、插件、MCP 与会话": "Files, commands, plug-ins, MCP and sessions",
             "文件与插件：修复IDE经符号链接引用文件时Read拒绝规则未生效，以及本地插件旧副本、热更新等问题。": "Files and plugins: fixes Read deny rules failing for IDE file references through symlinks, plus stale local plugin copies and hot-update issues.",
+            "新增与采用边界": "New information and adoption boundaries",
             "无人值守重试可设置用量限制等待上限；Grep／Glob运行失败不再伪装为无匹配，避免把执行故障误读为没有结果。": "Unattended retries can cap usage-limit waits. Grep/Glob failures no longer appear as no matches, keeping execution errors distinct from empty results.",
             "日期与限制": "Dates and limitations",
             "日期口径": "Date basis",
             "更新": "Update",
             "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。": "The text has not been confirmed to distribute the permission; keep the official entrance, MCP can read the FieldToFit interpretation and source list.",
+            "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。": "This adds only the approved event, preserving original versions, prices, conditions and history below. It does not imply a complete daily audit of every official source.",
             "本次展示的材料": "The materials on display this time",
             "本次用途与变化": "The purpose and change of this time",
             "本站于2026-10-07从此前已审v2.1.289补充上述版本。以下保留历史材料及其当时适用条件。": "On 2026-10-07, FieldToFit added these versions after the previously reviewed v2.1.289. Historical material below retains the conditions that applied at the time.",
@@ -10599,8 +10679,8 @@
             "验证与采用边界": "Verification and adoption of boundaries",
             "验证范围": "Scope of verification"
           },
-          "reviewed_at": "2026-10-17T02:58:15.476289+00:00",
-          "source_hash": "0b318a2b348181ec78815d641e370886b88d284e217e12148da6ff0f1a90cc98",
+          "reviewed_at": "2026-10-21T04:01:46.876859+00:00",
+          "source_hash": "83d08d0245cbbee2838592aa51cb69ee69397703bc85121fd5f202f8c55c815a",
           "state": "reviewed"
         }
       },
@@ -10608,6 +10688,27 @@
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "事件／版本",
+            "原文／事件日期",
+            "新增与采用边界",
+            "关联动态"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "v0.64.0 → v0.65.0",
+              "2026-10-20 / 2026-10-21",
+              "修复不可信文件夹中的工作区设置只读约束，并调整OAuth回调iss校验与元数据一致。不能把特定修复扩写为所有仓库写入都被禁止。",
+              "[D-210](https://fieldtofit.top/news/D-210)"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。"
+        },
         {
           "columns": [
             "版本变化",
@@ -10687,10 +10788,14 @@
           "text": "依据：[v0.59.0 发布记录](https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0)。关联：[CW-M03 Gemini](/for-you#watch-cw-m03)、[CW-S01 Superpowers](/for-you#watch-cw-s01)。"
         }
       ],
-      "checked_at": "2026-10-14",
+      "checked_at": "2026-10-21",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A03",
       "interpretation": [
+        {
+          "text": "v0.65.0稳定版；发布 2026-10-20 21:17:57 UTC，即北京时间 2026-10-21 05:17:57，本站当日核对。未安装或复测认证、恢复与权限场景。",
+          "title": "Gemini CLI 0.65.0：不可信目录、会话恢复与认证修复"
+        },
         {
           "text": "稳定版于北京时间 10 月 14 日 04:44 发布；本次为客户端维护，不是Gemini模型能力或价格更新。",
           "title": "2026-10-14 补录：v0.64.0"
@@ -10771,6 +10876,11 @@
           "id": "oct14-b-1",
           "title": "Gemini CLI v0.64.0 · Official source 1",
           "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0"
+        },
+        {
+          "coverage": "link_only",
+          "title": "Gemini CLI v0.65.0 · official stable release",
+          "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0"
         }
       ],
       "state": "published",
@@ -10780,11 +10890,14 @@
             "2026-10-10版本补充：v0.63.0": "2026-10-10 Version Supplement: v0.63.0",
             "2026-10-14 补录：v0.64.0": "2026-10-14 addition: v0.64.0",
             "Gemini CLI 0.63.0：补入长任务、MCP 配置与输入恢复修复 · 官方材料1": "Gemini CLI 0.63.0: fill in long tasks, MCP configuration and input recovery repair · Official material 1",
+            "Gemini CLI 0.65.0：不可信目录、会话恢复与认证修复": "Gemini CLI 0.65.0: untrusted folders, session recovery and authentication fixes",
             "Headless传递已解析的目录信任状态，A2A增加V1→V2 迁移，ACP补入使用量通知和会话清理；认证与执行权限仍需配置。": "Headless mode carries resolved folder-trust state; A2A adds V1→V2 migration, and ACP adds usage notifications and session cleanup. Authentication and execution permissions still require configuration.",
             "[Gemini CLI 0.64.0：补强文件写入、状态恢复与取消操作](https://fieldtofit.top/news/D-135)": "[Gemini CLI 0.64.0: stronger file writes, state recovery and cancellation](https://fieldtofit.top/news/D-135)",
             "[官方发布](https://github.com/google-gemini/gemini-cli/releases/tag/v0.63.0)": "[Official Release](https://github.com/google-gemini/gemini-cli/releases/tag/v0.63.0)",
             "v0.59.0 发布记录": "v0.59.0 Release Record",
+            "v0.65.0稳定版；发布 2026-10-20 21:17:57 UTC，即北京时间 2026-10-21 05:17:57，本站当日核对。未安装或复测认证、恢复与权限场景。": "Stable v0.65.0; released 2026-10-20 21:17:57 UTC, or 2026-10-21 05:17:57 Beijing, checked that day. No installation, authentication, recovery or permission tests.",
             "事件与官方依据": "Event and official evidence",
+            "事件／版本": "Event / version",
             "以上为2026-10-10核对的新增版本；以下保留历史资料及其当时适用条件。": "The versions above were newly checked on 2026-10-10. Historical material below retains the conditions that applied at the time.",
             "以下保留此前已审内容与当时适用条件。": "Previously reviewed content and its original applicable conditions are retained below.",
             "以下历史资料采用稳定版 v0.59.0；不以 nightly 替代稳定版": "The following historical materials use the stable version of v0.59.0; do not replace the stable version with nightly",
@@ -10792,14 +10905,17 @@
             "保留官方出处及版本；本次未导入可再分发的固定正文，不将链接宣称为全文。": "Retain the official source and version; the fixed text that can be redistributed is not imported this time, and the link is not declared as the full text.",
             "信任状态与协议迁移": "Trust state and protocol migration",
             "修复 MCP OAuth 元数据发现相关问题；工作区信任检查改为失败时保持受限，并在受限模式过滤 MCP 配置": "Fix MCP OAuth metadata detection related problems; change the workspace trust check to keep restricted when it fails, and filter MCP configuration in restricted mode",
+            "修复不可信文件夹中的工作区设置只读约束，并调整OAuth回调iss校验与元数据一致。不能把特定修复扩写为所有仓库写入都被禁止。": "Fixes read-only workspace settings in untrusted folders and aligns OAuth callback iss validation with metadata. These specific fixes do not establish that every repository write is prohibited.",
             "修复活动操作中Ctrl+C传递、代码里的@卡住或吞引号、Windows输入法及扩展更新文件锁。稳定、预览与nightly通道分开，本站未回归跨平台行为。": "Fixes cover Ctrl+C propagation during active operations, @ in code hanging or swallowing quotes, Windows IME and extension-update file locks. Stable, preview and nightly channels remain distinct; FieldToFit has not tested cross-platform behavior.",
             "关注它如何处理陌生项目。": "Pay attention to how it deals with unfamiliar projects.",
+            "关联动态": "Related news",
             "具体入口": "Specific entrance",
             "具体内容": "Value",
             "原创解读与链接": "Original commentary and source links",
             "原子写入与恢复": "Atomic writes and recovery",
             "原文日期": "Source text date",
             "原文日期：2026-10-13；事件日期：2026-10-14；本站核对：2026-10-14；版本：v0.64.0。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-14; checked: 2026-10-14; version: v0.64.0; FieldToFit has not installed or reproduced performance.",
+            "原文／事件日期": "Source / event date",
             "发布日期": "Release date",
             "发布通道本身是重要字段。": "The release channel itself is an important field.",
             "变化": "Change",
@@ -10811,8 +10927,10 @@
             "已核实更新": "Verified and updated",
             "执行与扩展": "Execution and expansion",
             "文件工具操作串行协调，状态文件原子保存，损坏时可从备份恢复。": "File-tool operations are coordinated serially; state files are saved atomically and can recover from a backup if corrupted.",
+            "新增与采用边界": "New information and adoption boundaries",
             "日期与限制": "Dates and limitations",
             "未做版本迁移及权限回归；后台核对入口仍绑定旧版本，应与最新版证据分别记载。": "Version migration and permission regression tests have not been performed. The administrator check entry point still binds to an older version; record it separately from current-version evidence.",
+            "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。": "This adds only the approved event, preserving original versions, prices, conditions and history below. It does not imply a complete daily audit of every official source.",
             "本次展示的材料": "The materials on display this time",
             "来源": "Source",
             "档案拟追加这一版本与官方发布入口，同时保留原有认证和权限边界。命令重定向、路径验证等修复应按实际工作流复测；这是客户端维护版本，不是 Gemini 模型能力或价格更新。": "The profile is proposed to add this version and its official release entry point, retaining existing authentication and permission boundaries. Command-redirection and path-validation fixes need retesting in actual workflows. This is client maintenance, rather than a Gemini model-capability or price update.",
@@ -10826,8 +10944,8 @@
             "采用边界": "Adopt the boundary",
             "项目上下文、工具、MCP 与扩展": "Project context, tools, MCP and extensions"
           },
-          "reviewed_at": "2026-10-14T03:06:38.129305+00:00",
-          "source_hash": "88d00cbbe0cea8fed64e6ee48d08cc24499c9304e514e3c3120ab7d05ea6747d",
+          "reviewed_at": "2026-10-21T04:01:55.806830+00:00",
+          "source_hash": "0203ebf0201d4c8ca331f8f3d62d5c3f9e2e0391b1358624825187b5e8b97124",
           "state": "reviewed"
         }
       },
@@ -13656,7 +13774,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-20",
+  "reviewed_at": "2026-10-22",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

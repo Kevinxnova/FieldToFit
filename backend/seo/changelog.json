@@ -1,7 +1,35 @@
 {
-  "version": "1.14.1",
-  "revision": "86f086d9678365f79408b2696c757c11af00afd1aab7f05290e022bfaba0fb03",
+  "version": "1.14.2",
+  "revision": "530e5ac7b205450f46d362f4835b7119da6a940407c5de701fbaebdfe4701704",
   "items": [
+    {
+      "version": "1.14.2",
+      "date": "2026-10-22",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "已发布日报内容的源码归档与验收接续",
+          "highlights": [
+            "补齐已获批日报批次的三份档案源码快照、报告绘图源与真实验收记录。",
+            "接续并行v1.14.1的公开图片及Codex内容，保留原发布、来源日期和两类首页精选名单。",
+            "内容已在正式站点发布，本版完成源码与版本收尾，不新增内容发布或刷新精选时间。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Source archive and verification for the approved daily batch",
+          "highlights": [
+            "Archive three approved profile snapshots, the report figure source and actual verification for the daily batch.",
+            "Preserve the concurrent v1.14.1 public images and Codex content, including original publication/source dates and both homepage selections.",
+            "Complete the source and version follow-up for content already published on the live site, without new publications or selection timestamps."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.14.2"
+    },
     {
       "version": "1.14.1",
       "date": "2026-10-22",
