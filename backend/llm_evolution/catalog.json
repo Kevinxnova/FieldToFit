@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "revision": 2,
+  "revision": 3,
   "updated_at": "2026-10-22",
   "period": "2017–2026",
   "change_reason": [
-    "首批路线与18题图文目录；后续按来源审校修订",
-    "Initial routes and 18 illustrated questions; future revisions require source review"
+    "采用完整技术图谱展示，补充三主线定义与双语节点概述；技术事实、日期、关系和18题正文保持。",
+    "Adopt complete technical maps with track definitions and bilingual node summaries; retain technical facts, dates, relations and all 18 articles."
   ],
   "tracks": [
     {
@@ -18,6 +18,10 @@
       "description": [
         "扩大容量，改进学习信号。",
         "Scale capacity and improve learning signals."
+      ],
+      "definition": [
+        "通过数据、学习目标与优化过程更新模型参数，形成和改变模型能力。包括预训练、后训练与适配。",
+        "Update model parameters through data, learning objectives and optimization to form and change capabilities, including pretraining, post-training and adaptation."
       ]
     },
     {
@@ -30,6 +34,10 @@
       "description": [
         "减少每步成本，为难题分配计算。",
         "Reduce step costs and allocate compute to hard problems."
+      ],
+      "definition": [
+        "使用已训练的模型处理输入、生成结果，并组织搜索、验证与工具调用。关注如何使用已有能力完成任务。",
+        "Use trained models to process inputs and generate outputs, organizing search, verification and tools to solve tasks with existing capabilities."
       ]
     },
     {
@@ -42,6 +50,10 @@
       "description": [
         "让模型装得下，让服务跑得稳。",
         "Fit the model and serve it reliably."
+      ],
+      "definition": [
+        "组织训练与推理所需的计算、存储和通信，通过并行、内核与调度，让方法在实际硬件上高效运行。",
+        "Organize computation, memory and communication for training and inference through parallelism, kernels and scheduling on real hardware."
       ]
     }
   ],
@@ -904,7 +916,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "注意力架构",
+              "Attention architecture"
+            ],
+            "representative": "Transformer"
+          }
         },
         {
           "id": "dense-scaling",
@@ -941,7 +960,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "规模规律",
+              "Scaling laws"
+            ],
+            "representative": "Scaling Laws"
+          }
         },
         {
           "id": "dense-gpt3",
@@ -978,7 +1004,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "规模化预训练",
+              "Scaled pretraining"
+            ],
+            "representative": "OpenAI · GPT-3"
+          }
         },
         {
           "id": "dense-chinchilla",
@@ -1016,7 +1049,14 @@
             }
           ],
           "date_kind": "source-publication",
-          "formula": "C ≈ 6ND\nN: parameters · D: training tokens"
+          "formula": "C ≈ 6ND\nN: parameters · D: training tokens",
+          "summary": {
+            "technology": [
+              "计算最优配比",
+              "Compute allocation"
+            ],
+            "representative": "Chinchilla"
+          }
         },
         {
           "id": "dense-llama",
@@ -1053,7 +1093,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "更多数据训练",
+              "More training data"
+            ],
+            "representative": "Meta · LLaMA"
+          }
         }
       ],
       "cases": [
@@ -1176,7 +1223,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "稀疏专家路由",
+              "Sparse expert routing"
+            ],
+            "representative": "Sparsely-gated MoE"
+          }
         },
         {
           "id": "moe-gshard",
@@ -1213,7 +1267,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "专家分片",
+              "Expert sharding"
+            ],
+            "representative": "GShard"
+          }
         },
         {
           "id": "moe-switch",
@@ -1250,7 +1311,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "单专家路由",
+              "Single-expert routing"
+            ],
+            "representative": "Switch Transformer"
+          }
         },
         {
           "id": "moe-mixtral",
@@ -1287,7 +1355,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "稀疏专家模型",
+              "Sparse expert models"
+            ],
+            "representative": "Mistral · Mixtral"
+          }
         },
         {
           "id": "moe-deepseek",
@@ -1324,7 +1399,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "细粒度共享专家",
+              "Fine-grained experts"
+            ],
+            "representative": "DeepSeekMoE"
+          }
         },
         {
           "id": "moe-v3",
@@ -1361,7 +1443,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "无辅助损失均衡",
+              "Loss-free balancing"
+            ],
+            "representative": "DeepSeek-V3"
+          }
         },
         {
           "id": "moe-qwen",
@@ -1398,7 +1487,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "稀疏专家扩展",
+              "Scaling sparse experts"
+            ],
+            "representative": "Qwen3 MoE"
+          }
         }
       ],
       "cases": [
@@ -1537,7 +1633,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "人类反馈对齐",
+              "Human feedback"
+            ],
+            "representative": "OpenAI · InstructGPT"
+          }
         },
         {
           "id": "preference-cai",
@@ -1574,7 +1677,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "宪法式 AI 对齐",
+              "Constitutional AI"
+            ],
+            "representative": "Constitutional AI"
+          }
         },
         {
           "id": "preference-dpo",
@@ -1611,7 +1721,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "直接偏好优化",
+              "Direct preferences"
+            ],
+            "representative": "DPO"
+          }
         }
       ],
       "cases": [
@@ -1722,7 +1839,14 @@
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
           ],
-          "formula": "Aᵢ = (rᵢ − mean(r_group)) / std(r_group)\nσ = 0 requires explicit handling"
+          "formula": "Aᵢ = (rᵢ − mean(r_group)) / std(r_group)\nσ = 0 requires explicit handling",
+          "summary": {
+            "technology": [
+              "组相对策略优化",
+              "Group-relative RL"
+            ],
+            "representative": "DeepSeekMath"
+          }
         },
         {
           "id": "reasoning_rl-o1",
@@ -1759,7 +1883,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "推理强化学习",
+              "Reasoning RL"
+            ],
+            "representative": "OpenAI · o1"
+          }
         },
         {
           "id": "reasoning_rl-r1_paper",
@@ -1796,7 +1927,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "可验证奖励 RL",
+              "Verifiable rewards"
+            ],
+            "representative": "R1 / R1-Zero"
+          }
         },
         {
           "id": "rl-k15",
@@ -1833,7 +1971,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "长链强化学习",
+              "Long-chain RL"
+            ],
+            "representative": "Kimi k1.5"
+          }
         },
         {
           "id": "rl-dapo",
@@ -1870,7 +2015,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "策略优化改进",
+              "Policy optimization"
+            ],
+            "representative": "DAPO"
+          }
         }
       ],
       "cases": [
@@ -1996,7 +2148,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "共享 KV 头",
+              "Shared KV heads"
+            ],
+            "representative": "MQA"
+          }
         },
         {
           "id": "shared_kv-gqa_paper",
@@ -2034,7 +2193,14 @@
             }
           ],
           "date_kind": "source-publication",
-          "formula": "KV bytes ≈ 2 × B × L × T × H_KV × d × bytes/element"
+          "formula": "KV bytes ≈ 2 × B × L × T × H_KV × d × bytes/element",
+          "summary": {
+            "technology": [
+              "分组共享 KV",
+              "Grouped KV heads"
+            ],
+            "representative": "GQA"
+          }
         }
       ],
       "cases": [
@@ -2114,7 +2280,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "潜变量压缩 KV",
+              "Latent KV compression"
+            ],
+            "representative": "DeepSeek-V2 · MLA"
+          }
         },
         {
           "id": "latent_kv-v3",
@@ -2151,7 +2324,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "MLA 型号采用",
+              "MLA adoption"
+            ],
+            "representative": "DeepSeek-V3"
+          }
         }
       ],
       "cases": [
@@ -2247,7 +2427,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "草稿—验证解码",
+              "Draft and verify"
+            ],
+            "representative": "Speculative decoding"
+          }
         },
         {
           "id": "draft_verify-speculative",
@@ -2284,7 +2471,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "推测解码落地",
+              "Speculation in use"
+            ],
+            "representative": "Google AI Overviews"
+          }
         },
         {
           "id": "draft-medusa",
@@ -2321,7 +2515,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "多头草稿生成",
+              "Multi-head drafting"
+            ],
+            "representative": "Medusa"
+          }
         },
         {
           "id": "draft-mtp",
@@ -2358,7 +2559,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "多 token 预测",
+              "Multi-token prediction"
+            ],
+            "representative": "DeepSeek-V3 · MTP"
+          }
         },
         {
           "id": "draft-eagle3",
@@ -2395,7 +2603,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "特征驱动草稿",
+              "Feature-based drafts"
+            ],
+            "representative": "EAGLE-3"
+          }
         },
         {
           "id": "draft-dflash",
@@ -2432,7 +2647,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "块扩散草稿",
+              "Block diffusion drafts"
+            ],
+            "representative": "DFlash"
+          }
         }
       ],
       "cases": [
@@ -2528,7 +2750,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "思维链提示",
+              "Chain-of-thought"
+            ],
+            "representative": "Chain-of-Thought"
+          }
         },
         {
           "id": "think-consistency",
@@ -2566,7 +2795,14 @@
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
           ],
-          "formula": "answer* = argmax_a count(sampled answers = a)"
+          "formula": "answer* = argmax_a count(sampled answers = a)",
+          "summary": {
+            "technology": [
+              "多链采样聚合",
+              "Multi-chain aggregation"
+            ],
+            "representative": "Self-Consistency"
+          }
         },
         {
           "id": "think-prm",
@@ -2603,7 +2839,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "推理过程监督",
+              "Process supervision"
+            ],
+            "representative": "Process supervision"
+          }
         },
         {
           "id": "thinking-testtime",
@@ -2640,7 +2883,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "求解计算分配",
+              "Compute allocation"
+            ],
+            "representative": "Test-time compute"
+          }
         },
         {
           "id": "thinking-claude",
@@ -2677,7 +2927,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "扩展思考",
+              "Extended thinking"
+            ],
+            "representative": "Claude 3.7 Sonnet"
+          }
         },
         {
           "id": "thinking-qwen",
@@ -2714,7 +2971,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "混合思考模式",
+              "Hybrid thinking"
+            ],
+            "representative": "Qwen3"
+          }
         },
         {
           "id": "thinking-gemini25",
@@ -2751,7 +3015,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "思考预算",
+              "Thinking budgets"
+            ],
+            "representative": "Gemini 2.5"
+          }
         },
         {
           "id": "thinking-adaptive",
@@ -2788,7 +3059,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "自适应思考",
+              "Adaptive thinking"
+            ],
+            "representative": "Claude Opus 4.6"
+          }
         }
       ],
       "cases": [
@@ -2927,7 +3205,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "旋转位置编码",
+              "Rotary positions"
+            ],
+            "representative": "RoPE"
+          }
         },
         {
           "id": "long_context-lost",
@@ -2964,7 +3249,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "长上下文有效性",
+              "Context utilization"
+            ],
+            "representative": "Lost in the Middle"
+          }
         },
         {
           "id": "context-yarn",
@@ -3001,7 +3293,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "上下文长度扩展",
+              "Context extension"
+            ],
+            "representative": "YaRN"
+          }
         }
       ],
       "cases": [],
@@ -3066,7 +3365,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "权重量化",
+              "Weight quantization"
+            ],
+            "representative": "GPTQ"
+          }
         },
         {
           "id": "quant-smooth",
@@ -3103,7 +3409,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "激活量化平滑",
+              "Activation smoothing"
+            ],
+            "representative": "SmoothQuant"
+          }
         },
         {
           "id": "quantization-awq",
@@ -3140,7 +3453,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "激活感知量化",
+              "Activation-aware weights"
+            ],
+            "representative": "AWQ"
+          }
         },
         {
           "id": "quant-kivi",
@@ -3177,7 +3497,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "KV 缓存量化",
+              "KV quantization"
+            ],
+            "representative": "KIVI"
+          }
         }
       ],
       "cases": [],
@@ -3243,7 +3570,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "训练状态分片",
+              "Training-state sharding"
+            ],
+            "representative": "ZeRO"
+          }
         },
         {
           "id": "sharding-zero",
@@ -3280,7 +3614,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "分片工程实现",
+              "Sharding in practice"
+            ],
+            "representative": "Microsoft · DeepSpeed"
+          }
         }
       ],
       "cases": [
@@ -3361,7 +3702,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "流水线并行",
+              "Pipeline parallelism"
+            ],
+            "representative": "GPipe"
+          }
         },
         {
           "id": "model_parallel-megatron",
@@ -3398,7 +3746,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "张量并行",
+              "Tensor parallelism"
+            ],
+            "representative": "Megatron-LM"
+          }
         },
         {
           "id": "model_parallel-parallel",
@@ -3435,7 +3790,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "三维并行",
+              "3D parallelism"
+            ],
+            "representative": "TP × PP × DP"
+          }
         },
         {
           "id": "parallel-ulysses",
@@ -3472,7 +3834,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "序列并行",
+              "Sequence parallelism"
+            ],
+            "representative": "DeepSpeed Ulysses"
+          }
         }
       ],
       "cases": [
@@ -3551,7 +3920,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "IO 感知注意力",
+              "IO-aware attention"
+            ],
+            "representative": "FlashAttention"
+          }
         },
         {
           "id": "kernel-fa2",
@@ -3588,7 +3964,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "注意力并行优化",
+              "Attention parallelism"
+            ],
+            "representative": "FlashAttention-2"
+          }
         },
         {
           "id": "kernel-fa3",
@@ -3625,7 +4008,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "Hopper 异步流水",
+              "Hopper pipelines"
+            ],
+            "representative": "FlashAttention-3"
+          }
         },
         {
           "id": "kernel-flashinfer",
@@ -3662,7 +4052,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "推理注意力内核",
+              "Inference kernels"
+            ],
+            "representative": "FlashInfer"
+          }
         },
         {
           "id": "kernel-fa4",
@@ -3699,7 +4096,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "Blackwell 内核",
+              "Blackwell kernels"
+            ],
+            "representative": "FlashAttention-4"
+          }
         }
       ],
       "cases": [
@@ -3780,7 +4184,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "分页 KV 缓存",
+              "Paged KV cache"
+            ],
+            "representative": "vLLM"
+          }
         },
         {
           "id": "cache-radix",
@@ -3817,7 +4228,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "前缀缓存复用",
+              "Prefix reuse"
+            ],
+            "representative": "SGLang"
+          }
         }
       ],
       "cases": [
@@ -3898,7 +4316,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "迭代级调度",
+              "Iteration scheduling"
+            ],
+            "representative": "Orca"
+          }
         },
         {
           "id": "batch-sarathi",
@@ -3935,7 +4360,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "分块预填充调度",
+              "Chunked prefill"
+            ],
+            "representative": "Sarathi-Serve"
+          }
         }
       ],
       "cases": [],
@@ -4000,7 +4432,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "预填充 / 解码分离",
+              "Prefill/decode split"
+            ],
+            "representative": "DistServe"
+          }
         },
         {
           "id": "disaggregation-dynamo",
@@ -4037,7 +4476,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "分布式 PD 调度",
+              "Distributed PD serving"
+            ],
+            "representative": "NVIDIA Dynamo"
+          }
         },
         {
           "id": "disaggregation-epd",
@@ -4074,7 +4520,14 @@
               ]
             }
           ],
-          "date_kind": "source-publication"
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "编码 / 预填充 / 解码",
+              "Encode/prefill/decode"
+            ],
+            "representative": "Dynamo · EPD"
+          }
         }
       ],
       "cases": [
@@ -4170,7 +4623,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "预训练数据配方",
+              "Training data recipe"
+            ],
+            "representative": "Meta · Llama 3"
+          }
         },
         {
           "id": "data-qwen3",
@@ -4207,7 +4667,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "分阶段预训练",
+              "Staged pretraining"
+            ],
+            "representative": "Alibaba · Qwen3"
+          }
         }
       ],
       "cases": [
@@ -4304,7 +4771,14 @@
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
           ],
-          "formula": "W′ = W + BA, rank(BA) ≤ r"
+          "formula": "W′ = W + BA, rank(BA) ≤ r",
+          "summary": {
+            "technology": [
+              "低秩适配",
+              "Low-rank adaptation"
+            ],
+            "representative": "LoRA"
+          }
         },
         {
           "id": "adapt-qlora",
@@ -4341,7 +4815,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "量化低秩适配",
+              "Quantized adaptation"
+            ],
+            "representative": "QLoRA"
+          }
         }
       ],
       "cases": [],
@@ -4406,7 +4887,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "选择性状态空间",
+              "Selective state space"
+            ],
+            "representative": "Mamba"
+          }
         },
         {
           "id": "hybrid-delta",
@@ -4443,7 +4931,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "门控递归状态",
+              "Gated recurrent state"
+            ],
+            "representative": "Gated DeltaNet"
+          }
         },
         {
           "id": "hybrid-mm01",
@@ -4480,7 +4975,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "混合线性注意力",
+              "Hybrid attention"
+            ],
+            "representative": "MiniMax-01"
+          }
         },
         {
           "id": "hybrid-mm1",
@@ -4517,7 +5019,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "混合架构推理训练",
+              "Hybrid reasoning RL"
+            ],
+            "representative": "MiniMax-M1"
+          }
         },
         {
           "id": "hybrid-qnext",
@@ -4554,7 +5063,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "混合注意力＋MoE",
+              "Hybrid attention + MoE"
+            ],
+            "representative": "Qwen3-Next"
+          }
         },
         {
           "id": "hybrid-q35",
@@ -4598,7 +5114,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "混合架构扩展",
+              "Scaling hybrid models"
+            ],
+            "representative": "Qwen3.5"
+          }
         },
         {
           "id": "hybrid-nemotron",
@@ -4635,7 +5158,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "混合专家架构",
+              "Hybrid expert models"
+            ],
+            "representative": "Nemotron 3 Super"
+          }
         }
       ],
       "cases": [
@@ -4777,7 +5307,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "优化器稳定化",
+              "Optimizer stability"
+            ],
+            "representative": "Kimi K2 · MuonClip"
+          }
         },
         {
           "id": "repr-mhc",
@@ -4814,7 +5351,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "受约束超连接",
+              "Constrained connections"
+            ],
+            "representative": "mHC"
+          }
         },
         {
           "id": "repr-engram",
@@ -4851,7 +5395,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "条件记忆",
+              "Conditional memory"
+            ],
+            "representative": "Engram"
+          }
         },
         {
           "id": "repr-v4",
@@ -4895,7 +5446,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "超连接架构采用",
+              "mHC model adoption"
+            ],
+            "representative": "DeepSeek-V4"
+          }
         }
       ],
       "cases": [
@@ -4992,7 +5550,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "工具使用训练",
+              "Tool-use training"
+            ],
+            "representative": "OpenAI · o3 / o4-mini"
+          }
         },
         {
           "id": "agent-k2",
@@ -5029,7 +5594,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "智能体环境训练",
+              "Agent environments"
+            ],
+            "representative": "Kimi K2"
+          }
         },
         {
           "id": "agent-v32",
@@ -5066,7 +5638,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "智能体强化学习",
+              "Agent RL"
+            ],
+            "representative": "DeepSeek-V3.2"
+          }
         },
         {
           "id": "agent-parl",
@@ -5110,7 +5689,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "并行协作训练",
+              "Parallel agent RL"
+            ],
+            "representative": "Kimi K2.5 · PARL"
+          }
         }
       ],
       "cases": [
@@ -5237,7 +5823,14 @@
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
           ],
-          "formula": "Selected attention work ≈ O(Tk·d), k ≪ T\nExcludes indexer / selection cost"
+          "formula": "Selected attention work ≈ O(Tk·d), k ≪ T\nExcludes indexer / selection cost",
+          "summary": {
+            "technology": [
+              "稀疏注意力选择",
+              "Sparse attention"
+            ],
+            "representative": "DeepSeek-V3.2"
+          }
         },
         {
           "id": "context-v4",
@@ -5281,7 +5874,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "压缩注意力",
+              "Compressed attention"
+            ],
+            "representative": "DeepSeek-V4"
+          }
         }
       ],
       "cases": [
@@ -5377,7 +5977,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "推理中交织工具",
+              "Interleaved tools"
+            ],
+            "representative": "OpenAI · o3 / o4-mini"
+          }
         },
         {
           "id": "tool-parallel",
@@ -5422,7 +6029,14 @@
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
           ],
-          "formula": "wall time ≥ longest dependency path\nparallel wall time ≠ total token cost"
+          "formula": "wall time ≥ longest dependency path\nparallel wall time ≠ total token cost",
+          "summary": {
+            "technology": [
+              "并行智能体求解",
+              "Parallel agents"
+            ],
+            "representative": "Kimi K2.5"
+          }
         }
       ],
       "cases": [
@@ -5518,7 +6132,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "通信重叠与 FP8",
+              "Overlap and FP8"
+            ],
+            "representative": "DeepSeek-V3"
+          }
         },
         {
           "id": "system-deepep",
@@ -5555,7 +6176,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "专家并行通信",
+              "Expert communication"
+            ],
+            "representative": "DeepSeek · DeepEP"
+          }
         },
         {
           "id": "system-nvfp4",
@@ -5592,7 +6220,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "低精度训练执行",
+              "Low-precision training"
+            ],
+            "representative": "Nemotron · NVFP4"
+          }
         }
       ],
       "cases": [
@@ -5703,7 +6338,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "训练—采样协同",
+              "Training/rollout loop"
+            ],
+            "representative": "HybridFlow / verl"
+          }
         },
         {
           "id": "system-areal",
@@ -5741,7 +6383,14 @@
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
           ],
-          "formula": "policy lag = current update − rollout policy version"
+          "formula": "policy lag = current update − rollout policy version",
+          "summary": {
+            "technology": [
+              "异步强化学习系统",
+              "Asynchronous RL"
+            ],
+            "representative": "AReaL"
+          }
         }
       ],
       "cases": [],
@@ -5806,7 +6455,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "双向掩码预训练",
+              "Masked pretraining"
+            ],
+            "representative": "Google · BERT"
+          }
         }
       ],
       "cases": [
@@ -5887,7 +6543,14 @@
           "evidence": [
             "原始资料支持上述机制；性能数字依赖原文任务、模型与硬件，本站不将其当作跨条件实测。",
             "The primary source supports this mechanism; performance depends on its tasks, models and hardware, not a cross-setting benchmark by this site."
-          ]
+          ],
+          "summary": {
+            "technology": [
+              "文本到文本预训练",
+              "Text-to-text learning"
+            ],
+            "representative": "Google · T5"
+          }
         }
       ],
       "cases": [

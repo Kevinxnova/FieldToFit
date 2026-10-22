@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.16.0"></a>
+## v1.16.0 · 训练、推理与系统完整技术图谱 · 2026-10-22
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Complete technical maps of training, inference and systems -->
+<!-- release-summary:zh:start -->
+- 从训练、推理、系统定义出发，直接展示三张2017—2026完整横向技术图谱，保留全部93节点与43条有来源的关系。
+- 节点采用“年份—技术—代表模型／项目”，支持缩放、平移、缩略导航与全屏；桌面侧栏和手机底部面板展开机制、约束、采用证据及原始资料。
+- 公司高亮与旧链接定位保留完整总图；首页预览、18题目录、本地已读记录及只读接口兼容，无数据库迁移。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Start from definitions of training, inference and systems, then show three complete horizontal maps for 2017–2026, retaining all 93 milestones and 43 sourced relations.
+- Summarize each milestone by year, technology and representative model or project; add zoom, pan, minimaps and full-screen reading, with desktop inspectors and mobile sheets for mechanisms, limits, adoption evidence and primary sources.
+- Company highlighting and legacy deep links retain the complete maps; homepage previews, 18 articles, local reading records and read-only APIs remain compatible without a database migration.
+<!-- release-summary:en:end -->
+
+对应REQ-25-14—17，所有者已选择技术图谱demo并确认v1.16.0；先登记总览再开发。以v1.15.2为基线，本批改变主要阅读流程，按已确认minor处理。目录修订3只增补双语定义与短标题，不改既有节点事实、关系来源、日期或18题修订；原资料核对日期保持。新增兼容字段而非替换接口，旧筛选参数作为定位兼容，不再隐藏节点。可回退前端展示，不迁移数据库或清除阅读记录。
+
+本批为本地开发与验证，尚未部署、推送或创建正式Release。实际检查和边界见[图谱重构验收](docs/validation/2026-10-22-evolution-complete-maps.md)。
+
 <a id="v1.15.2"></a>
 ## v1.15.2 · DeepInfer推理系统技术分析 · 2026-10-22
 <!-- site-deployed:2026-10-22 -->

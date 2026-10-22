@@ -156,3 +156,20 @@ def test_atlas_server_body_contains_each_node_and_relation(site, english):
                 assert html.escape(CATALOG['sources'][ref['source']]['url']) in body
     for edge in CATALOG['relations']:
         assert html.escape(edge['reason'][i]) in body
+
+
+def test_complete_atlas_definitions_and_summaries(site):
+    for track in CATALOG['tracks']:
+        assert len(track['definition']) == 2 and all(track['definition'])
+    nodes = [node for route in CATALOG['routes'] for node in route['nodes']]
+    assert len(nodes) == 93
+    for node in nodes:
+        assert len(node['summary']['technology']) == 2 and all(node['summary']['technology'])
+        assert node['summary']['representative'].strip()
+    for index, prefix in enumerate(('', '/en')):
+        page = site.get(prefix + ROOT).text
+        for track in CATALOG['tracks']:
+            assert html.escape(track['definition'][index]) in page
+        for node in nodes:
+            assert html.escape(node['summary']['technology'][index]) in page
+            assert html.escape(node['summary']['representative']) in page
