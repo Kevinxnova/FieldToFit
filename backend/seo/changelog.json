@@ -1,11 +1,39 @@
 {
-  "version": "1.14.2",
-  "revision": "530e5ac7b205450f46d362f4835b7119da6a940407c5de701fbaebdfe4701704",
+  "version": "1.15.0",
+  "revision": "a5f42dd1a027392a738f6d91cd20696e9b137df03cc9753aee66239b4c78f779",
   "items": [
+    {
+      "version": "1.15.0",
+      "date": "2026-10-22",
+      "deployed_on": "2026-10-22",
+      "copy": {
+        "zh": {
+          "title": "技术演进关系图与2025—2026放大阅读",
+          "highlights": [
+            "三图扩充至27条路线、93个节点与43条明确关系，分别解释技术瓶颈、机制、证据与新约束。",
+            "重点补充2025—2026的推理训练、Agent协作、混合架构、压缩注意力、推测解码与系统进展；支持近期放大和完整历史。",
+            "论文、技术报告及官方工程资料对应节点；区分首发、报告修订和型号采用，保留18题与本地阅读记录。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Technical evolution relations and a 2025–2026 focus",
+          "highlights": [
+            "Expand the three maps to 27 routes, 93 milestones and 43 explicit relations, explaining bottlenecks, mechanisms, evidence and new constraints.",
+            "Highlight 2025–2026 reasoning training, agent coordination, hybrid architectures, compressed attention, speculative decoding and systems, with recent-focus and full-history views.",
+            "Bind papers, technical reports and official engineering sources to milestones; distinguish publication, revision and model adoption while preserving 18 articles and browser reading records."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.15.0"
+    },
     {
       "version": "1.14.2",
       "date": "2026-10-22",
-      "deployed_on": "",
+      "deployed_on": "2026-10-22",
       "copy": {
         "zh": {
           "title": "已发布日报内容的源码归档与验收接续",

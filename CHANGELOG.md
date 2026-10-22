@@ -4,8 +4,28 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.15.0"></a>
+## v1.15.0 · 技术演进关系图与2025—2026放大阅读 · 2026-10-22
+<!-- site-deployed:2026-10-22 -->
+<!-- public-title:en: Technical evolution relations and a 2025–2026 focus -->
+<!-- release-summary:zh:start -->
+- 三图扩充至27条路线、93个节点与43条明确关系，分别解释技术瓶颈、机制、证据与新约束。
+- 重点补充2025—2026的推理训练、Agent协作、混合架构、压缩注意力、推测解码与系统进展；支持近期放大和完整历史。
+- 论文、技术报告及官方工程资料对应节点；区分首发、报告修订和型号采用，保留18题与本地阅读记录。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Expand the three maps to 27 routes, 93 milestones and 43 explicit relations, explaining bottlenecks, mechanisms, evidence and new constraints.
+- Highlight 2025–2026 reasoning training, agent coordination, hybrid architectures, compressed attention, speculative decoding and systems, with recent-focus and full-history views.
+- Bind papers, technical reports and official engineering sources to milestones; distinguish publication, revision and model adoption while preserving 18 articles and browser reading records.
+<!-- release-summary:en:end -->
+
+对应REQ-25-9至13，所有者已确认v1.15.0。节点级筛选、时间带与关系跳转扩展既有专题阅读流程；旧节点和题目链接、18题修订、本地已读存储及既有只读接口保持兼容，无数据库迁移。所有者随后明确授权更新并部署，2026-10-22正式站已升级并通过HTTP／MCP及40个双语专题页面核验；线上浏览器连接超时，交互复验未完成；候选Kimi K3因完整报告尚未审阅不计入已收录。既有v1.14.2内容及资源保留。
+
+实际验证与边界见[本批验收](docs/validation/2026-10-22-evolution-atlas.md)。
+
 <a id="v1.14.2"></a>
 ## v1.14.2 · 已发布日报内容的源码归档与验收接续 · 2026-10-22
+<!-- site-deployed:2026-10-22 -->
 <!-- public-title:en: Source archive and verification for the approved daily batch -->
 <!-- release-summary:zh:start -->
 - 补齐已获批日报批次的三份档案源码快照、报告绘图源与真实验收记录。

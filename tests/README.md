@@ -2,6 +2,8 @@
 
 | 文件 | 检查范围 |
 | --- | --- |
+| test_llm_evolution.py | 三图节点、关系、日期、来源、旧链接／18题修订兼容、SSR／API同源和读取权限 |
+| frontend/evolution.cjs、frontend/evolution-map.cjs | 本地已读状态、时间／重点筛选、公司证据、跨图链接、真实图组件定位与全屏状态 |
 | test_check_decisions.py | 私密差异处置／恢复、跨日抑制、新证据重入、旧提案保护、权限／备份／升级及远程原子冲突 |
 | browser/check-decisions_server.py | 本机隔离浏览器夹具：两项差异、固定官方文本与测试凭据；只用临时数据库 |
 | test_reviewed_maintenance.py | 全对象冻结清单、跨重试差异／失败、固定章节／PDF、私密纠错至实际修复、CW对照／撤回及远程原子并发 |

@@ -54,5 +54,6 @@ def page(path, dist, english):
     body = render_template('evolution.html', catalog=CATALOG, question=question,
                            title=title, description=description, index=index, english=english,
                            root=ROOT, questions=QUESTIONS, directory=path == QUESTIONS,
-                           question_by_id=QUESTION_BY_ID)
+                           question_by_id=QUESTION_BY_ID,
+                           node_by_id={n["id"]: n for r in CATALOG["routes"] for n in r["nodes"]})
     return document(dist, title + ' · FieldToFit', description, path, body)

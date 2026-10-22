@@ -30,7 +30,7 @@ For researchers, engineers, graduate students, students and AI application devel
 
 Sources are checked every **1 day**. Meaningful changes are prepared, reviewed and published for people and AI. Facts, source claims, editorial opinions and tested results stay distinct, with unknowns stated. Registration and synchronization remain unavailable; application cases are on hold.
 
-The v1.14.0 source adds an [LLM topic](FieldToFit-PM.md#req-25): three branching maps spanning 2017–2026, 16 routes, 31 milestones, 18 bilingual illustrated questions and local reading records. This batch is deployed and production bilingual pages/APIs are verified. Production browser interaction checks remain incomplete because the browser connection timed out; see the [validation record](docs/validation/2026-10-21-llm-evolution.md).
+v1.15.0 expands the [LLM topic](FieldToFit-PM.md#req-25) to three horizontal maps spanning 2017–2026, 27 routes, 93 milestones and 43 relations, adding a 2025–2026 focus, technical-report evidence and model-specific adoption. All 18 articles and browser reading records remain. v1.15.0 is deployed. Production bilingual pages, HTTP data and MCP versions are verified; browser interaction rechecks remain pending after a connection timeout. See the [validation record](docs/validation/2026-10-22-evolution-atlas.md).
 
 The v1.6.0 source adds anonymous browser-local follows and private traffic reports. Browser and personal AI reading progress remain independent; lists support import/export. This functional batch is deployed; see [local/production validation and limitations](docs/validation/2026-10-04-follow-traffic.md).
 
@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.14.2](CHANGELOG.md#v1.14.2)** · [fieldtofit-v1.14.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.14.2)
+**Current source version: [v1.15.0](CHANGELOG.md#v1.15.0)** · [fieldtofit-v1.15.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.15.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Archive three approved profile snapshots, the report figure source and actual verification for the daily batch.
-- Preserve the concurrent v1.14.1 public images and Codex content, including original publication/source dates and both homepage selections.
-- Complete the source and version follow-up for content already published on the live site, without new publications or selection timestamps.
+- Expand the three maps to 27 routes, 93 milestones and 43 explicit relations, explaining bottlenecks, mechanisms, evidence and new constraints.
+- Highlight 2025–2026 reasoning training, agent coordination, hybrid architectures, compressed attention, speculative decoding and systems, with recent-focus and full-history views.
+- Bind papers, technical reports and official engineering sources to milestones; distinguish publication, revision and model adoption while preserving 18 articles and browser reading records.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

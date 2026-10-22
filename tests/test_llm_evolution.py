@@ -86,3 +86,73 @@ def test_topic_respects_read_access(client, monkeypatch):
     monkeypatch.setenv('FIELDTOFIT_READ_TOKEN','topic-test-token')
     assert client.get('/api/v1/platform/evolution').status_code == 401
     assert client.get(ROOT).status_code == 401
+
+
+def test_atlas_evidence_relations_and_historical_dates():
+    nodes = {n['id']: n for r in CATALOG['routes'] for n in r['nodes']}
+    tracks = {n['id']: r['track'] for r in CATALOG['routes'] for n in r['nodes']}
+    assert len(nodes) >= 90
+    assert all(sum(n['date'] >= '2025' for r in CATALOG['routes'] if r['track'] == track for n in r['nodes']) >= 7
+               for track in ('train', 'inference', 'systems'))
+    for node in nodes.values():
+        assert node['kind'] in ('method', 'model', 'engineering')
+        assert isinstance(node['highlight'], bool)
+        for field in ('problem','mechanism','evidence','limit'):
+            assert len(node[field]) == 2 and all(node[field])
+        assert node['references'] and node['references'][0]['source'] == node['source']
+        for ref in node['references']:
+            assert ref['source'] in CATALOG['sources']
+            assert len(ref['section']) == 2 and all(ref['section'])
+    for route in CATALOG['routes']:
+        for case in route['cases']:
+            assert set(case['nodes']) <= {n['id'] for n in route['nodes']}
+    assert len({e['id'] for e in CATALOG['relations']}) == len(CATALOG['relations'])
+    assert {e['kind'] for e in CATALOG['relations']} == {'improvement','alternative','combination','adoption','cross-track'}
+    for edge in CATALOG['relations']:
+        assert edge['from_node'] in nodes and edge['to_node'] in nodes
+        assert edge['from_node'] != edge['to_node']
+        assert len(edge['reason']) == 2 and all(edge['reason'])
+        assert edge['sources'] and all(s in CATALOG['sources'] for s in edge['sources'])
+        if edge['kind'] in ('improvement','adoption'):
+            assert nodes[edge['from_node']]['date'] <= nodes[edge['to_node']]['date']
+        if edge['kind'] == 'cross-track':
+            assert tracks[edge['from_node']] != tracks[edge['to_node']]
+    # First-publication dates must not drift to a later revision or adoption.
+    assert nodes['repr-mhc']['date'] == '2025-12-31'
+    assert nodes['latent-v2']['date'] == '2024-05-07'
+    assert nodes['system-areal']['date'] == '2025-05-30'
+    assert CATALOG['sources']['areal']['revised_at'] == '2026-03-02'
+    assert nodes['system-deepep']['date'] == '2025'
+    assert nodes['repr-v4']['date_kind'] == 'model-adoption'
+    assert any(r['source']=='v4' for r in nodes['repr-v4']['references'])
+
+
+def test_original_links_and_read_versions_are_preserved():
+    import hashlib
+    import json
+    nodes = {n['id'] for r in CATALOG['routes'] for n in r['nodes']}
+    legacy = '''dense-transformer dense-scaling dense-chinchilla moe-switch moe-v3 moe-qwen
+    preference-instruct preference-dpo reasoning_rl-o1 reasoning_rl-r1_paper shared_kv-mqa
+    shared_kv-gqa_paper latent_kv-v3 draft_verify-spec_paper draft_verify-speculative
+    thinking-testtime thinking-claude thinking-qwen long_context-rope long_context-lost
+    quantization-awq sharding-zero_paper sharding-zero model_parallel-megatron
+    model_parallel-parallel kernels-flash kv_paging-paged batching-orca
+    disaggregation-distserve disaggregation-dynamo disaggregation-epd'''.split()
+    assert set(legacy) <= nodes
+    # This batch does not revise the 18 articles or invalidate existing reading records.
+    assert hashlib.sha256(json.dumps(CATALOG['questions'], sort_keys=True, ensure_ascii=False).encode()).hexdigest() == '74c67e2c92c399bd7c0f3cad17669ba2f06ffcecaf6faef9c753889cc22c6fb5'
+
+
+@pytest.mark.parametrize('english', [False, True])
+def test_atlas_server_body_contains_each_node_and_relation(site, english):
+    body = site.get(('/en' if english else '')+ROOT).text
+    i = int(english)
+    for route in CATALOG['routes']:
+        for node in route['nodes']:
+            assert 'id="node-'+node['id']+'"' in body
+            for key in ('title','problem','mechanism','limit'):
+                assert html.escape(node[key] if key=='title' else node[key][i]) in body
+            for ref in node['references']:
+                assert html.escape(CATALOG['sources'][ref['source']]['url']) in body
+    for edge in CATALOG['relations']:
+        assert html.escape(edge['reason'][i]) in body

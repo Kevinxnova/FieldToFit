@@ -21,3 +21,19 @@ denied=true;hook.markRead('I02',1,true);assert.equal(getSnapshot().records.I02.r
 const catalog=JSON.parse(fs.readFileSync(path.join(root,'backend/llm_evolution/catalog.json')));const d=load('data',{'../../../../backend/llm_evolution/catalog.json':catalog});assert.equal(d.kvMiB(1,32,4096,8,128,2),512);assert.equal(d.kvMiB(8,32,4096,8,128,2),4096);assert.equal(d.kvMiB(0,32,4096,8,128,2),null);assert.equal(d.kvMiB(NaN,32,4096,8,128,2),null);
 assert.equal(d.kvMiB(1e200,1e200,4096,8,128,2),null);
 console.log('PASS evolution: revisions, manual marks, refresh serialization, tab changes, corrupted/blocked storage, all-read selection and KV units');
+// Filters operate on nodes, retain date precision, and link across filtered tracks.
+for(const route of catalog.routes){
+ assert.deepEqual(d.visibleNodes(route,true,'all'),route.nodes);
+ assert(d.visibleNodes(route,false,'recent').every(n=>n.highlight&&n.date>='2025'));
+ for(const node of route.nodes){
+  const dest=new URL(d.nodeDestination(node.id),'https://example.test');
+  assert.equal(dest.searchParams.get('node'),node.id);assert.equal(dest.searchParams.get('track'),route.track);
+  assert.equal(dest.searchParams.get('view'),'all');
+  assert.equal(dest.searchParams.get('period'),node.date>='2025'?'recent':'all');
+  assert(d.nodeCases(route,node.id).every(c=>c.nodes.includes(node.id)));
+ }
+}
+assert.equal(d.timeBand('2025'),'2025');assert.equal(d.timeBand('2025-12-31'),'2025 H2');assert.equal(d.timeBand('2026-01-12'),'2026 H1');assert.equal(d.timeBand('2024-12-27'),'2023–2024');
+assert.equal(d.nodeDestination('missing'),d.ROOT);
+assert(d.visibleNodes(catalog.routes.find(r=>r.id==='hybrid'),false,'recent').some(n=>n.id==='hybrid-q35'));
+console.log('PASS atlas: node filters, historical and cross-track destinations, company evidence and date precision');
