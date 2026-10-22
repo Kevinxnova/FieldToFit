@@ -38,15 +38,16 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.14.0](CHANGELOG.md#v1.14.0)** · [fieldtofit-v1.14.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.14.0)
+**当前源码版本：[v1.14.1](CHANGELOG.md#v1.14.1)** · [fieldtofit-v1.14.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.14.1)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 新增2017—2026大模型专题：训练、推理、系统三张横向分支图，16条路线、31个节点与具体公司／型号证据。
-- 首页展示重点，完整图支持全部节点、主线收起、节点详情开合、公司高亮与全屏阅读。
-- 提供18题双语图文目录、KV容量计算器及浏览器本地已读记录；修订提示、筛选与详情返回共用稳定编号。
+- 补齐官方Day 15重置公告与Day 16缓存改进，区分公告、账户到账和API缓存费用。
+- 收录受影响账户用量修复、锁定聊天及选务信息接入；补录两版桌面修复与Agents API工具。
+- 将沙箱预热归回10月9日来源日志，保留后续原帖并明确活跃回合计费；网页、概览与AI读取同源。
+- 新增PHP检查技能、Dots Pro用量边界、API项目服务档位与Rosalind研究图谱；保留日期精度和官方结论边界。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

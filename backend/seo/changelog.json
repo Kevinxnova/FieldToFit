@@ -1,7 +1,37 @@
 {
-  "version": "1.14.0",
-  "revision": "8287d262fca892c12cdfde3b3c1991cd6316516f941e5f6ed0f031e3fac1965d",
+  "version": "1.14.1",
+  "revision": "86f086d9678365f79408b2696c757c11af00afd1aab7f05290e022bfaba0fb03",
   "items": [
+    {
+      "version": "1.14.1",
+      "date": "2026-10-22",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Codex Day 15／16与最新四项核对",
+          "highlights": [
+            "补齐官方Day 15重置公告与Day 16缓存改进，区分公告、账户到账和API缓存费用。",
+            "收录受影响账户用量修复、锁定聊天及选务信息接入；补录两版桌面修复与Agents API工具。",
+            "将沙箱预热归回10月9日来源日志，保留后续原帖并明确活跃回合计费；网页、概览与AI读取同源。",
+            "新增PHP检查技能、Dots Pro用量边界、API项目服务档位与Rosalind研究图谱；保留日期精度和官方结论边界。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Codex Days 15/16 and four new reviewed updates",
+          "highlights": [
+            "Add the official Day 15 reset announcement and Day 16 caching update, separating announcements, account receipt and API cache pricing.",
+            "Cover the affected-account usage fix, locked chats and election-information integrations; backfill two desktop fixes and Agents API tooling.",
+            "Date sandbox prewarming to its October 9 source log, retain the later post and clarify active-turn billing across web summaries and AI reading.",
+            "Add PHP checking skills, Dots Pro usage boundaries, API project service tiers and the Rosalind research atlas with source-date precision and claim limits."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.14.1"
+    },
     {
       "version": "1.14.0",
       "date": "2026-10-21",

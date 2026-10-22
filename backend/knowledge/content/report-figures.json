@@ -1059,5 +1059,74 @@
       ],
       "scope": "Different task units; not token prices; no invented absolute migration dollars"
     }
+  },
+  "/report-figures/self-assessment-20261016-pipeline.png": {
+    "sha256": "198ccebdb1283c20f42b2cf4d53152ca0518a65032a6b7b3bc0477c2440c15b9",
+    "source_urls": [
+      "https://safeguards.anthropic.com/2026/self-assessment/"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Anthropic, Scaling Misuse Detection with Self-Assessment, 2026-10-16. Original report graphics are not reproduced.",
+    "version": "2026-10-16; unnumbered official research webpage",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "kind": "reading_diagram",
+      "locators": [
+        "Method: How self-assessment works",
+        "Introduction; footnotes1,2"
+      ],
+      "estimated_compute_increase": "<2%",
+      "average_additional_tokens": "~10",
+      "causal_or_latency_data": false
+    }
+  },
+  "/report-figures/self-assessment-20261016-recall.png": {
+    "sha256": "8b0e55219b0c5d3e4ece185cc1e9dd3a0dff74a5edfc901e254ba7dcec1c8f61",
+    "source_urls": [
+      "https://safeguards.anthropic.com/2026/self-assessment/"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Anthropic, Scaling Misuse Detection with Self-Assessment, 2026-10-16. Original report graphics are not reproduced.",
+    "version": "2026-10-16; unnumbered official research webpage",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Results: Self-assessment in Claude Fable5; Figure1"
+      ],
+      "operating_point_false_positive_percent": 1,
+      "teacher_flagged_recall_percent": 78,
+      "priority7plus_teacher_flagged_recall_percent": 94,
+      "sample_n": "undisclosed",
+      "axes": [
+        0,
+        100
+      ],
+      "human_ground_truth": false
+    }
+  },
+  "/report-figures/self-assessment-20261016-attacks.png": {
+    "sha256": "ef9971c6eac1f643595f86b962b08116c48809a9cf3eef59b0c2097d7053c3ad",
+    "source_urls": [
+      "https://safeguards.anthropic.com/2026/self-assessment/"
+    ],
+    "license": "Graphics © FieldToFit; source facts: Anthropic, Scaling Misuse Detection with Self-Assessment, 2026-10-16. Original report graphics are not reproduced.",
+    "version": "2026-10-16; unnumbered official research webpage",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Results: Can self-assessment block attacks?; Figure4"
+      ],
+      "task_denominator": 24,
+      "successful_tasks": [
+        19,
+        13,
+        6
+      ],
+      "production_classifiers_enabled": false,
+      "attacker_can_rewind_and_retry": true,
+      "axes": [
+        0,
+        24
+      ],
+      "production_prevalence": false
+    }
   }
 }

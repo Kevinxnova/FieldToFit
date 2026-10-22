@@ -4,6 +4,26 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.14.1"></a>
+## v1.14.1 · Codex Day 15／16与最新四项核对 · 2026-10-22
+<!-- public-title:en: Codex Days 15/16 and four new reviewed updates -->
+<!-- release-summary:zh:start -->
+- 补齐官方Day 15重置公告与Day 16缓存改进，区分公告、账户到账和API缓存费用。
+- 收录受影响账户用量修复、锁定聊天及选务信息接入；补录两版桌面修复与Agents API工具。
+- 将沙箱预热归回10月9日来源日志，保留后续原帖并明确活跃回合计费；网页、概览与AI读取同源。
+- 新增PHP检查技能、Dots Pro用量边界、API项目服务档位与Rosalind研究图谱；保留日期精度和官方结论边界。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 15 reset announcement and Day 16 caching update, separating announcements, account receipt and API cache pricing.
+- Cover the affected-account usage fix, locked chats and election-information integrations; backfill two desktop fixes and Agents API tooling.
+- Date sandbox prewarming to its October 9 source log, retain the later post and clarify active-turn billing across web summaries and AI reading.
+- Add PHP checking skills, Dots Pro usage boundaries, API project service tiers and the Rosalind research atlas with source-date precision and claim limits.
+<!-- release-summary:en:end -->
+
+对应REQ-20-3／5／8／10。所有者分两批明确批准八项新增与D-144更正、随后四项新增；延续v1.13.0后的内容维护，无新模块、主要阅读流程或协议变化，按兼容patch交付。保留并行已发布v1.14.0大模型演进专题；无数据库迁移，不改变未来内容逐批批准或晨报与夜间安排。
+
+保留同期已发布报告和信息卡所依赖的图片及资源清单，修复初次部署遗漏资源造成的页面读取失败。实际编号、完整备份、双语预览、公开同源与部署状态见[本批验收](docs/validation/2026-10-21-codex-day16-and-backfill.md)。
+
 <a id="v1.14.0"></a>
 ## v1.14.0 · 大模型技术演进与重要问题 · 2026-10-21
 <!-- site-deployed:2026-10-21 -->
