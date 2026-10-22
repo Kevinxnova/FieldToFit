@@ -1,11 +1,11 @@
 {
   "version": "1.16.0",
-  "revision": "aadfe92a29f95785d3476a7fa8be69b5a03bf0c9f9215299cb707d0d122a23ac",
+  "revision": "24fa534a7afeaf664c98f5f63fb609d2267c0bb11b533fdf82111a6c539bbcad",
   "items": [
     {
       "version": "1.16.0",
       "date": "2026-10-22",
-      "deployed_on": "",
+      "deployed_on": "2026-10-22",
       "copy": {
         "zh": {
           "title": "训练、推理与系统完整技术图谱",
