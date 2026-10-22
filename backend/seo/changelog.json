@@ -1,7 +1,35 @@
 {
-  "version": "1.15.1",
-  "revision": "e7f2d0993f27c1c49d780677386f3e63f74d200ee917cd4d104161e0d3509070",
+  "version": "1.15.2",
+  "revision": "7189539a1e90d5c7592f5f387ff017e4ab5ee19b2f824c90161014db7029c543",
   "items": [
+    {
+      "version": "1.15.2",
+      "date": "2026-10-22",
+      "deployed_on": "2026-10-22",
+      "copy": {
+        "zh": {
+          "title": "DeepInfer推理系统技术分析",
+          "highlights": [
+            "将已获批准的DeepInfer成稿纳入技术报告精选，沿用D-207及原事件日期，新增稳定报告入口。",
+            "五条结论及对应论述区分模型结构、缓存、并行、动态验证与基准口径，配两张官方原图和一张数据重绘。",
+            "补充DeepSeek档案相关阅读；正式发布后按现有规则轮替首页四篇，旧报告仍保留全部索引。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "DeepInfer inference-system analysis",
+          "highlights": [
+            "Add the approved DeepInfer analysis to featured technical reports, retaining D-207 and its original event date with a stable report URL.",
+            "Five findings and matching arguments distinguish model architecture, caching, parallelism, dynamic verification and benchmark conventions, with two official figures and one data redraw.",
+            "Add related reading to the DeepSeek dossier; actual publication rotates the four homepage reports while retaining older reports in the full index."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.15.2"
+    },
     {
       "version": "1.15.1",
       "date": "2026-10-22",

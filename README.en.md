@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.15.1](CHANGELOG.md#v1.15.1)** · [fieldtofit-v1.15.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.15.1)
+**Current source version: [v1.15.2](CHANGELOG.md#v1.15.2)** · [fieldtofit-v1.15.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.15.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Cover the selected Claude Duet, Google Cloud partnership, PHP fixes and Claude Security updates, with two existing dossiers and the complete news overview.
-- Analyze the selected Claude scorpion-binder research and GPT-6.1 Sol system card through four findings and three redraws each, retaining original dates, experimental denominators and limits.
-- Create the bilingual Duet card; rotate homepage reports and cards only on actual publication, retaining old articles, complete indexes and share links.
+- Add the approved DeepInfer analysis to featured technical reports, retaining D-207 and its original event date with a stable report URL.
+- Five findings and matching arguments distinguish model architecture, caching, parallelism, dynamic verification and benchmark conventions, with two official figures and one data redraw.
+- Add related reading to the DeepSeek dossier; actual publication rotates the four homepage reports while retaining older reports in the full index.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

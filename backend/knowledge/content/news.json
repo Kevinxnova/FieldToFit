@@ -2493,7 +2493,7 @@
     },
     {
       "category": "tool",
-      "checked_at": "2026-10-21",
+      "checked_at": "2026-10-22",
       "editor": "FieldToFit",
       "event_date": "2026-10-20",
       "highlight": false,
@@ -2529,7 +2529,8 @@
       "organization": "DeepSeek",
       "publication": {
         "first_published_at": "2026-10-22T02:56:26.901623+00:00",
-        "updated_at": "2026-10-22T05:00:02.862536+00:00"
+        "report_selected_at": "2026-10-22T05:57:54.791623+00:00",
+        "updated_at": "2026-10-22T05:57:54.791623+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -2557,26 +2558,534 @@
           "id": "commit",
           "title": "DeepInfer · fixed main revision774ce244b87c",
           "url": "https://github.com/deepseek-ai/DeepInfer/tree/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deepinfer-qa",
+          "title": "DeepSeek V4.1 Flash Inference Deployment Q&A",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/doc/inference_deployment_qa.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deepinfer-repo",
+          "title": "DeepInfer README / architecture and performance figures",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deepinfer-paper",
+          "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+          "url": "https://arxiv.org/pdf/2609.19969v1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deepinfer-benchmark",
+          "title": "DeepInfer benchmark.py",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/benchmark.py"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deepinfer-plot",
+          "title": "DeepInfer plot_pareto.py",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/sweep/plot_pareto.py"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deepinfer-yoco",
+          "title": "DeepInfer YOCO equivalence verification",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/yoco/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deepinfer-recipe",
+          "title": "DeepSeek Recipe README",
+          "url": "https://github.com/deepseek-ai/deepseek-recipe/blob/935817c66f5d6e64838f419692545f06787e485f/README.md"
         }
       ],
       "state": "published",
       "summary": "DeepSeek官方公开DeepInfer，当前支持V4.1-Flash离线推理和指定加速硬件。代码Apache-2.0；完整服务的KV缓存、分阶段拆分和副本负载均衡仍有未包含部分。",
+      "technical_map": {
+        "caution": "基于官方文档与代码分析，未独立复现；公开离线引擎不等于完整在线服务。",
+        "change_summary": "新增经用户批准的DeepInfer技术专题：五条结论、对应论述、两张官方原图与一张数据重绘；保留原动态及模型报告日期。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Deployment architecture and optimization sections",
+                "source_id": "deepinfer-qa"
+              }
+            ],
+            "from": "model",
+            "id": "e-cache",
+            "label": "同一推理系统的不同优化层次",
+            "reason": "依据官方部署说明并列阅读，不将不同配置的收益相加。",
+            "relation": "parallel",
+            "to": "cache"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Deployment architecture and optimization sections",
+                "source_id": "deepinfer-qa"
+              }
+            ],
+            "from": "model",
+            "id": "e-parallelism",
+            "label": "同一推理系统的不同优化层次",
+            "reason": "依据官方部署说明并列阅读，不将不同配置的收益相加。",
+            "relation": "parallel",
+            "to": "parallelism"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Deployment architecture and optimization sections",
+                "source_id": "deepinfer-qa"
+              }
+            ],
+            "from": "model",
+            "id": "e-verification",
+            "label": "同一推理系统的不同优化层次",
+            "reason": "依据官方部署说明并列阅读，不将不同配置的收益相加。",
+            "relation": "parallel",
+            "to": "verification"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Deployment architecture and optimization sections",
+                "source_id": "deepinfer-qa"
+              }
+            ],
+            "from": "model",
+            "id": "e-measurement",
+            "label": "同一推理系统的不同优化层次",
+            "reason": "依据官方部署说明并列阅读，不将不同配置的收益相加。",
+            "relation": "parallel",
+            "to": "measurement"
+          }
+        ],
+        "focus": "模型结构→推理引擎→在线服务：区分可复现核心与生产系统条件",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Sections 2–3; pp.9–14,20,37",
+                "source_id": "deepinfer-paper"
+              }
+            ],
+            "id": "model",
+            "kind": "method",
+            "label": "降本从模型结构开始：少算与少存是一套设计",
+            "limitation": "原作者材料，未独立复现实验；局部收益不等于完整在线服务收益。",
+            "mechanism": "共享与压缩KV、减少Decoder重复Prefill，为引擎优化创造条件。",
+            "metrics": [],
+            "result": "共享与压缩KV、减少Decoder重复Prefill，为引擎优化创造条件。",
+            "setting": "V4.1-Flash：CED、CSA2与有限重放",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "KV cache storage and request scheduling",
+                "source_id": "deepinfer-qa"
+              }
+            ],
+            "id": "cache",
+            "kind": "method",
+            "label": "缓存架构改变调度：让历史计算不再绑定一台机器",
+            "limitation": "原作者材料，未独立复现实验；局部收益不等于完整在线服务收益。",
+            "mechanism": "跨节点可访问的前缀缓存，让请求分配不必总被缓存所在机器绑定。",
+            "metrics": [],
+            "result": "跨节点可访问的前缀缓存，让请求分配不必总被缓存所在机器绑定。",
+            "setting": "跨节点全局KV、主机内存SWA、缺失重放",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Parallelism and expert load balancing",
+                "source_id": "deepinfer-qa"
+              }
+            ],
+            "id": "parallelism",
+            "kind": "method",
+            "label": "Prefill 与 Decode 分开优化：集群规模不是统一答案",
+            "limitation": "原作者材料，未独立复现实验；局部收益不等于完整在线服务收益。",
+            "mechanism": "处理输入与逐步生成的瓶颈不同，不能共用一个最佳设备数量。",
+            "metrics": [],
+            "result": "处理输入与逐步生成的瓶颈不同，不能共用一个最佳设备数量。",
+            "setting": "Prefill EP2–8；Decode EP64–128；具体取决于容量与互联",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "DSpark confidence-scheduled verification table; EP64/DP64",
+                "source_id": "deepinfer-qa"
+              }
+            ],
+            "id": "verification",
+            "kind": "method",
+            "label": "DSpark 动态验证：少验证一些草稿，反而可能提高有效吞吐",
+            "limitation": "原作者材料，未独立复现实验；局部收益不等于完整在线服务收益。",
+            "mechanism": "草稿接受概率与调度成本共同决定验证预算，收益随并发而变。",
+            "metrics": [],
+            "result": "草稿接受概率与调度成本共同决定验证预算，收益随并发而变。",
+            "setting": "EP64 / DP64；固定 5草稿与动态验证；作者估计吞吐",
+            "stage": 3
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Decode curve; benchmark.py and plot_pareto.py acceptance adjustment",
+                "source_id": "deepinfer-repo"
+              }
+            ],
+            "id": "measurement",
+            "kind": "result",
+            "label": "如何正确读性能曲线：先看分母，再看条件",
+            "limitation": "原作者材料，未独立复现实验；局部收益不等于完整在线服务收益。",
+            "mechanism": "接受率、上下文长度与服务范围决定离线数字能否迁移到在线业务。",
+            "metrics": [],
+            "result": "接受率、上下文长度与服务范围决定离线数字能否迁移到在线业务。",
+            "setting": "131,072 token上下文；固定 3草稿；75%接受率",
+            "stage": 4
+          }
+        ],
+        "question": "DeepInfer的推理降本路线：计算、缓存与集群调度如何协同",
+        "reading": {
+          "editorial": [
+            "这组材料的新意，不是再列出一串推理优化名词，而是揭示它们如何互相影响：KV 压缩降低存储与搬运压力；共享缓存改变请求路由；有限重放把缓存缺失变成有上界的计算；动态验证在草稿质量与执行成本之间分配预算；分阶段部署再把这些收益放到合适的硬件规模上。",
+            "对基础设施团队，DeepInfer 是研究 V4.1-Flash 部署的具体实现和性能测量入口。对应用团队，价值更多在于理解上下文复用、服务延迟与生成速度的区别，以及哪些 API 兼容工作仍需完成。",
+            "当前开源范围需要说清：README 将本次发布定义为离线推理，完整 KV cache 服务、完整的阶段分离服务系统，以及实例间请求负载均衡仍不在交付范围内。相关 DeepSeek Recipe 提供协议与模型模板转换，但调用方仍需提供推理、HTTP 传输和工具执行。因此，“公开引擎可运行”与“已复现 DeepSeek 在线服务”是两个不同的验收结论。",
+            "真正有用的复现，应固定模型检查点、芯片与互联、上下文长度、输入输出分布、缓存命中率、并发、草稿策略和接受率，并同时报告有效输出吞吐、首 token 延迟、逐 token 延迟及尾部表现。质量测试还应覆盖缓存命中位置变化和有限重放。只有在这些条件下，才适合讨论单位有效输出成本；内部收入或总体 token 处理规模不能替代成本测算。",
+            "来源与修订：DeepSeek-AI，模型报告 2026-09-17、arXiv:2609.19969v1；官方英文部署Q&A于 2026-10-20更新；仓库基线 9bd9cf2于 2026-10-21更新。本站 2026-10-22核对Q&A、仓库说明和基准口径；51页模型报告重点阅读架构、推理、缓存与局限章节，未完成全部训练与评测附录深读。中文知乎原文抓取 403，采用官方英文材料。未进行GPU/NPU实测、生产压测或成本复现。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "alt": "DeepInfer官方架构：请求调度、分阶段计算和外部KV缓存",
+                  "attribution": "DeepSeek-AI原图，未改动。",
+                  "caption": "图 1｜官方架构图。公开离线引擎不包含完整生产缓存服务与请求分流系统。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Architecture overview; open-source scope",
+                      "source_id": "deepinfer-repo"
+                    }
+                  ],
+                  "image_url": "/report-figures/deepinfer-20261022-architecture.png",
+                  "kind": "figure",
+                  "license": "Apache-2.0"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "V4.1-Flash 的 CED 将模型划分为 Encoder 与 Decoder。Decoder 的全局 KV 来自最终 Encoder 状态，使长提示词的大部分 token 不必再经过完整 Decoder Prefill；局部滑动窗口注意力的状态，则通过有限长度的重放补齐。在提示词远长于局部窗口的条件下，这能显著减少 Prefill 计算。它不能直接推导为“所有请求的延迟减半”。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "CSA2 则跨层共享全局 KV，并复用部分检索结果。模型报告给出的全局 KV 为 890 字节/token，约为 V4-Flash 的四分之一。这里的统计对象是全局 KV，不包括模型权重、全部局部状态、运行时缓冲等，不能将其换算成整机显存缩减比例。低精度也并非一刀切：主 KV 使用 FP4，而敏感的局部 SWA KV 保留 FP8。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "一个必须保留的精度边界Bounded Replay 只重放最近的窗口，而精确恢复跨层局部状态需要更长的历史。报告明确承认：这是近似状态，不同缓存命中位置产生的结果并不在数学上完全相同。作者在所测任务上观察到质量影响很小，但这不是所有输入上的等价保证。公开 YOCO 测试比较两种实现的一致性，也不能替代“近似重放与完整重算完全等价”的证明。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "FieldToFit 判断：DeepInfer 的部分效率来自模型在训练和架构阶段就为部署留出了优化空间。将同一引擎迁移到没有相同 KV 共享与重放结构的模型，不能期待自动获得同样收益。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Sections 2–3; pp.9–14,20,37",
+                  "source_id": "deepinfer-paper"
+                }
+              ],
+              "id": "model",
+              "node_ids": [
+                "model"
+              ],
+              "summary": "共享与压缩KV、减少Decoder重复Prefill，为引擎优化创造条件。",
+              "title": "降本从模型结构开始：少算与少存是一套设计"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "长对话与 Agent 工作流会反复携带较长的历史上下文。如果历史 KV 只能在少数机器命中，调度器就要在“复用缓存”与“避免拥塞”之间取舍。官方部署方案把较长寿命的全局 KV 放入基于 3FS 的分布式存储，使不同 Prefill 实例可以访问相同前缀；短寿命的 SWA 状态使用主机内存，缺失时再重放恢复。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "这让存储容量与计算资源可以分别扩展，也削弱了将请求固定路由至特定缓存节点的必要性。实际收益仍取决于缓存命中率、读取延迟、网络和数据搬运能否被计算覆盖。Q&A 描述的分层读取与异步搬运，是这套设计的一部分，不能只部署存储就假设收益成立。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "FieldToFit 判断：对重复前缀多、对话跨度长的业务，这种设计值得优先研究；对短请求、低复用业务，缓存层的容量和运维投入是否划算，需要用真实流量测量。更长的缓存保留时间，不等于每个请求都更快。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "KV cache storage and request scheduling",
+                  "source_id": "deepinfer-qa"
+                }
+              ],
+              "id": "cache",
+              "node_ids": [
+                "cache"
+              ],
+              "summary": "跨节点可访问的前缀缓存，让请求分配不必总被缓存所在机器绑定。",
+              "title": "缓存架构改变调度：让历史计算不再绑定一台机器"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Prefill 一次处理输入中的许多 token，Decode 则持续逐步生成，二者对计算、权重访问和通信的压力不同。官方生产经验倾向于：Prefill 使用能容纳模型的较小并行组，通常 EP2–8；Decode 使用较大的 EP64–128 组，借助专家并行、通信融合和负载均衡提高效率。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "EP 表示把 MoE 专家分布到不同设备。扩大 EP 能降低单设备承担的专家权重与计算负担，但也增加对互联、调度及热点专家处理的要求。DeepInfer 已包含专家级负载均衡 EPLB；它与“把用户请求分配给不同实例”的负载均衡不是同一件事。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "官方建议的高效服务集群规模，也不能当作运行离线引擎的硬性最低配置。公开 README 的基准图使用 NVIDIA SM100；项目另支持 Huawei Ascend 950，但这些 NVIDIA 曲线不能证明两种硬件具备相同性能。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "FieldToFit 判断：是否需要更大的并行组，应同时看每用户速度、每卡吞吐和尾延迟。在低负载业务中，增加设备并不保证成本更低。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Parallelism and expert load balancing",
+                  "source_id": "deepinfer-qa"
+                }
+              ],
+              "id": "parallelism",
+              "node_ids": [
+                "parallelism"
+              ],
+              "summary": "处理输入与逐步生成的瓶颈不同，不能共用一个最佳设备数量。",
+              "title": "Prefill 与 Decode 分开优化：集群规模不是统一答案"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "推测解码先用较便宜的草稿路径预测多个 token，再由主模型验证。固定验证长度会把资源花在一些很可能被拒绝的草稿上。DSpark 使用置信度信息估计草稿前缀的接受概率，并结合引擎在当前负载下的性能，为请求分配验证长度。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "官方 Q&A 在 EP64 / DP64 下比较“固定验证 5 个草稿”与动态长度。每 rank 并发为 60 时，平均验证长度从 5 降到 3.58，平均接受长度从 3.30 降到 3.21；估计吞吐则从 13,730 升至 14,466 tok/s/rank，增幅约 5.4%。验证量减少 28.4%，不能写成端到端加速 28.4%。"
+                },
+                {
+                  "alt": "动态验证估计吞吐增益：并发 16为−1.5%，并发 96为+11.0%",
+                  "attribution": "FieldToFit据官方Q&A原表重绘；非本站硬件测试。",
+                  "caption": "图 2｜EP64 / DP64；相对固定验证 5草稿的估计吞吐增益；横轴为每rank并发。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Dynamic verification comparison table",
+                      "source_id": "deepinfer-qa"
+                    }
+                  ],
+                  "image_url": "/report-figures/deepinfer-20261022-dynamic.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Redraw of author-reported facts; no independent performance reproduction."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "结果保留了负收益点：并发 16 时为−1.5%，并发 96 时为+11.0%。这支持一个更具体的结论：动态验证是在特定负载下改善计算资源分配，而不是对所有请求都增加一个固定加速系数。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "FieldToFit 判断：值得关注的新意是把草稿接受概率与调度成本连起来。采用时应让验证策略随业务负载评估，而不能只选最高增益点作为上线预期。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "DSpark confidence-scheduled verification table; EP64/DP64",
+                  "source_id": "deepinfer-qa"
+                }
+              ],
+              "id": "verification",
+              "node_ids": [
+                "verification"
+              ],
+              "summary": "草稿接受概率与调度成本共同决定验证预算，收益随并发而变。",
+              "title": "DSpark 动态验证：少验证一些草稿，反而可能提高有效吞吐"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "官方 Decode 曲线固定上下文为 131,072 token，使用 EP64 / DP64、384+64 专家配置，并将固定 3 个草稿按 75% 的逐 token 接受率换算。横轴是每用户生成速度，纵轴是每 GPU 输出吞吐。更高并发通常能提高每卡吞吐，同时降低每用户速度：两者需要取舍。"
+                },
+                {
+                  "alt": "每GPU输出吞吐与每用户生成速度的取舍曲线",
+                  "attribution": "DeepSeek-AI原图，未改动。",
+                  "caption": "图 3｜131,072 token上下文；固定 3草稿；75%接受率；384+64专家。不同于图 2的 5草稿实验。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Decode Output Throughput vs. Interactivity",
+                      "source_id": "deepinfer-repo"
+                    }
+                  ],
+                  "image_url": "/report-figures/deepinfer-20261022-decode.png",
+                  "kind": "figure",
+                  "license": "Apache-2.0"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "代码中还有一个很容易漏掉的口径：默认基准按草稿全部接受计算原始吞吐，而绘图脚本才把固定长度草稿换算为有效 token。代码使用的系数为："
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "每步计入的有效 token = 1 + 草稿数量 × 接受率"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "例如 3 个草稿、75% 接受率时，系数为 3.25，而不是全接受时的 4。用全接受原始值直接报告有效生成吞吐，会高估。这是该脚本的计数口径，不是可随意套到所有推测解码方法上的通用收益公式。绘图路径还明确限定固定长度验证，不能把这套系数再次乘到动态长度结果上。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "离线曲线也不包含完整的在线排队、协议转换和网络延迟。Prefill 图的横轴是一步计算的耗时，并非用户请求从发出到首 token 的总等待。仓库没有在这里给出与其他通用推理框架完全同条件的对照，不能据此下结论说 DeepInfer 对所有模型、硬件和负载都更快。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Decode curve; benchmark.py and plot_pareto.py acceptance adjustment",
+                  "source_id": "deepinfer-repo"
+                }
+              ],
+              "id": "measurement",
+              "node_ids": [
+                "measurement"
+              ],
+              "summary": "接受率、上下文长度与服务范围决定离线数字能否迁移到在线业务。",
+              "title": "如何正确读性能曲线：先看分母，再看条件"
+            }
+          ],
+          "title": "DeepInfer的推理降本路线：计算、缓存与集群调度如何协同"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-20",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "deepinfer-qa",
+            "substantive_revision": false,
+            "version": "Official engineering Q&A; English document 774ce24"
+          },
+          {
+            "first_published_at": "2026-10-20",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "deepinfer-repo",
+            "substantive_revision": false,
+            "version": "DeepInfer commit 9bd9cf243fc53ef9afbf8f04d391d989117d6ab9"
+          },
+          {
+            "first_published_at": "2026-09-17",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "deepinfer-paper",
+            "substantive_revision": false,
+            "version": "arXiv:2609.19969v1"
+          }
+        ],
+        "slug": "deepinfer-inference-efficiency",
+        "takeaway": "减少重复计算、缓存搬运与集群等待需要共同设计；基准数字必须附带硬件、并发和接受率。"
+      },
       "title": "DeepInfer：开源离线推理核心，完整在线服务仍需补齐组件",
       "translations": {
         "en": {
           "fields": {
+            "131,072 token上下文；固定 3草稿；75%接受率": "131,072-token context; fixed 3-draft verification; 75% acceptance",
+            "CSA2 则跨层共享全局 KV，并复用部分检索结果。模型报告给出的全局 KV 为 890 字节/token，约为 V4-Flash 的四分之一。这里的统计对象是全局 KV，不包括模型权重、全部局部状态、运行时缓冲等，不能将其换算成整机显存缩减比例。低精度也并非一刀切：主 KV 使用 FP4，而敏感的局部 SWA KV 保留 FP8。": "CSA2 shares global KV across layers and reuses some retrieval results. The model report gives global KV as 890 bytes/token, approximately one quarter of V4-Flash global KV. This covers global KV, excluding model weights, all local state and runtime buffers; it cannot be converted into a total-device memory saving. Precision is also selective: main KV uses FP4, while sensitive local SWA KV remains FP8 precision.",
+            "DSpark 动态验证：少验证一些草稿，反而可能提高有效吞吐": "DSpark dynamic verification: verifying fewer drafts can raise effective throughput",
+            "DeepInfer官方架构：请求调度、分阶段计算和外部KV缓存": "Official DeepInfer architecture: request scheduling, separated computation and external KV cache",
+            "DeepInfer的推理降本路线：计算、缓存与集群调度如何协同": "DeepInfer’s inference-efficiency path: coordinating computation, caching and cluster scheduling",
             "DeepInfer：开源离线推理核心，完整在线服务仍需补齐组件": "DeepInfer: an open-source offline inference core with serving components still required",
+            "DeepSeek-AI原图，未改动。": "DeepSeek-AI original graphic, unmodified.",
             "DeepSeek官方公开DeepInfer，当前支持V4.1-Flash离线推理和指定加速硬件。代码Apache-2.0；完整服务的KV缓存、分阶段拆分和副本负载均衡仍有未包含部分。": "DeepSeek released DeepInfer with offline V4.1-Flash inference on specified accelerators. Code is Apache-2.0; KV caching, disaggregation and replica load balancing still require components for complete serving.",
+            "EP 表示把 MoE 专家分布到不同设备。扩大 EP 能降低单设备承担的专家权重与计算负担，但也增加对互联、调度及热点专家处理的要求。DeepInfer 已包含专家级负载均衡 EPLB；它与“把用户请求分配给不同实例”的负载均衡不是同一件事。": "EP distributes MoE experts across devices. Larger EP reduces the expert-weight and computation burden per device, but increases dependence on the interconnect, scheduling and handling hot experts. DeepInfer includes expert-level load balancing, EPLB. This differs from distributing user requests between service instances.",
+            "EP64 / DP64；固定 5草稿与动态验证；作者估计吞吐": "EP64 / DP64; fixed 5-draft versus dynamic verification; author-estimated throughput",
+            "FieldToFit 判断：DeepInfer 的部分效率来自模型在训练和架构阶段就为部署留出了优化空间。将同一引擎迁移到没有相同 KV 共享与重放结构的模型，不能期待自动获得同样收益。": "FieldToFit judgment: some DeepInfer efficiency comes from deployment opportunities created during model architecture and training. Moving the engine to a model without the same KV-sharing and replay structure does not automatically reproduce these gains.",
+            "FieldToFit 判断：值得关注的新意是把草稿接受概率与调度成本连起来。采用时应让验证策略随业务负载评估，而不能只选最高增益点作为上线预期。": "FieldToFit judgment: the useful novelty is linking draft acceptance probability with scheduling cost. Assess verification policy across actual workload levels rather than treating the best reported point as an expected production gain.",
+            "FieldToFit 判断：对重复前缀多、对话跨度长的业务，这种设计值得优先研究；对短请求、低复用业务，缓存层的容量和运维投入是否划算，需要用真实流量测量。更长的缓存保留时间，不等于每个请求都更快。": "FieldToFit judgment: prioritize investigating this design for repeated prefixes and long-lived conversations. For short requests with little reuse, measure whether cache capacity and operational costs are worthwhile. Longer retention does not make every request faster.",
+            "FieldToFit 判断：是否需要更大的并行组，应同时看每用户速度、每卡吞吐和尾延迟。在低负载业务中，增加设备并不保证成本更低。": "FieldToFit judgment: evaluate larger parallel groups using per-user speed, per-device throughput and tail latency together. Adding devices does not guarantee lower costs at low load.",
+            "FieldToFit据官方Q&A原表重绘；非本站硬件测试。": "FieldToFit redraw of the official Q&A table; not a FieldToFit hardware benchmark.",
+            "Prefill EP2–8；Decode EP64–128；具体取决于容量与互联": "Prefill EP2–8; Decode EP64–128; capacity and interconnect dependent",
+            "Prefill 一次处理输入中的许多 token，Decode 则持续逐步生成，二者对计算、权重访问和通信的压力不同。官方生产经验倾向于：Prefill 使用能容纳模型的较小并行组，通常 EP2–8；Decode 使用较大的 EP64–128 组，借助专家并行、通信融合和负载均衡提高效率。": "Prefill processes many input tokens at once; Decode generates incrementally. Their computation, weight-access and communication pressures differ. Official production guidance favors a smaller group that fits the model for Prefill, typically EP2–8, and larger EP64–128 groups for Decode, with expert parallelism, communication fusion and load balancing.",
+            "Prefill 与 Decode 分开优化：集群规模不是统一答案": "Optimize Prefill and Decode separately: cluster scale has no single answer",
             "README列出NVIDIA SM100与Huawei Ascend 950。Linux、Python3.12、GCC>=13及CUDA13或CANN9.2等依赖需对应平台；批次不变性和确定性采样注明NVIDIA与特定配置条件。": "The README lists NVIDIA SM100 and Huawei Ascend 950. Linux, Python3.12, GCC>=13 and CUDA13 or CANN9.2 dependencies vary by platform. Batch invariance and deterministic sampling specify NVIDIA and configuration requirements.",
+            "V4.1-Flash 的 CED 将模型划分为 Encoder 与 Decoder。Decoder 的全局 KV 来自最终 Encoder 状态，使长提示词的大部分 token 不必再经过完整 Decoder Prefill；局部滑动窗口注意力的状态，则通过有限长度的重放补齐。在提示词远长于局部窗口的条件下，这能显著减少 Prefill 计算。它不能直接推导为“所有请求的延迟减半”。": "CED in V4.1-Flash divides the model into an Encoder and a Decoder. Decoder global KV comes from the final Encoder state, so most tokens in a long prompt need not pass through a full Decoder Prefill. Local sliding-window attention states are restored by bounded replay. When the prompt is much longer than the local window, this substantially reduces Prefill computation; it does not imply that every request has half the latency.",
+            "V4.1-Flash：CED、CSA2与有限重放": "V4.1-Flash: CED, CSA2 and bounded replay",
             "main提交 774ce244b87cc0eb8d4b94ab9f5de2ab22049f01；初始提交 2026-10-20 04:09:42 UTC，最新提交 11:03:13 UTC，不冒充独立公告时刻。本站 2026-10-21核对；未核得编号Release，未构建、部署或复现性能。代码Apache-2.0不替代模型权重许可。": "main commit 774ce244b87cc0eb8d4b94ab9f5de2ab22049f01; initial commit 2026-10-20 04:09:42 UTC and latest 11:03:13 UTC, not an independently verified announcement time. Checked 2026-10-21; no numbered Release verified and no builds, deployment or benchmarks run. Code Apache-2.0 does not replace model-weight terms.",
+            "一个必须保留的精度边界Bounded Replay 只重放最近的窗口，而精确恢复跨层局部状态需要更长的历史。报告明确承认：这是近似状态，不同缓存命中位置产生的结果并不在数学上完全相同。作者在所测任务上观察到质量影响很小，但这不是所有输入上的等价保证。公开 YOCO 测试比较两种实现的一致性，也不能替代“近似重放与完整重算完全等价”的证明。": "An essential precision boundary. Bounded Replay replays only the most recent window, whereas exact reconstruction of multilayer local states requires a longer history. The report explicitly describes approximate states: different cache-hit positions do not produce mathematically identical results. The authors observe little quality impact on their tested tasks, not an equivalence guarantee for all inputs. The public YOCO test compares two implementations, not approximate replay against exact full recomputation.",
+            "代码中还有一个很容易漏掉的口径：默认基准按草稿全部接受计算原始吞吐，而绘图脚本才把固定长度草稿换算为有效 token。代码使用的系数为：": "One easily missed convention in the code is that the raw benchmark assumes full draft acceptance; the plotting script then adjusts fixed-length drafts to effective tokens. Its multiplier is:",
+            "例如 3 个草稿、75% 接受率时，系数为 3.25，而不是全接受时的 4。用全接受原始值直接报告有效生成吞吐，会高估。这是该脚本的计数口径，不是可随意套到所有推测解码方法上的通用收益公式。绘图路径还明确限定固定长度验证，不能把这套系数再次乘到动态长度结果上。": "For 3 drafts at 75% acceptance, the multiplier is 3.25 rather than the full-acceptance value of 4. Reporting the raw full-acceptance number as effective generation throughput overstates it. This is the script’s accounting convention, not a universal formula for all speculative methods. The plotting path explicitly requires fixed-length verification; do not multiply dynamic-length results by the factor again.",
+            "共享与压缩KV、减少Decoder重复Prefill，为引擎优化创造条件。": "Sharing and compressing KV and reducing repeated Decoder Prefill create opportunities for engine optimization.",
+            "减少重复计算、缓存搬运与集群等待需要共同设计；基准数字必须附带硬件、并发和接受率。": "Reducing repeated computation, cache movement and cluster waiting requires joint design; benchmark figures need hardware, concurrency and acceptance conditions.",
+            "动态验证估计吞吐增益：并发 16为−1.5%，并发 96为+11.0%": "Estimated dynamic-verification gain: −1.5% at concurrency 16 and +11.0% at 96",
+            "原作者材料，未独立复现实验；局部收益不等于完整在线服务收益。": "Author-reported materials, without independent experimental reproduction; local gains are not full online-service gains.",
             "发布的是推理基础设施": "An inference-infrastructure release",
+            "同一推理系统的不同优化层次": "Different optimization layers of the same inference system",
+            "图 1｜官方架构图。公开离线引擎不包含完整生产缓存服务与请求分流系统。": "Figure 1 | Official architecture. The public offline engine does not include the complete production cache service or request-routing system.",
+            "图 2｜EP64 / DP64；相对固定验证 5草稿的估计吞吐增益；横轴为每rank并发。": "Figure 2 | EP64 / DP64; estimated throughput gain relative to fixed 5-draft verification; horizontal axis is concurrency per rank.",
+            "图 3｜131,072 token上下文；固定 3草稿；75%接受率；384+64专家。不同于图 2的 5草稿实验。": "Figure 3 | 131,072-token context; fixed 3 drafts; 75% acceptance; 384+64 experts. This differs from the 5-draft experiment in Figure 2.",
+            "基于官方文档与代码分析，未独立复现；公开离线引擎不等于完整在线服务。": "Analysis of official documentation and code without independent reproduction; the public offline engine is not the complete online service.",
+            "处理输入与逐步生成的瓶颈不同，不能共用一个最佳设备数量。": "Input processing and incremental generation have different bottlenecks and no shared optimum device count.",
+            "如何正确读性能曲线：先看分母，再看条件": "Read performance curves through their denominators and conditions",
             "完整服务还需KV缓存系统、VE/Prefill/Decode拆分及副本负载均衡。作者性能图采用prefill 4张、decode 64张SM100，均在单一scale-up域，不能据此推断普通GPU或自有集群吞吐。": "Complete serving still needs a KV cache system, VE/Prefill/Decode disaggregation and replica load balancing. Vendor benchmarks use 4 SM100 GPUs for prefill and 64 for decode, each within one scale-up domain; they do not establish ordinary-GPU or customer-cluster throughput.",
+            "官方 Decode 曲线固定上下文为 131,072 token，使用 EP64 / DP64、384+64 专家配置，并将固定 3 个草稿按 75% 的逐 token 接受率换算。横轴是每用户生成速度，纵轴是每 GPU 输出吞吐。更高并发通常能提高每卡吞吐，同时降低每用户速度：两者需要取舍。": "The official Decode curve fixes context at 131,072 tokens, uses EP64 / DP64 and 384+64 experts, and adjusts fixed 3-draft verification using a 75% per-token acceptance rate. The horizontal axis is per-user generation speed; the vertical axis is output throughput per GPU. Higher concurrency generally raises device throughput while reducing user speed, requiring a tradeoff.",
+            "官方 Q&A 在 EP64 / DP64 下比较“固定验证 5 个草稿”与动态长度。每 rank 并发为 60 时，平均验证长度从 5 降到 3.58，平均接受长度从 3.30 降到 3.21；估计吞吐则从 13,730 升至 14,466 tok/s/rank，增幅约 5.4%。验证量减少 28.4%，不能写成端到端加速 28.4%。": "The official Q&A compares fixed verification of 5 drafts with dynamic lengths under EP64 / DP64 parallelism. At 60 concurrent requests per rank, mean verified length falls from 5 to 3.58 and mean accepted length from 3.30 to 3.21. Estimated throughput rises from 13,730 to 14,466 tok/s/rank, about 5.4%. A 28.4% reduction in verification length is not a 28.4% end-to-end speedup.",
+            "官方建议的高效服务集群规模，也不能当作运行离线引擎的硬性最低配置。公开 README 的基准图使用 NVIDIA SM100；项目另支持 Huawei Ascend 950，但这些 NVIDIA 曲线不能证明两种硬件具备相同性能。": "The recommended efficient serving-cluster scale is not a hard minimum for running the offline engine. Public README benchmarks use NVIDIA SM100 hardware. Huawei Ascend 950 is also supported, but the NVIDIA curves do not establish equal performance across the two hardware platforms.",
+            "对基础设施团队，DeepInfer 是研究 V4.1-Flash 部署的具体实现和性能测量入口。对应用团队，价值更多在于理解上下文复用、服务延迟与生成速度的区别，以及哪些 API 兼容工作仍需完成。": "For infrastructure teams, DeepInfer is a concrete implementation and measurement entry point for V4.1-Flash deployment. For application teams, it helps distinguish context reuse, service latency and generation speed, and identifies API compatibility work still required.",
             "开源范围提供DeepSeek-V4.1-Flash离线推理，默认检查点为DeepSeek-V4.1-Flash-1017。它关联已有模型事件D-187，不是该模型再次发布，也不改变API报价。": "The open release provides offline DeepSeek-V4.1-Flash inference, defaulting to DeepSeek-V4.1-Flash-1017; it relates to existing model event D-187, rather than relaunching the model or changing API prices.",
+            "当前开源范围需要说清：README 将本次发布定义为离线推理，完整 KV cache 服务、完整的阶段分离服务系统，以及实例间请求负载均衡仍不在交付范围内。相关 DeepSeek Recipe 提供协议与模型模板转换，但调用方仍需提供推理、HTTP 传输和工具执行。因此，“公开引擎可运行”与“已复现 DeepSeek 在线服务”是两个不同的验收结论。": "The open-source boundary matters: the README calls this an offline-inference release. The complete KV cache service, fully disaggregated service system and inter-instance request load balancing remain outside the delivered scope. DeepSeek Recipe supplies protocol and model-template conversion, but callers still provide inference, HTTP transport and tool execution. Running the public engine and reproducing DeepSeek’s online service are different acceptance criteria.",
+            "接受率、上下文长度与服务范围决定离线数字能否迁移到在线业务。": "Acceptance rates, context length and service scope determine how offline figures transfer online.",
+            "推测解码先用较便宜的草稿路径预测多个 token，再由主模型验证。固定验证长度会把资源花在一些很可能被拒绝的草稿上。DSpark 使用置信度信息估计草稿前缀的接受概率，并结合引擎在当前负载下的性能，为请求分配验证长度。": "Speculative decoding uses a cheaper draft path to predict multiple tokens for verification by the main model. Fixed verification lengths spend resources on some drafts likely to be rejected. DSpark uses confidence to estimate draft-prefix acceptance and assigns verification lengths with reference to engine performance under the current load.",
+            "新增经用户批准的DeepInfer技术专题：五条结论、对应论述、两张官方原图与一张数据重绘；保留原动态及模型报告日期。": "Add the owner-approved DeepInfer technical analysis: five findings, matching arguments, two original official figures and one data redraw; retain the original news and model-report dates.",
+            "来源与修订：DeepSeek-AI，模型报告 2026-09-17、arXiv:2609.19969v1；官方英文部署Q&A于 2026-10-20更新；仓库基线 9bd9cf2于 2026-10-21更新。本站 2026-10-22核对Q&A、仓库说明和基准口径；51页模型报告重点阅读架构、推理、缓存与局限章节，未完成全部训练与评测附录深读。中文知乎原文抓取 403，采用官方英文材料。未进行GPU/NPU实测、生产压测或成本复现。": "Sources and revisions: DeepSeek-AI model report dated 2026-09-17, arXiv:2609.19969v1; official English deployment Q&A updated 2026-10-20; repository baseline 9bd9cf2 updated 2026-10-21. FieldToFit checked the Q&A, repository documentation and benchmark conventions on 2026-10-22. Reading of the 51-page model report focused on architecture, inference, caching and limitations, not every training/evaluation appendix. The Chinese Zhihu original returned 403; official English materials were used. No GPU/NPU tests, production load tests or cost reproduction were performed.",
+            "模型结构→推理引擎→在线服务：区分可复现核心与生产系统条件": "Model architecture → inference engine → online service: distinguish the reproducible core from production conditions",
+            "每GPU输出吞吐与每用户生成速度的取舍曲线": "Tradeoff between output throughput per GPU and generation speed per user",
+            "每步计入的有效 token = 1 + 草稿数量 × 接受率": "Effective tokens counted per step = 1 + number of drafts × acceptance rate",
+            "真正有用的复现，应固定模型检查点、芯片与互联、上下文长度、输入输出分布、缓存命中率、并发、草稿策略和接受率，并同时报告有效输出吞吐、首 token 延迟、逐 token 延迟及尾部表现。质量测试还应覆盖缓存命中位置变化和有限重放。只有在这些条件下，才适合讨论单位有效输出成本；内部收入或总体 token 处理规模不能替代成本测算。": "A useful reproduction fixes the checkpoint, chip and interconnect, context length, input/output distribution, cache hit rate, concurrency, draft policy and acceptance rate. Report effective output throughput, first-token latency, inter-token latency and tails together. Quality tests should cover cache-hit positions and bounded replay. Only then can effective-output costs be assessed; internal revenue or total processed tokens are not a cost model.",
             "硬件和一致性选项有条件": "Hardware and consistency options have conditions",
-            "离线核心与完整服务分开验收": "Validate the offline core separately from complete serving"
+            "离线曲线也不包含完整的在线排队、协议转换和网络延迟。Prefill 图的横轴是一步计算的耗时，并非用户请求从发出到首 token 的总等待。仓库没有在这里给出与其他通用推理框架完全同条件的对照，不能据此下结论说 DeepInfer 对所有模型、硬件和负载都更快。": "Offline curves do not include full online queueing, protocol conversion or network latency. The Prefill chart measures time per computation step, not total request-to-first-token waiting. No fully matched comparison with other general-purpose frameworks is supplied here, so these data do not establish that DeepInfer is faster for every model, device or workload.",
+            "离线核心与完整服务分开验收": "Validate the offline core separately from complete serving",
+            "结果保留了负收益点：并发 16 时为−1.5%，并发 96 时为+11.0%。这支持一个更具体的结论：动态验证是在特定负载下改善计算资源分配，而不是对所有请求都增加一个固定加速系数。": "The results retain a negative-gain point: −1.5% at concurrency 16 and +11.0% at 96. This supports a specific conclusion: dynamic verification improves compute allocation under certain loads rather than adding a fixed acceleration factor to every request.",
+            "缓存架构改变调度：让历史计算不再绑定一台机器": "Cache architecture changes scheduling: historical computation need not stay on one machine",
+            "草稿接受概率与调度成本共同决定验证预算，收益随并发而变。": "Draft acceptance and scheduling cost jointly determine verification budgets, with load-dependent gains.",
+            "跨节点全局KV、主机内存SWA、缺失重放": "Cross-node global KV, host-memory SWA and replay on misses",
+            "跨节点可访问的前缀缓存，让请求分配不必总被缓存所在机器绑定。": "Cross-node prefix access reduces the need to bind request placement to the machine holding the cache.",
+            "这组材料的新意，不是再列出一串推理优化名词，而是揭示它们如何互相影响：KV 压缩降低存储与搬运压力；共享缓存改变请求路由；有限重放把缓存缺失变成有上界的计算；动态验证在草稿质量与执行成本之间分配预算；分阶段部署再把这些收益放到合适的硬件规模上。": "The novelty of these materials is how optimizations interact: KV compression reduces storage and transfer pressure; shared caching changes routing; bounded replay limits the computation needed on a cache miss; dynamic verification allocates budgets between draft quality and execution cost; separated stages place those gains on suitable hardware scales.",
+            "这让存储容量与计算资源可以分别扩展，也削弱了将请求固定路由至特定缓存节点的必要性。实际收益仍取决于缓存命中率、读取延迟、网络和数据搬运能否被计算覆盖。Q&A 描述的分层读取与异步搬运，是这套设计的一部分，不能只部署存储就假设收益成立。": "This allows storage capacity and compute to scale separately and reduces the need to route requests to a specific cache node. Benefits still depend on hit rate, read latency, networking and whether computation overlaps data movement. Layered reads and asynchronous transfers described in the Q&A are part of the design; adding storage alone does not establish the benefit.",
+            "长对话与 Agent 工作流会反复携带较长的历史上下文。如果历史 KV 只能在少数机器命中，调度器就要在“复用缓存”与“避免拥塞”之间取舍。官方部署方案把较长寿命的全局 KV 放入基于 3FS 的分布式存储，使不同 Prefill 实例可以访问相同前缀；短寿命的 SWA 状态使用主机内存，缺失时再重放恢复。": "Long conversations and Agent workflows repeatedly carry substantial context. If historical KV is available on only a few machines, the scheduler must trade cache reuse against congestion. The official deployment stores longer-lived global KV in distributed storage based on 3FS, allowing different Prefill instances to access the same prefix. Shorter-lived SWA states use host memory and are reconstructed through replay when missing.",
+            "降本从模型结构开始：少算与少存是一套设计": "Cost reduction begins with model structure: less computation and less storage"
           },
-          "reviewed_at": "2026-10-22T04:37:55.819533+00:00",
-          "source_hash": "0941feaef92442be70e4724dc3143ced667a39f803c8ec60bd850365e2ee7106",
+          "reviewed_at": "2026-10-22T05:57:04.846460+00:00",
+          "source_hash": "4b0f912a41946ca2e6e4e1839a318a320f244f5f74503dffbe8b47b65749595c",
           "state": "reviewed"
         }
       }

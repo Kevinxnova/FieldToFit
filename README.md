@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.15.1](CHANGELOG.md#v1.15.1)** · [fieldtofit-v1.15.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.15.1)
+**当前源码版本：[v1.15.2](CHANGELOG.md#v1.15.2)** · [fieldtofit-v1.15.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.15.2)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 整理已选Claude Duet、Google Cloud合作、PHP修复和Claude Security动态，同步对应两份已有档案及近期总表。
-- 完成所选Claude蝎毒结合蛋白研究与GPT-6.1 Sol系统卡专题，各四结论与三张重绘，保留原报告日期、实验分母及局限。
-- 制作Duet中英信息卡；依据真实发布回执轮替首页报告与卡片，旧文章、全索引和分享入口保留。
+- 将已获批准的DeepInfer成稿纳入技术报告精选，沿用D-207及原事件日期，新增稳定报告入口。
+- 五条结论及对应论述区分模型结构、缓存、并行、动态验证与基准口径，配两张官方原图和一张数据重绘。
+- 补充DeepSeek档案相关阅读；正式发布后按现有规则轮替首页四篇，旧报告仍保留全部索引。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

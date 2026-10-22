@@ -7624,6 +7624,10 @@
         {
           "kind": "paragraph",
           "text": "API 状态以 2026-09-14 读取的官方正文为准；保留 Pro 说明的精确修订时间未知。本次没有核实具体价格数值。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "相关阅读：[DeepInfer的推理降本路线：计算、缓存与集群调度如何协同](https://fieldtofit.top/maps/deepinfer-inference-efficiency)。分开说明模型结构、缓存与调度收益及离线基准条件；保留现有型号和价格记录。"
         }
       ],
       "checked_at": "2026-10-21",
@@ -7893,6 +7897,7 @@
             "版本或材料": "Version or material",
             "版本／事件": "Version / event",
             "用途与本次变化": "Use and this change",
+            "相关阅读：[DeepInfer的推理降本路线：计算、缓存与集群调度如何协同](https://fieldtofit.top/maps/deepinfer-inference-efficiency)。分开说明模型结构、缓存与调度收益及离线基准条件；保留现有型号和价格记录。": "Related reading: [DeepInfer’s inference-efficiency path: coordinating computation, caching and cluster scheduling](https://fieldtofit.top/maps/deepinfer-inference-efficiency). Separates model structure, caching and scheduling gains from offline benchmark conditions; existing model and price records are retained.",
             "缓存复用细节比一句“节省显存”更有信息。": "The details of cache reuse are more informative than the sentence \"Save VRAM\".",
             "编程与 Agent 检查点；分数连同 Mini-SWE-V2／Claude Code 测试环境阅读。": "Coding and agent checkpoint; read scores with their Mini-SWE-V2 / Claude Code harnesses.",
             "获取与使用": "Acquisition and use",
@@ -7903,8 +7908,8 @@
             "采用条件：验证硬件集中在Ascend950系列，并依赖相应CANN、torch_npu和网络环境，不能推成所有昇腾卡即装即用。": "Adoption conditions: validation focuses on the Ascend950 series, with corresponding CANN, torch_npu and network requirements. This does not imply plug-and-play support for every Ascend card.",
             "验证硬件与运行环境": "Verify the hardware and operating environment"
           },
-          "reviewed_at": "2026-10-21T04:01:36.283126+00:00",
-          "source_hash": "a7fd6772a32fb4ee02e64724d6c3d9b09b5bb4644f6bdcdb850e58c419c7428a",
+          "reviewed_at": "2026-10-22T05:57:14.864699+00:00",
+          "source_hash": "e2bb85a4a8d640bb9503670e71f85dc87948204755e6d85fe56b408889d72a05",
           "state": "reviewed"
         }
       },

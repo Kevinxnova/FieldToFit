@@ -1326,5 +1326,52 @@
       "separate_awareness_subset_n": 41849,
       "external_incidents": false
     }
+  },
+  "/report-figures/deepinfer-20261022-architecture.png": {
+    "sha256": "a04aed83c96ddc4a6ec7e578b961d8a3fdbea16ac72a4f51b3cc2221b858beb5",
+    "source_urls": [
+      "https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md"
+    ],
+    "license": "Apache-2.0",
+    "version": "DeepInfer 9bd9cf2 / Q&A 774ce24; checked 2026-10-22",
+    "origin": "official-original"
+  },
+  "/report-figures/deepinfer-20261022-decode.png": {
+    "sha256": "26d9f0f990c236f61f5b86e248062c4436b2fef6f5852961359b15a2d4c5c65f",
+    "source_urls": [
+      "https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md"
+    ],
+    "license": "Apache-2.0",
+    "version": "DeepInfer 9bd9cf2 / Q&A 774ce24; checked 2026-10-22",
+    "origin": "official-original"
+  },
+  "/report-figures/deepinfer-20261022-dynamic.png": {
+    "sha256": "5d87ab0cd7c277792061ec475e87b0237d39fc986c04536a0811c0ff969f6585",
+    "source_urls": [
+      "https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/doc/inference_deployment_qa.md"
+    ],
+    "license": "Graphics © FieldToFit. Redraw of author-reported facts; no independent performance reproduction.",
+    "version": "DeepInfer 9bd9cf2 / Q&A 774ce24; checked 2026-10-22",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "concurrency_per_rank": [
+        16,
+        32,
+        48,
+        60,
+        72,
+        96
+      ],
+      "estimated_gain_percent": [
+        -1.5,
+        1.6,
+        3.6,
+        5.4,
+        6.7,
+        11.0
+      ],
+      "parallelism": "EP64 / DP64",
+      "baseline": "fixed 5-draft verification"
+    }
   }
 }

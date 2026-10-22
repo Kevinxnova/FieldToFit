@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.15.2"></a>
+## v1.15.2 · DeepInfer推理系统技术分析 · 2026-10-22
+<!-- site-deployed:2026-10-22 -->
+<!-- public-title:en: DeepInfer inference-system analysis -->
+<!-- release-summary:zh:start -->
+- 将已获批准的DeepInfer成稿纳入技术报告精选，沿用D-207及原事件日期，新增稳定报告入口。
+- 五条结论及对应论述区分模型结构、缓存、并行、动态验证与基准口径，配两张官方原图和一张数据重绘。
+- 补充DeepSeek档案相关阅读；正式发布后按现有规则轮替首页四篇，旧报告仍保留全部索引。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the approved DeepInfer analysis to featured technical reports, retaining D-207 and its original event date with a stable report URL.
+- Five findings and matching arguments distinguish model architecture, caching, parallelism, dynamic verification and benchmark conventions, with two official figures and one data redraw.
+- Add related reading to the DeepSeek dossier; actual publication rotates the four homepage reports while retaining older reports in the full index.
+<!-- release-summary:en:end -->
+
+对应REQ-22-7／8，用户明确认可已展示成稿并授权更新发布。以v1.15.1为基线，仅新增已确认专题、双语正文和许可配图；无新模块、主要流程或数据库迁移，按patch处理。模型报告、工程Q&A和代码版本日期分别保留；未独立复现，不将有限重放写成数学等价或把离线基准写成线上性能保证。实际备份、预览、部署和发布轮替见[验收记录](docs/validation/2026-10-22-deepinfer-analysis.md)。
+
 <a id="v1.15.1"></a>
 ## v1.15.1 · Duet、平台与安全动态及两篇原始报告 · 2026-10-22
 <!-- site-deployed:2026-10-22 -->
