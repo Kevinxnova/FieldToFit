@@ -1,7 +1,35 @@
 {
-  "version": "1.15.0",
-  "revision": "a5f42dd1a027392a738f6d91cd20696e9b137df03cc9753aee66239b4c78f779",
+  "version": "1.15.1",
+  "revision": "e7f2d0993f27c1c49d780677386f3e63f74d200ee917cd4d104161e0d3509070",
   "items": [
+    {
+      "version": "1.15.1",
+      "date": "2026-10-22",
+      "deployed_on": "2026-10-22",
+      "copy": {
+        "zh": {
+          "title": "Duet、平台与安全动态及两篇原始报告",
+          "highlights": [
+            "整理已选Claude Duet、Google Cloud合作、PHP修复和Claude Security动态，同步对应两份已有档案及近期总表。",
+            "完成所选Claude蝎毒结合蛋白研究与GPT-6.1 Sol系统卡专题，各四结论与三张重绘，保留原报告日期、实验分母及局限。",
+            "制作Duet中英信息卡；依据真实发布回执轮替首页报告与卡片，旧文章、全索引和分享入口保留。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Duet, platform and security updates with two original report analyses",
+          "highlights": [
+            "Cover the selected Claude Duet, Google Cloud partnership, PHP fixes and Claude Security updates, with two existing dossiers and the complete news overview.",
+            "Analyze the selected Claude scorpion-binder research and GPT-6.1 Sol system card through four findings and three redraws each, retaining original dates, experimental denominators and limits.",
+            "Create the bilingual Duet card; rotate homepage reports and cards only on actual publication, retaining old articles, complete indexes and share links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.15.1"
+    },
     {
       "version": "1.15.0",
       "date": "2026-10-22",

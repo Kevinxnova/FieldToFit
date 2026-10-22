@@ -36,8 +36,11 @@ def save_card(sample):
     # Keep all existing article fields; the new card is one optional addition.
     draft={**current['draft'],'hot_card':copy.deepcopy(sample['hot_card'])}
     saved=ws.save('news',sample['id'],{'draft_version':current['draft_version'],'draft':draft})
+    # Preserve reviewed article translations when production copy evolves;
+    # this fixture supplies the optional card, not a replacement article.
+    fields={**current['english']['fields'], **sample['translations']['en']['fields']}
     return ws.english_review('news',sample['id'],{'draft_version':saved['draft_version'],
-        'source_hash':saved['english']['source_hash'],'fields':{k:v for k,v in sample['translations']['en']['fields'].items() if k in saved['english']['fields']},
+        'source_hash':saved['english']['source_hash'],'fields':{k:v for k,v in fields.items() if k in saved['english']['fields']},
         'confirmed':True,'reason':'Isolated manually reviewed card copy'})
 
 

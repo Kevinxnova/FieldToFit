@@ -5134,9 +5134,17 @@
         {
           "kind": "paragraph",
           "text": "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "2026-10-21合作公告，无编号版本；本站 2026-10-22核对。未实测接入、地区、计费、合规或数据驻留，不写成已经全面上架。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "研究相关阅读：[GPT-6.1 Sol系统卡：平均进步之外，怎样看退步项与监控证据？](https://fieldtofit.top/maps/gpt61-sol-safety-tradeoffs)。原报告日期 2026-09-29；产品事件与研究结果分开，现有模型版本和价格不因此自动改动。"
         }
       ],
-      "checked_at": "2026-10-20",
+      "checked_at": "2026-10-22",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M01",
       "interpretation": [
@@ -5227,6 +5235,10 @@
         {
           "text": "执行中调整方向意味着应用需要管理正在运行的工作与新消息；它与“取消后重新问一次”有不同的交互要求。",
           "title": "长任务可以中途纠偏。"
+        },
+        {
+          "text": "合作将把OpenAI前沿模型及Codex工作流接入Google Cloud Model Garden，并经Marketplace采购；公告称全面开放计划在未来数周，当前可申请接入。",
+          "title": "OpenAI模型计划进入Google Cloud，全面开放仍待后续"
         }
       ],
       "introduction": "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。",
@@ -5444,6 +5456,12 @@
           "coverage": "link_only",
           "title": "OpenAI 关联研究公告帖（北京 10月 20日 06:30）",
           "url": "https://x.com/OpenAI/status/2112310345863930168"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct22-b-announcement",
+          "title": "OpenAI models are coming to Google Cloud · 2026-10-21",
+          "url": "https://openai.com/index/openai-models-google-cloud/"
         }
       ],
       "state": "published",
@@ -5455,6 +5473,7 @@
             "2026-10-07发布；10月8日起扩展Free／Go": "2026-10-07 released; 10/8 expands Free/Go",
             "2026-10-16 补录：GPT-Live-1.1 / Quip": "2026-10-16 addition:GPT-Live-1.1 / Quip",
             "2026-10-17 补录：gpt-live-1 / prompt-to-voice": "2026-10-17 addition: gpt-live-1 / prompt-to-voice",
+            "2026-10-21合作公告，无编号版本；本站 2026-10-22核对。未实测接入、地区、计费、合规或数据驻留，不写成已经全面上架。": "Partnership announcement 2026-10-21, unnumbered; checked 2026-10-22. Access, regions, billing, compliance and data residency were not tested. General availability is not yet established.",
             "5.6 系列，gpt-5.6 别名指向 Sol": "5.6 series, gpt-5.6 alias refers to Sol",
             "API 模型标识 gpt-6-astra；具体账户权限另查": "API model identification gpt-6-astra; specific account permissions are checked separately",
             "API默认关闭；产品侧本次面向欧盟，不是全球所有输出已经启用。具体型号和账户能力须按接入文档核对。": "The API feature is off by default. This product rollout targets the EU; it does not mean all outputs worldwide already use it. Check supported models and account capabilities in integration documentation.",
@@ -5481,6 +5500,7 @@
             "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。": "OpenAI announced GPT-Live-1.1 and Quip on 10/15, following Live-1 and mini. Full-duplex interaction listens, responds and handles interruptions continuously, with thinking-model delegation. The source is a system card, not verification of a public API identifier or price.",
             "OpenAI于 2026-10-16 开放prompt-to-voice：全部API客户可用文字描述生成、保存并复用声音；另增加九种德、法、印地、日、韩语自然声音。": "On 2026-10-16 OpenAI opened prompt-to-voice to all API customers: describe, save and reuse a voice. Nine natural voices in German, French, Hindi, Japanese and Korean were also added.",
             "OpenAI公布文本来源水印方案：全球API客户可为指定模型主动开启，欧盟ChatGPT与Codex合资格文本输出将在未来几周分阶段加入水印。": "OpenAI announces a text-provenance watermarking scheme. Global API customers can opt in for specified models. Eligible ChatGPT and Codex text outputs in the EU will receive watermarks in phases over the coming weeks.",
+            "OpenAI模型计划进入Google Cloud，全面开放仍待后续": "OpenAI models are planned for Google Cloud; general availability is still ahead",
             "Responses用于工具调用；Chat Completions不含工具调用；1,050,000上下文、128k输出": "Responses are used for tool calls; Chat Completions do not contain tool calls; 1,050,000 context, 128k output",
             "Sol分支后续型号": "Sol branch follow-up model",
             "[GPT-5.6 指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)": "[GPT-5.6 Guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)",
@@ -5525,6 +5545,7 @@
             "原文日期：2026-10-16；本站核对：2026-10-17；版本：gpt-live-1 / prompt-to-voice。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: gpt-live-1 / prompt-to-voice. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
             "变化与用途": "Change and use",
             "变化与适用范围": "Changes and scope",
+            "合作将把OpenAI前沿模型及Codex工作流接入Google Cloud Model Garden，并经Marketplace采购；公告称全面开放计划在未来数周，当前可申请接入。": "The partnership plans to bring OpenAI frontier models and Codex workflows to Google Cloud Model Garden, with Marketplace procurement. General availability is planned for the coming weeks; access requests are currently available.",
             "在 5.6 已有能力上继续演进": "5.6 has the ability to continue to evolve",
             "复杂编程、电脑操作与专业任务；能力为官方定位": "Complex programming, computer operation and professional tasks; ability is the official positioning",
             "套餐与开放范围": "Plans and availability",
@@ -5577,6 +5598,7 @@
             "版本／事件": "Version / event",
             "独立模型档位；本页资料不据名称推断相同输出质量或性能倍率": "Independent model gear; the information on this page does not infer the same output quality or performance magnification based on the name.",
             "生产提示集未见显著退步，但合成边界难例的部分安全类别有显著退步；不能写成全面更安全，也不把测试分数当真实流量中的事故率。": "Production prompts show no significant regressions, but some safety categories regress significantly on synthetic edge cases. This is not universal safety improvement, and scores are not incident rates in real traffic.",
+            "研究相关阅读：[GPT-6.1 Sol系统卡：平均进步之外，怎样看退步项与监控证据？](https://fieldtofit.top/maps/gpt61-sol-safety-tradeoffs)。原报告日期 2026-09-29；产品事件与研究结果分开，现有模型版本和价格不因此自动改动。": "Related research: [GPT-6.1 Sol system card: how should regressions and monitoring evidence be read?](https://fieldtofit.top/maps/gpt61-sol-safety-tradeoffs). Original report 2026-09-29. Product events and research results are separate; existing model versions and prices are not automatically changed.",
             "系列支持用代码组合工具调用；多 Agent 能力处于 beta": "Series support code combination tool calls; multi-Agent capabilities are in beta",
             "系统卡称Plus及以上默认 1.1，其他用户为Quip；不能据此确认全部地区与每个账户已完成切换。": "The card names 1.1 as default for Plus and higher tiers and Quip for others; this does not verify rollout in every region and account.",
             "编程研究：新增功能与行为保真分别验收": "Coding research: validate functionality and behavior separately",
@@ -5595,8 +5617,8 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "reviewed_at": "2026-10-20T04:37:38.978220+00:00",
-          "source_hash": "c4507c583abb82bc4fc626520729fc66f4a6a92c28d53f4bcc54d96d42ecb69f",
+          "reviewed_at": "2026-10-22T04:38:05.778437+00:00",
+          "source_hash": "7828bab00bccac6223ba62319f3364ead682dd9ad927295117fb02bb4967ca0b",
           "state": "reviewed"
         }
       },
@@ -5779,9 +5801,21 @@
         {
           "kind": "paragraph",
           "text": "关联：D-05 Fable 5.1；[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。[完整型号目录](https://platform.claude.com/docs/en/models/overview)另列 Haiku 4.5；本页资料不补未经核对的完整历史。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Claude Duet research preview／Opus 5.5；原文 2026-10-21，本站 2026-10-22核对。未试用账户、连接器、后台行动或账单；不据此更改模型API价格或套餐额度。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Enterprise public beta，2026-10-21无编号更新；本站 2026-10-22核对。未连仓库、测扫描或验证API权限；试用额度完整条款未核，本稿不作资格或抵扣承诺。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "研究相关阅读：[Claude设计出结合蛋白之后，离抗蝎毒治疗还有多远？](https://fieldtofit.top/maps/claude-scorpion-binder-evidence)。原报告日期 2026-10-20；产品事件与研究结果分开，现有模型版本和价格不因此自动改动。"
         }
       ],
-      "checked_at": "2026-10-19",
+      "checked_at": "2026-10-22",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M02",
       "interpretation": [
@@ -5848,6 +5882,14 @@
         {
           "text": "Opus 和 Sonnet 有各自升级路线；Fable 的发布不能自动解释成其他产品线停用。",
           "title": "把产品线与版本分开看。"
+        },
+        {
+          "text": "Claude Duet基于Opus 5.5，提供iOS、Android和网页入口。它在连接的应用中检查需关注事项，也能在云端继续任务；研究预览先面向美国Pro／Max候补用户。",
+          "title": "Claude Duet：主动检查应用，美国Pro／Max先开放候补"
+        },
+        {
+          "text": "Claude Security为Enterprise公测加入持续扫描、修复跟踪、项目知识和API／MCP集成，按变更风险与复杂度更新发现。",
+          "title": "Claude Security：跟随代码变化扫描，并追踪修复状态"
         }
       ],
       "introduction": "Anthropic的模型系列；Fable、Opus、Sonnet、Haiku分别维护版本、接入条件、价格与迁移材料，本次补充Haiku 5.5及Sonnet缓存读取降价。",
@@ -6061,6 +6103,24 @@
           "coverage": "link_only",
           "title": "OpenTelemetry API setup · Delivery / Compatibility",
           "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry/api"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct22-a-announcement",
+          "title": "Introducing Claude Duet · Anthropic · 2026-10-21",
+          "url": "https://claude.com/resources/articles/claude-duet"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct22-a-faq",
+          "title": "Claude Duet · official product and FAQ",
+          "url": "https://claude.com/product/claude-duet"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct22-d-announcement",
+          "title": "Claude Security continuous scanning and fix tracking · 2026-10-21",
+          "url": "https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes"
         }
       ],
       "state": "published",
@@ -6080,10 +6140,16 @@
             "Claude API；各云入口见官方列表": "Claude API; see the official list of each cloud entrance",
             "Claude API；旧采样参数需要核对": "Claude API; old sampling parameters need to be checked",
             "Claude API；迁移时核对思考配置": "Claude API; Check and think about the configuration when migrating",
+            "Claude Duet research preview／Opus 5.5；原文 2026-10-21，本站 2026-10-22核对。未试用账户、连接器、后台行动或账单；不据此更改模型API价格或套餐额度。": "Claude Duet research preview / Opus 5.5; source 2026-10-21, checked 2026-10-22. No account, connector, background-action or billing tests; no model API price or plan-limit change is inferred.",
+            "Claude Duet基于Opus 5.5，提供iOS、Android和网页入口。它在连接的应用中检查需关注事项，也能在云端继续任务；研究预览先面向美国Pro／Max候补用户。": "Claude Duet uses Opus 5.5 on iOS, Android and the web. It checks connected apps for matters needing attention and continues tasks in the cloud. The research preview initially accepts waitlisted US Pro and Max users.",
+            "Claude Duet：主动检查应用，美国Pro／Max先开放候补": "Claude Duet: proactive app checks, initially waitlisted for US Pro and Max",
+            "Claude Security为Enterprise公测加入持续扫描、修复跟踪、项目知识和API／MCP集成，按变更风险与复杂度更新发现。": "Claude Security’s Enterprise public beta adds continuous scanning, fix tracking, project knowledge and API/MCP integrations, updating findings based on change risk and complexity.",
+            "Claude Security：跟随代码变化扫描，并追踪修复状态": "Claude Security: scans follow code changes and track fixes",
             "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 1": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 1",
             "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 2": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 2",
             "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 3": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 3",
             "Claude使用政策于10月8日公布更新、11月12日生效，补充高风险人工监督与自主硬件边界，并说明虐待条款的适用范围。": "Claude's Usage Policy update was announced on 10/8 and takes effect on 11/12. It adds human-oversight requirements for high-risk uses and boundaries for autonomous hardware, and clarifies the scope of abuse provisions.",
+            "Enterprise public beta，2026-10-21无编号更新；本站 2026-10-22核对。未连仓库、测扫描或验证API权限；试用额度完整条款未核，本稿不作资格或抵扣承诺。": "Enterprise public beta, unnumbered 2026-10-21 update; checked 2026-10-22. No repository, scanning or API-permission tests. Full trial-credit terms were not checked, so no eligibility or credit promise is made.",
             "Fable 5 的延续": "The continuation of Fable 5",
             "Fable 5.1 的强制工具调用、思考块兼容规则值得单独读迁移说明；只换模型名可能使已有工作流报错。": "Read the Fable 5.1 migration guide for forced tool-calling and thinking-block compatibility rules. Changing only the model name may break existing workflows.",
             "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 1",
@@ -6161,6 +6227,7 @@
             "版本 / 型号": "Version / Model",
             "版本 / 材料": "Version / Material",
             "版本变化": "Version change",
+            "研究相关阅读：[Claude设计出结合蛋白之后，离抗蝎毒治疗还有多远？](https://fieldtofit.top/maps/claude-scorpion-binder-evidence)。原报告日期 2026-10-20；产品事件与研究结果分开，现有模型版本和价格不因此自动改动。": "Related research: [After Claude designs toxin binders, how far is an antivenom treatment?](https://fieldtofit.top/maps/claude-scorpion-binder-evidence). Original report 2026-10-20. Product events and research results are separate; existing model versions and prices are not automatically changed.",
             "自主硬件的监督要求": "Supervision requirements for autonomous hardware",
             "获取与使用": "Acquisition and use",
             "读取个人／全局指令，须 Compliance Access Key 及 read:compliance_user_data；账户级文字可在多组织返回，未实测。": "Reads personal / global instructions; requires a Compliance Access Key and read:compliance_user_data. Account-level text can appear under multiple organizations; untested.",
@@ -6177,8 +6244,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-10-19T02:49:50.184982+00:00",
-          "source_hash": "31f3f3c7a48c16acadb6beece06f44be4d9c8543cd42aaafd35c90f9c44b0ae8",
+          "reviewed_at": "2026-10-22T04:38:15.818863+00:00",
+          "source_hash": "eeced325b4396ed7659af879ab930214aacf866c22148c849213bd17200257cc",
           "state": "reviewed"
         }
       },

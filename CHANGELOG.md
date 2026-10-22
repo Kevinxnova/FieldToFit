@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.15.1"></a>
+## v1.15.1 · Duet、平台与安全动态及两篇原始报告 · 2026-10-22
+<!-- site-deployed:2026-10-22 -->
+<!-- public-title:en: Duet, platform and security updates with two original report analyses -->
+<!-- release-summary:zh:start -->
+- 整理已选Claude Duet、Google Cloud合作、PHP修复和Claude Security动态，同步对应两份已有档案及近期总表。
+- 完成所选Claude蝎毒结合蛋白研究与GPT-6.1 Sol系统卡专题，各四结论与三张重绘，保留原报告日期、实验分母及局限。
+- 制作Duet中英信息卡；依据真实发布回执轮替首页报告与卡片，旧文章、全索引和分享入口保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Cover the selected Claude Duet, Google Cloud partnership, PHP fixes and Claude Security updates, with two existing dossiers and the complete news overview.
+- Analyze the selected Claude scorpion-binder research and GPT-6.1 Sol system card through four findings and three redraws each, retaining original dates, experimental denominators and limits.
+- Create the bilingual Duet card; rotate homepage reports and cards only on actual publication, retaining old articles, complete indexes and share links.
+<!-- release-summary:en:end -->
+
+接续REQ-11、REQ-6-34／REQ-11-6及REQ-22-8的10月22日具体选择：A–D、报告1／报告2、卡1全部发布。A与卡1共用D-223；B–D为D-224／D-225／D-226，分别保留未来开放与维护者主导修复口径。D-227为蝎毒结合研究，D-228为6.1 Sol补充卡；不同原报告及评测模型范围与D-194十月卡关联，不覆盖旧稿或构成重复报告。三份旧速览只取消highlight，不更改其正文、来源或旧卡图片。
+
+以已上线并获所属批次确认的v1.15.0为基线，保留其技术演进图模块；本批只接续兼容内容、资源、验收与测试样本维护，没有新增模块、主要流程、协议或数据库迁移，按patch处理。既有信息卡回归样本保留当前文章已审译文，再合并卡片样本译文，避免旧样本漏掉后来追加的正文。未扩大模型榜单、未来选题或并行专题修改。
+
+33表CMS备份恢复与完整性校验、11项隔离双语预览、160组数值／版本译文、八图目检和两图二维码解码已完成；接续v1.15.0后的82项相关既有回归通过。浏览器、正式资源部署、内容发布与两类首页轮替分阶段按[本批实际验收](docs/validation/2026-10-22-duet-and-two-reports.md)记录；准备或预览不算上站。
+
 <a id="v1.15.0"></a>
 ## v1.15.0 · 技术演进关系图与2025—2026放大阅读 · 2026-10-22
 <!-- site-deployed:2026-10-22 -->
