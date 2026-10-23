@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.16.3"></a>
+## v1.16.3 · 云平台、技能标准与两篇 Claude 研究分析 · 2026-10-23
+<!-- site-deployed:2026-10-23 -->
+<!-- public-title:en: Cloud access, skills standards and two Claude research analyses -->
+<!-- release-summary:zh:start -->
+- 发布所选 Google Cloud 托管接入、Agent Skills 捐赠、Mercury 3 和 FLUX.3 Image Klein 动态，同步两份已有档案与近期总表。
+- 分析 Claude 形式化验证与量子电路研究，各提供四条结论、对应展开和三张独立重绘，保留方法、资源口径与证据边界。
+- 新增 Google Cloud 接入中英信息卡；按真实发布轮替首页两篇报告与一卡，保留全部索引、历史日期及分享入口。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Google Cloud access, Agent Skills donation, Mercury 3 and FLUX.3 Image Klein updates, with two existing dossiers and the news overview.
+- Analyze Claude formal verification and quantum circuit research through four findings and three independent redraws each, retaining methods, resource definitions and evidence limits.
+- Add the bilingual Google Cloud access card; rotate two homepage reports and one card only on publication, retaining full indexes, historical dates and share links.
+<!-- release-summary:en:end -->
+
+接续原 2026-10-23 批次具体批准 A–D、报告1／2、卡1。D-233 至 D-236 为动态，D-237／238 为报告；A 与卡1共用 D-233、分别记录决定。CW-M02／CW-S02只补对应事件；四条旧重点仅取消highlight。以实际合并的v1.16.2为基线，接续兼容内容与静态资源patch，无主要流程、公开协议或数据库迁移；保留并行首页和Codex更新。
+
+33表CMS备份独立恢复完整性通过（不是全库备份），12对象隔离预览、中英手机／桌面、AI正文一致性、61项相关回归及八图检查通过。正式部署与发布按[实际验收](docs/validation/2026-10-23-cloud-and-research.md)分阶段记录；全对象日核验与自然日验收不因本批发表变为完成。
+
 <a id="v1.16.2"></a>
 ## v1.16.2 · 首页三图关键节点与问题图解 · 2026-10-23
 <!-- site-deployed:2026-10-23 -->

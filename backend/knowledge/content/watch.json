@@ -5813,6 +5813,18 @@
         {
           "kind": "paragraph",
           "text": "研究相关阅读：[Claude设计出结合蛋白之后，离抗蝎毒治疗还有多远？](https://fieldtofit.top/maps/claude-scorpion-binder-evidence)。原报告日期 2026-10-20；产品事件与研究结果分开，现有模型版本和价格不因此自动改动。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Anthropic-managed Google Cloud GA；原文 2026-10-22，本站核对 2026-10-23。未购买、迁移、调用模型、验证权限撤销或核对实际账单；不改变现有模型价格与版本档案。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "研究相关阅读：[AI 写出形式化证明之后，究竟证明了什么？](https://fieldtofit.top/maps/claude-formal-verification-boundaries)。原报告日期 2026-10-22；研究指标不自动改写现有模型版本或价格。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "研究相关阅读：[Claude 怎样降低量子电路成本：独立评估器比“自主发现”更关键](https://fieldtofit.top/maps/claude-quantum-circuit-resource-search)。原报告日期 2026-10-15；研究指标不自动改写现有模型版本或价格。"
         }
       ],
       "checked_at": "2026-10-22",
@@ -5890,6 +5902,10 @@
         {
           "text": "Claude Security为Enterprise公测加入持续扫描、修复跟踪、项目知识和API／MCP集成，按变更风险与复杂度更新发现。",
           "title": "Claude Security：跟随代码变化扫描，并追踪修复状态"
+        },
+        {
+          "text": "Anthropic 宣布其管理的 Google Cloud 接入全面开放。企业可沿 GCP 身份和账单路径采用 Claude Platform；独立组织、资源迁移与后台任务停止仍需分别处理。",
+          "title": "Claude Platform 接入 Google Cloud：身份和结算打通，迁移仍需重新配置"
         }
       ],
       "introduction": "Anthropic的模型系列；Fable、Opus、Sonnet、Haiku分别维护版本、接入条件、价格与迁移材料，本次补充Haiku 5.5及Sonnet缓存读取降价。",
@@ -6121,6 +6137,18 @@
           "id": "oct22-d-announcement",
           "title": "Claude Security continuous scanning and fix tracking · 2026-10-21",
           "url": "https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct23-a-announcement",
+          "title": "Claude Models on Google Cloud (Anthropic managed) · official announcement · 2026-10-22",
+          "url": "https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct23-a-docs",
+          "title": "Claude Models on Google Cloud · Anthropic-managed documentation",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed"
         }
       ],
       "state": "published",
@@ -6132,6 +6160,8 @@
             "2026-10-07降价": "2026-10-07 Price reduction",
             "2026-10-17 补录：claude-opus-5-5 / Fast mode GA": "2026-10-17 addition: claude-opus-5-5 / Fast mode GA",
             "2026使用政策（11月12日生效）": "2026 Usage Policy (11/12 takes effect)",
+            "Anthropic 宣布其管理的 Google Cloud 接入全面开放。企业可沿 GCP 身份和账单路径采用 Claude Platform；独立组织、资源迁移与后台任务停止仍需分别处理。": "Anthropic announced general availability of its managed Google Cloud access. Enterprises can use Claude Platform through GCP identity and billing, while separately handling organization isolation, resource migration and background-task termination.",
+            "Anthropic-managed Google Cloud GA；原文 2026-10-22，本站核对 2026-10-23。未购买、迁移、调用模型、验证权限撤销或核对实际账单；不改变现有模型价格与版本档案。": "Anthropic-managed Google Cloud GA; source 2026-10-22, checked 2026-10-23. Purchasing, migration, model calls, permission revocation and actual bills were not tested. Existing model-price and version records are unchanged.",
             "Anthropic于 2026-10-15 将Opus 5.5 Fast mode移出研究预览，Start、Build、Scale层级可使用默认快速限额，Azure托管的Microsoft Foundry部署也已支持。": "On 2026-10-15 Anthropic moved Opus 5.5 Fast mode out of research preview for Start, Build and Scale tiers with default fast-mode limits, including Azure-hosted Microsoft Foundry deployments.",
             "Anthropic于10月8日公布更新，11月12日生效。更新整理欺骗活动限制，并细化高风险用途的人工监督要求。": "Anthropic announced the update on 10/8, effective 11/12. It reorganizes restrictions on deceptive activity and details human-oversight requirements for high-risk uses.",
             "Anthropic使用政策更新说明": "Anthropic Usage Policy Update Instructions",
@@ -6143,6 +6173,7 @@
             "Claude Duet research preview／Opus 5.5；原文 2026-10-21，本站 2026-10-22核对。未试用账户、连接器、后台行动或账单；不据此更改模型API价格或套餐额度。": "Claude Duet research preview / Opus 5.5; source 2026-10-21, checked 2026-10-22. No account, connector, background-action or billing tests; no model API price or plan-limit change is inferred.",
             "Claude Duet基于Opus 5.5，提供iOS、Android和网页入口。它在连接的应用中检查需关注事项，也能在云端继续任务；研究预览先面向美国Pro／Max候补用户。": "Claude Duet uses Opus 5.5 on iOS, Android and the web. It checks connected apps for matters needing attention and continues tasks in the cloud. The research preview initially accepts waitlisted US Pro and Max users.",
             "Claude Duet：主动检查应用，美国Pro／Max先开放候补": "Claude Duet: proactive app checks, initially waitlisted for US Pro and Max",
+            "Claude Platform 接入 Google Cloud：身份和结算打通，迁移仍需重新配置": "Claude Platform on Google Cloud: integrated identity and billing, with migration still requiring setup",
             "Claude Security为Enterprise公测加入持续扫描、修复跟踪、项目知识和API／MCP集成，按变更风险与复杂度更新发现。": "Claude Security’s Enterprise public beta adds continuous scanning, fix tracking, project knowledge and API/MCP integrations, updating findings based on change risk and complexity.",
             "Claude Security：跟随代码变化扫描，并追踪修复状态": "Claude Security: scans follow code changes and track fixes",
             "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 1": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 1",
@@ -6227,6 +6258,8 @@
             "版本 / 型号": "Version / Model",
             "版本 / 材料": "Version / Material",
             "版本变化": "Version change",
+            "研究相关阅读：[AI 写出形式化证明之后，究竟证明了什么？](https://fieldtofit.top/maps/claude-formal-verification-boundaries)。原报告日期 2026-10-22；研究指标不自动改写现有模型版本或价格。": "Related research: [What exactly has been proved when AI writes a formal proof?](https://fieldtofit.top/maps/claude-formal-verification-boundaries). Original report 2026-10-22; research metrics do not automatically change existing model versions or prices.",
+            "研究相关阅读：[Claude 怎样降低量子电路成本：独立评估器比“自主发现”更关键](https://fieldtofit.top/maps/claude-quantum-circuit-resource-search)。原报告日期 2026-10-15；研究指标不自动改写现有模型版本或价格。": "Related research: [How Claude reduces quantum-circuit costs: why the independent evaluator matters](https://fieldtofit.top/maps/claude-quantum-circuit-resource-search). Original report 2026-10-15; research metrics do not automatically change existing model versions or prices.",
             "研究相关阅读：[Claude设计出结合蛋白之后，离抗蝎毒治疗还有多远？](https://fieldtofit.top/maps/claude-scorpion-binder-evidence)。原报告日期 2026-10-20；产品事件与研究结果分开，现有模型版本和价格不因此自动改动。": "Related research: [After Claude designs toxin binders, how far is an antivenom treatment?](https://fieldtofit.top/maps/claude-scorpion-binder-evidence). Original report 2026-10-20. Product events and research results are separate; existing model versions and prices are not automatically changed.",
             "自主硬件的监督要求": "Supervision requirements for autonomous hardware",
             "获取与使用": "Acquisition and use",
@@ -6244,8 +6277,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-10-22T04:38:15.818863+00:00",
-          "source_hash": "eeced325b4396ed7659af879ab930214aacf866c22148c849213bd17200257cc",
+          "reviewed_at": "2026-10-23T04:33:57.016352+00:00",
+          "source_hash": "d3f45520fd55bc587d3c51a9c1126e811ad4c990b92299e876e3e7b82e2f6999",
           "state": "reviewed"
         }
       },
@@ -12168,6 +12201,10 @@
         {
           "kind": "paragraph",
           "text": "依据：[官方 README](https://github.com/anthropics/skills)、[技能目录](https://github.com/anthropics/skills/tree/main/skills)。关联：[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "2026-10-22 无编号治理公告；本站 2026-10-23 核对。未做跨宿主兼容性、安全隔离或脚本执行测试。"
         }
       ],
       "checked_at": "2026-09-11",
@@ -12181,6 +12218,10 @@
         {
           "text": "官方明确文档技能属于源码可见材料，其他许多技能使用 Apache 2.0；不能给整个集合统一贴上“全部开源可任意复用”。",
           "title": "集合内部的许可也有区别。"
+        },
+        {
+          "text": "Anthropic 宣布将 Agent Skills 标准捐赠给 Linux Foundation 旗下 AAIF。治理和规范协作面向多平台，具体技能权限及兼容性仍由宿主实现决定。",
+          "title": "Agent Skills 走向基金会治理，规范与各家运行权限仍须分开看"
         }
       ],
       "introduction": "Anthropic 公开的技能集合，展示如何把任务说明、脚本和材料组织成可加载的技能。",
@@ -12195,9 +12236,53 @@
           "coverage": "link_only",
           "title": "技能目录",
           "url": "https://github.com/anthropics/skills/tree/main/skills"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct23-b-announcement",
+          "title": "Agent Skills standard governance · official announcement · 2026-10-22",
+          "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct23-b-spec",
+          "title": "Agent Skills · official specification",
+          "url": "https://agentskills.io/specification"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-22 无编号治理公告；本站 2026-10-23 核对。未做跨宿主兼容性、安全隔离或脚本执行测试。": "Unnumbered governance announcement 2026-10-22; checked 2026-10-23. Cross-host compatibility, security isolation and script execution were not tested.",
+            "Agent Skills 走向基金会治理，规范与各家运行权限仍须分开看": "Agent Skills moves toward foundation governance; specification and runtime permissions remain distinct",
+            "Anthropic 公开的技能集合，展示如何把任务说明、脚本和材料组织成可加载的技能。": "Anthropic's public skill collection shows how task instructions, scripts and materials form loadable skills.",
+            "Anthropic 宣布将 Agent Skills 标准捐赠给 Linux Foundation 旗下 AAIF。治理和规范协作面向多平台，具体技能权限及兼容性仍由宿主实现决定。": "Anthropic announced the donation of the Agent Skills standard to AAIF under the Linux Foundation. Governance and specification collaboration span platforms, while skill permissions and compatibility still depend on host implementations.",
+            "PDF 创建、编辑与处理相关流程": "PDF creation, editing and processing related processes",
+            "Word 与表格处理": "Word and table processing",
+            "代表技能 / 材料": "Representing skills/materials",
+            "依据：[官方 README](https://github.com/anthropics/skills)、[技能目录](https://github.com/anthropics/skills/tree/main/skills)。关联：[CW-A02 Claude Code](/for-you#watch-cw-a02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。": "Based on: [Official README](https://github.com/anthropics/skills), [Skill Catalog](https://github.com/anthropics/skills/tree/main/skills). Association: [CW-A02 Claude Code](/for-you#watch-cw-a02), [CW-H03 Claude Agent SDK](/for-you#watch-cw-h03).",
+            "具体做什么": "What exactly do you do?",
+            "创建与改进技能": "Create and improve skills",
+            "同属文档技能组，在集合内展开": "Belong to the same document skill group, expand in the collection",
+            "官方 README": "Official README",
+            "官方明确文档技能属于源码可见材料，其他许多技能使用 Apache 2.0；不能给整个集合统一贴上“全部开源可任意复用”。": "Official documentation distinguishes source-available document skills from many other skills using Apache 2.0. The entire collection cannot be described as freely reusable open source.",
+            "展示技能本身的制作方法，链接对应目录": "Show the production method of the skill itself, and link the corresponding directory",
+            "幻灯片创建与编辑相关流程": "The process of creating and editing slides",
+            "技能目录": "Catalog of skills",
+            "提供技能源材料入口；不承诺任意扫描件提取效果": "Provide the entrance of skill source materials; do not promise the extraction effect of arbitrary scans",
+            "版本记录：2026-09-11 官方仓库快照；尚未固定 commit。代表技能不是按单项热度排名。内容来自公开示例，不宣称等同于 Claude 产品内部的全部实现。": "Version record: official repository snapshot dated 2026-09-11, without a pinned commit. Representative skills are not ranked by individual popularity. Public examples do not establish the complete internal implementation of Claude products.",
+            "独立目录里的说明、脚本和资源，是理解 Skill 如何被 Agent 加载的直接样本。": "The instructions, scripts and resources in the independent directory are direct samples to understand how Skill is loaded by Agent.",
+            "说明技能如何连接文档产物与操作流程": "Explain how skills connect document products and operation processes",
+            "这里可以读到技能由哪些材料组成。": "Here you can read what materials the skill consists of.",
+            "集合内部的许可也有区别。": "There are also differences between the internal licenses of the collection.",
+            "页面应保留的说明": "Instructions that should be kept on the page"
+          },
+          "reviewed_at": "2026-10-23T04:34:05.234076+00:00",
+          "source_hash": "38a83117b520bc3fdc015af157b669a364e98b126e02adb4ee251a1d2170fc12",
+          "state": "reviewed"
+        }
+      },
       "type": "skill"
     },
     {
@@ -13846,7 +13931,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-22",
+  "reviewed_at": "2026-10-23",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

@@ -1,7 +1,35 @@
 {
-  "version": "1.16.2",
-  "revision": "6f8c26899cb6ab6373ede42a845fb376d2c154a87f2d74fe752fbdfafc825be8",
+  "version": "1.16.3",
+  "revision": "cc04eefe4f03b378d8d6057d7c0b857e5f5874cd9b06370d4ab853381d761100",
   "items": [
+    {
+      "version": "1.16.3",
+      "date": "2026-10-23",
+      "deployed_on": "2026-10-23",
+      "copy": {
+        "zh": {
+          "title": "云平台、技能标准与两篇 Claude 研究分析",
+          "highlights": [
+            "发布所选 Google Cloud 托管接入、Agent Skills 捐赠、Mercury 3 和 FLUX.3 Image Klein 动态，同步两份已有档案与近期总表。",
+            "分析 Claude 形式化验证与量子电路研究，各提供四条结论、对应展开和三张独立重绘，保留方法、资源口径与证据边界。",
+            "新增 Google Cloud 接入中英信息卡；按真实发布轮替首页两篇报告与一卡，保留全部索引、历史日期及分享入口。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Cloud access, skills standards and two Claude research analyses",
+          "highlights": [
+            "Publish the selected Google Cloud access, Agent Skills donation, Mercury 3 and FLUX.3 Image Klein updates, with two existing dossiers and the news overview.",
+            "Analyze Claude formal verification and quantum circuit research through four findings and three independent redraws each, retaining methods, resource definitions and evidence limits.",
+            "Add the bilingual Google Cloud access card; rotate two homepage reports and one card only on publication, retaining full indexes, historical dates and share links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.16.3"
+    },
     {
       "version": "1.16.2",
       "date": "2026-10-23",

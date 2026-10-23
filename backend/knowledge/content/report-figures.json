@@ -1373,5 +1373,151 @@
       "parallelism": "EP64 / DP64",
       "baseline": "fixed 5-draft verification"
     }
+  },
+  "/report-figures/formal-20261022-workflow.png": {
+    "sha256": "6ddfedd933eb307723ee178fc3e747447d42c9e3abbe16f75f0eff33d2d2b9e1",
+    "source_urls": [
+      "https://www.anthropic.com/research/formal-verification"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced.",
+    "version": "2026-10-22; unnumbered",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Turning tests into proofs",
+        "Limitations"
+      ],
+      "kind": "reading_diagram",
+      "claims_universal_software_safety": false
+    }
+  },
+  "/report-figures/formal-20261022-scope.png": {
+    "sha256": "6a39bdba1c1c15bb3096a9cf7e72f022c606b14c90a0fffadf3e70b0b243043f",
+    "source_urls": [
+      "https://www.anthropic.com/research/formal-verification"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced.",
+    "version": "2026-10-22; unnumbered",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Introduction",
+        "Appendix pp.1–2,5"
+      ],
+      "libraries": 123,
+      "entry_points": 239,
+      "coverage_percentage": null,
+      "main_input_limit": "below 64 MiB",
+      "small_tasks_input_bound": "64 bytes"
+    }
+  },
+  "/report-figures/formal-20261022-comparisons.png": {
+    "sha256": "21bcda779afa64acc282c67bd3f519ba109afdcd99a90e583bee1461775693b3",
+    "source_urls": [
+      "https://www.anthropic.com/research/formal-verification"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced.",
+    "version": "2026-10-22; unnumbered",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "This is just the beginning",
+        "Technical appendix"
+      ],
+      "separate_baselines": true,
+      "derived_index_values": [
+        [
+          100,
+          60
+        ],
+        [
+          100,
+          83
+        ]
+      ],
+      "reported_relative_savings_percent": [
+        40,
+        17
+      ],
+      "raw_curves_reconstructed": false
+    }
+  },
+  "/report-figures/quantum-20261015-workflow.png": {
+    "sha256": "98ba8abd72da76a0abe7bff91bc11fcee4026b01139def824a235e6400d7c81d",
+    "source_urls": [
+      "https://arxiv.org/abs/2610.22367"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced.",
+    "version": "arXiv:2610.22367v1",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Main Methods",
+        "SI I"
+      ],
+      "kind": "reading_diagram",
+      "hardware_runtime_measured": false
+    }
+  },
+  "/report-figures/quantum-20261015-costs.png": {
+    "sha256": "bd61758fb1ad1c3b177e2dd9e0f63c62727491f80274438b803d0666a712eac9",
+    "source_urls": [
+      "https://arxiv.org/abs/2610.22367"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced.",
+    "version": "arXiv:2610.22367v1",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Extended Data Table 1",
+        "SI I.1"
+      ],
+      "Toffoli_millions": [
+        5.1,
+        0.44
+      ],
+      "logical_qubits": [
+        1938,
+        1837
+      ],
+      "reported_TQ_factor": 12,
+      "baseline": "Khattar et al. reconstructed EEA decoder",
+      "axes_zero": true
+    }
+  },
+  "/report-figures/quantum-20261015-tradeoff.png": {
+    "sha256": "4edcf41f59a145849ef9e07bcc63050f4c5161878e35805fbe2bff215d6da235",
+    "source_urls": [
+      "https://arxiv.org/abs/2610.22367"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced.",
+    "version": "arXiv:2610.22367v1",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Table S3",
+        "SI II.1–II.2"
+      ],
+      "Toffoli_millions": [
+        1.9,
+        4,
+        69.5,
+        20.5
+      ],
+      "qubits": [
+        1446,
+        935,
+        838,
+        843
+      ],
+      "names": [
+        "Binary gcd comparator",
+        "Divstep design",
+        "Packed Euclidean baseline",
+        "Specialized Euclidean"
+      ],
+      "same_failure_guarantees": false,
+      "time_series": false
+    }
   }
 }
