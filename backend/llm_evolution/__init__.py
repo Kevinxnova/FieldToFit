@@ -9,6 +9,14 @@ QUESTIONS = ROOT + '/questions'
 CATALOG = json.loads(Path(__file__).with_name('catalog.json').read_text())
 HOME_PREVIEW = json.loads(Path(__file__).with_name('home_preview.json').read_text())
 NODE_BY_ID = {n['id']: n for r in CATALOG['routes'] for n in r['nodes']}
+# Keep the server preview aligned with the same key-node and cross-map evidence rules as React.
+for track in CATALOG['tracks']:
+    ident = track['id']
+    required = {v['id'] for v in HOME_PREVIEW[ident]}
+    required.update(e['node'] for e in CATALOG['flagships']['adoptions'] if e['track'] == ident)
+    required.update(n['id'] for r in CATALOG['routes'] if r['track'] == ident for n in r['nodes'] if n['id'].startswith('post-'))
+    HOME_PREVIEW[ident] = [{'id': key} for key in sorted(required, key=lambda k: (NODE_BY_ID[k]['date'], k))]
+
 QUESTION_BY_ID = {q['id']: q for q in CATALOG['questions']}
 REVISION = hashlib.sha256(json.dumps(CATALOG, sort_keys=True).encode()).hexdigest()[:20]
 bp = Blueprint('llm_evolution', __name__, template_folder='templates')

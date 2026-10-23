@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "revision": 3,
-  "updated_at": "2026-10-22",
+  "revision": 4,
+  "updated_at": "2026-10-24",
   "period": "2017–2026",
   "change_reason": [
-    "采用完整技术图谱展示，补充三主线定义与双语节点概述；技术事实、日期、关系和18题正文保持。",
-    "Adopt complete technical maps with track definitions and bilingual node summaries; retain technical facts, dates, relations and all 18 articles."
+    "新增旗舰型号索引、三图技术路线联动和比较，补充有相关正文支持的技术节点与型号披露；保留历史节点、原关系及18题正文和修订。",
+    "Add a flagship index, linked technical maps and comparison with source-supported milestones and model disclosures; preserve historical nodes, original relations and all 18 question bodies and revisions."
   ],
   "tracks": [
     {
@@ -120,7 +120,12 @@
     "minimax": "MiniMax",
     "mistral": "Mistral",
     "bytedance": "ByteDance",
-    "ant": "Ant Group"
+    "ant": "Ant Group",
+    "zai": "Z.ai / GLM",
+    "xai": "xAI",
+    "baidu": "Baidu / ERNIE",
+    "tencent": "Tencent / Hunyuan",
+    "huawei": "Huawei / Pangu"
   },
   "sources": {
     "llama": {
@@ -856,6 +861,183 @@
       "url": "https://arxiv.org/abs/2505.09388",
       "checked_at": "2026-10-22",
       "kind": "technical-report"
+    },
+    "f-astra": {
+      "id": "f-astra",
+      "title": "GPT-6 Astra System Card",
+      "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+      "date": "2026-09-03",
+      "checked_at": "2026-10-23",
+      "kind": "model-card"
+    },
+    "f-sol": {
+      "id": "f-sol",
+      "title": "GPT-6.1 Sol System Card Addendum",
+      "url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "date": "2026-09-29",
+      "checked_at": "2026-10-23",
+      "kind": "model-card"
+    },
+    "f-claude": {
+      "id": "f-claude",
+      "title": "Claude Transparency Hub",
+      "url": "https://www.anthropic.com/transparency",
+      "date": "2026-09",
+      "checked_at": "2026-10-23",
+      "kind": "model-card"
+    },
+    "f-opus": {
+      "id": "f-opus",
+      "title": "What’s new in Opus 5.5",
+      "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5",
+      "date": "",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-cards": {
+      "id": "f-cards",
+      "title": "Claude system cards",
+      "url": "https://www.anthropic.com/system-cards",
+      "date": "",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-argon": {
+      "id": "f-argon",
+      "title": "Gemini 4 Argon Model Card",
+      "url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "date": "2026-10-13",
+      "checked_at": "2026-10-23",
+      "kind": "model-card"
+    },
+    "f-glm": {
+      "id": "f-glm",
+      "title": "GLM-5.3 / GLM-5.3-Flash official repository",
+      "url": "https://github.com/zai-org/GLM-5",
+      "date": "2026",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-glm5": {
+      "id": "f-glm5",
+      "title": "GLM-5 technical report v1",
+      "url": "https://arxiv.org/html/2602.15763v1",
+      "date": "2026-02",
+      "checked_at": "2026-10-23",
+      "kind": "technical-report"
+    },
+    "f-k3": {
+      "id": "f-k3",
+      "title": "Kimi K3: Open Frontier Intelligence",
+      "url": "https://arxiv.org/html/2607.24653v2",
+      "date": "2026-07-27",
+      "checked_at": "2026-10-23",
+      "kind": "technical-report",
+      "revised_at": "2026-08-07"
+    },
+    "f-v41": {
+      "id": "f-v41",
+      "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+      "url": "https://arxiv.org/html/2609.19969v1",
+      "date": "2026-09-17",
+      "checked_at": "2026-10-23",
+      "kind": "technical-report"
+    },
+    "f-q38": {
+      "id": "f-q38",
+      "title": "Qwen3.8-2.4T-A95B model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "date": "2026",
+      "checked_at": "2026-10-23",
+      "kind": "model-card"
+    },
+    "f-qnext": {
+      "id": "f-qnext",
+      "title": "Qwen3.8-Next architecture report",
+      "url": "https://arxiv.org/abs/2608.30320",
+      "date": "2026",
+      "checked_at": "2026-10-23",
+      "kind": "technical-report"
+    },
+    "f-m3": {
+      "id": "f-m3",
+      "title": "MiniMax M3",
+      "url": "https://www.minimax.io/blog/minimax-m3",
+      "date": "2026-06-01",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-m31": {
+      "id": "f-m31",
+      "title": "MiniMax M3.1 Flash",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "date": "2026-10-19",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-meta": {
+      "id": "f-meta",
+      "title": "Muse Wonder and Muse Wonder Full",
+      "url": "https://research.meta.ai/blog/muse-wonder",
+      "date": "2026-10-12",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-grok": {
+      "id": "f-grok",
+      "title": "Grok 4.7",
+      "url": "https://x.ai/news/grok-4-7",
+      "date": "2026-09-21",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-seed": {
+      "id": "f-seed",
+      "title": "Seed2.1 Pro and Turbo",
+      "url": "https://seed.bytedance.com/en/seed2_1",
+      "date": "",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-seed-blog": {
+      "id": "f-seed-blog",
+      "title": "Seed2.1: Advancing AI productivity",
+      "url": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity",
+      "date": "",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-ml4": {
+      "id": "f-ml4",
+      "title": "Introducing Mistral Large 4",
+      "url": "https://mistral.ai/news/mistral-large-4/",
+      "date": "2026-10-06",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-ernie": {
+      "id": "f-ernie",
+      "title": "ERNIE 5.0 Technical Report",
+      "url": "https://arxiv.org/html/2602.04705v1",
+      "date": "2026-02-04",
+      "checked_at": "2026-10-23",
+      "kind": "technical-report"
+    },
+    "f-hy4": {
+      "id": "f-hy4",
+      "title": "Hy4 Preview on Tencent ADP",
+      "url": "https://adp.tencent.com/zh/blog/adp-hunyuan-hy4-preview-support",
+      "date": "2026-08-28",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
+    },
+    "f-pangu": {
+      "id": "f-pangu",
+      "title": "Pangu model service overview",
+      "url": "https://support.huaweicloud.com/productdesc-pangulm/pangulm_01_0001.html",
+      "date": "2026-10-14",
+      "checked_at": "2026-10-23",
+      "kind": "official-note"
     }
   },
   "routes": [
@@ -1728,6 +1910,138 @@
               "Direct preferences"
             ],
             "representative": "DPO"
+          }
+        },
+        {
+          "id": "post-glm53",
+          "source": "f-glm",
+          "date": "2026",
+          "title": "GLM-5.3 · Post-training on a shared base",
+          "question": "T04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "官方说明沿用5.2底座，5.3改进来自后训练；与Flash新底座分开。",
+            "The official description attributes 5.3 gains to post-training on the 5.2 base, separately from the new Flash base."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "能力提升不总是来自更换预训练架构。",
+            "Capability improvements need not require a new pretrained architecture."
+          ],
+          "limit": [
+            "没有具体优化器证据；不能推定采用GRPO或蒸馏。",
+            "This does not establish a particular optimizer, GRPO or distillation."
+          ],
+          "references": [
+            {
+              "source": "f-glm",
+              "section": [
+                "README：GLM-5.3 Introduction；核对2026-10-23",
+                "README: GLM-5.3 introduction; checked 2026-10-23"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "同底座的后训练迭代",
+              "Post-training on a shared base"
+            ],
+            "representative": "GLM-5.3"
+          }
+        },
+        {
+          "id": "post-opus55",
+          "source": "f-claude",
+          "date": "2026-09",
+          "title": "Claude Opus 5.5 · Constitution-guided post-training",
+          "question": "T04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "透明度页披露多样数据预训练后进行大量后训练，以Claude constitution中的价值原则指导行为。",
+            "The transparency page describes diverse pretraining followed by substantial post-training aimed at the values in Claude’s constitution."
+          ],
+          "evidence": [
+            "Opus 5.5训练说明已核；旧CAI论文的具体流程不自动继承。",
+            "The Opus 5.5 training description was reviewed; the exact historical CAI recipe is not automatically inherited."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "助手需要同时获得任务能力与稳定的行为原则。",
+            "Assistants need task capabilities and consistent behavioral principles."
+          ],
+          "limit": [
+            "未披露具体优化器和奖励构建方式，不能补画未确认的RLAIF流程。",
+            "The optimizer and reward construction are not disclosed; a specific RLAIF pipeline is not established."
+          ],
+          "references": [
+            {
+              "source": "f-claude",
+              "section": [
+                "Claude Opus 5.5: Model architecture and training methodology",
+                "Claude Opus 5.5: Model architecture and training methodology"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "原则引导的后训练",
+              "Constitution-guided post-training"
+            ],
+            "representative": "Claude Opus 5.5"
+          }
+        },
+        {
+          "id": "post-wonder",
+          "source": "f-meta",
+          "date": "2026-10-12",
+          "title": "Muse Wonder · Pretraining and RL scaling",
+          "question": "T04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "官方明确Wonder系列在预训练与强化学习两方面扩展；没有披露具体RL优化器。",
+            "The official post describes scaling both pretraining and RL, without identifying a specific optimizer."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "只增加预训练容量不能覆盖所有长任务能力。",
+            "Pretraining capacity alone does not account for every long-task capability."
+          ],
+          "limit": [
+            "这不是对推理RL、GRPO或Llama架构的确认。",
+            "This does not establish reasoning-specific RL, GRPO or Llama architecture."
+          ],
+          "references": [
+            {
+              "source": "f-meta",
+              "section": [
+                "Scaling Toward Personal Superintelligence",
+                "Scaling Toward Personal Superintelligence"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "预训练与后训练共同扩展",
+              "Joint pretraining and RL scaling"
+            ],
+            "representative": "Muse Wonder / Full"
           }
         }
       ],
@@ -3067,6 +3381,50 @@
             ],
             "representative": "Claude Opus 4.6"
           }
+        },
+        {
+          "id": "thinking-internal",
+          "title": "GPT-6 Astra · Learned internal reasoning",
+          "date": "2026-09-03",
+          "source": "f-astra",
+          "question": "I05",
+          "relation": "related-development",
+          "revision": 1,
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "复杂任务需要在作答前组织中间推理。",
+            "Complex tasks require intermediate reasoning before the final answer."
+          ],
+          "mechanism": [
+            "系统卡描述模型通过RL学会作答前内部思考、尝试策略与识别错误；这是训练所得行为，不只是提示词技巧。",
+            "The card describes RL-trained internal reasoning, strategy exploration and error recognition before answering, rather than only a prompting technique."
+          ],
+          "limit": [
+            "未披露具体搜索算法与推理预算分配，不能推断树搜索或多个模型协作。",
+            "Search algorithms and compute allocation are not disclosed; tree search or multi-model cooperation cannot be inferred."
+          ],
+          "date_kind": "source-publication",
+          "references": [
+            {
+              "source": "f-astra",
+              "section": [
+                "§2 Model Data and Training",
+                "§2 Model Data and Training"
+              ]
+            }
+          ],
+          "evidence": [
+            "系统卡§2明确披露；推理轨迹不保证与所有内部计算完全一致。",
+            "Explicitly described in §2; reasoning traces are not guaranteed to expose all internal computation."
+          ],
+          "summary": {
+            "technology": [
+              "训练获得的内部推理",
+              "Learned internal reasoning"
+            ],
+            "representative": "GPT-6 Astra / GPT-6.1 Sol"
+          }
         }
       ],
       "cases": [
@@ -3841,6 +4199,50 @@
               "Sequence parallelism"
             ],
             "representative": "DeepSpeed Ulysses"
+          }
+        },
+        {
+          "id": "system-argon",
+          "source": "f-argon",
+          "date": "2026-10-13",
+          "title": "Gemini 4 Argon · Distributed training on TPUs",
+          "question": "S02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "模型卡明确训练使用TPU、JAX与ML Pathways；硬件与编程框架共同组织计算。",
+            "The model card identifies TPU, JAX and ML Pathways as the training stack."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "稀疏多模态模型需要规模化执行训练。",
+            "Sparse multimodal models require training at scale."
+          ],
+          "limit": [
+            "未披露具体并行比例或服务调度，不能从品牌推断实现。",
+            "Parallelism ratios and serving scheduling are not established by this disclosure."
+          ],
+          "references": [
+            {
+              "source": "f-argon",
+              "section": [
+                "Implementation：Hardware／Software",
+                "Implementation: Hardware / Software"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "TPU 上的分布式训练",
+              "Distributed training on TPUs"
+            ],
+            "representative": "Gemini 4 Argon"
           }
         }
       ],
@@ -4675,6 +5077,50 @@
             ],
             "representative": "Alibaba · Qwen3"
           }
+        },
+        {
+          "id": "train-ernie5",
+          "source": "f-ernie",
+          "date": "2026-02-04",
+          "title": "ERNIE 5.0 · Unified multimodal prediction",
+          "question": "T02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "将多模态编码成统一序列，以next-group-of-tokens目标从头训练，并由模态无关路由共享稀疏专家。",
+            "Serialize modalities into a shared sequence, train with next-group-of-tokens prediction, and route them through shared sparse experts."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "理解与生成的多种模态难以共享优化过程。",
+            "Understanding and generation modalities have different optimization dynamics."
+          ],
+          "limit": [
+            "统一目标仍需模态编码与数据平衡；不是仅拼接几个独立模型。",
+            "A shared objective still requires modality encoding and data balancing."
+          ],
+          "references": [
+            {
+              "source": "f-ernie",
+              "section": [
+                "§2 Architecture／§2.1",
+                "§2 Architecture / §2.1"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "统一多模态预测目标",
+              "Unified multimodal prediction"
+            ],
+            "representative": "ERNIE 5.0"
+          }
         }
       ],
       "cases": [
@@ -5073,6 +5519,94 @@
           }
         },
         {
+          "id": "hybrid-glm53flash",
+          "source": "f-glm",
+          "date": "2026",
+          "title": "GLM-5.3-Flash · Sparse / linear hybrid with mHC",
+          "question": "T01",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "官方说明Flash采用新底座，组合稀疏与线性注意力以及mHC。",
+            "The official description gives Flash a new base combining sparse and linear attention with mHC."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "低成本服务与高容量注意力之间需要折中。",
+            "Efficient serving must balance state cost and attention capacity."
+          ],
+          "limit": [
+            "并非5.3简单缩小；GLM-5旧系统配方不能直接继承。",
+            "It is not simply a smaller 5.3; GLM-5 infrastructure cannot be assumed to carry over."
+          ],
+          "references": [
+            {
+              "source": "f-glm",
+              "section": [
+                "README：GLM-5.3-Flash；核对2026-10-23",
+                "README: GLM-5.3-Flash; checked 2026-10-23"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "稀疏／线性混合与 mHC",
+              "Sparse / linear hybrid with mHC"
+            ],
+            "representative": "GLM-5.3-Flash"
+          }
+        },
+        {
+          "id": "hybrid-q38",
+          "source": "f-q38",
+          "date": "2026",
+          "title": "Qwen3.8-2.4T-A95B · Gated recurrence / attention with MoE",
+          "question": "T01",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "模型卡列出Gated DeltaNet与Gated Attention交替、MoE及多步MTP训练。",
+            "The card specifies interleaved Gated DeltaNet and Gated Attention, MoE, and multi-step MTP training."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "Max级开放模型需要平衡容量与每token计算。",
+            "A Max-class open model must balance capacity and per-token compute."
+          ],
+          "limit": [
+            "仅绑定开放权重；MTP训练不证明线上使用推测解码。",
+            "Bound to the open weights; MTP training alone does not establish speculative serving."
+          ],
+          "references": [
+            {
+              "source": "f-q38",
+              "section": [
+                "Model Overview",
+                "Model Overview"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "门控递归／注意力与 MoE",
+              "Gated recurrence / attention with MoE"
+            ],
+            "representative": "Qwen3.8-2.4T-A95B"
+          }
+        },
+        {
           "id": "hybrid-q35",
           "title": "Qwen3.5",
           "date": "2026-02-15",
@@ -5165,6 +5699,50 @@
               "Hybrid expert models"
             ],
             "representative": "Nemotron 3 Super"
+          }
+        },
+        {
+          "id": "hybrid-k3",
+          "source": "f-k3",
+          "date": "2026-07-27",
+          "title": "Kimi K3 · KDA with global attention",
+          "question": "T01",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "每块组合三个KDA层和一个Gated MLA层；KDA为delta递推加入逐通道遗忘门。",
+            "Each block combines three KDA layers with one Gated MLA layer. KDA adds channel-wise forgetting to delta recurrence."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "长序列既需要低成本状态更新，也需要全局检索。",
+            "Long sequences need efficient state updates and global retrieval."
+          ],
+          "limit": [
+            "全局层和递归层需要不同内核；该比例属于K3，不能泛化所有混合模型。",
+            "Global and recurrent layers need different kernels; the ratio is specific to K3."
+          ],
+          "references": [
+            {
+              "source": "f-k3",
+              "section": [
+                "§2.1 Hybrid Attention／§2.1.1 KDA",
+                "§2.1 Hybrid Attention / §2.1.1 KDA"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "KDA 与全局注意力混合",
+              "KDA with global attention"
+            ],
+            "representative": "Kimi K3"
           }
         }
       ],
@@ -5882,6 +6460,94 @@
             ],
             "representative": "DeepSeek-V4"
           }
+        },
+        {
+          "id": "context-msa",
+          "source": "f-m3",
+          "date": "2026-06-01",
+          "title": "MiniMax M3 · Block sparse attention",
+          "question": "I04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "MSA对KV分块预筛选；算子以KV为外循环聚合命中的查询，减少重复读取。",
+            "MSA preselects KV blocks; its kernel gathers matching queries around each KV block to reduce repeated reads."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "百万上下文的全注意力成本很高。",
+            "Full attention is costly at million-token context."
+          ],
+          "limit": [
+            "收益依赖头配置与上下文；不能将M3实现套给M3.1 Flash。",
+            "Benefits depend on head configuration and context; M3.1 Flash adoption is not established."
+          ],
+          "references": [
+            {
+              "source": "f-m3",
+              "section": [
+                "MSA: Architectural Innovation Enables Context Scaling",
+                "MSA: Architectural Innovation Enables Context Scaling"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "分块稀疏注意力",
+              "Block sparse attention"
+            ],
+            "representative": "MiniMax M3"
+          }
+        },
+        {
+          "id": "context-csa2",
+          "source": "f-v41",
+          "date": "2026-09-17",
+          "title": "DeepSeek V4.1-Flash · Cross-layer KV and index reuse",
+          "question": "I04",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "CSA2分Full、Reindex与Reuse层：共享主KV与索引键，按层重新选取或复用Top-K。",
+            "CSA2 uses Full, Reindex and Reuse layers, sharing main KV and index keys while recomputing or reusing Top-K selections."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "长程Agent的KV存储与搬运成为瓶颈。",
+            "Long-horizon agents stress KV storage and transfer."
+          ],
+          "limit": [
+            "共享与重新索引存在精度／开销权衡；压缩缓存不等于无限上下文。",
+            "Sharing and reindexing trade accuracy against cost; compression does not create unlimited context."
+          ],
+          "references": [
+            {
+              "source": "f-v41",
+              "section": [
+                "§2.3—2.3.1 CSA2",
+                "§2.3–2.3.1 CSA2"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "跨层 KV 与索引复用",
+              "Cross-layer KV and index reuse"
+            ],
+            "representative": "DeepSeek V4.1-Flash"
+          }
         }
       ],
       "cases": [
@@ -6390,6 +7056,50 @@
               "Asynchronous RL"
             ],
             "representative": "AReaL"
+          }
+        },
+        {
+          "id": "system-ml4",
+          "source": "f-ml4",
+          "date": "2026-10-06",
+          "title": "Mistral Large 4 · Asynchronous long-trajectory RL",
+          "question": "S02",
+          "relation": "related-development",
+          "revision": 1,
+          "mechanism": [
+            "扩缩容actor并行生成轨迹，训练异步推进；任务组合单测、奖励模型与检查器。",
+            "An autoscaling actor fleet generates rollouts while training proceeds asynchronously; tasks combine tests, reward models and checks."
+          ],
+          "evidence": [
+            "原始资料对应章节披露；未独立复现实验，不将型号应用日期视为方法首创。",
+            "Disclosed in the cited section; not independently reproduced. This application date is not a claim of method invention."
+          ],
+          "kind": "model",
+          "highlight": true,
+          "problem": [
+            "长工具轨迹采样耗时，训练等待采样会浪费资源。",
+            "Long tool trajectories make rollout latency expensive for training."
+          ],
+          "limit": [
+            "需控制策略陈旧与off-policy偏移；文中吞吐不可脱离配置比较。",
+            "Policy staleness and off-policy drift must be controlled; throughput depends on configuration."
+          ],
+          "references": [
+            {
+              "source": "f-ml4",
+              "section": [
+                "Reinforcement learning at scale",
+                "Reinforcement learning at scale"
+              ]
+            }
+          ],
+          "date_kind": "source-publication",
+          "summary": {
+            "technology": [
+              "异步长轨迹 RL 执行",
+              "Asynchronous long-trajectory RL"
+            ],
+            "representative": "Mistral Large 4"
           }
         }
       ],
@@ -8360,6 +9070,1627 @@
         "testtime",
         "gemini25"
       ]
+    },
+    {
+      "id": "f-hybrid-delta-hybrid-k3",
+      "from_node": "hybrid-delta",
+      "to_node": "hybrid-k3",
+      "kind": "improvement",
+      "reason": [
+        "KDA在delta递推中增加逐通道遗忘门，并在K3中与全局层混合。",
+        "KDA adds channel-wise forgetting to delta recurrence and combines it with global layers in K3."
+      ],
+      "sources": [
+        "f-k3"
+      ]
+    },
+    {
+      "id": "f-context-v4-context-csa2",
+      "from_node": "context-v4",
+      "to_node": "context-csa2",
+      "kind": "improvement",
+      "reason": [
+        "CSA2在压缩上下文上增加跨层KV与索引复用；不是权重继承声明。",
+        "CSA2 adds cross-layer KV and index reuse to compressed context; this is not a weight-inheritance claim."
+      ],
+      "sources": [
+        "f-v41"
+      ]
+    },
+    {
+      "id": "f-context-dsa-context-msa",
+      "from_node": "context-dsa",
+      "to_node": "context-msa",
+      "kind": "alternative",
+      "reason": [
+        "官方对照稀疏筛选路线，MSA采用分块与KV外循环执行。",
+        "The official comparison presents block selection and KV-outer execution as an alternative sparse route."
+      ],
+      "sources": [
+        "f-m3"
+      ]
+    },
+    {
+      "id": "f-system-hybridflow-system-ml4",
+      "from_node": "system-hybridflow",
+      "to_node": "system-ml4",
+      "kind": "alternative",
+      "reason": [
+        "同属训练与采样协同问题的实现对照；不声称Mistral使用HybridFlow。",
+        "An implementation comparison for training/rollout coordination; not a claim that Mistral uses HybridFlow."
+      ],
+      "sources": [
+        "f-ml4"
+      ]
     }
-  ]
+  ],
+  "flagships": {
+    "revision": 1,
+    "checked_at": "2026-10-23",
+    "models": [
+      {
+        "id": "gpt6-astra",
+        "company": "openai",
+        "name": "GPT-6 Astra",
+        "source": "f-astra",
+        "date": "2026-09-03",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "通用／推理",
+          "General / reasoning"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "训练与内部思考有披露；架构和生产系统未据此确定。",
+          "Training and internal reasoning are disclosed; architecture and production systems are not established."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "gpt61-sol",
+        "company": "openai",
+        "name": "GPT-6.1 Sol",
+        "source": "f-sol",
+        "date": "2026-09-29",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "通用／推理",
+          "General / reasoning"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "增补明确引用Astra训练类型，不表示蒸馏关系。",
+          "The addendum explicitly references Astra training types, not a distillation relationship."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "opus55",
+        "company": "anthropic",
+        "name": "Claude Opus 5.5",
+        "source": "f-opus",
+        "date": "2026-09",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "思考始终开启；系统卡PDF尚未取得，不等于API文档未核对。",
+          "Thinking is always on. The system-card PDF remains unavailable; API documentation was reviewed."
+        ],
+        "gaps": {
+          "train": [
+            "有原则引导后训练概述；具体配方未披露。",
+            "Constitution-guided post-training is described; the exact recipe is not disclosed."
+          ],
+          "inference": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "fable51",
+        "company": "anthropic",
+        "name": "Claude Fable 5.1",
+        "source": "f-cards",
+        "date": "2026-09",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "独立能力型号",
+          "Separate capability tier"
+        ],
+        "status": [
+          "身份／范围待核",
+          "Identity / scope under review"
+        ],
+        "notes": [
+          "官方系统卡目录已确认，独立训练证据和可用范围尚待核对。",
+          "Listed in the official system-card index; independent training evidence and availability remain under review."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "mythos51",
+        "company": "anthropic",
+        "name": "Claude Mythos 5.1",
+        "source": "f-cards",
+        "date": "2026-09",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "独立能力型号",
+          "Separate capability tier"
+        ],
+        "status": [
+          "身份／范围待核",
+          "Identity / scope under review"
+        ],
+        "notes": [
+          "官方系统卡目录已确认，独立训练证据和可用范围尚待核对。",
+          "Listed in the official system-card index; independent training evidence and availability remain under review."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "argon",
+        "company": "google",
+        "name": "Gemini 4 Argon",
+        "source": "f-argon",
+        "date": "2026-10-13",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "通用／推理",
+          "General / reasoning"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "新模型；卡片明确不是旧型号微调，训练栈已披露。",
+          "A new model, explicitly not a fine-tune of a prior model; the training stack is disclosed."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ]
+        }
+      },
+      {
+        "id": "glm53",
+        "company": "zai",
+        "name": "GLM-5.3",
+        "source": "f-glm",
+        "date": "2026",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "沿用5.2底座的后训练迭代，具体发布日期待固定。",
+          "Post-training on the 5.2 base; the exact release date remains to be pinned."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "glm53flash",
+        "company": "zai",
+        "name": "GLM-5.3-Flash",
+        "source": "f-glm",
+        "date": "2026",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "新底座与混合架构；不能从GLM-5报告继承所有系统细节。",
+          "A new base and hybrid architecture; not all GLM-5 systems details can be inherited."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "v41flash",
+        "company": "deepseek",
+        "name": "DeepSeek V4.1-Flash",
+        "source": "f-v41",
+        "date": "2026-09-17",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "开放权重",
+          "Open weights"
+        ],
+        "notes": [
+          "报告v1；1017服务更新另计，报告日不冒充首发日。",
+          "Report v1; the 1017 service update is separate, and the report date is not the model launch date."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "systems": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ]
+        }
+      },
+      {
+        "id": "v4pro",
+        "company": "deepseek",
+        "name": "DeepSeek V4 Pro",
+        "source": "v4",
+        "date": "",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "通用／推理",
+          "General / reasoning"
+        ],
+        "status": [
+          "型号资料已收录",
+          "Model source recorded"
+        ],
+        "notes": [
+          "与V4.1-Flash独立；不从Flash外推Pro实现或服务修订。",
+          "Separate from V4.1-Flash; Flash implementation or service revisions do not establish Pro behavior."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "kimi-k3",
+        "company": "moonshot",
+        "name": "Kimi K3",
+        "source": "f-k3",
+        "date": "2026-07-27",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "开放权重",
+          "Open weights"
+        ],
+        "notes": [
+          "架构相关正文已读，报告修订与型号采用日期分列。",
+          "Architecture sections reviewed; report revisions and model adoption dates remain distinct."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "qwen38-open",
+        "company": "alibaba",
+        "name": "Qwen3.8-2.4T-A95B",
+        "source": "f-q38",
+        "date": "2026",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Max级开放权重",
+          "Max-class open weights"
+        ],
+        "status": [
+          "开放权重",
+          "Open weights"
+        ],
+        "notes": [
+          "独立开放权重身份；不直接等同API Max部署版本。",
+          "An exact open-weight identity, not automatically the same as the API Max deployment."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "qwen38-max",
+        "company": "alibaba",
+        "name": "Qwen3.8-Max",
+        "source": "f-q38",
+        "date": "2026",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "通用／推理",
+          "General / reasoning"
+        ],
+        "status": [
+          "API／权重对应待核",
+          "API / weights mapping under review"
+        ],
+        "notes": [
+          "模型卡引用Max，但开放权重与API部署的一一对应未核实。",
+          "The card references Max, but the exact mapping to the API deployment is not verified."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "qwen38-next",
+        "company": "alibaba",
+        "name": "Qwen3.8 Flash-Next",
+        "source": "f-qnext",
+        "date": "2026",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "效率分支",
+          "Efficiency branch"
+        ],
+        "status": [
+          "报告摘要已核",
+          "Report abstract reviewed"
+        ],
+        "notes": [
+          "Next为独立路线；本批不把摘要细节升级为已审采用线。",
+          "Next is a separate branch; abstract-only details are not promoted to reviewed adoption links."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "minimax31",
+        "company": "minimax",
+        "name": "MiniMax M3.1 Flash",
+        "source": "f-m31",
+        "date": "2026-10-19",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "发布与能力定位明确；未取得其MSA或训练配方直接证据。",
+          "Release and role are clear; direct evidence for MSA or its training recipe was not obtained."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "minimax3",
+        "company": "minimax",
+        "name": "MiniMax M3",
+        "source": "f-m3",
+        "date": "2026-06-01",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "MSA与算子说明绑定M3，不自动延伸到M3.1 Flash。",
+          "MSA and kernel disclosures apply to M3, not automatically M3.1 Flash."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "systems": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ]
+        }
+      },
+      {
+        "id": "wonder",
+        "company": "meta",
+        "name": "Muse Wonder",
+        "source": "f-meta",
+        "date": "2026-10-12",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "官网明确预训练与RL扩展；不从Llama历史结构推断Muse结构。",
+          "The official post describes pretraining and RL scaling; Llama architecture is not presumed for Muse."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "wonder-full",
+        "company": "meta",
+        "name": "Muse Wonder Full",
+        "source": "f-meta",
+        "date": "2026-10-12",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "Muse Code订阅可用",
+          "Available to Muse Code subscribers"
+        ],
+        "notes": [
+          "官网明确预训练与RL扩展；不从Llama历史结构推断Muse结构。",
+          "The official post describes pretraining and RL scaling; Llama architecture is not presumed for Muse."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "grok47",
+        "company": "xai",
+        "name": "Grok 4.7",
+        "source": "f-grok",
+        "date": "2026-09-21",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "通用／推理",
+          "General / reasoning"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "发布材料已核；任务表现不等于算法或架构披露。",
+          "Release material reviewed; task performance is not an algorithm or architecture disclosure."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "seed21pro",
+        "company": "bytedance",
+        "name": "Seed2.1 Pro",
+        "source": "f-seed",
+        "date": "",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "官网确认两种规格；模型卡PDF读取失败，训练配方未核。",
+          "The official page identifies both sizes; the model-card PDF could not be read and the training recipe is unverified."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "seed21turbo",
+        "company": "bytedance",
+        "name": "Seed2.1 Turbo",
+        "source": "f-seed",
+        "date": "",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "官方已发布",
+          "Officially released"
+        ],
+        "notes": [
+          "官网确认两种规格；模型卡PDF读取失败，训练配方未核。",
+          "The official page identifies both sizes; the model-card PDF could not be read and the training recipe is unverified."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "mistral4",
+        "company": "mistral",
+        "name": "Mistral Large 4",
+        "source": "f-ml4",
+        "date": "2026-10-06",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "通用／推理",
+          "General / reasoning"
+        ],
+        "status": [
+          "公开预览",
+          "Public preview"
+        ],
+        "notes": [
+          "当前为公开预览；月末开放权重为计划，不标记为已开放。",
+          "Currently a public preview; planned end-of-month weights are not marked as released."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ]
+        }
+      },
+      {
+        "id": "ernie5",
+        "company": "baidu",
+        "name": "ERNIE 5.0",
+        "source": "f-ernie",
+        "date": "2026-02-04",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "通用／推理",
+          "General / reasoning"
+        ],
+        "status": [
+          "报告型号；最新身份待核",
+          "Reported model; latest status under review"
+        ],
+        "notes": [
+          "统一多模态架构正文已核；报告日不当作首发或最新旗舰确认。",
+          "Unified multimodal architecture reviewed; report date does not establish launch or latest-flagship status."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "hy4",
+        "company": "tencent",
+        "name": "Hy4 Preview",
+        "source": "f-hy4",
+        "date": "2026-08-28",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "Agent／编程",
+          "Agent / coding"
+        ],
+        "status": [
+          "公开预览",
+          "Public preview"
+        ],
+        "notes": [
+          "腾讯官方平台说明确认MoE与预览；平台集成不是内部系统证明。",
+          "Tencent platform documentation confirms MoE and preview status; integration is not proof of model internals."
+        ],
+        "gaps": {
+          "train": [
+            "已有下列具体披露；其余实现仍未知。",
+            "Specific disclosures appear below; other implementation details remain unknown."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      },
+      {
+        "id": "pangu",
+        "company": "huawei",
+        "name": "Pangu",
+        "source": "f-pangu",
+        "date": "2026-10-14",
+        "date_kind": [
+          "资料日期／精度依来源",
+          "Source date / precision as disclosed"
+        ],
+        "checked_at": "2026-10-23",
+        "role": [
+          "当前旗舰型号待核",
+          "Current flagship identity unresolved"
+        ],
+        "status": [
+          "身份／范围待核",
+          "Identity / scope under review"
+        ],
+        "notes": [
+          "已找到服务介绍，但未锁定当前精确旗舰；旧Pro MoE不冒充新型号。",
+          "Service documentation found, but no exact current flagship pinned; historical Pro MoE is not substituted."
+        ],
+        "gaps": {
+          "train": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "inference": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ],
+          "systems": [
+            "当前材料未确认具体实现；未连线不代表未采用。",
+            "The reviewed material does not establish the implementation; no link does not imply non-use."
+          ]
+        }
+      }
+    ],
+    "adoptions": [
+      {
+        "id": "adopt-gpt6-astra-reasoning_rl-o1-train",
+        "model": "gpt6-astra",
+        "node": "reasoning_rl-o1",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-astra",
+        "section": [
+          "§2 Model Data and Training",
+          "§2 Model Data and Training"
+        ],
+        "statement": [
+          "当前卡片披露推理强化学习（Sol通过明确引用）；关联RL路线，不指定优化器。",
+          "The current card discloses reasoning RL (Sol by explicit reference); the optimizer is unspecified."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-gpt6-astra-thinking-internal-inference",
+        "model": "gpt6-astra",
+        "node": "thinking-internal",
+        "track": "inference",
+        "kind": "documented-use",
+        "source": "f-astra",
+        "section": [
+          "§2 Model Data and Training",
+          "§2 Model Data and Training"
+        ],
+        "statement": [
+          "内部思考与回答分开；不把提示词CoT与训练过程等同。",
+          "Internal reasoning precedes the answer; prompted CoT and training are not equated."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-gpt61-sol-reasoning_rl-o1-train",
+        "model": "gpt61-sol",
+        "node": "reasoning_rl-o1",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-sol",
+        "section": [
+          "§2 Model Data and Training",
+          "§2 Model Data and Training"
+        ],
+        "statement": [
+          "当前卡片披露推理强化学习（Sol通过明确引用）；关联RL路线，不指定优化器。",
+          "The current card discloses reasoning RL (Sol by explicit reference); the optimizer is unspecified."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-gpt61-sol-thinking-internal-inference",
+        "model": "gpt61-sol",
+        "node": "thinking-internal",
+        "track": "inference",
+        "kind": "documented-use",
+        "source": "f-sol",
+        "section": [
+          "§2 Model Data and Training",
+          "§2 Model Data and Training"
+        ],
+        "statement": [
+          "内部思考与回答分开；不把提示词CoT与训练过程等同。",
+          "Internal reasoning precedes the answer; prompted CoT and training are not equated."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-opus55-thinking-adaptive-inference",
+        "model": "opus55",
+        "node": "thinking-adaptive",
+        "track": "inference",
+        "kind": "documented-use",
+        "source": "f-opus",
+        "section": [
+          "New model / Breaking changes",
+          "New model / Breaking changes"
+        ],
+        "statement": [
+          "自适应思考始终开启，由effort调节深度，不支持旧手动预算。",
+          "Adaptive thinking is always on, with depth controlled by effort rather than the old manual budget."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-argon-moe-sparse-train",
+        "model": "argon",
+        "node": "moe-sparse",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-argon",
+        "section": [
+          "Architecture",
+          "Architecture"
+        ],
+        "statement": [
+          "明确为稀疏MoE Transformer，支持原生多模态。",
+          "Explicitly a sparse MoE Transformer with native multimodal support."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-argon-reasoning_rl-o1-train",
+        "model": "argon",
+        "node": "reasoning_rl-o1",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-argon",
+        "section": [
+          "Training Dataset",
+          "Training Dataset"
+        ],
+        "statement": [
+          "训练使用多步推理、解题及定理数据的RL。",
+          "RL uses multi-step reasoning, problem-solving and theorem data."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-argon-system-argon-systems",
+        "model": "argon",
+        "node": "system-argon",
+        "track": "systems",
+        "kind": "documented-use",
+        "source": "f-argon",
+        "section": [
+          "Hardware / Software",
+          "Hardware / Software"
+        ],
+        "statement": [
+          "TPU、JAX与ML Pathways明确用于训练。",
+          "TPU, JAX and ML Pathways are explicitly used for training."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-glm53-post-glm53-train",
+        "model": "glm53",
+        "node": "post-glm53",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-glm",
+        "section": [
+          "Introduction: GLM-5.3",
+          "Introduction: GLM-5.3"
+        ],
+        "statement": [
+          "沿用5.2底座，改进来自后训练。",
+          "Uses the 5.2 base with improvements from post-training."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-glm53flash-hybrid-glm53flash-train",
+        "model": "glm53flash",
+        "node": "hybrid-glm53flash",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-glm",
+        "section": [
+          "Introduction: GLM-5.3-Flash",
+          "Introduction: GLM-5.3-Flash"
+        ],
+        "statement": [
+          "新底座采用稀疏／线性混合注意力和mHC。",
+          "The new base combines sparse / linear attention and mHC."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-glm53flash-repr-mhc-train",
+        "model": "glm53flash",
+        "node": "repr-mhc",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-glm",
+        "section": [
+          "Introduction: GLM-5.3-Flash",
+          "Introduction: GLM-5.3-Flash"
+        ],
+        "statement": [
+          "官方明确列出mHC；仅映射该技术身份。",
+          "The official description explicitly names mHC."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-glm53flash-hybrid-glm53flash-inference",
+        "model": "glm53flash",
+        "node": "hybrid-glm53flash",
+        "track": "inference",
+        "kind": "documented-use",
+        "source": "f-glm",
+        "section": [
+          "Introduction: GLM-5.3-Flash",
+          "Introduction: GLM-5.3-Flash"
+        ],
+        "statement": [
+          "同一结构在求解时结合递归状态与稀疏访问。",
+          "The same structure combines recurrent state and sparse access during inference."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-v41flash-context-csa2-inference",
+        "model": "v41flash",
+        "node": "context-csa2",
+        "track": "inference",
+        "kind": "documented-use",
+        "source": "f-v41",
+        "section": [
+          "§2.3–2.3.1",
+          "§2.3–2.3.1"
+        ],
+        "statement": [
+          "Full、Reindex、Reuse控制跨层共享与索引重算。",
+          "Full, Reindex and Reuse control sharing and index recomputation."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-v41flash-context-csa2-systems",
+        "model": "v41flash",
+        "node": "context-csa2",
+        "track": "systems",
+        "kind": "documented-use",
+        "source": "f-v41",
+        "section": [
+          "§2.3.1",
+          "§2.3.1"
+        ],
+        "statement": [
+          "共享主KV和索引键减少缓存；索引复用减少重复计算。",
+          "Shared main KV and index keys reduce storage; index reuse avoids repeated computation."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-kimi-k3-hybrid-k3-train",
+        "model": "kimi-k3",
+        "node": "hybrid-k3",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-k3",
+        "section": [
+          "§2.1",
+          "§2.1"
+        ],
+        "statement": [
+          "KDA与Gated MLA按3:1组合，末尾另有全局层。",
+          "KDA and Gated MLA mix at 3:1, with an additional final global layer."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-kimi-k3-hybrid-k3-inference",
+        "model": "kimi-k3",
+        "node": "hybrid-k3",
+        "track": "inference",
+        "kind": "documented-use",
+        "source": "f-k3",
+        "section": [
+          "§2.1",
+          "§2.1"
+        ],
+        "statement": [
+          "递归状态更新与全局访问互补；不等同纯线性模型。",
+          "Recurrent state updates complement global access; this is not a purely linear model."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-qwen38-open-hybrid-q38-train",
+        "model": "qwen38-open",
+        "node": "hybrid-q38",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-q38",
+        "section": [
+          "Model Overview",
+          "Model Overview"
+        ],
+        "statement": [
+          "列明Gated DeltaNet、Gated Attention、MoE和多步MTP。",
+          "Specifies Gated DeltaNet, Gated Attention, MoE and multi-step MTP."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-qwen38-open-thinking-adaptive-inference",
+        "model": "qwen38-open",
+        "node": "thinking-adaptive",
+        "track": "inference",
+        "kind": "documented-use",
+        "source": "f-q38",
+        "section": [
+          "Highlights / API Usage",
+          "Highlights / API Usage"
+        ],
+        "statement": [
+          "reasoning_effort调节思考；保留思考历史，但不声称与Claude内部算法相同。",
+          "reasoning_effort adjusts reasoning and thinking history can be preserved; no claim of identical internals to Claude."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-minimax3-context-msa-inference",
+        "model": "minimax3",
+        "node": "context-msa",
+        "track": "inference",
+        "kind": "documented-use",
+        "source": "f-m3",
+        "section": [
+          "MSA",
+          "MSA"
+        ],
+        "statement": [
+          "分块筛选稀疏注意力。",
+          "Block-selected sparse attention."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-minimax3-context-msa-systems",
+        "model": "minimax3",
+        "node": "context-msa",
+        "track": "systems",
+        "kind": "documented-use",
+        "source": "f-m3",
+        "section": [
+          "MSA",
+          "MSA"
+        ],
+        "statement": [
+          "KV外循环聚合查询，减少重复读取。",
+          "A KV-outer kernel gathers matching queries to reduce repeated reads."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-wonder-post-wonder-train",
+        "model": "wonder",
+        "node": "post-wonder",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-meta",
+        "section": [
+          "Scaling Toward Personal Superintelligence",
+          "Scaling Toward Personal Superintelligence"
+        ],
+        "statement": [
+          "官网明确扩展预训练与强化学习；不指定具体RL优化器。",
+          "The official post explicitly describes scaling pretraining and reinforcement learning; the optimizer is unspecified."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-wonder-full-post-wonder-train",
+        "model": "wonder-full",
+        "node": "post-wonder",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-meta",
+        "section": [
+          "Scaling Toward Personal Superintelligence",
+          "Scaling Toward Personal Superintelligence"
+        ],
+        "statement": [
+          "官网明确扩展预训练与强化学习；不指定具体RL优化器。",
+          "The official post explicitly describes scaling pretraining and reinforcement learning; the optimizer is unspecified."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-mistral4-system-ml4-systems",
+        "model": "mistral4",
+        "node": "system-ml4",
+        "track": "systems",
+        "kind": "documented-use",
+        "source": "f-ml4",
+        "section": [
+          "Reinforcement learning at scale",
+          "Reinforcement learning at scale"
+        ],
+        "statement": [
+          "采样actor与训练异步执行，控制策略陈旧。",
+          "Rollout actors and training execute asynchronously with staleness control."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-mistral4-agent-k2-train",
+        "model": "mistral4",
+        "node": "agent-k2",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-ml4",
+        "section": [
+          "Reinforcement learning at scale",
+          "Reinforcement learning at scale"
+        ],
+        "statement": [
+          "多环境工具任务RL，结合单测、模型判断与静态检查；不表示采用Kimi配方。",
+          "RL spans tool environments with tests, judges and static checks; this is not adoption of Kimi’s recipe."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-ernie5-train-ernie5-train",
+        "model": "ernie5",
+        "node": "train-ernie5",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-ernie",
+        "section": [
+          "§2–2.1",
+          "§2–2.1"
+        ],
+        "statement": [
+          "统一next-group-of-tokens目标和模态无关专家路由。",
+          "Unified next-group-of-tokens training with modality-agnostic expert routing."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-hy4-moe-sparse-train",
+        "model": "hy4",
+        "node": "moe-sparse",
+        "track": "train",
+        "kind": "documented-use",
+        "source": "f-hy4",
+        "section": [
+          "核心能力与技术参数 / Architecture",
+          "核心能力与技术参数 / Architecture"
+        ],
+        "statement": [
+          "官方明确MoE稀疏架构；具体路由策略未据此确定。",
+          "Officially identified as sparse MoE; the exact routing strategy is not established."
+        ],
+        "boundary": [
+          "仅证明所述机制／应用，不证明采用历史节点的全部实现或权重。",
+          "Supports the described mechanism or application, not every historical implementation detail or weight lineage."
+        ],
+        "reading": "body",
+        "checked_at": "2026-10-23"
+      },
+      {
+        "id": "adopt-opus55-post-opus55-train",
+        "model": "opus55",
+        "node": "post-opus55",
+        "track": "train",
+        "source": "f-claude",
+        "section": [
+          "Claude Opus 5.5: training methodology",
+          "Claude Opus 5.5: training methodology"
+        ],
+        "statement": [
+          "原则引导的大量后训练；不指定未披露的优化器。",
+          "Substantial constitution-guided post-training; no undisclosed optimizer is assumed."
+        ],
+        "boundary": [
+          "不等于当前型号采用旧CAI论文的全部步骤。",
+          "This does not establish every step of the historical CAI recipe."
+        ],
+        "reading": "body",
+        "kind": "documented-use",
+        "checked_at": "2026-10-23"
+      }
+    ],
+    "scope": [
+      "openai",
+      "anthropic",
+      "google",
+      "zai",
+      "deepseek",
+      "moonshot",
+      "alibaba",
+      "minimax",
+      "meta",
+      "xai",
+      "bytedance",
+      "mistral",
+      "baidu",
+      "tencent",
+      "huawei"
+    ]
+  }
 }

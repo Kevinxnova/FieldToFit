@@ -1,105 +1,11 @@
-import {useEffect,useLayoutEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react';
-import {Link,useLocation,useSearchParams} from '@fieldtofit/locale/router';
+import {type ReactNode} from 'react';
+import {useLocation} from '@fieldtofit/locale/router';
 import {useWorkspace} from '../../components/workspace/UI';
 import {PageMetadata} from '../../search';
-import {catalog,QUESTIONS,nodeById,nodeDestination,nodeCases,relationCopy,questionById,type Copy,type Milestone,type EvolutionRoute,type Track} from './data';
-import {atlasLayouts,boundedViewport,type AtlasViewport} from './atlasLayout';
+import {FlagshipExplorer} from './FlagshipExplorer';
 import './atlas.css';
-
-const VIEW_KEY='fieldtofit:evolution:atlas-view:v2';
-function useCopy(){const {zh,pick}=useWorkspace();return {t:(copy:Copy)=>copy[zh?0:1],pick,zh};}
-function loadViewport(track:Track):AtlasViewport{try{return boundedViewport(JSON.parse(sessionStorage.getItem(VIEW_KEY)||'{}')[track]);}catch{return boundedViewport(undefined);}}
-function persistViewport(track:Track,view:AtlasViewport){try{let saved;try{saved=JSON.parse(sessionStorage.getItem(VIEW_KEY)||'{}');}catch{saved={};}sessionStorage.setItem(VIEW_KEY,JSON.stringify({...saved,[track]:view}));}catch{/* Navigation remains usable when storage is unavailable. */}}
-const sourceKinds:Record<string,Copy>={paper:['论文','Paper'],'technical-report':['技术报告','Technical report'],'official-note':['官方说明','Official note'],'model-card':['型号资料','Model card'],engineering:['工程文档','Engineering docs']};
-export function NodeDetail({node,route,close}:{node:Milestone;route:EvolutionRoute;close:()=>void}){
-  const {t,pick}=useCopy(),cases=nodeCases(route,node.id),relations=catalog.relations.filter(e=>e.from_node===node.id||e.to_node===node.id);
-  const unbound=route.cases.filter(c=>!c.nodes.length);
-  return <><header className="atlas-detail-header"><span>{node.date} · {node.date_kind==='model-adoption'?pick('型号采用','Model adoption'):node.date_kind==='engineering-release'?pick('工程公开','Engineering release'):pick('资料首发','Source publication')}</span><button onClick={close} aria-label={pick('关闭节点详情','Close node details')}>{pick('关闭','Close')} ×</button></header>
-    <h3 id={'detail-heading-'+node.id}>{t(node.summary.technology)}</h3><p className="atlas-representative">{node.summary.representative}</p><p className="atlas-original-title">{node.title}</p>
-    {([[pick('当时的瓶颈','The bottleneck'),node.problem],[pick('技术如何改变局面','How the mechanism works'),node.mechanism],[pick('证据与条件','Evidence and conditions'),node.evidence],[pick('带来的新约束','New constraints'),node.limit]] as [string,Copy][]).map(([title,copy])=><section key={title}><h4>{title}</h4><p>{t(copy)}</p></section>)}
-    {node.formula&&<pre className="evo-formula">{node.formula}</pre>}
-    {cases.length>0&&<section><h4>{pick('公司 / 模型采用','Company / model adoption')}</h4>{cases.map(c=><div className="atlas-adoption" key={c.id}><strong>{catalog.companies[c.company]||pick('研究／开源项目','Research / open source')} · {c.model} · {c.year}</strong><p>{t(c.evidence)}</p><a href={catalog.sources[c.source].url} target="_blank" rel="noreferrer">{pick('采用依据','Adoption evidence')} ↗</a></div>)}</section>}
-    <section><h4>{pick('原始资料','Primary sources')}</h4><ul className="evo-sources">{node.references.map(ref=>{const s=catalog.sources[ref.source];return <li key={ref.source}><a href={s.url} target="_blank" rel="noreferrer">{s.title} ↗</a><small>{t(sourceKinds[s.kind]||sourceKinds['official-note'])} · {s.date||pick('未标日期','Date not stated')}{s.revised_at&&<> · {pick('修订','Revised')} {s.revised_at}</>}</small><p>{t(ref.section)}</p><small>{pick('核对','Checked')} {s.checked_at}</small></li>;})}</ul></section>
-    <section><h4>{pick('关联节点','Related milestones')} · {relations.length}</h4>{relations.length?<ul className="atlas-detail-relations">{relations.map(e=>{const outgoing=e.from_node===node.id,target=nodeById[outgoing?e.to_node:e.from_node];return <li key={e.id}><span>{t(relationCopy[e.kind])} · {catalog.tracks.find(t=>t.id===target.route.track)!.name}</span><Link to={nodeDestination(target.node.id)}>{outgoing?'→':'←'} {t(target.node.summary.technology)} · {target.node.summary.representative}</Link><p>{t(e.reason)}</p>{e.sources.map(id=><a className="atlas-relation-source" key={id} href={catalog.sources[id].url} target="_blank" rel="noreferrer">{catalog.sources[id].title} ↗</a>)}</li>;})}</ul>:<p>{pick('尚未收录有明确来源的独立关系。时间脉络不表示方法继承。','No separately sourced relation is recorded. Chronology does not imply method inheritance.')}</p>}</section>
-    {unbound.length>0&&<details className="atlas-adoption-notes"><summary>{pick('同路线的其他实践','Other practices on this route')}</summary><p>{pick('以下证据适用于路线，不能据此推断采用了本节点的具体方法。','These sources support route-level practice, not adoption of this specific method.')}</p>{unbound.map(c=><p key={c.id}>{catalog.companies[c.company]||pick('研究项目','Research')} · {c.model} · {c.year}<br/>{t(c.evidence)} <a href={catalog.sources[c.source].url} target="_blank" rel="noreferrer">↗ {pick('来源','Source')}</a></p>)}</details>}
-    <Link className="atlas-question-link" to={QUESTIONS+'/'+node.question}>{pick('相关重要问题','Related question')} · {node.question}<br/>{t(questionById[node.question].title)} →</Link>
-  </>;
-}
-
-function TrackMap({track,selected,company,choose,close,recent}:{track:Track;selected:string;company:string;choose:(id:string)=>void;close:()=>void;recent:boolean}){
-  const {t,pick,zh}=useCopy(),info=catalog.tracks.find(v=>v.id===track)!,layout=atlasLayouts[track];
-  const target=layout.byId[selected];
-  const [viewport,setViewport]=useState(()=>loadViewport(track)),viewRef=useRef(viewport);
-  const [full,setFull]=useState(false),[mobile,setMobile]=useState(false),[mini,setMini]=useState({left:0,top:0,width:layout.width,height:layout.height});
-  const section=useRef<HTMLElement>(null),scroll=useRef<HTMLDivElement>(null),dialog=useRef<HTMLDialogElement>(null),sheet=useRef<HTMLDialogElement>(null),fullscreenButton=useRef<HTMLButtonElement>(null),beforeDetail=useRef<AtlasViewport|null>(null);
-  const drag=useRef<{x:number;y:number;left:number;top:number}|null>(null),recentDone=useRef(false),returnFocus=useRef('');
-  const selectedId=target?selected:'';
-  function syncMini(){const el=scroll.current;if(!el)return;const v=viewRef.current;v.left=el.scrollLeft;v.top=el.scrollTop;setMini({left:v.left/v.zoom,top:v.top/v.zoom,width:Math.min(layout.width,el.clientWidth/v.zoom),height:Math.min(layout.height,el.clientHeight/v.zoom)});}
-  function apply(next:AtlasViewport){viewRef.current=next;setViewport({...next});persistViewport(track,next);}
-  function focusNode(id:string){const el=scroll.current,item=layout.byId[id];if(!el||!item)return;const v=viewRef.current;el.scrollLeft=Math.max(0,(item.rect.x+item.rect.width/2)*v.zoom-el.clientWidth/2);el.scrollTop=Math.max(0,(item.rect.y+item.rect.height/2)*v.zoom-el.clientHeight/2);syncMini();}
-  function changeZoom(mode:AtlasViewport['mode'],zoom?:number){const el=scroll.current;if(!el)return;const v=viewRef.current;const nextZoom=zoom??(mode==='all'?Math.min(1,Math.max(el.clientWidth<700?.65:.35,el.clientWidth/layout.width)):.85);const next=boundedViewport({mode,zoom:nextZoom,left:mode==='all'?0:(el.scrollLeft+el.clientWidth/2)/v.zoom*nextZoom-el.clientWidth/2,top:mode==='all'?0:(el.scrollTop+el.clientHeight/2)/v.zoom*nextZoom-el.clientHeight/2});apply(next);}
-  useEffect(()=>{const media=window.matchMedia('(max-width:700px)');const update=()=>setMobile(media.matches);update();media.addEventListener('change',update);return()=>media.removeEventListener('change',update);},[]);
-  useLayoutEffect(()=>{if(!full)return;const previous=document.body.style.overflow;dialog.current?.showModal();document.body.style.overflow='hidden';return()=>{dialog.current?.close();document.body.style.overflow=previous;};},[full]);
-  // Only a new cross-track selection exits this map; opening another map remains allowed.
-  useEffect(()=>{if(full&&selected&&!target)exitFull();},[selected]);
-  useEffect(()=>{const el=sheet.current;if(mobile&&target){if(!el?.open)el?.showModal();}else el?.close();},[mobile,selectedId,full]);
-  useLayoutEffect(()=>{const el=scroll.current;if(!el)return;el.scrollLeft=viewport.left;el.scrollTop=viewport.top;syncMini();},[viewport.zoom,viewport.mode,viewport.left,viewport.top,full]);
-  useLayoutEffect(()=>{
-    const el=scroll.current;if(!el)return;
-    const observer=new ResizeObserver(()=>{
-      if(viewRef.current.mode==='all'&&!selectedId){const zoom=Math.min(1,Math.max(el.clientWidth<700?.65:.35,el.clientWidth/layout.width));if(Math.abs(zoom-viewRef.current.zoom)>.001)apply({...viewRef.current,zoom});}
-      syncMini();
-    });observer.observe(el);return()=>observer.disconnect();
-  },[full,selectedId,layout.width]);
-  useEffect(()=>{
-    if(!target){if(beforeDetail.current){apply(beforeDetail.current);beforeDetail.current=null;}return;}
-    if(!beforeDetail.current)beforeDetail.current={...viewRef.current};
-    returnFocus.current=selected;
-    if(viewRef.current.mode==='all')apply({...viewRef.current,mode:'read'});
-    // Let closing another track's full screen and restoring its height settle first.
-    let nextFrame=0;
-    const timer=requestAnimationFrame(()=>{nextFrame=requestAnimationFrame(()=>{focusNode(selected);scroll.current?.scrollIntoView({block:'start',inline:'nearest',behavior:'instant'});const button=section.current?.querySelector<HTMLButtonElement>('[data-node="'+selected+'"]');if(!mobile)button?.focus({preventScroll:true});});});
-    return()=>{cancelAnimationFrame(timer);cancelAnimationFrame(nextFrame);};
-  },[selectedId,mobile]);
-  useEffect(()=>{
-    if(!recent||target||recentDone.current)return;recentDone.current=true;
-    const el=scroll.current;if(!el)return;const band=layout.bands.find(b=>b.start===2025)!;apply({zoom:.85,mode:'read',left:band.x*.85,top:0});
-  },[recent,selectedId]);
-  useEffect(()=>()=>persistViewport(track,viewRef.current),[track]);
-  function closeDetails(){close();requestAnimationFrame(()=>section.current?.querySelector<HTMLButtonElement>('[data-node="'+returnFocus.current+'"]')?.focus({preventScroll:true}));}
-  function exitFull(){apply({...viewRef.current});setFull(false);requestAnimationFrame(()=>fullscreenButton.current?.focus({preventScroll:true}));}
-  const neighbors=new Set(catalog.relations.filter(e=>e.from_node===selected||e.to_node===selected).flatMap(e=>[e.from_node,e.to_node]));
-  const canvasStyle={width:layout.width,height:layout.height,transform:`scale(${viewport.zoom})`,'--atlas-meta-size':Math.min(24,Math.max(19,11/viewport.zoom))+'px','--atlas-title-size':Math.min(26,Math.max(21,12/viewport.zoom))+'px'} as CSSProperties;
-  const marker='atlas-arrow-'+track;
-  const controls=<div className="atlas-map-tools"><span>{pick('年份 · 技术 · 代表模型 / 项目','Year · technology · model / project')}</span><div><button aria-pressed={viewport.mode==='all'} onClick={()=>changeZoom('all')}>{pick('全图','Overview')}</button><button aria-pressed={viewport.mode==='read'} onClick={()=>changeZoom('read')}>{pick('适合阅读','Read')}</button><button aria-label={pick('缩小'+t(info.label),'Zoom out '+t(info.label))} onClick={()=>changeZoom('manual',Math.max(.35,viewport.zoom/1.2))}>−</button><output aria-label={pick('缩放比例','Zoom level')}>{Math.round(viewport.zoom*100)}%</output><button aria-label={pick('放大'+t(info.label),'Zoom in '+t(info.label))} onClick={()=>changeZoom('manual',Math.min(1.5,viewport.zoom*1.2))}>＋</button><button ref={full?undefined:fullscreenButton} onClick={()=>{if(full)exitFull();else{apply({...viewRef.current});setFull(true);}}}>{full?pick('退出全屏','Exit full screen'):pick('全屏','Full screen')}</button></div></div>;
-  const content=<>{controls}<div className={'atlas-map-board'+(target&&!mobile?' with-detail':'')}>
-    <div className="atlas-map-main"><div className="atlas-map-scroll" ref={scroll} role="region" aria-label={t(info.label)+pick('可缩放总图',' zoomable map')} tabIndex={0} style={{height:full?'100%':viewport.mode==='all'?layout.height*viewport.zoom+2:660}} onScroll={()=>{syncMini();persistViewport(track,viewRef.current);}}
-      onPointerDown={e=>{if(e.pointerType!=='mouse'||(e.target as Element).closest('button,a'))return;const el=e.currentTarget;drag.current={x:e.clientX,y:e.clientY,left:el.scrollLeft,top:el.scrollTop};el.setPointerCapture(e.pointerId);el.classList.add('dragging');}}
-      onPointerMove={e=>{if(!drag.current)return;e.currentTarget.scrollLeft=drag.current.left+drag.current.x-e.clientX;e.currentTarget.scrollTop=drag.current.top+drag.current.y-e.clientY;}}
-      onPointerUp={e=>{drag.current=null;e.currentTarget.classList.remove('dragging');}} onPointerCancel={e=>{drag.current=null;e.currentTarget.classList.remove('dragging');}}
-      onKeyDown={e=>{if(e.target!==e.currentTarget)return;const el=e.currentTarget;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();el.scrollLeft+=e.key==='ArrowRight'?160:-160;}if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();el.scrollTop+=e.key==='ArrowDown'?160:-160;}}}>
-      <div className="atlas-map-extent" style={{width:layout.width*viewport.zoom+(target&&!mobile?Math.min(360,(scroll.current?.clientWidth||700)/2):0),height:layout.height*viewport.zoom}}><div className="atlas-map-canvas" style={canvasStyle}>
-        {layout.bands.map(b=><div key={b.label} className={'atlas-year-band'+(b.start>=2025?' recent':'')} style={{left:b.x,width:b.width}}><strong>{b.label}</strong>{b.start>=2025&&<span>{pick('近期进展','Recent advances')}</span>}</div>)}
-        <svg className="atlas-map-wires" width={layout.width} height={layout.height} aria-hidden="true"><defs><marker id={marker} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 1L9 5L0 9" className="atlas-arrow"/></marker></defs>{layout.paths.map(p=><path key={p.id} d={p.path} className={(p.evidence?'evidence '+p.kind:'chronology')+(p.evidence&&(p.from===selected||p.to===selected)?' highlighted':'')} markerEnd={p.evidence?`url(#${marker})`:undefined}/>)}</svg>
-        <div className="atlas-map-root" style={{left:layout.root.x,top:layout.root.y,width:layout.root.width}}>{zh?t(info.label).replace('（推训）',''):info.name}<small>{pick('技术演进','Evolution')}</small></div>
-        {layout.items.map(({node,route,rect},i)=><button id={'node-'+node.id} key={node.id} data-node={node.id} className={'atlas-map-node'+(node.highlight?' major':'')+(node.id===selected?' selected':'')+(neighbors.has(node.id)?' related':'')+(company&&nodeCases(route,node.id).some(c=>c.company===company)?' matched':'')} style={{left:rect.x,top:rect.y,width:rect.width,height:rect.height}} aria-expanded={node.id===selected} aria-controls={node.id===selected?'detail-'+node.id:undefined} aria-label={node.date+' · '+t(node.summary.technology)+' · '+node.summary.representative} title={node.title} onClick={()=>choose(node.id)} onKeyDown={e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();const next=layout.items[Math.min(layout.items.length-1,Math.max(0,i+(['ArrowRight','ArrowDown'].includes(e.key)?1:-1)))];section.current?.querySelector<HTMLButtonElement>('[data-node="'+next.node.id+'"]')?.focus();}}><time dateTime={node.date.length===10?node.date:undefined}>{node.date.slice(0,4)}{node.highlight&&<span aria-hidden="true"> ·</span>}</time><strong>{t(node.summary.technology)}</strong><span>{node.summary.representative}</span></button>)}
-      </div></div>
-    </div><div className="atlas-map-legend"><div><span className="chronology">{pick('时间脉络，非继承','Chronology, not inheritance')}</span><span className="evidence">{pick('有来源的技术关系','Sourced technical relation')}</span><small>{pick('年份分段，间距不代表时长。拖动或滑动平移。','Year bands are not a duration scale. Drag or scroll to pan.')}</small></div><button className="atlas-minimap" aria-label={pick('缩略导航：点击位置，或按方向键平移','Overview navigation: click a position or use arrow keys to pan')} onKeyDown={e=>{if(!scroll.current)return;if(e.key.startsWith('Arrow')){e.preventDefault();scroll.current.scrollLeft+=e.key==='ArrowLeft'?-220:e.key==='ArrowRight'?220:0;scroll.current.scrollTop+=e.key==='ArrowUp'?-220:e.key==='ArrowDown'?220:0;}}} onClick={e=>{if(!scroll.current)return;const box=e.currentTarget.getBoundingClientRect();scroll.current.scrollLeft=(e.clientX-box.left)/box.width*layout.width*viewport.zoom-scroll.current.clientWidth/2;scroll.current.scrollTop=(e.clientY-box.top)/box.height*layout.height*viewport.zoom-scroll.current.clientHeight/2;}}><svg viewBox={`0 0 ${layout.width} ${layout.height}`} preserveAspectRatio="none" aria-hidden="true">{layout.items.map(({node,rect})=><rect key={node.id} x={rect.x} y={rect.y} width={rect.width} height={rect.height}/>)}<rect className="atlas-minimap-view" x={mini.left} y={mini.top} width={mini.width} height={mini.height}/></svg></button></div></div>
-    {target&&!mobile&&<aside id={'detail-'+selected} className="atlas-inspector" aria-labelledby={'detail-heading-'+selected}><NodeDetail node={target.node} route={target.route} close={closeDetails}/></aside>}
-  </div><dialog ref={sheet} className="atlas-detail-sheet" aria-label={pick('节点详情','Milestone details')} onCancel={e=>{e.preventDefault();closeDetails();}}>{target&&mobile&&<div id={'detail-'+selected} className="atlas-inspector"><NodeDetail node={target.node} route={target.route} close={closeDetails}/></div>}</dialog></>;
-  return <section ref={section} className={'atlas-master-map evo-'+track} id={'track-'+track} aria-labelledby={'heading-'+track} onKeyDown={e=>{if(e.key==='Escape'&&target&&!mobile){e.preventDefault();e.stopPropagation();closeDetails();}}}><header className="atlas-track-definition"><div><h2 id={'heading-'+track}>{t(info.label)} {zh&&<span>{info.name==='System'?'Systems':info.name}</span>}</h2><p>{t(info.definition)}</p></div><span>{layout.items.length} {pick('个节点 · 全部展开','milestones · all shown')}</span></header>
-    {!full&&<div className="atlas-map-frame">{content}</div>}<dialog ref={dialog} className="atlas-fullscreen" aria-label={t(info.label)+pick('完整技术图谱',' complete technical map')} onCancel={e=>{e.preventDefault();if(target)closeDetails();else exitFull();}}>{full&&<><header className="atlas-fullscreen-title"><strong>{t(info.label)} · {pick('技术图谱','Technical map')}</strong></header><div className="atlas-map-frame">{content}</div></>}</dialog>
-  </section>;
-}
-
+export {NodeDetail} from './NodeDetail';
 export function AtlasMap({navigation,footer}:{navigation:ReactNode;footer:ReactNode}){
-  const {t,pick}=useCopy(),[params,setParams]=useSearchParams(),location=useLocation();
-  const selected=params.get('node')||'',company=catalog.companies[params.get('company')||'']?params.get('company')||'':'',track=params.get('track')||'';
-  const choose=(id:string)=>setParams(old=>{const next=new URLSearchParams(old);next.set('node',id);next.set('track',nodeById[id].route.track);return next;});
-  const close=()=>setParams(old=>{const next=new URLSearchParams(old);next.delete('node');return next;},{replace:true});
-  // Legacy parameters position the full maps; they never hide tracks or historical nodes.
-  useEffect(()=>{if(selected&&nodeById[selected])return;if(!catalog.tracks.some(t=>t.id===track))return;const timer=requestAnimationFrame(()=>document.getElementById('track-'+track)?.scrollIntoView({block:'start',behavior:'instant'}));return()=>cancelAnimationFrame(timer);},[track,selected]);
-  return <div className="evo-page atlas-page"><PageMetadata title={pick('大模型技术演进 · FieldToFit','LLM technical evolution · FieldToFit')} description={pick('2017—2026训练、推理、系统三张完整技术图谱，包含节点、关系证据与18题解析。','Three complete technical maps of training, inference and systems, 2017–2026, with evidence and 18 explanations.')} path={location.pathname}/>{navigation}<header className="evo-hero atlas-master-hero"><p className="evo-eyebrow">2017—2026</p><h1>{pick('大模型技术演进','How large models evolved')}</h1><p>{pick('从定义出发，沿时间读懂技术的分叉与汇合。训练、推理、系统，三张完整总图。','Start with definitions and follow technical branches and connections through time: three complete maps of training, inference and systems.')}</p><div className="atlas-overview-bar"><nav aria-label={pick('总图定位','Map navigation')}>{catalog.tracks.map(v=><a key={v.id} href={'#track-'+v.id}>{t(v.label)} ↘</a>)}</nav><label>{pick('公司高亮','Highlight company')}<select value={company} onChange={e=>setParams(old=>{const next=new URLSearchParams(old);e.target.value?next.set('company',e.target.value):next.delete('company');return next;},{replace:true})}><option value="">{pick('全部公司','All companies')}</option>{Object.entries(catalog.companies).map(([id,label])=><option key={id} value={id}>{label}</option>)}</select></label></div><p className="atlas-revision">{Object.keys(nodeById).length} {pick('个节点','milestones')} · {catalog.relations.length} {pick('条关系','relations')} · {pick('内容修订','Content revision')} {catalog.revision} · {catalog.updated_at}</p>{company&&<p className="evo-note">{pick('高亮有具体型号证据的节点；其余节点保留。未标注不等于未采用。','Nodes with model-specific evidence are highlighted; all other nodes remain. An absent label does not imply non-use.')}</p>}{selected&&!nodeById[selected]&&<p role="status">{pick('此节点未找到，仍可浏览完整图谱。','This milestone was not found; all maps remain available.')}</p>}</header>
-    {catalog.tracks.map(v=><TrackMap key={v.id} track={v.id} selected={selected} company={company} choose={choose} close={close} recent={params.get('period')==='recent'&&(!track||track===v.id)}/>)}{footer}
-  </div>;
+  const {pick}=useWorkspace(),location=useLocation();
+  return <div className="evo-page atlas-page"><PageMetadata title={pick('大模型技术演进 · FieldToFit','LLM technical evolution · FieldToFit')} description={pick('2017—2026训练、推理、系统三张技术总图，追溯旗舰型号的公开技术路线。','Trace disclosed flagship approaches across training, inference and systems maps, 2017–2026.')} path={location.pathname}/>{navigation}<header className="evo-hero atlas-master-hero"><p className="evo-eyebrow">2017—2026</p><h1>{pick('大模型技术演进','How large models evolved')}</h1><p>{pick('沿时间理解技术的分叉与汇合，再看今天的模型走到了哪里。','Follow technical branches through time, then see where today’s models fit.')}</p></header><FlagshipExplorer/>{footer}</div>;
 }

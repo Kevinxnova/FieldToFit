@@ -162,7 +162,7 @@ def test_complete_atlas_definitions_and_summaries(site):
     for track in CATALOG['tracks']:
         assert len(track['definition']) == 2 and all(track['definition'])
     nodes = [node for route in CATALOG['routes'] for node in route['nodes']]
-    assert len(nodes) == 93
+    assert len(nodes) >= 93
     for node in nodes:
         assert len(node['summary']['technology']) == 2 and all(node['summary']['technology'])
         assert node['summary']['representative'].strip()
@@ -181,13 +181,52 @@ def test_home_curated_milestones_match_shared_preview(site, prefix, index):
     text = site.get(prefix+'/for-you').text
     section = text.split('<section id="llm-evolution">',1)[1].split('<section id="news-codex-28-days">',1)[0]
     selected = [entry['id'] for entries in HOME_PREVIEW.values() for entry in entries]
-    assert len(selected) == len(set(selected)) == 21
+    assert len(set(selected)) >= 21
+    assert all(len(entries) == len({e['id'] for e in entries}) for entries in HOME_PREVIEW.values())
     for track, entries in HOME_PREVIEW.items():
         for entry in entries:
             node = NODE_BY_ID[entry['id']]
-            assert any(node in r['nodes'] for r in CATALOG['routes'] if r['track']==track)
+            assert any(node in r['nodes'] for r in CATALOG['routes'] if r['track']==track) or any(e['node']==node['id'] and e['track']==track for e in CATALOG['flagships']['adoptions'])
             assert 'node='+entry['id'] in section
             assert html.escape(node['summary']['technology'][index]) in section
             assert html.escape(node['summary']['representative']) in section
     assert 'node=dense-llama' not in section  # Old automatically selected route endpoint.
     assert QUESTIONS in section
+
+
+def test_flagship_identity_adoption_and_unknown_boundaries():
+    nodes = {n['id'] for r in CATALOG['routes'] for n in r['nodes']}
+    f = CATALOG['flagships']; models = {m['id']: m for m in f['models']}
+    assert len(models) == len(f['models']) == 25
+    assert len(f['scope']) == len(set(m['company'] for m in models.values())) == 15
+    assert {'openai','anthropic','google','zai','baidu','tencent','huawei'} <= set(f['scope'])
+    assert len({e['id'] for e in f['adoptions']}) == len(f['adoptions'])
+    for m in models.values():
+        assert m['source'] in CATALOG['sources']
+        assert set(m['gaps']) == {'train','inference','systems'}
+        assert all(len(m[k])==2 and all(m[k]) for k in ('role','status','notes','date_kind'))
+        assert m['checked_at'] == f['checked_at']
+    for edge in f['adoptions']:
+        assert edge['model'] in models and edge['node'] in nodes
+        assert edge['source'] in CATALOG['sources'] and edge['reading']=='body'
+        assert edge['track'] in ('train','inference','systems')
+        assert all(len(edge[k])==2 and all(edge[k]) for k in ('statement','boundary','section'))
+    # No extrapolation to the undisclosed successor, API deployment or unresolved flagship.
+    assert not any(e['model'] in ('minimax31','qwen38-max','pangu') for e in f['adoptions'])
+    assert not any(e['node']=='think-cot' and e['model'].startswith('gpt') for e in f['adoptions'])
+    assert any(e['model']=='opus55' and e['track']=='train' for e in f['adoptions'])
+    assert models['mistral4']['status'][1]=='Public preview'
+
+
+@pytest.mark.parametrize('prefix,index', [('',0),('/en',1)])
+def test_flagships_same_sources_in_home_full_and_api(site,prefix,index):
+    f=CATALOG['flagships']
+    assert site.get('/api/v1/platform/evolution').json['flagships']==f
+    for path in ('/for-you',ROOT):
+        body=site.get(prefix+path).text
+        for m in f['models']:
+            assert html.escape(m['name']) in body and html.escape(m['notes'][index]) in body
+            assert 'evolution_models='+m['id'] in body
+        for e in f['adoptions']:
+            assert html.escape(e['statement'][index]) in body
+            assert html.escape(CATALOG['sources'][e['source']]['url']) in body

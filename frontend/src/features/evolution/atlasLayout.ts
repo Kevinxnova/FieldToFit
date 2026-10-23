@@ -1,18 +1,24 @@
-import {catalog,type Track,type Milestone,type EvolutionRoute} from './data';
+import {catalog,nodeById,type Track,type Milestone,type EvolutionRoute} from './data';
+import {flagships} from './flagships';
+import preview from '../../../../backend/llm_evolution/home_preview.json';
 
 export type Rect={x:number;y:number;width:number;height:number};
 export type MapItem={node:Milestone;route:EvolutionRoute;rect:Rect};
 export type MapPath={id:string;from:string;to:string;path:string;evidence:boolean;kind?:string};
 // These are spatial packing priorities, not additional user-facing categories.
 const packing:Record<string,number>={dense:1,encoder:0,text2text:0,moe:0,hybrid:0,data:1,preference:2,reasoning_rl:2,agent_rl:2,adaptation:3,representation:3,shared_kv:0,latent_kv:0,long_context:0,sparse_context:0,quantization:1,draft_verify:1,thinking:2,tools:2,sharding:0,model_parallel:0,expert_systems:0,kernels:1,kv_paging:2,batching:2,disaggregation:2,rl_systems:3};
-const periods=[{label:'2017–2019',start:2017,end:2019,columns:1},{label:'2020–2021',start:2020,end:2021,columns:1},...Array.from({length:5},(_,i)=>({label:String(2022+i),start:2022+i,end:2022+i,columns:i===3?2:1}))];
+const periods=[{label:'2017–2019',start:2017,end:2019,columns:1},{label:'2020–2021',start:2020,end:2021,columns:1},...Array.from({length:5},(_,i)=>({label:String(2022+i),start:2022+i,end:2022+i,columns:i===4?3:i===3?2:1}))];
 export function connect(a:Rect,b:Rect){
   const start=a.x+a.width, end=b.x,ay=a.y+a.height/2,by=b.y+b.height/2;
   if(end>start+10){const bend=Math.max(20,(end-start)/2);return `M${start},${ay} C${start+bend},${ay} ${end-bend},${by} ${end},${by}`;}
   const gutter=Math.min(a.x,b.x)-18;return `M${a.x},${ay} C${gutter-12},${ay} ${gutter-12},${by} ${b.x},${by}`;
 }
-export function buildAtlas(track:Track){
-  const routes=catalog.routes.filter(r=>r.track===track),nodeWidth=184,nodeHeight=260,columnStep=209,rowStep=288;
+export function buildAtlas(track:Track,all=true,selected=''){
+  const required=new Set([...preview[track].map(v=>v.id),...flagships.adoptions.filter(e=>e.track===track).map(e=>e.node),selected]);
+  const routes=catalog.routes.filter(r=>r.track===track).map(r=>({...r,nodes:r.nodes.filter(n=>all||required.has(n.id)||n.id.startsWith('post-'))}));
+  const projections=[...new Set(flagships.adoptions.filter(e=>e.track===track).map(e=>e.node))].filter(id=>nodeById[id].route.track!==track);
+  for(const id of projections){const {node,route}=nodeById[id];routes.push({...route,nodes:[node]});}
+  const nodeWidth=184,nodeHeight=190,columnStep=209,rowStep=216;
   let x=118;
   const bands=periods.map(b=>{const band={...b,x,width:b.columns*columnStep+12};x+=band.width;return band;});
   const items:MapItem[]=[];let y=103;
@@ -25,7 +31,8 @@ export function buildAtlas(track:Track){
     }
     if(rows)y+=rows*rowStep+38;
   }
-  const height=y+15,width=x+16,root={x:10,y:height/2-45,width:97,height:90};
+  const modelX=x+64,models=flagships.models.map((model,i)=>({model,rect:{x:modelX+(i%2)*216,y:104+Math.floor(i/2)*180,width:200,height:164}}));
+  const height=Math.max(y+15,104+Math.ceil(models.length/2)*180+24),width=modelX+448,root={x:10,y:height/2-45,width:97,height:90};
   const byId=Object.fromEntries(items.map(item=>[item.node.id,item]));
   const paths:MapPath[]=[];
   for(const route of routes){
@@ -35,7 +42,7 @@ export function buildAtlas(track:Track){
   for(const edge of catalog.relations){
     if(byId[edge.from_node]&&byId[edge.to_node])paths.push({id:edge.id,from:edge.from_node,to:edge.to_node,path:connect(byId[edge.from_node].rect,byId[edge.to_node].rect),evidence:true,kind:edge.kind});
   }
-  return {track,width,height,root,bands,items:items.sort((a,b)=>a.node.date.localeCompare(b.node.date)||a.node.id.localeCompare(b.node.id)),byId,paths};
+  return {track,width,height,root,bands,models,modelX,items:items.sort((a,b)=>a.node.date.localeCompare(b.node.date)||a.node.id.localeCompare(b.node.id)),byId,paths};
 }
 export const atlasLayouts=Object.fromEntries(catalog.tracks.map(t=>[t.id,buildAtlas(t.id)])) as Record<Track,ReturnType<typeof buildAtlas>>;
 export type AtlasViewport={zoom:number;left:number;top:number;mode:'all'|'read'|'manual'};

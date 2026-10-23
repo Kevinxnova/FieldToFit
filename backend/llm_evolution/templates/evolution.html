@@ -8,6 +8,7 @@
 {% for track in catalog.tracks %}<section><h2>{{ track.name }} · {{ track.label[index] }}</h2>{% for q in catalog.questions if q.track==track.id %}<article><h3><a href="{{ questions }}/{{ q.id }}">{{ q.id }} · {{ q.title[index] }}</a></h3><p>{{ q.goal[index] }}</p></article>{% endfor %}</section>{% endfor %}
 {% else %}
 <p>{{ 'Three horizontal maps, with full history and a 2025–2026 focus. Chronology is separate from improvement, alternative, combination, adoption and cross-track relations. Company evidence applies to named models.' if english else '三张横向图，提供完整历史与2025—2026放大阅读。时间先后与改进、替代、组合、采用及跨主线支撑分别记录；公司证据仅适用于具体型号。' }}</p>
+{% include 'flagships.html' %}
 {% set kinds={'method':['方法研究','Method'],'model':['型号实践','Model practice'],'engineering':['工程实现','Engineering']} %}
 {% set relations={'improvement':['改进','Improvement'],'alternative':['替代路线','Alternative'],'combination':['组合','Combination'],'adoption':['采用','Adoption'],'cross-track':['跨主线支撑','Cross-track support']} %}
 {% for track in catalog.tracks %}<section><h2>{{ track.name }} · {{ track.label[index] }}</h2><p>{{ track.definition[index] }}</p>

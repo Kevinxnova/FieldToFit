@@ -1,6 +1,28 @@
 # 大模型技术演进：旗舰型号与三图证据矩阵
 
-核对日期：2026-10-23（Asia/Shanghai）。这是研究证据附录；范围、交付顺序、验收与实现状态统一见[项目总览 REQ-25-21—26](../../FieldToFit-PM.md#req-25-21)。本文件中的候选尚未加入网站93节点／43关系目录，不代表15家公司当前全部旗舰已核实。
+核对日期：2026-10-23（Asia/Shanghai）。这是研究证据附录；范围、交付顺序、验收与实现状态统一见[项目总览 REQ-25-21—26](../../FieldToFit-PM.md#req-25-21)。首轮候选矩阵保留为2026-10-23研究快照；下方「实施复核」说明本批实际纳入与覆盖边界，不代表15家公司当前全部旗舰已核实。
+
+## 实施复核（资料核对2026-10-23，交付2026-10-24）
+
+目录revision 4：105技术节点、47技术关系、25型号／待核条目、27条型号披露。15家公司均有入口或明确缺口，其中12家、15型号有至少一条相关正文支持的披露；模型条目覆盖率与配方完整度分列。旧93节点完整内容、43关系与18题保持。
+
+以下是首轮矩阵之后重新打开相关正文的修正；后文旧候选状态不覆盖这些复核结果。正文已读仅指支持论述的相关章节，不宣称逐页全文审阅。
+
+| 材料 | 相关正文与实际纳入 | 限制 |
+| --- | --- | --- |
+| [Kimi K3 v2](https://arxiv.org/html/2607.24653v2) | §2.1，KDA／Gated MLA混合结构、通道遗忘与delta递推；从摘要提升为相关正文 | v1为7月27日，v2为8月7日，版本分列 |
+| [DeepSeek V4.1 Flash](https://arxiv.org/html/2609.19969v1) | §2.3—2.3.1，CSA-2的Full／Reindex／Reuse与跨层KV、索引复用 | 不能继承给未核实的V4 Pro名称 |
+| [ERNIE 5.0](https://arxiv.org/html/2602.04705v1) | §2—2.1，统一多模态next-group-of-tokens目标与共享专家池 | 报告身份明确，最新旗舰身份仍待核 |
+| [Mistral Large 4](https://mistral.ai/news/mistral-large-4/) | Reinforcement learning at scale段：SFT＋RL、异步rollout与训练、长轨迹和反馈异质性，建立系统节点 | 更正首轮「后训练细节待公开」的过宽描述；权重计划不写成已开放 |
+| [Muse Wonder](https://research.meta.ai/blog/muse-wonder) | Wonder与WonderFull并列，预训练及RL规模扩展明确，独立一般RL节点 | 不直接等同推理专用RL，不继承Llama架构 |
+| [Claude Transparency](https://www.anthropic.com/transparency) | Opus 5.5的Model architecture and training methodology段，constitution引导后训练 | 不沿用旧Constitutional AI具体配方；Fable／Mythos仅身份索引状态 |
+| [GPT-6 Astra](https://deploymentsafety.openai.com/gpt-6-astra) | §2内部推理与RL，独立「学习到的内部推理」节点；Sol按自身资料对Astra训练类型的说明 | 不与提示式CoT等同，不推断MoE及未披露系统结构 |
+| [GLM](https://github.com/zai-org/GLM-5) | 5.3沿5.2base后训练；Flash新base与sparse／linear、mHC分开 | 动态README，未固定提交快照；精确首发日未给则仅标年份 |
+| [MiniMax M3](https://www.minimax.io/blog/minimax-m3) | MSA分块筛选及KV外层算子，跨图共享技术身份 | 不继承给M3.1 Flash |
+| [Seed2.1](https://seed.bytedance.com/en/seed2_1) | Pro／Turbo身份明确，产品能力和型号卡入口保留 | 型号卡PDF读取失败；无凭据的训练或系统采用线未加入 |
+| [Pangu产品说明](https://support.huaweicloud.com/productdesc-pangulm/pangulm_01_0001.html) | 页面10月14日更新，作为待核入口 | 服务介绍不是精确旗舰模型报告，未画采用线 |
+
+新增采用边只指「该型号相关正文披露此技术身份」，不是算法原创、生产框架或全部内部配方的推断。仅一侧披露的比较列不能解释为另一侧未采用。型号日期、技术首发和资料核对日独立维护。网页React、SSR与JSON均由同一目录生成；实现及测试状态只在项目总览记录。
 
 ## 证据如何阅读
 

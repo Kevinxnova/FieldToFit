@@ -1,34 +1,34 @@
 {
-  "version": "1.16.4",
-  "revision": "e1af2ce6437599f7d71d1479985b977673928e49ccfa1bc553fba99ae70e4a6f",
+  "version": "1.17.0",
+  "revision": "71afba60689f959d30c2fb42578a910dbd5b8323d788378053daa897f37ea669",
   "items": [
     {
-      "version": "1.16.4",
-      "date": "2026-10-23",
+      "version": "1.17.0",
+      "date": "2026-10-24",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "旗舰型号与三图技术路线方案整理",
+          "title": "旗舰型号与三图技术路线联动",
           "highlights": [
-            "项目总览补齐旗舰型号覆盖、三图定义、历史主干与当前落点、型号联动与比较、采用证据及持续维护的具体方案。",
-            "整理15家公司原始材料矩阵与24条候选关系，补充GPT、Claude、Gemini、GLM及Qwen、ERNIE、Hy4等型号证据，区分正文、摘要与资料缺口。",
-            "本批仅交付方案和研究文档；新图与比较功能未实现，现有网站内容、93节点、43关系和18题保持。"
+            "训练、推理、系统三张横向图连接历史技术与具体型号，新增型号目录、跨图高亮、双型号公开路线比较和段落级证据详情。",
+            "覆盖15家公司25个型号／待核条目，收录105个技术节点、47条技术关系和27条型号披露；资料不足者明确保留缺口，不推断闭源架构。",
+            "首页取消每图固定7节点，支持关键／全部节点、缩放和型号落点导航；保留旧节点、18题及阅读记录，双语与公开接口兼容，无数据库迁移。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Flagship model coverage and technical-map planning",
+          "title": "Flagship models linked to three technical maps",
           "highlights": [
-            "Specify flagship coverage, three-map definitions, historical paths and current model endpoints, model selection and comparison, adoption evidence, and ongoing maintenance in the project overview.",
-            "Organize primary sources for 15 companies and 24 candidate relations, including GPT, Claude, Gemini, GLM, Qwen, ERNIE and Hy4, distinguishing relevant text, abstracts and evidence gaps.",
-            "Deliver planning and research documents only; new maps and comparison remain unimplemented, preserving current website content, 93 nodes, 43 relations and 18 questions."
+            "Connect historical methods to specific models across horizontal training, inference and systems maps, with a model directory, linked highlighting, two-model evidence comparison and section-level sources.",
+            "Cover 15 companies through 25 model or unresolved entries, 105 technical milestones, 47 technical relations and 27 model disclosures; retain explicit gaps rather than inferring closed-model architectures.",
+            "Replace the homepage's fixed seven milestones per map with key/all views, zoom and endpoint navigation; preserve old milestones, 18 questions, reading records, bilingual content and public APIs without a database migration."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.16.4"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.0"
     },
     {
       "version": "1.16.3",
