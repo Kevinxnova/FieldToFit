@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.16.4"></a>
+## v1.16.4 · 旗舰型号与三图技术路线方案整理 · 2026-10-23
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Flagship model coverage and technical-map planning -->
+<!-- release-summary:zh:start -->
+- 项目总览补齐旗舰型号覆盖、三图定义、历史主干与当前落点、型号联动与比较、采用证据及持续维护的具体方案。
+- 整理15家公司原始材料矩阵与24条候选关系，补充GPT、Claude、Gemini、GLM及Qwen、ERNIE、Hy4等型号证据，区分正文、摘要与资料缺口。
+- 本批仅交付方案和研究文档；新图与比较功能未实现，现有网站内容、93节点、43关系和18题保持。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Specify flagship coverage, three-map definitions, historical paths and current model endpoints, model selection and comparison, adoption evidence, and ongoing maintenance in the project overview.
+- Organize primary sources for 15 companies and 24 candidate relations, including GPT, Claude, Gemini, GLM, Qwen, ERNIE and Hy4, distinguishing relevant text, abstracts and evidence gaps.
+- Deliver planning and research documents only; new maps and comparison remain unimplemented, preserving current website content, 93 nodes, 43 relations and 18 questions.
+<!-- release-summary:en:end -->
+
+对应REQ-25-21—26。所有者要求先完善总览中的具体方案，再进一步整理资料。以v1.16.3为基线，本批为文档patch；自v1.16.0以来的首页与内容更新保持。未来旗舰索引、跨图联动及比较涉及主要阅读流程，建议另对齐v1.17.0，尚未确认，不以本patch替代。没有数据库迁移、CMS发布、前端实施或部署。
+
+材料与缺口见[证据矩阵](docs/product/evolution-flagship-evidence.md)，本地元数据、仓库与内容保持检查见[实际验证](docs/validation/2026-10-23-evolution-flagship-plan.md)。论文日期、型号日期和核对日期分列；候选关系不等于正式采用结论或已上线功能。
+
 <a id="v1.16.3"></a>
 ## v1.16.3 · 云平台、技能标准与两篇 Claude 研究分析 · 2026-10-23
 <!-- site-deployed:2026-10-23 -->

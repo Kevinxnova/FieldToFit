@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.16.3](CHANGELOG.md#v1.16.3)** · [fieldtofit-v1.16.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.16.3)
+**当前源码版本：[v1.16.4](CHANGELOG.md#v1.16.4)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布所选 Google Cloud 托管接入、Agent Skills 捐赠、Mercury 3 和 FLUX.3 Image Klein 动态，同步两份已有档案与近期总表。
-- 分析 Claude 形式化验证与量子电路研究，各提供四条结论、对应展开和三张独立重绘，保留方法、资源口径与证据边界。
-- 新增 Google Cloud 接入中英信息卡；按真实发布轮替首页两篇报告与一卡，保留全部索引、历史日期及分享入口。
+- 项目总览补齐旗舰型号覆盖、三图定义、历史主干与当前落点、型号联动与比较、采用证据及持续维护的具体方案。
+- 整理15家公司原始材料矩阵与24条候选关系，补充GPT、Claude、Gemini、GLM及Qwen、ERNIE、Hy4等型号证据，区分正文、摘要与资料缺口。
+- 本批仅交付方案和研究文档；新图与比较功能未实现，现有网站内容、93节点、43关系和18题保持。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

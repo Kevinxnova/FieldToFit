@@ -1,7 +1,35 @@
 {
-  "version": "1.16.3",
-  "revision": "cc04eefe4f03b378d8d6057d7c0b857e5f5874cd9b06370d4ab853381d761100",
+  "version": "1.16.4",
+  "revision": "e1af2ce6437599f7d71d1479985b977673928e49ccfa1bc553fba99ae70e4a6f",
   "items": [
+    {
+      "version": "1.16.4",
+      "date": "2026-10-23",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "旗舰型号与三图技术路线方案整理",
+          "highlights": [
+            "项目总览补齐旗舰型号覆盖、三图定义、历史主干与当前落点、型号联动与比较、采用证据及持续维护的具体方案。",
+            "整理15家公司原始材料矩阵与24条候选关系，补充GPT、Claude、Gemini、GLM及Qwen、ERNIE、Hy4等型号证据，区分正文、摘要与资料缺口。",
+            "本批仅交付方案和研究文档；新图与比较功能未实现，现有网站内容、93节点、43关系和18题保持。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Flagship model coverage and technical-map planning",
+          "highlights": [
+            "Specify flagship coverage, three-map definitions, historical paths and current model endpoints, model selection and comparison, adoption evidence, and ongoing maintenance in the project overview.",
+            "Organize primary sources for 15 companies and 24 candidate relations, including GPT, Claude, Gemini, GLM, Qwen, ERNIE and Hy4, distinguishing relevant text, abstracts and evidence gaps.",
+            "Deliver planning and research documents only; new maps and comparison remain unimplemented, preserving current website content, 93 nodes, 43 relations and 18 questions."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.16.4"
+    },
     {
       "version": "1.16.3",
       "date": "2026-10-23",

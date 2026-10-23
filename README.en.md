@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.16.3](CHANGELOG.md#v1.16.3)** · [fieldtofit-v1.16.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.16.3)
+**Current source version: [v1.16.4](CHANGELOG.md#v1.16.4)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the selected Google Cloud access, Agent Skills donation, Mercury 3 and FLUX.3 Image Klein updates, with two existing dossiers and the news overview.
-- Analyze Claude formal verification and quantum circuit research through four findings and three independent redraws each, retaining methods, resource definitions and evidence limits.
-- Add the bilingual Google Cloud access card; rotate two homepage reports and one card only on publication, retaining full indexes, historical dates and share links.
+- Specify flagship coverage, three-map definitions, historical paths and current model endpoints, model selection and comparison, adoption evidence, and ongoing maintenance in the project overview.
+- Organize primary sources for 15 companies and 24 candidate relations, including GPT, Claude, Gemini, GLM, Qwen, ERNIE and Hy4, distinguishing relevant text, abstracts and evidence gaps.
+- Deliver planning and research documents only; new maps and comparison remain unimplemented, preserving current website content, 93 nodes, 43 relations and 18 questions.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
