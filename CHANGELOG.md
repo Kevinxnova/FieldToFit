@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.16.1"></a>
+## v1.16.1 · 首页三图关键节点与问题图解 · 2026-10-23
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Homepage milestone maps and illustrated questions -->
+<!-- release-summary:zh:start -->
+- 首页同时呈现训练、推理、系统三张关键节点图，共用年代框架、近期放大与有来源的技术关系，替代九条路线的首尾摘录。
+- 点击节点查看瓶颈、机制、约束、采用证据与原始资料，并可进入完整图谱定位；问题图解整合18题目录、进度与手动已读。
+- 保留93节点、43关系、18题正文及修订、既有本地记录和公开接口；双语同源，无数据库迁移。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Show selected training, inference and systems milestones together on a shared timeline, with more space for recent years and sourced relations, replacing nine first/last route excerpts.
+- Open milestone evidence and locate it in the complete maps; combine illustrated questions, the 18-question directory, progress and manual reading marks.
+- Preserve all 93 milestones, 43 relations, 18 articles and their revisions, existing browser records and public APIs; bilingual shared content without a database migration.
+<!-- release-summary:en:end -->
+
+对应REQ-25-18—20，所有者确认首页demo并授权开发验证。以已上线v1.16.0为基线，自该minor以来无其他交付；本批为已有专题首页展示与入口优化，完整图谱主要流程不变，按patch v1.16.1处理。首页选择与布局单独维护稳定ID，不复制技术正文或改写目录事实；中英React和无脚本首页使用同一节点名单。回退前端预览不会影响阅读数据；没有CMS发布或数据库迁移。本轮未部署，实际验证见[首页优化验收](docs/validation/2026-10-23-evolution-home.md)。
+
 <a id="v1.16.0"></a>
 ## v1.16.0 · 训练、推理与系统完整技术图谱 · 2026-10-22
 <!-- site-deployed:2026-10-22 -->

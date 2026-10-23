@@ -77,8 +77,8 @@ def page(path, dist, english):
     if any(k.startswith('news_') for k in request.args): targets.append('news')
     if any(k in request.args for k in ('chart','company')): targets.append('models')
     if any(k in request.args for k in ('q','type')): targets.append('watch')
-    from backend.llm_evolution import CATALOG as evolution_catalog
-    body = render_template('for_you.html', evolution=evolution_catalog, data=data, view=view, english=english, heading=info['heading'][index], description=info['description'][index],
+    from backend.llm_evolution import CATALOG as evolution_catalog, HOME_PREVIEW, NODE_BY_ID
+    body = render_template('for_you.html', evolution=evolution_catalog, evolution_preview=HOME_PREVIEW, evolution_nodes=NODE_BY_ID, data=data, view=view, english=english, heading=info['heading'][index], description=info['description'][index],
                            section_anchor=SECTIONS.get(view, ''), items=items, daily_preview=data['daily'], sections=SECTIONS, pages=PAGES,
                            legacy_targets=targets, legacy_query=request.query_string.decode('utf-8',errors='replace'),
                            calendar_items=items, calendar_cells=cells, calendar_rows=calendar_rows(cells), calendar_title=month,

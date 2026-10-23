@@ -18,7 +18,7 @@
 
 ## 完整技术图谱与证据（v1.16.0）
 
-当前目录为27路线、93节点、43关系。页面先解释三类定义，再同时展示2017—2026三张完整横向总图；不按分类折叠，不默认隐藏历史节点。`routes.highlight`控制首页节选，`nodes.highlight`只加强节点视觉权重，不控制可见性。首页每条路线仅取首末节点，省略中段不画作直接继承。
+当前目录为27路线、93节点、43关系。页面先解释三类定义，再同时展示2017—2026三张完整横向总图；不按分类折叠，不默认隐藏历史节点。`nodes.highlight`只加强完整图节点视觉权重，不控制可见性。首页使用[精选布局](../../backend/llm_evolution/home_preview.json)中的稳定ID，每图7个关键节点；React和无脚本首页共享名单，技术正文仍来自目录。`routes.highlight`保留兼容，不再决定首页自动取首尾。首页只连接目录中同时具有两个可见端点的有据关系；未显示中间节点不新增继承连线。
 
 `tracks.definition`维护双语定义，`nodes.summary.technology`与`representative`维护“年份—技术—代表模型／项目”短标题，React、无脚本正文与只读JSON同源。代表项可为方法或项目，不将所有研究强配公司。`atlasLayout.ts`按年份分段布局、为2025保留双列；间距不表示真实时长。私有排布优先级只减少空白，不新增用户可见分类。虚线表示路线时间脉络，实线／替代虚线表示有来源的独立关系；跨图关系在详情中跳转。新增节点需复核布局、短标题溢出与来源。
 
@@ -29,6 +29,12 @@
 `node`直链选择并定位节点，`track`定位总图，`company`只高亮有节点级采用证据的节点。旧`period=recent`定位近期；`view`与`relation`保留链接兼容，但不再过滤完整图。全部旧节点ID有效。每图支持全图、适合阅读、缩放、滚动／拖动、缩略导航、键盘及屏幕级全屏；桌面详情为并列侧栏，手机为底部对话框。打开详情临时采用阅读视窗并保留原视图，关闭恢复；跨图跳转退出原图全屏。会话视图用新键`fieldtofit:evolution:atlas-view:v2`保存，旧开合状态不影响全部展示，题目已读键保持不变。
 
 未完成证据核对的候选登记PM，不混入正式目录；当前Kimi K3仍属候选。修改日期或关系时同时核验原始方法与型号采用；接口继续schema_version=1，新增字段为兼容扩展。
+
+## 首页预览（v1.16.1）
+
+三图同屏、共用时间分段，2025占两列；桌面根据首页实际可用宽度调整列宽与卡片高度，不缩小文字。手机只设一个横向滚动区，三图同步，左侧定义保持可见；键盘可访问滚动区和所有节点。选中节点使用与完整图相同的证据组件，关闭或Esc返回原按钮；完整图定位链接保持原查询协议。首页节点图与正文数据不写入新接口，不因纯展示变化更新目录事实日期。
+
+问题卡支持换题、手动记录、展开18题简目录及进入独立筛选目录。首页进入文章后可返回首页专题，完整图页进入后可返回完整图；相关问题之间延续该返回目标。FlashAttention卡面以显存／片上存储图解释IO，明确为机制重绘，不当作实测。
 
 ## 阅读状态
 
@@ -43,6 +49,7 @@
 - `PYTHON_DOTENV_DISABLED=1 .venv/bin/python -m pytest tests/test_llm_evolution.py tests/test_home_preview.py tests/test_search_pages.py -q`
 - `node tests/frontend/evolution.cjs`
 - `node tests/frontend/evolution-map.cjs`
+- `node tests/frontend/evolution-home.cjs`
 - `npm run build --prefix frontend`
 - `.venv/bin/python scripts/maintenance/check_repository.py`
 

@@ -7,6 +7,8 @@ from flask import Blueprint, jsonify, request, render_template
 ROOT = '/for-you/evolution'
 QUESTIONS = ROOT + '/questions'
 CATALOG = json.loads(Path(__file__).with_name('catalog.json').read_text())
+HOME_PREVIEW = json.loads(Path(__file__).with_name('home_preview.json').read_text())
+NODE_BY_ID = {n['id']: n for r in CATALOG['routes'] for n in r['nodes']}
 QUESTION_BY_ID = {q['id']: q for q in CATALOG['questions']}
 REVISION = hashlib.sha256(json.dumps(CATALOG, sort_keys=True).encode()).hexdigest()[:20]
 bp = Blueprint('llm_evolution', __name__, template_folder='templates')

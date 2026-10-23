@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.16.0](CHANGELOG.md#v1.16.0)** · [fieldtofit-v1.16.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.16.0)
+**Current source version: [v1.16.1](CHANGELOG.md#v1.16.1)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Start from definitions of training, inference and systems, then show three complete horizontal maps for 2017–2026, retaining all 93 milestones and 43 sourced relations.
-- Summarize each milestone by year, technology and representative model or project; add zoom, pan, minimaps and full-screen reading, with desktop inspectors and mobile sheets for mechanisms, limits, adoption evidence and primary sources.
-- Company highlighting and legacy deep links retain the complete maps; homepage previews, 18 articles, local reading records and read-only APIs remain compatible without a database migration.
+- Show selected training, inference and systems milestones together on a shared timeline, with more space for recent years and sourced relations, replacing nine first/last route excerpts.
+- Open milestone evidence and locate it in the complete maps; combine illustrated questions, the 18-question directory, progress and manual reading marks.
+- Preserve all 93 milestones, 43 relations, 18 articles and their revisions, existing browser records and public APIs; bilingual shared content without a database migration.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

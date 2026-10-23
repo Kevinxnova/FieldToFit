@@ -2,11 +2,12 @@ import {useEffect,useState} from 'react';
 import {Link,useLocation,useParams,useSearchParams} from '@fieldtofit/locale/router';
 import {useWorkspace} from '../../components/workspace/UI';
 import {PageMetadata} from '../../search';
-import {catalog,ROOT,QUESTIONS,questionById,kvMiB,nodeDestination,type Copy,type Question} from './data';
+import {catalog,ROOT,QUESTIONS,questionById,kvMiB,type Copy,type Question} from './data';
 import {chooseQuestion,statusFor,type ReadStatus} from './progress';
 import {markRead,useProgress} from './useProgress';
 import './evolution.css';
 import {AtlasMap} from './AtlasMap';
+import {HomeAtlas} from './HomeAtlas';
 function useCopy(){const {zh,pick}=useWorkspace();return {t:(c:Copy)=>c[zh?0:1],pick,zh};}
 const statusCopy:Record<ReadStatus,Copy>={unread:['未读','Unread'],read:['已读','Read'],updated:['有更新','Updated']};
 function Sources({ids}:{ids:string[]}){
@@ -28,16 +29,30 @@ function KVMeter(){
   return <section className="evo-calculator"><h3>{pick('算一算理想 KV 载荷','Calculate ideal KV payload')}</h3><div>{values.map((value,i)=><label key={i}>{labels[i]}<input type="number" min={i===5?0.125:1} step={i===5?0.125:1} value={value} onChange={e=>setValues(v=>v.map((old,j)=>j===i?e.target.value:old))}/></label>)}</div><output aria-live="polite">{result===null?pick('请输入有效正数；维度必须为整数。','Enter positive values; dimensions must be integers.'):`${result.toLocaleString(undefined,{maximumFractionDigits:2})} MiB`}</output><p>{pick('等长请求，标准 MHA／GQA／MQA。排除权重、工作区、分配浪费、量化元数据和副本；不直接适用于 MLA。','Equal-length requests, standard MHA/GQA/MQA. Excludes weights, workspace, allocation waste, quantization metadata and replicas; not a direct MLA estimate.')}</p></section>;
 }
 function TopicNav(){const {pick}=useCopy();return <nav className="evo-nav" aria-label={pick('专题导航','Topic navigation')}><Link to="/for-you#llm-evolution">← For you</Link><Link to={ROOT}>{pick('演进图','Evolution maps')}</Link><Link to={QUESTIONS}>{pick('重要问题目录','Question directory')}</Link></nav>;}
-function QuestionPreview(){
+function QuestionIllustration({question}:{question:Question}){
+  const {pick}=useCopy();
+  if(question.id!=='S03')return <Figure question={question}/>;
+  return <figure className="evolution-home-io"><figcaption>{pick('同样的注意力计算，更少的显存往返','The same attention computation, fewer memory transfers')}</figcaption><div><span>{pick('HBM · 高带宽显存','HBM · high-bandwidth memory')}</span><span>Q / K / V</span></div><p>{pick('↓ 分块载入　↑ 写回结果','↓ Load tiles　↑ Write results')}</p><div><span>{pick('SRAM · 片上存储','SRAM · on-chip memory')}<small>{pick('分块计算 · 算子融合','Tiled computation · fused operations')}</small></span><span className="evolution-home-tiles" aria-hidden="true">{Array.from({length:12},(_,i)=><i key={i}/>)}</span></div><small>{pick('本站机制重绘：省去完整注意力中间矩阵的显存读写，非容量或性能实测。','Mechanism redraw: avoid HBM reads/writes of the full intermediate attention matrix; not measured capacity or performance.')}</small></figure>;
+}
+export function QuestionPreview({home=false}:{home?:boolean}){
   const {records}=useProgress(),{t,pick}=useCopy();
+  const [directory,setDirectory]=useState(false);
   const [id,setId]=useState(()=>{try{const stored=sessionStorage.getItem('fieldtofit:evolution:current');if(stored&&questionById[stored])return stored;}catch{}return chooseQuestion(catalog.questions,records)?.id||'T01';});
   const q=questionById[id];const read=catalog.questions.filter(q=>statusFor(records,q.id,q.revision)==='read').length;
+  const returnTo=home?'/for-you#llm-evolution':ROOT;
   useEffect(()=>{try{sessionStorage.setItem('fieldtofit:evolution:current',id);}catch{}},[id]);
-  return <section className="evo-question-preview" aria-labelledby="evo-question-title"><header><div><p className="evo-eyebrow">QUESTIONS WORTH ASKING</p><h2 id="evo-question-title">{pick('重要问题 · 图文解析','Important questions · explained')}</h2><p>{read} / {catalog.questions.length} {pick('篇已读当前版','current versions read')}</p></div><Link to={QUESTIONS}>{pick('打开目录','Open directory')} →</Link></header><div className="evo-featured-question"><div><span className="evo-question-number">{q.id} · {catalog.tracks.find(v=>v.id===q.track)!.name}</span><h3><Link to={QUESTIONS+'/'+q.id}>{t(q.title)}</Link></h3><p>{t(q.goal)}</p><div className="evo-actions"><Link className="button primary" to={QUESTIONS+'/'+q.id}>{pick('阅读解析','Read explanation')} →</Link><button onClick={()=>setId(chooseQuestion(catalog.questions,records,id)!.id)}>{pick('换一题 · 优先未读／有更新','Another · prioritize unread/updated')}</button></div></div><Figure question={q}/></div><ReadButton question={q}/><ProgressNotice/></section>;
+  return <section className="evo-question-preview evolution-question-card" aria-labelledby="evo-question-title">
+    <header><div><h2 id="evo-question-title">{pick('重要问题 · 图文解析','Important questions · explained')}</h2><div className="evolution-question-progress"><span aria-live="polite">{read} / {catalog.questions.length} {pick('篇已读当前版','current versions read')}</span><progress max={catalog.questions.length} value={read} aria-label={pick('当前版阅读进度','Current-version reading progress')}/></div></div><button aria-expanded={directory} aria-controls="evolution-home-directory" onClick={()=>setDirectory(v=>!v)}>{directory?pick('收起目录','Hide directory'):pick('全部18题','All 18 questions')} {directory?'↑':'→'}</button></header>
+    <div className="evo-featured-question"><div className="evolution-question-copy"><span className="evo-question-number">{q.id} · {t(catalog.tracks.find(v=>v.id===q.track)!.label)} · {t(statusCopy[statusFor(records,q.id,q.revision)])}</span><h3><Link to={QUESTIONS+'/'+q.id} state={{evolutionReturn:returnTo}}>{t(q.title)}</Link></h3><p>{t(q.goal)}</p><div className="evo-actions"><Link className="button primary" to={QUESTIONS+'/'+q.id} state={{evolutionReturn:returnTo}}>{pick('阅读解析','Read explanation')} →</Link><button onClick={()=>setId(chooseQuestion(catalog.questions,records,id)!.id)}>{pick('换一题','Another question')} ↻</button></div></div><div className="evolution-question-art"><QuestionIllustration question={q}/></div><footer><ReadButton question={q}/><span>{pick('手动记录 · 优先未读／有更新','Mark manually · prioritize unread / updated')}</span></footer></div>
+    {directory&&<div id="evolution-home-directory" className="evolution-inline-directory"><div><p>{pick('任选一题开始，也可进入完整目录筛选。','Start with any question, or filter in the full directory.')}</p><Link to={QUESTIONS}>{pick('打开完整目录','Open full directory')} →</Link></div>{catalog.tracks.map(track=><section key={track.id}><h3>{t(track.label)} <small>{track.id==='systems'?'Systems':track.name}</small></h3>{catalog.questions.filter(item=>item.track===track.id).map(item=><article key={item.id}><Link to={QUESTIONS+'/'+item.id} state={{evolutionReturn:returnTo}}>{item.id} · {t(item.title)}</Link><ReadButton question={item}/></article>)}</section>)}</div>}
+    <ProgressNotice/>
+  </section>;
 }
+
 export function EvolutionHome(){
-  const {t,pick}=useCopy();return <section className="home-section evo-home" aria-labelledby="llm-evolution"><header className="platform-section-heading"><h2 id="llm-evolution" tabIndex={-1}>{pick('大模型技术演进','LLM technical evolution')}</h2><Link to={ROOT}>{pick('探索完整演进','Explore the full maps')} ↗</Link></header><p className="evo-home-intro"><span>2017—2026</span>{pick('沿着三条主线，看瓶颈如何催生创新。','Three tracks of bottlenecks and breakthroughs.')}</p><div className="evo-home-tracks">{catalog.tracks.map(track=><section key={track.id} className={'evo-home-track evo-'+track.id}><header><strong>{track.name}</strong><span>{t(track.label)}</span><Link to={ROOT+'?track='+track.id+'&view=all'}>{pick('完整图','Full map')} ↗</Link><Link to={ROOT+'?track='+track.id+'&period=recent'}>2025—2026 ↗</Link></header><div className="evo-mini-fork"><div className="evo-mini-root">{t(track.description)}</div><div>{catalog.routes.filter(r=>r.track===track.id&&r.highlight).map(route=><div className="evo-mini-route" key={route.id}><span>{t(route.title)}</span><div>{(route.nodes.length>2?[route.nodes[0],route.nodes[route.nodes.length-1]]:route.nodes).map(node=><Link key={node.id} to={nodeDestination(node.id)}><small>{node.date.slice(0,4)}</small><strong>{node.title}</strong></Link>)}</div><small>{route.cases.slice(0,2).map(c=>`${catalog.companies[c.company]||'Research'} · ${c.model}`).join(' / ')}</small></div>)}</div></div></section>)}</div><p className="evo-note">{pick('首页节选重点路线；完整页直接展开三张总图，可缩放、查看节点详情与公司采用证据。','Selected routes here; the full page shows all three maps with zoom, node details and company adoption evidence.')}</p><QuestionPreview/></section>;
+  return <section className="home-section evo-home" aria-labelledby="llm-evolution"><HomeAtlas/><QuestionPreview home/></section>;
 }
+
 function Directory(){
   const {t,pick}=useCopy(),{records}=useProgress(),[params,setParams]=useSearchParams(),location=useLocation();
   const query=params.get('q')||'',track=params.get('track')||'',read=params.get('read')||'';
@@ -50,12 +65,15 @@ function Directory(){
 }
 function QuestionPage(){
   const {id}=useParams(),location=useLocation(),{t,pick}=useCopy();const q=questionById[id||''];
-  const back=typeof location.state?.evolutionReturn==='string'&&location.state.evolutionReturn.startsWith(QUESTIONS)?location.state.evolutionReturn:QUESTIONS;
+  useEffect(()=>{if(q)try{sessionStorage.setItem('fieldtofit:evolution:current',q.id);}catch{/* Reading remains available without storage. */}},[q?.id]);
+  const requestedBack=location.state?.evolutionReturn;
+  const back=typeof requestedBack==='string'&&(requestedBack===ROOT||requestedBack==='/for-you#llm-evolution'||requestedBack===QUESTIONS||requestedBack.startsWith(QUESTIONS+'?'))?requestedBack:QUESTIONS;
+  const backLabel=back==='/for-you#llm-evolution'?pick('返回首页预览','Back to homepage preview'):back===ROOT?pick('返回完整图谱','Back to full maps'):pick('返回问题目录','Back to questions');
   if(!q)return <div className="evo-page"><PageMetadata title={pick('题目未找到','Question not found')} path={location.pathname} index={false}/><h1>{pick('题目未找到','Question not found')}</h1><Link to={QUESTIONS}>{pick('返回目录','Return to directory')}</Link></div>;
   const sections:[[string,string],Copy][]=[[['问题从哪里来','The bottleneck'],q.problem],[['关键机制','The mechanism'],q.mechanism],[['算例与证据','Examples and evidence'],q.example],[['收益之外的新约束','The new constraints'],q.limit]];
-  return <article className="evo-page evo-article"><PageMetadata title={t(q.title)+' · FieldToFit'} description={t(q.goal)} path={QUESTIONS+'/'+q.id}/><TopicNav/><Link to={back}>← {pick('返回问题目录','Back to questions')}</Link><header className="evo-hero"><p className="evo-eyebrow">{q.id} · {catalog.tracks.find(v=>v.id===q.track)!.name.toUpperCase()}</p><h1>{t(q.title)}</h1><p>{t(q.goal)}</p><small>{pick('修订','Revision')} {q.revision} · {q.updated_at} · {t(q.change_reason)}</small></header><Figure question={q}/>
+  return <article className="evo-page evo-article"><PageMetadata title={t(q.title)+' · FieldToFit'} description={t(q.goal)} path={QUESTIONS+'/'+q.id}/><TopicNav/><Link to={back}>← {backLabel}</Link><header className="evo-hero"><p className="evo-eyebrow">{q.id} · {catalog.tracks.find(v=>v.id===q.track)!.name.toUpperCase()}</p><h1>{t(q.title)}</h1><p>{t(q.goal)}</p><small>{pick('修订','Revision')} {q.revision} · {q.updated_at} · {t(q.change_reason)}</small></header><Figure question={q}/>
     {sections.map(([heading,copy],i)=><section className="evo-prose" key={i}><h2><span>0{i+1}</span>{t(heading)}</h2><p>{t(copy)}</p>{i===1&&<pre className="evo-formula"><code>{q.formula}</code></pre>}{i===2&&q.id==='I01'&&<KVMeter/>}</section>)}
-    <section className="evo-prose"><h2>{pick('原始来源','Primary sources')}</h2><Sources ids={q.sources}/></section><aside className="evo-reading-end"><ReadButton question={q}/><ProgressNotice/><Link to={ROOT+'?view=all&track='+q.track+'&node='+catalog.routes.find(r=>r.id===q.route)!.nodes.find(n=>n.question===q.id)!.id}>{pick('回到相关技术节点','View the related milestone')} →</Link><h3>{pick('继续追问','Keep exploring')}</h3>{q.related.map(id=><Link key={id} to={QUESTIONS+'/'+id} state={{evolutionReturn:back}}>{id} · {t(questionById[id].title)} →</Link>)}<Link to={back}>← {pick('返回问题目录','Back to questions')}</Link></aside>
+    <section className="evo-prose"><h2>{pick('原始来源','Primary sources')}</h2><Sources ids={q.sources}/></section><aside className="evo-reading-end"><ReadButton question={q}/><ProgressNotice/><Link to={ROOT+'?view=all&track='+q.track+'&node='+catalog.routes.find(r=>r.id===q.route)!.nodes.find(n=>n.question===q.id)!.id}>{pick('回到相关技术节点','View the related milestone')} →</Link><h3>{pick('继续追问','Keep exploring')}</h3>{q.related.map(id=><Link key={id} to={QUESTIONS+'/'+id} state={{evolutionReturn:back}}>{id} · {t(questionById[id].title)} →</Link>)}<Link to={back}>← {backLabel}</Link></aside>
   </article>;
 }
 export default function Evolution(){const location=useLocation();useEffect(()=>{window.dispatchEvent(new Event('fieldtofit:reading-ready'));},[location.pathname]);return location.pathname===QUESTIONS?<Directory/>:location.pathname===ROOT?<AtlasMap navigation={<TopicNav/>} footer={<QuestionPreview/>}/>:<QuestionPage key={location.pathname}/>;}

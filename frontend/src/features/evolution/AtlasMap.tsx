@@ -11,7 +11,7 @@ function useCopy(){const {zh,pick}=useWorkspace();return {t:(copy:Copy)=>copy[zh
 function loadViewport(track:Track):AtlasViewport{try{return boundedViewport(JSON.parse(sessionStorage.getItem(VIEW_KEY)||'{}')[track]);}catch{return boundedViewport(undefined);}}
 function persistViewport(track:Track,view:AtlasViewport){try{let saved;try{saved=JSON.parse(sessionStorage.getItem(VIEW_KEY)||'{}');}catch{saved={};}sessionStorage.setItem(VIEW_KEY,JSON.stringify({...saved,[track]:view}));}catch{/* Navigation remains usable when storage is unavailable. */}}
 const sourceKinds:Record<string,Copy>={paper:['论文','Paper'],'technical-report':['技术报告','Technical report'],'official-note':['官方说明','Official note'],'model-card':['型号资料','Model card'],engineering:['工程文档','Engineering docs']};
-function NodeDetail({node,route,close}:{node:Milestone;route:EvolutionRoute;close:()=>void}){
+export function NodeDetail({node,route,close}:{node:Milestone;route:EvolutionRoute;close:()=>void}){
   const {t,pick}=useCopy(),cases=nodeCases(route,node.id),relations=catalog.relations.filter(e=>e.from_node===node.id||e.to_node===node.id);
   const unbound=route.cases.filter(c=>!c.nodes.length);
   return <><header className="atlas-detail-header"><span>{node.date} · {node.date_kind==='model-adoption'?pick('型号采用','Model adoption'):node.date_kind==='engineering-release'?pick('工程公开','Engineering release'):pick('资料首发','Source publication')}</span><button onClick={close} aria-label={pick('关闭节点详情','Close node details')}>{pick('关闭','Close')} ×</button></header>

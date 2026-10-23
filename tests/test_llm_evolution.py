@@ -173,3 +173,21 @@ def test_complete_atlas_definitions_and_summaries(site):
         for node in nodes:
             assert html.escape(node['summary']['technology'][index]) in page
             assert html.escape(node['summary']['representative']) in page
+
+
+@pytest.mark.parametrize('prefix,index', [('',0),('/en',1)])
+def test_home_curated_milestones_match_shared_preview(site, prefix, index):
+    from backend.llm_evolution import HOME_PREVIEW, NODE_BY_ID
+    text = site.get(prefix+'/for-you').text
+    section = text.split('<section id="llm-evolution">',1)[1].split('<section id="news-codex-28-days">',1)[0]
+    selected = [entry['id'] for entries in HOME_PREVIEW.values() for entry in entries]
+    assert len(selected) == len(set(selected)) == 21
+    for track, entries in HOME_PREVIEW.items():
+        for entry in entries:
+            node = NODE_BY_ID[entry['id']]
+            assert any(node in r['nodes'] for r in CATALOG['routes'] if r['track']==track)
+            assert 'node='+entry['id'] in section
+            assert html.escape(node['summary']['technology'][index]) in section
+            assert html.escape(node['summary']['representative']) in section
+    assert 'node=dense-llama' not in section  # Old automatically selected route endpoint.
+    assert QUESTIONS in section

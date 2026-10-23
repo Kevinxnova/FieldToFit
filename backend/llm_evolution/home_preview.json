@@ -1,0 +1,29 @@
+{
+  "train": [
+    {"id":"dense-transformer","column":0,"row":"middle"},
+    {"id":"dense-chinchilla","column":1,"row":"middle"},
+    {"id":"rl-grpo","column":2,"row":"middle"},
+    {"id":"reasoning_rl-r1_paper","column":3,"row":"top"},
+    {"id":"rl-dapo","column":3,"row":"bottom"},
+    {"id":"moe-qwen","column":4,"row":"middle"},
+    {"id":"agent-parl","column":5,"row":"middle"}
+  ],
+  "inference": [
+    {"id":"shared_kv-mqa","column":0,"row":"bottom"},
+    {"id":"draft_verify-spec_paper","column":1,"row":"top"},
+    {"id":"shared_kv-gqa_paper","column":1,"row":"bottom"},
+    {"id":"latent-v2","column":2,"row":"bottom"},
+    {"id":"draft-eagle3","column":3,"row":"top"},
+    {"id":"draft-dflash","column":5,"row":"top"},
+    {"id":"thinking-adaptive","column":5,"row":"bottom"}
+  ],
+  "systems": [
+    {"id":"sharding-zero_paper","column":0,"row":"middle"},
+    {"id":"kernels-flash","column":1,"row":"top"},
+    {"id":"kv_paging-paged","column":1,"row":"bottom"},
+    {"id":"disaggregation-distserve","column":2,"row":"bottom"},
+    {"id":"disaggregation-dynamo","column":3,"row":"bottom"},
+    {"id":"kernel-fa4","column":5,"row":"top"},
+    {"id":"disaggregation-epd","column":5,"row":"bottom"}
+  ]
+}

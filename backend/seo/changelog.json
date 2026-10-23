@@ -1,7 +1,35 @@
 {
-  "version": "1.16.0",
-  "revision": "24fa534a7afeaf664c98f5f63fb609d2267c0bb11b533fdf82111a6c539bbcad",
+  "version": "1.16.1",
+  "revision": "a13e6acf7f4484b65ac3118349c78af70caa71eedbc4f79a9ca001ec0ebdc05f",
   "items": [
+    {
+      "version": "1.16.1",
+      "date": "2026-10-23",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "首页三图关键节点与问题图解",
+          "highlights": [
+            "首页同时呈现训练、推理、系统三张关键节点图，共用年代框架、近期放大与有来源的技术关系，替代九条路线的首尾摘录。",
+            "点击节点查看瓶颈、机制、约束、采用证据与原始资料，并可进入完整图谱定位；问题图解整合18题目录、进度与手动已读。",
+            "保留93节点、43关系、18题正文及修订、既有本地记录和公开接口；双语同源，无数据库迁移。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Homepage milestone maps and illustrated questions",
+          "highlights": [
+            "Show selected training, inference and systems milestones together on a shared timeline, with more space for recent years and sourced relations, replacing nine first/last route excerpts.",
+            "Open milestone evidence and locate it in the complete maps; combine illustrated questions, the 18-question directory, progress and manual reading marks.",
+            "Preserve all 93 milestones, 43 relations, 18 articles and their revisions, existing browser records and public APIs; bilingual shared content without a database migration."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.16.1"
+    },
     {
       "version": "1.16.0",
       "date": "2026-10-22",
