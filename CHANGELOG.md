@@ -6,7 +6,7 @@
 
 <a id="v1.17.0"></a>
 ## v1.17.0 · 旗舰型号与三图技术路线联动 · 2026-10-24
-<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-10-24 -->
 <!-- public-title:en: Flagship models linked to three technical maps -->
 <!-- release-summary:zh:start -->
 - 训练、推理、系统三张横向图连接历史技术与具体型号，新增型号目录、跨图高亮、双型号公开路线比较和段落级证据详情。
@@ -19,7 +19,7 @@
 - Replace the homepage's fixed seven milestones per map with key/all views, zoom and endpoint navigation; preserve old milestones, 18 questions, reading records, bilingual content and public APIs without a database migration.
 <!-- release-summary:en:end -->
 
-对应REQ-25-21—26。所有者在v1.16.4方案整理后明确授权完成全部开发验证，并确认minor v1.17.0；自v1.16.0以来的首页／内容变化与本次主要阅读流程一起评估，不以patch替代minor。原93节点内容、43技术关系、18题正文和修订保持，新增字段兼容扩展；可回退展示层，不清除阅读数据。本批未部署、未发布CMS内容、未建立自动发布任务。
+对应REQ-25-21—26。所有者在v1.16.4方案整理后明确授权完成全部开发验证，并确认minor v1.17.0；自v1.16.0以来的首页／内容变化与本次主要阅读流程一起评估，不以patch替代minor。原93节点内容、43技术关系、18题正文和修订保持，新增字段兼容扩展；可回退展示层，不清除阅读数据。所有者随后授权更新部署并明确授权本地完整备份；2026-10-24已部署至原域名。未发布CMS内容或建立自动发布任务。
 
 15家公司均有可发现条目，其中12家、15个型号具有至少一条已核相关正文的路线披露；其余为明确资料缺口，覆盖不等于全部旗舰身份或全部实现已获确认。详见[证据矩阵](docs/product/evolution-flagship-evidence.md)与[实际验收](docs/validation/2026-10-24-evolution-flagships.md)。
 

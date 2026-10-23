@@ -1,11 +1,11 @@
 {
   "version": "1.17.0",
-  "revision": "71afba60689f959d30c2fb42578a910dbd5b8323d788378053daa897f37ea669",
+  "revision": "05069f3b04746fd9f1fedd2d05c91765f834c69a5eb5cde60b85cd9275a37fae",
   "items": [
     {
       "version": "1.17.0",
       "date": "2026-10-24",
-      "deployed_on": "",
+      "deployed_on": "2026-10-24",
       "copy": {
         "zh": {
           "title": "旗舰型号与三图技术路线联动",
