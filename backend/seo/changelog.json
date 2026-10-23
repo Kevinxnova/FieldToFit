@@ -1,7 +1,35 @@
 {
-  "version": "1.17.0",
-  "revision": "05069f3b04746fd9f1fedd2d05c91765f834c69a5eb5cde60b85cd9275a37fae",
+  "version": "1.17.1",
+  "revision": "c46ca418a75869e70336dc2aab23fa5975eb61386f1b060e599500bb581ed7fe",
   "items": [
+    {
+      "version": "1.17.1",
+      "date": "2026-10-24",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Codex Day 18等五项获批日志",
+          "highlights": [
+            "Codex日志补入官方Day 18重置公告与CLI 0.164.0，保留原帖、真实头像、预计窗口及终端环境限制。",
+            "其他OpenAI分组加入Open Responses治理变更、训练环境隔离说明和Brotli修复披露，区分来源日期、后续披露与补丁历史。",
+            "专题71条由网站与AI读取共享；公告不计作已确认生效重置，既有旗舰型号、技术路线、公开接口和数据库结构保持。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Five approved entries including Codex Day 18",
+          "highlights": [
+            "Add the official Day 18 reset announcement and CLI 0.164.0, preserving original posts, verified avatars, the timing window and terminal requirements.",
+            "Add Open Responses governance, training containment and the Brotli disclosure under Other OpenAI, distinguishing source dates, follow-up disclosures and patch history.",
+            "Share 71 reviewed entries between the website and AI readers; announcements do not count as confirmed effective resets, while existing flagship models, technical maps, APIs and database structures remain compatible."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.1"
+    },
     {
       "version": "1.17.0",
       "date": "2026-10-24",

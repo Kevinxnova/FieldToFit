@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.1"></a>
+## v1.17.1 · Codex Day 18等五项获批日志 · 2026-10-24
+<!-- public-title:en: Five approved entries including Codex Day 18 -->
+<!-- release-summary:zh:start -->
+- Codex日志补入官方Day 18重置公告与CLI 0.164.0，保留原帖、真实头像、预计窗口及终端环境限制。
+- 其他OpenAI分组加入Open Responses治理变更、训练环境隔离说明和Brotli修复披露，区分来源日期、后续披露与补丁历史。
+- 专题71条由网站与AI读取共享；公告不计作已确认生效重置，既有旗舰型号、技术路线、公开接口和数据库结构保持。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 18 reset announcement and CLI 0.164.0, preserving original posts, verified avatars, the timing window and terminal requirements.
+- Add Open Responses governance, training containment and the Brotli disclosure under Other OpenAI, distinguishing source dates, follow-up disclosures and patch history.
+- Share 71 reviewed entries between the website and AI readers; announcements do not count as confirmed effective resets, while existing flagship models, technical maps, APIs and database structures remain compatible.
+<!-- release-summary:en:end -->
+
+对应REQ-20。所有者明确批准五项具体文案。基于已部署v1.17.0，本批为内容与导出文档patch；自上次minor没有待决的新模块、主要流程或协议改动，无数据库迁移。实际发布、完整备份及程序验收见[本批验证](docs/validation/2026-10-24-codex-day18-five-updates.md)。保留晨报、夜间安排及未来逐批批准规则。
+
 <a id="v1.17.0"></a>
 ## v1.17.0 · 旗舰型号与三图技术路线联动 · 2026-10-24
 <!-- site-deployed:2026-10-24 -->

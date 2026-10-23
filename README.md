@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.0](CHANGELOG.md#v1.17.0)** · [fieldtofit-v1.17.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.0)
+**当前源码版本：[v1.17.1](CHANGELOG.md#v1.17.1)** · [fieldtofit-v1.17.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.1)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 训练、推理、系统三张横向图连接历史技术与具体型号，新增型号目录、跨图高亮、双型号公开路线比较和段落级证据详情。
-- 覆盖15家公司25个型号／待核条目，收录105个技术节点、47条技术关系和27条型号披露；资料不足者明确保留缺口，不推断闭源架构。
-- 首页取消每图固定7节点，支持关键／全部节点、缩放和型号落点导航；保留旧节点、18题及阅读记录，双语与公开接口兼容，无数据库迁移。
+- Codex日志补入官方Day 18重置公告与CLI 0.164.0，保留原帖、真实头像、预计窗口及终端环境限制。
+- 其他OpenAI分组加入Open Responses治理变更、训练环境隔离说明和Brotli修复披露，区分来源日期、后续披露与补丁历史。
+- 专题71条由网站与AI读取共享；公告不计作已确认生效重置，既有旗舰型号、技术路线、公开接口和数据库结构保持。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

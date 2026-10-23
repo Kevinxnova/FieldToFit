@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.0](CHANGELOG.md#v1.17.0)** · [fieldtofit-v1.17.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.0)
+**Current source version: [v1.17.1](CHANGELOG.md#v1.17.1)** · [fieldtofit-v1.17.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Connect historical methods to specific models across horizontal training, inference and systems maps, with a model directory, linked highlighting, two-model evidence comparison and section-level sources.
-- Cover 15 companies through 25 model or unresolved entries, 105 technical milestones, 47 technical relations and 27 model disclosures; retain explicit gaps rather than inferring closed-model architectures.
-- Replace the homepage's fixed seven milestones per map with key/all views, zoom and endpoint navigation; preserve old milestones, 18 questions, reading records, bilingual content and public APIs without a database migration.
+- Add the official Day 18 reset announcement and CLI 0.164.0, preserving original posts, verified avatars, the timing window and terminal requirements.
+- Add Open Responses governance, training containment and the Brotli disclosure under Other OpenAI, distinguishing source dates, follow-up disclosures and patch history.
+- Share 71 reviewed entries between the website and AI readers; announcements do not count as confirmed effective resets, while existing flagship models, technical maps, APIs and database structures remain compatible.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
