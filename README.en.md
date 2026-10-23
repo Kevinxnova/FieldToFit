@@ -38,7 +38,7 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.16.1](CHANGELOG.md#v1.16.1)** · Release tag not yet published
+**Current source version: [v1.16.2](CHANGELOG.md#v1.16.2)** · [fieldtofit-v1.16.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.16.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.

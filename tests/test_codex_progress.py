@@ -19,12 +19,13 @@ def event(data, ident='D-78'):
 def test_dates_numbering_precision_shared_api_and_mcp(client):
     body = client.get('/api/v1/platform/news').json
     days = body['codex_progress']['days']
-    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-22', 18), ('2026-10-21', 17), ('2026-10-20', 16), ('2026-10-19', 15), ('2026-10-18', 14), ('2026-10-17', 13), ('2026-10-16', 12), ('2026-10-15', 11), ('2026-10-14', 10), ('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
+    assert [(d['date'], d['calendar_day']) for d in days] == [('2026-10-23', 19), ('2026-10-22', 18), ('2026-10-21', 17), ('2026-10-20', 16), ('2026-10-19', 15), ('2026-10-18', 14), ('2026-10-17', 13), ('2026-10-16', 12), ('2026-10-15', 11), ('2026-10-14', 10), ('2026-10-13', 9), ('2026-10-12', 8), ('2026-10-11', 7), ('2026-10-10', 6), ('2026-10-09', 5), ('2026-10-08', 4), ('2026-10-07', 3), ('2026-10-06', 2), ('2026-10-05', 1)]
     by_date = {d['date']: d for d in days}
     assert by_date['2026-10-21']['codex_ids'] == ['D-212']
-    assert set(by_date['2026-10-21']['other_openai_ids']) == {'D-213', 'D-221', 'D-222'}
-    assert by_date['2026-10-22']['codex_ids'] == ['D-219']
-    assert by_date['2026-10-22']['other_openai_ids'] == ['D-220']
+    assert set(by_date['2026-10-21']['other_openai_ids']) == {'D-213', 'D-221', 'D-222', 'D-232'}
+    assert set(by_date['2026-10-22']['codex_ids']) == {'D-219', 'D-229'}
+    assert set(by_date['2026-10-22']['other_openai_ids']) == {'D-220', 'D-231'}
+    assert by_date['2026-10-23']['other_openai_ids'] == ['D-230']
     assert set(by_date['2026-10-20']['codex_ids']) == {'D-199', 'D-209'}
     assert set(by_date['2026-10-20']['other_openai_ids']) == {'D-214', 'D-215'}
     assert set(by_date['2026-10-16']['codex_ids']) == {'D-155', 'D-165', 'D-172', 'D-200'}
@@ -269,7 +270,7 @@ def test_month_grid_has_real_dates_without_creating_logs():
     oct=calendar_month(2026,10,topic);nov=calendar_month(2026,11,topic)
     assert len(oct)==35 and oct[0]['date']=='2026-09-28' and oct[-1]['date']=='2026-11-01'
     assert len(nov)==42 and nov[0]['date']=='2026-10-26' and nov[-1]['date']=='2026-12-06'
-    assert sum(bool(c['log']) for c in oct)==18 and sum(bool(c['log']) for c in nov)==0
+    assert sum(bool(c['log']) for c in oct)==19 and sum(bool(c['log']) for c in nov)==0
     assert topic==before
 
 

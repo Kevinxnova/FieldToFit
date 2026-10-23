@@ -4,9 +4,9 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
-<a id="v1.16.1"></a>
-## v1.16.1 · 首页三图关键节点与问题图解 · 2026-10-23
-<!-- release-tag:unpublished -->
+<a id="v1.16.2"></a>
+## v1.16.2 · 首页三图关键节点与问题图解 · 2026-10-23
+<!-- site-deployed:2026-10-23 -->
 <!-- public-title:en: Homepage milestone maps and illustrated questions -->
 <!-- release-summary:zh:start -->
 - 首页同时呈现训练、推理、系统三张关键节点图，共用年代框架、近期放大与有来源的技术关系，替代九条路线的首尾摘录。
@@ -19,7 +19,23 @@
 - Preserve all 93 milestones, 43 relations, 18 articles and their revisions, existing browser records and public APIs; bilingual shared content without a database migration.
 <!-- release-summary:en:end -->
 
-对应REQ-25-18—20，所有者确认首页demo并授权开发验证。以已上线v1.16.0为基线，自该minor以来无其他交付；本批为已有专题首页展示与入口优化，完整图谱主要流程不变，按patch v1.16.1处理。首页选择与布局单独维护稳定ID，不复制技术正文或改写目录事实；中英React和无脚本首页使用同一节点名单。回退前端预览不会影响阅读数据；没有CMS发布或数据库迁移。本轮未部署，实际验证见[首页优化验收](docs/validation/2026-10-23-evolution-home.md)。
+对应REQ-25-18—20，所有者确认首页demo并授权开发验证。以已上线v1.16.0为基线，合并保留并行已发布v1.16.1内容更新；本批为已有专题首页展示与入口优化，完整图谱主要流程不变，按patch v1.16.2处理。首页选择与布局单独维护稳定ID，不复制技术正文或改写目录事实；中英React和无脚本首页使用同一节点名单。回退前端预览不会影响阅读数据；没有CMS发布或数据库迁移。所有者随后明确授权更新部署，2026-10-23已部署至原域名，保留并行v1.16.1内容，实际验证见[首页优化验收](docs/validation/2026-10-23-evolution-home.md)。
+
+<a id="v1.16.1"></a>
+## v1.16.1 · Codex Day 17与三项OpenAI公告 · 2026-10-23
+<!-- public-title:en: Codex Day 17 and three OpenAI announcements -->
+<!-- release-summary:zh:start -->
+- Codex日志加入官方Day 17重置公告与预计窗口，保留Tibo原帖、中文摘译和真实头像；公告不计为已确认生效重置。
+- 其他OpenAI分组补入Decisions API正式可用、内部代理监控历史评估，以及ChatGPT Ads新增26国；归回真实事件日期并保留适用边界。
+- 专题共66条，网页与AI读取沿用同一已审内容；保留技术图谱及既有资料，不改变公开接口或数据库结构。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 17 reset announcement and timing window, with Tibo’s post, translated quotation and verified avatar; an announcement does not count as a confirmed effective reset.
+- Add Decisions API general availability, a historical internal-agent monitoring assessment and the 26-country ChatGPT Ads expansion under Other OpenAI, preserving event dates and scope.
+- The topic now contains 66 reviewed entries shared by the website and AI readers; existing technical maps, content, public APIs and database structure remain compatible.
+<!-- release-summary:en:end -->
+
+对应REQ-20。所有者逐项批准四条具体文案；这是v1.16.0之后的既有内容patch，无新模块、协议或数据库迁移。网页发布与程序部署分别按实际回执验收，见[本批验证](docs/validation/2026-10-23-codex-day17-and-openai.md)。晨报、夜间维护与未来具体批次确认规则保持。
 
 <a id="v1.16.0"></a>
 ## v1.16.0 · 训练、推理与系统完整技术图谱 · 2026-10-22
