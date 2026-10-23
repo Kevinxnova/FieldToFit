@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.16.1"></a>
+## v1.16.1 · Codex Day 17与三项OpenAI公告 · 2026-10-23
+<!-- public-title:en: Codex Day 17 and three OpenAI announcements -->
+<!-- release-summary:zh:start -->
+- Codex日志加入官方Day 17重置公告与预计窗口，保留Tibo原帖、中文摘译和真实头像；公告不计为已确认生效重置。
+- 其他OpenAI分组补入Decisions API正式可用、内部代理监控历史评估，以及ChatGPT Ads新增26国；归回真实事件日期并保留适用边界。
+- 专题共66条，网页与AI读取沿用同一已审内容；保留技术图谱及既有资料，不改变公开接口或数据库结构。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 17 reset announcement and timing window, with Tibo’s post, translated quotation and verified avatar; an announcement does not count as a confirmed effective reset.
+- Add Decisions API general availability, a historical internal-agent monitoring assessment and the 26-country ChatGPT Ads expansion under Other OpenAI, preserving event dates and scope.
+- The topic now contains 66 reviewed entries shared by the website and AI readers; existing technical maps, content, public APIs and database structure remain compatible.
+<!-- release-summary:en:end -->
+
+对应REQ-20。所有者逐项批准四条具体文案；这是v1.16.0之后的既有内容patch，无新模块、协议或数据库迁移。网页发布与程序部署分别按实际回执验收，见[本批验证](docs/validation/2026-10-23-codex-day17-and-openai.md)。晨报、夜间维护与未来具体批次确认规则保持。
+
 <a id="v1.16.0"></a>
 ## v1.16.0 · 训练、推理与系统完整技术图谱 · 2026-10-22
 <!-- site-deployed:2026-10-22 -->

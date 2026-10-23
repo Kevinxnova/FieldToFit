@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.16.0](CHANGELOG.md#v1.16.0)** · [fieldtofit-v1.16.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.16.0)
+**当前源码版本：[v1.16.1](CHANGELOG.md#v1.16.1)** · [fieldtofit-v1.16.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.16.1)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 从训练、推理、系统定义出发，直接展示三张2017—2026完整横向技术图谱，保留全部93节点与43条有来源的关系。
-- 节点采用“年份—技术—代表模型／项目”，支持缩放、平移、缩略导航与全屏；桌面侧栏和手机底部面板展开机制、约束、采用证据及原始资料。
-- 公司高亮与旧链接定位保留完整总图；首页预览、18题目录、本地已读记录及只读接口兼容，无数据库迁移。
+- Codex日志加入官方Day 17重置公告与预计窗口，保留Tibo原帖、中文摘译和真实头像；公告不计为已确认生效重置。
+- 其他OpenAI分组补入Decisions API正式可用、内部代理监控历史评估，以及ChatGPT Ads新增26国；归回真实事件日期并保留适用边界。
+- 专题共66条，网页与AI读取沿用同一已审内容；保留技术图谱及既有资料，不改变公开接口或数据库结构。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

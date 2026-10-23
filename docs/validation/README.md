@@ -1,5 +1,7 @@
 # 验收证据导航
 
+
+- [2026-10-23 Codex Day 17与三项OpenAI公告](2026-10-23-codex-day17-and-openai.md)
 - [2026-10-22：三张完整技术图谱](2026-10-22-evolution-complete-maps.md)：v1.16.0定义、完整总图与侧栏重构已部署；40双语页面／HTTP／MCP通过，正式浏览器连接超时。
 
 - [2026-10-22：DeepInfer技术分析](2026-10-22-deepinfer-analysis.md)：具体成稿授权、双语图文与首页报告轮替。

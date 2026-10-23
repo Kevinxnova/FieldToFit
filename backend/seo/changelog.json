@@ -1,7 +1,35 @@
 {
-  "version": "1.16.0",
-  "revision": "24fa534a7afeaf664c98f5f63fb609d2267c0bb11b533fdf82111a6c539bbcad",
+  "version": "1.16.1",
+  "revision": "0f41c43c79b3787efe5d500b010efc97021cc3aa645f799d5f5b592d68968e84",
   "items": [
+    {
+      "version": "1.16.1",
+      "date": "2026-10-23",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Codex Day 17与三项OpenAI公告",
+          "highlights": [
+            "Codex日志加入官方Day 17重置公告与预计窗口，保留Tibo原帖、中文摘译和真实头像；公告不计为已确认生效重置。",
+            "其他OpenAI分组补入Decisions API正式可用、内部代理监控历史评估，以及ChatGPT Ads新增26国；归回真实事件日期并保留适用边界。",
+            "专题共66条，网页与AI读取沿用同一已审内容；保留技术图谱及既有资料，不改变公开接口或数据库结构。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Codex Day 17 and three OpenAI announcements",
+          "highlights": [
+            "Add the official Day 17 reset announcement and timing window, with Tibo’s post, translated quotation and verified avatar; an announcement does not count as a confirmed effective reset.",
+            "Add Decisions API general availability, a historical internal-agent monitoring assessment and the 26-country ChatGPT Ads expansion under Other OpenAI, preserving event dates and scope.",
+            "The topic now contains 66 reviewed entries shared by the website and AI readers; existing technical maps, content, public APIs and database structure remain compatible."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.16.1"
+    },
     {
       "version": "1.16.0",
       "date": "2026-10-22",
