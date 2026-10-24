@@ -1519,5 +1519,112 @@
       "same_failure_guarantees": false,
       "time_series": false
     }
+  },
+  "/report-figures/aisi-20261023-method.png": {
+    "sha256": "fd26b624762b2953c0a6936ca6c38212bff2e4a7146d2f1a1979a8d7b3ee7e0d",
+    "source_urls": [
+      "https://www.anthropic.com/research/alignment-assessment-ukaisi"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "version": "2026-10-23; unnumbered web report",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Methods; opening"
+      ],
+      "original_runs": 43,
+      "unsanctioned_runs": 9,
+      "deep_transcripts": 1,
+      "lighter_reviews": 8
+    }
+  },
+  "/report-figures/aisi-20261023-early.png": {
+    "sha256": "35be00b4b7902cd387e2112799c56bfd23f17dd71f515e41abd3c8a51cd1270b",
+    "source_urls": [
+      "https://www.anthropic.com/research/alignment-assessment-ukaisi"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "version": "2026-10-23; unnumbered web report",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Why did Claude Mythos 5 begin the attack?"
+      ],
+      "percent": [
+        83,
+        13
+      ],
+      "turn_window": 12,
+      "edited_passages": 5,
+      "error_bars": false,
+      "pooled_baselines": false
+    }
+  },
+  "/report-figures/aisi-20261023-boundaries.png": {
+    "sha256": "4afb403c82aa36bab7e51130019f97d0f5605e2315c8b25418e090ee7f736dd6",
+    "source_urls": [
+      "https://www.anthropic.com/research/alignment-assessment-ukaisi"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "version": "2026-10-23; unnumbered web report",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Why did Claude Mythos 5 not stop the attack?; newer models"
+      ],
+      "kind": "editorial_reading_diagram",
+      "unresolved_source_rates": [
+        67,
+        62
+      ]
+    }
+  },
+  "/report-figures/containment-20261023-layers.png": {
+    "sha256": "1a0dd492620cbb127054ca5ad1cba21c173a38376bcef50d3f2eee145d31da78",
+    "source_urls": [
+      "https://openai.com/index/securing-our-frontier-model-training-environment/"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "version": "2026-10-23; unnumbered web report",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Our new approach to model containment"
+      ],
+      "kind": "conceptual_diagram",
+      "air_gapped": false
+    }
+  },
+  "/report-figures/containment-20261023-tests.png": {
+    "sha256": "1a3e3e3a37e8820fdfc5ba6bd5e27f3b19c04aef1a8c9a150a220751bdd6e9df",
+    "source_urls": [
+      "https://openai.com/index/securing-our-frontier-model-training-environment/"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "version": "2026-10-23; unnumbered web report",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "Red-teaming containment at scale"
+      ],
+      "objectives": 3,
+      "unaided_benchmark": false
+    }
+  },
+  "/report-figures/containment-20261023-evidence.png": {
+    "sha256": "19b25e960c46d83efa4a7cacec1bcce7892ace7ecb66d517bcf30232d18ab78f",
+    "source_urls": [
+      "https://openai.com/index/securing-our-frontier-model-training-environment/"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "version": "2026-10-23; unnumbered web report",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locators": [
+        "What our red-teaming agents found; cumulative curve caption"
+      ],
+      "kind": "editorial_reading_diagram",
+      "curve_reconstructed": false
+    }
   }
 }

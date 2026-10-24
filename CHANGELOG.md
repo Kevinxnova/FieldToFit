@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.2"></a>
+## v1.17.2 · 企业Claude、旧模型停用与两篇隔离研究 · 2026-10-24
+<!-- site-deployed:2026-10-24 -->
+<!-- public-title:en: Enterprise Claude, legacy-model shutdown and two containment analyses -->
+<!-- release-summary:zh:start -->
+- 更新所选OpenAI旧模型停用、Claude Enterprise统一体验和AISI回放研究，同步近期总表及两份对应档案。
+- 两篇技术分析各含四结论、对应论述和三张本站图；复用D-242历史，公开保留实验条件与来源数值差异。
+- 新增Enterprise中英信息卡，正式发布后按真实回执轮替首页报告与卡片，保留全部索引和历史入口。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Update the selected OpenAI legacy-model shutdown, unified Claude Enterprise experience and AISI replay study, with the news overview and two related dossiers.
+- Provide four findings and three FieldToFit figures per report, retaining D-242 history, experimental conditions and a disclosed source discrepancy.
+- Add the bilingual Enterprise card and rotate homepage reports and cards only on actual publication, retaining full indexes and historical links.
+<!-- release-summary:en:end -->
+
+接续2026-10-24日报具体选择A–C、报告1／2、卡1。A为D-244，B与卡1共用D-245，C与报告1共用D-246；报告2扩展既有D-242，不重复建立动态。CW-M01／CW-M02增补对应事件，保留旧版本、价格和历史。以v1.17.1为基线，自v1.17.0以来均为已批准内容维护，本批为兼容内容／静态资源patch，无数据库迁移或新主要流程。
+
+实际本地验证、部署、发布及首页轮替分阶段记录于[本批验收](docs/validation/2026-10-24-enterprise-and-containment.md)。晨间全对象核验、来源采集及连续自然日验收缺口不因本批发表变为完成。
+
 <a id="v1.17.1"></a>
 ## v1.17.1 · Codex Day 18等五项获批日志 · 2026-10-24
 <!-- public-title:en: Five approved entries including Codex Day 18 -->

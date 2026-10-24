@@ -1,7 +1,35 @@
 {
-  "version": "1.17.1",
-  "revision": "c46ca418a75869e70336dc2aab23fa5975eb61386f1b060e599500bb581ed7fe",
+  "version": "1.17.2",
+  "revision": "d3ead7867bdddce83718d2c4da5d5569c504efece267bc6c167aa39873eaeff5",
   "items": [
+    {
+      "version": "1.17.2",
+      "date": "2026-10-24",
+      "deployed_on": "2026-10-24",
+      "copy": {
+        "zh": {
+          "title": "企业Claude、旧模型停用与两篇隔离研究",
+          "highlights": [
+            "更新所选OpenAI旧模型停用、Claude Enterprise统一体验和AISI回放研究，同步近期总表及两份对应档案。",
+            "两篇技术分析各含四结论、对应论述和三张本站图；复用D-242历史，公开保留实验条件与来源数值差异。",
+            "新增Enterprise中英信息卡，正式发布后按真实回执轮替首页报告与卡片，保留全部索引和历史入口。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Enterprise Claude, legacy-model shutdown and two containment analyses",
+          "highlights": [
+            "Update the selected OpenAI legacy-model shutdown, unified Claude Enterprise experience and AISI replay study, with the news overview and two related dossiers.",
+            "Provide four findings and three FieldToFit figures per report, retaining D-242 history, experimental conditions and a disclosed source discrepancy.",
+            "Add the bilingual Enterprise card and rotate homepage reports and cards only on actual publication, retaining full indexes and historical links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.2"
+    },
     {
       "version": "1.17.1",
       "date": "2026-10-24",

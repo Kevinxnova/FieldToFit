@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.1](CHANGELOG.md#v1.17.1)** · [fieldtofit-v1.17.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.1)
+**Current source version: [v1.17.2](CHANGELOG.md#v1.17.2)** · [fieldtofit-v1.17.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.2)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add the official Day 18 reset announcement and CLI 0.164.0, preserving original posts, verified avatars, the timing window and terminal requirements.
-- Add Open Responses governance, training containment and the Brotli disclosure under Other OpenAI, distinguishing source dates, follow-up disclosures and patch history.
-- Share 71 reviewed entries between the website and AI readers; announcements do not count as confirmed effective resets, while existing flagship models, technical maps, APIs and database structures remain compatible.
+- Update the selected OpenAI legacy-model shutdown, unified Claude Enterprise experience and AISI replay study, with the news overview and two related dossiers.
+- Provide four findings and three FieldToFit figures per report, retaining D-242 history, experimental conditions and a disclosed source discrepancy.
+- Add the bilingual Enterprise card and rotate homepage reports and cards only on actual publication, retaining full indexes and historical links.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

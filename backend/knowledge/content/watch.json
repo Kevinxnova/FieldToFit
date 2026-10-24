@@ -4927,6 +4927,26 @@
       "blocks": [
         {
           "columns": [
+            "本期事件／研究",
+            "事件／报告日期",
+            "核对范围与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[OpenAI 旧模型停用：10月 23日批次已经生效](https://fieldtofit.top/news/D-244)",
+              "2026-10-23",
+              "本站 2026-10-24核对；限本事件，未实测，不替换旧型号、价格或历史。"
+            ],
+            [
+              "[训练环境不能只靠一道墙：前沿模型隔离的证据链](https://fieldtofit.top/maps/frontier-training-containment-evidence)",
+              "2026-10-23",
+              "本站 2026-10-24核对；限本事件，未实测，不替换旧型号、价格或历史。"
+            ]
+          ]
+        },
+        {
+          "columns": [
             "事件／版本",
             "原始日期",
             "新增与采用边界",
@@ -5462,6 +5482,18 @@
           "id": "oct22-b-announcement",
           "title": "OpenAI models are coming to Google Cloud · 2026-10-21",
           "url": "https://openai.com/index/openai-models-google-cloud/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct24-A",
+          "title": "OpenAI legacy-model shutdown · official source",
+          "url": "https://developers.openai.com/api/docs/deprecations"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct24-report2",
+          "title": "OpenAI训练隔离官方说明",
+          "url": "https://openai.com/index/securing-our-frontier-model-training-environment/"
         }
       ],
       "state": "published",
@@ -5501,17 +5533,20 @@
             "OpenAI于 2026-10-16 开放prompt-to-voice：全部API客户可用文字描述生成、保存并复用声音；另增加九种德、法、印地、日、韩语自然声音。": "On 2026-10-16 OpenAI opened prompt-to-voice to all API customers: describe, save and reuse a voice. Nine natural voices in German, French, Hindi, Japanese and Korean were also added.",
             "OpenAI公布文本来源水印方案：全球API客户可为指定模型主动开启，欧盟ChatGPT与Codex合资格文本输出将在未来几周分阶段加入水印。": "OpenAI announces a text-provenance watermarking scheme. Global API customers can opt in for specified models. Eligible ChatGPT and Codex text outputs in the EU will receive watermarks in phases over the coming weeks.",
             "OpenAI模型计划进入Google Cloud，全面开放仍待后续": "OpenAI models are planned for Google Cloud; general availability is still ahead",
+            "OpenAI训练隔离官方说明": "Official OpenAI training containment article",
             "Responses用于工具调用；Chat Completions不含工具调用；1,050,000上下文、128k输出": "Responses are used for tool calls; Chat Completions do not contain tool calls; 1,050,000 context, 128k output",
             "Sol分支后续型号": "Sol branch follow-up model",
             "[GPT-5.6 指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)": "[GPT-5.6 Guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)",
             "[GPT-6 指南](https://developers.openai.com/api/docs/guides/latest-model)": "[GPT-6 Guide](https://developers.openai.com/api/docs/guides/latest-model)",
             "[GPT-Live-1.1：全双工语音更新，安全结果需要分场景阅读](https://fieldtofit.top/news/D-155)": "[GPT-Live-1.1: full-duplex voice with scenario-specific safety results](https://fieldtofit.top/news/D-155)",
             "[GPT-Live：文字定制声音，创建免费与会话计费分开](https://fieldtofit.top/news/D-173)": "[GPT-Live: prompt-generated voices separate free creation from session billing](https://fieldtofit.top/news/D-173)",
+            "[OpenAI 旧模型停用：10月 23日批次已经生效](https://fieldtofit.top/news/D-244)": "[OpenAI legacy-model shutdown: the 10/23 batch is effective](https://fieldtofit.top/news/D-244)",
             "[型号文档](https://developers.openai.com/api/docs/models/gpt-6.1-sol)": "[Model Document](https://developers.openai.com/api/docs/models/gpt-6.1-sol)",
             "[官方发布](https://openai.com/index/gpt-6-for-everyone/)": "[Official Release](https://openai.com/index/gpt-6-for-everyone/)",
             "[官方发布](https://openai.com/index/introducing-gpt-6-sol-and-luna/)": "[Official Release](https://openai.com/index/introducing-gpt-6-sol-and-luna/)",
             "[官方说明](https://openai.com/index/eu-text-provenance/)": "[Official Note](https://openai.com/index/eu-text-provenance/)",
             "[模型目录](https://developers.openai.com/api/docs/models)": "[Model Catalog](https://developers.openai.com/api/docs/models)",
+            "[训练环境不能只靠一道墙：前沿模型隔离的证据链](https://fieldtofit.top/maps/frontier-training-containment-evidence)": "[Training needs more than one wall: evidence for frontier-model containment](https://fieldtofit.top/maps/frontier-training-containment-evidence)",
             "textGrain首次公告": "The first announcement of textGrain",
             "textGrain首次公告；分阶段推出": "The first announcement of textGrain; phased launch",
             "与 Sol 属于同代不同档位": "It belongs to the same generation and is different from Sol.",
@@ -5522,6 +5557,7 @@
             "主要变化或定位": "Major changes or positioning",
             "主要能力或价格口径": "Main ability or price measurement basis",
             "事件与官方依据": "Event and official evidence",
+            "事件／报告日期": "Event / report date",
             "事件／版本": "Event / version",
             "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
             "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。": "Previously reviewed content and its conditions remain below; a version addition does not mean every dossier source has been rechecked.",
@@ -5573,11 +5609,14 @@
             "日期与状态": "Date and status",
             "日期与限制": "Dates and limitations",
             "本事件接续既有GPT-Live记录，保留Live-1.1／Quip及原生Decisions历史；不能由此推定GPT-Live-1.1 公开API已经上线。本站未调用或试听。": "This event extends the existing GPT-Live record while retaining Live-1.1 / Quip and native Decisions history. It does not establish availability of a public GPT-Live-1.1 API. FieldToFit has not called or auditioned it.",
+            "本期事件／研究": "Current event / research",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M01 GPT, D-30, D-53。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M01 GPT, D-30, D-53. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次变化与用途": "Changes and uses this time",
             "本次只补充官方研究事件，保留以下 GPT 模型列表、价格、开放方式与历史版本；不更新榜单分数，也不表示整个模型家族已完成当日全量核验。": "This adds only the official research event, preserving GPT model lists, prices, access and historical versions below. No leaderboard scores change, and this does not imply a complete daily audit of the model family.",
             "本次已核变化": "Verified change",
             "本次按明确官方公告补入上表，旧正文与原始日期保留；未独立复现性能、调用或迁移。": "This update appends the table from explicit official notices, retaining existing prose and original dates; performance, calls and migration have not been independently reproduced.",
+            "本站 2026-10-24核对；限本事件，未实测，不替换旧型号、价格或历史。": "Checked 2026-10-24; limited to this event, not runtime-tested. Existing models, prices and history are retained.",
+            "核对范围与限制": "Scope and limits",
             "检测器初期仅向获批研究者及专业组织开放；短文本和改写会影响检测。检出不证明内容准确，未检出也不证明人类独立创作。": "The detector initially opens only to approved researchers and professional organizations. Short texts and rewriting affect detection. A detection result does not prove factual accuracy; absence of detection does not establish independent human authorship.",
             "检测权限与局限": "Detection permissions and limitations",
             "模型与验证边界": "Model and verification boundary",
@@ -5617,8 +5656,8 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "reviewed_at": "2026-10-22T04:38:05.778437+00:00",
-          "source_hash": "7828bab00bccac6223ba62319f3364ead682dd9ad927295117fb02bb4967ca0b",
+          "reviewed_at": "2026-10-24T02:07:02.966398+00:00",
+          "source_hash": "b96947201ffe890718f03e1b73db78c6ac920af7691b71ef884f2d669741d25c",
           "state": "reviewed"
         }
       },
@@ -5626,6 +5665,26 @@
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "本期事件／研究",
+            "事件／报告日期",
+            "核对范围与限制"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[Claude Enterprise统一Chat与Cowork，企业权限和预算一起管理](https://fieldtofit.top/news/D-245)",
+              "2026-10-23",
+              "本站 2026-10-24核对；限本事件，未实测，不替换旧型号、价格或历史。"
+            ],
+            [
+              "[Agent 为什么越走越偏：上下文惯性与停止能力](https://fieldtofit.top/maps/agent-context-momentum-and-stopping)",
+              "2026-10-23",
+              "本站 2026-10-24核对；限本事件，未实测，不替换旧型号、价格或历史。"
+            ]
+          ]
+        },
         {
           "columns": [
             "平台功能／版本",
@@ -6149,6 +6208,18 @@
           "id": "oct23-a-docs",
           "title": "Claude Models on Google Cloud · Anthropic-managed documentation",
           "url": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct24-B",
+          "title": "Claude Enterprise unified experience · official source",
+          "url": "https://claude.com/resources/articles/unified-claude-enterprise"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct24-report1",
+          "title": "An alignment assessment of the UK AISI cybertesting incident",
+          "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi"
         }
       ],
       "state": "published",
@@ -6194,6 +6265,8 @@
             "Sonnet 5.5缓存读取由每百万token 0.20降至0.10美元，缓存写入及其他价格保持；不是所有调用费用减半。本站未复测模型性能和迁移。": "Sonnet 5.5 cache reads fall from $0.20 to $0.10 per million tokens; cache writes and other prices remain unchanged. This does not halve every invocation's cost. FieldToFit has not retested model performance or migration.",
             "Sonnet后续版本": "Follow-up version of Sonnet",
             "Sonnet缓存读取单独降价": "Sonnet cache reading separate price reduction",
+            "[Agent 为什么越走越偏：上下文惯性与停止能力](https://fieldtofit.top/maps/agent-context-momentum-and-stopping)": "[Why agents persist down the wrong path: context momentum and stopping](https://fieldtofit.top/maps/agent-context-momentum-and-stopping)",
+            "[Claude Enterprise统一Chat与Cowork，企业权限和预算一起管理](https://fieldtofit.top/news/D-245)": "[Claude Enterprise unifies Chat and Cowork with access and budget controls](https://fieldtofit.top/news/D-245)",
             "[Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费](https://fieldtofit.top/news/D-177)": "[Opus 5.5 Fast mode: broader access with separate fast-mode billing](https://fieldtofit.top/news/D-177)",
             "[官方日志](https://platform.claude.com/docs/en/release-notes/overview)": "[Official Log](https://platform.claude.com/docs/en/release-notes/overview)",
             "[官方材料](https://www.anthropic.com/news/2026-usage-policy-update)": "[Official Materials](https://www.anthropic.com/news/2026-usage-policy-update)",
@@ -6206,6 +6279,7 @@
             "主要变化": "Main changes",
             "主要能力或价格口径": "Main ability or price measurement basis",
             "事件与官方依据": "Event and official evidence",
+            "事件／报告日期": "Event / report date",
             "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
             "以上为2026-10-09核对的新增材料；以下保留历史版本及当时适用条件。": "New materials above were checked on 2026-10-09. Historical versions below retain the conditions that applied at the time.",
             "企业与开发采用：指令读取与追踪导出": "Enterprise and developer adoption: instruction access and trace export",
@@ -6247,10 +6321,13 @@
             "更新": "Update",
             "最高 2.5 倍指输出token速度，使用相同模型权重；不保证首token延迟或整个任务同倍缩短。": "Up to 2.5 times refers to output-token speed with the same model weights; it does not promise the same reduction in time to first token or total task duration.",
             "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。": "The text has not been confirmed to distribute the permission; keep the official entrance, MCP can read the FieldToFit interpretation and source list.",
+            "本期事件／研究": "Current event / research",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M02 Claude, D-29, D-49。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M02 Claude, D-29, D-49. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次只核对上表两项官方平台功能，保留以下模型版本、价格及历史正文；不表示整个 Claude 家族的全部入口已在今日复核。": "This check covers only the two official platform features above. Model versions, prices and historical text below remain; it does not claim every Claude-family source was rechecked today.",
             "本次新增与采用边界": "New information and adoption boundaries",
+            "本站 2026-10-24核对；限本事件，未实测，不替换旧型号、价格或历史。": "Checked 2026-10-24; limited to this event, not runtime-tested. Existing models, prices and history are retained.",
             "标准价格与上下文": "Standard price and context",
+            "核对范围与限制": "Scope and limits",
             "模型升级会影响已有调用流程。": "The model upgrade will affect the existing call process.",
             "正文再分发许可未确认，保留官方链接及本站解读。": "The text redistribution license has not been confirmed, and the official link and FieldToFit interpretation are retained.",
             "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。": "The text redistribution license has not been confirmed; MCP provides FieldToFit interpretation and source list, source text only links.",
@@ -6277,8 +6354,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-10-23T04:33:57.016352+00:00",
-          "source_hash": "d3f45520fd55bc587d3c51a9c1126e811ad4c990b92299e876e3e7b82e2f6999",
+          "reviewed_at": "2026-10-24T02:07:12.376355+00:00",
+          "source_hash": "35fb2fdc433f83ebea237c4fc739520807609fc4a83ccd71ec6e95005b07fd58",
           "state": "reviewed"
         }
       },
@@ -13931,7 +14008,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-23",
+  "reviewed_at": "2026-10-24",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }
