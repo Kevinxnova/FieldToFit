@@ -27,7 +27,8 @@ def test_dates_numbering_precision_shared_api_and_mcp(client):
     assert set(by_date['2026-10-22']['other_openai_ids']) == {'D-220', 'D-231', 'D-241'}
     assert set(by_date['2026-10-23']['other_openai_ids']) == {'D-230', 'D-242'}
     assert set(by_date['2026-10-23']['codex_ids']) == {'D-239', 'D-240'}
-    assert by_date['2026-10-24']['other_openai_ids'] == ['D-243']
+    assert set(by_date['2026-10-24']['other_openai_ids']) == {'D-243', 'D-248'}
+    assert by_date['2026-10-24']['codex_ids'] == ['D-247']
     assert set(by_date['2026-10-20']['codex_ids']) == {'D-199', 'D-209'}
     assert set(by_date['2026-10-20']['other_openai_ids']) == {'D-214', 'D-215'}
     assert set(by_date['2026-10-16']['codex_ids']) == {'D-155', 'D-165', 'D-172', 'D-200'}

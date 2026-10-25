@@ -2,6 +2,214 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "other",
+      "checked_at": "2026-10-25",
+      "codex_28_days": {
+        "announced_at": "2026-10-23T23:12:31.455+00:00",
+        "date_precision": "instant",
+        "event_key": "https://learn.chatgpt.com/docs/dots/channels",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Other OpenAI: faster Dots call connections",
+        "overview_zh": "其他OpenAI · Dots通话连接提速",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-23T23:12:31.455+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-25",
+              "evidence_url": "https://x.com/thsottiaux/status/2113770573994299544",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-25",
+            "evidence_url": "https://x.com/thsottiaux/status/2113770573994299544",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对Tibo原帖及作者头像；摘录不补成全文。post ID推导时刻与X显示日期／分钟及官方社区嵌入交叉核对；同款原图与本站已审缓存本轮字节一致。",
+            "text_en": "Calls connect much faster for dots",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Dots通话的连接速度更快。",
+            "url": "https://x.com/thsottiaux/status/2113770573994299544"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "speed"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-24",
+      "highlight": false,
+      "id": "D-248",
+      "interpretation": [
+        {
+          "locator": "原始官方资料已核对；时间与来源精度按专题字段保留。",
+          "source_ids": [
+            "day19",
+            "identity",
+            "channels",
+            "access"
+          ],
+          "text": "北京时间 10 月 24 日 07:12，Tibo在Day 19 同帖表示Dots通话连接更快。已有dot和通话权限的用户，可在dot对话中点击电话按钮使用。该变化属于其他OpenAI产品；官方未给出提升比例、统一延迟、最低应用版本或完整推出范围，本站未复测，也不把连接提速写成语音生成提速。Dots仍逐步开放，套餐、地区及管理员设置等资格条件继续适用，不代表今天向所有账户开放。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Dots call connections",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-25T03:48:56.663459+00:00",
+        "updated_at": "2026-10-25T03:48:56.663459+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "day19",
+          "title": "Tibo官方Day 19 原帖",
+          "url": "https://x.com/thsottiaux/status/2113770573994299544"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo身份与真实头像",
+          "url": "https://x.com/thsottiaux"
+        },
+        {
+          "coverage": "link_only",
+          "id": "channels",
+          "title": "Dots官方通话使用指南",
+          "url": "https://learn.chatgpt.com/docs/dots/channels"
+        },
+        {
+          "coverage": "link_only",
+          "id": "access",
+          "title": "Dots官方访问条件",
+          "url": "https://learn.chatgpt.com/docs/dots"
+        }
+      ],
+      "state": "published",
+      "summary": "其他OpenAI · Dots通话连接提速",
+      "title": "Dots通话连接提速，Tibo在Day 19 同帖公布",
+      "translations": {
+        "en": {
+          "fields": {
+            "Dots官方访问条件": "Official Dots access requirements",
+            "Dots官方通话使用指南": "Official Dots calling guide",
+            "Dots通话连接提速，Tibo在Day 19 同帖公布": "Dots calls connect faster, announced alongside Day 19",
+            "Tibo官方Day 19 原帖": "Tibo official Day 19 original post",
+            "Tibo身份与真实头像": "Tibo identity and verified avatar",
+            "其他OpenAI · Dots通话连接提速": "Other OpenAI: faster Dots call connections",
+            "北京时间 10 月 24 日 07:12，Tibo在Day 19 同帖表示Dots通话连接更快。已有dot和通话权限的用户，可在dot对话中点击电话按钮使用。该变化属于其他OpenAI产品；官方未给出提升比例、统一延迟、最低应用版本或完整推出范围，本站未复测，也不把连接提速写成语音生成提速。Dots仍逐步开放，套餐、地区及管理员设置等资格条件继续适用，不代表今天向所有账户开放。": "In the same Day 19 post at 07:12 Beijing time on 10/24, Tibo reported faster Dots call connections. Users with dot and call access can use the phone button in their dot conversation. This is an Other OpenAI update. No improvement percentage, uniform latency, minimum app version or complete rollout scope was supplied; FieldToFit has not retested it. Faster connection does not mean faster speech generation. Dots remains a gradual rollout with plan, regional and administrator requirements.",
+            "原始官方资料已核对；时间与来源精度按专题字段保留。": "Original official sources checked; timestamps and source precision retained in the topic fields.",
+            "变化与适用范围": "Changes and availability",
+            "直接核对Tibo原帖及作者头像；摘录不补成全文。post ID推导时刻与X显示日期／分钟及官方社区嵌入交叉核对；同款原图与本站已审缓存本轮字节一致。": "Tibo’s original post and author avatar checked directly; an excerpt is not expanded into full text. Post-ID-derived time was compared with X’s displayed date and minute and the official-community embed; the matching original avatar and reviewed site cache have identical bytes in this check."
+          },
+          "source_hash": "fcd5b07e6774bf978d5ed7bbf49bf75bb65f681baab2a64929a563bf4b613034",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-25",
+      "codex_28_days": {
+        "announced_at": "2026-10-23T23:12:31.455+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/thsottiaux/status/2113770573994299544",
+        "group": "codex",
+        "official_day": 19,
+        "overview_en": "Day 19: reasoning changes preserve conversation caches",
+        "overview_zh": "Day 19 · 切换推理设置保留对话缓存",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-23T23:12:31.455+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-25",
+              "evidence_url": "https://x.com/thsottiaux/status/2113770573994299544",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-25",
+            "evidence_url": "https://x.com/thsottiaux/status/2113770573994299544",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对Tibo原帖及作者头像；摘录不补成全文。post ID推导时刻与X显示日期／分钟及官方社区嵌入交叉核对；同款原图与本站已审缓存本轮字节一致。",
+            "text_en": "changing reasoning in codex & work mid conversation does not invalidate cache anymore",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "在Codex与Work的对话中调整推理设置，不再使缓存失效。",
+            "url": "https://x.com/thsottiaux/status/2113770573994299544"
+          }
+        ],
+        "timestamp_basis": "post_id_derived",
+        "type": "fix"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-24",
+      "highlight": false,
+      "id": "D-247",
+      "interpretation": [
+        {
+          "locator": "原始官方资料已核对；时间与来源精度按专题字段保留。",
+          "source_ids": [
+            "day19",
+            "identity"
+          ],
+          "text": "北京时间 10 月 24 日 07:12，Tibo在官方Day 19 公告中说明：在Codex／Work的同一对话中调整推理设置，不再使缓存失效。用户可按任务需要调整当前对话的推理设置；原帖没有给出统一节省比例、延迟数字或完整版本／套餐范围，本站未实测。此项不等于额度重置或切换任意模型也保证保留缓存。CLI更新复用已有D-240；同帖Dots通话更新独立列入其他OpenAI，不制造 19.1 等分项编号。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Codex / Work reasoning cache",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-25T03:48:29.863973+00:00",
+        "updated_at": "2026-10-25T03:48:29.863973+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "day19",
+          "title": "Tibo官方Day 19 原帖",
+          "url": "https://x.com/thsottiaux/status/2113770573994299544"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo身份与真实头像",
+          "url": "https://x.com/thsottiaux"
+        }
+      ],
+      "state": "published",
+      "summary": "Day 19 · 切换推理设置保留对话缓存",
+      "title": "官方Day 19：对话中切换推理设置不再使Codex／Work缓存失效",
+      "translations": {
+        "en": {
+          "fields": {
+            "Day 19 · 切换推理设置保留对话缓存": "Day 19: reasoning changes preserve conversation caches",
+            "Tibo官方Day 19 原帖": "Tibo official Day 19 original post",
+            "Tibo身份与真实头像": "Tibo identity and verified avatar",
+            "北京时间 10 月 24 日 07:12，Tibo在官方Day 19 公告中说明：在Codex／Work的同一对话中调整推理设置，不再使缓存失效。用户可按任务需要调整当前对话的推理设置；原帖没有给出统一节省比例、延迟数字或完整版本／套餐范围，本站未实测。此项不等于额度重置或切换任意模型也保证保留缓存。CLI更新复用已有D-240；同帖Dots通话更新独立列入其他OpenAI，不制造 19.1 等分项编号。": "At 07:12 Beijing time on 10/24, Tibo’s official Day 19 post said changing reasoning settings within a Codex / Work conversation no longer invalidates its cache. Adjust the current conversation’s reasoning setting as needed. No uniform savings, latency figure, complete version or plan list was supplied; FieldToFit has not tested the change. This does not establish a usage reset or the same behavior when switching models. CLI updates reuse D-240; Dots calls are listed separately under Other OpenAI, without invented subnumbers such as 19.1.",
+            "原始官方资料已核对；时间与来源精度按专题字段保留。": "Original official sources checked; timestamps and source precision retained in the topic fields.",
+            "变化与适用范围": "Changes and availability",
+            "官方Day 19：对话中切换推理设置不再使Codex／Work缓存失效": "Official Day 19: reasoning changes preserve Codex / Work conversation caches",
+            "直接核对Tibo原帖及作者头像；摘录不补成全文。post ID推导时刻与X显示日期／分钟及官方社区嵌入交叉核对；同款原图与本站已审缓存本轮字节一致。": "Tibo’s original post and author avatar checked directly; an excerpt is not expanded into full text. Post-ID-derived time was compared with X’s displayed date and minute and the official-community embed; the matching original avatar and reviewed site cache have identical bytes in this check."
+          },
+          "source_hash": "4c92ac5f09cf3772e5605df76ed77ef285b6908773a3c0ac19610353c5778ac7",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "tool",
       "checked_at": "2026-10-24",
       "editor": "FieldToFit",
@@ -1282,16 +1490,39 @@
     },
     {
       "category": "tool",
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "codex_28_days": {
         "announced_at": "2026-10-23T04:48:10Z",
         "date_precision": "instant",
         "event_key": "https://github.com/openai/codex/releases/tag/rust-v0.164.0",
         "group": "codex",
         "official_day": null,
-        "overview_en": "CLI 0.164.0: presets, image previews and recovery fixes",
-        "overview_zh": "CLI 0.164.0 · 预设、图片预览与恢复修复",
-        "source_posts": [],
+        "overview_en": "CLI 0.164.0: presets and recovery fixes, with Tibo’s follow-up",
+        "overview_zh": "CLI 0.164.0 · 预设与恢复修复，附Tibo后续说明",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-23T23:13:40.326+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-10-25",
+              "evidence_url": "https://x.com/thsottiaux/status/2113770862860222611",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-10-25",
+            "evidence_url": "https://x.com/thsottiaux/status/2113770862860222611",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对Tibo原帖及作者头像；摘录不补成全文。post ID推导时刻与X显示日期／分钟及官方社区嵌入交叉核对；同款原图与本站已审缓存本轮字节一致。",
+            "text_en": "We've added reusable prompt presets, inline model and permission settings, and enterprise MCP sign-in.",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "新增可复用提示词预设、内联模型与权限设置，以及企业MCP登录。",
+            "url": "https://x.com/thsottiaux/status/2113770862860222611"
+          }
+        ],
         "timestamp_basis": "official_timestamp",
         "type": "feature"
       },
@@ -1308,6 +1539,16 @@
           ],
           "text": "北京时间 10 月 23 日 12:48，openai/codex发布CLI 0.164.0 正式版。用户可用/presets保存 10 组提示词或命令，直接给/model与/permissions传入参数；支持Kitty或Sixel图形的终端可在全屏记录中预览图片。版本也扩展企业MCP认证与受支持远程会话的凭据遮蔽，并默认开启Bedrock设置向导。修复包括压缩历史恢复、线程设置恢复、Windows代理认证、重复配置覆盖和权限选择顺序，并加强macOS沙箱检查。CLI用户可按官方release更新至 0.164.0 后使用；图片显示、企业授权和远程遮蔽仍受各自环境限制，不推断所有桌面客户端已同步上线。",
           "title": "变化与适用范围"
+        },
+        {
+          "locator": "Tibo直接原帖正文及与Day 19 主帖的回复关系；GitHub正式版更新内容。",
+          "source_ids": [
+            "tibo-cli",
+            "day19",
+            "release"
+          ],
+          "text": "北京时间 10 月 24 日 07:13，Tibo在Day 19 主帖下补充CLI说明，列出可复用提示词预设、内联模型／权限设置、企业MCP登录、长会话恢复与Windows企业代理认证。这些与已收录 0.164.0 更新对应，保留 10 月 23 日正式版事件，不另建CLI发布记录。",
+          "title": "Tibo后续关联说明"
         }
       ],
       "name": "Codex CLI",
@@ -1315,7 +1556,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-23T23:42:45.523665+00:00",
-        "updated_at": "2026-10-23T23:42:45.523665+00:00"
+        "updated_at": "2026-10-25T03:49:24.272035+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-23",
@@ -1331,6 +1572,24 @@
           "id": "release-time",
           "title": "GitHub官方release元数据",
           "url": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.164.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "tibo-cli",
+          "title": "Tibo在Day 19 下说明CLI更新",
+          "url": "https://x.com/thsottiaux/status/2113770862860222611"
+        },
+        {
+          "coverage": "link_only",
+          "id": "day19",
+          "title": "Tibo官方Day 19 主帖",
+          "url": "https://x.com/thsottiaux/status/2113770573994299544"
+        },
+        {
+          "coverage": "link_only",
+          "id": "identity",
+          "title": "Tibo身份与真实头像",
+          "url": "https://x.com/thsottiaux"
         }
       ],
       "state": "published",
@@ -1340,14 +1599,22 @@
         "en": {
           "fields": {
             "CLI 0.164.0 · 预设、图片预览与恢复修复": "CLI 0.164.0: presets, image previews and recovery fixes",
+            "CLI 0.164.0 · 预设与恢复修复，附Tibo后续说明": "CLI 0.164.0: presets and recovery fixes, with Tibo’s follow-up",
             "Codex CLI 0.164.0 正式版：预设、终端图片与会话恢复改进": "Codex CLI 0.164.0: presets, terminal images and session recovery",
             "GitHub官方release元数据": "Official GitHub release metadata",
+            "Tibo后续关联说明": "Later context from Tibo",
+            "Tibo在Day 19 下说明CLI更新": "Tibo explains CLI updates under Day 19",
+            "Tibo官方Day 19 主帖": "Tibo official Day 19 main post",
+            "Tibo直接原帖正文及与Day 19 主帖的回复关系；GitHub正式版更新内容。": "Tibo’s original reply, its Day 19 parent, and the GitHub stable-release notes.",
+            "Tibo身份与真实头像": "Tibo identity and verified avatar",
             "openai/codex官方 0.164.0 正式release": "Official openai/codex 0.164.0 release",
             "北京时间 10 月 23 日 12:48，openai/codex发布CLI 0.164.0 正式版。用户可用/presets保存 10 组提示词或命令，直接给/model与/permissions传入参数；支持Kitty或Sixel图形的终端可在全屏记录中预览图片。版本也扩展企业MCP认证与受支持远程会话的凭据遮蔽，并默认开启Bedrock设置向导。修复包括压缩历史恢复、线程设置恢复、Windows代理认证、重复配置覆盖和权限选择顺序，并加强macOS沙箱检查。CLI用户可按官方release更新至 0.164.0 后使用；图片显示、企业授权和远程遮蔽仍受各自环境限制，不推断所有桌面客户端已同步上线。": "The official openai/codex CLI 0.164.0 release was published at 12:48 Beijing time on 10/23. It adds 10 reusable /presets slots, inline /model and /permissions arguments, and fullscreen image previews in Kitty- or Sixel-capable terminals. It expands enterprise MCP authentication and credential masking in supported remote sessions, and enables the Bedrock setup wizard by default. Fixes cover compressed-history recovery, saved thread settings, Windows proxy authentication, repeated configuration overrides and permission selection order, with stronger macOS sandbox checks. CLI users can update to 0.164.0 using the official release. Terminal graphics, enterprise grants and remote masking retain their environment requirements; this does not establish simultaneous availability in every desktop client.",
+            "北京时间 10 月 24 日 07:13，Tibo在Day 19 主帖下补充CLI说明，列出可复用提示词预设、内联模型／权限设置、企业MCP登录、长会话恢复与Windows企业代理认证。这些与已收录 0.164.0 更新对应，保留 10 月 23 日正式版事件，不另建CLI发布记录。": "At 07:13 Beijing time on 10/24, Tibo replied under Day 19 with details about reusable presets, inline model and permission settings, enterprise MCP sign-in, long-session recovery and Windows corporate-proxy authentication. These match the recorded 0.164.0 update. Its 10/23 release date is retained, with no duplicate CLI release.",
             "原始官方资料已核对；时间与来源精度按专题字段保留。": "Original official sources checked; timestamps and source precision retained in the topic fields.",
-            "变化与适用范围": "Changes and availability"
+            "变化与适用范围": "Changes and availability",
+            "直接核对Tibo原帖及作者头像；摘录不补成全文。post ID推导时刻与X显示日期／分钟及官方社区嵌入交叉核对；同款原图与本站已审缓存本轮字节一致。": "Tibo’s original post and author avatar checked directly; an excerpt is not expanded into full text. Post-ID-derived time was compared with X’s displayed date and minute and the official-community embed; the matching original avatar and reviewed site cache have identical bytes in this check."
           },
-          "source_hash": "e6031b5152bd1bcc16ef6e5b7cd3a43bf5a6a3baa96bf143358031b377b3a7dd",
+          "source_hash": "605d881a366d7d1ec82e203294c27764a81bc282c0ce7bbea2c96ec16a18a7b4",
           "state": "reviewed"
         }
       }
@@ -36907,7 +37174,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-24",
+  "reviewed_at": "2026-10-25",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

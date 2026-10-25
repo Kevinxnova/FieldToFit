@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.3"></a>
+## v1.17.3 · Day 19缓存、Dots通话与CLI来源补充 · 2026-10-25
+<!-- public-title:en: Day 19 caches, Dots calls and CLI source context -->
+<!-- release-summary:zh:start -->
+- Codex／Work日志加入官方Day 19：同一对话切换推理设置不再使缓存失效，保留真实发布日期与适用边界。
+- Dots通话连接提速独立列入其他OpenAI；CLI 0.164.0补充Tibo原帖与真实头像，沿用原发布日和编号。
+- 网站与AI共享73条已审专题日志，保留并行企业新闻、研究技术图与历史内容；无数据库迁移或接口变更。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add official Day 19: changing reasoning settings within a Codex / Work conversation no longer invalidates its cache, retaining the actual publication date and scope.
+- List faster Dots call connections under Other OpenAI; add Tibo’s original post and verified avatar to CLI 0.164.0 without changing its release date or ID.
+- Share 73 reviewed topic entries between the website and AI readers, preserving concurrent enterprise news, research figures and history; no database migration or API change.
+<!-- release-summary:en:end -->
+
+对应REQ-20。所有者明确批准10月25日的两条新增与D-240来源补充。基于已部署v1.17.2，本批为兼容内容patch；自v1.17.0以来累计均为已批准内容维护，不构成新模块或主要流程，无待决minor／major范围。实际CMS、备份、同源读取与程序交付见[本批验收](docs/validation/2026-10-25-codex-day19-cache-dots.md)。原晨报、夜间维护和未来逐批批准规则保持。
+
 <a id="v1.17.2"></a>
 ## v1.17.2 · 企业Claude、旧模型停用与两篇隔离研究 · 2026-10-24
 <!-- site-deployed:2026-10-24 -->

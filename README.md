@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.2](CHANGELOG.md#v1.17.2)** · [fieldtofit-v1.17.2](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.2)
+**当前源码版本：[v1.17.3](CHANGELOG.md#v1.17.3)** · [fieldtofit-v1.17.3](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.3)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 更新所选OpenAI旧模型停用、Claude Enterprise统一体验和AISI回放研究，同步近期总表及两份对应档案。
-- 两篇技术分析各含四结论、对应论述和三张本站图；复用D-242历史，公开保留实验条件与来源数值差异。
-- 新增Enterprise中英信息卡，正式发布后按真实回执轮替首页报告与卡片，保留全部索引和历史入口。
+- Codex／Work日志加入官方Day 19：同一对话切换推理设置不再使缓存失效，保留真实发布日期与适用边界。
+- Dots通话连接提速独立列入其他OpenAI；CLI 0.164.0补充Tibo原帖与真实头像，沿用原发布日和编号。
+- 网站与AI共享73条已审专题日志，保留并行企业新闻、研究技术图与历史内容；无数据库迁移或接口变更。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

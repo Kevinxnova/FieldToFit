@@ -1,7 +1,35 @@
 {
-  "version": "1.17.2",
-  "revision": "d3ead7867bdddce83718d2c4da5d5569c504efece267bc6c167aa39873eaeff5",
+  "version": "1.17.3",
+  "revision": "466abbd4741daf11e6293a8020410b86d14739eb619a072f86db15e684981bd3",
   "items": [
+    {
+      "version": "1.17.3",
+      "date": "2026-10-25",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Day 19缓存、Dots通话与CLI来源补充",
+          "highlights": [
+            "Codex／Work日志加入官方Day 19：同一对话切换推理设置不再使缓存失效，保留真实发布日期与适用边界。",
+            "Dots通话连接提速独立列入其他OpenAI；CLI 0.164.0补充Tibo原帖与真实头像，沿用原发布日和编号。",
+            "网站与AI共享73条已审专题日志，保留并行企业新闻、研究技术图与历史内容；无数据库迁移或接口变更。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Day 19 caches, Dots calls and CLI source context",
+          "highlights": [
+            "Add official Day 19: changing reasoning settings within a Codex / Work conversation no longer invalidates its cache, retaining the actual publication date and scope.",
+            "List faster Dots call connections under Other OpenAI; add Tibo’s original post and verified avatar to CLI 0.164.0 without changing its release date or ID.",
+            "Share 73 reviewed topic entries between the website and AI readers, preserving concurrent enterprise news, research figures and history; no database migration or API change."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.3"
+    },
     {
       "version": "1.17.2",
       "date": "2026-10-24",
