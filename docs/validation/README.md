@@ -1,5 +1,7 @@
 # 验收证据导航
 
+- [2026-10-25：Kimi与两篇研究](2026-10-25-kimi-monitorability-employment.md)：六项选择、双语图文及真实轮替。
+
 
 - [2026-10-25 Codex Day 19缓存、Dots通话与CLI来源补充](2026-10-25-codex-day19-cache-dots.md)
 - [2026-10-24：企业体验与两篇隔离研究](2026-10-24-enterprise-and-containment.md)：六项选择、双语图文及实际轮替。

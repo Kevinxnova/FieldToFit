@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.4"></a>
+## v1.17.4 · Kimi采用条件、监控指标与就业研究 · 2026-10-25
+<!-- site-deployed:2026-10-25 -->
+<!-- public-title:en: Kimi adoption conditions, monitorability metrics and employment research -->
+<!-- release-summary:zh:start -->
+- 更新已选Kimi K3.1 Pro、英国AI生物安全实验室和Claude已解决服务事件，同步两份对应档案及近期总表。
+- 新增监控指标与Anthropic就业研究两篇分析，各含四结论、对应论述和三张本站图，保留样本、分母与非因果边界。
+- 提供Kimi中英分享卡；正式发表后轮替首页四篇报告和三张卡片，旧内容保留全部索引及稳定链接。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Update the selected Kimi K3.1 Pro, UK AI Biosecurity Lab and resolved Claude incidents, with two related dossiers and the news overview.
+- Add monitorability and Anthropic employment analyses, each with four findings, matching arguments and three FieldToFit figures, retaining samples, denominators and causal limits.
+- Provide a bilingual Kimi share card; actual publication rotates four homepage reports and three cards while retaining all indexes and stable links.
+<!-- release-summary:en:end -->
+
+接续2026-10-25用户明确选择A–C、报告1／2、卡1。A与卡1共用D-249；B为D-250；C为D-251；两报告D-252／D-253。CW-M04／CW-M02只增补对应事件。以真实v1.17.3为基线，保留Day 19、cache与Dots更新；自v1.17.0以来为已批准内容维护，本批是兼容内容／静态资源patch，无迁移或主要流程变更。
+
+实际隔离预览、双语图文、部署和发布回执见[本批验收](docs/validation/2026-10-25-kimi-monitorability-employment.md)。原晨间检查未完成项和连续自然日验收不因内容发表而自动通过。
+
 <a id="v1.17.3"></a>
 ## v1.17.3 · Day 19缓存、Dots通话与CLI来源补充 · 2026-10-25
 <!-- public-title:en: Day 19 caches, Dots calls and CLI source context -->

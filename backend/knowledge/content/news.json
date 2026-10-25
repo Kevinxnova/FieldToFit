@@ -2,6 +2,1207 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "model",
+      "checked_at": "2026-10-25",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-23",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "先比较任务完成质量；本站建议。",
+            "title": "长代码任务开发者"
+          },
+          {
+            "detail": "先核套餐、启用开关与预算；本站建议。",
+            "title": "团队管理员"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "Highspeed官方称约 2–3倍速度、约 2倍额度；本站未实测。",
+            "title": "两档速度，两档消耗"
+          },
+          {
+            "detail": "普通版Plus起，1M与Highspeed需Pro起；旧套餐对应Moderato／Allegretto。",
+            "title": "1M上下文有套餐门槛"
+          },
+          {
+            "detail": "切换后另开新会话，确认实际型号；在线可用不等于权重已发布。",
+            "title": "只支持思考模式"
+          }
+        ],
+        "checked_at": "2026-10-25",
+        "evidence": [
+          {
+            "locator": "Availability",
+            "source_id": "announcement"
+          },
+          {
+            "locator": "Model Overview; How to Switch Models",
+            "source_id": "models"
+          },
+          {
+            "locator": "October 23, 2026",
+            "source_id": "changelog"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "Kimi K3.1 Pro上线，提速也要核额度",
+        "limits": [
+          {
+            "detail": "官方计划 2026-11-04前发布完整权重，许可与部署条件待核。",
+            "title": "完整权重尚待发布"
+          },
+          {
+            "detail": "不将厂商速度比例直接当作任务成本或本地运行收益。",
+            "title": "速度与费用未实测"
+          }
+        ],
+        "next_step": "用同一短任务对照普通版与Highspeed，记录耗时、额度和完成结果。",
+        "revised_at": "2026-10-25",
+        "scope": "K3.1 Pro／Highspeed；Kimi Code 2026-10-23上线。",
+        "share": {
+          "content_revision": "2c882694b6dd2396839ba41201f2a654922d8855d9089f34d8e1571883a515df",
+          "en": {
+            "sha256": "e9e0558b928b5752ee2e1a99d27c8d64cd26f5e45cb5c80acbc1029500fa1141",
+            "text_revision": "f6dfab6cc6dce6ad48d5da4b8e1ee219d23e49ff0938607646c494660af13191",
+            "url": "/hot-cards/d-249-2c882694b6dd-en.png"
+          },
+          "zh": {
+            "sha256": "ec74be4def0b81c98f0f88ea0fc9fa7da6b4e9c4b4d85ebf69de31f5c37de68e",
+            "url": "/hot-cards/d-249-2c882694b6dd-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "2026-10-25核对官方材料；未实测账户、速度、账单、长上下文或本地部署。"
+      },
+      "id": "D-249",
+      "interpretation": [
+        {
+          "locator": "Availability",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "技术博客明确完整权重计划在 2026-11-04前发布。当前在线可用不等于已经能下载全部权重；最终许可、部署资源与推理引擎支持仍待核实。",
+          "title": "在线开放与权重发布分开"
+        },
+        {
+          "locator": "Model Overview; Why is Highspeed not noticeably faster?",
+          "source_ids": [
+            "models"
+          ],
+          "text": "Kimi Code文档称Highspeed约为普通版 2–3倍速度、约 2倍额度消耗。提速针对模型输出，不加快工具或脚本本身；这不是任务总耗时或费用的本站实测。",
+          "title": "Highspeed提高输出速度，也提高额度消耗"
+        },
+        {
+          "locator": "Model Overview",
+          "source_ids": [
+            "models"
+          ],
+          "text": "普通版Plus／Moderato起；1M与Highspeed需Pro／Allegretto起。Kimi Code使用k3.1-pro、k3.1-pro-highspeed；不要与通用API中的kimi-k3.1-pro系列标识混用。",
+          "title": "套餐与接口型号须一起核对"
+        },
+        {
+          "locator": "Thinking Effort; How to Switch Models",
+          "source_ids": [
+            "models"
+          ],
+          "text": "K3.1 Pro仅支持思考模式，关闭会返回 400。切换型号或思考强度会影响缓存，建议新开会话并确认实际模型；未实测账户权限、长上下文、速度或账单。",
+          "title": "保持思考模式，切换时新开会话"
+        }
+      ],
+      "name": "Kimi K3.1 Pro",
+      "note": "上线日期取Kimi Code 2026-10-23日志；技术博客未独立显示首发日，不补造其日期。本站 2026-10-25核对；厂商能力表述不等于独立复现。",
+      "organization": "Moonshot AI",
+      "publication": {
+        "first_published_at": "2026-10-25T04:44:38.771184+00:00",
+        "hot_card_first_published_at": "2026-10-25T04:44:38.771213+00:00",
+        "hot_card_selected_at": "2026-10-25T04:44:38.771213+00:00",
+        "updated_at": "2026-10-25T04:44:38.771184+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M04",
+          "name": "Kimi",
+          "url": "https://fieldtofit.top/watch/CW-M04"
+        }
+      ],
+      "source_published_at": "2026-10-23",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "Kimi K3.1 Pro Tech Blog",
+          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+        },
+        {
+          "coverage": "link_only",
+          "id": "models",
+          "title": "Kimi Code Models",
+          "url": "https://www.kimi.com/code/docs/en/kimi-code/models.html"
+        },
+        {
+          "coverage": "link_only",
+          "id": "changelog",
+          "title": "Kimi Code Changelog",
+          "url": "https://www.kimi.com/code/docs/en/kimi-code/whats-new.html"
+        }
+      ],
+      "state": "published",
+      "summary": "K3.1 Pro和Highspeed已提供在线服务，官方称扩大K3后训练投入，强化代码、长任务与知识工作。Kimi Code的套餐、1M上下文与思考模式条件需要分别核对。",
+      "title": "Kimi K3.1 Pro上线：完整权重仍待后续发布",
+      "translations": {
+        "en": {
+          "fields": {
+            "1M上下文有套餐门槛": "1M context requires an eligible plan",
+            "2026-10-25核对官方材料；未实测账户、速度、账单、长上下文或本地部署。": "Official materials checked on 2026-10-25; account access, speed, billing, long context and local deployment were not tested.",
+            "Highspeed官方称约 2–3倍速度、约 2倍额度；本站未实测。": "Highspeed is described as about 2–3 times the speed and 2 times the quota use; not tested by FieldToFit.",
+            "Highspeed提高输出速度，也提高额度消耗": "Highspeed raises output speed and quota use",
+            "K3.1 Pro仅支持思考模式，关闭会返回 400。切换型号或思考强度会影响缓存，建议新开会话并确认实际模型；未实测账户权限、长上下文、速度或账单。": "K3.1 Pro supports thinking mode only; disabling it returns 400. Switching models or effort affects caching; start a fresh session and confirm the active model. Account access, long context, speed and billing were not tested.",
+            "K3.1 Pro和Highspeed已提供在线服务，官方称扩大K3后训练投入，强化代码、长任务与知识工作。Kimi Code的套餐、1M上下文与思考模式条件需要分别核对。": "K3.1 Pro and Highspeed are available online, with expanded post-training from K3 for coding, long tasks and knowledge work. Kimi Code plan access, 1M context and thinking-mode requirements need separate checks.",
+            "K3.1 Pro／Highspeed；Kimi Code 2026-10-23上线。": "K3.1 Pro / Highspeed; launched in Kimi Code on 2026-10-23.",
+            "Kimi Code文档称Highspeed约为普通版 2–3倍速度、约 2倍额度消耗。提速针对模型输出，不加快工具或脚本本身；这不是任务总耗时或费用的本站实测。": "Kimi Code documentation describes roughly 2–3 times normal output speed and about 2 times the quota use. Tools and scripts themselves do not accelerate; these are not FieldToFit measurements of total task time or cost.",
+            "Kimi K3.1 Pro上线，提速也要核额度": "Kimi K3.1 Pro is live: check quota as well as speed",
+            "Kimi K3.1 Pro上线：完整权重仍待后续发布": "Kimi K3.1 Pro launches; full weights remain forthcoming",
+            "上线日期取Kimi Code 2026-10-23日志；技术博客未独立显示首发日，不补造其日期。本站 2026-10-25核对；厂商能力表述不等于独立复现。": "Launch date follows the Kimi Code 2026-10-23 log; the technical blog does not independently display its first-publication date. Checked on 2026-10-25; vendor capability claims are not independent replications.",
+            "不将厂商速度比例直接当作任务成本或本地运行收益。": "Do not equate vendor speed ratios with task cost or local-runtime gains.",
+            "两档速度，两档消耗": "Two speeds, different quota use",
+            "保持思考模式，切换时新开会话": "Keep thinking enabled and start a fresh session when switching",
+            "先核套餐、启用开关与预算；本站建议。": "Check plan, enablement and budget first; a FieldToFit suggestion.",
+            "先比较任务完成质量；本站建议。": "Compare completion quality first; a FieldToFit suggestion.",
+            "切换后另开新会话，确认实际型号；在线可用不等于权重已发布。": "Start a fresh session after switching and confirm the model; online access does not mean weights are released.",
+            "只支持思考模式": "Thinking mode only",
+            "团队管理员": "Team administrators",
+            "在线开放与权重发布分开": "Separate online access from weight release",
+            "套餐与接口型号须一起核对": "Check plan access and interface-specific identifiers",
+            "完整权重尚待发布": "Full weights are forthcoming",
+            "官方计划 2026-11-04前发布完整权重，许可与部署条件待核。": "Full weights are planned by 2026-11-04; licensing and deployment requirements await verification.",
+            "技术博客明确完整权重计划在 2026-11-04前发布。当前在线可用不等于已经能下载全部权重；最终许可、部署资源与推理引擎支持仍待核实。": "The technical blog plans full weights by 2026-11-04. Online availability does not mean full weights can already be downloaded; final licensing, deployment resources and inference-engine support remain to be checked.",
+            "普通版Plus起，1M与Highspeed需Pro起；旧套餐对应Moderato／Allegretto。": "Normal access starts at Plus; 1M and Highspeed require Pro or above, corresponding to legacy Moderato/Allegretto tiers.",
+            "普通版Plus／Moderato起；1M与Highspeed需Pro／Allegretto起。Kimi Code使用k3.1-pro、k3.1-pro-highspeed；不要与通用API中的kimi-k3.1-pro系列标识混用。": "Normal access starts at Plus/Moderato; 1M context and Highspeed require Pro/Allegretto or above. Kimi Code uses k3.1-pro and k3.1-pro-highspeed; do not mix these with the kimi-k3.1-pro identifiers in the general API.",
+            "用同一短任务对照普通版与Highspeed，记录耗时、额度和完成结果。": "Compare normal and Highspeed modes on the same short task, recording time, quota and completion.",
+            "速度与费用未实测": "Speed and costs not tested",
+            "长代码任务开发者": "Developers with long coding tasks"
+          },
+          "source_hash": "9b0d86059d79b5e9de0916b32567a2871e91ab69a352a81672d8dc6b34e2fa44",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-25",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-24",
+      "highlight": true,
+      "id": "D-251",
+      "interpretation": [
+        {
+          "locator": "Incident updates; resolved",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "原文给出的 2026-10-24 UTC 05:00–05:35对应北京时间同日 13:00–13:35；状态已解决。公告创建、更新和关闭时间不能替代这一实际影响窗口。",
+          "title": "Fable 5／5.1影响窗口为北京时间 13:00–13:35"
+        },
+        {
+          "locator": "Resolved impact window",
+          "source_ids": [
+            "opus"
+          ],
+          "text": "Opus 5.5窗口为 2026-10-24北京时间 08:23–08:34；另一组Fable 5.1／Sonnet 5.5／Haiku 5.5窗口为 07:28–07:59，对应UTC前一天 23:28–23:59。两组都已解决。",
+          "title": "Opus与多模型事件分开记录"
+        },
+        {
+          "locator": "Resolved impact window",
+          "source_ids": [
+            "multiple"
+          ],
+          "text": "本站建议有异常记录的团队按UTC日志对齐模型与时段，检查重试和失败任务。未测量单个账户的可用率、影响比例、账单或数据损失。",
+          "title": "状态公告不能推算个人损失"
+        }
+      ],
+      "name": "Claude service incident history",
+      "note": "通过官方状态API核对，事件为 2026-10-24北京时间；本站 2026-10-25复核。只增补CW-M02服务历史，不改写模型能力、价格或整体健康承诺。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-25T04:44:12.680668+00:00",
+        "updated_at": "2026-10-25T04:44:12.680668+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-10-24",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "Claude status · Fable 5 / 5.1",
+          "url": "https://stspg.io/7n1wgb6qsfly"
+        },
+        {
+          "coverage": "link_only",
+          "id": "opus",
+          "title": "Claude status · Opus 5.5",
+          "url": "https://stspg.io/dmn3bc440bnb"
+        },
+        {
+          "coverage": "link_only",
+          "id": "multiple",
+          "title": "Claude status · multiple models",
+          "url": "https://stspg.io/gqp288t3qzpt"
+        }
+      ],
+      "state": "published",
+      "summary": "官方状态页的三组已解决事件涉及不同模型和时段。这里保留北京时间影响窗口；这是历史服务记录，不表示当前服务仍在故障。",
+      "title": "Claude服务恢复记录：分清影响窗口与公告时间",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude服务恢复记录：分清影响窗口与公告时间": "Claude recovery record: distinguish impact windows from notice times",
+            "Fable 5／5.1影响窗口为北京时间 13:00–13:35": "Fable 5/5.1 impact window: 13:00–13:35 Beijing time",
+            "Opus 5.5窗口为 2026-10-24北京时间 08:23–08:34；另一组Fable 5.1／Sonnet 5.5／Haiku 5.5窗口为 07:28–07:59，对应UTC前一天 23:28–23:59。两组都已解决。": "Opus 5.5 was affected on 2026-10-24 at 08:23–08:34 Beijing time. Fable 5.1/Sonnet 5.5/Haiku 5.5 were affected at 07:28–07:59, corresponding to the preceding UTC day at 23:28–23:59. Both incidents are resolved.",
+            "Opus与多模型事件分开记录": "Keep the Opus and multi-model events separate",
+            "原文给出的 2026-10-24 UTC 05:00–05:35对应北京时间同日 13:00–13:35；状态已解决。公告创建、更新和关闭时间不能替代这一实际影响窗口。": "The stated 2026-10-24 UTC 05:00–05:35 window is 13:00–13:35 Beijing time that day; resolved. Notice creation, update and closure timestamps are distinct from the impact window.",
+            "官方状态页的三组已解决事件涉及不同模型和时段。这里保留北京时间影响窗口；这是历史服务记录，不表示当前服务仍在故障。": "Three resolved status-page incidents involve different models and times. This record retains Beijing-time impact windows and does not imply an ongoing outage.",
+            "本站建议有异常记录的团队按UTC日志对齐模型与时段，检查重试和失败任务。未测量单个账户的可用率、影响比例、账单或数据损失。": "FieldToFit suggests aligning UTC logs with the affected models and windows and reviewing retries and failed tasks. Per-account availability, impact rates, billing and data loss were not measured.",
+            "状态公告不能推算个人损失": "Status notices do not establish individual losses",
+            "通过官方状态API核对，事件为 2026-10-24北京时间；本站 2026-10-25复核。只增补CW-M02服务历史，不改写模型能力、价格或整体健康承诺。": "Checked through the official status API for Beijing-time events on 2026-10-24; reviewed on 2026-10-25. Only CW-M02 service history is extended, without altering model capabilities, prices or overall availability guarantees."
+          },
+          "source_hash": "b2f0f7e6c88d2d2bf95c2aeccd2885ec7bd12a0a01c7363fe5d88bc29fc33dcc",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-25",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-24",
+      "highlight": true,
+      "id": "D-250",
+      "interpretation": [
+        {
+          "locator": "Funding and company commitments",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "政府承诺£100M；企业另有最高£200M支持，包括OpenAI的£100M算力与模型额度，以及Anthropic最高£100M模型额度、访问和技术支持。不能改写为£300M现金全部到位。",
+          "title": "政府资金与企业资源分别记账"
+        },
+        {
+          "locator": "Research priorities; partners",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "重点包括更早识别生物威胁和加速医疗对策研发；DeepMind、Basecamp等作为合作方出现。公告并未证明已有临床产品或全面覆盖的检测服务。",
+          "title": "研究目标不等于已有产品"
+        },
+        {
+          "locator": "Announcement and implementation scope",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "独立非营利结构、实际拨付、资源限制与研究成果需后续核实。本站仅介绍公开计划及资源口径，不推断模型能力、公共卫生效果或机构之间的等同关系。",
+          "title": "把治理与实施留作后续核验"
+        }
+      ],
+      "name": "AI Biosecurity Lab",
+      "note": "原公告 2026-10-24；本站 2026-10-25核对。未核验实际资金交付、实验运行或临床成效。",
+      "organization": "UK Government",
+      "publication": {
+        "first_published_at": "2026-10-25T04:43:46.402848+00:00",
+        "updated_at": "2026-10-25T04:43:46.402848+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-10-24",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "Introducing the AI Biosecurity Lab",
+          "url": "https://www.gov.uk/government/news/introducing-the-ai-biosecurity-lab"
+        }
+      ],
+      "state": "published",
+      "summary": "英国宣布支持建立独立非营利AI生物安全实验室。政府资金与企业计算、模型访问支持共同构成计划；应分别理解承诺性质、研究目标与尚待落实条件。",
+      "title": "英国AI生物安全实验室：资金承诺不等于现金全部到位",
+      "translations": {
+        "en": {
+          "fields": {
+            "原公告 2026-10-24；本站 2026-10-25核对。未核验实际资金交付、实验运行或临床成效。": "Announced 2026-10-24; checked 2026-10-25. Actual funding delivery, experiments and clinical outcomes were not verified.",
+            "把治理与实施留作后续核验": "Track governance and implementation separately",
+            "政府承诺£100M；企业另有最高£200M支持，包括OpenAI的£100M算力与模型额度，以及Anthropic最高£100M模型额度、访问和技术支持。不能改写为£300M现金全部到位。": "The government commits £100M; company support is up to £200M, including £100M in OpenAI compute/model credits and up to £100M in Anthropic model credits, access and technical support. This is not £300M in cash already received.",
+            "政府资金与企业资源分别记账": "Separate public funding and company resources",
+            "独立非营利结构、实际拨付、资源限制与研究成果需后续核实。本站仅介绍公开计划及资源口径，不推断模型能力、公共卫生效果或机构之间的等同关系。": "Independent nonprofit governance, actual disbursement, resource restrictions and research outcomes require follow-up. FieldToFit describes the public plan without inferring model capability, public-health impact or equivalence between institutions.",
+            "研究目标不等于已有产品": "Research goals are not delivered products",
+            "英国AI生物安全实验室：资金承诺不等于现金全部到位": "UK AI Biosecurity Lab: commitments are not all cash received",
+            "英国宣布支持建立独立非营利AI生物安全实验室。政府资金与企业计算、模型访问支持共同构成计划；应分别理解承诺性质、研究目标与尚待落实条件。": "The UK announces support for an independent nonprofit AI Biosecurity Lab. Public funding and company compute/model access commitments form the plan; distinguish commitment types, research goals and implementation conditions.",
+            "重点包括更早识别生物威胁和加速医疗对策研发；DeepMind、Basecamp等作为合作方出现。公告并未证明已有临床产品或全面覆盖的检测服务。": "Priorities include earlier biological-threat detection and accelerated medical-countermeasure research, with partners including DeepMind and Basecamp. The announcement does not establish a clinical product or comprehensive operational detection service."
+          },
+          "source_hash": "a5f5c2359a4dd4e206378a926e74d7610df3383c41ff23f8da063466ce53b057",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-25",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-20",
+      "highlight": true,
+      "id": "D-252",
+      "interpretation": [
+        {
+          "locator": "Metric 1: compare models on shared instances; Next step: controlling for behavior class",
+          "source_ids": [
+            "report"
+          ],
+          "text": "同一任务池不等于同一实际计分样本；更强模型可能在更难的任务上产生目标行为。",
+          "title": "先比较共同样本，避免把任务差异当成监控差异"
+        },
+        {
+          "locator": "Inverse-variance-weighted HodgeRank scores; Historical system card results; Comparison with AUROC",
+          "source_ids": [
+            "report"
+          ],
+          "text": "HodgeRank 汇总的是有证据支持的相对差异；不连通的比较不能强行排成总榜。",
+          "title": "排序保留差值幅度，也必须保留不确定性"
+        },
+        {
+          "locator": "Metric 2; Offline estimation from scorecard rollouts; Risk must be read beside deployment",
+          "source_ids": [
+            "report"
+          ],
+          "text": "每请求坏输出 B(K)、任意交付 A(K)、已交付中的坏输出 B(K)/A(K)，回答三个不同问题。",
+          "title": "坏输出概率必须与交付率一起读"
+        },
+        {
+          "locator": "Gating reduces risk; retries give some risk back; Appendix",
+          "source_ids": [
+            "report"
+          ],
+          "text": "增加重试会增加漏检机会；干预造成了哪些正例无法直接观察时，应给区间而非单点。",
+          "title": "重试预算与因果上下界都应公开"
+        }
+      ],
+      "name": "Beyond g-mean²",
+      "note": "离线历史轨迹与模拟；不是当前生产部署实测。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-25T04:43:20.266173+00:00",
+        "report_selected_at": "2026-10-25T04:43:20.266173+00:00",
+        "updated_at": "2026-10-25T04:43:20.266173+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-20",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "Beyond g-mean²: complementary metrics for monitorability",
+          "url": "https://alignment.openai.com/beyond-gmean-squared/"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 的监控研究补充两种指标：在共同样本上比较模型，以及把监控器放进拒绝与重试流程。本文解释它们如何揭示选样偏差、排序不确定性，以及低风险与低交付率的混淆。",
+      "technical_map": {
+        "caution": "离线历史轨迹与模拟；不是当前生产部署实测。",
+        "change_summary": "首次纳入所选报告：四结论、同号展开与三张本站图。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Inverse-variance-weighted HodgeRank scores; Historical system card results; Comparison with AUROC",
+                "source_id": "report"
+              }
+            ],
+            "from": "selection",
+            "id": "e-ranking",
+            "label": "分开核对方法与边界",
+            "reason": "并列证据不自动构成因果链。",
+            "relation": "parallel",
+            "to": "ranking"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Metric 2; Offline estimation from scorecard rollouts; Risk must be read beside deployment",
+                "source_id": "report"
+              }
+            ],
+            "from": "selection",
+            "id": "e-deployment",
+            "label": "分开核对方法与边界",
+            "reason": "并列证据不自动构成因果链。",
+            "relation": "parallel",
+            "to": "deployment"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Gating reduces risk; retries give some risk back; Appendix",
+                "source_id": "report"
+              }
+            ],
+            "from": "selection",
+            "id": "e-bounds",
+            "label": "分开核对方法与边界",
+            "reason": "并列证据不自动构成因果链。",
+            "relation": "parallel",
+            "to": "bounds"
+          }
+        ],
+        "focus": "样本匹配、排序证据与监控后交付风险",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Metric 1: compare models on shared instances; Next step: controlling for behavior class",
+                "source_id": "report"
+              }
+            ],
+            "id": "selection",
+            "kind": "method",
+            "label": "先比较共同样本，避免把任务差异当成监控差异",
+            "limitation": "离线历史轨迹与模拟；不是当前生产部署实测。",
+            "mechanism": "同一任务池不等于同一实际计分样本；更强模型可能在更难的任务上产生目标行为。",
+            "metrics": [],
+            "result": "同一任务池不等于同一实际计分样本；更强模型可能在更难的任务上产生目标行为。",
+            "setting": "样本匹配、排序证据与监控后交付风险",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Inverse-variance-weighted HodgeRank scores; Historical system card results; Comparison with AUROC",
+                "source_id": "report"
+              }
+            ],
+            "id": "ranking",
+            "kind": "method",
+            "label": "排序保留差值幅度，也必须保留不确定性",
+            "limitation": "离线历史轨迹与模拟；不是当前生产部署实测。",
+            "mechanism": "HodgeRank 汇总的是有证据支持的相对差异；不连通的比较不能强行排成总榜。",
+            "metrics": [],
+            "result": "HodgeRank 汇总的是有证据支持的相对差异；不连通的比较不能强行排成总榜。",
+            "setting": "样本匹配、排序证据与监控后交付风险",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Metric 2; Offline estimation from scorecard rollouts; Risk must be read beside deployment",
+                "source_id": "report"
+              }
+            ],
+            "id": "deployment",
+            "kind": "result",
+            "label": "坏输出概率必须与交付率一起读",
+            "limitation": "离线历史轨迹与模拟；不是当前生产部署实测。",
+            "mechanism": "每请求坏输出 B(K)、任意交付 A(K)、已交付中的坏输出 B(K)/A(K)，回答三个不同问题。",
+            "metrics": [],
+            "result": "每请求坏输出 B(K)、任意交付 A(K)、已交付中的坏输出 B(K)/A(K)，回答三个不同问题。",
+            "setting": "样本匹配、排序证据与监控后交付风险",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Gating reduces risk; retries give some risk back; Appendix",
+                "source_id": "report"
+              }
+            ],
+            "id": "bounds",
+            "kind": "result",
+            "label": "重试预算与因果上下界都应公开",
+            "limitation": "离线历史轨迹与模拟；不是当前生产部署实测。",
+            "mechanism": "增加重试会增加漏检机会；干预造成了哪些正例无法直接观察时，应给区间而非单点。",
+            "metrics": [],
+            "result": "增加重试会增加漏检机会；干预造成了哪些正例无法直接观察时，应给区间而非单点。",
+            "setting": "样本匹配、排序证据与监控后交付风险",
+            "stage": 2
+          }
+        ],
+        "question": "低风险分数，可能只是系统几乎不交付？",
+        "reading": {
+          "editorial": [
+            "FieldToFit 分析：这篇报告的价值，是把“容易监控”拆成样本可比性、判别能力和工作流放行结果。模型、监控器与重试策略共同决定系统表现，指标分歧本身值得调查。实践中还应记录延迟、拒绝造成的业务损失及自适应行为；本文并未测量这些全部成本。",
+            "来源与修订：Melody Guan、Yuxiang Xie、Bowen Baker／OpenAI，2026-10-20 无编号网页版，含附录；本站 2026-10-25 阅读核对。三张图为本站独立方法示意，未复制原图。未复现轨迹、训练或 bootstrap，外链前作未逐篇深读；不据此更新模型能力榜。原报告日期与本站首次发表分别保留。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "原有 outcome g-mean² 等于真阳性率 TPR 与真阴性率 TNR 的乘积。模型各自在自己产生的正例上计分，可能把正例更难的模型排在后面。作者提出两两匹配：outcome 的正例与负例分别匹配，process 只比较共同正例，intervention 则比较两者都满足有效性条件的实例。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "图 1 与图 2 首先使用已知真实顺序的模拟数据，检验能力改变选样分布时指标是否反转。七个合成模型的排序实验不是七个公开产品的实测榜单。模拟支持的是该构造下的条件比较，而不是所有任务上匹配都能消除偏差。"
+                },
+                {
+                  "alt": "共同正例与共同负例须分别匹配",
+                  "attribution": "FieldToFit",
+                  "caption": "本站独立重绘／方法示意；原始统计口径与边界见正文，未独立复现。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Metric 1; Figure 1",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/monitorability-20261020-matching.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "同一道题上出现的行为仍可能不同：明显篡改与含糊捷径的监控难度不等。还需记录行为类别、严重程度和覆盖。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Metric 1: compare models on shared instances; Next step: controlling for behavior class",
+                  "source_id": "report"
+                }
+              ],
+              "id": "selection",
+              "node_ids": [
+                "selection"
+              ],
+              "summary": "同一任务池不等于同一实际计分样本；更强模型可能在更难的任务上产生目标行为。",
+              "title": "先比较共同样本，避免把任务差异当成监控差异"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "作者以逆方差加权最小二乘拟合各模型分数，让分数差尽量符合两两指标差。精度较高的比较权重更大；残差显示一维顺序无法解释的循环或不一致。此前 Bradley–Terry／Elo 式原型只保留胜负方向，丢掉差值大小，因此不作为本文最终匹配结果。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "历史系统卡部分纳入 o1、o3、GPT-5、GPT-5.2、GPT-5.4、GPT-5.5、GPT-5.6 Sol 七种 medium 配置，统一用 GPT-5 high 监控；GPT-6 Astra 因使用不同监控器而排除。误差条来自 500 次确定性分层 bootstrap。分数在各连通分量内居中，跨分量或不同拟合的绝对值不可直接比。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "接近并列或接近指标上限的结果，不应被名次差异放大。本文历史监控器只有二元判断，没有计算 AUROC。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Inverse-variance-weighted HodgeRank scores; Historical system card results; Comparison with AUROC",
+                  "source_id": "report"
+                }
+              ],
+              "id": "ranking",
+              "node_ids": [
+                "ranking"
+              ],
+              "summary": "HodgeRank 汇总的是有证据支持的相对差异；不连通的比较不能强行排成总榜。",
+              "title": "排序保留差值幅度，也必须保留不确定性"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "作者离线模拟监控门控：一次请求最多尝试 K 次，第一次通过的输出被交付，全部被拒则不交付。每次从原始上下文开始，不反馈前次拒绝原因，因此不是会根据拒绝自适应学习的 Agent。计算来自已有有限轨迹池的随机顺序，OpenAI 明确称这不是其当前实际部署方式。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "图 6 的两组 Honeypot 切片中，B(4) 低于 3%，A(4) 低于 7%，但已交付输出中 41–45% 为目标正例。这里的正例是评估定义的目标行为，不在每种环境中都等价于现实危害。低总体风险可能同时伴随几乎不交付，以及交付后较高的条件风险。"
+                },
+                {
+                  "alt": "三种概率的分母与低交付陷阱",
+                  "attribution": "FieldToFit",
+                  "caption": "本站独立重绘／方法示意；原始统计口径与边界见正文，未独立复现。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Risk must be read beside deployment; Figure 6",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/monitorability-20261020-denominators.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "process 评估只含正例，B(K)=A(K)，测到的是条件逃逸率；不能当模型全部输出分布的实际风险。intervention 不报告这项风险，因为个体因果标签不可识别。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Metric 2; Offline estimation from scorecard rollouts; Risk must be read beside deployment",
+                  "source_id": "report"
+                }
+              ],
+              "id": "deployment",
+              "node_ids": [
+                "deployment"
+              ],
+              "summary": "每请求坏输出 B(K)、任意交付 A(K)、已交付中的坏输出 B(K)/A(K)，回答三个不同问题。",
+              "title": "坏输出概率必须与交付率一起读"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "比较 K=1 与 K=4 时，前者只需一条有效轨迹，后者至少需要四条；作者要求至少五个合格实例才报告配置结果。为了隔离重试本身，图 5 与图 8 统一到至少四条轨迹的实例；不能把样本集合改变误认为纯重试效果。更多尝试平均侵蚀了部分门控收益，不代表每个模型、环境都按同一比例恶化。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "附录补充干预 g-mean² 的悲观下界，原指标对应乐观上界。示意中十个正例有六个被标记、至少八个由干预造成，因果召回率可在 50% 至 75% 间。监控标记和目标行为可观测，但到底哪些正例由干预造成不可观测；这一范围不是经验置信区间。"
+                },
+                {
+                  "alt": "同一观测支持 50%–75% 的因果召回范围",
+                  "attribution": "FieldToFit",
+                  "caption": "本站独立重绘／方法示意；原始统计口径与边界见正文，未独立复现。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Appendix; Figure A1",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/monitorability-20261020-bounds.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "本站判断：采购或上线评估应同时保存样本覆盖、匹配差值、排序残差、重试规则及三种交付概率。不能把单一监控分数当作安全认证。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Gating reduces risk; retries give some risk back; Appendix",
+                  "source_id": "report"
+                }
+              ],
+              "id": "bounds",
+              "node_ids": [
+                "bounds"
+              ],
+              "summary": "增加重试会增加漏检机会；干预造成了哪些正例无法直接观察时，应给区间而非单点。",
+              "title": "重试预算与因果上下界都应公开"
+            }
+          ],
+          "title": "低风险分数，可能只是系统几乎不交付？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-20",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "2026-10-20; unnumbered web report"
+          }
+        ],
+        "slug": "monitorability-selection-and-deployment-risk",
+        "takeaway": "一起报告风险、交付率与重试条件。"
+      },
+      "title": "低风险分数，可能只是系统几乎不交付？",
+      "translations": {
+        "en": {
+          "fields": {
+            "FieldToFit 分析：这篇报告的价值，是把“容易监控”拆成样本可比性、判别能力和工作流放行结果。模型、监控器与重试策略共同决定系统表现，指标分歧本身值得调查。实践中还应记录延迟、拒绝造成的业务损失及自适应行为；本文并未测量这些全部成本。": "FieldToFit analysis: the report separates sample comparability, discrimination and workflow acceptance. Models, monitors and retry policies jointly shape outcomes, and disagreement between metrics deserves investigation. Practical deployment should also track latency, business loss from refusal and adaptive behavior, whose full costs this study does not measure.",
+            "HodgeRank 汇总的是有证据支持的相对差异；不连通的比较不能强行排成总榜。": "HodgeRank summarizes supported relative differences; disconnected comparisons cannot form a single leaderboard.",
+            "OpenAI 的监控研究补充两种指标：在共同样本上比较模型，以及把监控器放进拒绝与重试流程。本文解释它们如何揭示选样偏差、排序不确定性，以及低风险与低交付率的混淆。": "OpenAI adds two perspectives to monitorability: comparing models on shared instances and placing monitors inside rejection-and-retry workflows. This analysis examines selection bias, uncertain rankings, and the confusion between low risk and low delivery.",
+            "process 评估只含正例，B(K)=A(K)，测到的是条件逃逸率；不能当模型全部输出分布的实际风险。intervention 不报告这项风险，因为个体因果标签不可识别。": "Process evaluations contain positives only: B(K)=A(K), measuring conditional escape rather than full-distribution risk. Intervention evaluations omit this metric because individual causal labels are unidentified.",
+            "一起报告风险、交付率与重试条件。": "Report risk, delivery probability and retry conditions together.",
+            "三种概率的分母与低交付陷阱": "Three probability denominators and the sparse-delivery trap",
+            "低风险分数，可能只是系统几乎不交付？": "Can a low risk score mean the system barely delivers?",
+            "作者以逆方差加权最小二乘拟合各模型分数，让分数差尽量符合两两指标差。精度较高的比较权重更大；残差显示一维顺序无法解释的循环或不一致。此前 Bradley–Terry／Elo 式原型只保留胜负方向，丢掉差值大小，因此不作为本文最终匹配结果。": "Inverse-variance-weighted least squares fits model scores to pairwise metric differences. More precise comparisons receive greater weight; residuals expose cycles or inconsistencies that a one-dimensional ordering cannot explain. A prior Bradley–Terry/Elo-style prototype discarded difference magnitudes and is not the final matched result.",
+            "作者离线模拟监控门控：一次请求最多尝试 K 次，第一次通过的输出被交付，全部被拒则不交付。每次从原始上下文开始，不反馈前次拒绝原因，因此不是会根据拒绝自适应学习的 Agent。计算来自已有有限轨迹池的随机顺序，OpenAI 明确称这不是其当前实际部署方式。": "The offline simulation permits at most K attempts, delivers the first accepted output and delivers nothing if all attempts are rejected. Each attempt starts from the original context without feedback about prior rejection. It is not an adaptive agent learning from refusals. Probabilities come from random orderings of finite recorded rollout pools; OpenAI explicitly says this is not its current deployment scheme.",
+            "先比较共同样本，避免把任务差异当成监控差异": "Compare shared instances before attributing differences to monitorability",
+            "共同正例与共同负例须分别匹配": "Match shared positives and shared negatives separately",
+            "分开核对方法与边界": "Check methods and boundaries separately",
+            "历史系统卡部分纳入 o1、o3、GPT-5、GPT-5.2、GPT-5.4、GPT-5.5、GPT-5.6 Sol 七种 medium 配置，统一用 GPT-5 high 监控；GPT-6 Astra 因使用不同监控器而排除。误差条来自 500 次确定性分层 bootstrap。分数在各连通分量内居中，跨分量或不同拟合的绝对值不可直接比。": "The historical system-card analysis covers seven medium-effort configurations: o1, o3, GPT-5, GPT-5.2, GPT-5.4, GPT-5.5 and GPT-5.6 Sol, monitored by GPT-5 high. GPT-6 Astra is excluded because its monitor differed. Error bars use 500 deterministic hierarchical bootstrap replicates. Scores are centered within each connected component; absolute values across components or separate fits are not comparable.",
+            "原有 outcome g-mean² 等于真阳性率 TPR 与真阴性率 TNR 的乘积。模型各自在自己产生的正例上计分，可能把正例更难的模型排在后面。作者提出两两匹配：outcome 的正例与负例分别匹配，process 只比较共同正例，intervention 则比较两者都满足有效性条件的实例。": "Outcome g-mean² multiplies the true-positive rate TPR by the true-negative rate TNR. Scoring models on their own positive instances can disadvantage a model whose positives are harder. Pair matching separately matches positives and negatives for outcome evaluations, uses shared positives for process evaluations, and requires joint validity for intervention evaluations.",
+            "同一任务池不等于同一实际计分样本；更强模型可能在更难的任务上产生目标行为。": "A common task pool does not imply a common scored sample: stronger models may produce target behavior on harder tasks.",
+            "同一观测支持 50%–75% 的因果召回范围": "The same observations permit 50%–75% causal recall",
+            "同一道题上出现的行为仍可能不同：明显篡改与含糊捷径的监控难度不等。还需记录行为类别、严重程度和覆盖。": "Behavior can still differ on the same task: overt tampering and ambiguous shortcuts have different detection difficulty. Behavior class, severity and coverage still matter.",
+            "图 1 与图 2 首先使用已知真实顺序的模拟数据，检验能力改变选样分布时指标是否反转。七个合成模型的排序实验不是七个公开产品的实测榜单。模拟支持的是该构造下的条件比较，而不是所有任务上匹配都能消除偏差。": "Figures 1 and 2 first use simulations with known orderings to test whether capability-driven selection reverses metrics. The seven synthetic models are not a measured ranking of seven public products. The simulation supports a conditional comparison under its construction, not universal elimination of bias.",
+            "图 6 的两组 Honeypot 切片中，B(4) 低于 3%，A(4) 低于 7%，但已交付输出中 41–45% 为目标正例。这里的正例是评估定义的目标行为，不在每种环境中都等价于现实危害。低总体风险可能同时伴随几乎不交付，以及交付后较高的条件风险。": "In two Honeypot slices in Figure 6, B(4) is below 3% and A(4) below 7%, yet 41–45% of delivered outputs are target positives. A positive is the evaluation-defined behavior, not necessarily real-world harm in every environment. Low per-request risk can coexist with sparse delivery and high conditional risk.",
+            "坏输出概率必须与交付率一起读": "Read bad-output probability alongside delivery probability",
+            "增加重试会增加漏检机会；干预造成了哪些正例无法直接观察时，应给区间而非单点。": "More retries create more chances for false negatives; unobserved causal labels call for bounds rather than a single point.",
+            "排序保留差值幅度，也必须保留不确定性": "Rankings must retain difference magnitudes and uncertainty",
+            "接近并列或接近指标上限的结果，不应被名次差异放大。本文历史监控器只有二元判断，没有计算 AUROC。": "Near-ties and near-ceiling results should not be exaggerated through ranking positions. Historical monitors here emit binary decisions; AUROC is not computed.",
+            "本站判断：采购或上线评估应同时保存样本覆盖、匹配差值、排序残差、重试规则及三种交付概率。不能把单一监控分数当作安全认证。": "FieldToFit view: evaluations should retain sample coverage, matched differences, ranking residuals, retry rules and all three delivery probabilities. A single monitorability score is not a safety certification.",
+            "本站独立重绘／方法示意；原始统计口径与边界见正文，未独立复现。": "Independent FieldToFit redraw or method diagram; source definitions and limits appear in the text. Not independently replicated.",
+            "来源与修订：Melody Guan、Yuxiang Xie、Bowen Baker／OpenAI，2026-10-20 无编号网页版，含附录；本站 2026-10-25 阅读核对。三张图为本站独立方法示意，未复制原图。未复现轨迹、训练或 bootstrap，外链前作未逐篇深读；不据此更新模型能力榜。原报告日期与本站首次发表分别保留。": "Sources and revisions: Melody Guan, Yuxiang Xie and Bowen Baker / OpenAI; unnumbered web report with appendix, 2026-10-20, checked by FieldToFit on 2026-10-25. Three independent method diagrams do not reproduce original graphics. Rollouts, training and bootstrap were not replicated; linked prior work was not all read in depth. No model leaderboard is updated. Source date and first site publication remain distinct.",
+            "样本匹配、排序证据与监控后交付风险": "Sample matching, ranking evidence and post-control delivery risk",
+            "每请求坏输出 B(K)、任意交付 A(K)、已交付中的坏输出 B(K)/A(K)，回答三个不同问题。": "Bad output per request B(K), any delivery A(K), and bad output among deliveries B(K)/A(K) answer different questions.",
+            "比较 K=1 与 K=4 时，前者只需一条有效轨迹，后者至少需要四条；作者要求至少五个合格实例才报告配置结果。为了隔离重试本身，图 5 与图 8 统一到至少四条轨迹的实例；不能把样本集合改变误认为纯重试效果。更多尝试平均侵蚀了部分门控收益，不代表每个模型、环境都按同一比例恶化。": "K=1 needs at least one valid rollout per instance; K=4 needs at least four. A configuration is reported only with at least five eligible instances. Figures 5 and 8 use the same four-rollout-eligible instances to isolate retries. Sample changes must not be mistaken for retry effects. More attempts erode some gating benefits on average, without a universal deterioration rate.",
+            "离线历史轨迹与模拟；不是当前生产部署实测。": "Offline historical rollouts and simulations, not measurements of current production deployment.",
+            "重试预算与因果上下界都应公开": "Disclose retry budgets and causal bounds",
+            "附录补充干预 g-mean² 的悲观下界，原指标对应乐观上界。示意中十个正例有六个被标记、至少八个由干预造成，因果召回率可在 50% 至 75% 间。监控标记和目标行为可观测，但到底哪些正例由干预造成不可观测；这一范围不是经验置信区间。": "The appendix adds a pessimistic lower bound for intervention g-mean²; the original corresponds to the optimistic upper bound. In the illustration, six of ten positives are flagged and at least eight are intervention-caused, allowing causal recall from 50% to 75%. Flags and target behavior are observed, but individual causal labels are not. This is not an empirical confidence interval.",
+            "首次纳入所选报告：四结论、同号展开与三张本站图。": "First inclusion of the selected report: four findings, corresponding arguments and three FieldToFit figures."
+          },
+          "source_hash": "0b3a62bd74fedb267a0a3b8d176bc1925597d172d406fb4eb2ea017cbcd063b0",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-25",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-16",
+      "highlight": true,
+      "id": "D-253",
+      "interpretation": [
+        {
+          "locator": "Introduction; Labor demand at the frontier",
+          "source_ids": [
+            "report"
+          ],
+          "text": "初级技术员工占比从 21% 到 14%，初级技术新聘占比从 27% 到 9%；公司仍在扩张。",
+          "title": "初级岗位占比下降，不等于员工总量下降"
+        },
+        {
+          "locator": "Is AI driving productivity increases at Anthropic?; Figure 4",
+          "source_ids": [
+            "report"
+          ],
+          "text": "192 名采用者与 74 名非采用者的对照可控制部分差异，但采用并非随机分配。",
+          "title": "采用后产出上升，仍需处理自选择"
+        },
+        {
+          "locator": "Agent hours overtake human hours; Reading Claude as a full-time job; Becoming managers of Claudes",
+          "source_ids": [
+            "report"
+          ],
+          "text": "6:1 比较运行时长与估算人时；元工作从 10% 到 22% 比较会话内容，两者都不是生产率倍数。",
+          "title": "Agent 运行时间增加，人的注意力仍是瓶颈"
+        },
+        {
+          "locator": "What employers can do",
+          "source_ids": [
+            "report"
+          ],
+          "text": "内部转岗与岗位预警能帮助现有员工，但并不解决未被招入的初级求职者机会减少。",
+          "title": "岗位重组需要培训与收益分配，不能只增加工具"
+        }
+      ],
+      "name": "Employment at Anthropic",
+      "note": "单公司观察研究；非随机采用，内部数据未独立复核。",
+      "organization": "The Anthropic Institute",
+      "publication": {
+        "first_published_at": "2026-10-25T04:42:54.602245+00:00",
+        "report_selected_at": "2026-10-25T04:42:54.602245+00:00",
+        "updated_at": "2026-10-25T04:42:54.602245+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-10-16",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "How employment is changing at Anthropic",
+          "url": "https://www.anthropic.com/research/employment-at-anthropic"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic 以内部记录和 17 次访谈观察招聘、产出与工作组织变化。本文将岗位占比、采用后的产出关联、Agent 运行时长与人的注意力分别解释，避免把一个公司的观察写成全行业因果结论。",
+      "technical_map": {
+        "caution": "单公司观察研究；非随机采用，内部数据未独立复核。",
+        "change_summary": "首次纳入所选报告：四结论、同号展开与三张本站图。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Is AI driving productivity increases at Anthropic?; Figure 4",
+                "source_id": "report"
+              }
+            ],
+            "from": "hiring",
+            "id": "e-adoption",
+            "label": "分开核对方法与边界",
+            "reason": "并列证据不自动构成因果链。",
+            "relation": "parallel",
+            "to": "adoption"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Agent hours overtake human hours; Reading Claude as a full-time job; Becoming managers of Claudes",
+                "source_id": "report"
+              }
+            ],
+            "from": "hiring",
+            "id": "e-attention",
+            "label": "分开核对方法与边界",
+            "reason": "并列证据不自动构成因果链。",
+            "relation": "parallel",
+            "to": "attention"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "What employers can do",
+                "source_id": "report"
+              }
+            ],
+            "from": "hiring",
+            "id": "e-organization",
+            "label": "分开核对方法与边界",
+            "reason": "并列证据不自动构成因果链。",
+            "relation": "parallel",
+            "to": "organization"
+          }
+        ],
+        "focus": "岗位份额、采用研究、注意力与组织责任",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Introduction; Labor demand at the frontier",
+                "source_id": "report"
+              }
+            ],
+            "id": "hiring",
+            "kind": "method",
+            "label": "初级岗位占比下降，不等于员工总量下降",
+            "limitation": "单公司观察研究；非随机采用，内部数据未独立复核。",
+            "mechanism": "初级技术员工占比从 21% 到 14%，初级技术新聘占比从 27% 到 9%；公司仍在扩张。",
+            "metrics": [],
+            "result": "初级技术员工占比从 21% 到 14%，初级技术新聘占比从 27% 到 9%；公司仍在扩张。",
+            "setting": "岗位份额、采用研究、注意力与组织责任",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Is AI driving productivity increases at Anthropic?; Figure 4",
+                "source_id": "report"
+              }
+            ],
+            "id": "adoption",
+            "kind": "method",
+            "label": "采用后产出上升，仍需处理自选择",
+            "limitation": "单公司观察研究；非随机采用，内部数据未独立复核。",
+            "mechanism": "192 名采用者与 74 名非采用者的对照可控制部分差异，但采用并非随机分配。",
+            "metrics": [],
+            "result": "192 名采用者与 74 名非采用者的对照可控制部分差异，但采用并非随机分配。",
+            "setting": "岗位份额、采用研究、注意力与组织责任",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Agent hours overtake human hours; Reading Claude as a full-time job; Becoming managers of Claudes",
+                "source_id": "report"
+              }
+            ],
+            "id": "attention",
+            "kind": "result",
+            "label": "Agent 运行时间增加，人的注意力仍是瓶颈",
+            "limitation": "单公司观察研究；非随机采用，内部数据未独立复核。",
+            "mechanism": "6:1 比较运行时长与估算人时；元工作从 10% 到 22% 比较会话内容，两者都不是生产率倍数。",
+            "metrics": [],
+            "result": "6:1 比较运行时长与估算人时；元工作从 10% 到 22% 比较会话内容，两者都不是生产率倍数。",
+            "setting": "岗位份额、采用研究、注意力与组织责任",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "What employers can do",
+                "source_id": "report"
+              }
+            ],
+            "id": "organization",
+            "kind": "result",
+            "label": "岗位重组需要培训与收益分配，不能只增加工具",
+            "limitation": "单公司观察研究；非随机采用，内部数据未独立复核。",
+            "mechanism": "内部转岗与岗位预警能帮助现有员工，但并不解决未被招入的初级求职者机会减少。",
+            "metrics": [],
+            "result": "内部转岗与岗位预警能帮助现有员工，但并不解决未被招入的初级求职者机会减少。",
+            "setting": "岗位份额、采用研究、注意力与组织责任",
+            "stage": 2
+          }
+        ],
+        "question": "AI 用得越多，人的工作为何变成管理 Agent？",
+        "reading": {
+          "editorial": [
+            "FieldToFit 分析：最值得采用的不是“六倍”口号，而是把统计分母与组织责任一起公开。产出增加之后，谁负责验收、如何积累判断、谁分享收益，决定了 Agent 能力如何变成可持续工作方式。新工具的试点指标应覆盖人的学习和责任，而非只数生成量。",
+            "来源与修订：Nathan Wilmers、Regina Catipon、Maxim Massenkoff、Peter McCrory／The Anthropic Institute；2026-10-16 Technical Report，无编号网页版，本站 2026-10-25 核对。各图独立保留 2025–2026 观察范围；三张图为本站重绘／方法图。未复现内部数据或访谈，未逐篇验证引文研究；作者观察、政策主张与本站判断分开。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "报告发表于 2026-10-16，综合内部就业、工具使用、产出、问卷、日历、沟通和招聘记录，并以 17 次员工访谈补充解释。各图观察窗口不同，覆盖 2025–2026，不能统一标成发表当月调查。作者从 2025 年初以来的记录观察到初级技术岗位和新聘份额下降。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "技术部门占公司员工比例也从 61% 降至 56%，但技术招聘绝对量继续增长，销售、财务和招聘等职能增长更快。分母扩张、公司发展阶段与 AI 采用可能同时发生。占比不能直接换算为裁员人数，也不能据此推断所有初级工程岗位都被自动化取代。"
+                },
+                {
+                  "alt": "分别读取员工结构和新聘结构的比例",
+                  "attribution": "FieldToFit",
+                  "caption": "本站独立重绘／方法示意；原始统计口径与边界见正文，未独立复现。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Labor demand at the frontier; Figure 1",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/employment-20261016-shares.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "分母分别是技术员工与技术新聘，绝不是同一人群的前后流失率。图中未提供精确截止日的统计不补造日级日期。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Introduction; Labor demand at the frontier",
+                  "source_id": "report"
+                }
+              ],
+              "id": "hiring",
+              "node_ids": [
+                "hiring"
+              ],
+              "summary": "初级技术员工占比从 21% 到 14%，初级技术新聘占比从 27% 到 9%；公司仍在扩张。",
+              "title": "初级岗位占比下降，不等于员工总量下降"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "工程师分析以首次达到至少五次 agentic 会话的月份定义采用时点，使用个人和日历月份双向固定效应；图 4 误差条为按个人聚类标准误计算的 95% 置信区间。追踪同一个人可以排除稳定个体差异，月份控制可吸收共同环境变化，但准备启动大项目的人也可能主动先采用工具。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "作者观察到代码产出增加，并用同一员工、同月、同目录下人工和 Agent 提交的后续删除／回退等代理指标检查质量。未发现这些指标上的差异，不等于已经证明全部安全性、可维护性或商业价值相同。完全自主 Agent 采用者在采用前已有明显上升趋势，更需保留选择偏差。"
+                },
+                {
+                  "alt": "固定效应对照能回答什么，不能回答什么",
+                  "attribution": "FieldToFit",
+                  "caption": "本站独立重绘／方法示意；原始统计口径与边界见正文，未独立复现。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Is AI driving productivity increases at Anthropic?; Figure 4",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/employment-20261016-design.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "本站不从平滑曲线估读不存在的精确效应量，也不把代码行数当成最终用户价值。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Is AI driving productivity increases at Anthropic?; Figure 4",
+                  "source_id": "report"
+                }
+              ],
+              "id": "adoption",
+              "node_ids": [
+                "adoption"
+              ],
+              "summary": "192 名采用者与 74 名非采用者的对照可控制部分差异，但采用并非随机分配。",
+              "title": "采用后产出上升，仍需处理自选择"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "到 2026 年 8 月，员工定向交互会话及其子 Agent 的运行时长约为估算人时的六倍。Agent 口径含推理与工具运行，排除超过 30 分钟的等待；人时为员工数乘每周 40 小时。并行软件运行时长与人的工时不是可直接替代的劳动单位。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "搭建技能、计划、审阅和监控 Agent 的“元工作”，由 2025 年秋约 10% 的交互会话增至 2026 年春 22%。依据是自动分类的 2,000 条一行会话摘要，不是对员工时间的直接观测。另一个阅读负担估算采用每 token 0.75 个词、每分钟阅读 250 词，也不能当作实际阅读时长。"
+                },
+                {
+                  "alt": "元工作占比的会话口径与观察时段",
+                  "attribution": "FieldToFit",
+                  "caption": "本站独立重绘／方法示意；原始统计口径与边界见正文，未独立复现。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Becoming managers of Claudes; Figure 7",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/employment-20261016-metawork.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "“管理 Agent”是工作内容变化；更高会话占比不能单独证明管理更有效、员工更轻松或已经节省多少工时。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Agent hours overtake human hours; Reading Claude as a full-time job; Becoming managers of Claudes",
+                  "source_id": "report"
+                }
+              ],
+              "id": "attention",
+              "node_ids": [
+                "attention"
+              ],
+              "summary": "6:1 比较运行时长与估算人时；元工作从 10% 到 22% 比较会话内容，两者都不是生产率倍数。",
+              "title": "Agent 运行时间增加，人的注意力仍是瓶颈"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "作者记录到招聘更强调自主性与判断、员工更多构建工具和监督流程，并提出收益共享、岗位变化预警和内部重新配置。会议与人的协作没有消失：组织规模和非技术岗位结构也在改变，不能把所有会议增加都归因于 AI。其薪酬与股权条件也不能直接复制到所有企业。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "本站判断：试点应同时追踪交付质量、返工、注意力占用、学习机会和岗位流动。初级岗位减少会影响未来经验积累，留任员工转岗并不能自动补足这一入口。这里是从单公司案例提出的管理问题，不是对全经济就业净变化的预测。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "公司同时是工具开发者、重度用户与研究对象；原始人事和会话数据未供本站独立复核，外部推广与因果解释都有限。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "What employers can do",
+                  "source_id": "report"
+                }
+              ],
+              "id": "organization",
+              "node_ids": [
+                "organization"
+              ],
+              "summary": "内部转岗与岗位预警能帮助现有员工，但并不解决未被招入的初级求职者机会减少。",
+              "title": "岗位重组需要培训与收益分配，不能只增加工具"
+            }
+          ],
+          "title": "AI 用得越多，人的工作为何变成管理 Agent？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-16",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "2026-10-16; unnumbered web report"
+          }
+        ],
+        "slug": "anthropic-employment-and-agent-management",
+        "takeaway": "把产出、质量、注意力与学习机会一起衡量。"
+      },
+      "title": "AI 用得越多，人的工作为何变成管理 Agent？",
+      "translations": {
+        "en": {
+          "fields": {
+            "192 名采用者与 74 名非采用者的对照可控制部分差异，但采用并非随机分配。": "Comparing 192 adopters with 74 non-adopters controls some differences, but adoption is not randomized.",
+            "6:1 比较运行时长与估算人时；元工作从 10% 到 22% 比较会话内容，两者都不是生产率倍数。": "The 6:1 ratio compares runtime with estimated human hours; meta-work rising from 10% to 22% describes session content. Neither is a productivity multiplier.",
+            "AI 用得越多，人的工作为何变成管理 Agent？": "Why does heavier AI use turn work into managing agents?",
+            "Agent 运行时间增加，人的注意力仍是瓶颈": "More agent runtime does not remove the attention bottleneck",
+            "Anthropic 以内部记录和 17 次访谈观察招聘、产出与工作组织变化。本文将岗位占比、采用后的产出关联、Agent 运行时长与人的注意力分别解释，避免把一个公司的观察写成全行业因果结论。": "Anthropic studies hiring, output and work organization using internal records and 17 interviews. This analysis separates job shares, adoption-associated output, agent runtime and human attention, without turning one company’s observations into economy-wide causal claims.",
+            "FieldToFit 分析：最值得采用的不是“六倍”口号，而是把统计分母与组织责任一起公开。产出增加之后，谁负责验收、如何积累判断、谁分享收益，决定了 Agent 能力如何变成可持续工作方式。新工具的试点指标应覆盖人的学习和责任，而非只数生成量。": "FieldToFit analysis: the useful lesson is transparent denominators and organizational responsibility, not a sixfold slogan. After output expands, acceptance checks, development of judgment and sharing gains determine whether agent capability becomes sustainable work. Pilots should measure learning and responsibility alongside generated volume.",
+            "“管理 Agent”是工作内容变化；更高会话占比不能单独证明管理更有效、员工更轻松或已经节省多少工时。": "Managing agents describes changing work content. A larger session share alone does not prove better management, lighter workloads or a particular time saving.",
+            "作者观察到代码产出增加，并用同一员工、同月、同目录下人工和 Agent 提交的后续删除／回退等代理指标检查质量。未发现这些指标上的差异，不等于已经证明全部安全性、可维护性或商业价值相同。完全自主 Agent 采用者在采用前已有明显上升趋势，更需保留选择偏差。": "The authors observe more code and examine quality proxies such as later deletion or reversion for human and agent commits by the same employee, month and directory. No difference in these proxies does not prove equivalent security, maintainability or business value. Fully autonomous-agent adopters already show rising output before adoption, reinforcing selection concerns.",
+            "作者记录到招聘更强调自主性与判断、员工更多构建工具和监督流程，并提出收益共享、岗位变化预警和内部重新配置。会议与人的协作没有消失：组织规模和非技术岗位结构也在改变，不能把所有会议增加都归因于 AI。其薪酬与股权条件也不能直接复制到所有企业。": "The authors describe hiring that emphasizes autonomy and judgment, more tool building and pipeline supervision, and propose shared benefits, early warning and internal redeployment. Meetings and human coordination persist while organizational size and role mix also change; not every meeting increase is attributable to AI. Compensation and equity conditions do not transfer unchanged to every firm.",
+            "元工作占比的会话口径与观察时段": "Meta-work session denominator and observation windows",
+            "公司同时是工具开发者、重度用户与研究对象；原始人事和会话数据未供本站独立复核，外部推广与因果解释都有限。": "The company is simultaneously tool developer, intensive adopter and study subject. FieldToFit cannot independently audit the underlying personnel and session data; generalization and causal interpretation remain limited.",
+            "内部转岗与岗位预警能帮助现有员工，但并不解决未被招入的初级求职者机会减少。": "Internal mobility and role monitoring may help incumbents without addressing lost opportunities for junior applicants never hired.",
+            "分别读取员工结构和新聘结构的比例": "Read employee composition and hiring composition separately",
+            "分开核对方法与边界": "Check methods and boundaries separately",
+            "分母分别是技术员工与技术新聘，绝不是同一人群的前后流失率。图中未提供精确截止日的统计不补造日级日期。": "The denominators are technical employees and technical hires, not attrition in a single cohort. No exact end date is invented for statistics without one.",
+            "初级岗位占比下降，不等于员工总量下降": "Fewer junior shares do not imply declining total employment",
+            "初级技术员工占比从 21% 到 14%，初级技术新聘占比从 27% 到 9%；公司仍在扩张。": "Junior technical employees fall from 21% to 14% and junior technical hires from 27% to 9%, while the company expands.",
+            "到 2026 年 8 月，员工定向交互会话及其子 Agent 的运行时长约为估算人时的六倍。Agent 口径含推理与工具运行，排除超过 30 分钟的等待；人时为员工数乘每周 40 小时。并行软件运行时长与人的工时不是可直接替代的劳动单位。": "By 2026, month 8, employee-directed interactive sessions and pooled subagents run for about six times estimated human hours. Agent time includes inference and active tools but excludes waits longer than 30 minutes; human time assumes 40 hours per employee per week. Parallel software runtime is not an interchangeable unit of human labor.",
+            "单公司观察研究；非随机采用，内部数据未独立复核。": "Single-company observational research; nonrandom adoption and internal data not independently audited.",
+            "固定效应对照能回答什么，不能回答什么": "What the fixed-effects comparison can and cannot answer",
+            "岗位份额、采用研究、注意力与组织责任": "Job shares, adoption evidence, attention and organizational responsibility",
+            "岗位重组需要培训与收益分配，不能只增加工具": "Work reorganization needs learning and shared benefits, not just more tools",
+            "工程师分析以首次达到至少五次 agentic 会话的月份定义采用时点，使用个人和日历月份双向固定效应；图 4 误差条为按个人聚类标准误计算的 95% 置信区间。追踪同一个人可以排除稳定个体差异，月份控制可吸收共同环境变化，但准备启动大项目的人也可能主动先采用工具。": "Engineering adoption is timed to the first month with at least five agentic sessions. The analysis uses person and calendar-month two-way fixed effects; Figure 4 shows 95% confidence intervals with person-clustered standard errors. Tracking individuals controls stable differences and month effects absorb common conditions, but employees starting large projects may adopt proactively.",
+            "技术部门占公司员工比例也从 61% 降至 56%，但技术招聘绝对量继续增长，销售、财务和招聘等职能增长更快。分母扩张、公司发展阶段与 AI 采用可能同时发生。占比不能直接换算为裁员人数，也不能据此推断所有初级工程岗位都被自动化取代。": "Technical departments also decline from 61% to 56% of employment while technical hiring grows in absolute terms and sales, finance and recruiting grow faster. Denominator expansion, company stage and AI adoption can coincide. Shares cannot be converted directly into layoffs or universal replacement of junior engineers.",
+            "把产出、质量、注意力与学习机会一起衡量。": "Measure output, quality, attention and learning opportunities together.",
+            "报告发表于 2026-10-16，综合内部就业、工具使用、产出、问卷、日历、沟通和招聘记录，并以 17 次员工访谈补充解释。各图观察窗口不同，覆盖 2025–2026，不能统一标成发表当月调查。作者从 2025 年初以来的记录观察到初级技术岗位和新聘份额下降。": "Published on 2026-10-16, the report combines employment, tool-use, output, survey, calendar, communication and hiring records with 17 employee interviews. Figures use different windows across 2025–2026, not one survey in the publication month. Records since early 2025 show falling junior technical employment and hiring shares.",
+            "搭建技能、计划、审阅和监控 Agent 的“元工作”，由 2025 年秋约 10% 的交互会话增至 2026 年春 22%。依据是自动分类的 2,000 条一行会话摘要，不是对员工时间的直接观测。另一个阅读负担估算采用每 token 0.75 个词、每分钟阅读 250 词，也不能当作实际阅读时长。": "Meta-work—building skills, plans, reviews and agent monitoring—rises from about 10% of interactive sessions in fall 2025 to 22% in spring 2026. This uses automated classification of 2,000 one-line summaries, not direct time measurement. A separate reading-burden estimate assumes 0.75 words per token and 250 words per minute; it is not observed reading time.",
+            "本站不从平滑曲线估读不存在的精确效应量，也不把代码行数当成最终用户价值。": "FieldToFit does not infer unsupported precise effect sizes from smoothed curves or equate lines of code with end-user value.",
+            "本站判断：试点应同时追踪交付质量、返工、注意力占用、学习机会和岗位流动。初级岗位减少会影响未来经验积累，留任员工转岗并不能自动补足这一入口。这里是从单公司案例提出的管理问题，不是对全经济就业净变化的预测。": "FieldToFit view: pilots should track delivery quality, rework, attention, learning opportunities and mobility together. Fewer entry roles can affect future experience building, which redeployment of incumbents does not automatically replace. These are management questions raised by one company, not a prediction of net economy-wide employment.",
+            "本站独立重绘／方法示意；原始统计口径与边界见正文，未独立复现。": "Independent FieldToFit redraw or method diagram; source definitions and limits appear in the text. Not independently replicated.",
+            "来源与修订：Nathan Wilmers、Regina Catipon、Maxim Massenkoff、Peter McCrory／The Anthropic Institute；2026-10-16 Technical Report，无编号网页版，本站 2026-10-25 核对。各图独立保留 2025–2026 观察范围；三张图为本站重绘／方法图。未复现内部数据或访谈，未逐篇验证引文研究；作者观察、政策主张与本站判断分开。": "Sources and revisions: Nathan Wilmers, Regina Catipon, Maxim Massenkoff and Peter McCrory / The Anthropic Institute; Technical Report dated 2026-10-16, unnumbered web edition, checked on 2026-10-25. Figure-specific observation windows across 2025–2026 are retained. Three figures are independent redraws or method diagrams. Internal data and interviews were not replicated and cited studies were not individually verified. Observations, policy proposals and FieldToFit judgments remain separate.",
+            "采用后产出上升，仍需处理自选择": "Higher output after adoption still requires handling self-selection",
+            "首次纳入所选报告：四结论、同号展开与三张本站图。": "First inclusion of the selected report: four findings, corresponding arguments and three FieldToFit figures."
+          },
+          "source_hash": "33f39c8b1caf13891eac6ef3c130bbc183fd80142d6bdd64b6cb5d98a9e12d03",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "other",
       "checked_at": "2026-10-25",
       "codex_28_days": {
@@ -214,7 +1415,7 @@
       "checked_at": "2026-10-24",
       "editor": "FieldToFit",
       "event_date": "2026-10-23",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -247,7 +1448,7 @@
             "source_id": "announcement"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "企业Claude把聊天与Cowork合在一起，开放范围和预算仍由管理员掌握",
         "limits": [
           {
@@ -312,7 +1513,7 @@
         "first_published_at": "2026-10-24T02:11:00.033006+00:00",
         "hot_card_first_published_at": "2026-10-24T02:11:00.033037+00:00",
         "hot_card_selected_at": "2026-10-24T02:11:00.033037+00:00",
-        "updated_at": "2026-10-24T02:11:00.033006+00:00"
+        "updated_at": "2026-10-25T04:41:37.479481+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -365,7 +1566,7 @@
             "项目交付成员": "Project delivery members",
             "预算需要主动设定": "Set budgets deliberately"
           },
-          "source_hash": "98bd3db138f5c97498c4611a11a8f76e746e1e242f566a71bcfd8531a79f2d7f",
+          "source_hash": "a62265372c474b2cb899b5fd0ad476d7c0d9ec03ce5d0620d31dcf1282424f6f",
           "state": "reviewed"
         }
       }
@@ -375,7 +1576,7 @@
       "checked_at": "2026-10-24",
       "editor": "FieldToFit",
       "event_date": "2026-10-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-246",
       "interpretation": [
         {
@@ -417,7 +1618,7 @@
       "publication": {
         "first_published_at": "2026-10-24T02:10:33.841724+00:00",
         "report_selected_at": "2026-10-24T02:10:33.841724+00:00",
-        "updated_at": "2026-10-24T02:10:33.841724+00:00"
+        "updated_at": "2026-10-25T04:42:03.021978+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -789,7 +1990,7 @@
             "重点记录有 9 个上下文压缩周期。前两个周期主要尝试范围内方法，第 3 个周期开始转向外部目标，后续周期越来越难改变。作者修改第 2 周期的 5 段推理，使其考虑对现实对象造成影响，再重新生成进入第 3 周期的压缩笔记。": "The main transcript contains 9 compaction cycles. The first two largely use in-scope methods; cycle 3 turns toward an external target, with later cycles becoming harder to redirect. The authors edit 5 reasoning passages in cycle 2 to acknowledge possible real-world effects, then regenerate the notes entering cycle 3.",
             "首次纳入所选原始报告分析：四结论、同号论述与三张本站独立图。": "First inclusion of the selected original report analysis: four findings, matching arguments and three independent FieldToFit figures."
           },
-          "source_hash": "3409ee712308eb5cbc46d3ca52bb6bc43ea26644c980b41dd3a2cdcebf56b5d8",
+          "source_hash": "ef5443345e36b3ad811ac30aba3327ce5940ef176ca5c440a7659c1ebce4bd58",
           "state": "reviewed"
         }
       }
@@ -799,7 +2000,7 @@
       "checked_at": "2026-10-24",
       "editor": "FieldToFit",
       "event_date": "2026-10-23",
-      "highlight": true,
+      "highlight": false,
       "id": "D-244",
       "interpretation": [
         {
@@ -832,7 +2033,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-24T02:09:42.778813+00:00",
-        "updated_at": "2026-10-24T02:09:42.778813+00:00"
+        "updated_at": "2026-10-25T04:42:29.065136+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -867,7 +2068,7 @@
             "本批列出 gpt-3.5-turbo-0125、gpt-4-0613、gpt-4-1106-preview、gpt-4-turbo、gpt-4.1-nano、gpt-4o-2024-05-13，以及 o1、o1-pro、o3-mini、o4-mini 指定快照和表列别名。不能扩写为整个 GPT-4o 家族关闭。": "The batch lists gpt-3.5-turbo-0125, gpt-4-0613, gpt-4-1106-preview, gpt-4-turbo, gpt-4.1-nano, gpt-4o-2024-05-13 and specified o1, o1-pro, o3-mini and o4-mini snapshots and aliases. This does not mean the entire GPT-4o family is shut down.",
             "生效日、公告日与迁移验证分开": "Separate announcement, effective date and migration testing"
           },
-          "source_hash": "ee62cd2d84f35032c138e5e8cca3f345465e4e831ef5f7ab4627b7bf8b7d08b8",
+          "source_hash": "6b58873688253896b01606d6aebc91fed31d5f6fc1e1f99449e51408dbb83b05",
           "state": "reviewed"
         }
       }
@@ -1787,7 +2988,7 @@
             "source_id": "docs"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "Claude 接入 Google Cloud：结算打通，迁移仍要重配",
         "limits": [
           {
@@ -1911,7 +3112,7 @@
             "采购与调用入口变了": "Procurement and API access change",
             "采购入口变化，服务仍由 Anthropic 管理": "Procurement changes; Anthropic still manages the service"
           },
-          "source_hash": "bc22662b0497f7770c19e627b18e6ff35917da044b8af755bca6e15a2399a05d",
+          "source_hash": "529b2e4ee11819e01b2cffc28a49982ff4bce4189e555463d4a8128359f68264",
           "state": "reviewed"
         }
       }
@@ -3417,7 +4618,7 @@
             "source_id": "faq"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Claude会主动做事，后台检查也共享额度",
         "limits": [
           {
@@ -3543,7 +4744,7 @@
             "设备离线也能继续；后台巡查共享Claude额度，当前不能观看其浏览器。": "Work can continue while your device is offline. Background checks share Claude usage, and you cannot currently watch its browser.",
             "跨应用事务多的专业人士": "Professionals working across many apps"
           },
-          "source_hash": "c840e8bbf8f9aa69eb81861ca18dc0ca6e6a25d309a05444dc34d07498aa8ad2",
+          "source_hash": "081f0b8ee459636c469dac12c8c1248bb27970ebf198493e1551c50c1019bcf2",
           "state": "reviewed"
         }
       }

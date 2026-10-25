@@ -1,7 +1,35 @@
 {
-  "version": "1.17.3",
-  "revision": "466abbd4741daf11e6293a8020410b86d14739eb619a072f86db15e684981bd3",
+  "version": "1.17.4",
+  "revision": "719eb10ad1bac213ee11cdd677f319f03aab476cabf679a6dec6e11e407058a7",
   "items": [
+    {
+      "version": "1.17.4",
+      "date": "2026-10-25",
+      "deployed_on": "2026-10-25",
+      "copy": {
+        "zh": {
+          "title": "Kimi采用条件、监控指标与就业研究",
+          "highlights": [
+            "更新已选Kimi K3.1 Pro、英国AI生物安全实验室和Claude已解决服务事件，同步两份对应档案及近期总表。",
+            "新增监控指标与Anthropic就业研究两篇分析，各含四结论、对应论述和三张本站图，保留样本、分母与非因果边界。",
+            "提供Kimi中英分享卡；正式发表后轮替首页四篇报告和三张卡片，旧内容保留全部索引及稳定链接。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Kimi adoption conditions, monitorability metrics and employment research",
+          "highlights": [
+            "Update the selected Kimi K3.1 Pro, UK AI Biosecurity Lab and resolved Claude incidents, with two related dossiers and the news overview.",
+            "Add monitorability and Anthropic employment analyses, each with four findings, matching arguments and three FieldToFit figures, retaining samples, denominators and causal limits.",
+            "Provide a bilingual Kimi share card; actual publication rotates four homepage reports and three cards while retaining all indexes and stable links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.4"
+    },
     {
       "version": "1.17.3",
       "date": "2026-10-25",

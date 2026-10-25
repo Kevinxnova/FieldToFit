@@ -5667,6 +5667,25 @@
       "blocks": [
         {
           "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[Claude服务恢复记录：分清影响窗口与公告时间](https://fieldtofit.top/news/D-251)",
+              "2026-10-24",
+              "官方状态页的三组已解决事件涉及不同模型和时段。这里保留北京时间影响窗口；这是历史服务记录，不表示当前服务仍在故障。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期增补核对日 2026-10-25；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。"
+        },
+        {
+          "columns": [
             "本期事件／研究",
             "事件／报告日期",
             "核对范围与限制"
@@ -6220,6 +6239,24 @@
           "id": "oct24-report1",
           "title": "An alignment assessment of the UK AISI cybertesting incident",
           "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct25-announcement",
+          "title": "Claude status · Fable 5 / 5.1",
+          "url": "https://stspg.io/7n1wgb6qsfly"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct25-opus",
+          "title": "Claude status · Opus 5.5",
+          "url": "https://stspg.io/dmn3bc440bnb"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct25-multiple",
+          "title": "Claude status · multiple models",
+          "url": "https://stspg.io/gqp288t3qzpt"
         }
       ],
       "state": "published",
@@ -6267,6 +6304,7 @@
             "Sonnet缓存读取单独降价": "Sonnet cache reading separate price reduction",
             "[Agent 为什么越走越偏：上下文惯性与停止能力](https://fieldtofit.top/maps/agent-context-momentum-and-stopping)": "[Why agents persist down the wrong path: context momentum and stopping](https://fieldtofit.top/maps/agent-context-momentum-and-stopping)",
             "[Claude Enterprise统一Chat与Cowork，企业权限和预算一起管理](https://fieldtofit.top/news/D-245)": "[Claude Enterprise unifies Chat and Cowork with access and budget controls](https://fieldtofit.top/news/D-245)",
+            "[Claude服务恢复记录：分清影响窗口与公告时间](https://fieldtofit.top/news/D-251)": "[Claude recovery record: distinguish impact windows from notice times](https://fieldtofit.top/news/D-251)",
             "[Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费](https://fieldtofit.top/news/D-177)": "[Opus 5.5 Fast mode: broader access with separate fast-mode billing](https://fieldtofit.top/news/D-177)",
             "[官方日志](https://platform.claude.com/docs/en/release-notes/overview)": "[Official Log](https://platform.claude.com/docs/en/release-notes/overview)",
             "[官方材料](https://www.anthropic.com/news/2026-usage-policy-update)": "[Official Materials](https://www.anthropic.com/news/2026-usage-policy-update)",
@@ -6279,6 +6317,7 @@
             "主要变化": "Main changes",
             "主要能力或价格口径": "Main ability or price measurement basis",
             "事件与官方依据": "Event and official evidence",
+            "事件日期": "Event date",
             "事件／报告日期": "Event / report date",
             "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
             "以上为2026-10-09核对的新增材料；以下保留历史版本及当时适用条件。": "New materials above were checked on 2026-10-09. Historical versions below retain the conditions that applied at the time.",
@@ -6295,6 +6334,7 @@
             "原文日期": "Source text date",
             "原文日期：2026-10-15；本站核对：2026-10-17；版本：claude-opus-5-5 / Fast mode GA。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-15; checked: 2026-10-17; version: claude-opus-5-5 / Fast mode GA. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
             "发布日期 / 状态": "Release Date / Status",
+            "变化与条件": "Changes and conditions",
             "变化与用途": "Change and use",
             "同权重，更快输出": "Same weights, faster output",
             "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。": "Model claude-haiku-5-5 has 1M context and up to 128k output. Per million input / output tokens, prompts up to 100K cost $0.10 / $0.50; prompts above 100K cost $0.50 / $2.50. Check Claude API and each cloud platform's capabilities separately.",
@@ -6307,6 +6347,7 @@
             "官方发布、版本记录或采用说明": "Official release, version record or adoption instructions",
             "官方发布和采用材料": "Official release and adoption of materials",
             "官方强调长程编程与研究；新增逐消息 effort 等 beta 接口；强制工具选择存在不兼容变化": "Official focus on long-running coding and research; beta interfaces add per-message effort; forced tool selection includes incompatible changes",
+            "官方状态页的三组已解决事件涉及不同模型和时段。这里保留北京时间影响窗口；这是历史服务记录，不表示当前服务仍在故障。": "Three resolved status-page incidents involve different models and times. This record retains Beijing-time impact windows and does not imply an ongoing outage.",
             "对可能造成人身伤害的自主硬件，要求合格人员能够观察、停止设备，断开Claude后仍能保持安全状态；应结合具体用途阅读官方政策。": "For autonomous hardware that may cause physical harm, qualified people must be able to observe and stop equipment. It must remain safe after disconnecting Claude. Read the official policy in the context of the particular use.",
             "对照 Opus 4.8": "Compare Opus 4.8",
             "对照 Sonnet 4.6": "Compare with Sonnet 4.6",
@@ -6322,6 +6363,8 @@
             "最高 2.5 倍指输出token速度，使用相同模型权重；不保证首token延迟或整个任务同倍缩短。": "Up to 2.5 times refers to output-token speed with the same model weights; it does not promise the same reduction in time to first token or total task duration.",
             "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。": "The text has not been confirmed to distribute the permission; keep the official entrance, MCP can read the FieldToFit interpretation and source list.",
             "本期事件／研究": "Current event / research",
+            "本期增补核对日 2026-10-25；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-25; the full-version daily dossier review is incomplete. Existing models, prices, history and dossier-wide check date are retained.",
+            "本期已核实事件": "Current verified event",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M02 Claude, D-29, D-49。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M02 Claude, D-29, D-49. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次只核对上表两项官方平台功能，保留以下模型版本、价格及历史正文；不表示整个 Claude 家族的全部入口已在今日复核。": "This check covers only the two official platform features above. Model versions, prices and historical text below remain; it does not claim every Claude-family source was rechecked today.",
             "本次新增与采用边界": "New information and adoption boundaries",
@@ -6354,8 +6397,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-10-24T02:07:12.376355+00:00",
-          "source_hash": "35fb2fdc433f83ebea237c4fc739520807609fc4a83ccd71ec6e95005b07fd58",
+          "reviewed_at": "2026-10-25T04:33:33.135608+00:00",
+          "source_hash": "9932f3051ca716558d05e8cc898fe0ce3da27ecba67db5eeef42fbbcb48cd313",
           "state": "reviewed"
         }
       },
@@ -7474,6 +7517,25 @@
       "blocks": [
         {
           "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[Kimi K3.1 Pro上线：完整权重仍待后续发布](https://fieldtofit.top/news/D-249)",
+              "2026-10-23",
+              "K3.1 Pro和Highspeed已提供在线服务，官方称扩大K3后训练投入，强化代码、长任务与知识工作。Kimi Code的套餐、1M上下文与思考模式条件需要分别核对。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期增补核对日 2026-10-25；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。"
+        },
+        {
+          "columns": [
             "版本 / 分支",
             "日期与状态",
             "对照关系",
@@ -7544,9 +7606,68 @@
           "coverage": "link_only",
           "title": "K2.5",
           "url": "https://huggingface.co/moonshotai/Kimi-K2.5"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct25-announcement",
+          "title": "Kimi K3.1 Pro Tech Blog",
+          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct25-models",
+          "title": "Kimi Code Models",
+          "url": "https://www.kimi.com/code/docs/en/kimi-code/models.html"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct25-changelog",
+          "title": "Kimi Code Changelog",
+          "url": "https://www.kimi.com/code/docs/en/kimi-code/whats-new.html"
         }
       ],
       "state": "published",
+      "translations": {
+        "en": {
+          "fields": {
+            "1M 上下文；采用 Kimi Delta Attention 与 Attention Residuals": "1M context; adopt Kimi Delta Attention and Attention Residuals",
+            "2026-01-29 是模板修订日，不是模型首发日": "2026-01-29 is the template revision date, not the model release date.",
+            "K2.7-Code 的看点是编程分支如何继续训练。": "The point of view of K2.7-Code is how the programming branch continues to train.",
+            "K3 模型卡": "K3 Model Card",
+            "K3 的看点包括结构变化。": "The points of view of K3 include structural changes.",
+            "K3.1 Pro和Highspeed已提供在线服务，官方称扩大K3后训练投入，强化代码、长任务与知识工作。Kimi Code的套餐、1M上下文与思考模式条件需要分别核对。": "K3.1 Pro and Highspeed are available online, with expanded post-training from K3 for coding, long tasks and knowledge work. Kimi Code plan access, 1M context and thinking-mode requirements need separate checks.",
+            "KDA 和 AttnRes 是具体研究入口；读者能继续查看注意力与跨层信息传递的实现，而不只看到“更强、更长”。": "KDA and AttnRes provide specific research entry points into attention and cross-layer information transfer, beyond general claims of strength or context length.",
+            "Moonshot AI 的模型系列，同时覆盖原生视觉模型与面向编程的专门分支。": "Moonshot AI's model family, covering native vision models and a specialized coding branch.",
+            "[K3 模型卡](https://huggingface.co/moonshotai/Kimi-K3)": "[K3 Model Card](https://huggingface.co/moonshotai/Kimi-K3)",
+            "[Kimi K3.1 Pro上线：完整权重仍待后续发布](https://fieldtofit.top/news/D-249)": "[Kimi K3.1 Pro launches; full weights remain forthcoming](https://fieldtofit.top/news/D-249)",
+            "主要变化": "Main changes",
+            "事件日期": "Event date",
+            "依据": "Evidence",
+            "关联：[CW-T03 vLLM](/for-you#watch-cw-t03)，其本页资料版本记录包含 Kimi K3 支持。": "Related: [CW-T03 vLLM](/for-you#watch-cw-t03), whose version history includes Kimi K3 support.",
+            "原生视觉，提供 instant / thinking 模式；该次修订调整对话模板与媒体标记": "Native vision with instant / thinking modes; this revision changes conversation templates and media markers",
+            "变化与条件": "Changes and conditions",
+            "基于 K2 Base 继续训练": "Continue training based on K2 Base",
+            "基于 K2.6 的编程分支": "Programming branch based on K2.6",
+            "它基于 K2.6，材料同时给出编程评测与推理 token 变化，可以沿这条关系读，而不是仅按数字排代际。": "It is based on K2.6. Materials report coding evaluations alongside changes in reasoning tokens, providing a relationship to follow beyond numerical generation labels.",
+            "官方报告相对 K2.6 减少约 30% 思考 token；上下文 256K": "Official report: approximately 30% fewer thinking tokens than K2.6; 256K context",
+            "官方权重与模板": "Official weights and templates",
+            "官方权重；按 K3 许可证与模型卡部署说明读取": "Official weights; read according to K3 license and model card deployment instructions",
+            "官方模型材料；结果属于厂商评测": "Official model materials; the results belong to the manufacturer's evaluation",
+            "对照关系": "Contrast relationship",
+            "新一代原生视觉模型": "A new generation of native visual models",
+            "日期与状态": "Date and status",
+            "本期增补核对日 2026-10-25；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-25; the full-version daily dossier review is incomplete. Existing models, prices, history and dossier-wide check date are retained.",
+            "本期已核实事件": "Current verified event",
+            "版本 / 分支": "Version / Branch",
+            "获取与使用": "Acquisition and use",
+            "首发日待核；官方权重与模型卡可见": "The first date is to be checked; the official weights and the model card can be seen",
+            "首发日待核；官方模型卡可见": "The first date is to be approved; the official model card can be seen"
+          },
+          "reviewed_at": "2026-10-25T04:33:24.023307+00:00",
+          "source_hash": "d2cd0909e87440635c3fbcc83ad3eb91bcbd44068cfda851e66b619e975aae60",
+          "state": "reviewed"
+        }
+      },
       "type": "model"
     },
     {
@@ -14008,7 +14129,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-24",
+  "reviewed_at": "2026-10-25",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

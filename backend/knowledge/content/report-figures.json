@@ -1626,5 +1626,65 @@
       "kind": "editorial_reading_diagram",
       "curve_reconstructed": false
     }
+  },
+  "/report-figures/monitorability-20261020-matching.png": {
+    "sha256": "d0f678a0993898d0550b638f91808eed945b1d87fc375f69145f822b5c46657b",
+    "source_urls": [
+      "https://alignment.openai.com/beyond-gmean-squared/"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "2026-10-20",
+    "locator": "Metric 1; Figure 1"
+  },
+  "/report-figures/monitorability-20261020-denominators.png": {
+    "sha256": "a14704977c57a82d795ca4cf6c2f29d4f2b4f6d2f5ef63d717a74bd84535465f",
+    "source_urls": [
+      "https://alignment.openai.com/beyond-gmean-squared/"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "2026-10-20",
+    "locator": "Risk must be read beside deployment; Figure 6"
+  },
+  "/report-figures/monitorability-20261020-bounds.png": {
+    "sha256": "124530b8cb3c1c377628e19145b2e0629b520d0ea9b5e9d20f30f8ed9a9f5073",
+    "source_urls": [
+      "https://alignment.openai.com/beyond-gmean-squared/"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "2026-10-20",
+    "locator": "Appendix; Figure A1"
+  },
+  "/report-figures/employment-20261016-shares.png": {
+    "sha256": "2e4fd45056daeeb5cf2c4a1b20e7316af98bd7fee813bce25205521e71d2f9cf",
+    "source_urls": [
+      "https://www.anthropic.com/research/employment-at-anthropic"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "2026-10-16",
+    "locator": "Labor demand at the frontier; Figure 1"
+  },
+  "/report-figures/employment-20261016-design.png": {
+    "sha256": "0901fef54e9198956d8414ba27760becd5475c817a96be97a07cfcf9f731dce4",
+    "source_urls": [
+      "https://www.anthropic.com/research/employment-at-anthropic"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "2026-10-16",
+    "locator": "Is AI driving productivity increases at Anthropic?; Figure 4"
+  },
+  "/report-figures/employment-20261016-metawork.png": {
+    "sha256": "63ac8f00ca1ec5531985a27c22201d71bd6358bf7848e71de4d1b2f057bf9e1d",
+    "source_urls": [
+      "https://www.anthropic.com/research/employment-at-anthropic"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanation of author-reported facts; original graphics are not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "2026-10-16",
+    "locator": "Becoming managers of Claudes; Figure 7"
   }
 }

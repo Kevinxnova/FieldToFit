@@ -125,5 +125,16 @@
     "news_id": "D-245",
     "content_revision": "7d1d4b7fb0e75ba1445171bb45d47c7374e6fb56ac3b018a70fb57e70bdbb129",
     "text_revision": "8540f707955fc40691bc53a76133b4df8133cee50d651de09041f3b52b4f8887"
+  },
+  "/hot-cards/d-249-2c882694b6dd-zh.png": {
+    "sha256": "ec74be4def0b81c98f0f88ea0fc9fa7da6b4e9c4b4d85ebf69de31f5c37de68e",
+    "news_id": "D-249",
+    "content_revision": "2c882694b6dd2396839ba41201f2a654922d8855d9089f34d8e1571883a515df"
+  },
+  "/hot-cards/d-249-2c882694b6dd-en.png": {
+    "sha256": "e9e0558b928b5752ee2e1a99d27c8d64cd26f5e45cb5c80acbc1029500fa1141",
+    "news_id": "D-249",
+    "content_revision": "2c882694b6dd2396839ba41201f2a654922d8855d9089f34d8e1571883a515df",
+    "text_revision": "f6dfab6cc6dce6ad48d5da4b8e1ee219d23e49ff0938607646c494660af13191"
   }
 }
