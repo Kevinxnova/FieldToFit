@@ -38,20 +38,20 @@
     },
     {
       "company": "Meta",
-      "evidence_url": "https://artificialanalysis.ai/models/muse-spark-1-3",
-      "family": "Muse Spark 1.3",
+      "evidence_url": "https://artificialanalysis.ai/models/muse-wonder",
+      "family": "Muse Wonder",
       "ids": {
-        "arena": "muse-spark-1-3-max-bhma-text",
-        "artificial-analysis": "muse-spark-1-3"
+        "arena": "muse-wonder",
+        "artificial-analysis": "muse-wonder"
       }
     },
     {
       "company": "Kimi",
-      "evidence_url": "https://artificialanalysis.ai/models/kimi-k3",
-      "family": "Kimi K3",
+      "evidence_url": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+      "family": "Kimi K3.1 Pro",
       "ids": {
-        "arena": "kimi-k3-v3-text",
-        "artificial-analysis": "kimi-k3"
+        "arena": null,
+        "artificial-analysis": "kimi-k3-1-pro"
       }
     },
     {
@@ -102,5 +102,5 @@
   ],
   "policy": "FieldToFit 编辑维护的本期旗舰系列名单；每系列每来源一个代表配置，保留来源名称。缺项不替换为旧系列，不代表来源官方旗舰分类。",
   "policy_en": "FieldToFit’s reviewed flagship-series selection, with one representative configuration per source. Original names are retained. Missing entries are not replaced with older series. This is not an official source classification.",
-  "reviewed_at": "2026-10-08"
+  "reviewed_at": "2026-10-26"
 }

@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.6](CHANGELOG.md#v1.17.6)** · [fieldtofit-v1.17.6](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.6)
+**当前源码版本：[v1.17.7](CHANGELOG.md#v1.17.7)** · [fieldtofit-v1.17.7](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.7)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布已选Claude Code 2.1.309／310、Cerebras跨晶圆部署说明和Claude已解决服务记录，同步对应档案与近期总表。
-- 新增分布式生物推理分析和三张本站重绘，明确恢复分母、计算预算、留出错误与专家偏好边界，并保留主文和补充图的一例计数差异。
-- 提供Claude Code中英分享卡；成功发表后轮替首页报告与卡片，旧内容继续保留全部索引和稳定链接。
+- 刷新AA与Arena模型图表至172／99个可绘点，加入Kimi K3.1 Pro、Muse Wonder等新型号与已补齐的价格。
+- Kimi与Meta旗舰更新为K3.1 Pro和Muse Wonder；保留Full缺价、历史配置、真实来源日期及独立评分／成本单位。
+- 修复AA默认筛选隐藏历史型号的导入问题，保留完整数据出处与指纹；每日检查仍不自动发布数值。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

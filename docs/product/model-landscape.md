@@ -2,7 +2,7 @@
 
 仅 Artificial Analysis / Arena，移除 Epoch。保留各自坐标定义，不统一评分。快照：`backend/knowledge/content/model-landscape.json`；HTTP：`/api/v1/platform/model-landscape`。图表由公开 HTTP 读取；既有 MCP 工具范围不变。
 
-v1.8.10新增任意公司多选，具体交互见下节；已完成本地及正式验证并部署，见[生产验收](../validation/2026-10-08-chart-selection.md#production-deployment)。下方来源覆盖表和旗舰名单说明记录v1.5.14／2026-09-23快照；最新已发布数据为AA161／Arena94，见[2026-10-08内容验收](../validation/2026-10-08-editorial.md)。
+v1.8.10新增任意公司多选，具体交互见下节；已完成本地及正式验证并部署，见[生产验收](../validation/2026-10-08-chart-selection.md#production-deployment)。下方来源覆盖表和旗舰名单说明记录v1.5.14／2026-09-23快照；10月8日历史发布数据为AA161／Arena94，见[2026-10-08内容验收](../validation/2026-10-08-editorial.md)。10月26日已获所有者批准并随v1.17.7部署，更新为AA172／Arena99；实际开发、验证及部署状态见[本批验收](../validation/2026-10-26-model-landscape.md)。
 
 ## 任意公司多选 · REQ-7-6
 
@@ -38,16 +38,18 @@ v1.8.28已开发并于2026-10-12部署；见[验收记录](../validation/2026-10
 
 1. 获取上述两个公开网页并保存到本地临时文件。仅抽取必需事实、名称、配置和出处；不复制原文文章、图片或免费 API 的受限数据产品。图表内外署名，参见 [AA 引用说明](https://artificialanalysis.ai/brand-kit)。
 2. 核对 Arena 日期证据清单；同名不同版本、preview/instant 等不能模糊合并。清单记录原始模型 ID、日期、出处和依据类型，未确认项不自动补年份。
-3. 运行候选生成器：
+3. AA默认页面现在仅内嵌当前型号数值；先选择Status: All并保存其公开manifest对应的完整数据，按页面自身公开加载方式解码为JSON。记录原始数据包和解码文件指纹，禁止用默认子集覆盖历史配置。候选生成器检测到分离数据时必须提供`--aa-models-json`，缺配置或重复ID会拒绝导入。Arena使用当前正式地址`https://arena.ai/leaderboard/chat/text`。
+
+4. 运行候选生成器：
 
 ```bash
 .venv/bin/python scripts/maintenance/prepare_model_landscape.py \
-  --aa-html /tmp/aa.html --arena-html /tmp/arena.html \
+  --aa-html /tmp/aa.html --aa-models-json /tmp/aa-all-models.json --arena-html /tmp/arena.html \
   --checked-at 2026-09-23 --output /tmp/model-landscape-candidate.json
 ```
 
-4. 工具读取公开网页的内嵌数据，识别模型及选定榜单；格式变化报错停止。它不联网、不调用模型、不写生产库、不覆盖发布文件。核对候选 diff、覆盖数量、日期、价格口径与缺项，再将确认的候选替换快照。
-5. 更新 revision、checked_at、版本 z、CHANGELOG/REQ/发布说明，完成校验、浏览器验收再部署。没有数据变更不生成空版本。
+5. 工具读取公开网页的内嵌数据，识别模型及选定榜单；格式变化报错停止。它不联网、不调用模型、不写生产库、不覆盖发布文件。核对候选 diff、覆盖数量、日期、价格口径与缺项，再将确认的候选替换快照。
+6. 更新 revision、checked_at、版本 z、CHANGELOG/REQ/发布说明，完成校验、浏览器验收再部署。没有数据变更不生成空版本。
 
 现有 Vercel `/api/cron/platform` 每 1 天调用 `model_landscape.check_sources`，现在只检查上述两个榜单，不随数百个模型扩展请求。GET 不带凭据、不跟随重定向，限制大小/超时；结果与指纹写入现有 `knowledge_workflow_runs`（model_landscape_daily）。可用不等于值已更新，也不等于已经核对了每个日期链接。失败保留既有快照。
 
@@ -64,3 +66,9 @@ AA 11 家均可绘制。Arena 的 GPT-6 Astra、Muse Spark 1.3、Kimi K3 缺价�
 URL `company=flagship` 保存选择，切换 AA / Arena 保留；选择具体公司转为查看该公司的完整模型，重置恢复全部。图中点、数值和缺项表同时筛选，坐标不变。名单来源用链接核查，更新时间与评分快照时间分开。
 
 维护时先审核系列与精确来源 ID。来源下架或改名导致 ID 不再存在时，校验拒绝旧映射；需一并更新名单，确认来源未收录时显式设为 null。候选生成工具仍只生成测量快照，不能自动替换旗舰系列。
+
+## 2026-10-26获批刷新
+
+AA完整目录709项，今年326项，其中172可绘／154缺坐标。Arena完整目录418项，今年113项，其中99可绘／14缺坐标，183项日期待确认；投票截止UTC日期2026-10-22，本站核验日2026-10-26。两图保留全部既有条目，缺值不借用旧价格。
+
+Kimi旗舰改为K3.1 Pro，AA可绘、Arena未收录；Meta改为Muse Wonder系列的Wonder max代表配置，两来源可绘，Full独立缺价格不补造。其余9家公司选择保持。AA完整解码数据指纹`source_models_sha256`与公开包地址`source_data_url`作为可选溯源字段，旧快照兼容；`source_sha256`仍为原始HTML指纹。

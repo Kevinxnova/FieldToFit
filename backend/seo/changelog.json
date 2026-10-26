@@ -1,7 +1,35 @@
 {
-  "version": "1.17.6",
-  "revision": "5f675e2868b1fd4909e213c7f5e6ada694fa1f5ca33f37e0b85f05e77986cc21",
+  "version": "1.17.7",
+  "revision": "497ec03c20857da7d9f3781bb086ab79d0bc7320a5a517a030adeea371031e56",
   "items": [
+    {
+      "version": "1.17.7",
+      "date": "2026-10-26",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "模型能力与价格完整快照刷新",
+          "highlights": [
+            "刷新AA与Arena模型图表至172／99个可绘点，加入Kimi K3.1 Pro、Muse Wonder等新型号与已补齐的价格。",
+            "Kimi与Meta旗舰更新为K3.1 Pro和Muse Wonder；保留Full缺价、历史配置、真实来源日期及独立评分／成本单位。",
+            "修复AA默认筛选隐藏历史型号的导入问题，保留完整数据出处与指纹；每日检查仍不自动发布数值。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Complete model capability and cost snapshot refresh",
+          "highlights": [
+            "Refresh the AA and Arena charts to 172 and 99 plotted configurations, including Kimi K3.1 Pro, Muse Wonder and newly available prices.",
+            "Update the Kimi and Meta flagship selections to K3.1 Pro and Muse Wonder, retaining Full’s missing price, historical configurations, genuine source dates and independent metric units.",
+            "Require complete AA data when its default filter hides historical models, preserving data provenance and fingerprints; daily checks still never publish values automatically."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.7"
+    },
     {
       "version": "1.17.6",
       "date": "2026-10-26",

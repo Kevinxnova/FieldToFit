@@ -14,8 +14,8 @@ import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-AA = 'https://artificialanalysis.ai/leaderboards/models'
-ARENA = 'https://arena.ai/leaderboard/text'
+AA = 'https://artificialanalysis.ai/leaderboards/models?status=all'
+ARENA = 'https://arena.ai/leaderboard/chat/text'
 COMPANIES = ['OpenAI', 'Anthropic', 'Google', 'xAI', 'Meta', 'Kimi', 'GLM', 'Qwen', 'MIMO', 'MiniMax', 'DeepSeek', '其他']
 
 
@@ -67,12 +67,26 @@ def task_cost(value):
     return number(value)
 
 
-def build(aa_html, arena_html, ledger, checked_at):
+def build(aa_html, arena_html, ledger, checked_at, aa_models=None, aa_models_sha256=None):
     checked = date.fromisoformat(checked_at)
     aa_objects = objects(aa_html); arena_objects = objects(arena_html)
+    manifest = next((o.get('manifest') for o in aa_objects if 'initialModels' in o), None)
+    if manifest and aa_models is None:
+        raise ValueError('AA HTML contains only the current-model subset; provide the complete public model data with --aa-models-json')
+    if aa_models is not None:
+        if not isinstance(aa_models, list) or not aa_models or any(not isinstance(o, dict) or not o.get('slug') for o in aa_models):
+            raise ValueError('Invalid complete AA model data')
+        if len({o['slug'] for o in aa_models}) != len(aa_models):
+            raise ValueError('Duplicate AA model configurations')
+        required = {'slug', 'name', 'shortName', 'modelCreatorName', 'intelligenceIndex'}
+        if any(not required.issubset(o) for o in aa_models):
+            raise ValueError('AA model data is missing metric fields')
+        aa_objects += aa_models
     dates = {o['slug']:o for o in aa_objects if 'releaseDate' in o and 'slug' in o}
     models = {o['slug']:o for o in aa_objects if 'intelligenceIndex' in o and 'shortName' in o}
     configurations = {o['slug']:o for o in aa_objects if 'releaseSlug' in o and 'slug' in o}
+    if aa_models is not None and not set(configurations).issubset({o['slug'] for o in aa_models}):
+        raise ValueError('Incomplete AA model data; historical configurations must not disappear')
     # The source catalog can list a configuration before publishing metrics.
     # Keep it in the explicit missing-coordinate inventory, without borrowed values.
     for slug, config in configurations.items():
@@ -90,6 +104,11 @@ def build(aa_html, arena_html, ledger, checked_at):
               score_label='Intelligence Index v4.3', price_label='每项评测任务成本（美元）', price_label_en='USD per benchmark task', price_unit='usd_per_task',
               note='2026 年发布的模型配置；综合能力指数 × 每项评测任务加权成本。名称、配置与数值沿用来源，空心点为来源估计分。',
               note_en='Model configurations released in 2026: intelligence index × weighted cost per benchmark task. Original source names and values; hollow dots indicate estimated scores.')
+    if manifest and aa_models_sha256:
+        path = manifest.get('path', '')
+        if not path.startswith('/data/') or '?' in path or '#' in path or '..' in path:
+            raise ValueError('Unexpected AA public data path')
+        aa.update(source_data_url='https://artificialanalysis.ai'+path, source_models_sha256=aa_models_sha256)
     arena = dict(id='arena', name='Arena', source_url=ARENA, source_updated_at=board['voteCutoffISOString'][:10], checked_at=checked_at,
                  score_label='Text Arena · Overall · Style Control', price_label='输出价格（美元 / 百万 token）', price_label_en='USD per million output tokens', price_unit='usd_per_million_output_tokens',
                  note='2026 年模型 / 版本；用户偏好评分 × 输出 token 单价。竖线为来源评分区间，发布日期另行核对；评分不与 AA 换算。',
@@ -143,12 +162,16 @@ def build(aa_html, arena_html, ledger, checked_at):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--aa-html', type=Path, required=True); parser.add_argument('--arena-html', type=Path, required=True)
+    parser.add_argument('--aa-models-json', type=Path, help='Complete public AA model data decoded using the page manifest; not a filtered table')
     parser.add_argument('--checked-at', required=True); parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     canonical = ROOT/'backend/knowledge/content/model-landscape.json'
     if args.output.resolve() == canonical.resolve(): parser.error('Write a candidate outside the published snapshot; review before publishing')
     ledger = json.loads((canonical.parent/'model-landscape-arena-dates.json').read_text())
-    candidate = build(args.aa_html.read_text(), args.arena_html.read_text(), ledger, args.checked_at)
+    raw = args.aa_models_json.read_bytes() if args.aa_models_json else None
+    candidate = build(args.aa_html.read_text(), args.arena_html.read_text(), ledger, args.checked_at,
+                      json.loads(raw) if raw is not None else None,
+                      hashlib.sha256(raw).hexdigest() if raw is not None else None)
     args.output.write_text(json.dumps(candidate, ensure_ascii=False, indent=2, allow_nan=False)+'\n')
     print(json.dumps({s['id']:s['coverage'] for s in candidate['sources']}))
 

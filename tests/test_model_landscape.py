@@ -10,16 +10,16 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     response = client.get('/api/v1/platform/model-landscape')
     assert response.status_code == 200
     body = response.json
-    assert [len(s['points']) for s in body['sources']] == [161, 94]
+    assert [len(s['points']) for s in body['sources']] == [172, 99]
     aa, arena = body['sources']
     assert aa['price_unit'] == 'usd_per_task'
-    assert arena['source_updated_at'] == '2026-10-02'
+    assert arena['source_updated_at'] == '2026-10-22'
     assert aa['source_updated_at'] is None
     assert arena['points'][0]['score_low'] < arena['points'][0]['score'] < arena['points'][0]['score_high']
     assert 'v4.3' in aa['score_label']
     assert 'Style Control' in arena['score_label']
-    assert aa['coverage']['released_2026'] == 313 and arena['coverage']['released_2026'] == 108
-    assert len(aa['not_plotted']) == 152 and len(arena['not_plotted']) == 14
+    assert aa['coverage']['released_2026'] == 326 and arena['coverage']['released_2026'] == 113
+    assert len(aa['not_plotted']) == 154 and len(arena['not_plotted']) == 14
     assert len(arena['undated']) == 183
     assert all(p['release_date'].startswith('2026-') for s in body['sources'] for p in s['points'])
     assert set(p['organization'] for p in aa['points']) == set(body['companies'])
@@ -69,7 +69,7 @@ def test_source_checks_do_not_publish_or_refresh_dates(monkeypatch):
 def test_source_names_and_missing_coordinates_remain_explicit():
     aa, arena = charts.snapshot()['sources']
     assert any(p['name'] == 'DeepSeek V4.1 Flash (max)' for p in aa['points'])
-    assert any(p['name'] == 'gpt-5.5-instant' and p['release_date'] == '2026-05-05' for p in arena['points'])
+    assert any(p['id'] == 'gpt-5.5-instant' and p['name'] == 'GPT-5.5 Instant' and p['release_date'] == '2026-05-05' for p in arena['points'])
     assert any(p['organization'] == 'Kimi' and p['source_organization'] == 'Moonshot' for p in arena['points'])
     for source in (aa, arena):
         for point in source['not_plotted']:
@@ -89,13 +89,13 @@ def test_candidate_parser_and_company_aliases_do_not_invent_numbers():
 
 def test_flagships_are_reviewed_series_not_per_company_score_winners():
     aa, arena = charts.snapshot()['sources']
-    assert len(aa['points']) == 161 and len(arena['points']) == 94
+    assert len(aa['points']) == 172 and len(arena['points']) == 99
     assert sum(m['status']=='plotted' for m in aa['flagship']['models']) == 11
     assert sum(m['status']=='plotted' for m in arena['flagship']['models']) == 9
     chosen = {m['company']:m for m in arena['flagship']['models']}
     assert chosen['OpenAI']['status']=='missing_coordinates' and chosen['OpenAI']['id']=='gpt-6-astra-max-text'
-    assert chosen['Meta']['status']=='plotted' and chosen['Meta']['id']=='muse-spark-1-3-max-bhma-text'
-    assert chosen['Kimi']['status']=='missing_coordinates'
+    assert chosen['Meta']['status']=='plotted' and chosen['Meta']['id']=='muse-wonder'
+    assert chosen['Kimi']['status']=='not_listed'
     assert chosen['Google']['status']=='plotted' and chosen['Google']['id']=='barium-bb-wlqc-text'
     # New selected flagship series remains selected even when an older model scored higher.
     assert chosen['Anthropic']['status']=='plotted' and chosen['Anthropic']['family']=='Claude Opus 5.5'
@@ -138,6 +138,9 @@ def test_source_release_mapping_and_missing_metrics_are_not_guessed():
 @pytest.mark.parametrize('url', [
     'https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/',
     'https://www.anthropic.com/claude-sonnet-5-5',
+    'https://research.meta.ai/blog/muse-wonder',
+    'https://reflection.ai/blog/introducing-beam',
+    'https://mistral.ai/news/mistral-large-4/',
 ])
 def test_official_launch_dates_accept_exact_reviewed_hosts(url):
     data=copy.deepcopy(charts.snapshot())
@@ -147,6 +150,9 @@ def test_official_launch_dates_accept_exact_reviewed_hosts(url):
 
 @pytest.mark.parametrize('url', [
     'https://blog.google.evil.example/launch',
+    'https://research.meta.ai.evil.example/launch',
+    'https://user@reflection.ai/launch',
+    'http://mistral.ai/launch',
     'https://www.anthropic.com.evil.example/launch',
     'https://user@blog.google/launch',
     'http://www.anthropic.com/launch',
@@ -156,3 +162,36 @@ def test_official_launch_date_hosts_do_not_accept_lookalikes_or_unsafe_urls(url)
     data=copy.deepcopy(charts.snapshot())
     data['sources'][1]['points'][0]['date_url']=url
     with pytest.raises(AssertionError):charts.build_snapshot(data,None)
+
+
+def test_complete_aa_manifest_keeps_historical_models_and_rejects_partial_input():
+    from scripts.maintenance.prepare_model_landscape import build
+    def html(obj):
+        return '<script>self.__next_f.push('+json.dumps([1,'1:'+json.dumps(obj)+'\n'])+')</script>'
+    release = dict(slug='family', name='Family', releaseDate='2026-01-01', creator={'name':'OpenAI'})
+    configs = [dict(slug='config-'+str(i), name='Config '+str(i), releaseSlug='family') for i in range(202)]
+    metrics = [dict(slug=x['slug'], name=x['name'], shortName=x['name'], modelCreatorName='OpenAI',
+                    intelligenceIndex=20, intelligenceIndexCostPerTask=1, deprecated=i>0) for i,x in enumerate(configs)]
+    aa = html([release, *configs, {'initialModels':metrics[:1], 'manifest':{'path':'/data/reviewed.txt'}}])
+    arena = html(dict(leaderboardSlug='overall',params={'styleControl':True},entries=[],voteCutoffISOString='2026-10-22T22:00:00Z'))
+    with pytest.raises(ValueError, match='current-model subset'):
+        build(aa,arena,{},'2026-10-26')
+    with pytest.raises(ValueError, match='Incomplete AA'):
+        build(aa,arena,{},'2026-10-26',metrics[:1])
+    source = build(aa,arena,{},'2026-10-26',metrics,'a'*64)['sources'][0]
+    assert len(source['points'])==202 and sum(p['deprecated'] for p in source['points'])==201
+    assert source['source_models_sha256']=='a'*64
+    assert source['source_data_url']=='https://artificialanalysis.ai/data/reviewed.txt'
+    with pytest.raises(ValueError, match='Duplicate AA'):
+        build(aa,arena,{},'2026-10-26',metrics+metrics[:1])
+
+
+def test_new_models_and_real_missing_values_are_retained():
+    aa,arena=charts.snapshot()['sources']
+    a={p['id']:p for p in aa['points']+aa['not_plotted']}
+    b={p['id']:p for p in arena['points']+arena['not_plotted']}
+    assert a['kimi-k3-1-pro']['release_date']=='2026-10-23'
+    assert a['muse-wonder-full']['missing']==['missing_price']
+    assert a['gemini-3-7-flash']['price'] is None
+    assert b['muse-wonder']['price']==20 and b['muse-wonder']['release_date']=='2026-10-12'
+    assert any(p['name']=='GPT-6.1 Sol (Max)' and p['price']==10 for p in arena['points'])

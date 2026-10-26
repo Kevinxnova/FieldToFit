@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.7"></a>
+## v1.17.7 · 模型能力与价格完整快照刷新 · 2026-10-26
+<!-- public-title:en: Complete model capability and cost snapshot refresh -->
+<!-- release-summary:zh:start -->
+- 刷新AA与Arena模型图表至172／99个可绘点，加入Kimi K3.1 Pro、Muse Wonder等新型号与已补齐的价格。
+- Kimi与Meta旗舰更新为K3.1 Pro和Muse Wonder；保留Full缺价、历史配置、真实来源日期及独立评分／成本单位。
+- 修复AA默认筛选隐藏历史型号的导入问题，保留完整数据出处与指纹；每日检查仍不自动发布数值。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Refresh the AA and Arena charts to 172 and 99 plotted configurations, including Kimi K3.1 Pro, Muse Wonder and newly available prices.
+- Update the Kimi and Meta flagship selections to K3.1 Pro and Muse Wonder, retaining Full’s missing price, historical configurations, genuine source dates and independent metric units.
+- Require complete AA data when its default filter hides historical models, preserving data provenance and fingerprints; daily checks still never publish values automatically.
+<!-- release-summary:en:end -->
+
+对应REQ-7-2／3／4／5。所有者明确批准具体提案后要求更新并部署。基于v1.17.5完成开发，交付前合并日报v1.17.6全部已发布内容与资源；自v1.17.0以来累计仍为兼容内容维护，本批按patch交付，无数据库迁移或主要阅读流程变化。官方日期仅新增三个精确来源域名；数值仍限AA／Arena。实际验证与部署状态见[本批验收](docs/validation/2026-10-26-model-landscape.md)。
+
 <a id="v1.17.6"></a>
 ## v1.17.6 · Claude执行边界与分布式生物推理 · 2026-10-26
 <!-- site-deployed:2026-10-26 -->

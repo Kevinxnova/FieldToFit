@@ -1153,5 +1153,30 @@
     "release_date": "2026-09-28",
     "date_url": "https://www.anthropic.com/claude-sonnet-5-5",
     "date_basis": "official_release"
+  },
+  "muse-wonder": {
+    "release_date": "2026-10-12",
+    "date_url": "https://research.meta.ai/blog/muse-wonder",
+    "date_basis": "official_release"
+  },
+  "caveman-text": {
+    "release_date": "2026-10-05",
+    "date_url": "https://reflection.ai/blog/introducing-beam",
+    "date_basis": "official_release"
+  },
+  "mistral-large-4-text": {
+    "release_date": "2026-10-06",
+    "date_url": "https://mistral.ai/news/mistral-large-4/",
+    "date_basis": "official_release"
+  },
+  "claude-haiku-5.5-high-vertex": {
+    "release_date": "2026-10-07",
+    "date_url": "https://www.anthropic.com/claude-haiku-5-5",
+    "date_basis": "official_release"
+  },
+  "nvidia-nemotron-3.5-super-vl-120b-a12b-nvfp4-text": {
+    "release_date": "2026-10-15",
+    "date_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+    "date_basis": "official_release"
   }
 }

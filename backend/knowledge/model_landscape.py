@@ -25,7 +25,7 @@ def build_snapshot(data, catalog):
     # Editable private drafts must not expand the public field contract.
     data = json.loads(json.dumps(data))
     top=('schema_version','revision','year','interval_days','companies','sources')
-    source_fields=('checked_at','coverage','id','name','not_plotted','note','note_en','points','price_label','price_label_en','price_unit','score_label','source_sha256','source_updated_at','source_url','undated')
+    source_fields=('checked_at','coverage','id','name','not_plotted','note','note_en','points','price_label','price_label_en','price_unit','score_label','source_sha256','source_data_url','source_models_sha256','source_updated_at','source_url','undated')
     point_fields=('configuration','configuration_en','date_basis','date_url','deprecated','estimated','id','missing','model_url','name','organization','price','price_url','release_date','score','score_high','score_low','score_url','source_organization','votes')
     coverage_fields=('missing_coordinates','outside_year','plotted','released_2026','source_models','unconfirmed_date')
     data={k:v for k,v in data.items() if k in top}
@@ -41,6 +41,13 @@ def build_snapshot(data, catalog):
     assert data['companies'] == companies
     for source in data['sources']:
         checked = date.fromisoformat(source['checked_at'])
+        if 'source_data_url' in source or 'source_models_sha256' in source:
+            data_url = urlsplit(source['source_data_url'])
+            assert source['id'] == 'artificial-analysis' and data_url.scheme == 'https' and data_url.hostname == 'artificialanalysis.ai'
+            assert not data_url.username and not data_url.password and data_url.port in (None, 443)
+            assert data_url.path.startswith('/data/') and '..' not in data_url.path and not data_url.query and not data_url.fragment
+            digest = source['source_models_sha256']
+            assert isinstance(digest, str) and len(digest) == 64 and all(c in '0123456789abcdef' for c in digest)
         if source['source_updated_at']:
             assert date.fromisoformat(source['source_updated_at']) <= checked
         assert source['price_unit'] == ('usd_per_task' if source['id'] == 'artificial-analysis' else 'usd_per_million_output_tokens')
@@ -58,7 +65,7 @@ def build_snapshot(data, catalog):
                 assert day.year == data['year'] and day <= checked
                 assert point['date_basis'] in {'source_release_date', 'matched_model_release', 'source_version_date', 'official_release'}
                 parsed = urlsplit(point['date_url'])
-                assert parsed.scheme == 'https' and parsed.hostname in HOSTS | {'openai.com', 'ernie.baidu.com', 'help.aliyun.com', 'huggingface.co', 'blog.google', 'www.anthropic.com'} and not parsed.username and not parsed.password and parsed.port in (None, 443)
+                assert parsed.scheme == 'https' and parsed.hostname in HOSTS | {'openai.com', 'ernie.baidu.com', 'help.aliyun.com', 'huggingface.co', 'blog.google', 'www.anthropic.com', 'research.meta.ai', 'reflection.ai', 'mistral.ai'} and not parsed.username and not parsed.password and parsed.port in (None, 443)
             if 'score_low' in point:
                 assert finite(point['score_low']) and finite(point['score_high'])
                 assert point['score_low'] <= point['score'] <= point['score_high']
