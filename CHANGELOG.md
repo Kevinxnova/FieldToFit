@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.8"></a>
+## v1.17.8 · Cerebras晶圆推理容量分析 · 2026-10-26
+<!-- site-deployed:2026-10-26 -->
+<!-- public-title:en: Cerebras wafer-scale inference capacity analysis -->
+<!-- release-summary:zh:start -->
+- 为既有Cerebras动态D-256加入完整技术报告，分解59片晶圆、约190路请求、流水线与性能比较口径。
+- 四条结论配对应论述和三张本站计算／示意图，区分模型精确规格、教学假设、缓存预算和服务承诺。
+- 保留原事件与首次上站历史，正式发布后轮替首页四篇报告，完整索引与旧链接继续可读。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add a full technical analysis to existing Cerebras news D-256, examining 59 wafers, approximately 190 requests, pipelining and performance-comparison conditions.
+- Pair four findings with detailed arguments and three original calculation/schematic figures, separating model specifications, teaching assumptions, cache budgets and service commitments.
+- Preserve the original event and first-publication history; successful publication rotates four homepage reports while retaining the complete index and stable links.
+<!-- release-summary:en:end -->
+
+用户在完整本地Cerebras审阅稿后明确要求“更新并部署”。复用D-256及原2026-10-22事件，新增稳定入口cerebras-wafer-placement-and-inference-budget；无新信息卡，无模型榜单修改。基于已合并v1.17.7，自v1.17.0以来累计为兼容内容／静态资源维护，按patch v1.17.8交付，无新模块、主要流程重构或迁移。实际验证和回执见[本批验收](docs/validation/2026-10-26-cerebras-inference.md)。
+
 <a id="v1.17.7"></a>
 ## v1.17.7 · 模型能力与价格完整快照刷新 · 2026-10-26
 <!-- public-title:en: Complete model capability and cost snapshot refresh -->

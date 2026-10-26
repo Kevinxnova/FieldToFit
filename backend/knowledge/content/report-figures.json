@@ -1716,5 +1716,35 @@
     "attribution": "FieldToFit",
     "source_version": "bioRxiv v1; 2026-10-16",
     "locator": "Fig. 4K; Supplement pp. 30–31"
+  },
+  "/report-figures/cerebras-20261022-wafer.png": {
+    "sha256": "5529ef9c702c8af53da27d4bb09d30fca119aecf39d2c007b2a2ac3c3d674bd4",
+    "source_urls": [
+      "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras"
+    ],
+    "license": "Graphics © FieldToFit. Independent calculations and teaching schematics; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Technical blog; 2026-10-22",
+    "locator": "Sections 1–2: Size of Each layer; Number of Wafers"
+  },
+  "/report-figures/cerebras-20261022-cache.png": {
+    "sha256": "bf39e52879af37e6b7ed4231709b82c60401af67fac8b7d9524faa41631787c0",
+    "source_urls": [
+      "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras"
+    ],
+    "license": "Graphics © FieldToFit. Independent calculations and teaching schematics; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Technical blog; 2026-10-22",
+    "locator": "Section 6: KV memory formula images"
+  },
+  "/report-figures/cerebras-20261022-pipeline.png": {
+    "sha256": "191c0e13bd1249aed69d1f9126e0da8aac22dbd2177e8cad021a7e0ade9a2e16",
+    "source_urls": [
+      "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras"
+    ],
+    "license": "Graphics © FieldToFit. Independent calculations and teaching schematics; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Technical blog; 2026-10-22",
+    "locator": "Sections 3–6: connecting wafers and serving requests"
   }
 }

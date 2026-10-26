@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.7](CHANGELOG.md#v1.17.7)** · [fieldtofit-v1.17.7](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.7)
+**当前源码版本：[v1.17.8](CHANGELOG.md#v1.17.8)** · [fieldtofit-v1.17.8](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.8)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 刷新AA与Arena模型图表至172／99个可绘点，加入Kimi K3.1 Pro、Muse Wonder等新型号与已补齐的价格。
-- Kimi与Meta旗舰更新为K3.1 Pro和Muse Wonder；保留Full缺价、历史配置、真实来源日期及独立评分／成本单位。
-- 修复AA默认筛选隐藏历史型号的导入问题，保留完整数据出处与指纹；每日检查仍不自动发布数值。
+- 为既有Cerebras动态D-256加入完整技术报告，分解59片晶圆、约190路请求、流水线与性能比较口径。
+- 四条结论配对应论述和三张本站计算／示意图，区分模型精确规格、教学假设、缓存预算和服务承诺。
+- 保留原事件与首次上站历史，正式发布后轮替首页四篇报告，完整索引与旧链接继续可读。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

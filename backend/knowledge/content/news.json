@@ -294,7 +294,8 @@
       "organization": "Cerebras",
       "publication": {
         "first_published_at": "2026-10-26T04:31:20.974886+00:00",
-        "updated_at": "2026-10-26T04:31:20.974886+00:00"
+        "report_selected_at": "2026-10-26T05:17:06.592609+00:00",
+        "updated_at": "2026-10-26T05:17:06.592609+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -311,25 +312,410 @@
           "id": "report",
           "title": "How we deploy Trillion-parameter frontier models on Cerebras",
           "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras"
+        },
+        {
+          "coverage": "link_only",
+          "id": "kimi-report",
+          "title": "Kimi K3: Open Frontier Intelligence",
+          "url": "https://github.com/MoonshotAI/Kimi-K3/blob/main/k3_tech_report.pdf"
+        },
+        {
+          "coverage": "link_only",
+          "id": "kimi-config",
+          "title": "Kimi-K3 config.json",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3/raw/main/config.json"
+        },
+        {
+          "coverage": "link_only",
+          "id": "hotchips",
+          "title": "Ultrafast Frontier Inference: Cerebras Deep Dive at Hot Chips 2026",
+          "url": "https://www.cerebras.ai/blog/ultrafast-frontier-inference-cerebras-deep-dive-at-hot-chips-2026"
+        },
+        {
+          "coverage": "link_only",
+          "id": "training-docs",
+          "title": "How Cerebras Works — software documentation 1.7.0",
+          "url": "https://training-api.cerebras.ai/en/1.7.0/cerebras-basics/how-cerebras-works.html"
         }
       ],
       "state": "published",
       "summary": "官方架构博文以约 3T 参数、4bit 权重、8bit KV 缓存和平均 256k 请求说明跨晶圆分配。59 片是示例估算，不代表该配置已向所有 API 用户开放。",
+      "technical_map": {
+        "caution": "59片与约 190路属于带假设的容量账本，未独立实测，也不等于已公开的服务配置或吞吐保证。",
+        "change_summary": "在已发布动态基础上首次加入完整技术分析：四条结论、对应论述与三张独立计算／示意图，保留原事件日期。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 6: KV memory formula images",
+                "source_id": "report"
+              }
+            ],
+            "from": "placement",
+            "id": "e-cache",
+            "label": "共同约束",
+            "reason": "容量、调度和测量共同约束推理服务，关系不表示方法继承或性能因果。",
+            "relation": "parallel",
+            "to": "cache"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Sections 3–6: connecting wafers and serving requests",
+                "source_id": "report"
+              }
+            ],
+            "from": "placement",
+            "id": "e-pipeline",
+            "label": "共同约束",
+            "reason": "容量、调度和测量共同约束推理服务，关系不表示方法继承或性能因果。",
+            "relation": "parallel",
+            "to": "pipeline"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Performance comparison and boundary discussion; Hot Chips 2026 background",
+                "source_id": "report"
+              }
+            ],
+            "from": "placement",
+            "id": "e-comparison",
+            "label": "共同约束",
+            "reason": "容量、调度和测量共同约束推理服务，关系不表示方法继承或性能因果。",
+            "relation": "parallel",
+            "to": "comparison"
+          }
+        ],
+        "focus": "从层放置、KV容量到流水线，解释晶圆级推理的条件与证据边界。",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Sections 1–2: Size of Each layer; Number of Wafers",
+                "source_id": "report"
+              }
+            ],
+            "id": "placement",
+            "kind": "method",
+            "label": "59片算的是一组映射假设，不是模型固有尺寸",
+            "limitation": "59片与约 190路属于带假设的容量账本，未独立实测，也不等于已公开的服务配置或吞吐保证。",
+            "mechanism": "59片由层类型、精度和布局共同决定，不能直接当成真实部署清单。",
+            "metrics": [],
+            "result": "59片由层类型、精度和布局共同决定，不能直接当成真实部署清单。",
+            "setting": "权重容量 → 请求状态 → 流水线 → 同口径比较",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 6: KV memory formula images",
+                "source_id": "report"
+              }
+            ],
+            "id": "cache",
+            "kind": "method",
+            "label": "约 190路并发是缓存预算，不是服务承诺",
+            "limitation": "59片与约 190路属于带假设的容量账本，未独立实测，也不等于已公开的服务配置或吞吐保证。",
+            "mechanism": "约 190路是特定上下文下的KV预算，固定状态与工程余量仍要计入。",
+            "metrics": [],
+            "result": "约 190路是特定上下文下的KV预算，固定状态与工程余量仍要计入。",
+            "setting": "权重容量 → 请求状态 → 流水线 → 同口径比较",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Sections 3–6: connecting wafers and serving requests",
+                "source_id": "report"
+              }
+            ],
+            "id": "pipeline",
+            "kind": "method",
+            "label": "流水线让不同请求重叠，不消除单请求依赖",
+            "limitation": "59片与约 190路属于带假设的容量账本，未独立实测，也不等于已公开的服务配置或吞吐保证。",
+            "mechanism": "流水线重叠多个请求，却不取消单请求的自回归依赖。",
+            "metrics": [],
+            "result": "流水线重叠多个请求，却不取消单请求的自回归依赖。",
+            "setting": "权重容量 → 请求状态 → 流水线 → 同口径比较",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Performance comparison and boundary discussion; Hot Chips 2026 background",
+                "source_id": "report"
+              }
+            ],
+            "id": "comparison",
+            "kind": "result",
+            "label": "真正的比较应固定质量、交互速度与测量边界",
+            "limitation": "59片与约 190路属于带假设的容量账本，未独立实测，也不等于已公开的服务配置或吞吐保证。",
+            "mechanism": "性能比较应固定模型质量和交互速度，再核对吞吐、功耗与端到端任务。",
+            "metrics": [],
+            "result": "性能比较应固定模型质量和交互速度，再核对吞吐、功耗与端到端任务。",
+            "setting": "权重容量 → 请求状态 → 流水线 → 同口径比较",
+            "stage": 3
+          }
+        ],
+        "question": "Cerebras：59片晶圆与 190路请求背后的推理账本",
+        "reading": {
+          "editorial": [
+            "这份材料最有价值的部分，是把“能装下”与“能同时服务多少请求”放到一张账本里。它最容易被误读的部分，也是把教学账本当成已验证的生产系统。FieldToFit建议按三步阅读：先复算容量并找出省略项，再检查调度是否能兑现容量，最后在相同任务与质量约束下验证成本和时延。三步中任何一项缺证，都应保留空白，而不是用峰值速度、芯片带宽或路线图数字填满。",
+            "来源与修订：Sarah Chieng，Cerebras，2026-10-22，无编号技术博文；全文与公式图已核对。Moonshot官方 47页K3报告仅重点核对§2.1、表 1、§4.1.4和§5.4，未声称全篇实验复核，原PDF未标明确编号日期。在线config为可变版本，本站 2026-10-26核对。Jessica Liu的Hot Chips文章为 2026-08-25；1.7.0训练文档仅作历史背景。三图为本站计算／示意，未复现硬件部署或API性能。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "先区分三个数量：总参数决定要存多少权重，激活参数影响每个token的计算，晶圆数量还取决于请求状态和放置策略。Moonshot技术报告表 1列K3总参数 2.78T、激活参数 104.2B；Cerebras为讲解取约 3T。不能用 104.2B计算全部驻留权重，也不能把 3T近似值反写成模型精确规格。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "在全部权重都按 4bit、十进制容量的教学条件下，3×10¹²×4÷8 = 1.5×10¹²字节，即 1.5TB。再除 93层，得到约 16.13GB／层；博文取 16GB。每片 44GB时，两层线性注意力约 32GB；完整注意力层每片一层，余量留给KV。因此ceil(69/2)+24 = 35+24 = 59。"
+                },
+                {
+                  "alt": "59片算的是一组映射假设，不是模型固有尺寸",
+                  "attribution": "FieldToFit",
+                  "caption": "图 1｜本站独立重绘。59片来自层类型与放置假设；不表示已取得该配置的实测或编译清单。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Sections 1–2: Size of Each layer; Number of Wafers",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/cerebras-20261022-wafer.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent calculations and teaching schematics; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "这里的“dense layer”指完整注意力层，不能与模型表中的“Number of Dense Layers = 1”混为一谈：后者对应前馈专家结构，前者对应 69 KDA + 24 Gated MLA的注意力组成。完整注意力也不是每个token都激活全部MoE专家。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Moonshot §4.1.4明确：主要路由专家权重用MXFP4，注意力投影、latent MoE投影、共享专家和路由器等仍保留较高精度；量化元数据也要空间。用一个平均层大小替代每层实际布局，还忽略了嵌入、视觉模块、缓冲、碎片与冗余。真实工程应核对每片的峰值占用，而不是把 1.5TB÷44GB向上取整后就当采购清单。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Sections 1–2: Size of Each layer; Number of Wafers",
+                  "source_id": "report"
+                }
+              ],
+              "id": "placement",
+              "node_ids": [
+                "placement"
+              ],
+              "summary": "59片由层类型、精度和布局共同决定，不能直接当成真实部署清单。",
+              "title": "59片算的是一组映射假设，不是模型固有尺寸"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "官方公式图给出完整注意力层每token缓存 576字节，平均请求 256,000 token；相乘为 147,456,000字节，即 147.456MB。按博文取整后的 44−16=28GB计算，28×10⁹÷147,456,000≈189.89，所以写“约 190”。这甚至不是保证能容纳 190条完整请求的严格整数上限：按这组精确数字取整只能到 189，实际还须保留运行余量。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "576字节是该博文示例给定值。公开K3配置同时列kv_lora_rank=512、qk_rope_head_dim=64与mla_use_nope=true；技术报告说明MLA不施加位置编码。仅凭 512+64恰好等于 576，不能证明Cerebras真实缓存布局一定如此，也不能在未核算缩放元数据、精度和实现细节时宣布找到精确来源。本文将它保留为作者假设，待实际部署说明核验。"
+                },
+                {
+                  "alt": "约 190路并发是缓存预算，不是服务承诺",
+                  "attribution": "FieldToFit",
+                  "caption": "图 2｜本站假设敏感性计算。GB／MB均为十进制，曲线不是Cerebras实测容量或SLA；忽略固定开销。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Section 6: KV memory formula images",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/cerebras-20261022-cache.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent calculations and teaching schematics; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "每条请求都经过每个完整注意力层，因此 24片上的KV预算是逐层共同约束。不能把 190乘 24当成系统并发数，也不能把 190乘 59当成并发扩容。对异长请求，更合理的容量账本是Σ(每token字节×各请求长度)+固定开销≤该片可用空间；最紧的层先形成瓶颈。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "下图只改变上下文长度，固定 28GB与 576字节，得到理论比例关系N≈28×10⁹/(576L)。上下文翻倍，KV容量允许的并发约减半；这不预测吞吐，因为计算时间、排队和缓存命中也会变。线性注意力不保存逐token的完整KV，但每个请求仍有固定大小的递归状态；固定不等于免费，前缀复用或推测解码还可能需要额外检查点与恢复处理。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Section 6: KV memory formula images",
+                  "source_id": "report"
+                }
+              ],
+              "id": "cache",
+              "node_ids": [
+                "cache"
+              ],
+              "summary": "约 190路是特定上下文下的KV预算，固定状态与工程余量仍要计入。",
+              "title": "约 190路并发是缓存预算，不是服务承诺"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "把一条自回归请求看作经过许多工位的产品：当前token需要穿过相关阶段，下一token通常还要等待当前token生成并反馈。流水线利用的是不同请求的重叠，让A在后段、B在中段、C在前段同时工作。它没有把一条请求的顺序依赖变成无限并行。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Cerebras说明权重通常整层驻留，跨片传激活，RDMA以太网每跳约 2微秒；生产阶段比示意中的层更细。这给出了降低数据搬运的方向，却没有提供逐阶段计算时间、通信尾延迟和完整拓扑。用 59×2微秒倒数推算tokens/s，会遗漏几乎所有决定实际服务速度的条件。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "可以用一个明确标为教学模型的关系帮助理解：令阶段耗时为t₁…tS，则无排队单次穿越约为Σtᵢ，稳态完成间隔至少受最慢阶段max(tᵢ)约束。微批量为m时，理想聚合能力可写成m/max(tᵢ(m))；但tᵢ随m变化，不能将批量乘上去却假设耗时不变。真实调度还受反馈、填充／排空、长短请求与状态容量限制。"
+                },
+                {
+                  "alt": "流水线让不同请求重叠，不消除单请求依赖",
+                  "attribution": "FieldToFit",
+                  "caption": "图 3｜本站原创教学示意：三阶段、四请求、等时阶段，只展示请求重叠；不是 59片系统的真实时序。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Sections 3–6: connecting wafers and serving requests",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/cerebras-20261022-pipeline.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent calculations and teaching schematics; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "因此，流水线在飞请求数“阶段数×微批量”只是调度直觉，必须同时小于内存和服务目标允许的范围。190是缓存侧近似预算，阶段数是调度划分，吞吐是单位时间完成量；三者不能互换。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Sections 3–6: connecting wafers and serving requests",
+                  "source_id": "report"
+                }
+              ],
+              "id": "pipeline",
+              "node_ids": [
+                "pipeline"
+              ],
+              "summary": "流水线重叠多个请求，却不取消单请求的自回归依赖。",
+              "title": "流水线让不同请求重叠，不消除单请求依赖"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "低批量解码时，让权重靠近计算有机会减少重复搬运；但一次完整任务还包含输入处理、prefill、排队、decode、工具和外部服务。输出tokens/s不等于首token时间，也不等于Agent任务完成时间。若工具等待已占主要时间，模型解码翻倍也不会使整项任务翻倍提速。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "应在同一模型版本、数值精度与质量门槛下，报告输入／输出长度分布、缓存命中、并发与到达率；再给出TTFT、token间隔及p50／p95／p99、成功完成量和错误率。能耗比较应说明功率是在芯片、机架还是整机房边界测量，是否包含网络、主机和冷却，并在同等输出速度约束下比较有效tokens/s/MW。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Hot Chips 2026官方说明讨论CS-4与Nexus平台，也把CS-5明确列为面向 2027的目标。产品路线图不是当前K3配置的实测结果。旧版Cerebras训练文档中的Weight Streaming又属于不同执行模式：不能用“训练时外部流入权重”否定本篇常驻权重的推理描述，也不能把一个场景的数字搬到另一个场景。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "截至本次核对，我没有取得 59片K3配置的可复现实验脚本、逐层内存分配、实际功率曲线、端到端延迟分位数或完整商业开放条件；官方模型目录入口的本次读取失败。这里是材料与验证缺口，不是“没有服务”或“没有性能优势”的证明。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Performance comparison and boundary discussion; Hot Chips 2026 background",
+                  "source_id": "report"
+                }
+              ],
+              "id": "comparison",
+              "node_ids": [
+                "comparison"
+              ],
+              "summary": "性能比较应固定模型质量和交互速度，再核对吞吐、功耗与端到端任务。",
+              "title": "真正的比较应固定质量、交互速度与测量边界"
+            }
+          ],
+          "title": "Cerebras：59片晶圆与 190路请求背后的推理账本"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-22",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "Technical blog; 2026-10-22"
+          }
+        ],
+        "slug": "cerebras-wafer-placement-and-inference-budget",
+        "takeaway": "先复算能装下多少，再验证实际能服务多少。"
+      },
       "title": "Cerebras 用 Kimi K3 解释跨晶圆部署：59 片是带假设的示例",
       "translations": {
         "en": {
           "fields": {
+            "576字节是该博文示例给定值。公开K3配置同时列kv_lora_rank=512、qk_rope_head_dim=64与mla_use_nope=true；技术报告说明MLA不施加位置编码。仅凭 512+64恰好等于 576，不能证明Cerebras真实缓存布局一定如此，也不能在未核算缩放元数据、精度和实现细节时宣布找到精确来源。本文将它保留为作者假设，待实际部署说明核验。": "The 576-byte value is an assumption supplied by the blog. The public K3 configuration contains kv_lora_rank=512, qk_rope_head_dim=64 and mla_use_nope=true; the technical report states that MLA uses no positional encoding. The coincidence that 512+64 equals 576 does not establish Cerebras’ actual cache layout. Scaling metadata, precision and implementation details must be checked before claiming an exact derivation. This article retains the value as the author’s assumption pending deployment evidence.",
+            "59片与约 190路属于带假设的容量账本，未独立实测，也不等于已公开的服务配置或吞吐保证。": "The 59 wafers and approximately 190 requests belong to an assumption-bound capacity model; they are not independently measured or a guarantee of public service configuration or throughput.",
+            "59片由层类型、精度和布局共同决定，不能直接当成真实部署清单。": "Layer types, precision and placement determine the 59-wafer illustration; it is not a verified production bill of materials.",
+            "59片算的是一组映射假设，不是模型固有尺寸": "59 wafers describe a mapping assumption, not an intrinsic model size",
             "Cerebras 用 Kimi K3 解释跨晶圆部署：59 片是带假设的示例": "Cerebras explains multi-wafer Kimi K3 deployment: 59 wafers under stated assumptions",
+            "Cerebras说明权重通常整层驻留，跨片传激活，RDMA以太网每跳约 2微秒；生产阶段比示意中的层更细。这给出了降低数据搬运的方向，却没有提供逐阶段计算时间、通信尾延迟和完整拓扑。用 59×2微秒倒数推算tokens/s，会遗漏几乎所有决定实际服务速度的条件。": "Cerebras says weights typically reside as complete layers and activations cross wafers over RDMA Ethernet at roughly 2 microseconds per hop; production stages are finer-grained than the illustrative layers. This explains a way to reduce movement but does not provide per-stage compute times, communication tail latency or a complete topology. Taking the inverse of 59×2 microseconds to infer tokens/s omits most conditions that determine real service speed.",
+            "Cerebras：59片晶圆与 190路请求背后的推理账本": "Cerebras: the inference arithmetic behind 59 wafers and 190 requests",
+            "Hot Chips 2026官方说明讨论CS-4与Nexus平台，也把CS-5明确列为面向 2027的目标。产品路线图不是当前K3配置的实测结果。旧版Cerebras训练文档中的Weight Streaming又属于不同执行模式：不能用“训练时外部流入权重”否定本篇常驻权重的推理描述，也不能把一个场景的数字搬到另一个场景。": "The official Hot Chips 2026 explanation discusses CS-4 and Nexus while explicitly presenting CS-5 as a target for 2027. A roadmap is not a measured result for the current K3 configuration. Weight Streaming in older Cerebras training documentation describes another execution mode: externally streaming training weights does not contradict the resident-weight inference explanation here, and numbers cannot be transferred between those settings.",
+            "Moonshot §4.1.4明确：主要路由专家权重用MXFP4，注意力投影、latent MoE投影、共享专家和路由器等仍保留较高精度；量化元数据也要空间。用一个平均层大小替代每层实际布局，还忽略了嵌入、视觉模块、缓冲、碎片与冗余。真实工程应核对每片的峰值占用，而不是把 1.5TB÷44GB向上取整后就当采购清单。": "Moonshot §4.1.4 specifies MXFP4 for the main routed-expert weights, while attention projections, latent MoE projections, shared experts and routers retain higher precision; quantization metadata also takes space. Replacing actual layer layouts with one average layer size omits embeddings, vision modules, buffers, fragmentation and redundancy. Engineering sizing should inspect peak occupancy on each wafer, rather than round up 1.5TB÷44GB into a procurement list.",
             "Sarah Chieng，2026-10-22 无编号技术博文；本站 2026-10-26 核对。未测部署、吞吐、延迟或能耗。示例是 K3，不是 K3.1 Pro；仅增补 CW-M04 关联阅读，不改型号、价格、开放状态或榜单。": "Sarah Chieng, unnumbered technical post dated 2026-10-22; checked on 2026-10-26. Deployment, throughput, latency and energy were not tested. The example is K3, not K3.1 Pro. Only related reading is added to CW-M04; models, prices, access and rankings are unchanged.",
+            "下图只改变上下文长度，固定 28GB与 576字节，得到理论比例关系N≈28×10⁹/(576L)。上下文翻倍，KV容量允许的并发约减半；这不预测吞吐，因为计算时间、排队和缓存命中也会变。线性注意力不保存逐token的完整KV，但每个请求仍有固定大小的递归状态；固定不等于免费，前缀复用或推测解码还可能需要额外检查点与恢复处理。": "The next figure changes only context length while holding 28GB and 576 bytes fixed, giving the theoretical relationship N≈28×10⁹/(576L). Doubling context approximately halves KV-limited concurrency. This is not a throughput prediction: computation, queuing and cache hits also change. Linear attention avoids a full per-token KV history but retains fixed-size recurrent state per request. Fixed does not mean free; prefix reuse or speculative decoding may require additional checkpoints and recovery work.",
+            "从层放置、KV容量到流水线，解释晶圆级推理的条件与证据边界。": "Explain wafer-scale inference conditions and evidence boundaries through layer placement, KV capacity and pipelining.",
+            "低批量解码时，让权重靠近计算有机会减少重复搬运；但一次完整任务还包含输入处理、prefill、排队、decode、工具和外部服务。输出tokens/s不等于首token时间，也不等于Agent任务完成时间。若工具等待已占主要时间，模型解码翻倍也不会使整项任务翻倍提速。": "Keeping weights close to compute may reduce repeated movement during low-batch decoding. A complete task also includes input processing, prefill, queuing, decode, tools and external services. Output tokens/s is neither time to first token nor agent task completion time. If tool waiting dominates, doubling model decoding speed cannot double whole-task speed.",
+            "先区分三个数量：总参数决定要存多少权重，激活参数影响每个token的计算，晶圆数量还取决于请求状态和放置策略。Moonshot技术报告表 1列K3总参数 2.78T、激活参数 104.2B；Cerebras为讲解取约 3T。不能用 104.2B计算全部驻留权重，也不能把 3T近似值反写成模型精确规格。": "Distinguish three quantities: total parameters determine stored weights, active parameters affect computation per token, and wafer count also depends on request state and placement. Table 1 of the Moonshot technical report lists 2.78T total and 104.2B active parameters for K3; Cerebras rounds to about 3T for its explanation. Do not use 104.2B to size all resident weights or turn the 3T approximation into an exact model specification.",
+            "先复算能装下多少，再验证实际能服务多少。": "Recompute what fits, then verify what can actually be served.",
+            "共同约束": "Joint constraints",
             "内存先分用途": "Allocate memory by purpose",
+            "可以用一个明确标为教学模型的关系帮助理解：令阶段耗时为t₁…tS，则无排队单次穿越约为Σtᵢ，稳态完成间隔至少受最慢阶段max(tᵢ)约束。微批量为m时，理想聚合能力可写成m/max(tᵢ(m))；但tᵢ随m变化，不能将批量乘上去却假设耗时不变。真实调度还受反馈、填充／排空、长短请求与状态容量限制。": "A deliberately simplified teaching model helps: if stage times are t₁…tS, a traversal without queuing takes approximately Σtᵢ, while the steady-state completion interval is bounded by the slowest stage max(tᵢ). With micro-batch size m, ideal aggregate capacity can be written m/max(tᵢ(m)); however, tᵢ changes with m, so multiplying the batch while holding time fixed is unjustified. Real scheduling also faces feedback, fill/drain, mixed request lengths and state-capacity constraints.",
+            "因此，流水线在飞请求数“阶段数×微批量”只是调度直觉，必须同时小于内存和服务目标允许的范围。190是缓存侧近似预算，阶段数是调度划分，吞吐是单位时间完成量；三者不能互换。": "Thus “stage count × micro-batch size” is only an intuition for requests in flight, and remains subject to memory and service objectives. The 190 figure approximates a cache budget, stage count describes scheduling partitions, and throughput measures completions per unit time. They are not interchangeable.",
+            "图 1｜本站独立重绘。59片来自层类型与放置假设；不表示已取得该配置的实测或编译清单。": "Figure 1 | FieldToFit independent redraw. The 59-wafer count follows layer types and placement assumptions, not a measured configuration or compiler placement list.",
+            "图 2｜本站假设敏感性计算。GB／MB均为十进制，曲线不是Cerebras实测容量或SLA；忽略固定开销。": "Figure 2 | FieldToFit sensitivity calculation. GB and MB are decimal; the curve is not measured Cerebras capacity or an SLA and omits fixed overhead.",
+            "图 3｜本站原创教学示意：三阶段、四请求、等时阶段，只展示请求重叠；不是 59片系统的真实时序。": "Figure 3 | FieldToFit teaching schematic: three stages, four requests and equal stage times; it illustrates overlap, not actual timing of a 59-wafer system.",
+            "在全部权重都按 4bit、十进制容量的教学条件下，3×10¹²×4÷8 = 1.5×10¹²字节，即 1.5TB。再除 93层，得到约 16.13GB／层；博文取 16GB。每片 44GB时，两层线性注意力约 32GB；完整注意力层每片一层，余量留给KV。因此ceil(69/2)+24 = 35+24 = 59。": "Under the teaching assumption that all weights use 4bit and capacities are decimal, 3×10¹²×4÷8 = 1.5×10¹² bytes, or 1.5TB. Dividing by 93 layers gives about 16.13GB per layer, rounded to 16GB in the blog. With 44GB per wafer, two linear-attention layers occupy about 32GB; one full-attention layer is placed on each wafer, leaving space for KV. Thus ceil(69/2)+24 = 35+24 = 59.",
+            "在已发布动态基础上首次加入完整技术分析：四条结论、对应论述与三张独立计算／示意图，保留原事件日期。": "First full technical analysis added to the existing news item: four findings, matching arguments and three independent calculation/schematic figures, preserving the original event date.",
             "多个请求可同时占据不同阶段；生产阶段划分比示意更细。微批量改变单请求延迟与总吞吐，流水线中的请求数还受每个完整注意力层的 KV 空间约束。": "Different requests can occupy different stages simultaneously; production stages are finer than the illustration. Microbatching changes per-request latency and aggregate throughput, while KV space on every full-attention layer constrains requests in flight.",
+            "官方公式图给出完整注意力层每token缓存 576字节，平均请求 256,000 token；相乘为 147,456,000字节，即 147.456MB。按博文取整后的 44−16=28GB计算，28×10⁹÷147,456,000≈189.89，所以写“约 190”。这甚至不是保证能容纳 190条完整请求的严格整数上限：按这组精确数字取整只能到 189，实际还须保留运行余量。": "The official formula image assigns 576 bytes of cache per token to a full-attention layer and assumes an average request of 256,000 tokens. Their product is 147,456,000 bytes, or 147.456MB. Using the rounded 44−16=28GB remaining budget gives 28×10⁹÷147,456,000≈189.89, hence “about 190”. This does not even guarantee an integer capacity of 190 complete requests: flooring those precise figures gives 189 before operational reserves.",
             "官方架构博文以约 3T 参数、4bit 权重、8bit KV 缓存和平均 256k 请求说明跨晶圆分配。59 片是示例估算，不代表该配置已向所有 API 用户开放。": "The architecture post illustrates multi-wafer placement using approximately 3T parameters, 4bit weights, an 8bit KV cache and average 256k requests. The 59-wafer estimate does not establish availability of this configuration to every API user.",
             "并发来自流水线": "Concurrency comes from pipelining",
+            "应在同一模型版本、数值精度与质量门槛下，报告输入／输出长度分布、缓存命中、并发与到达率；再给出TTFT、token间隔及p50／p95／p99、成功完成量和错误率。能耗比较应说明功率是在芯片、机架还是整机房边界测量，是否包含网络、主机和冷却，并在同等输出速度约束下比较有效tokens/s/MW。": "At matched model version, numerical precision and quality threshold, report input/output length distributions, cache hits, concurrency and arrival rate; then report TTFT, inter-token intervals, p50/p95/p99, successful completions and errors. Energy comparisons should state whether power is measured at chip, rack or datacenter level and whether networking, hosts and cooling are included, comparing effective tokens/s/MW under matched generation-speed constraints.",
             "应在相同输出生成速度下比较总吞吐与功耗，同时记录上下文、精度、质量和任务条件。约 2 微秒跨片延迟属于作者说明，不能直接推算端到端生成速度或独立基准成绩。": "Compare total throughput and power at the same output generation speed, retaining context, precision, quality and workload conditions. Approximately 2 microseconds per hop is an author claim, insufficient to infer end-to-end output speed or an independent benchmark.",
+            "性能比较应固定模型质量和交互速度，再核对吞吐、功耗与端到端任务。": "Compare throughput, power and end-to-end tasks at matched model quality and interactive generation speed.",
+            "截至本次核对，我没有取得 59片K3配置的可复现实验脚本、逐层内存分配、实际功率曲线、端到端延迟分位数或完整商业开放条件；官方模型目录入口的本次读取失败。这里是材料与验证缺口，不是“没有服务”或“没有性能优势”的证明。": "At this check, I had not obtained reproducible scripts for the 59-wafer K3 configuration, per-layer memory allocation, measured power curves, end-to-end latency percentiles or complete commercial availability terms; the official model-directory request failed. These are evidence gaps, not proof that no service or performance advantage exists.",
+            "把一条自回归请求看作经过许多工位的产品：当前token需要穿过相关阶段，下一token通常还要等待当前token生成并反馈。流水线利用的是不同请求的重叠，让A在后段、B在中段、C在前段同时工作。它没有把一条请求的顺序依赖变成无限并行。": "Think of an autoregressive request as a product passing through many stations: the current token crosses the relevant stages, and the next token generally waits for its generation and feedback. Pipelining overlaps different requests, placing A later in the pipeline, B in the middle and C earlier. It does not convert one request’s sequential dependency into unlimited parallelism.",
+            "权重容量 → 请求状态 → 流水线 → 同口径比较": "Weight capacity → request state → pipeline → comparison under matched conditions",
+            "来源与修订：Sarah Chieng，Cerebras，2026-10-22，无编号技术博文；全文与公式图已核对。Moonshot官方 47页K3报告仅重点核对§2.1、表 1、§4.1.4和§5.4，未声称全篇实验复核，原PDF未标明确编号日期。在线config为可变版本，本站 2026-10-26核对。Jessica Liu的Hot Chips文章为 2026-08-25；1.7.0训练文档仅作历史背景。三图为本站计算／示意，未复现硬件部署或API性能。": "Sources and revisions: Sarah Chieng, Cerebras, 2026-10-22, unnumbered technical blog; full text and formula images checked. The official 47-page Moonshot K3 report was checked selectively at §2.1, Table 1, §4.1.4 and §5.4; this is not a full experimental audit, and no explicit numbered date was identified in the PDF. The online config is mutable and was checked on 2026-10-26. Jessica Liu’s Hot Chips article is dated 2026-08-25; training documentation 1.7.0 is historical background only. The three figures are FieldToFit calculations/schematics; hardware deployment and API performance were not replicated.",
+            "每条请求都经过每个完整注意力层，因此 24片上的KV预算是逐层共同约束。不能把 190乘 24当成系统并发数，也不能把 190乘 59当成并发扩容。对异长请求，更合理的容量账本是Σ(每token字节×各请求长度)+固定开销≤该片可用空间；最紧的层先形成瓶颈。": "Every request passes through every full-attention layer, so the KV budgets on 24 wafers constrain the same requests together. Multiplying 190 by 24 does not yield system concurrency, nor does multiplying 190 by 59. For unequal request lengths, a better capacity condition is Σ(bytes per token × each request length) + fixed overhead ≤ available space on that wafer; the tightest layer becomes the bottleneck first.",
             "比较必须固定口径": "Comparisons require a common basis",
-            "示例把约 3T 参数平均分到 93 层；69 个线性注意力层按每片两个分配，24 个完整注意力层按每片一个并预留 KV 空间，得到 35 + 24 = 59 片。这是教学映射，平均层大小不等于逐层真实编译结果。": "The example averages approximately 3T parameters across 93 layers: 69 linear-attention layers at two per wafer, and 24 full-attention layers at one per wafer with KV space, giving 35 + 24 = 59 wafers. This teaching layout is not an actual per-layer compiler placement."
+            "流水线让不同请求重叠，不消除单请求依赖": "Pipelining overlaps different requests without removing autoregressive dependencies",
+            "流水线重叠多个请求，却不取消单请求的自回归依赖。": "Pipelining overlaps multiple requests without eliminating the autoregressive dependency within a request.",
+            "真正的比较应固定质量、交互速度与测量边界": "A meaningful comparison fixes quality, interaction speed and measurement boundaries",
+            "示例把约 3T 参数平均分到 93 层；69 个线性注意力层按每片两个分配，24 个完整注意力层按每片一个并预留 KV 空间，得到 35 + 24 = 59 片。这是教学映射，平均层大小不等于逐层真实编译结果。": "The example averages approximately 3T parameters across 93 layers: 69 linear-attention layers at two per wafer, and 24 full-attention layers at one per wafer with KV space, giving 35 + 24 = 59 wafers. This teaching layout is not an actual per-layer compiler placement.",
+            "约 190路并发是缓存预算，不是服务承诺": "About 190 requests is a cache budget, not a service commitment",
+            "约 190路是特定上下文下的KV预算，固定状态与工程余量仍要计入。": "About 190 requests is a KV budget at a specified context length; recurrent state and operational reserves still consume capacity.",
+            "这份材料最有价值的部分，是把“能装下”与“能同时服务多少请求”放到一张账本里。它最容易被误读的部分，也是把教学账本当成已验证的生产系统。FieldToFit建议按三步阅读：先复算容量并找出省略项，再检查调度是否能兑现容量，最后在相同任务与质量约束下验证成本和时延。三步中任何一项缺证，都应保留空白，而不是用峰值速度、芯片带宽或路线图数字填满。": "The value of this material is that it places “can the model fit?” and “how many requests can it serve?” in one accounting framework. Its main risk is treating a teaching calculation as a validated production system. FieldToFit suggests three steps: recompute capacity and identify omissions, check whether scheduling can realize it, then evaluate cost and latency at matched task and quality constraints. Missing evidence at any step should remain visible rather than be replaced by peak speed, chip bandwidth or roadmap figures.",
+            "这里的“dense layer”指完整注意力层，不能与模型表中的“Number of Dense Layers = 1”混为一谈：后者对应前馈专家结构，前者对应 69 KDA + 24 Gated MLA的注意力组成。完整注意力也不是每个token都激活全部MoE专家。": "Here, “dense layer” means a full-attention layer. It must not be confused with “Number of Dense Layers = 1” in the model table: that refers to the feed-forward expert structure, whereas 69 KDA + 24 Gated MLA describes the attention composition. Full attention does not mean that every token activates all MoE experts."
           },
-          "source_hash": "5785b6a3b7abc5eb95fdcdb6ff186b27517cf09050c02ceda6c85ba161cd5718",
+          "source_hash": "a08ae9f9c62068e4abf4f47e9388e98463fd21b37c7a77338424d543ec06cad0",
           "state": "reviewed"
         }
       }

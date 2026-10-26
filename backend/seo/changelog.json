@@ -1,7 +1,35 @@
 {
-  "version": "1.17.7",
-  "revision": "497ec03c20857da7d9f3781bb086ab79d0bc7320a5a517a030adeea371031e56",
+  "version": "1.17.8",
+  "revision": "6e0b58b9be04d775b8787aaeec41e1fe5ed27d20cf9555f92ab48e96c8b70863",
   "items": [
+    {
+      "version": "1.17.8",
+      "date": "2026-10-26",
+      "deployed_on": "2026-10-26",
+      "copy": {
+        "zh": {
+          "title": "Cerebras晶圆推理容量分析",
+          "highlights": [
+            "为既有Cerebras动态D-256加入完整技术报告，分解59片晶圆、约190路请求、流水线与性能比较口径。",
+            "四条结论配对应论述和三张本站计算／示意图，区分模型精确规格、教学假设、缓存预算和服务承诺。",
+            "保留原事件与首次上站历史，正式发布后轮替首页四篇报告，完整索引与旧链接继续可读。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Cerebras wafer-scale inference capacity analysis",
+          "highlights": [
+            "Add a full technical analysis to existing Cerebras news D-256, examining 59 wafers, approximately 190 requests, pipelining and performance-comparison conditions.",
+            "Pair four findings with detailed arguments and three original calculation/schematic figures, separating model specifications, teaching assumptions, cache budgets and service commitments.",
+            "Preserve the original event and first-publication history; successful publication rotates four homepage reports while retaining the complete index and stable links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.8"
+    },
     {
       "version": "1.17.7",
       "date": "2026-10-26",
