@@ -1686,5 +1686,35 @@
     "attribution": "FieldToFit",
     "source_version": "2026-10-16",
     "locator": "Becoming managers of Claudes; Figure 7"
+  },
+  "/report-figures/bioagents-20261016-recovery.png": {
+    "sha256": "59b2036318c95ebe03c4b5ab4cc5b14ca06ee0bf27a96bf097b3e3d3d2787345",
+    "source_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.10.15.759436v1.full"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported counts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "bioRxiv v1; 2026-10-16",
+    "locator": "Fig. 1C; Supplement pp. 12–13"
+  },
+  "/report-figures/bioagents-20261016-prediction.png": {
+    "sha256": "80f74f656a5aaea21c338bf7fa9eca6f4fbd8ea676af04c60ca3385398eca241",
+    "source_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.10.15.759436v1.full"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported counts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "bioRxiv v1; 2026-10-16",
+    "locator": "Fig. 3B–C; Fig. S9D; Supplement pp. 20–24"
+  },
+  "/report-figures/bioagents-20261016-review.png": {
+    "sha256": "95be04bff01601a509623751971c34324dea48cd9c8b3f0674924209734a2d87",
+    "source_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.10.15.759436v1.full"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported counts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "bioRxiv v1; 2026-10-16",
+    "locator": "Fig. 4K; Supplement pp. 30–31"
   }
 }

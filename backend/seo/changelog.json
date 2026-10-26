@@ -1,7 +1,35 @@
 {
-  "version": "1.17.5",
-  "revision": "c1a05ac0aa28bd19f545d4c9f4ce1db1bd521ec9e762875d1603ea22bf94a968",
+  "version": "1.17.6",
+  "revision": "5f675e2868b1fd4909e213c7f5e6ada694fa1f5ca33f37e0b85f05e77986cc21",
   "items": [
+    {
+      "version": "1.17.6",
+      "date": "2026-10-26",
+      "deployed_on": "2026-10-26",
+      "copy": {
+        "zh": {
+          "title": "Claude执行边界与分布式生物推理",
+          "highlights": [
+            "发布已选Claude Code 2.1.309／310、Cerebras跨晶圆部署说明和Claude已解决服务记录，同步对应档案与近期总表。",
+            "新增分布式生物推理分析和三张本站重绘，明确恢复分母、计算预算、留出错误与专家偏好边界，并保留主文和补充图的一例计数差异。",
+            "提供Claude Code中英分享卡；成功发表后轮替首页报告与卡片，旧内容继续保留全部索引和稳定链接。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Claude execution boundaries and distributed biological reasoning",
+          "highlights": [
+            "Publish the selected Claude Code 2.1.309/310, Cerebras multi-wafer explanation and resolved Claude incidents, with related dossiers and the news overview.",
+            "Add a distributed biological-reasoning analysis and three original redraws, retaining denominators, compute limits, prediction errors, expert-review limits and a one-case discrepancy between the main text and supplement.",
+            "Provide a bilingual Claude Code share card; successful publication rotates homepage reports and cards while retaining all indexes and stable links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.6"
+    },
     {
       "version": "1.17.5",
       "date": "2026-10-26",

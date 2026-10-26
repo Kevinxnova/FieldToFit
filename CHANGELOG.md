@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.6"></a>
+## v1.17.6 · Claude执行边界与分布式生物推理 · 2026-10-26
+<!-- site-deployed:2026-10-26 -->
+<!-- public-title:en: Claude execution boundaries and distributed biological reasoning -->
+<!-- release-summary:zh:start -->
+- 发布已选Claude Code 2.1.309／310、Cerebras跨晶圆部署说明和Claude已解决服务记录，同步对应档案与近期总表。
+- 新增分布式生物推理分析和三张本站重绘，明确恢复分母、计算预算、留出错误与专家偏好边界，并保留主文和补充图的一例计数差异。
+- 提供Claude Code中英分享卡；成功发表后轮替首页报告与卡片，旧内容继续保留全部索引和稳定链接。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Claude Code 2.1.309/310, Cerebras multi-wafer explanation and resolved Claude incidents, with related dossiers and the news overview.
+- Add a distributed biological-reasoning analysis and three original redraws, retaining denominators, compute limits, prediction errors, expert-review limits and a one-case discrepancy between the main text and supplement.
+- Provide a bilingual Claude Code share card; successful publication rotates homepage reports and cards while retaining all indexes and stable links.
+<!-- release-summary:en:end -->
+
+用户2026-10-26明确选择A–C、报告1、卡1。对应D-255／D-256／D-257／D-258，A与卡1同事件但独立决定；CW-A02、CW-M04、CW-M02仅增补对应已审事件。报告2未选；额外Cerebras长文仅本地研究与预览，不纳入公开发布。以v1.17.5为基线，完整保留已上站Day 20内容，本批为兼容内容与静态资源patch，无数据库迁移。
+
+实际预览、部署、发布与轮替记录见[本批验收](docs/validation/2026-10-26-claude-bioagents.md)。日报全覆盖和连续自然日运行验收不因本次内容交付自动通过。
+
 <a id="v1.17.5"></a>
 ## v1.17.5 · 官方Day 20重置公告与完成声明 · 2026-10-26
 <!-- public-title:en: Official Day 20 reset announcement and completion statement -->

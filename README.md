@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.5](CHANGELOG.md#v1.17.5)** · [fieldtofit-v1.17.5](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.5)
+**当前源码版本：[v1.17.6](CHANGELOG.md#v1.17.6)** · [fieldtofit-v1.17.6](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.6)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- Codex／Work专题加入官方Day 20重置公告及Tibo“已全部传播”确认，归回北京时间10月25日。
-- 三条原帖合并为一项记录，附原文、中文摘译与真实头像；确认帖时间不充当准确生效时间，未列明的套餐及额度范围不补造。
-- 网站与AI共享74条已审专题日志；保留并行新闻、图表与原有内容，无数据库迁移或接口变更。
+- 发布已选Claude Code 2.1.309／310、Cerebras跨晶圆部署说明和Claude已解决服务记录，同步对应档案与近期总表。
+- 新增分布式生物推理分析和三张本站重绘，明确恢复分母、计算预算、留出错误与专家偏好边界，并保留主文和补充图的一例计数差异。
+- 提供Claude Code中英分享卡；成功发表后轮替首页报告与卡片，旧内容继续保留全部索引和稳定链接。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
