@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.5"></a>
+## v1.17.5 · 官方Day 20重置公告与完成声明 · 2026-10-26
+<!-- public-title:en: Official Day 20 reset announcement and completion statement -->
+<!-- release-summary:zh:start -->
+- Codex／Work专题加入官方Day 20重置公告及Tibo“已全部传播”确认，归回北京时间10月25日。
+- 三条原帖合并为一项记录，附原文、中文摘译与真实头像；确认帖时间不充当准确生效时间，未列明的套餐及额度范围不补造。
+- 网站与AI共享74条已审专题日志；保留并行新闻、图表与原有内容，无数据库迁移或接口变更。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 20 reset announcement and Tibo’s propagation-complete confirmation, dated October 25 in Beijing.
+- Combine the three original posts into one entry with original text, Chinese translation and a verified avatar; do not substitute the confirmation timestamp for an exact effective time or invent plan and allowance coverage.
+- Share 74 reviewed topic entries across the website and AI readers, preserving concurrent news, figures and existing content without a database migration or API change.
+<!-- release-summary:en:end -->
+
+对应REQ-20。所有者明确批准10月26日的一条具体提案。基于已部署v1.17.4，本批为兼容内容patch；自v1.17.0累计为已批准内容维护，无新模块、主要流程或待决minor／major范围。CMS、备份、同源读取与程序交付见[本批验收](docs/validation/2026-10-26-codex-day20-reset.md)。原晨报、夜间日程及未来逐批批准保持。
+
 <a id="v1.17.4"></a>
 ## v1.17.4 · Kimi采用条件、监控指标与就业研究 · 2026-10-25
 <!-- site-deployed:2026-10-25 -->

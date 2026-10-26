@@ -1,5 +1,7 @@
 # 验收证据导航
 
+
+- [2026-10-26 Codex官方Day 20重置公告与完成声明](2026-10-26-codex-day20-reset.md)
 - [2026-10-25：Kimi与两篇研究](2026-10-25-kimi-monitorability-employment.md)：六项选择、双语图文及真实轮替。
 
 

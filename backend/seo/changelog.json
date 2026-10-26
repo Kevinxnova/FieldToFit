@@ -1,7 +1,35 @@
 {
-  "version": "1.17.4",
-  "revision": "719eb10ad1bac213ee11cdd677f319f03aab476cabf679a6dec6e11e407058a7",
+  "version": "1.17.5",
+  "revision": "c1a05ac0aa28bd19f545d4c9f4ce1db1bd521ec9e762875d1603ea22bf94a968",
   "items": [
+    {
+      "version": "1.17.5",
+      "date": "2026-10-26",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "官方Day 20重置公告与完成声明",
+          "highlights": [
+            "Codex／Work专题加入官方Day 20重置公告及Tibo“已全部传播”确认，归回北京时间10月25日。",
+            "三条原帖合并为一项记录，附原文、中文摘译与真实头像；确认帖时间不充当准确生效时间，未列明的套餐及额度范围不补造。",
+            "网站与AI共享74条已审专题日志；保留并行新闻、图表与原有内容，无数据库迁移或接口变更。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Official Day 20 reset announcement and completion statement",
+          "highlights": [
+            "Add the official Day 20 reset announcement and Tibo’s propagation-complete confirmation, dated October 25 in Beijing.",
+            "Combine the three original posts into one entry with original text, Chinese translation and a verified avatar; do not substitute the confirmation timestamp for an exact effective time or invent plan and allowance coverage.",
+            "Share 74 reviewed topic entries across the website and AI readers, preserving concurrent news, figures and existing content without a database migration or API change."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.5"
+    },
     {
       "version": "1.17.4",
       "date": "2026-10-25",

@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.4](CHANGELOG.md#v1.17.4)** · [fieldtofit-v1.17.4](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.4)
+**Current source version: [v1.17.5](CHANGELOG.md#v1.17.5)** · [fieldtofit-v1.17.5](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.5)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Update the selected Kimi K3.1 Pro, UK AI Biosecurity Lab and resolved Claude incidents, with two related dossiers and the news overview.
-- Add monitorability and Anthropic employment analyses, each with four findings, matching arguments and three FieldToFit figures, retaining samples, denominators and causal limits.
-- Provide a bilingual Kimi share card; actual publication rotates four homepage reports and three cards while retaining all indexes and stable links.
+- Add the official Day 20 reset announcement and Tibo’s propagation-complete confirmation, dated October 25 in Beijing.
+- Combine the three original posts into one entry with original text, Chinese translation and a verified avatar; do not substitute the confirmation timestamp for an exact effective time or invent plan and allowance coverage.
+- Share 74 reviewed topic entries across the website and AI readers, preserving concurrent news, figures and existing content without a database migration or API change.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
