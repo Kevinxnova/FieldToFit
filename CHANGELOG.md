@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.10"></a>
+## v1.17.10 · Terra授权边界与GRAFT梯度路由 · 2026-10-27
+<!-- site-deployed:2026-10-27 -->
+<!-- public-title:en: Terra authorization boundaries and GRAFT gradient routing -->
+<!-- release-summary:zh:start -->
+- 发布已选Terra、Claude Code 2.1.311、AI科学披露与Gemini存储默认值动态，同步三份对应档案并保留既有Codex事件历史。
+- 新增Terra系统卡与GRAFT技术报告分析，各含四条核心结论和两张本站重绘，区分实验分母、授权边界与训练局限。
+- 提供Terra中英热点分享卡，正式发表后轮替首页报告与信息卡，旧内容保留全部索引和稳定入口。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Terra, Claude Code 2.1.311, AI science disclosure and Gemini storage-default updates, with three related dossiers and existing Codex history retained.
+- Add Terra system-card and GRAFT analyses, each with four findings and two original redraws, distinguishing experimental denominators, authorization boundaries and training limitations.
+- Provide a bilingual Terra share card; successful publication rotates homepage reports and cards while preserving complete indexes and stable links.
+<!-- release-summary:en:end -->
+
+用户明确批准2026-10-27 A–D、报告1／报告2、卡1。复用D-260与D-263，新增D-265至D-267；报告1与卡1复用D-260但分别审核。更新CW-M01、CW-A02、CW-M03。以v1.17.9为基线的兼容内容与静态资源patch，无迁移或模型榜单刷新。实际验证见[本批记录](docs/validation/2026-10-27-terra-graft.md)。
+
 <a id="v1.17.9"></a>
 ## v1.17.9 · Day 21／22与六项专题补录 · 2026-10-27
 <!-- public-title:en: Days 21 and 22 with six reviewed topic additions -->

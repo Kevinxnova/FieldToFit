@@ -1,7 +1,35 @@
 {
-  "version": "1.17.9",
-  "revision": "d75c4d79038c6490b292acebee07210236f51551bfe357cc02c577089f2e4f43",
+  "version": "1.17.10",
+  "revision": "475afaf0a0bc01f85bd120472f2f7bc5d5f5ecfa73f1d083981c35c7c03e9611",
   "items": [
+    {
+      "version": "1.17.10",
+      "date": "2026-10-27",
+      "deployed_on": "2026-10-27",
+      "copy": {
+        "zh": {
+          "title": "Terra授权边界与GRAFT梯度路由",
+          "highlights": [
+            "发布已选Terra、Claude Code 2.1.311、AI科学披露与Gemini存储默认值动态，同步三份对应档案并保留既有Codex事件历史。",
+            "新增Terra系统卡与GRAFT技术报告分析，各含四条核心结论和两张本站重绘，区分实验分母、授权边界与训练局限。",
+            "提供Terra中英热点分享卡，正式发表后轮替首页报告与信息卡，旧内容保留全部索引和稳定入口。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Terra authorization boundaries and GRAFT gradient routing",
+          "highlights": [
+            "Publish the selected Terra, Claude Code 2.1.311, AI science disclosure and Gemini storage-default updates, with three related dossiers and existing Codex history retained.",
+            "Add Terra system-card and GRAFT analyses, each with four findings and two original redraws, distinguishing experimental denominators, authorization boundaries and training limitations.",
+            "Provide a bilingual Terra share card; successful publication rotates homepage reports and cards while preserving complete indexes and stable links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.10"
+    },
     {
       "version": "1.17.9",
       "date": "2026-10-27",

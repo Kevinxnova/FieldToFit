@@ -4927,6 +4927,30 @@
       "blocks": [
         {
           "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[GPT-6.1 Terra进入Work与Codex，Tibo列为官方Day 22](https://fieldtofit.top/news/D-260)",
+              "2026-10-26",
+              "GPT-6.1 Terra进入Work、Codex与API；标准输入／缓存输入／输出单价为每百万token 1／0.05／5美元。新增完整系统卡分析，分别解读内部部署模拟与授权测试。"
+            ],
+            [
+              "[OpenAI公布三项研究声明与外部核验安排，材料开放范围不同](https://fieldtofit.top/news/D-263)",
+              "2026-10-26",
+              "其他OpenAI · 三项研究披露，公开材料与外部核验分开"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。"
+        },
+        {
+          "columns": [
             "本期事件／研究",
             "事件／报告日期",
             "核对范围与限制"
@@ -5494,6 +5518,66 @@
           "id": "oct24-report2",
           "title": "OpenAI训练隔离官方说明",
           "url": "https://openai.com/index/securing-our-frontier-model-training-environment/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-A-source-1",
+          "title": "OpenAI模型发布公告",
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-A-source-2",
+          "title": "官方RSS公告时间",
+          "url": "https://openai.com/news/rss.xml"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-A-source-3",
+          "title": "Tibo官方Day 22 原帖",
+          "url": "https://x.com/thsottiaux/status/2114800277677092936"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-A-source-4",
+          "title": "Tibo转引的OpenAI原帖",
+          "url": "https://x.com/OpenAI/status/2114780711664398349"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-A-source-5",
+          "title": "Work／Codex官方更新日志",
+          "url": "https://learn.chatgpt.com/docs/changelog#codex-2026-10-26-gpt-61-terra"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-A-source-7",
+          "title": "Terra API模型与标准计费",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-A-source-8",
+          "title": "模型选择与CLI版本条件",
+          "url": "https://learn.chatgpt.com/docs/models"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-A-report",
+          "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Terra",
+          "url": "https://deploymentsafety.openai.com/gpt-6-1-terra"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-C-source-1",
+          "title": "官方研究公告与合作边界",
+          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-C-source-3",
+          "title": "官方公开研究材料仓库",
+          "url": "https://github.com/openai/math"
         }
       ],
       "state": "published",
@@ -5522,6 +5606,7 @@
             "GPT-6 Intelligent UI：把回答变成可操作的界面 · 官方来源 2": "GPT-6 Intelligent UI: Turn answers into an actionable interface · Official source 2",
             "GPT-6 Sol / GPT-6 Luna / GPT-6.1 Sol；官方型号目录核对2026-10-05": "GPT-6 Sol / GPT-6 Luna / GPT-6.1 Sol; Official Model Catalog Check 2026-10-05",
             "GPT-6 指南": "GPT-6 Guide",
+            "GPT-6.1 Terra进入Work、Codex与API；标准输入／缓存输入／输出单价为每百万token 1／0.05／5美元。新增完整系统卡分析，分别解读内部部署模拟与授权测试。": "GPT-6.1 Terra reaches Work, Codex and the API. Standard input / cached-input / output prices are $1 / $0.05 / $5 per million tokens. Full system-card analysis separates internal deployment simulation from authorization tests.",
             "GPT-6日常工作分支，保留历史节点": "GPT-6 daily work branch, keep historical nodes",
             "GPT-6较轻任务分支": "GPT-6 Lighter Task Branch",
             "OpenAI Developers 在北京时间 10 月 17 日 01:08 介绍 GPT-Live-1 的声音配置；API 日志以 10 月 16 日记录正式推出。所有 API 客户可通过文字描述生成并保存自定义声音，无需参考录音或同意录音；这种 prompt-generated 声音用于 GPT-Live，不适用于 Text to Speech、Realtime 或 Chat Completions API。可在声音 Playground 操作，或向/v1/audio/voices 提交 type=prompt 的请求，保存返回的声音 ID 并在 GPT-Live 会话复用。每个组织最多 100 种此类声音。创建声音免费，使用声音生成语音及 Playground 试听仍按正常 GPT-Live 会话计费。另新增德语、法语、印地语、日语和韩语的九种自然预设声音，可通过会话输出声音配置选用。此次是 GPT-Live-1 API 的声音能力更新，不代表昨天 GPT-Live-1.1 已开放 API；后者仍按 D-155 保留“API 即将推出”的边界。": "OpenAI Developers announced new GPT-Live-1 voice options at 01:08 Beijing time on 10/17; the API changelog records the release under 10/16. All API customers can create and save a voice from a text description in the voice Playground or through /v1/audio/voices with type=prompt, then reuse its ID in GPT-Live. No reference or consent recording is required for this workflow. Prompt-generated voices work with GPT-Live, not the Text to Speech, Realtime or Chat Completions APIs. Organizations can save up to 100. Creation is free; speech generation and Playground listening use regular session billing. Nine natural presets add German, French, Hindi, Japanese and Korean options. This is a GPT-Live-1 API voice update, not evidence that GPT-Live-1.1 has reached the API; D-155 retains its forthcoming-API qualification.",
@@ -5532,15 +5617,22 @@
             "OpenAI于 10 月 15 日公布GPT-Live-1.1 及Quip，接续Live-1 与mini。全双工交互可持续聆听、回应和处理打断，并可委派思考模型；当前材料是系统卡，不把它扩写为已核实的公开API型号或价格。": "OpenAI announced GPT-Live-1.1 and Quip on 10/15, following Live-1 and mini. Full-duplex interaction listens, responds and handles interruptions continuously, with thinking-model delegation. The source is a system card, not verification of a public API identifier or price.",
             "OpenAI于 2026-10-16 开放prompt-to-voice：全部API客户可用文字描述生成、保存并复用声音；另增加九种德、法、印地、日、韩语自然声音。": "On 2026-10-16 OpenAI opened prompt-to-voice to all API customers: describe, save and reuse a voice. Nine natural voices in German, French, Hindi, Japanese and Korean were also added.",
             "OpenAI公布文本来源水印方案：全球API客户可为指定模型主动开启，欧盟ChatGPT与Codex合资格文本输出将在未来几周分阶段加入水印。": "OpenAI announces a text-provenance watermarking scheme. Global API customers can opt in for specified models. Eligible ChatGPT and Codex text outputs in the EU will receive watermarks in phases over the coming weeks.",
+            "OpenAI模型发布公告": "OpenAI model launch announcement",
             "OpenAI模型计划进入Google Cloud，全面开放仍待后续": "OpenAI models are planned for Google Cloud; general availability is still ahead",
             "OpenAI训练隔离官方说明": "Official OpenAI training containment article",
             "Responses用于工具调用；Chat Completions不含工具调用；1,050,000上下文、128k输出": "Responses are used for tool calls; Chat Completions do not contain tool calls; 1,050,000 context, 128k output",
             "Sol分支后续型号": "Sol branch follow-up model",
+            "Terra API模型与标准计费": "Terra API model and standard pricing",
+            "Tibo官方Day 22 原帖": "Tibo official Day 22 original post",
+            "Tibo转引的OpenAI原帖": "OpenAI original post quoted by Tibo",
+            "Work／Codex官方更新日志": "Official Work / Codex changelog",
             "[GPT-5.6 指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)": "[GPT-5.6 Guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)",
             "[GPT-6 指南](https://developers.openai.com/api/docs/guides/latest-model)": "[GPT-6 Guide](https://developers.openai.com/api/docs/guides/latest-model)",
+            "[GPT-6.1 Terra进入Work与Codex，Tibo列为官方Day 22](https://fieldtofit.top/news/D-260)": "[GPT-6.1 Terra reaches Work and Codex; Tibo marks official Day 22](https://fieldtofit.top/news/D-260)",
             "[GPT-Live-1.1：全双工语音更新，安全结果需要分场景阅读](https://fieldtofit.top/news/D-155)": "[GPT-Live-1.1: full-duplex voice with scenario-specific safety results](https://fieldtofit.top/news/D-155)",
             "[GPT-Live：文字定制声音，创建免费与会话计费分开](https://fieldtofit.top/news/D-173)": "[GPT-Live: prompt-generated voices separate free creation from session billing](https://fieldtofit.top/news/D-173)",
             "[OpenAI 旧模型停用：10月 23日批次已经生效](https://fieldtofit.top/news/D-244)": "[OpenAI legacy-model shutdown: the 10/23 batch is effective](https://fieldtofit.top/news/D-244)",
+            "[OpenAI公布三项研究声明与外部核验安排，材料开放范围不同](https://fieldtofit.top/news/D-263)": "[OpenAI announces three research claims and external examination with different release scopes](https://fieldtofit.top/news/D-263)",
             "[型号文档](https://developers.openai.com/api/docs/models/gpt-6.1-sol)": "[Model Document](https://developers.openai.com/api/docs/models/gpt-6.1-sol)",
             "[官方发布](https://openai.com/index/gpt-6-for-everyone/)": "[Official Release](https://openai.com/index/gpt-6-for-everyone/)",
             "[官方发布](https://openai.com/index/introducing-gpt-6-sol-and-luna/)": "[Official Release](https://openai.com/index/introducing-gpt-6-sol-and-luna/)",
@@ -5557,6 +5649,7 @@
             "主要变化或定位": "Major changes or positioning",
             "主要能力或价格口径": "Main ability or price measurement basis",
             "事件与官方依据": "Event and official evidence",
+            "事件日期": "Event date",
             "事件／报告日期": "Event / report date",
             "事件／版本": "Event / version",
             "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。": "New material above was checked on 2026-10-08. Historical versions below retain the conditions that applied at the time.",
@@ -5567,6 +5660,7 @@
             "关联动态": "Related news",
             "关联：D-02 GPT-6 Astra；[CW-A01 Codex](/for-you#watch-cw-a01)。模型版本与 Codex 客户端版本分别记录。": "Association: D-02 GPT-6 Astra; [CW-A01 Codex](/for-you#watch-cw-a01). The model version and the Codex client version are recorded separately.",
             "关联：[CW-A01](https://fieldtofit.top/watch/CW-A01)。以下保留各历史版本及其当时适用条件。": "Association: [CW-A01 ](https://fieldtofit.top/watch/CW-A01). The following retains the historical versions and their applicable conditions at that time.",
+            "其他OpenAI · 三项研究披露，公开材料与外部核验分开": "Other OpenAI: three research disclosures; artifact access and review distinguished",
             "具体接入条件": "Specific access conditions",
             "准确型号、接口能力和价格以各型号文档为准": "The exact model, interface capability and price are subject to the documents of each model.",
             "分阶段开放": "Open in stages",
@@ -5579,17 +5673,21 @@
             "原始日期口径": "Original date measurement basis",
             "原文日期：2026-10-15；事件日期：2026-10-15；本站核对：2026-10-16；版本：GPT-Live-1.1 / Quip。GitHub UTC日期与北京时间跨日分别保留；本站未安装或复现性能。": "Source date: 2026-10-15; event date: 2026-10-15; checked:2026-10-16; version:GPT-Live-1.1 / Quip. Preserve GitHub UTC and Beijing calendar dates separately; FieldToFit has not installed or reproduced performance.",
             "原文日期：2026-10-16；本站核对：2026-10-17；版本：gpt-live-1 / prompt-to-voice。GitHub原文日期保留UTC，事件日期和正文时间使用北京时间；未核实事件日期留空，本站未安装或复现性能。": "Source date: 2026-10-16; checked: 2026-10-17; version: gpt-live-1 / prompt-to-voice. GitHub source dates retain UTC; event dates and times in the text use Beijing time. Unverified event dates remain empty; FieldToFit has not installed or reproduced performance.",
+            "变化与条件": "Changes and conditions",
             "变化与用途": "Change and use",
             "变化与适用范围": "Changes and scope",
             "合作将把OpenAI前沿模型及Codex工作流接入Google Cloud Model Garden，并经Marketplace采购；公告称全面开放计划在未来数周，当前可申请接入。": "The partnership plans to bring OpenAI frontier models and Codex workflows to Google Cloud Model Garden, with Marketplace procurement. General availability is planned for the coming weeks; access requests are currently available.",
             "在 5.6 已有能力上继续演进": "5.6 has the ability to continue to evolve",
             "复杂编程、电脑操作与专业任务；能力为官方定位": "Complex programming, computer operation and professional tasks; ability is the official positioning",
             "套餐与开放范围": "Plans and availability",
+            "官方RSS公告时间": "Official RSS announcement timestamp",
+            "官方公开研究材料仓库": "Official public research artifact repository",
             "官方原始日期": "The official original date",
             "官方发布、版本记录或采用说明": "Official release, version record or adoption instructions",
             "官方发布与采用说明": "Official announcement and adoption guidance",
             "官方发布和采用材料": "Official release and adoption of materials",
             "官方替代项 gpt-6-luna；迁移前核对接口、输出、质量与成本，未实测迁移。": "The official replacement is gpt-6-luna; check interfaces, outputs, quality and costs before migration; migration is untested.",
+            "官方研究公告与合作边界": "Official research announcement and collaboration scope",
             "对照关系": "Contrast relationship",
             "工具等待期间也能推进工作。": "The work can also be promoted while the tool is waiting.",
             "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
@@ -5609,7 +5707,9 @@
             "日期与状态": "Date and status",
             "日期与限制": "Dates and limitations",
             "本事件接续既有GPT-Live记录，保留Live-1.1／Quip及原生Decisions历史；不能由此推定GPT-Live-1.1 公开API已经上线。本站未调用或试听。": "This event extends the existing GPT-Live record while retaining Live-1.1 / Quip and native Decisions history. It does not establish availability of a public GPT-Live-1.1 API. FieldToFit has not called or auditioned it.",
+            "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。": "These events were checked on 2026-10-27. Existing models, prices, checking dates and history are preserved. The complete daily review of all dossier sources remains unfinished.",
             "本期事件／研究": "Current event / research",
+            "本期已核实事件": "Current verified event",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M01 GPT, D-30, D-53。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M01 GPT, D-30, D-53. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次变化与用途": "Changes and uses this time",
             "本次只补充官方研究事件，保留以下 GPT 模型列表、价格、开放方式与历史版本；不更新榜单分数，也不表示整个模型家族已完成当日全量核验。": "This adds only the official research event, preserving GPT model lists, prices, access and historical versions below. No leaderboard scores change, and this does not imply a complete daily audit of the model family.",
@@ -5622,6 +5722,7 @@
             "模型与验证边界": "Model and verification boundary",
             "模型目录": "Model catalog",
             "模型能组合文字、图示、按钮与交互组件，生成计算器、对比工具和可操作的解释；先给出有用内容，再随思考或工具执行补充结果。": "The model combines text, diagrams, buttons and interactive components into calculators, comparison tools and actionable explanations. Useful content appears first, with more results added as reasoning or tool execution proceeds.",
+            "模型选择与CLI版本条件": "Model selection and CLI version requirements",
             "正文再分发许可未确认，保留官方链接与本站解读。": "Full-text redistribution permission is unconfirmed; retain the official link and FieldToFit interpretation.",
             "正文再分发许可未确认，保留官方链接及本站解读。": "The text redistribution license has not been confirmed, and the official link and FieldToFit interpretation are retained.",
             "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。": "The text redistribution license has not been confirmed; MCP provides FieldToFit interpretation and source list, source text only links.",
@@ -5656,8 +5757,8 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "reviewed_at": "2026-10-24T02:07:02.966398+00:00",
-          "source_hash": "b96947201ffe890718f03e1b73db78c6ac920af7691b71ef884f2d669741d25c",
+          "reviewed_at": "2026-10-27T05:03:51.220995+00:00",
+          "source_hash": "914560d7fd9d336e7a4ca5d5e28fea99523c9a545758ab537fe72b3e28ef7c4a",
           "state": "reviewed"
         }
       },
@@ -6889,6 +6990,25 @@
       "blocks": [
         {
           "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[Gemini新付费项目默认保存请求：检查store与项目日志设置](https://fieldtofit.top/news/D-266)",
+              "2026-10-26",
+              "2026-10-26起，新建付费项目Generate Content API默认store=true；旧项目保留设置。可按请求或项目关闭，不与训练用途混同。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。"
+        },
+        {
+          "columns": [
             "版本／事件",
             "原始日期",
             "本次已核变化",
@@ -7425,6 +7545,12 @@
           "id": "deprecations",
           "title": "Gemini API deprecations",
           "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-D-logging",
+          "title": "Gemini API logs and datasets",
+          "url": "https://ai.google.dev/gemini-api/docs/logs-datasets#configure-logging"
         }
       ],
       "state": "published",
@@ -7437,6 +7563,7 @@
             "2026-09-15 官方发布": "2026-09-15 Official Release",
             "2026-09-17 入口核对": "2026-09-17 entrance check",
             "2026-10-14 补录：2026-10-13 access expansion": "2026-10-14 addition: 2026-10-13 access expansion",
+            "2026-10-26起，新建付费项目Generate Content API默认store=true；旧项目保留设置。可按请求或项目关闭，不与训练用途混同。": "From 2026-10-26, new paid projects default to store=true for Generate Content. Existing projects retain their settings. Disable per request or project; storage is distinct from training use.",
             "3.8 Flash 可以读取视频，但该型号输出是文本；不能因此把它放进视频生成模型清单。": "3.8 Flash can read videos, but the output of this model is text; therefore, it cannot be put into the video generation model list.",
             "API每百万输入／输出token介绍期为 2／10 美元，11 月 30 日结束后为 4／20 美元，缓存输入另算。这不是订阅费，不由训练或资源比例推算。": "Introductory API pricing is USD 2/10 per million input/output tokens, becoming USD 4/20 after 11/30; cached input is separate. These are not subscription fees or prices inferred from training-resource ratios.",
             "Argon 与现有分支分开理解": "Argon is understood separately from the existing branches.",
@@ -7462,6 +7589,7 @@
             "Workspace 官方说明": "Workspace official description",
             "Workspace 快速发布从 10 月 5 日开始，计划发布从 10 月 19 日开始；Gemini 应用从 10 月 13 日逐步推出。": "Workspace Rapid Release starts on 10/5, Scheduled Release on 10/19, and the Gemini app begins a gradual rollout on 10/13.",
             "[Gemini 4 Argon：从合作方开放扩展到开发者与订阅用户](https://fieldtofit.top/news/D-134)": "[Gemini 4 Argon: access expands from partners to developers and subscribers](https://fieldtofit.top/news/D-134)",
+            "[Gemini新付费项目默认保存请求：检查store与项目日志设置](https://fieldtofit.top/news/D-266)": "[New paid Gemini projects store requests by default: check store and project logging](https://fieldtofit.top/news/D-266)",
             "[发布公告](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/) / [Live API](https://ai.google.dev/gemini-api/docs/live-api)": "[Announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/) / [Live API](https://ai.google.dev/gemini-api/docs/live-api)",
             "[官方材料](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)": "[Official Materials](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)",
             "[官方材料](https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026)": "[Official Materials](https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026)",
@@ -7472,6 +7600,7 @@
             "两页列出的输入上限和模态相同，本页资料不把“约 1M 上下文”写成 3.8 独有的新能力。": "Both pages list the same input limit and modalities. This profile does not present approximately 1M context as a capability unique to 3.8.",
             "为多步请求增加推理，并可播报进度；模型卡列出幻觉、偶发变慢与超时": "Add reasoning for multi-step requests and broadcast progress; the model card lists hallucination, occasional slowdown and timeout",
             "事件与官方依据": "Event and official evidence",
+            "事件日期": "Event date",
             "云端持续执行与协作": "Continuous execution and collaboration in the cloud",
             "产品和模型分开": "Products and models are separated.",
             "仅链接，不转载全文": "Link only, do not reprint the full text",
@@ -7492,6 +7621,7 @@
             "原文日期：2026-10-13；事件日期：2026-10-13；本站核对：2026-10-14；版本：2026-10-13 access expansion。本站未安装或复现性能。": "Source date: 2026-10-13; event date: 2026-10-13; checked: 2026-10-14; version: 2026-10-13 access expansion; FieldToFit has not installed or reproduced performance.",
             "原有 Flash 官方材料入口": "Original Flash official material entrance",
             "原有资料仅链接，本次补充 Live 分支未收录 Flash 正文。": "The original information is only linked, and this supplementary Live branch does not include the Flash text.",
+            "变化与条件": "Changes and conditions",
             "变化与用途": "Change and use",
             "各功能的地区、套餐、开放批次和完整价格尚未核齐；不能概括为所有账户已经可用，本站未逐账户实测。": "Regions, plans, rollout batches and full pricing remain incompletely verified for each feature. Do not infer availability for all accounts. FieldToFit has not tested account by account.",
             "同样列出上述输入类型及约 1M 输入上限，保留为对照资料": "The above input types and about 1M input limit are also listed, and kept as reference data.",
@@ -7518,6 +7648,8 @@
             "更新": "Update",
             "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。": "The text has not been confirmed to distribute the permission; keep the official entrance, MCP can read the FieldToFit interpretation and source list.",
             "本批未收录这项原文正文；公告／模型卡与代码仓库许可需按具体材料分别核对。": "This batch does not include the text of this source text; the announcement/model card and the code repository license need to be checked separately according to specific materials.",
+            "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。": "These events were checked on 2026-10-27. Existing models, prices, checking dates and history are preserved. The complete daily review of all dossier sources remains unfinished.",
+            "本期已核实事件": "Current verified event",
             "本次已核变化": "Verified change",
             "本次按明确官方公告补入上表，旧正文与原始日期保留；未独立复现性能、调用或迁移。": "This update appends the table from explicit official notices, retaining existing prose and original dates; performance, calls and migration have not been independently reproduced.",
             "材料中能确认的内容": "The content that can be confirmed in the materials",
@@ -7540,8 +7672,8 @@
             "页面标示 2026-08 更新；稳定版": "Page marking 2026-08 update; stable version",
             "页面标示 2026-09 更新；稳定版，首发日未核": "Page indication 2026-09 update; stable version, unchecked on the first day"
           },
-          "reviewed_at": "2026-10-18T03:08:22.518374+00:00",
-          "source_hash": "1d890594ea57a7a17f77c53152300fb3b30997cb55480092ea7e00674da0ace2",
+          "reviewed_at": "2026-10-27T05:04:10.680256+00:00",
+          "source_hash": "b348da34fabf8cab5b3f5a0ead0ad707d317b06b5f24adeeda8596c60e1f937c",
           "state": "reviewed"
         }
       },
@@ -10319,6 +10451,25 @@
           "kind": "table",
           "rows": [
             [
+              "[Claude Code 2.1.311：长会话压缩、子代理与后台恢复修复](https://fieldtofit.top/news/D-265)",
+              "2026-10-27",
+              "标准上下文超过 200K后压缩继续，修复压缩后旧文件状态、迟连接MCP工具与后台会话恢复问题；不代表获得 1M上下文。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[Claude Code 更新至 2.1.310：复核执行权限与无人值守行为](https://fieldtofit.top/news/D-255)",
               "2026-10-24",
               "2.1.309 与 2.1.310 修复沙箱、MCP 配置、特定 Windows Hook 和 VS Code 审批交互问题。各项适用条件不同，依赖自动执行的团队应在自己的环境验证升级效果。"
@@ -10919,6 +11070,12 @@
           "id": "oct26-release310",
           "title": "Claude Code v2.1.310",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.310"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct27-B-release",
+          "title": "Claude Code v2.1.311",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.311"
         }
       ],
       "state": "published",
@@ -10958,6 +11115,7 @@
             "[Claude Code 2.1.300：修复压缩后的恢复，Python SDK更新捆绑CLI](https://fieldtofit.top/news/D-147)": "[Claude Code 2.1.300: compaction recovery fixes and a Python SDK CLI update](https://fieldtofit.top/news/D-147)",
             "[Claude Code 2.1.301：限制无人值守等待，Python SDK同步捆绑版本](https://fieldtofit.top/news/D-161)": "[Claude Code 2.1.301: bounded unattended waits and a Python SDK CLI update](https://fieldtofit.top/news/D-161)",
             "[Claude Code 2.1.302：修复MCP兼容、文件读取与任务状态](https://fieldtofit.top/news/D-179)": "[Claude Code 2.1.302: MCP compatibility, file reading and task-state fixes](https://fieldtofit.top/news/D-179)",
+            "[Claude Code 2.1.311：长会话压缩、子代理与后台恢复修复](https://fieldtofit.top/news/D-265)": "[Claude Code 2.1.311: fixes for compaction, subagents and background recovery](https://fieldtofit.top/news/D-265)",
             "[Claude Code 更新至 2.1.310：复核执行权限与无人值守行为](https://fieldtofit.top/news/D-255)": "[Claude Code 2.1.310: review execution permissions and unattended behavior](https://fieldtofit.top/news/D-255)",
             "[官方发布](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)": "[Official Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)",
             "[官方发布记录](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)": "[Official Release Record](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)",
@@ -11040,6 +11198,7 @@
             "日期口径": "Date basis",
             "更新": "Update",
             "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。": "The text has not been confirmed to distribute the permission; keep the official entrance, MCP can read the FieldToFit interpretation and source list.",
+            "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。": "These events were checked on 2026-10-27. Existing models, prices, checking dates and history are preserved. The complete daily review of all dossier sources remains unfinished.",
             "本期增补核对日 2026-10-26；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-26; the full-version daily dossier review is incomplete. Existing models, prices, history and the dossier-wide check date are retained.",
             "本期已核实事件": "Current verified event",
             "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。": "This adds only the approved event, preserving original versions, prices, conditions and history below. It does not imply a complete daily audit of every official source.",
@@ -11051,6 +11210,7 @@
             "权限与读取修复": "Permission and read repair",
             "权限规则：修复托管机器上复合命令内部的deny/ask规则被用户安装的mod批准覆盖的问题。": "Permission rules: fixes user-installed mod approvals overriding deny/ask rules inside compound commands on managed machines.",
             "来源": "Source",
+            "标准上下文超过 200K后压缩继续，修复压缩后旧文件状态、迟连接MCP工具与后台会话恢复问题；不代表获得 1M上下文。": "Standard-context sessions compact and continue beyond 200K. Fixes cover stale files after compaction, late MCP tools and background recovery; this does not grant a 1M context.",
             "核验边界：这些是官方修复声明，值得管理员和插件用户查看；不能据此宣称所有越权风险已消除，本站未运行安全复测。": "Verification boundary: these official fix claims are relevant to administrators and plugin users. They do not establish elimination of all authorization risks. FieldToFit has not repeated security tests.",
             "正文再分发许可未确认，保留官方链接与本站解读。": "Full-text redistribution permission is unconfirmed; retain the official link and FieldToFit interpretation.",
             "正文再分发许可未确认，保留官方链接及本站解读。": "The text redistribution license has not been confirmed, and the official link and FieldToFit interpretation are retained.",
@@ -11081,8 +11241,8 @@
             "验证与采用边界": "Verification and adoption of boundaries",
             "验证范围": "Scope of verification"
           },
-          "reviewed_at": "2026-10-26T04:24:16.187224+00:00",
-          "source_hash": "deb1fdefa137b5bc4980043e89942f57dbefde42178305c553d22b9a656c4cb7",
+          "reviewed_at": "2026-10-27T05:04:01.070940+00:00",
+          "source_hash": "c27ecacca9019e3c5864536815de06d5b0d606975a792e6751bc2cd06b58c2f6",
           "state": "reviewed"
         }
       },
@@ -14228,7 +14388,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-26",
+  "reviewed_at": "2026-10-27",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

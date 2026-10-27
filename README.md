@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.9](CHANGELOG.md#v1.17.9)** · [fieldtofit-v1.17.9](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.9)
+**当前源码版本：[v1.17.10](CHANGELOG.md#v1.17.10)** · [fieldtofit-v1.17.10](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.10)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 加入官方Day 21重置公告与GPT-6.1 Terra更新，保留原公告日期、Day 22后续原帖、真实头像及套餐和用量边界。
-- 补入iOS远程命令、Signals数据、研究披露与越南MoMo支付；来源日期不补造时刻，研究声明不写成已验证结论。
-- 网站与AI共享80条已审日志，主线42条、其他OpenAI38条；保留并行新闻与模型图表，无数据库迁移或接口变更。
+- 发布已选Terra、Claude Code 2.1.311、AI科学披露与Gemini存储默认值动态，同步三份对应档案并保留既有Codex事件历史。
+- 新增Terra系统卡与GRAFT技术报告分析，各含四条核心结论和两张本站重绘，区分实验分母、授权边界与训练局限。
+- 提供Terra中英热点分享卡，正式发表后轮替首页报告与信息卡，旧内容保留全部索引和稳定入口。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

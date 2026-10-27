@@ -1746,5 +1746,45 @@
     "attribution": "FieldToFit",
     "source_version": "Technical blog; 2026-10-22",
     "locator": "Sections 3–6: connecting wafers and serving requests"
+  },
+  "/report-figures/oct27-terra-flags.png": {
+    "sha256": "d0bd6266057adb38f7413269acd2976cdc52d6e197bfd07a03dfd9acc484bad3",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-1-terra"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "2026-10-26 HTML addendum",
+    "locator": "§7.5.2"
+  },
+  "/report-figures/oct27-terra-agent.png": {
+    "sha256": "07c472bf31a71a0d3924070848761ecd31c528d6641ce0680f5d01a3884b9ebb",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-1-terra"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "2026-10-26 HTML addendum",
+    "locator": "§7.5.1"
+  },
+  "/report-figures/oct27-graft-routing.png": {
+    "sha256": "9ff3285262548b16001571c8d172ec2c62cbfaf36e46d8ca4bf02e8a83f3564e",
+    "source_urls": [
+      "https://arxiv.org/html/2610.17062v1"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "arXiv:2610.17062v1",
+    "locator": "§3; Figure 1; Appendix B"
+  },
+  "/report-figures/oct27-graft-scope.png": {
+    "sha256": "67bdb887380663e62aaacf0c34cf0023e404778684be6ae3d7fbd031896388e3",
+    "source_urls": [
+      "https://arxiv.org/html/2610.17062v1"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "arXiv:2610.17062v1",
+    "locator": "§4.1; §5; §7; Appendix G.5"
   }
 }
