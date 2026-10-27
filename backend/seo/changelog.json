@@ -1,7 +1,35 @@
 {
-  "version": "1.17.8",
-  "revision": "6e0b58b9be04d775b8787aaeec41e1fe5ed27d20cf9555f92ab48e96c8b70863",
+  "version": "1.17.9",
+  "revision": "d75c4d79038c6490b292acebee07210236f51551bfe357cc02c577089f2e4f43",
   "items": [
+    {
+      "version": "1.17.9",
+      "date": "2026-10-27",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Day 21／22与六项专题补录",
+          "highlights": [
+            "加入官方Day 21重置公告与GPT-6.1 Terra更新，保留原公告日期、Day 22后续原帖、真实头像及套餐和用量边界。",
+            "补入iOS远程命令、Signals数据、研究披露与越南MoMo支付；来源日期不补造时刻，研究声明不写成已验证结论。",
+            "网站与AI共享80条已审日志，主线42条、其他OpenAI38条；保留并行新闻与模型图表，无数据库迁移或接口变更。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Days 21 and 22 with six reviewed topic additions",
+          "highlights": [
+            "Add the official Day 21 reset announcement and GPT-6.1 Terra, preserving the original announcement date, subsequent Day 22 post, verified avatar and plan and usage limits.",
+            "Add iOS remote commands, Signals data, research disclosures and MoMo payments in Vietnam, without inventing timestamps or treating research claims as verified results.",
+            "Share 80 reviewed entries across the website and AI readers: 42 core entries and 38 other OpenAI updates, preserving concurrent news and model charts without a database migration or API change."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.9"
+    },
     {
       "version": "1.17.8",
       "date": "2026-10-26",

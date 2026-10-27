@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.8](CHANGELOG.md#v1.17.8)** · [fieldtofit-v1.17.8](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.8)
+**Current source version: [v1.17.9](CHANGELOG.md#v1.17.9)** · [fieldtofit-v1.17.9](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.9)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add a full technical analysis to existing Cerebras news D-256, examining 59 wafers, approximately 190 requests, pipelining and performance-comparison conditions.
-- Pair four findings with detailed arguments and three original calculation/schematic figures, separating model specifications, teaching assumptions, cache budgets and service commitments.
-- Preserve the original event and first-publication history; successful publication rotates four homepage reports while retaining the complete index and stable links.
+- Add the official Day 21 reset announcement and GPT-6.1 Terra, preserving the original announcement date, subsequent Day 22 post, verified avatar and plan and usage limits.
+- Add iOS remote commands, Signals data, research disclosures and MoMo payments in Vietnam, without inventing timestamps or treating research claims as verified results.
+- Share 80 reviewed entries across the website and AI readers: 42 core entries and 38 other OpenAI updates, preserving concurrent news and model charts without a database migration or API change.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

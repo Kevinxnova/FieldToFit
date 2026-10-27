@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.9"></a>
+## v1.17.9 · Day 21／22与六项专题补录 · 2026-10-27
+<!-- public-title:en: Days 21 and 22 with six reviewed topic additions -->
+<!-- release-summary:zh:start -->
+- 加入官方Day 21重置公告与GPT-6.1 Terra更新，保留原公告日期、Day 22后续原帖、真实头像及套餐和用量边界。
+- 补入iOS远程命令、Signals数据、研究披露与越南MoMo支付；来源日期不补造时刻，研究声明不写成已验证结论。
+- 网站与AI共享80条已审日志，主线42条、其他OpenAI38条；保留并行新闻与模型图表，无数据库迁移或接口变更。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add the official Day 21 reset announcement and GPT-6.1 Terra, preserving the original announcement date, subsequent Day 22 post, verified avatar and plan and usage limits.
+- Add iOS remote commands, Signals data, research disclosures and MoMo payments in Vietnam, without inventing timestamps or treating research claims as verified results.
+- Share 80 reviewed entries across the website and AI readers: 42 core entries and 38 other OpenAI updates, preserving concurrent news and model charts without a database migration or API change.
+<!-- release-summary:en:end -->
+
+对应REQ-20。所有者明确批准10月27日的六条具体双语提案。基于v1.17.8，本批为兼容内容patch；自v1.17.0累计为既有内容与图表维护，无新完整模块、主要流程或待决minor／major范围。实际CMS、备份、浏览器、同源读取和程序交付见[本批验收](docs/validation/2026-10-27-codex-days21-22.md)。保留原晨报、夜间日程及未来逐批批准。
+
 <a id="v1.17.8"></a>
 ## v1.17.8 · Cerebras晶圆推理容量分析 · 2026-10-26
 <!-- site-deployed:2026-10-26 -->

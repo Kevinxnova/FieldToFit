@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.8](CHANGELOG.md#v1.17.8)** · [fieldtofit-v1.17.8](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.8)
+**当前源码版本：[v1.17.9](CHANGELOG.md#v1.17.9)** · [fieldtofit-v1.17.9](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.9)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 为既有Cerebras动态D-256加入完整技术报告，分解59片晶圆、约190路请求、流水线与性能比较口径。
-- 四条结论配对应论述和三张本站计算／示意图，区分模型精确规格、教学假设、缓存预算和服务承诺。
-- 保留原事件与首次上站历史，正式发布后轮替首页四篇报告，完整索引与旧链接继续可读。
+- 加入官方Day 21重置公告与GPT-6.1 Terra更新，保留原公告日期、Day 22后续原帖、真实头像及套餐和用量边界。
+- 补入iOS远程命令、Signals数据、研究披露与越南MoMo支付；来源日期不补造时刻，研究声明不写成已验证结论。
+- 网站与AI共享80条已审日志，主线42条、其他OpenAI38条；保留并行新闻与模型图表，无数据库迁移或接口变更。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
