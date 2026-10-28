@@ -3,10 +3,704 @@
   "items": [
     {
       "category": "tool",
+      "checked_at": "2026-10-28",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-27",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "核对地区、合同抵扣、身份权限与组织政策；这是本站判断。",
+            "title": "采购与IT管理员"
+          },
+          {
+            "detail": "核对具体组件、数据权限及正式上线时间；这是本站判断。",
+            "title": "业务流程负责人"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "美国客户可通过Oracle Marketplace采购OpenAI API、Codex与ChatGPT Work。",
+            "title": "美国采购渠道"
+          },
+          {
+            "detail": "符合条件时可用Oracle Universal Credits，具体依合同与资格；不等于无条件免费。",
+            "title": "额度有条件"
+          },
+          {
+            "detail": "目标是将Oracle应用与数据接入组织批准的工作流程；公告不等于全部功能全面开放。",
+            "title": "Workspace仍在开发"
+          }
+        ],
+        "checked_at": "2026-10-28",
+        "evidence": [
+          {
+            "locator": "Oracle Marketplace procurement; Oracle AI Workspace",
+            "source_id": "openai-announcement"
+          },
+          {
+            "locator": "procurement terms; Future Product Disclaimer",
+            "source_id": "oracle-announcement"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "Oracle采购入口已扩展，Workspace仍需核对开放状态",
+        "limits": [
+          {
+            "detail": "美国采购范围不外推全球；具体租户和功能可用性仍需确认。",
+            "title": "地区和产品范围"
+          },
+          {
+            "detail": "未来交付与定价可能变化；本站未测账户、抵扣、Workspace操作或业务收益。",
+            "title": "未来产品与实测边界"
+          }
+        ],
+        "next_step": "先确认采购资格、抵扣和功能状态，再选择一项获准流程试点；这是本站建议。",
+        "revised_at": "2026-10-28",
+        "revision": "3fbdb1cc05ef8f70de3302aa4b4be6dfba49af893e15524fe31ab7dfeaeacce0",
+        "scope": "OpenAI API、Codex、ChatGPT Work与Oracle AI Workspace；2026-10-27合作公告，无统一软件版本号。",
+        "share": {
+          "content_revision": "3fbdb1cc05ef8f70de3302aa4b4be6dfba49af893e15524fe31ab7dfeaeacce0",
+          "en": {
+            "sha256": "b15b2c5ddeda03c1d567217121bb49ee44b99eff2faa27610c56b32882f7dccf",
+            "text_revision": "2ce029787c007214450bfb3313e5ac5d22b3d63bce97b7ad02c1c45d07e64ca1",
+            "url": "/hot-cards/d-268-3fbdb1cc05ef-en.png"
+          },
+          "zh": {
+            "sha256": "8b0a3599737c1d2b4a0adad5b7fd89163312c8cb23802c1a058e8a503ecb2138",
+            "url": "/hot-cards/d-268-3fbdb1cc05ef-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "2026-10-28核对双方公告正文；人群与下一步为本站判断，未实测账户、费用或效果。"
+      },
+      "id": "D-268",
+      "interpretation": [
+        {
+          "locator": "Oracle Marketplace procurement",
+          "source_ids": [
+            "openai-announcement"
+          ],
+          "text": "已公布的Marketplace采购渠道面向美国客户，涵盖OpenAI API、Codex和ChatGPT Work。Universal Credits抵扣须符合资格及条款，不能理解为所有余额或所有OpenAI使用均适用。",
+          "title": "采购先看地区与合同"
+        },
+        {
+          "locator": "Oracle AI Workspace; App Composer; Security Mesh",
+          "source_ids": [
+            "oracle-announcement"
+          ],
+          "text": "Oracle AI Workspace正在开发，目标是将Oracle应用和数据接入组织批准的工作流程；App Composer与Security Mesh各自的功能、客户范围和开放状态仍需分别核对。",
+          "title": "应用接入保留审批边界"
+        },
+        {
+          "locator": "Future Product Disclaimer",
+          "source_ids": [
+            "oracle-announcement"
+          ],
+          "text": "Oracle原文包含未来产品声明：交付时间、功能及定价可能变化。采购渠道公布不代表Workspace所有功能向所有客户正式开放，厂商收益描述不等于本站部署或成本实测。",
+          "title": "未来功能按实际开放确认"
+        }
+      ],
+      "name": "Oracle × OpenAI",
+      "note": "双方公告日期 2026-10-27，本站 2026-10-28核对；未知项包括租户可用性、合同抵扣资格及各组件上线时间。未实测账户、费用、Workspace操作或业务收益。",
+      "organization": "Oracle / OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-28T01:15:43.470607+00:00",
+        "hot_card_first_published_at": "2026-10-28T01:15:43.470636+00:00",
+        "hot_card_selected_at": "2026-10-28T01:15:43.470636+00:00",
+        "updated_at": "2026-10-28T01:28:06.387850+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        },
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        }
+      ],
+      "source_published_at": "2026-10-27",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "openai-announcement",
+          "title": "Oracle apps in ChatGPT",
+          "url": "https://openai.com/index/oracle-apps-in-chatgpt/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oracle-announcement",
+          "title": "Oracle reinvents enterprise computing with OpenAI",
+          "url": "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/"
+        }
+      ],
+      "state": "published",
+      "summary": "美国客户可经Oracle Marketplace采购OpenAI API、Codex与ChatGPT Work，符合条件时使用Oracle Universal Credits；Workspace仍在开发，功能按具体开放状态核对。",
+      "title": "ChatGPT / Codex：Oracle采购入口扩展，AI Workspace仍需核对开放阶段",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-28核对双方公告正文；人群与下一步为本站判断，未实测账户、费用或效果。": "Both announcement texts checked on 2026-10-28; audiences and next steps are FieldToFit judgments. Accounts, costs and results were not tested.",
+            "ChatGPT / Codex：Oracle采购入口扩展，AI Workspace仍需核对开放阶段": "ChatGPT / Codex: Oracle procurement expands; check AI Workspace availability separately",
+            "OpenAI API、Codex、ChatGPT Work与Oracle AI Workspace；2026-10-27合作公告，无统一软件版本号。": "OpenAI API, Codex, ChatGPT Work and Oracle AI Workspace; partnership announcements dated 2026-10-27, with no single software version.",
+            "Oracle AI Workspace正在开发，目标是将Oracle应用和数据接入组织批准的工作流程；App Composer与Security Mesh各自的功能、客户范围和开放状态仍需分别核对。": "Oracle AI Workspace is in development, aiming to connect Oracle applications and data to organizationally approved workflows. Check App Composer and Security Mesh features, customer scope and availability separately.",
+            "Oracle原文包含未来产品声明：交付时间、功能及定价可能变化。采购渠道公布不代表Workspace所有功能向所有客户正式开放，厂商收益描述不等于本站部署或成本实测。": "Oracle includes a future-product disclaimer: delivery dates, features and pricing may change. An announced procurement route does not establish general availability of all Workspace features; vendor benefit claims are not FieldToFit deployment or cost measurements.",
+            "Oracle采购入口已扩展，Workspace仍需核对开放状态": "Oracle procurement expands; check Workspace availability",
+            "Workspace仍在开发": "Workspace remains in development",
+            "业务流程负责人": "Business-workflow owners",
+            "先确认采购资格、抵扣和功能状态，再选择一项获准流程试点；这是本站建议。": "Confirm procurement eligibility, credits and feature availability, then pilot one approved workflow; this is FieldToFit advice.",
+            "双方公告日期 2026-10-27，本站 2026-10-28核对；未知项包括租户可用性、合同抵扣资格及各组件上线时间。未实测账户、费用、Workspace操作或业务收益。": "Both announcements are dated 2026-10-27 and were checked on 2026-10-28. Tenant availability, contract credit eligibility and component launch dates remain to be confirmed. Accounts, costs, Workspace actions and business benefits were not tested.",
+            "地区和产品范围": "Region and product scope",
+            "已公布的Marketplace采购渠道面向美国客户，涵盖OpenAI API、Codex和ChatGPT Work。Universal Credits抵扣须符合资格及条款，不能理解为所有余额或所有OpenAI使用均适用。": "The announced Marketplace procurement route covers OpenAI API, Codex and ChatGPT Work for US customers. Universal Credits require eligibility and applicable terms; not every balance or OpenAI usage qualifies.",
+            "应用接入保留审批边界": "Application workflows retain approval boundaries",
+            "未来交付与定价可能变化；本站未测账户、抵扣、Workspace操作或业务收益。": "Future delivery and pricing may change; FieldToFit has not tested accounts, credits, Workspace actions or business benefits.",
+            "未来产品与实测边界": "Future products and testing limits",
+            "未来功能按实际开放确认": "Confirm future features against actual availability",
+            "核对具体组件、数据权限及正式上线时间；这是本站判断。": "Check required components, data permissions and launch dates; this is FieldToFit advice.",
+            "核对地区、合同抵扣、身份权限与组织政策；这是本站判断。": "Check region, contract credits, identity permissions and organization policy; this is FieldToFit advice.",
+            "目标是将Oracle应用与数据接入组织批准的工作流程；公告不等于全部功能全面开放。": "The aim is to connect Oracle applications and data to approved workflows; an announcement is not general availability of every feature.",
+            "符合条件时可用Oracle Universal Credits，具体依合同与资格；不等于无条件免费。": "Eligible Oracle Universal Credits may apply, depending on contract and eligibility; access is not unconditionally free.",
+            "美国客户可经Oracle Marketplace采购OpenAI API、Codex与ChatGPT Work，符合条件时使用Oracle Universal Credits；Workspace仍在开发，功能按具体开放状态核对。": "US customers can procure OpenAI API, Codex and ChatGPT Work through Oracle Marketplace, using eligible Oracle Universal Credits. Workspace remains in development; check each feature’s availability.",
+            "美国客户可通过Oracle Marketplace采购OpenAI API、Codex与ChatGPT Work。": "US customers can procure OpenAI API, Codex and ChatGPT Work through Oracle Marketplace.",
+            "美国采购渠道": "US procurement route",
+            "美国采购范围不外推全球；具体租户和功能可用性仍需确认。": "Do not extend the US procurement scope globally; tenant and feature availability still need confirmation.",
+            "采购与IT管理员": "Procurement and IT administrators",
+            "采购先看地区与合同": "Check region and contract eligibility",
+            "额度有条件": "Credits are conditional"
+          },
+          "source_hash": "27e49ad9eb1b63d23fd255221773306621db492948160d7c68e3af89333bb9c4",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-28",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-28",
+      "highlight": true,
+      "id": "D-269",
+      "interpretation": [
+        {
+          "locator": "What's changed: gateway.oidc.user_id_claim",
+          "source_ids": [
+            "release"
+          ],
+          "text": "新增gateway.oidc.user_id_claim，可按身份提供方选择用户标识字段，例如Entra的oid，而不只依赖默认字段。",
+          "title": "身份字段可配置"
+        },
+        {
+          "locator": "What's changed: managed settings; CLAUDE.md and included files",
+          "source_ids": [
+            "release"
+          ],
+          "text": "修复VS Code登录后余下会话未获取managed settings及组织策略；对只读取了开头的大型CLAUDE.md、规则或引用文件，Write要求先完整读取或改为局部编辑。",
+          "title": "组织策略与文件读取边界修复"
+        },
+        {
+          "locator": "What's changed: directory skills; unchanged failed messages",
+          "source_ids": [
+            "release"
+          ],
+          "text": "修复Bash进入更深目录后相应技能未发现，以及云端失败消息原样重发可能重复执行。其他变化按完整发行说明逐条评估，不据此宣布所有权限或恢复问题已解决。",
+          "title": "目录和任务生命周期修复"
+        }
+      ],
+      "name": "Claude Code",
+      "note": "GitHub原文日期 2026-10-27 UTC，北京时间 2026-10-28凌晨；本站 2026-10-28核对。未安装回归、验证身份提供方或测试未知模型名称的较短系统提示兼容性。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-28T01:15:15.885773+00:00",
+        "updated_at": "2026-10-28T01:15:15.885773+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-10-27",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Claude Code v2.1.312",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.312"
+        }
+      ],
+      "state": "published",
+      "summary": "新增OIDC用户标识字段配置，修复VS Code登录后的组织策略获取、不完整文件读取后的覆写及深层目录技能发现；升级仍需环境回归。",
+      "title": "Claude Code 2.1.312：组织策略、文件操作与技能发现修复",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude Code 2.1.312：组织策略、文件操作与技能发现修复": "Claude Code 2.1.312: fixes for organization policy, file operations and skill discovery",
+            "GitHub原文日期 2026-10-27 UTC，北京时间 2026-10-28凌晨；本站 2026-10-28核对。未安装回归、验证身份提供方或测试未知模型名称的较短系统提示兼容性。": "GitHub source date: 2026-10-27 UTC, early 2026-10-28 Beijing time; checked on 2026-10-28. Installation regressions, identity-provider behavior and shorter-system-prompt compatibility for unknown model names were not tested.",
+            "修复Bash进入更深目录后相应技能未发现，以及云端失败消息原样重发可能重复执行。其他变化按完整发行说明逐条评估，不据此宣布所有权限或恢复问题已解决。": "Fixes skills not being discovered after Bash changes into deeper directories and unchanged resubmission of failed cloud messages potentially running twice. Assess remaining changes against the full notes; this does not establish that every authorization or recovery issue is resolved.",
+            "修复VS Code登录后余下会话未获取managed settings及组织策略；对只读取了开头的大型CLAUDE.md、规则或引用文件，Write要求先完整读取或改为局部编辑。": "Fixes managed settings and organization policy not being fetched for the remainder of a session after VS Code sign-in. For large CLAUDE.md, rules or included files read only at the beginning, Write requires a full read or an in-place edit.",
+            "新增OIDC用户标识字段配置，修复VS Code登录后的组织策略获取、不完整文件读取后的覆写及深层目录技能发现；升级仍需环境回归。": "Adds configurable OIDC user-ID claims and fixes organization-policy retrieval after VS Code sign-in, overwrites after partial file reads and skill discovery in deeper directories; upgrades still need environment-specific regression checks.",
+            "新增gateway.oidc.user_id_claim，可按身份提供方选择用户标识字段，例如Entra的oid，而不只依赖默认字段。": "Adds gateway.oidc.user_id_claim to choose a user-ID claim for the identity provider, such as Entra oid, rather than relying only on the default claim.",
+            "目录和任务生命周期修复": "Fix directory and task-lifecycle behavior",
+            "组织策略与文件读取边界修复": "Fix organization policy and file-reading boundaries",
+            "身份字段可配置": "Configure the identity claim"
+          },
+          "source_hash": "8e2a391bb08b93baa7a5081f0f4735782489fb4b80e1c08e2516820bb3fc8c25",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-28",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-20",
+      "highlight": false,
+      "id": "D-270",
+      "interpretation": [
+        {
+          "locator": "§1; §2.1–2.4; Table 1; §4",
+          "source_ids": [
+            "report"
+          ],
+          "text": "Flash与Next的非流式接口支持说话人结构；泛音频理解仅由Next提供，Streaming与Message都不支持这两项。",
+          "title": "同一家族有五种形态，实时转写不自动拥有全部能力"
+        },
+        {
+          "locator": "§2.2; §3; §3.4",
+          "source_ids": [
+            "report"
+          ],
+          "text": "系统联合输出内容、说话人标签和时间边界；稀疏标签需要专门监督，80ms网格不等于 80ms实测精度。",
+          "title": "说话人和时间不是事后装饰，而是训练目标的一部分"
+        },
+        {
+          "locator": "§5.1 Tables 2–3; §5.8 Table 7",
+          "source_ids": [
+            "report"
+          ],
+          "text": "七语言宏平均 22.50%→15.09%与四分钟会议分块结果分别成立；CER、WER、DER和cpWER不可混成总分。",
+          "title": "多语种与会议结果要看同口径，升级并非处处领先"
+        },
+        {
+          "locator": "§5.4–5.7; §5.9 Table 8",
+          "source_ids": [
+            "report"
+          ],
+          "text": "100ms首字延迟受异构部署条件约束；润色可读性与忠实性、声音问答与时间定位分别评估。",
+          "title": "低延迟、润色和声音理解，各自需要独立的采用验证"
+        }
+      ],
+      "name": "Qwen-Audio-3.1-ASR",
+      "note": "作者评测，未独立复现；能力按部署变体区分，跨来源分数、分块说话人测试与异构延迟测试均有适用边界。",
+      "organization": "Alibaba Token Foundry / Alibaba Group",
+      "publication": {
+        "first_published_at": "2026-10-28T01:14:48.023494+00:00",
+        "report_selected_at": "2026-10-28T01:14:48.023494+00:00",
+        "updated_at": "2026-10-28T01:14:48.023494+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M07",
+          "name": "Qwen",
+          "url": "https://fieldtofit.top/watch/CW-M07"
+        }
+      ],
+      "source_published_at": "2026-10-20",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "Qwen-Audio-3.1-ASR Technical Report v1",
+          "url": "https://arxiv.org/html/2610.28711v1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "project",
+          "title": "Qwen-Audio-3.1-ASR author project page",
+          "url": "https://qwenaudio.github.io/qwen-audio-3.1-asr/"
+        }
+      ],
+      "state": "published",
+      "summary": "Qwen-Audio-3.1-ASR把转写扩展到说话人结构与泛音频理解。四条结论与三张本站重绘，分清部署变体、训练目标、同口径评测及延迟边界。",
+      "technical_map": {
+        "caution": "作者评测，未独立复现；能力按部署变体区分，跨来源分数、分块说话人测试与异构延迟测试均有适用边界。",
+        "change_summary": "首次完整分析：四条结论与同号论述，三张本站重绘，保留变体、训练、评测与部署边界。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.2; §3; §3.4",
+                "source_id": "report"
+              }
+            ],
+            "from": "profiles",
+            "id": "edge-structure",
+            "label": "分别核对条件与证据",
+            "reason": "Complementary aspects of the same model family; not a measured causal relationship between experiments.",
+            "relation": "parallel",
+            "to": "structure"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§5.1 Tables 2–3; §5.8 Table 7",
+                "source_id": "report"
+              }
+            ],
+            "from": "profiles",
+            "id": "edge-accuracy",
+            "label": "分别核对条件与证据",
+            "reason": "Complementary aspects of the same model family; not a measured causal relationship between experiments.",
+            "relation": "parallel",
+            "to": "accuracy"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§5.4–5.7; §5.9 Table 8",
+                "source_id": "report"
+              }
+            ],
+            "from": "profiles",
+            "id": "edge-deployment",
+            "label": "分别核对条件与证据",
+            "reason": "Complementary aspects of the same model family; not a measured causal relationship between experiments.",
+            "relation": "parallel",
+            "to": "deployment"
+          }
+        ],
+        "focus": "Qwen-Audio-3.1-ASR：从转写到对话结构，先选对变体再比较分数",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§1; §2.1–2.4; Table 1; §4",
+                "source_id": "report"
+              }
+            ],
+            "id": "profiles",
+            "kind": "method",
+            "label": "同一家族有五种形态，实时转写不自动拥有全部能力",
+            "limitation": "作者评测，未独立复现；能力按部署变体区分，跨来源分数、分块说话人测试与异构延迟测试均有适用边界。",
+            "mechanism": "Flash与Next的非流式接口支持说话人结构；泛音频理解仅由Next提供，Streaming与Message都不支持这两项。",
+            "metrics": [],
+            "result": "Flash与Next的非流式接口支持说话人结构；泛音频理解仅由Next提供，Streaming与Message都不支持这两项。",
+            "setting": "Five deployment profiles; Table 1; ASR / SD / AU / context / hotwords / polishing.",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.2; §3; §3.4",
+                "source_id": "report"
+              }
+            ],
+            "id": "structure",
+            "kind": "method",
+            "label": "说话人和时间不是事后装饰，而是训练目标的一部分",
+            "limitation": "作者评测，未独立复现；能力按部署变体区分，跨来源分数、分块说话人测试与异构延迟测试均有适用边界。",
+            "mechanism": "系统联合输出内容、说话人标签和时间边界；稀疏标签需要专门监督，80ms网格不等于 80ms实测精度。",
+            "metrics": [],
+            "result": "系统联合输出内容、说话人标签和时间边界；稀疏标签需要专门监督，80ms网格不等于 80ms实测精度。",
+            "setting": "Six training stages; sparse speaker-token loss weighting; 80ms representation grid.",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§5.1 Tables 2–3; §5.8 Table 7",
+                "source_id": "report"
+              }
+            ],
+            "id": "accuracy",
+            "kind": "result",
+            "label": "多语种与会议结果要看同口径，升级并非处处领先",
+            "limitation": "作者评测，未独立复现；能力按部署变体区分，跨来源分数、分块说话人测试与异构延迟测试均有适用边界。",
+            "mechanism": "七语言宏平均 22.50%→15.09%与四分钟会议分块结果分别成立；CER、WER、DER和cpWER不可混成总分。",
+            "metrics": [],
+            "result": "七语言宏平均 22.50%→15.09%与四分钟会议分块结果分别成立；CER、WER、DER和cpWER不可混成总分。",
+            "setting": "GigaSpeechBench seven-language macro; Panel A/B split; four approximately 4-minute meeting-chunk sets.",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§5.4–5.7; §5.9 Table 8",
+                "source_id": "report"
+              }
+            ],
+            "id": "deployment",
+            "kind": "result",
+            "label": "低延迟、润色和声音理解，各自需要独立的采用验证",
+            "limitation": "作者评测，未独立复现；能力按部署变体区分，跨来源分数、分块说话人测试与异构延迟测试均有适用边界。",
+            "mechanism": "100ms首字延迟受异构部署条件约束；润色可读性与忠实性、声音问答与时间定位分别评估。",
+            "metrics": [],
+            "result": "100ms首字延迟受异构部署条件约束；润色可读性与忠实性、声音问答与时间定位分别评估。",
+            "setting": "10 concurrent streams; H100 self-host vs API; internal five-point polishing ratings; accuracy and mIoU distinct.",
+            "stage": 2
+          }
+        ],
+        "question": "Qwen-Audio-3.1-ASR：从转写到对话结构，先选对变体再比较分数",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：这份报告最值得采用的是任务分解。会议记录先验收字词、角色与时间，语音输入另看首字与句尾体验，声音问答再验证音频证据。先确认任务所需变体和实际开放方式，再以固定样本比较质量、等待时间、费用和失败恢复。本站建议不属于作者实验结论。",
+            "来源与修订：Chuanmeng Bian、Jiajun He等，Alibaba Token Foundry／Alibaba Group，Qwen-Audio-3.1-ASR Technical Report，arXiv:2610.28711v1，首次 2026-10-20。本站 2026-10-28阅读主文全部章节与表格文字；三图为本站独立重绘，不复用原图，不伪造误差线。原图未逐张视觉审计，未复现训练、音频推理、延迟、账单或全账户开放。原报告日期、核对日和网站首次发表分别保留。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "报告将系统目标从“把语音写成文字”扩展为识别内容、说话人及时间关系，并进一步理解环境声、音乐和声音事件。基础架构由音频编码器、适配器与语言模型解码器组成，任务指令决定输出形式；可选历史文本、目标语言和热词用于条件控制。统一架构并不意味着接口能力相同。"
+                },
+                {
+                  "alt": "五种部署变体的能力矩阵：ASR、说话人结构、声音理解、上下文、热词和润色",
+                  "attribution": "FieldToFit",
+                  "caption": "本站依据表 1独立重绘。支持矩阵描述报告中的能力，不代表账户已开放或相同定价。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§2.4 Table 1; §4",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct28-asr-profiles.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced."
+                },
+                {
+                  "items": [
+                    "Filetrans面向异步文件转写，Streaming面向实时转写：两者支持上下文与热词，但不支持说话人结构、泛音频理解或原生润色。",
+                    "Message面向语音输入，增加原生润色与句尾刷新；它仍然不是带说话人结构的会议转写接口。",
+                    "非流式Flash同时提供ASR、说话人结构、上下文、热词与润色；Next在此基础上增加泛音频理解。报告保留 30种语言、16种中文方言的支持范围。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "录音内的说话人标签用于区分发言者，不代表识别真实身份；项目页是录制示例，不是本站在线推理测试。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§1; §2.1–2.4; Table 1; §4",
+                  "source_id": "report"
+                }
+              ],
+              "id": "profiles",
+              "node_ids": [
+                "profiles"
+              ],
+              "summary": "Flash与Next的非流式接口支持说话人结构；泛音频理解仅由Next提供，Streaming与Message都不支持这两项。",
+              "title": "同一家族有五种形态，实时转写不自动拥有全部能力"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "作者将说话人转写表示为一组语段：开始时间、结束时间、说话人标签及文本。不同说话人的区间可以重叠，所以只把平面文字按句切开无法保留全部对话结构。辅助CTC分支提供初步识别及粗对齐，它不等于最终说话人转写或声音事件边界。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "训练分六阶段：音频编码器预训练、音频语言模型预训练、LLM冷却适配、监督微调、强化学习和多教师在线策略蒸馏。编码器先用BEST-RQ自监督，再接有监督音频文字任务；后续适配将声学证据接入Qwen MoE解码器。报告没有让读者仅靠模型家族名就确认每个部署实例的参数规模或服务配置。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "说话人标签在训练token中约占 2.90%，损失贡献约 1.97%，作者将其损失权重设为 10，避免结构信号被大量转写文字淹没。时间表示调整到 80ms网格，以匹配 12.5Hz声学表示。这些是训练与表示设计；评估定位质量仍应看真实边界误差、重叠语音与说话人混淆。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "claim",
+                  "text": "结构化输出的价值是让错误可分别检查：字词、角色和时间应分开验收，不能以一项转写错误率覆盖全部质量。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§2.2; §3; §3.4",
+                  "source_id": "report"
+                }
+              ],
+              "id": "structure",
+              "node_ids": [
+                "structure"
+              ],
+              "summary": "系统联合输出内容、说话人标签和时间边界；稀疏标签需要专门监督，80ms网格不等于 80ms实测精度。",
+              "title": "说话人和时间不是事后装饰，而是训练目标的一部分"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "表 3的GigaSpeechBench七语言结果把各语言指定的CER或WER做非加权宏平均，3.0为 22.50%、3.1为 15.09%。它不是把 30种语言所有词合并后的错误率。表 2还给出升级的反例：FLEURS-en的WER由 4.17%变为 4.72%，AISHELL-1的CER由 1.03%变为 1.08%。更丰富的能力不能自动推出每个旧任务都更准。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "表 2分开列官方已发表基准与统一API流程实测，前者的预处理和计分方式可能不同。跨厂商定量结论优先在Panel B内部比较；在该组 7个测试集上，Qwen在 4项最低，Fun-ASR-Flash在另外 3项最低。不应把两组拼成一个无条件排行榜。"
+                },
+                {
+                  "alt": "四个会议测试集的cpWER对照：Qwen基础版与Next各有优势",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据表 7独立重绘；约 4分钟分块，cpWER为百分比、越低越好。未验证整小时录音的身份一致性。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§5.8 Table 7",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct28-asr-diarization.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "表 7统一为约 4分钟音频块，分别报告DER（说话人分离错误）、WER（转写词错误）和cpWER（考虑角色排列后的拼接词错误）。AliMeeting-test的cpWER，基础版为 15.78%、Next为 12.04%；MagicData-RAMC则基础版 13.32%、Next 13.58%。因此Next并非每集每项更优；分块结果也不足以证明整场会议跨小时的标签一致性。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§5.1 Tables 2–3; §5.8 Table 7",
+                  "source_id": "report"
+                }
+              ],
+              "id": "accuracy",
+              "node_ids": [
+                "accuracy"
+              ],
+              "summary": "七语言宏平均 22.50%→15.09%与四分钟会议分块结果分别成立；CER、WER、DER和cpWER不可混成总分。",
+              "title": "多语种与会议结果要看同口径，升级并非处处领先"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "Qwen Message与Doubao的三项延迟及原始部署条件",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据表 6重绘；单位ms、越低越好。10路并发；Qwen使用H100自部署，Doubao使用API；作者假设网络延迟相当。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§5.7 Table 6",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct28-asr-latency.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "表 6报告出字延迟 220ms对 530ms、首字 100ms对 570ms、尾字 103ms对 307ms，分别对应Qwen Message与Doubao Streaming ASR 2.0。作者使用 10路并发，Qwen为NVIDIA H100自部署、豆包为API，并假设网络延迟相当。三个数值描述不同阶段，不能选择最有利的一项就宣称生产系统全面快 5.7倍；也不是相同硬件和负载下的吞吐或成本比较。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "原生润色在内部五点评分中把可读性从 2.53提高到 3.44，但忠实性从原始转写 3.51变为 3.44。它是输出目标的取舍，不应默认适合法律证词或逐字引文。长上下文纠错表展示早先词语如何帮助后文识别，属于定性例子，不能替代公开测试集的整体增益。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Next泛音频理解包含描述、时间定位与问答。表 8的MMAU准确率为 81.60%，MMSU为 82.24%；后者仍低于Gemini-3.1-Pro的 85.30%。Clotho-Moment和DESED的 82.20与 66.60采用mIoU%，不能与问答准确率混比。公开基准提供任务线索，未覆盖本站的噪声环境、领域术语、隐私与账户开放条件。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§5.4–5.7; §5.9 Table 8",
+                  "source_id": "report"
+                }
+              ],
+              "id": "deployment",
+              "node_ids": [
+                "deployment"
+              ],
+              "summary": "100ms首字延迟受异构部署条件约束；润色可读性与忠实性、声音问答与时间定位分别评估。",
+              "title": "低延迟、润色和声音理解，各自需要独立的采用验证"
+            }
+          ],
+          "title": "Qwen-Audio-3.1-ASR：从转写到对话结构，先选对变体再比较分数"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-20",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "arXiv:2610.28711v1"
+          }
+        ],
+        "slug": "qwen-audio31-asr-structure-and-evaluation",
+        "takeaway": "Flash与Next的非流式接口支持说话人结构；泛音频理解仅由Next提供，Streaming与Message都不支持这两项。"
+      },
+      "title": "Qwen-Audio-3.1-ASR：从转写到对话结构，先选对变体再比较分数",
+      "translations": {
+        "en": {
+          "fields": {
+            "100ms首字延迟受异构部署条件约束；润色可读性与忠实性、声音问答与时间定位分别评估。": "The 100ms first-character result depends on heterogeneous deployment conditions. Evaluate polishing readability versus faithfulness, and audio question answering versus temporal grounding, separately.",
+            "FieldToFit分析：这份报告最值得采用的是任务分解。会议记录先验收字词、角色与时间，语音输入另看首字与句尾体验，声音问答再验证音频证据。先确认任务所需变体和实际开放方式，再以固定样本比较质量、等待时间、费用和失败恢复。本站建议不属于作者实验结论。": "FieldToFit analysis: the useful adoption lesson is task decomposition. Validate words, speakers and time for meetings; first-character and end-of-utterance behavior for voice input; and acoustic evidence for audio questions. Select the required variant and verify actual access before comparing quality, wait time, cost and failure recovery on fixed samples. This advice is not an experimental finding.",
+            "Filetrans面向异步文件转写，Streaming面向实时转写：两者支持上下文与热词，但不支持说话人结构、泛音频理解或原生润色。": "Filetrans targets asynchronous file transcription and Streaming targets real-time transcription. Both support context and hotwords, but neither supports diarization, general audio understanding or native polishing.",
+            "Flash与Next的非流式接口支持说话人结构；泛音频理解仅由Next提供，Streaming与Message都不支持这两项。": "Non-streaming Flash and Next support speaker-structured transcription. Only Next adds general audio understanding; Streaming and Message support neither extension.",
+            "Message面向语音输入，增加原生润色与句尾刷新；它仍然不是带说话人结构的会议转写接口。": "Message targets voice input, adding native polishing and an utterance-end refresh; it is still not a speaker-structured meeting-transcription interface.",
+            "Next泛音频理解包含描述、时间定位与问答。表 8的MMAU准确率为 81.60%，MMSU为 82.24%；后者仍低于Gemini-3.1-Pro的 85.30%。Clotho-Moment和DESED的 82.20与 66.60采用mIoU%，不能与问答准确率混比。公开基准提供任务线索，未覆盖本站的噪声环境、领域术语、隐私与账户开放条件。": "Next audio understanding covers captioning, temporal grounding and question answering. Table 8 reports 81.60% accuracy on MMAU and 82.24% on MMSU; the latter remains below Gemini-3.1-Pro at 85.30%. Clotho-Moment and DESED scores of 82.20 and 66.60 use mIoU%, which cannot be compared as question-answering accuracy. Public benchmarks guide task selection but do not validate FieldToFit’s noise conditions, terminology, privacy requirements or account availability.",
+            "Qwen Message与Doubao的三项延迟及原始部署条件": "Three latency metrics for Qwen Message and Doubao, with original deployment conditions",
+            "Qwen-Audio-3.1-ASR把转写扩展到说话人结构与泛音频理解。四条结论与三张本站重绘，分清部署变体、训练目标、同口径评测及延迟边界。": "Qwen-Audio-3.1-ASR extends transcription to speaker structure and general audio understanding. Four findings and three original redraws distinguish deployment profiles, training targets, comparable evaluations and latency limits.",
+            "Qwen-Audio-3.1-ASR：从转写到对话结构，先选对变体再比较分数": "Qwen-Audio-3.1-ASR: from transcription to conversation structure—choose the variant before comparing scores",
+            "七语言宏平均 22.50%→15.09%与四分钟会议分块结果分别成立；CER、WER、DER和cpWER不可混成总分。": "The seven-language macro-average change from 22.50% to 15.09% and four-minute meeting-chunk results hold under different protocols. CER, WER, DER and cpWER are not one score.",
+            "五种部署变体的能力矩阵：ASR、说话人结构、声音理解、上下文、热词和润色": "Capability matrix for five profiles: ASR, diarization, audio understanding, context, hotwords and polishing",
+            "低延迟、润色和声音理解，各自需要独立的采用验证": "Validate latency, polishing and audio understanding separately",
+            "作者将说话人转写表示为一组语段：开始时间、结束时间、说话人标签及文本。不同说话人的区间可以重叠，所以只把平面文字按句切开无法保留全部对话结构。辅助CTC分支提供初步识别及粗对齐，它不等于最终说话人转写或声音事件边界。": "The authors represent diarized transcripts as segments with start time, end time, speaker label and text. Intervals for different speakers may overlap, so splitting flat text into sentences cannot preserve all conversation structure. An auxiliary CTC branch supplies preliminary recognition and coarse alignment; it is not the final diarized transcript or sound-event boundary.",
+            "作者评测，未独立复现；能力按部署变体区分，跨来源分数、分块说话人测试与异构延迟测试均有适用边界。": "Author evaluations, not independently replicated. Capabilities vary by deployment profile; cross-source scores, chunked diarization tests and heterogeneous latency tests have distinct limits.",
+            "分别核对条件与证据": "Check conditions and evidence separately",
+            "原生润色在内部五点评分中把可读性从 2.53提高到 3.44，但忠实性从原始转写 3.51变为 3.44。它是输出目标的取舍，不应默认适合法律证词或逐字引文。长上下文纠错表展示早先词语如何帮助后文识别，属于定性例子，不能替代公开测试集的整体增益。": "On internal five-point ratings, native polishing raises readability from 2.53 to 3.44, while faithfulness moves from 3.51 for raw transcription to 3.44. This is an output-objective trade-off and should not be assumed suitable for legal testimony or verbatim quotation. Long-context correction examples show how earlier terms help later recognition, but are qualitative rather than an aggregate gain on a public test set.",
+            "同一家族有五种形态，实时转写不自动拥有全部能力": "Five profiles share a family, but real-time ASR does not inherit every capability",
+            "四个会议测试集的cpWER对照：Qwen基础版与Next各有优势": "cpWER across four meeting test sets: base Qwen and Next have different strengths",
+            "多语种与会议结果要看同口径，升级并非处处领先": "Compare multilingual and meeting results under matched protocols; upgrades do not win everywhere",
+            "录音内的说话人标签用于区分发言者，不代表识别真实身份；项目页是录制示例，不是本站在线推理测试。": "Recording-local speaker labels distinguish speakers; they do not identify real people. The project page shows recordings, not live inference tested by FieldToFit.",
+            "报告将系统目标从“把语音写成文字”扩展为识别内容、说话人及时间关系，并进一步理解环境声、音乐和声音事件。基础架构由音频编码器、适配器与语言模型解码器组成，任务指令决定输出形式；可选历史文本、目标语言和热词用于条件控制。统一架构并不意味着接口能力相同。": "The report extends the goal from writing down speech to recognizing content, speakers and temporal relationships, and then interpreting environmental sounds, music and acoustic events. An audio encoder, adapter and language-model decoder form the core architecture. Task instructions select the output, while optional history, target languages and hotwords condition it. A shared architecture does not make interfaces equivalent.",
+            "本站依据表 1独立重绘。支持矩阵描述报告中的能力，不代表账户已开放或相同定价。": "Independent FieldToFit redraw of Table 1. Reported capabilities do not establish account availability or identical pricing.",
+            "本站据表 6重绘；单位ms、越低越好。10路并发；Qwen使用H100自部署，Doubao使用API；作者假设网络延迟相当。": "Redraw of Table 6; milliseconds, lower is better. 10 concurrent streams; Qwen on self-hosted H100 versus Doubao API, assuming comparable network latency.",
+            "本站据表 7独立重绘；约 4分钟分块，cpWER为百分比、越低越好。未验证整小时录音的身份一致性。": "Independent redraw of Table 7. Approximately 4-minute chunks; cpWER is a percentage, lower is better. Hour-long speaker consistency was not validated.",
+            "来源与修订：Chuanmeng Bian、Jiajun He等，Alibaba Token Foundry／Alibaba Group，Qwen-Audio-3.1-ASR Technical Report，arXiv:2610.28711v1，首次 2026-10-20。本站 2026-10-28阅读主文全部章节与表格文字；三图为本站独立重绘，不复用原图，不伪造误差线。原图未逐张视觉审计，未复现训练、音频推理、延迟、账单或全账户开放。原报告日期、核对日和网站首次发表分别保留。": "Sources and revisions: Chuanmeng Bian, Jiajun He and colleagues, Alibaba Token Foundry / Alibaba Group, Qwen-Audio-3.1-ASR Technical Report, arXiv:2610.28711v1, first published 2026-10-20. FieldToFit read all main sections and table text on 2026-10-28. Three original redraws reproduce neither original artwork nor invented error bars. Original figures were not individually visually audited; training, inference, latency, billing and all-account access were not reproduced. Source, checking and site-publication dates remain distinct.",
+            "系统联合输出内容、说话人标签和时间边界；稀疏标签需要专门监督，80ms网格不等于 80ms实测精度。": "The model jointly outputs text, speaker labels and time boundaries. Sparse labels require dedicated supervision; an 80ms grid is not measured 80ms accuracy.",
+            "结构化输出的价值是让错误可分别检查：字词、角色和时间应分开验收，不能以一项转写错误率覆盖全部质量。": "Structured output makes errors separately inspectable: validate words, speakers and time independently rather than treating one transcription error rate as complete quality coverage.",
+            "表 2分开列官方已发表基准与统一API流程实测，前者的预处理和计分方式可能不同。跨厂商定量结论优先在Panel B内部比较；在该组 7个测试集上，Qwen在 4项最低，Fun-ASR-Flash在另外 3项最低。不应把两组拼成一个无条件排行榜。": "Table 2 separates previously published results from the authors’ unified API evaluations; preprocessing and scoring can differ in published sources. Quantitative cross-vendor comparisons should primarily stay within Panel B: Qwen has the lowest error on 4 of 7 test sets, and Fun-ASR-Flash on the other 3. Combining panels into an unconditional ranking would hide protocol differences.",
+            "表 3的GigaSpeechBench七语言结果把各语言指定的CER或WER做非加权宏平均，3.0为 22.50%、3.1为 15.09%。它不是把 30种语言所有词合并后的错误率。表 2还给出升级的反例：FLEURS-en的WER由 4.17%变为 4.72%，AISHELL-1的CER由 1.03%变为 1.08%。更丰富的能力不能自动推出每个旧任务都更准。": "Table 3 takes an unweighted mean of each of seven GigaSpeechBench languages’ specified CER or WER: 22.50% for 3.0 and 15.09% for 3.1. This is not a pooled word error rate across all 30 languages. Table 2 also shows regressions: FLEURS-en WER moves from 4.17% to 4.72%, and AISHELL-1 CER from 1.03% to 1.08%. Broader capabilities do not automatically improve every older task.",
+            "表 6报告出字延迟 220ms对 530ms、首字 100ms对 570ms、尾字 103ms对 307ms，分别对应Qwen Message与Doubao Streaming ASR 2.0。作者使用 10路并发，Qwen为NVIDIA H100自部署、豆包为API，并假设网络延迟相当。三个数值描述不同阶段，不能选择最有利的一项就宣称生产系统全面快 5.7倍；也不是相同硬件和负载下的吞吐或成本比较。": "Table 6 reports text-emission latency of 220ms versus 530ms, first-character latency of 100ms versus 570ms and last-character latency of 103ms versus 307ms for Qwen Message and Doubao Streaming ASR 2.0 respectively. The authors use 10 concurrent streams, self-hosted NVIDIA H100 for Qwen and an API for Doubao, assuming comparable network latency. These metrics describe different stages; selecting one does not establish a universal 5.7-fold production speedup, matched-hardware throughput or cost advantage.",
+            "表 7统一为约 4分钟音频块，分别报告DER（说话人分离错误）、WER（转写词错误）和cpWER（考虑角色排列后的拼接词错误）。AliMeeting-test的cpWER，基础版为 15.78%、Next为 12.04%；MagicData-RAMC则基础版 13.32%、Next 13.58%。因此Next并非每集每项更优；分块结果也不足以证明整场会议跨小时的标签一致性。": "Table 7 standardizes recordings into approximately 4-minute chunks and reports DER for diarization, WER for transcription and cpWER for concatenated permutation-aware word error. AliMeeting-test cpWER is 15.78% for the base variant and 12.04% for Next, while MagicData-RAMC is 13.32% versus 13.58%. Next therefore does not win every metric on every set, and chunked results do not establish speaker-label consistency across an hours-long meeting.",
+            "训练分六阶段：音频编码器预训练、音频语言模型预训练、LLM冷却适配、监督微调、强化学习和多教师在线策略蒸馏。编码器先用BEST-RQ自监督，再接有监督音频文字任务；后续适配将声学证据接入Qwen MoE解码器。报告没有让读者仅靠模型家族名就确认每个部署实例的参数规模或服务配置。": "Training has six stages: audio-encoder pretraining, audio-language pretraining, LLM cooldown adaptation, supervised fine-tuning, reinforcement learning and multi-teacher on-policy distillation. The encoder first uses BEST-RQ self-supervision, followed by supervised audio-text tasks; subsequent adaptation connects acoustic evidence to a Qwen MoE decoder. The family name alone does not establish every deployment instance’s parameter count or service configuration.",
+            "说话人和时间不是事后装饰，而是训练目标的一部分": "Speaker and time structure are training targets, not cosmetic additions",
+            "说话人标签在训练token中约占 2.90%，损失贡献约 1.97%，作者将其损失权重设为 10，避免结构信号被大量转写文字淹没。时间表示调整到 80ms网格，以匹配 12.5Hz声学表示。这些是训练与表示设计；评估定位质量仍应看真实边界误差、重叠语音与说话人混淆。": "Speaker-label tokens account for about 2.90% of training tokens and 1.97% of loss, so the authors apply a loss weight of 10 to prevent structural supervision from being overwhelmed by transcript text. Time representations use an 80ms grid aligned with 12.5Hz acoustic representations. These are training and representation choices; actual localization quality still requires boundary-error, overlap and speaker-confusion evaluation.",
+            "非流式Flash同时提供ASR、说话人结构、上下文、热词与润色；Next在此基础上增加泛音频理解。报告保留 30种语言、16种中文方言的支持范围。": "Non-streaming Flash provides ASR, diarization, context, hotwords and polishing. Next additionally supports general audio understanding. The family retains support for 30 languages and 16 Chinese dialects.",
+            "首次完整分析：四条结论与同号论述，三张本站重绘，保留变体、训练、评测与部署边界。": "First full analysis: four findings and matching arguments, three original redraws, and explicit variant, training, evaluation and deployment limits."
+          },
+          "source_hash": "e9af270617e83f184de6e50af98e1f319dc849ff0fe6c7c6b7301980a03c0568",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
       "checked_at": "2026-10-27",
       "editor": "FieldToFit",
       "event_date": "2026-10-26",
-      "highlight": true,
+      "highlight": false,
       "id": "D-266",
       "interpretation": [
         {
@@ -39,7 +733,7 @@
       "organization": "Google",
       "publication": {
         "first_published_at": "2026-10-27T05:23:12.116232+00:00",
-        "updated_at": "2026-10-27T05:23:12.116232+00:00"
+        "updated_at": "2026-10-28T01:13:00.425967+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -80,7 +774,7 @@
             "请求级参数要求Python google-genai≥2.33.0或JavaScript @google/genai≥2.31.0；其他语言另核。存储、训练用途及其他留存政策分别理解。": "Request-level support requires Python google-genai≥2.33.0 or JavaScript @google/genai≥2.31.0; check other languages separately. Storage, training use and other retention policies are distinct.",
             "请求设置优先": "Request settings take precedence"
           },
-          "source_hash": "08f67c3e1a3b03cd4c45db0e3bb875b5478e33508e5ccc0fea92c3568dede916",
+          "source_hash": "b8a613eb0d75b9687a680cf78a6848af5ad5e4b5b501c8dc2ae16529a110d0fb",
           "state": "reviewed"
         }
       }
@@ -90,7 +784,7 @@
       "checked_at": "2026-10-27",
       "editor": "FieldToFit",
       "event_date": "2026-10-27",
-      "highlight": true,
+      "highlight": false,
       "id": "D-265",
       "interpretation": [
         {
@@ -123,7 +817,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-10-27T05:22:45.872365+00:00",
-        "updated_at": "2026-10-27T05:22:45.872365+00:00"
+        "updated_at": "2026-10-28T01:13:27.150437+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -158,7 +852,7 @@
             "标准上下文超过 200K后压缩继续，修复压缩后旧文件状态、迟连接MCP工具与后台会话恢复问题；不代表获得 1M上下文。": "Standard-context sessions compact and continue beyond 200K. Fixes cover stale files after compaction, late MCP tools and background recovery; this does not grant a 1M context.",
             "迟连接MCP服务器的工具可用于子代理；修复后台子代理仍工作时隔离工作树被提前移除。": "Tools from late-connected MCP servers become available to subagents; fixes isolation worktrees being removed while background subagents are still working."
           },
-          "source_hash": "a5912549874f2ffcd67a55bdb791c7379065150d54d6256ab6b81c016cf87014",
+          "source_hash": "92958cb2ce624cdfd11912e0ecac39a3acb19e39680d9f1e66d539d681e3525b",
           "state": "reviewed"
         }
       }
@@ -636,7 +1330,7 @@
       },
       "editor": "FieldToFit",
       "event_date": "2026-10-26",
-      "highlight": true,
+      "highlight": false,
       "id": "D-263",
       "interpretation": [
         {
@@ -663,7 +1357,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-27T04:27:34.193094+00:00",
-        "updated_at": "2026-10-27T05:23:37.960726+00:00"
+        "updated_at": "2026-10-28T01:13:53.515418+00:00"
       },
       "related": [
         {
@@ -710,7 +1404,7 @@
             "数学与ETH相关公开材料可供进一步检查；物理组由合作工作组决定开放。本站只核对公告与开放安排，未检查全部证明、Lean依赖或外部学术结论。": "Public mathematics and ETH artifacts permit further examination; the physics collaboration controls release. FieldToFit checked the announcement and access arrangements, not every proof, Lean dependency or external scholarly conclusion.",
             "材料开放不等于证明通过审查": "Open artifacts are not validated proofs"
           },
-          "source_hash": "1445674f65391e06b2a108d0925ceaa4e16fbd50a6248fec7e2e1026974d29e3",
+          "source_hash": "674a7b998067e7c6e6edb33f1910008a57bd63c8f69f038466da9091ec728e37",
           "state": "reviewed"
         }
       }
@@ -908,7 +1602,7 @@
       },
       "editor": "FieldToFit",
       "event_date": "2026-10-26",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -945,7 +1639,7 @@
             "source_id": "source-6"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "GPT-6.1 Terra：先核入口，再比任务成本",
         "limits": [
           {
@@ -1002,7 +1696,7 @@
         "hot_card_first_published_at": "2026-10-27T05:24:05.937210+00:00",
         "hot_card_selected_at": "2026-10-27T05:24:05.937210+00:00",
         "report_selected_at": "2026-10-27T05:24:05.937195+00:00",
-        "updated_at": "2026-10-27T05:24:05.937195+00:00"
+        "updated_at": "2026-10-28T01:14:21.239002+00:00"
       },
       "related": [
         {
@@ -1413,7 +2107,7 @@
             "面向视觉理解、电脑操作与日常专业任务，效果仍需用自己的样本验证。": "Designed for visual reasoning, computer use and everyday professional work; validate results on your own samples.",
             "首次完整分析：四条结论、对应论述和两张本站重绘／示意。": "First full analysis: four findings, matching arguments and two original redraws / schematics."
           },
-          "source_hash": "8b71cafab282064eeeb0205770b900113666184bc47e5b1ed1f829a350652a31",
+          "source_hash": "29658031ab631c56055e0e0278e217627e7520562405f1ef533baffe6555e271",
           "state": "reviewed"
         }
       }
@@ -1556,7 +2250,7 @@
             "source_id": "release310"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "Claude Code更新了权限边界，升级后仍要验证",
         "limits": [
           {
@@ -1680,7 +2374,7 @@
             "留意Windows与编辑器审批": "Check Windows and editor approvals",
             "长任务兼容与恢复": "Long-task compatibility and recovery"
           },
-          "source_hash": "8e9ee78fe39a52361bdc421eb0f33f2212b296ca5e11c99c6ff989cea4ae5de3",
+          "source_hash": "78a09fc1b8cbe3dd814c951de721c1120797ea6a0139acdbd1020ae57af75190",
           "state": "reviewed"
         }
       }
@@ -2882,7 +3576,7 @@
             "source_id": "changelog"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Kimi K3.1 Pro上线，提速也要核额度",
         "limits": [
           {
@@ -3022,7 +3716,7 @@
             "速度与费用未实测": "Speed and costs not tested",
             "长代码任务开发者": "Developers with long coding tasks"
           },
-          "source_hash": "9736893c2f5eda81ed6b3d77b7093a6e9c75281f025d10aee6e66154c1e90393",
+          "source_hash": "ca3ce0ae995996d52a5101cde753609dc3ddda72b466b0822771d379c25e5d5c",
           "state": "reviewed"
         }
       }
@@ -41210,7 +41904,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-27",
+  "reviewed_at": "2026-10-28",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

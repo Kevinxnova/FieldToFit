@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.11"></a>
+## v1.17.11 · Oracle采用条件与Qwen语音结构分析 · 2026-10-28
+<!-- site-deployed:2026-10-28 -->
+<!-- public-title:en: Oracle adoption conditions and Qwen audio structure analysis -->
+<!-- release-summary:zh:start -->
+- 发布已选Oracle采购合作、Claude Code 2.1.312动态，同步本期速览、近期总表及四份对应档案。
+- 新增Qwen-Audio-3.1-ASR技术报告分析，四条结论与三张本站重绘，保留变体能力、训练监督、评测口径及部署限制。
+- 提供Oracle中英热点分享卡，正式发表后轮替首页报告与信息卡，旧内容继续保留全部索引和稳定入口。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Oracle procurement partnership and Claude Code 2.1.312 updates, with current highlights, the recent index and four related dossiers.
+- Add a Qwen-Audio-3.1-ASR analysis with four findings and three original redraws, preserving variant capabilities, training supervision, evaluation protocols and deployment limits.
+- Provide a bilingual Oracle share card; successful publication rotates homepage reports and cards while preserving complete indexes and stable links.
+<!-- release-summary:en:end -->
+
+用户明确选择2026-10-28 A、B、报告1、卡1。A与卡1共用D-268并分别审核，B为D-269，报告为D-270。对应CW-M01／CW-A01／CW-A02／CW-M07。以v1.17.10为基线的兼容内容与静态资源patch，无新模块、主要流程或协议变化，无迁移。报告2未选，Signals普通动态D-262去重；模型榜单不更新。实际验证见[本批记录](docs/validation/2026-10-28-oracle-qwen-asr.md)。
+
 <a id="v1.17.10"></a>
 ## v1.17.10 · Terra授权边界与GRAFT梯度路由 · 2026-10-27
 <!-- site-deployed:2026-10-27 -->
