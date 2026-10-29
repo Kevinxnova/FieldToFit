@@ -1491,6 +1491,25 @@
           "kind": "table",
           "rows": [
             [
+              "[Qwen-Image-PE：提示增强怎样学会设计，为什么扩写也会退步？](https://fieldtofit.top/news/D-275)",
+              "2026-10-24",
+              "CRD监督与GDR奖励如何让提示增强学习视觉设计？四条结论、三张本站重绘，分清同主干提升、低信息密度退步、内部 397B与迁移边界。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[Qwen-Audio-3.1-ASR：从转写到对话结构，先选对变体再比较分数](https://fieldtofit.top/news/D-270)",
               "2026-10-20",
               "Qwen-Audio-3.1-ASR把转写扩展到说话人结构与泛音频理解。四条结论与三张本站重绘，分清部署变体、训练目标、同口径评测及延迟边界。"
@@ -1730,6 +1749,12 @@
           "id": "oct28-R1-project",
           "title": "Qwen-Audio-3.1-ASR author project page",
           "url": "https://qwenaudio.github.io/qwen-audio-3.1-asr/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct29-R1-report",
+          "title": "Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement v1",
+          "url": "https://arxiv.org/html/2610.33472v1"
         }
       ],
       "state": "published",
@@ -1740,6 +1765,7 @@
             "27B 的稠密路线与 Flash-Next 的实验架构应分别展示；数字和后缀不足以表达这层关系。": "The 27B dense approach and Flash-Next's experimental architecture should appear separately. Numbers and suffixes alone do not express that relationship.",
             "Alibaba Cloud · Qwen-Omni API 文档": "Alibaba Cloud · Qwen-Omni API Document",
             "Apache-2.0；原样转载固定仓库文件，保留项目署名及完整许可证。": "Apache-2.0; Reprint fixed repository files as they are, and retain project attributions and complete licenses.",
+            "CRD监督与GDR奖励如何让提示增强学习视觉设计？四条结论、三张本站重绘，分清同主干提升、低信息密度退步、内部 397B与迁移边界。": "How do CRD supervision and GDR rewards teach prompt enhancement visual design? Four findings and three original redraws distinguish matched-backbone gains, low-density regressions, internal 397B and transfer limits.",
             "Flash-Next 的 Ngram 与 MTP 也属于模型材料，不能只拿活跃参数数值替代完整组成；vLLM 的适配记录提供了继续阅读入口。": "Ngram and MTP are part of Flash-Next's architecture. Active-parameter counts alone do not describe the full design. vLLM adaptation records provide a further reading entry point.",
             "Gated DeltaNet 与 QSA microblocks；另包含 Ngram Embedding 和 MTP 组件": "Gated DeltaNet and QSA microblocks; also including Ngram Embedding and MTP components",
             "LICENSE；固定版本原样全文，未执行其中命令。": "LICENSE; THE FULL TEXT OF THE pinned version IS AS IT IS, AND THE COMMAND HAS NOT BEEN EXECUTED.",
@@ -1751,6 +1777,7 @@
             "README.md；固定版本原样全文，未执行其中命令。": "README.md; the full text of the pinned version as it is, and the command in it has not been executed.",
             "[27B 模型卡](https://huggingface.co/Qwen/Qwen3.8-27B)": "[27B Model Card](https://huggingface.co/Qwen/Qwen3.8-27B)",
             "[Qwen-Audio-3.1-ASR：从转写到对话结构，先选对变体再比较分数](https://fieldtofit.top/news/D-270)": "[Qwen-Audio-3.1-ASR: from transcription to conversation structure—choose the variant before comparing scores](https://fieldtofit.top/news/D-270)",
+            "[Qwen-Image-PE：提示增强怎样学会设计，为什么扩写也会退步？](https://fieldtofit.top/news/D-275)": "[Qwen-Image-PE: how prompt enhancement learns design—and why expansion can regress](https://fieldtofit.top/news/D-275)",
             "[发布](https://qwen.ai/blog?id=qwen3.8-omni-flash) · [API](https://www.alibabacloud.com/help/en/model-studio/qwen-omni)": "[Release](https://qwen.ai/blog?id=qwen3.8-omni-flash) · [API](https://www.alibabacloud.com/help/en/model-studio/qwen-omni)",
             "[模型卡](https://huggingface.co/Qwen/Qwen3.8-Flash-Next) · [发布博客](https://qwen.ai/blog?id=qwen3.8-flash-next)": "[Model Card](https://huggingface.co/Qwen/Qwen3.8-Flash-Next) · [Publish Blog](https://qwen.ai/blog?id=qwen3.8-flash-next)",
             "docs/en/installation.md；固定版本原样全文，未执行其中命令。": "docs/en/installation.md; the full text of the pinned version as it is, and the command is not executed.",
@@ -1776,6 +1803,7 @@
             "日期与状态": "Date and status",
             "未确认本站全文再分发依据，只提供原始入口；中文介绍与解读为 FieldToFit 整理。": "The basis for the full text of FieldToFit redistribution has not been confirmed, and only the original entrance is provided; the Chinese introduction and interpretation are sorted out by FieldToFit.",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
+            "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期已核实事件": "Current verified event",
             "本次动态：[D-19 Qwen3.8-Omni-Flash](https://fieldtofit.top/for-you#news-d-19)。旧版本行保留原有日期，本次补充不代表重新实测所有分支。": "This development: [D-19 Qwen3.8-Omni-Flash](https://fieldtofit.top/for-you#news-d-19). Older version rows retain their original dates. This addition does not indicate retesting every branch.",
             "模型卡": "Model cards",
@@ -1788,8 +1816,8 @@
             "预览 Qwen4 架构方向": "Preview the direction of Qwen4 architecture",
             "首发日待核；官方模型卡可见": "The first date is to be approved; the official model card can be seen"
           },
-          "reviewed_at": "2026-10-28T01:08:52.528931+00:00",
-          "source_hash": "f2eef9b90d2ecd0eb3f7fd259f8c58583477831ccfb30f3d0b0abaab35dac17e",
+          "reviewed_at": "2026-10-29T02:52:14.733122+00:00",
+          "source_hash": "6a1cf8828f7a456acb2e7f762e939e351341efe1d40ee68d4f6369087003c59f",
           "state": "reviewed"
         }
       },
@@ -5250,6 +5278,30 @@
           "kind": "table",
           "rows": [
             [
+              "[ChatGPT Pro／Business新增API赠额：激活、组织归属与使用范围有条件](https://fieldtofit.top/news/D-272)",
+              "2026-10-28",
+              "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。"
+            ],
+            [
+              "[ChatGPT / Codex：ServiceNow MCP已上架，语音、安全与集成分阶段推出](https://fieldtofit.top/news/D-273)",
+              "2026-10-28",
+              "ServiceNow MCP插件已在OpenAI marketplace提供；增强功能预计 2026年底，语音、安全与AI Workflow Factory的Codex集成另有 2027年时间表。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[Oracle采购入口扩展，AI Workspace仍需核对开放阶段](https://fieldtofit.top/news/D-268)",
               "2026-10-27",
               "美国客户可经Oracle Marketplace采购OpenAI API、Codex与ChatGPT Work，符合条件时使用Oracle Universal Credits；Workspace仍在开发，功能按具体开放状态核对。"
@@ -5925,6 +5977,18 @@
           "id": "oct28-A-oracle-announcement",
           "title": "Oracle reinvents enterprise computing with OpenAI",
           "url": "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct29-B-terms",
+          "title": "API credits benefit for eligible ChatGPT subscriptions",
+          "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct29-C-announcement",
+          "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+          "url": "https://openai.com/index/openai-servicenow-partnership-expansion/"
         }
       ],
       "state": "published",
@@ -5968,11 +6032,14 @@
             "OpenAI模型计划进入Google Cloud，全面开放仍待后续": "OpenAI models are planned for Google Cloud; general availability is still ahead",
             "OpenAI训练隔离官方说明": "Official OpenAI training containment article",
             "Responses用于工具调用；Chat Completions不含工具调用；1,050,000上下文、128k输出": "Responses are used for tool calls; Chat Completions do not contain tool calls; 1,050,000 context, 128k output",
+            "ServiceNow MCP插件已在OpenAI marketplace提供；增强功能预计 2026年底，语音、安全与AI Workflow Factory的Codex集成另有 2027年时间表。": "The ServiceNow MCP plugin is available in the OpenAI marketplace. Enhanced capabilities are expected by late 2026; voice, security and Codex in AI Workflow Factory follow separate 2027 schedules.",
             "Sol分支后续型号": "Sol branch follow-up model",
             "Terra API模型与标准计费": "Terra API model and standard pricing",
             "Tibo官方Day 22 原帖": "Tibo official Day 22 original post",
             "Tibo转引的OpenAI原帖": "OpenAI original post quoted by Tibo",
             "Work／Codex官方更新日志": "Official Work / Codex changelog",
+            "[ChatGPT / Codex：ServiceNow MCP已上架，语音、安全与集成分阶段推出](https://fieldtofit.top/news/D-273)": "[ChatGPT / Codex: ServiceNow MCP is available, with phased voice, security and integration plans](https://fieldtofit.top/news/D-273)",
+            "[ChatGPT Pro／Business新增API赠额：激活、组织归属与使用范围有条件](https://fieldtofit.top/news/D-272)": "[ChatGPT Pro/Business API credits: activation, organization and usage conditions](https://fieldtofit.top/news/D-272)",
             "[GPT-5.6 指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)": "[GPT-5.6 Guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)",
             "[GPT-6 指南](https://developers.openai.com/api/docs/guides/latest-model)": "[GPT-6 Guide](https://developers.openai.com/api/docs/guides/latest-model)",
             "[GPT-6.1 Terra进入Work与Codex，Tibo列为官方Day 22](https://fieldtofit.top/news/D-260)": "[GPT-6.1 Terra reaches Work and Codex; Tibo marks official Day 22](https://fieldtofit.top/news/D-260)",
@@ -6025,6 +6092,7 @@
             "变化与用途": "Change and use",
             "变化与适用范围": "Changes and scope",
             "合作将把OpenAI前沿模型及Codex工作流接入Google Cloud Model Garden，并经Marketplace采购；公告称全面开放计划在未来数周，当前可申请接入。": "The partnership plans to bring OpenAI frontier models and Codex workflows to Google Cloud Model Garden, with Marketplace procurement. General availability is planned for the coming weeks; access requests are currently available.",
+            "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。": "Eligible paid Pro and Business subscriptions can activate credits for one API organization after at least 7 days. First grants are prorated; they neither increase ChatGPT or signed-in Codex allowances nor cover Codex API-key usage.",
             "在 5.6 已有能力上继续演进": "5.6 has the ability to continue to evolve",
             "复杂编程、电脑操作与专业任务；能力为官方定位": "Complex programming, computer operation and professional tasks; ability is the official positioning",
             "套餐与开放范围": "Plans and availability",
@@ -6058,6 +6126,7 @@
             "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。": "These events were checked on 2026-10-27. Existing models, prices, checking dates and history are preserved. The complete daily review of all dossier sources remains unfinished.",
             "本期事件／研究": "Current event / research",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
+            "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期已核实事件": "Current verified event",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M01 GPT, D-30, D-53。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M01 GPT, D-30, D-53. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次变化与用途": "Changes and uses this time",
@@ -6107,8 +6176,8 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "reviewed_at": "2026-10-28T01:08:26.327900+00:00",
-          "source_hash": "e2e767bf3a411595ec2ae66123376412ad7e425382f6fe9db2c2b81b17f03c08",
+          "reviewed_at": "2026-10-29T02:51:47.543918+00:00",
+          "source_hash": "be34a0fc610c519da04b3ea10d75bcd5afba6348bdf5bc51c6cacd1ab7c48706",
           "state": "reviewed"
         }
       },
@@ -7347,6 +7416,25 @@
           "kind": "table",
           "rows": [
             [
+              "[Gemini 4 Carbon：部分防御者先开放，区分介绍期与后续价格](https://fieldtofit.top/news/D-271)",
+              "2026-10-28",
+              "Carbon本周先向部分网络防御者及Fairwind伙伴开放。每百万输入／输出token介绍期 2／10美元，之后 4／20美元；普通开发者、企业与消费者入口仍待推出。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[Gemini新付费项目默认保存请求：检查store与项目日志设置](https://fieldtofit.top/news/D-266)",
               "2026-10-26",
               "2026-10-26起，新建付费项目Generate Content API默认store=true；旧项目保留设置。可按请求或项目关闭，不与训练用途混同。"
@@ -7901,6 +7989,12 @@
           "id": "oct27-D-logging",
           "title": "Gemini API logs and datasets",
           "url": "https://ai.google.dev/gemini-api/docs/logs-datasets#configure-logging"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct29-A-announcement",
+          "title": "Introducing Gemini 4 Carbon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
         }
       ],
       "state": "published",
@@ -7918,6 +8012,7 @@
             "API每百万输入／输出token介绍期为 2／10 美元，11 月 30 日结束后为 4／20 美元，缓存输入另算。这不是订阅费，不由训练或资源比例推算。": "Introductory API pricing is USD 2/10 per million input/output tokens, becoming USD 4/20 after 11/30; cached input is separate. These are not subscription fees or prices inferred from training-resource ratios.",
             "Argon 与现有分支分开理解": "Argon is understood separately from the existing branches.",
             "CC BY 4.0（文档正文）；Apache 2.0（代码示例）": "CC BY 4.0 (document body); Apache 2.0 (code example)",
+            "Carbon本周先向部分网络防御者及Fairwind伙伴开放。每百万输入／输出token介绍期 2／10美元，之后 4／20美元；普通开发者、企业与消费者入口仍待推出。": "Carbon initially rolls out to selected cyber defenders and Fairwind partners. Introductory input/output prices are $2/$10 per million tokens, later $4/$20; general developer, business and consumer access is still forthcoming.",
             "Develop with agents · Google 官方文档快照": "Develop with agents · Google official document snapshot",
             "Gemini 4 Argon模型卡专题": "Gemini 4 Argon model-card analysis",
             "Gemini API / Google AI Studio；未测任务成功率或真实延迟": "Gemini API / Google AI Studio; Untested task success rate or real delay",
@@ -7939,6 +8034,7 @@
             "Workspace 官方说明": "Workspace official description",
             "Workspace 快速发布从 10 月 5 日开始，计划发布从 10 月 19 日开始；Gemini 应用从 10 月 13 日逐步推出。": "Workspace Rapid Release starts on 10/5, Scheduled Release on 10/19, and the Gemini app begins a gradual rollout on 10/13.",
             "[Gemini 4 Argon：从合作方开放扩展到开发者与订阅用户](https://fieldtofit.top/news/D-134)": "[Gemini 4 Argon: access expands from partners to developers and subscribers](https://fieldtofit.top/news/D-134)",
+            "[Gemini 4 Carbon：部分防御者先开放，区分介绍期与后续价格](https://fieldtofit.top/news/D-271)": "[Gemini 4 Carbon: limited defender rollout, with introductory and later prices](https://fieldtofit.top/news/D-271)",
             "[Gemini新付费项目默认保存请求：检查store与项目日志设置](https://fieldtofit.top/news/D-266)": "[New paid Gemini projects store requests by default: check store and project logging](https://fieldtofit.top/news/D-266)",
             "[发布公告](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/) / [Live API](https://ai.google.dev/gemini-api/docs/live-api)": "[Announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/) / [Live API](https://ai.google.dev/gemini-api/docs/live-api)",
             "[官方材料](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)": "[Official Materials](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)",
@@ -7999,6 +8095,7 @@
             "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。": "The text has not been confirmed to distribute the permission; keep the official entrance, MCP can read the FieldToFit interpretation and source list.",
             "本批未收录这项原文正文；公告／模型卡与代码仓库许可需按具体材料分别核对。": "This batch does not include the text of this source text; the announcement/model card and the code repository license need to be checked separately according to specific materials.",
             "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。": "These events were checked on 2026-10-27. Existing models, prices, checking dates and history are preserved. The complete daily review of all dossier sources remains unfinished.",
+            "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期已核实事件": "Current verified event",
             "本次已核变化": "Verified change",
             "本次按明确官方公告补入上表，旧正文与原始日期保留；未独立复现性能、调用或迁移。": "This update appends the table from explicit official notices, retaining existing prose and original dates; performance, calls and migration have not been independently reproduced.",
@@ -8022,8 +8119,8 @@
             "页面标示 2026-08 更新；稳定版": "Page marking 2026-08 update; stable version",
             "页面标示 2026-09 更新；稳定版，首发日未核": "Page indication 2026-09 update; stable version, unchecked on the first day"
           },
-          "reviewed_at": "2026-10-27T05:04:10.680256+00:00",
-          "source_hash": "b348da34fabf8cab5b3f5a0ead0ad707d317b06b5f24adeeda8596c60e1f937c",
+          "reviewed_at": "2026-10-29T02:52:04.926701+00:00",
+          "source_hash": "08187c52f7c54b9e12cb072d97362e83a3ea1a5e04dd7343ad3d4cc83aaf6f56",
           "state": "reviewed"
         }
       },
@@ -10512,6 +10609,30 @@
           "kind": "table",
           "rows": [
             [
+              "[ChatGPT Pro／Business新增API赠额：激活、组织归属与使用范围有条件](https://fieldtofit.top/news/D-272)",
+              "2026-10-28",
+              "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。"
+            ],
+            [
+              "[ChatGPT / Codex：ServiceNow MCP已上架，语音、安全与集成分阶段推出](https://fieldtofit.top/news/D-273)",
+              "2026-10-28",
+              "ServiceNow MCP插件已在OpenAI marketplace提供；增强功能预计 2026年底，语音、安全与AI Workflow Factory的Codex集成另有 2027年时间表。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[Oracle采购入口扩展，AI Workspace仍需核对开放阶段](https://fieldtofit.top/news/D-268)",
               "2026-10-27",
               "美国客户可经Oracle Marketplace采购OpenAI API、Codex与ChatGPT Work，符合条件时使用Oracle Universal Credits；Workspace仍在开发，功能按具体开放状态核对。"
@@ -10591,6 +10712,24 @@
           "id": "oct28-A-oracle-announcement",
           "title": "Oracle reinvents enterprise computing with OpenAI",
           "url": "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct29-B-release",
+          "title": "ChatGPT release notes",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct29-B-terms",
+          "title": "API credits benefit for eligible ChatGPT subscriptions",
+          "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct29-C-announcement",
+          "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+          "url": "https://openai.com/index/openai-servicenow-partnership-expansion/"
         }
       ],
       "state": "published",
@@ -10601,6 +10740,9 @@
             "Codex 客户端及 CLI / SDK 入口": "Codex client and CLI / SDK entrance",
             "ExternalMessage 可以把外部消息送入运行过程，其权限是工具材料级别，不能被当成用户新增授权。": "ExternalMessage delivers external messages during execution. These have tool-material authority and do not constitute new user authorization.",
             "OpenAI 的编程 Agent，围绕项目文件、工具执行和持续任务提供工作入口。": "OpenAI's coding agent, working with project files, tool execution and ongoing tasks.",
+            "ServiceNow MCP插件已在OpenAI marketplace提供；增强功能预计 2026年底，语音、安全与AI Workflow Factory的Codex集成另有 2027年时间表。": "The ServiceNow MCP plugin is available in the OpenAI marketplace. Enhanced capabilities are expected by late 2026; voice, security and Codex in AI Workflow Factory follow separate 2027 schedules.",
+            "[ChatGPT / Codex：ServiceNow MCP已上架，语音、安全与集成分阶段推出](https://fieldtofit.top/news/D-273)": "[ChatGPT / Codex: ServiceNow MCP is available, with phased voice, security and integration plans](https://fieldtofit.top/news/D-273)",
+            "[ChatGPT Pro／Business新增API赠额：激活、组织归属与使用范围有条件](https://fieldtofit.top/news/D-272)": "[ChatGPT Pro/Business API credits: activation, organization and usage conditions](https://fieldtofit.top/news/D-272)",
             "[Oracle采购入口扩展，AI Workspace仍需核对开放阶段](https://fieldtofit.top/news/D-268)": "[Oracle procurement expands; check AI Workspace availability separately](https://fieldtofit.top/news/D-268)",
             "include_turns 改变的是调用方拿到的历史，理解这一点可避免把“返回内容少”误写成“模型忘记了任务”。": "include_turns changes the history returned to the caller. Fewer returned messages do not mean the model forgot the task.",
             "事件日期": "Event date",
@@ -10609,6 +10751,7 @@
             "具体内容": "Value",
             "分发匹配的 CLI 运行时；支持 ExternalMessage；恢复 / 分叉时 include_turns 控制返回历史，不改变模型实际上下文": "Distribute matching CLI runtime; support ExternalMessage; include_turns control to return history when restoring / forking, without changing the actual context of the model",
             "变化与条件": "Changes and conditions",
+            "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。": "Eligible paid Pro and Business subscriptions can activate credits for one API organization after at least 7 days. First grants are prorated; they neither increase ChatGPT or signed-in Codex allowances nor cover Codex API-key usage.",
             "官方更新记录中的运行中消息、SDK 与恢复行为": "Running messages, SDK and recovery behaviors in the official update record",
             "客户端、CLI、SDK 和所用模型分别标注": "Client, CLI, SDK and the model used are marked separately.",
             "已核实更新": "Verified and updated",
@@ -10616,6 +10759,7 @@
             "执行与扩展": "Execution and expansion",
             "日期": "Date",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
+            "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期已核实事件": "Current verified event",
             "本次展示的材料": "The materials on display this time",
             "版本口径": "Version measurement basis",
@@ -10623,8 +10767,8 @@
             "运行中的信息也有来源层级。": "The information in operation also has a source level.",
             "通过工具处理项目任务；程序可接入执行流程": "Process project tasks through tools; programs can access the execution process"
           },
-          "reviewed_at": "2026-10-28T01:08:34.275665+00:00",
-          "source_hash": "18ab367fc9c527f61223f45728c6d02ef28d79b61870af488616cd9223492e44",
+          "reviewed_at": "2026-10-29T02:51:55.964536+00:00",
+          "source_hash": "b09748d62341f58e5f2e2302c7eaaa9fec8e1a616c13e97ba1f919602a1bcebe",
           "state": "reviewed"
         }
       },
@@ -14606,7 +14750,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-28",
+  "reviewed_at": "2026-10-29",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

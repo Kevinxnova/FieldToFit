@@ -1,7 +1,35 @@
 {
-  "version": "1.17.11",
-  "revision": "26fb3a23e5e9bce65cbab8a3f7505824693a17d173919ce4d31b4e7f9f69001e",
+  "version": "1.17.12",
+  "revision": "fa767a85cf2c77b4ce92d6dfda7313fbde214ac36f00a216ce18ffc45e565c85",
   "items": [
+    {
+      "version": "1.17.12",
+      "date": "2026-10-29",
+      "deployed_on": "2026-10-29",
+      "copy": {
+        "zh": {
+          "title": "Carbon采用条件与Qwen提示增强分析",
+          "highlights": [
+            "发布已选Carbon、ChatGPT API赠额、ServiceNow MCP与Genie 4动态，同步本期速览、近期总表及四份对应档案。",
+            "新增Qwen-Image-PE完整分析，四条结论、三张本站重绘，区分训练设计、同主干分数、信息密度退步与迁移边界。",
+            "提供Carbon中英分享卡；正式发表后轮替首页报告与卡片，旧内容、原日期及稳定入口保留。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Carbon access conditions and Qwen prompt-enhancement analysis",
+          "highlights": [
+            "Publish the selected Carbon, ChatGPT API-credit, ServiceNow MCP and Genie 4 updates, synchronizing highlights, the recent index and four related dossiers.",
+            "Add a complete Qwen-Image-PE analysis with four findings and three original redraws, distinguishing training design, matched-backbone scores, density regressions and transfer limits.",
+            "Provide a bilingual Carbon share card; successful publication rotates homepage reports and cards while preserving older content, source dates and stable links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.12"
+    },
     {
       "version": "1.17.11",
       "date": "2026-10-28",

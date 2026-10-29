@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.12"></a>
+## v1.17.12 · Carbon采用条件与Qwen提示增强分析 · 2026-10-29
+<!-- site-deployed:2026-10-29 -->
+<!-- public-title:en: Carbon access conditions and Qwen prompt-enhancement analysis -->
+<!-- release-summary:zh:start -->
+- 发布已选Carbon、ChatGPT API赠额、ServiceNow MCP与Genie 4动态，同步本期速览、近期总表及四份对应档案。
+- 新增Qwen-Image-PE完整分析，四条结论、三张本站重绘，区分训练设计、同主干分数、信息密度退步与迁移边界。
+- 提供Carbon中英分享卡；正式发表后轮替首页报告与卡片，旧内容、原日期及稳定入口保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Carbon, ChatGPT API-credit, ServiceNow MCP and Genie 4 updates, synchronizing highlights, the recent index and four related dossiers.
+- Add a complete Qwen-Image-PE analysis with four findings and three original redraws, distinguishing training design, matched-backbone scores, density regressions and transfer limits.
+- Provide a bilingual Carbon share card; successful publication rotates homepage reports and cards while preserving older content, source dates and stable links.
+<!-- release-summary:en:end -->
+
+用户明确选择2026-10-29 A–D、报告1、卡1。A与卡共用D-271，B–D为D-272至D-274，报告为D-275；四份对应档案CW-M01／CW-A01／CW-M03／CW-M07只追加本期已审事件。以v1.17.11为基线，结合v1.17.0以来累计内容维护，本批为兼容内容与静态资源patch，无新模块、主要流程或协议变化，无迁移。报告2及模型榜单不扩大。实际结果见[验收](docs/validation/2026-10-29-carbon-qwen-pe.md)。
+
 <a id="v1.17.11"></a>
 ## v1.17.11 · Oracle采用条件与Qwen语音结构分析 · 2026-10-28
 <!-- site-deployed:2026-10-28 -->

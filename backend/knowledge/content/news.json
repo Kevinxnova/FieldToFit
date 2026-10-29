@@ -3,10 +3,851 @@
   "items": [
     {
       "category": "tool",
-      "checked_at": "2026-10-28",
+      "checked_at": "2026-10-29",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-28",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "先确认开放资格、权限与获准任务范围；本站判断。",
+            "title": "防御团队"
+          },
+          {
+            "detail": "先确认正式入口、长期预算，再用固定任务验收；本站判断。",
+            "title": "应用团队"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "本周先向部分网络防御者开放，并逐步扩展Fairwind可信伙伴。公众产品入口仍待推出，公告不等于你的账户已可用。",
+            "title": "部分防御者优先"
+          },
+          {
+            "detail": "每百万token输入 2美元、输出 10美元；缓存输入按输入价优惠 95%，实际计费需核正式文档。",
+            "title": "介绍期输入 2／输出 10美元"
+          },
+          {
+            "detail": "介绍期后每百万token输入 4美元、输出 20美元。结束日期未明确，不把介绍期报价当长期预算。",
+            "title": "之后输入 4／输出 20美元"
+          }
+        ],
+        "checked_at": "2026-10-29",
+        "evidence": [
+          {
+            "locator": "rollout; introductory price; footnote 1; external benchmark guardrails",
+            "source_id": "announcement"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "Gemini 4 Carbon：先看资格，再看介绍期价格",
+        "limits": [
+          {
+            "detail": "开发者、企业与消费者入口仍待推出；介绍期结束日与实际账户资格待确认。",
+            "title": "开放与时间限制"
+          },
+          {
+            "detail": "部分基准未加guardrails，零成功攻击不等于绝对安全；本站未测模型、账户、账单或防御效果。",
+            "title": "评测与实测边界"
+          }
+        ],
+        "next_step": "确认正式可用性，再在获准范围比较固定任务的质量、成本与操作边界；本站建议。",
+        "revised_at": "2026-10-29",
+        "revision": "3ec2b0fa3551d415971856c87f37bddd9efeadf2780343618f2ec5dc1861c9ac",
+        "scope": "Gemini 4 Carbon；2026-10-28发布，当前先向部分网络防御者与Fairwind伙伴开放。",
+        "share": {
+          "content_revision": "3ec2b0fa3551d415971856c87f37bddd9efeadf2780343618f2ec5dc1861c9ac",
+          "en": {
+            "sha256": "f89c5234193d53eaf94f9d6103e63bd87c7a9c0b09b4d0986def7fea860254b5",
+            "text_revision": "40f3501c30ce2864af6f6313ef623975a8af1149dbfe3e1d6d8441177cb60f55",
+            "url": "/hot-cards/d-271-3ec2b0fa3551-en.png"
+          },
+          "zh": {
+            "sha256": "25e990abcc865e1362fdee8fcf9a871a0f74ddba7b121537dd88f198e9c04425",
+            "url": "/hot-cards/d-271-3ec2b0fa3551-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "2026-10-29核对Google官方正文；人群与下一步为本站判断，未独立复现或测试计费。"
+      },
+      "id": "D-271",
+      "interpretation": [
+        {
+          "locator": "rollout paragraph; Coming soon to developers, businesses, and consumers",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "Google本周从部分网络防御者开始，逐步扩展Fairwind可信伙伴。普通产品入口属于即将推出，公告不等于所有账户或通用API已可用。",
+          "title": "先确认开放资格"
+        },
+        {
+          "locator": "introductory price paragraph; footnote 1",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "介绍期每百万输入 2美元、输出 10美元，之后输入 4美元、输出 20美元；缓存输入按输入价优惠 95%。原文未明确介绍期结束日，实际服务与计费需核正式文档。",
+          "title": "价格按两个阶段记录"
+        },
+        {
+          "locator": "external benchmarks (evaluated without guardrails); Advancing frontier model safety & security",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "部分网络安全外部基准明确在未加guardrails条件下评测。内部测试与间接提示注入基准的零成功攻击不等于线上绝对安全；厂商长期任务表现未独立复现，不据此刷新本站AA／Arena榜单。",
+          "title": "安全评测保留配置边界"
+        }
+      ],
+      "name": "Gemini 4 Carbon",
+      "note": "版本Gemini 4 Carbon，原文 2026-10-28，本站 2026-10-29核对。保留Argon历史；未知项包括正式公众入口、介绍期结束日、实际账户资格及计费。未实测模型、账户、费用或防御效果。",
+      "organization": "Google DeepMind",
+      "publication": {
+        "first_published_at": "2026-10-29T03:04:21.128428+00:00",
+        "hot_card_first_published_at": "2026-10-29T03:04:21.128457+00:00",
+        "hot_card_selected_at": "2026-10-29T03:04:21.128457+00:00",
+        "updated_at": "2026-10-29T03:04:21.128428+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        }
+      ],
+      "source_published_at": "2026-10-28",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "Introducing Gemini 4 Carbon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+        }
+      ],
+      "state": "published",
+      "summary": "Carbon本周先向部分网络防御者及Fairwind伙伴开放。每百万输入／输出token介绍期 2／10美元，之后 4／20美元；普通开发者、企业与消费者入口仍待推出。",
+      "title": "Gemini 4 Carbon：部分防御者先开放，区分介绍期与后续价格",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-29核对Google官方正文；人群与下一步为本站判断，未独立复现或测试计费。": "Google’s official article checked on 2026-10-29; audiences and next steps are FieldToFit judgments. No independent replication or billing test.",
+            "Carbon本周先向部分网络防御者及Fairwind伙伴开放。每百万输入／输出token介绍期 2／10美元，之后 4／20美元；普通开发者、企业与消费者入口仍待推出。": "Carbon initially rolls out to selected cyber defenders and Fairwind partners. Introductory input/output prices are $2/$10 per million tokens, later $4/$20; general developer, business and consumer access is still forthcoming.",
+            "Gemini 4 Carbon：先看资格，再看介绍期价格": "Gemini 4 Carbon: check eligibility, then introductory pricing",
+            "Gemini 4 Carbon：部分防御者先开放，区分介绍期与后续价格": "Gemini 4 Carbon: limited defender rollout, with introductory and later prices",
+            "Gemini 4 Carbon；2026-10-28发布，当前先向部分网络防御者与Fairwind伙伴开放。": "Gemini 4 Carbon; announced 2026-10-28, initially available to selected cyber defenders and Fairwind partners.",
+            "Google本周从部分网络防御者开始，逐步扩展Fairwind可信伙伴。普通产品入口属于即将推出，公告不等于所有账户或通用API已可用。": "Google begins with selected cyber defenders this week and gradually expands to trusted Fairwind partners. Public product surfaces are forthcoming; the announcement does not establish access for every account or a generally available API.",
+            "之后输入 4／输出 20美元": "Later input $4 / output $20",
+            "介绍期后每百万token输入 4美元、输出 20美元。结束日期未明确，不把介绍期报价当长期预算。": "After the introduction: $4 input and $20 output per million tokens. The end date is unspecified; do not use introductory prices as the long-term budget.",
+            "介绍期每百万输入 2美元、输出 10美元，之后输入 4美元、输出 20美元；缓存输入按输入价优惠 95%。原文未明确介绍期结束日，实际服务与计费需核正式文档。": "Introductory prices are $2 input and $10 output per million tokens, later $4 and $20. Cached input is discounted 95% from input pricing. The article gives no introductory end date; confirm service and billing terms in official documentation.",
+            "介绍期输入 2／输出 10美元": "Introductory input $2 / output $10",
+            "价格按两个阶段记录": "Record both pricing phases",
+            "先确认开放资格": "Check access eligibility first",
+            "先确认开放资格、权限与获准任务范围；本站判断。": "Confirm eligibility, permissions and authorized task scope first; FieldToFit judgment.",
+            "先确认正式入口、长期预算，再用固定任务验收；本站判断。": "Confirm the product endpoint and long-term budget, then evaluate fixed tasks; FieldToFit judgment.",
+            "安全评测保留配置边界": "Preserve safety-evaluation conditions",
+            "应用团队": "Application teams",
+            "开发者、企业与消费者入口仍待推出；介绍期结束日与实际账户资格待确认。": "Developer, business and consumer access is forthcoming; confirm the introductory end date and account eligibility.",
+            "开放与时间限制": "Access and timing limits",
+            "本周先向部分网络防御者开放，并逐步扩展Fairwind可信伙伴。公众产品入口仍待推出，公告不等于你的账户已可用。": "Selected cyber defenders start this week, followed gradually by trusted Fairwind partners. Public product access is forthcoming; an announcement does not confirm your account has access.",
+            "每百万token输入 2美元、输出 10美元；缓存输入按输入价优惠 95%，实际计费需核正式文档。": "Per million tokens: $2 input and $10 output. Cached input is discounted 95% from input pricing; verify actual billing in official terms.",
+            "版本Gemini 4 Carbon，原文 2026-10-28，本站 2026-10-29核对。保留Argon历史；未知项包括正式公众入口、介绍期结束日、实际账户资格及计费。未实测模型、账户、费用或防御效果。": "Gemini 4 Carbon; source dated 2026-10-28, checked 2026-10-29. Argon history is preserved. Public access, the introductory end date, account eligibility and actual billing remain to be confirmed. Model, accounts, costs and defense effectiveness were not tested.",
+            "确认正式可用性，再在获准范围比较固定任务的质量、成本与操作边界；本站建议。": "Confirm actual availability, then compare quality, cost and action boundaries on fixed authorized tasks; FieldToFit advice.",
+            "评测与实测边界": "Evaluation and testing limits",
+            "部分基准未加guardrails，零成功攻击不等于绝对安全；本站未测模型、账户、账单或防御效果。": "Some benchmarks omit guardrails; zero successful attacks do not imply absolute safety. FieldToFit has not tested the model, accounts, billing or defense effectiveness.",
+            "部分网络安全外部基准明确在未加guardrails条件下评测。内部测试与间接提示注入基准的零成功攻击不等于线上绝对安全；厂商长期任务表现未独立复现，不据此刷新本站AA／Arena榜单。": "Some external cybersecurity benchmarks explicitly omit guardrails. Zero successful attacks in reported internal or indirect-prompt-injection tests do not imply absolute production safety. Long-horizon vendor claims have not been independently replicated, and FieldToFit AA/Arena charts are not refreshed.",
+            "部分防御者优先": "Selected defenders first",
+            "防御团队": "Defense teams"
+          },
+          "source_hash": "56e5fa959add219bb59c55a7fb12da55ce4950233e87983fc55d7ff903b85ff8",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-29",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-28",
+      "highlight": true,
+      "id": "D-272",
+      "interpretation": [
+        {
+          "locator": "Eligibility and availability; Credit amounts; Renewal and expiration",
+          "source_ids": [
+            "terms"
+          ],
+          "text": "Pro 100／200／500档完整月周期赠额分别 100／200／500美元。Business按每付费Standard席位 20美元、Premium席位 100美元合并，月上限 500美元；年付Business全年一次授予、年上限 6000美元。首次按剩余周期比例计算，未用不结转。",
+          "title": "按套餐、席位与周期计算"
+        },
+        {
+          "locator": "Before you activate; Activate your credits; Troubleshooting",
+          "source_ids": [
+            "terms"
+          ],
+          "text": "需相同邮箱，并拥有订阅／Business工作区和接收API组织的owner权限；普通管理员或成员身份不够。一方只能关联一个组织／订阅关系。合格付费至少 7天且受国家和启用批次限制；Plus、免费试用不合格，Enterprise、Edu与legacy Codex seats未列为合格。",
+          "title": "激活与发放分别确认"
+        },
+        {
+          "locator": "Overview; Use the credits and check your balance; Payment methods, limits and running out of credits",
+          "source_ids": [
+            "terms"
+          ],
+          "text": "ChatGPT与API账单保持分开。赠额不增加ChatGPT、登录态Codex或Business工作区余额，不覆盖API key方式Codex。API速率、项目权限仍适用；无其他余额时赠额耗尽会返回 429 credit_balance_exhausted。",
+          "title": "API余额不等于订阅用量"
+        }
+      ],
+      "name": "ChatGPT API credits",
+      "note": "公告 2026-10-28，动态帮助文档无固定版本号；本站 2026-10-29核对。具体首期金额、到期日与组织归属以激活页面和API账单为准。未申领、链接组织、调用API或验证账单。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-29T03:03:54.071272+00:00",
+        "updated_at": "2026-10-29T03:03:54.071272+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        },
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        }
+      ],
+      "source_published_at": "2026-10-28",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "ChatGPT release notes",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "terms",
+          "title": "API credits benefit for eligible ChatGPT subscriptions",
+          "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions"
+        }
+      ],
+      "state": "published",
+      "summary": "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。",
+      "title": "ChatGPT Pro／Business新增API赠额：激活、组织归属与使用范围有条件",
+      "translations": {
+        "en": {
+          "fields": {
+            "API余额不等于订阅用量": "API balance is distinct from subscription usage",
+            "ChatGPT Pro／Business新增API赠额：激活、组织归属与使用范围有条件": "ChatGPT Pro/Business API credits: activation, organization and usage conditions",
+            "ChatGPT与API账单保持分开。赠额不增加ChatGPT、登录态Codex或Business工作区余额，不覆盖API key方式Codex。API速率、项目权限仍适用；无其他余额时赠额耗尽会返回 429 credit_balance_exhausted。": "ChatGPT and API billing remain separate. The grant does not increase ChatGPT, signed-in Codex or Business workspace balances and does not cover Codex API-key usage. API rate and project-access limits still apply; when no other credits remain, exhaustion returns 429 credit_balance_exhausted.",
+            "Pro 100／200／500档完整月周期赠额分别 100／200／500美元。Business按每付费Standard席位 20美元、Premium席位 100美元合并，月上限 500美元；年付Business全年一次授予、年上限 6000美元。首次按剩余周期比例计算，未用不结转。": "Pro 100/200/500 tiers receive $100/$200/$500 per full monthly period. Business pools $20 per paid Standard seat and $100 per Premium seat, capped at $500 monthly; annually prepaid Business receives the year upfront, capped at $6000 annually. First grants are prorated; unused credits do not roll over.",
+            "公告 2026-10-28，动态帮助文档无固定版本号；本站 2026-10-29核对。具体首期金额、到期日与组织归属以激活页面和API账单为准。未申领、链接组织、调用API或验证账单。": "Announced 2026-10-28; the dynamic help article has no fixed version. Checked 2026-10-29. Verify first-grant amount, expiry and receiving organization in activation and API billing. No claim, organization linking, API call or billing test was performed.",
+            "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。": "Eligible paid Pro and Business subscriptions can activate credits for one API organization after at least 7 days. First grants are prorated; they neither increase ChatGPT or signed-in Codex allowances nor cover Codex API-key usage.",
+            "按套餐、席位与周期计算": "Calculate by plan, seats and billing cycle",
+            "激活与发放分别确认": "Confirm activation and grant issuance separately",
+            "需相同邮箱，并拥有订阅／Business工作区和接收API组织的owner权限；普通管理员或成员身份不够。一方只能关联一个组织／订阅关系。合格付费至少 7天且受国家和启用批次限制；Plus、免费试用不合格，Enterprise、Edu与legacy Codex seats未列为合格。": "Matching email and owner permissions on both the subscription/Business workspace and receiving API organization are required; membership or an admin role alone is insufficient. Each side can have only one active eligible link. Paid eligibility requires at least 7 days and depends on country/cohort. Plus and free trials do not qualify; Enterprise, Edu and legacy Codex seats are not established eligible."
+          },
+          "source_hash": "0993fcc74efe62ca0a3854d7b2ee72633db29222c1266bfb49c1306e484f1eca",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-29",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-28",
+      "highlight": true,
+      "id": "D-273",
+      "interpretation": [
+        {
+          "locator": "Working with ServiceNow through ChatGPT",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "客户连接自己的ServiceNow实例并选择开放能力；Action Fabric沿用组织业务规则与权限。交互界面示例仍为预览，不能理解为任意写入工单。",
+          "title": "当前可用限定MCP插件"
+        },
+        {
+          "locator": "Availability",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "增强功能预计 2026年底；语音预计 2027年第一季度；安全 2027年 1月early access、第二季度GA；AI Workflow Factory中的Codex预计 2027年。均为计划，不是现已全部交付。",
+          "title": "后续能力分别保留时间表"
+        },
+        {
+          "locator": "Bringing ChatGPT Work and Codex to all ServiceNow employees",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "ServiceNow计划向全体员工扩展ChatGPT Work与Codex。这不是公开样本支持的效率或收益研究，也不改变客户自己的租户权限和合规要求。",
+          "title": "采用计划不当收益测量"
+        }
+      ],
+      "name": "ServiceNow × OpenAI",
+      "note": "双方合作公告 2026-10-28，无统一软件版本号；本站 2026-10-29核对。保留昨日Oracle独立事件与历史。未测试插件、租户权限、工单动作或未来上线时间。",
+      "organization": "ServiceNow / OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-29T03:03:28.192846+00:00",
+        "updated_at": "2026-10-29T03:03:28.192846+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        },
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        }
+      ],
+      "source_published_at": "2026-10-28",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+          "url": "https://openai.com/index/openai-servicenow-partnership-expansion/"
+        }
+      ],
+      "state": "published",
+      "summary": "ServiceNow MCP插件已在OpenAI marketplace提供；增强功能预计 2026年底，语音、安全与AI Workflow Factory的Codex集成另有 2027年时间表。",
+      "title": "ChatGPT / Codex：ServiceNow MCP已上架，语音、安全与集成分阶段推出",
+      "translations": {
+        "en": {
+          "fields": {
+            "ChatGPT / Codex：ServiceNow MCP已上架，语音、安全与集成分阶段推出": "ChatGPT / Codex: ServiceNow MCP is available, with phased voice, security and integration plans",
+            "ServiceNow MCP插件已在OpenAI marketplace提供；增强功能预计 2026年底，语音、安全与AI Workflow Factory的Codex集成另有 2027年时间表。": "The ServiceNow MCP plugin is available in the OpenAI marketplace. Enhanced capabilities are expected by late 2026; voice, security and Codex in AI Workflow Factory follow separate 2027 schedules.",
+            "ServiceNow计划向全体员工扩展ChatGPT Work与Codex。这不是公开样本支持的效率或收益研究，也不改变客户自己的租户权限和合规要求。": "ServiceNow plans to expand ChatGPT Work and Codex access to all employees. This is not a public sampled study of productivity or returns and does not change customers’ tenant permissions or compliance requirements.",
+            "双方合作公告 2026-10-28，无统一软件版本号；本站 2026-10-29核对。保留昨日Oracle独立事件与历史。未测试插件、租户权限、工单动作或未来上线时间。": "Partnership announcement dated 2026-10-28, with no single software version; checked 2026-10-29. Yesterday’s Oracle event and history remain separate. Plugin, tenant permissions, workflow actions and future delivery were not tested.",
+            "后续能力分别保留时间表": "Keep separate schedules for later capabilities",
+            "增强功能预计 2026年底；语音预计 2027年第一季度；安全 2027年 1月early access、第二季度GA；AI Workflow Factory中的Codex预计 2027年。均为计划，不是现已全部交付。": "Enhanced capabilities are expected by late 2026; voice in the first quarter of 2027; security early access in month 1 of 2027 and GA in the second quarter; Codex in AI Workflow Factory in 2027. These are plans, not complete current delivery.",
+            "客户连接自己的ServiceNow实例并选择开放能力；Action Fabric沿用组织业务规则与权限。交互界面示例仍为预览，不能理解为任意写入工单。": "Customers connect their own ServiceNow instance and select exposed capabilities; Action Fabric applies existing organizational rules and permissions. Interactive interface examples remain a preview, not unrestricted record-writing access.",
+            "当前可用限定MCP插件": "Current availability applies to the MCP plugin",
+            "采用计划不当收益测量": "Do not treat adoption plans as measured benefits"
+          },
+          "source_hash": "91db78c5ab1c43aa10b26b896ddd1c3b49b812bb55c2a0373d772950eaf7028f",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-29",
       "editor": "FieldToFit",
       "event_date": "2026-10-27",
       "highlight": true,
+      "id": "D-274",
+      "interpretation": [
+        {
+          "locator": "native audio; real-time steering",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "官方演示包含环境声音和对话，并可通过自然语言实时引导世界。演示不等于本站推理或实时延迟测试。",
+          "title": "原生音频与交互结合"
+        },
+        {
+          "locator": "Next steps",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "当前面向可信测试者；Project Genie的AI Ultra与Gemini API／AI Studio早期伙伴入口属于即将推出。候补和公告不能证明所有订阅账户已可使用。",
+          "title": "当前研究预览与未来入口分开"
+        },
+        {
+          "locator": "limitations; SynthID; Next steps",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "物体持续性、空间一致性、复杂物理、文字与长程一致性仍有限制。官方称生成视频和音频包含SynthID；本站未检测水印、费用或账户能力。",
+          "title": "视觉逼真不等于可靠物理"
+        }
+      ],
+      "name": "Genie 4",
+      "note": "Genie 4研究预览，原文 2026-10-27，本站 2026-10-29核对关键能力、开放与限制段落；未逐条审计全部演示，未实测生成、交互、音频或物理准确度。关联Google模型动态，不自动新建持续关注档案。",
+      "organization": "Google DeepMind",
+      "publication": {
+        "first_published_at": "2026-10-29T03:03:01.876253+00:00",
+        "updated_at": "2026-10-29T03:03:01.876253+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-10-27",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "Genie 4: A new generation of world simulation",
+          "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+        }
+      ],
+      "state": "published",
+      "summary": "Genie 4把环境声、对话与交互世界生成结合，可信测试者已有研究预览；AI Ultra、Gemini API与AI Studio入口仍待分阶段开放。",
+      "title": "Genie 4：原生音频与实时引导进入研究预览，公众入口待开放",
+      "translations": {
+        "en": {
+          "fields": {
+            "Genie 4把环境声、对话与交互世界生成结合，可信测试者已有研究预览；AI Ultra、Gemini API与AI Studio入口仍待分阶段开放。": "Genie 4 combines environmental audio, dialogue and interactive world generation. Trusted testers have a research preview; AI Ultra, Gemini API and AI Studio access is still forthcoming.",
+            "Genie 4研究预览，原文 2026-10-27，本站 2026-10-29核对关键能力、开放与限制段落；未逐条审计全部演示，未实测生成、交互、音频或物理准确度。关联Google模型动态，不自动新建持续关注档案。": "Genie 4 research preview; source dated 2026-10-27. Key capability, availability and limitation sections checked 2026-10-29. Individual demonstrations, generation, interaction, audio and physical accuracy were not tested. Relates to Google model news; no new watch dossier is automatically created.",
+            "Genie 4：原生音频与实时引导进入研究预览，公众入口待开放": "Genie 4: native audio and real-time steering enter research preview; public access is forthcoming",
+            "原生音频与交互结合": "Combine native audio and interaction",
+            "官方演示包含环境声音和对话，并可通过自然语言实时引导世界。演示不等于本站推理或实时延迟测试。": "Official demonstrations include environmental sounds and dialogue, with natural-language real-time world steering. Demonstrations are not FieldToFit inference or latency tests.",
+            "当前研究预览与未来入口分开": "Separate the research preview from future access",
+            "当前面向可信测试者；Project Genie的AI Ultra与Gemini API／AI Studio早期伙伴入口属于即将推出。候补和公告不能证明所有订阅账户已可使用。": "Current access is for trusted testers. Project Genie for AI Ultra and early Gemini API/AI Studio partner access are forthcoming. Waitlists and announcements do not establish availability for every subscription.",
+            "物体持续性、空间一致性、复杂物理、文字与长程一致性仍有限制。官方称生成视频和音频包含SynthID；本站未检测水印、费用或账户能力。": "Object permanence, spatial consistency, complex physics, text and long-horizon coherence remain limited. Google says generated video and audio contain SynthID; FieldToFit has not tested watermarks, costs or account access.",
+            "视觉逼真不等于可靠物理": "Visual realism does not establish reliable physics"
+          },
+          "source_hash": "6db59204a47bb6d5f63a82d6c091965bd6e280b3af698d661315de75ddb7cc87",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-29",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-24",
+      "highlight": false,
+      "id": "D-275",
+      "interpretation": [
+        {
+          "locator": "§2.1–2.2; §3.3.1; Tables 3(a), 4",
+          "source_ids": [
+            "report"
+          ],
+          "text": "CRD把高质量图像变成密集描述监督；生成主干保持冻结，增强器学习补足灯光、构图、布局与细节。",
+          "title": "先从好图反推设计，再把设计能力交给提示增强器"
+        },
+        {
+          "locator": "§2.3; §3.3.2; Table 3(b); Figure 6",
+          "source_ids": [
+            "report"
+          ],
+          "text": "GDR用网格与多次打乱比较同请求候选，设计奖励加意图对齐；Overall比SFT高 0.65分，不能写成训练收益无限扩大。",
+          "title": "同组图像一起比较，比逐张评分更有用，仍有评判偏差"
+        },
+        {
+          "locator": "§3.1–3.2; Table 1; Figure 4; §4; Figure 7",
+          "source_ids": [
+            "report"
+          ],
+          "text": "同主干 9B为 60.28、内部 397B为 62.17；低信息密度消融只有 44.65和 51.36，均低于原请求 54.36。",
+          "title": "有效信息密度不足时，扩写可以比原请求更差"
+        },
+        {
+          "locator": "§3.1; Table 1; §5; Table 5",
+          "source_ids": [
+            "report"
+          ],
+          "text": "两种增强器在四个测试主干均超过原请求；9B有发布入口，397B是内部模型，不能据论文许可推断权重许可。",
+          "title": "跨四个主干的迁移成立，生产采用还需验证意图与代价"
+        }
+      ],
+      "name": "Qwen-Image-PE",
+      "note": "作者评测，本站未独立复现。397B为内部模型；同主干结果、信息密度消融与跨主干迁移各有条件，不等于所有请求更好或生产成本更低。",
+      "organization": "Qwen Team",
+      "publication": {
+        "first_published_at": "2026-10-29T03:02:35.898238+00:00",
+        "report_selected_at": "2026-10-29T03:02:35.898238+00:00",
+        "updated_at": "2026-10-29T03:02:35.898238+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M07",
+          "name": "Qwen",
+          "url": "https://fieldtofit.top/watch/CW-M07"
+        }
+      ],
+      "source_published_at": "2026-10-24",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement v1",
+          "url": "https://arxiv.org/html/2610.33472v1"
+        }
+      ],
+      "state": "published",
+      "summary": "CRD监督与GDR奖励如何让提示增强学习视觉设计？四条结论、三张本站重绘，分清同主干提升、低信息密度退步、内部 397B与迁移边界。",
+      "technical_map": {
+        "caution": "作者评测，本站未独立复现。397B为内部模型；同主干结果、信息密度消融与跨主干迁移各有条件，不等于所有请求更好或生产成本更低。",
+        "change_summary": "首次完整分析：四条结论与同号论述、三张本站重绘，保留训练、同主干分数、密度退步与迁移限制。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.3; §3.3.2; Table 3(b); Figure 6",
+                "source_id": "report"
+              }
+            ],
+            "from": "design",
+            "id": "edge-reward",
+            "label": "同一研究的互补证据",
+            "reason": "Complementary aspects of one study; not a measured causal link between separate experiments.",
+            "relation": "parallel",
+            "to": "reward"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§3.1–3.2; Table 1; Figure 4; §4; Figure 7",
+                "source_id": "report"
+              }
+            ],
+            "from": "design",
+            "id": "edge-density",
+            "label": "同一研究的互补证据",
+            "reason": "Complementary aspects of one study; not a measured causal link between separate experiments.",
+            "relation": "parallel",
+            "to": "density"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§3.1; Table 1; §5; Table 5",
+                "source_id": "report"
+              }
+            ],
+            "from": "design",
+            "id": "edge-transfer",
+            "label": "同一研究的互补证据",
+            "reason": "Complementary aspects of one study; not a measured causal link between separate experiments.",
+            "relation": "parallel",
+            "to": "transfer"
+          }
+        ],
+        "focus": "Qwen-Image-PE：提示增强怎样学会设计，为什么扩写也会退步？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.1–2.2; §3.3.1; Tables 3(a), 4",
+                "source_id": "report"
+              }
+            ],
+            "id": "design",
+            "kind": "method",
+            "label": "先从好图反推设计，再把设计能力交给提示增强器",
+            "limitation": "作者评测，本站未独立复现。397B为内部模型；同主干结果、信息密度消融与跨主干迁移各有条件，不等于所有请求更好或生产成本更低。",
+            "mechanism": "CRD把高质量图像变成密集描述监督；生成主干保持冻结，增强器学习补足灯光、构图、布局与细节。",
+            "metrics": [],
+            "result": "CRD把高质量图像变成密集描述监督；生成主干保持冻结，增强器学习补足灯光、构图、布局与细节。",
+            "setting": "Frozen T2I backbone; image-grounded captions and synthetic rationales.",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.3; §3.3.2; Table 3(b); Figure 6",
+                "source_id": "report"
+              }
+            ],
+            "id": "reward",
+            "kind": "method",
+            "label": "同组图像一起比较，比逐张评分更有用，仍有评判偏差",
+            "limitation": "作者评测，本站未独立复现。397B为内部模型；同主干结果、信息密度消融与跨主干迁移各有条件，不等于所有请求更好或生产成本更低。",
+            "mechanism": "GDR用网格与多次打乱比较同请求候选，设计奖励加意图对齐；Overall比SFT高 0.65分，不能写成训练收益无限扩大。",
+            "metrics": [],
+            "result": "GDR用网格与多次打乱比较同请求候选，设计奖励加意图对齐；Overall比SFT高 0.65分，不能写成训练收益无限扩大。",
+            "setting": "Matched requests and generation seeds; shuffled grids; GRPO and KL regularization.",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§3.1–3.2; Table 1; Figure 4; §4; Figure 7",
+                "source_id": "report"
+              }
+            ],
+            "id": "density",
+            "kind": "result",
+            "label": "有效信息密度不足时，扩写可以比原请求更差",
+            "limitation": "作者评测，本站未独立复现。397B为内部模型；同主干结果、信息密度消融与跨主干迁移各有条件，不等于所有请求更好或生产成本更低。",
+            "mechanism": "同主干 9B为 60.28、内部 397B为 62.17；低信息密度消融只有 44.65和 51.36，均低于原请求 54.36。",
+            "metrics": [],
+            "result": "同主干 9B为 60.28、内部 397B为 62.17；低信息密度消融只有 44.65和 51.36，均低于原请求 54.36。",
+            "setting": "Qwen-Image-2.1; 2K; density sweep fixed 9B and 50K.",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§3.1; Table 1; §5; Table 5",
+                "source_id": "report"
+              }
+            ],
+            "id": "transfer",
+            "kind": "result",
+            "label": "跨四个主干的迁移成立，生产采用还需验证意图与代价",
+            "limitation": "作者评测，本站未独立复现。397B为内部模型；同主干结果、信息密度消融与跨主干迁移各有条件，不等于所有请求更好或生产成本更低。",
+            "mechanism": "两种增强器在四个测试主干均超过原请求；9B有发布入口，397B是内部模型，不能据论文许可推断权重许可。",
+            "metrics": [],
+            "result": "两种增强器在四个测试主干均超过原请求；9B有发布入口，397B是内部模型，不能据论文许可推断权重许可。",
+            "setting": "Four frozen transfer backbones; Overall compared within each backbone.",
+            "stage": 2
+          }
+        ],
+        "question": "Qwen-Image-PE：提示增强怎样学会设计，为什么扩写也会退步？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：这项研究把提示工程从手写诀窍变成可以拆解的训练问题。最有价值的证据不是最长的提示或最高一行分数，而是反向监督、组内奖励和低密度退步三种对照。实际采用需要同时守住用户意图、图像质量、等待时间与费用，不能把设计偏好变成替用户改题。",
+            "来源与修订：Zekai Zhang、Yanran Zhang、Chenfei Wu等，Qwen团队，Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement，arXiv:2610.33472v1，首次 2026-10-24。本站 2026-10-29阅读全部主文章节与表格文字，三张图独立重绘；未逐张审计原图，未复现训练、推理或账单。原文日期、本站核对日和网站首次发表分别保留。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "短请求常没有说清光源、主体层次、留白和材质。论文把提示增强定义为从用户请求生成设计推理、增强提示和宽高比，再交给冻结的文生图主干。目标是补齐视觉决策，同时保留用户明确要求；增强器和图像生成器是不同角色。"
+                },
+                {
+                  "alt": "CRD监督与GDR强化两阶段路线，图像生成主干冻结",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据图 2和§2独立重绘方法路线，不复制原图；箭头表示训练数据流，不表示实测因果收益。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§2; Figure 2",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct29-pe-route.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Caption-Based Reverse Distillation沿两条路径构造请求与图像：从请求生成并筛选好图，或从已有好图降级出简短、含噪请求。多模态模型为图像写密集描述，作为增强提示目标；再据请求与目标合成设计理由。训练时增强器只从请求预测这些输出。监督理由属于合成标签，不是可直接证明真实内部推理的观测。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "在 397B相同训练设置的消融中，正向扩写监督Overall为 59.86，反向描述监督为 61.52，相差 1.66分。提示分布更靠近主干训练描述的JS、FD与MAUVE结果支持作者动机，但分布接近不自动构成画面质量提高的充分因果解释。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§2.1–2.2; §3.3.1; Tables 3(a), 4",
+                  "source_id": "report"
+                }
+              ],
+              "id": "design",
+              "node_ids": [
+                "design"
+              ],
+              "summary": "CRD把高质量图像变成密集描述监督；生成主干保持冻结，增强器学习补足灯光、构图、布局与细节。",
+              "title": "先从好图反推设计，再把设计能力交给提示增强器"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "每个请求采样一组增强提示，用相同生成种子输出候选图。评判器在统一网格中按灯光、构图、布局和细节分别打分，多次打乱排列后平均，减少位置敏感性；奖励另含对原始请求的对齐项。GRPO在组内归一化奖励，KL约束靠近初始SFT策略，图像主干始终冻结。"
+                },
+                {
+                  "alt": "同主干Overall和 397B训练消融，分开比较规模与训练阶段",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据表 1和表 3重绘；Overall为分数，越高越好。2K生成、同请求匹配种子；不同面板不是一条连续训练曲线。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§3.1–3.3; Tables 1, 3",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct29-pe-scores.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "397B的SFT初始化为 61.52，逐张设计奖励为 61.36，组内设计奖励为 62.17；组内比逐张高 0.81分、比SFT高 0.65分。组内奖励与盲评人类偏好的排序一致率 59.1%，逐张为 50.9%，相差 8.2个百分点。一致率仍远非 100%，不能称评判器已经替代专业判断。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "训练使用组内奖励；基准设计维度使用另一个在专家标注上训练的Q-Judger逐张评估。区分训练奖励与评价指标有价值，但仍属于作者实验，本站未复现评判可靠性。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§2.3; §3.3.2; Table 3(b); Figure 6",
+                  "source_id": "report"
+                }
+              ],
+              "id": "reward",
+              "node_ids": [
+                "reward"
+              ],
+              "summary": "GDR用网格与多次打乱比较同请求候选，设计奖励加意图对齐；Overall比SFT高 0.65分，不能写成训练收益无限扩大。",
+              "title": "同组图像一起比较，比逐张评分更有用，仍有评判偏差"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "主要比较固定Qwen-Image-2.1主干、2K分辨率及每请求采样种子。原请求Overall 54.36，9B增强 60.28，内部 397B增强 62.17；397B相对原请求提升 7.81分，不是 7.81%。表 1上方其他图像模型使用不同主干，不能将全部行混成提示增强器公平排名。"
+                },
+                {
+                  "alt": "固定 9B与 50K监督样本的信息密度消融，L1与L2低于原请求",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据§4与图 7(c)所报数值重绘；横轴为作者的监督密度等级，不是字数。虚线为原请求 54.36。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§4; Figure 7(c)",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct29-pe-density.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "信息密度实验固定Qwen3.5-9B和 50K样本，改变描述监督等级。L1至L4的Overall依次 44.65、51.36、55.39、57.31；前两级低于原请求。作者用冻结Qwen3-VL-8B-Instruct测量图像条件对文字似然的增益GPG，不是简单按token数给提示贴密度标签。结论限于该模型、样本和度量，不是一个可直接套用所有任务的长度阈值。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "数据规模从 12.5K增至 100K时，Overall由 55.87至 57.61，后续翻倍收益递减。模型规模实验固定 50K，包含dense与MoE，不能仅按标称总参数推断实际推理费用。专家偏好评估含 500个跨领域案例，净胜率定义为(G−B)/(G+S+B)，不等于单独的获胜比例。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§3.1–3.2; Table 1; Figure 4; §4; Figure 7",
+                  "source_id": "report"
+                }
+              ],
+              "id": "density",
+              "node_ids": [
+                "density"
+              ],
+              "summary": "同主干 9B为 60.28、内部 397B为 62.17；低信息密度消融只有 44.65和 51.36，均低于原请求 54.36。",
+              "title": "有效信息密度不足时，扩写可以比原请求更差"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "表 5将增强器迁移到FLUX.2-dev、Krea 2 Turbo、HunyuanImage-2.1及FLUX 3 Image Klein，未访问这些目标主干的训练描述。每个主干内部，9B和 397B的Overall都超过原请求；在Hunyuan与FLUX 3两组也超过各自原生增强器。该设计支持可迁移视觉设计的解释，不能外推到所有模型或所有用户请求。"
+                },
+                {
+                  "items": [
+                    "FLUX.2-dev：原请求 50.52，9B增强 53.05，397B增强 54.38。",
+                    "Krea 2 Turbo：原请求 49.76，9B增强 55.06，397B增强 56.28。",
+                    "HunyuanImage-2.1：原请求 44.48，9B增强 51.04，397B增强 51.66。",
+                    "FLUX 3 Image Klein：原请求 51.07，9B增强 57.81，397B增强 59.10。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "9B由Qwen3.5-9B初始化，397B由Qwen3.5-397B-A17B初始化，后者在表 1标为内部模型。论文链接 9B权重发布页，但本站未完成权重许可证、显存、吞吐和费用核验，不提供未经验证的部署门槛。论文CC BY 4.0只说明论文材料许可，本站配图为独立重绘。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "claim",
+                  "text": "本站建议：固定图像主干、种子与请求，检查显式约束是否被扩写改写，再盲评画面、延迟和费用。创作工具应保留查看／修改增强提示和回退原请求的路径。以上是采用建议，不属于作者实验结果。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§3.1; Table 1; §5; Table 5",
+                  "source_id": "report"
+                }
+              ],
+              "id": "transfer",
+              "node_ids": [
+                "transfer"
+              ],
+              "summary": "两种增强器在四个测试主干均超过原请求；9B有发布入口，397B是内部模型，不能据论文许可推断权重许可。",
+              "title": "跨四个主干的迁移成立，生产采用还需验证意图与代价"
+            }
+          ],
+          "title": "Qwen-Image-PE：提示增强怎样学会设计，为什么扩写也会退步？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-24",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "arXiv:2610.33472v1"
+          }
+        ],
+        "slug": "qwen-image-pe-design-reward-and-density",
+        "takeaway": "CRD把高质量图像变成密集描述监督；生成主干保持冻结，增强器学习补足灯光、构图、布局与细节。"
+      },
+      "title": "Qwen-Image-PE：提示增强怎样学会设计，为什么扩写也会退步？",
+      "translations": {
+        "en": {
+          "fields": {
+            "397B的SFT初始化为 61.52，逐张设计奖励为 61.36，组内设计奖励为 62.17；组内比逐张高 0.81分、比SFT高 0.65分。组内奖励与盲评人类偏好的排序一致率 59.1%，逐张为 50.9%，相差 8.2个百分点。一致率仍远非 100%，不能称评判器已经替代专业判断。": "For 397B, SFT initialization scores 61.52, pointwise design reward 61.36 and groupwise reward 62.17: gains of 0.81 and 0.65 points over pointwise and SFT respectively. Reward orderings agree with blinded human preferences in 59.1% of cases versus 50.9% for pointwise rewards, an 8.2-percentage-point difference. Agreement remains far below 100%, so the judge does not replace professional judgment.",
+            "9B由Qwen3.5-9B初始化，397B由Qwen3.5-397B-A17B初始化，后者在表 1标为内部模型。论文链接 9B权重发布页，但本站未完成权重许可证、显存、吞吐和费用核验，不提供未经验证的部署门槛。论文CC BY 4.0只说明论文材料许可，本站配图为独立重绘。": "The 9B enhancer starts from Qwen3.5-9B and 397B from Qwen3.5-397B-A17B, marked internal in Table 1. The paper links a 9B weights page, but FieldToFit has not verified weight licensing, memory, throughput or costs and supplies no untested deployment requirements. The paper’s CC BY 4.0 covers paper material; our figures are independent redraws.",
+            "CRD把高质量图像变成密集描述监督；生成主干保持冻结，增强器学习补足灯光、构图、布局与细节。": "CRD derives dense-caption supervision from high-quality images. The generator stays frozen while the enhancer learns lighting, composition, layout and detail.",
+            "CRD监督与GDR奖励如何让提示增强学习视觉设计？四条结论、三张本站重绘，分清同主干提升、低信息密度退步、内部 397B与迁移边界。": "How do CRD supervision and GDR rewards teach prompt enhancement visual design? Four findings and three original redraws distinguish matched-backbone gains, low-density regressions, internal 397B and transfer limits.",
+            "CRD监督与GDR强化两阶段路线，图像生成主干冻结": "Two-stage CRD supervision and GDR reinforcement with a frozen image generator",
+            "Caption-Based Reverse Distillation沿两条路径构造请求与图像：从请求生成并筛选好图，或从已有好图降级出简短、含噪请求。多模态模型为图像写密集描述，作为增强提示目标；再据请求与目标合成设计理由。训练时增强器只从请求预测这些输出。监督理由属于合成标签，不是可直接证明真实内部推理的观测。": "Caption-Based Reverse Distillation constructs request–image pairs in two ways: generate and filter images from requests, or derive shorter, noisier requests from good images. A multimodal model densely captions each image to form the enhanced-prompt target, then synthesizes a design rationale from the request and target. During training, the enhancer predicts these outputs from the request alone. Synthesized rationales are supervision labels, not direct observations proving internal reasoning.",
+            "FLUX 3 Image Klein：原请求 51.07，9B增强 57.81，397B增强 59.10。": "FLUX 3 Image Klein: original 51.07, 9B 57.81, 397B 59.10.",
+            "FLUX.2-dev：原请求 50.52，9B增强 53.05，397B增强 54.38。": "FLUX.2-dev: original 50.52, 9B 53.05, 397B 54.38.",
+            "FieldToFit分析：这项研究把提示工程从手写诀窍变成可以拆解的训练问题。最有价值的证据不是最长的提示或最高一行分数，而是反向监督、组内奖励和低密度退步三种对照。实际采用需要同时守住用户意图、图像质量、等待时间与费用，不能把设计偏好变成替用户改题。": "FieldToFit analysis: this work turns prompt engineering from handcrafted tricks into a decomposable training problem. The useful evidence is the contrast among reverse supervision, groupwise rewards and low-density regressions, rather than the longest prompt or highest score. Adoption must preserve intent while balancing image quality, latency and cost; design preference should not silently rewrite the task.",
+            "GDR用网格与多次打乱比较同请求候选，设计奖励加意图对齐；Overall比SFT高 0.65分，不能写成训练收益无限扩大。": "GDR compares candidates for the same request in shuffled grids, combining design and alignment rewards. Overall is 0.65 points above SFT, not an unlimited training benefit.",
+            "HunyuanImage-2.1：原请求 44.48，9B增强 51.04，397B增强 51.66。": "HunyuanImage-2.1: original 44.48, 9B 51.04, 397B 51.66.",
+            "Krea 2 Turbo：原请求 49.76，9B增强 55.06，397B增强 56.28。": "Krea 2 Turbo: original 49.76, 9B 55.06, 397B 56.28.",
+            "Qwen-Image-PE：提示增强怎样学会设计，为什么扩写也会退步？": "Qwen-Image-PE: how prompt enhancement learns design—and why expansion can regress",
+            "两种增强器在四个测试主干均超过原请求；9B有发布入口，397B是内部模型，不能据论文许可推断权重许可。": "Both enhancers beat original requests on four tested backbones. A 9B release is linked; 397B is internal. Paper licensing does not establish weight licensing.",
+            "主要比较固定Qwen-Image-2.1主干、2K分辨率及每请求采样种子。原请求Overall 54.36，9B增强 60.28，内部 397B增强 62.17；397B相对原请求提升 7.81分，不是 7.81%。表 1上方其他图像模型使用不同主干，不能将全部行混成提示增强器公平排名。": "The main comparison fixes Qwen-Image-2.1, 2K resolution and per-request sampling seeds. Overall is 54.36 for the original request, 60.28 for 9B enhancement and 62.17 for internal 397B: the 397B gain is 7.81 points, not 7.81%. Other image models at the top of Table 1 use different backbones; all rows cannot form a matched prompt-enhancer ranking.",
+            "作者评测，本站未独立复现。397B为内部模型；同主干结果、信息密度消融与跨主干迁移各有条件，不等于所有请求更好或生产成本更低。": "Author evaluations, not independently replicated by FieldToFit. The 397B model is internal. Matched-backbone results, information-density ablations and transfer tests have separate conditions; they do not establish universal improvement or lower production cost.",
+            "信息密度实验固定Qwen3.5-9B和 50K样本，改变描述监督等级。L1至L4的Overall依次 44.65、51.36、55.39、57.31；前两级低于原请求。作者用冻结Qwen3-VL-8B-Instruct测量图像条件对文字似然的增益GPG，不是简单按token数给提示贴密度标签。结论限于该模型、样本和度量，不是一个可直接套用所有任务的长度阈值。": "The density experiment fixes Qwen3.5-9B and 50K examples while varying caption supervision. Overall for L1–L4 is 44.65, 51.36, 55.39 and 57.31; the first two regress. Grounded Perplexity Gain uses frozen Qwen3-VL-8B-Instruct to measure the likelihood gain from seeing paired images, rather than merely counting tokens. This is specific to the model, sample and metric, not a universal length threshold.",
+            "先从好图反推设计，再把设计能力交给提示增强器": "Learn design from images before training the prompt enhancer",
+            "同一研究的互补证据": "Complementary evidence within the study",
+            "同主干 9B为 60.28、内部 397B为 62.17；低信息密度消融只有 44.65和 51.36，均低于原请求 54.36。": "Matched-backbone 9B and internal 397B score 60.28 and 62.17, but low-density ablations score 44.65 and 51.36, below the original request’s 54.36.",
+            "同主干Overall和 397B训练消融，分开比较规模与训练阶段": "Matched-backbone Overall and 397B training ablations, with separate comparisons",
+            "同组图像一起比较，比逐张评分更有用，仍有评判偏差": "Joint comparison improves feedback, while judgment remains imperfect",
+            "固定 9B与 50K监督样本的信息密度消融，L1与L2低于原请求": "Information-density ablation at fixed 9B and 50K examples: L1 and L2 regress",
+            "在 397B相同训练设置的消融中，正向扩写监督Overall为 59.86，反向描述监督为 61.52，相差 1.66分。提示分布更靠近主干训练描述的JS、FD与MAUVE结果支持作者动机，但分布接近不自动构成画面质量提高的充分因果解释。": "With matched 397B training settings, forward-supervised enhancement scores 59.86 Overall versus 61.52 for reverse-caption supervision, a 1.66-point difference. JS, FD and MAUVE measurements support the motivation of approaching the generator’s caption distribution; distributional proximity alone is not a sufficient causal explanation for image-quality gains.",
+            "数据规模从 12.5K增至 100K时，Overall由 55.87至 57.61，后续翻倍收益递减。模型规模实验固定 50K，包含dense与MoE，不能仅按标称总参数推断实际推理费用。专家偏好评估含 500个跨领域案例，净胜率定义为(G−B)/(G+S+B)，不等于单独的获胜比例。": "Increasing training data from 12.5K to 100K raises Overall from 55.87 to 57.61 with diminishing gains per doubling. The size sweep fixes 50K examples and includes dense and MoE models; nominal total parameters do not determine inference cost. Expert preference evaluation has 500 cross-domain cases; net win rate is (G−B)/(G+S+B), not the winning share alone.",
+            "有效信息密度不足时，扩写可以比原请求更差": "Expansion can underperform the original when information density is insufficient",
+            "本站建议：固定图像主干、种子与请求，检查显式约束是否被扩写改写，再盲评画面、延迟和费用。创作工具应保留查看／修改增强提示和回退原请求的路径。以上是采用建议，不属于作者实验结果。": "FieldToFit suggestion: fix the generator, seed and request, check whether expansion alters explicit constraints, then blindly compare images, latency and cost. Creative tools should let users inspect/edit enhanced prompts and return to the original. This is adoption advice, not an author experimental finding.",
+            "本站据§4与图 7(c)所报数值重绘；横轴为作者的监督密度等级，不是字数。虚线为原请求 54.36。": "Redraw of values reported in §4 and Figure 7(c). The x-axis is the authors’ supervision-density level, not word count. The dashed baseline is 54.36.",
+            "本站据图 2和§2独立重绘方法路线，不复制原图；箭头表示训练数据流，不表示实测因果收益。": "Independent FieldToFit method redraw from Figure 2 and §2. Arrows show training data flow, not measured causal gains.",
+            "本站据表 1和表 3重绘；Overall为分数，越高越好。2K生成、同请求匹配种子；不同面板不是一条连续训练曲线。": "Redrawn from Tables 1 and 3. Overall is a score, higher is better; 2K generation with matched per-request seeds. Separate panels are not a single training trajectory.",
+            "来源与修订：Zekai Zhang、Yanran Zhang、Chenfei Wu等，Qwen团队，Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement，arXiv:2610.33472v1，首次 2026-10-24。本站 2026-10-29阅读全部主文章节与表格文字，三张图独立重绘；未逐张审计原图，未复现训练、推理或账单。原文日期、本站核对日和网站首次发表分别保留。": "Sources and revisions: Zekai Zhang, Yanran Zhang, Chenfei Wu and colleagues, Qwen team, Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement, arXiv:2610.33472v1, first published 2026-10-24. FieldToFit read all main sections and table text on 2026-10-29. Three figures are independent redraws; original figures were not individually audited and training, inference and billing were not reproduced. Source, check and site-publication dates remain distinct.",
+            "每个请求采样一组增强提示，用相同生成种子输出候选图。评判器在统一网格中按灯光、构图、布局和细节分别打分，多次打乱排列后平均，减少位置敏感性；奖励另含对原始请求的对齐项。GRPO在组内归一化奖励，KL约束靠近初始SFT策略，图像主干始终冻结。": "For each request, the enhancer samples a group of prompts and renders candidates with a shared generator seed. A judge scores lighting, composition, layout and detail jointly in grids, averaging multiple shuffled presentations to reduce positional sensitivity. An alignment term preserves the original request. GRPO normalizes rewards within the group and uses KL regularization toward the initial SFT policy; the image backbone remains frozen.",
+            "短请求常没有说清光源、主体层次、留白和材质。论文把提示增强定义为从用户请求生成设计推理、增强提示和宽高比，再交给冻结的文生图主干。目标是补齐视觉决策，同时保留用户明确要求；增强器和图像生成器是不同角色。": "Short requests often leave lighting, visual hierarchy, whitespace and materials unspecified. The paper defines enhancement as generating a design rationale, an enriched prompt and an aspect ratio from a request, then passing them to a frozen text-to-image generator. It fills visual choices while preserving explicit requirements; the enhancer and generator have different roles.",
+            "表 5将增强器迁移到FLUX.2-dev、Krea 2 Turbo、HunyuanImage-2.1及FLUX 3 Image Klein，未访问这些目标主干的训练描述。每个主干内部，9B和 397B的Overall都超过原请求；在Hunyuan与FLUX 3两组也超过各自原生增强器。该设计支持可迁移视觉设计的解释，不能外推到所有模型或所有用户请求。": "Table 5 transfers the enhancers to FLUX.2-dev, Krea 2 Turbo, HunyuanImage-2.1 and FLUX 3 Image Klein without access to their training captions. Within each backbone, 9B and 397B exceed original requests in Overall; they also exceed native enhancers for Hunyuan and FLUX 3. This supports transferable design within the tests, not every model or request.",
+            "训练使用组内奖励；基准设计维度使用另一个在专家标注上训练的Q-Judger逐张评估。区分训练奖励与评价指标有价值，但仍属于作者实验，本站未复现评判可靠性。": "Training uses groupwise rewards; benchmark design dimensions use pointwise Q-Judger evaluation trained on expert annotations. Separating rewards from evaluation is useful, but these remain author experiments; FieldToFit has not replicated judge reliability.",
+            "跨四个主干的迁移成立，生产采用还需验证意图与代价": "Transfer holds on four backbones; adoption still requires intent and cost checks",
+            "首次完整分析：四条结论与同号论述、三张本站重绘，保留训练、同主干分数、密度退步与迁移限制。": "First full analysis: four findings with matching arguments and three original redraws, retaining training conditions, matched-backbone scores, density regressions and transfer limits."
+          },
+          "source_hash": "872d207d489fa31049bbe66921a962d764a3983cc152f60f93d828102a3f209d",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-28",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-27",
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -43,7 +884,7 @@
             "source_id": "oracle-announcement"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "Oracle采购入口已扩展，Workspace仍需核对开放状态",
         "limits": [
           {
@@ -109,7 +950,7 @@
         "first_published_at": "2026-10-28T01:15:43.470607+00:00",
         "hot_card_first_published_at": "2026-10-28T01:15:43.470636+00:00",
         "hot_card_selected_at": "2026-10-28T01:15:43.470636+00:00",
-        "updated_at": "2026-10-28T01:28:06.387850+00:00"
+        "updated_at": "2026-10-29T03:01:43.771648+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -173,7 +1014,7 @@
             "采购先看地区与合同": "Check region and contract eligibility",
             "额度有条件": "Credits are conditional"
           },
-          "source_hash": "27e49ad9eb1b63d23fd255221773306621db492948160d7c68e3af89333bb9c4",
+          "source_hash": "038c0dc93102e63cf0d62e85a44b074e1ce51e94f19d2a54bc142cb8bd98611f",
           "state": "reviewed"
         }
       }
@@ -183,7 +1024,7 @@
       "checked_at": "2026-10-28",
       "editor": "FieldToFit",
       "event_date": "2026-10-28",
-      "highlight": true,
+      "highlight": false,
       "id": "D-269",
       "interpretation": [
         {
@@ -216,7 +1057,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-10-28T01:15:15.885773+00:00",
-        "updated_at": "2026-10-28T01:15:15.885773+00:00"
+        "updated_at": "2026-10-29T03:02:10.326708+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -251,7 +1092,7 @@
             "组织策略与文件读取边界修复": "Fix organization policy and file-reading boundaries",
             "身份字段可配置": "Configure the identity claim"
           },
-          "source_hash": "8e2a391bb08b93baa7a5081f0f4735782489fb4b80e1c08e2516820bb3fc8c25",
+          "source_hash": "08168acf6207d8ea96204d508a389be10629a6b1a48b3bac46b774f790458013",
           "state": "reviewed"
         }
       }
@@ -1639,7 +2480,7 @@
             "source_id": "source-6"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "GPT-6.1 Terra：先核入口，再比任务成本",
         "limits": [
           {
@@ -2107,7 +2948,7 @@
             "面向视觉理解、电脑操作与日常专业任务，效果仍需用自己的样本验证。": "Designed for visual reasoning, computer use and everyday professional work; validate results on your own samples.",
             "首次完整分析：四条结论、对应论述和两张本站重绘／示意。": "First full analysis: four findings, matching arguments and two original redraws / schematics."
           },
-          "source_hash": "29658031ab631c56055e0e0278e217627e7520562405f1ef533baffe6555e271",
+          "source_hash": "903b132ddf13cac482695892cb2837f9f6b3b2a0f579b2b3bde63b92ebb0b0ee",
           "state": "reviewed"
         }
       }
@@ -2250,7 +3091,7 @@
             "source_id": "release310"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Claude Code更新了权限边界，升级后仍要验证",
         "limits": [
           {
@@ -2374,7 +3215,7 @@
             "留意Windows与编辑器审批": "Check Windows and editor approvals",
             "长任务兼容与恢复": "Long-task compatibility and recovery"
           },
-          "source_hash": "78a09fc1b8cbe3dd814c951de721c1120797ea6a0139acdbd1020ae57af75190",
+          "source_hash": "c4f1f72d22719531308a7decf8429c90d4a8f03d41cff8457c663580504c9af4",
           "state": "reviewed"
         }
       }
@@ -41904,7 +42745,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-28",
+  "reviewed_at": "2026-10-29",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

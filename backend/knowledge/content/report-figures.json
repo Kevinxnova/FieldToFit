@@ -1816,5 +1816,35 @@
     "attribution": "FieldToFit",
     "source_version": "arXiv:2610.28711v1",
     "locator": "§5.7 Table 6"
+  },
+  "/report-figures/oct29-pe-route.png": {
+    "sha256": "0bc334d07d8b5e1d694d065185d15e5465689bfd9f12013e777b35cd27d358bd",
+    "source_urls": [
+      "https://arxiv.org/html/2610.33472v1"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "arXiv:2610.33472v1",
+    "locator": "Figure 2; §2"
+  },
+  "/report-figures/oct29-pe-scores.png": {
+    "sha256": "f6a61304e529758d1259b468b6e117374a7e89e4e0850250c1c78e7d5aeb7133",
+    "source_urls": [
+      "https://arxiv.org/html/2610.33472v1"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "arXiv:2610.33472v1",
+    "locator": "Tables 1, 3"
+  },
+  "/report-figures/oct29-pe-density.png": {
+    "sha256": "9125a26a4a48c79db135b45206c319463797daf724bfe249b729a6ebc2b8cddf",
+    "source_urls": [
+      "https://arxiv.org/html/2610.33472v1"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts and method schematic; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "arXiv:2610.33472v1",
+    "locator": "Figure 7(c); §4"
   }
 }

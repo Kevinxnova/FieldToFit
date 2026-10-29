@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.11](CHANGELOG.md#v1.17.11)** · [fieldtofit-v1.17.11](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.11)
+**当前源码版本：[v1.17.12](CHANGELOG.md#v1.17.12)** · [fieldtofit-v1.17.12](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.12)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布已选Oracle采购合作、Claude Code 2.1.312动态，同步本期速览、近期总表及四份对应档案。
-- 新增Qwen-Audio-3.1-ASR技术报告分析，四条结论与三张本站重绘，保留变体能力、训练监督、评测口径及部署限制。
-- 提供Oracle中英热点分享卡，正式发表后轮替首页报告与信息卡，旧内容继续保留全部索引和稳定入口。
+- 发布已选Carbon、ChatGPT API赠额、ServiceNow MCP与Genie 4动态，同步本期速览、近期总表及四份对应档案。
+- 新增Qwen-Image-PE完整分析，四条结论、三张本站重绘，区分训练设计、同主干分数、信息密度退步与迁移边界。
+- 提供Carbon中英分享卡；正式发表后轮替首页报告与卡片，旧内容、原日期及稳定入口保留。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
