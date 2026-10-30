@@ -38,16 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.13](CHANGELOG.md#v1.17.13)** · [fieldtofit-v1.17.13](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.13)
+**当前源码版本：[v1.17.14](CHANGELOG.md#v1.17.14)** · [fieldtofit-v1.17.14](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.14)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 合并两批已批准内容：官方Day 23重置公告、Day 24短信、Day 25用量调整；Pro 200保留既有高额度，较低额度用户补齐。
-- 加入CLI 0.165.0／0.166.0、iCloud、API赠额、ServiceNow、Chat回应风格及两项官方说明，保留日期、适用范围和证据限制。
-- 专题共91条：主线46、其他OpenAI45；严格重置计数仍0。复用同事件编号，网站与AI读取保持同源。
-- 补齐同期已发布Luna报告及Haiku分享卡资源，Model Spec重复记录归并到原编号并保留历史。
+- 发布已选Haiku选择器迁移、Claude Code 2.1.314、Luna更新及Model Spec动态，同步近期总表与三份档案。
+- Luna动态与完整报告复用同一条目，四条结论、三张本站重绘，保留安全改善、事实性退步、长度校正和行为测试边界。
+- 提供Haiku迁移中英分享卡，正式发布后轮替首页报告与卡片；旧文、日期和分享链接继续保留。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

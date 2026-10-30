@@ -4,6 +4,25 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.14"></a>
+## v1.17.14 · Haiku迁移与Luna安全及事实性分析 · 2026-10-30
+<!-- site-deployed:2026-10-30 -->
+<!-- public-title:en: Haiku migration and Luna safety and factuality analysis -->
+<!-- release-summary:zh:start -->
+- 发布已选Haiku选择器迁移、Claude Code 2.1.314、Luna更新及Model Spec动态，同步近期总表与三份档案。
+- Luna动态与完整报告复用同一条目，四条结论、三张本站重绘，保留安全改善、事实性退步、长度校正和行为测试边界。
+- 提供Haiku迁移中英分享卡，正式发布后轮替首页报告与卡片；旧文、日期和分享链接继续保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish selected Haiku picker migration, Claude Code 2.1.314, Luna and Model Spec updates, with the recent index and three related dossiers.
+- Reuse one Luna item for its update and full report: four findings and three independent redraws retain safety improvements, factuality regressions, length adjustment and behavioral-test limits.
+- Provide a bilingual Haiku migration card; successful publication rotates homepage reports and cards while retaining older articles, dates and share links.
+<!-- release-summary:en:end -->
+
+所有者明确选择2026-10-30 A–D、报告1、卡1。A与卡1共用D-281，B为D-282，C与报告1共用D-283，D为D-287。对应CW-M01／CW-M02／CW-A02。D-272／D-273由并行获批专题完成发表，本批保留其已审内容与速览，不重复覆盖；Model Spec进入完整近期总表与详情，首页重点三项新事件。以v1.17.13为基线并结合v1.17.0以来内容维护，本批为兼容内容与资源patch，无新模块、主要流程、协议变化或数据库迁移。报告2、Mistral待核线索、榜单及日程均未扩大。实际验收见[记录](docs/validation/2026-10-30-haiku-luna.md)。
+
+并行专题v1.17.13提交已完整保留；本版补齐本批发表回执、图表生成源及正式读取验收，保留专题的事件归组与Model Spec去重历史。
+
 <a id="v1.17.13"></a>
 ## v1.17.13 · Day 23—25与两批专题更新 · 2026-10-30
 <!-- public-title:en: Days 23–25 and two reviewed topic batches -->

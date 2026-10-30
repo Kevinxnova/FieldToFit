@@ -1,7 +1,35 @@
 {
-  "version": "1.17.13",
-  "revision": "53e5dc4a988a328f988d7d0808356669acb4e655804c1b9c27f79e8bbfc2207b",
+  "version": "1.17.14",
+  "revision": "4a3d8b2e6407f78e05810157f3a8eb64cf6db91cc0134005ae5d191e8c56482f",
   "items": [
+    {
+      "version": "1.17.14",
+      "date": "2026-10-30",
+      "deployed_on": "2026-10-30",
+      "copy": {
+        "zh": {
+          "title": "Haiku迁移与Luna安全及事实性分析",
+          "highlights": [
+            "发布已选Haiku选择器迁移、Claude Code 2.1.314、Luna更新及Model Spec动态，同步近期总表与三份档案。",
+            "Luna动态与完整报告复用同一条目，四条结论、三张本站重绘，保留安全改善、事实性退步、长度校正和行为测试边界。",
+            "提供Haiku迁移中英分享卡，正式发布后轮替首页报告与卡片；旧文、日期和分享链接继续保留。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Haiku migration and Luna safety and factuality analysis",
+          "highlights": [
+            "Publish selected Haiku picker migration, Claude Code 2.1.314, Luna and Model Spec updates, with the recent index and three related dossiers.",
+            "Reuse one Luna item for its update and full report: four findings and three independent redraws retain safety improvements, factuality regressions, length adjustment and behavioral-test limits.",
+            "Provide a bilingual Haiku migration card; successful publication rotates homepage reports and cards while retaining older articles, dates and share links."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.14"
+    },
     {
       "version": "1.17.13",
       "date": "2026-10-30",
