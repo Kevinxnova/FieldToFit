@@ -1846,5 +1846,35 @@
     "attribution": "FieldToFit",
     "source_version": "arXiv:2610.33472v1",
     "locator": "Figure 7(c); §4"
+  },
+  "/report-figures/oct30-luna-factuality.png": {
+    "sha256": "214b4e695c3b1397d698909882bcd6c121b8cc9baa91bd896e16f127bca681fa",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "GPT-6 Luna October29, 2026 addendum",
+    "locator": "Figure3; §6.1"
+  },
+  "/report-figures/oct30-luna-health.png": {
+    "sha256": "c96b3b11849f04a04e9c7f253dcbc652f864f1c3769d038de0a1c37169531357",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "GPT-6 Luna October29, 2026 addendum",
+    "locator": "Table5; §5.1"
+  },
+  "/report-figures/oct30-luna-behavior.png": {
+    "sha256": "5c0c3a43e7450284ea0b7868835e54be4033162901660735f222bfcc5146e72f",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "GPT-6 Luna October29, 2026 addendum",
+    "locator": "Figures4–7; §7"
   }
 }

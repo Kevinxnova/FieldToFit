@@ -38,15 +38,16 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.12](CHANGELOG.md#v1.17.12)** · [fieldtofit-v1.17.12](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.12)
+**Current source version: [v1.17.13](CHANGELOG.md#v1.17.13)** · [fieldtofit-v1.17.13](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.13)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the selected Carbon, ChatGPT API-credit, ServiceNow MCP and Genie 4 updates, synchronizing highlights, the recent index and four related dossiers.
-- Add a complete Qwen-Image-PE analysis with four findings and three original redraws, distinguishing training design, matched-backbone scores, density regressions and transfer limits.
-- Provide a bilingual Carbon share card; successful publication rotates homepage reports and cards while preserving older content, source dates and stable links.
+- Combine two approved batches covering the Day 23 reset announcement, Day 24 texting and Day 25 allowances; higher Pro 200 allowances stay while lower allowances catch up.
+- Add CLI 0.165.0/0.166.0, iCloud, API credits, ServiceNow, Chat response style and two official disclosures, retaining dates, scope and evidence limits.
+- Share 91 reviewed entries: 46 core and 45 other OpenAI updates, with the strict reset count still zero; reuse existing event IDs across the website and AI readers.
+- Preserve the concurrently published Luna report and Haiku share assets; merge duplicate Model Spec entries into the original ID while retaining history.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

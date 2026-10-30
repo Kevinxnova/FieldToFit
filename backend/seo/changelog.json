@@ -1,7 +1,37 @@
 {
-  "version": "1.17.12",
-  "revision": "fa767a85cf2c77b4ce92d6dfda7313fbde214ac36f00a216ce18ffc45e565c85",
+  "version": "1.17.13",
+  "revision": "53e5dc4a988a328f988d7d0808356669acb4e655804c1b9c27f79e8bbfc2207b",
   "items": [
+    {
+      "version": "1.17.13",
+      "date": "2026-10-30",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Day 23—25与两批专题更新",
+          "highlights": [
+            "合并两批已批准内容：官方Day 23重置公告、Day 24短信、Day 25用量调整；Pro 200保留既有高额度，较低额度用户补齐。",
+            "加入CLI 0.165.0／0.166.0、iCloud、API赠额、ServiceNow、Chat回应风格及两项官方说明，保留日期、适用范围和证据限制。",
+            "专题共91条：主线46、其他OpenAI45；严格重置计数仍0。复用同事件编号，网站与AI读取保持同源。",
+            "补齐同期已发布Luna报告及Haiku分享卡资源，Model Spec重复记录归并到原编号并保留历史。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Days 23–25 and two reviewed topic batches",
+          "highlights": [
+            "Combine two approved batches covering the Day 23 reset announcement, Day 24 texting and Day 25 allowances; higher Pro 200 allowances stay while lower allowances catch up.",
+            "Add CLI 0.165.0/0.166.0, iCloud, API credits, ServiceNow, Chat response style and two official disclosures, retaining dates, scope and evidence limits.",
+            "Share 91 reviewed entries: 46 core and 45 other OpenAI updates, with the strict reset count still zero; reuse existing event IDs across the website and AI readers.",
+            "Preserve the concurrently published Luna report and Haiku share assets; merge duplicate Model Spec entries into the original ID while retaining history."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.13"
+    },
     {
       "version": "1.17.12",
       "date": "2026-10-29",

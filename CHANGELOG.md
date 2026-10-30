@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.13"></a>
+## v1.17.13 · Day 23—25与两批专题更新 · 2026-10-30
+<!-- public-title:en: Days 23–25 and two reviewed topic batches -->
+<!-- release-summary:zh:start -->
+- 合并两批已批准内容：官方Day 23重置公告、Day 24短信、Day 25用量调整；Pro 200保留既有高额度，较低额度用户补齐。
+- 加入CLI 0.165.0／0.166.0、iCloud、API赠额、ServiceNow、Chat回应风格及两项官方说明，保留日期、适用范围和证据限制。
+- 专题共91条：主线46、其他OpenAI45；严格重置计数仍0。复用同事件编号，网站与AI读取保持同源。
+- 补齐同期已发布Luna报告及Haiku分享卡资源，Model Spec重复记录归并到原编号并保留历史。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Combine two approved batches covering the Day 23 reset announcement, Day 24 texting and Day 25 allowances; higher Pro 200 allowances stay while lower allowances catch up.
+- Add CLI 0.165.0/0.166.0, iCloud, API credits, ServiceNow, Chat response style and two official disclosures, retaining dates, scope and evidence limits.
+- Share 91 reviewed entries: 46 core and 45 other OpenAI updates, with the strict reset count still zero; reuse existing event IDs across the website and AI readers.
+- Preserve the concurrently published Luna report and Haiku share assets; merge duplicate Model Spec entries into the original ID while retaining history.
+<!-- release-summary:en:end -->
+
+对应REQ-20。两批具体提案分别获“全部6项发布（推荐）”及“发布全部5项（推荐）”确认。基于v1.17.12，本批为兼容内容patch；自v1.17.0累计变化未新增完整模块、主要用户流程、协议或数据库迁移。保留并行已发布新闻、图表与资源，原晨报及夜间日程和未来逐批批准保持。实际核对见[验收](docs/validation/2026-10-30-codex-days23-25.md)。
+
 <a id="v1.17.12"></a>
 ## v1.17.12 · Carbon采用条件与Qwen提示增强分析 · 2026-10-29
 <!-- site-deployed:2026-10-29 -->

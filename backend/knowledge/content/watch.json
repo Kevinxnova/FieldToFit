@@ -131,6 +131,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "a4080e2df3a4f401ed507177226dbc07ce53ce12b1153febc9c90c00962a718d",
           "fields": {
             "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 1": "Durable Actors 0.8.0 · Official source 1",
             "Durable Actors 0.8.0：给共享 Agent 会话持久状态，也带来迁移要求 · 官方材料 2": "Durable Actors 0.8.0 · Official source 2",
@@ -159,10 +161,7 @@
             "迁移需要调整Helm镜像字段与相应环境变量，TypeScript工具要求Bun1.4.2+；已有部署仍引用保存过的镜像，必须保留它们以便重启和重新激活。": "Migration requires changes to Helm image fields and corresponding environment variables; TypeScript tooling requires Bun1.4.2+. Existing deployments still refer to saved images, which must be retained for restart and reactivation.",
             "部署迁移与旧镜像保留": "Deployment migration and saved images",
             "采用边界": "Adoption limitations"
-          },
-          "reviewed_at": "2026-10-12T01:54:05.916710+00:00",
-          "source_hash": "a4080e2df3a4f401ed507177226dbc07ce53ce12b1153febc9c90c00962a718d",
-          "state": "reviewed"
+          }
         }
       },
       "type": "tool"
@@ -394,6 +393,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "68a7c8b622aa0f3ef4cf309dc925672a14413263cf8cb0bec6f9acde80ecf017",
           "fields": {
             "2026-10-13 版本补录：v1.0.4": "2026-10-13 version addition: v1.0.4",
             "2026-10-14 补录：v1.0.5": "2026-10-14 addition: v1.0.5",
@@ -452,10 +453,7 @@
             "资料项": "Item",
             "跨端与模型接入修复": "Client and model connection fixes",
             "跨设备操作可在发起任务的手机上审批；支付只允许单次批准或拒绝，审批超时按拒绝处理。本站未回归实际设备权限与超时行为。": "Cross-device actions can be approved on the phone that initiated the task. Payments allow one-time approval or denial, and approval timeouts are treated as denial. FieldToFit has not tested actual device permissions or timeout behavior."
-          },
-          "reviewed_at": "2026-10-14T03:07:48.102335+00:00",
-          "source_hash": "68a7c8b622aa0f3ef4cf309dc925672a14413263cf8cb0bec6f9acde80ecf017",
-          "state": "reviewed"
+          }
         }
       },
       "type": "agent"
@@ -745,6 +743,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "e9205f006e0a32d14cb7a5d88f2e648f45d3d067f46717f93f6e5fa1479529e2",
           "fields": {
             "2026-10-12补齐当前版本缺项；以下保留 2026-10-11首轮材料及其历史上下文。": "The missing current-version information was added on 2026-10-12. The initial material reviewed on 2026-10-11 and its historical context are retained below.",
             "2026-10-15 补录：rea-agents-6.5.0": "2026-10-15 addition:rea-agents-6.5.0",
@@ -808,10 +808,7 @@
             "采用边界": "Adoption limitations",
             "静态JavaScript路径不需原生引擎；原生分析依赖Ghidra／Hopper／IDA": "Static JavaScript path does not require a native engine; native analysis depends on Ghidra/Hopper/IDA",
             "首次发布日期未知，不以HN讨论日期替代；演示4.1.0不是已核实的当前发行版；未安装或验证分析准确性。": "The first release date is unknown and must not be replaced by the HN discussion date. Demo version 4.1.0 is not a verified current release. FieldToFit has not installed REA or verified analysis accuracy."
-          },
-          "reviewed_at": "2026-10-15T03:33:03.342567+00:00",
-          "source_hash": "e9205f006e0a32d14cb7a5d88f2e648f45d3d067f46717f93f6e5fa1479529e2",
-          "state": "reviewed"
+          }
         }
       },
       "type": "tool"
@@ -1414,6 +1411,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "0e92d4ec1b4bae7a3b5757f76bff08eb15c281a0c177f73eef37d286851c6c7e",
           "fields": {
             "2026-10-13 版本补录：v0.1.43.1": "2026-10-13 version addition: v0.1.43.1",
             "2026-10-14 补录：v0.1.44": "2026-10-14 addition: v0.1.44",
@@ -1471,10 +1470,7 @@
             "长提示词读取失败可回退，慢磁盘进度检测得到修复；更新器核对实际引擎版本，避免新构建标记与旧二进制混用导致后续更新被跳过。": "Long-prompt reads can fall back on failure, and slow-disk progress detection is corrected. The updater checks the actual engine version to avoid mixing a new build stamp with an old binary and skipping later updates.",
             "限制与验证": "Restriction and verification",
             "需macOS 15 或更新及Command Line Tools、从源码构建；一次一请求，测量上下文最多 32K，仅两台Mac完成作者测试，部分模型族不支持。": "Requires macOS 15 or later, Command Line Tools and a source build. It processes one request at a time, with measured context up to 32K; the author tested only two Macs and some model families are unsupported."
-          },
-          "reviewed_at": "2026-10-14T03:12:22.955568+00:00",
-          "source_hash": "0e92d4ec1b4bae7a3b5757f76bff08eb15c281a0c177f73eef37d286851c6c7e",
-          "state": "reviewed"
+          }
         }
       },
       "type": "tool"
@@ -1760,6 +1756,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "6a1cf8828f7a456acb2e7f762e939e351341efe1d40ee68d4f6369087003c59f",
           "fields": {
             "27B 模型卡": "27B Model Card",
             "27B 的稠密路线与 Flash-Next 的实验架构应分别展示；数字和后缀不足以表达这层关系。": "The 27B dense approach and Flash-Next's experimental architecture should appear separately. Numbers and suffixes alone do not express that relationship.",
@@ -1815,10 +1813,7 @@
             "音视频模型与配套产物分开看。": "Look at the audio and video models and supporting products separately.",
             "预览 Qwen4 架构方向": "Preview the direction of Qwen4 architecture",
             "首发日待核；官方模型卡可见": "The first date is to be approved; the official model card can be seen"
-          },
-          "reviewed_at": "2026-10-29T02:52:14.733122+00:00",
-          "source_hash": "6a1cf8828f7a456acb2e7f762e939e351341efe1d40ee68d4f6369087003c59f",
-          "state": "reviewed"
+          }
         }
       },
       "type": "model"
@@ -2048,6 +2043,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "53d51e5f1fe153a12c56657494bed82dce4e03716efb99041f233fa2d0824e53",
           "fields": {
             "2026-10-17 补录：release/2026-10-16": "2026-10-17 addition: release/2026-10-16",
             "AG-UI 1.0 为 Agent 与应用界面之间的事件提供稳定规范，覆盖子Agent、人工中断、多模态工具结果和token用量。": "AG-UI 1.0 provides a stable event specification between agents and application interfaces, covering subagents, human interruptions, multimodal tool results and token usage.",
@@ -2088,10 +2085,7 @@
             "规范及补充材料": "Specification and supplementary materials",
             "适配器保留拆分内容、限定工具名、结构化结果和失败状态，恢复原会话与延迟审批；这些是界面及工具调用链的兼容修复。": "Adapters preserve split content, qualified tool names, structured results and failure states, with resumed sessions and deferred approvals. These are compatibility fixes for UI and tool-call flows.",
             "采用入口": "Adopt the entrance"
-          },
-          "reviewed_at": "2026-10-17T02:59:44.226498+00:00",
-          "source_hash": "53d51e5f1fe153a12c56657494bed82dce4e03716efb99041f233fa2d0824e53",
-          "state": "reviewed"
+          }
         }
       },
       "type": "tool"
@@ -4315,6 +4309,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "c6c39c24d343d067d2b7ed0aaee7fce09dc7d698b4777c685ff7ce721f10d961",
           "fields": {
             "2026-10-10版本补充：v0.2.4": "2026-10-10 Version Supplement: v0.2.4",
             "2026-10-17 补录：v0.3.0–v0.3.2": "2026-10-17 addition: v0.3.0–v0.3.2",
@@ -4376,10 +4372,7 @@
             "远端被视为受信任的本机延伸，依赖SSH配置；Windows需预装密钥并先接受主机密钥。HTTPS云Agent连接仍为将来能力。": "The remote host is a trusted extension of the local machine and uses SSH configuration. Windows requires keys loaded in advance and prior host-key acceptance. HTTPS cloud-agent connections remain planned.",
             "采用入口": "Adopt the entrance",
             "采用边界": "Adopt the boundary"
-          },
-          "reviewed_at": "2026-10-17T02:59:05.866619+00:00",
-          "source_hash": "c6c39c24d343d067d2b7ed0aaee7fce09dc7d698b4777c685ff7ce721f10d961",
-          "state": "reviewed"
+          }
         }
       },
       "type": "tool"
@@ -4661,6 +4654,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "aa7d8169d7b51cb8c94537eb3f8b419be09aca2e80b8763a3f16e2d2c7dbe3a7",
           "fields": {
             "/v1/systemone、/v1/models；固定API说明": "/v1/systemone, /v1/models; fixed API description",
             "2026-10-09 17:54:42 UTC（北京时间10月10日01:54）": "2026-10-09 17:54:42 UTC (Beijing Time 10/10 01:54)",
@@ -4723,10 +4718,7 @@
             "选择模型": "Select the model",
             "采用入口": "Adopt the entrance",
             "采用边界": "Adopt the boundary"
-          },
-          "reviewed_at": "2026-10-14T03:09:07.448076+00:00",
-          "source_hash": "aa7d8169d7b51cb8c94537eb3f8b419be09aca2e80b8763a3f16e2d2c7dbe3a7",
-          "state": "reviewed"
+          }
         }
       },
       "type": "tool"
@@ -5269,6 +5261,30 @@
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[GPT-6 Luna更新：更简洁、少迎合，为什么不等于更可靠？](https://fieldtofit.top/news/D-283)",
+              "2026-10-29",
+              "10月 29日Luna更新强调简洁与减少迎合；系统卡同时披露六项事实性指标退步。四结论、三张本站重绘，分清安全类别、事实分母、长度校正与限制披露。"
+            ],
+            [
+              "[OpenAI更新Model Spec：五项价值与行为目标，现有模型尚未完全符合](https://fieldtofit.top/news/D-287)",
+              "2026-10-29",
+              "新版围绕人类意图、减少伤害、诚实透明、人类自主性与关怀组织指导，补上下文及副作用沟通，撤去大部分详细风格规则；规范目标不等于实测达标。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。"
+        },
         {
           "columns": [
             "本期已核实事件",
@@ -5989,12 +6005,33 @@
           "id": "oct29-C-announcement",
           "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
           "url": "https://openai.com/index/openai-servicenow-partnership-expansion/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct30-C-report",
+          "title": "GPT-6 Luna October29 system-card addendum",
+          "url": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct30-C-baseline",
+          "title": "GPT-6 Sol and GPT-6 Luna: October2026 update",
+          "url": "https://deploymentsafety.openai.com/gpt-6-october"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct30-D-announcement",
+          "title": "An updated Model Spec for more capable and beneficial AI",
+          "url": "https://openai.com/index/updated-model-spec/"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "116c0342445a30191be9283edc624253a103cfca8c65069bfd6667017d3c6c90",
           "fields": {
+            "10月 29日Luna更新强调简洁与减少迎合；系统卡同时披露六项事实性指标退步。四结论、三张本站重绘，分清安全类别、事实分母、长度校正与限制披露。": "The 10/29 Luna update targets concision and reduced agreeableness while reporting regressions on six factuality metrics. Four findings and three original redraws distinguish safety categories, factuality denominators, length adjustment and disclosure.",
             "10月7日起向Plus、Pro、Business、Enterprise的Chat页推出，10月8日起扩展到Free、Go；企业仍受管理员设置影响。逐步推出不代表所有账户同时可用。": "Rollout starts on 10/7 in Chat for Plus, Pro, Business and Enterprise, expanding to Free and Go from 10/8. Enterprise access remains subject to administrator settings. Gradual rollout does not establish simultaneous availability for all accounts.",
             "20 语言 SQLite 兼容构建与 COBOL 逐字节行为迁移两类评测；作者报告能力／成本进步，非新模型首发，未复现。": "Two evaluations: SQLite-compatible builds in 20 languages and byte-for-byte COBOL migration. Author-reported capability / cost gains, not a new-model launch; not reproduced.",
             "2026-10-07发布；10月8日起扩展Free／Go": "2026-10-07 released; 10/8 expands Free/Go",
@@ -6041,12 +6078,14 @@
             "[ChatGPT / Codex：ServiceNow MCP已上架，语音、安全与集成分阶段推出](https://fieldtofit.top/news/D-273)": "[ChatGPT / Codex: ServiceNow MCP is available, with phased voice, security and integration plans](https://fieldtofit.top/news/D-273)",
             "[ChatGPT Pro／Business新增API赠额：激活、组织归属与使用范围有条件](https://fieldtofit.top/news/D-272)": "[ChatGPT Pro/Business API credits: activation, organization and usage conditions](https://fieldtofit.top/news/D-272)",
             "[GPT-5.6 指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)": "[GPT-5.6 Guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)",
+            "[GPT-6 Luna更新：更简洁、少迎合，为什么不等于更可靠？](https://fieldtofit.top/news/D-283)": "[GPT-6 Luna update: why shorter, less agreeable answers do not imply greater reliability](https://fieldtofit.top/news/D-283)",
             "[GPT-6 指南](https://developers.openai.com/api/docs/guides/latest-model)": "[GPT-6 Guide](https://developers.openai.com/api/docs/guides/latest-model)",
             "[GPT-6.1 Terra进入Work与Codex，Tibo列为官方Day 22](https://fieldtofit.top/news/D-260)": "[GPT-6.1 Terra reaches Work and Codex; Tibo marks official Day 22](https://fieldtofit.top/news/D-260)",
             "[GPT-Live-1.1：全双工语音更新，安全结果需要分场景阅读](https://fieldtofit.top/news/D-155)": "[GPT-Live-1.1: full-duplex voice with scenario-specific safety results](https://fieldtofit.top/news/D-155)",
             "[GPT-Live：文字定制声音，创建免费与会话计费分开](https://fieldtofit.top/news/D-173)": "[GPT-Live: prompt-generated voices separate free creation from session billing](https://fieldtofit.top/news/D-173)",
             "[OpenAI 旧模型停用：10月 23日批次已经生效](https://fieldtofit.top/news/D-244)": "[OpenAI legacy-model shutdown: the 10/23 batch is effective](https://fieldtofit.top/news/D-244)",
             "[OpenAI公布三项研究声明与外部核验安排，材料开放范围不同](https://fieldtofit.top/news/D-263)": "[OpenAI announces three research claims and external examination with different release scopes](https://fieldtofit.top/news/D-263)",
+            "[OpenAI更新Model Spec：五项价值与行为目标，现有模型尚未完全符合](https://fieldtofit.top/news/D-287)": "[OpenAI updates the Model Spec: five values and behavioral goals that current models do not fully meet](https://fieldtofit.top/news/D-287)",
             "[Oracle采购入口扩展，AI Workspace仍需核对开放阶段](https://fieldtofit.top/news/D-268)": "[Oracle procurement expands; check AI Workspace availability separately](https://fieldtofit.top/news/D-268)",
             "[型号文档](https://developers.openai.com/api/docs/models/gpt-6.1-sol)": "[Model Document](https://developers.openai.com/api/docs/models/gpt-6.1-sol)",
             "[官方发布](https://openai.com/index/gpt-6-for-everyone/)": "[Official Release](https://openai.com/index/gpt-6-for-everyone/)",
@@ -6119,6 +6158,7 @@
             "支持范围和保留条件": "Supported endpoints and retention",
             "数据库测试通过率与全部测试通过的迁移成功率不等同；低／更高推理强度及每样本／相对成本分别记录。本站未复现评测。": "Database test pass rates and all-tests migration success are distinct. Low / higher effort and per-sample / relative costs are recorded separately. FieldToFit has not reproduced the evaluations.",
             "新增与采用边界": "New information and adoption boundaries",
+            "新版围绕人类意图、减少伤害、诚实透明、人类自主性与关怀组织指导，补上下文及副作用沟通，撤去大部分详细风格规则；规范目标不等于实测达标。": "The revision organizes guidance around human intent, harm minimization, honesty/transparency, human agency and care, adding context and side-effect guidance while retiring most detailed style rules. Goals are not measured compliance.",
             "既有语音与体验记录 → GPT-Live-1.1 / Quip": "Existing voice and experience records → GPT-Live-1.1 / Quip",
             "日期与状态": "Date and status",
             "日期与限制": "Dates and limitations",
@@ -6127,6 +6167,7 @@
             "本期事件／研究": "Current event / research",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
+            "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。": "Related events checked 2026-10-30; models, source dates, prices and history retained. Full daily checks of every source remain incomplete.",
             "本期已核实事件": "Current verified event",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M01 GPT, D-30, D-53。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M01 GPT, D-30, D-53. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次变化与用途": "Changes and uses this time",
@@ -6175,16 +6216,32 @@
             "首发日待核；并行分支": "Initial date to be nuclear; parallel branch",
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
-          },
-          "reviewed_at": "2026-10-29T02:51:47.543918+00:00",
-          "source_hash": "be34a0fc610c519da04b3ea10d75bcd5afba6348bdf5bc51c6cacd1ab7c48706",
-          "state": "reviewed"
+          }
         }
       },
       "type": "model"
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[Haiku 4.5移出部分选择器：旧对话续用 5.5，API等渠道保留](https://fieldtofit.top/news/D-281)",
+              "2026-10-29",
+              "Free／Pro／Max的聊天、Cowork和Design选择器已移除Haiku4.5；旧聊天保留但继续时用 5.5。Claude Code、Team／Enterprise及API不受此次变更影响。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。"
+        },
         {
           "columns": [
             "本期已核实事件",
@@ -6808,11 +6865,19 @@
           "id": "oct26-fable",
           "title": "Claude status: Fable 5.1",
           "url": "https://stspg.io/y0gkl12ztjst"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct30-A-faq",
+          "title": "Claude Haiku 4.5 was removed from the model selector",
+          "url": "https://support.claude.com/en/articles/17444146-claude-haiku-4-5-was-removed-from-the-model-selector"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "608652eceae9437a6d3706473f06e91f26cb5c5d37b370b2c8f0cb00e6a0eb26",
           "fields": {
             "1M上下文、128k最大输出；标准输入/输出每百万token $2/$10": "1M context, 128k maximum output; standard input/output per million token $ 2 /$ 10",
             "1M上下文、128k最大输出；标准输入/输出每百万token $4/$20": "1M context, 128k maximum output; standard input/output per million token $ 4 /$ 20",
@@ -6842,6 +6907,7 @@
             "Enterprise public beta，2026-10-21无编号更新；本站 2026-10-22核对。未连仓库、测扫描或验证API权限；试用额度完整条款未核，本稿不作资格或抵扣承诺。": "Enterprise public beta, unnumbered 2026-10-21 update; checked 2026-10-22. No repository, scanning or API-permission tests. Full trial-credit terms were not checked, so no eligibility or credit promise is made.",
             "Fable 5 的延续": "The continuation of Fable 5",
             "Fable 5.1 的强制工具调用、思考块兼容规则值得单独读迁移说明；只换模型名可能使已有工作流报错。": "Read the Fable 5.1 migration guide for forced tool-calling and thinking-block compatibility rules. Changing only the model name may break existing workflows.",
+            "Free／Pro／Max的聊天、Cowork和Design选择器已移除Haiku4.5；旧聊天保留但继续时用 5.5。Claude Code、Team／Enterprise及API不受此次变更影响。": "Haiku4.5 has been removed from Free/Pro/Max chat, Cowork and Design pickers. Existing chats remain but continue on 5.5. Claude Code, Team/Enterprise and API access are unaffected by this change.",
             "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 1",
             "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 2",
             "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 3",
@@ -6857,6 +6923,7 @@
             "[Claude Enterprise统一Chat与Cowork，企业权限和预算一起管理](https://fieldtofit.top/news/D-245)": "[Claude Enterprise unifies Chat and Cowork with access and budget controls](https://fieldtofit.top/news/D-245)",
             "[Claude 两组服务错误已恢复：记录实际影响窗口](https://fieldtofit.top/news/D-257)": "[Two Claude incidents resolved: retain actual impact windows](https://fieldtofit.top/news/D-257)",
             "[Claude服务恢复记录：分清影响窗口与公告时间](https://fieldtofit.top/news/D-251)": "[Claude recovery record: distinguish impact windows from notice times](https://fieldtofit.top/news/D-251)",
+            "[Haiku 4.5移出部分选择器：旧对话续用 5.5，API等渠道保留](https://fieldtofit.top/news/D-281)": "[Haiku 4.5 leaves selected model pickers: existing chats continue on 5.5; API and other channels remain](https://fieldtofit.top/news/D-281)",
             "[Opus 5.5 Fast mode：开放范围扩大，仍按快速模式计费](https://fieldtofit.top/news/D-177)": "[Opus 5.5 Fast mode: broader access with separate fast-mode billing](https://fieldtofit.top/news/D-177)",
             "[官方日志](https://platform.claude.com/docs/en/release-notes/overview)": "[Official Log](https://platform.claude.com/docs/en/release-notes/overview)",
             "[官方材料](https://www.anthropic.com/news/2026-usage-policy-update)": "[Official Materials](https://www.anthropic.com/news/2026-usage-policy-update)",
@@ -6918,6 +6985,7 @@
             "本期事件／研究": "Current event / research",
             "本期增补核对日 2026-10-25；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-25; the full-version daily dossier review is incomplete. Existing models, prices, history and dossier-wide check date are retained.",
             "本期增补核对日 2026-10-26；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-26; the full-version daily dossier review is incomplete. Existing models, prices, history and the dossier-wide check date are retained.",
+            "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。": "Related events checked 2026-10-30; models, source dates, prices and history retained. Full daily checks of every source remain incomplete.",
             "本期已核实事件": "Current verified event",
             "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M02 Claude, D-29, D-49。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。": "This backfills the profile for already published developments. The check date 2026-10-05 is not the model's release date. Related: CW-M02 Claude, D-29, D-49. Previously reviewed versions below retain dates and applicable conditions recorded in each row.",
             "本次只核对上表两项官方平台功能，保留以下模型版本、价格及历史正文；不表示整个 Claude 家族的全部入口已在今日复核。": "This check covers only the two official platform features above. Model versions, prices and historical text below remain; it does not claim every Claude-family source was rechecked today.",
@@ -6950,10 +7018,7 @@
             "默认开启思考；支持对话期间调整工具集合": "Turn on thinking by default; support to adjust the tool collection during the dialogue",
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
-          },
-          "reviewed_at": "2026-10-26T04:24:33.226388+00:00",
-          "source_hash": "58d2ee9fae2f3607f8d0bb63547f1a7e8e767de9380a16c77d2c87ef2c909bd4",
-          "state": "reviewed"
+          }
         }
       },
       "type": "model"
@@ -7339,6 +7404,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "9ed534b1f767019daf56cad6a279db52c23f3ffb69ea19a43e429c5d9296e217",
           "fields": {
             "/review与/test文档改为主会话执行，不再称自动派生persona；宿主列表区分维护者实际运行入口，部分 0.6.12 指南撤回。本站未运行作者评测。": "/review and /test documentation now describes main-session execution rather than automatically spawning personas. Host lists distinguish interfaces actually run by maintainers, and some 0.6.12 guidance is withdrawn; FieldToFit has not run the author’s evaluations.",
             "2026-10-14 补录：0.6.13": "2026-10-14 addition: 0.6.13",
@@ -7397,10 +7464,7 @@
             "限制与验证": "Restriction and verification",
             "需求澄清、测试驱动开发和代码审阅各有独立材料，便于读者挑选并交给自己的 AI。": "Requirements clarification, test-driven development and code review each have independent materials, which is convenient for readers to choose and hand over their own AI.",
             "项目入口": "Project"
-          },
-          "reviewed_at": "2026-10-14T03:09:50.175996+00:00",
-          "source_hash": "9ed534b1f767019daf56cad6a279db52c23f3ffb69ea19a43e429c5d9296e217",
-          "state": "reviewed"
+          }
         }
       },
       "type": "skill"
@@ -8000,6 +8064,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "08187c52f7c54b9e12cb072d97362e83a3ea1a5e04dd7343ad3d4cc83aaf6f56",
           "fields": {
             "11 月 17 日 Gems 移入设置后仍可使用。商业与企业版退役不早于 2027 年 3 月 1 日，教育版不早于 6 月 1 日，不能写成 11 月直接停用。": "Gems remains usable after moving into settings on 11/17. Business and Enterprise retirement is no earlier than 2027-03-01; Education is no earlier than 6/1. This is not a November shutdown.",
             "2026-09-11 原有 Flash 核验": "2026-09-11 original Flash verification",
@@ -8118,10 +8184,7 @@
             "页面更新 2026-09-15；抓取 2026-09-17T03:27:55.409264+00:00": "Page updated 2026-09-15; retrieved 2026-09-17T03:27:55.409264+00:00",
             "页面标示 2026-08 更新；稳定版": "Page marking 2026-08 update; stable version",
             "页面标示 2026-09 更新；稳定版，首发日未核": "Page indication 2026-09 update; stable version, unchecked on the first day"
-          },
-          "reviewed_at": "2026-10-29T02:52:04.926701+00:00",
-          "source_hash": "08187c52f7c54b9e12cb072d97362e83a3ea1a5e04dd7343ad3d4cc83aaf6f56",
-          "state": "reviewed"
+          }
         }
       },
       "type": "model"
@@ -8267,6 +8330,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "8b1aaff8156391e10d5efe48c099ebf4f3c5e67119fc77148649b6d34bbf2b86",
           "fields": {
             "1M 上下文；采用 Kimi Delta Attention 与 Attention Residuals": "1M context; adopt Kimi Delta Attention and Attention Residuals",
             "2026-01-29 是模板修订日，不是模型首发日": "2026-01-29 is the template revision date, not the model release date.",
@@ -8303,10 +8368,7 @@
             "获取与使用": "Acquisition and use",
             "首发日待核；官方权重与模型卡可见": "The first date is to be checked; the official weights and the model card can be seen",
             "首发日待核；官方模型卡可见": "The first date is to be approved; the official model card can be seen"
-          },
-          "reviewed_at": "2026-10-26T04:24:24.353947+00:00",
-          "source_hash": "8b1aaff8156391e10d5efe48c099ebf4f3c5e67119fc77148649b6d34bbf2b86",
-          "state": "reviewed"
+          }
         }
       },
       "type": "model"
@@ -8707,6 +8769,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "e2bb85a4a8d640bb9503670e71f85dc87948204755e6d85fe56b408889d72a05",
           "fields": {
             "2026-09-10 官方 API 发布；2026-09-14 核对": "2026-09-10 Official API Release; 2026-09-14 Check",
             "2026-09-14 核对：继续提供 API": "2026-09-14 Check: Continue to provide API",
@@ -8779,10 +8843,7 @@
             "采用条件与限制": "Adoption conditions and limits",
             "采用条件：验证硬件集中在Ascend950系列，并依赖相应CANN、torch_npu和网络环境，不能推成所有昇腾卡即装即用。": "Adoption conditions: validation focuses on the Ascend950 series, with corresponding CANN, torch_npu and network requirements. This does not imply plug-and-play support for every Ascend card.",
             "验证硬件与运行环境": "Verify the hardware and operating environment"
-          },
-          "reviewed_at": "2026-10-22T05:57:14.864699+00:00",
-          "source_hash": "e2bb85a4a8d640bb9503670e71f85dc87948204755e6d85fe56b408889d72a05",
-          "state": "reviewed"
+          }
         }
       },
       "type": "model"
@@ -9200,6 +9261,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "6f736196aff4530044869ad803069883528c916d57a74c7abde60d42d52ae834",
           "fields": {
             "2026-09-16已核对的历史标签重点修复运行问题：并发刷新引发的远程登录会话失效，以及长时间运行时重复数据库写入句柄的问题。": "Historical tags checked on 2026-09-16 focus on runtime fixes: concurrent refresh invalidating remote login sessions, and duplicate database-write handles in long-running processes.",
             "2026-10-13 版本补录：v0.21.7": "2026-10-13 version addition: v0.21.7",
@@ -9303,10 +9366,7 @@
             "链接至原始材料；本批不转载全文": "Link to the original materials; the full text will not be reprinted in this batch",
             "长输出与已知问题": "Long output and a known issue",
             "项目与开放情况": "Project and opening situation"
-          },
-          "reviewed_at": "2026-10-16T05:30:15.778487+00:00",
-          "source_hash": "6f736196aff4530044869ad803069883528c916d57a74c7abde60d42d52ae834",
-          "state": "reviewed"
+          }
         }
       },
       "type": "agent"
@@ -9407,6 +9467,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "0270bca1a250fa95736661a51d78aee3478d18ebeb09868bf87f6aac803ba606",
           "fields": {
             "API／M Plan／MiniMax Code 已列入口；每百万 token 输入 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元。权重待后续发布，未实测。": "API / M Plan / MiniMax Code routes listed; per million tokens USD 0.15 input, USD 0.60 output, USD 0.015 cached input. Weights to follow; untested.",
             "Agent 团队、复杂技能和动态工具搜索；软件与办公任务材料": "Agent team, complex skills and dynamic tool search; software and office task materials",
@@ -9438,10 +9500,7 @@
             "版本 / 分支": "Version / Branch",
             "获取与使用": "Acquisition and use",
             "调用入口已列出，API 单价与订阅价分开；权重仍待后续发布，作者性能和本站测试分开。": "Access routes are listed; API and subscription prices are separate. Weights will follow; vendor performance is distinct from site tests."
-          },
-          "reviewed_at": "2026-10-20T04:27:03.075405+00:00",
-          "source_hash": "0270bca1a250fa95736661a51d78aee3478d18ebeb09868bf87f6aac803ba606",
-          "state": "reviewed"
+          }
         }
       },
       "type": "model"
@@ -9810,6 +9869,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "5d752a6733105a42c5543fc994ba9573812aa9cc2de8fbd5ea5097caa375ebc6",
           "fields": {
             "2026-10-14 补录：v0.40.0": "2026-10-14 addition: v0.40.0",
             "2026-10-17 补录：v0.41.0": "2026-10-17 addition: v0.41.0",
@@ -9882,10 +9943,7 @@
             "重点看可复用的制作过程。": "Focus on the reusable production process.",
             "限制与验证": "Restriction and verification",
             "首批材料": "The first batch of materials"
-          },
-          "reviewed_at": "2026-10-17T03:00:41.930929+00:00",
-          "source_hash": "5d752a6733105a42c5543fc994ba9573812aa9cc2de8fbd5ea5097caa375ebc6",
-          "state": "reviewed"
+          }
         }
       },
       "type": "tool"
@@ -10398,6 +10456,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "226d10541d22cbdd28af4ac56b242def2cd44023a1bf4a6a121ea05321ccf2c5",
           "fields": {
             "2026-10-15 补录：v2.139.0": "2026-10-15 addition:v2.139.0",
             "2026-10-17 补录：v2.140.0": "2026-10-17 addition: v2.140.0",
@@ -10448,10 +10508,7 @@
             "输入与产物": "Input and product",
             "逐页分数可用于排查和筛选，不等于事实正确率。格式支持增加不证明复杂中文表格或扫描件均准确；本站未做精度与吞吐复测。": "Per-page scores support diagnosis and filtering rather than factual accuracy guarantees. Added format support does not establish accuracy for complex Chinese tables or scans; FieldToFit has not tested accuracy or throughput.",
             "首批材料": "The first batch of materials"
-          },
-          "reviewed_at": "2026-10-17T03:02:35.340012+00:00",
-          "source_hash": "226d10541d22cbdd28af4ac56b242def2cd44023a1bf4a6a121ea05321ccf2c5",
-          "state": "reviewed"
+          }
         }
       },
       "type": "tool"
@@ -10735,6 +10792,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "b09748d62341f58e5f2e2302c7eaaa9fec8e1a616c13e97ba1f919602a1bcebe",
           "fields": {
             "Codex 官方更新记录": "Codex official update record",
             "Codex 客户端及 CLI / SDK 入口": "Codex client and CLI / SDK entrance",
@@ -10766,16 +10825,32 @@
             "美国客户可经Oracle Marketplace采购OpenAI API、Codex与ChatGPT Work，符合条件时使用Oracle Universal Credits；Workspace仍在开发，功能按具体开放状态核对。": "US customers can procure OpenAI API, Codex and ChatGPT Work through Oracle Marketplace, using eligible Oracle Universal Credits. Workspace remains in development; check each feature’s availability.",
             "运行中的信息也有来源层级。": "The information in operation also has a source level.",
             "通过工具处理项目任务；程序可接入执行流程": "Process project tasks through tools; programs can access the execution process"
-          },
-          "reviewed_at": "2026-10-29T02:51:55.964536+00:00",
-          "source_hash": "b09748d62341f58e5f2e2302c7eaaa9fec8e1a616c13e97ba1f919602a1bcebe",
-          "state": "reviewed"
+          }
         }
       },
       "type": "agent"
     },
     {
       "blocks": [
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "[Claude Code 2.1.314：工作目录写入开关、策略与恢复边界修复](https://fieldtofit.top/news/D-282)",
+              "2026-10-30",
+              "新增可配置文件工具目录写入限制，修复恢复worktree的沙箱、策略刷新和拒绝调用显示。新增开关不等于默认启用，中断也不代表动作没有执行。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。"
+        },
         {
           "columns": [
             "本期已核实事件",
@@ -11435,11 +11510,19 @@
           "id": "oct28-B-release",
           "title": "Claude Code v2.1.312",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.312"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct30-B-release",
+          "title": "Claude Code v2.1.314",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "68426ca7eb1d6cebf741369a0ca35c88ed138b67e1248d68ad49e1e13b81a213",
           "fields": {
             "2.1.309 与 2.1.310 修复沙箱、MCP 配置、特定 Windows Hook 和 VS Code 审批交互问题。各项适用条件不同，依赖自动执行的团队应在自己的环境验证升级效果。": "Versions 2.1.309 and 2.1.310 address sandboxing, MCP configuration, specific Windows hooks and VS Code approval interactions. Conditions differ; teams relying on automation should verify upgrades in their own environments.",
             "2026-09-11 读取到的 CHANGELOG 顶部；未核首发日": "The top of the CHANGELOG read by 2026-09-11; unchecked release date",
@@ -11476,6 +11559,7 @@
             "[Claude Code 2.1.302：修复MCP兼容、文件读取与任务状态](https://fieldtofit.top/news/D-179)": "[Claude Code 2.1.302: MCP compatibility, file reading and task-state fixes](https://fieldtofit.top/news/D-179)",
             "[Claude Code 2.1.311：长会话压缩、子代理与后台恢复修复](https://fieldtofit.top/news/D-265)": "[Claude Code 2.1.311: fixes for compaction, subagents and background recovery](https://fieldtofit.top/news/D-265)",
             "[Claude Code 2.1.312：组织策略、文件操作与技能发现修复](https://fieldtofit.top/news/D-269)": "[Claude Code 2.1.312: fixes for organization policy, file operations and skill discovery](https://fieldtofit.top/news/D-269)",
+            "[Claude Code 2.1.314：工作目录写入开关、策略与恢复边界修复](https://fieldtofit.top/news/D-282)": "[Claude Code 2.1.314: working-directory write controls, policy and recovery fixes](https://fieldtofit.top/news/D-282)",
             "[Claude Code 更新至 2.1.310：复核执行权限与无人值守行为](https://fieldtofit.top/news/D-255)": "[Claude Code 2.1.310: review execution permissions and unattended behavior](https://fieldtofit.top/news/D-255)",
             "[官方发布](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)": "[Official Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)",
             "[官方发布记录](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)": "[Official Release Record](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)",
@@ -11554,6 +11638,7 @@
             "文件与插件：修复IDE经符号链接引用文件时Read拒绝规则未生效，以及本地插件旧副本、热更新等问题。": "Files and plugins: fixes Read deny rules failing for IDE file references through symlinks, plus stale local plugin copies and hot-update issues.",
             "新增OIDC用户标识字段配置，修复VS Code登录后的组织策略获取、不完整文件读取后的覆写及深层目录技能发现；升级仍需环境回归。": "Adds configurable OIDC user-ID claims and fixes organization-policy retrieval after VS Code sign-in, overwrites after partial file reads and skill discovery in deeper directories; upgrades still need environment-specific regression checks.",
             "新增与采用边界": "New information and adoption boundaries",
+            "新增可配置文件工具目录写入限制，修复恢复worktree的沙箱、策略刷新和拒绝调用显示。新增开关不等于默认启用，中断也不代表动作没有执行。": "Adds configurable directory write limits for file tools, fixing resumed-worktree sandboxing, policy refresh and denied-call display. A new setting is not default activation, and interruption does not prove an action never ran.",
             "无人值守重试可设置用量限制等待上限；Grep／Glob运行失败不再伪装为无匹配，避免把执行故障误读为没有结果。": "Unattended retries can cap usage-limit waits. Grep/Glob failures no longer appear as no matches, keeping execution errors distinct from empty results.",
             "日期与限制": "Dates and limitations",
             "日期口径": "Date basis",
@@ -11562,6 +11647,7 @@
             "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。": "These events were checked on 2026-10-27. Existing models, prices, checking dates and history are preserved. The complete daily review of all dossier sources remains unfinished.",
             "本期增补核对日 2026-10-26；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-26; the full-version daily dossier review is incomplete. Existing models, prices, history and the dossier-wide check date are retained.",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
+            "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。": "Related events checked 2026-10-30; models, source dates, prices and history retained. Full daily checks of every source remain incomplete.",
             "本期已核实事件": "Current verified event",
             "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。": "This adds only the approved event, preserving original versions, prices, conditions and history below. It does not imply a complete daily audit of every official source.",
             "本次展示的材料": "The materials on display this time",
@@ -11602,10 +11688,7 @@
             "限制与验证": "Restriction and verification",
             "验证与采用边界": "Verification and adoption of boundaries",
             "验证范围": "Scope of verification"
-          },
-          "reviewed_at": "2026-10-28T01:08:43.099126+00:00",
-          "source_hash": "041b50fb3eed7b96f38f3c10a4f371a4833ea53847c60eeeb706bcce538121e1",
-          "state": "reviewed"
+          }
         }
       },
       "type": "agent"
@@ -11810,6 +11893,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "0203ebf0201d4c8ca331f8f3d62d5c3f9e2e0391b1358624825187b5e8b97124",
           "fields": {
             "2026-10-10版本补充：v0.63.0": "2026-10-10 Version Supplement: v0.63.0",
             "2026-10-14 补录：v0.64.0": "2026-10-14 addition: v0.64.0",
@@ -11867,10 +11952,7 @@
             "输入与取消修复": "Input and cancellation fixes",
             "采用边界": "Adopt the boundary",
             "项目上下文、工具、MCP 与扩展": "Project context, tools, MCP and extensions"
-          },
-          "reviewed_at": "2026-10-21T04:01:55.806830+00:00",
-          "source_hash": "0203ebf0201d4c8ca331f8f3d62d5c3f9e2e0391b1358624825187b5e8b97124",
-          "state": "reviewed"
+          }
         }
       },
       "type": "agent"
@@ -12073,6 +12155,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "92c17475be0767a98d21dc3a5f159945245fde56ccfd38aeec9a8337412d7c11",
           "fields": {
             "18 个默认工具与 6 个可选动作；需要openai-tools额外依赖、OpenAI Python3.31+，自定义HTTP客户端也有兼容要求。": "Provides 18 default tools and 6 optional actions. Requires the openai-tools extra and OpenAI Python3.31+, with compatibility requirements for custom HTTP clients.",
             "2026-10-16 补录：0.13.13": "2026-10-16 addition:0.13.13",
@@ -12109,10 +12193,7 @@
             "版本口径": "Version measurement basis",
             "网页读取、导航与交互；模型、浏览器运行环境分别配置": "Web page reading, navigation and interaction; model and browser running environment are configured respectively",
             "错误是否可见会影响后续动作。": "Whether the error is visible or not will affect the subsequent action."
-          },
-          "reviewed_at": "2026-10-16T05:32:58.933338+00:00",
-          "source_hash": "92c17475be0767a98d21dc3a5f159945245fde56ccfd38aeec9a8337412d7c11",
-          "state": "reviewed"
+          }
         }
       },
       "type": "agent"
@@ -12304,6 +12385,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "06048da6bbeaa2fd68dfe93c5d530e340a7b788fee3eed7203a2ecd23372ce65",
           "fields": {
             "2026-10-16 补录：v2026.10.4": "2026-10-16 addition:v2026.10.4",
             "Skill Workshop 保留跨工作区的 Agent 技能集合；在激活前隔离预演核心与插件更新；复用已有缓存和工作进程": "Skill Workshop retains agent skills across workspaces; isolated dry runs test core and plugin updates before activation; existing caches and workers are reused",
@@ -12351,10 +12434,7 @@
             "群聊与浏览器边界": "Group-chat and browser boundaries",
             "跨工作区技能、更新预演与缓存复用": "Cross-workspace skills, update preview and cache reuse",
             "链接原始出处；不复制正文": "Link the original source; do not copy the text"
-          },
-          "reviewed_at": "2026-10-16T05:31:12.772701+00:00",
-          "source_hash": "06048da6bbeaa2fd68dfe93c5d530e340a7b788fee3eed7203a2ecd23372ce65",
-          "state": "reviewed"
+          }
         }
       },
       "type": "agent"
@@ -12795,6 +12875,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "7fdee0b03b37c8d2c242182dda2350d7704f80fa35a1a517e25986ee82cfee67",
           "fields": {
             "2026-10-13 版本补录：v1.2.0": "2026-10-13 version addition: v1.2.0",
             "2026-10-17 补录：v1.3.0": "2026-10-17 addition: v1.3.0",
@@ -12891,10 +12973,7 @@
             "限制与本站验证": "Restriction and FieldToFit verification",
             "限制与验证": "Restriction and verification",
             "项目分层、扩展机制、SDK 兼容变化": "Project layering, extension mechanism, SDK compatibility changes"
-          },
-          "reviewed_at": "2026-10-17T03:01:39.667135+00:00",
-          "source_hash": "7fdee0b03b37c8d2c242182dda2350d7704f80fa35a1a517e25986ee82cfee67",
-          "state": "reviewed"
+          }
         }
       },
       "type": "agent"
@@ -13072,6 +13151,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "38a83117b520bc3fdc015af157b669a364e98b126e02adb4ee251a1d2170fc12",
           "fields": {
             "2026-10-22 无编号治理公告；本站 2026-10-23 核对。未做跨宿主兼容性、安全隔离或脚本执行测试。": "Unnumbered governance announcement 2026-10-22; checked 2026-10-23. Cross-host compatibility, security isolation and script execution were not tested.",
             "Agent Skills 走向基金会治理，规范与各家运行权限仍须分开看": "Agent Skills moves toward foundation governance; specification and runtime permissions remain distinct",
@@ -13096,10 +13177,7 @@
             "这里可以读到技能由哪些材料组成。": "Here you can read what materials the skill consists of.",
             "集合内部的许可也有区别。": "There are also differences between the internal licenses of the collection.",
             "页面应保留的说明": "Instructions that should be kept on the page"
-          },
-          "reviewed_at": "2026-10-23T04:34:05.234076+00:00",
-          "source_hash": "38a83117b520bc3fdc015af157b669a364e98b126e02adb4ee251a1d2170fc12",
-          "state": "reviewed"
+          }
         }
       },
       "type": "skill"
@@ -13424,6 +13502,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "3f181692a4a72365670d6f98abfa93e6479c1944ff305fddd09b23641ee7f832",
           "fields": {
             "DeepSeek Harness新增从插件管理页进入创造模式的入口，以及实验性的Claude Code Mods兼容层。": "DeepSeek Harness adds an entrance to the creation mode from the plug-in management page, and the experimental Claude Code Mods compatibility layer.",
             "DeepSeek Harness：插件创建入口与实验性 Mods 兼容，继续标注预览版 · 官方来源 1": "DeepSeek Harness: Plug-in creation entrance is compatible with experimental Mods, continue to mark the preview version · Official source 1",
@@ -13476,10 +13556,7 @@
             "限制与验证": "Restriction and verification",
             "预发布记录包含反馈体验与文件卡片调整；核心插件机制见项目说明，不冒充此次补丁新增": "Prerelease notes include feedback-interface and file-card changes. The core plugin mechanism belongs to the project description; it was not newly added by this patch.",
             "预览与迁移条件": "Preview and migration conditions"
-          },
-          "reviewed_at": "2026-10-18T03:07:48.389899+00:00",
-          "source_hash": "3f181692a4a72365670d6f98abfa93e6479c1944ff305fddd09b23641ee7f832",
-          "state": "reviewed"
+          }
         }
       },
       "type": "harness"
@@ -13896,6 +13973,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "7642a832fcea20f4dc129885c920ec6aa2ae8aac7bb6d8808e0bfe62bece610d",
           "fields": {
             "2026-10-13 版本补录：deepagents==0.7.24": "2026-10-13 version addition: deepagents==0.7.24",
             "2026-10-15 补录：deepagents==0.7.25": "2026-10-15 addition:deepagents==0.7.25",
@@ -13985,10 +14064,7 @@
             "结果路径和既有权限修复": "Result paths and existing permission fixes",
             "运行循环与扩展": "Run cycle and extension",
             "限制与验证": "Restriction and verification"
-          },
-          "reviewed_at": "2026-10-17T03:03:30.886829+00:00",
-          "source_hash": "7642a832fcea20f4dc129885c920ec6aa2ae8aac7bb6d8808e0bfe62bece610d",
-          "state": "reviewed"
+          }
         }
       },
       "type": "harness"
@@ -14300,6 +14376,8 @@
       "state": "published",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "6f730835824eb280db072f59fb423a1d9c03d7cb45af06296ea8b863dec08694",
           "fields": {
             "2026-09-11 文档快照；包版本未核": "2026-09-11 document snapshot; package version not checked",
             "2026-10-08 UTC；overview认证条件无新增生效日期": "2026-10-08 UTC; no new effective date for overview authentication conditions",
@@ -14373,10 +14451,7 @@
             "运行在哪里是关键区别。": "Where it runs is the key difference.",
             "运行循环与扩展": "Run cycle and extension",
             "采用边界": "Adopt the boundary"
-          },
-          "reviewed_at": "2026-10-16T05:32:04.730359+00:00",
-          "source_hash": "6f730835824eb280db072f59fb423a1d9c03d7cb45af06296ea8b863dec08694",
-          "state": "reviewed"
+          }
         }
       },
       "type": "harness"
@@ -14750,7 +14825,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-29",
+  "reviewed_at": "2026-10-30",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }
