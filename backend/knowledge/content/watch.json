@@ -5270,6 +5270,30 @@
           "kind": "table",
           "rows": [
             [
+              "[ChatGPT保护措施将分阶段推出，首份社区安全报告计划 2027年初](https://fieldtofit.top/news/D-294)",
+              "2026-10-30",
+              "公告收紧部分暴力相关回答并扩展青少年保护；措施将在未来几周开始推出。报告计划覆盖 2026年下半年，此后每半年更新，不能写成报告已经发布或所有账户已经上线。"
+            ],
+            [
+              "[OpenAI支持共同训练偏好信号，实施细节仍待未来几个月](https://fieldtofit.top/news/D-296)",
+              "2026-10-30",
+              "OpenAI计划尊重robots.txt中的共同训练偏好信号；未来几个月实施并另发说明，现有爬虫控制继续适用。支持承诺不等于所有提供方已执行。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-31核对；保留型号、价格、原日期与历史。全入口日核验仍未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[GPT-6 Luna更新：更简洁、少迎合，为什么不等于更可靠？](https://fieldtofit.top/news/D-283)",
               "2026-10-29",
               "10月 29日Luna更新强调简洁与减少迎合；系统卡同时披露六项事实性指标退步。四结论、三张本站重绘，分清安全类别、事实分母、长度校正与限制披露。"
@@ -5353,12 +5377,12 @@
           "text": "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。"
         },
         {
+          "kind": "table",
           "columns": [
             "本期事件／研究",
             "事件／报告日期",
             "核对范围与限制"
           ],
-          "kind": "table",
           "rows": [
             [
               "[OpenAI 旧模型停用：10月 23日批次已经生效](https://fieldtofit.top/news/D-244)",
@@ -5394,6 +5418,7 @@
           "text": "本次只补充官方研究事件，保留以下 GPT 模型列表、价格、开放方式与历史版本；不更新榜单分数，也不表示整个模型家族已完成当日全量核验。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本／事件",
             "原始日期",
@@ -5401,7 +5426,6 @@
             "采用条件与限制",
             "关联动态"
           ],
-          "kind": "table",
           "rows": [
             [
               "gpt-4o-2024-08-06 / gpt-4o-2024-11-20 / gpt-4o-mini-2024-07-18 / gpt-4.1-2025-04-14 / gpt-4.1-mini-2025-04-14",
@@ -5542,6 +5566,7 @@
           "text": "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M01 GPT, D-30, D-53。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -5550,7 +5575,6 @@
             "获取与使用",
             "依据"
           ],
-          "kind": "table",
           "rows": [
             [
               "GPT-6 Astra",
@@ -6023,13 +6047,25 @@
           "id": "oct30-D-announcement",
           "title": "An updated Model Spec for more capable and beneficial AI",
           "url": "https://openai.com/index/updated-model-spec/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct31-C-safety",
+          "title": "Community safety report and new protections for teens",
+          "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct31-D-preferences",
+          "title": "Making it easier for websites to express AI training preferences",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "116c0342445a30191be9283edc624253a103cfca8c65069bfd6667017d3c6c90",
+          "source_hash": "aca467bb783c392f4bd80192a63933814a78c2cace8eb6295f9b819889617f9d",
           "fields": {
             "10月 29日Luna更新强调简洁与减少迎合；系统卡同时披露六项事实性指标退步。四结论、三张本站重绘，分清安全类别、事实分母、长度校正与限制披露。": "The 10/29 Luna update targets concision and reduced agreeableness while reporting regressions on six factuality metrics. Four findings and three original redraws distinguish safety categories, factuality denominators, length adjustment and disclosure.",
             "10月7日起向Plus、Pro、Business、Enterprise的Chat页推出，10月8日起扩展到Free、Go；企业仍受管理员设置影响。逐步推出不代表所有账户同时可用。": "Rollout starts on 10/7 in Chat for Plus, Pro, Business and Enterprise, expanding to Free and Go from 10/8. Enterprise access remains subject to administrator settings. Gradual rollout does not establish simultaneous availability for all accounts.",
@@ -6215,7 +6251,12 @@
             "面向较轻任务与较大调用量；不等同Astra能力": "For light tasks and large calls; not equivalent to Astra ability",
             "首发日待核；并行分支": "Initial date to be nuclear; parallel branch",
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
-            "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
+            "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch",
+            "OpenAI计划尊重robots.txt中的共同训练偏好信号；未来几个月实施并另发说明，现有爬虫控制继续适用。支持承诺不等于所有提供方已执行。": "OpenAI plans to honor a common training-preference signal in robots.txt, implement it in coming months and publish details, while existing crawler controls remain. Support does not establish adoption by every provider.",
+            "[ChatGPT保护措施将分阶段推出，首份社区安全报告计划 2027年初](https://fieldtofit.top/news/D-294)": "[ChatGPT protections will roll out in stages; first community safety report planned for early 2027](https://fieldtofit.top/news/D-294)",
+            "[OpenAI支持共同训练偏好信号，实施细节仍待未来几个月](https://fieldtofit.top/news/D-296)": "[OpenAI supports a common training-preference signal, with implementation still ahead](https://fieldtofit.top/news/D-296)",
+            "公告收紧部分暴力相关回答并扩展青少年保护；措施将在未来几周开始推出。报告计划覆盖 2026年下半年，此后每半年更新，不能写成报告已经发布或所有账户已经上线。": "The announcement tightens some violence-related responses and extends teen protections, beginning rollout in coming weeks. The planned report covers the second half of 2026 with semiannual updates; neither a released report nor universal rollout is established.",
+            "本期对应事件于 2026-10-31核对；保留型号、价格、原日期与历史。全入口日核验仍未完成。": "Related events checked 2026-10-31; models, prices, source dates and history retained. Full daily checks of every source remain incomplete."
           }
         }
       },
@@ -10841,6 +10882,25 @@
           "kind": "table",
           "rows": [
             [
+              "[Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313](https://fieldtofit.top/news/D-292)",
+              "2026-10-29",
+              "Cursor确认Windows／macOS扩展市场两版包被恶意修改，并非Anthropic开发。市场和攻击端已处置，但卸载扩展未必清除主机持久化；不能泛化至同号官方CLI。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期对应事件于 2026-10-31核对；保留型号、价格、原日期与历史。全入口日核验仍未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[Claude Code 2.1.314：工作目录写入开关、策略与恢复边界修复](https://fieldtofit.top/news/D-282)",
               "2026-10-30",
               "新增可配置文件工具目录写入限制，修复恢复worktree的沙箱、策略刷新和拒绝调用显示。新增开关不等于默认启用，中断也不代表动作没有执行。"
@@ -11081,6 +11141,7 @@
           "text": "本站于2026-10-07从此前已审v2.1.289补充上述版本。以下保留历史材料及其当时适用条件。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本 / 材料",
             "原始时间口径",
@@ -11088,7 +11149,6 @@
             "采用入口",
             "限制与验证"
           ],
-          "kind": "table",
           "rows": [
             [
               "v2.1.289",
@@ -11108,13 +11168,13 @@
           "text": "以上为2026-10-05本次核对；以下保留旧版本资料，不代表旧版已包含本次修复。"
         },
         {
+          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
-          "kind": "table",
           "rows": [
             [
               "Claude Code CLI 及相关客户端入口",
@@ -11516,13 +11576,19 @@
           "id": "oct30-B-release",
           "title": "Claude Code v2.1.314",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314"
+        },
+        {
+          "coverage": "link_only",
+          "id": "oct31-A-cursor",
+          "title": "Cursor extension security notice",
+          "url": "https://cursor.com/blog/claude-code-extension-security-notice"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "68426ca7eb1d6cebf741369a0ca35c88ed138b67e1248d68ad49e1e13b81a213",
+          "source_hash": "efffbdad6f3bb1743e0a0c36abc18e81acf82693b4d4a8525b0d7077c5122369",
           "fields": {
             "2.1.309 与 2.1.310 修复沙箱、MCP 配置、特定 Windows Hook 和 VS Code 审批交互问题。各项适用条件不同，依赖自动执行的团队应在自己的环境验证升级效果。": "Versions 2.1.309 and 2.1.310 address sandboxing, MCP configuration, specific Windows hooks and VS Code approval interactions. Conditions differ; teams relying on automation should verify upgrades in their own environments.",
             "2026-09-11 读取到的 CHANGELOG 顶部；未核首发日": "The top of the CHANGELOG read by 2026-09-11; unchecked release date",
@@ -11687,7 +11753,10 @@
             "采用边界": "Adopt the boundary",
             "限制与验证": "Restriction and verification",
             "验证与采用边界": "Verification and adoption of boundaries",
-            "验证范围": "Scope of verification"
+            "验证范围": "Scope of verification",
+            "Cursor确认Windows／macOS扩展市场两版包被恶意修改，并非Anthropic开发。市场和攻击端已处置，但卸载扩展未必清除主机持久化；不能泛化至同号官方CLI。": "Cursor confirms two Windows/macOS marketplace extension packages were maliciously modified, not developed by Anthropic. Marketplace and attacker infrastructure were addressed, but uninstalling may leave host persistence; do not generalize to official CLI releases with the same numbers.",
+            "[Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313](https://fieldtofit.top/news/D-292)": "[Malicious Claude Code extensions on Cursor Marketplace: check origin before versions 2.1.312/2.1.313](https://fieldtofit.top/news/D-292)",
+            "本期对应事件于 2026-10-31核对；保留型号、价格、原日期与历史。全入口日核验仍未完成。": "Related events checked 2026-10-31; models, prices, source dates and history retained. Full daily checks of every source remain incomplete."
           }
         }
       },
@@ -14825,7 +14894,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-30",
+  "reviewed_at": "2026-10-31",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

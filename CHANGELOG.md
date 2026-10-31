@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.16"></a>
+## v1.17.16 · 扩展安全、开放权重与专家判断分析 · 2026-10-31
+<!-- site-deployed:2026-10-31 -->
+<!-- public-title:en: Extension security, open weights and expert judgment -->
+<!-- release-summary:zh:start -->
+- 发布已选Cursor市场扩展安全、ChatGPT保护及训练偏好公告，更新Mistral Large 4原动态，保留来源、版本与计划实施边界。
+- 新增专家判断与Agent倾向研究分析：四结论、三张本站重绘，分开注册估计、探索结果和自选组比较。
+- 提供扩展安全中英信息卡，正式发表后轮替首页报告与卡片；同步两份档案，保留并行专题、全部索引和历史链接。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Cursor-marketplace extension security, ChatGPT protection and training-preference updates; update the original Mistral Large 4 item while retaining source, version and planned-implementation boundaries.
+- Add an analysis of expert judgment and agent leans with four findings and three independent redraws, separating registered estimates, exploratory results and self-selected comparisons.
+- Provide a bilingual extension-security card, rotating homepage reports and cards only after publication; synchronize two dossiers while preserving the concurrent topic release, complete indexes and historical links.
+<!-- release-summary:en:end -->
+
+所有者明确选择2026-10-31动态A–D、报告1、卡1。A／卡1共用D-292，B复用D-82，C为D-294、D为D-296，报告为D-297；档案CW-M01／CW-A02。基于并行v1.17.15，并结合v1.17.0以来累计内容及图表维护，本批为兼容内容与资源patch，无新模块、主要流程、协议变化或迁移。报告2及榜单未扩大；全对象日核验与连续自然日验收缺口保留。[实际验收](docs/validation/2026-10-31-cursor-judgment.md)。
+
 <a id="v1.17.15"></a>
 ## v1.17.15 · Rosalind与手机账号及API更新 · 2026-10-31
 <!-- public-title:en: Rosalind, mobile accounts and API updates -->

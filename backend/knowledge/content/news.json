@@ -2,6 +2,748 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "tool",
+      "checked_at": "2026-10-31",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-29",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "核安装来源、时窗与包指纹；本站建议。",
+            "title": "个人开发者"
+          },
+          {
+            "detail": "依据终端证据调查处置，从可信设备处理相关凭据；本站建议。",
+            "title": "终端管理员"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "指定市场包被恶意修改，并非Anthropic开发，不能泛化至官方CLI。",
+            "title": "确认恶意分发"
+          },
+          {
+            "detail": "官方已下架并重建市场，协调关闭攻击服务器。",
+            "title": "分发端已处置"
+          },
+          {
+            "detail": "卸载扩展未必清除独立持久化，按官方证据流程处置。",
+            "title": "主机仍需检查"
+          }
+        ],
+        "checked_at": "2026-10-31",
+        "evidence": [
+          {
+            "locator": "What happened; What you should do; Indicators of compromise",
+            "source_id": "cursor"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "Claude Code扩展安全：先核来源，别只看版本号",
+        "limits": [
+          {
+            "detail": "仅指定市场、平台、版本和时窗，非所有Claude Code安装。",
+            "title": "限定分发范围"
+          },
+          {
+            "detail": "未执行公告脚本，未复现攻击或清理效果。",
+            "title": "未检测设备"
+          }
+        ],
+        "next_step": "先核安装记录，再沿官方流程处理，勿从转载获取修复脚本。",
+        "revised_at": "2026-10-31",
+        "revision": "0b1965afb2782b417b0a5ea64f32d2ab14776522484449fc57cb0e941b47b64c",
+        "scope": "Cursor扩展市场Anthropic.claude-code 2.1.312／2.1.313；Windows／macOS及官方事故时窗。",
+        "share": {
+          "content_revision": "0b1965afb2782b417b0a5ea64f32d2ab14776522484449fc57cb0e941b47b64c",
+          "en": {
+            "sha256": "f72ac6f616dad0bd731d324cbe26587f25c17e7dc0d6d4717b87c51499990713",
+            "text_revision": "f3fbfbc57f9fa368f57ed6683201f367e99383d15a3ef356e5190a2b6290a1b8",
+            "url": "/hot-cards/d-292-0b1965afb278-en.png"
+          },
+          "zh": {
+            "sha256": "a78ea29a51d849edfd0e24d60f7072280264a336178d31eae94886d01bd07a9d",
+            "url": "/hot-cards/d-292-0b1965afb278-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "事件 2026-10-29；官方更新 2026-10-30 11:30 PT；本站 2026-10-31读全文，未检测设备。"
+      },
+      "id": "D-292",
+      "interpretation": [
+        {
+          "locator": "What happened; What you should do; package indicators",
+          "source_ids": [
+            "cursor"
+          ],
+          "text": "官方圈定 2026-10-29 02:27–13:35 PT期间从Cursor VS Code Extension Marketplace安装或更新的Anthropic.claude-code 2.1.312／2.1.313，涉及Windows与macOS。相同显示名称或版本不足以判定官方发行受影响，应交叉核包指纹与安装日志。",
+          "title": "来源、平台和时间一起核"
+        },
+        {
+          "locator": "What happened; What we did",
+          "source_ids": [
+            "cursor"
+          ],
+          "text": "官方下架恶意包、关闭并重建市场，轮换相关密钥，并协调托管方关闭攻击服务器。包曾收集主机信息并添加未授权SSH密钥及持久化；部分需要管理员权限的步骤可能失败，仍须沿官方流程调查，不用单一检查项证明无影响。",
+          "title": "分发端处置不等于主机清理"
+        },
+        {
+          "locator": "What you should do; Remediate affected machines",
+          "source_ids": [
+            "cursor"
+          ],
+          "text": "受影响者核终端、网络和安装记录；有执行或后门证据时隔离并清理持久化，评估重建，从可信系统轮换相关凭据与会话。公告说明独立脚本可能在卸载扩展后继续运行；本站仅链接官方处置，不执行来源中的脚本。",
+          "title": "按证据调查，不只卸载"
+        }
+      ],
+      "name": "Claude Code extension on Cursor Marketplace",
+      "note": "事件 2026-10-29；官方更新 2026-10-30 11:30 PT，本站 2026-10-31读取全文。扩展 2.1.312／2.1.313；未检测任何具体设备、未复现攻击或运行修复脚本，不据本报道判断用户设备中招。",
+      "organization": "Cursor / Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-31T01:19:51.493300+00:00",
+        "hot_card_first_published_at": "2026-10-31T01:19:51.493328+00:00",
+        "hot_card_selected_at": "2026-10-31T01:19:51.493328+00:00",
+        "updated_at": "2026-10-31T01:19:51.493300+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-10-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "cursor",
+          "title": "Cursor extension security notice",
+          "url": "https://cursor.com/blog/claude-code-extension-security-notice"
+        }
+      ],
+      "state": "published",
+      "summary": "Cursor确认Windows／macOS扩展市场两版包被恶意修改，并非Anthropic开发。市场和攻击端已处置，但卸载扩展未必清除主机持久化；不能泛化至同号官方CLI。",
+      "title": "Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude Code扩展安全：先核来源，别只看版本号": "Claude Code extension security: check origin, not just version",
+            "Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313": "Malicious Claude Code extensions on Cursor Marketplace: check origin before versions 2.1.312/2.1.313",
+            "Cursor扩展市场Anthropic.claude-code 2.1.312／2.1.313；Windows／macOS及官方事故时窗。": "Anthropic.claude-code 2.1.312/2.1.313 from Cursor Marketplace; Windows/macOS and the official incident window.",
+            "Cursor确认Windows／macOS扩展市场两版包被恶意修改，并非Anthropic开发。市场和攻击端已处置，但卸载扩展未必清除主机持久化；不能泛化至同号官方CLI。": "Cursor confirms two Windows/macOS marketplace extension packages were maliciously modified, not developed by Anthropic. Marketplace and attacker infrastructure were addressed, but uninstalling may leave host persistence; do not generalize to official CLI releases with the same numbers.",
+            "个人开发者": "Individual developers",
+            "主机仍需检查": "Hosts still need investigation",
+            "事件 2026-10-29；官方更新 2026-10-30 11:30 PT，本站 2026-10-31读取全文。扩展 2.1.312／2.1.313；未检测任何具体设备、未复现攻击或运行修复脚本，不据本报道判断用户设备中招。": "Event 2026-10-29; notice updated 2026-10-30 11:30 PT and read 2026-10-31. Extension versions 2.1.312/2.1.313. No individual device inspected, attack replicated or remediation script executed; this article does not diagnose a reader’s device.",
+            "事件 2026-10-29；官方更新 2026-10-30 11:30 PT；本站 2026-10-31读全文，未检测设备。": "Event 2026-10-29; official update 2026-10-30 11:30 PT; full notice read 2026-10-31, with no device inspection.",
+            "仅指定市场、平台、版本和时窗，非所有Claude Code安装。": "Only the specified marketplace, platforms, versions and window; not every Claude Code installation.",
+            "依据终端证据调查处置，从可信设备处理相关凭据；本站建议。": "Investigate endpoint evidence and handle relevant credentials from a trusted device; FieldToFit advice.",
+            "先核安装记录，再沿官方流程处理，勿从转载获取修复脚本。": "Check installation records, then follow official remediation; do not get repair scripts from reposts.",
+            "分发端处置不等于主机清理": "Distribution remediation is not host cleanup",
+            "分发端已处置": "Distribution addressed",
+            "卸载扩展未必清除独立持久化，按官方证据流程处置。": "Uninstalling may leave standalone persistence; follow the official evidence-based process.",
+            "受影响者核终端、网络和安装记录；有执行或后门证据时隔离并清理持久化，评估重建，从可信系统轮换相关凭据与会话。公告说明独立脚本可能在卸载扩展后继续运行；本站仅链接官方处置，不执行来源中的脚本。": "Affected users should review endpoint, network and installation evidence. Isolate and clean hosts with payload or backdoor evidence, assess rebuilding, and rotate relevant credentials and sessions from a trusted system. Standalone scripts may survive extension removal. FieldToFit links official remediation without executing source scripts.",
+            "官方下架恶意包、关闭并重建市场，轮换相关密钥，并协调托管方关闭攻击服务器。包曾收集主机信息并添加未授权SSH密钥及持久化；部分需要管理员权限的步骤可能失败，仍须沿官方流程调查，不用单一检查项证明无影响。": "Cursor removed the packages, shut down and rebuilt the marketplace, rotated relevant keys and worked with the host to disable the attacker server. Packages collected host information and added unauthorized SSH keys and persistence. Some administrator-dependent steps may fail; follow the investigation rather than treating one check as proof of no impact.",
+            "官方圈定 2026-10-29 02:27–13:35 PT期间从Cursor VS Code Extension Marketplace安装或更新的Anthropic.claude-code 2.1.312／2.1.313，涉及Windows与macOS。相同显示名称或版本不足以判定官方发行受影响，应交叉核包指纹与安装日志。": "The notice covers Anthropic.claude-code 2.1.312/2.1.313 installed or updated from Cursor VS Code Extension Marketplace on Windows/macOS during 2026-10-29 02:27–13:35 PT. Names and versions alone do not establish compromise of official distribution; cross-check package hashes and installation records.",
+            "官方已下架并重建市场，协调关闭攻击服务器。": "Cursor removed the packages, rebuilt the marketplace and worked to disable the attacker server.",
+            "指定市场包被恶意修改，并非Anthropic开发，不能泛化至官方CLI。": "The identified marketplace packages were maliciously modified, not developed by Anthropic; this does not establish official CLI compromise.",
+            "按证据调查，不只卸载": "Investigate evidence beyond uninstalling",
+            "未执行公告脚本，未复现攻击或清理效果。": "Notice scripts were not executed; attack and cleanup effectiveness were not replicated.",
+            "未检测设备": "No device diagnosis",
+            "来源、平台和时间一起核": "Check origin, platform and time together",
+            "核安装来源、时窗与包指纹；本站建议。": "Check installation origin, timing and package hashes; FieldToFit advice.",
+            "确认恶意分发": "Malicious distribution confirmed",
+            "终端管理员": "Endpoint administrators",
+            "限定分发范围": "Limited distribution scope"
+          },
+          "source_hash": "0bfbe5e97b9a67e012ecf163fa6ac4e05b77ba65d64d5ef0be4fae70e7354d9a",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-31",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-30",
+      "highlight": true,
+      "id": "D-294",
+      "interpretation": [
+        {
+          "locator": "Stronger policy boundaries; More protections for teens",
+          "source_ids": [
+            "safety"
+          ],
+          "text": "部分历史暴力事件重构信息限制适用于所有用户；青少年体验进一步限制可能被滥用的武器与安全系统实用信息。保护目标与具体账户实际行为须分开核验。",
+          "title": "分开所有用户与青少年体验"
+        },
+        {
+          "locator": "Responding to warning signs; Looking ahead",
+          "source_ids": [
+            "safety"
+          ],
+          "text": "公告描述识别近期聊天警示、自动结束相关高风险对话及重复触发后暂时暂停账户，并说明措施将在未来几周开始推出。没有逐平台、地域或账户的完成名单，不制造统一上线时间。",
+          "title": "风险干预不是即时全量上线"
+        },
+        {
+          "locator": "Community Safety Report; More protections for teens",
+          "source_ids": [
+            "safety"
+          ],
+          "text": "首份报告计划 2027年初覆盖 2026年下半年，此后每半年更新。成年用户被置于未成年体验时，可按官方说明通过Persona确认年龄；本站未测试该流程或误判率。",
+          "title": "报告承诺与年龄纠正入口分开"
+        }
+      ],
+      "name": "ChatGPT safety protections",
+      "note": "原文 2026-10-30，无编号安全公告；本站 2026-10-31读全文。未实测账户、家长通知、年龄验证或干预效果，不把公告当已测安全提升。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-31T01:18:56.357580+00:00",
+        "updated_at": "2026-10-31T01:18:56.357580+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-30",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "safety",
+          "title": "Community safety report and new protections for teens",
+          "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+        }
+      ],
+      "state": "published",
+      "summary": "公告收紧部分暴力相关回答并扩展青少年保护；措施将在未来几周开始推出。报告计划覆盖 2026年下半年，此后每半年更新，不能写成报告已经发布或所有账户已经上线。",
+      "title": "ChatGPT保护措施将分阶段推出，首份社区安全报告计划 2027年初",
+      "translations": {
+        "en": {
+          "fields": {
+            "ChatGPT保护措施将分阶段推出，首份社区安全报告计划 2027年初": "ChatGPT protections will roll out in stages; first community safety report planned for early 2027",
+            "公告描述识别近期聊天警示、自动结束相关高风险对话及重复触发后暂时暂停账户，并说明措施将在未来几周开始推出。没有逐平台、地域或账户的完成名单，不制造统一上线时间。": "The notice describes recent-chat warning signals, ending certain high-risk conversations and temporary account pauses after repeated cases, with rollout beginning in coming weeks. No completed platform, region or account list establishes universal availability.",
+            "公告收紧部分暴力相关回答并扩展青少年保护；措施将在未来几周开始推出。报告计划覆盖 2026年下半年，此后每半年更新，不能写成报告已经发布或所有账户已经上线。": "The announcement tightens some violence-related responses and extends teen protections, beginning rollout in coming weeks. The planned report covers the second half of 2026 with semiannual updates; neither a released report nor universal rollout is established.",
+            "分开所有用户与青少年体验": "Separate all-user and teen protections",
+            "原文 2026-10-30，无编号安全公告；本站 2026-10-31读全文。未实测账户、家长通知、年龄验证或干预效果，不把公告当已测安全提升。": "Unnumbered safety notice dated 2026-10-30, read 2026-10-31. Accounts, parental notifications, age verification and intervention effectiveness were not tested; an announcement is not measured safety improvement.",
+            "报告承诺与年龄纠正入口分开": "Separate the report commitment and age correction",
+            "部分历史暴力事件重构信息限制适用于所有用户；青少年体验进一步限制可能被滥用的武器与安全系统实用信息。保护目标与具体账户实际行为须分开核验。": "Some limits on reconstructions of past violent events apply to all users; the teen experience further restricts practical weapons and security-system information that could be misused. Intended protections and actual account behavior require separate checks.",
+            "风险干预不是即时全量上线": "Risk interventions are not immediate universal availability",
+            "首份报告计划 2027年初覆盖 2026年下半年，此后每半年更新。成年用户被置于未成年体验时，可按官方说明通过Persona确认年龄；本站未测试该流程或误判率。": "The first report is planned for early 2027, covering the second half of 2026, then updating semiannually. Adults placed in the teen experience can follow Persona age confirmation; the flow and misclassification rates were not tested."
+          },
+          "source_hash": "5515a34282acb30f8ab9405dd9c83ead8fc325640fec990bb59de0e1700ec97b",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-31",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-30",
+      "highlight": false,
+      "id": "D-296",
+      "interpretation": [
+        {
+          "locator": "Shared signal in robots.txt",
+          "source_ids": [
+            "preferences"
+          ],
+          "text": "共同信号帮助站长向多个参与方表达基础生成式AI训练偏好，降低逐家配置负担；公告没有证明所有模型提供方均参与或已实施。",
+          "title": "共同表达仍是自愿参与"
+        },
+        {
+          "locator": "Implementation timing",
+          "source_ids": [
+            "preferences"
+          ],
+          "text": "官方称未来几个月实施，届时分享具体细节。本文保留待实施状态，不据此宣称某站内容今天已被阻止用于训练。",
+          "title": "未来实施不写成今日阻止"
+        },
+        {
+          "locator": "Existing crawler controls; IETF work",
+          "source_ids": [
+            "preferences"
+          ],
+          "text": "公告说明共同信号不替换既有robots.txt爬虫控制；IETF规范文本和各方采用情况仍需逐项核，不把参与讨论写成标准已普遍生效。",
+          "title": "现有控制继续适用"
+        }
+      ],
+      "name": "AI training preferences",
+      "note": "原文 2026-10-30，无编号公司公告；本站 2026-10-31读全文。未核所有IETF文本版本或提供方实施，不改本站robots.txt与生产配置。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-31T01:18:29.175913+00:00",
+        "updated_at": "2026-10-31T01:18:29.175913+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-10-30",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "preferences",
+          "title": "Making it easier for websites to express AI training preferences",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI计划尊重robots.txt中的共同训练偏好信号；未来几个月实施并另发说明，现有爬虫控制继续适用。支持承诺不等于所有提供方已执行。",
+      "title": "OpenAI支持共同训练偏好信号，实施细节仍待未来几个月",
+      "translations": {
+        "en": {
+          "fields": {
+            "OpenAI支持共同训练偏好信号，实施细节仍待未来几个月": "OpenAI supports a common training-preference signal, with implementation still ahead",
+            "OpenAI计划尊重robots.txt中的共同训练偏好信号；未来几个月实施并另发说明，现有爬虫控制继续适用。支持承诺不等于所有提供方已执行。": "OpenAI plans to honor a common training-preference signal in robots.txt, implement it in coming months and publish details, while existing crawler controls remain. Support does not establish adoption by every provider.",
+            "公告说明共同信号不替换既有robots.txt爬虫控制；IETF规范文本和各方采用情况仍需逐项核，不把参与讨论写成标准已普遍生效。": "The signal does not replace existing robots.txt crawler controls. IETF text and provider adoption still require individual verification; participation in discussions is not universal standard deployment.",
+            "共同信号帮助站长向多个参与方表达基础生成式AI训练偏好，降低逐家配置负担；公告没有证明所有模型提供方均参与或已实施。": "A common signal helps operators express foundational generative-AI training preferences to participating providers with less provider-specific configuration. The announcement does not establish universal participation or implementation.",
+            "共同表达仍是自愿参与": "Shared expression remains voluntary",
+            "原文 2026-10-30，无编号公司公告；本站 2026-10-31读全文。未核所有IETF文本版本或提供方实施，不改本站robots.txt与生产配置。": "Unnumbered company announcement dated 2026-10-30, read 2026-10-31. All IETF text versions and provider implementations were not checked; site robots.txt and production settings are unchanged.",
+            "官方称未来几个月实施，届时分享具体细节。本文保留待实施状态，不据此宣称某站内容今天已被阻止用于训练。": "OpenAI says implementation will follow in coming months with further details. This remains planned, not evidence that a site’s content is prevented from training today.",
+            "未来实施不写成今日阻止": "Future implementation is not prevention today",
+            "现有控制继续适用": "Existing controls remain applicable"
+          },
+          "source_hash": "4869464ed806cb845dc625e8f9eb623650aae27c9688b4fba7ee1a57a75aff30",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-10-31",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-27",
+      "highlight": false,
+      "id": "D-297",
+      "interpretation": [
+        {
+          "locator": "§3; Table 1–2; Appendix A.1–A.5",
+          "source_ids": [
+            "report"
+          ],
+          "text": "四项分析选择受随机Agent倾向显著影响；研究测的是无唯一答案时谁决定假设，不是在计算错误答案率。",
+          "title": "86%跟随不是 72%的同义词：先看决策分母与随机比较"
+        },
+        {
+          "locator": "Table 2; §3.5–4.1; Appendix A.4; A.7",
+          "source_ids": [
+            "report"
+          ],
+          "text": "H2调整后政策位移为 17个百分点，区间跨零；四个前置倾向预测最终建议的 82%是样本内探索结果，不是部署预测性能。",
+          "title": "最终建议的直接效应未显著，前置分析仍可能塑造结果"
+        },
+        {
+          "locator": "§4.2; Figure 3–4; Appendix A.8–A.9",
+          "source_ids": [
+            "report"
+          ],
+          "text": "调查中多数人能回忆自己的选择，但Agent论证经常进入理由而未被署名；自信与影响来源应分开检查。",
+          "title": "自认为是自己的判断，不能代替独立性证据"
+        },
+        {
+          "locator": "§4.2.3–6; Appendix A.9–A.10; Figures 5–6",
+          "source_ids": [
+            "report"
+          ],
+          "text": "非AI组更慢且严重错误更多，但是否使用AI是自选，不能据此作因果提效结论；默认偏好模拟也不是整个职业群体的影响率。",
+          "title": "Agent可能减少操作错误，仍须保护关键判断与技能"
+        }
+      ],
+      "name": "Experts and AI agents",
+      "note": "单一模拟任务与固定Agent，倾向经增强；平均处理效应不等于个人被操控概率。注册主结果、探索分析、自选组比较与本站建议分开，未复现实验。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-10-31T01:18:01.851728+00:00",
+        "report_selected_at": "2026-10-31T01:18:01.851728+00:00",
+        "updated_at": "2026-10-31T01:18:01.851728+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-10-27",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "Who’s Aligned to Whom? How AI Agents Shape Experts’ Research Judgment Calls",
+          "url": "https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf"
+        },
+        {
+          "coverage": "link_only",
+          "id": "article",
+          "title": "How AI agents shape experts’ judgment calls",
+          "url": "https://www.anthropic.com/research/agents-judgment-calls"
+        }
+      ],
+      "state": "published",
+      "summary": "50名Agent使用者的随机倾向实验显示，分析假设可能随Agent偏好变化；最终建议的注册调整后直接效应未显著。四结论、三张独立重绘，区分因果估计、探索分析与自选组比较。",
+      "technical_map": {
+        "caution": "单一模拟任务与固定Agent，倾向经增强；平均处理效应不等于个人被操控概率。注册主结果、探索分析、自选组比较与本站建议分开，未复现实验。",
+        "change_summary": "首次完整分析：四结论与三张本站重绘，保留随机实验、注册结果、探索分析和外推限制。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Table 2; §3.5–4.1; Appendix A.4; A.7",
+                "source_id": "report"
+              }
+            ],
+            "from": "judgment",
+            "id": "edge-policy",
+            "label": "同研究的不同证据，不冒充因果链",
+            "reason": "Different outcomes and analysis scopes within the same study.",
+            "relation": "parallel",
+            "to": "policy"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.2; Figure 3–4; Appendix A.8–A.9",
+                "source_id": "report"
+              }
+            ],
+            "from": "judgment",
+            "id": "edge-awareness",
+            "label": "同研究的不同证据，不冒充因果链",
+            "reason": "Different outcomes and analysis scopes within the same study.",
+            "relation": "parallel",
+            "to": "awareness"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.2.3–6; Appendix A.9–A.10; Figures 5–6",
+                "source_id": "report"
+              }
+            ],
+            "from": "judgment",
+            "id": "edge-boundaries",
+            "label": "同研究的不同证据，不冒充因果链",
+            "reason": "Different outcomes and analysis scopes within the same study.",
+            "relation": "parallel",
+            "to": "boundaries"
+          }
+        ],
+        "focus": "专家签字之后，谁决定了分析假设？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§3; Table 1–2; Appendix A.1–A.5",
+                "source_id": "report"
+              }
+            ],
+            "id": "judgment",
+            "kind": "result",
+            "label": "86%跟随不是 72%的同义词：先看决策分母与随机比较",
+            "limitation": "单一模拟任务与固定Agent，倾向经增强；平均处理效应不等于个人被操控概率。注册主结果、探索分析、自选组比较与本站建议分开，未复现实验。",
+            "mechanism": "四项分析选择受随机Agent倾向显著影响；研究测的是无唯一答案时谁决定假设，不是在计算错误答案率。",
+            "metrics": [],
+            "result": "四项分析选择受随机Agent倾向显著影响；研究测的是无唯一答案时谁决定假设，不是在计算错误答案率。",
+            "setting": "50名AI使用者；固定Agent与单一任务；不同指标分别解释。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Table 2; §3.5–4.1; Appendix A.4; A.7",
+                "source_id": "report"
+              }
+            ],
+            "id": "policy",
+            "kind": "result",
+            "label": "最终建议的直接效应未显著，前置分析仍可能塑造结果",
+            "limitation": "单一模拟任务与固定Agent，倾向经增强；平均处理效应不等于个人被操控概率。注册主结果、探索分析、自选组比较与本站建议分开，未复现实验。",
+            "mechanism": "H2调整后政策位移为 17个百分点，区间跨零；四个前置倾向预测最终建议的 82%是样本内探索结果，不是部署预测性能。",
+            "metrics": [],
+            "result": "H2调整后政策位移为 17个百分点，区间跨零；四个前置倾向预测最终建议的 82%是样本内探索结果，不是部署预测性能。",
+            "setting": "50名AI使用者；固定Agent与单一任务；不同指标分别解释。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.2; Figure 3–4; Appendix A.8–A.9",
+                "source_id": "report"
+              }
+            ],
+            "id": "awareness",
+            "kind": "result",
+            "label": "自认为是自己的判断，不能代替独立性证据",
+            "limitation": "单一模拟任务与固定Agent，倾向经增强；平均处理效应不等于个人被操控概率。注册主结果、探索分析、自选组比较与本站建议分开，未复现实验。",
+            "mechanism": "调查中多数人能回忆自己的选择，但Agent论证经常进入理由而未被署名；自信与影响来源应分开检查。",
+            "metrics": [],
+            "result": "调查中多数人能回忆自己的选择，但Agent论证经常进入理由而未被署名；自信与影响来源应分开检查。",
+            "setting": "50名AI使用者；固定Agent与单一任务；不同指标分别解释。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.2.3–6; Appendix A.9–A.10; Figures 5–6",
+                "source_id": "report"
+              }
+            ],
+            "id": "boundaries",
+            "kind": "result",
+            "label": "Agent可能减少操作错误，仍须保护关键判断与技能",
+            "limitation": "单一模拟任务与固定Agent，倾向经增强；平均处理效应不等于个人被操控概率。注册主结果、探索分析、自选组比较与本站建议分开，未复现实验。",
+            "mechanism": "非AI组更慢且严重错误更多，但是否使用AI是自选，不能据此作因果提效结论；默认偏好模拟也不是整个职业群体的影响率。",
+            "metrics": [],
+            "result": "非AI组更慢且严重错误更多，但是否使用AI是自选，不能据此作因果提效结论；默认偏好模拟也不是整个职业群体的影响率。",
+            "setting": "50名AI使用者；固定Agent与单一任务；不同指标分别解释。",
+            "stage": 2
+          }
+        ],
+        "question": "专家签字之后，谁决定了分析假设？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：人工审核的价值不仅是发现代码错误，还包括保留提出问题、选择指标和解释不确定性的责任。把签字拆成执行验收与判断复核，能让读者看见假设从哪里来。本文不把使用AI本身写成坏事，也不把任务错误较少写成专家判断自动得到保护。",
+            "来源与修订：Anthropic研究文章 2026-10-27，作者Amaç Herdağdelen、Hailey Joren、Alex Tamkin；所链 29页原论文无另行已核编号版本。本站 2026-10-31补读全文、附录A.1–A.10及参考文献，视觉核对六张原图；三图独立重绘，不复制原画。未复现实验、代码、样本、统计或任何生产部署效果。网站首次发表由真实发布生成。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "61人完成有效任务，其中 11人自行选择不用Agent；主要研究样本为 50名因果推断从业者，48人完成调查。环境固定为Claude Code v2.1.220与Claude Opus 4.8、high effort。所有人分析同一虚构农业合作社，项目收益门槛为 3–4%，数据和情境经过设计，不是真实农业政策试点。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "五项倾向通过平衡随机区组分配，隐藏提示词要求Agent诚实地为一种可辩护选项作最强论证，同时允许证据充分时改变看法。四项中间选择涉及产出指标、识别策略、估计对象与权重；最后一项是扩展或终止，也允许延长一年。A.5逐一列出两侧为何均有可辩护理由。"
+                },
+                {
+                  "alt": "四个注册估计与双侧 95%置信区间，单位百分点",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据Figure 1与Table 2重绘。H1主结论；H2次要；H3仅描述；H4有事后选择条件，不能按同一证据强度解读。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Figure 1; Table 2; §3.5–4.1",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct31-judgment-effects.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "四项分析决定与Agent倾向一致的 86%，是选择匹配比例。注册H1则比较不同倾向组的选项概率差，对四项等权，估计 72个百分点，95%置信区间 60–83，195个可编码分析决定；推断按参与者聚类。把净影响称为flip rate还需要无反向抵抗的解释假设，不能把 72%当成每个人被影响的概率。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "真实随机比较支持本实验中的平均影响；它不证明某个参与者有 86%的分析出错，也不证明Agent蓄意欺骗。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§3; Table 1–2; Appendix A.1–A.5",
+                  "source_id": "report"
+                }
+              ],
+              "id": "judgment",
+              "node_ids": [
+                "judgment"
+              ],
+              "summary": "四项分析选择受随机Agent倾向显著影响；研究测的是无唯一答案时谁决定假设，不是在计算错误答案率。",
+              "title": "86%跟随不是 72%的同义词：先看决策分母与随机比较"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "最终建议编码为终止 0、延长 0.5、扩展 1。注册调整后H2为 0.17，95%区间−0.06至 0.40，单侧p=0.069；未调整值 0.22、p=0.037。应报告预先指定的主估计，不能挑较小p值写成稳健显著。A.4剔除高空闲样本后的敏感性结果也不能替代全样本注册结论。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "探索性逻辑回归仅使用四项前置倾向，在剔除延长建议的样本内预测 82%的终止／扩展决定，多数类别基线 61%，AUC 0.84。它说明前置分析口径可能使估计越过或达不到门槛，不是独立留出集验证。A.7的会话案例展示了分析方法与最终收益估计如何联动，但个案不另算随机实验。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "H3按事后得到的清晰估计筛选人群，反证检查失败，作者降为描述性结果；H4的 53个百分点切换差也有事后选择条件。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Table 2; §3.5–4.1; Appendix A.4; A.7",
+                  "source_id": "report"
+                }
+              ],
+              "id": "policy",
+              "node_ids": [
+                "policy"
+              ],
+              "summary": "H2调整后政策位移为 17个百分点，区间跨零；四个前置倾向预测最终建议的 82%是样本内探索结果，不是部署预测性能。",
+              "title": "最终建议的直接效应未显著，前置分析仍可能塑造结果"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "选择匹配、复用论证与署名的分母不同",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据主文与§4.2重绘。86%是分析决定匹配；77%及 15%来自 48名调查答卷，不能合并或画成转化漏斗。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§4.2; Figure 3; Table 3",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct31-judgment-awareness.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "48名答卷者中，52%认为最终建议更属于自己；77%至少一次复用Agent论证，15%在任一回答提及Agent。复用论证不必然是抄袭或恶意隐瞒，但事后自述不足以识别假设来自哪里。报告所有分析决定跟随倾向者的平均信心 71，其余 73，也不构成信心无影响的强因果结论。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Table 3与Figure 4的 245个可编码决定中，Agent先表态 77%、人先表态 17%、均不表态 6%；这些是机器编码的探索性流程统计。A.9说明代码审计由两模型筛查、作者盲审被标严重的问题，未标问题并非全部经人复查。机构不能把签字或通过自动检查当独立审阅的充分证据。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§4.2; Figure 3–4; Appendix A.8–A.9",
+                  "source_id": "report"
+                }
+              ],
+              "id": "awareness",
+              "node_ids": [
+                "awareness"
+              ],
+              "summary": "调查中多数人能回忆自己的选择，但Agent论证经常进入理由而未被署名；自信与影响来源应分开检查。",
+              "title": "自认为是自己的判断，不能代替独立性证据"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "自选AI与非AI组的代码审计及任务时长",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据§4.2.3重绘。严重错误为 3/50与 6/11；时长为中位数 65与 90分钟。非随机分组、经验不同，不能解释成因果节省。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§4.2.3; Appendix A.9",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/oct31-judgment-utility.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "A.10直接模拟显示，未注入倾向的Opus 4.8在 123次运行中 91%选择相同五项组合。八种模型的分布并不一致，不能把一个模型的稳定偏好写成所有模型共同偏好。Figure 6的每格 150个探测在声明与默认倾向一致或相反时比较主动建议；人为加强倾向后，两格均达 99%，因此真实部署影响可能小于本实验。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "局限包括一个合成任务、单一固定Agent、加强倾向和平均效应；没有在Agent发言前统一采集所有人初始偏好。§3.6还披露注册时已有 17人进入、4人退出，作者称除计划中两项披露外冻结前未分析数据；不能宣传为数据收集前完全预注册。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "claim",
+                  "text": "本站建议：先记录关键假设与可接受替代方案，再让Agent实现；对关键决策要求双方最强论据和敏感性分析，明确哪些判断必须独立复核。这是基于研究的工作流建议，不是已经验证有效的干预。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§4.2.3–6; Appendix A.9–A.10; Figures 5–6",
+                  "source_id": "report"
+                }
+              ],
+              "id": "boundaries",
+              "node_ids": [
+                "boundaries"
+              ],
+              "summary": "非AI组更慢且严重错误更多，但是否使用AI是自选，不能据此作因果提效结论；默认偏好模拟也不是整个职业群体的影响率。",
+              "title": "Agent可能减少操作错误，仍须保护关键判断与技能"
+            }
+          ],
+          "title": "专家签字之后，谁决定了分析假设？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-27",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "Official 29-page PDF linked 2026-10-27; unnumbered"
+          }
+        ],
+        "slug": "expert-judgment-agent-leans-and-independent-oversight",
+        "takeaway": "四项分析选择受随机Agent倾向显著影响；研究测的是无唯一答案时谁决定假设，不是在计算错误答案率。"
+      },
+      "title": "专家签字之后，谁决定了分析假设？",
+      "translations": {
+        "en": {
+          "fields": {
+            "48名答卷者中，52%认为最终建议更属于自己；77%至少一次复用Agent论证，15%在任一回答提及Agent。复用论证不必然是抄袭或恶意隐瞒，但事后自述不足以识别假设来自哪里。报告所有分析决定跟随倾向者的平均信心 71，其余 73，也不构成信心无影响的强因果结论。": "Among 48 respondents, 52% rate the recommendation as more their own, 77% reuse an agent argument at least once and 15% mention the agent anywhere. Reuse does not establish plagiarism or intentional concealment, but retrospective ownership does not identify where assumptions arose. Mean confidence is 71 among those aligned on all four analytical choices versus 73 otherwise; that is not a strong causal claim that confidence is unaffected.",
+            "50名AI使用者；固定Agent与单一任务；不同指标分别解释。": "50 agent users; one fixed agent and task; interpret each metric separately.",
+            "50名Agent使用者的随机倾向实验显示，分析假设可能随Agent偏好变化；最终建议的注册调整后直接效应未显著。四结论、三张独立重绘，区分因果估计、探索分析与自选组比较。": "A randomized-lean study of 50 agent users shows analytical assumptions can follow agent preferences, while the registered adjusted direct recommendation effect is nonsignificant. Four findings and three independent redraws distinguish causal estimates, exploratory analyses and self-selected comparisons.",
+            "61人完成有效任务，其中 11人自行选择不用Agent；主要研究样本为 50名因果推断从业者，48人完成调查。环境固定为Claude Code v2.1.220与Claude Opus 4.8、high effort。所有人分析同一虚构农业合作社，项目收益门槛为 3–4%，数据和情境经过设计，不是真实农业政策试点。": "61 participants completed a valid task; 11 chose not to use the agent. The main sample contains 50 causal-inference practitioners and 48 survey respondents. The fixed environment is Claude Code v2.1.220 with Claude Opus 4.8 at high effort. All analyze one fictional farm cooperative with a 3–4% benefit threshold, using designed data rather than a real agricultural policy trial.",
+            "86%跟随不是 72%的同义词：先看决策分母与随机比较": "86% alignment is not 72%: distinguish decisions from randomized contrasts",
+            "A.10直接模拟显示，未注入倾向的Opus 4.8在 123次运行中 91%选择相同五项组合。八种模型的分布并不一致，不能把一个模型的稳定偏好写成所有模型共同偏好。Figure 6的每格 150个探测在声明与默认倾向一致或相反时比较主动建议；人为加强倾向后，两格均达 99%，因此真实部署影响可能小于本实验。": "Appendix A.10 finds that unleaned Opus 4.8 chooses the same five-choice profile on 91% of 123 runs. Eight models have different distributions; one model’s stable preference is not universal. Figure 6 probes 150 prompts per cell when a declared decision agrees or disagrees with the baseline. Amplified leans raise unsolicited recommendations to 99% in both cells, so deployment effects may be smaller.",
+            "Agent可能减少操作错误，仍须保护关键判断与技能": "An agent can reduce execution errors while key judgments still need protection",
+            "FieldToFit分析：人工审核的价值不仅是发现代码错误，还包括保留提出问题、选择指标和解释不确定性的责任。把签字拆成执行验收与判断复核，能让读者看见假设从哪里来。本文不把使用AI本身写成坏事，也不把任务错误较少写成专家判断自动得到保护。": "FieldToFit analysis: human review includes responsibility for questions, metrics and uncertainty, beyond catching code errors. Distinguishing execution checks from judgment review makes the source of assumptions visible. AI use is not inherently bad, and fewer task errors do not automatically protect expert judgment.",
+            "H2调整后政策位移为 17个百分点，区间跨零；四个前置倾向预测最终建议的 82%是样本内探索结果，不是部署预测性能。": "Adjusted H2 policy shift is 17 percentage points with an interval crossing zero. The 82% prediction from intermediate leans is exploratory and in-sample, not deployed predictive performance.",
+            "H3按事后得到的清晰估计筛选人群，反证检查失败，作者降为描述性结果；H4的 53个百分点切换差也有事后选择条件。": "H3 conditions on clear estimates reached after treatment and fails its falsification check, so the authors downgrade it to descriptive. H4’s 53-point switching gap also conditions on post-treatment behavior.",
+            "Table 3与Figure 4的 245个可编码决定中，Agent先表态 77%、人先表态 17%、均不表态 6%；这些是机器编码的探索性流程统计。A.9说明代码审计由两模型筛查、作者盲审被标严重的问题，未标问题并非全部经人复查。机构不能把签字或通过自动检查当独立审阅的充分证据。": "In the 245 coded decisions of Table 3 and Figure 4, the agent voices a side first on 77%, the human on 17% and neither on 6%. These are exploratory machine-coded process statistics. Appendix A.9 explains that two models screen code and an author blindly adjudicates flagged serious findings; unflagged work is not all human-reviewed. Sign-off or automated checks alone are insufficient evidence of independence.",
+            "专家签字之后，谁决定了分析假设？": "After the expert signs off, who chose the analytical assumptions?",
+            "五项倾向通过平衡随机区组分配，隐藏提示词要求Agent诚实地为一种可辩护选项作最强论证，同时允许证据充分时改变看法。四项中间选择涉及产出指标、识别策略、估计对象与权重；最后一项是扩展或终止，也允许延长一年。A.5逐一列出两侧为何均有可辩护理由。": "Five leans are assigned through balanced randomized blocks. Hidden instructions require the agent to make the strongest honest case for a defensible option while changing its mind if decisive evidence demands it. Four intermediate choices concern outcomes, identification, estimands and weighting; the final recommendation allows rollout, discontinuation or a one-year extension. Appendix A.5 explains the defensible grounds on each side.",
+            "单一模拟任务与固定Agent，倾向经增强；平均处理效应不等于个人被操控概率。注册主结果、探索分析、自选组比较与本站建议分开，未复现实验。": "One simulated task and a fixed agent with amplified leans. Average treatment effects are not individual manipulation probabilities. Registered results, exploratory analyses, self-selected comparisons and FieldToFit advice are distinct; not replicated.",
+            "同研究的不同证据，不冒充因果链": "Different evidence within one study, not a causal chain",
+            "四个注册估计与双侧 95%置信区间，单位百分点": "Four registered estimates with two-sided 95% confidence intervals, in percentage points",
+            "四项分析决定与Agent倾向一致的 86%，是选择匹配比例。注册H1则比较不同倾向组的选项概率差，对四项等权，估计 72个百分点，95%置信区间 60–83，195个可编码分析决定；推断按参与者聚类。把净影响称为flip rate还需要无反向抵抗的解释假设，不能把 72%当成每个人被影响的概率。": "86% is the share of analytical choices matching the assigned lean. Registered H1 instead averages between-arm probability contrasts equally across four decisions: 72 percentage points, 95% CI 60–83, from 195 codable analytical decisions, with inference clustered by participant. Calling net influence a flip rate also relies on a no-backlash interpretation; 72% is not each person’s probability of being influenced.",
+            "四项分析选择受随机Agent倾向显著影响；研究测的是无唯一答案时谁决定假设，不是在计算错误答案率。": "Random agent leans substantially shift four analytical choices. The study measures who settles assumptions without a unique answer, not the rate of wrong answers.",
+            "局限包括一个合成任务、单一固定Agent、加强倾向和平均效应；没有在Agent发言前统一采集所有人初始偏好。§3.6还披露注册时已有 17人进入、4人退出，作者称除计划中两项披露外冻结前未分析数据；不能宣传为数据收集前完全预注册。": "Limits include one synthetic task, a single fixed agent, amplified leans and average effects, without eliciting every person’s initial preference before agent advice. Section 3.6 discloses that 17 participants had started and 4 dropped out at registration; the authors say data were not analyzed before freezing except for two disclosed exceptions. This is not complete preregistration before data collection.",
+            "探索性逻辑回归仅使用四项前置倾向，在剔除延长建议的样本内预测 82%的终止／扩展决定，多数类别基线 61%，AUC 0.84。它说明前置分析口径可能使估计越过或达不到门槛，不是独立留出集验证。A.7的会话案例展示了分析方法与最终收益估计如何联动，但个案不另算随机实验。": "An exploratory logistic regression using only four intermediate leans predicts 82% of rollout/discontinue recommendations in-sample, excluding extensions, versus a 61% majority baseline and AUC 0.84. Earlier specifications can move estimates relative to the threshold; this is not validation on a separate holdout. Appendix A.7 illustrates the chain through a transcript, not an additional randomized experiment.",
+            "最终建议的直接效应未显著，前置分析仍可能塑造结果": "A nonsignificant direct recommendation effect does not erase earlier influence",
+            "最终建议编码为终止 0、延长 0.5、扩展 1。注册调整后H2为 0.17，95%区间−0.06至 0.40，单侧p=0.069；未调整值 0.22、p=0.037。应报告预先指定的主估计，不能挑较小p值写成稳健显著。A.4剔除高空闲样本后的敏感性结果也不能替代全样本注册结论。": "Recommendations are coded discontinue 0, extend 0.5 and roll out 1. Registered adjusted H2 is 0.17, 95% CI −0.06 to 0.40, one-sided p=0.069; the unadjusted value is 0.22 with p=0.037. Report the designated estimator rather than choosing the smaller p-value. The idle-session sensitivity analysis in Appendix A.4 does not replace the full-sample registered result.",
+            "本站建议：先记录关键假设与可接受替代方案，再让Agent实现；对关键决策要求双方最强论据和敏感性分析，明确哪些判断必须独立复核。这是基于研究的工作流建议，不是已经验证有效的干预。": "FieldToFit advice: record key assumptions and defensible alternatives before agent execution; request strong cases on both sides and sensitivity analyses, and designate independently reviewed judgments. These research-informed workflow suggestions are not validated interventions.",
+            "本站据Figure 1与Table 2重绘。H1主结论；H2次要；H3仅描述；H4有事后选择条件，不能按同一证据强度解读。": "Independent redraw of Figure 1 and Table 2. H1 is primary, H2 secondary, H3 descriptive and H4 conditional on post-treatment selection; their evidential strength differs.",
+            "本站据§4.2.3重绘。严重错误为 3/50与 6/11；时长为中位数 65与 90分钟。非随机分组、经验不同，不能解释成因果节省。": "Independent redraw of §4.2.3. Serious errors are 3/50 and 6/11; median task times are 65 and 90 minutes. Groups are not randomized and differ in experience; these are not causal savings.",
+            "本站据主文与§4.2重绘。86%是分析决定匹配；77%及 15%来自 48名调查答卷，不能合并或画成转化漏斗。": "Independent redraw of the main text and §4.2. 86% concerns analytical decisions; 77% and 15% concern 48 survey respondents. These are not a combined rate or conversion funnel.",
+            "来源与修订：Anthropic研究文章 2026-10-27，作者Amaç Herdağdelen、Hailey Joren、Alex Tamkin；所链 29页原论文无另行已核编号版本。本站 2026-10-31补读全文、附录A.1–A.10及参考文献，视觉核对六张原图；三图独立重绘，不复制原画。未复现实验、代码、样本、统计或任何生产部署效果。网站首次发表由真实发布生成。": "Sources and revisions: Anthropic research article dated 2026-10-27 by Amaç Herdağdelen, Hailey Joren and Alex Tamkin; its linked 29-page paper has no independently verified numbered version. On 2026-10-31 FieldToFit completed the text, Appendices A.1–A.10 and references, visually checked six figures and made three independent redraws. The experiment, code, samples, statistics and production outcomes were not replicated. Site-publication dates come from actual publication.",
+            "真实随机比较支持本实验中的平均影响；它不证明某个参与者有 86%的分析出错，也不证明Agent蓄意欺骗。": "Random assignment supports average influence in this experiment. It does not mean an individual made errors on 86% of analyses or that the agent intentionally deceived anyone.",
+            "自认为是自己的判断，不能代替独立性证据": "Perceived ownership is not evidence of independent judgment",
+            "自选AI与非AI组的代码审计及任务时长": "Code audit and task time in self-selected AI and no-AI groups",
+            "调查中多数人能回忆自己的选择，但Agent论证经常进入理由而未被署名；自信与影响来源应分开检查。": "Most respondents recall their choices, yet agent arguments often enter explanations without attribution. Confidence and the origin of assumptions need separate checks.",
+            "选择匹配、复用论证与署名的分母不同": "Choice alignment, argument reuse and attribution have different denominators",
+            "非AI组更慢且严重错误更多，但是否使用AI是自选，不能据此作因果提效结论；默认偏好模拟也不是整个职业群体的影响率。": "The no-AI group is slower and makes more serious errors, but self-selected use prevents causal productivity claims. Default-preference simulations do not estimate effects across a profession.",
+            "首次完整分析：四结论与三张本站重绘，保留随机实验、注册结果、探索分析和外推限制。": "First full analysis: four findings and three independent redraws preserve randomized design, registered results, exploratory analyses and generalization limits."
+          },
+          "source_hash": "67eec29f6797fa14969ecfbe6d41730cd7258179cbcaa2354758f553f759b5ee",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "other",
       "checked_at": "2026-10-31",
       "codex_28_days": {
@@ -326,7 +1068,7 @@
       "checked_at": "2026-10-30",
       "editor": "FieldToFit",
       "event_date": "2026-10-29",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -359,7 +1101,7 @@
             "source_id": "faq"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "Haiku 4.5移出选择器：先分清入口，再继续旧对话",
         "limits": [
           {
@@ -425,7 +1167,7 @@
         "first_published_at": "2026-10-30T02:01:24.883891+00:00",
         "hot_card_first_published_at": "2026-10-30T02:01:24.883924+00:00",
         "hot_card_selected_at": "2026-10-30T02:01:24.883924+00:00",
-        "updated_at": "2026-10-30T02:01:24.883891+00:00"
+        "updated_at": "2026-10-31T01:15:48.092690+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -450,7 +1192,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "cb615c3afa67c563a30b2846ab2e443222d96592c178f77072b1c4e2db4174e5",
+          "source_hash": "f1b59cdb5177060f142fee296888cc8b33074eb347498c57f50b396d5acb2589",
           "fields": {
             "10月 15日预告、10月 29日生效；2026-10-30核对官方帮助全文，未实测。": "Announced 10/15, effective 10/29; official help article checked 2026-10-30. Not tested.",
             "10月 15日预告、10月 29日生效；本站 2026-10-30核对。版本Haiku4.5→5.5，动态帮助文档无编号。未测试账户、续聊、API、费用或代码兼容性。": "Announced 10/15, effective 10/29; checked 2026-10-30. Haiku4.5→5.5; the dynamic help article is unnumbered. Accounts, continued chats, API access, costs and code compatibility were not tested.",
@@ -488,7 +1230,7 @@
       "checked_at": "2026-10-30",
       "editor": "FieldToFit",
       "event_date": "2026-10-30",
-      "highlight": true,
+      "highlight": false,
       "id": "D-282",
       "interpretation": [
         {
@@ -521,7 +1263,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-10-30T02:00:56.085288+00:00",
-        "updated_at": "2026-10-30T02:00:56.085288+00:00"
+        "updated_at": "2026-10-31T01:16:15.453335+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -546,7 +1288,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "d26d20087b11b3abcdde7ad50652a0f96ecf389422284a3073bb5804f8a059d8",
+          "source_hash": "45c8cf2053f83fcd60b7e0233af2a32b3a2f1ef4336add844dbe1b7859a6ea93",
           "fields": {
             "Claude Code 2.1.314：工作目录写入开关、策略与恢复边界修复": "Claude Code 2.1.314: working-directory write controls, policy and recovery fixes",
             "claude -p启动失败改为打印错误并退出 1；阻止或未执行的Shell／MCP调用不应在折叠组里像已执行。Esc或Stop后会提醒动作可能已运行，恢复前先核真实结果。": "claude -p startup failures now print an error and exit 1. Blocked or unexecuted Shell/MCP calls should no longer look executed in collapsed groups. After Esc or Stop, the model is told an action may have run; inspect actual results before recovery.",
@@ -684,7 +1426,7 @@
       "checked_at": "2026-10-30",
       "editor": "FieldToFit",
       "event_date": "2026-10-29",
-      "highlight": true,
+      "highlight": false,
       "id": "D-283",
       "interpretation": [
         {
@@ -726,7 +1468,7 @@
       "publication": {
         "first_published_at": "2026-10-30T02:00:01.350110+00:00",
         "report_selected_at": "2026-10-30T02:00:01.350110+00:00",
-        "updated_at": "2026-10-30T02:00:01.350110+00:00"
+        "updated_at": "2026-10-31T01:16:42.226116+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -1073,7 +1815,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "68a85f5fdfdd0384b59d6e358af8b0d44a2c6b9600730b152d451bcce964606f",
+          "source_hash": "4dbe40fcc90f9bf15d62542bbe07d6c585ed2ac2071d35b34e63eb52953e0394",
           "fields": {
             "10月 29日Luna更新强调简洁与减少迎合；系统卡同时披露六项事实性指标退步。四结论、三张本站重绘，分清安全类别、事实分母、长度校正与限制披露。": "The 10/29 Luna update targets concision and reduced agreeableness while reporting regressions on six factuality metrics. Four findings and three original redraws distinguish safety categories, factuality denominators, length adjustment and disclosure.",
             "10月 29日增补说明模型目标包括更简洁和减少过度赞同，数据与训练类型沿用 10月 7日版，并非公开一套新的完整训练配方。当前标题和正文都写October 29，但URL保留October 28；本文据当前原文标记版本，网站发表时间由真实发布生成。": "The 10/29 addendum targets concision and reduced overly agreeable language, using the same types of data and training as 10/7 rather than publishing a new complete training recipe. Its current title and body say October 29 while the URL retains October 28. This analysis follows the current source version; site-publication time is generated by actual publication.",
@@ -2054,7 +2796,7 @@
             "source_id": "announcement"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "Gemini 4 Carbon：先看资格，再看介绍期价格",
         "limits": [
           {
@@ -2145,7 +2887,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "2780104df930cea2d3c8754427c1a377ca8ab636b9d979c8ff5654eaffb35842",
+          "source_hash": "134966a5e48c8fecf28f37beb018d2b9a6f7dac565d4ed7bde805f1bb2cf3a9e",
           "fields": {
             "2026-10-29核对Google官方正文；人群与下一步为本站判断，未独立复现或测试计费。": "Google’s official article checked on 2026-10-29; audiences and next steps are FieldToFit judgments. No independent replication or billing test.",
             "Carbon本周先向部分网络防御者及Fairwind伙伴开放。每百万输入／输出token介绍期 2／10美元，之后 4／20美元；普通开发者、企业与消费者入口仍待推出。": "Carbon initially rolls out to selected cyber defenders and Fairwind partners. Introductory input/output prices are $2/$10 per million tokens, later $4/$20; general developer, business and consumer access is still forthcoming.",
@@ -2195,7 +2937,7 @@
       },
       "editor": "FieldToFit",
       "event_date": null,
-      "highlight": true,
+      "highlight": false,
       "id": "D-272",
       "interpretation": [
         {
@@ -2228,7 +2970,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-29T03:03:54.071272+00:00",
-        "updated_at": "2026-10-30T01:38:56.188320+00:00"
+        "updated_at": "2026-10-31T01:17:09.003385+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -2270,7 +3012,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "a4e24d17e1b9fc313a52419b10c4bbe0c9ef73d5440414d0dcc4eeef908c3938",
+          "source_hash": "66fa157f89187c0a38ffe057c5d32b3c3eafee1f1d5ccf8974ac3b081066a6f2",
           "fields": {
             "API余额不等于订阅用量": "API balance is distinct from subscription usage",
             "ChatGPT Pro／Business新增API赠额：激活、组织归属与使用范围有条件": "ChatGPT Pro/Business API credits: activation, organization and usage conditions",
@@ -2303,7 +3045,7 @@
       },
       "editor": "FieldToFit",
       "event_date": "2026-10-28",
-      "highlight": true,
+      "highlight": false,
       "id": "D-273",
       "interpretation": [
         {
@@ -2336,7 +3078,7 @@
       "organization": "ServiceNow / OpenAI",
       "publication": {
         "first_published_at": "2026-10-29T03:03:28.192846+00:00",
-        "updated_at": "2026-10-30T01:39:27.161367+00:00"
+        "updated_at": "2026-10-31T01:17:35.737285+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -2372,7 +3114,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "0659416a376be1e6940ac37e92ae2448dc3feef3ed8a3e0c63c73887f1c8cffc",
+          "source_hash": "3d9f762d8db62db571405b91584358906ef441242caa246e8bfd45014dde8981",
           "fields": {
             "ChatGPT / Codex：ServiceNow MCP已上架，语音、安全与集成分阶段推出": "ChatGPT / Codex: ServiceNow MCP is available, with phased voice, security and integration plans",
             "ServiceNow MCP插件已在OpenAI marketplace提供；增强功能预计 2026年底，语音、安全与AI Workflow Factory的Codex集成另有 2027年时间表。": "The ServiceNow MCP plugin is available in the OpenAI marketplace. Enhanced capabilities are expected by late 2026; voice, security and Codex in AI Workflow Factory follow separate 2027 schedules.",
@@ -2937,7 +3679,7 @@
             "source_id": "oracle-announcement"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Oracle采购入口已扩展，Workspace仍需核对开放状态",
         "limits": [
           {
@@ -3039,7 +3781,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "e57a90b7c31124dd576276f54fa89bafb681adbb7de4869f32637220234ff48d",
+          "source_hash": "5e0b5c353e2d552c6da863de89b563eb03c8dcbb2496cadcbf4e6dd88427fc6b",
           "fields": {
             "2026-10-28核对双方公告正文；人群与下一步为本站判断，未实测账户、费用或效果。": "Both announcement texts checked on 2026-10-28; audiences and next steps are FieldToFit judgments. Accounts, costs and results were not tested.",
             "ChatGPT / Codex：Oracle采购入口扩展，AI Workspace仍需核对开放阶段": "ChatGPT / Codex: Oracle procurement expands; check AI Workspace availability separately",
@@ -30405,48 +31147,53 @@
       }
     },
     {
-      "_position": 1,
-      "category": "model",
-      "checked_at": "2026-10-07",
+      "category": "tool",
+      "checked_at": "2026-10-31",
       "editor": "FieldToFit",
       "event_date": "2026-10-06",
-      "highlight": false,
+      "highlight": true,
       "id": "D-82",
       "interpretation": [
         {
-          "locator": "官方原始说明；本站未运行复测",
+          "locator": "Key Features; Recommended Settings; API page status",
           "source_ids": [
-            "source-1",
-            "source-2"
+            "card"
           ],
-          "text": "通过Mistral Studio或API调用mistral-large-4。模型页列出1M上下文、图文输入、工具调用与结构化输出；当前是公共预览。",
-          "title": "现在如何使用"
+          "text": "官方仓库mistralai/Mistral-Large-4-1T-A52B已提供权重与部署说明；模型卡列出 1M上下文、图文输入和文本输出，low／medium／high推理档位，high为默认。API页仍标Public Preview，两种状态并不矛盾。",
+          "title": "权重开放与API预览分开"
         },
         {
-          "locator": "官方原始说明；本站未运行复测",
+          "locator": "Conditions 1–3; Model as a Service definition",
           "source_ids": [
-            "source-1",
-            "source-2"
+            "license"
           ],
-          "text": "官方计划月底开放权重，当前不能写成已能下载自部署。本站未复测性能、稳定性或成本，不用官方宣传替代独立榜单。",
-          "title": "权重与性能边界"
+          "text": "许可要求保留版权及许可声明。经营MaaS业务的被许可人或其关联方，在模型或衍生物的商业使用前须另签许可；定义涉及向第三方提供可实质控制输入、参数或训练数据的推理或后训练访问。条款另列内部使用、官方产品及特定嵌入功能等边界，应按完整原文判断，不能一律称免费无限制。",
+          "title": "MaaS定义与例外一并阅读"
         },
         {
-          "locator": "官方原始说明；本站未运行复测",
+          "locator": "Pricing; release: Start building with Le Chonk",
           "source_ids": [
-            "source-1",
-            "source-2"
+            "api"
           ],
-          "text": "官方发布文章写总参数1T／激活49B，模型页写1.05T／52B；两份材料不一致，本页保留各自口径，暂不合并为统一数字。",
-          "title": "参数口径仍有冲突"
+          "text": "API页现列每百万token输入$0.70、缓存输入$0.07、输出$2.10。任务token节省不自动等于总账单降幅，自部署还需硬件、上下文、并发及服务成本核算；完整技术报告仍标即将发布。",
+          "title": "评测效率不等于部署账单"
+        },
+        {
+          "locator": "Official card introduction; API model description",
+          "source_ids": [
+            "card",
+            "api"
+          ],
+          "text": "现行官方模型卡说明 49B为每token激活参数，52B包含嵌入及输出层。原预览材料的 1T与API页 1.05T总参数精度继续分别保留，不据此编造新型号；旧的待开放描述留在历史版本，不作为当前状态。",
+          "title": "激活参数口径补解释"
         }
       ],
       "name": "Mistral Large 4",
-      "note": "原文事件日期2026-10-06，本站2026-10-07核对；权重尚待开放，参数口径差异保留。",
+      "note": "本站 2026-10-31核对公告、官方模型卡、许可全文和API页。产品原始日期 2026-10-06保留；本次权重开放的精确首发日未核实，不借用产品日期。未下载大权重、未复现评测或计费。",
       "organization": "Mistral AI",
       "publication": {
         "first_published_at": "2026-10-07T04:21:35.805438+00:00",
-        "updated_at": "2026-10-12T01:56:26.187942+00:00"
+        "updated_at": "2026-10-31T01:19:24.193612+00:00"
       },
       "reading_materials": [
         {
@@ -30483,6 +31230,30 @@
       "sources": [
         {
           "coverage": "link_only",
+          "id": "release",
+          "title": "Mistral Large 4 open-weight release",
+          "url": "https://mistral.ai/news/mistral-large-4-oss/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "card",
+          "title": "Official Mistral Large 4 model card",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B"
+        },
+        {
+          "coverage": "link_only",
+          "id": "license",
+          "title": "Mistral Ecosystem Open-Weight License",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/LICENSE"
+        },
+        {
+          "coverage": "link_only",
+          "id": "api",
+          "title": "Mistral Large 4 API model page",
+          "url": "https://docs.mistral.ai/models/mistral-large-4-0"
+        },
+        {
+          "coverage": "link_only",
           "id": "source-1",
           "title": "Mistral Large 4 · 官方来源 1",
           "url": "https://mistral.ai/news/mistral-large-4/"
@@ -30495,29 +31266,30 @@
         }
       ],
       "state": "published",
-      "summary": "Mistral于10月6日开放Large 4公共预览，面向编程、Agent和多模态文档任务；现在可通过Studio/API使用，下载权重仍需等待月底计划。",
-      "title": "Mistral Large 4：API公开预览，权重计划月底开放",
+      "summary": "官方 1T-A52B权重已可获取，支持 1M上下文与图文输入；API仍标Public Preview。新许可基于MIT修改，MaaS商业使用另有要求，不能简称无限制MIT。",
+      "title": "Mistral Large 4开放权重：保留API预览状态，先核MaaS许可",
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "79858434c7b2e14b5f94e8f6c76ba78eda296673ec196ea24dbaee223693b497",
+          "source_hash": "2438321b2246a50a72aaf8f9ac5a703ec35fe71914b5d3c01aedb7d8077c7873",
           "fields": {
             "Mistral Large 4 · 官方来源 1": "Mistral Large 4 · Official Source 1",
             "Mistral Large 4 · 官方来源 2": "Mistral Large 4 · Official Source 2",
-            "Mistral Large 4：API公开预览，权重计划月底开放": "Mistral Large 4: public API preview; weights planned for month-end",
             "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 1": "Mistral Large 4: API public preview, weights plan to open at the end of the month · Official source 1",
             "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 2": "Mistral Large 4: API public preview, weights plan to open at the end of the month · Official source 2",
-            "Mistral于10月6日开放Large 4公共预览，面向编程、Agent和多模态文档任务；现在可通过Studio/API使用，下载权重仍需等待月底计划。": "Mistral opens the Large 4 public preview on 10/6 for coding, agent and multimodal document tasks. It is available through Studio/API; downloadable weights are still planned for the end of the month.",
-            "原文事件日期2026-10-06，本站2026-10-07核对；权重尚待开放，参数口径差异保留。": "Source text event date 2026-10-06, FieldToFit 2026-10-07 check; weights are still open, parameter measurement basis difference is retained.",
-            "参数口径仍有冲突": "There is still a conflict between the parameter measurement basis",
-            "官方原始说明；本站未运行复测": "Official original description; FieldToFit does not run retest",
             "官方发布和采用说明": "Official release and adoption instructions",
-            "官方发布文章写总参数1T／激活49B，模型页写1.05T／52B；两份材料不一致，本页保留各自口径，暂不合并为统一数字。": "The official announcement lists 1T total / 49B active parameters, while the model page lists 1.05T / 52B. The materials disagree; this page retains each stated basis without merging them into one number.",
-            "官方计划月底开放权重，当前不能写成已能下载自部署。本站未复测性能、稳定性或成本，不用官方宣传替代独立榜单。": "Weights are planned for month-end, so downloading and self-deployment cannot be described as available now. FieldToFit has not retested performance, stability or cost and does not replace independent leaderboards with official promotion.",
-            "权重与性能边界": "Weights and performance boundaries",
             "正文再分发许可未确认，保留官方链接与本站解读。": "Full-text redistribution permission is unconfirmed; retain the official link and FieldToFit interpretation.",
-            "现在如何使用": "How to use it now",
-            "通过Mistral Studio或API调用mistral-large-4。模型页列出1M上下文、图文输入、工具调用与结构化输出；当前是公共预览。": "Call mistral-large-4 through Mistral Studio or API. The model page lists 1M context, graphic input, tool calls and structured output; it is currently a public preview."
+            "API页现列每百万token输入$0.70、缓存输入$0.07、输出$2.10。任务token节省不自动等于总账单降幅，自部署还需硬件、上下文、并发及服务成本核算；完整技术报告仍标即将发布。": "The API page lists $0.70 input, $0.07 cached input and $2.10 output per million tokens. Task token savings do not automatically translate to total bill reductions; self-hosting also requires hardware, context, concurrency and service-cost analysis. A full technical report is still described as forthcoming.",
+            "MaaS定义与例外一并阅读": "Read the MaaS definition and exceptions together",
+            "Mistral Large 4开放权重：保留API预览状态，先核MaaS许可": "Mistral Large 4 opens weights: API preview status and MaaS license conditions remain",
+            "官方 1T-A52B权重已可获取，支持 1M上下文与图文输入；API仍标Public Preview。新许可基于MIT修改，MaaS商业使用另有要求，不能简称无限制MIT。": "Official 1T-A52B weights are available with 1M context and image/text input, while the API remains labeled Public Preview. The modified MIT-based license adds requirements for commercial MaaS use; it is not unrestricted MIT.",
+            "官方仓库mistralai/Mistral-Large-4-1T-A52B已提供权重与部署说明；模型卡列出 1M上下文、图文输入和文本输出，low／medium／high推理档位，high为默认。API页仍标Public Preview，两种状态并不矛盾。": "The official mistralai/Mistral-Large-4-1T-A52B repository provides weights and deployment instructions. Its card lists 1M context, image/text input, text output and low/medium/high reasoning with high as default. The API page still says Public Preview; these statuses are distinct.",
+            "本站 2026-10-31核对公告、官方模型卡、许可全文和API页。产品原始日期 2026-10-06保留；本次权重开放的精确首发日未核实，不借用产品日期。未下载大权重、未复现评测或计费。": "Release, official card, complete license and API page checked 2026-10-31. The product’s original 2026-10-06 date is preserved; the exact first date of this weight release is unverified and is not inferred from that product date. Large weights, benchmarks and billing were not tested.",
+            "权重开放与API预览分开": "Separate weight availability from API preview",
+            "激活参数口径补解释": "Clarify active-parameter accounting",
+            "现行官方模型卡说明 49B为每token激活参数，52B包含嵌入及输出层。原预览材料的 1T与API页 1.05T总参数精度继续分别保留，不据此编造新型号；旧的待开放描述留在历史版本，不作为当前状态。": "The current official card explains 49B active parameters per token and 52B including embedding and output layers. Keep the original preview’s 1T and API page’s 1.05T total-parameter precision separate rather than inventing another model. The old planned-release description remains in history, not current availability.",
+            "许可要求保留版权及许可声明。经营MaaS业务的被许可人或其关联方，在模型或衍生物的商业使用前须另签许可；定义涉及向第三方提供可实质控制输入、参数或训练数据的推理或后训练访问。条款另列内部使用、官方产品及特定嵌入功能等边界，应按完整原文判断，不能一律称免费无限制。": "The license requires retaining copyright and permission notices. Licensees or affiliates operating a MaaS business need a separate license before commercial use of the model or derivatives. The definition concerns third-party inference or post-training access with meaningful control over inputs, parameters or training data. Read internal-use, official-product and specific embedded-feature boundaries in full rather than calling all use unrestricted.",
+            "评测效率不等于部署账单": "Benchmark efficiency is not a deployment bill"
           }
         }
       }

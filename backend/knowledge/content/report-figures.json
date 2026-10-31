@@ -1876,5 +1876,35 @@
     "attribution": "FieldToFit",
     "source_version": "GPT-6 Luna October29, 2026 addendum",
     "locator": "Figures4–7; §7"
+  },
+  "/report-figures/oct31-judgment-effects.png": {
+    "sha256": "fe6e62428aee8801708ac9285986261774b133b44313a38e17fc2f7771921aeb",
+    "source_urls": [
+      "https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Official paper linked 2026-10-27; unnumbered",
+    "locator": "Figure 1; Table 2"
+  },
+  "/report-figures/oct31-judgment-awareness.png": {
+    "sha256": "87265966a8e3614dde1e7b280eb0479f0ce02143f8d0c30bdf52bb929ed9c0f8",
+    "source_urls": [
+      "https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Official paper linked 2026-10-27; unnumbered",
+    "locator": "Main text; section 4.2"
+  },
+  "/report-figures/oct31-judgment-utility.png": {
+    "sha256": "be0d3aa7319be4c43872a744ef819dc48b727da653dc310e6d7420542265ca47",
+    "source_urls": [
+      "https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Official paper linked 2026-10-27; unnumbered",
+    "locator": "Section 4.2.3; Appendix A.9"
   }
 }

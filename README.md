@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.15](CHANGELOG.md#v1.17.15)** · [fieldtofit-v1.17.15](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.15)
+**当前源码版本：[v1.17.16](CHANGELOG.md#v1.17.16)** · [fieldtofit-v1.17.16](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.16)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布四项获批日志：Rosalind Research、手机双账号、Agents API周报及企业隐私说明。
-- 保留审批、逐步开放、实验功能与API预览范围，专题95条（47主线／48其他OpenAI），严格重置计数0。
-- 保留并行已审新闻、报告与分享资源，网站与AI读取沿用同一发布集合。
+- 发布已选Cursor市场扩展安全、ChatGPT保护及训练偏好公告，更新Mistral Large 4原动态，保留来源、版本与计划实施边界。
+- 新增专家判断与Agent倾向研究分析：四结论、三张本站重绘，分开注册估计、探索结果和自选组比较。
+- 提供扩展安全中英信息卡，正式发表后轮替首页报告与卡片；同步两份档案，保留并行专题、全部索引和历史链接。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
