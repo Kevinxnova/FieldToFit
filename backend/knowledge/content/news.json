@@ -2,6 +2,326 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "other",
+      "checked_at": "2026-10-31",
+      "codex_28_days": {
+        "announced_at": "2026-10-30T15:12:35.338000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/OpenAI/status/2116186509384815084",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Private Intelligence overview; Private Inference is an API preview",
+        "overview_zh": "其他OpenAI · 企业隐私框架说明；Private Inference为API预览",
+        "source_posts": [],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-30",
+      "highlight": false,
+      "id": "D-295",
+      "interpretation": [
+        {
+          "locator": "原始官方资料已核对；时间与来源精度按专题字段保留。",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "北京时间 10 月 30 日 23:12，OpenAI官方介绍Private Intelligence企业隐私框架，并链接产品说明：涵盖业务数据所有权、访问限制、代理可用工具与行动权限，以及数据安全控制。页面把Private Inference标为API预览，描述为结合机密计算与可验证控制保护处理中的输入输出；Zero Data Retention则仅面向合资格API工作流。需要这些能力的机构应按产品核对适用范围并联系官方销售团队，不将企业说明扩展为所有个人套餐默认开启。本文记录此次官方说明，不宣称其中每项控制当天首次推出，不等同本地或离线部署，也不承诺完全消除风险。原帖时刻由帖子ID推导并与页面分钟核对；无Tibo关联帖或官方Day编号。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "OpenAI presents Private Intelligence; Private Inference remains an API preview",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-31T00:44:37.873091+00:00",
+        "updated_at": "2026-10-31T00:44:37.873091+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-30",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "OpenAI Private Intelligence官方原帖",
+          "url": "https://x.com/OpenAI/status/2116186509384815084"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "Private Intelligence企业隐私说明",
+          "url": "https://openai.com/business/private-intelligence/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "按产品区分隐私控制",
+          "url": "https://openai.com/business/private-intelligence/privacy-by-product/"
+        }
+      ],
+      "state": "published",
+      "summary": "其他OpenAI · 企业隐私框架说明；Private Inference为API预览",
+      "title": "OpenAI发布企业隐私说明，Private Inference标为API预览",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "24abc1bede139055d0ff98c9d1822bb34827ef3e6081b26b3b46768321719423",
+          "fields": {
+            "OpenAI Private Intelligence官方原帖": "Official OpenAI Private Intelligence post",
+            "OpenAI发布企业隐私说明，Private Inference标为API预览": "OpenAI presents Private Intelligence; Private Inference remains an API preview",
+            "Private Intelligence企业隐私说明": "Private Intelligence overview",
+            "其他OpenAI · 企业隐私框架说明；Private Inference为API预览": "Private Intelligence overview; Private Inference is an API preview",
+            "北京时间 10 月 30 日 23:12，OpenAI官方介绍Private Intelligence企业隐私框架，并链接产品说明：涵盖业务数据所有权、访问限制、代理可用工具与行动权限，以及数据安全控制。页面把Private Inference标为API预览，描述为结合机密计算与可验证控制保护处理中的输入输出；Zero Data Retention则仅面向合资格API工作流。需要这些能力的机构应按产品核对适用范围并联系官方销售团队，不将企业说明扩展为所有个人套餐默认开启。本文记录此次官方说明，不宣称其中每项控制当天首次推出，不等同本地或离线部署，也不承诺完全消除风险。原帖时刻由帖子ID推导并与页面分钟核对；无Tibo关联帖或官方Day编号。": "At 23:12 Beijing on 10/30, OpenAI introduced its Private Intelligence enterprise privacy framework, covering business-data ownership, access restrictions, agent permissions and security controls. The linked page labels Private Inference an API preview, combining confidential computing with verifiable controls during processing. Zero Data Retention applies to eligible API workflows. Organizations should check product-specific eligibility with sales. This records the official overview, not a claim that every control launched that day, applies to all personal plans, runs locally or eliminates risk. The post time is derived from its ID and checked against the displayed minute. No Tibo association or official Day is established.",
+            "原始官方资料已核对；时间与来源精度按专题字段保留。": "Official original sources checked; timestamps and precision retained in the topic fields.",
+            "变化与适用范围": "Changes and availability",
+            "按产品区分隐私控制": "Privacy controls by product"
+          }
+        }
+      }
+    },
+    {
+      "category": "other",
+      "checked_at": "2026-10-31",
+      "codex_28_days": {
+        "announced_at": "2026-10-30T22:58:37.132000+00:00",
+        "date_precision": "instant",
+        "event_key": "https://x.com/stevendcoffey/status/2116303789649236048",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Agents API weekly update: auto-review, compaction, tools and caching",
+        "overview_zh": "其他OpenAI · Agents API五项更新公告；时间感知仍属实验功能",
+        "source_posts": [],
+        "timestamp_basis": "post_id_derived",
+        "type": "announcement"
+      },
+      "editor": "FieldToFit",
+      "event_date": "2026-10-31",
+      "highlight": false,
+      "id": "D-293",
+      "interpretation": [
+        {
+          "locator": "原始官方资料已核对；时间与来源精度按专题字段保留。",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4"
+          ],
+          "text": "北京时间 10 月 31 日 06:58，OpenAI的Steve发布Agents API本周更新，07:08 由OpenAI Developers官方账号转引：命令执行前自动审核、后台异步压缩、实验性的时间感知、会话工具更新，以及跨会话复用系统提示缓存。面向使用Agents API的开发者；时间感知仍是实验功能，不保证按时完成任务，缓存与速度收益也没有统一比例。接入时须核对所用接口与版本：当前配置指南仍注明其会话设置更新接口不能修改tools，原帖未给出新工具更新的具体调用路径，不能直接把新能力套到旧接口。此条记录周报公告时刻，不推造五项各自上线时刻；不将其视为Codex自动审核首次推出，也不据此宣称API审核免费或免除其他用量费用。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "Agents API announces auto-review, background compaction and session improvements",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-31T00:44:09.862980+00:00",
+        "updated_at": "2026-10-31T00:44:09.862980+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-30",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "Steve的Agents API本周更新原帖",
+          "url": "https://x.com/stevendcoffey/status/2116303789649236048"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "OpenAI Developers官方转引",
+          "url": "https://x.com/OpenAIDevs/status/2116306164375863343"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "Agents API配置与现行会话设置更新边界",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/configuration"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "Agents API会话管理",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/manage"
+        }
+      ],
+      "state": "published",
+      "summary": "其他OpenAI · Agents API五项更新公告；时间感知仍属实验功能",
+      "title": "Agents API公布五项更新，含自动审核与后台压缩",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "7bf1f39c10120414c0639434d6bae556c656a8184c728558fd548229a78ad8bc",
+          "fields": {
+            "Agents API会话管理": "Agents API session management",
+            "Agents API公布五项更新，含自动审核与后台压缩": "Agents API announces auto-review, background compaction and session improvements",
+            "Agents API配置与现行会话设置更新边界": "Agents API configuration and session settings limitations",
+            "OpenAI Developers官方转引": "Official OpenAI Developers quote",
+            "Steve的Agents API本周更新原帖": "Steve’s original Agents API weekly announcement",
+            "其他OpenAI · Agents API五项更新公告；时间感知仍属实验功能": "Agents API weekly update: auto-review, compaction, tools and caching",
+            "北京时间 10 月 31 日 06:58，OpenAI的Steve发布Agents API本周更新，07:08 由OpenAI Developers官方账号转引：命令执行前自动审核、后台异步压缩、实验性的时间感知、会话工具更新，以及跨会话复用系统提示缓存。面向使用Agents API的开发者；时间感知仍是实验功能，不保证按时完成任务，缓存与速度收益也没有统一比例。接入时须核对所用接口与版本：当前配置指南仍注明其会话设置更新接口不能修改tools，原帖未给出新工具更新的具体调用路径，不能直接把新能力套到旧接口。此条记录周报公告时刻，不推造五项各自上线时刻；不将其视为Codex自动审核首次推出，也不据此宣称API审核免费或免除其他用量费用。": "Steve announced five Agents API updates at 06:58 Beijing on 10/31; OpenAI Developers quoted the post at 07:08. They cover command auto-review, background compaction, experimental time awareness, session tool updates and system-prompt cache reuse across sessions. No universal savings or deadline guarantee is stated. Developers should verify their endpoint and version: the current configuration guide still excludes tools from its session-settings update endpoint, while the announcement gives no new invocation path. Record the weekly announcement, not invented per-feature launch times. This is not Codex auto-review’s debut, and no free API-review or usage claim is made.",
+            "原始官方资料已核对；时间与来源精度按专题字段保留。": "Official original sources checked; timestamps and precision retained in the topic fields.",
+            "变化与适用范围": "Changes and availability"
+          }
+        }
+      }
+    },
+    {
+      "category": "other",
+      "checked_at": "2026-10-31",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://help.openai.com/en/articles/20001068-using-multiple-chatgpt-accounts-on-web-and-mobile",
+        "group": "other_openai",
+        "official_day": null,
+        "overview_en": "Mobile account switching rolls out; data and subscriptions remain separate",
+        "overview_zh": "其他OpenAI · 手机端双账号切换逐步开放，数据与订阅独立",
+        "source_posts": [],
+        "timestamp_basis": "source_date",
+        "type": "feature"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-291",
+      "interpretation": [
+        {
+          "locator": "原始官方资料已核对；时间与来源精度按专题字段保留。",
+          "source_ids": [
+            "source-1",
+            "source-2"
+          ],
+          "text": "10 月 30 日ChatGPT发布日志宣布，iOS和Android开始逐步开放账号切换：最多可同时保持两个账号登录，每次仅一个账号处于使用状态。在设置中选择Switch account，再添加或切换账号；尚未看到入口的用户可能仍在等待开放。两个账号的聊天、记忆、文件、工作区、设置与订阅保持独立，切换不会合并数据或转移付费资格；已有两个登录账号时，须退出一个才能再添加。网页已有相应入口，本次新增记录聚焦手机端。日志未列出完整移动端套餐、地区及最低版本，不补造全量可用结论。仅保留 10 月 30 日来源日期，无精确公告时刻或官方Day。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "ChatGPT mobile account switching rolls out with separate chats and subscriptions",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-31T00:43:41.714231+00:00",
+        "updated_at": "2026-10-31T00:43:41.714231+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-30",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "ChatGPT发布日志：手机端账号切换",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "网页与手机端多账号使用说明",
+          "url": "https://help.openai.com/en/articles/20001068-using-multiple-chatgpt-accounts-on-web-and-mobile"
+        }
+      ],
+      "state": "published",
+      "summary": "其他OpenAI · 手机端双账号切换逐步开放，数据与订阅独立",
+      "title": "ChatGPT手机端开始支持双账号切换，聊天与订阅分别保留",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "cf85f245ddca00aea079445b4c97bf6e3c8ad0390483bd621ccd40fe1843b4ae",
+          "fields": {
+            "10 月 30 日ChatGPT发布日志宣布，iOS和Android开始逐步开放账号切换：最多可同时保持两个账号登录，每次仅一个账号处于使用状态。在设置中选择Switch account，再添加或切换账号；尚未看到入口的用户可能仍在等待开放。两个账号的聊天、记忆、文件、工作区、设置与订阅保持独立，切换不会合并数据或转移付费资格；已有两个登录账号时，须退出一个才能再添加。网页已有相应入口，本次新增记录聚焦手机端。日志未列出完整移动端套餐、地区及最低版本，不补造全量可用结论。仅保留 10 月 30 日来源日期，无精确公告时刻或官方Day。": "The 10/30 ChatGPT release notes announce a gradual rollout of account switching on iOS and Android. Stay signed in to two accounts and use one at a time through Settings > Switch account. If the option is missing, rollout may not have reached you. Chats, memory, files, workspaces, settings and subscriptions stay separate; switching does not merge data or transfer a paid plan. Sign out of one account before adding a third. Web switching already exists; this entry covers mobile availability. The announcement gives no complete mobile plan, region or minimum-version list. Keep 10/30 as a source date without an invented time or official Day.",
+            "ChatGPT发布日志：手机端账号切换": "ChatGPT release notes: mobile account switching",
+            "ChatGPT手机端开始支持双账号切换，聊天与订阅分别保留": "ChatGPT mobile account switching rolls out with separate chats and subscriptions",
+            "其他OpenAI · 手机端双账号切换逐步开放，数据与订阅独立": "Mobile account switching rolls out; data and subscriptions remain separate",
+            "原始官方资料已核对；时间与来源精度按专题字段保留。": "Official original sources checked; timestamps and precision retained in the topic fields.",
+            "变化与适用范围": "Changes and availability",
+            "网页与手机端多账号使用说明": "Multiple ChatGPT accounts on web and mobile"
+          }
+        }
+      }
+    },
+    {
+      "category": "other",
+      "checked_at": "2026-10-31",
+      "codex_28_days": {
+        "announced_at": null,
+        "date_precision": "source_date",
+        "event_key": "https://help.openai.com/en/articles/20001193-gpt-rosalind-for-life-sciences-research",
+        "group": "codex",
+        "official_day": null,
+        "overview_en": "GPT-6 Rosalind Research: limited Work/Codex rollout with Research approval",
+        "overview_zh": "主线 · GPT-6 Rosalind Research有限开放，须Research审批",
+        "source_posts": [],
+        "timestamp_basis": "source_date",
+        "type": "model"
+      },
+      "editor": "FieldToFit",
+      "event_date": null,
+      "highlight": false,
+      "id": "D-290",
+      "interpretation": [
+        {
+          "locator": "原始官方资料已核对；时间与来源精度按专题字段保留。",
+          "source_ids": [
+            "source-1",
+            "source-2",
+            "source-3"
+          ],
+          "text": "OpenAI在 10 月 30 日模型及API发布日志中宣布GPT-6 Rosalind Research，向有限的获批Research机构和授权用户逐步开放，用于多步骤生命科学研究。可在获准的Work／Codex中使用；API须另获批准，模型标识为gpt-6-rosalind。Chat标签页不提供，Discovery批准不等于Research批准，购买订阅也不自动获得访问。Enterprise工作区先进入两周Admin Preview，默认关闭，管理员可为获批成员启用并配置预览后权限。原GPT-5.5 Rosalind Research仍可继续选择；学术赞助计划不包含API。适用团队应先完成机构、用户与产品授权，再按工作区设置启用；本条保留 10 月 30 日来源日期，不推算公告时刻，不赋予官方Day编号。",
+          "title": "变化与适用范围"
+        }
+      ],
+      "name": "GPT-6 Rosalind Research rolls out to approved Work, Codex and API customers",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-10-31T00:43:13.313366+00:00",
+        "updated_at": "2026-10-31T00:43:13.313366+00:00"
+      },
+      "related": [],
+      "source_published_at": "2026-10-30",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "source-1",
+          "title": "OpenAI模型发布日志：10 月 30 日Rosalind Research",
+          "url": "https://help.openai.com/en/articles/9624314-model-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-2",
+          "title": "GPT-Rosalind审批、产品范围与管理员预览",
+          "url": "https://help.openai.com/en/articles/20001193-gpt-rosalind-for-life-sciences-research"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "OpenAI API发布日志：10 月 30 日",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        }
+      ],
+      "state": "published",
+      "summary": "主线 · GPT-6 Rosalind Research有限开放，须Research审批",
+      "title": "GPT-6 Rosalind Research有限开放：Work／Codex及另获批准的API",
+      "translations": {
+        "en": {
+          "state": "reviewed",
+          "source_hash": "2a76723c35dac2f8e7cadadb471f248bee72b17659fac297c576f249bb2373c1",
+          "fields": {
+            "GPT-6 Rosalind Research有限开放：Work／Codex及另获批准的API": "GPT-6 Rosalind Research rolls out to approved Work, Codex and API customers",
+            "GPT-Rosalind审批、产品范围与管理员预览": "GPT-Rosalind access and Admin Preview",
+            "OpenAI API发布日志：10 月 30 日": "OpenAI API changelog: 10/30",
+            "OpenAI在 10 月 30 日模型及API发布日志中宣布GPT-6 Rosalind Research，向有限的获批Research机构和授权用户逐步开放，用于多步骤生命科学研究。可在获准的Work／Codex中使用；API须另获批准，模型标识为gpt-6-rosalind。Chat标签页不提供，Discovery批准不等于Research批准，购买订阅也不自动获得访问。Enterprise工作区先进入两周Admin Preview，默认关闭，管理员可为获批成员启用并配置预览后权限。原GPT-5.5 Rosalind Research仍可继续选择；学术赞助计划不包含API。适用团队应先完成机构、用户与产品授权，再按工作区设置启用；本条保留 10 月 30 日来源日期，不推算公告时刻，不赋予官方Day编号。": "OpenAI’s 10/30 model and API logs announce a limited rollout of GPT-6 Rosalind Research for approved Research organizations and authorized users. It supports multistep life-sciences work in Work and Codex; API access requires separate approval and uses gpt-6-rosalind (API model). It is unavailable in Chat. Discovery approval or a subscription alone does not grant Research access. Enterprise starts with a two-week Admin Preview, off by default; administrators can enable approved users. GPT-5.5 Rosalind Research remains selectable, and the academic plan excludes API access. Confirm activation and workspace permissions before use. Only the source date 10/30 is known; no official Day is assigned.",
+            "OpenAI模型发布日志：10 月 30 日Rosalind Research": "OpenAI model release notes: 10/30 Rosalind Research",
+            "主线 · GPT-6 Rosalind Research有限开放，须Research审批": "GPT-6 Rosalind Research: limited Work/Codex rollout with Research approval",
+            "原始官方资料已核对；时间与来源精度按专题字段保留。": "Official original sources checked; timestamps and precision retained in the topic fields.",
+            "变化与适用范围": "Changes and availability"
+          }
+        }
+      }
+    },
+    {
       "category": "tool",
       "checked_at": "2026-10-30",
       "editor": "FieldToFit",
@@ -44478,7 +44798,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-30",
+  "reviewed_at": "2026-10-31",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

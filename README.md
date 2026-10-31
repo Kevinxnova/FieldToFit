@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.14](CHANGELOG.md#v1.17.14)** · [fieldtofit-v1.17.14](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.14)
+**当前源码版本：[v1.17.15](CHANGELOG.md#v1.17.15)** · [fieldtofit-v1.17.15](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.15)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布已选Haiku选择器迁移、Claude Code 2.1.314、Luna更新及Model Spec动态，同步近期总表与三份档案。
-- Luna动态与完整报告复用同一条目，四条结论、三张本站重绘，保留安全改善、事实性退步、长度校正和行为测试边界。
-- 提供Haiku迁移中英分享卡，正式发布后轮替首页报告与卡片；旧文、日期和分享链接继续保留。
+- 发布四项获批日志：Rosalind Research、手机双账号、Agents API周报及企业隐私说明。
+- 保留审批、逐步开放、实验功能与API预览范围，专题95条（47主线／48其他OpenAI），严格重置计数0。
+- 保留并行已审新闻、报告与分享资源，网站与AI读取沿用同一发布集合。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

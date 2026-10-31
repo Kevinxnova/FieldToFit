@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.14](CHANGELOG.md#v1.17.14)** · [fieldtofit-v1.17.14](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.14)
+**Current source version: [v1.17.15](CHANGELOG.md#v1.17.15)** · [fieldtofit-v1.17.15](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.15)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish selected Haiku picker migration, Claude Code 2.1.314, Luna and Model Spec updates, with the recent index and three related dossiers.
-- Reuse one Luna item for its update and full report: four findings and three independent redraws retain safety improvements, factuality regressions, length adjustment and behavioral-test limits.
-- Provide a bilingual Haiku migration card; successful publication rotates homepage reports and cards while retaining older articles, dates and share links.
+- Publish four approved entries: Rosalind Research, mobile account switching, the Agents API weekly update and enterprise privacy.
+- Retain approval, rollout, experimental-feature and API-preview limits; share 95 entries, with 47 core and 48 other OpenAI updates and zero strict resets.
+- Preserve concurrent reviewed news, reports and share assets across the website and AI publication collection.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

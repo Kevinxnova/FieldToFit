@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.15"></a>
+## v1.17.15 · Rosalind与手机账号及API更新 · 2026-10-31
+<!-- public-title:en: Rosalind, mobile accounts and API updates -->
+<!-- release-summary:zh:start -->
+- 发布四项获批日志：Rosalind Research、手机双账号、Agents API周报及企业隐私说明。
+- 保留审批、逐步开放、实验功能与API预览范围，专题95条（47主线／48其他OpenAI），严格重置计数0。
+- 保留并行已审新闻、报告与分享资源，网站与AI读取沿用同一发布集合。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish four approved entries: Rosalind Research, mobile account switching, the Agents API weekly update and enterprise privacy.
+- Retain approval, rollout, experimental-feature and API-preview limits; share 95 entries, with 47 core and 48 other OpenAI updates and zero strict resets.
+- Preserve concurrent reviewed news, reports and share assets across the website and AI publication collection.
+<!-- release-summary:en:end -->
+
+对应REQ-20。所有者明确批准本批四项；在并行v1.17.14基础上保留既有内容和资源。本批及v1.17.0以来累计范围均为兼容内容维护，无新完整模块、主要流程、协议或数据库迁移，采用patch。实际验收见[记录](docs/validation/2026-10-31-codex-four-updates.md)。
+
 <a id="v1.17.14"></a>
 ## v1.17.14 · Haiku迁移与Luna安全及事实性分析 · 2026-10-30
 <!-- site-deployed:2026-10-30 -->

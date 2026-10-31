@@ -1,7 +1,35 @@
 {
-  "version": "1.17.14",
-  "revision": "4a3d8b2e6407f78e05810157f3a8eb64cf6db91cc0134005ae5d191e8c56482f",
+  "version": "1.17.15",
+  "revision": "0352d949fc16f29467cc25d760e80103a5b11ed8264ad149462e8449750644fe",
   "items": [
+    {
+      "version": "1.17.15",
+      "date": "2026-10-31",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "Rosalind与手机账号及API更新",
+          "highlights": [
+            "发布四项获批日志：Rosalind Research、手机双账号、Agents API周报及企业隐私说明。",
+            "保留审批、逐步开放、实验功能与API预览范围，专题95条（47主线／48其他OpenAI），严格重置计数0。",
+            "保留并行已审新闻、报告与分享资源，网站与AI读取沿用同一发布集合。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Rosalind, mobile accounts and API updates",
+          "highlights": [
+            "Publish four approved entries: Rosalind Research, mobile account switching, the Agents API weekly update and enterprise privacy.",
+            "Retain approval, rollout, experimental-feature and API-preview limits; share 95 entries, with 47 core and 48 other OpenAI updates and zero strict resets.",
+            "Preserve concurrent reviewed news, reports and share assets across the website and AI publication collection."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.15"
+    },
     {
       "version": "1.17.14",
       "date": "2026-10-30",
