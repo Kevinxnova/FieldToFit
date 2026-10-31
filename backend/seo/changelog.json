@@ -1,7 +1,35 @@
 {
-  "version": "1.17.16",
-  "revision": "a25ef40a6674ee3d03ba21dfd75cfd1588a1e5687595d6ff0e595ff600749f49",
+  "version": "1.17.17",
+  "revision": "ac66e658873567a9cc9a29276cde6c5211022c444d6c5a2f12bfef80d3ced208",
   "items": [
+    {
+      "version": "1.17.17",
+      "date": "2026-11-01",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "官方Day26原帖补充",
+          "highlights": [
+            "D-291补入官方Day26、真实原帖摘录与核对头像，保留10月30日来源日期。",
+            "正文与概览明确桌面版及储备重置仍为预告，专题95条，严格重置计数保持0。",
+            "沿用同编号和共享发布集合，保留并行已审内容、报告、图片与历史入口。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Official Day26 source-post supplement",
+          "highlights": [
+            "Add official Day26, an authentic post excerpt and verified avatar to D-291 while preserving its October30 source date.",
+            "Clarify desktop switching and banked resets as future plans; retain 95 entries and zero strict resets.",
+            "Reuse the existing ID and shared publication collection while preserving concurrent reviewed news, reports, images and history."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.17"
+    },
     {
       "version": "1.17.16",
       "date": "2026-10-31",

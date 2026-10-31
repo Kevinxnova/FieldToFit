@@ -129,6 +129,8 @@
       "title": "Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "0bfbe5e97b9a67e012ecf163fa6ac4e05b77ba65d64d5ef0be4fae70e7354d9a",
           "fields": {
             "Claude Code扩展安全：先核来源，别只看版本号": "Claude Code extension security: check origin, not just version",
             "Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313": "Malicious Claude Code extensions on Cursor Marketplace: check origin before versions 2.1.312/2.1.313",
@@ -157,9 +159,7 @@
             "确认恶意分发": "Malicious distribution confirmed",
             "终端管理员": "Endpoint administrators",
             "限定分发范围": "Limited distribution scope"
-          },
-          "source_hash": "0bfbe5e97b9a67e012ecf163fa6ac4e05b77ba65d64d5ef0be4fae70e7354d9a",
-          "state": "reviewed"
+          }
         }
       }
     },
@@ -225,6 +225,8 @@
       "title": "ChatGPT保护措施将分阶段推出，首份社区安全报告计划 2027年初",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "5515a34282acb30f8ab9405dd9c83ead8fc325640fec990bb59de0e1700ec97b",
           "fields": {
             "ChatGPT保护措施将分阶段推出，首份社区安全报告计划 2027年初": "ChatGPT protections will roll out in stages; first community safety report planned for early 2027",
             "公告描述识别近期聊天警示、自动结束相关高风险对话及重复触发后暂时暂停账户，并说明措施将在未来几周开始推出。没有逐平台、地域或账户的完成名单，不制造统一上线时间。": "The notice describes recent-chat warning signals, ending certain high-risk conversations and temporary account pauses after repeated cases, with rollout beginning in coming weeks. No completed platform, region or account list establishes universal availability.",
@@ -235,9 +237,7 @@
             "部分历史暴力事件重构信息限制适用于所有用户；青少年体验进一步限制可能被滥用的武器与安全系统实用信息。保护目标与具体账户实际行为须分开核验。": "Some limits on reconstructions of past violent events apply to all users; the teen experience further restricts practical weapons and security-system information that could be misused. Intended protections and actual account behavior require separate checks.",
             "风险干预不是即时全量上线": "Risk interventions are not immediate universal availability",
             "首份报告计划 2027年初覆盖 2026年下半年，此后每半年更新。成年用户被置于未成年体验时，可按官方说明通过Persona确认年龄；本站未测试该流程或误判率。": "The first report is planned for early 2027, covering the second half of 2026, then updating semiannually. Adults placed in the teen experience can follow Persona age confirmation; the flow and misclassification rates were not tested."
-          },
-          "source_hash": "5515a34282acb30f8ab9405dd9c83ead8fc325640fec990bb59de0e1700ec97b",
-          "state": "reviewed"
+          }
         }
       }
     },
@@ -303,6 +303,8 @@
       "title": "OpenAI支持共同训练偏好信号，实施细节仍待未来几个月",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "4869464ed806cb845dc625e8f9eb623650aae27c9688b4fba7ee1a57a75aff30",
           "fields": {
             "OpenAI支持共同训练偏好信号，实施细节仍待未来几个月": "OpenAI supports a common training-preference signal, with implementation still ahead",
             "OpenAI计划尊重robots.txt中的共同训练偏好信号；未来几个月实施并另发说明，现有爬虫控制继续适用。支持承诺不等于所有提供方已执行。": "OpenAI plans to honor a common training-preference signal in robots.txt, implement it in coming months and publish details, while existing crawler controls remain. Support does not establish adoption by every provider.",
@@ -313,9 +315,7 @@
             "官方称未来几个月实施，届时分享具体细节。本文保留待实施状态，不据此宣称某站内容今天已被阻止用于训练。": "OpenAI says implementation will follow in coming months with further details. This remains planned, not evidence that a site’s content is prevented from training today.",
             "未来实施不写成今日阻止": "Future implementation is not prevention today",
             "现有控制继续适用": "Existing controls remain applicable"
-          },
-          "source_hash": "4869464ed806cb845dc625e8f9eb623650aae27c9688b4fba7ee1a57a75aff30",
-          "state": "reviewed"
+          }
         }
       }
     },
@@ -702,6 +702,8 @@
       "title": "专家签字之后，谁决定了分析假设？",
       "translations": {
         "en": {
+          "state": "reviewed",
+          "source_hash": "67eec29f6797fa14969ecfbe6d41730cd7258179cbcaa2354758f553f759b5ee",
           "fields": {
             "48名答卷者中，52%认为最终建议更属于自己；77%至少一次复用Agent论证，15%在任一回答提及Agent。复用论证不必然是抄袭或恶意隐瞒，但事后自述不足以识别假设来自哪里。报告所有分析决定跟随倾向者的平均信心 71，其余 73，也不构成信心无影响的强因果结论。": "Among 48 respondents, 52% rate the recommendation as more their own, 77% reuse an agent argument at least once and 15% mention the agent anywhere. Reuse does not establish plagiarism or intentional concealment, but retrospective ownership does not identify where assumptions arose. Mean confidence is 71 among those aligned on all four analytical choices versus 73 otherwise; that is not a strong causal claim that confidence is unaffected.",
             "50名AI使用者；固定Agent与单一任务；不同指标分别解释。": "50 agent users; one fixed agent and task; interpret each metric separately.",
@@ -737,9 +739,7 @@
             "选择匹配、复用论证与署名的分母不同": "Choice alignment, argument reuse and attribution have different denominators",
             "非AI组更慢且严重错误更多，但是否使用AI是自选，不能据此作因果提效结论；默认偏好模拟也不是整个职业群体的影响率。": "The no-AI group is slower and makes more serious errors, but self-selected use prevents causal productivity claims. Default-preference simulations do not estimate effects across a profession.",
             "首次完整分析：四结论与三张本站重绘，保留随机实验、注册结果、探索分析和外推限制。": "First full analysis: four findings and three independent redraws preserve randomized design, registered results, exploratory analyses and generalization limits."
-          },
-          "source_hash": "67eec29f6797fa14969ecfbe6d41730cd7258179cbcaa2354758f553f759b5ee",
-          "state": "reviewed"
+          }
         }
       }
     },
@@ -913,16 +913,39 @@
     },
     {
       "category": "other",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-01",
       "codex_28_days": {
         "announced_at": null,
         "date_precision": "source_date",
-        "event_key": "https://help.openai.com/en/articles/20001068-using-multiple-chatgpt-accounts-on-web-and-mobile",
+        "event_key": "https://x.com/thsottiaux/status/2116405414921384099",
         "group": "other_openai",
-        "official_day": null,
-        "overview_en": "Mobile account switching rolls out; data and subscriptions remain separate",
-        "overview_zh": "其他OpenAI · 手机端双账号切换逐步开放，数据与订阅独立",
-        "source_posts": [],
+        "official_day": 26,
+        "overview_en": "Day 26: mobile account switching; desktop and banked resets are future plans",
+        "overview_zh": "其他OpenAI · 官方Day 26 手机双账号切换；桌面与储备重置为预告",
+        "source_posts": [
+          {
+            "announced_at": "2026-10-31T05:42:26.485000+00:00",
+            "author_handle": "thsottiaux",
+            "author_name": "Tibo",
+            "avatar": {
+              "checked_at": "2026-11-01",
+              "evidence_url": "https://x.com/thsottiaux",
+              "retrieval_method": "direct_x",
+              "source_url": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_400x400.jpg",
+              "url": "/source-authors/tibo-ac835db154ed.jpg"
+            },
+            "checked_at": "2026-11-01",
+            "evidence_url": "https://x.com/thsottiaux/status/2116405414921384099",
+            "kind": "primary",
+            "retrieval_method": "direct_x",
+            "reuse_basis": "直接核对X原帖与当前身份页；仅公开短摘录。时刻由帖子ID推导，与页面UTC日期和分钟核对，毫秒不是页面精度。当前身份页原图与已审本站缓存字节一致。原帖中的桌面功能和储备重置仍为未来预告。",
+            "text_en": "Day 26/ … switch between multiple accounts on mobile … Next two days will be resets… banked…",
+            "text_scope": "excerpt",
+            "timestamp_basis": "post_id_derived",
+            "translation_zh": "Day 26／……在手机上切换多个账号……接下来两天将是储备重置……",
+            "url": "https://x.com/thsottiaux/status/2116405414921384099"
+          }
+        ],
         "timestamp_basis": "source_date",
         "type": "feature"
       },
@@ -935,18 +958,20 @@
           "locator": "原始官方资料已核对；时间与来源精度按专题字段保留。",
           "source_ids": [
             "source-1",
-            "source-2"
+            "source-2",
+            "source-3",
+            "source-4"
           ],
-          "text": "10 月 30 日ChatGPT发布日志宣布，iOS和Android开始逐步开放账号切换：最多可同时保持两个账号登录，每次仅一个账号处于使用状态。在设置中选择Switch account，再添加或切换账号；尚未看到入口的用户可能仍在等待开放。两个账号的聊天、记忆、文件、工作区、设置与订阅保持独立，切换不会合并数据或转移付费资格；已有两个登录账号时，须退出一个才能再添加。网页已有相应入口，本次新增记录聚焦手机端。日志未列出完整移动端套餐、地区及最低版本，不补造全量可用结论。仅保留 10 月 30 日来源日期，无精确公告时刻或官方Day。",
+          "text": "10 月 30 日ChatGPT发布日志宣布iOS和Android开始逐步开放账号切换，最多同时保持两个账号登录、每次仅使用一个。入口为设置中的Switch account；未看到入口的用户可能仍在等待开放。聊天、记忆、文件、工作区、设置与订阅保持独立，切换不合并数据或转移付费资格；已有两个登录账号时须退出一个才能再添加。网页已有相关入口。日志未给出完整移动端套餐、地区及最低版本。北京时间 10 月 31 日 13:42，Tibo在官方Day 26 帖中确认手机功能，并预告桌面版及随后两天的储备重置；该帖未确认这些预告已生效，也未给出完整套餐、额度窗口、到账或领取方式，不据此增加重置计数。D-291 保留首发日志的 10 月 30 日来源日期精度，后续原帖另示真实时刻，不新增重复事件。",
           "title": "变化与适用范围"
         }
       ],
-      "name": "ChatGPT mobile account switching rolls out with separate chats and subscriptions",
+      "name": "Official Day 26: ChatGPT mobile account switching rolls out",
       "note": "",
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-31T00:43:41.714231+00:00",
-        "updated_at": "2026-10-31T00:43:41.714231+00:00"
+        "updated_at": "2026-10-31T23:18:43.969722+00:00"
       },
       "related": [],
       "source_published_at": "2026-10-30",
@@ -962,22 +987,37 @@
           "id": "source-2",
           "title": "网页与手机端多账号使用说明",
           "url": "https://help.openai.com/en/articles/20001068-using-multiple-chatgpt-accounts-on-web-and-mobile"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-3",
+          "title": "Tibo官方Day 26 原帖",
+          "url": "https://x.com/thsottiaux/status/2116405414921384099"
+        },
+        {
+          "coverage": "link_only",
+          "id": "source-4",
+          "title": "Tibo身份与真实头像",
+          "url": "https://x.com/thsottiaux"
         }
       ],
       "state": "published",
-      "summary": "其他OpenAI · 手机端双账号切换逐步开放，数据与订阅独立",
-      "title": "ChatGPT手机端开始支持双账号切换，聊天与订阅分别保留",
+      "summary": "其他OpenAI · 官方Day 26 手机双账号切换；桌面与储备重置为预告",
+      "title": "官方Day 26：ChatGPT手机双账号切换逐步开放",
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "cf85f245ddca00aea079445b4c97bf6e3c8ad0390483bd621ccd40fe1843b4ae",
+          "source_hash": "22e980cdb205a25f0b9917ac168f21cc66295f2a36fae3319acd55164f763de5",
           "fields": {
-            "10 月 30 日ChatGPT发布日志宣布，iOS和Android开始逐步开放账号切换：最多可同时保持两个账号登录，每次仅一个账号处于使用状态。在设置中选择Switch account，再添加或切换账号；尚未看到入口的用户可能仍在等待开放。两个账号的聊天、记忆、文件、工作区、设置与订阅保持独立，切换不会合并数据或转移付费资格；已有两个登录账号时，须退出一个才能再添加。网页已有相应入口，本次新增记录聚焦手机端。日志未列出完整移动端套餐、地区及最低版本，不补造全量可用结论。仅保留 10 月 30 日来源日期，无精确公告时刻或官方Day。": "The 10/30 ChatGPT release notes announce a gradual rollout of account switching on iOS and Android. Stay signed in to two accounts and use one at a time through Settings > Switch account. If the option is missing, rollout may not have reached you. Chats, memory, files, workspaces, settings and subscriptions stay separate; switching does not merge data or transfer a paid plan. Sign out of one account before adding a third. Web switching already exists; this entry covers mobile availability. The announcement gives no complete mobile plan, region or minimum-version list. Keep 10/30 as a source date without an invented time or official Day.",
+            "10 月 30 日ChatGPT发布日志宣布iOS和Android开始逐步开放账号切换，最多同时保持两个账号登录、每次仅使用一个。入口为设置中的Switch account；未看到入口的用户可能仍在等待开放。聊天、记忆、文件、工作区、设置与订阅保持独立，切换不合并数据或转移付费资格；已有两个登录账号时须退出一个才能再添加。网页已有相关入口。日志未给出完整移动端套餐、地区及最低版本。北京时间 10 月 31 日 13:42，Tibo在官方Day 26 帖中确认手机功能，并预告桌面版及随后两天的储备重置；该帖未确认这些预告已生效，也未给出完整套餐、额度窗口、到账或领取方式，不据此增加重置计数。D-291 保留首发日志的 10 月 30 日来源日期精度，后续原帖另示真实时刻，不新增重复事件。": "The 10/30 ChatGPT release notes announce a gradual iOS and Android rollout: stay signed in to two accounts and use one at a time through Settings > Switch account. Chats, memory, files, workspaces, settings and subscriptions stay separate. Switching does not merge data or transfer a paid plan; sign out of one account before adding another. Web switching already exists. No complete mobile plan, region or minimum-version list is given. At 13:42 Beijing on 10/31, Tibo confirmed the feature in official Day 26 and previewed desktop switching and banked resets for the next two days. These plans are not confirmation of delivery, with no complete plan, allowance-window or claiming details. The strict reset count stays zero. D-291 retains its original 10/30 source-date precision; the later post keeps its own timestamp.",
             "ChatGPT发布日志：手机端账号切换": "ChatGPT release notes: mobile account switching",
-            "ChatGPT手机端开始支持双账号切换，聊天与订阅分别保留": "ChatGPT mobile account switching rolls out with separate chats and subscriptions",
-            "其他OpenAI · 手机端双账号切换逐步开放，数据与订阅独立": "Mobile account switching rolls out; data and subscriptions remain separate",
+            "Tibo官方Day 26 原帖": "Tibo official Day 26 post",
+            "Tibo身份与真实头像": "Tibo identity and authentic avatar",
+            "其他OpenAI · 官方Day 26 手机双账号切换；桌面与储备重置为预告": "Day 26: mobile account switching; desktop and banked resets are future plans",
             "原始官方资料已核对；时间与来源精度按专题字段保留。": "Official original sources checked; timestamps and precision retained in the topic fields.",
             "变化与适用范围": "Changes and availability",
+            "官方Day 26：ChatGPT手机双账号切换逐步开放": "Official Day 26: ChatGPT mobile account switching rolls out",
+            "直接核对X原帖与当前身份页；仅公开短摘录。时刻由帖子ID推导，与页面UTC日期和分钟核对，毫秒不是页面精度。当前身份页原图与已审本站缓存字节一致。原帖中的桌面功能和储备重置仍为未来预告。": "X original and current identity page checked directly; only a short excerpt is published. Post-ID time is compared with the displayed UTC date and minute, not millisecond precision. The current profile image matches the approved site cache byte for byte. Desktop switching and banked resets remain future plans.",
             "网页与手机端多账号使用说明": "Multiple ChatGPT accounts on web and mobile"
           }
         }
@@ -31273,19 +31313,19 @@
           "state": "reviewed",
           "source_hash": "2438321b2246a50a72aaf8f9ac5a703ec35fe71914b5d3c01aedb7d8077c7873",
           "fields": {
-            "Mistral Large 4 · 官方来源 1": "Mistral Large 4 · Official Source 1",
-            "Mistral Large 4 · 官方来源 2": "Mistral Large 4 · Official Source 2",
-            "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 1": "Mistral Large 4: API public preview, weights plan to open at the end of the month · Official source 1",
-            "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 2": "Mistral Large 4: API public preview, weights plan to open at the end of the month · Official source 2",
-            "官方发布和采用说明": "Official release and adoption instructions",
-            "正文再分发许可未确认，保留官方链接与本站解读。": "Full-text redistribution permission is unconfirmed; retain the official link and FieldToFit interpretation.",
             "API页现列每百万token输入$0.70、缓存输入$0.07、输出$2.10。任务token节省不自动等于总账单降幅，自部署还需硬件、上下文、并发及服务成本核算；完整技术报告仍标即将发布。": "The API page lists $0.70 input, $0.07 cached input and $2.10 output per million tokens. Task token savings do not automatically translate to total bill reductions; self-hosting also requires hardware, context, concurrency and service-cost analysis. A full technical report is still described as forthcoming.",
             "MaaS定义与例外一并阅读": "Read the MaaS definition and exceptions together",
+            "Mistral Large 4 · 官方来源 1": "Mistral Large 4 · Official Source 1",
+            "Mistral Large 4 · 官方来源 2": "Mistral Large 4 · Official Source 2",
             "Mistral Large 4开放权重：保留API预览状态，先核MaaS许可": "Mistral Large 4 opens weights: API preview status and MaaS license conditions remain",
+            "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 1": "Mistral Large 4: API public preview, weights plan to open at the end of the month · Official source 1",
+            "Mistral Large 4：API公开预览，权重计划月底开放 · 官方来源 2": "Mistral Large 4: API public preview, weights plan to open at the end of the month · Official source 2",
             "官方 1T-A52B权重已可获取，支持 1M上下文与图文输入；API仍标Public Preview。新许可基于MIT修改，MaaS商业使用另有要求，不能简称无限制MIT。": "Official 1T-A52B weights are available with 1M context and image/text input, while the API remains labeled Public Preview. The modified MIT-based license adds requirements for commercial MaaS use; it is not unrestricted MIT.",
             "官方仓库mistralai/Mistral-Large-4-1T-A52B已提供权重与部署说明；模型卡列出 1M上下文、图文输入和文本输出，low／medium／high推理档位，high为默认。API页仍标Public Preview，两种状态并不矛盾。": "The official mistralai/Mistral-Large-4-1T-A52B repository provides weights and deployment instructions. Its card lists 1M context, image/text input, text output and low/medium/high reasoning with high as default. The API page still says Public Preview; these statuses are distinct.",
+            "官方发布和采用说明": "Official release and adoption instructions",
             "本站 2026-10-31核对公告、官方模型卡、许可全文和API页。产品原始日期 2026-10-06保留；本次权重开放的精确首发日未核实，不借用产品日期。未下载大权重、未复现评测或计费。": "Release, official card, complete license and API page checked 2026-10-31. The product’s original 2026-10-06 date is preserved; the exact first date of this weight release is unverified and is not inferred from that product date. Large weights, benchmarks and billing were not tested.",
             "权重开放与API预览分开": "Separate weight availability from API preview",
+            "正文再分发许可未确认，保留官方链接与本站解读。": "Full-text redistribution permission is unconfirmed; retain the official link and FieldToFit interpretation.",
             "激活参数口径补解释": "Clarify active-parameter accounting",
             "现行官方模型卡说明 49B为每token激活参数，52B包含嵌入及输出层。原预览材料的 1T与API页 1.05T总参数精度继续分别保留，不据此编造新型号；旧的待开放描述留在历史版本，不作为当前状态。": "The current official card explains 49B active parameters per token and 52B including embedding and output layers. Keep the original preview’s 1T and API page’s 1.05T total-parameter precision separate rather than inventing another model. The old planned-release description remains in history, not current availability.",
             "许可要求保留版权及许可声明。经营MaaS业务的被许可人或其关联方，在模型或衍生物的商业使用前须另签许可；定义涉及向第三方提供可实质控制输入、参数或训练数据的推理或后训练访问。条款另列内部使用、官方产品及特定嵌入功能等边界，应按完整原文判断，不能一律称免费无限制。": "The license requires retaining copyright and permission notices. Licensees or affiliates operating a MaaS business need a separate license before commercial use of the model or derivatives. The definition concerns third-party inference or post-training access with meaningful control over inputs, parameters or training data. Read internal-use, official-product and specific embedded-feature boundaries in full rather than calling all use unrestricted.",
@@ -45570,7 +45610,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-10-31",
+  "reviewed_at": "2026-11-01",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

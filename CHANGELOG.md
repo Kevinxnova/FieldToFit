@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.17"></a>
+## v1.17.17 · 官方Day26原帖补充 · 2026-11-01
+<!-- public-title:en: Official Day26 source-post supplement -->
+<!-- release-summary:zh:start -->
+- D-291补入官方Day26、真实原帖摘录与核对头像，保留10月30日来源日期。
+- 正文与概览明确桌面版及储备重置仍为预告，专题95条，严格重置计数保持0。
+- 沿用同编号和共享发布集合，保留并行已审内容、报告、图片与历史入口。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add official Day26, an authentic post excerpt and verified avatar to D-291 while preserving its October30 source date.
+- Clarify desktop switching and banked resets as future plans; retain 95 entries and zero strict resets.
+- Reuse the existing ID and shared publication collection while preserving concurrent reviewed news, reports, images and history.
+<!-- release-summary:en:end -->
+
+对应REQ-20，所有者明确批准本条具体修订。本批及v1.17.0以来累计为既有模块兼容内容维护，无新模块、主要流程、协议或数据库迁移，采用patch。实际验收见[记录](docs/validation/2026-11-01-codex-day26.md)。
+
 <a id="v1.17.16"></a>
 ## v1.17.16 · 扩展安全、开放权重与专家判断分析 · 2026-10-31
 <!-- site-deployed:2026-10-31 -->

@@ -265,3 +265,5 @@
 - [2026-10-21—22 Codex Day 15／16、历史补录与四项更新](2026-10-21-codex-day16-and-backfill.md)
 
 - [2026-10-31 Codex四项更新](2026-10-31-codex-four-updates.md)
+
+- [2026-11-01 官方Day26来源补充](2026-11-01-codex-day26.md)
