@@ -1,7 +1,35 @@
 {
-  "version": "1.17.17",
-  "revision": "ac66e658873567a9cc9a29276cde6c5211022c444d6c5a2f12bfef80d3ced208",
+  "version": "1.17.18",
+  "revision": "cc99b4caeb9cafd34e85610c5bbc3ed6134ee623362cd976f938b0e27a88b10d",
   "items": [
+    {
+      "version": "1.17.18",
+      "date": "2026-11-01",
+      "deployed_on": "2026-11-01",
+      "copy": {
+        "zh": {
+          "title": "Claude接口迁移与EmbeddingGemma检索分析",
+          "highlights": [
+            "发布已选Opus 4.8快速模式迁移、Claude用量成本分析beta、128MB请求体及Evals只读节点提醒，保留公告、计划生效与未实测边界。",
+            "新增EmbeddingGemma 2完整分析：四结论、三张本站重绘，分开模块参数、任务成绩、量化与视觉预算的取舍。",
+            "提供快速模式迁移中英信息卡，同步Claude关联档案；成功发表后轮替首页，保留全部索引、历史与并行版本。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Claude API migration and EmbeddingGemma retrieval analysis",
+          "highlights": [
+            "Publish selected Opus 4.8 fast-mode migration, Claude usage/cost analytics beta, 128MB request bodies and the Evals read-only milestone, retaining announcement, planned-effective and untested boundaries.",
+            "Add a complete EmbeddingGemma 2 analysis with four findings and three independent redraws, separating modular parameters, task scores, quantization and vision-budget tradeoffs.",
+            "Provide a bilingual fast-mode migration card and synchronize the Claude dossier; rotate homepage selections only after publication, preserving full indexes, history and the concurrent version."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.18"
+    },
     {
       "version": "1.17.17",
       "date": "2026-11-01",

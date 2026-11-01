@@ -1906,5 +1906,35 @@
     "attribution": "FieldToFit",
     "source_version": "Official paper linked 2026-10-27; unnumbered",
     "locator": "Section 4.2.3; Appendix A.9"
+  },
+  "/report-figures/nov01-embeddinggemma-budget.png": {
+    "sha256": "0b70fd2aa3a321c4f3ee121980433df23a5c7a2512cc706be8f0bd8159b37b59",
+    "source_urls": [
+      "https://arxiv.org/abs/2610.37364v1",
+      "https://arxiv.org/html/2610.37364v1",
+      "https://arxiv.org/pdf/2610.37364v1"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "version": "arXiv:2610.37364v1; 28 pages"
+  },
+  "/report-figures/nov01-embeddinggemma-modules.png": {
+    "sha256": "8e52b1e3d6f4bdefb0e24de7b1ae620d739b64cabeff9557fe5b55187e4f8f53",
+    "source_urls": [
+      "https://arxiv.org/abs/2610.37364v1",
+      "https://arxiv.org/html/2610.37364v1",
+      "https://arxiv.org/pdf/2610.37364v1"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "version": "arXiv:2610.37364v1; 28 pages"
+  },
+  "/report-figures/nov01-embeddinggemma-tradeoffs.png": {
+    "sha256": "b237ad837ba284ff7ed6a9f1b97992f38e91765c4088cbd14d155e7fa9424e0f",
+    "source_urls": [
+      "https://arxiv.org/abs/2610.37364v1",
+      "https://arxiv.org/html/2610.37364v1",
+      "https://arxiv.org/pdf/2610.37364v1"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "version": "arXiv:2610.37364v1; 28 pages"
   }
 }

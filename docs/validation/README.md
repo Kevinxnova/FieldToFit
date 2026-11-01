@@ -1,5 +1,7 @@
 # 验收证据导航
 
+- [2026-11-01 Claude与EmbeddingGemma](2026-11-01-claude-and-embeddinggemma.md)：具体授权、完整分析与实际发表轮换。
+
 - [2026-10-31 扩展安全与专家判断](2026-10-31-cursor-judgment.md)：具体授权、五对象、两份档案与真实轮换。
 
 - [2026-10-30：Haiku迁移与Luna分析](2026-10-30-haiku-luna.md)：六项选择、同事件复用、三份档案与真实轮换。

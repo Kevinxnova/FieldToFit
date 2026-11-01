@@ -6273,6 +6273,35 @@
           "kind": "table",
           "rows": [
             [
+              "[Opus 4.8快速模式计划 2026-11-30移除：先核model与speed](https://fieldtofit.top/news/D-298)",
+              "2026-10-30",
+              "对claude-opus-4-8请求speed=fast届时将报错；本次是快速模式弃用，不是整款模型退役。继续快速模式须评估Opus 5.5迁移条件。"
+            ],
+            [
+              "[Claude用量成本分析进入beta，legacy报表仍受支持](https://fieldtofit.top/news/D-299)",
+              "2026-10-29",
+              "新组织级usage／cost分析端点服务Console与Enterprise组织，可按模型、工作区、API key及actor归组；迁移须比较分页与分桶，legacy不等于停用。"
+            ],
+            [
+              "[Claude两个端点请求体提高至 128MB，上下文限制另计](https://fieldtofit.top/news/D-300)",
+              "2026-10-28",
+              "第一方Messages与Token Counting请求体由 32MB提高至 128MB；不是模型上下文扩大。Sessions、Agents、Environments与批处理、文件上传各有不同限制。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "本期接口与模式事件于 2026-11-01核对；保留原模型、价格和历史。全入口日核验仍未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[Haiku 4.5移出部分选择器：旧对话续用 5.5，API等渠道保留](https://fieldtofit.top/news/D-281)",
               "2026-10-29",
               "Free／Pro／Max的聊天、Cowork和Design选择器已移除Haiku4.5；旧聊天保留但继续时用 5.5。Claude Code、Team／Enterprise及API不受此次变更影响。"
@@ -6322,12 +6351,12 @@
           "text": "本期增补核对日 2026-10-25；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。"
         },
         {
+          "kind": "table",
           "columns": [
             "本期事件／研究",
             "事件／报告日期",
             "核对范围与限制"
           ],
-          "kind": "table",
           "rows": [
             [
               "[Claude Enterprise统一Chat与Cowork，企业权限和预算一起管理](https://fieldtofit.top/news/D-245)",
@@ -6477,6 +6506,7 @@
           "text": "本次为已发布动态对应的档案补齐；核对日期2026-10-05不代表模型今天发布。关联：CW-M02 Claude, D-29, D-49。以下保留原先已审版本资料，日期与适用条件按各行原始说明读取。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本 / 分支",
             "发布日期 / 状态",
@@ -6485,7 +6515,6 @@
             "获取与使用",
             "依据"
           ],
-          "kind": "table",
           "rows": [
             [
               "Fable 5.1",
@@ -6912,13 +6941,25 @@
           "id": "oct30-A-faq",
           "title": "Claude Haiku 4.5 was removed from the model selector",
           "url": "https://support.claude.com/en/articles/17444146-claude-haiku-4-5-was-removed-from-the-model-selector"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov01-B-analytics",
+          "title": "Usage and Cost Analytics API",
+          "url": "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov01-C-limits",
+          "title": "Claude API overview",
+          "url": "https://platform.claude.com/docs/en/api/overview"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "608652eceae9437a6d3706473f06e91f26cb5c5d37b370b2c8f0cb00e6a0eb26",
+          "source_hash": "0a958ade4322eaffe5144d2d80cdcfad7ca5b7c1dac954fbefd8c911cb5368a8",
           "fields": {
             "1M上下文、128k最大输出；标准输入/输出每百万token $2/$10": "1M context, 128k maximum output; standard input/output per million token $ 2 /$ 10",
             "1M上下文、128k最大输出；标准输入/输出每百万token $4/$20": "1M context, 128k maximum output; standard input/output per million token $ 4 /$ 20",
@@ -7058,7 +7099,14 @@
             "限制与验证": "Restriction and verification",
             "默认开启思考；支持对话期间调整工具集合": "Turn on thinking by default; support to adjust the tool collection during the dialogue",
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
-            "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
+            "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed",
+            "[Claude两个端点请求体提高至 128MB，上下文限制另计](https://fieldtofit.top/news/D-300)": "[Two Claude endpoints raise request bodies to 128MB; context limits remain separate](https://fieldtofit.top/news/D-300)",
+            "[Claude用量成本分析进入beta，legacy报表仍受支持](https://fieldtofit.top/news/D-299)": "[Claude usage and cost analytics enters beta; legacy reports remain supported](https://fieldtofit.top/news/D-299)",
+            "[Opus 4.8快速模式计划 2026-11-30移除：先核model与speed](https://fieldtofit.top/news/D-298)": "[Opus 4.8 fast mode is scheduled for removal on 2026-11-30: check model and speed](https://fieldtofit.top/news/D-298)",
+            "对claude-opus-4-8请求speed=fast届时将报错；本次是快速模式弃用，不是整款模型退役。继续快速模式须评估Opus 5.5迁移条件。": "Requests to claude-opus-4-8 with speed=fast will then error. This is fast-mode deprecation, not retirement of the entire model. Continued fast mode requires evaluating migration to Opus 5.5.",
+            "新组织级usage／cost分析端点服务Console与Enterprise组织，可按模型、工作区、API key及actor归组；迁移须比较分页与分桶，legacy不等于停用。": "New organization-level usage/cost analytics endpoints serve Console and Enterprise organizations, with grouping by model, workspace, API key and actor. Compare pagination and time buckets during migration; legacy does not mean shutdown.",
+            "本期接口与模式事件于 2026-11-01核对；保留原模型、价格和历史。全入口日核验仍未完成。": "Related API and mode events checked 2026-11-01; existing models, prices and history retained. Full daily checks of all sources remain incomplete.",
+            "第一方Messages与Token Counting请求体由 32MB提高至 128MB；不是模型上下文扩大。Sessions、Agents、Environments与批处理、文件上传各有不同限制。": "First-party Messages and Token Counting request bodies rise from 32MB to 128MB, without establishing larger model context. Sessions, Agents, Environments, batches and file uploads have separate limits."
           }
         }
       },
@@ -14894,7 +14942,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-10-31",
+  "reviewed_at": "2026-11-01",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.18"></a>
+## v1.17.18 · Claude接口迁移与EmbeddingGemma检索分析 · 2026-11-01
+<!-- site-deployed:2026-11-01 -->
+<!-- public-title:en: Claude API migration and EmbeddingGemma retrieval analysis -->
+<!-- release-summary:zh:start -->
+- 发布已选Opus 4.8快速模式迁移、Claude用量成本分析beta、128MB请求体及Evals只读节点提醒，保留公告、计划生效与未实测边界。
+- 新增EmbeddingGemma 2完整分析：四结论、三张本站重绘，分开模块参数、任务成绩、量化与视觉预算的取舍。
+- 提供快速模式迁移中英信息卡，同步Claude关联档案；成功发表后轮替首页，保留全部索引、历史与并行版本。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish selected Opus 4.8 fast-mode migration, Claude usage/cost analytics beta, 128MB request bodies and the Evals read-only milestone, retaining announcement, planned-effective and untested boundaries.
+- Add a complete EmbeddingGemma 2 analysis with four findings and three independent redraws, separating modular parameters, task scores, quantization and vision-budget tradeoffs.
+- Provide a bilingual fast-mode migration card and synchronize the Claude dossier; rotate homepage selections only after publication, preserving full indexes, history and the concurrent version.
+<!-- release-summary:en:end -->
+
+所有者明确选择2026-11-01动态A–D、报告2、卡1。A与卡1沿同事件，报告1保留待选；D保留6月原公告与10月31日生效节点。基于v1.17.17并保留自v1.17.0以来既有内容和模块，本批为兼容内容／静态资源patch，无新模块、主要流程、协议改变或数据库迁移；榜单不刷新，晨报全日核验与自然日验收缺口保留。[实际验收](docs/validation/2026-11-01-claude-and-embeddinggemma.md)。
+
 <a id="v1.17.17"></a>
 ## v1.17.17 · 官方Day26原帖补充 · 2026-11-01
 <!-- public-title:en: Official Day26 source-post supplement -->

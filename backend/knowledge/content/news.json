@@ -3,10 +3,854 @@
   "items": [
     {
       "category": "tool",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-01",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-30",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "盘点model、speed和beta头；本站建议。",
+            "title": "旧API客户端开发者"
+          },
+          {
+            "detail": "核迁移任务、预算与额度；本站建议。",
+            "title": "Agent平台管理员"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "官方 2026-10-30发布弃用说明。",
+            "title": "弃用已宣布"
+          },
+          {
+            "detail": "计划 2026-11-30移除，旧model配speed=fast将报错。",
+            "title": "移除日期单列"
+          },
+          {
+            "detail": "需继续快速模式的应用按官方指引评估Opus 5.5。",
+            "title": "迁移要核条件"
+          }
+        ],
+        "checked_at": "2026-11-01",
+        "evidence": [
+          {
+            "locator": "Availability deprecation notice; Release notes October30",
+            "source_id": "claude-fast-mode"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "Opus 4.8快速模式将移除，先查调用配置",
+        "limits": [
+          {
+            "detail": "范围限Opus 4.8 fast mode。",
+            "title": "不是全模型退役"
+          },
+          {
+            "detail": "未调用API、未测账户、价格或性能，生效时区未知。",
+            "title": "未实测"
+          }
+        ],
+        "next_step": "先盘点配置，再用自己的任务验证迁移。",
+        "revised_at": "2026-11-01",
+        "revision": "225d7e9030ac52e22826b9e1508e4461ee281f9320d0f6e02923e94a56a06df3",
+        "scope": "claude-opus-4-8配speed=fast；各云平台条件分别核对。",
+        "share": {
+          "content_revision": "225d7e9030ac52e22826b9e1508e4461ee281f9320d0f6e02923e94a56a06df3",
+          "en": {
+            "sha256": "d94bb5703ba616da04b07b072a17e91f035054c3c5f3ce8775ad003c94902dbc",
+            "text_revision": "5252cddeee04dacb9e560750b46a5386e57b98b1d3c95f45c8bffcab7a4e3472",
+            "url": "/hot-cards/d-298-225d7e9030ac-en.png"
+          },
+          "zh": {
+            "sha256": "ec582b18428742d106aebf0560f16506a925932f6183d5996fd803b42386970d",
+            "url": "/hot-cards/d-298-225d7e9030ac-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "事件 2026-10-30；卡片修订及来源核对 2026-11-01；未实测账户。"
+      },
+      "id": "D-298",
+      "interpretation": [
+        {
+          "locator": "October 30, 2026",
+          "source_ids": [
+            "notes"
+          ],
+          "text": "2026-10-30公告弃用，2026-11-30计划移除。未披露具体时分或时区；这不是Opus 4.8所有调用的模型退役公告。",
+          "title": "弃用与移除分开"
+        },
+        {
+          "locator": "Availability; Pricing",
+          "source_ids": [
+            "claude-fast-mode"
+          ],
+          "text": "继续快速模式的应用按官方指引评估Opus 5.5，分别核平台、额度、价格与beta头。已有D-177介绍 5.5快速模式，原事件日期和历史保留。",
+          "title": "迁移不只是换名称"
+        },
+        {
+          "locator": "How fast mode works; Pricing",
+          "source_ids": [
+            "claude-fast-mode"
+          ],
+          "text": "快速模式按溢价计费，输出token速度改善不代表首token或端到端任务同幅改善。本站建议先盘点model、speed和调用链，再用自有任务验证。",
+          "title": "输出速度与任务时间分开"
+        }
+      ],
+      "name": "Claude Opus 4.8 fast mode",
+      "note": "原文 2026-10-30，无编号公告；计划移除 2026-11-30；本站 2026-11-01核对。未实测账户、请求、性能或计费，不自动推广至其他平台。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-01T00:29:49.235714+00:00",
+        "hot_card_first_published_at": "2026-11-01T00:29:49.235741+00:00",
+        "hot_card_selected_at": "2026-11-01T00:29:49.235741+00:00",
+        "updated_at": "2026-11-01T00:29:49.235714+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-10-30",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "claude-fast-mode",
+          "title": "Claude fast mode",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+        },
+        {
+          "coverage": "link_only",
+          "id": "notes",
+          "title": "Claude Platform release notes",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "state": "published",
+      "summary": "对claude-opus-4-8请求speed=fast届时将报错；本次是快速模式弃用，不是整款模型退役。继续快速模式须评估Opus 5.5迁移条件。",
+      "title": "Opus 4.8快速模式计划 2026-11-30移除：先核model与speed",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-10-30公告弃用，2026-11-30计划移除。未披露具体时分或时区；这不是Opus 4.8所有调用的模型退役公告。": "Deprecation was announced on 2026-10-30, with removal planned for 2026-11-30. Exact time and timezone are unspecified; this does not announce retirement of every Opus 4.8 request.",
+            "Agent平台管理员": "Agent platform administrators",
+            "Opus 4.8快速模式将移除，先查调用配置": "Opus 4.8 fast mode will be removed: audit request settings",
+            "Opus 4.8快速模式计划 2026-11-30移除：先核model与speed": "Opus 4.8 fast mode is scheduled for removal on 2026-11-30: check model and speed",
+            "claude-opus-4-8配speed=fast；各云平台条件分别核对。": "claude-opus-4-8 with speed=fast; check cloud-platform conditions separately.",
+            "不是全模型退役": "Not full model retirement",
+            "事件 2026-10-30；卡片修订及来源核对 2026-11-01；未实测账户。": "Event 2026-10-30; card revision and source check 2026-11-01; account availability not tested.",
+            "先盘点配置，再用自己的任务验证迁移。": "Audit settings, then validate migration with your own tasks.",
+            "原文 2026-10-30，无编号公告；计划移除 2026-11-30；本站 2026-11-01核对。未实测账户、请求、性能或计费，不自动推广至其他平台。": "Unnumbered notice dated 2026-10-30; removal planned for 2026-11-30; checked 2026-11-01. Accounts, requests, performance and billing were not tested; other platforms require separate checks.",
+            "官方 2026-10-30发布弃用说明。": "The official notice was published on 2026-10-30.",
+            "对claude-opus-4-8请求speed=fast届时将报错；本次是快速模式弃用，不是整款模型退役。继续快速模式须评估Opus 5.5迁移条件。": "Requests to claude-opus-4-8 with speed=fast will then error. This is fast-mode deprecation, not retirement of the entire model. Continued fast mode requires evaluating migration to Opus 5.5.",
+            "弃用与移除分开": "Distinguish deprecation and removal",
+            "弃用已宣布": "Deprecation announced",
+            "快速模式按溢价计费，输出token速度改善不代表首token或端到端任务同幅改善。本站建议先盘点model、speed和调用链，再用自有任务验证。": "Fast mode uses premium pricing; faster output tokens do not establish equivalent gains in first-token or end-to-end latency. FieldToFit suggests auditing model, speed and request paths, then validating one’s own tasks.",
+            "旧API客户端开发者": "Developers of older API clients",
+            "未实测": "Not tested",
+            "未调用API、未测账户、价格或性能，生效时区未知。": "API calls, accounts, pricing and performance were not tested; the effective timezone is unspecified.",
+            "核迁移任务、预算与额度；本站建议。": "Check tasks, budgets and limits during migration; FieldToFit advice.",
+            "盘点model、speed和beta头；本站建议。": "Audit model, speed and beta headers; FieldToFit advice.",
+            "移除日期单列": "Removal date is separate",
+            "继续快速模式的应用按官方指引评估Opus 5.5，分别核平台、额度、价格与beta头。已有D-177介绍 5.5快速模式，原事件日期和历史保留。": "Applications needing fast mode should evaluate Opus 5.5 under the official guide, checking platform, limits, pricing and beta headers. Existing D-177 covers the earlier 5.5 fast-mode event and retains its dates and history.",
+            "范围限Opus 4.8 fast mode。": "The scope is Opus 4.8 fast mode.",
+            "计划 2026-11-30移除，旧model配speed=fast将报错。": "Removal is planned for 2026-11-30; the old model with speed=fast will error.",
+            "输出速度与任务时间分开": "Separate output speed and task time",
+            "迁移不只是换名称": "Migration requires more than a new name",
+            "迁移要核条件": "Check migration conditions",
+            "需继续快速模式的应用按官方指引评估Opus 5.5。": "Apps needing fast mode should evaluate Opus 5.5 using the official guide."
+          },
+          "source_hash": "ce958f45977f45ddcb1db1274f59ba1bcbb8da203f4498c8cf2a011534d72bdc",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-01",
       "editor": "FieldToFit",
       "event_date": "2026-10-29",
       "highlight": true,
+      "id": "D-299",
+      "interpretation": [
+        {
+          "locator": "Quick start; Usage endpoint; Cost endpoint",
+          "source_ids": [
+            "analytics"
+          ],
+          "text": "接口为/v1/organizations/analytics/usage和/cost，使用analytics-usage-cost-2026-08-24 beta头；不同组织、管理员权限和统计维度按文档配置。",
+          "title": "统一入口带beta条件"
+        },
+        {
+          "locator": "October 29, 2026",
+          "source_ids": [
+            "notes"
+          ],
+          "text": "Usage and Cost API与Enterprise既有usage_report、cost_report等报表列为legacy但仍受支持，不把新beta上线写成旧接口立即失效。",
+          "title": "旧接口继续支持"
+        },
+        {
+          "locator": "Migrate from the Usage and Cost API; Migrate from the Claude Enterprise usage and cost reports",
+          "source_ids": [
+            "analytics"
+          ],
+          "text": "迁移核对分桶、分页、时间顺序、actor及聚合维度。本站建议先以同一日期范围对账，再替换自动预算流程，避免把统计差异当费用上涨。",
+          "title": "报表口径须对齐"
+        }
+      ],
+      "name": "Claude Usage and Cost Analytics API",
+      "note": "原文 2026-10-29，beta头analytics-usage-cost-2026-08-24；本站 2026-11-01核对。未访问组织账单或调用管理接口，权限和延迟仍须实际验证。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-01T00:29:21.839475+00:00",
+        "updated_at": "2026-11-01T00:29:21.839475+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-10-29",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "analytics",
+          "title": "Usage and Cost Analytics API",
+          "url": "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api"
+        },
+        {
+          "coverage": "link_only",
+          "id": "notes",
+          "title": "Claude Platform release notes",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "state": "published",
+      "summary": "新组织级usage／cost分析端点服务Console与Enterprise组织，可按模型、工作区、API key及actor归组；迁移须比较分页与分桶，legacy不等于停用。",
+      "title": "Claude用量成本分析进入beta，legacy报表仍受支持",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude用量成本分析进入beta，legacy报表仍受支持": "Claude usage and cost analytics enters beta; legacy reports remain supported",
+            "Usage and Cost API与Enterprise既有usage_report、cost_report等报表列为legacy但仍受支持，不把新beta上线写成旧接口立即失效。": "The Usage and Cost API and existing Enterprise reports such as usage_report and cost_report are legacy but remain supported. A new beta does not make older endpoints immediately invalid.",
+            "原文 2026-10-29，beta头analytics-usage-cost-2026-08-24；本站 2026-11-01核对。未访问组织账单或调用管理接口，权限和延迟仍须实际验证。": "Dated 2026-10-29, with beta header analytics-usage-cost-2026-08-24; checked 2026-11-01. Organization bills and management endpoints were not accessed; permissions and data latency require actual validation.",
+            "报表口径须对齐": "Align reporting definitions",
+            "接口为/v1/organizations/analytics/usage和/cost，使用analytics-usage-cost-2026-08-24 beta头；不同组织、管理员权限和统计维度按文档配置。": "The endpoints are /v1/organizations/analytics/usage and /cost, using the analytics-usage-cost-2026-08-24 beta header. Organization type, administrator permissions and dimensions follow the documentation.",
+            "新组织级usage／cost分析端点服务Console与Enterprise组织，可按模型、工作区、API key及actor归组；迁移须比较分页与分桶，legacy不等于停用。": "New organization-level usage/cost analytics endpoints serve Console and Enterprise organizations, with grouping by model, workspace, API key and actor. Compare pagination and time buckets during migration; legacy does not mean shutdown.",
+            "旧接口继续支持": "Older endpoints remain supported",
+            "统一入口带beta条件": "Unified endpoints carry beta requirements",
+            "迁移核对分桶、分页、时间顺序、actor及聚合维度。本站建议先以同一日期范围对账，再替换自动预算流程，避免把统计差异当费用上涨。": "Check buckets, pagination, time ordering, actors and grouping dimensions. FieldToFit suggests reconciling one date range before replacing automated budget workflows, rather than treating reporting differences as a price increase."
+          },
+          "source_hash": "dd0b1d83fb073962774d150a011e9df9c2ff3464625e4fe5cab07dc2dc8c9347",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-01",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-28",
+      "highlight": true,
+      "id": "D-300",
+      "interpretation": [
+        {
+          "locator": "Request size limits",
+          "source_ids": [
+            "limits"
+          ],
+          "text": "Messages与Token Counting列 128MB；Sessions、Agents、Environments仍 32MB，Message Batches为 256MB，Files为 500MB。超过相应限制返回 413 request_too_large。",
+          "title": "范围限定两个端点"
+        },
+        {
+          "locator": "Request size limits",
+          "source_ids": [
+            "limits"
+          ],
+          "text": "请求体大小与模型token窗口、图片和文档规则分别约束输入，不能把 128MB写成上下文能力提升或任意长文件都可处理。",
+          "title": "字节不等于token"
+        },
+        {
+          "locator": "October 28, 2026",
+          "source_ids": [
+            "notes"
+          ],
+          "text": "公告限定第一方Claude API，第三方平台不自动沿用。本站建议分别记录请求字节、token预算和端点错误，迁移前测实际资料。",
+          "title": "按平台和任务验证"
+        }
+      ],
+      "name": "Claude API request limits",
+      "note": "原文 2026-10-28，无编号接口文档；本站 2026-11-01核对。未上传大文件、未测请求上限或其他平台，不更改模型参数表。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-01T00:28:54.209536+00:00",
+        "updated_at": "2026-11-01T00:28:54.209536+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-10-28",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "limits",
+          "title": "Claude API overview",
+          "url": "https://platform.claude.com/docs/en/api/overview"
+        },
+        {
+          "coverage": "link_only",
+          "id": "notes",
+          "title": "Claude Platform release notes",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "state": "published",
+      "summary": "第一方Messages与Token Counting请求体由 32MB提高至 128MB；不是模型上下文扩大。Sessions、Agents、Environments与批处理、文件上传各有不同限制。",
+      "title": "Claude两个端点请求体提高至 128MB，上下文限制另计",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude两个端点请求体提高至 128MB，上下文限制另计": "Two Claude endpoints raise request bodies to 128MB; context limits remain separate",
+            "Messages与Token Counting列 128MB；Sessions、Agents、Environments仍 32MB，Message Batches为 256MB，Files为 500MB。超过相应限制返回 413 request_too_large。": "Messages and Token Counting list 128MB; Sessions, Agents and Environments remain 32MB, Message Batches 256MB and Files 500MB. Exceeding the applicable limit returns 413 request_too_large.",
+            "公告限定第一方Claude API，第三方平台不自动沿用。本站建议分别记录请求字节、token预算和端点错误，迁移前测实际资料。": "The notice concerns the first-party Claude API; third-party platforms do not automatically inherit the change. FieldToFit suggests tracking request bytes, token budgets and endpoint errors separately and testing actual documents.",
+            "原文 2026-10-28，无编号接口文档；本站 2026-11-01核对。未上传大文件、未测请求上限或其他平台，不更改模型参数表。": "Unnumbered API documentation dated 2026-10-28; checked 2026-11-01. Large uploads, limits and other platforms were not tested; model specification tables are unchanged.",
+            "字节不等于token": "Bytes are not tokens",
+            "按平台和任务验证": "Validate the platform and task",
+            "第一方Messages与Token Counting请求体由 32MB提高至 128MB；不是模型上下文扩大。Sessions、Agents、Environments与批处理、文件上传各有不同限制。": "First-party Messages and Token Counting request bodies rise from 32MB to 128MB, without establishing larger model context. Sessions, Agents, Environments, batches and file uploads have separate limits.",
+            "范围限定两个端点": "The change covers two endpoints",
+            "请求体大小与模型token窗口、图片和文档规则分别约束输入，不能把 128MB写成上下文能力提升或任意长文件都可处理。": "Request-body size, model token windows, and image/document rules constrain inputs separately. 128MB does not establish better context capability or support for arbitrarily long files."
+          },
+          "source_hash": "5dffbb6335a2152241a4736bc4b085beff0472dec95367cb511545d55eb33a33",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-01",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-31",
+      "highlight": false,
+      "id": "D-301",
+      "interpretation": [
+        {
+          "locator": "2026-06-03: Evals platform",
+          "source_ids": [
+            "deprecations"
+          ],
+          "text": "原公告 2026-06-03；只读节点 2026-10-31；计划关闭 2026-11-30。原文未明确生效时区，本站未登录验证具体组织是否已切换。",
+          "title": "公告日期与生效节点分开"
+        },
+        {
+          "locator": "Evals platform; Moving from OpenAI Evals to Promptfoo",
+          "source_ids": [
+            "deprecations"
+          ],
+          "text": "官方提供向Promptfoo迁移的路径，Evals graders也在本过渡范围；微调时间表另外列示。本站建议盘点评测数据、评分器和自动调用，逐项验证替代流程。",
+          "title": "迁移保留工作流范围"
+        },
+        {
+          "locator": "Getting started with datasets: deprecation warning and advanced-use guidance",
+          "source_ids": [
+            "datasets"
+          ],
+          "text": "datasets入门页同时包含停用提示与高级需求考虑Evals的残留引导。本文以专门停用时间表为依据，保留文档不一致，不将旧引导当继续可用保证。",
+          "title": "旧引导不能保证可用"
+        }
+      ],
+      "name": "OpenAI Evals platform",
+      "note": "原公告 2026-06-03，本文事件日期为 2026-10-31只读节点；本站 2026-11-01核对。未实测组织状态、导出或替代工具，不宣称所有账户已逐一只读。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-11-01T00:28:27.422492+00:00",
+        "updated_at": "2026-11-01T00:28:27.422492+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-06-03",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "deprecations",
+          "title": "OpenAI API deprecations",
+          "url": "https://developers.openai.com/api/docs/deprecations"
+        },
+        {
+          "coverage": "link_only",
+          "id": "datasets",
+          "title": "Getting started with datasets",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-getting-started"
+        }
+      ],
+      "state": "published",
+      "summary": "官方停用时间表列 2026-10-31既有Evals只读、2026-11-30面板与API计划关闭；这是 2026-06已宣布安排的生效提醒，不是 2026-11新宣布。",
+      "title": "Evals进入只读时间节点，面板与API计划 2026-11-30关闭",
+      "translations": {
+        "en": {
+          "fields": {
+            "Evals进入只读时间节点，面板与API计划 2026-11-30关闭": "Evals reaches its read-only milestone; dashboard and API shutdown is planned for 2026-11-30",
+            "datasets入门页同时包含停用提示与高级需求考虑Evals的残留引导。本文以专门停用时间表为依据，保留文档不一致，不将旧引导当继续可用保证。": "The datasets introduction contains both a deprecation warning and residual guidance to consider Evals for advanced needs. This article follows the dedicated schedule and records the inconsistency rather than treating older guidance as guaranteed availability.",
+            "公告日期与生效节点分开": "Separate announcement and effective dates",
+            "原公告 2026-06-03，本文事件日期为 2026-10-31只读节点；本站 2026-11-01核对。未实测组织状态、导出或替代工具，不宣称所有账户已逐一只读。": "Original announcement 2026-06-03; this item’s event date is the 2026-10-31 read-only milestone; checked 2026-11-01. Organization status, exports and replacement tools were not tested; no claim is made that every account was individually verified as read-only.",
+            "原公告 2026-06-03；只读节点 2026-10-31；计划关闭 2026-11-30。原文未明确生效时区，本站未登录验证具体组织是否已切换。": "Announcement 2026-06-03; read-only milestone 2026-10-31; planned shutdown 2026-11-30. The effective timezone is unspecified and individual organizations were not tested.",
+            "官方停用时间表列 2026-10-31既有Evals只读、2026-11-30面板与API计划关闭；这是 2026-06已宣布安排的生效提醒，不是 2026-11新宣布。": "The official schedule lists existing Evals as read-only from 2026-10-31, with dashboard and API shutdown planned for 2026-11-30. This is a milestone in the 2026-06 announcement, not a new 2026-11 announcement.",
+            "官方提供向Promptfoo迁移的路径，Evals graders也在本过渡范围；微调时间表另外列示。本站建议盘点评测数据、评分器和自动调用，逐项验证替代流程。": "The official page links migration to Promptfoo and includes Evals graders in this transition; fine-tuning timelines are separate. FieldToFit suggests auditing evaluation data, graders and automated calls and validating each replacement workflow.",
+            "旧引导不能保证可用": "Older guidance is not an availability guarantee",
+            "迁移保留工作流范围": "Migration must cover the workflow"
+          },
+          "source_hash": "30167ef578a4a3e60cf9e96e12dca4460475fb0015bb8e23f2d36029dbc9b0f0",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-11-01",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-27",
+      "highlight": false,
+      "id": "D-302",
+      "interpretation": [
+        {
+          "locator": "§1–2.2; Figure 1",
+          "source_ids": [
+            "report"
+          ],
+          "text": "统一空间允许按任务加载编码器，不能把总参数、启用参数和向量维度混为一谈。",
+          "title": "1｜744M是完整配置，文本检索实际走 271M路径"
+        },
+        {
+          "locator": "§2.3–3.3; Tables 2–4; Appendix A",
+          "source_ids": [
+            "report"
+          ],
+          "text": "模块简化、分阶段目标与编码器训练共同作用，消融只能在其对应配方内比较。",
+          "title": "2｜先蒸馏再对比学习，增益不能只解释为训练更久"
+        },
+        {
+          "locator": "§4.1–4.4; Tables 6–11; Appendices B–C",
+          "source_ids": [
+            "report"
+          ],
+          "text": "比较保留任务分母、聚合方式、实际启用参数与基线来源，不把效率前沿写成所有任务第一。",
+          "title": "3｜代码和原生声音有进步，英文与部分任务仍有回退"
+        },
+        {
+          "locator": "§2.4, 3.4; Tables 1, 5, 8; Appendix C",
+          "source_ids": [
+            "report"
+          ],
+          "text": "少占向量空间不等于整个系统等比例变便宜，更大的视觉预算也不总是更好。",
+          "title": "4｜缩维、量化和视觉预算，是三组不同的取舍"
+        }
+      ],
+      "name": "EmbeddingGemma 2",
+      "note": "这是单向量嵌入模型，不是生成式聊天模型。榜单来自不同实现，消融用中间配方，量化部分更换评测环境；参数、维度和设备内存分别解释。未下载大权重或复现实验。",
+      "organization": "Google",
+      "publication": {
+        "first_published_at": "2026-11-01T00:28:00.313773+00:00",
+        "report_selected_at": "2026-11-01T00:28:00.313773+00:00",
+        "updated_at": "2026-11-01T00:28:00.313773+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-10-27",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "EmbeddingGemma 2: Unified and Efficient Multimodal Representations",
+          "url": "https://arxiv.org/abs/2610.37364v1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "publication",
+          "title": "Google DeepMind publication",
+          "url": "https://deepmind.google/research/publications/279443/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "guide",
+          "title": "EmbeddingGemma developer guide",
+          "url": "https://ai.google.dev/gemma/docs/embeddinggemma"
+        }
+      ],
+      "state": "published",
+      "summary": "744M多模态嵌入模型支持按需加载、缩维与量化；四结论、三张本站重绘，保留英文回退、评测筛选和任务预算边界。",
+      "technical_map": {
+        "caution": "这是单向量嵌入模型，不是生成式聊天模型。榜单来自不同实现，消融用中间配方，量化部分更换评测环境；参数、维度和设备内存分别解释。未下载大权重或复现实验。",
+        "change_summary": "首次完整分析：四结论、三张本站重绘，保留模块、训练和评测边界。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.3–3.3; Tables 2–4; Appendix A",
+                "source_id": "report"
+              }
+            ],
+            "from": "modules",
+            "id": "edge-recipe",
+            "label": "同论文的不同证据与采用取舍",
+            "reason": "Parallel findings, not a causal chain.",
+            "relation": "parallel",
+            "to": "recipe"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.1–4.4; Tables 6–11; Appendices B–C",
+                "source_id": "report"
+              }
+            ],
+            "from": "modules",
+            "id": "edge-tradeoffs",
+            "label": "同论文的不同证据与采用取舍",
+            "reason": "Parallel findings, not a causal chain.",
+            "relation": "parallel",
+            "to": "tradeoffs"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.4, 3.4; Tables 1, 5, 8; Appendix C",
+                "source_id": "report"
+              }
+            ],
+            "from": "modules",
+            "id": "edge-budget",
+            "label": "同论文的不同证据与采用取舍",
+            "reason": "Parallel findings, not a causal chain.",
+            "relation": "parallel",
+            "to": "budget"
+          }
+        ],
+        "focus": "多模态检索缩小之后，哪些能力保住了？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§1–2.2; Figure 1",
+                "source_id": "report"
+              }
+            ],
+            "id": "modules",
+            "kind": "result",
+            "label": "1｜744M是完整配置，文本检索实际走 271M路径",
+            "limitation": "这是单向量嵌入模型，不是生成式聊天模型。榜单来自不同实现，消融用中间配方，量化部分更换评测环境；参数、维度和设备内存分别解释。未下载大权重或复现实验。",
+            "mechanism": "统一空间允许按任务加载编码器，不能把总参数、启用参数和向量维度混为一谈。",
+            "metrics": [],
+            "result": "统一空间允许按任务加载编码器，不能把总参数、启用参数和向量维度混为一谈。",
+            "setting": "单向量嵌入；原文各任务与配置分别比较。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.3–3.3; Tables 2–4; Appendix A",
+                "source_id": "report"
+              }
+            ],
+            "id": "recipe",
+            "kind": "result",
+            "label": "2｜先蒸馏再对比学习，增益不能只解释为训练更久",
+            "limitation": "这是单向量嵌入模型，不是生成式聊天模型。榜单来自不同实现，消融用中间配方，量化部分更换评测环境；参数、维度和设备内存分别解释。未下载大权重或复现实验。",
+            "mechanism": "模块简化、分阶段目标与编码器训练共同作用，消融只能在其对应配方内比较。",
+            "metrics": [],
+            "result": "模块简化、分阶段目标与编码器训练共同作用，消融只能在其对应配方内比较。",
+            "setting": "单向量嵌入；原文各任务与配置分别比较。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§4.1–4.4; Tables 6–11; Appendices B–C",
+                "source_id": "report"
+              }
+            ],
+            "id": "tradeoffs",
+            "kind": "result",
+            "label": "3｜代码和原生声音有进步，英文与部分任务仍有回退",
+            "limitation": "这是单向量嵌入模型，不是生成式聊天模型。榜单来自不同实现，消融用中间配方，量化部分更换评测环境；参数、维度和设备内存分别解释。未下载大权重或复现实验。",
+            "mechanism": "比较保留任务分母、聚合方式、实际启用参数与基线来源，不把效率前沿写成所有任务第一。",
+            "metrics": [],
+            "result": "比较保留任务分母、聚合方式、实际启用参数与基线来源，不把效率前沿写成所有任务第一。",
+            "setting": "单向量嵌入；原文各任务与配置分别比较。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "§2.4, 3.4; Tables 1, 5, 8; Appendix C",
+                "source_id": "report"
+              }
+            ],
+            "id": "budget",
+            "kind": "result",
+            "label": "4｜缩维、量化和视觉预算，是三组不同的取舍",
+            "limitation": "这是单向量嵌入模型，不是生成式聊天模型。榜单来自不同实现，消融用中间配方，量化部分更换评测环境；参数、维度和设备内存分别解释。未下载大权重或复现实验。",
+            "mechanism": "少占向量空间不等于整个系统等比例变便宜，更大的视觉预算也不总是更好。",
+            "metrics": [],
+            "result": "少占向量空间不等于整个系统等比例变便宜，更大的视觉预算也不总是更好。",
+            "setting": "单向量嵌入；原文各任务与配置分别比较。",
+            "stage": 3
+          }
+        ],
+        "question": "多模态检索缩小之后，哪些能力保住了？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：先确定检索对象、任务指标与硬件，再选择加载模块、向量维度和视觉预算。统一空间可以简化混合资料索引，却不消除采样遗漏、英文退步或任务偏差。应独立比较纯文字检索、图文检索和原生声音方案，评估向量库重建及数据处理边界，避免把榜单优势当成所有生产流程的自动收益。",
+            "来源与修订：Google EmbeddingGemma Team，Henrique Schechter Vera、Sahil Dua等；原论文 2026-10-27 v1，28页。本站 2026-11-01在用户选择后补读正文、附录A–C及参考文献，视觉核对两图与关键表，三图为独立重绘。未复现实验、下载大权重或通读所有被引外部论文；开发文档的更新页脚不替代论文提交日，网站上站时间由真实发布生成。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "EmbeddingGemma 2由Google团队发布，基于Gemma 4权重与架构，并向Gemini Embedding 2学习。24层双向Transformer通过均值池化、线性投影与L2归一化，输出 768维单向量；文字、图像、声音和交错输入共享空间，目标是检索、聚类和分类，而不是生成回答。"
+                },
+                {
+                  "alt": "论文报告的四种可选模块配置，单位百万参数",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据§1、Figure 1重绘。271M文字路径已含embedder；439M视觉、577M声音、744M完整配置按论文报告值，不从四舍五入组件重新相加。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§1; Figure 1; §2.1",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov01-embeddinggemma-modules.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "图像经过可训练视觉编码器，声音编码器在本研究训练中保持冻结；视频通常先按每秒一帧采样，再限制为 32帧。论文训练序列上限 8192，图像与视频每帧默认分别 280和 140个视觉token，声音每秒 25个软token。长媒体能否完整表示，取决于采样、截断与token预算，不能从“支持视频”推导任意长度无损索引。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "官方开发文档将规模约写为 740M／270M，论文细写 744M／271M；本文使用论文口径，不将近似命名当另一模型。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§1–2.2; Figure 1",
+                  "source_id": "report"
+                }
+              ],
+              "id": "modules",
+              "node_ids": [
+                "modules"
+              ],
+              "summary": "统一空间允许按任务加载编码器，不能把总参数、启用参数和向量维度混为一谈。",
+              "title": "1｜744M是完整配置，文本检索实际走 271M路径"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "训练共约 2.9T token：文本预微调约 300B，多模态预微调约 2T，多模态微调约 600B。前两阶段主要向教师蒸馏，最后阶段改用对比损失、spread-out正则与Matryoshka表示学习。随后沿同一训练轨迹平均两个检查点，再进行量化感知训练；不是另找多个独立模型融合。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "简化PLE不再保留专用token查找表，而从共享输入投影到各层。Table 2的MMEB-v2总体分数为 55.46对 55.07；Table 3中继续蒸馏的总体 52.28，与改用微调目标的 55.46形成对照。作者使用近似计算量相当的比较；同时最后阶段数据混合与损失配方变化，不能把全部差异归给某一个损失项。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Table 4将可训练视觉编码器与冻结编码器对照，总体 52.27对 48.18。与表 2、表 3一样，这些使用中间配方，不是最终模型Table 6的成绩。附录A还区分非对称检索的query／target前缀与聚类、相似度的同前缀，复现时不能只换权重。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§2.3–3.3; Tables 2–4; Appendix A",
+                  "source_id": "report"
+                }
+              ],
+              "id": "recipe",
+              "node_ids": [
+                "recipe"
+              ],
+              "summary": "模块简化、分阶段目标与编码器训练共同作用，消融只能在其对应配方内比较。",
+              "title": "2｜先蒸馏再对比学习，增益不能只解释为训练更久"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "前代与第二代的不同任务指标分别比较",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据Tables 6、11重绘：前三项为MTEB Mean(Task)，声音为MSEB MRR@10且EG1走ASR、EG2走原生声音。各项不可合成平均涨幅。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Tables 6, 11; §4",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov01-embeddinggemma-tradeoffs.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Table 6代码Mean(Task)从 68.76到 78.68，多语任务均值 61.15到 61.36，但多语类型均值 54.31到 53.82，英文任务均值 69.67到 68.46。MMEB-v2视觉文档 67.84也低于所列Jina的 71.34；MAEB类型均值 48.65低于其 55.31。不能只展示胜出的聚合方式。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "MSEB检索覆盖 26种语言和区域，指标是MRR@10。原生声音路径 69.54，高于同代ASR路径 57.59及前代ASR路径 50.95；原生声音启用 577M而文字路径 271M，并非同成本对照。MTEB有 162项，MMEB-v2有 78项，MAEB有 30项；具体任务结果见附录C。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "比较限定单向量模型，部分榜单限定 1B或 2B以下；除Jina部分复测外，其他基线主要来自公开榜单。不同任务指标不等于真实RAG回答质量、延迟或成本。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§4.1–4.4; Tables 6–11; Appendices B–C",
+                  "source_id": "report"
+                }
+              ],
+              "id": "tradeoffs",
+              "node_ids": [
+                "tradeoffs"
+              ],
+              "summary": "比较保留任务分母、聚合方式、实际启用参数与基线来源，不把效率前沿写成所有任务第一。",
+              "title": "3｜代码和原生声音有进步，英文与部分任务仍有回退"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "不同视觉token预算下，视频与文档的变化方向不同",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据Table 5上半重绘；同一中间模型训练预算 280／140，评测预算 70、140、280、560。视频Hit@1与文档NDCG@5分面显示，不比较两个指标的绝对值。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "§3.4; Table 5 top",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov01-embeddinggemma-budget.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "MRL支持 768、512、256、128维。相同数值精度下，128维的原始向量载荷是 768维的六分之一，这是算术关系；索引、元数据、备份和计算并不会同步缩成六分之一。Table 8的MMEB-v2总体从 768维 59.0降到 128维 45.6，任务侧损失必须与空间收益一起算。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Table 5中视觉预算从 280到 560，文档NDCG@5由 63.38升至 67.62，视频Hit@1却从 48.51降至 46.52；这是中间模型实验，不据此直接规定最终生产预算。Q4_C在Pixel 11 Pro测得文字 191MB、视觉 447MB、完整多模态 567MB峰值内存，包含运行时编译开销，不能推广所有手机或说成权重文件大小。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "Table 1明确注明视觉／声音float与量化运行的评测harness不同。其差值不能全归因量化；选型应在自己的设备和数据上同时测质量、内存、吞吐与端到端延迟。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "§2.4, 3.4; Tables 1, 5, 8; Appendix C",
+                  "source_id": "report"
+                }
+              ],
+              "id": "budget",
+              "node_ids": [
+                "budget"
+              ],
+              "summary": "少占向量空间不等于整个系统等比例变便宜，更大的视觉预算也不总是更好。",
+              "title": "4｜缩维、量化和视觉预算，是三组不同的取舍"
+            }
+          ],
+          "title": "多模态检索缩小之后，哪些能力保住了？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-27",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "arXiv:2610.37364v1; 28 pages"
+          }
+        ],
+        "slug": "embeddinggemma-2-modular-multimodal-retrieval",
+        "takeaway": "统一空间允许按任务加载编码器，不能把总参数、启用参数和向量维度混为一谈。"
+      },
+      "title": "多模态检索缩小之后，哪些能力保住了？",
+      "translations": {
+        "en": {
+          "fields": {
+            "1｜744M是完整配置，文本检索实际走 271M路径": "1 | 744M is the full configuration; text retrieval uses 271M",
+            "2｜先蒸馏再对比学习，增益不能只解释为训练更久": "2 | Distillation precedes contrastive learning; longer training alone is not the explanation",
+            "3｜代码和原生声音有进步，英文与部分任务仍有回退": "3 | Code and native audio improve, while English and some tasks regress",
+            "4｜缩维、量化和视觉预算，是三组不同的取舍": "4 | Dimensions, quantization and vision budgets create different tradeoffs",
+            "744M多模态嵌入模型支持按需加载、缩维与量化；四结论、三张本站重绘，保留英文回退、评测筛选和任务预算边界。": "A 744M multimodal embedding model supports modular loading, truncation and quantization. Four findings and three independent redraws retain English regressions, evaluation selection and task-budget boundaries.",
+            "EmbeddingGemma 2由Google团队发布，基于Gemma 4权重与架构，并向Gemini Embedding 2学习。24层双向Transformer通过均值池化、线性投影与L2归一化，输出 768维单向量；文字、图像、声音和交错输入共享空间，目标是检索、聚类和分类，而不是生成回答。": "Google’s EmbeddingGemma 2 builds on Gemma 4 weights and architecture and learns from Gemini Embedding 2. A 24-layer bidirectional transformer uses mean pooling, a linear projection and L2 normalization to produce one 768-dimensional vector. Text, images, audio and interleaved inputs share a space for retrieval, clustering and classification rather than answer generation.",
+            "FieldToFit分析：先确定检索对象、任务指标与硬件，再选择加载模块、向量维度和视觉预算。统一空间可以简化混合资料索引，却不消除采样遗漏、英文退步或任务偏差。应独立比较纯文字检索、图文检索和原生声音方案，评估向量库重建及数据处理边界，避免把榜单优势当成所有生产流程的自动收益。": "FieldToFit analysis: define retrieval objects, task metrics and hardware before choosing modules, dimensions and vision budgets. A shared space can simplify mixed-media indexing but does not remove sampling omissions, English regressions or task bias. Compare text, vision and native-audio paths separately and assess index rebuilding and data handling rather than assuming leaderboard gains automatically transfer to every workflow.",
+            "MRL支持 768、512、256、128维。相同数值精度下，128维的原始向量载荷是 768维的六分之一，这是算术关系；索引、元数据、备份和计算并不会同步缩成六分之一。Table 8的MMEB-v2总体从 768维 59.0降到 128维 45.6，任务侧损失必须与空间收益一起算。": "MRL supports 768, 512, 256 and 128 dimensions. At equal precision, a raw 128-dimensional vector has one sixth the payload of a 768-dimensional vector; indexes, metadata, backups and compute do not automatically shrink equally. Table 8 MMEB-v2 overall falls from 59.0 at 768 dimensions to 45.6 at 128, so quality losses belong beside storage gains.",
+            "MSEB检索覆盖 26种语言和区域，指标是MRR@10。原生声音路径 69.54，高于同代ASR路径 57.59及前代ASR路径 50.95；原生声音启用 577M而文字路径 271M，并非同成本对照。MTEB有 162项，MMEB-v2有 78项，MAEB有 30项；具体任务结果见附录C。": "MSEB retrieval covers 26 languages and regional locales using MRR@10. The native-audio path scores 69.54 versus 57.59 for same-generation ASR and 50.95 for first-generation ASR. Native audio uses 577M parameters versus 271M for text, so this is not an equal-cost comparison. MTEB contains 162 tasks, MMEB-v2 78 and MAEB 30; Appendix C lists individual results.",
+            "Table 1明确注明视觉／声音float与量化运行的评测harness不同。其差值不能全归因量化；选型应在自己的设备和数据上同时测质量、内存、吞吐与端到端延迟。": "Table 1 explicitly notes different evaluation harnesses for float and quantized vision/audio runs. Their differences cannot all be attributed to quantization. Selection requires measuring quality, memory, throughput and end-to-end latency on one’s own devices and data.",
+            "Table 4将可训练视觉编码器与冻结编码器对照，总体 52.27对 48.18。与表 2、表 3一样，这些使用中间配方，不是最终模型Table 6的成绩。附录A还区分非对称检索的query／target前缀与聚类、相似度的同前缀，复现时不能只换权重。": "Table 4 contrasts trainable and frozen vision encoders at 52.27 versus 48.18 overall. Like Tables 2 and 3, these use intermediate recipes rather than the final model of Table 6. Appendix A also distinguishes query/target prefixes for asymmetric retrieval from shared prefixes for clustering and similarity; reproducing a result requires more than replacing weights.",
+            "Table 5中视觉预算从 280到 560，文档NDCG@5由 63.38升至 67.62，视频Hit@1却从 48.51降至 46.52；这是中间模型实验，不据此直接规定最终生产预算。Q4_C在Pixel 11 Pro测得文字 191MB、视觉 447MB、完整多模态 567MB峰值内存，包含运行时编译开销，不能推广所有手机或说成权重文件大小。": "In Table 5, increasing the vision budget from 280 to 560 raises document NDCG@5 from 63.38 to 67.62 but lowers video Hit@1 from 48.51 to 46.52. These intermediate-model experiments do not prescribe a final production budget. Q4_C peak memory on Pixel 11 Pro is 191MB for text, 447MB for vision and 567MB for full multimodality, including runtime compilation overhead; these are neither universal phone results nor weight-file sizes.",
+            "Table 6代码Mean(Task)从 68.76到 78.68，多语任务均值 61.15到 61.36，但多语类型均值 54.31到 53.82，英文任务均值 69.67到 68.46。MMEB-v2视觉文档 67.84也低于所列Jina的 71.34；MAEB类型均值 48.65低于其 55.31。不能只展示胜出的聚合方式。": "Table 6 code Mean(Task) rises from 68.76 to 78.68 and multilingual Mean(Task) from 61.15 to 61.36, but multilingual Mean(Type) falls from 54.31 to 53.82 and English Mean(Task) from 69.67 to 68.46. MMEB-v2 visual documents score 67.84 versus the listed Jina 71.34, and MAEB Mean(Type) scores 48.65 versus 55.31. Selecting only winning aggregations would hide tradeoffs.",
+            "不同视觉token预算下，视频与文档的变化方向不同": "Video and document metrics respond differently to vision token budgets",
+            "前代与第二代的不同任务指标分别比较": "Separate task metrics for the first and second generation",
+            "单向量嵌入；原文各任务与配置分别比较。": "Single-vector embeddings; each task and configuration is compared separately.",
+            "同论文的不同证据与采用取舍": "Different evidence and adoption tradeoffs in one paper",
+            "图像经过可训练视觉编码器，声音编码器在本研究训练中保持冻结；视频通常先按每秒一帧采样，再限制为 32帧。论文训练序列上限 8192，图像与视频每帧默认分别 280和 140个视觉token，声音每秒 25个软token。长媒体能否完整表示，取决于采样、截断与token预算，不能从“支持视频”推导任意长度无损索引。": "The vision encoder is trainable while the audio encoder remains frozen in this study. Video is typically sampled at one frame per second and then limited to 32 frames. Training sequences reach 8192 tokens; default vision budgets are 280 per image and 140 per video frame, and audio produces 25 soft tokens per second. Sampling, truncation and token budgets constrain long-media coverage; video support does not imply lossless indexing of arbitrary duration.",
+            "多模态检索缩小之后，哪些能力保住了？": "When multimodal retrieval gets smaller, which capabilities survive?",
+            "官方开发文档将规模约写为 740M／270M，论文细写 744M／271M；本文使用论文口径，不将近似命名当另一模型。": "Developer documentation rounds size to 740M/270M while the paper reports 744M/271M. This analysis uses the paper’s convention rather than treating rounded names as a different model.",
+            "少占向量空间不等于整个系统等比例变便宜，更大的视觉预算也不总是更好。": "A smaller embedding does not imply proportional savings for the full system, and more vision tokens are not always better.",
+            "本站据Table 5上半重绘；同一中间模型训练预算 280／140，评测预算 70、140、280、560。视频Hit@1与文档NDCG@5分面显示，不比较两个指标的绝对值。": "Independent redraw of the top half of Table 5. One intermediate model trained at 280/140 is evaluated at budgets 70, 140, 280 and 560. Video Hit@1 and document NDCG@5 use separate panels; their absolute values are not directly comparable.",
+            "本站据Tables 6、11重绘：前三项为MTEB Mean(Task)，声音为MSEB MRR@10且EG1走ASR、EG2走原生声音。各项不可合成平均涨幅。": "Independent redraw from Tables 6 and 11: the first three are MTEB Mean(Task); audio is MSEB MRR@10 with ASR for EG1 and native audio for EG2 configurations. These do not support a combined average gain.",
+            "本站据§1、Figure 1重绘。271M文字路径已含embedder；439M视觉、577M声音、744M完整配置按论文报告值，不从四舍五入组件重新相加。": "Independent redraw from §1 and Figure 1. The 271M text path includes the embedder. Vision 439M, audio 577M and full 744M are reported configurations, not sums reconstructed from rounded components.",
+            "来源与修订：Google EmbeddingGemma Team，Henrique Schechter Vera、Sahil Dua等；原论文 2026-10-27 v1，28页。本站 2026-11-01在用户选择后补读正文、附录A–C及参考文献，视觉核对两图与关键表，三图为独立重绘。未复现实验、下载大权重或通读所有被引外部论文；开发文档的更新页脚不替代论文提交日，网站上站时间由真实发布生成。": "Sources and revisions: Google EmbeddingGemma Team, Henrique Schechter Vera, Sahil Dua and colleagues; original paper v1 dated 2026-10-27, 28 pages. After owner selection on 2026-11-01 FieldToFit completed the text, Appendices A–C and references, visually checked both figures and key tables and made three independent redraws. Experiments, large weights and all external cited papers were not reproduced or fully read. A developer-page footer is not the paper submission date; site-publication time comes from actual publication.",
+            "模块简化、分阶段目标与编码器训练共同作用，消融只能在其对应配方内比较。": "Architectural simplification, staged objectives and encoder training work together; ablations must be compared within their own recipe.",
+            "比较保留任务分母、聚合方式、实际启用参数与基线来源，不把效率前沿写成所有任务第一。": "Comparisons retain task coverage, aggregation, active parameters and baseline provenance; an efficiency frontier does not mean first place on every task.",
+            "比较限定单向量模型，部分榜单限定 1B或 2B以下；除Jina部分复测外，其他基线主要来自公开榜单。不同任务指标不等于真实RAG回答质量、延迟或成本。": "Comparisons cover single-vector models, with some leaderboards restricted below 1B or 2B parameters. Apart from partial Jina reproduction, baselines mainly come from public leaderboards. Benchmark metrics do not directly establish real RAG answer quality, latency or cost.",
+            "简化PLE不再保留专用token查找表，而从共享输入投影到各层。Table 2的MMEB-v2总体分数为 55.46对 55.07；Table 3中继续蒸馏的总体 52.28，与改用微调目标的 55.46形成对照。作者使用近似计算量相当的比较；同时最后阶段数据混合与损失配方变化，不能把全部差异归给某一个损失项。": "PLE omits its dedicated token lookup table and projects shared inputs into each layer. Table 2 reports MMEB-v2 overall scores of 55.46 versus 55.07. In Table 3, continued distillation scores 52.28 versus 55.46 with the finetuning recipe under approximately comparable compute. The final stage also changes its data mixture and objectives, so the entire difference cannot be assigned to one loss term.",
+            "统一空间允许按任务加载编码器，不能把总参数、启用参数和向量维度混为一谈。": "A shared space supports task-specific encoder loading; total parameters, active parameters and embedding dimensions are different quantities.",
+            "训练共约 2.9T token：文本预微调约 300B，多模态预微调约 2T，多模态微调约 600B。前两阶段主要向教师蒸馏，最后阶段改用对比损失、spread-out正则与Matryoshka表示学习。随后沿同一训练轨迹平均两个检查点，再进行量化感知训练；不是另找多个独立模型融合。": "Training covers about 2.9T tokens: roughly 300B in text pre-finetuning, 2T in multimodal pre-finetuning and 600B in multimodal finetuning. Earlier stages emphasize distillation, while the final stage switches to contrastive loss, spread-out regularization and Matryoshka representation learning. Two checkpoints along one trajectory are averaged before quantization-aware training; this is not merging independently trained models.",
+            "论文报告的四种可选模块配置，单位百万参数": "Four reported modular configurations, in millions of parameters",
+            "这是单向量嵌入模型，不是生成式聊天模型。榜单来自不同实现，消融用中间配方，量化部分更换评测环境；参数、维度和设备内存分别解释。未下载大权重或复现实验。": "This is a single-vector embedding model, not a generative chat model. Leaderboards use different implementations, ablations use intermediate recipes, and some quantization comparisons change evaluation harnesses. Parameters, dimensions and device memory are distinct; weights and experiments were not reproduced.",
+            "首次完整分析：四结论、三张本站重绘，保留模块、训练和评测边界。": "First full analysis: four findings and three independent redraws retain modularity, training and evaluation boundaries."
+          },
+          "source_hash": "371198bc9be73fac4f16f02d10df733b303adefbc89f7b7c1e85d5f3b8715b2a",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-10-31",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-29",
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -39,7 +883,7 @@
             "source_id": "cursor"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "Claude Code扩展安全：先核来源，别只看版本号",
         "limits": [
           {
@@ -105,7 +949,7 @@
         "first_published_at": "2026-10-31T01:19:51.493300+00:00",
         "hot_card_first_published_at": "2026-10-31T01:19:51.493328+00:00",
         "hot_card_selected_at": "2026-10-31T01:19:51.493328+00:00",
-        "updated_at": "2026-10-31T01:19:51.493300+00:00"
+        "updated_at": "2026-11-01T00:26:40.312764+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -130,7 +974,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "0bfbe5e97b9a67e012ecf163fa6ac4e05b77ba65d64d5ef0be4fae70e7354d9a",
+          "source_hash": "5d489edf2323f0027a81aab8f9106485286a1fa9967dd9946ed5c409fbbf968e",
           "fields": {
             "Claude Code扩展安全：先核来源，别只看版本号": "Claude Code extension security: check origin, not just version",
             "Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313": "Malicious Claude Code extensions on Cursor Marketplace: check origin before versions 2.1.312/2.1.313",
@@ -168,7 +1012,7 @@
       "checked_at": "2026-10-31",
       "editor": "FieldToFit",
       "event_date": "2026-10-30",
-      "highlight": true,
+      "highlight": false,
       "id": "D-294",
       "interpretation": [
         {
@@ -201,7 +1045,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-10-31T01:18:56.357580+00:00",
-        "updated_at": "2026-10-31T01:18:56.357580+00:00"
+        "updated_at": "2026-11-01T00:27:06.829834+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -226,7 +1070,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "5515a34282acb30f8ab9405dd9c83ead8fc325640fec990bb59de0e1700ec97b",
+          "source_hash": "d166f04ce441765f5592cee9099a1b6e303042a7bd17b5ba9a2de32babb77d74",
           "fields": {
             "ChatGPT保护措施将分阶段推出，首份社区安全报告计划 2027年初": "ChatGPT protections will roll out in stages; first community safety report planned for early 2027",
             "公告描述识别近期聊天警示、自动结束相关高风险对话及重复触发后暂时暂停账户，并说明措施将在未来几周开始推出。没有逐平台、地域或账户的完成名单，不制造统一上线时间。": "The notice describes recent-chat warning signals, ending certain high-risk conversations and temporary account pauses after repeated cases, with rollout beginning in coming weeks. No completed platform, region or account list establishes universal availability.",
@@ -1141,7 +1985,7 @@
             "source_id": "faq"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "Haiku 4.5移出选择器：先分清入口，再继续旧对话",
         "limits": [
           {
@@ -1232,7 +2076,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "f1b59cdb5177060f142fee296888cc8b33074eb347498c57f50b396d5acb2589",
+          "source_hash": "2eb79b4cf2b34568d8dd9bca4e2933f0a2446452b393a9265b3a69e5279851ee",
           "fields": {
             "10月 15日预告、10月 29日生效；2026-10-30核对官方帮助全文，未实测。": "Announced 10/15, effective 10/29; official help article checked 2026-10-30. Not tested.",
             "10月 15日预告、10月 29日生效；本站 2026-10-30核对。版本Haiku4.5→5.5，动态帮助文档无编号。未测试账户、续聊、API、费用或代码兼容性。": "Announced 10/15, effective 10/29; checked 2026-10-30. Haiku4.5→5.5; the dynamic help article is unnumbered. Accounts, continued chats, API access, costs and code compatibility were not tested.",
@@ -2836,7 +3680,7 @@
             "source_id": "announcement"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Gemini 4 Carbon：先看资格，再看介绍期价格",
         "limits": [
           {
@@ -2927,7 +3771,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "134966a5e48c8fecf28f37beb018d2b9a6f7dac565d4ed7bde805f1bb2cf3a9e",
+          "source_hash": "4e06918e69cc27f832e835e3c47c91d1a48dc6d14c8a1d527809211248fd4791",
           "fields": {
             "2026-10-29核对Google官方正文；人群与下一步为本站判断，未独立复现或测试计费。": "Google’s official article checked on 2026-10-29; audiences and next steps are FieldToFit judgments. No independent replication or billing test.",
             "Carbon本周先向部分网络防御者及Fairwind伙伴开放。每百万输入／输出token介绍期 2／10美元，之后 4／20美元；普通开发者、企业与消费者入口仍待推出。": "Carbon initially rolls out to selected cyber defenders and Fairwind partners. Introductory input/output prices are $2/$10 per million tokens, later $4/$20; general developer, business and consumer access is still forthcoming.",
@@ -31191,7 +32035,7 @@
       "checked_at": "2026-10-31",
       "editor": "FieldToFit",
       "event_date": "2026-10-06",
-      "highlight": true,
+      "highlight": false,
       "id": "D-82",
       "interpretation": [
         {
@@ -31233,7 +32077,7 @@
       "organization": "Mistral AI",
       "publication": {
         "first_published_at": "2026-10-07T04:21:35.805438+00:00",
-        "updated_at": "2026-10-31T01:19:24.193612+00:00"
+        "updated_at": "2026-11-01T00:27:34.061582+00:00"
       },
       "reading_materials": [
         {
@@ -31311,7 +32155,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "2438321b2246a50a72aaf8f9ac5a703ec35fe71914b5d3c01aedb7d8077c7873",
+          "source_hash": "641f8cd20ed011e5db0286406dea010eaa5e80bd7946fddbb12faa830e00eab7",
           "fields": {
             "API页现列每百万token输入$0.70、缓存输入$0.07、输出$2.10。任务token节省不自动等于总账单降幅，自部署还需硬件、上下文、并发及服务成本核算；完整技术报告仍标即将发布。": "The API page lists $0.70 input, $0.07 cached input and $2.10 output per million tokens. Task token savings do not automatically translate to total bill reductions; self-hosting also requires hardware, context, concurrency and service-cost analysis. A full technical report is still described as forthcoming.",
             "MaaS定义与例外一并阅读": "Read the MaaS definition and exceptions together",
