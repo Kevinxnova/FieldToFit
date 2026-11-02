@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.18](CHANGELOG.md#v1.17.18)** · [fieldtofit-v1.17.18](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.18)
+**当前源码版本：[v1.17.19](CHANGELOG.md#v1.17.19)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布已选Opus 4.8快速模式迁移、Claude用量成本分析beta、128MB请求体及Evals只读节点提醒，保留公告、计划生效与未实测边界。
-- 新增EmbeddingGemma 2完整分析：四结论、三张本站重绘，分开模块参数、任务成绩、量化与视觉预算的取舍。
-- 提供快速模式迁移中英信息卡，同步Claude关联档案；成功发表后轮替首页，保留全部索引、历史与并行版本。
+- 补录Deep Review与Earth AI实验入口，保留10月14日原公告及账户、输入和数据条件。
+- 新增小模型自主复制研究完整分析：四条结论、三张独立重绘，分开推理部署、受控复制、笔记继承和资源预算。
+- 提供Deep Review中英文信息卡并同步Gemini应用事件；正式发表后轮替首页，旧索引、日期、资源及并行内容保留。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

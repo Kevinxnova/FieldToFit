@@ -1,5 +1,7 @@
 # FieldToFit 项目管理总览
 
+2026-11-02所有者明确选择动态A、B、报告2、卡1全部发布；接续Deep Review、Earth AI实验接入与小模型自主复制研究完整分析，同步Gemini应用事件。基于已上线v1.17.18以兼容内容／资源patch v1.17.19完成正式发表和部署，无迁移；报告1和榜单未扩大。真实预览、发表、轮换和部署见[验收](docs/validation/2026-11-02-review-earth-and-replication.md)。
+
 2026-11-01所有者明确选择动态A–D、报告2、卡1全部发布；接续Claude三项接口／模式事件、Evals只读节点及EmbeddingGemma 2完整分析与同事件迁移卡。基于v1.17.17以兼容内容／资源patch v1.17.18完成正式发表与部署，无迁移；报告1、榜单不扩大，真实预览、发表、轮换及部署见[验收](docs/validation/2026-11-01-claude-and-embeddinggemma.md)。
 
 2026-10-31所有者选择动态A–D、报告1、卡1全部发布：A／卡1复用事件D-292，Mistral更新原D-82，C D-294、D D-296、报告D-297；两份档案同步。保留并行v1.17.15专题与私密工作，以兼容内容／资源patch v1.17.16接续，无迁移。报告2与榜单未扩大；真实发表、轮换、验证及部署见[验收](docs/validation/2026-10-31-cursor-judgment.md)。

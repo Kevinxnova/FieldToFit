@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.19"></a>
+## v1.17.19 · 文档核查、地理Agent与自主复制研究 · 2026-11-02
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-02 -->
+<!-- public-title:en: Document review, geospatial agents and replication research -->
+<!-- release-summary:zh:start -->
+- 补录Deep Review与Earth AI实验入口，保留10月14日原公告及账户、输入和数据条件。
+- 新增小模型自主复制研究完整分析：四条结论、三张独立重绘，分开推理部署、受控复制、笔记继承和资源预算。
+- 提供Deep Review中英文信息卡并同步Gemini应用事件；正式发表后轮替首页，旧索引、日期、资源及并行内容保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Backfill Deep Review and experimental Earth AI access, retaining the October14 announcements and account, input and data conditions.
+- Add a full small-model replication analysis with four findings and three independent redraws separating setup, controlled replication, inherited notes and resources.
+- Provide a bilingual Deep Review card and synchronize the Gemini application event; rotate homepage selections only after publication, preserving indexes, dates, assets and concurrent content.
+<!-- release-summary:en:end -->
+
+所有者明确选择2026-11-02动态A、B、报告2、卡1；A与卡1共事件，报告1未选。以实际已部署v1.17.18及已审本地提交705cfac为基线，保留尚未获准推送的源码归档；自v1.17.0累计判断仍为兼容内容／静态资源patch，无新模块、主要流程或协议改变，无数据库迁移。原晨报、全对象核对与自然日验收缺口保持。[实际验收](docs/validation/2026-11-02-review-earth-and-replication.md)。
+
 <a id="v1.17.18"></a>
 ## v1.17.18 · Claude接口迁移与EmbeddingGemma检索分析 · 2026-11-01
 <!-- site-deployed:2026-11-01 -->

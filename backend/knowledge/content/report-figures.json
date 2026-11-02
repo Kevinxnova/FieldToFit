@@ -1936,5 +1936,35 @@
     ],
     "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
     "version": "arXiv:2610.37364v1; 28 pages"
+  },
+  "/report-figures/nov02-selfrep-controlled.png": {
+    "sha256": "380e04b437d10996feaa2abe5aac136b20bc2cbe33c30fccd195ce6a588d8455",
+    "source_urls": [
+      "https://www.anthropic.com/research/self-replicating-ai"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Original research post dated2026-10-12; unnumbered",
+    "locator": "B. controlled8-node trials; artifact07"
+  },
+  "/report-figures/nov02-selfrep-notes.png": {
+    "sha256": "d0c277be180f86ae0d5b98f384f28b944c9e457769621113cebfb8ccaf764cc0",
+    "source_urls": [
+      "https://www.anthropic.com/research/self-replicating-ai"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Original research post dated2026-10-12; unnumbered",
+    "locator": "D. inherited-note trials; artifact10"
+  },
+  "/report-figures/nov02-selfrep-context.png": {
+    "sha256": "43ba10509f6a8b0604a3f22a26010455c1d8a7d131ed9bb0cd5d3b540159c436",
+    "source_urls": [
+      "https://www.anthropic.com/research/self-replicating-ai"
+    ],
+    "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced.",
+    "attribution": "FieldToFit",
+    "source_version": "Original research post dated2026-10-12; unnumbered",
+    "locator": "Appendix C estimates; artifacts14/15"
   }
 }

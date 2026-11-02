@@ -7569,6 +7569,25 @@
           "kind": "table",
           "rows": [
             [
+              "[Earth AI扩展实验性Agent入口，地理分析结果仍需专家审核](https://fieldtofit.top/news/D-304)",
+              "2026-10-14",
+              "Ask Google Earth与A2A服务扩展早期接入；同模型分层比较区分领域工具与规划贡献，实验高分不等于所有用户已有生产服务。"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "2026-11-02补录 2026-10-14应用事件，保留原模型规格、价格与历史；全入口日核验尚未完成。"
+        },
+        {
+          "columns": [
+            "本期已核实事件",
+            "事件日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
               "[Gemini 4 Carbon：部分防御者先开放，区分介绍期与后续价格](https://fieldtofit.top/news/D-271)",
               "2026-10-28",
               "Carbon本周先向部分网络防御者及Fairwind伙伴开放。每百万输入／输出token介绍期 2／10美元，之后 4／20美元；普通开发者、企业与消费者入口仍待推出。"
@@ -7599,6 +7618,7 @@
           "text": "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本／事件",
             "原始日期",
@@ -7606,7 +7626,6 @@
             "采用条件与限制",
             "关联动态"
           ],
-          "kind": "table",
           "rows": [
             [
               "Gemini Flash / Deep Research",
@@ -7679,6 +7698,7 @@
           ]
         },
         {
+          "kind": "table",
           "columns": [
             "更新",
             "原文日期",
@@ -7686,7 +7706,6 @@
             "开放与限制",
             "出处"
           ],
-          "kind": "table",
           "rows": [
             [
               "Google Skills",
@@ -7698,6 +7717,7 @@
           ]
         },
         {
+          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -7706,7 +7726,6 @@
             "获取与使用",
             "依据"
           ],
-          "kind": "table",
           "rows": [
             [
               "Gemini 3.8 Flash",
@@ -8148,13 +8167,31 @@
           "id": "oct29-A-announcement",
           "title": "Introducing Gemini 4 Carbon",
           "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov02-earth-ai",
+          "title": "Putting Earth AI to work: Geospatial agents for our planet’s biggest challenges",
+          "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov02-access",
+          "title": "Experimental Geospatial Reasoning agent",
+          "url": "https://sites.research.google/gr/geospatial-reasoning/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov02-gra",
+          "title": "Google Earth AI Geospatial Reasoning Agent: Capabilities and a Systematic Evaluation",
+          "url": "https://arxiv.org/abs/2610.15750v1"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "08187c52f7c54b9e12cb072d97362e83a3ea1a5e04dd7343ad3d4cc83aaf6f56",
+          "source_hash": "d149c0c6e622054bb153a94e1aa7931ecf63a7d9d7d3b181245f902120b44bc9",
           "fields": {
             "11 月 17 日 Gems 移入设置后仍可使用。商业与企业版退役不早于 2027 年 3 月 1 日，教育版不早于 6 月 1 日，不能写成 11 月直接停用。": "Gems remains usable after moving into settings on 11/17. Business and Enterprise retirement is no earlier than 2027-03-01; Education is no earlier than 6/1. This is not a November shutdown.",
             "2026-09-11 原有 Flash 核验": "2026-09-11 original Flash verification",
@@ -8272,7 +8309,10 @@
             "页面更新 2026-09-01；抓取 2026-09-17T03:27:55.409264+00:00": "Page updated 2026-09-01; retrieved 2026-09-17T03:27:55.409264+00:00",
             "页面更新 2026-09-15；抓取 2026-09-17T03:27:55.409264+00:00": "Page updated 2026-09-15; retrieved 2026-09-17T03:27:55.409264+00:00",
             "页面标示 2026-08 更新；稳定版": "Page marking 2026-08 update; stable version",
-            "页面标示 2026-09 更新；稳定版，首发日未核": "Page indication 2026-09 update; stable version, unchecked on the first day"
+            "页面标示 2026-09 更新；稳定版，首发日未核": "Page indication 2026-09 update; stable version, unchecked on the first day",
+            "2026-11-02补录 2026-10-14应用事件，保留原模型规格、价格与历史；全入口日核验尚未完成。": "Backfilled the 2026-10-14 application event on 2026-11-02, retaining model specifications, pricing and history; full daily source checks remain incomplete.",
+            "Ask Google Earth与A2A服务扩展早期接入；同模型分层比较区分领域工具与规划贡献，实验高分不等于所有用户已有生产服务。": "Early access expands through Ask Google Earth and an A2A service. Layered comparisons on fixed models distinguish domain tools and planning; high experimental scores do not establish production availability for all users.",
+            "[Earth AI扩展实验性Agent入口，地理分析结果仍需专家审核](https://fieldtofit.top/news/D-304)": "[Earth AI expands experimental agent access; experts must review geospatial results](https://fieldtofit.top/news/D-304)"
           }
         }
       },
@@ -14942,7 +14982,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-11-01",
+  "reviewed_at": "2026-11-02",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

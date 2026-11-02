@@ -3,10 +3,674 @@
   "items": [
     {
       "category": "tool",
+      "checked_at": "2026-11-02",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "先用允许外传的样例核验反馈。",
+            "title": "技术稿件作者"
+          },
+          {
+            "detail": "先核组织政策，再决定是否接入流程。",
+            "title": "团队审核负责人"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "公告列每周两次免费文档审阅，高用量与API另核条件。",
+            "title": "分层采用"
+          },
+          {
+            "detail": "多文件仍为后续计划。",
+            "title": "先支持PDF与纯文本"
+          },
+          {
+            "detail": "公告称不用于训练，为用户查看保留一年。",
+            "title": "上传前看存储"
+          }
+        ],
+        "checked_at": "2026-11-02",
+        "evidence": [
+          {
+            "locator": "With this release; How Deep Review works",
+            "source_id": "deep-review"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "Deep Review能核查文档，上传前先看条件",
+        "limits": [
+          {
+            "detail": "未实测准确性、账户额度或API费用。",
+            "title": "效果未知"
+          },
+          {
+            "detail": "不替代专家或组织批准。",
+            "title": "判断仍由人负责"
+          }
+        ],
+        "next_step": "先用允许外传的样例核验反馈，再决定是否纳入工作流。",
+        "revised_at": "2026-11-02",
+        "revision": "886f27a98792878910e8d3d3849e397f64f35fe2846b6fa45d354a98180b7cb7",
+        "scope": "Google Deep Review，2026-10-14公开公告；未实测账户。",
+        "share": {
+          "content_revision": "886f27a98792878910e8d3d3849e397f64f35fe2846b6fa45d354a98180b7cb7",
+          "en": {
+            "sha256": "8eb7ddcd2caeba6a9c729ba4d65b6c8d4f71d8a90c96e155887a6f600f1f3bb7",
+            "text_revision": "bc852365ee016681a63be3ce8b81b35eb90b44637ef63b7a6eb9f3e2189164b7",
+            "url": "/hot-cards/d-303-886f27a98792-en.png"
+          },
+          "zh": {
+            "sha256": "90e13287fd1b37ccbe324fadb0811c0554074c341a234931ab28729c433ce682",
+            "url": "/hot-cards/d-303-886f27a98792-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "事件 2026-10-14；卡片修订／来源核对 2026-11-02；未实测。"
+      },
+      "id": "D-303",
+      "interpretation": [
+        {
+          "locator": "With this release: Tiered access",
+          "source_ids": [
+            "deep-review"
+          ],
+          "text": "公告列出每周两次免费文档审阅，更高用量与API使用Gemini API key；未实测具体账户、费用或配额。",
+          "title": "先核账户和额度"
+        },
+        {
+          "locator": "Format flexibility; Privacy and data policy",
+          "source_ids": [
+            "deep-review"
+          ],
+          "text": "初期支持PDF与纯文本，多文件仍为后续计划。公告称上传文档不用于训练，并为用户查看保留一年；不据此推断企业全部合规条件。",
+          "title": "输入与存储分别审核"
+        },
+        {
+          "locator": "How Deep Review works; Paper link",
+          "source_ids": [
+            "deep-review"
+          ],
+          "text": "产品公告 2026-10-14，所链PAT原论文为 2026-06-26 v1。分段、预算、核查与综合是产品方法说明，不把旧论文改成近期实质修订，也不以反馈替代专家判断。",
+          "title": "产品日期不替代论文日期"
+        }
+      ],
+      "name": "Deep Review",
+      "note": "原文 2026-10-14，无编号产品公告；本站 2026-11-02补录核对，不记为今日新发布。未登录、上传材料或实测准确性、额度和价格。",
+      "organization": "Google Research",
+      "publication": {
+        "first_published_at": "2026-11-02T14:42:49.282072+00:00",
+        "hot_card_first_published_at": "2026-11-02T14:42:49.282103+00:00",
+        "hot_card_selected_at": "2026-11-02T14:42:49.282103+00:00",
+        "updated_at": "2026-11-02T14:42:49.282072+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "deep-review",
+          "title": "Analyzing technical documents with Deep Review",
+          "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "pat",
+          "title": "Towards Automating Scientific Review with Google’s Paper Assistant Tool",
+          "url": "https://arxiv.org/abs/2606.28277v1"
+        }
+      ],
+      "state": "published",
+      "summary": "Google公开复杂文档核查工具，初期支持PDF与纯文本；每周免费审阅与更高用量分开，上传内容存储条件仍需组织审核，最终判断由人负责。",
+      "title": "Deep Review开放文档核查：先核输入、额度与保留条件",
+      "translations": {
+        "en": {
+          "fields": {
+            "Deep Review开放文档核查：先核输入、额度与保留条件": "Deep Review opens document checking: verify inputs, limits and retention",
+            "Deep Review能核查文档，上传前先看条件": "Deep Review checks documents: review the conditions before uploading",
+            "Google Deep Review，2026-10-14公开公告；未实测账户。": "Google Deep Review; announcement dated 2026-10-14; accounts not tested.",
+            "Google公开复杂文档核查工具，初期支持PDF与纯文本；每周免费审阅与更高用量分开，上传内容存储条件仍需组织审核，最终判断由人负责。": "Google opens a complex-document checking tool, initially supporting PDF and plain text. Weekly free reviews and higher usage have distinct conditions; document retention requires organizational review and people remain responsible for final judgments.",
+            "上传前看存储": "Check upload retention",
+            "不替代专家或组织批准。": "Does not replace expert judgment or organizational approval.",
+            "事件 2026-10-14；卡片修订／来源核对 2026-11-02；未实测。": "Event 2026-10-14; card revised and source checked 2026-11-02; not tested.",
+            "产品公告 2026-10-14，所链PAT原论文为 2026-06-26 v1。分段、预算、核查与综合是产品方法说明，不把旧论文改成近期实质修订，也不以反馈替代专家判断。": "The product announcement is dated 2026-10-14; the linked PAT paper is v1 dated 2026-06-26. Segmentation, budgeting, verification and synthesis describe the product method, without making the older paper a recent substantive revision or replacing expert judgment.",
+            "产品日期不替代论文日期": "Product dates do not replace paper dates",
+            "先支持PDF与纯文本": "PDF and plain text first",
+            "先核组织政策，再决定是否接入流程。": "Check organization policy before adopting the workflow.",
+            "先核账户和额度": "Check account access and limits",
+            "先用允许外传的样例核验反馈。": "First test feedback with a sample cleared for external sharing.",
+            "先用允许外传的样例核验反馈，再决定是否纳入工作流。": "Test feedback with a sample cleared for external sharing before adopting the workflow.",
+            "公告列出每周两次免费文档审阅，更高用量与API使用Gemini API key；未实测具体账户、费用或配额。": "The announcement lists two complimentary document reviews each week; higher usage and API access use a Gemini API key. Accounts, fees and quotas were not tested.",
+            "公告列每周两次免费文档审阅，高用量与API另核条件。": "The announcement lists two free document reviews each week; higher usage and API conditions require separate checks.",
+            "公告称不用于训练，为用户查看保留一年。": "The announcement says uploads are not used for training and are retained one year for user display.",
+            "分层采用": "Tiered access",
+            "初期支持PDF与纯文本，多文件仍为后续计划。公告称上传文档不用于训练，并为用户查看保留一年；不据此推断企业全部合规条件。": "Initial inputs are PDF and plain text; multi-file support remains planned. The announcement says uploads are not used for training and are retained for one year for user display; this does not establish all enterprise compliance conditions.",
+            "判断仍由人负责": "People remain responsible",
+            "原文 2026-10-14，无编号产品公告；本站 2026-11-02补录核对，不记为今日新发布。未登录、上传材料或实测准确性、额度和价格。": "Unnumbered product announcement dated 2026-10-14; checked and backfilled on 2026-11-02 rather than presented as a new announcement that day. Accounts, uploads, accuracy, limits and pricing were not tested.",
+            "团队审核负责人": "Team review owners",
+            "多文件仍为后续计划。": "Multi-file inputs remain planned.",
+            "技术稿件作者": "Technical authors",
+            "效果未知": "Effectiveness untested",
+            "未实测准确性、账户额度或API费用。": "Accuracy, account quotas and API fees were not tested.",
+            "输入与存储分别审核": "Review inputs and retention separately"
+          },
+          "source_hash": "088a732ec24a50923904b028e87b807616373e25ed57fcd74cac7be95206d8ba",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-02",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-14",
+      "highlight": true,
+      "id": "D-304",
+      "interpretation": [
+        {
+          "locator": "Apply for limited early access",
+          "source_ids": [
+            "access"
+          ],
+          "text": "官方入口接受实验性早期接入申请，Ask Google Earth、Cloud Workflows与Planetary Prediction Engine分别表达兴趣，不保证所有账户已有资格。",
+          "title": "入口仍需申请"
+        },
+        {
+          "locator": "Sections3–5",
+          "source_ids": [
+            "gra"
+          ],
+          "text": "原报告分别固定Gemini3.1 Pro和Gemini3.8 Flash，逐层比较模型、基本工具、领域工具和完整Agent；不能只把收益归给模型名称或前置规划。",
+          "title": "模型和系统贡献分开"
+        },
+        {
+          "locator": "Results and key takeaways",
+          "source_ids": [
+            "earth-ai"
+          ],
+          "text": "开放题按专家参考工作流评分，不直接保证最终地理结论正确；不同基准评分不相加。本站建议将输出作为专家复核的初稿。",
+          "title": "工作流评分不等于最终真值"
+        }
+      ],
+      "name": "Earth AI Geospatial Reasoning Agent",
+      "note": "产品文 2026-10-14；论文 2026-10-11 v1；本站 2026-11-02补录。未获实验账户、调用服务或实测空间分析、许可与费用。报告 1仍未选择，本文不自动发表该长文。",
+      "organization": "Google Research",
+      "publication": {
+        "first_published_at": "2026-11-02T14:42:22.126398+00:00",
+        "updated_at": "2026-11-02T14:42:22.126398+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        }
+      ],
+      "source_published_at": "2026-10-14",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "earth-ai",
+          "title": "Putting Earth AI to work: Geospatial agents for our planet’s biggest challenges",
+          "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "access",
+          "title": "Experimental Geospatial Reasoning agent",
+          "url": "https://sites.research.google/gr/geospatial-reasoning/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "gra",
+          "title": "Google Earth AI Geospatial Reasoning Agent: Capabilities and a Systematic Evaluation",
+          "url": "https://arxiv.org/abs/2610.15750v1"
+        }
+      ],
+      "state": "published",
+      "summary": "Ask Google Earth与A2A服务扩展早期接入；同模型分层比较区分领域工具与规划贡献，实验高分不等于所有用户已有生产服务。",
+      "title": "Earth AI扩展实验性Agent入口，地理分析结果仍需专家审核",
+      "translations": {
+        "en": {
+          "fields": {
+            "Ask Google Earth与A2A服务扩展早期接入；同模型分层比较区分领域工具与规划贡献，实验高分不等于所有用户已有生产服务。": "Early access expands through Ask Google Earth and an A2A service. Layered comparisons on fixed models distinguish domain tools and planning; high experimental scores do not establish production availability for all users.",
+            "Earth AI扩展实验性Agent入口，地理分析结果仍需专家审核": "Earth AI expands experimental agent access; experts must review geospatial results",
+            "产品文 2026-10-14；论文 2026-10-11 v1；本站 2026-11-02补录。未获实验账户、调用服务或实测空间分析、许可与费用。报告 1仍未选择，本文不自动发表该长文。": "Product post dated 2026-10-14; paper v1 dated 2026-10-11; backfilled on 2026-11-02. Experimental accounts, services, spatial analysis, licensing and fees were not tested. Report 1 remains unselected; this item does not publish that long-form analysis.",
+            "入口仍需申请": "Access still requires an application",
+            "原报告分别固定Gemini3.1 Pro和Gemini3.8 Flash，逐层比较模型、基本工具、领域工具和完整Agent；不能只把收益归给模型名称或前置规划。": "The report fixes Gemini3.1 Pro and Gemini3.8 Flash separately and compares a model, basic tools, domain tools and the full agent. Gains cannot be attributed only to the model name or upfront planning.",
+            "官方入口接受实验性早期接入申请，Ask Google Earth、Cloud Workflows与Planetary Prediction Engine分别表达兴趣，不保证所有账户已有资格。": "The official portal accepts applications for experimental early access through Ask Google Earth, Cloud Workflows and Planetary Prediction Engine; eligibility for every account is not guaranteed.",
+            "工作流评分不等于最终真值": "Workflow scoring is not final-answer ground truth",
+            "开放题按专家参考工作流评分，不直接保证最终地理结论正确；不同基准评分不相加。本站建议将输出作为专家复核的初稿。": "Open-ended tasks are rated against expert reference workflows, without directly guaranteeing correct final geospatial conclusions; scores from different benchmarks should not be summed. FieldToFit suggests treating outputs as drafts for expert review.",
+            "模型和系统贡献分开": "Separate model and system contributions"
+          },
+          "source_hash": "6399cfc10c0582a3f8dd784a569d853239640b53a6efabea42fbf36eb72e68d6",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-11-02",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-12",
+      "highlight": false,
+      "id": "D-305",
+      "interpretation": [
+        {
+          "locator": "Introduction; A. Inference setup; artifact04",
+          "source_ids": [
+            "report"
+          ],
+          "text": "廉价设备能提供推理计算，不证明相同小模型已能自主复制。",
+          "title": "能装下模型，与能完成复制，是两道门槛"
+        },
+        {
+          "locator": "B. Going viral; Appendix F; artifacts07,08,21,22",
+          "source_ids": [
+            "report"
+          ],
+          "text": "被部署负载与控制模型分离，受控结果给出能力边界。",
+          "title": "端到端成功来自简化条件，不能直接外推到真实入侵"
+        },
+        {
+          "locator": "D. Adaptation and uplift; Appendix A; artifacts10,11,12,17",
+          "source_ids": [
+            "report"
+          ],
+          "text": "继承的是工作区与经验，结果不单调，也不保证强模型顾问有效。",
+          "title": "笔记继承提高部分成功率，不等于权重自行进化"
+        },
+        {
+          "locator": "C. Replication speed; F. Blue-team mitigations; Appendices C–F; artifacts09,13–20",
+          "source_ids": [
+            "report"
+          ],
+          "text": "能加载权重还不够，长任务预算、设备通信与可达性都影响风险。",
+          "title": "上下文和带宽限制实际速度，年底预测仍是外推"
+        }
+      ],
+      "name": "Small-model autonomous replication research",
+      "note": "研究是受控能力评测，不是已发现野外自主复制事件。模型、被部署负载、硬件与入侵条件分别限定；趋势外推不等于时间承诺。本站未复现实验、扫描设备、运行复制程序或下载权重。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-02T14:41:55.103933+00:00",
+        "report_selected_at": "2026-11-02T14:41:55.103933+00:00",
+        "updated_at": "2026-11-02T14:41:55.103933+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-10-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "report",
+          "title": "AI models may be capable of self-replicating without access to a datacenter",
+          "url": "https://www.anthropic.com/research/self-replicating-ai"
+        }
+      ],
+      "state": "published",
+      "summary": "四条结论、三张本站独立重绘，分开模型部署、受控复制、笔记继承和资源预算；简化入侵条件下的成功不等于已发现现实自主传播。",
+      "technical_map": {
+        "caution": "研究是受控能力评测，不是已发现野外自主复制事件。模型、被部署负载、硬件与入侵条件分别限定；趋势外推不等于时间承诺。本站未复现实验、扫描设备、运行复制程序或下载权重。",
+        "change_summary": "首次完整分析：四条结论、三张独立重绘，区分受控能力、资源与趋势预测。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "B. Going viral; Appendix F; artifacts07,08,21,22",
+                "source_id": "report"
+              }
+            ],
+            "from": "resources",
+            "id": "edge-controlled",
+            "label": "不同实验与边界的并列证据",
+            "reason": "Parallel findings, not a causal chain.",
+            "relation": "parallel",
+            "to": "controlled"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "D. Adaptation and uplift; Appendix A; artifacts10,11,12,17",
+                "source_id": "report"
+              }
+            ],
+            "from": "resources",
+            "id": "edge-adaptation",
+            "label": "不同实验与边界的并列证据",
+            "reason": "Parallel findings, not a causal chain.",
+            "relation": "parallel",
+            "to": "adaptation"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "C. Replication speed; F. Blue-team mitigations; Appendices C–F; artifacts09,13–20",
+                "source_id": "report"
+              }
+            ],
+            "from": "resources",
+            "id": "edge-budget",
+            "label": "不同实验与边界的并列证据",
+            "reason": "Parallel findings, not a causal chain.",
+            "relation": "parallel",
+            "to": "budget"
+          }
+        ],
+        "focus": "模型能在陌生设备部署之后，离自主复制还有多远？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Introduction; A. Inference setup; artifact04",
+                "source_id": "report"
+              }
+            ],
+            "id": "resources",
+            "kind": "result",
+            "label": "能装下模型，与能完成复制，是两道门槛",
+            "limitation": "研究是受控能力评测，不是已发现野外自主复制事件。模型、被部署负载、硬件与入侵条件分别限定；趋势外推不等于时间承诺。本站未复现实验、扫描设备、运行复制程序或下载权重。",
+            "mechanism": "廉价设备能提供推理计算，不证明相同小模型已能自主复制。",
+            "metrics": [],
+            "result": "廉价设备能提供推理计算，不证明相同小模型已能自主复制。",
+            "setting": "原文各实验按控制模型、负载、设备与限制分别解释。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "B. Going viral; Appendix F; artifacts07,08,21,22",
+                "source_id": "report"
+              }
+            ],
+            "id": "controlled",
+            "kind": "result",
+            "label": "端到端成功来自简化条件，不能直接外推到真实入侵",
+            "limitation": "研究是受控能力评测，不是已发现野外自主复制事件。模型、被部署负载、硬件与入侵条件分别限定；趋势外推不等于时间承诺。本站未复现实验、扫描设备、运行复制程序或下载权重。",
+            "mechanism": "被部署负载与控制模型分离，受控结果给出能力边界。",
+            "metrics": [],
+            "result": "被部署负载与控制模型分离，受控结果给出能力边界。",
+            "setting": "原文各实验按控制模型、负载、设备与限制分别解释。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "D. Adaptation and uplift; Appendix A; artifacts10,11,12,17",
+                "source_id": "report"
+              }
+            ],
+            "id": "adaptation",
+            "kind": "result",
+            "label": "笔记继承提高部分成功率，不等于权重自行进化",
+            "limitation": "研究是受控能力评测，不是已发现野外自主复制事件。模型、被部署负载、硬件与入侵条件分别限定；趋势外推不等于时间承诺。本站未复现实验、扫描设备、运行复制程序或下载权重。",
+            "mechanism": "继承的是工作区与经验，结果不单调，也不保证强模型顾问有效。",
+            "metrics": [],
+            "result": "继承的是工作区与经验，结果不单调，也不保证强模型顾问有效。",
+            "setting": "原文各实验按控制模型、负载、设备与限制分别解释。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "C. Replication speed; F. Blue-team mitigations; Appendices C–F; artifacts09,13–20",
+                "source_id": "report"
+              }
+            ],
+            "id": "budget",
+            "kind": "result",
+            "label": "上下文和带宽限制实际速度，年底预测仍是外推",
+            "limitation": "研究是受控能力评测，不是已发现野外自主复制事件。模型、被部署负载、硬件与入侵条件分别限定；趋势外推不等于时间承诺。本站未复现实验、扫描设备、运行复制程序或下载权重。",
+            "mechanism": "能加载权重还不够，长任务预算、设备通信与可达性都影响风险。",
+            "metrics": [],
+            "result": "能加载权重还不够，长任务预算、设备通信与可达性都影响风险。",
+            "setting": "原文各实验按控制模型、负载、设备与限制分别解释。",
+            "stage": 3
+          }
+        ],
+        "question": "模型能在陌生设备部署之后，离自主复制还有多远？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：这份研究的价值在于拆开证明责任。载荷能运行、Agent能部署、简化网络能传播、开放环境能持续生存，是四种不同命题。选型时应将模型、控制流程、资源和准入条件共同审查，而不是用某个成功比例推出普遍可复制性。",
+            "来源与修订：William Zhou、Daniel Freeman，Anthropic Frontier Red Team；原文 2026-10-12，无编号博文。本站 2026-11-02在用户选择后补核正文、附录A–F与 16份官方交互图源，三张本站独立重绘。未独立复现实验、下载权重、扫描或接触任何目标设备；交互数据中的观察与作者预测分别表述，网站首次发表时间由正式发布生成。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Anthropic Frontier Red Team的William Zhou与Daniel Freeman于 2026-10-12发表这份原始研究。它把寻找目标、取得执行、建立推理和继续传播分开，重点研究较少被测的推理部署环节。研究者主动布置任务，不能将按提示行动解释为模型自行产生复制意图。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "实体演示将Gemma4-26B-A4B分布到 15台每台约 55美元的Android电视盒，报告速度 0.39 token/s。另一组异构硬件评测让控制模型部署统一的Llama3.1-8B负载；9B模型在 9种硬件中的 8种至少完成过部署。这两组实验的硬件、控制模型与负载不同，不能合成“9B模型已在 15台盒子完成自主传播”。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "硬件图的云端列按并发 8汇总，实体设备列为单流；设备名用于说明部署适应性，不是声称对应芯片存在漏洞。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Introduction; A. Inference setup; artifact04",
+                  "source_id": "report"
+                }
+              ],
+              "id": "resources",
+              "node_ids": [
+                "resources"
+              ],
+              "summary": "廉价设备能提供推理计算，不证明相同小模型已能自主复制。",
+              "title": "能装下模型，与能完成复制，是两道门槛"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "8节点受控实验中各控制模型达到全部节点的运行次数",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据§B及原图 07重绘；柱图展示全部 8节点成功的运行次数／总运行数，不是设备漏洞率或部署成功率。GLM-5.2另一次为 7/8节点。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "B. Autonomous inference setup and replication; artifact07",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov02-selfrep-controlled.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "在隔离的 8节点实验中，研究简化了进入设备的条件，让不同控制模型完成同一种 8B负载的部署。GLM-5.2在 5次试验中 4次达到 8/8节点，另 1次达到 7/8；其他所列小模型在对应试验中没有建立节点推理服务。控制模型本身使用另设的推理服务，实验并非大模型权重在这些小节点上完整自给自足运行。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "附录另把推理部署预先脚本化，在 17节点网络测剩余编排步骤；不少小模型表现更好。这是移除关键难点后的消融，不应将其成绩作为完整自主复制成功率。研究尚未提供一套在真实开放互联网证明可持续、自给推理的失控复制体。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "B. Going viral; Appendix F; artifacts07,08,21,22",
+                  "source_id": "report"
+                }
+              ],
+              "id": "controlled",
+              "node_ids": [
+                "controlled"
+              ],
+              "summary": "被部署负载与控制模型分离，受控结果给出能力边界。",
+              "title": "端到端成功来自简化条件，不能直接外推到真实入侵"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "六代Qwen3.5-9B部署试验的实际分母与成功数",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据§D原图 10重绘；各代样本数不同，点上显示成功数／总数。仅为跨代笔记实验，不画成每代固定提升或参数训练收益。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "D. Learning on the job; artifact10",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov02-selfrep-notes.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Memento在受限时间内更换Agent实例，并继承工作区与简短笔记，试图减少长任务中持续执着于错误假设的失败。推理部署评测每轮上限 1.5小时、总上限 6小时。它没有给模型额外的入侵或推理部署专用能力，效果也依赖任务与基础模型。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "六代Qwen3.5-9B笔记继承实验的成功数依次为 9/20、13/18、11/18、12/19、16/19、11/17，后续比例约 61%至 84%，不是单调增长。模型继承笔记而非在这些轨迹上更新权重；样本量和分母变化也应保留。顾问实验没有观察到稳定显著帮助，不能因此断言所有多Agent协作无效。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "原正文把部分token中位数作近似描述，交互图 17另列精确样本统计。本文不混用两组中位数，也不从相关趋势推出单一因果。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "D. Adaptation and uplift; Appendix A; artifacts10,11,12,17",
+                  "source_id": "report"
+                }
+              ],
+              "id": "adaptation",
+              "node_ids": [
+                "adaptation"
+              ],
+              "summary": "继承的是工作区与经验，结果不单调，也不保证强模型顾问有效。",
+              "title": "笔记继承提高部分成功率，不等于权重自行进化"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "原图中的上下文长度与估计吞吐，两种阶段分别展示",
+                  "attribution": "FieldToFit",
+                  "caption": "本站据附录C交互图 14／15重绘；prefill与decode单独坐标，均为token/s估计。不是实体演示 0.39 token/s的复测，也不是复制周期。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Appendix C. Throughput and memory; artifacts14,15,16",
+                      "source_id": "report"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov02-selfrep-context.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of reported facts; original artwork is not reproduced."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "附录指出上下文缩短虽可节省资源，却可能损害完成长任务的能力。原图在 8k上下文下没有成功，而 32k和 64k结果更好；硬件内存、KV缓存、流水线空转与通信同样影响吞吐。正文约 0.3 token/s的工作负载均速与演示 0.39 token/s采用不同口径，不应挑其中一个充当所有阶段速度。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "作者据ECI能力趋势推测小模型可能在 2026年底达到某个复制能力门槛，但ECI仅是代理指标，大小阈值与测试条件也有限。设备在用量、可从公网访问的数量、真正易受攻击的数量不同；芯片吞吐上限不能视作可被利用的现实算力。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "防御讨论将异常设备间流量、设备维护与隔离处置作为关注方向；文中的历史僵尸网络治理证据不是针对AI复制体的新防御实验。本文不提供传播实现或设备扫描步骤，采用判断应依据真实部署边界与独立风险复核。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "C. Replication speed; F. Blue-team mitigations; Appendices C–F; artifacts09,13–20",
+                  "source_id": "report"
+                }
+              ],
+              "id": "budget",
+              "node_ids": [
+                "budget"
+              ],
+              "summary": "能加载权重还不够，长任务预算、设备通信与可达性都影响风险。",
+              "title": "上下文和带宽限制实际速度，年底预测仍是外推"
+            }
+          ],
+          "title": "模型能在陌生设备部署之后，离自主复制还有多远？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-12",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "report",
+            "substantive_revision": false,
+            "version": "Original research post; unnumbered"
+          }
+        ],
+        "slug": "small-model-replication-capability-and-resource-boundaries",
+        "takeaway": "廉价设备能提供推理计算，不证明相同小模型已能自主复制。"
+      },
+      "title": "模型能在陌生设备部署之后，离自主复制还有多远？",
+      "translations": {
+        "en": {
+          "fields": {
+            "8节点受控实验中各控制模型达到全部节点的运行次数": "Runs reaching all nodes in the controlled 8-node experiment",
+            "Anthropic Frontier Red Team的William Zhou与Daniel Freeman于 2026-10-12发表这份原始研究。它把寻找目标、取得执行、建立推理和继续传播分开，重点研究较少被测的推理部署环节。研究者主动布置任务，不能将按提示行动解释为模型自行产生复制意图。": "William Zhou and Daniel Freeman of Anthropic’s Frontier Red Team published this original study on 2026-10-12. It separates finding targets, gaining execution, establishing inference and continuing propagation, focusing on the less-measured inference-setup stage. Researchers explicitly tasked the agents; following those instructions does not establish a spontaneous desire to replicate.",
+            "FieldToFit分析：这份研究的价值在于拆开证明责任。载荷能运行、Agent能部署、简化网络能传播、开放环境能持续生存，是四种不同命题。选型时应将模型、控制流程、资源和准入条件共同审查，而不是用某个成功比例推出普遍可复制性。": "FieldToFit analysis: the study is valuable for separating claims that require different evidence. A running payload, an agent that deploys it, propagation in a simplified network and persistence in an open environment are distinct propositions. Review the model, control workflow, resources and access conditions together rather than turning one success rate into a universal replication claim.",
+            "Memento在受限时间内更换Agent实例，并继承工作区与简短笔记，试图减少长任务中持续执着于错误假设的失败。推理部署评测每轮上限 1.5小时、总上限 6小时。它没有给模型额外的入侵或推理部署专用能力，效果也依赖任务与基础模型。": "Memento periodically replaces an agent while preserving its workspace and short notes, aiming to reduce fixation on incorrect assumptions during long tasks. Setup evaluations allow 1.5 hours per iteration and 6 hours overall. The harness does not grant new exploit or setup-specific capabilities, and its benefits depend on the task and base model.",
+            "上下文和带宽限制实际速度，年底预测仍是外推": "Context and bandwidth constrain speed; the year-end forecast remains extrapolation",
+            "不同实验与边界的并列证据": "Parallel evidence from distinct experiments and boundaries",
+            "作者据ECI能力趋势推测小模型可能在 2026年底达到某个复制能力门槛，但ECI仅是代理指标，大小阈值与测试条件也有限。设备在用量、可从公网访问的数量、真正易受攻击的数量不同；芯片吞吐上限不能视作可被利用的现实算力。": "The authors extrapolate ECI trends to a possible small-model replication threshold by the end of 2026, but ECI is a proxy and size thresholds and test conditions are limited. Installed devices, internet-reachable devices and actually vulnerable devices are different populations. Chip throughput ceilings do not establish accessible real-world attack compute.",
+            "六代Qwen3.5-9B笔记继承实验的成功数依次为 9/20、13/18、11/18、12/19、16/19、11/17，后续比例约 61%至 84%，不是单调增长。模型继承笔记而非在这些轨迹上更新权重；样本量和分母变化也应保留。顾问实验没有观察到稳定显著帮助，不能因此断言所有多Agent协作无效。": "Across six Qwen3.5-9B generations, successes are 9/20, 13/18, 11/18, 12/19, 16/19 and 11/17, with later proportions around 61% to 84% rather than a monotonic increase. Agents inherit notes rather than update weights on those trajectories, and changing denominators matter. Advisor experiments do not show reliable significant gains; they do not establish that all multi-agent collaboration is ineffective.",
+            "六代Qwen3.5-9B部署试验的实际分母与成功数": "Observed Qwen3.5-9B success counts and denominators across six generations",
+            "原图中的上下文长度与估计吞吐，两种阶段分别展示": "Context length and estimated throughput, separated by inference phase",
+            "原文各实验按控制模型、负载、设备与限制分别解释。": "Interpret each experiment by its controller, payload, hardware and limits.",
+            "原正文把部分token中位数作近似描述，交互图 17另列精确样本统计。本文不混用两组中位数，也不从相关趋势推出单一因果。": "The prose approximates some token medians while artifact 17 lists exact sample statistics. This analysis does not mix those medians or infer a single causal explanation from the trend.",
+            "四条结论、三张本站独立重绘，分开模型部署、受控复制、笔记继承和资源预算；简化入侵条件下的成功不等于已发现现实自主传播。": "Four findings and three independent redraws separate model setup, controlled replication, inherited notes and resource budgets. Success under simplified access does not establish observed autonomous propagation in the wild.",
+            "在隔离的 8节点实验中，研究简化了进入设备的条件，让不同控制模型完成同一种 8B负载的部署。GLM-5.2在 5次试验中 4次达到 8/8节点，另 1次达到 7/8；其他所列小模型在对应试验中没有建立节点推理服务。控制模型本身使用另设的推理服务，实验并非大模型权重在这些小节点上完整自给自足运行。": "In the isolated 8-node experiment, access is simplified and different controllers deploy the same 8B payload. GLM-5.2 reaches 8/8 nodes in 4 of 5 trials and 7/8 in 1 remaining trial; the listed smaller models fail to establish node inference in their respective trials. The controller uses a separate inference service, so the experiment does not show the large controller’s weights running self-sufficiently on these small nodes.",
+            "实体演示将Gemma4-26B-A4B分布到 15台每台约 55美元的Android电视盒，报告速度 0.39 token/s。另一组异构硬件评测让控制模型部署统一的Llama3.1-8B负载；9B模型在 9种硬件中的 8种至少完成过部署。这两组实验的硬件、控制模型与负载不同，不能合成“9B模型已在 15台盒子完成自主传播”。": "A physical demonstration distributes Gemma4-26B-A4B across 15 Android TV boxes costing about USD 55 each, reporting 0.39 token/s. A separate heterogeneous-hardware evaluation asks controller models to deploy the same Llama3.1-8B payload; a 9B model succeeds at setup on 8 of 9 hardware types. Hardware, controllers and payloads differ across these experiments, so they do not jointly establish autonomous propagation by a 9B model across those 15 boxes.",
+            "廉价设备能提供推理计算，不证明相同小模型已能自主复制。": "Cheap devices can provide inference compute without proving that the same small model can replicate autonomously.",
+            "本站据§B及原图 07重绘；柱图展示全部 8节点成功的运行次数／总运行数，不是设备漏洞率或部署成功率。GLM-5.2另一次为 7/8节点。": "Independent redraw from §B and artifact 07. Bars show runs reaching all 8 nodes divided by total runs, not device vulnerability or generic setup rates. The remaining GLM-5.2 run reached 7/8 nodes.",
+            "本站据§D原图 10重绘；各代样本数不同，点上显示成功数／总数。仅为跨代笔记实验，不画成每代固定提升或参数训练收益。": "Independent redraw from §D artifact 10. Labels retain successful and total runs because denominators vary. This is inherited-note evidence, not a fixed per-generation improvement or weight-training gain.",
+            "本站据附录C交互图 14／15重绘；prefill与decode单独坐标，均为token/s估计。不是实体演示 0.39 token/s的复测，也不是复制周期。": "Independent redraw from Appendix C artifacts 14/15. Prefill and decode use separate axes, both in estimated token/s. This is neither a retest of the physical 0.39 token/s demonstration nor a replication-cycle measurement.",
+            "来源与修订：William Zhou、Daniel Freeman，Anthropic Frontier Red Team；原文 2026-10-12，无编号博文。本站 2026-11-02在用户选择后补核正文、附录A–F与 16份官方交互图源，三张本站独立重绘。未独立复现实验、下载权重、扫描或接触任何目标设备；交互数据中的观察与作者预测分别表述，网站首次发表时间由正式发布生成。": "Sources and revisions: William Zhou and Daniel Freeman, Anthropic Frontier Red Team; original unnumbered research post dated 2026-10-12. After owner selection on 2026-11-02, FieldToFit checked the text, Appendices A–F and 16 official interactive figure sources and created three independent redraws. Experiments, weights, scanning and target devices were not reproduced or accessed. Observations and forecasts are distinguished; site-publication time comes from actual publication.",
+            "模型能在陌生设备部署之后，离自主复制还有多远？": "After a model deploys on unfamiliar hardware, how far is autonomous replication?",
+            "研究是受控能力评测，不是已发现野外自主复制事件。模型、被部署负载、硬件与入侵条件分别限定；趋势外推不等于时间承诺。本站未复现实验、扫描设备、运行复制程序或下载权重。": "This is a controlled capability evaluation, not an observed autonomous replication incident in the wild. Controller models, deployed payloads, hardware and access conditions are distinct; extrapolation is not a timeline guarantee. FieldToFit did not reproduce experiments, scan devices, run replication software or download weights.",
+            "硬件图的云端列按并发 8汇总，实体设备列为单流；设备名用于说明部署适应性，不是声称对应芯片存在漏洞。": "The hardware grid aggregates cloud columns at concurrency 8 while physical-device columns use single streams. Hardware names describe deployment adaptation, not vulnerabilities in those chips.",
+            "端到端成功来自简化条件，不能直接外推到真实入侵": "End-to-end success uses simplified conditions, limiting real-world inference",
+            "笔记继承提高部分成功率，不等于权重自行进化": "Inherited notes improve some outcomes without changing model weights",
+            "继承的是工作区与经验，结果不单调，也不保证强模型顾问有效。": "Agents inherit workspaces and experience; gains are non-monotonic and strong-model advice is not guaranteed to help.",
+            "能加载权重还不够，长任务预算、设备通信与可达性都影响风险。": "Loading weights is insufficient: long-task budgets, device communication and reachability also shape risk.",
+            "能装下模型，与能完成复制，是两道门槛": "Fitting a model and completing replication are different thresholds",
+            "被部署负载与控制模型分离，受控结果给出能力边界。": "Separating payload and controller makes the controlled result an evidence boundary.",
+            "防御讨论将异常设备间流量、设备维护与隔离处置作为关注方向；文中的历史僵尸网络治理证据不是针对AI复制体的新防御实验。本文不提供传播实现或设备扫描步骤，采用判断应依据真实部署边界与独立风险复核。": "The defensive discussion highlights unusual inter-device traffic, maintenance and containment. Historical botnet-remediation evidence is not a new mitigation experiment against AI replicators. This analysis provides no propagation implementation or device-scanning procedure; adoption decisions require actual deployment boundaries and independent risk review.",
+            "附录另把推理部署预先脚本化，在 17节点网络测剩余编排步骤；不少小模型表现更好。这是移除关键难点后的消融，不应将其成绩作为完整自主复制成功率。研究尚未提供一套在真实开放互联网证明可持续、自给推理的失控复制体。": "A separate 17-node ablation scripts inference setup and tests the remaining orchestration, where several small models perform better. Removing the key bottleneck makes this an ablation rather than a full autonomous-replication success rate. The study does not demonstrate a self-sustaining, independently served rogue replicator on the open internet.",
+            "附录指出上下文缩短虽可节省资源，却可能损害完成长任务的能力。原图在 8k上下文下没有成功，而 32k和 64k结果更好；硬件内存、KV缓存、流水线空转与通信同样影响吞吐。正文约 0.3 token/s的工作负载均速与演示 0.39 token/s采用不同口径，不应挑其中一个充当所有阶段速度。": "Appendix C shows that shorter context can save resources while reducing long-task competence. The plotted 8k condition has no successes and 32k/64k perform better; memory, KV cache, pipeline idle time and communication also affect throughput. The workload average of about 0.3 token/s and the 0.39 token/s demonstration use different conventions and neither represents every phase.",
+            "首次完整分析：四条结论、三张独立重绘，区分受控能力、资源与趋势预测。": "First full analysis: four findings and three independent redraws distinguish controlled capability, resources and forecasting."
+          },
+          "source_hash": "9886430395727052d46234bec0a66772384ab73394e7807790c5c26ed871e0a8",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
       "checked_at": "2026-11-01",
       "editor": "FieldToFit",
       "event_date": "2026-10-30",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -39,7 +703,7 @@
             "source_id": "claude-fast-mode"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "Opus 4.8快速模式将移除，先查调用配置",
         "limits": [
           {
@@ -105,7 +769,7 @@
         "first_published_at": "2026-11-01T00:29:49.235714+00:00",
         "hot_card_first_published_at": "2026-11-01T00:29:49.235741+00:00",
         "hot_card_selected_at": "2026-11-01T00:29:49.235741+00:00",
-        "updated_at": "2026-11-01T00:29:49.235714+00:00"
+        "updated_at": "2026-11-02T14:40:32.503393+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -164,7 +828,7 @@
             "迁移要核条件": "Check migration conditions",
             "需继续快速模式的应用按官方指引评估Opus 5.5。": "Apps needing fast mode should evaluate Opus 5.5 using the official guide."
           },
-          "source_hash": "ce958f45977f45ddcb1db1274f59ba1bcbb8da203f4498c8cf2a011534d72bdc",
+          "source_hash": "39d7b62d5172528b554d00101981ff7912102b5032e13d59cde72c3273c4679e",
           "state": "reviewed"
         }
       }
@@ -174,7 +838,7 @@
       "checked_at": "2026-11-01",
       "editor": "FieldToFit",
       "event_date": "2026-10-29",
-      "highlight": true,
+      "highlight": false,
       "id": "D-299",
       "interpretation": [
         {
@@ -207,7 +871,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-01T00:29:21.839475+00:00",
-        "updated_at": "2026-11-01T00:29:21.839475+00:00"
+        "updated_at": "2026-11-02T14:41:00.446495+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -248,7 +912,7 @@
             "统一入口带beta条件": "Unified endpoints carry beta requirements",
             "迁移核对分桶、分页、时间顺序、actor及聚合维度。本站建议先以同一日期范围对账，再替换自动预算流程，避免把统计差异当费用上涨。": "Check buckets, pagination, time ordering, actors and grouping dimensions. FieldToFit suggests reconciling one date range before replacing automated budget workflows, rather than treating reporting differences as a price increase."
           },
-          "source_hash": "dd0b1d83fb073962774d150a011e9df9c2ff3464625e4fe5cab07dc2dc8c9347",
+          "source_hash": "854b14c9e361456b333b25dc7fa0e65e3f67490b2df69facf9c30b9a7aa28c30",
           "state": "reviewed"
         }
       }
@@ -258,7 +922,7 @@
       "checked_at": "2026-11-01",
       "editor": "FieldToFit",
       "event_date": "2026-10-28",
-      "highlight": true,
+      "highlight": false,
       "id": "D-300",
       "interpretation": [
         {
@@ -291,7 +955,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-01T00:28:54.209536+00:00",
-        "updated_at": "2026-11-01T00:28:54.209536+00:00"
+        "updated_at": "2026-11-02T14:41:28.171551+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -332,7 +996,7 @@
             "范围限定两个端点": "The change covers two endpoints",
             "请求体大小与模型token窗口、图片和文档规则分别约束输入，不能把 128MB写成上下文能力提升或任意长文件都可处理。": "Request-body size, model token windows, and image/document rules constrain inputs separately. 128MB does not establish better context capability or support for arbitrarily long files."
           },
-          "source_hash": "5dffbb6335a2152241a4736bc4b085beff0472dec95367cb511545d55eb33a33",
+          "source_hash": "4680f0507f86332d3ac6e51013f9a6a2e9835a80e6d9510c90aef3b008952809",
           "state": "reviewed"
         }
       }
@@ -883,7 +1547,7 @@
             "source_id": "cursor"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "Claude Code扩展安全：先核来源，别只看版本号",
         "limits": [
           {
@@ -974,7 +1638,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "5d489edf2323f0027a81aab8f9106485286a1fa9967dd9946ed5c409fbbf968e",
+          "source_hash": "d1c36bc4bcf026b148df664252270b980e94092b25252c5dbb35683d9a6f1ac2",
           "fields": {
             "Claude Code扩展安全：先核来源，别只看版本号": "Claude Code extension security: check origin, not just version",
             "Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313": "Malicious Claude Code extensions on Cursor Marketplace: check origin before versions 2.1.312/2.1.313",
@@ -1985,7 +2649,7 @@
             "source_id": "faq"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Haiku 4.5移出选择器：先分清入口，再继续旧对话",
         "limits": [
           {
@@ -2076,7 +2740,7 @@
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "2eb79b4cf2b34568d8dd9bca4e2933f0a2446452b393a9265b3a69e5279851ee",
+          "source_hash": "aeb82f62dc2d7cd644c4272b94a6abdef7b0b2b0e219742c5a074e8e7e3392e9",
           "fields": {
             "10月 15日预告、10月 29日生效；2026-10-30核对官方帮助全文，未实测。": "Announced 10/15, effective 10/29; official help article checked 2026-10-30. Not tested.",
             "10月 15日预告、10月 29日生效；本站 2026-10-30核对。版本Haiku4.5→5.5，动态帮助文档无编号。未测试账户、续聊、API、费用或代码兼容性。": "Announced 10/15, effective 10/29; checked 2026-10-30. Haiku4.5→5.5; the dynamic help article is unnumbered. Accounts, continued chats, API access, costs and code compatibility were not tested.",
@@ -46454,7 +47118,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-11-01",
+  "reviewed_at": "2026-11-02",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

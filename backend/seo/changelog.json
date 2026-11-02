@@ -1,7 +1,35 @@
 {
-  "version": "1.17.18",
-  "revision": "cc99b4caeb9cafd34e85610c5bbc3ed6134ee623362cd976f938b0e27a88b10d",
+  "version": "1.17.19",
+  "revision": "be1707c364d82f3e7d44b45430300e1e7c8836f5545dad9a2eeba5ce0447e19a",
   "items": [
+    {
+      "version": "1.17.19",
+      "date": "2026-11-02",
+      "deployed_on": "2026-11-02",
+      "copy": {
+        "zh": {
+          "title": "文档核查、地理Agent与自主复制研究",
+          "highlights": [
+            "补录Deep Review与Earth AI实验入口，保留10月14日原公告及账户、输入和数据条件。",
+            "新增小模型自主复制研究完整分析：四条结论、三张独立重绘，分开推理部署、受控复制、笔记继承和资源预算。",
+            "提供Deep Review中英文信息卡并同步Gemini应用事件；正式发表后轮替首页，旧索引、日期、资源及并行内容保留。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Document review, geospatial agents and replication research",
+          "highlights": [
+            "Backfill Deep Review and experimental Earth AI access, retaining the October14 announcements and account, input and data conditions.",
+            "Add a full small-model replication analysis with four findings and three independent redraws separating setup, controlled replication, inherited notes and resources.",
+            "Provide a bilingual Deep Review card and synchronize the Gemini application event; rotate homepage selections only after publication, preserving indexes, dates, assets and concurrent content."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.19"
+    },
     {
       "version": "1.17.18",
       "date": "2026-11-01",
