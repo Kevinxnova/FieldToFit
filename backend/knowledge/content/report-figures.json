@@ -1966,5 +1966,35 @@
     "attribution": "FieldToFit",
     "source_version": "Original research post dated2026-10-12; unnumbered",
     "locator": "Appendix C estimates; artifacts14/15"
+  },
+  "/report-figures/deepseek-superagent-flow.png": {
+    "sha256": "28d3c7de8f0877308b605edd3fd62df3fd1d830fdd0246574f040a053d1bf3fb",
+    "source_urls": [
+      "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/001-domain.md"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanatory diagrams based on MIT-licensed documentation; not original experimental figures.",
+    "attribution": "FieldToFit · DeepSeek Harness Team documentation",
+    "source_version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e",
+    "locator": "Flow; Concepts; Architecture: Engine, Effects, Outbox"
+  },
+  "/report-figures/deepseek-superagent-authority.png": {
+    "sha256": "d2cec132853b3fda22c0f8d2d96267eff6f5500e09293641994df823270e6c17",
+    "source_urls": [
+      "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/002-authorization.md"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanatory diagrams based on MIT-licensed documentation; not original experimental figures.",
+    "attribution": "FieldToFit · DeepSeek Harness Team documentation",
+    "source_version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e",
+    "locator": "Two paths for a Trigger; Admission; Accept mode and rules"
+  },
+  "/report-figures/deepseek-superagent-recovery.png": {
+    "sha256": "593297d57bf4001d208f754d94e160f653b38921800f3c8e37e989deb858ed1e",
+    "source_urls": [
+      "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/007-architecture.md"
+    ],
+    "license": "Graphics © FieldToFit. Independent explanatory diagrams based on MIT-licensed documentation; not original experimental figures.",
+    "attribution": "FieldToFit · DeepSeek Harness Team documentation",
+    "source_version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e",
+    "locator": "Effects; Outbox; src/app/outbox.ts: send, deliver"
   }
 }

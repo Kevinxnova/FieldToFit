@@ -1,5 +1,7 @@
 # 验收证据导航
 
+- [2026-11-03 DeepSeek Super-agent](2026-11-03-deepseek-superagent.md)：五结论、三图、固定原型、核验边界与正式回执。
+
 - [2026-11-02 文档核查与自主复制](2026-11-02-review-earth-and-replication.md)：具体选择、原始研究、双语与真实轮换。
 
 - [2026-11-01 Claude与EmbeddingGemma](2026-11-01-claude-and-embeddinggemma.md)：具体授权、完整分析与实际发表轮换。

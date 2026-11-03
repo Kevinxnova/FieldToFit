@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.20"></a>
+## v1.17.20 · DeepSeek Super-agent原型完整分析 · 2026-11-03
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-03 -->
+<!-- public-title:en: DeepSeek Super-agent prototype analysis -->
+<!-- release-summary:zh:start -->
+- 新增DeepSeek Super-agent原型完整分析：五条编号结论与三张本站说明图，串联任务身份、授权、并发、持久化恢复和采用条件。
+- 固定官方v0.1.0与6337fc8提交，区分可核实实现、设计文章和未实测范围；不引用原站未核实的转载性能数字。
+- 仅正式发表后轮换首页报告四篇；既有报告、信息卡、榜单、档案与历史保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add a full DeepSeek Super-agent prototype analysis with five numbered findings and three explanatory diagrams covering task identity, authorization, concurrency, durable recovery and adoption.
+- Pin official v0.1.0 to commit6337fc8, separating verified implementation, the design essay and untested scope; exclude secondary performance numbers unverified at origin.
+- Rotate the four homepage reports only after actual publication; preserve existing reports, cards, charts, dossiers and history.
+<!-- release-summary:en:end -->
+
+所有者2026-11-02主动指定新增DeepSeek Super Agent报告，按已确认的具体报告整理与发布流程接续；跨日不挪动原选择批次。基于已部署v1.17.19及本地d813c35，自v1.17.0累计仍为兼容内容与静态资源patch，无新模块、主要流程或协议变化，无迁移。GitHub远端写入仍待原先要求的明确批准，仅保存本地历史，不重试推送。[实际核验](docs/validation/2026-11-03-deepseek-superagent.md)。
+
 <a id="v1.17.19"></a>
 ## v1.17.19 · 文档核查、地理Agent与自主复制研究 · 2026-11-02
 <!-- release-tag:unpublished -->

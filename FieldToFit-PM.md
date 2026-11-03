@@ -1,5 +1,7 @@
 # FieldToFit 项目管理总览
 
+2026-11-02所有者主动指定新增DeepSeek Super Agent报告；2026-11-03接续五结论与三图的官方v0.1.0原型分析，固定6337fc8提交并明确原文访问缺口。以v1.17.19为基线，兼容内容／资源patch v1.17.20，已正式发表并完成首轮部署与公开核对，无迁移；最终归档与部署见[验收](docs/validation/2026-11-03-deepseek-superagent.md)，未完成项不冒充通过。
+
 2026-11-02所有者明确选择动态A、B、报告2、卡1全部发布；接续Deep Review、Earth AI实验接入与小模型自主复制研究完整分析，同步Gemini应用事件。基于已上线v1.17.18以兼容内容／资源patch v1.17.19完成正式发表和部署，无迁移；报告1和榜单未扩大。真实预览、发表、轮换和部署见[验收](docs/validation/2026-11-02-review-earth-and-replication.md)。
 
 2026-11-01所有者明确选择动态A–D、报告2、卡1全部发布；接续Claude三项接口／模式事件、Evals只读节点及EmbeddingGemma 2完整分析与同事件迁移卡。基于v1.17.17以兼容内容／资源patch v1.17.18完成正式发表与部署，无迁移；报告1、榜单不扩大，真实预览、发表、轮换及部署见[验收](docs/validation/2026-11-01-claude-and-embeddinggemma.md)。

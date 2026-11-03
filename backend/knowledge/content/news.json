@@ -2,6 +2,649 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "research",
+      "checked_at": "2026-11-03",
+      "editor": "FieldToFit",
+      "event_date": "2026-10-31",
+      "highlight": false,
+      "id": "D-306",
+      "interpretation": [
+        {
+          "locator": "Flow; Concepts: Trigger, Thread, Ticket, Assignment, Subscription",
+          "source_ids": [
+            "domain"
+          ],
+          "text": "一个部署服务一个GitHub仓库；任务、授权、执行会话与消息线程各有自己的生命周期。",
+          "title": "持续协作需要保存任务身份，而不只是保留聊天记录"
+        },
+        {
+          "locator": "Admission; Accept mode and rules; Policy version; Resume and stop",
+          "source_ids": [
+            "authorization"
+          ],
+          "text": "准入先检查来源与身份，再按规则研判；显式请求和推断候选采用不同路径。",
+          "title": "收到上下文不等于获得新授权，主动工作默认先观察"
+        },
+        {
+          "locator": "The Executor; Background work and worker slots; Concurrency; Architecture: Presets and wait limits",
+          "source_ids": [
+            "execution"
+          ],
+          "text": "原型明确区分回合、后台工作和人工交接；并发度是受控资源。",
+          "title": "让长命令退到后台，还要把人的追问放回调度优先级"
+        },
+        {
+          "locator": "Engine; Effects; Outbox; Execution: Failure and recovery",
+          "source_ids": [
+            "architecture"
+          ],
+          "text": "先保存再执行、记录已送与丢弃状态，比单纯重启会话更接近可接续的系统。",
+          "title": "持续运行依赖持久化副作用和回执，仍不能许诺外部动作恰好一次"
+        },
+        {
+          "locator": "Permissions and isolation; Prerequisites; Install; Execution: Merging; README caveat",
+          "source_ids": [
+            "deployment"
+          ],
+          "text": "独立目录隔离工作组织，不隔离操作系统；设计文章和可运行代码也要分别验收。",
+          "title": "研究原型的采用边界，取决于真实账户和执行权限"
+        }
+      ],
+      "name": "dsh-superagent research prototype",
+      "note": "本文分析官方研究原型v0.1.0及固定提交 6337fc8的实现文档，不将其等同于正式产品或设计文章的全部实现。官方设计文章原站访问受限，实验表格未完成原站核验，本文不引用转载性能数字；未安装运行原型、连接GitHub／飞书账户、调用模型或独立复现实验。",
+      "organization": "DeepSeek Harness Team",
+      "publication": {
+        "first_published_at": "2026-11-03T03:41:32.045560+00:00",
+        "report_selected_at": "2026-11-03T03:41:32.045560+00:00",
+        "updated_at": "2026-11-03T03:41:32.045560+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-10-31",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "readme",
+          "title": "dsh-superagent v0.1.0 · README.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/README.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "philosophy",
+          "title": "dsh-superagent v0.1.0 · docs/000-philosophy.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/000-philosophy.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "domain",
+          "title": "dsh-superagent v0.1.0 · docs/001-domain.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/001-domain.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "authorization",
+          "title": "dsh-superagent v0.1.0 · docs/002-authorization.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/002-authorization.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "execution",
+          "title": "dsh-superagent v0.1.0 · docs/003-execution.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/003-execution.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "prompts",
+          "title": "dsh-superagent v0.1.0 · docs/004-prompts.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/004-prompts.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "panel",
+          "title": "dsh-superagent v0.1.0 · docs/005-panel.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/005-panel.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "deployment",
+          "title": "dsh-superagent v0.1.0 · docs/006-deployment.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/006-deployment.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "architecture",
+          "title": "dsh-superagent v0.1.0 · docs/007-architecture.md",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/docs/007-architecture.md"
+        },
+        {
+          "coverage": "link_only",
+          "id": "package",
+          "title": "dsh-superagent v0.1.0 · package.json",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/package.json"
+        },
+        {
+          "coverage": "link_only",
+          "id": "presets",
+          "title": "dsh-superagent v0.1.0 · cordis.patch.yml",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/cordis.patch.yml"
+        },
+        {
+          "coverage": "link_only",
+          "id": "outbox",
+          "title": "dsh-superagent v0.1.0 · src/app/outbox.ts",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/src/app/outbox.ts"
+        },
+        {
+          "coverage": "link_only",
+          "id": "effects",
+          "title": "dsh-superagent v0.1.0 · src/app/effects.ts",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/src/app/effects.ts"
+        },
+        {
+          "coverage": "link_only",
+          "id": "admission",
+          "title": "dsh-superagent v0.1.0 · src/admission.ts",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/src/admission.ts"
+        }
+      ],
+      "state": "published",
+      "summary": "五条结论与三张本站说明图，从官方v0.1.0原型解释持续任务、规则授权、并发调度和失败恢复；区分设计目标、可核实实现与真实执行权限。",
+      "technical_map": {
+        "caution": "本文分析官方研究原型v0.1.0及固定提交 6337fc8的实现文档，不将其等同于正式产品或设计文章的全部实现。官方设计文章原站访问受限，实验表格未完成原站核验，本文不引用转载性能数字；未安装运行原型、连接GitHub／飞书账户、调用模型或独立复现实验。",
+        "change_summary": "首次完整分析官方v0.1.0原型：五条结论与三张本站说明图，明确设计、实现、核验缺口和采用条件。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Admission; Accept mode and rules; Policy version; Resume and stop",
+                "source_id": "authorization"
+              }
+            ],
+            "from": "continuity",
+            "id": "e-authority",
+            "label": "持续协作的并列机制",
+            "reason": "共同解释系统边界，不表示实验因果或方法继承。",
+            "relation": "parallel",
+            "to": "authority"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "The Executor; Background work and worker slots; Concurrency; Architecture: Presets and wait limits",
+                "source_id": "execution"
+              }
+            ],
+            "from": "continuity",
+            "id": "e-concurrency",
+            "label": "持续协作的并列机制",
+            "reason": "共同解释系统边界，不表示实验因果或方法继承。",
+            "relation": "parallel",
+            "to": "concurrency"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Engine; Effects; Outbox; Execution: Failure and recovery",
+                "source_id": "architecture"
+              }
+            ],
+            "from": "continuity",
+            "id": "e-recovery",
+            "label": "持续协作的并列机制",
+            "reason": "共同解释系统边界，不表示实验因果或方法继承。",
+            "relation": "parallel",
+            "to": "recovery"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Permissions and isolation; Prerequisites; Install; Execution: Merging; README caveat",
+                "source_id": "deployment"
+              }
+            ],
+            "from": "continuity",
+            "id": "e-boundary",
+            "label": "持续协作的并列机制",
+            "reason": "共同解释系统边界，不表示实验因果或方法继承。",
+            "relation": "parallel",
+            "to": "boundary"
+          }
+        ],
+        "focus": "DeepSeek Super-agent：怎样让多任务持续推进，又少占用人的注意力？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Flow; Concepts: Trigger, Thread, Ticket, Assignment, Subscription",
+                "source_id": "domain"
+              }
+            ],
+            "id": "continuity",
+            "kind": "method",
+            "label": "持续协作需要保存任务身份，而不只是保留聊天记录",
+            "limitation": "本文分析官方研究原型v0.1.0及固定提交 6337fc8的实现文档，不将其等同于正式产品或设计文章的全部实现。官方设计文章原站访问受限，实验表格未完成原站核验，本文不引用转载性能数字；未安装运行原型、连接GitHub／飞书账户、调用模型或独立复现实验。",
+            "mechanism": "一个部署服务一个GitHub仓库；任务、授权、执行会话与消息线程各有自己的生命周期。",
+            "metrics": [],
+            "result": "一个部署服务一个GitHub仓库；任务、授权、执行会话与消息线程各有自己的生命周期。",
+            "setting": "官方原型v0.1.0，提交 6337fc8；文档与静态源码核对。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Admission; Accept mode and rules; Policy version; Resume and stop",
+                "source_id": "authorization"
+              }
+            ],
+            "id": "authority",
+            "kind": "method",
+            "label": "收到上下文不等于获得新授权，主动工作默认先观察",
+            "limitation": "本文分析官方研究原型v0.1.0及固定提交 6337fc8的实现文档，不将其等同于正式产品或设计文章的全部实现。官方设计文章原站访问受限，实验表格未完成原站核验，本文不引用转载性能数字；未安装运行原型、连接GitHub／飞书账户、调用模型或独立复现实验。",
+            "mechanism": "准入先检查来源与身份，再按规则研判；显式请求和推断候选采用不同路径。",
+            "metrics": [],
+            "result": "准入先检查来源与身份，再按规则研判；显式请求和推断候选采用不同路径。",
+            "setting": "官方原型v0.1.0，提交 6337fc8；文档与静态源码核对。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "The Executor; Background work and worker slots; Concurrency; Architecture: Presets and wait limits",
+                "source_id": "execution"
+              }
+            ],
+            "id": "concurrency",
+            "kind": "method",
+            "label": "让长命令退到后台，还要把人的追问放回调度优先级",
+            "limitation": "本文分析官方研究原型v0.1.0及固定提交 6337fc8的实现文档，不将其等同于正式产品或设计文章的全部实现。官方设计文章原站访问受限，实验表格未完成原站核验，本文不引用转载性能数字；未安装运行原型、连接GitHub／飞书账户、调用模型或独立复现实验。",
+            "mechanism": "原型明确区分回合、后台工作和人工交接；并发度是受控资源。",
+            "metrics": [],
+            "result": "原型明确区分回合、后台工作和人工交接；并发度是受控资源。",
+            "setting": "官方原型v0.1.0，提交 6337fc8；文档与静态源码核对。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Engine; Effects; Outbox; Execution: Failure and recovery",
+                "source_id": "architecture"
+              }
+            ],
+            "id": "recovery",
+            "kind": "method",
+            "label": "持续运行依赖持久化副作用和回执，仍不能许诺外部动作恰好一次",
+            "limitation": "本文分析官方研究原型v0.1.0及固定提交 6337fc8的实现文档，不将其等同于正式产品或设计文章的全部实现。官方设计文章原站访问受限，实验表格未完成原站核验，本文不引用转载性能数字；未安装运行原型、连接GitHub／飞书账户、调用模型或独立复现实验。",
+            "mechanism": "先保存再执行、记录已送与丢弃状态，比单纯重启会话更接近可接续的系统。",
+            "metrics": [],
+            "result": "先保存再执行、记录已送与丢弃状态，比单纯重启会话更接近可接续的系统。",
+            "setting": "官方原型v0.1.0，提交 6337fc8；文档与静态源码核对。",
+            "stage": 3
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Permissions and isolation; Prerequisites; Install; Execution: Merging; README caveat",
+                "source_id": "deployment"
+              }
+            ],
+            "id": "boundary",
+            "kind": "method",
+            "label": "研究原型的采用边界，取决于真实账户和执行权限",
+            "limitation": "本文分析官方研究原型v0.1.0及固定提交 6337fc8的实现文档，不将其等同于正式产品或设计文章的全部实现。官方设计文章原站访问受限，实验表格未完成原站核验，本文不引用转载性能数字；未安装运行原型、连接GitHub／飞书账户、调用模型或独立复现实验。",
+            "mechanism": "独立目录隔离工作组织，不隔离操作系统；设计文章和可运行代码也要分别验收。",
+            "metrics": [],
+            "result": "独立目录隔离工作组织，不隔离操作系统；设计文章和可运行代码也要分别验收。",
+            "setting": "官方原型v0.1.0，提交 6337fc8；文档与静态源码核对。",
+            "stage": 4
+          }
+        ],
+        "question": "DeepSeek Super-agent：怎样让多任务持续推进，又少占用人的注意力？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：最值得借鉴的是把“继续做哪件事、谁允许、何时问人、结果是否送达”变成有持久身份和状态的系统对象。提示词负责判断与表达，代码负责稳定准入、状态变更和回执，两者的责任应分别验收。只有聊天上下文，没有任务授权与恢复记录，很难可靠承接长期工作。",
+            "采用建议：有单仓库工程实验条件的团队可先在独立账户、有限权限和observe模式下评估路由记录，再测试跨线程接续、停止、重启与发送失败。验收应观察误接单、漏接续、重复外部动作、人工打断次数和结果质量；这些是本站建议指标，本文没有测量值。希望直接安装通用个人助手的读者，当前更应先区分Harness本体、研究bundle和文章中的未来设计。",
+            "来源与修订：DeepSeek Harness Team；官方仓库v0.1.0，固定提交 6337fc823ce20251c8de8085948165c81aaa701e，提交时间 2026-10-31 20:05:39北京时间。本站 2026-11-02读取README、编号 000–007文档、package与相关源码，三张本站说明图不含实验数值。设计文章公众号／知乎／X原站访问受限；转载仅作线索，未将其中实验表格认定为已核原始证据。未运行上游软件、接入账户或做性能／安全复现；本站首次发表时间由实际发布流程生成。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "DeepSeek Harness团队在 2026-10-31公开dsh-superagent-prototype，package.json标记 0.1.0与private，代码采用MIT许可。它是运行在DeepSeek Harness中的研究bundle：监听GitHub，可选连接飞书，将获准的请求转成任务，在独立Session和目录中执行，再回到原对话交付。这里的Super-agent是系统组织方式，不是新的模型型号。"
+                },
+                {
+                  "alt": "任务从事件、授权、执行到回执的关系示意",
+                  "attribution": "FieldToFit · DeepSeek Harness Team documentation",
+                  "caption": "本站依据官方领域与架构文档绘制。箭头表示处理或关联关系，不是速度、成功率或因果实验；订阅事件可直达已有任务。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Flow; Concepts; Architecture: Engine, Effects, Outbox",
+                      "source_id": "domain"
+                    }
+                  ],
+                  "image_url": "/report-figures/deepseek-superagent-flow.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanatory diagrams based on MIT-licensed documentation; not original experimental figures."
+                },
+                {
+                  "items": [
+                    "Thread组织同一讨论的事件；Ticket保存一件获准工作的范围和结果；Assignment记录某次执行绑定。任务可以结束、再接续，也可以更换执行分派，不必把业务完成与一次模型回合结束混为一谈。",
+                    "同一事件重复接纳只生成一个Ticket；订阅让后续讨论找到已有任务。跟随相关Thread用于补充上下文，并不自动授予扩大任务的权限。",
+                    "主Session负责高层路由与面向人的交互，Executor判断具体任务、读取原文、实施和验证。应从职责分离理解这套设计，而不是把每次任务都变成需要人工管理的一排窗口。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "“少占注意力”是设计原则，本文没有获得可以量化节省多少人工时间的独立数据。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Flow; Concepts: Trigger, Thread, Ticket, Assignment, Subscription",
+                  "source_id": "domain"
+                }
+              ],
+              "id": "continuity",
+              "node_ids": [
+                "continuity"
+              ],
+              "summary": "一个部署服务一个GitHub仓库；任务、授权、执行会话与消息线程各有自己的生命周期。",
+              "title": "持续协作需要保存任务身份，而不只是保留聊天记录"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "新工作准入与已有任务上下文的两条路径",
+                  "attribution": "FieldToFit · DeepSeek Harness Team documentation",
+                  "caption": "本站依据授权文档绘制。observe只记录推断候选的would accept；显式请求在off／observe／auto三种模式下仍可工作。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Two paths for a Trigger; Admission; Accept mode and rules",
+                      "source_id": "authorization"
+                    }
+                  ],
+                  "image_url": "/report-figures/deepseek-superagent-authority.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanatory diagrams based on MIT-licensed documentation; not original experimental figures."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "默认准入将名单内且明确呼叫Agent的人视为显式请求；未呼叫的名单内消息可成为推断候选；名单外默认忽略。管理员也能在特定接收范围开放“名单外但明确呼叫”的显式请求，因此不能把“只接受白名单”当作所有配置下不变的保证。机器人名单与普通人的准入表分别处理。"
+                },
+                {
+                  "items": [
+                    "off不接纳推断候选；默认observe仍做研判，但只记录“本会接受”，不自动接单；auto才会将命中有效规则的推断候选接成任务。显式请求不受这一主动模式开关阻止。",
+                    "Mandate记录策略版本、范围、依据和身份。订阅可以跳过新工作准入，把讨论送进已有任务；这些消息不自行增加授权。Executor必须将超范围请求交回路由。",
+                    "修改策略会废弃进行中的旧评估、通知受影响的活跃任务，却不立刻撤销所有运行中的授权；已结束任务恢复前才按当前策略重验。需要立即停止具体任务时，应使用明确的停止操作。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "这些机制定义任务能为何启动、接续和停止，不证明模型已免疫提示词注入，也不是操作系统权限隔离。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Admission; Accept mode and rules; Policy version; Resume and stop",
+                  "source_id": "authorization"
+                }
+              ],
+              "id": "authority",
+              "node_ids": [
+                "authority"
+              ],
+              "summary": "准入先检查来源与身份，再按规则研判；显式请求和推断候选采用不同路径。",
+              "title": "收到上下文不等于获得新授权，主动工作默认先观察"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "原型的主Session和Worker预设将超过 5秒的前台shell执行转为后台任务，降低单次等待占住交互处理的机会。主Session还有不长时间等待的守卫；但公开原型仍保留bash、read等工具，“Router在架构上可以不带Bash”不能改写成“这个版本Router没有Bash”。"
+                },
+                {
+                  "items": [
+                    "一个Ticket在启动、准备、活跃回合以及后台工作尚未结束时占用Worker槽。后台任务结束会在同一槽唤醒执行器；回合结束不自动表示业务任务完成。",
+                    "普通并发槽已满时，人的消息或状态请求可使用额外一个槽，且唤醒已有任务优先于启动新任务。CI等输入等待普通槽。这是具体的交互调度规则，不是无限并行。",
+                    "每回合结束后的后台工作最多等待 30分钟；到限会杀掉shell任务并报告等待，子Agent可继续。交给人审核后的服务进程另有例外，不能概括成“所有工作统一 30分钟强制终止”。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "5秒和 30分钟是运行策略参数，不是任务完成时间、响应SLA或实验加速结论。本文没有执行真实负载比较，也不从这些参数推导吞吐提升比例。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "The Executor; Background work and worker slots; Concurrency; Architecture: Presets and wait limits",
+                  "source_id": "execution"
+                }
+              ],
+              "id": "concurrency",
+              "node_ids": [
+                "concurrency"
+              ],
+              "summary": "原型明确区分回合、后台工作和人工交接；并发度是受控资源。",
+              "title": "让长命令退到后台，还要把人的追问放回调度优先级"
+            },
+            {
+              "blocks": [
+                {
+                  "alt": "事务、待执行副作用、外部发送与本地回执的恢复示意",
+                  "attribution": "FieldToFit · DeepSeek Harness Team documentation",
+                  "caption": "本站依据Effects和Outbox源码绘制。外部发送后、本地记账前仍可能发生故障；不将本地消息ID去重解释为跨系统恰好一次。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Effects; Outbox; src/app/outbox.ts: send, deliver",
+                      "source_id": "architecture"
+                    }
+                  ],
+                  "image_url": "/report-figures/deepseek-superagent-recovery.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent explanatory diagrams based on MIT-licensed documentation; not original experimental figures."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Engine在事务中改变任务状态并登记待执行副作用，提交后再由Effects执行。Effects按种类和key保存待办，失败按退避重试；Outbox在同一事务登记消息回执与发送副作用，重复消息ID不会重复入队。来源关闭时消息等待，对话已不存在或不再监听时记为丢弃，并保留记录。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "源码中的deliver先调用外部Source发送，再把本地回执结算为sent。若外部已成功、进程却在本地结算前崩溃，单靠这两个本地记录不能证明外部不会重复收到。因此本文将其称为持久化队列与本地幂等保护，不作端到端恰好一次交付承诺。这是对可见调用顺序的本站分析，并非作者报告了该故障的实测发生率。"
+                },
+                {
+                  "items": [
+                    "重启保留Session、目录、订阅、待送输入与已存工作；恢复说明要求先检查目录、git和GitHub状态再重复外部动作。恢复不是从空白对话重新猜测之前做过什么。",
+                    "failed／blocked任务会暂停自动输入；人的消息或明确重试才能接续相应工作。不同故障各有重试和升级路径，不能写成系统遇到任何错误都会无限自愈。"
+                  ],
+                  "kind": "points"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Engine; Effects; Outbox; Execution: Failure and recovery",
+                  "source_id": "architecture"
+                }
+              ],
+              "id": "recovery",
+              "node_ids": [
+                "recovery"
+              ],
+              "summary": "先保存再执行、记录已送与丢弃状态，比单纯重启会话更接近可接续的系统。",
+              "title": "持续运行依赖持久化副作用和回执，仍不能许诺外部动作恰好一次"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "官方部署文档明确：主Session和Worker都以操作系统用户身份、danger-full-access运行。命令包装器选择默认凭据，却不隔离进程；Worker可用绝对路径执行程序，也能读取操作者主目录。每任务一个目录与上下文隔离不等于容器、虚拟机或权限沙箱。部署文档建议专用OS账户，只放Agent所需凭据。"
+                },
+                {
+                  "items": [
+                    "支持范围是github.com上的单仓库，GitHub Enterprise Server不在支持范围；Agent使用独立GitHub用户账户，不能用GitHub App替代读取通知的身份。飞书是可选接入，需额外账户、机器人权限与CLI配置。",
+                    "文档固定安装示例使用DeepSeek Harness0.2.1-rc.3，package引擎范围为^0.2.1-alpha.2；二者分别是示例固定版本与兼容约束。模型供应商需要另行配置，不从Super-agent名称推定模型、价格或额度。",
+                    "自动合并默认不开启；文档中的审批覆盖head提交、改动少于 200行等条件属于提示词交付要求，宿主没有专门合并判定逻辑。需强制审批时仍应由GitHub分支保护落实。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "README明确公开版本为研究代码，可能有缺陷，与内部版本及设计文章中的实现不相同，部分设计尚未实现。本文未据此宣称云端BYOM、完整Watchdog或所有跨设备设计已经在此原型交付。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Permissions and isolation; Prerequisites; Install; Execution: Merging; README caveat",
+                  "source_id": "deployment"
+                }
+              ],
+              "id": "boundary",
+              "node_ids": [
+                "boundary"
+              ],
+              "summary": "独立目录隔离工作组织，不隔离操作系统；设计文章和可运行代码也要分别验收。",
+              "title": "研究原型的采用边界，取决于真实账户和执行权限"
+            }
+          ],
+          "title": "DeepSeek Super-agent：怎样让多任务持续推进，又少占用人的注意力？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-10-31",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "readme",
+            "substantive_revision": false,
+            "version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e"
+          },
+          {
+            "first_published_at": "2026-10-31",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "domain",
+            "substantive_revision": false,
+            "version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e"
+          },
+          {
+            "first_published_at": "2026-10-31",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "authorization",
+            "substantive_revision": false,
+            "version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e"
+          },
+          {
+            "first_published_at": "2026-10-31",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "execution",
+            "substantive_revision": false,
+            "version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e"
+          },
+          {
+            "first_published_at": "2026-10-31",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "architecture",
+            "substantive_revision": false,
+            "version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e"
+          },
+          {
+            "first_published_at": "2026-10-31",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "deployment",
+            "substantive_revision": false,
+            "version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e"
+          }
+        ],
+        "slug": "deepseek-superagent-continuity-authorization-and-recovery",
+        "takeaway": "把任务接续、授权和回执写入系统，才能减少人替多个会话搬运上下文的负担。"
+      },
+      "title": "DeepSeek Super-agent：怎样让多任务持续推进，又少占用人的注意力？",
+      "translations": {
+        "en": {
+          "fields": {
+            "5秒和 30分钟是运行策略参数，不是任务完成时间、响应SLA或实验加速结论。本文没有执行真实负载比较，也不从这些参数推导吞吐提升比例。": "The 5-second and 30-minute values are runtime policies, not completion times, response SLAs or measured speedups. No workload comparison was run and no throughput gain is inferred from these parameters.",
+            "DeepSeek Harness团队在 2026-10-31公开dsh-superagent-prototype，package.json标记 0.1.0与private，代码采用MIT许可。它是运行在DeepSeek Harness中的研究bundle：监听GitHub，可选连接飞书，将获准的请求转成任务，在独立Session和目录中执行，再回到原对话交付。这里的Super-agent是系统组织方式，不是新的模型型号。": "The DeepSeek Harness team published dsh-superagent-prototype on 2026-10-31. Its package.json declares version 0.1.0 and private, and its code uses the MIT license. This research bundle runs within DeepSeek Harness: it listens to GitHub and optionally Feishu, converts admitted requests into work, executes in separate sessions/directories and delivers in the original conversation. Super-agent here describes system organization rather than a new model.",
+            "DeepSeek Super-agent：怎样让多任务持续推进，又少占用人的注意力？": "DeepSeek Super-agent: how can multiple tasks keep moving with less human attention?",
+            "Engine在事务中改变任务状态并登记待执行副作用，提交后再由Effects执行。Effects按种类和key保存待办，失败按退避重试；Outbox在同一事务登记消息回执与发送副作用，重复消息ID不会重复入队。来源关闭时消息等待，对话已不存在或不再监听时记为丢弃，并保留记录。": "The Engine changes task state and enqueues effects inside a transaction; Effects executes after commit. Effects stores work by kind/key with backoff on failures. Outbox atomically records a receipt and reply effect, avoiding duplicate enqueue for the same message ID. Messages wait while a source is off and are recorded as dropped when a conversation is gone or no longer listened to.",
+            "FieldToFit分析：最值得借鉴的是把“继续做哪件事、谁允许、何时问人、结果是否送达”变成有持久身份和状态的系统对象。提示词负责判断与表达，代码负责稳定准入、状态变更和回执，两者的责任应分别验收。只有聊天上下文，没有任务授权与恢复记录，很难可靠承接长期工作。": "FieldToFit analysis: the transferable contribution is making what continues, who allowed it, when a person is needed and whether a result was delivered into durable identities and state. Prompts handle judgment and communication; code handles stable admission, state changes and receipts. These responsibilities require separate validation. Chat context alone is insufficient evidence of reliable long-running work.",
+            "Mandate记录策略版本、范围、依据和身份。订阅可以跳过新工作准入，把讨论送进已有任务；这些消息不自行增加授权。Executor必须将超范围请求交回路由。": "A Mandate records policy version, scope, basis and source identity. Subscriptions can bypass new-work admission to deliver context to existing work, without themselves adding authority. Executors must hand back requests outside scope.",
+            "README明确公开版本为研究代码，可能有缺陷，与内部版本及设计文章中的实现不相同，部分设计尚未实现。本文未据此宣称云端BYOM、完整Watchdog或所有跨设备设计已经在此原型交付。": "The README labels this research code with possible bugs, distinct from the internal system and essay implementation, with some designs unimplemented. This analysis does not assert that cloud BYOM, a complete Watchdog or every cross-device design ships in the prototype.",
+            "Thread组织同一讨论的事件；Ticket保存一件获准工作的范围和结果；Assignment记录某次执行绑定。任务可以结束、再接续，也可以更换执行分派，不必把业务完成与一次模型回合结束混为一谈。": "A Thread groups discussion events, a Ticket owns authorized scope and outcomes, and an Assignment records an execution binding. Work can end, resume or receive a replacement assignment; business completion is distinct from a model turn ending.",
+            "failed／blocked任务会暂停自动输入；人的消息或明确重试才能接续相应工作。不同故障各有重试和升级路径，不能写成系统遇到任何错误都会无限自愈。": "Failed/blocked work holds automatic inputs and uses human messages or explicit retry for recovery. Different failures have different retry/escalation paths; this is not unlimited self-healing for every error.",
+            "off不接纳推断候选；默认observe仍做研判，但只记录“本会接受”，不自动接单；auto才会将命中有效规则的推断候选接成任务。显式请求不受这一主动模式开关阻止。": "Off admits no inferred candidates. Default observe assesses them but records would accept rather than accepting work. Auto may accept inferred work under enabled matching rules. These proactive modes do not block explicit requests.",
+            "“少占注意力”是设计原则，本文没有获得可以量化节省多少人工时间的独立数据。": "Reducing attention cost is a design principle; this analysis has no independent measurement of human time saved.",
+            "一个Ticket在启动、准备、活跃回合以及后台工作尚未结束时占用Worker槽。后台任务结束会在同一槽唤醒执行器；回合结束不自动表示业务任务完成。": "A Ticket holds a worker slot during launch, preparation, active turns and unfinished background work. Completion wakes its executor in the same slot; a turn ending does not establish task completion.",
+            "一个部署服务一个GitHub仓库；任务、授权、执行会话与消息线程各有自己的生命周期。": "One deployment serves one GitHub repository; tasks, mandates, execution sessions and message threads have distinct lifecycles.",
+            "主Session负责高层路由与面向人的交互，Executor判断具体任务、读取原文、实施和验证。应从职责分离理解这套设计，而不是把每次任务都变成需要人工管理的一排窗口。": "The main session routes at a high level and handles human interaction; the executor assesses the task, reads originals, implements and verifies. The useful separation is responsibility, rather than presenting another row of sessions for a person to manage.",
+            "事务、待执行副作用、外部发送与本地回执的恢复示意": "Recovery diagram across transactions, effects, external sending and receipts",
+            "五条结论与三张本站说明图，从官方v0.1.0原型解释持续任务、规则授权、并发调度和失败恢复；区分设计目标、可核实实现与真实执行权限。": "Five findings and three explanatory diagrams use the official v0.1.0 prototype to explain persistent work, rule-based authority, concurrent scheduling and failure recovery, separating design goals, verified implementation and execution privileges.",
+            "任务从事件、授权、执行到回执的关系示意": "Relationship between events, mandates, execution and receipts",
+            "修改策略会废弃进行中的旧评估、通知受影响的活跃任务，却不立刻撤销所有运行中的授权；已结束任务恢复前才按当前策略重验。需要立即停止具体任务时，应使用明确的停止操作。": "A policy change invalidates stale assessments and informs affected live tasks, but does not immediately revoke every live mandate. Ended work is revalidated before resumption. An immediate halt requires an explicit stop operation.",
+            "先保存再执行、记录已送与丢弃状态，比单纯重启会话更接近可接续的系统。": "Persisting before execution and recording sent/dropped states supports resumable work beyond simply restarting a session.",
+            "准入先检查来源与身份，再按规则研判；显式请求和推断候选采用不同路径。": "Admission checks source and identity before rule-based assessment; explicit requests and inferred candidates use distinct paths.",
+            "原型明确区分回合、后台工作和人工交接；并发度是受控资源。": "The prototype distinguishes turns, background work and human handoff; concurrency is a controlled resource.",
+            "原型的主Session和Worker预设将超过 5秒的前台shell执行转为后台任务，降低单次等待占住交互处理的机会。主Session还有不长时间等待的守卫；但公开原型仍保留bash、read等工具，“Router在架构上可以不带Bash”不能改写成“这个版本Router没有Bash”。": "The prototype main/worker presets move foreground shell execution beyond 5 seconds into background jobs, reducing the chance of one wait occupying interaction processing. The main session also guards against long waits. The public prototype still exposes tools including bash and read; a design where a router could omit Bash does not mean this version lacks it.",
+            "同一事件重复接纳只生成一个Ticket；订阅让后续讨论找到已有任务。跟随相关Thread用于补充上下文，并不自动授予扩大任务的权限。": "Accepting the same Trigger twice creates one Ticket. Subscriptions carry follow-ups to existing work; following a related Thread supplies context without automatically expanding authority.",
+            "官方原型v0.1.0，提交 6337fc8；文档与静态源码核对。": "Official prototype v0.1.0, commit 6337fc8; documentation and static-source review.",
+            "官方部署文档明确：主Session和Worker都以操作系统用户身份、danger-full-access运行。命令包装器选择默认凭据，却不隔离进程；Worker可用绝对路径执行程序，也能读取操作者主目录。每任务一个目录与上下文隔离不等于容器、虚拟机或权限沙箱。部署文档建议专用OS账户，只放Agent所需凭据。": "The deployment guide explicitly says both main and worker presets run as the operator’s OS user with danger-full-access. Command wrappers select credentials but do not isolate processes; a worker can execute an absolute path and read the operator’s home directory. Per-task directories and context isolation are not containers, virtual machines or permission sandboxes. The guide recommends a dedicated OS account containing only agent credentials.",
+            "把任务接续、授权和回执写入系统，才能减少人替多个会话搬运上下文的负担。": "Persisting continuation, authority and receipts can reduce the burden of moving context between sessions.",
+            "持续协作的并列机制": "Complementary mechanisms for continuous work",
+            "持续协作需要保存任务身份，而不只是保留聊天记录": "Continuous collaboration needs persistent task identity as well as chat history",
+            "持续运行依赖持久化副作用和回执，仍不能许诺外部动作恰好一次": "Persistent effects and receipts support recovery without proving exactly-once external actions",
+            "支持范围是github.com上的单仓库，GitHub Enterprise Server不在支持范围；Agent使用独立GitHub用户账户，不能用GitHub App替代读取通知的身份。飞书是可选接入，需额外账户、机器人权限与CLI配置。": "The supported scope is one repository on github.com, without GitHub Enterprise Server. An independent GitHub user account is required for notifications rather than a GitHub App. Optional Feishu adds bot permissions, identities and CLI configuration.",
+            "收到上下文不等于获得新授权，主动工作默认先观察": "Receiving context does not grant new authority; proactive work starts in observation",
+            "文档固定安装示例使用DeepSeek Harness0.2.1-rc.3，package引擎范围为^0.2.1-alpha.2；二者分别是示例固定版本与兼容约束。模型供应商需要另行配置，不从Super-agent名称推定模型、价格或额度。": "The installation example pins DeepSeek Harness0.2.1-rc.3 while the package engine range is^0.2.1-alpha.2: a tested/pinned example and a compatibility constraint are different. A model provider must be configured separately; the Super-agent name does not establish a model, price or quota.",
+            "新工作准入与已有任务上下文的两条路径": "Separate paths for new-work admission and existing-task context",
+            "普通并发槽已满时，人的消息或状态请求可使用额外一个槽，且唤醒已有任务优先于启动新任务。CI等输入等待普通槽。这是具体的交互调度规则，不是无限并行。": "A human message or status request can use one extra slot beyond normal capacity, and waking existing work takes priority over new launches. CI and other inputs wait for normal slots. This is a specific interaction scheduling rule, not unlimited parallelism.",
+            "本文分析官方研究原型v0.1.0及固定提交 6337fc8的实现文档，不将其等同于正式产品或设计文章的全部实现。官方设计文章原站访问受限，实验表格未完成原站核验，本文不引用转载性能数字；未安装运行原型、连接GitHub／飞书账户、调用模型或独立复现实验。": "This analysis covers the official v0.1.0 research prototype and documentation pinned to commit 6337fc8, without equating them with a released product or every design in the essay. Original essay endpoints were access-restricted and experimental tables remain unverified at origin, so secondary performance figures are excluded. FieldToFit did not run the prototype, connect GitHub/Feishu accounts, call models or reproduce experiments.",
+            "本站依据Effects和Outbox源码绘制。外部发送后、本地记账前仍可能发生故障；不将本地消息ID去重解释为跨系统恰好一次。": "FieldToFit diagram from Effects and Outbox source. Failure remains possible after an external send and before local settlement; local message-ID deduplication is not a cross-system exactly-once guarantee.",
+            "本站依据官方领域与架构文档绘制。箭头表示处理或关联关系，不是速度、成功率或因果实验；订阅事件可直达已有任务。": "FieldToFit diagram from official domain and architecture documentation. Arrows indicate processing or association, not speed, success rates or experimental causality; subscribed events can reach existing tasks directly.",
+            "本站依据授权文档绘制。observe只记录推断候选的would accept；显式请求在off／observe／auto三种模式下仍可工作。": "FieldToFit diagram from the authorization document. Observe records would accept for inferred candidates; explicit requests remain possible in off, observe and auto modes.",
+            "来源与修订：DeepSeek Harness Team；官方仓库v0.1.0，固定提交 6337fc823ce20251c8de8085948165c81aaa701e，提交时间 2026-10-31 20:05:39北京时间。本站 2026-11-02读取README、编号 000–007文档、package与相关源码，三张本站说明图不含实验数值。设计文章公众号／知乎／X原站访问受限；转载仅作线索，未将其中实验表格认定为已核原始证据。未运行上游软件、接入账户或做性能／安全复现；本站首次发表时间由实际发布流程生成。": "Sources and revisions: DeepSeek Harness Team; official repository v0.1.0, pinned commit 6337fc823ce20251c8de8085948165c81aaa701e, committed 2026-10-31 at 20:05:39 Beijing time. On 2026-11-02, FieldToFit read README, numbered documents 000–007, package metadata and relevant source. Three explanatory diagrams contain no experimental measurements. Official essay endpoints on WeChat, Zhihu and X were access-restricted; reprints were leads, not verified original experimental tables. Upstream software, account connections and performance/security tests were not run; site publication time is generated by the actual workflow.",
+            "每回合结束后的后台工作最多等待 30分钟；到限会杀掉shell任务并报告等待，子Agent可继续。交给人审核后的服务进程另有例外，不能概括成“所有工作统一 30分钟强制终止”。": "After a turn, background work has at most 30 minutes before shell jobs are killed and waiting is reported; subagents may continue. Servers left for human review have separate exceptions, so this is not a universal 30-minute kill limit for all work.",
+            "源码中的deliver先调用外部Source发送，再把本地回执结算为sent。若外部已成功、进程却在本地结算前崩溃，单靠这两个本地记录不能证明外部不会重复收到。因此本文将其称为持久化队列与本地幂等保护，不作端到端恰好一次交付承诺。这是对可见调用顺序的本站分析，并非作者报告了该故障的实测发生率。": "In deliver, the source is called before the local receipt is settled as sent. If sending succeeds but the process crashes before settlement, these local records alone cannot establish that the external recipient will never see a duplicate. This is therefore described as durable queuing and local idempotence protection, not an end-to-end exactly-once guarantee. The limitation is FieldToFit’s analysis of visible call ordering, not an author-measured failure rate.",
+            "独立目录隔离工作组织，不隔离操作系统；设计文章和可运行代码也要分别验收。": "Separate directories organize work without isolating the OS; essay designs and runnable code require separate verification.",
+            "研究原型的采用边界，取决于真实账户和执行权限": "Adoption boundaries depend on real identities and execution privileges",
+            "自动合并默认不开启；文档中的审批覆盖head提交、改动少于 200行等条件属于提示词交付要求，宿主没有专门合并判定逻辑。需强制审批时仍应由GitHub分支保护落实。": "Auto-merge is off by default. Conditions such as approvals covering the head commit and fewer than 200 changed lines are prompt-level delivery requirements, not dedicated host merge logic. Enforced approvals still require GitHub branch protection.",
+            "让长命令退到后台，还要把人的追问放回调度优先级": "Background commands need scheduling that gives human follow-ups priority",
+            "这些机制定义任务能为何启动、接续和停止，不证明模型已免疫提示词注入，也不是操作系统权限隔离。": "These mechanisms define why work can start, resume or stop; they do not establish prompt-injection immunity or operating-system isolation.",
+            "采用建议：有单仓库工程实验条件的团队可先在独立账户、有限权限和observe模式下评估路由记录，再测试跨线程接续、停止、重启与发送失败。验收应观察误接单、漏接续、重复外部动作、人工打断次数和结果质量；这些是本站建议指标，本文没有测量值。希望直接安装通用个人助手的读者，当前更应先区分Harness本体、研究bundle和文章中的未来设计。": "Adoption guidance: teams with single-repository research conditions can first inspect routing decisions under a dedicated account, limited privileges and observe mode, then test cross-thread continuation, stops, restarts and send failures. Useful criteria include false acceptance, missed continuations, duplicate external actions, interruptions and result quality; these are FieldToFit’s proposed criteria, with no measured values here. Readers seeking a general personal assistant should first distinguish Harness, the research bundle and future essay designs.",
+            "重启保留Session、目录、订阅、待送输入与已存工作；恢复说明要求先检查目录、git和GitHub状态再重复外部动作。恢复不是从空白对话重新猜测之前做过什么。": "Restart preserves sessions, directories, subscriptions, pending inputs and stored work. Recovery notes instruct executors to check the directory, git and GitHub before repeating external actions, rather than guessing from a blank conversation.",
+            "首次完整分析官方v0.1.0原型：五条结论与三张本站说明图，明确设计、实现、核验缺口和采用条件。": "First full analysis of the official v0.1.0 prototype: five findings and three explanatory diagrams separate design, implementation, verification gaps and adoption conditions.",
+            "默认准入将名单内且明确呼叫Agent的人视为显式请求；未呼叫的名单内消息可成为推断候选；名单外默认忽略。管理员也能在特定接收范围开放“名单外但明确呼叫”的显式请求，因此不能把“只接受白名单”当作所有配置下不变的保证。机器人名单与普通人的准入表分别处理。": "Default admission treats an allowed person addressing the agent as explicit, an allowed person not addressing it as potentially inferred, and unlisted people as ignored. An operator can open explicit requests to unlisted people in a receiving scope, so allowlist-only operation is not invariant under all configurations. Bot admission is separate from the human admission table."
+          },
+          "source_hash": "7df4437b98ebdfa255f0d8d78f8628745da3731c2b8bfb0d64eedf1555137a88",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "tool",
       "checked_at": "2026-11-02",
       "editor": "FieldToFit",
@@ -47118,7 +47761,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-11-02",
+  "reviewed_at": "2026-11-03",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

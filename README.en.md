@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.19](CHANGELOG.md#v1.17.19)** · Release tag not yet published
+**Current source version: [v1.17.20](CHANGELOG.md#v1.17.20)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Backfill Deep Review and experimental Earth AI access, retaining the October14 announcements and account, input and data conditions.
-- Add a full small-model replication analysis with four findings and three independent redraws separating setup, controlled replication, inherited notes and resources.
-- Provide a bilingual Deep Review card and synchronize the Gemini application event; rotate homepage selections only after publication, preserving indexes, dates, assets and concurrent content.
+- Add a full DeepSeek Super-agent prototype analysis with five numbered findings and three explanatory diagrams covering task identity, authorization, concurrency, durable recovery and adoption.
+- Pin official v0.1.0 to commit6337fc8, separating verified implementation, the design essay and untested scope; exclude secondary performance numbers unverified at origin.
+- Rotate the four homepage reports only after actual publication; preserve existing reports, cards, charts, dossiers and history.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).
