@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.21"></a>
+## v1.17.21 · 已选研究与工具条件维护 · 2026-11-04
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-04 -->
+<!-- public-title:en: Two safety studies and Search / Fetch correction -->
+<!-- release-summary:zh:start -->
+- 发布两篇已选安全研究完整分析，每篇四条结论、同号展开与三张本站说明图，保留实验条件、月级日期和未复现边界。
+- 完成Search／Fetch原卡更正与Claude Code 2.1.317同事件中英卡；旧图下载恢复，首页按真实发表轮替，历史索引继续保留。
+- 动态与对应档案已同步；DeepSeek Super-agent完整报告复用原入口，原日期、旧报告、模型榜单与未选材料保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish two selected safety studies with four findings, matching arguments and three original explanatory diagrams each, retaining methods, month-level dates and reproduction limits.
+- Complete the original Search / Fetch card correction and the bilingual Claude Code 2.1.317 event card; restore image downloads and rotate the homepage only on actual publication, retaining full indexes.
+- Synchronize events and corresponding dossiers; reuse the full DeepSeek Super-agent report without changing original dates, old reports, model charts or unselected material.
+<!-- release-summary:en:end -->
+
+所有者明确选择11月3日A、报告1、报告2（两篇均发布）、卡1。基于v1.17.20及2c51218，以既有内容／资源patch接续；自v1.17.0累计无新完整模块、主要流程、协议或数据库迁移。全量数据库导出首次遭自动审批拒绝；11月4日用户在具体备份说明后回复“全部更新并部署”，据此完成88表本机私密全库备份与独立完整性检查，生产数据库未修改。接续已批准内容发布与部署，GitHub远端写入原阻塞仍独立保留。[实际验收](docs/validation/2026-11-03-two-safety-studies.md)。
+
 <a id="v1.17.20"></a>
 ## v1.17.20 · DeepSeek Super-agent原型完整分析 · 2026-11-03
 <!-- release-tag:unpublished -->

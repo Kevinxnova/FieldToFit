@@ -8615,7 +8615,7 @@
               "Search / Fetch",
               "2026-10-17",
               "分别提供结构化搜索与单页 Markdown，每 1,000 次成功请求 0.75 美元。",
-              "指定 DeepSeek 服务端工具路径于北京时间 2026-11-01 00:00 起计费；两接口各按账户 5 QPS。",
+              "当前Search 100 QPS、Fetch 25 QPS，各按账户独立限流；两个接口各每 1,000次成功请求 0.75美元。原定 2026-11-01北京时间起计费已过，文档仍有免费措辞，实际扣费待核；Fetch另受域名与访问规则限制。2026-11-03核对，限流修改日未知，未实测。",
               "[D-188](https://fieldtofit.top/news/D-188)"
             ]
           ]
@@ -8693,7 +8693,7 @@
           "text": "相关阅读：[DeepInfer的推理降本路线：计算、缓存与集群调度如何协同](https://fieldtofit.top/maps/deepinfer-inference-efficiency)。分开说明模型结构、缓存与调度收益及离线基准条件；保留现有型号和价格记录。"
         }
       ],
-      "checked_at": "2026-10-21",
+      "checked_at": "2026-11-03",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M06",
       "interpretation": [
@@ -8898,8 +8898,6 @@
       "state": "published",
       "translations": {
         "en": {
-          "state": "reviewed",
-          "source_hash": "e2bb85a4a8d640bb9503670e71f85dc87948204755e6d85fe56b408889d72a05",
           "fields": {
             "2026-09-10 官方 API 发布；2026-09-14 核对": "2026-09-10 Official API Release; 2026-09-14 Check",
             "2026-09-14 核对：继续提供 API": "2026-09-14 Check: Continue to provide API",
@@ -8944,8 +8942,8 @@
             "已保留核对过的官方出处；尚未取得在本站公开分发正文的依据，因此只提供外部链接，不宣称可离线阅读全文。": "The official source that has been checked has been retained; the basis for public distribution of the text on FieldToFit has not been obtained, so only external links are provided, and the full text can be read offline is not claimed.",
             "已核更新与采用边界": "Verified updates and adoption boundaries",
             "开源范围提供DeepSeek-V4.1-Flash离线推理，默认检查点为DeepSeek-V4.1-Flash-1017。它关联已有模型事件D-187，不是该模型再次发布，也不改变API报价。": "The open release provides offline DeepSeek-V4.1-Flash inference, defaulting to DeepSeek-V4.1-Flash-1017; it relates to existing model event D-187, rather than relaunching the model or changing API prices.",
+            "当前Search 100 QPS、Fetch 25 QPS，各按账户独立限流；两个接口各每 1,000次成功请求 0.75美元。原定 2026-11-01北京时间起计费已过，文档仍有免费措辞，实际扣费待核；Fetch另受域名与访问规则限制。2026-11-03核对，限流修改日未知，未实测。": "Current limits: Search 100 QPS and Fetch 25 QPS, independently per account; each endpoint USD 0.75 per 1,000 successful requests. The scheduled billing start of 2026-11-01 Beijing time has passed, while free wording remains and actual charges are unverified. Fetch also depends on domain and access rules. Checked 2026-11-03; limit-change date unknown; not live-tested.",
             "性能复现和许可缺口": "Performance reproduce and license notch",
-            "指定 DeepSeek 服务端工具路径于北京时间 2026-11-01 00:00 起计费；两接口各按账户 5 QPS。": "Specified DeepSeek server-side tool paths start billing at 2026-11-01 00:00 Beijing time; each interface allows 5 QPS per account.",
             "新增与采用边界": "New information and adoption boundaries",
             "日期与状态": "Date and status",
             "替代此前 preview": "Replace the previous preview",
@@ -8972,7 +8970,9 @@
             "采用条件与限制": "Adoption conditions and limits",
             "采用条件：验证硬件集中在Ascend950系列，并依赖相应CANN、torch_npu和网络环境，不能推成所有昇腾卡即装即用。": "Adoption conditions: validation focuses on the Ascend950 series, with corresponding CANN, torch_npu and network requirements. This does not imply plug-and-play support for every Ascend card.",
             "验证硬件与运行环境": "Verify the hardware and operating environment"
-          }
+          },
+          "source_hash": "0c78922e21bc1767979e2f2dbd9bcbb8d480bcba4e28bafcdedd8e4b7fd69b05",
+          "state": "reviewed"
         }
       },
       "type": "model"
@@ -10963,6 +10963,21 @@
       "blocks": [
         {
           "columns": [
+            "本次补录版本",
+            "原始日期",
+            "变化与条件"
+          ],
+          "kind": "table",
+          "rows": [
+            [
+              "2.1.317",
+              "2026-11-03",
+              "2.1.317：增加云定时连接器提示、账户邮箱外发确认与Agent SDK回调onFailure: \"block\"选项；按入口配置，未实测。"
+            ]
+          ]
+        },
+        {
+          "columns": [
             "本期已核实事件",
             "事件日期",
             "变化与条件"
@@ -11229,7 +11244,6 @@
           "text": "本站于2026-10-07从此前已审v2.1.289补充上述版本。以下保留历史材料及其当时适用条件。"
         },
         {
-          "kind": "table",
           "columns": [
             "版本 / 材料",
             "原始时间口径",
@@ -11237,6 +11251,7 @@
             "采用入口",
             "限制与验证"
           ],
+          "kind": "table",
           "rows": [
             [
               "v2.1.289",
@@ -11256,13 +11271,13 @@
           "text": "以上为2026-10-05本次核对；以下保留旧版本资料，不代表旧版已包含本次修复。"
         },
         {
-          "kind": "table",
           "columns": [
             "具体入口",
             "执行与扩展",
             "本次展示的材料",
             "版本口径"
           ],
+          "kind": "table",
           "rows": [
             [
               "Claude Code CLI 及相关客户端入口",
@@ -11292,7 +11307,7 @@
           "text": "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "checked_at": "2026-10-21",
+      "checked_at": "2026-11-04",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A02",
       "interpretation": [
@@ -11675,10 +11690,9 @@
       "state": "published",
       "translations": {
         "en": {
-          "state": "reviewed",
-          "source_hash": "efffbdad6f3bb1743e0a0c36abc18e81acf82693b4d4a8525b0d7077c5122369",
           "fields": {
             "2.1.309 与 2.1.310 修复沙箱、MCP 配置、特定 Windows Hook 和 VS Code 审批交互问题。各项适用条件不同，依赖自动执行的团队应在自己的环境验证升级效果。": "Versions 2.1.309 and 2.1.310 address sandboxing, MCP configuration, specific Windows hooks and VS Code approval interactions. Conditions differ; teams relying on automation should verify upgrades in their own environments.",
+            "2.1.317：增加云定时连接器提示、账户邮箱外发确认与Agent SDK回调onFailure: \"block\"选项；按入口配置，未实测。": "2.1.317 adds cloud scheduled-task connector warnings, account-email egress confirmation and the Agent SDK callback option onFailure: \"block\". Entry-point configuration applies; not runtime-tested.",
             "2026-09-11 读取到的 CHANGELOG 顶部；未核首发日": "The top of the CHANGELOG read by 2026-09-11; unchecked release date",
             "2026-10-09 19:28:59 UTC（北京时间10月10日03:28）": "2026-10-09 19:28:59 UTC (Beijing Time 10/10 03:28)",
             "2026-10-10版本补充：v2.1.296": "2026-10-10 Version Supplement: v2.1.296",
@@ -11702,6 +11716,7 @@
             "Claude Code 版本，不是 Claude 模型版本": "Claude Code version, not Claude model version",
             "Claude Code与Python Agent SDK分别于北京时间 10 月 15 日 02:24、03:25 发布。本次重点是会话恢复、MCP与执行边界维护，不是模型能力更新。": "Claude Code and Python Agent SDK were released at 02:24 and 03:25 Beijing time on 10/15. The changes maintain session recovery, MCP and execution boundaries rather than model capabilities.",
             "Claude Code：补齐复合命令、IDE 文件与插件的权限修复 · 官方来源 1": "Claude Code: Complete the permission repair of composite commands, IDE files and plug-ins · Official source 1",
+            "Cursor确认Windows／macOS扩展市场两版包被恶意修改，并非Anthropic开发。市场和攻击端已处置，但卸载扩展未必清除主机持久化；不能泛化至同号官方CLI。": "Cursor confirms two Windows/macOS marketplace extension packages were maliciously modified, not developed by Anthropic. Marketplace and attacker infrastructure were addressed, but uninstalling may leave host persistence; do not generalize to official CLI releases with the same numbers.",
             "Haiku与长任务": "Haiku and long tasks",
             "IDE与插件行为": "IDE and plug-in behavior",
             "MCP与后台消息": "MCP and background messages",
@@ -11715,6 +11730,7 @@
             "[Claude Code 2.1.312：组织策略、文件操作与技能发现修复](https://fieldtofit.top/news/D-269)": "[Claude Code 2.1.312: fixes for organization policy, file operations and skill discovery](https://fieldtofit.top/news/D-269)",
             "[Claude Code 2.1.314：工作目录写入开关、策略与恢复边界修复](https://fieldtofit.top/news/D-282)": "[Claude Code 2.1.314: working-directory write controls, policy and recovery fixes](https://fieldtofit.top/news/D-282)",
             "[Claude Code 更新至 2.1.310：复核执行权限与无人值守行为](https://fieldtofit.top/news/D-255)": "[Claude Code 2.1.310: review execution permissions and unattended behavior](https://fieldtofit.top/news/D-255)",
+            "[Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313](https://fieldtofit.top/news/D-292)": "[Malicious Claude Code extensions on Cursor Marketplace: check origin before versions 2.1.312/2.1.313](https://fieldtofit.top/news/D-292)",
             "[官方发布](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)": "[Official Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.296)",
             "[官方发布记录](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)": "[Official Release Record](https://github.com/anthropics/claude-code/releases/tag/v2.1.292)",
             "[官方材料](https://github.com/anthropics/claude-code/releases/tag/v2.1.289)": "[Official Materials](https://github.com/anthropics/claude-code/releases/tag/v2.1.289)",
@@ -11755,6 +11771,7 @@
             "协议和读取保护": "Protocol and read protection",
             "压缩与恢复": "Compaction and recovery",
             "原创解读与来源链接": "Original commentary and source links",
+            "原始日期": "Original date",
             "原始日期口径": "Original date measurement basis",
             "原始时间口径": "Original time measurement basis",
             "原文日期": "Source text date",
@@ -11802,10 +11819,12 @@
             "本期增补核对日 2026-10-26；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-26; the full-version daily dossier review is incomplete. Existing models, prices, history and the dossier-wide check date are retained.",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。": "Related events checked 2026-10-30; models, source dates, prices and history retained. Full daily checks of every source remain incomplete.",
+            "本期对应事件于 2026-10-31核对；保留型号、价格、原日期与历史。全入口日核验仍未完成。": "Related events checked 2026-10-31; models, prices, source dates and history retained. Full daily checks of every source remain incomplete.",
             "本期已核实事件": "Current verified event",
             "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。": "This adds only the approved event, preserving original versions, prices, conditions and history below. It does not imply a complete daily audit of every official source.",
             "本次展示的材料": "The materials on display this time",
             "本次用途与变化": "The purpose and change of this time",
+            "本次补录版本": "Version added",
             "本站于2026-10-07从此前已审v2.1.289补充上述版本。以下保留历史材料及其当时适用条件。": "On 2026-10-07, FieldToFit added these versions after the previously reviewed v2.1.289. Historical material below retains the conditions that applied at the time.",
             "本站未复现修复；保留v2.1.292历史说明": "FieldToFit has not been reproduced; keep v2.1.292 history description",
             "本页从已审v2.1.289补充至v2.1.292，保留旧记录。官方CHANGELOG正文再分发许可未确认，仅提供链接与本站解读。": "This page is added from the reviewed v2.1.289 to v2.1.292, and keeps the old record. The official CHANGELOG text redistribution license has not been confirmed, and only the link and FieldToFit interpretation are provided.",
@@ -11841,11 +11860,10 @@
             "采用边界": "Adopt the boundary",
             "限制与验证": "Restriction and verification",
             "验证与采用边界": "Verification and adoption of boundaries",
-            "验证范围": "Scope of verification",
-            "Cursor确认Windows／macOS扩展市场两版包被恶意修改，并非Anthropic开发。市场和攻击端已处置，但卸载扩展未必清除主机持久化；不能泛化至同号官方CLI。": "Cursor confirms two Windows/macOS marketplace extension packages were maliciously modified, not developed by Anthropic. Marketplace and attacker infrastructure were addressed, but uninstalling may leave host persistence; do not generalize to official CLI releases with the same numbers.",
-            "[Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313](https://fieldtofit.top/news/D-292)": "[Malicious Claude Code extensions on Cursor Marketplace: check origin before versions 2.1.312/2.1.313](https://fieldtofit.top/news/D-292)",
-            "本期对应事件于 2026-10-31核对；保留型号、价格、原日期与历史。全入口日核验仍未完成。": "Related events checked 2026-10-31; models, prices, source dates and history retained. Full daily checks of every source remain incomplete."
-          }
+            "验证范围": "Scope of verification"
+          },
+          "source_hash": "0ed759d45bc56f50a9ffba83f3a4678385c643b65b52515392a0a57a1c135e31",
+          "state": "reviewed"
         }
       },
       "type": "agent"
@@ -13429,7 +13447,7 @@
               "Search / Fetch; v0.2.1-rc.1+",
               "2026-10-17",
               "官方建议新模型配合 Harness v0.2.1-rc.1 或更高，并补入联网工具采用条件。",
-              "完整发行包未核；优惠只适用于指定 DeepSeek API 服务端工具路径，不扩展到模型推理。",
+              "当前Search 100 QPS、Fetch 25 QPS，各按账户独立限流；两个接口各每 1,000次成功请求 0.75美元。原定 2026-11-01北京时间起计费已过，文档仍有免费措辞，实际扣费待核；Fetch另受域名与访问规则限制。2026-11-03核对，限流修改日未知，未实测。",
               "[D-188](https://fieldtofit.top/news/D-188)"
             ]
           ]
@@ -13494,7 +13512,7 @@
           "text": "依据：[官方介绍](https://www.deepseek.com/harness/)、[发布记录](https://github.com/deepseek-ai/deepseek-harness/releases)。关联：[CW-M06 DeepSeek 模型](/for-you#watch-cw-m06)。模型与 Harness 独立建档，不将开发者预览写成生产验收结果。"
         }
       ],
-      "checked_at": "2026-10-18",
+      "checked_at": "2026-11-03",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-H01",
       "interpretation": [
@@ -13659,8 +13677,6 @@
       "state": "published",
       "translations": {
         "en": {
-          "state": "reviewed",
-          "source_hash": "3f181692a4a72365670d6f98abfa93e6479c1944ff305fddd09b23641ee7f832",
           "fields": {
             "DeepSeek Harness新增从插件管理页进入创造模式的入口，以及实验性的Claude Code Mods兼容层。": "DeepSeek Harness adds an entrance to the creation mode from the plug-in management page, and the experimental Claude Code Mods compatibility layer.",
             "DeepSeek Harness：插件创建入口与实验性 Mods 兼容，继续标注预览版 · 官方来源 1": "DeepSeek Harness: Plug-in creation entrance is compatible with experimental Mods, continue to mark the preview version · Official source 1",
@@ -13685,7 +13701,6 @@
             "同一事件流支撑查看与恢复。": "The same event stream supports viewing and recovery.",
             "固定版本完整文件；原作者、许可与链接保留": "pinned version complete file; original author, license and link retention",
             "基于 Cordis 插件系统的 Agent 运行项目，模型、工具、会话和执行循环都可通过插件组合。": "An agent runtime based on the Cordis plugin system. Plugins compose models, tools, sessions and execution loops.",
-            "完整发行包未核；优惠只适用于指定 DeepSeek API 服务端工具路径，不扩展到模型推理。": "The full release package is not verified; the offer applies only to specified DeepSeek API server-side tool paths, not model inference.",
             "官方介绍": "Official introduction",
             "官方发布和采用材料": "Official release and adoption of materials",
             "官方建议新模型配合 Harness v0.2.1-rc.1 或更高，并补入联网工具采用条件。": "The author recommends Harness v0.2.1-rc.1 or later for the new model; web-tool adoption conditions are added.",
@@ -13694,6 +13709,7 @@
             "已核实版本": "Verified version",
             "已核更新与采用边界": "Verified updates and adoption boundaries",
             "开发者预览，不标为稳定正式版": "Developer preview, not marked as stable official version",
+            "当前Search 100 QPS、Fetch 25 QPS，各按账户独立限流；两个接口各每 1,000次成功请求 0.75美元。原定 2026-11-01北京时间起计费已过，文档仍有免费措辞，实际扣费待核；Fetch另受域名与访问规则限制。2026-11-03核对，限流修改日未知，未实测。": "Current limits: Search 100 QPS and Fetch 25 QPS, independently per account; each endpoint USD 0.75 per 1,000 successful requests. The scheduled billing start of 2026-11-01 Beijing time has passed, while free wording remains and actual charges are unverified. Fetch also depends on domain and access rules. Checked 2026-11-03; limit-change date unknown; not live-tested.",
             "当前阶段": "The current stage",
             "插件创建与部署入口": "Plug-in creation and deployment entrance",
             "本次已核变化": "Verified change",
@@ -13713,7 +13729,9 @@
             "限制与验证": "Restriction and verification",
             "预发布记录包含反馈体验与文件卡片调整；核心插件机制见项目说明，不冒充此次补丁新增": "Prerelease notes include feedback-interface and file-card changes. The core plugin mechanism belongs to the project description; it was not newly added by this patch.",
             "预览与迁移条件": "Preview and migration conditions"
-          }
+          },
+          "source_hash": "dc605f289ad45f2989ee2281268c417d43303154409ca35afc1c3e1ae64f17d3",
+          "state": "reviewed"
         }
       },
       "type": "harness"

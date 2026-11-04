@@ -1996,5 +1996,65 @@
     "attribution": "FieldToFit · DeepSeek Harness Team documentation",
     "source_version": "v0.1.0; commit 6337fc823ce20251c8de8085948165c81aaa701e",
     "locator": "Effects; Outbox; src/app/outbox.ts: send, deliver"
+  },
+  "/report-figures/nov03-monitor-threats.png": {
+    "sha256": "2b4734e15910a8ca3df987f3be78f59420363e41cc6d7f79dc187f63a59146a4",
+    "source_urls": [
+      "https://alignment.anthropic.com/2026/red-teaming-auto-mode/"
+    ],
+    "license": "FieldToFit original explanatory diagram; based on the cited primary research post. Not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · Anthropic Alignment Science Blog",
+    "source_version": "Research post; September 2026 evaluation snapshot",
+    "locator": "The attacks; Monitor Holes; Monitor Injection; Multi-context Attacks"
+  },
+  "/report-figures/nov03-monitor-evaluation.png": {
+    "sha256": "32e6175fee7627baf76b6cf41a5b9cba95f9960c21624a71121c853b0aafcca0",
+    "source_urls": [
+      "https://alignment.anthropic.com/2026/red-teaming-auto-mode/"
+    ],
+    "license": "FieldToFit original explanatory diagram; based on the cited primary research post. Not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · Anthropic Alignment Science Blog",
+    "source_version": "Research post; September 2026 evaluation snapshot",
+    "locator": "Methods; Results heatmap caption"
+  },
+  "/report-figures/nov03-monitor-tradeoff.png": {
+    "sha256": "4661a68843a5619ca88bf7c065067a8b3e856f129bc4a2662fea51cf87fe3b7a",
+    "source_urls": [
+      "https://alignment.anthropic.com/2026/red-teaming-auto-mode/"
+    ],
+    "license": "FieldToFit original explanatory diagram; based on the cited primary research post. Not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · Anthropic Alignment Science Blog",
+    "source_version": "Research post; September 2026 evaluation snapshot",
+    "locator": "Execute-then-write Attacks; Monitors that see and gather more context; Cost"
+  },
+  "/report-figures/nov03-em-pipeline.png": {
+    "sha256": "685f5038ef78abf97f41d629415848b97f8d0576bb720605488d3622a893177f",
+    "source_urls": [
+      "https://alignment.anthropic.com/2026/automated-em-search/"
+    ],
+    "license": "FieldToFit original explanatory diagram; based on the cited primary research post. Not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · Anthropic Alignment Science Blog",
+    "source_version": "Original research post; month precision only",
+    "locator": "Setup; Monitor; Evaluations; Cheat detection"
+  },
+  "/report-figures/nov03-em-screening.png": {
+    "sha256": "120d368973c31b682a2a46e2be4de08407e1d285658c04297e06f232ee676134",
+    "source_urls": [
+      "https://alignment.anthropic.com/2026/automated-em-search/"
+    ],
+    "license": "FieldToFit original explanatory diagram; based on the cited primary research post. Not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · Anthropic Alignment Science Blog",
+    "source_version": "Original research post; month precision only",
+    "locator": "Monitor; Results; Figure5 caption"
+  },
+  "/report-figures/nov03-em-generalization.png": {
+    "sha256": "0fbb566ed1cbfc50fbd45ab50a7bbf573c697ec051a7ad0f2170da5d5ce14148",
+    "source_urls": [
+      "https://alignment.anthropic.com/2026/automated-em-search/"
+    ],
+    "license": "FieldToFit original explanatory diagram; based on the cited primary research post. Not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · Anthropic Alignment Science Blog",
+    "source_version": "Original research post; month precision only",
+    "locator": "Evaluations; Appendix: Reproduction on other models; Figures6–7"
   }
 }

@@ -1,34 +1,34 @@
 {
-  "version": "1.17.20",
-  "revision": "443b972b62c5295d61de07616c4901d265f0bfb86d57ad72f0deb4fc934a6c27",
+  "version": "1.17.21",
+  "revision": "7e782f557a48f9bf8f5ec590794d703d017236648b5fd3e5a880f8cd2aa0c617",
   "items": [
     {
-      "version": "1.17.20",
-      "date": "2026-11-03",
-      "deployed_on": "2026-11-03",
+      "version": "1.17.21",
+      "date": "2026-11-04",
+      "deployed_on": "2026-11-04",
       "copy": {
         "zh": {
-          "title": "DeepSeek Super-agent原型完整分析",
+          "title": "已选研究与工具条件维护",
           "highlights": [
-            "新增DeepSeek Super-agent原型完整分析：五条编号结论与三张本站说明图，串联任务身份、授权、并发、持久化恢复和采用条件。",
-            "固定官方v0.1.0与6337fc8提交，区分可核实实现、设计文章和未实测范围；不引用原站未核实的转载性能数字。",
-            "仅正式发表后轮换首页报告四篇；既有报告、信息卡、榜单、档案与历史保留。"
+            "发布两篇已选安全研究完整分析，每篇四条结论、同号展开与三张本站说明图，保留实验条件、月级日期和未复现边界。",
+            "完成Search／Fetch原卡更正与Claude Code 2.1.317同事件中英卡；旧图下载恢复，首页按真实发表轮替，历史索引继续保留。",
+            "动态与对应档案已同步；DeepSeek Super-agent完整报告复用原入口，原日期、旧报告、模型榜单与未选材料保留。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "DeepSeek Super-agent prototype analysis",
+          "title": "Two safety studies and Search / Fetch correction",
           "highlights": [
-            "Add a full DeepSeek Super-agent prototype analysis with five numbered findings and three explanatory diagrams covering task identity, authorization, concurrency, durable recovery and adoption.",
-            "Pin official v0.1.0 to commit6337fc8, separating verified implementation, the design essay and untested scope; exclude secondary performance numbers unverified at origin.",
-            "Rotate the four homepage reports only after actual publication; preserve existing reports, cards, charts, dossiers and history."
+            "Publish two selected safety studies with four findings, matching arguments and three original explanatory diagrams each, retaining methods, month-level dates and reproduction limits.",
+            "Complete the original Search / Fetch card correction and the bilingual Claude Code 2.1.317 event card; restore image downloads and rotate the homepage only on actual publication, retaining full indexes.",
+            "Synchronize events and corresponding dossiers; reuse the full DeepSeek Super-agent report without changing original dates, old reports, model charts or unselected material."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.20"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.21"
     },
     {
       "version": "1.17.18",

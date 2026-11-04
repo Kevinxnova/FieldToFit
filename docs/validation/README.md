@@ -1,5 +1,9 @@
 # 验收证据导航
 
+- [2026-11-04 Claude Code与DeepSeek](2026-11-04-code-and-superagent.md)：指定报告复用、同事件中英卡与实际进度。
+
+- [2026-11-03 两项安全研究与Search／Fetch更正](2026-11-03-two-safety-studies.md)：四项选择、图文、实际发布与审批边界。
+
 - [2026-11-03 DeepSeek Super-agent](2026-11-03-deepseek-superagent.md)：五结论、三图、固定原型、核验边界与正式回执。
 
 - [2026-11-02 文档核查与自主复制](2026-11-02-review-earth-and-replication.md)：具体选择、原始研究、双语与真实轮换。
