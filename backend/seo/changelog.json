@@ -1,34 +1,34 @@
 {
-  "version": "1.17.21",
-  "revision": "7e782f557a48f9bf8f5ec590794d703d017236648b5fd3e5a880f8cd2aa0c617",
+  "version": "1.17.22",
+  "revision": "a745af20092a524948011b56a9d43064d1920089949fc6a8ad3ff61c2068f4f0",
   "items": [
     {
-      "version": "1.17.21",
-      "date": "2026-11-04",
-      "deployed_on": "2026-11-04",
+      "version": "1.17.22",
+      "date": "2026-11-05",
+      "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "已选研究与工具条件维护",
+          "title": "Codex末项公告与iOS补录",
           "highlights": [
-            "发布两篇已选安全研究完整分析，每篇四条结论、同号展开与三张本站说明图，保留实验条件、月级日期和未复现边界。",
-            "完成Search／Fetch原卡更正与Claude Code 2.1.317同事件中英卡；旧图下载恢复，首页按真实发表轮替，历史索引继续保留。",
-            "动态与对应档案已同步；DeepSeek Super-agent完整报告复用原入口，原日期、旧报告、模型榜单与未选材料保留。"
+            "新增两条Banked公告，保留11月1日／11月2日真实日期与官方Day28，不补造Day27或逐账户到账。",
+            "补录10月27日iOS1.2026.293，同步D-291正文与概览；专题98条，主线50条、其他OpenAI48条，严格重置0。",
+            "沿用同编号、同源审核与公开读取，保留既有图文、卡片、档案和已发布时间线。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Two safety studies and Search / Fetch correction",
+          "title": "Codex final announcements and iOS backfill",
           "highlights": [
-            "Publish two selected safety studies with four findings, matching arguments and three original explanatory diagrams each, retaining methods, month-level dates and reproduction limits.",
-            "Complete the original Search / Fetch card correction and the bilingual Claude Code 2.1.317 event card; restore image downloads and rotate the homepage only on actual publication, retaining full indexes.",
-            "Synchronize events and corresponding dossiers; reuse the full DeepSeek Super-agent report without changing original dates, old reports, model charts or unselected material."
+            "Add two Banked announcements with real November1/2 dates and official Day28, without inventing Day27 or per-account delivery.",
+            "Backfill the October27 iOS1.2026.293 release and update D-291’s body and overview; retain 98 entries, 50 main and48 other OpenAI, with zero strict resets.",
+            "Reuse the shared reviewed publication collection while preserving existing figures, cards, profiles and the published timeline."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.21"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.22"
     },
     {
       "version": "1.17.18",

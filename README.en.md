@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.21](CHANGELOG.md#v1.17.21)** · Release tag not yet published
+**Current source version: [v1.17.22](CHANGELOG.md#v1.17.22)** · [fieldtofit-v1.17.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.22)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish two selected safety studies with four findings, matching arguments and three original explanatory diagrams each, retaining methods, month-level dates and reproduction limits.
-- Complete the original Search / Fetch card correction and the bilingual Claude Code 2.1.317 event card; restore image downloads and rotate the homepage only on actual publication, retaining full indexes.
-- Synchronize events and corresponding dossiers; reuse the full DeepSeek Super-agent report without changing original dates, old reports, model charts or unselected material.
+- Add two Banked announcements with real November1/2 dates and official Day28, without inventing Day27 or per-account delivery.
+- Backfill the October27 iOS1.2026.293 release and update D-291’s body and overview; retain 98 entries, 50 main and48 other OpenAI, with zero strict resets.
+- Reuse the shared reviewed publication collection while preserving existing figures, cards, profiles and the published timeline.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

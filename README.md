@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.21](CHANGELOG.md#v1.17.21)** · 尚未推送发布标签
+**当前源码版本：[v1.17.22](CHANGELOG.md#v1.17.22)** · [fieldtofit-v1.17.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.22)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 发布两篇已选安全研究完整分析，每篇四条结论、同号展开与三张本站说明图，保留实验条件、月级日期和未复现边界。
-- 完成Search／Fetch原卡更正与Claude Code 2.1.317同事件中英卡；旧图下载恢复，首页按真实发表轮替，历史索引继续保留。
-- 动态与对应档案已同步；DeepSeek Super-agent完整报告复用原入口，原日期、旧报告、模型榜单与未选材料保留。
+- 新增两条Banked公告，保留11月1日／11月2日真实日期与官方Day28，不补造Day27或逐账户到账。
+- 补录10月27日iOS1.2026.293，同步D-291正文与概览；专题98条，主线50条、其他OpenAI48条，严格重置0。
+- 沿用同编号、同源审核与公开读取，保留既有图文、卡片、档案和已发布时间线。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

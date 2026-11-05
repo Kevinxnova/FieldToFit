@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.22"></a>
+## v1.17.22 · Codex末项公告与iOS补录 · 2026-11-05
+<!-- public-title:en: Codex final announcements and iOS backfill -->
+<!-- release-summary:zh:start -->
+- 新增两条Banked公告，保留11月1日／11月2日真实日期与官方Day28，不补造Day27或逐账户到账。
+- 补录10月27日iOS1.2026.293，同步D-291正文与概览；专题98条，主线50条、其他OpenAI48条，严格重置0。
+- 沿用同编号、同源审核与公开读取，保留既有图文、卡片、档案和已发布时间线。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add two Banked announcements with real November1/2 dates and official Day28, without inventing Day27 or per-account delivery.
+- Backfill the October27 iOS1.2026.293 release and update D-291’s body and overview; retain 98 entries, 50 main and48 other OpenAI, with zero strict resets.
+- Reuse the shared reviewed publication collection while preserving existing figures, cards, profiles and the published timeline.
+<!-- release-summary:en:end -->
+
+对应REQ-20，四项具体获批。既有模块兼容内容patch，本批及v1.17.0以来累计无新模块、主要流程、公开协议变化或数据库迁移。真实验证与执行时间见[验收记录](docs/validation/2026-11-05-codex-terminal-catchup.md)。
+
 <a id="v1.17.21"></a>
 ## v1.17.21 · 已选研究与工具条件维护 · 2026-11-04
 <!-- release-tag:unpublished -->

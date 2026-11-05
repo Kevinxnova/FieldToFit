@@ -8321,12 +8321,16 @@
     {
       "blocks": [
         {
+          "kind": "paragraph",
+          "text": "2026-11-05已核到官方K3.1 Pro模型卡、权重分片目录与自定义许可；获取状态由待后续权重更新为官方目录可见。具体首次公开时间、完整下载与部署未实测；2026-10-23上线历史保留。"
+        },
+        {
+          "kind": "table",
           "columns": [
             "本期已核实事件",
             "事件日期",
             "变化与条件"
           ],
-          "kind": "table",
           "rows": [
             [
               "[Cerebras 用 Kimi K3 解释跨晶圆部署：59 片是带假设的示例](https://fieldtofit.top/news/D-256)",
@@ -8340,12 +8344,12 @@
           "text": "本期增补核对日 2026-10-26；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。"
         },
         {
+          "kind": "table",
           "columns": [
             "本期已核实事件",
             "事件日期",
             "变化与条件"
           ],
-          "kind": "table",
           "rows": [
             [
               "[Kimi K3.1 Pro上线：完整权重仍待后续发布](https://fieldtofit.top/news/D-249)",
@@ -8359,6 +8363,7 @@
           "text": "本期增补核对日 2026-10-25；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本 / 分支",
             "日期与状态",
@@ -8367,7 +8372,6 @@
             "获取与使用",
             "依据"
           ],
-          "kind": "table",
           "rows": [
             [
               "Kimi K3",
@@ -8400,7 +8404,7 @@
           "text": "关联：[CW-T03 vLLM](/for-you#watch-cw-t03)，其本页资料版本记录包含 Kimi K3 支持。"
         }
       ],
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-11-05",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M04",
       "interpretation": [
@@ -8454,13 +8458,25 @@
           "id": "oct26-report",
           "title": "How we deploy Trillion-parameter frontier models on Cerebras",
           "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras"
+        },
+        {
+          "coverage": "link_only",
+          "id": "k31weights",
+          "title": "Kimi K3.1 Pro official model card",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+        },
+        {
+          "coverage": "link_only",
+          "id": "k31license",
+          "title": "Kimi K3.1-Pro License",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
           "state": "reviewed",
-          "source_hash": "8b1aaff8156391e10d5efe48c099ebf4f3c5e67119fc77148649b6d34bbf2b86",
+          "source_hash": "3ec5a8df916dc7d147977fec6ef407543208bcba8b5cccb459d4ac0816fbdab3",
           "fields": {
             "1M 上下文；采用 Kimi Delta Attention 与 Attention Residuals": "1M context; adopt Kimi Delta Attention and Attention Residuals",
             "2026-01-29 是模板修订日，不是模型首发日": "2026-01-29 is the template revision date, not the model release date.",
@@ -8496,7 +8512,8 @@
             "版本 / 分支": "Version / Branch",
             "获取与使用": "Acquisition and use",
             "首发日待核；官方权重与模型卡可见": "The first date is to be checked; the official weights and the model card can be seen",
-            "首发日待核；官方模型卡可见": "The first date is to be approved; the official model card can be seen"
+            "首发日待核；官方模型卡可见": "The first date is to be approved; the official model card can be seen",
+            "2026-11-05已核到官方K3.1 Pro模型卡、权重分片目录与自定义许可；获取状态由待后续权重更新为官方目录可见。具体首次公开时间、完整下载与部署未实测；2026-10-23上线历史保留。": "On 2026-11-05 the official K3.1 Pro model card, sharded-weight directory and custom license were verified. Availability changes from awaiting weights to an official file listing. The exact first-publication time, complete download and deployment remain unverified; the 2026-10-23 launch history is retained."
           }
         }
       },
@@ -10962,6 +10979,10 @@
     {
       "blocks": [
         {
+          "kind": "paragraph",
+          "text": "2.1.318｜2026-11-04｜修复恢复后的命令目录、权限提示误答和部分配置保存反馈；扩展部分MCP拒绝规则。2026-11-05核对，未实测。"
+        },
+        {
           "columns": [
             "本次补录版本",
             "原始日期",
@@ -10977,12 +10998,12 @@
           ]
         },
         {
+          "kind": "table",
           "columns": [
             "本期已核实事件",
             "事件日期",
             "变化与条件"
           ],
-          "kind": "table",
           "rows": [
             [
               "[Cursor市场Claude Code恶意扩展：先核来源，再核 2.1.312／2.1.313](https://fieldtofit.top/news/D-292)",
@@ -10996,12 +11017,12 @@
           "text": "本期对应事件于 2026-10-31核对；保留型号、价格、原日期与历史。全入口日核验仍未完成。"
         },
         {
+          "kind": "table",
           "columns": [
             "本期已核实事件",
             "事件日期",
             "变化与条件"
           ],
-          "kind": "table",
           "rows": [
             [
               "[Claude Code 2.1.314：工作目录写入开关、策略与恢复边界修复](https://fieldtofit.top/news/D-282)",
@@ -11015,12 +11036,12 @@
           "text": "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。"
         },
         {
+          "kind": "table",
           "columns": [
             "本期已核实事件",
             "事件日期",
             "变化与条件"
           ],
-          "kind": "table",
           "rows": [
             [
               "[Claude Code 2.1.312：组织策略、文件操作与技能发现修复](https://fieldtofit.top/news/D-269)",
@@ -11034,12 +11055,12 @@
           "text": "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。"
         },
         {
+          "kind": "table",
           "columns": [
             "本期已核实事件",
             "事件日期",
             "变化与条件"
           ],
-          "kind": "table",
           "rows": [
             [
               "[Claude Code 2.1.311：长会话压缩、子代理与后台恢复修复](https://fieldtofit.top/news/D-265)",
@@ -11053,12 +11074,12 @@
           "text": "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。"
         },
         {
+          "kind": "table",
           "columns": [
             "本期已核实事件",
             "事件日期",
             "变化与条件"
           ],
-          "kind": "table",
           "rows": [
             [
               "[Claude Code 更新至 2.1.310：复核执行权限与无人值守行为](https://fieldtofit.top/news/D-255)",
@@ -11072,13 +11093,13 @@
           "text": "本期增补核对日 2026-10-26；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。"
         },
         {
+          "kind": "table",
           "columns": [
             "事件／版本",
             "原文／事件日期",
             "新增与采用边界",
             "关联动态"
           ],
-          "kind": "table",
           "rows": [
             [
               "v2.1.302 → v2.1.305",
@@ -11093,12 +11114,12 @@
           "text": "本次仅追加已批准事件，保留以下原始版本、价格、使用条件与历史；不表示全部官方入口已在今日完成全量核验。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本变化",
             "事件与官方依据",
             "日期与限制"
           ],
-          "kind": "table",
           "rows": [
             [
               "2.1.301 → v2.1.302",
@@ -11112,12 +11133,12 @@
           "text": "保留以下此前已审正文与当时条件；本次版本补录不表示全部官方入口均已重新核对。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本变化",
             "事件与官方依据",
             "日期与限制"
           ],
-          "kind": "table",
           "rows": [
             [
               "v2.1.300 → v2.1.301",
@@ -11131,12 +11152,12 @@
           "text": "以下保留此前已审内容与当时适用条件；新增版本不证明整份档案已完成全入口复核。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本变化",
             "事件与官方依据",
             "日期与限制"
           ],
-          "kind": "table",
           "rows": [
             [
               "v2.1.296 → v2.1.300",
@@ -11150,6 +11171,7 @@
           "text": "以下保留此前已审内容与当时适用条件。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本",
             "原文日期",
@@ -11157,7 +11179,6 @@
             "采用边界",
             "来源"
           ],
-          "kind": "table",
           "rows": [
             [
               "v2.1.296",
@@ -11173,6 +11194,7 @@
           "text": "以上为2026-10-10核对的新增版本；以下保留历史资料及其当时适用条件。"
         },
         {
+          "kind": "table",
           "columns": [
             "更新",
             "原文日期",
@@ -11180,7 +11202,6 @@
             "采用边界",
             "依据"
           ],
-          "kind": "table",
           "rows": [
             [
               "Claude Code v2.1.294",
@@ -11196,6 +11217,7 @@
           "text": "以上为2026-10-09核对的新增材料；以下保留历史版本及当时适用条件。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本 / 材料",
             "原始日期口径",
@@ -11204,7 +11226,6 @@
             "限制与验证",
             "依据"
           ],
-          "kind": "table",
           "rows": [
             [
               "v2.1.293",
@@ -11221,6 +11242,7 @@
           "text": "以上为2026-10-08核对的新增材料；以下保留历史版本及其当时适用条件。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本",
             "原始日期口径",
@@ -11228,7 +11250,6 @@
             "采用条件与验证",
             "依据"
           ],
-          "kind": "table",
           "rows": [
             [
               "v2.1.292",
@@ -11244,6 +11265,7 @@
           "text": "本站于2026-10-07从此前已审v2.1.289补充上述版本。以下保留历史材料及其当时适用条件。"
         },
         {
+          "kind": "table",
           "columns": [
             "版本 / 材料",
             "原始时间口径",
@@ -11251,7 +11273,6 @@
             "采用入口",
             "限制与验证"
           ],
-          "kind": "table",
           "rows": [
             [
               "v2.1.289",
@@ -11288,12 +11309,12 @@
           ]
         },
         {
+          "kind": "table",
           "columns": [
             "已核实更新",
             "日期口径",
             "具体内容"
           ],
-          "kind": "table",
           "rows": [
             [
               "2.1.268",
@@ -11307,7 +11328,7 @@
           "text": "依据：[官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)。关联：[CW-M02 Claude](/for-you#watch-cw-m02)、[CW-S02 Anthropic Skills](/for-you#watch-cw-s02)、[CW-H03 Claude Agent SDK](/for-you#watch-cw-h03)。"
         }
       ],
-      "checked_at": "2026-11-04",
+      "checked_at": "2026-11-05",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-A02",
       "interpretation": [
@@ -11860,9 +11881,10 @@
             "采用边界": "Adopt the boundary",
             "限制与验证": "Restriction and verification",
             "验证与采用边界": "Verification and adoption of boundaries",
-            "验证范围": "Scope of verification"
+            "验证范围": "Scope of verification",
+            "2.1.318｜2026-11-04｜修复恢复后的命令目录、权限提示误答和部分配置保存反馈；扩展部分MCP拒绝规则。2026-11-05核对，未实测。": "2.1.318 |2026-11-04 | Fixes resumed command directories, permission-prompt misanswers and some configuration-save feedback; extends some MCP deny rules. Checked 2026-11-05; not runtime-tested."
           },
-          "source_hash": "0ed759d45bc56f50a9ffba83f3a4678385c643b65b52515392a0a57a1c135e31",
+          "source_hash": "2c7e2a30c10a24ad388fc4a4e7ce963c27910bd4f6425be334a0eba226f52eee",
           "state": "reviewed"
         }
       },
@@ -15000,7 +15022,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-11-02",
+  "reviewed_at": "2026-11-05",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }
