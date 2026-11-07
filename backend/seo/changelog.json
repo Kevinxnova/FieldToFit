@@ -1,7 +1,35 @@
 {
-  "version": "1.17.22",
-  "revision": "a745af20092a524948011b56a9d43064d1920089949fc6a8ad3ff61c2068f4f0",
+  "version": "1.17.23",
+  "revision": "62598fdb3cc72667b934f58fe2c468c76f9104461eaa0a9cdcdfcaa1d228aa60",
   "items": [
+    {
+      "version": "1.17.23",
+      "date": "2026-11-07",
+      "deployed_on": "2026-11-07",
+      "copy": {
+        "zh": {
+          "title": "Cyber报告与账户权限信息卡",
+          "highlights": [
+            "已发布A–D与三份对应档案：Personal Finance、GPT-6 Cyber、Claude Code2.1.319及Enterprise控制，保留真实日期、开放范围和未实测边界。",
+            "所选Cyber系统卡分析提供四条结论、同号论述与三张本站重绘，分开能力、外部评估、授权行为和部署条件。",
+            "所选Personal Finance卡提供中英文人工分享图及稳定二维码；报告与卡片已按实际发表轮换，旧内容保留全部索引，报告2仍待选择。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Cyber research analysis and account-access information card",
+          "highlights": [
+            "Publish selected A–D and three corresponding dossiers: Personal Finance, GPT-6 Cyber, Claude Code2.1.319 and Enterprise controls, retaining genuine dates, access scope and testing limits.",
+            "Provide four findings, matching arguments and three original redraws for the selected Cyber system card, separating capability, external evaluation, authorization and deployment.",
+            "Provide manually reviewed Chinese/English Personal Finance share images and stable QR links; the report and card now rotate after actual publication, retaining historical indexes while report2 remains pending."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.23"
+    },
     {
       "version": "1.17.22",
       "date": "2026-11-05",

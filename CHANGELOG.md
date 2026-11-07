@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.23"></a>
+## v1.17.23 · Cyber报告与账户权限信息卡 · 2026-11-07
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-07 -->
+<!-- public-title:en: Cyber research analysis and account-access information card -->
+<!-- release-summary:zh:start -->
+- 已发布A–D与三份对应档案：Personal Finance、GPT-6 Cyber、Claude Code2.1.319及Enterprise控制，保留真实日期、开放范围和未实测边界。
+- 所选Cyber系统卡分析提供四条结论、同号论述与三张本站重绘，分开能力、外部评估、授权行为和部署条件。
+- 所选Personal Finance卡提供中英文人工分享图及稳定二维码；报告与卡片已按实际发表轮换，旧内容保留全部索引，报告2仍待选择。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish selected A–D and three corresponding dossiers: Personal Finance, GPT-6 Cyber, Claude Code2.1.319 and Enterprise controls, retaining genuine dates, access scope and testing limits.
+- Provide four findings, matching arguments and three original redraws for the selected Cyber system card, separating capability, external evaluation, authorization and deployment.
+- Provide manually reviewed Chinese/English Personal Finance share images and stable QR links; the report and card now rotate after actual publication, retaining historical indexes while report2 remains pending.
+<!-- release-summary:en:end -->
+
+对应REQ-11、REQ-22、REQ-22-8、REQ-6-34／REQ-11-6。所有者明确选择11月7日A–D全部发布、报告1、卡1。基于正式v1.17.22及a785c13，保留并行Codex末项公告与iOS补录；本批及v1.17.0以来累计无新模块、主要流程、协议改变或迁移，按兼容内容／静态资源patch处理。B与报告1复用D-317，A与卡1复用D-316；不创建报告2草稿、不刷新榜单。具体发表、部署、轮换与验证以[实际验收](docs/validation/2026-11-07-cyber-finance.md)为准。
+
 <a id="v1.17.22"></a>
 ## v1.17.22 · Codex末项公告与iOS补录 · 2026-11-05
 <!-- public-title:en: Codex final announcements and iOS backfill -->

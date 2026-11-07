@@ -2056,5 +2056,35 @@
     "attribution": "FieldToFit · Anthropic Alignment Science Blog",
     "source_version": "Original research post; month precision only",
     "locator": "Evaluations; Appendix: Reproduction on other models; Figures6–7"
+  },
+  "/report-figures/nov07-cyber-capability.png": {
+    "sha256": "bf039ae1ab4aa4ac353405cac3fee8fb84fd0f019c42945ffe138cd9ab3b398e",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-cyber"
+    ],
+    "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · OpenAI GPT-6 Cyber System Card",
+    "source_version": "Unnumbered system card dated2026-11-05",
+    "locator": "Sections7.0.5–7.0.6; Figures7–8; PDF physical pages15–16"
+  },
+  "/report-figures/nov07-cyber-external.png": {
+    "sha256": "5668b73675d57f84a98da4227eef4d87e8c54987d02e3b2db96779b65fcc7b75",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-cyber"
+    ],
+    "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · OpenAI GPT-6 Cyber System Card",
+    "source_version": "Unnumbered system card dated2026-11-05",
+    "locator": "Section8.1; Figures9–10; PDF physical pages16–17"
+  },
+  "/report-figures/nov07-cyber-alignment.png": {
+    "sha256": "33e5842f8166d5eabf777e22e8f21a3d97269772dc1a779ec829042f7a5aa00e",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-cyber"
+    ],
+    "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction.",
+    "attribution": "FieldToFit · OpenAI GPT-6 Cyber System Card",
+    "source_version": "Unnumbered system card dated2026-11-05",
+    "locator": "Sections4.1–4.2; Tables5–8; PDF physical pages7–9"
   }
 }

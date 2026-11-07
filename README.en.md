@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.22](CHANGELOG.md#v1.17.22)** · [fieldtofit-v1.17.22](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.17.22)
+**Current source version: [v1.17.23](CHANGELOG.md#v1.17.23)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add two Banked announcements with real November1/2 dates and official Day28, without inventing Day27 or per-account delivery.
-- Backfill the October27 iOS1.2026.293 release and update D-291’s body and overview; retain 98 entries, 50 main and48 other OpenAI, with zero strict resets.
-- Reuse the shared reviewed publication collection while preserving existing figures, cards, profiles and the published timeline.
+- Publish selected A–D and three corresponding dossiers: Personal Finance, GPT-6 Cyber, Claude Code2.1.319 and Enterprise controls, retaining genuine dates, access scope and testing limits.
+- Provide four findings, matching arguments and three original redraws for the selected Cyber system card, separating capability, external evaluation, authorization and deployment.
+- Provide manually reviewed Chinese/English Personal Finance share images and stable QR links; the report and card now rotate after actual publication, retaining historical indexes while report2 remains pending.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

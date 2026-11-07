@@ -1,5 +1,7 @@
 # 验收证据导航
 
+- [2026-11-07 Cyber报告与Personal Finance卡](2026-11-07-cyber-finance.md)：六项选择、七对象、双语图文与真实轮换。
+
 - [2026-11-04 Claude Code与DeepSeek](2026-11-04-code-and-superagent.md)：指定报告复用、同事件中英卡与实际进度。
 
 - [2026-11-03 两项安全研究与Search／Fetch更正](2026-11-03-two-safety-studies.md)：四项选择、图文、实际发布与审批边界。
