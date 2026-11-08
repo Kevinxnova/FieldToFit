@@ -2,6 +2,1056 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "research",
+      "checked_at": "2026-11-08",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-06",
+      "highlight": false,
+      "id": "D-321",
+      "interpretation": [
+        {
+          "locator": "Inside BioBasicsBench; What the agent is given",
+          "source_ids": [
+            "original"
+          ],
+          "text": "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。",
+          "title": "先保留实验原貌，再谈模型能否可靠分析"
+        },
+        {
+          "locator": "Results; Performance at xhigh reasoning effort",
+          "source_ids": [
+            "original"
+          ],
+          "text": "要同时读评分、任务分母、重复尝试和不确定性。",
+          "title": "平均获分提高，不代表同等比例任务完全成功"
+        },
+        {
+          "locator": "Recognizing what the data can and cannot show; Better multimodal handling; Keeping experimental context in mind",
+          "source_ids": [
+            "original"
+          ],
+          "text": "分清影像信号、实验对照与采集方式，再作解释。",
+          "title": "识别细节的价值，在于改变证据判断"
+        },
+        {
+          "locator": "Where models still fall short; Building toward reliable lab assistance",
+          "source_ids": [
+            "original"
+          ],
+          "text": "对照解释、证据选择和计数仍可能失败。",
+          "title": "能看到矛盾，不等于最终结论会保留矛盾"
+        }
+      ],
+      "name": "BioBasicsBench",
+      "note": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-11-08T02:40:21.959667+00:00",
+        "report_selected_at": "2026-11-08T02:40:21.959667+00:00",
+        "updated_at": "2026-11-08T02:40:21.959667+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-11-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "original",
+          "title": "BioBasicsBench · OpenAI ·2026-11-06",
+          "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"
+        }
+      ],
+      "state": "published",
+      "summary": "日常实验分析需要同时读懂数据、检查对照并约束结论；总分提升不能代替对具体错误的验证。",
+      "technical_map": {
+        "caution": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
+        "change_summary": "首次完整分析：四条核心结论、同号论述与两张本站重绘，保留原文方法、口径和局限。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Results; Performance at xhigh reasoning effort",
+                "source_id": "original"
+              }
+            ],
+            "from": "tasks",
+            "label": "互补证据与独立验收维度",
+            "relation": "parallel",
+            "to": "scores"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Recognizing what the data can and cannot show; Better multimodal handling; Keeping experimental context in mind",
+                "source_id": "original"
+              }
+            ],
+            "from": "tasks",
+            "label": "互补证据与独立验收维度",
+            "relation": "parallel",
+            "to": "evidence"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Where models still fall short; Building toward reliable lab assistance",
+                "source_id": "original"
+              }
+            ],
+            "from": "tasks",
+            "label": "互补证据与独立验收维度",
+            "relation": "parallel",
+            "to": "failures"
+          }
+        ],
+        "focus": "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Inside BioBasicsBench; What the agent is given",
+                "source_id": "original"
+              }
+            ],
+            "id": "tasks",
+            "kind": "method",
+            "label": "先保留实验原貌，再谈模型能否可靠分析",
+            "limitation": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
+            "mechanism": "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。",
+            "metrics": [],
+            "result": "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。",
+            "setting": "OpenAI original research; 2026-11-06",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Results; Performance at xhigh reasoning effort",
+                "source_id": "original"
+              }
+            ],
+            "id": "scores",
+            "kind": "method",
+            "label": "平均获分提高，不代表同等比例任务完全成功",
+            "limitation": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
+            "mechanism": "要同时读评分、任务分母、重复尝试和不确定性。",
+            "metrics": [
+              {
+                "baseline": "共同xhigh设置，非等成本比较",
+                "conditions": "100任务，每项五次；95%整任务bootstrap区间 60.3–73.1%，不是实验成功率。",
+                "label": "GPT-6 Astra平均获分",
+                "unit": "%",
+                "value": 66.7
+              },
+              {
+                "baseline": "共同xhigh设置，非等成本比较",
+                "conditions": "100任务，每项五次；95%整任务bootstrap区间 55.6–68.4%，不是实验成功率。",
+                "label": "GPT-6.1 Sol平均获分",
+                "unit": "%",
+                "value": 62.0
+              },
+              {
+                "baseline": "共同xhigh设置，非等成本比较",
+                "conditions": "100任务，每项五次；95%整任务bootstrap区间 37.6–50.0%，不是实验成功率。",
+                "label": "GPT-5.6 Sol平均获分",
+                "unit": "%",
+                "value": 43.8
+              },
+              {
+                "baseline": "共同xhigh设置，非等成本比较",
+                "conditions": "100任务，每项五次；95%整任务bootstrap区间 32.3–44.5%，不是实验成功率。",
+                "label": "GPT-6 Luna平均获分",
+                "unit": "%",
+                "value": 38.3
+              },
+              {
+                "baseline": "共同xhigh设置，非等成本比较",
+                "conditions": "100任务，每项五次；95%整任务bootstrap区间 29.7–41.0%，不是实验成功率。",
+                "label": "GPT-5.5平均获分",
+                "unit": "%",
+                "value": 35.4
+              },
+              {
+                "baseline": "共同xhigh设置，非等成本比较",
+                "conditions": "100任务，每项五次；95%整任务bootstrap区间 28.3–38.4%，不是实验成功率。",
+                "label": "GPT-5.4平均获分",
+                "unit": "%",
+                "value": 33.2
+              },
+              {
+                "baseline": "共同xhigh设置，非等成本比较",
+                "conditions": "100任务，每项五次；95%整任务bootstrap区间 26.2–36.3%，不是实验成功率。",
+                "label": "GPT-5.2平均获分",
+                "unit": "%",
+                "value": 31.2
+              }
+            ],
+            "result": "要同时读评分、任务分母、重复尝试和不确定性。",
+            "setting": "OpenAI original research; 2026-11-06",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Recognizing what the data can and cannot show; Better multimodal handling; Keeping experimental context in mind",
+                "source_id": "original"
+              }
+            ],
+            "id": "evidence",
+            "kind": "method",
+            "label": "识别细节的价值，在于改变证据判断",
+            "limitation": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
+            "mechanism": "分清影像信号、实验对照与采集方式，再作解释。",
+            "metrics": [],
+            "result": "分清影像信号、实验对照与采集方式，再作解释。",
+            "setting": "OpenAI original research; 2026-11-06",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Where models still fall short; Building toward reliable lab assistance",
+                "source_id": "original"
+              }
+            ],
+            "id": "failures",
+            "kind": "method",
+            "label": "能看到矛盾，不等于最终结论会保留矛盾",
+            "limitation": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
+            "mechanism": "对照解释、证据选择和计数仍可能失败。",
+            "metrics": [],
+            "result": "对照解释、证据选择和计数仍可能失败。",
+            "setting": "OpenAI original research; 2026-11-06",
+            "stage": 3
+          }
+        ],
+        "question": "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：验收科学助手时，把原始数据可读性、对照有效性、推理约束和最终交付分成独立检查。总分用于定位改进方向；关键决策仍需能追溯到观测、对照和不确定性，不能只看模型回答是否流畅。",
+            "来源与修订：OpenAI，原始HTML研究，首发 2026-11-06，未标独立版本号；本站 2026-11-08读取全文。配图为依据公开事实制作的本站重绘或示意，分别标明尺度、统计单位与限制。未独立复现、审核全部原始数据或确认所有补丁／结论。本站首发与首页精选时间以真实发布回执为准。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "BioBasicsBench覆盖蛋白方法、成像与细胞术、定量分析、核酸方法和分子克隆五类日常工作。输入包括凝胶、培养皿、显微图像、仪器导出、测序文件和操作视频，同一任务可以同时使用多种资料。它针对的是解释证据与提出分析，不是让模型实际操作整个实验室。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "科学家用自己的实验数据编写问题与评分细则，再经过未参与出题的Ligo科学家、外部博士级实验科学家以及最终内部审核。评分可以分别给结论、数值、理由和承认证据不足计分。技能标签和输入类型重叠，不能相加当任务总数；参考资料也不能冒充独立实验。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Inside BioBasicsBench; What the agent is given",
+                  "source_id": "original"
+                }
+              ],
+              "id": "tasks",
+              "node_ids": [
+                "tasks"
+              ],
+              "summary": "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。",
+              "title": "先保留实验原貌，再谈模型能否可靠分析"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "研究评估七个模型和 37种模型／推理设置，每种设置对 100项任务各尝试五次，共 18500个结果。mean reward是可获分数中实际获得的比例，再对任务求平均。95%置信区间通过整项任务重采样获得，保留同一任务五次尝试之间的关联；不能把所有尝试当完全独立样本。"
+                },
+                {
+                  "alt": "七模型在xhigh下的平均获分及 95%置信区间",
+                  "attribution": "FieldToFit · OpenAI",
+                  "caption": "本站重绘；0–100%真实尺度。各模型使用 100任务、每题五次。横线为原文 95%整任务bootstrap区间，不是本站重新估计。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Results; Performance at xhigh reasoning effort",
+                      "source_id": "original"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov08-bio-scores.png",
+                  "kind": "figure",
+                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "在共同报告的xhigh设置下，Astra平均获分 66.7%，区间 60.3–73.1%；GPT-5.6 Sol为 43.8%，区间 37.6–50.0%。平均输出分别为 4704和 9099 token／任务。输出token不等于完整延迟或账单；不同模型设置也不是严格等成本实验。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Results; Performance at xhigh reasoning effort",
+                  "source_id": "original"
+                }
+              ],
+              "id": "scores",
+              "node_ids": [
+                "scores"
+              ],
+              "summary": "要同时读评分、任务分母、重复尝试和不确定性。",
+              "title": "平均获分提高，不代表同等比例任务完全成功"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "文中三个例子展示了不同层面的改进：识别荧光检测窗口重叠，避免只因亮度就认定细胞死亡；发现阴性对照使用了不匹配的抗生素标签；识别显微深度扫描，避免把细胞暂时失焦解释成生物变化。这些是具体案例，不是三个新增独立基准。"
+                },
+                {
+                  "alt": "从观测到对照检查再到受约束结论的阅读框架",
+                  "attribution": "FieldToFit · OpenAI",
+                  "caption": "本站示意：观测、对照、上下文、结论分别核对。三类失败是案例类别，没有伪造发生频率。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "GPT-6 Astra improvements; Where models still fall short",
+                      "source_id": "original"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov08-bio-evidence.png",
+                  "kind": "figure",
+                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "不同通道图像采用各自强度尺度，不能直接定量比较亮度；检测窗口重叠不等于已测得串扰大小。更好的解释也不证明某个模型内部机制已经被实验隔离。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Recognizing what the data can and cannot show; Better multimodal handling; Keeping experimental context in mind",
+                  "source_id": "original"
+                }
+              ],
+              "id": "evidence",
+              "node_ids": [
+                "evidence"
+              ],
+              "summary": "分清影像信号、实验对照与采集方式，再作解释。",
+              "title": "识别细节的价值，在于改变证据判断"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "在菌落PCR案例中，Astra看到了分组差别，却因预设“更大片段才正确”而选错菌落。在液泡案例中，它观察到焦距改变了对比，却在最终答案中过度保留偏好的暗色描述。这两者提示：应独立复核最终结论是否忠实使用了已经观察到的证据。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "菌落计数例子同时出现漏计、合并相邻菌落和把空白计入的情况，净计数比参考多约 12%。这是该图的案例误差，不是整个基准的通用误差率。原文将这些错误作为后续改进目标，并没有证明提高总分就能安全地取消人员复核。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Where models still fall short; Building toward reliable lab assistance",
+                  "source_id": "original"
+                }
+              ],
+              "id": "failures",
+              "node_ids": [
+                "failures"
+              ],
+              "summary": "对照解释、证据选择和计数仍可能失败。",
+              "title": "能看到矛盾，不等于最终结论会保留矛盾"
+            }
+          ],
+          "title": "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-11-06",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "original",
+            "substantive_revision": false,
+            "version": "Unnumbered original HTML research dated2026-11-06"
+          }
+        ],
+        "slug": "biobasicsbench-evidence-controls-and-lab-judgment",
+        "takeaway": "日常实验分析需要同时读懂数据、检查对照并约束结论；总分提升不能代替对具体错误的验证。"
+      },
+      "title": "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？",
+      "translations": {
+        "en": {
+          "fields": {
+            "100任务，每项五次；95%整任务bootstrap区间 26.2–36.3%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 26.2–36.3%; not experimental success rate.",
+            "100任务，每项五次；95%整任务bootstrap区间 28.3–38.4%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 28.3–38.4%; not experimental success rate.",
+            "100任务，每项五次；95%整任务bootstrap区间 29.7–41.0%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 29.7–41.0%; not experimental success rate.",
+            "100任务，每项五次；95%整任务bootstrap区间 32.3–44.5%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 32.3–44.5%; not experimental success rate.",
+            "100任务，每项五次；95%整任务bootstrap区间 37.6–50.0%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 37.6–50.0%; not experimental success rate.",
+            "100任务，每项五次；95%整任务bootstrap区间 55.6–68.4%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 55.6–68.4%; not experimental success rate.",
+            "100任务，每项五次；95%整任务bootstrap区间 60.3–73.1%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 60.3–73.1%; not experimental success rate.",
+            "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。": "The 100 tasks concern routine analysis; curated publication figures do not substitute for raw laboratory evidence.",
+            "BioBasicsBench覆盖蛋白方法、成像与细胞术、定量分析、核酸方法和分子克隆五类日常工作。输入包括凝胶、培养皿、显微图像、仪器导出、测序文件和操作视频，同一任务可以同时使用多种资料。它针对的是解释证据与提出分析，不是让模型实际操作整个实验室。": "BioBasicsBench spans protein methods, imaging and cytometry, quantification and assays, nucleic-acid methods and molecular cloning. Inputs include gels, plates, microscopy, instrument exports, sequencing files and videos, with multiple inputs possible per task. The evaluation concerns interpreting evidence and providing analysis, not operating an entire laboratory.",
+            "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？": "BioBasicsBench: can a model read the evidence better and still reach the wrong conclusion?",
+            "FieldToFit分析：验收科学助手时，把原始数据可读性、对照有效性、推理约束和最终交付分成独立检查。总分用于定位改进方向；关键决策仍需能追溯到观测、对照和不确定性，不能只看模型回答是否流畅。": "FieldToFit analysis: validate raw-data readability, control validity, inference limits and final reporting separately. Aggregate scores help locate progress; important decisions still need traceable observations, controls and uncertainty, rather than fluent answers alone.",
+            "GPT-5.2平均获分": "GPT-5.2 mean reward",
+            "GPT-5.4平均获分": "GPT-5.4 mean reward",
+            "GPT-5.5平均获分": "GPT-5.5 mean reward",
+            "GPT-5.6 Sol平均获分": "GPT-5.6 Sol mean reward",
+            "GPT-6 Astra平均获分": "GPT-6 Astra mean reward",
+            "GPT-6 Luna平均获分": "GPT-6 Luna mean reward",
+            "GPT-6.1 Sol平均获分": "GPT-6.1 Sol mean reward",
+            "七模型在xhigh下的平均获分及 95%置信区间": "Seven models: xhigh mean reward and 95% confidence intervals",
+            "不同通道图像采用各自强度尺度，不能直接定量比较亮度；检测窗口重叠不等于已测得串扰大小。更好的解释也不证明某个模型内部机制已经被实验隔离。": "Different channels use separate intensity scales, so brightness is not directly quantitatively comparable. Overlapping detection windows do not measure interference magnitude. Better interpretations also do not isolate the model’s internal mechanism.",
+            "互补证据与独立验收维度": "Complementary evidence and independent validation dimensions",
+            "从观测到对照检查再到受约束结论的阅读框架": "A reading framework from observations through controls to bounded conclusions",
+            "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。": "Based on OpenAI’s original research webpage dated 2026-11-06, read by FieldToFit on 2026-11-08. OpenAI and Ligo report the experiments. No independent model runs, private-data audit, laboratory experiment or biosafety validation; this does not establish clinical or autonomous-laboratory reliability.",
+            "先保留实验原貌，再谈模型能否可靠分析": "Preserve ordinary experimental evidence before assessing reliable analysis",
+            "共同xhigh设置，非等成本比较": "Common xhigh setting; not cost-matched",
+            "分清影像信号、实验对照与采集方式，再作解释。": "Distinguish signals, experimental controls and acquisition context before interpreting.",
+            "在共同报告的xhigh设置下，Astra平均获分 66.7%，区间 60.3–73.1%；GPT-5.6 Sol为 43.8%，区间 37.6–50.0%。平均输出分别为 4704和 9099 token／任务。输出token不等于完整延迟或账单；不同模型设置也不是严格等成本实验。": "At the commonly reported xhigh setting, Astra earns 66.7% with a 60.3–73.1% interval; GPT-5.6 Sol earns 43.8% with a 37.6–50.0% interval. Average outputs are 4704 and 9099 tokens per task respectively. Output tokens are neither complete latency nor a bill, and these settings are not a strictly equal-cost comparison.",
+            "在菌落PCR案例中，Astra看到了分组差别，却因预设“更大片段才正确”而选错菌落。在液泡案例中，它观察到焦距改变了对比，却在最终答案中过度保留偏好的暗色描述。这两者提示：应独立复核最终结论是否忠实使用了已经观察到的证据。": "In the colony-PCR case, Astra notices groups but chooses the wrong colonies after assuming that the larger product is the desired construct. In the vacuole case, it observes focus-dependent contrast but retains its preferred darker description in the final answer. Both motivate independently checking whether final conclusions faithfully use observed evidence.",
+            "对照解释、证据选择和计数仍可能失败。": "Control interpretation, evidence selection and counting can still fail.",
+            "平均获分提高，不代表同等比例任务完全成功": "Higher mean reward is not the same proportion of fully successful tasks",
+            "文中三个例子展示了不同层面的改进：识别荧光检测窗口重叠，避免只因亮度就认定细胞死亡；发现阴性对照使用了不匹配的抗生素标签；识别显微深度扫描，避免把细胞暂时失焦解释成生物变化。这些是具体案例，不是三个新增独立基准。": "Three examples illustrate different gains: recognizing overlapping fluorescence detection windows rather than inferring cell death from brightness alone, noticing an antibiotic-label mismatch in a negative control, and recognizing a microscopy depth scan instead of interpreting temporary loss of focus as biological change. These are case studies, not three additional independent benchmarks.",
+            "日常实验分析需要同时读懂数据、检查对照并约束结论；总分提升不能代替对具体错误的验证。": "Everyday laboratory analysis requires reading data, checking controls and limiting conclusions; a higher aggregate score does not replace checking specific failure modes.",
+            "本站示意：观测、对照、上下文、结论分别核对。三类失败是案例类别，没有伪造发生频率。": "FieldToFit explanatory diagram: inspect observations, controls, context and conclusions separately. Failure categories describe cases without invented incidence rates.",
+            "本站重绘；0–100%真实尺度。各模型使用 100任务、每题五次。横线为原文 95%整任务bootstrap区间，不是本站重新估计。": "FieldToFit redraw on a 0–100% scale. Each model uses 100 tasks and five attempts per task. Intervals are the original 95% whole-task bootstrap intervals, not new FieldToFit estimates.",
+            "来源与修订：OpenAI，原始HTML研究，首发 2026-11-06，未标独立版本号；本站 2026-11-08读取全文。配图为依据公开事实制作的本站重绘或示意，分别标明尺度、统计单位与限制。未独立复现、审核全部原始数据或确认所有补丁／结论。本站首发与首页精选时间以真实发布回执为准。": "Sources and revisions: OpenAI original HTML research, first published 2026-11-06, with no independent version number; full article read 2026-11-08. Figures are original FieldToFit redraws or diagrams of public facts, retaining scales, units and limits. No independent replication, complete raw-data audit or confirmation of every patch/conclusion. Site first publication and homepage selection follow actual publishing receipts.",
+            "研究评估七个模型和 37种模型／推理设置，每种设置对 100项任务各尝试五次，共 18500个结果。mean reward是可获分数中实际获得的比例，再对任务求平均。95%置信区间通过整项任务重采样获得，保留同一任务五次尝试之间的关联；不能把所有尝试当完全独立样本。": "The study evaluates seven models and 37 model/effort settings, each with five attempts on each of 100 tasks, producing 18500 results. Mean reward averages the fraction of available rubric credit. The 95% intervals resample whole tasks while keeping their five attempts together; attempts are not treated as entirely independent samples.",
+            "科学家用自己的实验数据编写问题与评分细则，再经过未参与出题的Ligo科学家、外部博士级实验科学家以及最终内部审核。评分可以分别给结论、数值、理由和承认证据不足计分。技能标签和输入类型重叠，不能相加当任务总数；参考资料也不能冒充独立实验。": "Scientists wrote prompts and rubrics from their experiments, followed by review from a non-author Ligo scientist, an external PhD-level wet-lab scientist and a final internal review. Rubrics may credit conclusions, numerical results, reasoning and recognizing insufficient evidence separately. Skill tags and input categories overlap and cannot be summed into task totals; reference material is not an independent experiment.",
+            "能看到矛盾，不等于最终结论会保留矛盾": "Seeing contradictory evidence does not ensure the final answer retains it",
+            "菌落计数例子同时出现漏计、合并相邻菌落和把空白计入的情况，净计数比参考多约 12%。这是该图的案例误差，不是整个基准的通用误差率。原文将这些错误作为后续改进目标，并没有证明提高总分就能安全地取消人员复核。": "The counting example combines missed colonies, merged neighbours and marks on empty agar, yielding approximately 12% net overcount relative to the reference. This is an error on that image, not a benchmark-wide error rate. The authors present these as improvement targets, not evidence that higher scores safely eliminate human review.",
+            "要同时读评分、任务分母、重复尝试和不确定性。": "Read scoring, task denominator, repeated attempts and uncertainty together.",
+            "识别细节的价值，在于改变证据判断": "Recognizing details matters when it changes the evidential judgment",
+            "首次完整分析：四条核心结论、同号论述与两张本站重绘，保留原文方法、口径和局限。": "First complete analysis: four findings, matching arguments and two original redraws, preserving methods, definitions and limitations."
+          },
+          "reviewed_at": "2026-11-08T02:39:59.342373+00:00",
+          "source_hash": "8b6a38ee046389e2f1ca605094f6c4c5929a219fb38bd2b18665576223012718",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-11-08",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-04",
+      "highlight": false,
+      "id": "D-322",
+      "interpretation": [
+        {
+          "locator": "The vulnerability research pipeline; Exploitability assessment",
+          "source_ids": [
+            "original"
+          ],
+          "text": "每阶段回答不同问题，也使用不同单位。",
+          "title": "候选发现、复现、影响验证和补丁不能混成一个成功数"
+        },
+        {
+          "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
+          "source_ids": [
+            "original"
+          ],
+          "text": "结果校验和路径归因必须同时存在。",
+          "title": "达成root结果，还要证明使用了指定漏洞"
+        },
+        {
+          "locator": "Cost analysis; What defenders can learn from exploit costs; Stronger models find more vulnerabilities",
+          "source_ids": [
+            "original"
+          ],
+          "text": "运行费用、开发成本、获奖资格与实际收入分别表达。",
+          "title": "API开销是条件化测量，历史赏金只是推算"
+        },
+        {
+          "locator": "Maintainers are moving quickly to patch vulnerabilities; Iteration improves patch generation; More capable models can require lighter orchestration",
+          "source_ids": [
+            "original"
+          ],
+          "text": "生成补丁不等于合入，上游变化也会让旧报告失效。",
+          "title": "补丁与上游重新验证决定研究能否转成防御成果"
+        }
+      ],
+      "name": "Linux vulnerability research",
+      "note": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-11-08T02:39:41.954073+00:00",
+        "report_selected_at": "2026-11-08T02:39:41.954073+00:00",
+        "updated_at": "2026-11-08T02:39:41.954073+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "ChatGPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-11-04",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "original",
+          "title": "Linux vulnerability research · OpenAI ·2026-11-04",
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+        }
+      ],
+      "state": "published",
+      "summary": "从候选到复现、影响与补丁，各阶段有不同计数与证据；结果成功还要核对归因，并重新对照最新上游。",
+      "technical_map": {
+        "caution": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
+        "change_summary": "首次完整分析：四条核心结论、同号论述与两张本站重绘，保留原文方法、口径和局限。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
+                "source_id": "original"
+              }
+            ],
+            "from": "pipeline",
+            "label": "互补证据与独立验收维度",
+            "relation": "parallel",
+            "to": "attribution"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Cost analysis; What defenders can learn from exploit costs; Stronger models find more vulnerabilities",
+                "source_id": "original"
+              }
+            ],
+            "from": "pipeline",
+            "label": "互补证据与独立验收维度",
+            "relation": "parallel",
+            "to": "costs"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Maintainers are moving quickly to patch vulnerabilities; Iteration improves patch generation; More capable models can require lighter orchestration",
+                "source_id": "original"
+              }
+            ],
+            "from": "pipeline",
+            "label": "互补证据与独立验收维度",
+            "relation": "parallel",
+            "to": "patches"
+          }
+        ],
+        "focus": "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "The vulnerability research pipeline; Exploitability assessment",
+                "source_id": "original"
+              }
+            ],
+            "id": "pipeline",
+            "kind": "method",
+            "label": "候选发现、复现、影响验证和补丁不能混成一个成功数",
+            "limitation": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
+            "mechanism": "每阶段回答不同问题，也使用不同单位。",
+            "metrics": [
+              {
+                "baseline": "各计数单位不同，不相加",
+                "conditions": "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。",
+                "label": "去重候选发现",
+                "unit": "items",
+                "value": 2308
+              },
+              {
+                "baseline": "各计数单位不同，不相加",
+                "conditions": "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。",
+                "label": "动态复现",
+                "unit": "items",
+                "value": 1724
+              },
+              {
+                "baseline": "各计数单位不同，不相加",
+                "conditions": "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。",
+                "label": "可工作本地提权利用",
+                "unit": "items",
+                "value": 1169
+              },
+              {
+                "baseline": "各计数单位不同，不相加",
+                "conditions": "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。",
+                "label": "独特补丁",
+                "unit": "items",
+                "value": 948
+              }
+            ],
+            "result": "每阶段回答不同问题，也使用不同单位。",
+            "setting": "OpenAI original research; 2026-11-04",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
+                "source_id": "original"
+              }
+            ],
+            "id": "attribution",
+            "kind": "method",
+            "label": "达成root结果，还要证明使用了指定漏洞",
+            "limitation": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
+            "mechanism": "结果校验和路径归因必须同时存在。",
+            "metrics": [],
+            "result": "结果校验和路径归因必须同时存在。",
+            "setting": "OpenAI original research; 2026-11-04",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Cost analysis; What defenders can learn from exploit costs; Stronger models find more vulnerabilities",
+                "source_id": "original"
+              }
+            ],
+            "id": "costs",
+            "kind": "method",
+            "label": "API开销是条件化测量，历史赏金只是推算",
+            "limitation": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
+            "mechanism": "运行费用、开发成本、获奖资格与实际收入分别表达。",
+            "metrics": [
+              {
+                "baseline": "不含完整人工、基础设施与研发总成本",
+                "conditions": "主要运行口径；不与另外kernelCTF运行的 32936美元混用。",
+                "label": "主要运行API费用",
+                "unit": "USD",
+                "value": 1213430
+              }
+            ],
+            "result": "运行费用、开发成本、获奖资格与实际收入分别表达。",
+            "setting": "OpenAI original research; 2026-11-04",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Maintainers are moving quickly to patch vulnerabilities; Iteration improves patch generation; More capable models can require lighter orchestration",
+                "source_id": "original"
+              }
+            ],
+            "id": "patches",
+            "kind": "method",
+            "label": "补丁与上游重新验证决定研究能否转成防御成果",
+            "limitation": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
+            "mechanism": "生成补丁不等于合入，上游变化也会让旧报告失效。",
+            "metrics": [],
+            "result": "生成补丁不等于合入，上游变化也会让旧报告失效。",
+            "setting": "OpenAI original research; 2026-11-04",
+            "stage": 3
+          }
+        ],
+        "question": "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：将可复现证据、指定目标归因、补丁质量和上游当前状态视为四道独立验收。自动化最有用的交付物是维护者能复核的证据包；发现数量和终态成功率本身不能替代防御闭环。本文只分析防御研究与评估方法，不提供利用代码、载荷或部署攻击步骤。",
+            "来源与修订：OpenAI，原始HTML研究，首发 2026-11-04，未标独立版本号；本站 2026-11-08读取全文。配图为依据公开事实制作的本站重绘或示意，分别标明尺度、统计单位与限制。未独立复现、审核全部原始数据或确认所有补丁／结论。本站首发与首页精选时间以真实发布回执为准。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "研究先确定低权限用户可达且有安全意义的审计目标，再进行静态分析、隔离动态验证、影响评估、补丁生成和人工复核。Scout阶段选出 5034个目标、约 2800000行代码，约为内核全部代码的 7%；这不是对整个Linux代码库逐行完成全面验证。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "静态阶段去重后有 2308项候选；动态阶段复现 1724项。影响验证产生 1169个可工作的本地提权利用，变体分析后以 948份不同补丁界定独特本地提权漏洞。291项信息泄露证明属于另一类结果。不能把这些数字相加当漏洞总数，也不能把候选全部写成已确认问题。"
+                },
+                {
+                  "alt": "候选、复现、可工作利用与独特补丁四类计数",
+                  "attribution": "FieldToFit · OpenAI",
+                  "caption": "本站重绘：2308、1724、1169、948分别保留其统计单位；不是统一分母的成功率漏斗。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Summary; Vulnerability discovery; Vulnerability validation; Exploitability assessment",
+                      "source_id": "original"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov08-root-counts.png",
+                  "kind": "figure",
+                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "The vulnerability research pipeline; Exploitability assessment",
+                  "source_id": "original"
+                }
+              ],
+              "id": "pipeline",
+              "node_ids": [
+                "pipeline"
+              ],
+              "summary": "每阶段回答不同问题，也使用不同单位。",
+              "title": "候选发现、复现、影响验证和补丁不能混成一个成功数"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "早期运行中，系统报告 200次成功本地提权，人工复核发现其中 20次使用了不同于分配目标的漏洞。之后作者收紧任务约束，并加入独立检查来确认最终利用确实对应目标。这个例子说明仅凭终态奖励，可能把替代路径误计为指定任务完成。"
+                },
+                {
+                  "alt": "任务目标、实际路径与结果的独立核对框架",
+                  "attribution": "FieldToFit · OpenAI",
+                  "caption": "本站示意；20/200只描述早期已审样本，不推算最终批次错误率，也不把修订后归因视为无误保证。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
+                      "source_id": "original"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov08-root-attribution.png",
+                  "kind": "figure",
+                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "测试基础设施也可能产生替代路径。kernelCTF研究发现一个QEMU TCG问题，后来确认上游已修复而实验使用的发布构建尚未包含修复。最终证据包需要区分目标软件、基础设施和当前已修版本，而不能把所有异常都归给最初分配的代码。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
+                  "source_id": "original"
+                }
+              ],
+              "id": "attribution",
+              "node_ids": [
+                "attribution"
+              ],
+              "summary": "结果校验和路径归因必须同时存在。",
+              "title": "达成root结果，还要证明使用了指定漏洞"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "主要运行总API费用为 1213430美元，除以 948份独特结果约为每项 1279美元。该口径不是人工审阅、基础设施与研发的全部成本。另一次调整后的kernelCTF环境运行 112小时，API费用约 32936美元，得到 21项本地提权结果；这两次运行不能混用费用分母。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "kernelCTF配置移除了不兼容的SLAB_VIRTUAL缓解措施，所以不能写成全防护配置。按公开历史奖金额估算的价值还取决于是否符合计划、获接受与去重，不是已到账收入；本文不把这些数值作为现实攻击收益承诺。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "作者强调研究首先关注方法和能力，认为进一步的harness工程可能减少开销。不同时间的模型和最新内核扫描也不构成只改变模型一个因素的严格对照。本站因此保留作者的观察与预测，不把它改写成已证明的普遍经济规律。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Cost analysis; What defenders can learn from exploit costs; Stronger models find more vulnerabilities",
+                  "source_id": "original"
+                }
+              ],
+              "id": "costs",
+              "node_ids": [
+                "costs"
+              ],
+              "summary": "运行费用、开发成本、获奖资格与实际收入分别表达。",
+              "title": "API开销是条件化测量，历史赏金只是推算"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "主要扫描及人工分析结束时，上游已有 61项本地提权问题被修复、43项有暂存补丁，另有 299项在公开讨论。作者建议对最新代码重新验证，以免把过期或重复报告转交维护者。上述阶段不能相加当全部正式合入修复，更不能把研究的 948份补丁写成已全部上线。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "初期补丁可能缓解给定证明，却引入不必要代码、性能代价、风格偏离或遗漏变体。增加约束与迭代改善了质量，但仍需维护者审核。编排的收益也随模型变化：文中较旧模型的技巧层在 63个候选上从 76.2%提升到 88.9%，较新模型加回该层仅多 1.5个百分点；不能将此当所有Agent都无需编排的证明。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Maintainers are moving quickly to patch vulnerabilities; Iteration improves patch generation; More capable models can require lighter orchestration",
+                  "source_id": "original"
+                }
+              ],
+              "id": "patches",
+              "node_ids": [
+                "patches"
+              ],
+              "summary": "生成补丁不等于合入，上游变化也会让旧报告失效。",
+              "title": "补丁与上游重新验证决定研究能否转成防御成果"
+            }
+          ],
+          "title": "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-11-04",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "original",
+            "substantive_revision": false,
+            "version": "Unnumbered original HTML research dated2026-11-04"
+          }
+        ],
+        "slug": "linux-vulnerability-evidence-attribution-and-patching",
+        "takeaway": "从候选到复现、影响与补丁，各阶段有不同计数与证据；结果成功还要核对归因，并重新对照最新上游。"
+      },
+      "title": "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。": "Main run in the middle of 2026/10; distinct patches define unique LPE results, not merged fixes.",
+            "API开销是条件化测量，历史赏金只是推算": "API expenditure is conditional measurement; historical bounties are hypothetical",
+            "FieldToFit分析：将可复现证据、指定目标归因、补丁质量和上游当前状态视为四道独立验收。自动化最有用的交付物是维护者能复核的证据包；发现数量和终态成功率本身不能替代防御闭环。本文只分析防御研究与评估方法，不提供利用代码、载荷或部署攻击步骤。": "FieldToFit analysis: treat reproducibility, attribution to the assigned target, patch quality and current upstream status as four independent checks. Useful automation delivers reviewable evidence packages to maintainers; finding counts and terminal success alone do not complete the defensive loop. This article analyzes defensive research and evaluation methods without exploit code, payloads or deployment instructions.",
+            "kernelCTF配置移除了不兼容的SLAB_VIRTUAL缓解措施，所以不能写成全防护配置。按公开历史奖金额估算的价值还取决于是否符合计划、获接受与去重，不是已到账收入；本文不把这些数值作为现实攻击收益承诺。": "The kernelCTF configuration removes the incompatible SLAB_VIRTUAL mitigation, so it is not a fully protected configuration. Values estimated from historical public bounties depend on program eligibility, acceptance and deduplication and are not received income. These figures are not promises of real-world attack returns.",
+            "不含完整人工、基础设施与研发总成本": "Not complete human, infrastructure and R&D cost",
+            "主要扫描及人工分析结束时，上游已有 61项本地提权问题被修复、43项有暂存补丁，另有 299项在公开讨论。作者建议对最新代码重新验证，以免把过期或重复报告转交维护者。上述阶段不能相加当全部正式合入修复，更不能把研究的 948份补丁写成已全部上线。": "By completion of the scan and manual analysis,61 LPEs had upstream fixes,43 had staging patches and 299 were publicly discussed. The authors recommend revalidation against current code to avoid obsolete or duplicate reports. These stages are not all merged fixes, and the 948 research patches are not all deployed upstream.",
+            "主要运行API费用": "Main-run API expenditure",
+            "主要运行口径；不与另外kernelCTF运行的 32936美元混用。": "Main-run definition; separate from the other kernelCTF campaign costing 32936 USD.",
+            "主要运行总API费用为 1213430美元，除以 948份独特结果约为每项 1279美元。该口径不是人工审阅、基础设施与研发的全部成本。另一次调整后的kernelCTF环境运行 112小时，API费用约 32936美元，得到 21项本地提权结果；这两次运行不能混用费用分母。": "The main run costs 1213430 USD in API credits, about 1279 USD per 948 unique results. This excludes a claim to complete human-review, infrastructure and R&D costs. A separate adapted kernelCTF campaign lasts 112 hours, costs about 32936 USD and yields 21 LPE results; denominators from the two campaigns are not interchangeable.",
+            "互补证据与独立验收维度": "Complementary evidence and independent validation dimensions",
+            "从候选到复现、影响与补丁，各阶段有不同计数与证据；结果成功还要核对归因，并重新对照最新上游。": "Candidates, reproduction, impact and patches require distinct counts and evidence; successful outcomes still need attribution checks and revalidation against current upstream code.",
+            "任务目标、实际路径与结果的独立核对框架": "Independent checks for assigned target, actual path and result",
+            "作者强调研究首先关注方法和能力，认为进一步的harness工程可能减少开销。不同时间的模型和最新内核扫描也不构成只改变模型一个因素的严格对照。本站因此保留作者的观察与预测，不把它改写成已证明的普遍经济规律。": "The authors prioritize methods and capability and suggest further harness engineering may reduce expenditure. Scans using different models and current kernels at different times are not controlled experiments changing only the model. FieldToFit retains observations and forecasts without turning them into universal proven economic laws.",
+            "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。": "Based on OpenAI’s original research webpage dated 2026-11-04, primarily covering a run in the middle of 2026/10; checked 2026-11-08. The undisclosed cyber model is not assigned an invented identity. FieldToFit ran no attacks or reproductions, audited no complete patch set and confirmed no bounty income.",
+            "候选、复现、可工作利用与独特补丁四类计数": "Four counters: candidates, reproductions, working exploits and distinct patches",
+            "候选发现、复现、影响验证和补丁不能混成一个成功数": "Do not collapse candidate findings, reproductions, impact tests and patches into one success count",
+            "初期补丁可能缓解给定证明，却引入不必要代码、性能代价、风格偏离或遗漏变体。增加约束与迭代改善了质量，但仍需维护者审核。编排的收益也随模型变化：文中较旧模型的技巧层在 63个候选上从 76.2%提升到 88.9%，较新模型加回该层仅多 1.5个百分点；不能将此当所有Agent都无需编排的证明。": "Initial patches may mitigate a supplied proof while adding unnecessary code, performance tradeoffs, style deviations or missed variants. Constraints and iteration improve quality while retaining maintainer review. Orchestration benefits also depend on the model: a technique layer raises an older model from 76.2% to 88.9% across 63 candidates, while adding it to the newer model yields only 1.5 percentage points. This does not prove all agents need no orchestration.",
+            "动态复现": "Dynamic reproductions",
+            "去重候选发现": "Deduplicated candidate findings",
+            "可工作本地提权利用": "Working LPE exploits",
+            "各计数单位不同，不相加": "Distinct counting units; not additive",
+            "早期运行中，系统报告 200次成功本地提权，人工复核发现其中 20次使用了不同于分配目标的漏洞。之后作者收紧任务约束，并加入独立检查来确认最终利用确实对应目标。这个例子说明仅凭终态奖励，可能把替代路径误计为指定任务完成。": "An early run reports 200 successful LPE exploits; human review finds 20 that use a different vulnerability from the assigned one. The authors then tighten task constraints and add independent checks matching final exploits to assigned findings. A terminal reward alone can incorrectly credit an alternative path as completion of the specified task.",
+            "本站示意；20/200只描述早期已审样本，不推算最终批次错误率，也不把修订后归因视为无误保证。": "FieldToFit explanatory diagram:20/200 describes the early reviewed sample only, not the final-batch error rate or proof of flawless later attribution.",
+            "本站重绘：2308、1724、1169、948分别保留其统计单位；不是统一分母的成功率漏斗。": "FieldToFit redraw:2308, 1724, 1169 and 948 retain their own units; this is not a single-denominator success-rate funnel.",
+            "来源与修订：OpenAI，原始HTML研究，首发 2026-11-04，未标独立版本号；本站 2026-11-08读取全文。配图为依据公开事实制作的本站重绘或示意，分别标明尺度、统计单位与限制。未独立复现、审核全部原始数据或确认所有补丁／结论。本站首发与首页精选时间以真实发布回执为准。": "Sources and revisions: OpenAI original HTML research, first published 2026-11-04, with no independent version number; full article read 2026-11-08. Figures are original FieldToFit redraws or diagrams of public facts, retaining scales, units and limits. No independent replication, complete raw-data audit or confirmation of every patch/conclusion. Site first publication and homepage selection follow actual publishing receipts.",
+            "每阶段回答不同问题，也使用不同单位。": "Each stage answers a different question with a different unit.",
+            "测试基础设施也可能产生替代路径。kernelCTF研究发现一个QEMU TCG问题，后来确认上游已修复而实验使用的发布构建尚未包含修复。最终证据包需要区分目标软件、基础设施和当前已修版本，而不能把所有异常都归给最初分配的代码。": "Testing infrastructure can also supply alternative paths. The kernelCTF work uncovers a QEMU TCG issue already fixed upstream but absent from the release build used in the experiment. Evidence packages must distinguish target software, infrastructure and current fixed versions instead of attributing every anomaly to the initially assigned code.",
+            "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？": "After vulnerability discovery: did the agent use the right path and produce a reviewable patch?",
+            "独特补丁": "Distinct patches",
+            "生成补丁不等于合入，上游变化也会让旧报告失效。": "Generated patches are not merged fixes, and upstream changes can invalidate old reports.",
+            "研究先确定低权限用户可达且有安全意义的审计目标，再进行静态分析、隔离动态验证、影响评估、补丁生成和人工复核。Scout阶段选出 5034个目标、约 2800000行代码，约为内核全部代码的 7%；这不是对整个Linux代码库逐行完成全面验证。": "The pipeline selects security-relevant audit targets reachable by low-privilege users, then performs static analysis, isolated dynamic validation, impact assessment, patch generation and human review. Scouts select 5034 targets and about 2800000 lines, roughly 7% of the kernel; this is not exhaustive line-by-line validation of all Linux code.",
+            "结果校验和路径归因必须同时存在。": "Outcome validation and path attribution must both exist.",
+            "补丁与上游重新验证决定研究能否转成防御成果": "Patches and upstream revalidation determine whether research becomes defensive value",
+            "达成root结果，还要证明使用了指定漏洞": "Obtaining root still requires proof of using the assigned vulnerability",
+            "运行费用、开发成本、获奖资格与实际收入分别表达。": "Separate run expenditure, development costs, award eligibility and actual revenue.",
+            "静态阶段去重后有 2308项候选；动态阶段复现 1724项。影响验证产生 1169个可工作的本地提权利用，变体分析后以 948份不同补丁界定独特本地提权漏洞。291项信息泄露证明属于另一类结果。不能把这些数字相加当漏洞总数，也不能把候选全部写成已确认问题。": "Static analysis produces 2308 deduplicated candidates and dynamic validation reproduces 1724. Impact testing produces 1169 working local-privilege-escalation exploits; variant analysis identifies 948 distinct patches, used to count unique LPE vulnerabilities. The 291 information-leak proofs form a different result category. These numbers cannot be added into a vulnerability total or all candidates described as confirmed.",
+            "首次完整分析：四条核心结论、同号论述与两张本站重绘，保留原文方法、口径和局限。": "First complete analysis: four findings, matching arguments and two original redraws, preserving methods, definitions and limitations."
+          },
+          "reviewed_at": "2026-11-08T02:39:18.223106+00:00",
+          "source_hash": "940ea6bc1f5b4b41ff431983cf5c1adc6a7830a8dd326aabe1ac3c698f407ac6",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-08",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-02",
+      "highlight": false,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "希望减少重复上传及首字等待；本站判断。",
+            "title": "长会话Agent开发者"
+          },
+          {
+            "detail": "核对数据处理要求与组织配置；本站判断。",
+            "title": "企业管理员"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "服务端重建对话；模型仍读取完整上下文。",
+            "title": "首次完整，后续增量"
+          },
+          {
+            "detail": "五分钟未使用后失效，最迟一小时内删除；内存加密，不写持久存储。",
+            "title": "服务端保留短期状态"
+          },
+          {
+            "detail": "保存自己的副本，线程不可用时重新创建。",
+            "title": "失效后客户端重放"
+          }
+        ],
+        "checked_at": "2026-11-08",
+        "evidence": [
+          {
+            "locator": "How message threads works; Getting started",
+            "source_id": "announcement"
+          },
+          {
+            "locator": "How message threads work; Pricing and rate limits; Features not supported; Data retention",
+            "source_id": "docs"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "历史少上传，账单不因此变少",
+        "limits": [
+          {
+            "detail": "价格、限流及token用量不因此下降；不是免费长记忆。",
+            "title": "费用与用量"
+          },
+          {
+            "detail": "不适用ZDR／HIPAA；组织Inference hooks等功能不兼容。本站未实测API或保留效果。",
+            "title": "采用与实测"
+          }
+        ],
+        "next_step": "先保留自己的完整会话副本，再验证线程失效、请求冲突与完整重放。本站建议。",
+        "revised_at": "2026-11-08",
+        "revision": "c38f8346457268df560cd856942394194929436fbe7c55860b6288abc6a01810",
+        "scope": "Claude Messages API · Message threads beta；具体平台与组织配置另核。",
+        "share": {
+          "content_revision": "c38f8346457268df560cd856942394194929436fbe7c55860b6288abc6a01810",
+          "en": {
+            "sha256": "85e583463c16e1519b701aaf126395b69a0cea89f6d92f9d89429c906abed261",
+            "text_revision": "ca2f285d0a9616fd1c486e86ab2b34cf16f03960e2ddb6e18e5cde34801ae082",
+            "url": "/hot-cards/d-320-c38f83464572-en.png"
+          },
+          "zh": {
+            "sha256": "e9702d0db6b5b609cc10503e18f3622af760bc334ee2b6691613bb0074aab47b",
+            "url": "/hot-cards/d-320-c38f83464572-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "事件 2026-11-02；卡片修订与来源核对 2026-11-08。未调用API、测试首字延迟、计费、留存或组织兼容性。"
+      },
+      "id": "D-320",
+      "interpretation": [
+        {
+          "locator": "How message threads work; What to send; Pricing and rate limits; Unsupported features; Data retention",
+          "source_ids": [
+            "announcement",
+            "docs"
+          ],
+          "text": "创建请求发送完整对话、system和tools；后续请求只发送新增消息并引用上次回复ID。服务端重建完整对话，模型仍读取全部上下文；线程不是免费长记忆，也不替代prompt caching。",
+          "title": "减少上传，不减少模型读取"
+        },
+        {
+          "locator": "How message threads work; What to send; Pricing and rate limits; Unsupported features; Data retention",
+          "source_ids": [
+            "announcement",
+            "docs"
+          ],
+          "text": "文档规定最后一次使用五分钟后线程失效，最迟一小时内删除；内容在内存中加密保存、不写入持久存储，不代表没有短期保留。应用必须保存自己的会话副本，线程不可用时用完整历史重新创建。",
+          "title": "失效与删除是不同承诺"
+        },
+        {
+          "locator": "How message threads work; What to send; Pricing and rate limits; Unsupported features; Data retention",
+          "source_ids": [
+            "announcement",
+            "docs"
+          ],
+          "text": "当前为beta，使用message-threads-2026-08-12请求头。文档列出Claude API、Claude Platform on AWS、Google Cloud的Anthropic托管服务及Microsoft Foundry；不据此推定其他云入口等价。线程不适用ZDR或HIPAA，启用Inference hooks的组织以及若干上下文功能不受支持。",
+          "title": "采用条件与回退分别验证"
+        }
+      ],
+      "name": "Claude Message threads",
+      "note": "原文事件 2026-11-02，本站 2026-11-08补录；beta请求头中的日期不是本次公告日。每个响应ID只允许一次继续请求，固定字段改变须重建线程；没有列出、读取或删除线程的专用API。未调用API、复现延迟、验证留存或组织资格。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-08T02:38:58.608558+00:00",
+        "hot_card_first_published_at": "2026-11-08T02:38:58.608590+00:00",
+        "hot_card_selected_at": "2026-11-08T02:38:58.608590+00:00",
+        "updated_at": "2026-11-08T02:38:58.608558+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-11-02",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "Make long-running agents faster with message threads ·2026-11-02",
+          "url": "https://claude.com/resources/articles/message-threads"
+        },
+        {
+          "coverage": "link_only",
+          "id": "docs",
+          "title": "Message threads · current official API documentation",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+        }
+      ],
+      "state": "published",
+      "summary": "Messages API通过短期会话状态减少重复上传，主要改善长会话首字延迟。价格、限流和模型读取的token口径不因此改变；客户端仍需保存完整历史并处理失效重放。",
+      "title": "Claude Message threads进入公开测试：少传历史，仍须保留会话副本",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude Message threads进入公开测试：少传历史，仍须保留会话副本": "Claude Message threads beta: upload less history while retaining your own conversation copy",
+            "Claude Messages API · Message threads beta；具体平台与组织配置另核。": "Claude Messages API · Message threads beta; verify platform and organization configuration separately.",
+            "Messages API通过短期会话状态减少重复上传，主要改善长会话首字延迟。价格、限流和模型读取的token口径不因此改变；客户端仍需保存完整历史并处理失效重放。": "The Messages API reduces repeated uploads with short-lived conversation state, primarily improving time to first token in long sessions. Pricing, rate limits and the model’s token usage do not change as a result; clients retain full history and replay when threads expire.",
+            "不适用ZDR／HIPAA；组织Inference hooks等功能不兼容。本站未实测API或保留效果。": "Not ZDR/HIPAA eligible; organization Inference hooks and some other features are incompatible. FieldToFit did not test APIs or retention.",
+            "事件 2026-11-02；卡片修订与来源核对 2026-11-08。未调用API、测试首字延迟、计费、留存或组织兼容性。": "Event 2026-11-02; card revised and sources checked 2026-11-08. No API calls or tests of time to first token, billing, retention or organization compatibility.",
+            "五分钟未使用后失效，最迟一小时内删除；内存加密，不写持久存储。": "Expires five minutes after last use; deleted no more than one hour after last use. Encrypted in memory without durable storage.",
+            "价格、限流及token用量不因此下降；不是免费长记忆。": "Pricing, rate limits and token usage do not fall as a result; this is not free long-term memory.",
+            "企业管理员": "Enterprise administrators",
+            "保存自己的副本，线程不可用时重新创建。": "Keep your own copy and create a new thread when continuation is unavailable.",
+            "先保留自己的完整会话副本，再验证线程失效、请求冲突与完整重放。本站建议。": "Retain your own full conversation copy, then validate expiration, request conflicts and full-history replay. FieldToFit suggestion.",
+            "减少上传，不减少模型读取": "Less upload does not mean less model input",
+            "创建请求发送完整对话、system和tools；后续请求只发送新增消息并引用上次回复ID。服务端重建完整对话，模型仍读取全部上下文；线程不是免费长记忆，也不替代prompt caching。": "The create request sends the full conversation, system and tools; continuation sends new messages and references the previous response ID. The server reconstructs the conversation, and the model still reads the whole context. A thread is neither free long-term memory nor a replacement for prompt caching.",
+            "历史少上传，账单不因此变少": "Upload less history; the bill does not shrink as a result",
+            "原文事件 2026-11-02，本站 2026-11-08补录；beta请求头中的日期不是本次公告日。每个响应ID只允许一次继续请求，固定字段改变须重建线程；没有列出、读取或删除线程的专用API。未调用API、复现延迟、验证留存或组织资格。": "Source event 2026-11-02, backfilled 2026-11-08; the date in the beta header is not the announcement date. Each response ID permits one continuation; changing fixed fields requires a new thread. There is no dedicated API to list, read or delete threads. No API calls, latency reproduction, retention test or organization-eligibility test.",
+            "失效与删除是不同承诺": "Expiration and deletion are different commitments",
+            "失效后客户端重放": "Replay from the client after expiration",
+            "希望减少重复上传及首字等待；本站判断。": "Reduce repeated uploads and time to first token; FieldToFit view.",
+            "当前为beta，使用message-threads-2026-08-12请求头。文档列出Claude API、Claude Platform on AWS、Google Cloud的Anthropic托管服务及Microsoft Foundry；不据此推定其他云入口等价。线程不适用ZDR或HIPAA，启用Inference hooks的组织以及若干上下文功能不受支持。": "The feature is beta using the message-threads-2026-08-12 header. Documentation lists Claude API, Claude Platform on AWS, Anthropic-managed Google Cloud and Microsoft Foundry; this does not establish equivalence for other cloud entry points. Threads are not ZDR or HIPAA eligible, and organizations with Inference hooks enabled and some context-management features are unsupported.",
+            "文档规定最后一次使用五分钟后线程失效，最迟一小时内删除；内容在内存中加密保存、不写入持久存储，不代表没有短期保留。应用必须保存自己的会话副本，线程不可用时用完整历史重新创建。": "The documentation specifies expiration five minutes after last use and deletion no more than one hour after last use. Contents are encrypted in memory and not written to durable storage, which is distinct from no short-term retention. Applications retain their own conversation copy and create a new thread from full history when continuation is unavailable.",
+            "服务端保留短期状态": "Short-lived server-side state",
+            "服务端重建对话；模型仍读取完整上下文。": "The server rebuilds the conversation; the model still reads the full context.",
+            "核对数据处理要求与组织配置；本站判断。": "Check data-handling requirements and organization settings; FieldToFit view.",
+            "费用与用量": "Cost and usage",
+            "采用与实测": "Adoption and testing",
+            "采用条件与回退分别验证": "Validate adoption conditions and fallback separately",
+            "长会话Agent开发者": "Long-session agent developers",
+            "首次完整，后续增量": "Full first request, incremental later turns"
+          },
+          "reviewed_at": "2026-11-08T02:38:35.306327+00:00",
+          "source_hash": "5fde86f93b4a6792a10bdfc0136b0263af797a04b3c22329be73d974c46cc425",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "tool",
       "checked_at": "2026-11-07",
       "editor": "FieldToFit",
@@ -679,7 +1729,7 @@
             "source_id": "help"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "Claude能读账单，分享与留存仍要自己检查",
         "limits": [
           {
@@ -808,7 +1858,7 @@
             "资格与入口": "Eligibility and entry points"
           },
           "reviewed_at": "2026-11-07T00:41:28.003458+00:00",
-          "source_hash": "8fc708a31dd272a817c4d5f360f73eac9e0db9319cb274aea54a4ce91eb8962c",
+          "source_hash": "3143fdbbc65aca4279fdb4009b41555f3c0c4c77d806237c990134888a4604a1",
           "state": "reviewed"
         }
       }
@@ -2398,7 +3448,7 @@
             "source_id": "changelog"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "Claude Code 2.1.317：检查失败时，也要明确拦截策略",
         "limits": [
           {
@@ -2518,7 +3568,7 @@
             "配置与入口不同": "Configuration and entry points differ"
           },
           "reviewed_at": "2026-11-04T01:31:13.090949+00:00",
-          "source_hash": "37be77b2da1109fd672c8847f94d41ad51e783ef3b76b36e754b8aae2ff6f2a7",
+          "source_hash": "ac700705061f13f69abc6994e406b471875ba7307f74b25b1a3d177e12f8b120",
           "state": "reviewed"
         }
       }
@@ -3205,7 +4255,7 @@
             "source_id": "deep-review"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Deep Review能核查文档，上传前先看条件",
         "limits": [
           {
@@ -3325,7 +4375,7 @@
             "输入与存储分别审核": "Review inputs and retention separately"
           },
           "reviewed_at": "2026-11-02T14:33:02.941339+00:00",
-          "source_hash": "32dc4d182642eace1541208548ee6168c9185ad44190fea7fabc71217360955d",
+          "source_hash": "41a8d69cff6ac14d8da77f9a4faa141fdb5adc0096be8fc9e20aec3b6f8a2c5b",
           "state": "reviewed"
         }
       }
@@ -50418,7 +51468,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-11-07",
+  "reviewed_at": "2026-11-08",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

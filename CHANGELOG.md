@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.24"></a>
+## v1.17.24 · 线程采用边界与两项证据研究 · 2026-11-08
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-08 -->
+<!-- public-title:en: Thread adoption limits and two studies of evidence -->
+<!-- release-summary:zh:start -->
+- 已发表Message threads动态和中英信息卡，分开失效、删除、费用与组织配置，并保留真实11月2日事件日期。
+- BioBasicsBench与Linux安全研究各提供四条结论、同号论述及两张本站重绘，保留评分、计数单位、归因与成本边界。
+- 对应Claude／ChatGPT档案窄范围增补；报告与卡片仅在实际发表后轮换，旧索引、日期和分享地址保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Message threads update and bilingual information card, separating expiry, deletion, cost and organization settings while retaining the November2 event date.
+- Provide four findings, matching arguments and two original redraws each for BioBasicsBench and Linux security research, preserving scoring, counting units, attribution and cost limits.
+- Add only corresponding Claude/ChatGPT dossier context; reports and cards rotate only after actual publication, preserving historical indexes, dates and share links.
+<!-- release-summary:en:end -->
+
+对应REQ-11、REQ-22、REQ-22-8、REQ-6-34／REQ-11-6。所有者明确选择11月8日动态A、报告1／报告2、卡1全部发布。基于实际v1.17.23与4551c73，保留已有全部公开内容；本批及v1.17.0以来累计无新模块、主要流程、协议改变或迁移，按兼容内容／静态资源patch处理。A与卡同D-320，报告D-321／D-322；两档案增补，不刷新榜单。发表、部署及轮替以[实际验收](docs/validation/2026-11-08-threads-and-evidence.md)为准。
+
 <a id="v1.17.23"></a>
 ## v1.17.23 · Cyber报告与账户权限信息卡 · 2026-11-07
 <!-- release-tag:unpublished -->

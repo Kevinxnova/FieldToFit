@@ -2086,5 +2086,105 @@
     "attribution": "FieldToFit · OpenAI GPT-6 Cyber System Card",
     "source_version": "Unnumbered system card dated2026-11-05",
     "locator": "Sections4.1–4.2; Tables5–8; PDF physical pages7–9"
+  },
+  "/report-figures/nov08-bio-scores.png": {
+    "sha256": "bc2d11bbb8070f503a23fe5135a57c3658a2a04018d59133e352015c085d5f89",
+    "source_urls": [
+      "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"
+    ],
+    "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction.",
+    "version": "OpenAI original HTML; 2026-11-06",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Results; Performance at xhigh reasoning effort",
+      "metric": "mean rubric reward",
+      "unit": "%",
+      "means": [
+        66.7,
+        62.0,
+        43.8,
+        38.3,
+        35.4,
+        33.2,
+        31.2
+      ],
+      "ci95_low": [
+        60.3,
+        55.6,
+        37.6,
+        32.3,
+        29.7,
+        28.3,
+        26.2
+      ],
+      "ci95_high": [
+        73.1,
+        68.4,
+        50.0,
+        44.5,
+        41.0,
+        38.4,
+        36.3
+      ],
+      "models": [
+        "GPT-6 Astra",
+        "GPT-6.1 Sol",
+        "GPT-5.6 Sol",
+        "GPT-6 Luna",
+        "GPT-5.5",
+        "GPT-5.4",
+        "GPT-5.2"
+      ],
+      "tasks": 100,
+      "attempts_per_task": 5
+    }
+  },
+  "/report-figures/nov08-bio-evidence.png": {
+    "sha256": "e241c3d08a0c6d2b2c246a7a1e9445283e1195e73d7ed92b3faebbd6b1f3d2af",
+    "source_urls": [
+      "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"
+    ],
+    "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction.",
+    "version": "OpenAI original HTML; 2026-11-06",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "GPT-6 Astra improvements; Where models still fall short",
+      "kind": "qualitative reading framework",
+      "error_incidence_rates": null
+    }
+  },
+  "/report-figures/nov08-root-counts.png": {
+    "sha256": "0ddfa4dc32d7cfca63703cd2d810847f378466fed87a62a103277de131c2e19d",
+    "source_urls": [
+      "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+    ],
+    "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction.",
+    "version": "OpenAI original HTML; 2026-11-04",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Summary; Vulnerability validation; Exploitability assessment",
+      "kind": "categorical counters",
+      "candidates": 2308,
+      "reproductions": 1724,
+      "working_LPE_exploits": 1169,
+      "distinct_patches": 948,
+      "flow_percentages": null
+    }
+  },
+  "/report-figures/nov08-root-attribution.png": {
+    "sha256": "4ea8782ee3cc9b663890a3517178c0e89051a5e792f043e8abb96c4aac4e0b98",
+    "source_urls": [
+      "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+    ],
+    "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction.",
+    "version": "OpenAI original HTML; 2026-11-04",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
+      "kind": "qualitative attribution checks",
+      "early_successful_sample": 200,
+      "early_wrong_target": 20,
+      "final_campaign_mismatch_rate": null
+    }
   }
 }

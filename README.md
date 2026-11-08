@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.17.23](CHANGELOG.md#v1.17.23)** · 尚未推送发布标签
+**当前源码版本：[v1.17.24](CHANGELOG.md#v1.17.24)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 已发布A–D与三份对应档案：Personal Finance、GPT-6 Cyber、Claude Code2.1.319及Enterprise控制，保留真实日期、开放范围和未实测边界。
-- 所选Cyber系统卡分析提供四条结论、同号论述与三张本站重绘，分开能力、外部评估、授权行为和部署条件。
-- 所选Personal Finance卡提供中英文人工分享图及稳定二维码；报告与卡片已按实际发表轮换，旧内容保留全部索引，报告2仍待选择。
+- 已发表Message threads动态和中英信息卡，分开失效、删除、费用与组织配置，并保留真实11月2日事件日期。
+- BioBasicsBench与Linux安全研究各提供四条结论、同号论述及两张本站重绘，保留评分、计数单位、归因与成本边界。
+- 对应Claude／ChatGPT档案窄范围增补；报告与卡片仅在实际发表后轮换，旧索引、日期和分享地址保留。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

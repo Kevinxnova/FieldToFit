@@ -5271,6 +5271,10 @@
       "blocks": [
         {
           "kind": "paragraph",
+          "text": "BioBasicsBench｜2026-11-06：OpenAI与Ligo报告 100项日常实验分析任务，按评分细则的平均获分衡量模型；总分不等于实验成功率。另附 2026-11-04 Linux安全研究，分开候选、复现、独特补丁和路径归因；未补定未公开模型身份。2026-11-08核对两篇原始研究，未复现。"
+        },
+        {
+          "kind": "paragraph",
           "text": "GPT-6 Cyber｜2026-11-05｜基于Astra强化获准网络安全任务，限Daybreak Red审核用户；能力、外部评估与授权行为分别阅读，组织安全、API IP允许列表及ZDR安全处理条件分别适用。2026-11-07核对系统卡，未调用或复现。"
         },
         {
@@ -5631,7 +5635,7 @@
           "text": "研究相关阅读：[GPT-6.1 Sol系统卡：平均进步之外，怎样看退步项与监控证据？](https://fieldtofit.top/maps/gpt61-sol-safety-tradeoffs)。原报告日期 2026-09-29；产品事件与研究结果分开，现有模型版本和价格不因此自动改动。"
         }
       ],
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-08",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M01",
       "interpretation": [
@@ -6099,6 +6103,18 @@
           "id": "nov07-b-astra-methods",
           "title": "GPT-6 Astra system card · inherited evaluation methods",
           "url": "https://deploymentsafety.openai.com/gpt-6-astra/cybersecurity-capabilities"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov08-report1-original",
+          "title": "BioBasicsBench · OpenAI ·2026-11-06",
+          "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov08-report2-original",
+          "title": "Linux vulnerability research · OpenAI ·2026-11-04",
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
         }
       ],
       "state": "published",
@@ -6118,6 +6134,7 @@
             "API；分别保留模型标识": "API; keep the model identification separately",
             "API；固定分支标识可避免把别名误当独立模型": "API; fixed branch identification can avoid mistaking alias as independent models",
             "Astra 的异步调用允许模型等待工具结果时继续其他推理或工具操作；值得读的是调用过程和结果回收方式，而不只是模型名称。": "Astra's asynchronous calls let it continue other reasoning or tool operations while waiting for tool results. The call flow and result-collection mechanism provide useful details beyond the model name.",
+            "BioBasicsBench｜2026-11-06：OpenAI与Ligo报告 100项日常实验分析任务，按评分细则的平均获分衡量模型；总分不等于实验成功率。另附 2026-11-04 Linux安全研究，分开候选、复现、独特补丁和路径归因；未补定未公开模型身份。2026-11-08核对两篇原始研究，未复现。": "BioBasicsBench |2026-11-06: OpenAI and Ligo report 100 routine laboratory-analysis tasks evaluated by mean rubric reward, not experimental success rate. Related Linux research dated 2026-11-04 separates candidates, reproductions, distinct patches and path attribution without assigning an undisclosed model’s identity. Both original studies checked 2026-11-08; not reproduced.",
             "CW-M01 新增语音分支并保留D-13 旧节点。API型号、价格和具体账户开放状态仍待核；本站未调用实测。": "Add the voice branch to CW-M01 and retain D-13; API identifiers, prices and account-specific availability remain unverified; FieldToFit has not run inference tests.",
             "ChatGPT将文字、图示与可操作组件组合成回答，用户可以修改输入并观察结果；本次针对Chat体验分阶段推出。": "ChatGPT combines text, diagrams and actionable components in answers, letting users change inputs and observe results. This rollout concerns the Chat experience and proceeds in stages.",
             "GPT 档案补齐：把 GPT-6 Sol/Luna 与 GPT-6.1 Sol 放回同一张版本表 · 官方来源 1": "GPT profile complete: Put GPT-6 Sol/Luna and GPT-6.1 Sol back to the same version table · Official source 1",
@@ -6298,8 +6315,8 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "reviewed_at": "2026-11-07T00:57:25.094498+00:00",
-          "source_hash": "1579812a5a362cd65377316a2454940258a2700c4683bfa5a3d68e684259fdad",
+          "reviewed_at": "2026-11-08T02:41:32.817089+00:00",
+          "source_hash": "1b777a751d7fc4286a9a73530e6d2c53d378159ed48f67311a2750de9c3a137d",
           "state": "reviewed"
         }
       },
@@ -6307,6 +6324,10 @@
     },
     {
       "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Message threads公开测试｜2026-11-02：通过短期服务端会话减少重复上传；token用量与价格不因此下降，客户端继续保存完整副本并处理失效重放。五分钟失效与最迟一小时删除分别理解，不适用ZDR／HIPAA，组织Inference hooks等条件另核。2026-11-08核对，未实测。"
+        },
         {
           "kind": "paragraph",
           "text": "Personal Finance beta｜2026-11-05｜美国Pro／Max／Ultra个人账户逐步开放，经Plaid只读访问授权账户；专区训练承诺与历史分享内容分别处理。2026-11-07核对，未实测。"
@@ -6622,7 +6643,7 @@
           "text": "研究相关阅读：[Claude 怎样降低量子电路成本：独立评估器比“自主发现”更关键](https://fieldtofit.top/maps/claude-quantum-circuit-resource-search)。原报告日期 2026-10-15；研究指标不自动改写现有模型版本或价格。"
         }
       ],
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-08",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M02",
       "interpretation": [
@@ -7022,6 +7043,18 @@
           "id": "nov07-d-announcement",
           "title": "Claude Enterprise security updates ·2026-11-05",
           "url": "https://claude.com/resources/articles/claude-enterprise-security-updates"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov08-threads-announcement",
+          "title": "Make long-running agents faster with message threads ·2026-11-02",
+          "url": "https://claude.com/resources/articles/message-threads"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov08-threads-docs",
+          "title": "Message threads · current official API documentation",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
         }
       ],
       "state": "published",
@@ -7060,6 +7093,7 @@
             "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 1": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 1",
             "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 2": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 2",
             "Haiku 5.5发布与Sonnet 5.5缓存读取降价 · 官方来源 3": "Haiku 5.5 Release and Sonnet 5.5 Cache Reading Price Reduction · Official Source 3",
+            "Message threads公开测试｜2026-11-02：通过短期服务端会话减少重复上传；token用量与价格不因此下降，客户端继续保存完整副本并处理失效重放。五分钟失效与最迟一小时删除分别理解，不适用ZDR／HIPAA，组织Inference hooks等条件另核。2026-11-08核对，未实测。": "Message threads public beta |2026-11-02: short-lived server-side state reduces repeated uploads, without reducing token usage or pricing as a result. Clients retain full copies and handle expiration/replay. Five-minute expiration and deletion no more than one hour later are distinct; not ZDR/HIPAA eligible, with organization Inference hooks and other conditions requiring checks. Checked 2026-11-08; untested.",
             "Messages API 与 Managed Agents 追踪；SDK／API 覆盖互补，默认仅元数据。导出可能丢失／重复，接收服务另有保留规则，未实测。": "Messages API and Managed Agents tracing; SDK / API coverage is complementary, metadata only by default. Spans can be lost / duplicated; recipient retention rules apply; untested.",
             "Opus 5 及 4.8 仍有研究预览要求，不能将 5.5 的范围套到其他型号或所有云平台。本站未实测。": "Opus 5 and 4.8 still have research-preview requirements. Do not extend 5.5 availability to other models or every cloud platform. FieldToFit has not tested it.",
             "Opus 和 Sonnet 有各自升级路线；Fable 的发布不能自动解释成其他产品线停用。": "Opus and Sonnet have their own upgrade routes; the release of Fable cannot be automatically interpreted as the deactivation of other product lines.",
@@ -7177,8 +7211,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-11-07T00:43:51.074172+00:00",
-          "source_hash": "998566a45903f3f2cde9f11f87c661d105336f633ada2021cbf468d3b6863d4b",
+          "reviewed_at": "2026-11-08T02:40:48.947742+00:00",
+          "source_hash": "ec4e6bca53ffcb429d12d6142caa7b2412e517e863a6233f9b50a9290b3f2de5",
           "state": "reviewed"
         }
       },
@@ -15140,7 +15174,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-11-07",
+  "reviewed_at": "2026-11-08",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }
