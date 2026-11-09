@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.17.25"></a>
+## v1.17.25 · 桌面默认切换与Agent记忆证据 · 2026-11-09
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-09 -->
+<!-- public-title:en: Desktop defaults and evidence for agent memory -->
+<!-- release-summary:zh:start -->
+- 已发表Claude Desktop 3P动态及中英信息卡，保留计划生效时区、默认值、VM、工具与会话留存条件，区分Enterprise云端原范围。
+- 同一记忆研究的动态B与报告1共用记录，提供四条结论、同号论述与三张本站重绘，区分整理预算、实测消耗、评分与任务成功率。
+- 对应Claude档案窄范围增补；仅实际发表后轮换报告与信息卡，历史索引、日期、旧图和分享链接保持。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Claude Desktop 3P update and bilingual information card with the planned timezone, defaults, VM, tools and retention conditions, separate from the existing Enterprise cloud scope.
+- Share one record between update B and report1 on agent memory, with four findings, matching arguments and three original redraws separating budgets, measured spend, grading and task success.
+- Add only corresponding Claude dossier context; report and card selection rotates only after actual publication, preserving historical indexes, dates, images and share links.
+<!-- release-summary:en:end -->
+
+对应REQ-11、REQ-22、REQ-22-8、REQ-6-34／REQ-11-6。所有者具体选择11月9日动态A、B；报告1、卡1全部发布；报告2未选。以实际v1.17.24及61d21bf为基线，本批及自v1.17.0以来累计无新模块、主要流程、协议变化或迁移，采用兼容内容／静态资源patch。A与卡共D-323，B与报告1共D-324，对应CW-M02增补；不改模型榜单或其他旧卡。具体发表、轮换、部署与限制以[实际验收](docs/validation/2026-11-09-desktop-and-agent-memory.md)为准。
+
 <a id="v1.17.24"></a>
 ## v1.17.24 · 线程采用边界与两项证据研究 · 2026-11-08
 <!-- release-tag:unpublished -->

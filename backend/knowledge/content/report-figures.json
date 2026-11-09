@@ -2186,5 +2186,47 @@
       "early_wrong_target": 20,
       "final_campaign_mismatch_rate": null
     }
+  },
+  "/report-figures/nov09-memory-layers.png": {
+    "sha256": "18051c09a8872c04464469161abcc1faa87a89c35993c71d919f605d910a441f",
+    "source_urls": [
+      "https://www.anthropic.com/research/components-of-agent-memory"
+    ],
+    "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction.",
+    "version": "Anthropic original HTML;2026-11-06",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Memory notes; Figure1; Dreaming can promote notes up the memory hierarchy; Figure13",
+      "kind": "conceptual hierarchy",
+      "independent_replication": false
+    }
+  },
+  "/report-figures/nov09-memory-rewards.png": {
+    "sha256": "013e0bace8ee1186227614f4eb3b698f6ea0e570a860c6bdbc2be5f110e1f334",
+    "source_urls": [
+      "https://www.anthropic.com/research/components-of-agent-memory"
+    ],
+    "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction.",
+    "version": "Anthropic original HTML;2026-11-06",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Memory can be a prediction about what the future will need; Figure3",
+      "kind": "Published task-specific values; no invented confidence intervals",
+      "independent_replication": false
+    }
+  },
+  "/report-figures/nov09-memory-retrieval.png": {
+    "sha256": "45a04fe6f4d1d232cbde46e0176ff63cedebba10e4d882dae4beb98bb1632c00",
+    "source_urls": [
+      "https://www.anthropic.com/research/components-of-agent-memory"
+    ],
+    "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction.",
+    "version": "Anthropic original HTML;2026-11-06",
+    "origin": "fieldtofit-redraw",
+    "statistics": {
+      "locator": "Dreaming can build new memory representations; Figure10",
+      "kind": "Published task-specific values; no invented confidence intervals",
+      "independent_replication": false
+    }
   }
 }

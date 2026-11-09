@@ -1,5 +1,7 @@
 # 验收证据导航
 
+- [2026-11-09 Desktop默认切换与Agent记忆](2026-11-09-desktop-and-agent-memory.md)：四项具体选择、三个公开对象及真实发表／轮换。
+
 - [2026-11-08 线程与两项证据研究](2026-11-08-threads-and-evidence.md)：四项选择、五对象与实际发布轮换。
 
 - [2026-11-07 Cyber报告与Personal Finance卡](2026-11-07-cyber-finance.md)：六项选择、七对象、双语图文与真实轮换。

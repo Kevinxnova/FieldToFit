@@ -6326,6 +6326,14 @@
       "blocks": [
         {
           "kind": "paragraph",
+          "text": "Claude Desktop 3P统一默认切换｜2026-11-10 12:00 Pacific之后启动时，未设desktopHome的当前版本采用standard；北京时间 2026-11-11 04:00之后。新Cowork会话的工具、目录和留存须分别核对，VM组件下载另有条件；与Enterprise云端范围分别适用。2026-11-09核对，未实测。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "研究相关阅读｜The components of agent memory，Lance Martin／Anthropic，2026-11-06：外部笔记、离线纠错、wiki与搜索各有作用；CL-Bench数据库任务及 25题内部资料评测不能外推为所有任务成功率。新增长文保留四条结论与三张本站重绘，2026-11-09核对，未复现；不改变模型权重、版本或价格。"
+        },
+        {
+          "kind": "paragraph",
           "text": "Message threads公开测试｜2026-11-02：通过短期服务端会话减少重复上传；token用量与价格不因此下降，客户端继续保存完整副本并处理失效重放。五分钟失效与最迟一小时删除分别理解，不适用ZDR／HIPAA，组织Inference hooks等条件另核。2026-11-08核对，未实测。"
         },
         {
@@ -6643,7 +6651,7 @@
           "text": "研究相关阅读：[Claude 怎样降低量子电路成本：独立评估器比“自主发现”更关键](https://fieldtofit.top/maps/claude-quantum-circuit-resource-search)。原报告日期 2026-10-15；研究指标不自动改写现有模型版本或价格。"
         }
       ],
-      "checked_at": "2026-11-08",
+      "checked_at": "2026-11-09",
       "evidence_status": "official_materials_reviewed_not_runtime_tested",
       "id": "CW-M02",
       "interpretation": [
@@ -7055,6 +7063,24 @@
           "id": "nov08-threads-docs",
           "title": "Message threads · current official API documentation",
           "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov09-a-unified-docs",
+          "title": "Unified Claude in Claude Desktop on3P · current official documentation",
+          "url": "https://claude.com/docs/third-party/claude-desktop/unified-claude"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov09-a-configuration",
+          "title": "Claude Desktop3P configuration reference · relevant settings",
+          "url": "https://claude.com/docs/third-party/claude-desktop/configuration"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov09-b-original",
+          "title": "The components of agent memory · Lance Martin / Anthropic ·2026-11-06",
+          "url": "https://www.anthropic.com/research/components-of-agent-memory"
         }
       ],
       "state": "published",
@@ -7076,6 +7102,7 @@
             "Claude API；各云入口见官方列表": "Claude API; see the official list of each cloud entrance",
             "Claude API；旧采样参数需要核对": "Claude API; old sampling parameters need to be checked",
             "Claude API；迁移时核对思考配置": "Claude API; Check and think about the configuration when migrating",
+            "Claude Desktop 3P统一默认切换｜2026-11-10 12:00 Pacific之后启动时，未设desktopHome的当前版本采用standard；北京时间 2026-11-11 04:00之后。新Cowork会话的工具、目录和留存须分别核对，VM组件下载另有条件；与Enterprise云端范围分别适用。2026-11-09核对，未实测。": "Claude Desktop 3P unified default | Current versions launched after 2026-11-10 12:00 Pacific treat an unset desktopHome as standard; after 2026-11-11 04:00 Beijing time. Review tools, directories and retention for new Cowork sessions separately, along with VM component downloads; the Enterprise cloud scope remains separate. Checked 2026-11-09; untested.",
             "Claude Duet research preview／Opus 5.5；原文 2026-10-21，本站 2026-10-22核对。未试用账户、连接器、后台行动或账单；不据此更改模型API价格或套餐额度。": "Claude Duet research preview / Opus 5.5; source 2026-10-21, checked 2026-10-22. No account, connector, background-action or billing tests; no model API price or plan-limit change is inferred.",
             "Claude Duet基于Opus 5.5，提供iOS、Android和网页入口。它在连接的应用中检查需关注事项，也能在云端继续任务；研究预览先面向美国Pro／Max候补用户。": "Claude Duet uses Opus 5.5 on iOS, Android and the web. It checks connected apps for matters needing attention and continues tasks in the cloud. The research preview initially accepts waitlisted US Pro and Max users.",
             "Claude Duet：主动检查应用，美国Pro／Max先开放候补": "Claude Duet: proactive app checks, initially waitlisted for US Pro and Max",
@@ -7194,6 +7221,7 @@
             "研究相关阅读：[AI 写出形式化证明之后，究竟证明了什么？](https://fieldtofit.top/maps/claude-formal-verification-boundaries)。原报告日期 2026-10-22；研究指标不自动改写现有模型版本或价格。": "Related research: [What exactly has been proved when AI writes a formal proof?](https://fieldtofit.top/maps/claude-formal-verification-boundaries). Original report 2026-10-22; research metrics do not automatically change existing model versions or prices.",
             "研究相关阅读：[Claude 怎样降低量子电路成本：独立评估器比“自主发现”更关键](https://fieldtofit.top/maps/claude-quantum-circuit-resource-search)。原报告日期 2026-10-15；研究指标不自动改写现有模型版本或价格。": "Related research: [How Claude reduces quantum-circuit costs: why the independent evaluator matters](https://fieldtofit.top/maps/claude-quantum-circuit-resource-search). Original report 2026-10-15; research metrics do not automatically change existing model versions or prices.",
             "研究相关阅读：[Claude设计出结合蛋白之后，离抗蝎毒治疗还有多远？](https://fieldtofit.top/maps/claude-scorpion-binder-evidence)。原报告日期 2026-10-20；产品事件与研究结果分开，现有模型版本和价格不因此自动改动。": "Related research: [After Claude designs toxin binders, how far is an antivenom treatment?](https://fieldtofit.top/maps/claude-scorpion-binder-evidence). Original report 2026-10-20. Product events and research results are separate; existing model versions and prices are not automatically changed.",
+            "研究相关阅读｜The components of agent memory，Lance Martin／Anthropic，2026-11-06：外部笔记、离线纠错、wiki与搜索各有作用；CL-Bench数据库任务及 25题内部资料评测不能外推为所有任务成功率。新增长文保留四条结论与三张本站重绘，2026-11-09核对，未复现；不改变模型权重、版本或价格。": "Research reading | The components of agent memory, Lance Martin / Anthropic,2026-11-06: external notes, offline correction, wikis and search play distinct roles. The CL-Bench database task and 25-question internal-document evaluation do not establish success rates for all tasks. The new analysis has four findings and three original redraws, checked 2026-11-09 without replication; it does not change model weights, versions or pricing.",
             "第一方Messages与Token Counting请求体由 32MB提高至 128MB；不是模型上下文扩大。Sessions、Agents、Environments与批处理、文件上传各有不同限制。": "First-party Messages and Token Counting request bodies rise from 32MB to 128MB, without establishing larger model context. Sessions, Agents, Environments, batches and file uploads have separate limits.",
             "自主硬件的监督要求": "Supervision requirements for autonomous hardware",
             "获取与使用": "Acquisition and use",
@@ -7211,8 +7239,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-11-08T02:40:48.947742+00:00",
-          "source_hash": "ec4e6bca53ffcb429d12d6142caa7b2412e517e863a6233f9b50a9290b3f2de5",
+          "reviewed_at": "2026-11-09T03:14:21.000638+00:00",
+          "source_hash": "1195333aef8894e76645ce0e2909262975049516cca4a617720e46c3d465d96a",
           "state": "reviewed"
         }
       },
@@ -15174,7 +15202,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-11-08",
+  "reviewed_at": "2026-11-09",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

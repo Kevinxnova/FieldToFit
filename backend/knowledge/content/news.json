@@ -2,6 +2,666 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "tool",
+      "checked_at": "2026-11-09",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-11",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "核对默认值、工具及部署网络；本站判断。",
+            "title": "第三方桌面管理员"
+          },
+          {
+            "detail": "确认文件、工具与会话留存范围；本站判断。",
+            "title": "团队资料使用者"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "11月 10日 12:00 Pacific之后启动，未设desktopHome按standard解释；北京时间 11月 11日 04:00之后。",
+            "title": "默认值将切换"
+          },
+          {
+            "detail": "可运行Cowork VM时，新主页消息进入Cowork会话；不能运行时采用非VM能力，Code独立。",
+            "title": "能力取决于设备"
+          },
+          {
+            "detail": "新Cowork会话采用Cowork留存，原Chat留存仍覆盖原聊天。旧标签页开关不能替代工具策略。",
+            "title": "留存分别配置"
+          }
+        ],
+        "checked_at": "2026-11-09",
+        "evidence": [
+          {
+            "locator": "Enabling Unified Claude; How Unified Claude interacts with Chat and Cowork settings",
+            "source_id": "unified-docs"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "统一入口后，先核Cowork工具与留存",
+        "limits": [
+          {
+            "detail": "不外推全部个人或Enterprise云端入口；缺少VM组件可能下载超过 1 GB。",
+            "title": "部署与组件条件"
+          },
+          {
+            "detail": "未配置企业设备，未验证VM、权限、删除时点或账单；首次文档发布日期未知。",
+            "title": "未经实测"
+          }
+        ],
+        "next_step": "先确认部署入口及desktopHome值，分别检查工具、目录与会话留存，再在测试设备验证启动和组件下载。本站建议。",
+        "revised_at": "2026-11-09",
+        "revision": "d3708c71ad93c03c4ee630ac2efa4baf04a5a3d0e9f9a2cf676a5bc9d9990fab",
+        "scope": "Claude Desktop on third-party platforms · 当前版本Unified Claude beta；不外推全部Enterprise云端入口。",
+        "share": {
+          "content_revision": "d3708c71ad93c03c4ee630ac2efa4baf04a5a3d0e9f9a2cf676a5bc9d9990fab",
+          "en": {
+            "sha256": "d91b89dd5868b1982562825cc43f0296eff43c5b05ab96aa72bf78ad51c708ef",
+            "text_revision": "40ca54c59ff7a0138486df5c4a4a2a5b6c9a3ed5e83ea494ecc9dab94b30ce7f",
+            "url": "/hot-cards/d-323-d3708c71ad93-en.png"
+          },
+          "zh": {
+            "sha256": "955a3850bdb61acab1fdf40486224c202f10138aa1a40900478f24ad305ed130",
+            "url": "/hot-cards/d-323-d3708c71ad93-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "计划生效 2026-11-10 12:00 Pacific／2026-11-11 04:00北京；文档首发日未核实。卡片修订与来源核对 2026-11-09；未配置企业设备、测VM、权限、删除或账单。"
+      },
+      "id": "D-323",
+      "interpretation": [
+        {
+          "locator": "What users see; Enabling Unified Claude; How Unified Claude interacts with Chat and Cowork settings; desktopHome and retention keys",
+          "source_ids": [
+            "unified-docs",
+            "configuration"
+          ],
+          "text": "当前文档标Unified Claude为beta。2026-11-10 12:00 Pacific之后，当前版本启动时将未设置的desktopHome按standard解释；北京时间为 2026-11-11 04:00之后。文档没有给出本站已核实的首次发布日期，因此不能把核对日写成首发日，也不能把计划切换写成已经生效。",
+          "title": "生效时间与默认值分开核对"
+        },
+        {
+          "locator": "What users see; Enabling Unified Claude; How Unified Claude interacts with Chat and Cowork settings; desktopHome and retention keys",
+          "source_ids": [
+            "unified-docs",
+            "configuration"
+          ],
+          "text": "可启动Cowork虚拟机的设备，主页新消息启动Cowork会话，沿用Cowork工具与设置；不能启动VM时采用非VM能力。Code入口独立。旧Chat／Cowork标签页开关不会阻止该默认统一行为；应分别检查disabledBuiltinTools、builtinToolPolicy、allowedWorkspaceFolders及scheduledTasksEnabled等设置。",
+          "title": "新会话能力取决于设备与部署"
+        },
+        {
+          "locator": "What users see; Enabling Unified Claude; How Unified Claude interacts with Chat and Cowork settings; desktopHome and retention keys",
+          "source_ids": [
+            "unified-docs",
+            "configuration"
+          ],
+          "text": "新Cowork会话遵循coworkSessionRetentionDays；chatSessionRetentionDays仍覆盖原Chat会话。缺少Cowork工作区包的可运行设备，会在首次新会话时从downloads.claude.ai下载超过 1 GB组件，应提前核对代理或防火墙条件。仅适用于官方 3P桌面部署说明，不外推Enterprise云端或全部个人订阅。",
+          "title": "原聊天与新Cowork留存不是同一个设置"
+        }
+      ],
+      "name": "Claude Desktop on third-party platforms",
+      "note": "事件日期 2026-11-11指北京时间计划默认切换日，不是文档首发日；原文明确 2026-11-10 12:00 Pacific之后启动时适用，未标统一软件版本号。2026-11-09核对，未配置企业设备、安装VM、测权限、验证删除或账单。保留D-245的Enterprise云端原范围与历史，不以本篇覆盖。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-09T03:14:03.325721+00:00",
+        "hot_card_first_published_at": "2026-11-09T03:14:03.325753+00:00",
+        "hot_card_selected_at": "2026-11-09T03:14:03.325753+00:00",
+        "updated_at": "2026-11-09T03:14:03.325721+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "unified-docs",
+          "title": "Unified Claude in Claude Desktop on3P · current official documentation",
+          "url": "https://claude.com/docs/third-party/claude-desktop/unified-claude"
+        },
+        {
+          "coverage": "link_only",
+          "id": "configuration",
+          "title": "Claude Desktop3P configuration reference · relevant settings",
+          "url": "https://claude.com/docs/third-party/claude-desktop/configuration"
+        }
+      ],
+      "state": "published",
+      "summary": "官方文档规定当前版本在 2026-11-10 12:00 Pacific之后启动时，未设desktopHome按standard解释，即北京时间 2026-11-11 04:00之后。可运行VM设备的新主页消息会成为Cowork会话；权限、目录与留存规则需分别核对。",
+      "title": "Claude第三方桌面将默认统一Chat与Cowork：先核工具与留存",
+      "translations": {
+        "en": {
+          "fields": {
+            "11月 10日 12:00 Pacific之后启动，未设desktopHome按standard解释；北京时间 11月 11日 04:00之后。": "Launches after 11/10 12:00 Pacific treat an unset desktopHome as standard; after 11/11 04:00 Beijing time.",
+            "Claude Desktop on third-party platforms · 当前版本Unified Claude beta；不外推全部Enterprise云端入口。": "Claude Desktop on third-party platforms · current Unified Claude beta; not all Enterprise cloud entry points.",
+            "Claude第三方桌面将默认统一Chat与Cowork：先核工具与留存": "Claude Desktop on third-party platforms will default to unified Chat and Cowork: check tools and retention",
+            "不外推全部个人或Enterprise云端入口；缺少VM组件可能下载超过 1 GB。": "Not all individual or Enterprise cloud entry points; a missing VM bundle may require a download exceeding 1 GB.",
+            "事件日期 2026-11-11指北京时间计划默认切换日，不是文档首发日；原文明确 2026-11-10 12:00 Pacific之后启动时适用，未标统一软件版本号。2026-11-09核对，未配置企业设备、安装VM、测权限、验证删除或账单。保留D-245的Enterprise云端原范围与历史，不以本篇覆盖。": "Event date 2026-11-11 denotes the scheduled Beijing-time default switch, not original documentation publication. Documentation specifies launches after 2026-11-10 12:00 Pacific without one software version number. Checked 2026-11-09; no enterprise-device configuration, VM installation, permission, deletion or billing test. D-245’s original Enterprise cloud scope and history are retained separately.",
+            "先确认部署入口及desktopHome值，分别检查工具、目录与会话留存，再在测试设备验证启动和组件下载。本站建议。": "Confirm the deployment entry point and desktopHome value, review tools, directories and session retention separately, then test startup and component downloads on a test device. FieldToFit suggestion.",
+            "原聊天与新Cowork留存不是同一个设置": "Existing Chat and new Cowork retention use separate settings",
+            "可启动Cowork虚拟机的设备，主页新消息启动Cowork会话，沿用Cowork工具与设置；不能启动VM时采用非VM能力。Code入口独立。旧Chat／Cowork标签页开关不会阻止该默认统一行为；应分别检查disabledBuiltinTools、builtinToolPolicy、allowedWorkspaceFolders及scheduledTasksEnabled等设置。": "On devices able to launch the Cowork VM, a new home-screen message starts a Cowork session with Cowork tools and settings. Devices unable to launch the VM use non-VM capabilities; Code remains separate. Old Chat/Cowork tab switches do not prevent the unified default. Check settings such as disabledBuiltinTools, builtinToolPolicy, allowedWorkspaceFolders and scheduledTasksEnabled separately.",
+            "可运行Cowork VM时，新主页消息进入Cowork会话；不能运行时采用非VM能力，Code独立。": "On a device that can run the Cowork VM, a new home-screen message starts a Cowork session; otherwise non-VM capabilities apply. Code stays separate.",
+            "团队资料使用者": "Team members handling documents",
+            "官方文档规定当前版本在 2026-11-10 12:00 Pacific之后启动时，未设desktopHome按standard解释，即北京时间 2026-11-11 04:00之后。可运行VM设备的新主页消息会成为Cowork会话；权限、目录与留存规则需分别核对。": "Official documentation says current versions launched after 2026-11-10 12:00 Pacific treat an unset desktopHome as standard, equivalent to 2026-11-11 04:00 Beijing time. On VM-capable devices, new home-screen messages become Cowork sessions; verify tools, directories and retention separately.",
+            "当前文档标Unified Claude为beta。2026-11-10 12:00 Pacific之后，当前版本启动时将未设置的desktopHome按standard解释；北京时间为 2026-11-11 04:00之后。文档没有给出本站已核实的首次发布日期，因此不能把核对日写成首发日，也不能把计划切换写成已经生效。": "The current documentation labels Unified Claude beta. After 2026-11-10 12:00 Pacific, a current version treats an unset desktopHome as standard when it starts; that is after 2026-11-11 04:00 Beijing time. The original documentation publication date is unverified, so the check date is not its launch date and the planned switch is not presented as already effective.",
+            "新Cowork会话遵循coworkSessionRetentionDays；chatSessionRetentionDays仍覆盖原Chat会话。缺少Cowork工作区包的可运行设备，会在首次新会话时从downloads.claude.ai下载超过 1 GB组件，应提前核对代理或防火墙条件。仅适用于官方 3P桌面部署说明，不外推Enterprise云端或全部个人订阅。": "New Cowork sessions follow coworkSessionRetentionDays, while chatSessionRetentionDays still covers existing Chat conversations. A capable device missing the Cowork workspace bundle downloads more than 1 GB from downloads.claude.ai on its first new conversation; review proxy or firewall conditions in advance. This concerns the official 3P desktop deployment, not all Enterprise cloud or individual-plan entry points.",
+            "新Cowork会话采用Cowork留存，原Chat留存仍覆盖原聊天。旧标签页开关不能替代工具策略。": "New Cowork sessions use Cowork retention while Chat retention covers prior chats. Old tab switches do not replace tool policies.",
+            "新会话能力取决于设备与部署": "New-session capabilities depend on the device and deployment",
+            "未经实测": "Not independently tested",
+            "未配置企业设备，未验证VM、权限、删除时点或账单；首次文档发布日期未知。": "No enterprise-device, VM, permission, deletion-timing or billing test; original documentation publication date unknown.",
+            "核对默认值、工具及部署网络；本站判断。": "Review defaults, tools and deployment networking; FieldToFit view.",
+            "生效时间与默认值分开核对": "Check the effective time and the default value",
+            "留存分别配置": "Configure retention separately",
+            "确认文件、工具与会话留存范围；本站判断。": "Confirm file, tool and session-retention scope; FieldToFit view.",
+            "第三方桌面管理员": "Third-party desktop administrators",
+            "统一入口后，先核Cowork工具与留存": "A unified entry point requires separate Cowork tool and retention checks",
+            "能力取决于设备": "Capabilities depend on the device",
+            "计划生效 2026-11-10 12:00 Pacific／2026-11-11 04:00北京；文档首发日未核实。卡片修订与来源核对 2026-11-09；未配置企业设备、测VM、权限、删除或账单。": "Scheduled switch 2026-11-10 12:00 Pacific /2026-11-11 04:00 Beijing; original documentation publication date unverified. Card revised and sources checked 2026-11-09; no enterprise-device, VM, permission, deletion or billing test.",
+            "部署与组件条件": "Deployment and component requirements",
+            "默认值将切换": "The default will change"
+          },
+          "reviewed_at": "2026-11-09T03:13:40.459045+00:00",
+          "source_hash": "80f0d909f085f3229ac79718297623fe1501ef9607e6d1cbf6b2ab3786e130e3",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-11-09",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-06",
+      "highlight": true,
+      "id": "D-324",
+      "interpretation": [
+        {
+          "locator": "Memory notes; Dreaming can correct memory; Dreaming can promote notes up the memory hierarchy",
+          "source_ids": [
+            "original"
+          ],
+          "text": "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。",
+          "title": "先分清记忆层级，再决定哪些内容应该自动进入下一次会话"
+        },
+        {
+          "locator": "Memory can be a prediction about what the future will need; Steering Claude to write memory",
+          "source_ids": [
+            "original"
+          ],
+          "text": "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。",
+          "title": "记忆收益取决于模型能否形成“猜测—验证—修正”的循环"
+        },
+        {
+          "locator": "Dreaming can build new memory representations; Figure10",
+          "source_ids": [
+            "original"
+          ],
+          "text": "更好的回答分数与每题token节省，是特定语料和预算下的结果。",
+          "title": "wiki与搜索可以互补，但必须把整理预算计入账本"
+        },
+        {
+          "locator": "Dreaming can correct memory; Dreaming can build new memory representations; Dreaming can focus memory on a specific goal; Thinking backward, looking forward",
+          "source_ids": [
+            "original"
+          ],
+          "text": "保留重要事实、避免互相覆盖，并让读者回到原文。",
+          "title": "可靠记忆需要保真、并发控制与纠错，而不是无限摘要"
+        }
+      ],
+      "name": "Claude agent memory research",
+      "note": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-09T03:13:25.209602+00:00",
+        "report_selected_at": "2026-11-09T03:13:25.209602+00:00",
+        "updated_at": "2026-11-09T03:13:25.209602+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-11-06",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "original",
+          "title": "The components of agent memory · Lance Martin / Anthropic ·2026-11-06",
+          "url": "https://www.anthropic.com/research/components-of-agent-memory"
+        }
+      ],
+      "state": "published",
+      "summary": "有效记忆需要筛选、纠错、组织与按需检索；记住更多不等于更可靠，回答阶段的节省也不能替代完整维护成本。",
+      "technical_map": {
+        "caution": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
+        "change_summary": "首次完整分析：四条结论与同号论述，三张本站重绘，保留任务分母、对照条件、整理预算与反例。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Memory can be a prediction about what the future will need; Steering Claude to write memory",
+                "source_id": "original"
+              }
+            ],
+            "from": "layers",
+            "label": "互补检查维度，不表示跨实验因果",
+            "relation": "parallel",
+            "to": "learning"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Dreaming can build new memory representations; Figure10",
+                "source_id": "original"
+              }
+            ],
+            "from": "layers",
+            "label": "互补检查维度，不表示跨实验因果",
+            "relation": "parallel",
+            "to": "retrieval"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Dreaming can correct memory; Dreaming can build new memory representations; Dreaming can focus memory on a specific goal; Thinking backward, looking forward",
+                "source_id": "original"
+              }
+            ],
+            "from": "layers",
+            "label": "互补检查维度，不表示跨实验因果",
+            "relation": "parallel",
+            "to": "reliability"
+          }
+        ],
+        "focus": "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Memory notes; Dreaming can correct memory; Dreaming can promote notes up the memory hierarchy",
+                "source_id": "original"
+              }
+            ],
+            "id": "layers",
+            "kind": "method",
+            "label": "先分清记忆层级，再决定哪些内容应该自动进入下一次会话",
+            "limitation": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
+            "mechanism": "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。",
+            "metrics": [],
+            "result": "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。",
+            "setting": "Anthropic原始HTML研究；2026-11-06",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Memory can be a prediction about what the future will need; Steering Claude to write memory",
+                "source_id": "original"
+              }
+            ],
+            "id": "learning",
+            "kind": "method",
+            "label": "记忆收益取决于模型能否形成“猜测—验证—修正”的循环",
+            "limitation": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
+            "mechanism": "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。",
+            "metrics": [
+              {
+                "baseline": "Opus 5.5 / stateless 0.655",
+                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
+                "label": "Opus 5.5 / memory",
+                "unit": "mean reward",
+                "value": 0.838
+              },
+              {
+                "baseline": "Sonnet 5.5 / stateless 0.644",
+                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
+                "label": "Sonnet 5.5 / memory",
+                "unit": "mean reward",
+                "value": 0.833
+              },
+              {
+                "baseline": "Opus 5 / stateless 0.564",
+                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
+                "label": "Opus 5 / memory",
+                "unit": "mean reward",
+                "value": 0.828
+              },
+              {
+                "baseline": "Opus 4.7 / stateless 0.383",
+                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
+                "label": "Opus 4.7 / memory",
+                "unit": "mean reward",
+                "value": 0.7
+              },
+              {
+                "baseline": "Sonnet 5 / stateless 0.306",
+                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
+                "label": "Sonnet 5 / memory",
+                "unit": "mean reward",
+                "value": 0.61
+              },
+              {
+                "baseline": "Sonnet 4.6 / stateless 0.330",
+                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
+                "label": "Sonnet 4.6 / memory",
+                "unit": "mean reward",
+                "value": 0.364
+              }
+            ],
+            "result": "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。",
+            "setting": "Anthropic原始HTML研究；2026-11-06",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Dreaming can build new memory representations; Figure10",
+                "source_id": "original"
+              }
+            ],
+            "id": "retrieval",
+            "kind": "method",
+            "label": "wiki与搜索可以互补，但必须把整理预算计入账本",
+            "limitation": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
+            "mechanism": "更好的回答分数与每题token节省，是特定语料和预算下的结果。",
+            "metrics": [
+              {
+                "baseline": "相同内部语料与 25题；wiki条件需要前置整理",
+                "conditions": "约 350000文件、420M tokens；最多 128次整理会话；不代表完整任务成功率。",
+                "label": "Search only",
+                "unit": "% grading criteria",
+                "value": 53
+              },
+              {
+                "baseline": "相同内部语料与 25题；wiki条件需要前置整理",
+                "conditions": "约 350000文件、420M tokens；最多 128次整理会话；不代表完整任务成功率。",
+                "label": "Wiki only",
+                "unit": "% grading criteria",
+                "value": 48
+              },
+              {
+                "baseline": "相同内部语料与 25题；wiki条件需要前置整理",
+                "conditions": "约 350000文件、420M tokens；最多 128次整理会话；不代表完整任务成功率。",
+                "label": "Wiki + search",
+                "unit": "% grading criteria",
+                "value": 61
+              }
+            ],
+            "result": "更好的回答分数与每题token节省，是特定语料和预算下的结果。",
+            "setting": "Anthropic原始HTML研究；2026-11-06",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Dreaming can correct memory; Dreaming can build new memory representations; Dreaming can focus memory on a specific goal; Thinking backward, looking forward",
+                "source_id": "original"
+              }
+            ],
+            "id": "reliability",
+            "kind": "method",
+            "label": "可靠记忆需要保真、并发控制与纠错，而不是无限摘要",
+            "limitation": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
+            "mechanism": "保留重要事实、避免互相覆盖，并让读者回到原文。",
+            "metrics": [],
+            "result": "保留重要事实、避免互相覆盖，并让读者回到原文。",
+            "setting": "Anthropic原始HTML研究；2026-11-06",
+            "stage": 3
+          }
+        ],
+        "question": "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：把记忆验收分成信息是否值得存、能否追溯与纠错、是否更容易取用、总体成本是否合算四个问题。先建立可重放的原始记录，再比较无记忆、默认记忆与整理记忆；记录失败案例，而不是只看最佳平均分。",
+            "本站建议：为笔记保留来源链接、验证状态和替代历史；对可能快速变化的事实设置复查节奏；多人或多Agent写入时明确单写入者或冲突处理。上述为工程判断，不是原文已经测得的通用收益，也不直接授权自动处理个人资料。",
+            "来源与修订：Lance Martin／Anthropic，《The components of agent memory》，2026-11-06原始HTML，无编号版本；本站 2026-11-09深读并整理。三图为本站依据公开事实重绘或示意，非原图复用；未审计内部原始语料、运行外链基准或独立复现实验。本站首次上站与首页精选日期由实际发布回执记录。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "文章把Agent记忆定义为跨会话保存、之后可读取的经验，排除模型权重学习、单会话内学习和上下文压缩本身。它区分原始transcript、记忆笔记、wiki等表示，以及每次会话预先注入的内容。前者保留事件；后几层是模型对未来需要什么的判断，可能遗漏、过期或出错。"
+                },
+                {
+                  "alt": "跨会话记忆的四层与离线整理作用",
+                  "attribution": "FieldToFit · Anthropic / Lance Martin",
+                  "caption": "本站示意，依据原文图 1／13；箭头表示信息整理或读取关系，不代表自动更新权重、固定产品架构或已验证因果。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Memory notes; Dreaming can promote notes up the memory hierarchy",
+                      "source_id": "original"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov09-memory-layers.png",
+                  "kind": "figure",
+                  "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Dreaming可以在会话之间对照原始记录纠错、合并笔记或构造链接。但错误笔记若被提升到常驻上下文，也会反复污染后续会话。原文以Claude Code的MEMORY.md索引为例，描述只加载前 200行或 25 KB；这是该产品所述行为，不是所有Agent的统一记忆上限。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "离线整理输出也必须有出处和失效机制。Dreaming需要计算；模型有机会重新检查记录，不等于每次都能纠正真实世界中的错误。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Memory notes; Dreaming can correct memory; Dreaming can promote notes up the memory hierarchy",
+                  "source_id": "original"
+                }
+              ],
+              "id": "layers",
+              "node_ids": [
+                "layers"
+              ],
+              "summary": "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。",
+              "title": "先分清记忆层级，再决定哪些内容应该自动进入下一次会话"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "CL-Bench 1.0数据库任务要求模型连续回答问题；每题开始于新会话，只有记忆目录跨会话保留，回答后得到正确解以帮助后续问题。原文图中的 30题运行均值及平均reward属于这个任务，不是整个CL-Bench的综合分，也不是生产数据库查询的成功率。"
+                },
+                {
+                  "alt": "六模型在数据库任务中有无记忆的平均reward",
+                  "attribution": "FieldToFit · Anthropic / Lance Martin",
+                  "caption": "本站重绘原文图 3：纵轴 0–1，六组为各自无状态／记忆目录对照；原文未给本图统计区间，本图不新增误差条或全任务成功率。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Memory can be a prediction about what the future will need; Figure3",
+                      "source_id": "original"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov09-memory-rewards.png",
+                  "kind": "figure",
+                  "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "图中Opus 5.5从 0.655到 0.838，Sonnet 5.5从 0.644到 0.833，Opus 5从 0.564到 0.828；Sonnet 4.6仅从 0.330到 0.364。作者观察到较强模型记录已验证规则，而较旧模型容易保留未测试猜测。给Sonnet 4.6增加读取笔记和检验理论的指令，另一次设置达到 0.641；提示条件与模型版本必须一起保留。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "“只记录失败”的额外规则还会削弱部分模型的记忆收益。因此不能从单条最佳提示推导通用规则；应在目标任务上比较无记忆、默认记忆和引导记忆，并检查保存的规则是否有验证依据。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Memory can be a prediction about what the future will need; Steering Claude to write memory",
+                  "source_id": "original"
+                }
+              ],
+              "id": "learning",
+              "node_ids": [
+                "learning"
+              ],
+              "summary": "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。",
+              "title": "记忆收益取决于模型能否形成“猜测—验证—修正”的循环"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Stainless内部资料实验约含 350000文件、420M tokens，评测 25道问题。Opus 5代理最多用 128次会话构建和修订wiki，共享日志协调。仅wiki评分随整理从 13%升到 48%；wiki与搜索结合从 54%到 61%，仅搜索为 53%。这些是满足评分条件的比例，不是答对问题数或完整任务成功率。"
+                },
+                {
+                  "alt": "资料检索实验的三种读取条件与整理预算",
+                  "attribution": "FieldToFit · Anthropic / Lance Martin",
+                  "caption": "本站重绘原文图 10的最终报告值：仅搜索 53%、仅wiki 48%、wiki加搜索 61%。语料和 25题相同，但wiki需要事先整理；128次会话对应最多 128M dreaming tokens预算，每次 1M；这是预算，不是实测消耗。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Dreaming can build new memory representations; Figure10",
+                      "source_id": "original"
+                    }
+                  ],
+                  "image_url": "/report-figures/nov09-memory-retrieval.png",
+                  "kind": "figure",
+                  "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "原文称wiki结合搜索每题还能节省约 20000 tokens，但这不包含把资料整理成wiki的完整前置投入。原图横轴从 2M到 128M dreaming tokens，表示每次会话 1M的预算，而非实测消耗；不能仅用回答阶段节省宣布总体降本；需要按实际查询复用次数、更新频率、模型单价和纠错开销核算。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "内部资料未完整公开，本研究不提供独立复算或面向任意企业语料的收益保证；本文也不据此推算未经验证的回本查询次数。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Dreaming can build new memory representations; Figure10",
+                  "source_id": "original"
+                }
+              ],
+              "id": "retrieval",
+              "node_ids": [
+                "retrieval"
+              ],
+              "summary": "更好的回答分数与每题token节省，是特定语料和预算下的结果。",
+              "title": "wiki与搜索可以互补，但必须把整理预算计入账本"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "法律任务展示了wiki的边界：对 24个并购问题中的跨文档、判断或算术项目，wiki条件报告 87%，搜索条件 73%；但另一LAB任务的要求大多可从单份文件直接搜索，wiki没有清楚收益。还有一个wiki大于原文件的案例，说明压缩与抽象并非自动发生。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "另一个合同任务中，多Agent同时改共享表，生成材料只保留 57个被评分事实中的 41个。经过反思及重写构建指令，改为每合同单页、单写入者并逐字保留条款后，57个事实均可覆盖。这里同时改变了任务组织、写入方式与保真要求，不是孤立证明某个单一变量造成全部提升，更不是法律意见可靠性认证。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "游戏中的位置笔记也会写错；一次离线对照transcript的纠错改变了后续路线。但个别游戏轨迹不能估计普遍成功率。部署时更应记录来源、验证状态、最后复核和替代版本，并检查缺失页面及过期事实，控制自动注入层的大小。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Dreaming can correct memory; Dreaming can build new memory representations; Dreaming can focus memory on a specific goal; Thinking backward, looking forward",
+                  "source_id": "original"
+                }
+              ],
+              "id": "reliability",
+              "node_ids": [
+                "reliability"
+              ],
+              "summary": "保留重要事实、避免互相覆盖，并让读者回到原文。",
+              "title": "可靠记忆需要保真、并发控制与纠错，而不是无限摘要"
+            }
+          ],
+          "title": "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-11-06",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "original",
+            "substantive_revision": false,
+            "version": "Unnumbered original HTML article dated2026-11-06"
+          }
+        ],
+        "slug": "claude-agent-memory-evidence-and-maintenance",
+        "takeaway": "有效记忆需要筛选、纠错、组织与按需检索；记住更多不等于更可靠，回答阶段的节省也不能替代完整维护成本。"
+      },
+      "title": "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？",
+      "translations": {
+        "en": {
+          "fields": {
+            "Anthropic原始HTML研究；2026-11-06": "Anthropic original HTML research;2026-11-06",
+            "CL-Bench 1.0数据库任务要求模型连续回答问题；每题开始于新会话，只有记忆目录跨会话保留，回答后得到正确解以帮助后续问题。原文图中的 30题运行均值及平均reward属于这个任务，不是整个CL-Bench的综合分，也不是生产数据库查询的成功率。": "In the CL-Bench 1.0 database task, models answer sequential questions in fresh sessions while a memory directory persists; correct answers are then supplied to help later questions. The running means across 30 questions and mean rewards concern this task, not an aggregate CL-Bench score or production database-query success rate.",
+            "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。": "CL-Bench 1.0 database task: fresh sessions with a persistent memory directory; not the full benchmark aggregate.",
+            "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？": "Claude agent memory: how can past records become experience worth reusing?",
+            "Dreaming可以在会话之间对照原始记录纠错、合并笔记或构造链接。但错误笔记若被提升到常驻上下文，也会反复污染后续会话。原文以Claude Code的MEMORY.md索引为例，描述只加载前 200行或 25 KB；这是该产品所述行为，不是所有Agent的统一记忆上限。": "Dreaming can compare notes with transcripts, correct them, merge entries or build links between sessions. A wrong note promoted into always-loaded context can repeatedly contaminate later sessions. The article uses Claude Code’s MEMORY.md index as an example, describing the first 200 lines or 25 KB being loaded; that is the stated product behavior, not a universal memory limit for agents.",
+            "FieldToFit分析：把记忆验收分成信息是否值得存、能否追溯与纠错、是否更容易取用、总体成本是否合算四个问题。先建立可重放的原始记录，再比较无记忆、默认记忆与整理记忆；记录失败案例，而不是只看最佳平均分。": "FieldToFit analysis: assess what is worth storing, traceability and correction, retrieval usefulness and total cost separately. Keep replayable original records, compare stateless, default-memory and organized-memory conditions, and retain failures instead of only the best averages.",
+            "Stainless内部资料实验约含 350000文件、420M tokens，评测 25道问题。Opus 5代理最多用 128次会话构建和修订wiki，共享日志协调。仅wiki评分随整理从 13%升到 48%；wiki与搜索结合从 54%到 61%，仅搜索为 53%。这些是满足评分条件的比例，不是答对问题数或完整任务成功率。": "The Stainless internal-document experiment covers about 350000 files and 420M tokens, with 25 evaluation questions. Opus 5 agents build and revise a wiki over up to 128 sessions coordinated by a shared log. Wiki-only grading rises from 13% to 48%; wiki plus search rises from 54% to 61%, compared with 53% for search alone. These are fractions of grading criteria met, not counts of correct questions or complete-task success rates.",
+            "wiki与搜索可以互补，但必须把整理预算计入账本": "Wikis can complement search when the construction budget is counted",
+            "“只记录失败”的额外规则还会削弱部分模型的记忆收益。因此不能从单条最佳提示推导通用规则；应在目标任务上比较无记忆、默认记忆和引导记忆，并检查保存的规则是否有验证依据。": "An additional rule to record only failures weakens some models’ memory gains. One best prompt does not establish a universal rule. Compare stateless, default-memory and guided-memory settings on the target task, and inspect whether stored rules have supporting tests.",
+            "互补检查维度，不表示跨实验因果": "Complementary checks, not cross-experiment causation",
+            "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。": "Based on the original article by Lance Martin / Anthropic dated 2026-11-06, checked 2026-11-09. Experiments span different models, individual game trajectories and internal company documents without one common task denominator; some data is private. No independent model runs, internal-data audit or benchmark replication. Dreaming is not newly launched today and does not mean training model weights.",
+            "保留重要事实、避免互相覆盖，并让读者回到原文。": "Preserve important facts, prevent overwrites and keep a path back to original evidence.",
+            "先分清记忆层级，再决定哪些内容应该自动进入下一次会话": "Separate memory layers before deciding what enters every future session",
+            "六模型在数据库任务中有无记忆的平均reward": "Mean reward with and without memory for six models on the database task",
+            "内部资料未完整公开，本研究不提供独立复算或面向任意企业语料的收益保证；本文也不据此推算未经验证的回本查询次数。": "Internal materials are not fully public. This does not provide independent recalculation or a guaranteed benefit for arbitrary enterprise corpora; no unsupported break-even query count is inferred here.",
+            "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。": "Raw records provide traceable evidence, notes and wikis organize it, and always-loaded context should remain a small index.",
+            "原文称wiki结合搜索每题还能节省约 20000 tokens，但这不包含把资料整理成wiki的完整前置投入。原图横轴从 2M到 128M dreaming tokens，表示每次会话 1M的预算，而非实测消耗；不能仅用回答阶段节省宣布总体降本；需要按实际查询复用次数、更新频率、模型单价和纠错开销核算。": "The article reports about 20000 tokens saved per question when combining wiki and search, but that does not account for the complete upfront construction cost. The original construction axis spans 2M to 128M dreaming tokens as a budget of 1M per session, not measured spend. Answer-stage savings alone do not establish net cost reduction; account for reuse frequency, updates, model prices and correction work.",
+            "另一个合同任务中，多Agent同时改共享表，生成材料只保留 57个被评分事实中的 41个。经过反思及重写构建指令，改为每合同单页、单写入者并逐字保留条款后，57个事实均可覆盖。这里同时改变了任务组织、写入方式与保真要求，不是孤立证明某个单一变量造成全部提升，更不是法律意见可靠性认证。": "In another contract task, agents concurrently writing a shared table retain 41 of 57 graded facts. After reflection and revised construction instructions, one page and one writer per contract, with verbatim terms, can cover all 57 facts. Task organization, write coordination and fidelity requirements change together. This does not isolate one causal variable or certify reliable legal advice.",
+            "可靠记忆需要保真、并发控制与纠错，而不是无限摘要": "Reliable memory requires fidelity, write coordination and correction, not unlimited summarization",
+            "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。": "The same external directory helps different models and prompting strategies very differently.",
+            "图中Opus 5.5从 0.655到 0.838，Sonnet 5.5从 0.644到 0.833，Opus 5从 0.564到 0.828；Sonnet 4.6仅从 0.330到 0.364。作者观察到较强模型记录已验证规则，而较旧模型容易保留未测试猜测。给Sonnet 4.6增加读取笔记和检验理论的指令，另一次设置达到 0.641；提示条件与模型版本必须一起保留。": "Opus 5.5 rises from 0.655 to 0.838, Sonnet 5.5 from 0.644 to 0.833 and Opus 5 from 0.564 to 0.828, while Sonnet 4.6 moves only from 0.330 to 0.364. The authors observe stronger models recording validated rules while an older model retains untested hypotheses. In a separate prompted setting, instructions to read notes and test theories bring Sonnet 4.6 to 0.641; prompting conditions and model identities must be retained.",
+            "文章把Agent记忆定义为跨会话保存、之后可读取的经验，排除模型权重学习、单会话内学习和上下文压缩本身。它区分原始transcript、记忆笔记、wiki等表示，以及每次会话预先注入的内容。前者保留事件；后几层是模型对未来需要什么的判断，可能遗漏、过期或出错。": "The article defines agent memory as experience retained across sessions and read later, excluding weight learning, within-session learning and compaction itself. It separates transcripts, memory notes, representations such as wikis and material preloaded into each session. Transcripts retain events; higher layers embody predictions of future usefulness that may omit facts, become stale or be wrong.",
+            "更好的回答分数与每题token节省，是特定语料和预算下的结果。": "Better answer scores and per-question token savings are conditional on a particular corpus and budget.",
+            "有效记忆需要筛选、纠错、组织与按需检索；记住更多不等于更可靠，回答阶段的节省也不能替代完整维护成本。": "Useful memory requires selection, correction, organization and retrieval on demand. More stored material is not automatically more reliable, and savings at answer time do not replace a complete maintenance-cost account.",
+            "本站建议：为笔记保留来源链接、验证状态和替代历史；对可能快速变化的事实设置复查节奏；多人或多Agent写入时明确单写入者或冲突处理。上述为工程判断，不是原文已经测得的通用收益，也不直接授权自动处理个人资料。": "FieldToFit suggestion: retain source links, verification status and supersession history, review fast-changing facts, and define a single writer or conflict handling for shared memory. These are engineering judgments, not universally measured gains or authorization to process personal data automatically.",
+            "本站示意，依据原文图 1／13；箭头表示信息整理或读取关系，不代表自动更新权重、固定产品架构或已验证因果。": "FieldToFit explanatory diagram based on original figures 1/13. Arrows indicate organization or access, not weight updates, a fixed product architecture or established causation.",
+            "本站重绘原文图 10的最终报告值：仅搜索 53%、仅wiki 48%、wiki加搜索 61%。语料和 25题相同，但wiki需要事先整理；128次会话对应最多 128M dreaming tokens预算，每次 1M；这是预算，不是实测消耗。": "FieldToFit redraw of final reported values in original figure 10: search only 53%, wiki only 48%, wiki plus search 61%. The corpus and 25 questions are shared, but the wiki requires prior construction;128 sessions have a dreaming-token budget of up to 128M,1M per session; this is a budget, not measured spend.",
+            "本站重绘原文图 3：纵轴 0–1，六组为各自无状态／记忆目录对照；原文未给本图统计区间，本图不新增误差条或全任务成功率。": "FieldToFit redraw of original figure 3 on a 0–1 scale. Each pair compares a stateless baseline with a memory directory. No uncertainty intervals were given for this chart; none are invented, and this is not full-task success rate.",
+            "来源与修订：Lance Martin／Anthropic，《The components of agent memory》，2026-11-06原始HTML，无编号版本；本站 2026-11-09深读并整理。三图为本站依据公开事实重绘或示意，非原图复用；未审计内部原始语料、运行外链基准或独立复现实验。本站首次上站与首页精选日期由实际发布回执记录。": "Sources and revisions: Lance Martin / Anthropic, The components of agent memory, original unnumbered HTML dated 2026-11-06, read and analyzed 2026-11-09. Three figures are original FieldToFit redraws or diagrams of public facts, not copied original figures. No internal-data audit, execution of linked benchmarks or independent replication. Actual publication receipts determine site first-publication and homepage-selection dates.",
+            "法律任务展示了wiki的边界：对 24个并购问题中的跨文档、判断或算术项目，wiki条件报告 87%，搜索条件 73%；但另一LAB任务的要求大多可从单份文件直接搜索，wiki没有清楚收益。还有一个wiki大于原文件的案例，说明压缩与抽象并非自动发生。": "Legal tasks illustrate limits. For cross-document, judgment or arithmetic items among 24 merger questions, the wiki condition reports 87% versus 73% with search. Another LAB task mostly requires direct retrieval from one document and shows no clear wiki gain. A further wiki exceeds the original documents in size, showing that compression and abstraction are not automatic.",
+            "游戏中的位置笔记也会写错；一次离线对照transcript的纠错改变了后续路线。但个别游戏轨迹不能估计普遍成功率。部署时更应记录来源、验证状态、最后复核和替代版本，并检查缺失页面及过期事实，控制自动注入层的大小。": "A location note in a game can also be wrong; one offline comparison with the transcript changes the later route. Individual game trajectories do not estimate general success rates. Deployment should track sources, verification status, last review and superseded versions, check missing pages and stale facts, and control the size of the always-loaded layer.",
+            "相同内部语料与 25题；wiki条件需要前置整理": "Same internal corpus and 25 questions; wiki conditions require prior construction",
+            "离线整理输出也必须有出处和失效机制。Dreaming需要计算；模型有机会重新检查记录，不等于每次都能纠正真实世界中的错误。": "Offline outputs still need provenance and invalidation rules. Dreaming consumes compute; an opportunity to recheck records does not guarantee correction of real-world errors.",
+            "约 350000文件、420M tokens；最多 128次整理会话；不代表完整任务成功率。": "About 350000 files and 420M tokens; up to 128 construction sessions; not complete-task success rate.",
+            "记忆收益取决于模型能否形成“猜测—验证—修正”的循环": "Memory helps when the model closes a hypothesis, test and correction loop",
+            "资料检索实验的三种读取条件与整理预算": "Three document-access conditions and the construction budget",
+            "跨会话记忆的四层与离线整理作用": "Four cross-session memory layers and offline organization",
+            "首次完整分析：四条结论与同号论述，三张本站重绘，保留任务分母、对照条件、整理预算与反例。": "First complete analysis: four findings with matching arguments and three original redraws, retaining task denominators, comparison conditions, construction budgets and counterexamples."
+          },
+          "reviewed_at": "2026-11-09T03:13:02.644169+00:00",
+          "source_hash": "7d2d42a06b6f3b04228fd355d2916a122f19489f722994f2ff35e107afa7e507",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "research",
       "checked_at": "2026-11-08",
       "editor": "FieldToFit",
@@ -159,7 +819,7 @@
                 "conditions": "100任务，每项五次；95%整任务bootstrap区间 55.6–68.4%，不是实验成功率。",
                 "label": "GPT-6.1 Sol平均获分",
                 "unit": "%",
-                "value": 62.0
+                "value": 62
               },
               {
                 "baseline": "共同xhigh设置，非等成本比较",
@@ -917,7 +1577,7 @@
             "source_id": "docs"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "历史少上传，账单不因此变少",
         "limits": [
           {
@@ -1046,7 +1706,7 @@
             "首次完整，后续增量": "Full first request, incremental later turns"
           },
           "reviewed_at": "2026-11-08T02:38:35.306327+00:00",
-          "source_hash": "5fde86f93b4a6792a10bdfc0136b0263af797a04b3c22329be73d974c46cc425",
+          "source_hash": "0497ce363cbc20c9b3178d55eb48d243170981bf484c2c8a0587600e49a2b718",
           "state": "reviewed"
         }
       }
@@ -1729,7 +2389,7 @@
             "source_id": "help"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "Claude能读账单，分享与留存仍要自己检查",
         "limits": [
           {
@@ -1858,7 +2518,7 @@
             "资格与入口": "Eligibility and entry points"
           },
           "reviewed_at": "2026-11-07T00:41:28.003458+00:00",
-          "source_hash": "3143fdbbc65aca4279fdb4009b41555f3c0c4c77d806237c990134888a4604a1",
+          "source_hash": "96a93a1634bd7d0b18d84321c233d6f950ca0b6b427fda5139d0b3fd31d980de",
           "state": "reviewed"
         }
       }
@@ -3448,7 +4108,7 @@
             "source_id": "changelog"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Claude Code 2.1.317：检查失败时，也要明确拦截策略",
         "limits": [
           {
@@ -3568,7 +4228,7 @@
             "配置与入口不同": "Configuration and entry points differ"
           },
           "reviewed_at": "2026-11-04T01:31:13.090949+00:00",
-          "source_hash": "ac700705061f13f69abc6994e406b471875ba7307f74b25b1a3d177e12f8b120",
+          "source_hash": "941d6218c5bb94a5a9d5ed8a947530c1edb4fe832ed11b92dda7d07e54c19ef0",
           "state": "reviewed"
         }
       }
@@ -4222,7 +4882,7 @@
       "checked_at": "2026-11-02",
       "editor": "FieldToFit",
       "event_date": "2026-10-14",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -4321,7 +4981,7 @@
         "first_published_at": "2026-11-02T14:42:49.282072+00:00",
         "hot_card_first_published_at": "2026-11-02T14:42:49.282103+00:00",
         "hot_card_selected_at": "2026-11-02T14:42:49.282103+00:00",
-        "updated_at": "2026-11-02T14:42:49.282072+00:00"
+        "updated_at": "2026-11-09T03:12:09.796403+00:00"
       },
       "reading_materials": [],
       "related": [],
@@ -4374,8 +5034,8 @@
             "未实测准确性、账户额度或API费用。": "Accuracy, account quotas and API fees were not tested.",
             "输入与存储分别审核": "Review inputs and retention separately"
           },
-          "reviewed_at": "2026-11-02T14:33:02.941339+00:00",
-          "source_hash": "41a8d69cff6ac14d8da77f9a4faa141fdb5adc0096be8fc9e20aec3b6f8a2c5b",
+          "reviewed_at": "2026-11-09T03:11:47.149721+00:00",
+          "source_hash": "fe6c930f607c7fee4524aa71505348b0102092a69451f94dfb3ab5e13ecf95d8",
           "state": "reviewed"
         }
       }
@@ -4385,7 +5045,7 @@
       "checked_at": "2026-11-02",
       "editor": "FieldToFit",
       "event_date": "2026-10-14",
-      "highlight": true,
+      "highlight": false,
       "id": "D-304",
       "interpretation": [
         {
@@ -4418,7 +5078,7 @@
       "organization": "Google Research",
       "publication": {
         "first_published_at": "2026-11-02T14:42:22.126398+00:00",
-        "updated_at": "2026-11-02T14:42:22.126398+00:00"
+        "updated_at": "2026-11-09T03:12:46.933797+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -4465,8 +5125,8 @@
             "开放题按专家参考工作流评分，不直接保证最终地理结论正确；不同基准评分不相加。本站建议将输出作为专家复核的初稿。": "Open-ended tasks are rated against expert reference workflows, without directly guaranteeing correct final geospatial conclusions; scores from different benchmarks should not be summed. FieldToFit suggests treating outputs as drafts for expert review.",
             "模型和系统贡献分开": "Separate model and system contributions"
           },
-          "reviewed_at": "2026-11-02T14:33:11.508004+00:00",
-          "source_hash": "6399cfc10c0582a3f8dd784a569d853239640b53a6efabea42fbf36eb72e68d6",
+          "reviewed_at": "2026-11-09T03:12:24.770270+00:00",
+          "source_hash": "8f29da5aed721504b1d260bd23e7852edfa1c135c9c05743ea1b673622d2c174",
           "state": "reviewed"
         }
       }
@@ -51468,7 +52128,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-11-08",
+  "reviewed_at": "2026-11-09",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

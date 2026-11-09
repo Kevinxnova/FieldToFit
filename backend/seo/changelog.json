@@ -1,34 +1,34 @@
 {
-  "version": "1.17.24",
-  "revision": "10903cfa64a77aff51b2f5ae54722256130e81e15ef64a5d832d7450df142f3e",
+  "version": "1.17.25",
+  "revision": "651b9e64ee734fae71470eed75748ea0b6a48abeb6274093554bb99a2021bee4",
   "items": [
     {
-      "version": "1.17.24",
-      "date": "2026-11-08",
-      "deployed_on": "2026-11-08",
+      "version": "1.17.25",
+      "date": "2026-11-09",
+      "deployed_on": "2026-11-09",
       "copy": {
         "zh": {
-          "title": "线程采用边界与两项证据研究",
+          "title": "桌面默认切换与Agent记忆证据",
           "highlights": [
-            "已发表Message threads动态和中英信息卡，分开失效、删除、费用与组织配置，并保留真实11月2日事件日期。",
-            "BioBasicsBench与Linux安全研究各提供四条结论、同号论述及两张本站重绘，保留评分、计数单位、归因与成本边界。",
-            "对应Claude／ChatGPT档案窄范围增补；报告与卡片仅在实际发表后轮换，旧索引、日期和分享地址保留。"
+            "已发表Claude Desktop 3P动态及中英信息卡，保留计划生效时区、默认值、VM、工具与会话留存条件，区分Enterprise云端原范围。",
+            "同一记忆研究的动态B与报告1共用记录，提供四条结论、同号论述与三张本站重绘，区分整理预算、实测消耗、评分与任务成功率。",
+            "对应Claude档案窄范围增补；仅实际发表后轮换报告与信息卡，历史索引、日期、旧图和分享链接保持。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Thread adoption limits and two studies of evidence",
+          "title": "Desktop defaults and evidence for agent memory",
           "highlights": [
-            "Publish the selected Message threads update and bilingual information card, separating expiry, deletion, cost and organization settings while retaining the November2 event date.",
-            "Provide four findings, matching arguments and two original redraws each for BioBasicsBench and Linux security research, preserving scoring, counting units, attribution and cost limits.",
-            "Add only corresponding Claude/ChatGPT dossier context; reports and cards rotate only after actual publication, preserving historical indexes, dates and share links."
+            "Publish the selected Claude Desktop 3P update and bilingual information card with the planned timezone, defaults, VM, tools and retention conditions, separate from the existing Enterprise cloud scope.",
+            "Share one record between update B and report1 on agent memory, with four findings, matching arguments and three original redraws separating budgets, measured spend, grading and task success.",
+            "Add only corresponding Claude dossier context; report and card selection rotates only after actual publication, preserving historical indexes, dates, images and share links."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.24"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.25"
     },
     {
       "version": "1.17.22",
