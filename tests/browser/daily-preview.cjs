@@ -14,7 +14,7 @@ const out=process.env.READING_OUTPUT||'/tmp/fieldtofit-daily-preview-ui';fs.mkdi
   function transform(data){
    if(mode==='empty')data.daily.issue=null;
    if(/^count/.test(mode))data.daily.issue.highlights=data.daily.issue.highlights.slice(0,Number(mode.slice(-1)));
-   if(mode==='long')data.daily.issue.headline='A long daily headline with important conditions that must remain fully readable at every supported screen width. '.repeat(3);
+   if(mode==='long')data.daily.issue.highlights[0].highlight_title='A long event headline with important conditions that must remain fully readable at every supported screen width. '.repeat(3);
    if(mode==='today'){data.daily.issue.kind='daily';data.daily.issue.date='2026-10-15';data.daily.today='2026-10-15';data.daily.status='published';}
    return data;
   }
@@ -33,7 +33,7 @@ const out=process.env.READING_OUTPUT||'/tmp/fieldtofit-daily-preview-ui';fs.mkdi
   for(const lang of ['zh','en'])for(const width of [1440,1024,390,320]){
    await p.setViewportSize({width,height:1000});await p.goto(base+(lang==='en'?'/en':'')+'/for-you');
    await p.locator('.daily-preview .dp-story').last().waitFor();
-   assert.equal(await p.locator('.dp-story').count(),3);assert.equal(await p.locator('.daily-preview').getAttribute('data-state'),'previous');
+   assert.equal(await p.locator('.dp-story').count(),3);assert.equal(await p.locator('.dp-lead,.dp-intro').count(),0);assert.equal(await p.locator('.daily-preview').getAttribute('data-state'),'previous');
    assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    const text=await p.locator('.daily-preview').innerText();assert(text.includes('2026 / 10'));assert(text.includes('13'));
    if(lang==='en')assert(!/[\u4e00-\u9fff]/.test(text));

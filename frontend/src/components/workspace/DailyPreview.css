@@ -22,7 +22,10 @@
 .dp-story+.dp-story{padding-left:24px;border-left:1px solid var(--line)}
 .dp-story h4{font-size:16px;font-weight:500;line-height:1.65;margin:7px 0}
 .dp-story h4 a{display:block}
-.dp-story>p:last-child{font-size:12px;line-height:1.85;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dp-story>p:last-child{font-size:14px;line-height:1.85;color:var(--muted);margin:0}
+.dp-highlights-title{font-size:12px;font-weight:500;color:var(--green);margin:20px 0 10px}
+.dp-story .dp-kicker{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.dp-story .dp-kicker time{font-size:11px;letter-spacing:0}
 .dp-footer{display:flex;align-items:center;justify-content:space-between;gap:15px 24px;flex-wrap:wrap;padding-top:17px}
 .dp-publication{display:flex;flex-direction:column;font-size:11px;line-height:1.8;color:var(--muted)}
 .dp-publication small{font-size:10px}

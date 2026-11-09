@@ -137,7 +137,7 @@ def test_legacy_bundle_is_readable_but_cannot_create_new_local_edition(client,bu
 
 def test_plan_needs_no_credentials_or_network(tmp_path):
     plan=run('plan','2026-10-18',tmp_path)
-    assert plan['layout_version']==3 and len(plan['sections'])==5
+    assert plan['layout_version']==4 and len(plan['sections'])==7
     assert all(set(s['queries'])=={'cn','global'} for s in plan['sections'].values())
     for section in plan['sections'].values():
         for queries in section['queries'].values():

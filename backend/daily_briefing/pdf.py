@@ -25,7 +25,7 @@ def render(raw, lang='zh', image=None, revision=1):
         if 'DailyNoto' not in pdfmetrics.getRegisteredFontNames():
             pdfmetrics.registerFont(TTFont('DailyNoto',str(Path(__file__).with_name('fonts')/'NotoSansSC.ttf')))
             pdfmetrics.registerFontFamily('DailyNoto',normal='DailyNoto',bold='DailyNoto',italic='DailyNoto',boldItalic='DailyNoto')
-    if raw.get('layout_version')==3:
+    if raw.get('layout_version') in (3, 4):
         from .pdf_magazine import render as magazine_render
         return magazine_render(raw,lang,image,revision)
     d=project(raw,lang);modern=raw.get('layout_version')==2;pick=lambda zh,en:zh if lang=='zh' else en

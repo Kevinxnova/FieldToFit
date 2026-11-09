@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.17.25](CHANGELOG.md#v1.17.25)** · Release tag not yet published
+**Current source version: [v1.18.0](CHANGELOG.md#v1.18.0)** · [fieldtofit-v1.18.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.18.0)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the selected Claude Desktop 3P update and bilingual information card with the planned timezone, defaults, VM, tools and retention conditions, separate from the existing Enterprise cloud scope.
-- Share one record between update B and report1 on agent memory, with four findings, matching arguments and three original redraws separating budgets, measured spend, grading and task success.
-- Add only corresponding Claude dossier context; report and card selection rotates only after actual publication, preserving historical indexes, dates, images and share links.
+- Show concrete homepage highlights and continuous single-column news in new editions, with one AI companies section across bilingual pages and PDFs.
+- Extend research to models, apps, coding, open weights, research, company moves and product releases; record candidate decisions while preserving date, channel and deduplication checks.
+- Add layout 4 while preserving published editions, content hashes, revisions and stored PDFs.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

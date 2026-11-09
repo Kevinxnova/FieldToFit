@@ -19,7 +19,7 @@ def local_review(report, data):
             or report.get('content_hash') != digest(data)
             or not re.fullmatch(r'[0-9a-f]{64}', str(report.get('evidence_hash', '')))
             or not isinstance(report.get('checks'), dict)
-            or set(report['checks']) != set(QUALITY_REVIEW_CHECKS if data.get('layout_version') == 3 else EXTENDED_REVIEW_CHECKS if data.get('layout_version') == 2 else LOCAL_REVIEW_CHECKS)
+            or set(report['checks']) != set(QUALITY_REVIEW_CHECKS if data.get('layout_version') in (3, 4) else EXTENDED_REVIEW_CHECKS if data.get('layout_version') == 2 else LOCAL_REVIEW_CHECKS)
             or any(v is not True for v in report['checks'].values())):
         fail('Local GPT review must match the edition and pass every editorial check', 'daily_review', 409)
     reviewed = instant(report.get('reviewed_at'))
@@ -73,7 +73,7 @@ def approve(day, version, report, renderer=None, evidence=None):
     d=draft(day);_version(d,version);data=validate(d['draft']);content_hash=digest(data)
     if not isinstance(report,dict) or report.get('approved') is not True or report.get('method') not in ('owner','independent_model','local_gpt'): fail('Explicit fact and bilingual review is required')
     local_checks = local_review(report, data) if report['method']=='local_gpt' else {}
-    if data.get('layout_version') == 3 and report['method']=='local_gpt':
+    if data.get('layout_version') in (3, 4) and report['method']=='local_gpt':
         from .editorial import validate_editorial, validate_source_checks
         if not isinstance(evidence,dict) or digest(evidence)!=report['evidence_hash']: fail('Editorial evidence does not match review','daily_review',409)
         try:
@@ -82,7 +82,7 @@ def approve(day, version, report, renderer=None, evidence=None):
         except ValueError as exc: fail(str(exc),'daily_review',409)
     if any(c['state']=='failed' for c in data['coverage']): fail('Failed coverage must be resolved before review','daily_coverage',409)
     if data['kind']=='daily' and any(c['state']!='checked' for c in data['coverage']): fail('All eleven dimensions require successful checks','daily_coverage',409)
-    if data.get('layout_version') == 3 and data['kind']=='daily' and any(m['state']=='unavailable' or not any(r['state'] in ('verified','partial') for r in m['rows']) for m in data['markets']):
+    if data.get('layout_version') in (3, 4) and data['kind']=='daily' and any(m['state']=='unavailable' or not any(r['state'] in ('verified','partial') for r in m['rows']) for m in data['markets']):
         fail('A complete market is missing; keep the previous edition','daily_quotes',409)
     if renderer is None:
         next_revision=(d['published_revision'] or 0)+1
@@ -110,7 +110,7 @@ def publish(day, version, reason, automatic=False, now=None, proof_hashes=None):
         artifacts=db.execute('SELECT * FROM fieldtofit_daily_prepared WHERE day=? AND content_hash=? ORDER BY lang',(day,h)).fetchall()
         if row['review_hash']!=h or {r['lang'] for r in artifacts}!={'zh','en'}: fail('Review and both PDFs must be ready','daily_not_ready',409)
         if automatic:
-            if data.get('layout_version') == 3 and dec(row['review_json']).get('method')!='local_gpt': fail('Automatic quality editions need local editorial evidence','daily_review',409)
+            if data.get('layout_version') in (3, 4) and dec(row['review_json']).get('method')!='local_gpt': fail('Automatic quality editions need local editorial evidence','daily_review',409)
             if row['state']=='withdrawn': fail('A withdrawn edition requires owner action','daily_withdrawn',409)
             if data['kind']!='daily' or now.astimezone(TZ).date().isoformat()!=day or local_time(now)<PUBLISH_AT: fail('Automatic publication is only permitted from '+PUBLISH_AT.strftime('%H:%M')+' Asia/Shanghai on the issue date','daily_not_due',409)
             if previous and digest(dec(previous['snapshot_json']))!=digest(_public_copy(data)): fail('Automatic corrections require owner review','daily_correction',409)
@@ -131,8 +131,8 @@ def publish(day, version, reason, automatic=False, now=None, proof_hashes=None):
 
 def _public_copy(data):
     data=json.loads(enc(data));data.pop('coverage',None)
-    if data.get('layout_version') in (2, 3): data['section_order'] = list(EDITION_ORDER)
-    if data.get('layout_version') == 3:
+    if data.get('layout_version') in (2, 3, 4): data['section_order'] = list(EDITION_ORDER)
+    if data.get('layout_version') in (3, 4):
         from .watchlist import GROUPS, GROUP_TICKERS
         data['market_groups']=[{'id':key,'name':{'zh':zh,'en':en},'tickers':list(GROUP_TICKERS[key])} for key,zh,en in GROUPS]
     if data.get('image'): data['image'].pop('reuse_basis',None)

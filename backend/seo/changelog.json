@@ -1,34 +1,34 @@
 {
-  "version": "1.17.25",
-  "revision": "651b9e64ee734fae71470eed75748ea0b6a48abeb6274093554bb99a2021bee4",
+  "version": "1.18.0",
+  "revision": "111a771424a8c66b4b2170cc9a1fd0d8c167e0aed777f572e0efcb340dc58915",
   "items": [
     {
-      "version": "1.17.25",
+      "version": "1.18.0",
       "date": "2026-11-09",
       "deployed_on": "2026-11-09",
       "copy": {
         "zh": {
-          "title": "桌面默认切换与Agent记忆证据",
+          "title": "事件优先日报与重点候选取舍",
           "highlights": [
-            "已发表Claude Desktop 3P动态及中英信息卡，保留计划生效时区、默认值、VM、工具与会话留存条件，区分Enterprise云端原范围。",
-            "同一记忆研究的动态B与报告1共用记录，提供四条结论、同号论述与三张本站重绘，区分整理预算、实测消耗、评分与任务成功率。",
-            "对应Claude档案窄范围增补；仅实际发表后轮换报告与信息卡，历史索引、日期、旧图和分享链接保持。"
+            "首页直接展示具体重点；新版完整日报采用单列新闻正文，AI公司统一呈现，双语网页与PDF同步。",
+            "增加模型、应用、编程、开放权重、研究、人事和产品发布检索，保存重要候选入选或排除理由，保留真实日期、渠道与去重要求。",
+            "新布局4兼容历史快照和PDF，保留已发布日报的内容哈希、修订与下载文件。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Desktop defaults and evidence for agent memory",
+          "title": "Event-first AI Daily and candidate selection",
           "highlights": [
-            "Publish the selected Claude Desktop 3P update and bilingual information card with the planned timezone, defaults, VM, tools and retention conditions, separate from the existing Enterprise cloud scope.",
-            "Share one record between update B and report1 on agent memory, with four findings, matching arguments and three original redraws separating budgets, measured spend, grading and task success.",
-            "Add only corresponding Claude dossier context; report and card selection rotates only after actual publication, preserving historical indexes, dates, images and share links."
+            "Show concrete homepage highlights and continuous single-column news in new editions, with one AI companies section across bilingual pages and PDFs.",
+            "Extend research to models, apps, coding, open weights, research, company moves and product releases; record candidate decisions while preserving date, channel and deduplication checks.",
+            "Add layout 4 while preserving published editions, content hashes, revisions and stored PDFs."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.17.25"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.18.0"
     },
     {
       "version": "1.17.22",

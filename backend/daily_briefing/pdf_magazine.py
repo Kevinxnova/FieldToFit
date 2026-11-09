@@ -20,7 +20,7 @@ def adapt(raw):
     return dict(raw,editorial=raw['takeaway'],sources={s['id']:s for s in raw['sources']},
         highlights=[{'story':s['id'],'title':s['highlight_title'],'text':s['highlight_summary']} for s in raw['stories'] if s['highlight']],
         stories=[dict(s,body=s['summary'],angle=s['analysis']) for s in raw['stories']],
-        products=[{'name':p['name'],'version':p['version'],'date':p['release_date'],'channel':{'zh':('本期更新' if p['is_new'] else '近期版本')+' · '+p['release_channel'],'en':('New this issue' if p['is_new'] else 'Recent version')+' · '+p['release_channel']},'detail':p['changes'],'refs':p['source_ids']} for p in raw['products']],
+        products=[{'name':p['name'],'organization':p['organization'],'version':p['version'],'date':p.get('date_label') or p['release_date'],'is_new':p['is_new'],'channel':{'zh':('本期更新' if p['is_new'] else '近期版本')+' · '+p['release_channel'],'en':('New this issue' if p['is_new'] else 'Recent version')+' · '+p['release_channel']},'detail':p['changes'],'refs':p['source_ids']} for p in raw['products']],
         quotes=[dict(r,change=r['change_pct'],currency=m['currency'],market=m['id'].upper(),date=m['trade_date']) for group in GROUP_TICKERS.values() for ticker in group for m in raw['markets'] for r in m['rows'] if r['ticker']==ticker],
         market_intro=raw['market_overview']['title'],market_body=raw['market_overview']['summary'],market_note=raw['market_overview']['note'])
 def render(raw, lang='zh', image=None, revision=1):
@@ -38,7 +38,15 @@ def render(raw, lang='zh', image=None, revision=1):
  def rule():
   r=HRFlowable(width='100%',thickness=.5,color=colors.HexColor(LINE),spaceBefore=6,spaceAfter=12);r.keepWithNext=True;return r
  def heading(n,key):return [Spacer(1,7),p(str(n).zfill(2)+' / '+LABELS[key][0 if lang=='zh' else 1],'h2'),rule()]
- def st(s):return [p(tr(s['date_label'],lang),'date'),p(tr(s['title'],lang),'h3'),p(tr(s['body'],lang)),p(tr(s['angle'],lang),'angle'),*refs(s['source_ids']),Spacer(1,12)]
+ def attached(flows):
+  # Keep titles, short copy and sources together without wrapping whole sections.
+  # ReportLab can still split an oversized paragraph across pages.
+  for flow in flows[:-1]:flow.keepWithNext=True
+  return flows
+ def st(s):
+  body=[p(tr(s['body'],lang)+' '+tr(s['angle'],lang))] if raw.get('layout_version')==4 else [p(tr(s['body'],lang)),p(tr(s['angle'],lang),'angle')]
+  flows=[p(tr(s['date_label'],lang),'date'),p(tr(s['title'],lang),'h3'),*body,*refs(s['source_ids']),Spacer(1,12)]
+  return attached(flows[:-1])+flows[-1:] if raw.get('layout_version')==4 else flows
  def spread(items):
   if not items:return p(pick('暂无合格内容。','No qualifying content.'))
   if len(items)>3:return KeepTogether([spread(items[i:i+2]) for i in range(0,len(items),2)])
@@ -60,6 +68,8 @@ def render(raw, lang='zh', image=None, revision=1):
  cols=[Frame(M+i*(col+26),48,col,H-108,leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0,id='col'+str(i)) for i in range(2)]
  doc.addPageTemplates([PageTemplate(id='full',frames=[full],onPage=page),PageTemplate(id='columns',frames=cols,onPage=page)])
  content=[p('FOR YOU / '+pick('今日重点 · 主编导读','HIGHLIGHTS · EDITOR’S LETTER'),'date'),p(tr(D['headline'],lang),'h1'),p(tr(D['intro'],lang)),p(tr(D['editorial'],lang),'small'),rule()]
+ if raw.get('layout_version')==4:
+  content=[p('FOR YOU / DAILY'+(pick(' · 版式审阅样刊',' · Layout review sample') if raw['kind']=='review_sample' else ''),'date'),p(pick('AI 日报','AI Daily'),'h1'),p(raw['date']+' · '+pick('取材截止 ','Cutoff ')+raw['cutoff_at'],'small'),p(pick('今日重点','Highlights'),'h2'),rule()]
  if image:
   from PIL import Image as PILImage
   im=PILImage.open(BytesIO(image));im.verify();im=PILImage.open(BytesIO(image))
@@ -70,7 +80,43 @@ def render(raw, lang='zh', image=None, revision=1):
  high=[]
  for h in D['highlights']:
   high.append([p(tr(h['title'],lang),'h3'),p(tr(h['text'],lang),'angle'),*refs(next(s for s in D['stories'] if s['id']==h['story'])['source_ids'])])
- content += [spread(high),Spacer(1,14)]
+ # New layouts allow every paragraph to paginate. A whole company section must
+ # never be held in a single unbreakable table as coverage grows to 12–16 events.
+ content += ([flow for item in high for flow in attached(item)] if raw.get('layout_version')==4 else [spread(high)])+[Spacer(1,14)]
+ if raw.get('layout_version')==4:
+  content += heading(1,'companies')
+  for s in D['stories']:
+   if s['section']=='companies':content += st(s)
+  content += heading(2,'products')
+  for fresh in (True,False):
+   products=[q for q in D['products'] if q['is_new']==fresh]
+   if not products:continue
+   content += [p(pick('本期变化','New this issue') if fresh else pick('近期已核实版本','Recently verified versions'),'h3')]
+   for q in products:
+    content += attached([p(tr(q['name'],lang)+' · '+tr(q['organization'],lang),'h3'),p(tr(q['version'],lang)+' · '+tr(q['date'],lang)+' · '+tr(q['channel'],lang),'small'),p(tr(q['detail'],lang)),*refs(q['refs'])])+[Spacer(1,8)]
+  if not D['products']:content += [p(pick('本期无已核实的版本变化。','No verified version changes this issue.'))]
+  for n,key in [(3,'chips'),(4,'robotics'),(5,'infrastructure'),(6,'policy'),(7,'business')]:
+   content += heading(n,key)
+   items=[s for s in D['stories'] if s['section']==key]
+   for s in items:content += st(s)
+   if not items:content += [p(tr(raw['section_notes'][key],lang))]
+ else:
+  content += legacy_body(D,lang,st,heading,spread,p,table,pick,refs)
+ content += [PageBreak(),*heading(8,'markets'),p(tr(D['market_intro'],lang),'h3'),p(tr(D['market_body'],lang)),p(tr(D['market_note'],lang),'small')]
+ for group,labels in GROUPS.items():
+  content += [Spacer(1,10),p(labels[0 if lang=='zh' else 1],'h3')]
+  rows=[[p(v,'small') for v in pick(['公司 / 代码','市场 / 币种','收盘','日涨跌','交易日 / 来源'],['Company / ticker','Market / FX','Close','Change','Session / source'])]]
+  for q in [q for q in D['quotes'] if q['group']==group]:
+   clr='#358277' if q['change'] is not None and q['change']<0 else '#a55940'
+   rows.append([p(tr(q['name'],lang)+' / '+q['ticker'],'table'),p(q['market']+' / '+q['currency'],'table'),p(num(q),'table'),p('<font color="'+clr+'">'+pct(q)+'</font>','table',True),p(esc(q['date'] or '—')+'<br/>'+' · '.join('<link href="'+esc(D['sources'][i]['url'],quote=True)+'"><u>'+esc(tr(D['sources'][i]['title'],lang))+'</u></link>' for i in q['source_ids']),'source',True)])
+  t=table(rows,[153,75,93,62,CW-383]);t.setStyle(TableStyle([('TOPPADDING',(0,0),(-1,-1),3),('BOTTOMPADDING',(0,0),(-1,-1),2)]));content += [t]
+ content += [Spacer(1,8),p(tr(D['closing'],lang),'angle')]
+ doc.build(content)
+ data=buffer.getvalue()
+ return {'bytes':data,'pages':len(PdfReader(BytesIO(data)).pages),'sha256':hashlib.sha256(data).hexdigest()}
+
+def legacy_body(D,lang,st,heading,spread,p,table,pick,refs):
+ content=[]
  content += heading(1,'companies')
  content += [spread([st(s) for s in D['stories'] if s['section']=='companies'])]
  # Product rows are kept intact; the rest follows content length naturally.
@@ -85,15 +131,4 @@ def render(raw, lang='zh', image=None, revision=1):
  content += [PageBreak()]
  for n,key in [(6,'policy'),(7,'business')]:
   content += heading(n,key)+[spread([st(s) for s in D['stories'] if s['section']==key])]
- content += [PageBreak(),*heading(8,'markets'),p(tr(D['market_intro'],lang),'h3'),p(tr(D['market_body'],lang)),p(tr(D['market_note'],lang),'small')]
- for group,labels in GROUPS.items():
-  content += [Spacer(1,10),p(labels[0 if lang=='zh' else 1],'h3')]
-  rows=[[p(v,'small') for v in pick(['公司 / 代码','市场 / 币种','收盘','日涨跌','交易日 / 来源'],['Company / ticker','Market / FX','Close','Change','Session / source'])]]
-  for q in [q for q in D['quotes'] if q['group']==group]:
-   clr='#358277' if q['change'] is not None and q['change']<0 else '#a55940'
-   rows.append([p(tr(q['name'],lang)+' / '+q['ticker'],'table'),p(q['market']+' / '+q['currency'],'table'),p(num(q),'table'),p('<font color="'+clr+'">'+pct(q)+'</font>','table',True),p(esc(q['date'] or '—')+'<br/>'+' · '.join('<link href="'+esc(D['sources'][i]['url'],quote=True)+'"><u>'+esc(tr(D['sources'][i]['title'],lang))+'</u></link>' for i in q['source_ids']),'source',True)])
-  t=table(rows,[153,75,93,62,CW-383]);t.setStyle(TableStyle([('TOPPADDING',(0,0),(-1,-1),3),('BOTTOMPADDING',(0,0),(-1,-1),2)]));content += [t]
- content += [Spacer(1,8),p(tr(D['closing'],lang),'angle')]
- doc.build(content)
- data=buffer.getvalue()
- return {'bytes':data,'pages':len(PdfReader(BytesIO(data)).pages),'sha256':hashlib.sha256(data).hexdigest()}
+ return content

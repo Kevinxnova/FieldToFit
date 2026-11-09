@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.18.0"></a>
+## v1.18.0 · 事件优先日报与重点候选取舍 · 2026-11-09
+<!-- site-deployed:2026-11-09 -->
+<!-- public-title:en: Event-first AI Daily and candidate selection -->
+<!-- release-summary:zh:start -->
+- 首页直接展示具体重点；新版完整日报采用单列新闻正文，AI公司统一呈现，双语网页与PDF同步。
+- 增加模型、应用、编程、开放权重、研究、人事和产品发布检索，保存重要候选入选或排除理由，保留真实日期、渠道与去重要求。
+- 新布局4兼容历史快照和PDF，保留已发布日报的内容哈希、修订与下载文件。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Show concrete homepage highlights and continuous single-column news in new editions, with one AI companies section across bilingual pages and PDFs.
+- Extend research to models, apps, coding, open weights, research, company moves and product releases; record candidate decisions while preserving date, channel and deduplication checks.
+- Add layout 4 while preserving published editions, content hashes, revisions and stored PDFs.
+<!-- release-summary:en:end -->
+
+对应[REQ-24-13](FieldToFit-PM.md#daily-event-first)。所有者确认双语私密样稿，授权开发验证及更新部署；主要阅读和取材流程变化按已对齐minor处理，z归零。合入实际生产v1.17.25的完整源码与公开资源，保留远端历史。已部署并确认health、三MCP均1.18.0，服务端支持4；既有本地任务已同步规则，原六时点不变。保持schema与公开路径，无数据库迁移，不重写历史刊物，没有启用新调度或付费模型。实际验证见[验收记录](docs/validation/2026-11-09-daily-event-first.md)。
+
 <a id="v1.17.25"></a>
 ## v1.17.25 · 桌面默认切换与Agent记忆证据 · 2026-11-09
 <!-- release-tag:unpublished -->

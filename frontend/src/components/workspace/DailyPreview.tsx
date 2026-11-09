@@ -8,7 +8,7 @@ export type DailyPreviewData = {
   today:string; due:boolean; timezone:string; status:'published'|'scheduled'|'delayed';
   issue:null|{
     date:string; kind:string; headline:string; intro:string; path:string;
-    highlights:{id:string;section:string;title:string;summary:string}[];
+    highlights:{id:string;section:string;title:string;summary:string;highlight_title?:string;highlight_summary?:string;event_date?:string}[];
     publication:{revision:number;content_hash:string;published_at:string;first_published_at:string};
   };
 };
@@ -37,13 +37,14 @@ export function DailyPreview({data,loading,error,retry}:{data?:DailyPreviewData;
     {error||!data&&!loading?<div className="dp-state" role="alert"><p>{pick('日报预览暂时无法读取。','The daily preview is temporarily unavailable.')}</p><button type="button" className="text-button" onClick={retry}>{pick('重试','Retry')}</button></div>:loading&&!data?<p className="dp-state" role="status">{pick('正在读取日报…','Loading the daily preview…')}</p>:<>
       {!current&&<p className="dp-status">{updates.pending?pick('内容有更新，当前保留上次读取的期次。','Updates are available. Showing the previously read edition.'):data?.today!==today||updates.notice==='offline'?<>{pick('尚未确认今日期次。','Today’s edition has not been checked yet.')} <button className="text-button" onClick={retry}>{pick('检查最新一期','Check latest edition')}</button></>:pick('今日日报尚未出刊。','Today’s issue has not been published yet.')} <span>{pick('每日北京时间 09:00 更新','Updated daily at 09:00 Beijing time')}</span></p>}
       {issue?<>
-        <div className="dp-lead"><p className="dp-kicker">{pick('本期导读','IN THIS EDITION')}</p><h3><Link to={edition}>{issue.headline}</Link></h3><p className="dp-intro">{issue.intro}</p></div>
+        <h3 className="dp-highlights-title">{pick('今日重点','Highlights')}</h3>
+        {highlights.length===0&&<p className="dp-state">{pick('本期未单列重点，可阅读完整日报。','No separate highlights in this edition. Read the full issue.')}</p>}
         {highlights.length>0&&<div className="dp-highlights" data-count={highlights.length}>{highlights.map((story,index)=><article className="dp-story" key={story.id}>
-          <p className="dp-kicker">0{index+1} / {pick(...(sectionNames[story.section]||['今日重点','Highlights']))}</p>
-          <h4><Link to={edition+'#daily-story-'+story.id}>{story.title}</Link></h4><p>{story.summary}</p>
+          <p className="dp-kicker">0{index+1} / {pick(...(sectionNames[story.section]||['今日重点','Highlights']))}{story.event_date&&<time dateTime={story.event_date}>{story.event_date}</time>}</p>
+          <h4><Link to={edition+'#daily-story-'+story.id}>{story.highlight_title||story.title}</Link></h4><p>{story.highlight_summary||story.summary}</p>
         </article>)}</div>}
         <footer className="dp-footer">{issue.publication.revision>1&&<div className="dp-publication"><span>{pick('修订于','Revised')} <time dateTime={issue.publication.published_at}>{publicationTime(issue.publication.published_at,zh)}</time> · r{issue.publication.revision}</span><small>{pick('北京时间','Beijing time')}</small></div>}<div className="dp-actions"><Link className="dp-archive" to="/for-you/daily/archive">{pick('往期日报','Past editions')} →</Link><Link className="dp-read" to={edition}>{pick('阅读完整日报','Read this edition')} <span aria-hidden="true">↗</span></Link></div></footer>
-      </>:<div className="dp-empty"><p>{pick('完整期刊发布后，会在这里展示导读与重点。','The introduction and highlights will appear here when an edition is published.')}</p><Link to="/for-you/daily/archive">{pick('查看日报归档','View daily archive')} →</Link></div>}
+      </>:<div className="dp-empty"><p>{pick('完整期刊发布后，会在这里展示今日重点。','Highlights will appear here when an edition is published.')}</p><Link to="/for-you/daily/archive">{pick('查看日报归档','View daily archive')} →</Link></div>}
     </>}
   </section>;
 }

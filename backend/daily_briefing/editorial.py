@@ -8,6 +8,8 @@ from urllib.parse import urlsplit
 from .schema import instant, day_key, text, TZ
 
 TOPICS = {
+    'companies': ('model_releases', 'apps_agents', 'coding_tools', 'open_weights', 'research', 'people_partnerships'),
+    'products': ('release_records', 'availability_channels'),
     'chips': ('accelerators', 'memory_storage', 'manufacturing_interconnect'),
     'policy': ('china', 'us', 'europe_global'),
     'robotics': ('physical_robots', 'robot_models_simulation', 'autonomy_deployment'),
@@ -16,6 +18,8 @@ TOPICS = {
 }
 # Discovery entry points, never assertions that a scan succeeded or reuse is licensed.
 SOURCES = {
+    'companies': [('OpenAI', 'https://openai.com/news/'), ('Anthropic', 'https://www.anthropic.com/news'), ('Google DeepMind', 'https://deepmind.google/blog/'), ('Google AI', 'https://blog.google/innovation-and-ai/'), ('Meta AI', 'https://ai.meta.com/blog/'), ('Kimi', 'https://www.kimi.com/news'), ('Qwen', 'https://qwen.ai/blog'), ('DeepSeek', 'https://github.com/deepseek-ai'), ('Tencent', 'https://www.tencent.com/en-us/articles.html'), ('Baidu', 'https://ir.baidu.com/news-releases'), ('Mistral', 'https://mistral.ai/news'), ('METR', 'https://metr.org/blog/'), ('Reuters technology', 'https://www.reuters.com/technology/'), ('36Kr', 'https://36kr.com/')],
+    'products': [('Claude Code releases', 'https://github.com/anthropics/claude-code/releases'), ('Codex releases', 'https://github.com/openai/codex/releases'), ('GitHub changelog', 'https://github.blog/changelog/'), ('Cursor changelog', 'https://cursor.com/changelog'), ('Kimi platform', 'https://platform.kimi.com/docs/'), ('Hugging Face', 'https://huggingface.co/models'), ('TechCrunch AI', 'https://techcrunch.com/category/artificial-intelligence/')],
     'chips': [('NVIDIA', 'https://nvidianews.nvidia.com/'), ('AMD', 'https://www.amd.com/en/newsroom.html'), ('Intel', 'https://newsroom.intel.com/'), ('Micron', 'https://investors.micron.com/news-releases'), ('SK hynix', 'https://news.skhynix.com/'), ('Samsung', 'https://news.samsung.com/global/'), ('Sandisk', 'https://investor.sandisk.com/'), ('CXMT', 'https://www.cxmt.com/'), ('TSMC', 'https://investor.tsmc.com/english/quarterly-results'), ('Semiconductor Engineering', 'https://semiengineering.com/')],
     'policy': [('MOFCOM', 'https://www.mofcom.gov.cn/'), ('CAC', 'https://www.cac.gov.cn/'), ('BIS', 'https://www.bis.gov/'), ('Federal Register', 'https://www.federalregister.gov/'), ('European Commission', 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai'), ('Irish enterprise ministry', 'https://enterprise.gov.ie/en/news-and-events/')],
     'robotics': [
@@ -44,6 +48,12 @@ SOURCES = {
     ],
 }
 QUERIES = {
+    'companies': {
+        'cn': ('大模型 发布 OpenAI Anthropic Gemini Kimi 千问 DeepSeek 混元', 'AI 应用 智能体 发布 上线', 'AI 编程 工具 Codex Claude Code Cursor 更新', '模型 开放权重 仓库 许可 发布', 'AI 研究 评测 METR 论文 发布', 'AI 公司 产品负责人 高管 合作 任命'),
+        'global': ('AI model launch OpenAI Anthropic Google Gemini Kimi Qwen DeepSeek Tencent', 'AI app agent launch availability', 'AI coding tool Codex Claude Code Cursor release', 'open weight model release repository license', 'AI research evaluation METR paper release', 'AI company product leader executive appointment partnership')},
+    'products': {
+        'cn': ('AI 产品 模型 CLI 智能体 官方 发布记录 版本', 'AI 产品 stable beta preview nightly 可用范围 价格'),
+        'global': ('AI product model CLI agent official release notes version', 'AI product stable beta preview nightly availability pricing')},
     'chips': {'cn': ('AI 芯片 发布 量产 推理', 'HBM DRAM NAND SSD 存储 长鑫 海力士 美光', '先进封装 晶圆制造 CXL 互联'), 'global': ('AI accelerator GPU inference release', 'HBM DRAM NAND SSD Micron Sandisk SK hynix', 'advanced packaging foundry CXL interconnect')},
     'policy': {'cn': ('中国 AI 监管 技术出口 征求意见', '美国 AI 出口管制 BIS 政策', '欧盟 AI 法规 标准 宣言'), 'global': ('China AI regulation technology export consultation', 'US AI export controls BIS Federal Register', 'Europe AI regulation standards declaration')},
     'robotics': {
@@ -63,9 +73,13 @@ def research_plan(day):
     day_key(day)
     since = (date.fromisoformat(day)-timedelta(days=7)).isoformat()
     until = (date.fromisoformat(day)+timedelta(days=1)).isoformat()
-    return {'date': day, 'layout_version': 3, 'news_window': 'Previous day 08:30 to issue day 08:30 Asia/Shanghai. Prioritize 24h new events; supplement unreported 72h progress, then explicitly dated seven-day observations. Never relabel old events.',
+    return {'date': day, 'layout_version': 4, 'news_window': 'Previous day 08:30 to issue day 08:30 Asia/Shanghai. Prioritize 24h new events; supplement unreported 72h progress, then explicitly dated seven-day observations. Never relabel old events.',
             'sections': {s: {'topics': topics, 'queries': {region: [{'topic': topic, 'query': query+' after:'+since+' before:'+until} for topic, query in zip(topics, queries)] for region,queries in QUERIES[s].items()}, 'entry_points': [{'name': n, 'url': u} for n, u in SOURCES[s]]} for s, topics in TOPICS.items()},
-            'rules': ['Target 8–12 useful distinct stories. Every news section needs substantive content. Extend research when thin; never fabricate events or pass an empty section with boilerplate. If still insufficient, keep the previous issue and record the blocker.',
+            'rules': ['Target 12–16 useful distinct stories, not a quota. Prioritize major model releases, usable products, material capability/price changes, open weights, research and company moves over generic observations. Every news section needs substantive content; if research remains insufficient keep the previous issue.',
+                      'AI companies is one public section, never split by geography. Research both Chinese and international sources internally. Read company announcements, actual repositories and release notes before using media discovery.',
+                      'Write who did what and the material result in each bilingual headline and first sentence. Highlights name the actual event; no generic editorial introduction, rhetorical question, vague takeaway or process/count commentary. Put necessary stage and scope qualifications inside concise factual prose. Do not invent causes or rankings.',
+                      'Record important considered candidates, their sources and selected/previously_covered/unverified/not_selected decisions in quality_review.candidate_review. Every selected story must map to a candidate. Exclusion reasons must explain missing evidence, duplication or lower reader value. This audit is private; never render it as news.',
+                      'Re-read the last seven editions semantically. Prior coverage alone cannot be republished with a stronger title. A copy-comparison demo is not a daily edition. Product baselines may retain older versions with honest dates and channels; an unknown launch date requires is_new=false, release_date=null and a bilingual date_label.',
                       'Record reader value and selection reasons per story, compare the last seven editions and explain substantive new information for any previously covered event. A schema pass is not an editorial-quality pass.',
                       'Track 30 securities in US/CN/HK/KR by industry group. Verify session dates, original currencies, source usage terms and price/change separately; no causal price explanation without evidence.',
                       'Check each topic, both cn/global regions, and official/search/media discovery for each section. Replace failed entry points with readable originals; record failures honestly.',
@@ -76,11 +90,12 @@ def research_plan(day):
             'evidence_fields': {'research_checks': ['section','topic','region','method','query','source_ids','status','checked_at','note'],
                                 'event_checks': ['story_id','event_time','timing_basis','event_status','attribution','source_ids','independent_publishers','verified_claim'],
                                 'product_checks': ['product_id','release_time','release_status','source_ids','verified_claim'],
-                                'quality_review': ['sections','stories','count_reason','market_assessment','previous_editions']}}
+                                'quality_review': ['sections','stories','count_reason','market_assessment','previous_editions','candidate_review'],
+                                'candidate_review': ['event_key','event','section','source_ids','decision','story_ids','reason']}}
 
 
 def validate_editorial(data, evidence, now):
-    if data.get('layout_version') not in (2, 3):
+    if data.get('layout_version') not in (2, 3, 4):
         return  # Historic bundles remain readable without rewriting their hashes.
     sources = {s['id']: s for s in data['sources']}
     start, cutoff = instant(data['window_start']), instant(data['cutoff_at'])
@@ -103,7 +118,7 @@ def validate_editorial(data, evidence, now):
     checks = evidence.get('research_checks')
     if not isinstance(checks, list): fail('research_checks are required for nine-section editions')
     required = {'section','topic','region','method','query','source_ids','status','checked_at','note'}
-    topics_required = TOPICS if data.get('layout_version') == 3 else {k:v for k,v in TOPICS.items() if k in ('robotics','infrastructure','business')}
+    topics_required = TOPICS if data.get('layout_version') == 4 else {k:v for k,v in TOPICS.items() if k in (('chips','policy','robotics','infrastructure','business') if data.get('layout_version') == 3 else ('robotics','infrastructure','business'))}
     for c in checks:
         if not isinstance(c, dict) or set(c) != required or c['section'] not in TOPICS: fail('invalid research check fields')
         if c['topic'] not in TOPICS[c['section']] or c['region'] not in ('cn','global') or c['method'] not in ('official','search','media') or c['status'] not in ('checked','failed'): fail('invalid research scope')
@@ -114,6 +129,10 @@ def validate_editorial(data, evidence, now):
     for section, topics in topics_required.items():
         rows = [c for c in checks if c['section'] == section and c['status'] == 'checked']
         if {c['topic'] for c in rows} != set(topics): fail(section+' has an unchecked topic')
+        if data.get('layout_version') == 4:
+            for topic in topics:
+                if {c['region'] for c in rows if c['topic']==topic and c['method']=='search'} != {'cn','global'}:
+                    fail(section+'/'+topic+' needs Chinese and international searches')
         if {c['region'] for c in rows if c['method']=='search'} != {'cn','global'}: fail(section+' needs Chinese and international searches')
         if {c['method'] for c in rows} != {'official','search','media'}: fail(section+' needs official, search and media checks')
         hosts = {urlsplit(sources[r]['url']).hostname for c in rows for r in c['source_ids']}
@@ -125,8 +144,8 @@ def validate_editorial(data, evidence, now):
         expected = {'story_id','event_time','timing_basis','event_status','attribution','source_ids','independent_publishers','verified_claim'}
         if not isinstance(c, dict) or set(c) != expected or c['story_id'] not in by_id or c['story_id'] in seen: fail('invalid or duplicate event check')
         seen.add(c['story_id']); s = by_id[c['story_id']]
-        original_time(c['event_time'], s['event_date'], data.get('layout_version') != 3 or s['freshness']=='new')
-        if data.get('layout_version') == 3:
+        original_time(c['event_time'], s['event_date'], data.get('layout_version') not in (3, 4) or s['freshness']=='new')
+        if data.get('layout_version') in (3, 4):
             bound=cutoff-timedelta(days={'new':1,'recent':3,'watch':7}[s['freshness']])
             if ('T' in c['event_time'] and instant(c['event_time']) < bound) or ('T' not in c['event_time'] and c['event_time'] < bound.astimezone(TZ).date().isoformat()):
                 fail('original event is too old for its freshness label')
@@ -147,12 +166,15 @@ def validate_editorial(data, evidence, now):
     for c in products:
         if not isinstance(c,dict) or set(c) != {'product_id','release_time','release_status','source_ids','verified_claim'} or c['product_id'] not in by_id or c['product_id'] in seen: fail('invalid or duplicate product check')
         seen.add(c['product_id']); p = by_id[c['product_id']]
-        original_time(c['release_time'],p['release_date'],p['is_new'])
-        if data.get('layout_version') == 3 and p['release_channel']!=c['release_status']: fail('published release channel differs from evidence')
+        if data.get('layout_version') == 4 and p['release_date'] is None:
+            if p['is_new'] or c['release_time'] is not None: fail('unknown product date cannot establish a new release')
+        else:
+            original_time(c['release_time'],p['release_date'],p['is_new'])
+        if data.get('layout_version') in (3, 4) and p['release_channel']!=c['release_status']: fail('published release channel differs from evidence')
         if c['release_status'] not in ('stable','alpha','beta','nightly','preview','announced'): fail('product release channel is required')
         refs(c['source_ids'])
         if not set(p['source_ids']) <= set(c['source_ids']) or len(text(c['verified_claim'],'verified product claim',2000)) < 20: fail('verify product claims against their sources')
-    if data.get('layout_version') == 3:
+    if data.get('layout_version') in (3, 4):
         validate_quality(data,evidence)
 
 
@@ -161,7 +183,9 @@ def validate_quality(data,evidence):
     from .schema import SECTIONS
     def fail(message): raise ValueError('Editorial quality: '+message)
     quality=evidence.get('quality_review',{})
-    if not isinstance(quality,dict) or set(quality)!={'sections','stories','count_reason','market_assessment','previous_editions'}: fail('complete quality review is required')
+    fields={'sections','stories','count_reason','market_assessment','previous_editions'}
+    if data.get('layout_version') == 4: fields.add('candidate_review')
+    if not isinstance(quality,dict) or set(quality)!=fields: fail('complete quality review is required')
     for key in ('count_reason','market_assessment'):
         if len(text(quality[key],key,3000))<30: fail('explain editorial and market decisions')
     sections=quality['sections'];stories=quality['stories'];previous=quality['previous_editions']
@@ -189,6 +213,29 @@ def validate_quality(data,evidence):
         if by_id[row['story_id']]['event_key'] in old_keys and not row['previously_covered']: fail('previous event was marked unseen')
         if row['previously_covered'] and len(text(row['new_information'],'substantive new information',2000))<40: fail('repeated coverage needs substantive new information')
         if not row['previously_covered'] and not isinstance(row['new_information'],str): fail('invalid new information')
+    if data.get('layout_version') == 4:
+        candidates=quality['candidate_review'];selected=set();identities=set()
+        if not isinstance(candidates,list) or not candidates or len(candidates)>100: fail('record the actual candidate review')
+        source_ids={s['id'] for s in data['sources']}
+        for candidate in candidates:
+            if not isinstance(candidate,dict) or set(candidate)!={'event_key','event','section','source_ids','decision','story_ids','reason'}: fail('invalid candidate review fields')
+            key=text(candidate['event_key'],'candidate identity',200)
+            if key in identities: fail('duplicate candidate identity')
+            identities.add(key)
+            text(candidate['event'],'candidate event',500)
+            if len(text(candidate['reason'],'candidate selection reason',2000))<30: fail('explain candidate selection')
+            if candidate['section'] not in (*SECTIONS,'products'): fail('invalid candidate section')
+            refs=candidate['source_ids'];ids=candidate['story_ids']
+            if not isinstance(refs,list) or any(not isinstance(r,str) for r in refs) or not set(refs)<=source_ids or len(set(refs))!=len(refs): fail('invalid candidate sources')
+            if not isinstance(ids,list) or any(not isinstance(i,str) for i in ids) or len(set(ids))!=len(ids): fail('invalid candidate stories')
+            if candidate['decision'] not in ('selected','previously_covered','unverified','not_selected'): fail('invalid candidate decision')
+            if candidate['decision']=='selected':
+                if len(ids)!=1 or ids[0] not in by_id or ids[0] in selected or not refs: fail('selected candidate must map to one distinct story')
+                story=by_id[ids[0]]
+                if story['event_key']!=key or story['section']!=candidate['section'] or not set(story['source_ids'])<=set(refs): fail('selected candidate differs from published story')
+                selected.update(ids)
+            elif ids: fail('unselected candidate cannot become a story')
+        if selected!=set(by_id): fail('every story needs a selection decision')
 
 
 def validate_source_checks(data,evidence):

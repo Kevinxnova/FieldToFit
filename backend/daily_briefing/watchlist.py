@@ -22,4 +22,4 @@ GROUP_TICKERS = {
 TICKER_GROUP = {ticker: group for group, tickers in GROUP_TICKERS.items() for ticker in tickers}
 
 def securities(legacy, version):
-    return {key: [*legacy.get(key, []), *extra] for key, extra in ADDITIONS.items()} if version == 3 else legacy
+    return {key: [*legacy.get(key, []), *extra] for key, extra in ADDITIONS.items()} if version in (3, 4) else legacy

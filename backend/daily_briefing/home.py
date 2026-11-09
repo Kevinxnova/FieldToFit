@@ -36,7 +36,8 @@ def preview(rows, timing, lang='zh'):
     raw = json.loads(row['snapshot_json'])
     issue = project({key: raw[key] for key in ('date', 'kind', 'headline', 'intro')}, lang)
     issue['highlights'] = project([
-        {key: story[key] for key in ('id', 'section', 'title', 'summary')}
+        {**{key: story[key] for key in ('id', 'section', 'title', 'summary')},
+         **{key: story[key] for key in ('highlight_title', 'highlight_summary', 'event_date', 'date_label') if key in story}}
         for story in raw['stories'] if story['highlight']
     ][:3], lang)
     issue['publication'] = {key: selected[key] for key in

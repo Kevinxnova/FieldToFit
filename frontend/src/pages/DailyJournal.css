@@ -16,3 +16,17 @@
 .dj-quality .dj-market-table td:nth-child(3),.dj-quality .dj-market-table td:nth-child(4){white-space:nowrap}
 .dj-quality .dj-sources a{overflow-wrap:anywhere}
 @media(max-width:600px){.dj-quality .dj-intro h2{font-size:30px}.dj-market-overview h3{font-size:21px}.dj-quality .dj-market-table{font-size:12px}}
+
+/* Layout 4: concrete headlines and a continuous, single-column news list. */
+.dj-event-first .dj-lead{display:block;padding:24px 0 12px}
+.dj-event-first .dj-highlights-heading{font:500 24px/1.5 Georgia,'Songti SC',serif;margin:0}
+.dj-event-first .dj-lead figure{max-width:650px;margin:18px 0 0}
+.dj-event-first .dj-highlights h3{font:500 21px/1.5 Georgia,'Songti SC',serif}
+.dj-event-first .dj-highlights p{font-size:14px}
+.dj-event-first .dj-paired{grid-template-columns:1fr;gap:0}
+.dj-event-first .dj-story h3{font-size:19px;line-height:1.65;margin:6px 0 8px}
+.dj-event-first .dj-story p:not(.dj-kicker){font-size:15px;line-height:1.85;margin:8px 0}
+.dj-event-first .dj-products{background:transparent;padding:0}
+.dj-event-first .dj-product{font-size:14px}
+.dj-event-first .dj-story .dj-kicker,.dj-event-first .dj-product small{font-size:12px;letter-spacing:0}
+.dj-event-first .dj-sources{font-size:12px}

@@ -18,11 +18,11 @@ DIMENSIONS = ('global_companies', 'china_companies', 'chips', 'open_source', 'co
 LABELS = {'highlights': ('今日重点', 'Highlights'), 'companies': ('AI公司', 'AI companies'), 'products': ('热点 AI 产品追踪', 'AI product tracker'), 'chips': ('AI芯片', 'AI chips'), 'robotics': ('具身智能', 'Embodied AI'), 'infrastructure': ('基础设施', 'Infrastructure'), 'policy': ('监管政策', 'Policy'), 'business': ('商业动态', 'Business'), 'markets': ('AI股市', 'AI markets')}
 
 def news_sections(issue):
-    return SECTIONS if issue.get('layout_version') in (2, 3) else LEGACY_SECTIONS
+    return SECTIONS if issue.get('layout_version') in (2, 3, 4) else LEGACY_SECTIONS
 
 def edition_sections(issue):
     """Old snapshots retain their original layout and content hash."""
-    keys = EDITION_ORDER if issue.get('layout_version') in (2, 3) else ('highlights', *LEGACY_SECTIONS, 'markets')
+    keys = EDITION_ORDER if issue.get('layout_version') in (2, 3, 4) else ('highlights', *LEGACY_SECTIONS, 'markets')
     return [(key, *LABELS[key]) for key in keys]
 SECURITIES = {
  'us': [('NVDA','NVIDIA','NVIDIA'),('AMD','AMD','AMD'),('INTC','Intel','Intel'),('MSFT','微软','Microsoft'),('GOOGL','Alphabet','Alphabet'),('META','Meta','Meta'),('AMZN','亚马逊','Amazon')],
@@ -88,16 +88,16 @@ def validate(raw, now=None):
     if not isinstance(raw,dict): fail('Issue must be an object')
     now=now or datetime.now(timezone.utc)
     required={'schema_version','date','kind','window_start','cutoff_at','headline','intro','takeaway','closing','stories','products','sources','markets','coverage','section_notes'}
-    if raw.get('layout_version') == 3: required.add('market_overview')
+    if raw.get('layout_version') in (3, 4): required.add('market_overview')
     if set(raw)-required-{'image','layout_version'} or required-set(raw): fail('Invalid daily snapshot fields')
-    if 'layout_version' in raw and (type(raw['layout_version']) is not int or raw['layout_version'] not in (2, 3)): fail('Unknown daily layout')
+    if 'layout_version' in raw and (type(raw['layout_version']) is not int or raw['layout_version'] not in (2, 3, 4)): fail('Unknown daily layout')
     if raw['schema_version']!='fieldtofit.daily.v1': fail('Unknown daily schema')
     day=day_key(raw['date']);cutoff=instant(raw['cutoff_at']);start=instant(raw['window_start'])
     if cutoff>now or start>=cutoff or cutoff-start>timedelta(days=2): fail('Invalid or future news window')
     if cutoff.astimezone(TZ).date().isoformat()!=day: fail('Cutoff must belong to the issue date in Beijing')
     if raw['kind'] not in ('daily','review_sample'): fail('Invalid edition kind')
     if raw['kind']=='daily' and local_time(cutoff)!=CUTOFF_AT: fail('Daily cutoff is '+CUTOFF_AT.strftime('%H:%M')+' Asia/Shanghai')
-    if raw.get('layout_version') in (2, 3) and raw['kind'] == 'daily' and cutoff-start != timedelta(days=1): fail('Nine-section daily news window must be exactly 24 hours')
+    if raw.get('layout_version') in (2, 3, 4) and raw['kind'] == 'daily' and cutoff-start != timedelta(days=1): fail('Nine-section daily news window must be exactly 24 hours')
     for k in ('headline','intro','takeaway','closing'): bilingual(raw[k],k,1600 if k!='headline' else 160)
     if not isinstance(raw['sources'],list) or len(raw['sources'])>100: fail('At most 100 sources')
     source_ids=set()
@@ -118,7 +118,7 @@ def validate(raw, now=None):
     ids=set();keys=set();highlights=0
     for s in raw['stories']:
         expected={'id','event_key','section','dimensions','event_date','title','summary','analysis','source_ids','highlight'}
-        if raw.get('layout_version') == 3:
+        if raw.get('layout_version') in (3, 4):
             expected.update(('freshness','date_label'))
             if s.get('highlight'): expected.update(('highlight_title','highlight_summary'))
             if s.get('freshness') not in ('new','recent','watch'): fail('State news freshness')
@@ -152,15 +152,21 @@ def validate(raw, now=None):
     product_ids=set()
     for p in raw['products']:
         product_fields={'id','name','organization','version','release_date','checked_at','changes','source_ids','is_new'}
-        if raw.get('layout_version') == 3:
+        if raw.get('layout_version') in (3, 4):
             product_fields.add('release_channel')
             if p.get('release_channel') not in ('stable','alpha','beta','nightly','preview','announced'): fail('Product channel is required')
+        if raw.get('layout_version') == 4 and 'date_label' in p:
+            product_fields.add('date_label')
+            bilingual(p['date_label'],'product date label',200)
         if set(p)!=product_fields: fail('Invalid product fields')
         text(p['id'],'product id',80)
         if p['id'] in product_ids: fail('Duplicate product')
         product_ids.add(p['id'])
         for k in ('name','organization','version','changes'): bilingual(p[k],k,900 if k=='changes' else 180)
-        if day_key(p['release_date'])>day or instant(p['checked_at'])>now: fail('Invalid product date')
+        if raw.get('layout_version') == 4 and p['release_date'] is None:
+            if p['is_new'] is not False or 'date_label' not in p: fail('Unknown product date requires a labelled baseline, never a new release')
+        elif day_key(p['release_date'])>day: fail('Invalid product date')
+        if instant(p['checked_at'])>now: fail('Invalid product date')
         if type(p['is_new']) is not bool: fail('Product grouping required')
         refs(p['source_ids'])
     coverage=raw['coverage']
@@ -172,7 +178,7 @@ def validate(raw, now=None):
         if instant(v['checked_at'])>now: fail('Future coverage date')
         if v['state']=='checked': refs(v['source_ids'])
         elif not isinstance(v['source_ids'],list) or not set(v['source_ids'])<=source_ids: fail('Unknown coverage source')
-    if raw.get('layout_version') == 3:
+    if raw.get('layout_version') in (3, 4):
         overview=raw['market_overview']
         if not isinstance(overview,dict) or set(overview)!={'title','summary','note'}: fail('Market overview is required')
         for k,v in overview.items(): bilingual(v,'market '+k,1600)
@@ -192,12 +198,12 @@ def validate(raw, now=None):
         if not isinstance(m['rows'],list) or len(m['rows'])!=len(watchlist[key]) or {r.get('ticker') for r in m['rows']}!={s[0] for s in watchlist[key]}: fail('Market watchlist is incomplete or duplicated')
         for r in m['rows']:
             expected_row={'ticker','name','price','change_pct','state','source_ids','as_of','delay_minutes'}
-            if raw.get('layout_version') == 3:
+            if raw.get('layout_version') in (3, 4):
                 expected_row.add('group')
                 if r.get('group')!=TICKER_GROUP[r['ticker']]: fail('Security industry group is incorrect')
             if set(r)!=expected_row: fail('Invalid quote fields')
             bilingual(r['name'],'security name',100)
-            if r['state'] not in (('verified','partial','missing','suspended') if raw.get('layout_version') == 3 else ('verified','missing','suspended')): fail('Invalid quote state')
+            if r['state'] not in (('verified','partial','missing','suspended') if raw.get('layout_version') in (3, 4) else ('verified','missing','suspended')): fail('Invalid quote state')
             if r['state'] in ('verified','partial'):
                 if m['state']=='unavailable': fail('Unavailable market cannot have verified prices')
                 if r['state']=='partial' and r['change_pct'] is not None: fail('Partial quote must leave unverified change empty')

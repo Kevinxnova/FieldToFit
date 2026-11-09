@@ -17,7 +17,19 @@ PATH = '/api/v1/platform/reading'
 
 
 @pytest.fixture(autouse=True)
-def fixed_clock(monkeypatch):
+def fixed_clock(monkeypatch, tmp_path):
+    # Daily tests own their publication data. Editorial exports can depend on
+    # reviewed translations stored only in production; do not seed those here.
+    from backend.knowledge import content_workspace
+    isolated = tmp_path / 'reading-content'
+    isolated.mkdir()
+    for kind in ('news', 'watch'):
+        raw = json.loads((content_workspace.CONTENT / (kind + '.json')).read_text())
+        raw['items'] = []
+        (isolated / (kind + '.json')).write_text(json.dumps(raw))
+    for name in ('model-landscape.json', 'model-landscape-flagships.json'):
+        (isolated / name).write_bytes((content_workspace.CONTENT / name).read_bytes())
+    monkeypatch.setattr(content_workspace, 'CONTENT', isolated)
     actual = home.clock
     current = ['2026-10-15T09:00:00+08:00']
     monkeypatch.setattr(home, 'clock', lambda: actual(instant(current[0])))
@@ -62,7 +74,7 @@ def test_preview_matches_published_daily_and_mcp_without_heavy_or_private_data(c
         assert preview['intro'] == complete['intro']
         assert preview['publication']['content_hash'] == complete['publication']['content_hash']
         assert preview['publication']['revision'] == complete['publication']['revision']
-        assert preview['highlights'] == [{k:s[k] for k in ('id','section','title','summary')}
+        assert preview['highlights'] == [{k:s[k] for k in ('id','section','title','summary','event_date')}
                                          for s in complete['stories'] if s['highlight']]
         assert not {'markets','products','pdf','coverage','review','sources'} & preview.keys()
         assert len(json.dumps(daily)) < len(json.dumps(complete)) / 3
@@ -148,7 +160,8 @@ def test_direct_html_bootstrap_api_and_daily_anchors_are_same_edition(site, issu
         assert boot['data']['daily'] == api['daily']
         section = response.text.split('<section id="daily-preview"',1)[1].split('</section>',1)[0]
         preview = api['daily']['issue']
-        assert html.escape(preview['headline']) in section
+        assert html.escape(preview['headline']) not in section
+        assert html.escape(preview['intro']) not in section
         assert preview['publication']['content_hash'] in section
         detail = site.get(prefix+preview['path'])
         for story in preview['highlights']:

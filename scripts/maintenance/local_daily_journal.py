@@ -184,7 +184,7 @@ def run(phase, day, directory, site=None, now=None):
                 version = remote['draft_version']
             write(directory/'draft-receipt.json',{'date':day,'content_hash':digest(data),'draft_version':version})
             if not remote or remote['draft']!=data or not remote['reviewed'] or remote['review'].get('method') != 'local_gpt' or remote['review'].get('evidence_hash') != report['evidence_hash']:
-                site.call('/api/v1/admin/daily/' + day + '/review', {'draft_version': version, 'review_report': report, **({'evidence':json.loads((directory/'evidence.json').read_text())} if data.get('layout_version')==3 else {})})
+                site.call('/api/v1/admin/daily/' + day + '/review', {'draft_version': version, 'review_report': report, **({'evidence':json.loads((directory/'evidence.json').read_text())} if data.get('layout_version') in (3, 4) else {})})
             ready = site.call('/api/v1/admin/daily/' + day)
             if not ready['reviewed'] or ready['draft'] != data or ready['review'].get('evidence_hash') != report['evidence_hash']:
                 raise ValueError('Remote preparation changed; inspect before publication')
