@@ -1,0 +1,11 @@
+{% from 'company_rows.html' import company_rows %}
+{% set topic=data.news.company_topics[view] %}
+{% set labels={'codex':['Codex','Codex'],'chatgpt-work':['ChatGPT / Work','ChatGPT / Work'],'claude-code':['Claude Code','Claude Code'],'claude':['Claude','Claude'],'models-api':['模型与 API','Models & API'],'other':['其他更新','Other updates']} %}
+<section class="company-topic"><p>{{ 'Reviewed updates from November 2, 2026, ordered by event date.' if english else '自2026年11月2日起，按事件日期阅读已审核发布的更新。' }}</p>
+<form method="get"><label>{{ 'Product' if english else '产品' }} <select name="product"><option value="">{{ 'All products' if english else '全部产品' }}</option>{% for id in topic.products %}<option value="{{ id }}" {% if request.args.get('product') == id %}selected{% endif %}>{{ labels[id][1 if english else 0] }}</option>{% endfor %}</select></label>
+<label>{{ 'Month' if english else '月份' }} <select name="month"><option value="">{{ 'All months' if english else '全部月份' }}</option>{% for month in topic.months %}<option {% if request.args.get('month') == month %}selected{% endif %}>{{ month }}</option>{% endfor %}</select></label><label>{{ 'Keyword' if english else '关键词' }} <input type="search" name="topic_q" value="{{ request.args.get('topic_q','') }}"></label><button>{{ 'Find updates' if english else '查找更新' }}</button></form>
+<a href="/for-you/{{ view }}">{{ 'Clear filters' if english else '清除筛选' }}</a><p>{{ company_archive.total }} {{ 'entries' if english else '条记录' }}</p>
+{{ company_rows(company_archive['items'],english) }}
+{% if not company_archive['items'] %}<p>{{ 'No entries match these filters.' if english else '当前筛选没有匹配记录。' }}</p>{% endif %}
+{% if company_archive.pages > 1 %}<nav>{% if company_archive.previous %}<a href="{{ company_archive.previous }}">{{ 'Previous' if english else '上一页' }}</a>{% endif %} {{ company_archive.page }} / {{ company_archive.pages }} {% if company_archive.next %}<a href="{{ company_archive.next }}">{{ 'Next' if english else '下一页' }}</a>{% endif %}</nav>{% endif %}
+</section>

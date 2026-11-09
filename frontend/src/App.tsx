@@ -179,7 +179,7 @@ function Shell() {
             <Route path="/news/:id" element={<PublishedDetail kind="news" />} />
             <Route path="/watch/:id" element={<PublishedDetail kind="watch" />} />
             <Route path="/for-you" element={<ForYou />} />
-            {(['news','hot-cards','codex','models','watch'] as const).map(section=><Route key={section} path={'/for-you/'+section} element={<ForYouSection key={section} section={section}/>}/>)}
+            {(['news','hot-cards','codex','models','watch','openai','anthropic'] as const).map(section=><Route key={section} path={'/for-you/'+section} element={<ForYouSection key={section} section={section}/>}/>)}
             <Route path="/for-you/evolution/questions/:id" element={<Suspense fallback={<p role="status">{pick("载入解析…","Loading explanation…")}</p>}><Evolution/></Suspense>} />
             <Route path="/for-you/evolution/*" element={<Suspense fallback={<p role="status">{pick("载入专题…","Loading topic…")}</p>}><Evolution/></Suspense>} />
             <Route path="/for-you/daily" element={<DailyJournal/>} />

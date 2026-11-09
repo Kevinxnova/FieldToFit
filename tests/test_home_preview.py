@@ -85,15 +85,16 @@ def test_no_events_means_no_invented_watch_updates_or_filled_slots(client):
         item['highlight'] = False
         item.pop('codex_28_days', None)
         item.pop('hot_card', None)
+        item.pop('company_update', None)
     full['news']['report_selection']['ids'] = []
     home = project(full, 'home')
     assert not home['watch']['items']
-    assert home['home_preview'] == {'highlights':[], 'hot_cards':[], 'reports':[], 'codex':[], 'watch_events':[]}
+    assert home['home_preview'] == {'companies':{'openai':[],'anthropic':[]}, 'codex_total':98, 'highlights':[], 'hot_cards':[], 'reports':[], 'codex':[], 'watch_events':[]}
     assert home['watch']['groups'] == original['watch']['groups']
 
 
 def test_public_pages_bootstrap_same_projection_and_seven_section_order(site):
-    order = ['daily-preview','recent-news','hot-information-cards','technical-evolution-maps','news-codex-28-days','model-landscape','resource-dossiers']
+    order = ['daily-preview','recent-news','hot-information-cards','technical-evolution-maps','openai-updates','anthropic-updates','historical-topics','news-codex-28-days','model-landscape','resource-dossiers']
     for prefix, lang in (('', 'zh'),('/en','en')):
         for view in ('home','news','hot-cards','codex','models','watch'):
             path = '/for-you'+('' if view == 'home' else '/'+view)
@@ -139,8 +140,14 @@ def test_shared_archive_filters_work_without_scripts(site):
     empty = BeautifulSoup(site.get('/for-you/news?news_range=all&news_q=no-such-record-xyz').text, 'html.parser')
     assert not empty.select('#news-releases article')
     assert '当前筛选没有匹配条目' in empty.select_one('#news-releases').text
-    archive = BeautifulSoup(site.get('/for-you/hot-cards').text, 'html.parser').select('#news-releases article h3 a')
-    assert {a['href'].split('/')[-1] for a in archive} == {i['id'] for i in originals.values() if i.get('hot_card')}
+    archive_ids=set()
+    path='/for-you/hot-cards'
+    while path:
+        page=BeautifulSoup(site.get(path).text,'html.parser')
+        archive_ids.update(a['href'].split('/')[-1] for a in page.select('#news-releases article h3 a'))
+        following=next((a for a in page.select('#news-releases nav a') if a.text == '下一页动态'), None)
+        path='/for-you/hot-cards'+following['href'] if following else None
+    assert archive_ids == {i['id'] for i in originals.values() if i.get('hot_card')}
 
 
 def test_archive_date_basis_category_and_invalid_page():

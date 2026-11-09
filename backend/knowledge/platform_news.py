@@ -141,7 +141,10 @@ def validate(data):
     return data
 
 
-def news(q='', id='', revision='', _data=None):
+def news(q='', id='', revision='', _data=None, company=''):
+    from backend.knowledge.company_updates import metadata as company_metadata, projection as company_projection, COMPANIES
+    if company and company not in COMPANIES:
+        raise PlatformError('Unknown company topic', 'invalid_company', 400)
     requested_id=id
     if id and _data is None:
         from backend.knowledge.stewardship import resolve
@@ -160,6 +163,9 @@ def news(q='', id='', revision='', _data=None):
             continue
         obj = {k: item[k] for k in fields}
         obj.update(reading_fields(item))
+        company_topic = company_metadata(item)
+        if company_topic:
+            obj['company_update'] = company_topic
         if item.get('aliases'):
             from backend.knowledge.platform_lookup import aliases
             obj['aliases'] = aliases(item['aliases'])
@@ -181,13 +187,16 @@ def news(q='', id='', revision='', _data=None):
     if revision and revision != fingerprint:
         raise PlatformError('News revision changed; read the current collection', 'news_revision_changed', 409)
     from backend.knowledge.locale import searchable
-    entries = [item for item in published if (not id or item['id'] == id) and
+    entries = [item for item in published if (not company or (item.get('company_update') or {}).get('company') == company) and (not id or item['id'] == id) and
                (not q or q in ' '.join(str(v) for k,v in searchable({'id':item['id'],**{k:item[k] for k in ('title','name','organization','summary')},'hot_card':{k:(item.get('hot_card') or {}).get(k,'') for k in ('headline','scope')}}).items() if k!='id').casefold())]
+    if company:
+        from backend.knowledge.company_updates import ordered
+        entries = ordered(entries, company)
     if id and not entries:
         raise PlatformError('News item not found or withdrawn', 'not_found', 404)
     from backend.knowledge.stewardship import decorate
     return {'schema_version': data['schema_version'], 'edition': data['edition'], 'title': data['title'],
             'reviewed_at': data['reviewed_at'], 'revision': fingerprint, 'total': len(entries),
             'scope': 'reviewed release news; source links and optional reviewed materials have explicit coverage; interpretation is FieldToFit editorial',
-            'report_selection': report_selection, 'hot_card_selection': hot_card_selection, 'items': entries if _data is not None else decorate(entries), 'codex_progress': projection(entries, roundup_items=published),
+            'company_topics': company_projection(entries), 'report_selection': report_selection, 'hot_card_selection': hot_card_selection, 'items': entries if _data is not None else decorate(entries), 'codex_progress': projection(entries, roundup_items=published),
             **({'resolved_from':requested_id,'canonical_id':id} if requested_id and requested_id!=id else {})}

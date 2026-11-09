@@ -13,7 +13,10 @@ import { Link } from '@fieldtofit/locale/router';
 import { useWorkspace, SourceLink } from './UI';
 import type { CodexEvent, CodexTopic } from './codexData';
 import { SourcePosts } from './SourcePostCard';
+export type CompanyUpdate = {company:'openai'|'anthropic';date:string;display_time:string;date_precision:string;products:string[];announced_at:string|null};
+export type CompanyTopic = {company:string;start_date:string;total:number;ids:string[];months:string[];products:string[]};
 export type NewsItem = {
+  company_update?:CompanyUpdate;
   reading_summary?:boolean;hot_card?:HotCard;codex_28_days?:CodexEvent;technical_map?:TechnicalMap;
   maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;
   media?:NewsMedia;category?:string;event_date?:string|null;publication?:{first_published_at:string|null;updated_at:string|null;report_selected_at?:string|null;hot_card_first_published_at?:string|null;hot_card_selected_at?:string|null};
@@ -24,7 +27,7 @@ export type NewsItem = {
   related: { id: string; name: string; url: string }[];
 };
 export type ReportSelection = {limit:number;ids:string[];basis:string};
-export type NewsCollection = { report_selection?:ReportSelection; hot_card_selection?:ReportSelection; reading_summary?:boolean; codex_progress?:CodexTopic; referenced_items?:NewsItem[]; items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
+export type NewsCollection = { company_topics?:Record<string,CompanyTopic>; report_selection?:ReportSelection; hot_card_selection?:ReportSelection; reading_summary?:boolean; codex_progress?:CodexTopic; referenced_items?:NewsItem[]; items: NewsItem[]; total: number; edition: string; title: string; reviewed_at: string; revision: string };
 export const newsAnchor = (id: string) => 'news-' + id.toLowerCase();
 export function NewsReading({ data, loading, error, reload, previewBodies, standalone=false }: { standalone?:boolean; previewBodies?:PreviewBodies; data: NewsCollection | null; loading: boolean; error: string; reload: () => void }) {
   const { pick, notify } = useWorkspace();

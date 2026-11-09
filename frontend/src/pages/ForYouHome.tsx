@@ -1,3 +1,4 @@
+import { CompanyUpdatesHome, HistoricalTopics } from '../components/workspace/CompanyUpdates';
 import { lazy, Suspense, useState, type ReactNode } from 'react';
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from '@fieldtofit/locale/router';
 import { useHomeReading, type ChartPreview } from '../api/reading';
@@ -30,12 +31,12 @@ export function ForYouHome(){
   return target?<Navigate to={target} replace state={location.state}/>:<Home/>;
 }
 function Home(){
-  const {pick,zh}=useWorkspace(),navigate=useNavigate(),[params]=useSearchParams();
+  const {pick}=useWorkspace(),navigate=useNavigate(),[params]=useSearchParams();
   const home=useHomeReading('','','home');const data=home.data;
   const [following,setFollowing]=useState(false),[query,setQuery]=useState('');
   const byId=new Map((data?.news.items||[]).map(i=>[i.id,i]));
   const selected=(ids?:string[])=>ids?.flatMap(id=>byId.has(id)?[byId.get(id)!]:[])||[];
-  const highlights=selected(data?.home_preview?.highlights),logs=selected(data?.home_preview?.codex);
+  const highlights=selected(data?.home_preview?.highlights);
   const empty=<p className="muted">{pick('暂无已审内容，完成审核后会在这里展示。','Reviewed content will appear here when available.')}</p>;
   const targets=legacyReadingTargets(params);
   return <div className="platform-page for-you-home"><VisitReady ready={!!data&&!home.error}/><AliasNotice/>
@@ -56,11 +57,8 @@ function Home(){
       {data?<HotCardHighlights items={selected(data.home_preview?.hot_cards)}/>:<section className="home-section"><PreviewHeading id="hot-information-cards" title={pick('热点信息卡','Information cards')} to="/for-you/hot-cards" action={pick('全部热点','All information cards')}/></section>}
       {data?<MapCards items={selected(data.home_preview?.reports)} selection={data.news.report_selection} home/>:<section className="home-section"><PreviewHeading id="technical-evolution-maps" title={pick('技术报告精选&分析','Selected Technical Reports & Analysis')} to="/maps" action={pick('全部精选','All reports')}/></section>}
       <Suspense fallback={<p role="status">{pick('载入大模型专题…','Loading LLM topic…')}</p>}><EvolutionHome/></Suspense>
-      <section className="home-section home-codex"><PreviewHeading id="news-codex-28-days" title={pick('Codex 28天进化日志','Codex: 28 Days of Progress')} to="/for-you/codex" action={pick('完整日志','Full log')}>{pick('把每一次真实更新，放回它发生的时间。','Place each update on its actual date.')}</PreviewHeading>
-        <div className="home-codex-frame"><div className="home-codex-intro"><strong>Codex</strong><p>{pick('28天进化日志','28 Days of Progress')}</p><small>{pick('官方公告 · 已审记录','Official announcements · Reviewed records')}</small><Link className="button" to="/for-you/codex">{pick('按日期阅读','Read by date')} →</Link></div><div className="home-log-list">
-          {logs.map(item=>{const event=item.codex_28_days!;return <article key={item.id}><Link className="home-log-date" to={'/for-you/codex?codex_date='+event.date+'#codex-day-'+event.date}><time dateTime={event.date}>{event.date.slice(5)}</time>{event.official_day&&<small>{pick('官方','Official')} Day {event.official_day}</small>}</Link><div><p className="home-meta">{event.group==='codex'?'Codex / Work':pick('其他 OpenAI','Other OpenAI')}</p><h3><Link to={contentPath(item.id)}>{(zh?event.overview_zh:event.overview_en)||item.title}</Link></h3><p>{item.summary}</p></div></article>;})}{data&&!logs.length&&empty}
-        </div></div>
-      </section>
+      {(['openai','anthropic'] as const).map(company=><CompanyUpdatesHome key={company} company={company} items={selected(data?.home_preview?.companies?.[company])} ready={!!data}/>)}
+      <HistoricalTopics total={data?.home_preview?.codex_total}/>
       <section className="home-section home-models"><PreviewHeading id="model-landscape" title={pick('模型能力与价格','Model capability & pricing')} to="/for-you/models" action={pick('完整图表','Full charts')}>{pick('能力与成本一起看，配置与来源分开比较。','Read capability alongside cost, within each source and configuration.')}</PreviewHeading><div className="home-model-previews">{data?.chart_previews?.map(source=><ModelPreview key={source.id} source={source}/>)}</div>{data&&!data.chart_previews?.length&&empty}</section>
       <section className="home-section home-watch"><PreviewHeading id="resource-dossiers" title={pick('持续关注','Ongoing watch')} to="/for-you/watch" action={pick('全部档案','All dossiers')}>{pick('把一次发现，放回长期维护的对象档案。','Put each discovery in a maintained dossier.')}</PreviewHeading><nav className="home-watch-types" aria-label={pick('持续关注分类','Watch categories')}>{['model','tool','agent','skill','harness'].map(type=>{const group=data?.watch.groups.find(g=>g.id===type);return <Link key={type} to={'/for-you/watch?type='+type+'#watch-group-'+type}>{pick(...({model:['模型','Models'],tool:['工具','Tools'],agent:['Agent','Agents'],skill:['Skill','Skills'],harness:['Harness','Harnesses']} as Record<string,[string,string]>)[type])} <span>{group?.count??'—'}</span> ↗</Link>;})}</nav>
         <div className="home-watch-list">{data?.watch.items.map(item=>{const event=data.home_preview?.watch_events.find(e=>e.watch_id===item.id),news=event&&byId.get(event.news_id);return <article key={item.id}><div><h3><Link to={contentPath(item.id)}>{item.name}</Link></h3>{news&&<p><time dateTime={event!.date}>{event!.date}</time> · {news.title}</p>}</div><Link to={contentPath(item.id)}>{pick('阅读档案','Read dossier')} ↗</Link></article>;})}{data&&!data.watch.items.length&&<p className="muted">{pick('近30日暂无已审关联事件，可按分类浏览完整档案。','No reviewed related events in the last 30 days. Browse complete dossiers by category.')}</p>}</div>

@@ -152,5 +152,33 @@
       "完整浏览模型、工具、Agent、Skill 与 Harness 的档案和关联事件。",
       "Explore complete model, tool, agent, skill and harness dossiers and related events."
     ]
+  },
+  "/for-you/openai": {
+    "title": [
+      "OpenAI 更新 · FieldToFit",
+      "OpenAI updates · FieldToFit"
+    ],
+    "heading": [
+      "OpenAI 更新",
+      "OpenAI updates"
+    ],
+    "description": [
+      "按时间、结论与核心论述阅读OpenAI已审核更新。",
+      "Read reviewed OpenAI updates by date, conclusion and key details."
+    ]
+  },
+  "/for-you/anthropic": {
+    "title": [
+      "Anthropic 更新 · FieldToFit",
+      "Anthropic updates · FieldToFit"
+    ],
+    "heading": [
+      "Anthropic 更新",
+      "Anthropic updates"
+    ],
+    "description": [
+      "按时间、结论与核心论述阅读Anthropic已审核更新。",
+      "Read reviewed Anthropic updates by date, conclusion and key details."
+    ]
   }
 }

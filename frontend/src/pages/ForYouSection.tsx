@@ -1,3 +1,4 @@
+import { CompanyUpdatesPage } from '../components/workspace/CompanyUpdates';
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from '@fieldtofit/locale/router';
 import { useHomeReading } from '../api/reading';
@@ -12,8 +13,10 @@ import { useWorkspace } from '../components/workspace/UI';
 import { ReadingLoadState } from './ForYouHome';
 import './for-you-preview.css';
 
-export type ForYouSectionName='news'|'hot-cards'|'codex'|'models'|'watch';
+export type ForYouSectionName='news'|'hot-cards'|'codex'|'models'|'watch'|'openai'|'anthropic';
 const sections:Record<ForYouSectionName,{title:[string,string];anchor:string}>={
+  openai:{title:['OpenAI 更新','OpenAI updates'],anchor:'openai-updates'},
+  anthropic:{title:['Anthropic 更新','Anthropic updates'],anchor:'anthropic-updates'},
   news:{title:['近期动态','Recent developments'],anchor:'recent-news'},
   'hot-cards':{title:['热点信息卡','Information cards'],anchor:'hot-information-cards'},
   codex:{title:['Codex 28天进化日志','Codex: 28 Days of Progress'],anchor:'news-codex-28-days'},
@@ -35,6 +38,8 @@ export function ForYouSection({section}:{section:ForYouSectionName}){
   return <div className="platform-page for-you-section"><VisitReady ready={!!data&&!result.error}/><nav className="section-breadcrumb" aria-label={pick('阅读路径','Reading path')}><Link to={'/for-you#'+current.anchor} state={{restoreReading:!!location.state?.readingReturn}}>For you</Link><span>/</span><span>{pick(...current.title)}</span></nav><header className="platform-hero"><h1>{pick(...current.title)}</h1><Link className="section-return" to={'/for-you#'+current.anchor} state={{restoreReading:!!location.state?.readingReturn}}>← {pick('返回首页预览','Back to homepage preview')}</Link></header>
     <ReadingLoadState {...result}/>
     {data&&<>
+      {(section==='openai'||section==='anthropic')&&<CompanyUpdatesPage company={section} data={data.news}/>}
+
       {section==='models'&&<ModelLandscape previewData={data.charts}/>}
       {(section==='news'||section==='hot-cards')&&<><NewsIndex data={data.news} loading={result.loading} error={result.error} reload={result.reload} topics={false} hotCards={section==='hot-cards'}/><nav className="section-links" aria-label={pick('相关专题','Related sections')}><Link to="/for-you/hot-cards">{pick('热点信息卡','Information cards')}</Link><Link to="/maps">{pick('技术报告精选&分析','Reports & analysis')}</Link><Link to="/for-you/codex">{pick('Codex 28天进化日志','Codex: 28 Days of Progress')}</Link></nav></>}
       {section==='codex'&&(data.news.codex_progress?.days.length?<CodexProgress data={data.news}/>:<p className="section-empty">{pick('暂无已审日志。','No reviewed log entries yet.')}</p>)}

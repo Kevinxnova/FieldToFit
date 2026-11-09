@@ -750,7 +750,7 @@ def platform_intake_publish():
 @bp.get("/platform/news")
 def platform_news():
     from backend.knowledge.platform_news import news
-    return jsonify(news(**{k: request.args[k] for k in ("q", "id", "revision") if k in request.args}))
+    return jsonify(news(**{k: request.args[k] for k in ("q", "id", "revision", "company") if k in request.args}))
 
 
 @bp.get("/platform/watch")

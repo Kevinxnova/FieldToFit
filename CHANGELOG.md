@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.19.0"></a>
+## v1.19.0 · OpenAI／Anthropic长期更新专题 · 2026-11-09
+<!-- site-deployed:2026-11-09 -->
+<!-- public-title:en: OpenAI and Anthropic update topics -->
+<!-- release-summary:zh:start -->
+- 新增OpenAI、Anthropic独立更新专题：首页按时间、结论与核心论述分点展示，默认3条、展开最多10条。
+- 完整专题支持产品、月份与关键词筛选，保留日期精度、原始出处与详情返回；网页、API和MCP共享已审记录。
+- Codex 28天日志保留在默认折叠的历史专题，旧链接与增量接口兼容；晨报沿用07:30准备／08:00提案和具体批次审批。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add independent OpenAI and Anthropic update topics with dated conclusions and key details; show 3 homepage entries and expand to at most 10.
+- Filter full topics by product, month and keyword, preserving date precision, sources and detail return positions across reviewed web, API and MCP records.
+- Keep the Codex 28-day log in collapsed historical topics with existing links and feeds; retain 07:30 preparation, 08:00 proposals and batch approval.
+<!-- release-summary:en:end -->
+
+对应[REQ-26](FieldToFit-PM.md#req-26)。所有者确认v1.19.0；新完整专题及阅读流程按minor交付，无数据库迁移，不改写生产正文，不恢复夜间任务。仅复用11月2日起有明确公司归属的已审记录；未来／日期缺失／第三方提及不自动归入。恢复D-321已审原稿中的62.0数值序列化，修复既有英文指纹失配，值与结论未变。本地验收后获所有者明确部署授权，v1.19.0正式上线；实际验证见[验收记录](docs/validation/2026-11-09-company-updates.md)，维护规则见[指南](docs/guides/company-updates.md)。
+
 <a id="v1.18.0"></a>
 ## v1.18.0 · 事件优先日报与重点候选取舍 · 2026-11-09
 <!-- site-deployed:2026-11-09 -->

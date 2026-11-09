@@ -13,7 +13,7 @@ let location,renderer;
 function App(){location=rr.useLocation();return React.createElement(rr.Routes,null,React.createElement(rr.Route,{path:'/for-you/*',element:React.createElement(router.Link,{to:'/news/D-01'},'Read a Codex detail')}),React.createElement(rr.Route,{path:'/news/:id',element:React.createElement(PublishedDetail,{kind:'news'})}));}
 async function click(){const link=renderer.root.findByType('a');await act(async()=>link.props.onClick({button:0,defaultPrevented:false,currentTarget:{getAttribute:()=>null},preventDefault(){this.defaultPrevented=true;}}));}
 (async()=>{
- for(const source of ['/for-you?news_type=agent&news_page=2&codex_date=2026-10-12#news-codex-28-days','/for-you/news?news_range=all&news_page=2#news-releases','/for-you/codex?codex_date=2026-10-14#codex-day-2026-10-14']){
+ for(const source of ['/for-you/openai?month=2026-11&topic_q=API','/for-you/anthropic?product=claude-code&topic_page=2','/for-you?anthropic_show=10','/for-you?news_type=agent&news_page=2&codex_date=2026-10-12#news-codex-28-days','/for-you/news?news_range=all&news_page=2#news-releases','/for-you/codex?codex_date=2026-10-14#codex-day-2026-10-14']){
  await act(async()=>{renderer=create(React.createElement(rr.MemoryRouter,{initialEntries:[source]},React.createElement(App)));});
  await click();assert.equal(location.pathname,'/news/D-01');assert.equal(location.state.readingReturn.url,source);assert.equal(location.state.readingReturn.id,undefined);
  await click();assert.equal(location.pathname+location.search+location.hash,source);assert.equal(location.state.restoreReading,true);

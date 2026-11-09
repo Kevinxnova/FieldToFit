@@ -819,7 +819,7 @@
                 "conditions": "100任务，每项五次；95%整任务bootstrap区间 55.6–68.4%，不是实验成功率。",
                 "label": "GPT-6.1 Sol平均获分",
                 "unit": "%",
-                "value": 62
+                "value": 62.0
               },
               {
                 "baseline": "共同xhigh设置，非等成本比较",

@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 from flask import request, render_template
 from backend.knowledge.platform import PlatformError
 
-SECTIONS = {'news':'recent-news', 'hot-cards':'hot-information-cards', 'codex':'news-codex-28-days', 'models':'model-landscape', 'watch':'resource-dossiers'}
+SECTIONS = {'news':'recent-news', 'hot-cards':'hot-information-cards', 'codex':'news-codex-28-days', 'models':'model-landscape', 'watch':'resource-dossiers', 'openai':'openai-updates', 'anthropic':'anthropic-updates'}
 
 
 def news_archive(items, args, hot_cards=False):
@@ -78,7 +78,19 @@ def page(path, dist, english):
     if any(k in request.args for k in ('chart','company')): targets.append('models')
     if any(k in request.args for k in ('q','type')): targets.append('watch')
     from backend.llm_evolution import CATALOG as evolution_catalog, HOME_PREVIEW, NODE_BY_ID
-    body = render_template('for_you.html', evolution=evolution_catalog, evolution_preview=HOME_PREVIEW, evolution_nodes=NODE_BY_ID, data=data, view=view, english=english, heading=info['heading'][index], description=info['description'][index],
+    from backend.knowledge.company_updates import filtered
+    from math import ceil
+    company_archive = None
+    if view in ('openai', 'anthropic'):
+        found = filtered(data['news']['items'], view, request.args.get('product',''), request.args.get('month',''), request.args.get('topic_q',''))
+        pages_count = max(1, ceil(len(found)/20))
+        try: page_number = max(1, min(pages_count, int(request.args.get('topic_page', '1'))))
+        except ValueError: page_number = 1
+        def page_link(number):
+            params=request.args.to_dict(); params['topic_page']=number
+            return '?'+urlencode(params)
+        company_archive={'items':found[(page_number-1)*20:page_number*20], 'total':len(found), 'page':page_number, 'pages':pages_count, 'previous':page_link(page_number-1) if page_number>1 else None, 'next':page_link(page_number+1) if page_number<pages_count else None}
+    body = render_template('for_you.html', company_home_records={key:[items[i] for i in ids] for key,ids in data.get('home_preview',{}).get('companies',{}).items()}, company_archive=company_archive, evolution=evolution_catalog, evolution_preview=HOME_PREVIEW, evolution_nodes=NODE_BY_ID, data=data, view=view, english=english, heading=info['heading'][index], description=info['description'][index],
                            section_anchor=SECTIONS.get(view, ''), items=items, daily_preview=data['daily'], sections=SECTIONS, pages=PAGES,
                            legacy_targets=targets, legacy_query=request.query_string.decode('utf-8',errors='replace'),
                            calendar_items=items, calendar_cells=cells, calendar_rows=calendar_rows(cells), calendar_title=month,

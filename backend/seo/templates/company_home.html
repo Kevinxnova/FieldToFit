@@ -1,0 +1,9 @@
+{% from 'company_rows.html' import company_rows %}
+{% for company, name in [('openai','OpenAI'),('anthropic','Anthropic')] %}
+<section id="{{ company }}-updates"><h2>{{ name }} {{ 'updates' if english else '更新' }}</h2>
+{% set ids=data.home_preview.companies[company] %}
+{{ company_rows(company_home_records[company][:3], english) }}
+{% if ids|length > 3 %}<details><summary>{{ 'Show more (up to 10)' if english else '展开更多（最多10条）' }}</summary>{{ company_rows(company_home_records[company][3:10], english) }}</details>{% endif %}
+{% if not ids %}<p>{{ 'No published entries yet.' if english else '暂无已发布记录。' }}</p>{% endif %}<a href="/for-you/{{ company }}">{{ 'Full topic' if english else '完整专题' }} ↗</a></section>
+{% endfor %}
+<section id="historical-topics"><details><summary>{{ 'Historical topics' if english else '历史专题' }}</summary><div id="news-codex-28-days"><h3><a href="/for-you/codex">{{ 'Codex: 28 Days of Progress' if english else 'Codex 28天进化日志' }} ↗</a></h3><p>{{ 'Closed · October 5–November 1, 2026' if english else '已结束 · 2026年10月5日至11月1日' }} · {{ data.home_preview.codex_total }} {{ 'entries' if english else '条日志' }}</p><p>{{ 'Includes official Day 28 on November 2 and reviewed historical additions.' if english else '保留跨至11月2日的官方Day 28及已审核补录。' }}</p></div></details></section>

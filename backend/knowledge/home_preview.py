@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 
-VIEWS = ('full', 'home', 'news', 'watch', 'models', 'hot-cards', 'codex')
+VIEWS = ('full', 'home', 'news', 'watch', 'models', 'hot-cards', 'codex', 'openai', 'anthropic')
 
 
 def event_date(item):
@@ -45,6 +45,8 @@ def project(data, view):
         return data
     news, watch = data['news'], data['watch']
     items = news['items']
+    from backend.knowledge.company_updates import projection as company_projection, ordered
+    news['company_topics'] = company_projection(items)
     if view == 'home':
         highlights = [i['id'] for i in items if i.get('highlight')][:3]
         from backend.knowledge.hot_cards import selected
@@ -63,22 +65,29 @@ def project(data, view):
                 if relation['id'] in by_id and relation['id'] not in recent:
                     recent[relation['id']] = {'watch_id': relation['id'], 'news_id': item['id'], 'date': event_date(item)}
         events = list(recent.values())[:3]
-        ids = set(highlights+reports+[i['id'] for i in hot+logs]+[e['news_id'] for e in events])
+        company_ids = {key: [i['id'] for i in ordered(items, key)[:10]] for key in ('openai', 'anthropic')}
+        ids = set(sum(company_ids.values(), []) + highlights+reports+[i['id'] for i in hot+logs]+[e['news_id'] for e in events])
         news['items'] = [i for i in items if i['id'] in ids]
-        data['home_preview'] = {'highlights':highlights, 'hot_cards':[i['id'] for i in hot], 'reports':reports, 'codex':[i['id'] for i in logs], 'watch_events':events}
+        data['home_preview'] = {'companies': company_ids, 'codex_total': news.get('codex_progress', {}).get('total', 0), 'highlights':highlights, 'hot_cards':[i['id'] for i in hot], 'reports':reports, 'codex':[i['id'] for i in logs], 'watch_events':events}
         data['chart_previews'] = [chart_preview(s) for s in data['charts']['sources']]
         watch['items'] = [{k:i[k] for k in ('id','name','type','introduction','checked_at')} for e in events for i in [by_id[e['watch_id']]]]
         # Only metadata used by the preview components crosses this boundary.
-        keep = ('id','name','organization','title','summary','source_published_at','event_date','checked_at','highlight','media','publication','hot_card','technical_map','codex_28_days')
+        keep = ('id','name','organization','title','summary','source_published_at','event_date','checked_at','highlight','media','publication','hot_card','technical_map','codex_28_days','company_update')
         for index, item in enumerate(news['items']):
             small = {k:item[k] for k in keep if k in item}
             small.update(interpretation=[], related=[], sources=[])
+            if item.get('company_update'):
+                small['sources'] = item['sources'][:1]
             if item.get('hot_card'):
                 evidence_ids = {e['source_id'] for e in item['hot_card']['evidence']}
                 small['sources'] = [s for s in item['sources'] if s['id'] in evidence_ids]
             if item.get('codex_28_days'):
                 small['codex_28_days'] = {k:item['codex_28_days'][k] for k in ('date','group','type','official_day','overview_zh','overview_en') if k in item['codex_28_days']}
             news['items'][index] = small
+    elif view in ('openai', 'anthropic'):
+        news['items'] = ordered(items, view)
+        news['total'] = len(news['items'])
+        news['company_topics'] = company_projection(news['items'])
     elif view == 'codex':
         news['items'] = [i for i in items if i.get('codex_28_days')]
     elif view == 'hot-cards':

@@ -116,6 +116,8 @@ def present(name, args, data, control):
                  'summary_is_excerpt': True, 'revision': revision,
                  'checked_at': item.get('checked_at') or data.get('reviewed_at'),
                  'reading': {'tool': name, 'arguments': read_args}}
+        if item.get('company_update'):
+            entry['company_update'] = item['company_update']
         # A summary explicitly links the complete entry; source URLs are never truncated.
         if page and len(json.dumps(page + [entry], ensure_ascii=False).encode('utf-8')) > TEXT_BUDGET:
             break

@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.18.0](CHANGELOG.md#v1.18.0)** · [fieldtofit-v1.18.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.18.0)
+**当前源码版本：[v1.19.0](CHANGELOG.md#v1.19.0)** · [fieldtofit-v1.19.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.19.0)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 首页直接展示具体重点；新版完整日报采用单列新闻正文，AI公司统一呈现，双语网页与PDF同步。
-- 增加模型、应用、编程、开放权重、研究、人事和产品发布检索，保存重要候选入选或排除理由，保留真实日期、渠道与去重要求。
-- 新布局4兼容历史快照和PDF，保留已发布日报的内容哈希、修订与下载文件。
+- 新增OpenAI、Anthropic独立更新专题：首页按时间、结论与核心论述分点展示，默认3条、展开最多10条。
+- 完整专题支持产品、月份与关键词筛选，保留日期精度、原始出处与详情返回；网页、API和MCP共享已审记录。
+- Codex 28天日志保留在默认折叠的历史专题，旧链接与增量接口兼容；晨报沿用07:30准备／08:00提案和具体批次审批。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。
