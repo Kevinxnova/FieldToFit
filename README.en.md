@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.19.0](CHANGELOG.md#v1.19.0)** · [fieldtofit-v1.19.0](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.19.0)
+**Current source version: [v1.20.0](CHANGELOG.md#v1.20.0)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add independent OpenAI and Anthropic update topics with dated conclusions and key details; show 3 homepage entries and expand to at most 10.
-- Filter full topics by product, month and keyword, preserving date precision, sources and detail return positions across reviewed web, API and MCP records.
-- Keep the Codex 28-day log in collapsed historical topics with existing links and feeds; retain 07:30 preparation, 08:00 proposals and batch approval.
+- Add shared source reading for news and reports, distinguishing attributed excerpts, Chinese translations and original figure sources for both OpenAI and Anthropic.
+- Edit excerpts and figure references in content management, verify provenance and preview both languages; text or translation changes invalidate prior review.
+- Omit legacy commentary and redraws from current source-mode entries while retaining old links and revisions across web, HTML, API and MCP. Local development and verification only; no production deployment or content publication.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

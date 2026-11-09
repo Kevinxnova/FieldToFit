@@ -64,7 +64,7 @@ def publication_date(previous, current, now):
 def rotation(before, after):
     def brief(item):
         graph = item['technical_map']
-        return {'id': item['id'], 'title': graph['question'], 'url': '/maps/' + graph['slug'], 'selected_at': selected_at(item)}
+        return {'id': item['id'], 'title': item['title'] if item.get('source_reading') else graph['question'], 'url': '/maps/' + graph['slug'], 'selected_at': selected_at(item)}
     old = [brief(i) for i in ordered(before)[:LIMIT]]
     new = [brief(i) for i in ordered(after)[:LIMIT]]
     old_ids = {i['id'] for i in old}; new_ids = {i['id'] for i in new}

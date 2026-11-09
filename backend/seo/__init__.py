@@ -94,7 +94,7 @@ def published_dates_query():
     fields = ('state','name','organization','title','summary','introduction','type',
               'source_published_at','event_date','checked_at','interpretation','blocks',
               'sources','related','note','editor','highlight','attention','origin',
-              'submission','reading_materials','aliases','technical_map','hot_card','publication.updated_at')
+              'submission','reading_materials','aliases','source_reading','technical_map','hot_card','publication.updated_at')
     projection = 'json_array(' + ','.join("json_extract(snapshot,'$."+key+"')" for key in fields) + ')'
     return f"""WITH revisions AS (
         SELECT kind,item_id,action,created_at,{projection} body,
@@ -259,7 +259,7 @@ def page(path, dist):
             obj = collection['items'][0] if path != '/maps' else None
             title = (obj['question'] if obj else '技术报告精选&分析')+' · FieldToFit'
             description = obj['takeaway'] if obj else '精选原始报告，读懂核心结论、证据和适用边界。'
-            body = render_template('technical_maps.html', maps=collection, item=obj)
+            body = render_template('technical_maps.html', maps=collection, item=obj, english=english)
             return document(dist,title,description,path,body)
         if path in PAGES:
             info = PAGES[path]

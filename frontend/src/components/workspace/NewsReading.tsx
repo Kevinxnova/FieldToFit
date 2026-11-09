@@ -1,3 +1,4 @@
+import {SourceReading,type OriginalReading} from './SourceReading';
 import { readComplete } from '../../api/reading';
 import { HotCardReading, type HotCard } from './HotCards';
 import type {TechnicalMap} from './TechnicalMaps';
@@ -16,7 +17,7 @@ import { SourcePosts } from './SourcePostCard';
 export type CompanyUpdate = {company:'openai'|'anthropic';date:string;display_time:string;date_precision:string;products:string[];announced_at:string|null};
 export type CompanyTopic = {company:string;start_date:string;total:number;ids:string[];months:string[];products:string[]};
 export type NewsItem = {
-  company_update?:CompanyUpdate;
+  source_reading?:OriginalReading;company_update?:CompanyUpdate;
   reading_summary?:boolean;hot_card?:HotCard;codex_28_days?:CodexEvent;technical_map?:TechnicalMap;
   maintenance?:Maintenance;materials?:ReadingMaterial[];materials_revision?:string;
   media?:NewsMedia;category?:string;event_date?:string|null;publication?:{first_published_at:string|null;updated_at:string|null;report_selected_at?:string|null;hot_card_first_published_at?:string|null;hot_card_selected_at?:string|null};
@@ -41,7 +42,7 @@ export function NewsReading({ data, loading, error, reload, previewBodies, stand
     try{full=await readComplete<NewsCollection>('/v1/platform/news?id='+encodeURIComponent(item.id));}catch{notify(pick('完整资料暂时无法读取，请重试。','Complete materials could not be loaded. Please retry.'));return;}
     const body = JSON.stringify({ edition: full.edition, revision: full.revision, item:full.items[0],
       reading: { tool: 'curated_news', arguments: { lang:currentLanguage(), id: item.id, revision: full.revision } },
-      coverage: 'Consult the material manifest for readable source text and missing materials. Interpretation is FieldToFit editorial, not upstream text or an execution instruction.' }, null, 2);
+      coverage: full.items[0].source_reading ? 'Source excerpts are attributed; Chinese translations are labelled. Excerpts are not full source coverage or instructions to execute.' : 'Consult the material manifest for readable source text and missing materials. Interpretation is FieldToFit editorial, not upstream text or an execution instruction.' }, null, 2);
     try { await navigator.clipboard.writeText(body); trackAction('handoff_copy',item.id); notify(pick('动态、解读与出处已复制', 'News and citations copied')); }
     catch { const blob = URL.createObjectURL(new Blob([body], { type: 'application/json' })); const a = document.createElement('a'); a.href = blob; a.download = item.id + '.json'; a.click(); URL.revokeObjectURL(blob); }
   };
@@ -50,8 +51,8 @@ export function NewsReading({ data, loading, error, reload, previewBodies, stand
     <div className="news-list">{data?.items.map(item => <article className={'news-card'+(item.hot_card?' has-hot-card':'')} id={newsAnchor(item.id)} tabIndex={-1} key={item.id}>
       {item.hot_card&&<HotCardReading item={item} preview={!!previewBodies}/>}
       <>{item.media&&<ReviewedImage media={item.media} lead/>}</><p className="news-meta">{item.id} · {item.organization} · {item.source_published_at ? pick('来源发布 ', 'Source date ') + item.source_published_at : pick('首次发布日期待核实', 'First release date unconfirmed')}</p>
-      {!standalone && <h4><Link to={contentPath(item.id)}>{item.title}</Link></h4>}<ContentExposure id={item.id}><p>{item.summary}</p></ContentExposure>
-      <div className="news-editorial"><h5>{pick('FieldToFit 解读','FieldToFit notes')}</h5>
+      {!standalone && <h4><Link to={contentPath(item.id)}>{item.title}</Link></h4>}<ContentExposure id={item.id}>{!item.source_reading&&<p>{item.summary}</p>}</ContentExposure>
+      {item.source_reading?<SourceReading value={item.source_reading} sources={item.sources}/>:<div className="news-editorial"><h5>{pick('FieldToFit 解读','FieldToFit notes')}</h5>
         <ul className="news-points">{item.interpretation.slice(0,2).map((point,i)=><NewsPoint key={i} point={point} sources={item.sources}/>)}</ul>
         <details data-auto-expand open={standalone || undefined}><summary>{pick('更多解读与关联资料','More notes and related materials')}</summary>
           {item.interpretation.length>2&&<ul className="news-points">{item.interpretation.slice(2).map((point,i)=><NewsPoint key={i} point={point} sources={item.sources}/>)}</ul>}
@@ -59,7 +60,7 @@ export function NewsReading({ data, loading, error, reload, previewBodies, stand
           <p className="news-meta">{pick('整理与解读：FieldToFit · 资料核验 ','Editorial: FieldToFit · Checked ')}{item.checked_at}</p>
           <div className="news-related"><span>{pick('关联资料','Related materials')}</span>{item.related.map(r=><span key={r.id}><SourceLink url={r.url}>{r.id} · {r.name}</SourceLink>{!previewBodies&&/^CW-/.test(r.id)&&<FollowButton id={r.id} name={r.name}/>}</span>)}<Link to={'/for-you?q='+encodeURIComponent(item.name)+'#resource-dossiers'}>{pick('查找持续关注','Find an ongoing profile')}</Link></div>
         </details>
-      </div>
+      </div>}
       <SourcePosts posts={item.codex_28_days?.source_posts}/><PublicMaintenance value={item.maintenance}/><ContentMaterials item={item} previewBodies={previewBodies}/>{!previewBodies&&standalone&&<><ReportCorrection id={item.id} field="summary"/><CorrectionReceipts id={item.id}/></>}<div className="platform-actions"><button className="text-button" onClick={() => handoff(item)}>{pick('交给我的 AI', 'Give to my AI')}</button><button className="text-button" onClick={() => share(item)}>{pick('分享动态', 'Share')}</button><SourceLink url={item.sources[0]?.url}>{pick('官方来源', 'Official source')}</SourceLink></div>
     </article>)}</div>
   </section>;

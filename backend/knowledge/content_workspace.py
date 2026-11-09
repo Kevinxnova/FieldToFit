@@ -200,6 +200,10 @@ def draft_shape(kind, content):
             if any(not isinstance(row.get(field),str) for row in card[key] for field in fields):fail('热点信息卡字段必须为文本')
         if any(not isinstance(card.get(key),str) for key in ('headline','scope','next_step','verification','revised_at','checked_at','status','update_note')):fail('热点信息卡字段必须为文本')
         if card.get('share') is not None and not isinstance(card['share'],dict):fail('分享图片必须为对象')
+    original=content.get('source_reading')
+    if kind=='news' and original is not None:
+        if not isinstance(original,dict):fail('原文阅读须为对象')
+        objects(original.get('blocks'),'原文段落')
     graph=content.get('technical_map')
     if kind=='news' and graph is not None:
         if not isinstance(graph,dict):fail('技术地图必须为对象')
@@ -294,7 +298,7 @@ def composed(kind, ident, content, db, withdraw=False, card_receipt=None):
             item.pop('publication', None)
             if previous and previous.get('publication'):
                 item['publication'] = copy.deepcopy(previous['publication'])
-            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','technical_map','hot_card','state')
+            public_changes = ('name','organization','title','summary','source_published_at','event_date','interpretation','sources','related','note','editor','highlight','reading_materials','media','category','codex_28_days','technical_map','hot_card','source_reading','state')
             def comparable(x):
                 from backend.knowledge.codex_progress import metadata
                 from backend.knowledge.technical_maps import metadata as map_metadata

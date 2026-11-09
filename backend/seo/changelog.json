@@ -1,7 +1,35 @@
 {
-  "version": "1.19.0",
-  "revision": "cd658191ff581730379d647d35a9a551e4539cef44a18088545bb60c3dff5b20",
+  "version": "1.20.0",
+  "revision": "5a3dfd99c408d06a1463b7cbbb7356bea9c51c73c8a59cb7ad07d3144642116d",
   "items": [
+    {
+      "version": "1.20.0",
+      "date": "2026-11-09",
+      "deployed_on": "",
+      "copy": {
+        "zh": {
+          "title": "原文摘录与原图阅读",
+          "highlights": [
+            "新增新闻与报告共用的原文阅读方式，署名摘录、中文译文和原图出处清晰区分；OpenAI与Anthropic采用相同规则。",
+            "内容管理可编辑原文段落与原图、核对来源并预览中英文；正文或译文改动使旧审核失效。",
+            "当前原文模式不再展示旧解读或重绘图，保留旧链接与历史修订；网页、HTML、API及MCP同源。本批仅本地开发验证，未部署或发布生产内容。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Original excerpts and figure reading",
+          "highlights": [
+            "Add shared source reading for news and reports, distinguishing attributed excerpts, Chinese translations and original figure sources for both OpenAI and Anthropic.",
+            "Edit excerpts and figure references in content management, verify provenance and preview both languages; text or translation changes invalidate prior review.",
+            "Omit legacy commentary and redraws from current source-mode entries while retaining old links and revisions across web, HTML, API and MCP. Local development and verification only; no production deployment or content publication."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.0"
+    },
     {
       "version": "1.19.0",
       "date": "2026-11-09",

@@ -10,7 +10,7 @@ from backend.db import get_db
 from backend.knowledge.platform import PlatformError
 
 RELATIONS = ('inheritance', 'baseline', 'parallel')
-FIELDS = ('question', 'focus', 'takeaway', 'caution', 'change_summary', 'reports', 'nodes', 'edges', 'reading')
+FIELDS = ('question', 'focus', 'takeaway', 'caution', 'change_summary', 'reports', 'nodes', 'edges', 'reading', 'source_reading')
 
 
 def digest(value):
@@ -53,7 +53,11 @@ def metadata(item, enforce_dates=False):
     def words(obj, key, maximum=1600): return text(obj.get(key), key, maximum)
     slug = words(value, 'slug', 80)
     if not re.fullmatch(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*', slug): raise ValueError('地图入口须为英文小写短名称')
-    out = {'slug': slug, **{key: words(value, key) for key in FIELDS[:5]}}
+    from backend.knowledge.source_reading import metadata as source_metadata
+    original = source_metadata(item)
+    out = ({'slug': slug, 'question': words(item, 'title'), 'focus': words(item, 'organization'),
+            'takeaway': words(item, 'summary'), 'caution': '', 'change_summary': '', 'source_reading': original}
+           if original else {'slug': slug, **{key: words(value, key) for key in FIELDS[:5]}})
     sources = {s['id']: s for s in item.get('sources', [])}
     from urllib.parse import urlsplit
     import ipaddress
@@ -95,6 +99,9 @@ def metadata(item, enforce_dates=False):
                                'revised_at': revised, 'substantive_revision': substantive, 'revision_note': note})
     if len({r['source_id'] for r in out['reports']}) != len(reports): raise ValueError('报告出处重复')
     report_ids = {r['source_id'] for r in out['reports']}
+    if original:
+        out.update(nodes=[], edges=[])
+        return out
     nodes = value.get('nodes')
     if not isinstance(nodes, list) or not 2 <= len(nodes) <= 40: raise ValueError('地图须有2至40个节点')
     out['nodes'] = []; ids = set()
@@ -155,6 +162,8 @@ def project(item):
            'related': [{k: r[k] for k in ('id', 'name', 'url')} for r in item.get('related', [])],
            'publication': {key: publication.get(key) for key in ('first_published_at', 'updated_at', 'report_selected_at') if key != 'report_selected_at' or key in publication},
            'path': '/maps/' + graph['slug'], 'evidence_scope': '作者技术报告与FieldToFit解读；未声称独立复现'}
+    if graph.get('source_reading'):
+        obj['evidence_scope'] = 'Attributed original excerpts, labelled translations and original figure references.'
     from backend.knowledge.report_selection import selected_at
     obj['selected_at'] = selected_at(item)
     obj['revision'] = digest(obj)

@@ -1,3 +1,4 @@
+{% from 'source_reading.html' import source_reading %}
 {% from 'codex_posts.html' import source_posts %}
 {% from 'hot_card.html' import hot_card %}
 <div class="search-document platform-page">
@@ -15,7 +16,7 @@
       {% if item.hot_card %}{{ hot_card(item, english) }}{% endif %}
       <p>{{ item.id }} · 资料核验 {{ item.checked_at }}{% if item.source_published_at %} · 来源发布 {{ item.source_published_at }}{% endif %}</p>
       {% if item.attention %}<p><a href="{{ item.attention.source_url }}">GitHub ★ {{ item.attention.display_value }}</a> · {{ item.attention.observed_at }} · 仓库近似值</p>{% endif %}
-      <section><h2>FieldToFit 解读</h2>{% for point in item.interpretation %}<h3>{{ point.title }}</h3><p>{{ point.text|search_inline }}</p>{% if point.locator %}<p>原文位置：{{ point.locator }}</p>{% endif %}{% endfor %}</section>
+      {% if item.source_reading %}{{ source_reading(item.source_reading,item.sources,english) }}{% else %}<section><h2>FieldToFit 解读</h2>{% for point in item.interpretation %}<h3>{{ point.title }}</h3><p>{{ point.text|search_inline }}</p>{% if point.locator %}<p>原文位置：{{ point.locator }}</p>{% endif %}{% endfor %}</section>{% endif %}
       {% for block in item.blocks %}{% if block.kind == 'paragraph' %}<p>{{ block.text|search_inline }}</p>{% else %}<div class="watch-table-scroll"><table class="watch-table"><thead><tr>{% for cell in block.columns %}<th>{{ cell|search_inline }}</th>{% endfor %}</tr></thead><tbody>{% for row in block.rows %}<tr>{% for cell in row %}<td>{{ cell|search_inline }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% endif %}{% endfor %}
       {% if item.note %}<p>{{ item.note }}</p>{% endif %}
       {% if item.submission %}<dl>{% for key, label in [('usage','如何使用'),('openness','开放情况'),('relationship','作者与提交者关系')] %}<dt>{{ label }}</dt><dd>{{ item.submission[key] }}</dd>{% endfor %}</dl>{% endif %}

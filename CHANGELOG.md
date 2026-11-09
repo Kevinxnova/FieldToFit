@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.0"></a>
+## v1.20.0 · 原文摘录与原图阅读 · 2026-11-09
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Original excerpts and figure reading -->
+<!-- release-summary:zh:start -->
+- 新增新闻与报告共用的原文阅读方式，署名摘录、中文译文和原图出处清晰区分；OpenAI与Anthropic采用相同规则。
+- 内容管理可编辑原文段落与原图、核对来源并预览中英文；正文或译文改动使旧审核失效。
+- 当前原文模式不再展示旧解读或重绘图，保留旧链接与历史修订；网页、HTML、API及MCP同源。本批仅本地开发验证，未部署或发布生产内容。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add shared source reading for news and reports, distinguishing attributed excerpts, Chinese translations and original figure sources for both OpenAI and Anthropic.
+- Edit excerpts and figure references in content management, verify provenance and preview both languages; text or translation changes invalidate prior review.
+- Omit legacy commentary and redraws from current source-mode entries while retaining old links and revisions across web, HTML, API and MCP. Local development and verification only; no production deployment or content publication.
+<!-- release-summary:en:end -->
+
+对应[REQ-26-7／8](FieldToFit-PM.md#req-26-7)，所有者已确认minor版本v1.20.0。可选source_reading字段共用既有新闻发布集合，无数据库迁移；未改动319条生产正文或98条归档。当前两家12条私密本地样例与官方快照准备完成；其余历史内容未批量迁移。原图复用未核实则链接来源，嵌入需原图资源登记及授权依据，不以重绘图代替。操作见[原文阅读指南](docs/guides/source-reading.md)，实际验收见[验收记录](docs/validation/2026-11-09-source-reading.md)。
+
 <a id="v1.19.0"></a>
 ## v1.19.0 · OpenAI／Anthropic长期更新专题 · 2026-11-09
 <!-- site-deployed:2026-11-09 -->

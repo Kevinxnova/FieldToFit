@@ -17,9 +17,13 @@ NEWS_CATEGORIES = ('model', 'agent', 'tool', 'skill', 'harness', 'research', 'in
 def reading_fields(item):
     """Optional reviewed media; nothing is scraped or fetched during publication."""
     result = {}
+    from backend.knowledge.source_reading import metadata as source_metadata
+    original = source_metadata(item)
+    if original:
+        result['source_reading'] = original
     from backend.knowledge.hot_cards import metadata as card_metadata
     card = card_metadata(item)
-    if card:
+    if card and not original:
         result['hot_card'] = card
     from backend.knowledge.technical_maps import metadata as map_metadata
     graph = map_metadata(item)
@@ -33,7 +37,7 @@ def reading_fields(item):
         if item['category'] not in NEWS_CATEGORIES:
             raise ValueError('Invalid news category')
         result['category'] = item['category']
-    if item.get('media') is not None:
+    if item.get('media') is not None and not original:
         media = item['media']
         if not isinstance(media, dict):
             raise ValueError('Media must be an object')
@@ -118,8 +122,8 @@ def validate(data):
         for key in ('checked_at', 'source_published_at', 'event_date'):
             if item.get(key):
                 date.fromisoformat(item[key])
-        if not item.get('checked_at') or not item.get('interpretation') or not item.get('sources'):
-            raise ValueError('Published news needs sources, review date and interpretation')
+        if not item.get('checked_at') or (not item.get('interpretation') and not optional.get('source_reading')) or not item.get('sources'):
+            raise ValueError('Published news needs sources, review date and interpretation or original excerpts')
         sources = {s['id'] for s in item['sources']}
         if len(sources) != len(item['sources']):
             raise ValueError('Duplicate source identity')
@@ -170,6 +174,9 @@ def news(q='', id='', revision='', _data=None, company=''):
             from backend.knowledge.platform_lookup import aliases
             obj['aliases'] = aliases(item['aliases'])
         obj['interpretation'] = [{k: point[k] for k in ('title', 'text', 'source_ids', 'locator')} for point in item['interpretation']]
+        if obj.get('source_reading'):
+            obj['interpretation'] = []
+            obj['note'] = ''
         obj['sources'] = [{k: source[k] for k in ('id', 'title', 'url', 'coverage')} for source in item['sources']]
         obj['related'] = [{k: ref[k] for k in ('id', 'name', 'url')} for ref in item['related']]
         from backend.knowledge.content_materials import manifest
@@ -197,6 +204,6 @@ def news(q='', id='', revision='', _data=None, company=''):
     from backend.knowledge.stewardship import decorate
     return {'schema_version': data['schema_version'], 'edition': data['edition'], 'title': data['title'],
             'reviewed_at': data['reviewed_at'], 'revision': fingerprint, 'total': len(entries),
-            'scope': 'reviewed release news; source links and optional reviewed materials have explicit coverage; interpretation is FieldToFit editorial',
+            'scope': 'reviewed release news; source links and optional reviewed materials have explicit coverage; source_reading contains attributed excerpts and labelled translations; legacy interpretation is FieldToFit editorial',
             'company_topics': company_projection(entries), 'report_selection': report_selection, 'hot_card_selection': hot_card_selection, 'items': entries if _data is not None else decorate(entries), 'codex_progress': projection(entries, roundup_items=published),
             **({'resolved_from':requested_id,'canonical_id':id} if requested_id and requested_id!=id else {})}

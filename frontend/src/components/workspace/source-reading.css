@@ -1,0 +1,14 @@
+.source-reading {max-width: 78ch; margin: 2rem 0; overflow-wrap: anywhere;}
+.source-reading-block {padding: 1.5rem 0; border-top: 1px solid var(--border-color, #8885);}
+.source-reading blockquote {margin: .8rem 0; padding: .25rem 0 .25rem 1.1rem; border-left: 3px solid #719481; font-size: 1.08rem; line-height: 1.85; white-space: pre-wrap;}
+.source-reading .source-byline {font-weight: 600; margin-bottom: .4rem;}
+.source-reading .source-label, .source-reading .source-citation {font-size: .85rem; line-height: 1.7;}
+.source-citation {display: flex; flex-wrap: wrap; gap: .5rem 1.25rem;}
+.source-reading details {margin: .8rem 0;}
+.source-reading summary {cursor: pointer; width: fit-content;}
+.source-original-figure {margin: 1rem 0;}
+.source-original-figure img {display: block; max-width: 100%; height: auto; border-radius: 6px;}
+.source-original-figure figcaption {font-size: .9rem; line-height: 1.7;}
+.source-editor textarea {min-height: 6rem; width: 100%;}
+.source-editor label {display: grid; gap: .3rem; margin: .7rem 0;}
+@media(max-width: 480px) {.source-reading-block {padding: 1rem 0;} .source-reading blockquote {padding-left: .8rem; font-size: 1rem;}}
