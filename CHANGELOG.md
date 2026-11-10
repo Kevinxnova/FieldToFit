@@ -4,22 +4,38 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.1"></a>
+## v1.20.1 · 两家公司原文阅读内容发布 · 2026-11-10
+<!-- public-title:en: Original-source publications for both companies -->
+<!-- release-summary:zh:start -->
+- OpenAI与Anthropic的12条已批准修订采用具体官方标题、署名短摘录及明确标识的中文译文，当前正文移除额外解读。
+- BioBasicsBench与代理记忆报告保留官方原图链接；旧编号、事件日期、报告链接和历史修订保持。
+- 原文阅读功能已部署；内容按既有双语预览、复核、发布流程更新，未新增新闻或恢复历史专题日程。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Apply 12 approved OpenAI and Anthropic revisions with concrete announcement titles, attributed short excerpts and labelled Chinese translations, removing extra commentary from current bodies.
+- Retain official figure links for BioBasicsBench and agent memory, with stable IDs, event dates, report links and historical revisions.
+- Deploy source reading and update content through bilingual preview, review and publication, without adding news records or restarting historical-topic schedules.
+<!-- release-summary:en:end -->
+
+对应[REQ-26-7／8](FieldToFit-PM.md#req-26-7)。所有者明确授权更新部署；v1.20.0功能部署后，通过现有内容管理逐条发布既有12项具体修订，随后导出公开内容，独立交付提交按规则递增patch。完整生产备份与独立SQLite完整性检查通过；没有数据库迁移。实际检查见[原文阅读验收](docs/validation/2026-11-09-source-reading.md)。其余历史内容未自动迁移，未确认复用许可的原图保持链接方式。
+
 <a id="v1.20.0"></a>
 ## v1.20.0 · 原文摘录与原图阅读 · 2026-11-09
-<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-10 -->
 <!-- public-title:en: Original excerpts and figure reading -->
 <!-- release-summary:zh:start -->
 - 新增新闻与报告共用的原文阅读方式，署名摘录、中文译文和原图出处清晰区分；OpenAI与Anthropic采用相同规则。
 - 内容管理可编辑原文段落与原图、核对来源并预览中英文；正文或译文改动使旧审核失效。
-- 当前原文模式不再展示旧解读或重绘图，保留旧链接与历史修订；网页、HTML、API及MCP同源。本批仅本地开发验证，未部署或发布生产内容。
+- 当前原文模式不再展示旧解读或重绘图，保留旧链接与历史修订；网页、HTML、API及MCP同源。功能于11月10日部署；具体内容修订见v1.20.1。
 <!-- release-summary:zh:end -->
 <!-- release-summary:en:start -->
 - Add shared source reading for news and reports, distinguishing attributed excerpts, Chinese translations and original figure sources for both OpenAI and Anthropic.
 - Edit excerpts and figure references in content management, verify provenance and preview both languages; text or translation changes invalidate prior review.
-- Omit legacy commentary and redraws from current source-mode entries while retaining old links and revisions across web, HTML, API and MCP. Local development and verification only; no production deployment or content publication.
+- Omit legacy commentary and redraws from current source-mode entries while retaining old links and revisions across web, HTML, API and MCP. The feature was deployed on November 10; content revisions are recorded in v1.20.1.
 <!-- release-summary:en:end -->
 
-对应[REQ-26-7／8](FieldToFit-PM.md#req-26-7)，所有者已确认minor版本v1.20.0。可选source_reading字段共用既有新闻发布集合，无数据库迁移；未改动319条生产正文或98条归档。当前两家12条私密本地样例与官方快照准备完成；其余历史内容未批量迁移。原图复用未核实则链接来源，嵌入需原图资源登记及授权依据，不以重绘图代替。操作见[原文阅读指南](docs/guides/source-reading.md)，实际验收见[验收记录](docs/validation/2026-11-09-source-reading.md)。
+对应[REQ-26-7／8](FieldToFit-PM.md#req-26-7)，所有者已确认minor版本v1.20.0。可选source_reading字段共用既有新闻发布集合，无数据库迁移；11月9日本地交付未改动生产内容。11月10日功能获授权部署，12条具体修订随v1.20.1发布；其余历史内容未批量迁移。原图复用未核实则链接来源，嵌入需原图资源登记及授权依据，不以重绘图代替。操作见[原文阅读指南](docs/guides/source-reading.md)，实际验收见[验收记录](docs/validation/2026-11-09-source-reading.md)。
 
 <a id="v1.19.0"></a>
 ## v1.19.0 · OpenAI／Anthropic长期更新专题 · 2026-11-09

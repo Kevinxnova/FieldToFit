@@ -122,11 +122,12 @@ def test_original_asset_registration_and_license_binding(monkeypatch):
 
 def test_incomplete_source_draft_saves_without_publishing(client):
     migrate(client);d=call(client,'/content/news/D-321',method='get').json
+    published = client.get('/api/v1/platform/news?id=D-321').json
     d['draft']['source_reading']={'schema_version':SCHEMA,'blocks':[]}
     saved=call(client,'/content/news/D-321',{'draft_version':d['draft_version'],'draft':d['draft']},'patch')
     assert saved.status_code==200
     assert not call(client,'/content/news/D-321/preview').json['ready']
-    assert not client.get('/api/v1/platform/news?id=D-321').json['items'][0].get('source_reading')
+    assert client.get('/api/v1/platform/news?id=D-321').json == published
 
 
 def test_html_quote_is_escaped_not_executed(site):

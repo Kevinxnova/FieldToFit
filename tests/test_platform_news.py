@@ -19,7 +19,13 @@ def test_web_and_mcp_read_identical_news_with_deepseek(client):
         'params':{'name':'curated_news','arguments':{}}}).json['result']
     assert not rpc.get('isError') and rpc['structuredContent'] == body
     for item in body['items']:
-        assert item['interpretation'] and all(p['source_ids'] and p['locator'] for p in item['interpretation'])
+        if item.get('source_reading'):
+            assert item['interpretation'] == [] and item['note'] == ''
+            source_ids = {source['id'] for source in item['sources']}
+            assert all(block['source_id'] in source_ids and block['locator']
+                       for block in item['source_reading']['blocks'])
+        else:
+            assert item['interpretation'] and all(p['source_ids'] and p['locator'] for p in item['interpretation'])
         assert all(s['coverage'] == 'link_only' for s in item['sources'])
 
 

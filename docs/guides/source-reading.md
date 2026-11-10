@@ -1,6 +1,6 @@
 # 原文阅读与审核
 
-对应 [REQ-26-7／8](../../FieldToFit-PM.md#req-26-7)。v1.20.0 是本地交付，未部署；生产正文必须按具体提案批准后，沿用保存、双语预览、提交复核、明确发布流程。
+对应 [REQ-26-7／8](../../FieldToFit-PM.md#req-26-7)。v1.20.0原文阅读功能已于2026-11-10部署；生产正文必须按具体提案批准后，沿用保存、双语预览、提交复核、明确发布流程。
 
 ## 中文
 
@@ -20,4 +20,4 @@ Enable source reading on the existing news record. Each block records its source
 
 Use original-image links when reuse permission is unverified. Embedded PNGs must be registered in the existing report-figure manifest with `kind: original`, `original_url`, `source_urls`, `license` and `rights_url`, with the asset shipped under the existing public figure directory. Legacy redraws cannot pass as original figures. The editor does not fetch or upload images. Image failure retains the original link and caption.
 
-Current source-mode publications omit legacy editorial notes, cards, images and graph interpretations. Reports can retain only their stable slug and source/date records while sharing the news item's source-reading blocks. Historical revisions remain accessible. Web, HTML, API, MCP and handoff data use the same reviewed projection. IDs, event dates and links remain stable; existing records are not automatically migrated. This local delivery does not deploy or publish production content.
+Current source-mode publications omit legacy editorial notes, cards, images and graph interpretations. Reports can retain only their stable slug and source/date records while sharing the news item's source-reading blocks. Historical revisions remain accessible. Web, HTML, API, MCP and handoff data use the same reviewed projection. IDs, event dates and links remain stable; existing records are not automatically migrated. Source reading was deployed on 2026-11-10; each content revision still requires specific approval and the existing publication workflow.

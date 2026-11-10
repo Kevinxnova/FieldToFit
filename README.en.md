@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.20.0](CHANGELOG.md#v1.20.0)** · Release tag not yet published
+**Current source version: [v1.20.1](CHANGELOG.md#v1.20.1)** · [fieldtofit-v1.20.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.20.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add shared source reading for news and reports, distinguishing attributed excerpts, Chinese translations and original figure sources for both OpenAI and Anthropic.
-- Edit excerpts and figure references in content management, verify provenance and preview both languages; text or translation changes invalidate prior review.
-- Omit legacy commentary and redraws from current source-mode entries while retaining old links and revisions across web, HTML, API and MCP. Local development and verification only; no production deployment or content publication.
+- Apply 12 approved OpenAI and Anthropic revisions with concrete announcement titles, attributed short excerpts and labelled Chinese translations, removing extra commentary from current bodies.
+- Retain official figure links for BioBasicsBench and agent memory, with stable IDs, event dates, report links and historical revisions.
+- Deploy source reading and update content through bilingual preview, review and publication, without adding news records or restarting historical-topic schedules.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.20.0](CHANGELOG.md#v1.20.0)** · 尚未推送发布标签
+**当前源码版本：[v1.20.1](CHANGELOG.md#v1.20.1)** · [fieldtofit-v1.20.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.20.1)
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 新增新闻与报告共用的原文阅读方式，署名摘录、中文译文和原图出处清晰区分；OpenAI与Anthropic采用相同规则。
-- 内容管理可编辑原文段落与原图、核对来源并预览中英文；正文或译文改动使旧审核失效。
-- 当前原文模式不再展示旧解读或重绘图，保留旧链接与历史修订；网页、HTML、API及MCP同源。本批仅本地开发验证，未部署或发布生产内容。
+- OpenAI与Anthropic的12条已批准修订采用具体官方标题、署名短摘录及明确标识的中文译文，当前正文移除额外解读。
+- BioBasicsBench与代理记忆报告保留官方原图链接；旧编号、事件日期、报告链接和历史修订保持。
+- 原文阅读功能已部署；内容按既有双语预览、复核、发布流程更新，未新增新闻或恢复历史专题日程。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

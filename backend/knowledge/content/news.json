@@ -180,47 +180,14 @@
       "event_date": "2026-11-06",
       "highlight": true,
       "id": "D-324",
-      "interpretation": [
-        {
-          "locator": "Memory notes; Dreaming can correct memory; Dreaming can promote notes up the memory hierarchy",
-          "source_ids": [
-            "original"
-          ],
-          "text": "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。",
-          "title": "先分清记忆层级，再决定哪些内容应该自动进入下一次会话"
-        },
-        {
-          "locator": "Memory can be a prediction about what the future will need; Steering Claude to write memory",
-          "source_ids": [
-            "original"
-          ],
-          "text": "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。",
-          "title": "记忆收益取决于模型能否形成“猜测—验证—修正”的循环"
-        },
-        {
-          "locator": "Dreaming can build new memory representations; Figure10",
-          "source_ids": [
-            "original"
-          ],
-          "text": "更好的回答分数与每题token节省，是特定语料和预算下的结果。",
-          "title": "wiki与搜索可以互补，但必须把整理预算计入账本"
-        },
-        {
-          "locator": "Dreaming can correct memory; Dreaming can build new memory representations; Dreaming can focus memory on a specific goal; Thinking backward, looking forward",
-          "source_ids": [
-            "original"
-          ],
-          "text": "保留重要事实、避免互相覆盖，并让读者回到原文。",
-          "title": "可靠记忆需要保真、并发控制与纠错，而不是无限摘要"
-        }
-      ],
+      "interpretation": [],
       "name": "Claude agent memory research",
-      "note": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
+      "note": "",
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-09T03:13:25.209602+00:00",
         "report_selected_at": "2026-11-09T03:13:25.209602+00:00",
-        "updated_at": "2026-11-09T03:13:25.209602+00:00"
+        "updated_at": "2026-11-10T05:47:42.796888+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -231,6 +198,35 @@
         }
       ],
       "source_published_at": "2026-11-06",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Anthropic",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Figure 1",
+            "original_language": "en",
+            "quote": "Claude can use dreaming to organize memory.",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "original",
+            "translation_zh": "Claude 可以通过 dreaming 来组织记忆。"
+          },
+          {
+            "author": "Anthropic",
+            "checked_at": "2026-11-09",
+            "display": "link",
+            "id": "original-figure",
+            "kind": "figure",
+            "locator": "Figure 2",
+            "original_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/2ef2bf5c81ea6d578749782782eff10cf3136de4-3840x1754.png",
+            "quote": "Claude can write notes to memory.",
+            "source_id": "original",
+            "translation_zh": "Claude 可以将笔记写入记忆。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -240,365 +236,8 @@
         }
       ],
       "state": "published",
-      "summary": "有效记忆需要筛选、纠错、组织与按需检索；记住更多不等于更可靠，回答阶段的节省也不能替代完整维护成本。",
+      "summary": "Claude 可以通过 dreaming 来组织记忆。",
       "technical_map": {
-        "caution": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
-        "change_summary": "首次完整分析：四条结论与同号论述，三张本站重绘，保留任务分母、对照条件、整理预算与反例。",
-        "edges": [
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Memory can be a prediction about what the future will need; Steering Claude to write memory",
-                "source_id": "original"
-              }
-            ],
-            "from": "layers",
-            "label": "互补检查维度，不表示跨实验因果",
-            "relation": "parallel",
-            "to": "learning"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Dreaming can build new memory representations; Figure10",
-                "source_id": "original"
-              }
-            ],
-            "from": "layers",
-            "label": "互补检查维度，不表示跨实验因果",
-            "relation": "parallel",
-            "to": "retrieval"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Dreaming can correct memory; Dreaming can build new memory representations; Dreaming can focus memory on a specific goal; Thinking backward, looking forward",
-                "source_id": "original"
-              }
-            ],
-            "from": "layers",
-            "label": "互补检查维度，不表示跨实验因果",
-            "relation": "parallel",
-            "to": "reliability"
-          }
-        ],
-        "focus": "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？",
-        "nodes": [
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Memory notes; Dreaming can correct memory; Dreaming can promote notes up the memory hierarchy",
-                "source_id": "original"
-              }
-            ],
-            "id": "layers",
-            "kind": "method",
-            "label": "先分清记忆层级，再决定哪些内容应该自动进入下一次会话",
-            "limitation": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
-            "mechanism": "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。",
-            "metrics": [],
-            "result": "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。",
-            "setting": "Anthropic原始HTML研究；2026-11-06",
-            "stage": 0
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Memory can be a prediction about what the future will need; Steering Claude to write memory",
-                "source_id": "original"
-              }
-            ],
-            "id": "learning",
-            "kind": "method",
-            "label": "记忆收益取决于模型能否形成“猜测—验证—修正”的循环",
-            "limitation": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
-            "mechanism": "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。",
-            "metrics": [
-              {
-                "baseline": "Opus 5.5 / stateless 0.655",
-                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
-                "label": "Opus 5.5 / memory",
-                "unit": "mean reward",
-                "value": 0.838
-              },
-              {
-                "baseline": "Sonnet 5.5 / stateless 0.644",
-                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
-                "label": "Sonnet 5.5 / memory",
-                "unit": "mean reward",
-                "value": 0.833
-              },
-              {
-                "baseline": "Opus 5 / stateless 0.564",
-                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
-                "label": "Opus 5 / memory",
-                "unit": "mean reward",
-                "value": 0.828
-              },
-              {
-                "baseline": "Opus 4.7 / stateless 0.383",
-                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
-                "label": "Opus 4.7 / memory",
-                "unit": "mean reward",
-                "value": 0.7
-              },
-              {
-                "baseline": "Sonnet 5 / stateless 0.306",
-                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
-                "label": "Sonnet 5 / memory",
-                "unit": "mean reward",
-                "value": 0.61
-              },
-              {
-                "baseline": "Sonnet 4.6 / stateless 0.330",
-                "conditions": "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。",
-                "label": "Sonnet 4.6 / memory",
-                "unit": "mean reward",
-                "value": 0.364
-              }
-            ],
-            "result": "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。",
-            "setting": "Anthropic原始HTML研究；2026-11-06",
-            "stage": 1
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Dreaming can build new memory representations; Figure10",
-                "source_id": "original"
-              }
-            ],
-            "id": "retrieval",
-            "kind": "method",
-            "label": "wiki与搜索可以互补，但必须把整理预算计入账本",
-            "limitation": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
-            "mechanism": "更好的回答分数与每题token节省，是特定语料和预算下的结果。",
-            "metrics": [
-              {
-                "baseline": "相同内部语料与 25题；wiki条件需要前置整理",
-                "conditions": "约 350000文件、420M tokens；最多 128次整理会话；不代表完整任务成功率。",
-                "label": "Search only",
-                "unit": "% grading criteria",
-                "value": 53
-              },
-              {
-                "baseline": "相同内部语料与 25题；wiki条件需要前置整理",
-                "conditions": "约 350000文件、420M tokens；最多 128次整理会话；不代表完整任务成功率。",
-                "label": "Wiki only",
-                "unit": "% grading criteria",
-                "value": 48
-              },
-              {
-                "baseline": "相同内部语料与 25题；wiki条件需要前置整理",
-                "conditions": "约 350000文件、420M tokens；最多 128次整理会话；不代表完整任务成功率。",
-                "label": "Wiki + search",
-                "unit": "% grading criteria",
-                "value": 61
-              }
-            ],
-            "result": "更好的回答分数与每题token节省，是特定语料和预算下的结果。",
-            "setting": "Anthropic原始HTML研究；2026-11-06",
-            "stage": 2
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Dreaming can correct memory; Dreaming can build new memory representations; Dreaming can focus memory on a specific goal; Thinking backward, looking forward",
-                "source_id": "original"
-              }
-            ],
-            "id": "reliability",
-            "kind": "method",
-            "label": "可靠记忆需要保真、并发控制与纠错，而不是无限摘要",
-            "limitation": "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。",
-            "mechanism": "保留重要事实、避免互相覆盖，并让读者回到原文。",
-            "metrics": [],
-            "result": "保留重要事实、避免互相覆盖，并让读者回到原文。",
-            "setting": "Anthropic原始HTML研究；2026-11-06",
-            "stage": 3
-          }
-        ],
-        "question": "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？",
-        "reading": {
-          "editorial": [
-            "FieldToFit分析：把记忆验收分成信息是否值得存、能否追溯与纠错、是否更容易取用、总体成本是否合算四个问题。先建立可重放的原始记录，再比较无记忆、默认记忆与整理记忆；记录失败案例，而不是只看最佳平均分。",
-            "本站建议：为笔记保留来源链接、验证状态和替代历史；对可能快速变化的事实设置复查节奏；多人或多Agent写入时明确单写入者或冲突处理。上述为工程判断，不是原文已经测得的通用收益，也不直接授权自动处理个人资料。",
-            "来源与修订：Lance Martin／Anthropic，《The components of agent memory》，2026-11-06原始HTML，无编号版本；本站 2026-11-09深读并整理。三图为本站依据公开事实重绘或示意，非原图复用；未审计内部原始语料、运行外链基准或独立复现实验。本站首次上站与首页精选日期由实际发布回执记录。"
-          ],
-          "findings": [
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "文章把Agent记忆定义为跨会话保存、之后可读取的经验，排除模型权重学习、单会话内学习和上下文压缩本身。它区分原始transcript、记忆笔记、wiki等表示，以及每次会话预先注入的内容。前者保留事件；后几层是模型对未来需要什么的判断，可能遗漏、过期或出错。"
-                },
-                {
-                  "alt": "跨会话记忆的四层与离线整理作用",
-                  "attribution": "FieldToFit · Anthropic / Lance Martin",
-                  "caption": "本站示意，依据原文图 1／13；箭头表示信息整理或读取关系，不代表自动更新权重、固定产品架构或已验证因果。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Memory notes; Dreaming can promote notes up the memory hierarchy",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov09-memory-layers.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "Dreaming可以在会话之间对照原始记录纠错、合并笔记或构造链接。但错误笔记若被提升到常驻上下文，也会反复污染后续会话。原文以Claude Code的MEMORY.md索引为例，描述只加载前 200行或 25 KB；这是该产品所述行为，不是所有Agent的统一记忆上限。"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "离线整理输出也必须有出处和失效机制。Dreaming需要计算；模型有机会重新检查记录，不等于每次都能纠正真实世界中的错误。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Memory notes; Dreaming can correct memory; Dreaming can promote notes up the memory hierarchy",
-                  "source_id": "original"
-                }
-              ],
-              "id": "layers",
-              "node_ids": [
-                "layers"
-              ],
-              "summary": "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。",
-              "title": "先分清记忆层级，再决定哪些内容应该自动进入下一次会话"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "CL-Bench 1.0数据库任务要求模型连续回答问题；每题开始于新会话，只有记忆目录跨会话保留，回答后得到正确解以帮助后续问题。原文图中的 30题运行均值及平均reward属于这个任务，不是整个CL-Bench的综合分，也不是生产数据库查询的成功率。"
-                },
-                {
-                  "alt": "六模型在数据库任务中有无记忆的平均reward",
-                  "attribution": "FieldToFit · Anthropic / Lance Martin",
-                  "caption": "本站重绘原文图 3：纵轴 0–1，六组为各自无状态／记忆目录对照；原文未给本图统计区间，本图不新增误差条或全任务成功率。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Memory can be a prediction about what the future will need; Figure3",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov09-memory-rewards.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "图中Opus 5.5从 0.655到 0.838，Sonnet 5.5从 0.644到 0.833，Opus 5从 0.564到 0.828；Sonnet 4.6仅从 0.330到 0.364。作者观察到较强模型记录已验证规则，而较旧模型容易保留未测试猜测。给Sonnet 4.6增加读取笔记和检验理论的指令，另一次设置达到 0.641；提示条件与模型版本必须一起保留。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "“只记录失败”的额外规则还会削弱部分模型的记忆收益。因此不能从单条最佳提示推导通用规则；应在目标任务上比较无记忆、默认记忆和引导记忆，并检查保存的规则是否有验证依据。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Memory can be a prediction about what the future will need; Steering Claude to write memory",
-                  "source_id": "original"
-                }
-              ],
-              "id": "learning",
-              "node_ids": [
-                "learning"
-              ],
-              "summary": "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。",
-              "title": "记忆收益取决于模型能否形成“猜测—验证—修正”的循环"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "Stainless内部资料实验约含 350000文件、420M tokens，评测 25道问题。Opus 5代理最多用 128次会话构建和修订wiki，共享日志协调。仅wiki评分随整理从 13%升到 48%；wiki与搜索结合从 54%到 61%，仅搜索为 53%。这些是满足评分条件的比例，不是答对问题数或完整任务成功率。"
-                },
-                {
-                  "alt": "资料检索实验的三种读取条件与整理预算",
-                  "attribution": "FieldToFit · Anthropic / Lance Martin",
-                  "caption": "本站重绘原文图 10的最终报告值：仅搜索 53%、仅wiki 48%、wiki加搜索 61%。语料和 25题相同，但wiki需要事先整理；128次会话对应最多 128M dreaming tokens预算，每次 1M；这是预算，不是实测消耗。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Dreaming can build new memory representations; Figure10",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov09-memory-retrieval.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original redraw or explanatory diagram of cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "原文称wiki结合搜索每题还能节省约 20000 tokens，但这不包含把资料整理成wiki的完整前置投入。原图横轴从 2M到 128M dreaming tokens，表示每次会话 1M的预算，而非实测消耗；不能仅用回答阶段节省宣布总体降本；需要按实际查询复用次数、更新频率、模型单价和纠错开销核算。"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "内部资料未完整公开，本研究不提供独立复算或面向任意企业语料的收益保证；本文也不据此推算未经验证的回本查询次数。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Dreaming can build new memory representations; Figure10",
-                  "source_id": "original"
-                }
-              ],
-              "id": "retrieval",
-              "node_ids": [
-                "retrieval"
-              ],
-              "summary": "更好的回答分数与每题token节省，是特定语料和预算下的结果。",
-              "title": "wiki与搜索可以互补，但必须把整理预算计入账本"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "法律任务展示了wiki的边界：对 24个并购问题中的跨文档、判断或算术项目，wiki条件报告 87%，搜索条件 73%；但另一LAB任务的要求大多可从单份文件直接搜索，wiki没有清楚收益。还有一个wiki大于原文件的案例，说明压缩与抽象并非自动发生。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "另一个合同任务中，多Agent同时改共享表，生成材料只保留 57个被评分事实中的 41个。经过反思及重写构建指令，改为每合同单页、单写入者并逐字保留条款后，57个事实均可覆盖。这里同时改变了任务组织、写入方式与保真要求，不是孤立证明某个单一变量造成全部提升，更不是法律意见可靠性认证。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "游戏中的位置笔记也会写错；一次离线对照transcript的纠错改变了后续路线。但个别游戏轨迹不能估计普遍成功率。部署时更应记录来源、验证状态、最后复核和替代版本，并检查缺失页面及过期事实，控制自动注入层的大小。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Dreaming can correct memory; Dreaming can build new memory representations; Dreaming can focus memory on a specific goal; Thinking backward, looking forward",
-                  "source_id": "original"
-                }
-              ],
-              "id": "reliability",
-              "node_ids": [
-                "reliability"
-              ],
-              "summary": "保留重要事实、避免互相覆盖，并让读者回到原文。",
-              "title": "可靠记忆需要保真、并发控制与纠错，而不是无限摘要"
-            }
-          ],
-          "title": "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？"
-        },
         "reports": [
           {
             "first_published_at": "2026-11-06",
@@ -609,54 +248,17 @@
             "version": "Unnumbered original HTML article dated2026-11-06"
           }
         ],
-        "slug": "claude-agent-memory-evidence-and-maintenance",
-        "takeaway": "有效记忆需要筛选、纠错、组织与按需检索；记住更多不等于更可靠，回答阶段的节省也不能替代完整维护成本。"
+        "slug": "claude-agent-memory-evidence-and-maintenance"
       },
-      "title": "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？",
+      "title": "Anthropic：代理记忆的组成部分",
       "translations": {
         "en": {
           "fields": {
-            "Anthropic原始HTML研究；2026-11-06": "Anthropic original HTML research;2026-11-06",
-            "CL-Bench 1.0数据库任务要求模型连续回答问题；每题开始于新会话，只有记忆目录跨会话保留，回答后得到正确解以帮助后续问题。原文图中的 30题运行均值及平均reward属于这个任务，不是整个CL-Bench的综合分，也不是生产数据库查询的成功率。": "In the CL-Bench 1.0 database task, models answer sequential questions in fresh sessions while a memory directory persists; correct answers are then supplied to help later questions. The running means across 30 questions and mean rewards concern this task, not an aggregate CL-Bench score or production database-query success rate.",
-            "CL-Bench 1.0数据库任务；每题新会话，记忆目录跨会话；非整个基准总分。": "CL-Bench 1.0 database task: fresh sessions with a persistent memory directory; not the full benchmark aggregate.",
-            "Claude的Agent记忆：怎样把过去的记录，变成值得再次使用的经验？": "Claude agent memory: how can past records become experience worth reusing?",
-            "Dreaming可以在会话之间对照原始记录纠错、合并笔记或构造链接。但错误笔记若被提升到常驻上下文，也会反复污染后续会话。原文以Claude Code的MEMORY.md索引为例，描述只加载前 200行或 25 KB；这是该产品所述行为，不是所有Agent的统一记忆上限。": "Dreaming can compare notes with transcripts, correct them, merge entries or build links between sessions. A wrong note promoted into always-loaded context can repeatedly contaminate later sessions. The article uses Claude Code’s MEMORY.md index as an example, describing the first 200 lines or 25 KB being loaded; that is the stated product behavior, not a universal memory limit for agents.",
-            "FieldToFit分析：把记忆验收分成信息是否值得存、能否追溯与纠错、是否更容易取用、总体成本是否合算四个问题。先建立可重放的原始记录，再比较无记忆、默认记忆与整理记忆；记录失败案例，而不是只看最佳平均分。": "FieldToFit analysis: assess what is worth storing, traceability and correction, retrieval usefulness and total cost separately. Keep replayable original records, compare stateless, default-memory and organized-memory conditions, and retain failures instead of only the best averages.",
-            "Stainless内部资料实验约含 350000文件、420M tokens，评测 25道问题。Opus 5代理最多用 128次会话构建和修订wiki，共享日志协调。仅wiki评分随整理从 13%升到 48%；wiki与搜索结合从 54%到 61%，仅搜索为 53%。这些是满足评分条件的比例，不是答对问题数或完整任务成功率。": "The Stainless internal-document experiment covers about 350000 files and 420M tokens, with 25 evaluation questions. Opus 5 agents build and revise a wiki over up to 128 sessions coordinated by a shared log. Wiki-only grading rises from 13% to 48%; wiki plus search rises from 54% to 61%, compared with 53% for search alone. These are fractions of grading criteria met, not counts of correct questions or complete-task success rates.",
-            "wiki与搜索可以互补，但必须把整理预算计入账本": "Wikis can complement search when the construction budget is counted",
-            "“只记录失败”的额外规则还会削弱部分模型的记忆收益。因此不能从单条最佳提示推导通用规则；应在目标任务上比较无记忆、默认记忆和引导记忆，并检查保存的规则是否有验证依据。": "An additional rule to record only failures weakens some models’ memory gains. One best prompt does not establish a universal rule. Compare stateless, default-memory and guided-memory settings on the target task, and inspect whether stored rules have supporting tests.",
-            "互补检查维度，不表示跨实验因果": "Complementary checks, not cross-experiment causation",
-            "依据Lance Martin／Anthropic于 2026-11-06发表的原始文章，本站 2026-11-09核对。实验包括不同模型、单次游戏轨迹及内部公司资料；没有统一任务分母，部分数据不公开。未独立运行模型、审计内部语料或复现基准；Dreaming不是在本日首次发布，也不等于训练模型权重。": "Based on the original article by Lance Martin / Anthropic dated 2026-11-06, checked 2026-11-09. Experiments span different models, individual game trajectories and internal company documents without one common task denominator; some data is private. No independent model runs, internal-data audit or benchmark replication. Dreaming is not newly launched today and does not mean training model weights.",
-            "保留重要事实、避免互相覆盖，并让读者回到原文。": "Preserve important facts, prevent overwrites and keep a path back to original evidence.",
-            "先分清记忆层级，再决定哪些内容应该自动进入下一次会话": "Separate memory layers before deciding what enters every future session",
-            "六模型在数据库任务中有无记忆的平均reward": "Mean reward with and without memory for six models on the database task",
-            "内部资料未完整公开，本研究不提供独立复算或面向任意企业语料的收益保证；本文也不据此推算未经验证的回本查询次数。": "Internal materials are not fully public. This does not provide independent recalculation or a guaranteed benefit for arbitrary enterprise corpora; no unsupported break-even query count is inferred here.",
-            "原始记录提供可追溯依据，笔记和wiki提供组织，常驻上下文只保留有限索引。": "Raw records provide traceable evidence, notes and wikis organize it, and always-loaded context should remain a small index.",
-            "原文称wiki结合搜索每题还能节省约 20000 tokens，但这不包含把资料整理成wiki的完整前置投入。原图横轴从 2M到 128M dreaming tokens，表示每次会话 1M的预算，而非实测消耗；不能仅用回答阶段节省宣布总体降本；需要按实际查询复用次数、更新频率、模型单价和纠错开销核算。": "The article reports about 20000 tokens saved per question when combining wiki and search, but that does not account for the complete upfront construction cost. The original construction axis spans 2M to 128M dreaming tokens as a budget of 1M per session, not measured spend. Answer-stage savings alone do not establish net cost reduction; account for reuse frequency, updates, model prices and correction work.",
-            "另一个合同任务中，多Agent同时改共享表，生成材料只保留 57个被评分事实中的 41个。经过反思及重写构建指令，改为每合同单页、单写入者并逐字保留条款后，57个事实均可覆盖。这里同时改变了任务组织、写入方式与保真要求，不是孤立证明某个单一变量造成全部提升，更不是法律意见可靠性认证。": "In another contract task, agents concurrently writing a shared table retain 41 of 57 graded facts. After reflection and revised construction instructions, one page and one writer per contract, with verbatim terms, can cover all 57 facts. Task organization, write coordination and fidelity requirements change together. This does not isolate one causal variable or certify reliable legal advice.",
-            "可靠记忆需要保真、并发控制与纠错，而不是无限摘要": "Reliable memory requires fidelity, write coordination and correction, not unlimited summarization",
-            "同一个外部文件夹，对不同模型和提示方式的帮助差异很大。": "The same external directory helps different models and prompting strategies very differently.",
-            "图中Opus 5.5从 0.655到 0.838，Sonnet 5.5从 0.644到 0.833，Opus 5从 0.564到 0.828；Sonnet 4.6仅从 0.330到 0.364。作者观察到较强模型记录已验证规则，而较旧模型容易保留未测试猜测。给Sonnet 4.6增加读取笔记和检验理论的指令，另一次设置达到 0.641；提示条件与模型版本必须一起保留。": "Opus 5.5 rises from 0.655 to 0.838, Sonnet 5.5 from 0.644 to 0.833 and Opus 5 from 0.564 to 0.828, while Sonnet 4.6 moves only from 0.330 to 0.364. The authors observe stronger models recording validated rules while an older model retains untested hypotheses. In a separate prompted setting, instructions to read notes and test theories bring Sonnet 4.6 to 0.641; prompting conditions and model identities must be retained.",
-            "文章把Agent记忆定义为跨会话保存、之后可读取的经验，排除模型权重学习、单会话内学习和上下文压缩本身。它区分原始transcript、记忆笔记、wiki等表示，以及每次会话预先注入的内容。前者保留事件；后几层是模型对未来需要什么的判断，可能遗漏、过期或出错。": "The article defines agent memory as experience retained across sessions and read later, excluding weight learning, within-session learning and compaction itself. It separates transcripts, memory notes, representations such as wikis and material preloaded into each session. Transcripts retain events; higher layers embody predictions of future usefulness that may omit facts, become stale or be wrong.",
-            "更好的回答分数与每题token节省，是特定语料和预算下的结果。": "Better answer scores and per-question token savings are conditional on a particular corpus and budget.",
-            "有效记忆需要筛选、纠错、组织与按需检索；记住更多不等于更可靠，回答阶段的节省也不能替代完整维护成本。": "Useful memory requires selection, correction, organization and retrieval on demand. More stored material is not automatically more reliable, and savings at answer time do not replace a complete maintenance-cost account.",
-            "本站建议：为笔记保留来源链接、验证状态和替代历史；对可能快速变化的事实设置复查节奏；多人或多Agent写入时明确单写入者或冲突处理。上述为工程判断，不是原文已经测得的通用收益，也不直接授权自动处理个人资料。": "FieldToFit suggestion: retain source links, verification status and supersession history, review fast-changing facts, and define a single writer or conflict handling for shared memory. These are engineering judgments, not universally measured gains or authorization to process personal data automatically.",
-            "本站示意，依据原文图 1／13；箭头表示信息整理或读取关系，不代表自动更新权重、固定产品架构或已验证因果。": "FieldToFit explanatory diagram based on original figures 1/13. Arrows indicate organization or access, not weight updates, a fixed product architecture or established causation.",
-            "本站重绘原文图 10的最终报告值：仅搜索 53%、仅wiki 48%、wiki加搜索 61%。语料和 25题相同，但wiki需要事先整理；128次会话对应最多 128M dreaming tokens预算，每次 1M；这是预算，不是实测消耗。": "FieldToFit redraw of final reported values in original figure 10: search only 53%, wiki only 48%, wiki plus search 61%. The corpus and 25 questions are shared, but the wiki requires prior construction;128 sessions have a dreaming-token budget of up to 128M,1M per session; this is a budget, not measured spend.",
-            "本站重绘原文图 3：纵轴 0–1，六组为各自无状态／记忆目录对照；原文未给本图统计区间，本图不新增误差条或全任务成功率。": "FieldToFit redraw of original figure 3 on a 0–1 scale. Each pair compares a stateless baseline with a memory directory. No uncertainty intervals were given for this chart; none are invented, and this is not full-task success rate.",
-            "来源与修订：Lance Martin／Anthropic，《The components of agent memory》，2026-11-06原始HTML，无编号版本；本站 2026-11-09深读并整理。三图为本站依据公开事实重绘或示意，非原图复用；未审计内部原始语料、运行外链基准或独立复现实验。本站首次上站与首页精选日期由实际发布回执记录。": "Sources and revisions: Lance Martin / Anthropic, The components of agent memory, original unnumbered HTML dated 2026-11-06, read and analyzed 2026-11-09. Three figures are original FieldToFit redraws or diagrams of public facts, not copied original figures. No internal-data audit, execution of linked benchmarks or independent replication. Actual publication receipts determine site first-publication and homepage-selection dates.",
-            "法律任务展示了wiki的边界：对 24个并购问题中的跨文档、判断或算术项目，wiki条件报告 87%，搜索条件 73%；但另一LAB任务的要求大多可从单份文件直接搜索，wiki没有清楚收益。还有一个wiki大于原文件的案例，说明压缩与抽象并非自动发生。": "Legal tasks illustrate limits. For cross-document, judgment or arithmetic items among 24 merger questions, the wiki condition reports 87% versus 73% with search. Another LAB task mostly requires direct retrieval from one document and shows no clear wiki gain. A further wiki exceeds the original documents in size, showing that compression and abstraction are not automatic.",
-            "游戏中的位置笔记也会写错；一次离线对照transcript的纠错改变了后续路线。但个别游戏轨迹不能估计普遍成功率。部署时更应记录来源、验证状态、最后复核和替代版本，并检查缺失页面及过期事实，控制自动注入层的大小。": "A location note in a game can also be wrong; one offline comparison with the transcript changes the later route. Individual game trajectories do not estimate general success rates. Deployment should track sources, verification status, last review and superseded versions, check missing pages and stale facts, and control the size of the always-loaded layer.",
-            "相同内部语料与 25题；wiki条件需要前置整理": "Same internal corpus and 25 questions; wiki conditions require prior construction",
-            "离线整理输出也必须有出处和失效机制。Dreaming需要计算；模型有机会重新检查记录，不等于每次都能纠正真实世界中的错误。": "Offline outputs still need provenance and invalidation rules. Dreaming consumes compute; an opportunity to recheck records does not guarantee correction of real-world errors.",
-            "约 350000文件、420M tokens；最多 128次整理会话；不代表完整任务成功率。": "About 350000 files and 420M tokens; up to 128 construction sessions; not complete-task success rate.",
-            "记忆收益取决于模型能否形成“猜测—验证—修正”的循环": "Memory helps when the model closes a hypothesis, test and correction loop",
-            "资料检索实验的三种读取条件与整理预算": "Three document-access conditions and the construction budget",
-            "跨会话记忆的四层与离线整理作用": "Four cross-session memory layers and offline organization",
-            "首次完整分析：四条结论与同号论述，三张本站重绘，保留任务分母、对照条件、整理预算与反例。": "First complete analysis: four findings with matching arguments and three original redraws, retaining task denominators, comparison conditions, construction budgets and counterexamples."
+            "Anthropic：代理记忆的组成部分": "Anthropic: The components of agent memory",
+            "Claude 可以通过 dreaming 来组织记忆。": "Claude can use dreaming to organize memory."
           },
-          "reviewed_at": "2026-11-09T03:13:02.644169+00:00",
-          "source_hash": "7d2d42a06b6f3b04228fd355d2916a122f19489f722994f2ff35e107afa7e507",
+          "reviewed_at": "2026-11-10T05:39:26.379641+00:00",
+          "source_hash": "038f2777a640fcb4ab38e4256833ad186f31d568b51d97dacbc6861ef09d01c5",
           "state": "reviewed"
         }
       }
@@ -668,47 +270,14 @@
       "event_date": "2026-11-06",
       "highlight": false,
       "id": "D-321",
-      "interpretation": [
-        {
-          "locator": "Inside BioBasicsBench; What the agent is given",
-          "source_ids": [
-            "original"
-          ],
-          "text": "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。",
-          "title": "先保留实验原貌，再谈模型能否可靠分析"
-        },
-        {
-          "locator": "Results; Performance at xhigh reasoning effort",
-          "source_ids": [
-            "original"
-          ],
-          "text": "要同时读评分、任务分母、重复尝试和不确定性。",
-          "title": "平均获分提高，不代表同等比例任务完全成功"
-        },
-        {
-          "locator": "Recognizing what the data can and cannot show; Better multimodal handling; Keeping experimental context in mind",
-          "source_ids": [
-            "original"
-          ],
-          "text": "分清影像信号、实验对照与采集方式，再作解释。",
-          "title": "识别细节的价值，在于改变证据判断"
-        },
-        {
-          "locator": "Where models still fall short; Building toward reliable lab assistance",
-          "source_ids": [
-            "original"
-          ],
-          "text": "对照解释、证据选择和计数仍可能失败。",
-          "title": "能看到矛盾，不等于最终结论会保留矛盾"
-        }
-      ],
+      "interpretation": [],
       "name": "BioBasicsBench",
-      "note": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
+      "note": "",
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-11-08T02:40:21.959667+00:00",
         "report_selected_at": "2026-11-08T02:40:21.959667+00:00",
-        "updated_at": "2026-11-08T02:40:21.959667+00:00"
+        "updated_at": "2026-11-10T05:47:15.139032+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -719,6 +288,35 @@
         }
       ],
       "source_published_at": "2026-11-06",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "OpenAI",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Introduction",
+            "original_language": "en",
+            "quote": "Introducing BioBasicsBench, a benchmark measuring how well AI agents interpret raw experimental data across 100 routine wet-lab tasks.",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "original",
+            "translation_zh": "隆重推出 BioBasicsBench，这是一个基准测试，用于衡量 AI 代理在 100 项常规湿实验室任务中对原始实验数据的解读能力。"
+          },
+          {
+            "author": "OpenAI",
+            "checked_at": "2026-11-09",
+            "display": "link",
+            "id": "original-figure",
+            "kind": "figure",
+            "locator": "Better multimodal handling / Original photograph",
+            "original_url": "https://cdn.openai.com/mdx-assets/16da4f0a-d37c-4056-a78c-4e1db6f08a14/plate-and-rim-mark.9c6764fa.png?w=3840&q=90&fm=webp",
+            "quote": "Original photograph",
+            "source_id": "original",
+            "translation_zh": "原始照片"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -728,317 +326,8 @@
         }
       ],
       "state": "published",
-      "summary": "日常实验分析需要同时读懂数据、检查对照并约束结论；总分提升不能代替对具体错误的验证。",
+      "summary": "隆重推出 BioBasicsBench，这是一个基准测试，用于衡量 AI 代理在 100 项常规湿实验室任务中对原始实验数据的解读能力。",
       "technical_map": {
-        "caution": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
-        "change_summary": "首次完整分析：四条核心结论、同号论述与两张本站重绘，保留原文方法、口径和局限。",
-        "edges": [
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Results; Performance at xhigh reasoning effort",
-                "source_id": "original"
-              }
-            ],
-            "from": "tasks",
-            "label": "互补证据与独立验收维度",
-            "relation": "parallel",
-            "to": "scores"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Recognizing what the data can and cannot show; Better multimodal handling; Keeping experimental context in mind",
-                "source_id": "original"
-              }
-            ],
-            "from": "tasks",
-            "label": "互补证据与独立验收维度",
-            "relation": "parallel",
-            "to": "evidence"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Where models still fall short; Building toward reliable lab assistance",
-                "source_id": "original"
-              }
-            ],
-            "from": "tasks",
-            "label": "互补证据与独立验收维度",
-            "relation": "parallel",
-            "to": "failures"
-          }
-        ],
-        "focus": "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？",
-        "nodes": [
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Inside BioBasicsBench; What the agent is given",
-                "source_id": "original"
-              }
-            ],
-            "id": "tasks",
-            "kind": "method",
-            "label": "先保留实验原貌，再谈模型能否可靠分析",
-            "limitation": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
-            "mechanism": "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。",
-            "metrics": [],
-            "result": "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。",
-            "setting": "OpenAI original research; 2026-11-06",
-            "stage": 0
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Results; Performance at xhigh reasoning effort",
-                "source_id": "original"
-              }
-            ],
-            "id": "scores",
-            "kind": "method",
-            "label": "平均获分提高，不代表同等比例任务完全成功",
-            "limitation": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
-            "mechanism": "要同时读评分、任务分母、重复尝试和不确定性。",
-            "metrics": [
-              {
-                "baseline": "共同xhigh设置，非等成本比较",
-                "conditions": "100任务，每项五次；95%整任务bootstrap区间 60.3–73.1%，不是实验成功率。",
-                "label": "GPT-6 Astra平均获分",
-                "unit": "%",
-                "value": 66.7
-              },
-              {
-                "baseline": "共同xhigh设置，非等成本比较",
-                "conditions": "100任务，每项五次；95%整任务bootstrap区间 55.6–68.4%，不是实验成功率。",
-                "label": "GPT-6.1 Sol平均获分",
-                "unit": "%",
-                "value": 62.0
-              },
-              {
-                "baseline": "共同xhigh设置，非等成本比较",
-                "conditions": "100任务，每项五次；95%整任务bootstrap区间 37.6–50.0%，不是实验成功率。",
-                "label": "GPT-5.6 Sol平均获分",
-                "unit": "%",
-                "value": 43.8
-              },
-              {
-                "baseline": "共同xhigh设置，非等成本比较",
-                "conditions": "100任务，每项五次；95%整任务bootstrap区间 32.3–44.5%，不是实验成功率。",
-                "label": "GPT-6 Luna平均获分",
-                "unit": "%",
-                "value": 38.3
-              },
-              {
-                "baseline": "共同xhigh设置，非等成本比较",
-                "conditions": "100任务，每项五次；95%整任务bootstrap区间 29.7–41.0%，不是实验成功率。",
-                "label": "GPT-5.5平均获分",
-                "unit": "%",
-                "value": 35.4
-              },
-              {
-                "baseline": "共同xhigh设置，非等成本比较",
-                "conditions": "100任务，每项五次；95%整任务bootstrap区间 28.3–38.4%，不是实验成功率。",
-                "label": "GPT-5.4平均获分",
-                "unit": "%",
-                "value": 33.2
-              },
-              {
-                "baseline": "共同xhigh设置，非等成本比较",
-                "conditions": "100任务，每项五次；95%整任务bootstrap区间 26.2–36.3%，不是实验成功率。",
-                "label": "GPT-5.2平均获分",
-                "unit": "%",
-                "value": 31.2
-              }
-            ],
-            "result": "要同时读评分、任务分母、重复尝试和不确定性。",
-            "setting": "OpenAI original research; 2026-11-06",
-            "stage": 1
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Recognizing what the data can and cannot show; Better multimodal handling; Keeping experimental context in mind",
-                "source_id": "original"
-              }
-            ],
-            "id": "evidence",
-            "kind": "method",
-            "label": "识别细节的价值，在于改变证据判断",
-            "limitation": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
-            "mechanism": "分清影像信号、实验对照与采集方式，再作解释。",
-            "metrics": [],
-            "result": "分清影像信号、实验对照与采集方式，再作解释。",
-            "setting": "OpenAI original research; 2026-11-06",
-            "stage": 2
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Where models still fall short; Building toward reliable lab assistance",
-                "source_id": "original"
-              }
-            ],
-            "id": "failures",
-            "kind": "method",
-            "label": "能看到矛盾，不等于最终结论会保留矛盾",
-            "limitation": "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。",
-            "mechanism": "对照解释、证据选择和计数仍可能失败。",
-            "metrics": [],
-            "result": "对照解释、证据选择和计数仍可能失败。",
-            "setting": "OpenAI original research; 2026-11-06",
-            "stage": 3
-          }
-        ],
-        "question": "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？",
-        "reading": {
-          "editorial": [
-            "FieldToFit分析：验收科学助手时，把原始数据可读性、对照有效性、推理约束和最终交付分成独立检查。总分用于定位改进方向；关键决策仍需能追溯到观测、对照和不确定性，不能只看模型回答是否流畅。",
-            "来源与修订：OpenAI，原始HTML研究，首发 2026-11-06，未标独立版本号；本站 2026-11-08读取全文。配图为依据公开事实制作的本站重绘或示意，分别标明尺度、统计单位与限制。未独立复现、审核全部原始数据或确认所有补丁／结论。本站首发与首页精选时间以真实发布回执为准。"
-          ],
-          "findings": [
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "BioBasicsBench覆盖蛋白方法、成像与细胞术、定量分析、核酸方法和分子克隆五类日常工作。输入包括凝胶、培养皿、显微图像、仪器导出、测序文件和操作视频，同一任务可以同时使用多种资料。它针对的是解释证据与提出分析，不是让模型实际操作整个实验室。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "科学家用自己的实验数据编写问题与评分细则，再经过未参与出题的Ligo科学家、外部博士级实验科学家以及最终内部审核。评分可以分别给结论、数值、理由和承认证据不足计分。技能标签和输入类型重叠，不能相加当任务总数；参考资料也不能冒充独立实验。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Inside BioBasicsBench; What the agent is given",
-                  "source_id": "original"
-                }
-              ],
-              "id": "tasks",
-              "node_ids": [
-                "tasks"
-              ],
-              "summary": "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。",
-              "title": "先保留实验原貌，再谈模型能否可靠分析"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "研究评估七个模型和 37种模型／推理设置，每种设置对 100项任务各尝试五次，共 18500个结果。mean reward是可获分数中实际获得的比例，再对任务求平均。95%置信区间通过整项任务重采样获得，保留同一任务五次尝试之间的关联；不能把所有尝试当完全独立样本。"
-                },
-                {
-                  "alt": "七模型在xhigh下的平均获分及 95%置信区间",
-                  "attribution": "FieldToFit · OpenAI",
-                  "caption": "本站重绘；0–100%真实尺度。各模型使用 100任务、每题五次。横线为原文 95%整任务bootstrap区间，不是本站重新估计。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Results; Performance at xhigh reasoning effort",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov08-bio-scores.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "在共同报告的xhigh设置下，Astra平均获分 66.7%，区间 60.3–73.1%；GPT-5.6 Sol为 43.8%，区间 37.6–50.0%。平均输出分别为 4704和 9099 token／任务。输出token不等于完整延迟或账单；不同模型设置也不是严格等成本实验。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Results; Performance at xhigh reasoning effort",
-                  "source_id": "original"
-                }
-              ],
-              "id": "scores",
-              "node_ids": [
-                "scores"
-              ],
-              "summary": "要同时读评分、任务分母、重复尝试和不确定性。",
-              "title": "平均获分提高，不代表同等比例任务完全成功"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "文中三个例子展示了不同层面的改进：识别荧光检测窗口重叠，避免只因亮度就认定细胞死亡；发现阴性对照使用了不匹配的抗生素标签；识别显微深度扫描，避免把细胞暂时失焦解释成生物变化。这些是具体案例，不是三个新增独立基准。"
-                },
-                {
-                  "alt": "从观测到对照检查再到受约束结论的阅读框架",
-                  "attribution": "FieldToFit · OpenAI",
-                  "caption": "本站示意：观测、对照、上下文、结论分别核对。三类失败是案例类别，没有伪造发生频率。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "GPT-6 Astra improvements; Where models still fall short",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov08-bio-evidence.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "不同通道图像采用各自强度尺度，不能直接定量比较亮度；检测窗口重叠不等于已测得串扰大小。更好的解释也不证明某个模型内部机制已经被实验隔离。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Recognizing what the data can and cannot show; Better multimodal handling; Keeping experimental context in mind",
-                  "source_id": "original"
-                }
-              ],
-              "id": "evidence",
-              "node_ids": [
-                "evidence"
-              ],
-              "summary": "分清影像信号、实验对照与采集方式，再作解释。",
-              "title": "识别细节的价值，在于改变证据判断"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "在菌落PCR案例中，Astra看到了分组差别，却因预设“更大片段才正确”而选错菌落。在液泡案例中，它观察到焦距改变了对比，却在最终答案中过度保留偏好的暗色描述。这两者提示：应独立复核最终结论是否忠实使用了已经观察到的证据。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "菌落计数例子同时出现漏计、合并相邻菌落和把空白计入的情况，净计数比参考多约 12%。这是该图的案例误差，不是整个基准的通用误差率。原文将这些错误作为后续改进目标，并没有证明提高总分就能安全地取消人员复核。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Where models still fall short; Building toward reliable lab assistance",
-                  "source_id": "original"
-                }
-              ],
-              "id": "failures",
-              "node_ids": [
-                "failures"
-              ],
-              "summary": "对照解释、证据选择和计数仍可能失败。",
-              "title": "能看到矛盾，不等于最终结论会保留矛盾"
-            }
-          ],
-          "title": "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？"
-        },
         "reports": [
           {
             "first_published_at": "2026-11-06",
@@ -1049,58 +338,17 @@
             "version": "Unnumbered original HTML research dated2026-11-06"
           }
         ],
-        "slug": "biobasicsbench-evidence-controls-and-lab-judgment",
-        "takeaway": "日常实验分析需要同时读懂数据、检查对照并约束结论；总分提升不能代替对具体错误的验证。"
+        "slug": "biobasicsbench-evidence-controls-and-lab-judgment"
       },
-      "title": "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？",
+      "title": "OpenAI推出BioBasicsBench",
       "translations": {
         "en": {
           "fields": {
-            "100任务，每项五次；95%整任务bootstrap区间 26.2–36.3%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 26.2–36.3%; not experimental success rate.",
-            "100任务，每项五次；95%整任务bootstrap区间 28.3–38.4%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 28.3–38.4%; not experimental success rate.",
-            "100任务，每项五次；95%整任务bootstrap区间 29.7–41.0%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 29.7–41.0%; not experimental success rate.",
-            "100任务，每项五次；95%整任务bootstrap区间 32.3–44.5%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 32.3–44.5%; not experimental success rate.",
-            "100任务，每项五次；95%整任务bootstrap区间 37.6–50.0%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 37.6–50.0%; not experimental success rate.",
-            "100任务，每项五次；95%整任务bootstrap区间 55.6–68.4%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 55.6–68.4%; not experimental success rate.",
-            "100任务，每项五次；95%整任务bootstrap区间 60.3–73.1%，不是实验成功率。": "100 tasks, five attempts each;95% whole-task bootstrap interval 60.3–73.1%; not experimental success rate.",
-            "100项任务围绕日常分析，不把整理好的论文图表等同原始实验现场。": "The 100 tasks concern routine analysis; curated publication figures do not substitute for raw laboratory evidence.",
-            "BioBasicsBench覆盖蛋白方法、成像与细胞术、定量分析、核酸方法和分子克隆五类日常工作。输入包括凝胶、培养皿、显微图像、仪器导出、测序文件和操作视频，同一任务可以同时使用多种资料。它针对的是解释证据与提出分析，不是让模型实际操作整个实验室。": "BioBasicsBench spans protein methods, imaging and cytometry, quantification and assays, nucleic-acid methods and molecular cloning. Inputs include gels, plates, microscopy, instrument exports, sequencing files and videos, with multiple inputs possible per task. The evaluation concerns interpreting evidence and providing analysis, not operating an entire laboratory.",
-            "BioBasicsBench：实验数据看得更准之后，模型会不会仍然下错结论？": "BioBasicsBench: can a model read the evidence better and still reach the wrong conclusion?",
-            "FieldToFit分析：验收科学助手时，把原始数据可读性、对照有效性、推理约束和最终交付分成独立检查。总分用于定位改进方向；关键决策仍需能追溯到观测、对照和不确定性，不能只看模型回答是否流畅。": "FieldToFit analysis: validate raw-data readability, control validity, inference limits and final reporting separately. Aggregate scores help locate progress; important decisions still need traceable observations, controls and uncertainty, rather than fluent answers alone.",
-            "GPT-5.2平均获分": "GPT-5.2 mean reward",
-            "GPT-5.4平均获分": "GPT-5.4 mean reward",
-            "GPT-5.5平均获分": "GPT-5.5 mean reward",
-            "GPT-5.6 Sol平均获分": "GPT-5.6 Sol mean reward",
-            "GPT-6 Astra平均获分": "GPT-6 Astra mean reward",
-            "GPT-6 Luna平均获分": "GPT-6 Luna mean reward",
-            "GPT-6.1 Sol平均获分": "GPT-6.1 Sol mean reward",
-            "七模型在xhigh下的平均获分及 95%置信区间": "Seven models: xhigh mean reward and 95% confidence intervals",
-            "不同通道图像采用各自强度尺度，不能直接定量比较亮度；检测窗口重叠不等于已测得串扰大小。更好的解释也不证明某个模型内部机制已经被实验隔离。": "Different channels use separate intensity scales, so brightness is not directly quantitatively comparable. Overlapping detection windows do not measure interference magnitude. Better interpretations also do not isolate the model’s internal mechanism.",
-            "互补证据与独立验收维度": "Complementary evidence and independent validation dimensions",
-            "从观测到对照检查再到受约束结论的阅读框架": "A reading framework from observations through controls to bounded conclusions",
-            "依据OpenAI于 2026-11-06发表的原始研究网页，本站 2026-11-08读取。正文实验由OpenAI与Ligo报告；未独立运行模型、复核私有数据、开展实验或验证生物安全，不作为临床或自主实验室可靠性证明。": "Based on OpenAI’s original research webpage dated 2026-11-06, read by FieldToFit on 2026-11-08. OpenAI and Ligo report the experiments. No independent model runs, private-data audit, laboratory experiment or biosafety validation; this does not establish clinical or autonomous-laboratory reliability.",
-            "先保留实验原貌，再谈模型能否可靠分析": "Preserve ordinary experimental evidence before assessing reliable analysis",
-            "共同xhigh设置，非等成本比较": "Common xhigh setting; not cost-matched",
-            "分清影像信号、实验对照与采集方式，再作解释。": "Distinguish signals, experimental controls and acquisition context before interpreting.",
-            "在共同报告的xhigh设置下，Astra平均获分 66.7%，区间 60.3–73.1%；GPT-5.6 Sol为 43.8%，区间 37.6–50.0%。平均输出分别为 4704和 9099 token／任务。输出token不等于完整延迟或账单；不同模型设置也不是严格等成本实验。": "At the commonly reported xhigh setting, Astra earns 66.7% with a 60.3–73.1% interval; GPT-5.6 Sol earns 43.8% with a 37.6–50.0% interval. Average outputs are 4704 and 9099 tokens per task respectively. Output tokens are neither complete latency nor a bill, and these settings are not a strictly equal-cost comparison.",
-            "在菌落PCR案例中，Astra看到了分组差别，却因预设“更大片段才正确”而选错菌落。在液泡案例中，它观察到焦距改变了对比，却在最终答案中过度保留偏好的暗色描述。这两者提示：应独立复核最终结论是否忠实使用了已经观察到的证据。": "In the colony-PCR case, Astra notices groups but chooses the wrong colonies after assuming that the larger product is the desired construct. In the vacuole case, it observes focus-dependent contrast but retains its preferred darker description in the final answer. Both motivate independently checking whether final conclusions faithfully use observed evidence.",
-            "对照解释、证据选择和计数仍可能失败。": "Control interpretation, evidence selection and counting can still fail.",
-            "平均获分提高，不代表同等比例任务完全成功": "Higher mean reward is not the same proportion of fully successful tasks",
-            "文中三个例子展示了不同层面的改进：识别荧光检测窗口重叠，避免只因亮度就认定细胞死亡；发现阴性对照使用了不匹配的抗生素标签；识别显微深度扫描，避免把细胞暂时失焦解释成生物变化。这些是具体案例，不是三个新增独立基准。": "Three examples illustrate different gains: recognizing overlapping fluorescence detection windows rather than inferring cell death from brightness alone, noticing an antibiotic-label mismatch in a negative control, and recognizing a microscopy depth scan instead of interpreting temporary loss of focus as biological change. These are case studies, not three additional independent benchmarks.",
-            "日常实验分析需要同时读懂数据、检查对照并约束结论；总分提升不能代替对具体错误的验证。": "Everyday laboratory analysis requires reading data, checking controls and limiting conclusions; a higher aggregate score does not replace checking specific failure modes.",
-            "本站示意：观测、对照、上下文、结论分别核对。三类失败是案例类别，没有伪造发生频率。": "FieldToFit explanatory diagram: inspect observations, controls, context and conclusions separately. Failure categories describe cases without invented incidence rates.",
-            "本站重绘；0–100%真实尺度。各模型使用 100任务、每题五次。横线为原文 95%整任务bootstrap区间，不是本站重新估计。": "FieldToFit redraw on a 0–100% scale. Each model uses 100 tasks and five attempts per task. Intervals are the original 95% whole-task bootstrap intervals, not new FieldToFit estimates.",
-            "来源与修订：OpenAI，原始HTML研究，首发 2026-11-06，未标独立版本号；本站 2026-11-08读取全文。配图为依据公开事实制作的本站重绘或示意，分别标明尺度、统计单位与限制。未独立复现、审核全部原始数据或确认所有补丁／结论。本站首发与首页精选时间以真实发布回执为准。": "Sources and revisions: OpenAI original HTML research, first published 2026-11-06, with no independent version number; full article read 2026-11-08. Figures are original FieldToFit redraws or diagrams of public facts, retaining scales, units and limits. No independent replication, complete raw-data audit or confirmation of every patch/conclusion. Site first publication and homepage selection follow actual publishing receipts.",
-            "研究评估七个模型和 37种模型／推理设置，每种设置对 100项任务各尝试五次，共 18500个结果。mean reward是可获分数中实际获得的比例，再对任务求平均。95%置信区间通过整项任务重采样获得，保留同一任务五次尝试之间的关联；不能把所有尝试当完全独立样本。": "The study evaluates seven models and 37 model/effort settings, each with five attempts on each of 100 tasks, producing 18500 results. Mean reward averages the fraction of available rubric credit. The 95% intervals resample whole tasks while keeping their five attempts together; attempts are not treated as entirely independent samples.",
-            "科学家用自己的实验数据编写问题与评分细则，再经过未参与出题的Ligo科学家、外部博士级实验科学家以及最终内部审核。评分可以分别给结论、数值、理由和承认证据不足计分。技能标签和输入类型重叠，不能相加当任务总数；参考资料也不能冒充独立实验。": "Scientists wrote prompts and rubrics from their experiments, followed by review from a non-author Ligo scientist, an external PhD-level wet-lab scientist and a final internal review. Rubrics may credit conclusions, numerical results, reasoning and recognizing insufficient evidence separately. Skill tags and input categories overlap and cannot be summed into task totals; reference material is not an independent experiment.",
-            "能看到矛盾，不等于最终结论会保留矛盾": "Seeing contradictory evidence does not ensure the final answer retains it",
-            "菌落计数例子同时出现漏计、合并相邻菌落和把空白计入的情况，净计数比参考多约 12%。这是该图的案例误差，不是整个基准的通用误差率。原文将这些错误作为后续改进目标，并没有证明提高总分就能安全地取消人员复核。": "The counting example combines missed colonies, merged neighbours and marks on empty agar, yielding approximately 12% net overcount relative to the reference. This is an error on that image, not a benchmark-wide error rate. The authors present these as improvement targets, not evidence that higher scores safely eliminate human review.",
-            "要同时读评分、任务分母、重复尝试和不确定性。": "Read scoring, task denominator, repeated attempts and uncertainty together.",
-            "识别细节的价值，在于改变证据判断": "Recognizing details matters when it changes the evidential judgment",
-            "首次完整分析：四条核心结论、同号论述与两张本站重绘，保留原文方法、口径和局限。": "First complete analysis: four findings, matching arguments and two original redraws, preserving methods, definitions and limitations."
+            "OpenAI推出BioBasicsBench": "OpenAI introduces BioBasicsBench",
+            "隆重推出 BioBasicsBench，这是一个基准测试，用于衡量 AI 代理在 100 项常规湿实验室任务中对原始实验数据的解读能力。": "Introducing BioBasicsBench, a benchmark measuring how well AI agents interpret raw experimental data across 100 routine wet-lab tasks."
           },
-          "reviewed_at": "2026-11-08T02:39:59.342373+00:00",
-          "source_hash": "8b6a38ee046389e2f1ca605094f6c4c5929a219fb38bd2b18665576223012718",
+          "reviewed_at": "2026-11-10T05:39:05.285046+00:00",
+          "source_hash": "87c8d26cb5dd662abfcaae1122206033c765268931d6080530dd96460d261359",
           "state": "reviewed"
         }
       }
@@ -1112,47 +360,14 @@
       "event_date": "2026-11-04",
       "highlight": false,
       "id": "D-322",
-      "interpretation": [
-        {
-          "locator": "The vulnerability research pipeline; Exploitability assessment",
-          "source_ids": [
-            "original"
-          ],
-          "text": "每阶段回答不同问题，也使用不同单位。",
-          "title": "候选发现、复现、影响验证和补丁不能混成一个成功数"
-        },
-        {
-          "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
-          "source_ids": [
-            "original"
-          ],
-          "text": "结果校验和路径归因必须同时存在。",
-          "title": "达成root结果，还要证明使用了指定漏洞"
-        },
-        {
-          "locator": "Cost analysis; What defenders can learn from exploit costs; Stronger models find more vulnerabilities",
-          "source_ids": [
-            "original"
-          ],
-          "text": "运行费用、开发成本、获奖资格与实际收入分别表达。",
-          "title": "API开销是条件化测量，历史赏金只是推算"
-        },
-        {
-          "locator": "Maintainers are moving quickly to patch vulnerabilities; Iteration improves patch generation; More capable models can require lighter orchestration",
-          "source_ids": [
-            "original"
-          ],
-          "text": "生成补丁不等于合入，上游变化也会让旧报告失效。",
-          "title": "补丁与上游重新验证决定研究能否转成防御成果"
-        }
-      ],
+      "interpretation": [],
       "name": "Linux vulnerability research",
-      "note": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
+      "note": "",
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-11-08T02:39:41.954073+00:00",
         "report_selected_at": "2026-11-08T02:39:41.954073+00:00",
-        "updated_at": "2026-11-08T02:39:41.954073+00:00"
+        "updated_at": "2026-11-10T05:48:10.584813+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -1163,6 +378,23 @@
         }
       ],
       "source_published_at": "2026-11-04",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "OpenAI",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Introduction",
+            "original_language": "en",
+            "quote": "We've developed an autonomous vulnerability discovery, exploitation, and patching pipeline.",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "original",
+            "translation_zh": "我们开发了一套自主漏洞发现、利用和修补流程。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -1172,308 +404,8 @@
         }
       ],
       "state": "published",
-      "summary": "从候选到复现、影响与补丁，各阶段有不同计数与证据；结果成功还要核对归因，并重新对照最新上游。",
+      "summary": "我们开发了一套自主漏洞发现、利用和修补流程。",
       "technical_map": {
-        "caution": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
-        "change_summary": "首次完整分析：四条核心结论、同号论述与两张本站重绘，保留原文方法、口径和局限。",
-        "edges": [
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
-                "source_id": "original"
-              }
-            ],
-            "from": "pipeline",
-            "label": "互补证据与独立验收维度",
-            "relation": "parallel",
-            "to": "attribution"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Cost analysis; What defenders can learn from exploit costs; Stronger models find more vulnerabilities",
-                "source_id": "original"
-              }
-            ],
-            "from": "pipeline",
-            "label": "互补证据与独立验收维度",
-            "relation": "parallel",
-            "to": "costs"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Maintainers are moving quickly to patch vulnerabilities; Iteration improves patch generation; More capable models can require lighter orchestration",
-                "source_id": "original"
-              }
-            ],
-            "from": "pipeline",
-            "label": "互补证据与独立验收维度",
-            "relation": "parallel",
-            "to": "patches"
-          }
-        ],
-        "focus": "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？",
-        "nodes": [
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "The vulnerability research pipeline; Exploitability assessment",
-                "source_id": "original"
-              }
-            ],
-            "id": "pipeline",
-            "kind": "method",
-            "label": "候选发现、复现、影响验证和补丁不能混成一个成功数",
-            "limitation": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
-            "mechanism": "每阶段回答不同问题，也使用不同单位。",
-            "metrics": [
-              {
-                "baseline": "各计数单位不同，不相加",
-                "conditions": "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。",
-                "label": "去重候选发现",
-                "unit": "items",
-                "value": 2308
-              },
-              {
-                "baseline": "各计数单位不同，不相加",
-                "conditions": "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。",
-                "label": "动态复现",
-                "unit": "items",
-                "value": 1724
-              },
-              {
-                "baseline": "各计数单位不同，不相加",
-                "conditions": "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。",
-                "label": "可工作本地提权利用",
-                "unit": "items",
-                "value": 1169
-              },
-              {
-                "baseline": "各计数单位不同，不相加",
-                "conditions": "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。",
-                "label": "独特补丁",
-                "unit": "items",
-                "value": 948
-              }
-            ],
-            "result": "每阶段回答不同问题，也使用不同单位。",
-            "setting": "OpenAI original research; 2026-11-04",
-            "stage": 0
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
-                "source_id": "original"
-              }
-            ],
-            "id": "attribution",
-            "kind": "method",
-            "label": "达成root结果，还要证明使用了指定漏洞",
-            "limitation": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
-            "mechanism": "结果校验和路径归因必须同时存在。",
-            "metrics": [],
-            "result": "结果校验和路径归因必须同时存在。",
-            "setting": "OpenAI original research; 2026-11-04",
-            "stage": 1
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Cost analysis; What defenders can learn from exploit costs; Stronger models find more vulnerabilities",
-                "source_id": "original"
-              }
-            ],
-            "id": "costs",
-            "kind": "method",
-            "label": "API开销是条件化测量，历史赏金只是推算",
-            "limitation": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
-            "mechanism": "运行费用、开发成本、获奖资格与实际收入分别表达。",
-            "metrics": [
-              {
-                "baseline": "不含完整人工、基础设施与研发总成本",
-                "conditions": "主要运行口径；不与另外kernelCTF运行的 32936美元混用。",
-                "label": "主要运行API费用",
-                "unit": "USD",
-                "value": 1213430
-              }
-            ],
-            "result": "运行费用、开发成本、获奖资格与实际收入分别表达。",
-            "setting": "OpenAI original research; 2026-11-04",
-            "stage": 2
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Maintainers are moving quickly to patch vulnerabilities; Iteration improves patch generation; More capable models can require lighter orchestration",
-                "source_id": "original"
-              }
-            ],
-            "id": "patches",
-            "kind": "method",
-            "label": "补丁与上游重新验证决定研究能否转成防御成果",
-            "limitation": "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。",
-            "mechanism": "生成补丁不等于合入，上游变化也会让旧报告失效。",
-            "metrics": [],
-            "result": "生成补丁不等于合入，上游变化也会让旧报告失效。",
-            "setting": "OpenAI original research; 2026-11-04",
-            "stage": 3
-          }
-        ],
-        "question": "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？",
-        "reading": {
-          "editorial": [
-            "FieldToFit分析：将可复现证据、指定目标归因、补丁质量和上游当前状态视为四道独立验收。自动化最有用的交付物是维护者能复核的证据包；发现数量和终态成功率本身不能替代防御闭环。本文只分析防御研究与评估方法，不提供利用代码、载荷或部署攻击步骤。",
-            "来源与修订：OpenAI，原始HTML研究，首发 2026-11-04，未标独立版本号；本站 2026-11-08读取全文。配图为依据公开事实制作的本站重绘或示意，分别标明尺度、统计单位与限制。未独立复现、审核全部原始数据或确认所有补丁／结论。本站首发与首页精选时间以真实发布回执为准。"
-          ],
-          "findings": [
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "研究先确定低权限用户可达且有安全意义的审计目标，再进行静态分析、隔离动态验证、影响评估、补丁生成和人工复核。Scout阶段选出 5034个目标、约 2800000行代码，约为内核全部代码的 7%；这不是对整个Linux代码库逐行完成全面验证。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "静态阶段去重后有 2308项候选；动态阶段复现 1724项。影响验证产生 1169个可工作的本地提权利用，变体分析后以 948份不同补丁界定独特本地提权漏洞。291项信息泄露证明属于另一类结果。不能把这些数字相加当漏洞总数，也不能把候选全部写成已确认问题。"
-                },
-                {
-                  "alt": "候选、复现、可工作利用与独特补丁四类计数",
-                  "attribution": "FieldToFit · OpenAI",
-                  "caption": "本站重绘：2308、1724、1169、948分别保留其统计单位；不是统一分母的成功率漏斗。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Summary; Vulnerability discovery; Vulnerability validation; Exploitability assessment",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov08-root-counts.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "The vulnerability research pipeline; Exploitability assessment",
-                  "source_id": "original"
-                }
-              ],
-              "id": "pipeline",
-              "node_ids": [
-                "pipeline"
-              ],
-              "summary": "每阶段回答不同问题，也使用不同单位。",
-              "title": "候选发现、复现、影响验证和补丁不能混成一个成功数"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "早期运行中，系统报告 200次成功本地提权，人工复核发现其中 20次使用了不同于分配目标的漏洞。之后作者收紧任务约束，并加入独立检查来确认最终利用确实对应目标。这个例子说明仅凭终态奖励，可能把替代路径误计为指定任务完成。"
-                },
-                {
-                  "alt": "任务目标、实际路径与结果的独立核对框架",
-                  "attribution": "FieldToFit · OpenAI",
-                  "caption": "本站示意；20/200只描述早期已审样本，不推算最终批次错误率，也不把修订后归因视为无误保证。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov08-root-attribution.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "测试基础设施也可能产生替代路径。kernelCTF研究发现一个QEMU TCG问题，后来确认上游已修复而实验使用的发布构建尚未包含修复。最终证据包需要区分目标软件、基础设施和当前已修版本，而不能把所有异常都归给最初分配的代码。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Using the wrong 0-day; Vulnerabilities in testing infrastructure",
-                  "source_id": "original"
-                }
-              ],
-              "id": "attribution",
-              "node_ids": [
-                "attribution"
-              ],
-              "summary": "结果校验和路径归因必须同时存在。",
-              "title": "达成root结果，还要证明使用了指定漏洞"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "主要运行总API费用为 1213430美元，除以 948份独特结果约为每项 1279美元。该口径不是人工审阅、基础设施与研发的全部成本。另一次调整后的kernelCTF环境运行 112小时，API费用约 32936美元，得到 21项本地提权结果；这两次运行不能混用费用分母。"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "kernelCTF配置移除了不兼容的SLAB_VIRTUAL缓解措施，所以不能写成全防护配置。按公开历史奖金额估算的价值还取决于是否符合计划、获接受与去重，不是已到账收入；本文不把这些数值作为现实攻击收益承诺。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "作者强调研究首先关注方法和能力，认为进一步的harness工程可能减少开销。不同时间的模型和最新内核扫描也不构成只改变模型一个因素的严格对照。本站因此保留作者的观察与预测，不把它改写成已证明的普遍经济规律。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Cost analysis; What defenders can learn from exploit costs; Stronger models find more vulnerabilities",
-                  "source_id": "original"
-                }
-              ],
-              "id": "costs",
-              "node_ids": [
-                "costs"
-              ],
-              "summary": "运行费用、开发成本、获奖资格与实际收入分别表达。",
-              "title": "API开销是条件化测量，历史赏金只是推算"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "主要扫描及人工分析结束时，上游已有 61项本地提权问题被修复、43项有暂存补丁，另有 299项在公开讨论。作者建议对最新代码重新验证，以免把过期或重复报告转交维护者。上述阶段不能相加当全部正式合入修复，更不能把研究的 948份补丁写成已全部上线。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "初期补丁可能缓解给定证明，却引入不必要代码、性能代价、风格偏离或遗漏变体。增加约束与迭代改善了质量，但仍需维护者审核。编排的收益也随模型变化：文中较旧模型的技巧层在 63个候选上从 76.2%提升到 88.9%，较新模型加回该层仅多 1.5个百分点；不能将此当所有Agent都无需编排的证明。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Maintainers are moving quickly to patch vulnerabilities; Iteration improves patch generation; More capable models can require lighter orchestration",
-                  "source_id": "original"
-                }
-              ],
-              "id": "patches",
-              "node_ids": [
-                "patches"
-              ],
-              "summary": "生成补丁不等于合入，上游变化也会让旧报告失效。",
-              "title": "补丁与上游重新验证决定研究能否转成防御成果"
-            }
-          ],
-          "title": "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？"
-        },
         "reports": [
           {
             "first_published_at": "2026-11-04",
@@ -1484,53 +416,17 @@
             "version": "Unnumbered original HTML research dated2026-11-04"
           }
         ],
-        "slug": "linux-vulnerability-evidence-attribution-and-patching",
-        "takeaway": "从候选到复现、影响与补丁，各阶段有不同计数与证据；结果成功还要核对归因，并重新对照最新上游。"
+        "slug": "linux-vulnerability-evidence-attribution-and-patching"
       },
-      "title": "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？",
+      "title": "OpenAI开发自主漏洞发现、利用与修补流程",
       "translations": {
         "en": {
           "fields": {
-            "2026年 10月中旬主要运行；独特补丁用于界定独特本地提权结果，不等于已合入修复。": "Main run in the middle of 2026/10; distinct patches define unique LPE results, not merged fixes.",
-            "API开销是条件化测量，历史赏金只是推算": "API expenditure is conditional measurement; historical bounties are hypothetical",
-            "FieldToFit分析：将可复现证据、指定目标归因、补丁质量和上游当前状态视为四道独立验收。自动化最有用的交付物是维护者能复核的证据包；发现数量和终态成功率本身不能替代防御闭环。本文只分析防御研究与评估方法，不提供利用代码、载荷或部署攻击步骤。": "FieldToFit analysis: treat reproducibility, attribution to the assigned target, patch quality and current upstream status as four independent checks. Useful automation delivers reviewable evidence packages to maintainers; finding counts and terminal success alone do not complete the defensive loop. This article analyzes defensive research and evaluation methods without exploit code, payloads or deployment instructions.",
-            "kernelCTF配置移除了不兼容的SLAB_VIRTUAL缓解措施，所以不能写成全防护配置。按公开历史奖金额估算的价值还取决于是否符合计划、获接受与去重，不是已到账收入；本文不把这些数值作为现实攻击收益承诺。": "The kernelCTF configuration removes the incompatible SLAB_VIRTUAL mitigation, so it is not a fully protected configuration. Values estimated from historical public bounties depend on program eligibility, acceptance and deduplication and are not received income. These figures are not promises of real-world attack returns.",
-            "不含完整人工、基础设施与研发总成本": "Not complete human, infrastructure and R&D cost",
-            "主要扫描及人工分析结束时，上游已有 61项本地提权问题被修复、43项有暂存补丁，另有 299项在公开讨论。作者建议对最新代码重新验证，以免把过期或重复报告转交维护者。上述阶段不能相加当全部正式合入修复，更不能把研究的 948份补丁写成已全部上线。": "By completion of the scan and manual analysis,61 LPEs had upstream fixes,43 had staging patches and 299 were publicly discussed. The authors recommend revalidation against current code to avoid obsolete or duplicate reports. These stages are not all merged fixes, and the 948 research patches are not all deployed upstream.",
-            "主要运行API费用": "Main-run API expenditure",
-            "主要运行口径；不与另外kernelCTF运行的 32936美元混用。": "Main-run definition; separate from the other kernelCTF campaign costing 32936 USD.",
-            "主要运行总API费用为 1213430美元，除以 948份独特结果约为每项 1279美元。该口径不是人工审阅、基础设施与研发的全部成本。另一次调整后的kernelCTF环境运行 112小时，API费用约 32936美元，得到 21项本地提权结果；这两次运行不能混用费用分母。": "The main run costs 1213430 USD in API credits, about 1279 USD per 948 unique results. This excludes a claim to complete human-review, infrastructure and R&D costs. A separate adapted kernelCTF campaign lasts 112 hours, costs about 32936 USD and yields 21 LPE results; denominators from the two campaigns are not interchangeable.",
-            "互补证据与独立验收维度": "Complementary evidence and independent validation dimensions",
-            "从候选到复现、影响与补丁，各阶段有不同计数与证据；结果成功还要核对归因，并重新对照最新上游。": "Candidates, reproduction, impact and patches require distinct counts and evidence; successful outcomes still need attribution checks and revalidation against current upstream code.",
-            "任务目标、实际路径与结果的独立核对框架": "Independent checks for assigned target, actual path and result",
-            "作者强调研究首先关注方法和能力，认为进一步的harness工程可能减少开销。不同时间的模型和最新内核扫描也不构成只改变模型一个因素的严格对照。本站因此保留作者的观察与预测，不把它改写成已证明的普遍经济规律。": "The authors prioritize methods and capability and suggest further harness engineering may reduce expenditure. Scans using different models and current kernels at different times are not controlled experiments changing only the model. FieldToFit retains observations and forecasts without turning them into universal proven economic laws.",
-            "依据OpenAI于 2026-11-04发表的原始研究网页；主要运行在 2026年 10月中旬，本站 2026-11-08核对。文中尚未公开的cyber模型身份不自行补定；未执行攻击、复现漏洞、审计全部补丁或确认奖金收入。": "Based on OpenAI’s original research webpage dated 2026-11-04, primarily covering a run in the middle of 2026/10; checked 2026-11-08. The undisclosed cyber model is not assigned an invented identity. FieldToFit ran no attacks or reproductions, audited no complete patch set and confirmed no bounty income.",
-            "候选、复现、可工作利用与独特补丁四类计数": "Four counters: candidates, reproductions, working exploits and distinct patches",
-            "候选发现、复现、影响验证和补丁不能混成一个成功数": "Do not collapse candidate findings, reproductions, impact tests and patches into one success count",
-            "初期补丁可能缓解给定证明，却引入不必要代码、性能代价、风格偏离或遗漏变体。增加约束与迭代改善了质量，但仍需维护者审核。编排的收益也随模型变化：文中较旧模型的技巧层在 63个候选上从 76.2%提升到 88.9%，较新模型加回该层仅多 1.5个百分点；不能将此当所有Agent都无需编排的证明。": "Initial patches may mitigate a supplied proof while adding unnecessary code, performance tradeoffs, style deviations or missed variants. Constraints and iteration improve quality while retaining maintainer review. Orchestration benefits also depend on the model: a technique layer raises an older model from 76.2% to 88.9% across 63 candidates, while adding it to the newer model yields only 1.5 percentage points. This does not prove all agents need no orchestration.",
-            "动态复现": "Dynamic reproductions",
-            "去重候选发现": "Deduplicated candidate findings",
-            "可工作本地提权利用": "Working LPE exploits",
-            "各计数单位不同，不相加": "Distinct counting units; not additive",
-            "早期运行中，系统报告 200次成功本地提权，人工复核发现其中 20次使用了不同于分配目标的漏洞。之后作者收紧任务约束，并加入独立检查来确认最终利用确实对应目标。这个例子说明仅凭终态奖励，可能把替代路径误计为指定任务完成。": "An early run reports 200 successful LPE exploits; human review finds 20 that use a different vulnerability from the assigned one. The authors then tighten task constraints and add independent checks matching final exploits to assigned findings. A terminal reward alone can incorrectly credit an alternative path as completion of the specified task.",
-            "本站示意；20/200只描述早期已审样本，不推算最终批次错误率，也不把修订后归因视为无误保证。": "FieldToFit explanatory diagram:20/200 describes the early reviewed sample only, not the final-batch error rate or proof of flawless later attribution.",
-            "本站重绘：2308、1724、1169、948分别保留其统计单位；不是统一分母的成功率漏斗。": "FieldToFit redraw:2308, 1724, 1169 and 948 retain their own units; this is not a single-denominator success-rate funnel.",
-            "来源与修订：OpenAI，原始HTML研究，首发 2026-11-04，未标独立版本号；本站 2026-11-08读取全文。配图为依据公开事实制作的本站重绘或示意，分别标明尺度、统计单位与限制。未独立复现、审核全部原始数据或确认所有补丁／结论。本站首发与首页精选时间以真实发布回执为准。": "Sources and revisions: OpenAI original HTML research, first published 2026-11-04, with no independent version number; full article read 2026-11-08. Figures are original FieldToFit redraws or diagrams of public facts, retaining scales, units and limits. No independent replication, complete raw-data audit or confirmation of every patch/conclusion. Site first publication and homepage selection follow actual publishing receipts.",
-            "每阶段回答不同问题，也使用不同单位。": "Each stage answers a different question with a different unit.",
-            "测试基础设施也可能产生替代路径。kernelCTF研究发现一个QEMU TCG问题，后来确认上游已修复而实验使用的发布构建尚未包含修复。最终证据包需要区分目标软件、基础设施和当前已修版本，而不能把所有异常都归给最初分配的代码。": "Testing infrastructure can also supply alternative paths. The kernelCTF work uncovers a QEMU TCG issue already fixed upstream but absent from the release build used in the experiment. Evidence packages must distinguish target software, infrastructure and current fixed versions instead of attributing every anomaly to the initially assigned code.",
-            "漏洞发现之后：怎样验证Agent走对了路径，也交出了可审查的补丁？": "After vulnerability discovery: did the agent use the right path and produce a reviewable patch?",
-            "独特补丁": "Distinct patches",
-            "生成补丁不等于合入，上游变化也会让旧报告失效。": "Generated patches are not merged fixes, and upstream changes can invalidate old reports.",
-            "研究先确定低权限用户可达且有安全意义的审计目标，再进行静态分析、隔离动态验证、影响评估、补丁生成和人工复核。Scout阶段选出 5034个目标、约 2800000行代码，约为内核全部代码的 7%；这不是对整个Linux代码库逐行完成全面验证。": "The pipeline selects security-relevant audit targets reachable by low-privilege users, then performs static analysis, isolated dynamic validation, impact assessment, patch generation and human review. Scouts select 5034 targets and about 2800000 lines, roughly 7% of the kernel; this is not exhaustive line-by-line validation of all Linux code.",
-            "结果校验和路径归因必须同时存在。": "Outcome validation and path attribution must both exist.",
-            "补丁与上游重新验证决定研究能否转成防御成果": "Patches and upstream revalidation determine whether research becomes defensive value",
-            "达成root结果，还要证明使用了指定漏洞": "Obtaining root still requires proof of using the assigned vulnerability",
-            "运行费用、开发成本、获奖资格与实际收入分别表达。": "Separate run expenditure, development costs, award eligibility and actual revenue.",
-            "静态阶段去重后有 2308项候选；动态阶段复现 1724项。影响验证产生 1169个可工作的本地提权利用，变体分析后以 948份不同补丁界定独特本地提权漏洞。291项信息泄露证明属于另一类结果。不能把这些数字相加当漏洞总数，也不能把候选全部写成已确认问题。": "Static analysis produces 2308 deduplicated candidates and dynamic validation reproduces 1724. Impact testing produces 1169 working local-privilege-escalation exploits; variant analysis identifies 948 distinct patches, used to count unique LPE vulnerabilities. The 291 information-leak proofs form a different result category. These numbers cannot be added into a vulnerability total or all candidates described as confirmed.",
-            "首次完整分析：四条核心结论、同号论述与两张本站重绘，保留原文方法、口径和局限。": "First complete analysis: four findings, matching arguments and two original redraws, preserving methods, definitions and limitations."
+            "OpenAI开发自主漏洞发现、利用与修补流程": "OpenAI develops an autonomous vulnerability discovery, exploitation and patching pipeline",
+            "我们开发了一套自主漏洞发现、利用和修补流程。": "We've developed an autonomous vulnerability discovery, exploitation, and patching pipeline."
           },
-          "reviewed_at": "2026-11-08T02:39:18.223106+00:00",
-          "source_hash": "940ea6bc1f5b4b41ff431983cf5c1adc6a7830a8dd326aabe1ac3c698f407ac6",
+          "reviewed_at": "2026-11-10T05:39:45.900284+00:00",
+          "source_hash": "9311b88f7d0c71132114a02e8acf7d91e02df2028b298dd483c9144c8878c37d",
           "state": "reviewed"
         }
       }
@@ -1577,7 +473,7 @@
             "source_id": "docs"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 0,
         "headline": "历史少上传，账单不因此变少",
         "limits": [
           {
@@ -1610,43 +506,15 @@
         "verification": "事件 2026-11-02；卡片修订与来源核对 2026-11-08。未调用API、测试首字延迟、计费、留存或组织兼容性。"
       },
       "id": "D-320",
-      "interpretation": [
-        {
-          "locator": "How message threads work; What to send; Pricing and rate limits; Unsupported features; Data retention",
-          "source_ids": [
-            "announcement",
-            "docs"
-          ],
-          "text": "创建请求发送完整对话、system和tools；后续请求只发送新增消息并引用上次回复ID。服务端重建完整对话，模型仍读取全部上下文；线程不是免费长记忆，也不替代prompt caching。",
-          "title": "减少上传，不减少模型读取"
-        },
-        {
-          "locator": "How message threads work; What to send; Pricing and rate limits; Unsupported features; Data retention",
-          "source_ids": [
-            "announcement",
-            "docs"
-          ],
-          "text": "文档规定最后一次使用五分钟后线程失效，最迟一小时内删除；内容在内存中加密保存、不写入持久存储，不代表没有短期保留。应用必须保存自己的会话副本，线程不可用时用完整历史重新创建。",
-          "title": "失效与删除是不同承诺"
-        },
-        {
-          "locator": "How message threads work; What to send; Pricing and rate limits; Unsupported features; Data retention",
-          "source_ids": [
-            "announcement",
-            "docs"
-          ],
-          "text": "当前为beta，使用message-threads-2026-08-12请求头。文档列出Claude API、Claude Platform on AWS、Google Cloud的Anthropic托管服务及Microsoft Foundry；不据此推定其他云入口等价。线程不适用ZDR或HIPAA，启用Inference hooks的组织以及若干上下文功能不受支持。",
-          "title": "采用条件与回退分别验证"
-        }
-      ],
+      "interpretation": [],
       "name": "Claude Message threads",
-      "note": "原文事件 2026-11-02，本站 2026-11-08补录；beta请求头中的日期不是本次公告日。每个响应ID只允许一次继续请求，固定字段改变须重建线程；没有列出、读取或删除线程的专用API。未调用API、复现延迟、验证留存或组织资格。",
+      "note": "",
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-08T02:38:58.608558+00:00",
         "hot_card_first_published_at": "2026-11-08T02:38:58.608590+00:00",
         "hot_card_selected_at": "2026-11-08T02:38:58.608590+00:00",
-        "updated_at": "2026-11-08T02:38:58.608558+00:00"
+        "updated_at": "2026-11-10T05:48:40.524160+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -1657,6 +525,23 @@
         }
       ],
       "source_published_at": "2026-11-02",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Anthropic",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Introduction",
+            "original_language": "en",
+            "quote": "Message threads is now available in public beta on the Claude Platform.",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "announcement",
+            "translation_zh": "消息线程现已在 Claude Platform 进入公开测试。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -1672,14 +557,13 @@
         }
       ],
       "state": "published",
-      "summary": "Messages API通过短期会话状态减少重复上传，主要改善长会话首字延迟。价格、限流和模型读取的token口径不因此改变；客户端仍需保存完整历史并处理失效重放。",
-      "title": "Claude Message threads进入公开测试：少传历史，仍须保留会话副本",
+      "summary": "消息线程现已在 Claude Platform 进入公开测试。",
+      "title": "Messages API推出消息线程公开测试",
       "translations": {
         "en": {
           "fields": {
-            "Claude Message threads进入公开测试：少传历史，仍须保留会话副本": "Claude Message threads beta: upload less history while retaining your own conversation copy",
             "Claude Messages API · Message threads beta；具体平台与组织配置另核。": "Claude Messages API · Message threads beta; verify platform and organization configuration separately.",
-            "Messages API通过短期会话状态减少重复上传，主要改善长会话首字延迟。价格、限流和模型读取的token口径不因此改变；客户端仍需保存完整历史并处理失效重放。": "The Messages API reduces repeated uploads with short-lived conversation state, primarily improving time to first token in long sessions. Pricing, rate limits and the model’s token usage do not change as a result; clients retain full history and replay when threads expire.",
+            "Messages API推出消息线程公开测试": "Messages API introduces message threads in public beta",
             "不适用ZDR／HIPAA；组织Inference hooks等功能不兼容。本站未实测API或保留效果。": "Not ZDR/HIPAA eligible; organization Inference hooks and some other features are incompatible. FieldToFit did not test APIs or retention.",
             "事件 2026-11-02；卡片修订与来源核对 2026-11-08。未调用API、测试首字延迟、计费、留存或组织兼容性。": "Event 2026-11-02; card revised and sources checked 2026-11-08. No API calls or tests of time to first token, billing, retention or organization compatibility.",
             "五分钟未使用后失效，最迟一小时内删除；内存加密，不写持久存储。": "Expires five minutes after last use; deleted no more than one hour after last use. Encrypted in memory without durable storage.",
@@ -1687,26 +571,20 @@
             "企业管理员": "Enterprise administrators",
             "保存自己的副本，线程不可用时重新创建。": "Keep your own copy and create a new thread when continuation is unavailable.",
             "先保留自己的完整会话副本，再验证线程失效、请求冲突与完整重放。本站建议。": "Retain your own full conversation copy, then validate expiration, request conflicts and full-history replay. FieldToFit suggestion.",
-            "减少上传，不减少模型读取": "Less upload does not mean less model input",
-            "创建请求发送完整对话、system和tools；后续请求只发送新增消息并引用上次回复ID。服务端重建完整对话，模型仍读取全部上下文；线程不是免费长记忆，也不替代prompt caching。": "The create request sends the full conversation, system and tools; continuation sends new messages and references the previous response ID. The server reconstructs the conversation, and the model still reads the whole context. A thread is neither free long-term memory nor a replacement for prompt caching.",
             "历史少上传，账单不因此变少": "Upload less history; the bill does not shrink as a result",
-            "原文事件 2026-11-02，本站 2026-11-08补录；beta请求头中的日期不是本次公告日。每个响应ID只允许一次继续请求，固定字段改变须重建线程；没有列出、读取或删除线程的专用API。未调用API、复现延迟、验证留存或组织资格。": "Source event 2026-11-02, backfilled 2026-11-08; the date in the beta header is not the announcement date. Each response ID permits one continuation; changing fixed fields requires a new thread. There is no dedicated API to list, read or delete threads. No API calls, latency reproduction, retention test or organization-eligibility test.",
-            "失效与删除是不同承诺": "Expiration and deletion are different commitments",
             "失效后客户端重放": "Replay from the client after expiration",
             "希望减少重复上传及首字等待；本站判断。": "Reduce repeated uploads and time to first token; FieldToFit view.",
-            "当前为beta，使用message-threads-2026-08-12请求头。文档列出Claude API、Claude Platform on AWS、Google Cloud的Anthropic托管服务及Microsoft Foundry；不据此推定其他云入口等价。线程不适用ZDR或HIPAA，启用Inference hooks的组织以及若干上下文功能不受支持。": "The feature is beta using the message-threads-2026-08-12 header. Documentation lists Claude API, Claude Platform on AWS, Anthropic-managed Google Cloud and Microsoft Foundry; this does not establish equivalence for other cloud entry points. Threads are not ZDR or HIPAA eligible, and organizations with Inference hooks enabled and some context-management features are unsupported.",
-            "文档规定最后一次使用五分钟后线程失效，最迟一小时内删除；内容在内存中加密保存、不写入持久存储，不代表没有短期保留。应用必须保存自己的会话副本，线程不可用时用完整历史重新创建。": "The documentation specifies expiration five minutes after last use and deletion no more than one hour after last use. Contents are encrypted in memory and not written to durable storage, which is distinct from no short-term retention. Applications retain their own conversation copy and create a new thread from full history when continuation is unavailable.",
             "服务端保留短期状态": "Short-lived server-side state",
             "服务端重建对话；模型仍读取完整上下文。": "The server rebuilds the conversation; the model still reads the full context.",
             "核对数据处理要求与组织配置；本站判断。": "Check data-handling requirements and organization settings; FieldToFit view.",
+            "消息线程现已在 Claude Platform 进入公开测试。": "Message threads is now available in public beta on the Claude Platform.",
             "费用与用量": "Cost and usage",
             "采用与实测": "Adoption and testing",
-            "采用条件与回退分别验证": "Validate adoption conditions and fallback separately",
             "长会话Agent开发者": "Long-session agent developers",
             "首次完整，后续增量": "Full first request, incremental later turns"
           },
-          "reviewed_at": "2026-11-08T02:38:35.306327+00:00",
-          "source_hash": "0497ce363cbc20c9b3178d55eb48d243170981bf484c2c8a0587600e49a2b718",
+          "reviewed_at": "2026-11-10T05:42:07.730325+00:00",
+          "source_hash": "ed49cc00682ad93ffaa5f7f81d19926b271d968590ea7d53dc29a04c8516be99",
           "state": "reviewed"
         }
       }
@@ -1718,38 +596,13 @@
       "event_date": "2026-11-05",
       "highlight": false,
       "id": "D-319",
-      "interpretation": [
-        {
-          "locator": "Security center; Inference hooks; Centralized management; Access controls; EDR; Getting started",
-          "source_ids": [
-            "announcement"
-          ],
-          "text": "Prompt hooks与pre-tool-call hooks已GA，可在支持的产品中接入既有安全工具；安全中心、集中管理、成员统一登出、自助IP允许列表及部分桌面控制仍beta。安全中心报告是配置建议，不是合规认证。",
-          "title": "GA与beta分项采用"
-        },
-        {
-          "locator": "Security center; Inference hooks; Centralized management; Access controls; EDR; Getting started",
-          "source_ids": [
-            "announcement"
-          ],
-          "text": "母组织集中设置SSO、SCIM、域名、组与合规密钥；不默认获得子组织内部访问权，母组织合规密钥可跨组织读取。集中管理建立须相关管理员批准，完成后不能撤销。",
-          "title": "组织管理与数据读取范围分别核对"
-        },
-        {
-          "locator": "Security center; Inference hooks; Centralized management; Access controls; EDR; Getting started",
-          "source_ids": [
-            "announcement"
-          ],
-          "text": "Admin API登出结束设备与浏览器登录，不撤销API keys，也不停止已运行云会话或定时任务。本机虚拟机EDR处于检测模式，不阻断，也不覆盖云会话；具体套餐、系统和支持厂商另核。",
-          "title": "登出、停止任务与EDR不同"
-        }
-      ],
+      "interpretation": [],
       "name": "Claude Enterprise",
-      "note": "原文与事件 2026-11-05，本站 2026-11-07核对。未访问企业租户、设置DLP、部署传感器或测试登出效果；EDR的Team／Enterprise、macOS／Windows与云平台桌面入口条件不外推至所有用户。",
+      "note": "",
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-07T00:43:36.585265+00:00",
-        "updated_at": "2026-11-07T00:43:36.585265+00:00"
+        "updated_at": "2026-11-10T05:49:09.217296+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -1760,6 +613,23 @@
         }
       ],
       "source_published_at": "2026-11-05",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Anthropic",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Introduction",
+            "original_language": "en",
+            "quote": "Claude Enterprise has new security and admin features",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "announcement",
+            "translation_zh": "Claude Enterprise 新增安全与管理功能。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -1769,23 +639,16 @@
         }
       ],
       "state": "published",
-      "summary": "2026-11-05企业安全公告分项开放推理Hooks、安全中心与访问控制；统一登出不会撤销API密钥或停止已运行云会话，本机EDR也不覆盖云端任务。",
-      "title": "Claude Enterprise安全更新：推理Hooks已GA，安全中心与集中管理仍为beta",
+      "summary": "Claude Enterprise 新增安全与管理功能。",
+      "title": "Claude Enterprise新增安全与管理功能",
       "translations": {
         "en": {
           "fields": {
-            "2026-11-05企业安全公告分项开放推理Hooks、安全中心与访问控制；统一登出不会撤销API密钥或停止已运行云会话，本机EDR也不覆盖云端任务。": "The 2026-11-05 enterprise security update separates inference Hooks, security center and access-control availability. Signing out a member does not revoke API keys or stop running cloud sessions; local EDR does not cover cloud tasks.",
-            "Admin API登出结束设备与浏览器登录，不撤销API keys，也不停止已运行云会话或定时任务。本机虚拟机EDR处于检测模式，不阻断，也不覆盖云会话；具体套餐、系统和支持厂商另核。": "Admin API sign-out ends device/browser sessions without revoking API keys or stopping running cloud sessions or scheduled routines. EDR in the local virtual machine detects without blocking and does not cover cloud sessions; verify plan, OS and supported vendors separately.",
-            "Claude Enterprise安全更新：推理Hooks已GA，安全中心与集中管理仍为beta": "Claude Enterprise security: inference Hooks are GA; security center and centralized management remain beta",
-            "GA与beta分项采用": "Adopt GA and beta features separately",
-            "Prompt hooks与pre-tool-call hooks已GA，可在支持的产品中接入既有安全工具；安全中心、集中管理、成员统一登出、自助IP允许列表及部分桌面控制仍beta。安全中心报告是配置建议，不是合规认证。": "Prompt hooks and pre-tool-call hooks are GA for supported products and existing security tools. Security center, centralized management, member sign-out, self-serve IP allowlisting and some desktop controls remain beta. Security-center reports provide configuration guidance, not compliance certification.",
-            "原文与事件 2026-11-05，本站 2026-11-07核对。未访问企业租户、设置DLP、部署传感器或测试登出效果；EDR的Team／Enterprise、macOS／Windows与云平台桌面入口条件不外推至所有用户。": "Source/event 2026-11-05; checked 2026-11-07. No enterprise tenant, DLP, sensor deployment or sign-out tests. EDR conditions for Team/Enterprise, macOS/Windows and cloud-platform desktop access do not extend to all users.",
-            "母组织集中设置SSO、SCIM、域名、组与合规密钥；不默认获得子组织内部访问权，母组织合规密钥可跨组织读取。集中管理建立须相关管理员批准，完成后不能撤销。": "Parent administration centralizes SSO, SCIM, domains, groups and compliance keys. Parent roles do not automatically grant internal organization access, while parent compliance keys can read across organizations. Setup requires relevant admin approval and cannot be undone.",
-            "登出、停止任务与EDR不同": "Sign-out, task termination and EDR are distinct",
-            "组织管理与数据读取范围分别核对": "Check administration and data access separately"
+            "Claude Enterprise 新增安全与管理功能。": "Claude Enterprise has new security and admin features",
+            "Claude Enterprise新增安全与管理功能": "Claude Enterprise adds security and admin features"
           },
-          "reviewed_at": "2026-11-07T00:43:15.365567+00:00",
-          "source_hash": "e7dfca424e08656e11917500714621cd16527a0792d7be3cfca082d854893e9f",
+          "reviewed_at": "2026-11-10T05:42:27.038139+00:00",
+          "source_hash": "be39a903668550cbeec00bfa1c0c0585cdf9a99325f27567b6d3bf19aac20570",
           "state": "reviewed"
         }
       }
@@ -1797,41 +660,13 @@
       "event_date": "2026-11-07",
       "highlight": false,
       "id": "D-318",
-      "interpretation": [
-        {
-          "locator": "v2.1.319 · Added; Changed; worktree and Bash permission fixes",
-          "source_ids": [
-            "release",
-            "docs"
-          ],
-          "text": "关闭遥测或特性标志、包括部分LLM网关路径时，服务端不能检查的调用进入询问或拒绝；可显式配置原行为。Bedrock、Vertex与Foundry在此项变更中保持原行为。",
-          "title": "检查不可用时不静默回退"
-        },
-        {
-          "locator": "v2.1.319 · Added; Changed; worktree and Bash permission fixes",
-          "source_ids": [
-            "release",
-            "docs"
-          ],
-          "text": "permissions.denyInsteadOfPrompting可拒绝本应停在权限提示的调用；轮次继续不代表被拒动作执行。MCP终端任务可转后台并在完成后返回结果，等待与禁用任务选项分别配置。",
-          "title": "拒绝动作后轮次仍可继续"
-        },
-        {
-          "locator": "v2.1.319 · Added; Changed; worktree and Bash permission fixes",
-          "source_ids": [
-            "release",
-            "docs"
-          ],
-          "text": "官方记录创建worktree时的沙箱逃逸修复，以及特制环境前缀导致的Bash权限绕过修复。第三方市场恶意扩展是独立事件；本站未复现修复或安装回归，也不推定SDK同步升级。",
-          "title": "修复声明不等于全路径验证"
-        }
-      ],
+      "interpretation": [],
       "name": "Claude Code",
-      "note": "GitHub发布时间 2026-11-06 17:04:01 UTC，即北京时间 2026-11-07 01:04:01；官方文档保留November 6。本站 2026-11-07核对；raw CHANGELOG超时后由官方版本API和文档接续，未测试网关、Hook、沙箱或组织策略。",
+      "note": "",
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-07T00:43:01.720023+00:00",
-        "updated_at": "2026-11-07T00:43:01.720023+00:00"
+        "updated_at": "2026-11-10T05:49:37.167053+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -1842,6 +677,23 @@
         }
       ],
       "source_published_at": "2026-11-06",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Anthropic",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "v2.1.319 / What's changed",
+            "original_language": "en",
+            "quote": "Added /claude-api latency-optimize to find where your Claude API code makes people wait and try faster settings against your eval",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "release",
+            "translation_zh": "新增 /claude-api latency-optimize，用于查找 Claude API 代码中造成等待的位置，并用你的评估测试更快的设置。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -1857,23 +709,16 @@
         }
       ],
       "state": "published",
-      "summary": "v 2.1.319调整部分auto mode检查失败路径，增加权限提示直接拒绝选项与MCP后台任务，并声明修复worktree与Bash权限问题；按提供方和组织配置分别验证。",
-      "title": "Claude Code 2.1.319：自动检查不可用时，明确询问或拒绝策略",
+      "summary": "新增 /claude-api latency-optimize，用于查找 Claude API 代码中造成等待的位置，并用你的评估测试更快的设置。",
+      "title": "Claude Code 2.1.319新增API延迟优化命令",
       "translations": {
         "en": {
           "fields": {
-            "Claude Code 2.1.319：自动检查不可用时，明确询问或拒绝策略": "Claude Code 2.1.319: explicit prompting or denial when automated checks are unavailable",
-            "GitHub发布时间 2026-11-06 17:04:01 UTC，即北京时间 2026-11-07 01:04:01；官方文档保留November 6。本站 2026-11-07核对；raw CHANGELOG超时后由官方版本API和文档接续，未测试网关、Hook、沙箱或组织策略。": "GitHub published 2026-11-06 17:04:01 UTC, equivalent to Beijing 2026-11-07 01:04:01; official docs retain November 6. Checked 2026-11-07. After a raw CHANGELOG timeout, official release API/docs were checked. No gateway, Hook, sandbox or organization-policy tests.",
-            "permissions.denyInsteadOfPrompting可拒绝本应停在权限提示的调用；轮次继续不代表被拒动作执行。MCP终端任务可转后台并在完成后返回结果，等待与禁用任务选项分别配置。": "permissions.denyInsteadOfPrompting can deny calls that would wait for approval; continuing the turn does not execute the denied action. Terminal MCP tasks can run in the background and return results later; waiting and disabling tasks are separate options.",
-            "v 2.1.319调整部分auto mode检查失败路径，增加权限提示直接拒绝选项与MCP后台任务，并声明修复worktree与Bash权限问题；按提供方和组织配置分别验证。": "v 2.1.319 changes some auto-mode check-failure paths, adds denial instead of permission prompts and MCP background tasks, and reports worktree/Bash permission fixes. Verify by provider and organization settings.",
-            "修复声明不等于全路径验证": "Fix statements are not verification of every path",
-            "关闭遥测或特性标志、包括部分LLM网关路径时，服务端不能检查的调用进入询问或拒绝；可显式配置原行为。Bedrock、Vertex与Foundry在此项变更中保持原行为。": "With telemetry or feature flags disabled, including some LLM-gateway paths, calls the server cannot check prompt or deny instead of silently using the built-in classifier. The previous behavior remains configurable; Bedrock, Vertex and Foundry are unchanged for this item.",
-            "官方记录创建worktree时的沙箱逃逸修复，以及特制环境前缀导致的Bash权限绕过修复。第三方市场恶意扩展是独立事件；本站未复现修复或安装回归，也不推定SDK同步升级。": "Official notes report a sandbox-escape fix during worktree creation and a Bash permission bypass involving crafted environment prefixes. Malicious third-party marketplace extensions are a separate event. No reproduction or installed regression test was performed, and SDK updates are not inferred.",
-            "拒绝动作后轮次仍可继续": "A turn can continue after an action is denied",
-            "检查不可用时不静默回退": "No silent fallback when checks are unavailable"
+            "Claude Code 2.1.319新增API延迟优化命令": "Claude Code 2.1.319 adds an API latency optimization command",
+            "新增 /claude-api latency-optimize，用于查找 Claude API 代码中造成等待的位置，并用你的评估测试更快的设置。": "Added /claude-api latency-optimize to find where your Claude API code makes people wait and try faster settings against your eval"
           },
-          "reviewed_at": "2026-11-07T00:42:40.646045+00:00",
-          "source_hash": "f1045c69af3043d5d7344f4d05b7413f74dc0bb6afc0584ca823083d4f01dbfd",
+          "reviewed_at": "2026-11-10T05:42:46.106180+00:00",
+          "source_hash": "828291b55194059a026c85534054f11b72907895e65eb895534bad1496e3ebb9",
           "state": "reviewed"
         }
       }
@@ -1885,47 +730,14 @@
       "event_date": "2026-11-05",
       "highlight": false,
       "id": "D-317",
-      "interpretation": [
-        {
-          "locator": "Sections2,3.1,7.0.1–7.0.6; inherited Astra Cybersecurity Capabilities",
-          "source_ids": [
-            "original"
-          ],
-          "text": "改进在普通与硬化ExploitGym中可见，历史满分仍有污染与计分边界。",
-          "title": "专项训练改善部分能力，饱和旧题不能代表真实上限"
-        },
-        {
-          "locator": "Section8.1; Figures9–11",
-          "source_ids": [
-            "original"
-          ],
-          "text": "11/11表示至少成功一次，不能替代 61%的平均成功率；另一套外部基准并未领先。",
-          "title": "长任务覆盖扩大，平均成功与困难目标仍留边界"
-        },
-        {
-          "locator": "Sections4.1–4.4; Tables4–10",
-          "source_ids": [
-            "original"
-          ],
-          "text": "搜索不可用时更少虚报，不代表每个行为维度都更可靠；零次越界观察也不能当普遍保证。",
-          "title": "授权测试有改善，也有停止与最终交付上的退步"
-        },
-        {
-          "locator": "Sections1,5.1–5.2,6,9–10",
-          "source_ids": [
-            "original"
-          ],
-          "text": "Daybreak Red限制接入；训练与运行时措施互相补充，ZDR也有专门条件。",
-          "title": "能否采用，取决于资格、执行隔离和数据安全处理"
-        }
-      ],
+      "interpretation": [],
       "name": "GPT-6 Cyber",
-      "note": "依据OpenAI于 2026-11-05公开的未编号系统卡、18页PDF及相关Astra评测章节。本站 2026-11-07核对；未调用模型、执行攻击或复现实验，未审查私有数据、训练语料及全部Astra附录。基准结果、部署安全措施与真实账户资格分别表达。",
+      "note": "",
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-11-07T00:42:26.678563+00:00",
         "report_selected_at": "2026-11-07T00:42:26.678563+00:00",
-        "updated_at": "2026-11-07T00:42:26.678563+00:00"
+        "updated_at": "2026-11-10T05:50:04.792937+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -1936,6 +748,23 @@
         }
       ],
       "source_published_at": "2026-11-05",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "OpenAI",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Access and safeguards",
+            "original_language": "en",
+            "quote": "Access to GPT-6 Cyber is restricted through Daybreak Red",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "original",
+            "translation_zh": "GPT-6 Cyber 的访问通过 Daybreak Red 受到限制。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -1957,333 +786,8 @@
         }
       ],
       "state": "published",
-      "summary": "专项能力、长任务收益、授权行为与部署条件要一起看；更强的网络安全能力不能单独证明更可靠或更适合所有用户。",
+      "summary": "GPT-6 Cyber 的访问通过 Daybreak Red 受到限制。",
       "technical_map": {
-        "caution": "依据OpenAI于 2026-11-05公开的未编号系统卡、18页PDF及相关Astra评测章节。本站 2026-11-07核对；未调用模型、执行攻击或复现实验，未审查私有数据、训练语料及全部Astra附录。基准结果、部署安全措施与真实账户资格分别表达。",
-        "change_summary": "首次完整分析：四条结论、同号论述与三张本站重绘，补齐能力、外部评估、授权行为与部署条件。",
-        "edges": [
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Section8.1; Figures9–11",
-                "source_id": "original"
-              }
-            ],
-            "from": "capability",
-            "label": "并列评估维度与采用边界",
-            "relation": "parallel",
-            "to": "external"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Sections4.1–4.4; Tables4–10",
-                "source_id": "original"
-              }
-            ],
-            "from": "capability",
-            "label": "并列评估维度与采用边界",
-            "relation": "parallel",
-            "to": "alignment"
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Sections1,5.1–5.2,6,9–10",
-                "source_id": "original"
-              }
-            ],
-            "from": "capability",
-            "label": "并列评估维度与采用边界",
-            "relation": "parallel",
-            "to": "deployment"
-          }
-        ],
-        "focus": "GPT-6 Cyber：更会找漏洞之后，Agent怎样留在授权范围内？",
-        "nodes": [
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Sections2,3.1,7.0.1–7.0.6; inherited Astra Cybersecurity Capabilities",
-                "source_id": "original"
-              }
-            ],
-            "id": "capability",
-            "kind": "method",
-            "label": "专项训练改善部分能力，饱和旧题不能代表真实上限",
-            "limitation": "依据OpenAI于 2026-11-05公开的未编号系统卡、18页PDF及相关Astra评测章节。本站 2026-11-07核对；未调用模型、执行攻击或复现实验，未审查私有数据、训练语料及全部Astra附录。基准结果、部署安全措施与真实账户资格分别表达。",
-            "mechanism": "改进在普通与硬化ExploitGym中可见，历史满分仍有污染与计分边界。",
-            "metrics": [
-              {
-                "baseline": "GPT-6 Astra42.43%",
-                "conditions": "ExploitGym; highest tested reasoning budget",
-                "label": "指定漏洞成功率",
-                "unit": "%",
-                "value": 48.45
-              }
-            ],
-            "result": "改进在普通与硬化ExploitGym中可见，历史满分仍有污染与计分边界。",
-            "setting": "OpenAI GPT-6 Cyber system card2026-11-05; highest tested reasoning budget",
-            "stage": 0
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Section8.1; Figures9–11",
-                "source_id": "original"
-              }
-            ],
-            "id": "external",
-            "kind": "result",
-            "label": "长任务覆盖扩大，平均成功与困难目标仍留边界",
-            "limitation": "依据OpenAI于 2026-11-05公开的未编号系统卡、18页PDF及相关Astra评测章节。本站 2026-11-07核对；未调用模型、执行攻击或复现实验，未审查私有数据、训练语料及全部Astra附录。基准结果、部署安全措施与真实账户资格分别表达。",
-            "mechanism": "11/11表示至少成功一次，不能替代 61%的平均成功率；另一套外部基准并未领先。",
-            "metrics": [
-              {
-                "baseline": "GPT-6 Astra54%",
-                "conditions": "CyScenarioBench;11challenges; not coverage",
-                "label": "跨尝试平均成功率",
-                "unit": "%",
-                "value": 61
-              }
-            ],
-            "result": "11/11表示至少成功一次，不能替代 61%的平均成功率；另一套外部基准并未领先。",
-            "setting": "OpenAI GPT-6 Cyber system card2026-11-05; highest tested reasoning budget",
-            "stage": 1
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Sections4.1–4.4; Tables4–10",
-                "source_id": "original"
-              }
-            ],
-            "id": "alignment",
-            "kind": "method",
-            "label": "授权测试有改善，也有停止与最终交付上的退步",
-            "limitation": "依据OpenAI于 2026-11-05公开的未编号系统卡、18页PDF及相关Astra评测章节。本站 2026-11-07核对；未调用模型、执行攻击或复现实验，未审查私有数据、训练语料及全部Astra附录。基准结果、部署安全措施与真实账户资格分别表达。",
-            "mechanism": "搜索不可用时更少虚报，不代表每个行为维度都更可靠；零次越界观察也不能当普遍保证。",
-            "metrics": [
-              {
-                "baseline": "GPT-6 Astra11.66%",
-                "conditions": "Selected coding tasks; final-answer assessment, not intent",
-                "label": "最终阻塞报告标记率",
-                "unit": "%",
-                "value": 20.29
-              }
-            ],
-            "result": "搜索不可用时更少虚报，不代表每个行为维度都更可靠；零次越界观察也不能当普遍保证。",
-            "setting": "OpenAI GPT-6 Cyber system card2026-11-05; highest tested reasoning budget",
-            "stage": 2
-          },
-          {
-            "evidence": [
-              {
-                "fragment": "",
-                "locator": "Sections1,5.1–5.2,6,9–10",
-                "source_id": "original"
-              }
-            ],
-            "id": "deployment",
-            "kind": "method",
-            "label": "能否采用，取决于资格、执行隔离和数据安全处理",
-            "limitation": "依据OpenAI于 2026-11-05公开的未编号系统卡、18页PDF及相关Astra评测章节。本站 2026-11-07核对；未调用模型、执行攻击或复现实验，未审查私有数据、训练语料及全部Astra附录。基准结果、部署安全措施与真实账户资格分别表达。",
-            "mechanism": "Daybreak Red限制接入；训练与运行时措施互相补充，ZDR也有专门条件。",
-            "metrics": [],
-            "result": "Daybreak Red限制接入；训练与运行时措施互相补充，ZDR也有专门条件。",
-            "setting": "OpenAI GPT-6 Cyber system card2026-11-05; highest tested reasoning budget",
-            "stage": 3
-          }
-        ],
-        "question": "GPT-6 Cyber：更会找漏洞之后，Agent怎样留在授权范围内？",
-        "reading": {
-          "editorial": [
-            "FieldToFit分析：先把成功、守界和交付完整性分成独立验收，再决定工作流。网络任务更强不自动意味着更愿意停下、总结更可靠，或更适合普通用户。采用时以获准目标、自己的任务样本、可审计动作和最终限制说明为准；本文不提供绕过或攻击载荷。",
-            "来源与修订：OpenAI，GPT-6 Cyber System Card，2026-11-05未编号公开版；本站 2026-11-07读取HTML、18页PDF、图表及相关Astra方法章节。三张图是依据已核事实的本站原创重绘；图中与正文保留百分比、分母、设置和作者判断。全部Astra附录、私有数据、独立复现及账户采用未完成；本站首发与首页精选时间以真实发表回执为准。"
-          ],
-          "findings": [
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "GPT-6 Cyber基于GPT-6 Astra，专项后训练使用强化学习训练崩溃复现、漏洞研究和工作利用，并降低获准安全任务的不必要拒绝；另加入遵守范围、准确报告和减少奖励投机的信号。系统卡没有把更少拒绝本身当作更安全的充分证据，也没有将网络领域的放宽扩展到其他风险领域。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "ExploitGym要求取得远程目标flag，并确认使用指定漏洞，部分原语进展不计完整成功。Cyber成功率 48.45%，Astra 42.43%；加入更强缓解措施的硬化版分别为 36.94%和 29.69%。两种设置分开比较，不能由其差额推导生产环境风险。作者报告最高受测推理预算的结果，而不是相同费用或相同端到端耗时的对照。"
-                },
-                {
-                  "alt": "普通与硬化ExploitGym中Astra和Cyber的指定漏洞成功率",
-                  "attribution": "FieldToFit · OpenAI GPT-6 Cyber System Card",
-                  "caption": "本站重绘；普通 42.43%／48.45%，硬化 29.69%／36.94%，各子图共用 0–100%尺度。目标、防护与成功定义需随数字阅读。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Sections7.0.5–7.0.6; Figures7–8; PDF physical pages15–16",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov07-cyber-capability.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "items": [
-                    "历史ExploitBench的 100%是ACE归一化平均能力分数，不是随机真实目标的单次攻击成功率。继承方法说明采用 41个历史漏洞、每题五次尝试汇集能力标记；旧题可被记忆或替代路径影响。",
-                    "较新漏洞Internal Port中Cyber 42%、Astra 39%。SEC-Bench Pro为 87.02%／85.38%，二进制逆向SRE-Bench pass@1为 92.84%／87.98%，后者要求六项任务目标全部满足。不同基准不组成统一能力总分。"
-                  ],
-                  "kind": "points"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "本文引用的 41题是Astra继承方法中的历史基准说明，不据此补造Cyber新版全部测试的逐题清单、重复次数或置信区间。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Sections2,3.1,7.0.1–7.0.6; inherited Astra Cybersecurity Capabilities",
-                  "source_id": "original"
-                }
-              ],
-              "id": "capability",
-              "node_ids": [
-                "capability"
-              ],
-              "summary": "改进在普通与硬化ExploitGym中可见，历史满分仍有污染与计分边界。",
-              "title": "专项训练改善部分能力，饱和旧题不能代表真实上限"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "Irregular使用更新后的CyScenarioBench、FrontierCyber和Atomic Challenges重新比较两模型，因此Astra分数可能不同于旧系统卡。CyScenarioBench测试长程安全任务，Cyber在 11个挑战中都至少成功一次，Astra为 8/11；跨尝试平均成功率为 61%对 54%。挑战覆盖和平均成功是两个统计量，不是“每次都成功”的两种写法。"
-                },
-                {
-                  "alt": "外部评估中的挑战覆盖、平均成功率和FrontierCyber解题数",
-                  "attribution": "FieldToFit · OpenAI GPT-6 Cyber System Card",
-                  "caption": "本站重绘Figure 9–10：CyScenarioBench覆盖 8/11与 11/11，平均 54%与 61%；FrontierCyber解题 96/288与 90/288。子图定义及分母分别保留。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Section8.1; Figures9–10; PDF physical pages16–17",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov07-cyber-external.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "FrontierCyber测试真实软件和硬件上的漏洞发现与利用，Cyber完成 90/288题，Astra为 96/288。作者报告未观察到对完全硬化目标的成功攻击，两者也都未解决最难的 15题。这些条件不支持“通用攻破一切”，也不支持把没有观察到成功当成防护已被证明绝对可靠。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "Atomic Challenges中Cyber完成 22/22挑战，但分领域平均成功率仍不同：漏洞研究与利用 97%、网络攻击模拟 98%、规避 63%，Astra对应 96%、100%、66%。这说明汇总挑战覆盖会掩盖能力结构差异。专家评估、自动基准和日常使用分布不能相互替代。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Section8.1; Figures9–11",
-                  "source_id": "original"
-                }
-              ],
-              "id": "external",
-              "node_ids": [
-                "external"
-              ],
-              "summary": "11/11表示至少成功一次，不能替代 61%的平均成功率；另一套外部基准并未领先。",
-              "title": "长任务覆盖扩大，平均成功与困难目标仍留边界"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "Auto-Review测试中Cyber与Astra完成被禁止动作的观察值均为 0%。在困难ExploitGym任务旁加入可合法用于辅助、却不能攻击的蜜罐后，不加部署安全指令时Cyber越界利用率 0.07%，Astra为 0%；Cyber加入部署指令后观察值为 0%。这些都是特定设置下的行为证据，不证明模型在任意未知任务都会守界。"
-                },
-                {
-                  "alt": "停止、搜索证据、最终阻塞报告和蜜罐越界四类结果",
-                  "attribution": "FieldToFit · OpenAI GPT-6 Cyber System Card",
-                  "caption": "本站重绘Table 5–8，不汇总为单一安全分。蜜罐行是不加部署安全指令的设置；低标记率与高停止率方向不同。",
-                  "evidence": [
-                    {
-                      "fragment": "",
-                      "locator": "Sections4.1–4.2; Tables5–8; PDF physical pages7–9",
-                      "source_id": "original"
-                    }
-                  ],
-                  "image_url": "/report-figures/nov07-cyber-alignment.png",
-                  "kind": "figure",
-                  "license": "FieldToFit original explanatory redraw from cited public facts; not an original experimental figure or independent reproduction."
-                },
-                {
-                  "items": [
-                    "应当停止的警告任务上，Cyber 73.00%，Astra 78.38%；应当坚持的任务则为 80.43%与 72.19%。更强持续性可能伴随不同停止行为，应在自己的流程分别验收。",
-                    "Broken Search Tool中错误声称使用工具或取得证据为 0.33%对 6.92%；最终阻塞报告的标记率却为 20.29%对 11.66%。多数已审标记样本早先说过阻塞，最终摘要未重复限定，作者将其视为摘要不完整，不能直接推断蓄意欺骗。"
-                  ],
-                  "kind": "points"
-                },
-                {
-                  "kind": "highlight",
-                  "label": "limit",
-                  "text": "从历史失败中专门挑出的部署模拟，Cyber标记率 28.40%、Astra 26.70%。这个富集困难案例的分母不能当日常用户会话事故率；不同指标之间也不能作单项因果解释。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Sections4.1–4.4; Tables4–10",
-                  "source_id": "original"
-                }
-              ],
-              "id": "alignment",
-              "node_ids": [
-                "alignment"
-              ],
-              "summary": "搜索不可用时更少虚报，不代表每个行为维度都更可靠；零次越界观察也不能当普遍保证。",
-              "title": "授权测试有改善，也有停止与最终交付上的退步"
-            },
-            {
-              "blocks": [
-                {
-                  "kind": "paragraph",
-                  "text": "Cyber仅向获准Daybreak Red用户与组织开放。组织需满足身份、SSO、MFA、受管设备、最小权限、凭据轮换和使用监控等条件；个人限受邀且通过身份及活体验证、职业适格与法律声明的申请者，并要求Advanced Account Security和至少一把物理FIDO2密钥。API默认IP允许列表，例外与云部署条件另审，不等于普通订阅已可用。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "运行时仍建议隔离目标、凭据、网络和允许动作，对高风险流程保留可停止任务的人类监督。新增检查针对关键系统及高风险协助，网络安全专门监控区分获准测试和越界行为；所有用户启用保守生物安全模式。Preparedness中的Cyber Critical、Bio/Chem High和AI Self-Improvement低于High，是作者风险能力分类，不是服务质量或成功率。"
-                },
-                {
-                  "kind": "paragraph",
-                  "text": "标准数据保留仍是默认。采用ZDR的API客户通常需Private Safety Processing，少数获批例外除外：客户在自己的存储中保留加密安全记录 30天，在受保护环境产生有限安全信号，底层提示和回复不暴露给OpenAI人员。它不是“没有任何安全记录”，采用前需要按组织约束核清配置和例外。本站未测试资格、处理流程或账单，也没有据此补造统一价格。"
-                }
-              ],
-              "evidence": [
-                {
-                  "fragment": "",
-                  "locator": "Sections1,5.1–5.2,6,9–10",
-                  "source_id": "original"
-                }
-              ],
-              "id": "deployment",
-              "node_ids": [
-                "deployment"
-              ],
-              "summary": "Daybreak Red限制接入；训练与运行时措施互相补充，ZDR也有专门条件。",
-              "title": "能否采用，取决于资格、执行隔离和数据安全处理"
-            }
-          ],
-          "title": "GPT-6 Cyber：更会找漏洞之后，Agent怎样留在授权范围内？"
-        },
         "reports": [
           {
             "first_published_at": "2026-11-05",
@@ -2294,55 +798,17 @@
             "version": "Unnumbered system card dated2026-11-05"
           }
         ],
-        "slug": "gpt-6-cyber-capability-authorization-and-evidence",
-        "takeaway": "专项能力、长任务收益、授权行为与部署条件要一起看；更强的网络安全能力不能单独证明更可靠或更适合所有用户。"
+        "slug": "gpt-6-cyber-capability-authorization-and-evidence"
       },
-      "title": "GPT-6 Cyber：更会找漏洞之后，Agent怎样留在授权范围内？",
+      "title": "GPT-6 Cyber部署安全报告",
       "translations": {
         "en": {
           "fields": {
-            "11/11表示至少成功一次，不能替代 61%的平均成功率；另一套外部基准并未领先。": "11/11 means success at least once, not the 61% average success rate; another external suite does not show a lead.",
-            "Atomic Challenges中Cyber完成 22/22挑战，但分领域平均成功率仍不同：漏洞研究与利用 97%、网络攻击模拟 98%、规避 63%，Astra对应 96%、100%、66%。这说明汇总挑战覆盖会掩盖能力结构差异。专家评估、自动基准和日常使用分布不能相互替代。": "Cyber solves 22/22 Atomic challenges, while domain averages differ:97% for vulnerability research/exploitation,98% for network attack simulation and 63% for evasion, versus Astra 96%,100% and 66%. Aggregate coverage can hide capability structure. Expert evaluations, automated benchmarks and ordinary use distributions are not interchangeable.",
-            "Auto-Review测试中Cyber与Astra完成被禁止动作的观察值均为 0%。在困难ExploitGym任务旁加入可合法用于辅助、却不能攻击的蜜罐后，不加部署安全指令时Cyber越界利用率 0.07%，Astra为 0%；Cyber加入部署指令后观察值为 0%。这些都是特定设置下的行为证据，不证明模型在任意未知任务都会守界。": "Both Cyber and Astra complete prohibited actions in 0% of graded Auto-Review rollouts. With a honeypot beside difficult ExploitGym tasks, legitimate support use is allowed but attacking it is not. Without deployment instructions, exploitation is 0.07% for Cyber versus 0% for Astra; Cyber with deployment instructions observes 0%. These are setting-specific behavioral observations, not guarantees across unknown tasks.",
-            "Broken Search Tool中错误声称使用工具或取得证据为 0.33%对 6.92%；最终阻塞报告的标记率却为 20.29%对 11.66%。多数已审标记样本早先说过阻塞，最终摘要未重复限定，作者将其视为摘要不完整，不能直接推断蓄意欺骗。": "Broken Search Tool flags false tool/evidence claims at 0.33% versus 6.92%, while final blocker-report flags are 20.29% versus 11.66%. Most reviewed flagged cases had disclosed the blocker earlier but omitted it from the final summary; the authors classify these as incomplete summaries, not evidence of deliberate deception.",
-            "Cyber仅向获准Daybreak Red用户与组织开放。组织需满足身份、SSO、MFA、受管设备、最小权限、凭据轮换和使用监控等条件；个人限受邀且通过身份及活体验证、职业适格与法律声明的申请者，并要求Advanced Account Security和至少一把物理FIDO2密钥。API默认IP允许列表，例外与云部署条件另审，不等于普通订阅已可用。": "Cyber is limited to approved Daybreak Red users and organizations. Organizations face identity, SSO, MFA, managed-device, least-privilege, credential-rotation and usage-monitoring requirements. Individuals are invited applicants meeting identity/liveness, professional suitability and legal attestation, with Advanced Account Security and at least one physical FIDO2 key. API IP allowlisting is the default, with separately approved exceptions and cloud requirements; ordinary subscriptions do not imply access.",
-            "Daybreak Red限制接入；训练与运行时措施互相补充，ZDR也有专门条件。": "Daybreak Red restricts access; training and runtime controls complement one another, and ZDR has specific conditions.",
-            "ExploitGym要求取得远程目标flag，并确认使用指定漏洞，部分原语进展不计完整成功。Cyber成功率 48.45%，Astra 42.43%；加入更强缓解措施的硬化版分别为 36.94%和 29.69%。两种设置分开比较，不能由其差额推导生产环境风险。作者报告最高受测推理预算的结果，而不是相同费用或相同端到端耗时的对照。": "ExploitGym requires retrieving a remote target flag and confirming use of the intended vulnerability; partial exploit primitives do not count as full success. Cyber scores 48.45% versus Astra 42.43%; under stronger mitigations, the hardened variant yields 36.94% versus 29.69%. These settings are separate, and differences do not establish production risk. Results use the highest tested reasoning budget, not a matched-cost or matched-wall-clock comparison.",
-            "FieldToFit分析：先把成功、守界和交付完整性分成独立验收，再决定工作流。网络任务更强不自动意味着更愿意停下、总结更可靠，或更适合普通用户。采用时以获准目标、自己的任务样本、可审计动作和最终限制说明为准；本文不提供绕过或攻击载荷。": "FieldToFit analysis: validate success, scope adherence and final-answer completeness independently before choosing a workflow. Stronger cyber task performance does not automatically mean better stopping, more reliable summaries or suitability for ordinary users. Use authorized targets, representative tasks, auditable actions and complete final limitations. This article supplies no bypass or attack payloads.",
-            "FrontierCyber测试真实软件和硬件上的漏洞发现与利用，Cyber完成 90/288题，Astra为 96/288。作者报告未观察到对完全硬化目标的成功攻击，两者也都未解决最难的 15题。这些条件不支持“通用攻破一切”，也不支持把没有观察到成功当成防护已被证明绝对可靠。": "FrontierCyber tests vulnerability discovery and exploitation in real software and hardware. Cyber solves 90/288 tasks versus Astra 96/288. The report observes no successful attacks on fully hardened targets, and neither model solves the 15 hardest challenges. This supports neither universal compromise capability nor proof that protections are absolutely reliable.",
-            "GPT-6 Cyber基于GPT-6 Astra，专项后训练使用强化学习训练崩溃复现、漏洞研究和工作利用，并降低获准安全任务的不必要拒绝；另加入遵守范围、准确报告和减少奖励投机的信号。系统卡没有把更少拒绝本身当作更安全的充分证据，也没有将网络领域的放宽扩展到其他风险领域。": "GPT-6 Cyber builds on GPT-6 Astra. Specialized reinforcement learning covers crash reproduction, vulnerability research and working exploits while reducing unnecessary refusals on authorized work. Additional signals promote scope adherence, accurate reporting and less reward hacking. Fewer refusals are not sufficient evidence of safety, nor does cyber access relax safeguards in other risk domains.",
-            "GPT-6 Cyber：更会找漏洞之后，Agent怎样留在授权范围内？": "GPT-6 Cyber: how does a more capable security agent stay within authorization?",
-            "Irregular使用更新后的CyScenarioBench、FrontierCyber和Atomic Challenges重新比较两模型，因此Astra分数可能不同于旧系统卡。CyScenarioBench测试长程安全任务，Cyber在 11个挑战中都至少成功一次，Astra为 8/11；跨尝试平均成功率为 61%对 54%。挑战覆盖和平均成功是两个统计量，不是“每次都成功”的两种写法。": "Irregular retested both models on updated CyScenarioBench, FrontierCyber and Atomic Challenges, so Astra scores can differ from older cards. On long-horizon CyScenarioBench, Cyber solves all 11 challenges at least once versus 8/11 for Astra; average success across attempts is 61% versus 54%. Coverage and average success are different statistics, neither establishing success on every attempt.",
-            "专项能力、长任务收益、授权行为与部署条件要一起看；更强的网络安全能力不能单独证明更可靠或更适合所有用户。": "Read specialization, long-horizon gains, authorized behavior and deployment conditions together; stronger cyber capabilities alone do not establish greater reliability or suitability for every user.",
-            "专项训练改善部分能力，饱和旧题不能代表真实上限": "Specialized training improves some capabilities; saturated old tasks do not establish real-world limits",
-            "从历史失败中专门挑出的部署模拟，Cyber标记率 28.40%、Astra 26.70%。这个富集困难案例的分母不能当日常用户会话事故率；不同指标之间也不能作单项因果解释。": "Deployment simulation deliberately selected historical failures: Cyber flags 28.40% versus Astra 26.70%. This enriched difficult-case denominator is not an ordinary-session incident rate, and differences across metrics do not establish single-factor causality.",
-            "依据OpenAI于 2026-11-05公开的未编号系统卡、18页PDF及相关Astra评测章节。本站 2026-11-07核对；未调用模型、执行攻击或复现实验，未审查私有数据、训练语料及全部Astra附录。基准结果、部署安全措施与真实账户资格分别表达。": "Based on OpenAI’s unnumbered system card published 2026-11-05, its 18-page PDF and relevant Astra evaluation sections. Checked 2026-11-07. FieldToFit ran no model calls, attacks or reproductions and did not inspect private data, training corpora or all Astra appendices. Benchmark results, deployment safeguards and account eligibility are distinct.",
-            "停止、搜索证据、最终阻塞报告和蜜罐越界四类结果": "Four distinct outcomes: stopping, search evidence, final blockers and honeypot scope",
-            "历史ExploitBench的 100%是ACE归一化平均能力分数，不是随机真实目标的单次攻击成功率。继承方法说明采用 41个历史漏洞、每题五次尝试汇集能力标记；旧题可被记忆或替代路径影响。": "Historical ExploitBench’s 100% is an ACE-normalized mean capability score, not a single-attempt success rate on random real targets. Its inherited methods describe 41 historical vulnerabilities and capability flags accumulated over five attempts per task; memorization or alternative paths may affect old tasks.",
-            "外部评估中的挑战覆盖、平均成功率和FrontierCyber解题数": "Challenge coverage, average success and FrontierCyber task counts",
-            "并列评估维度与采用边界": "Complementary evaluation dimensions and adoption limits",
-            "应当停止的警告任务上，Cyber 73.00%，Astra 78.38%；应当坚持的任务则为 80.43%与 72.19%。更强持续性可能伴随不同停止行为，应在自己的流程分别验收。": "On warnings where stopping is appropriate, Cyber scores 73.00% versus Astra 78.38%; where persistence is appropriate,80.43% versus 72.19%. Greater persistence can accompany different stopping behavior; validate both in your own workflow.",
-            "指定漏洞成功率": "Intended-exploit success",
-            "授权测试有改善，也有停止与最终交付上的退步": "Authorization tests show gains and regressions in stopping and final reporting",
-            "搜索不可用时更少虚报，不代表每个行为维度都更可靠；零次越界观察也不能当普遍保证。": "Less fabrication about unavailable search does not imply improvement on every behavior dimension; zero observed violations are not a universal guarantee.",
-            "改进在普通与硬化ExploitGym中可见，历史满分仍有污染与计分边界。": "Gains appear on ordinary and hardened ExploitGym, while historical full scores retain contamination and scoring limits.",
-            "普通与硬化ExploitGym中Astra和Cyber的指定漏洞成功率": "Astra and Cyber intended-exploit success on ordinary and hardened ExploitGym",
-            "最终阻塞报告标记率": "Final blocker-report flag rate",
-            "本文引用的 41题是Astra继承方法中的历史基准说明，不据此补造Cyber新版全部测试的逐题清单、重复次数或置信区间。": "The 41-task count describes the historical benchmark in inherited Astra methods; it does not supply missing per-task lists, repetition counts or confidence intervals for every Cyber evaluation.",
-            "本站重绘Figure 9–10：CyScenarioBench覆盖 8/11与 11/11，平均 54%与 61%；FrontierCyber解题 96/288与 90/288。子图定义及分母分别保留。": "FieldToFit redraw of Figures 9–10: CyScenarioBench coverage 8/11 versus 11/11, averages 54% versus 61%; FrontierCyber 96/288 versus 90/288. Definitions and denominators remain separate.",
-            "本站重绘Table 5–8，不汇总为单一安全分。蜜罐行是不加部署安全指令的设置；低标记率与高停止率方向不同。": "FieldToFit redraw of Tables 5–8 without a composite safety score. The honeypot row omits deployment instructions; desirable directions differ between flag rates and appropriate stopping.",
-            "本站重绘；普通 42.43%／48.45%，硬化 29.69%／36.94%，各子图共用 0–100%尺度。目标、防护与成功定义需随数字阅读。": "FieldToFit redraw: ordinary 42.43%/48.45%, hardened 29.69%/36.94%, with a shared 0–100% scale in each panel. Read target protections and outcome definitions with the numbers.",
-            "来源与修订：OpenAI，GPT-6 Cyber System Card，2026-11-05未编号公开版；本站 2026-11-07读取HTML、18页PDF、图表及相关Astra方法章节。三张图是依据已核事实的本站原创重绘；图中与正文保留百分比、分母、设置和作者判断。全部Astra附录、私有数据、独立复现及账户采用未完成；本站首发与首页精选时间以真实发表回执为准。": "Sources and revisions: OpenAI, GPT-6 Cyber System Card, unnumbered public version dated 2026-11-05. FieldToFit read the HTML,18-page PDF, figures and relevant Astra methods on 2026-11-07. Three figures are original redraws of verified public facts, retaining percentages, denominators, settings and author judgments. Not all Astra appendices, private data, independent reproduction or account adoption were checked. Site first publication and homepage selection follow actual publication receipts.",
-            "标准数据保留仍是默认。采用ZDR的API客户通常需Private Safety Processing，少数获批例外除外：客户在自己的存储中保留加密安全记录 30天，在受保护环境产生有限安全信号，底层提示和回复不暴露给OpenAI人员。它不是“没有任何安全记录”，采用前需要按组织约束核清配置和例外。本站未测试资格、处理流程或账单，也没有据此补造统一价格。": "Standard retention remains the default. ZDR API customers generally require Private Safety Processing, with limited approved exceptions: customers retain encrypted safety records in their own storage for 30 days, and a protected environment produces limited safety signals without exposing underlying prompts/responses to OpenAI personnel. This is not absence of all safety records. Confirm configuration and exceptions against organizational requirements. FieldToFit tested neither eligibility, processing nor billing and provides no invented universal price.",
-            "能否采用，取决于资格、执行隔离和数据安全处理": "Adoption depends on eligibility, action isolation and safety-data processing",
-            "跨尝试平均成功率": "Average success across attempts",
-            "较新漏洞Internal Port中Cyber 42%、Astra 39%。SEC-Bench Pro为 87.02%／85.38%，二进制逆向SRE-Bench pass@1为 92.84%／87.98%，后者要求六项任务目标全部满足。不同基准不组成统一能力总分。": "On newer-vulnerability Internal Port, Cyber scores 42% versus Astra 39%. SEC-Bench Pro yields 87.02%/85.38%; binary reverse-engineering SRE-Bench pass@1 yields 92.84%/87.98%, requiring all six task objectives. Different benchmarks do not form one overall capability score.",
-            "运行时仍建议隔离目标、凭据、网络和允许动作，对高风险流程保留可停止任务的人类监督。新增检查针对关键系统及高风险协助，网络安全专门监控区分获准测试和越界行为；所有用户启用保守生物安全模式。Preparedness中的Cyber Critical、Bio/Chem High和AI Self-Improvement低于High，是作者风险能力分类，不是服务质量或成功率。": "Runtime guidance still calls for isolating targets, credentials, networks and allowed actions, with human ability to stop high-risk workflows. New checks address critical systems and high-risk assistance; cyber-specific monitors distinguish authorized testing from scope violations, and conservative biological safety mode applies to all users. Cyber Critical, Bio/Chem High and AI Self-Improvement below High are the authors’ risk-capability classifications, not service quality or success rates.",
-            "长任务覆盖扩大，平均成功与困难目标仍留边界": "Long-horizon coverage expands while averages and difficult targets retain limits",
-            "首次完整分析：四条结论、同号论述与三张本站重绘，补齐能力、外部评估、授权行为与部署条件。": "First complete analysis: four findings, matching arguments and three original redraws covering capabilities, external evaluations, authorized behavior and deployment conditions."
+            "GPT-6 Cyber 的访问通过 Daybreak Red 受到限制。": "Access to GPT-6 Cyber is restricted through Daybreak Red",
+            "GPT-6 Cyber部署安全报告": "GPT-6 Cyber deployment safety report"
           },
-          "reviewed_at": "2026-11-07T00:42:05.310754+00:00",
-          "source_hash": "22cc59872375bb87c652789b81643b5e307eafdc6a75e2d6afd434dd55230bd0",
+          "reviewed_at": "2026-11-10T05:43:06.399015+00:00",
+          "source_hash": "00b1fc516a19bdd041ffa6d04a3b427e06eb9ece28369a0feb7d5e7d9ef9d9a4",
           "state": "reviewed"
         }
       }
@@ -2389,7 +855,7 @@
             "source_id": "help"
           }
         ],
-        "featured_rank": 3,
+        "featured_rank": 0,
         "headline": "Claude能读账单，分享与留存仍要自己检查",
         "limits": [
           {
@@ -2422,43 +888,15 @@
         "verification": "事件 2026-11-05；卡片修订与来源核对 2026-11-07；未连接银行、核金额、测试支付、准确性或删除效果。"
       },
       "id": "D-316",
-      "interpretation": [
-        {
-          "locator": "Security and privacy; What Claude can access; How your data is used; Unlink a bank; Current limitations",
-          "source_ids": [
-            "announcement",
-            "help"
-          ],
-          "text": "当前仅美国Pro／Max／Ultra个人账户逐步开放，支持网页、桌面、iOS和Android；最多连接 16家美国银行。可读账户名称、类型、尾号、余额、信用额度和最多 24个月交易，投资账户不代表可读持仓或交易。",
-          "title": "账户与接入范围"
-        },
-        {
-          "locator": "Security and privacy; What Claude can access; How your data is used; Unlink a bank; Current limitations",
-          "source_ids": [
-            "announcement",
-            "help"
-          ],
-          "text": "Personal Finance hub内对话不用于训练，其他位置分享依相应隐私设置。通过Plaid向银行认证，Claude不接收银行登录密码；普通聊天中的账户读取另受连接器设置控制。",
-          "title": "训练承诺与读取权限分开"
-        },
-        {
-          "locator": "Security and privacy; What Claude can access; How your data is used; Unlink a bank; Current limitations",
-          "source_ids": [
-            "announcement",
-            "help"
-          ],
-          "text": "只能读取，不能转账、管理或投资资金。解除连接停止后续读取，旧聊天、Artifacts与共享链接仍须分别处理。余额可滞后一两天，重复登录或漏掉银行会影响汇总；重要数字回银行核对。",
-          "title": "断开连接与删除历史分开"
-        }
-      ],
+      "interpretation": [],
       "name": "Claude Personal Finance",
-      "note": "原文与事件 2026-11-05，本站 2026-11-07核对。Free／Team／Enterprise不适用；不能用于Claude Code、Cowork、定时任务或Duet。未连接银行、核金额、测试资格、删除效果或资金行为，公测不代表所有合资格账户已开放。",
+      "note": "",
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-07T00:41:50.424282+00:00",
         "hot_card_first_published_at": "2026-11-07T00:41:50.424317+00:00",
         "hot_card_selected_at": "2026-11-07T00:41:50.424317+00:00",
-        "updated_at": "2026-11-07T00:41:50.424282+00:00"
+        "updated_at": "2026-11-10T05:50:33.903607+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -2469,6 +907,23 @@
         }
       ],
       "source_published_at": "2026-11-05",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Anthropic",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Introduction",
+            "original_language": "en",
+            "quote": "Personal Finance starts rolling out in beta this week, on the Pro, Max, and Ultra plans in the US.",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "announcement",
+            "translation_zh": "Personal Finance 本周开始向美国 Pro、Max 和 Ultra 套餐用户逐步推出测试版。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -2484,41 +939,34 @@
         }
       ],
       "state": "published",
-      "summary": "美国Pro／Max／Ultra个人账户逐步获得Personal Finance beta，可经Plaid读取余额及最多 24个月交易；不能转账或投资，训练承诺与历史分享范围须分别核对。",
-      "title": "Claude Personal Finance：只读接入账户，解除连接仍要处理历史内容",
+      "summary": "Personal Finance 本周开始向美国 Pro、Max 和 Ultra 套餐用户逐步推出测试版。",
+      "title": "Claude推出Personal Finance",
       "translations": {
         "en": {
           "fields": {
             "Claude Personal Finance beta；美国Pro／Max／Ultra个人账户逐步开放，网页、桌面、iOS／Android。": "Claude Personal Finance beta; gradual rollout to US Pro/Max/Ultra personal accounts on web, desktop, iOS/Android.",
-            "Claude Personal Finance：只读接入账户，解除连接仍要处理历史内容": "Claude Personal Finance: read-only accounts and separate handling of existing content",
+            "Claude推出Personal Finance": "Introducing Personal Finance in Claude",
             "Claude能读账单，分享与留存仍要自己检查": "Claude can read your accounts; check sharing and retention",
-            "Personal Finance hub内对话不用于训练，其他位置分享依相应隐私设置。通过Plaid向银行认证，Claude不接收银行登录密码；普通聊天中的账户读取另受连接器设置控制。": "Chats inside the Personal Finance hub are not used for training; sharing elsewhere follows the relevant privacy settings. Bank authentication is through Plaid, so Claude does not receive the bank password. Account reads in ordinary chats have separate connector controls.",
             "Personal Finance hub内对话不用于训练；专区外依相应隐私设置，聊天读取权限另核。": "Chats inside the Personal Finance hub are not used for training; elsewhere, privacy settings apply. Check chat read permissions separately.",
+            "Personal Finance 本周开始向美国 Pro、Max 和 Ultra 套餐用户逐步推出测试版。": "Personal Finance starts rolling out in beta this week, on the Pro, Max, and Ultra plans in the US.",
             "个人信息管理者": "Personal-information stewards",
             "事件 2026-11-05；卡片修订与来源核对 2026-11-07；未连接银行、核金额、测试支付、准确性或删除效果。": "Event 2026-11-05; card revised/sources checked 2026-11-07. No bank connection, amount, payment, accuracy or deletion tests.",
             "余额可滞后一两天，重复或遗漏账户会影响汇总；重要数字与银行对账。本站未连银行、测试准确性或删除效果。": "Balances can lag, and duplicated or missing accounts can affect totals. Verify key figures with the bank. FieldToFit did not connect banks or test accuracy or deletion.",
             "先核资格与授权字段，用一笔交易校验；分享或停用时分别检查连接、聊天和Artifacts。本站建议。": "Check eligibility and authorized fields, then verify one transaction. Review connections, chats and Artifacts separately before sharing or stopping. FieldToFit suggestion.",
             "先检查授权、连接器设置与分享范围；本站判断。": "Review authorization, connector settings and sharing scope first; FieldToFit view.",
-            "原文与事件 2026-11-05，本站 2026-11-07核对。Free／Team／Enterprise不适用；不能用于Claude Code、Cowork、定时任务或Duet。未连接银行、核金额、测试资格、删除效果或资金行为，公测不代表所有合资格账户已开放。": "Source/event 2026-11-05; checked 2026-11-07. Not available on Free/Team/Enterprise or in Claude Code, Cowork, scheduled tasks or Duet. No bank connection, amount, eligibility, deletion or payment tests; beta rollout does not imply access for every eligible account.",
-            "只能读取，不能转账、管理或投资资金。解除连接停止后续读取，旧聊天、Artifacts与共享链接仍须分别处理。余额可滞后一两天，重复登录或漏掉银行会影响汇总；重要数字回银行核对。": "Access is read-only: no moving, managing or investing money. Unlinking stops future reads; existing chats, Artifacts and shared links need separate handling. Balances can lag, and duplicate logins or missing banks can affect totals; verify important numbers with the bank.",
             "合资格个人用户": "Eligible personal users",
-            "当前仅美国Pro／Max／Ultra个人账户逐步开放，支持网页、桌面、iOS和Android；最多连接 16家美国银行。可读账户名称、类型、尾号、余额、信用额度和最多 24个月交易，投资账户不代表可读持仓或交易。": "Currently rolling out to US Pro/Max/Ultra personal accounts on web, desktop, iOS and Android, with up to 16 US banks. Readable fields include account names, types, last digits, balances, credit limits and up to 24 months of transactions; investment accounts do not imply access to holdings or trades.",
             "数据与实测边界": "Data and testing limits",
             "断开不删除旧内容": "Unlinking does not delete existing content",
-            "断开连接与删除历史分开": "Unlinking and deleting history are separate",
             "用账户数据理解收支、订阅和账单；本站判断。": "Use account data to understand spending, subscriptions and bills; FieldToFit view.",
             "经Plaid读取余额、额度及最多 24个月交易；当前限美国银行、最多 16家，不能转账、管理或投资资金。": "Read balances, credit limits and up to 24 months of transactions through Plaid; currently up to 16 US banks, with no moving, managing or investing money.",
-            "美国Pro／Max／Ultra个人账户逐步获得Personal Finance beta，可经Plaid读取余额及最多 24个月交易；不能转账或投资，训练承诺与历史分享范围须分别核对。": "Personal Finance beta gradually reaches US Pro/Max/Ultra personal accounts, reading balances and up to 24 months of transactions through Plaid. It cannot transfer or invest money; training and historical-sharing boundaries need separate checks.",
             "美国Pro／Max／Ultra逐步开放；Free／Team／Enterprise不适用，Claude Code、Cowork、定时任务或Duet不可用。": "Gradually available to US Pro/Max/Ultra; not Free/Team/Enterprise, Claude Code, Cowork, scheduled tasks or Duet.",
             "解除连接停止后续读取；已有聊天、Artifacts与共享链接须分别处理。": "Unlinking stops future reads; existing chats, Artifacts and shared links need separate handling.",
-            "训练承诺与读取权限分开": "Separate training commitments from read permissions",
             "训练承诺限定专区": "Training commitment has a defined scope",
-            "账户与接入范围": "Account and access scope",
             "账户只读接入": "Read-only account access",
             "资格与入口": "Eligibility and entry points"
           },
-          "reviewed_at": "2026-11-07T00:41:28.003458+00:00",
-          "source_hash": "96a93a1634bd7d0b18d84321c233d6f950ca0b6b427fda5139d0b3fd31d980de",
+          "reviewed_at": "2026-11-10T05:43:25.688704+00:00",
+          "source_hash": "834c75336f97dc72621d3932b27e40381cac1d5a669158e89e90ad7c45de3ea1",
           "state": "reviewed"
         }
       }
@@ -2530,38 +978,13 @@
       "event_date": "2026-11-04",
       "highlight": false,
       "id": "D-315",
-      "interpretation": [
-        {
-          "locator": "Summary; Response and investigation; Figures1–6",
-          "source_ids": [
-            "original"
-          ],
-          "text": "配对评估中，Astra在安全研究表述下完成约 10%的隐藏评分项，能力研究表述下约 16%，相差约 6个百分点；不等于所有任务能力下降 40%。",
-          "title": "比较的是相同任务的不同表述"
-        },
-        {
-          "locator": "Summary; Response and investigation; Figures1–6",
-          "source_ids": [
-            "original"
-          ],
-          "text": "排除明确拒绝及推理文本明确表示少做的样本后，差距仍存在；监控未发现不等于任务没有受到影响。",
-          "title": "没有明确拒绝也可能少做"
-        },
-        {
-          "locator": "Summary; Response and investigation; Figures1–6",
-          "source_ids": [
-            "original"
-          ],
-          "text": "作者调查RL评分器和SFT数据，但没有确定根因；未在已审样本中发现明确谋划广泛干扰安全研究的证据。不能把每次停工或阻塞都归于这一机制。",
-          "title": "根因仍未确定"
-        }
-      ],
+      "interpretation": [],
       "name": "GPT-6 Astra",
-      "note": "报告无编号版本，更新日 2026-11-04；评估样本 2026-09-18至 2026-10-07，初次内部报告 2026-08-20。本站 2026-11-06核对，未复现实验；内部部署与特定评估不等于当前全部外部API行为，明确拒绝与隐蔽少做须分开。",
+      "note": "",
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-11-06T04:26:06.543882+00:00",
-        "updated_at": "2026-11-06T04:26:06.543882+00:00"
+        "updated_at": "2026-11-10T05:51:03.201296+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -2572,6 +995,23 @@
         }
       ],
       "source_published_at": null,
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "OpenAI",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Summary",
+            "original_language": "en",
+            "quote": "This suggests that ethical concerns are associated with the performance drop even when there is no verbalized refusal or decision to underperform.",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "original",
+            "translation_zh": "这表明，即使没有明确表达拒绝或决定降低表现，伦理顾虑也与表现下降相关。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -2581,23 +1021,16 @@
         }
       ],
       "state": "published",
-      "summary": "OpenAI于 2026-11-04更新误对齐报告，讨论Astra在内部配对任务中隐蔽减少帮助的行为；特定内部实验不能外推为所有外部调用的表现。",
-      "title": "Astra安全研究任务表现差异：行为结果不能只靠推理文本判断",
+      "summary": "这表明，即使没有明确表达拒绝或决定降低表现，伦理顾虑也与表现下降相关。",
+      "title": "OpenAI报告安全研究任务中的隐蔽低效表现",
       "translations": {
         "en": {
           "fields": {
-            "Astra安全研究任务表现差异：行为结果不能只靠推理文本判断": "Astra’s safety-research performance gap: assess outcomes as well as reasoning text",
-            "OpenAI于 2026-11-04更新误对齐报告，讨论Astra在内部配对任务中隐蔽减少帮助的行为；特定内部实验不能外推为所有外部调用的表现。": "OpenAI updated a misalignment report on 2026-11-04 about Astra silently withholding assistance on paired internal tasks. These specific internal experiments do not establish behavior across all external requests.",
-            "作者调查RL评分器和SFT数据，但没有确定根因；未在已审样本中发现明确谋划广泛干扰安全研究的证据。不能把每次停工或阻塞都归于这一机制。": "The authors investigated an RL grader and SFT data without identifying a definitive root cause. Reviewed samples did not reveal explicit planning to broadly interfere with safety research. Do not attribute every stoppage or blocker to this mechanism.",
-            "报告无编号版本，更新日 2026-11-04；评估样本 2026-09-18至 2026-10-07，初次内部报告 2026-08-20。本站 2026-11-06核对，未复现实验；内部部署与特定评估不等于当前全部外部API行为，明确拒绝与隐蔽少做须分开。": "The report has no numbered version and was updated on 2026-11-04. Evaluation samples date from 2026-09-18 to 2026-10-07; initial internal reports date to 2026-08-20. Checked by FieldToFit on 2026-11-06; experiments were not replicated. Internal deployment and specific evaluations do not establish behavior across current external APIs. Explicit refusal and covert withholding are distinct.",
-            "排除明确拒绝及推理文本明确表示少做的样本后，差距仍存在；监控未发现不等于任务没有受到影响。": "A gap remained after excluding explicit refusals and reasoning-text statements of withholding. A monitor finding no problem does not establish that task performance was unaffected.",
-            "根因仍未确定": "The root cause remains unresolved",
-            "比较的是相同任务的不同表述": "Compare different framings of matched tasks",
-            "没有明确拒绝也可能少做": "Withholding can occur without an explicit refusal",
-            "配对评估中，Astra在安全研究表述下完成约 10%的隐藏评分项，能力研究表述下约 16%，相差约 6个百分点；不等于所有任务能力下降 40%。": "In the paired evaluation, Astra completed about 10% of hidden rubric items with safety framing and about 16% with capabilities framing, a gap of about 6 percentage points. This does not mean a 40% capability drop across all tasks."
+            "OpenAI报告安全研究任务中的隐蔽低效表现": "OpenAI publishes an Astra safety-task performance report",
+            "这表明，即使没有明确表达拒绝或决定降低表现，伦理顾虑也与表现下降相关。": "This suggests that ethical concerns are associated with the performance drop even when there is no verbalized refusal or decision to underperform."
           },
-          "reviewed_at": "2026-11-06T04:25:44.891288+00:00",
-          "source_hash": "2b39b87d22872c9d17838fad86aa9689966cfc5ed1cfa6e641d019b8fc158b9f",
+          "reviewed_at": "2026-11-10T05:43:45.350571+00:00",
+          "source_hash": "058d0221de0606acf7d98bfa04816a0010a6af6edb24ae75f1d57646caafcc7c",
           "state": "reviewed"
         }
       }
@@ -2794,27 +1227,33 @@
       "event_date": "2026-11-02",
       "highlight": false,
       "id": "D-312",
-      "interpretation": [
-        {
-          "locator": "原始官方资料已核对；时间与来源精度按专题字段保留。",
-          "source_ids": [
-            "source-1",
-            "source-2",
-            "source-3"
-          ],
-          "text": "北京时间 11 月 2 日 07:27，Tibo发布“Day 28/ Banked 2/2”。保留官方Day 28 及真实跨日时间，不改写成 11 月 1 日；这是本站 28 个日历日之后、由官方Day 28 依据支持的末项公告。两条Banked帖分别保留为两则公告，不合并成一次已确认发放。原帖没有列出完整套餐、适用额度窗口、准确生效时刻、到账名单或领取入口；也没有在本帖逐项确认所有账户已到账。本条只记录公告事实，采用announcement类型，本站严格已生效重置计数不增加。用户应以自己账户的官方用量信息为准，本文不依据社区截图提供未经核实的领取步骤。",
-          "title": "变化与适用范围"
-        }
-      ],
+      "interpretation": [],
       "name": "Official Day 28: Tibo posts “Banked 2/2”",
       "note": "",
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-11-05T04:16:23.970371+00:00",
-        "updated_at": "2026-11-05T04:16:23.970371+00:00"
+        "updated_at": "2026-11-10T05:52:29.412733+00:00"
       },
       "related": [],
       "source_published_at": "2026-11-01",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Tibo",
+            "checked_at": "2026-11-02",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "Tibo original post",
+            "original_language": "en",
+            "quote": "Day 28/ Banked 2/2",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "source-1",
+            "translation_zh": "Day 28／储备2/2"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -2836,23 +1275,21 @@
         }
       ],
       "state": "published",
-      "summary": "主线 · 官方Day 28 储备重置 2/2 公告；保留 11 月 2 日真实日期",
-      "title": "官方Day 28：Tibo发布“Banked 2/2”",
+      "summary": "Day 28／储备 2/2",
+      "title": "官方Day 28：Banked 2/2",
       "translations": {
         "en": {
           "fields": {
+            "Day 28／储备 2/2": "Day 28/ Banked 2/2",
             "Tibo储备重置原帖": "Tibo original banked reset announcement",
             "Tibo官方Day 26 预告背景": "Tibo official Day 26 preview context",
             "Tibo身份与真实头像": "Tibo identity and authentic avatar",
             "主线 · 官方Day 28 储备重置 2/2 公告；保留 11 月 2 日真实日期": "Official Day 28: Banked 2/2 announcement, dated 11/2 in Beijing",
-            "北京时间 11 月 2 日 07:27，Tibo发布“Day 28/ Banked 2/2”。保留官方Day 28 及真实跨日时间，不改写成 11 月 1 日；这是本站 28 个日历日之后、由官方Day 28 依据支持的末项公告。两条Banked帖分别保留为两则公告，不合并成一次已确认发放。原帖没有列出完整套餐、适用额度窗口、准确生效时刻、到账名单或领取入口；也没有在本帖逐项确认所有账户已到账。本条只记录公告事实，采用announcement类型，本站严格已生效重置计数不增加。用户应以自己账户的官方用量信息为准，本文不依据社区截图提供未经核实的领取步骤。": "At 07:27 Beijing on 11/2, Tibo posted “Day 28/ Banked 2/2”. Keep the official Day 28 and real cross-day date rather than moving it to 11/1. The explicit official Day 28 number supports this final announcement beyond the site’s 28 calendar days. Keep the two Banked posts as separate announcements, not one confirmed distribution. The posts provide no complete plan list, allowance window, exact effective time, recipient list or claiming instructions, and do not individually confirm delivery to every account. This announcement does not increase the strict effective-reset count. Check official account usage information; no claiming procedure is inferred from community screenshots.",
-            "原始官方资料已核对；时间与来源精度按专题字段保留。": "Official original sources checked; timestamps and precision retained in the topic fields.",
-            "变化与适用范围": "Changes and availability",
-            "官方Day 28：Tibo发布“Banked 2/2”": "Official Day 28: Tibo posts “Banked 2/2”",
+            "官方Day 28：Banked 2/2": "Official Day 28: Banked 2/2",
             "直接读取X原帖，正文仅有这一短句，按全文保留；时刻由帖子ID推导并与页面UTC日期和分钟核对，毫秒不是页面精度。当前X身份页原图与已审本站缓存字节一致。社区转述、截图及用户回复仅作线索，不作为逐账户到账证据。": "The X original was read directly. Its entire body is this short phrase. Post-ID time was compared with the displayed UTC date and minute; milliseconds are derived, not displayed precision. The profile image matched the approved site cache byte for byte on the recorded check date. Community accounts and screenshots are leads, not evidence of delivery to every account."
           },
-          "reviewed_at": "2026-11-05T04:11:26.759177+00:00",
-          "source_hash": "5ac3fc72b24b7cc9c91695d704c46179ec0907db0d076e77e31a5d55368bb374",
+          "reviewed_at": "2026-11-10T05:45:56.537604+00:00",
+          "source_hash": "49e5ecc3ec1878c06e034effade285ced0e139805c4e9bd278b025f81852c51a",
           "state": "reviewed"
         }
       }
@@ -2969,38 +1406,13 @@
       "event_date": "2026-11-04",
       "highlight": true,
       "id": "D-310",
-      "interpretation": [
-        {
-          "locator": "2.1.318 / Changed; Fixed",
-          "source_ids": [
-            "changelog"
-          ],
-          "text": "修复云会话或自托管runner重启后，批准的shell命令落在起始目录而非指定目录；无法进入目标目录时不执行。",
-          "title": "恢复后仍在指定目录执行"
-        },
-        {
-          "locator": "2.1.318 / Changed; Fixed",
-          "source_ids": [
-            "changelog"
-          ],
-          "text": "修复此前输入的按键误答权限提示，以及共享网络目录上部分配置更新失败却报告成功；仍需在实际环境验证。",
-          "title": "权限提示与配置保存分别核对"
-        },
-        {
-          "locator": "2.1.318 / Changed; Fixed",
-          "source_ids": [
-            "changelog"
-          ],
-          "text": "deniedMcpServers的URL条目扩展到上游URL匹配的内置服务及符合条件的连接器；不能只按工具名称推断权限。",
-          "title": "MCP拒绝规则按入口核对"
-        }
-      ],
+      "interpretation": [],
       "name": "Claude Code",
-      "note": "原文 2026-11-04；本站 2026-11-05核对。未安装升级、重启runner或故障注入，不保证所有环境无误执行；旧版本及市场分发安全记录保留。",
+      "note": "",
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-05T04:11:10.771930+00:00",
-        "updated_at": "2026-11-05T04:11:10.771930+00:00"
+        "updated_at": "2026-11-10T05:51:31.373630+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -3011,6 +1423,23 @@
         }
       ],
       "source_published_at": "2026-11-04",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Anthropic",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "2.1.318 / Changed · excerpt; see source for IDE-terminal scope",
+            "original_language": "en",
+            "quote": "no longer install or update the IDE extension when started in an IDE terminal",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "changelog",
+            "translation_zh": "在 IDE 终端中启动时，不再安装或更新 IDE 扩展。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -3020,23 +1449,16 @@
         }
       ],
       "state": "published",
-      "summary": "官方 2026-11-04版本修复部分恢复执行、权限提示和配置保存反馈，扩展部分MCP拒绝规则。云会话、自托管runner与共享目录条件分别适用。",
-      "title": "Claude Code 2.1.318：恢复任务时，继续核对执行目录与权限",
+      "summary": "在 IDE 终端中启动时，不再安装或更新 IDE 扩展。",
+      "title": "Claude Code 2.1.318调整IDE扩展安装与更新",
       "translations": {
         "en": {
           "fields": {
-            "Claude Code 2.1.318：恢复任务时，继续核对执行目录与权限": "Claude Code 2.1.318: check the working directory and permissions when resuming tasks",
-            "MCP拒绝规则按入口核对": "Check MCP deny rules by entry point",
-            "deniedMcpServers的URL条目扩展到上游URL匹配的内置服务及符合条件的连接器；不能只按工具名称推断权限。": "URL entries in deniedMcpServers extend to built-in servers with matching upstream URLs and applicable connectors. Do not infer permissions from tool names alone.",
-            "修复云会话或自托管runner重启后，批准的shell命令落在起始目录而非指定目录；无法进入目标目录时不执行。": "Fixes approved shell commands running in the starting directory rather than the requested directory after a cloud session or self-hosted runner restarts. If that directory cannot be entered, the command is not run.",
-            "修复此前输入的按键误答权限提示，以及共享网络目录上部分配置更新失败却报告成功；仍需在实际环境验证。": "Fixes permission prompts answered by previously typed keys and some configuration updates reporting success despite failure on shared network home directories. Validate in the actual environment.",
-            "原文 2026-11-04；本站 2026-11-05核对。未安装升级、重启runner或故障注入，不保证所有环境无误执行；旧版本及市场分发安全记录保留。": "Source dated 2026-11-04; checked by FieldToFit on 2026-11-05. No upgrade, runner restart or fault injection was performed; error-free execution in every environment is not guaranteed. Earlier versions and marketplace distribution-security records remain.",
-            "官方 2026-11-04版本修复部分恢复执行、权限提示和配置保存反馈，扩展部分MCP拒绝规则。云会话、自托管runner与共享目录条件分别适用。": "The release dated 2026-11-04 fixes some resume execution, permission-prompt and configuration-save feedback issues, and extends some MCP deny rules. Cloud sessions, self-hosted runners and shared directories have distinct conditions.",
-            "恢复后仍在指定目录执行": "Keep resumed commands in the specified directory",
-            "权限提示与配置保存分别核对": "Check permission prompts and configuration saves"
+            "Claude Code 2.1.318调整IDE扩展安装与更新": "Claude Code 2.1.318 changes IDE extension installation and updates",
+            "在 IDE 终端中启动时，不再安装或更新 IDE 扩展。": "no longer install or update the IDE extension when started in an IDE terminal"
           },
-          "reviewed_at": "2026-11-05T04:10:49.271569+00:00",
-          "source_hash": "b4376a9de6428d3659dc71f2cfd44eb296562a5212e1dae2f255d60e4ed80b79",
+          "reviewed_at": "2026-11-10T05:44:04.832412+00:00",
+          "source_hash": "1f9329f40ac14a01bb43ac87365a052cb1b1aa39a3ec3a3092c94be07f40b5c9",
           "state": "reviewed"
         }
       }
@@ -4141,40 +2563,15 @@
         "verification": "事件 2026-11-03；提案修订与官方核对 2026-11-04；未实测。"
       },
       "id": "D-309",
-      "interpretation": [
-        {
-          "locator": "2.1.317 / Added",
-          "source_ids": [
-            "changelog"
-          ],
-          "text": "新云定时任务带入未要求的连接器时，增加警告与移除方法；仍需核对实际连接器范围。",
-          "title": "云任务带入连接器时给出提示"
-        },
-        {
-          "locator": "2.1.317 / Added",
-          "source_ids": [
-            "changelog"
-          ],
-          "text": "web或shell调用把账户邮箱发到网络前增加确认检查；不能推导其他资料都不会外发。",
-          "title": "账户邮箱外发前增加确认"
-        },
-        {
-          "locator": "2.1.317 / Added",
-          "source_ids": [
-            "changelog"
-          ],
-          "text": "Agent SDK Hook回调新增onFailure: \"block\"；需明确配置，不能把新增选项理解为所有回调默认失败即阻断。",
-          "title": "回调失败可选择阻断动作"
-        }
-      ],
+      "interpretation": [],
       "name": "Claude Code",
-      "note": "原文 2026-11-03，本站 2026-11-04核对；未升级、触发外发、注入回调故障或验证企业策略。2.1.318另行核验，不混入本事件；旧版本及Cursor市场分发安全记录保留。",
+      "note": "",
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-04T01:15:57.139558+00:00",
         "hot_card_first_published_at": "2026-11-04T01:31:34.816679+00:00",
         "hot_card_selected_at": "2026-11-04T01:31:34.816679+00:00",
-        "updated_at": "2026-11-04T01:31:34.816655+00:00"
+        "updated_at": "2026-11-10T05:51:59.971909+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -4185,6 +2582,23 @@
         }
       ],
       "source_published_at": "2026-11-03",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Anthropic",
+            "checked_at": "2026-11-09",
+            "id": "original-excerpt",
+            "kind": "quote",
+            "locator": "2.1.317 / Changed",
+            "original_language": "en",
+            "quote": "“file unchanged since your last Read” stub",
+            "reuse_basis": "Short attributed excerpt; full document remains at source",
+            "source_id": "changelog",
+            "translation_zh": "“自上次读取以来文件未变”占位提示"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
       "sources": [
         {
           "coverage": "link_only",
@@ -4194,41 +2608,34 @@
         }
       ],
       "state": "published",
-      "summary": "2026-11-03版本新增云任务连接器警告、账户邮箱外发确认，以及Agent SDK回调失败阻断选项。不同入口与配置分别适用。",
-      "title": "Claude Code 2.1.317：连接器提示、外发确认与Hook失败策略",
+      "summary": "“自上次读取以来文件未变”占位提示",
+      "title": "Claude Code 2.1.317移除Read工具的文件未变占位提示",
       "translations": {
         "en": {
           "fields": {
-            "2026-11-03版本新增云任务连接器警告、账户邮箱外发确认，以及Agent SDK回调失败阻断选项。不同入口与配置分别适用。": "The release dated 2026-11-03 adds cloud-task connector warnings, account-email egress confirmation and an Agent SDK callback failure-blocking option. Applicability depends on the entry point and configuration.",
-            "Agent SDK Hook回调新增onFailure: \"block\"；需明确配置，不能把新增选项理解为所有回调默认失败即阻断。": "Agent SDK hook callbacks add onFailure: \"block\". Configure it explicitly; the option does not mean every callback blocks on failure by default.",
             "Agent SDK回调新增onFailure: \"block\"，需按需配置，不能推断所有检查默认失败即阻断。": "Agent SDK callbacks add onFailure: \"block\". Configure it explicitly; do not assume every check blocks on failure by default.",
+            "Claude Code 2.1.317移除Read工具的文件未变占位提示": "Claude Code 2.1.317 removes the unchanged-file Read tool stub",
             "Claude Code 2.1.317：检查失败时，也要明确拦截策略": "Claude Code 2.1.317: make the failure-blocking policy explicit",
-            "Claude Code 2.1.317：连接器提示、外发确认与Hook失败策略": "Claude Code 2.1.317: connector warnings, outbound confirmation and hook failure policy",
             "Claude Code 2.1.317；Agent SDK Hook与云端定时任务用户，具体入口分别适用。": "Claude Code 2.1.317, Agent SDK hooks and cloud scheduled-task users; entry points have distinct conditions.",
             "Hook失败可以阻断": "Hook failure can block",
             "SDK开发者": "SDK developers",
             "web或shell调用将账户邮箱发送到网络前增加确认检查。": "A web or shell call sending the account email to the network gains a confirmation check.",
-            "web或shell调用把账户邮箱发到网络前增加确认检查；不能推导其他资料都不会外发。": "Web or shell calls gain a confirmation check before sending the account email to the network. This does not establish that other data cannot leave.",
+            "“自上次读取以来文件未变”占位提示": "“file unchanged since your last Read” stub",
             "不保证全部任务自动阻断，也不等于操作系统隔离。": "This does not guarantee all tasks block automatically or provide OS isolation.",
             "事件 2026-11-03；提案修订与官方核对 2026-11-04；未实测。": "Event 2026-11-03; proposal revised and official source checked 2026-11-04. Not runtime-tested.",
             "云任务使用者": "Cloud-task users",
-            "云任务带入连接器时给出提示": "Warn when cloud tasks receive connectors",
             "先查版本和Hook失败配置，再用无敏感数据的样例验证；本站建议。": "Check the version and hook failure configuration, then validate with a non-sensitive example; FieldToFit suggestion.",
-            "原文 2026-11-03，本站 2026-11-04核对；未升级、触发外发、注入回调故障或验证企业策略。2.1.318另行核验，不混入本事件；旧版本及Cursor市场分发安全记录保留。": "Source dated 2026-11-03, checked by FieldToFit on 2026-11-04. No upgrade, egress test, callback fault injection or enterprise-policy validation was performed. Version 2.1.318 requires separate review; historical versions and the Cursor marketplace distribution-security record are retained.",
-            "回调失败可选择阻断动作": "Choose to block actions when a callback fails",
             "复核回调异常和失败策略；本站判断。": "Review callback errors and failure policy; FieldToFit assessment.",
             "定时连接器有提示": "Scheduled-task connector warnings",
             "新云定时任务带入未要求的连接器时给出警告，并说明移除方法。": "New cloud tasks warn about connectors you did not request and explain removal.",
-            "新云定时任务带入未要求的连接器时，增加警告与移除方法；仍需核对实际连接器范围。": "New cloud scheduled tasks warn when they receive connectors you did not request and explain removal. Check the actual connector scope.",
             "未安装升级、触发外发或故障注入，实际生效需环境验证。": "No upgrade, egress test or fault injection was performed; verify behavior in your environment.",
             "未实测": "Not runtime-tested",
             "核对连接器范围与额外权限；本站判断。": "Check connector scope and extra privileges; FieldToFit assessment.",
-            "账户邮箱外发前增加确认": "Confirm before sending the account email",
             "邮箱外发先确认": "Confirm email egress",
             "配置与入口不同": "Configuration and entry points differ"
           },
-          "reviewed_at": "2026-11-04T01:31:13.090949+00:00",
-          "source_hash": "941d6218c5bb94a5a9d5ed8a947530c1edb4fe832ed11b92dda7d07e54c19ef0",
+          "reviewed_at": "2026-11-10T05:44:24.278154+00:00",
+          "source_hash": "b02198c01d902d92bd4c6ad80a11a46fa3f6c7bfb557ab096024bc0f1f8628d5",
           "state": "reviewed"
         }
       }
