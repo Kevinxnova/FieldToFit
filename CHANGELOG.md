@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.2"></a>
+## v1.20.2 · 已选六项动态、Muse Ember评估与Fable分享卡 · 2026-11-10
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-10 -->
+<!-- public-title:en: Six selected updates, Muse Ember evaluation and Fable card -->
+<!-- release-summary:zh:start -->
+- 已发表获批Fable／Mythos 5.2、Codex CLI、Muse Ember、Claude Code、AWS采购与Control Room六项动态，保留版本、原日期与采用条件。
+- Muse Ember动态与报告共用记录，四条结论对应展开，保留评分分母、不同运行框架、费用估算及官方原图入口。
+- 提供已选Fable中英文分享卡，窄范围增补四份对应档案；正式发布后才轮换首页，旧链接与历史继续保留。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Publish the selected Fable/Mythos 5.2, Codex CLI, Muse Ember, Claude Code, AWS procurement and Control Room updates with versions, source dates and adoption conditions.
+- Share one record between Muse Ember news and its four-finding report, preserving denominators, differing harnesses, cost estimates and original-figure links.
+- Provide the selected bilingual Fable card and four narrow dossier additions; rotate homepage selections only after actual publication, preserving old links and history.
+<!-- release-summary:en:end -->
+
+对应REQ-11、REQ-22／22-8、REQ-26、REQ-6-34／11-6。所有者明确选择11月10日“动态A-F、报告1、卡1 全部发布”；报告2和历史推荐未选，不刷新榜单。基于正式v1.20.1／已验收源码提交的兼容内容与静态资源patch，无新模块、协议或迁移，完整保留已批准上线的原文阅读功能与12条内容修订。A／卡共D-325，C／报告共D-327；B、D、E、F为D-326／328／329／330，对应CW-M02、CW-A01、CW-A02、CW-M01窄范围增补。具体正式状态、双语核对与轮换见[实际验收](docs/validation/2026-11-10-approved-updates.md)。
+
 <a id="v1.20.1"></a>
 ## v1.20.1 · 两家公司原文阅读内容发布 · 2026-11-10
 <!-- public-title:en: Original-source publications for both companies -->

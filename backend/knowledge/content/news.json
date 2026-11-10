@@ -2,11 +2,940 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "model",
+      "checked_at": "2026-11-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-09",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "用新会话测试历史改写、工具调用和模型切换，比较整项任务费用。",
+            "title": "API开发团队｜本站建议"
+          },
+          {
+            "detail": "先核地区、验证资格和数据留存，再决定接入哪个入口。",
+            "title": "企业安全管理员｜本站建议"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "每百万输入／输出 8／40美元；fast为 16／80美元，最高 2.5倍输出token速度是官方上限，非整项任务承诺。",
+            "title": "标准价格降 20%"
+          },
+          {
+            "detail": "1M上下文、128k输出；Fable面向一般客户，Mythos仍须组织验证。",
+            "title": "更长上下文，保留资格区别"
+          },
+          {
+            "detail": "自建请求须核prefix校验、thinking blocks、computer工具和advisor；旧请求可能报 400或丢弃推理块。",
+            "title": "迁移条件同步变化"
+          }
+        ],
+        "checked_at": "2026-11-10",
+        "evidence": [
+          {
+            "locator": "2026-11-09公告：Performance and efficiency／Data privacy／Availability",
+            "source_id": "announcement"
+          },
+          {
+            "locator": "What’s new：Breaking changes／Pricing／Availability",
+            "source_id": "migration"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "Fable 5.2降价，先核迁移和留存",
+        "limits": [
+          {
+            "detail": "通常要求 30天安全留存；ZDR须明确授权或适用企业方案。不同平台、缓存及工具计费另核。",
+            "title": "留存与费用"
+          },
+          {
+            "detail": "未调用API、核验账户资格、测试迁移、速度或真实账单；系统卡未深读完。",
+            "title": "未实测"
+          }
+        ],
+        "next_step": "先在测试会话核查权限、留存和请求兼容，再用自己的任务评估质量与总费用。",
+        "revised_at": "2026-11-10",
+        "revision": "ff329c2aecf82ae18c19fe7671f461265ddb410768743b79408af1010946301e",
+        "scope": "Claude Fable 5.2／Mythos 5.2；第一方API及对应合作平台，实际资格分别核对。",
+        "share": {
+          "content_revision": "ff329c2aecf82ae18c19fe7671f461265ddb410768743b79408af1010946301e",
+          "en": {
+            "sha256": "e5ccc69d4054bcb4b033496a30dbe7dd0f8655ef23765a58c9be23095a891f9f",
+            "text_revision": "b2afe92a3eb750adc205c5345479a765d5eae339973fa01be3c36e200a8ff12a",
+            "url": "/hot-cards/d-325-ff329c2aecf8-en.png"
+          },
+          "zh": {
+            "sha256": "6e84c00e20e602325a3d56e2d474581ee76aab5ac9ce07a2910baeb4645bcbe0",
+            "url": "/hot-cards/d-325-ff329c2aecf8-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "2026-11-10核对官方公告与迁移文档；未作性能、账单或权限实测。"
+      },
+      "id": "D-325",
+      "interpretation": [
+        {
+          "locator": "Introduction; Availability; Pricing",
+          "source_ids": [
+            "announcement",
+            "migration"
+          ],
+          "text": "5.1标准输入／输出原为每百万token 10／50美元，5.2为 8／40美元，即 20%单价下降。fast为 16／80美元，官方称最高 2.5倍输出token速度。Fable面向一般Claude API客户，Mythos需组织验证；合作平台资格须分别核对。",
+          "title": "价格与开放范围"
+        },
+        {
+          "locator": "Models; Breaking changes",
+          "source_ids": [
+            "migration"
+          ],
+          "text": "prefix校验扩展至每个账户；改写旧前缀可能触发 400。5.2的thinking blocks只有Fable 5.2／Mythos 5.2能读取。除Bedrock外，旧computer_20251124工具返回错误；5.2 executor须搭配 5.2 advisor。adaptive thinking始终开启，effort控制深度。",
+          "title": "自建请求的兼容变化"
+        },
+        {
+          "locator": "Data privacy; Performance and efficiency",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "通常要求 30天安全留存；ZDR需明确授权或适用企业／EFS安排，不是所有入口默认无留存。token单价、输出速度上限与整项任务费用分别衡量。",
+          "title": "留存条件"
+        },
+        {
+          "locator": "Introduction",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "“Claude Fable and Claude Mythos are the same underlying model.”",
+          "title": "原文节选｜Anthropic"
+        },
+        {
+          "locator": "Introduction",
+          "source_ids": [
+            "announcement"
+          ],
+          "text": "Claude Fable与Claude Mythos基于同一个底层模型。",
+          "title": "节选中文译文"
+        }
+      ],
+      "name": "Claude Fable 5.2 / Mythos 5.2 API",
+      "note": "官方公告 2026-11-09，本站核对 2026-11-10；型号 5.2。未调用API、测试账户资格、区域、迁移、延迟或账单。264页系统卡未完成深读，公告基准不作本站复现。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-10T06:35:45.778487+00:00",
+        "hot_card_first_published_at": "2026-11-10T06:35:45.778517+00:00",
+        "hot_card_selected_at": "2026-11-10T06:35:45.778517+00:00",
+        "updated_at": "2026-11-10T06:35:45.778487+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        }
+      ],
+      "source_published_at": "2026-11-09",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "Anthropic · Claude Fable5.2 and Mythos5.2 ·2026-11-09",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        {
+          "coverage": "link_only",
+          "id": "migration",
+          "title": "Claude Platform · What’s new in Claude Fable5.2",
+          "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic发布同一底层模型的两个版本，防护与获取资格不同。标准输入／输出每百万token为 8／40美元，fast为 16／80美元；1M上下文、128k输出。迁移兼容与安全留存条件见官方文档。",
+      "title": "Claude Fable 5.2与Mythos 5.2发布：标准API价格下调 20%",
+      "translations": {
+        "en": {
+          "fields": {
+            "1M上下文、128k输出；Fable面向一般客户，Mythos仍须组织验证。": "1M context and 128k output; Fable is generally available, while Mythos requires organizational verification.",
+            "2026-11-09公告：Performance and efficiency／Data privacy／Availability": "2026-11-09 announcement: Performance and efficiency / Data privacy / Availability",
+            "2026-11-10核对官方公告与迁移文档；未作性能、账单或权限实测。": "Official announcement and migration documentation checked 2026-11-10; no performance, billing or permission tests.",
+            "5.1标准输入／输出原为每百万token 10／50美元，5.2为 8／40美元，即 20%单价下降。fast为 16／80美元，官方称最高 2.5倍输出token速度。Fable面向一般Claude API客户，Mythos需组织验证；合作平台资格须分别核对。": "Standard input/output rates move from 10/50 USD per million tokens in 5.1 to 8/40 in 5.2, a 20% unit-rate reduction. Fast rates are 16/80, with the official claim of up to 2.5 times output-token generation speed. Fable is generally available to Claude API customers; Mythos requires organizational verification. Check partner-platform eligibility separately.",
+            "API开发团队｜本站建议": "API developers | FieldToFit suggestion",
+            "Anthropic发布同一底层模型的两个版本，防护与获取资格不同。标准输入／输出每百万token为 8／40美元，fast为 16／80美元；1M上下文、128k输出。迁移兼容与安全留存条件见官方文档。": "Anthropic releases two versions of the same underlying model with different safeguards and access. Standard input/output rates are 8/40 USD per million tokens; fast rates are 16/80 USD, with 1M context and 128k output. Official documentation sets migration and safety-retention conditions.",
+            "Claude Fable 5.2与Mythos 5.2发布：标准API价格下调 20%": "Claude Fable 5.2 and Mythos 5.2 launch with 20% lower standard API rates",
+            "Claude Fable 5.2／Mythos 5.2；第一方API及对应合作平台，实际资格分别核对。": "Claude Fable 5.2 / Mythos 5.2; first-party API and corresponding partner platforms, with eligibility checked separately.",
+            "Claude Fable与Claude Mythos基于同一个底层模型。": "Claude Fable and Claude Mythos use the same underlying model.",
+            "Fable 5.2降价，先核迁移和留存": "Fable 5.2 costs less: check migration and retention",
+            "prefix校验扩展至每个账户；改写旧前缀可能触发 400。5.2的thinking blocks只有Fable 5.2／Mythos 5.2能读取。除Bedrock外，旧computer_20251124工具返回错误；5.2 executor须搭配 5.2 advisor。adaptive thinking始终开启，effort控制深度。": "The prefix check applies to every account; editing earlier prefixes can cause 400 errors. Only Fable 5.2/Mythos 5.2 can read 5.2 thinking blocks. Outside Bedrock, computer_20251124 returns an error; a 5.2 executor needs a 5.2 advisor. Adaptive thinking stays on, with effort controlling depth.",
+            "价格与开放范围": "Pricing and access",
+            "企业安全管理员｜本站建议": "Enterprise security administrators | FieldToFit suggestion",
+            "先在测试会话核查权限、留存和请求兼容，再用自己的任务评估质量与总费用。": "Test permissions, retention and request compatibility in a test conversation, then assess quality and total cost on your own tasks.",
+            "先核地区、验证资格和数据留存，再决定接入哪个入口。": "Check regions, verification eligibility and retention before choosing an entry point.",
+            "原文节选｜Anthropic": "Original excerpt | Anthropic",
+            "官方公告 2026-11-09，本站核对 2026-11-10；型号 5.2。未调用API、测试账户资格、区域、迁移、延迟或账单。264页系统卡未完成深读，公告基准不作本站复现。": "Official announcement 2026-11-09, checked 2026-11-10; version 5.2. No API, account-eligibility, region, migration, latency or billing tests. The 264-page system card has not been fully read; announcement benchmarks are not FieldToFit replications.",
+            "更长上下文，保留资格区别": "Long context with separate access rules",
+            "未实测": "Not independently tested",
+            "未调用API、核验账户资格、测试迁移、速度或真实账单；系统卡未深读完。": "No API, account-eligibility, migration, speed or actual-billing tests; the system card has not been fully read.",
+            "标准价格降 20%": "Standard rates fall 20%",
+            "每百万输入／输出 8／40美元；fast为 16／80美元，最高 2.5倍输出token速度是官方上限，非整项任务承诺。": "Input/output cost 8/40 USD per million tokens; fast is 16/80. The official up-to 2.5-times output-token speed is a ceiling, not a whole-task guarantee.",
+            "用新会话测试历史改写、工具调用和模型切换，比较整项任务费用。": "Test history edits, tool calls and model switching in new conversations, and compare whole-task costs.",
+            "留存与费用": "Retention and charges",
+            "留存条件": "Retention conditions",
+            "自建请求的兼容变化": "Compatibility changes for custom requests",
+            "自建请求须核prefix校验、thinking blocks、computer工具和advisor；旧请求可能报 400或丢弃推理块。": "Custom requests must check prefix binding, thinking blocks, computer tools and advisor models; old requests may return 400 or drop thinking blocks.",
+            "节选中文译文": "Chinese translation of excerpt",
+            "迁移条件同步变化": "Migration requirements also change",
+            "通常要求 30天安全留存；ZDR需明确授权或适用企业／EFS安排，不是所有入口默认无留存。token单价、输出速度上限与整项任务费用分别衡量。": "Normally 30-day safety retention; ZDR requires express authorization or an applicable enterprise/EFS arrangement, rather than being a universal default. Token rates, output-speed ceilings and whole-task cost are distinct.",
+            "通常要求 30天安全留存；ZDR须明确授权或适用企业方案。不同平台、缓存及工具计费另核。": "Normally 30-day safety retention; ZDR requires express authorization or an applicable enterprise arrangement. Check platform, cache and tool charges separately."
+          },
+          "reviewed_at": "2026-11-10T06:35:22.913518+00:00",
+          "source_hash": "70347eca42998d97c67f029d78a9ca6980b443d1b83bb30811d6f8538ad3218f",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-10",
+      "highlight": true,
+      "id": "D-328",
+      "interpretation": [],
+      "name": "Claude Code 2.1.321 / 2.1.322",
+      "note": "",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-10T06:35:09.904973+00:00",
+        "updated_at": "2026-11-10T06:35:09.904973+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        }
+      ],
+      "source_published_at": "2026-11-09",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "Anthropic / Claude Code",
+            "checked_at": "2026-11-10",
+            "id": "security",
+            "kind": "quote",
+            "locator": "What’s changed",
+            "original_language": "en",
+            "quote": "Fixed MCP OAuth requests sending secrets such as refresh tokens to another host when a server redirected them",
+            "reuse_basis": "Brief attributed quotation for reporting; full original linked. No full-text or figure republication.",
+            "source_id": "release321",
+            "translation_zh": "修复了MCP OAuth重定向将刷新令牌等秘密发送到另一主机的问题。"
+          },
+          {
+            "author": "Anthropic / Claude Code",
+            "checked_at": "2026-11-10",
+            "id": "vertex",
+            "kind": "quote",
+            "locator": "What’s changed",
+            "original_language": "en",
+            "quote": "Added fast mode on Vertex in the global, us and eu regions, falling back to standard speed if Vertex refuses it",
+            "reuse_basis": "Brief attributed quotation for reporting; full original linked. No full-text or figure republication.",
+            "source_id": "release322",
+            "translation_zh": "在Vertex的global、us和eu区域新增快速模式；Vertex拒绝时回退标准速度。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release321",
+          "title": "Anthropic · Claude Code v2.1.321 ·a4fcccc",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321"
+        },
+        {
+          "coverage": "link_only",
+          "id": "release322",
+          "title": "Anthropic · Claude Code v2.1.322 ·6e1e44f",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322"
+        }
+      ],
+      "state": "published",
+      "summary": "Anthropic的Claude Code 2.1.321修复MCP OAuth重定向发送秘密及Bash和目标路径权限检查，接入Fable 5.2；2.1.322另增Vertex global／us／eu快速模式，被拒绝时回退standard。原发行日期分别 2026-11-09／2026-11-10，本站 2026-11-10核对，未安装或复现；发行说明不证明实际泄露或完整受影响版本范围。",
+      "title": "Claude Code 2.1.321／322：修复OAuth及权限检查，新增Vertex快速模式",
+      "translations": {
+        "en": {
+          "fields": {
+            "Anthropic的Claude Code 2.1.321修复MCP OAuth重定向发送秘密及Bash和目标路径权限检查，接入Fable 5.2；2.1.322另增Vertex global／us／eu快速模式，被拒绝时回退standard。原发行日期分别 2026-11-09／2026-11-10，本站 2026-11-10核对，未安装或复现；发行说明不证明实际泄露或完整受影响版本范围。": "Anthropic’s Claude Code 2.1.321 fixes secrets sent through MCP OAuth redirects and Bash/target-path permission checks, and adds Fable 5.2;2.1.322 separately adds Vertex fast mode in global/us/eu with standard fallback after refusal. Release dates are 2026-11-09/2026-11-10, checked 2026-11-10 without installation or reproduction. The notes do not establish an actual leak or a complete vulnerable-version range.",
+            "Claude Code 2.1.321／322：修复OAuth及权限检查，新增Vertex快速模式": "Claude Code 2.1.321/322 fixes OAuth and permission checks, adds Vertex fast mode"
+          },
+          "reviewed_at": "2026-11-10T06:34:47.747409+00:00",
+          "source_hash": "e1288fc5b9a22db57e307af060affe55abcf0d370053f51bb01c8c5f4cd9578f",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-11-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-09",
+      "highlight": true,
+      "id": "D-327",
+      "interpretation": [
+        {
+          "locator": "Intelligence vs. Cost Per Task; model specifications and pricing",
+          "source_ids": [
+            "announcement",
+            "methodology"
+          ],
+          "text": "200K提示长度是价格分界；任务成本曲线还受推理用量和努力等级影响。",
+          "title": "低token单价与每任务费用需要分别计算"
+        },
+        {
+          "locator": "pp.1–4: overall methodology; Agents; Multimodal",
+          "source_ids": [
+            "methodology",
+            "announcement"
+          ],
+          "text": "保留每个基准的题目、排除规则与评分单位，才知道数值回答了什么问题。",
+          "title": "严格通过、部分得分与综合指数不能互换"
+        },
+        {
+          "locator": "pp.1,3: Models and configurations; Coding",
+          "source_ids": [
+            "methodology",
+            "announcement"
+          ],
+          "text": "内部对比尽量共用条件；外部编码结果沿用各厂商的Agent产品。",
+          "title": "编码成绩包含运行框架，不能全部归因于模型"
+        },
+        {
+          "locator": "pp.2–4: knowledge work, GDP.pdf-AA, OSWorld2.1, PerceptionBench",
+          "source_ids": [
+            "methodology",
+            "announcement"
+          ],
+          "text": "相近分数可能来自不同判分规则，原始图表必须和方法一起读。",
+          "title": "多模态与办公任务需要保留输入、工具和判分边界"
+        }
+      ],
+      "name": "Muse Ember",
+      "note": "Meta原始四页Evaluation Methodology只标 2026年 11月，无编号版本及确切首发日；配套模型公告为 2026-11-09。本站 2026-11-10完整阅读方法与公告结果，未调用API、审计私有题目或复现。原图仅链接，复用许可未确认，不复制或另画替代图。",
+      "organization": "Meta",
+      "publication": {
+        "first_published_at": "2026-11-10T06:34:34.089480+00:00",
+        "report_selected_at": "2026-11-10T06:34:34.089480+00:00",
+        "updated_at": "2026-11-10T06:34:34.089480+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-11-09",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "Meta · Introducing Muse Ember ·2026-11-09",
+          "url": "https://research.meta.ai/blog/muse-ember"
+        },
+        {
+          "coverage": "link_only",
+          "id": "methodology",
+          "title": "Meta · Muse Ember Evaluation Methodology · November2026 ·4 pages",
+          "url": "https://research.meta.ai/static/muse-ember-evaluation-report"
+        }
+      ],
+      "state": "published",
+      "summary": "Meta于 11月 9日推出Muse Ember，API型号muse-ember-1.0，可在Muse Code及Meta Model API使用。它支持文本、图像、音频和视频输入，1M上下文与最高 512K输出。提示不超过 200K token时，每百万输入／缓存输入／输出分别为 0.10／0.004／0.50美元；超过 200K时为 0.30／0.012／1.50美元。官方对比保留内部、第三方评测及各自harness；部分得分不能写成严格全任务成功率。当前核实的是API开放，未核到可下载权重、参数规模或自托管许可。",
+      "technical_map": {
+        "caution": "Meta原始四页Evaluation Methodology只标 2026年 11月，无编号版本及确切首发日；配套模型公告为 2026-11-09。本站 2026-11-10完整阅读方法与公告结果，未调用API、审计私有题目或复现。原图仅链接，复用许可未确认，不复制或另画替代图。",
+        "change_summary": "首次整理：四条结论与同号论述，链接官方原图，保留月份精度、分母、费用估算及不同harness。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "pp.1–4: overall methodology; Agents; Multimodal",
+                "source_id": "methodology"
+              },
+              {
+                "fragment": "",
+                "locator": "Muse Ember evaluation results",
+                "source_id": "announcement"
+              }
+            ],
+            "from": "cost",
+            "label": "并列核验维度，不构成跨评测因果",
+            "relation": "parallel",
+            "to": "tasks"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "pp.1,3: Models and configurations; Coding",
+                "source_id": "methodology"
+              },
+              {
+                "fragment": "",
+                "locator": "Evaluation results: Coding",
+                "source_id": "announcement"
+              }
+            ],
+            "from": "cost",
+            "label": "并列核验维度，不构成跨评测因果",
+            "relation": "parallel",
+            "to": "harness"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "pp.2–4: knowledge work, GDP.pdf-AA, OSWorld2.1, PerceptionBench",
+                "source_id": "methodology"
+              },
+              {
+                "fragment": "",
+                "locator": "Intelligence vs. Cost Per Task; Muse Ember evaluation results",
+                "source_id": "announcement"
+              }
+            ],
+            "from": "cost",
+            "label": "并列核验维度，不构成跨评测因果",
+            "relation": "parallel",
+            "to": "evidence"
+          }
+        ],
+        "focus": "Muse Ember评估报告：价格、任务通过率与Agent运行框架",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Intelligence vs. Cost Per Task; model specifications and pricing",
+                "source_id": "announcement"
+              },
+              {
+                "fragment": "",
+                "locator": "p.1: Overall Methodology",
+                "source_id": "methodology"
+              }
+            ],
+            "id": "cost",
+            "kind": "method",
+            "label": "低token单价与每任务费用需要分别计算",
+            "limitation": "Meta原始四页Evaluation Methodology只标 2026年 11月，无编号版本及确切首发日；配套模型公告为 2026-11-09。本站 2026-11-10完整阅读方法与公告结果，未调用API、审计私有题目或复现。原图仅链接，复用许可未确认，不复制或另画替代图。",
+            "mechanism": "200K提示长度是价格分界；任务成本曲线还受推理用量和努力等级影响。",
+            "metrics": [],
+            "result": "200K提示长度是价格分界；任务成本曲线还受推理用量和努力等级影响。",
+            "setting": "Meta报告；max reasoning；同基准配置及外部harness边界见对应论述。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "pp.1–4: overall methodology; Agents; Multimodal",
+                "source_id": "methodology"
+              },
+              {
+                "fragment": "",
+                "locator": "Muse Ember evaluation results",
+                "source_id": "announcement"
+              }
+            ],
+            "id": "tasks",
+            "kind": "method",
+            "label": "严格通过、部分得分与综合指数不能互换",
+            "limitation": "Meta原始四页Evaluation Methodology只标 2026年 11月，无编号版本及确切首发日；配套模型公告为 2026-11-09。本站 2026-11-10完整阅读方法与公告结果，未调用API、审计私有题目或复现。原图仅链接，复用许可未确认，不复制或另画替代图。",
+            "mechanism": "保留每个基准的题目、排除规则与评分单位，才知道数值回答了什么问题。",
+            "metrics": [
+              {
+                "baseline": "Claude Haiku5.5 13.9%; GPT-6 Luna20.2%",
+                "conditions": "657项私有工作流；全部目标满足且无护栏违规。",
+                "label": "Muse Ember / AutomationBench-AA",
+                "unit": "% strict pass@1",
+                "value": 37.8
+              },
+              {
+                "baseline": "Claude Haiku5.5 68.9%; GPT-6 Luna50.5%",
+                "conditions": "108项Ubuntu工作流；严格通过率另为 33.8%。",
+                "label": "Muse Ember / OSWorld2.1",
+                "unit": "% mean partial credit",
+                "value": 69.5
+              }
+            ],
+            "result": "保留每个基准的题目、排除规则与评分单位，才知道数值回答了什么问题。",
+            "setting": "Meta报告；max reasoning；同基准配置及外部harness边界见对应论述。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "pp.1,3: Models and configurations; Coding",
+                "source_id": "methodology"
+              },
+              {
+                "fragment": "",
+                "locator": "Evaluation results: Coding",
+                "source_id": "announcement"
+              }
+            ],
+            "id": "harness",
+            "kind": "method",
+            "label": "编码成绩包含运行框架，不能全部归因于模型",
+            "limitation": "Meta原始四页Evaluation Methodology只标 2026年 11月，无编号版本及确切首发日；配套模型公告为 2026-11-09。本站 2026-11-10完整阅读方法与公告结果，未调用API、审计私有题目或复现。原图仅链接，复用许可未确认，不复制或另画替代图。",
+            "mechanism": "内部对比尽量共用条件；外部编码结果沿用各厂商的Agent产品。",
+            "metrics": [],
+            "result": "内部对比尽量共用条件；外部编码结果沿用各厂商的Agent产品。",
+            "setting": "Meta报告；max reasoning；同基准配置及外部harness边界见对应论述。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "pp.2–4: knowledge work, GDP.pdf-AA, OSWorld2.1, PerceptionBench",
+                "source_id": "methodology"
+              },
+              {
+                "fragment": "",
+                "locator": "Intelligence vs. Cost Per Task; Muse Ember evaluation results",
+                "source_id": "announcement"
+              }
+            ],
+            "id": "evidence",
+            "kind": "method",
+            "label": "多模态与办公任务需要保留输入、工具和判分边界",
+            "limitation": "Meta原始四页Evaluation Methodology只标 2026年 11月，无编号版本及确切首发日；配套模型公告为 2026-11-09。本站 2026-11-10完整阅读方法与公告结果，未调用API、审计私有题目或复现。原图仅链接，复用许可未确认，不复制或另画替代图。",
+            "mechanism": "相近分数可能来自不同判分规则，原始图表必须和方法一起读。",
+            "metrics": [],
+            "result": "相近分数可能来自不同判分规则，原始图表必须和方法一起读。",
+            "setting": "Meta报告；max reasoning；同基准配置及外部harness边界见对应论述。",
+            "stage": 3
+          }
+        ],
+        "question": "Muse Ember评估报告：价格、任务通过率与Agent运行框架",
+        "reading": {
+          "editorial": [
+            "FieldToFit分析：先选择真正影响业务的完成条件，再评估总token用量和重试；把严格工作流、部分分、编码产品和多模态测试分开。价格优势可作为试用理由，不能替代对自己数据、权限及结果质量的验收。",
+            "来源与修订：Meta，Muse Ember Evaluation Methodology，2026年 11月，4页，无编号版本；配套公告 2026-11-09，本站核对 2026-11-10。报告原始日期保留 2026-11，不补造 9日；本站首次发表与首页轮换由真实发布记录决定。未独立复现实验或验证作者的成本优势主张。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "muse-ember-1.0通过Muse Code和Meta Model API提供，支持文本、图像、音频、视频输入，1M上下文、最高 512K输出。提示不超过 200K token时，每百万输入／缓存输入／输出为 0.10／0.004／0.50美元；超过 200K时为 0.30／0.012／1.50美元。当前材料未确认可下载权重、参数规模或自托管许可。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "官方“Intelligence vs. Cost Per Task”以每个推理努力等级为一个点。Ember两点为 33.9分／0.116美元与 35.8分／0.136美元；Haiku最高点 36.2分／0.411美元，Luna最高点 27.8分／0.152美元。图注把Ember费用标为按拟定价格估算，不是本站实付账单，也不能脱离横纵轴比较“便宜三倍”。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "API单价乘以实际输入、缓存与输出用量，才是相应token费用；任务重试、工具及平台条件还需另核。曲线不能直接预测自己的业务账单。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Intelligence vs. Cost Per Task; model specifications and pricing",
+                  "source_id": "announcement"
+                },
+                {
+                  "fragment": "",
+                  "locator": "p.1: Overall Methodology",
+                  "source_id": "methodology"
+                }
+              ],
+              "id": "cost",
+              "node_ids": [
+                "cost"
+              ],
+              "summary": "200K提示长度是价格分界；任务成本曲线还受推理用量和努力等级影响。",
+              "title": "低token单价与每任务费用需要分别计算"
+            },
+            {
+              "blocks": [
+                {
+                  "items": [
+                    "AutomationBench-AA：657项私有业务工作流，经应用API执行，以最终状态确定性检查。主要指标为pass@1，要求全部目标满足且无护栏违规；Ember 37.8、Haiku 13.9、Luna 20.2为该口径。",
+                    "Agents’ Last Exam：Linux原始 105项，因存储或评分失败对所有模型统一排除 5项，实际 100项；61.6／57.0／57.1是部分分均值的百分制呈现，并非整题全部完成比例。",
+                    "OSWorld 2.1：108项Ubuntu工作流，共用内部Agent循环；部分分均值为 69.5／68.9／50.5，严格通过为 33.8／27.8／17.0，顺序均为Ember／Haiku／Luna。两组指标不能混画成同一成功率。",
+                    "PSI为 8项内部综合评测，46.8／36.1／37.0不是独立用户样本或生产通过率。VBT与FocusBench的样本数未披露；不能由综合指数反推任务总数。"
+                  ],
+                  "kind": "points"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "总体方法把拒答留在分母并记零、截断回答按原样评分，基础设施或评分错误样本不评分。OfficeQA Pro V 2使用 90题、1435份 1793–2024年文档及 0%数值容差；JobBench为 65任务／35职业。GDP.xlsx为 70任务／13领域，采用Gemini 3.8Flash评分；这些数据集与评判器不同，不合并为一个总样本。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "pp.1–4: overall methodology; Agents; Multimodal",
+                  "source_id": "methodology"
+                },
+                {
+                  "fragment": "",
+                  "locator": "Muse Ember evaluation results",
+                  "source_id": "announcement"
+                }
+              ],
+              "id": "tasks",
+              "node_ids": [
+                "tasks"
+              ],
+              "summary": "保留每个基准的题目、排除规则与评分单位，才知道数值回答了什么问题。",
+              "title": "严格通过、部分得分与综合指数不能互换"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "报告在max reasoning下运行Ember、Claude Haiku 5.5与GPT-6 Luna；内部受控对比使用相同基准专属harness，但明确竞品提示、工具和运行时只是尽力调优。Terminal-Bench 4.0为 66题：Ember来自AA的mini-swe-agent，Haiku为Anthropic自报Claude Code，Luna来自Codex排行榜。40.9／39.2／16.4同时包含这些系统差异。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "Coding Agent Index-AAv 2.0由Terminal-Bench 4.0、SWE-Atlas-QnA和FrontierCodev 1.1构成，MuseCode、ClaudeCode、Codex路径并不一致。另一个FrontierCode 2.0-AA含 132项私有任务，以可合并性等评分，Ember 27.2、Haiku 34.9、Luna 25.2；不能写成Ember在所有编码指标均领先。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "读者若要比较模型本身，须在自己的相同工具、预算、提示和任务上复测；这里的多产品成绩不能隔离单一模型的因果贡献。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "pp.1,3: Models and configurations; Coding",
+                  "source_id": "methodology"
+                },
+                {
+                  "fragment": "",
+                  "locator": "Evaluation results: Coding",
+                  "source_id": "announcement"
+                }
+              ],
+              "id": "harness",
+              "node_ids": [
+                "harness"
+              ],
+              "summary": "内部对比尽量共用条件；外部编码结果沿用各厂商的Agent产品。",
+              "title": "编码成绩包含运行框架，不能全部归因于模型"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "GDP.pdf-AA提供提取文本与逐页图像、不使用工具，要求所有评分条目通过；公告 22.8／20.8／22.8属于all-pass规则。PerceptionBench为 3000题、10类能力，可用工具，由gpt-oss-120b评分，报告pass@1为 80.6／78.6／62.8。OSWorld还结合程序化与Sonnet 4.6判断。自动评判不等于人工逐项确认。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "原图阅读入口：本节出处链接通向官方公告中的“Intelligence vs. Cost Per Task”和“Muse Ember evaluation results”交互图表；方法链接指向原始四页PDF。核对横轴美元／任务、纵轴指数分、推理设置和各表评分单位。原图未获确认可复用许可，本站保留原入口，不复制全文或图形，也不以新画示意代替作者原图。"
+                },
+                {
+                  "kind": "highlight",
+                  "label": "limit",
+                  "text": "私有题目、内部复合指标与未披露样本数限制了独立复算。本站完整阅读的是四页方法与发布公告，未审计全部外链基准、未跑模型或验证费用。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "pp.2–4: knowledge work, GDP.pdf-AA, OSWorld2.1, PerceptionBench",
+                  "source_id": "methodology"
+                },
+                {
+                  "fragment": "",
+                  "locator": "Intelligence vs. Cost Per Task; Muse Ember evaluation results",
+                  "source_id": "announcement"
+                }
+              ],
+              "id": "evidence",
+              "node_ids": [
+                "evidence"
+              ],
+              "summary": "相近分数可能来自不同判分规则，原始图表必须和方法一起读。",
+              "title": "多模态与办公任务需要保留输入、工具和判分边界"
+            }
+          ],
+          "title": "Muse Ember评估报告：价格、任务通过率与Agent运行框架"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-11",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "methodology",
+            "substantive_revision": false,
+            "version": "November2026;4-page unnumbered Evaluation Methodology"
+          }
+        ],
+        "slug": "muse-ember-evaluation-methods-and-cost",
+        "takeaway": "Meta同时披露低价执行模型与四页评测方法；选型须分别核对token单价、任务口径及运行框架，不把部分得分或估算费用当生产承诺。"
+      },
+      "title": "Meta发布Muse Ember：1M上下文，按提示长度分档计价",
+      "translations": {
+        "en": {
+          "fields": {
+            "108项Ubuntu工作流；严格通过率另为 33.8%。": "108 Ubuntu workflows; strict pass rate is separately 33.8%.",
+            "200K提示长度是价格分界；任务成本曲线还受推理用量和努力等级影响。": "A 200K prompt boundary changes rates; task-cost curves also depend on reasoning usage and effort.",
+            "657项私有工作流；全部目标满足且无护栏违规。": "657 private workflows; all objectives and no guardrail violations.",
+            "API单价乘以实际输入、缓存与输出用量，才是相应token费用；任务重试、工具及平台条件还需另核。曲线不能直接预测自己的业务账单。": "Apply API rates to actual input, cached-input and output usage for token charges, then check retries, tools and platform conditions. The curve does not predict a particular business bill.",
+            "Agents’ Last Exam：Linux原始 105项，因存储或评分失败对所有模型统一排除 5项，实际 100项；61.6／57.0／57.1是部分分均值的百分制呈现，并非整题全部完成比例。": "Agents’ Last Exam starts with 105 Linux tasks and uniformly excludes 5 for storage or grading failures, leaving 100. Scores 61.6/57.0/57.1 express mean partial credit on a percentage scale, not fully completed-task proportions.",
+            "AutomationBench-AA：657项私有业务工作流，经应用API执行，以最终状态确定性检查。主要指标为pass@1，要求全部目标满足且无护栏违规；Ember 37.8、Haiku 13.9、Luna 20.2为该口径。": "AutomationBench-AA has 657 private business workflows executed through application APIs and graded by deterministic final-state checks. Primary pass@1 requires every objective and no guardrail violation; Ember 37.8, Haiku 13.9 and Luna 20.2 use that definition.",
+            "Coding Agent Index-AAv 2.0由Terminal-Bench 4.0、SWE-Atlas-QnA和FrontierCodev 1.1构成，MuseCode、ClaudeCode、Codex路径并不一致。另一个FrontierCode 2.0-AA含 132项私有任务，以可合并性等评分，Ember 27.2、Haiku 34.9、Luna 25.2；不能写成Ember在所有编码指标均领先。": "Coding Agent Index-AAv 2.0 combines Terminal-Bench 4.0, SWE-Atlas-QnA and FrontierCodev 1.1, with different MuseCode, ClaudeCode and Codex paths. The separate FrontierCode 2.0-AA uses 132 private tasks and mergeability-oriented grading; Ember 27.2 trails Haiku 34.9 and exceeds Luna 25.2. Ember does not lead every coding metric.",
+            "FieldToFit分析：先选择真正影响业务的完成条件，再评估总token用量和重试；把严格工作流、部分分、编码产品和多模态测试分开。价格优势可作为试用理由，不能替代对自己数据、权限及结果质量的验收。": "FieldToFit analysis: define business completion criteria first, then assess total tokens and retries. Keep strict workflows, partial scores, coding products and multimodal tests separate. Pricing can justify a trial but cannot replace checks of data, permissions and output quality.",
+            "GDP.pdf-AA提供提取文本与逐页图像、不使用工具，要求所有评分条目通过；公告 22.8／20.8／22.8属于all-pass规则。PerceptionBench为 3000题、10类能力，可用工具，由gpt-oss-120b评分，报告pass@1为 80.6／78.6／62.8。OSWorld还结合程序化与Sonnet 4.6判断。自动评判不等于人工逐项确认。": "GDP.pdf-AA supplies extracted text and page images without tools, requiring every rubric criterion to pass;22.8/20.8/22.8 use this all-pass rule. PerceptionBench has 3000 questions over 10 capabilities, allows tools and uses gpt-oss-120b judging, with pass@1 of 80.6/78.6/62.8. OSWorld also combines programmatic checks and Sonnet 4.6 judgments. Automated scoring is not human verification of every case.",
+            "Meta于 11月 9日推出Muse Ember，API型号muse-ember-1.0，可在Muse Code及Meta Model API使用。它支持文本、图像、音频和视频输入，1M上下文与最高 512K输出。提示不超过 200K token时，每百万输入／缓存输入／输出分别为 0.10／0.004／0.50美元；超过 200K时为 0.30／0.012／1.50美元。官方对比保留内部、第三方评测及各自harness；部分得分不能写成严格全任务成功率。当前核实的是API开放，未核到可下载权重、参数规模或自托管许可。": "Meta introduced Muse Ember on 11/9 as muse-ember-1.0 on Muse Code and the Meta Model API. It accepts text, image, audio and video inputs, with 1M context and up to 512K output tokens. For prompts up to 200K tokens, input/cached-input/output rates are $0.10/$0.004/$0.50 per million tokens; prompts above 200K tokens cost $0.30/$0.012/$1.50. Evaluation results mix internal and external sources and different coding harnesses. Partial credit is not strict task success. Downloadable weights, parameter counts and self-hosting rights were not verified.",
+            "Meta原始四页Evaluation Methodology只标 2026年 11月，无编号版本及确切首发日；配套模型公告为 2026-11-09。本站 2026-11-10完整阅读方法与公告结果，未调用API、审计私有题目或复现。原图仅链接，复用许可未确认，不复制或另画替代图。": "Meta’s four-page Evaluation Methodology is dated 2026-11, without a numbered version or exact publication day; the accompanying model announcement is dated 2026-11-09. FieldToFit read the methodology and announcement results on 2026-11-10, without API runs, private-task audit or replication. Original figures are linked only; reuse rights are unconfirmed, so no copied or replacement diagrams are supplied.",
+            "Meta发布Muse Ember：1M上下文，按提示长度分档计价": "Meta launches Muse Ember with 1M context and prompt-length pricing tiers",
+            "Meta同时披露低价执行模型与四页评测方法；选型须分别核对token单价、任务口径及运行框架，不把部分得分或估算费用当生产承诺。": "Meta pairs a low-cost execution model with a four-page methodology. Assess token rates, task scoring and harnesses separately; partial credit and cost estimates are not production guarantees.",
+            "Meta报告；max reasoning；同基准配置及外部harness边界见对应论述。": "Meta report; max reasoning; benchmark configurations and external-harness limits are specified in each argument.",
+            "Muse Ember评估报告：价格、任务通过率与Agent运行框架": "Muse Ember evaluation: pricing, task success and agent harnesses",
+            "OSWorld 2.1：108项Ubuntu工作流，共用内部Agent循环；部分分均值为 69.5／68.9／50.5，严格通过为 33.8／27.8／17.0，顺序均为Ember／Haiku／Luna。两组指标不能混画成同一成功率。": "OSWorld 2.1 has 108 Ubuntu workflows with a shared internal agent loop. Mean partial scores are 69.5/68.9/50.5; strict passes are 33.8/27.8/17.0, consistently Ember/Haiku/Luna. These are not one interchangeable success metric.",
+            "PSI为 8项内部综合评测，46.8／36.1／37.0不是独立用户样本或生产通过率。VBT与FocusBench的样本数未披露；不能由综合指数反推任务总数。": "PSI combines 8 internal evaluations;46.8/36.1/37.0 are not independent user samples or production success rates. VBT and FocusBench sample counts are undisclosed; task totals cannot be inferred from the composite.",
+            "muse-ember-1.0通过Muse Code和Meta Model API提供，支持文本、图像、音频、视频输入，1M上下文、最高 512K输出。提示不超过 200K token时，每百万输入／缓存输入／输出为 0.10／0.004／0.50美元；超过 200K时为 0.30／0.012／1.50美元。当前材料未确认可下载权重、参数规模或自托管许可。": "muse-ember-1.0 is available through Muse Code and the Meta Model API, accepting text, image, audio and video inputs with 1M context and up to 512K output tokens. Prompts up to 200K tokens cost 0.10/0.004/0.50 USD per million input/cached-input/output tokens; above 200K, rates are 0.30/0.012/1.50. Downloadable weights, parameter counts and self-hosting rights are unconfirmed.",
+            "严格通过、部分得分与综合指数不能互换": "Strict passes, partial credit and composite indexes are distinct",
+            "低token单价与每任务费用需要分别计算": "Separate token prices from cost per task",
+            "保留每个基准的题目、排除规则与评分单位，才知道数值回答了什么问题。": "Retain each benchmark’s tasks, exclusions and units to understand what a number measures.",
+            "内部对比尽量共用条件；外部编码结果沿用各厂商的Agent产品。": "Internal comparisons seek common conditions; external coding results retain vendor-specific agent products.",
+            "原图阅读入口：本节出处链接通向官方公告中的“Intelligence vs. Cost Per Task”和“Muse Ember evaluation results”交互图表；方法链接指向原始四页PDF。核对横轴美元／任务、纵轴指数分、推理设置和各表评分单位。原图未获确认可复用许可，本站保留原入口，不复制全文或图形，也不以新画示意代替作者原图。": "Original-figure reading: the announcement source below contains the interactive Intelligence vs. Cost Per Task and Muse Ember evaluation results charts; the methodology source opens the original four-page PDF. Check USD/task, index score, reasoning settings and scoring units. Reuse rights are unconfirmed; FieldToFit links the originals without copying the full text or figures or substituting a new diagram.",
+            "多模态与办公任务需要保留输入、工具和判分边界": "Retain inputs, tools and graders for multimodal and office tasks",
+            "官方“Intelligence vs. Cost Per Task”以每个推理努力等级为一个点。Ember两点为 33.9分／0.116美元与 35.8分／0.136美元；Haiku最高点 36.2分／0.411美元，Luna最高点 27.8分／0.152美元。图注把Ember费用标为按拟定价格估算，不是本站实付账单，也不能脱离横纵轴比较“便宜三倍”。": "Each point in the official Intelligence vs. Cost Per Task chart represents one reasoning-effort setting. Ember has 33.9 at 0.116 USD and 35.8 at 0.136 USD; Haiku’s highest point is 36.2 at 0.411 USD and Luna’s 27.8 at 0.152 USD. Ember costs are estimates using proposed prices, not FieldToFit bills. A threefold cost claim needs both axes and comparable scores.",
+            "并列核验维度，不构成跨评测因果": "Parallel review dimensions, not cross-benchmark causation",
+            "总体方法把拒答留在分母并记零、截断回答按原样评分，基础设施或评分错误样本不评分。OfficeQA Pro V 2使用 90题、1435份 1793–2024年文档及 0%数值容差；JobBench为 65任务／35职业。GDP.xlsx为 70任务／13领域，采用Gemini 3.8Flash评分；这些数据集与评判器不同，不合并为一个总样本。": "Overall methodology retains refusals in the denominator with zero credit, grades truncations as-is, and omits infrastructure or grading-error samples. OfficeQA Pro V 2 uses 90 questions,1435 documents from 1793–2024 and 0% numerical tolerance. JobBench has 65 tasks across 35 occupations. GDP.xlsx has 70 tasks across 13 domains and a Gemini 3.8Flash judge. Distinct datasets and judges do not form one pooled sample.",
+            "报告在max reasoning下运行Ember、Claude Haiku 5.5与GPT-6 Luna；内部受控对比使用相同基准专属harness，但明确竞品提示、工具和运行时只是尽力调优。Terminal-Bench 4.0为 66题：Ember来自AA的mini-swe-agent，Haiku为Anthropic自报Claude Code，Luna来自Codex排行榜。40.9／39.2／16.4同时包含这些系统差异。": "The report runs Ember, Claude Haiku 5.5 and GPT-6 Luna at max reasoning. Controlled internal comparisons use a benchmark-specific common harness, with best-effort competitor tuning of prompts, tools and runtime. Terminal-Bench 4.0 has 66 tasks: Ember uses AA’s mini-swe-agent, Haiku is Anthropic-reported Claude Code, and Luna comes from the Codex leaderboard. Scores 40.9/39.2/16.4 include these system differences.",
+            "来源与修订：Meta，Muse Ember Evaluation Methodology，2026年 11月，4页，无编号版本；配套公告 2026-11-09，本站核对 2026-11-10。报告原始日期保留 2026-11，不补造 9日；本站首次发表与首页轮换由真实发布记录决定。未独立复现实验或验证作者的成本优势主张。": "Sources and revisions: Meta, Muse Ember Evaluation Methodology,2026-11, 4 pages, unnumbered; announcement 2026-11-09, FieldToFit check 2026-11-10. The report date remains 2026-11 without inventing the 9th; actual publication records determine site publication and homepage rotation. No independent replication or verification of the author’s cost-advantage claims.",
+            "相近分数可能来自不同判分规则，原始图表必须和方法一起读。": "Similar-looking scores may use different grading rules; read original charts alongside methods.",
+            "私有题目、内部复合指标与未披露样本数限制了独立复算。本站完整阅读的是四页方法与发布公告，未审计全部外链基准、未跑模型或验证费用。": "Private tasks, internal composites and undisclosed sample counts limit independent recalculation. FieldToFit read the four-page methodology and announcement, not every linked benchmark, and ran no model or billing tests.",
+            "编码成绩包含运行框架，不能全部归因于模型": "Coding scores include the harness, not only the model",
+            "读者若要比较模型本身，须在自己的相同工具、预算、提示和任务上复测；这里的多产品成绩不能隔离单一模型的因果贡献。": "To compare models themselves, retest with the same tools, budgets, prompts and tasks. These multi-product scores cannot isolate the causal contribution of a model.",
+            "首次整理：四条结论与同号论述，链接官方原图，保留月份精度、分母、费用估算及不同harness。": "First analysis: four findings with matching arguments and original-figure links, retaining month precision, denominators, estimated costs and different harnesses."
+          },
+          "reviewed_at": "2026-11-10T06:34:12.096760+00:00",
+          "source_hash": "fcd619f40fcab645608f177843d3a7f81a875369bc9232c215e01927b08b2d58",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-06",
+      "highlight": false,
+      "id": "D-326",
+      "interpretation": [],
+      "name": "Codex CLI 0.167.0",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-11-10T06:33:58.790289+00:00",
+        "updated_at": "2026-11-10T06:33:58.790289+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        }
+      ],
+      "source_published_at": "2026-11-06",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "OpenAI",
+            "checked_at": "2026-11-10",
+            "id": "saved-chats",
+            "kind": "quote",
+            "locator": "Bug fixes",
+            "original_language": "en",
+            "quote": "Saved chats stay visible after you switch model providers.",
+            "reuse_basis": "Brief attributed quotation for reporting; full original linked. No full-text or figure republication.",
+            "source_id": "release",
+            "translation_zh": "切换模型提供方后，已保存的聊天仍保持可见。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "OpenAI / Codex · rust-v0.167.0 ·086ccc8",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "changelog",
+          "title": "OpenAI · Codex changelog",
+          "url": "https://learn.chatgpt.com/docs/changelog"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI于 2026-11-06发布Codex CLI 0.167.0：新增Agent命令中心、未读标记、保留草稿的后端切换、受支持终端的本地图像预览与Vertex AI设置入口；修复会话可见性、网络审批提示和压缩统计。系统代理为可选实验功能，账户和平台权限另核。本站 2026-11-10补核发行说明，未安装或回归。",
+      "title": "Codex CLI 0.167.0新增Agent命令中心与后端切换",
+      "translations": {
+        "en": {
+          "fields": {
+            "Codex CLI 0.167.0新增Agent命令中心与后端切换": "Codex CLI 0.167.0 adds an agent command center and backend switching",
+            "OpenAI于 2026-11-06发布Codex CLI 0.167.0：新增Agent命令中心、未读标记、保留草稿的后端切换、受支持终端的本地图像预览与Vertex AI设置入口；修复会话可见性、网络审批提示和压缩统计。系统代理为可选实验功能，账户和平台权限另核。本站 2026-11-10补核发行说明，未安装或回归。": "OpenAI released Codex CLI 0.167.0 on 2026-11-06: agent command center, unread markers, backend switching with drafts retained, local image previews on supported terminals and Vertex AI setup. Fixes cover chat visibility, network approvals and compaction accounting. The system proxy is optional and experimental; account and platform permissions are separate. FieldToFit checked the notes on 2026-11-10 without installation or regression tests."
+          },
+          "reviewed_at": "2026-11-10T06:33:37.210711+00:00",
+          "source_hash": "f1ac798f3dabcff379ec74d746d03c82e7307c15ee7646b5a79382281e265c4c",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-09",
+      "highlight": false,
+      "id": "D-329",
+      "interpretation": [],
+      "name": "ChatGPT Enterprise / AWS Marketplace",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-11-10T06:33:24.946702+00:00",
+        "updated_at": "2026-11-10T06:33:24.946702+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M01",
+          "name": "GPT",
+          "url": "https://fieldtofit.top/watch/CW-M01"
+        }
+      ],
+      "source_published_at": "2026-11-09",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "OpenAI",
+            "checked_at": "2026-11-10",
+            "id": "availability",
+            "kind": "quote",
+            "locator": "Opening paragraph",
+            "original_language": "en",
+            "quote": "Today, ChatGPT Enterprise is available through AWS Marketplace.",
+            "reuse_basis": "Brief attributed quotation for reporting; full original linked. No full-text or figure republication.",
+            "source_id": "announcement",
+            "translation_zh": "自该公告之日起，可经AWS Marketplace获取ChatGPT Enterprise。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "OpenAI · ChatGPT Enterprise now available in AWS Marketplace ·2026-11-09",
+          "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace/"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI于 2026-11-09宣布ChatGPT Enterprise可经AWS Marketplace采购，合格支出可计入AWS承诺；功能与直购相同并同步更新，Healthcare和Financial Services仍有资格要求。这是采购渠道，公告未确立Bedrock托管、特定地区或折扣。本站 2026-11-10核对，未采购或核验具体合同。",
+      "title": "ChatGPT Enterprise可通过AWS Marketplace采购",
+      "translations": {
+        "en": {
+          "fields": {
+            "ChatGPT Enterprise可通过AWS Marketplace采购": "ChatGPT Enterprise is available through AWS Marketplace",
+            "OpenAI于 2026-11-09宣布ChatGPT Enterprise可经AWS Marketplace采购，合格支出可计入AWS承诺；功能与直购相同并同步更新，Healthcare和Financial Services仍有资格要求。这是采购渠道，公告未确立Bedrock托管、特定地区或折扣。本站 2026-11-10核对，未采购或核验具体合同。": "OpenAI announced ChatGPT Enterprise procurement through AWS Marketplace on 2026-11-09, with eligible spend counting toward AWS commitments. Functionality matches direct purchasing with simultaneous updates; Healthcare and Financial Services remain eligibility-dependent. This is a procurement channel; the announcement establishes no Bedrock hosting, particular region or discount. Checked 2026-11-10 without purchasing or contract validation."
+          },
+          "reviewed_at": "2026-11-10T06:33:03.054276+00:00",
+          "source_hash": "9b2adc2359b4d2bac1d510ba08952551072eb5597a1109422f18300ca5575f68",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
+      "checked_at": "2026-11-10",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-09",
+      "highlight": false,
+      "id": "D-330",
+      "interpretation": [],
+      "name": "Control Room",
+      "note": "",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-11-10T06:32:50.785184+00:00",
+        "updated_at": "2026-11-10T06:32:50.785184+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "D-289",
+          "name": "OpenAI describes expanded frontier-model monitoring and response limits",
+          "url": "https://fieldtofit.top/news/D-289"
+        }
+      ],
+      "source_published_at": "2026-11-09",
+      "source_reading": {
+        "blocks": [
+          {
+            "author": "OpenAI",
+            "checked_at": "2026-11-10",
+            "id": "engine-check",
+            "kind": "quote",
+            "locator": "How it works",
+            "original_language": "en",
+            "quote": "Engines check with the Control Room service before fulfilling a request.",
+            "reuse_basis": "Brief attributed quotation for reporting; full original linked. No full-text or figure republication.",
+            "source_id": "announcement",
+            "translation_zh": "引擎在处理请求前向Control Room服务检查权限。"
+          }
+        ],
+        "schema_version": "fieldtofit.source-reading.v1"
+      },
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "OpenAI · Control Room",
+          "url": "https://openai.com/index/control-room/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "official-rss",
+          "title": "OpenAI · official news RSS · publication date",
+          "url": "https://openai.com/news/rss.xml"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI披露内部Control Room，通过job_id关联研究任务与推理授权；收到停止指令后最长 35秒内阻断输出，进程可能仍存活。fail-closed已覆盖前沿模型研究，其余研究任务仍在推广。非对外API产品；官方RSS日期 2026-11-09，本站 2026-11-10核对，未测试时延或可靠性。",
+      "title": "OpenAI披露Control Room研究任务追踪与停止系统",
+      "translations": {
+        "en": {
+          "fields": {
+            "OpenAI披露Control Room研究任务追踪与停止系统": "OpenAI describes Control Room for tracking and stopping research workloads",
+            "OpenAI披露内部Control Room，通过job_id关联研究任务与推理授权；收到停止指令后最长 35秒内阻断输出，进程可能仍存活。fail-closed已覆盖前沿模型研究，其余研究任务仍在推广。非对外API产品；官方RSS日期 2026-11-09，本站 2026-11-10核对，未测试时延或可靠性。": "OpenAI describes internal Control Room, linking research jobs and inference authorization through job_id. Output stops within a stated maximum 35 seconds after a stop instruction while the process may remain alive. Fail-closed covers frontier-model research; other research workloads are still rolling out. It is not an external API product. Official RSS date 2026-11-09; checked 2026-11-10 without latency or reliability tests."
+          },
+          "reviewed_at": "2026-11-10T06:32:28.949661+00:00",
+          "source_hash": "8d07f38b5db4ee2e82cf49b1fd4f2a0494195bf3fbef8e4c4592d117c912c2af",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "tool",
       "checked_at": "2026-11-09",
       "editor": "FieldToFit",
       "event_date": "2026-11-11",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -39,7 +968,7 @@
             "source_id": "unified-docs"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "统一入口后，先核Cowork工具与留存",
         "limits": [
           {
@@ -108,7 +1037,7 @@
         "first_published_at": "2026-11-09T03:14:03.325721+00:00",
         "hot_card_first_published_at": "2026-11-09T03:14:03.325753+00:00",
         "hot_card_selected_at": "2026-11-09T03:14:03.325753+00:00",
-        "updated_at": "2026-11-09T03:14:03.325721+00:00"
+        "updated_at": "2026-11-10T06:32:16.115514+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -167,8 +1096,8 @@
             "部署与组件条件": "Deployment and component requirements",
             "默认值将切换": "The default will change"
           },
-          "reviewed_at": "2026-11-09T03:13:40.459045+00:00",
-          "source_hash": "80f0d909f085f3229ac79718297623fe1501ef9607e6d1cbf6b2ab3786e130e3",
+          "reviewed_at": "2026-11-10T06:31:53.279272+00:00",
+          "source_hash": "ac13ba541d7bfc207cc6b7e2fed3424aa58b3f956024a03e7e4139446e77fe85",
           "state": "reviewed"
         }
       }
@@ -1404,7 +2333,7 @@
       "checked_at": "2026-11-05",
       "editor": "FieldToFit",
       "event_date": "2026-11-04",
-      "highlight": true,
+      "highlight": false,
       "id": "D-310",
       "interpretation": [],
       "name": "Claude Code",
@@ -1412,7 +2341,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-05T04:11:10.771930+00:00",
-        "updated_at": "2026-11-10T05:51:31.373630+00:00"
+        "updated_at": "2026-11-10T06:30:27.644090+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -1457,8 +2386,8 @@
             "Claude Code 2.1.318调整IDE扩展安装与更新": "Claude Code 2.1.318 changes IDE extension installation and updates",
             "在 IDE 终端中启动时，不再安装或更新 IDE 扩展。": "no longer install or update the IDE extension when started in an IDE terminal"
           },
-          "reviewed_at": "2026-11-10T05:44:04.832412+00:00",
-          "source_hash": "1f9329f40ac14a01bb43ac87365a052cb1b1aa39a3ec3a3092c94be07f40b5c9",
+          "reviewed_at": "2026-11-10T06:30:05.780119+00:00",
+          "source_hash": "efcb8667aa172fb69d087a3167e3a1fdafc20bc3dbf3b2164fdf6571a240aeeb",
           "state": "reviewed"
         }
       }
@@ -2497,7 +3426,7 @@
       "checked_at": "2026-11-04",
       "editor": "FieldToFit",
       "event_date": "2026-11-03",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -2571,7 +3500,7 @@
         "first_published_at": "2026-11-04T01:15:57.139558+00:00",
         "hot_card_first_published_at": "2026-11-04T01:31:34.816679+00:00",
         "hot_card_selected_at": "2026-11-04T01:31:34.816679+00:00",
-        "updated_at": "2026-11-10T05:51:59.971909+00:00"
+        "updated_at": "2026-11-10T06:31:03.421618+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -2634,8 +3563,8 @@
             "邮箱外发先确认": "Confirm email egress",
             "配置与入口不同": "Configuration and entry points differ"
           },
-          "reviewed_at": "2026-11-10T05:44:24.278154+00:00",
-          "source_hash": "b02198c01d902d92bd4c6ad80a11a46fa3f6c7bfb557ab096024bc0f1f8628d5",
+          "reviewed_at": "2026-11-10T06:30:40.687440+00:00",
+          "source_hash": "969ee2bfa237b564d6b5f2950ef9c1616ac07d81c973661fb398191444d5d694",
           "state": "reviewed"
         }
       }
@@ -12149,7 +13078,7 @@
       "checked_at": "2026-11-05",
       "editor": "FieldToFit",
       "event_date": "2026-10-23",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -12272,7 +13201,7 @@
         "first_published_at": "2026-10-25T04:44:38.771184+00:00",
         "hot_card_first_published_at": "2026-10-25T04:44:38.771213+00:00",
         "hot_card_selected_at": "2026-10-25T04:44:38.771213+00:00",
-        "updated_at": "2026-11-05T04:11:47.201530+00:00"
+        "updated_at": "2026-11-10T06:31:39.313393+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -12353,8 +13282,8 @@
             "速度与费用未实测": "Speed and costs not tested",
             "长代码任务开发者": "Developers with long coding tasks"
           },
-          "reviewed_at": "2026-11-05T04:11:25.506423+00:00",
-          "source_hash": "deba50ab05b08ec266498cea471fdf4de111b5ee3e9d6d070211c57fce659033",
+          "reviewed_at": "2026-11-10T06:31:16.565686+00:00",
+          "source_hash": "5b79707c6f18784c46b069a803b87f0b23341a1dffe267985f7bf56a0f49887d",
           "state": "reviewed"
         }
       }
@@ -50535,7 +51464,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-11-09",
+  "reviewed_at": "2026-11-10",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

@@ -5271,6 +5271,14 @@
       "blocks": [
         {
           "kind": "paragraph",
+          "text": "本期增补｜ChatGPT Enterprise可通过AWS Marketplace采购｜2026-11-09。企业可沿用AWS购买和账单关系，将符合条件的支出计入AWS承诺。OpenAI称该入口提供与直购相同的功能及同步更新；Healthcare和Financial Services方案仍有资格条件。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "对应完整记录：https://fieldtofit.top/news/D-329"
+        },
+        {
+          "kind": "paragraph",
           "text": "BioBasicsBench｜2026-11-06：OpenAI与Ligo报告 100项日常实验分析任务，按评分细则的平均获分衡量模型；总分不等于实验成功率。另附 2026-11-04 Linux安全研究，分开候选、复现、独特补丁和路径归因；未补定未公开模型身份。2026-11-08核对两篇原始研究，未复现。"
         },
         {
@@ -6115,6 +6123,12 @@
           "id": "nov08-report2-original",
           "title": "Linux vulnerability research · OpenAI ·2026-11-04",
           "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov10-e-announcement",
+          "title": "OpenAI · ChatGPT Enterprise now available in AWS Marketplace ·2026-11-09",
+          "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace/"
         }
       ],
       "state": "published",
@@ -6240,6 +6254,7 @@
             "官方发布和采用材料": "Official release and adoption of materials",
             "官方替代项 gpt-6-luna；迁移前核对接口、输出、质量与成本，未实测迁移。": "The official replacement is gpt-6-luna; check interfaces, outputs, quality and costs before migration; migration is untested.",
             "官方研究公告与合作边界": "Official research announcement and collaboration scope",
+            "对应完整记录：https://fieldtofit.top/news/D-329": "Full corresponding record: https://fieldtofit.top/news/D-329",
             "对照关系": "Contrast relationship",
             "工具等待期间也能推进工作。": "The work can also be promoted while the tool is waiting.",
             "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
@@ -6262,6 +6277,7 @@
             "本事件接续既有GPT-Live记录，保留Live-1.1／Quip及原生Decisions历史；不能由此推定GPT-Live-1.1 公开API已经上线。本站未调用或试听。": "This event extends the existing GPT-Live record while retaining Live-1.1 / Quip and native Decisions history. It does not establish availability of a public GPT-Live-1.1 API. FieldToFit has not called or auditioned it.",
             "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。": "These events were checked on 2026-10-27. Existing models, prices, checking dates and history are preserved. The complete daily review of all dossier sources remains unfinished.",
             "本期事件／研究": "Current event / research",
+            "本期增补｜ChatGPT Enterprise可通过AWS Marketplace采购｜2026-11-09。企业可沿用AWS购买和账单关系，将符合条件的支出计入AWS承诺。OpenAI称该入口提供与直购相同的功能及同步更新；Healthcare和Financial Services方案仍有资格条件。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。": "Current addition | ChatGPT Enterprise is available through AWS Marketplace | 2026-11-09. Organizations can use their AWS purchasing and billing relationship and apply eligible spend toward AWS commitments. OpenAI says the channel has the same functionality and simultaneous updates as direct purchasing; Healthcare and Financial Services remain eligibility-dependent. Checked 2026-11-10, untested; this event addition is not a revalidation of the complete dossier.",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。": "Related events checked 2026-10-30; models, source dates, prices and history retained. Full daily checks of every source remain incomplete.",
@@ -6315,8 +6331,8 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "reviewed_at": "2026-11-08T02:41:32.817089+00:00",
-          "source_hash": "1b777a751d7fc4286a9a73530e6d2c53d378159ed48f67311a2750de9c3a137d",
+          "reviewed_at": "2026-11-10T06:38:01.396509+00:00",
+          "source_hash": "aace2f565f08d47456827739064661bddee01d4e7f9d0ca3ec102f9d99a08b27",
           "state": "reviewed"
         }
       },
@@ -6324,6 +6340,14 @@
     },
     {
       "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "本期增补｜Claude Fable 5.2与Mythos 5.2发布：标准API价格下调 20%｜2026-11-09。Anthropic发布同一底层模型的两个版本，防护与获取资格不同。标准输入／输出每百万token为 8／40美元，fast为 16／80美元；1M上下文、128k输出。迁移兼容与安全留存条件见官方文档。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "对应完整记录：https://fieldtofit.top/news/D-325"
+        },
         {
           "kind": "paragraph",
           "text": "Claude Desktop 3P统一默认切换｜2026-11-10 12:00 Pacific之后启动时，未设desktopHome的当前版本采用standard；北京时间 2026-11-11 04:00之后。新Cowork会话的工具、目录和留存须分别核对，VM组件下载另有条件；与Enterprise云端范围分别适用。2026-11-09核对，未实测。"
@@ -7081,6 +7105,18 @@
           "id": "nov09-b-original",
           "title": "The components of agent memory · Lance Martin / Anthropic ·2026-11-06",
           "url": "https://www.anthropic.com/research/components-of-agent-memory"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov10-a-announcement",
+          "title": "Anthropic · Claude Fable5.2 and Mythos5.2 ·2026-11-09",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov10-a-migration",
+          "title": "Claude Platform · What’s new in Claude Fable5.2",
+          "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2"
         }
       ],
       "state": "published",
@@ -7185,6 +7221,7 @@
             "官方状态页记录 2026-10-25 北京时间 14:05–14:35 的多模型事件，以及 16:08–16:29 的 Fable 5.1 事件。两者均已解决；恢复公告时间与实际影响结束时间分开记录。": "Official status records a multi-model incident on 2026-10-25 at 14:05–14:35 Beijing time and a Fable 5.1 incident at 16:08–16:29. Both are resolved; announcement times are distinct from the end of impact.",
             "对claude-opus-4-8请求speed=fast届时将报错；本次是快速模式弃用，不是整款模型退役。继续快速模式须评估Opus 5.5迁移条件。": "Requests to claude-opus-4-8 with speed=fast will then error. This is fast-mode deprecation, not retirement of the entire model. Continued fast mode requires evaluating migration to Opus 5.5.",
             "对可能造成人身伤害的自主硬件，要求合格人员能够观察、停止设备，断开Claude后仍能保持安全状态；应结合具体用途阅读官方政策。": "For autonomous hardware that may cause physical harm, qualified people must be able to observe and stop equipment. It must remain safe after disconnecting Claude. Read the official policy in the context of the particular use.",
+            "对应完整记录：https://fieldtofit.top/news/D-325": "Full corresponding record: https://fieldtofit.top/news/D-325",
             "对照 Opus 4.8": "Compare Opus 4.8",
             "对照 Sonnet 4.6": "Compare with Sonnet 4.6",
             "对照关系": "Contrast relationship",
@@ -7202,6 +7239,7 @@
             "本期事件／研究": "Current event / research",
             "本期增补核对日 2026-10-25；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-25; the full-version daily dossier review is incomplete. Existing models, prices, history and dossier-wide check date are retained.",
             "本期增补核对日 2026-10-26；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-26; the full-version daily dossier review is incomplete. Existing models, prices, history and the dossier-wide check date are retained.",
+            "本期增补｜Claude Fable 5.2与Mythos 5.2发布：标准API价格下调 20%｜2026-11-09。Anthropic发布同一底层模型的两个版本，防护与获取资格不同。标准输入／输出每百万token为 8／40美元，fast为 16／80美元；1M上下文、128k输出。迁移兼容与安全留存条件见官方文档。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。": "Current addition | Claude Fable 5.2 and Mythos 5.2 launch with 20% lower standard API rates | 2026-11-09. Anthropic releases two versions of the same underlying model with different safeguards and access. Standard input/output rates are 8/40 USD per million tokens; fast rates are 16/80 USD, with 1M context and 128k output. Official documentation sets migration and safety-retention conditions. Checked 2026-11-10, untested; this event addition is not a revalidation of the complete dossier.",
             "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。": "Related events checked 2026-10-30; models, source dates, prices and history retained. Full daily checks of every source remain incomplete.",
             "本期已核实事件": "Current verified event",
             "本期接口与模式事件于 2026-11-01核对；保留原模型、价格和历史。全入口日核验仍未完成。": "Related API and mode events checked 2026-11-01; existing models, prices and history retained. Full daily checks of all sources remain incomplete.",
@@ -7239,8 +7277,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-11-09T03:14:21.000638+00:00",
-          "source_hash": "1195333aef8894e76645ce0e2909262975049516cca4a617720e46c3d465d96a",
+          "reviewed_at": "2026-11-10T06:36:01.478790+00:00",
+          "source_hash": "03efdb4ad4edd23067df7ce4fe9c06d3aaba69329f2d4a4640f0c98f95865910",
           "state": "reviewed"
         }
       },
@@ -10957,6 +10995,14 @@
     {
       "blocks": [
         {
+          "kind": "paragraph",
+          "text": "本期增补｜Codex CLI 0.167.0新增Agent命令中心与后端切换｜2026-11-06。正式版本新增未读结果标记、保留草稿的后端切换、受支持终端的本地图像预览及Vertex AI设置入口；修复提供方切换后的会话可见性、审批提示及压缩统计。本次按 11月 6日原日期补录。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "对应完整记录：https://fieldtofit.top/news/D-326"
+        },
+        {
           "columns": [
             "本期已核实事件",
             "事件日期",
@@ -11086,6 +11132,12 @@
           "id": "oct29-C-announcement",
           "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
           "url": "https://openai.com/index/openai-servicenow-partnership-expansion/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov10-b-release",
+          "title": "OpenAI / Codex · rust-v0.167.0 ·086ccc8",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0"
         }
       ],
       "state": "published",
@@ -11110,10 +11162,12 @@
             "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。": "Eligible paid Pro and Business subscriptions can activate credits for one API organization after at least 7 days. First grants are prorated; they neither increase ChatGPT or signed-in Codex allowances nor cover Codex API-key usage.",
             "官方更新记录中的运行中消息、SDK 与恢复行为": "Running messages, SDK and recovery behaviors in the official update record",
             "客户端、CLI、SDK 和所用模型分别标注": "Client, CLI, SDK and the model used are marked separately.",
+            "对应完整记录：https://fieldtofit.top/news/D-326": "Full corresponding record: https://fieldtofit.top/news/D-326",
             "已核实更新": "Verified and updated",
             "恢复记录与模型上下文要分开。": "The recovery record should be separated from the model context.",
             "执行与扩展": "Execution and expansion",
             "日期": "Date",
+            "本期增补｜Codex CLI 0.167.0新增Agent命令中心与后端切换｜2026-11-06。正式版本新增未读结果标记、保留草稿的后端切换、受支持终端的本地图像预览及Vertex AI设置入口；修复提供方切换后的会话可见性、审批提示及压缩统计。本次按 11月 6日原日期补录。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。": "Current addition | Codex CLI 0.167.0 adds an agent command center and backend switching | 2026-11-06. The release adds unread-result markers, backend switching with drafts retained, local image previews on supported terminals and a Vertex AI setup entry. Fixes cover chat visibility after provider changes, approval prompts and compaction accounting. Backfilled with its original 11/6 date. Checked 2026-11-10, untested; this event addition is not a revalidation of the complete dossier.",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期已核实事件": "Current verified event",
@@ -11123,8 +11177,8 @@
             "运行中的信息也有来源层级。": "The information in operation also has a source level.",
             "通过工具处理项目任务；程序可接入执行流程": "Process project tasks through tools; programs can access the execution process"
           },
-          "reviewed_at": "2026-10-29T02:51:55.964536+00:00",
-          "source_hash": "b09748d62341f58e5f2e2302c7eaaa9fec8e1a616c13e97ba1f919602a1bcebe",
+          "reviewed_at": "2026-11-10T06:36:40.311075+00:00",
+          "source_hash": "a269cbc6b0dcd849ff1713384a2edbc2287da7dc6332fef2f518857cb0eb4b9b",
           "state": "reviewed"
         }
       },
@@ -11132,6 +11186,14 @@
     },
     {
       "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "本期增补｜Claude Code 2.1.321／322：修复OAuth及权限检查，新增Vertex快速模式｜2026-11-10。2.1.321修复MCP OAuth重定向及若干Bash和目标路径权限检查，接入Fable 5.2；2.1.322另增Vertex global／us／eu快速模式，被拒绝时回退standard。两版变化分别记录。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "对应完整记录：https://fieldtofit.top/news/D-328"
+        },
         {
           "kind": "paragraph",
           "text": "Claude Code v 2.1.319｜GitHub于 2026-11-06 17:04:01 UTC发布，即北京时间 2026-11-07 01:04:01。调整部分auto mode检查失败路径，新增权限提示直接拒绝与MCP后台任务，并声明worktree／Bash权限修复；2026-11-07核对，未回归，不推定SDK同步升级。"
@@ -11876,6 +11938,18 @@
           "id": "nov07-c-docs",
           "title": "Claude Code official changelog ·2.1.319",
           "url": "https://code.claude.com/docs/en/changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov10-d-release321",
+          "title": "Anthropic · Claude Code v2.1.321 ·a4fcccc",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov10-d-release322",
+          "title": "Anthropic · Claude Code v2.1.322 ·6e1e44f",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322"
         }
       ],
       "state": "published",
@@ -11989,6 +12063,7 @@
             "官方发布记录／模型卡／采用说明": "Official release record/model card/use instructions",
             "官方版本订阅条目更新2026-10-03 UTC；不冒充精确首发时间": "Official version subscription entry update 2026-10-03 UTC; do not pretend to be the exact release time",
             "官方记录修复部分恢复会话后定时任务不触发、单次运行过早终止后台命令，以及后台会话重启后丢失循环唤醒。Agent工具新增effort参数。": "Official fixes cover scheduled tasks not firing after some resumed sessions, one-shot runs ending background commands too early, and recurring wakeups lost after background-session restarts. The Agent tool gains an effort parameter.",
+            "对应完整记录：https://fieldtofit.top/news/D-328": "Full corresponding record: https://fieldtofit.top/news/D-328",
             "工作区与任务结果": "Worktrees and workflow results",
             "已实际读官方材料；公开原创整理和出处链接，不再分发未确认许可的全文。": "Official material actually read; publish original commentary and source links without redistributing text with unverified rights.",
             "已核实更新": "Verified and updated",
@@ -12010,6 +12085,7 @@
             "未确认正文再分发许可；保留官方入口，MCP可读取本站解读及来源清单。": "The text has not been confirmed to distribute the permission; keep the official entrance, MCP can read the FieldToFit interpretation and source list.",
             "本期事件于 2026-10-27核对；保留旧型号、价格、原核验日期与历史。整份档案全入口日检查尚未完成。": "These events were checked on 2026-10-27. Existing models, prices, checking dates and history are preserved. The complete daily review of all dossier sources remains unfinished.",
             "本期增补核对日 2026-10-26；仅核对上述事件，未完成整份档案的全版本日检查。原型号、价格、历史和全档案核对日保留。": "Event update checked on 2026-10-26; the full-version daily dossier review is incomplete. Existing models, prices, history and the dossier-wide check date are retained.",
+            "本期增补｜Claude Code 2.1.321／322：修复OAuth及权限检查，新增Vertex快速模式｜2026-11-10。2.1.321修复MCP OAuth重定向及若干Bash和目标路径权限检查，接入Fable 5.2；2.1.322另增Vertex global／us／eu快速模式，被拒绝时回退standard。两版变化分别记录。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。": "Current addition | Claude Code 2.1.321/322 fixes OAuth and permission checks, adds Vertex fast mode | 2026-11-10. 2.1.321 fixes MCP OAuth redirects and several Bash and target-path permission checks, and adds Fable 5.2. Version 2.1.322 separately adds Vertex fast mode in global/us/eu, falling back to standard when refused. Changes are attributed to their respective releases. Checked 2026-11-10, untested; this event addition is not a revalidation of the complete dossier.",
             "本期对应事件于 2026-10-28核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-28. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期对应事件于 2026-10-30核对；保留型号、原文日期、价格与历史。全入口日核验仍未完成。": "Related events checked 2026-10-30; models, source dates, prices and history retained. Full daily checks of every source remain incomplete.",
             "本期对应事件于 2026-10-31核对；保留型号、价格、原日期与历史。全入口日核验仍未完成。": "Related events checked 2026-10-31; models, prices, source dates and history retained. Full daily checks of every source remain incomplete.",
@@ -12055,8 +12131,8 @@
             "验证与采用边界": "Verification and adoption of boundaries",
             "验证范围": "Scope of verification"
           },
-          "reviewed_at": "2026-11-07T00:58:04.618287+00:00",
-          "source_hash": "278d661418d965d21b82fc1d810a8de4a373c20343a51d0c298e2b352c4a85ab",
+          "reviewed_at": "2026-11-10T06:37:19.294617+00:00",
+          "source_hash": "55842f1a8fb16d65613763cdaf4b9edf07491f0d216a5e16f5bc00c636b8b567",
           "state": "reviewed"
         }
       },
@@ -15202,7 +15278,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-11-09",
+  "reviewed_at": "2026-11-10",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

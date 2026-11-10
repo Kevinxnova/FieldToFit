@@ -1,7 +1,35 @@
 {
-  "version": "1.20.1",
-  "revision": "411a7de9a4d6949cd1cc9e02b02a0bbddd292106d138e445dfc1389ca7cd5068",
+  "version": "1.20.2",
+  "revision": "ded1628d2b9a4eea0663536a618ec17a00d087a2b66df50435fdbfd762d465e3",
   "items": [
+    {
+      "version": "1.20.2",
+      "date": "2026-11-10",
+      "deployed_on": "2026-11-10",
+      "copy": {
+        "zh": {
+          "title": "已选六项动态、Muse Ember评估与Fable分享卡",
+          "highlights": [
+            "已发表获批Fable／Mythos 5.2、Codex CLI、Muse Ember、Claude Code、AWS采购与Control Room六项动态，保留版本、原日期与采用条件。",
+            "Muse Ember动态与报告共用记录，四条结论对应展开，保留评分分母、不同运行框架、费用估算及官方原图入口。",
+            "提供已选Fable中英文分享卡，窄范围增补四份对应档案；正式发布后才轮换首页，旧链接与历史继续保留。"
+          ],
+          "details": "",
+          "translation_available": true
+        },
+        "en": {
+          "title": "Six selected updates, Muse Ember evaluation and Fable card",
+          "highlights": [
+            "Publish the selected Fable/Mythos 5.2, Codex CLI, Muse Ember, Claude Code, AWS procurement and Control Room updates with versions, source dates and adoption conditions.",
+            "Share one record between Muse Ember news and its four-finding report, preserving denominators, differing harnesses, cost estimates and original-figure links.",
+            "Provide the selected bilingual Fable card and four narrow dossier additions; rotate homepage selections only after actual publication, preserving old links and history."
+          ],
+          "details": "",
+          "translation_available": true
+        }
+      },
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.2"
+    },
     {
       "version": "1.20.1",
       "date": "2026-11-10",
