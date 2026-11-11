@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.3"></a>
+## v1.20.3 · Carbon 资讯卡与 MKA 报告资源 · 2026-11-11
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-11 -->
+<!-- public-title:en: Carbon information card and MKA report assets -->
+<!-- release-summary:zh:start -->
+- 登记 Gemini 4 Carbon 中英文新分享图及 MKA 报告三张本站重绘。
+- 内容经既有审核流程独立发表；兼容现有新闻、档案和精选接口。
+- 保留旧卡稳定入口，分享图由同一记录校验。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register the revised Chinese and English Gemini 4 Carbon share images and three FieldToFit charts for the MKA report.
+- Publish editorial content through the existing review workflow, with compatible news, dossier and selection APIs.
+- Keep the original card URL and validate the share images against its content.
+<!-- release-summary:en:end -->
+
+此批为已选稿件所需静态资源和兼容内容的 patch，无数据库迁移。四条动态及对应档案、MKA 报告与 Carbon 原卡更正已正式发布。验证和轮换见[实际验收](docs/validation/2026-11-11-approved-updates.md)。
+
 <a id="v1.20.2"></a>
 ## v1.20.2 · 已选六项动态、Muse Ember评估与Fable分享卡 · 2026-11-10
 <!-- release-tag:unpublished -->

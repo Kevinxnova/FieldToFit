@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.20.2](CHANGELOG.md#v1.20.2)** · 尚未推送发布标签
+**当前源码版本：[v1.20.3](CHANGELOG.md#v1.20.3)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 已发表获批Fable／Mythos 5.2、Codex CLI、Muse Ember、Claude Code、AWS采购与Control Room六项动态，保留版本、原日期与采用条件。
-- Muse Ember动态与报告共用记录，四条结论对应展开，保留评分分母、不同运行框架、费用估算及官方原图入口。
-- 提供已选Fable中英文分享卡，窄范围增补四份对应档案；正式发布后才轮换首页，旧链接与历史继续保留。
+- 登记 Gemini 4 Carbon 中英文新分享图及 MKA 报告三张本站重绘。
+- 内容经既有审核流程独立发表；兼容现有新闻、档案和精选接口。
+- 保留旧卡稳定入口，分享图由同一记录校验。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

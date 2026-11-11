@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.20.2](CHANGELOG.md#v1.20.2)** · Release tag not yet published
+**Current source version: [v1.20.3](CHANGELOG.md#v1.20.3)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Publish the selected Fable/Mythos 5.2, Codex CLI, Muse Ember, Claude Code, AWS procurement and Control Room updates with versions, source dates and adoption conditions.
-- Share one record between Muse Ember news and its four-finding report, preserving denominators, differing harnesses, cost estimates and original-figure links.
-- Provide the selected bilingual Fable card and four narrow dossier additions; rotate homepage selections only after actual publication, preserving old links and history.
+- Register the revised Chinese and English Gemini 4 Carbon share images and three FieldToFit charts for the MKA report.
+- Publish editorial content through the existing review workflow, with compatible news, dossier and selection APIs.
+- Keep the original card URL and validate the share images against its content.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

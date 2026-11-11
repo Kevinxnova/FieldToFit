@@ -2228,5 +2228,29 @@
       "kind": "Published task-specific values; no invented confidence intervals",
       "independent_replication": false
     }
+  },
+  "/report-figures/mka-20261110-quality.png": {
+    "sha256": "686cb56d4ad55bc78505f7116d8f1ef7bebeefd901a943dea8b2cb7486b81006",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/papers/mka_tech_paper.pdf"
+    ],
+    "version": "2026-11-10",
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced."
+  },
+  "/report-figures/mka-20261110-cost.png": {
+    "sha256": "e30bfc3d488e5062f3b4d70e9b34574eadefa2f3448d7846af1fea59fb011c09",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/papers/mka_tech_paper.pdf"
+    ],
+    "version": "2026-11-10",
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced."
+  },
+  "/report-figures/mka-20261110-vision.png": {
+    "sha256": "db125c08dc1fa4ea0bfa7a0c871e3b6f4b51acf293ce238d3be8f5b72a6b70df",
+    "source_urls": [
+      "https://storage.googleapis.com/deepmind-media/papers/mka_tech_paper.pdf"
+    ],
+    "version": "2026-11-10",
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced."
   }
 }

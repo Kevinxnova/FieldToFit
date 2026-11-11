@@ -5271,6 +5271,22 @@
       "blocks": [
         {
           "kind": "paragraph",
+          "text": "ChatGPT 两种旧语音模式将于 2026-12-11 退役。OpenAI 于 2026-11-10 公告，计划于 2026-12-11 退役 Advanced 和 Standard 语音模式。语音对话继续由 GPT-Live 提供。 本项 2026-11-11 核对。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-331"
+        },
+        {
+          "kind": "paragraph",
+          "text": "GPT Image 2 API 将于 2027-02-10 下线。OpenAI 于 2026-11-10 弃用 gpt-image-2 和 gpt-image-2-2026-04-21，计划于 2027-02-10 从 API 移除。 本项 2026-11-11 核对。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-334"
+        },
+        {
+          "kind": "paragraph",
           "text": "本期增补｜ChatGPT Enterprise可通过AWS Marketplace采购｜2026-11-09。企业可沿用AWS购买和账单关系，将符合条件的支出计入AWS承诺。OpenAI称该入口提供与直购相同的功能及同步更新；Healthcare和Financial Services方案仍有资格条件。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。"
         },
         {
@@ -6129,6 +6145,12 @@
           "id": "nov10-e-announcement",
           "title": "OpenAI · ChatGPT Enterprise now available in AWS Marketplace ·2026-11-09",
           "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov11-d-deprecations",
+          "title": "OpenAI API · Deprecations",
+          "url": "https://developers.openai.com/api/docs/deprecations#2026-11-10-gpt-image-2"
         }
       ],
       "state": "published",
@@ -6150,7 +6172,9 @@
             "Astra 的异步调用允许模型等待工具结果时继续其他推理或工具操作；值得读的是调用过程和结果回收方式，而不只是模型名称。": "Astra's asynchronous calls let it continue other reasoning or tool operations while waiting for tool results. The call flow and result-collection mechanism provide useful details beyond the model name.",
             "BioBasicsBench｜2026-11-06：OpenAI与Ligo报告 100项日常实验分析任务，按评分细则的平均获分衡量模型；总分不等于实验成功率。另附 2026-11-04 Linux安全研究，分开候选、复现、独特补丁和路径归因；未补定未公开模型身份。2026-11-08核对两篇原始研究，未复现。": "BioBasicsBench |2026-11-06: OpenAI and Ligo report 100 routine laboratory-analysis tasks evaluated by mean rubric reward, not experimental success rate. Related Linux research dated 2026-11-04 separates candidates, reproductions, distinct patches and path attribution without assigning an undisclosed model’s identity. Both original studies checked 2026-11-08; not reproduced.",
             "CW-M01 新增语音分支并保留D-13 旧节点。API型号、价格和具体账户开放状态仍待核；本站未调用实测。": "Add the voice branch to CW-M01 and retain D-13; API identifiers, prices and account-specific availability remain unverified; FieldToFit has not run inference tests.",
+            "ChatGPT 两种旧语音模式将于 2026-12-11 退役。OpenAI 于 2026-11-10 公告，计划于 2026-12-11 退役 Advanced 和 Standard 语音模式。语音对话继续由 GPT-Live 提供。 本项 2026-11-11 核对。": "Two legacy ChatGPT voice modes will retire on 2026-12-11. OpenAI announced on 2026-11-10 that Advanced and Standard Voice are scheduled to retire on 2026-12-11. GPT-Live remains available for voice conversations. This event was checked on 2026-11-11.",
             "ChatGPT将文字、图示与可操作组件组合成回答，用户可以修改输入并观察结果；本次针对Chat体验分阶段推出。": "ChatGPT combines text, diagrams and actionable components in answers, letting users change inputs and observe results. This rollout concerns the Chat experience and proceeds in stages.",
+            "GPT Image 2 API 将于 2027-02-10 下线。OpenAI 于 2026-11-10 弃用 gpt-image-2 和 gpt-image-2-2026-04-21，计划于 2027-02-10 从 API 移除。 本项 2026-11-11 核对。": "GPT Image 2 API is scheduled for removal on 2027-02-10. OpenAI deprecated gpt-image-2 and gpt-image-2-2026-04-21 on 2026-11-10 and plans to remove both from the API on 2027-02-10. This event was checked on 2026-11-11.",
             "GPT 档案补齐：把 GPT-6 Sol/Luna 与 GPT-6.1 Sol 放回同一张版本表 · 官方来源 1": "GPT profile complete: Put GPT-6 Sol/Luna and GPT-6.1 Sol back to the same version table · Official source 1",
             "GPT 档案补齐：把 GPT-6 Sol/Luna 与 GPT-6.1 Sol 放回同一张版本表 · 官方来源 2": "GPT profile complete: Put GPT-6 Sol/Luna and GPT-6.1 Sol back to the same version table · Official source 2",
             "GPT 档案补齐：把 GPT-6 Sol/Luna 与 GPT-6.1 Sol 放回同一张版本表 · 官方来源 3": "GPT profile complete: Put GPT-6 Sol/Luna and GPT-6.1 Sol back to the same version table · Official source 3",
@@ -6246,6 +6270,8 @@
             "在 5.6 已有能力上继续演进": "5.6 has the ability to continue to evolve",
             "复杂编程、电脑操作与专业任务；能力为官方定位": "Complex programming, computer operation and professional tasks; ability is the official positioning",
             "套餐与开放范围": "Plans and availability",
+            "完整动态 https://fieldtofit.top/news/D-331": "Read the full update https://fieldtofit.top/news/D-331",
+            "完整动态 https://fieldtofit.top/news/D-334": "Read the full update https://fieldtofit.top/news/D-334",
             "官方RSS公告时间": "Official RSS announcement timestamp",
             "官方公开研究材料仓库": "Official public research artifact repository",
             "官方原始日期": "The official original date",
@@ -6331,8 +6357,8 @@
             "首发日待核；当前官方指南已列出": "The first release date is to be approved; the current official guidelines have been listed",
             "首发日待核；当前指南分支": "The first date is to be approved; the current guide branch"
           },
-          "reviewed_at": "2026-11-10T06:38:01.396509+00:00",
-          "source_hash": "aace2f565f08d47456827739064661bddee01d4e7f9d0ca3ec102f9d99a08b27",
+          "reviewed_at": "2026-11-11T09:01:29.838781+00:00",
+          "source_hash": "73acc80e561da37444772a7140ef6338078d44854709ccad41f5a38085b39596",
           "state": "reviewed"
         }
       },
@@ -6340,6 +6366,14 @@
     },
     {
       "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Claude 新增协作表格、白板、数据工件与交互连接器。Claude Sheets 和 Whiteboards 进入 beta。原 Claude Dashboards 更名为 Claude Data 并正式开放，认证查询和实时共享仍为 beta。 本项 2026-11-11 核对。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-332"
+        },
         {
           "kind": "paragraph",
           "text": "本期增补｜Claude Fable 5.2与Mythos 5.2发布：标准API价格下调 20%｜2026-11-09。Anthropic发布同一底层模型的两个版本，防护与获取资格不同。标准输入／输出每百万token为 8／40美元，fast为 16／80美元；1M上下文、128k输出。迁移兼容与安全留存条件见官方文档。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。"
@@ -7117,6 +7151,24 @@
           "id": "nov10-a-migration",
           "title": "Claude Platform · What’s new in Claude Fable5.2",
           "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov11-b-overview",
+          "title": "Anthropic · More ways to work with Claude",
+          "url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov11-b-artifacts",
+          "title": "Anthropic · Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+          "url": "https://claude.com/resources/articles/sheets-whiteboards-data"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov11-b-connectors",
+          "title": "Anthropic · Interactive connectors",
+          "url": "https://claude.com/resources/articles/interactive-connectors-full-tool"
         }
       ],
       "state": "published",
@@ -7145,6 +7197,7 @@
             "Claude Platform 接入 Google Cloud：身份和结算打通，迁移仍需重新配置": "Claude Platform on Google Cloud: integrated identity and billing, with migration still requiring setup",
             "Claude Security为Enterprise公测加入持续扫描、修复跟踪、项目知识和API／MCP集成，按变更风险与复杂度更新发现。": "Claude Security’s Enterprise public beta adds continuous scanning, fix tracking, project knowledge and API/MCP integrations, updating findings based on change risk and complexity.",
             "Claude Security：跟随代码变化扫描，并追踪修复状态": "Claude Security: scans follow code changes and track fixes",
+            "Claude 新增协作表格、白板、数据工件与交互连接器。Claude Sheets 和 Whiteboards 进入 beta。原 Claude Dashboards 更名为 Claude Data 并正式开放，认证查询和实时共享仍为 beta。 本项 2026-11-11 核对。": "Claude adds collaborative sheets, whiteboards, data artifacts and interactive connectors. Claude Sheets and Whiteboards enter beta. Claude Dashboards is renamed Claude Data and becomes generally available, with certified queries and live sharing remaining in beta. This event was checked on 2026-11-11.",
             "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 1": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 1",
             "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 2": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 2",
             "Claude 档案补齐：Opus 5.5、Sonnet 5.5 的型号、价格与迁移条件 · 官方来源 3": "Claude profile complete: Opus 5.5, Sonnet 5.5 model, price and migration conditions · Official source 3",
@@ -7210,6 +7263,7 @@
             "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。": "Model claude-haiku-5-5 has 1M context and up to 128k output. Per million input / output tokens, prompts up to 100K cost $0.10 / $0.50; prompts above 100K cost $0.50 / $2.50. Check Claude API and each cloud platform's capabilities separately.",
             "型号、上下文与标准价格": "Model, context and standard price",
             "型号和平台边界": "Model and platform scope",
+            "完整动态 https://fieldtofit.top/news/D-332": "Read the full update https://fieldtofit.top/news/D-332",
             "完整型号家族": "Complete model family",
             "完整型号目录": "Complete model catalog",
             "官方公告、版本记录或采用说明": "Official announcement, version record or adoption instructions",
@@ -7277,8 +7331,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-11-10T06:36:01.478790+00:00",
-          "source_hash": "03efdb4ad4edd23067df7ce4fe9c06d3aaba69329f2d4a4640f0c98f95865910",
+          "reviewed_at": "2026-11-11T09:02:13.757210+00:00",
+          "source_hash": "ec03bb6dd6c3d72fb46744755905134830eab8fb8f00c6b54d62f9f030ed6925",
           "state": "reviewed"
         }
       },
@@ -7733,6 +7787,14 @@
     },
     {
       "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Gemini 4 Carbon 正式开放，2026-11-30 介绍价到期。Gemini API 付费层和企业入口已开放。Google AI Ultra 在 Gemini 应用、搜索 AI Mode 与 Antigravity 分批推出。 本项 2026-11-11 核对。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-333"
+        },
         {
           "kind": "paragraph",
           "text": "2026-11-05公布Omni 1.2 Flash，增加 15秒视频与多轮编辑；720p公告价每秒 0.07美元，应用及API开放条件分别适用。2026-11-06核对，未实测。"
@@ -8368,6 +8430,18 @@
           "id": "omni12",
           "title": "Gemini Omni 1.2 Flash official announcement",
           "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov11-c-carbon-release",
+          "title": "Google · Gemini 4 Carbon is now available",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov11-c-carbon-model-card",
+          "title": "Google DeepMind · Gemini 4 Carbon model card",
+          "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/"
         }
       ],
       "state": "published",
@@ -8391,6 +8465,7 @@
             "Carbon本周先向部分网络防御者及Fairwind伙伴开放。每百万输入／输出token介绍期 2／10美元，之后 4／20美元；普通开发者、企业与消费者入口仍待推出。": "Carbon initially rolls out to selected cyber defenders and Fairwind partners. Introductory input/output prices are $2/$10 per million tokens, later $4/$20; general developer, business and consumer access is still forthcoming.",
             "Develop with agents · Google 官方文档快照": "Develop with agents · Google official document snapshot",
             "Gemini 4 Argon模型卡专题": "Gemini 4 Argon model-card analysis",
+            "Gemini 4 Carbon 正式开放，2026-11-30 介绍价到期。Gemini API 付费层和企业入口已开放。Google AI Ultra 在 Gemini 应用、搜索 AI Mode 与 Antigravity 分批推出。 本项 2026-11-11 核对。": "Gemini 4 Carbon opens publicly with introductory pricing expiring 2026-11-30. The paid Gemini API tier and enterprise access are open. Google AI Ultra access is rolling out in the Gemini app, AI Mode in Search and Antigravity. This event was checked on 2026-11-11.",
             "Gemini API / Google AI Studio；未测任务成功率或真实延迟": "Gemini API / Google AI Studio; Untested task success rate or real delay",
             "Gemini API / Google AI Studio；账户及地区可用性未实测": "Gemini API / Google AI Studio; account and regional availability not runtime test",
             "Gemini API；不把这一文本输出型号称作生图模型": "Gemini API; this text output model is not called a biogram model.",
@@ -8450,6 +8525,7 @@
             "同样列出上述输入类型及约 1M 输入上限，保留为对照资料": "The above input types and about 1M input limit are also listed, and kept as reference data.",
             "同次发布的推理分支": "Reasoning branches released at the same time",
             "完整 devsite-article-body 正文，转为 Markdown；保留文本、代码及链接，不含站点导航和图片二进制。": "Complete devsite-article-body text, turn to Markdown; keep text, code and links, excluding site navigation and picture binary.",
+            "完整动态 https://fieldtofit.top/news/D-333": "Read the full update https://fieldtofit.top/news/D-333",
             "官方公告、版本记录或采用说明": "Official announcement, version record or adoption instructions",
             "官方原始材料入口": "Official original materials entrance",
             "官方描述跨会话持续执行、工作资料与工具连接，并能组织子Agent；coworker agent在Workspace中以独立身份参与工作。": "Official materials describe ongoing execution across sessions, connections to work information and tools, and coordination of subagents. In Workspace, a coworker agent participates under its own identity.",
@@ -8496,8 +8572,8 @@
             "页面标示 2026-08 更新；稳定版": "Page marking 2026-08 update; stable version",
             "页面标示 2026-09 更新；稳定版，首发日未核": "Page indication 2026-09 update; stable version, unchecked on the first day"
           },
-          "reviewed_at": "2026-11-06T04:26:21.316090+00:00",
-          "source_hash": "f461d381a1c6a504e0766732158ae4449fb75b1a0acbd331bccc9c625138b9a8",
+          "reviewed_at": "2026-11-11T09:02:56.829735+00:00",
+          "source_hash": "86c0fe926754e7ca15732b729740d3d9a8aef6c070f8c9111ddab77b1edb836c",
           "state": "reviewed"
         }
       },
@@ -15278,7 +15354,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-11-10",
+  "reviewed_at": "2026-11-11",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }
