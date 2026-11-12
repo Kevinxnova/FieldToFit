@@ -7142,5 +7142,7 @@
   "Text Overall · Style Control；96206 票；评分区间不代表名次差异显著。": "Text Overall · Style Control; 96206 votes; score intervals do not imply statistically distinct ranks.",
   "Text Overall · Style Control；9792 票；评分区间不代表名次差异显著。": "Text Overall · Style Control; 9792 votes; score intervals do not imply statistically distinct ranks.",
   "Text Overall · Style Control；9797 票；评分区间不代表名次差异显著。": "Text Overall · Style Control; 9797 votes; score intervals do not imply statistically distinct ranks.",
-  "Text Overall · Style Control；9805 票；评分区间不代表名次差异显著。": "Text Overall · Style Control; 9805 votes; score intervals do not imply statistically distinct ranks."
+  "Text Overall · Style Control；9805 票；评分区间不代表名次差异显著。": "Text Overall · Style Control; 9805 votes; score intervals do not imply statistically distinct ranks.",
+  "v5.1231.0 中 Cowork 关闭、Chat 未显式开启且 Code 开启，未设时暂按 off。v4.4212.0 至 v4.23118.1 同条件仍按 standard。官方安排例外于北京时间12月18日04:00结束。显式 off 保持关闭。": "In v5.1231.0, unset reads as off when Cowork is disabled, Chat is not explicitly enabled and Code is enabled. Versions v4.4212.0 through v4.23118.1 read standard. The exception is scheduled to end on December 18 at 04:00 Beijing time. Explicit off stays off.",
+  "自北京时间11月11日04:00后启动起，适用版本中未设 desktopHome 通常读作 standard。可运行 Cowork VM 的设备由主页开启 Cowork 会话，其余采用非 VM 能力。Code 独立。": "On launch after 04:00 Beijing time on November 11, applicable versions generally read unset desktopHome as standard. Devices with the Cowork VM start a Cowork session from home. Others use non-VM capabilities. Code is separate."
 }

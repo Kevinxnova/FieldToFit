@@ -1,34 +1,34 @@
 {
-  "version": "1.20.3",
-  "revision": "d614646168109636eda22ae99ac967a603bf2308633720792af113f9261c1a64",
+  "version": "1.20.4",
+  "revision": "1d591e81f56cf47f8f9525ce22f330c8739c8379918ea4161d83dce8009fa583",
   "items": [
     {
-      "version": "1.20.3",
-      "date": "2026-11-11",
-      "deployed_on": "2026-11-11",
+      "version": "1.20.4",
+      "date": "2026-11-12",
+      "deployed_on": "2026-11-12",
       "copy": {
         "zh": {
-          "title": "Carbon 资讯卡与 MKA 报告资源",
+          "title": "Claude Desktop 信息卡更正与自由职业报告",
           "highlights": [
-            "登记 Gemini 4 Carbon 中英文新分享图及 MKA 报告三张本站重绘。",
-            "内容经既有审核流程独立发表；兼容现有新闻、档案和精选接口。",
-            "保留旧卡稳定入口，分享图由同一记录校验。"
+            "更正 Claude Desktop 3P 默认入口的版本条件，更新中英文信息卡。",
+            "整理 OpenAI 与 Upwork 的自由职业工作报告，并重绘报价、工时及任务组合图。",
+            "纳入当批获批的产品动态及对应档案增补。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Carbon information card and MKA report assets",
+          "title": "Claude Desktop card correction and freelance work report",
           "highlights": [
-            "Register the revised Chinese and English Gemini 4 Carbon share images and three FieldToFit charts for the MKA report.",
-            "Publish editorial content through the existing review workflow, with compatible news, dossier and selection APIs.",
-            "Keep the original card URL and validate the share images against its content."
+            "Correct the version-specific behavior of the Claude Desktop 3P unified home and update the bilingual card.",
+            "Publish analysis of the OpenAI and Upwork freelance work report, with redraws of prices, hours and task combinations.",
+            "Include the approved product updates and corresponding dossier additions."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.3"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.4"
     },
     {
       "version": "1.20.1",

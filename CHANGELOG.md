@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.4"></a>
+## v1.20.4 · Claude Desktop 信息卡更正与自由职业报告 · 2026-11-12
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-12 -->
+<!-- public-title:en: Claude Desktop card correction and freelance work report -->
+<!-- release-summary:zh:start -->
+- 更正 Claude Desktop 3P 默认入口的版本条件，更新中英文信息卡。
+- 整理 OpenAI 与 Upwork 的自由职业工作报告，并重绘报价、工时及任务组合图。
+- 纳入当批获批的产品动态及对应档案增补。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Correct the version-specific behavior of the Claude Desktop 3P unified home and update the bilingual card.
+- Publish analysis of the OpenAI and Upwork freelance work report, with redraws of prices, hours and task combinations.
+- Include the approved product updates and corresponding dossier additions.
+<!-- release-summary:en:end -->
+
+本版为编辑内容和配图的补丁更新，沿用现有发布接口与数据结构。[正式验收](docs/validation/2026-11-12-approved-updates.md)。
+
 <a id="v1.20.3"></a>
 ## v1.20.3 · Carbon 资讯卡与 MKA 报告资源 · 2026-11-11
 <!-- release-tag:unpublished -->

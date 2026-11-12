@@ -2,11 +2,648 @@
   "edition": "reviewed-updates",
   "items": [
     {
+      "category": "research",
+      "checked_at": "2026-11-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-10",
+      "highlight": false,
+      "id": "D-340",
+      "interpretation": [
+        {
+          "locator": "Exhibits 2.1–2.4, 3.2 and Appendix B",
+          "source_ids": [
+            "upwork-report"
+          ],
+          "text": "先看平台活动分布，再分别比较预算、小时价和实际工时，最后检视任务对口径。",
+          "title": "报告路线"
+        }
+      ],
+      "name": "The Rebundling of Freelance Work in the AI Age",
+      "note": "原报告于 2026-11-10 公开，本站 2026-11-12 核对。",
+      "organization": "OpenAI / Upwork",
+      "publication": {
+        "first_published_at": "2026-11-12T04:14:42.899509+00:00",
+        "report_selected_at": "2026-11-12T04:14:42.899509+00:00",
+        "updated_at": "2026-11-12T04:14:42.899509+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-11-10",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "upwork-report",
+          "title": "OpenAI & Upwork · The Rebundling of Freelance Work in the AI Age",
+          "url": "https://cdn.openai.com/pdf/openai-upwork-full-report.pdf"
+        },
+        {
+          "coverage": "link_only",
+          "id": "announcement",
+          "title": "OpenAI · Work at the Frontier: AI’s effect on freelance work",
+          "url": "https://openai.com/index/ai-effect-on-freelance-work/"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 与 Upwork 比较平台活动、刊登预算、小时价、实际工时和任务搭配，观察 AI 相关自由职业项目的变化。",
+      "technical_map": {
+        "caution": "研究使用 Upwork 与消费版 ChatGPT 的平台数据，结果为描述性关联。刊登预算与小时价属于报价。",
+        "change_summary": "首次发布，整理工作分布、报价、工时和任务组合四项证据。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 2.2; Exhibit 2.4; Appendix B",
+                "source_id": "upwork-report"
+              }
+            ],
+            "from": "mix",
+            "label": "同一报告的并行观察",
+            "relation": "parallel",
+            "to": "prices"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 2.2; Exhibit 2.4; Appendix B",
+                "source_id": "upwork-report"
+              }
+            ],
+            "from": "mix",
+            "label": "同一报告的并行观察",
+            "relation": "parallel",
+            "to": "hours"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Exhibit 3.2A; Exhibit 3.3A; Appendix B",
+                "source_id": "upwork-report"
+              }
+            ],
+            "from": "mix",
+            "label": "同一报告的并行观察",
+            "relation": "parallel",
+            "to": "bundles"
+          }
+        ],
+        "focus": "AI 相关自由职业项目怎样重新组合任务？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Exhibits 2.1–2.2 and Appendix B",
+                "source_id": "upwork-report"
+              }
+            ],
+            "id": "mix",
+            "kind": "method",
+            "label": "两平台的工作组合不同",
+            "limitation": "研究使用 Upwork 与消费版 ChatGPT 的平台数据，结果为描述性关联。刊登预算与小时价属于报价。",
+            "mechanism": "63 个匹配工作子类中，43 个子类的 ChatGPT 强度和 Upwork 刊登份额变化方向相反。",
+            "metrics": [],
+            "result": "63 个匹配工作子类中，43 个子类的 ChatGPT 强度和 Upwork 刊登份额变化方向相反。",
+            "setting": "比较组与统计条件见对应论述。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 2.2; Exhibit 2.4; Appendix B",
+                "source_id": "upwork-report"
+              }
+            ],
+            "id": "prices",
+            "kind": "method",
+            "label": "固定价项目预算差远大于小时报价差",
+            "limitation": "研究使用 Upwork 与消费版 ChatGPT 的平台数据，结果为描述性关联。刊登预算与小时价属于报价。",
+            "mechanism": "调整后，AI 相关帖子的固定价预算高 52.4%，刊登小时价高 1.5%。",
+            "metrics": [
+              {
+                "baseline": "Non-AI Upwork posts",
+                "conditions": "控制工作子类与刊登月份。",
+                "label": "Adjusted fixed-price budget difference",
+                "unit": "%",
+                "value": 52.4
+              }
+            ],
+            "result": "调整后，AI 相关帖子的固定价预算高 52.4%，刊登小时价高 1.5%。",
+            "setting": "比较组与统计条件见对应论述。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Section 2.2; Exhibit 2.4; Appendix B",
+                "source_id": "upwork-report"
+              }
+            ],
+            "id": "hours",
+            "kind": "method",
+            "label": "获聘样本中的工时差更大",
+            "limitation": "研究使用 Upwork 与消费版 ChatGPT 的平台数据，结果为描述性关联。刊登预算与小时价属于报价。",
+            "mechanism": "在已获聘且有正工时的小时制合同中，首 90 天工时调整后高 40.6%。",
+            "metrics": [
+              {
+                "baseline": "Hired non-AI hourly contracts",
+                "conditions": "仅有正记录工时的已获聘小时制合同。",
+                "label": "Adjusted 90-day hours difference",
+                "unit": "%",
+                "value": 40.6
+              }
+            ],
+            "result": "在已获聘且有正工时的小时制合同中，首 90 天工时调整后高 40.6%。",
+            "setting": "比较组与统计条件见对应论述。",
+            "stage": 2
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Exhibit 3.2A; Exhibit 3.3A; Appendix B",
+                "source_id": "upwork-report"
+              }
+            ],
+            "id": "bundles",
+            "kind": "method",
+            "label": "AI 相关项目更常组合历史上少见的任务",
+            "limitation": "研究使用 Upwork 与消费版 ChatGPT 的平台数据，结果为描述性关联。刊登预算与小时价属于报价。",
+            "mechanism": "按帖子等权，罕见任务对平均占比为 8.4%，其他项目为 2.4%。",
+            "metrics": [
+              {
+                "baseline": "Non-AI posts: 2.4%",
+                "conditions": "至少两类任务的帖子，按帖子等权。",
+                "label": "Historically uncommon task-pair share",
+                "unit": "%",
+                "value": 8.4
+              }
+            ],
+            "result": "按帖子等权，罕见任务对平均占比为 8.4%，其他项目为 2.4%。",
+            "setting": "比较组与统计条件见对应论述。",
+            "stage": 3
+          }
+        ],
+        "question": "AI 相关自由职业项目怎样重新组合任务？",
+        "reading": {
+          "editorial": [
+            "FieldToFit 分析：评估 AI 相关项目时，先拆清任务和验收边界，再分别记录预算、报价、实际用时与完成结果。只看刊登预算容易把项目范围变化读成单价变化。报告呈现平台观察，未跟踪全部劳动力市场。",
+            "来源与修订：OpenAI 与 Upwork 的 Caroline Chin、Shagun Kala、Nadav Kunievsky、Teng Liu、Alex Martin Richmond、Carl Shan。PDF 标注 2026年11月，官方于 2026-11-10 公开。本站 2026-11-12 核对，图表为本站重绘。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "作者将消费版 ChatGPT 会话按 Upwork 工作分类进行标注。用于活动份额分析的终样本为 36,896 个会话，覆盖 2025-01 至 2026-06。比较 63 个工作子类时，横轴为 2025 年下半年 ChatGPT 活动占比除以 2023 年上半年 Upwork 刊登占比后的自然对数，纵轴衡量相对整个平台的刊登份额变化。"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "内容写作在 ChatGPT 使用中相对集中，Upwork 上视觉制作与技术交付更突出。各类别结果有差异，刊登份额的变化也不能直接换算为岗位数量或平台总量。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Exhibits 2.1–2.2 and Appendix B",
+                  "source_id": "upwork-report"
+                }
+              ],
+              "id": "mix",
+              "node_ids": [
+                "mix"
+              ],
+              "summary": "63 个匹配工作子类中，43 个子类的 ChatGPT 强度和 Upwork 刊登份额变化方向相反。",
+              "title": "两平台的工作组合不同"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "比较覆盖研究所称的当期直至 2026年4月。固定价使用刊登项目预算，小时价使用刊登区间中点。样本保留正值并剔除相关报价分布最高的 1%。原始差比较算术均值，调整值控制刊登月份与工作子类。"
+                },
+                {
+                  "alt": "三种指标的原始和调整后差异。",
+                  "attribution": "本站重绘，数据来自 OpenAI 与 Upwork 原始报告。",
+                  "caption": "本站重绘 Exhibit 2.4 的点估计。置信区间见原图。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Exhibit 2.4",
+                      "source_id": "upwork-report"
+                    }
+                  ],
+                  "image_url": "/report-figures/upwork-rebundling-prices.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of author-reported numerical facts."
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Section 2.2; Exhibit 2.4; Appendix B",
+                  "source_id": "upwork-report"
+                }
+              ],
+              "id": "prices",
+              "node_ids": [
+                "prices"
+              ],
+              "summary": "调整后，AI 相关帖子的固定价预算高 52.4%，刊登小时价高 1.5%。",
+              "title": "固定价项目预算差远大于小时报价差"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "小时报价与实际工时的样本不同。工时结果限于已获聘且有正记录的小时制合同。它提示项目可能需要更多投入，但无法用刊登预算和工时直接推算自由职业者的收入。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Section 2.2; Exhibit 2.4; Appendix B",
+                  "source_id": "upwork-report"
+                }
+              ],
+              "id": "hours",
+              "node_ids": [
+                "hours"
+              ],
+              "summary": "在已获聘且有正工时的小时制合同中，首 90 天工时调整后高 40.6%。",
+              "title": "获聘样本中的工时差更大"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Exhibit 3.2A 使用 104,066 条至少有两类任务的帖子，按帖子计算所有不同任务对中历史共现低于 200 次的比例，再取平均。Exhibit 3.3A 另用 104,030 条帖子和有历史记录的任务对，在相似任务数量、工作子类和月份下做回归。两套口径分别看。"
+                },
+                {
+                  "alt": "AI 相关与其他帖子中罕见任务对平均占比。",
+                  "attribution": "本站重绘，数据来自 OpenAI 与 Upwork 原始报告。",
+                  "caption": "本站重绘 Exhibit 3.2A。每条帖子等权。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Exhibit 3.2A",
+                      "source_id": "upwork-report"
+                    }
+                  ],
+                  "image_url": "/report-figures/upwork-rebundling-pairs.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of author-reported numerical facts."
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Exhibit 3.2A; Exhibit 3.3A; Appendix B",
+                  "source_id": "upwork-report"
+                }
+              ],
+              "id": "bundles",
+              "node_ids": [
+                "bundles"
+              ],
+              "summary": "按帖子等权，罕见任务对平均占比为 8.4%，其他项目为 2.4%。",
+              "title": "AI 相关项目更常组合历史上少见的任务"
+            }
+          ],
+          "title": "AI 相关自由职业项目怎样重新组合任务？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-11-10",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "upwork-report",
+            "substantive_revision": false,
+            "version": "2026-11"
+          }
+        ],
+        "slug": "ai-freelance-work-rebundling",
+        "takeaway": "先比较工作在两个平台上的分布，再把项目预算、小时报价、实际工时与任务搭配分开读。"
+      },
+      "title": "AI 相关自由职业项目怎样重新组合任务？",
+      "translations": {
+        "en": {
+          "fields": {
+            "63 个匹配工作子类中，43 个子类的 ChatGPT 强度和 Upwork 刊登份额变化方向相反。": "In 43 of 63 matched work subcategories, the direction of ChatGPT intensity and the change in Upwork posting share differed.",
+            "AI 相关与其他帖子中罕见任务对平均占比。": "Average within-post share of uncommon pairs for AI-related and other posts.",
+            "AI 相关自由职业项目怎样重新组合任务？": "How is AI-related freelance work being rebundled?",
+            "AI 相关项目更常组合历史上少见的任务": "AI-related projects more often pair historically uncommon tasks",
+            "Exhibit 3.2A 使用 104,066 条至少有两类任务的帖子，按帖子计算所有不同任务对中历史共现低于 200 次的比例，再取平均。Exhibit 3.3A 另用 104,030 条帖子和有历史记录的任务对，在相似任务数量、工作子类和月份下做回归。两套口径分别看。": "Exhibit 3.2A uses 104,066 posts with at least two task clusters. It averages the within-post share of distinct pairs observed together fewer than 200 times historically. Exhibit 3.3A separately uses 104,030 posts and historically observed pairs for a regression accounting for bundle size, work subcategory and month. The two measures answer different questions.",
+            "FieldToFit 分析：评估 AI 相关项目时，先拆清任务和验收边界，再分别记录预算、报价、实际用时与完成结果。只看刊登预算容易把项目范围变化读成单价变化。报告呈现平台观察，未跟踪全部劳动力市场。": "FieldToFit analysis: define deliverables and acceptance criteria, then track budgets, quotes, actual effort and outcomes separately. Posted budgets alone can make changes in project scope look like changes in unit prices. The report observes two platforms and does not track the whole labor market.",
+            "OpenAI 与 Upwork 比较平台活动、刊登预算、小时价、实际工时和任务搭配，观察 AI 相关自由职业项目的变化。": "OpenAI and Upwork compare platform activity, posted budgets and hourly rates, realized hours and task combinations to describe changes in AI-related freelance work.",
+            "三种指标的原始和调整后差异。": "Raw and adjusted differences for three outcomes.",
+            "两平台的工作组合不同": "The platforms have different activity mixes",
+            "仅有正记录工时的已获聘小时制合同。": "Hired hourly contracts with positive recorded hours only.",
+            "作者将消费版 ChatGPT 会话按 Upwork 工作分类进行标注。用于活动份额分析的终样本为 36,896 个会话，覆盖 2025-01 至 2026-06。比较 63 个工作子类时，横轴为 2025 年下半年 ChatGPT 活动占比除以 2023 年上半年 Upwork 刊登占比后的自然对数，纵轴衡量相对整个平台的刊登份额变化。": "The authors classify consumer ChatGPT conversations using the Upwork work taxonomy. The final sample for the activity-share analysis is 36,896 conversations from 2025-01 through 2026-06. Across 63 subcategories, the horizontal axis is the natural log of the ratio of ChatGPT activity share in the second half of 2025 to Upwork posting share in the first half of 2023. The vertical axis tracks the change in posting share relative to the whole marketplace.",
+            "先比较工作在两个平台上的分布，再把项目预算、小时报价、实际工时与任务搭配分开读。": "Compare the activity mix across platforms, then read budgets, posted rates, hours worked and task combinations separately.",
+            "先看平台活动分布，再分别比较预算、小时价和实际工时，最后检视任务对口径。": "Start with the mix of platform activity, compare budgets, hourly rates and realized hours separately, then examine how the report defines task pairs.",
+            "内容写作在 ChatGPT 使用中相对集中，Upwork 上视觉制作与技术交付更突出。各类别结果有差异，刊登份额的变化也不能直接换算为岗位数量或平台总量。": "Content writing is relatively common in ChatGPT use. Visual production and technical delivery are more prominent on Upwork. The pattern varies by category, and posting shares do not directly measure job counts or total platform demand.",
+            "原报告于 2026-11-10 公开，本站 2026-11-12 核对。": "The report was released on 2026-11-10 and checked on 2026-11-12.",
+            "同一报告的并行观察": "Parallel analyses in one report",
+            "固定价项目预算差远大于小时报价差": "The fixed-price budget gap is much larger than the posted hourly-rate gap",
+            "在已获聘且有正工时的小时制合同中，首 90 天工时调整后高 40.6%。": "Among hired hourly contracts with positive recorded hours, adjusted hours worked in the first 90 days are 40.6% higher.",
+            "小时报价与实际工时的样本不同。工时结果限于已获聘且有正记录的小时制合同。它提示项目可能需要更多投入，但无法用刊登预算和工时直接推算自由职业者的收入。": "Posted hourly rates and realized hours use different samples. The hours result covers only hired hourly contracts with positive recorded hours. It suggests greater project effort, but posted budgets and hours cannot directly establish freelancer earnings.",
+            "报告路线": "How to read the report",
+            "按帖子等权，罕见任务对平均占比为 8.4%，其他项目为 2.4%。": "Weighting each post equally, historically uncommon pairs average 8.4%, versus 2.4% for other projects.",
+            "控制工作子类与刊登月份。": "Controls for subcategory and posting month.",
+            "本站重绘 Exhibit 2.4 的点估计。置信区间见原图。": "FieldToFit redraw of Exhibit 2.4 point estimates. See the original exhibit for confidence intervals.",
+            "本站重绘 Exhibit 3.2A。每条帖子等权。": "FieldToFit redraw of Exhibit 3.2A. Each post receives equal weight.",
+            "本站重绘，数据来自 OpenAI 与 Upwork 原始报告。": "FieldToFit redraw using data from the original OpenAI and Upwork report.",
+            "来源与修订：OpenAI 与 Upwork 的 Caroline Chin、Shagun Kala、Nadav Kunievsky、Teng Liu、Alex Martin Richmond、Carl Shan。PDF 标注 2026年11月，官方于 2026-11-10 公开。本站 2026-11-12 核对，图表为本站重绘。": "Sources and revisions: Caroline Chin, Shagun Kala, Nadav Kunievsky, Teng Liu, Alex Martin Richmond and Carl Shan of OpenAI and Upwork. The PDF is dated November 2026 and the official announcement is dated 2026-11-10. FieldToFit checked the report on 2026-11-12 and redrew the charts.",
+            "比较组与统计条件见对应论述。": "Comparison groups and statistical conditions are described below.",
+            "比较覆盖研究所称的当期直至 2026年4月。固定价使用刊登项目预算，小时价使用刊登区间中点。样本保留正值并剔除相关报价分布最高的 1%。原始差比较算术均值，调整值控制刊登月份与工作子类。": "The comparison covers the study’s current period through April 2026. Fixed-price jobs use posted budgets, and hourly jobs use the midpoint of the posted range. The analysis keeps positive values and trims the top 1% of the relevant price distribution. Raw differences compare arithmetic means. Adjusted estimates control for posting month and work subcategory.",
+            "研究使用 Upwork 与消费版 ChatGPT 的平台数据，结果为描述性关联。刊登预算与小时价属于报价。": "The study uses Upwork and consumer ChatGPT platform data. Results are descriptive associations. Posted budgets and hourly rates are offers.",
+            "至少两类任务的帖子，按帖子等权。": "Posts with at least two task clusters, weighted equally.",
+            "获聘样本中的工时差更大": "The hours gap is larger among hired contracts",
+            "调整后，AI 相关帖子的固定价预算高 52.4%，刊登小时价高 1.5%。": "After adjustment, AI-related posts have 52.4% higher fixed-price budgets and 1.5% higher posted hourly rates.",
+            "首次发布，整理工作分布、报价、工时和任务组合四项证据。": "First publication covering four findings on activity mix, pricing, hours and task combinations."
+          },
+          "reviewed_at": "2026-11-12T04:14:21.463358+00:00",
+          "source_hash": "ef63200268f58052b34fe28cb10dd40d76bbdbba1e26dbbaf3c144c04b6e3baa",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-10",
+      "highlight": true,
+      "id": "D-339",
+      "interpretation": [
+        {
+          "locator": "Wind-down timeline",
+          "source_ids": [
+            "wind-down"
+          ],
+          "text": "计划 2026-12-10 进入只读，SQLite 与 Blob 存储另有例外。其余服务计划于 2027-01-10 关闭，开源计划日期为 2027-02-01。",
+          "title": "迁移截止日期"
+        }
+      ],
+      "name": "Val Town",
+      "note": "公告 2026-11-10，仅有日期。本站 2026-11-12 核对，未实测迁移或退款，开源仍为计划。",
+      "organization": "Val Town",
+      "publication": {
+        "first_published_at": "2026-11-12T04:14:04.383218+00:00",
+        "updated_at": "2026-11-12T04:14:04.383218+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-11-10",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "wind-down",
+          "title": "Val Town · Val Town is winding down",
+          "url": "https://blog.val.town/winding-down"
+        }
+      ],
+      "state": "published",
+      "summary": "Val Town 于 2026-11-10 停止新注册、升级和收费。现有订阅在过渡期继续免费，预付年费将获部分退款。",
+      "title": "Val Town 公布只读与关停时间表",
+      "translations": {
+        "en": {
+          "fields": {
+            "Val Town 于 2026-11-10 停止新注册、升级和收费。现有订阅在过渡期继续免费，预付年费将获部分退款。": "Val Town stopped new signups, upgrades and billing on 2026-11-10. Existing subscriptions continue free during the transition, with partial refunds for prepaid annual plans.",
+            "Val Town 公布只读与关停时间表": "Val Town announces its read-only and shutdown dates",
+            "公告 2026-11-10，仅有日期。本站 2026-11-12 核对，未实测迁移或退款，开源仍为计划。": "The announcement is dated 2026-11-10 with day precision. Checked on 2026-11-12. Migration and refunds were not tested, and open sourcing remains planned.",
+            "计划 2026-12-10 进入只读，SQLite 与 Blob 存储另有例外。其余服务计划于 2027-01-10 关闭，开源计划日期为 2027-02-01。": "Read-only mode is scheduled for 2026-12-10, with exceptions for SQLite and Blob storage. All other services are scheduled to end on 2027-01-10, with open sourcing planned for 2027-02-01.",
+            "迁移截止日期": "Migration deadlines"
+          },
+          "reviewed_at": "2026-11-12T04:13:43.251380+00:00",
+          "source_hash": "0f6e7e4293e2d58ff879bedcc3b174b0fa025d206c699133db9ee342bb7ce9b6",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-11-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-10",
+      "highlight": false,
+      "id": "D-338",
+      "interpretation": [
+        {
+          "locator": "Reliability in real-world environments",
+          "source_ids": [
+            "robotics"
+          ],
+          "text": "Gemini Robotics ER 跟踪工序，2.5 动作模型负责抓取零件并按装配顺序放入托盘。96% 对应该试点的分拣任务。",
+          "title": "推理与动作分工"
+        }
+      ],
+      "name": "Gemini Robotics 2.5",
+      "note": "公告 2026-11-10，本站 2026-11-12 核对。试点分母、长期连续运行、通用 API 开放和商用条件待核。",
+      "organization": "Google DeepMind",
+      "publication": {
+        "first_published_at": "2026-11-12T04:13:29.821074+00:00",
+        "updated_at": "2026-11-12T04:13:29.821074+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        }
+      ],
+      "source_published_at": "2026-11-10",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "robotics",
+          "title": "Google DeepMind · Gemini Robotics 2.5",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+        }
+      ],
+      "state": "published",
+      "summary": "Google DeepMind 公布 Gemini Robotics 2.5 与 Apptronik Apollo 2 在 Mercedes-Benz 工厂的概念验证，官方报告的任务成功率为 96%。",
+      "title": "Gemini Robotics 2.5 在汽车零件分拣试点报告 96% 成功率",
+      "translations": {
+        "en": {
+          "fields": {
+            "Gemini Robotics 2.5 在汽车零件分拣试点报告 96% 成功率": "Gemini Robotics 2.5 reports 96% success in a parts-kitting pilot",
+            "Gemini Robotics ER 跟踪工序，2.5 动作模型负责抓取零件并按装配顺序放入托盘。96% 对应该试点的分拣任务。": "Gemini Robotics ER tracks the workflow. The 2.5 action model picks parts and places them into trays in assembly order. The 96% rate applies to kitting in that pilot.",
+            "Google DeepMind 公布 Gemini Robotics 2.5 与 Apptronik Apollo 2 在 Mercedes-Benz 工厂的概念验证，官方报告的任务成功率为 96%。": "Google DeepMind reports 96% task success in a Mercedes-Benz factory proof of concept using Gemini Robotics 2.5 and Apptronik Apollo 2.",
+            "公告 2026-11-10，本站 2026-11-12 核对。试点分母、长期连续运行、通用 API 开放和商用条件待核。": "Announced 2026-11-10 and checked 2026-11-12. The trial denominator, long-run operation, general API access and commercial conditions remain unverified.",
+            "推理与动作分工": "Reasoning and action roles"
+          },
+          "reviewed_at": "2026-11-12T04:13:08.741125+00:00",
+          "source_hash": "ee3153c09e698fd764b0944d46e238cde98e174e2b47ad116f6c99c74c3e094a",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-11-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-11",
+      "highlight": true,
+      "id": "D-337",
+      "interpretation": [
+        {
+          "locator": "Capabilities and quick start",
+          "source_ids": [
+            "launch",
+            "model"
+          ],
+          "text": "支持工具调用、搜索和结构化输出。文档列出 OpenAI Chat Completions、Responses 与 Anthropic Messages 兼容接口。",
+          "title": "接入协议与工具"
+        },
+        {
+          "locator": "Parameter table and usage notes",
+          "source_ids": [
+            "model"
+          ],
+          "text": "上下文标称 1M token，最大输出 393,216 token，由推理和最终答案共用。Chat Completions 的 max_tokens 也按两者合计计算。",
+          "title": "推理与答案共用输出额度"
+        }
+      ],
+      "name": "Qwen4-Max-Preview",
+      "note": "更新日志 2026-11-11，仅有日期。本站 2026-11-12 核对，未实测配额、地域、费用及输出上限。",
+      "organization": "QwenCloud",
+      "publication": {
+        "first_published_at": "2026-11-12T04:12:55.099798+00:00",
+        "updated_at": "2026-11-12T04:12:55.099798+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M07",
+          "name": "Qwen",
+          "url": "https://fieldtofit.top/watch/CW-M07"
+        }
+      ],
+      "source_published_at": "2026-11-11",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "launch",
+          "title": "QwenCloud · Model releases",
+          "url": "https://docs.qwencloud.com/changelog/models"
+        },
+        {
+          "coverage": "link_only",
+          "id": "model",
+          "title": "QwenCloud · Latest model: Qwen4-Max-Preview",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model"
+        },
+        {
+          "coverage": "link_only",
+          "id": "plan",
+          "title": "QwenCloud · Token Plan",
+          "url": "https://docs.qwencloud.com/token-plan/overview"
+        }
+      ],
+      "state": "published",
+      "summary": "个人及团队 Token Plan 可通过专用密钥与端点调用 qwen4-max-preview。模型接受文本、图像和视频输入。",
+      "title": "Qwen4-Max-Preview 仅通过 QwenCloud Token Plan 开放预览",
+      "translations": {
+        "en": {
+          "fields": {
+            "Qwen4-Max-Preview 仅通过 QwenCloud Token Plan 开放预览": "Qwen4-Max-Preview is available exclusively through QwenCloud Token Plan",
+            "上下文标称 1M token，最大输出 393,216 token，由推理和最终答案共用。Chat Completions 的 max_tokens 也按两者合计计算。": "The documented context is 1M tokens and the maximum output is 393,216 tokens, shared between reasoning and the final answer. Chat Completions max_tokens also counts both.",
+            "个人及团队 Token Plan 可通过专用密钥与端点调用 qwen4-max-preview。模型接受文本、图像和视频输入。": "Individual and Team Token Plans use a dedicated key and endpoint for the qwen4-max-preview preview model. It accepts text, image and video input.",
+            "接入协议与工具": "Protocols and tools",
+            "推理与答案共用输出额度": "Reasoning and answers share the output budget",
+            "支持工具调用、搜索和结构化输出。文档列出 OpenAI Chat Completions、Responses 与 Anthropic Messages 兼容接口。": "The model supports tool calling, search and structured outputs. QwenCloud lists compatibility with OpenAI Chat Completions, Responses and Anthropic Messages.",
+            "更新日志 2026-11-11，仅有日期。本站 2026-11-12 核对，未实测配额、地域、费用及输出上限。": "Changelog dated 2026-11-11 with day precision. Checked on 2026-11-12. Quotas, regional availability, fees and the output limit were not tested."
+          },
+          "reviewed_at": "2026-11-12T04:12:34.023121+00:00",
+          "source_hash": "b4e04455cdde0e5685eb6ad5eea46bfba9defee3c5e37c206b75b9f0e91674c0",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-12",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-12",
+      "highlight": true,
+      "id": "D-336",
+      "interpretation": [
+        {
+          "locator": "New Features and Changelog",
+          "source_ids": [
+            "release",
+            "previous"
+          ],
+          "text": "如依赖旧行为，在 config.toml 的 [features] 下设置 incremental_tools_legacy_gcp = false。0.167.1 发布页只列版本比较入口。",
+          "title": "旧行为仍可配置"
+        }
+      ],
+      "name": "Codex CLI",
+      "note": "标签提交 ce21072。发布于 2026-11-11 22:44 UTC，对应北京时间 2026-11-12 06:44。本站 2026-11-12 核对，未实测兼容性、延迟或其他后端。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-11-12T04:12:20.167693+00:00",
+        "updated_at": "2026-11-12T04:12:20.167693+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "D-326",
+          "name": "Codex CLI 0.167.0",
+          "url": "https://fieldtofit.top/news/D-326"
+        }
+      ],
+      "source_published_at": "2026-11-11",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "OpenAI · Codex CLI 0.167.2",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.2"
+        },
+        {
+          "coverage": "link_only",
+          "id": "previous",
+          "title": "OpenAI · Codex CLI 0.167.1",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.1"
+        }
+      ],
+      "state": "published",
+      "summary": "OpenAI 在 Codex CLI 0.167.2 中改用默认增量发送工具更新，适用于 Google Cloud Vertex AI 后端。",
+      "title": "Codex CLI 0.167.2 默认增量发送 Vertex AI 工具更新",
+      "translations": {
+        "en": {
+          "fields": {
+            "Codex CLI 0.167.2 默认增量发送 Vertex AI 工具更新": "Codex CLI 0.167.2 sends Vertex AI tool updates incrementally by default",
+            "OpenAI 在 Codex CLI 0.167.2 中改用默认增量发送工具更新，适用于 Google Cloud Vertex AI 后端。": "OpenAI changes the default tool-update behavior to incremental updates on the Google Cloud Vertex AI backend in Codex CLI 0.167.2.",
+            "如依赖旧行为，在 config.toml 的 [features] 下设置 incremental_tools_legacy_gcp = false。0.167.1 发布页只列版本比较入口。": "To keep the previous behavior, set incremental_tools_legacy_gcp = false under [features] in config.toml. The 0.167.1 release page lists only the version comparison.",
+            "旧行为仍可配置": "The previous behavior remains configurable",
+            "标签提交 ce21072。发布于 2026-11-11 22:44 UTC，对应北京时间 2026-11-12 06:44。本站 2026-11-12 核对，未实测兼容性、延迟或其他后端。": "The ce21072 tag commit was released at 22:44 UTC on 2026-11-11, or 06:44 Beijing time on 2026-11-12. Checked on 2026-11-12 without testing compatibility, latency or other backends."
+          },
+          "reviewed_at": "2026-11-12T04:11:58.957294+00:00",
+          "source_hash": "255b8b72c6af6b2800901a650852d7231fd5ef4b49adfb8fe867506ffed1a439",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
       "category": "model",
       "checked_at": "2026-11-11",
       "editor": "FieldToFit",
       "event_date": "2026-11-10",
-      "highlight": true,
+      "highlight": false,
       "id": "D-334",
       "interpretation": [
         {
@@ -23,7 +660,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-11-11T09:01:11.077779+00:00",
-        "updated_at": "2026-11-11T09:01:11.077779+00:00"
+        "updated_at": "2026-11-12T04:07:45.906658+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -54,8 +691,8 @@
             "本站 2026-11-11 核对。官方未公布具体停机时刻，迁移兼容性未实测。": "Checked 2026-11-11. OpenAI did not specify a shutdown time, and migration compatibility was not tested.",
             "迁移选项": "Migration options"
           },
-          "reviewed_at": "2026-11-11T09:00:49.059256+00:00",
-          "source_hash": "8ee452d50ff0d8fd26d31c998798116c859aa0d5aee3429918910b4983926ecd",
+          "reviewed_at": "2026-11-12T04:07:24.237104+00:00",
+          "source_hash": "edc3a3df84f5a13849c73c6c54dcc9fdd057e058f584bf3f4d5cb6885ec3b261",
           "state": "reviewed"
         }
       }
@@ -146,7 +783,7 @@
       "checked_at": "2026-11-11",
       "editor": "FieldToFit",
       "event_date": "2026-11-10",
-      "highlight": true,
+      "highlight": false,
       "id": "D-332",
       "interpretation": [
         {
@@ -172,7 +809,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-11T08:59:55.884709+00:00",
-        "updated_at": "2026-11-11T08:59:55.884709+00:00"
+        "updated_at": "2026-11-12T04:08:22.318285+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -217,8 +854,8 @@
             "公告日期 2026-11-10，本站 2026-11-11 核对。账户推出进度和企业权限未实测。": "Announced 2026-11-10 and checked 2026-11-11. Account rollout and enterprise permissions were not independently tested.",
             "受支持的合作应用可以在 Claude 内打开和操作。新版 Claude 正向网页与桌面各方案推出，实际可用性取决于账户、组织设置和连接器权限。Claude Meetings 仍是预告。": "Supported partner apps can open and work inside Claude. The new Claude experience is rolling out across web and desktop plans, subject to account availability, organization settings and connector permissions. Claude Meetings is still forthcoming."
           },
-          "reviewed_at": "2026-11-11T08:43:04.545444+00:00",
-          "source_hash": "1410143a38840a6c572e4656c0618109e0579704806374c4341e82b36bd52662",
+          "reviewed_at": "2026-11-12T04:08:00.620500+00:00",
+          "source_hash": "d2f12fb31416c08f7b62ae7ca9e552542f6ade8c8bceba453276dba1815fd52a",
           "state": "reviewed"
         }
       }
@@ -611,7 +1248,7 @@
       "checked_at": "2026-11-11",
       "editor": "FieldToFit",
       "event_date": "2026-11-10",
-      "highlight": true,
+      "highlight": false,
       "id": "D-331",
       "interpretation": [
         {
@@ -636,7 +1273,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-11-11T08:42:48.714732+00:00",
-        "updated_at": "2026-11-11T08:42:48.714732+00:00"
+        "updated_at": "2026-11-12T04:08:57.909837+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -669,8 +1306,8 @@
             "视频与屏幕共享的例外": "Exception for video and screen sharing",
             "这是 ChatGPT Voice 的产品安排。依赖旧模式的团队可先核查常用设备上的语音入口和屏幕共享。": "This schedule covers ChatGPT Voice. Teams relying on the legacy modes can check voice entry points and screen sharing on their usual devices."
           },
-          "reviewed_at": "2026-11-11T08:42:27.096728+00:00",
-          "source_hash": "0cd89830f86b35fb1446ed5f76246cc35dd028651f4744fc6e0fe5a09ab029f0",
+          "reviewed_at": "2026-11-12T04:08:36.494936+00:00",
+          "source_hash": "cf0a58f2ed1ae81ef2d603412e2440d8f55519fc7f856b148b5ba44826fd6f59",
           "state": "reviewed"
         }
       }
@@ -874,7 +1511,7 @@
       "checked_at": "2026-11-10",
       "editor": "FieldToFit",
       "event_date": "2026-11-10",
-      "highlight": true,
+      "highlight": false,
       "id": "D-328",
       "interpretation": [],
       "name": "Claude Code 2.1.321 / 2.1.322",
@@ -882,7 +1519,7 @@
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-10T06:35:09.904973+00:00",
-        "updated_at": "2026-11-10T06:35:09.904973+00:00"
+        "updated_at": "2026-11-12T04:09:32.679912+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -945,8 +1582,8 @@
             "Anthropic的Claude Code 2.1.321修复MCP OAuth重定向发送秘密及Bash和目标路径权限检查，接入Fable 5.2；2.1.322另增Vertex global／us／eu快速模式，被拒绝时回退standard。原发行日期分别 2026-11-09／2026-11-10，本站 2026-11-10核对，未安装或复现；发行说明不证明实际泄露或完整受影响版本范围。": "Anthropic’s Claude Code 2.1.321 fixes secrets sent through MCP OAuth redirects and Bash/target-path permission checks, and adds Fable 5.2;2.1.322 separately adds Vertex fast mode in global/us/eu with standard fallback after refusal. Release dates are 2026-11-09/2026-11-10, checked 2026-11-10 without installation or reproduction. The notes do not establish an actual leak or a complete vulnerable-version range.",
             "Claude Code 2.1.321／322：修复OAuth及权限检查，新增Vertex快速模式": "Claude Code 2.1.321/322 fixes OAuth and permission checks, adds Vertex fast mode"
           },
-          "reviewed_at": "2026-11-10T06:34:47.747409+00:00",
-          "source_hash": "e1288fc5b9a22db57e307af060affe55abcf0d370053f51bb01c8c5f4cd9578f",
+          "reviewed_at": "2026-11-12T04:09:11.548160+00:00",
+          "source_hash": "90c85293fb62c41dcd31d2199f474f6f10bcf7f8ec2bf705e8f9f55ffc91adfb",
           "state": "reviewed"
         }
       }
@@ -1606,112 +2243,114 @@
     },
     {
       "category": "tool",
-      "checked_at": "2026-11-09",
+      "checked_at": "2026-11-12",
       "editor": "FieldToFit",
       "event_date": "2026-11-11",
-      "highlight": false,
+      "highlight": true,
       "hot_card": {
         "audiences": [
           {
-            "detail": "核对默认值、工具及部署网络；本站判断。",
-            "title": "第三方桌面管理员"
+            "detail": "核对版本、设备管理策略和工具权限。",
+            "title": "桌面管理员"
           },
           {
-            "detail": "确认文件、工具与会话留存范围；本站判断。",
-            "title": "团队资料使用者"
+            "detail": "在使用共享目录前核对会话类型、文件访问与留存。",
+            "title": "团队成员"
           }
         ],
         "changes": [
           {
-            "detail": "11月 10日 12:00 Pacific之后启动，未设desktopHome按standard解释；北京时间 11月 11日 04:00之后。",
-            "title": "默认值将切换"
+            "detail": "自北京时间11月11日04:00后启动起，适用版本中未设 desktopHome 通常读作 standard。可运行 Cowork VM 的设备由主页开启 Cowork 会话，其余采用非 VM 能力。Code 独立。",
+            "title": "统一入口通常默认开启"
           },
           {
-            "detail": "可运行Cowork VM时，新主页消息进入Cowork会话；不能运行时采用非VM能力，Code独立。",
-            "title": "能力取决于设备"
+            "detail": "v5.1231.0 中 Cowork 关闭、Chat 未显式开启且 Code 开启，未设时暂按 off。v4.4212.0 至 v4.23118.1 同条件仍按 standard。官方安排例外于北京时间12月18日04:00结束。显式 off 保持关闭。",
+            "title": "Code-only 有版本例外"
           },
           {
-            "detail": "新Cowork会话采用Cowork留存，原Chat留存仍覆盖原聊天。旧标签页开关不能替代工具策略。",
-            "title": "留存分别配置"
+            "detail": "新 Cowork 会话采用 Cowork 留存，原 Chat 会话使用 Chat 留存。",
+            "title": "会话留存分别设置"
           }
         ],
-        "checked_at": "2026-11-09",
+        "checked_at": "2026-11-12",
         "evidence": [
           {
-            "locator": "Enabling Unified Claude; How Unified Claude interacts with Chat and Cowork settings",
+            "locator": "Enabling Unified Claude; What users see",
             "source_id": "unified-docs"
+          },
+          {
+            "locator": "v5.1231.0; v4.16336.0; v4.4212.0",
+            "source_id": "configuration-changelog"
           }
         ],
         "featured_rank": 2,
-        "headline": "统一入口后，先核Cowork工具与留存",
+        "headline": "Claude Desktop 3P 统一入口已生效，Code-only 须查版本",
         "limits": [
           {
-            "detail": "不外推全部个人或Enterprise云端入口；缺少VM组件可能下载超过 1 GB。",
-            "title": "部署与组件条件"
+            "detail": "第三方桌面部署。能运行 VM 但缺少工作区包时，首次新会话可能下载超过 1 GB。",
+            "title": "适用范围"
           },
           {
-            "detail": "未配置企业设备，未验证VM、权限、删除时点或账单；首次文档发布日期未知。",
-            "title": "未经实测"
+            "detail": "未配置企业设备，未实测 VM、权限、删除和账户行为。",
+            "title": "未实测"
           }
         ],
-        "next_step": "先确认部署入口及desktopHome值，分别检查工具、目录与会话留存，再在测试设备验证启动和组件下载。本站建议。",
-        "revised_at": "2026-11-09",
-        "revision": "d3708c71ad93c03c4ee630ac2efa4baf04a5a3d0e9f9a2cf676a5bc9d9990fab",
-        "scope": "Claude Desktop on third-party platforms · 当前版本Unified Claude beta；不外推全部Enterprise云端入口。",
+        "next_step": "先在一台代表设备上核对配置生效、重启行为与组件下载，再分批变更。",
+        "revised_at": "2026-11-12",
+        "revision": "0651f7d7e0dccc3e5c40326dabc50f52caa957c1a97fd36996a3281ceaf62cb8",
+        "scope": "Claude Desktop on third-party platforms，v4.4212.0 至 v4.23118.1 与 v5.1231.0",
         "share": {
-          "content_revision": "d3708c71ad93c03c4ee630ac2efa4baf04a5a3d0e9f9a2cf676a5bc9d9990fab",
+          "content_revision": "0651f7d7e0dccc3e5c40326dabc50f52caa957c1a97fd36996a3281ceaf62cb8",
           "en": {
-            "sha256": "d91b89dd5868b1982562825cc43f0296eff43c5b05ab96aa72bf78ad51c708ef",
-            "text_revision": "40ca54c59ff7a0138486df5c4a4a2a5b6c9a3ed5e83ea494ecc9dab94b30ce7f",
-            "url": "/hot-cards/d-323-d3708c71ad93-en.png"
+            "sha256": "41823ce892ecf380be825d2fa229dc56a5686354a2733cc4b3982100c355c973",
+            "text_revision": "eaca95aaa92b2d2e869f819cf1c8ebfce86aa2bd9c8dd6227e67c5166b643fcc",
+            "url": "/hot-cards/d-323-0651f7d7e0dc-en.png"
           },
           "zh": {
-            "sha256": "955a3850bdb61acab1fdf40486224c202f10138aa1a40900478f24ad305ed130",
-            "url": "/hot-cards/d-323-d3708c71ad93-zh.png"
+            "sha256": "8a98aa72afa7cdca9989797e8570d8964b1668d1fd5f53dfb484242facc240c9",
+            "url": "/hot-cards/d-323-0651f7d7e0dc-zh.png"
           }
         },
         "status": "current",
         "update_note": "",
-        "verification": "计划生效 2026-11-10 12:00 Pacific／2026-11-11 04:00北京；文档首发日未核实。卡片修订与来源核对 2026-11-09；未配置企业设备、测VM、权限、删除或账单。"
+        "verification": "事件日 2026-11-11，2026-11-12 核对现行文档及各版本配置日志。拟修订 2026-11-12。"
       },
       "id": "D-323",
       "interpretation": [
         {
-          "locator": "What users see; Enabling Unified Claude; How Unified Claude interacts with Chat and Cowork settings; desktopHome and retention keys",
+          "locator": "v5.1231.0 and v4.4212.0",
           "source_ids": [
-            "unified-docs",
-            "configuration"
+            "configuration-changelog"
           ],
-          "text": "当前文档标Unified Claude为beta。2026-11-10 12:00 Pacific之后，当前版本启动时将未设置的desktopHome按standard解释；北京时间为 2026-11-11 04:00之后。文档没有给出本站已核实的首次发布日期，因此不能把核对日写成首发日，也不能把计划切换写成已经生效。",
-          "title": "生效时间与默认值分开核对"
+          "text": "v5.1231.0 中，Cowork 关闭、Chat 未明确启用且 Code 开启时，未设置的 desktopHome 暂按 off 读取。v4.4212.0 至 v4.23118.1 在同条件下读作 standard。例外计划于 2026-12-17 12:00 PT／北京时间 2026-12-18 04:00 结束。显式 off 继续生效。",
+          "title": "Code-only 例外按版本区分"
         },
         {
-          "locator": "What users see; Enabling Unified Claude; How Unified Claude interacts with Chat and Cowork settings; desktopHome and retention keys",
+          "locator": "What users see with Unified Claude",
           "source_ids": [
-            "unified-docs",
-            "configuration"
+            "unified-docs"
           ],
-          "text": "可启动Cowork虚拟机的设备，主页新消息启动Cowork会话，沿用Cowork工具与设置；不能启动VM时采用非VM能力。Code入口独立。旧Chat／Cowork标签页开关不会阻止该默认统一行为；应分别检查disabledBuiltinTools、builtinToolPolicy、allowedWorkspaceFolders及scheduledTasksEnabled等设置。",
-          "title": "新会话能力取决于设备与部署"
+          "text": "可启动 Cowork VM 的设备从统一主页开启 Cowork 会话，其他设备使用非 VM 能力。Code 独立。",
+          "title": "设备能力决定新会话类型"
         },
         {
-          "locator": "What users see; Enabling Unified Claude; How Unified Claude interacts with Chat and Cowork settings; desktopHome and retention keys",
+          "locator": "Enabling Unified Claude; Session retention",
           "source_ids": [
             "unified-docs",
             "configuration"
           ],
-          "text": "新Cowork会话遵循coworkSessionRetentionDays；chatSessionRetentionDays仍覆盖原Chat会话。缺少Cowork工作区包的可运行设备，会在首次新会话时从downloads.claude.ai下载超过 1 GB组件，应提前核对代理或防火墙条件。仅适用于官方 3P桌面部署说明，不外推Enterprise云端或全部个人订阅。",
-          "title": "原聊天与新Cowork留存不是同一个设置"
+          "text": "新 Cowork 会话采用 Cowork 留存，原聊天沿用 Chat 留存。尚缺工作区包的兼容设备，首次新建会话可能下载超过 1 GB。",
+          "title": "分别配置留存与组件下载"
         }
       ],
       "name": "Claude Desktop on third-party platforms",
-      "note": "事件日期 2026-11-11指北京时间计划默认切换日，不是文档首发日；原文明确 2026-11-10 12:00 Pacific之后启动时适用，未标统一软件版本号。2026-11-09核对，未配置企业设备、安装VM、测权限、验证删除或账单。保留D-245的Enterprise云端原范围与历史，不以本篇覆盖。",
+      "note": "事件日保留 2026-11-11。v5.1231.0 配置日志标注 2026-11-10。统一入口文档首发日待核，本站于 2026-11-12 复核。未实测企业设备、权限或删除时点。",
       "organization": "Anthropic",
       "publication": {
         "first_published_at": "2026-11-09T03:14:03.325721+00:00",
         "hot_card_first_published_at": "2026-11-09T03:14:03.325753+00:00",
         "hot_card_selected_at": "2026-11-09T03:14:03.325753+00:00",
-        "updated_at": "2026-11-10T06:32:16.115514+00:00"
+        "updated_at": "2026-11-12T04:17:21.850899+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -1734,44 +2373,50 @@
           "id": "configuration",
           "title": "Claude Desktop3P configuration reference · relevant settings",
           "url": "https://claude.com/docs/third-party/claude-desktop/configuration"
+        },
+        {
+          "coverage": "link_only",
+          "id": "configuration-changelog",
+          "title": "Anthropic · Claude Desktop 3P configuration changelog",
+          "url": "https://claude.com/docs/third-party/claude-desktop/configuration-changelog"
         }
       ],
       "state": "published",
-      "summary": "官方文档规定当前版本在 2026-11-10 12:00 Pacific之后启动时，未设desktopHome按standard解释，即北京时间 2026-11-11 04:00之后。可运行VM设备的新主页消息会成为Cowork会话；权限、目录与留存规则需分别核对。",
-      "title": "Claude第三方桌面将默认统一Chat与Cowork：先核工具与留存",
+      "summary": "自北京时间 11月11日 04:00 后启动起，适用版本通常把未设置的 desktopHome 读作 standard。v5.1231.0 有暂时的 Code-only 例外。",
+      "title": "Claude Desktop 3P 默认统一入口已生效，Code-only 部署须分版本",
       "translations": {
         "en": {
           "fields": {
-            "11月 10日 12:00 Pacific之后启动，未设desktopHome按standard解释；北京时间 11月 11日 04:00之后。": "Launches after 11/10 12:00 Pacific treat an unset desktopHome as standard; after 11/11 04:00 Beijing time.",
-            "Claude Desktop on third-party platforms · 当前版本Unified Claude beta；不外推全部Enterprise云端入口。": "Claude Desktop on third-party platforms · current Unified Claude beta; not all Enterprise cloud entry points.",
-            "Claude第三方桌面将默认统一Chat与Cowork：先核工具与留存": "Claude Desktop on third-party platforms will default to unified Chat and Cowork: check tools and retention",
-            "不外推全部个人或Enterprise云端入口；缺少VM组件可能下载超过 1 GB。": "Not all individual or Enterprise cloud entry points; a missing VM bundle may require a download exceeding 1 GB.",
-            "事件日期 2026-11-11指北京时间计划默认切换日，不是文档首发日；原文明确 2026-11-10 12:00 Pacific之后启动时适用，未标统一软件版本号。2026-11-09核对，未配置企业设备、安装VM、测权限、验证删除或账单。保留D-245的Enterprise云端原范围与历史，不以本篇覆盖。": "Event date 2026-11-11 denotes the scheduled Beijing-time default switch, not original documentation publication. Documentation specifies launches after 2026-11-10 12:00 Pacific without one software version number. Checked 2026-11-09; no enterprise-device configuration, VM installation, permission, deletion or billing test. D-245’s original Enterprise cloud scope and history are retained separately.",
-            "先确认部署入口及desktopHome值，分别检查工具、目录与会话留存，再在测试设备验证启动和组件下载。本站建议。": "Confirm the deployment entry point and desktopHome value, review tools, directories and session retention separately, then test startup and component downloads on a test device. FieldToFit suggestion.",
-            "原聊天与新Cowork留存不是同一个设置": "Existing Chat and new Cowork retention use separate settings",
-            "可启动Cowork虚拟机的设备，主页新消息启动Cowork会话，沿用Cowork工具与设置；不能启动VM时采用非VM能力。Code入口独立。旧Chat／Cowork标签页开关不会阻止该默认统一行为；应分别检查disabledBuiltinTools、builtinToolPolicy、allowedWorkspaceFolders及scheduledTasksEnabled等设置。": "On devices able to launch the Cowork VM, a new home-screen message starts a Cowork session with Cowork tools and settings. Devices unable to launch the VM use non-VM capabilities; Code remains separate. Old Chat/Cowork tab switches do not prevent the unified default. Check settings such as disabledBuiltinTools, builtinToolPolicy, allowedWorkspaceFolders and scheduledTasksEnabled separately.",
-            "可运行Cowork VM时，新主页消息进入Cowork会话；不能运行时采用非VM能力，Code独立。": "On a device that can run the Cowork VM, a new home-screen message starts a Cowork session; otherwise non-VM capabilities apply. Code stays separate.",
-            "团队资料使用者": "Team members handling documents",
-            "官方文档规定当前版本在 2026-11-10 12:00 Pacific之后启动时，未设desktopHome按standard解释，即北京时间 2026-11-11 04:00之后。可运行VM设备的新主页消息会成为Cowork会话；权限、目录与留存规则需分别核对。": "Official documentation says current versions launched after 2026-11-10 12:00 Pacific treat an unset desktopHome as standard, equivalent to 2026-11-11 04:00 Beijing time. On VM-capable devices, new home-screen messages become Cowork sessions; verify tools, directories and retention separately.",
-            "当前文档标Unified Claude为beta。2026-11-10 12:00 Pacific之后，当前版本启动时将未设置的desktopHome按standard解释；北京时间为 2026-11-11 04:00之后。文档没有给出本站已核实的首次发布日期，因此不能把核对日写成首发日，也不能把计划切换写成已经生效。": "The current documentation labels Unified Claude beta. After 2026-11-10 12:00 Pacific, a current version treats an unset desktopHome as standard when it starts; that is after 2026-11-11 04:00 Beijing time. The original documentation publication date is unverified, so the check date is not its launch date and the planned switch is not presented as already effective.",
-            "新Cowork会话遵循coworkSessionRetentionDays；chatSessionRetentionDays仍覆盖原Chat会话。缺少Cowork工作区包的可运行设备，会在首次新会话时从downloads.claude.ai下载超过 1 GB组件，应提前核对代理或防火墙条件。仅适用于官方 3P桌面部署说明，不外推Enterprise云端或全部个人订阅。": "New Cowork sessions follow coworkSessionRetentionDays, while chatSessionRetentionDays still covers existing Chat conversations. A capable device missing the Cowork workspace bundle downloads more than 1 GB from downloads.claude.ai on its first new conversation; review proxy or firewall conditions in advance. This concerns the official 3P desktop deployment, not all Enterprise cloud or individual-plan entry points.",
-            "新Cowork会话采用Cowork留存，原Chat留存仍覆盖原聊天。旧标签页开关不能替代工具策略。": "New Cowork sessions use Cowork retention while Chat retention covers prior chats. Old tab switches do not replace tool policies.",
-            "新会话能力取决于设备与部署": "New-session capabilities depend on the device and deployment",
-            "未经实测": "Not independently tested",
-            "未配置企业设备，未验证VM、权限、删除时点或账单；首次文档发布日期未知。": "No enterprise-device, VM, permission, deletion-timing or billing test; original documentation publication date unknown.",
-            "核对默认值、工具及部署网络；本站判断。": "Review defaults, tools and deployment networking; FieldToFit view.",
-            "生效时间与默认值分开核对": "Check the effective time and the default value",
-            "留存分别配置": "Configure retention separately",
-            "确认文件、工具与会话留存范围；本站判断。": "Confirm file, tool and session-retention scope; FieldToFit view.",
-            "第三方桌面管理员": "Third-party desktop administrators",
-            "统一入口后，先核Cowork工具与留存": "A unified entry point requires separate Cowork tool and retention checks",
-            "能力取决于设备": "Capabilities depend on the device",
-            "计划生效 2026-11-10 12:00 Pacific／2026-11-11 04:00北京；文档首发日未核实。卡片修订与来源核对 2026-11-09；未配置企业设备、测VM、权限、删除或账单。": "Scheduled switch 2026-11-10 12:00 Pacific /2026-11-11 04:00 Beijing; original documentation publication date unverified. Card revised and sources checked 2026-11-09; no enterprise-device, VM, permission, deletion or billing test.",
-            "部署与组件条件": "Deployment and component requirements",
-            "默认值将切换": "The default will change"
+            "Claude Desktop 3P 统一入口已生效，Code-only 须查版本": "Unified Claude Desktop 3P is on by default. Check the Code-only exception.",
+            "Claude Desktop 3P 默认统一入口已生效，Code-only 部署须分版本": "Claude Desktop 3P unifies Chat and Cowork by default, with a Code-only version exception",
+            "Claude Desktop on third-party platforms，v4.4212.0 至 v4.23118.1 与 v5.1231.0": "Claude Desktop on third-party platforms, v4.4212.0 through v4.23118.1 and v5.1231.0",
+            "Code-only 例外按版本区分": "Code-only exception varies by version",
+            "Code-only 有版本例外": "Version-specific Code-only exception",
+            "v5.1231.0 中 Cowork 关闭、Chat 未显式开启且 Code 开启，未设时暂按 off。v4.4212.0 至 v4.23118.1 同条件仍按 standard。官方安排例外于北京时间12月18日04:00结束。显式 off 保持关闭。": "In v5.1231.0, unset reads as off when Cowork is disabled, Chat is not explicitly enabled and Code is enabled. Versions v4.4212.0 through v4.23118.1 read standard. The exception is scheduled to end on December 18 at 04:00 Beijing time. Explicit off stays off.",
+            "v5.1231.0 中，Cowork 关闭、Chat 未明确启用且 Code 开启时，未设置的 desktopHome 暂按 off 读取。v4.4212.0 至 v4.23118.1 在同条件下读作 standard。例外计划于 2026-12-17 12:00 PT／北京时间 2026-12-18 04:00 结束。显式 off 继续生效。": "In v5.1231.0, unset desktopHome reads as off when Cowork is disabled, Chat is not explicitly enabled and Code is enabled. Versions v4.4212.0 through v4.23118.1 read standard under the same conditions. The exception is scheduled to end at 12:00 PT on 2026-12-17, or 04:00 Beijing time on 2026-12-18. An explicit off remains effective.",
+            "事件日 2026-11-11，2026-11-12 核对现行文档及各版本配置日志。拟修订 2026-11-12。": "Event date: 2026-11-11. Current documentation and the versioned configuration changelog checked on 2026-11-12. Proposed revision: 2026-11-12.",
+            "事件日保留 2026-11-11。v5.1231.0 配置日志标注 2026-11-10。统一入口文档首发日待核，本站于 2026-11-12 复核。未实测企业设备、权限或删除时点。": "The event date remains 2026-11-11. The v5.1231.0 configuration changelog is dated 2026-11-10. The unified guide’s first publication date is unconfirmed. FieldToFit checked on 2026-11-12 without testing enterprise devices, permissions or deletion times.",
+            "会话留存分别设置": "Separate session retention",
+            "先在一台代表设备上核对配置生效、重启行为与组件下载，再分批变更。": "Check effective configuration, restart behavior and component downloads on one representative device before changing the rest.",
+            "分别配置留存与组件下载": "Configure retention and component downloads",
+            "可启动 Cowork VM 的设备从统一主页开启 Cowork 会话，其他设备使用非 VM 能力。Code 独立。": "Devices that can start the Cowork VM open a Cowork session from the unified home. Other devices use non-VM capabilities. Code stays separate.",
+            "团队成员": "Team members",
+            "在使用共享目录前核对会话类型、文件访问与留存。": "Before working with a shared folder, check the session type, file access and retention.",
+            "新 Cowork 会话采用 Cowork 留存，原 Chat 会话使用 Chat 留存。": "New Cowork sessions use Cowork retention. Earlier Chat sessions use Chat retention.",
+            "新 Cowork 会话采用 Cowork 留存，原聊天沿用 Chat 留存。尚缺工作区包的兼容设备，首次新建会话可能下载超过 1 GB。": "New Cowork sessions follow Cowork retention. Existing chats keep Chat retention. Compatible devices without the workspace bundle may download more than 1 GB at the first new session.",
+            "未实测": "Untested",
+            "未配置企业设备，未实测 VM、权限、删除和账户行为。": "FieldToFit did not configure enterprise devices or test VMs, permissions, deletion or account behavior.",
+            "核对版本、设备管理策略和工具权限。": "Check the release, device management settings and tool permissions.",
+            "桌面管理员": "Desktop administrators",
+            "第三方桌面部署。能运行 VM 但缺少工作区包时，首次新会话可能下载超过 1 GB。": "Third-party desktop deployments. A compatible device missing its VM workspace bundle may download more than 1 GB when starting its first new session.",
+            "统一入口通常默认开启": "Unified home is generally on by default",
+            "自北京时间 11月11日 04:00 后启动起，适用版本通常把未设置的 desktopHome 读作 standard。v5.1231.0 有暂时的 Code-only 例外。": "On launch after 04:00 Beijing time on November 11, applicable versions generally read unset desktopHome as standard. v5.1231.0 has a temporary Code-only exception.",
+            "自北京时间11月11日04:00后启动起，适用版本中未设 desktopHome 通常读作 standard。可运行 Cowork VM 的设备由主页开启 Cowork 会话，其余采用非 VM 能力。Code 独立。": "On launch after 04:00 Beijing time on November 11, applicable versions generally read unset desktopHome as standard. Devices with the Cowork VM start a Cowork session from home. Others use non-VM capabilities. Code is separate.",
+            "设备能力决定新会话类型": "Device capabilities determine the new session type",
+            "适用范围": "Scope"
           },
-          "reviewed_at": "2026-11-10T06:31:53.279272+00:00",
-          "source_hash": "ac13ba541d7bfc207cc6b7e2fed3424aa58b3f956024a03e7e4139446e77fe85",
+          "reviewed_at": "2026-11-12T04:16:59.996567+00:00",
+          "source_hash": "9f96d67d31cb95e3db2ecb55eb9fe2209d290d2e1268ccce725f73e788645cca",
           "state": "reviewed"
         }
       }
@@ -52149,7 +52794,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-11-11",
+  "reviewed_at": "2026-11-12",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

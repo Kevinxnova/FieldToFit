@@ -1483,6 +1483,14 @@
       "_position": 7,
       "blocks": [
         {
+          "kind": "paragraph",
+          "text": "档案增补｜Qwen4-Max-Preview 仅通过 QwenCloud Token Plan 开放预览。个人及团队 Token Plan 可通过专用密钥与端点调用 qwen4-max-preview。模型接受文本、图像和视频输入。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-337"
+        },
+        {
           "columns": [
             "本期已核实事件",
             "事件日期",
@@ -1755,6 +1763,18 @@
           "id": "oct29-R1-report",
           "title": "Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement v1",
           "url": "https://arxiv.org/html/2610.33472v1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov12-c-model",
+          "title": "QwenCloud · Latest model: Qwen4-Max-Preview",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov12-c-plan",
+          "title": "QwenCloud · Token Plan",
+          "url": "https://docs.qwencloud.com/token-plan/overview"
         }
       ],
       "state": "published",
@@ -1790,6 +1810,7 @@
             "发布博客": "Publish a blog",
             "变化与条件": "Changes and conditions",
             "基于 Qwen3.8-Flash-Next；音视频理解与工具调用分支": "Based on Qwen3.8-Flash-Next; audio and video understanding and tool calls branch",
+            "完整动态 https://fieldtofit.top/news/D-337": "Read the full update https://fieldtofit.top/news/D-337",
             "官方博客 2026-08-26；实验分支": "Official Blog 2026-08-26; Experimental Branch",
             "官方发布 2026-09-18；本行核对 2026-09-20": "Official release of 2026-09-18; our bank checks 2026-09-20",
             "官方权重；托管 Qwen3.8-Flash 与该检查点分别登记": "Official weights; hosting Qwen3.8-Flash and the checkpoint are registered separately",
@@ -1806,6 +1827,7 @@
             "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期已核实事件": "Current verified event",
             "本次动态：[D-19 Qwen3.8-Omni-Flash](https://fieldtofit.top/for-you#news-d-19)。旧版本行保留原有日期，本次补充不代表重新实测所有分支。": "This development: [D-19 Qwen3.8-Omni-Flash](https://fieldtofit.top/for-you#news-d-19). Older version rows retain their original dates. This addition does not indicate retesting every branch.",
+            "档案增补｜Qwen4-Max-Preview 仅通过 QwenCloud Token Plan 开放预览。个人及团队 Token Plan 可通过专用密钥与端点调用 qwen4-max-preview。模型接受文本、图像和视频输入。": "Dossier update. Qwen4-Max-Preview is available exclusively through QwenCloud Token Plan. Individual and Team Token Plans use a dedicated key and endpoint for the qwen4-max-preview preview model. It accepts text, image and video input.",
             "模型卡": "Model cards",
             "版本 / 分支": "Version / Branch",
             "获取与使用": "Acquisition and use",
@@ -1816,8 +1838,8 @@
             "预览 Qwen4 架构方向": "Preview the direction of Qwen4 architecture",
             "首发日待核；官方模型卡可见": "The first date is to be approved; the official model card can be seen"
           },
-          "reviewed_at": "2026-10-29T02:52:14.733122+00:00",
-          "source_hash": "6a1cf8828f7a456acb2e7f762e939e351341efe1d40ee68d4f6369087003c59f",
+          "reviewed_at": "2026-11-12T04:15:35.081088+00:00",
+          "source_hash": "75e1f618ede1bd64b41e09090de03d1ca0c06e48836693fb583445522413fd34",
           "state": "reviewed"
         }
       },
@@ -6368,6 +6390,14 @@
       "blocks": [
         {
           "kind": "paragraph",
+          "text": "档案增补｜Claude Desktop 3P 默认统一入口已生效，Code-only 部署须分版本。自北京时间 11月11日 04:00 后启动起，适用版本通常把未设置的 desktopHome 读作 standard。v5.1231.0 有暂时的 Code-only 例外。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-323"
+        },
+        {
+          "kind": "paragraph",
           "text": "Claude 新增协作表格、白板、数据工件与交互连接器。Claude Sheets 和 Whiteboards 进入 beta。原 Claude Dashboards 更名为 Claude Data 并正式开放，认证查询和实时共享仍为 beta。 本项 2026-11-11 核对。"
         },
         {
@@ -7169,6 +7199,12 @@
           "id": "nov11-b-connectors",
           "title": "Anthropic · Interactive connectors",
           "url": "https://claude.com/resources/articles/interactive-connectors-full-tool"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov12-b-configuration-changelog",
+          "title": "Anthropic · Claude Desktop 3P configuration changelog",
+          "url": "https://claude.com/docs/third-party/claude-desktop/configuration-changelog"
         }
       ],
       "state": "published",
@@ -7263,6 +7299,7 @@
             "型号claude-haiku-5-5，1M上下文、最高128k输出。每百万输入／输出token：提示不超过100K为0.10／0.50美元，超过100K为0.50／2.50美元。Claude API与各云平台能力需分别核对。": "Model claude-haiku-5-5 has 1M context and up to 128k output. Per million input / output tokens, prompts up to 100K cost $0.10 / $0.50; prompts above 100K cost $0.50 / $2.50. Check Claude API and each cloud platform's capabilities separately.",
             "型号、上下文与标准价格": "Model, context and standard price",
             "型号和平台边界": "Model and platform scope",
+            "完整动态 https://fieldtofit.top/news/D-323": "Read the full update https://fieldtofit.top/news/D-323",
             "完整动态 https://fieldtofit.top/news/D-332": "Read the full update https://fieldtofit.top/news/D-332",
             "完整型号家族": "Complete model family",
             "完整型号目录": "Complete model catalog",
@@ -7303,6 +7340,7 @@
             "本站 2026-10-24核对；限本事件，未实测，不替换旧型号、价格或历史。": "Checked 2026-10-24; limited to this event, not runtime-tested. Existing models, prices and history are retained.",
             "标准价格与上下文": "Standard price and context",
             "核对范围与限制": "Scope and limits",
+            "档案增补｜Claude Desktop 3P 默认统一入口已生效，Code-only 部署须分版本。自北京时间 11月11日 04:00 后启动起，适用版本通常把未设置的 desktopHome 读作 standard。v5.1231.0 有暂时的 Code-only 例外。": "Dossier update. Claude Desktop 3P unifies Chat and Cowork by default, with a Code-only version exception. On launch after 04:00 Beijing time on November 11, applicable versions generally read unset desktopHome as standard. v5.1231.0 has a temporary Code-only exception.",
             "模型升级会影响已有调用流程。": "The model upgrade will affect the existing call process.",
             "正文再分发许可未确认，保留官方链接及本站解读。": "The text redistribution license has not been confirmed, and the official link and FieldToFit interpretation are retained.",
             "正文再分发许可未确认；MCP可读本站解读及来源清单，原文仅链接。": "The text redistribution license has not been confirmed; MCP provides FieldToFit interpretation and source list, source text only links.",
@@ -7331,8 +7369,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-11-11T09:02:13.757210+00:00",
-          "source_hash": "ec03bb6dd6c3d72fb46744755905134830eab8fb8f00c6b54d62f9f030ed6925",
+          "reviewed_at": "2026-11-12T04:17:37.529933+00:00",
+          "source_hash": "89a3fa5b6aaa73c6bfcc2d4a035d2e071f5ae44c4e9817d68d8122851668c660",
           "state": "reviewed"
         }
       },
@@ -7794,6 +7832,14 @@
         {
           "kind": "paragraph",
           "text": "完整动态 https://fieldtofit.top/news/D-333"
+        },
+        {
+          "kind": "paragraph",
+          "text": "机器人分支｜Gemini Robotics 2.5 在汽车零件分拣试点报告 96% 成功率。Google DeepMind 公布 Gemini Robotics 2.5 与 Apptronik Apollo 2 在 Mercedes-Benz 工厂的概念验证，官方报告的任务成功率为 96%。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-338"
         },
         {
           "kind": "paragraph",
@@ -8442,6 +8488,12 @@
           "id": "nov11-c-carbon-model-card",
           "title": "Google DeepMind · Gemini 4 Carbon model card",
           "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov12-d-robotics",
+          "title": "Google DeepMind · Gemini Robotics 2.5",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
         }
       ],
       "state": "published",
@@ -8526,6 +8578,7 @@
             "同次发布的推理分支": "Reasoning branches released at the same time",
             "完整 devsite-article-body 正文，转为 Markdown；保留文本、代码及链接，不含站点导航和图片二进制。": "Complete devsite-article-body text, turn to Markdown; keep text, code and links, excluding site navigation and picture binary.",
             "完整动态 https://fieldtofit.top/news/D-333": "Read the full update https://fieldtofit.top/news/D-333",
+            "完整动态 https://fieldtofit.top/news/D-338": "Read the full update https://fieldtofit.top/news/D-338",
             "官方公告、版本记录或采用说明": "Official announcement, version record or adoption instructions",
             "官方原始材料入口": "Official original materials entrance",
             "官方描述跨会话持续执行、工作资料与工具连接，并能组织子Agent；coworker agent在Workspace中以独立身份参与工作。": "Official materials describe ongoing execution across sessions, connections to work information and tools, and coordination of subagents. In Workspace, a coworker agent participates under its own identity.",
@@ -8552,6 +8605,7 @@
             "本期已核实事件": "Current verified event",
             "本次已核变化": "Verified change",
             "本次按明确官方公告补入上表，旧正文与原始日期保留；未独立复现性能、调用或迁移。": "This update appends the table from explicit official notices, retaining existing prose and original dates; performance, calls and migration have not been independently reproduced.",
+            "机器人分支｜Gemini Robotics 2.5 在汽车零件分拣试点报告 96% 成功率。Google DeepMind 公布 Gemini Robotics 2.5 与 Apptronik Apollo 2 在 Mercedes-Benz 工厂的概念验证，官方报告的任务成功率为 96%。": "Robotics branch. Gemini Robotics 2.5 reports 96% success in a parts-kitting pilot. Google DeepMind reports 96% task success in a Mercedes-Benz factory proof of concept using Gemini Robotics 2.5 and Apptronik Apollo 2.",
             "材料中能确认的内容": "The content that can be confirmed in the materials",
             "模型卡列文本、图像、音频和视频输入、文本输出，输入与输出合计最多 1M token；仍可能幻觉、缓慢或超时，知识截止 2026 年 3 月，部分领域更早。本站未运行复测。": "The card lists text, image, audio and video inputs with text output, and a combined input/output window up to 1M tokens. Hallucinations, slowness and timeouts remain possible. The knowledge cutoff is 2026-3, earlier in some domains; FieldToFit has not run the model.",
             "没有新增的参数不写成升级。": "No new parameters will be written as upgrades.",
@@ -8572,8 +8626,8 @@
             "页面标示 2026-08 更新；稳定版": "Page marking 2026-08 update; stable version",
             "页面标示 2026-09 更新；稳定版，首发日未核": "Page indication 2026-09 update; stable version, unchecked on the first day"
           },
-          "reviewed_at": "2026-11-11T09:02:56.829735+00:00",
-          "source_hash": "86c0fe926754e7ca15732b729740d3d9a8aef6c070f8c9111ddab77b1edb836c",
+          "reviewed_at": "2026-11-12T04:16:15.232641+00:00",
+          "source_hash": "da371a7874047ae94db08b3326ac7eefe5d3d2e0646f9055c75b1287f9c7ac31",
           "state": "reviewed"
         }
       },
@@ -11072,6 +11126,14 @@
       "blocks": [
         {
           "kind": "paragraph",
+          "text": "档案增补｜Codex CLI 0.167.2 默认增量发送 Vertex AI 工具更新。OpenAI 在 Codex CLI 0.167.2 中改用默认增量发送工具更新，适用于 Google Cloud Vertex AI 后端。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-336"
+        },
+        {
+          "kind": "paragraph",
           "text": "本期增补｜Codex CLI 0.167.0新增Agent命令中心与后端切换｜2026-11-06。正式版本新增未读结果标记、保留草稿的后端切换、受支持终端的本地图像预览及Vertex AI设置入口；修复提供方切换后的会话可见性、审批提示及压缩统计。本次按 11月 6日原日期补录。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。"
         },
         {
@@ -11214,6 +11276,18 @@
           "id": "nov10-b-release",
           "title": "OpenAI / Codex · rust-v0.167.0 ·086ccc8",
           "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov12-a-release",
+          "title": "OpenAI · Codex CLI 0.167.2",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.2"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov12-a-previous",
+          "title": "OpenAI · Codex CLI 0.167.1",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.1"
         }
       ],
       "state": "published",
@@ -11236,6 +11310,7 @@
             "分发匹配的 CLI 运行时；支持 ExternalMessage；恢复 / 分叉时 include_turns 控制返回历史，不改变模型实际上下文": "Distribute matching CLI runtime; support ExternalMessage; include_turns control to return history when restoring / forking, without changing the actual context of the model",
             "变化与条件": "Changes and conditions",
             "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。": "Eligible paid Pro and Business subscriptions can activate credits for one API organization after at least 7 days. First grants are prorated; they neither increase ChatGPT or signed-in Codex allowances nor cover Codex API-key usage.",
+            "完整动态 https://fieldtofit.top/news/D-336": "Read the full update https://fieldtofit.top/news/D-336",
             "官方更新记录中的运行中消息、SDK 与恢复行为": "Running messages, SDK and recovery behaviors in the official update record",
             "客户端、CLI、SDK 和所用模型分别标注": "Client, CLI, SDK and the model used are marked separately.",
             "对应完整记录：https://fieldtofit.top/news/D-326": "Full corresponding record: https://fieldtofit.top/news/D-326",
@@ -11248,13 +11323,14 @@
             "本期对应事件于 2026-10-29核对；保留原型号、价格、原文日期及历史。整份档案的全入口日核对仍未完成。": "The related events were checked on 2026-10-29. Original models, prices, source dates and history are retained. The complete daily review of every dossier source remains unfinished.",
             "本期已核实事件": "Current verified event",
             "本次展示的材料": "The materials on display this time",
+            "档案增补｜Codex CLI 0.167.2 默认增量发送 Vertex AI 工具更新。OpenAI 在 Codex CLI 0.167.2 中改用默认增量发送工具更新，适用于 Google Cloud Vertex AI 后端。": "Dossier update. Codex CLI 0.167.2 sends Vertex AI tool updates incrementally by default. OpenAI changes the default tool-update behavior to incremental updates on the Google Cloud Vertex AI backend in Codex CLI 0.167.2.",
             "版本口径": "Version measurement basis",
             "美国客户可经Oracle Marketplace采购OpenAI API、Codex与ChatGPT Work，符合条件时使用Oracle Universal Credits；Workspace仍在开发，功能按具体开放状态核对。": "US customers can procure OpenAI API, Codex and ChatGPT Work through Oracle Marketplace, using eligible Oracle Universal Credits. Workspace remains in development; check each feature’s availability.",
             "运行中的信息也有来源层级。": "The information in operation also has a source level.",
             "通过工具处理项目任务；程序可接入执行流程": "Process project tasks through tools; programs can access the execution process"
           },
-          "reviewed_at": "2026-11-10T06:36:40.311075+00:00",
-          "source_hash": "a269cbc6b0dcd849ff1713384a2edbc2287da7dc6332fef2f518857cb0eb4b9b",
+          "reviewed_at": "2026-11-12T04:14:56.152732+00:00",
+          "source_hash": "c6b887b8cf3d663614371005a03daaf4ef0cbb6082ad824ad9ecdbf4375b3175",
           "state": "reviewed"
         }
       },
@@ -15354,7 +15430,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-11-11",
+  "reviewed_at": "2026-11-12",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

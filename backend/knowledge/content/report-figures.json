@@ -2252,5 +2252,21 @@
     ],
     "version": "2026-11-10",
     "license": "Graphics © FieldToFit. Independent redraw of author-reported facts; original report graphics are not reproduced."
+  },
+  "/report-figures/upwork-rebundling-prices.png": {
+    "sha256": "79a723d8b541b28d1323c76bdfc96605dea5e4ed0ebc89617f3be5693ed4590d",
+    "source_urls": [
+      "https://cdn.openai.com/pdf/openai-upwork-full-report.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported numerical facts."
+  },
+  "/report-figures/upwork-rebundling-pairs.png": {
+    "sha256": "767ebaa937fe2e57393bb8f34b1da6a1bb19102348e0991e157ecbc1730a636d",
+    "source_urls": [
+      "https://cdn.openai.com/pdf/openai-upwork-full-report.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of author-reported numerical facts."
   }
 }
