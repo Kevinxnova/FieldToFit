@@ -6390,6 +6390,14 @@
       "blocks": [
         {
           "kind": "paragraph",
+          "text": "Claude Meetings 向 Team 与 Enterprise 推出 Beta。Claude 可作为可见参与者加入 Google Meet，提供转写、摘要、行动项，并在会中创建文档和白板。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-342"
+        },
+        {
+          "kind": "paragraph",
           "text": "档案增补｜Claude Desktop 3P 默认统一入口已生效，Code-only 部署须分版本。自北京时间 11月11日 04:00 后启动起，适用版本通常把未设置的 desktopHome 读作 standard。v5.1231.0 有暂时的 Code-only 例外。"
         },
         {
@@ -7205,6 +7213,18 @@
           "id": "nov12-b-configuration-changelog",
           "title": "Anthropic · Claude Desktop 3P configuration changelog",
           "url": "https://claude.com/docs/third-party/claude-desktop/configuration-changelog"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-b-release",
+          "title": "Anthropic · Claude release notes",
+          "url": "https://support.claude.com/en/articles/12138966-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-b-help",
+          "title": "Anthropic · Use Claude Meetings",
+          "url": "https://support.claude.com/en/articles/18325154-use-claude-meetings"
         }
       ],
       "state": "published",
@@ -7230,6 +7250,7 @@
             "Claude Duet research preview／Opus 5.5；原文 2026-10-21，本站 2026-10-22核对。未试用账户、连接器、后台行动或账单；不据此更改模型API价格或套餐额度。": "Claude Duet research preview / Opus 5.5; source 2026-10-21, checked 2026-10-22. No account, connector, background-action or billing tests; no model API price or plan-limit change is inferred.",
             "Claude Duet基于Opus 5.5，提供iOS、Android和网页入口。它在连接的应用中检查需关注事项，也能在云端继续任务；研究预览先面向美国Pro／Max候补用户。": "Claude Duet uses Opus 5.5 on iOS, Android and the web. It checks connected apps for matters needing attention and continues tasks in the cloud. The research preview initially accepts waitlisted US Pro and Max users.",
             "Claude Duet：主动检查应用，美国Pro／Max先开放候补": "Claude Duet: proactive app checks, initially waitlisted for US Pro and Max",
+            "Claude Meetings 向 Team 与 Enterprise 推出 Beta。Claude 可作为可见参与者加入 Google Meet，提供转写、摘要、行动项，并在会中创建文档和白板。": "Claude Meetings rolls out in beta to Team and Enterprise. Claude can join Google Meet as a visible participant to transcribe, summarize, capture action items and build documents and whiteboards during the call.",
             "Claude Platform 接入 Google Cloud：身份和结算打通，迁移仍需重新配置": "Claude Platform on Google Cloud: integrated identity and billing, with migration still requiring setup",
             "Claude Security为Enterprise公测加入持续扫描、修复跟踪、项目知识和API／MCP集成，按变更风险与复杂度更新发现。": "Claude Security’s Enterprise public beta adds continuous scanning, fix tracking, project knowledge and API/MCP integrations, updating findings based on change risk and complexity.",
             "Claude Security：跟随代码变化扫描，并追踪修复状态": "Claude Security: scans follow code changes and track fixes",
@@ -7301,6 +7322,7 @@
             "型号和平台边界": "Model and platform scope",
             "完整动态 https://fieldtofit.top/news/D-323": "Read the full update https://fieldtofit.top/news/D-323",
             "完整动态 https://fieldtofit.top/news/D-332": "Read the full update https://fieldtofit.top/news/D-332",
+            "完整动态 https://fieldtofit.top/news/D-342": "Read the full update https://fieldtofit.top/news/D-342",
             "完整型号家族": "Complete model family",
             "完整型号目录": "Complete model catalog",
             "官方公告、版本记录或采用说明": "Official announcement, version record or adoption instructions",
@@ -7369,8 +7391,8 @@
             "默认自适应思考，旧budget_tokens配置会报错；应按内容块类型读取回答，不能固定取第一块。新分词器使相同文本的token数增加，单价变化不等于任务费用同比例变化。": "Adaptive thinking is the default; older budget_tokens configurations produce errors. Read responses by content-block type rather than always taking the first block. The new tokenizer increases token counts for the same text, so unit-price changes do not translate proportionally into task costs.",
             "默认自适应思考；旧手动 extended thinking 配置会返回错误；分词器改变": "Adaptive thinking by default; older manual extended thinking configurations return errors; tokenizer changed"
           },
-          "reviewed_at": "2026-11-12T04:17:37.529933+00:00",
-          "source_hash": "89a3fa5b6aaa73c6bfcc2d4a035d2e071f5ae44c4e9817d68d8122851668c660",
+          "reviewed_at": "2026-11-13T05:40:17.078782+00:00",
+          "source_hash": "606c46c329e8d1d716970f6a09a2045ee3995b0b49d25d75adc1fcc3dce46945",
           "state": "reviewed"
         }
       },
@@ -7825,6 +7847,22 @@
     },
     {
       "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Gemini 4 Hydrogen 正式发布，Developer API 标准价 1.50／7.50 美元。覆盖 Gemini API、AI Studio、企业入口、Gemini 应用与 Google Search。Gemini 应用免费用户在适用请求中由系统自动选用。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-343"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Google AI Edge Gallery 加入端侧听写与朗读。AI Chat 加入端侧语音识别与语音合成，可用语音输入并逐句高亮朗读回复。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-345"
+        },
         {
           "kind": "paragraph",
           "text": "Gemini 4 Carbon 正式开放，2026-11-30 介绍价到期。Gemini API 付费层和企业入口已开放。Google AI Ultra 在 Gemini 应用、搜索 AI Mode 与 Antigravity 分批推出。 本项 2026-11-11 核对。"
@@ -8494,6 +8532,36 @@
           "id": "nov12-d-robotics",
           "title": "Google DeepMind · Gemini Robotics 2.5",
           "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-c-launch",
+          "title": "Google · Introducing Gemini 4 Hydrogen",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-c-pricing",
+          "title": "Google · Gemini Developer API pricing",
+          "url": "https://aistudio.google.com/docs/pricing#gemini-4-hydrogen"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-c-cloud",
+          "title": "Google Cloud · Gemini 4 Hydrogen",
+          "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-hydrogen"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-e-release",
+          "title": "Google Developers · On-device speech in AI Edge Gallery",
+          "url": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-e-repost",
+          "title": "Google AI Edge and Android ML teams · Hugging Face",
+          "url": "https://huggingface.co/blog/litert-community/on-device-speech-recognition-and-text-to-speech-in"
         }
       ],
       "state": "published",
@@ -8518,11 +8586,13 @@
             "Develop with agents · Google 官方文档快照": "Develop with agents · Google official document snapshot",
             "Gemini 4 Argon模型卡专题": "Gemini 4 Argon model-card analysis",
             "Gemini 4 Carbon 正式开放，2026-11-30 介绍价到期。Gemini API 付费层和企业入口已开放。Google AI Ultra 在 Gemini 应用、搜索 AI Mode 与 Antigravity 分批推出。 本项 2026-11-11 核对。": "Gemini 4 Carbon opens publicly with introductory pricing expiring 2026-11-30. The paid Gemini API tier and enterprise access are open. Google AI Ultra access is rolling out in the Gemini app, AI Mode in Search and Antigravity. This event was checked on 2026-11-11.",
+            "Gemini 4 Hydrogen 正式发布，Developer API 标准价 1.50／7.50 美元。覆盖 Gemini API、AI Studio、企业入口、Gemini 应用与 Google Search。Gemini 应用免费用户在适用请求中由系统自动选用。": "Gemini 4 Hydrogen launches at 1.50 and 7.50 USD on the standard Developer API. Available across the Gemini API, AI Studio, enterprise surfaces, the Gemini app and Google Search. The Gemini app selects Hydrogen automatically for eligible prompts from free users.",
             "Gemini API / Google AI Studio；未测任务成功率或真实延迟": "Gemini API / Google AI Studio; Untested task success rate or real delay",
             "Gemini API / Google AI Studio；账户及地区可用性未实测": "Gemini API / Google AI Studio; account and regional availability not runtime test",
             "Gemini API；不把这一文本输出型号称作生图模型": "Gemini API; this text output model is not called a biogram model.",
             "Gemini agent企业产品": "Gemini agent enterprise products",
             "Gemini at Work 2026官方公告": "Gemini at Work 2026 Official Announcement",
+            "Google AI Edge Gallery 加入端侧听写与朗读。AI Chat 加入端侧语音识别与语音合成，可用语音输入并逐句高亮朗读回复。": "Google AI Edge Gallery adds on-device dictation and read-aloud playback. AI Chat adds on-device speech recognition and synthesis, enabling voice input and sentence-highlighted playback.",
             "Google DeepMind · Gemini 3.8 Audio 模型卡": "Google DeepMind · Gemini 3.8 Audio Model Card",
             "Google · Gemini 3.8 Live 发布公告": "Google · Gemini 3.8 Live Release Announcement",
             "Google · 实时语音应用与异步工具调用": "Google · Real-time voice application and asynchronous tool calls",
@@ -8579,6 +8649,8 @@
             "完整 devsite-article-body 正文，转为 Markdown；保留文本、代码及链接，不含站点导航和图片二进制。": "Complete devsite-article-body text, turn to Markdown; keep text, code and links, excluding site navigation and picture binary.",
             "完整动态 https://fieldtofit.top/news/D-333": "Read the full update https://fieldtofit.top/news/D-333",
             "完整动态 https://fieldtofit.top/news/D-338": "Read the full update https://fieldtofit.top/news/D-338",
+            "完整动态 https://fieldtofit.top/news/D-343": "Read the full update https://fieldtofit.top/news/D-343",
+            "完整动态 https://fieldtofit.top/news/D-345": "Read the full update https://fieldtofit.top/news/D-345",
             "官方公告、版本记录或采用说明": "Official announcement, version record or adoption instructions",
             "官方原始材料入口": "Official original materials entrance",
             "官方描述跨会话持续执行、工作资料与工具连接，并能组织子Agent；coworker agent在Workspace中以独立身份参与工作。": "Official materials describe ongoing execution across sessions, connections to work information and tools, and coordination of subagents. In Workspace, a coworker agent participates under its own identity.",
@@ -8626,8 +8698,8 @@
             "页面标示 2026-08 更新；稳定版": "Page marking 2026-08 update; stable version",
             "页面标示 2026-09 更新；稳定版，首发日未核": "Page indication 2026-09 update; stable version, unchecked on the first day"
           },
-          "reviewed_at": "2026-11-12T04:16:15.232641+00:00",
-          "source_hash": "da371a7874047ae94db08b3326ac7eefe5d3d2e0646f9055c75b1287f9c7ac31",
+          "reviewed_at": "2026-11-13T05:41:47.194808+00:00",
+          "source_hash": "fe1f239285f9e252dd442ac9031de1709e6381279635bcb6c0511098baa91ef1",
           "state": "reviewed"
         }
       },
@@ -11126,6 +11198,14 @@
       "blocks": [
         {
           "kind": "paragraph",
+          "text": "Codex CLI 0.168.0 增加并排会话与模型提供方入口。终端 Sessions 菜单可为新会话选择模型提供方。开启 features.tui_workspace 后，可在主会话旁打开另一会话。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-341"
+        },
+        {
+          "kind": "paragraph",
           "text": "档案增补｜Codex CLI 0.167.2 默认增量发送 Vertex AI 工具更新。OpenAI 在 Codex CLI 0.167.2 中改用默认增量发送工具更新，适用于 Google Cloud Vertex AI 后端。"
         },
         {
@@ -11288,12 +11368,19 @@
           "id": "nov12-a-previous",
           "title": "OpenAI · Codex CLI 0.167.1",
           "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.1"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-a-release",
+          "title": "OpenAI · Codex CLI 0.168.0",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.168.0"
         }
       ],
       "state": "published",
       "translations": {
         "en": {
           "fields": {
+            "Codex CLI 0.168.0 增加并排会话与模型提供方入口。终端 Sessions 菜单可为新会话选择模型提供方。开启 features.tui_workspace 后，可在主会话旁打开另一会话。": "Codex CLI 0.168.0 adds side conversations and a model-provider picker. The terminal Sessions menu can select a provider for new conversations. Enable features.tui_workspace to open a side conversation.",
             "Codex 官方更新记录": "Codex official update record",
             "Codex 客户端及 CLI / SDK 入口": "Codex client and CLI / SDK entrance",
             "ExternalMessage 可以把外部消息送入运行过程，其权限是工具材料级别，不能被当成用户新增授权。": "ExternalMessage delivers external messages during execution. These have tool-material authority and do not constitute new user authorization.",
@@ -11311,6 +11398,7 @@
             "变化与条件": "Changes and conditions",
             "合格付费Pro与Business可激活一个API组织的赠送额度；订阅需生效至少 7天，首期按剩余周期计算，不增加ChatGPT或登录态Codex额度，也不覆盖API key方式Codex用量。": "Eligible paid Pro and Business subscriptions can activate credits for one API organization after at least 7 days. First grants are prorated; they neither increase ChatGPT or signed-in Codex allowances nor cover Codex API-key usage.",
             "完整动态 https://fieldtofit.top/news/D-336": "Read the full update https://fieldtofit.top/news/D-336",
+            "完整动态 https://fieldtofit.top/news/D-341": "Read the full update https://fieldtofit.top/news/D-341",
             "官方更新记录中的运行中消息、SDK 与恢复行为": "Running messages, SDK and recovery behaviors in the official update record",
             "客户端、CLI、SDK 和所用模型分别标注": "Client, CLI, SDK and the model used are marked separately.",
             "对应完整记录：https://fieldtofit.top/news/D-326": "Full corresponding record: https://fieldtofit.top/news/D-326",
@@ -11329,8 +11417,8 @@
             "运行中的信息也有来源层级。": "The information in operation also has a source level.",
             "通过工具处理项目任务；程序可接入执行流程": "Process project tasks through tools; programs can access the execution process"
           },
-          "reviewed_at": "2026-11-12T04:14:56.152732+00:00",
-          "source_hash": "c6b887b8cf3d663614371005a03daaf4ef0cbb6082ad824ad9ecdbf4375b3175",
+          "reviewed_at": "2026-11-13T05:39:37.752617+00:00",
+          "source_hash": "14fae97b13d62fcd3bd4bf7b4b0fb5179950dbf8a4291bcca8ad5b8494f5288d",
           "state": "reviewed"
         }
       },
@@ -11338,6 +11426,14 @@
     },
     {
       "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Claude Code 2.1.323 新增实验性 Code Mode 和插件版本约束。Code Mode 需主动开启，可用 JavaScript 组织工具调用。插件可声明 Claude Code 兼容版本，安装与更新会选取兼容版本。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "完整动态 https://fieldtofit.top/news/D-344"
+        },
         {
           "kind": "paragraph",
           "text": "本期增补｜Claude Code 2.1.321／322：修复OAuth及权限检查，新增Vertex快速模式｜2026-11-10。2.1.321修复MCP OAuth重定向及若干Bash和目标路径权限检查，接入Fable 5.2；2.1.322另增Vertex global／us／eu快速模式，被拒绝时回退standard。两版变化分别记录。 本项 2026-11-10核对，未实测；仅增补该事件，不表示全档案重新核验。"
@@ -12102,6 +12198,12 @@
           "id": "nov10-d-release322",
           "title": "Anthropic · Claude Code v2.1.322 ·6e1e44f",
           "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322"
+        },
+        {
+          "coverage": "link_only",
+          "id": "nov13-d-release",
+          "title": "Anthropic · Claude Code v2.1.323",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323"
         }
       ],
       "state": "published",
@@ -12123,6 +12225,7 @@
             "Claude Code 2.1.296：补强托管策略、MCP 状态与编辑保护 · 官方材料1": "Claude Code 2.1.296: Strengthen hosting strategy, MCP status and editing protection · Official materials 1",
             "Claude Code 2.1.302 于北京时间 2026-10-17 04:53 发布，接续 2.1.301，修复可选协议字段、会话压缩与云端任务的状态处理。": "Claude Code 2.1.302 was released at 04:53 Beijing time on 2026-10-17, following 2.1.301, with fixes for optional protocol fields, compaction and cloud-task state handling.",
             "Claude Code 2.1.305：修复网关兼容，升级需检查权限变化": "Claude Code 2.1.305: gateway fixes and permission changes to review",
+            "Claude Code 2.1.323 新增实验性 Code Mode 和插件版本约束。Code Mode 需主动开启，可用 JavaScript 组织工具调用。插件可声明 Claude Code 兼容版本，安装与更新会选取兼容版本。": "Claude Code 2.1.323 adds experimental Code Mode and plugin version ranges. Code Mode is opt-in and uses JavaScript to organize tool calls. Plugins can declare compatible Claude Code versions, and installation and updates select a compatible release.",
             "Claude Code CLI 及相关客户端入口": "Claude Code CLI and related client entrances",
             "Claude Code v 2.1.319｜GitHub于 2026-11-06 17:04:01 UTC发布，即北京时间 2026-11-07 01:04:01。调整部分auto mode检查失败路径，新增权限提示直接拒绝与MCP后台任务，并声明worktree／Bash权限修复；2026-11-07核对，未回归，不推定SDK同步升级。": "Claude Code v 2.1.319 | GitHub published 2026-11-06 17:04:01 UTC, Beijing 2026-11-07 01:04:01. Changes some auto-mode failure paths, adds denial instead of prompts and MCP background tasks, and reports worktree/Bash permission fixes. Checked 2026-11-07; no regression test or inferred SDK update.",
             "Claude Code v2.1.292修复部分定时任务不触发、后台命令过早停止及权限处理问题，Agent工具增加effort参数。": "Claude Code v2.1.292 fixes some scheduled tasks not firing, background commands stopping too early and permission handling. The Agent tool gains an effort parameter.",
@@ -12205,6 +12308,7 @@
             "后台任务与定时执行": "Background tasks and scheduled execution",
             "固定版本许可声明": "pinned version license statement",
             "复合命令权限": "Compound command permissions",
+            "完整动态 https://fieldtofit.top/news/D-344": "Read the full update https://fieldtofit.top/news/D-344",
             "官方 CHANGELOG": "Official CHANGELOG",
             "官方 CHANGELOG 中接口兼容、工具调用、会话和权限修复": "Interface compatibility, tool calls, session and permission repair in the official CHANGELOG",
             "官方v2.1.289记录了多项权限与插件修复；本站档案仍是v2.1.268。建议把影响实际使用的修复写入版本表。": "The official v2.1.289 records a number of permissions and plug-in fixes; FieldToFit profile is still v2.1.268. It is recommended to write the repairs that affect the actual use into the version table.",
@@ -12283,8 +12387,8 @@
             "验证与采用边界": "Verification and adoption of boundaries",
             "验证范围": "Scope of verification"
           },
-          "reviewed_at": "2026-11-10T06:37:19.294617+00:00",
-          "source_hash": "55842f1a8fb16d65613763cdaf4b9edf07491f0d216a5e16f5bc00c636b8b567",
+          "reviewed_at": "2026-11-13T05:40:58.550218+00:00",
+          "source_hash": "f83170db3273d7b831c562551465dffaa02d9d932d32e98759f998498d3c6ff2",
           "state": "reviewed"
         }
       },
@@ -15430,7 +15534,7 @@
       "type": "skill"
     }
   ],
-  "reviewed_at": "2026-11-12",
+  "reviewed_at": "2026-11-13",
   "schema_version": "fieldtofit.watch.v1",
   "title": "持续关注"
 }

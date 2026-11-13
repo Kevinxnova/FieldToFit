@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.20.4](CHANGELOG.md#v1.20.4)** · Release tag not yet published
+**Current source version: [v1.20.5](CHANGELOG.md#v1.20.5)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Correct the version-specific behavior of the Claude Desktop 3P unified home and update the bilingual card.
-- Publish analysis of the OpenAI and Upwork freelance work report, with redraws of prices, hours and task combinations.
-- Include the approved product updates and corresponding dossier additions.
+- Register the bilingual Gemini 4 Hydrogen information card and its share images.
+- Explain the official Hydrogen evaluation with two data redraws.
+- Update the approved news and linked dossiers.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

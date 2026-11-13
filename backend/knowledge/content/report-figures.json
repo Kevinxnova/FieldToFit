@@ -2268,5 +2268,21 @@
     ],
     "version": "2026-11",
     "license": "Graphics © FieldToFit. Independent redraw of author-reported numerical facts."
+  },
+  "/report-figures/hydrogen-20261112-coding.png": {
+    "sha256": "ac9610158a8e0444c10cf2c62a77a877fa6808cea5ec02785bc2c16d6b6f3cf8",
+    "source_urls": [
+      "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of numerical results reported by Google DeepMind."
+  },
+  "/report-figures/hydrogen-20261112-computer.png": {
+    "sha256": "324ad69bb5999887f320f152cc574aa8f4a410d61a898aff8be499b3d90927f0",
+    "source_urls": [
+      "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of numerical results reported by Google DeepMind."
   }
 }

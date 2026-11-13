@@ -1,34 +1,34 @@
 {
-  "version": "1.20.4",
-  "revision": "1d591e81f56cf47f8f9525ce22f330c8739c8379918ea4161d83dce8009fa583",
+  "version": "1.20.5",
+  "revision": "f76f1d2745f6be43271151f1597a3b8e705d1d338b0b0e1ddf9362de91dbbb92",
   "items": [
     {
-      "version": "1.20.4",
-      "date": "2026-11-12",
-      "deployed_on": "2026-11-12",
+      "version": "1.20.5",
+      "date": "2026-11-13",
+      "deployed_on": "2026-11-13",
       "copy": {
         "zh": {
-          "title": "Claude Desktop 信息卡更正与自由职业报告",
+          "title": "Gemini 4 Hydrogen 与 11 月 13 日已选动态",
           "highlights": [
-            "更正 Claude Desktop 3P 默认入口的版本条件，更新中英文信息卡。",
-            "整理 OpenAI 与 Upwork 的自由职业工作报告，并重绘报价、工时及任务组合图。",
-            "纳入当批获批的产品动态及对应档案增补。"
+            "登记 Gemini 4 Hydrogen 中英文信息卡及分享图。",
+            "整理 Hydrogen 官方评测，新增两张数据重绘。",
+            "同步获批动态与对应的持续关注档案。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Claude Desktop card correction and freelance work report",
+          "title": "Gemini 4 Hydrogen and the approved November 13 updates",
           "highlights": [
-            "Correct the version-specific behavior of the Claude Desktop 3P unified home and update the bilingual card.",
-            "Publish analysis of the OpenAI and Upwork freelance work report, with redraws of prices, hours and task combinations.",
-            "Include the approved product updates and corresponding dossier additions."
+            "Register the bilingual Gemini 4 Hydrogen information card and its share images.",
+            "Explain the official Hydrogen evaluation with two data redraws.",
+            "Update the approved news and linked dossiers."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.4"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.5"
     },
     {
       "version": "1.20.1",

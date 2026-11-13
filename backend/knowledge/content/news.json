@@ -3,6 +3,746 @@
   "items": [
     {
       "category": "research",
+      "checked_at": "2026-11-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-12",
+      "highlight": false,
+      "id": "D-346",
+      "interpretation": [
+        {
+          "locator": "Approach; Methodology; Results",
+          "source_ids": [
+            "evaluation"
+          ],
+          "text": "按任务看配置和比较结果，结合真实工作流验证。",
+          "title": "报告路线"
+        }
+      ],
+      "name": "Gemini 4 Hydrogen Model Evaluation",
+      "note": "模型卡和方法报告随 2026-11-12 发布。未独立复现。 本站 2026-11-13 核对。",
+      "organization": "Google DeepMind",
+      "publication": {
+        "first_published_at": "2026-11-13T05:41:32.330187+00:00",
+        "report_selected_at": "2026-11-13T05:41:32.330187+00:00",
+        "updated_at": "2026-11-13T05:41:32.330187+00:00"
+      },
+      "reading_materials": [],
+      "related": [],
+      "source_published_at": "2026-11-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "evaluation",
+          "title": "Google DeepMind · Gemini 4 Hydrogen Model Evaluation",
+          "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_model_evaluation.pdf"
+        },
+        {
+          "coverage": "link_only",
+          "id": "model-card",
+          "title": "Google DeepMind · Gemini 4 Hydrogen Model Card",
+          "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+        }
+      ],
+      "state": "published",
+      "summary": "按代码、知识工作和电脑操作拆解 Google DeepMind 的评测结果与适用条件。",
+      "technical_map": {
+        "caution": "作者自测和外部数据的运行框架、重复次数与任务版本不同，分数须按各项配置解读。",
+        "change_summary": "首次发表，整理官方评测的三条结论和两张重绘。",
+        "edges": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Knowledge work methodology; Results",
+                "source_id": "evaluation"
+              }
+            ],
+            "from": "coding",
+            "label": "同一发布的并行评测",
+            "relation": "parallel",
+            "to": "knowledge"
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Computer use methodology; Results",
+                "source_id": "evaluation"
+              }
+            ],
+            "from": "coding",
+            "label": "同一发布的并行评测",
+            "relation": "parallel",
+            "to": "computer"
+          }
+        ],
+        "focus": "Gemini 4 Hydrogen 适合哪些 Agent 任务？",
+        "nodes": [
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Agentic coding methodology; Results",
+                "source_id": "evaluation"
+              }
+            ],
+            "id": "coding",
+            "kind": "method",
+            "label": "代码任务的名次随测试变化",
+            "limitation": "作者自测和外部数据的运行框架、重复次数与任务版本不同，分数须按各项配置解读。",
+            "mechanism": "SWE-sweep 的 Hydrogen、Sonnet、Terra 分别为 13.5%、3.1%、5.8%。Terminal-Bench 4.1 的 Hydrogen 为 57.0%，Sonnet 为 63.9%，Terra 未列。",
+            "metrics": [],
+            "result": "SWE-sweep 的 Hydrogen、Sonnet、Terra 分别为 13.5%、3.1%、5.8%。Terminal-Bench 4.1 的 Hydrogen 为 57.0%，Sonnet 为 63.9%，Terra 未列。",
+            "setting": "各项设置见对应论述。",
+            "stage": 0
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Knowledge work methodology; Results",
+                "source_id": "evaluation"
+              }
+            ],
+            "id": "knowledge",
+            "kind": "method",
+            "label": "知识工作成绩绑定任务版本",
+            "limitation": "作者自测和外部数据的运行框架、重复次数与任务版本不同，分数须按各项配置解读。",
+            "mechanism": "Agents’ Last Exam v1.1 的 Hydrogen、Sonnet、Terra 分别为 71.6%、60.4%、69.8%。",
+            "metrics": [],
+            "result": "Agents’ Last Exam v1.1 的 Hydrogen、Sonnet、Terra 分别为 71.6%、60.4%、69.8%。",
+            "setting": "各项设置见对应论述。",
+            "stage": 1
+          },
+          {
+            "evidence": [
+              {
+                "fragment": "",
+                "locator": "Computer use methodology; Results",
+                "source_id": "evaluation"
+              }
+            ],
+            "id": "computer",
+            "kind": "method",
+            "label": "离线电脑操作的结果有特定分母",
+            "limitation": "作者自测和外部数据的运行框架、重复次数与任务版本不同，分数须按各项配置解读。",
+            "mechanism": "OSWorld 2.1 离线子集上 Hydrogen、Sonnet、Terra 分别为 77.6%、83.9%、74.2%。",
+            "metrics": [],
+            "result": "OSWorld 2.1 离线子集上 Hydrogen、Sonnet、Terra 分别为 77.6%、83.9%、74.2%。",
+            "setting": "各项设置见对应论述。",
+            "stage": 2
+          }
+        ],
+        "question": "Gemini 4 Hydrogen 适合哪些 Agent 任务？",
+        "reading": {
+          "editorial": [
+            "FieldToFit 分析：优先把真实工单按任务拆开。固定工具、评估窗口和成功标准，再测质量、完成时间和账单。模型卡里的高思考结果无法直接代表默认配置的费用。",
+            "来源与修订：Google DeepMind 官方模型卡与评测方法，2026-11-12 发布，2026-11-13 核对。本站依据作者结果重绘，未独立复现。"
+          ],
+          "findings": [
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Hydrogen 在 SWE-sweep 使用 Antigravity CLI 1.4.8，自测分数与公开榜单并列。Terminal-Bench 4.1 采用另一运行框架，Hydrogen 每题平均 5 次。作者成本对比采用 Terminal-Bench 4.0。"
+                },
+                {
+                  "alt": "代码任务的名次随测试变化",
+                  "attribution": "数据来源：Google DeepMind。",
+                  "caption": "本站按官方模型卡结果重绘，模型分数见各条。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Evaluation; Results",
+                      "source_id": "model-card"
+                    }
+                  ],
+                  "image_url": "/report-figures/hydrogen-20261112-coding.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of numerical results reported by Google DeepMind."
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Agentic coding methodology; Results",
+                  "source_id": "evaluation"
+                }
+              ],
+              "id": "coding",
+              "node_ids": [
+                "coding"
+              ],
+              "summary": "SWE-sweep 的 Hydrogen、Sonnet、Terra 分别为 13.5%、3.1%、5.8%。Terminal-Bench 4.1 的 Hydrogen 为 57.0%，Sonnet 为 63.9%，Terra 未列。",
+              "title": "代码任务的名次随测试变化"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "作者使用 122 项任务和 5 小时窗口，保留 2026-10-17 版本，未应用 2026-10-26 更新。分数是量表均值。Hydrogen、Sonnet 使用不同运行框架，Terra 引自榜单。"
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Knowledge work methodology; Results",
+                  "source_id": "evaluation"
+                }
+              ],
+              "id": "knowledge",
+              "node_ids": [
+                "knowledge"
+              ],
+              "summary": "Agents’ Last Exam v1.1 的 Hydrogen、Sonnet、Terra 分别为 71.6%、60.4%、69.8%。",
+              "title": "知识工作成绩绑定任务版本"
+            },
+            {
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "测试覆盖 82 项离线任务，Hydrogen 与 Sonnet 取 3 次运行中的最好结果，每次仅尝试一次。Terra 引自系统卡。"
+                },
+                {
+                  "alt": "离线电脑操作的结果有特定分母",
+                  "attribution": "数据来源：Google DeepMind。",
+                  "caption": "本站按官方模型卡结果重绘，模型分数见各条。",
+                  "evidence": [
+                    {
+                      "fragment": "",
+                      "locator": "Evaluation; Results",
+                      "source_id": "model-card"
+                    }
+                  ],
+                  "image_url": "/report-figures/hydrogen-20261112-computer.png",
+                  "kind": "figure",
+                  "license": "Graphics © FieldToFit. Independent redraw of numerical results reported by Google DeepMind."
+                }
+              ],
+              "evidence": [
+                {
+                  "fragment": "",
+                  "locator": "Computer use methodology; Results",
+                  "source_id": "evaluation"
+                }
+              ],
+              "id": "computer",
+              "node_ids": [
+                "computer"
+              ],
+              "summary": "OSWorld 2.1 离线子集上 Hydrogen、Sonnet、Terra 分别为 77.6%、83.9%、74.2%。",
+              "title": "离线电脑操作的结果有特定分母"
+            }
+          ],
+          "title": "Gemini 4 Hydrogen 适合哪些 Agent 任务？"
+        },
+        "reports": [
+          {
+            "first_published_at": "2026-11-12",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "evaluation",
+            "substantive_revision": false,
+            "version": "2026-11"
+          },
+          {
+            "first_published_at": "2026-11-12",
+            "revised_at": null,
+            "revision_note": "",
+            "source_id": "model-card",
+            "substantive_revision": false,
+            "version": "2026-11"
+          }
+        ],
+        "slug": "gemini-4-hydrogen-agent-evaluation",
+        "takeaway": "按代码、知识工作和电脑操作逐项选型，先核评测设置，再测自己的延迟和账单。"
+      },
+      "title": "Gemini 4 Hydrogen 适合哪些 Agent 任务？",
+      "translations": {
+        "en": {
+          "fields": {
+            "Agents’ Last Exam v1.1 的 Hydrogen、Sonnet、Terra 分别为 71.6%、60.4%、69.8%。": "On Agents’ Last Exam v1.1, Hydrogen, Sonnet and Terra score 71.6%, 60.4% and 69.8%.",
+            "FieldToFit 分析：优先把真实工单按任务拆开。固定工具、评估窗口和成功标准，再测质量、完成时间和账单。模型卡里的高思考结果无法直接代表默认配置的费用。": "FieldToFit analysis: split real jobs by task. Hold tools, evaluation windows and success criteria fixed, then measure quality, completion time and charges. High-effort model card results do not directly estimate default-configuration costs.",
+            "Gemini 4 Hydrogen 适合哪些 Agent 任务？": "Which agent tasks suit Gemini 4 Hydrogen?",
+            "Hydrogen 在 SWE-sweep 使用 Antigravity CLI 1.4.8，自测分数与公开榜单并列。Terminal-Bench 4.1 采用另一运行框架，Hydrogen 每题平均 5 次。作者成本对比采用 Terminal-Bench 4.0。": "Hydrogen uses Antigravity CLI 1.4.8 on SWE-sweep, alongside public leaderboard comparisons. Terminal-Bench 4.1 uses a different harness and averages 5 attempts per task for Hydrogen. The authors compare costs on Terminal-Bench 4.0.",
+            "OSWorld 2.1 离线子集上 Hydrogen、Sonnet、Terra 分别为 77.6%、83.9%、74.2%。": "On the OSWorld 2.1 offline subset, Hydrogen, Sonnet and Terra score 77.6%, 83.9% and 74.2%.",
+            "SWE-sweep 的 Hydrogen、Sonnet、Terra 分别为 13.5%、3.1%、5.8%。Terminal-Bench 4.1 的 Hydrogen 为 57.0%，Sonnet 为 63.9%，Terra 未列。": "On SWE-sweep, Hydrogen, Sonnet and Terra score 13.5%, 3.1% and 5.8%. On Terminal-Bench 4.1, Hydrogen scores 57.0% and Sonnet 63.9%. Terra is unavailable.",
+            "代码任务的名次随测试变化": "Coding results vary by benchmark",
+            "作者使用 122 项任务和 5 小时窗口，保留 2026-10-17 版本，未应用 2026-10-26 更新。分数是量表均值。Hydrogen、Sonnet 使用不同运行框架，Terra 引自榜单。": "The authors use 122 tasks and a window of 5 hours, keeping the 2026-10-17 version without the 2026-10-26 update. Scores average the rubric results. Hydrogen and Sonnet use different harnesses. Terra is sourced from the leaderboard.",
+            "作者自测和外部数据的运行框架、重复次数与任务版本不同，分数须按各项配置解读。": "The authors’ tests and external results differ in harness, repeat counts and task versions. Read each score with its configuration.",
+            "各项设置见对应论述。": "See the corresponding discussion for the test configuration.",
+            "同一发布的并行评测": "Parallel evaluations in the same release",
+            "报告路线": "How to read the report",
+            "按代码、知识工作和电脑操作拆解 Google DeepMind 的评测结果与适用条件。": "A reading of Google DeepMind’s coding, knowledge-work and computer-use evaluations and their conditions.",
+            "按代码、知识工作和电脑操作逐项选型，先核评测设置，再测自己的延迟和账单。": "Choose separately for coding, knowledge work and computer use. Check the evaluation setup, then measure your own latency and bill.",
+            "按任务看配置和比较结果，结合真实工作流验证。": "Read each result alongside its task configuration, then validate against a real workflow.",
+            "数据来源：Google DeepMind。": "Data: Google DeepMind.",
+            "本站按官方模型卡结果重绘，模型分数见各条。": "FieldToFit redraw of results in the official model card. Scores are shown for each model.",
+            "来源与修订：Google DeepMind 官方模型卡与评测方法，2026-11-12 发布，2026-11-13 核对。本站依据作者结果重绘，未独立复现。": "Sources and revisions: official Google DeepMind model card and evaluation methodology, published 2026-11-12 and checked 2026-11-13. FieldToFit redrew the reported results without independent replication.",
+            "模型卡和方法报告随 2026-11-12 发布。未独立复现。 本站 2026-11-13 核对。": "The model card and evaluation accompanied the 2026-11-12 release. Results were not independently replicated. FieldToFit checked on 2026-11-13.",
+            "测试覆盖 82 项离线任务，Hydrogen 与 Sonnet 取 3 次运行中的最好结果，每次仅尝试一次。Terra 引自系统卡。": "The test covers 82 offline tasks. Hydrogen and Sonnet use the best of 3 runs, with a single attempt per run. Terra is sourced from its system card.",
+            "知识工作成绩绑定任务版本": "Knowledge-work scores depend on the task version",
+            "离线电脑操作的结果有特定分母": "Offline computer use has a defined denominator",
+            "首次发表，整理官方评测的三条结论和两张重绘。": "First publication with three findings and two redraws from the official evaluation."
+          },
+          "reviewed_at": "2026-11-13T05:41:10.124138+00:00",
+          "source_hash": "f28e73eaa776f84687196d9921b936a935f0269ec5a92e3d158920f8c9f64bda",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "model",
+      "checked_at": "2026-11-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-12",
+      "highlight": true,
+      "hot_card": {
+        "audiences": [
+          {
+            "detail": "先确认账户可用的入口。",
+            "title": "普通用户"
+          },
+          {
+            "detail": "核实际用量、工具费用与长输出接续。",
+            "title": "API 团队"
+          }
+        ],
+        "changes": [
+          {
+            "detail": "Gemini 应用免费用户在合适请求下由系统自动选择。开发者可用 Gemini API 与 AI Studio。Antigravity 和 Sheets 按方案资格开放。",
+            "title": "入口分三类"
+          },
+          {
+            "detail": "Gemini Developer API 每百万输入／输出 token 1.50／7.50 美元，输出包含思考 token。",
+            "title": "标准付费价格"
+          },
+          {
+            "detail": "Cloud 文档列出 1,048,576 token 输入输出合计上限，单个前台段最多 65,536 输出 token，更长输出须走支持续写的方式。",
+            "title": "长输出有条件"
+          }
+        ],
+        "checked_at": "2026-11-13",
+        "evidence": [
+          {
+            "locator": "Available to everyone today; footnote 1",
+            "source_id": "launch"
+          },
+          {
+            "locator": "Gemini 4 Hydrogen; Standard",
+            "source_id": "pricing"
+          },
+          {
+            "locator": "Technical specifications; unified token limit",
+            "source_id": "cloud"
+          }
+        ],
+        "featured_rank": 1,
+        "headline": "Gemini 4 Hydrogen 已开放，先核入口与输出成本",
+        "limits": [
+          {
+            "detail": "工具、缓存、企业渠道另看各自计费。",
+            "title": "计费和渠道"
+          },
+          {
+            "detail": "账号、地区、调用、延迟及实际账单未实测。",
+            "title": "未实测"
+          }
+        ],
+        "next_step": "先用代表性任务测质量、思考 token、工具费和长输出接续，再决定是否迁移。",
+        "revised_at": "2026-11-13",
+        "revision": "e5ab333dc4bf46cb9cf5348334a41dc8234f485cd013ab5226f7106afb0fea1a",
+        "scope": "Gemini 4 Hydrogen（gemini-4-hydrogen）",
+        "share": {
+          "content_revision": "e5ab333dc4bf46cb9cf5348334a41dc8234f485cd013ab5226f7106afb0fea1a",
+          "en": {
+            "sha256": "bfc8ea8322d700605df93ff623b1e832eecef1b58cb970e10a9ccff6d51f0c20",
+            "text_revision": "10093f1066fd14434f3f1e608a4e972958ccc483ef4dc9be23654b256829df64",
+            "url": "/hot-cards/d-343-e5ab333dc4bf-en.png"
+          },
+          "zh": {
+            "sha256": "f764f932167982de4c5a9848a056bc7c7b3e66a01b2e1d6d5744639575179120",
+            "url": "/hot-cards/d-343-e5ab333dc4bf-zh.png"
+          }
+        },
+        "status": "current",
+        "update_note": "",
+        "verification": "2026-11-13 核对官方公告、定价和规格；未实测。"
+      },
+      "id": "D-343",
+      "interpretation": [
+        {
+          "locator": "Gemini 4 Hydrogen; Standard",
+          "source_ids": [
+            "pricing"
+          ],
+          "text": "Developer API 有免费配额。付费输入和输出每百万 token 分别为 1.50 和 7.50 美元，输出计入思考 token。Antigravity 和 Sheets 按各自方案开放。",
+          "title": "标准计价与渠道"
+        },
+        {
+          "locator": "Technical specifications; unified token limit",
+          "source_ids": [
+            "cloud"
+          ],
+          "text": "Cloud 文档列输入输出合计 1,048,576 token，单个前台段最多输出 65,536 token。更长输出须走支持续写的方式。",
+          "title": "单段与总窗口"
+        }
+      ],
+      "name": "Gemini 4 Hydrogen",
+      "note": "发布于 2026-11-12。未实测账号、地区、延迟、实际输出或账单。 本站 2026-11-13 核对。",
+      "organization": "Google DeepMind",
+      "publication": {
+        "first_published_at": "2026-11-13T05:40:55.730198+00:00",
+        "hot_card_first_published_at": "2026-11-13T05:40:55.730230+00:00",
+        "hot_card_selected_at": "2026-11-13T05:40:55.730230+00:00",
+        "updated_at": "2026-11-13T05:40:55.730198+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        },
+        {
+          "id": "D-333",
+          "name": "Gemini 4 Carbon",
+          "url": "https://fieldtofit.top/news/D-333"
+        }
+      ],
+      "source_published_at": "2026-11-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "launch",
+          "title": "Google · Introducing Gemini 4 Hydrogen",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "pricing",
+          "title": "Google · Gemini Developer API pricing",
+          "url": "https://aistudio.google.com/docs/pricing#gemini-4-hydrogen"
+        },
+        {
+          "coverage": "link_only",
+          "id": "cloud",
+          "title": "Google Cloud · Gemini 4 Hydrogen",
+          "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-hydrogen"
+        }
+      ],
+      "state": "published",
+      "summary": "覆盖 Gemini API、AI Studio、企业入口、Gemini 应用与 Google Search。Gemini 应用免费用户在适用请求中由系统自动选用。",
+      "title": "Gemini 4 Hydrogen 正式发布，Developer API 标准价 1.50／7.50 美元",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-11-13 核对官方公告、定价和规格；未实测。": "Official announcement, pricing and specifications checked on 2026-11-13. No hands-on tests.",
+            "API 团队": "API teams",
+            "Cloud 文档列出 1,048,576 token 输入输出合计上限，单个前台段最多 65,536 输出 token，更长输出须走支持续写的方式。": "Cloud documents a combined limit of 1,048,576 tokens and a foreground segment cap of 65,536 output tokens. Longer output requires a supported continuation method.",
+            "Cloud 文档列输入输出合计 1,048,576 token，单个前台段最多输出 65,536 token。更长输出须走支持续写的方式。": "Cloud documents a combined input and output limit of 1,048,576 tokens. One foreground segment can emit up to 65,536 tokens. Longer output requires a supported continuation method.",
+            "Developer API 有免费配额。付费输入和输出每百万 token 分别为 1.50 和 7.50 美元，输出计入思考 token。Antigravity 和 Sheets 按各自方案开放。": "The Developer API has a free quota. Paid input and output are 1.50 and 7.50 USD per million tokens, respectively. Output pricing includes thinking tokens. Antigravity and Sheets depend on the applicable plan.",
+            "Gemini 4 Hydrogen 已开放，先核入口与输出成本": "Gemini 4 Hydrogen is available. Check access and output costs.",
+            "Gemini 4 Hydrogen 正式发布，Developer API 标准价 1.50／7.50 美元": "Gemini 4 Hydrogen launches at 1.50 and 7.50 USD on the standard Developer API",
+            "Gemini Developer API 每百万输入／输出 token 1.50／7.50 美元，输出包含思考 token。": "Gemini Developer API input and output cost 1.50 and 7.50 USD per million tokens, respectively. Output includes thinking tokens.",
+            "Gemini 应用免费用户在合适请求下由系统自动选择。开发者可用 Gemini API 与 AI Studio。Antigravity 和 Sheets 按方案资格开放。": "The Gemini app can choose Hydrogen automatically for eligible prompts from free users. Developers can use the Gemini API and AI Studio. Antigravity and Sheets depend on the applicable plan.",
+            "先用代表性任务测质量、思考 token、工具费和长输出接续，再决定是否迁移。": "Measure quality, thinking tokens, tool charges and continuation on representative tasks before migrating.",
+            "先确认账户可用的入口。": "Check which surfaces are available for your account.",
+            "入口分三类": "Three access routes",
+            "单段与总窗口": "Single segment and total window",
+            "发布于 2026-11-12。未实测账号、地区、延迟、实际输出或账单。 本站 2026-11-13 核对。": "Released on 2026-11-12. Accounts, regions, latency, realized output and bills were not tested. FieldToFit checked on 2026-11-13.",
+            "工具、缓存、企业渠道另看各自计费。": "Tools, caching and enterprise channels follow separate pricing rules.",
+            "普通用户": "Everyday users",
+            "未实测": "Untested",
+            "标准付费价格": "Standard paid rates",
+            "标准计价与渠道": "Standard rates and availability",
+            "核实际用量、工具费用与长输出接续。": "Check actual usage, tool charges and continuation behavior.",
+            "覆盖 Gemini API、AI Studio、企业入口、Gemini 应用与 Google Search。Gemini 应用免费用户在适用请求中由系统自动选用。": "Available across the Gemini API, AI Studio, enterprise surfaces, the Gemini app and Google Search. The Gemini app selects Hydrogen automatically for eligible prompts from free users.",
+            "计费和渠道": "Channels and billing",
+            "账号、地区、调用、延迟及实际账单未实测。": "Account and regional availability, API calls, latency and actual bills were not tested.",
+            "长输出有条件": "Long output has conditions"
+          },
+          "reviewed_at": "2026-11-13T05:40:33.466196+00:00",
+          "source_hash": "4261a37cea37174c82b1de7add873fd6b308cf7bb85e3d65cc66d1af32845d11",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-10",
+      "highlight": true,
+      "id": "D-345",
+      "interpretation": [
+        {
+          "locator": "AI Chat; Under the hood",
+          "source_ids": [
+            "release"
+          ],
+          "text": "XR Language Teacher 将摄像头和语音串联，使用 Gemini Nano 或 Gemma 4 等模型。安卓系统服务和开放权重路径的要求不同，语言资源须先准备。",
+          "title": "端侧流程与设备要求"
+        }
+      ],
+      "name": "Google AI Edge Gallery",
+      "note": "原公告 2026-11-10，作者转载 2026-11-12。应用构建号和离线体验待核。 本站 2026-11-13 核对。",
+      "organization": "Google",
+      "publication": {
+        "first_published_at": "2026-11-13T05:39:24.864872+00:00",
+        "updated_at": "2026-11-13T05:39:24.864872+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M03",
+          "name": "Gemini",
+          "url": "https://fieldtofit.top/watch/CW-M03"
+        }
+      ],
+      "source_published_at": "2026-11-10",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Google Developers · On-device speech in AI Edge Gallery",
+          "url": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/"
+        },
+        {
+          "coverage": "link_only",
+          "id": "repost",
+          "title": "Google AI Edge and Android ML teams · Hugging Face",
+          "url": "https://huggingface.co/blog/litert-community/on-device-speech-recognition-and-text-to-speech-in"
+        }
+      ],
+      "state": "published",
+      "summary": "AI Chat 加入端侧语音识别与语音合成，可用语音输入并逐句高亮朗读回复。",
+      "title": "Google AI Edge Gallery 加入端侧听写与朗读",
+      "translations": {
+        "en": {
+          "fields": {
+            "AI Chat 加入端侧语音识别与语音合成，可用语音输入并逐句高亮朗读回复。": "AI Chat adds on-device speech recognition and synthesis, enabling voice input and sentence-highlighted playback.",
+            "Google AI Edge Gallery 加入端侧听写与朗读": "Google AI Edge Gallery adds on-device dictation and read-aloud playback",
+            "XR Language Teacher 将摄像头和语音串联，使用 Gemini Nano 或 Gemma 4 等模型。安卓系统服务和开放权重路径的要求不同，语言资源须先准备。": "XR Language Teacher combines camera and speech with models such as Gemini Nano or Gemma 4. Android system services and open-weight options have different requirements, and language resources must be prepared first.",
+            "原公告 2026-11-10，作者转载 2026-11-12。应用构建号和离线体验待核。 本站 2026-11-13 核对。": "The original is dated 2026-11-10, with an author repost on 2026-11-12. The app build and offline experience remain unverified. FieldToFit checked on 2026-11-13.",
+            "端侧流程与设备要求": "On-device workflows and device requirements"
+          },
+          "reviewed_at": "2026-11-13T05:39:03.451357+00:00",
+          "source_hash": "1b5055fd2e188470a974122e580b3d5f2c3a46af9aecec630080c8e36f6028f9",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-13",
+      "highlight": true,
+      "id": "D-344",
+      "interpretation": [
+        {
+          "locator": "What’s changed",
+          "source_ids": [
+            "release"
+          ],
+          "text": "命名配置下的后台会话保留原身份，配置缺失或变更时停止并提示。桌面专有更新须等客户端内置此版本。",
+          "title": "后台会话与桌面边界"
+        }
+      ],
+      "name": "Claude Code",
+      "note": "发布于 2026-11-12 22:12 UTC，或北京时间 2026-11-13 06:12。未实测插件和后台会话。 本站 2026-11-13 核对。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-13T05:38:49.940034+00:00",
+        "updated_at": "2026-11-13T05:38:49.940034+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-A02",
+          "name": "Claude Code",
+          "url": "https://fieldtofit.top/watch/CW-A02"
+        },
+        {
+          "id": "D-328",
+          "name": "Claude Code 2.1.321 / 2.1.322",
+          "url": "https://fieldtofit.top/news/D-328"
+        }
+      ],
+      "source_published_at": "2026-11-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Anthropic · Claude Code v2.1.323",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323"
+        }
+      ],
+      "state": "published",
+      "summary": "Code Mode 需主动开启，可用 JavaScript 组织工具调用。插件可声明 Claude Code 兼容版本，安装与更新会选取兼容版本。",
+      "title": "Claude Code 2.1.323 新增实验性 Code Mode 和插件版本约束",
+      "translations": {
+        "en": {
+          "fields": {
+            "Claude Code 2.1.323 新增实验性 Code Mode 和插件版本约束": "Claude Code 2.1.323 adds experimental Code Mode and plugin version ranges",
+            "Code Mode 需主动开启，可用 JavaScript 组织工具调用。插件可声明 Claude Code 兼容版本，安装与更新会选取兼容版本。": "Code Mode is opt-in and uses JavaScript to organize tool calls. Plugins can declare compatible Claude Code versions, and installation and updates select a compatible release.",
+            "发布于 2026-11-12 22:12 UTC，或北京时间 2026-11-13 06:12。未实测插件和后台会话。 本站 2026-11-13 核对。": "Released on 2026-11-12 at 22:12 UTC, or 2026-11-13 at 06:12 Beijing time. Plugins and background sessions were not tested. FieldToFit checked on 2026-11-13.",
+            "后台会话与桌面边界": "Background sessions and desktop availability",
+            "命名配置下的后台会话保留原身份，配置缺失或变更时停止并提示。桌面专有更新须等客户端内置此版本。": "Background sessions under a named profile preserve their identity and stop with a notice if the profile is unavailable or changes. Desktop-specific updates require the desktop app to bundle this release."
+          },
+          "reviewed_at": "2026-11-13T05:38:28.388218+00:00",
+          "source_hash": "7011b5a8e6b7bfdae170b6ab12fd10c6b852eda4add16fc4713c08ddc8867f97",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-12",
+      "highlight": true,
+      "id": "D-342",
+      "interpretation": [
+        {
+          "locator": "Add Claude to a call; Calls with outside guests",
+          "source_ids": [
+            "help"
+          ],
+          "text": "Team 默认开启，允许外部来宾。Enterprise 默认关闭，须另行允许外部来宾。组织须先启用 Google Calendar。部分采用 ZDR、HIPAA-ready 配置或 CMEK 的组织暂不支持。转写前确认参会者同意。",
+          "title": "组织启用与来宾规则"
+        },
+        {
+          "locator": "Privacy and your data; Pricing",
+          "source_ids": [
+            "help"
+          ],
+          "text": "保留转写、摘要和屏幕描述，不保留音频。外部来宾不能打开内部会议页，获准加入时其发言仍可被记录。会中文档和白板免费至 2027-02-10，使用连接工具可能计费。",
+          "title": "留存与费用"
+        }
+      ],
+      "name": "Claude Meetings",
+      "note": "2026-11-12 公告从预告进入 Beta。未实测账户、权限、账单或留存。 本站 2026-11-13 核对。",
+      "organization": "Anthropic",
+      "publication": {
+        "first_published_at": "2026-11-13T05:38:14.768956+00:00",
+        "updated_at": "2026-11-13T05:38:14.768956+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-M02",
+          "name": "Claude",
+          "url": "https://fieldtofit.top/watch/CW-M02"
+        },
+        {
+          "id": "D-332",
+          "name": "Claude Sheets / Whiteboards / Data",
+          "url": "https://fieldtofit.top/news/D-332"
+        }
+      ],
+      "source_published_at": "2026-11-12",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "Anthropic · Claude release notes",
+          "url": "https://support.claude.com/en/articles/12138966-release-notes"
+        },
+        {
+          "coverage": "link_only",
+          "id": "help",
+          "title": "Anthropic · Use Claude Meetings",
+          "url": "https://support.claude.com/en/articles/18325154-use-claude-meetings"
+        }
+      ],
+      "state": "published",
+      "summary": "Claude 可作为可见参与者加入 Google Meet，提供转写、摘要、行动项，并在会中创建文档和白板。",
+      "title": "Claude Meetings 向 Team 与 Enterprise 推出 Beta",
+      "translations": {
+        "en": {
+          "fields": {
+            "2026-11-12 公告从预告进入 Beta。未实测账户、权限、账单或留存。 本站 2026-11-13 核对。": "The 2026-11-12 announcement moves the feature from preview to beta. Accounts, permissions, billing and retention were not tested. FieldToFit checked on 2026-11-13.",
+            "Claude Meetings 向 Team 与 Enterprise 推出 Beta": "Claude Meetings rolls out in beta to Team and Enterprise",
+            "Claude 可作为可见参与者加入 Google Meet，提供转写、摘要、行动项，并在会中创建文档和白板。": "Claude can join Google Meet as a visible participant to transcribe, summarize, capture action items and build documents and whiteboards during the call.",
+            "Team 默认开启，允许外部来宾。Enterprise 默认关闭，须另行允许外部来宾。组织须先启用 Google Calendar。部分采用 ZDR、HIPAA-ready 配置或 CMEK 的组织暂不支持。转写前确认参会者同意。": "Team enables Meetings and external guests by default. Enterprise defaults to off and requires separate approval for external guests. The organization must enable Google Calendar first. Some organizations using ZDR, HIPAA-ready settings or CMEK are excluded. Confirm that attendees consent before transcription.",
+            "保留转写、摘要和屏幕描述，不保留音频。外部来宾不能打开内部会议页，获准加入时其发言仍可被记录。会中文档和白板免费至 2027-02-10，使用连接工具可能计费。": "Claude keeps transcripts, summaries and screen descriptions without saving audio. Guests cannot open the internal meeting page. Their speech can be transcribed if Claude is allowed to join. Meeting docs and whiteboards are free through 2027-02-10. Connected tools may incur charges.",
+            "留存与费用": "Retention and pricing",
+            "组织启用与来宾规则": "Organization and guest controls"
+          },
+          "reviewed_at": "2026-11-13T05:37:53.211255+00:00",
+          "source_hash": "e7264f4a33d652ab14a79858f5195524a8bab3268ac2858dbbdb3bd52ce945b3",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "tool",
+      "checked_at": "2026-11-13",
+      "editor": "FieldToFit",
+      "event_date": "2026-11-13",
+      "highlight": true,
+      "id": "D-341",
+      "interpretation": [
+        {
+          "locator": "New Features and Bug Fixes",
+          "source_ids": [
+            "release"
+          ],
+          "text": "打开或恢复的会话沿用已保存的提供方。支持音频的模型可以附加录音。",
+          "title": "既有会话与录音"
+        }
+      ],
+      "name": "Codex CLI",
+      "note": "发布于 2026-11-13 03:54 UTC，或北京时间 11:54。终端、提供方和音频未实测。 本站 2026-11-13 核对。",
+      "organization": "OpenAI",
+      "publication": {
+        "first_published_at": "2026-11-13T05:37:38.969005+00:00",
+        "updated_at": "2026-11-13T05:37:38.969005+00:00"
+      },
+      "reading_materials": [],
+      "related": [
+        {
+          "id": "CW-A01",
+          "name": "Codex",
+          "url": "https://fieldtofit.top/watch/CW-A01"
+        },
+        {
+          "id": "D-336",
+          "name": "Codex CLI",
+          "url": "https://fieldtofit.top/news/D-336"
+        }
+      ],
+      "source_published_at": "2026-11-13",
+      "sources": [
+        {
+          "coverage": "link_only",
+          "id": "release",
+          "title": "OpenAI · Codex CLI 0.168.0",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.168.0"
+        }
+      ],
+      "state": "published",
+      "summary": "终端 Sessions 菜单可为新会话选择模型提供方。开启 features.tui_workspace 后，可在主会话旁打开另一会话。",
+      "title": "Codex CLI 0.168.0 增加并排会话与模型提供方入口",
+      "translations": {
+        "en": {
+          "fields": {
+            "Codex CLI 0.168.0 增加并排会话与模型提供方入口": "Codex CLI 0.168.0 adds side conversations and a model-provider picker",
+            "发布于 2026-11-13 03:54 UTC，或北京时间 11:54。终端、提供方和音频未实测。 本站 2026-11-13 核对。": "Released on 2026-11-13 at 03:54 UTC, or 11:54 Beijing time. Terminal, provider and audio behavior were not tested. FieldToFit checked on 2026-11-13.",
+            "打开或恢复的会话沿用已保存的提供方。支持音频的模型可以附加录音。": "Opened and resumed conversations retain their saved provider. Audio-capable models can accept recordings.",
+            "既有会话与录音": "Existing conversations and recordings",
+            "终端 Sessions 菜单可为新会话选择模型提供方。开启 features.tui_workspace 后，可在主会话旁打开另一会话。": "The terminal Sessions menu can select a provider for new conversations. Enable features.tui_workspace to open a side conversation."
+          },
+          "reviewed_at": "2026-11-13T05:37:18.176273+00:00",
+          "source_hash": "939fbd768a99a3bc2a7d561491836e548b39d9b56df4b052d275bedce9be86f3",
+          "state": "reviewed"
+        }
+      }
+    },
+    {
+      "category": "research",
       "checked_at": "2026-11-12",
       "editor": "FieldToFit",
       "event_date": "2026-11-10",
@@ -378,7 +1118,7 @@
       "checked_at": "2026-11-12",
       "editor": "FieldToFit",
       "event_date": "2026-11-10",
-      "highlight": true,
+      "highlight": false,
       "id": "D-339",
       "interpretation": [
         {
@@ -395,7 +1135,7 @@
       "organization": "Val Town",
       "publication": {
         "first_published_at": "2026-11-12T04:14:04.383218+00:00",
-        "updated_at": "2026-11-12T04:14:04.383218+00:00"
+        "updated_at": "2026-11-13T05:34:35.577235+00:00"
       },
       "reading_materials": [],
       "related": [],
@@ -420,8 +1160,8 @@
             "计划 2026-12-10 进入只读，SQLite 与 Blob 存储另有例外。其余服务计划于 2027-01-10 关闭，开源计划日期为 2027-02-01。": "Read-only mode is scheduled for 2026-12-10, with exceptions for SQLite and Blob storage. All other services are scheduled to end on 2027-01-10, with open sourcing planned for 2027-02-01.",
             "迁移截止日期": "Migration deadlines"
           },
-          "reviewed_at": "2026-11-12T04:13:43.251380+00:00",
-          "source_hash": "0f6e7e4293e2d58ff879bedcc3b174b0fa025d206c699133db9ee342bb7ce9b6",
+          "reviewed_at": "2026-11-13T05:34:14.031473+00:00",
+          "source_hash": "59eaf2ec9dd24e612d4daf8bd76fe4b13e0e1f92c7454e3eb68cab4133a5698a",
           "state": "reviewed"
         }
       }
@@ -490,7 +1230,7 @@
       "checked_at": "2026-11-12",
       "editor": "FieldToFit",
       "event_date": "2026-11-11",
-      "highlight": true,
+      "highlight": false,
       "id": "D-337",
       "interpretation": [
         {
@@ -516,7 +1256,7 @@
       "organization": "QwenCloud",
       "publication": {
         "first_published_at": "2026-11-12T04:12:55.099798+00:00",
-        "updated_at": "2026-11-12T04:12:55.099798+00:00"
+        "updated_at": "2026-11-13T05:35:13.067337+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -561,8 +1301,8 @@
             "支持工具调用、搜索和结构化输出。文档列出 OpenAI Chat Completions、Responses 与 Anthropic Messages 兼容接口。": "The model supports tool calling, search and structured outputs. QwenCloud lists compatibility with OpenAI Chat Completions, Responses and Anthropic Messages.",
             "更新日志 2026-11-11，仅有日期。本站 2026-11-12 核对，未实测配额、地域、费用及输出上限。": "Changelog dated 2026-11-11 with day precision. Checked on 2026-11-12. Quotas, regional availability, fees and the output limit were not tested."
           },
-          "reviewed_at": "2026-11-12T04:12:34.023121+00:00",
-          "source_hash": "b4e04455cdde0e5685eb6ad5eea46bfba9defee3c5e37c206b75b9f0e91674c0",
+          "reviewed_at": "2026-11-13T05:34:51.014610+00:00",
+          "source_hash": "6eafa8891b598b7c52716fcec34e25006839ffc8625c970184692fcba4ffbf28",
           "state": "reviewed"
         }
       }
@@ -572,7 +1312,7 @@
       "checked_at": "2026-11-12",
       "editor": "FieldToFit",
       "event_date": "2026-11-12",
-      "highlight": true,
+      "highlight": false,
       "id": "D-336",
       "interpretation": [
         {
@@ -590,7 +1330,7 @@
       "organization": "OpenAI",
       "publication": {
         "first_published_at": "2026-11-12T04:12:20.167693+00:00",
-        "updated_at": "2026-11-12T04:12:20.167693+00:00"
+        "updated_at": "2026-11-13T05:35:50.305838+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -632,8 +1372,8 @@
             "旧行为仍可配置": "The previous behavior remains configurable",
             "标签提交 ce21072。发布于 2026-11-11 22:44 UTC，对应北京时间 2026-11-12 06:44。本站 2026-11-12 核对，未实测兼容性、延迟或其他后端。": "The ce21072 tag commit was released at 22:44 UTC on 2026-11-11, or 06:44 Beijing time on 2026-11-12. Checked on 2026-11-12 without testing compatibility, latency or other backends."
           },
-          "reviewed_at": "2026-11-12T04:11:58.957294+00:00",
-          "source_hash": "255b8b72c6af6b2800901a650852d7231fd5ef4b49adfb8fe867506ffed1a439",
+          "reviewed_at": "2026-11-13T05:35:28.906697+00:00",
+          "source_hash": "a762b0e59e743a15453f8b7635a6bf1eeb6f422f991bbdd62a5e7ab447c3e324",
           "state": "reviewed"
         }
       }
@@ -702,7 +1442,7 @@
       "checked_at": "2026-11-11",
       "editor": "FieldToFit",
       "event_date": "2026-11-10",
-      "highlight": true,
+      "highlight": false,
       "id": "D-333",
       "interpretation": [
         {
@@ -728,7 +1468,7 @@
       "organization": "Google DeepMind",
       "publication": {
         "first_published_at": "2026-11-11T09:00:33.480867+00:00",
-        "updated_at": "2026-11-11T09:00:33.480867+00:00"
+        "updated_at": "2026-11-13T05:36:26.855822+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -772,8 +1512,8 @@
             "正式开放公告 2026-11-10，本站 2026-11-11 核对。未实测账户、地区、限额、延迟或账单。": "Public availability announced on 2026-11-10 and checked on 2026-11-11. Account access, regions, quotas, latency and billing were not tested.",
             "每百万 token 输入／输出介绍价为 2／10 美元。介绍期于 2026-11-30 到期，之后为 4／20 美元。": "Introductory input/output rates are 2/10 USD per million tokens. The period expires on 2026-11-30, after which rates are 4/20 USD."
           },
-          "reviewed_at": "2026-11-11T09:00:10.630365+00:00",
-          "source_hash": "0d46f4b5f706928dc956f542933b55fc4fdb9c4e4f560978865aa4023914d4d6",
+          "reviewed_at": "2026-11-13T05:36:05.616714+00:00",
+          "source_hash": "330b6664cf6d66f4a4bc9ebba26f61de06fb090820bcdef80f50aefe06ee441b",
           "state": "reviewed"
         }
       }
@@ -1354,7 +2094,7 @@
             "source_id": "migration"
           }
         ],
-        "featured_rank": 1,
+        "featured_rank": 2,
         "headline": "Fable 5.2降价，先核迁移和留存",
         "limits": [
           {
@@ -1501,7 +2241,7 @@
             "通常要求 30天安全留存；ZDR须明确授权或适用企业方案。不同平台、缓存及工具计费另核。": "Normally 30-day safety retention; ZDR requires express authorization or an applicable enterprise arrangement. Check platform, cache and tool charges separately."
           },
           "reviewed_at": "2026-11-11T08:51:48.179477+00:00",
-          "source_hash": "9723eac81bd71ccf1dfdf9853ceee9816fe63c9362f7f2dcd5cb1fd0ebb2050c",
+          "source_hash": "01b4e68e12974a9b5e85b537d00e250bed95b18ea20adf50605f6377b89d3413",
           "state": "reviewed"
         }
       }
@@ -2246,7 +2986,7 @@
       "checked_at": "2026-11-12",
       "editor": "FieldToFit",
       "event_date": "2026-11-11",
-      "highlight": true,
+      "highlight": false,
       "hot_card": {
         "audiences": [
           {
@@ -2283,7 +3023,7 @@
             "source_id": "configuration-changelog"
           }
         ],
-        "featured_rank": 2,
+        "featured_rank": 3,
         "headline": "Claude Desktop 3P 统一入口已生效，Code-only 须查版本",
         "limits": [
           {
@@ -2350,7 +3090,7 @@
         "first_published_at": "2026-11-09T03:14:03.325721+00:00",
         "hot_card_first_published_at": "2026-11-09T03:14:03.325753+00:00",
         "hot_card_selected_at": "2026-11-09T03:14:03.325753+00:00",
-        "updated_at": "2026-11-12T04:17:21.850899+00:00"
+        "updated_at": "2026-11-13T05:37:04.370484+00:00"
       },
       "reading_materials": [],
       "related": [
@@ -2415,8 +3155,8 @@
             "设备能力决定新会话类型": "Device capabilities determine the new session type",
             "适用范围": "Scope"
           },
-          "reviewed_at": "2026-11-12T04:16:59.996567+00:00",
-          "source_hash": "9f96d67d31cb95e3db2ecb55eb9fe2209d290d2e1268ccce725f73e788645cca",
+          "reviewed_at": "2026-11-13T05:36:42.282022+00:00",
+          "source_hash": "7bf680a29e299162337354fb2b9dff53ecba27bbf6fccb98072cf09971cba4e3",
           "state": "reviewed"
         }
       }
@@ -52794,7 +53534,7 @@
       "title": "SeedRealtime：边听、边看、边交互"
     }
   ],
-  "reviewed_at": "2026-11-12",
+  "reviewed_at": "2026-11-13",
   "schema_version": "fieldtofit.news.v1",
   "title": "近期动态与采用更新"
 }

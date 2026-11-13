@@ -4,6 +4,24 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.5"></a>
+## v1.20.5 · Gemini 4 Hydrogen 与 11 月 13 日已选动态 · 2026-11-13
+<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-13 -->
+<!-- public-title:en: Gemini 4 Hydrogen and the approved November 13 updates -->
+<!-- release-summary:zh:start -->
+- 登记 Gemini 4 Hydrogen 中英文信息卡及分享图。
+- 整理 Hydrogen 官方评测，新增两张数据重绘。
+- 同步获批动态与对应的持续关注档案。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register the bilingual Gemini 4 Hydrogen information card and its share images.
+- Explain the official Hydrogen evaluation with two data redraws.
+- Update the approved news and linked dossiers.
+<!-- release-summary:en:end -->
+
+本版为已选内容及配图的兼容补丁，沿用现有发布接口和数据结构。[实际验收](docs/validation/2026-11-13-approved-updates.md)。
+
 <a id="v1.20.4"></a>
 ## v1.20.4 · Claude Desktop 信息卡更正与自由职业报告 · 2026-11-12
 <!-- release-tag:unpublished -->
