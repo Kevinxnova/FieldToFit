@@ -11,20 +11,20 @@
     },
     {
       "company": "Anthropic",
-      "evidence_url": "https://artificialanalysis.ai/models/claude-opus-5-5",
-      "family": "Claude Opus 5.5",
+      "evidence_url": "https://artificialanalysis.ai/models/claude-fable-5-2",
+      "family": "Claude Fable 5.2",
       "ids": {
-        "arena": "claude-opus-5.5-high-vertex",
-        "artificial-analysis": "claude-opus-5-5"
+        "arena": null,
+        "artificial-analysis": "claude-fable-5-2--593f2d23-247b-41c9-a679-cebd225f0a9a"
       }
     },
     {
       "company": "Google",
-      "evidence_url": "https://artificialanalysis.ai/models/gemini-4-argon",
-      "family": "Gemini 4 Argon",
+      "evidence_url": "https://artificialanalysis.ai/models/gemini-4-carbon",
+      "family": "Gemini 4 Carbon",
       "ids": {
-        "arena": "barium-bb-wlqc-text",
-        "artificial-analysis": "gemini-4-argon"
+        "arena": null,
+        "artificial-analysis": "gemini-4-carbon--909ed0ba-bcc5-4f38-8162-08a4e187a772"
       }
     },
     {
@@ -65,11 +65,11 @@
     },
     {
       "company": "Qwen",
-      "evidence_url": "https://artificialanalysis.ai/models/qwen3-8-max",
-      "family": "Qwen3.8 Max",
+      "evidence_url": "https://artificialanalysis.ai/models/qwen4-max",
+      "family": "Qwen4 Max",
       "ids": {
-        "arena": "kinsley-mrp8",
-        "artificial-analysis": "qwen3-8-max"
+        "arena": null,
+        "artificial-analysis": "qwen4-max--fef6625d-9097-45f6-95c0-bcaa06e3d8e1"
       }
     },
     {
@@ -102,5 +102,5 @@
   ],
   "policy": "FieldToFit 编辑维护的本期旗舰系列名单；每系列每来源一个代表配置，保留来源名称。缺项不替换为旧系列，不代表来源官方旗舰分类。",
   "policy_en": "FieldToFit’s reviewed flagship-series selection, with one representative configuration per source. Original names are retained. Missing entries are not replaced with older series. This is not an official source classification.",
-  "reviewed_at": "2026-10-26"
+  "reviewed_at": "2026-11-16"
 }

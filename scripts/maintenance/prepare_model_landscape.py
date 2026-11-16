@@ -67,13 +67,48 @@ def task_cost(value):
     return number(value)
 
 
-def build(aa_html, arena_html, ledger, checked_at, aa_models=None, aa_models_sha256=None):
+def build(aa_html, arena_html, ledger, checked_at, aa_models=None, aa_models_sha256=None, previous_aa=None):
     checked = date.fromisoformat(checked_at)
     aa_objects = objects(aa_html); arena_objects = objects(arena_html)
     manifest = next((o.get('manifest') for o in aa_objects if 'initialModels' in o), None)
+    index_names = {o['name'] for o in aa_objects if o.get('slug') == 'artificial-analysis-intelligence-index' and 'name' in o}
+    if len(index_names) > 1:
+        raise ValueError('Conflicting AA index versions')
+    index_name = next(iter(index_names), 'Artificial Analysis Intelligence Index v4.3')
+    if index_name not in {'Artificial Analysis Intelligence Index v4.3', 'Artificial Analysis Intelligence Index v5.0.1'}:
+        raise ValueError('Unreviewed AA index version: ' + index_name)
     if manifest and aa_models is None:
         raise ValueError('AA HTML contains only the current-model subset; provide the complete public model data with --aa-models-json')
     if aa_models is not None:
+        if isinstance(aa_models, list) and aa_models and all(isinstance(o, dict) and 'id' in o and 'release' in o for o in aa_models):
+            if index_name != 'Artificial Analysis Intelligence Index v5.0.1':
+                raise ValueError('AA UUID data requires an explicit reviewed index version')
+            if len({o['id'] for o in aa_models}) != len(aa_models):
+                raise ValueError('Duplicate AA model configurations')
+            initial_ids = {o['id'] for o in aa_objects if 'id' in o and 'release' in o and 'intelligenceIndex' in o}
+            if not initial_ids.issubset({o['id'] for o in aa_models}):
+                raise ValueError('Incomplete AA model data')
+            catalog_names = {(o['slug'], name) for o in aa_objects if 'releaseDate' in o and 'modelNames' in o for name in o['modelNames']}
+            if not catalog_names.issubset({(o['release'].get('slug'), o.get('name')) for o in aa_models}):
+                raise ValueError('Incomplete AA model data; release configurations are missing')
+            # Preserve existing public IDs only for exact source configuration names.
+            # New configurations use the source UUID; never infer a reasoning level.
+            aliases = {}
+            for group in ('points', 'not_plotted', 'undated'):
+                for row in (previous_aa or {}).get(group, []):
+                    key = (row['configuration_en'].removesuffix(' · Source estimate'), row['source_organization'])
+                    if key in aliases:
+                        raise ValueError('Ambiguous previous AA configuration')
+                    aliases[key] = row['id']
+            normalized = []
+            for row in aa_models:
+                release_slug = row['release'].get('slug')
+                if not release_slug or not row.get('id') or not row.get('name'):
+                    raise ValueError('Invalid AA release/configuration identity')
+                ident = aliases.get((row['name'], row['modelCreatorName']), release_slug + '--' + row['id'])
+                normalized.append(dict(row, slug=ident))
+                aa_objects.append(dict(slug=ident, name=row['name'], releaseSlug=release_slug))
+            aa_models = normalized
         if not isinstance(aa_models, list) or not aa_models or any(not isinstance(o, dict) or not o.get('slug') for o in aa_models):
             raise ValueError('Invalid complete AA model data')
         if len({o['slug'] for o in aa_models}) != len(aa_models):
@@ -83,7 +118,7 @@ def build(aa_html, arena_html, ledger, checked_at, aa_models=None, aa_models_sha
             raise ValueError('AA model data is missing metric fields')
         aa_objects += aa_models
     dates = {o['slug']:o for o in aa_objects if 'releaseDate' in o and 'slug' in o}
-    models = {o['slug']:o for o in aa_objects if 'intelligenceIndex' in o and 'shortName' in o}
+    models = {o['slug']:o for o in aa_objects if 'slug' in o and 'intelligenceIndex' in o and 'shortName' in o}
     configurations = {o['slug']:o for o in aa_objects if 'releaseSlug' in o and 'slug' in o}
     if aa_models is not None and not set(configurations).issubset({o['slug'] for o in aa_models}):
         raise ValueError('Incomplete AA model data; historical configurations must not disappear')
@@ -101,9 +136,12 @@ def build(aa_html, arena_html, ledger, checked_at, aa_models=None, aa_models_sha
     assert len(boards) == 1 and len(models) > 200, 'Source structure changed; review required'
     board = boards[0]
     aa = dict(id='artificial-analysis', name='Artificial Analysis', source_url=AA, source_updated_at=None, checked_at=checked_at,
-              score_label='Intelligence Index v4.3', price_label='每项评测任务成本（美元）', price_label_en='USD per benchmark task', price_unit='usd_per_task',
+              score_label=index_name.removeprefix('Artificial Analysis '), price_label='每项评测任务成本（美元）', price_label_en='USD per benchmark task', price_unit='usd_per_task',
               note='2026 年发布的模型配置；综合能力指数 × 每项评测任务加权成本。名称、配置与数值沿用来源，空心点为来源估计分。',
               note_en='Model configurations released in 2026: intelligence index × weighted cost per benchmark task. Original source names and values; hollow dots indicate estimated scores.')
+    if index_name.endswith('v5.0.1'):
+        aa['note'] = '2026 年发布的模型配置；Intelligence Index v5.0.1 × 每项评测任务加权成本。与旧版 v4.3 的分数及任务成本不可直接比较；未提供新版数值的配置列入缺项，不沿用旧值。'
+        aa['note_en'] = 'Model configurations released in 2026: Intelligence Index v5.0.1 × weighted cost per benchmark task. Scores and task costs are not directly comparable with v4.3. Configurations without current-version values remain explicitly missing; old values are not reused.'
     if manifest and aa_models_sha256:
         path = manifest.get('path', '')
         if not path.startswith('/data/') or '?' in path or '#' in path or '..' in path:
@@ -140,7 +178,7 @@ def build(aa_html, arena_html, ledger, checked_at, aa_models=None, aa_models_sha
         estimated = r.get('intelligenceIndexIsEstimated') is True
         add(aa, dict(id=slug, name=r['shortName'], organization=company(r['modelCreatorName']), source_organization=r['modelCreatorName'],
                      score=number(r['intelligenceIndex']), price=price, score_url=AA, price_url=AA,
-                     release_date=d['releaseDate'], date_basis='source_release_date' if release_slug == slug else 'matched_model_release', date_url='https://artificialanalysis.ai/models/'+slug,
+                     release_date=d['releaseDate'], date_basis='source_release_date' if release_slug == slug else 'matched_model_release', date_url='https://artificialanalysis.ai/models/'+release_slug,
                      configuration=r.get('name', d['name']) + (' · 来源估计分' if estimated else ''), configuration_en=r.get('name', d['name']) + (' · Source estimate' if estimated else ''),
                      estimated=estimated, deprecated=r.get('deprecated') is True))
     for r in board['entries']:
@@ -171,7 +209,8 @@ def main():
     raw = args.aa_models_json.read_bytes() if args.aa_models_json else None
     candidate = build(args.aa_html.read_text(), args.arena_html.read_text(), ledger, args.checked_at,
                       json.loads(raw) if raw is not None else None,
-                      hashlib.sha256(raw).hexdigest() if raw is not None else None)
+                      hashlib.sha256(raw).hexdigest() if raw is not None else None,
+                      json.loads(canonical.read_text())['sources'][0])
     args.output.write_text(json.dumps(candidate, ensure_ascii=False, indent=2, allow_nan=False)+'\n')
     print(json.dumps({s['id']:s['coverage'] for s in candidate['sources']}))
 

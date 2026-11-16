@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.20.6](CHANGELOG.md#v1.20.6)** · Release tag not yet published
+**Current source version: [v1.20.7](CHANGELOG.md#v1.20.7)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Register Chinese and English share images for ChatGPT Wallet and Qwen4-Max-Preview.
-- Register figures and source fingerprints for the selected reports.
-- Keep 06:30 collection on the Mac and omit the cloud collection schedule.
+- Refresh the complete AA snapshot: 359 configurations released in 2026 and 116 plotted points, retaining missing values and distinguishing v5.0.1 from v4.3.
+- Include Fable 5.2, Gemini 4 Carbon/Hydrogen, Muse Ember, Qwen4 Max and other models, with updated flagship series.
+- Retain Arena's October 26 reviewed snapshot, values and dates because complete source access is blocked; explain the coverage limit on the page.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

@@ -1,34 +1,34 @@
 {
-  "version": "1.20.6",
-  "revision": "2f14cb09884d21838a423c79d83f2b6515b42fa60d8897836207f001609950b7",
+  "version": "1.20.7",
+  "revision": "6444d84cb7383dea414be13ece1a7b5e5946e41fff0a6146c67da16b7ffb30f2",
   "items": [
     {
-      "version": "1.20.6",
+      "version": "1.20.7",
       "date": "2026-11-16",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "11 月 14–16 日已选内容的双语图片资源",
+          "title": "模型能力与价格更新至 AA v5.0.1",
           "highlights": [
-            "登记 ChatGPT Wallet 与 Qwen4-Max-Preview 信息卡的中英文分享图。",
-            "登记当批已选报告的图表与来源指纹。",
-            "新部署沿用本机 06:30 采集，云端不配置采集定时任务。"
+            "更新 AA 完整模型快照：359 个 2026 年配置、116 个可绘点，缺项保留并明确区分 v5.0.1 与旧版 v4.3。",
+            "纳入 Fable 5.2、Gemini 4 Carbon／Hydrogen、Muse Ember、Qwen4 Max 等型号，更新对应旗舰系列。",
+            "Arena 完整来源访问受限，保留 10 月 26 日审核快照及原数值、日期，页面说明当前覆盖限制。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Bilingual assets for the approved November 14–16 updates",
+          "title": "Model capability and cost updated to AA v5.0.1",
           "highlights": [
-            "Register Chinese and English share images for ChatGPT Wallet and Qwen4-Max-Preview.",
-            "Register figures and source fingerprints for the selected reports.",
-            "Keep 06:30 collection on the Mac and omit the cloud collection schedule."
+            "Refresh the complete AA snapshot: 359 configurations released in 2026 and 116 plotted points, retaining missing values and distinguishing v5.0.1 from v4.3.",
+            "Include Fable 5.2, Gemini 4 Carbon/Hydrogen, Muse Ember, Qwen4 Max and other models, with updated flagship series.",
+            "Retain Arena's October 26 reviewed snapshot, values and dates because complete source access is blocked; explain the coverage limit on the page."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.6"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.7"
     },
     {
       "version": "1.20.1",

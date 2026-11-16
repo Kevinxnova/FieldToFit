@@ -300,7 +300,6 @@
   "正在读取已核验图表…": "Loading reviewed charts…",
   "图表暂时无法读取，近期动态仍可继续阅读。": "Charts are unavailable. You can still read the developments.",
   "如何理解这两个来源？": "How do these sources differ?",
-  "标准化评测的 Intelligence Index v4.3。横轴为每项评测任务的加权成本，包含输入、缓存、推理和答案用量；不是每百万 token 单价，也不是你的任务报价。": "Intelligence Index v4.3 from standardized benchmarks. The x-axis is weighted cost per benchmark task, including input, caching, reasoning and answers—not a token price or a quote for your task.",
   "Text Overall 开启 Style Control 的用户偏好评分。横轴为每百万输出 token 单价，不包含输入成本或回答长度。竖线保留来源评分区间；受欢迎不等于专业任务正确。": "Text Overall preference scores with Style Control enabled. The x-axis is price per million output tokens, excluding input cost and answer length. Vertical lines retain source score intervals; preference is not specialized-task accuracy.",
   "两家的分数和价格口径不能直接比较。横轴为对数刻度，相同距离表示相同倍数。同一模型不同配置保留为不同点；连线仅指向名称，不表示趋势。": "Neither scores nor cost definitions are interchangeable. Logarithmic x-axes show equal ratios at equal distances. Configurations remain separate points; leaders connect labels, not trends.",
   "范围是这两个来源收录且日期依据落在 2026 年的模型 / 版本。AA 使用来源发布日期；Arena 另核对对应模型发布记录或明确带年份的版本日期。缺价格、评分或日期的条目在覆盖清单中保留，不补造坐标。": "Coverage is source-listed models / versions with date evidence in 2026. AA provides release dates; Arena dates use matched release records or explicitly dated versions. Missing prices, scores or dates remain in the coverage list without invented coordinates.",
@@ -6976,5 +6975,6 @@
   "原文字段保留输入语言；英文正文在下方逐项审核。": "Source fields retain their input language. Review the English fields below.",
   "内部处理备注（保留输入语言）": "Internal handling notes (input language)",
   "近期动态与采用更新": "Recent developments and adoption updates",
-  "热点信息卡图片登记（人工图片、双语文案版本与文件校验）": "Information card image registration (manual images, bilingual copy revision and file checks)"
+  "热点信息卡图片登记（人工图片、双语文案版本与文件校验）": "Information card image registration (manual images, bilingual copy revision and file checks)",
+  "，来自标准化评测。横轴为每项评测任务的加权成本，包含输入、缓存、推理和答案用量；不是每百万 token 单价，也不是你的任务报价。": " from standardized benchmarks. The x-axis is weighted cost per benchmark task, including input, caching, reasoning and answers—not a token price or a quote for your task."
 }

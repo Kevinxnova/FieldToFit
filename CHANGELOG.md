@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.7"></a>
+## v1.20.7 · 模型能力与价格更新至 AA v5.0.1 · 2026-11-16
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Model capability and cost updated to AA v5.0.1 -->
+<!-- release-summary:zh:start -->
+- 更新 AA 完整模型快照：359 个 2026 年配置、116 个可绘点，缺项保留并明确区分 v5.0.1 与旧版 v4.3。
+- 纳入 Fable 5.2、Gemini 4 Carbon／Hydrogen、Muse Ember、Qwen4 Max 等型号，更新对应旗舰系列。
+- Arena 完整来源访问受限，保留 10 月 26 日审核快照及原数值、日期，页面说明当前覆盖限制。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Refresh the complete AA snapshot: 359 configurations released in 2026 and 116 plotted points, retaining missing values and distinguishing v5.0.1 from v4.3.
+- Include Fable 5.2, Gemini 4 Carbon/Hydrogen, Muse Ember, Qwen4 Max and other models, with updated flagship series.
+- Retain Arena's October 26 reviewed snapshot, values and dates because complete source access is blocked; explain the coverage limit on the page.
+<!-- release-summary:en:end -->
+
+REQ-7-2／3／4／5 的兼容维护补丁，适配 AA 公开 UUID／发布系列结构，按精确配置名保留既有公开 ID；未知评测版本和不完整配置拒绝导入。对自 v1.20.0 以来的内容维护累计判级，无新增完整模块、主要阅读流程变化、协议破坏或数据库迁移。[实际验收](docs/validation/2026-11-16-model-landscape.md)。
+
 <a id="v1.20.6"></a>
 ## v1.20.6 · 11 月 14–16 日已选内容的双语图片资源 · 2026-11-16
 <!-- release-tag:unpublished -->
