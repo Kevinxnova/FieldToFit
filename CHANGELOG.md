@@ -4,6 +4,21 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.6"></a>
+## v1.20.6 · 11 月 14–16 日已选内容的双语图片资源 · 2026-11-16
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Bilingual assets for the approved November 14–16 updates -->
+<!-- release-summary:zh:start -->
+- 登记 ChatGPT Wallet 与 Qwen4-Max-Preview 信息卡的中英文分享图。
+- 登记当批已选报告的图表与来源指纹。
+- 新部署沿用本机 06:30 采集，云端不配置采集定时任务。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register Chinese and English share images for ChatGPT Wallet and Qwen4-Max-Preview.
+- Register figures and source fingerprints for the selected reports.
+- Keep 06:30 collection on the Mac and omit the cloud collection schedule.
+<!-- release-summary:en:end -->
+
 <a id="v1.20.5"></a>
 ## v1.20.5 · Gemini 4 Hydrogen 与 11 月 13 日已选动态 · 2026-11-13
 <!-- release-tag:unpublished -->

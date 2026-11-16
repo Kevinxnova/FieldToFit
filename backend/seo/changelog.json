@@ -1,34 +1,34 @@
 {
-  "version": "1.20.5",
-  "revision": "f76f1d2745f6be43271151f1597a3b8e705d1d338b0b0e1ddf9362de91dbbb92",
+  "version": "1.20.6",
+  "revision": "2f14cb09884d21838a423c79d83f2b6515b42fa60d8897836207f001609950b7",
   "items": [
     {
-      "version": "1.20.5",
-      "date": "2026-11-13",
-      "deployed_on": "2026-11-13",
+      "version": "1.20.6",
+      "date": "2026-11-16",
+      "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "Gemini 4 Hydrogen 与 11 月 13 日已选动态",
+          "title": "11 月 14–16 日已选内容的双语图片资源",
           "highlights": [
-            "登记 Gemini 4 Hydrogen 中英文信息卡及分享图。",
-            "整理 Hydrogen 官方评测，新增两张数据重绘。",
-            "同步获批动态与对应的持续关注档案。"
+            "登记 ChatGPT Wallet 与 Qwen4-Max-Preview 信息卡的中英文分享图。",
+            "登记当批已选报告的图表与来源指纹。",
+            "新部署沿用本机 06:30 采集，云端不配置采集定时任务。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Gemini 4 Hydrogen and the approved November 13 updates",
+          "title": "Bilingual assets for the approved November 14–16 updates",
           "highlights": [
-            "Register the bilingual Gemini 4 Hydrogen information card and its share images.",
-            "Explain the official Hydrogen evaluation with two data redraws.",
-            "Update the approved news and linked dossiers."
+            "Register Chinese and English share images for ChatGPT Wallet and Qwen4-Max-Preview.",
+            "Register figures and source fingerprints for the selected reports.",
+            "Keep 06:30 collection on the Mac and omit the cloud collection schedule."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.5"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.6"
     },
     {
       "version": "1.20.1",

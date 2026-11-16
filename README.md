@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.20.5](CHANGELOG.md#v1.20.5)** · 尚未推送发布标签
+**当前源码版本：[v1.20.6](CHANGELOG.md#v1.20.6)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 登记 Gemini 4 Hydrogen 中英文信息卡及分享图。
-- 整理 Hydrogen 官方评测，新增两张数据重绘。
-- 同步获批动态与对应的持续关注档案。
+- 登记 ChatGPT Wallet 与 Qwen4-Max-Preview 信息卡的中英文分享图。
+- 登记当批已选报告的图表与来源指纹。
+- 新部署沿用本机 06:30 采集，云端不配置采集定时任务。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

@@ -2284,5 +2284,37 @@
     ],
     "version": "2026-11",
     "license": "Graphics © FieldToFit. Independent redraw of numerical results reported by Google DeepMind."
+  },
+  "/report-figures/alphaproof-workflow-20261114.png": {
+    "sha256": "d0d8dec9971d1dbfdff8d2bd8f9492d13528ccc19a3711d3773ab8ea246466fd",
+    "source_urls": [
+      "https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw based on the linked original report."
+  },
+  "/report-figures/alphaproof-scope-20261114.png": {
+    "sha256": "20fbb2cc553c609ea383d545f9c0546ed81f571ed6a1cd0d9df9990b7443cde1",
+    "source_urls": [
+      "https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw based on the linked original report."
+  },
+  "/report-figures/teamwork-evidence-20261115.png": {
+    "sha256": "2fb7ea97030344122081a2f336b036f5a420891ab8ae98a32c16dd57b5d38b1e",
+    "source_urls": [
+      "https://www.research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw based on the linked original report."
+  },
+  "/report-figures/menlo-20261103-budget-vs-reported.png": {
+    "sha256": "ef4439423313c194aa2f2d1a849cf276c0aa329373653c349ffdd20ad47c8f38",
+    "source_urls": [
+      "https://menlovc.com/perspective/2026-the-state-of-enterprise-ai/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw based on the linked original report."
   }
 }
