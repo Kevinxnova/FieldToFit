@@ -2316,5 +2316,13 @@
     ],
     "version": "2026-11",
     "license": "Graphics © FieldToFit. Independent redraw based on the linked original report."
+  },
+  "/report-figures/flashprove-202611-batching.png": {
+    "sha256": "164987f76f6b41f794cfa624ba44d1ec9ea23a57bd3db086a9a3bfce2bb69688",
+    "source_urls": [
+      "https://www.anthropic.com/document/flashprove-technical-report"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw based on FlashProve, section 6."
   }
 }

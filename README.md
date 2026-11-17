@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.20.7](CHANGELOG.md#v1.20.7)** · 尚未推送发布标签
+**当前源码版本：[v1.20.8](CHANGELOG.md#v1.20.8)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 更新 AA 完整模型快照：359 个 2026 年配置、116 个可绘点，缺项保留并明确区分 v5.0.1 与旧版 v4.3。
-- 纳入 Fable 5.2、Gemini 4 Carbon／Hydrogen、Muse Ember、Qwen4 Max 等型号，更新对应旗舰系列。
-- Arena 完整来源访问受限，保留 10 月 26 日审核快照及原数值、日期，页面说明当前覆盖限制。
+- 登记 Qwen4-Max 正式版迁移卡的中英分享图，保留预览卡的原图和稳定链接。
+- 登记 FlashProve 推理证明报告的重绘图表和来源指纹。
+- 继续使用现有内容库和正式发布审核流程。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

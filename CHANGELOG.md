@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.8"></a>
+## v1.20.8 · Qwen4-Max 更正卡与 FlashProve 图表 · 2026-11-17
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Qwen4-Max correction and FlashProve figure -->
+<!-- release-summary:zh:start -->
+- 登记 Qwen4-Max 正式版迁移卡的中英分享图，保留预览卡的原图和稳定链接。
+- 登记 FlashProve 推理证明报告的重绘图表和来源指纹。
+- 继续使用现有内容库和正式发布审核流程。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register Chinese and English migration card images for Qwen4-Max while retaining the original preview images and stable links.
+- Register the redrawn FlashProve proving metrics figure and its source fingerprint.
+- Use the existing content store and publication review workflow.
+<!-- release-summary:en:end -->
+
+已选内容的资源补丁，使用现有 CMS 和公开接口。卡片发布、分享图下载与技术报告精选轮换分别按正式回执核对。
+
 <a id="v1.20.7"></a>
 ## v1.20.7 · 模型能力与价格更新至 AA v5.0.1 · 2026-11-16
 <!-- release-tag:unpublished -->
