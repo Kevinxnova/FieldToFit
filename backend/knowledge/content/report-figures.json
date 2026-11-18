@@ -2324,5 +2324,37 @@
     ],
     "version": "2026-11",
     "license": "Graphics © FieldToFit. Independent redraw based on FlashProve, section 6."
+  },
+  "/report-figures/nov18-workplace.png": {
+    "sha256": "62aadc41e3d3e1970011fbf502317e0a31a957ef0a16c47984618e5ed9f0a4c3",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-2-astra-sol"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov18-disclosure.png": {
+    "sha256": "dd2fb04b71096ed03927c4a2e274ab83c050cc0da3268ebdccf3b945f41f1833",
+    "source_urls": [
+      "https://deploymentsafety.openai.com/gpt-6-2-astra-sol"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov18-ideas.png": {
+    "sha256": "81a151bf2ebe49b8c900fa108f3533cea1b33d49a08dc67f0e3ec401845aee2c",
+    "source_urls": [
+      "https://cdn.openai.com/pdf/0e4b2466-0be0-4326-8bf7-117d809e14d2/Science%20at%20the%20Frontier.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov18-involvement.png": {
+    "sha256": "67eec5ae4c5d6c27c48a8359d546552132b7ed5388e29e87f35f32cb039e54d2",
+    "source_urls": [
+      "https://cdn.openai.com/pdf/0e4b2466-0be0-4326-8bf7-117d809e14d2/Science%20at%20the%20Frontier.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
   }
 }

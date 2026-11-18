@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.10"></a>
+## v1.20.10 · GPT-6.2 信息卡与两篇已选报告图表 · 2026-11-18
+<!-- release-tag:unpublished -->
+<!-- public-title:en: GPT-6.2 card and figures for two selected reports -->
+<!-- release-summary:zh:start -->
+- 登记 GPT-6.2 Astra／Sol 信息卡的中英文分享图和文案指纹。
+- 登记代理行为系统卡与科研使用分析的四张本站重绘，保留指标、分母、原文位置与局限。
+- 沿用现有内容审核和首页轮换流程，保留已部署的模型图表更新与本机采集安排。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register Chinese and English share images and copy fingerprints for the GPT-6.2 Astra/Sol card.
+- Register four FieldToFit redraws for the agent-behavior system card and scientific-use analysis, preserving metrics, denominators, source locations and limits.
+- Retain content review and homepage rotation, the deployed model-chart update, and collection on the Mac.
+<!-- release-summary:en:end -->
+
+REQ-6／REQ-22 的已选内容资源兼容补丁。自 v1.20.0 以来的累计维护没有新完整模块、主要流程或协议变更，无数据库迁移。内容实际发布与首页轮换以正式审核回执为准，资源部署本身不代表上站。[实际验收](docs/validation/2026-11-18-approved-updates.md)。
+
 <a id="v1.20.9"></a>
 ## v1.20.9 · GPT-6.2 与每周模型核验 · 2026-11-18
 <!-- release-tag:unpublished -->
