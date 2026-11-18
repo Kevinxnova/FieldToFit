@@ -10,7 +10,7 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     response = client.get('/api/v1/platform/model-landscape')
     assert response.status_code == 200
     body = response.json
-    assert [len(s['points']) for s in body['sources']] == [116, 99]
+    assert [len(s['points']) for s in body['sources']] == [131, 99]
     aa, arena = body['sources']
     assert aa['price_unit'] == 'usd_per_task'
     assert arena['source_updated_at'] == '2026-10-22'
@@ -18,10 +18,10 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     assert arena['points'][0]['score_low'] < arena['points'][0]['score'] < arena['points'][0]['score_high']
     assert 'v5.0.1' in aa['score_label']
     assert 'v4.3' in aa['note'] and 'not directly comparable' in aa['note_en']
-    assert aa['checked_at'] == '2026-11-16' and arena['checked_at'] == '2026-10-26'
+    assert aa['checked_at'] == '2026-11-18' and arena['checked_at'] == '2026-10-26'
     assert 'Style Control' in arena['score_label']
-    assert aa['coverage']['released_2026'] == 359 and arena['coverage']['released_2026'] == 113
-    assert len(aa['not_plotted']) == 243 and len(arena['not_plotted']) == 14
+    assert aa['coverage']['released_2026'] == 375 and arena['coverage']['released_2026'] == 113
+    assert len(aa['not_plotted']) == 244 and len(arena['not_plotted']) == 14
     assert len(arena['undated']) == 183
     assert all(p['release_date'].startswith('2026-') for s in body['sources'] for p in s['points'])
     assert set(p['organization'] for p in aa['points']) == set(body['companies'])
@@ -91,11 +91,11 @@ def test_candidate_parser_and_company_aliases_do_not_invent_numbers():
 
 def test_flagships_are_reviewed_series_not_per_company_score_winners():
     aa, arena = charts.snapshot()['sources']
-    assert len(aa['points']) == 116 and len(arena['points']) == 99
+    assert len(aa['points']) == 131 and len(arena['points']) == 99
     assert sum(m['status']=='plotted' for m in aa['flagship']['models']) == 11
     assert sum(m['status']=='plotted' for m in arena['flagship']['models']) == 6
     chosen = {m['company']:m for m in arena['flagship']['models']}
-    assert chosen['OpenAI']['status']=='missing_coordinates' and chosen['OpenAI']['id']=='gpt-6-astra-max-text'
+    assert chosen['OpenAI']['status']=='not_listed' and chosen['OpenAI']['family']=='GPT-6.2 Astra'
     assert chosen['Meta']['status']=='plotted' and chosen['Meta']['id']=='muse-wonder'
     assert chosen['Kimi']['status']=='not_listed'
     assert chosen['Google']['status']=='not_listed' and chosen['Google']['family']=='Gemini 4 Carbon'

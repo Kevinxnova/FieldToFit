@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.9"></a>
+## v1.20.9 · GPT-6.2 与每周模型核验 · 2026-11-18
+<!-- release-tag:unpublished -->
+<!-- public-title:en: GPT-6.2 and weekly model review -->
+<!-- release-summary:zh:start -->
+- 纳入 GPT-6.2 Astra／Sol 等 16 个新增配置；AA 共 375 个 2026 年配置、131 个可绘点、244 个缺项。
+- 更新已有评分与任务成本，OpenAI 旗舰改为 GPT-6.2 Astra；Arena 保留原审核快照与限制说明。
+- 设置每周日北京时间 08:00 模型信息搜索与整理，按批提交审核提案后再发布。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add 16 configurations including GPT-6.2 Astra/Sol; AA now covers 375 configurations from 2026, with 131 plotted and 244 missing coordinates.
+- Refresh existing scores and task costs, select GPT-6.2 Astra as the OpenAI flagship, and retain the reviewed Arena snapshot and its access limitation.
+- Schedule model research and preparation every Sunday at 08:00 Asia/Shanghai, with publication following review of each proposed batch.
+<!-- release-summary:en:end -->
+
+REQ-7 现有模型图表的兼容内容补丁；自 v1.20.0 以来累计维护不构成新模块、主要流程或协议变化，无迁移。每周任务为本对话的本机安排，不增加云端定时任务。[实际验收](docs/validation/2026-11-18-model-landscape.md)。
+
 <a id="v1.20.8"></a>
 ## v1.20.8 · Qwen4-Max 更正卡与 FlashProve 图表 · 2026-11-17
 <!-- release-tag:unpublished -->
