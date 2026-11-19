@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.20.10](CHANGELOG.md#v1.20.10)** · Release tag not yet published
+**Current source version: [v1.20.11](CHANGELOG.md#v1.20.11)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Register Chinese and English share images and copy fingerprints for the GPT-6.2 Astra/Sol card.
-- Register four FieldToFit redraws for the agent-behavior system card and scientific-use analysis, preserving metrics, denominators, source locations and limits.
-- Retain content review and homepage rotation, the deployed model-chart update, and collection on the Mac.
+- Register bilingual share images for the Gemini 4 Neon standard API cost example.
+- Register three FieldToFit figures on evaluation harnesses, research task usage and fixed-budget output estimates.
+- Document how report recommendations and articles identify study settings, comparisons and limits.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

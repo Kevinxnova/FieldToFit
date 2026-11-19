@@ -1,34 +1,34 @@
 {
-  "version": "1.20.10",
-  "revision": "d65a8a2ba7ad13a878a7a9a3db4106e985f38432ed1593e1edac0b12a10730ca",
+  "version": "1.20.11",
+  "revision": "6be6659f6808f9490ecf5bfef3e0d753c95f9edc3761fdc3ead33218d1400014",
   "items": [
     {
-      "version": "1.20.10",
-      "date": "2026-11-18",
+      "version": "1.20.11",
+      "date": "2026-11-19",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "GPT-6.2 信息卡与两篇已选报告图表",
+          "title": "Gemini 4 Neon 分享图与两篇已选报告配图",
           "highlights": [
-            "登记 GPT-6.2 Astra／Sol 信息卡的中英文分享图和文案指纹。",
-            "登记代理行为系统卡与科研使用分析的四张本站重绘，保留指标、分母、原文位置与局限。",
-            "沿用现有内容审核和首页轮换流程，保留已部署的模型图表更新与本机采集安排。"
+            "登记 Gemini 4 Neon 标准 API 费用示例的中英文分享图。",
+            "登记同题工具配置、科研任务使用占比和固定预算产出的三张本站重绘。",
+            "将研究场景、比较对象和适用条件纳入报告推荐与正文的整理规则。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "GPT-6.2 card and figures for two selected reports",
+          "title": "Gemini 4 Neon share images and figures for two reports",
           "highlights": [
-            "Register Chinese and English share images and copy fingerprints for the GPT-6.2 Astra/Sol card.",
-            "Register four FieldToFit redraws for the agent-behavior system card and scientific-use analysis, preserving metrics, denominators, source locations and limits.",
-            "Retain content review and homepage rotation, the deployed model-chart update, and collection on the Mac."
+            "Register bilingual share images for the Gemini 4 Neon standard API cost example.",
+            "Register three FieldToFit figures on evaluation harnesses, research task usage and fixed-budget output estimates.",
+            "Document how report recommendations and articles identify study settings, comparisons and limits."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.10"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.11"
     },
     {
       "version": "1.20.1",

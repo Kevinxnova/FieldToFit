@@ -2356,5 +2356,29 @@
     ],
     "version": "2026-11",
     "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov19-harness.png": {
+    "sha256": "1c095e0b1c35170b95573f026024c4c9c45630357e8207e0fc0b5a1d167375ce",
+    "source_urls": [
+      "https://deepmind.google/models/model-cards/gemini-4-neon/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov19-usage.png": {
+    "sha256": "4442f04648be6dc83ddd4ce0b49656f4de7fb35a1c63a2582626d156917951a3",
+    "source_urls": [
+      "https://assets.claude.com/6e7c6446c0d8405dba73b91dabd36aac069dea2e.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov19-budget.png": {
+    "sha256": "6570f5a3d11b767bc71ed60514f8eb7f4476d0f556f5333d7ec9bb3f9e5fc525",
+    "source_urls": [
+      "https://assets.claude.com/6e7c6446c0d8405dba73b91dabd36aac069dea2e.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
   }
 }

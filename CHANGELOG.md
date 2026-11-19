@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.11"></a>
+## v1.20.11 · Gemini 4 Neon 分享图与两篇已选报告配图 · 2026-11-19
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Gemini 4 Neon share images and figures for two reports -->
+<!-- release-summary:zh:start -->
+- 登记 Gemini 4 Neon 标准 API 费用示例的中英文分享图。
+- 登记同题工具配置、科研任务使用占比和固定预算产出的三张本站重绘。
+- 将研究场景、比较对象和适用条件纳入报告推荐与正文的整理规则。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register bilingual share images for the Gemini 4 Neon standard API cost example.
+- Register three FieldToFit figures on evaluation harnesses, research task usage and fixed-budget output estimates.
+- Document how report recommendations and articles identify study settings, comparisons and limits.
+<!-- release-summary:en:end -->
+
+REQ-6／REQ-22 内容资源补丁。报告整理指南补充了比较对象、证据口径和适用条件的写法。兼容现有内容修订和首页轮换，无数据库迁移。
+
 <a id="v1.20.10"></a>
 ## v1.20.10 · GPT-6.2 信息卡与两篇已选报告图表 · 2026-11-18
 <!-- release-tag:unpublished -->
