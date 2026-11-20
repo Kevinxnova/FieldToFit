@@ -115,6 +115,19 @@ def validate_editorial(data, evidence, now):
                 fail('original date falls outside the stated window or date')
             # Day-only sources do not establish an exact time; timing_basis and
             # the signed editorial review must explain window inclusion.
+    if data.get('withheld_tickers'):
+        covered = []
+        for entry in evidence.get('withheld_quote_checks', []):
+            if not isinstance(entry, dict) or set(entry) != {'tickers', 'basis', 'url'}:
+                fail('invalid quotation rights check')
+            from .schema import public_url
+            public_url(entry['url'])
+            text(entry['basis'], 'quotation publication scope', 1500)
+            if not isinstance(entry['tickers'], list) or not all(isinstance(t, str) for t in entry['tickers']):
+                fail('invalid quotation rights tickers')
+            covered.extend(entry['tickers'])
+        if sorted(covered) != sorted(data['withheld_tickers']):
+            fail('record the publication rights basis for every withheld ticker')
     checks = evidence.get('research_checks')
     if not isinstance(checks, list): fail('research_checks are required for nine-section editions')
     required = {'section','topic','region','method','query','source_ids','status','checked_at','note'}

@@ -1,34 +1,34 @@
 {
-  "version": "1.20.13",
-  "revision": "0ed709753f059da109eb7e0b43aa21f3679de0fb49e5db60ddf39f2d3193c585",
+  "version": "1.20.14",
+  "revision": "f3b369e633c1b823e9f4f7de19b3e9e904b12d6021f1260408f4c0440a06e9b1",
   "items": [
     {
-      "version": "1.20.13",
+      "version": "1.20.14",
       "date": "2026-11-20",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "后台请求费用卡的双语核对日期",
+          "title": "日报按行情刊载范围出刊",
           "highlights": [
-            "中英文分享图均显示 2026-11-20 为官方来源核对日期。",
-            "卡片区分首响应目标和整项工作的完成时间。",
-            "分享图保留同模型、相同计费 token 数量的比较条件。"
+            "日报逐只省略未获刊载许可的行情，整期无可刊行情时隐藏股市栏目。",
+            "网站、公开接口和中英文 PDF 使用同一份可刊名单。",
+            "私密复核记录按证券保存省略原因和来源条款。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Bilingual verification dates on the background pricing card",
+          "title": "Daily editions publish only cleared market quotations",
           "highlights": [
-            "Display the source check date as 2026-11-20 in both languages.",
-            "Distinguish the initial response target from end-to-end task duration.",
-            "Keep model and billed token usage fixed in the shareable pricing comparison."
+            "Omit quotations without publication clearance and hide the markets section when none can run.",
+            "Use the same eligible securities in the website, public API and bilingual PDFs.",
+            "Record the source terms and reason for each omitted security in the private review."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.13"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.14"
     },
     {
       "version": "1.20.1",

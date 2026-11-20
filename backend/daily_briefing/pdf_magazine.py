@@ -21,8 +21,7 @@ def adapt(raw):
         highlights=[{'story':s['id'],'title':s['highlight_title'],'text':s['highlight_summary']} for s in raw['stories'] if s['highlight']],
         stories=[dict(s,body=s['summary'],angle=s['analysis']) for s in raw['stories']],
         products=[{'name':p['name'],'organization':p['organization'],'version':p['version'],'date':p.get('date_label') or p['release_date'],'is_new':p['is_new'],'channel':{'zh':('本期更新' if p['is_new'] else '近期版本')+' · '+p['release_channel'],'en':('New this issue' if p['is_new'] else 'Recent version')+' · '+p['release_channel']},'detail':p['changes'],'refs':p['source_ids']} for p in raw['products']],
-        quotes=[dict(r,change=r['change_pct'],currency=m['currency'],market=m['id'].upper(),date=m['trade_date']) for group in GROUP_TICKERS.values() for ticker in group for m in raw['markets'] for r in m['rows'] if r['ticker']==ticker],
-        market_intro=raw['market_overview']['title'],market_body=raw['market_overview']['summary'],market_note=raw['market_overview']['note'])
+        quotes=[dict(r,change=r['change_pct'],currency=m['currency'],market=m['id'].upper(),date=m['trade_date']) for group in GROUP_TICKERS.values() for ticker in group for m in raw['markets'] for r in m['rows'] if r['ticker']==ticker])
 def render(raw, lang='zh', image=None, revision=1):
  D=adapt(raw)
  content_hash=digest(_public_copy(raw))
@@ -102,11 +101,15 @@ def render(raw, lang='zh', image=None, revision=1):
    if not items:content += [p(tr(raw['section_notes'][key],lang))]
  else:
   content += legacy_body(D,lang,st,heading,spread,p,table,pick,refs)
- content += [PageBreak(),*heading(8,'markets'),p(tr(D['market_intro'],lang),'h3'),p(tr(D['market_body'],lang)),p(tr(D['market_note'],lang),'small')]
+ if D['quotes']:
+  overview = raw['market_overview']
+  content += [PageBreak(),*heading(8,'markets'),p(tr(overview['title'],lang),'h3'),p(tr(overview['summary'],lang)),p(tr(overview['note'],lang),'small')]
  for group,labels in GROUPS.items():
+  group_quotes = [q for q in D['quotes'] if q['group']==group]
+  if not group_quotes: continue
   content += [Spacer(1,10),p(labels[0 if lang=='zh' else 1],'h3')]
   rows=[[p(v,'small') for v in pick(['公司 / 代码','市场 / 币种','收盘','日涨跌','交易日 / 来源'],['Company / ticker','Market / FX','Close','Change','Session / source'])]]
-  for q in [q for q in D['quotes'] if q['group']==group]:
+  for q in group_quotes:
    clr='#358277' if q['change'] is not None and q['change']<0 else '#a55940'
    rows.append([p(tr(q['name'],lang)+' / '+q['ticker'],'table'),p(q['market']+' / '+q['currency'],'table'),p(num(q),'table'),p('<font color="'+clr+'">'+pct(q)+'</font>','table',True),p(esc(q['date'] or '—')+'<br/>'+' · '.join('<link href="'+esc(D['sources'][i]['url'],quote=True)+'"><u>'+esc(tr(D['sources'][i]['title'],lang))+'</u></link>' for i in q['source_ids']),'source',True)])
   t=table(rows,[153,75,93,62,CW-383]);t.setStyle(TableStyle([('TOPPADDING',(0,0),(-1,-1),3),('BOTTOMPADDING',(0,0),(-1,-1),2)]));content += [t]

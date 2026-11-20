@@ -23,7 +23,7 @@ def news_sections(issue):
 def edition_sections(issue):
     """Old snapshots retain their original layout and content hash."""
     keys = EDITION_ORDER if issue.get('layout_version') in (2, 3, 4) else ('highlights', *LEGACY_SECTIONS, 'markets')
-    return [(key, *LABELS[key]) for key in keys]
+    return [(key, *LABELS[key]) for key in keys if key != 'markets' or issue.get('markets', True)]
 SECURITIES = {
  'us': [('NVDA','NVIDIA','NVIDIA'),('AMD','AMD','AMD'),('INTC','Intel','Intel'),('MSFT','微软','Microsoft'),('GOOGL','Alphabet','Alphabet'),('META','Meta','Meta'),('AMZN','亚马逊','Amazon')],
  'cn': [('688256','寒武纪','Cambricon'),('002230','科大讯飞','iFlytek'),('688041','海光信息','Hygon')],
@@ -88,7 +88,11 @@ def validate(raw, now=None):
     if not isinstance(raw,dict): fail('Issue must be an object')
     now=now or datetime.now(timezone.utc)
     required={'schema_version','date','kind','window_start','cutoff_at','headline','intro','takeaway','closing','stories','products','sources','markets','coverage','section_notes'}
-    if raw.get('layout_version') in (3, 4): required.add('market_overview')
+    rights_filter = raw.get('layout_version') == 4 and 'withheld_tickers' in raw
+    if rights_filter:
+        required.add('withheld_tickers')
+    if raw.get('layout_version') in (3, 4) and (not rights_filter or raw.get('markets')):
+        required.add('market_overview')
     if set(raw)-required-{'image','layout_version'} or required-set(raw): fail('Invalid daily snapshot fields')
     if 'layout_version' in raw and (type(raw['layout_version']) is not int or raw['layout_version'] not in (2, 3, 4)): fail('Unknown daily layout')
     if raw['schema_version']!='fieldtofit.daily.v1': fail('Unknown daily schema')
@@ -178,12 +182,21 @@ def validate(raw, now=None):
         if instant(v['checked_at'])>now: fail('Future coverage date')
         if v['state']=='checked': refs(v['source_ids'])
         elif not isinstance(v['source_ids'],list) or not set(v['source_ids'])<=source_ids: fail('Unknown coverage source')
-    if raw.get('layout_version') in (3, 4):
+    if 'market_overview' in required:
         overview=raw['market_overview']
         if not isinstance(overview,dict) or set(overview)!={'title','summary','note'}: fail('Market overview is required')
         for k,v in overview.items(): bilingual(v,'market '+k,1600)
     markets=raw['markets']
     watchlist=securities(SECURITIES,raw.get('layout_version'))
+    if rights_filter:
+        withheld = raw['withheld_tickers']
+        if (not isinstance(withheld, list) or not withheld
+                or any(not isinstance(t, str) or t not in TICKER_GROUP for t in withheld)
+                or len(set(withheld)) != len(withheld)):
+            fail('Invalid list of securities withheld for publication rights')
+        watchlist = {key: [row for row in rows if row[0] not in withheld]
+                     for key, rows in watchlist.items()}
+        watchlist = {key: rows for key, rows in watchlist.items() if rows}
     if not isinstance(markets,list) or len(markets)!=len(watchlist) or {m.get('id') for m in markets}!=set(watchlist): fail('All configured market snapshots are required')
     for m in markets:
         if set(m)!={'id','currency','trade_date','closed_at','state','note','rows'}: fail('Invalid market fields')

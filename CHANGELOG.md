@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.14"></a>
+## v1.20.14 · 日报按行情刊载范围出刊 · 2026-11-20
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Daily editions publish only cleared market quotations -->
+<!-- release-summary:zh:start -->
+- 日报逐只省略未获刊载许可的行情，整期无可刊行情时隐藏股市栏目。
+- 网站、公开接口和中英文 PDF 使用同一份可刊名单。
+- 私密复核记录按证券保存省略原因和来源条款。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Omit quotations without publication clearance and hide the markets section when none can run.
+- Use the same eligible securities in the website, public API and bilingual PDFs.
+- Record the source terms and reason for each omitted security in the private review.
+<!-- release-summary:en:end -->
+
+REQ-24-12 兼容补丁。旧期快照、数据库及发布日程沿用原有格式。
+
 <a id="v1.20.13"></a>
 ## v1.20.13 · 后台请求费用卡的双语核对日期 · 2026-11-20
 <!-- release-tag:unpublished -->

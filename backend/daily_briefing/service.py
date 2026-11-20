@@ -135,6 +135,19 @@ def _public_copy(data):
     if data.get('layout_version') in (3, 4):
         from .watchlist import GROUPS, GROUP_TICKERS
         data['market_groups']=[{'id':key,'name':{'zh':zh,'en':en},'tickers':list(GROUP_TICKERS[key])} for key,zh,en in GROUPS]
+    if data.pop('withheld_tickers', None):
+        published = {r['ticker'] for m in data['markets'] for r in m['rows']}
+        for group in data['market_groups']:
+            group['tickers'] = [ticker for ticker in group['tickers'] if ticker in published]
+        data['market_groups'] = [group for group in data['market_groups'] if group['tickers']]
+        if not published:
+            data['section_order'].remove('markets')
+        cited = {sid for item in [*data['stories'], *data['products'],
+                                  *(r for m in data['markets'] for r in m['rows'])]
+                 for sid in item['source_ids']}
+        if data.get('image'):
+            cited.add(data['image']['source_id'])
+        data['sources'] = [s for s in data['sources'] if s['id'] in cited]
     if data.get('image'): data['image'].pop('reuse_basis',None)
     return data
 

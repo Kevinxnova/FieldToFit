@@ -28,6 +28,7 @@ function Products({issue,standalone=false}:{issue:DailyIssue;standalone?:boolean
 function QualityMarkets({issue}:{issue:DailyIssue}){
  const {pick,zh}=useWorkspace();const [selected,setSelected]=useState('all');
  const rows=issue.markets.filter(m=>selected==='all'||m.id===selected).flatMap(m=>m.rows.map(r=>({...r,market:m})));
+ if (!issue.markets.length) return null;
  const overview=issue.market_overview;
  return <section id="daily-markets" className="dj-section" tabIndex={-1}>
  <header className="dj-section-heading"><span>08</span><h2>{pick('AI股市','AI markets')}</h2></header>
@@ -37,7 +38,7 @@ function QualityMarkets({issue}:{issue:DailyIssue}){
  </section>;
 }
 export function JournalReading({issue,preview=false}:{issue:DailyIssue;preview?:boolean}){
- const {pick,zh}=useWorkspace();const [market,setMarket]=useState('us'),[imageFailed,setImageFailed]=useState(false);useEffect(()=>setImageFailed(false),[issue.image?.url]);const m=issue.markets.find(m=>m.id===market)!;const modern=issue.layout_version===2||issue.layout_version===3||issue.layout_version===4,contents=modern?sections:legacySections;
+ const {pick,zh}=useWorkspace();const [market,setMarket]=useState('us'),[imageFailed,setImageFailed]=useState(false);useEffect(()=>setImageFailed(false),[issue.image?.url]);const m=issue.markets.find(m=>m.id===market)!;const modern=issue.layout_version===2||issue.layout_version===3||issue.layout_version===4,contents=(modern?sections:legacySections).filter(([id])=>id!=='markets'||issue.markets.length>0);
  return <article className={"daily-journal"+((issue.layout_version===3||issue.layout_version===4)?" dj-quality":"")+(issue.layout_version===4?" dj-event-first":"")}><header className="dj-masthead"><div><p className="dj-kicker">FIELDTOFIT / DAILY</p><h1>{pick('AI 日报','AI Daily')}<span>.</span></h1><p>{pick('从今天的变化，看明天的选择。','Today’s changes. Tomorrow’s choices.')}</p><p>{pick('每日北京时间 09:00 更新','Updated daily at 09:00 Beijing time')}</p></div><div className="dj-date"><strong>{issue.date.slice(-2)}</strong><span>{issue.date.slice(0,7).replace('-',' / ')}</span>{issue.kind==='review_sample'&&<small>{modern?pick('版式审阅样刊','Layout review sample'):pick('晚间审阅样刊','Evening review sample')}</small>}</div></header>
  <div className="dj-edition"><div><span>{issue.date} · {pick('第','Revision ')} {issue.publication.revision} {pick('版','')}</span><small>{pick('取材截止','Cutoff')} {time(issue.cutoff_at,zh)} · {pick('北京时间','Beijing time')}</small></div>{!preview&&<Download key={issue.date+issue.publication.revision+(zh?'zh':'en')} issue={issue}/>}</div>
  <nav className="dj-index" aria-label={pick('日报栏目','Daily sections')}>{contents.map(([id,cn,en])=><a key={id} href={'#daily-'+id}>{pick(cn,en)}</a>)}</nav>

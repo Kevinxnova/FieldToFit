@@ -144,3 +144,32 @@ def test_historical_pdf_and_hash_unchanged_when_layout_four_is_published(client,
     before.pop('navigation');after.pop('navigation')
     assert after==before
     assert service.pdf_bytes(issue['date'],'en')[0]==pdf
+
+
+@pytest.mark.parametrize('retain_us', [False, True])
+def test_rights_omissions_match_watchlist_and_public_output(event_bundle, retain_us):
+    data, proof, _, _, cutoff = event_bundle
+    omitted = [r['ticker'] for m in data['markets'] for r in m['rows']
+               if not (retain_us and r['ticker'] == 'NVDA')]
+    data['withheld_tickers'] = omitted
+    for market in data['markets']:
+        market['rows'] = [r for r in market['rows'] if r['ticker'] not in omitted]
+    data['markets'] = [m for m in data['markets'] if m['rows']]
+    if not retain_us:
+        data.pop('market_overview')
+    validate(data)
+    with pytest.raises(ValueError, match='publication rights'):
+        validate_editorial(data, proof, cutoff)
+    proof['withheld_quote_checks'] = [dict(tickers=omitted, basis='Synthetic license excludes public distribution.', url='https://example.org/terms')]
+    validate_editorial(data, proof, cutoff)
+    public = service._public_copy(data)
+    assert 'withheld_tickers' not in public
+    assert ('markets' in public['section_order']) == retain_us
+    assert [t for group in public['market_groups'] for t in group['tickers']] == (['NVDA'] if retain_us else [])
+    for lang, heading in [('zh', 'AI股市'), ('en', 'AI markets')]:
+        pdf = PdfReader(BytesIO(render(data, lang)['bytes']))
+        body = ''.join(page.extract_text() for page in pdf.pages)
+        assert (heading in body.split('08 /')[-1] and '08 /' in body) == retain_us
+    data['withheld_tickers'] = omitted[1:]
+    with pytest.raises(PlatformError):
+        validate(data)
