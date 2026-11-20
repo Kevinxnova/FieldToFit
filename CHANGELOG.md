@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.12"></a>
+## v1.20.12 · 后台完成窗口分享图及两篇 OpenAI 研究配图 · 2026-11-20
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Background completion windows and figures for two OpenAI studies -->
+<!-- release-summary:zh:start -->
+- 登记后台请求费用卡的中英文配图。
+- 用三张图展示科研任务的独立完成率及芯片计算单元面积变化。
+- 明确报告标题和分点首句的写法，要求点明研究主体、具体任务及主要发现。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register bilingual background pricing card images.
+- Chart independent completion by task and estimated area savings in two chip blocks.
+- Specify how report headlines and findings identify the actor, task and observed result.
+<!-- release-summary:en:end -->
+
+REQ-6／REQ-22 内容资源及整理指南补丁，沿用既有审核与轮换。
+
 <a id="v1.20.11"></a>
 ## v1.20.11 · Gemini 4 Neon 分享图与两篇已选报告配图 · 2026-11-19
 <!-- release-tag:unpublished -->

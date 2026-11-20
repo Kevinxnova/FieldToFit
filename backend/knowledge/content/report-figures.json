@@ -2380,5 +2380,29 @@
     ],
     "version": "2026-11",
     "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov20-monitor.png": {
+    "sha256": "207eb2a475f0260c704c0c2f58ac4c60a7f14d73624e065e0dd846ee7435b128",
+    "source_urls": [
+      "https://openai.com/index/research-acceleration-jagged-frontier/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov20-hours.png": {
+    "sha256": "70ffe4cc47bf94417fe9de8e444cfcf4b4a537b58e59ca64f17b1421019ab976",
+    "source_urls": [
+      "https://openai.com/index/research-acceleration-jagged-frontier/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov20-area.png": {
+    "sha256": "30e5f0f3900e7af7e9bce7f2fd45c71bc3e5bb7faa3d4135da7aacd39c08266b",
+    "source_urls": [
+      "https://openai.com/index/advancing-chip-design-with-our-models/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
   }
 }

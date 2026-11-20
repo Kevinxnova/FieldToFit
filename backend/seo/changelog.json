@@ -1,34 +1,34 @@
 {
-  "version": "1.20.11",
-  "revision": "6be6659f6808f9490ecf5bfef3e0d753c95f9edc3761fdc3ead33218d1400014",
+  "version": "1.20.12",
+  "revision": "4b77a074f0b379f16120d9c48fd1ff0cbc8008fdbfd80ffcd97b6fc0a84a8cae",
   "items": [
     {
-      "version": "1.20.11",
-      "date": "2026-11-19",
+      "version": "1.20.12",
+      "date": "2026-11-20",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "Gemini 4 Neon 分享图与两篇已选报告配图",
+          "title": "后台完成窗口分享图及两篇 OpenAI 研究配图",
           "highlights": [
-            "登记 Gemini 4 Neon 标准 API 费用示例的中英文分享图。",
-            "登记同题工具配置、科研任务使用占比和固定预算产出的三张本站重绘。",
-            "将研究场景、比较对象和适用条件纳入报告推荐与正文的整理规则。"
+            "登记后台请求费用卡的中英文配图。",
+            "用三张图展示科研任务的独立完成率及芯片计算单元面积变化。",
+            "明确报告标题和分点首句的写法，要求点明研究主体、具体任务及主要发现。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Gemini 4 Neon share images and figures for two reports",
+          "title": "Background completion windows and figures for two OpenAI studies",
           "highlights": [
-            "Register bilingual share images for the Gemini 4 Neon standard API cost example.",
-            "Register three FieldToFit figures on evaluation harnesses, research task usage and fixed-budget output estimates.",
-            "Document how report recommendations and articles identify study settings, comparisons and limits."
+            "Register bilingual background pricing card images.",
+            "Chart independent completion by task and estimated area savings in two chip blocks.",
+            "Specify how report headlines and findings identify the actor, task and observed result."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.11"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.12"
     },
     {
       "version": "1.20.1",
