@@ -4,6 +4,21 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.13"></a>
+## v1.20.13 · 后台请求费用卡的双语核对日期 · 2026-11-20
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Bilingual verification dates on the background pricing card -->
+<!-- release-summary:zh:start -->
+- 中英文分享图均显示 2026-11-20 为官方来源核对日期。
+- 卡片区分首响应目标和整项工作的完成时间。
+- 分享图保留同模型、相同计费 token 数量的比较条件。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Display the source check date as 2026-11-20 in both languages.
+- Distinguish the initial response target from end-to-end task duration.
+- Keep model and billed token usage fixed in the shareable pricing comparison.
+<!-- release-summary:en:end -->
+
 <a id="v1.20.12"></a>
 ## v1.20.12 · 后台完成窗口分享图及两篇 OpenAI 研究配图 · 2026-11-20
 <!-- release-tag:unpublished -->
