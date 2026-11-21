@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.20.14](CHANGELOG.md#v1.20.14)** · 尚未推送发布标签
+**当前源码版本：[v1.20.15](CHANGELOG.md#v1.20.15)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 日报逐只省略未获刊载许可的行情，整期无可刊行情时隐藏股市栏目。
-- 网站、公开接口和中英文 PDF 使用同一份可刊名单。
-- 私密复核记录按证券保存省略原因和来源条款。
+- 新增 MedChemBench 分项得分图，显示论文报告的 95% 区间。
+- 新增 Performance Factory 性能回退调查及恢复验收流程图。
+- 为 Claude 组织桌面授权说明和 DeepSeek 调用计费更正提供经复核的中英文分享图。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

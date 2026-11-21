@@ -2404,5 +2404,21 @@
     ],
     "version": "2026-11",
     "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov21-components.png": {
+    "sha256": "0f148b25850a08d082357861525d57aed94bc9140e6f724f108dddd27681152e",
+    "source_urls": [
+      "https://cdn.openai.com/pdf/09c4ec60-a32e-4652-837b-1811368a3bb0/medchembench-paper.pdf"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov21-recovery.png": {
+    "sha256": "856e6e1a02494e3fb820507c98158c1d1d590d9cf90a0deb65635299f275202e",
+    "source_urls": [
+      "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
   }
 }

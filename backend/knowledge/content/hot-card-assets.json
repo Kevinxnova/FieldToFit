@@ -411,5 +411,27 @@
     "text_revision": "75e76f25604c55588841d14acc318ae0fac11176ad130d3ebafbe26e62a954e9",
     "news_id": "D-378",
     "content_revision": "8b6035fb231ec162a81d8a92b4925940e084d3810ad81eed29b9345bf4b21be2"
+  },
+  "/hot-cards/d-188-a9715f5f4a6c-zh.png": {
+    "sha256": "eecc41e9b237f9c9ce5809b0d4aedbd70096d9284037dfabb54b75dde693b8f8",
+    "news_id": "D-188",
+    "content_revision": "a9715f5f4a6c776628d462d84f71a07caceb8765afdd30c1dd3952d81b2fb265"
+  },
+  "/hot-cards/d-188-a9715f5f4a6c-en.png": {
+    "sha256": "a56f78bcfa23f7ae1b669debc51f8d394f9983d190db892b8761ebfc18ad674a",
+    "text_revision": "3038ac0b71061cab4c2df033a86461272d85aad08f8dc87542d5f9fd2783984b",
+    "news_id": "D-188",
+    "content_revision": "a9715f5f4a6c776628d462d84f71a07caceb8765afdd30c1dd3952d81b2fb265"
+  },
+  "/hot-cards/d-383-71498e27dd3b-zh.png": {
+    "sha256": "e6461746407729833ffb07acdf60d283ec5d8a8f2424cc3b0e7c422d9481b193",
+    "news_id": "D-383",
+    "content_revision": "71498e27dd3bd0cabb1a396e40019fa937329acfa40d7cd562510f6de987ae55"
+  },
+  "/hot-cards/d-383-71498e27dd3b-en.png": {
+    "sha256": "3f4044422bf81225001113c480de8fd8387af1e9c85274ca3a29892eb955413c",
+    "text_revision": "56ac01fdf32159e09e3e96b692a487c59f61ecd10c9c45e608cba919cd1717e9",
+    "news_id": "D-383",
+    "content_revision": "71498e27dd3bd0cabb1a396e40019fa937329acfa40d7cd562510f6de987ae55"
   }
 }

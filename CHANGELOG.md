@@ -4,6 +4,21 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.15"></a>
+## v1.20.15 · 11 月 21 日报告与信息卡配图 · 2026-11-21
+<!-- release-tag:unpublished -->
+<!-- public-title:en: November 21 report and information card illustrations -->
+<!-- release-summary:zh:start -->
+- 新增 MedChemBench 分项得分图，显示论文报告的 95% 区间。
+- 新增 Performance Factory 性能回退调查及恢复验收流程图。
+- 为 Claude 组织桌面授权说明和 DeepSeek 调用计费更正提供经复核的中英文分享图。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add MedChemBench component scores with their reported 95% intervals.
+- Illustrate investigation and recovery verification in Performance Factory.
+- Provide reviewed bilingual share images for Claude desktop authorization and corrected DeepSeek billing guidance.
+<!-- release-summary:en:end -->
+
 <a id="v1.20.14"></a>
 ## v1.20.14 · 日报按行情刊载范围出刊 · 2026-11-20
 <!-- release-tag:unpublished -->

@@ -1,34 +1,34 @@
 {
-  "version": "1.20.14",
-  "revision": "f3b369e633c1b823e9f4f7de19b3e9e904b12d6021f1260408f4c0440a06e9b1",
+  "version": "1.20.15",
+  "revision": "70cc2e8500eaf0f1281c98215d5bdb3908d87e1d1d29dc8d9ef458042e5046ad",
   "items": [
     {
-      "version": "1.20.14",
-      "date": "2026-11-20",
+      "version": "1.20.15",
+      "date": "2026-11-21",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "日报按行情刊载范围出刊",
+          "title": "11 月 21 日报告与信息卡配图",
           "highlights": [
-            "日报逐只省略未获刊载许可的行情，整期无可刊行情时隐藏股市栏目。",
-            "网站、公开接口和中英文 PDF 使用同一份可刊名单。",
-            "私密复核记录按证券保存省略原因和来源条款。"
+            "新增 MedChemBench 分项得分图，显示论文报告的 95% 区间。",
+            "新增 Performance Factory 性能回退调查及恢复验收流程图。",
+            "为 Claude 组织桌面授权说明和 DeepSeek 调用计费更正提供经复核的中英文分享图。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Daily editions publish only cleared market quotations",
+          "title": "November 21 report and information card illustrations",
           "highlights": [
-            "Omit quotations without publication clearance and hide the markets section when none can run.",
-            "Use the same eligible securities in the website, public API and bilingual PDFs.",
-            "Record the source terms and reason for each omitted security in the private review."
+            "Add MedChemBench component scores with their reported 95% intervals.",
+            "Illustrate investigation and recovery verification in Performance Factory.",
+            "Provide reviewed bilingual share images for Claude desktop authorization and corrected DeepSeek billing guidance."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.14"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.15"
     },
     {
       "version": "1.20.1",
