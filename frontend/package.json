@@ -1,7 +1,7 @@
 {
   "name": "fieldtofit-frontend",
   "private": true,
-  "version": "1.20.16",
+  "version": "1.20.17",
   "type": "module",
   "scripts": {
     "dev": "vite",

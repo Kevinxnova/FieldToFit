@@ -1,34 +1,34 @@
 {
-  "version": "1.20.16",
-  "revision": "1b0d66a45abdf3af9ad9118345043043bfbd16f3ec03c1f48320d64c917bc0e1",
+  "version": "1.20.17",
+  "revision": "c9c4f400d311f928e423476ba0494dcf02dfeab27157c17de92c32e69174d0eb",
   "items": [
     {
-      "version": "1.20.16",
+      "version": "1.20.17",
       "date": "2026-11-22",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "Neon 与 Inkling Mini 模型快照",
+          "title": "Inkling 本地运行与 Git 并发读写配图",
           "highlights": [
-            "新增 Gemini 4 Neon 四档推理配置与 Inkling 2 Mini；AA 本年381配置中135个可绘、246个缺项。",
-            "明确区分 AA 任务成本与 Google 当前优惠 API 单价，保留真实缺项和 Arena 原审核日期。",
-            "补充 Neon 与 Inkling Mini 输入、缓存和输出价格，旗舰系列保持不变。"
+            "为 Inkling 2 Mini 配置卡提供经核对的中英文分享图。",
+            "新增 Inkling 中间层重复计算图，区分权重层和实际运算次数。",
+            "新增 Pando 写入与读取路径图，展示对象包和区域缓存的作用。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Neon and Inkling Mini model snapshot",
+          "title": "Inkling local inference and Git concurrency illustrations",
           "highlights": [
-            "Add four Gemini 4 Neon reasoning configurations and Inkling 2 Mini; 135 of 381 current-year AA configurations are plotted and 246 remain incomplete.",
-            "Distinguish AA task costs from Google's current introductory API rates; preserve missing values and Arena's original review date.",
-            "Include Neon and Inkling Mini input, cached-input and output rates while retaining the flagship selections."
+            "Add reviewed bilingual share images for the Inkling 2 Mini hardware guide.",
+            "Illustrate weight sharing and repeated layer applications in Inkling.",
+            "Show the write and fetch paths through Pando and its regional caches."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.16"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.17"
     },
     {
       "version": "1.20.1",

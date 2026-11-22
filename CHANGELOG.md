@@ -4,6 +4,21 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.17"></a>
+## v1.20.17 · Inkling 本地运行与 Git 并发读写配图 · 2026-11-22
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Inkling local inference and Git concurrency illustrations -->
+<!-- release-summary:zh:start -->
+- 为 Inkling 2 Mini 配置卡提供经核对的中英文分享图。
+- 新增 Inkling 中间层重复计算图，区分权重层和实际运算次数。
+- 新增 Pando 写入与读取路径图，展示对象包和区域缓存的作用。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add reviewed bilingual share images for the Inkling 2 Mini hardware guide.
+- Illustrate weight sharing and repeated layer applications in Inkling.
+- Show the write and fetch paths through Pando and its regional caches.
+<!-- release-summary:en:end -->
+
 <a id="v1.20.16"></a>
 ## v1.20.16 · Neon 与 Inkling Mini 模型快照 · 2026-11-22
 <!-- release-tag:unpublished -->

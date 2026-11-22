@@ -2420,5 +2420,21 @@
     ],
     "version": "2026-11",
     "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov22-loops.png": {
+    "sha256": "abbbd53a9f0b5e4da83b37dac9e21aade49edf5c4e0fae446a359db6816a8a65",
+    "source_urls": [
+      "https://thinkingmachines.ai/model-card/inkling-2-mini/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
+  },
+  "/report-figures/nov22-branches.png": {
+    "sha256": "83d0d7832952f53cf14ef13c003f62801f316e5a430d2aa2fe6ae4e258a565be",
+    "source_urls": [
+      "https://openai.com/index/scaling-git-at-openai/"
+    ],
+    "version": "2026-11",
+    "license": "Graphics © FieldToFit. Independent redraw of facts from the linked report."
   }
 }
