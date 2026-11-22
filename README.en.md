@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.20.15](CHANGELOG.md#v1.20.15)** · Release tag not yet published
+**Current source version: [v1.20.16](CHANGELOG.md#v1.20.16)** · Release tag not yet published
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Add MedChemBench component scores with their reported 95% intervals.
-- Illustrate investigation and recovery verification in Performance Factory.
-- Provide reviewed bilingual share images for Claude desktop authorization and corrected DeepSeek billing guidance.
+- Add four Gemini 4 Neon reasoning configurations and Inkling 2 Mini; 135 of 381 current-year AA configurations are plotted and 246 remain incomplete.
+- Distinguish AA task costs from Google's current introductory API rates; preserve missing values and Arena's original review date.
+- Include Neon and Inkling Mini input, cached-input and output rates while retaining the flagship selections.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

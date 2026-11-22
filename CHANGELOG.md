@@ -4,6 +4,27 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.16"></a>
+## v1.20.16 · Neon 与 Inkling Mini 模型快照 · 2026-11-22
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Neon and Inkling Mini model snapshot -->
+<!-- release-summary:zh:start -->
+- 新增 Gemini 4 Neon 四档推理配置与 Inkling 2 Mini；AA 本年381配置中135个可绘、246个缺项。
+- 明确区分 AA 任务成本与 Google 当前优惠 API 单价，保留真实缺项和 Arena 原审核日期。
+- 补充 Neon 与 Inkling Mini 输入、缓存和输出价格，旗舰系列保持不变。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Add four Gemini 4 Neon reasoning configurations and Inkling 2 Mini; 135 of 381 current-year AA configurations are plotted and 246 remain incomplete.
+- Distinguish AA task costs from Google's current introductory API rates; preserve missing values and Arena's original review date.
+- Include Neon and Inkling Mini input, cached-input and output rates while retaining the flagship selections.
+<!-- release-summary:en:end -->
+
+REQ-7-2／3／4／5兼容数据维护，保留v1.20.15资源，无迁移。AA公开评测元数据改用href标识，导入器同时兼容原slug并保持未知版本拒绝。新补录的K2 Horizon 32B保留9月发布日期，缺成本不绘点；Gemma 4 E4B成本缺失后移入缺项。
+
+价格核对2026-11-22：[Google标准API价格](https://aistudio.google.com/docs/pricing)中Carbon／Argon每百万输入／缓存／输出token为2／0.10／10美元，有效至11月30日，12月1日起4／0.20／20美元；AA已使用后者参考价，任务成本不等于当前API账单。[Neon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/)为3／0.15／15美元、1M共享上下文。[Inkling Mini](https://thinkingmachines.ai/news/inkling-2-mini/)于11月20日开放权重，[Tinker采样价格](https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/)为0.15／0.015／0.50美元，训练上限和采样上下文分开。
+
+GPT-Live-1.1的[11月19日API开放](https://developers.openai.com/api/docs/changelog)与10月ChatGPT首发分开；[活跃0.05美元/分钟、WebRTC暂停推理待机0.02美元/分钟](https://developers.openai.com/api/docs/models/gpt-live-1.1)，后端模型及工具另计。复用已有Neon动态D-372及OpenAI档案，不重复创建日报事件。实际验证见[验收](docs/validation/2026-11-22-model-landscape.md)。
+
 <a id="v1.20.15"></a>
 ## v1.20.15 · 11 月 21 日报告与信息卡配图 · 2026-11-21
 <!-- release-tag:unpublished -->

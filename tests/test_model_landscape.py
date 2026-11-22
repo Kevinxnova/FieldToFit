@@ -10,7 +10,7 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     response = client.get('/api/v1/platform/model-landscape')
     assert response.status_code == 200
     body = response.json
-    assert [len(s['points']) for s in body['sources']] == [131, 99]
+    assert [len(s['points']) for s in body['sources']] == [135, 99]
     aa, arena = body['sources']
     assert aa['price_unit'] == 'usd_per_task'
     assert arena['source_updated_at'] == '2026-10-22'
@@ -18,10 +18,10 @@ def test_public_snapshot_has_reproducible_independent_metrics(client):
     assert arena['points'][0]['score_low'] < arena['points'][0]['score'] < arena['points'][0]['score_high']
     assert 'v5.0.1' in aa['score_label']
     assert 'v4.3' in aa['note'] and 'not directly comparable' in aa['note_en']
-    assert aa['checked_at'] == '2026-11-18' and arena['checked_at'] == '2026-10-26'
+    assert aa['checked_at'] == '2026-11-22' and arena['checked_at'] == '2026-10-26'
     assert 'Style Control' in arena['score_label']
-    assert aa['coverage']['released_2026'] == 375 and arena['coverage']['released_2026'] == 113
-    assert len(aa['not_plotted']) == 244 and len(arena['not_plotted']) == 14
+    assert aa['coverage']['released_2026'] == 381 and arena['coverage']['released_2026'] == 113
+    assert len(aa['not_plotted']) == 246 and len(arena['not_plotted']) == 14
     assert len(arena['undated']) == 183
     assert all(p['release_date'].startswith('2026-') for s in body['sources'] for p in s['points'])
     assert set(p['organization'] for p in aa['points']) == set(body['companies'])
@@ -91,7 +91,7 @@ def test_candidate_parser_and_company_aliases_do_not_invent_numbers():
 
 def test_flagships_are_reviewed_series_not_per_company_score_winners():
     aa, arena = charts.snapshot()['sources']
-    assert len(aa['points']) == 131 and len(arena['points']) == 99
+    assert len(aa['points']) == 135 and len(arena['points']) == 99
     assert sum(m['status']=='plotted' for m in aa['flagship']['models']) == 11
     assert sum(m['status']=='plotted' for m in arena['flagship']['models']) == 6
     chosen = {m['company']:m for m in arena['flagship']['models']}
@@ -200,13 +200,17 @@ def test_new_models_and_real_missing_values_are_retained():
     assert any(p['name']=='GPT-6.1 Sol (Max)' and p['price']==10 for p in arena['points'])
 
 
-def test_uuid_source_preserves_exact_identity_and_never_reuses_old_scores():
+@pytest.mark.parametrize('index_identity', [
+    {'slug': 'artificial-analysis-intelligence-index'},
+    {'href': '/evaluations/artificial-analysis-intelligence-index'},
+])
+def test_uuid_source_preserves_exact_identity_and_never_reuses_old_scores(index_identity):
     from scripts.maintenance.prepare_model_landscape import build
     def html(obj):
         return '<script>self.__next_f.push('+json.dumps([1,'1:'+json.dumps(obj)+'\n'])+')</script>'
     metrics=[dict(id='uuid-'+str(i),release={'slug':'family'},name='Config '+str(i),shortName='Config '+str(i),modelCreatorName='Google',intelligenceIndex=None if i==0 else 25,intelligenceIndexCostPerTask=None if i==0 else .5) for i in range(202)]
     release=dict(slug='family',name='Family',releaseDate='2026-01-01',creator={'name':'Google'},modelNames=[m['name'] for m in metrics])
-    index=dict(slug='artificial-analysis-intelligence-index',name='Artificial Analysis Intelligence Index v5.0.1')
+    index=dict(index_identity,name='Artificial Analysis Intelligence Index v5.0.1')
     source=html([index,release,{'initialModels':metrics[:1],'manifest':{'path':'/data/reviewed.txt'}}])
     arena=html(dict(leaderboardSlug='overall',params={'styleControl':True},entries=[],voteCutoffISOString='2026-10-22T22:00:00Z'))
     previous={'points':[dict(id='stable-public-id',configuration_en='Config 0',source_organization='Google',score=80,price=2)]}

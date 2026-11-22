@@ -14,17 +14,17 @@
     "其他"
   ],
   "interval_days": 1,
-  "revision": "workspace-163c028dc142e3a5",
+  "revision": "workspace-2e80914f6ee6efea",
   "schema_version": "fieldtofit.model-landscape.v1",
   "sources": [
     {
-      "checked_at": "2026-11-18",
+      "checked_at": "2026-11-22",
       "coverage": {
-        "missing_coordinates": 244,
+        "missing_coordinates": 246,
         "outside_year": 383,
-        "plotted": 131,
-        "released_2026": 375,
-        "source_models": 758,
+        "plotted": 135,
+        "released_2026": 381,
+        "source_models": 764,
         "unconfirmed_date": 0
       },
       "id": "artificial-analysis",
@@ -437,7 +437,6 @@
           "estimated": false,
           "id": "granite-4-2-30b",
           "missing": [
-            "missing_score",
             "missing_price"
           ],
           "name": "Granite 4.2 30B",
@@ -445,7 +444,7 @@
           "price": null,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-08-25",
-          "score": null,
+          "score": 5.53591398205629,
           "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "source_organization": "IBM"
         },
@@ -458,7 +457,6 @@
           "estimated": false,
           "id": "k2-horizon-7b",
           "missing": [
-            "missing_score",
             "missing_price"
           ],
           "name": "K2 Horizon 7B",
@@ -466,7 +464,7 @@
           "price": null,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-09-03",
-          "score": null,
+          "score": 10.5630231522891,
           "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "source_organization": "Institute of Foundation Models"
         },
@@ -1064,7 +1062,6 @@
           "estimated": false,
           "id": "k2-horizon-3-7b",
           "missing": [
-            "missing_score",
             "missing_price"
           ],
           "name": "K2 Horizon 3.7B",
@@ -1072,7 +1069,7 @@
           "price": null,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-09-03",
-          "score": null,
+          "score": 8.02272873835814,
           "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "source_organization": "Institute of Foundation Models"
         },
@@ -1651,7 +1648,6 @@
           "estimated": false,
           "id": "k2-horizon-mova-36b-a4b",
           "missing": [
-            "missing_score",
             "missing_price"
           ],
           "name": "K2 Horizon MoVA 36B A4B",
@@ -1659,7 +1655,7 @@
           "price": null,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-09-03",
-          "score": null,
+          "score": 13.8458943758068,
           "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "source_organization": "Institute of Foundation Models"
         },
@@ -1835,7 +1831,7 @@
           "configuration": "JoyAI-VL-Preview",
           "configuration_en": "JoyAI-VL-Preview",
           "date_basis": "matched_model_release",
-          "date_url": "https://artificialanalysis.ai/models/joyvl2_v27",
+          "date_url": "https://artificialanalysis.ai/models/joyai-vl",
           "deprecated": false,
           "estimated": false,
           "id": "joyvl2_v27--5ca91b0e-0e47-4793-ace9-2ca763106e62",
@@ -3069,6 +3065,26 @@
           "source_organization": "China Mobile"
         },
         {
+          "configuration": "K2 Horizon 32B",
+          "configuration_en": "K2 Horizon 32B",
+          "date_basis": "matched_model_release",
+          "date_url": "https://artificialanalysis.ai/models/k2-horizon-32b",
+          "deprecated": false,
+          "estimated": false,
+          "id": "k2-horizon-32b--9034b7fc-11d6-433e-9b71-ec8520c487dd",
+          "missing": [
+            "missing_price"
+          ],
+          "name": "K2 Horizon 32B",
+          "organization": "其他",
+          "price": null,
+          "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "release_date": "2026-09-03",
+          "score": 13.880544179919,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "source_organization": "Institute of Foundation Models"
+        },
+        {
           "configuration": "Grok 4.3 (Non-reasoning)",
           "configuration_en": "Grok 4.3 (Non-reasoning)",
           "date_basis": "matched_model_release",
@@ -3350,7 +3366,6 @@
           "estimated": false,
           "id": "k2-horizon-0-9b",
           "missing": [
-            "missing_score",
             "missing_price"
           ],
           "name": "K2 Horizon 0.9B",
@@ -3358,7 +3373,7 @@
           "price": null,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-09-03",
-          "score": null,
+          "score": 2.71764699052683,
           "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "source_organization": "Institute of Foundation Models"
         },
@@ -4388,6 +4403,26 @@
           "source_organization": "Meta"
         },
         {
+          "configuration": "Gemma 4 E4B (Reasoning)",
+          "configuration_en": "Gemma 4 E4B (Reasoning)",
+          "date_basis": "source_release_date",
+          "date_url": "https://artificialanalysis.ai/models/gemma-4-e4b",
+          "deprecated": false,
+          "estimated": false,
+          "id": "gemma-4-e4b",
+          "missing": [
+            "missing_price"
+          ],
+          "name": "Gemma 4 E4B",
+          "organization": "Google",
+          "price": null,
+          "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "release_date": "2026-04-03",
+          "score": 4.78077714822335,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "source_organization": "Google"
+        },
+        {
           "configuration": "DeepSeek V4 Flash 0420 (Max)",
           "configuration_en": "DeepSeek V4 Flash 0420 (Max)",
           "date_basis": "source_release_date",
@@ -5142,8 +5177,8 @@
           "source_organization": "Anthropic"
         }
       ],
-      "note": "2026 年发布的模型配置；Intelligence Index v5.0.1 × 每项评测任务加权成本。与旧版 v4.3 的分数及任务成本不可直接比较；未提供新版数值的配置列入缺项，不沿用旧值。",
-      "note_en": "Model configurations released in 2026: Intelligence Index v5.0.1 × weighted cost per benchmark task. Scores and task costs are not directly comparable with v4.3. Configurations without current-version values remain explicitly missing; old values are not reused.",
+      "note": "2026 年发布的模型配置；Intelligence Index v5.0.1 × 每项评测任务加权成本。与旧版 v4.3 的分数及任务成本不可直接比较；未提供新版数值的配置列入缺项，不沿用旧值。 2026-11-22价格口径：AA已使用Gemini 4 Carbon／Argon每百万输入／缓存／输出token为4／0.20／20美元的参考价；Google官方优惠价2／0.10／10美元仍有效至11月30日，12月1日起调整。图中AA任务成本不是当前API账单。Neon标准API对应3／0.15／15美元；Inkling 2 Mini的Tinker采样对应0.15／0.015／0.50美元。",
+      "note_en": "Model configurations released in 2026: Intelligence Index v5.0.1 × weighted cost per benchmark task. Scores and task costs are not directly comparable with v4.3. Configurations without current-version values remain explicitly missing; old values are not reused. Pricing checked November 22, 2026: AA uses reference rates of $4/$0.20/$20 per million input/cached-input/output tokens for Gemini 4 Carbon and Argon. Google’s introductory $2/$0.10/$10 rates remain valid through November 30 and change on December 1. AA task costs are not current API bills. Neon standard API rates are $3/$0.15/$15; Inkling 2 Mini Tinker sampling rates are $0.15/$0.015/$0.50, respectively.",
       "points": [
         {
           "configuration": "Claude Fable 5.2 (Max, Default Fallback)",
@@ -5231,6 +5266,23 @@
           "source_organization": "OpenAI"
         },
         {
+          "configuration": "Gemini 4 Neon (Xhigh)",
+          "configuration_en": "Gemini 4 Neon (Xhigh)",
+          "date_basis": "matched_model_release",
+          "date_url": "https://artificialanalysis.ai/models/gemini-4-neon",
+          "deprecated": false,
+          "estimated": false,
+          "id": "gemini-4-neon--7c667f2d-0149-4eb1-864c-7e66c166ad88",
+          "name": "Gemini 4 Neon (xhigh)",
+          "organization": "Google",
+          "price": 6.444838101104699,
+          "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "release_date": "2026-11-18",
+          "score": 61.3982491392674,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "source_organization": "Google"
+        },
+        {
           "configuration": "GPT-6.2 Astra (High)",
           "configuration_en": "GPT-6.2 Astra (High)",
           "date_basis": "matched_model_release",
@@ -5257,10 +5309,27 @@
           "id": "gemini-4-carbon--909ed0ba-bcc5-4f38-8162-08a4e187a772",
           "name": "Gemini 4 Carbon (high)",
           "organization": "Google",
-          "price": 5.484780948230178,
+          "price": 7.755545745286556,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-10-28",
           "score": 60.025738829526,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "source_organization": "Google"
+        },
+        {
+          "configuration": "Gemini 4 Neon (High)",
+          "configuration_en": "Gemini 4 Neon (High)",
+          "date_basis": "matched_model_release",
+          "date_url": "https://artificialanalysis.ai/models/gemini-4-neon",
+          "deprecated": false,
+          "estimated": false,
+          "id": "gemini-4-neon--9b696f5b-b5d2-4b1f-9ed5-7c1446ec8421",
+          "name": "Gemini 4 Neon (high)",
+          "organization": "Google",
+          "price": 3.7427499092845027,
+          "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "release_date": "2026-11-18",
+          "score": 59.6189441875232,
           "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "source_organization": "Google"
         },
@@ -5291,7 +5360,7 @@
           "id": "gemini-4-carbon--0d3eaafd-54ed-4f78-bdd7-05a2db883986",
           "name": "Gemini 4 Carbon (medium)",
           "organization": "Google",
-          "price": 4.677653677420589,
+          "price": 6.585776867225546,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-10-28",
           "score": 58.2587824022788,
@@ -5435,6 +5504,23 @@
           "source_organization": "OpenAI"
         },
         {
+          "configuration": "Gemini 4 Neon (Medium)",
+          "configuration_en": "Gemini 4 Neon (Medium)",
+          "date_basis": "matched_model_release",
+          "date_url": "https://artificialanalysis.ai/models/gemini-4-neon",
+          "deprecated": false,
+          "estimated": false,
+          "id": "gemini-4-neon--2ba1a8f6-e052-4a33-b178-4db1e86157e4",
+          "name": "Gemini 4 Neon (medium)",
+          "organization": "Google",
+          "price": 1.9045555241044152,
+          "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "release_date": "2026-11-18",
+          "score": 54.8622945007349,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "source_organization": "Google"
+        },
+        {
           "configuration": "GPT-6 Astra (High)",
           "configuration_en": "GPT-6 Astra (High)",
           "date_basis": "matched_model_release",
@@ -5495,7 +5581,7 @@
           "id": "gemini-4-carbon--b3866703-a9f7-4ea2-8f3f-b361c90aaf0e",
           "name": "Gemini 4 Carbon (low)",
           "organization": "Google",
-          "price": 5.221404723668021,
+          "price": 7.186577262951972,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-10-28",
           "score": 54.2206114502924,
@@ -5648,7 +5734,7 @@
           "id": "gemini-4-argon",
           "name": "Gemini 4 Argon (high)",
           "organization": "Google",
-          "price": 4.973304355775267,
+          "price": 9.946608711550533,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-09-30",
           "score": 50.4121935905389,
@@ -5750,7 +5836,7 @@
           "id": "gemini-4-argon--48e6f735-f2bc-418f-b99f-3dc5a0ddda77",
           "name": "Gemini 4 Argon (medium)",
           "organization": "Google",
-          "price": 4.314621569087732,
+          "price": 8.629243138175465,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-09-30",
           "score": 47.6040598289046,
@@ -5875,6 +5961,23 @@
           "score": 44.1555010304265,
           "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "source_organization": "OpenAI"
+        },
+        {
+          "configuration": "Gemini 4 Neon (Low)",
+          "configuration_en": "Gemini 4 Neon (Low)",
+          "date_basis": "matched_model_release",
+          "date_url": "https://artificialanalysis.ai/models/gemini-4-neon",
+          "deprecated": false,
+          "estimated": false,
+          "id": "gemini-4-neon--09fea5f5-7217-452d-b693-fcca01e07bdf",
+          "name": "Gemini 4 Neon (low)",
+          "organization": "Google",
+          "price": 0.7452280945089245,
+          "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "release_date": "2026-11-18",
+          "score": 44.0831506204565,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "source_organization": "Google"
         },
         {
           "configuration": "Muse Wonder (Max)",
@@ -6846,6 +6949,23 @@
           "source_organization": "DeepSeek"
         },
         {
+          "configuration": "Inkling 2 Mini",
+          "configuration_en": "Inkling 2 Mini",
+          "date_basis": "matched_model_release",
+          "date_url": "https://artificialanalysis.ai/models/inkling-2-mini",
+          "deprecated": false,
+          "estimated": false,
+          "id": "inkling-2-mini--da3ba2f4-f4f1-43b6-95dc-8e9fa2a48402",
+          "name": "Inkling 2 Mini",
+          "organization": "其他",
+          "price": 0.5865441229709887,
+          "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "release_date": "2026-11-20",
+          "score": 20.1315214698783,
+          "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
+          "source_organization": "Thinking Machines"
+        },
+        {
           "configuration": "Qwen3.8 27B (Xhigh)",
           "configuration_en": "Qwen3.8 27B (Xhigh)",
           "date_basis": "source_release_date",
@@ -7110,7 +7230,7 @@
           "id": "nvidia-nemotron-3-ultra-550b-a55b",
           "name": "Nemotron 3 Ultra",
           "organization": "其他",
-          "price": 2.2102962660498227,
+          "price": 2.1896557658964193,
           "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
           "release_date": "2026-06-04",
           "score": 11.7592726308177,
@@ -7305,23 +7425,6 @@
           "source_organization": "IBM"
         },
         {
-          "configuration": "Gemma 4 E4B (Reasoning)",
-          "configuration_en": "Gemma 4 E4B (Reasoning)",
-          "date_basis": "source_release_date",
-          "date_url": "https://artificialanalysis.ai/models/gemma-4-e4b",
-          "deprecated": false,
-          "estimated": false,
-          "id": "gemma-4-e4b",
-          "name": "Gemma 4 E4B",
-          "organization": "Google",
-          "price": 0.008266637382002534,
-          "price_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
-          "release_date": "2026-04-03",
-          "score": 4.78077714822335,
-          "score_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
-          "source_organization": "Google"
-        },
-        {
           "configuration": "Mistral Medium 3.5",
           "configuration_en": "Mistral Medium 3.5",
           "date_basis": "source_release_date",
@@ -7378,8 +7481,8 @@
       "price_unit": "usd_per_task",
       "score_label": "Intelligence Index v5.0.1",
       "source_data_url": "https://artificialanalysis.ai/data/f41f1a6f60a41444.txt",
-      "source_models_sha256": "56fcf0e5027101cd894e4399971b905df2eedeedd962869143435267fff0994d",
-      "source_sha256": "76fb0c64ee95ca92488aa794d41c447b43a57ff3beedbc5d35b108ea2e9ad103",
+      "source_models_sha256": "fee9cfc1ded32ade3ef178e9e97fae68c3d9292fa45adc809f4ad574ed5d8a12",
+      "source_sha256": "4c4479e8775f60f12260efcaa2755473a91307c407c681d918d6e0a8df212992",
       "source_updated_at": null,
       "source_url": "https://artificialanalysis.ai/leaderboards/models?status=all",
       "undated": []
@@ -7393,6 +7496,90 @@
         "released_2026": 113,
         "source_models": 418,
         "unconfirmed_date": 183
+      },
+      "flagship": {
+        "models": [
+          {
+            "company": "OpenAI",
+            "evidence_url": "https://artificialanalysis.ai/models/gpt-6-2-astra",
+            "family": "GPT-6.2 Astra",
+            "id": null,
+            "status": "not_listed"
+          },
+          {
+            "company": "Anthropic",
+            "evidence_url": "https://artificialanalysis.ai/models/claude-fable-5-2",
+            "family": "Claude Fable 5.2",
+            "id": null,
+            "status": "not_listed"
+          },
+          {
+            "company": "Google",
+            "evidence_url": "https://artificialanalysis.ai/models/gemini-4-carbon",
+            "family": "Gemini 4 Carbon",
+            "id": null,
+            "status": "not_listed"
+          },
+          {
+            "company": "xAI",
+            "evidence_url": "https://artificialanalysis.ai/models/grok-4-7",
+            "family": "Grok 4.7",
+            "id": "grok-4.7-xhigh-public",
+            "status": "plotted"
+          },
+          {
+            "company": "Meta",
+            "evidence_url": "https://artificialanalysis.ai/models/muse-wonder",
+            "family": "Muse Wonder",
+            "id": "muse-wonder",
+            "status": "plotted"
+          },
+          {
+            "company": "Kimi",
+            "evidence_url": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+            "family": "Kimi K3.1 Pro",
+            "id": null,
+            "status": "not_listed"
+          },
+          {
+            "company": "GLM",
+            "evidence_url": "https://artificialanalysis.ai/models/glm-5-3",
+            "family": "GLM-5.3",
+            "id": "glm-5.3",
+            "status": "plotted"
+          },
+          {
+            "company": "Qwen",
+            "evidence_url": "https://artificialanalysis.ai/models/qwen4-max",
+            "family": "Qwen4 Max",
+            "id": null,
+            "status": "not_listed"
+          },
+          {
+            "company": "MIMO",
+            "evidence_url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+            "family": "MiMo-V2.6-Pro",
+            "id": "mimo-v2-6-pro-mw0j-text",
+            "status": "plotted"
+          },
+          {
+            "company": "MiniMax",
+            "evidence_url": "https://artificialanalysis.ai/models/minimax-m3",
+            "family": "MiniMax-M3",
+            "id": "minimax-m3",
+            "status": "plotted"
+          },
+          {
+            "company": "DeepSeek",
+            "evidence_url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
+            "family": "DeepSeek V4 Pro 0813",
+            "id": "deepseek-v4-pro-high-20260813-text",
+            "status": "plotted"
+          }
+        ],
+        "policy": "FieldToFit 编辑维护的本期旗舰系列名单；每系列每来源一个代表配置，保留来源名称。缺项不替换为旧系列，不代表来源官方旗舰分类。",
+        "policy_en": "FieldToFit’s reviewed flagship-series selection, with one representative configuration per source. Original names are retained. Missing entries are not replaced with older series. This is not an official source classification.",
+        "reviewed_at": "2026-11-18"
       },
       "id": "arena",
       "name": "Arena",

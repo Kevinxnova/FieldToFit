@@ -71,7 +71,10 @@ def build(aa_html, arena_html, ledger, checked_at, aa_models=None, aa_models_sha
     checked = date.fromisoformat(checked_at)
     aa_objects = objects(aa_html); arena_objects = objects(arena_html)
     manifest = next((o.get('manifest') for o in aa_objects if 'initialModels' in o), None)
-    index_names = {o['name'] for o in aa_objects if o.get('slug') == 'artificial-analysis-intelligence-index' and 'name' in o}
+    index_names = {o['name'] for o in aa_objects
+                   if (o.get('slug') == 'artificial-analysis-intelligence-index'
+                       or o.get('href') == '/evaluations/artificial-analysis-intelligence-index')
+                   and 'name' in o}
     if len(index_names) > 1:
         raise ValueError('Conflicting AA index versions')
     index_name = next(iter(index_names), 'Artificial Analysis Intelligence Index v4.3')
