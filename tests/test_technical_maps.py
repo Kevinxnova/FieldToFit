@@ -113,11 +113,11 @@ def test_proposal_requires_read_owner_decision_and_preserves_stable_map(client):
     assert not call(client,'/content/news/D-90/preview').json['ready']
 
 
-def test_report_dates_archive_cosmetic_and_substantive(client,monkeypatch):
+def test_report_dates_archive_cosmetic_and_substantive(client):
     migrate(client)
-    monkeypatch.setattr(ws,'today',lambda:'2026-10-20')
+    yesterday = (date.fromisoformat(ws.today()) - timedelta(days=1)).isoformat()
     assert tm.maps(archive='historical')['total']==1 and tm.maps(archive='recent')['total']==0
-    edit(client,lambda d:d['technical_map']['reports'][0].update(revised_at='2026-10-19',revision_note='排版调整'))
+    edit(client,lambda d:d['technical_map']['reports'][0].update(revised_at=yesterday,revision_note='排版调整'))
     publish(client,'news','D-90');assert tm.maps(archive='historical')['total']==1
     edit(client,lambda d:d['technical_map']['reports'][0].update(substantive_revision=True,revision_note='新增独立实验设置与结果'))
     publish(client,'news','D-90');assert tm.maps(archive='recent')['total']==1
@@ -157,7 +157,9 @@ def test_nonfinite_units_and_private_sources_rejected(client):
 
 
 def test_beijing_morning_check_is_same_day_and_can_propose(client,monkeypatch):
-    migrate(client);monkeypatch.setattr(ws,'stamp',lambda:'2026-10-06T23:30:00+00:00');monkeypatch.setattr(ws,'today',lambda:'2026-10-07')
+    migrate(client)
+    previous_utc_day = date.fromisoformat(ws.today()) - timedelta(days=1)
+    monkeypatch.setattr(ws, 'stamp', lambda: f'{previous_utc_day}T23:30:00+00:00')
     mm.check(reading());assert not next(r for r in mm.handoff()['reports'] if r['url']==URL)['needs_check']
     content=draft();content['technical_map']['caution']='更明确的条件范围'
     assert mm.propose({'content':content,'base_revision':tm.maps(slug=SLUG)['revision'],'reason':'07:30实际核对'})['published'] is False

@@ -38,15 +38,15 @@ The v1.6.0 source adds anonymous browser-local follows and private traffic repor
 ## Current version and release highlights
 
 <!-- current-version:start -->
-**Current source version: [v1.21.0](CHANGELOG.md#v1.21.0)** · Release tag not yet published
+**Current source version: [v1.21.1](CHANGELOG.md#v1.21.1)** · [fieldtofit-v1.21.1](https://github.com/Kevinxnova/FieldToFit/tree/fieldtofit-v1.21.1)
 <!-- current-version:end -->
 
 Source and deployed versions are verified separately; see this release's [validation and deployment evidence](docs/validation/README.md) for website status.
 
 <!-- latest-summary:start -->
-- Expand release notes in place and open More from the mobile navigation bar, with keyboard and reduced-motion support.
-- Read the labeled previous results while changing search filters, retry a temporary failure, and clear previous materials when access expires.
-- See the four-item limit beside the comparison action and keep the existing selection.
+- Expand release notes in place and reverse the mobile More panel while keeping keyboard focus.
+- Keep labeled results during filter changes and see the four-item comparison limit beside the action.
+- Set a character budget on MCP source packages and continue reading beyond that budget.
 <!-- latest-summary:end -->
 
 REQ-23 is live in v1.8.27: stable `/en` routes, English interfaces, 119 developments, 51 profiles, five reports and readable history, AI materials and bilingual review. Pending or failed language switches cannot display or export the previous language’s data. Previously shipped REQ-19/REQ-10 dispositions remain available; public content, private drafts and history are preserved. See [English validation and remaining checks](docs/validation/2026-10-11-complete-english.md) and the [bilingual maintenance guide](docs/guides/english-content.md).

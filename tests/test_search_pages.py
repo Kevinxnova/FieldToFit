@@ -83,7 +83,9 @@ def test_sitemap_exact_public_set_and_real_dates(site):
     assert set(actual) == expected
     topic_dates.update({seo.ORIGIN+'/en'+url.removeprefix(seo.ORIGIN):date for url,date in list(topic_dates.items())})
     assert all(date == topic_dates.get(url) for url,date in actual.items())  # only editorial changes supply dates
-    assert all(get(site, url.removeprefix(seo.ORIGIN)).status_code == 200 for url in actual)
+    for url in actual:
+        response = get(site, url.removeprefix(seo.ORIGIN))
+        assert response.status_code == 200, (url, response.status_code)
     migrate(site)
     assert urls(site) == actual  # importing unchanged content doesn't manufacture freshness
 

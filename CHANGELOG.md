@@ -4,6 +4,22 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.21.1"></a>
+## v1.21.1 · 阅读动效与资料包字数兼容 · 2026-11-25
+<!-- public-title:en: Reading interactions and source package limits -->
+<!-- release-summary:zh:start -->
+- 更新日志就地展开，手机「更多」可在开合途中反向，键盘焦点随操作归位。
+- 筛选切换时保留并标明上一组结果；对比选满四项时就地提示。
+- 恢复 MCP 原文资料包的字数上限参数，超出预算的原文可以续读。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Expand release notes in place and reverse the mobile More panel while keeping keyboard focus.
+- Keep labeled results during filter changes and see the four-item comparison limit beside the action.
+- Set a character budget on MCP source packages and continue reading beyond that budget.
+<!-- release-summary:en:end -->
+
+本批接续已验收的 v1.21.0。MCP 的 curated_bundle 继续按原有 max_characters 字段限制原文字数，分页工具保留各自的参数检查。无数据库迁移。[实施和验证](FieldToFit-PM.md#reading-motion)。
+
 <a id="v1.21.0"></a>
 ## v1.21.0 · 阅读、检索与操作反馈 · 2026-11-25
 <!-- release-tag:unpublished -->
@@ -23,7 +39,7 @@
 
 <a id="v1.20.18"></a>
 ## v1.20.18 · Claude Ship 与 Opus 4.5 分享图 · 2026-11-25
-<!-- release-tag:unpublished -->
+<!-- site-deployed:2026-11-25 -->
 <!-- public-title:en: Claude Ship and Opus 4.5 share images -->
 <!-- release-summary:zh:start -->
 - 为 Claude Ship 的 PR 审查、修复与策略审批说明登记中英文分享图。

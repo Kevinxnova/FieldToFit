@@ -2,7 +2,7 @@
 from english_fixtures import reviewed_preview
 import copy
 import json
-from datetime import datetime,timedelta,timezone
+from datetime import date,datetime,timedelta,timezone
 import pytest
 from test_knowledge import client,ADMIN,MCP
 from test_content_workspace import call,migrate,make,valid,publish
@@ -113,11 +113,11 @@ def test_natural_days_thresholds_recovery_keep_frozen_body(client):
     s.observe(*args,FAIL,at(10));assert s.public_status(args[0])['materials'][0]['failure_days']==1
 
 
-def test_change_ack_deferral_and_public_private_boundary(client,monkeypatch):
-    monkeypatch.setattr(ws, 'today', lambda: '2026-09-15')
+def test_change_ack_deferral_and_public_private_boundary(client):
+    review_after = (date.fromisoformat(ws.today()) + timedelta(days=15)).isoformat()
     args=material(client);s.observe(*args,OK,at(1));v=s.observe(*args,{**OK,'hash':'new-body'},at(2))
     assert v['changed'] and v['needs_review']
-    d={'id':args[0],'material_id':args[1],'check_revision':s.digest(v),'decision':'defer','reason':'PRIVATE-DEFER-NOTE','review_after':'2026-09-30'}
+    d={'id':args[0],'material_id':args[1],'check_revision':s.digest(v),'decision':'defer','reason':'PRIVATE-DEFER-NOTE','review_after':review_after}
     s.decide_material(d);assert not s.dashboard()['issues']
     assert 'PRIVATE-DEFER-NOTE' not in json.dumps(s.public_status(args[0]))
     v=s.observe(*args,{**OK,'hash':'third-body'},at(3));assert v['needs_review'] and not v.get('review_after')
@@ -190,11 +190,11 @@ def test_stale_source_evidence_invalidates_merge(client):
     assert s.resolve(source)==source
 
 
-def test_removed_material_status_and_threshold_escalation(client,monkeypatch):
-    monkeypatch.setattr(ws, 'today', lambda: '2026-09-15')
+def test_removed_material_status_and_threshold_escalation(client):
+    review_after = (date.fromisoformat(ws.today()) + timedelta(days=15)).isoformat()
     args=material(client)
     for day in range(1,4):v=s.observe(*args,FAIL,at(day))
-    s.decide_material({'id':args[0],'material_id':args[1],'check_revision':s.digest(v),'decision':'defer','reason':'Wait for source recovery','review_after':'2026-09-30'})
+    s.decide_material({'id':args[0],'material_id':args[1],'check_revision':s.digest(v),'decision':'defer','reason':'Wait for source recovery','review_after':review_after})
     for day in range(4,8):v=s.observe(*args,FAIL,at(day))
     assert not v.get('review_after') and s.dashboard()['issues']
     item=ws.detail('watch',args[0]);item['draft']['reading_materials']=[];ws.save('watch',args[0],item);publish(client,'watch',args[0])

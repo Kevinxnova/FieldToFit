@@ -13,5 +13,6 @@ assert.equal(target('','#watch-cw-t01'),'/watch/CW-T01');
 assert.equal(target('?object=existing&revision=3&chart=arena','#news-releases'),null);
 assert.equal(target('?chart=arena&news_page=2',''),null);
 assert.equal(target('?chart=arena&news_page=2','#news-releases'),'/for-you/news?chart=arena&news_page=2#news-releases');
-for(const hash of ['#daily-preview','#recent-news','#hot-information-cards','#technical-evolution-maps','#news-codex-28-days','#model-landscape','#resource-dossiers','#developer-projects'])assert.equal(target('',hash),null);
+assert.equal(target('','#news-codex-28-days'),'/for-you/codex#news-codex-28-days');
+for(const hash of ['#daily-preview','#recent-news','#hot-information-cards','#technical-evolution-maps','#historical-topics','#openai-updates','#anthropic-updates','#model-landscape','#resource-dossiers','#developer-projects'])assert.equal(target('',hash),null);
 console.log('PASS legacy section, item, multi-company, combined-filter and object/revision links');

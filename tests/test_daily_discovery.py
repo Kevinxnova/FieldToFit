@@ -216,6 +216,8 @@ def test_daily_claim_uses_beijing_day_not_elapsed_24_hours(client,monkeypatch):
 def test_bounded_parallel_daily_claims_keep_separate_candidates(client,monkeypatch):
     from backend.knowledge import platform_maintenance as pm,model_landscape
     monkeypatch.setattr('backend.knowledge.stewardship.check_materials',lambda *a,**k:{'results':[],'deferred':False})
+    # This test times source collection; the full watch-list check has its own integration suite.
+    monkeypatch.setattr('backend.knowledge.object_checks.start', lambda: {'day': ws.today(), 'totals': {}})
     subset=[{**s,'enabled':True,'last_attempt_at':None} for s in catalog.definitions()[:3]]
     monkeypatch.setattr(sources,'list_sources',lambda:subset)
     monkeypatch.setattr(model_landscape,'check_sources',lambda:{'status':'success'})

@@ -44,7 +44,10 @@ def review(result,changed=True,completed=True):
 def test_daily_full_scope_fetch_not_approval_and_no_public_mutation(client,monkeypatch):
     before=client.get('/api/v1/platform/watch').json
     result=configured(client,monkeypatch)
-    board=checks.overview();assert board['totals']['expected']==49
+    board=checks.overview()
+    expected_ids = {item['id'] for item in before['items']}
+    assert {row['id'] for row in board['items']} == expected_ids
+    assert board['totals']['expected'] == len(expected_ids)
     assert board['totals']['completed']==0 and result['status']=='incomplete'
     checks.review(ws.today(),ID,review(result))
     board=checks.overview();assert board['totals']['changed']==1 and board['totals']['completed']==1

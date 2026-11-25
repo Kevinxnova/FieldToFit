@@ -20,6 +20,9 @@ def digest(value):
 
 def options(name, args):
     selected = {k: v for k, v in args.items() if k in CONTROLS}
+    if name == "curated_bundle":
+        # This tool uses max_characters for its source-text budget.
+        selected.pop("max_characters", None)
     if not selected:
         return args, None
     if name not in TOOLS:
