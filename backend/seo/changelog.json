@@ -1,34 +1,34 @@
 {
-  "version": "1.20.17",
-  "revision": "c9c4f400d311f928e423476ba0494dcf02dfeab27157c17de92c32e69174d0eb",
+  "version": "1.20.18",
+  "revision": "ca087f8e94e89e4a040993125add37eabe69d295a2803e00d395772a4418236f",
   "items": [
     {
-      "version": "1.20.17",
-      "date": "2026-11-22",
+      "version": "1.20.18",
+      "date": "2026-11-25",
       "deployed_on": "",
       "copy": {
         "zh": {
-          "title": "Inkling 本地运行与 Git 并发读写配图",
+          "title": "Claude Ship 与 Opus 4.5 分享图",
           "highlights": [
-            "为 Inkling 2 Mini 配置卡提供经核对的中英文分享图。",
-            "新增 Inkling 中间层重复计算图，区分权重层和实际运算次数。",
-            "新增 Pando 写入与读取路径图，展示对象包和区域缓存的作用。"
+            "为 Claude Ship 的 PR 审查、修复与策略审批说明登记中英文分享图。",
+            "为 Claude API 的 Opus 4.5 退役说明登记两种语言的迁移提醒图。",
+            "每张图关联原事件和相应语言的卡片详情，扫码即可打开对应页面。"
           ],
           "details": "",
           "translation_available": true
         },
         "en": {
-          "title": "Inkling local inference and Git concurrency illustrations",
+          "title": "Claude Ship and Opus 4.5 share images",
           "highlights": [
-            "Add reviewed bilingual share images for the Inkling 2 Mini hardware guide.",
-            "Illustrate weight sharing and repeated layer applications in Inkling.",
-            "Show the write and fetch paths through Pando and its regional caches."
+            "Register Chinese and English share images for the Claude Ship review and approval guide.",
+            "Register both language editions of the Claude API Opus 4.5 migration notice.",
+            "Link each QR code to its event and language-specific card detail."
           ],
           "details": "",
           "translation_available": true
         }
       },
-      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.17"
+      "source_url": "https://github.com/Kevinxnova/FieldToFit/blob/main/CHANGELOG.md#v1.20.18"
     },
     {
       "version": "1.20.1",

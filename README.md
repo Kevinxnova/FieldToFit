@@ -38,15 +38,15 @@ v1.6.0 源码新增无需账号的本机关注清单及私有访问统计；浏�
 ## 当前版本与本版更新
 
 <!-- current-version:start -->
-**当前源码版本：[v1.20.17](CHANGELOG.md#v1.20.17)** · 尚未推送发布标签
+**当前源码版本：[v1.20.18](CHANGELOG.md#v1.20.18)** · 尚未推送发布标签
 <!-- current-version:end -->
 
 源码版本与网站运行版本分别核验；网站部署状态见[本版验收](docs/validation/README.md)。
 
 <!-- latest-summary:start -->
-- 为 Inkling 2 Mini 配置卡提供经核对的中英文分享图。
-- 新增 Inkling 中间层重复计算图，区分权重层和实际运算次数。
-- 新增 Pando 写入与读取路径图，展示对象包和区域缓存的作用。
+- 为 Claude Ship 的 PR 审查、修复与策略审批说明登记中英文分享图。
+- 为 Claude API 的 Opus 4.5 退役说明登记两种语言的迁移提醒图。
+- 每张图关联原事件和相应语言的卡片详情，扫码即可打开对应页面。
 <!-- latest-summary:end -->
 
 REQ-23全站英文已正式上线v1.8.27：稳定 `/en` 地址、界面、119条动态、51项档案、5篇报告与可读历史、英文取材及双语审核；切换等待或失败不显示或导出上一语言资料。REQ-19／REQ-10差异处置沿用已上线行为，原公开内容、私密草稿及历史保留。实际验证与待验范围见[英文验收](docs/validation/2026-10-11-complete-english.md)，后续维护见[双语指南](docs/guides/english-content.md)。

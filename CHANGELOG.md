@@ -4,6 +4,21 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.20.18"></a>
+## v1.20.18 · Claude Ship 与 Opus 4.5 分享图 · 2026-11-25
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Claude Ship and Opus 4.5 share images -->
+<!-- release-summary:zh:start -->
+- 为 Claude Ship 的 PR 审查、修复与策略审批说明登记中英文分享图。
+- 为 Claude API 的 Opus 4.5 退役说明登记两种语言的迁移提醒图。
+- 每张图关联原事件和相应语言的卡片详情，扫码即可打开对应页面。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Register Chinese and English share images for the Claude Ship review and approval guide.
+- Register both language editions of the Claude API Opus 4.5 migration notice.
+- Link each QR code to its event and language-specific card detail.
+<!-- release-summary:en:end -->
+
 <a id="v1.20.17"></a>
 ## v1.20.17 · Inkling 本地运行与 Git 并发读写配图 · 2026-11-22
 <!-- release-tag:unpublished -->
