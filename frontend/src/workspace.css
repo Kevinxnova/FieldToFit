@@ -11,6 +11,11 @@
   background: #f7f8f4;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
+  --motion-feedback: 100ms;
+  --motion-fade: 140ms;
+  --motion-disclosure: 180ms;
+  --motion-panel: 190ms;
+  --motion-ease: cubic-bezier(.2,.75,.25,1);
   --bg: #f7f8f4;
   --surface: #fff;
   --surface-soft: #f0f3ec;
@@ -4045,3 +4050,29 @@ body:has(.mobile-more-dialog[open]), body:has(.toc-drawer[open]) { overflow: hid
 .reading-update { position: fixed; z-index: 70; right: 20px; bottom: 20px; max-width: min(600px, calc(100vw - 40px)); margin: 0; box-shadow: var(--shadow); }
 .reading-update .text-button { margin-left: 8px; }
 @media (max-width: 700px) { .reading-update { right: 12px; bottom: calc(79px + env(safe-area-inset-bottom, 0px)); max-width: calc(100vw - 24px); padding: 10px 14px; } }
+
+.lookup-feedback { min-block-size:3.7em; margin:1em 0; overflow-wrap:anywhere; font-variant-numeric:tabular-nums; }
+.lookup-feedback button { margin-inline-start:.75em; }
+.compare-feedback { display:inline-flex; flex-wrap:wrap; align-items:center; gap:6px; max-width:100%; }
+.compare-feedback small { color:var(--ink); overflow-wrap:anywhere; }
+.compare-feedback button:active { transform:scale(.98); }
+@media (prefers-reduced-motion:no-preference) {
+  .compare-feedback button { transition:transform var(--motion-feedback) var(--motion-ease); }
+  .compare-feedback small, .lookup-results-current { animation:feedback-appear var(--motion-fade) ease-out; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .compare-feedback button:active { transform:none; }
+}
+@keyframes feedback-appear { from { opacity:.75; } to { opacity:1; } }
+
+/* Only the sheet moves. The native dialog keeps focus trapped through its exit. */
+@media (max-width:700px) and (prefers-reduced-motion:no-preference) {
+  .mobile-more-dialog .mobile-more-panel {
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity var(--motion-fade) var(--motion-ease), transform var(--motion-panel) var(--motion-ease);
+  }
+  .mobile-more-dialog[data-presented] .mobile-more-panel { opacity:1; transform:none; }
+  .mobile-more-dialog::backdrop { background:transparent; transition:background-color var(--motion-fade) ease-out; }
+  .mobile-more-dialog[data-presented]::backdrop { background:#0007; }
+}

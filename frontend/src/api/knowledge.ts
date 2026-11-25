@@ -176,39 +176,51 @@ export function send<T>(
 ) {
   return request<T>(path, { method, body: JSON.stringify(data) }, admin);
 }
-export function useRemote<T>(path: string | null, admin = false) {
+export function useRemote<T>(path: string | null, admin = false, keepPrevious = false) {
   const selectedLanguage = useLanguage();
   const language = admin ? 'canonical' : selectedLanguage;
-  const previousPath=useRef(path);
-  const previousLanguage=useRef(language);
-  const [dataLanguage,setDataLanguage]=useState(language);
-  const [data, setData] = useState<T | null>(null);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(!!path);
+  const previousLanguage = useRef(language);
+  const [snapshot, setSnapshot] = useState<{path: string; language: string; value: T} | null>(null);
   const [revision, setRevision] = useState(0);
+  const [outcome, setOutcome] = useState<{
+    path: string; language: string; revision: number; error: string; invalidated: boolean;
+  } | null>(null);
+
   useEffect(() => {
     const controller = new AbortController();
-    const changedLanguage=previousLanguage.current!==language;
-    // Keep filters and editor state; readable data must match the selected language.
-    if (previousPath.current!==path || changedLanguage) setData(null);
-    previousPath.current=path;
-    previousLanguage.current=language;
-    setDataLanguage(language);
-    setError("");
-    setLoading(!!path);
-    if (path)
-      request<T>(path, { signal: controller.signal }, admin)
-        .then(value => { if (!controller.signal.aborted) {setData(value);if(changedLanguage)restoreLanguageScroll(language);} })
-        .catch((e) => {
-          if (!controller.signal.aborted) setError(e.message);
-        })
-        .finally(() => {
-          if (!controller.signal.aborted) setLoading(false);
-        });
+    const changedLanguage = previousLanguage.current !== language;
+    previousLanguage.current = language;
+    if (!path) {
+      setSnapshot(null);
+      setOutcome(null);
+      return;
+    }
+    setOutcome(null);
+    setSnapshot(old => old?.language === language && (keepPrevious || old.path === path) ? old : null);
+    request<T>(path, {signal: controller.signal}, admin)
+      .then(value => {
+        if (controller.signal.aborted) return;
+        setSnapshot({path, language, value});
+        setOutcome({path, language, revision, error: '', invalidated: false});
+        if (changedLanguage) restoreLanguageScroll(language);
+      })
+      .catch(reason => {
+        if (controller.signal.aborted) return;
+        const invalidated = [401, 403, 410].includes(reason.status)
+          || reason.code === 'english_unavailable';
+        if (invalidated) setSnapshot(null);
+        setOutcome({path, language, revision, error: reason.message, invalidated});
+      });
     return () => controller.abort();
-  }, [path, revision, admin, language]);
-  const matchingLanguage=dataLanguage===language;
-  return { data:matchingLanguage?data:null, error:matchingLanguage?error:'', loading:!!path&&(loading||!matchingLanguage), reload: () => setRevision((r) => r + 1) };
+  }, [path, revision, admin, language, keepPrevious]);
+
+  const visible = path && snapshot?.language === language && (keepPrevious || snapshot.path === path) ? snapshot : null;
+  const settled = outcome?.path === path && outcome.language === language && outcome.revision === revision ? outcome : null;
+  return {
+    data: visible?.value ?? null, dataPath: visible?.path ?? null,
+    error: settled?.error ?? '', invalidated: !!settled?.invalidated,
+    loading: !!path && !settled, reload: () => setRevision(r => r + 1),
+  };
 }
 export async function downloadRecord(
   id: string,

@@ -13,6 +13,7 @@ import {
   type Evidence,
 } from "../api/knowledge";
 import {
+  CompareButton,
   dateText,
   Icon,
   PageHeading,
@@ -154,8 +155,6 @@ export default function Dossier() {
     pick,
     collection,
     toggleCollection,
-    compare,
-    toggleCompare,
     notify,
   } = useWorkspace();
   const { data, loading, error, reload } = useRemote<DossierData>(
@@ -263,12 +262,7 @@ export default function Dossier() {
                 ? pick("取消关注", "Unfollow")
                 : pick("关注变化", "Follow updates")}
             </button>
-            <button className="button" onClick={() => toggleCompare(id)}>
-              <Icon name="compare" size={17} />
-              {compare.includes(id)
-                ? pick("移出对比", "Remove comparison")
-                : pick("加入对比", "Compare")}
-            </button>
+            <CompareButton id={id} />
             <button className="button" onClick={() => doExport("markdown")}>
               <Icon name="download" size={17} />
               {pick("导出", "Export")}

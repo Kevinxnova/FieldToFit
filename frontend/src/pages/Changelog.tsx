@@ -101,13 +101,20 @@ export default function Changelog() {
         <div className="changelog-meta"><a href={'#v' + entry.version} aria-label={pick('链接到版本 ', 'Link to version ') + entry.version}>v{entry.version}</a><time dateTime={entry.date || undefined}>{entry.date || pick('日期未记录', 'Date not recorded')}</time><span>{entry.status === 'current' ? pick('当前版本', 'Current version') : entry.status === 'deployed' ? pick('已上线', 'Deployed') : pick('上线状态未核实', 'Deployment unverified')}</span></div>
         <h2>{entry.title}</h2>
         {!entry.translation_available ? <p className="muted">{pick('此版本摘要暂未提供。', 'The English summary for this version is not available.')}</p> : <ul>{entry.highlights.slice(0, 3).map((line, index) => <li key={index}>{line}</li>)}</ul>}
-        <details open={expanded.has(entry.version)} onToggle={event => { const open = event.currentTarget.open; setExpanded(previous => { if (previous.has(entry.version) === open) return previous; const next = new Set(previous); if (open) next.add(entry.version); else next.delete(entry.version); return next; }); }}>
-          <summary>{pick('完整说明', 'Full notes')}</summary>
+        <button type="button" className="changelog-disclosure" aria-expanded={expanded.has(entry.version)}
+          aria-controls={'notes-'+entry.version} onClick={() => setExpanded(previous => {
+            const next = new Set(previous);
+            if (next.has(entry.version)) next.delete(entry.version); else next.add(entry.version);
+            return next;
+          })}>{pick('完整说明', 'Full notes')}</button>
+        <div className="changelog-notes" id={'notes-'+entry.version} inert={!expanded.has(entry.version)}>
+          <div>
           {entry.highlights.length > 3 && <ul>{entry.highlights.slice(3).map((line, index) => <li key={index}>{line}</li>)}</ul>}
           {entry.details && entry.details.split(/\n\s*\n/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
           {entry.deployed_on && <p className="muted">{pick('已核对上线日期：', 'Verified deployment date: ')}{entry.deployed_on}</p>}
           <a className="changelog-source" href={entry.source_url} target="_blank" rel="noopener noreferrer">{pick('查看 GitHub 原记录', 'View the original GitHub record')} ↗</a>
-        </details>
+          </div>
+        </div>
       </article>)}</div>
       {count < shown.items.length && <button className="button" onClick={() => setCount(value => value + PAGE_SIZE)}>{pick('加载更多历史', 'Load earlier releases')}</button>}
       {!shown.items.length && <p>{pick('暂无更新记录。', 'No release notes yet.')}</p>}

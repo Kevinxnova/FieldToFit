@@ -4,6 +4,23 @@
 
 后续计划见 [REQ list](FieldToFit-PM.md)，尚未完成的计划不记为已发布变化。
 
+<a id="v1.21.0"></a>
+## v1.21.0 · 阅读、检索与操作反馈 · 2026-11-25
+<!-- release-tag:unpublished -->
+<!-- public-title:en: Reading, search and action feedback -->
+<!-- release-summary:zh:start -->
+- 更新日志说明在原位展开与收起，手机「更多」从底栏进入，支持键盘和减少动态效果。
+- 切换检索条件时标明仍可阅读的上一组结果，临时失败可重试，权限失效时清除旧资料。
+- 对比已满四项时在当前操作旁提示移除一项，保留现有选择。
+<!-- release-summary:zh:end -->
+<!-- release-summary:en:start -->
+- Expand release notes in place and open More from the mobile navigation bar, with keyboard and reduced-motion support.
+- Read the labeled previous results while changing search filters, retry a temporary failure, and clear previous materials when access expires.
+- See the four-item limit beside the comparison action and keep the existing selection.
+<!-- release-summary:en:end -->
+
+范围与本地验收见[REQ-6-35](FieldToFit-PM.md#reading-motion)。公开接口与数据库兼容，无迁移。
+
 <a id="v1.20.18"></a>
 ## v1.20.18 · Claude Ship 与 Opus 4.5 分享图 · 2026-11-25
 <!-- release-tag:unpublished -->

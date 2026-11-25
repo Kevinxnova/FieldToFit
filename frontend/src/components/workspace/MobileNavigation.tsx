@@ -19,17 +19,39 @@ export function MobileNavigation() {
   const trigger = useRef<HTMLButtonElement>(null);
   const navigating = useRef(false);
   const active = destinations.some(([path]) => location.pathname === path || location.pathname.startsWith(path + '/'));
-  const close = () => { dialog.current?.close(); setOpen(false); };
+  const panel = useRef<HTMLElement>(null);
+  const transition = useRef(0);
+  const finish = () => {
+    transition.current++;
+    if (dialog.current) {
+      delete dialog.current.dataset.presented;
+      dialog.current.close();
+    }
+    setOpen(false);
+  };
+  const close = () => {
+    const modal = dialog.current;
+    if (!modal?.open) return;
+    const closing = ++transition.current;
+    delete modal.dataset.presented;
+    setOpen(false);
+    // Native modality survives the exit. Reopening reverses the CSS transition.
+    const transitions = panel.current?.getAnimations() ?? [];
+    if (!transitions.length) { finish(); return; }
+    Promise.allSettled(transitions.map(animation => animation.finished)).then(() => {
+      if (closing === transition.current && modal.open) finish();
+    });
+  };
   const navigate = () => {
     navigating.current = true;
-    close();
+    finish();
     requestAnimationFrame(() => document.getElementById('main-content')?.focus({ preventScroll: true }));
   };
   useEffect(() => { if (dialog.current?.open) navigate(); }, [location.key]);
   useEffect(() => {
     const media = window.matchMedia('(max-width: 700px)');
-    const resize = () => { if (!media.matches) close(); };
-    const anotherPanel = () => { navigating.current = true; close(); };
+    const resize = () => { if (!media.matches) finish(); };
+    const anotherPanel = () => { navigating.current = true; finish(); };
     media.addEventListener('change', resize);
     window.addEventListener('fieldtofit:open-contents', anotherPanel);
     return () => {
@@ -40,24 +62,33 @@ export function MobileNavigation() {
   const show = () => {
     window.dispatchEvent(new Event('fieldtofit:open-more'));
     navigating.current = false;
-    dialog.current?.showModal();
+    const modal = dialog.current;
+    if (!modal) return;
+    if (!modal.open) {
+      modal.showModal();
+      // Establish the start transform before presenting the panel.
+      panel.current?.getBoundingClientRect();
+    }
+    transition.current++;
+    modal.dataset.presented = 'true';
     setOpen(true);
   };
   const bar = (inside = false) => <nav className="mobile-bottom-nav" aria-label={pick('手机导航', 'Mobile navigation')}>
     <NavLink to="/for-you" onClick={inside ? navigate : undefined}><Icon name="news" size={20} /><span>For you</span></NavLink>
     <NavLink to="/for-your-ai" onClick={inside ? navigate : undefined}><Icon name="code" size={20} /><span>For your AI</span></NavLink>
-    <button ref={inside ? undefined : trigger} type="button" className={active ? 'active' : ''} aria-current={active ? 'location' : undefined} aria-haspopup="dialog" aria-expanded={open} aria-controls="mobile-more-dialog" onClick={inside ? close : show}>
+    <button ref={inside ? undefined : trigger} type="button" className={active ? 'active' : ''} aria-current={active ? 'location' : undefined} aria-haspopup="dialog" aria-expanded={open} aria-controls="mobile-more-dialog" onClick={inside && open ? close : show}>
       <Icon name="more" size={20} /><span>{pick('更多', 'More')}</span>
     </button>
   </nav>;
   return <div className="mobile-navigation">
     {bar()}
-    <dialog ref={dialog} id="mobile-more-dialog" className="mobile-more-dialog" aria-labelledby="mobile-more-title" onClick={event => { if (event.target === event.currentTarget) close(); }} onClose={() => {
+    <dialog ref={dialog} id="mobile-more-dialog" className="mobile-more-dialog" aria-labelledby="mobile-more-title" onCancel={event => { event.preventDefault(); close(); }} onClick={event => { if (event.target === event.currentTarget) close(); }} onClose={() => {
+      if (dialog.current?.open) return;
       setOpen(false);
       if (!navigating.current && window.matchMedia('(max-width: 700px)').matches) trigger.current?.focus({ preventScroll: true });
       navigating.current = false;
     }}>
-      <section className="mobile-more-panel">
+      <section ref={panel} className="mobile-more-panel">
         <header><h2 id="mobile-more-title">{pick('更多', 'More')}</h2><button type="button" className="icon-button" aria-label={pick('关闭更多导航', 'Close more navigation')} onClick={close}><Icon name="close" /></button></header>
         <nav aria-label={pick('更多页面', 'More pages')}>
           {destinations.map(([path, icon, zh, en, descriptionZh, descriptionEn]) => <NavLink key={path} to={path} onClick={navigate}>

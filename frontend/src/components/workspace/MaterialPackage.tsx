@@ -1,5 +1,5 @@
 import { trackAction } from './Traffic';
-import { useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { BASE, send } from '../../api/knowledge';
 import { useWorkspace } from './UI';
 
@@ -9,6 +9,11 @@ type Package = { generated_at: string; coverage: Coverage; markdown?: string; ob
 
 export function MaterialPackage({ references }: { references: PackageRef[] }) {
   const { pick } = useWorkspace();
+  const active = useRef(false);
+  useLayoutEffect(() => {
+    active.current = true;
+    return () => { active.current = false; };
+  }, []);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [result, setResult] = useState<Package | null>(null);
@@ -28,6 +33,7 @@ export function MaterialPackage({ references }: { references: PackageRef[] }) {
       const data = await send<Package>('/v1/platform/bundle', {
         objects: references.map(({ id, revision, content_revision }) => ({ id, ...(revision ? {revision} : {}), ...(content_revision ? {content_revision} : {}) })), max_characters: 200000, format,
       });
+      if (!active.current) return;
       // Add service context outside original text. Never rewrite source bodies or their hashes.
       const service = new URL(BASE, window.location.origin).href.replace(/\/$/, '');
       const local = ['localhost', '127.0.0.1', '[::1]'].includes(new URL(service).hostname);

@@ -2,6 +2,8 @@ import {
   createContext,
   useContext,
   useEffect,
+  useId,
+  useReducer,
   useState,
   type ReactNode,
 } from "react";
@@ -172,6 +174,7 @@ interface WorkspaceContext {
   collection: CollectionItem[];
   toggleCollection: (id: string, action?: "save" | "follow") => void;
   compare: string[];
+  compareLimitId: string | null;
   toggleCompare: (id: string) => void;
   clearCompare: () => void;
   notify: (message: string) => void;
@@ -198,8 +201,16 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
     local("fieldtofit-collection", []),
   );
   const [collectionKey, setCollectionKey] = useState("fieldtofit-collection");
-  const [compare, setCompare] = useState<string[]>([]);
-  const [toast, setToast] = useState("");
+  const [{compare, compareLimitId}, toggleCompare] = useReducer((
+    state: {compare: string[]; compareLimitId: string | null}, id: string | null,
+  ) => {
+    if (id === null) return {compare: [], compareLimitId: null};
+    if (state.compare.includes(id)) return {compare: state.compare.filter(item => item !== id), compareLimitId: null};
+    if (state.compare.length >= 4) return {...state, compareLimitId: id};
+    return {compare: [...state.compare, id], compareLimitId: null};
+  }, {compare: [], compareLimitId: null});
+  const [toast, setToast] = useState<{message: string; icon: "info" | "check"} | null>(null);
+  const notify = (message: string, icon: "info" | "check" = "info") => setToast({message, icon});
   const [signedIn, setSignedIn] = useState(false);
   const pick = (cn: string, en: string) => (zh ? cn : en);
   useEffect(() => {
@@ -215,7 +226,7 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   }, [collection, collectionKey]);
   useEffect(() => {
     if (!toast) return;
-    const id = setTimeout(() => setToast(""), 4200);
+    const id = setTimeout(() => setToast(null), 4200);
     return () => clearTimeout(id);
   }, [toast]);
   useEffect(() => {
@@ -243,7 +254,7 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
             { record_id: id, action, created_at: new Date().toISOString() },
           ],
     );
-    setToast(
+    notify(
       exists
         ? pick("已移除", "Removed")
         : pick(
@@ -252,6 +263,7 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
               ? "Saved to your collection"
               : "Following. Check your collection for daily updates.",
           ),
+      "check",
     );
     if (signedIn)
       send(
@@ -259,18 +271,13 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
         { record_id: id, action },
         exists ? "DELETE" : "POST",
       ).catch(() =>
-        setToast(
+        notify(
           pick(
             "已保存在本机，账户同步失败",
             "Saved locally; account sync failed",
           ),
         ),
       );
-  };
-  const toggleCompare = (id: string) => {
-    if (compare.includes(id)) setCompare(compare.filter((x) => x !== id));
-    else if (compare.length < 4) setCompare([...compare, id]);
-    else setToast(pick("一次最多对比 4 项", "Compare up to 4 items"));
   };
   return (
     <Context.Provider
@@ -283,19 +290,20 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
         collection,
         toggleCollection,
         compare,
+        compareLimitId,
         toggleCompare,
-        clearCompare: () => setCompare([]),
-        notify: setToast,
+        clearCompare: () => toggleCompare(null),
+        notify,
       }}
     >
       {children}
       {toast && (
         <div className="toast" role="status">
-          <Icon name="check" size={17} />
-          {toast}
+          <Icon name={toast.icon} size={17} />
+          {toast.message}
           <button
             aria-label={pick("关闭", "Dismiss")}
-            onClick={() => setToast("")}
+            onClick={() => setToast(null)}
           >
             <Icon name="close" size={16} />
           </button>
@@ -431,6 +439,21 @@ export function State({
     );
   return <>{children}</>;
 }
+export function CompareButton({id, compact = false}: {id: string; compact?: boolean}) {
+  const {compare, compareLimitId, toggleCompare, pick} = useWorkspace();
+  const selected = compare.includes(id);
+  const messageId = useId();
+  const limited = compareLimitId === id;
+  return <span className="compare-feedback">
+    <button className={compact ? 'text-button' + (selected ? ' selected' : '') : 'button'}
+      aria-pressed={selected} aria-describedby={limited ? messageId : undefined} onClick={() => toggleCompare(id)}>
+      <Icon name="compare" size={compact ? 15 : 17}/>
+      {selected ? (compact ? pick('已选对比','Selected') : pick('移出对比','Remove comparison'))
+        : (compact ? pick('对比','Compare') : pick('加入对比','Compare'))}
+    </button>
+    {limited && <small id={messageId} role="status">{pick('已选满 4 项。先移除一项，再加入这份资料。','Four items selected. Remove one before adding this item.')}</small>}
+  </span>;
+}
 export function RecordCard({
   record,
   compact = false,
@@ -438,7 +461,7 @@ export function RecordCard({
   record: RecordItem;
   compact?: boolean;
 }) {
-  const { zh, pick, collection, toggleCollection, compare, toggleCompare } =
+  const { zh, pick, collection, toggleCollection } =
     useWorkspace();
   const saved = collection.some(
     (x) => x.record_id === record.id && x.action === "save",
@@ -505,17 +528,7 @@ export function RecordCard({
             : pick("发布时间未知", "Publication date unknown")}
         </span>
         {record.kind === "resource" ? (
-          <button
-            className={`text-button ${compare.includes(record.id) ? "selected" : ""}`}
-            onClick={() => toggleCompare(record.id)}
-            aria-pressed={compare.includes(record.id)}
-          >
-            <Icon name="compare" size={15} />
-            {pick(
-              compare.includes(record.id) ? "已选对比" : "对比",
-              compare.includes(record.id) ? "Selected" : "Compare",
-            )}
-          </button>
+          <CompareButton id={record.id} compact />
         ) : (
           <Link
             className="round-arrow"
